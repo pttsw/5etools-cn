@@ -2980,7 +2980,7 @@ Renderer.utils = class {
 		opts = opts || {};
 
 		const name = ent._displayName || ent.name;
-		const eng_name = it.ENG_name;
+		const eng_name = ent.ENG_name;
 		const pageLinkPart = SourceUtil.getAdventureBookSourceHref(ent.source, ent.page);
 
 		let dataPart = `data-name="${name.qq()}"`;
