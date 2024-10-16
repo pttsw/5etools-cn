@@ -12,6 +12,7 @@ class PageFilterConditionsDiseases extends PageFilterBase {
 
 		this._typeFilter = new Filter({
 			header: "Type",
+			cnHeader: "类型",
 			items: ["condition", "disease", "status"],
 			displayFn: PageFilterConditionsDiseases.getDisplayProp,
 			deselFn: (it) => it === "disease" || it === "status",

@@ -4,22 +4,22 @@ class DeitiesSublistManager extends SublistManager {
 	static _getRowTemplate () {
 		return [
 			new SublistCellTemplate({
-				name: "Name",
+				name: "名称",
 				css: "bold ve-col-4 pl-0",
 				colStyle: "",
 			}),
 			new SublistCellTemplate({
-				name: "Pantheon",
+				name: "神系",
 				css: "ve-col-2 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
-				name: "Alignment",
+				name: "阵营",
 				css: "ve-col-2 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
-				name: "Domains",
+				name: "领域",
 				css: "ve-col-4",
 				colStyle: "",
 			}),

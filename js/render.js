@@ -583,7 +583,7 @@ globalThis.Renderer = function () {
 	this._renderImage_getTitleCreditTooltipText = function (entry) {
 		if (!entry.title && !entry.credit) return null;
 		return Renderer.stripTags(
-			[entry.title, entry.credit ? `Art credit: ${entry.credit}` : null]
+			[entry.title, entry.credit ? `绘画作者: ${entry.credit}` : null]
 				.filter(Boolean)
 				.join(". "),
 		).qq();
@@ -3056,7 +3056,7 @@ Renderer.utils = class {
 
 	static getSourceAndPageTrHtml (it) {
 		const html = Renderer.utils.getSourceAndPageHtml(it);
-		return html ? `<b>来源：:</b> ${html}` : "";
+		return html ? `<b>来源:</b> ${html}` : "";
 	}
 
 	static _getAltSourceHtmlOrText (it, prop, introText, isText) {
@@ -8157,35 +8157,35 @@ Renderer.raceFeature = class {
 Renderer.deity = class {
 	static _BASE_PART_TRANSLATORS = {
 		"alignment": {
-			name: "Alignment",
+			name: "阵营",
 			displayFn: (it) => it.map(a => Parser.alignmentAbvToFull(a)).join(" ").toTitleCase(),
 		},
 		"pantheon": {
-			name: "Pantheon",
+			name: "神系",
 		},
 		"category": {
-			name: "Category",
+			name: "类别",
 			displayFn: it => typeof it === "string" ? it : it.join(", "),
 		},
 		"domains": {
-			name: "Domains",
+			name: "领域",
 			displayFn: (it) => it.join(", "),
 		},
 		"province": {
-			name: "Province",
+			name: "神职",
 		},
 		"dogma": {
-			name: "Dogma",
+			name: "教义",
 		},
 		"altNames": {
-			name: "Alternate Names",
+			name: "其它名称",
 			displayFn: (it) => it.join(", "),
 		},
 		"symbol": {
-			name: "Symbol",
+			name: "圣辉",
 		},
 		"favoredWeapons": {
-			name: "Favored Weapons",
+			name: "武器喜好",
 		},
 	};
 
@@ -8344,7 +8344,7 @@ Renderer.trap = class {
 				// region Shared between simple/complex
 				ent.trigger ? {
 					type: "entries",
-					name: "Trigger",
+					name: "触发条件",
 					entries: ent.trigger,
 				} : null,
 				// endregion
@@ -8352,7 +8352,7 @@ Renderer.trap = class {
 				// region Simple traps
 				ent.effect ? {
 					type: "entries",
-					name: "Effect",
+					name: "效果",
 					entries: ent.effect,
 				} : null,
 				// endregion
@@ -8360,22 +8360,22 @@ Renderer.trap = class {
 				// region Complex traps
 				ent.initiative ? {
 					type: "entries",
-					name: "Initiative",
+					name: "先攻顺序",
 					entries: Renderer.trap.getTrapInitiativeEntries(ent),
 				} : null,
 				ent.eActive ? {
 					type: "entries",
-					name: "Active Elements",
+					name: "主动要素",
 					entries: ent.eActive,
 				} : null,
 				ent.eDynamic ? {
 					type: "entries",
-					name: "Dynamic Elements",
+					name: "动态要素",
 					entries: ent.eDynamic,
 				} : null,
 				ent.eConstant ? {
 					type: "entries",
-					name: "Constant Elements",
+					name: "持续要素",
 					entries: ent.eConstant,
 				} : null,
 				// endregion
@@ -8383,7 +8383,7 @@ Renderer.trap = class {
 				// region Shared between simple/complex
 				ent.countermeasures ? {
 					type: "entries",
-					name: "Countermeasures",
+					name: "反制手段",
 					entries: ent.countermeasures,
 				} : null,
 				// endregion

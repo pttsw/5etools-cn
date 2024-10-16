@@ -15,7 +15,8 @@ class PageFilterActions extends PageFilterBase {
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Optional/Variant Action", "Legacy"],
+			cnHeader: "杂项",
+			items: ["可选/变体动作", "传奇"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
@@ -24,7 +25,7 @@ class PageFilterActions extends PageFilterBase {
 	static mutateForFilters (it) {
 		it._fTime = it.time ? it.time.map(it => it.unit || it) : null;
 		this._mutateForFilters_commonMisc(it);
-		if (it.fromVariant) it._fMisc.push("Optional/Variant Action");
+		if (it.fromVariant) it._fMisc.push("可选/变体动作");
 	}
 
 	addToFilters (it, isExcluded) {

@@ -12,6 +12,7 @@ class PageFilterTrapsHazards extends PageFilterBase {
 
 		this._typeFilter = new Filter({
 			header: "Type",
+			cnHeader: "类型",
 			items: [
 				"MECH",
 				"MAG",
@@ -28,6 +29,7 @@ class PageFilterTrapsHazards extends PageFilterBase {
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
+			cnHeader: "杂项",
 			items: ["传奇", "有图片", "有简介"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),

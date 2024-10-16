@@ -86,7 +86,7 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_REFERENCES, "actions.html", "动作");
 		this._addElement_li(NavBar._CAT_REFERENCES, "bestiary.html", "怪物图鉴");
 		this._addElement_li(NavBar._CAT_REFERENCES, "conditionsdiseases.html", "状态 & 疾病");
-		this._addElement_li(NavBar._CAT_REFERENCES, "decks.html", "Decks");
+		this._addElement_li(NavBar._CAT_REFERENCES, "decks.html", "牌组");
 		this._addElement_li(NavBar._CAT_REFERENCES, "deities.html", "神祇");
 		this._addElement_li(NavBar._CAT_REFERENCES, "items.html", "物品");
 		this._addElement_li(NavBar._CAT_REFERENCES, "languages.html", "语言");
