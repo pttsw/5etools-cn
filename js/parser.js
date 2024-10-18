@@ -2155,7 +2155,7 @@ Parser.RARITIES_TO_CN = {
 	"common": "常见",
 	"uncommon": "不常见",
 	"rare": "珍稀",
-	"very rare": "非常珍惜",
+	"very rare": "非常珍稀",
 	"legendary": "传说",
 	"artifact": "神器",
 	"varies": "多种",
