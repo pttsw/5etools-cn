@@ -2217,8 +2217,8 @@
 				{
 					"type": "list",
 					"items": [
-						"{@filter 简易近战武器|items|type=简单武器;近战武器=沙地}",
-						"{@filter 具有轻型特性的武术近战武器|items|type=武术武器；近战武器=沙地|属性=轻}"
+						"{@filter 简易近战武器|items|type=简易武器;近战武器=sand}",
+						"{@filter 具有轻型特性的武术近战武器|items|type=军用武器;近战武器=sand|属性=轻}"
 					]
 				},
 				"当你未装备武器或仅使用武僧武器并且未穿戴护甲或持有{@item 护盾术|XPHB}时，你将获得以下好处。",
@@ -2392,7 +2392,7 @@
 			"classSource": "XPHB",
 			"level": 5,
 			"entries": [
-				"每当你在你回合中采取{@action 攻击|XPHB}动作时，你可以进行两次攻击而不是一次。"
+				"当你在自己的回合执行{@action 攻击|XPHB}动作时，你可以发动两次攻击而非一次。"
 			]
 		},
 		{
@@ -2453,7 +2453,7 @@
 			"classSource": "XPHB",
 			"level": 8,
 			"entries": [
-				"你获得了{@feat 属性值提升|XPHB}特性，或者你符合条件选择的另一个{@5etools 专长|feats.html}。"
+				"你获得{@feat 属性值提升|XPHB}专长或其它你满足条件的{@5etools 专长|feats.html}。"
 			]
 		},
 		{
@@ -2545,7 +2545,7 @@
 			"classSource": "XPHB",
 			"level": 12,
 			"entries": [
-				"你获得了{@feat 属性值提升|XPHB}特性，或者你符合条件选择的另一个{@5etools 专长|feats.html}。"
+				"你获得{@feat 属性值提升|XPHB}专长或其它你满足条件的{@5etools 专长|feats.html}。"
 			]
 		},
 		{
@@ -2594,7 +2594,7 @@
 			"classSource": "XPHB",
 			"level": 16,
 			"entries": [
-				"你获得了{@feat 属性值提升|XPHB}特性，或者你符合条件选择的另一个{@5etools 专长|feats.html}。"
+				"你获得{@feat 属性值提升|XPHB}专长或其它你满足条件的{@5etools 专长|feats.html}。"
 			]
 		},
 		{
@@ -2630,7 +2630,7 @@
 			"classSource": "XPHB",
 			"level": 19,
 			"entries": [
-				"你获得了一个{@filter 史诗级恩惠特性|专长|category=EB}，或者你符合条件选择的另一个{@5etools 专长|feats.html}。推荐选择{@feat 无敌攻势之恩惠|XPHB}。"
+				"你获得了一个{@filter 传奇恩惠专长|feats|category=EB}，或者你符合条件选择的另一个{@5etools 专长|feats.html}。推荐选择{@feat 无敌攻势之恩惠|XPHB}。"
 			]
 		},
 		{
@@ -4584,7 +4584,7 @@
 				},
 				{
 					"type": "entries",
-					"name": "推动",
+					"name": "推离",
 					"ENG_name": "Push",
 					"entries": [
 						"目标必须成功进行一次力量豁免投掷，否则会被推向远离你最多15英尺的位置。"
@@ -4592,7 +4592,7 @@
 				},
 				{
 					"type": "entries",
-					"name": "推翻",
+					"name": "失衡",
 					"ENG_name": "Topple",
 					"entries": [
 						"目标必须成功进行一次敏捷豁免投掷，否则会受到{@condition 倒地|XPHB}（倒地）状态。"

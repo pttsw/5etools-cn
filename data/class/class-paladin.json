@@ -69,7 +69,7 @@
 				"additionalFromBackground": true,
 				"default": [
 					"(a) 一把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和一面{@item 护盾术|PHB} ，或 (b) 两把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}",
-					"(a) 五把 {@item 标枪|PHB|标枪} 或 (b) 任何 {@filter 简易近战武器|items|source=PHB|category=基础|type=简单武器;近战武器=沙地}",
+					"(a) 五把 {@item 标枪|PHB|标枪} 或 (b) 任何 {@filter 简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand}",
 					"(a) 一个{@item 祭司套组|PHB}或 (b) 一个{@item 探索套组|PHB}",
 					"{@item 链甲|PHB} 和一个 {@item 圣徽|PHB}"
 				],
@@ -721,7 +721,7 @@
 				"属性值提升|圣武士|XPHB|8",
 				"驱逐仇敌|圣武士|XPHB|9",
 				"勇气灵光|圣武士|XPHB|10",
-				"你的武器攻击附加光辉能量，对命中的敌人造成额外的光辉伤害。|圣武士|XPHB|11",
+				"光耀打击|圣武士|XPHB|11",
 				"属性值提升|圣武士|XPHB|12",
 				"恢复触摸|圣武士|XPHB|14",
 				{
@@ -2173,7 +2173,7 @@
 			"classSource": "XPHB",
 			"level": 2,
 			"entries": [
-				"你获得了一个你选择的{@filter 战斗风格专长|专长|category=FS}。你可以选择下面的选项，而不是选择那些特性之一。",
+				"你获得了一个你选择的{@filter 战斗风格专长|feats|category=FS}。你可以选择下面的选项，而不是选择那些特性之一。",
 				{
 					"type": "entries",
 					"entries": [
@@ -2279,7 +2279,7 @@
 			"classSource": "XPHB",
 			"level": 5,
 			"entries": [
-				"每当你在你回合中采取{@action 攻击|XPHB}动作时，你可以进行两次攻击而不是一次。"
+				"当你在自己的回合执行{@action 攻击|XPHB}动作时，你可以发动两次攻击而非一次。"
 			]
 		},
 		{
@@ -2304,7 +2304,7 @@
 			"classSource": "XPHB",
 			"level": 6,
 			"entries": [
-				"你散发出一个保护性的无形灵光，这是一个源自你的10英尺{@variantrule 辐射 [区域效果]|XPHB|辐射}。当你处于{@condition 失能|XPHB}状态时，灵光处于非激活状态。",
+				"你散发出一个保护性的无形灵光，这是一个源自你的10英尺{@variantrule 光环【效应区域】|XPHB|光环}。当你处于{@condition 失能|XPHB}状态时，灵光处于非激活状态。",
 				"你和你的盟友在灵光范围内获得等于你魅力调整值的豁免检定加值（最小加值为+1）。",
 				"如果有另一个圣武士在场，一个生物一次只能从一种防护灵光中获益；当处于多个灵光范围内时，生物选择哪一个灵光。"
 			]
@@ -2362,7 +2362,7 @@
 			]
 		},
 		{
-			"name": "你的武器攻击附加光辉能量，对命中的敌人造成额外的光辉伤害。",
+			"name": "光耀打击",
 			"ENG_name": "Radiant Strikes",
 			"source": "XPHB",
 			"page": 111,
@@ -2430,7 +2430,7 @@
 			"classSource": "XPHB",
 			"level": 18,
 			"entries": [
-				"你的防护灵光现在是一个30英尺的{@variantrule 辐射 [区域效果]|XPHB|辐射}。"
+				"你的防护灵光现在是一个30英尺的{@variantrule 光环【效应区域】|XPHB|光环}。"
 			]
 		},
 		{
@@ -2442,7 +2442,7 @@
 			"classSource": "XPHB",
 			"level": 19,
 			"entries": [
-				"你获得了一个你选择的{@filter 史诗级恩惠特性|专长|category=EB}或另一个你符合资格的{@5etools 专长|feats.html}。推荐选择{@feat 真实视觉之恩惠|XPHB}。"
+				"你获得了一个你选择的{@filter 传奇恩惠专长|feats|category=EB}或另一个你符合资格的{@5etools 专长|feats.html}。推荐选择{@feat 真实视觉之恩惠|XPHB}。"
 			]
 		},
 		{
