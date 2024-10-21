@@ -39,6 +39,8 @@ class PageFilterRaces extends PageFilterBase {
 		"Monstrous Race": "Monstrous Species",
 		"NPC Race": "NPC Species",
 		"Uncommon Race": "Uncommon Species",
+
+		"Armor Proficiency": "Armor Training",
 	};
 
 	constructor () {
@@ -55,7 +57,8 @@ class PageFilterRaces extends PageFilterBase {
 				"两栖",
 				"护甲熟练项",
 				"盲视",
-				"黑暗视觉", "增强黑暗视觉",
+				"黑暗视觉",
+				"增强黑暗视觉",
 				"龙纹",
 				"专长",
 				"修整强化",
@@ -103,6 +106,7 @@ class PageFilterRaces extends PageFilterBase {
 				"木族语",
 				"地底通用语",
 			],
+			displayFn: it => it.split("|")[0].toTitleCase(),
 			umbrellaItems: ["自选"],
 		});
 		this._creatureTypeFilter = new Filter({
@@ -130,6 +134,8 @@ class PageFilterRaces extends PageFilterBase {
 	}
 
 	static mutateForFilters (r) {
+		this._mutateForFilters_commonSources(r);
+
 		r._fSize = r.size ? [...r.size] : [];
 		if (r._fSize.length > 1) r._fSize.push("V");
 		r._fSpeed = r.speed ? r.speed.walk ? [r.speed.climb ? "攀爬" : null, r.speed.fly ? "飞行" : null, r.speed.swim ? "游泳" : null, PageFilterRaces.getSpeedRating(r.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(r.speed)] : [];
@@ -144,7 +150,6 @@ class PageFilterRaces extends PageFilterBase {
 			r.weaponProficiencies ? "武器熟练项" : null,
 		].filter(it => it);
 		r._fTraits.push(...(r.traitTags || []));
-		r._fSources = SourceFilter.getCompleteFilterSources(r);
 		r._fLangs = PageFilterRaces.getLanguageProficiencyTags(r.languageProficiencies);
 		r._fCreatureTypes = r.creatureTypes ? r.creatureTypes.map(it => it.choose || it).flat() : ["类人生物"];
 		this._mutateForFilters_commonMisc(r);

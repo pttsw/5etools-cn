@@ -23,6 +23,7 @@ class PageFilterActions extends PageFilterBase {
 	}
 
 	static mutateForFilters (it) {
+		this._mutateForFilters_commonSources(it);
 		it._fTime = it.time ? it.time.map(it => it.unit || it) : null;
 		this._mutateForFilters_commonMisc(it);
 		if (it.fromVariant) it._fMisc.push("可选/变体动作");
@@ -31,7 +32,7 @@ class PageFilterActions extends PageFilterBase {
 	addToFilters (it, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(it.source);
+		this._sourceFilter.addItem(it._fSources);
 		this._timeFilter.addItem(it._fTime);
 		this._miscFilter.addItem(it._fMisc);
 	}
@@ -47,7 +48,7 @@ class PageFilterActions extends PageFilterBase {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			it.source,
+			it._fSources,
 			it._fTime,
 			it._fMisc,
 		);

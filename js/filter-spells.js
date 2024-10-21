@@ -363,7 +363,7 @@ class PageFilterSpells extends PageFilterBase {
 		this._backgroundFilter = new SearchableFilter({header: "Background", cnHeader: "背景"});
 		this._featFilter = new SearchableFilter({header: "Feat", cnHeader: "专长"});
 		this._optionalfeaturesFilter = new SearchableFilter({header: "Other Option/Feature", cnHeader: "其他选项/特性"});
-		this._metaFilter = new Filter({
+		this._miscFilter = new Filter({
 			header: "Components & Miscellaneous",
 			cnHeader: "构材＆杂项",
 			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "传奇", "重置", "有图片", "有Token"],
@@ -478,7 +478,7 @@ class PageFilterSpells extends PageFilterBase {
 		s._normalisedRange = PageFilterSpells.getNormalisedRange(s.range);
 
 		// used for filtering
-		s._fSources = SourceFilter.getCompleteFilterSources(s);
+		this._mutateForFilters_commonSources(s);
 		PageFilterSpells._mutMetaFilterObj(s);
 		s._fClasses = Renderer.spell.getCombinedClasses(s, "fromClassList").map(c => {
 			return this._getClassFilterItem({
@@ -547,7 +547,7 @@ class PageFilterSpells extends PageFilterBase {
 		this._groupFilter.addItem(s._fGroups);
 		this._schoolFilter.addItem(s.school);
 		this._sourceFilter.addItem(s._fSources);
-		this._metaFilter.addItem(s._fMisc);
+		this._miscFilter.addItem(s._fMisc);
 		this._backgroundFilter.addItem(s._fBackgrounds);
 		this._featFilter.addItem(s._fFeats);
 		this._optionalfeaturesFilter.addItem(s._fOptionalfeatures);
@@ -580,7 +580,7 @@ class PageFilterSpells extends PageFilterBase {
 			this._backgroundFilter,
 			this._featFilter,
 			this._optionalfeaturesFilter,
-			this._metaFilter,
+			this._miscFilter,
 			this._groupFilter,
 			this._schoolFilter,
 			this._subSchoolFilter,

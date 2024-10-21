@@ -18,6 +18,7 @@ class PageFilterVariantRules extends PageFilterBase {
 	}
 
 	static mutateForFilters (rule) {
+		this._mutateForFilters_commonSources(rule);
 		this._mutateForFilters_commonMisc(rule);
 
 		rule._fRuleType = rule.ruleType || "U";
@@ -26,7 +27,7 @@ class PageFilterVariantRules extends PageFilterBase {
 	addToFilters (rule, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(rule.source);
+		this._sourceFilter.addItem(rule._fSources);
 		this._ruleTypeFilter.addItem(rule._fRuleType);
 		this._miscFilter.addItem(rule._fMisc);
 	}
@@ -42,7 +43,7 @@ class PageFilterVariantRules extends PageFilterBase {
 	toDisplay (values, r) {
 		return this._filterBox.toDisplay(
 			values,
-			r.source,
+			r._fSources,
 			r._fRuleType,
 			r._fMisc,
 		);

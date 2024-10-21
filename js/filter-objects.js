@@ -14,6 +14,7 @@ class PageFilterObjects extends PageFilterBase {
 	}
 
 	static mutateForFilters (obj) {
+		this._mutateForFilters_commonSources(obj);
 		this._mutateForFilters_commonMisc(obj);
 		if (Renderer.object.hasToken(obj)) obj._fMisc.push("Has Token");
 	}
@@ -21,7 +22,7 @@ class PageFilterObjects extends PageFilterBase {
 	addToFilters (obj, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(obj.source);
+		this._sourceFilter.addItem(obj._fSources);
 		this._miscFilter.addItem(obj._fMisc);
 	}
 
@@ -35,7 +36,7 @@ class PageFilterObjects extends PageFilterBase {
 	toDisplay (values, obj) {
 		return this._filterBox.toDisplay(
 			values,
-			obj.source,
+			obj._fSources,
 			obj._fMisc,
 		);
 	}

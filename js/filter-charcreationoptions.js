@@ -23,6 +23,8 @@ class PageFilterCharCreationOptions extends PageFilterBase {
 	}
 
 	static mutateForFilters (it) {
+		this._mutateForFilters_commonSources(it);
+
 		it._fOptionType = Parser.charCreationOptionTypeToFull(it.optionType);
 
 		this._mutateForFilters_commonMisc(it);
@@ -31,7 +33,7 @@ class PageFilterCharCreationOptions extends PageFilterBase {
 	addToFilters (it, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(it.source);
+		this._sourceFilter.addItem(it._fSources);
 		this._typeFilter.addItem(it._fOptionType);
 		this._miscFilter.addItem(it._fMisc);
 	}
@@ -47,7 +49,7 @@ class PageFilterCharCreationOptions extends PageFilterBase {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			it.source,
+			it._fSources,
 			it._fOptionType,
 			it._fMisc,
 		);

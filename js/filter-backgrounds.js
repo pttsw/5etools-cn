@@ -6,8 +6,13 @@ class PageFilterBackgrounds extends PageFilterBase {
 		if (tool === "anyTool") return "任意工具";
 		if (tool === "anyArtisansTool") return "任意工匠工具";
 		if (tool === "anyMusicalInstrument") return "任意乐器";
+		if (tool === "anyGamingSet") return "任意赌博工具";
 		return Parser.TOOLS_TO_CN[tool] || tool.toTitleCase();
 	}
+
+	static _TRAIT_DISPLAY_VALUES = {
+		"Armor Proficiency": "Armor Training",
+	};
 
 	constructor () {
 		super();
@@ -36,7 +41,11 @@ class PageFilterBackgrounds extends PageFilterBase {
 		});
 		this._toolFilter = new Filter({header: "工具熟练项", displayFn: PageFilterBackgrounds._getToolDisplayText.bind(PageFilterBackgrounds)});
 		this._languageFilter = FilterCommon.getLanguageProficienciesFilter();
-		this._otherBenefitsFilter = new Filter({header: "其他优势"});
+		this._otherBenefitsFilter = new Filter({
+			header: "Other Benefits",
+			cnHeader: "其他优势",
+			displayFn: val => this.constructor._TRAIT_DISPLAY_VALUES[val] || val,
+		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
@@ -64,7 +73,7 @@ class PageFilterBackgrounds extends PageFilterBase {
 	}
 
 	static mutateForFilters (bg) {
-		bg._fSources = SourceFilter.getCompleteFilterSources(bg);
+		this._mutateForFilters_commonSources(bg);
 
 		bg._fPrereq = FilterCommon.getFilterValuesPrerequisite(bg.prerequisite);
 
