@@ -26,7 +26,7 @@
 			"spellcastingAbility": "cha",
 			"casterProgression": "1/2",
 			"preparedSpells": "<$level$> / 2 + <$cha_mod$>",
-			"preparedSpellsChange": "restLong",
+			"preparedSpellsChange": "长休",
 			"optionalfeatureProgression": [
 				{
 					"name": "战斗风格",
@@ -355,7 +355,29 @@
 			],
 			"spellcastingAbility": "cha",
 			"casterProgression": "1/3",
-			"preparedSpells": "<$level$> / 2 + <$cha_mod$>",
+			"preparedSpellsProgression": [
+				2,
+				3,
+				4,
+				5,
+				6,
+				6,
+				7,
+				7,
+				9,
+				9,
+				10,
+				10,
+				11,
+				11,
+				12,
+				12,
+				14,
+				14,
+				15,
+				15
+			],
+			"preparedSpellsChange": "长休",
 			"additionalSpells": [
 				{
 					"prepared": {
@@ -2161,8 +2183,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你在武器训练中使你能够使用你熟练的两种武器的精通属性，例如{@item 长剑|XPHB|长剑}和{@item 标枪|XPHB|标枪}。",
-				"每当你完成一个{@variantrule 长休|XPHB}时，你可以改变你选择的武器种类。例如，你可以切换到使用{@item 戟|XPHB|长戟}和{@item 链枷|XPHB|链枷}的精通属性。"
+				"你使用武器的训练使你能够选择两种你熟练的{@variantrule 武器精通特性|XPHB|精通特性}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 长剑|XPHB|长剑}，使用它们的{@item 标枪|XPHB|标枪}。",
+				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通特性|XPHB|精通特性}的{@item 戟|XPHB|长戟}和{@item 链枷|XPHB|链枷}。"
 			]
 		},
 		{
@@ -2305,7 +2327,7 @@
 			"classSource": "XPHB",
 			"level": 6,
 			"entries": [
-				"你散发出一个保护性的无形灵光，这是一个源自你的10英尺{@variantrule 光环【效应区域】|XPHB|光环}。当你处于{@condition 失能|XPHB}状态时，灵光处于非激活状态。",
+				"你散发出一个保护性的无形灵光，这是一个源自你的10英尺{@variantrule 光环 [效应区域]|XPHB|光环}。当你处于{@condition 失能|XPHB}状态时，灵光处于非激活状态。",
 				"你和你的盟友在灵光范围内获得等于你魅力调整值的豁免检定加值（最小加值为+1）。",
 				"如果有另一个圣武士在场，一个生物一次只能从一种防护灵光中获益；当处于多个灵光范围内时，生物选择哪一个灵光。"
 			]
@@ -2431,7 +2453,7 @@
 			"classSource": "XPHB",
 			"level": 18,
 			"entries": [
-				"你的防护灵光现在是一个30英尺的{@variantrule 光环【效应区域】|XPHB|光环}。"
+				"你的防护灵光现在是一个30英尺的{@variantrule 光环 [效应区域]|XPHB|光环}。"
 			]
 		},
 		{
