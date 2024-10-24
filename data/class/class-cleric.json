@@ -749,7 +749,7 @@
 					]
 				},
 				{
-					"title": "每个法术等级的准备法术",
+					"title": "每个法术环位的准备法术",
 					"colLabels": [
 						"{@filter 1st|spells|level=1|class=牧师}",
 						"{@filter 2nd|spells|level=2|class=牧师}",
@@ -996,7 +996,7 @@
 				"属性值提升|牧师|XPHB|4",
 				"焚烧亡灵|牧师|XPHB|5",
 				{
-					"classFeature": "子职业能力|牧师|XPHB|6",
+					"classFeature": "子职特性|牧师|XPHB|6",
 					"gainSubclassFeature": true
 				},
 				"受祝击|牧师|XPHB|7",
@@ -1006,7 +1006,7 @@
 				"改进后的神圣打击|牧师|XPHB|14",
 				"属性值提升|牧师|XPHB|16",
 				{
-					"classFeature": "子职业能力|牧师|XPHB|17",
+					"classFeature": "子职特性|牧师|XPHB|17",
 					"gainSubclassFeature": true
 				},
 				"传奇恩惠|牧师|XPHB|19",
@@ -3635,7 +3635,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "准备的1级以上法术",
+							"name": "1环及以上的准备法术",
 							"ENG_name": "Prepared Spells of Level 1+",
 							"entries": [
 								"你准备这个特性可用的1级及以上法术列表。开始时，从{@filter 牧师法术列表|spells|class=牧师}中选择四个1级法术。推荐选择{@spell 祝福术|XPHB}、{@spell 疗伤术|XPHB}、{@spell 光导箭|XPHB}和{@spell 虔诚护盾|XPHB}。",
@@ -3645,7 +3645,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "更换你的准备法术",
+							"name": "改变你的准备法术",
 							"ENG_name": "Changing Your Prepared Spells",
 							"entries": [
 								"每当你完成一次{@variantrule 长休|XPHB}，你可以更改你的准备法术列表，用你拥有法术位的其他牧师法术替换列表中的任何法术。"
@@ -3682,7 +3682,7 @@
 			"entries": [
 				"你可以直接从外层界引导神能来激发魔法效果。起初，你有两种这样的效果：神圣火花和驱散亡灵，每个效果都在下文有描述。每次你使用这个职业的神术能量时，从这个职业中选择一个神术能量效果来创造。你在更高等级的牧师职业中会获得额外的效果选项。",
 				"你可以使用这个职业的神圣化身能力两次。当你完成一次{@variantrule 短休|XPHB}时，你将恢复一次已消耗的使用次数，当你完成一次{@variantrule 长休|XPHB}时，你将恢复所有已消耗的使用次数。当你达到特定牧师等级时，你将获得额外的使用次数，如牧师特性表中的神圣化身列所示。",
-				"如果神术能量效果需要进行一次豁免投掷，其难度等级等于本职业法术施放特性中的法术豁免DC。",
+				"如果神术能量效果需要进行一次豁免检定，其难度等级等于本职业法术施放特性中的法术豁免DC。",
 				{
 					"type": "entries",
 					"entries": [
@@ -3770,7 +3770,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 71,
@@ -3896,7 +3896,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 71,
@@ -9238,7 +9238,7 @@
 				"ENG_name": "Channel Divinity"
 			},
 			"entries": [
-				"作为一个{@action 魔法|XPHB}动作，你展示你的{@item 圣徽|XPHB}并消耗一次你的神术能量，从你自己发出一个30英尺的{@variantrule 光环 [效应区域]|XPHB|光环}中的闪光。在该区域内的任何魔法{@variantrule 黑暗术|XPHB}\u2014\u2014比如由{@spell 黑暗术|XPHB}法术创造的\u2014\u2014都被驱散。此外，你选择的在该区域内的每个生物必须进行一次体质豁免投掷，失败则受到等于{@dice 2d10}加上你的牧师等级的辐射伤害，成功则受到一半的伤害。"
+				"作为一个{@action 魔法|XPHB}动作，你展示你的{@item 圣徽|XPHB}并消耗一次你的神术能量，从你自己发出一个30英尺的{@variantrule 光环 [效应区域]|XPHB|光环}中的闪光。在该区域内的任何魔法{@variantrule 黑暗术|XPHB}\u2014\u2014比如由{@spell 黑暗术|XPHB}法术创造的\u2014\u2014都被驱散。此外，你选择的在该区域内的每个生物必须进行一次体质豁免检定，失败则受到等于{@dice 2d10}加上你的牧师等级的辐射伤害，成功则受到一半的伤害。"
 			]
 		},
 		{
@@ -9285,7 +9285,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"作为一个{@action 魔法|XPHB}动作，你使得自己散发出持续1分钟或直到你主动结束的日光光环（无需动作）。你在60英尺半径内发出{@variantrule 强光|XPHB}，并在额外的30英尺内发出{@variantrule 微光|XPHB}。在{@variantrule 强光|XPHB}中的敌人在对抗你的{@spell 黎明光辉|XPHB}以及任何造成火焰或辐射伤害的法术的豁免投掷上具有{@variantrule 劣势|XPHB}。",
+				"作为一个{@action 魔法|XPHB}动作，你使得自己散发出持续1分钟或直到你主动结束的日光光环（无需动作）。你在60英尺半径内发出{@variantrule 强光|XPHB}，并在额外的30英尺内发出{@variantrule 微光|XPHB}。在{@variantrule 强光|XPHB}中的敌人在对抗你的{@spell 黎明光辉|XPHB}以及任何造成火焰或辐射伤害的法术的豁免检定上具有{@variantrule 劣势|XPHB}。",
 				"你可以使用这个特性的次数等于你智慧调整值（最少一次），当你完成一次{@variantrule 长休|XPHB}后，你将恢复所有已消耗的使用次数。"
 			]
 		},

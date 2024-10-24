@@ -429,14 +429,14 @@
 				"战术转换|战士|XPHB|5",
 				"属性值提升|战士|XPHB|6",
 				{
-					"classFeature": "子职业能力|战士|XPHB|7",
+					"classFeature": "子职特性|战士|XPHB|7",
 					"gainSubclassFeature": true
 				},
 				"属性值提升|战士|XPHB|8",
 				"不屈|战士|XPHB|9",
 				"战术大师|战士|XPHB|9",
 				{
-					"classFeature": "子职业能力|战士|XPHB|10",
+					"classFeature": "子职特性|战士|XPHB|10",
 					"gainSubclassFeature": true
 				},
 				"两次额外攻击|战士|XPHB|11",
@@ -445,14 +445,14 @@
 				"研究型攻击|战士|XPHB|13",
 				"属性值提升|战士|XPHB|14",
 				{
-					"classFeature": "子职业能力|战士|XPHB|15",
+					"classFeature": "子职特性|战士|XPHB|15",
 					"gainSubclassFeature": true
 				},
 				"属性值提升|战士|XPHB|16",
 				"动作如潮|战士|XPHB|17",
 				"不屈|战士|XPHB|17",
 				{
-					"classFeature": "子职业能力|战士|XPHB|18",
+					"classFeature": "子职特性|战士|XPHB|18",
 					"gainSubclassFeature": true
 				},
 				"传奇恩惠|战士|XPHB|19",
@@ -2335,7 +2335,7 @@
 			"classSource": "XPHB",
 			"level": 2,
 			"entries": [
-				"你无论在战场上还是战场外都擅长战术。当你未能通过能力检定时，你可以消耗一次你的第二次风来推动自己走向成功。而不是恢复{@variantrule 生命值|XPHB}，你掷一个{@dice 1d10}骰子，并将掷出的数字加到能力检定上，可能会将其转变为成功。如果检定仍然失败，这次第二次风不会被消耗。"
+				"你无论在战场上还是战场外都擅长战术。当你未能通过属性检定时，你可以消耗一次你的第二次风来推动自己走向成功。而不是恢复{@variantrule 生命值|XPHB}，你掷一个{@dice 1d10}骰子，并将掷出的数字加到属性检定上，可能会将其转变为成功。如果检定仍然失败，这次第二次风不会被消耗。"
 			]
 		},
 		{
@@ -2399,7 +2399,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 92,
@@ -2448,7 +2448,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 92,
@@ -2521,7 +2521,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 92,
@@ -2571,7 +2571,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 92,
@@ -4698,7 +4698,7 @@
 					"name": "豁免检定",
 					"ENG_name": "Saving Throws",
 					"entries": [
-						"如果一个机动需要进行豁免投掷，难度等级等于8加上你的力量或敏捷修正值（你选择）以及熟练加值。"
+						"如果一个机动需要进行豁免检定，难度等级等于8加上你的力量或敏捷修正值（你选择）以及熟练加值。"
 					]
 				}
 			]
@@ -5004,7 +5004,7 @@
 					"name": "反抗死亡",
 					"ENG_name": "Defy Death",
 					"entries": [
-						"你在死亡豁免投掷上具有{@variantrule 优势|XPHB}。此外，当你在死亡豁免投掷上掷出18-20时，你获得掷出20的额外效果。"
+						"你在死亡豁免检定上具有{@variantrule 优势|XPHB}。此外，当你在死亡豁免检定上掷出18-20时，你获得掷出20的额外效果。"
 					]
 				},
 				{
@@ -5080,7 +5080,7 @@
 					"entries": [
 						{
 							"type": "entries",
-							"name": "准备的1级以上法术",
+							"name": "1环及以上的准备法术",
 							"ENG_name": "Prepared Spells of Level 1+",
 							"entries": [
 								"你准备这个特性可用的1级及以上法术列表。首先，从{@filter 法师法术列表|spells|class=法师}中选择三个1级法术。推荐选择{@spell 燃烧之手|XPHB}、{@spell 跳跃术|XPHB}和{@spell 护盾术|XPHB}。",
@@ -5174,7 +5174,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"你学会了如何使你的武器攻击削弱一个生物抵抗你法术的能力。当你使用武器攻击命中一个生物时，在下一个回合结束前，该生物对你施放的下一个法术的豁免投掷具有{@variantrule 劣势|XPHB}。"
+				"你学会了如何使你的武器攻击削弱一个生物抵抗你法术的能力。当你使用武器攻击命中一个生物时，在下一个回合结束前，该生物对你施放的下一个法术的豁免检定具有{@variantrule 劣势|XPHB}。"
 			]
 		},
 		{
@@ -5351,7 +5351,7 @@
 							"name": "念力突刺",
 							"ENG_name": "Telekinetic Thrust",
 							"entries": [
-								"当你使用灵能攻击对目标造成伤害时，你可以迫使目标进行一次力量豁免投掷（{@dc 8}加上你的智力调整值和{@variantrule 熟练项|XPHB}加值）。若豁免失败，你可以使目标处于{@condition 倒地|XPHB}状态，或者将其水平移动最多10英尺。"
+								"当你使用灵能攻击对目标造成伤害时，你可以迫使目标进行一次力量豁免检定（{@dc 8}加上你的智力调整值和{@variantrule 熟练项|XPHB}加值）。若豁免失败，你可以使目标处于{@condition 倒地|XPHB}状态，或者将其水平移动最多10英尺。"
 							]
 						}
 					]

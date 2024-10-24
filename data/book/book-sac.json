@@ -308,7 +308,7 @@
 											"ENG_name": "Does the barbarian's Danger Sense work against breath weapons and enemies' special abilities?",
 											"id": "01c",
 											"entries": [
-												"野蛮人的危机感知能力有助于对抗野蛮人能看到的任何效果的敏捷豁免投掷。"
+												"野蛮人的危机感知能力有助于对抗野蛮人能看到的任何效果的敏捷豁免检定。"
 											]
 										},
 										{
@@ -334,12 +334,12 @@
 											"ENG_name": "Do the benefits from Bardic Inspiration and the guidance spell stack? Can they be applied to the same roll?",
 											"id": "01f",
 											"entries": [
-												"是的，如果它们没有相同的名称，不同的效果可以叠加。如果一个生物在{@spell 神导术}法术的影响下进行能力检定时，并且还有吟游诗人的灵感骰，如果它选择这样做，它可以同时掷一个{@dice d4}和一个{@dice d6}。"
+												"是的，如果它们没有相同的名称，不同的效果可以叠加。如果一个生物在{@spell 神导术}法术的影响下进行属性检定时，并且还有吟游诗人的灵感骰，如果它选择这样做，它可以同时掷一个{@dice d4}和一个{@dice d6}。"
 											]
 										},
 										{
 											"type": "entries",
-											"name": "意图是，在使用削骨之言之前，吟游诗人需要知道攻击检定或能力检定的掷骰结果，还是应该总是猜测？如果用于伤害骰，削骨之言是否适用于包括自动命中法术（如{@spell 魔法飞弹}）在内的任何类型的伤害骰？",
+											"name": "意图是，在使用削骨之言之前，吟游诗人需要知道攻击检定或属性检定的掷骰结果，还是应该总是猜测？如果用于伤害骰，削骨之言是否适用于包括自动命中法术（如{@spell 魔法飞弹}）在内的任何类型的伤害骰？",
 											"ENG_name": "Is the intent that a bard gets to know the number rolled on an attack roll or ability check before using Cutting Words, or should they always guess? If used on a damage roll, does Cutting Words apply to any kind of damage roll including an auto-hit spell like {@spell 魔法飞弹}?",
 											"id": "020",
 											"entries": [
@@ -767,7 +767,7 @@
 											"ENG_name": "Does Uncanny Dodge work automatically against every attack a rogue or ranger gets hit by? Spell attacks too?",
 											"id": "04a",
 											"entries": [
-												"使用一次诡异闪避只能针对一次攻击有效，因为它会消耗你的{@book 反应|PHB|9|反应}，且只有在你能看到攻击者的情况下才能生效。它对所有类型的攻击都有效，包括法术攻击，但对于像{@spell 火球术}这样在豁免骰之后而不是在攻击骰之后造成伤害的法术或其他效果，它没有帮助。"
+												"使用一次诡异闪避只能针对一次攻击有效，因为它会消耗你的{@book 反应|PHB|9|反应}，且只有在你能看到攻击者的情况下才能生效。它对所有类型的攻击都有效，包括法术攻击，但对于像{@spell 火球术}这样在豁免检定之后而不是在攻击骰之后造成伤害的法术或其他效果，它没有帮助。"
 											]
 										},
 										{
@@ -785,7 +785,7 @@
 											"ENG_name": "Can the rogue's Reliable Talent feature be used in conjunction with Remarkable Athlete or Jack of All Trades?",
 											"id": "04c",
 											"entries": [
-												"不。这些特性各自有一个使用前提条件；可靠才能在进行使用你的熟练加值的能力检定时激活，而其他两个特性在进行不使用你的熟练加值的能力检定时激活。换句话说，符合可靠才能特性的条件的检定不符合非凡运动员或万事通的特性条件。并且，非凡运动员和万事通不能同时使用，因为你只能一次将你的熟练加值，或其任何部分，加到一次掷骰上。"
+												"不。这些特性各自有一个使用前提条件；可靠才能在进行使用你的熟练加值的属性检定时激活，而其他两个特性在进行不使用你的熟练加值的属性检定时激活。换句话说，符合可靠才能特性的条件的检定不符合非凡运动员或万事通的特性条件。并且，非凡运动员和万事通不能同时使用，因为你只能一次将你的熟练加值，或其任何部分，加到一次掷骰上。"
 											]
 										},
 										{
@@ -1010,7 +1010,7 @@
 											"ENG_name": "Does the evoker's Potent Cantrip feature apply to cantrips with attack rolls or only to saves?",
 											"id": "063",
 											"entries": [
-												"强力戏法仅影响需要豁免骰的低级法术，例如{@spell 酸液飞溅}和{@spell 毒气喷溅}。"
+												"强力戏法仅影响需要豁免检定的低级法术，例如{@spell 酸液飞溅}和{@spell 毒气喷溅}。"
 											]
 										},
 										{
@@ -1097,11 +1097,11 @@
 									"entries": [
 										{
 											"type": "entries",
-											"name": "重型盔甲是否会降低除潜行外的敏捷豁免检定或能力检定？",
+											"name": "重型盔甲是否会降低除潜行外的敏捷豁免检定或属性检定？",
 											"ENG_name": "Does heavy armor reduce Dexterity saving throws or ability checks other than Stealth?",
 											"id": "06b",
 											"entries": [
-												"如果你对它熟练，{@book 沉重的护甲|PHB|5|沉重的护甲}不会影响敏捷豁免检定或能力检定，除了{@skill 隐匿}。"
+												"如果你对它熟练，{@book 沉重的护甲|PHB|5|沉重的护甲}不会影响敏捷豁免检定或属性检定，除了{@skill 隐匿}。"
 											]
 										},
 										{
@@ -1156,11 +1156,11 @@
 										},
 										{
 											"type": "entries",
-											"name": "当你多职业时，是否会获得更多豁免投掷的熟练度？",
+											"name": "当你多职业时，是否会获得更多豁免检定的熟练度？",
 											"ENG_name": "Do you gain proficiency in more saving throws when multiclassing?",
 											"id": "072",
 											"entries": [
-												"一个职业提供了各种起始熟练度，如果你是首次选择该职业，你就会获得这些熟练度。如果该职业不是你的第一个职业，你只会获得多职业熟练度表中为该职业列出的起始熟练度。该表中不包括任何豁免投掷熟练度。",
+												"一个职业提供了各种起始熟练度，如果你是首次选择该职业，你就会获得这些熟练度。如果该职业不是你的第一个职业，你只会获得多职业熟练度表中为该职业列出的起始熟练度。该表中不包括任何豁免检定熟练度。",
 												"不论一个职业是否是你的第一个职业，你确实会获得该职业通过其特性所赋予的任何熟练度。例如，如果你在牧师职业上获得一级，并选择了战争领域，即使你的第一个职业不是牧师，你也会从奖励熟练度特性中受益。"
 											]
 										},
@@ -1329,7 +1329,7 @@
 											"ENG_name": "How does the Lucky feat interact with advantage and disadvantage?",
 											"id": "085",
 											"entries": [
-												"{@feat 幸运}特性代表了非凡的运气，可以在你最需要的时候帮助你。它允许你花费一个运气点；在攻击检定、能力检定或豁免检定时额外掷一个{@dice d20}，然后选择使用哪个{@dice d20}。无论混合了多少个d20，这都适用。例如，如果你在攻击检定上有优势或劣势，你可以花费一个运气点，掷一个第三个{@dice d20}，然后决定使用哪三个骰子中的哪一个。你仍然有优势或劣势，因为特性并没有说它抵消了它，但你可以选择骰子。这个事实的结果是，例如，一个盗贼在攻击检定上有劣势，即使盗贼使用幸运特性来选择骰子，也不能使用偷袭攻击。",
+												"{@feat 幸运}特性代表了非凡的运气，可以在你最需要的时候帮助你。它允许你花费一个运气点；在攻击检定、属性检定或豁免检定时额外掷一个{@dice d20}，然后选择使用哪个{@dice d20}。无论混合了多少个d20，这都适用。例如，如果你在攻击检定上有优势或劣势，你可以花费一个运气点，掷一个第三个{@dice d20}，然后决定使用哪三个骰子中的哪一个。你仍然有优势或劣势，因为特性并没有说它抵消了它，但你可以选择骰子。这个事实的结果是，例如，一个盗贼在攻击检定上有劣势，即使盗贼使用幸运特性来选择骰子，也不能使用偷袭攻击。",
 												"{@feat 幸运}特性是一般规则例外的一个很好的例子。在这种情况下的一般规则是告诉我们优势和劣势如何运作的规则。具体规则是幸运特性，我们知道如果它们相互冲突，具体规则会优先于一般规则。",
 												"如果DM希望即使在使用{@feat 幸运}特性时，优势和劣势能发挥其正常作用，这里有一种方法可以做到：为优势/劣势掷两个d20，为Lucky特性掷第三个{@dice d20}，淘汰三个骰子中的一个，然后使用剩下的两个骰子中的较高者（对于优势）或较低者（对于劣势）"
 											]
@@ -1492,7 +1492,7 @@
 									"entries": [
 										{
 											"type": "entries",
-											"name": "攻击检定和豁免投掷基本上是专门的能力检定吗？",
+											"name": "攻击检定和豁免检定基本上是专门的属性检定吗？",
 											"ENG_name": "Are attack rolls and saving throws basically specialized ability checks?",
 											"id": "098",
 											"entries": [
@@ -1502,39 +1502,39 @@
 										},
 										{
 											"type": "entries",
-											"name": "你能否在能力检定上获得重击？例如，在摔跤尝试中，是重击获胜，还是最高数字获胜？",
+											"name": "你能否在属性检定上获得重击？例如，在摔跤尝试中，是重击获胜，还是最高数字获胜？",
 											"ENG_name": "Can you get a critical hit on an ability check? For example, on a grapple attempt, does a critical win, or the highest number?",
 											"id": "099",
 											"entries": [
-												"能力检定不会有重击。攻击骰则有。"
+												"属性检定不会有重击。攻击骰则有。"
 											]
 										},
 										{
 											"type": "entries",
-											"name": "在能力检定时，1点是自动失败吗？",
+											"name": "在属性检定时，1点是自动失败吗？",
 											"ENG_name": "Is a 1 on an ability check an automatic failure?",
 											"id": "09a",
 											"entries": [
-												"在能力检定或豁免投掷中掷出1点不是自动失败。在攻击骰中掷出1点是自动未命中。"
+												"在属性检定或豁免检定中掷出1点不是自动失败。在攻击骰中掷出1点是自动未命中。"
 											]
 										},
 										{
 											"type": "entries",
-											"name": "如果您施放了诅咒法术并选择力量作为受影响的能力，目标在使用力量的攻击检定和豁免投掷上是否也处于不利状态？",
+											"name": "如果您施放了诅咒法术并选择力量作为受影响的能力，目标在使用力量的攻击检定和豁免检定上是否也处于不利状态？",
 											"ENG_name": "If you cast the hex spell and choose Strength as the affected ability, does the target also have disadvantage on attack rolls and saving throws that use Strength?",
 											"id": "09b",
 											"entries": [
-												"不，{@spell 脆弱诅咒}法术的描述说它影响使用所选能力的属性检定。描述中没有提到影响攻击掷骰或豁免掷骰。这意味着，例如，如果您选择体质，法术的目标在尝试维持{@book 专注|PHB|10|专注}于一个法术时不会遭受劣势，因为专注需要进行体质豁免掷骰，而不是体质检定。",
+												"不，{@spell 脆弱诅咒}法术的描述说它影响使用所选能力的属性检定。描述中没有提到影响攻击掷骰或豁免检定。这意味着，例如，如果您选择体质，法术的目标在尝试维持{@book 专注|PHB|10|专注}于一个法术时不会遭受劣势，因为专注需要进行体质豁免检定，而不是体质检定。",
 												"想知道这个法术的意图吗？这个法术旨在成为一个经典的厄运\u2014\u2014就像民间传说中看到的那样\u2014\u2014它在战斗中和战斗外都很有用。在战斗中，这个法术提供了一些额外的黯蚀伤害。在战斗之外，你可以通过施放这个法术并给一个狡猾的外交官的感知检定带来劣势，来破坏他或她的计划。"
 											]
 										},
 										{
 											"type": "entries",
-											"name": "吟游诗人的万事通特性是否适用于不使用吟游诗人熟练加值的攻击卷和豁免投掷？",
+											"name": "吟游诗人的万事通特性是否适用于不使用吟游诗人熟练加值的攻击卷和豁免检定？",
 											"ENG_name": "Does the bard's Jack of All Trades feature apply to attack rolls and saving throws that don't use the bard's proficiency bonus?",
 											"id": "09c",
 											"entries": [
-												"不。这项特性仅对能力检定有益。别忘了先攻检定是敏捷检定，所以万事通专长可以提高吟游诗人的先攻，假设吟游诗人尚未将其熟练加值加到它上面。"
+												"不。这项特性仅对属性检定有益。别忘了先攻检定是敏捷检定，所以万事通专长可以提高吟游诗人的先攻，假设吟游诗人尚未将其熟练加值加到它上面。"
 											]
 										},
 										{
@@ -1543,7 +1543,7 @@
 											"ENG_name": "When you make a Strength (Athletics) check to grapple or shove someone, are you making an attack roll?",
 											"id": "09d",
 											"entries": [
-												"不。那个检定是一个能力检定，所以与攻击卷有关的游戏中的效果不适用于它。回到之前的问题，{@spell 脆弱诅咒}法术可以用来降低摔跤者的有效性。如果摔跤者的目标处于{@action 回避}动作的影响下，那个动作不会抑制{@book 擒抱|PHB|9|擒抱}，因为闪避不影响能力检定。"
+												"不。那个检定是一个属性检定，所以与攻击卷有关的游戏中的效果不适用于它。回到之前的问题，{@spell 脆弱诅咒}法术可以用来降低摔跤者的有效性。如果摔跤者的目标处于{@action 回避}动作的影响下，那个动作不会抑制{@book 擒抱|PHB|9|擒抱}，因为闪避不影响属性检定。"
 											]
 										}
 									]
@@ -1616,7 +1616,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "{@condition 恐慌}状态指的是\"当恐惧的源头在视线范围内。\"这是否意味着即使源头是{@condition 隐形}但你对其空间有清晰的视线，你仍然在攻击掷骰和能力检定时处于劣势？",
+											"name": "{@condition 恐慌}状态指的是\"当恐惧的源头在视线范围内。\"这是否意味着即使源头是{@condition 隐形}但你对其空间有清晰的视线，你仍然在攻击掷骰和属性检定时处于劣势？",
 											"ENG_name": "The {@condition 恐慌} condition says \"while the source of its fear is within line of sight.\" Does that mean you have disadvantage on attack rolls and ability checks even if the source is {@condition 隐形} but you have a clear line to its space?",
 											"entries": [
 												"不。如果你看不见某物，那它就不在你的视野范围内。说到\"视野范围\"，游戏使用的是这个英语术语的普通含义，在规则中没有特殊含义。"
@@ -1670,7 +1670,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "如果一个法师在突袭轮中施放像火球这样的法术，敌人在他们的豁免投掷上会受到劣势吗？",
+											"name": "如果一个法师在突袭轮中施放像火球这样的法术，敌人在他们的豁免检定上会受到劣势吗？",
 											"ENG_name": "If a wizard casts a spell like fireball during a surprise round, do the enemies get disadvantage on their saving throw?",
 											"id": "0aa",
 											"entries": [
@@ -2089,7 +2089,7 @@
 											"id": "0d1",
 											"entries": [
 												"如果一个法术对你有可感知的效果，或者其文本说明你知道它（见{@i PHB}，'{@book 目标|PHB|10|目标}'部分），你就会意识到一个法术正在影响你。大多数法术都是显而易见的。例如，{@spell 火球术}会烧伤你，{@spell 疗伤术}会治愈你，{@spell 命令术}会迫使你突然做出你没有打算做的事情。某些法术更为微妙，但你会在法术描述中指定的时间意识到法术。{@spell 魅惑人类}和{@spell 侦测思想}就是这样的法术的例子。",
-												"有些法术如此微妙，以至于您可能不知道自己曾经受到它们的影响。这类法术的典型例子是{@spell 暗示术}。假设您没有注意到施法者施放法术，您可能只会记得施法者说：'你们正在寻找的宝藏不在这里。去下一个塔楼顶层的房间里找找看。'您未能通过豁免投掷，然后您就去了另一个塔楼，认为是您自己的想法去那里。如果发现了法术的证据，您和您的同伴可能会推断出您被迷惑了。最终是否发现不易察觉的法术的存在，取决于DM是否让您发现。发现通常通过使用像{@skill 奥秘}、{@skill 调查}、{@skill 洞悉}和{@skill 察觉}这样的技能，或者通过像{@spell 侦测魔法}这样的法术。"
+												"有些法术如此微妙，以至于您可能不知道自己曾经受到它们的影响。这类法术的典型例子是{@spell 暗示术}。假设您没有注意到施法者施放法术，您可能只会记得施法者说：'你们正在寻找的宝藏不在这里。去下一个塔楼顶层的房间里找找看。'您未能通过豁免检定，然后您就去了另一个塔楼，认为是您自己的想法去那里。如果发现了法术的证据，您和您的同伴可能会推断出您被迷惑了。最终是否发现不易察觉的法术的存在，取决于DM是否让您发现。发现通常通过使用像{@skill 奥秘}、{@skill 调查}、{@skill 洞悉}和{@skill 察觉}这样的技能，或者通过像{@spell 侦测魔法}这样的法术。"
 											]
 										},
 										{
@@ -2312,7 +2312,7 @@
 											"id": "0e7",
 											"entries": [
 												"在那种情况下，难度等级是15。当临时生命值为你吸收伤害时，你仍然在受到伤害，只是没有影响到你的真实生命值。",
-												"相比之下，像法师的奥术守卫这样的特性可以为你承受伤害，可能消除了进行体质豁免投掷的需要，或者至少降低了那个豁免的难度等级。"
+												"相比之下，像法师的奥术守卫这样的特性可以为你承受伤害，可能消除了进行体质豁免检定的需要，或者至少降低了那个豁免的难度等级。"
 											]
 										},
 										{
@@ -3076,7 +3076,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "具有魔法抗性的生物是否在对抗引导神力能力，如\"转化不忠者\"时，在豁免投掷上有优势？",
+											"name": "具有魔法抗性的生物是否在对抗引导神力能力，如\"转化不忠者\"时，在豁免检定上有优势？",
 											"ENG_name": "Does a creature with Magic Resistance have advantage on saving throws against Channel Divinity abilities, such as Turn the Faithless?",
 											"id": "125",
 											"entries": [
@@ -3143,7 +3143,7 @@
 											"ENG_name": "Is there a limit to the number of creatures a vampire can charm at once?",
 											"id": "12b",
 											"entries": [
-												"不，一个吸血鬼同时魅惑的生物数量没有限制。每次使用魅惑动作时，吸血鬼可以针对不同的类人生物，如果他们的豁免投掷不成功，可能会使整个敌人群体都被魅惑。"
+												"不，一个吸血鬼同时魅惑的生物数量没有限制。每次使用魅惑动作时，吸血鬼可以针对不同的类人生物，如果他们的豁免检定不成功，可能会使整个敌人群体都被魅惑。"
 											]
 										},
 										{
@@ -3152,7 +3152,7 @@
 											"ENG_name": "How does a monster's Leadership ability work?",
 											"id": "12c",
 											"entries": [
-												"一个生物作为动作激活领导力。直到好处结束，当可见的盟友在范围内进行攻击检定或豁免投掷时，生物可以给予一个骰子。"
+												"一个生物作为动作激活领导力。直到好处结束，当可见的盟友在范围内进行攻击检定或豁免检定时，生物可以给予一个骰子。"
 											]
 										},
 										{
@@ -3282,7 +3282,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "精灵是否会对爱情药水进行豁免投掷，因为它是一种魅惑？描述暗示没有豁免。",
+											"name": "精灵是否会对爱情药水进行豁免检定，因为它是一种魅惑？描述暗示没有豁免。",
 											"ENG_name": "Would an elf get a saving throw versus a philter of love as it's a charm? The description implies there is no save",
 											"id": "138",
 											"entries": [

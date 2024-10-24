@@ -999,18 +999,18 @@
 				"属性值提升|德鲁伊|XPHB|4",
 				"野性复苏|德鲁伊|XPHB|5",
 				{
-					"classFeature": "子职业能力|德鲁伊|XPHB|6",
+					"classFeature": "子职特性|德鲁伊|XPHB|6",
 					"gainSubclassFeature": true
 				},
 				"元素之怒|德鲁伊|XPHB|7",
 				"属性值提升|德鲁伊|XPHB|8",
 				{
-					"classFeature": "子职业能力|德鲁伊|XPHB|10",
+					"classFeature": "子职特性|德鲁伊|XPHB|10",
 					"gainSubclassFeature": true
 				},
 				"属性值提升|德鲁伊|XPHB|12",
 				{
-					"classFeature": "子职业能力|德鲁伊|XPHB|14",
+					"classFeature": "子职特性|德鲁伊|XPHB|14",
 					"gainSubclassFeature": true
 				},
 				"元素之怒增强|德鲁伊|XPHB|15",
@@ -2450,7 +2450,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "准备的1级以上法术",
+							"name": "1环及以上的准备法术",
 							"ENG_name": "Prepared Spells of Level 1+",
 							"entries": [
 								"你准备这个特性可用的1环法术列表。开始时，从{@filter 德鲁伊法术列表|spells|class=德鲁伊}中选择四个1环法术。推荐选择{@spell 化兽为友|XPHB}、{@spell 疗伤术|XPHB}、{@spell 妖火|XPHB}和{@spell 雷鸣波|XPHB}。",
@@ -2460,7 +2460,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "更换你的准备法术",
+							"name": "改变你的准备法术",
 							"ENG_name": "Changing Your Prepared Spells",
 							"entries": [
 								"每当你完成一次{@variantrule 长休|XPHB}时，你可以更改你的准备法术列表，用你拥有法术位的其他德鲁伊法术替换其中任何法术。"
@@ -2654,7 +2654,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 81,
@@ -2711,7 +2711,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 81,
@@ -2735,7 +2735,7 @@
 			]
 		},
 		{
-			"name": "子职业能力",
+			"name": "子职特性",
 			"ENG_name": "Subclass Feature",
 			"source": "XPHB",
 			"page": 81,
@@ -4705,7 +4705,7 @@
 			"subclassSource": "XPHB",
 			"level": 3,
 			"entries": [
-				"作为一次{@action 魔法|XPHB}动作，你可以消耗一次你的{@variantrule 球体 [区域效果]|XPHB|球状}，并选择一个距离你60英尺内的点。在以该点为中心的10英尺半径{@variantrule 球体 [区域效果]|XPHB|球状}中，瞬间出现赋予活力的花朵和吸取生命的荆棘。你选择的每个生物必须进行一次体质豁免掷骰，对抗你的法术豁免DC，失败则受到{@damage 2d6}点坏死伤害，成功则受到一半的伤害。你选择的那个区域内的一个生物恢复{@dice 2d6}点{@variantrule 生命值|XPHB}。",
+				"作为一次{@action 魔法|XPHB}动作，你可以消耗一次你的{@variantrule 球体 [区域效果]|XPHB|球状}，并选择一个距离你60英尺内的点。在以该点为中心的10英尺半径{@variantrule 球体 [区域效果]|XPHB|球状}中，瞬间出现赋予活力的花朵和吸取生命的荆棘。你选择的每个生物必须进行一次体质豁免检定，对抗你的法术豁免DC，失败则受到{@damage 2d6}点坏死伤害，成功则受到一半的伤害。你选择的那个区域内的一个生物恢复{@dice 2d6}点{@variantrule 生命值|XPHB}。",
 				"当你达到德鲁伊等级10（{@dice 4d6}）和14（{@dice 3d6}）时，伤害和治疗增加{@dice 4d6}。"
 			]
 		},
@@ -4932,7 +4932,7 @@
 							"name": "增强坚韧",
 							"ENG_name": "Increased Toughness",
 							"entries": [
-								"你可以将你的魅力修正值加到你的体质豁免投掷上。"
+								"你可以将你的魅力修正值加到你的体质豁免检定上。"
 							]
 						}
 					]
@@ -5070,7 +5070,7 @@
 			"level": 3,
 			"entries": [
 				"作为一次{@variantrule 附加动作|XPHB}，你可以消耗一次你的{@variantrule 野性变身|XPHB}特性来显现一个5英尺的{@variantrule 辐射[影响区域]|XPHB|辐射}，它以海浪喷雾的形式围绕你，持续时间为10分钟。如果你取消它（无需动作）、再次显现它，或者处于{@condition 无力|XPHB}状态，它将提前结束。",
-				"当你显现{@variantrule 光环 [效应区域]|XPHB|光环}时，以及在你的随后回合中作为{@variantrule 附赠动作|XPHB}，你可以选择你在{@variantrule 光环 [效应区域]|XPHB|光环}中能看到的另一个生物。目标必须成功通过一次对抗你的法术豁免DC的体质豁免掷骰，否则将受到寒冷伤害，并且如果该生物体型为大型或更小，则会被推向远离你最多15英尺。为了确定这个伤害，掷出等于你智慧调整值（最少一个骰子）的d6数量。"
+				"当你显现{@variantrule 光环 [效应区域]|XPHB|光环}时，以及在你的随后回合中作为{@variantrule 附赠动作|XPHB}，你可以选择你在{@variantrule 光环 [效应区域]|XPHB|光环}中能看到的另一个生物。目标必须成功通过一次对抗你的法术豁免DC的体质豁免检定，否则将受到寒冷伤害，并且如果该生物体型为大型或更小，则会被推向远离你最多15英尺。为了确定这个伤害，掷出等于你智慧调整值（最少一个骰子）的d6数量。"
 			]
 		},
 		{
@@ -5254,7 +5254,7 @@
 					"name": "龙",
 					"ENG_name": "Dragon",
 					"entries": [
-						"一只智慧巨龙的星座出现在你身上。当你进行智力或智慧检定，或进行体质豁免投掷以维持{@status 专注|XPHB}时，你可以将骰子上的9或更低视为10。"
+						"一只智慧巨龙的星座出现在你身上。当你进行智力或智慧检定，或进行体质豁免检定以维持{@status 专注|XPHB}时，你可以将骰子上的9或更低视为10。"
 					]
 				}
 			]
