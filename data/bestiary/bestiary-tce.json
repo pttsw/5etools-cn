@@ -98,14 +98,14 @@
 					"name": "爪击Claws（仅限史拉蟾）",
 					"ENG_name": "Claws (Slaad Only)",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害。如果目标是一个生物，直到异怪下一回合开始之前，它不能恢复生命值。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 3 + 召唤法术等级}挥砍伤害。如果目标是一个生物，直到异怪下一回合开始之前，它不能恢复生命值。"
 					]
 				},
 				{
 					"name": "灵能猛击Psychic Slam（仅限星之子）",
 					"ENG_name": "Psychic Slam (Star Spawn Only)",
 					"entries": [
-						"{@atk ms} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
+						"{@atk ms} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 心灵伤害。"
 					]
 				}
 			],
@@ -354,7 +354,7 @@
 					"name": "巨锤",
 					"ENG_name": "Maul",
 					"entries": [
-						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d8 + 2 + 基础攻击加值}挥砍伤害。"
+						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d8 + 2 + 个人骰}挥砍伤害。"
 					]
 				}
 			],
@@ -442,7 +442,7 @@
 					"name": "攫击",
 					"ENG_name": "Binding Strike",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d6 + 2 + PB}穿刺伤害或{@damage 1d6 + 2 + PB}钝击伤害（由你选择），并且目标被{@condition grappled}（逃脱DC等于你的施法豁免DC）。直到这个缠绕结束，野兽不能对另一个目标使用这个攻击。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d6 + 2 + 职业等级加值}穿刺伤害或{@damage 1d6 + 2 + 职业等级加值}钝击伤害（由你选择），并且目标被{@condition 擒抱}（逃脱DC等于你的施法豁免DC）。直到这个缠绕结束，野兽不能对另一个目标使用这个攻击。"
 					]
 				}
 			],
@@ -633,7 +633,7 @@
 					"name": "巨锤",
 					"ENG_name": "Maul",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d8 + 4 + summonSpellLevel} 穿刺伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d8 + 4 + 召唤法术等级} 穿刺伤害。"
 					]
 				}
 			],
@@ -1169,7 +1169,7 @@
 					"name": "力场猛击",
 					"ENG_name": "Force-Empowered Slam",
 					"entries": [
-						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d10 + 基础攻击加值}力场伤害。"
+						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d10 + PB}力场伤害。"
 					]
 				}
 			],
@@ -1305,7 +1305,7 @@
 					"name": "猛击",
 					"ENG_name": "Slam",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害（仅限空气、土和水）或火焰伤害（仅限火）。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害（仅限空气、土和水）或火焰伤害（仅限火）。"
 					]
 				}
 			],
@@ -1351,7 +1351,7 @@
 								"name": "猛击",
 								"ENG_name": "Slam",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
+									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
 								]
 							}
 						}
@@ -1387,7 +1387,7 @@
 								"name": "猛击",
 								"ENG_name": "Slam",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
+									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
 								]
 							}
 						}
@@ -1466,7 +1466,7 @@
 								"name": "猛击",
 								"ENG_name": "Slam",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
+									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
 								]
 							}
 						}
@@ -1544,7 +1544,7 @@
 					"name": "短剑",
 					"ENG_name": "Shortsword",
 					"entries": [
-						"{@atk mw} 命中：您的法术攻击调整值，触及：5尺，单一目标。{@h}穿刺伤害{@damage 1d6 + 3 + 召唤法术等级}加上{@damage 1d6}力场伤害。"
+						"{@atk mw} 命中：您的法术攻击调整值，触及：5尺，单一目标。{@h}穿刺伤害{@damage 1d6 + 3 + 召唤法术等级}加上{@damage + 1d6}力场伤害。"
 					]
 				}
 			],
@@ -1746,7 +1746,7 @@
 					"name": "啃咬（仅限于恶魔）",
 					"ENG_name": "Bite (Demon Only)",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 黯蚀伤害。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + 召唤法术等级} 黯蚀伤害。"
 					]
 				},
 				{
@@ -1760,7 +1760,7 @@
 					"name": "投掷烈焰（仅限于魔鬼）",
 					"ENG_name": "Hurl Flame (Devil Only)",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，射程150尺，单一目标。{@h}{@damage 2d6 + 3 + summonSpellLevel} 火焰伤害。如果目标是一个可燃物体且没有被穿戴或携带，它也会着火。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，射程150尺，单一目标。{@h}{@damage 2d6 + 3 + 召唤法术等级} 火焰伤害。如果目标是一个可燃物体且没有被穿戴或携带，它也会着火。"
 					]
 				}
 			],
@@ -2587,7 +2587,7 @@
 					"name": "力场动能撕扯",
 					"ENG_name": "Force-Empowered Rend",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d8 + PB}力场伤害。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d8 + 职业等级加值}力场伤害。"
 					]
 				},
 				{
@@ -2703,21 +2703,21 @@
 					"name": "致死之触（仅限于虚灵）",
 					"ENG_name": "Deathly Touch (Ghostly Only)",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack}命中，触及范围5尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 黯蚀伤害，生物必须通过对抗你法术豁免DC的感知豁免检定，否则直到目标下一个回合结束时被{@condition 恐惧}不死生物。"
+						"{@atk mw} {@hitYourSpellAttack}命中，触及范围5尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 黯蚀伤害，生物必须通过对抗你法术豁免DC的感知豁免检定，否则直到目标下一个回合结束时被{@condition 恐慌}不死生物。"
 					]
 				},
 				{
 					"name": "暗澹箭（仅限于骷髅）",
 					"ENG_name": "Grave Bolt (Skeletal Only)",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 黯蚀伤害。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + 召唤法术等级} 黯蚀伤害。"
 					]
 				},
 				{
 					"name": "腐烂爪击（仅限于腐尸）。",
 					"ENG_name": "Rotting Claw (Putrid Only)",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack}命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + summonSpellLevel} 挥砍伤害。如果目标处于{@condition poisoned}状态，它必须在对抗你的法术豁免DC的体质豁免检定中成功，否则在其下一回合结束前处于{@condition paralyzed}状态。"
+						"{@atk mw} {@hitYourSpellAttack}命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + 召唤法术等级} 挥砍伤害。如果目标处于{@condition 中毒}状态，它必须在对抗你的法术豁免DC的体质豁免检定中成功，否则在其下一回合结束前处于{@condition 麻痹}状态。"
 					]
 				}
 			],
@@ -2950,7 +2950,7 @@
 					"name": "火种",
 					"ENG_name": "Flame Seed",
 					"entries": [
-						"{@atk rw} {@hitYourSpellAttack}命中，射程60尺，你能看到的一个目标。{@h}{@damage 1d6 + PB} 火焰伤害。"
+						"{@atk rw} {@hitYourSpellAttack}命中，射程60尺，你能看到的一个目标。{@h}{@damage 1d6 + 基础攻击加值} 火焰伤害。"
 					]
 				},
 				{

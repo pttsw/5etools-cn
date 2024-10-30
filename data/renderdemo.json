@@ -27,7 +27,7 @@
 						"骰子滚动标签；使用{@dice 1d2-2+2d3+5}进行常规骰子滚动（{@dice 1d6;2d6}用于多个选项；{@dice 1d6 + #$prompt_number:min=1,title=请输入一个数字!,default=123$#}用于输入提示），具有扩展的{@dice 1d20+2|显示文本}和{@dice 1d20+2|显示文本|由名字掷骰}，以及一个特殊的'命中'版本，它假定要滚动一个d20 {@hit +7}（并且在{@kbd SHIFT键}+点击时滚动优势，在{@kbd ALT}+点击时滚动劣势）。还有{@damage 1d12+3}，它将在{@kbd SHIFT键}+点击时滚动重击，并且在{@kbd ALT}+点击时滚动半伤害（向下取整），以及{@d20 -4}，它也将滚动优势/劣势，尽管在适当的地方推荐使用@hit标签。法术可以有缩放骰子标签，（1级时的伤害为2d6或3d6，每超过2级就额外添加一个{@scaledamage 2d6;3d6|2-9|1d6}；或者，使用1点psi点时滚动2d6，每额外花费一个psi点就添加一个{@scaledice 2d6|1,3,5,7,9|1d6|PSI|额外金额}），用于当法术效果在更高级别时扩展。{@ability 力量 20}, {@savingThrow 力量 5}, 和{@skillCheck 动物处理 5}用作内部简写，但可能在其他地方也有用。",
 						"自动骰子标签；如上所述，但在渲染时会自动掷骰子并显示结果：{@autodice 2d10+2}。",
 						"机会标签；类似于骰子滚动标签，但输出成功/失败。与骰子标签相似的语法：{@chance 50}；{@chance 50|显示文本}；{@chance 50|显示文本|由名字掷骰}；{@chance 50|显示文本|由名字掷骰|成功时的文本}；{@chance 50|显示文本|由名字掷骰|成功时的文本|失败时文本}。",
-						"召唤/伙伴特定标签：{@hitYourSpellAttack}（{@hitYourSpellAttack 带可选显示文本}), {@dcYourSpellSave}（{@dcYourSpellSave 带可选显示文本}）。",
+						"召唤/伙伴特定标签：{@hitYourSpellAttack}（{@hitYourSpellAttack 可选的显示文本}), {@dcYourSpellSave}（{@dcYourSpellSave 可选的显示文本}）。",
 						"充能标签；为能力充能输出成功/失败。在能力标题中使用{@recharge}表示'(Recharge 6)'，使用{@recharge 4}表示'(Recharge 4\u20136)'。",
 						"硬币翻转标签；{@coinflip} 或 {@coinflip 显示文本|角色名|成功文本|失败文本}",
 						"技能和感知标签；{@skill 运动}/{@skill 察觉}（大小写敏感）和{@sense 真实视觉}/{@sense 黑暗视觉}（大小写不敏感）在悬停时提供提示信息。",
