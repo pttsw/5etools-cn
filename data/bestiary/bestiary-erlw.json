@@ -143,7 +143,7 @@
 					"name": "爪击",
 					"ENG_name": "Claw",
 					"entries": [
-						"{@atk mw} 命中骰：14，触及5尺，单一目标。{@h}17（{@damage 3d6 + 7}）挥砍伤害。"
+						"{@atk mw} 命中{@hit 14}，触及5尺，单一目标。{@h}17（{@damage 3d6 + 7}）挥砍伤害。"
 					]
 				},
 				{
@@ -1225,7 +1225,7 @@
 					"name": "触手鞭打",
 					"ENG_name": "Tentacle Whip",
 					"entries": [
-						"{@atk mw} 命中骰15，触及范围10尺，单一目标。{@h}24 ({@damage 3d10 + 8}) 挥砍伤害。如果目标是中等大小或更小的生物，它将被{@condition grappled}（逃脱{@dc 23}），被拉入Dyrnn 5尺范围内的未占用空间，并必须成功进行{@dc 23}智力豁免检定，否则直到此{@condition grappled}结束前一直{@condition stunned}。Dyrnn不能在此次{@condition grappled}结束前用同一触手鞭击另一个目标。Dyrnn有两个触手鞭。"
+						"{@atk mw} 命中{@hit 15}，触及范围10尺，单一目标。{@h}24 ({@damage 3d10 + 8}) 挥砍伤害。如果目标是中等大小或更小的生物，它将被{@condition grappled}（逃脱{@dc 23}），被拉入Dyrnn 5尺范围内的未占用空间，并必须成功进行{@dc 23}智力豁免检定，否则直到此{@condition grappled}结束前一直{@condition stunned}。Dyrnn不能在此次{@condition grappled}结束前用同一触手鞭击另一个目标。Dyrnn有两个触手鞭。"
 					]
 				},
 				{
@@ -1240,7 +1240,7 @@
 					"name": "采脑",
 					"ENG_name": "Extract Brain",
 					"entries": [
-						"{@atk mw} 命中骰{@hit 15}命中，触及范围5尺，一个被Dyrryn{@condition 失能}且处于{@condition 擒抱}（失去行动能力）状态的生物。{@h}55（{@damage 10d10}）点穿刺伤害。如果这伤害使目标生命值降至0点，Dyrryn通过提取并吞噬其大脑来杀死目标。"
+						"{@atk mw} 命中骰命中{@hit 15}，触及范围5尺，一个被Dyrryn{@condition 失能}且处于{@condition 擒抱}（失去行动能力）状态的生物。{@h}55（{@damage 10d10}）点穿刺伤害。如果这伤害使目标生命值降至0点，Dyrryn通过提取并吞噬其大脑来杀死目标。"
 					]
 				}
 			],
@@ -2181,14 +2181,14 @@
 					"name": "奥术爆炸",
 					"ENG_name": "Arcane Blast",
 					"entries": [
-						"{@atk rs} {@hit 13} 命中，射程120尺，单一目标。{@h}12 ({@damage 1d10 + 7}) 力场伤害。"
+						"{@atk rs} 命中{@hit 13}，射程120尺，单一目标。{@h}12 ({@damage 1d10 + 7}) 力场伤害。"
 					]
 				},
 				{
 					"name": "灵魂绑定",
 					"ENG_name": "Soul Binding",
 					"entries": [
-						"{@atk ms} 命中骰：13，触及5尺，单一目标。{@h}29（{@damage 4d10 + 7}）黯蚀伤害。如果生物因这次攻击降至0生命值，则死亡，其灵魂被囚禁在夸里的一只眼睛中。除非夸里被摧毁，否则目标无法通过任何手段复活，除非使用{@spell 许愿术}。"
+						"{@atk ms} 命中{@hit 13}，触及5尺，单一目标。{@h}29（{@damage 4d10 + 7}）黯蚀伤害。如果生物因这次攻击降至0生命值，则死亡，其灵魂被囚禁在夸里的一只眼睛中。除非夸里被摧毁，否则目标无法通过任何手段复活，除非使用{@spell 祈愿术}。"
 					]
 				},
 				{
@@ -2704,7 +2704,7 @@
 					"name": "寒冰触碰（戏法）",
 					"ENG_name": "Chill Touch (Cantrip)",
 					"entries": [
-						"{@atk rs} 命中骰：15，射程120尺，单一生物。{@h}18（{@damage 4d8}）黯蚀伤害，目标直到Illmarrow下一回合开始前不能恢复生命值。如果目标是不死生物，直到Illmarrow下一回合结束前，其对Illmarrow的攻击检定还有劣势。"
+						"{@atk rs} 命中{@hit 15}，射程120尺，单一生物。{@h}18（{@damage 4d8}）黯蚀伤害，目标直到Illmarrow下一回合开始前不能恢复生命值。如果目标是不死生物，直到Illmarrow下一回合结束前，其对Illmarrow的攻击检定还有劣势。"
 					]
 				},
 				{
@@ -3813,14 +3813,14 @@
 					"name": "生成近战武器",
 					"ENG_name": "Spawned Melee Weapon",
 					"entries": [
-						"{@atk mw} {@hit 17} 命中，触及范围10尺，单一目标。{@h}28 ({@damage 3d12 + 9}) 力场伤害。"
+						"{@atk mw} 命中{@hit 17}，触及范围10尺，单一目标。{@h}28 ({@damage 3d12 + 9}) 力场伤害。"
 					]
 				},
 				{
 					"name": "生成远程武器",
 					"ENG_name": "Spawned Ranged Weapon",
 					"entries": [
-						"{@atk rw} {@hit 12} 命中，射程150/600尺，单一目标。{@h}17 ({@damage 3d8 + 4}) 力场伤害。"
+						"{@atk rw} 命中{@hit 12}，射程150/600尺，单一目标。{@h}17 ({@damage 3d8 + 4}) 力场伤害。"
 					]
 				},
 				{
@@ -4173,7 +4173,7 @@
 					"name": "魔法法杖",
 					"ENG_name": "Magic Staff",
 					"entries": [
-						"{@atk mw} 命中骰：12，触及5尺，单一目标。{@h}36（{@damage 5d12 + 4}）力场伤害。"
+						"{@atk mw} 命中{@hit 12}，触及5尺，单一目标。{@h}36（{@damage 5d12 + 4}）力场伤害。"
 					]
 				},
 				{

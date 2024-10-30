@@ -2705,7 +2705,7 @@
 								"name": "唤鱼三叉戟",
 								"ENG_name": "Trident of Fish Command",
 								"entries": [
-									"{@atk mw} 命中骰：14，触及范围10尺，单一目标。{@h}造成19点（{@damage 3d6 + 9}）点穿刺伤害，或者如果用双手使用则造成（{@damage 3d8 + 9}）点穿刺伤害。"
+									"{@atk mw} 命中{@hit 14}，触及范围10尺，单一目标。{@h}造成19点（{@damage 3d6 + 9}）点穿刺伤害，或者如果用双手使用则造成（{@damage 3d8 + 9}）点穿刺伤害。"
 								]
 							}
 						}
@@ -3425,7 +3425,7 @@
 					"name": "断裂的链条",
 					"ENG_name": "Broken Chain",
 					"entries": [
-						"{@atk mw} 命中骰：14，触及范围10尺，单一目标。{@h}造成18点（{@damage 3d6 + 9}）钝击伤害。"
+						"{@atk mw} 命中{@hit 14}，触及范围10尺，单一目标。{@h}造成18点（{@damage 3d6 + 9}）钝击伤害。"
 					]
 				},
 				{
@@ -4060,7 +4060,7 @@
 					"name": "猛击",
 					"ENG_name": "Slam",
 					"entries": [
-						"{@atk mw} 命中骰：12，触及15尺，单一目标。{@h}15 ({@damage 3d6 + 5}) 钝击伤害加上35 ({@damage 10d6}) 火焰伤害"
+						"{@atk mw} 命中{@hit 12}，触及15尺，单一目标。{@h}15 ({@damage 3d6 + 5}) 钝击伤害加上35 ({@damage 10d6}) 火焰伤害"
 					]
 				}
 			],
@@ -5441,7 +5441,7 @@
 								"name": "巨锤",
 								"ENG_name": "Maul",
 								"entries": [
-									"{@atk mw} 命中骰：14，触及10尺，单一目标。{@h}30 ({@damage 6d6 + 9}) 钝击伤害。"
+									"{@atk mw} 命中{@hit 14}，触及10尺，单一目标。{@h}30 ({@damage 6d6 + 9}) 钝击伤害。"
 								]
 							}
 						}
@@ -5518,7 +5518,7 @@
 					"name": "啃咬",
 					"ENG_name": "Bite",
 					"entries": [
-						"{@atk 近战武器} {@hit 5} 命中，射程5英尺，一个目标。{@h}7 ({@damage 1d8 + 5}) 穿刺伤害。如果目标是小型或更小的生物，它必须成功通过一个{@dc 13} 敏捷豁免，否则会被蠕虫吞下。被吞下的生物处于{@condition 盲目}和{@condition 受限}状态，它对蠕虫外部的攻击和其他效果有{quickref 掩护||3||完全掩护}，并且在蠕虫的每个回合开始时受到3 ({@damage 1d6}) 酸液伤害。",
+						"{@atk mw} {@hit 5} 命中，射程5英尺，一个目标。{@h}7 ({@damage 1d8 + 5}) 穿刺伤害。如果目标是小型或更小的生物，它必须成功通过一个{@dc 13} 敏捷豁免，否则会被蠕虫吞下。被吞下的生物处于{@condition 盲目}和{@condition 受限}状态，它对蠕虫外部的攻击和其他效果有{quickref 掩护||3||完全掩护}，并且在蠕虫的每个回合开始时受到3 ({@damage 1d6}) 酸液伤害。",
 						"如果虫蛹在单个回合内被其内部的生物造成10点或更多的伤害，虫蛹必须在该回合结束时进行一次体质豁免检定，难度等级为{@dc 21}。如果失败，虫蛹将反刍所有被吞下的生物，这些生物会{@condition 倒地}在虫蛹周围10尺范围内的空间内。如果虫蛹死亡，被吞下的生物不再被它{@condition 束缚}，可以使用5尺的移动力从尸体中逃脱，并且{@condition 倒地}。"
 					]
 				},
@@ -6440,14 +6440,14 @@
 					"name": "啃咬",
 					"ENG_name": "Bite",
 					"entries": [
-						"{@atk mw} {@hit 17}命中，触及5英尺，一个目标。{@h}23（{@damage 3d8 + 10}）穿刺伤害。如果目标是大型或更小的生物被Slarkrethel{@condition 擒抱}，那个生物被吞下，抓握结束。被吞下时，生物{@condition 目盲}且{@condition 束缚}，对Slarkrethel外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在Slarkrethel的每个回合开始时受到42（{@damage 12d6}）酸伤害。如果Slarkrethel在单一回合内被其内部的生物造成50点或更多伤害，Slarkrethel必须在该回合结束时进行一次{@dc 25}体质豁免检定，否则将吐出所有被吞下的生物，它们在Slarkrethel10英尺内的某个空间内{@condition 倒地}。如果Slarkrethel死亡，被吞下的生物不再被它{@condition 束缚}，可以使用15英尺的移动力从尸体中逃脱，以{@condition 倒地}状态离开。"
+						"{@atk mw} 命中{@hit 17}，触及5英尺，一个目标。{@h}23（{@damage 3d8 + 10}）穿刺伤害。如果目标是大型或更小的生物被Slarkrethel{@condition 擒抱}，那个生物被吞下，抓握结束。被吞下时，生物{@condition 目盲}且{@condition 束缚}，对Slarkrethel外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在Slarkrethel的每个回合开始时受到42（{@damage 12d6}）酸伤害。如果Slarkrethel在单一回合内被其内部的生物造成50点或更多伤害，Slarkrethel必须在该回合结束时进行一次{@dc 25}体质豁免检定，否则将吐出所有被吞下的生物，它们在Slarkrethel10英尺内的某个空间内{@condition 倒地}。如果Slarkrethel死亡，被吞下的生物不再被它{@condition 束缚}，可以使用15英尺的移动力从尸体中逃脱，以{@condition 倒地}状态离开。"
 					]
 				},
 				{
 					"name": "触须",
 					"ENG_name": "Tentacle",
 					"entries": [
-						"{@atk mw} 命中骰：17，触及30尺，单一目标。{@h}20（{@damage 3d6 + 10}）钝击伤害，目标被{@condition grappled}（逃脱DC 18）。直到这次擒抱结束，目标处于{@condition restrained}状态。Slarkrethel有十个触手，每个触手都可以擒抱一个目标。"
+						"{@atk mw} 命中{@hit 17}，触及30尺，单一目标。{@h}20（{@damage 3d6 + 10}）钝击伤害，目标被{@condition grappled}（逃脱DC 18）。直到这次擒抱结束，目标处于{@condition restrained}状态。Slarkrethel有十个触手，每个触手都可以擒抱一个目标。"
 					]
 				},
 				{
@@ -8520,7 +8520,7 @@
 					"name": "贤者法杖",
 					"ENG_name": "Staff of the Magi",
 					"entries": [
-						"{@atk mw} {@hit 15}命中，触及10尺，单一目标。{@h}20（{@damage 3d6 + 10}）钝击伤害，或者如果用双手使用则为23（{@damage 3d8 + 10}）钝击伤害。这个伤害被视为魔法伤害。"
+						"{@atk mw} 命中{@hit 15}，触及10尺，单一目标。{@h}20（{@damage 3d6 + 10}）钝击伤害，或者如果用双手使用则为23（{@damage 3d8 + 10}）钝击伤害。这个伤害被视为魔法伤害。"
 					]
 				},
 				{
