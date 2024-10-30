@@ -1548,7 +1548,7 @@ Parser.spDurationToFull = function (dur, {isPlainText = false} = {}) {
 				case "instant":
 					return `即效${ptCondition}`;
 				case "timed":
-					return `${d.concentration ? `${isPlainText ? "专注" : Renderer.get().render(`{@status 专注}`)}, ` : ""}至多${d.duration.amount}}${Parser.spTimeUnitToFull( d.duration.type)}`;
+					return `${d.concentration ? `${isPlainText ? "专注" : Renderer.get().render(`{@status 专注}`)}, ` : ""}至多${d.duration.amount}${Parser.spTimeUnitToFull( d.duration.type)}`;
 				case "permanent": {
 					if (!d.ends) return `永久${ptCondition}`;
 
