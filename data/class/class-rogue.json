@@ -464,17 +464,6 @@
 			],
 			"spellcastingAbility": "wis",
 			"casterProgression": "full",
-			"featProgression": [
-				{
-					"name": "Epic Boon",
-					"category": [
-						"EB"
-					],
-					"progression": {
-						"19": 1
-					}
-				}
-			],
 			"startingProficiencies": {
 				"armor": [
 					"light"
@@ -561,9 +550,6 @@
 							}
 						]
 					}
-				],
-				"entries": [
-					"{@i Choose A or B:} (A) {@item Leather Armor|XPHB}, 2 {@item Dagger|XPHB|Daggers}, {@item Shortsword|XPHB}, {@item Shortbow|XPHB}, {@item Arrows (20)|XPHB|20 Arrows}, {@item Quiver|XPHB}, {@item Thieves' Tools|XPHB}, {@item Burglar's Pack|XPHB}, and 8 GP; or (B) 100 GP"
 				]
 			},
 			"multiclassing": {
@@ -2427,8 +2413,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你知道如何巧妙地攻击并利用敌人的分心。每回合一次，如果你在攻击检定上拥有{@variantrule 优势|XPHB}，并且攻击使用了轻型或远程武器，你可以对被你击中的一个生物额外造成{@variantrule 优势|XPHB}点伤害。额外伤害的类型与武器的类型相同。",
-				"如果至少有一个盟友在目标5英尺范围内，该盟友没有处于{@variantrule 劣势|XPHB}状态，并且你没有在攻击检定上处于{@condition 失能|XPHB}，那么你不需要攻击检定上的{@variantrule 劣势|XPHB}。",
+				"你知道如何巧妙地攻击并利用敌人的分心。每回合一次，如果你在攻击检定上拥有{@damage 1d6}，并且攻击使用了轻型或远程武器，你可以对被你击中的一个生物额外造成{@damage 1d6}点伤害。额外伤害的类型与武器的类型相同。",
+				"如果至少有一个盟友在目标5英尺范围内，该盟友没有处于{@variantrule 优势|XPHB}状态，并且你没有在攻击检定上处于{@condition 失能|XPHB}，那么你不需要攻击检定上的{@variantrule 优势|XPHB}。",
 				"随着你获得盗贼等级，额外伤害会增加，如盗贼特性表中的偷袭攻击列所示。"
 			]
 		},
@@ -2802,7 +2788,7 @@
 			"classSource": "XPHB",
 			"level": 18,
 			"entries": [
-				"你的躲避能力如此出色，以至于攻击者很少能对你占据上风。除非处于{@condition 失能|XPHB}状态，否则没有任何攻击检定可以对你具有{@condition 失能|XPHB}。"
+				"你的躲避能力如此出色，以至于攻击者很少能对你占据上风。除非处于{@variantrule 优势|XPHB}状态，否则没有任何攻击检定可以对你具有{@variantrule 优势|XPHB}。"
 			]
 		},
 		{
@@ -4025,7 +4011,7 @@
 							"name": "先攻",
 							"ENG_name": "Initiative",
 							"entries": [
-								"你在{@variantrule 先攻|XPHB}掷骰上具有{@variantrule 先攻|XPHB}。"
+								"你在{@variantrule 优势|XPHB}掷骰上具有{@variantrule 优势|XPHB}。"
 							]
 						},
 						{
@@ -4280,9 +4266,6 @@
 			"subclassSource": "XPHB",
 			"level": 13,
 			"header": 2,
-			"consumes": {
-				"name": "Psionic Energy Die"
-			},
 			"entries": [
 				"你可以编织一层灵能静电来掩蔽自己。作为一次{@action 魔法|XPHB}动作，你获得{@condition 隐形|XPHB}状态，持续1小时或直到你取消这个效果（无需动作）。在你对生物造成伤害或迫使生物进行豁免检定后，这种隐形立即提前结束。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一次{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
@@ -4361,7 +4344,7 @@
 							"name": "攀爬者",
 							"ENG_name": "Climber",
 							"entries": [
-								"你获得了等同于你的{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}。"
+								"你获得了等同于你的{@variantrule 攀爬速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
 							]
 						},
 						{

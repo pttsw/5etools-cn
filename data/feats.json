@@ -4427,7 +4427,7 @@
 					"name": "专注破除",
 					"ENG_name": "Concentration Breaker",
 					"entries": [
-						"当你对正在进行{@status 专注|XPHB|专注于}的生物造成伤害时，它在进行保持{@status 专注|XPHB|专注于}的豁免检定时具有劣势。"
+						"当你对正在进行{@status 专注|XPHB}的生物造成伤害时，它在进行保持{@status 专注|XPHB}的豁免检定时具有劣势。"
 					]
 				},
 				{
@@ -4732,182 +4732,6 @@
 					"ENG_name": "Repeatable",
 					"entries": [
 						"你可以多次选择这个特性，但每次必须选择不同的法术列表。"
-					]
-				}
-			],
-			"_versions": [
-				{
-					"name": "Magic Initiate; Cleric",
-					"source": "XPHB",
-					"_mod": {
-						"entries": [
-							{
-								"mode": "replaceArr",
-								"replace": "Two Cantrips",
-								"items": {
-									"name": "Two Cantrips",
-									"entries": [
-										"You learn two cantrips of your choice from the {@filter Cleric|spells|level=0;1|class=Cleric} spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feat's spells (choose when you select this feat)."
-									]
-								}
-							},
-							{
-								"mode": "replaceArr",
-								"replace": "Level 1 Spell",
-								"items": {
-									"name": "Level 1 Spell",
-									"entries": [
-										"Choose a level 1 spell from the {@filter Cleric|spells|level=0;1|class=Cleric} spell list. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have."
-									]
-								}
-							}
-						]
-					},
-					"additionalSpells": [
-						{
-							"ability": {
-								"choose": [
-									"int",
-									"wis",
-									"cha"
-								]
-							},
-							"innate": {
-								"_": {
-									"daily": {
-										"1": [
-											{
-												"choose": "level=1|class=Cleric"
-											}
-										]
-									}
-								}
-							},
-							"known": {
-								"_": [
-									{
-										"choose": "level=0|class=Cleric",
-										"count": 2
-									}
-								]
-							}
-						}
-					]
-				},
-				{
-					"name": "Magic Initiate; Druid",
-					"source": "XPHB",
-					"_mod": {
-						"entries": [
-							{
-								"mode": "replaceArr",
-								"replace": "Two Cantrips",
-								"items": {
-									"name": "Two Cantrips",
-									"entries": [
-										"You learn two cantrips of your choice from the {@filter Druid|spells|level=0;1|class=Druid} spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feat's spells (choose when you select this feat)."
-									]
-								}
-							},
-							{
-								"mode": "replaceArr",
-								"replace": "Level 1 Spell",
-								"items": {
-									"name": "Level 1 Spell",
-									"entries": [
-										"Choose a level 1 spell from the {@filter Druid|spells|level=0;1|class=Druid} spell list. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have."
-									]
-								}
-							}
-						]
-					},
-					"additionalSpells": [
-						{
-							"ability": {
-								"choose": [
-									"int",
-									"wis",
-									"cha"
-								]
-							},
-							"innate": {
-								"_": {
-									"daily": {
-										"1": [
-											{
-												"choose": "level=1|class=Druid"
-											}
-										]
-									}
-								}
-							},
-							"known": {
-								"_": [
-									{
-										"choose": "level=0|class=Druid",
-										"count": 2
-									}
-								]
-							}
-						}
-					]
-				},
-				{
-					"name": "Magic Initiate; Wizard",
-					"source": "XPHB",
-					"_mod": {
-						"entries": [
-							{
-								"mode": "replaceArr",
-								"replace": "Two Cantrips",
-								"items": {
-									"name": "Two Cantrips",
-									"entries": [
-										"You learn two cantrips of your choice from the {@filter Wizard|spells|level=0;1|class=Wizard} spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feat's spells (choose when you select this feat)."
-									]
-								}
-							},
-							{
-								"mode": "replaceArr",
-								"replace": "Level 1 Spell",
-								"items": {
-									"name": "Level 1 Spell",
-									"entries": [
-										"Choose a level 1 spell from the {@filter Wizard|spells|level=0;1|class=Wizard} spell list. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have."
-									]
-								}
-							}
-						]
-					},
-					"additionalSpells": [
-						{
-							"ability": {
-								"choose": [
-									"int",
-									"wis",
-									"cha"
-								]
-							},
-							"innate": {
-								"_": {
-									"daily": {
-										"1": [
-											{
-												"choose": "level=1|class=Wizard"
-											}
-										]
-									}
-								}
-							},
-							"known": {
-								"_": [
-									{
-										"choose": "level=0|class=Wizard",
-										"count": 2
-									}
-								]
-							}
-						}
 					]
 				}
 			]
@@ -8847,7 +8671,7 @@
 			],
 			"entries": [
 				"当你用你的徒手攻击命中目标并造成伤害时，你可以造成等同于{@dice 1d6}加上你的力量调整值的钝击伤害，而不是徒手攻击的正常伤害。如果你在进行攻击检定时没有持有任何武器或盾牌，那么{@dice d6}变为{@dice d8}。",
-				"在每个你的回合开始时，你可以对一个被你{@condition 擒抱|XPHB}的生物造成{@condition 擒抱|XPHB}点钝击伤害。"
+				"在每个你的回合开始时，你可以对一个被你{@damage 1d4}的生物造成{@damage 1d4}点钝击伤害。"
 			]
 		},
 		{

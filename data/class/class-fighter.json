@@ -219,15 +219,6 @@
 					"progression": {
 						"1": 1
 					}
-				},
-				{
-					"name": "Epic Boon",
-					"category": [
-						"EB"
-					],
-					"progression": {
-						"19": 1
-					}
 				}
 			],
 			"startingProficiencies": {
@@ -319,9 +310,6 @@
 							}
 						]
 					}
-				],
-				"entries": [
-					"{@i Choose A, B, or C:} (A) {@item Chain Mail|XPHB}, {@item Greatsword|XPHB}, {@item Flail|XPHB}, 8 {@item Javelin|XPHB|Javelins}, {@item Dungeoneer's Pack|XPHB}, and 4 GP; (B) {@item Studded Leather Armor|XPHB}, {@item Scimitar|XPHB}, {@item Shortsword|XPHB}, {@item Longbow|XPHB}, {@item Arrows (20)|XPHB|20 Arrows}, {@item Quiver|XPHB}, {@item Dungeoneer's Pack|XPHB}, and 11 GP; or (C) 155 GP"
 				]
 			},
 			"multiclassing": {
@@ -2307,7 +2295,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你拥有一个有限的身体和精神耐力源泉，你可以利用它。作为{@variantrule 附赠动作|XPHB}，你可以使用它来恢复等于{@dice 1d10}加上你的战士等级的{@dice 1d10}。",
+				"你拥有一个有限的身体和精神耐力源泉，你可以利用它。作为{@variantrule 附赠动作|XPHB}，你可以使用它来恢复等于{@variantrule 生命值|XPHB}加上你的战士等级的{@variantrule 生命值|XPHB}。",
 				"你可以使用这个特性两次。当你完成一次{@variantrule 短休|XPHB}时，你恢复一个已消耗的使用次数，当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已消耗的使用次数。",
 				"当你达到某些战士等级时，你获得这个特性的更多使用次数，如战士特性表中的第二次风列所示。"
 			]
@@ -5355,7 +5343,7 @@
 							"name": "灵力跃动",
 							"ENG_name": "Psi-Powered Leap",
 							"entries": [
-								"作为{@variantrule 附赠动作|XPHB}，你获得等于你{@variantrule 速度|XPHB}两倍的{@variantrule 速度|XPHB}，持续到当前回合结束。一旦你使用了这个{@variantrule 附赠动作|XPHB}，你不能再次使用它，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
+								"作为{@variantrule 附赠动作|XPHB}，你获得等于你{@variantrule 飞行速度|XPHB}两倍的{@variantrule 飞行速度|XPHB}，持续到当前回合结束。一旦你使用了这个{@variantrule 附赠动作|XPHB}，你不能再次使用它，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
 							]
 						},
 						{
@@ -5381,9 +5369,6 @@
 			"subclassSource": "XPHB",
 			"level": 10,
 			"header": 2,
-			"consumes": {
-				"name": "Psionic Energy Die"
-			},
 			"entries": [
 				"你对心灵伤害具有{@variantrule 提升抗性|XPHB}。此外，如果你在回合开始时处于{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态，你可以消耗一个灵能骰（无需动作）并结束所有赋予你这些状态的效果。"
 			]
@@ -5399,9 +5384,6 @@
 			"subclassSource": "XPHB",
 			"level": 15,
 			"header": 2,
-			"consumes": {
-				"name": "Psionic Energy Die"
-			},
 			"entries": [
 				"你可以用心灵动能保护自己和他人。作为{@variantrule 附赠动作|XPHB}，你可以选择自己周围30英尺内，数量最多等于你的智力调整值（最少一个生物）的生物。每个被选择的生物获得{@variantrule 掩护|XPHB|半身掩护}，持续1分钟或直到你处于{@condition 失能|XPHB}状态。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一次{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
@@ -5418,9 +5400,6 @@
 			"subclassSource": "XPHB",
 			"level": 18,
 			"header": 2,
-			"consumes": {
-				"name": "Psionic Energy Die"
-			},
 			"entries": [
 				"你始终准备着{@spell 心灵遥控|XPHB}法术。通过这个特性，你可以无需法术位或材料成分来施放它，施放此法术的能力值为智力。在你维持{@status 专注|XPHB}的每个回合中，包括施放它的回合，你可以作为{@variantrule 附赠动作|XPHB}进行一次武器攻击。",
 				"一旦你使用这个特性施放了法术，你就不能再次以这种方式施放，直到你完成一次{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"

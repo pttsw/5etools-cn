@@ -571,17 +571,6 @@
 				5,
 				5
 			],
-			"featProgression": [
-				{
-					"name": "Epic Boon",
-					"category": [
-						"EB"
-					],
-					"progression": {
-						"19": 1
-					}
-				}
-			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
@@ -638,9 +627,6 @@
 							}
 						]
 					}
-				],
-				"entries": [
-					"{@i Choose A or B:} (A) {@item Chain Shirt|XPHB}, {@item Shield|XPHB}, {@item Mace|XPHB}, {@item Holy Symbol|XPHB}, {@item Priest's Pack|XPHB}, 7 GP; or (B) 110 GP"
 				]
 			},
 			"multiclassing": {
@@ -3068,7 +3054,7 @@
 			],
 			"subclassFeatures": [
 				"光明领域|牧师|XPHB|光明|XPHB|3",
-				"当你达到牧师等级4和10时，你可以选择从{@filter 牧师法术列表|spells|class=Cleric}中学习另一个你选择的戏法，如牧师特性表中的戏法列所示。|牧师|XPHB|光明|XPHB|6",
+				"当你达到牧师等级4和10时，你可以选择从{@filter 牧师法术列表|spells|class=牧师}中学习另一个你选择的戏法，如牧师特性表中的戏法列所示。|牧师|XPHB|光明|XPHB|6",
 				"光冕|牧师|XPHB|光明|XPHB|17"
 			],
 			"hasFluffImages": true
@@ -3594,8 +3580,7 @@
 			"entries": [
 				"你已经将自己奉献给了以下你选择的神圣角色之一。",
 				{
-					"type": "options",
-					"count": 1,
+					"type": "entries",
 					"entries": [
 						{
 							"type": "entries",
@@ -3728,7 +3713,7 @@
 			},
 			"entries": [
 				"作为一次{@action 魔法|XPHB}动作，你指向距离你30英尺内的另一个生物，并集中神圣能量。掷一个{@dice 1d8}并加上你智慧调整值。你可以将等于该总数的{@variantrule 生命值|XPHB}恢复给该生物，或者迫使该生物进行一次体质豁免检定。如果豁免失败，生物将受到等于该总数的死灵或辐射伤害（由你选择）。如果豁免成功，生物受到的伤害减半（向下取整）。",
-				"当你达到牧师等级7（{@dice 4d8}）、13（{@dice 2d8}）和18（{@dice 3d8}）时，你会额外投掷一个{@dice 4d8}。"
+				"当你达到牧师等级7（{@dice d8}）、13（{@dice 2d8}）和18（{@dice 3d8}）时，你会额外投掷一个{@dice d8}。"
 			]
 		},
 		{
@@ -9285,7 +9270,7 @@
 			"header": 2,
 			"entries": [
 				"当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时，你将恢复所有已消耗的防护闪光使用次数。",
-				"此外，每当你使用警戒闪光时，你可以给予触发攻击的目标等同于{@dice 2d6}加上你智慧调整值的{@dice 2d6}。"
+				"此外，每当你使用警戒闪光时，你可以给予触发攻击的目标等同于{@variantrule 临时生命值|XPHB}加上你智慧调整值的{@variantrule 临时生命值|XPHB}。"
 			]
 		},
 		{
@@ -9342,9 +9327,9 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 2,
+			"header": 1,
 			"entries": [
-				"作为一个{@action 魔法|XPHB}动作，你可以选择你自己或一个距离你30英尺内的自愿生物，在敏捷（{@skill 隐匿|XPHB}）检定上获得{@skill 隐匿|XPHB}。这个祝福持续到你完成一次{@variantrule 长休|XPHB}或者你再次使用这个特性为止。"
+				"作为一个{@action 魔法|XPHB}动作，你可以选择你自己或一个距离你30英尺内的自愿生物，在敏捷（{@variantrule 优势|XPHB}）检定上获得{@variantrule 优势|XPHB}。这个祝福持续到你完成一次{@variantrule 长休|XPHB}或者你再次使用这个特性为止。"
 			]
 		},
 		{
@@ -9357,7 +9342,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 2,
+			"header": 1,
 			"entries": [
 				"你与这个神圣领域的联系确保你始终准备好某些法术。当你达到诡法领域法术表中指定的牧师等级时，你将始终准备好列出的法术。",
 				{
@@ -9402,7 +9387,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 2,
+			"header": 1,
 			"consumes": {
 				"name": "引导神力",
 				"ENG_name": "Channel Divinity"
