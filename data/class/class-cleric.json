@@ -571,6 +571,17 @@
 				5,
 				5
 			],
+			"featProgression": [
+				{
+					"name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
@@ -627,6 +638,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i Choose A or B:} (A) {@item Chain Shirt|XPHB}, {@item Shield|XPHB}, {@item Mace|XPHB}, {@item Holy Symbol|XPHB}, {@item Priest's Pack|XPHB}, 7 GP; or (B) 110 GP"
 				]
 			},
 			"multiclassing": {
@@ -3580,7 +3594,8 @@
 			"entries": [
 				"你已经将自己奉献给了以下你选择的神圣角色之一。",
 				{
-					"type": "entries",
+					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "entries",
@@ -9327,7 +9342,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 1,
+			"header": 2,
 			"entries": [
 				"作为一个{@action 魔法|XPHB}动作，你可以选择你自己或一个距离你30英尺内的自愿生物，在敏捷（{@skill 隐匿|XPHB}）检定上获得{@skill 隐匿|XPHB}。这个祝福持续到你完成一次{@variantrule 长休|XPHB}或者你再次使用这个特性为止。"
 			]
@@ -9342,7 +9357,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 1,
+			"header": 2,
 			"entries": [
 				"你与这个神圣领域的联系确保你始终准备好某些法术。当你达到诡法领域法术表中指定的牧师等级时，你将始终准备好列出的法术。",
 				{
@@ -9387,7 +9402,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 1,
+			"header": 2,
 			"consumes": {
 				"name": "引导神力",
 				"ENG_name": "Channel Divinity"

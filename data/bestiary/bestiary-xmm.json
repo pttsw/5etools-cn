@@ -493,11 +493,39 @@
 				"ENG_name": "Ghoul",
 				"source": "MM"
 			},
+			"passive": 10,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/8",
+			"gear": [
+				"leather armor|xphb",
+				"sickle|xphb"
+			],
+			"action": [
+				{
+					"name": "Ritual Sickle",
+					"entries": [
+						"{@atkr m} {@hit 3}, reach 5 ft. {@h}3 ({@damage 1d4 + 1}) Slashing damage plus 1 Necrotic damage."
+					]
+				}
+			],
 			"token": {
 				"name": "食尸鬼",
 				"ENG_name": "Ghoul",
 				"source": "MM"
-			}
+			},
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"N",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"MLW"
+			]
 		},
 		{
 			"name": "魔法师",
@@ -505,7 +533,7 @@
 			"source": "XMM",
 			"otherSources": [
 				{
-					"source": "UtHftLH"
+					"source": "ScoEE"
 				}
 			],
 			"size": [
@@ -517,34 +545,32 @@
 				"A"
 			],
 			"ac": [
-				15
+				13
 			],
 			"hp": {
-				"average": 81,
-				"formula": "18d8"
+				"average": 44,
+				"formula": "8d8 + 8"
 			},
 			"speed": {
 				"walk": 30
 			},
-			"str": 9,
+			"str": 11,
 			"dex": 14,
-			"con": 11,
-			"int": 17,
-			"wis": 12,
-			"cha": 11,
+			"con": 12,
+			"int": 10,
+			"wis": 14,
+			"cha": 13,
 			"save": {
-				"int": "+6",
 				"wis": "+4"
 			},
 			"skill": {
-				"arcana": "+6",
-				"history": "+6"
+				"deception": "+3",
+				"persuasion": "+3"
 			},
-			"passive": 11,
+			"passive": 12,
 			"languages": [
 				"通用语和任意三种语言"
 			],
-			"cr": "6",
 			"spellcasting": [
 				{
 					"name": "施法",
@@ -590,7 +616,7 @@
 					]
 				}
 			],
-			"reaction": [
+			"action": [
 				{
 					"name": "反制法术（每日1次）",
 					"ENG_name": "Counterspell (1/Day)",
@@ -611,22 +637,22 @@
 				"ENG_name": "Mage",
 				"source": "MM"
 			},
+			"traitTags": [
+				"Illumination"
+			],
+			"senseTags": [
+				"D"
+			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
-				"C",
-				"X"
+				"IG",
+				"P"
 			],
 			"damageTags": [
-				"O"
-			],
-			"damageTagsSpell": [
 				"C",
 				"F"
-			],
-			"spellcastingTags": [
-				"O"
 			],
 			"miscTags": [
 				"MA",

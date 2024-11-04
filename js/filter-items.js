@@ -77,6 +77,7 @@ class PageFilterEquipment extends PageFilterBase {
 		this._focusFilter = new Filter({header: "Spellcasting Focus", cnHeader:"法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
 		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", cnHeader:"武器伤害类型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
 		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", cnHeader:"武器伤害骰", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
+		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader:"护甲类型", displayFn: it => it === 0 ? "None" : it});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader:"杂项",
@@ -86,6 +87,13 @@ class PageFilterEquipment extends PageFilterBase {
 		});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", cnHeader:"毒药类型", items: ["服用", "伤口", "吸入", "接触"], displayFn: StrUtil.toTitleCase});
 		this._masteryFilter = new Filter({header: "Mastery", displayFn: this.constructor._getMasteryDisplay.bind(this)});
+	}
+
+	static _mutateForFilters_getFilterAc (item) {
+		if (!item.ac && !item.bonusAc) return null;
+		if (item.ac && !item.bonusAc) return item.ac;
+		if (isNaN(item.bonusAc)) return item.ac;
+		return (item.ac || 0) + Number(item.bonusAc);
 	}
 
 	static mutateForFilters (item) {
@@ -137,6 +145,8 @@ class PageFilterEquipment extends PageFilterBase {
 				return [name, source].join("|");
 			})
 			: null;
+
+		item._fAc = this._mutateForFilters_getFilterAc(item);
 	}
 
 	addToFilters (item, isExcluded) {
@@ -147,6 +157,7 @@ class PageFilterEquipment extends PageFilterBase {
 		this._propertyFilter.addItem(item._fProperties);
 		this._damageTypeFilter.addItem(item.dmgType);
 		this._damageDiceFilter.addItem(item._fDamageDice);
+		this._acFilter.addItem(item._fAc);
 		this._poisonTypeFilter.addItem(item.poisonTypes);
 		this._miscFilter.addItem(item._fMisc);
 		this._masteryFilter.addItem(item._fMastery);
@@ -163,6 +174,7 @@ class PageFilterEquipment extends PageFilterBase {
 			this._focusFilter,
 			this._damageTypeFilter,
 			this._damageDiceFilter,
+			this._acFilter,
 			this._miscFilter,
 			this._poisonTypeFilter,
 			this._masteryFilter,
@@ -181,6 +193,7 @@ class PageFilterEquipment extends PageFilterBase {
 			it._fFocus,
 			it.dmgType,
 			it._fDamageDice,
+			it._fAc,
 			it._fMisc,
 			it.poisonTypes,
 			it._fMastery,
@@ -408,6 +421,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._focusFilter,
 			this._damageTypeFilter,
 			this._damageDiceFilter,
+			this._acFilter,
 			this._bonusFilter,
 			this._miscFilter,
 			this._rechargeTypeFilter,
@@ -436,6 +450,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fFocus,
 			it.dmgType,
 			it._fDamageDice,
+			it._fAc,
 			it._fBonus,
 			it._fMisc,
 			it.recharge,

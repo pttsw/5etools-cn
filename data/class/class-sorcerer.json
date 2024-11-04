@@ -657,6 +657,17 @@
 				6,
 				6
 			],
+			"featProgression": [
+				{
+					"name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"optionalfeatureProgression": [
 				{
 					"name": "超魔法",
@@ -721,6 +732,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i Choose A or B:} (A) {@item Spear|XPHB}, 2 {@item Dagger|XPHB|Daggers}, {@item Arcane Focus|XPHB} ({@item crystal|XPHB}), {@item Dungeoneer's Pack|XPHB}, and 28 GP; or (B) 50 GP"
 				]
 			},
 			"multiclassing": {},
@@ -3058,6 +3072,10 @@
 			"className": "术士",
 			"classSource": "XPHB",
 			"level": 7,
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 2
+			},
 			"entries": [
 				"如果你没有剩余的天生施法使用了，你可以在采取{@variantrule 附赠动作|XPHB}激活它时花费2点术士点数来使用它。",
 				"此外，在你的天生施法特性激活时，你可以在施放每个法术时使用多达两种你的{@filter 超魔法选项|optionalfeatures|Feature Type=MM}。"
@@ -5423,6 +5441,10 @@
 			"subclassSource": "XPHB",
 			"level": 18,
 			"header": 2,
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 5
+			},
 			"entries": [
 				"你可以释放一个扭曲空间的异常现象。作为一个{@action 魔法|XPHB}动作，你传送到距离你自身120英尺内你能看到的未被占据的空间。在你消失后，每个在你离开的空间30英尺范围内的生物必须进行一次力量豁免检定，对抗你的法术豁免DC。如果检定失败，该生物受到{@damage 3d10}点力场伤害，并被拉直向你离开的空间，最终停在尽可能靠近你原先空间的未被占据的空间。如果检定成功，该生物只受到一半的伤害。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费5点术士点数（无需动作）来恢复它的使用。"
@@ -5582,6 +5604,10 @@
 			"subclassSource": "XPHB",
 			"level": 14,
 			"header": 2,
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 5
+			},
 			"entries": [
 				"你获得了将你的意识与机械法斯无尽的计算对齐的能力。作为一个{@variantrule 附赠动作|XPHB}，你可以进入这种状态持续1分钟。在持续期间，对你的攻击检定不能获得{@variantrule 优势|XPHB}，并且每当你进行一个{@variantrule D20 检定|XPHB}时，你可以将{@dice d20}上的9或更低的掷骰结果视为10。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费5点术士点数（无需动作）来恢复它的使用。"
@@ -5598,6 +5624,10 @@
 			"subclassSource": "XPHB",
 			"level": 18,
 			"header": 2,
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 7
+			},
 			"entries": [
 				"你短暂地召唤秩序之灵以驱逐周围的混乱。作为一个{@action 魔法|XPHB}动作，你从自身开始召唤灵体进入一个30英尺的{@variantrule 立方 [效应区域]|XPHB|立方}。这些灵体看起来像是魔冢或其他你选择的构造体。这些灵体是无形的，不可侵犯的，它们在{@variantrule 立方 [效应区域]|XPHB|立方}内创造出以下效果然后消失。一旦你使用了这个动作，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费7点术士点数（无需动作）来恢复它的使用。",
 				{
@@ -5742,6 +5772,10 @@
 			"subclassSource": "XPHB",
 			"level": 14,
 			"header": 2,
+			"consumes": {
+				"name": "Sorcery Point",
+				"amount": 3
+			},
 			"entries": [
 				"作为一个{@variantrule 附赠动作|XPHB}，你可以在你的背上召唤出龙翼。这些翅膀持续1小时，或者直到你解散它们（无需动作）。在持续时间内，你拥有60英尺的{@variantrule 飞行速度|XPHB}。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费3点术士点数（无需动作）来恢复它的使用。"
