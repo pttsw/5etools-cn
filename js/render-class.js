@@ -144,7 +144,7 @@ class _RenderClassesSidebarImplBase {
 			: "";
 
 		const ptMcPrereq = cls.primaryAbility
-			? `To qualify for a new class, you must have a score of at least 13 in the primary ability of the new class and your current classes.`
+			? `要满足新职业的兼职条件，你的新职业和你现在的职业对应的主属性值必须至少有13点。`
 			: this._getPtRequirements({renderer, requirements: mc.requirements});
 
 		const ptMcPrereqSpecial = mc.requirementsSpecial

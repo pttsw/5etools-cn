@@ -47,6 +47,7 @@ class PageFilterFeats extends PageFilterBase {
 					case "Feat":        return "专长";
 					case "Psionics":    return "灵能";
 					case "Special":     return "特殊";
+					case "Feature":     return "特性"
 					default: return tag;
 				}
 			},

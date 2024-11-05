@@ -2767,9 +2767,9 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 		const bonus = UiUtil.intToBonus(abObj[abv], {isPretty: true});
 
 		toConvertToText.push(`${Parser.attAbvToFull(abv)} ${bonus}`);
-		toConvertToShortText.push(`${abv.uppercaseFirst()} ${bonus}`);
+		toConvertToShortText.push(`${Parser.attAbvToFull(abv)} ${bonus}`);
 
-		mainAbs.push(abv.uppercaseFirst());
+		mainAbs.push(Parser.attAbvToFull(abv));
 		asCollection.push(abv);
 		if (abObj[abv] < 0) areNegative.push(abv);
 	}
@@ -2856,7 +2856,7 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 				.map(abv => Parser.attAbvToFull(abv))
 				.joinConjunct(", ", " 或 ");
 			const ptAbilsShort = ch.from
-				.map(abv => abv.uppercaseFirst())
+				.map(abv => Parser.attAbvToFull(abv))
 				.join("/");
 			ptsLong.push(`${ptAbilsLong} ${amount}`);
 			ptsShort.push(`${ptAbilsShort} ${amount}`);
@@ -2900,7 +2900,7 @@ Renderer.getFilterSubhashes = function (filters, namespace = null) {
 		const key = isBoxData ? `${fName}${namespace ? `.${namespace}` : ""}` : `flst${namespace ? `.${namespace}` : ""}${UrlUtil.encodeForHash(fName)}`;
 
 		let value;
-		// special cases for "search" and "hash" keywords
+		// special cases for "search" 和 "hash" keywords
 		if (isBoxData) {
 			return {
 				key,
@@ -3592,7 +3592,7 @@ Renderer.utils = class {
 			const joinedChoices = (
 				hasNote
 					? listOfChoicesTrimmed.join(" Or, ")
-					: listOfChoicesTrimmed.joinConjunct(listOfChoicesTrimmed.some(it => / or /.test(it)) ? "; " : ", ", " or ")
+					: listOfChoicesTrimmed.joinConjunct(listOfChoicesTrimmed.some(it => / or /.test(it)) ? "; " : ", ", " 或 ")
 			) + sharedSuffix;
 
 			const ptPrefix = isSkipPrefix ? "" : `先决条件: `;
@@ -3662,7 +3662,7 @@ Renderer.utils = class {
 					if (typeof sp === "string") return Parser.prereqSpellToFull(sp, {isTextOnly});
 					return isTextOnly ? Renderer.stripTags(sp.entry) : Renderer.get().render(`{@filter ${sp.entry}|spells|${sp.choose}}`);
 				})
-					.joinConjunct(", ", " or ");
+					.joinConjunct(", ", " 或 ");
 		}
 
 		static _getHtml_feat ({v, isListMode, isTextOnly, styleHint}) {
@@ -3682,20 +3682,20 @@ Renderer.utils = class {
 					const asTag = `{@${tag} ${uid}}`;
 					return isTextOnly ? Renderer.stripTags(asTag) : Renderer.get().render(asTag);
 				})
-				.joinConjunct(", ", " or ");
+				.joinConjunct(", ", " 或 ");
 		}
 
 		static _getHtml_feature ({v, isListMode, isTextOnly, styleHint}) {
 			if (isListMode) return v.map(x => Renderer.stripTags(x).toTitleCase()).join("/");
 
-			const ptNames = v.map(it => isTextOnly ? Renderer.stripTags(it) : Renderer.get().render(it)).joinConjunct(", ", " or ");
+			const ptNames = v.map(it => isTextOnly ? Renderer.stripTags(it) : Renderer.get().render(it)).joinConjunct(", ", " 或 ");
 
 			if (styleHint === "classic") return ptNames;
-			return `${ptNames} Feature${v.length === 1 ? "" : "s"}`;
+			return `${ptNames} 特性${v.length === 1 ? "" : "s"}`;
 		}
 
 		static _getHtml_item ({v, isListMode}) {
-			return isListMode ? v.map(x => x.toTitleCase()).join("/") : v.joinConjunct(", ", " or ");
+			return isListMode ? v.map(x => x.toTitleCase()).join("/") : v.joinConjunct(", ", " 或 ");
 		}
 
 		static _getHtml_itemType ({v, isListMode}) {
@@ -3709,7 +3709,7 @@ Renderer.utils = class {
 					.map(it => Renderer.item.getType(it, {isIgnoreMissing: true}))
 					.filter(Boolean)
 					.map(it => it.name?.toTitleCase())
-					.joinConjunct(", ", " and ");
+					.joinConjunct(", ", " 和 ");
 		}
 
 		static _getHtml_itemProperty ({v, isListMode}) {
@@ -3726,7 +3726,7 @@ Renderer.utils = class {
 						.map(it => Renderer.item.getProperty(it, {isIgnoreMissing: true}))
 						.filter(Boolean)
 						.map(it => it.name?.toTitleCase())
-						.joinConjunct(", ", " and ")
+						.joinConjunct(", ", " 和 ")
 					} Property`
 				);
 		}
@@ -3750,7 +3750,7 @@ Renderer.utils = class {
 					return `${raceName}${it.subrace != null ? ` (${it.subrace})` : ""}`;
 				}
 			});
-			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " or ");
+			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " 或 ");
 		}
 
 		static _getHtml_background ({v, isListMode, isTextOnly}) {
@@ -3761,7 +3761,7 @@ Renderer.utils = class {
 					return it.displayEntry ? (isTextOnly ? Renderer.stripTags(it.displayEntry) : Renderer.get().render(it.displayEntry)) : (i === 0 || styleHint !== "classic") ? it.name.toTitleCase() : it.name;
 				}
 			});
-			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " or ");
+			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " 或 ");
 		}
 
 		static _getHtml_ability ({v, isListMode, isTextOnly, styleHint}) {
@@ -3787,7 +3787,7 @@ Renderer.utils = class {
 				if (allValuesEqual) {
 					const abList = Object.keys(abMeta);
 					hadMultipleInner = hadMultipleInner || abList.length > 1;
-					return isListMode ? abList.map(ab => ab.uppercaseFirst()).join(", ") : abList.map(ab => Parser.attAbvToFull(ab)).joinConjunct(", ", " and ");
+					return isListMode ? abList.map(ab => Parser.attAbvToFull(ab)).join(", ") : abList.map(ab => Parser.attAbvToFull(ab)).joinConjunct(", ", " 和 ");
 				} else {
 					const groups = {};
 
@@ -3807,12 +3807,12 @@ Renderer.utils = class {
 							if (isListMode) return `${abs.map(ab => ab.uppercaseFirst()).join(", ")} ${req}+`;
 
 							const ptHigher = styleHint === "classic" ? " or higher" : "+";
-							return `${abs.map(ab => Parser.attAbvToFull(ab)).joinConjunct(", ", " and ")} ${req}${ptHigher}`;
+							return `${abs.map(ab => Parser.attAbvToFull(ab)).joinConjunct(", ", " 和 ")} ${req}${ptHigher}`;
 						});
 
 					return isListMode
 						? `${isMulti || byScore.length > 1 ? "(" : ""}${byScore.join(" & ")}${isMulti || byScore.length > 1 ? ")" : ""}`
-						: isMulti ? byScore.joinConjunct("; ", " and ") : byScore.joinConjunct(", ", " and ");
+						: isMulti ? byScore.joinConjunct("; ", " 和 ") : byScore.joinConjunct(", ", " 和 ");
 				}
 			});
 
@@ -3824,9 +3824,9 @@ Renderer.utils = class {
 			const isComplex = hadMultiMultipleInner || hadMultipleInner || allValuesEqual == null;
 			const joined = abilityOptions.joinConjunct(
 				hadMultiMultipleInner ? " - " : hadMultipleInner ? "; " : ", ",
-				isComplex ? (isTextOnly ? ` /or/ ` : ` <i>or</i> `) : " or ",
+				isComplex ? (isTextOnly ? ` /或/ ` : ` <i>或</i> `) : " 或 ",
 			);
-			const ptHigher = styleHint === "classic" ? " or higher" : "+";
+			const ptHigher = styleHint === "classic" ? " 或更高" : "+";
 			return `${joined}${allValuesEqual != null ? ` ${allValuesEqual}${ptHigher}` : ""}`;
 		}
 
@@ -3844,25 +3844,25 @@ Renderer.utils = class {
 							return styleHint === "classic" ? `${Parser.ARMOR_FULL_TO_CN[prof] ||prof.toTitleCase()}甲熟练项` : `${Parser.ARMOR_FULL_TO_CN[prof] ||prof.toTitleCase()}甲受训`;
 						}
 						case "weapon": {
-							return isListMode ? `Prof ${Parser.weaponFullToAbv(prof)} weapon` : `Proficiency with a ${prof} weapon`;
+							return isListMode ? `熟练于${prof}武器` : `具有${prof}武器熟练项`;
 						}
 						case "weaponGroup": {
-							return isListMode ? `Prof ${Parser.weaponFullToAbv(prof)} weapons` : `${prof.toTitleCase()} Proficiency`;
+							return isListMode ? `熟练于${prof}武器` : `${prof.toTitleCase()}武器熟练项`;
 						}
 						default: throw new Error(`Unhandled proficiency type: "${profType}"`);
 					}
 				});
 			});
-			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " or ");
+			return isListMode ? parts.join("/") : parts.joinConjunct(", ", " 或 ");
 		}
 
 		static _getHtml_spellcasting ({v, isListMode}) {
-			return isListMode ? "施法能力" : "The ability to cast at least one spell";
+			return isListMode ? "施法能力" : "至少能施放一个法术的能力";
 		}
 
 		static _getHtml_spellcasting2020 ({v, isListMode, styleHint}) {
 			if (isListMode) return "施法能力";
-			return styleHint === "classic" ? "Spellcasting or Pact Magic feature" : "Spellcasting or Pact Magic Feature";
+			return styleHint === "classic" ? "施法能力或契约魔法特性" : "施法能力或契约魔法特性";
 		}
 
 		static _getHtml_spellcastingFeature ({v, isListMode}) {
@@ -3891,13 +3891,13 @@ Renderer.utils = class {
 		static _getHtml_campaign ({v, isListMode}) {
 			return isListMode
 				? v.join("/")
-				: `${v.joinConjunct(", ", " or ")} Campaign`;
+				: `${v.joinConjunct(", ", " 或 ")} Campaign`;
 		}
 
 		static _getHtml_group ({v, isListMode}) {
 			return isListMode
 				? v.map(it => it.toTitleCase()).join("/")
-				: `${v.map(it => it.toTitleCase()).joinConjunct(", ", " or ")} Group`;
+				: `${v.map(it => it.toTitleCase()).joinConjunct(", ", " 或 ")} Group`;
 		}
 	};
 
@@ -3916,7 +3916,7 @@ Renderer.utils = class {
 		return [...(size ? [size].flat() : [])]
 			.sort(SortUtil.ascSortSize)
 			.map(sz => Parser.sizeAbvToFull(sz))
-			.joinConjunct(", ", " or ");
+			.joinConjunct(", ", " 或 ");
 	}
 
 	static _FN_TAG_SENSES = null;
@@ -4351,7 +4351,7 @@ Renderer.utils = class {
 			case "@creature": {
 				out.page = UrlUtil.PG_BESTIARY;
 
-				// "...|scaled=scaledCr}" or "...|scaledsummon=scaledSummonLevel}"
+				// "...|scaled=scaledCr}" 或 "...|scaledsummon=scaledSummonLevel}"
 				if (others.length) {
 					const [type, value] = others[0].split("=").map(it => it.trim().toLowerCase()).filter(Boolean);
 					if (type && value) {
@@ -5961,7 +5961,7 @@ Renderer.feat = class {
 		if (abilityObj.choose.weighted) {
 			const ptsWeight = abilityObj.choose.weighted.weights
 				.map((adj, i) => `${i === 0 ? "an" : "another"} ability score to ${adj > 0 ? "increase" : "decrease"} by ${Math.abs(adj)}`)
-				.joinConjunct(", ", " and ");
+				.joinConjunct(", ", " 和 ");
 
 			if (abilityObj.choose.weighted.from.length === 6) {
 				return `选择 ${ptsWeight}个。`;
@@ -5974,10 +5974,10 @@ Renderer.feat = class {
 		if (abilityObj.choose.from.length === 6) {
 			return abilityObj.choose.entry
 				? Renderer.get().render(abilityObj.choose.entry) // only used in "Resilient"
-				: `Increase one ability score of your choice by ${abilityObj.choose.amount ?? 1}, to a maximum of ${maxScore}.`;
+				: `提升一项自选的属性值${abilityObj.choose.amount ?? 1}点，上限为${maxScore}。`;
 		}
 
-		const abbChoicesText = abilityObj.choose.from.map(it => Parser.attAbvToFull(it)).joinConjunct(", ", " or ");
+		const abbChoicesText = abilityObj.choose.from.map(it => Parser.attAbvToFull(it)).joinConjunct(", ", " 或 ");
 		return `你的 ${abbChoicesText} 增加 ${abilityObj.choose.amount ?? 1}点，上限为${maxScore}。`;
 	}
 
@@ -7992,7 +7992,7 @@ Renderer.race = class {
 			// If the base race doesn't have any ability scores, make a set of empty records
 			if ((cpySr.overwrite && cpySr.overwrite.ability) || !cpy.ability) cpy.ability = cpySr.ability.map(() => ({}));
 
-			if (cpy.ability.length !== cpySr.ability.length) throw new Error(`"race" and "subrace" ability array lengths did not match!`);
+			if (cpy.ability.length !== cpySr.ability.length) throw new Error(`"race" 和 "subrace" ability array lengths did not match!`);
 			cpySr.ability.forEach((obj, i) => Object.assign(cpy.ability[i], obj));
 			delete cpySr.ability;
 		}
@@ -9726,7 +9726,7 @@ Renderer.monster = class {
 		const stack = [getBasicCrRender(mon.cr.cr, {xp: mon.cr.xp, isMythic: !!mon.mythic})];
 		if (mon.cr.lair) stack.push(`${getBasicCrRender(mon.cr.lair)} when encountered in lair`);
 		if (mon.cr.coven) stack.push(`${getBasicCrRender(mon.cr.coven)} when part of a coven`);
-		return stack.joinConjunct(", ", " or ");
+		return stack.joinConjunct(", ", " 或 ");
 	}
 
 	static _getChallengeRatingPart_one ({mon, isPlainText = false} = {}) {
@@ -9752,7 +9752,7 @@ Renderer.monster = class {
 		const ptPbVal = Renderer.monster.getPbPart(mon, {isPlainText});
 
 		const ptParens = [
-			ptsXp.length ? `XP ${ptsXp.joinConjunct(", ", " or ")}` : "",
+			ptsXp.length ? `XP ${ptsXp.joinConjunct(", ", " 或 ")}` : "",
 			ptPbVal ? `${isPlainText ? "PB" : `<span title="Proficiency Bonus">PB</span>`} ${ptPbVal}` : "",
 		]
 			.filter(Boolean)
@@ -10082,7 +10082,7 @@ Renderer.monster = class {
 
 		function doSortMapJoinSkillKeys (obj, keys, joinWithOr) {
 			const toJoin = keys.sort(SortUtil.ascSort).map(s => `<span data-mon-skill="${s.toTitleCase()}|${obj[s]}">${renderer.render(`{@skill ${Parser.SKILL_TO_CN[s] || s.toTitleCase()}}`)} ${Renderer.get().render(`{@skillCheck ${s.replace(/ /g, "_")} ${obj[s]}}`)}</span>`);
-			return joinWithOr ? toJoin.joinConjunct(", ", " or ") : toJoin.join(", ");
+			return joinWithOr ? toJoin.joinConjunct(", ", " 或 ") : toJoin.join(", ");
 		}
 
 		const skills = doSortMapJoinSkillKeys(mon.skill, Object.keys(mon.skill).filter(k => k !== "other" && k !== "special"));
@@ -14774,7 +14774,7 @@ Renderer.hover = class {
 			isTitleCase = false,
 		} = {},
 	) {
-		if (isLowerCase && isTitleCase) throw new Error(`"isLowerCase" and "isTitleCase" are mutually exclusive!`);
+		if (isLowerCase && isTitleCase) throw new Error(`"isLowerCase" 和 "isTitleCase" are mutually exclusive!`);
 
 		const name = isLowerCase ? ent.name.toLowerCase() : isTitleCase ? ent.name.toTitleCase() : ent.name;
 
@@ -15186,7 +15186,7 @@ Renderer.getRollableRow = function (row, opts) {
 			return row;
 		}
 
-		// format: "95-00" or "12"
+		// format: "95-00" 或 "12"
 		// u2012 = figure dash; u2013 = en-dash; u2014 = em dash; u2212 = minus sign
 		const m = /^(\d+)([-\u2013-\u2014\u2212](\d+))?$/.exec(cleanRow);
 		if (m) {
