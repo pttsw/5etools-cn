@@ -25,7 +25,7 @@ class PageFilterVehicles extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
-			items: ["传奇", "有图片", "有简介", "Has Token"],
+			items: ["传奇", "有图片", "有简介", "有Token"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
@@ -67,7 +67,7 @@ class PageFilterVehicles extends PageFilterBase {
 		ent._fCreatureCapacity = (ent.capCrew || 0) + (ent.capPassenger || 0) + (ent.capCreature || 0);
 
 		this._mutateForFilters_commonMisc(ent);
-		if (Renderer.vehicle.hasToken(ent)) ent._fMisc.push("Has Token");
+		if (Renderer.vehicle.hasToken(ent)) ent._fMisc.push("有Token");
 	}
 
 	addToFilters (it, isExcluded) {

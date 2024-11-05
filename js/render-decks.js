@@ -103,7 +103,7 @@ class RenderDecks {
 		</div>`;
 
 		const $ptCards = $$`<div class="ve-flex-col">
-			<h3 class="dnd-font my-0 mb-1 decks__h-cards">Cards</h3>
+			<h3 class="dnd-font my-0 mb-1 decks__h-cards">卡牌</h3>
 			${$wrpCardRows}
 		</div>`;
 

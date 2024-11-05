@@ -7,7 +7,7 @@ class PageFilterObjects extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
-			items: ["传奇", "有图片", "有简介", "Has Token"],
+			items: ["传奇", "有图片", "有简介", "有Token"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
@@ -16,7 +16,7 @@ class PageFilterObjects extends PageFilterBase {
 	static mutateForFilters (obj) {
 		this._mutateForFilters_commonSources(obj);
 		this._mutateForFilters_commonMisc(obj);
-		if (Renderer.object.hasToken(obj)) obj._fMisc.push("Has Token");
+		if (Renderer.object.hasToken(obj)) obj._fMisc.push("有Token");
 	}
 
 	addToFilters (obj, isExcluded) {

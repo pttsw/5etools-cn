@@ -2718,7 +2718,7 @@ Renderer.parseScaleDice = function (tag, text) {
 };
 
 Renderer.getAbilityData = function (abArr, {isOnlyShort, isCurrentLineage = false, isBackgroundShortForm = false} = {}) {
-	if (isOnlyShort && isCurrentLineage) return new Renderer._AbilityData({asTextShort: "Lineage"});
+	if (isOnlyShort && isCurrentLineage) return new Renderer._AbilityData({asTextShort: "自选"});
 	if (isOnlyShort && isBackgroundShortForm) {
 		if (abArr.length === 2 && abArr[0].choose?.weighted?.from?.length === 3) return new Renderer._AbilityData({asTextShort: `Origin (${abArr[0].choose?.weighted?.from.map(it => it.uppercaseFirst()).join("/")})`});
 		if (abArr.length === 2 && abArr[0].choose?.weighted?.from?.length === 6) return new Renderer._AbilityData({asTextShort: `Origin (Any)`});
@@ -2790,12 +2790,12 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 		const areIncrease = isAny && isAllEqual && w.weights.length > 1 && w.weights[0] >= 0
 			? (() => {
 				weightsIncrease.forEach(it => areIncreaseShort.push(UiUtil.intToBonus(it, {isPretty: true})));
-				return [`${cntProcessed ? "choose " : ""}${Parser.numberToText(w.weights.length)} different ${UiUtil.intToBonus(weightsIncrease[0], {isPretty: true})}`];
+				return [`${cntProcessed ? "选择" : ""}${Parser.numberToText(w.weights.length)}个不同的${UiUtil.intToBonus(weightsIncrease[0], {isPretty: true})}`];
 			})()
 			: weightsIncrease.map(it => {
 				areIncreaseShort.push(UiUtil.intToBonus(it, {isPretty: true}));
-				if (isAny) return `${cntProcessed ? "choose " : ""}any ${cntProcessed++ ? `other ` : ""}${UiUtil.intToBonus(it, {isPretty: true})}`;
-				return `one ${cntProcessed++ ? `other ` : ""}ability to increase by ${it}`;
+				if (isAny) return `${cntProcessed ? "选择" : ""}任意一个${cntProcessed++ ? `其他的 ` : ""}${UiUtil.intToBonus(it, {isPretty: true})}`;
+				return `一个${cntProcessed++ ? `其他的 ` : ""}的属性提升${it}`;
 			});
 
 		const areReduceShort = [];
@@ -2807,7 +2807,7 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 			: weightsReduce.map(it => {
 				areReduceShort.push(UiUtil.intToBonus(it, {isPretty: true}));
 				if (isAny) return `${cntProcessed ? "选择 " : ""}任意一个 ${cntProcessed++ ? `其他的 ` : ""}${UiUtil.intToBonus(it, {isPretty: true})}`;
-				return `one ${cntProcessed++ ? `其他 ` : ""}属性减少 ${Math.abs(it)}`;
+				return `一个${cntProcessed++ ? `其他的` : ""}属性减少 ${Math.abs(it)}`;
 			});
 
 		const startText = isAny
@@ -7880,7 +7880,7 @@ Renderer.race = class {
 				const isAnyNoName = race.subraces.some(it => !it.name);
 				if (isAnyNoName) {
 					baseRace._rawName = baseRace.name;
-					baseRace.name = `${baseRace.name} (Base)`;
+					baseRace.name = `${baseRace.name} (本相)`;
 				}
 
 				const nameCounts = {};
@@ -8312,7 +8312,7 @@ Renderer.object = class {
 
 	static getObjectRenderableEntriesMeta (ent) {
 		return {
-			entrySize: `{@i ${ent.objectType !== "GEN" ? `${Renderer.utils.getRenderedSize(ent.size)} ${ent.creatureType ? Parser.monTypeToFullObj(ent.creatureType).asText : "object"}` : `Variable size object`}}`,
+			entrySize: `{@i ${ent.objectType !== "GEN" ? `${Renderer.utils.getRenderedSize(ent.size)} ${ent.creatureType ? Parser.monTypeToFullObj(ent.creatureType).asText : "物件"}` : `Variable size object`}}`,
 
 			entryCreatureCapacity: ent.capCrew != null || ent.capPassenger != null
 				? `{@b Creature Capacity:} ${Renderer.vehicle.getShipCreatureCapacity(ent)}`
@@ -8455,7 +8455,7 @@ Renderer.trap = class {
 		};
 	}
 
-	static getTrapInitiativeEntries (ent) { return [`The trap acts on ${Parser.trapInitToFull(ent.initiative)}${ent.initiativeNote ? ` (${ent.initiativeNote})` : ""}.`]; }
+	static getTrapInitiativeEntries (ent) { return [`这个陷阱在${Parser.trapInitToFull(ent.initiative)}${ent.initiativeNote ? ` (${ent.initiativeNote})` : ""}时触发。`]; }
 
 	static getRenderedTrapPart (renderer, ent) {
 		const entriesMeta = Renderer.trap.getTrapRenderableEntriesMeta(ent);
@@ -10643,8 +10643,8 @@ Renderer.item = class {
 		if (item.type) Renderer.item._getHtmlAndTextTypes_type({type: item.type, typeAbv: itemTypeAbv, typeHtml, typeListText, subTypeHtml, showingBase, item});
 		if (item.typeAlt) Renderer.item._getHtmlAndTextTypes_type({type: item.typeAlt, typeAbv: itemTypeAltAbv, typeHtml, typeListText, subTypeHtml, showingBase, item});
 		if (item.firearm) {
-			subTypeHtml.push("firearm");
-			typeListText.push("firearm");
+			subTypeHtml.push("火器");
+			typeListText.push("火器");
 		}
 		if (item.poison) {
 			typeHtml.push(`毒药${item.poisonTypes ? ` (${item.poisonTypes.joinConjunct(", ", " 或 ")})` : ""}`);
