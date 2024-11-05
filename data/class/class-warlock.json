@@ -493,6 +493,18 @@
 					}
 				}
 			],
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"optionalfeatureProgression": [
 				{
 					"name": "魔能祈唤",
@@ -549,9 +561,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 皮甲|XPHB}, {@item 镰刀|XPHB}, 2 {@item 匕首|XPHB|匕首}, {@item 奥术法器|XPHB} ({@item 法球|XPHB}), {@item 书本|XPHB}（神秘学知识）, {@item 学者套组|XPHB}, 和15 GP; 或 (B) 100 GP"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -584,6 +594,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 皮甲|XPHB}, {@item 镰刀|XPHB}, 2 {@item 匕首|XPHB|匕首}, {@item 奥术法器|XPHB} ({@item 法球|XPHB}), {@item 书本|XPHB}（神秘学知识）, {@item 学者套组|XPHB}, 和15 GP; 或 (B) 100 GP"
 				]
 			},
 			"multiclassing": {
@@ -4541,7 +4554,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"每当你使用你的法术机智特性或完成一次 {@variantrule 临时生命值|XPHB} 或 {@variantrule 短休|XPHB|短} 时，你会获得 {@variantrule 临时生命值|XPHB}。这些 {@variantrule 临时生命值|XPHB} 等于你的术士等级加上你的魅力调整值。此外，在你获得这些生命值时，选择你能看到的最多五个生物。这些生物每个获得等于你的术士等级的一半加上你的魅力调整值的 {@variantrule 临时生命值|XPHB}。"
+				"每当你使用你的法术机智特性或完成一次 {@variantrule 长休|XPHB} 或 {@variantrule 短休|XPHB|短} 时，你会获得 {@variantrule 长休|XPHB}。这些 {@variantrule 长休|XPHB} 等于你的术士等级加上你的魅力调整值。此外，在你获得这些生命值时，选择你能看到的最多五个生物。这些生物每个获得等于你的术士等级的一半加上你的魅力调整值的 {@variantrule 长休|XPHB}。"
 			]
 		},
 		{
@@ -4595,7 +4608,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"当你将一个敌人降至 0 {@variantrule 生命值|XPHB}，你获得等同于你的魅力调整值加上你的术士等级（最少为 1 {@variantrule 临时生命值|XPHB}）的 {@variantrule 临时生命值|XPHB}。如果有人在你周围 10 英尺范围内将一个敌人降至 0 {@variantrule 生命值|XPHB}，你也会获得这个好处。"
+				"当你将一个敌人降至 0 {@variantrule 生命值|XPHB}，你获得等同于你的魅力调整值加上你的术士等级（最少为 1 {@variantrule 临时生命值|XPHB|临时生命值}）的 {@variantrule 临时生命值|XPHB|临时生命值}。如果有人在你周围 10 英尺范围内将一个敌人降至 0 {@variantrule 生命值|XPHB}，你也会获得这个好处。"
 			]
 		},
 		{

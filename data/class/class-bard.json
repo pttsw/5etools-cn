@@ -657,8 +657,6 @@
 			],
 			"additionalSpells": [
 				{
-					"name": "魔法奥秘",
-					"ENG_name": "Magical Secrets",
 					"expanded": {
 						"s5": [
 							{
@@ -685,6 +683,24 @@
 								"all": "level=9|class=牧师;德鲁伊;法师"
 							}
 						]
+					},
+					"prepared": {
+						"20": [
+							"律令医疗|xphb",
+							"律令死亡|xphb"
+						]
+					}
+				}
+			],
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
 					}
 				}
 			],
@@ -710,9 +726,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：}(A){@item 皮甲|XPHB}，2 {@item 匕首|XPHB}，你选择的{@item 乐器|XPHB}，{@item 艺人套组|XPHB}及19 GP；或 (B) 90 GP"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -739,6 +753,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：}(A){@item 皮甲|XPHB}，2 {@item 匕首|XPHB}，你选择的{@item 乐器|XPHB}，{@item 艺人套组|XPHB}及19 GP；或 (B) 90 GP"
 				]
 			},
 			"multiclassing": {
@@ -1074,7 +1091,7 @@
 					]
 				},
 				{
-					"title": "每个法术环位的准备法术",
+					"title": "每环法术位",
 					"colLabels": [
 						"{@filter 1st|spells|level=1|class=吟游诗人}",
 						"{@filter 2nd|spells|level=2|class=吟游诗人}",
@@ -4041,6 +4058,51 @@
 			]
 		},
 		{
+			"name": "灵巧打击",
+			"ENG_name": "Agile Strikes",
+			"source": "XPHB",
+			"page": 64,
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "舞蹈",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"当你在一次动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}中消耗了诗人激励使用次数时，你可以发动一次{@variantrule 徒手打击|XPHB}，作为该动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}的一部分。"
+			]
+		},
+		{
+			"name": "诗人伤害",
+			"ENG_name": "Bardic Damage",
+			"source": "XPHB",
+			"page": 64,
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "舞蹈",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"你可以用敏捷代替力量进行{@variantrule 徒手打击|XPHB}的攻击检定。当你用一次徒手打击造成伤害时，你可以造成等于诗人激励骰+敏捷调整值的钝击伤害，而非徒手打击原本的伤害。此效果并不会消耗你的诗人激励使用次数。"
+			]
+		},
+		{
+			"name": "大舞蹈家",
+			"ENG_name": "Dance Virtuoso",
+			"source": "XPHB",
+			"page": 64,
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "舞蹈",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"你具有{@variantrule 优势|XPHB}，在任何有关舞蹈的魅力（{@skill 表演|XPHB}）检定时。"
+			]
+		},
+		{
 			"name": "炫目舞步",
 			"ENG_name": "Dazzling Footwork",
 			"source": "XPHB",
@@ -4054,37 +4116,36 @@
 			"entries": [
 				"在你未着装护甲且未持用{@item 护盾术|XPHB}期间，你获得以下增益：",
 				{
-					"type": "entries",
-					"name": "大舞蹈家",
-					"ENG_name": "Dance Virtuoso",
-					"entries": [
-						"你具有{@variantrule 优势|XPHB}，在任何有关舞蹈的魅力（{@skill 表演|XPHB}）检定时。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "大舞蹈家|吟游诗人|XPHB|舞蹈|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "无甲防御",
-					"ENG_name": "Unarmored Defense",
-					"entries": [
-						"你的基础{@variantrule 护甲等级|XPHB}等于10＋你的敏捷调整值＋你的魅力调整值。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "无甲防御|吟游诗人|XPHB|舞蹈|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "灵巧打击",
-					"ENG_name": "Agile Strikes",
-					"entries": [
-						"当你在一次动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}中消耗了诗人激励使用次数时，你可以发动一次{@variantrule 徒手打击|XPHB}，作为该动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}的一部分。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "灵巧打击|吟游诗人|XPHB|舞蹈|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "诗人伤害",
-					"ENG_name": "Bardic Damage",
-					"entries": [
-						"你可以用敏捷代替力量进行{@variantrule 徒手打击|XPHB}的攻击检定。当你用一次徒手打击造成伤害时，你可以造成等于诗人激励骰+敏捷调整值的钝击伤害，而非徒手打击原本的伤害。此效果并不会消耗你的诗人激励使用次数。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "诗人伤害|吟游诗人|XPHB|舞蹈|XPHB|3"
 				}
+			]
+		},
+		{
+			"name": "无甲防御",
+			"ENG_name": "Unarmored Defense",
+			"source": "XPHB",
+			"page": 64,
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "舞蹈",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"你的基础{@variantrule 护甲等级|XPHB}等于10＋你的敏捷调整值＋你的魅力调整值。"
 			]
 		},
 		{
@@ -4373,7 +4434,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"你获得军用武器熟练以及中甲和盾牌的护甲受训。",
+				"你获得了对{@filter 军用武器|items|type=军用武器}的熟练度，并且接受了{@filter 中甲|items|type=中甲}和{@item 护盾术|XPHB|盾牌}的训练。",
 				"此外，你可以使用简易武器或军用武器作为{@variantrule 法器|XPHB}，来施展{@filter 吟游诗人法术列表|spells|class=吟游诗人}中的法术。"
 			]
 		},

@@ -524,6 +524,18 @@
 				"str",
 				"dex"
 			],
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"startingProficiencies": {
 				"weapons": [
 					"简易",
@@ -565,9 +577,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 矛|XPHB}，5 {@item 匕首|XPHB|匕首}，选择上述工具熟练度的{@item 工匠工具|XPHB}或{@item 乐器|XPHB}，{@item 探索套组|XPHB}，以及11 GP；或 (B) 50 GP。"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -597,6 +607,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 矛|XPHB}，5 {@item 匕首|XPHB|匕首}，选择上述工具熟练度的{@item 工匠工具|XPHB}或{@item 乐器|XPHB}，{@item 探索套组|XPHB}，以及11 GP；或 (B) 50 GP。"
 				]
 			},
 			"multiclassing": {},
@@ -2205,6 +2218,32 @@
 			]
 		},
 		{
+			"name": "额外空手攻击",
+			"ENG_name": "Bonus Unarmed Strike",
+			"source": "XPHB",
+			"page": 101,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 1,
+			"header": 2,
+			"entries": [
+				"你可以将一次{@variantrule 徒手打击|XPHB}作为{@variantrule 附赠动作|XPHB}进行。"
+			]
+		},
+		{
+			"name": "敏捷攻击",
+			"ENG_name": "Dexterous Attacks",
+			"source": "XPHB",
+			"page": 101,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 1,
+			"header": 2,
+			"entries": [
+				"你可以使用你的敏捷调整值代替力量调整值来决定你的空手攻击和武僧武器的攻击和伤害检定。此外，当你使用你的{@variantrule 空手攻击|XPHB}的{@action 擒抱|XPHB}或{@action 推搡|XPHB}选项时，你可以使用你的敏捷调整值代替力量调整值来决定豁免掷骰的难度等级（DC）。"
+			]
+		},
+		{
 			"name": "武艺",
 			"ENG_name": "Martial Arts",
 			"source": "XPHB",
@@ -2226,31 +2265,32 @@
 					"type": "entries",
 					"entries": [
 						{
-							"type": "entries",
-							"name": "额外空手攻击",
-							"ENG_name": "Bonus Unarmed Strike",
-							"entries": [
-								"你可以将一次{@variantrule 徒手打击|XPHB}作为{@variantrule 附赠动作|XPHB}进行。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "额外空手攻击|武僧|XPHB|1"
 						},
 						{
-							"type": "entries",
-							"name": "你可以掷{@dice 1d6}来代替你的{@variantrule 空手攻击|XPHB}或武僧武器的正常伤害。随着你武僧等级的提升，这个骰子会有所变化，如武僧特性表中的武术列所示。",
-							"ENG_name": "Martial Arts Die",
-							"entries": [
-								"你可以掷{@dice 1d6}来代替你的{@variantrule 徒手打击|XPHB}或武僧武器的正常伤害。随着你武僧等级的提升，这个骰子会有所变化，如武僧特性表中的武术列所示。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "你可以掷{@dice 1d6}来代替你的{@variantrule 空手攻击|XPHB}或武僧武器的正常伤害。随着你武僧等级的提升，这个骰子会有所变化，如武僧特性表中的武术列所示。|武僧|XPHB|1"
 						},
 						{
-							"type": "entries",
-							"name": "敏捷攻击",
-							"ENG_name": "Dexterous Attacks",
-							"entries": [
-								"你可以使用你的敏捷调整值代替力量调整值来决定你的空手攻击和武僧武器的攻击和伤害检定。此外，当你使用你的{@variantrule 空手攻击|XPHB}的{@action 擒抱|XPHB}或{@action 推搡|XPHB}选项时，你可以使用你的敏捷调整值代替力量调整值来决定豁免掷骰的难度等级（DC）。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "敏捷攻击|武僧|XPHB|1"
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "你可以掷{@dice 1d6}来代替你的{@variantrule 空手攻击|XPHB}或武僧武器的正常伤害。随着你武僧等级的提升，这个骰子会有所变化，如武僧特性表中的武术列所示。",
+			"ENG_name": "Martial Arts Die",
+			"source": "XPHB",
+			"page": 101,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 1,
+			"header": 2,
+			"entries": [
+				"你可以掷{@dice 1d6}来代替你的{@variantrule 徒手打击|XPHB}或武僧武器的正常伤害。随着你武僧等级的提升，这个骰子会有所变化，如武僧特性表中的武术列所示。"
 			]
 		},
 		{
@@ -2263,6 +2303,23 @@
 			"level": 1,
 			"entries": [
 				"当你不穿戴护甲或不持用{@item 护盾术|XPHB}时，你的基本{@variantrule 护甲等级|XPHB}等于10加上你的敏捷和智慧调整值。"
+			]
+		},
+		{
+			"name": "疾风连击",
+			"ENG_name": "Flurry of Blows",
+			"source": "XPHB",
+			"page": 101,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
+			"entries": [
+				"你可以消耗1点专注点，作为{@variantrule 附赠动作|XPHB}进行两次空手攻击。"
 			]
 		},
 		{
@@ -2282,31 +2339,53 @@
 					"type": "entries",
 					"entries": [
 						{
-							"type": "entries",
-							"name": "疾风连击",
-							"ENG_name": "Flurry of Blows",
-							"entries": [
-								"你可以消耗1点专注点，作为{@variantrule 附赠动作|XPHB}进行两次空手攻击。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "疾风连击|武僧|XPHB|2"
 						},
 						{
-							"type": "entries",
-							"name": "坚强防御",
-							"ENG_name": "Patient Defense",
-							"entries": [
-								"你可以将{@action 撤离|XPHB}动作作为{@variantrule 附赠动作|XPHB}。或者，你可以消耗1点专注点，将{@action 撤离|XPHB}和{@action 回避|XPHB}动作作为{@variantrule 附赠动作|XPHB}。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "坚强防御|武僧|XPHB|2"
 						},
 						{
-							"type": "entries",
-							"name": "飞檐走壁",
-							"ENG_name": "Step of the Wind",
-							"entries": [
-								"你可以将{@action 疾走|XPHB}动作作为{@variantrule 附赠动作|XPHB}。或者，你可以消耗1点专注点，将{@action 撤离|XPHB}和{@action 疾走|XPHB}动作作为{@variantrule 附赠动作|XPHB}，并且你本回合的跳跃距离翻倍。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "飞檐走壁|武僧|XPHB|2"
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "坚强防御",
+			"ENG_name": "Patient Defense",
+			"source": "XPHB",
+			"page": 101,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
+			"entries": [
+				"你可以将{@action 撤离|XPHB}动作作为{@variantrule 附赠动作|XPHB}。或者，你可以消耗1点专注点，将{@action 撤离|XPHB}和{@action 回避|XPHB}动作作为{@variantrule 附赠动作|XPHB}。"
+			]
+		},
+		{
+			"name": "飞檐走壁",
+			"ENG_name": "Step of the Wind",
+			"source": "XPHB",
+			"page": 101,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
+			"entries": [
+				"你可以将{@action 疾走|XPHB}动作作为{@variantrule 附赠动作|XPHB}。或者，你可以消耗1点专注点，将{@action 撤离|XPHB}和{@action 疾走|XPHB}动作作为{@variantrule 附赠动作|XPHB}，并且你本回合的跳跃距离翻倍。"
 			]
 		},
 		{
@@ -2342,6 +2421,10 @@
 			"className": "武僧",
 			"classSource": "XPHB",
 			"level": 3,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
 			"entries": [
 				"当一次攻击检定击中你，且其伤害包括钝击、穿刺或斩击伤害时，你可以采取一个{@variantrule 反应|XPHB}来减少该攻击对你的总伤害。减少量等于{@dice 1d10}加上你的敏捷修正和武僧等级。",
 				"如果你将伤害减少到0，你可以消耗1点专注点来转移部分攻击的力量。如果你这样做，选择一个你可以看到的生物，如果攻击是近战攻击，则该生物必须在你5英尺范围内；如果攻击是远程攻击，则该生物必须在你60英尺范围内，并且不能在你的视线中有{@variantrule 掩护|XPHB|全身掩护}。那个生物必须进行一次敏捷豁免，否则将受到等于你的武术骰两次掷骰加上你的敏捷修正的伤害。伤害类型与攻击造成的伤害类型相同。"
@@ -2403,6 +2486,10 @@
 			"className": "武僧",
 			"classSource": "XPHB",
 			"level": 5,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
 			"entries": [
 				"在你的回合中，每当你使用武僧武器或{@variantrule 徒手打击|XPHB}击中一个生物时，你可以消耗1点专注点尝试进行一次眩晕攻击。目标必须进行一次体质豁免。如果豁免失败，目标将处于{@condition 震慑|XPHB}状态，直到你的下个回合开始。如果豁免成功，目标的{@variantrule 速度|XPHB}减半，直到你的下个回合开始，并且在你的下个回合开始前对目标进行的下一次攻击检定具有{@variantrule 优势|XPHB}。"
 			]
@@ -2568,6 +2655,10 @@
 			"className": "武僧",
 			"classSource": "XPHB",
 			"level": 14,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
 			"entries": [
 				"你的身体和精神纪律使你在所有豁免检定上获得熟练度。",
 				"此外，每当你进行一次豁免检定并失败时，你可以消耗1个专注点来重新投掷，并且你必须使用新的投掷结果。"
@@ -2617,6 +2708,11 @@
 			"className": "武僧",
 			"classSource": "XPHB",
 			"level": 18,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point",
+				"amount": 3
+			},
 			"entries": [
 				"在你的回合开始时，你可以消耗3个专注点来增强自己抵御伤害的能力，持续1分钟或者直到你处于{@condition 失能|XPHB}状态。在这段时间里，除了力量伤害外，你对所有伤害都有{@variantrule 提升抗性|XPHB}。"
 			]
@@ -2630,7 +2726,7 @@
 			"classSource": "XPHB",
 			"level": 19,
 			"entries": [
-				"你获得了一个{@filter 传奇恩惠专长|feats|category=EB}，或者你符合条件选择的另一个{@5etools 专长|feats.html}。推荐选择{@feat 无敌攻势之恩惠|XPHB}。"
+				"你获得了一个{@filter 传奇恩惠专长|feats|category=EB}，或者你选择另一个符合条件的{@5etools 专长|feats.html}。推荐选择{@feat 无敌攻势之恩惠|XPHB}。"
 			]
 		},
 		{
@@ -4276,6 +4372,10 @@
 			"subclassShortName": "元素",
 			"subclassSource": "XPHB",
 			"level": 3,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
 			"entries": [
 				"在你的回合开始时，你可以消耗1个专注点来为自己注入元素能量。这种能量持续10分钟，或者直到你处于{@condition 失能|XPHB}（无力）状态。当此特性处于激活状态时，你获得以下好处。",
 				{
@@ -4349,6 +4449,11 @@
 			"subclassSource": "XPHB",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point",
+				"amount": 2
+			},
 			"entries": [
 				"作为一个{@action 魔法|XPHB}动作，你可以消耗2个专注点来在距离你120英尺内的某个点为中心的20英尺半径{@variantrule 球体 [区域效果]|XPHB|球状}内爆发元素能量。选择一种伤害类型：酸、冷、火、闪电或雷。",
 				"在{@variantrule 球体 [区域效果]|XPHB|球状}内的每个生物都必须进行一次敏捷豁免检定。未成功豁免的生物将受到所选择类型的伤害，伤害值为你的武术骰点数的三次掷骰之和。成功豁免的生物受到的伤害减半。"
@@ -4661,6 +4766,11 @@
 			"subclassSource": "XPHB",
 			"level": 17,
 			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point",
+				"amount": 4
+			},
 			"entries": [
 				"你获得了在某人体内设置致命振动的能力。当你用{@variantrule 徒手打击|XPHB}击中一个生物时，你可以消耗4个专注点来启动这些难以察觉的振动，它们持续的天数等于你的僧侣等级。除非你采取行动结束它们，否则振动是无害的。或者，当你在你的回合采取{@action 攻击|XPHB}动作时，你可以放弃一次攻击来结束振动。要结束振动，你和目标必须存在于相同的存在层面上。当你结束振动时，目标必须进行一次体质豁免检定，在失败的情况下受到{@damage 10d12}点力量伤害，成功的情况下受到一半的伤害。",
 				"你一次只能有一个生物受到这个特性的效果影响。你可以无害地结束振动（无需动作）。"
@@ -4679,28 +4789,16 @@
 			"entries": [
 				"你已经学会了借助影界的魔力，获得了以下好处。",
 				{
-					"type": "entries",
-					"name": "黑暗术",
-					"ENG_name": "Darkness",
-					"entries": [
-						"你可以消耗1个专注点来施放{@spell Darkness|XPHB}法术，无需法术材料。当你使用这个特性施放它时，你可以在法术区域内看见。当法术持续存在时，你可以在每个你的回合开始时将其区域移动到距离你60英尺内的某个空间。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "黑暗术|武僧|XPHB|暗影|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "黑暗视觉",
-					"ENG_name": "Darkvision",
-					"entries": [
-						"你获得了范围为60英尺的{@sense 黑暗视觉|XPHB}。如果你已经拥有{@sense 黑暗视觉|XPHB}，其范围增加60英尺。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "黑暗视觉|武僧|XPHB|暗影|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "暗影幻象",
-					"ENG_name": "Shadowy Figments",
-					"entries": [
-						"你知晓{@spell 次级幻影|XPHB}。智慧是你的法术豁免属性。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "暗影幻象|武僧|XPHB|暗影|XPHB|3"
 				}
 			]
 		},
@@ -4721,6 +4819,55 @@
 					"type": "refSubclassFeature",
 					"subclassFeature": "暗影技艺|武僧|XPHB|暗影|XPHB|3"
 				}
+			]
+		},
+		{
+			"name": "黑暗术",
+			"ENG_name": "Darkness",
+			"source": "XPHB",
+			"page": 105,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"subclassShortName": "暗影",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
+			"entries": [
+				"你可以消耗1个专注点来施放{@spell Darkness|XPHB}法术，无需法术材料。当你使用这个特性施放它时，你可以在法术区域内看见。当法术持续存在时，你可以在每个你的回合开始时将其区域移动到距离你60英尺内的某个空间。"
+			]
+		},
+		{
+			"name": "黑暗视觉",
+			"ENG_name": "Darkvision",
+			"source": "XPHB",
+			"page": 105,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"subclassShortName": "暗影",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"你获得了范围为60英尺的{@sense 黑暗视觉|XPHB}。如果你已经拥有{@sense 黑暗视觉|XPHB}，其范围增加60英尺。"
+			]
+		},
+		{
+			"name": "暗影幻象",
+			"ENG_name": "Shadowy Figments",
+			"source": "XPHB",
+			"page": 105,
+			"className": "武僧",
+			"classSource": "XPHB",
+			"subclassShortName": "暗影",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"你知晓{@spell 次级幻影|XPHB}。智慧是你的法术豁免属性。"
 			]
 		},
 		{
@@ -4749,6 +4896,10 @@
 			"subclassSource": "XPHB",
 			"level": 11,
 			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point"
+			},
 			"entries": [
 				"你可以借助你与影界的联系来增强你的传送能力。当你使用你的暗影步时，你可以消耗1点专注点来取消该特性使用中你必须在微光或黑暗中开始和结束的要求。作为这个{@variantrule 额外动作|XPHB}的一部分，你可以在传送后立即进行一次{@variantrule 空手攻击|XPHB}。"
 			]
@@ -4764,8 +4915,13 @@
 			"subclassSource": "XPHB",
 			"level": 17,
 			"header": 2,
+			"consumes": {
+				"name": "聚焦点",
+				"ENG_name": "Focus Point",
+				"amount": 3
+			},
 			"entries": [
-				"作为完全处于{@action 魔法|XPHB}或{@variantrule 微光光照|XPHB}中的{@action 魔法|XPHB}动作，你可以消耗3点专注点来用阴影笼罩自己，持续1分钟，直到你处于{@condition 失能|XPHB}，或者直到你的回合结束于{@variantrule 明亮光照|XPHB}中。在被这些阴影笼罩时，你获得以下好处。",
+				"作为完全处于{@variantrule 黑暗术|XPHB}或{@variantrule 微光光照|XPHB}中的{@variantrule 黑暗术|XPHB}动作，你可以消耗3点专注点来用阴影笼罩自己，持续1分钟，直到你处于{@condition 失能|XPHB}，或者直到你的回合结束于{@variantrule 明亮光照|XPHB}中。在被这些阴影笼罩时，你获得以下好处。",
 				{
 					"type": "entries",
 					"name": "隐形术",

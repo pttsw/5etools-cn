@@ -318,6 +318,18 @@
 				"str",
 				"con"
 			],
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
@@ -345,9 +357,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 巨斧|XPHB}，4 {@item 手斧|XPHB|手斧}，{@item 探索套组|XPHB}以及15GP；或 (B) 75GP"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -368,6 +378,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 巨斧|XPHB}，4 {@item 手斧|XPHB|手斧}，{@item 探索套组|XPHB}以及15GP；或 (B) 75GP"
 				]
 			},
 			"multiclassing": {
@@ -1629,8 +1642,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你选择的{@variantrule 武器精通特性|XPHB|精通特性}或{@filter 简易|items|type=简易武器;近战武器=sand}的{@filter 军用近战武器|items|type=军用武器;近战武器=sand}，例如{@item 巨斧|XPHB|巨斧}和{@item 手斧|XPHB|手斧}。每当你完成一次{@variantrule 长休|XPHB}，你可以练习武器演练并改变其中一个武器选择。",
-				"当你达到特定的野蛮人等级时，你将获得使用更多种类武器的{@variantrule 武器精通特性|XPHB|精通特性}的能力，如野蛮人特性表中的武器精通列所示。"
+				"你对武器的训练使你获得{@variantrule 武器精通属性|XPHB|精通属性}：包括两种自选的{@filter 简易|items|type=简易武器;近战武器=sand}或{@filter 军用近战武器|items|type=军用武器;近战武器=sand}的精通属性，例如{@item 巨斧|XPHB|巨斧}和{@item 手斧|XPHB|手斧}。当你完成一次{@variantrule 长休|XPHB}后，你可以重新演练武器技巧，来改变你所选择的其中一个武器类型。",
+				"当你获得特定的野蛮人等级时，你还可以使用更多种类武器的{@variantrule 武器精通属性|XPHB|精通属性}，具体数据见野蛮人特性表中\"武器精通\"一栏。"
 			]
 		},
 		{
@@ -1915,7 +1928,7 @@
 			"classSource": "XPHB",
 			"level": 17,
 			"entries": [
-				"你的残忍打击的额外伤害增加至{@dice 2d10}。此外，你可以在每次使用残忍打击特性时使用两种不同的残忍打击效果。"
+				"你的凶蛮打击的额外伤害增加至{@dice 2d10}。此外，你可以在每次使用凶蛮打击特性时使用两种不同的凶蛮打击效果。"
 			]
 		},
 		{
@@ -1927,7 +1940,7 @@
 			"classSource": "XPHB",
 			"level": 18,
 			"entries": [
-				"如果你的力量检查掷骰或力量豁免检定的总和小于你的力量分数，你可以使用该分数代替总和。"
+				"如果你的力量检定掷骰或力量豁免检定的结果数值小于你的力量属性值，你可以使用该属性值代替检定结果。"
 			]
 		},
 		{
@@ -1939,7 +1952,7 @@
 			"classSource": "XPHB",
 			"level": 19,
 			"entries": [
-				"你获得了一个{@filter 传奇恩惠专长|feats|category=EB}，或者你符合条件选择的另一个{@5etools 专长|feats.html}。推荐选择{@feat 无敌攻势之恩惠|XPHB}。"
+				"你获得了一个{@filter 传奇恩惠专长|feats|category=EB}，或者你选择另一个符合条件的{@5etools 专长|feats.html}。推荐选择{@feat 无敌攻势之恩惠|XPHB}。"
 			]
 		},
 		{
@@ -1951,7 +1964,7 @@
 			"classSource": "XPHB",
 			"level": 20,
 			"entries": [
-				"你化身为原始的力量。你的力量和体质得分增加4点，最高不超过25。"
+				"你化身为原初之力。你的力量和体质值增加4点，最高不超过25。"
 			]
 		}
 	],
@@ -3722,7 +3735,7 @@
 					"name": "猫头鹰",
 					"ENG_name": "Owl",
 					"entries": [
-						"你拥有范围为60英尺的{@sense 黑暗视觉|XPHB}。如果你已经拥有{@sense 黑暗视觉|XPHB}，其范围增加60英尺。"
+						"你拥有范围为60尺的{@sense 黑暗视觉|XPHB}。如果你已经拥有{@sense 黑暗视觉|XPHB}，其范围增加60尺。"
 					]
 				},
 				{
@@ -3730,7 +3743,7 @@
 					"name": "黑豹",
 					"ENG_name": "Panther",
 					"entries": [
-						"你拥有等同于你的{@variantrule 攀爬速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
+						"你获得{@variantrule 攀爬速度|XPHB}（等同于你的{@variantrule 速度|XPHB}）。"
 					]
 				},
 				{
@@ -3738,7 +3751,7 @@
 					"name": "鲑鱼",
 					"ENG_name": "Salmon",
 					"entries": [
-						"你的{@variantrule 游泳速度|XPHB}等于你的{@variantrule 速度|XPHB}。"
+						"你获得{@variantrule 游泳速度|XPHB}（等同于你的{@variantrule 速度|XPHB}）。"
 					]
 				}
 			]
@@ -3770,13 +3783,13 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"每当你激活你的狂暴，你可以选择以下选项中的一个。",
+				"每当你激活你的狂暴时，你可以从以下选项中选择一个。",
 				{
 					"type": "entries",
 					"name": "隼",
 					"ENG_name": "Falcon",
 					"entries": [
-						"当你的狂怒激活时，如果你没有穿戴任何护甲，你的飞行速度{@variantrule 飞行速度|XPHB}等于你的移动速度{@variantrule 速度|XPHB}。"
+						"当你的狂暴状态激活时，如果你没有穿戴任何护甲，你的获得{@variantrule 飞行速度|XPHB}（等同于你的{@variantrule 速度|XPHB}）。"
 					]
 				},
 				{
@@ -3784,7 +3797,7 @@
 					"name": "狮子",
 					"ENG_name": "Lion",
 					"entries": [
-						"当你的狂暴处于激活状态时，任何在你5英尺范围内的敌人在对除了你或其他激活了此选项的野蛮人之外的目标进行攻击时，都会受到{@variantrule 劣势|XPHB}。"
+						"当你的狂暴状态激活时，任何在你5尺范围内的敌人在对除了你或其他激活了此选项的野蛮人之外的目标进行攻击时，都会受到{@variantrule 劣势|XPHB}。"
 					]
 				},
 				{
@@ -3792,7 +3805,7 @@
 					"name": "攻城槌",
 					"ENG_name": "Ram",
 					"entries": [
-						"当你的狂怒激活时，当你用近战攻击击中一个大型或更小的生物时，你可以使其处于{@condition 倒地|XPHB}状态。"
+						"当你的狂暴状态激活时，当你用近战攻击击中一个大型或更小的生物时，你可以使其处于{@condition 倒地|XPHB}状态。"
 					]
 				}
 			]

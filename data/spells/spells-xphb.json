@@ -39,7 +39,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@dice 1d6}。"
+						"当你达到5级（{@damage 4d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@damage 4d6}。"
 					]
 				}
 			],
@@ -229,7 +229,7 @@
 					"name": "水生适应",
 					"ENG_name": "Aquatic Adaptation",
 					"entries": [
-						"你长出了鳃并且在你的手指之间长出蹼。你可以在水下呼吸并获得等同于你{@variantrule 游泳速度|XPHB}的{@variantrule 游泳速度|XPHB}。"
+						"你长出了鳃并且在你的手指之间长出蹼。你可以在水下呼吸并获得等同于你{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}。"
 					]
 				},
 				{
@@ -423,7 +423,7 @@
 			"entries": [
 				"选择你能看到的范围内的任意数量的自愿生物。每个目标变形成为你选择的大型或更小的野兽，其{@variantrule 挑战等级|XPHB}为4或更低。你可以为每个目标选择不同的形态。在你的后续回合中，你可以采取{@action 魔法|XPHB}动作再次转变目标。",
 				"目标的游戏统计数据被选定的野兽统计数据所替代，但目标保留其生物类型；{@variantrule 生命值|XPHB}；{@variantrule 生命值骰|XPHB}；阵营；沟通能力；以及智力、智慧和魅力得分。目标的动作受到野兽形态解剖学的限制，它不能施放法术。目标的装备融入新形态，目标在该形态时无法使用任何装备。",
-				"目标获得等于野兽形态的{@variantrule 临时生命值|XPHB}数量的{@variantrule 临时生命值|XPHB}。变形持续时间为每个目标的法术持续时间，直到目标没有{@variantrule 临时生命值|XPHB}，或者直到目标作为{@variantrule 附赠动作|XPHB}离开该形态。"
+				"目标获得等于野兽形态的{@variantrule 生命值|XPHB}数量的{@variantrule 生命值|XPHB}。变形持续时间为每个目标的法术持续时间，直到目标没有{@variantrule 生命值|XPHB}，或者直到目标作为{@variantrule 附赠动作|XPHB}离开该形态。"
 			],
 			"miscTags": [
 				"SGT"
@@ -1649,6 +1649,7 @@
 			"ENG_name": "Befuddlement",
 			"source": "XPHB",
 			"page": 245,
+			"freeRules2024": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -1767,6 +1768,7 @@
 			"ENG_name": "Bigby's Hand",
 			"source": "XPHB",
 			"page": 245,
+			"freeRules2024": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -1799,7 +1801,7 @@
 			],
 			"entries": [
 				"你在施法范围内你能看到的未被占据的空间中创造出一只大型的、闪烁着魔法能量的手。这只手持续存在于法术持续时间内，并且根据你的命令移动，模仿你自己手的动作。",
-				"这只手是一个物体，具有AC 20和等于你的{@variantrule 生命值|XPHB}的{@variantrule 生命值|XPHB}。如果它降至0{@variantrule 生命值|XPHB}，法术结束。手不占据其空间。",
+				"这只手是一个物体，具有AC 20和等于你的{@variantrule 生命值|XPHB|生命值}的{@variantrule 生命值|XPHB|生命值}。如果它降至0{@variantrule 生命值|XPHB|生命值}，法术结束。手不占据其空间。",
 				"当你施放这个法术，以及在你的后续回合中作为{@variantrule 附赠动作|XPHB}，你可以将手移动最多60英尺，然后造成以下一种效果：",
 				{
 					"type": "list",
@@ -2518,6 +2520,7 @@
 			"ENG_name": "Charm Monster",
 			"source": "XPHB",
 			"page": 249,
+			"freeRules2024": true,
 			"level": 4,
 			"school": "E",
 			"time": [
@@ -2675,7 +2678,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d10}）、11级（{@damage 2d10}）和17级（{@damage 3d10}）时，伤害分别增加{@dice 1d10}。"
+						"当你达到5级（{@damage 4d10}）、11级（{@damage 2d10}）和17级（{@damage 3d10}）时，伤害分别增加{@damage 4d10}。"
 					]
 				}
 			],
@@ -2706,6 +2709,7 @@
 			"ENG_name": "Chromatic Orb",
 			"source": "XPHB",
 			"page": 249,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -3992,7 +3996,7 @@
 				"DFT"
 			],
 			"areaTags": [
-				"R"
+				"S"
 			]
 		},
 		{
@@ -4958,7 +4962,7 @@
 				}
 			],
 			"entries": [
-				"你在30英尺的范围内散发出魔法气息。在气息范围内，你和你的盟友在使用武器或进行{@damage 1d4}命中目标时，每次攻击额外造成{@damage 1d4}点辐射伤害。"
+				"你在30英尺的范围内散发出魔法气息。在气息范围内，你和你的盟友在使用武器或进行{@variantrule 徒手打击|XPHB}命中目标时，每次攻击额外造成{@variantrule 徒手打击|XPHB}点辐射伤害。"
 			],
 			"damageInflict": [
 				"光耀"
@@ -5872,6 +5876,7 @@
 			"ENG_name": "Dissonant Whispers",
 			"source": "XPHB",
 			"page": 264,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -6011,6 +6016,7 @@
 			"ENG_name": "Divine Smite",
 			"source": "XPHB",
 			"page": 265,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -6329,6 +6335,7 @@
 			"ENG_name": "Dragon's Breath",
 			"source": "XPHB",
 			"page": 266,
+			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -6391,6 +6398,7 @@
 			"ENG_name": "Drawmij's Instant Summons",
 			"source": "XPHB",
 			"page": 266,
+			"freeRules2024": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -6952,6 +6960,7 @@
 			"ENG_name": "Ensnaring Strike",
 			"source": "XPHB",
 			"page": 268,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "C",
 			"time": [
@@ -7169,6 +7178,7 @@
 			"ENG_name": "Evard's Black Tentacles",
 			"source": "XPHB",
 			"page": 270,
+			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -7950,7 +7960,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d10}）、11级（{@damage 2d10}）和17级（{@damage 3d10}）时，伤害分别增加{@dice 1d10}。"
+						"当你达到5级（{@damage 4d10}）、11级（{@damage 2d10}）和17级（{@damage 3d10}）时，伤害分别增加{@damage 4d10}。"
 					]
 				}
 			],
@@ -8737,7 +8747,7 @@
 				}
 			],
 			"entries": [
-				"你触摸一个自愿的生物。在持续期间，目标的移动不受{@variantrule 困难地形|XPHB}的影响，法术和其他魔法效果既不能减少目标的{@variantrule 游泳速度|XPHB}，也不能使目标处于{@condition 麻痹|XPHB}或{@condition 束缚|XPHB}状态。目标还拥有等同于其{@variantrule 游泳速度|XPHB}的{@variantrule 游泳速度|XPHB}。",
+				"你触摸一个自愿的生物。在持续期间，目标的移动不受{@variantrule 困难地形|XPHB}的影响，法术和其他魔法效果既不能减少目标的{@variantrule 速度|XPHB}，也不能使目标处于{@condition 麻痹|XPHB}或{@condition 束缚|XPHB}状态。目标还拥有等同于其{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}。",
 				"此外，目标可以花费5英尺的移动距离来自动从非魔法束缚中逃脱，例如手铐或生物对其施加的{@condition 擒抱|XPHB}状态。"
 			],
 			"entriesHigherLevel": [
@@ -8849,7 +8859,7 @@
 			],
 			"entries": [
 				"你触摸的自愿生物，连同它穿戴和携带的一切，在整个持续期间都变成了一团雾气。如果目标的生命值降至0，或者它采取{@action 魔法|XPHB}行动来结束自身的法术，法术就会结束。",
-				"在这种形态下，目标唯一的移动方式是具有{@variantrule 飞行速度|XPHB}10英尺，并且可以悬停。目标可以进入并占据另一个生物的空间。目标对钝击、穿刺和斩击伤害具有{@variantrule 提升抗性|XPHB}；对{@variantrule 免疫|XPHB}状态具有{@variantrule 免疫|XPHB}；并且在力量、敏捷和体质豁免检定上具有{@variantrule 优势|XPHB}。目标可以通过狭窄的开口，但它将液体视为固体表面。",
+				"在这种形态下，目标唯一的移动方式是具有{@variantrule 飞行速度|XPHB}10英尺，并且可以悬停。目标可以进入并占据另一个生物的空间。目标对钝击、穿刺和斩击伤害具有{@variantrule 提升抗性|XPHB}；对{@condition 倒地|XPHB}状态具有{@condition 倒地|XPHB}；并且在力量、敏捷和体质豁免检定上具有{@variantrule 优势|XPHB}。目标可以通过狭窄的开口，但它将液体视为固体表面。",
 				"目标不能说话或操纵物体，它携带或持有的任何物体都不能被放下、使用或以其他方式互动。最后，目标不能攻击或施放法术。"
 			],
 			"entriesHigherLevel": [
@@ -10278,7 +10288,7 @@
 				}
 			],
 			"entries": [
-				"你能看到的范围内你选择的一个生物恢复等于{@variantrule 生命值|XPHB}加上你施法能力调整值的{@variantrule 生命值|XPHB}。"
+				"你能看到的范围内你选择的一个生物恢复等于{@dice 2d4}加上你施法能力调整值的{@dice 2d4}。"
 			],
 			"entriesHigherLevel": [
 				{
@@ -10539,6 +10549,7 @@
 			"ENG_name": "Hex",
 			"source": "XPHB",
 			"page": 285,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -10649,21 +10660,6 @@
 			],
 			"savingThrow": [
 				"感知"
-			],
-			"affectsCreatureType": [
-				"异怪",
-				"野兽",
-				"天界语",
-				"构装体",
-				"龙",
-				"元素生物",
-				"精类",
-				"邪魔",
-				"巨人语",
-				"类人生物",
-				"怪兽",
-				"泥怪",
-				"植物"
 			],
 			"miscTags": [
 				"SCT",
@@ -11725,6 +11721,7 @@
 			"ENG_name": "Leomund's Secret Chest",
 			"source": "XPHB",
 			"page": 290,
+			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -11770,6 +11767,7 @@
 			"ENG_name": "Leomund's Tiny Hut",
 			"source": "XPHB",
 			"page": 291,
+			"freeRules2024": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -12973,6 +12971,7 @@
 			"ENG_name": "Melf's Acid Arrow",
 			"source": "XPHB",
 			"page": 297,
+			"freeRules2024": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -13234,7 +13233,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@dice 1d6}。"
+						"当你达到5级（{@damage 4d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@damage 4d6}。"
 					]
 				}
 			],
@@ -13673,6 +13672,7 @@
 			"ENG_name": "Mordenkainen's Faithful Hound",
 			"source": "XPHB",
 			"page": 300,
+			"freeRules2024": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -13723,6 +13723,7 @@
 			"ENG_name": "Mordenkainen's Magnificent Mansion",
 			"source": "XPHB",
 			"page": 300,
+			"freeRules2024": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -13772,6 +13773,7 @@
 			"ENG_name": "Mordenkainen's Private Sanctum",
 			"source": "XPHB",
 			"page": 301,
+			"freeRules2024": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -13840,6 +13842,7 @@
 			"ENG_name": "Mordenkainen's Sword",
 			"source": "XPHB",
 			"page": 302,
+			"freeRules2024": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -13991,6 +13994,7 @@
 			"ENG_name": "Nystul's Magic Aura",
 			"source": "XPHB",
 			"page": 302,
+			"freeRules2024": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -14052,6 +14056,7 @@
 			"ENG_name": "Otiluke's Freezing Sphere",
 			"source": "XPHB",
 			"page": 302,
+			"freeRules2024": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -14110,6 +14115,7 @@
 			"ENG_name": "Otiluke's Resilient Sphere",
 			"source": "XPHB",
 			"page": 303,
+			"freeRules2024": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -14176,6 +14182,7 @@
 			"ENG_name": "Otto's Irresistible Dance",
 			"source": "XPHB",
 			"page": 303,
+			"freeRules2024": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -14726,7 +14733,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d12}）、11级（{@damage 2d12}）和17级（{@damage 3d12}）时，伤害增加{@dice 1d12}。"
+						"当你达到5级（{@damage 4d12}）、11级（{@damage 2d12}）和17级（{@damage 3d12}）时，伤害增加{@damage 4d12}。"
 					]
 				}
 			],
@@ -14789,7 +14796,7 @@
 				}
 			],
 			"entries": [
-				"你尝试将射程内你能看到的一个生物变成一个野兽。目标必须成功通过一次智慧豁免检定，否则在持续时间内变形为野兽形态。该形态可以是你所选择的任何具有{@variantrule 挑战等级|XPHB}等于或小于目标的（或者如果目标没有{@variantrule 挑战等级|XPHB}，则等于目标的等级）的{@variantrule 挑战等级|XPHB}。目标的游戏统计数据被所选择的野兽的统计数据替换，但目标保留其阵营、个性、生物类型、{@variantrule 生命值|XPHB}和{@variantrule 生命值骰|XPHB}。",
+				"你尝试将射程内你能看到的一个生物变成一个野兽。目标必须成功通过一次智慧豁免检定，否则在持续时间内变形为野兽形态。该形态可以是你所选择的任何具有{@filter 野兽|bestiary|type=野兽|miscellaneous=!swarm}等于或小于目标的（或者如果目标没有{@filter 野兽|bestiary|type=野兽|miscellaneous=!swarm}，则等于目标的等级）的{@variantrule 挑战等级|XPHB}。目标的游戏统计数据被所选择的野兽的统计数据替换，但目标保留其阵营、个性、生物类型、{@variantrule 生命值|XPHB}和{@variantrule 生命值骰|XPHB}。",
 				"目标获得的{@variantrule 临时生命值|XPHB}数量等同于野兽形态的{@variantrule 生命值|XPHB}。如果目标没有剩余的{@variantrule 临时生命值|XPHB}，该法术会提前结束。",
 				"目标受到其新形态解剖结构的限制，它能够执行的动作受到限制，且无法说话或施法。",
 				"目标的装备融入新形态。该生物无法使用或以其他方式从任何装备中获益。"
@@ -14848,6 +14855,7 @@
 			"ENG_name": "Power Word Heal",
 			"source": "XPHB",
 			"page": 306,
+			"freeRules2024": true,
 			"level": 9,
 			"school": "E",
 			"time": [
@@ -15362,7 +15370,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@dice 1d8}。"
+						"当你达到5级（{@damage 4d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@damage 4d8}。"
 					]
 				}
 			],
@@ -15628,7 +15636,7 @@
 				}
 			],
 			"entries": [
-				"你触摸一个生物并结束它身上的{@variantrule 优势|XPHB}状态。在持续时间内，目标对避免或结束{@variantrule 优势|XPHB}状态的豁免检定具有{@variantrule 优势|XPHB}，并且对毒素伤害具有{@variantrule 提升抗性|XPHB}。"
+				"你触摸一个生物并结束它身上的{@condition 中毒|XPHB}状态。在持续时间内，目标对避免或结束{@condition 中毒|XPHB}状态的豁免检定具有{@condition 中毒|XPHB}，并且对毒素伤害具有{@variantrule 提升抗性|XPHB}。"
 			],
 			"damageResist": [
 				"毒素"
@@ -15745,6 +15753,7 @@
 			"ENG_name": "Rary's Telepathic Bond",
 			"source": "XPHB",
 			"page": 311,
+			"freeRules2024": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -15822,7 +15831,7 @@
 			],
 			"entries": [
 				"一束消弱能量的射线从你射向范围内的一个生物。目标必须进行一次体质豁免。如果豁免成功，目标在你下一回合开始之前进行的下一次攻击检定中具有{@variantrule 劣势|XPHB}。",
-				"如果豁免失败，目标在持续时间内对基于力量的{@variantrule 劣势|XPHB}具有{@variantrule 劣势|XPHB}。在那段时间里，它还从所有的伤害掷骰中减去{@dice 1d8}。目标在每个回合结束时重复豁免，成功则结束法术。"
+				"如果豁免失败，目标在持续时间内对基于力量的{@variantrule D20 检定|XPHB|D20 检定}具有{@variantrule D20 检定|XPHB|D20 检定}。在那段时间里，它还从所有的伤害掷骰中减去{@dice 1d8}。目标在每个回合结束时重复豁免，成功则结束法术。"
 			],
 			"savingThrow": [
 				"体质"
@@ -15870,7 +15879,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@dice 1d8}。"
+						"当你达到5级（{@damage 4d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@damage 4d8}。"
 					]
 				}
 			],
@@ -15901,6 +15910,7 @@
 			"ENG_name": "Ray of Sickness",
 			"source": "XPHB",
 			"page": 311,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -16211,7 +16221,7 @@
 				"通过触摸，你复活了一个死亡不超过一个世纪、不是因年老而死、死亡时不是不死生物的生物。",
 				"生物以全部的{@variantrule 生命值|XPHB}复活。此法术还中和了在死亡时影响生物的任何毒素。此法术闭合所有致命伤口并恢复任何缺失的身体部位。",
 				"从死亡中复活是一种磨难。目标在进行{@variantrule D20 检定|XPHB|D20 检定}时会受到-4的惩罚。每次目标完成一次{@variantrule 长休|XPHB}，这个惩罚就会减少1，直到变为0。",
-				"施放这个法术来复活已经死亡365天或更长时间的生物会对你造成负担。直到你完成一次{@variantrule 长休|XPHB}，你不能再施放法术，并且在{@variantrule 劣势|XPHB}上有{@variantrule 劣势|XPHB}。"
+				"施放这个法术来复活已经死亡365天或更长时间的生物会对你造成负担。直到你完成一次{@variantrule 长休|XPHB}，你不能再施放法术，并且在{@variantrule D20 检定|XPHB|D20 检定}上有{@variantrule D20 检定|XPHB|D20 检定}。"
 			],
 			"affectsCreatureType": [
 				"异怪",
@@ -16404,7 +16414,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@dice 1d8}。"
+						"当你达到5级（{@damage 4d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@damage 4d8}。"
 					]
 				}
 			],
@@ -16635,6 +16645,7 @@
 			"ENG_name": "Searing Smite",
 			"source": "XPHB",
 			"page": 314,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -17126,6 +17137,7 @@
 			"ENG_name": "Shining Smite",
 			"source": "XPHB",
 			"page": 316,
+			"freeRules2024": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -17217,7 +17229,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@dice 1d8}。"
+						"当你达到5级（{@damage 4d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@damage 4d8}。"
 					]
 				}
 			],
@@ -17432,7 +17444,7 @@
 			],
 			"entries": [
 				"在你施法范围内一点为中心的5英尺半径球体内的每个你选择的生物必须成功通过一次智慧豁免检定，否则直到其下一个回合结束都会处于{@condition 失能|XPHB}状态，届时它必须重复进行豁免检定。如果目标第二次豁免失败，目标将在整个持续时间内处于{@condition 昏迷|XPHB}状态。如果目标受到伤害，或其周围5英尺内的某人采取行动将其从法术效果中摇醒，则该目标上的法术结束。",
-				"不睡觉的生物，比如精灵，或者对{@variantrule 免疫|XPHB}状态有{@variantrule 免疫|XPHB}的生物，自动通过对抗这个法术的豁免。"
+				"不睡觉的生物，比如精灵，或者对{@condition 力竭|XPHB}状态有{@condition 力竭|XPHB}的生物，自动通过对抗这个法术的豁免。"
 			],
 			"conditionInflict": [
 				"失能",
@@ -17556,6 +17568,7 @@
 			"ENG_name": "Sorcerous Burst",
 			"source": "XPHB",
 			"page": 318,
+			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -17590,7 +17603,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@dice 1d8}。"
+						"当你达到5级（{@damage 4d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@damage 4d8}。"
 					]
 				}
 			],
@@ -17852,7 +17865,7 @@
 				}
 			],
 			"entries": [
-				"直到法术结束，你触碰的一个自愿生物获得在垂直表面和天花板上移动的能力，同时双手保持自由。目标还获得了等于其{@variantrule 攀爬速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
+				"直到法术结束，你触碰的一个自愿生物获得在垂直表面和天花板上移动的能力，同时双手保持自由。目标还获得了等于其{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}。"
 			],
 			"entriesHigherLevel": [
 				{
@@ -18104,6 +18117,7 @@
 			"ENG_name": "Starry Wisp",
 			"source": "XPHB",
 			"page": 320,
+			"freeRules2024": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -18137,7 +18151,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@dice 1d8}。"
+						"当你达到5级（{@damage 4d8}）、11级（{@damage 2d8}）和17级（{@damage 3d8}）时，伤害增加{@damage 4d8}。"
 					]
 				}
 			],
@@ -18735,6 +18749,7 @@
 			"ENG_name": "Summon Dragon",
 			"source": "XPHB",
 			"page": 324,
+			"freeRules2024": true,
 			"level": 5,
 			"school": "C",
 			"time": [
@@ -19393,6 +19408,7 @@
 			"ENG_name": "Tasha's Hideous Laughter",
 			"source": "XPHB",
 			"page": 331,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -19778,6 +19794,7 @@
 			"ENG_name": "Tenser's Floating Disk",
 			"source": "XPHB",
 			"page": 332,
+			"freeRules2024": true,
 			"level": 1,
 			"school": "C",
 			"time": [
@@ -19868,7 +19885,7 @@
 					"name": "震耳嗓音",
 					"ENG_name": "Booming Voice",
 					"entries": [
-						"你的声音在1分钟内变得比平时响多达三倍。在这段时间里，你在魅力（{@variantrule 优势|XPHB})检定上具有{@variantrule 优势|XPHB}。"
+						"你的声音在1分钟内变得比平时响多达三倍。在这段时间里，你在魅力（{@skill 威吓})检定上具有{@skill 威吓}。"
 					]
 				},
 				{
@@ -19947,7 +19964,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@dice 1d6}。"
+						"当你达到5级（{@damage 4d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@damage 4d6}。"
 					]
 				}
 			],
@@ -20011,7 +20028,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@dice 1d6}。"
+						"当你达到5级（{@damage 4d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@damage 4d6}。"
 					]
 				}
 			],
@@ -20429,7 +20446,7 @@
 					"ENG_name": "Creature into Creature",
 					"entries": [
 						"如果你将一个生物变成另一种生物，新形态可以是你选择的任何一种，其{@variantrule 挑战等级|XPHB}等于或小于目标的{@variantrule 挑战等级|XPHB}或等级。目标的游戏统计数据被新形态的统计数据替换，但它保留其{@variantrule 生命值|XPHB}、{@variantrule 生命值骰|XPHB}、阵营和个性。",
-						"目标获得等同于新形态的{@variantrule 临时生命值|XPHB}数量的{@variantrule 临时生命值|XPHB}。如果目标没有剩余的{@variantrule 临时生命值|XPHB}，法术会提前结束。",
+						"目标获得等同于新形态的{@variantrule 生命值|XPHB}数量的{@variantrule 生命值|XPHB}。如果目标没有剩余的{@variantrule 生命值|XPHB}，法术会提前结束。",
 						"目标受到其新形态解剖结构的限制，它能够执行的动作受到限制，且无法说话或施法。",
 						"目标的装备融入新形态。该生物无法使用或以其他方式从任何装备中获益。"
 					]
@@ -20819,7 +20836,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@dice 1d6}。"
+						"当你达到5级（{@damage 4d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@damage 4d6}。"
 					]
 				}
 			],
@@ -21478,7 +21495,7 @@
 				}
 			],
 			"entries": [
-				"你和你选择的范围内多达十个愿意的生物在持续时间内变为气态形态，看起来像云的细丝。在这种云形态中，目标具有{@variantrule 飞行速度|XPHB}300英尺，并且可以悬停；它对{@variantrule 免疫|XPHB}状态具有{@variantrule 免疫|XPHB}；并且它对钝击、穿刺和斩击伤害具有{@variantrule 提升抗性|XPHB}。目标在这种形态下唯一可以采取的动作是{@action 疾走|XPHB}动作或开始变回正常形态的{@action 魔法|XPHB}动作。变回需要1分钟，在此期间目标处于{@condition 震慑|XPHB}状态。直到法术结束，目标可以变回云形态，这也需要一个{@action 魔法|XPHB}动作，然后是1分钟的变形。",
+				"你和你选择的范围内多达十个愿意的生物在持续时间内变为气态形态，看起来像云的细丝。在这种云形态中，目标具有{@variantrule 飞行速度|XPHB}300英尺，并且可以悬停；它对{@condition 倒地|XPHB}状态具有{@condition 倒地|XPHB}；并且它对钝击、穿刺和斩击伤害具有{@variantrule 提升抗性|XPHB}。目标在这种形态下唯一可以采取的动作是{@action 疾走|XPHB}动作或开始变回正常形态的{@action 魔法|XPHB}动作。变回需要1分钟，在此期间目标处于{@condition 震慑|XPHB}状态。直到法术结束，目标可以变回云形态，这也需要一个{@action 魔法|XPHB}动作，然后是1分钟的变形。",
 				"如果目标在效果结束时处于云雾形态且正在飞行，目标每轮下降60英尺，持续1分钟，直到安全着陆。如果1分钟后无法着陆，它将落下剩余的距离。"
 			],
 			"conditionInflict": [
@@ -21761,7 +21778,7 @@
 					"name": "戏法升级",
 					"ENG_name": "Cantrip Upgrade",
 					"entries": [
-						"当你达到5级（{@dice 1d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@dice 1d6}。"
+						"当你达到5级（{@damage 4d6}）、11级（{@damage 2d6}）和17级（{@damage 3d6}）时，伤害增加{@damage 4d6}。"
 					]
 				}
 			],
@@ -21935,7 +21952,7 @@
 				"SGT"
 			],
 			"areaTags": [
-				"R"
+				"S"
 			],
 			"hasFluffImages": true
 		},

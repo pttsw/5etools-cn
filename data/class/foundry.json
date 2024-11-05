@@ -130,6 +130,80 @@
 					"title": "已知注法"
 				}
 			]
+		},
+		{
+			"name": "术士",
+			"ENG_name": "Sorcerer",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "点数",
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 2
+							},
+							"3": {
+								"value": 3
+							},
+							"4": {
+								"value": 4
+							},
+							"5": {
+								"value": 5
+							},
+							"6": {
+								"value": 6
+							},
+							"7": {
+								"value": 7
+							},
+							"8": {
+								"value": 8
+							},
+							"9": {
+								"value": 9
+							},
+							"10": {
+								"value": 10
+							},
+							"11": {
+								"value": 11
+							},
+							"12": {
+								"value": 12
+							},
+							"13": {
+								"value": 13
+							},
+							"14": {
+								"value": 14
+							},
+							"15": {
+								"value": 15
+							},
+							"16": {
+								"value": 16
+							},
+							"17": {
+								"value": 17
+							},
+							"18": {
+								"value": 18
+							},
+							"19": {
+								"value": 19
+							},
+							"20": {
+								"value": 20
+							}
+						}
+					},
+					"title": "术法点"
+				}
+			]
 		}
 	],
 	"subclass": [
@@ -1162,6 +1236,426 @@
 					}
 				]
 			}
+		},
+		{
+			"name": "原初学识",
+			"ENG_name": "Primal Knowledge",
+			"source": "XPHB",
+			"className": "野蛮人",
+			"classSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"驯兽",
+								"运动",
+								"威吓",
+								"自然",
+								"察觉",
+								"生存"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "野蛮人",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "专精",
+			"ENG_name": "Expertise",
+			"source": "XPHB",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"level": 2,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "专精",
+			"ENG_name": "Expertise",
+			"source": "XPHB",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"level": 9,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "防御者",
+			"ENG_name": "Protector",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				],
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				]
+			}
+		},
+		{
+			"name": "奇术使",
+			"ENG_name": "Thaumaturge",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"additionalSpells": [
+					{
+						"known": {
+							"_": [
+								{
+									"choose": "level=0|class=牧师",
+									"count": 1
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "德鲁伊语",
+			"ENG_name": "Druidic",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"druidic": true
+					}
+				]
+			}
+		},
+		{
+			"name": "魔术师",
+			"ENG_name": "Magician",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				],
+				"armorProficiencies": [
+					{
+						"medium": true
+					}
+				]
+			}
+		},
+		{
+			"name": "典狱长",
+			"ENG_name": "Warden",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"additionalSpells": [
+					{
+						"known": {
+							"_": [
+								{
+									"choose": "level=0|class=德鲁伊",
+									"count": 1
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "武僧",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "战斗风格",
+			"ENG_name": "Fighting Style",
+			"source": "XPHB",
+			"className": "圣武士",
+			"classSource": "XPHB",
+			"level": 2,
+			"isIgnored": true
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "圣武士",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "熟练探险家",
+			"ENG_name": "Deft Explorer",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"level": 2,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"any": 2
+					}
+				],
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "战斗风格",
+			"ENG_name": "Fighting Style",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"level": 2,
+			"isIgnored": true
+		},
+		{
+			"name": "专精",
+			"ENG_name": "Expertise",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"level": 9,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "专精",
+			"ENG_name": "Expertise",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "盗贼黑话",
+			"ENG_name": "Thieves' Cant",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"thieves' cant": true
+					}
+				]
+			}
+		},
+		{
+			"name": "专精",
+			"ENG_name": "Expertise",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"level": 6,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "圆滑心智",
+			"ENG_name": "Slippery Mind",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"level": 15,
+			"entryData": {
+				"savingThrowProficiencies": [
+					{
+						"wis": true,
+						"cha": true
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "魔力泉涌",
+			"ENG_name": "Font of Magic",
+			"source": "XPHB",
+			"className": "术士",
+			"classSource": "XPHB",
+			"level": 2,
+			"system": {
+				"uses.per": "lr",
+				"uses.max": "@scale.术士点数"
+			}
+		},
+		{
+			"name": "超魔法选项",
+			"ENG_name": "Metamagic Options",
+			"source": "XPHB",
+			"className": "术士",
+			"classSource": "XPHB",
+			"level": 2,
+			"isIgnored": true
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "术士",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "奥术祈唤选项",
+			"ENG_name": "Eldritch Invocation Options",
+			"source": "XPHB",
+			"className": "邪术师",
+			"classSource": "XPHB",
+			"level": 1,
+			"isIgnored": true
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "邪术师",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
+		},
+		{
+			"name": "学者",
+			"ENG_name": "Scholar",
+			"source": "XPHB",
+			"className": "法师",
+			"classSource": "XPHB",
+			"level": 2,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "传奇恩惠",
+			"ENG_name": "Epic Boon",
+			"source": "XPHB",
+			"className": "法师",
+			"classSource": "XPHB",
+			"level": 19,
+			"isIgnored": true
 		}
 	],
 	"subclassFeature": [
@@ -5142,6 +5636,319 @@
 					{
 						"anyArtisansTool": 1
 					}
+				]
+			}
+		},
+		{
+			"name": "附赠熟练项",
+			"ENG_name": "Bonus Proficiencies",
+			"source": "XPHB",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "逸闻",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"any": 3
+					}
+				]
+			}
+		},
+		{
+			"name": "战争训练",
+			"ENG_name": "Martial Training",
+			"source": "XPHB",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "勇气",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				],
+				"armorProficiencies": [
+					{
+						"medium": true,
+						"shield": true
+					}
+				]
+			}
+		},
+		{
+			"name": "自然之护",
+			"ENG_name": "Nature's Ward",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"subclassShortName": "大地",
+			"subclassSource": "XPHB",
+			"level": 10,
+			"entryData": {
+				"resist": [
+					{
+						"choose": {
+							"from": [
+								"火焰",
+								"冷冻",
+								"闪电",
+								"毒素"
+							]
+						}
+					}
+				],
+				"immune": [
+					"毒素"
+				]
+			}
+		},
+		{
+			"name": "卓越战技",
+			"ENG_name": "Combat Superiority",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "战斗大师",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"resources": [
+					{
+						"name": "卓越骰",
+						"ENG_name": "Superiority Die",
+						"type": "dicePool",
+						"recharge": "短暂休息",
+						"count": "floor((<$level$> + 1) / 8) + 4",
+						"number": 1,
+						"faces": "8 + (符号(向上取整((<等级$> - 2) / 8) - 1) * 2)"
+					}
+				]
+			}
+		},
+		{
+			"name": "战技选项",
+			"ENG_name": "Maneuver Options",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "战斗大师",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"isIgnored": true
+		},
+		{
+			"name": "灵能力量",
+			"ENG_name": "Psionic Power",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"resources": [
+					{
+						"name": "灵能骰",
+						"ENG_name": "Psionic Energy Die",
+						"type": "dicePool",
+						"recharge": "长休",
+						"count": "2 * PB",
+						"number": 1,
+						"faces": "(6 + ((ceil((<$level$> + 2) / 6) - 1) * 2))"
+					}
+				]
+			}
+		},
+		{
+			"name": "意念守护",
+			"ENG_name": "Guarded Mind",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 10,
+			"entryData": {
+				"resist": [
+					"心灵"
+				]
+			}
+		},
+		{
+			"name": "妖冶娴都",
+			"ENG_name": "Otherworldly Glamour",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "妖精漫游者",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"欺瞒",
+								"表演",
+								"游说"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "阴影视野",
+			"ENG_name": "Umbral Sight",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "幽域追踪者",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"actorTokenMod": {
+				"_": [
+					{
+						"mode": "conditionals",
+						"conditionals": [
+							{
+								"condition": "!PLUT_CONTEXT?.actor?.system?.token?.昏暗视觉",
+								"mod": {
+									"dimSight": [
+										{
+											"mode": "set",
+											"value": 60
+										}
+									]
+								}
+							},
+							{
+								"mod": {
+									"dimSight": [
+										{
+											"mode": "scalarAdd",
+											"scalar": 60
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "钢铁意志",
+			"ENG_name": "Iron Mind",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "幽域追踪者",
+			"subclassSource": "XPHB",
+			"level": 7,
+			"entryData": {
+				"savingThrowProficiencies": [
+					{
+						"wis": true
+					},
+					{
+						"choose": {
+							"from": [
+								"int",
+								"cha"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "刺客工具",
+			"ENG_name": "Assassin's Tools",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "刺客",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"disguise kit": true,
+						"poisoner's kit": true
+					}
+				]
+			}
+		},
+		{
+			"name": "灵能力量",
+			"ENG_name": "Psionic Power",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"resources": [
+					{
+						"name": "灵能骰",
+						"ENG_name": "Psionic Energy Die",
+						"type": "dicePool",
+						"recharge": "长休",
+						"count": "2 * PB",
+						"number": 1,
+						"faces": "(6 + (ceil((<$level$> + 2) / 6) - 1) * 2)"
+					}
+				]
+			}
+		},
+		{
+			"name": "心灵防御",
+			"ENG_name": "Psychic Defenses",
+			"source": "XPHB",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "异常的",
+			"subclassSource": "XPHB",
+			"level": 6,
+			"entryData": {
+				"resist": [
+					"心灵"
+				]
+			}
+		},
+		{
+			"name": "光耀之魂",
+			"ENG_name": "Radiant Soul",
+			"source": "XPHB",
+			"className": "邪术师",
+			"classSource": "XPHB",
+			"subclassShortName": "天界生物",
+			"subclassSource": "XPHB",
+			"level": 6,
+			"entryData": {
+				"resist": [
+					"光耀"
+				]
+			}
+		},
+		{
+			"name": "思维之盾",
+			"ENG_name": "Thought Shield",
+			"source": "XPHB",
+			"className": "邪术师",
+			"classSource": "XPHB",
+			"subclassShortName": "旧日支配者",
+			"subclassSource": "XPHB",
+			"level": 10,
+			"entryData": {
+				"resist": [
+					"心灵"
 				]
 			}
 		}

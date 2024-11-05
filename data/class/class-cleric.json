@@ -571,6 +571,18 @@
 				5,
 				5
 			],
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
@@ -596,9 +608,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 链甲衫|XPHB}, {@item 护盾术|XPHB}, {@item 硬头锤|XPHB}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 7 GP; 或 (B) 110 GP"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -627,6 +637,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 链甲衫|XPHB}, {@item 护盾术|XPHB}, {@item 硬头锤|XPHB}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 7 GP; 或 (B) 110 GP"
 				]
 			},
 			"multiclassing": {
@@ -749,7 +762,7 @@
 					]
 				},
 				{
-					"title": "每个法术环位的准备法术",
+					"title": "每环法术位",
 					"colLabels": [
 						"{@filter 1st|spells|level=1|class=牧师}",
 						"{@filter 2nd|spells|level=2|class=牧师}",
@@ -987,14 +1000,14 @@
 			],
 			"classFeatures": [
 				"施法|牧师|XPHB|1",
-				"神圣秩序|牧师|XPHB|1",
+				"圣职|牧师|XPHB|1",
 				"引导神力|牧师|XPHB|2",
 				{
-					"classFeature": "牧师子职业|牧师|XPHB|3",
+					"classFeature": "牧师子职|牧师|XPHB|3",
 					"gainSubclassFeature": true
 				},
 				"属性值提升|牧师|XPHB|4",
-				"焚烧亡灵|牧师|XPHB|5",
+				"灼净亡灵|牧师|XPHB|5",
 				{
 					"classFeature": "子职特性|牧师|XPHB|6",
 					"gainSubclassFeature": true
@@ -1003,7 +1016,7 @@
 				"属性值提升|牧师|XPHB|8",
 				"神圣干预|牧师|XPHB|10",
 				"属性值提升|牧师|XPHB|12",
-				"改进后的神圣打击|牧师|XPHB|14",
+				"精通受祝击|牧师|XPHB|14",
 				"属性值提升|牧师|XPHB|16",
 				{
 					"classFeature": "子职特性|牧师|XPHB|17",
@@ -1012,7 +1025,7 @@
 				"传奇恩惠|牧师|XPHB|19",
 				"神圣干预|牧师|XPHB|20"
 			],
-			"subclassTitle": "牧师子职业",
+			"subclassTitle": "牧师子职",
 			"hasFluff": true,
 			"hasFluffImages": true
 		}
@@ -3054,7 +3067,7 @@
 			],
 			"subclassFeatures": [
 				"光明领域|牧师|XPHB|光明|XPHB|3",
-				"当你达到牧师等级4和10时，你可以选择从{@filter 牧师法术列表|spells|class=牧师}中学习另一个你选择的戏法，如牧师特性表中的戏法列所示。|牧师|XPHB|光明|XPHB|6",
+				"当你达到牧师等级4和10时，你可以选择从{@filter 牧师法术列表|spells|class=Cleric}中学习另一个你选择的戏法，如牧师特性表中的戏法列所示。|牧师|XPHB|光明|XPHB|6",
 				"光冕|牧师|XPHB|光明|XPHB|17"
 			],
 			"hasFluffImages": true
@@ -3570,7 +3583,7 @@
 			]
 		},
 		{
-			"name": "神圣秩序",
+			"name": "圣职",
 			"ENG_name": "Divine Order",
 			"source": "XPHB",
 			"page": 70,
@@ -3578,28 +3591,33 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你已经将自己奉献给了以下你选择的神圣角色之一。",
+				"你让自己投身于以下一种由你自己选择的神圣职能：",
 				{
-					"type": "entries",
+					"type": "options",
+					"count": 1,
 					"entries": [
 						{
-							"type": "entries",
-							"name": "防御者",
-							"ENG_name": "Protector",
-							"entries": [
-								"为了战斗而训练，你获得了对军用武器的熟练度以及对重甲的训练。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "防御者|牧师|XPHB|1|XPHB"
 						},
 						{
-							"type": "entries",
-							"name": "神迹术士",
-							"ENG_name": "Thaumaturge",
-							"entries": [
-								"你从{@filter 牧师法术列表|spells|class=牧师}中额外知道一个戏法。此外，你与神性的神秘联系会为你的智力（{@skill 奥秘|XPHB}或{@skill 宗教|XPHB}）检定提供额外的加值。这个加值等于你智慧调整值（最少为+1）。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "奇术使|牧师|XPHB|1|XPHB"
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "防御者",
+			"ENG_name": "Protector",
+			"source": "XPHB",
+			"page": 70,
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 1,
+			"entries": [
+				"训练有素，你获得了对{@filter 军用武器|items|type=军用武器}的熟练度以及对{@filter 沉重的护甲|items|type=沉重的护甲}的训练。"
 			]
 		},
 		{
@@ -3611,7 +3629,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你已经学会了通过祈祷和冥想来施放法术。参见{@book 第七章|XPHB|7}以了解施法规则。下面的信息详细说明了你如何使用这些规则来施放牧师法术，这些法术在职业描述后面的{@filter 牧师法术列表|spells|class=牧师}中有所展示。",
+				"你通过祈祷，冥想与奉献习得如何施法。参见{@book 第七章|XPHB|7}有关施法的规则。下述信息将详述如何将这些规则应用于牧师法术，牧师法术详见本章后文职业描述中的{@filter 牧师法术列表|spells|class=牧师}。",
 				{
 					"type": "entries",
 					"entries": [
@@ -3620,9 +3638,9 @@
 							"name": "戏法",
 							"ENG_name": "Cantrips",
 							"entries": [
-								"你从{@filter 牧师法术列表|spells|class=牧师}中选择知道三个法术伎俩。推荐选择{@spell 神导术|XPHB}、{@spell 圣火术|XPHB}和{@spell 奇术|XPHB}。",
-								"每当你获得一个牧师等级时，你可以从{@filter 牧师法术列表|spells|class=牧师}中选择另一个你选择的法术来替换你的一个法术伎俩。",
-								"当你达到4级和10级牧师时，你可以从{@filter 牧师法术列表|spells|class=牧师}中学习另一个你选择的戏法，如牧师特性表中的戏法列所示。"
+								"你已知{@filter 牧师法术列表|spells|class=牧师}中3个你选择的戏法。推荐选择{@spell 神导术|XPHB}，{@spell 圣火术|XPHB}和{@spell 奇术|XPHB}。",
+								"当你获得牧师等级时，你可以将一道已知戏法用另一道{@filter 牧师法术列表|spells|class=牧师}中的戏法替换。",
+								"当你的牧师等级达到4级和10级时，你都能习得另一道你从{@filter 牧师法术列表|spells|class=牧师}中选择的牧师戏法，如牧师特性表中戏法一列所示。"
 							]
 						},
 						{
@@ -3630,7 +3648,7 @@
 							"name": "施法能力",
 							"ENG_name": "Spell Slots",
 							"entries": [
-								"牧师特性表显示了你有多少法术位来施放你的1环以上法术。当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已消耗的法术位。"
+								"牧师特性表显示了你可用于施放1环及以上法术的法术位数量。你在完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的法术位。"
 							]
 						},
 						{
@@ -3669,6 +3687,18 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "奇术使",
+			"ENG_name": "Thaumaturge",
+			"source": "XPHB",
+			"page": 70,
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 1,
+			"entries": [
+				"你从{@filter 牧师法术列表|spells|class=牧师}中学会一道额外的戏法。此外，你与神性的神秘链接使你在智力（{@skill 奥秘|XPHB}和{@skill 宗教|XPHB}）检定中获得等同于你感知调整值的加值（最低为1）。"
 			]
 		},
 		{
@@ -3713,7 +3743,7 @@
 			},
 			"entries": [
 				"作为一次{@action 魔法|XPHB}动作，你指向距离你30英尺内的另一个生物，并集中神圣能量。掷一个{@dice 1d8}并加上你智慧调整值。你可以将等于该总数的{@variantrule 生命值|XPHB}恢复给该生物，或者迫使该生物进行一次体质豁免检定。如果豁免失败，生物将受到等于该总数的死灵或辐射伤害（由你选择）。如果豁免成功，生物受到的伤害减半（向下取整）。",
-				"当你达到牧师等级7（{@dice d8}）、13（{@dice 2d8}）和18（{@dice 3d8}）时，你会额外投掷一个{@dice d8}。"
+				"当你达到牧师等级7（{@dice 4d8}）、13（{@dice 2d8}）和18（{@dice 3d8}）时，你会额外投掷一个{@dice 4d8}。"
 			]
 		},
 		{
@@ -3734,7 +3764,7 @@
 			]
 		},
 		{
-			"name": "牧师子职业",
+			"name": "牧师子职",
 			"ENG_name": "Cleric Subclass",
 			"source": "XPHB",
 			"page": 71,
@@ -3758,7 +3788,7 @@
 			]
 		},
 		{
-			"name": "焚烧亡灵",
+			"name": "灼净亡灵",
 			"ENG_name": "Sear Undead",
 			"source": "XPHB",
 			"page": 71,
@@ -3851,7 +3881,7 @@
 			]
 		},
 		{
-			"name": "改进后的神圣打击",
+			"name": "精通受祝击",
 			"ENG_name": "Improved Blessed Strikes",
 			"source": "XPHB",
 			"page": 71,
@@ -9270,7 +9300,7 @@
 			"header": 2,
 			"entries": [
 				"当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时，你将恢复所有已消耗的防护闪光使用次数。",
-				"此外，每当你使用警戒闪光时，你可以给予触发攻击的目标等同于{@variantrule 临时生命值|XPHB}加上你智慧调整值的{@variantrule 临时生命值|XPHB}。"
+				"此外，每当你使用警戒闪光时，你可以给予触发攻击的目标等同于{@dice 2d6}加上你智慧调整值的{@dice 2d6}。"
 			]
 		},
 		{
@@ -9327,9 +9357,9 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 1,
+			"header": 2,
 			"entries": [
-				"作为一个{@action 魔法|XPHB}动作，你可以选择你自己或一个距离你30英尺内的自愿生物，在敏捷（{@variantrule 优势|XPHB}）检定上获得{@variantrule 优势|XPHB}。这个祝福持续到你完成一次{@variantrule 长休|XPHB}或者你再次使用这个特性为止。"
+				"作为一个{@action 魔法|XPHB}动作，你可以选择你自己或一个距离你30英尺内的自愿生物，在敏捷（{@skill 隐匿|XPHB}）检定上获得{@skill 隐匿|XPHB}。这个祝福持续到你完成一次{@variantrule 长休|XPHB}或者你再次使用这个特性为止。"
 			]
 		},
 		{
@@ -9342,7 +9372,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 1,
+			"header": 2,
 			"entries": [
 				"你与这个神圣领域的联系确保你始终准备好某些法术。当你达到诡法领域法术表中指定的牧师等级时，你将始终准备好列出的法术。",
 				{
@@ -9387,7 +9417,7 @@
 			"subclassShortName": "诡术",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"header": 1,
+			"header": 2,
 			"consumes": {
 				"name": "引导神力",
 				"ENG_name": "Channel Divinity"

@@ -464,6 +464,18 @@
 			],
 			"spellcastingAbility": "wis",
 			"casterProgression": "full",
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light"
@@ -509,9 +521,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 皮甲|XPHB}, 2 {@item 匕首|XPHB|匕首}, {@item 短剑|XPHB}, {@item 短弓|XPHB}, {@item 箭(20)|XPHB|20支箭}, {@item 箭袋|XPHB}, {@item 盗贼工具|XPHB}, {@item 窃贼套组|XPHB}, 以及8GP；或 (B) 100GP"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -550,6 +560,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 皮甲|XPHB}, 2 {@item 匕首|XPHB|匕首}, {@item 短剑|XPHB}, {@item 短弓|XPHB}, {@item 箭(20)|XPHB|20支箭}, {@item 箭袋|XPHB}, {@item 盗贼工具|XPHB}, {@item 窃贼套组|XPHB}, 以及8GP；或 (B) 100GP"
 				]
 			},
 			"multiclassing": {
@@ -2413,8 +2426,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你知道如何巧妙地攻击并利用敌人的分心。每回合一次，如果你在攻击检定上拥有{@damage 1d6}，并且攻击使用了轻型或远程武器，你可以对被你击中的一个生物额外造成{@damage 1d6}点伤害。额外伤害的类型与武器的类型相同。",
-				"如果至少有一个盟友在目标5英尺范围内，该盟友没有处于{@variantrule 优势|XPHB}状态，并且你没有在攻击检定上处于{@condition 失能|XPHB}，那么你不需要攻击检定上的{@variantrule 优势|XPHB}。",
+				"你知道如何巧妙地攻击并利用敌人的分心。每回合一次，如果你在攻击检定上拥有{@variantrule 优势|XPHB}，并且攻击使用了轻型或远程武器，你可以对被你击中的一个生物额外造成{@variantrule 优势|XPHB}点伤害。额外伤害的类型与武器的类型相同。",
+				"如果至少有一个盟友在目标5英尺范围内，该盟友没有处于{@variantrule 劣势|XPHB}状态，并且你没有在攻击检定上处于{@condition 失能|XPHB}，那么你不需要攻击检定上的{@variantrule 劣势|XPHB}。",
 				"随着你获得盗贼等级，额外伤害会增加，如盗贼特性表中的偷袭攻击列所示。"
 			]
 		},
@@ -2439,8 +2452,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你熟练的{@variantrule 武器精通特性|XPHB|精通特性}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 匕首|XPHB|匕首}，使用它们的{@item 短弓|XPHB|短弓}。",
-				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通特性|XPHB|精通特性}的{@item 弯刀|XPHB|弯刀}和{@item 短剑|XPHB|短剑}。"
+				"你使用武器的训练使你能够选择两种你熟练的{@variantrule 武器精通属性|XPHB|精通属性}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 匕首|XPHB|匕首}，使用它们的{@item 短弓|XPHB|短弓}。",
+				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通属性|XPHB|精通属性}的{@item 弯刀|XPHB|弯刀}和{@item 短剑|XPHB|短剑}。"
 			]
 		},
 		{
@@ -2788,7 +2801,7 @@
 			"classSource": "XPHB",
 			"level": 18,
 			"entries": [
-				"你的躲避能力如此出色，以至于攻击者很少能对你占据上风。除非处于{@variantrule 优势|XPHB}状态，否则没有任何攻击检定可以对你具有{@variantrule 优势|XPHB}。"
+				"你的躲避能力如此出色，以至于攻击者很少能对你占据上风。除非处于{@condition 失能|XPHB}状态，否则没有任何攻击检定可以对你具有{@condition 失能|XPHB}。"
 			]
 		},
 		{
@@ -4011,7 +4024,7 @@
 							"name": "先攻",
 							"ENG_name": "Initiative",
 							"entries": [
-								"你在{@variantrule 优势|XPHB}掷骰上具有{@variantrule 优势|XPHB}。"
+								"你在{@variantrule 先攻|XPHB}掷骰上具有{@variantrule 先攻|XPHB}。"
 							]
 						},
 						{
@@ -4177,25 +4190,12 @@
 				"这个子类的任何特性中使用灵能骰都只使用这个子类中的骰子。你的一些能力会消耗灵能骰，如能力的描述中指定的，如果你的所有灵能骰都已消耗，你就不能使用需要消耗骰子的能力。",
 				"当你完成一个{@variantrule 短休|XPHB}时，你恢复一个已消耗的灵能骰；当你完成一个{@variantrule 长休|XPHB}时，你恢复所有已消耗的灵能骰。",
 				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"name": "灵振诀窍",
-							"ENG_name": "Psi-Bolstered Knack",
-							"entries": [
-								"如果你在使用你熟练的技能或工具进行属性检定时失败，你可以投掷一个灵能骰并将投掷的数字加到检定上，可能会将失败转为成功。如果投掷后检定成功，则骰子被消耗。"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "心灵低语",
-							"ENG_name": "Psychic Whispers",
-							"entries": [
-								"你可以在你自己和其他人之间建立心灵感应通讯。作为一次{@action 魔法|XPHB}动作，选择你可以看到的一只或多只生物，数量最多等于你的{@variantrule 熟练项|XPHB}，然后投掷一个灵能骰。在等于投掷数字的小时数内，被选择的生物可以与你进行心灵感应对话，你也可以与他们进行心灵感应对话。发送或接收信息（无需动作），你和另一个生物必须在彼此1英里范围内。一个生物可以在任何时候结束心灵感应连接（无需动作）。"
-							]
-						}
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "灵振诀窍|游荡者|XPHB|魂刃|XPHB|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "心灵低语|游荡者|XPHB|魂刃|XPHB|3"
 				},
 				"在每次{@variantrule 长休|XPHB}之后，你第一次使用这个能力时，不会消耗灵能骰。其他所有使用这个能力的时候，你都需要消耗骰子。"
 			]
@@ -4225,6 +4225,82 @@
 			]
 		},
 		{
+			"name": "灵振诀窍",
+			"ENG_name": "Psi-Bolstered Knack",
+			"source": "XPHB",
+			"page": 135,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"如果你在使用你熟练的技能或工具进行属性检定时失败，你可以投掷一个灵能骰并将投掷的数字加到检定上，可能会将失败转为成功。如果投掷后检定成功，则骰子被消耗。"
+			]
+		},
+		{
+			"name": "心灵低语",
+			"ENG_name": "Psychic Whispers",
+			"source": "XPHB",
+			"page": 135,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"你可以在你自己和其他人之间建立心灵感应通讯。作为一次{@action 魔法|XPHB}动作，选择你可以看到的一只或多只生物，数量最多等于你的{@variantrule 熟练项|XPHB}，然后投掷一个灵能骰。在等于投掷数字的小时数内，被选择的生物可以与你进行心灵感应对话，你也可以与他们进行心灵感应对话。发送或接收信息（无需动作），你和另一个生物必须在彼此1英里范围内。一个生物可以在任何时候结束心灵感应连接（无需动作）。"
+			]
+		},
+		{
+			"name": "寻的攻击",
+			"ENG_name": "Homing Strikes",
+			"source": "XPHB",
+			"page": 136,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "XPHB",
+			"level": 9,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"如果你使用{@item 心灵之刃|XPHB}进行攻击检定但未命中目标，你可以投掷一个灵能骰并将投掷的数字加到攻击检定上。如果这使得攻击命中，骰子被消耗。"
+			]
+		},
+		{
+			"name": "心灵传送",
+			"ENG_name": "Psychic Teleportation",
+			"source": "XPHB",
+			"page": 136,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "XPHB",
+			"level": 9,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"作为一次{@variantrule 附赠动作|XPHB}，你显现一把{@item 心灵之刃|XPHB}，消耗一个灵能骰并投掷它，然后将这把刃投向一个你可以看到的、最多距离等于投掷数乘以10倍的未被占据的空间。然后你传送到那个空间，而那把刃则消失。"
+			]
+		},
+		{
 			"name": "灵魂之刃",
 			"ENG_name": "Soul Blades",
 			"source": "XPHB",
@@ -4238,20 +4314,12 @@
 			"entries": [
 				"现在你可以使用以下能力配合你的心灵之刃。",
 				{
-					"type": "entries",
-					"name": "寻的攻击",
-					"ENG_name": "Homing Strikes",
-					"entries": [
-						"如果你使用{@item 心灵之刃|XPHB}进行攻击检定但未命中目标，你可以投掷一个灵能骰并将投掷的数字加到攻击检定上。如果这使得攻击命中，骰子被消耗。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "寻的攻击|游荡者|XPHB|魂刃|XPHB|9"
 				},
 				{
-					"type": "entries",
-					"name": "心灵传送",
-					"ENG_name": "Psychic Teleportation",
-					"entries": [
-						"作为一次{@variantrule 附赠动作|XPHB}，你显现一把{@item 心灵之刃|XPHB}，消耗一个灵能骰并投掷它，然后将这把刃投向一个你可以看到的、最多距离等于投掷数乘以10倍的未被占据的空间。然后你传送到那个空间，而那把刃则消失。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "心灵传送|游荡者|XPHB|魂刃|XPHB|9"
 				}
 			]
 		},
@@ -4266,6 +4334,10 @@
 			"subclassSource": "XPHB",
 			"level": 13,
 			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
 			"entries": [
 				"你可以编织一层灵能静电来掩蔽自己。作为一次{@action 魔法|XPHB}动作，你获得{@condition 隐形|XPHB}状态，持续1小时或直到你取消这个效果（无需动作）。在你对生物造成伤害或迫使生物进行豁免检定后，这种隐形立即提前结束。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一次{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
@@ -4344,7 +4416,7 @@
 							"name": "攀爬者",
 							"ENG_name": "Climber",
 							"entries": [
-								"你获得了等同于你的{@variantrule 攀爬速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
+								"你获得了等同于你的{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}。"
 							]
 						},
 						{

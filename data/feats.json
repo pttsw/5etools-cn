@@ -4427,7 +4427,7 @@
 					"name": "专注破除",
 					"ENG_name": "Concentration Breaker",
 					"entries": [
-						"当你对正在进行{@status 专注|XPHB}的生物造成伤害时，它在进行保持{@status 专注|XPHB}的豁免检定时具有劣势。"
+						"当你对正在进行{@status 专注|XPHB|专注于}的生物造成伤害时，它在进行保持{@status 专注|XPHB|专注于}的豁免检定时具有劣势。"
 					]
 				},
 				{
@@ -4734,6 +4734,191 @@
 						"你可以多次选择这个特性，但每次必须选择不同的法术列表。"
 					]
 				}
+			],
+			"_versions": [
+				{
+					"name": "魔法初学；牧师",
+					"ENG_name": "Magic Initiate; Cleric",
+					"source": "XPHB",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "两个戏法",
+								"items": {
+									"name": "两个戏法",
+									"ENG_name": "Two Cantrips",
+									"entries": [
+										"你从{@filter 牧师|spells|level=0;1|class=牧师}法术列表中选择两个零级法术。智力、感知或魅力是你这个特性法术的施法能力（在选择这个特性时选择）。"
+									]
+								}
+							},
+							{
+								"mode": "replaceArr",
+								"replace": "1级法术",
+								"items": {
+									"name": "1级法术",
+									"ENG_name": "Level 1 Spell",
+									"entries": [
+										"从{@filter 牧师|spells|level=0;1|class=牧师}法术列表中选择一个1级法术。你始终准备好了这个法术。你可以在不消耗法术位的情况下施放它一次，当你完成一次长休时，你将重新获得以这种方式施放它的机会。你也可以使用你拥有的任何法术位来施放这个法术。"
+									]
+								}
+							}
+						]
+					},
+					"additionalSpells": [
+						{
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"innate": {
+								"_": {
+									"daily": {
+										"1": [
+											{
+												"choose": "level=1|class=牧师"
+											}
+										]
+									}
+								}
+							},
+							"known": {
+								"_": [
+									{
+										"choose": "level=0|class=牧师",
+										"count": 2
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "魔法初学；德鲁伊",
+					"ENG_name": "Magic Initiate; Druid",
+					"source": "XPHB",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "两个戏法",
+								"items": {
+									"name": "两个戏法",
+									"ENG_name": "Two Cantrips",
+									"entries": [
+										"你从德鲁伊法术列表中选择两个零级法术。智力、智慧或魅力是你这个特性法术的施法能力（选择这个特性时决定）。"
+									]
+								}
+							},
+							{
+								"mode": "replaceArr",
+								"replace": "1级法术",
+								"items": {
+									"name": "1级法术",
+									"ENG_name": "Level 1 Spell",
+									"entries": [
+										"从德鲁伊法术列表中选择一个1级法术。你始终准备好了这个法术。你可以在不消耗法术位的情况下施放它一次，当你完成一次长休时，你将重新获得以这种方式施放它的机会。你也可以使用你拥有的任何法术位来施放这个法术。"
+									]
+								}
+							}
+						]
+					},
+					"additionalSpells": [
+						{
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"innate": {
+								"_": {
+									"daily": {
+										"1": [
+											{
+												"choose": "level=1|class=德鲁伊"
+											}
+										]
+									}
+								}
+							},
+							"known": {
+								"_": [
+									{
+										"choose": "level=0|class=德鲁伊",
+										"count": 2
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "魔法初学；术士",
+					"ENG_name": "Magic Initiate; Wizard",
+					"source": "XPHB",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "两个戏法",
+								"items": {
+									"name": "两个戏法",
+									"ENG_name": "Two Cantrips",
+									"entries": [
+										"你从{@filter 法师|spells|level=0;1|class=法师}法术列表中选择两个零级法术。智力、智慧或魅力是你这个特性法术的施法能力（在选择这个特性时选择）。"
+									]
+								}
+							},
+							{
+								"mode": "replaceArr",
+								"replace": "1级法术",
+								"items": {
+									"name": "1级法术",
+									"ENG_name": "Level 1 Spell",
+									"entries": [
+										"从{@filter 法师|spells|level=0;1|class=法师}法术列表中选择一个1级法术。你始终准备好了这个法术。你可以在不消耗法术位的情况下施放它一次，当你完成一次长休时，你将重新获得以这种方式施放它的机会。你也可以使用你拥有的任何法术位来施放这个法术。"
+									]
+								}
+							}
+						]
+					},
+					"additionalSpells": [
+						{
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"innate": {
+								"_": {
+									"daily": {
+										"1": [
+											{
+												"choose": "level=1|class=法师"
+											}
+										]
+									}
+								}
+							},
+							"known": {
+								"_": [
+									{
+										"choose": "level=0|class=法师",
+										"count": 2
+									}
+								]
+							}
+						}
+					]
+				}
 			]
 		},
 		{
@@ -4797,7 +4982,7 @@
 					"name": "武器熟练项",
 					"ENG_name": "Weapon Proficiency",
 					"entries": [
-						"你获得军用武器的熟练。"
+						"你获得了对{@filter 军用武器|items|type=军用武器}的熟练度。"
 					]
 				}
 			]
@@ -8671,7 +8856,7 @@
 			],
 			"entries": [
 				"当你用你的徒手攻击命中目标并造成伤害时，你可以造成等同于{@dice 1d6}加上你的力量调整值的钝击伤害，而不是徒手攻击的正常伤害。如果你在进行攻击检定时没有持有任何武器或盾牌，那么{@dice d6}变为{@dice d8}。",
-				"在每个你的回合开始时，你可以对一个被你{@damage 1d4}的生物造成{@damage 1d4}点钝击伤害。"
+				"在每个你的回合开始时，你可以对一个被你{@condition 擒抱|XPHB}的生物造成{@condition 擒抱|XPHB}点钝击伤害。"
 			]
 		},
 		{

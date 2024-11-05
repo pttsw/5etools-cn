@@ -219,6 +219,16 @@
 					"progression": {
 						"1": 1
 					}
+				},
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
 				}
 			],
 			"startingProficiencies": {
@@ -252,9 +262,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A、B或C：} (A) {@item 链甲|XPHB}、{@item 巨剑|XPHB}、{@item 链枷|XPHB}、8 {@item 标枪|XPHB|标枪}、{@item 地城套组|XPHB}，和4 GP；(B) {@item 镶钉皮甲|XPHB}、{@item 弯刀|XPHB}、{@item 短剑|XPHB}、{@item 长弓|XPHB}、{@item 箭(20)|XPHB|20支箭}、{@item 箭袋|XPHB}、{@item 地城套组|XPHB}，和11 GP；或 (C) 155 GP"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -310,6 +318,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A、B或C：} (A) {@item 链甲|XPHB}、{@item 巨剑|XPHB}、{@item 链枷|XPHB}、8 {@item 标枪|XPHB|标枪}、{@item 地城套组|XPHB}，和4 GP；(B) {@item 镶钉皮甲|XPHB}、{@item 弯刀|XPHB}、{@item 短剑|XPHB}、{@item 长弓|XPHB}、{@item 箭(20)|XPHB|20支箭}、{@item 箭袋|XPHB}、{@item 地城套组|XPHB}，和11 GP；或 (C) 155 GP"
 				]
 			},
 			"multiclassing": {
@@ -2295,7 +2306,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你拥有一个有限的身体和精神耐力源泉，你可以利用它。作为{@variantrule 附赠动作|XPHB}，你可以使用它来恢复等于{@variantrule 生命值|XPHB}加上你的战士等级的{@variantrule 生命值|XPHB}。",
+				"你拥有一个有限的身体和精神耐力源泉，你可以利用它。作为{@variantrule 附赠动作|XPHB}，你可以使用它来恢复等于{@dice 1d10}加上你的战士等级的{@dice 1d10}。",
 				"你可以使用这个特性两次。当你完成一次{@variantrule 短休|XPHB}时，你恢复一个已消耗的使用次数，当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已消耗的使用次数。",
 				"当你达到某些战士等级时，你获得这个特性的更多使用次数，如战士特性表中的第二次风列所示。"
 			]
@@ -2309,8 +2320,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够使用三种你选择的{@variantrule 武器精通特性|XPHB|精通特性}或{@filter 简易|items|type=简易武器;近战武器=sand}武器的{@filter 军用近战武器|items|type=军用武器;近战武器=sand}。每当你完成一次{@variantrule 长休|XPHB}时，你可以练习武器演练并改变其中一种武器选择。",
-				"当你达到特定的战士等级时，你将获得使用更多种类武器的{@variantrule 武器精通特性|XPHB|精通特性}的能力，如战士特性表中的{@variantrule 武器|XPHB}精通列所示。"
+				"你使用武器的训练使你能够使用三种你选择的{@variantrule 武器精通属性|XPHB|精通属性}或{@filter 简易|items|type=简易武器}武器的{@filter 军用|items|type=军用武器}。每当你完成一次{@variantrule 长休|XPHB}，你可以练习武器演练并改变其中一种武器选择。",
+				"当你达到特定的战士等级时，你将获得使用更多种类武器的{@variantrule 武器精通属性|XPHB|精通属性}的能力，如战士特性表中的{@variantrule 武器|XPHB}精通列所示。"
 			]
 		},
 		{
@@ -5189,7 +5200,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"当你使用你的{@variantrule 动作|XPHB}时，你可以传送至多30英尺到一个你能看到的未被占据的空间。你可以在额外动作之前或之后进行传送。"
+				"当你使用你的额外行动时，你可以传送至多30英尺到一个你可以看到且未被占据的空间。你可以在额外行动之前或之后进行传送。"
 			]
 		},
 		{
@@ -5236,10 +5247,6 @@
 			"subclassShortName": "灵能武士",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"consumes": {
-				"name": "灵能骰",
-				"ENG_name": "Psionic Energy Die"
-			},
 			"entries": [
 				"你内在蕴藏着一股灵能的源泉。它由你的灵能骰表示，这些骰子为你从这个子类中获得的能力提供能量。灵能战士能量骰表格显示了当你达到特定战士等级时，这些骰子的尺寸和数量。",
 				{
@@ -5291,35 +5298,94 @@
 				"这个子类的任何特性，如果使用了灵能骰，仅使用这个子类中的骰子。你的一些能力会消耗灵能骰，具体消耗情况在能力的描述中指定，如果所有你的灵能骰都已消耗，你就不能使用需要消耗骰子的能力。",
 				"当你完成一个{@variantrule 短休|XPHB}时，你恢复一个已消耗的灵能骰；当你完成一个{@variantrule 长休|XPHB}时，你恢复所有已消耗的灵能骰。",
 				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"name": "庇护力场",
-							"ENG_name": "Protective Field",
-							"entries": [
-								"当你或你能在30英尺范围内看到的另一个生物受到伤害时，你可以采取一个{@variantrule 反应|XPHB}来消耗一个灵能骰，掷骰，并减少受到的伤害，减少的数值等于掷骰的结果加上你的智力调整值（最小减少1），因为你创造了一个瞬间的念力盾牌。"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "灵能打击",
-							"ENG_name": "Psionic Strike",
-							"entries": [
-								"你可以用灵能力量推动你的武器。在你的每个回合中，每当你使用武器攻击并击中距离你30英尺内的目标并对其造成伤害后，你可以消耗一个灵能能量骰，掷出它，并对目标造成等于掷出数字加上你的智力调整值的力场伤害。"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "念力控物",
-							"ENG_name": "Telekinetic Movement",
-							"entries": [
-								"你可以用你的意念移动物体或生物。作为{@action 魔法|XPHB}动作，选择一个你能看到的，距离你30英尺内的目标；目标必须是一个大型或更小的松散物体，或者是除了你之外的一个愿意的生物。你将目标传送到你能看到的30英尺内的未被占据的空间。或者，如果目标是一个微小的物体，你可以将它传送到或从你的手中传送走。",
-								"一旦你采取了这个动作，你就不能再次这样做，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
-							]
-						}
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "庇护力场|战士|XPHB|灵能武士|XPHB|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "灵能打击|战士|XPHB|灵能武士|XPHB|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "念力控物|战士|XPHB|灵能武士|XPHB|3"
 				}
+			]
+		},
+		{
+			"name": "庇护力场",
+			"ENG_name": "Protective Field",
+			"source": "XPHB",
+			"page": 98,
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"当你或你能在30英尺范围内看到的另一个生物受到伤害时，你可以采取一个{@variantrule 反应|XPHB}来消耗一个灵能骰，掷骰，并减少受到的伤害，减少的数值等于掷骰的结果加上你的智力调整值（最小减少1），因为你创造了一个瞬间的念力盾牌。"
+			]
+		},
+		{
+			"name": "灵能打击",
+			"ENG_name": "Psionic Strike",
+			"source": "XPHB",
+			"page": 98,
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"你可以用灵能力量推动你的武器。在你的每个回合中，每当你使用武器攻击并击中距离你30英尺内的目标并对其造成伤害后，你可以消耗一个灵能能量骰，掷出它，并对目标造成等于掷出数字加上你的智力调整值的力场伤害。"
+			]
+		},
+		{
+			"name": "念力控物",
+			"ENG_name": "Telekinetic Movement",
+			"source": "XPHB",
+			"page": 98,
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"你可以用你的意念移动物体或生物。作为{@action 魔法|XPHB}动作，选择一个你能看到的，距离你30英尺内的目标；目标必须是一个大型或更小的松散物体，或者是除了你之外的一个愿意的生物。你将目标传送到你能看到的30英尺内的未被占据的空间。或者，如果目标是一个微小的物体，你可以将它传送到或从你的手中传送走。",
+				"一旦你采取了这个动作，你就不能再次这样做，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
+			]
+		},
+		{
+			"name": "灵力跃动",
+			"ENG_name": "Psi-Powered Leap",
+			"source": "XPHB",
+			"page": 99,
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 7,
+			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"作为{@variantrule 附赠动作|XPHB}，你获得等于你{@variantrule 速度|XPHB}两倍的{@variantrule 速度|XPHB}，持续到当前回合结束。一旦你使用了这个{@variantrule 附赠动作|XPHB}，你不能再次使用它，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
 			]
 		},
 		{
@@ -5336,26 +5402,28 @@
 			"entries": [
 				"你已经掌握了使用念力异能的新方式，如下所示。",
 				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"name": "灵力跃动",
-							"ENG_name": "Psi-Powered Leap",
-							"entries": [
-								"作为{@variantrule 附赠动作|XPHB}，你获得等于你{@variantrule 飞行速度|XPHB}两倍的{@variantrule 飞行速度|XPHB}，持续到当前回合结束。一旦你使用了这个{@variantrule 附赠动作|XPHB}，你不能再次使用它，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "念力突刺",
-							"ENG_name": "Telekinetic Thrust",
-							"entries": [
-								"当你使用灵能攻击对目标造成伤害时，你可以迫使目标进行一次力量豁免检定（{@dc 8}加上你的智力调整值和{@variantrule 熟练项|XPHB}加值）。若豁免失败，你可以使目标处于{@condition 倒地|XPHB}状态，或者将其水平移动最多10英尺。"
-							]
-						}
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "灵力跃动|战士|XPHB|灵能武士|XPHB|7"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "念力突刺|战士|XPHB|灵能武士|XPHB|7"
 				}
+			]
+		},
+		{
+			"name": "念力突刺",
+			"ENG_name": "Telekinetic Thrust",
+			"source": "XPHB",
+			"page": 99,
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "XPHB",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"当你用你的心灵冲击对目标造成伤害时，你可以迫使目标进行一次力量豁免投掷（{@dc 8}加上你的智力调整值和{@variantrule 熟练项|XPHB|熟练加值}）。如果豁免失败，你可以给目标{@condition 倒地|XPHB}状态，或者将其水平移动最多10英尺。"
 			]
 		},
 		{
@@ -5369,6 +5437,10 @@
 			"subclassSource": "XPHB",
 			"level": 10,
 			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
 			"entries": [
 				"你对心灵伤害具有{@variantrule 提升抗性|XPHB}。此外，如果你在回合开始时处于{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态，你可以消耗一个灵能骰（无需动作）并结束所有赋予你这些状态的效果。"
 			]
@@ -5384,6 +5456,10 @@
 			"subclassSource": "XPHB",
 			"level": 15,
 			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
 			"entries": [
 				"你可以用心灵动能保护自己和他人。作为{@variantrule 附赠动作|XPHB}，你可以选择自己周围30英尺内，数量最多等于你的智力调整值（最少一个生物）的生物。每个被选择的生物获得{@variantrule 掩护|XPHB|半身掩护}，持续1分钟或直到你处于{@condition 失能|XPHB}状态。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一次{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"
@@ -5400,6 +5476,10 @@
 			"subclassSource": "XPHB",
 			"level": 18,
 			"header": 2,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
 			"entries": [
 				"你始终准备着{@spell 心灵遥控|XPHB}法术。通过这个特性，你可以无需法术位或材料成分来施放它，施放此法术的能力值为智力。在你维持{@status 专注|XPHB}的每个回合中，包括施放它的回合，你可以作为{@variantrule 附赠动作|XPHB}进行一次武器攻击。",
 				"一旦你使用这个特性施放了法术，你就不能再次以这种方式施放，直到你完成一次{@variantrule 长休|XPHB}，除非你消耗一个灵能能量骰（无需动作）来恢复它的使用。"

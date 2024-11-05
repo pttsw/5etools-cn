@@ -657,6 +657,18 @@
 				6,
 				6
 			],
+			"featProgression": [
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
 			"optionalfeatureProgression": [
 				{
 					"name": "超魔法",
@@ -692,9 +704,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 矛|XPHB}，2 {@item 匕首|XPHB|匕首}，{@item 奥术法器|XPHB}（{@item 水晶|XPHB}），{@item 地城套组|XPHB}，和28金币；或 (B) 50金币"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -721,6 +731,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 矛|XPHB}，2 {@item 匕首|XPHB|匕首}，{@item 奥术法器|XPHB}（{@item 水晶|XPHB}），{@item 地城套组|XPHB}，和28金币；或 (B) 50金币"
 				]
 			},
 			"multiclassing": {},
@@ -3058,6 +3071,11 @@
 			"className": "术士",
 			"classSource": "XPHB",
 			"level": 7,
+			"consumes": {
+				"name": "术法点",
+				"ENG_name": "Sorcery Point",
+				"amount": 2
+			},
 			"entries": [
 				"如果你没有剩余的天生施法使用了，你可以在采取{@variantrule 附赠动作|XPHB}激活它时花费2点术士点数来使用它。",
 				"此外，在你的天生施法特性激活时，你可以在施放每个法术时使用多达两种你的{@filter 超魔法选项|optionalfeatures|Feature Type=MM}。"
@@ -4540,7 +4558,7 @@
 			"header": 2,
 			"entries": [
 				"6级起，你能引入符文的力量来临时强化你的肉体能力。当你进行一次力量、敏捷、或体质检定时，你能用反应消耗一枚蓄能符文来使本次检定具有{@quickref 优势与劣势|PHB|2|0|优势}。",
-				"此外，当你被迫进行一次力量、敏捷、或体质{@quickref 优势与劣势|PHB|2|0|优势}时，你同样能用反应来消耗一枚蓄能符文来使本次{@quickref 优势与劣势|PHB|2|0|优势}具有{@quickref 优势与劣势|PHB|2|0|优势}。不过一旦你在豁免上使用了本特性，直到你完成一次{@quickref 休息|PHB|2|0|长休}前你都无法再次在豁免上这么做。"
+				"此外，当你被迫进行一次力量、敏捷、或体质{@quickref 豁免检定|PHB|2|1|豁免检定}时，你同样能用反应来消耗一枚蓄能符文来使本次{@quickref 豁免检定|PHB|2|1|豁免检定}具有{@quickref 豁免检定|PHB|2|1|豁免检定}。不过一旦你在豁免上使用了本特性，直到你完成一次{@quickref 休息|PHB|2|0|长休}前你都无法再次在豁免上这么做。"
 			]
 		},
 		{
@@ -5357,7 +5375,7 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"你对心灵伤害具有{@variantrule 提升抗性|XPHB}，并且在避免或结束{@variantrule 优势|XPHB}或{@condition 魅惑|XPHB}状态的豁免检定中具有{@variantrule 优势|XPHB}。"
+				"你对心灵伤害具有{@variantrule 提升抗性|XPHB}，并且在避免或结束{@condition 恐慌|XPHB}或{@condition 魅惑|XPHB}状态的豁免检定中具有{@condition 恐慌|XPHB}。"
 			]
 		},
 		{
@@ -5381,7 +5399,7 @@
 							"name": "水生适应",
 							"ENG_name": "Aquatic Adaptation",
 							"entries": [
-								"你获得了等同于你的{@variantrule 游泳速度|XPHB}两倍的{@variantrule 游泳速度|XPHB}，并且你可以在水下呼吸。鳃从你的颈部长出，或在你的耳朵后面展开，你的手指变得有蹼，或者你长出了扭动的纤毛。"
+								"你获得了等同于你的{@variantrule 速度|XPHB}两倍的{@variantrule 速度|XPHB}，并且你可以在水下呼吸。鳃从你的颈部长出，或在你的耳朵后面展开，你的手指变得有蹼，或者你长出了扭动的纤毛。"
 							]
 						},
 						{
@@ -5389,7 +5407,7 @@
 							"name": "闪光飞行",
 							"ENG_name": "Glistening Flight",
 							"entries": [
-								"你获得了等同于你的{@variantrule 飞行速度|XPHB}的{@variantrule 飞行速度|XPHB}，并且你可以悬停。当你飞行时，你的皮肤会因粘液或异域光芒而闪闪发光。"
+								"你获得了等同于你的{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}，并且你可以悬停。当你飞行时，你的皮肤会因粘液或异域光芒而闪闪发光。"
 							]
 						},
 						{
@@ -5397,7 +5415,7 @@
 							"name": "看见隐形",
 							"ENG_name": "See the Invisible",
 							"entries": [
-								"你能看见任何在你60英尺范围内且不在{@condition 隐形|XPHB}后的{@condition 隐形|XPHB}生物。你的眼睛也会变黑或变成扭动的感知触须。"
+								"你能看见任何在你60英尺范围内且不在{@variantrule 掩护|XPHB|全身掩护}后的{@variantrule 掩护|XPHB|全身掩护}生物。你的眼睛也会变黑或变成扭动的感知触须。"
 							]
 						},
 						{
@@ -5423,6 +5441,11 @@
 			"subclassSource": "XPHB",
 			"level": 18,
 			"header": 2,
+			"consumes": {
+				"name": "术法点",
+				"ENG_name": "Sorcery Point",
+				"amount": 5
+			},
 			"entries": [
 				"你可以释放一个扭曲空间的异常现象。作为一个{@action 魔法|XPHB}动作，你传送到距离你自身120英尺内你能看到的未被占据的空间。在你消失后，每个在你离开的空间30英尺范围内的生物必须进行一次力量豁免检定，对抗你的法术豁免DC。如果检定失败，该生物受到{@damage 3d10}点力场伤害，并被拉直向你离开的空间，最终停在尽可能靠近你原先空间的未被占据的空间。如果检定成功，该生物只受到一半的伤害。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费5点术士点数（无需动作）来恢复它的使用。"
@@ -5547,7 +5570,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你与绝对秩序位面的联系使你能够平衡混乱的时刻。当你60英尺范围内的生物即将进行具有{@dice d20}或{@variantrule 劣势|XPHB}的{@dice d20}检定时，你可以采取{@variantrule 反应|XPHB}来阻止这次检定受到{@dice d20}和{@variantrule 劣势|XPHB}的影响。",
+				"你与绝对秩序位面的联系使你能够平衡混乱的时刻。当你60英尺范围内的生物即将进行具有{@variantrule 劣势|XPHB}或{@variantrule 优势|XPHB}的{@variantrule 劣势|XPHB}检定时，你可以采取{@variantrule 反应|XPHB}来阻止这次检定受到{@variantrule 劣势|XPHB}和{@variantrule 优势|XPHB}的影响。",
 				"你可以使用这个特性的次数等于你的魅力调整值（最少一次），当你完成一个{@variantrule 长休|XPHB}时，你恢复所有已消耗的使用次数。"
 			]
 		},
@@ -5564,7 +5587,9 @@
 			"header": 2,
 			"consumes": {
 				"name": "术法点",
-				"ENG_name": "Sorcery Point"
+				"ENG_name": "Sorcery Point",
+				"amountMin": 1,
+				"amountMax": 5
 			},
 			"entries": [
 				"你可以借助存在的宏大方程式，赋予生物以闪烁的有序盾牌。作为一个{@action 魔法|XPHB}动作，你可以消耗1到5点术士点数，在你自己或你在30英尺内能看到的另一个生物周围创造一个魔法防护。这个防护由等于消耗术士点数的d8骰子数量来表示。当被防护的生物受到伤害时，它可以消耗这些骰子中的一些，掷出它们，并根据掷出的总和减少受到的伤害。",
@@ -5582,6 +5607,11 @@
 			"subclassSource": "XPHB",
 			"level": 14,
 			"header": 2,
+			"consumes": {
+				"name": "术法点",
+				"ENG_name": "Sorcery Point",
+				"amount": 5
+			},
 			"entries": [
 				"你获得了将你的意识与机械法斯无尽的计算对齐的能力。作为一个{@variantrule 附赠动作|XPHB}，你可以进入这种状态持续1分钟。在持续期间，对你的攻击检定不能获得{@variantrule 优势|XPHB}，并且每当你进行一个{@variantrule D20 检定|XPHB}时，你可以将{@dice d20}上的9或更低的掷骰结果视为10。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费5点术士点数（无需动作）来恢复它的使用。"
@@ -5598,6 +5628,11 @@
 			"subclassSource": "XPHB",
 			"level": 18,
 			"header": 2,
+			"consumes": {
+				"name": "术法点",
+				"ENG_name": "Sorcery Point",
+				"amount": 7
+			},
 			"entries": [
 				"你短暂地召唤秩序之灵以驱逐周围的混乱。作为一个{@action 魔法|XPHB}动作，你从自身开始召唤灵体进入一个30英尺的{@variantrule 立方 [效应区域]|XPHB|立方}。这些灵体看起来像是魔冢或其他你选择的构造体。这些灵体是无形的，不可侵犯的，它们在{@variantrule 立方 [效应区域]|XPHB|立方}内创造出以下效果然后消失。一旦你使用了这个动作，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费7点术士点数（无需动作）来恢复它的使用。",
 				{
@@ -5742,6 +5777,11 @@
 			"subclassSource": "XPHB",
 			"level": 14,
 			"header": 2,
+			"consumes": {
+				"name": "术法点",
+				"ENG_name": "Sorcery Point",
+				"amount": 3
+			},
 			"entries": [
 				"作为一个{@variantrule 附赠动作|XPHB}，你可以在你的背上召唤出龙翼。这些翅膀持续1小时，或者直到你解散它们（无需动作）。在持续时间内，你拥有60英尺的{@variantrule 飞行速度|XPHB}。",
 				"一旦你使用了这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}，除非你花费3点术士点数（无需动作）来恢复它的使用。"
@@ -5798,7 +5838,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你可以操纵混沌本身，在掷{@variantrule 优势|XPHB}之前给自己的一次{@variantrule D20 检定|XPHB}带来{@variantrule 优势|XPHB}。一旦你这样做了，你必须施放一个使用法术位的术士法术或完成一个{@variantrule 长休|XPHB}，才能再次使用这个特性。",
+				"你可以操纵混沌本身，在掷{@dice d20}之前给自己的一次{@variantrule D20 检定|XPHB}带来{@dice d20}。一旦你这样做了，你必须施放一个使用法术位的术士法术或完成一个{@variantrule 长休|XPHB}，才能再次使用这个特性。",
 				"如果在你完成一个{@variantrule 长休|XPHB}之前施放了一个使用法术位的术士法术，你会立即在{@table 狂野魔法浪涌|XPHB}表上掷骰。"
 			]
 		},
@@ -5846,7 +5886,7 @@
 						],
 						[
 							"17\u201320",
-							"你受到一个持续1分钟的效果影响，除非其描述另有说明。掷{@dice 1d8}来确定效果：1，你周围响起微弱的、只有你和5英尺内的生物能听到的幽灵般的音乐；2，你的体型增大一个尺寸类别；3，你长出由羽毛制成的长胡子，直到你打喷嚏，这时羽毛会从你的脸上爆炸并消失；4，你说话时必须大声喊叫；5，幻象蝴蝶在你周围10英尺内飞舞；6，你的额头上出现一只眼睛，使你在进行智慧（{@variantrule 优势|XPHB}）检定时获得{@variantrule 优势|XPHB}；7，你说话时会从嘴里冒出粉红色的泡泡；8，你的皮肤在24小时内或直到被{@spell 移除诅咒|XPHB}法术结束前变成鲜艳的蓝色。"
+							"你受到一个持续1分钟的效果影响，除非其描述另有说明。掷{@dice 1d8}来确定效果：1，你周围响起微弱的、只有你和5英尺内的生物能听到的幽灵般的音乐；2，你的体型增大一个尺寸类别；3，你长出由羽毛制成的长胡子，直到你打喷嚏，这时羽毛会从你的脸上爆炸并消失；4，你说话时必须大声喊叫；5，幻象蝴蝶在你周围10英尺内飞舞；6，你的额头上出现一只眼睛，使你在进行智慧（{@skill 察觉|XPHB}）检定时获得{@skill 察觉|XPHB}；7，你说话时会从嘴里冒出粉红色的泡泡；8，你的皮肤在24小时内或直到被{@spell 移除诅咒|XPHB}法术结束前变成鲜艳的蓝色。"
 						],
 						[
 							"21\u201324",
@@ -5948,11 +5988,10 @@
 			"header": 2,
 			"consumes": {
 				"name": "术法点",
-				"ENG_name": "Sorcery Point",
-				"amount": 1
+				"ENG_name": "Sorcery Point"
 			},
 			"entries": [
-				"你拥有使用你的野性魔法扭曲命运的能力。在你可以看到的另一个生物为《玩家手册》中的{@dice d20}掷出{@dice d20}之后，你可以采取{@variantrule 反应|XPHB}并消耗1点法术点数掷出{@dice 1d4}，将掷出的数字作为加值或减值（由你选择）应用于{@dice d20}掷骰。"
+				"你拥有使用你的野性魔法扭曲命运的能力。在你可以看到的另一个生物为《玩家手册》中的{@variantrule D20 检定|XPHB}掷出{@variantrule D20 检定|XPHB}之后，你可以采取{@variantrule 反应|XPHB}并消耗1点法术点数掷出{@dice 1d4}，将掷出的数字作为加值或减值（由你选择）应用于{@variantrule D20 检定|XPHB}掷骰。"
 			]
 		},
 		{

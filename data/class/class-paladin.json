@@ -401,6 +401,16 @@
 					"progression": {
 						"2": 1
 					}
+				},
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
 				}
 			],
 			"startingProficiencies": {
@@ -431,9 +441,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 链甲|XPHB}, {@item 护盾术|XPHB}, {@item 长剑|XPHB}, 6 {@item 标枪|XPHB|标枪}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 和9金币；或 (B) 150金币。"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -466,6 +474,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 链甲|XPHB}, {@item 护盾术|XPHB}, {@item 长剑|XPHB}, 6 {@item 标枪|XPHB|标枪}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 和9金币；或 (B) 150金币。"
 				]
 			},
 			"multiclassing": {
@@ -2183,8 +2194,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你熟练的{@variantrule 武器精通特性|XPHB|精通特性}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 长剑|XPHB|长剑}，使用它们的{@item 标枪|XPHB|标枪}。",
-				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通特性|XPHB|精通特性}的{@item 戟|XPHB|长戟}和{@item 链枷|XPHB|链枷}。"
+				"你使用武器的训练使你能够选择两种你熟练的{@item 标枪|XPHB|标枪}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 长剑|XPHB|长剑}，使用它们的{@item 标枪|XPHB|标枪}。",
+				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通属性|XPHB|精通属性}的{@item 戟|XPHB|长戟}和{@item 链枷|XPHB|链枷}。"
 			]
 		},
 		{
@@ -2381,7 +2392,7 @@
 			"classSource": "XPHB",
 			"level": 10,
 			"entries": [
-				"在你防护灵光范围内，你和你的盟友对{@variantrule 免疫|XPHB}状态具有{@variantrule 免疫|XPHB}。如果处于{@variantrule 免疫|XPHB}状态的盟友进入灵光范围，那么在该范围内该状态对该盟友无影响。"
+				"在你防护灵光范围内，你和你的盟友对{@condition 恐慌|XPHB}状态具有{@condition 恐慌|XPHB}。如果处于{@condition 恐慌|XPHB}状态的盟友进入灵光范围，那么在该范围内该状态对该盟友无影响。"
 			]
 		},
 		{
@@ -3445,7 +3456,7 @@
 					"type": "list",
 					"items": [
 						"你背生双翼，获得60尺飞行速度。",
-						"你散发出一个30尺半径范围的威胁灵光。在一次战斗中，任何敌对生物第一次进入灵光范围，或者在灵光范围内开始其回合时，都必须进行一次感知豁免。豁免失败者将在接下来的1分钟陷入对你的{@action 攻击}状态，直至受到伤害。对因此陷入 {@action 攻击}的生物所进行的任何{@action 攻击} 检定都具有优势。"
+						"你散发出一个30尺半径范围的威胁灵光。在一次战斗中，任何敌对生物第一次进入灵光范围，或者在灵光范围内开始其回合时，都必须进行一次感知豁免。豁免失败者将在接下来的1分钟陷入对你的{@condition 恐慌}状态，直至受到伤害。对因此陷入 {@condition 恐慌}的生物所进行的任何{@condition 恐慌} 检定都具有优势。"
 					]
 				},
 				"必须完成一次长休才能再次使用该特性。"
@@ -4981,7 +4992,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"从15级起，神圣之仪将在你的战斗中为你补愈伤痕。只要你未处于{@dice 1d6}状态，若你在战斗中结束你的回合时，若剩余的生命值少于最大生命值的一半，则你恢复{@dice 1d6}+你圣武士等级一半 点的生命值。"
+				"从15级起，神圣之仪将在你的战斗中为你补愈伤痕。只要你未处于{@condition 失能}状态，若你在战斗中结束你的回合时，若剩余的生命值少于最大生命值的一半，则你恢复{@condition 失能}+你圣武士等级一半 点的生命值。"
 			]
 		},
 		{
@@ -5288,7 +5299,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"你和你的盟友在你的保护光环内对{@variantrule 免疫|XPHB}状态具有{@variantrule 免疫|XPHB}。如果一个处于{@variantrule 免疫|XPHB}状态的盟友进入光环，那么在光环内该状态对那个盟友没有效果。"
+				"你和你的盟友在你的保护光环内对{@condition 魅惑|XPHB}状态具有{@condition 魅惑|XPHB}。如果一个处于{@condition 魅惑|XPHB}状态的盟友进入光环，那么在光环内该状态对那个盟友没有效果。"
 			]
 		},
 		{
@@ -5462,7 +5473,7 @@
 				"ENG_name": "Channel Divinity"
 			},
 			"entries": [
-				"作为一个{@variantrule 附赠动作|XPHB}，你可以消耗一次你的神力通道使用次数来增强你的运动能力。在1小时内，你在力量（{@variantrule 优势|XPHB}）和敏捷（{@skill 运动|XPHB}）检定中具有{@variantrule 优势|XPHB}，你的跳远和跳高的距离增加10英尺（这额外的距离正常消耗移动力）。"
+				"作为一个{@variantrule 附赠动作|XPHB}，你可以消耗一次你的神力通道使用次数来增强你的运动能力。在1小时内，你在力量（{@skill 特技|XPHB}）和敏捷（{@skill 运动|XPHB}）检定中具有{@skill 特技|XPHB}，你的跳远和跳高的距离增加10英尺（这额外的距离正常消耗移动力）。"
 			]
 		},
 		{
@@ -5647,7 +5658,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"你的超自然专注帮助你封锁敌人的退路。当你通过{@action 借机攻击|XPHB|借机攻击}命中一个生物时，你可以将该生物的{@variantrule 速度|XPHB}降低至0，直到当前回合结束。然后，你可以在同一个{@variantrule 速度|XPHB}中移动至多你{@variantrule 速度|XPHB}的一半。这次移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
+				"你的超自然专注帮助你封锁敌人的退路。当你通过{@action 借机攻击|XPHB|借机攻击}命中一个生物时，你可以将该生物的{@variantrule 反应|XPHB}降低至0，直到当前回合结束。然后，你可以在同一个{@variantrule 反应|XPHB}中移动至多你{@variantrule 反应|XPHB}的一半。这次移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
 			]
 		},
 		{
@@ -5691,7 +5702,7 @@
 					"name": "恐怖灵光",
 					"ENG_name": "Frightful Aura",
 					"entries": [
-						"每当一个敌人在你的防护灵光范围内开始其回合时，该生物必须成功通过一次智慧豁免检定，否则将获得{@action 攻击|XPHB}状态，持续1分钟或直到它受到任何伤害。对处于{@action 攻击|XPHB}状态的生物进行的{@action 攻击|XPHB}检定具有{@variantrule 优势|XPHB}。"
+						"每当一个敌人在你的防护灵光范围内开始其回合时，该生物必须成功通过一次智慧豁免检定，否则将获得{@condition 恐慌|XPHB}状态，持续1分钟或直到它受到任何伤害。对处于{@condition 恐慌|XPHB}状态的生物进行的{@condition 恐慌|XPHB}检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			]

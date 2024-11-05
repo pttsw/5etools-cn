@@ -38,6 +38,73 @@
 			}
 		},
 		{
+			"name": "狂战士",
+			"ENG_name": "Berserker",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 67,
+				"formula": "9d8 + 27"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 12,
+			"con": 17,
+			"int": 9,
+			"wis": 11,
+			"cha": 9,
+			"passive": 10,
+			"languages": [
+				"通用语"
+			],
+			"cr": "2",
+			"gear": [
+				"巨斧|xphb",
+				"兽皮甲|xphb"
+			],
+			"action": [
+				{
+					"name": "巨斧",
+					"ENG_name": "Greataxe",
+					"entries": [
+						"{@atkr m} +5（如果目标没有全部生命值，则具有优势），射程5英尺。{@h}9 ({@damage 1d12 + 3}) 斩击伤害。"
+					]
+				}
+			],
+			"token": {
+				"name": "狂战士",
+				"ENG_name": "Berserker",
+				"source": "MM"
+			},
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"MLW"
+			]
+		},
+		{
 			"name": "闪现犬",
 			"ENG_name": "Blink Dog",
 			"source": "XMM",
@@ -470,6 +537,329 @@
 			]
 		},
 		{
+			"name": "邪教徒",
+			"ENG_name": "Cultist",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 12,
+			"con": 10,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"skill": {
+				"deception": "+2"
+			},
+			"passive": 10,
+			"languages": [
+				"通用语"
+			],
+			"cr": "1/8",
+			"gear": [
+				"皮甲|xphb",
+				"镰刀|xphb"
+			],
+			"action": [
+				{
+					"name": "仪式镰刀",
+					"ENG_name": "Ritual Sickle",
+					"entries": [
+						"{@atkr m} {@hit 3}, 触及5英尺。{@h}3 ({@damage 1d4 + 1}) 斩击伤害加上1点坏死伤害。"
+					]
+				}
+			],
+			"token": {
+				"name": "邪教徒",
+				"ENG_name": "Cultist",
+				"source": "MM"
+			},
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"N",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"MLW"
+			]
+		},
+		{
+			"name": "邪教狂信徒",
+			"ENG_name": "Cultist Fanatic",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 12,
+			"int": 10,
+			"wis": 14,
+			"cha": 13,
+			"save": {
+				"wis": "+4"
+			},
+			"skill": {
+				"deception": "+3",
+				"persuasion": "+3"
+			},
+			"passive": 12,
+			"languages": [
+				"通用语"
+			],
+			"cr": "2",
+			"gear": [
+				"皮甲|xphb"
+			],
+			"spellcasting": [
+				{
+					"name": "施法（牧师）",
+					"ENG_name": "Spellcasting (Cleric)",
+					"type": "spellcasting",
+					"headerEntries": [
+						"狂热者施放以下法术之一，使用智慧作为施法能力（法术豁免{@dc 12}）："
+					],
+					"will": [
+						"{@spell 光亮术|XPHB}",
+						"{@spell 奇术|XPHB}"
+					],
+					"daily": {
+						"1": [
+							"{@spell 人类定身术|XPHB}"
+						],
+						"2": [
+							"{@spell 命令术|XPHB}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "动作"
+				}
+			],
+			"action": [
+				{
+					"name": "契约之刃",
+					"ENG_name": "Pact Blade",
+					"entries": [
+						"{@atkr m} {@hit 4}, 触及5英尺。{@h}6 ({@damage 1d8 + 2}) 斩击伤害加上3 ({@damage 1d6}) 亡灵伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "精神武器（每日2次）",
+					"ENG_name": "Spiritual Weapon (2/Day)",
+					"entries": [
+						"狂热者施放{@spell 灵体武器|XPHB}法术：+4，幽灵武器触及5英尺。{@h}6 ({@damage 1d8 + 2}) 力能伤害。"
+					]
+				}
+			],
+			"token": {
+				"name": "邪教狂信者",
+				"ENG_name": "Cult Fanatic",
+				"source": "MM"
+			},
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"N",
+				"O",
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflictSpell": [
+				"麻痹",
+				"倒地"
+			],
+			"savingThrowForcedSpell": [
+				"感知"
+			]
+		},
+		{
+			"name": "火元素",
+			"ENG_name": "Fire Elemental",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"L"
+			],
+			"type": "elemental",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 93,
+				"formula": "11d10 + 33"
+			},
+			"speed": {
+				"walk": 50
+			},
+			"str": 10,
+			"dex": 17,
+			"con": 16,
+			"int": 6,
+			"wis": 10,
+			"cha": 7,
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 10,
+			"resist": [
+				"钝击",
+				"穿刺",
+				"斩击"
+			],
+			"immune": [
+				"火焰",
+				"毒素"
+			],
+			"vulnerable": [
+				"冷冻"
+			],
+			"conditionImmune": [
+				"力竭",
+				"被擒抱",
+				"麻痹",
+				"石化",
+				"中毒",
+				"倒地",
+				"束缚",
+				"昏迷"
+			],
+			"languages": [
+				"原初（伊格南）"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "火焰光环",
+					"ENG_name": "Fiery Aura",
+					"entries": [
+						"在元素生物的每个回合结束时，每个位于元素生物周围10英尺范围内的生物都会受到5点（{@damage 1d10}）火焰伤害。在辐射区域内的生物和易燃物体开始燃烧。"
+					]
+				},
+				{
+					"name": "火焰形态",
+					"ENG_name": "Fire Form",
+					"entries": [
+						"该元素生物可以穿过宽度仅为1英寸的空间而不需要额外移动，并且它可以进入一个生物的空间并停留在那里。在回合中第一次进入一个生物的空间时，该生物会受到5点（{@damage 1d10}）火焰伤害。"
+					]
+				},
+				{
+					"name": "照明",
+					"ENG_name": "Illumination",
+					"entries": [
+						"该元素生物在30英尺范围内散发亮光，在额外的30英尺范围内散发微光。"
+					]
+				},
+				{
+					"name": "水体易感",
+					"ENG_name": "Water Susceptibility",
+					"entries": [
+						"元素生物在水中移动每5英尺或被泼上每加仑水时，会遭受3点（{@damage 1d6}）寒冷伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"该元素生物进行两次灼烧攻击。"
+					]
+				},
+				{
+					"name": "燃烧",
+					"ENG_name": "Burn",
+					"entries": [
+						"{@atkr m} {@hit 6}, 触及5英尺。{@h}10 ({@damage 2d6 + 3}) 火焰伤害。如果目标是一个生物或易燃物体，它开始燃烧。"
+					]
+				}
+			],
+			"token": {
+				"name": "火元素",
+				"ENG_name": "Fire Elemental",
+				"source": "MM"
+			},
+			"traitTags": [
+				"照明"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"IG",
+				"P"
+			],
+			"damageTags": [
+				"C",
+				"F"
+			],
+			"miscTags": [
+				"AOE",
+				"MA"
+			]
+		},
+		{
 			"name": "妖鬼",
 			"ENG_name": "Ghast",
 			"source": "XMM",
@@ -498,6 +888,361 @@
 				"ENG_name": "Ghoul",
 				"source": "MM"
 			}
+		},
+		{
+			"name": "灰泥怪",
+			"ENG_name": "Gray Ooze",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"M"
+			],
+			"type": "ooze",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				8
+			],
+			"hp": {
+				"average": 22,
+				"formula": "3d8 + 9"
+			},
+			"speed": {
+				"walk": 10,
+				"climb": 10
+			},
+			"str": 12,
+			"dex": 6,
+			"con": 16,
+			"int": 1,
+			"wis": 6,
+			"cha": 2,
+			"skill": {
+				"stealth": "+2"
+			},
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 8,
+			"resist": [
+				"强酸",
+				"冷冻",
+				"火焰"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"力竭",
+				"恐慌",
+				"倒地"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "无定形",
+					"ENG_name": "Amorphous",
+					"entries": [
+						"这个软泥怪可以通过只有1英寸宽的空间而不需要额外消耗移动力。"
+					]
+				},
+				{
+					"name": "腐蚀形态",
+					"ENG_name": "Corrosive Form",
+					"entries": [
+						"一个生物如果用近战攻击击中这个软泥怪，会受到4点（{@damage 1d8}）酸液伤害。这个软泥怪能在1轮内腐蚀穿2英寸厚的非魔法木材或金属。"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "伪足",
+					"ENG_name": "Pseudopod",
+					"entries": [
+						"{@atkr m} {@hit 3}，触及范围5英尺。{@h}8 ({@damage 2d6 + 1}) 酸液伤害。目标所穿的非魔法护甲对其提供的AC造成-1的惩罚。如果惩罚将其AC降低到10，则护甲被摧毁。如果一个生物采取利用行动，并使用修补工具成功进行{@dc 15}的敏捷检定来修复护甲，可以移除这个惩罚。"
+					]
+				}
+			],
+			"token": {
+				"name": "灰泥怪",
+				"ENG_name": "Gray Ooze",
+				"source": "MM"
+			},
+			"traitTags": [
+				"无定形"
+			],
+			"senseTags": [
+				"B"
+			],
+			"damageTags": [
+				"A"
+			],
+			"miscTags": [
+				"MA"
+			]
+		},
+		{
+			"name": "梦魔",
+			"ENG_name": "Incubus",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"M"
+			],
+			"type": "fiend",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 60
+			},
+			"str": 8,
+			"dex": 17,
+			"con": 13,
+			"int": 15,
+			"wis": 12,
+			"cha": 20,
+			"skill": {
+				"deception": "+9",
+				"perception": "+5",
+				"stealth": "+7"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 15,
+			"resist": [
+				"冷冻",
+				"火焰",
+				"毒素",
+				"心灵"
+			],
+			"languages": [
+				"深渊语",
+				"通用语",
+				"炼狱语",
+				"心灵感应 60 尺"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "施法",
+					"ENG_name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"欲魔施放以下法术之一，不需要材料成分，并使用魅力作为施法能力（法术豁免{@dc 15}）："
+					],
+					"will": [
+						"{@spell 魅惑人类|XPHB}",
+						"{@spell 易容术|XPHB}",
+						"{@spell 以太化|XPHB}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell 托梦术|XPHB}",
+							"{@spell 催眠图纹|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "动作"
+				}
+			],
+			"trait": [
+				{
+					"name": "魅魔形态",
+					"ENG_name": "Succubus Form",
+					"entries": [
+						"当欲魔完成一次长休时，它可以变形为一个{@creature 魅魔|扩展内存管理器}，使用那个统计块而不是这个。它穿着或携带的任何装备不会被变形。"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"欲魔进行两次噩梦之触攻击。"
+					]
+				},
+				{
+					"name": "噩梦之触",
+					"ENG_name": "Nightmare Touch",
+					"entries": [
+						"{@atkr m} {@hit 7}, 触及5英尺。{@h}15（{@damage 3d6 + 5}）心灵伤害，目标被诅咒24小时或直到孵化者死亡。在诅咒结束之前，目标从短休中不会获得任何好处。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "噩梦 {@recharge}",
+					"ENG_name": "Nightmare {@recharge}",
+					"entries": [
+						"{@actSave wis} {@dc 15}, 梦魇能看见的60英尺内的一只生物。{@actSaveFail} 如果目标的生命值不超过20点，它将处于{@condition 昏迷|XPHB}状态1小时，直到它受到伤害，或者直到5英尺内的生物采取行动唤醒它。否则，目标受到18点（{@damage 4d8}）精神伤害。"
+					]
+				}
+			],
+			"token": {
+				"name": "梦魔",
+				"ENG_name": "Incubus",
+				"source": "MM"
+			},
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"I",
+				"TP"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"damageTagsSpell": [
+				"O",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"CUR",
+				"MA"
+			],
+			"conditionInflict": [
+				"昏迷"
+			],
+			"conditionInflictSpell": [
+				"魅惑",
+				"失能"
+			],
+			"savingThrowForcedSpell": [
+				"感知"
+			]
+		},
+		{
+			"name": "骑士",
+			"ENG_name": "Knight",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				18
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8 + 16"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 11,
+			"con": 14,
+			"int": 11,
+			"wis": 11,
+			"cha": 15,
+			"save": {
+				"wis": "+2"
+			},
+			"passive": 10,
+			"languages": [
+				"通用语，外加另外一门语言"
+			],
+			"cr": "3",
+			"gear": [
+				"巨剑|xphb",
+				"重弩|xphb",
+				"板甲|xphb"
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"骑士进行两次攻击，可以使用大剑或重十字弓的任意组合。"
+					]
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"entries": [
+						"{@atkr m} {@hit 5}, 触及5英尺。{@h}10 ({@damage 2d6 + 3}) 斩击伤害加上4 ({@damage 1d8}) 圣光伤害。"
+					]
+				},
+				{
+					"name": "重弩",
+					"ENG_name": "Heavy Crossbow",
+					"entries": [
+						"{@atkr r} {@hit 2}, 射程100/400英尺。{@h}11 ({@damage 2d10}) 穿刺伤害加上4 ({@damage 1d8}) 圣光伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "格挡",
+					"ENG_name": "Parry",
+					"entries": [
+						"{@actTrigger} 当骑士在持有武器时被近战攻击击中。{@actResponse} 骑士对该攻击的AC增加2，可能会导致攻击未命中。"
+					]
+				}
+			],
+			"token": {
+				"name": "骑士",
+				"ENG_name": "Knight",
+				"source": "MM"
+			},
+			"actionTags": [
+				"多重攻击",
+				"格挡"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P",
+				"R",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"RNG"
+			]
 		},
 		{
 			"name": "魔法师",
@@ -655,6 +1400,689 @@
 				"ENG_name": "Mummy",
 				"source": "MM"
 			}
+		},
+		{
+			"name": "食人魔",
+			"ENG_name": "Ogre",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"L"
+			],
+			"type": "giant",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 68,
+				"formula": "8d10 + 24"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 19,
+			"dex": 8,
+			"con": 16,
+			"int": 5,
+			"wis": 7,
+			"cha": 7,
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 8,
+			"languages": [
+				"通用语",
+				"巨人语"
+			],
+			"cr": "2",
+			"gear": [
+				"巨棒|xphb",
+				{
+					"item": "标枪|xphb",
+					"quantity": 3
+				}
+			],
+			"action": [
+				{
+					"name": "巨棒",
+					"ENG_name": "Greatclub",
+					"entries": [
+						"{@atkr m} {@hit 6}, 触及5英尺。{@h}13 ({@damage 2d8 + 4}) 钝击伤害。"
+					]
+				},
+				{
+					"name": "标枪",
+					"ENG_name": "Javelin",
+					"entries": [
+						"{@atkr 米，半径} {@hit 6}, 触及5英尺或射程30/120英尺 {@h}11 ({@damage 2d6 + 4}) 穿刺伤害。"
+					]
+				}
+			],
+			"token": {
+				"name": "食人魔",
+				"ENG_name": "Ogre",
+				"source": "MM"
+			},
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"GI"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"THW"
+			]
+		},
+		{
+			"name": "海盗",
+			"ENG_name": "Pirate",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 27,
+				"formula": "5d8 + 5"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 8,
+			"wis": 12,
+			"cha": 14,
+			"save": {
+				"dex": "+5",
+				"cha": "+4"
+			},
+			"passive": 11,
+			"languages": [
+				"通用语，外加另外一门语言"
+			],
+			"cr": "1",
+			"gear": [
+				{
+					"item": "匕首|xphb",
+					"quantity": 6
+				},
+				"皮甲|xphb"
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"海盗进行两次短剑攻击。它可以将其中一次攻击替换为使用迷人的风采。"
+					]
+				},
+				{
+					"name": "匕首",
+					"ENG_name": "Dagger",
+					"entries": [
+						"{@atkr 米，半径} {@hit 5}, 触及5英尺或射程20/60英尺 {@h}5 ({@damage 1d4 + 3}) 穿刺伤害。"
+					]
+				},
+				{
+					"name": "迷人的风度",
+					"ENG_name": "Enthralling Panache",
+					"entries": [
+						"{@actSave wis} {@dc 12}, 海盗可以看到的30英尺内的一只生物。{@actSaveFail} 目标直到海盗的下一个回合开始时都处于{@condition 魅惑|XPHB}状态。"
+					]
+				}
+			],
+			"token": {
+				"name": "海盗大副",
+				"ENG_name": "Pirate Bosun",
+				"source": "GoS"
+			},
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"THW"
+			],
+			"conditionInflict": [
+				"魅惑"
+			]
+		},
+		{
+			"name": "海盗船长",
+			"ENG_name": "Pirate Captain",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 18,
+			"con": 14,
+			"int": 10,
+			"wis": 14,
+			"cha": 17,
+			"save": {
+				"str": "+3",
+				"dex": "+7",
+				"wis": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"acrobatics": "+7",
+				"perception": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"通用语，外加另外一门语言"
+			],
+			"cr": "6",
+			"gear": [
+				"手铳|xphb",
+				"刺剑|xphb"
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"海盗进行三次攻击，可以使用细剑或手枪的任意组合。"
+					]
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"entries": [
+						"{@atkr m} {@hit 7}, 触及5英尺。{@h}13 ({@damage 2d8 + 4}) 穿刺伤害，并且在这个回合结束前，海盗在下一次攻击检定上拥有优势。"
+					]
+				},
+				{
+					"name": "手枪",
+					"ENG_name": "Pistol",
+					"entries": [
+						"{@atkr r} {@hit 7}, 射程30/90英尺。{@h}15 ({@damage 2d10 + 4}) 穿刺伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "船长的魅力",
+					"ENG_name": "Captain's Charm",
+					"entries": [
+						"{@actSave wis} {@dc 14}, 海盗可以看到的30英尺内的一只生物。{@actSaveFail} 目标直到海盗的下一个回合开始时都处于{@condition 魅惑|XPHB}状态。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "反击",
+					"ENG_name": "Riposte",
+					"entries": [
+						"{@actTrigger} 海盗在持有武器时被近战攻击击中。{@actResponse} 海盗对该攻击的AC增加3，可能导致攻击未命中。如果攻击未命中，海盗对触发攻击的生物进行一次细剑攻击。"
+					]
+				}
+			],
+			"token": {
+				"name": "海盗船长",
+				"ENG_name": "Pirate Captain",
+				"source": "GoS"
+			},
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"RNG"
+			],
+			"conditionInflict": [
+				"魅惑"
+			]
+		},
+		{
+			"name": "石魔像",
+			"ENG_name": "Stone Golem",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"L"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				18
+			],
+			"hp": {
+				"average": 252,
+				"formula": "24d10 + 120"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 22,
+			"dex": 9,
+			"con": 20,
+			"int": 3,
+			"wis": 11,
+			"cha": 1,
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 10,
+			"immune": [
+				"毒素",
+				"心灵"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"力竭",
+				"恐慌",
+				"麻痹",
+				"石化",
+				"中毒"
+			],
+			"languages": [
+				"理解通用语加上另外两种语言，但不能说话"
+			],
+			"cr": "10",
+			"trait": [
+				{
+					"name": "不变形态",
+					"ENG_name": "Immutable Form",
+					"entries": [
+						"魔像不能变形。"
+					]
+				},
+				{
+					"name": "魔法抗性",
+					"ENG_name": "Magic Resistance",
+					"entries": [
+						"魔像抵抗法术和其它魔法效应时进行的豁免检定具有优势。"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"魔像进行两次攻击，可以使用撞击或力能射线的任意组合。"
+					]
+				},
+				{
+					"name": "猛击",
+					"ENG_name": "Slam",
+					"entries": [
+						"{@atkr m} {@hit 10}, 触及5英尺。{@h}15 ({@damage 2d8 + 6}) 钝击伤害加上9 ({@damage 2d8}) 力能伤害。"
+					]
+				},
+				{
+					"name": "力能箭矢",
+					"ENG_name": "Force Bolt",
+					"entries": [
+						"{@atkr r} {@hit 9}, 射程90英尺。{@h}26 ({@damage 4d12}) 力能伤害。"
+					]
+				},
+				{
+					"name": "减速 {@recharge 5}",
+					"ENG_name": "Slow {@recharge 5}",
+					"entries": [
+						"魔像施放{@spell 缓慢术|XPHB}（法术豁免{@dc 17}），不需要法术材料，并且使用体质作为施法能力。"
+					]
+				}
+			],
+			"token": {
+				"name": "石魔像",
+				"ENG_name": "Stone Golem",
+				"source": "MM"
+			},
+			"traitTags": [
+				"不变形态",
+				"魔法抗性"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"X"
+			],
+			"damageTags": [
+				"B",
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			]
+		},
+		{
+			"name": "魅魔",
+			"ENG_name": "Succubus",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"M"
+			],
+			"type": "fiend",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 60
+			},
+			"str": 8,
+			"dex": 17,
+			"con": 13,
+			"int": 15,
+			"wis": 12,
+			"cha": 20,
+			"skill": {
+				"deception": "+9",
+				"perception": "+5",
+				"stealth": "+7"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 15,
+			"resist": [
+				"冷冻",
+				"火焰",
+				"毒素",
+				"心灵"
+			],
+			"languages": [
+				"深渊语",
+				"通用语",
+				"炼狱语",
+				"心灵感应 60 尺"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "施法",
+					"ENG_name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"魅魔施放以下法术之一，不需要材料成分，并使用魅力作为施法能力（法术豁免{@dc 15}）："
+					],
+					"will": [
+						"{@spell 支配人类|XPHB}（8级版本）"
+					],
+					"daily": {
+						"1": [
+							"{@spell 催眠图纹|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "动作"
+				}
+			],
+			"trait": [
+				{
+					"name": "梦魇形态",
+					"ENG_name": "Incubus Form",
+					"entries": [
+						"当魅魔完成一次长休时，它可以变形为一个{@creature 梦魔|扩展内存管理器}，使用那个统计块而不是这个。"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"魅魔进行两次恶魔之触攻击，并可以使用法术施放{@spell 支配人类|XPHB}。它可以将一次攻击替换为使用吸取生命之吻。"
+					]
+				},
+				{
+					"name": "邪恶之触",
+					"ENG_name": "Fiendish Touch",
+					"entries": [
+						"{@atkr m} {@hit 5}, 触及5英尺。{@h}6 ({@damage 1d6 + 3}) 心灵伤害。"
+					]
+				},
+				{
+					"name": "汲命之吻",
+					"ENG_name": "Draining Kiss",
+					"entries": [
+						"{@actSave 体质} {@dc 15}, 5英尺内的一只生物被魅魔魅惑。{@actSaveFail} 13 ({@damage 3d8}) 心灵伤害。{@actSaveSuccess} 伤害减半。失败或成功：目标的生命值上限减少，减少量等于受到的伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "变形",
+					"ENG_name": "Shape-Shift",
+					"entries": [
+						"魅魔可以变化成中型或小型类人生物，或者恢复其真实形态。在每种形态下，它的游戏统计数据都是相同的，除了它的真实形态中才有飞行速度。它穿戴或携带的任何装备不会被变化。"
+					]
+				}
+			],
+			"token": {
+				"name": "魅魔",
+				"ENG_name": "Succubus",
+				"source": "MM"
+			},
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"I",
+				"TP"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"HPR",
+				"MA"
+			],
+			"conditionInflictSpell": [
+				"魅惑",
+				"失能"
+			],
+			"savingThrowForcedSpell": [
+				"感知"
+			]
+		},
+		{
+			"name": "硬核Boss",
+			"ENG_name": "Tough Boss",
+			"source": "XMM",
+			"otherSources": [
+				{
+					"source": "ScoEE"
+				}
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 82,
+				"formula": "11d8 + 33"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 17,
+			"dex": 14,
+			"con": 16,
+			"int": 11,
+			"wis": 10,
+			"cha": 11,
+			"save": {
+				"str": "+5",
+				"con": "+5",
+				"cha": "+2"
+			},
+			"passive": 10,
+			"languages": [
+				"通用语"
+			],
+			"cr": "4",
+			"gear": [
+				"链甲|xphb",
+				"重弩|xphb",
+				"战锤|xphb"
+			],
+			"trait": [
+				{
+					"name": "集群战术",
+					"ENG_name": "Pack Tactics",
+					"entries": [
+						"如果至少有一个坚韧的盟友在生物的5英尺范围内，并且该盟友没有处于{@condition 失能|XPHB}状态，那么坚韧在对生物的攻击检定上具有优势。"
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
+					"entries": [
+						"坚韧的战士进行两次攻击，可以使用战锤或重十字弓的任意组合。"
+					]
+				},
+				{
+					"name": "战锤",
+					"ENG_name": "Warhammer",
+					"entries": [
+						"{@atkr m} {@hit 5}, 触及范围5英尺。{@h}12（{@damage 2d8 + 3}）钝击伤害，如果目标是大型或更小，坚韧可以推动目标远离自己最多10英尺。"
+					]
+				},
+				{
+					"name": "重弩",
+					"ENG_name": "Heavy Crossbow",
+					"entries": [
+						"{@atkr r} {@hit 4}, 射程100/400英尺。{@h}13 ({@damage 2d10 + 2}) 穿刺伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"集群战术"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"RNG"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "尸妖",

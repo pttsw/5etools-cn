@@ -504,6 +504,16 @@
 					"progression": {
 						"2": 1
 					}
+				},
+				{
+					"name": "传奇恩惠",
+					"ENG_name": "Epic Boon",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
 				}
 			],
 			"startingProficiencies": {
@@ -535,9 +545,7 @@
 				]
 			},
 			"startingEquipment": {
-				"entries": [
-					"{@i 选择A或B：} (A) {@item 镶钉皮甲|XPHB}, {@item 弯刀|XPHB}, {@item 短剑|XPHB}, {@item 长弓|XPHB}, {@item 箭(20)|XPHB|20支箭}, {@item 箭袋|XPHB}, {@item 德鲁伊法器|XPHB} ({@item 槲寄生枝条|XPHB}), {@item 探索套组|XPHB} 和 7金币; 或 (B) 150金币"
-				],
+				"additionalFromBackground": true,
 				"defaultData": [
 					{
 						"A": [
@@ -575,6 +583,9 @@
 							}
 						]
 					}
+				],
+				"entries": [
+					"{@i 选择A或B：} (A) {@item 镶钉皮甲|XPHB}, {@item 弯刀|XPHB}, {@item 短剑|XPHB}, {@item 长弓|XPHB}, {@item 箭(20)|XPHB|20支箭}, {@item 箭袋|XPHB}, {@item 德鲁伊法器|XPHB} ({@item 槲寄生枝条|XPHB}), {@item 探索套组|XPHB} 和 7金币; 或 (B) 150金币"
 				]
 			},
 			"multiclassing": {
@@ -742,7 +753,7 @@
 					]
 				},
 				{
-					"title": "每个法术环位的准备法术",
+					"title": "每环法术位",
 					"colLabels": [
 						"{@filter 1st|spells|level=1|class=游侠}",
 						"{@filter 2nd|spells|level=2|class=游侠}",
@@ -2179,8 +2190,8 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你熟练的{@variantrule 武器精通特性|XPHB|精通特性}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 长弓|XPHB|长弓}，使用它们的{@item 短剑|XPHB|短剑}。",
-				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通特性|XPHB|精通特性}的{@item 弯刀|XPHB|弯刀}和{@item 长剑|XPHB|长剑}。"
+				"你使用武器的训练使你能够选择两种你熟练的{@item 短剑|XPHB|短剑}，例如{@filter 武器|items|type=简单武器；军用武器}和{@item 长弓|XPHB|长弓}，使用它们的{@item 短剑|XPHB|短剑}。",
+				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通属性|XPHB|精通属性}的{@item 弯刀|XPHB|弯刀}和{@item 长剑|XPHB|长剑}。"
 			]
 		},
 		{
@@ -2282,7 +2293,7 @@
 			"classSource": "XPHB",
 			"level": 6,
 			"entries": [
-				"当你没有穿戴重型护甲时，你的{@variantrule 攀爬速度|XPHB}增加10英尺。你还有等同于你{@variantrule 攀爬速度|XPHB}的{@variantrule 攀爬速度|XPHB}和{@variantrule 攀爬速度|XPHB}。"
+				"当你没有穿戴重型护甲时，你的{@variantrule 速度|XPHB}增加10英尺。你还有等同于你{@variantrule 速度|XPHB}的{@variantrule 速度|XPHB}和{@variantrule 速度|XPHB}。"
 			]
 		},
 		{
@@ -2336,7 +2347,7 @@
 					"name": "临时生命值",
 					"ENG_name": "Temporary Hit Points",
 					"entries": [
-						"作为一个{@action 魔法|XPHB}动作，你可以给自己增加等于{@variantrule 临时生命值|XPHB}加上你智慧调整值（最少为1）的{@variantrule 临时生命值|XPHB}。你可以使用这个动作的次数等于你智慧调整值（最少一次），当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已使用的使用次数。"
+						"作为一个{@action 魔法|XPHB}动作，你可以给自己增加等于{@dice 1d8}加上你智慧调整值（最少为1）的{@dice 1d8}。你可以使用这个动作的次数等于你智慧调整值（最少一次），当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已使用的使用次数。"
 					]
 				},
 				{
@@ -3630,7 +3641,7 @@
 			"header": 1,
 			"entries": [
 				"自3级起，你获得60尺{@sense 黑暗视觉}。如果你已经从种族特质中获得了{@sense 黑暗视觉}，则改为那一黑暗视觉范围增加30尺。",
-				"你还擅长回避依赖{@condition 隐形}的生物。在黑暗中，你对于任何依靠{@condition 隐形}观察你的生物而言视为{@condition 隐形}的生物。"
+				"你还擅长回避依赖{@sense 黑暗视觉}的生物。在黑暗中，你对于任何依靠{@sense 黑暗视觉}观察你的生物而言视为{@sense 黑暗视觉}的生物。"
 			]
 		},
 		{
@@ -4026,7 +4037,7 @@
 							"name": "战斗中的野兽",
 							"ENG_name": "The Beast in Combat",
 							"entries": [
-								"在战斗中，野兽在你的回合中行动。它可以自行移动并使用它的{@variantrule 反应|XPHB}，但除非使用{@action 回避|XPHB}命令它采取其状态块中的行动或其他行动，否则它采取的唯一动作是{@action 回避|XPHB}动作。当你采取{@action 攻击|XPHB}动作时，也可以牺牲你的一次攻击来命令野兽采取\"野兽攻击\"动作。如果你处于{@condition 失能|XPHB}状态，野兽将自行行动，并且不仅限于{@action 回避|XPHB}动作。"
+								"在战斗中，野兽在你的回合中行动。它可以自行移动并使用它的{@variantrule 反应|XPHB}，但除非使用{@action 回避|XPHB}命令它采取其状态块中的行动或其他行动，否则它采取的唯一动作是{@variantrule 附赠动作|XPHB}动作。当你采取{@action 攻击|XPHB}动作时，也可以牺牲你的一次攻击来命令野兽采取\"野兽攻击\"动作。如果你处于{@condition 失能|XPHB}状态，野兽将自行行动，并且不仅限于{@variantrule 附赠动作|XPHB}动作。"
 							]
 						},
 						{
@@ -4054,7 +4065,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"当你使用{@action 疾走|XPHB}来命令你的原始伙伴野兽采取动作时，你也可以命令它使用它的{@action 疾走|XPHB}采取{@action 撤离|XPHB}、{@action 回避|XPHB}、{@action 疾走|XPHB}或{@action 疾走|XPHB}动作。",
+				"当你使用{@variantrule 附赠动作|XPHB}来命令你的原始伙伴野兽采取动作时，你也可以命令它使用它的{@variantrule 附赠动作|XPHB}采取{@action 撤离|XPHB}、{@action 回避|XPHB}、{@variantrule 附赠动作|XPHB}或{@variantrule 附赠动作|XPHB}动作。",
 				"此外，每当它命中攻击检定并造成伤害时，它可以造成你选择的力量伤害或其正常的伤害类型。"
 			]
 		},
@@ -4408,7 +4419,7 @@
 			"level": 3,
 			"entries": [
 				"你获得了范围为60英尺的{@sense 黑暗视觉|XPHB}。如果你在获得此特性时已经拥有{@sense 黑暗视觉|XPHB}，则其范围增加60英尺。",
-				"你同样擅长躲避依赖{@sense 黑暗视觉|XPHB}的生物。当完全处于{@sense 黑暗视觉|XPHB}中时，对于依赖{@sense 黑暗视觉|XPHB}在该{@sense 黑暗视觉|XPHB}中看见你的生物，你有{@sense 黑暗视觉|XPHB}状态。"
+				"你同样擅长躲避依赖{@variantrule 黑暗术|XPHB}的生物。当完全处于{@variantrule 黑暗术|XPHB}中时，对于依赖{@variantrule 黑暗术|XPHB}在该{@variantrule 黑暗术|XPHB}中看见你的生物，你有{@variantrule 黑暗术|XPHB}状态。"
 			]
 		},
 		{

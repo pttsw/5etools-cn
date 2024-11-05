@@ -2668,12 +2668,20 @@
 							"floor": true
 						}
 					],
-					"hp": {
-						"mode": "scalarMultProp",
-						"prop": "平均",
-						"scalar": 0.5,
-						"floor": true
-					},
+					"hp": [
+						{
+							"mode": "scalarMultProp",
+							"prop": "平均",
+							"scalar": 0.5,
+							"floor": true
+						},
+						{
+							"mode": "prefixSuffixStringProp",
+							"prop": "公式",
+							"prefix": "取整((",
+							"suffix": "）÷ 2）"
+						}
+					],
 					"save": {
 						"mode": "scalarAddProp",
 						"scalar": -2,
