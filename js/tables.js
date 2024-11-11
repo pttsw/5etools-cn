@@ -37,6 +37,7 @@ class TablesSublistManager extends SublistManager {
 			{
 				hash,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -129,6 +130,7 @@ class TablesPage extends ListPage {
 				sortName,
 				source,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

@@ -95,7 +95,7 @@ class Hist {
 			for (let x = 0; x < primaryLists.length; ++x) {
 				const list = primaryLists[x];
 
-				const foundItemIx = list.items.findIndex(it => it.values.hash === link);
+				const foundItemIx = list.items.findIndex(it => it.values.hash === link || it.values.ENG_hash === link);
 				if (~foundItemIx) {
 					if (getIndex) return {item: list.items[foundItemIx], x: x, y: foundItemIx, list};
 					return list.items[foundItemIx];

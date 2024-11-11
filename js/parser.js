@@ -4269,4 +4269,178 @@ Parser.MON_SIDEKICK_TO_CN = {
 	"healer": "治疗者",
 	"mage": "魔术师"
 }
+
+Parser.translateKeyInMapToDisplay = function (map, key) {
+	if (typeof key === "string" || key instanceof String) {
+		let lowercase_key = key.toLowerCase();
+		if (map[lowercase_key]) {
+			return map[lowercase_key];
+		}
+	}
+	return key;
+}
+
+Parser.classKeyToDisplay = {};
+Parser.classKeyToDisplay["wizard"] = "法师";
+Parser.classKeyToDisplay["sorcerer"] = "术士";
+Parser.classKeyToDisplay["warlock"] = "契术师";
+Parser.classKeyToDisplay["ranger"] = "游侠";
+Parser.classKeyToDisplay["paladin"] = "圣武士";
+Parser.classKeyToDisplay["druid"] = "德鲁伊";
+Parser.classKeyToDisplay["cleric"] = "牧师";
+Parser.classKeyToDisplay["bard"] = "吟游诗人";
+Parser.classKeyToDisplay["barbarian"] = "野蛮人";
+Parser.classKeyToDisplay["fighter"] = "战士";
+Parser.classKeyToDisplay["monk"] = "武僧";
+Parser.classKeyToDisplay["rogue"] = "游荡者";
+Parser.classKeyToDisplay["artificer"] = "奇械师";
+Parser.classKeyToDisplay["ranger (revised)"] = "游侠 (修订)";
+Parser.classKeyToDisplay["artificer revisited"] = "奇械师 (再制)";
+Parser.classKeyToDisplay["expert sidekick"] = "专家协力者";
+Parser.classKeyToDisplay["spellcaster sidekick"] = "施法协力者";
+Parser.classKeyToDisplay["warrior sidekick"] = "武者协力者";
+Parser.ClassToDisplay = function (c) {
+	let c_match = c.match(/([^()]*)( ?\((.*)\))?/);
+	if (c_match && c_match[2]) {
+		let c_name = Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c_match[1].replace(/ *$/, ""));
+		let source = c_match[3] === "Revised" ? "(修订)" : c_match[2];
+		return `${c_name} ${source}`;
+	}
+	return Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c);
+}
+
+// subclass
+Parser.subclassKeyToDisplay = {};
+Parser.subclassKeyToDisplay["alchemist"] = "炼金师";
+Parser.subclassKeyToDisplay["armorer"] = "装甲师";
+Parser.subclassKeyToDisplay["artillerist"] = "魔炮师";
+Parser.subclassKeyToDisplay["battle smith"] = "战地匠师";
+
+Parser.subclassKeyToDisplay["ancestral guardian"] = "先祖守卫";
+Parser.subclassKeyToDisplay["battlerager"] = "战狂";
+Parser.subclassKeyToDisplay["beast"] = "野兽";
+Parser.subclassKeyToDisplay["berserker"] = "狂战士";
+Parser.subclassKeyToDisplay["storm herald"] = "风暴先驱";
+Parser.subclassKeyToDisplay["totem warrior"] = "图腾勇士";
+Parser.subclassKeyToDisplay["wild magic"] = "狂野魔法";
+Parser.subclassKeyToDisplay["zealot"] = "狂热者";
+
+Parser.subclassKeyToDisplay["creation"] = "创造";
+Parser.subclassKeyToDisplay["eloquence"] = "雄辩";
+Parser.subclassKeyToDisplay["glamour"] = "迷惑";
+Parser.subclassKeyToDisplay["lore"] = "轶闻";
+Parser.subclassKeyToDisplay["swords"] = "剑舞";
+Parser.subclassKeyToDisplay["valor"] = "勇气";
+Parser.subclassKeyToDisplay["whispers"] = "低语";
+
+Parser.subclassKeyToDisplay["arcana"] = "奥秘";
+Parser.subclassKeyToDisplay["death"] = "死亡";
+Parser.subclassKeyToDisplay["forge"] = "锻造";
+Parser.subclassKeyToDisplay["grave"] = "坟墓";
+Parser.subclassKeyToDisplay["knowledge"] = "知识";
+Parser.subclassKeyToDisplay["life"] = "生命";
+Parser.subclassKeyToDisplay["light"] = "光明";
+Parser.subclassKeyToDisplay["nature"] = "自然";
+Parser.subclassKeyToDisplay["order"] = "秩序";
+Parser.subclassKeyToDisplay["peace"] = "和平";
+Parser.subclassKeyToDisplay["tempest"] = "暴风";
+Parser.subclassKeyToDisplay["trickery"] = "诡术";
+Parser.subclassKeyToDisplay["twilight"] = "暮光";
+Parser.subclassKeyToDisplay["war"] = "战争";
+
+Parser.subclassKeyToDisplay["dreams"] = "梦境";
+Parser.subclassKeyToDisplay["land"] = "大地";
+Parser.subclassKeyToDisplay["moon"] = "月亮";
+Parser.subclassKeyToDisplay["shepherd"] = "牧人";
+Parser.subclassKeyToDisplay["spores"] = "孢子";
+Parser.subclassKeyToDisplay["stars"] = "星辰";
+Parser.subclassKeyToDisplay["wildfire"] = "野火";
+
+Parser.subclassKeyToDisplay["arcane archer"] = "魔射手";
+Parser.subclassKeyToDisplay["battle master"] = "战斗大师";
+Parser.subclassKeyToDisplay["cavalier"] = "骑兵";
+Parser.subclassKeyToDisplay["champion"] = "勇士";
+Parser.subclassKeyToDisplay["eldritch knight"] = "魔能骑士";
+Parser.subclassKeyToDisplay["psi warrior"] = "灵能武士";
+Parser.subclassKeyToDisplay["purple dragon knight (banneret)"] = "紫龙骑士（旗将）";
+Parser.subclassKeyToDisplay["rune knight"] = "符文骑士";
+Parser.subclassKeyToDisplay["samurai"] = "武士";
+Parser.subclassKeyToDisplay["echo knight"] = "回音骑士";
+
+Parser.subclassKeyToDisplay["astral self"] = "星我宗";
+Parser.subclassKeyToDisplay["drunken master"] = "醉拳宗";
+Parser.subclassKeyToDisplay["four elements"] = "四象宗";
+Parser.subclassKeyToDisplay["kensei"] = "剑圣宗";
+Parser.subclassKeyToDisplay["long death"] = "永亡宗";
+Parser.subclassKeyToDisplay["mercy"] = "命流宗";
+Parser.subclassKeyToDisplay["open hand"] = "散打宗";
+Parser.subclassKeyToDisplay["shadow_monk"] = "暗影宗";
+Parser.subclassKeyToDisplay["sun soul"] = "日魂宗";
+
+Parser.subclassKeyToDisplay["ancients"] = "远古";
+Parser.subclassKeyToDisplay["conquest"] = "征服";
+Parser.subclassKeyToDisplay["crown"] = "王冠";
+Parser.subclassKeyToDisplay["devotion"] = "奉献";
+Parser.subclassKeyToDisplay["glory"] = "荣耀";
+Parser.subclassKeyToDisplay["oathbreaker"] = "破誓者";
+Parser.subclassKeyToDisplay["redemption"] = "救赎";
+Parser.subclassKeyToDisplay["vengeance"] = "复仇";
+Parser.subclassKeyToDisplay["watchers"] = "守望";
+
+Parser.subclassKeyToDisplay["beast master"] = "兽王";
+Parser.subclassKeyToDisplay["fey wanderer"] = "妖精漫游者";
+Parser.subclassKeyToDisplay["gloom stalker"] = "幽域追踪者";
+Parser.subclassKeyToDisplay["horizon walker"] = "境界行者";
+Parser.subclassKeyToDisplay["hunter"] = "猎人";
+Parser.subclassKeyToDisplay["monster slayer"] = "怪物杀手";
+Parser.subclassKeyToDisplay["swarmkeeper"] = "集群守卫";
+
+Parser.subclassKeyToDisplay["arcane trickster"] = "诡术师";
+Parser.subclassKeyToDisplay["assassin"] = "刺客";
+Parser.subclassKeyToDisplay["inquisitive"] = "审讯者";
+Parser.subclassKeyToDisplay["mastermind"] = "策士";
+Parser.subclassKeyToDisplay["phantom"] = "鬼魅";
+Parser.subclassKeyToDisplay["scout"] = "斥候";
+Parser.subclassKeyToDisplay["soulknife"] = "魂刃";
+Parser.subclassKeyToDisplay["swashbuckler"] = "风流剑客";
+Parser.subclassKeyToDisplay["thief"] = "窃贼";
+
+Parser.subclassKeyToDisplay["aberrant mind"] = "畸变心智";
+Parser.subclassKeyToDisplay["clockwork soul"] = "时械之魂";
+Parser.subclassKeyToDisplay["divine soul"] = "神圣之魂";
+Parser.subclassKeyToDisplay["draconic"] = "龙族血脉";
+Parser.subclassKeyToDisplay["shadow"] = "幽影魔法";
+Parser.subclassKeyToDisplay["storm"] = "暴风术法";
+Parser.subclassKeyToDisplay["wild"] = "狂野魔法";
+
+Parser.subclassKeyToDisplay["archfey"] = "至高妖精";
+Parser.subclassKeyToDisplay["celestial"] = "天界";
+Parser.subclassKeyToDisplay["fathomless"] = "深海意志";
+Parser.subclassKeyToDisplay["fiend"] = "邪魔";
+Parser.subclassKeyToDisplay["genie"] = "巨灵";
+Parser.subclassKeyToDisplay["great old one"] = "旧日支配者";
+Parser.subclassKeyToDisplay["hexblade"] = "咒剑";
+Parser.subclassKeyToDisplay["undying"] = "不朽者";
+
+Parser.subclassKeyToDisplay["abjuration"] = "防护";
+Parser.subclassKeyToDisplay["bladesinging"] = "剑咏";
+Parser.subclassKeyToDisplay["conjuration"] = "咒法";
+Parser.subclassKeyToDisplay["divination"] = "预言";
+Parser.subclassKeyToDisplay["enchantment"] = "惑控";
+Parser.subclassKeyToDisplay["evocation"] = "塑能";
+Parser.subclassKeyToDisplay["illusion"] = "幻术";
+Parser.subclassKeyToDisplay["necromancy"] = "死灵";
+Parser.subclassKeyToDisplay["scribes"] = "书士会";
+Parser.subclassKeyToDisplay["transmutation"] = "变化";
+Parser.subclassKeyToDisplay["war"] = "战争";
+Parser.subclassKeyToDisplay["graviturgy"] = "重力";
+Parser.subclassKeyToDisplay["chronurgy"] = "时间";
+Parser.SubclassToDisplay = function (sc) {
+	let sc_match = sc.match(/([^()]*)( ?\((.*)\))?/);
+	if (sc_match && sc_match[2]) {
+		let sc_name = Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc_match[1].replace(/ *$/, ""));
+		return `${sc_name} ${sc_match[2]}`;
+	}
+	return Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc);
+}
 // endregion

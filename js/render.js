@@ -1237,15 +1237,15 @@ globalThis.Renderer = function () {
 		if (entry.constant || entry.will || entry.recharge || entry.charges || entry.rest || entry.daily || entry.weekly || entry.monthly || entry.yearly || entry.ritual) {
 			const tempList = {type: "list", style: "list-hang-notitle", items: [], data: {isSpellList: true}};
 			if (entry.constant && !hidden.has("constant")) tempList.items.push({type: "itemSpell", name: `Constant:`, entry: this._renderSpellcasting_getRenderableList(entry.constant).join(", ")});
-			if (entry.will && !hidden.has("will")) tempList.items.push({type: "itemSpell", name: `At will:`, entry: this._renderSpellcasting_getRenderableList(entry.will).join(", ")});
+			if (entry.will && !hidden.has("will")) tempList.items.push({type: "itemSpell", name: `随意:`, entry: this._renderSpellcasting_getRenderableList(entry.will).join(", ")});
 
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "recharge", fnGetDurationText: num => `{@recharge ${num}|m}`, isSkipPrefix: true});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "charges", fnGetDurationText: num => ` charge${num === 1 ? "" : "s"}`});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "rest", durationText: "/rest"});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/day"});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "weekly", durationText: "/week"});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "monthly", durationText: "/month"});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "yearly", durationText: "/year"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "rest", durationText: "/休息"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/天"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "weekly", durationText: "/周"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "monthly", durationText: "/月"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "yearly", durationText: "/年"});
 
 			if (entry.ritual && !hidden.has("ritual")) tempList.items.push({type: "itemSpell", name: `Rituals:`, entry: this._renderSpellcasting_getRenderableList(entry.ritual).join(", ")});
 			tempList.items = tempList.items.filter(it => it.entry !== "");
@@ -1263,12 +1263,12 @@ globalThis.Renderer = function () {
 				const spells = entry.spells[lvl];
 				if (spells) {
 					let levelCantrip = `${Parser.spLevelToFull(lvl)}${(lvl === 0 ? "s" : " level")}`;
-					let slotsAtWill = ` (at will)`;
+					let slotsAtWill = ` (随意)`;
 					const slots = spells.slots;
 					if (slots >= 0) slotsAtWill = slots > 0 ? ` (${slots} slot${slots > 1 ? "s" : ""})` : ``;
 					if (spells.lower && spells.lower !== lvl) {
 						levelCantrip = `${Parser.spLevelToFull(spells.lower)}-${levelCantrip}`;
-						if (slots >= 0) slotsAtWill = slots > 0 ? ` (${slots} ${Parser.spLevelToFull(lvl)}-level slot${slots > 1 ? "s" : ""})` : ``;
+						if (slots >= 0) slotsAtWill = slots > 0 ? ` (${slots}个${Parser.spLevelToFull(lvl)}-法术位)` : ``;
 					}
 					tempList.items.push({type: "itemSpell", name: `${levelCantrip}${slotsAtWill}:`, entry: this._renderSpellcasting_getRenderableList(spells.spells).join(", ") || "\u2014"});
 				}
@@ -2483,7 +2483,7 @@ Renderer.attackTagToFull = function (tagStr, {isRoll = false} = {}) {
 			});
 		}
 	}
-	return `${tagGroups.map(it => renderTag(it)).join(" 或 ")}攻击${isRoll ? " Roll" : ""}:`;
+	return `${tagGroups.map(it => renderTag(it)).join(" 或 ")}攻击${isRoll ? " 掷骰" : ""}:`;
 };
 
 Renderer.splitFirstSpace = function (string) {
@@ -2665,7 +2665,7 @@ Renderer.getEntryDiceDisplayText = function (entry) {
 };
 
 Renderer._getEntryDiceDisplayText_getDiceAsStr = function (entry) {
-	if (entry.successThresh != null) return `${entry.successThresh} percent`;
+	if (entry.successThresh != null) return `${entry.successThresh}%`;
 	if (typeof entry.toRoll === "string") return entry.toRoll;
 	// handle legacy format
 	return Renderer.legacyDiceToString(entry.toRoll);
@@ -3445,8 +3445,8 @@ Renderer.utils = class {
 		}).join("");
 	}
 
-	static HTML_NO_INFO = "<i>No information available.</i>";
-	static HTML_NO_IMAGES = "<i>No images available.</i>";
+	static HTML_NO_INFO = "<i>没有可用的信息。</i>";
+	static HTML_NO_IMAGES = "<i>没有可用的图片。</i>";
 
 	static prerequisite = class {
 		static _WEIGHTS = [
@@ -3591,7 +3591,7 @@ Renderer.utils = class {
 
 			const joinedChoices = (
 				hasNote
-					? listOfChoicesTrimmed.join(" Or, ")
+					? listOfChoicesTrimmed.join(" 或, ")
 					: listOfChoicesTrimmed.joinConjunct(listOfChoicesTrimmed.some(it => / or /.test(it)) ? "; " : ", ", " 或 ")
 			) + sharedSuffix;
 
@@ -3637,7 +3637,7 @@ Renderer.utils = class {
 			const ptLevel = !isLevelVisible
 				? ""
 				: styleHint === "classic"
-					? `${Parser.getOrdinalForm(v.level)} level`
+					? `${Parser.getOrdinalForm(v.level)} 级`
 					: `Level ${v.level}+`;
 
 			return [ptLevel, classPart].filter(Boolean).join(" ");
@@ -3648,7 +3648,7 @@ Renderer.utils = class {
 		}
 
 		static _getHtml_patron ({v, isListMode}) {
-			return isListMode ? `${Parser.prereqPatronToShort(v)} patron` : `${v} patron`;
+			return isListMode ? `${Parser.prereqPatronToShort(v)}宗主` : `${v}宗主`;
 		}
 
 		static _getHtml_spell ({v, isListMode, isTextOnly}) {
@@ -4872,7 +4872,7 @@ Renderer.tag = class {
 	static TagHitText = class extends this._TagBaseAt {
 		tagName = "h";
 
-		_getStripped (tag, text) { return "Hit: "; }
+		_getStripped (tag, text) { return "命中: "; }
 	};
 
 	static TagMissText = class extends this._TagBaseAt {

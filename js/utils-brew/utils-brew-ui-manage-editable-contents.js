@@ -302,6 +302,7 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 				source: sourceMeta.abbreviation,
 				category: dispProp,
 				ENG_name: sourceMeta.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(sourceMeta),
 			},
 			{
 				cbSel: eleLi.firstElementChild.firstElementChild.firstElementChild,
@@ -436,6 +437,7 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 				abbreviation: abv,
 				json: source.json,
 				ENG_name: source.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(source),
 			},
 			{
 				cbSel: eleLi.firstElementChild.firstElementChild.firstElementChild,

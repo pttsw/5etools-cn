@@ -2746,5 +2746,104 @@
 		"ver": "1.209.3",
 		"date": "2024-07-20",
 		"txt": "- Fixed Omnisearch CTRL+ENTER using incorrect query params\n- (Brew) Fixed crash when rendering \"subclass\" `\"statblock\"` entries\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.210.0",
+		"date": "2024-08-18",
+		"title": "Delete Lawyer",
+		"titleAlt": "Hit Facebook",
+		"txt": "- Added \"Filter Snapshot\" system, accessed via the new \"Manage Defaults\" button in the Filters dialogue. A snapshot can be created from one or more filters; a snapshot may then be used as the default filter state, applied to update all filters, or combined with other snapshots to form a \"Snapshot Deck.\" A deck allows multiple filter snapshots to behave as a single snapshot, and can therefore also be used as the default filter state, or applied to update all filters.\n- Split Omnisearch \"Homebrew\" button into \"Partnered\" and \"Homebrew\" buttons\n- Fixed print handler failing to load images/inline entries, and added notification when background loading is complete\n- Fixed various minor print styling issues\n- (Brew) Improved Spell Text Converter parsing of: durations,\n- (Brew) Improved Item Text Converter parsing of: generic variants, recharges\n- (Brew) Improved Creature Text Converter parsing of: legendary actions\n- (Brew) Improved Race Text Converter parsing of: ability scores, languages, size, speed, creature type\n- (Brew) Fixed \"Get Homebrew\" crash when offline\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.210.1",
+		"date": "2024-08-25",
+		"txt": "- Added 'Remove \"Default\"' button to filter snapshots\n- Tweaked Bestiary/Vehicles/Objects styling to better match source material\n- (Brew) Page numbers in list-page rendered homebrew entities will now link to their corresponding adventure/book, where available _[this was previously implemented for non-brew entities, but unimplemented for homebrew]_\n- (Brew) Extended time-to-search grace period when searching list pages with 20k+ entities loaded\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.210.2",
+		"date": "2024-09-15",
+		"txt": "- Added ability display to hovered skills\n- Replaced long-standing Bestiary/Vehicles/Objects page \"token disappears when scrolling\" hack with normal scrolling behaviour\n- Fixed prerelease/homebrew content not appearing as available to choose in the Blocklist\n- Fixed `J`/`K` failing to wrap across Items page lists when one list had no visible items\n- Fixed Rivet button failing to hide when using list page \"Export as Image\" function\n- Fixed Feats page displaying full-length \"Ability\" text in list view\n- Fixed various minor layout bugs\n- (Brew) The List page `... copies @filter tag` CTRL-click function will now dynamically choose between \"extend defaults\" or \"extend from blank\" modes, depending on which produces the shortest result\n- (Brew) Made various parsing improvements to Text Converters\n- (Brew) Added various additional properties to the Prettifier\n- (Brew) Reworked item `\"type\"`/`\"property\"` to include `|<source>` parts (defaulting to the source where the type/property was first defined). _[Note that there is a fallback in place for un-migrated types/properties, so this Shouldn't:tm: break things. Using the new format is recommended.]_\n- (Brew) JSON editors now auto-escape backslashes when pasting, unless CTRL+SHIFT are pressed\n- (Brew) Improved sort ordering in Get Homebrew/similar lists\n- (Brew) Added `@initiative` tag; `@atkr` tag; `@itemProperty` tag\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.210.3",
+		"date": "2024-09-20",
+		"title": "Smoke 'em while you Got 'em",
+		"txt": "- Added \"Legacy\" toggle to Omnisearch\n- Made various search modals (DM Screen panel \"+\" buttons; DM Screen Encounter Builder \"Add Monster\" button; Creature Homebrew Builder search for spells; etc.) respect current Omnisearch filter toggles\n- Added legacy markers to adventures/books in nav menu; adventures/books list pages\n- Fixed Recipe page scaler \"In the original recipe...\" text showing scaled values\n- Fixed SEO pages failing to load\n- Fixed copying Initiative Tracker links on non-root hosted instance producing broken links (thanks @ Formulaic)\n- (Brew) Improved Bestiary Text Converter handling of various input formats\n- (Brew) Improved Race Text Converter handling of various input formats\n- (Brew) Added various \"action\" tags, for rendering parts of actions: `{@actSave <ability>}`, `{@actSaveFail}`, `{@actSaveSuccess}`, `{@actTrigger}`, `{@actResponse}`.\n- (Brew) Added optional `preserve.prerequisite`/`preserve.consumes` to `refOptionalfeature` entries, allowing additional text to be rendered\n- (Brew) Fixed \"missing types/properties\" crash when attempting to load items page with old homebrew/prerelease content active _[an error notification is now shown instead]_\n- (Brew) Fixed various Item Text Converter regressions\n- (Brew) (Maybe?) fixed Items Page crash when loading with >1000 homebrews active _[:^)]_\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.210.4",
+		"date": "2024-09-20",
+		"txt": "- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.0.0",
+		"date": "2024-09-20",
+		"title": "A Brave New World",
+		"txt": "- Added Player's Handbook (2024)\n- Added \"Style\" option to Preferences, with \"2014\" and \"One D&D\" options. Depending on your selection:\n  - Various statblock/etc. views will be re-styled\n  - Hovering over a link to a piece of reprinted content (for example, the \"incapacitated\" condition) may display the updated version of that content, where available. _[Clicking the link will still navigate to the \"original\" version, as defined by the source document. To \"click\" the updated version, SHIFT+hover and click the \"Go to Page\" button in the header.]_\n- Added \"Ability\" column to Backgrounds page\n- Added \"Category\" column to Feats page \n- Added \"Primary Ability\" filter to Classes page\n- Renamed \"Races\" to \"Species\"; renamed \"Optional, Variant, and Expanded Rules\" to \"Rules Glossary\" (and added \"Core\" rule type/filter)\n- (Brew) Added \"Style\" option to various Text Converters, which primarily adjusts how `@tags` are generated\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.0.1",
+		"date": "2024-09-20",
+		"txt": "- Added copies of 2014 subclasses to 2024 classes \n- Fixed non-proficient creature saving throws displaying incorrectly\n- Fixed crash when selecting \"Human\" in Statgen\n- Fixed \"Reprinted\" filter being unavailable on some pages\n- (Brew) Fixed Item Text Converter crash when converting an item with an ambiguous base item\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.1.0",
+		"date": "2024-09-21",
+		"title": "It's 5 o'clock, Somewhere",
+		"titleAlt": "I Need A Drink",
+		"txt": "- Added Puncheons and Flagons: The Official Dungeons & Dragons Cocktail Book (thanks @ Lyra)\n- Added \"Reprinted as...\" links to reprinted classes/subclasses on the Classes page\n- Fixed header \"Toggle Visibility\" (`[-]`) buttons failing to collapse inline text in some cases\n- Fixed DM Screen panel \"Add Tab\" button failing to register clicks\n- (Brew) Added dynamic generation of subclasses for 2024-era classes, if a subclass was brewed against a 2014-era class\n- (Brew) Fixed Blocklist crash when specific homebrews are loaded\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.1.1",
+		"date": "2024-09-22",
+		"txt": "- Added \"Gear\" display to 2024-style Bestiary statblocks\n- (Brew) Added \"Partnered\" filter to Get Homebrew\n- (Brew) Fixed dynamic generation of 2024-compatible subclasses\n- (Brew) Fixed race \"reprintedAs\" being applied to subraces\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.1.2",
+		"date": "2024-09-23",
+		"txt": "- Added shorthand ability display to Backgrounds page \"Ability\" column \"Origin\" format\n- Added \"Scaling Targets\" filter to Spells page\n- (Brew) Fixed crash when generating subclasses from `_copy` subclasses \n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.2.0",
+		"date": "2024-09-25",
+		"title": "Horny Cartoons",
+		"txt": "- Added Uni and the Hunt for the Lost Horn\n- (Brew) Added \"Initiative\" and \"Gear\" handling to the Creature Text Converter\n- (Brew) Improved Item Text Converter handling of generic variants\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.2.1",
+		"date": "2024-09-30",
+		"txt": "- Added \"Feats\" filter to Backgrounds page\n- Fixed search modals (e.g. DM Screen search) hiding loaded partnered content\n- Fixed rare case where \"Get link to filters\" button could fail to produce a valid link\n- (Brew) Fixed crash when loading generated 2024 subclasses which reference site subclass features\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.2.2",
+		"date": "2024-10-04",
+		"txt": "- Added adventure/book links to list page \"Info\"/\"Images\" tab source/page headers (previously only available in the \"Stats\" tab)\n- Added \"Copy Link to Filters (Extensible)\" option to list pages, to explicitly copy \"old style\" filter links\n- Fixed Bestiary failing to show non-standard XP rewards when using \"Modern\" styling\n- (Brew) Improved search text generation performance when using `stats:...`/`info:...`/`text:...` on large lists\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.2.3",
+		"date": "2024-10-17",
+		"txt": "- Added \"Zoom to Fit\" button to Dynamic Map Viewer; made \"Reset Zoom\" button reset to \"fill\" size (rather than 100% zoom)\n- Adjusted Dynamic Map Viewer zoom in/out amount to feel more natural\n- Added Languages support to Blocklist\n- Added \"Camouflage\" tag to Bestiary \"Traits\" filter\n- Converted Items page \"Base Item\" filter to searchable type\n- Fixed common cases of Dynamic Map Viewer \"white screen\" when zooming in too far on some images\n- Fixed Classes page \"Toggle Spell Points Mode\" option producing broken results when used on a non-spellcasting class with spellcasting subclasses (e.g. Fighter; Rogue)\n- Fixed duplicate filter matches (e.g. \"Ranger\" (PHB'14) and \"Ranger\" (PHB'24) on the same spell) producing incorrect filter results in some cases\n- (Brew) Improved speed of loading many brews from a prerelease content/homebrew list exported as url\n- (Brew) Added file verification/warning when attempting to upload a non-homebrew file (e.g. a file from \"Utilities\" -> \"Export State to File\") as a homebrew file\n- (Brew) Added redirect when pasting a prerelease content/homebrew list exported as url into the \"Load from URL\" modal\n- (Brew) Added numeric-prefix sorting to list page \"Source\" filters\n- (Brew) Added workaround for spell class sources, which auto-generates XPHB equivalents for PHB entries\n- (Brew) Added rudimentary `@itemProperty` tagging to Text Converters\n- (Brew) Added support for `\"itemProperty\"` tag in `\"statblock\"` entries \n- (Brew) Fixed crash when using `_append<fluffProp>`\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.3.0",
+		"date": "2024-10-24",
+		"title": "Eating Cardboard",
+		"txt": "- Added Heroes' Feast: The Deck of Many Morsels (thanks @ Lyra)\n- Added 2024 DM Screen (thanks @ Lyra)\n- Added Armor Class filter to Items page\n- Added more PHB'24 creature art; tokens\n- Improved Spell-Summoned Creature Scaler handling of PHB'24 statblock multiattacks\n- Fixed Classes page \"Toggle Spell Points Mode\" option only showing subclass spell points columns\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.4.0",
+		"date": "2024-10-31",
+		"title": "Mad Sciontist",
+		"txt": "- Added \"Scions of Elemental Evil\" content (which includes a small amount of MM'24 and DMG'24 content)\n- Added page numbers to Quests from the Infinite Staircase adventure content\n- Added Bestiary \"Named Creature\" filter\n- Fixed \"Export as Image\" window resize behaviour on Firefox\n- Fixed Bestiary statblock copy-paste formatting regression when pasting to external editors\n- Fixed \"Source\" filter item ordering\n- (Brew) Improved Creature Text Converter handling of alternate \"Gear\" formats\n- (Brew) Added `\"_versions\"` support to `\"feat\"`s, which may subsequently be linked from `\"background[].feats\"`\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.4.1",
+		"date": "2024-11-01",
+		"txt": "- Statgen now uses '24 \"Backgrounds and Species from Older Books\" rules when using \"Modern\" style\n- Fixed Statgen crash when selecting backgrounds with specific feat versions\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.4.2",
+		"date": "2024-11-04",
+		"txt": "- Fixed Items page failing to render range for items with range but no ammunition\n- Fixed Bestiary failing to render \"mythic encounter\" XP\n- (Brew) Fixed Backgrounds page crash on `\"one\"`-edition background with no ability scores\n- (Fixed typos/added tags)"
 	}
 ]

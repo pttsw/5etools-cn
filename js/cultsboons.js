@@ -41,6 +41,7 @@ class CultsBoonsSublistManager extends SublistManager {
 				type: it._lType,
 				subType: it._lSubType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -92,6 +93,7 @@ class CultsBoonsPage extends ListPage {
 				type: it._lType,
 				subType: it._lSubType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

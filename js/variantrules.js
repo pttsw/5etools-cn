@@ -35,6 +35,7 @@ class VariantRulesSublistManager extends SublistManager {
 				hash,
 				ruleType: it.ruleType || "",
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -87,6 +88,7 @@ class VariantRulesPage extends ListPage {
 				source,
 				ruleType: rule.ruleType || "",
 				ENG_name: rule.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(rule),
 			},
 			{
 				isExcluded,

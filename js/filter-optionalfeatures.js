@@ -275,6 +275,7 @@ class ModalFilterOptionalFeatures extends ModalFilterBase {
 				level,
 				type: optfeat._lFeatureType,
 				ENG_name: optfeat.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(optfeat),
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,

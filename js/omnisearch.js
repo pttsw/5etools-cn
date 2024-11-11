@@ -1,7 +1,7 @@
 import {UtilsOmnisearch} from "./utils-omnisearch.js";
 
 class Omnisearch {
-	static _PLACEHOLDER_TEXT = "Search everywhere...";
+	static _PLACEHOLDER_TEXT = "全局搜索...";
 	static _searchIndex = null;
 	static _adventureBookLookup = null; // A map of `<sourceLower>: (adventureCatId|bookCatId)`
 	static _pLoadSearch = null;
@@ -103,7 +103,7 @@ class Omnisearch {
 			tag: "input",
 			clazz: "form-control search omni__input",
 			placeholder: this._PLACEHOLDER_TEXT,
-			title: `Hotkey: F. Disclaimer: unlikely to search everywhere. Use with caution.`,
+			title: `快捷键：F. 免责声明：不一定真的达到全域搜索，请谨慎使用。`,
 			type: "search",
 		})
 			.disableSpellcheck();
@@ -330,6 +330,7 @@ class Omnisearch {
 				{
 					fields: {
 						n: {boost: 5, expand: true},
+						cn: {boost: 5, expand: true},
 						s: {expand: true},
 					},
 					bool: "AND",
@@ -372,7 +373,7 @@ class Omnisearch {
 		if (isFauxPage) return $(`<span tabindex="0" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s, {isFauxPage}) : ""} class="omni__lnk-name help">${r.cf}: ${r.n}</span>`);
 
 		const href = this.getResultHref(r);
-		return $(`<a href="${href}" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s, {isFauxPage}) : ""} class="omni__lnk-name">${r.cf}: ${r.n}</a>`);
+		return $(`<a href="${href}" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s, {isFauxPage}) : ""} class="omni__lnk-name">${r.cf}: ${r.cn ?? r.n}</a>`);
 	}
 
 	static _btnTogglePartnered = null;
@@ -625,7 +626,9 @@ class Omnisearch {
 	static async _pDoSearchLoad () {
 		elasticlunr.clearStopWords();
 		this._searchIndex = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField("n");
+			this.addField("cn");
 			this.addField("cf");
 			this.addField("s");
 			this.setRef("id");
@@ -743,12 +746,12 @@ class Omnisearch {
 
 	static doShowHelp () {
 		const {$modalInner} = UiUtil.getShowModal({
-			title: "Help",
+			title: "帮助",
 			isMinHeight0: true,
 		});
 
 		$modalInner.append(`
-			<p>The following search syntax is available:</p>
+			<p>支持以下搜索语法：</p>
 			<ul>
 				<li><code>in:&lt;category&gt;</code> where <code>&lt;category&gt;</code> can be &quot;spell&quot;, &quot;item&quot;, &quot;bestiary&quot;, etc.</li>
 				<li><code>source:&lt;abbreviation&gt;</code> where <code>&lt;abbreviation&gt;</code> is an abbreviated source/book name (&quot;PHB&quot;, &quot;MM&quot;, etc.)</li>

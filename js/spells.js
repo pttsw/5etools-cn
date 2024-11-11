@@ -81,6 +81,7 @@ class SpellsSublistManager extends SublistManager {
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,
 				ENG_name: spell.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(spell),
 			},
 			{
 				entity: spell,
@@ -363,6 +364,7 @@ class SpellsPage extends ListPageMultiSource {
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,
 				ENG_name: spell.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(spell),
 			},
 			{
 				isExcluded,

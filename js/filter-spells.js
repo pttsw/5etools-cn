@@ -720,6 +720,7 @@ class ModalFilterSpells extends ModalFilterBase {
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,
 				ENG_name: spell.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(spell),
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,

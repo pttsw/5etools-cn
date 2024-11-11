@@ -35,6 +35,7 @@ class RewardsSublistManager extends SublistManager {
 				hash,
 				type: reward.type,
 				ENG_name: reward.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(reward),
 			},
 			{
 				entity: reward,
@@ -90,6 +91,7 @@ class RewardsPage extends ListPage {
 				source,
 				type: reward.type,
 				ENG_name: reward.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(reward),
 			},
 			{
 				isExcluded,

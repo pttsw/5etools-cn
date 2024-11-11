@@ -5,12 +5,12 @@ import * as utB from "./util-book-reference.js";
 
 const index = utB.UtilBookReference.getIndex(
 	{
-		name: "Quick Reference (2014)",
+		name: "快速参考 (2014)",
 		id: "bookref-quick",
 		tag: "quickref",
 	},
 	{
-		name: "DM Reference",
+		name: "DM参考",
 		id: "bookref-dmscreen",
 		tag: "dmref",
 	},

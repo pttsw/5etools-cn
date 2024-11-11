@@ -717,6 +717,7 @@ export class ManageBrewUi {
 				authors: rowsSubMetas.map(it => it.authorsFull).join(", "),
 				abbreviation: rowsSubMetas.map(it => it.abbreviation).join(", "),
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				cbSel,

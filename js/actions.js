@@ -36,6 +36,7 @@ class ActionsSublistManager extends SublistManager {
 				hash,
 				time,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -90,6 +91,7 @@ class ActionsPage extends ListPage {
 				source,
 				time,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

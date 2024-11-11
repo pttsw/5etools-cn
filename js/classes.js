@@ -757,7 +757,8 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			{
 				hash,
 				source,
-				ENG_name:cls.ENG_name
+				ENG_name: cls.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
 			},
 			{
 				$lnk,
@@ -1609,6 +1610,8 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				shortName: sc.shortName,
 				stateKey,
 				mod,
+				ENG_name: sc.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(sc),
 			},
 			{
 				isExcluded,

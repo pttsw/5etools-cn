@@ -542,6 +542,7 @@ class ModalFilterItems extends ModalFilterBase {
 				sourceJson: item.source,
 				type,
 				ENG_name: item.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,

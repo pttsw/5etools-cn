@@ -38,6 +38,7 @@ class VehiclesSublistManager extends SublistManager {
 				upgradeType: it.upgradeType,
 				type: displayType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -98,6 +99,7 @@ class VehiclesPage extends ListPage {
 				upgradeType: it.upgradeType,
 				type: displayType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

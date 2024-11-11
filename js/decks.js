@@ -147,6 +147,7 @@ class DecksPage extends ListPage {
 				hash,
 				source,
 				ENG_name: ent.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(ent),
 			},
 			{
 				isExcluded,

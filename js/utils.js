@@ -2872,6 +2872,14 @@ globalThis.UrlUtil = {
 		return encoder(obj);
 	},
 
+	autoEncodeEngHash (obj) {
+		if (!obj.ENG_name) return null;
+		const curPage = UrlUtil.getCurrentPage();
+		const encoder = UrlUtil.URL_TO_ENG_HASH_BUILDER[curPage];
+		if (!encoder) throw new Error(`No encoder found for page ${curPage}`);
+		return encoder(obj);
+	},
+
 	decodeHash (hash) {
 		return hash.split(HASH_LIST_SEP).map(it => decodeURIComponent(it));
 	},
@@ -3129,7 +3137,7 @@ globalThis.UrlUtil = {
 		},
 	},
 
-	getStateKeySubclass (sc) { return Parser.stringToSlug(`sub ${sc.shortName || sc.name} ${sc.source}`); },
+	getStateKeySubclass (sc) { return Parser.stringToSlug(`sub ${sc.ENG_shortName || sc.ENG_name || sc.shortName || sc.name} ${sc.source}`); },
 
 	/**
 	 * @param opts Options object.
@@ -3212,7 +3220,7 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS] = UrlUtil.URL_TO_HASH_GENERIC;
-UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES] = UrlUtil.URL_TO_HASH_GENERIC;
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES] = (it) => UrlUtil.encodeForHash([Parser.ClassToDisplay(it.name), it.source]);;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_FEATS] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES] = UrlUtil.URL_TO_HASH_GENERIC;
@@ -3321,6 +3329,124 @@ Object.keys(UrlUtil.URL_TO_HASH_BUILDER)
 	.forEach(k => {
 		UrlUtil.URL_TO_HASH_BUILDER[`${k}Fluff`] = UrlUtil.URL_TO_HASH_BUILDER[k];
 		UrlUtil.URL_TO_HASH_BUILDER[`${k}Template`] = UrlUtil.URL_TO_HASH_BUILDER[k];
+	});
+// endregion
+
+UrlUtil.URL_TO_ENG_HASH_GENERIC = (it) => UrlUtil.encodeArrayForHash(it.ENG_name, it.source);
+
+UrlUtil.URL_TO_ENG_HASH_BUILDER = {};
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BESTIARY] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_SPELLS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES] = (it) => UrlUtil.encodeForHash([Parser.ClassToDisplay(it.ENG_name), it.source]);;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_FEATS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_PSIONICS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RACES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_REWARDS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VARIANTRULES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ADVENTURE] = (it) => UrlUtil.encodeForHash(it.id);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ADVENTURES] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ADVENTURE];
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BOOK] = (it) => UrlUtil.encodeForHash(it.id);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BOOKS] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BOOK];
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_DEITIES] = (it) => UrlUtil.encodeArrayForHash(it.ENG_name, it.pantheon, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CULTS_BOONS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OBJECTS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TRAPS_HAZARDS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TABLES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VEHICLES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ACTIONS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_LANGUAGES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CHAR_CREATION_OPTIONS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RECIPES] = (it) => `${UrlUtil.encodeArrayForHash(it.ENG_name, it.source)}${it._scaleFactor ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${it._scaleFactor}` : ""}`;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_DECKS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASS_SUBCLASS_FEATURES] = (it) => (it.__prop === "subclassFeature" || it.subclassSource) ? UrlUtil.URL_TO_ENG_HASH_BUILDER["subclassFeature"](it) : UrlUtil.URL_TO_ENG_HASH_BUILDER["classFeature"](it);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CREATURE_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VEHICLE_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OBJECT_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TRAP_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_QUICKREF] = ({ENG_name, ixChapter, ixHeader}) => {
+	const hashParts = ["bookref-quick", ixChapter, UrlUtil.encodeForHash(ENG_name.toLowerCase())];
+	if (ixHeader) hashParts.push(ixHeader);
+	return hashParts.join(HASH_PART_SEP);
+};
+// region ENG Fake pages (props)
+UrlUtil.URL_TO_ENG_HASH_BUILDER["monster"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BESTIARY];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["spell"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_SPELLS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["background"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["item"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemGroup"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["baseitem"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["magicvariant"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["class"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["condition"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["disease"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["status"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["feat"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_FEATS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["optionalfeature"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["psionic"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_PSIONICS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["race"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RACES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["subrace"] = (it) => UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RACES]({name: `${it.ENG_name} (${it.raceName})`, source: it.source});
+UrlUtil.URL_TO_ENG_HASH_BUILDER["reward"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_REWARDS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["variantrule"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VARIANTRULES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["adventure"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ADVENTURES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["adventureData"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ADVENTURES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["book"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BOOKS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["bookData"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BOOKS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["deity"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_DEITIES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["cult"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CULTS_BOONS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["boon"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CULTS_BOONS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["object"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OBJECTS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["trap"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TRAPS_HAZARDS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["hazard"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TRAPS_HAZARDS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["table"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TABLES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["tableGroup"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TABLES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["vehicle"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VEHICLES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["vehicleUpgrade"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VEHICLES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["action"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ACTIONS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["language"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_LANGUAGES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["charoption"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CHAR_CREATION_OPTIONS];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["recipe"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RECIPES];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["deck"] = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_DECKS];
+
+UrlUtil.URL_TO_ENG_HASH_BUILDER["subclass"] = it => {
+	return Hist.util.getCleanHash(
+		`${UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: it.className, source: it.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: it})}`,
+	);
+};
+UrlUtil.URL_TO_ENG_HASH_BUILDER["classFeature"] = (it) => UrlUtil.encodeArrayForHash(it.ENG_name, it.className, it.classSource, it.level, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["subclassFeature"] = (it) => UrlUtil.encodeArrayForHash(it.ENG_name, it.className, it.classSource, it.subclassShortName, it.subclassSource, it.level, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["card"] = (it) => UrlUtil.encodeArrayForHash(it.ENG_name, it.set, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["legendaryGroup"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemEntry"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemProperty"] = (it) => UrlUtil.encodeArrayForHash(it.abbreviation, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemType"] = (it) => UrlUtil.encodeArrayForHash(it.abbreviation, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemTypeAdditionalEntries"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemMastery"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["skill"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["sense"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["raceFeature"] = (it) => UrlUtil.encodeArrayForHash(it.ENG_name, it.raceName, it.raceSource, it.source);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["citation"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER["languageScript"] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+
+// Add lowercase aliases
+Object.keys(UrlUtil.URL_TO_ENG_HASH_BUILDER)
+	.filter(k => !k.endsWith(".html") && k.toLowerCase() !== k)
+	.forEach(k => UrlUtil.URL_TO_ENG_HASH_BUILDER[k.toLowerCase()] = UrlUtil.URL_TO_ENG_HASH_BUILDER[k]);
+
+// Add raw aliases
+Object.keys(UrlUtil.URL_TO_ENG_HASH_BUILDER)
+	.filter(k => !k.endsWith(".html"))
+	.forEach(k => UrlUtil.URL_TO_ENG_HASH_BUILDER[`raw_${k}`] = UrlUtil.URL_TO_ENG_HASH_BUILDER[k]);
+
+// Add fluff aliases; template aliases
+Object.keys(UrlUtil.URL_TO_ENG_HASH_BUILDER)
+	.filter(k => !k.endsWith(".html"))
+	.forEach(k => {
+		UrlUtil.URL_TO_ENG_HASH_BUILDER[`${k}Fluff`] = UrlUtil.URL_TO_ENG_HASH_BUILDER[k];
+		UrlUtil.URL_TO_ENG_HASH_BUILDER[`${k}Template`] = UrlUtil.URL_TO_ENG_HASH_BUILDER[k];
 	});
 // endregion
 
@@ -4606,7 +4732,7 @@ globalThis.DataUtil = {
 				if (modInfo.names) {
 					this._doEnsureArray({obj: modInfo, prop: "names"});
 					modInfo.names.forEach(nameToRemove => {
-						const ixOld = copyTo[prop].findIndex(it => it.name === nameToRemove);
+						const ixOld = copyTo[prop].findIndex(it => it.name === nameToRemove || it.ENG_name === nameToRemove);
 						if (~ixOld) copyTo[prop].splice(ixOld, 1);
 						else {
 							if (!modInfo.force) throw new Error(`${msgPtFailed} Could not find "${prop}" item with name "${nameToRemove}" to remove`);
@@ -5439,6 +5565,7 @@ globalThis.DataUtil = {
 
 	monster: class extends _DataUtilPropConfigMultiSource {
 		static _MERGE_REQUIRES_PRESERVE = {
+			ENG_name: true,
 			legendaryGroup: true,
 			environment: true,
 			soundClip: true,

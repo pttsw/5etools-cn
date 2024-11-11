@@ -590,7 +590,8 @@ class BlocklistUi {
 			{
 				category: display.displayCategory,
 				source: sourceFull,
-				ENG_name: it.ENG_name
+				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				displayName: displayName,

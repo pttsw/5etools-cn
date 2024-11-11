@@ -127,6 +127,7 @@ class TableListPage extends ListPage {
 				{
 					hash,
 					ENG_name: data.ENG_name,
+					ENG_hash: UrlUtil.autoEncodeEngHash(data),
 				},
 				{
 					...this._getListItemData(ent, i),

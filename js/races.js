@@ -45,6 +45,7 @@ class RacesSublistManager extends SublistManager {
 				hash,
 				ability: race._slAbility,
 				ENG_name: race.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(race),
 			},
 			{
 				entity: race,
@@ -120,6 +121,7 @@ class RacesPage extends ListPage {
 				cleanName: PageFilterRaces.getInvertedName(race.name) || "",
 				alias: PageFilterRaces.getListAliases(race),
 				ENG_name: race.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(race),
 			},
 			{
 				isExcluded,

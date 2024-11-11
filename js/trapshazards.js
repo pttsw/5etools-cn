@@ -36,6 +36,7 @@ class TrapsHazardsSublistManager extends SublistManager {
 				hash,
 				trapType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -88,6 +89,7 @@ class TrapsHazardsPage extends ListPage {
 				source,
 				trapType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

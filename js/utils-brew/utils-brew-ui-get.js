@@ -369,6 +369,7 @@ export class GetBrewUi {
 				// category: brewInfo._brewPropDisplayName, // Unwanted in search
 				internalSources: brewInfo._brewInternalSources, // Used for search
 				ENG_name: brewInfo.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(brewInfo),
 			},
 			{
 				btnAdd,

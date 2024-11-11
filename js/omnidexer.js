@@ -152,11 +152,15 @@ class Omnidexer {
 
 		if (name) name = name.toAscii();
 
-		const toAdd = await this._pAddToIndex_pGetToAdd(state, ent, {n: name}, ix);
+		let obj = {};
+		obj.n = ent.ENG_name ?? name;
+		obj.cn = name;
+
+		const toAdd = await this._pAddToIndex_pGetToAdd(state, ent, obj, ix);
 
 		if ((options.isNoFilter || (!arbiter.include && !(arbiter.filter && arbiter.filter(ent))) || (!arbiter.filter && (!arbiter.include || arbiter.include(ent)))) && !arbiter.isOnlyDeep) index.push(toAdd);
 
-		const primary = {it: ent, ix: ix, parentName: name};
+		const primary = {it: ent, ix: ix, parentName: name, parentName_ENG: ent.ENG_name};
 		const deepItems = await arbiter.pGetDeepIndex(this, primary, ent, {name});
 		for (const item of deepItems) {
 			const toAdd = await this._pAddToIndex_pGetToAdd(state, ent, item);
@@ -375,7 +379,8 @@ class IndexableDirectorySubclass extends IndexableDirectory {
 		return [
 			{
 				b: name,
-				n: `${name} (${sc.className})`,
+				cn: `${sc.name} (${primary.parentName})`,
+				n: `${sc.ENG_name ?? sc.name} (${primary.parentName_ENG ?? primary.parentName})`,
 				s: indexer.getMetaId("s", sc.source),
 				u: `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: sc.className, source: sc.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: sc})}`,
 				p: sc.page,
@@ -404,7 +409,8 @@ class IndexableDirectoryClassFeature extends IndexableDirectory {
 		const classPageHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: it.className, source: it.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({feature: {ixLevel: it.level - 1, ixFeature}})}`;
 		return [
 			{
-				n: `${it.className} ${it.level}; ${it.name}`,
+				cn: `${Parser.ClassToDisplay(it.className)} ${it.level}; ${it.name}`,
+				n: `${it.className} ${it.level}; ${it.ENG_name ?? it.name}}`,
 				s: it.source,
 				u: UrlUtil.URL_TO_HASH_BUILDER["classFeature"](it),
 				uh: classPageHash,
@@ -437,7 +443,8 @@ class IndexableDirectorySubclassFeature extends IndexableDirectory {
 		const classPageHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: it.className, source: it.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart(pageStateOpts)}`;
 		return [
 			{
-				n: `${it.subclassShortName} ${it.className} ${it.level}; ${it.name}`,
+				cn: `${Parser.SubclassToDisplay(it.subclassShortName.toLowerCase() === "shadow" && it.className.toLowerCase() === "monk" ? "shadow_monk" : it.subclassShortName)} ${Parser.ClassToDisplay(it.className)} ${it.level}; ${it.name}`,
+				n: `${it.subclassShortName} ${it.className} ${it.level}; ${it.ENG_name ?? it.name}`,
 				s: it.source,
 				u: UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it),
 				uh: classPageHash,

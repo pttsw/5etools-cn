@@ -402,6 +402,7 @@ class MakeCards extends BaseComponent {
 				count: cardMeta.count,
 				entityType: cardMeta.entityType,
 				ENG_name: cardMeta.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(cardMeta),
 				entity: loaded,
 			},
 			{

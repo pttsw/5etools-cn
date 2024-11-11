@@ -62,6 +62,7 @@ class OptionalFeaturesSublistManager extends SublistManager {
 				prerequisite,
 				level,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -133,6 +134,7 @@ class OptionalFeaturesPage extends ListPage {
 				level,
 				type: it._lFeatureType,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

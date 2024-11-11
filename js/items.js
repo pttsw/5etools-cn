@@ -78,6 +78,7 @@ class ItemsSublistManager extends SublistManager {
 				weight: Parser.weightValueToNumber(item.weight),
 				cost: item.value || 0,
 				ENG_name: item.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
 			{
 				count,
@@ -286,6 +287,7 @@ class ItemsPage extends ListPage {
 					cost: item.value || 0,
 					weight: Parser.weightValueToNumber(item.weight),
 					ENG_name: item.ENG_name,
+					ENG_hash: UrlUtil.autoEncodeEngHash(item),
 				},
 				{
 					isExcluded,
@@ -335,6 +337,7 @@ class ItemsPage extends ListPage {
 					attunement: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT,
 					weight: Parser.weightValueToNumber(item.weight),
 					ENG_name: item.ENG_name,
+					ENG_hash: UrlUtil.autoEncodeEngHash(item),
 				},
 			);
 

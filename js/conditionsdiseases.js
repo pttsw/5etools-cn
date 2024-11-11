@@ -35,6 +35,7 @@ class ConditionsDiseasesSublistManager extends SublistManager {
 				hash,
 				type: it.__prop,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -91,6 +92,7 @@ class ConditionsDiseasesPage extends ListPage {
 				source,
 				type: it.__prop,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

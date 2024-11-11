@@ -1594,7 +1594,7 @@ class SearchUiUtil {
 				|| fromDeepIndex(d)
 				|| ExcludeUtil.isExcluded(d.u, Parser.pageCategoryToProp(d.c), d.s, {isNoCount: true})
 			) return;
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "Creature" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
 			if (isAlternate) d.cf = `alt_${d.cf}`;
 			initIndexForFullCat(d);
 			if (!isAlternate) availContent.ALL.addDoc(d);
@@ -1612,7 +1612,7 @@ class SearchUiUtil {
 			brewIndex.forEach(d => {
 				if (SearchUiUtil._isNoHoverCat(d.c) || fromDeepIndex(d)) return;
 				d.cf = Parser.pageCategoryToFull(d.c);
-				d.cf = d.c === Parser.CAT_ID_CREATURE ? "Creature" : Parser.pageCategoryToFull(d.c);
+				d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
 				initIndexForFullCat(d);
 				availContent.ALL.addDoc(d);
 				availContent[d.cf].addDoc(d);
@@ -1992,7 +1992,7 @@ class SearchWidget {
 
 		const toAdd = Omnidexer.decompressIndex(indexer.getIndex());
 		toAdd.forEach(d => {
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "Creature" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
 			SearchWidget.CONTENT_INDICES.ALL.addDoc(d);
 			SearchWidget.CONTENT_INDICES[d.cf].addDoc(d);
 		});

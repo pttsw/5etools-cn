@@ -49,6 +49,7 @@ class DeitiesSublistManager extends SublistManager {
 				alignment,
 				domains,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -104,6 +105,7 @@ class DeitiesPage extends ListPage {
 				alignment,
 				domains,
 				ENG_name: ent.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(ent),
 			},
 			{
 				isExcluded,

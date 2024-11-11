@@ -41,6 +41,7 @@ class RecipesSublistManager extends SublistManager {
 				hash,
 				type: it.type,
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -97,6 +98,7 @@ class RecipesPage extends ListPage {
 				type: ent.type,
 				alias: PageFilterRecipes.getListAliases(ent),
 				ENG_name: ent.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(ent),
 			},
 			{
 				isExcluded,

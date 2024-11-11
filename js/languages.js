@@ -45,6 +45,7 @@ class LanguagesSublistManager extends SublistManager {
 				type: it.type || "",
 				script: it.script || "",
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				entity: it,
@@ -96,6 +97,7 @@ class LanguagesPage extends ListPage {
 				type: it.type || "",
 				script: it.script || "",
 				ENG_name: it.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				isExcluded,

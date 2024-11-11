@@ -239,6 +239,7 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 				ability: bg._slAbility,
 				skills: bg._skillDisplay,
 				ENG_name: bg.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(bg),
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,

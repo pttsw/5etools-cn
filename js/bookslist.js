@@ -179,7 +179,8 @@ class AdventuresBooksList {
 				{
 					source: Parser.sourceJsonToAbv(it.source),
 					alias: (it.alias || []).map(it => `"${it}"`).join(","),
-					ENG_name: it.ENG_name
+					ENG_name: it.ENG_name,
+					ENG_hash: UrlUtil.autoEncodeEngHash(it),
 				},
 				{
 					$btnToggleExpand,
@@ -199,7 +200,7 @@ class AdventuresBooksList {
 				this._dataIx,
 				eleLiAlt,
 				it.name,
-				{source: it.source, ENG_name: it.ENG_name},
+				{source: it.source, ENG_name: it.ENG_name, ENG_hash: UrlUtil.autoEncodeEngHash(it),},
 			);
 			this._listAlt.addItem(listItemAlt);
 			// endregion
