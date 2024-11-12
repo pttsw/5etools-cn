@@ -98,8 +98,8 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_REFERENCES, "recipes.html", "食谱");
 
 		this._addElement_dropdown(null, NavBar._CAT_UTILITIES);
-		// this._addElement_li(NavBar._CAT_UTILITIES, "search.html", "Search");
-		// this._addElement_divider(NavBar._CAT_UTILITIES);
+		this._addElement_li(NavBar._CAT_UTILITIES, "search.html", "搜索");
+		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "blocklist.html", "内容黑名单");
 		this._addElement_li(NavBar._CAT_UTILITIES, "manageprerelease.html", "Prerelease Content Manager");
 		this._addElement_li(NavBar._CAT_UTILITIES, "managebrew.html", "管理所有自制内容");
