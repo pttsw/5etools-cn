@@ -288,8 +288,8 @@ class LootGenUi extends BaseComponent {
 						const isMundane = Renderer.item.isMundane({rarity});
 
 						const caption = tier === "other"
-							? `其他${rarity}稀有度的${isMundane ? "平凡" : "魔法"}物品`
-							: `${tier.toTitleCase()}层级的${rarity}稀有度的${isMundane ? "平凡" : "魔法"}物品`;
+							? `其他${Parser.RARITIES_TO_CN[rarity] ?? rarity}稀有度的${isMundane ? "平凡" : "魔法"}物品`
+							: `${tier.toTitleCase()}层级的${Parser.RARITIES_TO_CN[rarity] ?? rarity}稀有度的${isMundane ? "平凡" : "魔法"}物品`;
 
 						return {
 							type: "XGE",
@@ -674,7 +674,7 @@ class LootGenUi extends BaseComponent {
 				fnDisplay: ix => this._lt_tableMetas[ix] == null
 					? `\u2014`
 					: this._lt_tableMetas[ix].tier
-						? `层级: ${this._lt_tableMetas[ix].tier}; 稀有度: ${this._lt_tableMetas[ix].rarity}`
+						? `层级: ${this._lt_tableMetas[ix].tier}; 稀有度: ${Parser.RARITIES_TO_CN[this._lt_tableMetas[ix].rarity] ?? this._lt_tableMetas[ix].rarity}`
 						: this._lt_tableMetas[ix].tableEntry.caption,
 			},
 		);
@@ -721,7 +721,7 @@ class LootGenUi extends BaseComponent {
 			if (tableMeta == null) return;
 
 			$dispHelp
-				.html(tableMeta.type === "DMG" ? this.constructor._er(`基于{@book 地下城主指南(2014)|DMG|7|Treasure Tables}（133-149页）中的表格和规则。`) : this.constructor._er(`基于{@book 珊娜萨的万事指南(Choosing Items Piecemeal)|XGE|2|奖励魔法物品}（135-136页）中的规则自动生成的表格。`));
+				.html(tableMeta.type === "DMG" ? this.constructor._er(`基于{@book 地下城主指南(2014)|DMG|7|Treasure Tables}（133-149页）中的表格和规则。`) : this.constructor._er(`基于{@book 珊娜萨的万事指南(奖励魔法物品)|XGE|2|奖励魔法物品}（135-136页）中的规则自动生成的表格。`));
 
 			$dispTable.html(this.constructor._er(tableMeta.tableEntry));
 		};
