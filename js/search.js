@@ -55,7 +55,7 @@ class SearchPage {
 	static _render () {
 		Omnisearch.initState();
 
-		const $iptSearch = $(`<input class="form-control pg-search__ipt" placeholder="Search everywhere..." title="Disclaimer: unlikely to search everywhere. Use with caution.">`)
+		const $iptSearch = $(`<input class="form-control pg-search__ipt" placeholder="全局搜索.." title="免责声明：不一定真的达到全域搜索，请谨慎使用。">`)
 			.keydown(evt => {
 				if (evt.key !== "Enter") return;
 				$btnSearch.click();
@@ -69,54 +69,54 @@ class SearchPage {
 				});
 			});
 
-		const $btnHelp = $(`<button class="ve-btn ve-btn-default mr-2 mobile__hidden" title="Help"><span class="glyphicon glyphicon-info-sign"></span></button>`)
+		const $btnHelp = $(`<button class="ve-btn ve-btn-default mr-2 mobile__hidden" title="帮助"><span class="glyphicon glyphicon-info-sign"></span></button>`)
 			.click(() => Omnisearch.doShowHelp());
 
 		const $btnTogglePartnered = this._render_$getBtnToggleFilter({
 			propOmnisearch: "isShowPartnered",
 			fnAddHookOmnisearch: "addHookPartnered",
 			fnDoToggleOmnisearch: "doTogglePartnered",
-			title: "Include Partnered",
-			text: "Partnered",
+			title: "包括合作资源",
+			text: "合作",
 		});
 
 		const $btnToggleBrew = this._render_$getBtnToggleFilter({
 			propOmnisearch: "isShowBrew",
 			fnAddHookOmnisearch: "addHookBrew",
 			fnDoToggleOmnisearch: "doToggleBrew",
-			title: "Include Homebrew",
-			text: "Homebrew",
+			title: "包括自制资源",
+			text: "自制",
 		});
 
 		const $btnToggleUa = this._render_$getBtnToggleFilter({
 			propOmnisearch: "isShowUa",
 			fnAddHookOmnisearch: "addHookUa",
 			fnDoToggleOmnisearch: "doToggleUa",
-			title: "Include Unearthed Arcana and other unofficial source results",
-			text: "UA/Etc.",
+			title: "包括UA和其他第三方资源",
+			text: "UA/等",
 		});
 
 		const $btnToggleBlocklisted = this._render_$getBtnToggleFilter({
 			propOmnisearch: "isShowBlocklisted",
 			fnAddHookOmnisearch: "addHookBlocklisted",
 			fnDoToggleOmnisearch: "doToggleBlocklisted",
-			title: "Include blocklisted content results",
-			text: "Blocklisted",
+			title: "包括黑名单资源",
+			text: "黑名单",
 		});
 
 		const $btnToggleLegacy = this._render_$getBtnToggleFilter({
 			propOmnisearch: "isShowLegacy",
 			fnAddHookOmnisearch: "addHookLegacy",
 			fnDoToggleOmnisearch: "doToggleLegacy",
-			title: "Include legacy content results",
-			text: "Legacy",
+			title: "包括传奇资源",
+			text: "传奇",
 		});
 
 		const $btnToggleSrd = this._render_$getBtnToggleFilter({
 			propOmnisearch: "isSrdOnly",
 			fnAddHookOmnisearch: "addHookSrdOnly",
 			fnDoToggleOmnisearch: "doToggleSrdOnly",
-			title: "Exclude non- Systems Reference Document results",
+			title: "仅显示系统参考文档内容",
 			text: "SRD",
 		});
 
@@ -130,13 +130,13 @@ class SearchPage {
 				.forEach(meta => meta.setIsExpanded(mode));
 		};
 
-		const $btnCollapseAll = $(`<button class="ve-btn ve-btn-default" title="Collapse All Results"><span class="glyphicon glyphicon-minus"></span></button>`)
+		const $btnCollapseAll = $(`<button class="ve-btn ve-btn-default" title="折叠所有结果"><span class="glyphicon glyphicon-minus"></span></button>`)
 			.click(() => handleMassExpandCollapse(false));
 
-		const $btnExpandAll = $(`<button class="ve-btn ve-btn-default" title="Expand All Results"><span class="glyphicon glyphicon-plus"></span></button>`)
+		const $btnExpandAll = $(`<button class="ve-btn ve-btn-default" title="展开所有结果"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.click(() => handleMassExpandCollapse(true));
 
-		SearchPage._$wrpResults = $(`<div class="ve-flex-col w-100">${this._getWrpResult_message("Loading...")}</div>`);
+		SearchPage._$wrpResults = $(`<div class="ve-flex-col w-100">${this._getWrpResult_message("加载中...")}</div>`);
 
 		$$(SearchPage._$wrp)`<div class="ve-flex-col w-100 pg-search__wrp">
 			<div class="ve-flex-v-center mb-2 mobile-lg__ve-flex-col">
@@ -144,7 +144,7 @@ class SearchPage {
 
 				<div class="ve-flex-v-center mobile__ve-flex-col mobile-lg__ve-flex-ai-start mobile-lg__w-100">
 					${$btnHelp}
-					<div class="mr-2 ml-1 mobile__ml-0 mobile__mb-2 italic">Include</div>
+					<div class="mr-2 ml-1 mobile__ml-0 mobile__mb-2 italic">包括</div>
 					<div class="ve-flex-v-center ve-btn-group mr-2 mobile__mb-2 mobile__mr-0">
 						${$btnTogglePartnered}
 						${$btnToggleBrew}
@@ -191,7 +191,7 @@ class SearchPage {
 		const params = this._getSearchParams();
 
 		if (!params[this._PARAM_QUERY]) {
-			SearchPage._$wrpResults.empty().append(this._getWrpResult_message("Enter a search to view results"));
+			SearchPage._$wrpResults.empty().append(this._getWrpResult_message("输入搜索内容以查看结果"));
 			return;
 		}
 
@@ -200,7 +200,7 @@ class SearchPage {
 				SearchPage._$wrpResults.empty();
 
 				if (!results.length) {
-					SearchPage._$wrpResults.append(this._getWrpResult_message("No results found."));
+					SearchPage._$wrpResults.append(this._getWrpResult_message("未搜索到结果。"));
 					return;
 				}
 
@@ -234,14 +234,14 @@ class SearchPage {
 						sourceFull,
 					} = UtilsOmnisearch.getUnpackedSearchResult(r);
 
-					const ptPageInner = page ? `page ${page}` : "";
+					const ptPageInner = page ? `${page}页` : "";
 					const adventureBookSourceHref = SourceUtil.getAdventureBookSourceHref(source, page);
 					const ptPage = ptPageInner && adventureBookSourceHref
 						? `<a href="${adventureBookSourceHref}">${ptPageInner}</a>`
 						: ptPageInner;
 
-					const ptSrd = isSrd ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="Available in the Systems Reference Document (5.1)">[SRD]</span>` : "";
-					const ptSrd52 = isSrd52 ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="Available in the Systems Reference Document (5.2)">[SRD]</span>` : "";
+					const ptSrd = isSrd ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="可用于系统参考文档(5.1)">[SRD]</span>` : "";
+					const ptSrd52 = isSrd52 ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="可用于系统参考文档(5.2)">[SRD]</span>` : "";
 
 					const ptSourceInner = source
 						? `<i>${sourceFull}</i> (<span class="${Parser.sourceJsonToSourceClassname(source)}" ${ptStyle}>${sourceAbv}</span>)${ptSrd}${ptSrd52}${Parser.sourceJsonToMarkerHtml(source, {isList: false, additionalStyles: "pg-search__disp-source-marker"})}`
@@ -285,7 +285,7 @@ class SearchPage {
 							handleIsExpanded();
 						};
 
-						const $btnTogglePreview = $(`<button class="ve-btn ve-btn-default ve-btn-xs h-100" title="Toggle Preview"></button>`)
+						const $btnTogglePreview = $(`<button class="ve-btn ve-btn-default ve-btn-xs h-100" title="切换预览"></button>`)
 							.click(() => {
 								out.isExpanded = !out.isExpanded;
 								handleIsExpanded();
@@ -325,7 +325,7 @@ class SearchPage {
 
 										isImagePopulated = true;
 										const tokenUrl = fnGetTokenUrl(ent);
-										$dispImage.html(`<img src="${tokenUrl}" class="w-100 h-100" alt="Token Image: ${(ent.name || "").qq()}" ${ent.tokenCredit ? `title="Credit: ${ent.tokenCredit.qq()}"` : ""} loading="lazy">`);
+										$dispImage.html(`<img src="${tokenUrl}" class="w-100 h-100" alt="Token Image: ${(ent.name || "").qq()}" ${ent.tokenCredit ? `title="作者: ${ent.tokenCredit.qq()}"` : ""} loading="lazy">`);
 									};
 
 									switch (category) {
@@ -364,7 +364,7 @@ class SearchPage {
 										case Parser.CAT_ID_ADVENTURE: {
 											const prop = category === Parser.CAT_ID_BOOK ? "book" : "adventure";
 											isImagePopulated = true;
-											$dispImage.html(`<img src="${Renderer.adventureBook.getCoverUrl(ent[prop])}" class="w-100 h-100" alt="Cover Image: ${(ent[prop].name || "").qq()}" loading="lazy">`);
+											$dispImage.html(`<img src="${Renderer.adventureBook.getCoverUrl(ent[prop])}" class="w-100 h-100" alt="封面图: ${(ent[prop].name || "").qq()}" loading="lazy">`);
 										}
 									}
 

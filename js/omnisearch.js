@@ -414,42 +414,42 @@ class Omnisearch {
 		this._doInitBtnToggleFilter({
 			propState: "isShowPartnered",
 			propBtn: "_btnTogglePartnered",
-			title: "Include partnered content results",
-			text: "Partnered",
+			title: "包括合作资源",
+			text: "合作",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isShowBrew",
 			propBtn: "_btnToggleBrew",
-			title: "Include homebrew content results",
-			text: "Homebrew",
+			title: "包括自制资源",
+			text: "自制",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isShowUa",
 			propBtn: "_btnToggleUa",
-			title: "Include Unearthed Arcana and other unofficial source results",
-			text: "UA/etc.",
+			title: "包括UA和其他第三方资源",
+			text: "UA/等",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isShowBlocklisted",
 			propBtn: "_btnToggleBlocklisted",
-			title: "Include blocklisted content results",
-			text: "Blocklisted",
+			title: "包括黑名单资源",
+			text: "黑名单",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isShowLegacy",
 			propBtn: "_btnToggleLegacy",
-			title: "Include legacy content results",
-			text: "Legacy",
+			title: "包括传奇资源",
+			text: "传奇",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isSrdOnly",
 			propBtn: "_btnToggleSrd",
-			title: "Only show Systems Reference Document content results",
+			title: "仅显示系统参考文档内容",
 			text: "SRD",
 		});
 
@@ -458,13 +458,13 @@ class Omnisearch {
 		const btnHelp = e_({
 			tag: "button",
 			clazz: "ve-btn ve-btn-default ve-btn-xs ml-2",
-			title: "Help",
+			title: "帮助",
 			html: `<span class="glyphicon glyphicon-info-sign"></span>`,
 			click: () => this.doShowHelp(),
 		});
 
 		ee(this._dispSearchOutput)`<div class="ve-flex-h-right ve-flex-v-center mb-2">
-			<span class="mr-2 italic relative top-1p">Include</span>
+			<span class="mr-2 italic relative top-1p">包括</span>
 			<div class="ve-btn-group ve-flex-v-center mr-2">
 				${this._btnTogglePartnered}
 				${this._btnToggleBrew}
@@ -513,8 +513,8 @@ class Omnisearch {
 				${$link}
 				<div class="ve-flex-v-center">
 					${ptSource}
-					${isSrd ? `<span class="ve-muted omni__disp-srd help-subtle relative" title="Available in the Systems Reference Document (5.1)">[SRD]</span>` : ""}
-					${isSrd52 ? `<span class="ve-muted omni__disp-srd help-subtle relative" title="Available in the Systems Reference Document (5.2)">[SRD]</span>` : ""}
+					${isSrd ? `<span class="ve-muted omni__disp-srd help-subtle relative" title="可用于系统参考文档(5.1)">[SRD]</span>` : ""}
+					${isSrd52 ? `<span class="ve-muted omni__disp-srd help-subtle relative" title="可用于系统参考文档(5.2)">[SRD]</span>` : ""}
 					${Parser.sourceJsonToMarkerHtml(source, {isList: false, additionalStyles: "omni__disp-source-marker"})}
 					${ptPage ? `<span class="omni__wrp-page small-caps">${ptPage}</span>` : ""}
 				</div>
@@ -532,7 +532,7 @@ class Omnisearch {
 				});
 				$pgControls.append($prv);
 			} else ($pgControls.append(`<span class="omni__paginate-left">`));
-			$pgControls.append(`<span class="paginate-count">Page ${page + 1}/${Math.ceil(results.length / this._MAX_RESULTS)} (${results.length} results)</span>`);
+			$pgControls.append(`<span class="paginate-count">${page + 1}/${Math.ceil(results.length / this._MAX_RESULTS)}页 (${results.length} 条结果)</span>`);
 			if (results.length - (page * this._MAX_RESULTS) > this._MAX_RESULTS) {
 				const $nxt = $(`<span class="omni__paginate-right has-results-right omni__paginate-ctrl"><span class="glyphicon glyphicon-chevron-right"></span></span>`).on("click", () => {
 					page++;
@@ -548,7 +548,7 @@ class Omnisearch {
 		}
 
 		if (!results.length) {
-			$(this._dispSearchOutput).append(`<div class="ve-muted"><i>No results found.</i></div>`);
+			$(this._dispSearchOutput).append(`<div class="ve-muted"><i>未搜索到结果。</i></div>`);
 		}
 	}
 	// endregion
@@ -728,7 +728,7 @@ class Omnisearch {
 
 	static addScrollTopFloat () {
 		// "To top" button
-		const $btnToTop = $(`<button class="ve-btn ve-btn-sm ve-btn-default" title="To Top"><span class="glyphicon glyphicon-arrow-up"></span></button>`)
+		const $btnToTop = $(`<button class="ve-btn ve-btn-sm ve-btn-default" title="回到顶部"><span class="glyphicon glyphicon-arrow-up"></span></button>`)
 			.click(() => MiscUtil.scrollPageTop());
 
 		const $wrpTop = $$`<div class="bk__to-top no-print">
@@ -752,9 +752,9 @@ class Omnisearch {
 		$modalInner.append(`
 			<p>支持以下搜索语法：</p>
 			<ul>
-				<li><code>in:&lt;category&gt;</code> where <code>&lt;category&gt;</code> can be &quot;spell&quot;, &quot;item&quot;, &quot;bestiary&quot;, etc.</li>
-				<li><code>source:&lt;abbreviation&gt;</code> where <code>&lt;abbreviation&gt;</code> is an abbreviated source/book name (&quot;PHB&quot;, &quot;MM&quot;, etc.)</li>
-				<li><code>page:&lt;number&gt;</code> or <code>page:&lt;rangeStart&gt;-&lt;rangeEnd&gt;</code></li>
+				<li><code>in:&lt;category&gt;</code> 关键字 <code>&lt;category&gt;</code> 可以为 &quot;spell&quot;, &quot;item&quot;, &quot;bestiary&quot;等。</li>
+				<li><code>source:&lt;abbreviation&gt;</code> 关键字 <code>&lt;abbreviation&gt;</code> 是书籍/资源的缩略名(&quot;PHB&quot;, &quot;MM&quot;等。)</li>
+				<li><code>page:&lt;number&gt;</code> 或 <code>page:&lt;rangeStart&gt;-&lt;rangeEnd&gt;</code></li>
 			</ul>
 		`);
 	}
