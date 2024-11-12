@@ -869,11 +869,11 @@ Parser.getCurrencyAndMultiplier = function (value, currencyConversionId) {
 
 Parser.COIN_ABVS = ["cp", "sp", "ep", "gp", "pp"];
 Parser.COIN_ABV_TO_FULL = {
-	"cp": "copper pieces",
-	"sp": "silver pieces",
-	"ep": "electrum pieces",
-	"gp": "gold pieces",
-	"pp": "platinum pieces",
+	"cp": "铜币",
+	"sp": "银币",
+	"ep": "银金币",
+	"gp": "金币",
+	"pp": "铂金币",
 };
 Parser.COIN_CONVERSIONS = [1, 10, 50, 100, 1000];
 

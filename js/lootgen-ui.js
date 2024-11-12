@@ -156,10 +156,10 @@ class LootGenUi extends BaseComponent {
 		},
 	};
 	static _DRAGON_AGES = [
-		"Wyrmling",
-		"Young",
-		"Adult",
-		"Ancient",
+		"雏龙",
+		"青年",
+		"成年",
+		"远古",
 	];
 
 	constructor ({spells, items, ClsLootGenOutput}) {
@@ -220,7 +220,7 @@ class LootGenUi extends BaseComponent {
 			.pMap(async letter => {
 				return {
 					letter,
-					tableEntry: await DataLoader.pCacheAndGet(UrlUtil.PG_TABLES, Parser.SRC_DMG, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES]({name: `Magic Item Table ${letter}`, source: Parser.SRC_DMG})),
+					tableEntry: await DataLoader.pCacheAndGet(UrlUtil.PG_TABLES, Parser.SRC_DMG, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES]({name: `魔法物品表${letter}`, source: Parser.SRC_DMG})),
 				};
 			});
 
@@ -288,8 +288,8 @@ class LootGenUi extends BaseComponent {
 						const isMundane = Renderer.item.isMundane({rarity});
 
 						const caption = tier === "other"
-							? `Other ${isMundane ? "mundane" : "magic"} items of ${rarity} rarity`
-							: `${tier.toTitleCase()}-tier ${isMundane ? "mundane" : "magic"} items of ${rarity} rarity`;
+							? `其他${rarity}稀有度的${isMundane ? "平凡" : "魔法"}物品`
+							: `${tier.toTitleCase()}层级的${rarity}稀有度的${isMundane ? "平凡" : "魔法"}物品`;
 
 						return {
 							type: "XGE",
@@ -301,7 +301,7 @@ class LootGenUi extends BaseComponent {
 								caption,
 								colLabels: [
 									`d${items.length}`,
-									"Item",
+									"物品",
 								],
 								colStyles: [
 									"col-2 text-center",
@@ -329,18 +329,18 @@ class LootGenUi extends BaseComponent {
 		const {$stgLhs: $stgLhs_, $stgRhs: $stgRhs_} = this._render_$getStages({$stg, $stgLhs, $stgRhs});
 
 		const iptTabMetas = [
-			new TabUiUtil.TabMeta({name: "Random Treasure by CR", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Loot Tables", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Party Loot", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Dragon Hoard", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Gems/Art Objects Generator", isHeadHidden: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "依据CR随机生成宝物", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "战利品表", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "团队战利品", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "龙之宝藏", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "宝石/艺术品生成器", isHeadHidden: true, hasBackground: true}),
 			new TabUiUtil.TabMeta({
 				type: "buttons",
 				isSplitStart: true,
 				buttons: [
 					{
 						html: `<span class="glyphicon glyphicon-option-vertical"></span>`,
-						title: "Other Generators",
+						title: "其他生成器",
 						type: "default",
 						pFnClick: null, // This is assigned later
 					},
@@ -394,20 +394,20 @@ class LootGenUi extends BaseComponent {
 
 		const $cbIsHoard = ComponentUiUtil.$getCbBool(this, "ft_isHoard");
 
-		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`)
+		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">随机生成战利品</button>`)
 			.click(() => this._ft_pDoHandleClickRollLoot());
 
-		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`)
+		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">清除输出</button>`)
 			.click(() => this._doClearOutput());
 
 		$$`<div class="ve-flex-col py-2 px-3">
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">Challenge Rating</div>
+				<div class="mr-2 w-66 no-shrink">挑战等级</div>
 				${$selChallenge}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Is Treasure Hoard?</div>
+				<div class="mr-2 w-66 no-shrink">积藏宝藏？</div>
 				${$cbIsHoard}
 			</label>
 
@@ -418,7 +418,7 @@ class LootGenUi extends BaseComponent {
 
 			<hr class="hr-3">
 
-			<div class="ve-small italic">${this.constructor._er(`Based on the tables and rules in the {@book Dungeon Master's Guide|DMG|7|Treasure Tables}`)}, pages 133-149.</div>
+			<div class="ve-small italic">${this.constructor._er(`基于{@book 地下城主指南(2014)|DMG|7|Treasure Tables}（133-149页）中的表格和规则`)}。</div>
 		</div>`.appendTo(tabMeta.$wrpTab);
 	}
 
@@ -439,8 +439,8 @@ class LootGenUi extends BaseComponent {
 		);
 
 		const lootOutput = new this._ClsLootGenOutput({
-			type: `Individual Treasure: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
-			name: `{@b Individual Treasure} for challenge rating {@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
+			type: `个体宝藏： ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
+			name: `{@b 个体宝藏} 挑战等级{@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
 		});
 		this._doAddOutput({lootOutput});
@@ -462,8 +462,8 @@ class LootGenUi extends BaseComponent {
 		const magicItemsByTable = await this._doHandleClickRollLoot_hoard_pMagicItems({row});
 
 		const lootOutput = new this._ClsLootGenOutput({
-			type: `Treasure Hoard: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
-			name: `{@b Hoard} for challenge rating {@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
+			type: `积藏宝藏： ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
+			name: `{@b 积藏宝藏} 挑战等级{@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
 			gems,
 			artObjects,
@@ -655,7 +655,7 @@ class LootGenUi extends BaseComponent {
 	_doHandleClickRollLoot_hoard_getAltChooseDisplayText ({typeAltChoose}) {
 		if (!typeAltChoose) return null;
 		return [
-			typeAltChoose.rarity,
+			Parser.RARITIES_TO_CN[typeAltChoose.rarity] ?? typeAltChoose.rarity,
 			typeAltChoose.tier,
 		].filter(Boolean).join(" ");
 	}
@@ -674,7 +674,7 @@ class LootGenUi extends BaseComponent {
 				fnDisplay: ix => this._lt_tableMetas[ix] == null
 					? `\u2014`
 					: this._lt_tableMetas[ix].tier
-						? `Tier: ${this._lt_tableMetas[ix].tier}; Rarity: ${this._lt_tableMetas[ix].rarity}`
+						? `层级: ${this._lt_tableMetas[ix].tier}; 稀有度: ${this._lt_tableMetas[ix].rarity}`
 						: this._lt_tableMetas[ix].tableEntry.caption,
 			},
 		);
@@ -699,10 +699,10 @@ class LootGenUi extends BaseComponent {
 		};
 		this._addHookBase("pulseItemsFiltered", hkPulseItem);
 
-		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`)
+		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">随机生成战利品</button>`)
 			.click(() => this._lt_pDoHandleClickRollLoot());
 
-		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`)
+		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">清除输出</button>`)
 			.click(() => this._doClearOutput());
 
 		const $hrHelp = $(`<hr class="hr-3">`);
@@ -721,7 +721,7 @@ class LootGenUi extends BaseComponent {
 			if (tableMeta == null) return;
 
 			$dispHelp
-				.html(tableMeta.type === "DMG" ? this.constructor._er(`Based on the tables and rules in the {@book Dungeon Master's Guide|DMG|7|Treasure Tables}, pages 133-149.`) : this.constructor._er(`Tables auto-generated based on the rules in {@book Xanathar's Guide to Everything (Choosing Items Piecemeal)|XGE|2|choosing items piecemeal}, pages 135-136.`));
+				.html(tableMeta.type === "DMG" ? this.constructor._er(`基于{@book 地下城主指南(2014)|DMG|7|Treasure Tables}（133-149页）中的表格和规则。`) : this.constructor._er(`基于{@book 珊娜萨的万事指南(Choosing Items Piecemeal)|XGE|2|奖励魔法物品}（135-136页）中的规则自动生成的表格。`));
 
 			$dispTable.html(this.constructor._er(tableMeta.tableEntry));
 		};
@@ -730,7 +730,7 @@ class LootGenUi extends BaseComponent {
 
 		$$`<div class="ve-flex-col py-2 px-3">
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Table</div>
+				<div class="mr-2 w-66 no-shrink">表格</div>
 				${$selTable}
 			</label>
 
@@ -795,7 +795,7 @@ class LootGenUi extends BaseComponent {
 
 		const $stgDefault = $$`<div class="ve-flex-col w-100">
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">Character Level</div>
+				<div class="mr-2 w-66 no-shrink">角色等级</div>
 				${$selCharLevel}
 			</label>
 		</div>`;
@@ -813,17 +813,17 @@ class LootGenUi extends BaseComponent {
 
 		const $stgExactLevel = $$`<div class="ve-flex-col w-100">
 			<div class="ve-flex-col mb-2">
-				<div class="mb-2">Character Level</div>
+				<div class="mb-2">角色等级</div>
 				${$sliderLevel}
 			</div>
 		</div>`;
 		// endregion
 
 		// region Buttons
-		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`)
+		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">随机生成战利品</button>`)
 			.click(() => this._pl_pDoHandleClickRollLoot());
 
-		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`)
+		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">清除输出</button>`)
 			.click(() => this._doClearOutput());
 		// endregion
 
@@ -836,9 +836,9 @@ class LootGenUi extends BaseComponent {
 
 		$$`<div class="ve-flex-col py-2 px-3">
 			<p>
-				Generates a set of magical items for a party, based on the tables and rules in ${this.constructor._er(`{@book Xanathar's Guide to Everything|XGE|2|awarding magic items}`)}, pages 135-136.
+				为队伍生成一组魔法物品，基于${this.constructor._er(`{@book 珊娜萨的万事指南|XGE|2|awarding magic items}`)}（135-136页）中记载的表格与规则。
 			</p>
-			<p><i>If &quot;Exact Level&quot; is selected, the output will include a proportional number of items for any partially-completed tier.</i></p>
+			<p><i>若&quot;确切等级&quot;选项被勾起，则生成器将为每层阶的等级产生一组合适比例数量的物品。</i></p>
 
 			<hr class="hr-3">
 
@@ -846,12 +846,12 @@ class LootGenUi extends BaseComponent {
 			${$stgExactLevel}
 
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">Cumulative with Previous Tiers</div>
+				<div class="mr-2 w-66 no-shrink">在前一层级上累积</div>
 				${$cbIsCumulative}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Is Exact Level</div>
+				<div class="mr-2 w-66 no-shrink">确切等级</div>
 				${$cbIsExactLevel}
 			</label>
 
@@ -894,8 +894,8 @@ class LootGenUi extends BaseComponent {
 			? this._state.pl_exactLevel
 			: LootGenUi._PARTY_LOOT_LEVEL_RANGES[this._state.pl_charLevel];
 		const lootOutput = new this._ClsLootGenOutput({
-			type: `Party Loot: Level ${ptLevel}`,
-			name: `Magic items for a {@b Level ${ptLevel}} Party`,
+			type: `团队战利品：${ptLevel}级`,
+			name: `{@b ${ptLevel}级}团队的魔法战利品`,
 			magicItemsByTable,
 		});
 		this._doAddOutput({lootOutput});
@@ -982,20 +982,20 @@ class LootGenUi extends BaseComponent {
 
 		const $cbIsPreferRandomMagicItems = ComponentUiUtil.$getCbBool(this, "dh_isPreferRandomMagicItems");
 
-		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`)
+		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">随机生成战利品</button>`)
 			.click(() => this._dh_pDoHandleClickRollLoot());
 
-		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`)
+		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">清除输出</button>`)
 			.click(() => this._doClearOutput());
 
 		$$`<div class="ve-flex-col py-2 px-3">
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">Dragon Age</div>
+				<div class="mr-2 w-66 no-shrink">龙的年龄</div>
 				${$selDragonAge}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink" title="If selected, random magic items will be preferred over rolling on the standard DMG &quot;Magic Items Table [A-I]&quot; when generating magic items.">Prefer Random Magic Items</div>
+				<div class="mr-2 w-66 no-shrink" title="若选择此项,将从标准城主指南（DMG）的&quot;魔法物品表[A-I]&quot;中优先选择魔法物品。">倾向于随机魔法物品？</div>
 				${$cbIsPreferRandomMagicItems}
 			</label>
 
@@ -1006,7 +1006,7 @@ class LootGenUi extends BaseComponent {
 
 			<hr class="hr-3">
 
-			<div class="ve-small italic">${this.constructor._er(`Based on the tables and rules in {@book Fizban's Treasury of Dragons|FTD|4|Creating a Hoard}`)}, pages 72.</div>
+			<div class="ve-small italic">${this.constructor._er(`基于{@book 费资本的巨龙宝库|FTD|4|Creating a Hoard}`)}（72页）的表格和规则生成.</div>
 		</div>`.appendTo(tabMeta.$wrpTab);
 	}
 
@@ -1029,8 +1029,8 @@ class LootGenUi extends BaseComponent {
 		});
 
 		const lootOutput = new this._ClsLootGenOutput({
-			type: `Dragon Hoard: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
-			name: `${this._state.dh_dragonAge} Dragon's Hoard`,
+			type: `龙之宝藏： ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
+			name: `${this._state.dh_dragonAge}龙之宝藏`,
 			coins,
 			gems,
 			artObjects,
@@ -1070,27 +1070,27 @@ class LootGenUi extends BaseComponent {
 				$btnRoll.click();
 			});
 
-		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`)
+		const $btnRoll = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">随机生成战利品</button>`)
 			.click(() => this._goa_pDoHandleClickRollLoot());
 
-		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`)
+		const $btnClear = $(`<button class="ve-btn ve-btn-danger ve-btn-xs">清除输出</button>`)
 			.click(() => this._doClearOutput());
 
 		$$`<div class="ve-flex-col py-2 px-3">
-			<h4 class="mt-1 mb-3">Gem/Art Object Generator</h4>
+			<h4 class="mt-1 mb-3">宝石/艺术品 生成器</h4>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Include Gems</div>
+				<div class="mr-2 w-66 no-shrink">包括宝石</div>
 				${$cbIsUseGems}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Include Art Objects</div>
+				<div class="mr-2 w-66 no-shrink">包括艺术品</div>
 				${$cbIsUseArtObjects}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Target Gold Amount</div>
+				<div class="mr-2 w-66 no-shrink">总计金币数量</div>
 				${$iptTargetGoldAmount}
 			</label>
 
@@ -1101,7 +1101,7 @@ class LootGenUi extends BaseComponent {
 
 			<hr class="hr-3">
 
-			<div class="ve-small italic">${this.constructor._er(`This custom generator randomly selects gems/art objects up to the target gold amount.`)}</div>
+			<div class="ve-small italic">${this.constructor._er(`这个随机生成器生成指定总价值的宝石或艺术品。`)}</div>
 		</div>`.appendTo(tabMeta.$wrpTab);
 	}
 
@@ -1178,7 +1178,7 @@ class LootGenUi extends BaseComponent {
 			),
 			null,
 			new ContextUtil.Action(
-				"Set Random Item Filters",
+				"设置随机物品筛选器",
 				() => {
 					this._modalFilterItems.handleHiddenOpenButtonClick();
 				},
@@ -1193,7 +1193,7 @@ class LootGenUi extends BaseComponent {
 				},
 			),
 			new ContextUtil.Action(
-				"Set Random Spell Filters",
+				"设置随机法术筛选器",
 				() => {
 					this._modalFilterSpells.handleHiddenOpenButtonClick();
 				},
@@ -1209,7 +1209,7 @@ class LootGenUi extends BaseComponent {
 			),
 			null,
 			new ContextUtil.Action(
-				"Settings",
+				"设置",
 				() => {
 					this._opts_pDoOpenSettings();
 				},
@@ -1228,7 +1228,7 @@ class LootGenUi extends BaseComponent {
 	}
 
 	async _opts_pDoOpenSettings () {
-		const {$modalInner} = await UiUtil.pGetShowModal({title: "Settings"});
+		const {$modalInner} = await UiUtil.pGetShowModal({title: "设置"});
 
 		const $rowsCurrency = Parser.COIN_ABVS
 			.map(it => {
@@ -1243,7 +1243,7 @@ class LootGenUi extends BaseComponent {
 			});
 
 		$$($modalInner)`
-			<div class="mb-1" title="Disabled currencies will be converted to equivalent amounts of another currency.">Allowed Currencies:</div>
+			<div class="mb-1" title="Disabled currencies will be converted to equivalent amounts of another currency.">允许的货币类型：</div>
 			<div class="pl-4 ve-flex-col">
 				${$rowsCurrency}
 			</div>
@@ -1254,7 +1254,7 @@ class LootGenUi extends BaseComponent {
 		this._$wrpOutputRows = $(`<div class="w-100 h-100 ve-flex-col ve-overflow-y-auto smooth-scroll"></div>`);
 
 		$$`<div class="ve-flex-col w-100 h-100">
-			<h4 class="my-0"><i>Output</i></h4>
+			<h4 class="my-0"><i>输出</i></h4>
 			${this._$wrpOutputRows}
 		</div>`
 			.appendTo($wrp);
@@ -1405,7 +1405,7 @@ class LootGenOutput {
 				.click(evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
 			: null;
 
-		const $btnDownload = $(`<button title="Download JSON" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-download glyphicon--top-2p"></span></button>`)
+		const $btnDownload = $(`<button title="下载 JSON" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-download glyphicon--top-2p"></span></button>`)
 			.click(() => this._pDoSaveAsJson());
 
 		return $$`<div class="ve-btn-group">
@@ -1425,8 +1425,8 @@ class LootGenOutput {
 		const $parts = [
 			this._render_$getPtValueSummary(),
 			this._render_$getPtCoins(),
-			...this._render_$getPtGemsArtObjects({loot: this._gems, name: "gemstones"}),
-			...this._render_$getPtGemsArtObjects({loot: this._artObjects, name: "art objects"}),
+			...this._render_$getPtGemsArtObjects({loot: this._gems, name: "宝石"}),
+			...this._render_$getPtGemsArtObjects({loot: this._artObjects, name: "艺术品"}),
 			this._render_$getPtDragonMundaneItems(),
 			...this._render_$getPtMagicItems(),
 		].filter(Boolean);
@@ -1434,7 +1434,7 @@ class LootGenOutput {
 		this._$wrp = $$`<div class="ve-flex-col lootg__wrp-output py-3 px-2 my-2 mr-1">
 			${$dispTitle}
 			${$parts.length ? $$`<ul>${$parts}</ul>` : null}
-			${!$parts.length ? `<div class="ve-muted help-subtle italic" title="${LootGenMagicItemNull.TOOLTIP_NOTHING.qq()}">(No loot!)</div>` : null}
+			${!$parts.length ? `<div class="ve-muted help-subtle italic" title="${LootGenMagicItemNull.TOOLTIP_NOTHING.qq()}">(没有战利品！)</div>` : null}
 		</div>`
 			.prependTo($parent);
 
@@ -1579,7 +1579,7 @@ class LootGenOutput {
 			this._artObjects?.length ? this._artObjects.map(it => it.type * it.count * 100).sum() : 0,
 		].sum();
 
-		return $(`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} gp worth of coins, art objects, and/or gems, as follows:</li>`);
+		return $(`<li class="italic ve-muted">总价值${(totalValue / 100).toLocaleString()} gp的硬币、艺术品和/或宝石，如下所示：</li>`);
 	}
 
 	_render_$getPtCoins () {
@@ -1592,7 +1592,7 @@ class LootGenOutput {
 			.map(it => `${this._coins[it].toLocaleString()} ${it}`);
 
 		return $$`
-			<li>${(total / 100).toLocaleString()} gp in coinage:</li>
+			<li>总计${(total / 100).toLocaleString()} gp：</li>
 			<ul>
 				${breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>
@@ -1603,7 +1603,7 @@ class LootGenOutput {
 		if (!this._dragonMundaneItems) return null;
 
 		return $$`
-			<li>${this._dragonMundaneItems.count} mundane item${this._dragonMundaneItems.count !== 1 ? "s" : ""}:</li>
+			<li>${this._dragonMundaneItems.count}个平凡物品：</li>
 			<ul>
 				${this._dragonMundaneItems.breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>
@@ -1615,7 +1615,7 @@ class LootGenOutput {
 
 		return loot.map(lt => {
 			return $$`
-			<li>${(lt.type).toLocaleString()} gp ${name} (×${lt.count}; worth ${((lt.type * lt.count)).toLocaleString()} gp total):</li>
+			<li>${(lt.type).toLocaleString()} gp ${name} (×${lt.count}; 总计价值${((lt.type * lt.count)).toLocaleString()} gp)：</li>
 			<ul>
 				${Object.entries(lt.breakdown).map(([result, count]) => `<li>${Renderer.get().render(result)}${count > 1 ? `, ×${count}` : ""}</li>`).join("")}
 			</ul>
@@ -1645,7 +1645,7 @@ class LootGenOutput {
 						.sort(([rarityA], [rarityB]) => SortUtil.ascSortItemRarity(rarityB, rarityA))
 						.map(([rarity, lootItems]) => {
 							return $$`
-								<li>${rarity.toTitleCase()} items (×${lootItems.length}):</li>
+								<li>${Parser.RARITIES_TO_CN[rarity] ?? rarity.toTitleCase()}物品 (×${lootItems.length})：</li>
 								<ul>${lootItems.map(it => it.$getRender())}</ul>
 							`;
 						});
@@ -1653,7 +1653,7 @@ class LootGenOutput {
 					if (!$ulsByRarity.length) return null;
 
 					return $$`
-						<li>${magicItems.tier.toTitleCase()} items:</li>
+						<li>${magicItems.tier.toTitleCase()}物品：</li>
 						<ul>
 							${$ulsByRarity}
 						</ul>
@@ -1661,7 +1661,7 @@ class LootGenOutput {
 				}
 
 				return $$`
-					<li>Magic Items${magicItems.type ? ` (${Renderer.get().render(`{@table Magic Item Table ${magicItems.type}||Table ${magicItems.type}}`)})` : ""}${(magicItems.count || 0) > 1 ? ` (×${magicItems.count})` : ""}</li>
+					<li>魔法物品${magicItems.type ? ` (${Renderer.get().render(`{@table 魔法物品表${magicItems.type}||表${magicItems.type}}`)})` : ""}${(magicItems.count || 0) > 1 ? ` (×${magicItems.count})` : ""}</li>
 					<ul>${magicItems.breakdown.map(it => it.$getRender())}</ul>
 				`;
 			});
@@ -2038,9 +2038,9 @@ class LootGenMagicItem extends BaseComponent {
 
 		const isAltModeDefault = this._fnGetIsPreferAltChoose && this._fnGetIsPreferAltChoose();
 		const title = this._itemsAltChoose
-			? isAltModeDefault ? `SHIFT to roll on Magic Item Table ${this._magicItemTable.type}` : `SHIFT to roll ${Parser.getArticle(this._itemsAltChooseDisplayText)} ${this._itemsAltChooseDisplayText} item`
+			? isAltModeDefault ? `按住SHIFT在魔法物品表${this._magicItemTable.type}上重骰` : `按住SHIFT随机骰出${Parser.getArticle(this._itemsAltChooseDisplayText)} ${this._itemsAltChooseDisplayText}物品`
 			: null;
-		return $(`<span class="roller render-roller" ${title ? `title="${title}"` : ""}>[reroll]</span>`)
+		return $(`<span class="roller render-roller" ${title ? `title="${title}"` : ""}>[重骰]</span>`)
 			.mousedown(evt => evt.preventDefault())
 			.click(evt => this._pDoReroll({isAltRoll: isAltModeDefault ? !evt.shiftKey : evt.shiftKey}));
 	}
@@ -2075,7 +2075,7 @@ class LootGenMagicItem extends BaseComponent {
 
 	_$getRender_$getDispRoll ({prop = "roll"} = {}) {
 		const $dispRoll = $(`<div class="ve-muted"></div>`);
-		const hkRoll = () => $dispRoll.text(this._state.isItemsAltChooseRoll ? `(${this._itemsAltChooseDisplayText} item)` : `(Rolled ${this._state[prop]})`);
+		const hkRoll = () => $dispRoll.text(this._state.isItemsAltChooseRoll ? `(${this._itemsAltChooseDisplayText} item)` : `(骰出 ${this._state[prop]})`);
 		this._addHookBase(prop, hkRoll);
 		hkRoll();
 		return $dispRoll;
@@ -2093,7 +2093,7 @@ class LootGenMagicItem extends BaseComponent {
 }
 
 class LootGenMagicItemNull extends LootGenMagicItem {
-	static TOOLTIP_NOTHING = `Failed to generate a result! This is normally due to all potential matches being filtered out. You may want to adjust your filters to be more permissive.`;
+	static TOOLTIP_NOTHING = `生成结果错误！这通常是因为所有可能的选项都被筛选掉了。您可以通过调整筛选条件来获得结果。`;
 
 	getExtensionExportMeta () { return null; }
 
