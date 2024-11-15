@@ -10609,7 +10609,7 @@ Renderer.item = class {
 		renderer = renderer || Renderer.get();
 
 		if (!item.mastery) return "";
-		return `${isSkipPrefix ? "" : "Mastery: "}${item.mastery.map(it => renderer.render(`{@itemMastery ${it}}`)).join(", ")}`;
+		return `${isSkipPrefix ? "" : "精通: "}${item.mastery.map(it => renderer.render(`{@itemMastery ${it}}`)).join(", ")}`;
 	}
 
 	static getTypeRarityAndAttunementText (item) {

@@ -86,7 +86,7 @@ class PageFilterEquipment extends PageFilterBase {
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", cnHeader:"毒药类型", items: ["服用", "伤口", "吸入", "接触"], displayFn: StrUtil.toTitleCase});
-		this._masteryFilter = new Filter({header: "Mastery", displayFn: this.constructor._getMasteryDisplay.bind(this)});
+		this._masteryFilter = new Filter({header: "Mastery", cnHeader:"精通", displayFn: this.constructor._getMasteryDisplay.bind(this)});
 	}
 
 	static _mutateForFilters_getFilterAc (item) {
