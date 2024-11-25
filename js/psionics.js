@@ -39,6 +39,7 @@ class PsionicsSublistManager extends SublistManager {
 			it.name,
 			{
 				hash,
+				page: it.page,
 				type: typeMeta.full,
 				order: it._fOrder,
 				ENG_name: it.ENG_name,
@@ -120,6 +121,7 @@ class PsionicsPage extends ListPage {
 			{
 				hash,
 				source,
+				page: p.page,
 				type: typeMeta.full,
 				order: p._fOrder,
 				searchModeList: this.constructor._getHiddenModeList(p),

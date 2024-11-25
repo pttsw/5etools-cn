@@ -76,7 +76,7 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "objects.html", "物件");
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "trapshazards.html", "陷阱 & 危险");
 		this._addElement_divider(NavBar._CAT_DUNGEON_MASTER);
-		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "crcalculator.html", "CR 计算器");
+		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "crcalculator.html", "CR 计算器 (2014)");
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "encountergen.html", "遭遇生成器");
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "lootgen.html", "战利品生成器");
 		this._addElement_divider(NavBar._CAT_DUNGEON_MASTER);
@@ -84,6 +84,7 @@ class NavBar {
 
 		this._addElement_dropdown(null, NavBar._CAT_REFERENCES);
 		this._addElement_li(NavBar._CAT_REFERENCES, "actions.html", "动作");
+		this._addElement_li(NavBar._CAT_REFERENCES, "bastions.html", "Bastions");
 		this._addElement_li(NavBar._CAT_REFERENCES, "bestiary.html", "怪物图鉴");
 		this._addElement_li(NavBar._CAT_REFERENCES, "conditionsdiseases.html", "状态 & 疾病");
 		this._addElement_li(NavBar._CAT_REFERENCES, "decks.html", "牌组");

@@ -38,6 +38,7 @@ class TablesSublistManager extends SublistManager {
 				hash,
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
+				page: it.page,
 			},
 			{
 				entity: it,
@@ -88,7 +89,10 @@ class TablesPage extends ListPage {
 
 				const headerRowMetas = Renderer.table.getHeaderRowMetas(tbl) || [];
 				const [headerRowMetasAsHeaders, ...headerRowMetasAsRows] = headerRowMetas
-					.map(headerRowMeta => headerRowMeta.map(it => Renderer.stripTags(it)));
+					.map(headerRowMeta => headerRowMeta.map(entCellHeader => {
+						if (entCellHeader.type === "cellHeader") return Renderer.stripTags(entCellHeader.entry);
+						return Renderer.stripTags(entCellHeader);
+					}));
 
 				return DataUtil.getCsv(
 					headerRowMetasAsHeaders,
@@ -127,10 +131,11 @@ class TablesPage extends ListPage {
 			it.name,
 			{
 				hash,
-				sortName,
 				source,
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
+				page: it.page,
+				sortName,
 			},
 			{
 				isExcluded,

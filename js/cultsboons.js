@@ -38,6 +38,7 @@ class CultsBoonsSublistManager extends SublistManager {
 			it.name,
 			{
 				hash,
+				page: it.page,
 				type: it._lType,
 				subType: it._lSubType,
 				ENG_name: it.ENG_name,
@@ -90,6 +91,7 @@ class CultsBoonsPage extends ListPage {
 			{
 				hash,
 				source,
+				page: it.page,
 				type: it._lType,
 				subType: it._lSubType,
 				ENG_name: it.ENG_name,

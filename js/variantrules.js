@@ -33,6 +33,7 @@ class VariantRulesSublistManager extends SublistManager {
 			it.name,
 			{
 				hash,
+				page: it.page,
 				ruleType: it.ruleType || "",
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
@@ -84,8 +85,9 @@ class VariantRulesPage extends ListPage {
 			rule.name,
 			{
 				hash,
-				search: searchStack.join(","),
 				source,
+				page: rule.page,
+				search: searchStack.join(","),
 				ruleType: rule.ruleType || "",
 				ENG_name: rule.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(rule),

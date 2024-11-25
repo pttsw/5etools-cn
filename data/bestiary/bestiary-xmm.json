@@ -2,7 +2,11 @@
 	"_meta": {
 		"dependencies": {
 			"monster": [
-				"MM"
+				"MM",
+				"DMG",
+				"MPMM",
+				"PHB",
+				"DoSI"
 			]
 		}
 	},
@@ -967,11 +971,30 @@
 						"{@atkr m} {@hit 3}，触及范围5英尺。{@h}8 ({@damage 2d6 + 1}) 酸液伤害。目标所穿的非魔法护甲对其提供的AC造成-1的惩罚。如果惩罚将其AC降低到10，则护甲被摧毁。如果一个生物采取利用行动，并使用修补工具成功进行{@dc 15}的敏捷检定来修复护甲，可以移除这个惩罚。"
 					]
 				}
-			],
+			},
 			"token": {
 				"name": "灰泥怪",
 				"ENG_name": "Gray Ooze",
 				"source": "MM"
+			}
+		},
+		{
+			"name": "Horned Devil",
+			"source": "XMM",
+			"_copy": {
+				"name": "Horned Devil",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Temporary Statblock",
+							"entries": [
+								"{@note This statblock is a placeholder.}"
+							]
+						}
+					}
+				}
 			},
 			"traitTags": [
 				"无定形"
@@ -1394,6 +1417,25 @@
 				"name": "木乃伊",
 				"ENG_name": "Mummy",
 				"source": "MM"
+			}
+		},
+		{
+			"name": "Ochre Jelly",
+			"source": "XMM",
+			"_copy": {
+				"name": "Ochre Jelly",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Temporary Statblock",
+							"entries": [
+								"{@note This statblock is a placeholder.}"
+							]
+						}
+					}
+				}
 			},
 			"token": {
 				"name": "木乃伊",
@@ -1678,7 +1720,7 @@
 						"{@actTrigger} 海盗在持有武器时被近战攻击击中。{@actResponse} 海盗对该攻击的AC增加3，可能导致攻击未命中。如果攻击未命中，海盗对触发攻击的生物进行一次细剑攻击。"
 					]
 				}
-			],
+			},
 			"token": {
 				"name": "海盗船长",
 				"ENG_name": "Pirate Captain",
@@ -2171,6 +2213,52 @@
 			"miscTags": [
 				"MA"
 			]
+		},
+		{
+			"name": "Wyvern",
+			"source": "XMM",
+			"_copy": {
+				"name": "Wyvern",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Temporary Statblock",
+							"entries": [
+								"{@note This statblock is a placeholder.}"
+							]
+						}
+					}
+				}
+			},
+			"token": {
+				"name": "Wyvern",
+				"source": "MM"
+			}
+		},
+		{
+			"name": "Xorn",
+			"source": "XMM",
+			"_copy": {
+				"name": "Xorn",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Temporary Statblock",
+							"entries": [
+								"{@note This statblock is a placeholder.}"
+							]
+						}
+					}
+				}
+			},
+			"token": {
+				"name": "Xorn",
+				"source": "MM"
+			}
 		}
 	]
 }

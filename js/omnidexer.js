@@ -1305,6 +1305,18 @@ class IndexableFileDecks extends IndexableFile {
 	}
 }
 
+class IndexableFileFacilities extends IndexableFile {
+	constructor () {
+		super({
+			category: Parser.CAT_ID_FACILITY,
+			file: "bastions.json",
+			listProp: "facility",
+			baseUrl: UrlUtil.PG_BASTIONS,
+			isHover: true,
+		});
+	}
+}
+
 class IndexableLegendaryGroups extends IndexableFile {
 	constructor () {
 		super({
@@ -1365,6 +1377,7 @@ Omnidexer.TO_INDEX = [
 	new IndexableFileTableGroups(),
 	new IndexableFileCards(),
 	new IndexableFileDecks(),
+	new IndexableFileFacilities(),
 	new IndexableLegendaryGroups(),
 
 	new IndexableFileVehicles(),

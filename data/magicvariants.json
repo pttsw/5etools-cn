@@ -600,7 +600,10 @@
 				}
 			],
 			"excludes": {
-				"property": "2H"
+				"property": [
+					"2H",
+					"2H|XPHB"
+				]
 			},
 			"inherits": {
 				"nameSuffix": "臂刃",
@@ -634,6 +637,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Acid Resistance|XDMG"
+				],
 				"resist": [
 					"强酸"
 				],
@@ -660,6 +666,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Cold Resistance|XDMG"
+				],
 				"resist": [
 					"冷冻"
 				],
@@ -686,6 +695,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Fire Resistance|XDMG"
+				],
 				"resist": [
 					"火焰"
 				],
@@ -712,6 +724,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Force Resistance|XDMG"
+				],
 				"resist": [
 					"力场"
 				],
@@ -782,7 +797,13 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"armor": true
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
 				}
 			],
 			"inherits": {
@@ -816,6 +837,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Lightning Resistance|XDMG"
+				],
 				"resist": [
 					"黯蚀"
 				],
@@ -834,6 +858,96 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " of Lightning Resistance",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"lightning"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance|XDMG}"
+				]
+			}
+		},
+		{
+			"name": "Armor of Necrotic Resistance",
+			"edition": "classic",
+			"type": "GV|DMG",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
+				"nameSuffix": " of Necrotic Resistance",
+				"source": "DMG",
+				"page": 152,
+				"srd": true,
+				"reprintedAs": [
+					"Armor of Necrotic Resistance|XDMG"
+				],
+				"resist": [
+					"necrotic"
+				],
+				"tier": "major",
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
+			}
+		},
+		{
+			"name": "Armor of Necrotic Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " of Necrotic Resistance",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"necrotic"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance|XDMG}"
+				]
+			}
+		},
+		{
+			"name": "Armor of Poison Resistance",
+			"edition": "classic",
+			"type": "GV|DMG",
+			"requires": [
+				{
 					"armor": true
 				}
 			],
@@ -842,6 +956,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Poison Resistance|XDMG"
+				],
 				"resist": [
 					"毒素"
 				],
@@ -868,6 +985,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Psychic Resistance|XDMG"
+				],
 				"resist": [
 					"心灵"
 				],
@@ -894,6 +1014,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Radiant Resistance|XDMG"
+				],
 				"resist": [
 					"光耀"
 				],
@@ -986,6 +1109,9 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"Armor of Thunder Resistance|XDMG"
+				],
 				"resist": [
 					"雷鸣"
 				],
@@ -1003,15 +1129,6 @@
 			"ENG_name": "Armor of Weightlessness",
 			"type": "GV|DMG",
 			"requires": [
-				{
-					"type": "LA"
-				},
-				{
-					"type": "MA"
-				},
-				{
-					"type": "HA"
-				},
 				{
 					"type": "LA|XPHB"
 				},
@@ -1047,10 +1164,13 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"arrow": true
+					"type": "LA|XPHB"
 				},
 				{
-					"bolt": true
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
 				}
 			],
 			"excludes": {
@@ -1080,8 +1200,7 @@
 					"{=baseName/at} {=baseName/l} of slaying 是一种魔法武器，旨在杀死特定种类的生物。有些比其他的更专注；例如，既有{@i {=baseName/l}s of dragon slaying}也有{@i {=baseName/l}s of blue dragon slaying}。如果属于与{=baseName/a} {=baseName/l} of slaying相关联的类型、种族或群体的生物受到{=baseName/l}的伤害，该生物必须进行一次DC 17体质豁免检定，在豁免失败时额外承受{@dice 6d10}穿刺伤害，或在豁免成功时额外承受一半的伤害。",
 					"一旦{=baseName/a} {=baseName/l}屠戮武器对生物造成了额外伤害，它就会变成一把非魔法的{=baseName/l}。"
 				]
-			},
-			"hasFluffImages": true
+			}
 		},
 		{
 			"name": "升天龙之怒武器",
@@ -1557,7 +1676,10 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"type": "HA"
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
 				},
 				{
 					"type": "HA|XPHB"
@@ -1848,12 +1970,12 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"weapon": true
+					"weaponCategory": "simple"
+				},
+				{
+					"weaponCategory": "martial"
 				}
 			],
-			"excludes": {
-				"net": true
-			},
 			"inherits": {
 				"namePrefix": "卓尔族 +3 ",
 				"source": "MM",
@@ -1871,14 +1993,26 @@
 			"type": "GV|XDMG",
 			"requires": [
 				{
-					"bow": true
+					"name": "Battleaxe",
+					"source": "XPHB"
+				},
+				{
+					"name": "Greataxe",
+					"source": "XPHB"
+				},
+				{
+					"name": "Halberd",
+					"source": "XPHB"
+				},
+				{
+					"name": "Handaxe",
+					"source": "XPHB"
 				}
 			],
 			"inherits": {
 				"namePrefix": "能量",
 				"source": "UtHftLH",
 				"rarity": "very rare",
-				"reqAttune": true,
 				"bonusWeapon": "+1",
 				"entries": [
 					"你使用这把魔法武器进行攻击和伤害检定时，可以获得+1的加值，这把武器没有弦。每次你做出拉弓的动作时，一支由金色能量构成的魔法箭就会出现在弦上，准备发射。这把武器产生的箭在击中目标时，造成的力量伤害而不是穿刺伤害，并且在击中或未击中目标后消失。在它消失之前，箭在20英尺范围内发出{@variantrule 明亮光照|XPHB}，在额外的20英尺范围内发出{@variantrule 微光光照|XPHB}。",
@@ -2058,6 +2192,9 @@
 				"source": "DMG",
 				"page": 171,
 				"srd": true,
+				"reprintedAs": [
+					"Frost Brand|XDMG"
+				],
 				"resist": [
 					"火焰"
 				],
@@ -2649,7 +2786,7 @@
 				"reqAttune": true,
 				"bonusWeapon": "+1",
 				"bonusSavingThrow": "+1",
-				"charges": "{@dice 1d4 - 1}",
+				"charges": "{@dice 1d3}",
 				"entries": [
 					"使用这把魔法武器进行攻击和伤害骰时，你获得+1的加值。当这把剑在你身上时，你在豁免检定中也获得+1的加值。",
 					{
@@ -2978,8 +3115,7 @@
 					"type": "R|XPHB"
 				},
 				{
-					"property": "T",
-					"type": "T|XPHB"
+					"property": "T|XPHB"
 				}
 			],
 			"excludes": {
@@ -3639,7 +3775,13 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"armor": true
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
 				}
 			],
 			"inherits": {

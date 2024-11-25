@@ -34,6 +34,7 @@ class ActionsSublistManager extends SublistManager {
 			it.name,
 			{
 				hash,
+				page: it.page,
 				time,
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
@@ -89,6 +90,7 @@ class ActionsPage extends ListPage {
 			{
 				hash,
 				source,
+				page: it.page,
 				time,
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),

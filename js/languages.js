@@ -42,6 +42,7 @@ class LanguagesSublistManager extends SublistManager {
 			it.name,
 			{
 				hash,
+				page: it.page,
 				type: it.type || "",
 				script: it.script || "",
 				ENG_name: it.ENG_name,
@@ -93,6 +94,7 @@ class LanguagesPage extends ListPage {
 			{
 				hash,
 				source,
+				page: it.page,
 				dialects: it.dialects || [],
 				type: it.type || "",
 				script: it.script || "",

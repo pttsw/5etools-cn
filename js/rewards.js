@@ -33,6 +33,7 @@ class RewardsSublistManager extends SublistManager {
 			reward.name,
 			{
 				hash,
+				page: reward.page,
 				type: reward.type,
 				ENG_name: reward.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(reward),
@@ -89,6 +90,7 @@ class RewardsPage extends ListPage {
 			{
 				hash,
 				source,
+				page: reward.page,
 				type: reward.type,
 				ENG_name: reward.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(reward),

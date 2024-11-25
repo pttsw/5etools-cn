@@ -759,6 +759,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				source,
 				ENG_name: cls.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
+				page: cls.page,
 			},
 			{
 				$lnk,
@@ -1607,6 +1608,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			sc.name,
 			{
 				source: sc.source,
+				page: sc.page,
 				shortName: sc.shortName,
 				stateKey,
 				mod,
@@ -2193,7 +2195,7 @@ ClassesPage._DEFAULT_STATE = {
 	isHideSidebar: false,
 	isHideFeatures: false,
 	isShowFluff: false,
-	isShowScSources: false,
+	isShowScSources: true,
 	isViewActiveScComp: false,
 	isViewActiveBook: false,
 	isHideOutline: false,

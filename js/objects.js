@@ -34,6 +34,7 @@ class ObjectsSublistManager extends SublistManager {
 			it.name,
 			{
 				hash,
+				page: it.page,
 				size,
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
@@ -93,6 +94,7 @@ class ObjectsPage extends ListPage {
 			{
 				hash,
 				source,
+				page: obj.page,
 				size,
 				ENG_name: obj.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(obj),

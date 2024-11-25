@@ -2,7 +2,10 @@
 
 class PageFilterConditionsDiseases extends PageFilterBase {
 	// region static
+	static _PROPS = new Set(["condition", "disease", "status"]);
+
 	static getDisplayProp (prop) {
+		if (!this._PROPS.has(prop)) return prop;
 		return prop === "status" ? "Other" : Parser.getPropDisplayName(prop);
 	}
 	// endregion
@@ -14,8 +17,8 @@ class PageFilterConditionsDiseases extends PageFilterBase {
 			header: "Type",
 			cnHeader: "类型",
 			items: ["condition", "disease", "status"],
-			displayFn: PageFilterConditionsDiseases.getDisplayProp,
-			deselFn: (it) => it === "disease" || it === "status",
+			displayFn: PageFilterConditionsDiseases.getDisplayProp.bind(PageFilterConditionsDiseases),
+			deselFn: (it) => it !== "condition",
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
@@ -35,6 +38,7 @@ class PageFilterConditionsDiseases extends PageFilterBase {
 		if (isExcluded) return;
 
 		this._sourceFilter.addItem(it._fSources);
+		this._typeFilter.addItem(it.type);
 		this._miscFilter.addItem(it._fMisc);
 	}
 
@@ -50,7 +54,7 @@ class PageFilterConditionsDiseases extends PageFilterBase {
 		return this._filterBox.toDisplay(
 			values,
 			it._fSources,
-			it.__prop,
+			it.type || it.__prop,
 			it._fMisc,
 		);
 	}
