@@ -340,7 +340,7 @@ class LinkCheck extends DataTesterBase {
 			}
 
 			const url = `${Renderer.tag.getPage(tag)}#${encoded}`.toLowerCase().trim();
-			if (TagTestUrlLookup.hasUrl(url)) return;
+			if (TagTestUrlLookup.hasUrl(url)) continue;
 
 			this._addMessage(`Missing link: ${isStatblock ? `(as "statblock" entry) ` : ""}${match[0]} in file ${filePath} (evaluates to "${url}")\n${TagTestUtil.getLogPtSimilarUrls({url})}`);
 		}
@@ -349,8 +349,11 @@ class LinkCheck extends DataTesterBase {
 	static _checkObject (obj, {filePath}) {
 		if (obj.type !== "statblock") return obj;
 
-		// TODO(Future) expand/tweak support as required
-		const asStr = `{@${obj.tag} ${obj.name}|${obj.source || ""}}`;
+		const prop = obj.prop || Parser.getTagProps(obj.tag)[0];
+		const tag = obj.tag || Parser.getPropTag(prop);
+		const sourceDefault = Renderer.tag.TAG_LOOKUP[tag].defaultSource;
+		const uid = DataUtil.proxy.getUid(prop, {...obj, source: obj.source || sourceDefault});
+		const asStr = `{@${tag} ${uid}}`;
 		this._checkString(asStr, {filePath, isStatblock: true});
 
 		return obj;
@@ -395,6 +398,7 @@ class ItemDataCheck extends GenericDataCheck {
 		const asUrls = arr
 			.map(it => {
 				if (it.item) it = it.item;
+				if (it.uid) it = it.uid;
 				if (it.special) return null;
 
 				return getEncoded(it, tag);
@@ -407,12 +411,13 @@ class ItemDataCheck extends GenericDataCheck {
 	}
 
 	static _checkArrayItemsExist (file, name, source, arr, prop, tag) {
-		arr.forEach(s => {
-			if (s.item) s = s.item;
-			if (s.special) return;
+		arr.forEach(it => {
+			if (it.item) it = it.item;
+			if (it.uid) it = it.uid;
+			if (it.special) return;
 
-			const url = getEncoded(s, tag);
-			if (!TagTestUrlLookup.hasUrl(url)) this._addMessage(`Missing link: ${s} in file ${file} (evaluates to "${url}") in "${prop}"\n${TagTestUtil.getLogPtSimilarUrls({url})}`);
+			const url = getEncoded(it, tag);
+			if (!TagTestUrlLookup.hasUrl(url)) this._addMessage(`Missing link: ${it} in file ${file} (evaluates to "${url}") in "${prop}"\n${TagTestUtil.getLogPtSimilarUrls({url})}`);
 		});
 	}
 
@@ -775,11 +780,11 @@ AreaCheck.fileMatcher = /\/(adventure-|book-).*\.json/;
 
 class LootDataCheck extends GenericDataCheck {
 	static pRun () {
-		function handleItem (it) {
-			const toCheck = typeof it === "string" ? {name: it, source: Parser.SRC_DMG} : it;
+		const handleItem = (it) => {
+			const toCheck = DataUtil.proxy.unpackUid("item", it, "item");
 			const url = `${Renderer.tag.getPage("item")}#${UrlUtil.encodeForHash([toCheck.name, toCheck.source])}`.toLowerCase().trim();
 			if (!TagTestUrlLookup.hasUrl(url)) this._addMessage(`Missing link: ${JSON.stringify(it)} in file "${LootDataCheck.file}" (evaluates to "${url}")\n${TagTestUtil.getLogPtSimilarUrls({url})}`);
-		}
+		};
 
 		const loot = ut.readJson(`./${LootDataCheck.file}`);
 		loot.magicItems.forEach(it => {
@@ -806,6 +811,18 @@ class LootDataCheck extends GenericDataCheck {
 LootDataCheck.file = `data/loot.json`;
 
 class ClassDataCheck extends GenericDataCheck {
+	static _doCheckClassRef ({logIdentOriginal, uidOriginal, file, name, source}) {
+		const uidClass = DataUtil.proxy.getUid("class", {name, source}, {isMaintainCase: true});
+		const urlClass = getEncoded(uidClass, "class");
+		if (!TagTestUrlLookup.hasUrl(urlClass)) this._addMessage(`Missing class in ${logIdentOriginal}: ${uidOriginal} in file ${file} class part, "${uidClass}"\n${TagTestUtil.getLogPtSimilarUrls({urlClass})}`);
+	}
+
+	static _doCheckSubclassRef ({logIdentOriginal, uidOriginal, file, shortName, source, className, classSource}) {
+		const uidSubclass = DataUtil.proxy.getUid("subclass", {name: shortName, shortName, source, className, classSource}, {isMaintainCase: true});
+		const urlSubclass = getEncodedSubclass(uidSubclass, "subclass");
+		if (!TagTestUrlLookup.hasUrl(urlSubclass)) this._addMessage(`Missing subclass in ${logIdentOriginal}: ${uidOriginal} in file ${file} subclass part, "${uidSubclass}"\n${TagTestUtil.getLogPtSimilarUrls({urlSubclass})}`);
+	}
+
 	static _doCheckClass (file, data, cls) {
 		// region Check `classFeatures` -> `classFeature` links
 		const featureLookup = {};
@@ -819,6 +836,14 @@ class ClassDataCheck extends GenericDataCheck {
 			const unpacked = DataUtil.class.unpackUidClassFeature(uid, {isLower: true});
 			const hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
 			if (!featureLookup[hash]) this._addMessage(`Missing class feature: ${uid} in file ${file} not found in the files "classFeature" array\n`);
+
+			this._doCheckClassRef({
+				logIdentOriginal: `"classFeature" array`,
+				uidOriginal: uid,
+				file,
+				name: unpacked.className,
+				source: unpacked.classSource,
+			});
 		});
 
 		const handlersNestedRefsClass = {
@@ -831,6 +856,14 @@ class ClassDataCheck extends GenericDataCheck {
 					const hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
 
 					if (!featureLookup[hash]) this._addMessage(`Missing class feature: ${uid} in file ${file} not found in the files "classFeature" array\n`);
+
+					this._doCheckClassRef({
+						logIdentOriginal: `"refClassFeature"`,
+						uidOriginal: uid,
+						file,
+						name: unpacked.className,
+						source: unpacked.classSource,
+					});
 				});
 				return arr;
 			},
@@ -929,7 +962,25 @@ class ClassDataCheck extends GenericDataCheck {
 					const unpacked = DataUtil.class.unpackUidSubclassFeature(uid, {isLower: true});
 					const hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](unpacked);
 
-					if (!subclassFeatureLookup[hash]) this._addMessage(`Missing subclass feature in "refSubclassFeature": ${it.subclassFeature} in file ${filename} not found in the files "subclassFeature" array\n`);
+					if (!subclassFeatureLookup[hash]) this._addMessage(`Missing subclass feature in "refSubclassFeature": ${uid} in file ${filename} not found in the files "subclassFeature" array\n`);
+
+					this._doCheckClassRef({
+						logIdentOriginal: `"refClassFeature"`,
+						uidOriginal: uid,
+						file: filename,
+						name: unpacked.className,
+						source: unpacked.classSource,
+					});
+
+					this._doCheckSubclassRef({
+						logIdentOriginal: `"refSubclassFeature"`,
+						uidOriginal: uid,
+						file: filename,
+						shortName: unpacked.subclassShortName,
+						source: unpacked.subclassSource,
+						className: unpacked.className,
+						classSource: unpacked.classSource,
+					});
 				});
 				return arr;
 			},
@@ -1604,7 +1655,7 @@ async function main () {
 		"./data",
 		ClazzDataTesters,
 		{
-			fnIsIgnoredFile: filePath => filePath.endsWith("changelog.json"),
+			fnIsIgnoredFile: filePath => filePath.endsWith("changelog.json") || filePath.includes("/generated/"),
 		},
 	);
 

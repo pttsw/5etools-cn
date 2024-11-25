@@ -135,6 +135,10 @@ $rgb-inset-border: #656565;
 			cursor: zoom-in;
 		}
 
+		&cvs-image {
+			background: #ccc3;
+		}
+
 		&wrp-map {
 			max-width: 33%;
 			margin: 0 auto;
@@ -518,6 +522,21 @@ $rgb-inset-border: #656565;
 
 		&th {
 			text-align: left;
+
+			&-skewer {
+				&::after {
+					position: relative;
+					bottom: 3px;
+					left: 0;
+					margin: 0 auto;
+					padding: 0;
+					display: block;
+					content: "";
+					height: 3px;
+					width: 96%;
+					border-bottom: 1px solid vars.$rgb-border-grey;
+				}
+			}
 		}
 
 		&comic {
