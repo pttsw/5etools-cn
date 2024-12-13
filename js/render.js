@@ -924,7 +924,7 @@ globalThis.Renderer = function () {
 
 	this._getPagePart = function (entry, isInset) {
 		if (!Renderer.utils.isDisplayPage(entry.page)) return "";
-		return ` <span class="rd__title-link ${isInset ? `rd__title-link--inset` : ""}">${entry.source ? `<span class="help-subtle" title="${Parser.sourceJsonToFull(entry.source)}">${Parser.sourceJsonToAbv(entry.source)}</span> ` : ""}p${entry.page}</span>`;
+		return ` <span class="rd__title-link ${isInset ? `rd__title-link--inset` : ""}">${entry.source ? `<span class="help-subtle" title="${Parser.sourceJsonToFull(entry.source)}">${Parser.sourceJsonToAbv(entry.source)}</span> ` : ""}<span title="Page ${entry.page}">p${entry.page}</span></span>`;
 	};
 
 	this._renderEntriesSubtypes = function (entry, textStack, meta, options, incDepth) {
@@ -1948,6 +1948,7 @@ globalThis.Renderer = function () {
 			case "@actSave": textStack[0] += `<i>${Parser.attAbvToFull(text)} Saving Throw:</i>`; break;
 			case "@actSaveSuccess": textStack[0] += `<i>Success:</i>`; break;
 			case "@actSaveFail": textStack[0] += `<i>Failure:</i>`; break;
+			case "@actSaveSuccessOrFail": textStack[0] += `<i>Failure or Success:</i>`; break;
 			case "@actTrigger": textStack[0] += `<i>Trigger:</i>`; break;
 			case "@actResponse": textStack[0] += `<i>Response:</i>`; break;
 			case "@h": textStack[0] += `<i>Hit:</i> `; break;
@@ -3521,6 +3522,7 @@ Renderer.utils = class {
 			"itemType",
 			"itemProperty",
 			"campaign",
+			"culture",
 			"group",
 			"other",
 			"otherSummary",
@@ -3618,6 +3620,7 @@ Renderer.utils = class {
 								case "psionics": return this._getHtml_psionics({v, isListMode, isTextOnly, styleHint});
 								case "alignment": return this._getHtml_alignment({v, isListMode, isTextOnly, styleHint});
 								case "campaign": return this._getHtml_campaign({v, isListMode, isTextOnly, styleHint});
+								case "culture": return this._getHtml_culture({v, isListMode, isTextOnly, styleHint});
 								case "group": return this._getHtml_group({v, isListMode, isTextOnly, styleHint});
 								default: throw new Error(`Unhandled key: ${k}`);
 							}
@@ -3995,6 +3998,12 @@ Renderer.utils = class {
 			return isListMode
 				? v.join("/")
 				: `${v.joinConjunct(", ", " or ")} Campaign`;
+		}
+
+		static _getHtml_culture ({v, isListMode}) {
+			return isListMode
+				? v.join("/")
+				: `${v.joinConjunct(", ", " or ")} Culture`;
 		}
 
 		static _getHtml_group ({v, isListMode}) {
@@ -4983,6 +4992,12 @@ Renderer.tag = class {
 		_getStripped (tag, text) { return "Failure:"; }
 	};
 
+	static TagActSaveSuccessOrFailure = class extends this._TagBaseAt {
+		tagName = "actSaveSuccessOrFail";
+
+		_getStripped (tag, text) { return "Failure or Success:"; }
+	};
+
 	static TagActTrigger = class extends this._TagBaseAt {
 		tagName = "actTrigger";
 
@@ -5569,6 +5584,7 @@ Renderer.tag = class {
 		new this.TagActSave(),
 		new this.TagActSaveSuccess(),
 		new this.TagActSaveFailure(),
+		new this.TagActSaveSuccessOrFailure(),
 		new this.TagActTrigger(),
 		new this.TagActResponse(),
 
@@ -7119,10 +7135,10 @@ Renderer.spell = class {
 				itm,
 				className,
 				classSource,
-				subclassShortName,
-				subclassName,
-				subclassSource,
-				subSubclassName,
+				subclassShortName = null,
+				subclassName = null,
+				subclassSource = null,
+				subSubclassName = null,
 			},
 		) {
 			if (itm.groupName) return;
@@ -7178,7 +7194,7 @@ Renderer.spell = class {
 				subclassName,
 				subclassSource,
 				subSubclassName,
-				schools,
+				schools = null,
 			},
 		) {
 			if (subclassShortName) {
@@ -7189,7 +7205,7 @@ Renderer.spell = class {
 				if (subSubclassName) toAdd.subclass.subSubclass = subSubclassName;
 				if (schools) toAdd.schools = schools;
 
-				tgt.fromSubclass = tgt.fromSubclass || [];
+				tgt.fromSubclass ||= [];
 				tgt.fromSubclass.push(toAdd);
 				return;
 			}
@@ -7197,7 +7213,7 @@ Renderer.spell = class {
 			const toAdd = {name: className, source: classSource};
 			if (schools) toAdd.schools = schools;
 
-			tgt.fromClassList = tgt.fromClassList || [];
+			tgt.fromClassList ||= [];
 			tgt.fromClassList.push(toAdd);
 		}
 
@@ -7206,10 +7222,10 @@ Renderer.spell = class {
 				itm,
 				className,
 				classSource,
-				subclassShortName,
-				subclassName,
-				subclassSource,
-				subSubclassName,
+				subclassShortName = null,
+				subclassName = null,
+				subclassSource = null,
+				subSubclassName = null,
 			},
 		) {
 			if (!itm.groupName) return;
@@ -7270,20 +7286,20 @@ Renderer.spell = class {
 			if (!this._cache?.classes) return;
 
 			if (this._cache.classes.spell?.[lowSource]?.[lowName]?.fromClassList?.length) {
-				sp._tmpClasses.fromClassList = sp._tmpClasses.fromClassList || [];
+				sp._tmpClasses.fromClassList ||= [];
 				sp._tmpClasses.fromClassList.push(...this._cache.classes.spell[lowSource][lowName].fromClassList);
 			}
 
 			if (this._cache.classes.spell?.[lowSource]?.[lowName]?.fromSubclass?.length) {
-				sp._tmpClasses.fromSubclass = sp._tmpClasses.fromSubclass || [];
+				sp._tmpClasses.fromSubclass ||= [];
 				sp._tmpClasses.fromSubclass.push(...this._cache.classes.spell[lowSource][lowName].fromSubclass);
 			}
 
 			if (this._cache.classes.class && sp.classes?.fromClassList) {
-				(sp._tmpClasses = sp._tmpClasses || {}).fromClassList = sp._tmpClasses.fromClassList || [];
+				(sp._tmpClasses ||= {}).fromClassList ||= [];
 
 				// speed over safety
-				outer: for (const srcLower in this._cache.classes.class) {
+				for (const srcLower in this._cache.classes.class) {
 					const searchForClasses = this._cache.classes.class[srcLower];
 
 					for (const clsLowName in searchForClasses) {
@@ -7297,12 +7313,9 @@ Renderer.spell = class {
 						}
 
 						if (fromDetails.fromSubclass) {
-							sp._tmpClasses.fromSubclass = sp._tmpClasses.fromSubclass || [];
+							sp._tmpClasses.fromSubclass ||= [];
 							sp._tmpClasses.fromSubclass.push(...this._mutateSpell_getListFilteredBySchool({sp, arr: fromDetails.fromSubclass}));
 						}
-
-						// Only add it once regardless of how many classes match
-						break outer;
 					}
 				}
 			}
@@ -7310,10 +7323,10 @@ Renderer.spell = class {
 			if (this._cache.classes.group && (sp.groups?.length || sp._tmpGroups?.length)) {
 				const groups = Renderer.spell.getCombinedGeneric(sp, {propSpell: "groups"});
 
-				(sp._tmpClasses = sp._tmpClasses || {}).fromClassList = sp._tmpClasses.fromClassList || [];
+				(sp._tmpClasses ||= {}).fromClassList ||= [];
 
 				// speed over safety
-				outer: for (const srcLower in this._cache.classes.group) {
+				for (const srcLower in this._cache.classes.group) {
 					const searchForGroups = this._cache.classes.group[srcLower];
 
 					for (const groupLowName in searchForGroups) {
@@ -7327,12 +7340,9 @@ Renderer.spell = class {
 						}
 
 						if (fromDetails.fromSubclass) {
-							sp._tmpClasses.fromSubclass = sp._tmpClasses.fromSubclass || [];
+							sp._tmpClasses.fromSubclass ||= [];
 							sp._tmpClasses.fromSubclass.push(...this._mutateSpell_getListFilteredBySchool({sp, arr: fromDetails.fromSubclass}));
 						}
-
-						// Only add it once regardless of how many classes match
-						break outer;
 					}
 				}
 			}
@@ -7359,13 +7369,13 @@ Renderer.spell = class {
 
 			// If a precise spell has been specified
 			if (this._cache[propSpell]?.spell?.[lowSource]?.[lowName]?.length) {
-				(sp[propTmp] = sp[propTmp] || [])
+				(sp[propTmp] ||= [])
 					.push(...this._cache[propSpell].spell[lowSource][lowName]);
 			}
 
 			// If we have a copy of an existing entity's spells
 			if (this._cache?.[propSpell]?.[prop] && sp[propSpell]) {
-				sp[propTmp] = sp[propTmp] || [];
+				sp[propTmp] ||= [];
 
 				// speed over safety
 				outer: for (const srcLower in this._cache[propSpell][prop]) {
@@ -7501,7 +7511,7 @@ Renderer.spell = class {
 			|| (subclassDefinedInSource != null && ExcludeUtil.isExcluded("*", "subclassFeature", subclassDefinedInSource, {isNoCount: true}));
 	}
 
-	static getCombinedGeneric (sp, {propSpell, prop}) {
+	static getCombinedGeneric (sp, {propSpell, prop = null}) {
 		const propSpellTmp = `_tmp${propSpell.uppercaseFirst()}`;
 		return [
 			...(sp[propSpell] || []),
@@ -8933,6 +8943,7 @@ class _RenderCompactBestiaryImplBase {
 			htmlPtAbilityScores: this._getHtmlParts_abilityScores({mon, renderer}),
 
 			htmlPtSkills: this._getCommonHtmlParts_skills({mon, renderer}),
+			htmlPtTools: this._getCommonHtmlParts_tools({mon, renderer}),
 			htmlPtVulnerabilities: this._getCommonHtmlParts_vulnerabilities({mon}),
 			htmlPtResistances: this._getCommonHtmlParts_resistances({mon}),
 			htmlPtSenses: this._getCommonHtmlParts_senses({mon, opts}),
@@ -9062,6 +9073,10 @@ class _RenderCompactBestiaryImplBase {
 		return mon.skill ? `<p><b>Skills</b> ${Renderer.monster.getSkillsString(renderer, mon)}</p>` : "";
 	}
 
+	_getCommonHtmlParts_tools ({mon, renderer}) {
+		return mon.tool ? `<p><b>Tools</b> ${Renderer.monster.getToolsString(renderer, mon, {styleHint: this._style})}</p>` : "";
+	}
+
 	_getCommonHtmlParts_vulnerabilities ({mon}) {
 		const label = this._style === "classic" ? "Damage Vuln." : "Vuln.";
 		const ptTitle = this._style === "classic" ? "Damage Vulnerabilities" : "Vulnerabilities";
@@ -9075,7 +9090,9 @@ class _RenderCompactBestiaryImplBase {
 	}
 
 	_getCommonHtmlParts_senses ({mon, opts}) {
-		return opts.isHideSenses ? "" : `<p><b>Senses</b> ${Renderer.monster.getSensesPart(mon, {isTitleCase: this._style !== "classic"})}</p>`;
+		if (opts.isHideSenses) return "";
+		const pt = Renderer.monster.getSensesPart(mon, {isTitleCase: this._style !== "classic"});
+		return pt ? `<p><b>Senses</b> ${pt}</p>` : "";
 	}
 
 	_getCommonHtmlParts_languages ({mon, opts}) {
@@ -9206,6 +9223,7 @@ class _RenderCompactBestiaryImplClassic extends _RenderCompactBestiaryImplBase {
 
 			htmlPtsResources,
 			htmlPtSkills,
+			htmlPtTools,
 			htmlPtVulnerabilities,
 			htmlPtResistances,
 			htmlPtSenses,
@@ -9273,6 +9291,7 @@ class _RenderCompactBestiaryImplClassic extends _RenderCompactBestiaryImplBase {
 					${htmlPtsResources.join("")}
 					${htmlPtSavingThrows}
 					${htmlPtSkills}
+					${htmlPtTools}
 					${htmlPtVulnerabilities}
 					${htmlPtResistances}
 					${htmlPtDamageImmunities}
@@ -9373,6 +9392,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 
 			htmlPtsResources,
 			htmlPtSkills,
+			htmlPtTools,
 			htmlPtVulnerabilities,
 			htmlPtResistances,
 			htmlPtSenses,
@@ -9439,6 +9459,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 					${htmlPtsResources.join("")}
 					${htmlPtSavingThrows}
 					${htmlPtSkills}
+					${htmlPtTools}
 					${htmlPtVulnerabilities}
 					${htmlPtResistances}
 					${htmlPtImmunities}
@@ -9857,7 +9878,7 @@ Renderer.monster = class {
 	}
 
 	static _getInitiativeBonus ({mon}) {
-		if (mon.initiative == null && mon.dex == null) return null;
+		if (mon.initiative == null && (mon.dex == null || mon.dex.special)) return null;
 		if (mon.initiative == null) return Parser.getAbilityModNumber(mon.dex);
 		if (typeof mon.initiative === "number") return mon.initiative;
 		if (typeof mon.initiative !== "object") return null;
@@ -9878,7 +9899,18 @@ Renderer.monster = class {
 
 	static getSavesPart (mon) { return `${Object.keys(mon.save || {}).sort(SortUtil.ascSortAtts).map(s => Renderer.monster.getSave(Renderer.get(), s, mon.save[s])).join(", ")}`; }
 
-	static getSensesPart (mon, {isTitleCase = false} = {}) { return `${mon.senses ? `${Renderer.utils.getRenderedSenses(mon.senses, {isTitleCase})}, ` : ""}${isTitleCase ? "Passive" : "passive"} Perception ${mon.passive || "\u2014"}`; }
+	static getSensesPart (mon, {isTitleCase = false, isForcePassive = false} = {}) {
+		const passive = mon.passive ?? (typeof mon.wis === "number" ? (10 + Parser.attAbvToFull(mon.wis)) : null);
+
+		const pts = [
+			mon.senses ? Renderer.utils.getRenderedSenses(mon.senses, {isTitleCase}) : "",
+			passive != null
+				? `${isTitleCase ? "Passive" : "passive"} Perception ${passive}`
+				: (isForcePassive || mon.senses) ? "\u2014" : "",
+		]
+			.filter(Boolean);
+		return pts.join(", ");
+	}
 
 	static getPbPart (mon, {isPlainText = false} = {}) {
 		if (!mon.pbNote && Parser.crToNumber(mon.cr) >= VeCt.CR_CUSTOM) return "";
@@ -9947,7 +9979,7 @@ Renderer.monster = class {
 
 	static _getChallengeRatingPart_one ({mon, isPlainText = false} = {}) {
 		const crBase = mon.cr?.cr ?? mon.cr;
-		const xpBase = mon.cr?.xp ?? (crBase ? Parser.crToXpNumber(crBase) : 0);
+		const xpBase = mon.cr?.xp ?? (Parser.crToNumber(crBase) < VeCt.CR_CUSTOM ? Parser.crToXpNumber(crBase) : 0);
 
 		const ptsXp = Parser.crToNumber(mon.cr) >= VeCt.CR_CUSTOM
 			? [
@@ -10195,7 +10227,9 @@ Renderer.monster = class {
 				const numScore = abvsRemaining.includes(abv) ? mon[abv] : null;
 				const ptScore = numScore != null ? `${mon[abv]}` : `\u2013`;
 				const ptBonus = numScore != null ? Renderer.utils.getAbilityRoller(mon, abv, {isDisplayAsBonus: true}) : `\u2013`;
-				const ptSave = renderer.render(`{@savingThrow ${abv} ${mon.save?.[abv] == null ? Parser.getAbilityModNumber(ptScore) : mon.save[abv]}}`);
+				const ptSave = mon.save?.[abv] == null
+					? numScore == null ? "\u2013" : renderer.render(`{@savingThrow ${abv} ${Parser.getAbilityModNumber(ptScore)}}`)
+					: renderer.render(`{@savingThrow ${abv} ${mon.save[abv]}}`);
 
 				return [
 					`<td class="stats-tbl-ability-scores__lbl-abv"><div class="bold small-caps ve-text-right stats__disp-as-score stats__disp-as-score--label stats__disp-as-score--${styleName}">${abv.toTitleCase()}</div></td>`,
@@ -10313,6 +10347,40 @@ Renderer.monster = class {
 			return [skills, others, special].filter(Boolean).join(", ");
 		}
 		return skills;
+	}
+
+	static _TOOL_PROF_TO_SOURCE__CLASSIC = {
+		"vehicles": false,
+		"vehicles (air)": false,
+		"vehicles (land)": false,
+		"vehicles (water)": false,
+		"vehicles (space)": false,
+	};
+
+	static _TOOL_PROF_TO_SOURCE__ONE = {
+		"playing card set": {name: "Playing Cards"},
+	};
+
+	static getToolsString (renderer, mon, {styleHint = null} = {}) {
+		if (!mon.tool) return "";
+
+		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+
+		return Object.entries(mon.tool)
+			.map(([uid, bonus]) => {
+				if (uid.includes("|")) {
+					const {name, source} = DataUtil.proxy.unpackUid("item", uid, "item");
+					return `${renderer.render(`{@item ${name.toTitleCase()}|${source}} {@d20 ${bonus}||${name.toTitleCase()}}`)}`;
+				}
+
+				const mapping = Renderer.monster._TOOL_PROF_TO_SOURCE__CLASSIC[uid] ?? Renderer.monster._TOOL_PROF_TO_SOURCE__ONE[uid];
+				if (mapping === false) return `${uid.toTitleCase()} ${renderer.render(`{@d20 ${bonus}||${uid.toTitleCase()}}`)}`;
+
+				const itemFaux = {name: uid.toTitleCase(), source: styleHint === "one" ? Parser.SRC_XPHB : Parser.SRC_PHB, ...(mapping || {})};
+
+				return `${renderer.render(`{@item ${itemFaux.name.toTitleCase()}|${itemFaux.source}} {@d20 ${bonus}||${itemFaux.name.toTitleCase()}}`)}`;
+			})
+			.join(", ");
 	}
 
 	static hasToken (mon, opts) {
@@ -11226,6 +11294,7 @@ Renderer.item = class {
 	}
 
 	static addPrereleaseBrewPropertiesAndTypesFrom ({data}) {
+		if (data == null) return;
 		(data.itemProperty || [])
 			.forEach(it => Renderer.item._addProperty(it));
 		(data.itemType || [])
@@ -13914,7 +13983,9 @@ Renderer.generic = class {
 	}
 
 	static _summariseProfs_getEntry ({str, isShort, hoverTag}) {
-		return isShort ? str.toTitleCase() : hoverTag ? `{@${hoverTag} ${str.toTitleCase()}}` : str.toTitleCase();
+		if (!isShort && hoverTag) return `{@${hoverTag} ${str.toTitleCase()}}`;
+		const [name, , displayName] = str.split("|");
+		return (displayName || name).toTitleCase();
 	}
 
 	/* -------------------------------------------- */
@@ -14683,6 +14754,89 @@ Renderer.hover = class {
 			&& r2.top <= r1.bottom;
 	}
 
+	/* -------------------------------------------- */
+
+	static async pDoShowBrowserWindow ($content, opts) {
+		const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
+		const win = window.open(
+			"",
+			opts.title || "",
+			`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
+		);
+
+		// If this is a new window, bootstrap general page elements/variables.
+		// Otherwise, we can skip straight to using the window.
+		if (!win._IS_POPOUT) {
+			win._IS_POPOUT = true;
+			win.document.write(`
+				<!DOCTYPE html>
+				<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+					<title>${opts.title}</title>
+					${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
+					<!-- Favicons -->
+					<link rel="icon" type="image/svg+xml" href="favicon.svg">
+					<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+					<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+					<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+					<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+					<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+					<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+					<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+					<!-- Chrome Web App Icons -->
+					<link rel="manifest" href="manifest.webmanifest">
+					<meta name="application-name" content="5etools">
+					<meta name="theme-color" content="#006bc4">
+
+					<!-- Windows Start Menu tiles -->
+					<meta name="msapplication-config" content="browserconfig.xml"/>
+					<meta name="msapplication-TileColor" content="#006bc4">
+
+					<!-- Apple Touch Icons -->
+					<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+					<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+					<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+					<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+					<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+					<meta name="apple-mobile-web-app-title" content="5etools">
+
+					<!-- macOS Safari Pinned Tab and Touch Bar -->
+					<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+					<style>
+						html, body { width: 100%; height: 100%; }
+						body { overflow-y: scroll; }
+						.hwin--popout { max-width: 100%; max-height: 100%; box-shadow: initial; width: 100%; overflow-y: auto; }
+					</style>
+				</head><body class="rd__body-popout">
+				<div class="hwin hoverbox--popout hwin--popout"></div>
+				<script type="text/javascript" defer src="js/parser.js"></script>
+				<script type="text/javascript" defer src="js/utils.js"></script>
+				<script type="text/javascript" defer src="lib/jquery.js"></script>
+				</body></html>
+			`);
+
+			win.Renderer = Renderer;
+
+			let ticks = 50;
+			while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
+
+			win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
+		}
+
+		let $cpyContent;
+		if (opts.$pFnGetPopoutContent) {
+			$cpyContent = await opts.$pFnGetPopoutContent();
+		} else {
+			$cpyContent = $content.clone(true, true);
+		}
+
+		$cpyContent.appendTo(win.$wrpHoverContent.empty());
+	}
+
+	/* -------------------------------------------- */
+
 	/**
 	 * @param $content Content to append to the window.
 	 * @param position The position of the window. Can be specified in various formats.
@@ -15022,83 +15176,7 @@ Renderer.hover = class {
 	}
 
 	static async _getShowWindow_pDoPopout ({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content}, {evt} = {}) {
-		const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
-		const win = window.open(
-			"",
-			opts.title || "",
-			`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
-		);
-
-		// If this is a new window, bootstrap general page elements/variables.
-		// Otherwise, we can skip straight to using the window.
-		if (!win._IS_POPOUT) {
-			win._IS_POPOUT = true;
-			win.document.write(`
-				<!DOCTYPE html>
-				<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-					<title>${opts.title}</title>
-					${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
-					<!-- Favicons -->
-					<link rel="icon" type="image/svg+xml" href="favicon.svg">
-					<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
-					<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
-					<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
-					<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
-					<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-					<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-					<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-					<!-- Chrome Web App Icons -->
-					<link rel="manifest" href="manifest.webmanifest">
-					<meta name="application-name" content="5etools">
-					<meta name="theme-color" content="#006bc4">
-
-					<!-- Windows Start Menu tiles -->
-					<meta name="msapplication-config" content="browserconfig.xml"/>
-					<meta name="msapplication-TileColor" content="#006bc4">
-
-					<!-- Apple Touch Icons -->
-					<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
-					<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
-					<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
-					<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
-					<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-					<meta name="apple-mobile-web-app-title" content="5etools">
-
-					<!-- macOS Safari Pinned Tab and Touch Bar -->
-					<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
-
-					<style>
-						html, body { width: 100%; height: 100%; }
-						body { overflow-y: scroll; }
-						.hwin--popout { max-width: 100%; max-height: 100%; box-shadow: initial; width: 100%; overflow-y: auto; }
-					</style>
-				</head><body class="rd__body-popout">
-				<div class="hwin hoverbox--popout hwin--popout"></div>
-				<script type="text/javascript" defer src="js/parser.js"></script>
-				<script type="text/javascript" defer src="js/utils.js"></script>
-				<script type="text/javascript" defer src="lib/jquery.js"></script>
-				</body></html>
-			`);
-
-			win.Renderer = Renderer;
-
-			let ticks = 50;
-			while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
-
-			win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
-		}
-
-		let $cpyContent;
-		if (opts.$pFnGetPopoutContent) {
-			$cpyContent = await opts.$pFnGetPopoutContent();
-		} else {
-			$cpyContent = $content.clone(true, true);
-		}
-
-		$cpyContent.appendTo(win.$wrpHoverContent.empty());
-
+		await Renderer.hover.pDoShowBrowserWindow($content, opts);
 		Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
 	}
 
@@ -15360,7 +15438,7 @@ Renderer.hover = class {
 	}
 	// endregion
 
-	static getGenericCompactRenderedString (entry, depth = null) {
+	static getGenericCompactRenderedString (entry, {depth = null} = {}) {
 		if (entry.header != null) depth = Math.max(0, entry.header - 1);
 		if (depth == null) depth = 0;
 
@@ -15547,7 +15625,7 @@ Renderer.hover = class {
 		opts = opts || {};
 
 		const name = toRender._displayName || toRender.name;
-		return $$`<table class="w-100 stats ${opts.isBookContent || opts.isLargeBookContent ? "stats--book" : ""} ${opts.isLargeBookContent ? "stats--book-large" : ""}" ${name ? `data-roll-name-ancestor-roller="${Renderer.stripTags(name).qq()}"` : ""}>${Renderer.hover.getGenericCompactRenderedString(toRender, opts.depth || 0)}</table>`;
+		return $$`<table class="w-100 stats ${opts.isBookContent || opts.isLargeBookContent ? "stats--book" : ""} ${opts.isLargeBookContent ? "stats--book-large" : ""}" ${name ? `data-roll-name-ancestor-roller="${Renderer.stripTags(name).qq()}"` : ""}>${Renderer.hover.getGenericCompactRenderedString(toRender, {depth: opts.depth || 0})}</table>`;
 	}
 
 	/**
@@ -15566,6 +15644,22 @@ Renderer.hover = class {
 				isPermanent: true,
 				isBookContent: page === UrlUtil.PG_RECIPES,
 				sourceData: entity,
+			},
+		);
+	}
+
+	/**
+	 * @param evt
+	 * @param entity
+	 */
+	static async pDoBrowserPopoutCurPage (evt, entity) {
+		const page = UrlUtil.getCurrentPage();
+		const $content = Renderer.hover.$getHoverContent_stats(page, entity);
+
+		await Renderer.hover.pDoShowBrowserWindow(
+			$content,
+			{
+				title: entity._displayName || entity.name,
 			},
 		);
 	}
