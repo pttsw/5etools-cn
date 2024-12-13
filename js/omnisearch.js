@@ -103,7 +103,7 @@ class Omnisearch {
 			tag: "input",
 			clazz: "form-control search omni__input",
 			placeholder: this._PLACEHOLDER_TEXT,
-			title: `快捷键：F. 免责声明：不一定真的达到全域搜索，请谨慎使用。`,
+			title: `全局搜索。快捷键：F. 免责声明：不一定真的达到全域搜索，请谨慎使用。`,
 			type: "search",
 		})
 			.disableSpellcheck();
