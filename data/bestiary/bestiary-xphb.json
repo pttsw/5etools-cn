@@ -54,7 +54,7 @@
 				{
 					"name": "Whispering Aura (Mind Flayer Only)",
 					"entries": [
-						"At the start of each of the spirit's turns, the spirit emits psionic energy if it doesn't have the {@condition Incapacitated|XPHB} condition. Wisdom Saving Throw: DC equals your spell save DC, each creature (other than you) within 5 feet of the spirit. {@actSaveFail} {@damage 2d6} Psychic damage."
+						"At the start of each of the spirit's turns, the spirit emits psionic energy if it doesn't have the {@condition Incapacitated|XPHB} condition. {@actSave wis} DC equals your spell save DC, each creature (other than you) within 5 feet of the spirit. {@actSaveFail} {@damage 2d6} Psychic damage."
 					]
 				}
 			],
@@ -470,9 +470,6 @@
 			"resist": [
 				"poison"
 			],
-			"languages": [
-				"None"
-			],
 			"cr": "0",
 			"action": [
 				{
@@ -545,6 +542,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bat.mp3"
@@ -1148,9 +1146,6 @@
 				"darkvision 60 ft."
 			],
 			"passive": 13,
-			"languages": [
-				"None"
-			],
 			"cr": "1",
 			"action": [
 				{
@@ -1319,6 +1314,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cat.mp3"
@@ -1617,7 +1613,7 @@
 				{
 					"name": "Stony Lethargy (Stone Only)",
 					"entries": [
-						"When a creature starts its turn within 10 feet of the spirit, the spirit can target it with magical energy if the spirit can see it. Wisdom Saving Throw: DC equals your spell save DC, the target. {@actSaveFail} Until the start of its next turn, the target can't make Opportunity Attacks, and its Speed is halved."
+						"When a creature starts its turn within 10 feet of the spirit, the spirit can target it with magical energy if the spirit can see it. {@actSave wis} DC equals your spell save DC, the target. {@actSaveFail} Until the start of its next turn, the target can't make Opportunity Attacks, and its Speed is halved."
 					]
 				}
 			],
@@ -1913,9 +1909,6 @@
 				"darkvision 60 ft."
 			],
 			"passive": 15,
-			"languages": [
-				"None"
-			],
 			"cr": "1",
 			"trait": [
 				{
@@ -2217,7 +2210,7 @@
 				{
 					"name": "Slam",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@dice 1d10 + 4 + summonSpellLevel} Bludgeoning (Earth only), Cold (Water only), Lightning (Air only), or Fire (Fire only) damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d10 + 4 + summonSpellLevel} Bludgeoning (Earth only), Cold (Water only), Lightning (Air only), or Fire (Fire only) damage."
 					]
 				}
 			],
@@ -2416,9 +2409,6 @@
 			"wis": 11,
 			"cha": 6,
 			"passive": 10,
-			"languages": [
-				"None"
-			],
 			"cr": "4",
 			"action": [
 				{
@@ -2744,7 +2734,7 @@
 				{
 					"name": "Death Throes (Demon Only)",
 					"entries": [
-						"When the spirit drops to 0 Hit Points or the spell ends, the spirit explodes. Dexterity Saving Throw: DC equals your spell save DC, each creature in a 10-foot Emanation originating from the spirit. {@actSaveFail} {@dice 2d10} plus this spell's level Fire damage. {@actSaveSuccess} Half damage."
+						"When the spirit drops to 0 Hit Points or the spell ends, the spirit explodes. {@actSave dex} DC equals your spell save DC, each creature in a 10-foot Emanation originating from the spirit. {@actSaveFail} {@damage 2d10} plus this spell's level Fire damage. {@actSaveSuccess} Half damage."
 					]
 				},
 				{
@@ -3014,6 +3004,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/frog.mp3"
@@ -3314,13 +3305,13 @@
 				{
 					"name": "Poison Jab",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 10 ft. {@h}{@dice 1d6 + 3 + summonSpellLevel} Piercing damage plus {@damage 1d4} Poison damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 10 ft. {@h}{@damage 1d6 + 3 + summonSpellLevel} Piercing damage plus {@damage 1d4} Poison damage."
 					]
 				},
 				{
 					"name": "Web Bolt (Spider Only)",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack Bonus equals your spell attack modifier}, range 60 ft. {@h}{@dice 1d10 + 3 + summonSpellLevel} Bludgeoning damage, and the target's Speed is reduced to 0 until the start of the insect's next turn."
+						"{@atkr r} {@hitYourSpellAttack Bonus equals your spell attack modifier}, range 60 ft. {@h}{@damage 1d10 + 3 + summonSpellLevel} Bludgeoning damage, and the target's Speed is reduced to 0 until the start of the insect's next turn."
 					]
 				}
 			],
@@ -3527,9 +3518,6 @@
 				"darkvision 60 ft."
 			],
 			"passive": 14,
-			"languages": [
-				"None"
-			],
 			"cr": "1",
 			"trait": [
 				{
@@ -3767,6 +3755,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hawk.mp3"
@@ -4073,6 +4062,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"token": {
 				"name": "Lizard",
 				"source": "MM"
@@ -4271,9 +4261,6 @@
 				"darkvision 30 ft."
 			],
 			"passive": 12,
-			"languages": [
-				"None"
-			],
 			"cr": "0",
 			"trait": [
 				{
@@ -4305,6 +4292,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/octopus.mp3"
@@ -4386,7 +4374,7 @@
 				{
 					"name": "Otherworldly Slam",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@dice 1d8 + summonSpellLevel} of Radiant (Celestial), Psychic (Fey), or Necrotic (Fiend) damage."
+						"{@atkr m} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d8 + summonSpellLevel} of Radiant (Celestial), Psychic (Fey), or Necrotic (Fiend) damage."
 					]
 				}
 			],
@@ -4481,6 +4469,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"token": {
 				"name": "Owl",
 				"source": "MM"
@@ -4947,6 +4936,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"token": {
 				"name": "Rat",
 				"source": "MM"
@@ -5021,6 +5011,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"token": {
 				"name": "Raven",
 				"source": "MM"
@@ -5080,9 +5071,6 @@
 				"blindsight 30 ft."
 			],
 			"passive": 12,
-			"languages": [
-				"None"
-			],
 			"cr": "1/2",
 			"trait": [
 				{
@@ -5219,9 +5207,6 @@
 				"blindsight 10 ft."
 			],
 			"passive": 9,
-			"languages": [
-				"None"
-			],
 			"cr": "0",
 			"action": [
 				{
@@ -5598,6 +5583,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/spider.mp3"
@@ -6231,9 +6217,6 @@
 				"darkvision 60 ft."
 			],
 			"passive": 13,
-			"languages": [
-				"None"
-			],
 			"cr": "0",
 			"action": [
 				{
@@ -6243,6 +6226,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/weasel.mp3"

@@ -47,9 +47,9 @@ class PageFilterEquipment extends PageFilterBase {
 		this._typeFilter = new Filter({
 			header: "Type",
 			deselFn: (it) => PageFilterItems._DEFAULT_HIDDEN_TYPES.has(it),
-			displayFn: StrUtil.toTitleCase,
+			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
-		this._propertyFilter = new Filter({header: "Property", displayFn: StrUtil.toTitleCase});
+		this._propertyFilter = new Filter({header: "Property", displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._categoryFilter = new Filter({
 			header: "Category",
 			items: ["Basic", "Generic Variant", "Specific Variant", "Other"],
@@ -81,7 +81,7 @@ class PageFilterEquipment extends PageFilterBase {
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
-		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
+		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._masteryFilter = new Filter({header: "Mastery", displayFn: this.constructor._getMasteryDisplay.bind(this)});
 	}
 
@@ -98,18 +98,13 @@ class PageFilterEquipment extends PageFilterBase {
 			return;
 		}
 
-		if (item._valueFromRarity) {
-			item._l_value = Parser.itemValueToFullMultiCurrency({value: item._valueFromRarity, currencyConversion: item.currencyConversion}, {isShortForm: true}).replace(/ +/g, "\u00A0");
-			return;
-		}
-
 		item._l_value = "\u2014";
 	}
 
 	static mutateForFilters (item) {
 		this._mutateForFilters_commonSources(item);
 
-		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p)?.name).filter(Boolean) : [];
+		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p?.uid || p)?.name).filter(Boolean) : [];
 
 		this._mutateForFilters_commonMisc(item);
 		if (item._isItemGroup) item._fMisc.push("Item Group");
@@ -294,7 +289,7 @@ class PageFilterItems extends PageFilterEquipment {
 	constructor (opts) {
 		super(opts);
 
-		this._tierFilter = new Filter({header: "Tier", items: ["none", "minor", "major"], itemSortFn: null, displayFn: StrUtil.toTitleCase});
+		this._tierFilter = new Filter({header: "Tier", items: ["none", "minor", "major"], itemSortFn: null, displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._attachedSpellsFilter = new SearchableFilter({header: "Attached Spells", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
 		this._lootTableFilter = new Filter({
 			header: "Found On",
@@ -308,7 +303,7 @@ class PageFilterItems extends PageFilterEquipment {
 			header: "Rarity",
 			items: [...Parser.ITEM_RARITIES],
 			itemSortFn: null,
-			displayFn: StrUtil.toTitleCase,
+			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
 		this._attunementFilter = new Filter({header: "Attunement", items: [...PageFilterItems._FILTER_BASE_ITEMS_ATTUNEMENT], itemSortFn: PageFilterItems._sortAttunementFilter});
 		this._bonusFilter = new Filter({
@@ -341,6 +336,11 @@ class PageFilterItems extends PageFilterEquipment {
 			},
 			itemSortFn: SortUtil.ascSortLower,
 		});
+		this._vulnerableFilter = FilterCommon.getDamageVulnerableFilter();
+		this._resistFilter = FilterCommon.getDamageResistFilter();
+		this._immuneFilter = FilterCommon.getDamageImmuneFilter();
+		this._defenseFilter = new MultiFilter({header: "Damage", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
+		this._conditionImmuneFilter = FilterCommon.getConditionImmuneFilter();
 	}
 
 	static mutateForFilters (item) {
@@ -379,6 +379,9 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.bonusProficiencyBonus) item._fBonus.push("Proficiency Bonus");
 
 		item._fAttunement = this._getAttunementFilterItems(item);
+
+		FilterCommon.mutateForFilters_damageVulnResImmune(item);
+		FilterCommon.mutateForFilters_conditionImmune(item);
 	}
 
 	static _mutateForFilters_bonusWeapon ({prop, item, text}) {
@@ -405,6 +408,10 @@ class PageFilterItems extends PageFilterEquipment {
 		this._attunementFilter.addItem(item._fAttunement);
 		this._rechargeTypeFilter.addItem(item.recharge);
 		this._optionalfeaturesFilter.addItem(item.optionalfeatures);
+		this._vulnerableFilter.addItem(item._fVuln);
+		this._resistFilter.addItem(item._fRes);
+		this._immuneFilter.addItem(item._fImm);
+		this._conditionImmuneFilter.addItem(item._fCondImm);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -425,6 +432,8 @@ class PageFilterItems extends PageFilterEquipment {
 			this._damageDiceFilter,
 			this._acFilter,
 			this._bonusFilter,
+			this._defenseFilter,
+			this._conditionImmuneFilter,
 			this._miscFilter,
 			this._rechargeTypeFilter,
 			this._poisonTypeFilter,
@@ -454,6 +463,12 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fDamageDice,
 			it._fAc,
 			it._fBonus,
+			[
+				it._fVuln,
+				it._fRes,
+				it._fImm,
+			],
+			it._fCondImm,
 			it._fMisc,
 			it.recharge,
 			it.poisonTypes,
