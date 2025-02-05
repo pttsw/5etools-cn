@@ -17,7 +17,8 @@
 						}
 					]
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "奥能动力甲",
@@ -36,7 +37,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -102,7 +103,8 @@
 						}
 					}
 				]
-			}
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "魔法力量护甲",
@@ -121,7 +123,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -181,52 +183,78 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "幽影护甲",
 			"ENG_name": "Armor of Shadows",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "星移步法",
 			"ENG_name": "Ascendant Step",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "野兽之语",
 			"ENG_name": "Beast Speech",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "惑人低语",
 			"ENG_name": "Bewitching Whispers",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "远古奥秘之书",
 			"ENG_name": "Book of Ancient Secrets",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "折返之靴",
@@ -245,7 +273,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -290,30 +318,38 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "卡瑟利之链",
 			"ENG_name": "Chains of Carceri",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "云雾符文",
 			"ENG_name": "Cloud Rune",
 			"source": "TCE",
 			"system": {
-				"activation": {
-					"type": "reaction"
-				},
-				"type": {
-					"value": "enchantment",
-					"subtype": "rune"
-				}
-			}
+				"type.value": "enchantment",
+				"type.subtype": "rune",
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "reaction"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "魔鬼视界",
@@ -337,16 +373,22 @@
 						}
 					]
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "恐惧箴言",
 			"ENG_name": "Dreadful Word",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "魔能意志",
@@ -363,16 +405,22 @@
 						}
 					]
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "魔能视界",
 			"ENG_name": "Eldritch Sight",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "增强奥术法器",
@@ -391,7 +439,7 @@
 					"restrictions": {
 						"type": "weapon"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -486,7 +534,8 @@
 					"enchantmentRiderParent": "I4qB050rdgSsoIEd",
 					"transfer": true
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "增强防御",
@@ -505,7 +554,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -562,7 +611,8 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "增强武器",
@@ -581,7 +631,7 @@
 					"restrictions": {
 						"type": "weapon"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -638,16 +688,22 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "邪魔活力",
 			"ENG_name": "Fiendish Vigor",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "火焰符文",
@@ -674,20 +730,22 @@
 						"束缚"
 					]
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "寒霜符文",
 			"ENG_name": "Frost Rune",
 			"source": "TCE",
 			"system": {
-				"activation": {
-					"type": "bonus"
-				},
-				"type": {
-					"value": "enchantment",
-					"subtype": "rune"
-				}
+				"type.value": "enchantment",
+				"type.subtype": "rune",
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "bonus"
+					}
+				]
 			},
 			"effects": [
 				{
@@ -721,7 +779,8 @@
 					],
 					"transfer": true
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "警觉之盔",
@@ -740,7 +799,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -787,20 +846,22 @@
 					],
 					"transfer": true
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "山丘符文",
 			"ENG_name": "Hill Rune",
 			"source": "TCE",
 			"system": {
-				"activation": {
-					"type": "bonus"
-				},
-				"type": {
-					"value": "enchantment",
-					"subtype": "rune"
-				}
+				"type.value": "enchantment",
+				"type.subtype": "rune",
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "bonus"
+					}
+				]
 			},
 			"effects": [
 				{
@@ -829,7 +890,8 @@
 					],
 					"transfer": true
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "人工生命仆从",
@@ -851,18 +913,28 @@
 			"ENG_name": "Mask of Many Faces",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "万形之主",
 			"ENG_name": "Master of Myriad Forms",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "思维砥石",
@@ -881,7 +953,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -936,43 +1008,64 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "混沌手下",
 			"ENG_name": "Minions of Chaos",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "心灵泥沼",
 			"ENG_name": "Mire the Mind",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "迷雾幻影",
 			"ENG_name": "Misty Visions",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "超凡跳跃",
 			"ENG_name": "Otherworldly Leap",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "刃之魔契",
@@ -1000,7 +1093,7 @@
 					"restrictions": {
 						"type": "weapon"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -1065,7 +1158,8 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "连射武器",
@@ -1084,7 +1178,7 @@
 					"restrictions": {
 						"type": "weapon"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -1124,7 +1218,8 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "仿制魔法物品",
@@ -1153,7 +1248,8 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "斥力之盾",
@@ -1172,7 +1268,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -1237,7 +1333,8 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "抗力护甲",
@@ -1256,7 +1353,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -1619,7 +1716,8 @@
 					"transfer": true,
 					"enchantmentRiderParent": "53ofZQaLsaqm16Wv"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "回力武器",
@@ -1638,7 +1736,7 @@
 					"restrictions": {
 						"type": "weapon"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -1673,25 +1771,36 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "重塑血肉",
 			"ENG_name": "Sculptor of Flesh",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "凶兆符记",
 			"ENG_name": "Sign of Ill Omen",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "法力恢复戒指",
@@ -1710,7 +1819,7 @@
 					"restrictions": {
 						"type": "equipment"
 					}
-				}
+				]
 			},
 			"effects": [
 				{
@@ -1760,7 +1869,8 @@
 					],
 					"type": "enchantment"
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "岩石符文",
@@ -1800,48 +1910,66 @@
 						"失能"
 					]
 				}
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "风暴符文",
 			"ENG_name": "Storm Rune",
 			"source": "TCE",
 			"system": {
-				"activation": {
-					"type": "bonus"
-				},
-				"type": {
-					"value": "enchantment",
-					"subtype": "rune"
-				}
-			}
+				"type.value": "enchantment",
+				"type.subtype": "rune",
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "bonus"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "命运窃贼",
 			"ENG_name": "Thief of Five Fates",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "穹宇尽视",
 			"ENG_name": "Visions of Distant Realms",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "坟墓低语",
 			"ENG_name": "Whispers of the Grave",
 			"source": "PHB",
 			"system": {
-				"activation.type": null,
-				"activation.cost": null
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		}
 	]
 }

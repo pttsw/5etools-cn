@@ -113,7 +113,7 @@ class PageFilterRaces extends PageFilterBase {
 			header: "Creature Type",
 			cnHeader: "生物类型",
 			items: Parser.MON_TYPES,
-			displayFn: StrUtil.toTitleCase,
+			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 			itemSortFn: SortUtil.ascSortLower,
 		});
 		this._ageFilter = new RangeFilter({
@@ -165,8 +165,8 @@ class PageFilterRaces extends PageFilterBase {
 		else if (r.age?.mature != null) r._fAge = r.age.mature;
 		else if (r.age?.max != null) r._fAge = r.age.max;
 
-		FilterCommon.mutateForFilters_damageVulnResImmune_player(r);
-		FilterCommon.mutateForFilters_conditionImmune_player(r);
+		FilterCommon.mutateForFilters_damageVulnResImmune(r);
+		FilterCommon.mutateForFilters_conditionImmune(r);
 	}
 
 	addToFilters (r, isExcluded) {

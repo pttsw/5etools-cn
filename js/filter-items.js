@@ -48,9 +48,9 @@ class PageFilterEquipment extends PageFilterBase {
 			header: "Type",
 			cnHeader: "类别",
 			deselFn: (it) => PageFilterItems._DEFAULT_HIDDEN_TYPES.has(it),
-			displayFn: StrUtil.toTitleCase,
+			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
-		this._propertyFilter = new Filter({header: "Property", cnHeader:"物品属性", displayFn: StrUtil.toTitleCase});
+		this._propertyFilter = new Filter({header: "Property", cnHeader:"物品属性", displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._categoryFilter = new Filter({
 			header: "Category",
 			cnHeader:"分类",
@@ -85,7 +85,7 @@ class PageFilterEquipment extends PageFilterBase {
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
-		this._poisonTypeFilter = new Filter({header: "Poison Type", cnHeader:"毒药类型", items: ["服用", "伤口", "吸入", "接触"], displayFn: StrUtil.toTitleCase});
+		this._poisonTypeFilter = new Filter({header: "Poison Type", cnHeader:"毒药类型", items: ["服用", "伤口", "吸入", "接触"], displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._masteryFilter = new Filter({header: "Mastery", cnHeader:"精通", displayFn: this.constructor._getMasteryDisplay.bind(this)});
 	}
 
@@ -102,18 +102,13 @@ class PageFilterEquipment extends PageFilterBase {
 			return;
 		}
 
-		if (item._valueFromRarity) {
-			item._l_value = Parser.itemValueToFullMultiCurrency({value: item._valueFromRarity, currencyConversion: item.currencyConversion}, {isShortForm: true}).replace(/ +/g, "\u00A0");
-			return;
-		}
-
 		item._l_value = "\u2014";
 	}
 
 	static mutateForFilters (item) {
 		this._mutateForFilters_commonSources(item);
 
-		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p)?.name).filter(Boolean) : [];
+		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p?.uid || p)?.name).filter(Boolean) : [];
 
 		this._mutateForFilters_commonMisc(item);
 		if (item._isItemGroup) item._fMisc.push("物品组别");
@@ -298,8 +293,8 @@ class PageFilterItems extends PageFilterEquipment {
 	constructor (opts) {
 		super(opts);
 
-		this._tierFilter = new Filter({header: "Tier",cnHeader:"层级", items: ["none", "主要", "次要"], itemSortFn: null, displayFn: StrUtil.toTitleCase});
-		this._attachedSpellsFilter = new SearchableFilter({header: "Attached Spells",cnHeader:"附加法术", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
+		this._tierFilter = new Filter({header: "Tier", cnHeader:"层级", items: ["none", "主要", "次要"], itemSortFn: null, displayFn: StrUtil.toTitleCase.bind(StrUtil)});
+		this._attachedSpellsFilter = new SearchableFilter({header: "Attached Spells", cnHeader:"附加法术", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
 		this._lootTableFilter = new Filter({
 			header: "Found On",
 			cnHeader:"位于魔法物品表",
@@ -315,7 +310,7 @@ class PageFilterItems extends PageFilterEquipment {
 			cnHeader: "稀有度",
 			items: [...Parser.ITEM_RARITIES],
 			itemSortFn: null,
-			// displayFn: StrUtil.toTitleCase,
+			// displayFn: StrUtil.toTitleCase.bind(StrUtil),
 			displayFn: it => Parser.RARITIES_TO_CN[it] || StrUtil.toTitleCase(it)
 		});
 		this._attunementFilter = new Filter({header: "Attunement", cnHeader:"同调", items: [...PageFilterItems._FILTER_BASE_ITEMS_ATTUNEMENT], itemSortFn: PageFilterItems._sortAttunementFilter});
@@ -352,6 +347,11 @@ class PageFilterItems extends PageFilterEquipment {
 			},
 			itemSortFn: SortUtil.ascSortLower,
 		});
+		this._vulnerableFilter = FilterCommon.getDamageVulnerableFilter();
+		this._resistFilter = FilterCommon.getDamageResistFilter();
+		this._immuneFilter = FilterCommon.getDamageImmuneFilter();
+		this._defenseFilter = new MultiFilter({header: "Damage", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
+		this._conditionImmuneFilter = FilterCommon.getConditionImmuneFilter();
 	}
 
 	static mutateForFilters (item) {
@@ -390,6 +390,9 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.bonusProficiencyBonus) item._fBonus.push("Proficiency Bonus");
 
 		item._fAttunement = this._getAttunementFilterItems(item);
+
+		FilterCommon.mutateForFilters_damageVulnResImmune(item);
+		FilterCommon.mutateForFilters_conditionImmune(item);
 	}
 
 	static _mutateForFilters_bonusWeapon ({prop, item, text}) {
@@ -416,6 +419,10 @@ class PageFilterItems extends PageFilterEquipment {
 		this._attunementFilter.addItem(item._fAttunement);
 		this._rechargeTypeFilter.addItem(item.recharge);
 		this._optionalfeaturesFilter.addItem(item.optionalfeatures);
+		this._vulnerableFilter.addItem(item._fVuln);
+		this._resistFilter.addItem(item._fRes);
+		this._immuneFilter.addItem(item._fImm);
+		this._conditionImmuneFilter.addItem(item._fCondImm);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -436,6 +443,8 @@ class PageFilterItems extends PageFilterEquipment {
 			this._damageDiceFilter,
 			this._acFilter,
 			this._bonusFilter,
+			this._defenseFilter,
+			this._conditionImmuneFilter,
 			this._miscFilter,
 			this._rechargeTypeFilter,
 			this._poisonTypeFilter,
@@ -465,6 +474,12 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fDamageDice,
 			it._fAc,
 			it._fBonus,
+			[
+				it._fVuln,
+				it._fRes,
+				it._fImm,
+			],
+			it._fCondImm,
 			it._fMisc,
 			it.recharge,
 			it.poisonTypes,

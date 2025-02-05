@@ -778,7 +778,8 @@
 						"钝击"
 					]
 				]
-			}
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "马友夫强酸箭",
@@ -1074,12 +1075,29 @@
 			"ENG_name": "Spirit Guardians",
 			"source": "PHB",
 			"system": {
-				"target.value": null,
-				"target.units": null,
-				"target.type": "self",
-				"range.value": 15,
-				"range.units": "ft"
-			}
+				"activities": [
+					{
+						"type": "attack",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "4d4[immediate]",
+								"types": [
+									"acid"
+								]
+							},
+							{
+								"custom.enabled": true,
+								"custom.formula": "(@item.level)d4[end of turn]",
+								"types": [
+									"acid"
+								]
+							}
+						]
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "死神灵魄",
@@ -1148,11 +1166,16 @@
 			"ENG_name": "Summon Aberration",
 			"source": "TCE",
 			"system": {
-				"summons": {
-					"match": {
-						"proficiency": true,
-						"attacks": true,
-						"saves": true
+				"summons.match.proficiency": true,
+				"summons.match.attacks": true,
+				"summons.match.saves": true,
+				"summons.bonuses.ac": "@item.level",
+				"summons.bonuses.hp": "(@item.level - 4) * 10",
+				"summons.bonuses.attackDamage": "@item.level",
+				"summons.profiles": [
+					{
+						"name": "Beholderkin",
+						"uuid": "@creature[aberrant spirit (beholderkin)|tce]"
 					},
 					"bonuses": {
 						"ac": "@物品等级",
@@ -1190,9 +1213,9 @@
 						"hp": "(@item.level - 2) * 5",
 						"attackDamage": "@物品等级"
 					},
-					"match": {
-						"proficiency": true,
-						"attacks": true
+					{
+						"name": "Land",
+						"uuid": "@creature[bestial spirit (land)|tce]"
 					},
 					"profiles": [
 						{
@@ -1219,10 +1242,16 @@
 			"ENG_name": "Summon Celestial",
 			"source": "TCE",
 			"system": {
-				"summons": {
-					"match": {
-						"proficiency": true,
-						"attacks": true
+				"summons.match.proficiency": true,
+				"summons.match.attacks": true,
+				"summons.bonuses.ac": "@item.level",
+				"summons.bonuses.hp": "(@item.level - 5) * 10",
+				"summons.bonuses.attackDamage": "@item.level",
+				"summons.bonuses.healing": "@item.level",
+				"summons.profiles": [
+					{
+						"name": "Avenger",
+						"uuid": "@creature[celestial spirit (avenger)|tce]"
 					},
 					"bonuses": {
 						"ac": "@物品等级",
@@ -1256,10 +1285,9 @@
 						"hp": "(@物品等级 - 4) * 15",
 						"attackDamage": "@物品等级"
 					},
-					"match": {
-						"proficiency": true,
-						"attacks": true,
-						"saves": true
+					{
+						"name": "Metal",
+						"uuid": "@creature[construct spirit (metal)|tce]"
 					},
 					"profiles": [
 						{
@@ -1318,9 +1346,9 @@
 						"hp": "(@item.level - 4) * 10",
 						"attackDamage": "@物品等级"
 					},
-					"match": {
-						"proficiency": true,
-						"attacks": true
+					{
+						"name": "Earth",
+						"uuid": "@creature[elemental spirit (earth)|tce]"
 					},
 					"profiles": [
 						{
@@ -1358,10 +1386,9 @@
 						"hp": "(@物品等级 - 3) * 10",
 						"attackDamage": "@物品等级"
 					},
-					"match": {
-						"proficiency": true,
-						"attacks": true,
-						"saves": true
+					{
+						"name": "Mirthful",
+						"uuid": "@creature[fey spirit (mirthful)|tce]"
 					},
 					"profiles": [
 						{
@@ -1395,10 +1422,9 @@
 						"attackDamage": "@物品等级",
 						"saveDamage": "@物品等级"
 					},
-					"match": {
-						"attacks": true,
-						"proficiency": true,
-						"saves": true
+					{
+						"name": "Devil",
+						"uuid": "@creature[fiendish spirit (devil)|tce]"
 					},
 					"profiles": [
 						{
@@ -1425,10 +1451,15 @@
 			"ENG_name": "Summon Shadowspawn",
 			"source": "TCE",
 			"system": {
-				"summons": {
-					"match": {
-						"attacks": true,
-						"saves": true
+				"summons.match.attacks": true,
+				"summons.match.saves": true,
+				"summons.bonuses.ac": "@item.level",
+				"summons.bonuses.hp": "(@item.level - 3) * 15",
+				"summons.bonuses.attackDamage": "@item.level",
+				"summons.profiles": [
+					{
+						"name": "Fury",
+						"uuid": "@creature[shadow spirit (fury)|tce]"
 					},
 					"bonuses": {
 						"ac": "@物品等级",
@@ -1466,10 +1497,9 @@
 						"hp": "(@物品等级 - 3) * 10",
 						"attackDamage": "@物品等级"
 					},
-					"match": {
-						"attacks": true,
-						"proficiency": true,
-						"saves": true
+					{
+						"name": "Putrid",
+						"uuid": "@creature[undead spirit (putrid)|tce]"
 					},
 					"profiles": [
 						{

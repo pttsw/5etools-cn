@@ -101,7 +101,7 @@ export class PageFilterBase {
 		});
 	}
 
-	static _isReprinted (ent) {
+	static isReprinted (ent) {
 		if (!ent?.reprintedAs?.length) return false;
 		return ent.reprintedAs
 			.some(it => {

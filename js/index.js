@@ -36,6 +36,8 @@ class IndexPage {
 		await this._pOnLoad_pInitGeneric();
 		this._pOnLoad_initElements();
 		await this._pOnLoad_pAddHashChangeListener();
+
+		window.dispatchEvent(new Event("toolsLoaded"));
 	}
 
 	/* -------------------------------------------- */

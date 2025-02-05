@@ -59,11 +59,11 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 			header: "Spell",
 			cnHeader: "法术",
 			items: [],
-			displayFn: StrUtil.toTitleCase,
+			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
 		this._featureFilter = new Filter({
 			header: "Feature",
-			displayFn: StrUtil.toTitleCase,
+			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
 		this._levelFilter = new Filter({
 			header: "Level",

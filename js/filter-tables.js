@@ -22,6 +22,8 @@ class PageFilterTables extends PageFilterBase {
 	static mutateForFilters (it) {
 		this._mutateForFilters_commonSources(it);
 		this._mutateForFilters_commonMisc(it);
+
+		if (it.isNameGenerator) it._fMisc.push("Name Generator");
 	}
 
 	addToFilters (it, isExcluded) {

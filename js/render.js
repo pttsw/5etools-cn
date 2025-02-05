@@ -1281,18 +1281,37 @@ globalThis.Renderer = function () {
 		this._subVariant = false;
 	};
 
+	/* -------------------------------------------- */
+
+	this._SPELLCASTING_PROPS = [
+		"constant",
+		"will",
+		"recharge",
+		"charges",
+		"rest",
+		"restLong",
+		"daily",
+		"weekly",
+		"monthly",
+		"yearly",
+		"ritual",
+		"legendar",
+	];
+
 	this._renderSpellcasting_getEntries = function (entry) {
 		const hidden = new Set(entry.hidden || []);
 		const toRender = [{type: "entries", name: entry.name, entries: entry.headerEntries ? MiscUtil.copyFast(entry.headerEntries) : []}];
 
-		if (entry.constant || entry.will || entry.recharge || entry.charges || entry.rest || entry.daily || entry.weekly || entry.monthly || entry.yearly || entry.ritual) {
+		if (this._SPELLCASTING_PROPS.some(prop => entry[prop])) {
 			const tempList = {type: "list", style: "list-hang-notitle", items: [], data: {isSpellList: true}};
 			if (entry.constant && !hidden.has("constant")) tempList.items.push({type: "itemSpell", name: `Constant:`, entry: this._renderSpellcasting_getRenderableList(entry.constant).join(", ")});
 			if (entry.will && !hidden.has("will")) tempList.items.push({type: "itemSpell", name: `随意:`, entry: this._renderSpellcasting_getRenderableList(entry.will).join(", ")});
 
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "recharge", fnGetDurationText: num => `{@recharge ${num}|m}`, isSkipPrefix: true});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "legendary", fnGetDurationText: num => ` legendary action${num === 1 ? "" : "s"}`});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "charges", fnGetDurationText: num => ` charge${num === 1 ? "" : "s"}`});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "rest", durationText: "/休息"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "restLong", durationText: "/长休"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/天"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "weekly", durationText: "/周"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "monthly", durationText: "/月"});
@@ -1366,6 +1385,8 @@ globalThis.Renderer = function () {
 		if (!toRender?.[0].entries?.length) return;
 		this._recursiveRender({type: "entries", entries: toRender}, textStack, meta);
 	};
+
+	/* -------------------------------------------- */
 
 	this._renderQuote = function (entry, textStack, meta, options) {
 		textStack[0] += `<div class="${this._renderList_getQuoteCssClasses(entry, textStack, meta, options)}">`;
@@ -1544,7 +1565,7 @@ globalThis.Renderer = function () {
 	this._renderItemSub = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		const isAddPeriod = entry.name && entry.nameDot !== false && !Renderer._INLINE_HEADER_TERMINATORS.has(entry.name[entry.name.length - 1]);
-		this._recursiveRender(entry.entry, textStack, meta, {prefix: `<p class="rd__p-list-item" ${entry.name ? `data-roll-name-ancestor="${Renderer.stripTags(entry.name).qq()}"` : ""}>${entry.name ? `<span class="italic rd__list-item-name">${entry.name}${isAddPeriod ? "." : ""}</span> ` : ""}`, suffix: "</p>"});
+		this._recursiveRender(entry.entry, textStack, meta, {prefix: `<p class="rd__p-list-item" ${entry.name ? `data-roll-name-ancestor="${Renderer.stripTags(entry.name).qq()}"` : ""}>${entry.name ? `<span class="italic rd__list-item-name">${this.render(entry.name)}${isAddPeriod ? "." : ""}</span> ` : ""}`, suffix: "</p>"});
 		this._renderSuffix(entry, textStack, meta, options);
 	};
 
@@ -1595,6 +1616,19 @@ globalThis.Renderer = function () {
 			return;
 		}
 
+		if (!entry.data) {
+			this._renderPrefix(entry, textStack, meta, options);
+			this._renderDataHeader(textStack, headerName, headerStyle);
+			textStack[0] += `<tr>
+				<td colspan="6">
+					<i class="text-danger">Entry &quot;<i><code>${JSON.stringify(entry).qq()}</code></i> did not contain required &quot;data&quot; key!</i>
+				</td>
+			</tr>`;
+			this._renderDataFooter(textStack);
+			this._renderSuffix(entry, textStack, meta, options);
+			return;
+		}
+
 		const strategy = this._INLINE_STATBLOCK_STRATEGIES[entry.dataType];
 
 		if (!strategy?.pFnPreProcess && !entry.data?._copy) {
@@ -1620,7 +1654,7 @@ globalThis.Renderer = function () {
 					))
 					: entry.data;
 
-				const ent = strategy?.pFnPreProcess ? await strategy.pFnPreProcess(entLoaded) : entLoaded;
+				const ent = entLoaded && strategy?.pFnPreProcess ? await strategy.pFnPreProcess(entLoaded) : entLoaded;
 
 				const tbl = ele.closest("table");
 				const nxt = e_({
@@ -1947,12 +1981,18 @@ globalThis.Renderer = function () {
 				break;
 			case "@actSave": textStack[0] += `<i>${Parser.attAbvToFull(text)} Saving Throw:</i>`; break;
 			case "@actSaveSuccess": textStack[0] += `<i>Success:</i>`; break;
-			case "@actSaveFail": textStack[0] += `<i>Failure:</i>`; break;
+			case "@actSaveFail": {
+				const [ordinal] = Renderer.splitTagByPipe(text);
+				if (ordinal) textStack[0] += `<i>${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()} Failure:</i>`;
+				else textStack[0] += `<i>Failure:</i>`;
+				break;
+			}
 			case "@actSaveSuccessOrFail": textStack[0] += `<i>Failure or Success:</i>`; break;
 			case "@actTrigger": textStack[0] += `<i>Trigger:</i>`; break;
-			case "@actResponse": textStack[0] += `<i>Response:</i>`; break;
-			case "@h": textStack[0] += `<i>命中：</i> `; break;
-			case "@m": textStack[0] += `<i>未命中：</i> `; break;
+			case "@actResponse": textStack[0] += `<i>Response${text.includes("d") ? "\u2014" : ":"}</i>`; break;
+			case "@h": textStack[0] += `<i>命中:</i> `; break;
+			case "@m": textStack[0] += `<i>未命中:</i> `; break;
+			case "@hom": textStack[0] += `<i>Hit or Miss:</i> `; break;
 			case "@color": {
 				const [toDisplay, color] = Renderer.splitTagByPipe(text);
 				const ptColor = this._renderString_renderTag_getBrewColorPart(color);
@@ -3416,7 +3456,9 @@ Renderer.utils = class {
 		return fluff;
 	}
 
-	static async _pGetFluff ({entity, fluffProp, lockToken2} = {}) {
+	static async _pGetImplicitFluff ({entity, fluffProp, lockToken2} = {}) {
+		if (!entity.hasFluff && !entity.hasFluffImages) return null;
+
 		const fluffEntity = await DataLoader.pCacheAndGet(fluffProp, entity.source, UrlUtil.URL_TO_HASH_BUILDER[fluffProp](entity), {lockToken2});
 		if (fluffEntity) return fluffEntity;
 
@@ -3445,14 +3487,12 @@ Renderer.utils = class {
 			return predefinedFluff;
 		}
 
-		const fluff = await Renderer.utils._pGetFluff({entity, fluffProp, lockToken2});
+		const fluff = await Renderer.utils._pGetImplicitFluff({entity, fluffProp, lockToken2});
 		if (!fluff) return null;
 
 		if (pFnPostProcess) return pFnPostProcess(fluff);
 		return fluff;
 	}
-
-	static _TITLE_SKIP_TYPES = new Set(["entries", "section"]);
 	/**
 	 * @param isImageTab True if this is the "Images" tab, false otherwise
 	 * @param $content The statblock wrapper
@@ -3475,31 +3515,74 @@ Renderer.utils = class {
 		$td.fastSetHtml(Renderer.utils.getFluffTabContent({entity, fluff, isImageTab}));
 	}
 
-	static getFluffTabContent ({entity, fluff, isImageTab = false}) {
-		Renderer.get().setFirstSection(true);
-		return (fluff[isImageTab ? "images" : "entries"] || []).map((ent, i) => {
-			if (isImageTab) return Renderer.get().render(ent);
+	static HTML_NO_INFO = "<i>No information available.</i>";
+	static HTML_NO_IMAGES = "<i>No images available.</i>";
 
-			// If the first entry has a name, and it matches the name of the statblock, remove it to avoid having two
-			//   of the same title stacked on top of each other.
-			if (i === 0 && ent.name && entity.name && (Renderer.utils._TITLE_SKIP_TYPES).has(ent.type)) {
-				const entryLowName = ent.name.toLowerCase().trim();
-				const entityLowName = entity.name.toLowerCase().trim();
+	/* ----- */
 
-				if (entryLowName.includes(entityLowName) || entityLowName.includes(entryLowName)) {
-					const cpy = MiscUtil.copyFast(ent);
-					delete cpy.name;
-					return Renderer.get().render(cpy);
-				} else return Renderer.get().render(ent);
-			} else {
-				if (typeof ent === "string") return `<p>${Renderer.get().render(ent)}</p>`;
-				else return Renderer.get().render(ent);
-			}
-		}).join("");
+	static _TITLE_SKIP_TYPES = new Set(["entries", "section"]);
+
+	static _getFluffTabContent_getSkippableEntryName (name) {
+		return name
+			.toLowerCase()
+			.trim()
+			.split(/\s+/g)
+			.filter(Boolean)
+			.map(tk => tk.toSingle())
+			.join(" ");
 	}
 
-	static HTML_NO_INFO = "<i>没有可用的信息。</i>";
-	static HTML_NO_IMAGES = "<i>没有可用的图片。</i>";
+	/**
+	 * If the first entry has a name, and it matches the name of the statblock, remove it to avoid
+	 *   having two of the same title stacked on top of each other.
+	 */
+	static _getFluffTabContent_isSkipEntryName (
+		{
+			entity,
+			fluff,
+			ix,
+			fluffEntry,
+		},
+	) {
+		if (fluff.preserveName) return false;
+
+		if (ix) return false;
+		if (!entity.name || !fluffEntry.name) return false;
+		if (!Renderer.utils._TITLE_SKIP_TYPES.has(fluffEntry.type)) return false;
+
+		const fluffEntrySkippableName = Renderer.utils._getFluffTabContent_getSkippableEntryName(fluffEntry.name);
+		const entitySkippableName = Renderer.utils._getFluffTabContent_getSkippableEntryName(entity.name);
+
+		return fluffEntrySkippableName.includes(entitySkippableName) || entitySkippableName.includes(fluffEntrySkippableName);
+	}
+
+	static getFluffTabContent ({entity, fluff, isImageTab = false}) {
+		Renderer.get().setFirstSection(true);
+
+		return (fluff[isImageTab ? "images" : "entries"] || [])
+			.map((fluffEntry, ix) => {
+				if (isImageTab) return Renderer.get().render(fluffEntry);
+
+				if (
+					Renderer.utils._getFluffTabContent_isSkipEntryName({
+						entity,
+						fluff,
+						ix,
+						fluffEntry,
+					})
+				) {
+					const cpy = MiscUtil.copyFast(fluffEntry);
+					delete cpy.name;
+					return Renderer.get().render(cpy);
+				}
+
+				if (typeof fluffEntry === "string") return `<p>${Renderer.get().render(fluffEntry)}</p>`;
+				else return Renderer.get().render(fluffEntry);
+			})
+			.join("");
+	}
+
+	/* ----- */
 
 	static prerequisite = class {
 		static _WEIGHTS = [
@@ -4090,6 +4173,7 @@ Renderer.utils = class {
 	}
 
 	static getRepeatableHtml (ent, {isListMode = false} = {}) {
+		if (ent.repeatableHidden) return "";
 		const entryRepeatable = Renderer.utils.getRepeatableEntry(ent);
 		if (entryRepeatable == null) return isListMode ? "\u2014" : "";
 		return Renderer.get().render(entryRepeatable);
@@ -4295,7 +4379,7 @@ Renderer.utils = class {
 
 					if (displayText) fauxEntry.displayText = displayText;
 					else {
-						if (tag === "@ability") fauxEntry.displayText = `${scoreOrMod} (${mod})`;
+						if (tag === "@ability") fauxEntry.displayText = `${scoreOrMod}\u00A0(${mod})`;
 						else fauxEntry.displayText = mod;
 					}
 
@@ -4439,7 +4523,7 @@ Renderer.utils = class {
 			case "@subclassFeature": {
 				const unpacked = DataUtil.class.unpackUidSubclassFeature(text);
 
-				const classPageHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: unpacked.className, source: unpacked.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({feature: {ixLevel: unpacked.level - 1, ixFeature: 0}})}`;
+				const classPageHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: unpacked.className, source: unpacked.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({feature: {ixLevel: unpacked.level - 1, ixFeature: 0}, subclass: {shortName: unpacked.subclassShortName, source: unpacked.subclassSource}})}`;
 
 				return {
 					name: unpacked.name,
@@ -5060,7 +5144,11 @@ Renderer.tag = class {
 	static TagActSaveFailure = class extends this._TagBaseAt {
 		tagName = "actSaveFail";
 
-		_getStripped (tag, text) { return "Failure:"; }
+		_getStripped (tag, text) {
+			const [ordinal] = Renderer.splitTagByPipe(text);
+			if (ordinal) return `${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()} Failure:`;
+			return "Failure:";
+		}
 	};
 
 	static TagActSaveSuccessOrFailure = class extends this._TagBaseAt {
@@ -5078,7 +5166,7 @@ Renderer.tag = class {
 	static TagActResponse = class extends this._TagBaseAt {
 		tagName = "actResponse";
 
-		_getStripped (tag, text) { return "Response:"; }
+		_getStripped (tag, text) { return `Response${text.includes("d") ? "\u2014" : ":"}`; }
 	};
 
 	static TagHitText = class extends this._TagBaseAt {
@@ -5091,6 +5179,12 @@ Renderer.tag = class {
 		tagName = "m";
 
 		_getStripped (tag, text) { return "Miss: "; }
+	};
+
+	static TagHitOrMissText = class extends this._TagBaseAt {
+		tagName = "hom";
+
+		_getStripped (tag, text) { return "Hit or Miss: "; } // I guess they never miss
 	};
 
 	static TagAtk = class extends this._TagBaseAt {
@@ -5661,6 +5755,7 @@ Renderer.tag = class {
 
 		new this.TagHitText(),
 		new this.TagMissText(),
+		new this.TagHitOrMissText(),
 
 		new this.TagAtk(),
 		new this.TagAtkr(),
@@ -6515,6 +6610,7 @@ Renderer.class = class {
 			ptsArmor.joinConjunct(", ", " 和 "),
 			...ptsOther,
 		]
+			.filter(Boolean)
 			.joinConjunct(", ", " 和 ");
 	}
 
@@ -6595,7 +6691,7 @@ Renderer.class = class {
 	static getHtmlPtSavingThrows (cls) {
 		if (!cls.proficiency) return "";
 
-		return `<div><b>豁免熟练:</b> <span>${cls.proficiency.map(p => Parser.attAbvToFull(p))}</span></div>`;
+		return `<div><b>豁免熟练:</b> <span>${cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ")}</span></div>`;
 	}
 
 	static getHtmlPtSkills (cls, {styleHint = null}) {
@@ -8555,7 +8651,7 @@ Renderer.object = class {
 				? `{@b 速度:} ${Parser.getSpeedString(ent)}`
 				: null,
 			entryAbilityScores: Parser.ABIL_ABVS.some(ab => ent[ab] != null)
-				? `{@b 属性值:} ${Parser.ABIL_ABVS.filter(ab => ent[ab] != null).map(ab => `${ab.toUpperCase()} ${Renderer.utils.getAbilityRollerEntry(ent, ab)}`).join(", ")}`
+				? `{@b 属性值:} ${Parser.ABIL_ABVS.filter(ab => ent[ab] != null).map(ab => `${ab.toUpperCase()}\u00A0${Renderer.utils.getAbilityRollerEntry(ent, ab)}`).join(", ")}`
 				: null,
 			entryDamageImmunities: ent.immune != null
 				? `{@b 伤害免疫:} ${Parser.getFullImmRes(ent.immune)}`
@@ -8592,7 +8688,9 @@ Renderer.object = class {
 
 		const ptAttribs = Renderer.object.RENDERABLE_ENTRIES_PROP_ORDER__ATTRIBUTES
 			.filter(prop => entriesMeta[prop])
-			.map(prop => `${Renderer.get().render(entriesMeta[prop])}<br>`)
+			.map((prop, i) => {
+				return `<div ${i < 3 && !opts.isCompact ? `class="stats__wrp-avoid-token"` : ""}>${Renderer.get().render(entriesMeta[prop])}</div>`;
+			})
 			.join("");
 
 		return `
@@ -8626,33 +8724,45 @@ Renderer.object = class {
 Renderer.trap = class {
 	static CHILD_PROPS = ["trigger", "effect", "eActive", "eDynamic", "eConstant", "countermeasures"];
 
-	static TRAP_TYPES_CLASSIC = ["MECH", "MAG", "TRP"];
+	static TRAP_TYPES_CLASSIC = ["MECH", "MAG", "TRP", "HAUNT"];
 
 	static getTrapRenderableEntriesMeta (ent, {styleHint = null} = {}) {
 		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
 		if (Renderer.trap.TRAP_TYPES_CLASSIC.includes(ent.trapHazType)) {
-			if (!ent.trigger?.length && !ent.duration?.length) return {};
+			const listItems = [
+				ent.trigger ? {
+					type: "item",
+					name: "Trigger:",
+					entries: ent.trigger,
+				} : null,
+				ent.duration ? {
+					type: "item",
+					name: "Duration:",
+					entries: [
+						Renderer.generic.getRenderableDurationEntriesMeta(ent.duration, {styleHint}).entryDuration,
+					],
+				} : null,
+				ent.hauntBonus ? {
+					type: "item",
+					name: "Haunt Bonus:",
+					entry: ent.hauntBonus,
+				} : null,
+				ent.hauntBonus && !isNaN(ent.hauntBonus) ? {
+					type: "item",
+					name: "Detection:",
+					entry: `passive Wisdom ({@skill Perception}) score equals or exceeds ${10 + Number(ent.hauntBonus)}`,
+				} : null,
+			]
+				.filter(Boolean);
+
+			if (!listItems.length) return {};
 			return {
 				entriesHeader: [
 					{
 						type: "list",
 						style: "list-hang-notitle",
-						items: [
-							ent.trigger ? {
-								type: "item",
-								name: "Trigger:",
-								entries: ent.trigger,
-							} : null,
-							ent.duration ? {
-								type: "item",
-								name: "Duration:",
-								entries: [
-									Renderer.generic.getRenderableDurationEntriesMeta(ent.duration, {styleHint}).entryDuration,
-								],
-							} : null,
-						]
-							.filter(Boolean),
+						items: listItems,
 					},
 				],
 			};
@@ -8713,11 +8823,26 @@ Renderer.trap = class {
 
 	static getTrapInitiativeEntries (ent) { return [`这个陷阱在${Parser.trapInitToFull(ent.initiative)}${ent.initiativeNote ? ` (${ent.initiativeNote})` : ""}时触发。`]; }
 
-	static getRenderedTrapPart (renderer, ent, {styleHint = null} = {}) {
+	static _getRenderedTrapPart (renderer, ent, {styleHint = null} = {}) {
 		const entriesMeta = Renderer.trap.getTrapRenderableEntriesMeta(ent, {styleHint});
 		if (entriesMeta.entriesHeader?.length) return renderer.render({entries: entriesMeta.entriesHeader});
 		if (entriesMeta.entriesAttributes?.length) return renderer.render({entries: entriesMeta.entriesAttributes}, 1);
 		return "";
+	}
+
+	static getRenderedTrapBody (renderer, ent, {styleHint = null} = {}) {
+		const ptEntries = renderer.render({entries: ent.entries}, 1);
+		const ptTrap = Renderer.trap._getRenderedTrapPart(Renderer.get(), ent, {styleHint});
+
+		const isPrefixTrapPart = Renderer.trap.TRAP_TYPES_CLASSIC.includes(ent.trapHazType);
+
+		return (
+			isPrefixTrapPart
+				? [ptTrap, ptEntries]
+				: [ptEntries, ptTrap]
+		)
+			.filter(Boolean)
+			.join("");
 	}
 
 	static getCompactRenderedString (ent, opts) {
@@ -8730,6 +8855,10 @@ Renderer.trap = class {
 Renderer.hazard = class {
 	static getCompactRenderedString (ent, opts) {
 		return Renderer.traphazard.getCompactRenderedString(ent, opts);
+	}
+
+	static getRenderedHazardBody (renderer, ent, {styleHint = null} = {}) {
+		return renderer.render({entries: ent.entries}, 1);
 	}
 
 	static pGetFluff (ent) { return Renderer.traphazard.pGetFluff(ent); }
@@ -8784,13 +8913,15 @@ Renderer.traphazard = class {
 
 		const renderer = Renderer.get();
 		const subtitle = Renderer.traphazard.getSubtitle(ent, {styleHint});
+		const ptBody = ent.__prop === "trap"
+			? Renderer.trap.getRenderedTrapBody(renderer, ent, {styleHint})
+			: Renderer.hazard.getRenderedHazardBody(renderer, ent, {styleHint});
 		return `
 			${Renderer.utils.getExcludedTr({entity: ent, dataProp: ent.__prop, page: UrlUtil.PG_TRAPS_HAZARDS})}
 			${Renderer.utils.getNameTr(ent, {page: UrlUtil.PG_TRAPS_HAZARDS, isEmbeddedEntity: opts.isEmbeddedEntity})}
 			${subtitle ? `<tr><td colspan="6" class="pb-2"><i>${subtitle}</i></td></tr>` : ""}
 			<tr><td colspan="6" class="pb-2">
-			${renderer.render({entries: ent.entries}, 2)}
-			${Renderer.trap.getRenderedTrapPart(renderer, ent, {styleHint})}
+			${ptBody}
 			</td></tr>
 		`;
 	}
@@ -8968,7 +9099,8 @@ class _RenderCompactBestiaryImplBase {
 
 		const isShowCrScaler = ScaleCreature.isCrInScaleRange(mon);
 		const isShowSpellLevelScaler = opts.isShowScalers && !isShowCrScaler && mon.summonedBySpellLevel != null;
-		const isShowClassLevelScaler = opts.isShowScalers && !isShowSpellLevelScaler && mon.summonedByClass != null;
+		const isShowClassLevelScaler = opts.isShowScalers && !isShowSpellLevelScaler && (mon.summonedByClass != null || mon.summonedScaleByPlayerLevel);
+		const classLevelScalerClass = isShowClassLevelScaler ? mon.summonedByClass : null;
 
 		return {
 			isInlinedToken,
@@ -8976,6 +9108,7 @@ class _RenderCompactBestiaryImplBase {
 			isShowCrScaler,
 			isShowSpellLevelScaler,
 			isShowClassLevelScaler,
+			classLevelScalerClass,
 		};
 	}
 
@@ -8992,10 +9125,13 @@ class _RenderCompactBestiaryImplBase {
 			isShowCrScaler,
 			isShowSpellLevelScaler,
 			isShowClassLevelScaler,
+			classLevelScalerClass,
 
 			entsAction,
 			entsBonusAction,
 			entsReaction,
+			entsLegendaryAction,
+			entsMythicAction,
 			legGroup,
 		},
 	) {
@@ -9004,7 +9140,7 @@ class _RenderCompactBestiaryImplBase {
 			htmlPtName: this._getCommonHtmlParts_name({mon, opts, isInlinedToken}),
 			htmlPtSizeTypeAlignment: this._getCommonHtmlParts_sizeTypeAlignment({mon}),
 
-			htmlPtAttributeHeaders: this._getCommonHtmlParts_attributeHeaders({mon, isInlinedToken, isShowSpellLevelScaler, isShowClassLevelScaler}),
+			htmlPtAttributeHeaders: this._getCommonHtmlParts_attributeHeaders({mon, isInlinedToken, isShowSpellLevelScaler, isShowClassLevelScaler, classLevelScalerClass}),
 			htmlPtAttributeValues: this._getCommonHtmlParts_attributeValues({mon, opts, isInlinedToken, isShowCrScaler, isShowSpellLevelScaler, isShowClassLevelScaler}),
 
 			htmlPtsResources: this._getCommonHtmlParts_resources({mon}),
@@ -9021,8 +9157,8 @@ class _RenderCompactBestiaryImplBase {
 			htmlPtActions: this._getCommonHtmlParts_actions({mon, renderer, entsAction}),
 			htmlPtBonusActions: this._getCommonHtmlParts_bonusActions({mon, renderer, entsBonusAction}),
 			htmlPtReactions: this._getCommonHtmlParts_reactions({mon, renderer, entsReaction}),
-			htmlPtLegendaryActions: this._getCommonHtmlParts_legendaryActions({mon, renderer}),
-			htmlPtMythicActions: this._getCommonHtmlParts_mythicActions({mon, renderer}),
+			htmlPtLegendaryActions: this._getCommonHtmlParts_legendaryActions({mon, renderer, entsLegendaryAction}),
+			htmlPtMythicActions: this._getCommonHtmlParts_mythicActions({mon, renderer, entsMythicAction}),
 
 			htmlPtLairActions: this._getCommonHtmlParts_lairActions({renderer, legGroup}),
 			htmlPtRegionalEffects: this._getCommonHtmlParts_regionalEffects({renderer, legGroup}),
@@ -9058,14 +9194,14 @@ class _RenderCompactBestiaryImplBase {
 
 	/* ----- */
 
-	_getCommonHtmlParts_attributeHeaders ({mon, isInlinedToken, isShowSpellLevelScaler, isShowClassLevelScaler}) {
+	_getCommonHtmlParts_attributeHeaders ({mon, isInlinedToken, isShowSpellLevelScaler, isShowClassLevelScaler, classLevelScalerClass}) {
 		const labelAc = this._style !== "classic" ? "AC" : "Armor Class";
 		const titleAc = this._style !== "classic" ? `title="Armor Class"` : "";
 
 		const labelHp = this._style !== "classic" ? "HP" : "Hit Points";
 		const titleHp = this._style !== "classic" ? `title="Hit Points"` : "";
 
-		const labelCr = isShowSpellLevelScaler ? "Spell Level" : isShowClassLevelScaler ? "Class Level" : (this._style !== "classic" ? "CR" : "Challenge");
+		const labelCr = isShowSpellLevelScaler ? "Spell Level" : isShowClassLevelScaler ? (classLevelScalerClass ? "Class Level" : "Level") : (this._style !== "classic" ? "CR" : "Challenge");
 		const titleCr = isShowSpellLevelScaler ? "" : isShowClassLevelScaler ? "" : (this._style !== "classic" ? `title="Challenge Rating"` : "");
 
 		const ptInitiative = this._style !== "classic" ? Renderer.monster.getInitiativePart(mon) : "";
@@ -9171,33 +9307,84 @@ class _RenderCompactBestiaryImplBase {
 	/* ----- */
 
 	_getCommonHtmlParts_actions ({mon, renderer, entsAction}) {
-		return Renderer.monster.getCompactRenderedStringSection({...mon, action: entsAction}, renderer, "Actions", "action", 2);
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: {...mon, action: entsAction},
+			renderer,
+			title: "Actions",
+			key: "action",
+			depth: 2,
+			styleHint: this._style,
+		});
 	}
 
 	_getCommonHtmlParts_bonusActions ({mon, renderer, entsBonusAction}) {
-		return Renderer.monster.getCompactRenderedStringSection({...mon, bonus: entsBonusAction}, renderer, "Bonus Actions", "bonus", 2);
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: {...mon, bonus: entsBonusAction},
+			renderer,
+			title: "Bonus Actions",
+			key: "bonus",
+			depth: 2,
+			styleHint: this._style,
+		});
 	}
 
 	_getCommonHtmlParts_reactions ({mon, renderer, entsReaction}) {
-		return Renderer.monster.getCompactRenderedStringSection({...mon, reaction: entsReaction}, renderer, "Reactions", "reaction", 2);
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: {...mon, reaction: entsReaction},
+			renderer,
+			title: "Reactions",
+			key: "reaction",
+			depth: 2,
+			styleHint: this._style,
+		});
 	}
 
-	_getCommonHtmlParts_legendaryActions ({mon, renderer}) {
-		return Renderer.monster.getCompactRenderedStringSection(mon, renderer, "Legendary Actions", "legendary", 2);
+	_getCommonHtmlParts_legendaryActions ({mon, renderer, entsLegendaryAction}) {
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: {...mon, legendary: entsLegendaryAction},
+			renderer,
+			title: "Legendary Actions",
+			key: "legendary",
+			depth: 2,
+			styleHint: this._style,
+		});
 	}
 
-	_getCommonHtmlParts_mythicActions ({mon, renderer}) {
-		return Renderer.monster.getCompactRenderedStringSection(mon, renderer, "Mythic Actions", "mythic", 2);
+	_getCommonHtmlParts_mythicActions ({mon, renderer, entsMythicAction}) {
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: {...mon, mythic: entsMythicAction},
+			renderer,
+			title: "Mythic Actions",
+			key: "mythic",
+			depth: 2,
+			styleHint: this._style,
+		});
 	}
 
 	/* ----- */
 
 	_getCommonHtmlParts_lairActions ({renderer, legGroup}) {
-		return legGroup && legGroup.lairActions ? Renderer.monster.getCompactRenderedStringSection(legGroup, renderer, "Lair Actions", "lairActions", 1) : "";
+		if (!legGroup?.lairActions) return "";
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: legGroup,
+			renderer,
+			title: "Lair Actions",
+			key: "lairActions",
+			depth: 1,
+			styleHint: this._style,
+		});
 	}
 
 	_getCommonHtmlParts_regionalEffects ({renderer, legGroup}) {
-		return legGroup && legGroup.regionalEffects ? Renderer.monster.getCompactRenderedStringSection(legGroup, renderer, "Regional Effects", "regionalEffects", 1) : "";
+		if (!legGroup?.regionalEffects) return "";
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: legGroup,
+			renderer,
+			title: "Regional Effects",
+			key: "regionalEffects",
+			depth: 1,
+			styleHint: this._style,
+		});
 	}
 
 	/* ----- */
@@ -9270,6 +9457,7 @@ class _RenderCompactBestiaryImplClassic extends _RenderCompactBestiaryImplBase {
 			isShowCrScaler,
 			isShowSpellLevelScaler,
 			isShowClassLevelScaler,
+			classLevelScalerClass,
 		} = this._getFlags({mon, opts});
 
 		const {
@@ -9277,6 +9465,8 @@ class _RenderCompactBestiaryImplClassic extends _RenderCompactBestiaryImplBase {
 			entsAction,
 			entsBonusAction,
 			entsReaction,
+			entsLegendaryAction,
+			entsMythicAction,
 			legGroup,
 		} = Renderer.monster.getSubEntries(mon, {renderer});
 
@@ -9318,11 +9508,14 @@ class _RenderCompactBestiaryImplClassic extends _RenderCompactBestiaryImplBase {
 			isShowCrScaler,
 			isShowSpellLevelScaler,
 			isShowClassLevelScaler,
+			classLevelScalerClass,
 
 			entsTrait,
 			entsAction,
 			entsBonusAction,
 			entsReaction,
+			entsLegendaryAction,
+			entsMythicAction,
 			legGroup,
 		});
 
@@ -9427,7 +9620,14 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 	/* ----- */
 
 	_getHtmlParts_traits ({mon, renderer, entsTrait}) {
-		return Renderer.monster.getCompactRenderedStringSection({...mon, trait: entsTrait}, renderer, "Traits", "trait", 2);
+		return Renderer.monster.getCompactRenderedStringSection({
+			ent: {...mon, trait: entsTrait},
+			renderer,
+			title: "Traits",
+			key: "trait",
+			depth: 2,
+			styleHint: this._style,
+		});
 	}
 
 	/* -------------------------------------------- */
@@ -9439,6 +9639,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 			isShowCrScaler,
 			isShowSpellLevelScaler,
 			isShowClassLevelScaler,
+			classLevelScalerClass,
 		} = this._getFlags({mon, opts});
 
 		const {
@@ -9446,6 +9647,8 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 			entsAction,
 			entsBonusAction,
 			entsReaction,
+			entsLegendaryAction,
+			entsMythicAction,
 			legGroup,
 		} = Renderer.monster.getSubEntries(mon, {renderer});
 
@@ -9487,11 +9690,14 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 			isShowCrScaler,
 			isShowSpellLevelScaler,
 			isShowClassLevelScaler,
+			classLevelScalerClass,
 
 			entsTrait,
 			entsAction,
 			entsBonusAction,
 			entsReaction,
+			entsLegendaryAction,
+			entsMythicAction,
 			legGroup,
 		});
 
@@ -9553,6 +9759,8 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 Renderer.monster = class {
 	static CHILD_PROPS = ["action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting"];
 
+	/* -------------------------------------------- */
+
 	static getShortName (mon, {isTitleCase = false, isSentenceCase = false, isUseDisplayName = false} = {}) {
 		const name = isUseDisplayName ? (mon._displayName ?? mon.name) : mon.name;
 		const shortName = isUseDisplayName ? (mon._displayShortName ?? mon.shortName) : mon.shortName;
@@ -9574,20 +9782,43 @@ Renderer.monster = class {
 		return out;
 	}
 
-	static getLegendaryActionIntro (mon, {renderer = Renderer.get(), isUseDisplayName = false} = {}) {
+	/* -------------------------------------------- */
+
+	static getPronounSubject (mon) { return mon.isNamedCreature ? "they" : "it"; }
+	static getPronounObject (mon) { return mon.isNamedCreature ? "them" : "its"; }
+	static getPronounPossessive (mon) { return mon.isNamedCreature ? "their" : "its"; }
+
+	/* -------------------------------------------- */
+
+	static getLegendaryActionIntro (mon, {renderer = Renderer.get(), isUseDisplayName = false, styleHint = null} = {}) {
 		return renderer.render(Renderer.monster.getLegendaryActionIntroEntry(mon, {isUseDisplayName}));
 	}
 
-	static getLegendaryActionIntroEntry (mon, {isUseDisplayName = false} = {}) {
+	static getLegendaryActionIntroEntry (mon, {isUseDisplayName = false, styleHint = null} = {}) {
 		if (mon.legendaryHeader) {
 			return {entries: mon.legendaryHeader};
 		}
 
+		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+
 		const legendaryActions = mon.legendaryActions || 3;
+		const legendaryActionsLair = mon.legendaryActionsLair || legendaryActions;
 		const legendaryNameTitle = Renderer.monster.getShortName(mon, {isTitleCase: true, isUseDisplayName});
+		const proPossessive = Renderer.monster.getPronounPossessive(mon);
+
+		if (styleHint === "classic") {
+			return {
+				entries: [
+					`${legendaryNameTitle} can take ${legendaryActions} legendary action${legendaryActions > 1 ? "s" : ""}${legendaryActionsLair !== legendaryActions ? ` (or ${legendaryActionsLair} when in ${proPossessive} lair)` : ""}, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. ${legendaryNameTitle} regains spent legendary actions at the start of ${proPossessive} turn.`,
+				],
+			};
+		}
+
+		const legendaryNameSentence = Renderer.monster.getShortName(mon, {isSentenceCase: true, isUseDisplayName});
 		return {
 			entries: [
-				`${legendaryNameTitle}可以执行 ${legendaryActions} 个传奇动作，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。${legendaryNameTitle}在其回合开始时重获所有传奇动作。`,
+				// `${legendaryNameTitle}可以执行 ${legendaryActions} 个传奇动作，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。${legendaryNameTitle}在其回合开始时重获所有传奇动作。`,
+				`{@note Legendary Action Uses: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (${legendaryActionsLair} in Lair)` : ""}. Immediately after another creature's turn, ${legendaryNameSentence} can expend a use to take one of the following actions. ${legendaryNameTitle} regains all expended uses at the start of each of ${proPossessive} turns.}`,
 			],
 		};
 	}
@@ -9892,7 +10123,7 @@ Renderer.monster = class {
 	}
 
 	static getSelSummonClassLevel (mon) {
-		if (mon.summonedByClass == null) return;
+		if (mon.summonedByClass == null && !mon.summonedScaleByPlayerLevel) return;
 
 		return e_({
 			tag: "select",
@@ -9909,21 +10140,32 @@ Renderer.monster = class {
 		});
 	}
 
-	static getCompactRenderedStringSection (mon, renderer, title, key, depth) {
-		if (!mon[key]) return "";
+	static getCompactRenderedStringSection (
+		{
+			ent,
+			renderer,
+			title,
+			key,
+			depth,
+			styleHint,
+		},
+	) {
+		if (!ent[key]) return "";
+
+		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
 		const noteKey = `${key}Note`;
 
 		const toRender = key === "lairActions" || key === "regionalEffects"
-			? [{type: "entries", entries: mon[key]}]
-			: mon[key];
+			? [{type: "entries", entries: ent[key]}]
+			: ent[key];
 
-		const ptHeader = mon[key] ? Renderer.monster.getSectionIntro(mon, {prop: key}) : "";
+		const ptHeader = ent[key] ? Renderer.monster.getSectionIntro(ent, {prop: key}) : "";
 		const isNonStatblock = key === "lairActions" || key === "regionalEffects";
 
-		return `<tr><td colspan="6"><h3 class="stats__sect-header-inner ${isNonStatblock ? "stats__sect-header-inner--non-statblock" : ""}">${title}${mon[noteKey] ? ` (<span class="ve-small">${mon[noteKey]}</span>)` : ""}</h3></td></tr>
+		return `<tr><td colspan="6"><h3 class="stats__sect-header-inner ${isNonStatblock ? "stats__sect-header-inner--non-statblock" : ""}">${title}${ent[noteKey] ? ` (<span class="ve-small">${ent[noteKey]}</span>)` : ""}</h3></td></tr>
 		<tr><td colspan="6" class="pt-2 pb-2">
-		${key === "legendary" && mon.legendary ? Renderer.monster.getLegendaryActionIntro(mon) : ""}
+		${key === "legendary" && Renderer.monster.hasLegendaryActions(ent) ? Renderer.monster.getLegendaryActionIntro(ent, {styleHint}) : ""}
 		${ptHeader ? `<p>${ptHeader}</p>` : ""}
 		${toRender.map(it => it.rendered || renderer.render(it, depth)).join("")}
 		</td></tr>`;
@@ -10038,9 +10280,9 @@ Renderer.monster = class {
 	static _getChallengeRatingPart_classic ({mon, isPlainText = false} = {}) {
 		if (mon.cr == null) return "\u2014";
 
-		if (typeof mon.cr === "string") return this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr, isMythic: !!mon.mythic});
+		if (typeof mon.cr === "string") return this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr, isMythic: Renderer.monster.hasMythicActions(mon)});
 
-		const stack = [this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.cr, xp: mon.cr.xp, isMythic: !!mon.mythic})];
+		const stack = [this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.cr, xp: mon.cr.xp, isMythic: Renderer.monster.hasMythicActions(mon)})];
 		if (mon.cr.lair || mon.cr.xpLair) stack.push(`${this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.lair, xp: mon.cr.xpLair})} when encountered in lair`);
 		if (mon.cr.coven || mon.cr.xpCoven) stack.push(`${this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.coven, xp: mon.cr.xpCoven})} when part of a coven`);
 		return stack
@@ -10059,7 +10301,7 @@ Renderer.monster = class {
 			// TODO(ODND) speculative text; revise
 			: [
 				xpBase ? xpBase.toLocaleString() : null,
-				mon.mythic ? `${(xpBase * 2).toLocaleString()} as a mythic encounter` : null,
+				Renderer.monster.hasMythicActions(mon) ? `${(xpBase * 2).toLocaleString()} as a mythic encounter` : null,
 			]
 				.filter(Boolean);
 
@@ -10193,10 +10435,15 @@ Renderer.monster = class {
 		return `${maxStr ? `<span title="${maxStr}" class="help-subtle">` : ""}${res.value}${maxStr ? "</span>" : ""} ${Renderer.get().render(`({@dice ${res.formula}|${res.formula}|${res.name}})`)}`;
 	}
 
-	static getSafeAbilityScore (mon, abil, {isDefaultTen = false} = {}) {
-		if (!mon || abil == null) return isDefaultTen ? 10 : 0;
-		if (mon[abil] == null) return isDefaultTen ? 10 : 0;
-		return typeof mon[abil] === "number" ? mon[abil] : (isDefaultTen ? 10 : 0);
+	/**
+	 * @param {object} mon
+	 * @param {string} abil
+	 * @param {?number} defaultScore
+	 */
+	static getSafeAbilityScore (mon, abil, {defaultScore = 0} = {}) {
+		if (!mon || abil == null) return defaultScore;
+		if (mon[abil] == null) return defaultScore;
+		return typeof mon[abil] === "number" ? mon[abil] : (defaultScore);
 	}
 
 	/* -------------------------------------------- */
@@ -10204,15 +10451,18 @@ Renderer.monster = class {
 	/**
 	 * @param {object} mon
 	 * @param {?Renderer} renderer
+	 * @param {?Function} fnGetSpellTraits
 	 */
-	static getSubEntries (mon, {renderer = null} = {}) {
+	static getSubEntries (mon, {renderer = null, fnGetSpellTraits = null} = {}) {
 		renderer ||= Renderer.get();
 
-		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, renderer);
+		fnGetSpellTraits ||= Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, renderer);
 		const entsTrait = Renderer.monster.getOrderedTraits(mon, {fnGetSpellTraits});
 		const entsAction = Renderer.monster.getOrderedActions(mon, {fnGetSpellTraits});
 		const entsBonusAction = Renderer.monster.getOrderedBonusActions(mon, {fnGetSpellTraits});
 		const entsReaction = Renderer.monster.getOrderedReactions(mon, {fnGetSpellTraits});
+		const entsLegendaryAction = Renderer.monster.getOrderedLegendaryActions(mon, {fnGetSpellTraits});
+		const entsMythicAction = Renderer.monster.getOrderedMythicActions(mon, {fnGetSpellTraits});
 		const legGroup = DataUtil.monster.getLegendaryGroup(mon);
 
 		return {
@@ -10220,6 +10470,8 @@ Renderer.monster = class {
 			entsAction,
 			entsBonusAction,
 			entsReaction,
+			entsLegendaryAction,
+			entsMythicAction,
 			legGroup,
 		};
 	}
@@ -10280,10 +10532,12 @@ Renderer.monster = class {
 		const ptSpecial = ptsSpecial.map(pt => `<tr><td colspan="6">${pt}</td></tr>`).join("");
 
 		const ptHeaders = Array.from(
-			{length: 12},
+			{length: 14},
 			(_, i) => {
-				const colClass = i % 4 === 0 ? "stats-tbl-ability-scores__lbl-abv" : "stats-tbl-ability-scores__lbl-score";
-				return `<td class="${colClass}"><div class="ve-muted ve-text-center small-caps">${i % 4 === 2 ? "调整" : i % 4 === 3 ? "豁免" : ""}</div></td>`;
+				const colClass = i % 5 === 0
+					? "stats-tbl-ability-scores__lbl-abv"
+					: i % 5 === 4 ? "stats-tbl-ability-scores__lbl-spacer" : "stats-tbl-ability-scores__lbl-score";
+				return `<td class="${colClass}"><div class="ve-muted ve-text-center small-caps">${i % 5 === 2 ? "调整" : i % 5 === 3 ? "豁免" : ""}</div></td>`;
 			},
 		)
 			.join("");
@@ -10303,15 +10557,16 @@ Renderer.monster = class {
 					: renderer.render(`{@savingThrow ${abv} ${mon.save[abv]}}`);
 
 				return [
-					`<td class="stats-tbl-ability-scores__lbl-abv"><div class="bold small-caps ve-text-right stats__disp-as-score stats__disp-as-score--label stats__disp-as-score--${styleName}">${Parser.attAbvToFull(abv) || abv.toTitleCase()}</div></td>`,
-					`<td class="stats-tbl-ability-scores__lbl-score"><div class="ve-text-center stats__disp-as-score stats__disp-as-score--${styleName}">${ptScore}</div></td>`,
-					`<td class="stats-tbl-ability-scores__lbl-score"><div class="ve-text-center stats__disp-as-bonus stats__disp-as-bonus--${styleName}">${ptBonus}</div></td>`,
-					`<td class="stats-tbl-ability-scores__lbl-score"><div class="ve-text-center stats__disp-as-bonus stats__disp-as-bonus--${styleName} ${i % 3 !== 2 ? "mr-2" : ""}">${ptSave}</div></td>`,
+					`<td class="stats-tbl-ability-scores__lbl-abv stats__disp-as-score--${styleName} stats__disp-as-score--label"><div class="bold small-caps ve-text-right">${{Parser.attAbvToFull(abv) || abv.toTitleCase()}</div></td>`,
+					`<td class="stats-tbl-ability-scores__lbl-score stats__disp-as-score--${styleName}"><div class="ve-text-center">${ptScore}</div></td>`,
+					`<td class="stats-tbl-ability-scores__lbl-score stats__disp-as-bonus--${styleName}"><div class="ve-text-center">${ptBonus}</div></td>`,
+					`<td class="stats-tbl-ability-scores__lbl-score stats__disp-as-bonus--${styleName}"><div class="ve-text-center">${ptSave}</div></td>`,
+					i % 3 !== 2 ? `<td class="stats-tbl-ability-scores__lbl-spacer"><div></div></td>` : "",
 				];
 			});
 
-		const ptsCellsPhysical = ptsCells.slice(0, 12);
-		const ptsCellsMental = ptsCells.slice(12);
+		const ptsCellsPhysical = ptsCells.slice(0, 14);
+		const ptsCellsMental = ptsCells.slice(14);
 
 		return `
 		<tr><td colspan="6" class="pt-0 pb-3">
@@ -10372,6 +10627,8 @@ Renderer.monster = class {
 	static getOrderedActions (mon, {fnGetSpellTraits} = {}) { return Renderer.monster._getOrderedActionsBonusActions({mon, fnGetSpellTraits, prop: "action"}); }
 	static getOrderedBonusActions (mon, {fnGetSpellTraits} = {}) { return Renderer.monster._getOrderedActionsBonusActions({mon, fnGetSpellTraits, prop: "bonus"}); }
 	static getOrderedReactions (mon, {fnGetSpellTraits} = {}) { return Renderer.monster._getOrderedActionsBonusActions({mon, fnGetSpellTraits, prop: "reaction"}); }
+	static getOrderedLegendaryActions (mon, {fnGetSpellTraits} = {}) { return Renderer.monster._getOrderedActionsBonusActions({mon, fnGetSpellTraits, prop: "legendary"}); }
+	static getOrderedMythicActions (mon, {fnGetSpellTraits} = {}) { return Renderer.monster._getOrderedActionsBonusActions({mon, fnGetSpellTraits, prop: "mythic"}); }
 
 	static _getOrderedActionsBonusActions ({mon, fnGetSpellTraits, prop} = {}) {
 		let actions = mon[prop] ? MiscUtil.copyFast(mon[prop]) : null;
@@ -10463,15 +10720,33 @@ Renderer.monster = class {
 	}
 
 	static postProcessFluff (mon, fluff) {
+		const thisGroup = DataUtil.monster.getLegendaryGroup(mon);
+		if (!thisGroup) return fluff;
+
 		const cpy = MiscUtil.copyFast(fluff);
+		cpy.entries ||= [];
+
+		const walker = MiscUtil.getWalker({isNoModification: true});
 
 		// TODO is this good enough? Should additionally check for lair blocks which are not the last, and tag them with
 		//   "data": {"lairRegionals": true}, and insert the lair/regional text there if available (do the current "append" otherwise)
-		const thisGroup = DataUtil.monster.getLegendaryGroup(mon);
-		const handleGroupProp = (prop, name) => {
-			if (thisGroup && thisGroup[prop]) {
-				cpy.entries = cpy.entries || [];
-				cpy.entries.push({
+		const entsLair = [];
+		walker.walk(cpy.entries, {object: obj => {
+			if (!["entries", "section"].includes(obj.type)) return;
+			if (!obj.name || !obj.entries) return;
+			if (!/\bLairs?\b/i.test(obj.name)) return;
+			entsLair.push(obj);
+		}});
+
+		const tgtLair = entsLair.length === 1 ? entsLair[0].entries : cpy.entries;
+		const isAddName = thisGroup.mythicEncounter
+			|| [thisGroup.lairActions, thisGroup.regionalEffects].filter(Boolean).length !== 1;
+
+		const handleGroupProp = (tgt, prop, name) => {
+			if (!thisGroup[prop]) return;
+
+			if (isAddName) {
+				return tgt.push({
 					type: "entries",
 					entries: [
 						{
@@ -10482,11 +10757,13 @@ Renderer.monster = class {
 					],
 				});
 			}
+
+			tgt.push(...MiscUtil.copyFast(thisGroup[prop]));
 		};
 
-		handleGroupProp("lairActions", "Lair Actions");
-		handleGroupProp("regionalEffects", "Regional Effects");
-		handleGroupProp("mythicEncounter", `${mon.name} as a Mythic Encounter`);
+		handleGroupProp(tgtLair, "lairActions", "Lair Actions");
+		handleGroupProp(tgtLair, "regionalEffects", "Regional Effects");
+		handleGroupProp(cpy.entries, "mythicEncounter", `${mon.name} as a Mythic Encounter`);
 
 		return cpy;
 	}
@@ -10537,7 +10814,36 @@ Renderer.monster = class {
 		return rStack.join("");
 	}
 
-	static getRenderedEnvironment (envs) { return (envs || []).sort(SortUtil.ascSortLower).map(it => it.toTitleCase()).join(", "); }
+	static getRenderedEnvironment (envs) {
+		if (!envs?.length) return "";
+
+		const ptEntry = envs
+			.map(env => `{@filter ${Parser.getEnvironmentDisplayName(env)}|bestiary|environment=${env}}`)
+			.sort(SortUtil.ascSortLower)
+			.join(", ");
+
+		return Renderer.get().render(ptEntry);
+	}
+
+	static getRenderedTreasure (treasure) {
+		if (!treasure?.length) return "";
+
+		const ptEntry = treasure
+			.map(treasure => Parser.getTreasureTypeEntry(treasure))
+			.sort(SortUtil.ascSortLower)
+			.join(", ");
+
+		return Renderer.get().render(ptEntry);
+	}
+
+	/* -------------------------------------------- */
+
+	static hasReactions (mon) { return !!(mon.reaction?.length || mon.spellcasting?.some(ent => ent.displayAs === "reaction")); }
+	static hasBonusActions (mon) { return !!(mon.bonus?.length || mon.spellcasting?.some(ent => ent.displayAs === "bonus")); }
+	static hasLegendaryActions (mon) { return !!(mon.legendary?.length || mon.spellcasting?.some(ent => ent.displayAs === "legendary")); }
+	static hasMythicActions (mon) { return !!(mon.mythic?.length || mon.spellcasting?.some(ent => ent.displayAs === "mythic")); }
+
+	/* -------------------------------------------- */
 
 	static pGetFluff (mon) {
 		return Renderer.utils.pGetFluff({
@@ -10546,6 +10852,8 @@ Renderer.monster = class {
 			fluffProp: "monsterFluff",
 		});
 	}
+
+	/* -------------------------------------------- */
 
 	// region Custom hash ID packing/unpacking
 	static getCustomHashId (mon) {
@@ -10789,7 +11097,44 @@ Renderer.legendaryGroup = class {
 
 Renderer.item = class {
 	static _sortProperties (a, b) {
-		return SortUtil.ascSort(Renderer.item.getProperty(a, {isIgnoreMissing: true})?.name || "", Renderer.item.getProperty(b, {isIgnoreMissing: true})?.name || "");
+		const uidA = a.uid || a;
+		const uidB = b.uid || b;
+		return SortUtil.ascSort(Renderer.item.getProperty(uidA, {isIgnoreMissing: true})?.name || "", Renderer.item.getProperty(uidB, {isIgnoreMissing: true})?.name || "");
+	}
+
+	static _getPropertyText ({item, property, valsUsed, renderer}) {
+		const pFull = Renderer.item.getProperty(property?.uid || property);
+		if (!pFull) return "";
+
+		const ptNote = property.note ? ` (${property.note})` : "";
+
+		if (!pFull.template) return `${pFull.name}${ptNote}`;
+
+		const toRender = Renderer.utils.applyTemplate(
+			item,
+			pFull.template,
+			{
+				fnPreApply: (fullMatch, variablePath) => {
+					if (variablePath === "item.dmg2") valsUsed.dmg2 = true;
+					if (variablePath === "item.range") valsUsed.range = true;
+				},
+				mapCustom: {
+					"prop_name": pFull.name.replace(/-/g, "\u2011"),
+					"prop_name_lower": pFull.name.replace(/-/g, "\u2011").toLowerCase(),
+				},
+				mapCustomFns: {
+					"item.dmg1": () => Renderer.item._getTaggedDamage(item.dmg1),
+					"item.dmg2": () => Renderer.item._getTaggedDamage(item.dmg2),
+
+					"item.ammoType": () => {
+						if (!item.ammoType) return "";
+						return `{@item ${item.ammoType.toTitleCase()}}`;
+					},
+				},
+			},
+		);
+
+		return `${renderer.render(toRender)}${ptNote}`;
 	}
 
 	static _getPropertiesText (item, {renderer = null} = {}) {
@@ -10797,47 +11142,18 @@ Renderer.item = class {
 
 		if (!item.property) return Renderer.item._getPropertiesText_noProperties({item, renderer});
 
-		let renderedDmg2 = false;
-		let renderedRange = false;
+		const valsUsed = {
+			dmg2: false,
+			range: false,
+		};
 
 		const renderedProperties = item.property
 			.sort(Renderer.item._sortProperties)
-			.map(p => {
-				const pFull = Renderer.item.getProperty(p);
-				if (!pFull) return "";
-
-				if (pFull.template) {
-					const toRender = Renderer.utils.applyTemplate(
-						item,
-						pFull.template,
-						{
-							fnPreApply: (fullMatch, variablePath) => {
-								if (variablePath === "item.dmg2") renderedDmg2 = true;
-								if (variablePath === "item.range") renderedRange = true;
-							},
-							mapCustom: {
-								"prop_name": pFull.name.replace(/-/g, "\u2011"),
-								"prop_name_lower": pFull.name.replace(/-/g, "\u2011").toLowerCase(),
-							},
-							mapCustomFns: {
-								"item.dmg1": () => Renderer.item._getTaggedDamage(item.dmg1),
-								"item.dmg2": () => Renderer.item._getTaggedDamage(item.dmg2),
-
-								"item.ammoType": () => {
-									if (!item.ammoType) return "";
-									return `{@item ${item.ammoType.toTitleCase()}}`;
-								},
-							},
-						},
-					);
-
-					return renderer.render(toRender);
-				} else return pFull.name;
-			})
+			.map(property => Renderer.item._getPropertyText({item, property, valsUsed, renderer}))
 			.filter(Boolean);
 
-		if (!renderedDmg2 && item.dmg2) renderedProperties.unshift(Renderer.item._getPropertiesText_unusedDmg2({item, renderer}));
-		if (!renderedRange && item.range) renderedProperties.push(Renderer.item._getPropertiesText_unusedRange({item, renderer}));
+		if (!valsUsed.dmg2 && item.dmg2) renderedProperties.unshift(Renderer.item._getPropertiesText_unusedDmg2({item, renderer}));
+		if (!valsUsed.range && item.range) renderedProperties.push(Renderer.item._getPropertiesText_unusedRange({item, renderer}));
 
 		return renderedProperties.join(", ");
 	}
@@ -10877,10 +11193,10 @@ Renderer.item = class {
 
 		// armor
 		if (item.ac != null) {
-			const dexterityMax = (itemTypeAbv === Parser.ITM_TYP_ABV__MEDIUM_ARMOR && item.dexterityMax == null)
+			const dexterityMax = (itemTypeAbv === Parser.ITM_TYP_ABV__MEDIUM_ARMOR && item.dexterityMax === undefined)
 				? 2
 				: item.dexterityMax;
-			const isAddDex = item.dexterityMax != null || ![Parser.ITM_TYP_ABV__HEAVY_ARMOR, Parser.ITM_TYP_ABV__SHIELD].includes(itemTypeAbv);
+			const isAddDex = item.dexterityMax !== undefined || ![Parser.ITM_TYP_ABV__HEAVY_ARMOR, Parser.ITM_TYP_ABV__SHIELD].includes(itemTypeAbv);
 
 			const prefix = itemTypeAbv === Parser.ITM_TYP_ABV__SHIELD ? "+" : "";
 			const suffix = isAddDex ? ` + Dex${dexterityMax ? ` (max ${dexterityMax})` : ""}` : "";
@@ -11559,6 +11875,7 @@ Renderer.item = class {
 		specificVariant._variantName = genericVariant.name;
 
 		// Magic items do not inherit the value of the non-magical item
+		specificVariant._baseValue = baseItem.value;
 		delete specificVariant.value;
 
 		// Magic variants apply their own SRD info; page info
@@ -11621,13 +11938,13 @@ Renderer.item = class {
 					case "propertyAdd": {
 						specificVariant.property = [
 							...(specificVariant.property || []),
-							...val.filter(it => !specificVariant.property || !specificVariant.property.includes(it)),
+							...val.filter(it => !specificVariant.property || !specificVariant.property.some(property => (property?.uid || property) === (it?.uid || it))),
 						];
 						break;
 					}
 					case "propertyRemove": {
 						if (specificVariant.property) {
-							specificVariant.property = specificVariant.property.filter(it => !val.includes(it));
+							specificVariant.property = specificVariant.property.filter(it => !val.includes(it?.uid || it));
 							if (!specificVariant.property.length) delete specificVariant.property;
 						}
 						break;
@@ -11863,7 +12180,7 @@ Renderer.item = class {
 		}
 		if (item.property) {
 			item.property.forEach(p => {
-				const entProperty = Renderer.item.getProperty(p);
+				const entProperty = Renderer.item.getProperty(p?.uid || p);
 				if (!entProperty?.entries && !entProperty?.entriesTemplate) return;
 
 				Renderer.item._initFullEntries(item);
@@ -12503,6 +12820,7 @@ Renderer.vehicle = class {
 
 	static getRenderedString (ent, opts) {
 		opts = opts || {};
+		opts.styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
 		if (ent.upgradeType) return Renderer.vehicleUpgrade.getCompactRenderedString(ent, opts);
 
@@ -12941,6 +13259,23 @@ Renderer.vehicle = class {
 
 		const isInlinedToken = !opts.isCompact && Renderer.vehicle.hasToken(ent);
 
+		const ptActionStation = Renderer.monster.getCompactRenderedStringSection({
+			ent,
+			renderer,
+			title: "Action Stations",
+			key: "actionStation",
+			depth: 2,
+			styleHint: opts.styleHint,
+		});
+		const ptReaction = Renderer.monster.getCompactRenderedStringSection({
+			ent,
+			renderer,
+			title: "Reactions",
+			key: "reaction",
+			depth: 2,
+			styleHint: opts.styleHint,
+		});
+
 		return `
 			${Renderer.utils.getExcludedTr({entity: ent, datProp: "vehicle", page: UrlUtil.PG_VEHICLES})}
 			${Renderer.utils.getNameTr(ent, {isInlinedToken, page: UrlUtil.PG_VEHICLES})}
@@ -12952,8 +13287,8 @@ Renderer.vehicle = class {
 			${Renderer.vehicle._getAbilitySection(ent)}
 			${Renderer.vehicle._getResImmVulnSection(ent, {entriesMeta})}
 			${Renderer.vehicle._getTraitSection(renderer, ent)}
-			${Renderer.monster.getCompactRenderedStringSection(ent, renderer, "Action Stations", "actionStation", 2)}
-			${Renderer.monster.getCompactRenderedStringSection(ent, renderer, "Reactions", "reaction", 2)}
+			${ptActionStation}
+			${ptReaction}
 		`;
 	}
 

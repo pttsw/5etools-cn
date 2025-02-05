@@ -11,12 +11,14 @@ export class FilterBase extends BaseComponent {
 	/**
 	 * @param opts
 	 * @param opts.header Filter header (name)
+	 * @param [opts.headerDisplayName] Filter display name
 	 * @param [opts.headerHelp] Filter header help text (tooltip)
 	 */
 	constructor (opts) {
 		super();
 
 		this.header = opts.header;
+		this._headerDisplayName = opts.headerDisplayName;
 		this._headerHelp = opts.headerHelp;
 		this.cnHeader = opts.cnHeader;
 
@@ -30,8 +32,12 @@ export class FilterBase extends BaseComponent {
 		this._fnsTeardown = [];
 	}
 
+	_getHeaderDisplayName () {
+		return this.cnHeader || this._headerDisplayName || this.header;
+	}
+
 	_getRenderedHeader () {
-		return `<span ${this._headerHelp ? `title="${this._headerHelp.escapeQuotes()}" class="help-subtle"` : ""}>${this.cnHeader || this.header}</span>`;
+		return `<span ${this._headerHelp ? `title="${this._headerHelp.escapeQuotes()}" class="help-subtle"` : ""}>${this._getHeaderDisplayName()}</span>`;
 	}
 
 	set filterBox (it) { this._filterBox = it; }
@@ -207,7 +213,7 @@ export class FilterBase extends BaseComponent {
 						async () => {
 							await this._snapshotManager.pHandleClick_takeSnapshot({
 								filters: [this],
-								nameDefault: this.header,
+								nameDefault: this._getHeaderDisplayName(),
 							});
 						},
 					),
@@ -216,7 +222,7 @@ export class FilterBase extends BaseComponent {
 						async () => {
 							await this._snapshotManager.pHandleClick_takeSnapshotToDefaultDeck({
 								filters: [this],
-								nameDefault: this.header,
+								nameDefault: this._getHeaderDisplayName(),
 							});
 						},
 					),
@@ -334,8 +340,8 @@ export class FilterBase extends BaseComponent {
 	/* -------------------------------------------- */
 
 	_getDisplayStatePart_getHeader ({isPlainText = false} = {}) {
-		if (isPlainText) return `${this.header}: `;
-		return `<span class="ve-text-right w-140p no-shrink mr-2 bold">${this.header}:</span>`;
+		if (isPlainText) return `${this._getHeaderDisplayName()}: `;
+		return `<span class="ve-text-right w-140p no-shrink mr-2 bold">${this._getHeaderDisplayName()}:</span>`;
 	}
 
 	/* -------------------------------------------- */
