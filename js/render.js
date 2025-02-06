@@ -10557,7 +10557,7 @@ Renderer.monster = class {
 					: renderer.render(`{@savingThrow ${abv} ${mon.save[abv]}}`);
 
 				return [
-					`<td class="stats-tbl-ability-scores__lbl-abv stats__disp-as-score--${styleName} stats__disp-as-score--label"><div class="bold small-caps ve-text-right">${{Parser.attAbvToFull(abv) || abv.toTitleCase()}</div></td>`,
+					`<td class="stats-tbl-ability-scores__lbl-abv stats__disp-as-score--${styleName} stats__disp-as-score--label"><div class="bold small-caps ve-text-right">${Parser.attAbvToFull(abv) || abv.toTitleCase()}</div></td>`,
 					`<td class="stats-tbl-ability-scores__lbl-score stats__disp-as-score--${styleName}"><div class="ve-text-center">${ptScore}</div></td>`,
 					`<td class="stats-tbl-ability-scores__lbl-score stats__disp-as-bonus--${styleName}"><div class="ve-text-center">${ptBonus}</div></td>`,
 					`<td class="stats-tbl-ability-scores__lbl-score stats__disp-as-bonus--${styleName}"><div class="ve-text-center">${ptSave}</div></td>`,
@@ -11809,9 +11809,9 @@ Renderer.item = class {
 	 */
 	static _createSpecificVariants_isEditionMatch ({curBaseItem, curGenericVariant}) {
 		if (MiscUtil.isNearStrictlyEqual(curBaseItem.edition, curGenericVariant.edition)) return true;
-		if (curBaseItem.edition === "classic") return false;
+		if (curBaseItem.edition === "classic" || curBaseItem.edition === "经典") return false;
 		if (curBaseItem.edition == null) return true;
-		if (curBaseItem.edition === "one") return curGenericVariant.edition !== "classic";
+		if (curBaseItem.edition === "one" || curBaseItem.edition === "一") return curGenericVariant.edition !== "classic";
 		throw new Error(`Unhandled edition combination "${curBaseItem.edition}"/"${curGenericVariant.edition}" for base item "${curBaseItem.name}" and generic variant "${curGenericVariant.name}"!`);
 	}
 

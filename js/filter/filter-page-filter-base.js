@@ -138,7 +138,7 @@ export class PageFilterBase {
 		if (this._hasFluff(ent)) ent._fMisc.push("有简介");
 		if (this._hasFluffImages(ent)) ent._fMisc.push("有图片");
 
-		if (this._isReprinted(ent)) ent._fMisc.push("重印");
+		if (this.isReprinted(ent)) ent._fMisc.push("重印");
 	}
 	// endregion
 }
