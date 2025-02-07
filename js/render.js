@@ -11811,7 +11811,7 @@ Renderer.item = class {
 		if (MiscUtil.isNearStrictlyEqual(curBaseItem.edition, curGenericVariant.edition)) return true;
 		if (curBaseItem.edition === "classic" || curBaseItem.edition === "经典") return false;
 		if (curBaseItem.edition == null) return true;
-		if (curBaseItem.edition === "one" || curBaseItem.edition === "一") return curGenericVariant.edition !== "classic";
+		if (curBaseItem.edition === "one" || curBaseItem.edition === "一") return curGenericVariant.edition !== "classic" && curGenericVariant.edition !== "经典";
 		throw new Error(`Unhandled edition combination "${curBaseItem.edition}"/"${curGenericVariant.edition}" for base item "${curBaseItem.name}" and generic variant "${curGenericVariant.name}"!`);
 	}
 
@@ -12263,7 +12263,7 @@ Renderer.item = class {
 					type: "wrapper",
 					wrapped: {
 						type: "entries",
-						name: `Mastery: ${mastery.name}`,
+						name: `精通: ${mastery.name}`,
 						source: mastery.source,
 						page: mastery.page,
 						entries: Renderer.item._enhanceItem_getItemPropertyTypeEntries({item, ent: mastery}),
