@@ -6554,8 +6554,8 @@ Renderer.class = class {
 		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
 		return styleHint === "classic"
-			? `${clsHd.number * clsHd.faces} + 你的感知调整值`
-			: `${clsHd.number * clsHd.faces} + 感知调整值`;
+			? `${clsHd.number * clsHd.faces} + 你的体质调整值`
+			: `${clsHd.number * clsHd.faces} + 体质调整值`;
 	}
 
 	/**
@@ -6570,7 +6570,7 @@ Renderer.class = class {
 
 		return styleHint === "classic"
 			? `${Renderer.get().render(Renderer.class.getHitDiceEntry(clsHd, {styleHint}))} (or ${((clsHd.number * clsHd.faces) / 2 + 1)}) + your Constitution modifier per ${className} level after 1st`
-			: `${Renderer.get().render(Renderer.class.getHitDiceEntry(clsHd, {styleHint}))} + 你的感知调整值, 或, ${((clsHd.number * clsHd.faces) / 2 + 1)} + 你的感知调整值`;
+			: `${Renderer.get().render(Renderer.class.getHitDiceEntry(clsHd, {styleHint}))} + 你的体质调整值, 或, ${((clsHd.number * clsHd.faces) / 2 + 1)} + 你的体质调整值`;
 	}
 
 	/* -------------------------------------------- */
