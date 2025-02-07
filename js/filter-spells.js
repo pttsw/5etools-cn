@@ -644,7 +644,7 @@ class ModalFilterSpells extends ModalFilterBase {
 
 	_$getColumnHeaders () {
 		const btnMeta = [
-			{sort: "name", text: "Name", width: "3"},
+			{sort: "name", text: "名称", width: "3"},
 			{sort: "level", text: "Level", width: "1-5"},
 			{sort: "time", text: "Time", width: "2"},
 			{sort: "school", text: "School", width: "1"},

@@ -3,9 +3,9 @@ import {PageGeneratorTablepageBase} from "./generate-pages-page-generator.js";
 class _PageGeneratorEncountergen extends PageGeneratorTablepageBase {
 	_page = "encountergen.html";
 
-	_pageTitle = "Encounters";
-	_navbarTitle = "Encounter Generator";
-	_navbarDescription = "Choose a setting and level range, then roll the dice!";
+	_pageTitle = "遭遇";
+	_navbarTitle = "遭遇生成器";
+	_navbarDescription = "选择一组设置和等级范围，然后掷骰！";
 
 	_scripts = [
 		"encountergen.js",
@@ -15,8 +15,8 @@ class _PageGeneratorEncountergen extends PageGeneratorTablepageBase {
 class _PageGeneratorNames extends PageGeneratorTablepageBase {
 	_page = "names.html";
 
-	_pageTitle = "Names";
-	_navbarDescription = "Choose a race and a type, then roll the dice!";
+	_pageTitle = "名称";
+	_navbarDescription = "选择一个种族和类别，然后掷骰！";
 
 	_scripts = [
 		"names.js",

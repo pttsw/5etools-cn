@@ -137,7 +137,7 @@ export class RenderableCollectionSnapshots extends RenderableCollectionFilterSna
 			<div class="vr-0 absolute accordion__vr-preview"></div>
 			<div class="ve-flex-col py-3 ml-4 accordion__wrp-preview-inner w-100 min-w-0">
 				<div class="ve-flex-col pl-2 w-100">
-					<h5 class="mt-0 mb-1">Preview</h5>
+					<h5 class="mt-0 mb-1">预览</h5>
 					${wrpDisplayState}
 				</div>
 				${wrpDetailsFooter}

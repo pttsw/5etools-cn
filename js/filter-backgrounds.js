@@ -190,8 +190,8 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 
 	_$getColumnHeaders () {
 		const btnMeta = [
-			{sort: "name", text: "Name", width: "3"},
-			{sort: "ability", text: "Ability", width: "4"},
+			{sort: "name", text: "名称", width: "3"},
+			{sort: "ability", text: "属性值", width: "4"},
 			{sort: "skills", text: "Skills", width: "4"},
 			{sort: "source", text: "Source", width: "1"},
 		];

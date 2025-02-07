@@ -3,7 +3,7 @@ import {PageGeneratorManagerBase} from "./generate-pages-page-generator.js";
 class _PageGeneratorManagebrew extends PageGeneratorManagerBase {
 	_page = "managebrew.html";
 
-	_pageTitle = "Manage Homebrew";
+	_pageTitle = "管理自制内容";
 	_navbarDescription = "View, Add, and Delete Homebrew.";
 
 	_scriptsModules = [

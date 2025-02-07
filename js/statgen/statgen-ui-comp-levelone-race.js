@@ -80,7 +80,7 @@ export class StatGenUiRenderLevelOneRace extends StatGenUiRenderLevelOneEntityBa
 			$stgTashasControls.toggleVe(this._parent._state.common_isAllowTashasRules);
 		})();
 
-		const $dispTashas = $(`<div class="ve-flex-col"><div class="italic ve-muted">Loading...</div></div>`);
+		const $dispTashas = $(`<div class="ve-flex-col"><div class="italic ve-muted">加载中...</div></div>`);
 		DataLoader.pCacheAndGet(UrlUtil.PG_VARIANTRULES, Parser.SRC_TCE, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_VARIANTRULES]({name: "Customizing Your Origin", source: Parser.SRC_TCE}))
 			.then(rule => {
 				$$($dispTashas.empty())`${Renderer.hover.$getHoverContent_stats(UrlUtil.PG_VARIANTRULES, rule)}<hr class="hr-3">`;

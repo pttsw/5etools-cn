@@ -284,7 +284,7 @@ export class FilterBox extends ProxyBase {
 
 		const btnSnapshotManager = this._snapshotManager.getBtn();
 
-		const $btnSettings = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="Settings"><span class="glyphicon glyphicon-cog"></span></button>`)
+		const $btnSettings = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="设置"><span class="glyphicon glyphicon-cog"></span></button>`)
 			.click(() => this._pOpenSettingsModal());
 
 		const $btnSaveAlt = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="保存"><span class="glyphicon glyphicon-ok"></span></button>`)

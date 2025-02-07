@@ -681,7 +681,7 @@ class TimeTrackerRoot extends TimeTrackerBase {
 			.click(() => this._state.tab = 0);
 		const $btnShowCalendar = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-3" title="Calendar"><span class="glyphicon glyphicon-calendar"></span></button>`)
 			.click(() => this._state.tab = 1);
-		const $btnShowSettings = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-3" title="Settings"><span class="glyphicon glyphicon-cog"></span></button>`)
+		const $btnShowSettings = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-3" title="设置"><span class="glyphicon glyphicon-cog"></span></button>`)
 			.click(() => this._state.tab = 2);
 		const hookShowTab = () => {
 			$btnShowClock.toggleClass("active", this._state.tab === 0);

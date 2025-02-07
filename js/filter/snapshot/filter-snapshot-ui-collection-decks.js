@@ -198,7 +198,7 @@ export class RenderableCollectionSnapshotDecks extends RenderableCollectionFilte
 				${dispNoSnapshotDecks}
 				<hr class="hr-3">
 				<div class="ve-flex-col pl-2 w-100">
-					<h5 class="mt-0 mb-1">Preview</h5>
+					<h5 class="mt-0 mb-1">预览</h5>
 					${wrpDisplayState}
 				</div>
 			</div>

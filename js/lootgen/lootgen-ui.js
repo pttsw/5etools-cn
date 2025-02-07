@@ -1293,7 +1293,7 @@ export class LootGenUi extends BaseComponent {
 		this._$wrpOutputRows = $(`<div class="w-100 h-100 ve-flex-col ve-overflow-y-auto smooth-scroll"></div>`);
 
 		$$`<div class="ve-flex-col w-100 h-100">
-			<h4 class="my-0"><i>Output</i></h4>
+			<h4 class="my-0"><i>输出</i></h4>
 			${this._$wrpOutputRows}
 		</div>`
 			.appendTo($wrp);

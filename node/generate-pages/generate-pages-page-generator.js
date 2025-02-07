@@ -119,7 +119,7 @@ export class PageGeneratorGeneric extends PageGeneratorBase {
 export class PageGeneratorListBase extends PageGeneratorGeneric {
 	_filename = "list/template-list.hbs";
 
-	_navbarDescription = "Search by name on the left, click a name to display on the right.";
+	_navbarDescription = "用左侧的名称搜索，点击选项名称以在右侧显示。";
 
 	_isStyleBook = false;
 	_scriptIdentList;

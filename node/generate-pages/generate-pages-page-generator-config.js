@@ -9,8 +9,8 @@ class _PageGeneratorMaps extends PageGeneratorGeneric {
 	_filename = "page/template-page-maps.hbs";
 	_page = UrlUtil.PG_MAPS;
 
-	_pageTitle = "Maps";
-	_navbarDescription = "Browse maps from adventures and books.";
+	_pageTitle = "地图";
+	_navbarDescription = "浏览模组和书籍中的地图。";
 
 	_stylesheets = [
 		"maps",
@@ -30,8 +30,8 @@ class _PageGeneratorDmscreen extends PageGeneratorGeneric {
 	_filename = "page/template-page-dmscreen.hbs";
 	_page = UrlUtil.PG_DM_SCREEN;
 
-	_pageTitle = "DM Screen";
-	_navbarDescription = "Build a personalised DM screen.";
+	_pageTitle = "DM 帷幕";
+	_navbarDescription = "构筑你个人的 DM 帷幕。";
 
 	_isFontAwesome = true;
 	_stylesheets = [
@@ -62,7 +62,7 @@ class _PageGeneratorBlocklist extends PageGeneratorGeneric {
 	_filename = "page/template-page-blocklist.hbs";
 	_page = "blocklist.html";
 
-	_pageTitle = "Content Blocklist";
+	_pageTitle = "内容黑名单";
 	_navbarDescription = "Exclude content and export configurations.";
 
 	_scripts = [
@@ -75,8 +75,8 @@ class _PageGeneratorChangelog extends PageGeneratorGeneric {
 	_filename = "page/template-page-changelog.hbs";
 	_page = "changelog.html";
 
-	_pageTitle = "Changelog";
-	_navbarDescription = "See what changed.";
+	_pageTitle = "更新日志";
+	_navbarDescription = "看看改了什么。";
 
 	_stylesheets = [
 		"changelog",
@@ -95,8 +95,8 @@ class _PageGeneratorConverter extends PageGeneratorGeneric {
 	_filename = "page/template-page-converter.hbs";
 	_page = "converter.html";
 
-	_pageTitle = "Text Converter";
-	_navbarDescription = "Input text on left, hit parse, copy JSON from right.";
+	_pageTitle = "文本转换器";
+	_navbarDescription = "在左侧输入文本，点击“转换”，复制右侧的Json。";
 
 	_stylesheets = [
 		"converter",
@@ -119,8 +119,8 @@ class _PageGeneratorCrcalculator extends PageGeneratorGeneric {
 	_filename = "page/template-page-crcalculator.hbs";
 	_page = "crcalculator.html";
 
-	_pageTitle = "CR Calculator (2014)";
-	_navbarDescription = "Easily build custom creatures.";
+	_pageTitle = "CR 计算器 (2014)";
+	_navbarDescription = "轻松地构筑自定义生物。";
 
 	_stylesheets = [
 		"crcalculator",
@@ -134,10 +134,10 @@ class _PageGeneratorCrcalculator extends PageGeneratorGeneric {
 class _PageGeneratorIndex extends PageGeneratorGeneric {
 	_filename = "page/template-page-index.hbs";
 	_page = "index.html";
-	_pageDescription = "A suite of tools for 5th Edition Dungeons & Dragons players and Dungeon Masters.";
+	_pageDescription = "一套为了《龙与地下城5E》玩家和地下城主而存在的工具网站。";
 
 	_navbarTitleHtml = `5e<span>tools</span>`;
-	_navbarDescription = "A suite of tools for 5th Edition Dungeons & Dragons players and Dungeon Masters.";
+	_navbarDescription = "一套为了《龙与地下城5E》玩家和地下城主而存在的工具网站。";
 	_navbarPageTitleStyleAdditional = "page__title--home";
 
 	_isFontAwesome = true;
@@ -205,8 +205,8 @@ class _PageGeneratorLifegen extends PageGeneratorGeneric {
 	_filename = "page/template-page-lifegen.hbs";
 	_page = "lifegen.html";
 
-	_pageTitle = "This Is Your Life";
-	_navbarDescription = "Select options, and hit generate.";
+	_pageTitle = "这是你的人生";
+	_navbarDescription = "填写生成参数，然后点击生成。";
 
 	_stylesheets = [
 		"lifegen",
@@ -225,8 +225,8 @@ class _PageGeneratorLootgen extends PageGeneratorGeneric {
 	_filename = "page/template-page-lootgen.hbs";
 	_page = "lootgen.html";
 
-	_pageTitle = "Loot Generator";
-	_navbarDescription = "Configure the generator, then Roll Loot!";
+	_pageTitle = "战利品生成器";
+	_navbarDescription = "配置生成器, 然后掷骰生成战利品！";
 
 	_stylesheets = [
 		"lootgen-bundle",
@@ -368,8 +368,8 @@ class _PageGeneratorSearch extends PageGeneratorGeneric {
 	_filename = "page/template-page-search.hbs";
 	_page = "search.html";
 
-	_pageTitle = "Search";
-	_navbarDescription = "A search engine to add to your browser.";
+	_pageTitle = "搜索";
+	_navbarDescription = "在你浏览器之中的搜索引擎。";
 
 	_stylesheets = [
 		"search",
@@ -384,8 +384,8 @@ class _PageGeneratorStatgen extends PageGeneratorGeneric {
 	_filename = "page/template-page-statgen.hbs";
 	_page = "statgen.html";
 
-	_pageTitle = "Statgen";
-	_navbarDescription = "Change method on the left, refer to method that appears on the right.";
+	_pageTitle = "属性生成器";
+	_navbarDescription = "在左侧选择生成方式, 参考右侧的生成方法。";
 
 	_isFontAwesome = true;
 	_stylesheets = [

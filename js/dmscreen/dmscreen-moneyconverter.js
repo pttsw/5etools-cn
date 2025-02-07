@@ -166,7 +166,7 @@ export class MoneyConverter {
 				addRow();
 				doUpdate();
 			});
-		const $btnSettings = $(`<button class="ve-btn ve-btn-default ve-btn-sm" title="Settings"><span class="glyphicon glyphicon-cog"></span></button>`)
+		const $btnSettings = $(`<button class="ve-btn ve-btn-default ve-btn-sm" title="设置"><span class="glyphicon glyphicon-cog"></span></button>`)
 			.appendTo($wrpBtnAddSettings)
 			.click(() => {
 				const {$modalInner} = UiUtil.getShowModal({
