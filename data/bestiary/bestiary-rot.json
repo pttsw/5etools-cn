@@ -322,7 +322,7 @@
 					"name": "狂信徒优势",
 					"ENG_name": "Fanatic Advantage",
 					"entries": [
-						"每回合一次，如果龙牙在攻击检定时获得优势并且命中，目标将额外受到10点（{@dice 3d6}）伤害。"
+						"每回合一次，如果龙牙在攻击掷骰上具有优势并进行武器攻击并命中，目标将额外受到10点（{@damage 3d6}）伤害。"
 					]
 				},
 				{
@@ -352,14 +352,14 @@
 					"name": "短剑",
 					"ENG_name": "Shortsword",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害，加上7 ({@dice 2d6}) 点与龙牙有抗性的类型的伤害。"
+						"{@atk mw} {@hit 6} 命中，范围 5 英尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 穿刺伤害加上 7 ({@damage 2d6}) 龙牙对之具有抗性的类型伤害。"
 					]
 				},
 				{
 					"name": "龙息宝珠（每日2次）",
 					"ENG_name": "Orb of Dragon's Breath (2/Day)",
 					"entries": [
-						"{@atk rs} 命中{@hit 5}，射程50尺，单一目标。{@h}22 ({@dice 5d8}) 点伤害，类型为龙牙具有伤害抗性的类型。"
+						"{@atk rs} {@hit 5} 命中，范围 50 英尺，单一目标。 {@h}22 ({@damage 5d8}) 伤害类型为龙牙具有伤害抗性的类型。"
 					]
 				}
 			],
@@ -470,7 +470,7 @@
 					"name": "狂信徒优势",
 					"ENG_name": "Fanatic Advantage",
 					"entries": [
-						"每回合一次，如果龙魂在攻击检定上获得优势并且命中，目标将额外受到10点（{@dice 3d6}）伤害。"
+						"每回合一次，如果龙魂在攻击骰上具有优势并进行武器攻击并命中，目标将额外受到10点（{@damage 3d6}）伤害。"
 					]
 				},
 				{
@@ -500,14 +500,14 @@
 					"name": "短剑",
 					"ENG_name": "Shortsword",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害，加上10 ({@dice 3d6}) 点与龙魂抗性相同类型的额外伤害。"
+						"{@atk mw} {@hit 7} 命中，范围 5 英尺，一个目标。{@h}6 ({@damage 1d6 + 3}) 穿刺伤害加 10 ({@damage 3d6}) 龙魂具有抗性的伤害类型。"
 					]
 				},
 				{
 					"name": "龙息宝珠（每日3次）",
 					"ENG_name": "Orb of Dragon's Breath (3/Day)",
 					"entries": [
-						"{@atk rs} 命中{@hit 7}，射程90尺，单一目标。{@h}27 ({@dice 6d8}) 点伤害，伤害类型与龙魂的伤害抗性相同。"
+						"{@atk rs} {@hit 7} 命中，范围90英尺，单一目标。{@h}27（{@damage 6d8}）点伤害，伤害类型与龙魂具有抗性的类型相同。"
 					]
 				}
 			],
@@ -1170,7 +1170,7 @@
 					"name": "长剑",
 					"ENG_name": "Longsword",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}9（{@damage 1d8 + 5}）挥砍伤害，或双手使用时为10（{@dice 1d10 + 5}），外加10（{@damage 3d6}）黯蚀伤害。"
+						"{@atk mw} {@hit 9} 攻击命中，触及 5 尺，单一目标。{@h}9（{@damage 1d8 + 5}）挥砍伤害，或双手持用时 10（{@damage 1d10 + 5}），外加 10（{@damage 3d6}）暗蚀伤害。"
 					]
 				},
 				{
@@ -1563,14 +1563,9 @@
 				}
 			],
 			"legendaryHeader": [
-				"If Severin is wearing the Mask of the Dragon Queen, he can take 3 legendary actions, choosing from the options listed. Only one legendary action option can be used at a time and only at the end of another creature's turn. Severin regains spent legendary actions at the start of his turn."
+				"如果塞弗林佩戴着龙后面具，他可以进行3次传奇行动，从列出的选项中选择。一次只能使用一个传奇行动选项，且只能在另一生物的回合结束时使用。塞弗林在他的回合开始时恢复已使用的传奇行动。"
 			],
 			"legendary": [
-				{
-					"entries": [
-						"如果塞弗林佩戴着龙后面具，他可以进行3次传奇行动，从列出的选项中选择。一次只能使用一个传奇行动选项，且只能在另一生物的回合结束时使用。塞弗林在他的回合开始时恢复已使用的传奇行动。"
-					]
-				},
 				{
 					"name": "攻击",
 					"ENG_name": "Attack",
@@ -1670,7 +1665,7 @@
 							"name": "长剑",
 							"ENG_name": "Longsword",
 							"entries": [
-								"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}8点（1d8 + 4）挥砍伤害，或双手使用时9点（1d10 + 4）挥砍伤害，目标必须进行一次DC 12体质豁免检定，失败则受到9点（2d8）毒素伤害，成功则伤害减半。"
+								"{@atk mw} {@hit 6} 命中，范围 5 尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，或 9 ({@damage 1d10 + 4}) 挥砍伤害如果使用双手，并且目标必须进行 {@dc 12} 体质豁免检定，失败则受到 9 ({@damage 2d8}) 毒素伤害，成功则受到一半伤害。"
 							]
 						}
 					}

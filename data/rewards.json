@@ -1,6 +1,16 @@
 {
 	"reward": [
 		{
+			"name": "奥术研究护符",
+			"ENG_name": "Arcane Study Charm",
+			"source": "XDMG",
+			"page": 336,
+			"type": "Charm",
+			"entries": [
+				"在你的堡垒中进行一次长休息后，你会获得一个持续7天或直到你使用它的魔法护符（参见《超凡赠礼》章节3中的\"{@book 超凡赠礼|XDMG|2|超凡赠礼}\"）。这个护符允许你施放{@spell 辨识法术|XPHB}而不需要消耗一个法术位或者使用物质成分。如果你仍然拥有它，你不能再次获得这个护符。"
+			]
+		},
+		{
 			"name": "阿瑟罗斯的信徒",
 			"ENG_name": "Athreos's Devotee",
 			"source": "MOT",
@@ -78,15 +88,16 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Health|XDMG"
+				"健康祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
-				"Your Constitution score increases by 2, up to a maximum of 22."
+				"你的体质得分增加2点，最高不超过22。"
 			]
 		},
 		{
-			"name": "Blessing of Health",
+			"name": "健康祝福",
+			"ENG_name": "Blessing of Health",
 			"source": "XDMG",
 			"page": 98,
 			"type": "Blessing",
@@ -119,11 +130,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Magic Resistance|XDMG"
+				"魔法抗性祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
 				"你免疫于毒伤害和{@condition 中毒}状态。"
+			]
+		},
+		{
+			"name": "魔法抗性祝福",
+			"ENG_name": "Blessing of Magic Resistance",
+			"source": "XDMG",
+			"page": 98,
+			"type": "Blessing",
+			"entries": [
+				"你在对抗法术和其他魔法效果的豁免投掷中具有{@variantrule 优势|XPHB}。"
 			]
 		},
 		{
@@ -132,15 +153,16 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Protection|XDMG"
+				"护佑祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
-				"You gain a +1 bonus to AC and saving throws."
+				"你的AC和豁免检定获得+1加值。"
 			]
 		},
 		{
-			"name": "Blessing of Protection",
+			"name": "护佑祝福",
+			"ENG_name": "Blessing of Protection",
 			"source": "XDMG",
 			"page": 99,
 			"type": "Blessing",
@@ -184,15 +206,16 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Understanding|XDMG"
+				"理解祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
-				"Your Wisdom score increases by 2, up to a maximum of 22."
+				"你的感知得分增加2点，最高不超过22。"
 			]
 		},
 		{
-			"name": "Blessing of Understanding",
+			"name": "理解祝福",
+			"ENG_name": "Blessing of Understanding",
 			"source": "XDMG",
 			"page": 99,
 			"type": "Blessing",
@@ -225,11 +248,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Valhalla|XDMG"
+				"瓦尔哈拉祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
 				"这个祝福赋予你召唤灵界战士的能力，就像你吹响了{@item 瓦尔哈拉号角，白银||瓦尔哈拉的银角}。一旦使用了这个祝福，直到7天后你才能再次使用。"
+			]
+		},
+		{
+			"name": "瓦尔哈拉祝福",
+			"ENG_name": "Blessing of Valhalla",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Blessing",
+			"entries": [
+				"这个祝福赋予你召唤灵魂战士的力量，就像你在吹响{@item 瓦尔哈拉号角，白银|极限伤害|瓦尔哈拉的银角}一样。一旦你使用了这个祝福，你必须等待7天后才能再次使用。"
 			]
 		},
 		{
@@ -238,11 +271,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Weapon Enhancement|XDMG"
+				"武器增强祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
 				"你持有的一件非魔法武器在你挥舞时变成+1武器。"
+			]
+		},
+		{
+			"name": "武器增强祝福",
+			"ENG_name": "Blessing of Weapon Enhancement",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Blessing",
+			"entries": [
+				"你手中的一把非魔法武器在你使用时会变成{@item +1 武器|极限伤害}。"
 			]
 		},
 		{
@@ -251,11 +294,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Blessing of Wound Closure|XDMG"
+				"愈合祝福|极限伤害"
 			],
 			"type": "Blessing",
 			"entries": [
 				"这个祝福赋予你一个{@item 愈合护符}的好处。"
+			]
+		},
+		{
+			"name": "愈合祝福",
+			"ENG_name": "Blessing of Wound Closure",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Blessing",
+			"entries": [
+				"这个祝福赋予你{@item 愈合护符|极限伤害}的好处。"
 			]
 		},
 		{
@@ -519,7 +572,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"你对火焰伤害免疫。你还可以随意施放{@spell 燃烧之手}（豁免DC 15），无需使用法术位或任何材料。"
+				"你对火焰伤害免疫。你也可以随意施放{@spell 燃烧之手}（豁免 {@dc 15}），无需使用spell位或任何材料成分。"
 			]
 		},
 		{
@@ -545,7 +598,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"你对雷鸣伤害免疫。此外，你可以随意施放{@spell 雷鸣波}（豁免DC 15），无需使用法术槽或任何材料。"
+				"你对闪电和雷鸣伤害免疫。你也可以随意施放{@spell 雷鸣波}（豁免 {@dc 15}），无需使用法术位或任何材料成分。"
 			]
 		},
 		{
@@ -786,11 +839,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of Animal Conjuring|XDMG"
+				"动物显现之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"这个护符允许你作为一个动作施放{@spell 动物咒唤术}法术（3级版本）。一旦使用了三次，这个护符就会从你身上消失。"
+			]
+		},
+		{
+			"name": "动物显现之护咒",
+			"ENG_name": "Charm of Animal Conjuring",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"这个护符允许你施放{@spell 动物咒唤术|XPHB}。使用三次后，护符会从你身上消失。"
 			]
 		},
 		{
@@ -842,11 +905,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of Darkvision|XDMG"
+				"黑暗视觉之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"这个护符允许你作为动作施放{@spell 黑暗视觉}法术，无需任何材料。一旦使用三次，护符就会消失。"
+			]
+		},
+		{
+			"name": "黑暗视觉之护咒",
+			"ENG_name": "Charm of Darkvision",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"这个护符让你能够施放{@spell 黑暗视觉|XPHB}。一旦使用三次后，护符就会从你身上消失。"
 			]
 		},
 		{
@@ -866,7 +939,7 @@
 			"page": 62,
 			"type": "Charm",
 			"entries": [
-				"作为一个动作，你可以从你的眼睛中释放一个石化魔法波，在30尺的锥形区域内。那个区域内的每个生物都必须进行一次DC 15的体质豁免。豁免失败的生物将处于{@condition 石化}状态，持续1小时。豁免成功的生物部分变成石头，处于{@condition 束缚}状态。处于{@condition 束缚}状态的生物可以在每个回合结束时重复进行豁免，成功则结束该效果。",
+				"作为一次行动，你可以从你的眼中释放出一道石化魔法波，形成30英尺的锥形区域。该区域内的每个生物都必须进行一次DC 15的体质豁免检定。豁免失败的生物会获得{@condition petrified}状态，持续1小时。成功豁免的生物会部分变成石头，并获得{@condition restrained}状态。一个处于{@condition restrained}状态的生物可以在其每个回合结束时重复进行豁免检定，成功则解除效果。",
 				"一旦你使用这个魅力，它就会从你身上消失。"
 			]
 		},
@@ -876,11 +949,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of Feather Falling|XDMG"
+				"羽落之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"这个魅力赋予你一个{@item 羽落戒指}的好处。这些好处持续10天，之后这个魅力会从你身上消失。"
+			]
+		},
+		{
+			"name": "羽落之护咒",
+			"ENG_name": "Charm of Feather Falling",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"这个护符赋予你{@item 羽落戒指|极限伤害}的好处。这些好处持续10天，之后护符就会从你身上消失。"
 			]
 		},
 		{
@@ -909,11 +992,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of Heroism|XDMG"
+				"英雄之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"这个护符允许你作为一个动作给自己带来{@item 英勇药水}的效果。一旦这样做了，护符就会从你身上消失。"
+			]
+		},
+		{
+			"name": "英雄之护咒",
+			"ENG_name": "Charm of Heroism",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"这个护符让你可以使用{@item 英勇药水|极限伤害}作为{@action 魔法|XPHB}动作。一旦你这样做，护符就会从你身上消失。"
 			]
 		},
 		{
@@ -973,11 +1066,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of Restoration|XDMG"
+				"复原之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"这个魅力有6次充能。你可以采取行动消耗其中一些充能来施放以下法术：{@spell 高等复原术}（4次充能）或{@spell 次级复原术}（2次充能）。一旦所有的充能都被消耗掉，这个魅力就会从你身上消失。"
+			]
+		},
+		{
+			"name": "复原之护咒",
+			"ENG_name": "Charm of Restoration",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"这个护符有3个充能。你可以消耗一些充能来施展以下法术之一：{@spell 高等复原术|XPHB}（2个充能）或 {@spell 次级复原术|XPHB}（1个充能）。一旦所有充能都被消耗掉，护符就会从你身上消失。"
 			]
 		},
 		{
@@ -1027,7 +1130,7 @@
 			"source": "VNotEE",
 			"type": "Charm",
 			"entries": [
-				"每回合一次，当你使用武器或徒手攻击命中一个生物时，你可以将攻击注入生命窃取能量。你的攻击随后额外造成{@dice 1d10}黯蚀伤害，并且你获得5点{@book 临时生命值|PHB|9|临时生命值}。一旦使用了五次，这个魅力就会消失。"
+				"每回合一次，当你用武器或无武装攻击命中一个生物时，你可以为你的攻击注入生命吸取能量。你的攻击随后会造成额外的{@damage 1d10} 坏死伤害，并且你获得5 {@book 临时生命值|PHB|9|临时生命值}。一旦使用五次，护符就会消失。"
 			]
 		},
 		{
@@ -1096,7 +1199,7 @@
 			"page": 62,
 			"type": "Charm",
 			"entries": [
-				"作为一个动作，你在以你为中心的30尺锥形区域内创造出一个由{@dice 4d10}宝石组成的喷雾。该区域内的每个生物必须进行一次DC 15的敏捷豁免检定。如果豁免失败，生物将受到等同于创造宝石数量的钝击伤害。如果豁免成功，生物受到的伤害减半。效果结束后，宝石依然存在，每颗宝石价值10金币。这个魅力在你使用三次后会从你身上消失。"
+				"作为一次动作，你创造出一个以你为中心，范围为30英尺的锥形区域内散布着{@dice 4d10}颗宝石。该区域内的每个生物都必须进行一次{@dc 15}敏捷豁免检定。豁免失败的生物会受到等同于创造宝石数量的钝击伤害。成功通过豁免的生物受到的伤害减半。效果结束后宝石仍然存在，每颗价值10金币。这个护符使用三次后就会从你身上消失。"
 			]
 		},
 		{
@@ -1137,7 +1240,7 @@
 			"page": 62,
 			"type": "Charm",
 			"entries": [
-				"作为一个附赠动作，你可以触摸一个非魔法的近战武器，并在1小时内赋予它魔法。在此期间，武器在命中时额外造成{@dice 1d8}点力场伤害，并且对物体和结构造成双倍伤害。使用三次后，这个魅力从你身上消失。"
+				"作为奖励行动，你可以触摸一件非魔法近战武器，并为其注入魔法1小时。在此期间，该武器在命中时额外造成{@damage 1d8}点力量伤害，并对物体和结构造成双倍伤害。一旦使用三次后，护符将从你身上消失。"
 			]
 		},
 		{
@@ -1168,7 +1271,7 @@
 			"type": "Charm",
 			"entries": [
 				"这个魅力允许你创造多达1加仑的淡水，这些水会填满你拥有的一个或多个空容器。你可以每天这样做，最多三次，持续10天，之后这个魅力就会从你身上消失。",
-				"This charm allows you to cast the {@spell 幻景} spell (save DC 15) as an action. Once used, this charm vanishes from you."
+				"这个护符允许你以一个动作施放{@spell 幻景}法术（豁免 {@dc 15}）。一旦使用，这个护符就会从你身上消失。"
 			]
 		},
 		{
@@ -1227,11 +1330,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of the Slayer|XDMG"
+				"杀戮者之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"One sword in your possession becomes a {@item 屠龙者} or {@item 巨人屠杀者} (DM's choice) for the next 9 days. The charm then vanishes from you and the weapon returns to normal."
+			]
+		},
+		{
+			"name": "杀戮者之护咒",
+			"ENG_name": "Charm of the Slayer",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"你手中的一件武器在接下来的9天内变为{@item 屠龙者|极限伤害}或{@item 巨人屠杀者|极限伤害}（由DM决定）。之后该魅力将消失，武器恢复正常。"
 			]
 		},
 		{
@@ -1280,7 +1393,7 @@
 			"source": "HFStCM",
 			"type": "Charm",
 			"entries": [
-				"When a creature you can see within 30 feet of you moves, you can use your reaction to give the creature the {@condition 倒地} condition. Allies of the target who are within 30 feet of the target must succeed on a DC 16 Wisdom saving throw or have the {@condition 震慑} condition until the end of their next turn as they laugh uncontrollably at their friend's misfortune. Once used three times, the charm vanishes from you."
+				"当你可以看见的30英尺内的生物移动时，你可以使用你的反应使该生物处于 {@condition 倒地} 状态。目标的盟友如果位于目标30英尺内，必须通过一次 {@dc 16} 智慧豁免检定，否则将处于 {@condition 震慑} 状态直到他们的下一个回合结束，因为他们无法控制地嘲笑他们朋友的不幸。这个法术被使用三次后，从你身上消失。"
 			]
 		},
 		{
@@ -1371,11 +1484,21 @@
 			"source": "DMG",
 			"page": 228,
 			"reprintedAs": [
-				"Charm of Vitality|XDMG"
+				"活力之护咒|极限伤害"
 			],
 			"type": "Charm",
 			"entries": [
 				"这个魅力允许你作为一次行动给予自己{@item 活力药水}的好处。一旦你这样做了，魅力就会从你身上消失。"
+			]
+		},
+		{
+			"name": "活力之护咒",
+			"ENG_name": "Charm of Vitality",
+			"source": "XDMG",
+			"page": 99,
+			"type": "Charm",
+			"entries": [
+				"这个护符允许你作为一个 {@item 活力药水|极限伤害} 动作给予自己 {@action 魔法|XPHB} 的效果。一旦你这样做，护符就会从你身上消失。"
 			]
 		},
 		{
@@ -1547,7 +1670,7 @@
 			"page": 193,
 			"type": "Charm",
 			"entries": [
-				"诺加纳斯的礼物是将生命转化为不死之身的力量。这个黑暗礼物允许其受益者作为动作施放{@spell 死亡一指}法术。使用三次后，这个黑暗礼物就会消失。当它消失时，受益者必须成功进行一次DC 15的体质豁免检定，否则生命值将降至0点。",
+				"诺加纳斯的赠礼是将生命转化为不死之力。这一黑暗的赠礼使其受益者能够以一个动作施放{@spell 死亡一指}法术。使用三次后，这个黑暗赠礼就会消失。当它消失时，受益者必须通过一次{@dc 15}体质豁免检定，否则生命值降至0点。",
 				"这个黑暗礼物使受益者的血液变得漆黑且粘稠，像沥青一样。"
 			]
 		},
@@ -2320,7 +2443,7 @@
 			"type": "Piety Trait",
 			"entries": [
 				"{@i 虔诚3+ 凯拉诺斯特性}",
-				"作为凯拉诺斯的信徒，你已经证明了你的感知和对风暴之主的忠诚。在你的每个回合中，每当你用武器攻击击中一个生物时，你可以对目标额外造成{@dice 1d6}点闪电伤害。你可以使用这个特质的次数等于你的感知调整值（最少一次）。当你完成长休后，你恢复所有已使用的使用次数。"
+				"作为克兰诺斯的信徒，你证明了你的智慧和对风暴之主的忠诚。每当你用武器攻击命中一个生物时，你可以额外对该目标造成{@damage 1d6}点闪电damage。你可以使用此特性的次数等于你的智力修正值（最少一次）。当你完成一次长休息后，你将恢复所有已消耗的使用次数。"
 			]
 		},
 		{
@@ -2619,7 +2742,7 @@
 			"type": "Piety Trait",
 			"entries": [
 				"{@i 虔诚 25+ 奈莱亚特质}",
-				"当一只野兽即将攻击你时，它必须进行一次DC 15的感知豁免检定。如果豁免失败，生物必须选择一个不同的目标，或者攻击自动错过你。如果豁免成功，生物对该特质免疫24小时。"
+				"当一只野兽即将攻击你时，它必须进行一次{@dc 15}的智慧豁免。在豁免失败的情况下，该生物必须选择另一个目标，否则攻击自动对你无效。在豁免成功的情况下，该生物在接下来的24小时内对这一特性免疫。"
 			]
 		},
 		{
@@ -2683,6 +2806,16 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "观星台魅力",
+			"ENG_name": "Observatory Charm",
+			"source": "XDMG",
+			"page": 343,
+			"type": "Charm",
+			"entries": [
+				"你可以使用你的天文台窥探{@book 荒野空间|极限伤害|5|荒野空间}和{@book 星界位面|极限伤害|5|星界位面}的遥远角落。在你的天文台中度过一个长休息后，你会获得一个持续7天或直到你使用它的魔法魅力（见{@book 超自然赠礼|极限伤害|2|超自然赠礼}中的\"{@book 第三章|极限伤害|2}\"）。这个魅力允许你施放{@spell 异界探知|XPHB}而不消耗法术位。如果你仍然拥有这个魅力，你不能再次获得它。"
 			]
 		},
 		{
@@ -2770,7 +2903,7 @@
 					"type": "list",
 					"items": [
 						"目标恢复等于{@dice 1d8}加上你的感知调整值的生命值，并且你可以治愈目标的一种疾病或中和影响它的某种毒素。",
-						"目标必须在DC 15体质豁免检定中成功，或者在1分钟内，目标的武器攻击只造成一半伤害。目标可以在每个回合结束时重复豁免检定，成功时结束效果。"
+						"目标必须通过一次DC 15的体质豁免检定，否则在接下来的1分钟内，目标使用武器攻击时只能造成一半伤害。目标可以在其每个回合结束时重复进行豁免检定，成功则效果结束。"
 					]
 				},
 				"你可以使用这个动作的次数等于你的感知调整值（最少一次）。当你完成一次长休后，你恢复所有已使用的使用次数。"
@@ -2875,6 +3008,36 @@
 			"type": "Charm",
 			"entries": [
 				"当你激活这个护符时，你可以施放{@spell 疯狂冠冕}、{@spell 炼狱叱喝}或{@spell 粉碎音波}法术。激活后这个护符会消失。"
+			]
+		},
+		{
+			"name": "遗物护符",
+			"ENG_name": "Reliquary Charm",
+			"source": "XDMG",
+			"page": 344,
+			"type": "Charm",
+			"entries": [
+				"在你的堡垒中度过一次长休息后，你获得一个魔法魅力（参见《超自然礼物》第2页的\"{@book 超自然赠礼|极限伤害|2|超自然赠礼}\"在 {@book 第三章|极限伤害|2}），持续7天或直到你使用它。这个魅力允许你施放 {@spell 高等复原术|XPHB} 一次，无需消耗法术位或使用材料成分。如果你仍然拥有这个魅力，你不能再次获得它。"
+			]
+		},
+		{
+			"name": "庇护所护符",
+			"ENG_name": "Sanctuary Charm",
+			"source": "XDMG",
+			"page": 345,
+			"type": "Charm",
+			"entries": [
+				"在你的堡垒中度过一次长休息之后，你获得了一个持续7天或直到你使用它的魔法护符（参见第3章的\"{@book 超自然礼物|XDMG|2|超自然礼物}\"）。这个护符允许你无需消耗法术位即可施放一次{@spell 治疗之言|XPHB}。如果你仍然拥有它，则无法再次获得此护符。"
+			]
+		},
+		{
+			"name": "圣所护符",
+			"ENG_name": "Sanctum Charm",
+			"source": "XDMG",
+			"page": 346,
+			"type": "Charm",
+			"entries": [
+				"在你的堡垒中度过一段长休息后，你获得一个持续7天或直到使用的魔法护符（参见《超自然恩赐》章节3中的\"{@book 超自然恩赐|XDMG|2|超自然恩赐}\"）。该护符允许你无需消耗法术位即可施放一次{@spell 治疗|XPHB}。如果你仍然持有这个护符，就无法再次获得它。"
 			]
 		},
 		{
@@ -3191,7 +3354,7 @@
 							"type": "item",
 							"name": "弗拉戈米尔的火花",
 							"ENG_name": "Power:",
-							"entry": "宿主可以使用一个行动对它能看到的60尺范围内的一个生物发动心灵攻击。目标必须进行一次DC 16的感知豁免检定，否则在目标的下一个回合结束前处于{@condition 震慑}状态。"
+							"entry": "宿主可以使用一个动作，对60英尺内它能看到的一个生物发动心灵冲击。目标必须通过一次DC 16的智力豁免检定，否则将处于{@condition 震慑}状态直到其下回合结束。"
 						}
 					]
 				}

@@ -62,10 +62,22 @@
 			"source": "PHB",
 			"system": {
 				"uses.max": 3,
-				"uses.per": "lr",
-				"actionType": "其他",
-				"formula": "1d20"
-			}
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				],
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "none",
+						"activation.value": 0,
+						"roll.formula": "1d20"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "灵活移动",

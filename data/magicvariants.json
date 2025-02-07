@@ -3,6 +3,7 @@
 		{
 			"name": "+1 弹药",
 			"ENG_name": "+1 Ammunition",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -24,6 +25,9 @@
 				"source": "DMG",
 				"page": 150,
 				"srd": true,
+				"reprintedAs": [
+					"+1 弹药|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "uncommon",
 				"bonusWeapon": "+1",
@@ -36,8 +40,38 @@
 			}
 		},
 		{
+			"name": "+1 弹药",
+			"ENG_name": "+1 Ammunition",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"namePrefix": "+1 ",
+				"source": "XDMG",
+				"page": 228,
+				"freeRules2024": true,
+				"rarity": "uncommon",
+				"bonusWeapon": "+1",
+				"entries": [
+					"使用这件魔法弹药进行攻击和伤害判定时，你会获得{=bonusWeapon}的额外加成。一旦击中目标，弹药将不再具有魔法效果。"
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害",
+					"实现-不常见|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+1 护甲",
 			"ENG_name": "+1 Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -50,6 +84,9 @@
 				"page": 152,
 				"srd": true,
 				"basicRules": true,
+				"reprintedAs": [
+					"+1 护甲|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"bonusAc": "+1",
@@ -59,8 +96,40 @@
 			}
 		},
 		{
+			"name": "+1 护甲",
+			"ENG_name": "+1 Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "+1 ",
+				"source": "XDMG",
+				"page": 230,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"bonusAc": "+1",
+				"entries": [
+					"穿戴这件护甲时，你的AC有{=bonusAc}的加值。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害",
+					"军备 - 稀有|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+1 盾牌 (*)",
 			"ENG_name": "+1 Shield (*)",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -79,6 +148,9 @@
 				"source": "DMG",
 				"page": 200,
 				"srd": true,
+				"reprintedAs": [
+					"+1 盾牌 (*)|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "uncommon",
 				"bonusAc": "+1",
@@ -88,8 +160,37 @@
 			}
 		},
 		{
+			"name": "+1 盾牌 (*)",
+			"ENG_name": "+1 Shield (*)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "S|XPHB"
+				}
+			],
+			"entries": [
+				"这件盔甲带有诅咒，只有当使用{@spell Identify|XPHB}法术鉴定盔甲或你调谐到它时才会显现。一旦调谐到这件盔甲，你就会受到诅咒，直到你被{@spell Remove Curse|XPHB}法术或其他类似的魔法针对；移除盔甲无法解除诅咒。在被诅咒期间，你对钝器和穿刺伤害有{@variantrule Vulnerability|XPHB}易伤。",
+				"易受钝击伤害"
+			],
+			"inherits": {
+				"namePrefix": "+1 ",
+				"source": "XDMG",
+				"page": 303,
+				"freeRules2024": true,
+				"rarity": "uncommon",
+				"bonusAc": "+1",
+				"entries": [
+					"持有此盾牌时，你获得 {=bonusAc} 的 {@variantrule 护甲等级|XPHB} 加成，此外还有盾牌通常提供的防御等级加成。"
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+1 武器",
 			"ENG_name": "+1 Weapon",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -105,6 +206,9 @@
 				"page": 213,
 				"srd": true,
 				"basicRules": true,
+				"reprintedAs": [
+					"+1 武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "uncommon",
 				"bonusWeapon": "+1",
@@ -113,6 +217,30 @@
 				],
 				"lootTables": [
 					"魔法物品表F"
+				]
+			}
+		},
+		{
+			"name": "+1 武器",
+			"ENG_name": "+1 Weapon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "+1 ",
+				"source": "XDMG",
+				"page": 324,
+				"freeRules2024": true,
+				"rarity": "uncommon",
+				"bonusWeapon": "+1",
+				"entries": [
+					"使用这把魔法武器进行攻击和伤害判定时，你会获得{=bonusWeapon}的额外加成。"
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害"
 				]
 			}
 		},
@@ -140,6 +268,7 @@
 		{
 			"name": "+2 弹药",
 			"ENG_name": "+2 Ammunition",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -161,6 +290,9 @@
 				"source": "DMG",
 				"page": 150,
 				"srd": true,
+				"reprintedAs": [
+					"+2 弹药|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "rare",
 				"bonusWeapon": "+2",
@@ -173,8 +305,38 @@
 			}
 		},
 		{
+			"name": "+2 弹药",
+			"ENG_name": "+2 Ammunition",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"namePrefix": "+2 ",
+				"source": "XDMG",
+				"page": 228,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"bonusWeapon": "+2",
+				"entries": [
+					"使用这件魔法弹药进行攻击和伤害判定时，你会获得{=bonusWeapon}的额外加成。一旦击中目标，弹药将不再具有魔法效果。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害",
+					"每消耗一剂黑树液，生物必须通过一次DC 15体质豁免检定，否则会因中毒而在接下来的2d4小时内持续受到效果\u2014\u2014该效果随多剂量累积。|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+2 护甲",
 			"ENG_name": "+2 Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -187,6 +349,9 @@
 				"page": 152,
 				"srd": true,
 				"basicRules": true,
+				"reprintedAs": [
+					"+2 护甲|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "very rare",
 				"bonusAc": "+2",
@@ -196,8 +361,40 @@
 			}
 		},
 		{
+			"name": "+2 护甲",
+			"ENG_name": "+2 Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "+2 ",
+				"source": "XDMG",
+				"page": 230,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"bonusAc": "+2",
+				"entries": [
+					"穿戴这件护甲时，你的AC有{=bonusAc}的加值。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害",
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+2 盾牌 (*)",
 			"ENG_name": "+2 Shield (*)",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -216,6 +413,9 @@
 				"source": "DMG",
 				"page": 200,
 				"srd": true,
+				"reprintedAs": [
+					"+2 盾牌 (*)|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"bonusAc": "+2",
@@ -225,8 +425,37 @@
 			}
 		},
 		{
+			"name": "+2 盾牌 (*)",
+			"ENG_name": "+2 Shield (*)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "S|XPHB"
+				}
+			],
+			"entries": [
+				"{@note * 这个通用变体与项目 {@item +2 盾牌|XDMG}} 拥有相同的名称和来源。",
+				"当你持有此盾牌时，你获得+2的{@variantrule 护甲等级|XPHB}加成，此外还有盾牌对AC的常规加成。"
+			],
+			"inherits": {
+				"namePrefix": "+2 ",
+				"source": "XDMG",
+				"page": 303,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"bonusAc": "+2",
+				"entries": [
+					"持有此盾牌时，你获得 {=bonusAc} 的 {@variantrule 护甲等级|XPHB} 加成，此外还有盾牌通常提供的防御等级加成。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+2 武器",
 			"ENG_name": "+2 Weapon",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -242,6 +471,9 @@
 				"page": 213,
 				"srd": true,
 				"basicRules": true,
+				"reprintedAs": [
+					"+2 武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"bonusWeapon": "+2",
@@ -250,6 +482,30 @@
 				],
 				"lootTables": [
 					"魔法物品表G"
+				]
+			}
+		},
+		{
+			"name": "+2 武器",
+			"ENG_name": "+2 Weapon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "+2 ",
+				"source": "XDMG",
+				"page": 324,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"bonusWeapon": "+2",
+				"entries": [
+					"使用这把魔法武器进行攻击和伤害判定时，你会获得{=bonusWeapon}的额外加成。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
 				]
 			}
 		},
@@ -277,6 +533,7 @@
 		{
 			"name": "+3 弹药",
 			"ENG_name": "+3 Ammunition",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -298,6 +555,9 @@
 				"source": "DMG",
 				"page": 150,
 				"srd": true,
+				"reprintedAs": [
+					"+3 弹药|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "very rare",
 				"bonusWeapon": "+3",
@@ -310,8 +570,38 @@
 			}
 		},
 		{
+			"name": "+3 弹药",
+			"ENG_name": "+3 Ammunition",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"namePrefix": "+3 ",
+				"source": "XDMG",
+				"page": 228,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"bonusWeapon": "+3",
+				"entries": [
+					"使用这件魔法弹药进行攻击和伤害判定时，你会获得{=bonusWeapon}的额外加成。一旦击中目标，弹药将不再具有魔法效果。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害",
+					"你可以使用{@action Magic|XPHB}动作将珠子抛掷至多达60英尺远。珠子在撞击时会在10英尺半径的{@variantrule Sphere [Area of Effect]|XPHB|Sphere}内爆炸并被摧毁。在该{@variantrule Sphere [Area of Effect]|XPHB|Sphere}内的每个生物必须成功通过一次{@dc 15}敏捷豁免检定，否则将受到{@damage 5d4}力量伤害。然后，一个透明的力场球体将包围该区域1分钟。任何未能通过豁免检定且完全位于区域内的生物将被困在这个球体内。成功通过豁免检定或部分位于区域内的生物将被从球体中心推开，直到它们不再处于其内部。只有可呼吸的空气可以通过球体墙壁。没有任何攻击或其他效果可以通过。|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+3 护甲",
 			"ENG_name": "+3 Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -324,6 +614,9 @@
 				"page": 152,
 				"srd": true,
 				"basicRules": true,
+				"reprintedAs": [
+					"+3 护甲|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "legendary",
 				"bonusAc": "+3",
@@ -333,8 +626,40 @@
 			}
 		},
 		{
+			"name": "+3 护甲",
+			"ENG_name": "+3 Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "+3 ",
+				"source": "XDMG",
+				"page": 230,
+				"freeRules2024": true,
+				"rarity": "legendary",
+				"bonusAc": "+3",
+				"entries": [
+					"穿戴这件护甲时，你的AC有{=bonusAc}的加值。"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害",
+					"遗物 - 传奇|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+3 盾牌 (*)",
 			"ENG_name": "+3 Shield (*)",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -353,6 +678,9 @@
 				"source": "DMG",
 				"page": 200,
 				"srd": true,
+				"reprintedAs": [
+					"+3 盾牌 (*)|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "very rare",
 				"bonusAc": "+3",
@@ -362,8 +690,37 @@
 			}
 		},
 		{
+			"name": "+3 盾牌 (*)",
+			"ENG_name": "+3 Shield (*)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "S|XPHB"
+				}
+			],
+			"entries": [
+				"{@note * 这个通用变体与物品 {@item +3盾牌|XDMG}} 拥有相同的名称和来源。",
+				"易受伤害（钝器）"
+			],
+			"inherits": {
+				"namePrefix": "+3 ",
+				"source": "XDMG",
+				"page": 303,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"bonusAc": "+3",
+				"entries": [
+					"持有此盾牌时，你获得 {=bonusAc} 的 {@variantrule 护甲等级|XPHB} 加成，此外还有盾牌通常提供的防御等级加成。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "+3 武器",
 			"ENG_name": "+3 Weapon",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -379,6 +736,9 @@
 				"page": 213,
 				"srd": true,
 				"basicRules": true,
+				"reprintedAs": [
+					"+3 武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "very rare",
 				"bonusWeapon": "+3",
@@ -387,6 +747,30 @@
 				],
 				"lootTables": [
 					"魔法物品表H"
+				]
+			}
+		},
+		{
+			"name": "+3 武器",
+			"ENG_name": "+3 Weapon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "+3 ",
+				"source": "XDMG",
+				"page": 324,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"bonusWeapon": "+3",
+				"entries": [
+					"使用这把魔法武器进行攻击和伤害判定时，你会获得{=bonusWeapon}的额外加成。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
 				]
 			}
 		},
@@ -489,6 +873,7 @@
 		{
 			"name": "精金护甲",
 			"ENG_name": "Adamantine Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -513,6 +898,9 @@
 				"source": "DMG",
 				"page": 150,
 				"srd": true,
+				"reprintedAs": [
+					"精金护甲|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "uncommon",
 				"entries": [
@@ -521,8 +909,39 @@
 			}
 		},
 		{
+			"name": "精金护甲",
+			"ENG_name": "Adamantine Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"excludes": {
+				"name": "兽皮甲",
+				"ENG_name": "Hide Armor"
+			},
+			"inherits": {
+				"namePrefix": "精金",
+				"source": "XDMG",
+				"page": 227,
+				"freeRules2024": true,
+				"rarity": "uncommon",
+				"entries": [
+					"这件武器或弹药由精金制成，精金是现存最坚硬的物质之一。每当这件武器或弹药击中一个物体时，该攻击将造成{@variantrule 重击|XPHB}。"
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "精金武器",
 			"ENG_name": "Adamantine Weapon",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -540,6 +959,9 @@
 				"namePrefix": "精金",
 				"source": "XGE",
 				"page": 78,
+				"reprintedAs": [
+					"精金武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "unknown",
 				"valueExpression": "[[baseItem.value]] + 50000",
@@ -547,6 +969,131 @@
 					"使用这个武器击中物体时，每次命中都视为重击。"
 				]
 			}
+		},
+		{
+			"name": "精金武器",
+			"ENG_name": "Adamantine Weapon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				},
+				{
+					"type": "M|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "精金",
+				"source": "XDMG",
+				"page": 227,
+				"rarity": "uncommon",
+				"entries": [
+					"作为一次行动，你可以从武器中释放一道60英尺宽的破坏能量锥。该区域内的每个生物都必须进行一次DC 18敏捷豁免检定，失败者将受到{@variantrule 重击|XPHB}点由龙之吐息武器造成的伤害类型的伤害，成功则受到一半伤害。此行动一旦使用，直到次日黎明之前无法再次使用。"
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害"
+				]
+			}
+		},
+		{
+			"name": "屠戮弹药",
+			"ENG_name": "Ammunition of Slaying",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"nameSuffix": " 杀戮之",
+				"source": "XDMG",
+				"page": 228,
+				"rarity": "very rare",
+				"entries": [
+					"这种魔法弹药旨在击杀特定类型的生物，由DM选择或通过下表随机决定。如果该类型的生物受到弹药的伤害，则该生物进行一次{@dc 17}体质豁免检定，若豁免失败则额外承受{@damage 6d10}力场伤害，若豁免成功则额外承受一半的力场伤害。",
+					"当你处于狂暴状态时，你会将你能看见或听见的最近生物视为你的敌人。如果有多个可能的生物，随机选择一个。在你的每个回合，你必须尽可能接近该生物并采取 {@action 攻击|XPHB} 行动，以该生物为目标。如果你无法足够接近该生物以用武器攻击它，那么你的回合在你用完所有可用移动后结束。如果该生物死亡或不再能被你看见或听见，那么下一个你能看到或听见的最近的生物将成为你的新目标。",
+					{
+						"type": "table",
+						"colStyles": [
+							"col-2 text-center",
+							"col-10"
+						],
+						"colLabels": [
+							"1d100",
+							"生物类型"
+						],
+						"rows": [
+							[
+								"01-10",
+								"异怪"
+							],
+							[
+								"11-15",
+								"野兽"
+							],
+							[
+								"16-20",
+								"天界生物"
+							],
+							[
+								"21-25",
+								"构装体"
+							],
+							[
+								"26-35",
+								"龙"
+							],
+							[
+								"36-45",
+								"元素生物"
+							],
+							[
+								"46-50",
+								"人形生物"
+							],
+							[
+								"51-60",
+								"精类"
+							],
+							[
+								"61-70",
+								"邪魔"
+							],
+							[
+								"71-75",
+								"巨人"
+							],
+							[
+								"76-80",
+								"怪兽"
+							],
+							[
+								"81-85",
+								"泥怪"
+							],
+							[
+								"86-90",
+								"植物"
+							],
+							[
+								"91-00",
+								"死灵"
+							]
+						]
+					}
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "反魔法装甲",
@@ -626,6 +1173,7 @@
 		{
 			"name": "强酸抗性护甲",
 			"ENG_name": "Armor of Acid Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -638,7 +1186,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Acid Resistance|XDMG"
+					"强酸抗性护甲|极限伤害"
 				],
 				"resist": [
 					"强酸"
@@ -653,8 +1201,40 @@
 			}
 		},
 		{
+			"name": "强酸抗性护甲",
+			"ENG_name": "Armor of Acid Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 酸性抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"强酸"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
 			"name": "冷冻抗性护甲",
 			"ENG_name": "Armor of Cold Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -667,7 +1247,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Cold Resistance|XDMG"
+					"冷冻抗性护甲|极限伤害"
 				],
 				"resist": [
 					"冷冻"
@@ -682,8 +1262,40 @@
 			}
 		},
 		{
+			"name": "冷冻抗性护甲",
+			"ENG_name": "Armor of Cold Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 寒冷抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"冷冻"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
 			"name": "火焰抗性护甲",
 			"ENG_name": "Armor of Fire Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -696,7 +1308,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Fire Resistance|XDMG"
+					"火焰抗性护甲|极限伤害"
 				],
 				"resist": [
 					"火焰"
@@ -711,8 +1323,40 @@
 			}
 		},
 		{
+			"name": "火焰抗性护甲",
+			"ENG_name": "Armor of Fire Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 火焰抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"火焰"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
 			"name": "力场抗性护甲",
 			"ENG_name": "Armor of Force Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -725,7 +1369,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Force Resistance|XDMG"
+					"力场抗性护甲|极限伤害"
 				],
 				"resist": [
 					"力场"
@@ -736,6 +1380,37 @@
 				"hasRefs": true,
 				"entries": [
 					"{#itemEntry 抗性护甲}"
+				]
+			}
+		},
+		{
+			"name": "力场抗性护甲",
+			"ENG_name": "Armor of Force Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 力量抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"力场"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
 				]
 			}
 		},
@@ -757,7 +1432,7 @@
 				"page": 65,
 				"rarity": "uncommon",
 				"entries": [
-					"穿戴这件护甲时，你可以采取一个附赠动作使护甲释放有毒孢子，这些孢子会填充以你为中心的10尺半径的球形区域。该区域内的每个生物必须进行一次DC 15的体质豁免检定，否则在你下一个回合结束前处于中毒状态。一旦使用了这个特性，直到下一个黎明之前不能再使用。"
+					"在穿戴这套盔甲时，你可以使用一个额外动作让盔甲散发出毒孢子，这些毒孢子会填满以你为中心、半径10英尺的球体。该区域内的每个生物都必须通过一次{@dc 15}体质豁免掷骰，否则将在你的下一个回合结束前处于中毒状态。一旦使用了这个特性，直到次日黎明之前不能再使用。"
 				]
 			},
 			"hasFluffImages": true
@@ -765,6 +1440,7 @@
 		{
 			"name": "闪烁甲",
 			"ENG_name": "Armor of Gleaming",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -784,6 +1460,9 @@
 				"nameSuffix": "闪烁",
 				"source": "XGE",
 				"page": 136,
+				"reprintedAs": [
+					"闪烁甲|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "common",
 				"entries": [
@@ -792,9 +1471,9 @@
 			}
 		},
 		{
-			"name": "闪电抗性护甲",
-			"ENG_name": "Armor of Lightning Resistance",
-			"type": "GV|DMG",
+			"name": "闪烁甲",
+			"ENG_name": "Armor of Gleaming",
+			"type": "GV|XDMG",
 			"requires": [
 				{
 					"type": "LA|XPHB"
@@ -807,10 +1486,36 @@
 				}
 			],
 			"inherits": {
+				"nameSuffix": "闪烁",
+				"source": "XDMG",
+				"page": 230,
+				"rarity": "common",
+				"entries": [
+					"这件盔甲永远不会变脏。"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害"
+				]
+			}
+		},
+		{
+			"name": "闪电抗性护甲",
+			"ENG_name": "Armor of Lightning Resistance",
+			"edition": "经典",
+			"type": "GV|DMG",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
 				"nameSuffix": " 抗电属性",
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"闪电抗性护甲|极限伤害"
+				],
 				"resist": [
 					"闪电"
 				],
@@ -824,8 +1529,40 @@
 			}
 		},
 		{
+			"name": "闪电抗性护甲",
+			"ENG_name": "Armor of Lightning Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 抗电属性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"闪电"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
 			"name": "黯蚀抗性护甲",
 			"ENG_name": "Armor of Necrotic Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -838,7 +1575,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Lightning Resistance|XDMG"
+					"黯蚀抗性护甲|极限伤害"
 				],
 				"resist": [
 					"黯蚀"
@@ -853,67 +1590,8 @@
 			}
 		},
 		{
-			"name": "毒素抗性护甲",
-			"ENG_name": "Armor of Poison Resistance",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"type": "LA|XPHB"
-				},
-				{
-					"type": "MA|XPHB"
-				},
-				{
-					"type": "HA|XPHB"
-				}
-			],
-			"inherits": {
-				"nameSuffix": " of Lightning Resistance",
-				"source": "XDMG",
-				"page": 231,
-				"freeRules2024": true,
-				"resist": [
-					"lightning"
-				],
-				"rarity": "rare",
-				"reqAttune": true,
-				"hasRefs": true,
-				"entries": [
-					"{#itemEntry Armor of Resistance|XDMG}"
-				]
-			}
-		},
-		{
-			"name": "Armor of Necrotic Resistance",
-			"edition": "classic",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"armor": true
-				}
-			],
-			"inherits": {
-				"nameSuffix": " of Necrotic Resistance",
-				"source": "DMG",
-				"page": 152,
-				"srd": true,
-				"reprintedAs": [
-					"Armor of Necrotic Resistance|XDMG"
-				],
-				"resist": [
-					"necrotic"
-				],
-				"tier": "major",
-				"rarity": "rare",
-				"reqAttune": true,
-				"hasRefs": true,
-				"entries": [
-					"{#itemEntry Armor of Resistance}"
-				]
-			}
-		},
-		{
-			"name": "Armor of Necrotic Resistance",
+			"name": "黯蚀抗性护甲",
+			"ENG_name": "Armor of Necrotic Resistance",
 			"type": "GV|XDMG",
 			"requires": [
 				{
@@ -927,24 +1605,25 @@
 				}
 			],
 			"inherits": {
-				"nameSuffix": " of Necrotic Resistance",
+				"nameSuffix": " 死灵抗性",
 				"source": "XDMG",
 				"page": 231,
 				"freeRules2024": true,
 				"resist": [
-					"necrotic"
+					"黯蚀"
 				],
 				"rarity": "rare",
 				"reqAttune": true,
 				"hasRefs": true,
 				"entries": [
-					"{#itemEntry Armor of Resistance|XDMG}"
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
 				]
 			}
 		},
 		{
-			"name": "Armor of Poison Resistance",
-			"edition": "classic",
+			"name": "毒素抗性护甲",
+			"ENG_name": "Armor of Poison Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -957,7 +1636,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Poison Resistance|XDMG"
+					"毒素抗性护甲|极限伤害"
 				],
 				"resist": [
 					"毒素"
@@ -972,8 +1651,40 @@
 			}
 		},
 		{
+			"name": "毒素抗性护甲",
+			"ENG_name": "Armor of Poison Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 毒素抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"毒素"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
 			"name": "心灵抗性护甲",
 			"ENG_name": "Armor of Psychic Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -986,7 +1697,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Psychic Resistance|XDMG"
+					"心灵抗性护甲|极限伤害"
 				],
 				"resist": [
 					"心灵"
@@ -1001,8 +1712,40 @@
 			}
 		},
 		{
+			"name": "心灵抗性护甲",
+			"ENG_name": "Armor of Psychic Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 心灵抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"心灵"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
 			"name": "光耀抗性护甲",
 			"ENG_name": "Armor of Radiant Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1015,7 +1758,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Radiant Resistance|XDMG"
+					"光耀抗性护甲|极限伤害"
 				],
 				"resist": [
 					"光耀"
@@ -1026,6 +1769,37 @@
 				"hasRefs": true,
 				"entries": [
 					"{#itemEntry 抗性护甲}"
+				]
+			}
+		},
+		{
+			"name": "光耀抗性护甲",
+			"ENG_name": "Armor of Radiant Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "的辐射抗性",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"光耀"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
 				]
 			}
 		},
@@ -1098,6 +1872,7 @@
 		{
 			"name": "雷鸣抗性护甲",
 			"ENG_name": "Armor of Thunder Resistance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1110,7 +1885,7 @@
 				"page": 152,
 				"srd": true,
 				"reprintedAs": [
-					"Armor of Thunder Resistance|XDMG"
+					"雷鸣抗性护甲|极限伤害"
 				],
 				"resist": [
 					"雷鸣"
@@ -1125,10 +1900,179 @@
 			}
 		},
 		{
+			"name": "雷鸣抗性护甲",
+			"ENG_name": "Armor of Thunder Resistance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 雷霆抗性之",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"雷鸣"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）|XDMG"
+				]
+			}
+		},
+		{
+			"name": "易伤护甲（钝击）",
+			"ENG_name": "Armor of Vulnerability (Bludgeoning)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "易受攻击（钝击在你的每个回合中，你必须尽可能地接近该生物，并执行{@action 攻击|XPHB}动作，目标是该生物。）",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"钝击"
+				],
+				"vulnerable": [
+					"穿刺",
+					"斩击"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"curse": true,
+				"entries": [
+					"易伤（穿刺）",
+					{
+						"type": "entries",
+						"name": "诅咒",
+						"ENG_name": "Curse",
+						"entries": [
+							"这件盔甲带有诅咒，只有当你对其施展 {@spell 鉴定术|XPHB} 辨识法术或你与之共鸣时，这一事实才会被揭示。与该盔甲共鸣会对你施加诅咒，直到你成为 {@spell 移除诅咒|XPHB} 解除诅咒或其他类似魔法的目标；仅仅移除盔甲并不能结束诅咒。在受到诅咒期间，你对穿刺和挥砍伤害具有 {@variantrule 易伤|XPHB} 易伤。"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "易伤护甲（穿刺）",
+			"ENG_name": "Armor of Vulnerability (Piercing)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "穿戴这件盔甲时，你对穿刺伤害具有{@variantrule 抗性|XPHB}。",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"穿刺"
+				],
+				"vulnerable": [
+					"钝击",
+					"斩击"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"curse": true,
+				"entries": [
+					"当你狂暴时，你会将离你最近且能看见或听见的生物视为敌人。如果有多个可能的目标，随机选择一个。在你的每个回合中，你必须尽可能地接近该生物，并采取{@variantrule 抗性|XPHB}行动，以该生物为目标。如果你无法足够接近该生物来使用武器攻击它，你的回合在你用尽所有可用移动后结束。如果该生物死亡或你再也无法看见或听见它，下一个离你最近且能看见或听见的生物将成为你的新目标。",
+					{
+						"type": "entries",
+						"name": "诅咒",
+						"ENG_name": "Curse",
+						"entries": [
+							"这件盔甲被诅咒了，这一事实只有在对盔甲使用 {@spell 鉴定术|XPHB} 法术或你调谐到它时才会显现。一旦调谐到盔甲，你就会受到诅咒，直到你成为 {@spell 移除诅咒|XPHB} 法术或其他类似魔法的目标；移除盔甲无法解除诅咒。在诅咒状态下，你对钝击和挥砍伤害有 {@variantrule 易伤|XPHB}。"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "易伤护甲（挥砍）",
+			"ENG_name": "Armor of Vulnerability (Slashing)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "易伤（挥砍）",
+				"source": "XDMG",
+				"page": 231,
+				"freeRules2024": true,
+				"resist": [
+					"斩击"
+				],
+				"vulnerable": [
+					"钝击",
+					"穿刺"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"curse": true,
+				"entries": [
+					"穿戴这件盔甲时，你对挥砍伤害有 {@variantrule 抗性|XPHB}。",
+					{
+						"type": "entries",
+						"name": "诅咒",
+						"ENG_name": "Curse",
+						"entries": [
+							"这套盔甲带有诅咒，这一事实仅在使用{@spell 鉴定术|XPHB}法术鉴定盔甲或你与它调谐时显现。与盔甲调谐会使你受到诅咒，直到你被{@spell 移除诅咒|XPHB}法术或其他类似魔法所针对；移除盔甲无法解除诅咒。被诅咒期间，你对钝击和穿刺伤害具有{@variantrule 易伤|XPHB}。"
+						]
+					}
+				]
+			}
+		},
+		{
 			"name": "无重力护甲",
 			"ENG_name": "Armor of Weightlessness",
 			"type": "GV|DMG",
 			"requires": [
+				{
+					"type": "LA"
+				},
+				{
+					"type": "MA"
+				},
+				{
+					"type": "HA"
+				},
 				{
 					"type": "LA|XPHB"
 				},
@@ -1161,16 +2105,14 @@
 		{
 			"name": "屠杀箭 (通用)",
 			"ENG_name": "Arrow of Slaying (*)",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"type": "LA|XPHB"
+					"arrow": true
 				},
 				{
-					"type": "MA|XPHB"
-				},
-				{
-					"type": "HA|XPHB"
+					"bolt": true
 				}
 			],
 			"excludes": {
@@ -1185,7 +2127,7 @@
 			"ammo": true,
 			"entries": [
 				"{@note * 这个通用变体与物品{@item 屠戮箭}具有相同的名称和来源。}",
-				"一个{@i 屠戮箭}是一种用于杀死特定种类生物的魔法武器。有些屠戮箭更为专注；例如，既有{@i 屠龙箭}也有{@i 屠蓝龙箭}。如果属于屠戮箭相关类型、种族或群体的生物受到屠戮箭的伤害，该生物必须进行一次DC 17的体质豁免检定，豁免失败则额外承受{@dice 6d10}穿刺伤害，豁免成功则额外承受一半的伤害。",
+				"一支{@i 屠杀箭}是一种旨在杀死特定种类生物的魔法武器。有些比其他的更具针对性；例如，既有{@i 屠龙箭}也有{@i 屠龙蓝箭}。如果属于与{@i 屠杀箭}相关联的类型、种族或群体的生物受到该箭的伤害，该生物必须进行一次{@dc 17}体质豁免检定，在豁免失败时额外承受{@damage 6d10}穿刺伤害，若豁免成功则只承受一半的额外伤害。",
 				"一旦{@i 屠杀箭}对生物造成了额外伤害，它就会变成一支非魔法箭。",
 				"存在其他类型的这种魔法弹药，例如专为弩设计的屠戮弩箭，尽管箭是最普遍的。"
 			],
@@ -1194,13 +2136,17 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"reprintedAs": [
+					"屠戮弹药|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "very rare",
 				"entries": [
-					"{=baseName/at} {=baseName/l} of slaying 是一种魔法武器，旨在杀死特定种类的生物。有些比其他的更专注；例如，既有{@i {=baseName/l}s of dragon slaying}也有{@i {=baseName/l}s of blue dragon slaying}。如果属于与{=baseName/a} {=baseName/l} of slaying相关联的类型、种族或群体的生物受到{=baseName/l}的伤害，该生物必须进行一次DC 17体质豁免检定，在豁免失败时额外承受{@dice 6d10}穿刺伤害，或在豁免成功时额外承受一半的伤害。",
+					"{=baseName/at} {=baseName/l} 的杀戮是一种旨在杀死特定类型生物的魔法武器。有些更专注于特定的目标；例如，既有 {@i {=baseName/l}s of dragon slaying} 也有 {@i {=baseName/l}s of blue dragon slaying}。如果属于与 {=baseName/a} {=baseName/l} 的杀戮相关联的类型、种族或群体的生物受到来自 {=baseName/l} 的伤害，该生物必须进行一次 {@dc 17} 体质豁免检定，失败则额外受到 {@damage 6d10} 穿刺伤害，成功则受到一半的额外伤害。",
 					"一旦{=baseName/a} {=baseName/l}屠戮武器对生物造成了额外伤害，它就会变成一把非魔法的{=baseName/l}。"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "升天龙之怒武器",
@@ -1222,7 +2168,7 @@
 					"这件武器装饰有龙头、爪子、翅膀、鳞片或龙语文字。当它浸泡在龙的宝藏中时，它会吸收龙的吐息武器的能量，并以其特殊属性造成该类型的损害。",
 					"每当你用这个武器攻击时，如果投出了20（自动命中），你可以选择每个在目标5尺范围内的生物，它们会受到与龙息武器相同类型的伤害，伤害值为5点。",
 					"使用这件武器进行攻击和伤害判定时，你获得一个{=bonusWeapon}加值。命中时，武器额外造成{@damage 3d6}点与龙的呼吸武器相同类型的损伤。",
-					"作为一个动作，你可以从武器释放一个60尺的毁灭能量锥形区域。该区域内的每个生物必须进行一次DC 18的敏捷豁免检定，若检定失败，则承受{@damage 12d6}点与龙的呼吸武器相同类型的损伤，若检定成功，则承受一半的伤害。一旦使用了这个动作，直到下一个黎明之前不能再使用。"
+					"你可以用{@action Magic|XPHB当你这么做时，武器开始悬停，飞升到30英尺的高度，然后攻击你选择的、在它5英尺范围内的一个生物。}行动脱下这件盔甲。"
 				]
 			}
 		},
@@ -1257,6 +2203,7 @@
 		{
 			"name": "狂战斧",
 			"ENG_name": "Berserker Axe",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1268,6 +2215,9 @@
 				"source": "DMG",
 				"page": 155,
 				"srd": true,
+				"reprintedAs": [
+					"狂战斧|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"reqAttune": true,
@@ -1283,10 +2233,59 @@
 							"这把斧头被诅咒了，与它共鸣会将诅咒延续到你身上。只要你仍然被诅咒，你就不愿意与斧头分开，始终将其保持在可触及的范围内。此外，使用除了这把斧头之外的武器进行攻击判定时，你会处于不利状态，除非你看不到或听不到任何60尺范围内的敌人。"
 						]
 					},
-					"当斧头在你手中时，如果敌对生物对你造成伤害，你必须进行一次DC 15的感知豁免检定，否则会陷入狂暴状态。在狂暴状态下，你必须在每轮使用你的行动用斧头攻击离你最近的生物。如果你在进行{@action 攻击}动作时可以进行额外攻击，你会使用这些额外攻击，在击败当前目标后移动攻击下一个最近的生物。如果有多个可能的目标，你会随机攻击其中一个。你会保持狂暴状态，直到你的回合开始时，在你60尺范围内没有你能看到或听到的生物为止。"
+					"这件武器被诅咒了，一旦你与之调谐，诅咒也会延伸到你身上。只要你仍然受到诅咒，你就不愿意与这件武器分离，时刻将其保持在触手可及的地方。此外，在使用除这件武器外的其他武器进行攻击检定时，你还会受到{@variantrule 劣势|XPHB}的影响。"
 				],
 				"lootTables": [
 					"魔法物品表G"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "狂战斧",
+			"ENG_name": "Berserker Axe",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "战斧",
+					"ENG_name": "Battleaxe",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨斧",
+					"ENG_name": "Greataxe",
+					"source": "XPHB"
+				},
+				{
+					"name": "戟",
+					"ENG_name": "Halberd",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "狂战士",
+				"source": "XDMG",
+				"page": 236,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"reqAttune": true,
+				"curse": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"你在使用这件魔法武器进行攻击检定和伤害投骰时获得+1加值。此外，当你与这件武器调谐时，你的{@variantrule 生命值|XPHB|生命值}最大值会随着你所达到的每个等级增加1。",
+					{
+						"type": "entries",
+						"name": "诅咒",
+						"ENG_name": "Curse",
+						"entries": [
+							"当武器在你手中时，如果有其他生物对你造成伤害，你必须通过一次DC 15的智慧豁免掷骰，否则将陷入狂暴状态。这个狂暴状态将在你回合开始时结束，前提是你周围60英尺内没有任何你能看到或听到的生物。",
+							"当武器悬停时，你可以用{@variantrule Bonus Action|XPHB}使其飞到你30英尺内的其他位置。作为同一个{@variantrule Bonus Action|XPHB}的一部分，你可以使武器攻击武器5英尺内的一个生物。",
+							"在对生物造成额外伤害后，弹药变为非魔法。"
+						]
+					}
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -1308,14 +2307,14 @@
 				"reqAttune": true,
 				"curse": true,
 				"entries": [
-					"当你使用这把魔法武器攻击一个生物并且在攻击判定中掷出20时，除了遭受攻击的正常效果外，生物还必须进行一次DC 15的体质豁免。如果豁免失败，生物将被限制行动，并且在每个回合结束时必须进行另一次体质豁免。如果它连续三次成功豁免，这个效果就会结束。如果它连续三次豁免失败，它将被变成石头，并受到{@condition 石化}状态持续1小时。",
+					"当你使用这把魔法武器攻击一个生物并在攻击掷骰中得到20时，该生物除了承受攻击的常规效果外，还必须进行一次DC 15体质豁免检定。若豁免失败，该生物被束缚，并且必须在它的每个回合结束时再次进行体质豁免检定。如果它能成功地对这一效果进行三次豁免，则效果结束。如果它三次豁免均失败，则该生物将被石化，并受到石化状态的影响持续1小时。",
 					"如果生物对该武器类型的伤害免疫，没有由肉体构成的身体，或者拥有传奇行动，则对该效果免疫。",
 					{
 						"name": "诅咒",
 						"ENG_name": "Curse",
 						"type": "entries",
 						"entries": [
-							"这件武器被诅咒了，与其共鸣会将诅咒扩展到你身上。除非使用{@spell 移除诅咒}法术或类似的魔法解除诅咒，否则你不愿意与武器分离。每当你使用这件武器攻击生物并在攻击骰上掷出1时，你必须进行一次DC 15的体质豁免检定，否则会被{@condition 束缚}并被迫进行额外的豁免检定以防止被{@condition 石化}，如上所述。"
+							"穿上此护甲时，你获得{=bonusAc}的 {@variantrule 防御等级|XPHB} 加值，你对火焰伤害具有 {@variantrule 免疫|XPHB}，并且你知道原初之火。此外，你可以像站在坚实的地面上一样站在熔岩上并在上面移动。"
 						]
 					}
 				]
@@ -1341,7 +2340,7 @@
 				"entries": [
 					"一把精心打造的剑，上面有精致的雕刻，它发出微弱的生命共鸣声。",
 					"使用这把魔法武器进行攻击和伤害判定时，你获得{=bonusWeapon}的额外加值。",
-					"这把剑有2次充能。你可以消耗一次充能并说出命令词，以自己为中心施放{@spell 荆棘丛生}（豁免DC 16）。你可以不受这个地形影响地通过。",
+					"这件盔甲内置了一个5级法术。该法术在盔甲制作时确定，必须属于{@spell 荆棘丛生}魔法学派。盔甲有6个充能，每天黎明恢复{@dc 16}个已消耗的充能。穿上盔甲时，你可以消耗1个充能来施放它的法术。",
 					"这把剑每天黎明时分恢复一点充能。"
 				],
 				"attachedSpells": [
@@ -1472,6 +2471,7 @@
 		{
 			"name": "速脱甲",
 			"ENG_name": "Cast-Off Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1482,10 +2482,41 @@
 				"namePrefix": "速脱",
 				"source": "XGE",
 				"page": 136,
+				"reprintedAs": [
+					"速脱甲|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "common",
 				"entries": [
 					"你可以作为一个动作脱下这件盔甲。"
+				]
+			}
+		},
+		{
+			"name": "速脱甲",
+			"ENG_name": "Cast-Off Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "速脱",
+				"source": "XDMG",
+				"page": 243,
+				"rarity": "common",
+				"entries": [
+					"你可以用{@action 魔法|XPHB}行动脱下这件盔甲。"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害"
 				]
 			}
 		},
@@ -1537,7 +2568,7 @@
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
-					"这件钝击武器的头部由一个巨大的谵妄水晶制成，它散发着奥术能量。当你使用这件武器进行攻击并命中时，目标将额外受到({@dice 3d6})点黯蚀伤害。",
+					"精灵",
 					"当使用这件武器进行攻击投掷时，如果你掷出了20，它将释放一个奥术异常（详见《德拉肯海姆的地下城》）。你可以在表格上掷两次骰，并选择任一结果。"
 				]
 			}
@@ -1592,6 +2623,7 @@
 		{
 			"name": "舞空剑",
 			"ENG_name": "Dancing Sword",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1603,6 +2635,9 @@
 				"source": "DMG",
 				"page": 161,
 				"srd": true,
+				"reprintedAs": [
+					"舞空剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "very rare",
 				"reqAttune": true,
@@ -1618,8 +2653,37 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "舞空剑",
+			"ENG_name": "Dancing Sword",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"sword": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "舞空",
+				"source": "XDMG",
+				"page": 248,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"entries": [
+					"此外，当武器在你身上时，每当你在战斗中受到另一个生物的伤害时，你必须成功通过一次智力豁免检定（难度15）。如果豁免失败，你必须攻击伤害你的生物，直到你的生命值降至0点或其生命值降至0点，或者直到你无法触及该生物进行近战攻击为止。",
+					"当武器悬停时，你可以使用{@variantrule 附赠动作|XPHB}使其飞至最多30英尺远的你周围30英尺内的任意位置。作为同一个{@variantrule 附赠动作|XPHB}的一部分，你可以使武器攻击位于武器5英尺内的任一生物。",
+					"在悬浮武器第四次攻击后，它会飞回你身边并试图回到你的手中。如果你没有空闲的手，武器会在你的位置掉落到地面。如果武器到你之间没有无障碍的路径，它会尽可能靠近你然后掉落到地面。如果你抓住它或与它的距离超过30英尺，它也停止悬浮。"
+				],
+				"lootTables": [
+					"遗物 - 极罕见|极限伤害",
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"name": "防御者",
 			"ENG_name": "Defender",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1631,6 +2695,9 @@
 				"source": "DMG",
 				"page": 164,
 				"srd": true,
+				"reprintedAs": [
+					"防御者|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "legendary",
 				"reqAttune": true,
@@ -1642,6 +2709,33 @@
 				],
 				"lootTables": [
 					"魔法物品表I"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "防御者",
+			"ENG_name": "Defender",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "M|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "守卫者",
+				"source": "XDMG",
+				"page": 252,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"bonusWeapon": "+3",
+				"bonusAc": "+1",
+				"entries": [
+					"你在使用这把魔法武器进行攻击和伤害骰时获得+3的加值。",
+					"在你每回合第一次使用该武器攻击时，你可以将部分或全部的武器加值转移到你的 {@variantrule 护甲等级|XPHB}。例如，你可以将攻击掷骰和伤害掷骰的加值减少到 {=bonusAc}，并获得 +2 的 {@variantrule 护甲等级|XPHB} 加值。调整后的加值将持续到你下一回合开始，尽管你必须持握该武器才能获得来自它的 AC 加值。"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -1665,7 +2759,48 @@
 					"这把剑的剑柄中嵌着一个小巧的幻觉碎片，它被玻璃包裹着，像宝石一样镶嵌其中。剑身由陨铁制成，并掺杂了幻觉尘埃，这使得它散发出柔和的八色光芒。",
 					"使用这个武器进行攻击和伤害判定时，你获得{=bonusWeapon}的加值。",
 					"当你使用这件武器进行攻击时，你可以使用你的施法能力调整值，而不是力量或敏捷，来进行攻击和伤害骰。此外，你可以将这件武器作为施法焦点使用。",
-					"当你使用这个武器对类人生物进行攻击检定时，如果掷出了20，该类人生物必须进行一次DC 15的体质豁免检定，否则将额外承受({@dice 3d6})的黯蚀伤害，并获得一级{@adventure 污染层数|DoDk|12}。"
+					"当你用这把武器对人形生物进行攻击检定时若掷出20，该人形生物必须通过一个DC 15的体质豁免检定，否则将额外承受({@damage 3d6})的坏死伤害，并获得一级'污染'冒险等级|DoDk|12。"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "恶魔护甲",
+			"ENG_name": "Demon Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "恶魔",
+				"source": "XDMG",
+				"page": 252,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"curse": true,
+				"bonusWeapon": "+1",
+				"bonusAc": "+1",
+				"entries": [
+					"穿戴此盔甲时，你获得{=bonusAc}的护甲等级加值，并知晓深渊咒语。此外，盔甲上的爪状手套让你的徒手攻击造成{@damage 1d8}点挥砍伤害而非通常的钝击伤害，并且你的徒手攻击的攻击和伤害掷骰获得{=bonusWeapon}的加值。",
+					{
+						"type": "entries",
+						"name": "诅咒",
+						"ENG_name": "Curse",
+						"entries": [
+							"一旦你穿上这件诅咒的盔甲，除非你被 {@spell 移除诅咒|XPHB} 法术或类似的魔法针对，否则你不能脱下它。穿着盔甲时，你在对抗恶魔的攻击检定上以及在对抗他们的法术和特殊能力的豁免检定上有 {@variantrule 劣势|XPHB}。"
+						]
+					}
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -1676,10 +2811,7 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"type": "LA|XPHB"
-				},
-				{
-					"type": "MA|XPHB"
+					"type": "HA"
 				},
 				{
 					"type": "HA|XPHB"
@@ -1727,8 +2859,8 @@
 						"ENG_name": "Curse",
 						"entries": [
 							"当你与这件武器共鸣时，你不愿意与它分离。共鸣期间，你使用除这件武器之外的武器进行攻击骰时有不利。",
-							"每当一个敌对生物对你造成伤害时，你必须进行一次DC 15的感知豁免，否则将狂暴。狂暴时，你必须在每个回合使用动作攻击离你最近的生物。如果你在{@action 攻击}动作中可以进行额外攻击，你会使用这些额外攻击，在击败当前目标后，移动到攻击下一个最近的生物。如果有多个可能的目标，你将随机攻击其中一个。",
-							"直到你的回合开始时，你周围60尺内没有你能看到或听到的生物，你才会不再狂暴。或者，你的盟友可以使用动作进行一次DC 15的魅力（说服）检定，如果成功，你就不再狂暴。只有{@spell 移除诅咒}法术可以让你结束对这个物品的共鸣。"
+							"每当一个敌对生物对你造成伤害时，你必须在一次DC 15的智力豁免中成功，否则就会陷入狂暴。处于狂暴状态时，你必须在每一回合使用你的行动来攻击离你最近的敌人。如果你可以在{@action Attack}动作中进行额外攻击，你会使用这些额外攻击，在你击倒当前目标后转向攻击下一个最近的生物。如果你有多个可能的目标，你会随机攻击其中一个。",
+							"穿戴此盔甲时，你获得{=bonusAc}的护甲等级加成。此外，如果某个效果使你违背意愿沿地面移动，你可以使用{@variantrule Reaction|XPHB}将你被移动的距离减少至多10英尺。"
 						]
 					},
 					{
@@ -1745,6 +2877,7 @@
 		{
 			"name": "屠龙者",
 			"ENG_name": "Dragon Slayer",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -1756,15 +2889,46 @@
 				"source": "DMG",
 				"page": 166,
 				"srd": true,
+				"reprintedAs": [
+					"屠龙者|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"bonusWeapon": "+1",
 				"entries": [
 					"使用这把魔法武器进行的攻击和伤害检定，你获得+1的加值。",
-					"当你使用这件武器击中龙类生物时，龙类生物会额外承受{@dice 3d6}点该武器类型的损伤。就这件武器而言，\"龙\"指的是任何具有龙类生物类型的生物，包括龙龟和双足飞龙。"
+					"当你用这件武器击中龙时，该龙会受到额外的{@damage 3d6}点该武器类型的damage。就这件武器而言，\"龙\"指的是任何具有龙类生物类型的种类，包括龙龟和翼龙。"
 				],
 				"lootTables": [
 					"魔法物品表G"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "屠龙者",
+			"ENG_name": "Dragon Slayer",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "屠龙者",
+				"source": "XDMG",
+				"page": 254,
+				"rarity": "rare",
+				"bonusWeapon": "+1",
+				"entries": [
+					"你在使用这把魔法武器进行攻击和伤害骰时获得+1的加值。",
+					"如果目标是龙，武器将造成额外的{@damage 3d6}点该武器类型的伤害。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -1970,12 +3134,12 @@
 			"type": "GV|DMG",
 			"requires": [
 				{
-					"weaponCategory": "simple"
-				},
-				{
-					"weaponCategory": "martial"
+					"weapon": true
 				}
 			],
+			"excludes": {
+				"net": true
+			},
 			"inherits": {
 				"namePrefix": "卓尔族 +3 ",
 				"source": "MM",
@@ -1988,31 +3152,124 @@
 			}
 		},
 		{
-			"name": "能量弓",
-			"ENG_name": "Energy Bow",
+			"name": "矮人板甲",
+			"ENG_name": "Dwarven Plate",
 			"type": "GV|XDMG",
 			"requires": [
 				{
-					"name": "Battleaxe",
+					"name": "半身板甲",
+					"ENG_name": "Half Plate Armor",
 					"source": "XPHB"
 				},
 				{
-					"name": "Greataxe",
+					"name": "板甲",
+					"ENG_name": "Plate Armor",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "矮人",
+				"source": "XDMG",
+				"page": 255,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"bonusAc": "+2",
+				"entries": [
+					"这件盔甲内置了一个4级法术。这个法术在盔甲制作时就已确定，必须属于 {@variantrule 护甲等级|XPHB} 魔法学派。盔甲有6个充能，每天黎明时恢复 {@variantrule 反应|XPHB} 个已消耗的充能。穿着这件盔甲时，你可以消耗1个充能来施放它的法术。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "火巨灵链甲",
+			"ENG_name": "Efreeti Chain",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "链甲",
+					"ENG_name": "Chain Mail",
 					"source": "XPHB"
 				},
 				{
-					"name": "Halberd",
+					"name": "链甲衫",
+					"ENG_name": "Chain Shirt",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "艾弗利提",
+				"source": "XDMG",
+				"page": 257,
+				"freeRules2024": true,
+				"immune": [
+					"火焰"
+				],
+				"rarity": "legendary",
+				"reqAttune": true,
+				"bonusAc": "+3",
+				"entries": [
+					"穿戴此盔甲时，你获得{=bonusAc}的护甲等级加成，你对火焰伤害具有{@variantrule Immunity|XPHB}，并且你知道原始法术。此外，你可以站在熔岩上并在其上移动，就像它是坚固的地面一样。"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "精灵链甲",
+			"ENG_name": "Elven Chain",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "链甲",
+					"ENG_name": "Chain Mail",
 					"source": "XPHB"
 				},
 				{
-					"name": "Handaxe",
+					"name": "链甲衫",
+					"ENG_name": "Chain Shirt",
 					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "精灵",
+				"source": "XDMG",
+				"page": 257,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"grantsProficiency": true,
+				"bonusAc": "+1",
+				"entries": [
+					"当你穿着这件盔甲时，你获得{=bonusAc}的护甲等级/经验值加成。即使你没有接受中型或重型盔甲的训练，你也被视为受过这件盔甲的训练。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "能量弓",
+			"ENG_name": "Energy Bow",
+			"edition": "经典",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"bow": true
 				}
 			],
 			"inherits": {
 				"namePrefix": "能量",
 				"source": "UtHftLH",
+				"reprintedAs": [
+					"能量弓|极限伤害"
+				],
 				"rarity": "very rare",
+				"reqAttune": true,
 				"bonusWeapon": "+1",
 				"entries": [
 					"你使用这把魔法武器进行攻击和伤害检定时，可以获得+1的加值，这把武器没有弦。每次你做出拉弓的动作时，一支由金色能量构成的魔法箭就会出现在弦上，准备发射。这把武器产生的箭在击中目标时，造成的力量伤害而不是穿刺伤害，并且在击中或未击中目标后消失。在它消失之前，箭在20英尺范围内发出{@variantrule 明亮光照|XPHB}，在额外的20英尺范围内发出{@variantrule 微光光照|XPHB}。",
@@ -2022,7 +3279,7 @@
 						"name": "束缚之箭",
 						"ENG_name": "Arrow of Restraint",
 						"entries": [
-							"每当你使用这个武器对一个生物进行远程攻击时，你可以尝试限制目标而不是对其造成伤害。如果箭击中了，目标必须在DC 15的力量豁免中成功，否则将获得{@condition 受限|XPHB}状态，持续1分钟。作为一个动作，被箭限制的生物可以进行DC 20的力量（{@skill 运动|XPHB}）检查，试图打破限制，如果检查成功，则结束自身的效果。"
+							"每当你使用这件武器对一个生物进行远程攻击时，你可以尝试限制目标而不是对其造成伤害。如果箭矢命中，目标必须成功通过一次 {@dc 15} 力量豁免检定，否则将处于 {@condition 束缚|XPHB} 状态1分钟。作为一个动作，一个被箭矢 {@condition 束缚|XPHB} 的生物可以进行一次 {@dc 20} 力量（{@skill 运动|XPHB}) 检定以尝试打破束缚，成功检定时效果结束。"
 						]
 					},
 					{
@@ -2041,9 +3298,635 @@
 							"作为《玩家手册》中的一个魔法动作，你可以从距离自己最多60英尺的墙壁上释放出一连串能量箭矢。这些箭矢会变成发光的梯级，从墙壁上突出，形成一具魔法梯子，最长可达60英尺。这梯子会在1分钟后消失。"
 						]
 					}
+				]
+			}
+		},
+		{
+			"name": "能量弓",
+			"ENG_name": "Energy Bow",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长弓",
+					"ENG_name": "Longbow",
+					"source": "XPHB"
+				},
+				{
+					"name": "短弓",
+					"ENG_name": "Shortbow",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "能量",
+				"source": "XDMG",
+				"page": 257,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"你使用这把魔法武器进行攻击和伤害检定时，可以获得+1的加值，这把武器没有弦。每次你做出拉弓的动作时，一支由金色能量构成的魔法箭就会出现在弦上，准备发射。这把武器产生的箭在击中目标时，造成的力量伤害而不是穿刺伤害，并且在击中或未击中目标后消失。在它消失之前，箭在20英尺范围内发出{@variantrule 明亮光照|XPHB}，在额外的20英尺范围内发出{@variantrule 微光光照|XPHB}。",
+					"这把武器具有以下额外属性。",
+					{
+						"type": "entries",
+						"name": "束缚之箭",
+						"ENG_name": "Arrow of Restraint",
+						"entries": [
+							"每当你使用这件武器对一个生物进行远程攻击时，你可以尝试限制目标而不是对其造成伤害。如果箭矢命中，目标必须成功通过一次 {@dc 15} 力量豁免检定，否则将处于 {@condition 束缚|XPHB} 状态1分钟。作为一个动作，一个被箭矢 {@condition 束缚|XPHB} 的生物可以进行一次 {@dc 20} 力量（{@skill 运动|XPHB}) 检定以尝试打破束缚，成功检定时效果结束。"
+						]
+					},
+					{
+						"type": "entries",
+						"name": "传送箭",
+						"ENG_name": "Arrow of Transport",
+						"entries": [
+							"作为《玩家手册》中定义的魔法动作，你可以从这个武器中向60英尺内你能看到的目标发射一支能量箭。目标可以是一个愿意的中等大小或更小的生物，或者是没有被穿戴或携带的物体，前提是该物体足够小，能够放入一个5英尺的立方体范围内。这支箭会将目标传送到你能看到的10英尺内的未被占据的空间。"
+						]
+					},
+					{
+						"type": "entries",
+						"name": "能量梯度",
+						"ENG_name": "Energy Ladder",
+						"entries": [
+							"附魔（戏法）"
+						]
+					}
 				],
 				"lootTables": [
-					"Armaments - Very Rare|XDMG"
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			}
+		},
+		{
+			"name": "附魔护甲（戏法）",
+			"ENG_name": "Enspelled Armor (Cantrip)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "拒斥或幻象",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这套盔甲中绑定了一个戏法。该戏法在盔甲制作时就已确定，必须属于{@filter A;I|spells|school=附魔（一级）|level=0}魔法学派。盔甲有6个充能，每天黎明时恢复{@dice 1d6}个已消耗的充能。穿戴盔甲时，你可以消耗1个充能来施放其法术。",
+					"该法术的豁免难度为13，其攻击加值为{@hit 5}。"
+				],
+				"spellScrollLevel": 0
+			}
+		},
+		{
+			"name": "附魔护甲（1级）",
+			"ENG_name": "Enspelled Armor (Level 1)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "被魔法附魔（2级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这件盔甲中附有一个1级法术。该法术在盔甲制作时确定，必须属于 {@filter A;I|spells|school=附魔（一级）|level=1} 魔法学派。该盔甲有6次充能，每天黎明时恢复 {@dice 1d6} 已消耗的充能次数。穿戴盔甲时，你可以消耗1次充能来施放其法术。",
+					"该法术的豁免难度为13，其攻击加值为{@hit 5}。"
+				],
+				"spellScrollLevel": 1
+			}
+		},
+		{
+			"name": "附魔护甲（2级）",
+			"ENG_name": "Enspelled Armor (Level 2)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "这件武器中封印着一个6级法术。该法术在武器制造时确定，必须属于{@filter 幻术、预言、塑能、死灵或变化|法术|学派=C;D;V;N;T|等级=6}魔法学派。这件武器拥有6个充能，每天黎明时恢复{@dice 1d6}个已消耗的充能。手持这件武器时，你可以消耗1个充能来施放其法术。",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这件盔甲内绑定了一个2级法术。该法术在盔甲制作时确定，必须属于{@filter A;I|spells|school=附魔（一级）|level=2}魔法学派。盔甲拥有6个充能次数，每天黎明时恢复{@dice 1d6}个已消耗的充能次数。穿戴盔甲时，你可以消耗1个充能次数来施放其法术。",
+					"该法术的豁免难度为13，其攻击加值为{@hit 5}。"
+				],
+				"spellScrollLevel": 2
+			}
+		},
+		{
+			"name": "附魔护甲（3级）",
+			"ENG_name": "Enspelled Armor (Level 3)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（3级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这件盔甲中封入了一个3环法术。该法术在盔甲制造时确定，必须属于{@filter A;I|spells|school=附魔（一级）|level=3}魔法学派。盔甲有6个充能次数，每天黎明时恢复{@dice 1d6}已消耗的充能次数。穿戴盔甲时，你可以消耗1次充能来施放其法术。",
+					"该法术的豁免难度为15，其攻击加值为{@hit 7}。"
+				],
+				"spellScrollLevel": 3
+			}
+		},
+		{
+			"name": "附魔护甲（4级）",
+			"ENG_name": "Enspelled Armor (Level 4)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（4级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这套盔甲附魔了一个5I|等级=6}魔法学派。环法术。这件盔甲有6个充能次数，每天黎明时恢复{@filter A;I|spells|school=附魔（一级）|level=4}个已消耗的充能。该法术在盔甲制作时确定，必须属于{@dice 1d6}魔法学派。",
+					"该法术的豁免难度为15，其攻击加值为{@hit 7}。"
+				],
+				"spellScrollLevel": 4
+			}
+		},
+		{
+			"name": "附魔护甲（5级）",
+			"ENG_name": "Enspelled Armor (Level 5)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（5级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这套盔甲附魔了一个5I|等级=6}魔法学派。环法术。这件盔甲有6个充能次数，每天黎明时恢复{@filter A;I|spells|school=附魔（一级）|level=5}个已消耗的充能。该法术在盔甲制作时确定，必须属于{@dice 1d6}魔法学派。",
+					"该法术的豁免难度为17，其攻击加值为{@hit 9}。"
+				],
+				"spellScrollLevel": 5
+			}
+		},
+		{
+			"name": "附魔护甲（6级）",
+			"ENG_name": "Enspelled Armor (Level 6)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（6级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"在随着时间的流逝，其中一些武器已经从世界上消失，它们的魔力随着家族血脉的灭绝而丧失。冰点以下的低温中，该武器会在10另一些则在伟大的探险中与持有者一同消失。因此，这些武器中只有少数仍然存在。",
+					"该法术的豁免难度为17，其攻击加值为{@hit 9}。"
+				],
+				"spellScrollLevel": 6
+			}
+		},
+		{
+			"name": "附魔护甲（7级）",
+			"ENG_name": "Enspelled Armor (Level 7)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（7级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"附魔（8级）",
+					"该法术的豁免难度为18，其攻击加值为{@hit 10}。"
+				],
+				"spellScrollLevel": 7
+			}
+		},
+		{
+			"name": "附魔护甲（8级）",
+			"ENG_name": "Enspelled Armor (Level 8)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "召唤术、预言术、塑能术、死灵术或变化系",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"C;D;V;N;T",
+					"该法术的豁免难度为18，其攻击加值为{@hit 10}。"
+				],
+				"spellScrollLevel": 8
+			}
+		},
+		{
+			"name": "附魔武器（戏法）",
+			"ENG_name": "Enspelled Weapon (Cantrip)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "拒斥或幻象",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"C;D;V;N;T",
+					"该法术的豁免难度为13，其攻击加值为{@hit 5}。"
+				],
+				"spellScrollLevel": 0
+			}
+		},
+		{
+			"name": "附魔武器（1级）",
+			"ENG_name": "Enspelled Weapon (Level 1)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "被魔法附魔（2级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这把武器内嵌了一个1级法术。该法术在武器制作时确定，必须属于{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=1}魔法学派。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。手持此武器时，你可以消耗1次充能来施放其法术。",
+					"该法术的豁免难度为13，其攻击加值为{@hit 5}。"
+				],
+				"spellScrollLevel": 1
+			}
+		},
+		{
+			"name": "附魔武器（2级）",
+			"ENG_name": "Enspelled Weapon (Level 2)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "这件武器中封印着一个6级法术。该法术在武器制造时确定，必须属于{@filter 幻术、预言、塑能、死灵或变化|法术|学派=C;D;V;N;T|等级=6}魔法学派。这件武器拥有6个充能，每天黎明时恢复{@dice 1d6}个已消耗的充能。手持这件武器时，你可以消耗1个充能来施放其法术。",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这件武器中封印了一个7级法术。该法术在武器制造时确定，必须属于{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=2}魔法学派。该武器有6次充能，并在每天黎明时恢复{@dice 1d6}次已消耗的充能。手持此武器时，你可以消耗1次充能来施放其法术。",
+					"该法术的豁免难度为13，其攻击加值为{@hit 5}。"
+				],
+				"spellScrollLevel": 2
+			}
+		},
+		{
+			"name": "附魔武器（3级）",
+			"ENG_name": "Enspelled Weapon (Level 3)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（3级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这件武器中封印了一个3级法术。该法术在武器制造时确定，必须属于{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=3}魔法学派。该武器有6个充能，每天黎明时恢复{@dice 1d6}消耗的充能。手持此武器时，你可以消耗1个充能来施放其法术。",
+					"该法术的豁免难度为15，其攻击加值为{@hit 7}。"
+				],
+				"spellScrollLevel": 3
+			}
+		},
+		{
+			"name": "附魔武器（4级）",
+			"ENG_name": "Enspelled Weapon (Level 4)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（4级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"任何被你用该武器击中的类人生物会受到额外的{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=4} slashing伤害，并且你会获得等于额外伤害的{@dice 1d6}。",
+					"该法术的豁免难度为15，其攻击加值为{@hit 7}。"
+				],
+				"spellScrollLevel": 4
+			}
+		},
+		{
+			"name": "附魔武器（5级）",
+			"ENG_name": "Enspelled Weapon (Level 5)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（5级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这把武器中封印着一个5级法术。该法术在武器制作时确定，必须属于以下魔法学派之一：{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=5}。该武器有6次充能，每天黎明时恢复{@dice 1d6}次已消耗的充能。手持该武器时，你可以消耗1次充能来施放其法术。",
+					"该法术的豁免难度为17，其攻击加值为{@hit 9}。"
+				],
+				"spellScrollLevel": 5
+			}
+		},
+		{
+			"name": "附魔武器（6级）",
+			"ENG_name": "Enspelled Weapon (Level 6)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（6级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这把武器中封印着一个6级法术。该法术在武器制作时确定，必须属于{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=6}魔法学派之一。这把武器有6个充能，每天黎明时恢复{@dice 1d6}个已消耗的充能。手持此武器时，你可以消耗1个充能来施放其封印的法术。",
+					"该法术的豁免难度为17，其攻击加值为{@hit 9}。"
+				],
+				"spellScrollLevel": 6
+			}
+		},
+		{
+			"name": "附魔武器（7级）",
+			"ENG_name": "Enspelled Weapon (Level 7)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "附魔（7级）",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"当你60英尺内的生物以攻击检定瞄准你时，你可以使用你的反应要求该生物进行一次{@dc 15}智力豁免检定。若豁免失败，则攻击转而瞄准另一个由你选择的、在攻击者可达范围内的生物。一旦使用了此反应，直到次日黎明前不能再次使用。",
+					"该法术的豁免难度为18，其攻击加值为{@hit 10}。"
+				],
+				"spellScrollLevel": 7
+			}
+		},
+		{
+			"name": "附魔武器（8级）",
+			"ENG_name": "Enspelled Weapon (Level 8)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "召唤术、预言术、塑能术、死灵术或变化系",
+				"source": "XDMG",
+				"page": 258,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d6}",
+				"charges": 6,
+				"entries": [
+					"这把武器中附有一个8级法术。该法术在武器制造时确定，必须属于{@filter 这支弹药配备了精炼的迷幻箭尖。使用这些箭进行的远程攻击若击中生物，目标将额外受到({@damage 3d6})点坏死伤害，并且必须成功通过一次 {@dc 15} 体质豁免检定，否则会获得一层 {@adventure level of contamination|DoDk|12}。一旦箭矢命中目标，迷幻箭尖就会碎裂成尘埃，箭矢也会变成非魔法物品。|spells|school=这把武器内封印了一个4级法术。该法术在武器创造时决定，必须属于{@filter 变化系, 预言系, 塑能系, 死灵系, 或 幻术系|法术|学派=C;D;V;N;T|等级=4}魔法学派之一。该武器拥有6次充能，每天黎明时恢复{@dice 1d6}已消耗的充能次数。持握此武器时，你可以消耗1次充能来施放其法术。|level=8}魔法学派中的一个。该武器有6个充能次数，每天黎明时分恢复{@dice 1d6}已消耗的充能次数。持有此武器时，你可以消耗1次充能来施放其法术。",
+					"该法术的豁免难度为18，其攻击加值为{@hit 10}。"
+				],
+				"spellScrollLevel": 8
+			}
+		},
+		{
+			"name": "刽子手之斧",
+			"ENG_name": "Executioner's Axe",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "战斧",
+					"ENG_name": "Battleaxe",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨斧",
+					"ENG_name": "Greataxe",
+					"source": "XPHB"
+				},
+				{
+					"name": "戟",
+					"ENG_name": "Halberd",
+					"source": "XPHB"
+				},
+				{
+					"name": "手斧",
+					"ENG_name": "Handaxe",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "刽子手的",
+				"source": "XDMG",
+				"page": 259,
+				"rarity": "very rare",
+				"bonusWeapon": "+1",
+				"entries": [
+					"你在使用这把魔法武器进行攻击和伤害骰时获得+1的加值。",
+					"当你使用此魔法武器进行攻击检定时，目标额外受到{@damage 2d6}点寒冷伤害。此外，只要你持有此武器，你对火焰伤害就有 {@variantrule 临时生命值|XPHB}。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
 				]
 			}
 		},
@@ -2083,7 +3966,7 @@
 				"entries": [
 					"这件色彩斑斓、花朵装饰的盔甲是在精类界锻造的，并且被注入了那个位面的迷人魔法。",
 					"穿戴这件盔甲时，你在尝试避免或结束自身受到的{@condition 魅惑}状态的豁免检定上有优势。",
-					"这件护甲有3个充能。你可以使用动作消耗一个充能来从这件护甲施展{@spell 强迫术}法术（豁免DC 15）。这件护甲在黎明时恢复{@dice 1d3}个消耗的充能。"
+					"这件这些火焰在40英尺半径内投射{@variantrule 明亮光照|XPHB}，盔甲有3个充并在额外的40英尺范围内投射{@variantrule 昏暗光照|XPHB}。能。当武器被火焰包围时，它在命中时额外造成{@damage 2d6}点火焰伤害。你可以使用一个动作来消耗一个充能，从这件盔甲中施放{@spell 强迫}法术（对抗 {@dc 15}）。火焰持续存在，直到你再次使用一个{@variantrule 额外动作|XPHB}重新念出指令词，盔甲每天黎明时恢复{@dice 1d3}个已消耗的充能。"
 				],
 				"attachedSpells": [
 					"强迫术"
@@ -2093,6 +3976,7 @@
 		{
 			"name": "焰舌",
 			"ENG_name": "Flame Tongue",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2104,14 +3988,42 @@
 				"source": "DMG",
 				"page": 170,
 				"srd": true,
+				"reprintedAs": [
+					"焰舌|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"reqAttune": true,
 				"entries": [
-					"你可以使用一个附赠动作来说出这把魔法剑的命令词，使剑刃上爆发出火焰。这些火焰在40尺半径内发出明亮的光线，并在额外的40尺内发出微光。当剑燃烧时，它对任何击中的敌人造成额外的{@dice 2d6}火焰伤害。火焰会持续存在，直到你再次使用附赠动作说出命令词，或者你放下或收起剑。"
+					"你可以使用一个附赠动作来说出这把魔法剑的口令，使火焰从剑刃上爆发出来。这些火焰在40尺半径内散发出明亮的光芒，并在额外的40尺内散发出微光。当剑上燃烧时，它对任何被击中的敌人额外造成{@damage 2d6}火焰伤害。火焰持续到你再次使用附赠动作说出口令，或者直到你放下或收起剑。"
 				],
 				"lootTables": [
 					"魔法物品表G"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "焰舌",
+			"ENG_name": "Flame Tongue",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "M|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "火焰舌",
+				"source": "XDMG",
+				"page": 263,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"reqAttune": true,
+				"entries": [
+					"当你用它击中一个巨人时，该巨人会额外受到{@damage 2d6}点武器类型的伤害，并且必须成功通过一次{@dc 15}力量豁免检定，否则将陷入{@condition prone}状态。就这种武器而言，\"巨人\"指的是任何具有巨人类型的生物，包括食人魔和巨怪。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -2152,7 +4064,7 @@
 								"name": "误导",
 								"ENG_name": "Misdirect",
 								"entries": [
-									"当60尺内的生物用攻击检定瞄准你时，你可以使用你的反应要求该生物进行一次DC 15智力豁免检定。豁免失败时，攻击将改为瞄准你选择的另一个生物，该生物必须在攻击者的触及范围内。一旦这个反应被使用，直到下一个黎明之前都不能再次使用。"
+									"当你使用此魔法武器进行攻击检定时，目标额外受到{@damage 1d6}点寒冷伤害。此外，只要你持有此武器，你对火焰伤害就有 {@variantrule 抗性|XPHB}。"
 								]
 							}
 						]
@@ -2184,6 +4096,7 @@
 		{
 			"name": "霜铭",
 			"ENG_name": "Frost Brand",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2196,7 +4109,7 @@
 				"page": 171,
 				"srd": true,
 				"reprintedAs": [
-					"Frost Brand|XDMG"
+					"霜铭|极限伤害"
 				],
 				"resist": [
 					"火焰"
@@ -2205,12 +4118,66 @@
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
-					"当你使用这把魔法剑进行攻击命中时，目标会额外承受{@dice 1d6}点冷冻伤害。此外，在你持有这把剑时，你对火焰伤害具有抗性。",
+					"当你使用这把魔法剑进行攻击命中时，目标额外受到{@damage 1d6}寒冷伤害。此外，只要你手持这把剑，你就对火焰伤害有抗性。",
 					"在冰冻的温度下，剑刃在10尺半径内散发明亮的光线，并在额外的10尺内散发微光。",
 					"当你拔出这件武器时，你可以熄灭你周围30尺内的所有非魔法火焰。这个特性每小时最多只能使用一次。"
 				],
 				"lootTables": [
 					"魔法物品表H"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "霜铭",
+			"ENG_name": "Frost Brand",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "霜之印记",
+				"source": "XDMG",
+				"page": 263,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"entries": [
+					"当你拔出这把这件盔甲在每天黎明时恢复{@dice 1d3}点已消耗的充能。",
+					"在随着时间的流逝，其中一些武器已经从世界上消失，它们的魔力随着家族血脉的灭绝而丧失。冰点以下的低温中，该武器会在10另一些则在伟大的探险中与持有者一同消失。因此，这些武器中只有少数仍然存在。",
+					"在精灵创造的所有魔法物品中，最受珍视和严密守护的是月刃。在古代，几乎所有的精灵贵族家族都声称拥有这样一件武器。几个世纪以来，这些武器中的一些已经从世界上消失了，它们的魔法随着家族血脉的灭绝而消失。其他的则随着它们的主人在伟大的探险中一同消逝。因此，只有少数这样的武器仍然存在。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -2247,6 +4214,7 @@
 		{
 			"name": "巨人屠杀者",
 			"ENG_name": "Giant Slayer",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2261,15 +4229,47 @@
 				"source": "DMG",
 				"page": 172,
 				"srd": true,
+				"reprintedAs": [
+					"巨人屠杀者|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"bonusWeapon": "+1",
 				"entries": [
 					"使用这把魔法武器进行的攻击和伤害检定，你获得+1的加值。",
-					"当你用它击中巨人时，巨人会额外承受{@dice 2d6}点该武器类型的损害，并且必须进行一次DC 15的力量豁免检定，否则将处于{@condition 倒地}状态。就这把武器而言，\"巨人\"指的是任何具有巨人类型的生物，包括双头巨人和巨魔。"
+					"该武器有5目标以及其周围30英尺内的所有生物（你除外）必须通过一次{@damage 2d6}体质豁免检定，个充能。否则将获得{@dc 15}状态，直至你的下一个回合结束。在击中或未击中后，武器立即飞回你的手中。你可以消耗1个充能，用该武器进行一次远程攻击，将其投掷出去，武器每天黎明恢复{@condition 倒地}点已消耗的充能。"
 				],
 				"lootTables": [
 					"魔法物品表G"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "巨人屠杀者",
+			"ENG_name": "Giant Slayer",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "巨人杀手",
+				"source": "XDMG",
+				"page": 264,
+				"freeRules2024": true,
+				"rarity": "rare",
+				"bonusWeapon": "+1",
+				"entries": [
+					"你在使用这把魔法武器进行攻击和伤害骰时获得+1的加值。",
+					"当你用这把武器击中一个巨人时，巨人会额外受到{@damage 2d6}点该武器类型的伤害，并且必须成功通过一次{@dc 15}力量豁免检定，否则将获得{@condition 倒地|XPHB}状态。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -2338,12 +4338,82 @@
 				"entries": [
 					"这件错综复杂的灰度盔甲是在影域锻造的，并且被注入了那个位面的幽暗。",
 					"当你穿戴这件盔甲时，你在尝试避免或结束自身受到的{@condition 惊恐}状态的豁免检定上有优势。",
-					"这件护甲有3个充能。你可以消耗一个充能从护甲施展{@spell 安定心神}法术（豁免DC 15）。这件护甲在黎明时恢复{@dice 1d3}个消耗的充能。"
+					"当你穿戴这件盔甲时，你可以使用一个{@spell 安定心神}动作并使用命令词来获得{@dc 15}法术的效果。如果你脱下盔甲或再次使用{@spell 安定心神}动作重复命令词，该法术将立即结束。这件盔甲的这一属性直到次日黎明前无法再次使用。"
 				],
 				"attachedSpells": [
 					"安定心神"
 				]
 			}
+		},
+		{
+			"name": "雷神之锤",
+			"ENG_name": "Hammer of Thunderbolts",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "巨锤",
+					"ENG_name": "Maul",
+					"source": "XPHB"
+				},
+				{
+					"name": "战锤",
+					"ENG_name": "Warhammer",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "雷击",
+				"source": "XDMG",
+				"page": 265,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"ability": {
+					"str": 4
+				},
+				"bonusWeapon": "+1",
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d4 + 1}",
+				"charges": 5,
+				"entries": [
+					"你在使用这把魔法武器进行攻击和伤害骰时获得+1的加值。",
+					"该武器有5目标以及其周围30英尺内的所有生物（你除外）必须通过一次{@dc 17}体质豁免检定，个充能。否则将获得{@condition Stunned|XPHB}状态，直至你的下一个回合结束。在击中或未击中后，武器立即飞回你的手中。你可以消耗1个充能，用该武器进行一次远程攻击，将其投掷出去，武器每天黎明恢复{@dice 1d4 + 1}点已消耗的充能。",
+					"巨人之祸",
+					{
+						"type": "entries",
+						"name": "你由{@item 巨人之力腰带|XDM你和所有在你身边的{@variantrule 友好 [态度]|XPHB|友好}G}生物在{@variantrule 光辉 [影响区域]|XPHB|光辉}中对法术和其他魔法效应的豁免检定拥有{@variantrule 优势|XPHB}。或{@item 巨魔之力手套|XDMG}赋予的力量属性值增加4，最大可达30。",
+						"ENG_name": "Giant's Bane",
+						"entries": [
+							"当你与该武器调谐，并且穿戴着你也与之调谐的{@item 巨人之力腰带|极限伤害}或{@item 食人魔力量护手|极限伤害}时，你获得以下好处：",
+							{
+								"type": "list",
+								"style": "list-hang-notitle",
+								"items": [
+									{
+										"type": "item",
+										"name": "巨人之敌",
+										"ENG_name": "Giants' Bane",
+										"entries": [
+											"当你使用这把武器对一个巨人进行攻击掷骰时，如果掷出了20，那么这个生物必须在体质豁免中成功掷出17或以上，否则就会死亡。"
+										]
+									},
+									{
+										"type": "item",
+										"name": "巨人之力",
+										"ENG_name": "Might of Giants",
+										"entries": [
+											"你由{@item 巨人之力腰带|XDM你和所有在你身边的{@variantrule 友好 [态度]|XPHB|友好}G}生物在{@variantrule 光辉 [影响区域]|XPHB|光辉}中对法术和其他魔法效应的豁免检定拥有{@variantrule 优势|XPHB}。或{@item 巨魔之力手套|XDMG}赋予的力量属性值增加4，最大可达30。"
+										]
+									}
+								]
+							}
+						]
+					}
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "覆妄质强化箭",
@@ -2363,7 +4433,7 @@
 				"page": 230,
 				"rarity": "rare",
 				"entries": [
-					"这件弹药拥有一个精炼的谵妄箭头。被使用这些箭之一的远程攻击击中的生物，会额外承受({@dice 3d6})点黯蚀伤害，并且必须在一次DC 15的体质豁免检定中成功，否则获得一个{@adventure 污染层数|DoDk|12}。一旦击中目标，谵妄箭头就会化为尘埃，箭矢也变得不再具有魔法效果。"
+					"月刃是一种有会造成额外的{@damage 1d6}力场伤害。感知的武器，智力为12，智慧为10，魅力为12。每次武器在首次之后获得此属性时，额外伤害增加{@damage 1d6}，最多增加到{@damage 3d6}。它拥有听觉和{@感觉 黑暗视觉|XPHB}，范围可达120英尺。它的阵营与其创造者相同。"
 				]
 			},
 			"hasFluffImages": true
@@ -2392,6 +4462,7 @@
 		{
 			"name": "神圣复仇者",
 			"ENG_name": "Holy Avenger",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2403,6 +4474,9 @@
 				"source": "DMG",
 				"page": 174,
 				"srd": true,
+				"reprintedAs": [
+					"神圣复仇者|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "legendary",
 				"reqAttune": "由圣武士",
@@ -2413,11 +4487,46 @@
 				],
 				"bonusWeapon": "+3",
 				"entries": [
-					"使用这把魔法武器进行攻击和伤害骰时，你获得+3的加值。当你用它击中恶魔或不死生物时，那个生物将额外受到{@dice 2d10}点光耀伤害。",
+					"使用这把魔法武器进行攻击和伤害骰时，你获得+3的加值。当你用它击中恶魔或不死生物时，那个生物会额外受到{@damage 2d10}点光耀伤害。",
 					"当你持有拔出的剑时，它会在你周围10尺半径内创造出一个光环。你和所有在光环内的友方生物在对抗法术和其他魔法效果的豁免检定中具有优势。如果你的圣武士职业等级达到17级或以上，光环的半径会增加到30尺。"
 				],
 				"lootTables": [
 					"魔法物品表I"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "神圣复仇者",
+			"ENG_name": "Holy Avenger",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "圣洁复仇者",
+				"source": "XDMG",
+				"page": 269,
+				"rarity": "legendary",
+				"reqAttune": "由圣武士",
+				"reqAttuneTags": [
+					{
+						"class": "圣武士"
+					}
+				],
+				"bonusWeapon": "+3",
+				"entries": [
+					"使用这件魔法武器进行攻击掷骰和伤害掷骰时，你获得+3加值。当你用它击中恶魔或不死生物时，该生物会额外受到{@damage 2d10}点辐射伤害。",
+					"当该武器在你身上时，你还获得{=bonusSavingThrow}豁免检定的加成。"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害",
+					"遗物 - 传奇|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -2711,7 +4820,7 @@
 				"bonusAc": "+1",
 				"entries": [
 					"穿戴这件护甲时，你有{=bonusAc}的护甲等级加值，它微微发光。",
-					"如果你在穿戴这件盔甲时死亡，它将被摧毁，并且每个距离你30尺内的天界生物、精类和恶魔都必须成功进行一次DC 15的魅力豁免检定，否则将被驱逐回其存在的家园位面，除非它已经在那里。"
+					"如果你在穿戴这套盔甲时死亡，它会被摧毁，并且在你周围30英尺内的每一个天界生物、妖精和恶魔都必须通过一次{@dc 15}魅力豁免检定，否则将被放逐回其存在的本源位面，除非它们已经在那里。"
 				]
 			}
 		},
@@ -2754,6 +4863,7 @@
 		{
 			"name": "吉兆之刃",
 			"ENG_name": "Luck Blade",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2784,12 +4894,15 @@
 				"source": "DMG",
 				"page": 179,
 				"srd": true,
+				"reprintedAs": [
+					"吉兆之刃|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "legendary",
 				"reqAttune": true,
 				"bonusWeapon": "+1",
 				"bonusSavingThrow": "+1",
-				"charges": "{@dice 1d3}",
+				"charges": "{@dice 1d4 - 1}",
 				"entries": [
 					"使用这把魔法武器进行攻击和伤害骰时，你获得+1的加值。当这把剑在你身上时，你在豁免检定中也获得+1的加值。",
 					{
@@ -2819,6 +4932,84 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "吉兆之刃",
+			"ENG_name": "Luck Blade",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "镰刀",
+					"ENG_name": "Sickle",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "当该武器在你身上时，你还获得{=bonusSavingThrow}豁免检定的加成。",
+				"source": "XDMG",
+				"page": 275,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"bonusSavingThrow": "+1",
+				"charges": "{@dice 1d3}",
+				"entries": [
+					"当你使用{@i 月刃}进行攻击掷骰命中时，你造成额外的{@damage 1d6}力量伤害。每次武器在第一次之后获得此属性，额外伤害增加{@damage 1d6}，最多增加到{@damage 3d6}。如果{@i 月刃}在命中时已经造成额外的{@damage 3d6}力量伤害，则重新掷骰。",
+					{
+						"type": "entries",
+						"name": "幸运",
+						"ENG_name": "Luck",
+						"entries": [
+							"如果武器在你身上，你可以呼唤它的运气（无需行动）来重新掷一次失败的 {@variantrule D20 检定|XPHB}，前提是你没有 {@condition 失能|XPHB} 状态。你必须使用第二次掷骰结果。一旦使用，这个属性直到次日黎明前不能再次使用。"
+						]
+					},
+					{
+						"type": "entries",
+						"name": "祈愿术",
+						"ENG_name": "Wish",
+						"entries": [
+							"这件武器有{@dice 1d3}次充能。在持有它时，你可以消耗1次充能并从它施放{@spell 祈愿术|XPHB}。一旦使用后，这个属性直到次日黎明前无法再次使用。如果这件武器没有充能，它将失去这个属性。"
+						]
+					}
+				],
+				"attachedSpells": [
+					"祈愿术|XPHB"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"name": "猎兽武器",
 			"ENG_name": "Lycan Weapon",
 			"type": "GV|DMG",
@@ -2835,13 +5026,14 @@
 				"bonusWeapon": "+2",
 				"entries": [
 					"这些武器由兽化人变形者的爪子、牙齿和骨头制成，它们对其他兽化人变形者或吸血鬼特别有效。使用这件武器进行攻击和伤害骰时，你获得{=bonusWeapon}的加值。",
-					"此外，在成功攻击狼人时，目标将被迫恢复其人类形态，除非它在DC 10的魅力豁免检定中成功。同样，用狼人武器对吸血鬼造成的伤害在生物完成短休息之前不能再生。"
+					"此外，对狼人进行一次成功的攻击时，目标会被强制变回人类形态，除非它在一次{@dc 10}的魅力豁免中成功。同时，使用狼人武器对吸血鬼造成的伤害在生物完成一次短休息之前无法再生。"
 				]
 			}
 		},
 		{
 			"name": "水手护甲",
 			"ENG_name": "Mariner's Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2852,6 +5044,9 @@
 				"namePrefix": "水手",
 				"source": "DMG",
 				"page": 181,
+				"reprintedAs": [
+					"水手护甲|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "uncommon",
 				"modifySpeed": {
@@ -2866,6 +5061,37 @@
 					"魔法物品表B"
 				]
 			}
+		},
+		{
+			"name": "水手护甲",
+			"ENG_name": "Mariner's Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "水手",
+				"source": "XDMG",
+				"page": 278,
+				"rarity": "uncommon",
+				"entries": [
+					"穿着这件盔甲时，你的游泳速度（如适用）等于你的速度。此外，如果你在你的回合开始时在水下且生命值为0，你会立即恢复1d4点生命值。该盔甲在下一个黎明之前无法再次为任何人治疗。",
+					"这件盔甲带有鱼和贝壳的图案装饰。"
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害",
+					"这种粘稠的粘性液体在接触空气时会点燃。作为一次动作，你可以将这个瓶子扔出最多20英尺远，撞击时碎裂。对一个生物或物体进行远程攻击，将炼金师之火视为一种即兴武器。命中时，目标在每个回合开始时受到{@damage 1d4}点火焰伤害。生物可以通过使用其动作进行{@dc 10}敏捷检定来扑灭火焰，以结束此伤害。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "心灵之刃",
@@ -2883,7 +5109,7 @@
 				"rarity": "rare",
 				"reqAttune": "由特定个人",
 				"entries": [
-					"灵吸怪可以将任何非魔法剑变成灵剑。只有一种生物可以与之共鸣：要么是特定的灵吸怪，要么是它的一个奴隶。在任何其他生物手中，灵剑就像一把普通的剑。在它预期的使用者手中，灵剑是一把魔法武器，对任何被它击中的生物造成额外的{@dice 2d6}点心灵伤害。"
+					"心灵异兽可以将任何非魔法的剑转化为心灵之刃。只有一种生物能够与之共鸣：特定的心灵异兽或其奴役者之一。在其他任何生物手中，心灵之刃的功能就像一个普通的同类剑。在预定持有者手中，心灵之刃是一件魔法武器，对击中的任何目标额外造成{@damage 2d6}心灵伤害。"
 				]
 			}
 		},
@@ -2949,6 +5175,7 @@
 		{
 			"name": "秘银甲",
 			"ENG_name": "Mithral Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -2973,6 +5200,9 @@
 				"source": "DMG",
 				"page": 182,
 				"srd": true,
+				"reprintedAs": [
+					"秘银甲|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "uncommon",
 				"strength": null,
@@ -2982,6 +5212,38 @@
 				],
 				"lootTables": [
 					"魔法物品表B"
+				]
+			}
+		},
+		{
+			"name": "秘银甲",
+			"ENG_name": "Mithral Armor",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"excludes": {
+				"name": "兽皮甲",
+				"ENG_name": "Hide Armor"
+			},
+			"inherits": {
+				"namePrefix": "秘银",
+				"source": "XDMG",
+				"page": 279,
+				"freeRules2024": true,
+				"rarity": "uncommon",
+				"entries": [
+					"秘银是一种轻质、柔软的金属。秘银链甲或胸甲可以穿在普通衣服下面。",
+					"如果该盔甲通常会对敏捷（{@skill 隐匿|XPHB}）检定造成劣势或有力量要求，那么秘银版本的盔甲则不会。"
+				],
+				"lootTables": [
+					"军备 - 罕见|极限伤害",
+					"秘术 - 罕见|极限伤害"
 				]
 			}
 		},
@@ -3057,6 +5319,7 @@
 		{
 			"name": "触月剑",
 			"ENG_name": "Moon-Touched Sword",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -3067,6 +5330,9 @@
 				"namePrefix": "触月",
 				"source": "XGE",
 				"page": 138,
+				"reprintedAs": [
+					"触月剑|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "common",
 				"entries": [
@@ -3075,8 +5341,150 @@
 			}
 		},
 		{
+			"name": "触月剑",
+			"ENG_name": "Moon-Touched Sword",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"sword": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "触月",
+				"source": "XDMG",
+				"page": 280,
+				"rarity": "common",
+				"entries": [
+					"在《黑暗与光明》变体规则中，这把武器的未入鞘刀刃散发出月光，在15英尺半径内产生 {@variantrule 明亮光线|XPHB}，并在额外15英尺范围内产生 {@variantrule 昏暗光线|XPHB}。"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害",
+					"这精致的皮制缰绳在初次握住时会拉扯手部，仿佛渴望抓住附近的野兽。当你握住缰绳的一端时，你可以用一个动作说出它的命令词，使另一端抽打你能看到的20英尺内的野兽。目标必须通过一次{@dc 17}的魅力豁免检定，否则缰绳会自动缠绕在其脖子上，然后像受到{@spell dominate beast}法术影响一样服从你的指挥。一旦目标受到影响，你就不需要再握住缰绳的另一端来指挥它。如果目标成功通过豁免检定，它将对缰绳的力量免疫，直到第二天黎明。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "月刃",
+			"ENG_name": "Moonblade",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "月刃",
+				"source": "XDMG",
+				"page": 279,
+				"rarity": "legendary",
+				"reqAttune": "由武器选择的生物",
+				"sentient": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"{@note * 这个通用变体的名称和来源与物品 {@item +3 盾牌|XDMG}} 相同。",
+					"每把月刃都渴望一个与它自身相容的持有者。如果你试图调谐一把不想要你作为其持有者的月刃，该武器不仅会拒绝你，还会对你施加诅咒，使你在接下来的24小时内或直到诅咒通过使用{@spell 解除诅咒|XPHB}法术或其他类似的魔法解除前，进行{@variantrule D20检定|XPHB|D20检定}时处于劣势。如果你被这把武器接受并尝试调谐，你会立即与其调谐成功，并且上面会出现一个新的符文。你会一直与这把武器保持调谐状态，直到你死亡或武器被摧毁。对于除其选定持有者之外的任何人来说，月刃的功能就像一个非魔法版本的同类武器。",
+					"月刃上有一个符文，代表每个它自愿服务的持有者（通常是{@dice 1d6 + 1}）。第一个符文为使用这把魔法武器进行的攻击掷骰和伤害掷骰提供+1加值。除了第一个符文外的每一个符文都赋予月刃一个额外的属性。DM选择每一个属性或通过在月刃属性表上随机掷骰来确定它们。",
+					{
+						"type": "entries",
+						"name": "次要属性",
+						"ENG_name": "Minor Property",
+						"entries": [
+							"除了上述属性外，每把月刃还有一个通过在 {@action 魔法|XPHB} 物品的次要属性表上掷骰子确定的小属性。"
+						]
+					},
+					{
+						"type": "entries",
+						"name": "智能",
+						"ENG_name": "Sentience",
+						"entries": [
+							"月刃是一种有会造成额外的{@damage 1d6}力场伤害。感知的武器，智力为12，智慧为10，魅力为12。每次武器在首次之后获得此属性时，额外伤害增加{@damage 1d6}，最多增加到{@damage 3d6}。它拥有听觉和{@感觉 黑暗视觉|XPHB}，范围可达120英尺。它的阵营与其创造者相同。",
+							"将武器的攻击检定和伤害检定每一个在你30英尺内且不在{@variantrule 遮蔽物|XPHB|完全遮蔽}加值提高1，最高可达+3。后的生物都必须通过一次{@dc 15}体质豁免检定，否则将获得{@condition 失明|XPHB}状态1分钟。如果{@i 月刃}已有+3加值，则重新掷骰。"
+						]
+					},
+					{
+						"type": "entries",
+						"name": "个性",
+						"ENG_name": "Personality",
+						"entries": [
+							"月刃拥有与其创造者相似的个性。一旦月刃选定了主人，它就会相信只有那个人应该使用它，即使持有者的阵营与武器的阵营不同，或者持有者之后的目标与武器的目标发生冲突。"
+						]
+					},
+					{
+						"type": "table",
+						"caption": "月刃属性",
+						"colStyles": [
+							"col-2 text-center",
+							"col-10"
+						],
+						"colLabels": [
+							"1d100",
+							"属性"
+						],
+						"rows": [
+							[
+								"01-60",
+								"将武器的攻击检定和伤害检定每一个在你30英尺内且不在{@variantrule 遮蔽物|XPHB|完全遮蔽}加值提高1，最高可达+3。后的生物都必须通过一次{@dc 15}体质豁免检定，否则将获得{@condition 失明|XPHB}状态1分钟。如果{@i 月刃}已有+3加值，则重新掷骰。"
+							],
+							[
+								"61-75",
+								"这把武器被诅咒并且被一个复仇的灵魂附身。一旦你与之调谐，诅咒就会延伸到你身上。只要你仍然受到诅咒，你就不愿意与这把武器分开，时刻把它带在身边。在与这把武器调谐期间，你在用除此以外的其他武器进行的攻击检定时具有 {@variantrule 劣势|XPHB}。"
+							],
+							[
+								"76-80",
+								"{@i 月刃}获得了{@itemProperty T|XPHB|投掷}，正常射程为20英尺，长射程为60英尺。每次你投掷该武器时，它在攻击后都会飞回你的手中。"
+							],
+							[
+								"81-85",
+								"此外，只要剑在你身上，每当你在战斗中受到伤害时，你必须成功通过一次 {@dc 15} 智慧豁免检定。如果豁免失败，你必须攻击对你造成伤害的生物，直到你的血量降到0点或该生物的血量降到0点，或者直到你无法接触到该生物进行近战攻击为止。"
+							],
+							[
+								"86-95",
+								"月刃具有{@item 法术储存戒指|XDMG}的属性。"
+							],
+							[
+								"96-99",
+								"这把剑有{@dice 1d8 + 1}次充能。如果你对一个生命值低于100的生物造成致命一击，该生物必须通过{@dc 15}体质豁免掷骰，否则会被瞬间斩杀，因为剑撕裂了其生命力（构造生物或不死生物免疫）。如果该生物被斩杀，剑失去1次充能。当剑没有剩余充能时，它失去此属性。"
+							],
+							[
+								"100",
+								"你可以使用一个{@action 魔法|XPHB}动作来召唤一个看起来像是暗精灵的幽灵实体，如果你还没有一个为你服务的话。该实体出现在你120英尺内的一个未被占用的空间中。它使用{@creature 幽影|XMM}统计模块，并有以下变化：它是一个妖精，拥有中立阵营，并且不会创造新的影子。你控制这个实体，决定它的行动和移动方式。它会一直存在，直到其生命值降到0 {@variantrule 生命值|XPHB}，或者你通过一个{@action 魔法|XPHB}动作将其解散。"
+							]
+						]
+					}
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"name": "九转夺命剑",
 			"ENG_name": "Nine Lives Stealer",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -3088,6 +5496,9 @@
 				"source": "DMG",
 				"page": 183,
 				"srd": true,
+				"reprintedAs": [
+					"九转夺命剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "very rare",
 				"reqAttune": true,
@@ -3095,10 +5506,82 @@
 				"charges": "{@dice 1d8 + 1}",
 				"entries": [
 					"使用这把魔法武器进行攻击和伤害骰时，你获得+2的加值。",
-					"这把剑有{@dice 1d8 + 1}次充能。如果你对生命值少于100点的生物造成重击，它必须进行一次DC 15的体质豁免检定，否则会被瞬间杀死，因为剑从其身体中撕裂了其生命力（构造物或不死生物免疫）。如果生物被杀死，剑会失去1次充能。当剑没有剩余充能时，它将失去这个特性。"
+					"使用这件魔法武器进行的攻击掷骰和伤害掷骰获得+2加成。"
 				],
 				"lootTables": [
 					"魔法物品表H"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "九转夺命剑",
+			"ENG_name": "Nine Lives Stealer",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "九转夺命",
+				"source": "XDMG",
+				"page": 281,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"bonusWeapon": "+2",
+				"charges": "{@dice 1d8 + 1}",
+				"entries": [
+					"生命汲取",
+					{
+						"type": "entries",
+						"name": "语低语道：\"愿敌人迅速败亡。誓言",
+						"ENG_name": "Life Stealing",
+						"entries": [
+							"这把武器有{@dice 1d8 + 1}次充能。当你用这把武器攻击一个拥有少于100 {@variantrule 生命值|PHB} 的生物，并且在攻击掷骰中掷出20时，该生物必须在一次 {@dc 15} 体质豁免中成功，否则会立即被斩杀，剑将其生命力从身体中撕裂而出。构装体和不死生物自动通过这次豁免。如果生物被斩杀，武器失去1次充能。当武器不再有任何充能时，它失去这个属性。"
+						]
+					}
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "誓仇弓",
+			"ENG_name": "Oathbow",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长弓",
+					"ENG_name": "Longbow",
+					"source": "XPHB"
+				},
+				{
+					"name": "短弓",
+					"ENG_name": "Shortbow",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "语低语道：\"愿敌人迅速败亡。誓言",
+				"source": "XDMG",
+				"page": 282,
+				"freeRules2024": true,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"entries": [
+					"只要你的宿敌还活着，你使用所有其他武器进行攻击检定时就会 {@variantrule 劣势|XPHB}。",
+					"当你使用这件武器对宣誓的敌人进行远程攻击检定时，你在这次投掷上拥有{@variantrule 优势|XPHB}。此外，你的目标无法从{@variantrule 掩护|XPHB|半身掩护}或{@variantrule 掩护|XPHB|四分之三掩护}中获得任何好处，你不会因远距离而受到{@variantrule 劣势|XPHB}。如果攻击命中，你的宣誓敌人将额外受到{@damage 3d6}穿刺damage。",
+					"此外，当武器在你身上时，每当你在战斗中受到另一个生物的伤害时，你必须在智慧检定中掷出15或以上的结果。如果检定失败，你必须攻击伤害你的生物，直到你的生命值降到0（使用{@variantrule 劣势|XPHB}）或者它的生命值降到0，或者直到你无法接触到该生物进行近战攻击。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -3419,6 +5902,43 @@
 			}
 		},
 		{
+			"name": "灵体板甲（*）",
+			"ENG_name": "Plate Armor of Etherealness (*)",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "半身板甲",
+					"ENG_name": "Half Plate Armor",
+					"source": "XPHB"
+				},
+				{
+					"name": "板甲",
+					"ENG_name": "Plate Armor",
+					"source": "XPHB"
+				}
+			],
+			"entries": [
+				"这种魔法弹药旨在击杀特定类型的生物，该类型由DM选择或通过在下面的表格上随机掷骰决定。如果属于该类型的生物受到弹药的伤害，该生物进行一次{@dc 17}体质豁免检定，失败则额外受到{@damage 6d10}力量伤害，成功则只受到一半的额外伤害。",
+				"当你穿戴这件盔甲时，你可以进行一次{@action 魔法|XPHB}动作并使用命令词以获得{@spell 以太化|XPHB}法术的效果。如果你脱下盔甲或进行一次{@action 魔法|XPHB}动作来重复命令词，该法术将立即结束。这件盔甲的这一属性直到次日黎明前无法再次使用。"
+			],
+			"inherits": {
+				"nameSuffix": "的空灵",
+				"source": "XDMG",
+				"page": 286,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"entries": [
+					"当你穿戴这件盔甲时，你可以进行一次{@action 魔法|XPHB}动作并使用命令词以获得{@spell 以太化|XPHB}法术的效果。如果你脱下盔甲或进行一次{@action 魔法|XPHB}动作来重复命令词，该法术将立即结束。这件盔甲的这一属性直到次日黎明前无法再次使用。"
+				],
+				"attachedSpells": [
+					"以太化|XPHB"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "变形之刃",
 			"ENG_name": "Polymorph Blade",
 			"type": "GV|DMG",
@@ -3435,7 +5955,7 @@
 				"reqAttune": true,
 				"curse": true,
 				"entries": [
-					"当你使用这把魔法武器攻击一个生物并且在攻击检定中掷出20时，该生物除了遭受攻击的正常效果外，还必须进行一次DC 15的感知豁免。豁免失败的话，生物还会受到一个{@spell 变形术}法术的影响。掷一个d20骰子，并参照下表确定目标生物被转变成的形式。",
+					"当你用这把魔法武器攻击一个生物并在攻击掷骰中掷出20时，该生物除了承受攻击的正常效果外，还必须进行一次DC 15的智力豁免检定。若豁免失败，该生物还会受到{@spell polymorph}法术的效果。掷一个d20并参考以下表格来确定目标生物变形后的形状。",
 					{
 						"type": "table",
 						"caption": "",
@@ -3619,7 +6139,7 @@
 						"name": "銣铁腐蚀",
 						"ENG_name": "Ruidium Corruption",
 						"entries": [
-							"当你穿戴这件盔甲并在豁免检定中掷出1时，你必须进行一次DC 15的魅力豁免检定。如果豁免失败，你将获得1级{@condition 力竭}（疲劳）。如果你尚未遭受銣腐蚀，当你未能通过这次豁免时，你将变得腐败。"
+							"当你穿着这件盔甲进行一次豁免检定时掷出1，你必须进行一次{@dc 15}魅力豁免检定。若检定失败，你将获得1级{@condition 力竭}（精疲力竭）。如果你还没有遭受到镭射污染，当你这次检定失败时，你将会受到污染。"
 						]
 					},
 					{
@@ -3676,7 +6196,7 @@
 						"name": "銣铁腐蚀",
 						"ENG_name": "Ruidium Corruption",
 						"entries": [
-							"当你使用这件武器进行攻击检定时掷出1时，你必须进行一次DC 20的魅力豁免。豁免失败，你获得1级{@condition 力竭}状态。如果你尚未遭受钌元素腐蚀，失败这次豁免时你将变得腐败。"
+							"当你使用这件武器进行攻击检定时掷出1，你必须进行一次{@dc 20}的魅力豁免检定。若豁免失败，你将获得1级{@condition 力竭}状态。如果你还没有受到镭污染，那么在这次豁免失败时你将会受到污染。"
 						]
 					},
 					{
@@ -3729,6 +6249,7 @@
 		{
 			"name": "银质武器",
 			"ENG_name": "Silvered Weapon",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -3746,9 +6267,37 @@
 				"source": "PHB",
 				"page": 148,
 				"basicRules": true,
+				"reprintedAs": [
+					"银质武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "unknown",
 				"valueExpression": "[[baseItem.value]] + 10000"
+			}
+		},
+		{
+			"name": "银质武器",
+			"ENG_name": "Silvered Weapon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "银质",
+				"source": "XDMG",
+				"page": 304,
+				"rarity": "common",
+				"entries": [
+					"一种炼金术过程将银与这把魔法武器结合。当你用它对一个变形的生物造成{@variantrule 重击|XPHB}时，该武器额外造成一个骰子的伤害。"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害"
+				]
 			}
 		},
 		{
@@ -3775,7 +6324,31 @@
 		{
 			"name": "焖燃护甲",
 			"ENG_name": "Smoldering Armor",
+			"edition": "经典",
 			"type": "GV|DMG",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "焖燃",
+				"source": "XGE",
+				"page": 139,
+				"reprintedAs": [
+					"焖燃护甲|极限伤害"
+				],
+				"tier": "次要",
+				"rarity": "common",
+				"entries": [
+					"当穿戴这件盔甲时，会升起无害、无味的烟雾。"
+				]
+			}
+		},
+		{
+			"name": "焖燃护甲",
+			"ENG_name": "Smoldering Armor",
+			"type": "GV|XDMG",
 			"requires": [
 				{
 					"type": "LA|XPHB"
@@ -3789,12 +6362,15 @@
 			],
 			"inherits": {
 				"namePrefix": "焖燃",
-				"source": "XGE",
-				"page": 139,
-				"tier": "次要",
+				"source": "XDMG",
+				"page": 305,
 				"rarity": "common",
 				"entries": [
 					"当穿戴这件盔甲时，会升起无害、无味的烟雾。"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害",
+					"遗物 - 常见|极限伤害"
 				]
 			}
 		},
@@ -3822,7 +6398,7 @@
 				"charges": 3,
 				"entries": [
 					"这张魔法弓或弩在通常装填弩箭的托架上有着复杂的幻觉碎片和聚焦透镜排列，它不是通过物理装填，而是神奇地召唤自己的投射物。使用这件武器，你在攻击和伤害骰上获得{=bonusWeapon}的加值，它造成光耀伤害而不是穿刺伤害，并且忽略弹药和装填属性。",
-					"这把武器有3次充能，每天黎明时恢复。当你使用它进行远程攻击并击中目标时，你可以让弩箭在一道耀眼的光芒中爆炸。你击中的目标以及它周围10尺内的任何生物必须成功进行一次DC 15的体质豁免检定，否则直到你的下个回合结束时都会失明。"
+					"这把武器有3个充能，每天黎明时恢复。当你用它进行远程攻击命中时，你可以使箭矢在一道耀眼的光芒中爆炸。你击中的目标以及其10英尺范围内的任何生物都必须通过一次{@dc 15}体质豁免检定，否则会失明直到你的下一个回合结束。"
 				]
 			}
 		},
@@ -3953,6 +6529,7 @@
 		{
 			"name": "窃命剑",
 			"ENG_name": "Sword of Life Stealing",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -3964,15 +6541,69 @@
 				"source": "DMG",
 				"page": 206,
 				"srd": true,
+				"reprintedAs": [
+					"窃命剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"reqAttune": true,
 				"entries": [
 					"当你用这把魔法武器攻击一个生物并且在攻击骰上掷出20时，如果目标不是构装生物或不死生物，它将额外承受10点黯蚀伤害。你还将获得10点临时生命值。",
-					"{@note 备注：根据SRD，这是额外的{@dice 3d6}点死灵伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}。}"
+					"{@note 注意：根据SRD，它会造成额外的 {@damage 3d6} 坏死伤害，尽管 {@link 这是不正确的|https://rpg.stackexchange.com/a/174522/53884}。}"
 				],
 				"lootTables": [
 					"魔法物品表G"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "窃命剑",
+			"ENG_name": "Sword of Life Stealing",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "生命吸取",
+				"source": "XDMG",
+				"page": 314,
+				"rarity": "rare",
+				"reqAttune": true,
+				"entries": [
+					"当你用这把魔法武器攻击一个生物并在{@dice d20}的攻击检定中掷出20时，如果目标不是构装体或不死生物，则该目标会受到额外的15点坏死伤害，并且你会获得等于所受坏死伤害量的{@variantrule 临时生命值|XPHB}。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -4002,7 +6633,7 @@
 						"ENG_name": "Curse",
 						"entries": [
 							"在与这把武器共鸣时，你不愿意与它分离。在与这把武器共鸣时，使用除这把武器之外的其他武器进行攻击骰时，你也会处于劣势。",
-							"附着在剑上的复仇之魂与持剑者分享了它的过去和复仇的渴望。每次成功的长休后，你会经历关于灵魂过去的噩梦，最终以它的死亡结束。当你醒来时，你必须进行一次DC 11的体质豁免检定。如果豁免失败，你只能获得短休的好处。只有{@spell 移除诅咒}法术能让你结束对这个物品的共鸣。"
+							"剑上附有复仇之魂，它会与持剑者分享它的历史和复仇的欲望。每次成功长休息后，你会梦到这个灵魂的过去，直至它的死亡。当你醒来时，你必须进行一次 {@dc 11} 体质豁免检定。豁免失败时，你只能获得短休息的效果。只有 {@spell 移除诅咒} 法术能让你结束与这件物品的共鸣。"
 						]
 					},
 					{
@@ -4019,6 +6650,7 @@
 		{
 			"name": "锐锋之剑",
 			"ENG_name": "Sword of Sharpness",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4031,17 +6663,62 @@
 				"source": "DMG",
 				"page": 206,
 				"srd": true,
+				"reprintedAs": [
+					"锐锋之剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
 					"当你用这把魔法剑攻击一个物体并且命中时，对目标造成的伤害骰达到最大值。",
 					"当你用这件武器攻击一个生物并且在攻击骰上掷出20时，那个目标会额外受到14点挥砍伤害。然后再次掷一个{@dice d20}。如果你掷出20，你会切断目标的一只肢体，这种损失的效果由DM决定。如果生物没有肢体可以切断，你会切断它身体的一部分。",
-					"{@note 注意：根据SRD，这是额外的{@dice 4d6}挥砍伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}}。",
+					"{@note 请注意：根据SRD，这是额外的{@damage 4d6}挥砍伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}}。",
 					"此外，你可以说出剑的命令词，使剑刃在10尺半径内散发出明亮的光线，并在额外的10尺内散发出微光。再次说出命令词或收剑入鞘可以熄灭光线。"
 				],
 				"lootTables": [
 					"魔法物品表H"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "锐锋之剑",
+			"ENG_name": "Sword of Sharpness",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "锋锐",
+				"source": "XDMG",
+				"page": 314,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"entries": [
+					"当你使用这件魔法武器攻击一个物体并命中时，对该目标的武器伤害骰子结果取最大值。",
+					"当你用这把武器攻击生物并在攻击掷骰中掷出20时，该目标额外承受14点挥砍伤害，并获得1级{@condition 力竭|PHB}。"
+				],
+				"lootTables": [
+					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -4074,6 +6751,7 @@
 		{
 			"name": "复仇之剑",
 			"ENG_name": "Sword of Vengeance",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4084,6 +6762,9 @@
 				"nameSuffix": " 复仇之",
 				"source": "DMG",
 				"page": 206,
+				"reprintedAs": [
+					"复仇之剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "uncommon",
 				"reqAttune": true,
@@ -4097,7 +6778,7 @@
 						"type": "entries",
 						"entries": [
 							"这把剑被诅咒了，并且被一个复仇的灵魂所附身。与它共鸣会将诅咒扩展到你身上。只要你仍然被诅咒，你就不愿意与剑分离，总是将它带在身上。在与这把武器共鸣时，你使用除这把剑之外的武器进行的攻击骰有不利。",
-							"此外，当剑在你身上时，每当你在战斗中受到伤害，你必须成功进行一次DC 15的感知豁免检定。如果豁免失败，你必须攻击伤害你的生物，直到你或它的生命值降至0，或者直到你无法靠近它进行近战攻击为止。",
+							"这种弹药威力巨大。被击中的生物必须通过一次{@dc 10}力量豁免检定，否则将被击倒{@condition prone}。",
 							"你可以用通常的方式来打破诅咒。或者，对剑施放{@spell 放逐术}法术可以迫使复仇的灵魂离开它。之后，这把剑就变成了一把+1武器，没有其他属性。"
 						]
 					}
@@ -4108,8 +6789,71 @@
 			}
 		},
 		{
+			"name": "复仇之剑",
+			"ENG_name": "Sword of Vengeance",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": " 复仇之",
+				"source": "XDMG",
+				"page": 206,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"curse": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"你在使用这把魔法武器进行攻击和伤害骰时获得+1的加值。",
+					{
+						"type": "entries",
+						"name": "诅咒",
+						"ENG_name": "Curse",
+						"entries": [
+							"当战斗开始时，武器会神奇地唤醒每一个自然入睡的受试者。这一好处不会将受试者从魔法诱导的睡眠中唤醒。",
+							"手持此盾牌时，你有+1的加值到{@variantrule 防御等级|XPHB}，此外还有盾牌对AC的正常加值。",
+							"你可以用常规方法解除诅咒。或者，对武器施放{@spell 放逐术|XPHB}可以迫使复仇之灵离开它。然后该武器变为一把+1武器，没有其他属性。"
+						]
+					}
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害"
+				]
+			}
+		},
+		{
 			"name": "血光剑",
 			"ENG_name": "Sword of Wounding",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4121,17 +6865,133 @@
 				"source": "DMG",
 				"page": 207,
 				"srd": true,
+				"reprintedAs": [
+					"血光剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"reqAttune": true,
 				"entries": [
 					"因这把武器造成的伤害而失去的生命值只能通过短休或长休来恢复，而不能通过再生、魔法或任何其他方式恢复。",
-					"每回合一次，当你使用这把魔法武器攻击击中一个生物时，你可以对目标造成伤口。在受伤生物的每个回合开始时，它每次被你造成伤口都会受到{@dice 1d4}点黯蚀伤害，然后它可以进行一次DC 15的体质豁免检定，如果成功，结束自身所有此类伤口的效果。或者，受伤的生物或其5尺内的生物可以使用动作进行一次DC 15的感知（{@skill 医药}）检定，如果成功，结束它身上的此类伤口效果。"
+					"每回合一次，当你使用这件魔法武器攻击一个生物并命中时，你可以对该目标造成伤害。在受伤生物的每个回合开始时，它会因为每次被你伤害而受到{@damage 1d4}点坏死伤害，然后它可以通过一次成功的{@dc 15}体质豁免来结束所有此类伤害的效果。或者，受伤的生物或其5英尺内的生物可以使用一个动作来进行一次{@dc 15}智慧（{@skill 医药}）检定，成功则可以结束其上所有此类伤害的效果。"
 				],
 				"lootTables": [
 					"魔法物品表G"
 				]
 			}
+		},
+		{
+			"name": "血光剑",
+			"ENG_name": "Sword of Wounding",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "创伤",
+				"source": "XDMG",
+				"page": 314,
+				"rarity": "rare",
+				"reqAttune": true,
+				"entries": [
+					"当你使用这件魔法武器攻击一个生物时，目标额外受到{@damage 2d6}点坏死伤害，并且必须通过一次{@dc 15}体质豁免检定，否则在接下来的1小时内无法恢复{@variantrule 生命值|XPHB}。该目标在每个回合结束时重复进行豁免检定，成功则解除效果。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
+				]
+			}
+		},
+		{
+			"name": "森林之爪",
+			"ENG_name": "Sylvan Talon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "匕首",
+					"ENG_name": "Dagger",
+					"source": "XPHB"
+				},
+				{
+					"name": "刺剑",
+					"ENG_name": "Rapier",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				},
+				{
+					"name": "短剑",
+					"ENG_name": "Shortsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "镰刀",
+					"ENG_name": "Sickle",
+					"source": "XPHB"
+				},
+				{
+					"name": "矛",
+					"ENG_name": "Spear",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "西尔凡之爪",
+				"source": "XDMG",
+				"page": 314,
+				"rarity": "common",
+				"reqAttune": true,
+				"entries": [
+					"当你持有这件武器时，你能理解所有妖精的无声交流，他们也能理解你的。",
+					{
+						"type": "entries",
+						"name": "秘密信息",
+						"ENG_name": "Secret Message",
+						"entries": [
+							"{@note * 这个通用变体与物品 {@item +1 盾牌|XDMG}} 具有相同的名称和来源。"
+						]
+					}
+				],
+				"attachedSpells": [
+					"传讯术|XPHB"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害",
+					"这精致的皮制缰绳在初次握住时会拉扯手部，仿佛渴望抓住附近的野兽。当你握住缰绳的一端时，你可以用一个动作说出它的命令词，使另一端抽打你能看到的20英尺内的野兽。目标必须通过一次{@dc 17}的魅力豁免检定，否则缰绳会自动缠绕在其脖子上，然后像受到{@spell dominate beast}法术影响一样服从你的指挥。一旦目标受到影响，你就不需要再握住缰绳的另一端来指挥它。如果目标成功通过豁免检定，它将对缰绳的力量免疫，直到第二天黎明。|极限伤害"
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "恶毒 +1 武器",
@@ -4147,7 +7007,7 @@
 			},
 			"entries": [
 				"当你使用这把魔法武器掷出20时，目标会额外受到7点该武器类型的损害。",
-				"{@note 注意：根据SRD，这是额外的{@dice 2d6}伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}}。"
+				"{@note 注意：根据SRD，这是一个额外的{@damage 2d6}伤害，尽管{@link 这是不正确的|https://rpg.stackexchange.com/a/174522/53884}。}"
 			],
 			"inherits": {
 				"namePrefix": "恶毒 +1",
@@ -4158,13 +7018,14 @@
 				"entries": [
 					"使用这把武器进行攻击和伤害判定时，你有{=bonusWeapon}的加值。",
 					"当你使用这把魔法武器掷出20时，目标会额外受到7点{=dmgType}伤害。",
-					"{@note 备注：根据SRD，这是额外的{@dice 2d6} {=dmgType}点伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}。}"
+					"{@note 注意：根据SRD，这是额外的 {@damage 2d6} {=dmgType} 伤害，尽管 {@link 这是不正确的|https://rpg.stackexchange.com/a/174522/53884}。}"
 				]
 			}
 		},
 		{
 			"name": "恶毒武器",
 			"ENG_name": "Vicious Weapon",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4176,18 +7037,21 @@
 			},
 			"entries": [
 				"当你使用这把魔法武器掷出20时，目标会额外受到7点该武器类型的损害。",
-				"{@note 注意：根据SRD，这是额外的{@dice 2d6}伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}}。"
+				"{@note 注意：根据SRD，这是一个额外的{@damage 2d6}伤害，尽管{@link 这是不正确的|https://rpg.stackexchange.com/a/174522/53884}。}"
 			],
 			"inherits": {
 				"namePrefix": "恶毒",
 				"source": "DMG",
 				"page": 209,
 				"srd": true,
+				"reprintedAs": [
+					"恶毒武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "rare",
 				"entries": [
 					"当你使用这把魔法武器掷出20时，目标会额外受到7点{=dmgType}伤害。",
-					"{@note 备注：根据SRD，这是额外的{@dice 2d6} {=dmgType}点伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}。}"
+					"{@note 注意：根据SRD，这是额外的 {@damage 2d6} {=dmgType} 伤害，尽管 {@link 这是不正确的|https://rpg.stackexchange.com/a/174522/53884}。}"
 				],
 				"lootTables": [
 					"魔法物品表G"
@@ -4196,8 +7060,35 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "恶毒武器",
+			"ENG_name": "Vicious Weapon",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "恶毒",
+				"source": "XDMG",
+				"page": 318,
+				"rarity": "rare",
+				"entries": [
+					"这件魔法武器对其命中的任何生物造成额外的{@damage 2d6}伤害。这个额外伤害的类型与武器的常规伤害相同。"
+				],
+				"lootTables": [
+					"奥术 - 极罕见|极限伤害"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"name": "斩首剑",
 			"ENG_name": "Vorpal Sword",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4210,16 +7101,62 @@
 				"source": "DMG",
 				"page": 209,
 				"srd": true,
+				"reprintedAs": [
+					"斩首剑|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "legendary",
 				"reqAttune": true,
 				"bonusWeapon": "+3",
 				"entries": [
 					"使用这把魔法武器进行的攻击和伤害检定，你获得+3的加值。此外，该武器无视对挥砍伤害的抗性。",
-					"当你使用这件武器攻击至少有一个头的生物，并且在攻击骰上掷出20时，你将砍掉该生物的一个头。如果生物失去头颅后无法存活，则该生物死亡。如果生物对挥砍伤害免疫，没有或不需要头，具有传奇行动，或者DM决定该生物太大，无法用这件武器砍掉头颅，则该生物对这种效果免疫。这样的生物在被击中时反而会额外受到{@dice 6d8}点挥砍伤害。"
+					"当你使用这个武器攻击至少有一个头的生物，并且在攻击骰上掷出20时，你将切断生物的一个头。如果生物失去头无法存活，则生物死亡。如果生物对挥砍伤害免疫，没有或不需要头部，具有传奇行动，或者DM决定生物太大，无法用这个武器切断头部，则生物免疫此效果。这样的生物在命中时反而受到额外的{@damage 6d8}挥砍伤害。"
 				],
 				"lootTables": [
 					"魔法物品表I"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "斩首剑",
+			"ENG_name": "Vorpal Sword",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"name": "长柄刀",
+					"ENG_name": "Glaive",
+					"source": "XPHB"
+				},
+				{
+					"name": "巨剑",
+					"ENG_name": "Greatsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "长剑",
+					"ENG_name": "Longsword",
+					"source": "XPHB"
+				},
+				{
+					"name": "弯刀",
+					"ENG_name": "Scimitar",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "斩首",
+				"source": "XDMG",
+				"page": 318,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"bonusWeapon": "+3",
+				"entries": [
+					"你在使用这把魔法武器进行攻击掷骰和伤害掷骰时获得+3加值。此外，该武器无视对挥砍伤害的{@variantrule 抗性|XPHB}。",
+					"当你使用此武器攻击一个至少有一颗头的生物，并且在攻击掷骰中投出20时，你会切断该生物的一颗头。如果该生物无法在失去头部的情况下存活，它就会死亡。如果生物对挥砍伤害有{@variantrule 免疫|XPHB}、没有或不需要头部，或者DM认为该生物太大以至于其头部无法被此武器切断，则该生物对此效果免疫。这样的生物反而会从这次打击中额外承受30点挥砍伤害。如果该生物拥有传奇{@variantrule 抗性|XPHB}，它可以消耗该特性的一次每日使用次数来避免失去头部，改为承受额外的伤害。"
+				],
+				"lootTables": [
+					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -4244,13 +7181,14 @@
 					"这件武器装饰有龙头、爪子、翅膀、鳞片或龙语文字。当它浸泡在龙的宝藏中时，它会吸收龙的吐息武器的能量，并以其特殊属性造成该类型的损害。",
 					"每当你用这个武器攻击时，如果投出了20（自动命中），你可以选择每个在目标5尺范围内的生物，它们会受到与龙息武器相同类型的伤害，伤害值为5点。",
 					"你在使用这种武器进行攻击和伤害判定时，获得{=bonusWeapon}的额外加值。命中时，武器额外造成{@damage 2d6}点伤害，伤害类型与龙的呼吸武器相同。",
-					"你可以作为动作从武器中释放出30尺的毁灭性能量锥。在该区域内的每个生物必须进行一次DC 16的敏捷豁免检定，如果豁免失败，则承受与龙的吐息武器相同类型的伤害{@damage 8d6}，如果豁免成功，则承受一半的伤害。一旦使用了这个动作，直到下一个黎明之前都不能再次使用。"
+					"作为一次行动，你可以从武器中释放出一道30英尺的破坏能量锥。该区域内的每个生物都必须进行一次DC16的敏捷豁免检定，失败时受到8d6点龙息武器类型的伤害，成功时则受到一半的伤害。一旦使用此行动，直到次日黎明前无法再次使用。"
 				]
 			}
 		},
 		{
 			"name": "冲击弹",
 			"ENG_name": "Walloping Ammunition",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4271,10 +7209,40 @@
 				"namePrefix": "冲击",
 				"source": "XGE",
 				"page": 139,
+				"reprintedAs": [
+					"冲击弹|极限伤害"
+				],
 				"tier": "次要",
 				"rarity": "common",
 				"entries": [
-					"这种弹药具有强大的冲击力。被弹药击中的生物必须进行一次DC 10的力量豁免检定，否则会被击倒{@condition 倒地}。"
+					"这种魔法弹药旨在杀死特定类型的生物，由 DM 选择或通过在下面的表格上随机掷骰子来确定。如果该类型生物受到弹药的伤害，该生物进行一次 {@dc 10} 体质豁免检定，失败则额外受到 {@condition 倒地} 力场伤害，成功则受到一半的额外伤害。"
+				]
+			}
+		},
+		{
+			"name": "冲击弹",
+			"ENG_name": "Walloping Ammunition",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"namePrefix": "冲击",
+				"source": "XDMG",
+				"page": 318,
+				"rarity": "common",
+				"entries": [
+					"被该弹药击中的生物必须通过一次力量豁免检定（DC 10），否则将处于俯卧状态。"
+				],
+				"lootTables": [
+					"军备 - 常见|极限伤害",
+					"这精致的皮制缰绳在初次握住时会拉扯手部，仿佛渴望抓住附近的野兽。当你握住缰绳的一端时，你可以用一个动作说出它的命令词，使另一端抽打你能看到的20英尺内的野兽。目标必须通过一次{@dc 17}的魅力豁免检定，否则缰绳会自动缠绕在其脖子上，然后像受到{@spell dominate beast}法术影响一样服从你的指挥。一旦目标受到影响，你就不需要再握住缰绳的另一端来指挥它。如果目标成功通过豁免检定，它将对缰绳的力量免疫，直到第二天黎明。|极限伤害"
 				]
 			}
 		},
@@ -4351,7 +7319,7 @@
 						"name": "施法",
 						"ENG_name": "Spellcasting",
 						"entries": [
-							"这把武器有5次充能。你可以使用附赠动作并消耗1次或多次充能来施放以下法术（豁免DC 16）：{@spell 命令术}（1次充能），{@spell 诚实之域}（2次充能），{@spell 强迫术}（4次充能），{@spell 放逐术}（4次充能），或{@spell 支配人类}（5次充能）。",
+							"这件武器有5个充能。你可以使用一个附赠动作并消耗1个或更多的充能来施放以下法术之一（掷 {@dc 16}）：{@spell 命令术} (1个充能), {@spell 诚实之域} (2个充能), {@spell 强迫术} (4个充能), {@spell 放逐术} (4个充能), 或者 {@spell 支配人类} (5个充能)。",
 							"这把武器在每天黎明时恢复{@dice 1d4}点消耗的充能。"
 						]
 					}
@@ -4368,6 +7336,7 @@
 		{
 			"name": "警戒武器",
 			"ENG_name": "Weapon of Warning",
+			"edition": "经典",
 			"type": "GV|DMG",
 			"requires": [
 				{
@@ -4378,6 +7347,9 @@
 				"nameSuffix": "警戒",
 				"source": "DMG",
 				"page": 213,
+				"reprintedAs": [
+					"警戒武器|极限伤害"
+				],
 				"tier": "主要",
 				"rarity": "uncommon",
 				"reqAttune": true,
@@ -4386,6 +7358,49 @@
 				],
 				"lootTables": [
 					"魔法物品表F"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
+			"name": "警戒武器",
+			"ENG_name": "Weapon of Warning",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"nameSuffix": "警戒",
+				"source": "XDMG",
+				"page": 324,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"entries": [
+					"只要这件武器在你触手可及的范围内，并且你已与之调谐，你和30英尺内的盟友将获得以下好处。",
+					{
+						"type": "entries",
+						"name": "警报术",
+						"ENG_name": "Alarm",
+						"entries": [
+							"在对生物造成额外伤害后，弹药变为非魔法物品。"
+						]
+					},
+					{
+						"type": "entries",
+						"name": "超自然准备",
+						"ENG_name": "Supernatural Readiness",
+						"entries": [
+							"每个对象在其{@variantrule 先攻|XPHB}检定上具有{@variantrule 先攻|XPHB}。"
+						]
+					}
+				],
+				"lootTables": [
+					"秘术 - 罕见|极限伤害"
 				]
 			},
 			"hasFluffImages": true
@@ -4449,7 +7464,7 @@
 						"name": "激活符文",
 						"ENG_name": "Invoking the Rune",
 						"entries": [
-							"作为一个动作，你可以呼唤盔甲上的符文，用它来施放{@spell 风墙术}法术（豁免DC 15）。一旦符文被呼唤，直到下一个黎明它才能再次被呼唤。"
+							"作为一个行动，你可以激发盔甲的符文来施放{@spell 风墙术}spell（豁免 {@dc 15}）。一旦符文被激发，它不能再次激发，直到下一个黎明。"
 						]
 					}
 				],

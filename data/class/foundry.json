@@ -134,14 +134,14 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "术士",
-			"ENG_name": "Sorcerer",
+			"name": "野蛮人",
+			"ENG_name": "Barbarian",
 			"source": "XPHB",
 			"advancement": [
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "点数",
+						"identifier": "狂暴伤害",
 						"type": "number",
 						"scale": {
 							"1": {
@@ -155,7 +155,7 @@
 							}
 						}
 					},
-					"title": "Rage Damage"
+					"title": "狂暴伤害"
 				},
 				{
 					"type": "ScaleValue",
@@ -172,7 +172,7 @@
 							}
 						}
 					},
-					"title": "Brutal Strike"
+					"title": "凶蛮打击"
 				},
 				{
 					"type": "ScaleValue",
@@ -196,19 +196,20 @@
 							}
 						}
 					},
-					"title": "Rages"
+					"title": "狂暴次数"
 				}
 			],
 			"migrationVersion": 3
 		},
 		{
-			"name": "Bard",
+			"name": "吟游诗人",
+			"ENG_name": "Bard",
 			"source": "XPHB",
 			"advancement": [
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "prepared-max",
+						"identifier": "准备最大",
 						"type": "number",
 						"scale": {
 							"1": {
@@ -255,31 +256,6 @@
 							},
 							"18": {
 								"value": 20
-							}
-						}
-					},
-					"title": "术法点"
-				}
-			]
-		}
-	],
-	"subclass": [
-		{
-			"name": "自然领域",
-			"ENG_name": "Nature Domain",
-			"source": "PHB",
-			"className": "牧师",
-			"classSource": "PHB",
-			"advancement": [
-				{
-					"type": "ScaleValue",
-					"configuration": {
-						"identifier": "神圣打击",
-						"type": "dice",
-						"scale": {
-							"8": {
-								"n": 1,
-								"die": 8
 							},
 							"19": {
 								"value": 21
@@ -289,21 +265,12 @@
 							}
 						}
 					},
-					"title": "神圣打击"
-				}
-			]
-		},
-		{
-			"name": "诡术领域",
-			"ENG_name": "Trickery Domain",
-			"source": "PHB",
-			"className": "牧师",
-			"classSource": "PHB",
-			"advancement": [
+					"title": "最大准备法术数量"
+				},
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "神圣打击",
+						"identifier": "激励",
 						"type": "dice",
 						"scale": {
 							"1": {
@@ -320,23 +287,21 @@
 							}
 						}
 					},
-					"title": "神圣打击"
+					"title": "灵感骰子"
 				}
 			],
 			"migrationVersion": 3
 		},
 		{
-			"name": "死亡领域",
-			"ENG_name": "Death Domain",
-			"source": "DMG",
-			"className": "牧师",
-			"classSource": "PHB",
+			"name": "牧师",
+			"ENG_name": "Cleric",
+			"source": "XPHB",
 			"advancement": [
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "神圣打击",
-						"type": "dice",
+						"identifier": "通道神性",
+						"type": "number",
 						"scale": {
 							"2": {
 								"value": 2
@@ -349,22 +314,13 @@
 							}
 						}
 					},
-					"title": "神圣打击"
-				}
-			]
-		},
-		{
-			"name": "低语学院",
-			"ENG_name": "College of Whispers",
-			"source": "XGE",
-			"className": "吟游诗人",
-			"classSource": "PHB",
-			"advancement": [
+					"title": "使用神导能力"
+				},
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "心灵之刃",
-						"type": "dice",
+						"identifier": "准备最大",
+						"type": "number",
 						"scale": {
 							"1": {
 								"value": 4
@@ -419,21 +375,11 @@
 							}
 						}
 					},
-					"title": "心灵之刃"
-				}
-			]
-		},
-		{
-			"name": "锻造领域",
-			"ENG_name": "Forge Domain",
-			"source": "XGE",
-			"className": "牧师",
-			"classSource": "PHB",
-			"advancement": [
+					"title": "最大准备法术数量"
+				},
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "神圣打击",
 						"type": "dice",
 						"scale": {
 							"7": {
@@ -452,8 +398,1001 @@
 			"migrationVersion": 3
 		},
 		{
+			"name": "德鲁伊",
+			"ENG_name": "Druid",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "准备最大",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 4
+							},
+							"2": {
+								"value": 5
+							},
+							"3": {
+								"value": 6
+							},
+							"4": {
+								"value": 7
+							},
+							"5": {
+								"value": 9
+							},
+							"6": {
+								"value": 10
+							},
+							"7": {
+								"value": 11
+							},
+							"8": {
+								"value": 12
+							},
+							"9": {
+								"value": 14
+							},
+							"10": {
+								"value": 15
+							},
+							"11": {
+								"value": 16
+							},
+							"13": {
+								"value": 17
+							},
+							"15": {
+								"value": 18
+							},
+							"17": {
+								"value": 19
+							},
+							"18": {
+								"value": 20
+							},
+							"19": {
+								"value": 21
+							},
+							"20": {
+								"value": 22
+							}
+						}
+					},
+					"title": "最大准备法术数量"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "野性变形",
+						"type": "cr",
+						"scale": {
+							"2": {
+								"value": 0.25
+							},
+							"4": {
+								"value": 0.5
+							},
+							"8": {
+								"value": 1
+							}
+						}
+					},
+					"title": "野性变形 挑战等级"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 2
+							},
+							"6": {
+								"value": 3
+							},
+							"17": {
+								"value": 4
+							}
+						}
+					},
+					"title": "野性变形使用次数"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 4
+							},
+							"4": {
+								"value": 6
+							},
+							"8": {
+								"value": 8
+							}
+						}
+					},
+					"title": "已知形态"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "dice",
+						"scale": {
+							"7": {
+								"number": 1,
+								"faces": 8
+							},
+							"15": {
+								"number": 2,
+								"faces": 8
+							}
+						}
+					},
+					"title": "元素之怒"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "战士",
+			"ENG_name": "Fighter",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 1
+							},
+							"17": {
+								"value": 2
+							}
+						}
+					},
+					"title": "动作如潮"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"9": {
+								"value": 1
+							},
+							"13": {
+								"value": 2
+							},
+							"17": {
+								"value": 3
+							}
+						}
+					},
+					"title": "不屈"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 2
+							},
+							"4": {
+								"value": 3
+							},
+							"10": {
+								"value": 4
+							}
+						}
+					},
+					"title": "回气"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "武僧",
+			"ENG_name": "Monk",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "迪",
+						"type": "dice",
+						"scale": {
+							"1": {
+								"faces": 6
+							},
+							"5": {
+								"faces": 8
+							},
+							"11": {
+								"faces": 10
+							},
+							"17": {
+								"faces": 12
+							}
+						}
+					},
+					"title": "武艺骰"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "distance",
+						"distance": {
+							"units": "ft"
+						},
+						"scale": {
+							"2": {
+								"value": 10
+							},
+							"6": {
+								"value": 15
+							},
+							"10": {
+								"value": 20
+							},
+							"14": {
+								"value": 25
+							},
+							"18": {
+								"value": 30
+							}
+						}
+					},
+					"title": "无甲移动"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "焦点",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 1
+							},
+							"2": {
+								"value": 2
+							},
+							"3": {
+								"value": 3
+							},
+							"4": {
+								"value": 4
+							},
+							"5": {
+								"value": 5
+							},
+							"6": {
+								"value": 6
+							},
+							"7": {
+								"value": 7
+							},
+							"8": {
+								"value": 8
+							},
+							"9": {
+								"value": 9
+							},
+							"10": {
+								"value": 10
+							},
+							"11": {
+								"value": 11
+							},
+							"12": {
+								"value": 12
+							},
+							"13": {
+								"value": 13
+							},
+							"14": {
+								"value": 14
+							},
+							"15": {
+								"value": 15
+							},
+							"16": {
+								"value": 16
+							},
+							"17": {
+								"value": 17
+							},
+							"18": {
+								"value": 18
+							},
+							"19": {
+								"value": 19
+							},
+							"20": {
+								"value": 20
+							}
+						}
+					},
+					"title": "专注点数"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "圣武士",
+			"ENG_name": "Paladin",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "气息",
+						"type": "distance",
+						"scale": {
+							"6": {
+								"value": 10
+							},
+							"18": {
+								"value": 30
+							}
+						}
+					},
+					"title": "气场距离"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "准备最大",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 2
+							},
+							"2": {
+								"value": 3
+							},
+							"3": {
+								"value": 4
+							},
+							"4": {
+								"value": 5
+							},
+							"5": {
+								"value": 6
+							},
+							"7": {
+								"value": 7
+							},
+							"9": {
+								"value": 9
+							},
+							"11": {
+								"value": 10
+							},
+							"13": {
+								"value": 11
+							},
+							"15": {
+								"value": 12
+							},
+							"17": {
+								"value": 14
+							},
+							"19": {
+								"value": 15
+							}
+						}
+					},
+					"title": "最大准备法术数量"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "通道神性",
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 2
+							},
+							"11": {
+								"value": 3
+							}
+						}
+					},
+					"title": "使用神导能力"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "游侠",
+			"ENG_name": "Ranger",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 2
+							},
+							"5": {
+								"value": 3
+							},
+							"9": {
+								"value": 4
+							},
+							"13": {
+								"value": 5
+							},
+							"17": {
+								"value": 6
+							}
+						}
+					},
+					"title": "宿敌"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "标记",
+						"type": "dice",
+						"scale": {
+							"1": {
+								"number": 1,
+								"faces": 6
+							},
+							"20": {
+								"number": 1,
+								"faces": 10
+							}
+						}
+					},
+					"title": "猎人印记伤害"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "最大准备",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 2
+							},
+							"2": {
+								"value": 3
+							},
+							"3": {
+								"value": 4
+							},
+							"4": {
+								"value": 5
+							},
+							"5": {
+								"value": 6
+							},
+							"7": {
+								"value": 7
+							},
+							"9": {
+								"value": 9
+							},
+							"11": {
+								"value": 10
+							},
+							"13": {
+								"value": 11
+							},
+							"15": {
+								"value": 12
+							},
+							"17": {
+								"value": 14
+							},
+							"19": {
+								"value": 15
+							}
+						}
+					},
+					"title": "最大准备法术数量"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "游荡者",
+			"ENG_name": "Rogue",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "dice",
+						"scale": {
+							"1": {
+								"number": 1,
+								"faces": 6
+							},
+							"3": {
+								"number": 2,
+								"faces": 6
+							},
+							"5": {
+								"number": 3,
+								"faces": 6
+							},
+							"7": {
+								"number": 4,
+								"faces": 6
+							},
+							"9": {
+								"number": 5,
+								"faces": 6
+							},
+							"11": {
+								"number": 6,
+								"faces": 6
+							},
+							"13": {
+								"number": 7,
+								"faces": 6
+							},
+							"15": {
+								"number": 8,
+								"faces": 6
+							},
+							"17": {
+								"number": 9,
+								"faces": 6
+							},
+							"19": {
+								"number": 10,
+								"faces": 6
+							}
+						}
+					},
+					"title": "偷袭"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "术士",
+			"ENG_name": "Sorcerer",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "准备最大",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 2
+							},
+							"2": {
+								"value": 4
+							},
+							"3": {
+								"value": 6
+							},
+							"4": {
+								"value": 7
+							},
+							"5": {
+								"value": 9
+							},
+							"6": {
+								"value": 10
+							},
+							"7": {
+								"value": 11
+							},
+							"8": {
+								"value": 12
+							},
+							"9": {
+								"value": 14
+							},
+							"10": {
+								"value": 15
+							},
+							"11": {
+								"value": 16
+							},
+							"13": {
+								"value": 17
+							},
+							"15": {
+								"value": 18
+							},
+							"17": {
+								"value": 19
+							},
+							"18": {
+								"value": 20
+							},
+							"19": {
+								"value": 21
+							},
+							"20": {
+								"value": 22
+							}
+						}
+					},
+					"title": "最大准备法术数量"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "点数",
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 2
+							},
+							"3": {
+								"value": 3
+							},
+							"4": {
+								"value": 4
+							},
+							"5": {
+								"value": 5
+							},
+							"6": {
+								"value": 6
+							},
+							"7": {
+								"value": 7
+							},
+							"8": {
+								"value": 8
+							},
+							"9": {
+								"value": 9
+							},
+							"10": {
+								"value": 10
+							},
+							"11": {
+								"value": 11
+							},
+							"12": {
+								"value": 12
+							},
+							"13": {
+								"value": 13
+							},
+							"14": {
+								"value": 14
+							},
+							"15": {
+								"value": 15
+							},
+							"16": {
+								"value": 16
+							},
+							"17": {
+								"value": 17
+							},
+							"18": {
+								"value": 18
+							},
+							"19": {
+								"value": 19
+							},
+							"20": {
+								"value": 20
+							}
+						}
+					},
+					"title": "术法点"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "邪术师",
+			"ENG_name": "Warlock",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "准备最大",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 2
+							},
+							"2": {
+								"value": 3
+							},
+							"3": {
+								"value": 4
+							},
+							"4": {
+								"value": 5
+							},
+							"5": {
+								"value": 6
+							},
+							"6": {
+								"value": 7
+							},
+							"7": {
+								"value": 8
+							},
+							"8": {
+								"value": 9
+							},
+							"9": {
+								"value": 10
+							},
+							"11": {
+								"value": 11
+							},
+							"13": {
+								"value": 12
+							},
+							"15": {
+								"value": 13
+							},
+							"17": {
+								"value": 14
+							},
+							"19": {
+								"value": 15
+							}
+						}
+					},
+					"title": "最大契约魔法法术"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "法师",
+			"ENG_name": "Wizard",
+			"source": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "最大准备",
+						"type": "number",
+						"scale": {
+							"1": {
+								"value": 4
+							},
+							"2": {
+								"value": 5
+							},
+							"3": {
+								"value": 6
+							},
+							"4": {
+								"value": 7
+							},
+							"5": {
+								"value": 9
+							},
+							"6": {
+								"value": 10
+							},
+							"7": {
+								"value": 11
+							},
+							"8": {
+								"value": 12
+							},
+							"9": {
+								"value": 14
+							},
+							"10": {
+								"value": 15
+							},
+							"11": {
+								"value": 16
+							},
+							"13": {
+								"value": 17
+							},
+							"14": {
+								"value": 18
+							},
+							"15": {
+								"value": 19
+							},
+							"16": {
+								"value": 21
+							},
+							"17": {
+								"value": 22
+							},
+							"18": {
+								"value": 23
+							},
+							"19": {
+								"value": 24
+							},
+							"20": {
+								"value": 25
+							}
+						}
+					},
+					"title": "最大准备法术数量"
+				}
+			],
+			"migrationVersion": 3
+		}
+	],
+	"subclass": [
+		{
+			"name": "自然领域",
+			"ENG_name": "Nature Domain",
+			"shortName": "自然",
+			"source": "PHB",
+			"className": "牧师",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "神圣打击",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "神圣打击"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "诡术领域",
+			"ENG_name": "Trickery Domain",
+			"shortName": "诡术",
+			"source": "PHB",
+			"className": "牧师",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "神圣打击",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "神圣打击"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "死亡领域",
+			"ENG_name": "Death Domain",
+			"shortName": "死亡",
+			"source": "DMG",
+			"className": "牧师",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "神圣打击",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "神圣打击"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "低语学院",
+			"ENG_name": "College of Whispers",
+			"shortName": "低语",
+			"source": "XGE",
+			"className": "吟游诗人",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "心灵之刃",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"n": 2,
+								"die": 6
+							},
+							"5": {
+								"n": 3,
+								"die": 6
+							},
+							"10": {
+								"n": 5,
+								"die": 6
+							},
+							"15": {
+								"n": 8,
+								"die": 6
+							}
+						}
+					},
+					"title": "心灵之刃"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "锻造领域",
+			"ENG_name": "Forge Domain",
+			"shortName": "锻造",
+			"source": "XGE",
+			"className": "牧师",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "神圣打击",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "神圣打击"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"name": "炼金师",
 			"ENG_name": "Alchemist",
+			"shortName": "炼金师",
 			"source": "TCE",
 			"className": "奇械师",
 			"classSource": "TCE",
@@ -463,6 +1402,379 @@
 					"configuration": {
 						"identifier": "灵药",
 						"type": "string",
+						"scale": {
+							"3": {
+								"value": "1"
+							},
+							"6": {
+								"value": "2"
+							},
+							"15": {
+								"value": "3"
+							}
+						}
+					},
+					"title": "最大炼金创造"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "秩序领域",
+			"ENG_name": "Order Domain",
+			"shortName": "秩序",
+			"source": "TCE",
+			"className": "牧师",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "神圣打击",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "神圣打击"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "诡术师",
+			"ENG_name": "Arcane Trickster",
+			"shortName": "诡术师",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "最大准备",
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 3
+							},
+							"4": {
+								"value": 4
+							},
+							"7": {
+								"value": 5
+							},
+							"8": {
+								"value": 6
+							},
+							"10": {
+								"value": 7
+							},
+							"11": {
+								"value": 8
+							},
+							"13": {
+								"value": 9
+							},
+							"14": {
+								"value": 10
+							},
+							"16": {
+								"value": 11
+							},
+							"19": {
+								"value": 12
+							},
+							"20": {
+								"value": 13
+							}
+						}
+					},
+					"title": "最大准备法术数量"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "战斗大师",
+			"ENG_name": "Battle Master",
+			"shortName": "战斗大师",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "优越性",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"number": 4,
+								"faces": 8
+							},
+							"7": {
+								"number": 5,
+								"faces": 8
+							},
+							"10": {
+								"number": 5,
+								"faces": 10
+							},
+							"15": {
+								"number": 6,
+								"faces": 10
+							},
+							"18": {
+								"number": 6,
+								"faces": 12
+							}
+						}
+					},
+					"title": "卓越骰"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "大地结社",
+			"ENG_name": "Circle of the Land",
+			"shortName": "大地",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "土地援助",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"number": 2,
+								"faces": 6
+							},
+							"10": {
+								"number": 3,
+								"faces": 6
+							},
+							"14": {
+								"number": 4,
+								"faces": 6
+							}
+						}
+					},
+					"title": "大地援助伤害"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "海洋结社",
+			"ENG_name": "Circle of the Sea",
+			"shortName": "海洋",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "愤怒-射程",
+						"type": "distance",
+						"distance": {
+							"units": "ft"
+						},
+						"scale": {
+							"3": {
+								"value": 5
+							},
+							"6": {
+								"value": 10
+							}
+						}
+					},
+					"title": "海洋之怒射程"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "星辰结社",
+			"ENG_name": "Circle of the Stars",
+			"shortName": "星辰",
+			"source": "XPHB",
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "迪",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"number": 1,
+								"faces": 8
+							},
+							"10": {
+								"number": 2,
+								"faces": 8
+							}
+						}
+					},
+					"title": "星形形态骰子"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "奥法骑士",
+			"ENG_name": "Eldritch Knight",
+			"shortName": "奥法骑士",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 2
+							},
+							"10": {
+								"value": 3
+							}
+						}
+					},
+					"title": "戏法"
+				},
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "准备就绪",
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 3
+							},
+							"4": {
+								"value": 4
+							},
+							"7": {
+								"value": 5
+							},
+							"8": {
+								"value": 6
+							},
+							"10": {
+								"value": 7
+							},
+							"11": {
+								"value": 8
+							},
+							"13": {
+								"value": 9
+							},
+							"14": {
+								"value": 10
+							},
+							"17": {
+								"value": 11
+							},
+							"19": {
+								"value": 12
+							},
+							"20": {
+								"value": 13
+							}
+						}
+					},
+					"title": "准备法术"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "妖精漫游者",
+			"ENG_name": "Fey Wanderer",
+			"shortName": "妖精漫游者",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "恐怖一击",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"number": 1,
+								"faces": 4
+							},
+							"11": {
+								"number": 1,
+								"faces": 6
+							}
+						}
+					},
+					"title": "恐怖打击伤害"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "幽域追踪者",
+			"ENG_name": "Gloom Stalker",
+			"shortName": "幽域追踪者",
+			"source": "XPHB",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "恐怖一击",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"number": 2,
+								"faces": 6
+							},
+							"11": {
+								"number": 2,
+								"faces": 8
+							}
+						}
+					},
+					"title": "恐怖打击伤害"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "狂热者道途",
+			"ENG_name": "Path of the Zealot",
+			"shortName": "狂热者",
+			"source": "XPHB",
+			"className": "野蛮人",
+			"classSource": "XPHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "水池",
+						"type": "dice",
 						"scale": {
 							"3": {
 								"number": 4,
@@ -482,22 +1794,23 @@
 							}
 						}
 					},
-					"title": "最大炼金创造"
+					"title": "众神战士：池大小"
 				}
 			],
 			"migrationVersion": 3
 		},
 		{
-			"name": "秩序领域",
-			"ENG_name": "Order Domain",
-			"source": "TCE",
-			"className": "牧师",
-			"classSource": "PHB",
+			"name": "魂刃",
+			"ENG_name": "Soulknife",
+			"shortName": "魂刃",
+			"source": "XPHB",
+			"className": "游荡者",
+			"classSource": "XPHB",
 			"advancement": [
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "神圣打击",
+						"identifier": "迪",
 						"type": "dice",
 						"scale": {
 							"3": {
@@ -526,7 +1839,7 @@
 							}
 						}
 					},
-					"title": "神圣打击"
+					"title": "灵能力量"
 				}
 			],
 			"migrationVersion": 3
@@ -740,10 +2053,15 @@
 			"classSource": "PHB",
 			"level": 2,
 			"system": {
-				"uses.per": "天",
-				"uses.value": 1,
-				"uses.max": "1 + min(floor(@classes.cleric.levels / 6), 1) + min(floor(@classes.cleric.levels / 18), 1)"
-			}
+				"uses.max": "1 + min(floor(@classes.cleric.levels / 6), 1) + min(floor(@classes.cleric.levels / 18), 1)",
+				"uses.recovery": [
+					{
+						"period": "天",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "引导神力",
@@ -1170,7 +2488,8 @@
 			"entries": [
 				"在3级时，你获得了根据需要扭曲你的法术的能力。你可以选择两种魔法变体选项。你在10级和17级时会再获得一个。",
 				"除非特别说明，否则对一个法术只能应用一种超魔法项。"
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "超魔法选项",
@@ -1214,7 +2533,8 @@
 				"在2级时，你可以选择两种奥术启示。你的启示选项在职业描述的末尾详细列出。当你达到特定的邪术师等级时，你将根据邪术师表格中的启示已知列所示，获得额外的启示选项。",
 				"另外，你提升本职的等级时，可以用新的祈唤替换一个已学会的祈唤，但你的角色必须满足学习新祈唤的先决条件。",
 				"如果一个魔能祈唤有先决条件，你必须满足先决条件才能学习魔能祈唤，你可以在满足先决的同时学习这个魔能祈唤。对等级的要求意为对你邪术师职业等级的要求。"
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "魔契恩泽",
@@ -1234,12 +2554,23 @@
 			"classSource": "TCE",
 			"level": 2,
 			"system": {
-				"target.value": "1",
-				"target.type": "物件",
 				"range.units": "touch",
 				"uses.max": "@scale.artificer.infused",
-				"uses.per": "充能"
-			}
+				"uses.recovery": [
+					{
+						"period": "充能",
+						"type": "recoverAll"
+					}
+				],
+				"activities": [
+					{
+						"type": "utility",
+						"target.affects.count": "1",
+						"target.affects.type": "物件"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "已知注法",
@@ -1787,10 +3118,27 @@
 			"className": "术士",
 			"classSource": "XPHB",
 			"level": 2,
-			"system": {
-				"uses.per": "lr",
-				"uses.max": "@scale.术士点数"
-			}
+			"subEntities": {
+				"classFeature": [
+					{
+						"name": "术法点",
+						"ENG_name": "Sorcery Points",
+						"source": "XPHB",
+						"page": 140,
+						"className": "术士",
+						"classSource": "XPHB",
+						"level": 2,
+						"entries": [
+							"你拥有2点法术点数，并且随着你达到更高的等级，你将获得更多的法术点数，如术士特性表中的法术点数列所示。你的法术点数不能超过表中显示的你等级对应的数量。当你完成一次{@variantrule 长休|XPHB}时，你将恢复所有消耗的法术点数。"
+						],
+						"foundrySystem": {
+							"uses.per": "lr",
+							"uses.max": "@scale.术士点数"
+						}
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "超魔法选项",
@@ -1870,9 +3218,41 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"system": {
-				"activation.type": "附赠动作",
-				"activation.cost": 1
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "附赠动作",
+						"activation.value": 1
+					}
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
+			"name": "老虎",
+			"ENG_name": "Tiger",
+			"source": "SCAG",
+			"className": "野蛮人",
+			"classSource": "PHB",
+			"subclassShortName": "图腾武者",
+			"subclassSource": "PHB",
+			"level": 6,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"运动",
+								"特技",
+								"隐匿",
+								"生存"
+							],
+							"count": 2
+						}
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "狩猎之唤",
@@ -1924,8 +3304,13 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"system": {
-				"activation.type": "特殊",
-				"activation.condition": "当你在狂暴状态下，每个回合首次用武器攻击击中生物时"
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "特殊",
+						"activation.condition": "当你在狂暴状态下，每个回合首次用武器攻击击中生物时"
+					}
+				]
 			},
 			"chooseSystem": [
 				{
@@ -2008,15 +3393,13 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"system": {
-				"target.value": 1,
-				"target.type": "物件",
 				"range.value": 10,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.affects.count": "1",
-						"target.affects.type": "object"
+						"target.affects.type": "物件"
 					}
 				]
 			},
@@ -2032,12 +3415,17 @@
 			"subclassSource": "TCE",
 			"level": 6,
 			"system": {
-				"target.value": 1,
-				"target.type": "物件",
 				"range.value": 30,
 				"range.units": "ft",
-				"actionType": "召唤"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.affects.count": "1",
+						"target.affects.type": "物件"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "扰神之词",
@@ -2136,12 +3524,18 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"system": {
-				"activation.type": "分钟",
-				"activation.cost": 1,
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "分钟",
+						"activation.value": 1,
+						"target.template.size": "60",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "附赠熟练项",
@@ -2188,13 +3582,21 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"system": {
-				"activation.type": "特殊",
-				"activation.condition": "当你用武器攻击击中一个生物时",
-				"damage.parts": [
-					[
-						"@scale.college-of-whispers.psychic-blades",
-						"心灵"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"activation.type": "特殊",
+						"activation.condition": "当你用武器攻击击中一个生物时",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.college-of-whispers.psychic-blades",
+								"types": [
+									"心灵"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2209,11 +3611,17 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"system": {
-				"activation.type": "分钟",
-				"activation.cost": 1,
-				"target.value": 1,
-				"target.type": "creature"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "分钟",
+						"activation.value": 1,
+						"target.affects.count": "1",
+						"target.affects.type": "creature"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "低语光环",
@@ -2267,13 +3675,21 @@
 			"subclassSource": "DMG",
 			"level": 2,
 			"system": {
-				"activation.type": "特殊",
-				"activation.condition": "当牧师用近战攻击击中生物时",
-				"damage.parts": [
-					[
-						"5 + (2 * @classes.cleric.levels)",
-						"黯蚀"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"activation.type": "特殊",
+						"activation.condition": "当牧师用近战攻击击中生物时",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "5 + (2 * @classes.cleric.levels)",
+								"types": [
+									"黯蚀"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2288,11 +3704,19 @@
 			"subclassSource": "DMG",
 			"level": 8,
 			"system": {
-				"damage.parts": [
-					[
-						"@scale.death-domain.divine-strike",
-						"黯蚀"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.death-domain.divine-strike",
+								"types": [
+									"黯蚀"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2340,7 +3764,8 @@
 			"system": {
 				"duration.value": 10,
 				"duration.units": "分钟"
-			}
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "引导神力：读心",
@@ -2374,9 +3799,15 @@
 			"subclassSource": "PHB",
 			"level": 17,
 			"system": {
-				"activation.type": "分钟",
-				"activation.cost": 1
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "分钟",
+						"activation.value": 1
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "附赠熟练项",
@@ -2431,17 +3862,25 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状",
-				"damage.parts": [
-					[
-						"2d10 + @classes.cleric.levels",
-						"光耀"
-					]
-				],
-				"formula": ""
-			}
+				"activities": [
+					{
+						"type": "damage",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "2d10 + @classes.cleric.levels",
+								"types": [
+									"光耀"
+								]
+							}
+						]
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "光冕",
@@ -2453,10 +3892,16 @@
 			"subclassSource": "PHB",
 			"level": 17,
 			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "60",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "自然侍僧",
@@ -2510,14 +3955,22 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状",
-				"damage.parts": [
-					[
-						"2d10 + @classes.cleric.levels",
-						"光耀"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "2d10 + @classes.cleric.levels",
+								"types": [
+									"光耀"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2532,19 +3985,33 @@
 			"subclassSource": "PHB",
 			"level": 8,
 			"system": {
-				"damage.parts": [
-					[
-						"@scale.自然领域.神圣打击",
-						"冷冻"
-					],
-					[
-						"@scale.自然领域.神圣打击",
-						"火焰"
-					],
-					[
-						"@scale.自然领域.神圣打击",
-						"闪电"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.自然领域.神圣打击",
+								"types": [
+									"冷冻"
+								]
+							},
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.自然领域.神圣打击",
+								"types": [
+									"火焰"
+								]
+							},
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.自然领域.神圣打击",
+								"types": [
+									"闪电"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2582,15 +4049,13 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 30,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -2606,11 +4071,19 @@
 			"subclassSource": "PHB",
 			"level": 8,
 			"system": {
-				"damage.parts": [
-					[
-						"@scale.秩序领域.神圣打击",
-						"毒素"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.秩序领域.神圣打击",
+								"types": [
+									"毒素"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2741,10 +4214,16 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "神圣打击",
@@ -2756,11 +4235,19 @@
 			"subclassSource": "TCE",
 			"level": 8,
 			"system": {
-				"damage.parts": [
-					[
-						"@scale.秩序领域.神圣打击",
-						"心灵"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.秩序领域.神圣打击",
+								"types": [
+									"心灵"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -2913,11 +4400,19 @@
 			"subclassSource": "XGE",
 			"level": 8,
 			"system": {
-				"damage.parts": [
-					[
-						"@scale.锻造领域.神圣打击",
-						"火焰"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@scale.锻造领域.神圣打击",
+								"types": [
+									"火焰"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -3034,11 +4529,17 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"system": {
-				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "球状",
-				"range.units": "self"
-			}
+				"range.units": "self",
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "10",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "真菌感染",
@@ -3049,9 +4550,8 @@
 			"subclassShortName": "孢子",
 			"subclassSource": "TCE",
 			"level": 6,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "扩散孢子",
@@ -3063,14 +4563,20 @@
 			"subclassSource": "TCE",
 			"level": 10,
 			"system": {
-				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "立方",
 				"range.value": 30,
 				"range.units": "ft",
 				"duration.value": 1,
-				"duration.units": "分钟"
-			}
+				"duration.units": "分钟",
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "10",
+						"target.template.units": "ft",
+						"target.template.type": "立方"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "真菌之躯",
@@ -3101,11 +4607,16 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"system": {
-				"target.type": "空间",
 				"range.value": 30,
 				"range.units": "ft",
-				"actionType": "召唤"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.type": "空间"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "阴影之种的呼唤",
@@ -3116,9 +4627,8 @@
 			"subclassShortName": "枯朽",
 			"subclassSource": "TDCSR",
 			"level": 6,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "腐败化身",
@@ -3148,13 +4658,23 @@
 			"system": {
 				"range.value": 120,
 				"range.units": "ft",
-				"uses.per": "充能",
-				"uses.value": 2,
 				"uses.max": "@classes.德鲁伊.等级",
-				"uses.recovery": "@classes.德鲁伊.等级",
-				"formula": "1d6",
-				"actionType": "治疗"
-			}
+				"uses.recovery": [
+					{
+						"period": "充能",
+						"type": "recoverAll"
+					}
+				],
+				"activities": [
+					{
+						"type": "utility",
+						"target.affects.count": "1",
+						"target.affects.type": "creature",
+						"roll.formula": "1d6"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "月光阴影的炉心",
@@ -3166,10 +4686,16 @@
 			"subclassSource": "XGE",
 			"level": 6,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "隐匿通途",
@@ -3181,15 +4707,13 @@
 			"subclassSource": "XGE",
 			"level": 10,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 60,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -3223,15 +4747,13 @@
 			"subclassSource": "XGE",
 			"level": 2,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 60,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -3247,10 +4769,16 @@
 			"subclassSource": "EGW",
 			"level": 3,
 			"system": {
-				"activation.type": "特殊",
-				"activation.condition": "每当你采取攻击行动时",
-				"activation.cost": 1
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "特殊",
+						"activation.condition": "每当你采取攻击行动时",
+						"activation.value": 1
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "卓越战技",
@@ -3473,15 +5001,13 @@
 			"subclassSource": "PHB",
 			"level": 15,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 30,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -3550,15 +5076,13 @@
 			"subclassSource": "SCAG",
 			"level": 10,
 			"system": {
-				"target.value": 1,
-				"target.type": "盟友",
 				"range.value": 60,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "ally"
+						"target.template.type": "盟友"
 					}
 				]
 			},
@@ -3692,7 +5216,8 @@
 					]
 				},
 				"如果一个符文有等级要求，你必须至少达到这个等级才能学习这个符文。如果一个符文需要进行豁免检定，你的符文魔法豁免检定难度等级等于8 + 你的熟练加值 + 你的体质调整值。"
-			]
+			],
+			"migrationVersion": 3
 		},
 		{
 			"name": "额外已知符文",
@@ -4112,10 +5637,16 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "空间"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "60",
+						"target.template.units": "ft",
+						"target.template.type": "空间"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "索命镰",
@@ -4127,10 +5658,16 @@
 			"subclassSource": "SCAG",
 			"level": 6,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "命流之器",
@@ -4347,9 +5884,6 @@
 			"subclassSource": "XGE",
 			"level": 11,
 			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "球状",
 				"range.value": 150,
 				"range.units": "ft",
 				"activities": [
@@ -4357,7 +5891,7 @@
 						"type": "utility",
 						"target.template.size": "20",
 						"target.template.units": "ft",
-						"target.template.type": "sphere"
+						"target.template.type": "球状"
 					}
 				]
 			},
@@ -4725,9 +6259,8 @@
 			"subclassShortName": "龙兽守卫",
 			"subclassSource": "FTD",
 			"level": 3,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "原初伴侣",
@@ -4738,9 +6271,8 @@
 			"subclassShortName": "驯兽师",
 			"subclassSource": "PHB",
 			"level": 3,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "游侠伴侣",
@@ -4751,9 +6283,8 @@
 			"subclassShortName": "驯兽师",
 			"subclassSource": "PHB",
 			"level": 3,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "妖冶娴都",
@@ -5152,10 +6683,16 @@
 			"subclassSource": "PHB",
 			"level": 18,
 			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "60",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "传心谈话",
@@ -5189,15 +6726,13 @@
 			"subclassSource": "TCE",
 			"level": 18,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 120,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -5257,10 +6792,16 @@
 			"subclassSource": "TCE",
 			"level": 18,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "立方"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "立方"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "凶兆猎犬",
@@ -5272,9 +6813,6 @@
 			"subclassSource": "XGE",
 			"level": 6,
 			"system": {
-				"actionType": "召唤",
-				"target.value": 1,
-				"target.type": "creature",
 				"range.value": 120,
 				"range.units": "ft",
 				"activities": [
@@ -5297,15 +6835,13 @@
 			"subclassSource": "XGE",
 			"level": 14,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 120,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -5339,9 +6875,14 @@
 			"subclassSource": "XGE",
 			"level": 6,
 			"system": {
-				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "球状"
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "10",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
 			},
 			"entryData": {
 				"resist": [
@@ -5378,10 +6919,16 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"system": {
-				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "立方"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "10",
+						"target.template.units": "ft",
+						"target.template.type": "立方"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "雾遁",
@@ -5393,15 +6940,13 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 60,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -5455,10 +7000,16 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "思维之盾",
@@ -5511,15 +7062,13 @@
 			"subclassSource": "TCE",
 			"level": 1,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 60,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -5638,10 +7187,16 @@
 			"subclassSource": "XGE",
 			"level": 14,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "巫咒战士",
@@ -5676,9 +7231,8 @@
 			"subclassShortName": "咒剑",
 			"subclassSource": "XGE",
 			"level": 6,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "时间变幻",
@@ -5802,10 +7356,16 @@
 			"subclassSource": "EGW",
 			"level": 14,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "奥术守御",
@@ -5817,11 +7377,16 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"system": {
-				"activation.type": "特殊",
-				"activation.cost": null,
-				"uses.per": null,
-				"uses.max": "2 * @classes.法师等级 + floor((@abilities.智力值 - 10) / 2)"
-			}
+				"uses.max": "2 * @classes.法师等级 + floor((@abilities.智力值 - 10) / 2)",
+				"activities": [
+					{
+						"type": "utility",
+						"activation.type": "特殊",
+						"activation.value": null
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "投射守御",
@@ -5833,10 +7398,16 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "球状"
-			}
+				"activities": [
+					{
+						"type": "utility",
+						"target.template.size": "30",
+						"target.template.units": "ft",
+						"target.template.type": "球状"
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "王车易位",
@@ -5848,15 +7419,13 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"system": {
-				"target.value": 1,
-				"target.type": "空间",
 				"range.value": 30,
 				"range.units": "ft",
 				"activities": [
 					{
 						"type": "utility",
 						"target.template.size": "1",
-						"target.template.type": "space"
+						"target.template.type": "空间"
 					}
 				]
 			},
@@ -5997,31 +7566,6 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "老虎",
-			"ENG_name": "Tiger",
-			"source": "SCAG",
-			"className": "野蛮人",
-			"classSource": "SCAG",
-			"subclassShortName": "图腾武者",
-			"subclassSource": "PHB",
-			"level": 6,
-			"entryData": {
-				"skillProficiencies": [
-					{
-						"choose": {
-							"from": [
-								"运动",
-								"特技",
-								"隐匿",
-								"生存"
-							],
-							"count": 2
-						}
-					}
-				]
-			}
-		},
-		{
 			"name": "工具熟练",
 			"ENG_name": "Tool Proficiency",
 			"source": "TCE",
@@ -6086,12 +7630,19 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"system": {
-				"actionType": "医疗术",
-				"damage.parts": [
-					[
-						"@classes.奇械师等级",
-						"临时生命值"
-					]
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "@classes.奇械师等级",
+								"types": [
+									"临时生命值"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -6227,18 +7778,30 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"system": {
-				"damage.parts": [
-					[
-						"2d8",
-						"火焰"
-					],
-					[
-						"2d8",
-						"力场"
-					]
-				],
-				"formula": "1d8 + @abilities.智力调整值"
-			}
+				"activities": [
+					{
+						"type": "damage",
+						"roll.formula": "1d8 + @abilities.智力调整值",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "2d8",
+								"types": [
+									"火焰"
+								]
+							},
+							{
+								"custom.enabled": true,
+								"custom.formula": "2d8",
+								"types": [
+									"力场"
+								]
+							}
+						]
+					}
+				]
+			},
+			"migrationVersion": 3
 		},
 		{
 			"name": "工具熟练",
@@ -6316,9 +7879,8 @@
 			"subclassShortName": "战地匠师",
 			"subclassSource": "TCE",
 			"level": 3,
-			"system": {
-				"actionType": "召唤"
-			}
+			"system": {},
+			"migrationVersion": 3
 		},
 		{
 			"name": "工具熟练",
@@ -6445,6 +8007,41 @@
 			"subclassSource": "XPHB",
 			"level": 3,
 			"isIgnored": true,
+			"migrationVersion": 3
+		},
+		{
+			"name": "战争学徒",
+			"ENG_name": "Student of War",
+			"source": "XPHB",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "战斗大师",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"特技",
+								"驯兽",
+								"运动",
+								"历史",
+								"洞悉",
+								"威吓",
+								"游说",
+								"察觉",
+								"生存"
+							]
+						}
+					}
+				],
+				"toolProficiencies": [
+					{
+						"anyArtisansTool": 1
+					}
+				]
+			},
 			"migrationVersion": 3
 		},
 		{

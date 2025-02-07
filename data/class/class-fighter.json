@@ -3694,6 +3694,24 @@
 			]
 		},
 		{
+			"name": "庇护力场",
+			"ENG_name": "Protective Field",
+			"source": "TCE",
+			"page": 42,
+			"className": "战士",
+			"classSource": "PHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "TCE",
+			"level": 3,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"当你或者另一个对你30尺内可见的生物受到伤害，你可以用反应消耗一枚灵能骰，对其降低等同于灵能骰骰出的数值加你的智力调整值的伤害（至少减少1点），如同你创造了一面瞬间的念力盾牌。"
+			]
+		},
+		{
 			"name": "灵能武士",
 			"ENG_name": "Psi Warrior",
 			"source": "TCE",
@@ -3710,6 +3728,38 @@
 					"type": "refSubclassFeature",
 					"subclassFeature": "灵能力量|战士||灵能武士|TCE|3"
 				}
+			]
+		},
+		{
+			"name": "灵能打击",
+			"ENG_name": "Psionic Strike",
+			"source": "TCE",
+			"page": 42,
+			"className": "战士",
+			"classSource": "PHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "TCE",
+			"level": 3,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"你可以用灵能驱动你的武器。每个你的回合一次，当你击中并对30尺以内的目标造成武器伤害，你可以立即消耗一枚灵能骰，对目标造成等同于灵能骰骰出的数值加你的智力调整值的力场伤害。"
+			]
+		},
+		{
+			"name": "念力控物",
+			"ENG_name": "Telekinetic Movement",
+			"source": "TCE",
+			"page": 42,
+			"className": "战士",
+			"classSource": "PHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entries": [
+				"你可以用意念移动一个物体或生物。你可以使用一个动作选中一个最多大型的物体或一个除你以外的自愿生物。如果你可以看见目标且目标在你30尺范围内，你就可以将其移动至多30尺至另一个对你可见的未被占据的空间内。另外，如果目标是一个微型物件，你可以从你的手中给出或收回。无论采取哪种方式，你都可以或水平、或垂直、或任意方向地移动它。当你使用该异能后，直到你完成一次短休或长休为止你都不能再次使用它。你也可以消耗一枚灵能骰来再次使用该异能。"
 			]
 		},
 		{
@@ -3735,18 +3785,46 @@
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "庇护力场|战士|TCE|灵能武士|TCE|3"
+							"subclassFeature": "庇护力场|战士|PHB|灵能武士|TCE|3"
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "灵能打击|战士|TCE|灵能武士|TCE|3"
+							"subclassFeature": "灵能打击|战士|PHB|灵能武士|TCE|3"
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "念力控物|战士|TCE|灵能武士|TCE|3"
+							"subclassFeature": "念力控物|战士|PHB|灵能武士|TCE|3"
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "灵力跃动",
+			"ENG_name": "Psi-Powered Leap",
+			"source": "TCE",
+			"page": 42,
+			"className": "战士",
+			"classSource": "PHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "TCE",
+			"level": 7,
+			"entries": [
+				"你可以使用一个附赠动作用你的意志来驱使你的身体。你获得等同于两倍步行速度的飞行速度直到该回合结束。当你使用该异能后，直到你完成一次短休或长休为止你都不能再次使用它。你也可以消耗一枚灵能骰来再次使用该异能。"
+			]
+		},
+		{
+			"name": "念力突刺",
+			"ENG_name": "Telekinetic Thrust",
+			"source": "TCE",
+			"page": 42,
+			"className": "战士",
+			"classSource": "PHB",
+			"subclassShortName": "灵能武士",
+			"subclassSource": "TCE",
+			"level": 7,
+			"entries": [
+				"当你使用灵能打击对一个目标造成伤害时，你可以使目标进行一次力量豁免来对抗DC等于8+你的熟练加值+你的智力调整值。如果豁免失败，你可以将目标击倒（{@condition 倒地}）或者将其在任意方向水平移动至多10英尺。"
 			]
 		},
 		{
@@ -3769,11 +3847,11 @@
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "灵力跃动|战士|TCE|灵能武士|TCE|7"
+							"subclassFeature": "灵力跃动|战士|PHB|灵能武士|TCE|7"
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "念力突刺|战士|TCE|灵能武士|TCE|7"
+							"subclassFeature": "念力突刺|战士|PHB|灵能武士|TCE|7"
 						}
 					]
 				}
@@ -4435,7 +4513,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"从15级起，无论你是否乘骑着你的坐骑，你永远能够击溃你的敌人。每个你的回合一次，如果你在攻击一个生物前至少直线移动了10尺，且这次攻击成功命中，那么目标就必须通过一次力量豁免（DC8+你的熟练加值+你的力量调整值），豁免失败将应击{@condition 倒地} 。"
+				"从15级开始，无论你是否骑乘，你都可以冲向你的敌人。如果你在攻击一个生物之前直线移动至少10英尺，并且该攻击命中目标，那么该目标必须通过一次力量豁免检定（{@dc 8} + 你熟练加值 + 你的力量修正）否则将被击倒 {@condition 倒地}。你每回合只能使用此特性一次。"
 			]
 		},
 		{
@@ -4569,84 +4647,6 @@
 			]
 		},
 		{
-			"name": "庇护力场",
-			"ENG_name": "Protective Field",
-			"source": "TCE",
-			"page": 42,
-			"className": "战士",
-			"classSource": "TCE",
-			"subclassShortName": "灵能武士",
-			"subclassSource": "TCE",
-			"level": 3,
-			"consumes": {
-				"name": "灵能骰",
-				"ENG_name": "Psionic Energy Die"
-			},
-			"entries": [
-				"当你或者另一个对你30尺内可见的生物受到伤害，你可以用反应消耗一枚灵能骰，对其降低等同于灵能骰骰出的数值加你的智力调整值的伤害（至少减少1点），如同你创造了一面瞬间的念力盾牌。"
-			]
-		},
-		{
-			"name": "灵能打击",
-			"ENG_name": "Psionic Strike",
-			"source": "TCE",
-			"page": 42,
-			"className": "战士",
-			"classSource": "TCE",
-			"subclassShortName": "灵能武士",
-			"subclassSource": "TCE",
-			"level": 3,
-			"consumes": {
-				"name": "灵能骰",
-				"ENG_name": "Psionic Energy Die"
-			},
-			"entries": [
-				"你可以用灵能驱动你的武器。每个你的回合一次，当你击中并对30尺以内的目标造成武器伤害，你可以立即消耗一枚灵能骰，对目标造成等同于灵能骰骰出的数值加你的智力调整值的力场伤害。"
-			]
-		},
-		{
-			"name": "念力控物",
-			"ENG_name": "Telekinetic Movement",
-			"source": "TCE",
-			"page": 42,
-			"className": "战士",
-			"classSource": "TCE",
-			"subclassShortName": "灵能武士",
-			"subclassSource": "TCE",
-			"level": 3,
-			"entries": [
-				"你可以用意念移动一个物体或生物。你可以使用一个动作选中一个最多大型的物体或一个除你以外的自愿生物。如果你可以看见目标且目标在你30尺范围内，你就可以将其移动至多30尺至另一个对你可见的未被占据的空间内。另外，如果目标是一个微型物件，你可以从你的手中给出或收回。无论采取哪种方式，你都可以或水平、或垂直、或任意方向地移动它。当你使用该异能后，直到你完成一次短休或长休为止你都不能再次使用它。你也可以消耗一枚灵能骰来再次使用该异能。"
-			]
-		},
-		{
-			"name": "灵力跃动",
-			"ENG_name": "Psi-Powered Leap",
-			"source": "TCE",
-			"page": 42,
-			"className": "战士",
-			"classSource": "TCE",
-			"subclassShortName": "灵能武士",
-			"subclassSource": "TCE",
-			"level": 7,
-			"entries": [
-				"你可以使用一个附赠动作用你的意志来驱使你的身体。你获得等同于两倍步行速度的飞行速度直到该回合结束。当你使用该异能后，直到你完成一次短休或长休为止你都不能再次使用它。你也可以消耗一枚灵能骰来再次使用该异能。"
-			]
-		},
-		{
-			"name": "念力突刺",
-			"ENG_name": "Telekinetic Thrust",
-			"source": "TCE",
-			"page": 42,
-			"className": "战士",
-			"classSource": "TCE",
-			"subclassShortName": "灵能武士",
-			"subclassSource": "TCE",
-			"level": 7,
-			"entries": [
-				"当你使用灵能打击对一个目标造成伤害时，你可以使目标进行一次力量豁免来对抗DC等于8+你的熟练加值+你的智力调整值。如果豁免失败，你可以将目标击倒（{@condition 倒地}）或者将其在任意方向水平移动至多10英尺。"
-			]
-		},
-		{
 			"name": "战斗大师",
 			"ENG_name": "Battle Master",
 			"source": "XPHB",
@@ -4709,7 +4709,7 @@
 					"name": "豁免检定",
 					"ENG_name": "Saving Throws",
 					"entries": [
-						"如果一个机动需要进行豁免检定，难度等级等于8加上你的力量或敏捷调整值（你选择）以及熟练加值。"
+						"如果机动动作需要进行豁免检定，难度等级等于8加上你的力量或敏捷加成（任选其一）和{@variantrule 熟练项|XPHB|熟练加值}。"
 					]
 				}
 			]

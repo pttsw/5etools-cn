@@ -1,7 +1,8 @@
 {
 	"facility": [
 		{
-			"name": "Arcane Study",
+			"name": "神秘学研究",
+			"ENG_name": "Arcane Study",
 			"source": "XDMG",
 			"page": 336,
 			"facilityType": "special",
@@ -9,13 +10,13 @@
 			"prerequisite": [
 				{
 					"spellcastingFocus": [
-						"arcane",
-						"tool"
+						"奥术",
+						"工具"
 					]
 				}
 			],
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -23,40 +24,45 @@
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"An Arcane Study is a place of quiet research that contains one or more desks and bookshelves.",
+				"奥术焦点。雇员获得知识的效果如同他们施放了{@spell 传奇学识|XPHB}法术一样，然后在下次与你交谈时将这些知识分享给你。",
 				{
 					"type": "entries",
-					"name": "Arcane Study Charm",
+					"name": "奥术研究护符",
+					"ENG_name": "Arcane Study Charm",
 					"entries": [
-						"After spending a Long Rest in your Bastion, you gain a magical {@reward Arcane Study Charm|XDMG|Charm} (see \"{@book Supernatural Gifts|XDMG|2|Supernatural Gifts}\" in {@book chapter 3|XDMG|2}) that lasts for 7 days or until you use it. The Charm allows you to cast {@spell Identify|XPHB} without expending a spell slot or using Material components. You can't gain this Charm again while you still have it."
+						"在你的要塞中度过一次长休息后，你获得一个魔法的{@reward 奥术研究护符|极限伤害|魅惑}（详见 {@book 超自然赠礼|极限伤害|2|超自然赠礼} 在 {@book 第三章|极限伤害|2}），持续7天或直到你使用它。这个护身符允许你施放 {@spell 鉴定术|XPHB}，无需消耗法术位或使用材料成分。如果你仍然拥有它，你不能再次获得这个护身符。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Craft Options",
+					"name": "制作选择",
+					"ENG_name": "Craft Options",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Arcane Focus. You commission the facility's hireling to craft an {@item Arcane Focus|XPHB}. The work takes 7 days and costs no money. The Arcane Focus remains in your Bastion until you claim it."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "奥术焦点。雇员获得知识的效果如同他们施放了{@item 奥术法器|XPHB}法术一样，然后在下次与你交谈时将这些知识分享给你。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Book. You commission the facility's hireling to craft a blank book. The work takes 7 days and costs you 10 GP. The book remains in your Bastion until you claim it."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "在您的堡垒中，您可以指示设施的雇员将花园从一种类型更改为另一种类型。这项工作需要21天，在此期间这个设施无法进行其他活动。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Magic Item (Arcana). If you are level 9+, you can commission the facility's hireling to craft a Common or an Uncommon magic item chosen by you from the {@book Arcana tables|XDMG|6|Arcana Tables} in {@book chapter 7|XDMG|6}. The facility has the tool required to craft the item, and the hireling has proficiency with that tool as well as proficiency in the {@skill Arcana|XPHB} skill. See the \"{@book Crafting Magic Items|XDMG|6|Crafting Magic Items}\" section in {@book chapter 7|XDMG|6} for the time and money that must be spent to craft the item. If the item allows its user to cast any spells from it, you must craft the item yourself (the facility's hireling can assist), and you must have all those spells prepared every day you spend crafting the item."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "奥术表格"
 								}
 							]
 						}
@@ -65,14 +71,15 @@
 			]
 		},
 		{
-			"name": "Archive",
+			"name": "档案室是珍贵书籍、地图和卷轴的储藏所。它通常附在一个图书馆后面，通过一扇上锁或秘密的门进入。",
+			"ENG_name": "Archive",
 			"source": "XDMG",
 			"page": 337,
 			"facilityType": "special",
 			"level": 13,
 			"space": [
-				"roomy",
-				"vast"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -80,50 +87,57 @@
 				}
 			],
 			"orders": [
-				"research"
+				"研究"
 			],
 			"entries": [
-				"An Archive is a repository of valuable books, maps, and scrolls. It is usually attached to a Library behind a locked or secret door.",
+				"比格比的实用奥术手册",
 				{
 					"type": "entries",
-					"name": "Research: Helpful Lore",
+					"name": "研究：有用的传说",
+					"ENG_name": "Research: Helpful Lore",
 					"entries": [
-						"When you issue the {@book Research|XDMG|7|Research} order to this facility, you commission the facility's hireling to search the Archive for helpful lore. The work takes 7 days. The hireling gains knowledge as if they had cast the {@spell Legend Lore|XPHB} spell, then shares this knowledge with you the next time you speak with them."
+						"一个堡垒可以有多个兵营，每个兵营都配备有为最多十二名堡垒守卫提供住宿的设施。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Reference Book",
+					"name": "魔法物品、神秘符号、魔法传统和存在层面的传说时，你在进行任何智力({@skill 神秘学|XPHB})检定时拥有优势。参考书",
+					"ENG_name": "Reference Book",
 					"entries": [
-						"Your Archive contains one copy of a rare and valuable reference book, which gives you a benefit while you and the book are in your Bastion. You can choose one of the following options (your DM might make more options available):",
+						"你的档案库包含一本稀有且有价值的参考书的副本，当你和这本书在你的堡垒中时，它会给你一个好处。你可以选择以下选项之一（你的DM可能会提供更多选项）：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Bigby's Handy Arcana Codex",
-									"entry": "You have Advantage on any Intelligence ({@skill Arcana|XPHB}) check you make when you take the {@action Study|XPHB} action to recall lore about spells, magic items, eldritch symbols, magical traditions, and planes of existence."
+									"name": "当你采取\"研究密码、谜题和小玩意的传说时，你在进行任何智力（{@skill 侦查|XPHB}）检定时拥有优势。",
+									"ENG_name": "Bigby's Handy Arcana Codex",
+									"entry": "物质对世界本质的思考"
 								},
 								{
 									"type": "item",
-									"name": "The Chronepsis Chronicles",
-									"entry": "You have Advantage on any Intelligence ({@skill History|XPHB}) check you make when you take the Study action to recall lore about historical events, legendary people, ancient kingdoms, past disputes, wars, and lost civilizations."
+									"name": "编年史纪事",
+									"ENG_name": "The Chronepsis Chronicles",
+									"entry": "当你采取\"研究密码、谜题和小玩意的传说时，你在进行任何智力（{@skill 历史|XPHB}）检定时拥有优势。"
 								},
 								{
 									"type": "item",
-									"name": "Investigations of the Inquisitive",
-									"entry": "You have Advantage on any Intelligence ({@skill Investigation|XPHB}) check you make when you take the Study action to make deductions based on clues or evidence or to recall lore about traps, ciphers, riddles, and gadgetry."
+									"name": "调查性研究",
+									"ENG_name": "Investigations of the Inquisitive",
+									"entry": "构造"
 								},
 								{
 									"type": "item",
-									"name": "Material Musings on the Nature of the World",
-									"entry": "You have Advantage on any Intelligence ({@skill Nature|XPHB}) check you make when you take the Study action to recall lore about terrain, plants, animals, and the weather."
+									"name": "当你采取学习行动来回忆关于神祇、仪式与祈祷、等级制度、圣徽以及秘密邪教的习俗时，你在进行任何智力（{@skill Religion|XPHB}）检定时拥有优势。",
+									"ENG_name": "Material Musings on the Nature of the World",
+									"entry": "当你采取研究行动回忆有关地形、植物、动物和天气的传说时，你在进行智力（{@skill 自然|XPHB}）检定时享有优势。"
 								},
 								{
 									"type": "item",
-									"name": "The Old Faith and Other Religions",
-									"entry": "You have Advantage on any Intelligence ({@skill Religion|XPHB}) check you make when you take the Study action to recall lore about deities, rites and prayers, hierarchies, holy symbols, and the practices of secret cults."
+									"name": "旧信仰及其他宗教",
+									"ENG_name": "The Old Faith and Other Religions",
+									"entry": "你可以通过花费2000金币将你的档案馆扩建为大型设施。如果你这么做，你将获得两本额外的参考书籍，从上面的列表中选择。"
 								}
 							]
 						}
@@ -131,21 +145,23 @@
 				},
 				{
 					"type": "entries",
-					"name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"ENG_name": "Enlarging the Facility",
 					"entries": [
-						"You can enlarge your Archive to a Vast facility by spending 2,000 GP. If you do so, you gain two additional reference books chosen from the list above."
+						"一个军械库包含用于展示盔甲的人体模型、用于挂盾牌的钩子、用于存放武器的架子，以及用于存放弹药的箱子。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Armory",
+			"name": "军械库",
+			"ENG_name": "Armory",
 			"source": "XDMG",
 			"page": 339,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -153,29 +169,31 @@
 				}
 			],
 			"orders": [
-				"trade"
+				"贸易"
 			],
 			"entries": [
-				"An Armory contains mannequins for displaying armor, hooks for holding Shields, racks for storing weapons, and chests for holding ammunition.",
+				"交易：军需库",
 				{
 					"type": "entries",
-					"name": "Trade: Stock Armory",
+					"name": "当你的军械库储备充足时，你的堡垒守卫者更难被击杀。当任何事件发生导致你掷骰决定你的堡垒是否失去一个或多个守卫者（参见本章末尾的\"{@book 堡垒事件|XDMG|7|堡垒事件}\"）, 用 {@dice 1d8} 代替每个你通常会掷的 {@dice d6}。当事件结束后，无论你有多少个堡垒守卫者或者失去了多少，军械库中的装备都会被消耗，使你的军械库耗尽直到你向该设施发出另一个交易订单并支付补货费用。",
+					"ENG_name": "Trade: Stock Armory",
 					"entries": [
-						"When you issue the {@book Trade|XDMG|7|Trade} order to this facility, you commission the facility's hireling to stock the Armory with armor, {@item Shield|XPHB|Shields}, weapons, and ammunition. This equipment costs you 100 GP plus an extra 100 GP for each Bastion Defender in your Bastion. If your Bastion has a {@book Smithy|XDMG|7|Smithy}, the total cost is halved.",
-						"While your Armory is stocked, your Bastion Defenders are harder to kill. When any event causes you to roll dice to determine if your Bastion loses one or more of its defenders (see \"{@book Bastion Events|XDMG|7|Bastion Events}\" at the end of this chapter), roll {@dice 1d8} in place of each {@dice d6} you would normally roll. When the event is over, the equipment in your Armory is expended regardless of how many Bastion Defenders you have or how many you lost, leaving your Armory depleted until you issue another Trade order to the facility and pay the cost to restock it."
+						"当你向这个设施下达{@book 贸易|极限伤害|7|贸易}指令时，你委托该设施的雇员用盔甲、{@item 护盾术|XPHB|盾牌}、武器和弹药来装备军械库。这些装备的费用为100金币，外加每个堡垒守卫额外100金币。如果你的堡垒有{@book 铁匠铺|极限伤害|7|铁匠铺}，总费用减半。",
+						"奖金"
 					]
 				}
 			]
 		},
 		{
-			"name": "Barrack",
+			"name": "兵营",
+			"ENG_name": "Barrack",
 			"source": "XDMG",
 			"page": 339,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy",
-				"vast"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -183,57 +201,62 @@
 				}
 			],
 			"orders": [
-				"recruit"
+				"一个基础设施配备有适合该设施的非魔法家具和装饰。"
 			],
 			"entries": [
-				"A Bastion can have more than one Barrack, each of which is furnished to serve as sleeping quarters for up to twelve Bastion Defenders.",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一座大型兵营最多可容纳二十五名堡垒守卫。",
 				{
 					"type": "entries",
-					"name": "Recruit: Bastion Defenders",
+					"name": "招募：堡垒守卫",
+					"ENG_name": "Recruit: Bastion Defenders",
 					"entries": [
-						"Each time you issue the {@book Recruit|XDMG|7|Recruit} order to this facility, up to four Bastion Defenders are recruited to your Bastion and assigned quarters in this Barrack. The recruitment costs no money. You can't issue the Recruit order to this facility if it's fully occupied.",
-						"Keep track of the Bastion Defenders housed in each of your Barracks. If you lose Bastion Defenders, deduct them from your roster. Assign names and personalities to your Bastion Defenders as you see fit."
+						"招募",
+						"记录每个兵营中驻守的堡垒守卫。如果你失去了堡垒守卫，请从你的名册中扣除他们。为你选择的堡垒守卫分配名字和个性。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"ENG_name": "Enlarging the Facility",
 					"entries": [
-						"You can enlarge your Barrack to a Vast facility by spending 2,000 GP. A Vast Barrack can accommodate up to twenty-five Bastion Defenders."
+						"造物"
 					]
 				}
 			]
 		},
 		{
-			"name": "Bedroom",
+			"name": "卧室",
+			"ENG_name": "Bedroom",
 			"source": "XDMG",
 			"page": 335,
-			"facilityType": "basic",
+			"facilityType": "基础",
 			"space": [
-				"cramped",
-				"roomy",
-				"vast"
+				"狭窄的",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"entries": [
-				"A basic facility comes with nonmagical furnishings and decor appropriate for that facility."
+				"一扇宽达5英尺、高10英尺的门出现在你堡垒中另一个设施的平坦固体表面上。你选择位置。如果你在堡垒回合期间在你的堡垒内，你可以将这扇门重新定位到你堡垒的另一个设施。"
 			]
 		},
 		{
-			"name": "Courtyard",
+			"name": "庭院",
+			"ENG_name": "Courtyard",
 			"source": "XDMG",
 			"page": 335,
-			"facilityType": "basic",
+			"facilityType": "基础",
 			"space": [
-				"cramped",
-				"roomy",
-				"vast"
+				"狭窄的",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"entries": [
-				"A basic facility comes with nonmagical furnishings and decor appropriate for that facility."
+				"一扇宽达5英尺、高10英尺的门出现在你堡垒中另一个设施的平坦固体表面上。你选择位置。如果你在堡垒回合期间在你的堡垒内，你可以将这扇门重新定位到你堡垒的另一个设施。"
 			]
 		},
 		{
-			"name": "Demiplane",
+			"name": "创造半位面",
+			"ENG_name": "Demiplane",
 			"source": "XDMG",
 			"page": 340,
 			"facilityType": "special",
@@ -241,13 +264,13 @@
 			"prerequisite": [
 				{
 					"spellcastingFocus": [
-						"arcane",
-						"tool"
+						"奥术",
+						"工具"
 					]
 				}
 			],
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -255,49 +278,53 @@
 				}
 			],
 			"orders": [
-				"empower"
+				"赋能"
 			],
 			"entries": [
-				"A door up to 5 feet wide and 10 feet tall appears on a flat, solid surface in one of the other facilities in your Bastion. You choose the location. If you are in your Bastion during a Bastion turn, you can relocate this door to another facility in your Bastion.",
-				"Only you and your Bastion's hirelings can open the door, which leads to a Demiplane that takes the form of a stone room. The Demiplane exists in an extradimensional space and therefore isn't attached physically to other locations in your Bastion. Neither the Demiplane nor its door can be dispelled.",
+				"强化：奥术抗性",
+				"只有你和你的堡垒雇佣兵才能打开这扇门，它通往一个以石头房间形式存在的半位面。这个半位面存在于超维空间中，因此并不物理上连接到你的堡垒中的其他地点。无论是半位面还是它的门都无法被驱散。",
 				{
 					"type": "entries",
-					"name": "Empower: Arcane Resilience",
+					"name": "花园类型",
+					"ENG_name": "Empower: Arcane Resilience",
 					"entries": [
-						"When you issue the {@book Empower|XDMG|7|Empower} order to this facility, magical runes appear on the Demiplane's walls and last for 7 days. Until the runes disappear, you gain {@variantrule Temporary Hit Points|XPHB} equal to five times your level after spending an entire Long Rest in the Demiplane."
+						"当你向该设施发出{@book 赋能|极限伤害|7|赋能}指令时，魔法符文会出现在半位面的墙壁上，并持续7天。直到符文消失之前，你在半位面中完成一次长休息后，可以获得等于你等级五倍的{@variantrule 临时生命值|XPHB}。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Fabrication",
+					"name": "当你向这个设施下达{@book 研究|XDMG|7|研究}指令时，你委托该设施的雇员研究一个主题。这个主题可以是一个传说、一个已知的事件或地点、一个重要的人物、一种生物类型，或者一个著名的物品。这项工作需要7天时间。当研究结束时，雇员会获得多达三条关于主题的准确信息，这些信息之前对你来说是未知的，并在你们下次交谈时与你分享这些知识。由DM决定你学到了什么信息。",
+					"ENG_name": "Fabrication",
 					"entries": [
-						"While in the Demiplane, you can take a {@action Magic|XPHB} action to create a nonmagical object of your choice from nothing, causing it to appear in an unoccupied space in the Demiplane. The object can be no bigger than 5 feet in any dimension; can't have a value over 5 GP; and must be made of wood, stone, clay, porcelain, glass, paper, nonprecious crystal, or nonprecious metal. You must finish a Long Rest before you can take this action again."
+						"在半位面中，你可以使用一个{@action 魔法|XPHB}动作，从无到有地创造一个非魔法物品，使其出现在半位面的一个未被占据的空间里。该物品在任何维度上不能超过5英尺大；价值不得超过5金镑；必须由木头、石头、陶土、瓷器、玻璃、纸张、非宝石晶体或非贵金属制成。你必须完成一次长休息才能再次进行此动作。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Dining Room",
+			"name": "餐厅",
+			"ENG_name": "Dining Room",
 			"source": "XDMG",
 			"page": 335,
-			"facilityType": "basic",
+			"facilityType": "基础",
 			"space": [
-				"cramped",
-				"roomy",
-				"vast"
+				"狭窄的",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"entries": [
-				"A basic facility comes with nonmagical furnishings and decor appropriate for that facility."
+				"一扇宽达5英尺、高10英尺的门出现在你堡垒中另一个设施的平坦固体表面上。你选择位置。如果你在堡垒回合期间在你的堡垒内，你可以将这扇门重新定位到你堡垒的另一个设施。"
 			]
 		},
 		{
-			"name": "Gaming Hall",
+			"name": "游戏大厅",
+			"ENG_name": "Gaming Hall",
 			"source": "XDMG",
 			"page": 340,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -305,20 +332,21 @@
 				}
 			],
 			"orders": [
-				"trade"
+				"贸易"
 			],
 			"entries": [
-				"A Gaming Hall offers recreational activities like chess and games of darts, cards, or dice.",
+				"游戏厅提供象棋和飞镖、纸牌或骰子等娱乐活动。",
 				{
 					"type": "entries",
-					"name": "Trade: Gambling Hall",
+					"name": "交易：赌场",
+					"ENG_name": "Trade: Gambling Hall",
 					"entries": [
-						"When you issue the {@book Trade|XDMG|7|Trade} order to this facility, the facility's hirelings turn the Gaming Hall into a gambling den for 7 days. At the end of the seventh day, roll {@dice 1d100} and consult the following table to determine your portion of the house's winnings.",
+						"当你向这个设施下达{@book 贸易|极限伤害|7|贸易}命令时，该设施的雇员将游戏厅转变为一个赌场，为期7天。在第七天结束时，掷{@dice 1d100}并查阅下表以确定你从赌场赢利中所得的部分。",
 						{
 							"type": "table",
 							"colLabels": [
 								"1d100",
-								"Winnings"
+								"铁匠工具。该设施的雇佣工人使用{@item 铁匠工具|XPHB}制作任何可以制作的物品，遵循{@book 玩家手册|XPHB}中的规则。"
 							],
 							"colStyles": [
 								"col-2 text-center",
@@ -327,19 +355,19 @@
 							"rows": [
 								[
 									"01\u201350",
-									"{@dice 1d6 × 10} GP"
+									"{@dice 1d6 × 10} 金币"
 								],
 								[
 									"51\u201385",
-									"{@dice 2d6 × 10} GP"
+									"{@dice 2d6 × 10} 金镑"
 								],
 								[
 									"86\u201395",
-									"{@dice 4d6 × 10} GP"
+									"一个堡垒可以拥有多个花园。每次你将一个花园添加到你的堡垒时，从花园类型表中选择它的类型。"
 								],
 								[
 									"96\u201300",
-									"{@dice 10d6 × 10} GP"
+									"{@dice 10d6 × 10} 金币"
 								]
 							]
 						}
@@ -348,43 +376,45 @@
 			]
 		},
 		{
-			"name": "Garden",
+			"name": "花园",
+			"ENG_name": "Garden",
 			"source": "XDMG",
 			"page": 340,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy",
-				"vast"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"hirelings": [
 				{
 					"exact": 1,
-					"space": "roomy"
+					"space": "你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 				},
 				{
 					"exact": 2,
-					"space": "vast"
+					"space": "广阔"
 				}
 			],
 			"orders": [
-				"harvest"
+				"收获"
 			],
 			"entries": [
-				"A Bastion can have more than one Garden. Each time you add a Garden to your Bastion, choose its type from the options in the Garden Types table.",
-				"While in your Bastion, you can instruct the facility's hireling to change the Garden from one type to another. This work takes 21 days, during which time no other activity can occur in this facility.",
+				"草药",
+				"花园类型",
 				{
 					"type": "entries",
-					"name": "Harvest: Garden Growth",
+					"name": "园林类型",
+					"ENG_name": "Harvest: Garden Growth",
 					"entries": [
-						"When you issue the {@book Harvest|XDMG|7|Harvest} order to this facility, you commission the facility's hireling to collect items from the Garden as noted in the Garden Types table. The work takes 7 days and costs no money.",
+						"装饰性的",
 						{
 							"type": "table",
-							"caption": "Garden Types",
+							"caption": "储存有植物和真菌的花园，可从中提取毒药和抗毒素",
 							"colLabels": [
-								"Garden Type",
-								"Description",
-								"Harvest"
+								"美观的花园，充满了花朵和修剪整齐的植物。",
+								"描述",
+								"收获"
 							],
 							"colStyles": [
 								"col-2",
@@ -393,24 +423,24 @@
 							],
 							"rows": [
 								[
-									"Decorative",
-									"Aesthetically pleasing garden full of flowers and topiaries.",
-									"Ten exquisite floral bouquets (worth 5 GP each), ten vials of {@item Perfume|XPHB}, or ten {@item Candle|XPHB|Candles}"
+									"温室是一个封闭的环境，在这里，稀有植物和真菌在受控的气候中培育。",
+									"100天的口粮（{@item Rations|XPHB}）",
+									"美味的蘑菇或蔬菜园"
 								],
 								[
-									"Food",
-									"Garden of delicious mushrooms or vegetables",
-									"100 days worth of {@item Rations|XPHB}"
+									"进食",
+									"治疗草药。你委托设施的雇员用治疗草药制作一瓶{@item 大治疗药水|XDMG|大治疗药水 (更强效)}。这项工作需要7天，且不花费任何金钱。",
+									"草药"
 								],
 								[
-									"Herb",
-									"Garden of rare herbs, some of which have medicinal uses",
-									"Herbs that are used to create either ten {@item Healer's Kit|XPHB|Healer's Kits} or one {@item Potion of Healing|XDMG}"
+									"研究：地方传说",
+									"稀有草药园，其中一些有药用价值",
+									"用于制作十个{@item 医疗包|XPHB|治疗工具包}或一个{@item 治疗药水|极限伤害}的草药"
 								],
 								[
-									"Poison",
-									"Garden stocked with plants and fungi from which poisons and antitoxin can be extracted",
-									"Plants that are used to create either two vials of {@item Antitoxin|XPHB} or one vial of {@item Basic Poison|XPHB}"
+									"毒素",
+									"种植着植物和真菌的花园，从中可以提取毒药和解药",
+									"奖金"
 								]
 							]
 						}
@@ -418,21 +448,23 @@
 				},
 				{
 					"type": "entries",
-					"name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"ENG_name": "Enlarging the Facility",
 					"entries": [
-						"You can enlarge your Garden to a Vast facility by spending 2,000 GP. A Vast Garden is equivalent to two Roomy Gardens and can include two of the same type of Garden or two different types. When you issue the Harvest order to a Vast Garden, each component garden produces its own harvest. A Vast Garden gains one additional hireling."
+						"恢复之果"
 					]
 				}
 			]
 		},
 		{
-			"name": "Greenhouse",
+			"name": "温室",
+			"ENG_name": "Greenhouse",
 			"source": "XDMG",
 			"page": 341,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -440,35 +472,39 @@
 				}
 			],
 			"orders": [
-				"harvest"
+				"收获"
 			],
 			"entries": [
-				"A Greenhouse is an enclosure where rare plants and fungi are nurtured in a controlled climate.",
+				"研究：地方传说",
 				{
 					"type": "entries",
-					"name": "Fruit of Restoration",
+					"name": "点燃的火把",
+					"ENG_name": "Fruit of Restoration",
 					"entries": [
-						"One plant in your Greenhouse has three magical fruits growing on it. Any creature that eats one of these fruits gains the benefit of a {@spell Lesser Restoration|XPHB} spell. Fruits that aren't eaten within 24 hours of being picked lose their magic. The plant replaces all picked fruits daily at dawn, and it can't be transplanted without killing it."
+						"你的温室里有一株植物长着三个魔法果实。任何吃掉这些果实之一的生物都会获得{@spell 次级复原术|XPHB}法术的好处。在被采摘后的24小时内未被吃掉的果实会失去它们的魔力。这株植物每天黎明时会替换所有被摘掉的果实，而且如果移植就会死亡。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Harvest Options",
+					"name": "收获选项",
+					"ENG_name": "Harvest Options",
 					"entries": [
-						"When you issue the {@book Harvest|XDMG|7|Harvest} order to this facility, choose one of the following options:",
+						"当你对这个设施下达{@book 收获|极限伤害|7|收获}命令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Harvest:",
-									"entry": "Healing Herbs. You commission the facility's hireling to create a {@item Potion of Greater Healing|XDMG|Potion of Healing (greater)} made from healing herbs. The work takes 7 days and costs no money."
+									"name": "收获:",
+									"ENG_name": "Harvest:",
+									"entry": "治疗草药。你委托设施的雇员用治疗草药制作一瓶{@item 良效治疗药水|极限伤害|大瓶治疗药水}。这项工作需要7天时间，不花钱。"
 								},
 								{
 									"type": "item",
-									"name": "Harvest:",
-									"entry": "Poison. You commission the facility's hireling to extract one application of a poison from rare plants or fungi. Choose the type of poison from the following options: {@item Assassin's Blood|XDMG}, {@item Malice|XDMG}, {@item Pale Tincture|XDMG}, or {@item Truth Serum|XDMG}. See \"{@book Poison|XDMG|2|Poison}\" in {@book chapter 3|XDMG|2} for each poison's effect. Once harvested, the poison can be contained in a vial. The work takes 7 days and costs no money."
+									"name": "收获:",
+									"ENG_name": "Harvest:",
+									"entry": "毒。你委托该设施的雇佣人员从稀有植物或真菌中提取一份毒药。从以下选项中选择毒药类型：{@item 刺客之血|极限伤害}，{@item 怨恨|极限伤害}，{@item 苍白酊剂|极限伤害}，或{@item 真理血清|极限伤害}。请参阅{@book 毒素|极限伤害|2|毒素}在{@book 第三章|极限伤害|2}中了解每种毒药的效果。一旦收获，毒药可以装在小瓶里。这项工作需要7天时间，不花费金钱。"
 								}
 							]
 						}
@@ -477,7 +513,8 @@
 			]
 		},
 		{
-			"name": "Guildhall",
+			"name": "行会大厅",
+			"ENG_name": "Guildhall",
 			"source": "XDMG",
 			"page": 341,
 			"facilityType": "special",
@@ -492,7 +529,7 @@
 				}
 			],
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -500,23 +537,24 @@
 				}
 			],
 			"orders": [
-				"recruit"
+				"一个基础设施配备有适合该设施的非魔法家具和装饰。"
 			],
 			"entries": [
-				"A Guildhall comes with a guild, for which you are the guild master. Choose the type of guild from the options in the Sample Guilds table, or work with your DM to create a new guild. The facility is a meeting room where members of your guild can discuss important matters in your presence.",
-				"Your guild has roughly fifty members made up of skilled folk who live and work outside your Bastion, usually in nearby settlements.",
+				"公会大厅附带一个公会，而你是该公会的会长。从示例公会表中选择公会类型，或与你的DM合作创建一个新的公会。这个设施是一个会议室，在这里，你的公会成员可以在你在场的情况下讨论重要事项。",
+				"你的公会大约有五十名成员，他们是由生活在堡垒外的熟练人士组成，通常居住在附近的定居点。",
 				{
 					"type": "entries",
-					"name": "Recruit: Guild Assignment",
+					"name": "招募：公会任务",
+					"ENG_name": "Recruit: Guild Assignment",
 					"entries": [
-						"Each time you issue the {@book Recruit|XDMG|7|Recruit} order to this facility, you commission the facility's hireling to recruit guild members to perform a special assignment. Each guild in the Sample Guilds table specifies the nature of that assignment. With your DM's permission and help, you can create new assignments for guild members to complete.",
+						"酿酒师公会",
 						{
 							"type": "table",
-							"caption": "Sample Guilds",
+							"caption": "样本公会",
 							"colLabels": [
-								"Guild",
-								"Symbol",
-								"Assignment"
+								"公会",
+								"徽记术",
+								"任务"
 							],
 							"colStyles": [
 								"col-2",
@@ -525,34 +563,34 @@
 							],
 							"rows": [
 								[
-									"Adventurers' Guild",
-									"Lit torch",
-									"You send adventurers to track down a Beast that has a Challenge Rating of 2 or lower and is known to lair within 50 miles of your Bastion. The adventurers slay or capture the creature (your choice) in {@dice 1d6 + 1} days. If the creature is slain and your Bastion has a Trophy Room, you can add a trophy taken from the creature to that facility. If the creature is captured and your Bastion has a Menagerie, you can add the creature to that facility, provided the facility has space to house it."
+									"冒险者公会",
+									"点燃的火把",
+									"点燃的火把"
 								],
 								[
-									"Bakers' Guild",
-									"Pastry",
-									"You assign bakers to create baked goods for a prestigious event that occurs within the next 7 days. You can receive payment in coin (500 GP) or in the form of a favor owed to you by the event's host, the details of which are left to you and the DM."
+									"面包师公会",
+									"糕点",
+									"神秘学研究室是一个安静的研究场所，包含一张或多张书桌和书架。"
 								],
 								[
-									"Brewers' Guild",
-									"Foaming mug",
-									"You assign brewers to deliver fifty 40-gallon barrels of ale (worth 10 GP each) to your Bastion in 7 days."
+									"你指派酿酒师在7天内将五十个40加仑的啤酒桶（每个价值10金币）运送到你堡垒。",
+									"泡沫杯",
+									"石之面具"
 								],
 								[
-									"Masons' Guild",
-									"Stone mask",
-									"You assign masons to add a defensive wall to your Bastion at no cost. Alternatively, you can have the masons perform this work for another character's Bastion, provided their Bastion is within 1 mile of yours. Each 5-foot square of defensive wall takes 1 day to build instead of 10 (see \"{@book Bastion Map|XDMG|7|Bastion Map}\")."
+									"石工工会",
+									"造船师协会",
+									"你指派石匠在没有费用的情况下为你要塞添加防御墙。或者，你可以让石匠为另一个角色的要塞进行这项工作，前提是他们的要塞在你的要塞1英里之内。每5英尺见方的防御墙需要1天时间建造，而不是10天（参见\"{@book 堡垒地图|极限伤害|7|堡垒地图}\"）。"
 								],
 								[
-									"Shipbuilders' Guild",
-									"Crossed oars",
-									"You assign shipbuilders to build one of the vehicles in the {@table Large Vehicles; Airborne and Waterborne Vehicles|XPHB|Airborne and Waterborne Vehicles} table of the {@book Player's Handbook|XPHB}. You pay the full cost of the vehicle, and the work takes 1 day per 1,000 GP of the vehicle's cost (a {@item Rowboat|XPHB} can be made in 1 day)."
+									"大型车辆；空中和水上交通工具",
+									"交错的桨",
+									"你指派造船师建造{@table 白色钥匙|XPHB|空中和水上交通工具}表格中的其中一种交通工具，该表格出自{@book 玩家手册|XPHB}。你支付该交通工具的全部费用，并且每1000金币的成本需要1天的时间来完成（一个{@item 划艇|XPHB}可以在1天内制作完成）。"
 								],
 								[
-									"Thieves' Guild",
-									"White key",
-									"You assign thieves to infiltrate a location within 50 miles of your Bastion and steal a nonmagical object from it. The object can be no bigger than 5 feet in any dimension and is delivered to your Bastion in {@dice 1d6 + 1} days. The DM may decide this activity leaves you at risk of retaliation from law enforcement or the victim."
+									"盗贼公会",
+									"实验室包含储存炼金材料的空间和制作各种药剂的工作台。",
+									"你指派盗贼潜入距离你的要塞50英里内的某个地点，并从中偷取一件非魔法物品。该物品在任何维度上的大小不得超过5英尺，并在{@dice 1d6 + 1}天内被送到你的要塞。DM可能会决定，这次行动让你面临来自执法机构或受害者的报复风险。"
 								]
 							]
 						}
@@ -561,27 +599,29 @@
 			]
 		},
 		{
-			"name": "Kitchen",
+			"name": "厨房",
+			"ENG_name": "Kitchen",
 			"source": "XDMG",
 			"page": 335,
-			"facilityType": "basic",
+			"facilityType": "基础",
 			"space": [
-				"cramped",
-				"roomy",
-				"vast"
+				"狭窄的",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"entries": [
-				"A basic facility comes with nonmagical furnishings and decor appropriate for that facility."
+				"一扇宽达5英尺、高10英尺的门出现在你堡垒中另一个设施的平坦固体表面上。你选择位置。如果你在堡垒回合期间在你的堡垒内，你可以将这扇门重新定位到你堡垒的另一个设施。"
 			]
 		},
 		{
-			"name": "Laboratory",
+			"name": "实验室",
+			"ENG_name": "Laboratory",
 			"source": "XDMG",
 			"page": 342,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -589,28 +629,31 @@
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"A Laboratory contains storage space for alchemical supplies and workspaces for crafting various concoctions.",
+				"这个图书馆包含一系列书籍以及一张或多张书桌和阅读椅。",
 				{
 					"type": "entries",
-					"name": "Craft Options",
+					"name": "制作选择",
+					"ENG_name": "Craft Options",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Alchemist's Supplies. The facility's hireling crafts anything that can be made with {@item Alchemist's Supplies|XPHB} using the rules in the {@book Player's Handbook|XPHB} and {@book chapter 7|XDMG|6} of this book."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "炼金师的补给品。该设施的雇员可以使用{@item 炼金工具|XPHB}制作任何东西，遵循{@book 玩家手册|XPHB}和本书的{@book 第七章|极限伤害|6}中的规则。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Poison. You commission the facility's hireling to craft a vial containing one application of a poison. The poison must be one of the following: {@item Burnt Othur Fumes|XDMG}, {@item Essence of Ether|XDMG}, or {@item Torpor|XDMG}. This work takes 7 days, and you must pay half the poison's cost. See \"{@book Poison|XDMG|2|Poison}\" in {@book chapter 3|XDMG|2} for descriptions and costs of poisons."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "毒药。你委托设施的雇员制作一个装有一份毒药的药瓶。该毒药必须是以下之一：{@item 焦引熏烟|极限伤害}，{@item 乙太精|极限伤害}，或{@item 蒙汗药|极限伤害}。这项工作需要7天，你必须支付毒药成本的一半。有关毒药的描述和成本，请参见 {@book 毒素|极限伤害|2|毒素} 在 {@book 第三章|极限伤害|2} 中。"
 								}
 							]
 						}
@@ -620,13 +663,14 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Library",
+			"name": "图书馆",
+			"ENG_name": "Library",
 			"source": "XDMG",
 			"page": 342,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -634,28 +678,30 @@
 				}
 			],
 			"orders": [
-				"research"
+				"研究"
 			],
 			"entries": [
-				"This Library contains a collection of books plus one or more desks and reading chairs.",
+				"自我强化",
 				{
 					"type": "entries",
-					"name": "Research: Topical Lore",
+					"name": "圣所是慰藉与治愈之地。",
+					"ENG_name": "Research: Topical Lore",
 					"entries": [
-						"When you issue the {@book Research|XDMG|7|Research} order to this facility, you commission the facility's hireling to research a topic. The topic can be a legend, a known event or location, a person of significance, a type of creature, or a famous object. The work takes 7 days. When the research concludes, the hireling obtains up to three accurate pieces of information about the topic that were previously unknown to you and shares this knowledge with you the next time you speak with them. The DM determines what information you learn."
+						"研究：地方传说"
 					]
 				}
 			],
 			"hasFluffImages": true
 		},
 		{
-			"name": "Meditation Chamber",
+			"name": "冥想室",
+			"ENG_name": "Meditation Chamber",
 			"source": "XDMG",
 			"page": 342,
 			"facilityType": "special",
 			"level": 13,
 			"space": [
-				"cramped"
+				"狭窄的"
 			],
 			"hirelings": [
 				{
@@ -663,27 +709,29 @@
 				}
 			],
 			"orders": [
-				"empower"
+				"赋能"
 			],
 			"entries": [
-				"A Meditation Chamber is a relaxing space that helps align one's mind, body, and spirit.",
+				"冥想室是一个帮助人们身心和精神对齐的放松空间。",
 				{
 					"type": "entries",
-					"name": "Empower: Inner Peace",
+					"name": "当你向这个设施下达 {@book 招募|XDMG|7|招募} 指令时，你委托该设施的雇员从野兽园生物表中添加一个生物到你的野兽园。招募过程需要7天，费用如表中所示。雇员们会照看这个生物。",
+					"ENG_name": "Empower: Inner Peace",
 					"entries": [
-						"When you issue the {@book Empower|XDMG|7|Empower} order to this facility, your Bastion's hirelings can use the Meditation Chamber to gain a measure of inner peace. The next time you roll for a Bastion event, you can roll twice and choose either result."
+						"您动物园中的生物算作堡垒守卫。从您的堡垒守卫名单中扣除任何损失的生物。您可以选择不将这些生物中的一个或多个计为堡垒守卫，在这种情况下，它们不能被召唤来保卫堡垒。相反，它们根据自己的本性行事，并使用{@book 赋能|极限伤害|7|赋能}中的统计数据。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Fortify Self",
+					"name": "更强硬的内容",
+					"ENG_name": "Fortify Self",
 					"entries": [
-						"You can meditate in this facility over a period of 7 days. If you leave the Bastion during this time, you gain no benefit. Otherwise, at the end of the seventh day, you gain Advantage on two kinds of saving throws for the next 7 days, determined randomly by rolling on the table below. Reroll if you get a duplicate result.",
+						"你可以在这个设施中冥想7天。如果你在此期间离开堡垒，你不会获得任何好处。否则，在第七天结束时，你在接下来的7天内获得两种豁免掷骰的优势，通过下表随机决定。如果得到重复的结果，请重新掷骰。",
 						{
 							"type": "table",
 							"colLabels": [
 								"1d6",
-								"Saving Throw"
+								"豁免检定"
 							],
 							"colStyles": [
 								"col-2 text-center",
@@ -692,27 +740,27 @@
 							"rows": [
 								[
 									"1",
-									"Strength"
+									"力量"
 								],
 								[
 									"2",
-									"Dexterity"
+									"敏捷"
 								],
 								[
 									"3",
-									"Constitution"
+									"体质"
 								],
 								[
 									"4",
-									"Intelligence"
+									"智力"
 								],
 								[
 									"5",
-									"Wisdom"
+									"感知"
 								],
 								[
 									"6",
-									"Charisma"
+									"魅力"
 								]
 							]
 						}
@@ -721,13 +769,14 @@
 			]
 		},
 		{
-			"name": "Menagerie",
+			"name": "动物房",
+			"ENG_name": "Menagerie",
 			"source": "XDMG",
 			"page": 343,
 			"facilityType": "special",
 			"level": 13,
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -735,23 +784,24 @@
 				}
 			],
 			"orders": [
-				"recruit"
+				"一个基础设施配备有适合该设施的非魔法家具和装饰。"
 			],
 			"entries": [
-				"A Menagerie has enclosures big enough to contain up to four Large creatures. Four Small or Medium creatures can occupy the same space as one Large creature there.",
+				"一个兽栏有足够大的围栏，可以容纳多达四个大型生物。四个小型或中型生物可以占据那里一个大型生物的空间。",
 				{
 					"type": "entries",
-					"name": "Recruit: Creature",
+					"name": "招募：生物",
+					"ENG_name": "Recruit: Creature",
 					"entries": [
-						"When you issue the {@book Recruit|XDMG|7|Recruit} order to this facility, you commission the facility's hirelings to add a creature from the Menagerie Creatures table to your Menagerie. The recruitment takes 7 days and costs you the amount listed in the table. The hirelings look after the creature.",
-						"Creatures in your Menagerie count as Bastion Defenders. Deduct any you lose from your Bastion Defenders roster. You can choose not to count one or more of these creatures as Bastion Defenders, in which case they can't be called on to defend the Bastion. Instead, they act in accordance with their nature and use their stat blocks in the {@book Monster Manual|XMM}.",
+						"饮用一品脱这种饮料可以让你获得{@book 一个基础设施配备有适合该设施的非魔法家具和装饰。|极限伤害|7|一个基础设施配备有适合该设施的非魔法家具和装饰。}，在24小时内有效，范围可达60英尺。如果你已经拥有黑暗视觉，其范围将在同一时间内额外延长60英尺。",
+						"3500金币",
 						{
 							"type": "table",
-							"caption": "Menagerie Creatures",
+							"caption": "兽群生物",
 							"colLabels": [
-								"Creature",
-								"Size",
-								"Cost"
+								"生物",
+								"体型",
+								"花费"
 							],
 							"colStyles": [
 								"col-4",
@@ -760,79 +810,79 @@
 							],
 							"rows": [
 								[
-									"{@creature Ape|XPHB}",
-									"Medium",
-									"500 GP"
+									"{@creature 猿|XPHB}",
+									"中等",
+									"500 gp"
 								],
 								[
-									"{@creature Black Bear|XPHB}",
-									"Medium",
-									"500 GP"
+									"{@creature 黑熊|XPHB}",
+									"中等",
+									"500 gp"
 								],
 								[
-									"{@creature Brown Bear|XPHB}",
-									"Large",
-									"1,000 GP"
+									"{@creature 棕熊|XPHB}",
+									"大型",
+									"1,000 gp"
 								],
 								[
-									"{@creature Constrictor Snake|XPHB}",
-									"Large",
-									"250 GP"
+									"{@creature 蟒蛇|XPHB}",
+									"大型",
+									"250 gp"
 								],
 								[
-									"{@creature Crocodile|XPHB}",
-									"Large",
-									"500 GP"
+									"{@creature 鳄鱼|XPHB}",
+									"大型",
+									"500 gp"
 								],
 								[
-									"{@creature Dire Wolf|XPHB}",
-									"Large",
-									"1,000 GP"
+									"{@creature 恐狼|XPHB}",
+									"大型",
+									"1,000 gp"
 								],
 								[
-									"{@creature Giant Vulture|XMM}",
-									"Large",
-									"1,000 GP"
+									"{@creature 巨秃鹫|XMM}",
+									"大型",
+									"1,000 gp"
 								],
 								[
-									"{@creature Hyena|XMM}",
-									"Medium",
-									"50 GP"
+									"{@creature 鬣狗|XMM}",
+									"中等",
+									"50 gp"
 								],
 								[
-									"{@creature Jackal|XMM}",
-									"Small",
-									"50 GP"
+									"{@creature 豺狗|XMM}",
+									"小型",
+									"50 gp"
 								],
 								[
-									"{@creature Lion|XPHB}",
-									"Large",
-									"1,000 GP"
+									"{@creature 狮子|XPHB}",
+									"大型",
+									"1,000 gp"
 								],
 								[
-									"{@creature Owlbear|XMM}",
-									"Large",
-									"3,500 GP"
+									"{@creature 枭熊|XMM}",
+									"大型",
+									"在你的堡垒中进行一次长休息后，你将获得一个魔法的{遗物护符|XDMG|护符}（见《超自然恩赐》第2章中的\"{@book 章节3|XDMG|2}\"），持续7天或直到你使用它。该护符允许你施放{法术 高级复原术|XPHB}一次，无需消耗法术位或使用材料成分。如果你仍然拥有这个护符，则无法再次获得。"
 								],
 								[
-									"{@creature Panther|XPHB}",
-									"Medium",
-									"250 GP"
+									"{@creature 黑豹|XPHB}",
+									"中等",
+									"250 gp"
 								],
 								[
-									"{@creature Tiger|XPHB}",
-									"Large",
-									"1,000 GP"
+									"{@creature 老虎|XPHB}",
+									"大型",
+									"1,000 gp"
 								]
 							]
 						},
-						"With the DM's consent, you can add different creatures than those shown in the Menagerie Creatures table to your Menagerie. The cost of a creature depends on its Challenge Rating, as shown on the Creature Costs by Challenge Rating table. Typically only Beasts and some Monstrosities can be kept in a Menagerie, though the DM might allow other creatures.",
+						"在获得DM同意的情况下，您可以将与'动物园生物表'中显示的不同生物添加到您的动物园中。一个生物的成本取决于其挑战等级，如'按挑战等级计算的生物成本表'所示。通常只有野兽和一些怪物可以保留在动物园中，不过DM可能会允许其他生物。",
 						{
 							"type": "table",
-							"caption": "Creature Costs by Challenge Rating",
+							"caption": "按挑战等级计算的生物费用",
 							"colLabels": [
-								"Challenge Rating",
-								"Cost"
+								"挑战等级",
+								"花费"
 							],
 							"colStyles": [
 								"col-6 text-center",
@@ -840,28 +890,28 @@
 							],
 							"rows": [
 								[
-									"0 or 1/8",
-									"50 GP"
+									"0或1/8",
+									"50 gp"
 								],
 								[
 									"1/4",
-									"250 GP"
+									"250 gp"
 								],
 								[
 									"1/2",
-									"500 GP"
+									"500 gp"
 								],
 								[
 									"1",
-									"1,000 GP"
+									"1,000 gp"
 								],
 								[
 									"2",
-									"2,000 GP"
+									"2,000 gp"
 								],
 								[
 									"3",
-									"3,500 GP"
+									"在你的堡垒中进行一次长休息后，你将获得一个魔法的{遗物护符|XDMG|护符}（见《超自然恩赐》第2章中的\"{@book 章节3|XDMG|2}\"），持续7天或直到你使用它。该护符允许你施放{法术 高级复原术|XPHB}一次，无需消耗法术位或使用材料成分。如果你仍然拥有这个护符，则无法再次获得。"
 								]
 							]
 						}
@@ -870,7 +920,8 @@
 			]
 		},
 		{
-			"name": "Observatory",
+			"name": "天文台",
+			"ENG_name": "Observatory",
 			"source": "XDMG",
 			"page": 343,
 			"facilityType": "special",
@@ -881,7 +932,7 @@
 				}
 			],
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -889,123 +940,136 @@
 				}
 			],
 			"orders": [
-				"empower"
+				"赋能"
 			],
 			"entries": [
-				"Situated atop your Bastion, your Observatory contains a telescope aimed at the night sky.",
+				"你的瞭望台位于堡垒的顶端，里面有一个望远镜对准夜空。",
 				{
 					"type": "entries",
-					"name": "Observatory Charm",
+					"name": "观星台魅力",
+					"ENG_name": "Observatory Charm",
 					"entries": [
-						"You can use your Observatory to peer into the far corners of {@book Wildspace|XDMG|5|Wildspace} and the {@book Astral Plane|XDMG|5|Astral Plane}. After spending a Long Rest in your Observatory, you gain a magical {@reward Observatory Charm|XDMG|Charm} (see \"{@book Supernatural Gifts|XDMG|2|Supernatural Gifts}\" in {@book chapter 3|XDMG|2}) that lasts for 7 days or until you use it. The Charm allows you to cast {@spell Contact Other Plane|XPHB} without expending a spell slot. You can't gain this Charm again while you still have it."
+						"你可以使用你的天文台窥探{@book 星际空间|XDMG|5|星际空间}和{@book 星界位面|XDMG|5|星界位面}的遥远角落。在你的天文台中度过一次长休息后，你会获得一个魔法{reward 天文台护符|XDMG|护符}（参见{@book 超自然礼物|XDMG|2|超自然礼物}在{@book 第三章|XDMG|2}），持续时间为7天或直到你使用它为止。这个护符允许你施放{@spell 接触其他位面|XPHB}而不需要消耗一个法术位。如果你仍然拥有这个护符，你不能再次获得它。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Empower: Eldritch Discovery",
+					"name": "赋能：奥术发现",
+					"ENG_name": "Empower: Eldritch Discovery",
 					"entries": [
-						"When you issue the {@book Empower|XDMG|7|Empower} order to this facility, you enable yourself or the facility's hireling to explore the eldritch mysteries of the stars for 7 consecutive nights. At the end of that time, roll a die. If the number rolled is even, nothing is gained. If the number rolled is odd, an unknown power bestows one of the following Charms on you or another creature of your choice that is on the same plane of existence as you: {@book Charm of Darkvision|XDMG|2|Charm of Darkvision}, {@book Charm of Heroism|XDMG|2|Charm of Heroism}, or {@book Charm of Vitality|XDMG|2|Charm of Vitality} (all described in {@book chapter 3|XDMG|2})."
+						"当你对这个设施下达 {@book 赋能|极限伤害|7|赋能} 指令时，你或该设施的雇员将能够连续七个夜晚探索星辰的神秘奥秘。在这段时间结束时，进行一次掷骰。如果掷出的点数为偶数，则没有任何收获。如果掷出的点数为奇数，一个未知的力量将赋予你或你所选择的、与你处于同一存在层面的另一个生物以下魅力之一：{@book 黑暗视觉之护咒|极限伤害|2|黑暗视觉之护咒}, {@book 英雄之护咒|极限伤害|2|英雄之护咒}, 或 {@book 活力之护咒|极限伤害|2|活力之护咒}（所有描述见 {@book 第三章|极限伤害|2}）。"
 					]
 				}
 			],
 			"hasFluffImages": true
 		},
 		{
-			"name": "Parlor",
+			"name": "客厅",
+			"ENG_name": "Parlor",
 			"source": "XDMG",
 			"page": 335,
-			"facilityType": "basic",
+			"facilityType": "基础",
 			"space": [
-				"cramped",
-				"roomy",
-				"vast"
+				"狭窄的",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"entries": [
-				"A basic facility comes with nonmagical furnishings and decor appropriate for that facility."
+				"一扇宽达5英尺、高10英尺的门出现在你堡垒中另一个设施的平坦固体表面上。你选择位置。如果你在堡垒回合期间在你的堡垒内，你可以将这扇门重新定位到你堡垒的另一个设施。"
 			]
 		},
 		{
-			"name": "Pub",
+			"name": "酒吧",
+			"ENG_name": "Pub",
 			"source": "XDMG",
 			"page": 344,
 			"facilityType": "special",
 			"level": 13,
 			"space": [
-				"roomy",
-				"vast"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"hirelings": [
 				{
 					"exact": 1,
-					"space": "roomy"
+					"space": "你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 				},
 				{
 					"exact": 4,
-					"space": "vast"
+					"space": "广阔"
 				}
 			],
 			"orders": [
-				"research"
+				"研究"
 			],
 			"entries": [
-				"Folks come here to consume tasty beverages and socialize. Your Pub might be a bar, coffee shop, or tea room, and it might have a colorful name, such as the Rusty Flagon or the Dragon's Loft. The facility's hireling, who serves as the bartender, maintains a network of spies scattered throughout nearby communities. These spies are useful sources of information and frequent the Pub, often incognito.",
+				"人们来这里品尝美味的饮料和社交。你的酒馆可能是酒吧、咖啡店或茶室，而且可能有一个富有色彩的名字，比如生锈的旗帜或龙之阁楼。该设施的雇佣人员担任调酒师，维护一个遍布附近社区的间谍网络。这些间谍是有用的信息来源，经常光顾酒馆，通常以匿名身份出现。",
 				{
 					"type": "entries",
-					"name": "Research: Information Gathering",
+					"name": "研究：信息收集",
+					"ENG_name": "Research: Information Gathering",
 					"entries": [
-						"When you issue the {@book Research|XDMG|7|Research} order to this facility, you commission the Pub's bartender to gather information from spies who are aware of all important events happening within 10 miles of your Bastion over the next 7 days. During that time, these spies can divulge the location of any creature that is familiar to you, provided the creature is within 50 miles of your Bastion and not hidden by magic or confined to a location that the DM deems is beyond the spy network's ability to locate. If the spies learn the target's location, they also learn where that creature has been for the previous 7 days."
+						"当你向这个设施下达{@book 研究|极限伤害|7|研究}命令时，你委托酒吧的调酒师从知晓接下来7天内你的堡垒10英里范围内所有重要事件的间谍那里收集信息。在这段时间内，这些间谍可以透露任何你熟悉的生物的位置，前提是该生物位于你的堡垒50英里范围内，且没有被魔法隐藏或被限制在一个DM认为超出间谍网络定位能力的地方。如果间谍得知目标的位置，他们还会得知该生物过去7天的位置。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Pub Special",
+					"name": "酒馆特供",
+					"ENG_name": "Pub Special",
 					"entries": [
-						"The Pub has one magical beverage on tap, chosen from the options below:",
+						"酒吧有一种魔法饮料可供选择，选自以下选项：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Bigby's Burden",
-									"entry": "Drinking a pint of this beverage grants you the \"enlarge\" effect of an {@spell Enlarge/Reduce|XPHB} spell that has a duration of 24 hours (no saving throw allowed)."
+									"name": "比格比的负担",
+									"ENG_name": "Bigby's Burden",
+									"entry": "饮用一品脱这种饮料，将赋予你{@spell 变巨/缩小术|XPHB}法术的\"变大\"效果，持续时间为24小时（不允许进行豁免掷骰）"
 								},
 								{
 									"type": "item",
-									"name": "Kiss of the Spider Queen",
-									"entry": "Drinking a pint of this beverage grants you the effect of a {@spell Spider Climb|XPHB} spell that has a duration of 24 hours."
+									"name": "蜘蛛女王的亲吻",
+									"ENG_name": "Kiss of the Spider Queen",
+									"entry": "饮用一品脱这种饮料赋予你{@spell 蛛行术|XPHB}法术的效果，持续时间为24小时。"
 								},
 								{
 									"type": "item",
-									"name": "Moonlight Serenade",
-									"entry": "Drinking a pint of this beverage gives you {@sense Darkvision|XPHB} out to 60 feet for 24 hours. If you already have Darkvision, its range is extended by 60 feet for the same duration."
+									"name": "月光小夜曲",
+									"ENG_name": "Moonlight Serenade",
+									"entry": "魔法 {@sense 黑暗视觉|XPHB}更严厉的东西"
 								},
 								{
 									"type": "item",
-									"name": "Positive Reinforcement",
-									"entry": "Drinking a pint of this beverage gives you Resistance to Necrotic damage for 24 hours."
+									"name": "正面强化",
+									"ENG_name": "Positive Reinforcement",
+									"entry": "饮用一品脱这种饮料，使你在24小时内对坏死伤害具有抗性。"
 								},
 								{
 									"type": "item",
-									"name": "Sterner Stuff",
-									"entry": "For 24 hours after drinking a pint of this beverage, you automatically succeed on saving throws to avoid or end the {@condition Frightened|XPHB} condition."
+									"name": "魔法 {@reward 圣遗物护符|XDMG|护符}更严厉的东西",
+									"ENG_name": "Sterner Stuff",
+									"entry": "在饮用一品脱这种饮料后的24小时内，你自动在避免或结束{@condition 恐慌|XPHB}状态的豁免检定上成功。"
 								}
 							]
 						},
-						"At the start of a Bastion turn, you can switch to one of the other options. Your DM may create new options. A pint of this magical beverage loses its magic 24 hours after it's poured."
+						"在堡垒回合开始时，你可以切换到其他选项之一。你的DM可能会创建新的选项。一品脱这种魔法饮料在倒出后24小时失去其魔力。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"ENG_name": "Enlarging the Facility",
 					"entries": [
-						"You can enlarge your Pub to a Vast facility by spending 2,000 GP. If you do so, the Pub can have two magical beverages from the Pub Special list on tap at a time. A Vast Pub gains three additional hirelings, for a total of four. These new hirelings are servers. Assign names and personalities to them as you see fit."
+						"你可以通过花费2000金币将你的酒馆扩建为大型设施。如果你这样做，酒馆可以同时提供两种来自酒馆特饮列表的魔法饮料。一个大型酒馆会增加三名额外的雇员，总共四名。这些新雇员是服务员。你可以根据需要为他们分配名字和个性。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Reliquary",
+			"name": "圣物匣",
+			"ENG_name": "Reliquary",
 			"source": "XDMG",
 			"page": 344,
 			"facilityType": "special",
@@ -1013,13 +1077,13 @@
 			"prerequisite": [
 				{
 					"spellcastingFocus": [
-						"holy",
-						"druid"
+						"神圣",
+						"德鲁伊"
 					]
 				}
 			],
 			"space": [
-				"cramped"
+				"狭窄的"
 			],
 			"hirelings": [
 				{
@@ -1027,28 +1091,31 @@
 				}
 			],
 			"orders": [
-				"harvest"
+				"收获"
 			],
 			"entries": [
-				"This vault holds sacred objects.",
+				"这个密室存放着神圣的物品。",
 				{
 					"type": "entries",
-					"name": "Reliquary Charm",
+					"name": "遗物护符",
+					"ENG_name": "Reliquary Charm",
 					"entries": [
-						"After spending a Long Rest in your Bastion, you gain a magical {@reward Reliquary Charm|XDMG|Charm} (see \"{@book Supernatural Gifts|XDMG|2|Supernatural Gifts}\" in {@book chapter 3|XDMG|2}) that lasts for 7 days or until you use it. The Charm allows you to cast {@spell Greater Restoration|XPHB} once without expending a spell slot or using Material components. You can't gain this Charm again while you still have it."
+						"当你向这个设施下达{@book 研究|XDMG|7|研究}指令时，你委托该设施的雇佣人员在档案馆中搜索有用的传说。这项工作需要7天时间。雇佣人员获得的知识就像他们施放了{@spell 传奇学识|XPHB}法术一样，然后在你下次与他们交谈时与你分享这些知识。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Harvest: Talisman",
+					"name": "收获：护符",
+					"ENG_name": "Harvest: Talisman",
 					"entries": [
-						"When you issue the {@book Harvest|XDMG|7|Harvest} order to this facility, you commission its hireling to produce a specially prepared talisman for your use. The talisman usually takes the form of an amulet, a rune-carved box, or a statuette, but it can be any Tiny, nonmagical object that has religious significance. The work takes 7 days and costs no money. You can use this talisman in place of one spell's Material components, provided the components have a cost of 1,000 GP or less. If the spell normally consumes its components, the talisman isn't consumed. After the talisman has been used in this way, it can't be used again until you return it to your Reliquary and use another Harvest order to prepare it."
+						"当你向这个设施下达 {@book 收获|极限伤害|7|收获} 命令时，你委托它的雇工为你制作一个特制的护身符。这个护身符通常以护身符、刻有符文的盒子或小雕像的形式出现，但它可以是任何具有宗教意义的小型非魔法物品。这项工作需要7天时间，而且不花费金钱。你可以用这个护身符代替一个法术的材料成分，前提是这些成分的费用为1000金币或更少。如果该法术通常会消耗其材料成分，那么护身符不会被消耗。在护身符以这种方式使用之后，除非你将其归还至你的圣物库并使用另一个收获命令进行准备，否则它不能再被使用。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Sacristy",
+			"name": "圣器室",
+			"ENG_name": "Sacristy",
 			"source": "XDMG",
 			"page": 344,
 			"facilityType": "special",
@@ -1056,13 +1123,13 @@
 			"prerequisite": [
 				{
 					"spellcastingFocus": [
-						"holy",
-						"druid"
+						"神圣",
+						"德鲁伊"
 					]
 				}
 			],
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1070,28 +1137,31 @@
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"A Sacristy serves as a preparation and storage room for the sacred items and religious vestments.",
+				"圣堂用作准备和存放神圣物品及宗教服饰的房间。",
 				{
 					"type": "entries",
-					"name": "Craft Options",
+					"name": "制作选择",
+					"ENG_name": "Craft Options",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Holy Water. You commission the facility's hireling to craft a flask of {@item Holy Water|XPHB}. The work takes 7 days and costs no money. You can spend GP during the creation process to increase the potency of the Holy Water. For every 100 GP you spend, up to a maximum of 500 GP, the damage dealt by the Holy Water increases by {@dice 1d8}."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "圣水。你委托设施的雇员制作一瓶{@item 圣水|XPHB}。这项工作需要7天，不花钱。你可以在制作过程中花费金币来增加圣水的效力。每花费100金币，最多500金币，圣水造成的伤害会增加{@dice 1d8}。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Magic Item (Relic). You commission the facility's hireling to craft a Common or an Uncommon magic item chosen by you from the {@book Relics|XDMG|6|Relics Tables} tables in {@book chapter 7|XDMG|6}. The facility has the tool required to craft the item, and the hireling has proficiency with that tool as well as proficiency in the {@skill Arcana|XPHB} skill. See the \"{@book Crafting Magic Items|XDMG|6|Crafting Magic Items}\" section in {@book chapter 7|XDMG|6} for the time and money that must be spent to craft the item. If the item allows its user to cast any spells from it, you must craft the item yourself (the facility's hireling can assist), and you must have all those spells prepared every day you spend crafting the item."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "魔法物品（圣物）。你委托该设施的雇员制作一件由你选择的普通或不常见的魔法物品，选自{@book 圣物|XDMG|6|圣物表}表格，在{@book 第7章|XDMG|6}中。该设施拥有制作该物品所需的工具，而雇员也精通该工具以及{@skill 奥秘术|XPHB}技能。请参阅{@book 制作魔法物品|XDMG|6|制作魔法物品}章节中的\"时间与金钱\"部分，了解制作该物品所需的时间和费用。如果该物品允许使用者从中施放任何法术，你必须亲自制作该物品（设施的雇员可以协助），并且在你每天制作该物品时都必须准备好所有这些法术。"
 								}
 							]
 						}
@@ -1099,15 +1169,17 @@
 				},
 				{
 					"type": "entries",
-					"name": "Spell Refreshment",
+					"name": "法术刷新",
+					"ENG_name": "Spell Refreshment",
 					"entries": [
-						"Having a Sacristy allows you to regain one expended spell slot of level 5 or lower after spending an entire Short Rest in your Bastion. You can't gain this benefit again until you finish a Long Rest."
+						"拥有圣所让你在堡垒中度过一个完整的短休息后，可以恢复一个已消耗的5级或更低等级的法术位。直到你完成一次长休息，否则你不能再次获得这个好处。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Sanctuary",
+			"name": "庇护术",
+			"ENG_name": "Sanctuary",
 			"source": "XDMG",
 			"page": 345,
 			"facilityType": "special",
@@ -1115,13 +1187,13 @@
 			"prerequisite": [
 				{
 					"spellcastingFocus": [
-						"holy",
-						"druid"
+						"神圣",
+						"德鲁伊"
 					]
 				}
 			],
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1129,28 +1201,31 @@
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"Icons of your religion are displayed in this facility, which includes a quiet place for worship.",
+				"这个设施内展示了你的宗教标志，包括一个安静的礼拜场所。",
 				{
 					"type": "entries",
-					"name": "Sanctuary Charm",
+					"name": "庇护所护符",
+					"ENG_name": "Sanctuary Charm",
 					"entries": [
-						"After spending a Long Rest in your Bastion, you gain a magical {@reward Sanctuary Charm|XDMG|Charm} (see \"{@book Supernatural Gifts|XDMG|2|Supernatural Gifts}\" in {@book chapter 3|XDMG|2}) that lasts for 7 days or until you use it. The Charm allows you to cast {@spell Healing Word|XPHB} once without expending a spell slot. You can't gain this Charm again while you still have it."
+						"在你的堡垒中度过一次长休后，你获得一个魔法的{@reward 庇护所护符|极限伤害|魅惑}（见 {@book 超自然赠礼|极限伤害|2|超自然赠礼} 在 {@book 第三章|极限伤害|2}），持续时间为7天或直到你使用它。该护符允许你无需消耗spell位即可施放 {@spell 治愈真言|XPHB} 一次。如果你仍然拥有它，你不能再次获得这个护符。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Craft: Sacred Focus",
+					"name": "工艺：神圣焦点",
+					"ENG_name": "Craft: Sacred Focus",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, you commission the facility's hireling to craft a {@item Druidic Focus|XPHB} ({@item wooden staff|XPHB}) or a {@item Holy Symbol|XPHB}. The work takes 7 days and costs no money. The item remains in your Bastion until you claim it."
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，你委托该设施的雇员制作一个{@item 德鲁伊法器|XPHB}（{@item 木质法杖|XPHB}）或一个{@item 圣徽|XPHB}。这项工作需要7天时间，且不花费任何金钱。物品将保留在你的堡垒中，直到你来领取。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Sanctum",
+			"name": "圣地",
+			"ENG_name": "Sanctum",
 			"source": "XDMG",
 			"page": 346,
 			"facilityType": "special",
@@ -1158,13 +1233,13 @@
 			"prerequisite": [
 				{
 					"spellcastingFocus": [
-						"holy",
-						"druid"
+						"神圣",
+						"德鲁伊"
 					]
 				}
 			],
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1172,41 +1247,45 @@
 				}
 			],
 			"orders": [
-				"empower"
+				"赋能"
 			],
 			"entries": [
-				"A Sanctum is a place of solace and healing.",
+				"一个奥术书房是一个安静的研究场所，里面包含一张或多张书桌和书架。",
 				{
 					"type": "entries",
-					"name": "Sanctum Charm",
+					"name": "圣所护符",
+					"ENG_name": "Sanctum Charm",
 					"entries": [
-						"After spending a Long Rest in your Bastion, you gain a magical {@reward Sanctum Charm|XDMG|Charm} (see \"{@book Supernatural Gifts|XDMG|2|Supernatural Gifts}\" in {@book chapter 3|XDMG|2}) that lasts for 7 days or until you use it. The Charm allows you to cast {@spell Heal|XPHB} once without expending a spell slot. You can't gain this Charm again while you still have it."
+						"一个角色如果在整个制作过程中留在堡垒中，可以担任音乐会的指挥或制作的导演。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Empower: Fortifying Rites",
+					"name": "赋能：强化仪式",
+					"ENG_name": "Empower: Fortifying Rites",
 					"entries": [
-						"When you issue the {@book Empower|XDMG|7|Empower} order to this facility, you inspire its hirelings to perform daily rites that benefit you or another character you name. The beneficiary doesn't need to be in the Bastion when the rites are performed to gain their benefit. Each time the beneficiary finishes a Long Rest, they gain {@variantrule Temporary Hit Points|XPHB} equal to your level. This effect lasts for 7 days."
+						"书籍复制。你委托设施的雇员制作一本非魔法书籍的副本。这样做需要一个空白的书。这项工作需要7天。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Sanctum Recall",
+					"name": "圣所召回",
+					"ENG_name": "Sanctum Recall",
 					"entries": [
-						"While the Sanctum exists, you always have the {@spell Word of Recall|XPHB} spell prepared. When you cast {@spell Word of Recall|XPHB}, you can make your Sanctum the destination of the spell instead of another place you have previously designated. In addition, one creature of your choice that arrives in the Sanctum via this spell gains the benefit of a {@spell Heal|XPHB} spell."
+						"只要圣所存在，你就一直准备好{@spell 回返真言|XPHB}法术。当你施展{@spell 回返真言|XPHB}时，你可以使你的圣所成为该法术的目的地，而不是你之前指定的另一个地方。此外，一个由你选择的通过这个法术到达圣所的生物获得{@spell 医疗术|XPHB}法术的益处。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Scriptorium",
+			"name": "抄写室",
+			"ENG_name": "Scriptorium",
 			"source": "XDMG",
 			"page": 346,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1214,33 +1293,37 @@
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"A Scriptorium contains desks and writing supplies.",
+				"一个书房包含书桌和写作用品。",
 				{
 					"type": "entries",
-					"name": "Craft Options",
+					"name": "制作选择",
+					"ENG_name": "Craft Options",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Book Replica. You commission the facility's hireling to make a copy of a nonmagical Book. Doing so requires a blank book. The work takes 7 days."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "军备"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Spell Scroll. You commission the facility's hireling to scribe a {@item Spell Scroll|XDMG} containing one Cleric or Wizard spell of level 3 or lower. The facility has the necessary {@item Calligrapher's Supplies|XPHB}, and the hireling meets all the prerequisites needed to scribe the scroll. The \"{@book Crafting Equipment|XPHB|6|Crafting Equipment}\" section in the {@book Player's Handbook|XPHB} specifies the time needed to scribe the scroll and the cost of the scroll, which you must pay."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "法术卷轴。你委托设施的雇员抄写一个 {@item 法术卷轴|极限伤害}，其中包含一个3级或更低等级的神职人员或巫师法术。该设施拥有必要的 {@item 书法工具|XPHB}，而且雇员满足抄写卷轴的所有先决条件。{@book 制作装备|XPHB|6|制作装备} 章节在 {@book 玩家手册|XPHB} 中规定了抄写卷轴所需的时间和卷轴的费用，你必须支付这些费用。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Paperwork. You commission the facility's hireling to create up to fifty copies of a broadsheet, a pamphlet, or another loose-leaf paper product. The work takes 7 days and costs you 1 GP per copy. At no additional cost in time or money, the facility's hireling can distribute the paperwork to one or more locations within 50 miles of your Bastion."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "文书工作。你委托该设施的雇员制作多达五十份传单、小册子或其他活页纸产品。这项工作需要7天时间，每份花费你1金币。在不增加时间和金钱成本的情况下，该设施的雇员可以在你堡垒50英里范围内的一个或多个地点分发这些文件。"
 								}
 							]
 						}
@@ -1250,13 +1333,14 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Smithy",
+			"name": "铁匠铺",
+			"ENG_name": "Smithy",
 			"source": "XDMG",
 			"page": 347,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1264,28 +1348,31 @@
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"This Smithy contains a forge, an anvil, and other tools needed to craft weapons, armor, and other equipment.",
+				"这家铁匠铺包含一个锻造炉、一个铁砧和其他制作武器、盔甲及其他装备所需的工具。",
 				{
 					"type": "entries",
-					"name": "Craft Options",
+					"name": "制作选择",
+					"ENG_name": "Craft Options",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Smith's Tools. The facility's hirelings craft anything that can be made with {@item Smith's Tools|XPHB}, using the rules in the {@book Player's Handbook|XPHB}."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "你派遣冒险者追踪一只挑战等级为2或更低，并且已知在距离你的堡垒50英里内筑巢的野兽。冒险者在{@dice 1d6 + 1}天内杀死或捕获该生物（由你选择）。如果该生物被杀，且你的堡垒有战利品室，你可以将取自该生物的战利品添加到该设施中。如果该生物被捕获，且你的堡垒有动物园，你可以将该生物添加到该设施中，前提是该设施有足够的空间容纳它。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Magic Item (Armament). If you are level 9+, can you commission the facility's hirelings to craft a Common or an Uncommon magic item chosen by you from the {@book Armaments|XDMG|6|Armaments Tables} tables in {@book chapter 7|XDMG|6}. The facility has the tool required to craft the item, and the hirelings have proficiency with that tool as well as proficiency in the {@skill Arcana|XPHB} skill. See the \"{@book Crafting Magic Items|XDMG|6|Crafting Magic Items}\" section in {@book chapter 7|XDMG|6} for the time and money that must be spent to craft the item. If the item allows its user to cast any spells from it, you must craft the item yourself (the facility's hirelings can assist), and you must have all those spells prepared every day you spend crafting the item."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "当你达到13级时，这个利润增加到50%，而当你达到17级时，利润增加到100%。"
 								}
 							]
 						}
@@ -1294,14 +1381,15 @@
 			]
 		},
 		{
-			"name": "Stable",
+			"name": "稳重",
+			"ENG_name": "Stable",
 			"source": "XDMG",
 			"page": 347,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"roomy",
-				"vast"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -1309,50 +1397,54 @@
 				}
 			],
 			"orders": [
-				"trade"
+				"贸易"
 			],
 			"entries": [
-				"A Bastion can have more than one Stable. Each Stable you add to your Bastion comes with one {@creature Riding Horse|XPHB} or {@creature Camel|XPHB} and two {@creature Pony|XPHB|Ponies} or {@creature Mule|XPHB|Mules}; see the {@book Player's Handbook|XPHB} or the {@book Monster Manual|XMM} for these creatures' stat blocks. The facility is big enough to house three Large animals. Two Medium creatures occupy the same amount of space as one Large creature there. The facility's hireling looks after these creatures.",
-				"After a Beast that can serve as a mount spends at least 14 days in this facility, all Wisdom ({@skill Animal Handling|XPHB}) checks made with respect to it have Advantage.",
+				"当一只可以作为坐骑的野兽在这个设施中至少待了14天之后，所有关于它的智慧（{@skill 动物驯养|XPHB}）检定都具有优势。",
+				"交易：动物",
 				{
 					"type": "entries",
-					"name": "Trade: Animals",
+					"name": "您可以花费2000金币将您的当你达到13级时，最大价值增加到5,000金镑。马厩扩建为大型设施",
+					"ENG_name": "Trade: Animals",
 					"entries": [
-						"When you issue the {@book Trade|XDMG|7|Trade} order to this facility, you commission the facility's hireling to buy or sell one or more mounts at normal cost, keeping the ones you buy in your Stable. The work takes 7 days, and the DM decides what types of animals are available for purchase\u2014horses, ponies, and mules being the most common. The {@table Mounts and Vehicles; Mounts and Other Animals|XPHB|Mounts and Other Animals} table in the {@book Player's Handbook|XPHB} gives standard prices for various mounts. You bear the total cost of any purchases.",
-						"When you sell a mount from your Stable, the buyer pays you 20 percent more than the standard price; this profit increases to 50 percent when you reach level 13 and 100 percent when you reach level 17."
+						"当你向这个设施下达{@book 贸易|极限伤害|7|贸易}指令时，你委托该设施的雇员以正常价格购买或出售一匹或多匹马匹，并将你购买的马匹保留在你的马厩中。这项工作需要7天时间，DM决定可购买的动物种类\u2014\u2014最常见的是马、小马和骡子。{@table 当你达到13级时，这个利润增加到50%，而当你达到17级时，利润增加到100%。|XPHB|坐骑和其他动物}表在{@book 玩家手册|XPHB}中给出了各种坐骑的标准价格。你承担所有购买的总费用。",
+						"当你从你的仓库出售商品时，买家支付给你的价格比标准价格高出10%；当你达到9级时，利润增加到20%；当你达到13级时，利润增加到50%；当你达到17级时，利润增加到100%。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"ENG_name": "Enlarging the Facility",
 					"entries": [
-						"You can enlarge your Stable to a Vast facility by spending 2,000 GP. If you do so, the Stable is large enough to house six Large animals."
+						"您可以花费2000金币将您的当你达到13级时，最大价值增加到5,000金镑。马厩扩建为大型设施"
 					]
 				}
 			]
 		},
 		{
-			"name": "Storage",
+			"name": "储藏室",
+			"ENG_name": "Storage",
 			"source": "XDMG",
 			"page": 335,
-			"facilityType": "basic",
+			"facilityType": "基础",
 			"space": [
-				"cramped",
-				"roomy",
-				"vast"
+				"狭窄的",
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"entries": [
-				"A basic facility comes with nonmagical furnishings and decor appropriate for that facility."
+				"一扇宽达5英尺、高10英尺的门出现在你堡垒中另一个设施的平坦固体表面上。你选择位置。如果你在堡垒回合期间在你的堡垒内，你可以将这扇门重新定位到你堡垒的另一个设施。"
 			]
 		},
 		{
-			"name": "Storehouse",
+			"name": "仓库",
+			"ENG_name": "Storehouse",
 			"source": "XDMG",
 			"page": 347,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1360,28 +1452,30 @@
 				}
 			],
 			"orders": [
-				"trade"
+				"贸易"
 			],
 			"entries": [
-				"A Storehouse is a cool, dark space meant to contain trade goods objects from the {@book Trade Goods|XDMG|6|Trade Goods} table in {@book chapter 7|XDMG|6} and from {@book chapter 6|XDMG|5} of the {@book Player's Handbook|XPHB}.",
+				"一个仓库是一个凉爽、黑暗的空间，用于存放来自{@book 贸易物品|XDMG|6|贸易物品}表格的贸易物品，这些表格在{@book 第7章|XDMG|6}中以及{@book 玩家手册|XPHB}的第6章中。",
 				{
 					"type": "entries",
-					"name": "Trade: Goods",
+					"name": "交易：货物",
+					"ENG_name": "Trade: Goods",
 					"entries": [
-						"When you issue the {@book Trade|XDMG|7|Trade} order to this facility, its hireling spends the next 7 days procuring nonmagical items that have a total value of 500 GP or less and stores them in the Storehouse, or the hireling uses those 7 days to sell goods in the Storehouse. You bear the total cost of any purchases, and the maximum value of the items purchased increases to 2,000 GP when you reach level 9 and 5,000 GP when you reach level 13.",
-						"When you sell goods from your Storehouse, the buyer pays you 10 percent more than the standard price; this profit increases to 20 percent when you reach level 9, 50 percent when you reach level 13, and 100 percent when you reach level 17."
+						"在房间的地板上铭刻着一个由{@book 贸易|极限伤害|7|贸易}法术创造的永久传送门。",
+						"选择一种简易或军用武器，例如 {@item 长矛|XPHB} 或 {@item 长弓|XPHB}。如果你不擅长使用该武器，你将获得该武器的熟练度。如果你已经对该武器有熟练度，你可以使用其精通特性。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Teleportation Circle",
+			"name": "传送法阵",
+			"ENG_name": "Teleportation Circle",
 			"source": "XDMG",
 			"page": 347,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1389,29 +1483,31 @@
 				}
 			],
 			"orders": [
-				"recruit"
+				"一个基础设施配备有适合该设施的非魔法家具和装饰。"
 			],
 			"entries": [
-				"Inscribed on the floor of this room is a permanent teleportation circle created by the {@spell Teleportation Circle|XPHB} spell.",
+				"武器专家",
 				{
 					"type": "entries",
-					"name": "Recruit: Spellcaster",
+					"name": "招募：施法者",
+					"ENG_name": "Recruit: Spellcaster",
 					"entries": [
-						"Each time you issue the {@book Recruit|XDMG|7|Recruit} order to this facility, its hireling extends an invitation to a Friendly NPC spellcaster. Roll any die. If the number rolled is odd, the invitee declines the invitation, and you gain no benefit from having issued the order. If the number rolled is even, the invitee accepts the invitation and arrives in your Bastion via your Teleportation Circle.",
-						"While you are in your Bastion, you can ask the spellcaster to cast one Wizard spell of level 4 or lower; if you are level 17+, the spell's maximum level increases to 8. The spellcaster is assumed to have the spell prepared. If the spell has one or more Material components that cost money, you must pay for them before the spell can be cast.",
-						"The spellcaster stays for 14 days or until they cast a spell for you. The spellcaster won't defend your Bastion and departs immediately if the Bastion is attacked (see \"{@book Bastion Events|XDMG|7|Bastion Events}\" at the end of the chapter)."
+						"每次你对这个设施下达{@book 一个基础设施配备有适合该设施的非魔法家具和装饰。|极限伤害|7|一个基础设施配备有适合该设施的非魔法家具和装饰。}命令时，它的雇员会向一位友好的NPC施法者发出邀请。掷任意骰子。如果掷出的点数是奇数，受邀者拒绝邀请，你不会因为下达这个命令而获得任何好处。如果掷出的点数是偶数，受邀者接受邀请并通过你的传送门来到你的堡垒。",
+						"当你在你的要塞中时，你可以要求施法者施展一个4级或更低等级的巫师法术；如果你是17级或以上，该法术的最大等级增加到8级。假设施法者已经准备好这个法术。如果该法术有一个或多个需要花钱的材料成分，你必须在施法前支付这些费用。",
+						"施法者会停留14天，或者直到他们为你施放一个法术。如果堡垒受到攻击（参见本章末尾的\"{@book 堡垒活动|极限伤害|7|堡垒活动}\"），施法者不会保卫你的堡垒，并会立即离开。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Theater",
+			"name": "剧院",
+			"ENG_name": "Theater",
 			"source": "XDMG",
 			"page": 348,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -1419,50 +1515,55 @@
 				}
 			],
 			"orders": [
-				"empower"
+				"赋能"
 			],
 			"entries": [
-				"The Theater contains a stage, a backstage area where props and sets are kept, and a seating area for a small audience.",
+				"剧院包含一个舞台，一个后台区域用来存放道具和布景，以及一个供小型观众就座的区域。",
 				{
 					"type": "entries",
-					"name": "Empower: Theatrical Event",
+					"name": "赋权：戏剧性事件",
+					"ENG_name": "Empower: Theatrical Event",
 					"entries": [
-						"When you issue the {@book Empower|XDMG|7|Empower} order to this facility, its hirelings begin work on a theatrical production or concert. Rehearsals and other preparations take 14 days, followed by at least 7 days of performances. The performances can continue indefinitely until a new production gets underway.",
-						"You or another character can contribute to a production in the following ways:",
+						"当你对这座设施下达{@book 赋能|极限伤害|7|赋能}指令时，其雇员们开始着手戏剧制作或音乐会。排练和其他准备工作需要14天，之后至少有7天的演出时间。演出可以无限期地继续进行，直到新的制作开始。",
+						"你或其他角色可以通过以下方式为制作贡献力量：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Composer/Writer",
-									"entry": "A character can compose music or write a script for a concert or production that hasn't started rehearsals yet. This effort takes 14 days."
+									"name": "作曲家/编剧",
+									"ENG_name": "Composer/Writer",
+									"entry": "一个角色可以创作音乐或为一场尚未开始排练的音乐会或制作编写剧本。这项工作需要14天。"
 								},
 								{
 									"type": "item",
-									"name": "Conductor/Director",
-									"entry": "A character who remains in the Bastion for the entirety of the production can serve as the concert's conductor or the production's director."
+									"name": "指挥/导演",
+									"ENG_name": "Conductor/Director",
+									"entry": "一个角色如果在整个制作过程中都留在堡垒中，可以作为音乐会的指挥或制作的导演。"
 								},
 								{
 									"type": "item",
-									"name": "Performer",
-									"entry": "A character who remains in the Bastion for the entirety of the rehearsal period can be a star performer in one or more of the performances; one of the Theater's hirelings can serve as an understudy for additional performances."
+									"name": "表演者",
+									"ENG_name": "Performer",
+									"entry": "在排练期间一直待在堡垒中的角色，可以在一或多场表演中成为明星表演者；剧院的一名雇员可以作为额外表演的候补演员。"
 								}
 							]
 						},
-						"At the end of a rehearsal period, each character who contributed to the concert or production can make a {@dc 15} Charisma ({@skill Performance|XPHB}) check. If more of these checks succeed than fail, you and any other character who contributed to the concert or production each gain a Theater die, a {@dice d6}. This die changes to a {@dice d8} when you reach level 13 and a {@dice d10} when you reach level 17. At any point after the rehearsals end, a character can expend their Theater die to roll it and add the number rolled to one {@variantrule D20 Test|XPHB} they make, immediately after rolling the {@dice d20}. If a character hasn't expended their Theater die before gaining another, their first die is lost."
+						"在排练期结束时，每个为音乐会或制作做出贡献的角色都可以进行一次 {@dc 15} 魅力（{@skill 表演|XPHB}）检定。如果成功的次数多于失败的次数，你以及其他为音乐会或制作做出贡献的角色每人获得一个戏剧骰子，一个 {@dice d6}。当你达到13级时，这个骰子变为 {@dice d8}，达到17级时变为 {@dice d10}。在排练结束后的任何时间点，角色可以消耗他们的戏剧骰子来掷骰并立即在掷 {@variantrule D20 检定|XPHB} 后将掷得的数值加到他们进行的其中一个 {@dice d20} 上。如果角色在获得另一个之前没有消耗他们的戏剧骰子，他们的第一个骰子就会丢失。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Training Area",
+			"name": "训练区",
+			"ENG_name": "Training Area",
 			"source": "XDMG",
 			"page": 348,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -1470,17 +1571,17 @@
 				}
 			],
 			"orders": [
-				"empower"
+				"赋能"
 			],
 			"entries": [
-				"A Bastion can have more than one Training Area. A Training Area might be an open courtyard, a gymnasium, a music or dance hall, or a cleverly built gauntlet of traps and hazards. It might contain inanimate targets (for weapon practice), padded mats, and other equipment. One of the facility's hirelings is an expert trainer; the others serve as training partners.",
-				"When a Training Area becomes part of your Bastion, choose one trainer from the {@book Expert Trainers|XDMG|7|Expert Trainers} table. On each Bastion turn, you can replace that trainer with another one from the table.",
+				"一个堡垒可以拥有多个训练区。训练区可能是一个开放的庭院、体育馆、音乐或舞蹈厅，或者是一个巧妙构建的陷阱和危险障碍物通道。它可能包含无生命目标（用于武器练习）、垫子和其他设备。设施中的一个雇员是专家级训练师；其他人则作为训练伙伴。",
+				"当一个训练区成为你的堡垒的一部分时，从{@book 专家级训练师|极限伤害|7|专家级训练师}表格中选择一个训练师。在每个堡垒回合，你可以用表格中的另一个训练师替换该训练师。",
 				{
 					"type": "table",
-					"caption": "Expert Trainers",
+					"caption": "专家级训练师",
 					"colLabels": [
-						"Trainer Type",
-						"Empower Effect"
+						"训练师类型",
+						"赋能效果"
 					],
 					"colStyles": [
 						"col-2",
@@ -1488,44 +1589,46 @@
 					],
 					"rows": [
 						[
-							"Battle Expert",
-							"When you take damage from an attack made with an {@variantrule Unarmed Strike|XPHB} or a weapon, you can take a Reaction to reduce this damage by {@dice 1d4}."
+							"战斗专家",
+							"当你受到一次使用{@variantrule 徒手打击|XPHB}或武器的攻击造成的伤害时，你可以采取一个反应来将这次伤害减少{@dice 1d4}。"
 						],
 						[
-							"Skills Expert",
-							"You gain proficiency in one of the following skills of your choice: {@skill Acrobatics|XPHB}, {@skill Athletics|XPHB}, {@skill Performance|XPHB}, {@skill Sleight of Hand|XPHB}, or {@skill Stealth|XPHB}."
+							"技能专家",
+							"你获得以下任一技能的熟练：{@skill 特技|XPHB}, {@skill 运动|XPHB}, {@skill 表演|XPHB}, {@skill 巧手|XPHB}, 或 {@skill 隐匿|XPHB}。"
 						],
 						[
-							"Tools Expert",
-							"You gain proficiency with one tool of your choice."
+							"工具专家",
+							"你获得一种自选工具的熟练。"
 						],
 						[
-							"Unarmed Combat Expert",
-							"When you hit with your {@variantrule Unarmed Strike|XPHB} and deal damage, the attack deals an extra {@damage 1d4} Bludgeoning damage."
+							"徒手格斗专家",
+							"当你使用{@variantrule 徒手打击|XPHB}命中并造成伤害时，该攻击额外造成{@damage 1d4}点钝击伤害。"
 						],
 						[
-							"Weapon Expert",
-							"Choose a kind of Simple or Martial weapon, such as {@item Spear|XPHB} or {@item Longbow|XPHB}. If you aren't proficient with the weapon, you gain proficiency with it. If you already have proficiency with the weapon, you can use its mastery property."
+							"战斗风格特性或无甲防御特性",
+							"你可以通过花费2000金币将你的工坊扩建为大型设施。如果你这样做，工坊会增加两名额外的雇员和三件额外的工匠工具（从上面的列表中选择）。"
 						]
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Empower: Training",
+					"name": "赋能：训练",
+					"ENG_name": "Empower: Training",
 					"entries": [
-						"When you issue the {@book Empower|XDMG|7|Empower} order to this facility, the facility's hirelings conduct training exercises for the next 7 days. Any character who trains here for at least 8 hours on each of those days gains a benefit at the end of the training period. The benefit depends on which trainer is present in the facility, as noted in the Expert Trainers table. The benefit lasts for 7 days."
+						"当你向这个设施下达{@book 赋能|极限伤害|7|赋能}命令时，该设施的雇佣人员会进行为期7天的训练演习。任何在这里至少每天训练8小时的角色在训练期结束时都会获得一个好处。好处取决于设施中存在的教练，如专家教练表中所注。好处持续7天。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Trophy Room",
+			"name": "战利品室",
+			"ENG_name": "Trophy Room",
 			"source": "XDMG",
 			"page": 349,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
-				"roomy"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 			],
 			"hirelings": [
 				{
@@ -1533,28 +1636,31 @@
 				}
 			],
 			"orders": [
-				"research"
+				"研究"
 			],
 			"entries": [
-				"This room houses a collection of mementos, such as weapons from old battles, the mounted heads of slain creatures, trinkets plucked from dungeons and ruins, and trophies passed down from ancestors.",
+				"这个房间收藏了许多纪念品，例如来自旧战场的武器、被杀害生物的头颅、从地牢和废墟中拾取的小饰品，以及祖先传下来的战利品。",
 				{
 					"type": "entries",
-					"name": "Research Options",
+					"name": "研究选项",
+					"ENG_name": "Research Options",
 					"entries": [
-						"When you issue the {@book Research|XDMG|7|Research} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 研究|极限伤害|7|研究}命令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Research:",
-									"entry": "Lore. You commission the facility's hireling to research a topic of your choice. The topic can be a legend, any kind of creature, or a famous object. The topic need not be directly related to items on display in the room, as the trophies provide clues to research a wide variety of other subjects. The work takes 7 days. When the research concludes, the hireling obtains up to three accurate pieces of information about the topic that were previously unknown to you and shares this knowledge with you the next time you speak with them. The DM determines what information is learned."
+									"name": "研究：",
+									"ENG_name": "Research:",
+									"entry": "传说。你委托设施的雇员研究一个你选择的话题。话题可以是一则传说、任何一种生物，或者一个著名的物品。话题不需要与房间内展示的物品直接相关，因为战利品提供了研究各种其他主题的线索。这项工作需要7天时间。当研究结束时，雇员获得了关于该话题的最多三个之前你不知道的准确信息，并在你们下次交谈时与你分享这些知识。由DM决定学到了哪些信息。"
 								},
 								{
 									"type": "item",
-									"name": "Research:",
-									"entry": "Trinket Trophy. You commission the facility's hireling to search for a trinket that might be of use to you. The work takes 7 days. When the research concludes, roll any die. If the number rolled is odd, the hireling finds nothing useful. If the number rolled is even, the hireling finds a magic item. Roll on the {@book Implements\u2014Common|XDMG|6|Implements\u2014Common} table in {@book chapter 7|XDMG|6} to determine what it is."
+									"name": "研究：",
+									"ENG_name": "Research:",
+									"entry": "小饰品战利品。你委托设施的雇员寻找一个可能对你有用的小饰品。这项工作需要7天时间。当研究结束时，掷任意骰子。如果掷出的数字是奇数，雇员没有找到任何有用的东西。如果掷出的数字是偶数，雇员找到了一个魔法物品。在《章节 7|XDMG|6》中使用 {@book Implements\u2014Common|XDMG|6|Implements\u2014Common} 表格来掷骰决定它是什么。"
 								}
 							]
 						}
@@ -1563,7 +1669,8 @@
 			]
 		},
 		{
-			"name": "War Room",
+			"name": "作战室",
+			"ENG_name": "War Room",
 			"source": "XDMG",
 			"page": 349,
 			"facilityType": "special",
@@ -1571,13 +1678,13 @@
 			"prerequisite": [
 				{
 					"otherSummary": {
-						"entry": "Fighting Style feature or Unarmored Defense feature",
-						"entrySummary": "Fighting Style/Unarmored Defense"
+						"entry": "宽敞的",
+						"entrySummary": "战斗风格/无甲防御"
 					}
 				}
 			],
 			"space": [
-				"vast"
+				"广阔"
 			],
 			"hirelings": [
 				{
@@ -1585,29 +1692,32 @@
 				}
 			],
 			"orders": [
-				"recruit"
+				"一个基础设施配备有适合该设施的非魔法家具和装饰。"
 			],
 			"entries": [
-				"The War Room is where you plan military actions in consultation with an inner circle of loyal lieutenants, each one a battle-hardened {@b Veteran Warrior} (see the {@book Monster Manual|XMM}) whose alignment matches yours. You start with two lieutenants but can add more, as described below. If your Bastion lacks facilities to house your lieutenants, they secure accommodations in the inn or settlement closest to your Bastion. Lieutenants are hirelings, not Bastion Defenders; however, if your Bastion is attacked (see \"{@book Bastion Events|XDMG|7|Attack}\" at the end of this chapter), each lieutenant housed in your Bastion reduces by 1 the number of dice you roll to determine how many Bastion Defenders are lost in the attack.",
-				"The War Room contains war memorabilia plus a large table surrounded by enough chairs for you and your lieutenants.",
+				"作战室是您与忠诚的副官内圈协商计划军事行动的地方，每位副官都是一位经验丰富的 {@b 资深战士}（见 {@book 怪物图鉴|XMM}），其阵营与您的相匹配。您开始时有两个副官，但可以如下所述增加更多。如果您的堡垒缺乏设施来安置您的副官，他们将在最接近您堡垒的旅馆或定居点找到住宿。副官是雇佣兵，不是堡垒守卫；然而，如果您的堡垒遭到攻击（见本章结尾的 \"{@book 堡垒活动|极限伤害|7|攻击}\"），每个住在您堡垒中的副官会使您掷骰子以确定在攻击中失去多少堡垒守卫的数量减少1。",
+				"作战室包含战争纪念品，还有一张大桌子，周围有足够你和你的副手们坐的椅子。",
 				{
 					"type": "entries",
-					"name": "Recruit Options",
+					"name": "招募选项",
+					"ENG_name": "Recruit Options",
 					"entries": [
-						"When you issue the {@book Recruit|XDMG|7|Recruit} order to this facility, choose one of the following options:",
+						"当你对这个设施下达{@book 一个基础设施配备有适合该设施的非魔法家具和装饰。|极限伤害|7|一个基础设施配备有适合该设施的非魔法家具和装饰。}命令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Recruit:",
-									"entry": "Lieutenant. You gain one new lieutenant. You can have up to ten lieutenants at any time. Assign names and personalities to them as you see fit."
+									"name": "招募：",
+									"ENG_name": "Recruit:",
+									"entry": "中尉。你获得一名新的中尉。你在任何时候最多可以拥有十名中尉。根据需要给他们分配名字和个性。"
 								},
 								{
 									"type": "item",
-									"name": "Recruit:",
-									"entry": "Soldiers. You commission one or more of your lieutenants to assemble a small army. Each lieutenant can muster one hundred {@creature Guard|XMM|Guards} (see the {@book Monster Manual|XMM}) in 7 days to fight for your cause. Reduce that number to twenty if you want them to be mounted on {@creature Riding Horse|XPHB|Riding Horses} (see the {@book Monster Manual|XMM}). It costs you 1 GP per day to feed each guard and each horse in your army. Wherever the army goes, it must be led by you or at least one of your lieutenants, or else it disbands immediately. The army also disbands if it goes 1 day without being fed. Otherwise, the army remains until it is destroyed or you command it to disband. You can't issue this Recruit order again until your current army disbands or is destroyed."
+									"name": "招募：",
+									"ENG_name": "Recruit:",
+									"entry": "士兵。你委托你的一个或多个副官组建一支小军队。每位副官可以在7天内召集一百名{@creature 警卫|XMM|守卫}（参见{@book 怪物图鉴|XMM}）为你的事业而战。如果你想让他们骑上{@creature 乘用马|XPHB|骑乘马匹}（参见{@book 怪物图鉴|XMM}），则将这个数字减少到二十。你需要每天花费1金币来喂养你军队中的每名卫兵和每匹马。无论军队走到哪里，它必须由你或至少一名你的副官领导，否则它将立即解散。如果军队一天没有得到喂食，也会解散。否则，军队将持续存在，直到被摧毁或你命令其解散。在你当前的军队解散或被摧毁之前，你不能再次发出这个招募命令。"
 								}
 							]
 						}
@@ -1616,72 +1726,77 @@
 			]
 		},
 		{
-			"name": "Workshop",
+			"name": "工作室",
+			"ENG_name": "Workshop",
 			"source": "XDMG",
 			"page": 349,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
-				"roomy",
-				"vast"
+				"你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。",
+				"广阔"
 			],
 			"hirelings": [
 				{
 					"exact": 3,
-					"space": "roomy"
+					"space": "你可以花费2000金币将你的兵营扩建为大型设施。一个大型兵营最多可容纳二十五名堡垒守卫者。"
 				},
 				{
 					"exact": 5,
-					"space": "vast"
+					"space": "广阔"
 				}
 			],
 			"orders": [
-				"craft"
+				"工艺"
 			],
 			"entries": [
-				"This Workshop is a creative space where useful items can be crafted.",
+				"这个工坊是一个可以制作有用物品的创意空间。",
 				{
 					"type": "entries",
-					"name": "Artisan's Tools",
+					"name": "工匠工具",
+					"ENG_name": "Artisan's Tools",
 					"entries": [
-						"The Workshop comes equipped with six different kinds of Artisan's Tools, chosen from the following list:",
+						"工坊配备了六种不同的工匠工具，从以下列表中选择：",
 						{
 							"type": "list",
 							"columns": 3,
 							"items": [
-								"{@item Carpenter's Tools|XPHB}",
-								"{@item Cobbler's Tools|XPHB}",
-								"{@item Glassblower's Tools|XPHB}",
-								"{@item Jeweler's Tools|XPHB}",
-								"{@item Leatherworker's Tools|XPHB}",
-								"{@item Mason's Tools|XPHB}",
-								"{@item Painter's Supplies|XPHB|Painter's Tools}",
-								"{@item Potter's Tools|XPHB}",
-								"{@item Tinker's Tools|XPHB}",
-								"{@item Weaver's Tools|XPHB}",
-								"{@item Woodcarver's Tools|XPHB}"
+								"{@item 木匠工具|XPHB}",
+								"{@item 鞋匠工具|XPHB}",
+								"{@item 玻璃匠工具|XPHB}",
+								"{@item 珠宝匠工具|XPHB}",
+								"{@item 皮匠工具|XPHB}",
+								"{@item 石匠工具|XPHB}",
+								"{@item 画家工具|XPHB|画家工具}",
+								"{@item 陶匠工具|XPHB}",
+								"{@item 修补工具|XPHB}",
+								"{@item 织布工具|XPHB}",
+								"{@item 木雕工具|XPHB}"
 							]
 						}
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Craft Options",
+					"name": "制作选择",
+					"ENG_name": "Craft Options",
 					"entries": [
-						"When you issue the {@book Craft|XDMG|7|Craft} order to this facility, choose one of the following options:",
+						"当你向这个设施下达{@book 工艺|极限伤害|7|工艺}指令时，选择以下选项之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Adventuring Gear. The facility's hirelings craft anything that can be made with the tools you chose when you added the Workshop to your Bastion (see above), using the rules in the {@book Player's Handbook|XPHB}."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "冒险装备。该设施的雇员会制作任何可以使用您在将工坊添加到堡垒时选择的工具制作的物品（见上文），遵循{@book 玩家手册|XPHB}中的规则。"
 								},
 								{
 									"type": "item",
-									"name": "Craft:",
-									"entry": "Magic Item (Implement). If you are level 9+, you can commission the facility's hirelings to craft a Common or an Uncommon magic item chosen by you from the {@book Implements|XDMG|6|Implements Tables} tables in {@book chapter 7|XDMG|6}. The facility has the tool required to craft the item, and the hirelings have proficiency with that tool as well as proficiency in the {@skill Arcana|XPHB} skill. See the \"{@book Crafting Magic Items|XDMG|6|Crafting Magic Items}\" section in {@book chapter 7|XDMG|6} for the time and money that must be spent to craft the item. If the item allows its user to cast any spells from it, you must craft the item yourself (the facility's hirelings can assist), and you must have all those spells prepared every day you spend crafting the item."
+									"name": "制作：",
+									"ENG_name": "Craft:",
+									"entry": "魔法物品（工具）。如果你的等级是9级或以上，你可以委托该设施的雇员为你制作一个由你选择的普通或不常见的魔法物品，选自{@book 实现|极限伤害|6|实现表格}中的{@book 第七章|极限伤害|6}。该设施拥有制作该物品所需的工具，而且雇员们也精通这些工具以及精通{@skill 奥秘|XPHB}技能。请参阅{@book 第七章|极限伤害|6}中的\"{@book 第七章|极限伤害|6}\"部分，了解制作该物品所需花费的时间和金钱。如果该物品允许其使用者从中施放任何法术，你必须自己制作该物品（设施的雇员可以协助），并且在制作该物品的每一天，你都必须准备好所有这些法术。"
 								}
 							]
 						}
@@ -1689,16 +1804,18 @@
 				},
 				{
 					"type": "entries",
-					"name": "Source of Inspiration",
+					"name": "灵感之源",
+					"ENG_name": "Source of Inspiration",
 					"entries": [
-						"After spending an entire Short Rest in your Workshop, you gain {@variantrule Heroic Inspiration|XPHB}. You can't gain this benefit again until you finish a Long Rest."
+						"在你的工坊里度过一个完整的短休后，你获得 {@variantrule 英雄激励|XPHB}。在完成一个长休之前，你不能再次获得这个好处。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"ENG_name": "Enlarging the Facility",
 					"entries": [
-						"You can enlarge your Workshop to a Vast facility by spending 2,000 GP. If you do so, the Workshop gains two additional hirelings and three additional Artisan's Tools (chosen from the list above)."
+						"你委托设施的雇员制作一本空白书籍。这项工作需要7天，花费你10金币。这本书会留在你的堡垒中，直到你来领取。"
 					]
 				}
 			]

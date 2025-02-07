@@ -815,7 +815,7 @@
 							"rows": [
 								[
 									"{@variantrule 轻度遮蔽|XPHB}",
-									"生物在依赖视觉的感知（{@skill 察觉}）检定上具有{@skill 察觉}",
+									"生物在依赖视觉的感知（{@skill 察觉|XPHB}）检定上有{@skill 察觉|XPHB}",
 									"{@variantrule 微光光照|XPHB}, 零星的雾，中等植被"
 								],
 								[
@@ -833,37 +833,24 @@
 						{
 							"type": "table",
 							"caption": "旅行步调",
-							"colLabelGroups": [
-								{
-									"colLabels": [
-										"",
-										"步调"
-									]
-								},
-								{
-									"colLabels": [
-										"每...旅行的距离",
-										"分钟"
-									]
-								},
-								{
-									"colLabels": [
-										"",
-										"小时"
-									]
-								},
-								{
-									"colLabels": [
-										"",
-										"天"
-									]
-								},
-								{
-									"colLabels": [
-										"",
-										"效果"
-									]
-								}
+							"colLabelRows": [
+								[
+									"",
+									{
+										"type": "cellHeader",
+										"width": 3,
+										"entry": "每...旅行的距离",
+										"style": "穿心"
+									},
+									""
+								],
+								[
+									"步调",
+									"分钟",
+									"小时",
+									"天",
+									"效果"
+								]
 							],
 							"colStyles": [
 								"col-2",

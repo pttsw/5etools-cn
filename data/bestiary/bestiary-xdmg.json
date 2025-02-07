@@ -1,7 +1,8 @@
 {
 	"monster": [
 		{
-			"name": "Avatar of Death",
+			"name": "死亡化身",
+			"ENG_name": "Avatar of Death",
 			"source": "XDMG",
 			"page": 252,
 			"size": [
@@ -16,13 +17,13 @@
 				20
 			],
 			"hp": {
-				"special": "Half the HP maximum of its summoner"
+				"special": "召唤者生命值上限的一半"
 			},
 			"speed": {
 				"walk": 60,
 				"fly": {
 					"number": 60,
-					"condition": "(hover)"
+					"condition": "(悬浮)"
 				},
 				"canHover": true
 			},
@@ -33,56 +34,59 @@
 			"wis": 16,
 			"cha": 16,
 			"senses": [
-				"truesight 60 ft."
+				"真实视觉 60 尺"
 			],
 			"passive": 13,
 			"immune": [
-				"necrotic",
-				"poison"
+				"黯蚀",
+				"毒素"
 			],
 			"conditionImmune": [
-				"charmed",
-				"exhaustion",
-				"frightened",
-				"paralyzed",
-				"petrified",
-				"poisoned",
-				"unconscious"
+				"魅惑",
+				"力竭",
+				"恐慌",
+				"麻痹",
+				"石化",
+				"中毒",
+				"昏迷"
 			],
 			"languages": [
-				"all languages known to its summoner"
+				"其召唤者所知的所有语言"
 			],
-			"pbNote": "equals its summoner's",
+			"pbNote": "等于其召唤者的",
 			"trait": [
 				{
-					"name": "Incorporeal Movement",
+					"name": "虚体移动",
+					"ENG_name": "Incorporeal Movement",
 					"entries": [
-						"The avatar can move through other creatures and objects as if they were Difficult Terrain. It takes 5 ({@damage 1d10}) Force damage if it ends its turn inside an object."
+						"化身可以像穿过困难地形一样穿过其他生物和物体。如果它在物体内部结束回合，将受到 5 点（{@damage 1d10}）力场伤害。"
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "Multiattack",
+					"name": "多重攻击",
+					"ENG_name": "Multiattack",
 					"entries": [
-						"The avatar makes a number of Reaping Scythe attacks equal to half the summoner's Proficiency Bonus (rounded up)."
+						"化身进行的收割镰刀攻击次数等于召唤者的熟练加值的一半（向上取整）。"
 					]
 				},
 				{
-					"name": "Reaping Scythe",
+					"name": "收割之镰",
+					"ENG_name": "Reaping Scythe",
 					"entries": [
-						"{@atkr m} Automatic hit, reach 5 ft. {@h}7 ({@damage 1d8 + 3}) Slashing damage plus 4 ({@damage 1d8}) Necrotic damage."
+						"{@atkr m} 自动命中，触及范围 5 尺。{@h}7 ({@damage 1d8 + 3}) 挥砍伤害加 4 ({@damage 1d8}) 暗蚀伤害。"
 					]
 				}
 			],
 			"traitTags": [
-				"Incorporeal Movement"
+				"虚体移动"
 			],
 			"senseTags": [
 				"U"
 			],
 			"actionTags": [
-				"Multiattack"
+				"多重攻击"
 			],
 			"languageTags": [
 				"XX"
@@ -98,7 +102,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "Giant Fly",
+			"name": "巨苍蝇",
+			"ENG_name": "Giant Fly",
 			"source": "XDMG",
 			"page": 261,
 			"size": [
@@ -126,7 +131,7 @@
 			"wis": 10,
 			"cha": 3,
 			"senses": [
-				"darkvision 60 ft."
+				"黑暗视觉 60 尺"
 			],
 			"passive": 10,
 			"cr": {

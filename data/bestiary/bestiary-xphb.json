@@ -57,7 +57,7 @@
 					"name": "低语灵光（仅限心灵蠕虫）",
 					"ENG_name": "Whispering Aura (Mind Flayer Only)",
 					"entries": [
-						"在灵体的每个回合开始时，如果它没有处于{@condition 失能|XPHB}状态，则会释放灵能。智慧豁免：DC等于你的法术豁免DC，灵体5英尺内的每个生物（除了你）。{@actSaveFail} {@damage 2d6} 心灵伤害。"
+						"在灵体每个回合开始时，如果灵体没有{@condition 失能|XPHB}状态，它会释放灵能能量。{@actSave wis} DC等于你的法术豁免DC，每个在灵体5英尺范围内的生物（除你之外）。{@actSaveFail} {@damage 2d6} 心灵伤害。"
 					]
 				}
 			],
@@ -492,9 +492,6 @@
 			"passive": 13,
 			"resist": [
 				"毒素"
-			],
-			"languages": [
-				"none"
 			],
 			"cr": "0",
 			"action": [
@@ -1202,9 +1199,6 @@
 				"黑暗视觉 60 尺"
 			],
 			"passive": 13,
-			"languages": [
-				"none"
-			],
 			"cr": "1",
 			"action": [
 				{
@@ -1694,7 +1688,7 @@
 					"name": "石迷昏眠（仅限石）",
 					"ENG_name": "Stony Lethargy (Stone Only)",
 					"entries": [
-						"当一个生物在其回合开始时处于灵体10英尺范围内，如果灵体可以看到它，灵体可以用魔法能量对其进行攻击。智慧豁免检定：DC等于你的法术豁免DC，目标生物。{@actSaveFail} 在其下一个回合开始之前，目标不能进行借机攻击，且其速度减半。"
+						"当一个生物在灵魂10英尺范围内开始其回合时，如果灵魂能看到它，灵魂可以用魔法能量瞄准它。{@actSave wis} DC等于你的法术豁免DC，目标是{@actSaveFail} 直到其下个回合开始，目标不能进行机会攻击，且其速度减半。"
 					]
 				}
 			],
@@ -2003,9 +1997,6 @@
 				"黑暗视觉 60 尺"
 			],
 			"passive": 15,
-			"languages": [
-				"none"
-			],
 			"cr": "1",
 			"trait": [
 				{
@@ -2320,7 +2311,7 @@
 					"name": "猛击",
 					"ENG_name": "Slam",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@dice 1d10 + 4 + 召唤法术等级} 钝击（仅限土元素）、寒冷（仅限水元素）、闪电（仅限气元素）或火焰（仅限火元素）伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 5 尺触及 {@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击（仅限土元素）, 冷冻（仅限水元素）, 闪电（仅限气元素）或火焰（仅限火元素）伤害。"
 					]
 				}
 			],
@@ -2528,9 +2519,6 @@
 			"wis": 11,
 			"cha": 6,
 			"passive": 10,
-			"languages": [
-				"none"
-			],
 			"cr": "4",
 			"action": [
 				{
@@ -2687,7 +2675,7 @@
 			],
 			"passive": 10,
 			"conditionImmune": [
-				"charmed"
+				"魅惑"
 			],
 			"languages": [
 				"木族语",
@@ -2877,7 +2865,7 @@
 					"name": "焚身爆（仅限恶魔）",
 					"ENG_name": "Death Throes (Demon Only)",
 					"entries": [
-						"当灵体降至0生命值或法术结束时，灵体会爆炸。敏捷豁免检定：DC等于你的法术豁免DC，每个在灵体起源的10英尺范围内的生物。{@actSaveFail} {@dice 2d10} 加上本法术等级的火焰伤害。{@actSaveSuccess} 伤害减半。"
+						"当灵体生命值降至0或法术结束时，灵体会爆炸。{@actSave dex} 豁免DC等于你的法术豁免DC，灵体周围10英尺爆发范围内的每个生物需进行豁免。{@actSaveFail} 受到{@damage 2d10}加上法术等级的火属性伤害。{@actSaveSuccess} 成功则只受到一半伤害。"
 					]
 				},
 				{
@@ -3473,14 +3461,14 @@
 					"name": "毒刺攻击",
 					"ENG_name": "Poison Jab",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及10英尺。{@h}{@dice 1d6 + 3 + 召唤法术等级} 穿刺伤害加上{@damage 1d4} 毒素伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 范围10尺. {@h}{@damage 1d6 + 3 + 召唤法术等级} 穿刺伤害外加 {@damage 1d4} 毒素伤害。"
 					]
 				},
 				{
 					"name": "蛛网箭（仅限蜘蛛）",
 					"ENG_name": "Web Bolt (Spider Only)",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 射程60英尺。{@h}{@dice 1d10 + 3 + 召唤法术等级} 钝击伤害，目标的速度在昆虫下一回合开始前降至0。"
+						"{@atkr r} {@hitYourSpellAttack}, 射程 60 英尺 {@h}{@damage 1d10 + 3 + 召唤法术等级} 钝击伤害, 并且目标的速度在昆虫的下个回合开始时降为 0。"
 					]
 				}
 			],
@@ -3696,9 +3684,6 @@
 				"黑暗视觉 60 尺"
 			],
 			"passive": 14,
-			"languages": [
-				"none"
-			],
 			"cr": "1",
 			"trait": [
 				{
@@ -4475,9 +4460,6 @@
 				"黑暗视觉 30 尺"
 			],
 			"passive": 12,
-			"languages": [
-				"none"
-			],
 			"cr": "0",
 			"trait": [
 				{
@@ -4598,7 +4580,7 @@
 					"name": "异界冲击",
 					"ENG_name": "Otherworldly Slam",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，射程5英尺。{@h}{@dice 1d8 + summonSpellLevel} 圣光（天界生物）、心灵（仙灵）或亡灵（恶魔）伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺. {@h}{@damage 1d8 + summonSpellLevel}的 radiant（天界）, psychic（精类）, 或 necrotic（魔裔）伤害。"
 					]
 				}
 			],
@@ -5329,9 +5311,6 @@
 				"盲视 30 尺"
 			],
 			"passive": 12,
-			"languages": [
-				"none"
-			],
 			"cr": "1/2",
 			"trait": [
 				{
@@ -5474,9 +5453,6 @@
 				"盲视 10 尺"
 			],
 			"passive": 9,
-			"languages": [
-				"none"
-			],
 			"cr": "0",
 			"action": [
 				{
@@ -6528,9 +6504,6 @@
 				"黑暗视觉 60 尺"
 			],
 			"passive": 13,
-			"languages": [
-				"none"
-			],
 			"cr": "0",
 			"action": [
 				{

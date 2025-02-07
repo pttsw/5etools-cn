@@ -129,16 +129,27 @@
 			"source": "HotDQ",
 			"system": {
 				"magicalBonus": "+1",
-				"attack.bonus": "+1",
-				"damage.parts": [
-					[
-						"2d6+1",
-						"斩击"
-					],
-					[
-						"1d6",
-						"黯蚀"
-					]
+				"activities": [
+					{
+						"type": "attack",
+						"attack.bonus": "+1",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "2d6+1",
+								"types": [
+									"斩击"
+								]
+							},
+							{
+								"custom.enabled": true,
+								"custom.formula": "1d6",
+								"types": [
+									"黯蚀"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3
@@ -148,9 +159,26 @@
 			"ENG_name": "Oversized Longbow",
 			"source": "WDH",
 			"system": {
-				"damage.parts": [
-					"2d6 + @abilities.str.mod",
-					"穿刺"
+				"activities": [
+					{
+						"type": "damage",
+						"damage.parts": [
+							{
+								"custom.enabled": true,
+								"custom.formula": "2",
+								"types": [
+									"d"
+								]
+							},
+							{
+								"custom.enabled": true,
+								"custom.formula": "p",
+								"types": [
+									"i"
+								]
+							}
+						]
+					}
 				]
 			},
 			"migrationVersion": 3

@@ -1911,10 +1911,10 @@
 				}
 			],
 			"subclassFeatures": [
-				"诡术师|游荡者|XPHB|诡术士|XPHB|3",
-				"诡术伏击|游荡者|XPHB|诡术士|XPHB|9",
-				"万能诡术|游荡者|XPHB|诡术士|XPHB|13",
-				"法术窃贼|游荡者|XPHB|诡术士|XPHB|17"
+				"诡术师|游荡者|XPHB|诡术师|XPHB|3",
+				"诡术伏击|游荡者|XPHB|诡术师|XPHB|9",
+				"万能诡术|游荡者|XPHB|诡术师|XPHB|13",
+				"法术窃贼|游荡者|XPHB|诡术师|XPHB|17"
 			],
 			"hasFluffImages": true
 		},
@@ -2512,7 +2512,7 @@
 			"level": 5,
 			"entries": [
 				"你已经发展出了使用偷袭攻击的狡诈方法。当你造成偷袭伤害时，你可以添加以下狡诈攻击效果之一。每个效果都有一个骰子消耗，这是你必须放弃的偷袭伤害骰子数量，以添加该效果。在掷骰子之前移除骰子，效果在攻击伤害造成后立即发生。例如，如果你添加了中毒效果，在掷骰子之前从偷袭的伤害中移除{@dice 1d6}。",
-				"如果狡诈攻击效果需要进行一次豁免检定，难度等级等于8加上你的敏捷修正和{@variantrule 熟练项|XPHB}。",
+				"如果狡猾打击效果需要一次豁免检定，则难度等级等于8加上你敏捷修正值和{@variantrule 熟练项|XPHB|熟练加值}。",
 				{
 					"type": "entries",
 					"entries": [
@@ -3107,7 +3107,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"第17级起，你熟练掌握瞬杀的技巧。你攻击命中一个{@status 被突袭}的生物时，该生物必须进行一次体质豁免（DC8＋你的敏捷调整值＋你的熟练加值）。豁免失败时，你将对其造成双倍伤害。"
+				"从17级开始，你成为瞬间死亡的大师。当你攻击并命中一个处于 {@status surprised} 状态的生物时，它必须进行一次体质豁免检定（难度等级为8 + 你敏捷修正值 + 你的熟练加值）。如果豁免失败，对你攻击该生物造成的伤害翻倍。"
 			]
 		},
 		{
@@ -3343,6 +3343,39 @@
 			]
 		},
 		{
+			"name": "灵振诀窍",
+			"ENG_name": "Psi-Bolstered Knack",
+			"source": "TCE",
+			"page": 63,
+			"className": "游荡者",
+			"classSource": "PHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "TCE",
+			"level": 3,
+			"consumes": {
+				"name": "灵能骰",
+				"ENG_name": "Psionic Energy Die"
+			},
+			"entries": [
+				"当你接受的常规训练没法让你搞定时，你的心灵异能会帮助你：如果你使用具有熟练的技能或工具进行一次属性检定，但失败时，你可以投掷灵能骰，并将掷骰结果加到检定结果中，这可能会让失败的检定变为成功。你只在灵能让检定成功时才会消耗那一灵能骰。"
+			]
+		},
+		{
+			"name": "心灵低语",
+			"ENG_name": "Psychic Whispers",
+			"source": "TCE",
+			"page": 63,
+			"className": "游荡者",
+			"classSource": "PHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entries": [
+				"你能够利用灵能力在自己和他人之间建立起基于心灵感应的交流\u2014\u2014在需要无声渗透时这堪称完美。以一个动作，从可见的生物中选择一到至多等同于你熟练加值数量的生物，掷一枚灵能骰。你在投掷结果数值小时内，获得与选择的生物通过心灵感应进行交流的能力。你可以和选择生物进行双向的心灵感应交流，但在发送或接收信息时（无需动作），你和选择生物之间的距离不可超过一里。不会说任何语言的生物无法通过此方法进行交流，而且生物可以随时终止心灵感应的链接（无需动作）。你和链接的生物不需要能说同一种语言也能互相理解话语。",
+				"在每次长休后你可以免费使用一次这个异能。除此之外，每次使用它你都得消耗一枚灵能骰。"
+			]
+		},
+		{
 			"name": "魂刃",
 			"ENG_name": "Soulknife",
 			"source": "TCE",
@@ -3388,11 +3421,11 @@
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "灵振诀窍|游荡者|TCE|魂刃|TCE|3"
+							"subclassFeature": "灵振诀窍|游荡者|PHB|魂刃|TCE|3"
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "心灵低语|游荡者|TCE|魂刃|TCE|3"
+							"subclassFeature": "心灵低语|游荡者|PHB|魂刃|TCE|3"
 						}
 					]
 				}
@@ -3411,8 +3444,36 @@
 			"header": 1,
 			"entries": [
 				"{@i 3级魂刃特性}",
-				"你能将自己的心灵异能塑造为由灵能构成的闪亮刀刃。当你执行{@action 攻击}动作时，你能以空闲的手中塑造出心灵之刃，并使用它来进行攻击。这种魔法刀刃是一种简易近战武器，具有灵巧与投掷属性。它的常规射程为60尺（无最大射程）。在命中时，它造成 {@dice 1d6}+你用于攻击的属性调整值 点的心灵伤害。不论它是否命中了它的目标，心灵之刃会在那之后立刻消失。",
-				"当你使用心灵之刃发动攻击后的同一回合中，只要你的另一只手空闲，就能以一个附赠动作在那只手中塑造第二把心灵之刃，并再进行一次近战武器攻击或是远程武器攻击。此附赠攻击的伤害骰为{@dice 1d4}，而非 {@dice 1d6}。"
+				"你可以将你的灵能显现为闪烁的灵能之刃。每当你采取{@action 攻击}行动时，你可以从空闲的手显现一把灵能之刃并用它进行攻击。这把魔法之刃是一把简单的近战武器，具有敏捷和投掷属性。它的正常射程是60英尺，没有远程射程，命中时会造成等同于{@damage 1d6}加上你用于攻击掷骰的能力修正值的灵能伤害。这把刀刃在击中或未击中目标后立即消失，如果它造成了伤害，不会在目标上留下任何痕迹。",
+				"在你用刀刃攻击之后，如果另一只手空闲可以创造它，你可以在同个回合以一个附赠行动进行一次近战或远程武器攻击，使用第二把心灵之刃。这个附赠攻击的伤害骰子是{@damage 1d4}，而不是{@damage 1d6}。"
+			]
+		},
+		{
+			"name": "寻的攻击",
+			"ENG_name": "Homing Strikes",
+			"source": "TCE",
+			"page": 63,
+			"className": "游荡者",
+			"classSource": "PHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "TCE",
+			"level": 9,
+			"entries": [
+				"若在使用心灵之刃进行的攻击中失手，你可以掷一枚灵能骰，并将掷骰结果加到这次攻击检定中。如果这使攻击变为了命中，那枚灵能骰将被消耗。"
+			]
+		},
+		{
+			"name": "心灵传送",
+			"ENG_name": "Psychic Teleportation",
+			"source": "TCE",
+			"page": 63,
+			"className": "游荡者",
+			"classSource": "PHB",
+			"subclassShortName": "魂刃",
+			"subclassSource": "TCE",
+			"level": 9,
+			"entries": [
+				"以一个附赠动作，你塑造一把心灵之刃，消耗并投掷一枚灵能骰，将心灵之刃投掷到至多距离灵能骰结果数字十倍尺数的一处可见的未被占据的空间内。你传送到目标位置，同时那把心灵之刃将消失。"
 			]
 		},
 		{
@@ -3434,11 +3495,11 @@
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "寻的攻击|游荡者|TCE|魂刃|TCE|9"
+							"subclassFeature": "寻的攻击|游荡者|PHB|魂刃|TCE|9"
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "心灵传送|游荡者|TCE|魂刃|TCE|9"
+							"subclassFeature": "心灵传送|游荡者|PHB|魂刃|TCE|9"
 						}
 					]
 				}
@@ -3593,7 +3654,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"17级时，你学会了如何通过仔细研究生物的战术与行为来找到它弱点。在你对生物使用的 战术洞悉 Insightful Fighting 成功生效期间，你对被洞悉生物造成的偷袭伤害提高{@dice 3d6}。"
+				"在第17级时，你学会通过仔细研究生物的战术和移动来利用其弱点。当你的洞察战斗特性适用于一个生物时，你对该生物的偷袭伤害增加{@damage 3d6}。"
 			]
 		},
 		{
@@ -3905,65 +3966,152 @@
 			]
 		},
 		{
-			"name": "灵振诀窍",
-			"ENG_name": "Psi-Bolstered Knack",
-			"source": "TCE",
-			"page": 63,
+			"name": "诡术师",
+			"ENG_name": "Arcane Trickster",
+			"source": "XPHB",
+			"page": 132,
 			"className": "游荡者",
-			"classSource": "TCE",
-			"subclassShortName": "魂刃",
-			"subclassSource": "TCE",
-			"level": 3,
-			"consumes": {
-				"name": "灵能骰",
-				"ENG_name": "Psionic Energy Die"
-			},
-			"entries": [
-				"当你接受的常规训练没法让你搞定时，你的心灵异能会帮助你：如果你使用具有熟练的技能或工具进行一次属性检定，但失败时，你可以投掷灵能骰，并将掷骰结果加到检定结果中，这可能会让失败的检定变为成功。你只在灵能让检定成功时才会消耗那一灵能骰。"
-			]
-		},
-		{
-			"name": "心灵低语",
-			"ENG_name": "Psychic Whispers",
-			"source": "TCE",
-			"page": 63,
-			"className": "游荡者",
-			"classSource": "TCE",
-			"subclassShortName": "魂刃",
-			"subclassSource": "TCE",
+			"classSource": "XPHB",
+			"subclassShortName": "诡术师",
+			"subclassSource": "XPHB",
 			"level": 3,
 			"entries": [
-				"你能够利用灵能力在自己和他人之间建立起基于心灵感应的交流\u2014\u2014在需要无声渗透时这堪称完美。以一个动作，从可见的生物中选择一到至多等同于你熟练加值数量的生物，掷一枚灵能骰。你在投掷结果数值小时内，获得与选择的生物通过心灵感应进行交流的能力。你可以和选择生物进行双向的心灵感应交流，但在发送或接收信息时（无需动作），你和选择生物之间的距离不可超过一里。不会说任何语言的生物无法通过此方法进行交流，而且生物可以随时终止心灵感应的链接（无需动作）。你和链接的生物不需要能说同一种语言也能互相理解话语。",
-				"在每次长休后你可以免费使用一次这个异能。除此之外，每次使用它你都得消耗一枚灵能骰。"
+				"{@i 使用奥术法术增强潜行}",
+				"一些盗贼通过法术增强他们精细的潜行和敏捷技能，学习魔法技巧来帮助他们的行当。一些奥术诡术师使用他们的天赋作为扒手和窃贼，而其他人则是恶作剧者。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "施法|游荡者|XPHB|诡术师|XPHB|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "法师之手诈术|游荡者|XPHB|诡术师|XPHB|3"
+				}
 			]
 		},
 		{
-			"name": "寻的攻击",
-			"ENG_name": "Homing Strikes",
-			"source": "TCE",
-			"page": 63,
+			"name": "法师之手诈术",
+			"ENG_name": "Mage Hand Legerdemain",
+			"source": "XPHB",
+			"page": 133,
 			"className": "游荡者",
-			"classSource": "TCE",
-			"subclassShortName": "魂刃",
-			"subclassSource": "TCE",
-			"level": 9,
+			"classSource": "XPHB",
+			"subclassShortName": "诡术师",
+			"subclassSource": "XPHB",
+			"level": 3,
 			"entries": [
-				"若在使用心灵之刃进行的攻击中失手，你可以掷一枚灵能骰，并将掷骰结果加到这次攻击检定中。如果这使攻击变为了命中，那枚灵能骰将被消耗。"
+				"当你施放{@spell 法师之手|XPHB}时，你可以将其作为{@variantrule 附赠动作|XPHB}施放，并且你可以使幻影手{@condition 隐形|XPHB}。你可以作为{@variantrule 附赠动作|XPHB}控制这只手，并通过它进行敏捷（{@skill 巧手|XPHB}）检定。"
 			]
 		},
 		{
-			"name": "心灵传送",
-			"ENG_name": "Psychic Teleportation",
-			"source": "TCE",
-			"page": 63,
+			"name": "施法",
+			"ENG_name": "Spellcasting",
+			"source": "XPHB",
+			"page": 132,
 			"className": "游荡者",
-			"classSource": "TCE",
-			"subclassShortName": "魂刃",
-			"subclassSource": "TCE",
+			"classSource": "XPHB",
+			"subclassShortName": "诡术师",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"entries": [
+				"你已经学会了施放法术。请参见{@book 第七章|XPHB|7}了解施法规则。以下信息详细说明了作为奥术诡术师的你如何使用这些规则。",
+				{
+					"type": "entries",
+					"name": "戏法",
+					"ENG_name": "Cantrips",
+					"entries": [
+						"你知道三个戏法：{@spell 法师之手|XPHB}以及从{@filter 法师法术列表|spells|class=法师}中选择的另外两个戏法（见该职业部分的列表）。推荐选择{@spell 心灵之楔|XPHB}和{@spell 次级幻影|XPHB}。",
+						"每当你获得一个盗贼等级时，你可以用你选择的另一个法师戏法替换你的一个戏法，除了{@spell 法师之手|XPHB}。",
+						"当你达到盗贼等级10级时，你学会了另一个你选择的法师戏法。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "施法能力",
+					"ENG_name": "Spell Slots",
+					"entries": [
+						"奥术诡术师法术施展表显示你有多少法术位来施放你1级及以上的法术。当你完成一次{@variantrule 长休|XPHB}后，你恢复所有消耗的法术位。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "准备的1级及以上法术",
+					"ENG_name": "Prepared Spells of 1st+ Level",
+					"entries": [
+						"你准备这个特性可用的1环以上法术列表。首先，选择三个1环法师法术。推荐选择{@spell 魅惑人类|XPHB}、{@spell 易容术|XPHB}和{@spell 云雾术|XPHB}。",
+						"你的法术列表中的法术数量随着你获得盗贼等级而增加，如奥术诡术师法术施展表中的准备法术列所示。每当这个数量增加时，选择额外的法师法术，直到你的法术列表中的法术数量与奥术诡术师法术施展表中的数字相匹配。所选法术必须是你有法术位的等级。例如，如果你是一名7级盗贼，你的准备法术列表可以包括五个1级或2级的法师法术，以任何组合。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "改变你的准备法术",
+					"ENG_name": "Changing Your Prepared Spells",
+					"entries": [
+						"每当你获得一个盗贼等级时，你可以用另一个你有法术位的法师法术替换你的法术列表中的一个法术。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "施法属性",
+					"ENG_name": "Spellcasting Ability",
+					"entries": [
+						"智力是你施放巫师法术的能力值。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "法器",
+					"ENG_name": "Spellcasting Focus",
+					"entries": [
+						"你可以使用一个{@item 奥术法器|XPHB}作为你巫师法术的{@variantrule 法器|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"name": "诡术伏击",
+			"ENG_name": "Magical Ambush",
+			"source": "XPHB",
+			"page": 133,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "诡术师",
+			"subclassSource": "XPHB",
 			"level": 9,
 			"header": 2,
 			"entries": [
-				"以一个附赠动作，你塑造一把心灵之刃，消耗并投掷一枚灵能骰，将心灵之刃投掷到至多距离灵能骰结果数字十倍尺数的一处可见的未被占据的空间内。你传送到目标位置，同时那把心灵之刃将消失。"
+				"如果你在施放法术时处于{@condition 隐形|XPHB}状态，目标在同一回合内对该法术进行的任何豁免检定都会处于{@variantrule 劣势|XPHB}。"
+			]
+		},
+		{
+			"name": "万能诡术",
+			"ENG_name": "Versatile Trickster",
+			"source": "XPHB",
+			"page": 133,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "诡术师",
+			"subclassSource": "XPHB",
+			"level": 13,
+			"header": 2,
+			"entries": [
+				"你获得了使用你的{@spell 法师之手|XPHB}分散目标注意力的能力。当你对一个生物使用狡诈攻击的绊倒选项时，你也可以在5英尺范围内对另一个生物使用该选项。"
+			]
+		},
+		{
+			"name": "法术窃贼",
+			"ENG_name": "Spell Thief",
+			"source": "XPHB",
+			"page": 133,
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "诡术师",
+			"subclassSource": "XPHB",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"你获得了一种能力，可以神奇地从另一个施法者那里窃取施放法术的知识。",
+				"当一个生物施放一个针对你或将你包含在其作用范围内的法术后，你可以立即采取{@variantrule 反应|XPHB}动作，迫使该生物进行一次智力豁免检定。难度等级等于你的法术豁免DC。如果豁免失败，你将抵消该法术对你的效果，并且如果你可以施放该法术（至少1级，且为你可以施放的等级，它不必是非法师法术），你将窃取该法术的知识。在接下来的8小时内，你已准备好施放该法术。在8小时过去之前，该生物无法施放该法术。",
+				"一旦你使用这个特性窃取了一个法术，在你完成一次{@variantrule 长休|XPHB}之前，你不能再使用这个特性。"
 			]
 		},
 		{
@@ -4101,7 +4249,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"当你在战斗的第一轮中用偷袭攻击命中目标时，目标必须成功通过一次体质豁免检定（{@dc 8}加上你的敏捷修正和{@variantrule 熟练项|XPHB}），否则对该目标的攻击伤害加倍。"
+				"当你在战斗的第一轮使用偷袭攻击命中时，目标必须成功通过一次体质豁免检定（{@dc 8}加上你的敏捷修正值和 {@variantrule 熟练项|XPHB|熟练加值}），否则对该目标的伤害翻倍。"
 			]
 		},
 		{
@@ -4220,7 +4368,7 @@
 					"source": "XPHB"
 				},
 				"这把刃在击中或未击中目标后立即消失，如果它造成伤害，不会留下任何痕迹。",
-				"在你的回合使用心灵之刃攻击后，如果另一只手空闲可以创造它，你可以在同一回合作为{@variantrule 附赠动作|XPHB}进行一次近战或远程攻击，使用第二把心灵之刃。这次额外攻击的伤害骰是{@dice 1d4}而不是{@dice 1d6}。"
+				"在轮到你使用刀刃攻击后，如果另一只手空闲可以创造第二把灵能刀刃，你可以在同一回合作为{@variantrule 附赠动作|XPHB}进行近战或远程攻击。这个额外攻击的伤害骰子是{@damage 1d4}而不是{@damage 1d6}。"
 			]
 		},
 		{
@@ -4258,7 +4406,7 @@
 				"ENG_name": "Psionic Energy Die"
 			},
 			"entries": [
-				"你可以在你自己和其他人之间建立心灵感应通讯。作为一次{@action 魔法|XPHB}动作，选择你可以看到的一只或多只生物，数量最多等于你的{@variantrule 熟练项|XPHB}，然后投掷一个灵能骰。在等于投掷数字的小时数内，被选择的生物可以与你进行心灵感应对话，你也可以与他们进行心灵感应对话。发送或接收信息（无需动作），你和另一个生物必须在彼此1英里范围内。一个生物可以在任何时候结束心灵感应连接（无需动作）。"
+				"你可以建立自己与他人之间的心灵沟通。作为{@action 魔法|XPHB}动作，选择你能看到的一个或多个生物，最多等于你的{@variantrule 熟练项|XPHB|熟练加值}的生物数量，然后掷一个灵能骰。在掷出的点数所对应的小时数内，被选中的生物可以与你进行心灵对话，你也可以与他们进行心灵对话。发送或接收信息（无需动作），你和其他生物必须在彼此1英里范围内。生物可以随时结束心灵连接（无需动作）。"
 			]
 		},
 		{
@@ -4354,7 +4502,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"你可以扫过生物的心灵，使用你的心灵之刃。当你使用你的心灵之刃对生物造成偷袭伤害时，你可以迫使目标进行一次智慧豁免检定（{@dc 8}加上你的敏捷修正和{@variantrule 熟练项|XPHB}）。如果豁免失败，目标将处于{@condition 震慑|XPHB}状态，持续1分钟。处于{@condition 震慑|XPHB}状态的目标在其每个回合结束时重复进行豁免检定，成功则结束该效果。",
+				"你可以用心灵之刃扫过一个生物的心智。当你使用心灵之刃对一个生物造成偷袭伤害时，你可以强迫该目标进行一次智慧豁免检定（DC 8加上你的敏捷修正值和{@variantrule Proficiency|XPHB|熟练加值}）。如果豁免失败，目标将获得 {@condition Stunned|XPHB}（震慑）状态1分钟。处于 {@condition Stunned|XPHB}（震慑）状态的目标在每个回合结束时重复进行豁免检定，成功则解除效果。",
 				"一旦你使用了这个特性，在你完成一次{@variantrule 长休|XPHB}之前无法再次使用，除非你消耗三个灵能骰（无需动作）来恢复它的使用。"
 			]
 		},
@@ -4518,7 +4666,7 @@
 					"name": "卷轴",
 					"ENG_name": "Scrolls",
 					"entries": [
-						"你可以使用任何{@item 法术卷轴}，使用智力作为你的施法能力。如果法术是戏法或1环法术，你可以可靠地施放它。如果卷轴包含更高环的法术，你必须首先通过智力（{@skill 奥秘|XPHB}）检定（{@dc 10}加上法术的环数）。在成功检定的情况下，你从卷轴施放法术。在失败检定的情况下，卷轴会解体。"
+						"你可以使用任意{@item 法术卷轴|极限伤害}，以智力作为施法能力。如果该法术是戏法或1级法术，你可以可靠地施放它。如果卷轴包含更高等级的法术，你必须首先通过一次智力（{@skill 奥秘|XPHB}）检定（难度等级 {@dc 10} 加上法术的等级）。成功通过检定后，你从卷轴中施放该法术。失败则卷轴瓦解。"
 					]
 				}
 			]
@@ -4537,155 +4685,6 @@
 			"header": 2,
 			"entries": [
 				"你擅长设伏和迅速逃脱危险。在任何战斗的第一轮中，你可以进行两次行动。你第一次行动在你的正常{@variantrule 先攻|XPHB}时进行，第二次行动在你的{@variantrule 先攻|XPHB}减去10时进行。"
-			]
-		},
-		{
-			"name": "诡术师",
-			"ENG_name": "Arcane Trickster",
-			"source": "XPHB",
-			"page": 132,
-			"className": "游荡者",
-			"classSource": "XPHB",
-			"subclassShortName": "诡术士",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"entries": [
-				"{@i 使用奥术法术增强潜行}",
-				"一些盗贼通过法术增强他们精细的潜行和敏捷技能，学习魔法技巧来帮助他们的行当。一些奥术诡术师使用他们的天赋作为扒手和窃贼，而其他人则是恶作剧者。",
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "施法|游荡者|XPHB|诡术士|XPHB|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "法师之手诈术|游荡者|XPHB|诡术士|XPHB|3"
-				}
-			]
-		},
-		{
-			"name": "法师之手诈术",
-			"ENG_name": "Mage Hand Legerdemain",
-			"source": "XPHB",
-			"page": 133,
-			"className": "游荡者",
-			"classSource": "XPHB",
-			"subclassShortName": "诡术士",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"entries": [
-				"当你施放{@spell 法师之手|XPHB}时，你可以将其作为{@variantrule 附赠动作|XPHB}施放，并且你可以使幻影手{@condition 隐形|XPHB}。你可以作为{@variantrule 附赠动作|XPHB}控制这只手，并通过它进行敏捷（{@skill 巧手|XPHB}）检定。"
-			]
-		},
-		{
-			"name": "施法",
-			"ENG_name": "Spellcasting",
-			"source": "XPHB",
-			"page": 132,
-			"className": "游荡者",
-			"classSource": "XPHB",
-			"subclassShortName": "诡术士",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"entries": [
-				"你已经学会了施放法术。请参见{@book 第七章|XPHB|7}了解施法规则。以下信息详细说明了作为奥术诡术师的你如何使用这些规则。",
-				{
-					"type": "entries",
-					"name": "戏法",
-					"ENG_name": "Cantrips",
-					"entries": [
-						"你知道三个戏法：{@spell 法师之手|XPHB}以及从{@filter 法师法术列表|spells|class=法师}中选择的另外两个戏法（见该职业部分的列表）。推荐选择{@spell 心灵之楔|XPHB}和{@spell 次级幻影|XPHB}。",
-						"每当你获得一个盗贼等级时，你可以用你选择的另一个法师戏法替换你的一个戏法，除了{@spell 法师之手|XPHB}。",
-						"当你达到盗贼等级10级时，你学会了另一个你选择的法师戏法。"
-					]
-				},
-				{
-					"type": "entries",
-					"name": "施法能力",
-					"ENG_name": "Spell Slots",
-					"entries": [
-						"奥术诡术师法术施展表显示你有多少法术位来施放你1级及以上的法术。当你完成一次{@variantrule 长休|XPHB}后，你恢复所有消耗的法术位。"
-					]
-				},
-				{
-					"type": "entries",
-					"name": "准备的1级及以上法术",
-					"ENG_name": "Prepared Spells of 1st+ Level",
-					"entries": [
-						"你准备这个特性可用的1环以上法术列表。首先，选择三个1环法师法术。推荐选择{@spell 魅惑人类|XPHB}、{@spell 易容术|XPHB}和{@spell 云雾术|XPHB}。",
-						"你的法术列表中的法术数量随着你获得盗贼等级而增加，如奥术诡术师法术施展表中的准备法术列所示。每当这个数量增加时，选择额外的法师法术，直到你的法术列表中的法术数量与奥术诡术师法术施展表中的数字相匹配。所选法术必须是你有法术位的等级。例如，如果你是一名7级盗贼，你的准备法术列表可以包括五个1级或2级的法师法术，以任何组合。"
-					]
-				},
-				{
-					"type": "entries",
-					"name": "改变你的准备法术",
-					"ENG_name": "Changing Your Prepared Spells",
-					"entries": [
-						"每当你获得一个盗贼等级时，你可以用另一个你有法术位的法师法术替换你的法术列表中的一个法术。"
-					]
-				},
-				{
-					"type": "entries",
-					"name": "施法属性",
-					"ENG_name": "Spellcasting Ability",
-					"entries": [
-						"智力是你施放巫师法术的能力值。"
-					]
-				},
-				{
-					"type": "entries",
-					"name": "法器",
-					"ENG_name": "Spellcasting Focus",
-					"entries": [
-						"你可以使用一个{@item 奥术法器|XPHB}作为你巫师法术的{@variantrule 法器|XPHB}。"
-					]
-				}
-			]
-		},
-		{
-			"name": "诡术伏击",
-			"ENG_name": "Magical Ambush",
-			"source": "XPHB",
-			"page": 133,
-			"className": "游荡者",
-			"classSource": "XPHB",
-			"subclassShortName": "诡术士",
-			"subclassSource": "XPHB",
-			"level": 9,
-			"header": 2,
-			"entries": [
-				"如果你在施放法术时处于{@condition 隐形|XPHB}状态，目标在同一回合内对该法术进行的任何豁免检定都会处于{@variantrule 劣势|XPHB}。"
-			]
-		},
-		{
-			"name": "万能诡术",
-			"ENG_name": "Versatile Trickster",
-			"source": "XPHB",
-			"page": 133,
-			"className": "游荡者",
-			"classSource": "XPHB",
-			"subclassShortName": "诡术士",
-			"subclassSource": "XPHB",
-			"level": 13,
-			"header": 2,
-			"entries": [
-				"你获得了使用你的{@spell 法师之手|XPHB}分散目标注意力的能力。当你对一个生物使用狡诈攻击的绊倒选项时，你也可以在5英尺范围内对另一个生物使用该选项。"
-			]
-		},
-		{
-			"name": "法术窃贼",
-			"ENG_name": "Spell Thief",
-			"source": "XPHB",
-			"page": 133,
-			"className": "游荡者",
-			"classSource": "XPHB",
-			"subclassShortName": "诡术士",
-			"subclassSource": "XPHB",
-			"level": 17,
-			"header": 2,
-			"entries": [
-				"你获得了一种能力，可以神奇地从另一个施法者那里窃取施放法术的知识。",
-				"当一个生物施放一个针对你或将你包含在其作用范围内的法术后，你可以立即采取{@variantrule 反应|XPHB}动作，迫使该生物进行一次智力豁免检定。难度等级等于你的法术豁免DC。如果豁免失败，你将抵消该法术对你的效果，并且如果你可以施放该法术（至少1级，且为你可以施放的等级，它不必是非法师法术），你将窃取该法术的知识。在接下来的8小时内，你已准备好施放该法术。在8小时过去之前，该生物无法施放该法术。",
-				"一旦你使用这个特性窃取了一个法术，在你完成一次{@variantrule 长休|XPHB}之前，你不能再使用这个特性。"
 			]
 		}
 	]

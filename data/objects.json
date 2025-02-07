@@ -6,7 +6,7 @@
 			"source": "DMG",
 			"page": 255,
 			"reprintedAs": [
-				"Ballista|XDMG"
+				"弩炮|极限伤害"
 			],
 			"size": [
 				"L"
@@ -40,7 +40,33 @@
 					]
 				}
 			],
-			"tokenCredit": "warmtail",
+			"tokenCredit": "温尾",
+			"hasToken": true
+		},
+		{
+			"name": "弩炮",
+			"ENG_name": "Ballista",
+			"source": "XDMG",
+			"page": 96,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 50,
+			"entries": [
+				"弩车是一种发射重型箭矢的大型弩。装填弩车需要执行{@action 利用|XPHB}动作，瞄准它需要另一个{@action 利用|XPHB}动作。然后一个船员可以采取弩车箭行动。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "弩箭 (需要装填和瞄准)",
+					"ENG_name": "Ballista Bolt (Requires Load and Aim)",
+					"entries": [
+						"{@atkr r} {@hit 6}, 射程120/480英尺。 {@h}16 ({@damage 3d10}) 穿刺伤害。"
+					]
+				}
+			],
 			"hasToken": true
 		},
 		{
@@ -67,7 +93,7 @@
 					"name": "喷火",
 					"ENG_name": "Flames",
 					"entries": [
-						"锅炉铁龙向60尺锥形的范围内喷火。该区域内的每个生物都必须进行一个{@dc 15}的敏捷豁免，豁免失败则会受到27（{@dice 5d10}）的火焰伤害，豁免成功则伤害减半。"
+						"锅炉龙吐息一道火焰，形成60英尺的锥形区域。该区域内的每个生物都必须进行一次DC15的敏捷豁免检定，失败则受到27（{@damage 5d10}）点火焰伤害，成功则受到一半伤害。"
 					]
 				},
 				{
@@ -75,7 +101,7 @@
 					"name": "爆炸",
 					"ENG_name": "Explosion",
 					"entries": [
-						"锅炉铁龙向60尺锥形的范围内喷火。该区域内的每个生物都必须进行一个{@dc 15}的敏捷豁免，豁免失败则会受到27（{@dice 5d10}）的火焰伤害，豁免成功则伤害减半。"
+						"锅炉龙爆炸，形成一个半径30英尺的球体并被摧毁。该区域内的每个生物都必须进行一次DC 15的敏捷豁免检定，失败则受到27（{@damage 5d10}）点火焰伤害，成功则受到一半伤害。"
 					]
 				}
 			],
@@ -88,7 +114,7 @@
 			"source": "DMG",
 			"page": 255,
 			"reprintedAs": [
-				"Cannon|XDMG"
+				"火炮|极限伤害"
 			],
 			"size": [
 				"L"
@@ -123,7 +149,33 @@
 					]
 				}
 			],
-			"tokenCredit": "Hitokiri",
+			"tokenCredit": "人斩",
+			"hasToken": true
+		},
+		{
+			"name": "火炮",
+			"ENG_name": "Cannon",
+			"source": "XDMG",
+			"page": 96,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 19,
+			"hp": 75,
+			"entries": [
+				"大炮使用火药或奥术力量以破坏性的速度发射重铁球。大炮通常安装在带有轮子的木制框架上。装填大炮需要{@action 利用|XPHB}动作，瞄准它需要另一个{@action 利用|XPHB}动作。然后一名船员可以采取炮击动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "加农炮弹（需要装填和瞄准）",
+					"ENG_name": "Cannonball (Requires Load and Aim)",
+					"entries": [
+						"攻击加值 +{@atkr r} 命中加值 +{@hit 6}, 射程 600/2,400 英尺。 {@h}44 ({@damage 8d10}) 钝器伤害。"
+					]
+				}
+			],
 			"hasToken": true
 		},
 		{
@@ -228,7 +280,8 @@
 				}
 			],
 			"token": {
-				"name": "Eldritch Cannon",
+				"name": "魔能炮台",
+				"ENG_name": "Eldritch Cannon",
 				"source": "TCE"
 			},
 			"hasFluffImages": true
@@ -288,7 +341,8 @@
 				}
 			],
 			"token": {
-				"name": "Eldritch Cannon",
+				"name": "魔能炮台",
+				"ENG_name": "Eldritch Cannon",
 				"source": "TCE"
 			},
 			"hasFluffImages": true
@@ -348,10 +402,40 @@
 				}
 			],
 			"token": {
-				"name": "Eldritch Cannon",
+				"name": "魔能炮台",
+				"ENG_name": "Eldritch Cannon",
 				"source": "TCE"
 			},
 			"hasFluffImages": true
+		},
+		{
+			"name": "火焰喷射教练",
+			"ENG_name": "Flamethrower Coach",
+			"source": "XDMG",
+			"page": 96,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 19,
+			"hp": 100,
+			"entries": [
+				"由魔法驱动，这辆铁制马车顶部装有火焰喷射塔。",
+				"这辆马车可以容纳多达两个中型生物。车底的铁制舱口可以打开进入。马车的前部、侧面和后部有狭窄的缝隙，让车内的人可以看到外面。车内的生物对来自车外的攻击和其他效果享有{@table 掩护|XPHB|四分之三掩护}的防护。",
+				"这辆马车是为两名乘员设计的：一名驾驶员和一名炮手。驾驶员可以执行{@action 利用|XPHB}动作来移动并转向马车，该车速度为30英尺，使用内部的杠杆和踏板进行操作。炮手可以使用火焰喷射器动作来进行瞄准和开火。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "投火机",
+					"ENG_name": "Flamethrower",
+					"entries": [
+						"{@actSave dex} {@dc 15}, 在一条长60英尺、宽5英尺的 {@variantrule 线 [区域效果]|XPHB|线状} 中，每个生物。 {@actSaveFail} 受到14点（{@damage 4d6}) 火焰伤害，并且开始着火。 {@actSaveSuccess} 仅受一半伤害。"
+					]
+				}
+			],
+			"tokenCredit": "鲁恩·曼宁",
+			"hasToken": true
 		},
 		{
 			"name": "通用对象",
@@ -531,7 +615,7 @@
 					"ENG_name": "Fling Personnel",
 					"entries": [
 						"侏儒投石机将一个中等大小或更小的生物以至少60尺的水平距离弹射出去，最大水平距离取决于投石机瞄准时选择的选项，可以是60尺、150尺或300尺。在这一轨迹中，生物总是达到60尺的垂直高度。",
-						"在这段轨迹中，如果生物与另一个生物或物体发生碰撞，则每远离侏儒投手10尺，它将承受3 ({@dice 1d6}) 点钝击伤害。"
+						"在这条轨迹上，与另一个生物或物体碰撞的生物每远离侏儒投掷者10英尺，就会受到3 ({@damage 1d6})的钝击伤害。"
 					]
 				}
 			],
@@ -642,7 +726,61 @@
 					]
 				}
 			],
-			"tokenCredit": "Unfor art",
+			"tokenCredit": "不适用于艺术",
+			"hasToken": true
+		},
+		{
+			"name": "酒桶发射器",
+			"ENG_name": "Keg Launcher",
+			"source": "XDMG",
+			"page": 96,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 30,
+			"entries": [
+				"后置式木制投石机投掷装有有毒气体的小桶。装载毒气桶需要使用 {@action 利用|XPHB} 动作，瞄准它需要另一个 {@action 利用|XPHB} 动作。然后船员可以执行投掷毒气桶动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "毒性桶（需要装填和瞄准）",
+					"ENG_name": "Toxic Keg (Requires Load and Aim)",
+					"entries": [
+						"进行一次{@actSave con}检定，难度等级为{@dc 15}。以发射器为中心，30至300英尺范围内每个生物都必须进行此检定。 {@actSaveFail} 失败则受到14点（{@damage 4d6}）毒伤害。 {@actSaveSuccess} 成功则伤害减半。"
+					]
+				}
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "闪电加农炮",
+			"ENG_name": "Lightning Cannon",
+			"source": "XDMG",
+			"page": 96,
+			"size": [
+				"M"
+			],
+			"objectType": "SW",
+			"ac": 19,
+			"hp": 30,
+			"entries": [
+				"闪电炮是一种小型的青铜大炮，镶嵌有神秘的符文，并安装在一个沉重的三脚架上。它能发射噼啪作响的电球。瞄准闪电炮需要使用{@action 利用|XPHB}动作，然后一名船员可以执行闪电球动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "闪电球（需要瞄准）",
+					"ENG_name": "Lightning Ball (Requires Aim)",
+					"entries": [
+						"{@atkr r} {@hit 6}, 射程300/1,200英尺。 {@h}22 ({@damage 4d10}) 雷电伤害。"
+					]
+				}
+			],
+			"tokenCredit": "游戏工坊",
 			"hasToken": true
 		},
 		{
@@ -651,7 +789,7 @@
 			"source": "DMG",
 			"page": 255,
 			"reprintedAs": [
-				"Mangonel|XDMG"
+				"弹射投石机|极限伤害"
 			],
 			"size": [
 				"L"
@@ -689,12 +827,39 @@
 			"hasToken": true
 		},
 		{
+			"name": "弹射投石机",
+			"ENG_name": "Mangonel",
+			"source": "XDMG",
+			"page": 97,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 100,
+			"entries": [
+				"投石车是一种弹射器，可以将重型抛射物以高弧度投掷出去，因此可以击中墙后的目标。装填投石车需要两个{@action 利用|XPHB}动作，瞄准它还需要另外两个{@action 利用|XPHB}动作。然后一名船员可以执行投石车操作动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "投石机石块（需要装填和瞄准）",
+					"ENG_name": "Mangonel Stone (Requires Load and Aim)",
+					"entries": [
+						"攻击：{@atkr r} 命中：{@hit 5}, 射程：200/800英尺。（无法攻击距离自身60英尺内的目标）。 {@h}27（{@damage 5d10}）钝击伤害。"
+					]
+				}
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "攻城槌",
 			"ENG_name": "Ram",
 			"source": "DMG",
 			"page": 255,
 			"reprintedAs": [
-				"Ram|XDMG"
+				"攻城槌|极限伤害"
 			],
 			"size": [
 				"L"
@@ -730,7 +895,34 @@
 					]
 				}
 			],
-			"tokenCredit": "WTactics",
+			"tokenCredit": "战术",
+			"hasToken": true
+		},
+		{
+			"name": "攻城槌",
+			"ENG_name": "Ram",
+			"source": "XDMG",
+			"page": 97,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 100,
+			"entries": [
+				"攻城槌由一个可移动的走道组成，上面悬挂着一根用链条吊起的重木。这根木头包裹在铁中，用于撞击门和路障。放置攻城槌需要三个{@action 利用|XPHB}动作。然后一名队员可以使用攻城槌动作。",
+				"画廊屋顶为操作者提供{@table 掩护|XPHB|全身掩护}来抵御来自上方的攻击和其他效果。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "冲撞（需要定位）",
+					"ENG_name": "Ram (Requires Position)",
+					"entries": [
+						"{@atkr m} {@hit 8}, 触及范围 5 英尺. {@h 16} ({@h 3d10}) 钝击h。"
+					]
+				}
+			],
 			"hasToken": true
 		},
 		{
@@ -739,7 +931,7 @@
 			"source": "DMG",
 			"page": 256,
 			"reprintedAs": [
-				"Siege Tower|XDMG"
+				"攻城塔|极限伤害"
 			],
 			"size": [
 				"G"
@@ -754,7 +946,23 @@
 			"entries": [
 				"攻城塔是一种带有梁架和墙壁上板条的移动式木制结构。大型木轮或滚轮允许士兵或负重兽推拉塔前进。中号或更小的生物可以使用攻城塔到达高达40英尺的城墙顶部。塔内的生物对塔外的攻击具有{@quickref 掩护||3||全身掩护}。"
 			],
-			"tokenCredit": "Roman Topchiy",
+			"tokenCredit": "罗曼·托奇",
+			"hasToken": true
+		},
+		{
+			"name": "攻城塔",
+			"ENG_name": "Siege Tower",
+			"source": "XDMG",
+			"page": 97,
+			"size": [
+				"G"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 200,
+			"entries": [
+				"攻城塔是一种可移动的木质结构，带有梁架和墙板上的木板条。大型木轮或滚轮使塔可以被士兵或负重动物推动或拉动。中等或更小的生物可以使用攻城塔到达高达40英尺高的墙顶。塔内的生物对来自外部的攻击和其他效果拥有{@table 掩护|XPHB|全身掩护}。"
+			],
 			"hasToken": true
 		},
 		{
@@ -789,7 +997,7 @@
 			"source": "DMG",
 			"page": 255,
 			"reprintedAs": [
-				"Suspended Cauldron|XDMG"
+				"吊挂大锅|极限伤害"
 			],
 			"size": [
 				"L"
@@ -811,11 +1019,38 @@
 					"name": "沸腾的油",
 					"ENG_name": "Boiling Oil",
 					"entries": [
-						"坩埚在它正下方的10尺平方区域内倾泻滚烫的油。区域内的任何生物必须进行一次DC 15的敏捷豁免检定，失败时受到10（{@damage 3d6}）火焰伤害，成功则只受到一半的伤害。"
+						"大锅将滚烫的油倾倒到其下方10英尺见方的区域。区域内的任何生物都必须进行一次DC 15的敏捷豁免检定，失败则承受10点（3d6）火焰伤害，成功则承受一半伤害。"
 					]
 				}
 			],
 			"tokenCredit": "Funcom",
+			"hasToken": true
+		},
+		{
+			"name": "吊挂大锅",
+			"ENG_name": "Suspended Cauldron",
+			"source": "XDMG",
+			"page": 97,
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 19,
+			"hp": 20,
+			"entries": [
+				"一个铁锅被悬挂起来，可以轻易倾斜，倒出其内容。一旦清空，大锅必须在再次使用前重新装满。填满大锅需要三个{@action 利用|XPHB}动作。然后，一名船员可以采取倾倒动作。",
+				"大锅通常装满沸腾的油，但也可以填充其他物质，如酸或{@hazard 绿软泥|极限伤害}（参见\"{@book 危害|极限伤害|2|危害}\"），具有不同的效果。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "溢出（需要一个满锅）",
+					"ENG_name": "Spill (Requires a Full Cauldron)",
+					"entries": [
+						"{@actSave dex} {@dc 15}, 在锅直接下方的10英尺正方形区域内的每个生物。 {@actSaveFail} 受到10点（{@damage 3d6}）火焰伤害。 {@actSaveSuccess} 伤害减半。"
+					]
+				}
+			],
 			"hasToken": true
 		},
 		{
@@ -839,7 +1074,8 @@
 			"immune": [
 				"毒素",
 				"心灵"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "配重投石机",
@@ -847,7 +1083,7 @@
 			"source": "DMG",
 			"page": 256,
 			"reprintedAs": [
-				"Trebuchet|XDMG"
+				"配重投石机|极限伤害"
 			],
 			"size": [
 				"H"
@@ -883,7 +1119,33 @@
 					]
 				}
 			],
-			"tokenCredit": "Roman Topchiy",
+			"tokenCredit": "罗曼·托奇",
+			"hasToken": true
+		},
+		{
+			"name": "配重投石机",
+			"ENG_name": "Trebuchet",
+			"source": "XDMG",
+			"page": 97,
+			"size": [
+				"H"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 150,
+			"entries": [
+				"投石机是一种弹射器，可以将其有效载荷以高弧线投掷，以便击中墙后的目标。装填投石机需要两个{@action 利用|XPHB}动作，瞄准它需要另外两个{@action 利用|XPHB}动作。然后一名船员可以执行投石机石块动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "投石车（需要装载和瞄准）",
+					"ENG_name": "Trebuchet Stone (Requires Load and Aim)",
+					"entries": [
+						"{@atkr r} {@hit 5}, 射程300/1,200英尺。(无法攻击距离自身60英尺内的目标)。 {@h}44 ({@damage 8d10}) 钝击伤害。"
+					]
+				}
+			],
 			"hasToken": true
 		},
 		{

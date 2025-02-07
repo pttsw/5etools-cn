@@ -562,11 +562,9 @@
 			],
 			"additionalSpells": [
 				{
-					"name": "荒野伙伴",
-					"ENG_name": "Wild Companion",
 					"prepared": {
 						"1": [
-							"speak with animals|xphb"
+							"动物交谈|xphb"
 						],
 						"2": [
 							"寻获魔宠|xphb"
@@ -2045,7 +2043,7 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"你习得{@language 德鲁伊语}即一种德鲁伊间的秘密语言。可以使用这种语言进行交流，并用它来留下隐藏的信息。懂得这门语言的人（包括你自己）会自动注意到此信息，而不懂此语言的人通过一次DC15的感知（{@skill 察觉}）检定后可以注意到其存在，不过不能用非魔法手段读懂。"
+				"你知道德鲁伊语，这是德鲁伊的秘密语言。你可以说这种语言，并使用它留下隐藏信息。你和其他知道这种语言的人可以自动发现这样的信息。其他人通过成功的15点智慧（感知）检定来发现信息的提示，但没有魔法就无法破译。"
 			]
 		},
 		{
@@ -2638,7 +2636,7 @@
 											"name": "游戏数据",
 											"ENG_name": "Game Statistics",
 											"entries": [
-												"你的游戏数据被野兽的数据卡所替换，但你保留你的生物类型，{@variantrule 生命值|XPHB}，{@variantrule 生命值骰|XPHB}，智力，感知和魅力值；职业特性；语言和专长。你同样保留你的技能和豁免熟练，并且在这些项目中使用你自己的{@variantrule 熟练项|XPHB}加值。如果变形的野兽在资料卡上的技能或豁免检定的调整值高于你的，使用资料卡的调整值。"
+												"你的游戏统计被野兽的统计方块所替代，但你保留你的生物类型；命中点数|XPHB；生命骰子|XPHB；智力、智慧和魅力分数；职业特性；语言；以及专长。你还保留你的技能和豁免熟练度，并使用你的熟练加值|XPHB|熟练加成，此外还获得该生物的熟练度。如果野兽统计方块中的某个技能或豁免修正高于你的，则使用统计方块中的那一个。"
 											]
 										},
 										{
@@ -2821,7 +2819,7 @@
 							"name": "原初打击",
 							"ENG_name": "Primal Strike",
 							"entries": [
-								"原力蛮击的额外伤害提升到{@dice 2d8}。"
+								"你的原始打击额外伤害增加到{@damage 2d8}。"
 							]
 						}
 					]
@@ -3539,7 +3537,7 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"从2级开始，你被无形的、死灵的孢子环绕着。它们是无害的，除非你把它们释放到附近的生物上。当一个生物进入你周围10尺范围内的一处空间时、或在其中开始其回合时，你可以使用反应来激发孢子环绕特性。迫使对方进行一次对抗你法术豁免DC的体质豁免，豁免失败将受到{@damage 1d4}点黯蚀伤害。这一黯蚀伤害在6级时将提高到{@dice 1d6}，在10级时将提高到 {@dice 1d8}，在14级时提高到 {@dice 1d10}。"
+				"从2级开始，你被看不见的坏死孢子包围，这些孢子在你释放它们攻击附近的生物之前是无害的。当你能看到的生物移动到你10英尺内的空格中或在那里开始其回合时，你可以使用你的反应对该生物造成{@damage 1d4}点坏死伤害，除非它在对抗你的法术难度等级（DC）时成功通过体质豁免检定。在6级时，坏死伤害增加到{@damage 1d6}；在10级时，增加到{@damage 1d8}；在14级时，增加到{@damage 1d10}。"
 			]
 		},
 		{
@@ -3750,29 +3748,62 @@
 				"当处于星耀形态时，你保留你的游戏数据，但你的身体变得明亮；你的关节星光熠熠并有如星图一般由亮线连接。这一形态散发出10尺半径的明亮光照以及其外10尺的昏暗光照。这一形态持续10分钟。如果你解除它（无需动作）、{@condition 失能}、死亡、或再次使用此特性，它就会提前结束。",
 				"每当你化身星耀形态时，你选择以下在你身上闪耀的星座旨意；你的选择将为你在形态中提供特定的增益：",
 				{
-					"type": "entries",
-					"name": "弓箭手",
-					"ENG_name": "Archer",
-					"entries": [
-						"一个弓箭射手的星座于你身上浮现。当你激活这个形态时，你可以进行一次远程法术攻击，对你60尺内的一个生物射出一发光箭。命中时，此攻击将造成等同于{@dice 1d8}+你的感知调整值点的光耀伤害。你也可以在它结束前的后续回合中以一个附赠动作再次进行这一攻击。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "弓箭手|德鲁伊||星辰|TCE|2"
 				},
 				{
-					"type": "entries",
-					"name": "圣杯座",
-					"ENG_name": "Chalice",
-					"entries": [
-						"一个予命圣杯的星座于你身上浮现。当你消耗法术位施展法术时，你或你周围30尺内的另一生物可以恢复等同于 {@dice 1d8}+你的感知调整值 点的生命值。那个法术必须是能为生物恢复生命值的法术。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "圣杯座|德鲁伊||星辰|TCE|2"
 				},
 				{
-					"type": "entries",
-					"name": "龙",
-					"ENG_name": "Dragon",
-					"entries": [
-						"一个智慧巨龙的星座于你身上浮现。当你进行一次智力或感知检定，或是进行一次体质豁免来维持法术{@status 专注}时，你可以将{@dice d20} 中9或以下的骰值视为10。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "龙|德鲁伊||星辰|TCE|2"
 				}
+			]
+		},
+		{
+			"name": "弓箭手",
+			"ENG_name": "Archer",
+			"source": "TCE",
+			"page": 38,
+			"className": "德鲁伊",
+			"classSource": "PHB",
+			"subclassShortName": "星辰",
+			"subclassSource": "TCE",
+			"level": 2,
+			"header": 2,
+			"entries": [
+				"你身上浮现出一个射手的星座。当你激活这个形态时，以及在它持续期间的后续回合中作为奖励动作，你可以进行一次远程法术攻击，投掷一支发光的箭矢，目标为距离你60英尺内的一个生物。命中时，该攻击造成等同于{@damage 1d8}加上你的智慧修正的光耀伤害。"
+			]
+		},
+		{
+			"name": "圣杯座",
+			"ENG_name": "Chalice",
+			"source": "TCE",
+			"page": 38,
+			"className": "德鲁伊",
+			"classSource": "PHB",
+			"subclassShortName": "星辰",
+			"subclassSource": "TCE",
+			"level": 2,
+			"header": 2,
+			"entries": [
+				"一个予命圣杯的星座于你身上浮现。当你消耗法术位施展法术时，你或你周围30尺内的另一生物可以恢复等同于 {@dice 1d8}+你的感知调整值 点的生命值。那个法术必须是能为生物恢复生命值的法术。"
+			]
+		},
+		{
+			"name": "龙",
+			"ENG_name": "Dragon",
+			"source": "TCE",
+			"page": 38,
+			"className": "德鲁伊",
+			"classSource": "PHB",
+			"subclassShortName": "星辰",
+			"subclassSource": "TCE",
+			"level": 2,
+			"header": 2,
+			"entries": [
+				"一个智慧巨龙的星座于你身上浮现。当你进行一次智力或感知检定，或是进行一次体质豁免来维持法术{@status 专注}时，你可以将{@dice d20} 中9或以下的骰值视为10。"
 			]
 		},
 		{
@@ -3823,7 +3854,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 10级星辰结社特性}",
-				"你的星耀形态星座增强了。射手座和圣杯座中的{@dice 1d8}都变成了{@dice 2d8}，而在巨龙座激活期间，你将获得20尺的飞行速度，并且可以悬浮。",
+				"你星形形态的星座得到改善。弓箭手和圣杯的{@damage 1d8}变为{@damage 2d8}，当龙处于激活状态时，你拥有20英尺的飞行速度并可以悬停。",
 				"不止如此，每个你的回合开始时，若此时你处于在星耀形态下，你可以更改当前身上闪耀的星座。"
 			]
 		},
@@ -5283,29 +5314,62 @@
 				"当处于星耀形态时，你保留你的游戏数据，但你的身体变得明亮；你的关节星光熠熠并有如星图一般由亮线连接。这一形态散发出10尺半径的{@variantrule 明亮光照|XPHB}以及其外10尺的{@variantrule 微光光照|XPHB}。这一形态持续10分钟。如果你解除它（无需动作）、{@condition 失能|XPHB}、死亡、或再次使用此特性，它就会提前结束。",
 				"每当你化身星耀形态时，你选择以下在星座之一在你身上亮起；你的选择将为你在形态中提供特定的增益：",
 				{
-					"type": "entries",
-					"name": "弓箭手",
-					"ENG_name": "Archer",
-					"entries": [
-						"一个弓箭射手的星座于你身上浮现。当你激活这个形态时和在形态持续的后续回合中以一个{@variantrule 附赠动作|XPHB}，你可以进行一次远程法术攻击，对你60尺内的一个生物射出一发光箭。命中时，此攻击将造成等同于{@dice 1d8}+你的感知调整值点的光耀伤害。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "弓箭手|德鲁伊|XPHB|星辰|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "圣杯座",
-					"ENG_name": "Chalice",
-					"entries": [
-						"一个予命圣杯的星座于你身上浮现。当你消耗法术位施展一个为生物恢复{@variantrule 生命值|XPHB}的法术时，你或你周围30尺内的另一生物可以恢复的{@variantrule 生命值|XPHB}等同于 {@dice 1d8}+你的感知调整值。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "圣杯座|德鲁伊|XPHB|星辰|XPHB|3"
 				},
 				{
-					"type": "entries",
-					"name": "龙",
-					"ENG_name": "Dragon",
-					"entries": [
-						"一个智慧巨龙的星座于你身上浮现。当你进行一次智力或感知检定，或是进行一次体质豁免来维持法术{@status 专注|XPHB}时，你可以将{@dice d20} 中9或以下的骰值视为10。"
-					]
+					"type": "refSubclassFeature",
+					"subclassFeature": "龙|德鲁伊|XPHB|星辰|XPHB|3"
 				}
+			]
+		},
+		{
+			"name": "弓箭手",
+			"ENG_name": "Archer",
+			"source": "XPHB",
+			"page": 88,
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"subclassShortName": "星辰",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"一道射手座的星辰在你身上显现。当你激活这种形态，并在其持续期间作为你后续回合的{@variantrule 附赠动作|XPHB}，你可以进行一次远程法术攻击，射出一支发光的箭矢，目标是距离你60英尺内的一名生物。命中时，该攻击造成等同于{@damage 1d8}加上你的智慧修正值的光耀伤害。"
+			]
+		},
+		{
+			"name": "圣杯座",
+			"ENG_name": "Chalice",
+			"source": "XPHB",
+			"page": 88,
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"subclassShortName": "星辰",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"一个予命圣杯的星座于你身上浮现。当你消耗法术位施展一个为生物恢复{@variantrule 生命值|XPHB}的法术时，你或你周围30尺内的另一生物可以恢复的{@variantrule 生命值|XPHB}等同于 {@dice 1d8}+你的感知调整值。"
+			]
+		},
+		{
+			"name": "龙",
+			"ENG_name": "Dragon",
+			"source": "XPHB",
+			"page": 88,
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"subclassShortName": "星辰",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"一个智慧巨龙的星座于你身上浮现。当你进行一次智力或感知检定，或是进行一次体质豁免来维持法术{@status 专注|XPHB}时，你可以将{@dice d20} 中9或以下的骰值视为10。"
 			]
 		},
 		{
@@ -5358,7 +5422,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"你的星耀形态星座增强了。射手座和圣杯座中的{@dice 1d8}都变成了{@dice 2d8}，而在巨龙座激活期间，你将获得20尺的{@variantrule 飞行速度|XPHB}，并且可以悬浮。",
+				"你的星形形态星座得到提升。射手座和圣杯的{@damage 1d8}变为{@damage 2d8}，并且在巨龙活跃时，你拥有20英尺的{@variantrule 飞行速度|XPHB}并且可以悬停。",
 				"不止如此，每个你的回合开始时，若此时你处于在星耀形态下，你可以更改当前身上闪耀的星座。"
 			]
 		},
