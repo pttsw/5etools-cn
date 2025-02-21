@@ -54,7 +54,7 @@ function cleanBestiaryFluffImages () {
 				if(mon.hasToken) {
 					const tokenUrl = getTokenUrl(mon, mon.ENG_name, 'bestiary/tokens')
 					const symlinkUrl = getTokenUrl(mon, mon.name, 'bestiary/tokens');
-					if (fs.existsSync(tokenUrl)) {
+					if (fs.existsSync(tokenUrl) && tokenUrl !== symlinkUrl) {
 						if (fs.existsSync(symlinkUrl)) {
 							fs.rmSync(symlinkUrl)
 						}
