@@ -1,3 +1,5 @@
+import {OmnisearchBacking} from "../../omnisearch/omnisearch-backing.js";
+
 class _MonstersToLoad {
 	constructor (
 		{
@@ -234,8 +236,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 		const {$modalInner, doClose, pGetResolved} = UiUtil.getShowModal();
 		rdState.cbDoClose = doClose;
 
-		const $iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="Search...">`)
-			.blurOnEsc();
+		const $iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="Search...">`);
 
 		$$`<div class="split no-shrink">
 			${$iptSearch}
@@ -273,7 +274,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 			const searchTerm = $iptSearch.val().trim();
 
 			const index = this._board.availContent["Creature"];
-			const results = await Omnisearch.pGetFilteredResults(
+			const results = await OmnisearchBacking.pGetFilteredResults(
 				index.search(searchTerm, {
 					fields: {
 						n: {boost: 5, expand: true},
