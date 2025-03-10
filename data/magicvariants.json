@@ -52,6 +52,10 @@
 				}
 			],
 			"ammo": true,
+			"entries": [
+				"You have a +1 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.",
+				"This ammunition is typically found or sold in quantities of ten or twenty pieces. Ten pieces of this ammunition are equivalent in value to a potion of the same rarity {@note ({@table Magic Item Values by Rarity; Magic Item Rarities and Values|XDMG|200 GP})}."
+			],
 			"inherits": {
 				"namePrefix": "+1 ",
 				"source": "XDMG",
@@ -317,6 +321,10 @@
 				}
 			],
 			"ammo": true,
+			"entries": [
+				"You have a +2 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.",
+				"This ammunition is typically found or sold in quantities of ten or twenty pieces. Ten pieces of this ammunition are equivalent in value to a potion of the same rarity {@note ({@table Magic Item Values by Rarity; Magic Item Rarities and Values|XDMG|2,000 GP})}."
+			],
 			"inherits": {
 				"namePrefix": "+2 ",
 				"source": "XDMG",
@@ -582,6 +590,10 @@
 				}
 			],
 			"ammo": true,
+			"entries": [
+				"You have a +3 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.",
+				"This ammunition is typically found or sold in quantities of ten or twenty pieces. Ten pieces of this ammunition are equivalent in value to a potion of the same rarity {@note ({@table Magic Item Values by Rarity; Magic Item Rarities and Values|XDMG|20,000 GP})}."
+			],
 			"inherits": {
 				"namePrefix": "+3 ",
 				"source": "XDMG",
@@ -3322,6 +3334,11 @@
 				"source": "XDMG",
 				"page": 257,
 				"freeRules2024": true,
+				"otherSources": [
+					{
+						"source": "UtHftLH"
+					}
+				],
 				"rarity": "very rare",
 				"reqAttune": true,
 				"bonusWeapon": "+1",
@@ -3351,6 +3368,12 @@
 						"entries": [
 							"附魔（戏法）"
 						]
+					}
+				],
+				"light": [
+					{
+						"bright": 20,
+						"dim": 40
 					}
 				],
 				"lootTables": [
@@ -3997,6 +4020,12 @@
 				"entries": [
 					"你可以使用一个附赠动作来说出这把魔法剑的口令，使火焰从剑刃上爆发出来。这些火焰在40尺半径内散发出明亮的光芒，并在额外的40尺内散发出微光。当剑上燃烧时，它对任何被击中的敌人额外造成{@damage 2d6}火焰伤害。火焰持续到你再次使用附赠动作说出口令，或者直到你放下或收起剑。"
 				],
+				"light": [
+					{
+						"bright": 40,
+						"dim": 80
+					}
+				],
 				"lootTables": [
 					"魔法物品表G"
 				]
@@ -4021,6 +4050,12 @@
 				"reqAttune": true,
 				"entries": [
 					"当你用它击中一个巨人时，该巨人会额外受到{@damage 2d6}点武器类型的伤害，并且必须成功通过一次{@dc 15}力量豁免检定，否则将陷入{@condition prone}状态。就这种武器而言，\"巨人\"指的是任何具有巨人类型的生物，包括食人魔和巨怪。"
+				],
+				"light": [
+					{
+						"bright": 40,
+						"dim": 80
+					}
 				],
 				"lootTables": [
 					"奥术 - 极罕见|XDMG"
@@ -4122,6 +4157,12 @@
 					"在冰冻的温度下，剑刃在10尺半径内散发明亮的光线，并在额外的10尺内散发微光。",
 					"当你拔出这件武器时，你可以熄灭你周围30尺内的所有非魔法火焰。这个特性每小时最多只能使用一次。"
 				],
+				"light": [
+					{
+						"bright": 10,
+						"dim": 20
+					}
+				],
 				"lootTables": [
 					"魔法物品表H"
 				]
@@ -4175,6 +4216,12 @@
 					"当你拔出这把这件盔甲在每天黎明时恢复{@dice 1d3}点已消耗的充能。",
 					"在随着时间的流逝，其中一些武器已经从世界上消失，它们的魔力随着家族血脉的灭绝而丧失。冰点以下的低温中，该武器会在10另一些则在伟大的探险中与持有者一同消失。因此，这些武器中只有少数仍然存在。",
 					"在精灵创造的所有魔法物品中，最受珍视和严密守护的是月刃。在古代，几乎所有的精灵贵族家族都声称拥有这样一件武器。几个世纪以来，这些武器中的一些已经从世界上消失了，它们的魔法随着家族血脉的灭绝而消失。其他的则随着它们的主人在伟大的探险中一同消逝。因此，只有少数这样的武器仍然存在。"
+				],
+				"light": [
+					{
+						"bright": 10,
+						"dim": 20
+					}
 				],
 				"lootTables": [
 					"武器 - 非常成功通过豁免检定的生物只会在书页上显示为一个问号，并且对进一步的评估免疫。|XDMG"
@@ -5356,6 +5403,12 @@
 				"rarity": "common",
 				"entries": [
 					"在《黑暗与光明》变体规则中，这把武器的未入鞘刀刃散发出月光，在15英尺半径内产生 {@variantrule 明亮光线|XPHB}，并在额外15英尺范围内产生 {@variantrule 昏暗光线|XPHB}。"
+				],
+				"light": [
+					{
+						"bright": 15,
+						"dim": 30
+					}
 				],
 				"lootTables": [
 					"军备 - 常见|XDMG",
@@ -6674,6 +6727,12 @@
 					"当你用这件武器攻击一个生物并且在攻击骰上掷出20时，那个目标会额外受到14点挥砍伤害。然后再次掷一个{@dice d20}。如果你掷出20，你会切断目标的一只肢体，这种损失的效果由DM决定。如果生物没有肢体可以切断，你会切断它身体的一部分。",
 					"{@note 请注意：根据SRD，这是额外的{@damage 4d6}挥砍伤害，尽管{@link 这是错误的|https://rpg.stackexchange.com/a/174522/53884}}。",
 					"此外，你可以说出剑的命令词，使剑刃在10尺半径内散发出明亮的光线，并在额外的10尺内散发出微光。再次说出命令词或收剑入鞘可以熄灭光线。"
+				],
+				"light": [
+					{
+						"bright": 10,
+						"dim": 20
+					}
 				],
 				"lootTables": [
 					"魔法物品表H"

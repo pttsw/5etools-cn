@@ -112,7 +112,7 @@ class PageFilterFeats extends PageFilterBase {
 			feat.weaponProficiencies ? "武器熟练项" : null,
 			feat.toolProficiencies ? "工具熟练项" : null,
 			feat.languageProficiencies ? "语言熟练项" : null,
-		].filter(it => it);
+		].filter(Boolean);
 		if (feat.skillToolLanguageProficiencies?.length) {
 			if (feat.skillToolLanguageProficiencies.some(it => (it.choose || []).some(x => x.from || [].includes("anySkill")))) feat._fBenifits.push("技能熟练项");
 			if (feat.skillToolLanguageProficiencies.some(it => (it.choose || []).some(x => x.from || [].includes("anyTool")))) feat._fBenifits.push("工具熟练项");

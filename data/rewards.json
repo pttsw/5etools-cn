@@ -6,6 +6,19 @@
 			"source": "XDMG",
 			"page": 336,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"identify|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"在你的堡垒中进行一次长休息后，你会获得一个持续7天或直到你使用它的魔法护符（参见《超凡赠礼》章节3中的\"{@book 超凡赠礼|XDMG|2|超凡赠礼}\"）。这个护符允许你施放{@spell 辨识法术|XPHB}而不需要消耗一个法术位或者使用物质成分。如果你仍然拥有它，你不能再次获得这个护符。"
 			]
@@ -16,6 +29,20 @@
 			"source": "MOT",
 			"page": 37,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"wis": [
+									"gentle repose"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚3+ 阿瑟斯特质}",
 				"你的生命与死者的命运交织在一起。你可以使用这个特质施放{@spell 遗体防腐}，不需要任何材料成分，施放次数等于你的感知调整值（最少一次）。你在完成一次长休后恢复所有已消耗的使用次数。感知是你的施法能力，用于这个法术。"
@@ -27,6 +54,20 @@
 			"source": "MOT",
 			"page": 37,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"false life"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚25+ 阿瑟奥斯特质}",
 				"你可以使用这个特质施展{@spell 虚假生命}，不需要任何材料成分。当你这样做时，你将获得额外的25点临时生命值。一旦你以这种方式施展了这个法术，直到你完成一次长休后才能再次这样做。感知是你的施法能力。"
@@ -38,6 +79,20 @@
 			"source": "MOT",
 			"page": 37,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"speak with dead"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 10+ 阿瑟斯特质}",
 				"你可以使用这个特质施放{@spell 死者交谈}，不需要任何材料。一旦你以这种方式施放这个法术，直到你完成一次长休之前，你不能再这样做。感知是你的施法能力。"
@@ -49,6 +104,21 @@
 			"source": "GGR",
 			"page": 173,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"hold person#3",
+									"command",
+									"counterspell"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护符时，你可以施放{@spell 人类定身术}（3级版本）、{@spell 命令术}或{@spell 法术反制}法术。激活后护符会消失。"
 			]
@@ -176,6 +246,19 @@
 			"source": "IDRotF",
 			"page": 213,
 			"type": "Blessing",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"cone of cold"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你的眼睛变得像冰一样冷。你对冷冻伤害免疫。此外，你可以施放一次{@spell 寒冰锥}法术（豁免{@dc 15}）。当你完成一次长休息时，你重新获得施放这个法术的能力。"
 			]
@@ -339,6 +422,19 @@
 				}
 			],
 			"type": "Boon",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"rest": {
+								"1e": [
+									"misty step"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"作为一次行动，你可以施放{@spell 迷踪步}法术，无需使用法术槽或任何材料。一旦你这样做，直到你完成短休息，你都不能再次使用这个恩赐。"
 			]
@@ -571,6 +667,15 @@
 			"source": "DMG",
 			"page": 232,
 			"type": "Boon",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": [
+							"burning hands"
+						]
+					}
+				}
+			],
 			"entries": [
 				"你对火焰伤害免疫。你也可以随意施放{@spell 燃烧之手}（豁免 {@dc 15}），无需使用spell位或任何材料成分。"
 			]
@@ -597,6 +702,15 @@
 			"source": "DMG",
 			"page": 232,
 			"type": "Boon",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": [
+							"thunderwave"
+						]
+					}
+				}
+			],
 			"entries": [
 				"你对闪电和雷鸣伤害免疫。你也可以随意施放{@spell 雷鸣波}（豁免 {@dc 15}），无需使用法术位或任何材料成分。"
 			]
@@ -643,6 +757,21 @@
 			"source": "GGR",
 			"page": 173,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"crusader's mantle",
+									"haste",
+									"guiding bolt"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护符时，你可以施展{@spell 十字军披风}或{@spell 加速术}法术。或者，你可以施展{@spell 光导箭}法术，如果命中，则恢复等同于其造成的伤害的生命值。护符在激活后消失。"
 			]
@@ -828,6 +957,19 @@
 			"source": "BAM",
 			"page": 17,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"air bubble|aag"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"{@note 这个护身符可以由使用他们的魔法天赋动作的{@creature chwinga astronaut|BAM}施加。}",
 				"这个护身符允许你作为动作施放{@spell 空气泡泡|AAG}法术（参见星界冒险者指南）。一旦使用三次，这个护身符就会消失。"
@@ -842,6 +984,19 @@
 				"动物显现之护咒|XDMG"
 			],
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"conjure animals#3"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个护符允许你作为一个动作施放{@spell 动物咒唤术}法术（3级版本）。一旦使用了三次，这个护符就会从你身上消失。"
 			]
@@ -852,6 +1007,19 @@
 			"source": "XDMG",
 			"page": 99,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"conjure animals|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个护符允许你施放{@spell 动物咒唤术|XPHB}。使用三次后，护符会从你身上消失。"
 			]
@@ -908,6 +1076,19 @@
 				"黑暗视觉之护咒|XDMG"
 			],
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"darkvision"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个护符允许你作为动作施放{@spell 黑暗视觉}法术，无需任何材料。一旦使用三次，护符就会消失。"
 			]
@@ -918,6 +1099,19 @@
 			"source": "XDMG",
 			"page": 99,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"darkvision|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个护符让你能够施放{@spell 黑暗视觉|XPHB}。一旦使用三次后，护符就会从你身上消失。"
 			]
@@ -982,6 +1176,19 @@
 			"source": "BGDIA",
 			"page": 215,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"9": [
+									"hellish rebuke#9"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你获得这个魅力时，你的头顶会出现一个火焰光环。这个魅力允许你作为反应施放{@spell 炼狱叱喝}法术（9级版本）。一旦使用了九次，这个魅力和火焰光环都会从你身上消失。"
 			]
@@ -1069,6 +1276,22 @@
 				"复原之护咒|XDMG"
 			],
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1e": [
+									"greater restoration"
+								],
+								"3e": [
+									"lesser restoration"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个魅力有6次充能。你可以采取行动消耗其中一些充能来施放以下法术：{@spell 高等复原术}（4次充能）或{@spell 次级复原术}（2次充能）。一旦所有的充能都被消耗掉，这个魅力就会从你身上消失。"
 			]
@@ -1079,6 +1302,23 @@
 			"source": "XDMG",
 			"page": 99,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1e": [
+									"greater restoration|xphb"
+								],
+								"3e": [
+									"lesser restoration|xphb"
+								]
+							}
+						}
+					},
+					"resourceName": "Charges"
+				}
+			],
 			"entries": [
 				"这个护符有3个充能。你可以消耗一些充能来施展以下法术之一：{@spell 高等复原术|XPHB}（2个充能）或 {@spell 次级复原术|XPHB}（1个充能）。一旦所有充能都被消耗掉，护符就会从你身上消失。"
 			]
@@ -1149,6 +1389,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"otiluke's resilient sphere"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 欧提路克弹力法球}，不需要任何法术材料，并且可以选择使用你的感知、感知或魅力作为施法能力（你选择）。一旦使用了三次，魅惑就会从你身上消失。"
 			]
@@ -1158,6 +1411,19 @@
 			"ENG_name": "Charm of the Eldritch Eye",
 			"source": "VNotEE",
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"clairvoyance"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以作为动作施放{@spell 鹰眼术}，无需使用法术位，也不需要任何材料组件。一旦使用了三次，这个护符就会消失。"
 			]
@@ -1188,6 +1454,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"major image"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 高等幻影}，不需要任何法术材料，并且可以选择使用你的感知、感知或魅力作为施法能力（你选择）。当你以这种方式施放法术时，它将持续其完整的持续时间，无需集中精神。一旦使用了三次，魅惑就会从你身上消失。"
 			]
@@ -1229,6 +1508,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"tasha's hideous laughter"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 塔莎狂笑术}，不需要任何法术材料，并且可以选择使用你的感知、感知或魅力作为施法能力（你选择）。一旦使用了三次，魅惑就会从你身上消失。"
 			]
@@ -1269,6 +1561,19 @@
 			"source": "CM",
 			"page": 212,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"hallucinatory terrain"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个魅力允许你创造多达1加仑的淡水，这些水会填满你拥有的一个或多个空容器。你可以每天这样做，最多三次，持续10天，之后这个魅力就会从你身上消失。",
 				"这个护符允许你以一个动作施放{@spell 幻景}法术（豁免 {@dc 15}）。一旦使用，这个护符就会从你身上消失。"
@@ -1290,6 +1595,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"hypnotic pattern"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 催眠图纹}，不需要任何法术材料，使用你的感知、魅力或体质作为施法能力（你选择）。一旦使用三次，这个护符就会从你身上消失。"
 			]
@@ -1300,6 +1618,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"mislead"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 假象术}，不需要任何法术材料，并且可以选择使用你的感知、感知或魅力作为施法能力（你选择）。当你以这种方式施放法术时，它将持续其完整的持续时间，无需集中精神。一旦使用了三次，魅惑就会从你身上消失。"
 			]
@@ -1310,6 +1641,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"divination"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 预言术}，不需要任何材料成分，并且使用你的智力作为施法能力。一旦你施放了三次这个法术，魅惑就会从你身上消失。"
 			]
@@ -1373,6 +1717,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"enhance ability"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You can cast {@spell 强化属性}, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). When you cast the spell in this way, it lasts its full duration with no concentration required. Once used three times, the charm vanishes from you."
 			]
@@ -1383,6 +1740,19 @@
 			"source": "DIP",
 			"page": 41,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"lightning bolt"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You become charged with the power of the storm, to the extent that tiny sparks crackle in your eyes. You can cast the {@spell 闪电束} spell (3rd-level version) as an action. Once used three times, the charm vanishes from you."
 			]
@@ -1402,6 +1772,24 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"known": {
+						"_": [
+							"light#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"sunburst"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You learn the {@spell 光亮术} cantrip if you don't already know it. You can cast {@spell 阳炎爆}, requiring no spell components and using your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). Once used, the charm vanishes from you, and you unlearn the {@spell 光亮术} cantrip gained from this charm."
 			]
@@ -1422,6 +1810,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"dispel magic"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"作为动作，你可以施放{@spell 解除魔法}，不需要任何法术材料，并使用你的感知、感知或魅力作为施法能力（任你选择）。如果你成功地用它结束任何法术，你将为每个被结束的最高级别法术的法术等级获得{@dice 1d6}个{@book 临时生命值|PHB|9|临时生命值}。一旦使用三次，这个魅力就会从你身上消失。"
 			]
@@ -1432,6 +1833,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"mordenkainen's magnificent mansion"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 魔邓肯豪宅术}，不需要任何法术材料，并且可以选择使用你的感知、感知或魅力作为施法能力（由你选择）。一旦使用了三次，这个魅力就会从你身上消失。"
 			]
@@ -1442,6 +1856,19 @@
 			"source": "IDRotF",
 			"page": 283,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3e": [
+									"leomund's tiny hut"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"这个护身符有3次充能。作为动作，你可以消耗1次充能，在接下来的24小时内获得以下好处：",
 				"这个护身符有3个充能。作为一个动作，你可以消耗1个充能来施放{@spell 李欧蒙小屋}法术，无需任何材料。一旦所有的充能都消耗完毕，这个护身符就会从你身上消失。"
@@ -1453,6 +1880,19 @@
 			"source": "BMT",
 			"page": 62,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"banishment"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以施放{@spell 放逐术}，无需任何材料组件，并使用你的感知、感知或魅力（由你选择）作为施法能力。一旦使用了三次，这个魅力就会从你身上消失。"
 			]
@@ -1790,6 +2230,20 @@
 			"source": "GGR",
 			"page": 173,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"blink",
+									"sleep#3"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个魅力时，你可以施放{@spell 闪现术}或{@spell 睡眠}（3级版本）法术。或者，当你受到伤害时，你可以使用你的反应变得{@condition 隐形}并传送至你能看到的未被占据的空间，距离最多30尺。你保持{@condition 隐形}状态直到你的下一个回合开始，或者直到你攻击或施放法术。激活后，这个魅力会消失。"
 			]
@@ -1801,6 +2255,17 @@
 			"page": 28,
 			"type": "Draconic Gift",
 			"rarity": "uncommon",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"ritual": [
+								"find familiar"
+							]
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以作为一个仪式施放{@spell 寻找宠物}法术，无需使用任何材料组件。当你以这种方式施放法术时，你的宠物总是以一个{@creature 伪龙}的形式出现。",
 				"你可以作为仪式施放{@spell 寻获魔宠}法术，无需使用任何材料成分。当你以这种方式施放法术时，你的熟悉灵总是以{@creature 伪龙}的形式出现。",
@@ -1862,6 +2327,17 @@
 			"page": 28,
 			"type": "Draconic Gift",
 			"rarity": "very rare",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"ritual": [
+								"contact other plane"
+							]
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以作为一个仪式施放{@spell 联系其他位面}。你联系的实体是物质界另一个世界中的龙，所以它对你世界的知识可能是有限的。此外，这条龙是赠礼来源龙的回响，这可能会影响它对你的态度和行为。",
 				"你可以将{@spell 异界探知}作为仪式来施放。你联系的实体是物质位面中另一个世界中的龙，因此它对你世界的知识可能有限。此外，这条龙是作为礼物来源的龙的回声，这可能会影响它对你的态度和行为。"
@@ -1873,6 +2349,20 @@
 			"source": "MOT",
 			"page": 40,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"int": [
+									"comprehend languages"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 3+ 埃法拉特质}",
 				"艾菲拉赋予你对人们交流方式的洞察力。你可以使用这个特性施放{@spell 通晓语言}，不需要任何材料成分，使用次数等于你的智力调整值（最少一次）。当你完成长休后，你会恢复所有已使用的使用次数。智力是你的施法能力，用于这个法术。"
@@ -1884,6 +2374,20 @@
 			"source": "MOT",
 			"page": 40,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"mordenkainen's private sanctum"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚25+ 艾芙拉特质}",
 				"你可以使用这个特性施放{@spell 魔邓肯私人密室}，不需要任何材料成分。一旦你以这种方式施放了这个法术，直到你完成一次长休之前，你不能再这样做。智力是你的施法能力，用于这个法术。"
@@ -1929,6 +2433,20 @@
 			"source": "MOT",
 			"page": 43,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"vampiric touch"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚10+ 厄瑞波斯特性}",
 				"你可以使用这个特性施放{@spell 吸血鬼之触}。一旦你以这种方式施放了这个法术，直到你完成一次长休之前，你不能再这样做。感知是你的施法能力，用于这个法术。"
@@ -1940,6 +2458,19 @@
 			"source": "ToFW",
 			"page": 74,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"eyebite"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你被你不应该拥有的知识所留下疤痕。你的眼睛变黑，除了你的瞳孔，它们变成了白色。这个护身符赋予你在与邪恶生物互动时进行Charisma（魅力）({@skill 游说})检定的优势。此外，你可以作为一个动作施放{@spell 摄心目光}法术。这个法术的施法能力是你的感知、感知或魅力（你选择其中一个，当你获得这个护身符时）。一旦你施放了这个法术，直到下一个黎明之前你不能再施放它。这个护身符在13天后消失，那时你的外表会恢复正常。"
 			]
@@ -2210,6 +2741,21 @@
 			"source": "GGR",
 			"page": 173,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"dispel magic",
+									"false life#3",
+									"stinking cloud"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护身符时，你可以施放{@spell 解除魔法}、{@spell 虚假生命}（3级版本）或{@spell 臭云术}法术。激活后，这个护身符就会消失。"
 			]
@@ -2220,6 +2766,20 @@
 			"source": "GGR",
 			"page": 173,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"heroism",
+									"thunderwave#3"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个魅力时，你可以施放{@spell 英雄气概}或{@spell 雷鸣波}法术（3级版本）。或者，当你用武器攻击未命中时，你可以作为反应再次对该未命中的目标进行攻击。激活后，这个魅力会消失。"
 			]
@@ -2264,6 +2824,20 @@
 			"source": "MOT",
 			"page": 46,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"daylight"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 10+ 赫利欧德特质}",
 				"你可以使用这个特质施放{@spell 昼明术}法术。一旦你以这种方式施放了法术，直到你完成一次长休之前，你不能再这样做。感知是你的施法能力属性，用于这个法术。"
@@ -2326,6 +2900,20 @@
 			"source": "MOT",
 			"page": 49,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"cha": [
+									"compelled duel"
+								]
+							}
+						}
+					},
+					"ability": "cha"
+				}
+			],
 			"entries": [
 				"{@i 虔诚3+ 伊洛拉斯特质}",
 				"作为伊洛斯的虔诚者，你以他的名义赢得胜利，赢得了他的宠爱。你可以使用这个特质施放{@spell 强令对决}法术，次数等于你的魅力调整值（最少一次）。当你完成一次长休时，你恢复所有已使用的施放次数。魅力是你的施法能力属性，用于这个法术。"
@@ -2348,6 +2936,20 @@
 			"source": "MOT",
 			"page": 49,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"crusader's mantle"
+								]
+							}
+						}
+					},
+					"ability": "cha"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 10+ 伊洛斯特质}",
 				"你可以使用这个特质施放{@spell 十字军披风}法术。一旦你以这种方式施放了法术，直到你完成一次长休之前，你不能再这样做。魅力是你的施法能力属性，用于这个法术。",
@@ -2360,6 +2962,20 @@
 			"source": "GGR",
 			"page": 174,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"dispel magic",
+									"lightning bolt"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护身符时，你可以施放{@spell 解除魔法}或{@spell 闪电束}法术。或者，作为一个动作，你可以恢复一个已使用的3级或更低级别的法术位。激活后，这个护身符就会消失。"
 			]
@@ -2429,6 +3045,20 @@
 			"source": "MOT",
 			"page": 52,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"create food and water"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚10+ 卡拉美特拉特质}",
 				"你可以使用这个特性施放{@spell 造粮术}。一旦你以这种方式施放了这个法术，直到你完成一次长休之前，你不能再这样做。感知是你的施法能力，用于这个法术。",
@@ -2474,6 +3104,20 @@
 			"source": "MOT",
 			"page": 58,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"wis": [
+									"command"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚3+ 克洛西斯特质}",
 				"作为克洛西斯的信徒，你可以操纵命运的纽带，这些纽带无形地纠缠着每一个生物。你可以使用这个特性施放{@spell 命令术}，使用次数等于你的感知调整值（最少一次）。当你完成长休后，你会恢复所有已使用的使用次数。感知是你的施法能力，用于这个法术。"
@@ -2496,6 +3140,20 @@
 			"source": "MOT",
 			"page": 58,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"clairvoyance"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 10+ 克洛西斯特质}",
 				"你可以使用这个特质施放{@spell 鹰眼术}法术，不需要任何材料组件。一旦你以这种方式施放了法术，直到你完成一次长休前，你不能再这样做。感知是你的施法能力值，用于这个法术。",
@@ -2508,6 +3166,25 @@
 			"source": "MOT",
 			"page": 61,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"known": {
+						"_": [
+							"mage hand#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"int": [
+									"detect magic"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 3+ 克鲁菲克斯特质}",
 				"作为克鲁菲克斯的信徒，你已经证明了自己是现实奥秘和法则的信徒。你可以使用这个特性施放{@spell 侦测魔法}的次数等于你的智力调整值（最少一次）。当你完成一次长休后，你恢复所有已使用的使用次数。",
@@ -2520,6 +3197,15 @@
 			"source": "MOT",
 			"page": 61,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"known": {
+						"_": [
+							"mage hand#c"
+						]
+					}
+				}
+			],
 			"entries": [
 				"{@i 虔诚 25+ 克鲁菲克斯特质}",
 				"作为克鲁菲克斯的真正冠军，你可以使用你的{@spell 法师之手}戏法来保护自己。当你的幽灵手在你5尺范围内时，你对远程攻击的AC获得+2的加值。"
@@ -2531,6 +3217,20 @@
 			"source": "MOT",
 			"page": 61,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"detect thoughts"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚10+ 克鲁菲克斯特性}",
 				"你可以使用这个特性施放{@spell 侦测思想}法术，无需任何材料。一旦以这种方式施放了法术，你必须完成一次长休后才能再次这样做。智力是你的法术施放能力值。",
@@ -2667,6 +3367,20 @@
 			"source": "MOT",
 			"page": 64,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"blinding smite"
+								]
+							}
+						}
+					},
+					"ability": "con"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 10+ 莫吉斯特质}",
 				"你可以使用这个特性施放{@spell 致盲斩}。一旦你以这种方式施放了这个法术，直到你完成一次长休之前，你不能再这样做。体质是你的这个法术的施法能力。"
@@ -2729,6 +3443,20 @@
 			"source": "MOT",
 			"page": 67,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"wis": [
+									"hunter's mark"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚3+ 奈莱亚特质}",
 				"作为Nylea的信徒，你已经证明了自己是荒野的守护者。你可以使用这个特性施放{@spell 猎人印记}，次数等于你的感知调整值（最少一次）。当你完成一次长休后，你恢复所有已使用的使用次数。感知是你的这个法术的施法能力。"
@@ -2751,6 +3479,20 @@
 			"source": "MOT",
 			"page": 67,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"wis": [
+									"speak with animals"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚10+ 奈莱娅特性}",
 				"你可以使用这个特质施放{@spell 动物交谈}法术，施放次数等于你感知属性调整值（最少一次）。当你完成一次长休后，你恢复所有已使用的施放次数。感知是你施放这个法术的法术能力值。",
@@ -2814,6 +3556,19 @@
 			"source": "XDMG",
 			"page": 343,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"contact other plane|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"你可以使用你的天文台窥探{@book 荒野空间|XDMG|5|荒野空间}和{@book 星界位面|XDMG|5|星界位面}的遥远角落。在你的天文台中度过一个长休息后，你会获得一个持续7天或直到你使用它的魔法魅力（见{@book 超自然赠礼|XDMG|2|超自然赠礼}中的\"{@book 第三章|XDMG|2}\"）。这个魅力允许你施放{@spell 异界探知|XPHB}而不消耗法术位。如果你仍然拥有这个魅力，你不能再次获得它。"
 			]
@@ -2824,6 +3579,20 @@
 			"source": "GGR",
 			"page": 174,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"bestow curse",
+									"fear"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个法术时，你可以施放{@spell 降咒}或{@spell 恐惧术}法术。或者，当你能看到的30尺范围内的生物生命值降至0时，你可以使用你的反应让它的生命值变为1。法术在你激活后消失。"
 			]
@@ -2885,6 +3654,20 @@
 			"source": "MOT",
 			"page": 70,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"wis": [
+									"ray of sickness"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 3+ 帕瑞卡特质}",
 				"作为Pharika的信徒，你掌握了疾病的力量。你可以使用这个特性施放{@spell 致病射线}法术的次数等于你的感知调整值（最少一次）。当你完成长休后，你恢复所有已消耗的使用次数。感知是你的施法能力，用于这个法术。"
@@ -2971,6 +3754,25 @@
 			"source": "MOT",
 			"page": 76,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"int": [
+									"shield of faith"
+								]
+							}
+						}
+					},
+					"known": {
+						"_": [
+							"mending#c"
+						]
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 3+ 普罗佛斯特质}",
 				"作为普尔弗罗斯的信徒，你已经凭借你的技能引起了锻造之神的注意。你可以使用这个特性施放{@spell 虔诚护盾}，不需要任何材料组件，次数等于你的智力调整值（最少一次）。当你完成一次长休后，你恢复所有已使用的使用次数。",
@@ -2994,6 +3796,20 @@
 			"source": "MOT",
 			"page": 76,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"heat metal"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚 10+ 普尔弗洛斯特质}",
 				"你可以使用这个特性施放{@spell 灼热金属}法术，无需任何材料。一旦以这种方式施放了法术，你必须完成一次长休后才能再次这样做。智力是你的法术施放能力值。",
@@ -3006,6 +3822,21 @@
 			"source": "GGR",
 			"page": 174,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"crown of madness",
+									"hellish rebuke",
+									"shatter"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护符时，你可以施放{@spell 疯狂冠冕}、{@spell 炼狱叱喝}或{@spell 粉碎音波}法术。激活后这个护符会消失。"
 			]
@@ -3016,6 +3847,19 @@
 			"source": "XDMG",
 			"page": 344,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"greater restoration|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"在你的堡垒中度过一次长休息后，你获得一个魔法魅力（参见《超自然礼物》第2页的\"{@book 超自然赠礼|XDMG|2|超自然赠礼}\"在 {@book 第三章|XDMG|2}），持续7天或直到你使用它。这个魅力允许你施放 {@spell 高等复原术|XPHB} 一次，无需消耗法术位或使用材料成分。如果你仍然拥有这个魅力，你不能再次获得它。"
 			]
@@ -3026,6 +3870,19 @@
 			"source": "XDMG",
 			"page": 345,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"healing word|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"在你的堡垒中度过一次长休息之后，你获得了一个持续7天或直到你使用它的魔法护符（参见第3章的\"{@book 超自然礼物|XDMG|2|超自然礼物}\"）。这个护符允许你无需消耗法术位即可施放一次{@spell 治疗之言|XPHB}。如果你仍然拥有它，则无法再次获得此护符。"
 			]
@@ -3036,6 +3893,19 @@
 			"source": "XDMG",
 			"page": 346,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"heal|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"在你的堡垒中度过一段长休息后，你获得一个持续7天或直到使用的魔法护符（参见《超自然恩赐》章节3中的\"{@book 超自然恩赐|XDMG|2|超自然恩赐}\"）。该护符允许你无需消耗法术位即可施放一次{@spell 治疗|XPHB}。如果你仍然持有这个护符，就无法再次获得它。"
 			]
@@ -3057,6 +3927,20 @@
 			"source": "GGR",
 			"page": 174,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"aura of vitality",
+									"conjure animals"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护符时，你可以施放{@spell 活力灵光}或{@spell 动物咒唤术}法术。或者，作为一个动作，你可以选择30尺范围内的至多三个生物，直到你下一回合结束时，它们将获得对钝击、穿刺和挥砍伤害的抗性。激活后护符会消失。"
 			]
@@ -3118,6 +4002,21 @@
 			"source": "GGR",
 			"page": 174,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"enhance ability#3",
+									"enlarge/reduce",
+									"gaseous form"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你激活这个护身符时，你可以施放{@spell 强化属性}（3级版本）、{@spell 变巨/缩小术}或{@spell 气化形体}法术。激活后护身符会消失。"
 			]
@@ -3128,6 +4027,19 @@
 			"source": "ToA",
 			"page": 179,
 			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"etherealness"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"当你拥有稻草捆时，这个护符允许你作为动作施放{@spell 以太化}法术，无需任何材料。使用三次后，护符消失。",
 				"稻草束",
@@ -3165,6 +4077,20 @@
 			"source": "MOT",
 			"page": 79,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"int": [
+									"fog cloud"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚3+ 萨莎特质}",
 				"作为塔莎的信徒，你已经证明了自己是海神的合格代表。你可以使用这个特性施放{@spell 云雾术}法术。以这种方式创造的雾气有着强烈的海洋气息。你可以以这种方式施放法术的次数等于你的智力调整值（最少一次）。当你完成一次长休时，你可以恢复所有已使用的次数。智力是你的法术施放能力值。"
@@ -3187,6 +4113,20 @@
 			"source": "MOT",
 			"page": 79,
 			"type": "Piety Trait",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"blink"
+								]
+							}
+						}
+					},
+					"ability": "int"
+				}
+			],
 			"entries": [
 				"{@i 虔诚10+ 萨莎特质}",
 				"你可以使用这个特质施放{@spell 闪现术}。一旦你以这种方式施放了法术，直到你完成一次长休前，你不能再这样做。智力是你的施法能力值，用于这个法术。"
@@ -3366,6 +4306,26 @@
 			"source": "ToA",
 			"page": 119,
 			"type": "Other",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"animal friendship",
+									"suggestion"
+								]
+							}
+						}
+					},
+					"known": {
+						"_": [
+							"poison spray#c"
+						]
+					},
+					"ability": "cha"
+				}
+			],
 			"entries": [
 				"一个人可以被变身为猿猴纯血。这个变身只能通过{@spell 祈愿术}法术或神圣干预来解除。一个幸存下来的角色会获得一种随机形式的{@table 永久性疯狂}（参见{@book 疯狂|DMG|8|疯狂}，在{@i 城主指南}第8章）。一个经历并幸存下来的人类角色保留其特征，并获得以下猿猴种族特征。",
 				{

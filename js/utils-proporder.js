@@ -239,7 +239,7 @@ export class PropOrder {
 			});
 
 		// ensure any non-orderable keys are maintained
-		const otherKeys = CollectionUtil.setDiff(keySet, seenKeys);
+		const otherKeys = keySet.difference(seenKeys);
 		[...otherKeys].forEach(prop => {
 			out[prop] = obj[prop];
 			if (!opts.fnUnhandledKey) return;
@@ -365,6 +365,7 @@ PropOrder._FOUNDRY_GENERIC = [
 
 	"type",
 	"system",
+	"activities",
 	"effects",
 	"flags",
 	"img",
@@ -383,6 +384,7 @@ PropOrder._FOUNDRY_GENERIC_FEATURE = [
 
 	"type",
 	"system",
+	"activities",
 	"actorDataMod",
 	"effects",
 	"flags",
@@ -1007,6 +1009,7 @@ PropOrder._FOUNDRY_CLASS = [
 	"source",
 
 	"system",
+	"activities",
 	"effects",
 	"flags",
 	"img",
@@ -1111,6 +1114,7 @@ PropOrder._FOUNDRY_SUBCLASS = [
 	"classSource",
 
 	"system",
+	"activities",
 	"effects",
 	"flags",
 	"img",
@@ -1259,6 +1263,7 @@ PropOrder._FOUNDRY_CLASS_FEATURE = [
 	"level",
 
 	"system",
+	"activities",
 	"effects",
 	"flags",
 	"img",
@@ -1295,6 +1300,7 @@ PropOrder._FOUNDRY_SUBCLASS_FEATURE = [
 	"level",
 
 	"system",
+	"activities",
 	"effects",
 	"flags",
 	"img",
@@ -1847,6 +1853,7 @@ PropOrder._ITEM = [
 	"bow",
 	"bulletFirearm",
 	"bulletSling",
+	"cellEnergy",
 	"club",
 	"crossbow",
 	"dagger",
@@ -1878,6 +1885,8 @@ PropOrder._ITEM = [
 	"packContents",
 	"atomicPackContents",
 	"containerCapacity",
+
+	"light",
 
 	"optionalfeatures",
 	"attachedSpells",
@@ -2073,6 +2082,9 @@ PropOrder._OBJECT = [
 	"token",
 	"tokenHref",
 	"tokenCredit",
+
+	"altArt",
+
 	"hasToken",
 	"hasFluff",
 	"hasFluffImages",
@@ -2166,6 +2178,8 @@ PropOrder._REWARD = [
 	"type",
 
 	"rarity",
+
+	"additionalSpells",
 
 	"entries",
 
@@ -2330,6 +2344,7 @@ PropOrder._FOUNDRY_RACE_FEATURE = [
 	}),
 
 	"system",
+	"activities",
 	"effects",
 	"flags",
 	"img",

@@ -10376,18 +10376,20 @@
 			"source": "HWCS",
 			"page": 16,
 			"size": [
-				"S"
+				"M"
 			],
-			"speed": 25,
-			"ability": [
-				{
-					"cha": 2
-				}
+			"speed": {
+				"walk": 10,
+				"swim": 40
+			},
+			"traitTags": [
+				"Amphibious",
+				"NPC Race"
 			],
 			"languageProficiencies": [
 				{
-					"other": true,
-					"auran": true
+					"common": true,
+					"aquan": true
 				}
 			],
 			"entries": [
@@ -10419,6 +10421,7 @@
 					"name": "速度",
 					"ENG_name": "Speed",
 					"type": "entries",
+					"name": "Alignment",
 					"entries": [
 						"你的基本步行速度是25尺。"
 					]
@@ -10435,6 +10438,7 @@
 					"name": "振翅",
 					"ENG_name": "Wing Flap",
 					"type": "entries",
+					"name": "Size",
 					"entries": [
 						"作为一个附赠动作，你可以使用你强大的有羽翼的臂膀将自己向上推进，距离等于你移动速度的一半。你可以将其与普通跳跃结合使用，但不能在滑翔时使用。"
 					]
@@ -13050,6 +13054,7 @@
 					"name": "速度",
 					"ENG_name": "Speed",
 					"type": "entries",
+					"name": "Creature Type",
 					"entries": [
 						"你的基础步行速度是30尺。"
 					]
@@ -13058,6 +13063,7 @@
 					"name": "滑翔",
 					"ENG_name": "Glide",
 					"type": "entries",
+					"name": "Brittle Bones",
 					"entries": [
 						"利用你羽毛覆盖的手臂，你可以减缓下落速度，并滑翔短距离。当你下落时，你可以使用你的反应来展开手臂，使翅膀的羽毛变硬，从而减缓你的下降。这样做时，你以每轮60尺的速度轻柔地继续下落，着陆时不会受到跌落伤害。如果你以这种方式至少下落10尺，你可以选择一个方向，以你的移动速度飞行，虽然你不能选择向上移动，结束移动时落在你选择的空间。你不能在携带重型武器或持盾时滑翔（尽管你可以作为展开手臂的一部分反应来丢弃任何持有的物品）。你不能在穿着重型盔甲或负重时滑翔。"
 					]
@@ -13066,6 +13072,7 @@
 					"name": "禽爪",
 					"ENG_name": "Talons",
 					"type": "entries",
+					"name": "Undead Nature",
 					"entries": [
 						"你锋利的爪子在徒手战斗和攀爬时对你有所帮助。你的徒手攻击伤害是{@damage 1d4}穿刺伤害。此外，当你攀爬任何你的爪子能够合理抓住的表面时，你在力量（{@skill 运动}）检定上具有优势。"
 					]
@@ -13094,9 +13101,7 @@
 						"你可以说、读、写鸟人语。你也能听懂奥瑞安语，尽管你不能自然地说出来。"
 					]
 				}
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "斑猫人",
@@ -15547,7 +15552,7 @@
 			"page": 12,
 			"ability": [
 				{
-					"dex": 1
+					"wis": 2
 				}
 			],
 			"traitTags": [

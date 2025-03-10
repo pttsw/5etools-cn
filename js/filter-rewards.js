@@ -18,6 +18,12 @@ class PageFilterRewards extends PageFilterBase {
 			itemSortFn: null,
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
+		this._benefitsFilter = new Filter({
+			header: "Benefits",
+			items: [
+				"Spellcasting",
+			],
+		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
@@ -29,7 +35,12 @@ class PageFilterRewards extends PageFilterBase {
 
 	static mutateForFilters (it) {
 		this._mutateForFilters_commonSources(it);
+
 		it._fRarity = it.rarity || "unknown";
+		it._fBenifits = [
+			it.additionalSpells ? "Spellcasting" : null,
+		].filter(Boolean);
+
 		this._mutateForFilters_commonMisc(it);
 	}
 
@@ -39,6 +50,7 @@ class PageFilterRewards extends PageFilterBase {
 		this._sourceFilter.addItem(ent._fSources);
 		this._typeFilter.addItem(ent.type);
 		this._rarityFilter.addItem(ent._fRarity);
+		this._benefitsFilter.addItem(ent._fBenifits);
 		this._miscFilter.addItem(ent._fMisc);
 	}
 
@@ -47,6 +59,7 @@ class PageFilterRewards extends PageFilterBase {
 			this._sourceFilter,
 			this._typeFilter,
 			this._rarityFilter,
+			this._benefitsFilter,
 			this._miscFilter,
 		];
 	}
@@ -57,6 +70,7 @@ class PageFilterRewards extends PageFilterBase {
 			r.source,
 			r.type,
 			r._fRarity,
+			r._fBenifits,
 			r._fMisc,
 		);
 	}

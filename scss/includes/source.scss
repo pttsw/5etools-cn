@@ -91,7 +91,6 @@
 	$rgb-source-VEoR: #b74c62;
 	$rgb-source-GHLoE: #c07e4e;
 	$rgb-source-DoDk: #825494;
-	$rgb-source-HWCS: #d0914b;
 	$rgb-source-ToB1-2023: #917792;
 	$rgb-source-TD: #bb9528;
 	$rgb-source-PaF: #5d7993;
@@ -205,6 +204,16 @@
 
 		&TftYP {
 			@include mix-source-color($rgb-source-TftYP);
+
+			&-AtG,
+			&-DiT,
+			&-TFoF,
+			&-THSoT,
+			&-TSC,
+			&-ToH,
+			&-WPM {
+				@include mix-source-color($rgb-source-TftYP);
+			}
 		}
 
 		&ToA {
@@ -487,11 +496,6 @@
 
 		&DoDk {
 			@include mix-source-color($rgb-source-DoDk);
-		}
-
-		&HWCS,
-		&HWAitW {
-			@include mix-source-color($rgb-source-HWCS);
 		}
 
 		&ToB1-2023 {

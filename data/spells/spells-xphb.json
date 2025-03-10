@@ -3446,6 +3446,9 @@
 				"射程内你能看到的每个你选择的生物必须进行一次智力豁免，否则在法术结束前都会受到{@condition 魅惑|XPHB}状态。",
 				"在法术持续时间内，你可以采取{@variantrule 附赠动作|XPHB}来指定一个与你水平的方向。每个处于{@condition 魅惑|XPHB}状态的目标必须在下一个回合尽可能多地朝那个方向移动，选择最安全的路线。以这种方式移动后，目标再次进行豁免检定，成功则结束自身上的法术效果。"
 			],
+			"conditionInflict": [
+				"charmed"
+			],
 			"savingThrow": [
 				"感知"
 			],
@@ -3784,7 +3787,9 @@
 							]
 						}
 					]
-				}
+				},
+				"Until the spell ends, {@variantrule Bright Light|XPHB} fills the Cylinder, and when you move on your turn, you can also move the Cylinder up to 30 feet.",
+				"Whenever the Cylinder moves into the space of a creature you can see and whenever a creature you can see enters the Cylinder or ends its turn there, you can bathe it in one of the lights. A creature can be affected by this spell only once per turn."
 			],
 			"entriesHigherLevel": [
 				{
@@ -11267,6 +11272,14 @@
 							]
 						}
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Ending the Spell",
+					"entries": [
+						"When you cast the spell, specify a trigger that will end it. The trigger can be as simple or as elaborate as you choose, but the DM must agree that it has a high likelihood of happening within the next decade. The trigger must be an observable action, such as someone making a particular offering at the temple of your god, saving your true love, or defeating a specific monster.",
+						"A {@spell Dispel Magic|XPHB} spell can end the spell only if it is cast with a level 9 spell slot, targeting either the prison or the component used to create it."
+					]
 				}
 			],
 			"conditionInflict": [
@@ -12010,10 +12023,9 @@
 				}
 			],
 			"range": {
-				"type": "line",
+				"type": "point",
 				"distance": {
-					"type": "feet",
-					"amount": 100
+					"type": "self"
 				}
 			},
 			"components": {
@@ -19049,10 +19061,9 @@
 				}
 			],
 			"range": {
-				"type": "line",
+				"type": "point",
 				"distance": {
-					"type": "feet",
-					"amount": 60
+					"type": "self"
 				}
 			},
 			"components": {
@@ -21650,7 +21661,8 @@
 							]
 						}
 					]
-				}
+				},
+				"The stress of casting Wish to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a {@variantrule Long Rest|XPHB}, you take {@damage 1d10} Necrotic damage per level of that spell. This damage can't be reduced or prevented in any way. In addition, your Strength score becomes 3 for {@dice 2d4} days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days. Finally, there is a {@chance 33|||Unable to cast again!|Able to cast again} chance that you are unable to cast {@spell Wish|XPHB} ever again if you suffer this stress."
 			],
 			"damageResist": [
 				"强酸",

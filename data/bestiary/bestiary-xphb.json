@@ -111,6 +111,9 @@
 				"MA",
 				"RA"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluffImages": true,
 			"_versions": [
@@ -1012,46 +1015,50 @@
 			"name": "黑熊",
 			"ENG_name": "Black Bear",
 			"source": "XPHB",
-			"page": 346,
-			"otherSources": [
-				{
-					"source": "XMM",
-					"page": 349
-				}
-			],
+			"page": 323,
+			"summonedBySpell": "Summon Celestial|XPHB",
+			"summonedBySpellLevel": 5,
 			"size": [
-				"M"
+				"L"
 			],
-			"type": "beast",
+			"type": "celestial",
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
-				11
+				{
+					"special": "11 + the spell's level + 2 (Defender only)"
+				}
 			],
 			"hp": {
-				"average": 19,
-				"formula": "3d8 + 6"
+				"special": "40 + 10 for each spell level above 5"
 			},
 			"speed": {
 				"walk": 30,
-				"climb": 30,
-				"swim": 30
+				"fly": 40
 			},
-			"str": 15,
-			"dex": 12,
-			"con": 14,
-			"int": 2,
-			"wis": 12,
-			"cha": 7,
-			"skill": {
-				"perception": "+5"
-			},
+			"str": 16,
+			"dex": 14,
+			"con": 16,
+			"int": 10,
+			"wis": 14,
+			"cha": 16,
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
-			"passive": 15,
-			"cr": "1/2",
+			"passive": 12,
+			"resist": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Celestial",
+				"understands the languages you know"
+			],
+			"pbNote": "equals your Proficiency Bonus",
 			"action": [
 				{
 					"name": "多重攻击",
@@ -1130,9 +1137,7 @@
 					"entries": [
 						"当野猪处于流血状态时，其攻击检定具有优势。"
 					]
-				}
-			],
-			"action": [
+				},
 				{
 					"name": "顶撞",
 					"ENG_name": "Gore",
@@ -1141,12 +1146,11 @@
 					]
 				}
 			],
-			"soundClip": {
-				"type": "internal",
-				"path": "bestiary/boar.mp3"
-			},
+			"actionTags": [
+				"Multiattack"
+			],
 			"damageTags": [
-				"P"
+				"R"
 			],
 			"miscTags": [
 				"MA"
@@ -1548,17 +1552,13 @@
 			"name": "蟒蛇",
 			"ENG_name": "Constrictor Snake",
 			"source": "XPHB",
-			"page": 348,
-			"otherSources": [
-				{
-					"source": "XMM",
-					"page": 351
-				}
-			],
+			"page": 324,
+			"summonedBySpell": "Summon Construct|XPHB",
+			"summonedBySpellLevel": 4,
 			"size": [
-				"L"
+				"M"
 			],
-			"type": "beast",
+			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -1726,6 +1726,9 @@
 			],
 			"miscTags": [
 				"MA"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluffImages": true,
@@ -2755,6 +2758,9 @@
 			"conditionInflict": [
 				"魅惑"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluffImages": true,
 			"_versions": [
@@ -2929,6 +2935,9 @@
 			"miscTags": [
 				"MA",
 				"RA"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluffImages": true,
@@ -5781,45 +5790,46 @@
 			"name": "蜘蛛",
 			"ENG_name": "Spider",
 			"source": "XPHB",
-			"page": 357,
-			"otherSources": [
-				{
-					"source": "XMM",
-					"page": 369
-				}
-			],
+			"page": 279,
+			"summonedBySpell": "Giant Insect|XPHB",
+			"summonedBySpellLevel": 4,
 			"size": [
-				"T"
+				"L"
 			],
 			"type": "beast",
 			"alignment": [
 				"U"
 			],
 			"ac": [
-				12
+				{
+					"special": "11 + the spell's level"
+				}
 			],
 			"hp": {
-				"average": 1,
-				"formula": "1d4 - 1"
+				"special": "30 + 10 for each spell level above 4"
 			},
 			"speed": {
-				"walk": 20,
-				"climb": 20
+				"walk": 40,
+				"climb": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(Wasp only)"
+				}
 			},
-			"str": 2,
-			"dex": 14,
-			"con": 8,
-			"int": 1,
-			"wis": 10,
-			"cha": 2,
-			"skill": {
-				"stealth": "+4"
-			},
+			"str": 17,
+			"dex": 13,
+			"con": 15,
+			"int": 4,
+			"wis": 14,
+			"cha": 3,
 			"senses": [
 				"黑暗视觉 30 尺"
 			],
-			"passive": 10,
-			"cr": "0",
+			"passive": 12,
+			"languages": [
+				"understands the languages you know"
+			],
+			"pbNote": "equals your Proficiency Bonus",
 			"trait": [
 				{
 					"name": "蛛行术",
@@ -5949,7 +5959,9 @@
 					"entries": [
 						"{@atkr r} {@hit 6}，射程40/160英尺。{@h}1穿刺伤害，并且目标在小精灵的下一个回合开始前处于{@condition 魅惑|XPHB}状态。"
 					]
-				},
+				}
+			],
+			"bonus": [
 				{
 					"name": "心之视界",
 					"ENG_name": "Heart Sight",
@@ -5958,60 +5970,128 @@
 					]
 				}
 			],
-			"soundClip": {
-				"type": "internal",
-				"path": "bestiary/sprite.mp3"
-			},
-			"languageTags": [
-				"C",
-				"E",
-				"S"
+			"traitTags": [
+				"Spider Climb"
+			],
+			"actionTags": [
+				"Multiattack"
 			],
 			"damageTags": [
+				"I",
 				"P"
 			],
 			"miscTags": [
 				"MA",
-				"RA"
+				"RA",
+				"RCH"
 			],
 			"conditionInflict": [
 				"魅惑"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Giant Insect (Centipede)",
+					"source": "XPHB",
+					"_mod": {
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Web Bolt (Spider Only)"
+								]
+							}
+						]
+					},
+					"speed": {
+						"walk": 40,
+						"climb": 40
+					}
+				},
+				{
+					"name": "Giant Insect (Spider)",
+					"source": "XPHB",
+					"_mod": {
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Web Bolt (Spider Only)",
+									"with": "Web Bolt"
+								}
+							}
+						]
+					},
+					"speed": {
+						"walk": 40,
+						"climb": 40
+					},
+					"bonus": null
+				},
+				{
+					"name": "Giant Insect (Wasp)",
+					"source": "XPHB",
+					"_mod": {
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Web Bolt (Spider Only)"
+								]
+							}
+						]
+					},
+					"speed": {
+						"walk": 40,
+						"climb": 40,
+						"fly": 40
+					},
+					"bonus": null
+				}
+			]
 		},
 		{
 			"name": "老虎",
 			"ENG_name": "Tiger",
 			"source": "XPHB",
-			"page": 358,
-			"otherSources": [
-				{
-					"source": "XMM",
-					"page": 371
-				}
-			],
+			"page": 273,
+			"summonedBySpell": "Find Steed|XPHB",
+			"summonedBySpellLevel": 2,
 			"size": [
 				"L"
 			],
-			"type": "beast",
+			"type": {
+				"type": {
+					"choose": [
+						"celestial",
+						"fey",
+						"fiend"
+					]
+				}
+			},
 			"alignment": [
-				"U"
+				"N"
 			],
 			"ac": [
-				13
+				{
+					"special": "10 + 1 per spell level"
+				}
 			],
 			"hp": {
-				"average": 22,
-				"formula": "3d10 + 6"
+				"special": "5 + 10 per spell level (the steed has a number of Hit Dice [d10s] equal to the spell's level)"
 			},
 			"speed": {
-				"walk": 40
+				"walk": 60,
+				"fly": {
+					"number": 60,
+					"condition": "(requires level 4+ spell)"
+				}
 			},
-			"str": 17,
-			"dex": 16,
+			"str": 18,
+			"dex": 12,
 			"con": 14,
-			"int": 3,
+			"int": 6,
 			"wis": 12,
 			"cha": 8,
 			"skill": {
@@ -6021,8 +6101,6 @@
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
-			"passive": 13,
-			"cr": "1",
 			"action": [
 				{
 					"name": "多重攻击",
@@ -6190,6 +6268,9 @@
 				"恐慌",
 				"麻痹",
 				"中毒"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluffImages": true,

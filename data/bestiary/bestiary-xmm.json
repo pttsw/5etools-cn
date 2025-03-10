@@ -1,15 +1,4 @@
 {
-	"_meta": {
-		"dependencies": {
-			"monster": [
-				"MM",
-				"DMG",
-				"MPMM",
-				"PHB",
-				"DoSI"
-			]
-		}
-	},
 	"monster": [
 		{
 			"name": "成年赤铜龙",
@@ -409,6 +398,15 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"forest",
+				"swamp",
+				"urban"
+			],
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/will-o-wisp.mp3"
 			},
 			"token": {
 				"name": "狒狒",
@@ -517,6 +515,24 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"arctic",
+				"coastal",
+				"desert",
+				"forest",
+				"hill",
+				"mountain",
+				"swamp",
+				"underdark",
+				"urban"
+			],
+			"treasure": [
+				"armaments"
+			],
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/winged-kobold.mp3"
 			},
 			"token": {
 				"name": "眼魔",
@@ -528,37 +544,39 @@
 			"name": "狂战士",
 			"ENG_name": "Berserker",
 			"source": "XMM",
-			"page": 37,
-			"otherSources": [
-				{
-					"source": "ScoEE"
-				}
-			],
+			"page": 334,
 			"size": [
-				"S",
-				"M"
+				"L"
 			],
-			"type": "humanoid",
+			"type": "monstrosity",
 			"alignment": [
-				"A"
+				"N",
+				"E"
 			],
 			"ac": [
 				13
 			],
 			"hp": {
-				"average": 67,
-				"formula": "9d8 + 27"
+				"average": 75,
+				"formula": "10d10 + 20"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 50
 			},
-			"str": 16,
-			"dex": 12,
-			"con": 17,
-			"int": 9,
-			"wis": 11,
-			"cha": 9,
-			"passive": 10,
+			"str": 18,
+			"dex": 13,
+			"con": 14,
+			"int": 7,
+			"wis": 12,
+			"cha": 8,
+			"skill": {
+				"perception": "+5",
+				"stealth": "+5"
+			},
+			"passive": 15,
+			"immune": [
+				"cold"
+			],
 			"languages": [
 				"通用语"
 			],
@@ -581,11 +599,19 @@
 				"ENG_name": "Berserker",
 				"source": "MM"
 			},
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Breath Weapon"
+			],
 			"languageTags": [
-				"C"
+				"C",
+				"GI"
 			],
 			"damageTags": [
-				"S"
+				"C",
+				"P"
 			],
 			"miscTags": [
 				"MA",
@@ -623,47 +649,48 @@
 			"name": "闪现犬",
 			"ENG_name": "Blink Dog",
 			"source": "XMM",
-			"page": 46,
+			"page": 373,
 			"otherSources": [
 				{
-					"source": "UtHftLH"
+					"source": "XPHB",
+					"page": 359
 				}
 			],
 			"size": [
 				"M"
 			],
-			"type": "fey",
+			"type": "beast",
 			"alignment": [
-				"L",
-				"G"
+				"U"
 			],
 			"ac": [
-				13
+				12
 			],
 			"hp": {
-				"average": 16,
-				"formula": "3d8 + 3"
+				"average": 11,
+				"formula": "2d8 + 2"
 			},
 			"speed": {
 				"walk": 40
 			},
-			"str": 12,
-			"dex": 17,
+			"str": 14,
+			"dex": 15,
 			"con": 12,
-			"int": 10,
-			"wis": 13,
-			"cha": 11,
+			"int": 3,
+			"wis": 12,
+			"cha": 6,
 			"skill": {
 				"perception": "+5",
-				"stealth": "+5"
+				"stealth": "+4"
 			},
 			"passive": 15,
 			"languages": [
 				"闪现犬",
 				"懂木族语但不能说"
 			],
+			"passive": 15,
 			"cr": "1/4",
-			"action": [
+			"trait": [
 				{
 					"name": "啃咬",
 					"ENG_name": "Bite",
@@ -672,7 +699,7 @@
 					]
 				}
 			],
-			"bonus": [
+			"action": [
 				{
 					"name": "传送 {@recharge 4}",
 					"ENG_name": "Teleport {@recharge 4}",
@@ -686,10 +713,11 @@
 				"ENG_name": "Blink Dog",
 				"source": "MM"
 			},
-			"languageTags": [
-				"CS",
-				"OTH",
-				"S"
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"senseTags": [
+				"D"
 			],
 			"damageTags": [
 				"P"
@@ -756,48 +784,43 @@
 			"name": "巨魔战士",
 			"ENG_name": "Bugbear Warrior",
 			"source": "XMM",
-			"page": 62,
+			"page": 335,
 			"otherSources": [
 				{
 					"source": "UtHftLH"
 				}
 			],
 			"size": [
-				"M"
+				"L"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"goblinoid"
-				]
-			},
+			"type": "fey",
 			"alignment": [
-				"C",
+				"N",
 				"E"
 			],
 			"ac": [
-				14
+				13
 			],
 			"hp": {
-				"average": 33,
-				"formula": "6d8 + 6"
+				"average": 26,
+				"formula": "4d10 + 4"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 50
 			},
-			"str": 15,
-			"dex": 14,
+			"str": 16,
+			"dex": 13,
 			"con": 13,
-			"int": 8,
+			"int": 7,
 			"wis": 11,
-			"cha": 9,
+			"cha": 8,
 			"skill": {
-				"stealth": "+6"
+				"perception": "+4"
 			},
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
-			"passive": 10,
+			"passive": 14,
 			"languages": [
 				"通用语",
 				"地精"
@@ -819,6 +842,7 @@
 					]
 				}
 			],
+			"cr": "1/2",
 			"action": [
 				{
 					"name": "徒手打击",
@@ -844,18 +868,14 @@
 				"D"
 			],
 			"languageTags": [
-				"C",
-				"GO"
+				"GO",
+				"OTH"
 			],
 			"damageTags": [
-				"B"
+				"P"
 			],
 			"miscTags": [
-				"MA",
-				"MLW",
-				"RA",
-				"RCH",
-				"THW"
+				"MA"
 			],
 			"conditionInflict": [
 				"被擒抱"
@@ -892,31 +912,37 @@
 			"name": "狂蛙人沼泽贤者",
 			"ENG_name": "Bullywug Bog Sage",
 			"source": "XMM",
-			"page": 64,
+			"page": 336,
 			"otherSources": [
 				{
-					"source": "UtHftLH"
+					"source": "HBTD"
 				}
 			],
 			"size": [
+				"S",
 				"M"
 			],
-			"type": "fey",
+			"type": "undead",
 			"alignment": [
-				"A"
+				"N",
+				"E"
 			],
 			"ac": [
-				16
+				13
 			],
 			"hp": {
-				"average": 52,
-				"formula": "8d8 + 16"
+				"average": 67,
+				"formula": "9d8 + 27"
 			},
 			"speed": {
-				"walk": 30,
-				"swim": 30
+				"walk": 5,
+				"fly": {
+					"number": 60,
+					"condition": "(hover)"
+				},
+				"canHover": true
 			},
-			"str": 8,
+			"str": 6,
 			"dex": 16,
 			"con": 14,
 			"int": 10,
@@ -960,6 +986,7 @@
 					"displayAs": "动作"
 				}
 			],
+			"cr": "5",
 			"trait": [
 				{
 					"name": "水陆两栖",
@@ -990,9 +1017,7 @@
 					"entries": [
 						"{@atkr m} {@hit 5}, 触及范围5英尺。{@h}7 ({@damage 1d8 + 3}) 钝击伤害加上10 ({@damage 3d6}) 毒素伤害。"
 					]
-				}
-			],
-			"bonus": [
+				},
 				{
 					"name": "跳跃",
 					"ENG_name": "Leap",
@@ -1014,17 +1039,10 @@
 			],
 			"languageTags": [
 				"C",
-				"OTH"
+				"X"
 			],
 			"damageTags": [
-				"B",
-				"I"
-			],
-			"damageTagsSpell": [
-				"A",
-				"I"
-			],
-			"spellcastingTags": [
+				"N",
 				"O"
 			],
 			"miscTags": [
@@ -1042,46 +1060,42 @@
 			"name": "狂蛙人战士",
 			"ENG_name": "Bullywug Warrior",
 			"source": "XMM",
-			"page": 64,
-			"otherSources": [
-				{
-					"source": "UtHftLH"
-				}
-			],
+			"page": 337,
 			"size": [
-				"M"
+				"L"
 			],
-			"type": "fey",
+			"type": "dragon",
 			"alignment": [
-				"A"
+				"U"
 			],
 			"ac": [
-				15
+				14
 			],
 			"hp": {
-				"average": 11,
-				"formula": "2d8 + 2"
+				"average": 127,
+				"formula": "15d10 + 45"
 			},
 			"speed": {
 				"walk": 30,
-				"swim": 40
+				"fly": 80
 			},
-			"str": 12,
-			"dex": 14,
-			"con": 13,
-			"int": 7,
-			"wis": 10,
-			"cha": 7,
+			"str": 19,
+			"dex": 10,
+			"con": 16,
+			"int": 5,
+			"wis": 12,
+			"cha": 6,
 			"skill": {
-				"stealth": "+4"
+				"perception": "+4"
 			},
 			"passive": 10,
 			"languages": [
 				"狂蛙人",
 				"通用语"
 			],
-			"cr": "1/4",
-			"trait": [
+			"passive": 14,
+			"cr": "6",
+			"action": [
 				{
 					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
@@ -1095,9 +1109,7 @@
 					"entries": [
 						"狂蛙人可以用狂蛙人语同任何青蛙或蟾蜍进行内容简单的交流。"
 					]
-				}
-			],
-			"action": [
+				},
 				{
 					"name": "昆虫形细剑",
 					"ENG_name": "Insectile Rapier",
@@ -1123,9 +1135,8 @@
 			"traitTags": [
 				"水陆两栖"
 			],
-			"languageTags": [
-				"C",
-				"OTH"
+			"actionTags": [
+				"Multiattack"
 			],
 			"damageTags": [
 				"I",
@@ -1302,40 +1313,48 @@
 			"name": "邪教徒",
 			"ENG_name": "Cultist",
 			"source": "XMM",
-			"page": 84,
-			"otherSources": [
-				{
-					"source": "ScoEE"
-				}
-			],
+			"page": 338,
 			"size": [
-				"S",
 				"M"
 			],
-			"type": "humanoid",
+			"type": "elemental",
 			"alignment": [
-				"A"
+				"N"
 			],
 			"ac": [
-				12
+				19
 			],
 			"hp": {
-				"average": 9,
-				"formula": "2d8"
+				"average": 84,
+				"formula": "8d8 + 48"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 20,
+				"burrow": 20
 			},
-			"str": 11,
-			"dex": 12,
-			"con": 10,
-			"int": 10,
-			"wis": 11,
-			"cha": 10,
+			"str": 17,
+			"dex": 10,
+			"con": 22,
+			"int": 11,
+			"wis": 10,
+			"cha": 11,
 			"skill": {
-				"deception": "+2"
+				"perception": "+6",
+				"stealth": "+6"
 			},
-			"passive": 10,
+			"senses": [
+				"darkvision 60 ft.",
+				"tremorsense 60 ft."
+			],
+			"passive": 16,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
 			"languages": [
 				"通用语"
 			],
@@ -1358,11 +1377,19 @@
 				"ENG_name": "Cultist",
 				"source": "MM"
 			},
+			"senseTags": [
+				"D",
+				"T"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
 			"languageTags": [
-				"C"
+				"P",
+				"T"
 			],
 			"damageTags": [
-				"N",
+				"P",
 				"S"
 			],
 			"miscTags": [
@@ -1380,36 +1407,42 @@
 					"source": "ScoEE"
 				}
 			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Yeti",
+			"source": "XMM",
+			"page": 339,
 			"size": [
-				"S",
-				"M"
+				"L"
 			],
-			"type": "humanoid",
+			"type": "monstrosity",
 			"alignment": [
-				"A"
+				"C",
+				"E"
 			],
 			"ac": [
-				13
+				12
 			],
 			"hp": {
-				"average": 44,
-				"formula": "8d8 + 8"
+				"average": 51,
+				"formula": "6d10 + 18"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 40,
+				"climb": 40
 			},
-			"str": 11,
-			"dex": 14,
-			"con": 12,
-			"int": 10,
-			"wis": 14,
-			"cha": 13,
-			"save": {
-				"wis": "+4"
-			},
+			"str": 18,
+			"dex": 13,
+			"con": 16,
+			"int": 8,
+			"wis": 12,
+			"cha": 7,
 			"skill": {
-				"deception": "+3",
-				"persuasion": "+3"
+				"perception": "+5",
+				"stealth": "+5"
 			},
 			"passive": 12,
 			"languages": [
@@ -1419,7 +1452,11 @@
 			"gear": [
 				"皮甲|xphb"
 			],
-			"spellcasting": [
+			"languages": [
+				"Yeti"
+			],
+			"cr": "3",
+			"trait": [
 				{
 					"name": "施法（牧师）",
 					"ENG_name": "Spellcasting (Cleric)",
@@ -1450,9 +1487,7 @@
 					"entries": [
 						"{@atkr m} {@hit 4}, 触及5英尺。{@h}6 ({@damage 1d8 + 2}) 斩击伤害加上3 ({@damage 1d6}) 亡灵伤害。"
 					]
-				}
-			],
-			"bonus": [
+				},
 				{
 					"name": "精神武器（每日2次）",
 					"ENG_name": "Spiritual Weapon (2/Day)",
@@ -1466,16 +1501,19 @@
 				"ENG_name": "Cult Fanatic",
 				"source": "MM"
 			},
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
 			"languageTags": [
-				"C"
+				"OTH"
 			],
 			"damageTags": [
-				"N",
-				"O",
+				"B",
+				"C",
 				"S"
-			],
-			"spellcastingTags": [
-				"O"
 			],
 			"miscTags": [
 				"MA"
@@ -1903,33 +1941,67 @@
 					"source": "ScoEE"
 				}
 			],
-			"size": [
-				"L"
+			"savingThrowForced": [
+				"constitution"
 			],
-			"type": "elemental",
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Yochlol",
+			"group": [
+				"Demons"
+			],
+			"source": "XMM",
+			"page": 341,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"demon"
+				]
+			},
 			"alignment": [
-				"N"
+				"C",
+				"E"
 			],
 			"ac": [
-				13
+				15
 			],
 			"hp": {
-				"average": 93,
-				"formula": "11d10 + 33"
+				"average": 153,
+				"formula": "18d8 + 72"
 			},
 			"speed": {
-				"walk": 50
+				"walk": 30,
+				"climb": 30
 			},
-			"str": 10,
-			"dex": 17,
-			"con": 16,
-			"int": 6,
-			"wis": 10,
-			"cha": 7,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 15,
+			"dex": 19,
+			"con": 18,
+			"int": 13,
+			"wis": 15,
+			"cha": 17,
+			"save": {
+				"dex": "+8",
+				"int": "+5",
+				"wis": "+6",
+				"cha": "+7"
+			},
+			"skill": {
+				"deception": "+11",
+				"insight": "+6"
+			},
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
-			"passive": 10,
+			"passive": 12,
 			"resist": [
 				"钝击",
 				"穿刺",
@@ -1955,7 +2027,6 @@
 			"languages": [
 				"原初（伊格南）"
 			],
-			"cr": "5",
 			"trait": [
 				{
 					"name": "火焰光环",
@@ -2011,18 +2082,24 @@
 				"照明"
 			],
 			"senseTags": [
-				"D"
+				"SD"
 			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
-				"IG",
-				"P"
+				"AB",
+				"E",
+				"U"
 			],
 			"damageTags": [
-				"C",
+				"A"
+			],
+			"damageTagsSpell": [
 				"F"
+			],
+			"spellcastingTags": [
+				"O"
 			],
 			"miscTags": [
 				"AOE",
@@ -2508,6 +2585,17 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"swamp"
+			],
+			"treasure": [
+				"relics"
+			],
+			"dragonAge": "young",
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/black-dragon.mp3"
 			},
 			"token": {
 				"name": "惧噬体",
@@ -2643,6 +2731,18 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"coastal",
+				"desert"
+			],
+			"treasure": [
+				"relics"
+			],
+			"dragonAge": "young",
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/blue-dragon.mp3"
 			},
 			"token": {
 				"name": "地精",
@@ -2660,32 +2760,50 @@
 					"source": "ScoEE"
 				}
 			],
+			"source": "XMM",
+			"page": 54,
 			"size": [
-				"M"
+				"L"
 			],
-			"type": "ooze",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"metallic"
+				]
+			},
 			"alignment": [
-				"U"
+				"C",
+				"G"
 			],
 			"ac": [
-				8
+				17
 			],
 			"hp": {
-				"average": 22,
-				"formula": "3d8 + 9"
+				"average": 110,
+				"formula": "13d10 + 39"
 			},
 			"speed": {
-				"walk": 10,
-				"climb": 10
+				"walk": 40,
+				"burrow": 20,
+				"fly": 80
 			},
-			"str": 12,
-			"dex": 6,
-			"con": 16,
-			"int": 1,
-			"wis": 6,
-			"cha": 2,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 19,
+			"dex": 10,
+			"con": 17,
+			"int": 12,
+			"wis": 11,
+			"cha": 15,
+			"save": {
+				"dex": "+3",
+				"wis": "+3"
+			},
 			"skill": {
-				"stealth": "+2"
+				"perception": "+6",
+				"persuasion": "+5",
+				"stealth": "+3"
 			},
 			"senses": [
 				"盲视 60 尺"
@@ -2704,8 +2822,12 @@
 				"恐慌",
 				"倒地"
 			],
-			"cr": "1/2",
-			"trait": [
+			"languages": [
+				"Common",
+				"Draconic"
+			],
+			"cr": "6",
+			"action": [
 				{
 					"name": "无定形",
 					"ENG_name": "Amorphous",
@@ -2719,9 +2841,7 @@
 					"entries": [
 						"一个生物如果用近战攻击击中这个软泥怪，会受到4点（{@damage 1d8}）酸液伤害。这个软泥怪能在1轮内腐蚀穿2英寸厚的非魔法木材或金属。"
 					]
-				}
-			],
-			"action": [
+				},
 				{
 					"name": "伪足",
 					"ENG_name": "Pseudopod",
@@ -2738,11 +2858,29 @@
 			"traitTags": [
 				"无定形"
 			],
+			"treasure": [
+				"arcana"
+			],
+			"dragonAge": "young",
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/brass-dragon.mp3"
+			},
 			"senseTags": [
-				"B"
+				"B",
+				"SD"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR"
 			],
 			"damageTags": [
-				"A"
+				"F",
+				"S"
 			],
 			"miscTags": [
 				"MA"
@@ -3109,35 +3247,50 @@
 					"source": "ScoEE"
 				}
 			],
+			"source": "XMM",
+			"page": 58,
 			"size": [
-				"M"
+				"L"
 			],
-			"type": "fiend",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"metallic"
+				]
+			},
 			"alignment": [
-				"N",
-				"E"
+				"L",
+				"G"
 			],
 			"ac": [
-				15
+				17
 			],
 			"hp": {
-				"average": 66,
-				"formula": "12d8 + 12"
+				"average": 142,
+				"formula": "15d10 + 60"
 			},
 			"speed": {
-				"walk": 30,
-				"fly": 60
+				"walk": 40,
+				"fly": 80,
+				"swim": 40
 			},
-			"str": 8,
-			"dex": 17,
-			"con": 13,
-			"int": 15,
-			"wis": 12,
-			"cha": 20,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 21,
+			"dex": 10,
+			"con": 19,
+			"int": 14,
+			"wis": 13,
+			"cha": 17,
+			"save": {
+				"dex": "+3",
+				"wis": "+4"
+			},
 			"skill": {
-				"deception": "+9",
-				"perception": "+5",
-				"stealth": "+7"
+				"insight": "+4",
+				"perception": "+7",
+				"stealth": "+3"
 			},
 			"senses": [
 				"黑暗视觉 60 尺"
@@ -3179,6 +3332,7 @@
 					"displayAs": "动作"
 				}
 			],
+			"cr": "8",
 			"trait": [
 				{
 					"name": "魅魔形态",
@@ -3202,9 +3356,7 @@
 					"entries": [
 						"{@atkr m} {@hit 7}, 触及5英尺。{@h}15（{@damage 3d6 + 5}）心灵伤害，目标被诅咒24小时或直到孵化者死亡。在诅咒结束之前，目标从短休中不会获得任何好处。"
 					]
-				}
-			],
-			"bonus": [
+				},
 				{
 					"name": "噩梦 {@recharge}",
 					"ENG_name": "Nightmare {@recharge}",
@@ -3219,30 +3371,23 @@
 				"source": "MM"
 			},
 			"senseTags": [
-				"D"
+				"B",
+				"SD"
 			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
-				"AB",
 				"C",
-				"I",
-				"TP"
+				"DR"
 			],
 			"damageTags": [
-				"Y"
-			],
-			"damageTagsSpell": [
-				"O",
-				"Y"
-			],
-			"spellcastingTags": [
-				"O"
+				"L",
+				"S"
 			],
 			"miscTags": [
-				"CUR",
-				"MA"
+				"MA",
+				"RCH"
 			],
 			"conditionInflict": [
 				"昏迷"
@@ -3346,32 +3491,45 @@
 					"source": "ScoEE"
 				}
 			],
+			"source": "XMM",
+			"page": 78,
 			"size": [
-				"S",
-				"M"
+				"L"
 			],
-			"type": "humanoid",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"metallic"
+				]
+			},
 			"alignment": [
-				"A"
+				"C",
+				"G"
 			],
 			"ac": [
-				18
+				17
 			],
 			"hp": {
-				"average": 52,
-				"formula": "8d8 + 16"
+				"average": 119,
+				"formula": "14d10 + 42"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 40,
+				"climb": 40,
+				"fly": 80
 			},
-			"str": 16,
-			"dex": 11,
-			"con": 14,
-			"int": 11,
-			"wis": 11,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 19,
+			"dex": 12,
+			"con": 17,
+			"int": 16,
+			"wis": 13,
 			"cha": 15,
 			"save": {
-				"wis": "+2"
+				"dex": "+4",
+				"wis": "+4"
 			},
 			"passive": 10,
 			"languages": [
@@ -3383,6 +3541,7 @@
 				"重弩|xphb",
 				"板甲|xphb"
 			],
+			"cr": "7",
 			"action": [
 				{
 					"name": "多重攻击",
@@ -3404,9 +3563,7 @@
 					"entries": [
 						"{@atkr r} {@hit 2}, 射程100/400英尺。{@h}11 ({@damage 2d10}) 穿刺伤害加上4 ({@damage 1d8}) 圣光伤害。"
 					]
-				}
-			],
-			"reaction": [
+				},
 				{
 					"name": "格挡",
 					"ENG_name": "Parry",
@@ -3420,17 +3577,20 @@
 				"ENG_name": "Knight",
 				"source": "MM"
 			},
+			"senseTags": [
+				"B",
+				"SD"
+			],
 			"actionTags": [
 				"多重攻击",
 				"格挡"
 			],
 			"languageTags": [
 				"C",
-				"X"
+				"DR"
 			],
 			"damageTags": [
-				"P",
-				"R",
+				"A",
 				"S"
 			],
 			"miscTags": [
@@ -3585,37 +3745,45 @@
 					"source": "UtHftLH"
 				}
 			],
+			"source": "XMM",
+			"page": 144,
 			"size": [
-				"S",
-				"M"
+				"L"
 			],
-			"type": "humanoid",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"metallic"
+				]
+			},
 			"alignment": [
-				"A"
+				"L",
+				"G"
 			],
 			"ac": [
-				15
+				18
 			],
 			"hp": {
-				"average": 81,
-				"formula": "18d8"
+				"average": 178,
+				"formula": "17d10 + 85"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 40,
+				"fly": 80,
+				"swim": 40
 			},
-			"str": 9,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 23,
 			"dex": 14,
-			"con": 11,
-			"int": 17,
-			"wis": 12,
-			"cha": 11,
+			"con": 21,
+			"int": 16,
+			"wis": 13,
+			"cha": 20,
 			"save": {
-				"int": "+6",
-				"wis": "+4"
-			},
-			"skill": {
-				"arcana": "+6",
-				"history": "+6"
+				"dex": "+6",
+				"wis": "+5"
 			},
 			"passive": 11,
 			"languages": [
@@ -3665,9 +3833,7 @@
 					"entries": [
 						"{@atkr 米，半径} {@hit 6}, 触及5英尺或射程120英尺 {@h}16 ({@damage 3d10}) 力量伤害。"
 					]
-				}
-			],
-			"reaction": [
+				},
 				{
 					"name": "反制法术（每日1次）",
 					"ENG_name": "Counterspell (1/Day)",
@@ -3688,22 +3854,23 @@
 				"ENG_name": "Mage",
 				"source": "MM"
 			},
+			"traitTags": [
+				"Amphibious"
+			],
+			"senseTags": [
+				"B",
+				"SD"
+			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
 				"C",
-				"X"
+				"DR"
 			],
 			"damageTags": [
-				"O"
-			],
-			"damageTagsSpell": [
-				"C",
-				"F"
-			],
-			"spellcastingTags": [
-				"O"
+				"F",
+				"S"
 			],
 			"miscTags": [
 				"MA",
@@ -4143,6 +4310,17 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"forest"
+			],
+			"treasure": [
+				"arcana"
+			],
+			"dragonAge": "young",
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/green-dragon.mp3"
 			},
 			"token": {
 				"name": "赭冻怪",
@@ -4160,34 +4338,53 @@
 					"source": "ScoEE"
 				}
 			],
+			"source": "XMM",
+			"page": 254,
 			"size": [
 				"L"
 			],
-			"type": "giant",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"chromatic"
+				]
+			},
 			"alignment": [
 				"C",
 				"E"
 			],
 			"ac": [
-				11
+				18
 			],
 			"hp": {
-				"average": 68,
-				"formula": "8d10 + 24"
+				"average": 178,
+				"formula": "17d10 + 85"
 			},
 			"speed": {
-				"walk": 40
+				"walk": 40,
+				"climb": 40,
+				"fly": 80
 			},
-			"str": 19,
-			"dex": 8,
-			"con": 16,
-			"int": 5,
-			"wis": 7,
-			"cha": 7,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 23,
+			"dex": 10,
+			"con": 21,
+			"int": 14,
+			"wis": 11,
+			"cha": 19,
+			"save": {
+				"dex": "+4",
+				"wis": "+4"
+			},
+			"skill": {
+				"perception": "+8",
+				"stealth": "+4"
+			},
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
-			"passive": 8,
 			"languages": [
 				"通用语",
 				"巨人语"
@@ -4200,6 +4397,7 @@
 					"quantity": 3
 				}
 			],
+			"cr": "10",
 			"action": [
 				{
 					"name": "巨棒",
@@ -4222,22 +4420,31 @@
 				"source": "MM"
 			},
 			"senseTags": [
-				"D"
+				"B",
+				"SD"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
 			],
 			"languageTags": [
 				"C",
-				"GI"
+				"DR"
 			],
 			"damageTags": [
-				"B",
-				"P"
+				"F",
+				"S"
 			],
 			"miscTags": [
 				"MA",
-				"MLW",
-				"RA",
-				"THW"
-			]
+				"RCH"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "恶鬼",
@@ -4313,6 +4520,13 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"arctic"
+			],
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/remorhaz.mp3"
 			},
 			"token": {
 				"name": "穿刺者",
@@ -4330,33 +4544,44 @@
 					"source": "ScoEE"
 				}
 			],
+			"source": "XMM",
+			"page": 278,
 			"size": [
-				"S",
-				"M"
+				"L"
 			],
-			"type": "humanoid",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"metallic"
+				]
+			},
 			"alignment": [
-				"A"
+				"L",
+				"G"
 			],
 			"ac": [
-				14
+				18
 			],
 			"hp": {
-				"average": 27,
-				"formula": "5d8 + 5"
+				"average": 168,
+				"formula": "16d10 + 80"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 40,
+				"fly": 80
 			},
-			"str": 10,
-			"dex": 16,
-			"con": 12,
-			"int": 8,
-			"wis": 12,
-			"cha": 14,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 23,
+			"dex": 10,
+			"con": 21,
+			"int": 14,
+			"wis": 11,
+			"cha": 19,
 			"save": {
-				"dex": "+5",
-				"cha": "+4"
+				"dex": "+4",
+				"wis": "+4"
 			},
 			"passive": 11,
 			"languages": [
@@ -4370,6 +4595,7 @@
 				},
 				"皮甲|xphb"
 			],
+			"cr": "9",
 			"action": [
 				{
 					"name": "多重攻击",
@@ -4398,21 +4624,24 @@
 				"ENG_name": "Pirate Bosun",
 				"source": "GoS"
 			},
+			"senseTags": [
+				"B",
+				"SD"
+			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
 				"C",
-				"X"
+				"DR"
 			],
 			"damageTags": [
-				"P"
+				"C",
+				"S"
 			],
 			"miscTags": [
 				"MA",
-				"MLW",
-				"RA",
-				"THW"
+				"RCH"
 			],
 			"conditionInflict": [
 				"魅惑"
@@ -4428,41 +4657,59 @@
 					"source": "ScoEE"
 				}
 			],
+			"source": "XMM",
+			"page": 328,
 			"size": [
-				"S",
-				"M"
+				"L"
 			],
-			"type": "humanoid",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"chromatic"
+				]
+			},
 			"alignment": [
-				"A"
+				"C",
+				"E"
 			],
 			"ac": [
 				17
 			],
 			"hp": {
-				"average": 78,
-				"formula": "12d8 + 24"
+				"average": 123,
+				"formula": "13d10 + 52"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 40,
+				"burrow": 20,
+				"fly": 80,
+				"swim": 40
 			},
-			"str": 10,
-			"dex": 18,
-			"con": 14,
-			"int": 10,
-			"wis": 14,
-			"cha": 17,
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 18,
+			"dex": 10,
+			"con": 18,
+			"int": 6,
+			"wis": 11,
+			"cha": 12,
 			"save": {
-				"str": "+3",
-				"dex": "+7",
-				"wis": "+5",
-				"cha": "+6"
+				"dex": "+3",
+				"wis": "+3"
 			},
 			"skill": {
-				"acrobatics": "+7",
-				"perception": "+5"
+				"perception": "+6",
+				"stealth": "+3"
 			},
-			"passive": 15,
+			"senses": [
+				"blindsight 30 ft.",
+				"darkvision 120 ft."
+			],
+			"passive": 16,
+			"immune": [
+				"cold"
+			],
 			"languages": [
 				"通用语，外加另外一门语言"
 			],
@@ -4517,21 +4764,24 @@
 				"ENG_name": "Pirate Captain",
 				"source": "GoS"
 			},
+			"senseTags": [
+				"B",
+				"SD"
+			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
 				"C",
-				"X"
+				"DR"
 			],
 			"damageTags": [
-				"P"
+				"C",
+				"S"
 			],
 			"miscTags": [
 				"MA",
-				"MLW",
-				"RA",
-				"RNG"
+				"RCH"
 			],
 			"conditionInflict": [
 				"魅惑"
@@ -4962,6 +5212,19 @@
 						}
 					}
 				}
+			],
+			"environment": [
+				"desert",
+				"forest",
+				"swamp",
+				"urban"
+			],
+			"treasure": [
+				"relics"
+			],
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/yuan-ti-abomination.mp3"
 			},
 			"token": {
 				"name": "尖叫蕈",
@@ -5135,39 +5398,42 @@
 			"name": "石魔像",
 			"ENG_name": "Stone Golem",
 			"source": "XMM",
-			"page": 301,
-			"otherSources": [
-				{
-					"source": "ScoEE"
-				}
-			],
+			"page": 343,
 			"size": [
-				"L"
+				"M"
 			],
-			"type": "construct",
+			"type": "monstrosity",
 			"alignment": [
-				"U"
+				"N",
+				"E"
 			],
 			"ac": [
-				18
+				12
 			],
 			"hp": {
-				"average": 252,
-				"formula": "24d10 + 120"
+				"average": 66,
+				"formula": "12d8 + 12"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 30,
+				"climb": {
+					"number": 30,
+					"condition": "(snake form only)"
+				}
 			},
-			"str": 22,
-			"dex": 9,
-			"con": 20,
-			"int": 3,
-			"wis": 11,
-			"cha": 1,
+			"str": 16,
+			"dex": 14,
+			"con": 13,
+			"int": 14,
+			"wis": 16,
+			"cha": 12,
+			"skill": {
+				"stealth": "+4 (+6 while in snake form)"
+			},
 			"senses": [
 				"黑暗视觉 120 尺"
 			],
-			"passive": 10,
+			"passive": 13,
 			"immune": [
 				"毒素",
 				"心灵"
@@ -5183,7 +5449,6 @@
 			"languages": [
 				"理解通用语加上另外两种语言，但不能说话"
 			],
-			"cr": "10",
 			"trait": [
 				{
 					"name": "不变形态",
@@ -5221,7 +5486,9 @@
 					"entries": [
 						"{@atkr r} {@hit 9}, 射程90英尺。{@h}26 ({@damage 4d12}) 力能伤害。"
 					]
-				},
+				}
+			],
+			"bonus": [
 				{
 					"name": "减速 {@recharge 5}",
 					"ENG_name": "Slow {@recharge 5}",
@@ -5240,19 +5507,22 @@
 				"魔法抗性"
 			],
 			"senseTags": [
-				"SD"
+				"D"
 			],
 			"actionTags": [
 				"多重攻击"
 			],
 			"languageTags": [
+				"AB",
 				"C",
-				"CS",
-				"X"
+				"DR"
 			],
 			"damageTags": [
-				"B",
-				"O"
+				"I",
+				"P"
+			],
+			"spellcastingTags": [
+				"F"
 			],
 			"miscTags": [
 				"MA",
@@ -5290,22 +5560,17 @@
 			"name": "魅魔",
 			"ENG_name": "Succubus",
 			"source": "XMM",
-			"page": 303,
-			"otherSources": [
-				{
-					"source": "ScoEE"
-				}
-			],
+			"page": 343,
 			"size": [
 				"M"
 			],
-			"type": "fiend",
+			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
 			],
 			"ac": [
-				15
+				12
 			],
 			"hp": {
 				"average": 66,
@@ -5313,18 +5578,19 @@
 			},
 			"speed": {
 				"walk": 30,
-				"fly": 60
+				"climb": {
+					"number": 30,
+					"condition": "(snake form only)"
+				}
 			},
-			"str": 8,
-			"dex": 17,
+			"str": 16,
+			"dex": 14,
 			"con": 13,
-			"int": 15,
-			"wis": 12,
-			"cha": 20,
+			"int": 14,
+			"wis": 16,
+			"cha": 12,
 			"skill": {
-				"deception": "+9",
-				"perception": "+5",
-				"stealth": "+7"
+				"stealth": "+4 (+6 while in snake form)"
 			},
 			"senses": [
 				"黑暗视觉 60 尺"
@@ -5342,7 +5608,7 @@
 				"炼狱语",
 				"心灵感应 60 尺"
 			],
-			"cr": "4",
+			"cr": "3",
 			"spellcasting": [
 				{
 					"name": "施法",
@@ -5409,6 +5675,9 @@
 				"ENG_name": "Succubus",
 				"source": "MM"
 			},
+			"traitTags": [
+				"Magic Resistance"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -5418,18 +5687,18 @@
 			"languageTags": [
 				"AB",
 				"C",
-				"I",
-				"TP"
+				"DR"
 			],
 			"damageTags": [
-				"Y"
+				"I",
+				"P"
 			],
 			"spellcastingTags": [
-				"O"
+				"F"
 			],
 			"miscTags": [
-				"HPR",
-				"MA"
+				"MA",
+				"RCH"
 			],
 			"conditionInflictSpell": [
 				"魅惑",
@@ -5578,42 +5847,45 @@
 			"name": "硬核Boss",
 			"ENG_name": "Tough Boss",
 			"source": "XMM",
-			"page": 307,
-			"otherSources": [
-				{
-					"source": "ScoEE"
-				}
-			],
+			"page": 344,
 			"size": [
-				"S",
 				"M"
 			],
-			"type": "humanoid",
+			"type": "monstrosity",
 			"alignment": [
-				"A"
+				"N",
+				"E"
 			],
 			"ac": [
-				16
+				12
 			],
 			"hp": {
-				"average": 82,
-				"formula": "11d8 + 33"
+				"average": 66,
+				"formula": "12d8 + 12"
 			},
 			"speed": {
-				"walk": 30
+				"walk": 30,
+				"climb": 30
 			},
-			"str": 17,
+			"str": 16,
 			"dex": 14,
-			"con": 16,
-			"int": 11,
-			"wis": 10,
-			"cha": 11,
-			"save": {
-				"str": "+5",
-				"con": "+5",
-				"cha": "+2"
+			"con": 13,
+			"int": 14,
+			"wis": 16,
+			"cha": 12,
+			"skill": {
+				"stealth": "+4 (+6 while in snake form)"
 			},
-			"passive": 10,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
 			"languages": [
 				"通用语"
 			],
@@ -5655,6 +5927,19 @@
 					]
 				}
 			],
+			"environment": [
+				"desert",
+				"forest",
+				"swamp",
+				"urban"
+			],
+			"treasure": [
+				"relics"
+			],
+			"soundClip": {
+				"type": "internal",
+				"path": "bestiary/yuan-ti-malison.mp3"
+			},
 			"traitTags": [
 				"集群战术"
 			],
@@ -5662,17 +5947,20 @@
 				"多重攻击"
 			],
 			"languageTags": [
-				"C"
+				"AB",
+				"C",
+				"DR"
 			],
 			"damageTags": [
 				"B",
-				"P"
+				"I"
+			],
+			"spellcastingTags": [
+				"F"
 			],
 			"miscTags": [
 				"MA",
-				"MLW",
-				"RA",
-				"RNG"
+				"RA"
 			],
 			"hasToken": true
 		},
@@ -6112,48 +6400,58 @@
 			"name": "座狼",
 			"ENG_name": "Worg",
 			"source": "XMM",
-			"page": 335,
+			"page": 346,
 			"otherSources": [
 				{
-					"source": "UtHftLH"
+					"source": "XPHB",
+					"page": 359
+				},
+				{
+					"source": "HBTD"
 				}
 			],
 			"size": [
-				"L"
+				"M"
 			],
-			"type": "fey",
+			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
 			],
 			"ac": [
-				13
+				8
 			],
 			"hp": {
-				"average": 26,
-				"formula": "4d10 + 4"
+				"average": 15,
+				"formula": "2d8 + 6"
 			},
 			"speed": {
-				"walk": 50
+				"walk": 20
 			},
-			"str": 16,
-			"dex": 13,
-			"con": 13,
-			"int": 7,
-			"wis": 11,
-			"cha": 8,
-			"skill": {
-				"perception": "+4"
+			"str": 13,
+			"dex": 6,
+			"con": 16,
+			"int": 3,
+			"wis": 6,
+			"cha": 5,
+			"save": {
+				"wis": "+0"
 			},
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
-			"passive": 14,
+			"passive": 8,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
 			"languages": [
 				"地精",
 				"座狼"
 			],
-			"cr": "1/2",
 			"action": [
 				{
 					"name": "啃咬",
@@ -6168,15 +6466,19 @@
 				"ENG_name": "Worg",
 				"source": "MM"
 			},
+			"traitTags": [
+				"Undead Fortitude"
+			],
 			"senseTags": [
 				"D"
 			],
 			"languageTags": [
-				"GO",
-				"OTH"
+				"C",
+				"CS",
+				"X"
 			],
 			"damageTags": [
-				"P"
+				"B"
 			],
 			"miscTags": [
 				"MA"
