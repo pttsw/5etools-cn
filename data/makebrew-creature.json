@@ -5,7 +5,7 @@
 			"ENG_name": "Aberrant Ground",
 			"source": "MM",
 			"entries": [
-				"以<$short_name$>为中心10英尺半径内的土地是泥泞的 {@quickref 困难地形||3}。任何在该区域内开始其回合的生物必须通过一次 {dc 10} 力量豁免检定，否则其速度将降低至0，直至其下一个回合开始。"
+				"<$short_name$>周围10英尺半径内的地面变得像面团一样{@quickref 困难地形||3}。每个在该区域内开始其回合的生物必须成功通过一个{@dc 10}力量豁免检定，否则其速度将减少到0，直到其下一回合开始。"
 			]
 		},
 		{
@@ -21,7 +21,7 @@
 			"ENG_name": "Adhesive",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>的武器攻击带有魔法属性。当<$short_name$>使用任何武器命中时，该武器额外造成{@damage 6d8}点光辉伤害。"
+				"<$title_short_name$> 会粘附在任何触碰它的物体上。被粘附的巨型或更小的生物也会被其 {@condition 擒抱}（逃脱 {@dc 13}）。逃脱此擒抱的能力检定具有劣势。"
 			]
 		},
 		{
@@ -125,7 +125,7 @@
 			"ENG_name": "Barbed Hide (Barbed Devil)",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 在能看见任何生物且未 {@condition incapacitated} 时，会语无伦次地胡言乱语。每个在其回合开始时位于 <$short_name$> 20英尺内并能听到胡言乱语的生物都必须通过一次 {@dc 10} 的智力豁免检定。失败的话，该生物直到其下个回合开始前无法进行反应，并且掷一个 {@dice d8} 来决定它回合中的行动。若结果为1到4，该生物什么也不做。若结果为5或6，该生物不进行任何行动或奖励行动，并使用其全部移动力向随机确定的方向移动。若结果为7或8，该生物对其攻击范围内随机选定的一个生物进行近战攻击，如果不能进行这样的攻击则什么都不做。"
+				"在其每回合开始时，<$short_name$>会对任何擒抱它的生物造成5（{@damage 1d10}）点穿刺伤害。"
 			]
 		},
 		{
@@ -149,7 +149,7 @@
 			"ENG_name": "Berserk (Flesh Golem)",
 			"source": "MM",
 			"entries": [
-				"每当<$short_name$>在40点生命值或更少时开始其回合，掷一个骰子{{d6}}。如果是6，<$short_name$>会陷入狂暴状态。在狂暴状态下的每个回合，<$short_name$>会攻击它能看到的最近的生物。如果没有足够近的生物可以移动并攻击，<$short_name$>会攻击一个物体，优先选择比自己小的物体。一旦<$short_name$>陷入狂暴状态，它会持续如此，直到被摧毁或恢复所有生命值。",
+				"每当<$short_name$>以40点或更少生命值开始其回合时，掷一个{@dice d6}骰子。若结果为6，<$short_name$>进入狂暴状态。狂暴期间，<$short_name$>每回合会攻击其能看到的最近生物。如果没有生物足够近以供其移动并攻击，<$short_name$>会攻击一个物体，优先选择比其自身小的物体。一旦<$short_name$>进入狂暴状态，它会持续狂暴直到被摧毁或恢复所有生命值。",
 				"<$title_short_name$>的创造者，如果在狂暴的<$short_name$>60英尺内，可以通过坚定而有说服力地说话来尝试使其平静下来。<$title_short_name$>必须能够听到其创造者的声音，而创造者必须采取行动进行一次{@skill 游说}的魅力（{@skill 游说}）检定。如果检定成功，<$short_name$>将停止狂暴。如果它在仍然有40点或更少的生命值时受到伤害，<$short_name$>可能会再次陷入狂暴。"
 			]
 		},
@@ -256,7 +256,7 @@
 			"ENG_name": "Damage Transfer (Rug of Smothering)",
 			"source": "MM",
 			"entries": [
-				"当<$short_name$>正在抓住一个生物时，<$short_name$>只承受对其造成的一半伤害，而被<$short_name$>抓住的生物承受另一半。"
+				"当<$short_name$>擒抱一个生物时，<$short_name$>只受到一半的伤害，而被<$short_name$> {@condition 擒抱} 的生物则受到另一半伤害。"
 			]
 		},
 		{
@@ -304,7 +304,7 @@
 			"ENG_name": "Death Burst (Steam Mephit)",
 			"source": "MM",
 			"entries": [
-				"当<$short_name$>死亡时，它会在一团蒸汽中爆炸。在其5英尺范围内的每个生物都必须进行一次DC 10的敏捷豁免检定，失败则受到4点（{@damage 1d8}）火焰伤害，成功则受到一半的伤害。"
+				"当<$short_name$>死亡时，它会在一团蒸汽中爆炸。每个在其 5 英尺范围内的生物必须进行一次 {@dc 10} 敏捷豁免检定，豁免失败则受到 4（{@damage 1d8}）点火焰伤害，豁免成功则受到一半伤害。"
 			]
 		},
 		{
@@ -312,7 +312,7 @@
 			"ENG_name": "Death Throes (Balor)",
 			"source": "MM",
 			"entries": [
-				"当<$short_name$>死亡时，它会爆炸，30英尺内的每个生物都必须进行一次20面骰敏捷豁免检定，失败则受到70（@damage 20d6）点火焰伤害，成功则伤害减半。爆炸会点燃该区域内未穿戴或携带的易燃物品，并摧毁<$short_name$>的武器。"
+				"当<$short_name$>死亡时，它会爆炸，每个位于其30英尺范围内的生物必须进行一次{@dc 20}敏捷豁免，若豁免失败则受到70（{@damage 20d6}）点火焰伤害，若豁免成功则只受到一半伤害。爆炸会点燃该区域内未被穿戴或携带的可燃物，并摧毁<$short_name$>的武器。"
 			]
 		},
 		{
@@ -616,7 +616,7 @@
 			"ENG_name": "Gibbering (Gibbering Mouther)",
 			"source": "MM",
 			"entries": [
-				"触碰<$short_name$>或在5英尺内用近战攻击命中它的生物会受到4 ({@damage 1d8})点酸蚀伤害。任何由金属或木材制成的非魔法武器在击中<$short_name$>后会腐蚀。造成伤害后，该武器在伤害掷骰上会受到永久且累积的\u22121减值。如果其减值降至\u22125，该武器会被摧毁。由金属或木材制成的非魔法弹药在击中<$short_name$>并造成伤害后会被摧毁。"
+				"<$title_short_name$>在看到任何生物且不被{@condition 失能}时，会语无伦次地胡言乱语。每个在<$short_name$>周围20英尺内开始其回合并能听到这些胡言的生物必须成功通过一个{@dc 10}的感知豁免检定。若失败，该生物在其下一个回合开始前不能进行反应，并投掷一个{@dice d8}来决定其在该回合中的行动。投掷结果为1至4时，该生物不采取任何行动。投掷结果为5或6时，该生物不采取任何行动或附加行动，并使用其所有移动能力沿随机确定的方向移动。投掷结果为7或8时，该生物对其攻击范围内的一个随机确定的生物发动一次近战攻击，如果无法进行此类攻击则不采取任何行动。"
 			]
 		},
 		{
@@ -656,7 +656,7 @@
 			"ENG_name": "Heated Body (Remorhaz)",
 			"source": "MM",
 			"entries": [
-				"触碰<$short_name$>或在5英尺会胡言乱语。每个在其回合开始时位于 <$short_name$> 20英尺内且能听到胡言乱语的生物，都必须进行一次 {@dc 10} 的智力豁免检定。内使用近战攻击命中它的生物会受到10（{@damage 3d6}）点火焰伤害。"
+				"当一个生物在距离<$short_name$> 5英尺范围内触摸它或用近战攻击命中它时，受到10点（{@damage 3d6}）火焰伤害。"
 			]
 		},
 		{
@@ -664,7 +664,7 @@
 			"ENG_name": "Heated Body (Salamander)",
 			"source": "MM",
 			"entries": [
-				"即使<$short_name$>就在视野中，也需要一次成功的 {@dc 15} 智慧 ({@skill 感知}) 检定才能发现一个既未移动也未攻击的 <$short_name$>。如果一个生物试图进入 <$short_name$> 的空间而没有察觉到 <$short_name$>，则该生物会被 <$short_name$> {@status 惊讶}。"
+				"一个生物在5英尺范围内触摸<$short_name$>或用近战攻击击中它时，将受到7点（{@damage 2d6}）火焰伤害。"
 			]
 		},
 		{
@@ -1017,7 +1017,7 @@
 			"ENG_name": "Mimicry (Raven)",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 可以模仿它听到的简单声音，比如人的低语、婴儿的哭声或动物的叽喳声。听到这些声音的生物通过一次成功的 {@dc 10} 智慧（@skill 洞察）检定，可以判断出这些是模仿的声音。"
+				"<$title_short_name$> 可以模仿它听到的简单声音，例如人耳语、婴儿哭泣或动物吱吱叫。听到这些声音的生物可以通过一次成功的 {@dc 10} 感知（{@skill 洞悉}）检定来识别它们是被模仿的。"
 			]
 		},
 		{
@@ -1061,7 +1061,7 @@
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>占据了其整个空间。其他生物可以进入这个空间，但进入的生物会受到<$short_name$>的吞噬效果，并且在豁免检定上处于不利状态。",
-				"在<$short_name$>内的生物可以被看到，但拥有{快速参考|Cover|3|完全遮蔽}。",
+				"在<$short_name$>内的生物可以被看到，但{@quickref 掩护||3||全身掩护}。",
 				"<$short_name$> 5英尺内的生物可以采取行动，将生物或物体从<$short_name$>中拉出。这样做需要一次成功的{@dc 12}力量检定，尝试的生物会受到10点（{@damage 3d6}）酸性伤害。",
 				"<$title_short_name$>一次只能容纳一个大型生物或最多四个中型或更小的生物。"
 			]
@@ -1105,7 +1105,7 @@
 			"ENG_name": "Pounce (Panther)",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>向一个生物直线移动至少20英尺，然后在同一回合用爪子攻击它，该目标必须通过一次{@dc 12}力量豁免掷骰，否则将被推倒为俯卧状态。如果目标处于俯卧状态，<$short_name$>可以作为奖励行动对其发动一次啃咬攻击。"
+				"如果<$short_name$>直朝一个生物移动至少20英尺，并在同一回合内以爪击命中该生物，目标必须成功通过一次{@dc 12}力量豁免检定，否则将被击倒{@condition 倒地}。如果目标{@condition 倒地}，<$short_name$>可以对其进行一次咬击作为附加动作。"
 			]
 		},
 		{
@@ -1129,7 +1129,7 @@
 			"ENG_name": "Pounce (Weretiger)",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>至少向前移动15英尺直冲向一个生物，然后在同一回合用爪子攻击它，该目标必须成功通过一次力量豁免检定（难度等级为14），否则将被击倒并处于俯卧状态。如果目标已经处于俯卧状态，<$short_name$>可以作为一个奖励动作对其发动一次撕咬攻击。"
+				"如果<$short_name$>在直线移动至少15英尺朝向一个生物并在同一回合内用爪击命中它，则该目标必须成功通过一次{@dc 14}力量豁免检定，否则将被击倒 {@condition 倒地}。如果目标处于 {@condition 倒地} 状态，<$short_name$>可以用一次奖励动作对它进行咬击。"
 			]
 		},
 		{
@@ -1449,7 +1449,7 @@
 			"ENG_name": "Sneak Attack (Spy)",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 当使用武器攻击命中目标并且拥有攻击掷骰优势，或目标处于 <$short_name$> 未受重伤的盟友5英尺内且 <$short_name$> 在攻击掷骰上没有劣势时，额外造成7 ({@damage 2d6}) 伤害。"
+				"<$title_short_name$>在使用武器攻击命中目标时，且攻击掷骰具有优势，或当目标在<$short_name$>的盟友5英尺范围内且该盟友未处于{@condition 失能}状态，且<$short_name$>在攻击掷骰上没有劣势时，额外造成7（{@condition 失能}）点伤害。"
 			]
 		},
 		{
@@ -1529,7 +1529,7 @@
 			"ENG_name": "Stench (Hezrou)",
 			"source": "MM",
 			"entries": [
-				"任何在<$short_name$>10英尺内开始其回合的生物都必须成功通过一次DC 14的体质豁免检定，否则将处于中毒状态，直到其下一个回合开始。如果豁免检定成功，该生物在接下来的24小时内对<$short_name$>的恶臭免疫。"
+				"任何生物在其回合开始时位于<$short_name$>10英尺范围内，必须成功进行一次{@dc 14}体质豁免检定，否则将被{@condition 中毒}直到其下一个回合开始。如果豁免检定成功，该生物将在24小时内对<$short_name$>的恶臭免疫。"
 			]
 		},
 		{
@@ -1681,7 +1681,7 @@
 			"ENG_name": "Trampling Charge (Elephant)",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>至少向前移动20英尺，然后在同一回合用角击攻击一个生物，该目标必须成功通过一次DC 12的力量豁免检定，否则将被推倒至卧姿。如果目标处于卧姿，<$short_name$>可以作为奖励行动对其发动一次践踏攻击。"
+				"如果<$short_name$>在直线移动至少20英尺后在同回合内以角击命中一个生物，该目标必须成功通过一次 {@dc 12} 力量豁免检定，否则将被击倒 {@condition 倒地}。如果目标 {@condition 倒地}，<$short_name$>可以作为一个附加动作对其进行一次践踏攻击。"
 			]
 		},
 		{
@@ -1705,7 +1705,7 @@
 			"ENG_name": "Trampling Charge (Triceratops)",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>向一个生物直线移动至少20英尺，并在同一回合内以冲撞攻击击中它，该目标必须成功通过一次{@dc 13}力量豁免检定，否则将被击倒至俯卧状态。如果目标已经处于俯卧状态，<$short_name$>可以作为奖励动作对其使用一次践踏攻击。"
+				"如果<$short_name$>朝一个生物直线移动至少20英尺，并在同一回合内用角击攻击命中它，该目标必须成功通过一次{@dc 13}力量豁免检定，否则将被击倒{@condition 倒地}。如果目标处于{@condition 倒地}状态，<$short_name$>可以作为一个附加动作对它进行一次践踏攻击。"
 			]
 		},
 		{
@@ -1713,7 +1713,7 @@
 			"ENG_name": "Trampling Charge (Warhorse)",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>至少向前直线移动20英尺，然后在同一回合用蹄击攻击一个生物，该目标必须成功通过一次{@dc 14}的力量豁免检定，否则将被推倒至俯卧状态。如果目标已经处于俯卧状态，<$short_name$>可以用其蹄子作为奖励行动再次攻击它。"
+				"如果<$short_name$>直线移动至少20英尺向一个生物，并在同一回合用蹄攻击命中该生物，该目标必须成功通过一个{@dc 14}力量豁免检定，否则将被击倒{@condition 倒地}。如果目标已处于{@condition 倒地}状态，<$short_name$>可以作为一个附加动作再对其进行一次蹄攻击。"
 			]
 		},
 		{
@@ -1721,7 +1721,7 @@
 			"ENG_name": "Transparent (Gelatinous Cube)",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 会黏附在接触它的任何物体上。被模仿者黏附的巨型或更小的生物也会被它 {@condition 缠住}（豁免难度 {@dc 13}）。尝试摆脱这种纠缠的能力检定会有劣势。"
+				"即使当<$short_name$>在明显可见的位置时，也需要成功的{@dc 15}感知（{@skill 察觉}）检定才能发现一个既没有移动也没有攻击的<$short_name$>。当一个生物在未察觉到<$short_name$>的情况下试图进入<$short_name$>的空间时，该生物会被<$short_name$>{@status 被突袭}。"
 			]
 		},
 		{
@@ -1804,7 +1804,7 @@
 				"<$title_short_name$> 有以下缺陷：",
 				"{@i 禁制术}。<$title_short_name$>不能在没有居住者之一的邀请下进入住所。",
 				"{@i 被流动的水伤害}。如果<$title_short_name$>在流水中结束其回合，它将受到20点强酸伤害。",
-				"{@i 心口木桩}。如果一个由木头制成的穿刺武器在<$short_name$>处于其休息地时被插入<$short_name$>的心脏，<$short_name$>将被{@condition 瘫痪}，直到木桩被移除。",
+				"{@i 木桩穿心}. 如果一把由木头制成的穿刺武器在<$short_name$>位于其休息处且处于{@condition 失能}状态时被刺入<$short_name$>的心脏，<$short_name$>将处于{@condition 麻痹}状态，直到木桩被移除。",
 				"{@i 日照过敏}<$title_short_name$> 在其自己的回合开始时若处于阳光直射下，则受20点光耀伤害。此外，他的攻击检定与属性检定也具有劣势。"
 			]
 		},
@@ -1896,7 +1896,7 @@
 			"ENG_name": "Beard (Bearded Devil)",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>}命中，触及5尺，单一生物。{@h}<$damage_avg__5+str$>（{@damage 1d8<$damage_mod__str$>}）点穿刺伤害，并且目标必须成功进行一次DC <$dc__con$> 体质豁免检定，否则在1分钟内被{@condition 中毒}。在这种状态下，目标不能恢复生命值。目标可以在每个回合结束时重复豁免检定，成功则结束此效果。"
+				"{@atk mw} {@hit <$命中__力量$>} 攻击命中，范围 5 英尺，一个生物。{@h}<$damage_avg__5+str$> ({@damage 1d8<$伤害修正__力量$>}) 穿刺伤害，目标必须成功通过一次 DC <$dc__con$> 体质豁免检定，否则将 {@condition 中毒} 1 分钟。以这种方式 {@condition 中毒} 时，目标无法恢复生命值。目标可以在其每回合结束时重复进行豁免检定，成功则结束此效果。"
 			]
 		},
 		{
@@ -2155,7 +2155,7 @@
 			"ENG_name": "Fling (Kraken)",
 			"source": "MM",
 			"entries": [
-				"一个被<$short_name$>持有或被<$short_name$>摔跤的大型或更小的物体或生物被投掷到60尺外的随机方向并被击倒。如果被投掷的目标击中一个坚固的表面，那么目标每被投掷10尺就会受到3（{@damage 1d6}）点钝击伤害。如果目标被投掷向另一个生物，那个生物必须成功进行一次DC <$dc__dex$>豁免检定，否则会受到相同的伤害并被击倒。"
+				"一个被<$short_name$>抓住的大型或更小物体或{@condition 擒抱}的生物被随机方向抛出60英尺并{@condition 倒地}。如果被抛出的目标撞击到坚固的表面，目标每抛出10英尺将受到3点({@damage 1d6})钝击伤害。如果目标被抛向另一个生物，该生物必须成功通过一个DC<$dc__dex$>的敏捷豁免，否则将受到相同的伤害并被{@condition 倒地}。"
 			]
 		},
 		{
@@ -2276,7 +2276,7 @@
 			"ENG_name": "Invisibility (Quasit)",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 可以施法变得{@condition invisible}，直到它进行攻击或使用恐吓，或者它的{@status concentration}结束（就好像在集中精神施法）。<$short_name$>穿戴或携带的任何装备也会随之变得{@condition invisible}。"
+				"<$title_short_name$> 魔法般地变为 {@condition 隐形}，直到它攻击或使用惊吓技能，或者其 {@status 专注} 结束（如同 {@status 专注||专注于} 一个法术）。<$short_name$> 穿着或携带的任何装备也会与它一起变为 {@condition 隐形}。"
 			]
 		},
 		{
@@ -2284,7 +2284,7 @@
 			"ENG_name": "Invisibility (Sprite)",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 可以施法变得{@condition invisible}，直到它进行攻击或施放法术，或者它的{@status concentration}结束（就好像在集中精神施法）。<$short_name$>穿戴或携带的任何装备也会随之变得{@condition invisible}。"
+				"<$title_short_name$> 魔法般地变为 {@condition 隐形}，直到它攻击或施放法术，或直到它的 {@status 专注} 结束（如同 {@status 专注||专注于} 一个法术）。<$short_name$> 穿戴或携带的任何装备也会与其一同变为 {@condition 隐形}。"
 			]
 		},
 		{
@@ -2376,7 +2376,7 @@
 			"source": "MM",
 			"entries": [
 				"在<$short_name$> 5尺范围内，<$short_name$>能看到的一个人形生物必须成功进行一次DC <$dc__cha$> 魅力豁免检定，否则将被<$short_name$>附身；然后<$short_name$>消失，目标将变得{@condition 失能}并失去对自己身体的控制。<$title_short_name$>现在控制着这个身体，但不会剥夺目标的意识。<$title_short_name$>不能成为任何攻击、法术或其他效果的目标，除了那些针对不死生物的效果，并且它保留自己的阵营、感知、感知、魅力以及对被{@condition 魅惑}和{@condition 恐慌}的免疫。除此之外，它使用被附身目标的具体数值，但不获得目标的知识、职业特性或熟练度。",
-				"附身持续到身体生命值降至0点，<$short_name$>作为一个附赠动作结束它，或者<$short_name$>被驱散邪恶与善良法术等效果转化或被迫离开。当附身结束时，<$short_name$>在身体5尺内的未被占据空间重新出现。目标在成功进行豁免检定或附身结束后的24小时内对此<$short_name$>的附身免疫。"
+				"附身持续直到该躯体生命值降至0点，<$short_name$>以一个附赠动作结束它，或<$short_name$>被类似{@spell 反制善恶}法术的效果驱散或强制驱逐。当附身结束时，<$short_name$>在躯体5尺范围内的一个未被占据的空间重新出现。目标在成功进行豁免检定或附身结束后的24小时内对该<$short_name$>的附身免疫。"
 			]
 		},
 		{
@@ -2456,7 +2456,7 @@
 			"ENG_name": "Smother (Smothering Rug)",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中判定：{@hit <$to_hit__str$>}，触及5尺，单一中型或更小生物。{@h}生物被{@condition grappled}（逃脱DC <$dc__str$>）。直到这个{@condition grapple}结束，目标被{@condition restrained}（受限）、{@condition blinded}（失明）并且有窒息的风险，而<$short_name$>不能窒息另一个目标。此外，在目标的每个回合开始时，目标承受<$damage_avg__6+str$>（{@damage 2d6<$damage_mod__str$>}）钝击伤害。"
+				"{@atk mw} {@hit <$命中__力量$>} 命中，范围 5 尺，一个中型或更小的生物。{@h}该生物被{@condition 擒抱}（DC <$dc__str$>）。在此擒抱结束之前，目标被{@condition 束缚}，{@condition 目盲}，并有窒息风险，同时<$short_name$> 无法窒息另一个目标。此外，在目标每回合开始时，目标受到 <$damage_avg__6+str$>（{@damage 2d6<$damage_mod__str$>}）的钝击伤害。"
 			]
 		},
 		{
@@ -2464,7 +2464,7 @@
 			"ENG_name": "Spores (Vrock)",
 			"source": "MM",
 			"entries": [
-				"一个15尺半径的有毒孢子云从<$short_name$>扩散开来。孢子可以绕过角落传播。在该区域内的每个生物都必须成功进行一次DC <$dc__con$> 体质豁免检定，否则将被{@condition poisoned}。以这种方式中毒时，目标在自己的每个回合开始时承受5（{@damage 1d10}）毒素伤害。目标可以在自己的每个回合结束时重复进行豁免检定，成功则结束此效果。向目标倒一瓶圣水也可以结束该效果。"
+				"一个15英尺半径的有毒孢子云从<$short_name$>处扩散开来。孢子会绕过角落传播。该区域内的每个生物必须成功通过一个DC<$dc__con$>的体质豁免检定，否则将陷入{@condition}状态。以此种方式{@condition}的目标在每回合开始时受到5（{@damage 1d10}）点毒素伤害。目标可以在每回合结束时重复进行豁免检定，成功则结束此效果。将一瓶圣水倒在目标身上也能结束此效果。"
 			]
 		},
 		{
@@ -2586,7 +2586,7 @@
 			"ENG_name": "Web Garrote (Ettercap)",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中判定：{@hit <$to_hit__str$>}，触及5尺，一个中体型或小体型生物，且<$short_name$>在攻击检定上有优势。{@h}4（{@damage 1d4<$damage_mod__str$>}）钝击伤害，目标被{@condition grappled}（逃脱DC <$dc__str$>）。直到这个{@condition grapple}结束，目标不能呼吸，且<$short_name$>对它的攻击检定上有优势。"
+				"{@atk mw} {@hit <$命中__力量$>} 命中，范围 5 英尺，<$short_name$> 在攻击掷骰上具有优势的中型或小型生物。 {@h}4 ({@damage 1d4<$damage_mod__str$>}) 钝击伤害，并且目标被 {@condition 擒抱}（逃脱 DC <$dc__str$>）。在擒抱结束前，目标无法呼吸，并且 <$short_name$> 对其攻击掷骰具有优势。"
 			]
 		},
 		{

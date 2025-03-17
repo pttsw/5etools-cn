@@ -238,7 +238,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "魔像",
-						"with": "雕像"
+						"with": "雕塑"
 					},
 					"trait": {
 						"mode": "appendArr",
@@ -667,7 +667,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Berlain 是一个18级施法者。她的施法能力是智力（法术豁免难度{@dc 17}，法术攻击命中{@hit 9}）。Berlain 可以随意施放{@spell 变形自己}和{@spell 隐形}，并准备了以下法师法术："
+						"贝兰是一位18级的施法者。她的施法属性是智力（法术豁免 {@dc 17}，法术攻击命中 {@hit 9}）。贝兰可以随意施展 {@spell 易容术} 和隐形术，并准备有以下法师法术："
 					],
 					"spells": {
 						"0": {
@@ -1082,7 +1082,7 @@
 							]
 						}
 					},
-					"action": "remove"
+					"action": "移除诅咒"
 				}
 			},
 			"type": "aberration",
@@ -3378,7 +3378,7 @@
 					"name": "猛击",
 					"ENG_name": "Slam",
 					"entries": [
-						"{@atk mw} 命中骰：2，触及 5 尺，单一目标。{@h}1 点钝击伤害。"
+						"{@atk mw} {@hit 2} 攻击命中，触及5尺，单一目标。{@h}1点钝击伤害。"
 					]
 				}
 			],
@@ -3477,7 +3477,7 @@
 							"name": "啃咬",
 							"ENG_name": "Bite",
 							"entries": [
-								"{@atk mw} {@hit 4} 命中，触及 5 英尺，一个生物。{@h}{@damage 2d6 + 2} 穿刺伤害，目标必须通过 {@dc 10} 体质豁免检定，否则中毒 {@condition poisoned} 1 分钟。如果豁免检定失败 5 或更多，目标反而中毒 {@condition poisoned} 5 ({@dice 1d10}) 分钟，并且在此状态下 {@condition unconscious} 失去意识。"
+								"{@atk mw} {@hit 4} 命中，触及 5 尺，一个生物。{@h}{@damage 2d6 + 2} 穿刺伤害，且目标必须成功通过一次 {@dc 10} 体质豁免，否则将 {@condition 中毒} 1 分钟。如果豁免失败且差值达到或超过 5，则目标将 {@condition 中毒} 5 分钟（{@dice 1d10}）并且在此种 {@condition 中毒} 状态下 {@condition 中毒}。"
 							]
 						}
 					}
@@ -4273,7 +4273,7 @@
 					"name": "有毒之躯",
 					"ENG_name": "Poisonous Body",
 					"entries": [
-						"当生物被毒怪擒抱时，在它的每个回合开始时，它会受到10点（{@damage 3d6}）毒素伤害。"
+						"当生物被毒蛇怪{@condition 擒抱}时，它在每个回合开始时受到10（{@condition 擒抱}）点毒素伤害。"
 					]
 				}
 			],
@@ -5090,7 +5090,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "魔像",
-						"with": "雕像",
+						"with": "雕塑",
 						"flags": "i"
 					},
 					"trait": {

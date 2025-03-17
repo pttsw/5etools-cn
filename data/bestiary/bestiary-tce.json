@@ -91,21 +91,21 @@
 					"name": "眼波射线Eye Ray（仅限类眼魔）",
 					"ENG_name": "Eye Ray (Beholderkin Only)",
 					"entries": [
-						"{@atk rs} 命中：您的法术攻击调整值，射程：150尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级}心灵伤害。"
+						"{@atk rs} {@hitYourSpellAttack}, 射程150尺, 一个生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 点心灵伤害。"
 					]
 				},
 				{
 					"name": "爪击Claws（仅限史拉蟾）",
 					"ENG_name": "Claws (Slaad Only)",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 3 + 召唤法术等级}挥砍伤害。如果目标是一个生物，直到异怪下一回合开始之前，它不能恢复生命值。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害。如果目标是一个生物，直到异怪下一回合开始之前，它不能恢复生命值。"
 					]
 				},
 				{
 					"name": "灵能猛击Psychic Slam（仅限星之子）",
 					"ENG_name": "Psychic Slam (Star Spawn Only)",
 					"entries": [
-						"{@atk ms} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 心灵伤害。"
+						"{@atk ms} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
 					]
 				}
 			],
@@ -233,7 +233,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "低语灵光（仅限星之子）",
-									"with": "暗语灵光"
+									"with": "低语灵光"
 								}
 							}
 						],
@@ -354,7 +354,7 @@
 					"name": "巨锤",
 					"ENG_name": "Maul",
 					"entries": [
-						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d8 + 2 + 个人骰}挥砍伤害。"
+						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d8 + 2 + 基础攻击加值}挥砍伤害。"
 					]
 				}
 			],
@@ -630,7 +630,7 @@
 					"name": "巨锤",
 					"ENG_name": "Maul",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d8 + 4 + 召唤法术等级} 穿刺伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d8 + 4 + summonSpellLevel} 穿刺伤害。"
 					]
 				}
 			],
@@ -824,7 +824,7 @@
 					"name": "光耀之锤（仅限守护圣灵）",
 					"ENG_name": "Radiant Mace (Defender Only)",
 					"entries": [
-						"{@atk mw} 命中：您的法术攻击调整值，触及：5尺，单一目标。{@h}光耀伤害{@damage 1d10 + 3 + 召唤法术等级}，并且天界生物可以选择自己或另一个它能看到的目标10尺范围内的生物。被选择的生物获得{@dice 1d10}临时生命值。"
+						"{@atk mw} 命中：您的法术攻击调整值，触及：5尺，单一目标。{@h}光耀伤害{@h}，并且天界生物可以选择自己或另一个它能看到的目标10尺范围内的生物。被选择的生物获得{@dice 1d10}临时生命值。"
 					]
 				},
 				{
@@ -1166,7 +1166,7 @@
 					"name": "力场猛击",
 					"ENG_name": "Force-Empowered Slam",
 					"entries": [
-						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d10 + PB}力场伤害。"
+						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d10 + 基础攻击加值}力场伤害。"
 					]
 				}
 			],
@@ -1302,7 +1302,7 @@
 					"name": "猛击",
 					"ENG_name": "Slam",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害（仅限空气、土和水）或火焰伤害（仅限火）。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害（仅限空气、土和水）或火焰伤害（仅限火）。"
 					]
 				}
 			],
@@ -1348,7 +1348,7 @@
 								"name": "猛击",
 								"ENG_name": "Slam",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1384,7 +1384,7 @@
 								"name": "猛击",
 								"ENG_name": "Slam",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1463,7 +1463,7 @@
 								"name": "猛击",
 								"ENG_name": "Slam",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1541,7 +1541,7 @@
 					"name": "短剑",
 					"ENG_name": "Shortsword",
 					"entries": [
-						"{@atk mw} 命中：您的法术攻击调整值，触及：5尺，单一目标。{@h}穿刺伤害{@damage 1d6 + 3 + 召唤法术等级}加上{@damage + 1d6}力场伤害。"
+						"{@atk mw} 命中：您的法术攻击调整值，触及：5尺，单一目标。{@h}穿刺伤害{@h}加上{@damage + 1d6}力场伤害。"
 					]
 				}
 			],
@@ -1565,7 +1565,7 @@
 									"type": "item",
 									"name": "欢欣",
 									"ENG_name": "Mirthful",
-									"entry": "在使用精类步后，该精类生物可以立即选择它10尺内可见的一个生物，强迫其进行一次对抗你的法术豁免DC的感知豁免，若豁免失败则其将被你及该精类生物魅惑，持续1分钟或目标受到任何伤害。"
+									"entry": "精类生物可以强迫其视野内10英尺范围内的一个生物进行一次感知豁免，对抗你的法术豁免DC。除非豁免成功，否则目标将被你和精类生物{@condition 魅惑}1分钟，或直到目标受到任何伤害。"
 								},
 								{
 									"type": "item",
@@ -1627,7 +1627,7 @@
 							"name": "精类步",
 							"ENG_name": "Fey Step",
 							"entries": [
-								"精类可以魔法传送至其视线内30尺范围内的未被占据的空间。精类可以迫使其视线内10尺范围内的一个生物进行一次对抗你法术豁免DC的感知豁免。除非豁免成功，否则目标将被你和精类魅惑1分钟，或直到目标受到任何伤害为止。"
+								"妖精魔法性地传送至多30英尺到一个它可以看到的未被占据的空间。妖精可以迫使它可以看到的10英尺范围内的一个生物进行一次对抗你法术豁免DC的感知豁免。除非豁免成功，否则目标将被你和妖精{@condition 魅惑}1分钟或直到目标受到任何伤害。"
 							]
 						}
 					]
@@ -1743,21 +1743,21 @@
 					"name": "啃咬（仅限于恶魔）",
 					"ENG_name": "Bite (Demon Only)",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + 召唤法术等级} 黯蚀伤害。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 黯蚀伤害。"
 					]
 				},
 				{
 					"name": "爪击（仅限于尤格罗斯魔）",
 					"ENG_name": "Claws (Yugoloth Only)",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围5尺，单一目标。{@h}造成{@damage 1d8 + 3 + 召唤法术等级}点挥砍伤害。攻击命中或未命中后，恶魔可以立即通过魔法传送至其能看到的未被占据的空间，最多30尺。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，范围 5 尺，单一目标。{@h}{@damage 1d8 + 3 + 召唤法术等级} 挥砍伤害。在攻击命中或未命中后，恶魔可以立即魔法传送至 30 尺内它可见的未被占据的空间。"
 					]
 				},
 				{
 					"name": "投掷烈焰（仅限于魔鬼）",
 					"ENG_name": "Hurl Flame (Devil Only)",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，射程150尺，单一目标。{@h}{@damage 2d6 + 3 + 召唤法术等级} 火焰伤害。如果目标是一个可燃物体且没有被穿戴或携带，它也会着火。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，射程150尺，单一目标。{@h}{@damage 2d6 + 3 + summonSpellLevel} 火焰伤害。如果目标是一个可燃物体且没有被穿戴或携带，它也会着火。"
 					]
 				}
 			],
@@ -2407,7 +2407,7 @@
 					"name": "冻寒撕裂",
 					"ENG_name": "Chilling Rend",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围5尺，单一目标。{@h}造成{@damage 1d12 + 3 + 召唤法术等级}点冷冻伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，范围5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 寒冷伤害。"
 					]
 				},
 				{
@@ -2584,7 +2584,7 @@
 					"name": "力场动能撕扯",
 					"ENG_name": "Force-Empowered Rend",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d8 + 职业等级加值}力场伤害。"
+						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d8 + PB}力场伤害。"
 					]
 				},
 				{
@@ -2597,7 +2597,7 @@
 			],
 			"reaction": [
 				{
-					"name": "偏转攻击",
+					"name": "招架攻击",
 					"ENG_name": "Deflect Attack",
 					"entries": [
 						"防御者对它能看到的，并且在其5尺范围内的一个生物的攻击检定施加不利条件，前提是该攻击检定的目标不是防御者本身。"
@@ -2707,14 +2707,14 @@
 					"name": "暗澹箭（仅限于骷髅）",
 					"ENG_name": "Grave Bolt (Skeletal Only)",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + 召唤法术等级} 黯蚀伤害。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 黯蚀伤害。"
 					]
 				},
 				{
 					"name": "腐烂爪击（仅限于腐尸）。",
 					"ENG_name": "Rotting Claw (Putrid Only)",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack}命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + 召唤法术等级} 挥砍伤害。如果目标处于{@condition 中毒}状态，它必须在对抗你的法术豁免DC的体质豁免检定中成功，否则在其下一回合结束前处于{@condition 麻痹}状态。"
+						"{@atk mw} {@hitYourSpellAttack}命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + summonSpellLevel} 挥砍伤害。如果目标处于{@condition 中毒}状态，它必须在对抗你的法术豁免DC的体质豁免检定中成功，否则在其下一回合结束前处于{@condition 麻痹}状态。"
 					]
 				}
 			],
@@ -2859,7 +2859,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "暗澹箭（仅限于骷髅）",
-									"with": "坟墓之箭"
+									"with": "墓穴射线"
 								}
 							},
 							{
@@ -2947,7 +2947,7 @@
 					"name": "火种",
 					"ENG_name": "Flame Seed",
 					"entries": [
-						"{@atk rw} {@hitYourSpellAttack}命中，射程60尺，你能看到的一个目标。{@h}{@damage 1d6 + 基础攻击加值} 火焰伤害。"
+						"{@atk rw} {@hitYourSpellAttack}命中，射程60尺，你能看到的一个目标。{@h}{@damage 1d6 + PB} 火焰伤害。"
 					]
 				},
 				{

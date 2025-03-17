@@ -1,6 +1,39 @@
 {
 	"object": [
 		{
+			"name": "自动弩炮",
+			"ENG_name": "Automatic Ballista",
+			"source": "HBTD",
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 50,
+			"entries": [
+				"瞄准自动弩炮需要{@action 利用|XPHB}动作。然后一个生物可以进行弩炮箭矢动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "弩炮箭矢（需瞄准）",
+					"ENG_name": "Ballista Bolt (Requires Aim)",
+					"entries": [
+						"{@atkr r} {@hit 6}, 射程 120/480 英尺。 {@h}22 ({@damage 4d10}) 穿刺伤害。"
+					]
+				}
+			],
+			"tokenCredit": "金钟民",
+			"altArt": [
+				{
+					"name": "自动弩炮（俯视图）",
+					"ENG_name": "Automatic Ballista (Top-Down)",
+					"source": "HBTD"
+				}
+			],
+			"hasToken": true
+		},
+		{
 			"name": "弩炮",
 			"ENG_name": "Ballista",
 			"source": "DMG",
@@ -93,7 +126,7 @@
 					"name": "喷火",
 					"ENG_name": "Flames",
 					"entries": [
-						"锅炉龙吐息一道火焰，形成60英尺的锥形区域。该区域内的每个生物都必须进行一次DC15的敏捷豁免检定，失败则受到27（{@damage 5d10}）点火焰伤害，成功则受到一半伤害。"
+						"锅炉龙在60尺锥形范围内喷出火焰。该区域内的每个生物必须进行一次{@dc 15}敏捷豁免，豁免失败则受到27（{@damage 5d10}）点火焰伤害，豁免成功则伤害减半。"
 					]
 				},
 				{
@@ -101,7 +134,7 @@
 					"name": "爆炸",
 					"ENG_name": "Explosion",
 					"entries": [
-						"锅炉龙爆炸，形成一个半径30英尺的球体并被摧毁。该区域内的每个生物都必须进行一次DC 15的敏捷豁免检定，失败则受到27（{@damage 5d10}）点火焰伤害，成功则受到一半伤害。"
+						"锅炉龙在半径30英尺的球体内爆炸并被摧毁。该区域内的每个生物必须进行一次{@dc 15}敏捷豁免检定，检定失败则受到27（{@damage 5d10}）点火焰伤害，检定成功则只受到一半伤害。"
 					]
 				}
 			],
@@ -213,7 +246,7 @@
 							"type": "attack",
 							"attackType": "RW",
 							"attackEntries": [
-								"命中检定加值+5，射程30尺，单一目标。"
+								"命中{@hit +5}，射程30英尺，单一目标。"
 							],
 							"hitEntries": [
 								"3点（{@damage 1d6}）钝击伤害。"
@@ -224,6 +257,72 @@
 			],
 			"hasToken": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "发条投石机",
+			"ENG_name": "Clockwork Trebuchet",
+			"source": "HBTD",
+			"size": [
+				"H"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 150,
+			"entries": [
+				"拉动机关投石机的杠杆需要使用{@action 利用|XPHB}动作。然后生物可以执行投石器石弹动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "投石车石弹（需拉杆）",
+					"ENG_name": "Trebuchet Stone (Requires Lever Pull)",
+					"entries": [
+						"{@atkr r} {@hit 5}, 射程 200/800 英尺（无法攻击自身 30 英尺内的目标）。命中：27 ({@damage 5d10}) 钝击伤害。"
+					]
+				}
+			],
+			"tokenCredit": "奥斯塔普·莫卡努",
+			"altArt": [
+				{
+					"name": "机械投石机（俯视图）",
+					"ENG_name": "Clockwork Trebuchet (Top-Down)",
+					"source": "HBTD"
+				}
+			],
+			"hasToken": true
+		},
+		{
+			"name": "破旧的投石机",
+			"ENG_name": "Decrepit Mangonel",
+			"source": "HBTD",
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 12,
+			"hp": 30,
+			"entries": [
+				"装载一台破旧的投石机需要两个{@action 利用|XPHB}动作，瞄准它需要一个{@action 利用|XPHB}动作。然后，一个生物可以执行\"手袋\"动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "手囊（需装填与瞄准）",
+					"ENG_name": "Sack of Hands (Requires Load and Aim)",
+					"entries": [
+						"一个发射出的蠕动之手的袋子落在距离投石机30到100英尺的地方。一个{@creature 爬行利爪群|XMM}出现在袋子落地的地方。"
+					]
+				}
+			],
+			"tokenCredit": "Ensemble Studios",
+			"altArt": [
+				{
+					"name": "破旧的投石机（俯视图）",
+					"ENG_name": "Decrepit Mangonel (Top-Down)",
+					"source": "HBTD"
+				}
+			],
+			"hasToken": true
 		},
 		{
 			"name": "魔能炮台, 投火机",
@@ -267,7 +366,7 @@
 				"昏迷"
 			],
 			"entries": [
-				"{@note 由术士的炮手子类特性{@subclassFeature 魔法弩炮|Artificer|TCE|炮手|TCE|3}创建。}"
+				"{@note 由{@subclassFeature 奥术炮创造|奇械师|TCE|魔炮师|TCE|3} subclass feature.}"
 			],
 			"actionEntries": [
 				{
@@ -328,7 +427,7 @@
 				"昏迷"
 			],
 			"entries": [
-				"{@note 由术士的炮手子类特性{@subclassFeature 魔法弩炮|Artificer|TCE|炮手|TCE|3}创建。}"
+				"{@note 由{@subclassFeature 奥术炮创造|奇械师|TCE|魔炮师|TCE|3} subclass feature.}"
 			],
 			"actionEntries": [
 				{
@@ -389,7 +488,7 @@
 				"昏迷"
 			],
 			"entries": [
-				"{@note 由术士的炮手子类特性{@subclassFeature 魔法弩炮|Artificer|TCE|炮手|TCE|3}创建。}"
+				"{@note 由{@subclassFeature 奥术炮创造|奇械师|TCE|魔炮师|TCE|3} subclass feature.}"
 			],
 			"actionEntries": [
 				{
@@ -407,6 +506,39 @@
 				"source": "TCE"
 			},
 			"hasFluffImages": true
+		},
+		{
+			"name": "附魔弩炮",
+			"ENG_name": "Enchanted Ballista",
+			"source": "HBTD",
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 50,
+			"entries": [
+				"加载附魔弩车需要使用{@action 利用|XPHB}动作。随后，一个生物可以进行弩车射击动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "弩箭（需要装填）",
+					"ENG_name": "Ballista Bolt (Requires Load)",
+					"entries": [
+						"{@atkr r} {@hit 6}, 射程 120/480 英尺。 {@h}22 ({@damage 4d10}) 穿刺伤害。"
+					]
+				}
+			],
+			"tokenCredit": "弗兰克·普萨特里",
+			"altArt": [
+				{
+					"name": "附魔弩炮（俯视图）",
+					"ENG_name": "Enchanted Ballista (Top-Down)",
+					"source": "HBTD"
+				}
+			],
+			"hasToken": true
 		},
 		{
 			"name": "火焰喷射教练",
@@ -435,6 +567,39 @@
 				}
 			],
 			"tokenCredit": "鲁恩·曼宁",
+			"hasToken": true
+		},
+		{
+			"name": "熔炉发射器",
+			"ENG_name": "Forge Launcher",
+			"source": "HBTD",
+			"size": [
+				"L"
+			],
+			"objectType": "SW",
+			"ac": 15,
+			"hp": 30,
+			"entries": [
+				"瞄准熔炉发射器需要使用 {@action 利用|XPHB} 动作。然后一个生物可以采取炽热罐装弹动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "炽热罐体（需要瞄准）",
+					"ENG_name": "Fiery Canister (Requires Aim)",
+					"entries": [
+						"{@actSave dex} {@dc 15}，每个在以发射点 30 到 300 英尺为中心的 20 英尺半径 {@variantrule 球体 [区域效果]|XPHB|球状} 内的生物。{@actSaveFail} 14 ({@damage 4d6}) 火焰伤害。{@actSaveSuccess} 半伤。"
+					]
+				}
+			],
+			"tokenCredit": "世嘉，Games Workshop",
+			"altArt": [
+				{
+					"name": "锻造发射器（自上而下）",
+					"ENG_name": "Forge Launcher (Top-Down)",
+					"source": "HBTD"
+				}
+			],
 			"hasToken": true
 		},
 		{
@@ -719,7 +884,7 @@
 							"items": [
 								"吃了心脏的生物在接下来的24小时内获得再生能力，在其每个回合开始时恢复5点生命值。如果生物受到酸性或火焰伤害，这个特性在它下一个回合开始时不会生效。只有当生物在其回合开始时生命值为0并且没有再生时，生物才会死亡。",
 								"如果埋在地下一尺或更深的土中，心脏会融化并召唤出一场类似通过{@spell 操控天气}法术创造的暴风雪。心脏融化并形成暴风雪需要10分钟。暴风雪持续8小时。",
-								"女巫或类似生物可以进行一种仪式，将心脏变成一个魔法护身符，其作用类似于棕色霉菌（见《地下城主指南|DMG》中的\"{@hazard Brown Mold}\"）。这种效果将持续到心脏被摧毁为止。",
+								"一个巫婆或类似的生物可以执行一个仪式，将心脏变成一个魔法护符，其效果类似于一片棕色霉菌（参见《{@hazard 棕霉菌}》在《{@book 城主指南|DMG}》中）。此效果持续到心脏被摧毁为止。",
 								"一个精通炼金术工具的生物可以从心脏中挤出足够的残留液体，与其他炼金成分混合，制作一瓶{@item 冷冻抗性药水||抗寒药水}。制作这种药水需要1小时。"
 							]
 						}
@@ -749,7 +914,7 @@
 					"name": "毒性桶（需要装填和瞄准）",
 					"ENG_name": "Toxic Keg (Requires Load and Aim)",
 					"entries": [
-						"进行一次{@actSave con}检定，难度等级为{@dc 15}。以发射器为中心，30至300英尺范围内每个生物都必须进行此检定。 {@actSaveFail} 失败则受到14点（{@damage 4d6}）毒伤害。 {@actSaveSuccess} 成功则伤害减半。"
+						"{@actSave con} {@dc 15}，每个在以发射器30到300英尺处为圆心的20英尺半径{@variantrule 球体 [区域效果]|XPHB|球状}内的生物。{@actSaveFail} 14（{@damage 4d6}）毒素伤害。{@actSaveSuccess} 半伤。"
 					]
 				}
 			],
@@ -919,7 +1084,7 @@
 					"name": "冲撞（需要定位）",
 					"ENG_name": "Ram (Requires Position)",
 					"entries": [
-						"{@atkr m} {@hit 8}, 触及范围 5 英尺. {@h 16} ({@h 3d10}) 钝击h。"
+						"{@atkr m} {@hit 8}, 触及范围 5 英尺. {@h} ({@damage 3d10}) 钝击h。"
 					]
 				}
 			],
@@ -992,6 +1157,39 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "风暴火炮",
+			"ENG_name": "Storm Cannon",
+			"source": "HBTD",
+			"size": [
+				"M"
+			],
+			"objectType": "SW",
+			"ac": 18,
+			"hp": 30,
+			"entries": [
+				"瞄准风暴炮需要使用{@action 利用|XPHB}动作，然后生物可以使用闪电球动作。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "闪电球（需要瞄准）",
+					"ENG_name": "Lightning Ball (Requires Aim)",
+					"entries": [
+						"{@atkr r} {@hit 6}, 射程 600/800 英尺. {@h}22 ({@damage 4d10}) 闪电伤害。"
+					]
+				}
+			],
+			"tokenCredit": "世嘉，Games Workshop",
+			"altArt": [
+				{
+					"name": "风暴炮（俯视）",
+					"ENG_name": "Storm Cannon (Top-Down)",
+					"source": "HBTD"
+				}
+			],
+			"hasToken": true
+		},
+		{
 			"name": "吊挂大锅",
 			"ENG_name": "Suspended Cauldron",
 			"source": "DMG",
@@ -1019,7 +1217,7 @@
 					"name": "沸腾的油",
 					"ENG_name": "Boiling Oil",
 					"entries": [
-						"大锅将滚烫的油倾倒到其下方10英尺见方的区域。区域内的任何生物都必须进行一次DC 15的敏捷豁免检定，失败则承受10点（3d6）火焰伤害，成功则承受一半伤害。"
+						"大锅将沸油倾倒在正下方的10英尺见方区域内。区域内的任何生物都必须进行一次{@dc 15}敏捷豁免，若豁免失败则受到10（{@damage 3d6}）点火焰伤害，若豁免成功则受到一半伤害。"
 					]
 				}
 			],
@@ -1149,7 +1347,7 @@
 			"hasToken": true
 		},
 		{
-			"name": "未生之轿",
+			"name": "未成魔轿",
 			"ENG_name": "Unborn Palanquin",
 			"source": "BMT",
 			"page": 173,

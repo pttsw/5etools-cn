@@ -459,7 +459,7 @@
 			],
 			"packContents": [
 				{
-					"item": "弩失|xphb",
+					"item": "飞矢|xphb",
 					"quantity": 20
 				}
 			]
@@ -944,6 +944,7 @@
 			"rarity": "none",
 			"weight": 0.3125,
 			"age": "未来",
+			"cellEnergy": true,
 			"miscTags": [
 				"CNS"
 			]
@@ -958,6 +959,7 @@
 			"rarity": "none",
 			"weight": 0.5,
 			"age": "未来",
+			"cellEnergy": true,
 			"miscTags": [
 				"CNS"
 			]
@@ -1452,7 +1454,7 @@
 			"dmgType": "P",
 			"crossbow": true,
 			"weapon": true,
-			"ammoType": "弩失|xphb",
+			"ammoType": "飞矢|xphb",
 			"hasFluffImages": true
 		},
 		{
@@ -1573,7 +1575,7 @@
 			"dmgType": "P",
 			"crossbow": true,
 			"weapon": true,
-			"ammoType": "弩失|xphb",
+			"ammoType": "飞矢|xphb",
 			"hasFluffImages": true
 		},
 		{
@@ -2086,7 +2088,7 @@
 			"dmgType": "P",
 			"crossbow": true,
 			"weapon": true,
-			"ammoType": "弩失|xphb",
+			"ammoType": "飞矢|xphb",
 			"hasFluffImages": true
 		},
 		{
@@ -2487,6 +2489,7 @@
 			"rarity": "none",
 			"weight": 0.1,
 			"age": "现代",
+			"bulletFirearm": true,
 			"miscTags": [
 				"CNS"
 			]
@@ -2501,6 +2504,7 @@
 			"rarity": "none",
 			"weight": 1,
 			"age": "现代",
+			"bulletFirearm": true,
 			"packContents": [
 				{
 					"item": "现代子弹",
@@ -3057,6 +3061,7 @@
 			"weight": 0.2,
 			"value": 30,
 			"age": "文艺复兴",
+			"bulletFirearm": true,
 			"miscTags": [
 				"CNS"
 			]
@@ -3075,6 +3080,7 @@
 			"weight": 2,
 			"value": 300,
 			"age": "文艺复兴",
+			"bulletFirearm": true,
 			"packContents": [
 				{
 					"item": "文艺复兴子弹",
@@ -4500,7 +4506,7 @@
 					"name": "扫射",
 					"ENG_name": "Burst Fire",
 					"entries": [
-						"作为一项行动，你可以消耗一把爆炎武器的10发弹药，在武器正常射程内的10英尺范围内喷洒射击。该区域内的每个生物都必须通过一次敏捷豁免检定（DC 15），否则将受到伤害。对武器的伤害进行一次掷骰，并将结果应用于每个未通过豁免检定的生物。"
+						"作为一个动作，你可以消耗爆裂火武器10发弹药，在武器的正常射程内朝一个10英尺的{@variantrule 立方 [效应区域]|XPHB|立方}区域喷射射击。该区域内的每个生物必须成功通过一个{@dc 15}的敏捷豁免检定，否则会受到伤害。掷一次武器的伤害骰，并将伤害应用到每个未能通过检定的生物。"
 					]
 				}
 			]
@@ -4829,7 +4835,7 @@
 					"ENG_name": "Vestige of Divergence",
 					"page": 200,
 					"entries": [
-						"{@note 此物品是分歧的遗物，详见{@book Tal'Dorei Treasures|TDCSR|5|分歧的遗物}以获取更多信息。}"
+						"{@note 这个物品是分歧的遗迹，参见{@book Tal'Dorei Treasures|TDCSR|5|Vestiges of Divergence} for more information.}"
 					]
 				}
 			]
@@ -5100,7 +5106,7 @@
 			"source": "TDCSR",
 			"page": 85,
 			"entriesTemplate": [
-				"{@note 此物品为非法药物；有关更多信息，请参见{@variantrule 非法药物|TDCSR}。}"
+				"{@note 此物品是非法药物；参见{@variantrule 非法药物|TDCSR} for more information.}"
 			]
 		},
 		{
@@ -5406,7 +5412,7 @@
 					"name": "船员",
 					"ENG_name": "Crew",
 					"entries": [
-						"一艘比凯尔船或划艇更大的船只需要一群熟练的雇员（见《XPHB》第6章《服务》）才能运作。操作一艘船所需的最少熟练雇员数量取决于船的类型。"
+						"一艘比龙骨舟或划艇更大的船需要一队熟练的雇佣船员（见\"{@book 服务|XPHB|6|服务}\"）来运作。所需的最低熟练雇佣船员数量取决于船只的类型。"
 					]
 				},
 				{
@@ -5708,7 +5714,7 @@
 			"ENG_name": "Armor of Resistance",
 			"source": "XDMG",
 			"entriesTemplate": [
-				"穿戴这件盔甲时，你对{@variantrule 抗性|XPHB}的伤害拥有{@getFullImmRes item.resist}的抵抗力。"
+				"当你穿着这件护甲时，你对{{getFullImmRes item.resist}}伤害具有{@variantrule 抗性|XPHB}。"
 			]
 		},
 		{
@@ -5868,7 +5874,7 @@
 			"page": 214,
 			"freeRules2024": true,
 			"entries": [
-				"如果你用这把武器击中一个生物，你可以迫使该生物进行一次体质豁免检定（难度等级为8加上用于攻击掷骰的属性修正和你的{@variantrule 熟练度|XPHB|熟练加值}）。若豁免失败，该生物将处于{@condition 倒地|XPHB}状态。"
+				"如果你用此武器击中一个生物，你可以迫使该生物进行一次体质豁免检定（{@dc 8} 加上用于进行攻击掷骰的能力调整值以及你的{@variantrule 熟练项|XPHB|熟练加值}）。豁免失败时，该生物获得{@condition 倒地|XPHB}状态。"
 			]
 		},
 		{

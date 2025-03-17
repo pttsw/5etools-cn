@@ -1,7 +1,7 @@
 {
 	"monster": [
 		{
-			"name": "古老的",
+			"name": "古旅人",
 			"ENG_name": "Archaic",
 			"source": "SCC",
 			"page": 184,
@@ -76,7 +76,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"古老的生物施放以下任意一个法术，无需材料成分，并使用智力作为施法能力（法术豁免 {dc 22}）："
+						"古代施法者施放下列法术之一，无需材料成分并使用智力作为施法能力（法术豁免 {@dc 22}）："
 					],
 					"will": [
 						"{@spell 侦测魔法}",
@@ -157,7 +157,7 @@
 			],
 			"legendary": [
 				{
-					"name": "攻击",
+					"name": "打击",
 					"ENG_name": "Strike",
 					"entries": [
 						"古老的存在进行一次力量打击攻击。"
@@ -324,7 +324,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "贝勒德罗斯·枯萎之花",
+			"name": "贝雷卓·靡华",
 			"ENG_name": "Beledros Witherbloom",
 			"isNamedCreature": true,
 			"source": "SCC",
@@ -465,7 +465,7 @@
 					"name": "瘴气流动",
 					"ENG_name": "Miasmal Flow",
 					"entries": [
-						"Beledros 变成一团旋转的绿色雾气，可以移动至她飞行速度的一半而不会激起借机攻击，然后恢复她的真身。在这种移动过程中，她可以像通过{@quickref 困难地形||3}一样穿越生物和物体。如果她穿过一个生物，该生物必须进行一次{@dc 23}体质豁免检定，否则在其下一回合结束前变得{@condition 中毒}。如果 Beledros 在这个移动结束时进入一个物体内部，她将受到5点（1d10）力场伤害，并被推到最近的未被占据的空间。"
+						"贝蕾德洛斯变成一团旋转的绿色雾气，可以在不引发借机攻击的情况下移动至多她飞行速度的一半，然后恢复她的真实形态。在此移动期间，她可以穿过生物和物体，仿佛它们是{@quickref 困难地形||3}。如果她穿过一个生物，该生物必须成功通过一次{@dc 23}的体质豁免检定，否则将被{@condition 中毒}直到其下一个回合结束。如果贝蕾德洛斯在物体内部结束此移动，她会受到5（{@damage 1d10}）点力场伤害并被推至最近的未被占据的空间。"
 					]
 				}
 			],
@@ -535,7 +535,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "咸水跋涉",
+			"name": "盐碱楚吉兽",
 			"ENG_name": "Brackish Trudge",
 			"source": "SCC",
 			"page": 187,
@@ -619,7 +619,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "机械档案管理员",
+			"name": "齿轮书库辖员",
 			"ENG_name": "Cogwork Archivist",
 			"source": "SCC",
 			"page": 188,
@@ -757,7 +757,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "恶魔哥特",
+			"name": "噬悲无丈魔",
 			"ENG_name": "Daemogoth",
 			"source": "SCC",
 			"page": 189,
@@ -825,7 +825,7 @@
 					"ENG_name": "Pact of Pain",
 					"entries": [
 						"通过一个10分钟的仪式，恶魔犬可以与它在仪式期间触摸的愿意的生物建立一个魔法契约。这个生物被契约束缚，直到它死亡、恶魔犬死亡，或者契约被任何能移除诅咒的效果打破。",
-						"恶魔哥斯从{@filter 死灵学派或附魔法派，且等级为3级或更低|spells|level=0;1;2;3|school=N;E}中选择一个法术。被束缚的生物可以使用这个契约来施放该法术，无需材料成分，并使用智力作为施法能力。当它施放法术时，生物会受到7点（2d6）心灵伤害，这不能打断生物对法术的{@status 专注}。一旦被束缚的生物以这种方式施放了法术，它在完成一次长休之前不能再这样做。"
+						"恶魔戈斯从{@filter 3级或更低级别的死灵学或惑控学派|spells|level=0;1;2;3|school=北；东}中选择一个。被束缚的生物可以通过此契约施放该法术，无需材料成分，并以其智力作为施法属性。当它施放该法术时，该生物会受到7（{@damage 2d6}）点心灵伤害，但这不会打断该生物对法术的{@status 专注}。一旦被束缚的生物以此方式施放该法术，它在完成一次长休之前无法再次施放。"
 					]
 				}
 			],
@@ -848,7 +848,7 @@
 					"name": "恐吓{@recharge 4}",
 					"ENG_name": "Terrify {@recharge 4}",
 					"entries": [
-						"恶魔哥斯瞄准它能看到的120尺内的一个生物。目标必须进行一次{@dc 17}感知豁免检定。检定失败，目标受到33点（6d10）心灵伤害，并在恶魔哥斯下一回合结束前对其感到{@condition 恐惧}，同时恶魔哥斯恢复5点生命值。检定成功，目标受到的伤害减半，并且不会感到{@condition 恐惧}，恶魔哥斯也不会治疗。"
+						"恶魔哥斯瞄准它120英尺内可见的一个生物。目标必须进行一次{@dc 17}的感知豁免。如果豁免失败，目标将受到33点（{@damage 6d10}）心灵伤害，并且在恶魔哥斯的下一个回合结束前对恶魔哥斯处于{@condition 恐慌}状态，恶魔哥斯恢复5点生命值。如果豁免成功，目标只受到一半伤害且不处于{@condition 恐慌}状态，恶魔哥斯也不会恢复生命值。"
 					]
 				}
 			],
@@ -882,7 +882,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "恶魔哥斯泰坦",
+			"name": "无丈魔泰坦",
 			"ENG_name": "Daemogoth Titan",
 			"source": "SCC",
 			"page": 190,
@@ -957,7 +957,7 @@
 					"ENG_name": "Pact of Suffering",
 					"entries": [
 						"使用一个持续10分钟的仪式，泰坦可以与它在仪式过程中触摸的一个愿意的生物建立一个魔法联系。这个生物被契约束缚，直到它死亡，泰坦死亡，或者契约被{@spell 祈愿术}法术打破。",
-						"泰坦从死灵学或惑控学派中选择一个8级或更低级别的法术。绑定生物可以使用这个契约施放该法术，不需要材料成分，并使用智力作为施法能力。当它以这种方式施放法术时，生物会受到21点（6d6）心灵伤害，这不能打断生物对法术的{@status 专注}。一旦绑定生物以这种方式施放了法术，直到完成一次长休之前，它不能再这样做。"
+						"泰坦从{@filter 8级或更低级别的死灵学派或惑控学派|spells|level=0;1;2;3;4;5;6;7;8|school=北；东}中选择一个法术。被束缚的生物可以使用这个契约施展该法术，无需材料成分，并使用智力作为施法能力。当它施展该法术时，生物会受到21（{@damage 6d6}）点心灵伤害，但这不会打断生物的{@status 专注}。一旦被束缚的生物以这种方式施展了该法术，它必须完成一次长休后才能再次如此施展。"
 					]
 				}
 			],
@@ -1042,7 +1042,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "大一新生",
+			"name": "一年级生",
 			"ENG_name": "First-Year Student",
 			"source": "SCC",
 			"page": 191,
@@ -1190,7 +1190,7 @@
 					"name": "相对密度",
 					"ENG_name": "Relative Density",
 					"entries": [
-						"分形可以像穿过困难地形一样穿过生物和物体。如果它在自己的回合结束时位于一个物体内部，它会受到5点（1d10）力场伤害。"
+						"这个分形可以像穿过{@quickref 困难地形||3}一样穿过生物和物体。如果它在物体内部结束回合，它会受到5（{@damage 1d10}）点力场伤害。"
 					]
 				}
 			],
@@ -1234,7 +1234,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "加拉泽斯·晶光",
+			"name": "加拉泽·粹丽",
 			"ENG_name": "Galazeth Prismari",
 			"isNamedCreature": true,
 			"source": "SCC",
@@ -1308,7 +1308,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Galazeth 施放以下任意一个法术，无需材料成分，并使用魅力作为施法能力（法术豁免 {dc 23}）："
+						"加拉泽斯施放以下法术之一，不需要材料成分，并使用魅力作为施法属性（法术豁免 {@dc 23}）："
 					],
 					"daily": {
 						"1e": [
@@ -1430,7 +1430,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "格罗夫",
+			"name": "河沼泽犬",
 			"ENG_name": "Groff",
 			"source": "SCC",
 			"page": 194,
@@ -1653,7 +1653,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "知识守护者学徒",
+			"name": "衡鉴学徒",
 			"ENG_name": "Lorehold Apprentice",
 			"source": "SCC",
 			"page": 197,
@@ -1706,7 +1706,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"学徒施放以下任意一个法术，无需材料成分，并使用智力作为施法能力（法术豁免 {dc 12}）："
+						"学徒施放以下一个法术，不需要材料成分，并使用智力作为施法属性（法术豁免 {@dc 12}）："
 					],
 					"will": [
 						"{@spell 神导术}",
@@ -1735,7 +1735,7 @@
 					"name": "化为记忆 {@recharge}",
 					"ENG_name": "Reduce to Memory {@recharge}",
 					"entries": [
-						"金色的雷鸣能量在学徒能看到的90尺范围内的生物周围爆发。该生物必须进行一次体质豁免检定（DC 12），若失败则承受33点（6d10）雷鸣伤害，若成功则承受一半的伤害。构装生物在豁免检定上处于劣势。"
+						"学徒能看到它 90 英尺内的一个生物周围爆发出震耳欲聋的金色能量。该生物必须进行一次{@dc 12}的体质豁免，若豁免失败，则受到 33（{@damage 6d10}）点雷鸣伤害，若豁免成功，则受到一半伤害。构装生物在进行此豁免时具有劣势。"
 					]
 				}
 			],
@@ -1773,7 +1773,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "洛尔霍尔誓言法师",
+			"name": "衡鉴证法师",
 			"ENG_name": "Lorehold Pledgemage",
 			"source": "SCC",
 			"page": 197,
@@ -1866,7 +1866,7 @@
 					"name": "化为记忆{@recharge 5}",
 					"ENG_name": "Reduce to Memory {@recharge 5}",
 					"entries": [
-						"金色的雷鸣能量在誓术师能看到的90尺范围内的生物周围爆发。该生物必须进行一次体质豁免检定（DC 13），若失败则承受44点（8d10）雷鸣伤害，若成功则承受一半的伤害。构装生物在豁免检定上处于劣势。"
+						"宣誓法师能看见的90英尺范围内的一个生物周围爆发出雷鸣般的金色能量。该生物必须进行一次{@dc 13}体质豁免检定，若失败则受到44（{@damage 8d10}）点雷鸣伤害，若成功则受到一半伤害。构装生物在进行此次豁免检定时具有劣势。"
 					]
 				}
 			],
@@ -1920,7 +1920,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "洛瑞霍尔混沌教授",
+			"name": "衡鉴学院混沌教授",
 			"ENG_name": "Lorehold Professor of Chaos",
 			"source": "SCC",
 			"page": 198,
@@ -2053,7 +2053,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "洛尔霍尔秩序学教授",
+			"name": "衡鉴学院秩序教授",
 			"ENG_name": "Lorehold Professor of Order",
 			"source": "SCC",
 			"page": 198,
@@ -2510,14 +2510,14 @@
 				"体质"
 			],
 			"savingThrowForcedLegendary": [
-				"dexterity"
+				"敏捷"
 			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
-			"name": "斯特里克斯海文的神谕使",
+			"name": "斯翠海文圣法谕",
 			"ENG_name": "Oracle of Strixhaven",
 			"source": "SCC",
 			"page": 200,
@@ -2634,7 +2634,7 @@
 					"name": "悖论性{@recharge 4}",
 					"ENG_name": "Paradoxy {@recharge 4}",
 					"entries": [
-						"在先知能看到的120尺范围内，现实暂时扭曲出现在三个不同的点上。每个点为中心的20尺半径范围内的生物都必须进行一次力量豁免检定（DC 18）。检定失败的生物将受到33点（6d10）力场伤害，并被直线拉向球体中心最多15尺。检定成功，生物受到的伤害减半，并且不会被拉走。如果生物处于多个扭曲区域，先知选择其中一个影响生物。"
+						"现实中的短暂扭曲出现在先知可见的120英尺范围内的三个不同点上。以每个点为圆心，半径为20英尺的球体内的每个生物都必须进行一次{@dc 18}力量豁免。豁免失败时，生物受到33（{@damage 6d10})点力场伤害，并被直线拉向球心最多15英尺。豁免成功时，生物只受到一半伤害且不会被拉向球心。被多个扭曲区域影响的生物只会受到其中一个的影响，由先知选择。"
 					]
 				},
 				{
@@ -2704,7 +2704,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "奥里克血法师",
+			"name": "欧理可血法师",
 			"ENG_name": "Oriq Blood Mage",
 			"source": "SCC",
 			"page": 201,
@@ -2836,7 +2836,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "奥里克招募者",
+			"name": "欧理可招募者",
 			"ENG_name": "Oriq Recruiter",
 			"source": "SCC",
 			"page": 202,
@@ -2904,7 +2904,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"招募者施放以下任意一个法术，无需材料成分，并使用魅力作为施法能力（法术豁免 {dc 14}）："
+						"招募者施放以下法术之一，无需材料成分，并使用魅力作为施法属性（法术豁免 {@dc 14}）："
 					],
 					"will": [
 						"{@spell 易容术}",
@@ -3061,7 +3061,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "普瑞斯玛学徒",
+			"name": "粹丽学徒",
 			"ENG_name": "Prismari Apprentice",
 			"source": "SCC",
 			"page": 205,
@@ -3174,7 +3174,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "普里斯玛誓约法师",
+			"name": "粹丽证法师",
 			"ENG_name": "Prismari Pledgemage",
 			"source": "SCC",
 			"page": 205,
@@ -3317,7 +3317,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "普瑞斯玛表达学教授",
+			"name": "粹丽学院展现教授",
 			"ENG_name": "Prismari Professor of Expression",
 			"source": "SCC",
 			"page": 206,
@@ -3454,7 +3454,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "完美晶石教授",
+			"name": "粹丽学院精进教授",
 			"ENG_name": "Prismari Professor of Perfection",
 			"source": "SCC",
 			"page": 206,
@@ -3600,7 +3600,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "奎德里克斯学徒",
+			"name": "量析学徒",
 			"ENG_name": "Quandrix Apprentice",
 			"source": "SCC",
 			"page": 208,
@@ -3653,7 +3653,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"学徒施放以下任意一个法术，无需材料成分，并使用智力作为施法能力（法术豁免 {dc 12}）："
+						"学徒施放下列法术之一，无需材料成分，并使用智力作为施法属性（法术豁免{@dc 12}）："
 					],
 					"will": [
 						"{@spell 神导术}",
@@ -3706,7 +3706,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "奎德里克斯誓约法师",
+			"name": "量析证法师",
 			"ENG_name": "Quandrix Pledgemage",
 			"source": "SCC",
 			"page": 208,
@@ -3831,7 +3831,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "奇思物质教授",
+			"name": "量析学院物质教授",
 			"ENG_name": "Quandrix Professor of Substance",
 			"source": "SCC",
 			"page": 209,
@@ -3981,7 +3981,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "奎德里克斯理论教授",
+			"name": "量析学院理论教授",
 			"ENG_name": "Quandrix Professor of Theory",
 			"source": "SCC",
 			"page": 209,
@@ -4075,7 +4075,7 @@
 					"name": "启发式长矛",
 					"ENG_name": "Heuristic Lance",
 					"entries": [
-						"{@atk ms,rs} 命中{@hit 7}，触及5尺或60尺，单一生物。{@h}13 ({@damage 2d8 + 4}) 心灵伤害，目标直到其下一回合结束时被{condition 中毒}。"
+						"{@atk 近战，远程} {@hit 7}攻击命中，范围5英尺或射程60英尺，单一生物。{@h}13（{@damage 2d8 + 4}）点心灵伤害，且目标直到其下一回合结束处于{@condition 中毒}状态。"
 					]
 				},
 				{
@@ -4119,7 +4119,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "遗迹树懒",
+			"name": "驮宝惰兽",
 			"ENG_name": "Relic Sloth",
 			"source": "SCC",
 			"page": 210,
@@ -4190,7 +4190,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "毁灭研磨者",
+			"name": "遗迹碾磨工",
 			"ENG_name": "Ruin Grinder",
 			"source": "SCC",
 			"page": 211,
@@ -4443,7 +4443,7 @@
 					"ENG_name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Shadrix 施放以下任意一个法术，无需材料成分，并使用魅力作为施法能力（法术豁免 {dc 23}）："
+						"莎德瑞克斯施放以下法术之一，无需材料成分并使用魅力作为施法能力（法术豁免 {@dc 23}）："
 					],
 					"daily": {
 						"1e": [
@@ -4509,14 +4509,14 @@
 					"name": "影遁（消耗2个动作）",
 					"ENG_name": "Shadow Slip (Costs 2 Actions)",
 					"entries": [
-						"沙德里克斯变成一团墨色的阴影云雾，可以以他飞行速度的一半移动而不引发借机攻击，然后恢复其真实形态。在这种移动过程中，他可以像通过困难地形一样穿过生物和物体。如果他穿过一个生物，该生物必须成功进行一次{@dc 21}体质豁免检定，否则在其下一个回合结束前处于{@condition 盲目}状态。如果沙德里克斯在物体内部结束这次移动，他将受到5（{@damage 1d10}）力场伤害，并被推送到最近的未被占据的空间。"
+						"夏德里克斯化作一团漆黑的阴影云，可以移动至多他飞行速度的一半而不引发借机攻击，然后恢复其真实形态。在本次移动过程中，他可以像穿过{@quickref 困难地形||3}一样穿过生物和物体。如果他穿过一个生物，该生物必须成功进行一次{@dc 21}体质豁免检定，否则直到其下一个回合结束前变为{@condition 目盲}状态。如果夏德里克斯本次移动结束时处于物体内部，他会受到5（{@damage 1d10}）点力场伤害并被移出到最近的未被占据的空间。"
 					]
 				},
 				{
 					"name": "灵感闪现（消耗3个行动点）",
 					"ENG_name": "Flash of Inspiration (Costs 3 Actions)",
 					"entries": [
-						"Shadrix 魔法召唤 {dice 1d4} 个 {@creature inkling mascot|SCC|墨迹吉祥物} 到他能看到的60尺内未被占据的空间中。这些墨迹吉祥物遵从他的指令，并在他的回合之后立即行动。只要这些墨迹吉祥物还活着，Shadrix 在攻击检定和豁免检定上具有优势。这些墨迹吉祥物在10分钟后消失，当 Shadrix 死亡，或当他再次使用这个动作时。"
+						"沙德里克斯魔法般地在他自身60英尺内可见的未被占据的空间中召唤出{@dice 1d4}只{@creature 墨灵苑像|SCC|预兆吉祥物}。这些墨水精灵会服从他的命令，并在他的回合之后立即行动。只要这些墨水精灵中的任何一只存活，沙德里克斯在攻击检定和豁免检定上具有优势。这些墨水精灵会在10分钟后消失，当沙德里克斯死亡或他再次使用此动作时也会消失。"
 					]
 				}
 			],
@@ -4566,7 +4566,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "银羽学徒",
+			"name": "银毫学徒",
 			"ENG_name": "Silverquill Apprentice",
 			"source": "SCC",
 			"page": 214,
@@ -4675,7 +4675,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "银羽誓言法师",
+			"name": "银毫证法师",
 			"ENG_name": "Silverquill Pledgemage",
 			"source": "SCC",
 			"page": 214,
@@ -4802,7 +4802,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "银羽光辉教授",
+			"name": "银毫学院辉光教授",
 			"ENG_name": "Silverquill Professor of Radiance",
 			"source": "SCC",
 			"page": 215,
@@ -4893,7 +4893,7 @@
 					]
 				},
 				{
-					"name": "辐射打击",
+					"name": "耀光打击",
 					"ENG_name": "Radiant Strike",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 7}，触及5尺或射程120尺，单一目标。{@h}17 ({@damage 3d8 + 4}) 光耀伤害。如果目标是一个生物，它必须在{@dc 15} 体质豁免检定中成功，否则直到其下一回合结束时将被{@condition 目盲}。"
@@ -4931,7 +4931,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "银羽学院的暗影教授",
+			"name": "银毫学院黯影教授",
 			"ENG_name": "Silverquill Professor of Shadow",
 			"source": "SCC",
 			"page": 215,
@@ -5165,7 +5165,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "斯特里克斯校园向导",
+			"name": "斯翠海文校区向导",
 			"ENG_name": "Strixhaven Campus Guide",
 			"source": "SCC",
 			"page": 217,
@@ -5312,7 +5312,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "塔纳希尔·昆德里克斯",
+			"name": "塔纳吉·量析",
 			"ENG_name": "Tanazir Quandrix",
 			"isNamedCreature": true,
 			"source": "SCC",
@@ -5462,7 +5462,7 @@
 					"name": "折叠空间（消耗2个行动点）",
 					"ENG_name": "Fold Space (Costs 2 Actions)",
 					"entries": [
-						"Tanazir 使用传送术，她离开的空间周围20尺内的每个生物都必须进行一次力量豁免检定（DC 24），失败则被拉向该空间中心最多30尺，并受到16点（3d10）力场伤害。"
+						"塔纳兹尔使用传送术，离开的空间周围20英尺内的每个其他生物必须成功通过一次{@dc 24}力量豁免，否则将被拉近至该空间中心最多30英尺，并受到16（{@damage 3d10}）点力场伤害。"
 					]
 				},
 				{
@@ -5517,7 +5517,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "维洛马克斯·洛雷霍德",
+			"name": "维洛马楚·衡鉴",
 			"ENG_name": "Velomachus Lorehold",
 			"isNamedCreature": true,
 			"source": "SCC",
@@ -5622,7 +5622,7 @@
 					"name": "啃咬",
 					"ENG_name": "Bite",
 					"entries": [
-						"{@atk mw} 命中骰：18，触及范围15尺，单一目标。{@h}15（{@damage 1d10 + 10}）点穿刺伤害加上6（{@damage 1d12}）雷鸣伤害。"
+						"{@atk mw} {@hit 18} 命中，范围 15 英尺，一个目标。{@h}15 ({@damage 1d10 + 10}) 穿刺伤害加 6 ({@damage 1d12}) 雷声伤害。"
 					]
 				},
 				{
@@ -5636,7 +5636,7 @@
 					"name": "战斗潮汐之息 {@recharge 5}",
 					"ENG_name": "Battle Tide Breath {@recharge 5}",
 					"entries": [
-						"Velomachus 呼出90尺锥形范围内的雷鸣般的声音。该区域中的每个生物必须进行一次体质豁免检定（DC 25）。失败时，生物将受到45点（7d12）力场伤害和45点（7d12）雷鸣伤害，并被推向Velomachus选择的水平方向最多20尺。成功时，生物受到的伤害减半，且不会被推动。未被穿戴或携带的物体会受到伤害并像豁免检定失败的生物一样被推动。"
+						"维罗玛库斯在90英尺锥形范围内呼出雷鸣般的声音。该区域内的每个生物必须进行一次{@dc 25}体质豁免检定。检定失败时，生物会受到45（{@damage 7d12}）点力场伤害和45（{@damage 7d12}）点雷鸣伤害，并被维罗玛库斯选择的方向水平推动最多20英尺。检定成功时，生物只受到一半伤害且不会被推动。未被穿戴或携带的物体也会受到伤害，并被推动，仿佛它们是豁免检定失败的生物。"
 					]
 				}
 			],
@@ -5659,7 +5659,7 @@
 					"name": "重复历史（消耗3次行动）",
 					"ENG_name": "Repeating History (Costs 3 Actions)",
 					"entries": [
-						"Velomachus 魔法召唤 {dice 1d4} 个 {@creature spirit statue mascot|SCC|雕像吉祥物} 到她能看到的60尺内未被占据的空间中。这些雕像吉祥物遵从她的指令，并在她的回合之后立即行动。任何生物（除了雕像吉祥物或 Velomachus 本人）如果在这些雕像吉祥物5尺范围内开始其回合，将被 {condition restrained}。这个 {condition restrained} 状态持续到该生物回合结束。这些雕像吉祥物在10分钟后消失，当 Velomachus 死亡，或当她再次使用这个动作时。"
+						"维洛玛库斯魔法性地召唤{@dice 1d4}个{@creature 魂灵塑偶苑像|SCC|雕像吉祥物}到她60英尺内她能看到的未被占据的空间中。这些灵体雕像遵循她的命令，并在她的回合之后立即行动。任何生物，除了灵体雕像或维洛玛库斯，如果其回合开始时在5英尺内有这些灵体雕像，将被施加{@condition 束缚}状态。此{@condition 束缚}状态将持续到该生物的回合结束。这些灵体雕像会在10分钟后、维洛玛库斯死亡时或她再次使用此动作时消失。"
 					]
 				}
 			],
@@ -5707,7 +5707,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "枯萎花学徒",
+			"name": "靡华学徒",
 			"ENG_name": "Witherbloom Apprentice",
 			"source": "SCC",
 			"page": 221,
@@ -5798,7 +5798,7 @@
 			],
 			"action": [
 				{
-					"name": "荆棘藤蔓",
+					"name": "荆棘藤",
 					"ENG_name": "Briar Vine",
 					"entries": [
 						"{@atk ms} 命中{@hit 4}，触及：15尺，单一目标。{@h}7（{@damage 1d10 + 2}）点穿刺伤害加上9（{@damage 2d8}）毒素伤害。如果目标是大型或更小的生物，学徒可以将其拉近至多10尺。"
@@ -5807,7 +5807,7 @@
 			],
 			"reaction": [
 				{
-					"name": "枯萎爆发",
+					"name": "枯萎爆裂",
 					"ENG_name": "Wither Burst",
 					"entries": [
 						"当学徒看到距离自己30尺内的生物降至0生命值时，学徒会引导消耗的生命精华，并选择另一个它能看到的、距离自己30尺内的生物作为目标。目标必须进行一次{@dc 12}体质豁免检定，否则在1分钟内变得{@condition 中毒}。在以这种方式{@condition 中毒}时，目标在每个回合开始时受到3 ({@damage 1d6}) 点毒素伤害。目标可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
@@ -5842,7 +5842,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "枯萎花学徒",
+			"name": "靡华证法师",
 			"ENG_name": "Witherbloom Pledgemage",
 			"source": "SCC",
 			"page": 222,
@@ -5941,7 +5941,7 @@
 			],
 			"action": [
 				{
-					"name": "荆棘藤蔓",
+					"name": "荆棘藤",
 					"ENG_name": "Briar Vine",
 					"entries": [
 						"{@atk ms} 命中{@hit 5}，触及范围15尺，单一目标。{@h}8（{@damage 1d10 + 3}）点穿刺伤害加上18（{@damage 4d8}）毒素伤害。如果目标是大型或更小的生物，学徒可以将其拉向自己最多10尺。"
@@ -5959,10 +5959,10 @@
 			],
 			"reaction": [
 				{
-					"name": "枯萎爆发",
+					"name": "枯萎爆裂",
 					"ENG_name": "Wither Burst",
 					"entries": [
-						"当誓术师看到30尺范围内的生物生命值降至0点时，誓术师引导消耗的生命精华并选择另一个它能看到的30尺范围内的生物作为目标。目标必须进行一次体质豁免检定（DC 13），若失败，则在1分钟内处于{@condition 中毒}状态。在这种状态下中毒时，目标在其每个回合开始时受到3点（1d6）毒素伤害。目标可以在其每个回合结束时重复进行豁免检定，若成功则结束此效果。"
+						"当誓约法师看到30尺内的一个生物生命值降至0时，它引导这股被消耗的生命精华，并选择另一个30尺内可见的生物作为目标。目标必须成功通过一个{@dc 13}体质豁免检定，否则会{@condition 中毒}1分钟。在以此方式{@condition 中毒}时，目标在每回合开始时受到3（{@damage 1d6}）点毒素伤害。目标可以在每回合结束时重复豁免检定，成功则结束此效果。"
 					]
 				}
 			],
@@ -5994,7 +5994,7 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "枯萎之花腐朽教授",
+			"name": "靡华学院消亡教授",
 			"ENG_name": "Witherbloom Professor of Decay",
 			"source": "SCC",
 			"page": 223,
@@ -6094,7 +6094,7 @@
 					]
 				},
 				{
-					"name": "凡人之矛",
+					"name": "碎骨尸枪",
 					"ENG_name": "Mortality Spear",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 7}，触及范围5尺或射程120尺，单一目标。{@h}17（{@damage 3d8 + 4}）黯蚀伤害，目标直到教授下回合开始前无法恢复生命值。"
@@ -6104,7 +6104,7 @@
 					"name": "精华脉冲 {@recharge 5}",
 					"ENG_name": "Essence Pulse {@recharge 5}",
 					"entries": [
-						"教授在以自身为中心的30尺半径范围内创造一个吸取生命的漩涡。教授能看到的该区域内的每一个生物都必须进行一次体质豁免检定（DC 15），失败则受到23点（5d8）黯蚀伤害，成功则只受到一半的伤害。然后教授恢复10点生命值。受影响生物的生命值上限会减少，减少量等于所受黯蚀伤害。这种减少持续到该生物完成一次长休。如果生物的生命值上限减少到0，它就会死亡。"
+						"教授在以自身为中心的30英尺半径球体内创造一个生命吸取漩涡。教授选择的每个在该区域内可见的生物必须进行一次{@dc 15}体质豁免检定，若失败则受到23（{@damage 5d8}）点死灵伤害，若成功则只受到一半伤害。随后教授恢复10点生命值。受影响生物的生命值上限减少相当于所受死灵伤害的数量。此减少效果持续到该生物完成一次长休。若生物的生命值上限减少至0，则该生物死亡。"
 					]
 				}
 			],
@@ -6139,7 +6139,7 @@
 			"hasFluff": true
 		},
 		{
-			"name": "凋零之花成长教授",
+			"name": "靡华学院生长教授",
 			"ENG_name": "Witherbloom Professor of Growth",
 			"source": "SCC",
 			"page": 223,
@@ -6235,7 +6235,7 @@
 					]
 				},
 				{
-					"name": "翠绿之鞭",
+					"name": "盎然翠鞭",
 					"ENG_name": "Verdant Lash",
 					"entries": [
 						"{@atk ms} 命中{@hit 7}，触及30尺，单一目标。{@h}11（{@damage 2d6 + 4}）点穿刺伤害加上7（{@damage 2d6}）毒素伤害，目标必须进行一次{@dc 15}力量豁免，否则会被拉近教授10尺以内。"
@@ -6377,7 +6377,7 @@
 					"name": "血沸{@recharge 4}",
 					"ENG_name": "Blood Boil {@recharge 4}",
 					"entries": [
-						"Y'demi 在自身150尺范围内选择一个点，以该点为中心的20尺半径球体充满了灼热的血红色雾气。Y'demi 可以选择她能看到的该区域内的每个生物必须进行一次体质豁免检定（DC 17）。若豁免失败，生物将受到38点（7d10）黯蚀伤害，并在它的下一回合结束前处于{@condition 无力}状态。若豁免成功，生物受到的伤害减半，且不会处于{@condition 无力}状态。如果生物因这次黯蚀伤害生命值降至0，则生物死亡。"
+						"选择距离自身150英尺内的一点，以该点为中心20英尺半径的范围内爆发出灼热的血红色雾气。范围内的每个由伊德米选择的生物必须进行一次{@dc 17}体质豁免。豁免失败则受到38（{@damage 7d10}）点黯蚀伤害并在其下个回合结束前陷入{@condition 失能}状态。豁免成功则受到一半伤害且不会{@condition 失能}。如果该黯蚀伤害将生物的生命值降至0，则该生物死亡。"
 					]
 				}
 			],

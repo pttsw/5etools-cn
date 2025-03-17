@@ -5,7 +5,7 @@
 			"name": "渲染器演示",
 			"ENG_name": "Renderer Demo",
 			"entries": [
-				"（这是章节标题。这主要用于冒险故事中，作为整个章节的标题。根条目不需要是'section'类型，通常使用'entries'代替。'section'生成一个{@b -1级}标题；如果你愿意，可以说是'地下室'级别。）",
+				"（这是一个章节标题。主要用于冒险模块中，作为整个章节的标题。根条目{@b 不是}具有 'section' 类型，通常使用 'entries' 代替。'section' 生成一个{@bold 等级 -1}的标题；你可以将其理解为 '底层' 层级。）",
 				{
 					"type": "quote",
 					"entries": [
@@ -87,11 +87,12 @@
 								"{@filter 挑战等级为1或更低的野兽|bestiary|challenge rating=[&0;&1]|type=野兽}",
 								"{@filter 力量值达到18或更高的生物|bestiary|力量=[18;]}",
 								"{@filter 占卜和召唤法术|spells|school=D;V}",
-								"{@filter 所有稀有魔法物品|Items|source=|type=|rarity=uncommon|miscellaneous=魔法}",
-								"{@filter 简易近战武器|Items|source=PHB|category=基础|type=简易武器;近战武器=sand}",
+								"{@filter 所有稀有魔法物品|物品|source=|type=|rarity=uncommon|miscellaneous=魔法}",
+								"{@filter 简易近战武器|物品|source=PHB|category=基础|type=简易武器;近战武器=sand}",
 								"可以设置元选项；对于个别过滤器内联设置，并使用 'fbmt' 进行过滤元选项 {@filter 过滤器元数据示例|spells|level=1;2=巫师~沙子|fbmt=巫师|fbmh=来源}",
 								"搜索可以设置；{@filter 查看恐龙|bestiary|search=恐龙}",
 								"一个精确的起始实体；{@filter 筛选野兽并显示猫|bestiary|type=野兽|hash=猫_mm}，其中 'hash' 是在查看实体时URL栏中'#'符号之后和任何逗号之前的部分。",
+								"保留现有的筛选状态（即，仅修改标签中指定的筛选器）； {@filter 城市生物|bestiary|环境=草原|保护}",
 								{
 									"type": "entries",
 									"name": "注",
@@ -155,7 +156,7 @@
 						}
 					]
 				},
-				"这些标签可能是{@b {@i {@spell fireball|phb|嵌套}}}的，尽管通常有更好的方式来实现你可能会用到的加粗和斜体组合；考虑使用下面适当类型的项目之一（例如二级标题）。",
+				"这些标签可能是{@b {@i {@spell 火球术|PHB|nested}}}的，尽管通常有更好的方式来实现你可能会用到的加粗和斜体组合；考虑使用下面适当类型的项目之一（例如二级标题）。",
 				{
 					"type": "entries",
 					"name": "一个子类名称，例如",

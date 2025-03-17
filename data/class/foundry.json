@@ -2739,6 +2739,80 @@
 			"migrationVersion": 3
 		},
 		{
+			"name": "狂暴",
+			"ENG_name": "Rage",
+			"source": "XPHB",
+			"className": "野蛮人",
+			"classSource": "XPHB",
+			"level": 1,
+			"system": {
+				"uses.max": "@scale.野蛮人.狂暴"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"effects": [
+						{
+							"foundryId": "狂暴"
+						}
+					],
+					"range": {
+						"units": "self"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "狂暴",
+					"disabled": true,
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.bonuses.mwak.damage",
+							"mode": "ADD",
+							"value": "+@scale.barbarian.rage-damage"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "斩击"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "穿刺"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "钝击"
+						}
+					],
+					"duration": {
+						"seconds": 600
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"name": "原初学识",
 			"ENG_name": "Primal Knowledge",
 			"source": "XPHB",
