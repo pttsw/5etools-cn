@@ -1,184 +1,184 @@
 {
 	"monsterfeatures": [
 		{
-			"name": "好斗",
 			"ENG_name": "Aggressive",
+			"name": "好斗",
 			"example": "兽人",
 			"effect": "作为一个附赠动作项，该生物可以向一个它能看见的敌对生物移动至多相当于其速度的距离。",
 			"dpr": "2"
 		},
 		{
-			"name": "伏击",
 			"ENG_name": "Ambusher",
+			"name": "伏击",
 			"example": "变形怪",
 			"effect": "战斗开始的第一轮里，该生物对任何成功{@status 被突袭}的生物所发动的攻击检定具有优势。",
 			"attackBonus": "1"
 		},
 		{
-			"name": "天使武器",
 			"ENG_name": "Angelic Weapons",
+			"name": "天使武器",
 			"example": "天神使徒",
 			"effect": "该生物的武器攻击带有魔法。当该生物以任何武器攻击命中目标时，其武器将额外造成光耀伤害（已包含在攻击项中）。请输入它每轮因此造成的额外伤害",
 			"dpr": "trait",
 			"hasNumberParam": true
 		},
 		{
-			"name": "豁免闪避",
 			"ENG_name": "Avoidance",
+			"name": "豁免闪避",
 			"example": "半巫妖",
 			"effect": "该生物在成为某一范围效应影响对象时，若该效应允许它通过成功的豁免检定来使伤害减半，则它在该豁免成功时不受伤害，而豁免失败时只受一半伤害。",
 			"ac": "1"
 		},
 		{
-			"name": "血腥狂怒",
 			"ENG_name": "Blood Frenzy",
+			"name": "血腥狂怒",
 			"example": "沙华鱼人",
 			"effect": "沙华鱼人对生命值没有全满的生物发动近战攻击时，其攻击检定具有优势。",
 			"attackBonus": "4"
 		},
 		{
-			"name": "绞缠",
 			"ENG_name": "Constrict",
+			"name": "绞缠",
 			"example": "巨蟒",
 			"effect": "该生物具有在一次攻击的同时束缚和(或)擒抱其目标的能力。",
 			"ac": "1"
 		},
 		{
-			"name": "伤害转嫁",
 			"ENG_name": "Damage Transfer",
+			"name": "伤害转嫁",
 			"example": "蛰伏伪怪",
 			"effect": "该生物附着或者擒抱一个生物时，任何对其造成的伤害减半（向下取整），而另一半伤害则由被附着的生物承受。",
 			"hp": "hp",
 			"dpr": "hpActual * 0.33"
 		},
 		{
-			"name": "变巨",
 			"ENG_name": "Enlarge",
+			"name": "变巨",
 			"example": "灰矮人",
 			"effect": "该生物用魔法将自己连同其装备或携带的所有东西一起变得巨大，请输入它在变巨时每轮造成的额外伤害。",
 			"dpr": "trait",
 			"hasNumberParam": true
 		},
 		{
-			"name": "骇人威仪",
 			"ENG_name": "Frightful Presence",
+			"name": "骇人威仪",
 			"example": "远古金龙",
 			"effect": "该生物指定周边范围内的若干生物，每个目标都必须进行一次感知豁免，豁免失败者将陷入1分钟的恐慌状态。",
 			"hp": "Math.floor((expectedCr <= 10) ? hp * 0.25 : 0)"
 		},
 		{
-			"name": "灼热之躯",
 			"ENG_name": "Heated Body",
+			"name": "灼热之躯",
 			"example": "火矮人",
 			"effect": "在距离它5尺内触碰或命中该生物将会承受火焰伤害。",
 			"dpr": "trait",
 			"hasNumberParam": true
 		},
 		{
-			"name": "恐惧面容",
 			"ENG_name": "Horrifying Visage",
+			"name": "恐惧面容",
 			"example": "女妖",
 			"effect": "每个范围内的非不死生物都必须进行一次感知豁免，豁免失败将陷入1分钟的恐慌状态。",
 			"hp": "Math.floor((expectedCr <= 10) ? hp * 0.25 : 0)"
 		},
 		{
-			"name": "传奇抗性",
 			"ENG_name": "Legendary Resistance",
+			"name": "传奇抗性",
 			"example": "泰拉斯奎巨兽",
 			"effect": "若该生物在豁免检定中失败，它可以选择改为使其成功。请输入它每天可以使用此特性的次数。",
 			"hp": "((expectedCr >= 0 && expectedCr <= 4) ? 10*trait : ((expectedCr >= 5 && expectedCr <= 10) ? 20*trait : ((expectedCr >= 11) ? 30*trait : 0)))",
 			"hasNumberParam": true
 		},
 		{
-			"name": "魔法抗性",
 			"ENG_name": "Magic Resistance",
+			"name": "魔法抗性",
 			"example": "巴洛炎魔",
 			"effect": "该生物为抵抗法术和其它魔法效应而作的豁免检定具有优势。",
 			"ac": "2"
 		},
 		{
-			"name": "成军优势",
 			"ENG_name": "Martial Advantage",
+			"name": "成军优势",
 			"example": "大地精",
 			"effect": "当该生物命中一个目标时，当该生物至少有一个未处于失能状态的队友距离该目标5尺之内时，则该生物可以对它造成额外伤害。请输入它每轮因此造成的额外伤害。",
 			"dpr": "trait",
 			"hasNumberParam": true
 		},
 		{
-			"name": "迅捷逃逸",
 			"ENG_name": "Nimble Escape",
+			"name": "迅捷逃逸",
 			"example": "地精",
 			"effect": "该生物可以在它的回合以一个附赠动作来采取撤离或躲藏动作。",
 			"ac": "4",
 			"attackBonus": "4"
 		},
 		{
-			"name": "集群战术",
 			"ENG_name": "Pack Tactics",
+			"name": "集群战术",
 			"example": "狗头人",
 			"effect": "若该生物有至少一个处于未失能状态的队友距离目标5尺时，该生物在对目标进行的攻击检定中具有优势。",
 			"attackBonus": "1"
 		},
 		{
-			"name": "格挡",
 			"ENG_name": "Parry",
+			"name": "格挡",
 			"example": "大地精军阀",
 			"effect": "该生物在一次近战攻击将要命中它时，可以使用一个反应以针对该次攻击使它的AC增加等同于它熟练加值的数值。",
 			"ac": "1"
 		},
 		{
-			"name": "附身",
 			"ENG_name": "Possession",
+			"name": "附身",
 			"example": "幽魂",
 			"effect": "该生物可以控制另一名生物，在这段期间它几乎不会受到任何效果的影响。",
 			"hp": "hp"
 		},
 		{
-			"name": "再生",
 			"ENG_name": "Regeneration",
+			"name": "再生",
 			"example": "巨魔",
 			"effect": "在该生物的回合开始时，它将回复生命值，且直到这个效果被某个方式（通常是通过强酸或火焰伤害）压制之前都不会被杀死。请输入它在回合开始时所回复的生命值。",
 			"hp": "trait*3",
 			"hasNumberParam": true
 		},
 		{
-			"name": "坚韧",
 			"ENG_name": "Relentless",
+			"name": "坚韧",
 			"example": "野猪",
 			"effect": "该生物的生命值将要被归零时，它有机会改为使它的生命值减少至1。",
 			"hp": "((expectedCr >= 0 && expectedCr <= 4) ? 7 : ((expectedCr >= 5 && expectedCr <= 10) ? 14 : ((expectedCr >= 11 && expectedCr <= 16) ? 21 : ((expectedCr >= 17) ? 28 : 0))))"
 		},
 		{
-			"name": "幽影隐匿",
 			"ENG_name": "Shadow Stealth",
+			"name": "幽影隐匿",
 			"example": "幽影恶魔",
 			"effect": "当处于微光光照或黑暗环境时，该生物能够以一个附赠动作采取躲藏动作。",
 			"ac": "4"
 		},
 		{
-			"name": "恶臭",
 			"ENG_name": "Stench",
+			"name": "恶臭",
 			"example": "穴蜥人",
 			"effect": "任何非该种生物且距离它5尺内的生物都必须进行一次豁免检定，豁免失败则陷入中毒状态。",
 			"ac": "1"
 		},
 		{
-			"name": "强效隐形",
 			"ENG_name": "Superior Invisibility",
+			"name": "强效隐形",
 			"example": "皮克精",
 			"effect": "该生物可以使用一个动作或附赠动作以使自己变得隐形。",
 			"ac": "2"
 		},
 		{
-			"name": "不死坚韧",
 			"ENG_name": "Undead Fortitude",
+			"name": "不死坚韧",
 			"example": "僵尸",
 			"effect": "该生物的生命值将要被归零时，它有机会改为使它的生命值被减少至1。若这个伤害来自光耀属性，则这个特性无效。",
 			"hp": "((expectedCr >= 0 && expectedCr <= 4) ? 7 : ((expectedCr >= 5 && expectedCr <= 10) ? 14 : ((expectedCr >= 11 && expectedCr <= 16) ? 21 : ((expectedCr >= 17) ? 28 : 0))))"
 		},
 		{
-			"name": "蛛网",
 			"ENG_name": "Web",
+			"name": "蛛网",
 			"example": "巨蜘蛛",
 			"effect": "这个远程武器攻击将在命中时束缚其目标。",
 			"ac": "1"

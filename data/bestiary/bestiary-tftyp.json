@@ -20,20 +20,20 @@
 	},
 	"monster": [
 		{
-			"name": "双头蛇",
 			"ENG_name": "Amphisbaena",
+			"name": "双头蛇",
 			"source": "TftYP",
 			"page": 84,
 			"_copy": {
-				"name": "巨蟒",
 				"ENG_name": "Giant Constrictor Snake",
+				"name": "巨蟒",
 				"source": "MM",
 				"_mod": {
 					"action": {
 						"mode": "prependArr",
 						"items": {
-							"name": "多重攻击",
 							"ENG_name": "Multiattack",
+							"name": "多重攻击",
 							"entries": [
 								"双头蜥进行两次攻击，其中一次可以是夹击攻击。"
 							]
@@ -48,8 +48,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "活动桌子",
 			"ENG_name": "Animated Table",
+			"name": "活动桌子",
 			"source": "TftYP",
 			"page": 230,
 			"size": [
@@ -101,22 +101,22 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "魔力依赖",
 					"ENG_name": "Antimagic Susceptibility",
+					"name": "魔力依赖",
 					"entries": [
-						"当桌子处于{@spell 反魔法场}的区域内时，它处于{@spell 反魔法场}状态。如果桌子被{@spell 解除魔法}作为目标，它必须进行一次体质豁免检定，对抗施法者的法术豁免DC，否则会陷入{@condition 昏迷}状态，持续1分钟。"
+						"当桌子处于{@spell 反魔法场}的区域内时，它处于{@condition 失能}状态。如果桌子被{@spell 解除魔法}作为目标，它必须进行一次体质豁免检定，对抗施法者的法术豁免DC，否则会陷入{@condition 昏迷}状态，持续1分钟。"
 					]
 				},
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"当桌子保持静止时，它与普通桌子无法区分。"
 					]
 				},
 				{
-					"name": "冲锋",
 					"ENG_name": "Charge",
+					"name": "冲锋",
 					"entries": [
 						"如果桌子在同一回合直线移动至少20尺朝目标前进，然后使用撞击攻击击中目标，目标将额外承受9（{@damage 2d8}）钝击伤害。如果目标是一个生物，它必须成功进行一次{@dc 15}力量豁免检定，否则会被击成{@condition 倒地}状态。"
 					]
@@ -124,8 +124,8 @@
 			],
 			"action": [
 				{
-					"name": "冲撞",
 					"ENG_name": "Ram",
+					"name": "冲撞",
 					"entries": [
 						"{@atk mw} {@hit 6}，触及 5 尺., 一个目标. {@h}13 ({@damage 2d8 + 4}) 钝击伤害."
 					]
@@ -156,20 +156,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "阿什德拉",
 			"ENG_name": "Ashdra",
+			"name": "阿什德拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "卓尔",
 						"ENG_name": "Drow",
+						"name": "卓尔",
 						"source": "PHB"
 					}
 				]
@@ -196,22 +196,22 @@
 			"hasToken": true
 		},
 		{
-			"name": "班达格",
 			"ENG_name": "Bandagh",
+			"name": "班达格",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 159,
 			"_copy": {
-				"name": "兽人",
 				"ENG_name": "Orc",
+				"name": "兽人",
 				"source": "MM"
 			},
 			"hasToken": true
 		},
 		{
-			"name": "被放逐者贝拉克",
 			"ENG_name": "Belak the Outcast",
+			"name": "被放逐者贝拉克",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -261,8 +261,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"德鲁伊作为4级施法者，其施法属性为感知（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。德鲁伊准备了以下德鲁伊法术："
@@ -297,8 +297,8 @@
 			],
 			"action": [
 				{
-					"name": "长棍",
 					"ENG_name": "Quarterstaff",
+					"name": "长棍",
 					"entries": [
 						"{@atk mw} {@hit 2} 命中（使用橡棍术时为{@hit 4}），触及5尺，单一目标。{@h}3（{@damage 1d6}）钝击伤害，或使用橡棍术或双手持用时为6（{@damage 1d8 + 2}）钝击伤害。"
 					]
@@ -334,21 +334,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "地精园丁",
 			"ENG_name": "Bugbear Gardener",
+			"name": "地精园丁",
 			"source": "TftYP",
 			"page": 29,
 			"_copy": {
-				"name": "熊地精",
 				"ENG_name": "Bugbear",
+				"name": "熊地精",
 				"source": "MM",
 				"_mod": {
 					"action": {
 						"mode": "replaceArr",
 						"replace": "钉头锤",
 						"items": {
-							"name": "长柄刀",
 							"ENG_name": "Glaive",
+							"name": "长柄刀",
 							"entries": [
 								"{@atk mw} 命中{@hit 4}，触及10尺，单一目标。{@h}13（{@damage 2d10 + 2}）点挥砍伤害。"
 							]
@@ -369,21 +369,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "熊地精中尉",
 			"ENG_name": "Bugbear Lieutenant",
+			"name": "熊地精中尉",
 			"source": "TftYP",
 			"page": 173,
 			"_copy": {
-				"name": "熊地精",
 				"ENG_name": "Bugbear",
+				"name": "熊地精",
 				"source": "MM",
 				"_mod": {
 					"action": {
 						"mode": "replaceArr",
 						"replace": "钉头锤",
 						"items": {
-							"name": "长剑",
 							"ENG_name": "Longsword",
+							"name": "长剑",
 							"entries": [
 								"{@atk mw}命中{@hit 4}，触及10尺，单一目标。{@h}11（{@damage 2d8 + 2}）挥砍伤害，或者如果用双手使用则为13（{@damage 2d10 + 2}）挥砍伤害。"
 							]
@@ -404,8 +404,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "卡克里克斯",
 			"ENG_name": "Calcryx",
+			"name": "卡克里克斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -466,15 +466,15 @@
 			"cr": "2",
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及 5 尺，单一目标。{@h}7 ({@damage 1d10 + 2}) 点穿刺伤害加上 2 ({@damage 1d4}) 点冷冻伤害。"
 					]
 				},
 				{
-					"name": "冷冻吐息 {@recharge 5}",
 					"ENG_name": "Cold Breath {@recharge 5}",
+					"name": "冷冻吐息 {@recharge 5}",
 					"entries": [
 						"龙呼出冰暴并覆盖一处15尺的锥状区域，该区域内的每个生物都必须进行一次{@dc 12}的体质豁免检定，豁免失败者将受到22（{@damage 5d8}）点冷冻伤害，豁免成功则伤害减半。"
 					]
@@ -506,8 +506,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "半人马木乃伊",
 			"ENG_name": "Centaur Mummy",
+			"name": "半人马木乃伊",
 			"source": "TftYP",
 			"page": 231,
 			"size": [
@@ -578,8 +578,8 @@
 			"cr": "6",
 			"trait": [
 				{
-					"name": "冲锋",
 					"ENG_name": "Charge",
+					"name": "冲锋",
 					"entries": [
 						"如果半人马木乃伊在同一回合内至少直向目标移动20尺，然后使用长矛攻击击中目标，目标将额外受到10点（{@damage 3d6}）点穿刺伤害。"
 					]
@@ -587,29 +587,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"半人马木乃伊进行两次近战攻击，一次用其长矛，一次用其蹄子，或者它用长矛攻击并使用可怕的凝视。"
 					]
 				},
 				{
-					"name": "长矛",
 					"ENG_name": "Pike",
+					"name": "长矛",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}10（{@damage 1d10 + 5}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "蹄击",
 					"ENG_name": "Hooves",
+					"name": "蹄击",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}12（{@damage 2d6 + 5}）点穿刺伤害加上10（{@damage 3d6}）黯蚀伤害。如果目标是一个生物，它必须成功通过一个{@dc 14}体质豁免检定，否则会被木乃伊腐烂诅咒。被诅咒的目标不能恢复生命值，并且它的生命值最大值每过24小时减少10（{@dice 3d6}）。如果诅咒将目标的生命值最大值减少到0，目标死亡，其身体化为尘土。诅咒持续存在，直到通过{@spell 移除诅咒}法术或类似的魔法被解除。"
 					]
 				},
 				{
-					"name": "恐怖凝视",
 					"ENG_name": "Dreadful Glare",
+					"name": "恐怖凝视",
 					"entries": [
 						"木乃伊半人马目标为它能看到的60尺内的一个生物。如果目标能看到木乃伊，目标必须成功通过一个{@dc 12}感知豁免检定以抵抗这种魔法，否则直到木乃伊下一个回合结束时都会{@condition 恐慌}。如果目标的豁免检定失败5点或更多，它也会在同样时间内{@condition 麻痹}。成功通过豁免检定的目标在接下来的24小时内对所有木乃伊（但不包括木乃伊领主）的可怕凝视免疫。"
 					]
@@ -654,15 +654,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "酋长诺斯拉",
 			"ENG_name": "Chief Nosnra",
+			"name": "酋长诺斯拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
-				"name": "霜巨人",
 				"ENG_name": "Frost Giant",
+				"name": "霜巨人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -686,13 +686,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "云巨人贵族",
 			"ENG_name": "Cloud Giant Noble",
+			"name": "云巨人贵族",
 			"source": "TftYP",
 			"page": 206,
 			"_copy": {
-				"name": "云巨人",
 				"ENG_name": "Cloud Giant",
+				"name": "云巨人",
 				"source": "MM"
 			},
 			"ac": [
@@ -706,20 +706,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "卡兰·科尔瓦林",
 			"ENG_name": "Curran Corvalin",
+			"name": "卡兰·科尔瓦林",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "敦实半身人",
 						"ENG_name": "Stout Halfling",
+						"name": "敦实半身人",
 						"source": "PHB"
 					}
 				]
@@ -732,15 +732,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "龙祭司",
 			"ENG_name": "Dragonpriest",
+			"name": "龙祭司",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 16,
 			"_copy": {
-				"name": "巨魔",
 				"ENG_name": "Troll",
+				"name": "巨魔",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -753,8 +753,8 @@
 						"mode": "replaceArr",
 						"replace": "再生",
 						"items": {
-							"name": "再生",
 							"ENG_name": "Regeneration",
+							"name": "再生",
 							"entries": [
 								"龙祭司在其回合开始时恢复5点生命值。如果龙祭司受到酸性或火焰伤害，这个特性在龙祭司下一个回合开始时不会生效。只有当龙祭司在其回合开始时生命值为0且没有再生时，龙祭司才会死亡。"
 							]
@@ -782,8 +782,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "恐怖战士",
 			"ENG_name": "Dread Warrior",
+			"name": "恐怖战士",
 			"source": "TftYP",
 			"page": 233,
 			"size": [
@@ -840,8 +840,8 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "不死坚韧",
 					"ENG_name": "Undead Fortitude",
+					"name": "不死坚韧",
 					"entries": [
 						"如果伤害使恐惧战士的生命值降至0点，除非伤害是辐射伤害或来自重击，否则它必须进行一次体质豁免检定，难度等级为5加上所受伤害。如果豁免成功，恐惧战士的生命值将降至1点。"
 					]
@@ -849,22 +849,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"恐怖战士进行两次近战攻击。"
 					]
 				},
 				{
-					"name": "战斧",
 					"ENG_name": "Battleaxe",
+					"name": "战斧",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及 5 尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 挥砍伤害，或者双手使用时为 7 ({@damage 1d10 + 2}) 挥砍伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或射程30/120尺，单一目标。{@h}5（{@damage 1d6 + 2}）点穿刺伤害。"
 					]
@@ -900,20 +900,20 @@
 			"hasFluff": true
 		},
 		{
-			"name": "德雷文",
 			"ENG_name": "Drevin",
+			"name": "德雷文",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 126,
 			"_copy": {
-				"name": "密探",
 				"ENG_name": "Spy",
+				"name": "密探",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "敦实半身人",
 						"ENG_name": "Stout Halfling",
+						"name": "敦实半身人",
 						"source": "PHB"
 					}
 				],
@@ -933,20 +933,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "卓尔指挥官",
 			"ENG_name": "Drow Commander",
+			"name": "卓尔指挥官",
 			"source": "TftYP",
 			"page": 209,
 			"_copy": {
-				"name": "卓尔精英武者",
 				"ENG_name": "Drow Elite Warrior",
+				"name": "卓尔精英武者",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "prependArr",
 						"items": {
-							"name": "特殊装备",
 							"ENG_name": "Special Equipment",
+							"name": "特殊装备",
 							"entries": [
 								"黑暗精灵携带三枚魔法箭矢，如下所述：",
 								{
@@ -966,8 +966,8 @@
 							"mode": "replaceArr",
 							"replace": "短剑",
 							"items": {
-								"name": "短剑 +2",
 								"ENG_name": "Shortsword +2",
+								"name": "短剑 +2",
 								"entries": [
 									"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}9（{@damage 1d6 + 6}）点穿刺伤害加上10（{@damage 3d6}）点毒素伤害。"
 								]
@@ -977,10 +977,10 @@
 							"mode": "replaceArr",
 							"replace": "手弩",
 							"items": {
-								"name": "手弩+1",
 								"ENG_name": "Hand Crossbow +1",
+								"name": "手弩+1",
 								"entries": [
-									"{@atk rw} {@hit 8} 命中, 射程 30/120 英尺, 单一目标. {@h}8 ({@damage 1d6 + 5}) 穿刺伤害, 目标必须成功通过一次 {@dc 13} 体质豁免, 否则将被 {@condition 中毒} 1 小时。如果豁免失败且差值超过 5 点，目标在 {@condition 中毒} 期间也会 {@condition 中毒}。目标受到伤害或其他生物采取行动将其摇醒后，目标会醒来。"
+									"{@atk rw} {@hit 8} 命中, 射程 30/120 英尺, 单一目标. {@h}8 ({@damage 1d6 + 5}) 穿刺伤害, 目标必须成功通过一次 {@dc 13} 体质豁免, 否则将被 {@condition 中毒} 1 小时。如果豁免失败且差值超过 5 点，目标在 {@condition 中毒} 期间也会 {@condition 昏迷}。目标受到伤害或其他生物采取行动将其摇醒后，目标会醒来。"
 								]
 							}
 						}
@@ -994,8 +994,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "灰矮人间谍",
 			"ENG_name": "Duergar Spy",
+			"name": "灰矮人间谍",
 			"source": "TftYP",
 			"page": 234,
 			"size": [
@@ -1055,29 +1055,29 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "灵巧动作",
 					"ENG_name": "Cunning Action",
+					"name": "灵巧动作",
 					"entries": [
 						"密探在其自己回合内可以用一个附赠动作执行疾走Dash，撤离Disengage，或躲藏Hide动作。"
 					]
 				},
 				{
-					"name": "灰矮人体魄",
 					"ENG_name": "Duergar Resilience",
+					"name": "灰矮人体魄",
 					"entries": [
 						"间谍对毒素、法术和幻象的豁免检定具有优势，同样在抵抗被{@condition 魅惑}或{@condition 麻痹}时也具有优势。"
 					]
 				},
 				{
-					"name": "偷袭",
 					"ENG_name": "Sneak Attack",
+					"name": "偷袭",
 					"entries": [
-						"每回合一次，当间谍使用武器攻击命中目标且在攻击检定中具有优势，或当目标位于间谍未处于{@condition 失能}状态的盟友5英尺范围内且间谍在攻击检定中不具有劣势时，间谍可以额外造成7点（{@condition 失能}）伤害。"
+						"每回合一次，当间谍使用武器攻击命中目标且在攻击检定中具有优势，或当目标位于间谍未处于{@condition 失能}状态的盟友5英尺范围内且间谍在攻击检定中不具有劣势时，间谍可以额外造成7点（{@damage 2d6}）伤害。"
 					]
 				},
 				{
-					"name": "日照敏感",
 					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
 					"entries": [
 						"间谍在阳光下进行攻击判定时具有劣势，以及在使用视力依赖的感知（{@skill 察觉}）检定时也具有劣势。"
 					]
@@ -1085,36 +1085,36 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"间谍进行两次短剑攻击。"
 					]
 				},
 				{
-					"name": "变巨（短休或长休后充能）。",
 					"ENG_name": "Enlarge (Recharges after a Short or Long Rest)",
+					"name": "变巨（短休或长休后充能）。",
 					"entries": [
 						"在1分钟内，间谍通过魔法增大了体型，包括其穿戴或携带的任何物品。在增大期间，间谍变为大型，其基于力量的武器攻击的伤害骰加倍（包含在攻击中），并且在进行力量检定和力量豁免检定时具有优势。如果间谍没有足够的空间变为大型，它将达到可用空间内的最大尺寸。"
 					]
 				},
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}6（{@damage 1d6 + 3}）点穿刺伤害，或者在变大状态下造成10（{@damage 2d6 + 3}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "手弩",
 					"ENG_name": "Hand Crossbow",
+					"name": "手弩",
 					"entries": [
 						"{@atk rw} 命中{@hit 5}，射程30/120尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "隐形（短休或长休后充能）",
 					"ENG_name": "Invisibility (Recharges after a Short or Long Rest)",
+					"name": "隐形（短休或长休后充能）",
 					"entries": [
 						"间谍可以魔法变得{@condition 隐形}，直到它进行攻击、造成伤害、施放法术或使用其放大能力，或直到其{@status 专注}被打破，最长持续1小时（就好像在{@status 专注||专注于}于一个法术）。间谍穿戴或携带的任何装备也会随之变得{@condition 隐形}。"
 					]
@@ -1154,8 +1154,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "杜恩",
 			"ENG_name": "Durnn",
+			"name": "杜恩",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -1206,24 +1206,24 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "成军优势",
 					"ENG_name": "Martial Advantage",
+					"name": "成军优势",
 					"entries": [
-						"每回合一次，如果攻击的敌人大地精5英尺范围内有一个没有处于 {@condition 失能} 状态的盟友，大地精可以用武器攻击对该敌人额外造成7点（{@condition 失能}）伤害。"
+						"每回合一次，如果攻击的敌人大地精5英尺范围内有一个没有处于 {@condition 失能} 状态的盟友，大地精可以用武器攻击对该敌人额外造成7点（{@damage 2d6}）伤害。"
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw}命中{@hit 4}，触及5尺，单一目标。{@h}5 ({@damage 1d8 + 1}) 挥砍伤害，或者双手使用时6 ({@damage 1d10 + 2}) 挥砍伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程150/600尺，单一目标。{@h}5（{@damage 1d8 + 1}）点穿刺伤害。"
 					]
@@ -1254,20 +1254,20 @@
 			"hasFluff": true
 		},
 		{
-			"name": "艾拉",
 			"ENG_name": "Eira",
+			"name": "艾拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 159,
 			"_copy": {
-				"name": "德鲁伊",
 				"ENG_name": "Druid",
+				"name": "德鲁伊",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "木精灵",
 						"ENG_name": "Wood Elf",
+						"name": "木精灵",
 						"source": "PHB"
 					}
 				],
@@ -1286,13 +1286,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "古老黑布丁",
 			"ENG_name": "Elder Black Pudding",
+			"name": "古老黑布丁",
 			"source": "TftYP",
 			"page": 143,
 			"_copy": {
-				"name": "黑布丁",
 				"ENG_name": "Black Pudding",
+				"name": "黑布丁",
 				"source": "MM"
 			},
 			"size": [
@@ -1305,13 +1305,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "老年巨人蜥蜴",
 			"ENG_name": "Elder Giant Lizard",
+			"name": "老年巨人蜥蜴",
 			"source": "TftYP",
 			"page": 176,
 			"_copy": {
-				"name": "巨鳄",
 				"ENG_name": "Giant Crocodile",
+				"name": "巨鳄",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -1335,8 +1335,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "埃基·廷伯斯",
 			"ENG_name": "Erky Timbers",
+			"name": "埃基·廷伯斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -1386,8 +1386,8 @@
 			"cr": "1/4",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"侍僧作为1级施法者，其施法属性为感知（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。侍僧备有以下牧师法术："
@@ -1414,15 +1414,15 @@
 			],
 			"action": [
 				{
-					"name": "短棒",
 					"ENG_name": "Club",
+					"name": "短棒",
 					"entries": [
 						"{@atk mw} 命中{@hit 2}，触及5尺，单一目标。{@h}2 ({@damage 1d4}) 点钝击伤害。"
 					]
 				},
 				{
-					"name": "引导神力：驱散不死生物（1/短休息）",
 					"ENG_name": "Channel Divinity: Turn Undead (1/Short Rest)",
+					"name": "引导神力：驱散不死生物（1/短休息）",
 					"entries": [
 						"Erky展示他的圣徽并说出谴责不死生物的祈祷。每个能看见或听见Erky的不死生物，如果它在他30尺范围内，必须进行一次{@dc 12}感知豁免检定。如果生物未能通过豁免检定，它将被转变成1分钟，或者直到它受到任何伤害为止。",
 						"一个被转化的生物必须在其回合尽力远离Erky移动，并且它不能自愿移动到距离他30尺以内的空间。它也不能进行反应动作。在其行动阶段，它只能使用冲撞动作或尝试从阻止它移动的效果中逃脱。如果没有地方可以移动，生物可以使用闪避动作。"
@@ -1466,15 +1466,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "埃斯蒂亚",
 			"ENG_name": "Estia",
+			"name": "埃斯蒂亚",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 189,
 			"_copy": {
-				"name": "云巨人",
 				"ENG_name": "Cloud Giant",
+				"name": "云巨人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -1488,8 +1488,8 @@
 							"mode": "replaceArr",
 							"replace": "钉头锤",
 							"items": {
-								"name": "晨星 +2",
 								"ENG_name": "Morningstar +2",
+								"name": "晨星 +2",
 								"entries": [
 									"{@atk mw} 命中{@hit 14}，触及10尺，单一目标。{@h}23（{@damage 3d8 + 10}）点穿刺伤害。"
 								]
@@ -1508,13 +1508,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "火巨人皇家刽子手",
 			"ENG_name": "Fire Giant Royal Headsman",
+			"name": "火巨人皇家刽子手",
 			"source": "TftYP",
 			"page": 201,
 			"_copy": {
-				"name": "火巨人",
 				"ENG_name": "Fire Giant",
+				"name": "火巨人",
 				"source": "MM",
 				"_mod": {
 					"action": [
@@ -1522,8 +1522,8 @@
 							"mode": "replaceArr",
 							"replace": "多重攻击",
 							"items": {
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"巨人发动两次巨斧攻击。"
 								]
@@ -1533,8 +1533,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨斧 +2",
 								"ENG_name": "Greataxe +2",
+								"name": "巨斧 +2",
 								"entries": [
 									"{@atk mw} 命中{@hit 13}，触及10尺，单一目标。{@h}28 ({@damage 3d12 + 9}) 挥砍伤害。"
 								]
@@ -1549,13 +1549,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "火巨人仆从",
 			"ENG_name": "Fire Giant Servant",
+			"name": "火巨人仆从",
 			"source": "TftYP",
 			"page": 171,
 			"_copy": {
-				"name": "山丘巨人",
 				"ENG_name": "Hill Giant",
+				"name": "山丘巨人",
 				"source": "MM",
 				"_mod": {
 					"action": [
@@ -1563,8 +1563,8 @@
 							"mode": "replaceArr",
 							"replace": "多重攻击",
 							"items": {
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"巨人进行两次长剑攻击。"
 								]
@@ -1574,8 +1574,8 @@
 							"mode": "replaceArr",
 							"replace": "巨棒",
 							"items": {
-								"name": "长剑",
 								"ENG_name": "Longsword",
+								"name": "长剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 8}，触及范围10尺，单一目标。{@h}18（{@damage 3d8 + 5}）挥砍伤害，或者如果双手握持则造成21（{@damage 3d10 + 5}）挥砍伤害。"
 								]
@@ -1594,13 +1594,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "飞行盾牌",
 			"ENG_name": "Flying Shield",
+			"name": "飞行盾牌",
 			"source": "TftYP",
 			"page": 224,
 			"_copy": {
-				"name": "凌空剑",
 				"ENG_name": "Flying Sword",
+				"name": "凌空剑",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -1616,8 +1616,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "四臂石像鬼",
 			"ENG_name": "Four-Armed Gargoyle",
+			"name": "四臂石像鬼",
 			"source": "TftYP",
 			"page": 129,
 			"size": [
@@ -1679,8 +1679,8 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"石像鬼静止不动时外表与一尊无生命的塑像一模一样。"
 					]
@@ -1688,22 +1688,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"石像鬼进行三次攻击：一次用其咬击，两次用其爪击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点挥砍伤害。"
 					]
@@ -1731,13 +1731,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "霜巨人仆从",
 			"ENG_name": "Frost Giant Servant",
+			"name": "霜巨人仆从",
 			"source": "TftYP",
 			"page": 187,
 			"_copy": {
-				"name": "山丘巨人",
 				"ENG_name": "Hill Giant",
+				"name": "山丘巨人",
 				"source": "MM"
 			},
 			"immune": [
@@ -1746,13 +1746,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨大窒息地毯",
 			"ENG_name": "Gargantuan Rug of Smothering",
+			"name": "巨大窒息地毯",
 			"source": "TftYP",
 			"page": 56,
 			"_copy": {
-				"name": "闷人毯",
 				"ENG_name": "Rug of Smothering",
+				"name": "闷人毯",
 				"source": "MM"
 			},
 			"size": [
@@ -1765,8 +1765,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨型螯虾",
 			"ENG_name": "Giant Crayfish",
+			"name": "巨型螯虾",
 			"source": "TftYP",
 			"page": 235,
 			"size": [
@@ -1808,8 +1808,8 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"巨型螯虾可以在空气和水中呼吸。"
 					]
@@ -1817,15 +1817,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"这个巨型螯虾进行两次爪击攻击。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}7（{@damage 1d10 + 2}）钝击伤害，目标被{@condition 擒抱}（逃脱{@dc 12}）。螯虾有两个螯，每个螯只能纠缠单一目标。"
 					]
@@ -1852,8 +1852,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨型冰蟾",
 			"ENG_name": "Giant Ice Toad",
+			"name": "巨型冰蟾",
 			"source": "TftYP",
 			"page": 235,
 			"size": [
@@ -1897,22 +1897,22 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"蟾蜍可以在空气和水中呼吸"
 					]
 				},
 				{
-					"name": "寒冰光环",
 					"ENG_name": "Cold Aura",
+					"name": "寒冰光环",
 					"entries": [
 						"任何生物在其回合开始时若处于蟾蜍10尺范围内，将受到5点（{@damage 1d10}）冷冻伤害。"
 					]
 				},
 				{
-					"name": "立定跳远",
 					"ENG_name": "Standing Leap",
+					"name": "立定跳远",
 					"entries": [
 						"蟾蜍跳远20英尺，跳高10英尺，不论是否助跑"
 					]
@@ -1920,15 +1920,15 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）点穿刺伤害，目标被{@condition 擒抱}（逃脱{@dc 13}）。直到这次纠缠结束，目标被{@condition 束缚}，蟾蜍不能咬另单一目标。"
 					]
 				},
 				{
-					"name": "吞咽",
 					"ENG_name": "Swallow",
+					"name": "吞咽",
 					"entries": [
 						"{@atk mw} {@hit 5} 命中，触及5英尺，一只中体型或更小的生物被蟾蜍抓住。{@h}10 ({@damage 2d6 + 3}) 穿刺伤害，目标被吞噬，抓取结束。被吞噬的目标处于{@condition 目盲}和{@condition 束缚}状态，它对蟾蜍外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在蟾蜍的每个回合开始时受到10 ({@damage 3d6}) 酸液伤害和11 ({@damage 2d10}) 寒冷伤害。蟾蜍一次只能吞噬一个目标。",
 						"如果该蟾蜍死亡，则被其吞下的生物将不再受{@condition 束缚}，且可以消耗 5 尺移动力逃出，然后在尸体旁现身并陷入{@condition 倒地}状态。"
@@ -1964,8 +1964,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "巨人电鳗",
 			"ENG_name": "Giant Lightning Eel",
+			"name": "巨人电鳗",
 			"source": "TftYP",
 			"page": 236,
 			"size": [
@@ -2002,8 +2002,8 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "水下呼吸",
 					"ENG_name": "Water Breathing",
+					"name": "水下呼吸",
 					"entries": [
 						"鳗鱼只能在水下呼吸。"
 					]
@@ -2011,22 +2011,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"鳗鱼进行两次咬击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw}命中{@hit 5}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）点穿刺伤害加上4（{@damage 1d8}）闪电伤害。"
 					]
 				},
 				{
-					"name": "闪电冲击 {@recharge 5}",
 					"ENG_name": "Lightning Jolt {@recharge 5}",
+					"name": "闪电冲击 {@recharge 5}",
 					"entries": [
 						"鳗鱼在水外5尺内触碰到的生物，或在水域内15尺范围内的每个生物，必须进行一次{@dc 12}体质豁免检定。豁免失败，目标受到13（{@damage 3d8}）闪电伤害。如果目标受到任何此类伤害，目标将在鳗鱼下一个回合结束前被{@condition 震慑}。如果豁免成功，目标受到的伤害减半，且不会被{@condition 震慑}。"
 					]
@@ -2057,8 +2057,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨人骷髅",
 			"ENG_name": "Giant Skeleton",
+			"name": "巨人骷髅",
 			"source": "TftYP",
 			"page": 236,
 			"otherSources": [
@@ -2121,22 +2121,22 @@
 			"cr": "7",
 			"trait": [
 				{
-					"name": "反射闪避",
 					"ENG_name": "Evasion",
+					"name": "反射闪避",
 					"entries": [
 						"如果骷髅受到允许其进行豁免检定以只承受一半伤害的效果，如果豁免成功，它反而不承受任何伤害，如果豁免失败，则只承受一半的伤害。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"骷髅在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
 				},
 				{
-					"name": "免疫驱散",
 					"ENG_name": "Turn Immunity",
+					"name": "免疫驱散",
 					"entries": [
 						"骷髅对转化不死生物的效果免疫。"
 					]
@@ -2144,15 +2144,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"骷髅进行三次弯刀攻击。"
 					]
 				},
 				{
-					"name": "弯刀",
 					"ENG_name": "Scimitar",
+					"name": "弯刀",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及 10 尺，单一目标。{@h}15 ({@damage 3d6 + 5}) 挥砍伤害。"
 					]
@@ -2187,8 +2187,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "巨型地下蜥蜴",
 			"ENG_name": "Giant Subterranean Lizard",
+			"name": "巨型地下蜥蜴",
 			"source": "TftYP",
 			"page": 236,
 			"size": [
@@ -2227,29 +2227,29 @@
 			"cr": "4",
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"蜥蜴进行两次攻击：一次用咬击，一次用尾巴。其中一次攻击可以替换为吞噬。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及 5 尺，单一目标。{@h}16 ({@damage 2d10 + 5}) 点穿刺伤害，目标被{@condition 擒抱}（逃脱 {@dc 15}）。直到这个抓住结束，目标被{@condition 束缚}，蜥蜴不能再咬另单一目标。"
 					]
 				},
 				{
-					"name": "尾击",
 					"ENG_name": "Tail",
+					"name": "尾击",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及10尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 点穿刺伤害。如果目标是一个生物，它必须在一次{@dc 15}力量豁免检定中成功，否则会被击倒{@condition 倒地}。"
 					]
 				},
 				{
-					"name": "吞咽",
 					"ENG_name": "Swallow",
+					"name": "吞咽",
 					"entries": [
 						"{@atk mw} {@hit 7} 命中，触及5英尺，一只中体型或更小的生物被蜥蜴抓住。{@h}16 ({@damage 2d10 + 5}) 穿刺伤害。目标被吞噬，抓取结束。被吞噬的目标处于{@condition 目盲}和{@condition 束缚}状态，它对蜥蜴外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在蜥蜴的每个回合开始时受到10 ({@damage 3d6}) 酸液伤害。蜥蜴一次只能吞噬一个目标。",
 						"如果蜥蜴死亡，被吞下的生物不再被它{@condition 束缚}，可以使用10尺的移动从尸体中逃脱，退出时处于{@condition 倒地}状态。"
@@ -2280,18 +2280,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "地精平民",
 			"ENG_name": "Goblin Commoner",
+			"name": "地精平民",
 			"source": "TftYP",
 			"page": 24,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "地精",
 						"ENG_name": "Goblin",
+						"name": "地精",
 						"source": "DMG"
 					}
 				]
@@ -2303,8 +2303,8 @@
 			"str": 8,
 			"action": [
 				{
-					"name": "短棒",
 					"ENG_name": "Club",
+					"name": "短棒",
 					"entries": [
 						"{@atk mw}命中{@hit 1}，触及5尺，单一目标。{@h}1（{@damage 1d4 - 1}）钝击伤害。"
 					]
@@ -2327,20 +2327,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "戈尔万·铁心",
 			"ENG_name": "Gorvan Ironheart",
+			"name": "戈尔万·铁心",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 151,
 			"_copy": {
-				"name": "祭司",
 				"ENG_name": "Priest",
+				"name": "祭司",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "山地矮人",
 						"ENG_name": "Mountain Dwarf",
+						"name": "山地矮人",
 						"source": "PHB"
 					}
 				],
@@ -2356,15 +2356,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "伟大的乌尔费",
 			"ENG_name": "Great Ulfe",
+			"name": "伟大的乌尔费",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 42,
 			"_copy": {
-				"name": "食人魔",
 				"ENG_name": "Ogre",
+				"name": "食人魔",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2377,8 +2377,8 @@
 						"mode": "replaceArr",
 						"replace": "巨棒",
 						"items": {
-							"name": "巨斧",
 							"ENG_name": "Greataxe",
+							"name": "巨斧",
 							"entries": [
 								"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}17（{@damage 2d12 + 4}）点挥砍伤害。"
 							]
@@ -2394,8 +2394,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "高级僵尸",
 			"ENG_name": "Greater Zombie",
+			"name": "高级僵尸",
 			"source": "TftYP",
 			"page": 237,
 			"otherSources": [
@@ -2465,15 +2465,15 @@
 			"cr": "5",
 			"trait": [
 				{
-					"name": "驱散抗性",
 					"ENG_name": "Turn Resistance",
+					"name": "驱散抗性",
 					"entries": [
 						"僵尸在对抗任何使不死生物转身的效果的豁免检定上具有优势。"
 					]
 				},
 				{
-					"name": "不死坚韧",
 					"ENG_name": "Undead Fortitude",
+					"name": "不死坚韧",
 					"entries": [
 						"当僵尸因受非光耀非重击伤害而使其生命值减至0时，它必须进行一次DC为5＋所受伤害值的体质豁免，豁免成功则生命值降至1。"
 					]
@@ -2481,15 +2481,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"僵尸进行两次近战攻击。"
 					]
 				},
 				{
-					"name": "强化猛击",
 					"ENG_name": "Empowered Slam",
+					"name": "强化猛击",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 钝击伤害和7 ({@damage 2d6}) 黯蚀伤害。"
 					]
@@ -2520,8 +2520,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "格伦尔",
 			"ENG_name": "Grenl",
+			"name": "格伦尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -2575,8 +2575,8 @@
 			"cr": "1/4",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Grenl是一名1级施法者。她的施法能力是感知（法术豁免难度{@dc 11}，使用法术攻击命中{@hit 3}）。她准备了以下牧师法术："
@@ -2601,8 +2601,8 @@
 			],
 			"trait": [
 				{
-					"name": "迅捷逃逸",
 					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
 						"地精可在自己的回合，以一个附赠动作来执行撤离 Disengage 或躲藏 Hide 动作。"
 					]
@@ -2610,15 +2610,15 @@
 			],
 			"action": [
 				{
-					"name": "弯刀",
 					"ENG_name": "Scimitar",
+					"name": "弯刀",
 					"entries": [
 						"{@atk mw} {@hit 4}命中，触及5尺，单一目标。{@h}5（{@damage 1d6 + 2}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "短弓",
 					"ENG_name": "Shortbow",
+					"name": "短弓",
 					"entries": [
 						"{@atk rw} {@hit 4}, 射程 80/320 尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害。"
 					]
@@ -2659,15 +2659,15 @@
 			"hasFluff": true
 		},
 		{
-			"name": "格鲁萨",
 			"ENG_name": "Grutha",
+			"name": "格鲁萨",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
-				"name": "山丘巨人",
 				"ENG_name": "Hill Giant",
+				"name": "山丘巨人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2681,8 +2681,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "古塔什",
 			"ENG_name": "Guthash",
+			"name": "古塔什",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -2717,8 +2717,8 @@
 			"cr": "1/4",
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。如果目标是一个生物，它必须成功进行一次{@dc 10}体质豁免检定，否则会感染疾病。直到疾病被治愈，目标除了通过魔法手段外不能恢复生命值，并且目标的生命值最大值每24小时减少3点（{@dice 1d6}）。如果目标因为这种疾病导致生命值最大值降至0，目标将死亡。"
 					]
@@ -2741,15 +2741,15 @@
 			"hasFluff": true
 		},
 		{
-			"name": "赫德伦·阿恩斯费斯",
 			"ENG_name": "Hedrun Arnsfirth",
+			"name": "赫德伦·阿恩斯费斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 160,
 			"_copy": {
-				"name": "败契者尸妖",
 				"ENG_name": "Deathlock Wight",
+				"name": "败契者尸妖",
 				"source": "MTF",
 				"_mod": {
 					"*": {
@@ -2763,13 +2763,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "山丘巨人军士",
 			"ENG_name": "Hill Giant Sergeant",
+			"name": "山丘巨人军士",
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
-				"name": "山丘巨人",
 				"ENG_name": "Hill Giant",
+				"name": "山丘巨人",
 				"source": "MM"
 			},
 			"ac": [
@@ -2787,13 +2787,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "丘陵巨人仆从",
 			"ENG_name": "Hill Giant Servant",
+			"name": "丘陵巨人仆从",
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
-				"name": "食人魔",
 				"ENG_name": "Ogre",
+				"name": "食人魔",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2806,21 +2806,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "丘陵巨人副首领",
 			"ENG_name": "Hill Giant Subchief",
+			"name": "丘陵巨人副首领",
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
-				"name": "石巨人",
 				"ENG_name": "Stone Giant",
+				"name": "石巨人",
 				"source": "MM"
 			},
 			"trait": null,
 			"hasToken": true
 		},
 		{
-			"name": "巨型巨人蟹",
 			"ENG_name": "Huge Giant Crab",
+			"name": "巨型巨人蟹",
 			"source": "TftYP",
 			"page": 103,
 			"otherSources": [
@@ -2872,15 +2872,15 @@
 			"cr": "8",
 			"trait": [
 				{
-					"name": "带状爪",
 					"ENG_name": "Banded Claw",
+					"name": "带状爪",
 					"entries": [
 						"这只螃蟹的一只爪子上戴着一个覆盖着符文的铜环，这使它免疫于被{@condition 魅惑}、{@condition 恐慌}和{@condition 麻痹}。这个铜环作为财宝毫无价值，因为魔法是专为这只螃蟹设计的。"
 					]
 				},
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"蟹可以在空气和水中呼吸。"
 					]
@@ -2888,8 +2888,8 @@
 			],
 			"action": [
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及10尺，单一目标。{@h}27 ({@damage 4d10 + 5}) 钝击伤害，并且目标被{@condition 擒抱}，逃脱{@dc 14}。这只螃蟹有两个爪子，每个爪子只能擒抱单一目标。"
 					]
@@ -2914,13 +2914,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨型黄褐色史莱姆",
 			"ENG_name": "Huge Ochre Jelly",
+			"name": "巨型黄褐色史莱姆",
 			"source": "TftYP",
 			"page": 225,
 			"_copy": {
-				"name": "赭冻怪",
 				"ENG_name": "Ochre Jelly",
+				"name": "赭冻怪",
 				"source": "MM"
 			},
 			"size": [
@@ -2933,13 +2933,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨型北极熊",
 			"ENG_name": "Huge Polar Bear",
+			"name": "巨型北极熊",
 			"source": "TftYP",
 			"page": 187,
 			"_copy": {
-				"name": "白熊",
 				"ENG_name": "Polar Bear",
+				"name": "白熊",
 				"source": "MM"
 			},
 			"size": [
@@ -2952,20 +2952,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "伊里索斯",
 			"ENG_name": "Irisoth",
+			"name": "伊里索斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "半精灵",
 						"ENG_name": "Half-Elf",
+						"name": "半精灵",
 						"source": "PHB"
 					}
 				]
@@ -2984,15 +2984,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "贾尔·格鲁格努尔",
 			"ENG_name": "Jarl Grugnur",
+			"name": "贾尔·格鲁格努尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 189,
 			"_copy": {
-				"name": "云巨人",
 				"ENG_name": "Cloud Giant",
+				"name": "云巨人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3006,8 +3006,8 @@
 							"mode": "replaceArr",
 							"replace": "多重攻击",
 							"items": {
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"格鲁格进行两次长剑攻击。"
 								]
@@ -3017,8 +3017,8 @@
 							"mode": "replaceArr",
 							"replace": "钉头锤",
 							"items": {
-								"name": "长剑 +2",
 								"ENG_name": "Longsword +2",
+								"name": "长剑 +2",
 								"entries": [
 									"{@atk mw} 命中{@hit 14}，触及范围 10 尺，单一目标。{@h}23 ({@damage 3d8 + 10}) 挥砍伤害，如果双手使用则为 26 ({@damage 3d10 + 10}) 挥砍伤害。"
 								]
@@ -3059,15 +3059,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "记",
 			"ENG_name": "Jot",
+			"name": "记",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 15,
 			"_copy": {
-				"name": "夸塞魔",
 				"ENG_name": "Quasit",
+				"name": "夸塞魔",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3081,8 +3081,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "卡格哈兹",
 			"ENG_name": "Kaarghaz",
+			"name": "卡格哈兹",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -3135,8 +3135,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"卡格哈兹是一名4级施法者。他的施法能力是魅力（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。他知道以下巫师法术："
@@ -3172,22 +3172,22 @@
 			],
 			"trait": [
 				{
-					"name": "变色皮肤",
 					"ENG_name": "Chameleon Skin",
+					"name": "变色皮肤",
 					"entries": [
 						"穴蜥人进行躲藏而作的敏捷（{@skill 隐匿}）检定具有优势。"
 					]
 				},
 				{
-					"name": "恶臭",
 					"ENG_name": "Stench",
+					"name": "恶臭",
 					"entries": [
 						"在穴蜥人身边5尺范围内开始其自己回合的生物，除穴蜥人外必须成功通过一次{@dc 12}的体质豁免否则将陷入{@condition 中毒}，中毒状态持续至该生物的下一回合开始。豁免成功的生物将在随后1小时内免疫所有穴蜥人的恶臭"
 					]
 				},
 				{
-					"name": "日照敏感",
 					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
 					"entries": [
 						"处于阳光下的穴蜥人在进行攻击检定，以及进行依赖视觉的感知（{@skill 察觉}）检定时具有劣势。"
 					]
@@ -3195,22 +3195,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"穴蜥人发动三次攻击：一次啃咬和两次爪击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）点挥砍伤害。"
 					]
@@ -3262,8 +3262,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "卡尔卡-基拉",
 			"ENG_name": "Kalka-Kylla",
+			"name": "卡尔卡-基拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -3312,22 +3312,22 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"Kalka-Kylla可以在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"当卡尔卡-基拉保持静止并隐藏在它的壳中时，它与磨光的巨石无法区分。"
 					]
 				},
 				{
-					"name": "壳",
 					"ENG_name": "Shell",
+					"name": "壳",
 					"entries": [
 						"卡尔卡-基拉可以使用一个附赠动作来收回或从其壳中伸出。收回时，卡尔卡-基拉的AC获得+4的加值，并且它的速度变为0，不能从速度加值中受益。"
 					]
@@ -3335,15 +3335,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"卡尔卡-基拉进行两次爪击攻击。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10 ({@damage 2d6 + 3}) 钝击伤害，如果目标是中型或更小的生物，则会被{@condition 擒抱}（逃脱{@dc 13}）。直到这个擒抱结束，目标将被{@condition 束缚}。卡尔卡-基拉有两个爪子，每个爪子只能擒抱单一目标。"
 					]
@@ -3375,8 +3375,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "凯尔皮",
 			"ENG_name": "Kelpie",
+			"name": "凯尔皮",
 			"source": "TftYP",
 			"page": 238,
 			"size": [
@@ -3434,22 +3434,22 @@
 			"cr": "4",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"凯尔皮可以呼吸空气和水。"
 					]
 				},
 				{
-					"name": "海藻形态",
 					"ENG_name": "Seaweed Shape",
+					"name": "海藻形态",
 					"entries": [
 						"凯尔皮可以使用它的行动将其身体重塑为小型、中型或大型的人形或野兽。它的其他具体数值保持不变。除非凯尔皮处于强光下，或者观察者距离它30尺以内，否则这种伪装是令人信服的，在这种情况下，海藻丝之间的接缝是可见的。如果凯尔皮采取附赠动作这样做，或者它死亡，它将恢复其真实形态。"
 					]
 				},
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"当凯尔皮保持静止在其真实形态时，它与普通的海藻无法区分。"
 					]
@@ -3457,24 +3457,24 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"凯尔皮进行两次冲撞攻击。"
 					]
 				},
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及 10 尺，单一目标。{@h}11 ({@damage 2d8 + 2}) 点穿刺伤害。如果目标是中等大小或更小的生物，它将被{@condition 擒抱}（逃脱 {@dc 12}）。"
 					]
 				},
 				{
-					"name": "溺水催眠",
 					"ENG_name": "Drowning Hypnosis",
+					"name": "溺水催眠",
 					"entries": [
-						"海妖选择其视野内150英尺内的一个类人生物。如果目标能够看到海妖，目标必须成功通过一个{@dc 11}的感知豁免鉴定，否则将被魔法{@condition 魅惑}，持续至海妖维持{@status 专注||专注于}的最多10分钟（如同在{@status 专注||专注于}施法）。被{@condition 魅惑}的目标将处于{@condition 失能}状态，除非其能够水下呼吸，否则将试图正常呼吸并立即耗尽呼吸而不是在水下屏住呼吸。如果被{@condition 魅惑}的目标距离海妖超过5英尺，目标必须在轮到自己时通过最直接的路线向海妖移动，试图进入5英尺范围内。它不会避免借机攻击。",
+						"海妖选择其视野内150英尺内的一个类人生物。如果目标能够看到海妖，目标必须成功通过一个{@dc 11}的感知豁免鉴定，否则将被魔法{@condition 魅惑}，持续至海妖维持{@status 专注||专注于}的最多10分钟（如同在{@status 专注}施法）。被{@condition 魅惑}的目标将处于{@condition 失能}状态，除非其能够水下呼吸，否则将试图正常呼吸并立即耗尽呼吸而不是在水下屏住呼吸。如果被{@condition 魅惑}的目标距离海妖超过5英尺，目标必须在轮到自己时通过最直接的路线向海妖移动，试图进入5英尺范围内。它不会避免借机攻击。",
 						"在进入有害地形，如熔岩或坑洞之前，以及每当它从水马或溺水之外的来源受到伤害时，目标可以重复进行豁免检定。处于{@condition 魅惑}状态的目标也可以在其每个回合结束时重复豁免检定。如果豁免检定成功，效果在它身上结束。",
 						"成功通过豁免检定的目标在接下来的24小时内对这只凯尔皮的催眠免疫。"
 					]
@@ -3512,20 +3512,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "凯尔森·达克里德",
 			"ENG_name": "Kelson Darktreader",
+			"name": "凯尔森·达克里德",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 132,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "半精灵",
 						"ENG_name": "Half-Elf",
+						"name": "半精灵",
 						"source": "PHB"
 					}
 				]
@@ -3545,15 +3545,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "基伦",
 			"ENG_name": "Kieren",
+			"name": "基伦",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM"
 			},
 			"type": {
@@ -3565,15 +3565,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "斯努尔国王",
 			"ENG_name": "King Snurre",
+			"name": "斯努尔国王",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 193,
 			"_copy": {
-				"name": "火巨人",
 				"ENG_name": "Fire Giant",
+				"name": "火巨人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3586,8 +3586,8 @@
 						"mode": "replaceArr",
 						"replace": "巨剑",
 						"items": {
-							"name": "巨剑",
 							"ENG_name": "Greatsword",
+							"name": "巨剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 11}，触及范围10尺，单一目标。{@h}28（{@damage 6d6 + 7}）挥砍伤害加上7（{@damage 2d6}）火焰伤害。"
 							]
@@ -3620,18 +3620,18 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "狗头人平民",
 			"ENG_name": "Kobold Commoner",
+			"name": "狗头人平民",
 			"source": "TftYP",
 			"page": 18,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "狗头人",
 						"ENG_name": "Kobold",
+						"name": "狗头人",
 						"source": "DMG"
 					}
 				]
@@ -3642,8 +3642,8 @@
 			},
 			"action": [
 				{
-					"name": "短棒",
 					"ENG_name": "Club",
+					"name": "短棒",
 					"entries": [
 						"{@atk mw}命中{@hit 1}，触及5尺，单一目标。{@h}1（{@damage 1d4 - 1}）钝击伤害。"
 					]
@@ -3670,13 +3670,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "精英狗头人",
 			"ENG_name": "Kobold Elite",
+			"name": "精英狗头人",
 			"source": "TftYP",
 			"page": 18,
 			"_copy": {
-				"name": "狗头人",
 				"ENG_name": "Kobold",
+				"name": "狗头人",
 				"source": "MM"
 			},
 			"hp": {
@@ -3686,8 +3686,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "拉塞顿",
 			"ENG_name": "Lacedon",
+			"name": "拉塞顿",
 			"source": "TftYP",
 			"page": 147,
 			"otherSources": [
@@ -3696,8 +3696,8 @@
 				}
 			],
 			"_copy": {
-				"name": "食尸鬼",
 				"ENG_name": "Ghoul",
+				"name": "食尸鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3715,15 +3715,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "拉尼斯",
 			"ENG_name": "Lahnis",
+			"name": "拉尼斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 131,
 			"_copy": {
-				"name": "塑能师",
 				"ENG_name": "Evoker",
+				"name": "塑能师",
 				"source": "VGM",
 				"_mod": {
 					"*": {
@@ -3738,20 +3738,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "低阶木乃伊领主",
 			"ENG_name": "Lesser Mummy Lord",
+			"name": "低阶木乃伊领主",
 			"source": "TftYP",
 			"page": 224,
 			"_copy": {
-				"name": "木乃伊领主",
 				"ENG_name": "Mummy Lord",
+				"name": "木乃伊领主",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "appendArr",
 						"items": {
-							"name": "特殊装备",
 							"ENG_name": "Special Equipment",
+							"name": "特殊装备",
 							"entries": [
 								"木乃伊佩戴着一枚{@item 火焰抗性戒指}。"
 							]
@@ -3774,15 +3774,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "卢马利亚",
 			"ENG_name": "Lumalia",
+			"name": "卢马利亚",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 153,
 			"_copy": {
-				"name": "天神使徒",
 				"ENG_name": "Deva",
+				"name": "天神使徒",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3797,8 +3797,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "畸形克拉肯",
 			"ENG_name": "Malformed Kraken",
+			"name": "畸形克拉肯",
 			"source": "TftYP",
 			"page": 239,
 			"size": [
@@ -3867,15 +3867,15 @@
 			"cr": "10",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"克拉肯可以在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "攻城怪物",
 					"ENG_name": "Siege Monster",
+					"name": "攻城怪物",
 					"entries": [
 						"克拉肯对物件和建筑物造成双倍伤害。"
 					]
@@ -3883,36 +3883,36 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"克拉肯进行三次触手攻击。其中一次可以替换为撕咬攻击，并且任何一次触手攻击都可以替换为投掷。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 11}，触及 5 尺，单一目标。{@h}16 ({@damage 2d8 + 7}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "触须",
 					"ENG_name": "Tentacle",
+					"name": "触须",
 					"entries": [
 						"{@atk mw} {@hit 11} 攻击，触及20英尺，一个目标。{@h}14 ({@damage 2d6 + 7})钝击伤害，且目标被{@condition 擒抱}（逃脱 {@dc 16}）。直到这个擒抱结束，目标处于{@condition 束缚}状态。海妖有十条触手，每条触手可以擒抱一个目标。"
 					]
 				},
 				{
-					"name": "抛掷",
 					"ENG_name": "Fling",
+					"name": "抛掷",
 					"entries": [
 						"被克拉肯的触手抓住或{@condition 擒抱}的一个中等大小或更小的物体或生物被扔到最多60尺外的一个随机方向，并被击倒{@condition 倒地}。如果被扔的目标撞到一个坚固的表面，该目标每被扔10尺就受到3（{@damage 1d6}）点钝击伤害。如果目标被扔向另一个生物，那个生物必须成功进行一次{@dc 16}敏捷豁免检定，否则承受相同的伤害并被击倒{@condition 倒地}。"
 					]
 				},
 				{
-					"name": "闪电风暴",
 					"ENG_name": "Lightning Storm",
+					"name": "闪电风暴",
 					"entries": [
 						"克拉肯创造了三道闪电，每道闪电都可以打击克拉肯在其150尺范围内能看到的目标。目标必须进行一次{@dc 16}敏捷豁免检定，如果失败则受到16（{@damage 3d10}）闪电伤害，如果成功则受到一半的伤害。"
 					]
@@ -3955,15 +3955,15 @@
 			"hasFluff": true
 		},
 		{
-			"name": "门内克·阿里兹",
 			"ENG_name": "Mennek Ariz",
+			"name": "门内克·阿里兹",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
-				"name": "惑控师",
 				"ENG_name": "Enchanter",
+				"name": "惑控师",
 				"source": "VGM",
 				"_mod": {
 					"*": {
@@ -3984,8 +3984,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "纳瓦尔",
 			"ENG_name": "Nahual",
+			"name": "纳瓦尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -4036,22 +4036,22 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "变形生物",
 					"ENG_name": "Shapechanger",
+					"name": "变形生物",
 					"entries": [
 						"变形怪用它的动作变形为一个它曾见过的小型或中型体型的类人生物，或是用该动作恢复其真实形态。除体型外，它的所有数据在每个形态时均相同，其着装和携带的装备也不会随变形发生变化。变形怪死亡时将恢复其真实形态。"
 					]
 				},
 				{
-					"name": "伏击",
 					"ENG_name": "Ambusher",
+					"name": "伏击",
 					"entries": [
 						"在战斗的第一轮，变形怪对任何它使{@status 被突袭}的生物进行攻击检定时具有优势。"
 					]
 				},
 				{
-					"name": "突袭攻击",
 					"ENG_name": "Surprise Attack",
+					"name": "突袭攻击",
 					"entries": [
 						"如果变形怪在战斗的第一轮中出其不意地攻击一个生物并且命中，目标将额外受到10（{@damage 3d6}）点伤害。"
 					]
@@ -4059,22 +4059,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"变形怪发动两次近战攻击。"
 					]
 				},
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及 5 尺，单一目标。{@h}7（{@damage 1d6 + 4}）的钝击伤害。"
 					]
 				},
 				{
-					"name": "读心",
 					"ENG_name": "Read Thoughts",
+					"name": "读心",
 					"entries": [
 						"变形怪用魔法读取其60尺内一个生物的表层思想。该效应可穿透一些障碍物，但无法穿透3尺厚的木质或土质，2尺厚的石质，2寸厚的金属质或一薄层的铅板。目标身处该距离内时，变形怪只要保持{@status 专注}就可以持续阅读思想（如同{@status 专注||专注于}一个法术）。读取目标的思想时，变形怪对该目标进行的感知（{@skill 洞悉}）和魅力（{@skill 欺瞒}，{@skill 威吓}，{@skill 游说}）检定具有优势。"
 					]
@@ -4102,15 +4102,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "内德琳",
 			"ENG_name": "Nedylene",
+			"name": "内德琳",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 209,
 			"_copy": {
-				"name": "罗丝女祭司",
 				"ENG_name": "Drow Priestess of Lolth",
+				"name": "罗丝女祭司",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4122,8 +4122,8 @@
 					"trait": {
 						"mode": "prependArr",
 						"items": {
-							"name": "特殊装备",
 							"ENG_name": "Special Equipment",
+							"name": "特殊装备",
 							"entries": [
 								"Nedylene携带一根{@item 虫群法杖}。"
 							]
@@ -4133,8 +4133,8 @@
 						"mode": "replaceArr",
 						"replace": "刑鞭",
 						"items": {
-							"name": "鞭笞 +2",
 							"ENG_name": "Scourge +2",
+							"name": "鞭笞 +2",
 							"entries": [
 								"{@atk mw} 命中{@hit 7}，触及范围5尺，单一目标。{@h}7（{@damage 1d6 + 4}）点穿刺伤害加上17（{@damage 5d6}）毒素伤害。"
 							]
@@ -4145,8 +4145,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "海仙女",
 			"ENG_name": "Nereid",
+			"name": "海仙女",
 			"source": "TftYP",
 			"page": 240,
 			"size": [
@@ -4195,36 +4195,36 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"那莱德可以呼吸空气和水。"
 					]
 				},
 				{
-					"name": "水下隐形",
 					"ENG_name": "Aquatic Invisibility",
+					"name": "水下隐形",
 					"entries": [
 						"如果浸泡在水中，那莱德可以作为一个附赠动作使自己{@condition 隐形}。它将保持{@condition 隐形}状态，直到它离开水，作为一个附赠动作结束隐形状态，或者死亡。"
 					]
 				},
 				{
-					"name": "披风依赖",
 					"ENG_name": "Mantle Dependent",
+					"name": "披风依赖",
 					"entries": [
 						"那莱亚德穿着一件海沫色的丝质斗篷，斗篷中蕴含着生物的灵魂。这件斗篷具有与那莱亚德相同的AC（护甲等级）和生命值，但当那莱亚德穿着它时，这件衣物不能被直接伤害。如果斗篷被摧毁，那莱亚德将变得{@condition 中毒}，并在1小时内死亡。如果斗篷被偷走，那莱亚德愿意尽其所能去取回斗篷，包括为小偷服务。"
 					]
 				},
 				{
-					"name": "操水术",
 					"ENG_name": "Shape Water",
+					"name": "操水术",
 					"entries": [
 						"那莱德可以随意施展{@spell 操控水体}，无需任何材料。它的施法能力是魅力。这个法术的使用范围是30尺，并且可以影响一个边长不超过30尺的水立方体。"
 					]
 				},
 				{
-					"name": "动物交谈",
 					"ENG_name": "Speak With Animals",
+					"name": "动物交谈",
 					"entries": [
 						"那莱德能够理解并与野兽进行口头交流。"
 					]
@@ -4232,22 +4232,22 @@
 			],
 			"action": [
 				{
-					"name": "致盲酸液",
 					"ENG_name": "Blinding Acid",
+					"name": "致盲酸液",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 5}，触及范围5尺或射程30尺，单一目标。{@h}16（{@damage 2d12 + 3}）强酸伤害，目标直到仙女下回合开始前处于{@condition 目盲}状态。"
 					]
 				},
 				{
-					"name": "溺水之吻 {@recharge 5}",
 					"ENG_name": "Drowning Kiss {@recharge 5}",
+					"name": "溺水之吻 {@recharge 5}",
 					"entries": [
 						"涅瑞伊德触碰一个它可见且在5英尺内的生物。目标必须成功通过一次{@dc 13}体质豁免，否则会受到22（{@damage 3d12 + 3}）点酸蚀伤害。如果豁免失败，它还会窒息并且1分钟内无法说话。在它的每个回合结束时，它可以重复进行豁免，成功则结束该效果。"
 					]
 				},
 				{
-					"name": "水鞭",
 					"ENG_name": "Water Lash",
+					"name": "水鞭",
 					"entries": [
 						"那莱亚德使60尺内的5尺立方体水体变成它选择的形状，并攻击它能看到的5尺内的单一目标。目标必须进行一次{@dc 13}力量豁免检定。若失败，它将受到17（{@damage 4d6 + 3}）点钝击伤害，如果它是大型或更小的生物，它将被直线推动最多15尺或被击倒{@condition 倒地}（那莱亚德选择）。若成功，目标受到的伤害减半，不会被推动或击倒{@condition 倒地}。"
 					]
@@ -4284,15 +4284,15 @@
 			"hasFluff": true
 		},
 		{
-			"name": "尼米拉",
 			"ENG_name": "Nimira",
+			"name": "尼米拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 54,
 			"_copy": {
-				"name": "灰矮人",
 				"ENG_name": "Duergar",
+				"name": "灰矮人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4305,15 +4305,15 @@
 						"mode": "prependArr",
 						"items": [
 							{
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"多重攻击。尼米拉进行两次大剑攻击。"
 								]
 							},
 							{
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw}命中{@hit 4}，触及5尺，单一目标。{@h}9 ({@damage 2d6 + 2}) 挥砍伤害，或者在体型增大时16 ({@damage 4d6 + 2}) 挥砍伤害。"
 								]
@@ -4346,20 +4346,20 @@
 			"hasFluff": true
 		},
 		{
-			"name": "奥布米",
 			"ENG_name": "Obmi",
+			"name": "奥布米",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 196,
 			"_copy": {
-				"name": "刺客",
 				"ENG_name": "Assassin",
+				"name": "刺客",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "山地矮人",
 						"ENG_name": "Mountain Dwarf",
+						"name": "山地矮人",
 						"source": "PHB"
 					}
 				],
@@ -4374,8 +4374,8 @@
 						"mode": "replaceArr",
 						"replace": "多重攻击",
 						"items": {
-							"name": "多重攻击",
 							"ENG_name": "Multiattack",
+							"name": "多重攻击",
 							"entries": [
 								"奥布米进行三次短剑攻击。"
 							]
@@ -4389,18 +4389,18 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "食人魔骷髅",
 			"ENG_name": "Ogre Skeleton",
+			"name": "食人魔骷髅",
 			"source": "TftYP",
 			"page": 54,
 			"_copy": {
-				"name": "食人魔",
 				"ENG_name": "Ogre",
+				"name": "食人魔",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "骷髅",
 						"ENG_name": "Skeleton",
+						"name": "骷髅",
 						"source": "DMG"
 					}
 				]
@@ -4414,8 +4414,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "史莱姆主宰",
 			"ENG_name": "Ooze Master",
+			"name": "史莱姆主宰",
 			"source": "TftYP",
 			"page": 241,
 			"size": [
@@ -4496,8 +4496,8 @@
 			"cr": "10",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"软泥大师是一名9级施法者。它的施法属性是智力（法术豁免{@dc 15}，法术攻击命中{@hit 7}）。它已准备以下法师法术："
@@ -4555,23 +4555,23 @@
 			],
 			"trait": [
 				{
-					"name": "腐蚀形态",
 					"ENG_name": "Corrosive Form",
+					"name": "腐蚀形态",
 					"entries": [
 						"任何生物在5尺范围内触碰到粘液大师或用近战攻击命中它时，将受到9（{@damage 2d8}）点强酸伤害。任何非魔法武器在攻击粘液大师后会腐蚀。在造成伤害后，武器对伤害骰的加成将永久性地累积减少1。如果其加成减少至-5，武器将被摧毁。非魔法弹药在造成伤害后也会被摧毁。",
 						"粘液大师可以在1回合内消化掉2英寸厚的非魔法木材或金属。"
 					]
 				},
 				{
-					"name": "本能攻击",
 					"ENG_name": "Instinctive Attack",
+					"name": "本能攻击",
 					"entries": [
 						"当软泥大师施放一个施法时间为1个动作的法术时，它可以使用一个附赠动作进行一次伪足攻击。"
 					]
 				},
 				{
-					"name": "蛛行术",
 					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
 					"entries": [
 						"粘液大师能够攀爬困难的表面，包括在天花板上倒挂，无需进行属性检定。"
 					]
@@ -4579,8 +4579,8 @@
 			],
 			"action": [
 				{
-					"name": "伪足",
 					"ENG_name": "Pseudopod",
+					"name": "伪足",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及10尺，单一目标。{@h}13（{@damage 3d6 + 3}）钝击伤害加上10（{@damage 3d6}）强酸伤害。"
 					]
@@ -4588,8 +4588,8 @@
 			],
 			"reaction": [
 				{
-					"name": "直觉魅惑",
 					"ENG_name": "Instinctive Charm",
+					"name": "直觉魅惑",
 					"entries": [
 						"如果一个生物在距离粘液大师30尺内对它进行攻击骰时，粘液大师可以使用反应来转移这次攻击，如果另一个生物在攻击范围内。攻击者必须进行一次{@dc 15}感知豁免。豁免失败时，攻击者将目标对准距离它最近的生物，不包括它自己或粘液大师。如果有多个生物距离最近，则攻击者选择其中一个作为目标。豁免成功时，攻击者对这种本能魅力免疫24小时。不能被{@condition 魅惑}的生物对这种效果免疫。"
 					]
@@ -4640,18 +4640,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "兽人平民",
 			"ENG_name": "Orc Commoner",
+			"name": "兽人平民",
 			"source": "TftYP",
 			"page": 167,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "兽人",
 						"ENG_name": "Orc",
+						"name": "兽人",
 						"source": "DMG"
 					}
 				]
@@ -4670,15 +4670,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "奥萨",
 			"ENG_name": "Oussa",
+			"name": "奥萨",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
-				"name": "恶咒蛇人(类型3)",
 				"ENG_name": "Yuan-ti Malison (Type 3)",
+				"name": "恶咒蛇人(类型3)",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4692,15 +4692,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "菲亚",
 			"ENG_name": "Phaia",
+			"name": "菲亚",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 132,
 			"_copy": {
-				"name": "死灵法师",
 				"ENG_name": "Necromancer",
+				"name": "死灵法师",
 				"source": "VGM",
 				"_mod": {
 					"*": {
@@ -4721,18 +4721,18 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "低威胁阿波罗斯",
 			"ENG_name": "Reduced-Threat Aboleth",
+			"name": "低威胁阿波罗斯",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "底栖魔鱼",
 				"ENG_name": "Aboleth",
+				"name": "底栖魔鱼",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4741,18 +4741,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁蜥蜴",
 			"ENG_name": "Reduced-Threat Basilisk",
+			"name": "低威胁蜥蜴",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "石化蜥蜴",
 				"ENG_name": "Basilisk",
+				"name": "石化蜥蜴",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4760,18 +4760,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的青足龙蛇",
 			"ENG_name": "Reduced-Threat Behir",
+			"name": "威胁降低的青足龙蛇",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "青足龙蛇",
 				"ENG_name": "Behir",
+				"name": "青足龙蛇",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				],
@@ -4796,18 +4796,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁巨眼怪",
 			"ENG_name": "Reduced-Threat Beholder",
+			"name": "低威胁巨眼怪",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "眼魔",
 				"ENG_name": "Beholder",
+				"name": "眼魔",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4815,18 +4815,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁黑色布丁",
 			"ENG_name": "Reduced-Threat Black Pudding",
+			"name": "低威胁黑色布丁",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "黑布丁",
 				"ENG_name": "Black Pudding",
+				"name": "黑布丁",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4834,18 +4834,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁食腐蠕虫",
 			"ENG_name": "Reduced-Threat Carrion Crawler",
+			"name": "低威胁食腐蠕虫",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "食腐虫",
 				"ENG_name": "Carrion Crawler",
+				"name": "食腐虫",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4853,18 +4853,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的粘土魔像",
 			"ENG_name": "Reduced-Threat Clay Golem",
+			"name": "威胁降低的粘土魔像",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "粘土魔像",
 				"ENG_name": "Clay Golem",
+				"name": "粘土魔像",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4872,18 +4872,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁暗幕魔兽",
 			"ENG_name": "Reduced-Threat Darkmantle",
+			"name": "低威胁暗幕魔兽",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "暗幕魔兽",
 				"ENG_name": "Darkmantle",
+				"name": "暗幕魔兽",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4891,18 +4891,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁移位兽",
 			"ENG_name": "Reduced-Threat Displacer Beast",
+			"name": "低威胁移位兽",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "移位兽",
 				"ENG_name": "Displacer Beast",
+				"name": "移位兽",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4910,18 +4910,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁龙龟",
 			"ENG_name": "Reduced-Threat Dragon Turtle",
+			"name": "低威胁龙龟",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "龙龟",
 				"ENG_name": "Dragon Turtle",
+				"name": "龙龟",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				],
@@ -4937,8 +4937,8 @@
 							"mode": "replaceArr",
 							"replace": "多重攻击",
 							"items": {
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"龙龟进行三次攻击：一次用其咬击，两次用其爪击。"
 								]
@@ -4955,18 +4955,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的伊特怪",
 			"ENG_name": "Reduced-Threat Ettercap",
+			"name": "威胁降低的伊特怪",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "伊特怪",
 				"ENG_name": "Ettercap",
+				"name": "伊特怪",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4979,18 +4979,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁肉身魔像",
 			"ENG_name": "Reduced-Threat Flesh Golem",
+			"name": "低威胁肉身魔像",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "肉身魔像",
 				"ENG_name": "Flesh Golem",
+				"name": "肉身魔像",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -4998,18 +4998,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁迷诱魔",
 			"ENG_name": "Reduced-Threat Glabrezu",
+			"name": "低威胁迷诱魔",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "迷诱魔",
 				"ENG_name": "Glabrezu",
+				"name": "迷诱魔",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5017,18 +5017,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的灰色软泥怪",
 			"ENG_name": "Reduced-Threat Gray Ooze",
+			"name": "威胁降低的灰色软泥怪",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "灰泥怪",
 				"ENG_name": "Gray Ooze",
+				"name": "灰泥怪",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5040,18 +5040,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的恐怖铠甲",
 			"ENG_name": "Reduced-Threat Helmed Horror",
+			"name": "威胁降低的恐怖铠甲",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "恐怖铠甲",
 				"ENG_name": "Helmed Horror",
+				"name": "恐怖铠甲",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5059,18 +5059,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁狂战魔",
 			"ENG_name": "Reduced-Threat Hezrou",
+			"name": "低威胁狂战魔",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "狂战魔",
 				"ENG_name": "Hezrou",
+				"name": "狂战魔",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5078,18 +5078,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁恐爪怪",
 			"ENG_name": "Reduced-Threat Hook Horror",
+			"name": "低威胁恐爪怪",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "恐爪怪",
 				"ENG_name": "Hook Horror",
+				"name": "恐爪怪",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5097,18 +5097,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁赭色果冻",
 			"ENG_name": "Reduced-Threat Ochre Jelly",
+			"name": "低威胁赭色果冻",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "赭冻怪",
 				"ENG_name": "Ochre Jelly",
+				"name": "赭冻怪",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5116,18 +5116,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁奥图格",
 			"ENG_name": "Reduced-Threat Otyugh",
+			"name": "低威胁奥图格",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "食腐兽",
 				"ENG_name": "Otyugh",
+				"name": "食腐兽",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				],
@@ -5143,8 +5143,8 @@
 							"mode": "replaceArr",
 							"replace": "触须",
 							"items": {
-								"name": "触须",
 								"ENG_name": "Tentacle",
+								"name": "触须",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及范围10尺，单一目标。{@h}7（{@damage 1d8 + 3}）钝击伤害加上4（{@damage 1d8}）点穿刺伤害。"
 								]
@@ -5159,18 +5159,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁枭熊",
 			"ENG_name": "Reduced-Threat Owlbear",
+			"name": "低威胁枭熊",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "枭熊",
 				"ENG_name": "Owlbear",
+				"name": "枭熊",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5178,18 +5178,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的鹿鹰",
 			"ENG_name": "Reduced-Threat Peryton",
+			"name": "威胁降低的鹿鹰",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "鹿鹰",
 				"ENG_name": "Peryton",
+				"name": "鹿鹰",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5197,18 +5197,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁百足魔兽",
 			"ENG_name": "Reduced-Threat Remorhaz",
+			"name": "低威胁百足魔兽",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "百足魔兽",
 				"ENG_name": "Remorhaz",
+				"name": "百足魔兽",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5216,18 +5216,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁石像鬼",
 			"ENG_name": "Reduced-Threat Stone Golem",
+			"name": "低威胁石像鬼",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "石魔像",
 				"ENG_name": "Stone Golem",
+				"name": "石魔像",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5235,18 +5235,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的弗洛魔",
 			"ENG_name": "Reduced-Threat Vrock",
+			"name": "威胁降低的弗洛魔",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "弗洛魔",
 				"ENG_name": "Vrock",
+				"name": "弗洛魔",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5254,18 +5254,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "低威胁亡灵",
 			"ENG_name": "Reduced-Threat Wight",
+			"name": "低威胁亡灵",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "尸妖",
 				"ENG_name": "Wight",
+				"name": "尸妖",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5273,18 +5273,18 @@
 			"hasToken": true
 		},
 		{
-			"name": "威胁降低的飞龙",
 			"ENG_name": "Reduced-Threat Wyvern",
+			"name": "威胁降低的飞龙",
 			"source": "TftYP",
 			"page": 113,
 			"_copy": {
-				"name": "飞龙",
 				"ENG_name": "Wyvern",
+				"name": "飞龙",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "威胁降低",
 						"ENG_name": "Reduced Threat",
+						"name": "威胁降低",
 						"source": "TftYP"
 					}
 				]
@@ -5292,13 +5292,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "残骸",
 			"ENG_name": "Scrag",
+			"name": "残骸",
 			"source": "TftYP",
 			"page": 147,
 			"_copy": {
-				"name": "巨魔",
 				"ENG_name": "Troll",
+				"name": "巨魔",
 				"source": "MM"
 			},
 			"speed": {
@@ -5308,8 +5308,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "海狮",
 			"ENG_name": "Sea Lion",
+			"name": "海狮",
 			"source": "TftYP",
 			"page": 242,
 			"otherSources": [
@@ -5358,29 +5358,29 @@
 			"cr": "5",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"海狮可以在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "敏锐嗅觉",
 					"ENG_name": "Keen Smell",
+					"name": "敏锐嗅觉",
 					"entries": [
 						"海狮在依赖嗅觉的感知（{@skill 察觉}）检定上有优势。"
 					]
 				},
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果海狮的至少一个盟友在生物的5尺范围内，并且该盟友没有处于{@condition 失能}状态，海狮在对该生物的攻击检定上有优势。"
 					]
 				},
 				{
-					"name": "游泳飞跃",
 					"ENG_name": "Swimming Leap",
+					"name": "游泳飞跃",
 					"entries": [
 						"海狮如果有一个10尺的游泳助跑，可以跳出水面或者跳过水面达到25尺。"
 					]
@@ -5388,22 +5388,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"海狮进行三次攻击：一次咬击和两次爪击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}12（{@damage 2d8 + 3}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}12（{@damage 2d8 + 3}）点穿刺伤害。"
 					]
@@ -5411,8 +5411,8 @@
 			],
 			"altArt": [
 				{
-					"name": "海狮",
 					"ENG_name": "Sea Lion",
+					"name": "海狮",
 					"source": "GoS"
 				}
 			],
@@ -5435,13 +5435,13 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "有感知能力的灰色软泥怪",
 			"ENG_name": "Sentient Gray Ooze",
+			"name": "有感知能力的灰色软泥怪",
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
-				"name": "灰泥怪",
 				"ENG_name": "Gray Ooze",
+				"name": "灰泥怪",
 				"source": "MM",
 				"_mod": {
 					"conditionImmune": {
@@ -5464,13 +5464,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "有感知的黄褐色史莱姆",
 			"ENG_name": "Sentient Ochre Jelly",
+			"name": "有感知的黄褐色史莱姆",
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
-				"name": "赭冻怪",
 				"ENG_name": "Ochre Jelly",
+				"name": "赭冻怪",
 				"source": "MM",
 				"_mod": {
 					"conditionImmune": {
@@ -5489,20 +5489,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "沙伦德拉·弗洛辛",
 			"ENG_name": "Shalendra Floshin",
+			"name": "沙伦德拉·弗洛辛",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 119,
 			"_copy": {
-				"name": "骑士",
 				"ENG_name": "Knight",
+				"name": "骑士",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "高等精灵",
 						"ENG_name": "High Elf",
+						"name": "高等精灵",
 						"source": "PHB"
 					}
 				]
@@ -5513,8 +5513,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "莎尔温·胡克雷尔",
 			"ENG_name": "Sharwyn Hucrele",
+			"name": "莎尔温·胡克雷尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -5567,8 +5567,8 @@
 			"cr": "1/2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Sharwyn是一名1级施法者。她的施法能力是智力（法术豁免难度{@dc 13}，使用法术攻击命中{@hit 5}）。她准备了以下法师法术："
@@ -5596,22 +5596,22 @@
 			],
 			"trait": [
 				{
-					"name": "树肤术",
 					"ENG_name": "Barkskin",
+					"name": "树肤术",
 					"entries": [
 						"莎尔温的AC不能低于16。"
 					]
 				},
 				{
-					"name": "特殊装备",
 					"ENG_name": "Special Equipment",
+					"name": "特殊装备",
 					"entries": [
 						"莎雯拥有一本{@item 法术书|PHB}，其中包含了她的施法特性中列出的法术，以及{@spell 侦测魔法}和{@spell 无声幻影}。"
 					]
 				},
 				{
-					"name": "树精奴仆",
 					"ENG_name": "Tree Thrall",
+					"name": "树精奴仆",
 					"entries": [
 						"如果古尔蒂亚斯树死亡，莎尔文将在24小时后死亡。"
 					]
@@ -5619,8 +5619,8 @@
 			],
 			"action": [
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw} {@hit 4}，触及 5 尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
 					]
@@ -5654,8 +5654,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "布拉福德爵士",
 			"ENG_name": "Sir Braford",
+			"name": "布拉福德爵士",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -5706,22 +5706,22 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "树肤术",
 					"ENG_name": "Barkskin",
+					"name": "树肤术",
 					"entries": [
 						"布拉福德爵士的护甲等级不能低于16。"
 					]
 				},
 				{
-					"name": "特殊装备",
 					"ENG_name": "Special Equipment",
+					"name": "特殊装备",
 					"entries": [
 						"布拉福德爵士手持{@item 碎棘|TftYP}，这是一把魔法长剑，使用它进行攻击和伤害判定时可获得+1加值（已包含在他的攻击中）。请参阅Shatterspike手册了解该物品的其他属性。"
 					]
 				},
 				{
-					"name": "树精奴仆",
 					"ENG_name": "Tree Thrall",
+					"name": "树精奴仆",
 					"entries": [
 						"如果古尔蒂亚斯树死亡，布拉福德爵士将在24小时后死亡。"
 					]
@@ -5729,8 +5729,8 @@
 			],
 			"action": [
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 点挥砍伤害，或者如果用双手使用则为9 ({@damage 1d10 + 4}) 点挥砍伤害。"
 					]
@@ -5738,8 +5738,8 @@
 			],
 			"reaction": [
 				{
-					"name": "守护",
 					"ENG_name": "Protection",
+					"name": "守护",
 					"entries": [
 						"当一个生物攻击距离赛尔·布拉福德爵士5尺内的其他目标时，如果他能看到这个生物，他可以使用反应使用他的盾牌使攻击骰获得劣势。"
 					]
@@ -5762,8 +5762,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "赛壬",
 			"ENG_name": "Siren",
+			"name": "赛壬",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -5816,8 +5816,8 @@
 			"cr": "3",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"塞壬的天生施法能力是魅力（法术豁免{@dc 13}）。她能够天生施放以下法术，无需任何材料组件："
@@ -5835,15 +5835,15 @@
 			],
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"塞壬能在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"塞壬在对抗法术和其他魔法效果的豁免检定上有优势。"
 					]
@@ -5851,15 +5851,15 @@
 			],
 			"action": [
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}7（{@damage 1d6 + 4}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "昏迷之触",
 					"ENG_name": "Stupefying Touch",
+					"name": "昏迷之触",
 					"entries": [
 						"塞壬触碰一个她可以看到且距离她5英尺内的生物。该生物必须进行一次{@dc 13}智力豁免检定，若失败则受到13（{@damage 3d6 + 3}）点心灵伤害，并且{@condition 震慑}直到塞壬的下一回合开始。"
 					]
@@ -5908,8 +5908,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "斯纳拉",
 			"ENG_name": "Snarla",
+			"name": "斯纳拉",
 			"group": [
 				"Lycanthropes"
 			],
@@ -5981,8 +5981,8 @@
 			"cr": "5",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"斯纳拉是一名6级施法者。她的施法能力是智力（法术豁免{@dc 14}，法术攻击命中+6）。她准备了以下法师法术："
@@ -6026,15 +6026,15 @@
 			],
 			"trait": [
 				{
-					"name": "变形生物",
 					"ENG_name": "Shapechanger",
+					"name": "变形生物",
 					"entries": [
 						"狼人可以用一个动作变身成狼与类人生物半人的形态或狼形态，或者以同样的动作变回其真实形态即类人生物形态。其资料除AC外各个形态均相同。其着装及携带的装备也不会随之转化。死亡时它将恢复其真实形态。"
 					]
 				},
 				{
-					"name": "敏锐嗅听觉",
 					"ENG_name": "Keen Hearing and Smell",
+					"name": "敏锐嗅听觉",
 					"entries": [
 						"狼人依赖听觉或嗅觉进行的感知（{@skill 察觉}）检定具有优势。"
 					]
@@ -6042,29 +6042,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击（仅狼与半人形态）",
 					"ENG_name": "Multiattack (Humanoid or Hybrid Form Only)",
+					"name": "多重攻击（仅狼与半人形态）",
 					"entries": [
 						"狼人进行两次攻击：一次用其咬击，一次用其爪击或矛击。"
 					]
 				},
 				{
-					"name": "啃咬（仅狼与半人形态）",
 					"ENG_name": "Bite (Wolf or Hybrid Form Only)",
+					"name": "啃咬（仅狼与半人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及 5 尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点穿刺伤害。如果目标是类人生物，则目标必须成功通过一次{@dc 12}的体质豁免，否则将遭受狼人兽化诅咒。"
 					]
 				},
 				{
-					"name": "爪击（仅半人形态）",
 					"ENG_name": "Claws (Hybrid Form Only)",
+					"name": "爪击（仅半人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一生物。{@h}7（{@damage 2d4 + 2}）点挥砍伤害。"
 					]
 				},
 				{
-					"name": "矛（仅类人形态）",
 					"ENG_name": "Spear (Humanoid Form Only)",
+					"name": "矛（仅类人形态）",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或射程20/60尺，单一生物。{@h}5（{@damage 1d6 + 2}）点穿刺伤害，或者如果用双手进行近战攻击则造成6（{@damage 1d8 + 2}）点穿刺伤害。"
 					]
@@ -6116,13 +6116,13 @@
 			"hasFluff": true
 		},
 		{
-			"name": "雪豹",
 			"ENG_name": "Snow Leopard",
+			"name": "雪豹",
 			"source": "TftYP",
 			"page": 183,
 			"_copy": {
-				"name": "老虎",
 				"ENG_name": "Tiger",
+				"name": "老虎",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -6136,8 +6136,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "斯努雷文",
 			"ENG_name": "Snurrevin",
+			"name": "斯努雷文",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -6191,8 +6191,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"斯努雷文是一名 3 级施法者。他的施法能力为智力（法术豁免 {@dc 12}，法术攻击命中 {@hit 4}）。他准备了以下法师法术："
@@ -6227,15 +6227,15 @@
 			],
 			"trait": [
 				{
-					"name": "灰矮人体魄",
 					"ENG_name": "Duergar Resilience",
+					"name": "灰矮人体魄",
 					"entries": [
 						"灰矮人抵抗中毒，法术和幻觉时，进行的豁免检定具有优势。抵抗{@condition 魅惑}和{@condition 麻痹}状态时，也是一样。"
 					]
 				},
 				{
-					"name": "日照敏感",
 					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
 					"entries": [
 						"在阳光照射下，灰矮人进行的攻击检定具有劣势，此时其依赖视觉进行的感知（{@skill 察觉}）检定也具有劣势。"
 					]
@@ -6243,29 +6243,29 @@
 			],
 			"action": [
 				{
-					"name": "变巨（短休或长休后充能）。",
 					"ENG_name": "Enlarge (Recharges after a Short or Long Rest)",
+					"name": "变巨（短休或长休后充能）。",
 					"entries": [
 						"灰矮人用魔法将自己连同其装备或携带的所有东西一起变得巨大，并持续1分钟。变巨效应持续时，灰矮人体型变为大型，以力量为基础的武器攻击其伤害骰翻倍（已包含在攻击项中），且其进行的力量检定和力量豁免具有优势。当灰矮人所处的空间不足够容纳大型体型生物时，变巨的尺寸会按照空间可容纳的最大值来确定。"
 					]
 				},
 				{
-					"name": "战镐",
 					"ENG_name": "War Pick",
+					"name": "战镐",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点穿刺伤害，或在体型增大时造成11 ({@damage 2d8 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或射程30/120尺，单一目标。{@h}5（{@damage 1d6 + 2}）点穿刺伤害，在变巨时为9（{@damage 2d6 + 2}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "隐形（短休或长休后充能）",
 					"ENG_name": "Invisibility (Recharges after a Short or Long Rest)",
+					"name": "隐形（短休或长休后充能）",
 					"entries": [
 						"灰矮人用魔法{@condition 隐形}，效果持续到它发动攻击，施展法术，使用变巨特质或者其{@status 专注}被打断（如同{@status 专注||专注于}一个法术）。如果持续专注于该法术，效果将至多持续1小时。灰矮人身上着装和携带的所有装备将随它一同{@condition 隐形}。"
 					]
@@ -6317,13 +6317,13 @@
 			"hasFluff": true
 		},
 		{
-			"name": "石龙雕像",
 			"ENG_name": "Stone Dragon Statue",
+			"name": "石龙雕像",
 			"source": "TftYP",
 			"page": 85,
 			"_copy": {
-				"name": "石魔像",
 				"ENG_name": "Stone Golem",
+				"name": "石魔像",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -6336,8 +6336,8 @@
 			},
 			"action": [
 				{
-					"name": "蒸汽吐息",
 					"ENG_name": "Steam Breath",
+					"name": "蒸汽吐息",
 					"entries": [
 						"雕像在一条长30尺，宽10尺的直线上呼出蒸汽。在该区域内的每个生物都必须进行一次{@dc 15}体质豁免检定，失败时受到7（{@damage 2d4 + 2}）火焰伤害，成功则伤害减半。"
 					]
@@ -6357,8 +6357,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "塔鲁尔·瓦",
 			"ENG_name": "Tarul Var",
+			"name": "塔鲁尔·瓦",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -6441,8 +6441,8 @@
 			"cr": "13",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Var是一名12级施法者。他的施法能力是智力（法术豁免{@dc 17}，法术攻击命中{@hit 9}）。他准备了以下法师法术：",
@@ -6494,7 +6494,7 @@
 						"5": {
 							"slots": 3,
 							"spells": [
-								"*{@spell 死云术}*",
+								"{@spell 死云术}*",
 								"{@spell 探知}"
 							]
 						},
@@ -6510,29 +6510,29 @@
 			],
 			"trait": [
 				{
-					"name": "咒法专注",
 					"ENG_name": "Focused Conjuration",
+					"name": "咒法专注",
 					"entries": [
 						"当瓦尔{@status 专注||专注于}于一个咒唤法术时，他的{@status 专注}不会因受到伤害而被打破。"
 					]
 				},
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果瓦尔未能通过豁免检定，他可以选择成功。"
 					]
 				},
 				{
-					"name": "复生",
 					"ENG_name": "Rejuvenation",
+					"name": "复生",
 					"entries": [
 						"如果瓦尔被摧毁但他的法器保持完好，瓦尔将在{@dice 1d10}天内获得一个新身体，恢复所有生命值并再次活跃。新身体出现在法器周围5尺内。"
 					]
 				},
 				{
-					"name": "驱散抗性",
 					"ENG_name": "Turn Resistance",
+					"name": "驱散抗性",
 					"entries": [
 						"Var在对抗任何使不死生物转身的效果的豁免检定上有优势。"
 					]
@@ -6540,15 +6540,15 @@
 			],
 			"action": [
 				{
-					"name": "麻痹触击",
 					"ENG_name": "Paralyzing Touch",
+					"name": "麻痹触击",
 					"entries": [
 						"{@atk ms} {@hit 9} 命中，触及 5 尺，一个生物。{@h}10 ({@damage 3d6}) 点冷冻伤害。目标必须成功通过一次 {@dc 17} 体质豁免，否则将被 {@condition 麻痹} 1 分钟。目标可以在每个回合结束时重复进行豁免，成功则结束该效果于自身。"
 					]
 				},
 				{
-					"name": "王车易位",
 					"ENG_name": "Benign Transposition",
+					"name": "王车易位",
 					"entries": [
 						"瓦可以传送至他能看到的、无人占据的空间，传送距离最多30尺。或者，他可以选择一个范围内被小型或中型生物占据的空间。如果那个生物愿意，两者可以互换位置进行传送。瓦只能在完成长休或施放1级或更高等级的咒法系法术后再次使用这个特性。"
 					]
@@ -6556,22 +6556,22 @@
 			],
 			"legendary": [
 				{
-					"name": "戏法",
 					"ENG_name": "Cantrip",
+					"name": "戏法",
 					"entries": [
 						"瓦尔施放了一个戏法。"
 					]
 				},
 				{
-					"name": "麻痹触击 (消耗 2动作)",
 					"ENG_name": "Paralyzing Touch (Costs 2 Actions)",
+					"name": "麻痹触击 (消耗 2动作)",
 					"entries": [
 						"瓦使用麻痹之触。"
 					]
 				},
 				{
-					"name": "恐惧凝视 (消耗 2动作)",
 					"ENG_name": "Frightening Gaze (Costs 2 Actions)",
+					"name": "恐惧凝视 (消耗 2动作)",
 					"entries": [
 						"瓦尔将目光固定在他能看到的10尺范围内的一个生物上。目标必须成功通过一次{@dc 17}感知豁免检定，否则会受到魔法影响，在1分钟内变成{@condition 恐慌}状态。处于{@condition 恐慌}状态的目标可以在每个回合结束时重复进行豁免检定，成功则结束自身的效果。如果目标的豁免检定成功或效果对其结束，目标在接下来的24小时内对瓦尔的目光免疫。"
 					]
@@ -6627,8 +6627,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "特库西兹特卡特",
 			"ENG_name": "Tecuziztecatl",
+			"name": "特库西兹特卡特",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -6690,29 +6690,29 @@
 			"cr": "4",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"Tecuziztecatl能在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "发光",
 					"ENG_name": "Glowing",
+					"name": "发光",
 					"entries": [
 						"特库齐兹特卡特在自身周围20尺内散发出微弱的光线。"
 					]
 				},
 				{
-					"name": "灵活",
 					"ENG_name": "Flexible",
+					"name": "灵活",
 					"entries": [
 						"特库西兹特卡特可以进入足够中等体型生物通过的空间而不挤压。"
 					]
 				},
 				{
-					"name": "蛛行术",
 					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
 					"entries": [
 						"特库齐兹特卡特可以攀爬困难的表面，包括在天花板上倒挂，无需进行属性检定。"
 					]
@@ -6720,22 +6720,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"特库兹卡特卡特进行两次伪足攻击。"
 					]
 				},
 				{
-					"name": "伪足",
 					"ENG_name": "Pseudopod",
+					"name": "伪足",
 					"entries": [
 						"{@atk mw}命中{@hit 5}，触及10尺，单一目标。{@h}12（{@damage 2d8 + 3}）钝击伤害。"
 					]
 				},
 				{
-					"name": "喷射酸液 {@recharge 4}",
 					"ENG_name": "Spit Acid {@recharge 4}",
+					"name": "喷射酸液 {@recharge 4}",
 					"entries": [
 						"特库齐兹特卡特在一条长30尺、宽5尺的直线上呼出酸性物质。在该直线区域内的每个生物都必须进行一次{@dc 13}敏捷豁免检定，失败时受到18（{@damage 4d8}）强酸伤害，成功则伤害减半。"
 					]
@@ -6770,8 +6770,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "塔雅学徒",
 			"ENG_name": "Thayan Apprentice",
+			"name": "塔雅学徒",
 			"source": "TftYP",
 			"page": 245,
 			"size": [
@@ -6822,8 +6822,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"该学徒是一名4级施法者。其施法能力是智力（法术豁免难度 {@dc 12}，法术攻击命中阈值 {@hit 4}）。他准备了以下法师法术："
@@ -6859,8 +6859,8 @@
 			],
 			"trait": [
 				{
-					"name": "末日金库的奉献",
 					"ENG_name": "Doomvault Devotion",
+					"name": "末日金库的奉献",
 					"entries": [
 						"在毁灭金库内，学徒在对抗被{@condition 魅惑}或{@condition 恐慌}的豁免检定上具有优势。"
 					]
@@ -6868,8 +6868,8 @@
 			],
 			"action": [
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或20/60尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
 					]
@@ -6905,8 +6905,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "泰延战士",
 			"ENG_name": "Thayan Warrior",
+			"name": "泰延战士",
 			"source": "TftYP",
 			"page": 246,
 			"size": [
@@ -6958,15 +6958,15 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "末日金库的奉献",
 					"ENG_name": "Doomvault Devotion",
+					"name": "末日金库的奉献",
 					"entries": [
 						"在毁灭金库内，战士在对抗被{@condition 魅惑}或{@condition 恐慌}的豁免检定上有优势。"
 					]
 				},
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"武者至少有一个未处于{@condition 失能}的盟友在目标生物5尺内时，它对该生物发动的攻击检定有优势。"
 					]
@@ -6974,22 +6974,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"战士进行两次近战攻击。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7 ({@damage 1d8 + 3}) 点挥砍伤害，如果用双手使用，则为8 ({@damage 1d10 + 3}) 点挥砍伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及5尺或射程30/120尺，单一目标。{@h}6（{@damage 1d6 + 3}）点穿刺伤害。"
 					]
@@ -7022,15 +7022,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "监守",
 			"ENG_name": "The Keeper",
+			"name": "监守",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 173,
 			"_copy": {
-				"name": "石巨人",
 				"ENG_name": "Stone Giant",
+				"name": "石巨人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7044,8 +7044,8 @@
 							"mode": "replaceArr",
 							"replace": "多重攻击",
 							"items": {
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"守卫者进行两次战斧攻击。"
 								]
@@ -7055,8 +7055,8 @@
 							"mode": "replaceArr",
 							"replace": "巨棒",
 							"items": {
-								"name": "战斧 +1",
 								"ENG_name": "Battleaxe +1",
+								"name": "战斧 +1",
 								"entries": [
 									"{@atk mw} 命中{@hit 10}，触及范围 15 尺，单一目标。{@h}20 ({@damage 3d8 + 7}) 挥砍伤害，如果双手使用则为 23 ({@damage 3d10 + 7}) 挥砍伤害。"
 								]
@@ -7082,20 +7082,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "瑟兹特",
 			"ENG_name": "Therzt",
+			"name": "瑟兹特",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
-				"name": "平民",
 				"ENG_name": "Commoner",
+				"name": "平民",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "卓尔",
 						"ENG_name": "Drow",
+						"name": "卓尔",
 						"source": "PHB"
 					}
 				]
@@ -7118,8 +7118,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "荆棘投掷者",
 			"ENG_name": "Thorn Slinger",
+			"name": "荆棘投掷者",
 			"source": "TftYP",
 			"page": 246,
 			"size": [
@@ -7157,16 +7157,16 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "粘性花朵",
 					"ENG_name": "Adhesive Blossoms",
+					"name": "粘性花朵",
 					"entries": [
 						"荆棘投掷者会粘附任何触碰到它的东西。任何中号或更小的生物被粘附后也会被它{@condition 擒抱}（逃脱难度{@dc 11}）。尝试逃脱这种纠缠的属性检定具有劣势。",
 						"在荆棘投掷者的每个回合结束时，任何被它{@condition 擒抱}的生物将受到3 ({@damage 1d6})点强酸伤害。"
 					]
 				},
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"当荆棘投手保持静止时，它与无生命的灌木丛无法区分。"
 					]
@@ -7174,8 +7174,8 @@
 			],
 			"action": [
 				{
-					"name": "荆棘",
 					"ENG_name": "Thorns",
+					"name": "荆棘",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 3}，触及5尺或30尺，单一目标。{@h}8（{@damage 2d6 + 1}）点穿刺伤害。"
 					]
@@ -7201,8 +7201,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "特洛克斯-波波洛克萨斯",
 			"ENG_name": "Tloques-Popolocas",
+			"name": "特洛克斯-波波洛克萨斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -7266,8 +7266,8 @@
 			"cr": "5",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"托洛克斯可以随意施放{@spell 人类定身术}（{@dc 14}），无需任何材料，但他的目标必须能够看到他。"
@@ -7282,22 +7282,22 @@
 			],
 			"trait": [
 				{
-					"name": "再生",
 					"ENG_name": "Regeneration",
+					"name": "再生",
 					"entries": [
 						"吸血鬼在其自己的回合开始时恢复10点生命值，前提是它至少有1点生命值且并未处于日光中或流水里。如果其受到光耀伤害或受圣水的伤害，则该吸血鬼的该特质在其下一回合开始时无法生效。"
 					]
 				},
 				{
-					"name": "蛛行术",
 					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
 					"entries": [
 						"吸血鬼无需进行属性检定就能攀爬于困难表面，包括倒挂在天花板上。"
 					]
 				},
 				{
-					"name": "吸血鬼弱点",
 					"ENG_name": "Vampire Weaknesses",
+					"name": "吸血鬼弱点",
 					"entries": [
 						"吸血鬼拥有以下弱点：",
 						{
@@ -7312,8 +7312,8 @@
 					]
 				},
 				{
-					"name": "变形生物",
 					"ENG_name": "Shapechanger",
+					"name": "变形生物",
 					"entries": [
 						"如果吸血鬼不在阳光直射下或不在流动的水中，它可以使用它的行动通过多态变形变成一只小型蝙蝠，或者恢复其真实形态。",
 						"在蝙蝠型态下，吸血鬼不能说话，且其移动速度为5尺，飞行速度30尺。除速度和体型外，吸血鬼的其它资料不变。其着装的东西会随之变化，但其携带物品则不然。一旦它死亡，便会恢复其真实形态。"
@@ -7322,29 +7322,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"吸血鬼进行两次攻击。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一生物。{@h}8 ({@damage 2d4 + 3}) 挥砍伤害。吸血鬼可以选择不造成伤害，而是与目标进行摔跤，逃脱{@dc 13}。"
 					]
 				},
 				{
-					"name": "夜之子 (1/日)",
 					"ENG_name": "Children of the Night (1/Day)",
+					"name": "夜之子 (1/日)",
 					"entries": [
 						"吸血鬼通过魔法召唤{@dice 2d4}群蝙蝠，前提是太阳没有升起。召唤的生物在{@dice 1d4}回合内到达，作为吸血鬼的盟友并服从其口头命令。这些野兽会持续存在1小时，直到吸血鬼死亡，或者吸血鬼作为附赠动作解散它们。"
 					]
 				},
 				{
-					"name": "特洛克斯的狂战士斧+2",
 					"ENG_name": "Tloques' Berserker Axe +2",
+					"name": "特洛克斯的狂战士斧+2",
 					"entries": [
 						"{@atk mw}命中{@hit 5}，触及5尺，单一目标。{@h}9（{@damage 1d8 + 5}）挥砍伤害。"
 					]
@@ -7384,15 +7384,15 @@
 			"hasFluff": true
 		},
 		{
-			"name": "托林·银盾",
 			"ENG_name": "Torlin Silvershield",
+			"name": "托林·银盾",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 159,
 			"_copy": {
-				"name": "尸妖",
 				"ENG_name": "Wight",
+				"name": "尸妖",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7406,13 +7406,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "狼人美洲豹",
 			"ENG_name": "Werejaguar",
+			"name": "狼人美洲豹",
 			"source": "TftYP",
 			"page": 79,
 			"_copy": {
-				"name": "虎人",
 				"ENG_name": "Weretiger",
+				"name": "虎人",
 				"source": "MM",
 				"_mod": {
 					"*": [
@@ -7445,8 +7445,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "白喉",
 			"ENG_name": "White Maw",
+			"name": "白喉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -7502,30 +7502,30 @@
 			"cr": "10",
 			"trait": [
 				{
-					"name": "不定形形态",
 					"ENG_name": "Amorphous Form",
+					"name": "不定形形态",
 					"entries": [
 						"白喉可以占据另一个生物的空间，反之亦然。"
 					]
 				},
 				{
-					"name": "腐蚀金属",
 					"ENG_name": "Corrode Metal",
+					"name": "腐蚀金属",
 					"entries": [
 						"任何由金属制成的非魔法武器在击中白喉时会腐蚀。在造成伤害后，武器对伤害骰的加成将永久性地累积减少1。如果其加成减少至-5，武器将被摧毁。由金属制成的非魔法弹药在击中白喉并造成伤害后会被摧毁。",
 						"白颚可以在1轮内咬穿2英寸厚的非魔法金属。"
 					]
 				},
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"当白喉保持静止时，它与白色石头无法区分。"
 					]
 				},
 				{
-					"name": "致命反应",
 					"ENG_name": "Killer Response",
+					"name": "致命反应",
 					"entries": [
 						"任何生物在其回合开始时位于白颚的空间内，如果白颚没有处于{@condition 失能}状态，则会成为伪足攻击的目标。"
 					]
@@ -7533,8 +7533,8 @@
 			],
 			"action": [
 				{
-					"name": "伪足",
 					"ENG_name": "Pseudopod",
+					"name": "伪足",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}22（{@damage 4d8 + 4}）钝击伤害加上9（{@damage 2d8}）强酸伤害。如果目标穿着非魔法金属盔甲，其盔甲部分腐蚀，对它提供的AC造成永久且累积的-1减值。如果减值将其AC降至10，则盔甲被破坏。"
 					]
@@ -7561,15 +7561,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "西洛嫩",
 			"ENG_name": "Xilonen",
+			"name": "西洛嫩",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 83,
 			"_copy": {
-				"name": "树绳妖",
 				"ENG_name": "Roper",
+				"name": "树绳妖",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7585,13 +7585,13 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "雪人首领",
 			"ENG_name": "Yeti Leader",
+			"name": "雪人首领",
 			"source": "TftYP",
 			"page": 183,
 			"_copy": {
-				"name": "雪人",
 				"ENG_name": "Yeti",
+				"name": "雪人",
 				"source": "MM",
 				"_mod": {
 					"action": [
@@ -7599,8 +7599,8 @@
 							"mode": "replaceArr",
 							"replace": "多重攻击",
 							"items": {
-								"name": "多重攻击",
 								"ENG_name": "Multiattack",
+								"name": "多重攻击",
 								"entries": [
 									"雪人可以使用它的冰冷凝视并进行两次大剑攻击。"
 								]
@@ -7610,8 +7610,8 @@
 							"mode": "replaceArr",
 							"replace": "爪击",
 							"items": {
-								"name": "霜冻印记大剑",
 								"ENG_name": "Frost Brand Greatsword",
+								"name": "霜冻印记大剑",
 								"entries": [
 									"{@atk mw}命中{@hit 6}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）挥砍伤害加上3（{@damage 1d6}）冷冻伤害。"
 								]
@@ -7623,13 +7623,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "年轻火巨人",
 			"ENG_name": "Young Fire Giant",
+			"name": "年轻火巨人",
 			"source": "TftYP",
 			"page": 192,
 			"_copy": {
-				"name": "食人魔",
 				"ENG_name": "Ogre",
+				"name": "食人魔",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7646,13 +7646,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "幼年霜巨人",
 			"ENG_name": "Young Frost Giant",
+			"name": "幼年霜巨人",
 			"source": "TftYP",
 			"page": 187,
 			"_copy": {
-				"name": "食人魔",
 				"ENG_name": "Ogre",
+				"name": "食人魔",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7669,13 +7669,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "年轻山地巨人",
 			"ENG_name": "Young Hill Giant",
+			"name": "年轻山地巨人",
 			"source": "TftYP",
 			"page": 167,
 			"_copy": {
-				"name": "兽人",
 				"ENG_name": "Orc",
+				"name": "兽人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7690,13 +7690,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "年轻食人魔仆从",
 			"ENG_name": "Young Ogre Servant",
+			"name": "年轻食人魔仆从",
 			"source": "TftYP",
 			"page": 171,
 			"_copy": {
-				"name": "兽人",
 				"ENG_name": "Orc",
+				"name": "兽人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7711,13 +7711,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "年轻穴蜥人",
 			"ENG_name": "Young Troglodyte",
+			"name": "年轻穴蜥人",
 			"source": "TftYP",
 			"page": 176,
 			"_copy": {
-				"name": "狗头人",
 				"ENG_name": "Kobold",
+				"name": "狗头人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7737,20 +7737,20 @@
 			"hasToken": true
 		},
 		{
-			"name": "幼年冬季狼",
 			"ENG_name": "Young Winter Wolf",
+			"name": "幼年冬季狼",
 			"source": "TftYP",
 			"page": 181,
 			"_copy": {
-				"name": "恐狼",
 				"ENG_name": "Dire Wolf",
+				"name": "恐狼",
 				"source": "MM"
 			},
 			"hasToken": true
 		},
 		{
-			"name": "尤斯德拉伊尔",
 			"ENG_name": "Yusdrayl",
+			"name": "尤斯德拉伊尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "TftYP",
@@ -7805,8 +7805,8 @@
 			"cr": "1",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"尤斯德拉伊尔是一名2级施法者。她的施法能力是魅力（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。她知道以下巫师法术："
@@ -7834,15 +7834,15 @@
 			],
 			"trait": [
 				{
-					"name": "日照敏感",
 					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
 					"entries": [
 						"在日光下，Yusdrayl在攻击检定上处于劣势，以及在依赖视力的感知（{@skill 察觉}）检定上也处于劣势。"
 					]
 				},
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果尤斯德莱的至少一个盟友在5尺内且该盟友没有处于{@condition 失能}状态，则尤斯德莱对生物的攻击检定具有优势。"
 					]
@@ -7850,8 +7850,8 @@
 			],
 			"action": [
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害。"
 					]

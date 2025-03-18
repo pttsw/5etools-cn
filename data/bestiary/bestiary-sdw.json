@@ -15,8 +15,8 @@
 	},
 	"monster": [
 		{
-			"name": "专家",
 			"ENG_name": "Expert",
+			"name": "专家",
 			"source": "SDW",
 			"level": 9,
 			"size": [
@@ -65,22 +65,22 @@
 			],
 			"trait": [
 				{
-					"name": "好帮手",
 					"ENG_name": "Helpful",
+					"name": "好帮手",
 					"entries": [
-						"专家可以使用一个附赠动作执行帮助动作，接受帮助的生物在{@dice d20}掷骰中获得{@dice d20}加值。如果该掷骰是攻击掷骰，生物可以选择不加这个加值到攻击掷骰上，而是如果攻击命中，将该加值加到攻击对单一目标的伤害掷骰上。"
+						"专家可以以附加动作执行帮助动作，接受帮助的生物在其{@dice d20}掷骰中获得{@dice 1d6}加值。如果该掷骰为攻击掷骰，该生物可以选择不加此加值，若攻击命中，则可以将此加值加到对单一目标的攻击伤害掷骰中。"
 					]
 				},
 				{
-					"name": "反射闪避",
 					"ENG_name": "Evasion",
+					"name": "反射闪避",
 					"entries": [
 						"当专家未处于{@condition 失能}且受到允许其进行敏捷豁免以承受一半伤害的效果影响时，如果豁免成功，则不承受任何伤害；如果豁免失败，则只承受一半伤害。"
 					]
 				},
 				{
-					"name": "工具",
 					"ENG_name": "Tools",
+					"name": "工具",
 					"entries": [
 						"专家拥有盗贼工具和一件乐器。"
 					]
@@ -88,29 +88,29 @@
 			],
 			"action": [
 				{
-					"name": "额外攻击",
 					"ENG_name": "Extra Attack",
+					"name": "额外攻击",
 					"entries": [
 						"专家在其回合采取攻击行动时，可以进行两次攻击，而不是一次。"
 					]
 				},
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 8}，触及范围5尺或射程20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "短弓",
 					"ENG_name": "Shortbow",
+					"name": "短弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 8}，射程80/320 尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 					]
@@ -137,8 +137,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨型鲨鱼骨架",
 			"ENG_name": "Giant Shark Skeleton",
+			"name": "巨型鲨鱼骨架",
 			"source": "SDW",
 			"size": [
 				"H"
@@ -189,8 +189,8 @@
 			"cr": "5",
 			"trait": [
 				{
-					"name": "血腥狂怒",
 					"ENG_name": "Blood Frenzy",
+					"name": "血腥狂怒",
 					"entries": [
 						"巨型鲨鱼骨架对任何未满生命值的生物进行近战攻击检定时具有优势。"
 					]
@@ -198,8 +198,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}22（{@damage 3d10 + 6}）点穿刺伤害。"
 					]
@@ -218,8 +218,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "拉玛鲁托斯",
 			"ENG_name": "Lhammaruntosz",
+			"name": "拉玛鲁托斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SDW",
@@ -280,8 +280,8 @@
 			"cr": "16",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"拉玛兰托斯的施法能力基于魅力（法术豁免 {@dc 17}）。她天生就能施放以下法术，且无需任何材料成分："
@@ -297,8 +297,8 @@
 					"ability": "cha"
 				},
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"拉玛鲁托斯是一名8级施法者。她的施法能力是魅力（法术豁免{@dc 17}；{@hit 9}命中法术攻击）。她准备了以下巫师法术："
@@ -348,22 +348,22 @@
 			],
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"Lhammaruntosz 可以呼吸空气和水。"
 					]
 				},
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果Lhammaruntosz未能通过豁免检定，她可以选择成功。"
 					]
 				},
 				{
-					"name": "再生",
 					"ENG_name": "Regeneration",
+					"name": "再生",
 					"entries": [
 						"Lhammaruntosz在她的回合开始时恢复5点生命值。"
 					]
@@ -371,64 +371,64 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"拉玛鲁托斯可以使用她的骇人威仪。然后她进行三次攻击：一次用她的咬击和两次用她的爪击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 12}，触及10尺，单一目标。{@h}18（{@damage 2d10 + 7}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 12}，射程5尺，单一目标。{@h}14 ({@damage 2d6 + 7}) 点挥砍伤害。"
 					]
 				},
 				{
-					"name": "尾击",
 					"ENG_name": "Tail",
+					"name": "尾击",
 					"entries": [
 						"{@atk mw} 命中{@hit 12}，触及15尺，单一目标。{@h}16 ({@damage 2d8 + 7})点钝击伤害。"
 					]
 				},
 				{
-					"name": "骇人威仪",
 					"ENG_name": "Frightful Presence",
+					"name": "骇人威仪",
 					"entries": [
 						"拉玛鲁恩托斯选择的每个在她120英尺范围内并意识到她存在的生物必须成功通过一次{@dc 17}的感知豁免检定，否则将陷入{@condition 恐慌}状态，持续1分钟。生物可以在每回合结束时重复进行豁免检定，成功则在自身结束此效果。如果生物豁免检定成功或效果对其结束，该生物在接下来的24小时内对拉玛鲁恩托斯的恐惧存在免疫。"
 					]
 				},
 				{
-					"name": "吐息武器 {@recharge 5}",
 					"ENG_name": "Breath Weapons {@recharge 5}",
+					"name": "吐息武器 {@recharge 5}",
 					"entries": [
 						"拉玛鲁托斯使用以下任意一种喷吐武器。"
 					]
 				},
 				{
-					"name": "闪电吐息",
 					"ENG_name": "Lightning Breath",
+					"name": "闪电吐息",
 					"entries": [
 						"拉玛鲁托斯在一个90尺长、5尺宽的直线上呼出闪电。在该直线上的每个生物必须进行一次敏捷豁免检定（{@dc 19}），失败时受到66点（{@damage 12d10}）闪电伤害，成功则只受到一半的伤害。"
 					]
 				},
 				{
-					"name": "斥力吐息",
 					"ENG_name": "Repulsion Breath",
+					"name": "斥力吐息",
 					"entries": [
 						"Lhammaruntosz 在30尺锥形范围内呼出排斥能量。该区域内的每个生物必须成功通过一次 {@dc 19} 的力量豁免检定。若未通过检定，则被推离龙60尺远。"
 					]
 				},
 				{
-					"name": "变形",
 					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
 						"Lhammaruntosz 通过魔法变化成挑战等级不高于她自己的类人生物或野兽，或者恢复她的真身。如果她死亡，她会恢复真身。她穿着或携带的任何装备都会被新形态吸收或携带（由 Lhammaruntosz 选择）。",
 						"在新形态下，Lhammaruntosz保留了她的阵营、生命值、命中骰、语言能力、熟练度、传奇抗性、巢穴行动以及感知、感知和魅力的数值，以及这个动作。她的其他具体数值和能力被新形态的相应数据替代，除了该形态的任何职业特性或传奇行动。"
@@ -437,30 +437,30 @@
 			],
 			"legendary": [
 				{
-					"name": "侦查",
 					"ENG_name": "Detect",
+					"name": "侦查",
 					"entries": [
 						"Lhammaruntosz 进行一次感知（{@skill 察觉}）检定。"
 					]
 				},
 				{
-					"name": "尾击攻击",
 					"ENG_name": "Tail Attack",
+					"name": "尾击攻击",
 					"entries": [
 						"Lhammaruntosz 发起尾部攻击。"
 					]
 				},
 				{
-					"name": "振翅攻击（消耗2行动）",
 					"ENG_name": "Wing Attack (Costs 2 Actions)",
+					"name": "振翅攻击（消耗2行动）",
 					"entries": [
 						"拉玛兰托斯拍打其翅膀。每个位于拉玛兰托斯10英尺范围内的生物必须成功通过{@dc 20}的敏捷豁免，否则将受到14（{@damage 2d6 + 7}）点钝击伤害并被击倒{@condition 倒地}。随后，拉玛兰托斯可以飞至其飞行速度的一半距离。"
 					]
 				}
 			],
 			"legendaryGroup": {
-				"name": "青铜龙",
 				"ENG_name": "Bronze Dragon",
+				"name": "青铜龙",
 				"source": "MM"
 			},
 			"traitTags": [
@@ -535,8 +535,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "施法者（治疗者）",
 			"ENG_name": "Spellcaster (Healer)",
+			"name": "施法者（治疗者）",
 			"source": "SDW",
 			"level": 9,
 			"size": [
@@ -586,8 +586,8 @@
 			],
 			"spellcasting": [
 				{
-					"name": "施法（治疗者）",
 					"ENG_name": "Spellcasting (Healer)",
+					"name": "施法（治疗者）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"施法者的施法能力是感知（法术豁免{@dc 16}，{@hit 8}命中法术攻击）。施法者准备了以下牧师法术："
@@ -642,8 +642,8 @@
 			],
 			"trait": [
 				{
-					"name": "强力戏法",
 					"ENG_name": "Potent Cantrip",
+					"name": "强力戏法",
 					"entries": [
 						"施法者可以将它的法术施放能力调整值加到它用任何戏法造成的伤害中。"
 					]
@@ -651,8 +651,8 @@
 			],
 			"action": [
 				{
-					"name": "长棍",
 					"ENG_name": "Quarterstaff",
+					"name": "长棍",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 钝击伤害，或者如果用双手使用则为4 ({@damage 1d8}) 钝击伤害。"
 					]
@@ -687,8 +687,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "施法者（魔术师）",
 			"ENG_name": "Spellcaster (Mage)",
+			"name": "施法者（魔术师）",
 			"source": "SDW",
 			"level": 9,
 			"size": [
@@ -738,8 +738,8 @@
 			],
 			"spellcasting": [
 				{
-					"name": "施法（法师）",
 					"ENG_name": "Spellcasting (Mage)",
+					"name": "施法（法师）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"施法者的施法能力是智力（法术豁免{@dc 16}，法术攻击命中{@hit 8}）。施法者准备了以下法师法术："
@@ -794,8 +794,8 @@
 			],
 			"trait": [
 				{
-					"name": "强力戏法",
 					"ENG_name": "Potent Cantrip",
+					"name": "强力戏法",
 					"entries": [
 						"施法者可以将它的法术施放能力调整值加到它用任何戏法造成的伤害中。"
 					]
@@ -803,8 +803,8 @@
 			],
 			"action": [
 				{
-					"name": "长棍",
 					"ENG_name": "Quarterstaff",
+					"name": "长棍",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 钝击伤害，或者如果用双手使用则为4 ({@damage 1d8}) 钝击伤害。"
 					]
@@ -842,8 +842,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "战士",
 			"ENG_name": "Warrior",
+			"name": "战士",
 			"source": "SDW",
 			"level": 9,
 			"size": [
@@ -894,29 +894,29 @@
 			],
 			"trait": [
 				{
-					"name": "备战",
 					"ENG_name": "Battle Readiness",
+					"name": "备战",
 					"entries": [
 						"战士在先攻骰上有优势。"
 					]
 				},
 				{
-					"name": "精通重击",
 					"ENG_name": "Improved Critical",
+					"name": "精通重击",
 					"entries": [
 						"战士的攻击骰在掷出19或20时会得到重击，使用的是{@dice d20}。"
 					]
 				},
 				{
-					"name": "不屈（1/天）",
 					"ENG_name": "Indomitable (1/Day)",
+					"name": "不屈（1/天）",
 					"entries": [
 						"战士可以重新掷一个他失败的豁免检定，但必须使用新的掷骰结果。"
 					]
 				},
 				{
-					"name": "战斗职能",
 					"ENG_name": "Martial Role",
+					"name": "战斗职能",
 					"entries": [
 						"该战士具有以下特质之一，由你选择：",
 						{
@@ -924,16 +924,16 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "攻击手",
 									"ENG_name": "Attacker",
+									"name": "攻击手",
 									"type": "item",
 									"entries": [
 										"战士获得攻击检定的+2加值。"
 									]
 								},
 								{
-									"name": "防御者",
 									"ENG_name": "Defender",
+									"name": "防御者",
 									"type": "item",
 									"entries": [
 										"战士获得了以下保护反应。"
@@ -944,8 +944,8 @@
 					]
 				},
 				{
-					"name": "回气 (短休或长休之后充能)",
 					"ENG_name": "Second Wind (Recharges after a Short or Long Rest)",
+					"name": "回气 (短休或长休之后充能)",
 					"entries": [
 						"战士可以在其回合使用附赠动作来恢复等于{@dice 1d10} + 其等级的生命值。"
 					]
@@ -953,22 +953,22 @@
 			],
 			"action": [
 				{
-					"name": "额外攻击",
 					"ENG_name": "Extra Attack",
+					"name": "额外攻击",
 					"entries": [
 						"战士在其回合采取攻击行动时，可以进行两次攻击，而不是一次。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及范围5尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，或者如果使用双手则为9 ({@damage 1d10 + 4}) 挥砍伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 6}，射程150/600尺，一目标。{@h}6（{@damage 1d8 + 2}）点穿刺伤害。"
 					]
@@ -976,8 +976,8 @@
 			],
 			"reaction": [
 				{
-					"name": "防护（仅限守卫者）",
 					"ENG_name": "Protection (Defender Only)",
+					"name": "防护（仅限守卫者）",
 					"entries": [
 						"当战士能看到的生物攻击距离战士5尺以内且目标不是战士时，战士可以使用其反应来使攻击掷骰处于劣势。战士必须持有盾牌。"
 					]

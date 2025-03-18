@@ -14,8 +14,8 @@
 	},
 	"monster": [
 		{
-			"name": "专家",
 			"ENG_name": "Expert",
+			"name": "专家",
 			"source": "SLW",
 			"level": 7,
 			"size": [
@@ -64,15 +64,15 @@
 			],
 			"trait": [
 				{
-					"name": "好帮手",
 					"ENG_name": "Helpful",
+					"name": "好帮手",
 					"entries": [
-						"专家可以将协助动作作为一个附加动作使用，接受协助的生物在{@dice d20}掷骰中获得{@dice d20}加值。如果这是攻击掷骰，该生物可以选择不加到攻击掷骰上，而在攻击命中后将该加值加到对一个目标的攻击伤害掷骰上。"
+						"专家可以以附加动作执行帮助动作，接受帮助的生物在其{@dice d20}掷骰中获得{@dice 1d6}加值。如果该掷骰为攻击掷骰，该生物可以选择不加此加值，若攻击命中，则可以将此加值加到对单一目标的攻击伤害掷骰中。"
 					]
 				},
 				{
-					"name": "工具",
 					"ENG_name": "Tools",
+					"name": "工具",
 					"entries": [
 						"该专家拥有{@item 盗贼工具|PHB}和一件乐器。"
 					]
@@ -80,29 +80,29 @@
 			],
 			"action": [
 				{
-					"name": "额外攻击",
 					"ENG_name": "Extra Attack",
+					"name": "额外攻击",
 					"entries": [
 						"专家在其回合采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 					]
 				},
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及 5 尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 6}，触及5尺或20/60尺，单一目标。{@h}5 ({@damage 1d4 + 3}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "短弓",
 					"ENG_name": "Shortbow",
+					"name": "短弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 6}，射程80/320尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害。"
 					]
@@ -129,8 +129,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "骷髅飞人",
 			"ENG_name": "Skull Flier",
+			"name": "骷髅飞人",
 			"source": "SLW",
 			"size": [
 				"M"
@@ -179,8 +179,8 @@
 			"cr": "1/2",
 			"action": [
 				{
-					"name": "钉刺",
 					"ENG_name": "Sting",
+					"name": "钉刺",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一生物。{@h}5（{@damage 1d6 + 2}）点穿刺伤害，目标必须进行一次{@dc 11}的体质豁免，豁免失败则受到10（{@damage 3d6}）点毒素伤害，豁免成功则伤害减半且不会中毒。若该伤害将一个生物的生命值降为0，则目标伤势稳定但陷入{@condition 中毒}，该中毒状态持续1小时，此期间目标同时处于{@condition 麻痹}和{@condition 中毒}状态。"
 					]
@@ -206,8 +206,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "施法者（治疗者）",
 			"ENG_name": "Spellcaster (Healer)",
+			"name": "施法者（治疗者）",
 			"source": "SLW",
 			"level": 7,
 			"size": [
@@ -257,8 +257,8 @@
 			],
 			"spellcasting": [
 				{
-					"name": "施法（治疗者）",
 					"ENG_name": "Spellcasting (Healer)",
+					"name": "施法（治疗者）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"施法者的施法能力是感知（法术豁免{@dc 14}，{@hit 6}命中法术攻击）。施法者准备了以下牧师法术："
@@ -306,8 +306,8 @@
 			],
 			"trait": [
 				{
-					"name": "强力戏法",
 					"ENG_name": "Potent Cantrip",
+					"name": "强力戏法",
 					"entries": [
 						"施法者可以将它的法术施放能力调整值加到它用任何戏法造成的伤害中。"
 					]
@@ -315,8 +315,8 @@
 			],
 			"action": [
 				{
-					"name": "长棍",
 					"ENG_name": "Quarterstaff",
+					"name": "长棍",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 钝击h，或者如果用双手使用则为 4 ({@damage 1d8}) 钝击h。"
 					]
@@ -347,8 +347,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "施法者（魔术师）",
 			"ENG_name": "Spellcaster (Mage)",
+			"name": "施法者（魔术师）",
 			"source": "SLW",
 			"level": 7,
 			"size": [
@@ -398,8 +398,8 @@
 			],
 			"spellcasting": [
 				{
-					"name": "施法（法师）",
 					"ENG_name": "Spellcasting (Mage)",
+					"name": "施法（法师）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"施法者的施法能力是智力（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。施法者准备了以下法师法术："
@@ -447,8 +447,8 @@
 			],
 			"trait": [
 				{
-					"name": "强力戏法",
 					"ENG_name": "Potent Cantrip",
+					"name": "强力戏法",
 					"entries": [
 						"施法者可以将它的法术施放能力调整值加到它用任何戏法造成的伤害中。"
 					]
@@ -456,8 +456,8 @@
 			],
 			"action": [
 				{
-					"name": "长棍",
 					"ENG_name": "Quarterstaff",
+					"name": "长棍",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 钝击h，或者如果用双手使用则为 4 ({@damage 1d8}) 钝击h。"
 					]
@@ -488,8 +488,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "塔洛斯雕像",
 			"ENG_name": "Statue of Talos",
+			"name": "塔洛斯雕像",
 			"source": "SLW",
 			"size": [
 				"L"
@@ -556,8 +556,8 @@
 			"cr": "10",
 			"trait": [
 				{
-					"name": "拟形",
 					"ENG_name": "False Appearance",
+					"name": "拟形",
 					"entries": [
 						"当雕像保持静止时，它与无生命的雕像无法区分。"
 					]
@@ -565,22 +565,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"雕像进行五次攻击：一次用头槌，四次用其闪电剑刃。"
 					]
 				},
 				{
-					"name": "头槌",
 					"ENG_name": "Headbutt",
+					"name": "头槌",
 					"entries": [
 						"{@atk mw}命中{@hit 8}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "闪电刀刃",
 					"ENG_name": "Lightning Bolt Blades",
+					"name": "闪电刀刃",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}9（{@damage 2d4 + 4}）挥砍伤害。"
 					]
@@ -608,8 +608,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "爪牙",
 			"ENG_name": "Tooth-N-Claw",
+			"name": "爪牙",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SLW",
@@ -658,15 +658,15 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "敏锐嗅听觉",
 					"ENG_name": "Keen Hearing and Smell",
+					"name": "敏锐嗅听觉",
 					"entries": [
 						"Tooth-N-Claw 在依靠听觉或嗅觉的感知（{@skill 察觉}）检定上具有优势。"
 					]
 				},
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果至少有一个盟友在5尺内且该盟友不是{@condition 失能}状态，Tooth-N-Claw在对生物进行攻击检定时具有优势。"
 					]
@@ -674,15 +674,15 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw}命中{@hit 5}，触及5尺，单一目标。{@h}7（{@damage 1d8 + 3}）点穿刺伤害加上7（{@damage 2d6}）冷冻伤害。"
 					]
 				},
 				{
-					"name": "冰冷吐息 {@recharge 5}",
 					"ENG_name": "Freezing Breath {@recharge 5}",
+					"name": "冰冷吐息 {@recharge 5}",
 					"entries": [
 						"牙与爪在一个15尺的锥形范围内呼出一道冰冷的吐息。该区域内的每个生物必须进行一次{@dc 12}的敏捷豁免检定，若豁免失败则受到21（{@damage 6d6}）点冷冻伤害，若豁免成功则只受到一半伤害。"
 					]
@@ -716,8 +716,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "战士",
 			"ENG_name": "Warrior",
+			"name": "战士",
 			"source": "SLW",
 			"level": 7,
 			"size": [
@@ -768,22 +768,22 @@
 			],
 			"trait": [
 				{
-					"name": "备战",
 					"ENG_name": "Battle Readiness",
+					"name": "备战",
 					"entries": [
 						"战士在先攻骰上有优势。"
 					]
 				},
 				{
-					"name": "精通重击",
 					"ENG_name": "Improved Critical",
+					"name": "精通重击",
 					"entries": [
 						"战士的攻击检定在d20骰出19或20时获得重击。"
 					]
 				},
 				{
-					"name": "战斗职能",
 					"ENG_name": "Martial Role",
+					"name": "战斗职能",
 					"entries": [
 						"该战士具有以下特质之一，由你选择：",
 						{
@@ -791,15 +791,15 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "Attacker",
 									"type": "item",
 									"name": "攻击手",
-									"ENG_name": "Attacker",
 									"entry": "战士获得攻击检定的+2加值。"
 								},
 								{
+									"ENG_name": "Defender",
 									"type": "item",
 									"name": "防御者",
-									"ENG_name": "Defender",
 									"entry": "战士获得了以下保护反应。"
 								}
 							]
@@ -809,22 +809,22 @@
 			],
 			"action": [
 				{
-					"name": "额外攻击",
 					"ENG_name": "Extra Attack",
+					"name": "额外攻击",
 					"entries": [
 						"战士在其回合采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}7（{@damage 1d8 + 3}）点挥砍伤害，，双手持时8（{@damage 1d10 + 3}）点挥砍伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 5}，射程150/600尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点穿刺伤害。"
 					]
@@ -832,8 +832,8 @@
 			],
 			"reaction": [
 				{
-					"name": "防护（仅限守卫者）",
 					"ENG_name": "Protection (Defender Only)",
+					"name": "防护（仅限守卫者）",
 					"entries": [
 						"战士对5尺内的目标不是战士的生物的攻击检定施加劣势。战士必须能看到攻击者。"
 					]
@@ -841,8 +841,8 @@
 			],
 			"altArt": [
 				{
-					"name": "战士（守卫者）",
 					"ENG_name": "Warrior (Defender)",
+					"name": "战士（守卫者）",
 					"source": "SLW"
 				}
 			],

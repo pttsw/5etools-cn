@@ -16,15 +16,15 @@
 	},
 	"monster": [
 		{
-			"name": "阿米莉亚·加伦",
 			"ENG_name": "Amelia Ghallen",
+			"name": "阿米莉亚·加伦",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 180,
 			"_copy": {
-				"name": "老兵",
 				"ENG_name": "Veteran",
+				"name": "老兵",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -48,8 +48,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "安迪尔·瓦尔马科斯",
 			"ENG_name": "Andir Valmakos",
+			"name": "安迪尔·瓦尔马科斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -110,11 +110,11 @@
 			"pbNote": "+2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"安迪尔的施法能力基于智力（法术豁免 {@dc 12}，法术攻击命中加值 {@hit 4}）。他准备了以下法师法术："
+						"安迪尔的施法能力基于智力（法术豁免 {@dc 12}，法术攻击命中 {@hit 4}）。他准备了以下法师法术："
 					],
 					"will": [
 						"{@spell 光亮术}",
@@ -133,8 +133,8 @@
 			],
 			"trait": [
 				{
-					"name": "附赠熟练项",
 					"ENG_name": "Bonus Proficiencies",
+					"name": "附赠熟练项",
 					"entries": [
 						"安迪尔熟练使用简易武器和轻型护甲。"
 					]
@@ -142,15 +142,15 @@
 			],
 			"action": [
 				{
-					"name": "奥能爆",
 					"ENG_name": "Arcane Burst",
+					"name": "奥能爆",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 4}，触及5尺或射程120尺，单一目标。{@h}7 ({@damage 1d10 + 2}) 力场伤害。"
 					]
 				},
 				{
-					"name": "长棍",
 					"ENG_name": "Quarterstaff",
+					"name": "长棍",
 					"entries": [
 						"{@atk mw} {@hit 2} 命中，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 钝击伤害，或4 ({@damage 1d8}) 钝击伤害，如果用双手使用。"
 					]
@@ -158,9 +158,9 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Andir beyond 1st Level",
 					"type": "inset",
 					"name": "安迪尔超越1级",
-					"ENG_name": "Andir beyond 1st Level",
 					"entries": [
 						{
 							"type": "table",
@@ -177,12 +177,12 @@
 							"rows": [
 								[
 									"2nd",
-									"16 （掷{@dice 3d8 + 3}加3）",
+									"16 ({@dice 3d8 + 3})",
 									"施法。安迪尔学会了另一个1级法术：{@spell 大步奔行}。"
 								],
 								[
 									"3rd",
-									"22（{@dice 4d8 + 4}）",
+									"22 ({@dice 4d8 + 4})",
 									"施法。安迪尔获得了一个1级法术位。他还学会了另一个1级法术：{@spell 谭森浮碟术}。"
 								],
 								[
@@ -197,12 +197,12 @@
 								],
 								[
 									"6th",
-									"38 （{@dice 7d8 + 7}）",
+									"38 ({@dice 7d8 + 7})",
 									"强力戏法。安迪尔在施放任何戏法时，将其智力调整值加到造成的伤害上。"
 								],
 								[
 									"7th",
-									"44 （{@dice 8d8 + 8}）",
+									"44 ({@dice 8d8 + 8})",
 									"施法。安迪尔获得了一个2级法术位。他还学会了另一个2级法术：{@spell 隐形术}。"
 								],
 								[
@@ -261,15 +261,15 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "安迪尔·瓦尔马科斯（10级）",
 					"ENG_name": "Andir Valmakos (10th Level)",
+					"name": "安迪尔·瓦尔马科斯（10级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"安迪尔将他的智力调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -279,8 +279,8 @@
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 钝击伤害，或者如果用双手使用则为4 ({@damage 1d8}) 钝击伤害。"
 								]
@@ -305,10 +305,10 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"安迪尔的施法能力是智力（法术豁免{@dc 16}，法术攻击命中为{@hit 8}）。他准备了以下法师法术："
+								"安迪尔的施法能力基于智力（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。他准备了以下法师法术："
 							],
 							"will": [
 								"{@spell 光亮术}",
@@ -345,15 +345,15 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（11级）",
 					"ENG_name": "Andir Valmakos (11th Level)",
+					"name": "安迪尔·瓦尔马科斯（11级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"安迪尔将他的智力调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -363,8 +363,8 @@
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 钝击伤害，或者如果用双手使用则为4 ({@damage 1d8}) 钝击伤害。"
 								]
@@ -389,10 +389,10 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"安德尔的施法关键属性是智力（法术豁免 {@dc 16}，法术攻击命中 {@hit 8}）。他准备了以下法师法术："
+								"安迪尔的施法能力基于智力（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。他准备了以下法师法术："
 							],
 							"will": [
 								"{@spell 光亮术}",
@@ -430,8 +430,8 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（2级）",
 					"ENG_name": "Andir Valmakos (2nd Level)",
+					"name": "安迪尔·瓦尔马科斯（2级）",
 					"source": "DSotDQ",
 					"level": 2,
 					"hp": {
@@ -440,8 +440,8 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"安迪尔的施法能力基于智力（法术豁免 {@dc 12}，法术攻击命中 {@hit 4}）。他准备了以下法师法术："
 							],
@@ -464,8 +464,8 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（3级）",
 					"ENG_name": "Andir Valmakos (3rd Level)",
+					"name": "安迪尔·瓦尔马科斯（3级）",
 					"source": "DSotDQ",
 					"level": 3,
 					"hp": {
@@ -474,10 +474,10 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"安迪尔的施法能力基于智力（法术豁免难度 {@dc 12}，法术攻击命中加值 {@hit 4}）。他已准备以下法师法术："
+								"安迪尔的施法能力基于智力（法术豁免 {@dc 12}，法术攻击命中 {@hit 4}）。他准备了以下法师法术："
 							],
 							"will": [
 								"{@spell 光亮术}",
@@ -499,8 +499,8 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（4级）",
 					"ENG_name": "Andir Valmakos (4th Level)",
+					"name": "安迪尔·瓦尔马科斯（4级）",
 					"source": "DSotDQ",
 					"level": 4,
 					"hp": {
@@ -516,8 +516,8 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"安迪尔的施法能力基于智力（法术豁免 {@dc 13}，法术攻击命中 {@hit 5}）。他准备了以下法师法术："
 							],
@@ -542,16 +542,16 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（5级）",
 					"ENG_name": "Andir Valmakos (5th Level)",
+					"name": "安迪尔·瓦尔马科斯（5级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"action": {
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 钝击h，或者如果用双手使用则为 4 ({@damage 1d8}) 钝击h。"
 								]
@@ -576,8 +576,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"安迪尔的施法能力基于智力（法术豁免 {@dc 14}，法术攻击命中 {@hit 6}）。他准备了以下法师法术："
 							],
@@ -608,15 +608,15 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（6级）",
 					"ENG_name": "Andir Valmakos (6th Level)",
+					"name": "安迪尔·瓦尔马科斯（6级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"安迪尔将他的智力调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -626,8 +626,8 @@
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 钝击h，或者如果用双手使用则为 4 ({@damage 1d8}) 钝击h。"
 								]
@@ -652,8 +652,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"安迪尔的施法能力基于智力（法术豁免 {@dc 14}，法术攻击命中 {@hit 6}）。他准备了以下法师法术："
 							],
@@ -684,15 +684,15 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（7级）",
 					"ENG_name": "Andir Valmakos (7th Level)",
+					"name": "安迪尔·瓦尔马科斯（7级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"安迪尔将他的智力调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -702,8 +702,8 @@
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 钝击h，或者如果用双手使用则为 4 ({@damage 1d8}) 钝击h。"
 								]
@@ -728,10 +728,10 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"安迪尔的施法能力是基于智力（法术豁免 {@dc 14}，法术攻击命中 {@hit 6}）。他准备了以下法师法术："
+								"安迪尔的施法能力基于智力（法术豁免 {@dc 14}，法术攻击命中 {@hit 6}）。他准备了以下法师法术："
 							],
 							"will": [
 								"{@spell 光亮术}",
@@ -761,15 +761,15 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（8级）",
 					"ENG_name": "Andir Valmakos (8th Level)",
+					"name": "安迪尔·瓦尔马科斯（8级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"安迪尔将他的智力调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -779,8 +779,8 @@
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 钝击h，或者如果用双手使用则为 4 ({@damage 1d8}) 钝击h。"
 								]
@@ -805,8 +805,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"安迪尔的施法能力为智力（法术豁免 {@dc 15}，法术攻击命中 {@hit 7}）。他准备了以下法师法术："
 							],
@@ -838,15 +838,15 @@
 					"variant": null
 				},
 				{
-					"name": "安迪尔·瓦尔马科斯（9级）",
 					"ENG_name": "Andir Valmakos (9th Level)",
+					"name": "安迪尔·瓦尔马科斯（9级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"安迪尔将他的智力调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -856,8 +856,8 @@
 							"mode": "replaceArr",
 							"replace": "长棍",
 							"items": {
-								"name": "长棍",
 								"ENG_name": "Quarterstaff",
+								"name": "长棍",
 								"entries": [
 									"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 钝击伤害，或者如果用双手使用则为4 ({@damage 1d8}) 钝击伤害。"
 								]
@@ -882,8 +882,8 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"安迪尔的施法能力基于智力（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。他准备了以下法师法术："
 							],
@@ -923,8 +923,8 @@
 			]
 		},
 		{
-			"name": "安克洛死兽",
 			"ENG_name": "Anhkolox",
+			"name": "安克洛死兽",
 			"source": "DSotDQ",
 			"page": 192,
 			"size": [
@@ -979,8 +979,8 @@
 			"cr": "9",
 			"trait": [
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"ankholox不需要空气、食物、饮水或睡眠。"
 					]
@@ -988,22 +988,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"安科洛克斯进行两次爪击攻击和一次困捕撕裂攻击。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 10}，触及5尺，单一目标。{@h}17 ({@damage 2d10 + 6}) 点穿刺伤害。如果目标是一个大型或更小的生物，它必须在一次力量豁免检定上成功，难度等级为{@dc 18}，否则将被ankholox选择的水平方向推移最多20尺。"
 					]
 				},
 				{
-					"name": "困缚撕裂",
 					"ENG_name": "Entrapping Rend",
+					"name": "困缚撕裂",
 					"entries": [
 						"{@atk mw} {@hit 10} 攻击，触及 5 尺，一个目标。{@h}23 ({@damage 5d6 + 6}) 穿刺伤害，如果目标是大型或更小的生物，目标必须通过 {@dc 18} 力量豁免检定，否则将被困在安克洛克斯的肋骨中并 {@condition 擒抱}（逃脱 {@dc 18}）。直到擒抱结束，目标将 {@condition 束缚}，且安克洛克斯无法对另一个目标使用 Entrapping Rend。"
 					]
@@ -1036,8 +1036,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "奥拉克龙裔",
 			"ENG_name": "Aurak Draconian",
+			"name": "奥拉克龙裔",
 			"source": "DSotDQ",
 			"page": 196,
 			"size": [
@@ -1097,8 +1097,8 @@
 			"cr": "6",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙裔生物施放以下法术之一，无需材料组件，并使用魅力作为施法能力（法术豁免难度等级{@dc 14}）："
@@ -1123,15 +1123,15 @@
 			],
 			"trait": [
 				{
-					"name": "命令灵光",
 					"ENG_name": "Aura of Command",
+					"name": "命令灵光",
 					"entries": [
 						"龙裔在其自身为中心的20尺半径范围内散发出一种威严的气息。处于这个光环中的龙裔，如果能看到或听到aurak，则不会受到{@condition 魅惑}状态的影响，并且在尝试避免或结束自身{@condition 恐慌}状态的豁免检定上拥有优势。"
 					]
 				},
 				{
-					"name": "临终苦难",
 					"ENG_name": "Death Throes",
+					"name": "临终苦难",
 					"entries": [
 						"当龙裔的生命值降至0时，其魔法的精华会以闪电球的形式在距离它30英尺内最近的生物身上爆发，随后会弹向第一个生物15英尺内最多两个其他生物。每个生物必须进行一次{@dc 14}敏捷豁免。豁免失败时，该生物受到9（{@damage 2d8}）点闪电伤害，并且直到其下一回合结束前处于{@condition 震慑}状态。豁免成功时，该生物受到一半的伤害且不会{@condition 震慑}。"
 					]
@@ -1139,29 +1139,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙裔进行三次撕裂或能量射线攻击。"
 					]
 				},
 				{
-					"name": "撕裂",
 					"ENG_name": "Rend",
+					"name": "撕裂",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及范围5尺，单一目标。{@h}8点（{@damage 1d12 + 2}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "能量射线",
 					"ENG_name": "Energy Ray",
+					"name": "能量射线",
 					"entries": [
 						"{@atk rs} 命中{@hit 6}，射程60尺，单一目标。{@h}8点（{@damage 1d10 + 3}）力场伤害。"
 					]
 				},
 				{
-					"name": "有毒气息 {@recharge 5}",
 					"ENG_name": "Noxious Breath {@recharge 5}",
+					"name": "有毒气息 {@recharge 5}",
 					"entries": [
 						"龙裔呼出一团15尺锥形的毒气。区域内的每个生物必须进行一次{@dc 14}的体质豁免。若豁免失败，该生物受到21（{@damage 6d6}）点毒素伤害，并获得1级{@condition 力竭}。若豁免成功，该生物只受到一半伤害，不会获得{@condition 力竭}，并且在24小时内对所有龙裔的毒气吐息免疫。"
 					]
@@ -1217,8 +1217,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Ayik Ur",
 			"ENG_name": "Ayik Ur",
+			"name": "Ayik Ur",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -1279,15 +1279,15 @@
 			"pbNote": "+2",
 			"trait": [
 				{
-					"name": "攻击手",
 					"ENG_name": "Attacker",
+					"name": "攻击手",
 					"entries": [
 						"艾克获得所有攻击检定的+2加值（包含在下文中）。"
 					]
 				},
 				{
-					"name": "附赠熟练项",
 					"ENG_name": "Bonus Proficiencies",
+					"name": "附赠熟练项",
 					"entries": [
 						"艾克熟练使用简单和军用武器、盾牌以及所有护甲。"
 					]
@@ -1295,15 +1295,15 @@
 			],
 			"action": [
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 7}，射程150/600尺，单一目标。{@h}7 ({@damage 1d8 + 3}) 点穿刺伤害。"
 					]
@@ -1311,9 +1311,9 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Ayik beyond 1st Level",
 					"type": "inset",
 					"name": "艾伊克超越1级",
-					"ENG_name": "Ayik beyond 1st Level",
 					"entries": [
 						{
 							"type": "table",
@@ -1330,12 +1330,12 @@
 							"rows": [
 								[
 									"2nd",
-									"16 （掷{@dice 3d8 + 3}加3）",
+									"16 ({@dice 3d8 + 3})",
 									"再度行动。艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 								],
 								[
 									"3rd",
-									"22（{@dice 4d8 + 4}）",
+									"22 ({@dice 4d8 + 4})",
 									"重击改善。艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 								],
 								[
@@ -1350,12 +1350,12 @@
 								],
 								[
 									"6th",
-									"38 （{@dice 7d8 + 7}）",
+									"38 ({@dice 7d8 + 7})",
 									"额外攻击。艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 								],
 								[
 									"7th",
-									"44 （{@dice 8d8 + 8}）",
+									"44 ({@dice 8d8 + 8})",
 									"战斗准备。艾伊克在先攻骰上有优势。"
 								],
 								[
@@ -1404,44 +1404,44 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "艾伊克·乌尔（10级）",
 					"ENG_name": "Ayik Ur (10th Level)",
+					"name": "艾伊克·乌尔（10级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"艾伊克在先攻骰上有优势。"
 									]
 								},
 								{
-									"name": "精通防御",
 									"ENG_name": "Improved Defense",
+									"name": "精通防御",
 									"entries": [
 										"艾伊克的护甲等级增加了1点。"
 									]
@@ -1478,15 +1478,15 @@
 					"pbNote": "+4",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 11}，触及5尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 11}，射程150/600尺，单一目标。{@h}9 ({@damage 1d8 + 5}) 点穿刺伤害。"
 							]
@@ -1495,51 +1495,51 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（11级）",
 					"ENG_name": "Ayik Ur (11th Level)",
+					"name": "艾伊克·乌尔（11级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"艾伊克在先攻骰上有优势。"
 									]
 								},
 								{
-									"name": "精通防御",
 									"ENG_name": "Improved Defense",
+									"name": "精通防御",
 									"entries": [
 										"艾伊克的护甲等级增加了1点。"
 									]
 								},
 								{
-									"name": "不屈",
 									"ENG_name": "Indomitable",
+									"name": "不屈",
 									"entries": [
 										"艾伊克可以重新掷骰一个他未通过的豁免检定，但他必须使用新的掷骰结果。一旦他使用了这个特性，他必须在完成一次长休后才能再次使用。"
 									]
@@ -1576,15 +1576,15 @@
 					"pbNote": "+4",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 11}，触及5尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 11}，射程150/600尺，单一目标。{@h}9 ({@damage 1d8 + 5}) 点穿刺伤害。"
 							]
@@ -1593,15 +1593,15 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（2级）",
 					"ENG_name": "Ayik Ur (2nd Level)",
+					"name": "艾伊克·乌尔（2级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "回气",
 								"ENG_name": "Second Wind",
+								"name": "回气",
 								"entries": [
 									"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 								]
@@ -1616,23 +1616,23 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（3级）",
 					"ENG_name": "Ayik Ur (3rd Level)",
+					"name": "艾伊克·乌尔（3级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
@@ -1648,23 +1648,23 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（4级）",
 					"ENG_name": "Ayik Ur (4th Level)",
+					"name": "艾伊克·乌尔（4级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
@@ -1698,15 +1698,15 @@
 					},
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 8}，射程 150/600 尺，单一目标。{@h}8（{@damage 1d8 + 4}）点穿刺伤害。"
 							]
@@ -1715,23 +1715,23 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（5级）",
 					"ENG_name": "Ayik Ur (5th Level)",
+					"name": "艾伊克·乌尔（5级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
@@ -1767,15 +1767,15 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 9}，射程150/600尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 点穿刺伤害。"
 							]
@@ -1784,30 +1784,30 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（6级）",
 					"ENG_name": "Ayik Ur (6th Level)",
+					"name": "艾伊克·乌尔（6级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 									]
@@ -1843,15 +1843,15 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 9}，射程150/600尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 点穿刺伤害。"
 							]
@@ -1860,37 +1860,37 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（7级）",
 					"ENG_name": "Ayik Ur (7th Level)",
+					"name": "艾伊克·乌尔（7级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"艾伊克在先攻骰上有优势。"
 									]
@@ -1926,15 +1926,15 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 9}，射程150/600尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 点穿刺伤害。"
 							]
@@ -1943,37 +1943,37 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（8级）",
 					"ENG_name": "Ayik Ur (8th Level)",
+					"name": "艾伊克·乌尔（8级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"艾伊克在先攻骰上有优势。"
 									]
@@ -2009,15 +2009,15 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 10}，触及5尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 10}，射程150/600尺，单一目标。{@h}9 ({@damage 1d8 + 5}) 点穿刺伤害。"
 							]
@@ -2026,37 +2026,37 @@
 					"variant": null
 				},
 				{
-					"name": "艾伊克·乌尔（9级）",
 					"ENG_name": "Ayik Ur (9th Level)",
+					"name": "艾伊克·乌尔（9级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"艾伊克可以在自己的回合上使用附赠动作来恢复等同于{@dice 1d10} + 他的等级的生命值。一旦他使用了这个特性，他必须在完成一次短休或长休后才能再次使用。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"艾伊克的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"艾伊克在他的回合上采取{@action 攻击}行动时，可以进行两次攻击，而不是一次。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"艾伊克在先攻骰上有优势。"
 									]
@@ -2092,15 +2092,15 @@
 					"pbNote": "+4",
 					"action": [
 						{
-							"name": "短剑",
 							"ENG_name": "Shortsword",
+							"name": "短剑",
 							"entries": [
 								"{@atk mw} 命中{@hit 11}，触及5尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害。"
 							]
 						},
 						{
-							"name": "长弓",
 							"ENG_name": "Longbow",
+							"name": "长弓",
 							"entries": [
 								"{@atk rw} 命中{@hit 11}，射程150/600尺，单一目标。{@h}9 ({@damage 1d8 + 5}) 点穿刺伤害。"
 							]
@@ -2111,8 +2111,8 @@
 			]
 		},
 		{
-			"name": "巴兹龙裔",
 			"ENG_name": "Baaz Draconian",
+			"name": "巴兹龙裔",
 			"source": "DSotDQ",
 			"page": 197,
 			"size": [
@@ -2156,22 +2156,22 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "可控坠落",
 					"ENG_name": "Controlled Fall",
+					"name": "可控坠落",
 					"entries": [
 						"当龙裔坠落且没有处于{@condition 失能}状态时，它在计算坠落伤害时可以减去最多100尺的距离。"
 					]
 				},
 				{
-					"name": "临终苦难",
 					"ENG_name": "Death Throes",
+					"name": "临终苦难",
 					"entries": [
 						"当龙裔生物的生命值降至0点时，它的身体会变成石头并释放一种石化气体。每个在龙裔生物5尺范围内的生物必须成功进行一次{@dc 11}体质豁免检定，否则将被{@condition 束缚}，开始变成石头。被{@condition 束缚}的生物必须在它下一回合结束时重复进行豁免检定。成功则效果结束；失败则生物将被{@condition 石化}1分钟。1分钟后，龙裔生物的身体化为尘土。"
 					]
 				},
 				{
-					"name": "龙族崇拜",
 					"ENG_name": "Draconic Devotion",
+					"name": "龙族崇拜",
 					"entries": [
 						"当龙裔生物能看到一条不对它敌对的龙时，龙裔生物在攻击骰上有优势。"
 					]
@@ -2179,15 +2179,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙裔进行两次短剑攻击。"
 					]
 				},
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}4（{@damage 1d6 + 1}）点穿刺伤害。"
 					]
@@ -2229,15 +2229,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Bakaris the Younger",
 			"ENG_name": "Bakaris the Younger",
+			"name": "Bakaris the Younger",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 57,
 			"_copy": {
-				"name": "贵族",
 				"ENG_name": "Noble",
+				"name": "贵族",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2262,15 +2262,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Bakaris Uth Estide",
 			"ENG_name": "Bakaris Uth Estide",
+			"name": "Bakaris Uth Estide",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 54,
 			"_copy": {
-				"name": "贵族",
 				"ENG_name": "Noble",
+				"name": "贵族",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2295,15 +2295,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "贝克林·乌斯·维哈林",
 			"ENG_name": "Becklin Uth Viharin",
+			"name": "贝克林·乌斯·维哈林",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 55,
 			"_copy": {
-				"name": "骑士",
 				"ENG_name": "Knight",
+				"name": "骑士",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2328,15 +2328,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "贝勒费昂",
 			"ENG_name": "Belephaion",
+			"name": "贝勒费昂",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 157,
 			"_copy": {
-				"name": "青年蓝龙",
 				"ENG_name": "Young Blue Dragon",
+				"name": "青年蓝龙",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2348,8 +2348,8 @@
 					"action": {
 						"mode": "appendArr",
 						"items": {
-							"name": "改变形态",
 							"ENG_name": "Alter Shape",
+							"name": "改变形态",
 							"entries": [
 								"Belephaion能够通过魔法变身为一只{@creature 雕}或一个{@creature 祭司}，同时保留他的阵营、伤害免疫、生命值、生命骰、感知、感知和魅力得分。如果他的生命值降至0点或使用附赠动作结束变身，这种变身就会结束。"
 							]
@@ -2361,8 +2361,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "博扎克龙裔",
 			"ENG_name": "Bozak Draconian",
+			"name": "博扎克龙裔",
 			"source": "DSotDQ",
 			"page": 198,
 			"size": [
@@ -2416,8 +2416,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙裔生物施放以下任一法术，不需要材料成分，并使用魅力作为施法能力（法术豁免{@dc 12}）："
@@ -2436,15 +2436,15 @@
 			],
 			"trait": [
 				{
-					"name": "临终苦难",
 					"ENG_name": "Death Throes",
+					"name": "临终苦难",
 					"entries": [
 						"当龙裔生物的生命值降至0点时，它的鳞片和肉体会立即萎缩，然后它的骨头发生爆炸。每个在其10尺范围内的生物都必须通过一次{@dc 10}敏捷豁免检定，否则将受到9 ({@damage 2d8})力场伤害。"
 					]
 				},
 				{
-					"name": "滑翔",
 					"ENG_name": "Glide",
+					"name": "滑翔",
 					"entries": [
 						"当龙裔生物坠落且未处于{@condition 失能}状态时，它可以在计算坠落伤害时减去最多100尺的坠落距离，并且每下降1尺，它可以水平移动最多2尺。"
 					]
@@ -2452,22 +2452,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙裔进行两次三叉戟近战攻击或两次闪电释放攻击。"
 					]
 				},
 				{
-					"name": "三叉戟",
 					"ENG_name": "Trident",
+					"name": "三叉戟",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或射程20/60尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害，或者如果用双手进行近战攻击则为6 ({@damage 1d8 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "闪电释放",
 					"ENG_name": "Lightning Discharge",
+					"name": "闪电释放",
 					"entries": [
 						"{@atk rs} 命中{@hit 4}，射程60尺，单一目标。{@h}10 ({@damage 3d6}) 闪电伤害。"
 					]
@@ -2523,15 +2523,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "哈斯克队长",
 			"ENG_name": "Captain Hask",
+			"name": "哈斯克队长",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 148,
 			"_copy": {
-				"name": "奥拉克龙裔",
 				"ENG_name": "Aurak Draconian",
+				"name": "奥拉克龙裔",
 				"source": "DSotDQ",
 				"_mod": {
 					"*": {
@@ -2546,8 +2546,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "卡拉多克",
 			"ENG_name": "Caradoc",
+			"name": "卡拉多克",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -2632,29 +2632,29 @@
 			"cr": "8",
 			"trait": [
 				{
-					"name": "束缚鬼魂",
 					"ENG_name": "Bound Haunting",
+					"name": "束缚鬼魂",
 					"entries": [
 						"卡拉丁的灵魂被束缚在达加德堡。在他的回合开始时，如果他在城堡墙壁外且没有使用他的附身动作附身于生物，他必须成功进行一次{@dc 15}魅力豁免检定，否则将消失并在城堡内的一个未被占据的空间重新出现。"
 					]
 				},
 				{
-					"name": "虚体移动",
 					"ENG_name": "Incorporeal Movement",
+					"name": "虚体移动",
 					"entries": [
 						"Caradoc能够像穿越困难地形一样穿越其他生物和物体。如果他在自己的回合结束时位于一个物体内部，他将受到5 ({@damage 1d10}) 力场伤害。"
 					]
 				},
 				{
-					"name": "复生",
 					"ENG_name": "Rejuvenation",
+					"name": "复生",
 					"entries": [
 						"如果Caradoc死亡，他将在Dargaard Keep内于{@dice 2d6}天内重新形成。"
 					]
 				},
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"卡拉丁不需要空气、食物、饮料或睡眠。"
 					]
@@ -2662,22 +2662,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"Caradoc进行两次枯萎之触攻击。"
 					]
 				},
 				{
-					"name": "枯萎触击",
 					"ENG_name": "Withering Touch",
+					"name": "枯萎触击",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}15（{@damage 2d10 + 4}）黯蚀伤害。"
 					]
 				},
 				{
-					"name": "附身 {@recharge 5}",
 					"ENG_name": "Possession {@recharge 5}",
+					"name": "附身 {@recharge 5}",
 					"entries": [
 						"卡拉丁可以看到的5尺内的一个人形生物必须成功进行一次{@dc 15}魅力豁免检定，否则将被他附身；他随即消失，目标进入{@condition 失能}状态并失去对自己身体的控制。卡拉丁现在控制了这个身体，但并没有剥夺目标的意识。卡拉丁不能成为任何攻击、法术或其他效果的目标，除非是那些针对不死生物的效果，他保留了自己的阵营、感知、感知和魅力，对被{@condition 魅惑}和{@condition 恐慌}免疫，并保留了他的分裂耳语附赠动作。他除此之外使用被附身目标的具体数值，但并不能获得目标的知识、职业特性或熟练项。",
 						"附身持续到身体的生命值降至0点，Caradoc可以通过附赠动作结束它，或者他被像{@spell 反制善恶}法术这样的效果转走或被迫离开。当附身结束时，Caradoc在身体5尺范围内的一个未被占据的空间重新出现。目标在成功进行豁免检定或附身结束后的24小时内对Caradoc的附身免疫。"
@@ -2686,8 +2686,8 @@
 			],
 			"bonus": [
 				{
-					"name": "分裂耳语",
 					"ENG_name": "Divisive Whispers",
+					"name": "分裂耳语",
 					"entries": [
 						"Caradoc通过魔法向60尺范围内的一个生物低语。目标必须通过一次{@dc 15}感知豁免检定，否则目标必须立即使用其反应对Caradoc选择的另一个生物进行近战攻击（如果没有其他生物在范围内，则浪费其反应）。"
 					]
@@ -2726,15 +2726,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "克莱斯特兰",
 			"ENG_name": "Clystran",
+			"name": "克莱斯特兰",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 126,
 			"_copy": {
-				"name": "斥候",
 				"ENG_name": "Scout",
+				"name": "斥候",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2759,20 +2759,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Cudgel Ironsmile",
 			"ENG_name": "Cudgel Ironsmile",
+			"name": "Cudgel Ironsmile",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 58,
 			"_copy": {
-				"name": "老兵",
 				"ENG_name": "Veteran",
+				"name": "老兵",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "丘陵矮人",
 						"ENG_name": "Hill Dwarf",
+						"name": "丘陵矮人",
 						"source": "PHB"
 					}
 				],
@@ -2792,15 +2792,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Dalamar",
 			"ENG_name": "Dalamar",
+			"name": "Dalamar",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 111,
 			"_copy": {
-				"name": "魔法师",
 				"ENG_name": "Mage",
+				"name": "魔法师",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2824,15 +2824,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "达雷特·海伍德",
 			"ENG_name": "Darrett Highwater",
+			"name": "达雷特·海伍德",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 59,
 			"_copy": {
-				"name": "骑士",
 				"ENG_name": "Knight",
+				"name": "骑士",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2857,15 +2857,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "德梅林",
 			"ENG_name": "Demelin",
+			"name": "德梅林",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 139,
 			"_copy": {
-				"name": "大法师",
 				"ENG_name": "Archmage",
+				"name": "大法师",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2889,13 +2889,13 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "龙噬体试验对象",
 			"ENG_name": "Dracophage Subject",
+			"name": "龙噬体试验对象",
 			"source": "DSotDQ",
 			"page": 118,
 			"_copy": {
-				"name": "卡帕克龙裔",
 				"ENG_name": "Kapak Draconian",
+				"name": "卡帕克龙裔",
 				"source": "DSotDQ",
 				"_mod": {
 					"*": {
@@ -2907,8 +2907,8 @@
 			},
 			"action": [
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}5 ({@damage 1d4 + 3}) 点穿刺伤害加上7 ({@damage 2d6})毒素伤害。如果目标是人形生物，它必须在一次{@dc 12}体质豁免检定中成功，否则将感染一种疾病\u2014\u2014微小的史拉蟾蛋。",
 						"一个人型宿主一次只能携带一个史拉蟾蛋。在三个月的时间里，蛋会移动到胸腔内，孵化并形成一个史拉蟾蝌蚪。在蝌蚪出生前的24小时里，宿主会感到不适；它的速度减半；并且在攻击掷骰、属性检定和豁免检定上具有劣势。出生时，蝌蚪会在1轮内通过咀嚼宿主的重要器官并从宿主的胸腔中钻出，这一过程会杀死宿主。",
@@ -2933,8 +2933,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "龙军龙骑士",
 			"ENG_name": "Dragon Army Dragonnel",
+			"name": "龙军龙骑士",
 			"source": "DSotDQ",
 			"page": 201,
 			"size": [
@@ -2985,8 +2985,8 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "飞掠",
 					"ENG_name": "Flyby",
+					"name": "飞掠",
 					"entries": [
 						"当龙炮飞离敌人的触及范围时，不会引发借机攻击。"
 					]
@@ -2994,15 +2994,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙炮进行两次撕裂攻击。"
 					]
 				},
 				{
-					"name": "撕裂",
 					"ENG_name": "Rend",
+					"name": "撕裂",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10 ({@damage 2d6 + 3})挥砍伤害加上3 ({@damage 1d6})火焰伤害。"
 					]
@@ -3035,8 +3035,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "龙军军官",
 			"ENG_name": "Dragon Army Officer",
+			"name": "龙军军官",
 			"source": "DSotDQ",
 			"page": 200,
 			"size": [
@@ -3086,8 +3086,8 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "龙族崇拜",
 					"ENG_name": "Draconic Devotion",
+					"name": "龙族崇拜",
 					"entries": [
 						"当军官能看到一条对它没有敌意的龙时，军官在攻击掷骰上有优势。"
 					]
@@ -3095,29 +3095,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"军官进行两次恶毒长矛攻击，并在可用时使用突击命令。"
 					]
 				},
 				{
-					"name": "恶毒长矛",
 					"ENG_name": "Vicious Lance",
+					"name": "恶毒长矛",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及10尺，单一目标。{@h}8 ({@damage 1d10 + 3}) 点穿刺伤害加上2 ({@damage 1d4}) 火焰伤害。"
 					]
 				},
 				{
-					"name": "重弩",
 					"ENG_name": "Heavy Crossbow",
+					"name": "重弩",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程100/400尺，单一目标。{@h}7 ({@damage 1d10 + 2}) 点穿刺伤害加上5 ({@damage 1d10})火焰伤害。"
 					]
 				},
 				{
-					"name": "突击命令 {@recharge 5}",
 					"ENG_name": "Assault Orders {@recharge 5}",
+					"name": "突击命令 {@recharge 5}",
 					"entries": [
 						"军官大声下达命令并指定最多两个60尺范围内的其他生物为目标。如果目标具有龙族崇拜特性并且能听到军官的声音，目标可以使用其反应进行一次近战攻击。"
 					]
@@ -3149,8 +3149,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "龙军士兵",
 			"ENG_name": "Dragon Army Soldier",
+			"name": "龙军士兵",
 			"source": "DSotDQ",
 			"page": 200,
 			"size": [
@@ -3196,8 +3196,8 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "龙族崇拜",
 					"ENG_name": "Draconic Devotion",
+					"name": "龙族崇拜",
 					"entries": [
 						"当士兵能看到一条不对它抱有敌意的龙时，士兵在攻击掷骰上有优势。"
 					]
@@ -3205,22 +3205,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"士兵进行两次长剑或标枪攻击。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 挥砍伤害，或者如果用双手使用则为7 ({@damage 1d10 + 2}) 挥砍伤害，外加2 ({@damage 1d4}) 火焰伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或30/120尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害加上2 ({@damage 1d4})火焰伤害。"
 					]
@@ -3253,15 +3253,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Durstan Rial",
 			"ENG_name": "Durstan Rial",
+			"name": "Durstan Rial",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 97,
 			"_copy": {
-				"name": "骑士",
 				"ENG_name": "Knight",
+				"name": "骑士",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3285,15 +3285,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "暮行者",
 			"ENG_name": "Duskwalker",
+			"name": "暮行者",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 150,
 			"_copy": {
-				"name": "树人",
 				"ENG_name": "Treant",
+				"name": "树人",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -3311,8 +3311,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "费斯马斯特·戈尔卡格",
 			"ENG_name": "Fewmaster Gholcag",
+			"name": "费斯马斯特·戈尔卡格",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -3357,15 +3357,15 @@
 			"cr": "2",
 			"action": [
 				{
-					"name": "巨棒",
 					"ENG_name": "Greatclub",
+					"name": "巨棒",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}13（{@damage 2d8 + 4}）点钝击伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 6}，触及5尺或射程30/120尺，单一目标。{@h}11 ({@damage 2d6 + 4}) 点穿刺伤害。"
 					]
@@ -3397,8 +3397,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "高等死亡龙",
 			"ENG_name": "Greater Death Dragon",
+			"name": "高等死亡龙",
 			"source": "DSotDQ",
 			"page": 195,
 			"size": [
@@ -3463,15 +3463,15 @@
 			"cr": "14",
 			"trait": [
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"龙豁免失败时，可以将其改为豁免成功。"
 					]
 				},
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"龙不需要空气、食物、饮料或睡眠。"
 					]
@@ -3479,29 +3479,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙进行一次咬击和两次爪击攻击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 11}，触及10尺，单一目标。{@h}17 ({@damage 2d10 + 6}) 点穿刺伤害加上4 ({@damage 1d8})黯蚀伤害。如果目标是一个大型或更小的生物，它将被{@condition 擒抱}（逃脱{@dc 19}）。直到这次摔跤结束，目标被{@condition 束缚}，龙不能咬不同的目标。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 11}，触及范围5尺，单一目标。{@h}10（{@damage 1d8 + 6}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "灾难之息{@recharge 5}",
 					"ENG_name": "Cataclysmic Breath {@recharge 5}",
+					"name": "灾难之息{@recharge 5}",
 					"entries": [
 						"龙呼出一道幽灵般的紫色火焰，形成一个60尺的锥形区域。在该区域内的每个生物都必须进行一次{@dc 18}敏捷豁免检定，失败则受到45 ({@damage 10d8})黯蚀伤害，成功则只受到一半的伤害。如果呼吸攻击将生物的生命值降至0点，则该生物死亡。此外，任何被呼吸伤害杀死的中型或更小的人型生物，以及锥形区域内所有此类生物的尸体，都会变成僵尸（见《怪物手册》），受龙控制。僵尸在龙的先攻但紧接着龙的回合行动。如果没有其他指令，僵尸会尝试杀死它遇到的任何非不死生物。"
 					]
@@ -3509,15 +3509,15 @@
 			],
 			"legendary": [
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"龙进行一次爪击攻击。"
 					]
 				},
 				{
-					"name": "灾难冲击（消耗2个行动）",
 					"ENG_name": "Cataclysmic Rush (Costs 2 Actions)",
+					"name": "灾难冲击（消耗2个行动）",
 					"entries": [
 						"龙以不超过其飞行速度的一半移动，不引发借机攻击，同时携带它正在摔跤的任何生物。在这次移动中，如果它进入了一个中型或更小生物的空间，那个生物会受到4 ({@damage 1d8})点黯蚀伤害。一个生物每回合只能受到一次这种伤害。"
 					]
@@ -3561,8 +3561,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "赫里格·朗布鲁克",
 			"ENG_name": "Hrigg Roundrook",
+			"name": "赫里格·朗布鲁克",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -3629,8 +3629,8 @@
 			"pbNote": "+2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Hrigg的施法能力是感知（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。他准备了以下牧师法术："
@@ -3652,15 +3652,15 @@
 			],
 			"trait": [
 				{
-					"name": "附赠熟练项",
 					"ENG_name": "Bonus Proficiencies",
+					"name": "附赠熟练项",
 					"entries": [
 						"Hrigg精通使用简单和军用武器以及轻型和中型护甲。"
 					]
 				},
 				{
-					"name": "矮人体魄",
 					"ENG_name": "Dwarven Resilience",
+					"name": "矮人体魄",
 					"entries": [
 						"Hrigg在进行豁免检定以避免或结束自身{@condition 中毒}状态时具有优势。"
 					]
@@ -3668,8 +3668,8 @@
 			],
 			"action": [
 				{
-					"name": "巨锤",
 					"ENG_name": "Maul",
+					"name": "巨锤",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}9（{@damage 2d6 + 2}）钝击伤害。"
 					]
@@ -3677,9 +3677,9 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Hrigg beyond 1st Level",
 					"type": "inset",
 					"name": "Hrigg超过1级",
-					"ENG_name": "Hrigg beyond 1st Level",
 					"entries": [
 						{
 							"type": "table",
@@ -3696,12 +3696,12 @@
 							"rows": [
 								[
 									"2nd",
-									"16 （掷{@dice 3d8 + 3}加3）",
+									"16 ({@dice 3d8 + 3})",
 									"施法。赫里格学会了另一个1级法术：{@spell 祝福术}。"
 								],
 								[
 									"3rd",
-									"22（{@dice 4d8 + 4}）",
+									"22 ({@dice 4d8 + 4})",
 									"施法。Hrigg获得了一个1级法术位。他还学会了另一个1级法术：{@spell 侦测善恶}。"
 								],
 								[
@@ -3716,12 +3716,12 @@
 								],
 								[
 									"6th",
-									"38 （{@dice 7d8 + 7}）",
+									"38 ({@dice 7d8 + 7})",
 									"强力戏法。Hrigg将他的感知调整值加到他用任何戏法造成的损害上。"
 								],
 								[
 									"7th",
-									"44 （{@dice 8d8 + 8}）",
+									"44 ({@dice 8d8 + 8})",
 									"施法。Hrigg获得一个2级法术位。他还学会了另一个2级法术：{@spell 次级复原术}。"
 								],
 								[
@@ -3780,15 +3780,15 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "Hrigg Roundrook（10级）",
 					"ENG_name": "Hrigg Roundrook (10th Level)",
+					"name": "Hrigg Roundrook（10级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"赫里格将他的感知调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -3798,8 +3798,8 @@
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}9 ({@damage 2d6 + 2})钝击伤害。"
 								]
@@ -3825,8 +3825,8 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 16}，法术攻击命中{@hit 8}）。他准备了以下牧师法术："
 							],
@@ -3865,15 +3865,15 @@
 					"variant": null
 				},
 				{
-					"name": "Hrigg Roundrook（11级）",
 					"ENG_name": "Hrigg Roundrook (11th Level)",
+					"name": "Hrigg Roundrook（11级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"赫里格将他的感知调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -3883,8 +3883,8 @@
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}9 ({@damage 2d6 + 2})钝击伤害。"
 								]
@@ -3910,8 +3910,8 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 16}，法术攻击命中{@hit 8}）。他准备了以下牧师法术："
 							],
@@ -3951,8 +3951,8 @@
 					"variant": null
 				},
 				{
-					"name": "Hrigg Roundrook（2级）",
 					"ENG_name": "Hrigg Roundrook (2nd Level)",
+					"name": "Hrigg Roundrook（2级）",
 					"source": "DSotDQ",
 					"level": 2,
 					"hp": {
@@ -3961,8 +3961,8 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。他准备了以下牧师法术："
 							],
@@ -3985,8 +3985,8 @@
 					"variant": null
 				},
 				{
-					"name": "赫里格·朗布鲁克（3级）",
 					"ENG_name": "Hrigg Roundrook (3rd Level)",
+					"name": "赫里格·朗布鲁克（3级）",
 					"source": "DSotDQ",
 					"level": 3,
 					"hp": {
@@ -3995,8 +3995,8 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。他准备了以下牧师法术："
 							],
@@ -4020,8 +4020,8 @@
 					"variant": null
 				},
 				{
-					"name": "Hrigg Roundrook（4级）",
 					"ENG_name": "Hrigg Roundrook (4th Level)",
+					"name": "Hrigg Roundrook（4级）",
 					"source": "DSotDQ",
 					"level": 4,
 					"hp": {
@@ -4041,8 +4041,8 @@
 					"passive": 15,
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。他准备了以下牧师法术："
 							],
@@ -4067,16 +4067,16 @@
 					"variant": null
 				},
 				{
-					"name": "赫里格·朗布鲁克（5级）",
 					"ENG_name": "Hrigg Roundrook (5th Level)",
+					"name": "赫里格·朗布鲁克（5级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"action": {
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 5}，触及范围5尺，单一目标。{@h}9（{@damage 2d6 + 2}）钝击伤害。"
 								]
@@ -4102,8 +4102,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。他准备了以下牧师法术："
 							],
@@ -4134,15 +4134,15 @@
 					"variant": null
 				},
 				{
-					"name": "Hrigg Roundrook（6级）",
 					"ENG_name": "Hrigg Roundrook (6th Level)",
+					"name": "Hrigg Roundrook（6级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"赫里格将他的感知调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -4152,8 +4152,8 @@
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 5}，触及范围5尺，单一目标。{@h}9（{@damage 2d6 + 2}）钝击伤害。"
 								]
@@ -4179,8 +4179,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。他准备了以下牧师法术："
 							],
@@ -4211,15 +4211,15 @@
 					"variant": null
 				},
 				{
-					"name": "赫里格·朗布鲁克（7级）",
 					"ENG_name": "Hrigg Roundrook (7th Level)",
+					"name": "赫里格·朗布鲁克（7级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"赫里格将他的感知调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -4229,8 +4229,8 @@
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 5}，触及范围5尺，单一目标。{@h}9（{@damage 2d6 + 2}）钝击伤害。"
 								]
@@ -4256,8 +4256,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。他准备了以下牧师法术："
 							],
@@ -4289,15 +4289,15 @@
 					"variant": null
 				},
 				{
-					"name": "Hrigg Roundrook（8级）",
 					"ENG_name": "Hrigg Roundrook (8th Level)",
+					"name": "Hrigg Roundrook（8级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"赫里格将他的感知调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -4307,8 +4307,8 @@
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 5}，触及范围5尺，单一目标。{@h}9（{@damage 2d6 + 2}）钝击伤害。"
 								]
@@ -4334,8 +4334,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 15}，法术攻击命中{@hit 7}）。他准备了以下牧师法术："
 							],
@@ -4367,15 +4367,15 @@
 					"variant": null
 				},
 				{
-					"name": "Hrigg Roundrook（9级）",
 					"ENG_name": "Hrigg Roundrook (9th Level)",
+					"name": "Hrigg Roundrook（9级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "强力戏法",
 								"ENG_name": "Potent Cantrips",
+								"name": "强力戏法",
 								"entries": [
 									"赫里格将他的感知调整值加到他用任何戏法造成的伤害上。"
 								]
@@ -4385,8 +4385,8 @@
 							"mode": "replaceArr",
 							"replace": "巨锤",
 							"items": {
-								"name": "巨锤",
 								"ENG_name": "Maul",
+								"name": "巨锤",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}9 ({@damage 2d6 + 2})钝击伤害。"
 								]
@@ -4412,8 +4412,8 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Hrigg的施法能力是感知（法术豁免{@dc 16}，法术攻击命中{@hit 8}）。他准备了以下牧师法术："
 							],
@@ -4453,13 +4453,13 @@
 			]
 		},
 		{
-			"name": "庞大的身影",
 			"ENG_name": "Hulking Shadow",
+			"name": "庞大的身影",
 			"source": "DSotDQ",
 			"page": 174,
 			"_copy": {
-				"name": "粘土魔像",
 				"ENG_name": "Clay Golem",
+				"name": "粘土魔像",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4473,15 +4473,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "伊格尼亚",
 			"ENG_name": "Ignia",
+			"name": "伊格尼亚",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 184,
 			"_copy": {
-				"name": "青年红龙",
 				"ENG_name": "Young Red Dragon",
+				"name": "青年红龙",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4499,13 +4499,13 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "不完整的龙骨架",
 			"ENG_name": "Incomplete Dragon Skeleton",
+			"name": "不完整的龙骨架",
 			"source": "DSotDQ",
 			"page": 138,
 			"_copy": {
-				"name": "骸骨纳迦(精魂)",
 				"ENG_name": "Bone Naga (Spirit)",
+				"name": "骸骨纳迦(精魂)",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4519,8 +4519,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "Iriad",
 			"ENG_name": "Iriad",
+			"name": "Iriad",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -4584,15 +4584,15 @@
 			"pbNote": "+2",
 			"trait": [
 				{
-					"name": "附赠熟练项",
 					"ENG_name": "Bonus Proficiencies",
+					"name": "附赠熟练项",
 					"entries": [
 						"Iriad精通使用简易武器、轻型护甲、{@item 制图工具|PHB}和{@item 木雕工具|PHB}。"
 					]
 				},
 				{
-					"name": "精类血统",
 					"ENG_name": "Fey Ancestry",
+					"name": "精类血统",
 					"entries": [
 						"Iriad在尝试避免或结束自身{@condition 魅惑}状态的豁免检定上具有优势，并且魔法无法使她入睡。"
 					]
@@ -4600,8 +4600,8 @@
 			],
 			"action": [
 				{
-					"name": "毒匕首",
 					"ENG_name": "Poison Dagger",
+					"name": "毒匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及范围5尺或射程20/60尺，单一目标。{@h}5（{@damage 1d4 + 3}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 					]
@@ -4609,8 +4609,8 @@
 			],
 			"bonus": [
 				{
-					"name": "好帮手",
 					"ENG_name": "Helpful",
+					"name": "好帮手",
 					"entries": [
 						"Iriad采取了{@action 协助}行动。"
 					]
@@ -4618,9 +4618,9 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Iriad beyond 1st Level",
 					"type": "inset",
 					"name": "伊瑞亚德超越1级",
-					"ENG_name": "Iriad beyond 1st Level",
 					"entries": [
 						{
 							"type": "table",
@@ -4637,12 +4637,12 @@
 							"rows": [
 								[
 									"2nd",
-									"16 （掷{@dice 3d8 + 3}加3）",
+									"16 ({@dice 3d8 + 3})",
 									"狡猾行动。在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								],
 								[
 									"3rd",
-									"22（{@dice 4d8 + 4}）",
+									"22 ({@dice 4d8 + 4})",
 									"专长。Iriad在使用{@skill 隐匿}或{@skill 生存}进行的属性检定时，她的熟练加值翻倍。"
 								],
 								[
@@ -4657,12 +4657,12 @@
 								],
 								[
 									"6th",
-									"38 （{@dice 7d8 + 7}）",
+									"38 ({@dice 7d8 + 7})",
 									"协调攻击。当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@dice 2d6}伤害。额外伤害的类型与攻击造成的伤害类型相同。"
 								],
 								[
 									"7th",
-									"44 （{@dice 8d8 + 8}）",
+									"44 ({@dice 8d8 + 8})",
 									"闪避。当Iriad遭受允许她进行敏捷豁免检定以只承受一半伤害的效果时，如果豁免成功，她反而不承受任何伤害；如果豁免失败，她只承受一半伤害。Iriad在处于{@condition 失能}时不享有此特性的好处。"
 								],
 								[
@@ -4683,7 +4683,7 @@
 								[
 									"11th",
 									"66 ({@dice 12d8 + 12})",
-									"鼓舞人心的协助。当伊瑞亚德采取{@action 协助}行动时，接受协助的生物在进行{@dice d20}掷骰时也会获得一个{@dice d20}的额外骰子。如果那次掷骰是攻击检定，该生物可以选择不将额外骰子加到掷骰上，然后如果攻击命中，可以将额外骰子加到攻击的伤害掷骰上，针对单一目标。"
+									"鼓舞人心的协助。当伊瑞亚德采取{@action 协助}行动时，接受协助的生物在进行{@dice d20}掷骰时也会获得一个{@dice 1d6}的额外骰子。如果那次掷骰是攻击检定，该生物可以选择不将额外骰子加到掷骰上，然后如果攻击命中，可以将额外骰子加到攻击的伤害掷骰上，针对单一目标。"
 								]
 							]
 						}
@@ -4715,30 +4715,30 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "Iriad（10级）",
 					"ENG_name": "Iriad (10th Level)",
+					"name": "Iriad（10级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "专精",
 									"ENG_name": "Expertise",
+									"name": "专精",
 									"entries": [
 										"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 									]
 								},
 								{
-									"name": "协同攻击",
 									"ENG_name": "Coordinated Strike",
+									"name": "协同攻击",
 									"entries": [
 										"当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@damage 2d6}伤害。额外伤害与攻击造成的伤害类型相同。"
 									]
 								},
 								{
-									"name": "反射闪避",
 									"ENG_name": "Evasion",
+									"name": "反射闪避",
 									"entries": [
 										"当Iriad遭受允许她进行敏捷豁免检定以只承受一半伤害的效果时，如果豁免成功，她反而不承受任何伤害；如果豁免失败，她只承受一半伤害。Iriad在处于{@condition 失能}时不享有此特性的好处。"
 									]
@@ -4748,8 +4748,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -4788,8 +4788,8 @@
 					"pbNote": "+4",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 9}，触及范围5尺或射程20/60尺，单一目标。{@h}7（{@damage 1d4 + 5}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 							]
@@ -4798,39 +4798,39 @@
 					"variant": null
 				},
 				{
-					"name": "Iriad（11级）",
 					"ENG_name": "Iriad (11th Level)",
+					"name": "Iriad（11级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "专精",
 									"ENG_name": "Expertise",
+									"name": "专精",
 									"entries": [
 										"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 									]
 								},
 								{
-									"name": "协同攻击",
 									"ENG_name": "Coordinated Strike",
+									"name": "协同攻击",
 									"entries": [
 										"当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@damage 2d6}伤害。额外伤害与攻击造成的伤害类型相同。"
 									]
 								},
 								{
-									"name": "反射闪避",
 									"ENG_name": "Evasion",
+									"name": "反射闪避",
 									"entries": [
 										"当Iriad遭受允许她进行敏捷豁免检定以只承受一半伤害的效果时，如果豁免成功，她反而不承受任何伤害；如果豁免失败，她只承受一半伤害。Iriad在处于{@condition 失能}时不享有此特性的好处。"
 									]
 								},
 								{
-									"name": "鼓舞协助",
 									"ENG_name": "Inspiring Help",
+									"name": "鼓舞协助",
 									"entries": [
-										"当Iriad采取{@action 协助}行动时，接受帮助的生物在其{@dice d20}掷骰中也会获得一个{@dice d20}的额外加值。如果该掷骰是攻击掷骰，生物可以选择不将加值加到掷骰上，然后如果攻击命中，生物可以将加值加到攻击的伤害掷骰上，针对单一目标。"
+										"当Iriad采取{@action 协助}行动时，接受帮助的生物在其{@dice d20}掷骰中也会获得一个{@dice 1d6}的额外加值。如果该掷骰是攻击掷骰，生物可以选择不将加值加到掷骰上，然后如果攻击命中，生物可以将加值加到攻击的伤害掷骰上，针对单一目标。"
 									]
 								}
 							]
@@ -4838,8 +4838,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -4878,8 +4878,8 @@
 					"pbNote": "+4",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 9}，触及范围5尺或射程20/60尺，单一目标。{@h}7（{@damage 1d4 + 5}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 							]
@@ -4888,15 +4888,15 @@
 					"variant": null
 				},
 				{
-					"name": "Iriad（2级）",
 					"ENG_name": "Iriad (2nd Level)",
+					"name": "Iriad（2级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -4911,15 +4911,15 @@
 					"variant": null
 				},
 				{
-					"name": "Iriad（3级）",
 					"ENG_name": "Iriad (3rd Level)",
+					"name": "Iriad（3级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "专精",
 								"ENG_name": "Expertise",
+								"name": "专精",
 								"entries": [
 									"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 								]
@@ -4928,8 +4928,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -4953,15 +4953,15 @@
 					"variant": null
 				},
 				{
-					"name": "伊瑞亚德（4级）",
 					"ENG_name": "Iriad (4th Level)",
+					"name": "伊瑞亚德（4级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "专精",
 								"ENG_name": "Expertise",
+								"name": "专精",
 								"entries": [
 									"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 								]
@@ -4970,8 +4970,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -5006,8 +5006,8 @@
 					},
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 6}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5016,15 +5016,15 @@
 					"variant": null
 				},
 				{
-					"name": "Iriad（5级）",
 					"ENG_name": "Iriad (5th Level)",
+					"name": "Iriad（5级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "专精",
 								"ENG_name": "Expertise",
+								"name": "专精",
 								"entries": [
 									"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 								]
@@ -5033,8 +5033,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -5071,8 +5071,8 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5081,23 +5081,23 @@
 					"variant": null
 				},
 				{
-					"name": "伊瑞亚德（6级）",
 					"ENG_name": "Iriad (6th Level)",
+					"name": "伊瑞亚德（6级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "专精",
 									"ENG_name": "Expertise",
+									"name": "专精",
 									"entries": [
 										"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 									]
 								},
 								{
-									"name": "协同攻击",
 									"ENG_name": "Coordinated Strike",
+									"name": "协同攻击",
 									"entries": [
 										"当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@damage 2d6}伤害。额外伤害与攻击造成的伤害类型相同。"
 									]
@@ -5107,8 +5107,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -5145,8 +5145,8 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5155,30 +5155,30 @@
 					"variant": null
 				},
 				{
-					"name": "Iriad（7级）",
 					"ENG_name": "Iriad (7th Level)",
+					"name": "Iriad（7级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "专精",
 									"ENG_name": "Expertise",
+									"name": "专精",
 									"entries": [
 										"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 									]
 								},
 								{
-									"name": "协同攻击",
 									"ENG_name": "Coordinated Strike",
+									"name": "协同攻击",
 									"entries": [
 										"当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@damage 2d6}伤害。额外伤害与攻击造成的伤害类型相同。"
 									]
 								},
 								{
-									"name": "反射闪避",
 									"ENG_name": "Evasion",
+									"name": "反射闪避",
 									"entries": [
 										"当Iriad遭受允许她进行敏捷豁免检定以只承受一半伤害的效果时，如果豁免成功，她反而不承受任何伤害；如果豁免失败，她只承受一半伤害。Iriad在处于{@condition 失能}时不享有此特性的好处。"
 									]
@@ -5188,8 +5188,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -5226,8 +5226,8 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5236,30 +5236,30 @@
 					"variant": null
 				},
 				{
-					"name": "伊瑞亚德（8级）",
 					"ENG_name": "Iriad (8th Level)",
+					"name": "伊瑞亚德（8级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "专精",
 									"ENG_name": "Expertise",
+									"name": "专精",
 									"entries": [
 										"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 									]
 								},
 								{
-									"name": "协同攻击",
 									"ENG_name": "Coordinated Strike",
+									"name": "协同攻击",
 									"entries": [
 										"当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@damage 2d6}伤害。额外伤害与攻击造成的伤害类型相同。"
 									]
 								},
 								{
-									"name": "反射闪避",
 									"ENG_name": "Evasion",
+									"name": "反射闪避",
 									"entries": [
 										"当Iriad遭受允许她进行敏捷豁免检定以只承受一半伤害的效果时，如果豁免成功，她反而不承受任何伤害；如果豁免失败，她只承受一半伤害。Iriad在处于{@condition 失能}时不享有此特性的好处。"
 									]
@@ -5269,8 +5269,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -5309,8 +5309,8 @@
 					"pbNote": "+3",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5319,30 +5319,30 @@
 					"variant": null
 				},
 				{
-					"name": "Iriad（9级）",
 					"ENG_name": "Iriad (9th Level)",
+					"name": "Iriad（9级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "专精",
 									"ENG_name": "Expertise",
+									"name": "专精",
 									"entries": [
 										"伊瑞亚德在使用{@skill 隐匿}或{@skill 生存}进行属性检定时，其熟练加值翻倍。"
 									]
 								},
 								{
-									"name": "协同攻击",
 									"ENG_name": "Coordinated Strike",
+									"name": "协同攻击",
 									"entries": [
 										"当Iriad使用她的Helpful特性帮助盟友攻击一个生物时，该目标可以距离她最多30尺，并且在当前回合结束前，下一次用攻击掷骰命中它时，她可以额外造成{@damage 2d6}伤害。额外伤害与攻击造成的伤害类型相同。"
 									]
 								},
 								{
-									"name": "反射闪避",
 									"ENG_name": "Evasion",
+									"name": "反射闪避",
 									"entries": [
 										"当Iriad遭受允许她进行敏捷豁免检定以只承受一半伤害的效果时，如果豁免成功，她反而不承受任何伤害；如果豁免失败，她只承受一半伤害。Iriad在处于{@condition 失能}时不享有此特性的好处。"
 									]
@@ -5352,8 +5352,8 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "灵巧动作",
 								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
 									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
@@ -5392,8 +5392,8 @@
 					"pbNote": "+4",
 					"action": [
 						{
-							"name": "毒匕首",
 							"ENG_name": "Poison Dagger",
+							"name": "毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 8}，触及范围5尺或射程20/60尺，单一目标。{@h}6（{@damage 1d4 + 4}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 							]
@@ -5404,15 +5404,15 @@
 			]
 		},
 		{
-			"name": "Ishvern",
 			"ENG_name": "Ishvern",
+			"name": "Ishvern",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 114,
 			"_copy": {
-				"name": "海精灵侦察兵",
 				"ENG_name": "Sea Elf Scout",
+				"name": "海精灵侦察兵",
 				"source": "DSotDQ",
 				"_mod": {
 					"*": {
@@ -5431,8 +5431,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "伊斯提安无人机",
 			"ENG_name": "Istarian Drone",
+			"name": "伊斯提安无人机",
 			"source": "DSotDQ",
 			"page": 202,
 			"size": [
@@ -5485,15 +5485,15 @@
 			"cr": "6",
 			"trait": [
 				{
-					"name": "蛛行术",
 					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
 					"entries": [
 						"无人机能够攀爬困难的表面，包括在天花板上倒挂，无需进行属性检定。"
 					]
 				},
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"无人机不需要空气、食物、饮料或睡眠。"
 					]
@@ -5501,22 +5501,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"无人机进行两次爪击攻击。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}9 ({@damage 1d8 + 5}) 点穿刺伤害加上4 ({@damage 1d8}) 闪电伤害。如果目标是中型或更小的生物，它将被{@condition 擒抱}（逃脱{@dc 15}）。无人机有两个爪子，每个爪子只能抓握单一目标。"
 					]
 				},
 				{
-					"name": "晶化唾沫 {@recharge 5}",
 					"ENG_name": "Crystalline Spit {@recharge 5}",
+					"name": "晶化唾沫 {@recharge 5}",
 					"entries": [
 						"无人机喷出一道5英尺宽、20英尺长的噼啪作响的凝胶。线上的每个生物必须进行一次{@dc 15}敏捷豁免。豁免失败时，该生物受到14（{@damage 4d6}）点闪电伤害，并被凝胶{@condition 束缚}，凝胶会硬化成晶体。该生物将一直{@condition 束缚}，直到晶体被摧毁。晶体的AC为15，有15点生命值，对毒素和心灵伤害免疫，但对雷鸣伤害易伤。豁免成功时，该生物受到一半的伤害且不会被{@condition 束缚}。"
 					]
@@ -5554,15 +5554,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "杰耶夫·维尔德鲁斯",
 			"ENG_name": "Jeyev Veldrews",
+			"name": "杰耶夫·维尔德鲁斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 75,
 			"_copy": {
-				"name": "强盗首领",
 				"ENG_name": "Bandit Captain",
+				"name": "强盗首领",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -5587,8 +5587,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "卡拉曼士兵",
 			"ENG_name": "Kalaman Soldier",
+			"name": "卡拉曼士兵",
 			"source": "DSotDQ",
 			"page": 202,
 			"size": [
@@ -5632,15 +5632,15 @@
 			"cr": "1/2",
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"士兵进行两次长剑攻击。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 挥砍伤害，或者如果用双手使用则为7 ({@damage 1d10 + 2}) 挥砍伤害。"
 					]
@@ -5648,8 +5648,8 @@
 			],
 			"reaction": [
 				{
-					"name": "坚守战线",
 					"ENG_name": "Hold the Line",
+					"name": "坚守战线",
 					"entries": [
 						"如果士兵5尺范围内的盟友必须进行豁免检定，士兵会鼓励盟友，使其在投掷上获得优势。"
 					]
@@ -5675,8 +5675,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "坎萨尔迪·火眼",
 			"ENG_name": "Kansaldi Fire-Eyes",
+			"name": "坎萨尔迪·火眼",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -5740,8 +5740,8 @@
 			"cr": "11",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"坎萨尔迪施放以下任一法术，不需要材料成分，并使用感知作为施法能力（法术豁免{@dc 16}）："
@@ -5766,8 +5766,8 @@
 			],
 			"trait": [
 				{
-					"name": "特殊装备",
 					"ENG_name": "Special Equipment",
+					"name": "特殊装备",
 					"entries": [
 						"Kansaldi的左眼窝里嵌有一颗发光的红宝石。这颗宝石充当她的眼睛，并赋予她真实视觉（如上所述）。只要Kansaldi活着，这颗宝石就不能被移除。当她死亡时，生物可以作为动作移除这颗宝石。移除后，这颗宝石就作为{@item 真视宝石}发挥作用。"
 					]
@@ -5775,22 +5775,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"坎萨尔迪进行两次长矛攻击，并使用火焰爆发。"
 					]
 				},
 				{
-					"name": "长矛",
 					"ENG_name": "Pike",
+					"name": "长矛",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及范围10尺，单一目标。{@h}9（{@damage 1d10 + 4}）点穿刺伤害加上16（{@damage 3d10}）光耀伤害。"
 					]
 				},
 				{
-					"name": "火焰爆发",
 					"ENG_name": "Flame Burst",
+					"name": "火焰爆发",
 					"entries": [
 						"Kansaldi向她60尺范围内可以看到的生物投掷魔法火焰。目标必须进行一次{@dc 16}敏捷豁免检定。如果豁免失败，目标受到11 ({@damage 2d10})火焰伤害并着火；直到一个生物采取行动扑灭火焰，目标在每个回合开始时受到5 ({@damage 1d10})火焰伤害。如果豁免成功，目标受到的伤害减半，并且不会着火。"
 					]
@@ -5798,8 +5798,8 @@
 			],
 			"bonus": [
 				{
-					"name": "龙后之宠",
 					"ENG_name": "Dragon Queen's Favor",
+					"name": "龙后之宠",
 					"entries": [
 						"Kansaldi或她60尺范围内能看到的一个生物通过魔法恢复了17（{@dice 2d12 + 4}）点生命值。"
 					]
@@ -5848,8 +5848,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "卡帕克龙裔",
 			"ENG_name": "Kapak Draconian",
+			"name": "卡帕克龙裔",
 			"source": "DSotDQ",
 			"page": 198,
 			"size": [
@@ -5908,15 +5908,15 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "临终苦难",
 					"ENG_name": "Death Throes",
+					"name": "临终苦难",
 					"entries": [
 						"当龙裔生物的生命值降至0点时，它溶解成酸液溅射到周围的生物。每个在龙裔生物5尺范围内的生物必须通过一次{@dc 12}敏捷豁免检定，否则会被酸液覆盖1分钟。被酸液覆盖的生物在每个回合开始时受到7 ({@damage 2d6})强酸伤害。生物可以使用它的行动来刮掉或洗掉自己身上或其他生物身上的酸液。"
 					]
 				},
 				{
-					"name": "滑翔",
 					"ENG_name": "Glide",
+					"name": "滑翔",
 					"entries": [
 						"当龙裔生物坠落且未处于{@condition 失能}状态时，它可以在计算坠落伤害时减去最多100尺的坠落距离，并且每下降1尺，它可以水平移动最多2尺。"
 					]
@@ -5924,15 +5924,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙人进行两次匕首攻击。如果两次攻击都击中了同一个生物，目标必须成功进行一次{@dc 12}体质豁免检定，否则在目标的下回合结束前变为{@condition 中毒}。以这种方式{@condition 中毒}时，目标同时也处于{@condition 麻痹}状态。"
 					]
 				},
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及5尺或20/60尺，单一目标。{@h}5 ({@damage 1d4 + 3}) 点穿刺伤害加上7 ({@damage 2d6}) 毒素伤害。"
 					]
@@ -5979,15 +5979,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "卡拉瓦里克斯",
 			"ENG_name": "Karavarix",
+			"name": "卡拉瓦里克斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 183,
 			"_copy": {
-				"name": "高等死亡龙",
 				"ENG_name": "Greater Death Dragon",
+				"name": "高等死亡龙",
 				"source": "DSotDQ",
 				"_mod": {
 					"*": {
@@ -6006,8 +6006,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "坎德人游击兵",
 			"ENG_name": "Kender Skirmisher",
+			"name": "坎德人游击兵",
 			"source": "DSotDQ",
 			"page": 204,
 			"size": [
@@ -6054,15 +6054,15 @@
 			"cr": "1/4",
 			"action": [
 				{
-					"name": "胡帕克杖",
 					"ENG_name": "Hoopak",
+					"name": "胡帕克杖",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及5尺或40/160尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害，或者如果侏儒使用hoopak的投石索进行远程攻击，则为5 ({@damage 1d4 + 3}) 钝击伤害。"
 					]
 				},
 				{
-					"name": "嘲讽",
 					"ENG_name": "Taunt",
+					"name": "嘲讽",
 					"entries": [
 						"该坎德人向它60尺范围内能看到的生物发起一连串侮辱。如果目标能听到坎德人的话，目标必须成功进行一次{@dc 12}感知豁免检定，否则在其下回合结束前攻击掷骰会有劣势。"
 					]
@@ -6070,8 +6070,8 @@
 			],
 			"bonus": [
 				{
-					"name": "飘忽不定",
 					"ENG_name": "Elusive",
+					"name": "飘忽不定",
 					"entries": [
 						"侏儒采取了脱身或隐藏行动。"
 					]
@@ -6100,8 +6100,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "莉德拉",
 			"ENG_name": "Leedara",
+			"name": "莉德拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -6176,15 +6176,15 @@
 			"cr": "4",
 			"trait": [
 				{
-					"name": "以太视界",
 					"ENG_name": "Ethereal Sight",
+					"name": "以太视界",
 					"entries": [
 						"Leedara在物质界时可以看到以太界60尺内的情况，反之亦然。"
 					]
 				},
 				{
-					"name": "虚体移动",
 					"ENG_name": "Incorporeal Movement",
+					"name": "虚体移动",
 					"entries": [
 						"Leedara能够像穿越困难地形一样穿越其他生物和物体。如果她的回合结束时位于一个物体内部，她会受到5（{@damage 1d10}）点力场伤害。"
 					]
@@ -6192,37 +6192,37 @@
 			],
 			"action": [
 				{
-					"name": "枯萎触击",
 					"ENG_name": "Withering Touch",
+					"name": "枯萎触击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}17 ({@damage 4d6 + 3}) 点黯蚀伤害。"
 					]
 				},
 				{
-					"name": "以太化",
 					"ENG_name": "Etherealness",
+					"name": "以太化",
 					"entries": [
 						"莉德拉从物质界进入以太界，或者相反。当她在边界以太中时，在物质界是可见的，反之亦然，然而她不能影响或被另一界上的任何事物影响。"
 					]
 				},
 				{
-					"name": "恐惧面容",
 					"ENG_name": "Horrifying Visage",
+					"name": "恐惧面容",
 					"entries": [
 						"在Leedara周围60尺内，能看到她的每个非不死生物必须成功进行一次{@dc 13}感知豁免检定，否则将被{@condition 恐慌}状态影响1分钟。如果豁免失败超过5点，目标还将老化{@dice 1d4 × 10}年。处于{@condition 恐慌}状态的目标可以在每个回合结束时重复豁免检定，成功则结束自身的{@condition 恐慌}状态。如果目标的豁免检定成功或效果对其结束，目标在接下来的24小时内对Leedara的恐怖面容免疫。老化效果可以通过{@spell 高等复原术}法术逆转，但只能在发生后的24小时内。"
 					]
 				},
 				{
-					"name": "附身{@recharge}",
 					"ENG_name": "Possession {@recharge}",
+					"name": "附身{@recharge}",
 					"entries": [
 						"在鬼魂5尺范围内可以看到的一个类人生物必须通过一次{@dc 13}魅力豁免检定，否则会被Leedara附身；Leedara随后消失，目标进入{@condition 失能}状态并失去对身体的控制。Leedara现在控制了身体，但并没有剥夺目标的意识。Leedara不能成为任何攻击、法术或其他效果的目标，除了那些可以驱散不死生物的效果，她保留了自己的阵营、感知、感知、魅力以及对{@condition 魅惑}和{@condition 恐慌}的免疫。她使用被附身目标的属性，但不获得目标的知识、职业特性或熟练度。",
 						"附身持续到身体的生命值降至0点，Leedara可以通过附赠动作结束它，或者Leedara被像{@spell 反制善恶}法术这样的效果转走或被迫离开。当附身结束时，Leedara在身体5尺范围内的一个未被占据的空间重新出现。目标在成功进行豁免检定或附身结束后的24小时内对Leedara的附身免疫。"
 					]
 				},
 				{
-					"name": "变形",
 					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
 						"Leedara通过魔法恢复了她生前的外貌，她的生物类型变为人形生物，同时保留了她其他的游戏具体数值。如果Leedara的生命值降至0或她采取行动结束这种变化，这种转变就会结束。"
 					]
@@ -6260,8 +6260,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "次等亡骸龙",
 			"ENG_name": "Lesser Death Dragon",
+			"name": "次等亡骸龙",
 			"source": "DSotDQ",
 			"page": 195,
 			"size": [
@@ -6325,8 +6325,8 @@
 			"cr": "10",
 			"trait": [
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"龙不需要空气、食物、饮料或睡眠。"
 					]
@@ -6334,29 +6334,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙进行一次咬击和两次爪击攻击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及10尺，单一目标。{@h}14 ({@damage 2d8 + 5}) 点穿刺伤害加上4 ({@damage 1d8})黯蚀伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及范围5尺，单一目标。{@h}8（{@damage 1d6 + 5}）挥砍伤害。如果目标是中等大小或更小的生物，它将被{@condition 擒抱}（逃脱{@dc 15}）。直到这次抓住结束，目标将被{@condition 束缚}。龙有两个爪子，每个爪子都可以抓住单一目标。"
 					]
 				},
 				{
-					"name": "灾难之息{@recharge 5}",
 					"ENG_name": "Cataclysmic Breath {@recharge 5}",
+					"name": "灾难之息{@recharge 5}",
 					"entries": [
 						"龙呼出一道幽灵般的紫色火焰，形成一个30尺的锥形区域。在该区域内的每个生物都必须进行一次{@dc 16}敏捷豁免检定，失败则受到36 ({@damage 8d8})黯蚀伤害，成功则只受到一半的伤害。如果呼吸攻击将生物的生命值降至0点，则该生物死亡。此外，任何被呼吸伤害杀死的中型或更小的人型生物，以及锥形区域内所有此类生物的尸体，都会变成僵尸（见《怪物手册》），受龙控制。僵尸在龙的先攻但紧接着龙的回合行动。如果没有其他指令，僵尸会尝试杀死它遇到的任何非不死生物。"
 					]
@@ -6400,8 +6400,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Levna Drakehorn",
 			"ENG_name": "Levna Drakehorn",
+			"name": "Levna Drakehorn",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -6460,15 +6460,15 @@
 			"pbNote": "+2",
 			"trait": [
 				{
-					"name": "附赠熟练项",
 					"ENG_name": "Bonus Proficiencies",
+					"name": "附赠熟练项",
 					"entries": [
 						"莱芙娜精通简易和军用武器、盾牌以及所有类型的护甲。"
 					]
 				},
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果至少有一个Levna的盟友在生物的5尺范围内，并且该盟友没有处于{@condition 失能}，Levna在对该生物的攻击掷骰上有优势。"
 					]
@@ -6476,8 +6476,8 @@
 			],
 			"action": [
 				{
-					"name": "巨剑",
 					"ENG_name": "Greatsword",
+					"name": "巨剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}9（{@damage 2d6 + 2}）点挥砍伤害。"
 					]
@@ -6485,8 +6485,8 @@
 			],
 			"reaction": [
 				{
-					"name": "守护",
 					"ENG_name": "Protection",
+					"name": "守护",
 					"entries": [
 						"当Levna能看到的5尺范围内的生物成为攻击的目标时，如果她能看到攻击者并且她手持近战武器，她可以使攻击骰投掷处于劣势。"
 					]
@@ -6494,9 +6494,9 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Levna beyond 1st Level",
 					"type": "inset",
 					"name": "Levna超过1级",
-					"ENG_name": "Levna beyond 1st Level",
 					"entries": [
 						{
 							"type": "table",
@@ -6513,17 +6513,17 @@
 							"rows": [
 								[
 									"2nd",
-									"19 （{@dice 3d8 + 6}）",
+									"19 ({@dice 3d8 + 6})",
 									"二次呼吸。Levna可以在她的回合使用附赠动作来恢复等于{@dice 1d10}加上她等级的生命值。一旦使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 								],
 								[
 									"3rd",
-									"26 （掷{@dice 4d8 + 8}加8）",
+									"26 ({@dice 4d8 + 8})",
 									"重击改善。莱芙娜的攻击骰现在在{@dice d20}上掷出19或20时会打出重击。"
 								],
 								[
 									"4th",
-									"32（{@dice 5d8 + 10}）",
+									"32 ({@dice 5d8 + 10})",
 									"能力值提升。Levna的力量得分增加了2，提高了调整值1，因此将她的{@skill 运动}技能加值增加1，并将她的武器攻击命中和伤害加值各增加1。"
 								],
 								[
@@ -6533,27 +6533,27 @@
 								],
 								[
 									"6th",
-									"45 （{@dice 7d8 + 14}）",
+									"45 ({@dice 7d8 + 14})",
 									"额外攻击。每当Levna在她回合采取{@action 攻击}动作时，她可以攻击两次，而不是一次。"
 								],
 								[
 									"7th",
-									"52（{@dice 8d8 + 16}）",
+									"52 ({@dice 8d8 + 16})",
 									"战斗准备。Levna在先攻掷骰上有优势。"
 								],
 								[
 									"8th",
-									"58（{@dice 9d8 + 18}）",
+									"58 ({@dice 9d8 + 18})",
 									"能力值提升。Levna的力量得分增加了2，提高了调整值1，因此将她的{@skill 运动}技能加值增加1，并将她的武器攻击命中和伤害加值各增加1。"
 								],
 								[
 									"9th",
-									"65 （{@dice 10d8 + 20}）",
+									"65 ({@dice 10d8 + 20})",
 									"熟练加值。Levna的熟练加值增加1，因此以下数值增加1：'豁免检定和技能'条目中的加值，她的被动{@skill 察觉}得分，以及她的武器攻击的命中加值。"
 								],
 								[
 									"10th",
-									"71 （{@dice 11d8 + 22}）",
+									"71 ({@dice 11d8 + 22})",
 									"强化防御。莱芙娜的护甲等级增加1点。"
 								],
 								[
@@ -6587,44 +6587,44 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "Levna Drakehorn（10级）",
 					"ENG_name": "Levna Drakehorn (10th Level)",
+					"name": "Levna Drakehorn（10级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"Levna可以在她的回合进行两次攻击，而不是一次，只要她采取{@action 攻击}动作。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"Levna在先攻掷骰上有优势。"
 									]
 								},
 								{
-									"name": "精通防御",
 									"ENG_name": "Improved Defense",
+									"name": "精通防御",
 									"entries": [
 										"Levna的护甲等级增加了1。"
 									]
@@ -6635,8 +6635,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）挥砍伤害。"
 								]
@@ -6671,51 +6671,51 @@
 					"variant": null
 				},
 				{
-					"name": "莱芙娜·德拉科尔（11级）",
 					"ENG_name": "Levna Drakehorn (11th Level)",
+					"name": "莱芙娜·德拉科尔（11级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"Levna可以在她的回合进行两次攻击，而不是一次，只要她采取{@action 攻击}动作。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"Levna在先攻掷骰上有优势。"
 									]
 								},
 								{
-									"name": "精通防御",
 									"ENG_name": "Improved Defense",
+									"name": "精通防御",
 									"entries": [
 										"Levna的护甲等级增加了1。"
 									]
 								},
 								{
-									"name": "不屈",
 									"ENG_name": "Indomitable",
+									"name": "不屈",
 									"entries": [
 										"Levna可以重新掷骰一个她未通过的豁免检定，但她必须使用新的掷骰结果。一旦使用了这个特性，直到完成一次长休之前，她不能再使用它。"
 									]
@@ -6726,8 +6726,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）挥砍伤害。"
 								]
@@ -6762,16 +6762,16 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（2级）",
 					"ENG_name": "Levna Drakehorn (2nd Level)",
+					"name": "Levna Drakehorn（2级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
@@ -6787,23 +6787,23 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（3级）",
 					"ENG_name": "Levna Drakehorn (3rd Level)",
+					"name": "Levna Drakehorn（3级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
@@ -6819,23 +6819,23 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（4级）",
 					"ENG_name": "Levna Drakehorn (4th Level)",
+					"name": "Levna Drakehorn（4级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
@@ -6846,8 +6846,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）点挥砍伤害。"
 								]
@@ -6868,23 +6868,23 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（5级）",
 					"ENG_name": "Levna Drakehorn (5th Level)",
+					"name": "Levna Drakehorn（5级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
@@ -6895,8 +6895,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）挥砍伤害。"
 								]
@@ -6922,30 +6922,30 @@
 					"variant": null
 				},
 				{
-					"name": "莱芙娜·德拉科尔（6级）",
 					"ENG_name": "Levna Drakehorn (6th Level)",
+					"name": "莱芙娜·德拉科尔（6级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"Levna可以在她的回合进行两次攻击，而不是一次，只要她采取{@action 攻击}动作。"
 									]
@@ -6956,8 +6956,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）挥砍伤害。"
 								]
@@ -6983,37 +6983,37 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（7级）",
 					"ENG_name": "Levna Drakehorn (7th Level)",
+					"name": "Levna Drakehorn（7级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"Levna可以在她的回合进行两次攻击，而不是一次，只要她采取{@action 攻击}动作。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"Levna在先攻掷骰上有优势。"
 									]
@@ -7024,8 +7024,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）挥砍伤害。"
 								]
@@ -7051,37 +7051,37 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（8级）",
 					"ENG_name": "Levna Drakehorn (8th Level)",
+					"name": "Levna Drakehorn（8级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"Levna可以在她的回合进行两次攻击，而不是一次，只要她采取{@action 攻击}动作。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"Levna在先攻掷骰上有优势。"
 									]
@@ -7092,8 +7092,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}11 ({@damage 2d6 + 4}) 点挥砍伤害。"
 								]
@@ -7119,37 +7119,37 @@
 					"variant": null
 				},
 				{
-					"name": "Levna Drakehorn（9级）",
 					"ENG_name": "Levna Drakehorn (9th Level)",
+					"name": "Levna Drakehorn（9级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "回气",
 									"ENG_name": "Second Wind",
+									"name": "回气",
 									"entries": [
 										"Levna可以在她的回合上使用附赠动作来恢复等于{@dice 1d10} + 她等级的生命值。一旦她使用了这个特性，直到她完成一次短休或长休之前，她不能再使用它。"
 									]
 								},
 								{
-									"name": "精通重击",
 									"ENG_name": "Improved Critical",
+									"name": "精通重击",
 									"entries": [
 										"Levna的攻击骰现在在{@dice d20}掷出19或20时会打出重击。"
 									]
 								},
 								{
-									"name": "额外攻击",
 									"ENG_name": "Extra Attack",
+									"name": "额外攻击",
 									"entries": [
 										"Levna可以在她的回合进行两次攻击，而不是一次，只要她采取{@action 攻击}动作。"
 									]
 								},
 								{
-									"name": "备战",
 									"ENG_name": "Battle Readiness",
+									"name": "备战",
 									"entries": [
 										"Levna在先攻掷骰上有优势。"
 									]
@@ -7160,8 +7160,8 @@
 							"mode": "replaceArr",
 							"replace": "巨剑",
 							"items": {
-								"name": "巨剑",
 								"ENG_name": "Greatsword",
+								"name": "巨剑",
 								"entries": [
 									"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）挥砍伤害。"
 								]
@@ -7189,8 +7189,8 @@
 			]
 		},
 		{
-			"name": "劳哉特",
 			"ENG_name": "Lohezet",
+			"name": "劳哉特",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -7250,8 +7250,8 @@
 			"cr": "12",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Lohezet施放以下法术之一，不需要材料组件，并使用智力作为施法能力（法术豁免{@dc 17}）："
@@ -7278,8 +7278,8 @@
 			],
 			"trait": [
 				{
-					"name": "毒术精通",
 					"ENG_name": "Toxic Mastery",
+					"name": "毒术精通",
 					"entries": [
 						"Lohezet忽略生物对毒素伤害的抗性。"
 					]
@@ -7287,22 +7287,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"Lohezet进行三次枯萎爆破攻击，并在可用时使用瘴气。他可以用施法替代其中一次攻击。"
 					]
 				},
 				{
-					"name": "枯萎冲击",
 					"ENG_name": "Withering Blast",
+					"name": "枯萎冲击",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 9}，触及范围5尺或射程60尺，单一目标。{@h}18（{@damage 2d12 + 5}）黯蚀伤害。"
 					]
 				},
 				{
-					"name": "瘴气 {@recharge 4}",
 					"ENG_name": "Miasma {@recharge 4}",
+					"name": "瘴气 {@recharge 4}",
 					"entries": [
 						"洛赫泽特在120尺范围内的一个点为中心，20尺半径的球体内，用魔法召唤出一团翻腾的紫色雾气。球体内的区域被严重遮蔽，当一个生物在其回合开始时在球体内，或在回合中首次进入球体时，它必须进行一次{@dc 17}体质豁免检定。如果豁免失败，该生物会受到39（{@damage 6d12}）点毒素伤害，并在它的下一个回合开始前处于{@condition 中毒}状态。如豁免成功，该生物受到的伤害减半，并且不会{@condition 中毒}。雾气持续1分钟，直到洛赫泽特提前结束它（无需动作），或者洛赫泽特再次使用这个动作。强风可以驱散雾气。"
 					]
@@ -7310,8 +7310,8 @@
 			],
 			"reaction": [
 				{
-					"name": "有害斥责（每日3次）",
 					"ENG_name": "Noxious Rebuke (3/Day)",
+					"name": "有害斥责（每日3次）",
 					"entries": [
 						"当60尺范围内的生物对Lohezet造成伤害时，Lohezet会用一团恶臭的紫色雾气进行魔法反击。该生物必须进行一次{@dc 17}体质豁免检定，如果检定失败则受到16（{@damage 2d10 + 5}）点毒素伤害，如果成功则受到一半的伤害。"
 					]
@@ -7357,8 +7357,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "索斯领主",
 			"ENG_name": "Lord Soth",
+			"name": "索斯领主",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -7428,8 +7428,8 @@
 			"cr": "19",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Soth施放以下法术之一，不需要材料成分，使用魅力作为施法能力（法术豁免{@dc 19}）："
@@ -7452,29 +7452,29 @@
 			],
 			"trait": [
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果Soth未能通过豁免检定，他可以选择成功代替失败。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"索斯在对抗法术和其他魔法效果的豁免检定中有优势。"
 					]
 				},
 				{
-					"name": "不死统帅",
 					"ENG_name": "Marshal Undead",
+					"name": "不死统帅",
 					"entries": [
 						"除非Soth处于{@condition 失能}，否则他和他60尺范围内选择的不死生物生物对使不死生物转身的特性免疫。"
 					]
 				},
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"Soth不需要空气、食物、饮料或睡眠。"
 					]
@@ -7482,30 +7482,30 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"Soth进行三次被诅咒之印攻击。"
 					]
 				},
 				{
-					"name": "被遗弃之印",
 					"ENG_name": "Forsaken Brand",
+					"name": "被遗弃之印",
 					"entries": [
 						"{@atk mw} 命中骰命中{@hit 12}，触及5尺，单一目标。{@h}10（{@damage 1d8 + 6}）钝击伤害加上18（{@damage 4d8}）黯蚀伤害，如果目标是一个生物，直到Soth下一个回合开始前它不能恢复生命值。"
 					]
 				},
 				{
-					"name": "灾难之火（每日一次）",
 					"ENG_name": "Cataclysmic Fire (1/Day)",
+					"name": "灾难之火（每日一次）",
 					"entries": [
 						"Soth投掷一个在他120尺范围内可见的魔法火球，该火球在那个点爆炸。以该点为中心的20尺半径范围内的每个生物都必须进行一次{@dc 19}敏捷豁免检定。生物在失败的豁免检定中会受到35 ({@damage 10d6})火焰伤害和35 ({@damage 10d6})黯蚀伤害，成功的豁免检定则只受到一半的伤害。",
 						"此外，任何被此伤害杀死的中型或更小的人形生物，以及球体范围内的此类生物的每一个尸体，都会变成骷髅（见《怪物手册》），并受Soth的控制。骷髅在Soth的回合后立即行动。如果没有其他指令，骷髅会尝试杀死它遇到的任何非不死生物。"
 					]
 				},
 				{
-					"name": "死亡之词（每日1次）",
 					"ENG_name": "Word of Death (1/Day)",
+					"name": "死亡之词（每日1次）",
 					"entries": [
 						"Soth指向他60尺范围内能看到的一个生物，并用魔法命令它死亡。目标必须进行一次{@dc 19}体质豁免检定，如果检定失败则受到100点黯蚀伤害，如果成功则受到一半的伤害。如果这伤害使目标的生命值降至0点，目标死亡。"
 					]
@@ -7513,22 +7513,22 @@
 			],
 			"legendary": [
 				{
-					"name": "无情机动",
 					"ENG_name": "Implacable Maneuver",
+					"name": "无情机动",
 					"entries": [
 						"Soth可以移动他的速度，或者命令他骑乘的坐骑移动其速度。这个动作的移动不会引发借机攻击。如果他或他的坐骑在这次移动中进入一个生物5尺范围内，他可以迫使该生物进行一次{@dc 20}力量豁免检定。除非生物成功通过豁免检定，否则会被击倒为{@condition 倒地}状态。"
 					]
 				},
 				{
-					"name": "攻击（消耗2个行动点）",
 					"ENG_name": "Strike (Costs 2 Actions)",
+					"name": "攻击（消耗2个行动点）",
 					"entries": [
 						"Soth进行一次被遗弃者印记攻击。"
 					]
 				},
 				{
-					"name": "施放法术 (消耗 3动作)",
 					"ENG_name": "Cast a Spell (Costs 3 Actions)",
+					"name": "施放法术 (消耗 3动作)",
 					"entries": [
 						"Soth使用法术施放。"
 					]
@@ -7536,8 +7536,8 @@
 			],
 			"altArt": [
 				{
-					"name": "索斯领主",
 					"ENG_name": "Lord Soth",
+					"name": "索斯领主",
 					"source": "VEoR"
 				}
 			],
@@ -7590,15 +7590,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "洛瑞·万威洛",
 			"ENG_name": "Lorry Wanwillow",
+			"name": "洛瑞·万威洛",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 177,
 			"_copy": {
-				"name": "吸血鬼",
 				"ENG_name": "Vampire",
+				"name": "吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7611,8 +7611,8 @@
 						"mode": "replaceArr",
 						"replace": "变形生物",
 						"items": {
-							"name": "变形生物",
 							"ENG_name": "Shapechanger",
+							"name": "变形生物",
 							"entries": [
 								"如果洛瑞不在阳光直射下或流动的水中，它可以利用其行动力变化为一只小型老鼠或中型雾气云，或者恢复其真实形态。",
 								"当洛里处于蝙蝠形态时，它不能说话，其行走速度为5尺，飞行速度为30尺。除了它的大小和速度之外，它的其他具体数值保持不变。它穿着的任何物品会随着它一起变形，但它携带的任何物品则不会。如果它死亡，它会恢复其真实形态。",
@@ -7637,15 +7637,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "乌鸦·乌斯·沃格勒",
 			"ENG_name": "Raven Uth Vogler",
+			"name": "乌鸦·乌斯·沃格勒",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 53,
 			"_copy": {
-				"name": "斥候",
 				"ENG_name": "Scout",
+				"name": "斥候",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -7670,8 +7670,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "红色毁灭",
 			"ENG_name": "Red Ruin",
+			"name": "红色毁灭",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -7725,22 +7725,22 @@
 			"cr": "10",
 			"trait": [
 				{
-					"name": "龙族崇拜",
 					"ENG_name": "Draconic Devotion",
+					"name": "龙族崇拜",
 					"entries": [
 						"当红毁灭能看到一条对她没有敌意的龙时，她在攻击掷骰上有优势。"
 					]
 				},
 				{
-					"name": "骑乘战斗大师",
 					"ENG_name": "Mounted Combat Master",
+					"name": "骑乘战斗大师",
 					"entries": [
 						"当红毁骑乘时，如果一个生物以她的坐骑为目标进行攻击，红毁可以使攻击目标改为她自己。"
 					]
 				},
 				{
-					"name": "骑乘闪避",
 					"ENG_name": "Mounted Evasion",
+					"name": "骑乘闪避",
 					"entries": [
 						"当红毁灭或其坐骑进行敏捷豁免检定以减少一半伤害时，如果成功则不受到伤害，如果失败则受到一半伤害。"
 					]
@@ -7748,22 +7748,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"红毁进行三次余烬长矛攻击。"
 					]
 				},
 				{
-					"name": "余烬长矛",
 					"ENG_name": "Ember Lance",
+					"name": "余烬长矛",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}10 ({@damage 1d12 + 4}) 点穿刺伤害加上7 ({@damage 2d6}) 火焰伤害。如果目标是中型或更小的生物，它必须通过一次 {@dc 16} 力量豁免检定，否则会进入{@condition 倒地}状态。"
 					]
 				},
 				{
-					"name": "爆炸性手弩{@recharge 5}",
 					"ENG_name": "Explosive Hand Crossbow {@recharge 5}",
+					"name": "爆炸性手弩{@recharge 5}",
 					"entries": [
 						"Red Ruin向她能看到的120尺内的一个点发射了一枚爆炸性的十字弓弩箭。当弩箭到达那个点，或者如果它提前击中了某个物体，它将在一个20尺半径的球形区域内爆炸。该区域内的每个生物都必须进行一次{@dc 15}敏捷豁免检定，如果检定失败则受到35（{@damage 10d6}）点火焰伤害，如果成功则受到一半的伤害。"
 					]
@@ -7799,15 +7799,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "萨拉米尔",
 			"ENG_name": "Sarlamir",
+			"name": "萨拉米尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 102,
 			"_copy": {
-				"name": "骷髅骑士",
 				"ENG_name": "Skeletal Knight",
+				"name": "骷髅骑士",
 				"source": "DSotDQ",
 				"_mod": {
 					"*": {
@@ -7822,8 +7822,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "海精灵侦察兵",
 			"ENG_name": "Sea Elf Scout",
+			"name": "海精灵侦察兵",
 			"source": "DSotDQ",
 			"page": 114,
 			"size": [
@@ -7876,22 +7876,22 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "敏锐视听觉",
 					"ENG_name": "Keen Hearing and Sight",
+					"name": "敏锐视听觉",
 					"entries": [
 						"斥候依赖听觉或视觉所作的感知（{@skill 察觉}）检定具有优势。"
 					]
 				},
 				{
-					"name": "精类血统",
 					"ENG_name": "Fey Ancestry",
+					"name": "精类血统",
 					"entries": [
 						"侦察兵在对抗被{@condition 魅惑}的豁免检定中有优势，并且魔法不能使其入睡。"
 					]
 				},
 				{
-					"name": "海洋之子",
 					"ENG_name": "Child of the Sea",
+					"name": "海洋之子",
 					"entries": [
 						"侦查员可以在空气和水中呼吸。"
 					]
@@ -7899,22 +7899,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"斥候发动两次近战攻击，或两次远程攻击。"
 					]
 				},
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程150/600 尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点穿刺伤害。"
 					]
@@ -7950,8 +7950,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "西瓦克龙裔",
 			"ENG_name": "Sivak Draconian",
+			"name": "西瓦克龙裔",
 			"source": "DSotDQ",
 			"page": 199,
 			"size": [
@@ -8000,8 +8000,8 @@
 			"cr": "4",
 			"trait": [
 				{
-					"name": "临终苦难",
 					"ENG_name": "Death Throes",
+					"name": "临终苦难",
 					"entries": [
 						"当龙裔生物被体型为大型或更小的生物减少到0生命值时，它会化为尘土，然后形成杀死它的生物的幽灵般的、尖叫的影像。这个影像持续1分钟。在影像10尺范围内的每个对龙裔生物有敌意的生物必须成功进行一次{@dc 14}感知豁免检定，否则在1分钟内对幽灵影像感到{@condition 恐慌}。一个{@condition 恐慌}的生物可以在每个回合结束时重复豁免检定，成功则结束此效果。"
 					]
@@ -8009,22 +8009,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙人进行两次锯齿剑攻击和一次尾部攻击。"
 					]
 				},
 				{
-					"name": "锯齿剑",
 					"ENG_name": "Serrated Sword",
+					"name": "锯齿剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}13（{@damage 2d8 + 4}）点挥砍伤害。"
 					]
 				},
 				{
-					"name": "尾击",
 					"ENG_name": "Tail",
+					"name": "尾击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 钝击伤害。如果目标是大型或更小的生物，它必须通过一次 {@dc 14} 力量豁免检定，否则会被击倒为{@condition 倒地}状态。"
 					]
@@ -8032,8 +8032,8 @@
 			],
 			"reaction": [
 				{
-					"name": "窃形",
 					"ENG_name": "Shape Theft",
+					"name": "窃形",
 					"entries": [
 						"当龙裔生物杀死一个中型或更小的人形生物后，它能够通过魔法将自己伪装成那个生物的外观和触感，同时保留龙裔生物的游戏具体数值（除了它的大小）。这种变身持续到龙裔生物死亡或使用附赠动作结束它为止。"
 					]
@@ -8072,8 +8072,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "骷髅骑士",
 			"ENG_name": "Skeletal Knight",
+			"name": "骷髅骑士",
 			"source": "DSotDQ",
 			"page": 208,
 			"size": [
@@ -8127,15 +8127,15 @@
 			"cr": "7",
 			"trait": [
 				{
-					"name": "不死坚韧",
 					"ENG_name": "Undead Fortitude",
+					"name": "不死坚韧",
 					"entries": [
 						"如果伤害使骷髅骑士的生命值降至0点，除非伤害是钝击伤害或来自重击，否则它必须进行一次体质豁免检定，难度等级（DC）为5加上所受伤害。如果成功，骷髅骑士的生命值将降至1点而不是死亡。"
 					]
 				},
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"骷髅骑士不需要空气、食物、饮水或睡眠。"
 					]
@@ -8143,22 +8143,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"骷髅骑士进行三次消耗之刃攻击或投掷斧攻击，可以任意组合。"
 					]
 				},
 				{
-					"name": "耗能之刃",
 					"ENG_name": "Enervating Blade",
+					"name": "耗能之刃",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及范围5尺，单一目标。{@h}15点（{@damage 3d6 + 5}）黯蚀伤害，如果目标是一个生物，则直到骷髅骑士下一回合开始前不能恢复生命值。"
 					]
 				},
 				{
-					"name": "投掷斧",
 					"ENG_name": "Throwing Axe",
+					"name": "投掷斧",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 8}，触及5尺或20/60尺，单一目标。{@h}14 ({@damage 2d8 + 5}) 挥砍伤害。"
 					]
@@ -8191,20 +8191,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "塔蒂娜·鲁克拉斯特",
 			"ENG_name": "Tatina Rookledust",
+			"name": "塔蒂娜·鲁克拉斯特",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 87,
 			"_copy": {
-				"name": "侍僧",
 				"ENG_name": "Acolyte",
+				"name": "侍僧",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "岩侏儒",
 						"ENG_name": "Rock Gnome",
+						"name": "岩侏儒",
 						"source": "PHB"
 					}
 				],
@@ -8225,8 +8225,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "特姆·特姆布尔",
 			"ENG_name": "Tem Temble",
+			"name": "特姆·特姆布尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -8291,11 +8291,11 @@
 			"pbNote": "+2",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"泰姆的施法属性为感知（法术豁免{@dc 12}，法术攻击命中加值{@hit 4}）。她准备了以下德鲁伊法术："
+						"泰姆的施法属性为感知（法术豁免 {@dc 12}，法术攻击 {@hit 4}）。她准备了以下德鲁伊法术："
 					],
 					"will": [
 						"{@spell 德鲁伊伎俩}",
@@ -8314,8 +8314,8 @@
 			],
 			"trait": [
 				{
-					"name": "附赠熟练项",
 					"ENG_name": "Bonus Proficiencies",
+					"name": "附赠熟练项",
 					"entries": [
 						"特姆熟练使用简易武器和轻型护甲。"
 					]
@@ -8323,15 +8323,15 @@
 			],
 			"action": [
 				{
-					"name": "胡帕克杖",
 					"ENG_name": "Hoopak",
+					"name": "胡帕克杖",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及范围5尺或射程40/160尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害，或者如果Tem使用长棍的绳索进行远程攻击，则为4（{@damage 1d4 + 2}）钝击伤害。"
 					]
 				},
 				{
-					"name": "嘲讽",
 					"ENG_name": "Taunt",
+					"name": "嘲讽",
 					"entries": [
 						"Tem向她60尺范围内能看到的生物发起一连串令人愤怒的侮辱。如果目标能听到Tem的话，它必须进行一次{@dc 12}感知豁免检定，否则在其下回合结束前攻击掷骰会有劣势。"
 					]
@@ -8339,8 +8339,8 @@
 			],
 			"bonus": [
 				{
-					"name": "飘忽不定",
 					"ENG_name": "Elusive",
+					"name": "飘忽不定",
 					"entries": [
 						"特姆采取解除武装或隐藏行动。"
 					]
@@ -8348,9 +8348,9 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Tem beyond 1st Level",
 					"type": "inset",
 					"name": "Tem超过1级",
-					"ENG_name": "Tem beyond 1st Level",
 					"entries": [
 						{
 							"type": "table",
@@ -8382,7 +8382,7 @@
 								],
 								[
 									"5th",
-									"33（{@dice 6d6 + 12}）",
+									"33 ({@dice 6d6 + 12})",
 									"熟练加值。Tem的熟练加值增加1，因此以下数值增加1：她的法术豁免DC和她法术攻击的命中加值，'豁免检定和技能'条目中的加值，她的武器攻击的命中加值，以及她的嘲讽动作的DC。"
 								],
 								[
@@ -8392,27 +8392,27 @@
 								],
 								[
 									"7th",
-									"44（{@dice 8d6 + 16}）",
+									"44 ({@dice 8d6 + 16})",
 									"施法。Tem获得了一个2级法术位。她还学会了另一个2级法术：{@spell 强化属性}。"
 								],
 								[
 									"8th",
-									"49 （{@dice 9d6 + 18}）",
+									"49 ({@dice 9d6 + 18})",
 									"能力值提升。Tems的感知得分增加2点，使得调整值增加1，因此以下数值增加1：她的法术豁免DC和法术攻击的命中加值；她的感知豁免加值；她的{@skill 洞悉}（洞察）、{@skill 医药}（医学）和{@skill 察觉}（感知）加值；她的被动{@skill 察觉}得分；以及她的嘲讽动作的DC。"
 								],
 								[
 									"9th",
-									"55（{@dice 10d6 + 20}）",
+									"55 ({@dice 10d6 + 20})",
 									"熟练加值。Tem的熟练加值增加1，因此以下数值增加1：她的法术豁免DC和法术攻击命中加值，'Saving Throws and Skills'条目中的豁免和技能加值，她的武器攻击命中加值，以及她的'Taunt'动作的DC。"
 								],
 								[
 									"10th",
-									"60（{@dice 11d6 + 22}）",
+									"60 ({@dice 11d6 + 22})",
 									"施法。Tem学会了另一个戏法：{@spell 提升抗性}。"
 								],
 								[
 									"11th",
-									"66（{@dice 12d6 + 24}）",
+									"66 ({@dice 12d6 + 24})",
 									"施法能力。特姆获得了一个3级法术位。她还学会了另一个3级法术：{@spell 解除魔法}。"
 								]
 							]
@@ -8452,16 +8452,16 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "特姆·特姆布尔（10级）",
 					"ENG_name": "Tem Temble (10th Level)",
+					"name": "特姆·特姆布尔（10级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "强力戏法",
 									"ENG_name": "Potent Cantrips",
+									"name": "强力戏法",
 									"entries": [
 										"Tem将她的感知调整值加到她用任何戏法造成的损害上。"
 									]
@@ -8489,10 +8489,10 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"特姆的施法属性为感知（法术豁免 {@dc 16}，法术攻击{@hit 8}）。她准备了以下德鲁伊法术："
+								"特姆的施法能力基于感知（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。她准备了以下德鲁伊法术："
 							],
 							"will": [
 								"{@spell 德鲁伊伎俩}",
@@ -8521,15 +8521,15 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 6}，触及5尺或远程40/160尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害，或者如果使用藤杖的投石索进行远程攻击，则为4 ({@damage 1d4 + 2})钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
 								"Tem向她60尺范围内能看到的生物发出一系列令人愤怒的侮辱。如果目标能听到Tem，它必须成功通过一次{@dc 16}感知豁免检定，否则在其下个回合结束前攻击检定会受到劣势影响。"
 							]
@@ -8538,16 +8538,16 @@
 					"variant": null
 				},
 				{
-					"name": "Tem Temble（11级）",
 					"ENG_name": "Tem Temble (11th Level)",
+					"name": "Tem Temble（11级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "强力戏法",
 									"ENG_name": "Potent Cantrips",
+									"name": "强力戏法",
 									"entries": [
 										"Tem将她的感知调整值加到她用任何戏法造成的损害上。"
 									]
@@ -8575,10 +8575,10 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"特姆的施法属性为感知（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。她准备了以下德鲁伊法术："
+								"特姆的施法能力基于感知（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。她准备了以下德鲁伊法术："
 							],
 							"will": [
 								"{@spell 德鲁伊伎俩}",
@@ -8613,15 +8613,15 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 6}，触及5尺或远程40/160尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害，或者如果使用藤杖的投石索进行远程攻击，则为4 ({@damage 1d4 + 2})钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
 								"Tem向她60尺范围内能看到的生物发出一系列令人愤怒的侮辱。如果目标能听到Tem，它必须成功通过一次{@dc 16}感知豁免检定，否则在其下个回合结束前攻击检定会受到劣势影响。"
 							]
@@ -8630,8 +8630,8 @@
 					"variant": null
 				},
 				{
-					"name": "特姆·特布尔（2级）",
 					"ENG_name": "Tem Temble (2nd Level)",
+					"name": "特姆·特布尔（2级）",
 					"source": "DSotDQ",
 					"level": 2,
 					"hp": {
@@ -8640,10 +8640,10 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
-								"特姆的施法能力为感知（法术豁免 {@dc 12}，法术攻击 {@hit 4}）。她准备了以下德鲁伊法术："
+								"泰姆的施法属性为感知（法术豁免 {@dc 12}，法术攻击 {@hit 4}）。她准备了以下德鲁伊法术："
 							],
 							"will": [
 								"{@spell 德鲁伊伎俩}",
@@ -8664,8 +8664,8 @@
 					"variant": null
 				},
 				{
-					"name": "Tems Temble（3级）",
 					"ENG_name": "Tem Temble (3rd Level)",
+					"name": "Tems Temble（3级）",
 					"source": "DSotDQ",
 					"level": 3,
 					"hp": {
@@ -8674,8 +8674,8 @@
 					},
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"泰姆的施法属性为感知（法术豁免 {@dc 12}，法术攻击 {@hit 4}）。她准备了以下德鲁伊法术："
 							],
@@ -8699,8 +8699,8 @@
 					"variant": null
 				},
 				{
-					"name": "Tems Temble（4级）",
 					"ENG_name": "Tem Temble (4th Level)",
+					"name": "Tems Temble（4级）",
 					"source": "DSotDQ",
 					"level": 4,
 					"hp": {
@@ -8721,8 +8721,8 @@
 					"passive": 15,
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Tem的施法能力是感知（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。她准备了以下德鲁伊法术："
 							],
@@ -8746,15 +8746,15 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 4}，触及范围5尺或射程40/160尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害，或者如果Tem使用长棍的绳索进行远程攻击，则为4（{@damage 1d4 + 2}）钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
 								"特姆向她60尺范围内能看到的生物发出一系列令人愤怒的侮辱。如果目标能听到特姆，它必须成功进行一次{@dc 13}感知豁免检定，否则在其下个回合结束前攻击检定会受到劣势影响。"
 							]
@@ -8763,8 +8763,8 @@
 					"variant": null
 				},
 				{
-					"name": "特姆·特姆布尔（5级）",
 					"ENG_name": "Tem Temble (5th Level)",
+					"name": "特姆·特姆布尔（5级）",
 					"source": "DSotDQ",
 					"level": 5,
 					"hp": {
@@ -8786,8 +8786,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"特姆的施法能力是感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。她准备了以下德鲁伊法术："
 							],
@@ -8811,33 +8811,33 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 5}，触及范围5尺或射程40/160尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害，或者如果Tem使用长棍的绳索进行远程攻击，则为4（{@damage 1d4 + 2}）钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
-								"泰姆向她60英尺内能看到的一个生物发起一连串令人恼火的侮辱。如果目标能听到泰姆，它必须成功通过一次{@dc 14}的感知豁免，否则在它的下一个回合结束前，攻击掷骰将具有劣势。"
+								"特姆对她60英尺范围内可见的生物发动一连串令人恼火的侮辱。如果目标能听到特姆，它必须成功通过一个{@dc 14}的感知豁免检定，否则在其下一回合结束前，攻击检定将具有劣势。"
 							]
 						}
 					],
 					"variant": null
 				},
 				{
-					"name": "Tems Temble（6级）",
 					"ENG_name": "Tem Temble (6th Level)",
+					"name": "Tems Temble（6级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "强力戏法",
 									"ENG_name": "Potent Cantrips",
+									"name": "强力戏法",
 									"entries": [
 										"Tem将她的感知调整值加到她用任何戏法造成的损害上。"
 									]
@@ -8865,8 +8865,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"特姆的施法能力是感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。她准备了以下德鲁伊法术："
 							],
@@ -8890,15 +8890,15 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 5}，触及范围5尺或射程40/160尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害，或者如果Tem使用长棍的绳索进行远程攻击，则为4（{@damage 1d4 + 2}）钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
 								"特姆对她60英尺范围内可见的生物发动一连串令人恼火的侮辱。如果目标能听到特姆，它必须成功通过一个{@dc 14}的感知豁免检定，否则在其下一回合结束前，攻击检定将具有劣势。"
 							]
@@ -8907,16 +8907,16 @@
 					"variant": null
 				},
 				{
-					"name": "特姆·特姆布尔（7级）",
 					"ENG_name": "Tem Temble (7th Level)",
+					"name": "特姆·特姆布尔（7级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "强力戏法",
 									"ENG_name": "Potent Cantrips",
+									"name": "强力戏法",
 									"entries": [
 										"Tem将她的感知调整值加到她用任何戏法造成的损害上。"
 									]
@@ -8944,8 +8944,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"特姆的施法能力是感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。她准备了以下德鲁伊法术："
 							],
@@ -8975,33 +8975,33 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 5}，触及范围5尺或射程40/160尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害，或者如果Tem使用长棍的绳索进行远程攻击，则为4（{@damage 1d4 + 2}）钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
-								"泰姆向她60英尺内可以看到的生物发起了一连串令人恼火的侮辱。如果目标能听到泰姆，它必须成功通过一次{@dc 14}的感知豁免，否则直到其下一回合结束前，其攻击掷骰将处于劣势。"
+								"特姆对她60英尺范围内可见的生物发动一连串令人恼火的侮辱。如果目标能听到特姆，它必须成功通过一个{@dc 14}的感知豁免检定，否则在其下一回合结束前，攻击检定将具有劣势。"
 							]
 						}
 					],
 					"variant": null
 				},
 				{
-					"name": "特姆·特姆布尔（8级）",
 					"ENG_name": "Tem Temble (8th Level)",
+					"name": "特姆·特姆布尔（8级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "强力戏法",
 									"ENG_name": "Potent Cantrips",
+									"name": "强力戏法",
 									"entries": [
 										"Tem将她的感知调整值加到她用任何戏法造成的损害上。"
 									]
@@ -9029,8 +9029,8 @@
 					"pbNote": "+3",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"Tem的施法能力是感知（法术豁免{@dc 15}，法术攻击命中{@hit 7}）。她准备了以下德鲁伊法术："
 							],
@@ -9060,15 +9060,15 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 5}，触及范围5尺或射程40/160尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害，或者如果Tem使用长棍的绳索进行远程攻击，则为4（{@damage 1d4 + 2}）钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
 								"Tem向她60尺内可以看到的生物发出一系列令人愤怒的侮辱。如果目标能听到Tem的话，它必须通过一次 {@dc 15} 感知豁免检定，否则在其下一回合结束前攻击掷骰会有劣势。"
 							]
@@ -9077,16 +9077,16 @@
 					"variant": null
 				},
 				{
-					"name": "特姆·特姆布尔（9级）",
 					"ENG_name": "Tem Temble (9th Level)",
+					"name": "特姆·特姆布尔（9级）",
 					"source": "DSotDQ",
 					"_mod": {
 						"trait": {
 							"mode": "appendArr",
 							"items": [
 								{
-									"name": "强力戏法",
 									"ENG_name": "Potent Cantrips",
+									"name": "强力戏法",
 									"entries": [
 										"Tem将她的感知调整值加到她用任何戏法造成的损害上。"
 									]
@@ -9114,8 +9114,8 @@
 					"pbNote": "+4",
 					"spellcasting": [
 						{
-							"name": "施法",
 							"ENG_name": "Spellcasting",
+							"name": "施法",
 							"headerEntries": [
 								"特姆的施法能力基于感知（法术豁免 {@dc 16}，法术攻击 {@hit 8}）。她准备了以下德鲁伊法术："
 							],
@@ -9145,15 +9145,15 @@
 					],
 					"action": [
 						{
-							"name": "胡帕克杖",
 							"ENG_name": "Hoopak",
+							"name": "胡帕克杖",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 6}，触及5尺或远程40/160尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害，或者如果使用藤杖的投石索进行远程攻击，则为4 ({@damage 1d4 + 2})钝击伤害。"
 							]
 						},
 						{
-							"name": "嘲讽",
 							"ENG_name": "Taunt",
+							"name": "嘲讽",
 							"entries": [
 								"Tem向她60尺范围内能看到的生物发出一系列令人愤怒的侮辱。如果目标能听到Tem，它必须成功通过一次{@dc 16}感知豁免检定，否则在其下个回合结束前攻击检定会受到劣势影响。"
 							]
@@ -9164,13 +9164,13 @@
 			]
 		},
 		{
-			"name": "不死生物士兵",
 			"ENG_name": "Undead Soldier",
+			"name": "不死生物士兵",
 			"source": "DSotDQ",
 			"page": 96,
 			"_copy": {
-				"name": "尸妖",
 				"ENG_name": "Wight",
+				"name": "尸妖",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -9192,15 +9192,15 @@
 			"hasToken": true
 		},
 		{
-			"name": "维鲁扎",
 			"ENG_name": "Virruza",
+			"name": "维鲁扎",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 119,
 			"_copy": {
-				"name": "史拉绿蟾",
 				"ENG_name": "Green Slaad",
+				"name": "史拉绿蟾",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -9213,8 +9213,8 @@
 						"mode": "replaceArr",
 						"replace": "变形生物",
 						"items": {
-							"name": "临终苦难",
 							"ENG_name": "Death Throes",
+							"name": "临终苦难",
 							"entries": [
 								"当维尔鲁扎的生命值降至 0 时，他会化成一滩酸液并向周围溅射酸液。每个距离他 5 英尺内的生物必须成功通过一次 {@dc 12} 敏捷豁免，否则会被酸液覆盖 1 分钟。一个生物可以用它的动作将酸液刮掉或洗净自己或另一个生物。被酸液覆盖的生物在每个回合开始时受到 7 点（{@damage 2d6}）酸液伤害。"
 							]
@@ -9232,8 +9232,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "荒原龙蜥",
 			"ENG_name": "Wasteland Dragonnel",
+			"name": "荒原龙蜥",
 			"source": "DSotDQ",
 			"page": 201,
 			"size": [
@@ -9279,8 +9279,8 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "飞掠",
 					"ENG_name": "Flyby",
+					"name": "飞掠",
 					"entries": [
 						"当龙炮飞离敌人的触及范围时，不会引发借机攻击。"
 					]
@@ -9288,22 +9288,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"龙炮进行两次撕裂攻击。"
 					]
 				},
 				{
-					"name": "撕裂",
 					"ENG_name": "Rend",
+					"name": "撕裂",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）点挥砍伤害。"
 					]
 				},
 				{
-					"name": "酸性唾沫",
 					"ENG_name": "Acid Spit",
+					"name": "酸性唾沫",
 					"entries": [
 						"{@atk rw} 命中{@hit 5}，射程60尺，单一目标。{@h}20点（{@damage 5d6 + 3}）强酸伤害。"
 					]
@@ -9336,8 +9336,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "Wersten Kern",
 			"ENG_name": "Wersten Kern",
+			"name": "Wersten Kern",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
@@ -9395,8 +9395,8 @@
 			"cr": "14",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Wersten 施展以下法术之一，无需材料成分并使用魅力作为施法属性（法术豁免 {@dc 16}）："
@@ -9413,15 +9413,15 @@
 			],
 			"trait": [
 				{
-					"name": "不死坚韧",
 					"ENG_name": "Undead Fortitude",
+					"name": "不死坚韧",
 					"entries": [
 						"如果伤害使维尔斯滕的生命值降至0点，除非伤害是钝击伤害或来自重击，否则她必须进行一次体质豁免检定，难度等级为5加上所受伤害。成功的话，维尔斯滕的生命值降至1点。"
 					]
 				},
 				{
-					"name": "非凡本质",
 					"ENG_name": "Unusual Nature",
+					"name": "非凡本质",
 					"entries": [
 						"Wersten 不需要空气、食物、饮料或睡眠。"
 					]
@@ -9429,22 +9429,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"Wersten 进行三次旗帜长矛攻击，并在可用时使用恐怖颂歌。"
 					]
 				},
 				{
-					"name": "旗帜长矛",
 					"ENG_name": "Banner Pike",
+					"name": "旗帜长矛",
 					"entries": [
 						"{@atk mw} 命中{@hit 10}，触及5尺，单一目标。{@h}10 ({@damage 1d10 + 5}) 点穿刺伤害加上 13 ({@damage 3d8}) 黯蚀伤害。如果目标是人型生物，它必须通过一次 {@dc 16} 魅力豁免检定，否则会被诅咒。诅咒会持续直到通过 remove curse 或类似魔法解除。当生物被诅咒时，黑色的带刺玫瑰藤蔓会从其身体上生长出来，对生物的属性检定和攻击掷骰造成劣势，并将其速度减半。成功通过诅咒豁免检定的生物在24小时内对此类诅咒免疫。"
 					]
 				},
 				{
-					"name": "恐怖的连祷{@recharge 5}",
 					"ENG_name": "Terrifying Litany {@recharge 5}",
+					"name": "恐怖的连祷{@recharge 5}",
 					"entries": [
 						"Wersten 念诵了被Soth及其同伴杀害的灵魂的名字，传递着他们的死亡恐惧。在她30尺范围内的每个生物如果不是不死生物，必须进行一次{@dc 16}感知豁免检定。如果豁免失败，该生物会受到22点（{@damage 4d10}）心灵伤害，并在1分钟内对Wersten感到{@condition 恐慌}。如果豁免成功，该生物受到的伤害减半，并且不会{@condition 恐慌}。在其每个回合结束时，感到{@condition 恐慌}的生物可以重新进行豁免检定，成功则结束此效果。"
 					]
@@ -9492,15 +9492,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "怀汉",
 			"ENG_name": "Wyhan",
+			"name": "怀汉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 79,
 			"_copy": {
-				"name": "魔法师",
 				"ENG_name": "Mage",
+				"name": "魔法师",
 				"source": "MM",
 				"_mod": {
 					"*": {

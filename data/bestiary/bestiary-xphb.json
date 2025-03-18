@@ -1,8 +1,8 @@
 {
 	"monster": [
 		{
-			"name": "异怪灵魄",
 			"ENG_name": "Aberrant Spirit",
+			"name": "异怪灵魄",
 			"source": "XPHB",
 			"page": 322,
 			"summonedBySpell": "异怪召唤术|XPHB",
@@ -47,15 +47,15 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "再生（仅限史拉蟾）",
 					"ENG_name": "Regeneration (Slaad Only)",
+					"name": "再生（仅限史拉蟾）",
 					"entries": [
 						"如果灵体至少有1点生命值，则在其回合开始时恢复5点生命值。"
 					]
 				},
 				{
-					"name": "低语灵光（仅限心灵蠕虫）",
 					"ENG_name": "Whispering Aura (Mind Flayer Only)",
+					"name": "低语灵光（仅限心灵蠕虫）",
 					"entries": [
 						"在灵体每个回合开始时，如果灵体没有{@condition 失能|XPHB}状态，它会释放灵能能量。{@actSave wis} DC等于你的法术豁免DC，每个在灵体5英尺范围内的生物（除你之外）。{@actSaveFail} {@damage 2d6} 心灵伤害。"
 					]
@@ -63,31 +63,31 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"灵体进行的攻击次数等于这个法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "爪击（仅限史拉蟾）",
 					"ENG_name": "Claw (Slaad Only)",
+					"name": "爪击（仅限史拉蟾）",
 					"entries": [
 						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5英尺。{@h}{@damage 1d10 + 3 + summonSpellLevel} 斩击伤害，目标直到灵体的下一回合开始前无法恢复生命值。"
 					]
 				},
 				{
-					"name": "眼波射线Eye Ray（仅限类眼魔）",
 					"ENG_name": "Eye Ray (Beholderkin Only)",
+					"name": "眼波射线Eye Ray（仅限类眼魔）",
 					"entries": [
 						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 射程150英尺。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
 					]
 				},
 				{
-					"name": "心灵冲击（仅限心灵蠕虫）",
 					"ENG_name": "Psychic Slam (Mind Flayer Only)",
+					"name": "心灵冲击（仅限心灵蠕虫）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d8 + 3 + 召唤法术等级} 心灵伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺. {@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害."
 					]
 				}
 			],
@@ -118,8 +118,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "异常灵（贝赫尔金）",
 					"ENG_name": "Aberrant Spirit (Beholderkin)",
+					"name": "异常灵（贝赫尔金）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [
@@ -157,8 +157,8 @@
 					]
 				},
 				{
-					"name": "异怪灵（史拉蟾）",
 					"ENG_name": "Aberrant Spirit (Slaad)",
+					"name": "异怪灵（史拉蟾）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -207,8 +207,8 @@
 					]
 				},
 				{
-					"name": "异变之魂（星种）",
 					"ENG_name": "Aberrant Spirit (Star Spawn)",
+					"name": "异变之魂（星种）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -259,8 +259,8 @@
 			]
 		},
 		{
-			"name": "活化物件",
 			"ENG_name": "Animated Object",
+			"name": "活化物件",
 			"source": "XPHB",
 			"page": 240,
 			"summonedBySpell": "活化物件|XPHB",
@@ -301,10 +301,10 @@
 			"pbNote": "等于你的熟练加值",
 			"action": [
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}力场伤害等于{@damage 1d4 + 3} + 你的施法能力调整值（中型或更小）, {@damage 2d6 + 3} + 你的施法能力调整值（大型）, 或者{@damage 2d12 + 3} + 你的施法能力调整值（巨型）。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及 5 英尺。{@h}造成等同于{@damage 1d4 + 3} + 你的施法能力调整值的力场伤害（中型或更小），{@damage 2d6 + 3} + 你的施法能力调整值（大型），或{@damage 2d12 + 3} + 你的施法能力调整值（巨型）。"
 					]
 				}
 			],
@@ -318,52 +318,52 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "活化物件(巨型)",
 					"ENG_name": "Animated Object (Huge)",
+					"name": "活化物件(巨型)",
 					"source": "XPHB",
 					"hp": {
 						"special": "40"
 					},
 					"action": [
 						{
-							"name": "猛击",
 							"ENG_name": "Slam",
+							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}力场伤害等于{@damage 2d12 + 3} + 你的施法能力调整值。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺. {@h}造成等同于{@damage 2d12 + 3} + 你的施法关键属性调整值的力场伤害。"
 							]
 						}
 					]
 				},
 				{
-					"name": "活化物体(大型)",
 					"ENG_name": "Animated Object (Large)",
+					"name": "活化物体(大型)",
 					"source": "XPHB",
 					"hp": {
 						"special": "20"
 					},
 					"action": [
 						{
-							"name": "猛击",
 							"ENG_name": "Slam",
+							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}力场伤害等于{@damage 2d6 + 3} + 你的施法能力调整值。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}造成等于{@damage 2d6 + 3} + 你的施法属性调整值的力场伤害。"
 							]
 						}
 					]
 				},
 				{
-					"name": "活化物体（中型或更小）",
 					"ENG_name": "Animated Object (Medium or Smaller)",
+					"name": "活化物体（中型或更小）",
 					"source": "XPHB",
 					"hp": {
 						"special": "10"
 					},
 					"action": [
 						{
-							"name": "猛击",
 							"ENG_name": "Slam",
+							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}力场伤害等于{@damage 1d4 + 3} + 你的施法能力调整值。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺。{@h} 造成 {@damage 1d4 + 3} + 你的施法属性调整值的力场伤害。"
 							]
 						}
 					]
@@ -371,8 +371,8 @@
 			]
 		},
 		{
-			"name": "大地野兽",
 			"ENG_name": "Beast of the Land",
+			"name": "大地野兽",
 			"source": "XPHB",
 			"page": 123,
 			"summonedByClass": "游侠|XPHB",
@@ -411,8 +411,8 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "原初联结",
 					"ENG_name": "Primal Bond",
+					"name": "原初联结",
 					"entries": [
 						"将你的熟练加值加到野兽进行的任何属性检定或豁免检定上。"
 					]
@@ -420,10 +420,10 @@
 			],
 			"action": [
 				{
-					"name": "野兽之击",
 					"ENG_name": "Beast's Strike",
+					"name": "野兽之击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@dice 1d8 + 2} 加上你的智慧调整值的钝击、穿刺或斩击伤害（你召唤该生物时选择）。如果该生物在命中前直线移动至少20英尺直接向目标靠近，则目标额外受到{@damage 1d6}同类型伤害，并且如果是大型或更小的生物，则处于{@condition 倒地|XPHB}状态。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺 {@h}{@dice 1d8 + 2} 加上你的感知调整值的钝击、穿刺或挥砍伤害（在召唤野兽时选择）。如果野兽在攻击前至少直线移动了20尺到达目标，目标将额外受到{@damage 1d6}同类型伤害，如果目标是大型或更小的生物，则目标将处于{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -437,8 +437,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "海洋野兽",
 			"ENG_name": "Beast of the Sea",
+			"name": "海洋野兽",
 			"source": "XPHB",
 			"page": 124,
 			"summonedByClass": "游侠|XPHB",
@@ -477,15 +477,15 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"该生物可以在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "原初联结",
 					"ENG_name": "Primal Bond",
+					"name": "原初联结",
 					"entries": [
 						"将你的熟练加值加到野兽进行的任何属性检定或豁免检定上。"
 					]
@@ -493,10 +493,10 @@
 			],
 			"action": [
 				{
-					"name": "野兽之击",
 					"ENG_name": "Beast's Strike",
+					"name": "野兽之击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@dice 1d6 + 2} 加上你的智慧调整值的钝击或穿刺伤害（你召唤该生物时选择），目标处于{@condition 擒抱|XPHB}状态（逃脱DC等于你的法术豁免DC）。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺. {@h}{@dice 1d6 + 2} 加你的感知调整值的钝击或穿刺伤害（你在召唤野兽时选择）, 且目标陷入{@condition 擒抱|XPHB}状态（逃脱 DC 等于你的法术豁免 DC）。"
 					]
 				}
 			],
@@ -513,8 +513,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "天空野兽",
 			"ENG_name": "Beast of the Sky",
+			"name": "天空野兽",
 			"source": "XPHB",
 			"page": 124,
 			"summonedByClass": "游侠|XPHB",
@@ -553,15 +553,15 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "飞掠",
 					"ENG_name": "Flyby",
+					"name": "飞掠",
 					"entries": [
 						"当野兽飞出敌人的攻击范围时，它不会引发借机攻击。"
 					]
 				},
 				{
-					"name": "原初联结",
 					"ENG_name": "Primal Bond",
+					"name": "原初联结",
 					"entries": [
 						"将你的熟练加值加到野兽进行的任何属性检定或豁免检定上。"
 					]
@@ -569,10 +569,10 @@
 			],
 			"action": [
 				{
-					"name": "野兽之击",
 					"ENG_name": "Beast's Strike",
+					"name": "野兽之击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@dice 1d4 + 3} 加上你的智慧调整值的斩击伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}{@dice 1d4 + 3} 加上你的感知调整值的挥砍伤害。"
 					]
 				}
 			],
@@ -586,8 +586,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "野兽灵魄",
 			"ENG_name": "Bestial Spirit",
+			"name": "野兽灵魄",
 			"source": "XPHB",
 			"page": 323,
 			"summonedBySpell": "野兽召唤术|XPHB",
@@ -638,22 +638,22 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "飞掠（仅限空）",
 					"ENG_name": "Flyby (Air Only)",
+					"name": "飞掠（仅限空）",
 					"entries": [
 						"当灵体飞离敌人的触及范围时，不会引发借机攻击。"
 					]
 				},
 				{
-					"name": "集群战术（仅限陆与水）",
 					"ENG_name": "Pack Tactics (Land and Water Only)",
+					"name": "集群战术（仅限陆与水）",
 					"entries": [
 						"如果灵体的至少一个盟友在目标生物的5英尺范围内，并且该盟友没有处于{@condition 失能|XPHB}状态，则灵体对目标生物的攻击检定具有优势。"
 					]
 				},
 				{
-					"name": "水下呼吸（仅限水）",
 					"ENG_name": "Water Breathing (Water Only)",
+					"name": "水下呼吸（仅限水）",
 					"entries": [
 						"该灵体只能在水下呼吸。"
 					]
@@ -661,17 +661,17 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"该灵体进行的撕裂攻击次数等于法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "撕裂",
 					"ENG_name": "Rend",
+					"name": "撕裂",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d8 + 4 + 召唤法术等级} 穿刺伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺. {@h}{@damage 1d8 + 4 + 法术等级} 穿刺伤害."
 					]
 				}
 			],
@@ -693,8 +693,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "野兽之魂（空气）",
 					"ENG_name": "Bestial Spirit (Air)",
+					"name": "野兽之魂（空气）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -726,8 +726,8 @@
 					]
 				},
 				{
-					"name": "野性灵（陆地）",
 					"ENG_name": "Bestial Spirit (Land)",
+					"name": "野性灵（陆地）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -759,8 +759,8 @@
 					]
 				},
 				{
-					"name": "野兽之魂（水）",
 					"ENG_name": "Bestial Spirit (Water)",
+					"name": "野兽之魂（水）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -794,8 +794,8 @@
 			]
 		},
 		{
-			"name": "天界灵魄",
 			"ENG_name": "Celestial Spirit",
+			"name": "天界灵魄",
 			"source": "XPHB",
 			"page": 323,
 			"summonedBySpell": "天界召唤术|XPHB",
@@ -843,29 +843,29 @@
 			"pbNote": "等于你的熟练加值",
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"灵体进行的攻击次数等于这个法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "光耀之弓（仅限复仇圣灵）",
 					"ENG_name": "Radiant Bow (Avenger Only)",
+					"name": "光耀之弓（仅限复仇圣灵）",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 射程600英尺。{@h}{@damage 2d6 + 2 + 召唤法术等级} 辐射伤害。"
+						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 范围 600 英尺. {@h}{@damage 2d6 + 2 + summonSpellLevel} 光耀伤害。"
 					]
 				},
 				{
-					"name": "光耀之锤（仅限守护圣灵）",
 					"ENG_name": "Radiant Mace (Defender Only)",
+					"name": "光耀之锤（仅限守护圣灵）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d10 + 3 + 召唤法术等级} 辐射伤害，并且灵体可以选择它自己或者它在目标10英尺内可见的另一个生物。被选择的生物获得{@dice 1d10}临时生命值。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺。{@h}{@damage 1d10 + 3 + 召唤法术等级} 光耀伤害，并且该灵体可以选择自身或目标 10 尺内它能看到的另一个生物。被选的生物获得 {@dice 1d10} 临时生命值。"
 					]
 				},
 				{
-					"name": "治愈之触（1/日）",
 					"ENG_name": "Healing Touch (1/Day)",
+					"name": "治愈之触（1/日）",
 					"entries": [
 						"灵体触碰另一个生物。目标恢复的生命值等于{@dice 2d8 + 召唤法术等级}。"
 					]
@@ -886,8 +886,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "天界灵（复仇者）",
 					"ENG_name": "Celestial Spirit (Avenger)",
+					"name": "天界灵（复仇者）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [
@@ -915,8 +915,8 @@
 					]
 				},
 				{
-					"name": "天界之魂（守卫者）",
 					"ENG_name": "Celestial Spirit (Defender)",
+					"name": "天界之魂（守卫者）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [
@@ -946,8 +946,8 @@
 			]
 		},
 		{
-			"name": "构装灵魄",
 			"ENG_name": "Construct Spirit",
+			"name": "构装灵魄",
 			"source": "XPHB",
 			"page": 324,
 			"summonedBySpell": "构装召唤术|XPHB",
@@ -996,15 +996,15 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "灼热之躯（仅限金属）",
 					"ENG_name": "Heated Body (Metal Only)",
+					"name": "灼热之躯（仅限金属）",
 					"entries": [
 						"用近战攻击击中灵体或在其回合开始时与灵体进行肉搏的生物会受到{@damage 1d10}火焰伤害。"
 					]
 				},
 				{
-					"name": "石迷昏眠（仅限石）",
 					"ENG_name": "Stony Lethargy (Stone Only)",
+					"name": "石迷昏眠（仅限石）",
 					"entries": [
 						"当一个生物在灵魂10英尺范围内开始其回合时，如果灵魂能看到它，灵魂可以用魔法能量瞄准它。{@actSave wis} DC等于你的法术豁免DC，目标是{@actSaveFail} 直到其下个回合开始，目标不能进行机会攻击，且其速度减半。"
 					]
@@ -1012,24 +1012,24 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"该灵体进行的猛击攻击次数等于法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d8 + 4 + 召唤法术等级} 钝击伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}{@damage 1d8 + 4 + 召唤法术等级} 钝击伤害。"
 					]
 				}
 			],
 			"reaction": [
 				{
-					"name": "狂怒乱击（仅限粘土）",
 					"ENG_name": "Berserk Lashing (Clay Only)",
+					"name": "狂怒乱击（仅限粘土）",
 					"entries": [
 						"{@actTrigger} 灵体受到来自生物的伤害。{@actResponse} 如果可能，灵体对那个生物进行猛击攻击，或者灵体朝着那个生物移动至多一半的速度而不引起借机攻击。"
 					]
@@ -1052,8 +1052,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "构造灵（黏土）",
 					"ENG_name": "Construct Spirit (Clay)",
+					"name": "构造灵（黏土）",
 					"source": "XPHB",
 					"_mod": {
 						"reaction": [
@@ -1072,8 +1072,8 @@
 					]
 				},
 				{
-					"name": "构装生物之魂（金属）",
 					"ENG_name": "Construct Spirit (Metal)",
+					"name": "构装生物之魂（金属）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1093,8 +1093,8 @@
 					"reaction": null
 				},
 				{
-					"name": "构装生物之灵（石）",
 					"ENG_name": "Construct Spirit (Stone)",
+					"name": "构装生物之灵（石）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1119,8 +1119,8 @@
 			]
 		},
 		{
-			"name": "龙类灵魄",
 			"ENG_name": "Draconic Spirit",
+			"name": "龙类灵魄",
 			"source": "XPHB",
 			"page": 325,
 			"summonedBySpell": "召唤龙|XPHB",
@@ -1175,8 +1175,8 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "共享抗性",
 					"ENG_name": "Shared Resistances",
+					"name": "共享抗性",
 					"entries": [
 						"当你召唤这个灵体时，选择它的一个抗性。在法术结束前，你对所选的伤害类型有抗性。"
 					]
@@ -1184,22 +1184,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"该灵体进行的撕裂攻击次数等于法术等级的一半（向下取整），并且它使用呼吸武器。"
 					]
 				},
 				{
-					"name": "撕裂",
 					"ENG_name": "Rend",
+					"name": "撕裂",
 					"entries": [
 						"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及10英尺。{@h}{@damage 1d6 + 4 + summonSpellLevel} 穿刺伤害。"
 					]
 				},
 				{
-					"name": "吐息武器",
 					"ENG_name": "Breath Weapon",
+					"name": "吐息武器",
 					"entries": [
 						"{@actSave dex} DC等于你的法术豁免DC，30英尺锥形区域内的每个生物。{@actSaveFail} 此灵体有抗性的某种类型的伤害{@damage 2d6}（你施法时选择）。{@actSaveSuccess} 伤害减半。"
 					]
@@ -1222,8 +1222,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "元素灵魄",
 			"ENG_name": "Elemental Spirit",
+			"name": "元素灵魄",
 			"source": "XPHB",
 			"page": 325,
 			"summonedBySpell": "元素召唤术|XPHB",
@@ -1317,8 +1317,8 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "不定形态（仅限于气、火和水）",
 					"ENG_name": "Amorphous Form (Air, Fire, and Water Only)",
+					"name": "不定形态（仅限于气、火和水）",
 					"entries": [
 						"灵体可以通过宽度仅为1英寸的空间移动，而不会将其视为困难地形。"
 					]
@@ -1326,15 +1326,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"该灵体进行的猛击攻击次数等于法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
 						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 5 尺触及 {@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击（仅限土元素）, 冷冻（仅限水元素）, 闪电（仅限气元素）或火焰（仅限火元素）伤害。"
 					]
@@ -1353,8 +1353,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "元素灵（风）",
 					"ENG_name": "Elemental Spirit (Air)",
+					"name": "元素灵（风）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1370,10 +1370,10 @@
 							"mode": "replaceArr",
 							"replace": "猛击",
 							"items": {
-								"name": "猛击",
 								"ENG_name": "Slam",
+								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺.. {@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
 								]
 							}
 						}
@@ -1398,18 +1398,18 @@
 					]
 				},
 				{
-					"name": "元素之灵（土）",
 					"ENG_name": "Elemental Spirit (Earth)",
+					"name": "元素之灵（土）",
 					"source": "XPHB",
 					"_mod": {
 						"action": {
 							"mode": "replaceArr",
 							"replace": "猛击",
 							"items": {
-								"name": "猛击",
 								"ENG_name": "Slam",
+								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺.. {@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
 								]
 							}
 						}
@@ -1431,8 +1431,8 @@
 					]
 				},
 				{
-					"name": "元素灵（火）",
 					"ENG_name": "Elemental Spirit (Fire)",
+					"name": "元素灵（火）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1448,10 +1448,10 @@
 							"mode": "replaceArr",
 							"replace": "猛击",
 							"items": {
-								"name": "猛击",
 								"ENG_name": "Slam",
+								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 火焰伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺.. {@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1468,8 +1468,8 @@
 					]
 				},
 				{
-					"name": "元素精灵（水）",
 					"ENG_name": "Elemental Spirit (Water)",
+					"name": "元素精灵（水）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1485,10 +1485,10 @@
 							"mode": "replaceArr",
 							"replace": "猛击",
 							"items": {
-								"name": "猛击",
 								"ENG_name": "Slam",
+								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺.. {@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
 								]
 							}
 						}
@@ -1510,8 +1510,8 @@
 			]
 		},
 		{
-			"name": "妖精灵魄",
 			"ENG_name": "Fey Spirit",
+			"name": "妖精灵魄",
 			"source": "XPHB",
 			"page": 326,
 			"summonedBySpell": "精类召唤术|XPHB",
@@ -1555,24 +1555,24 @@
 			"pbNote": "等于你的熟练加值",
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"该灵体进行的仙灵之刃攻击次数等于法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "仙灵之刃",
 					"ENG_name": "Fey Blade",
+					"name": "仙灵之刃",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 2d6 + 3 + 召唤法术等级} 力场伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺 {@h}{@damage 2d6 + 3 + 召唤法术等级} 力场伤害。"
 					]
 				}
 			],
 			"bonus": [
 				{
-					"name": "精类步",
 					"ENG_name": "Fey Step",
+					"name": "精类步",
 					"entries": [
 						"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。然后根据灵体选择的心情，发生以下效果之一：",
 						{
@@ -1580,24 +1580,24 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "愤怒",
 									"ENG_name": "Fuming",
+									"name": "愤怒",
 									"type": "item",
 									"entries": [
 										"在本回合结束前，灵体下一次进行的攻击检定具有优势。"
 									]
 								},
 								{
-									"name": "欢欣",
 									"ENG_name": "Mirthful",
+									"name": "欢欣",
 									"type": "item",
 									"entries": [
 										"{@actSave wis} DC等于你的法术豁免DC，灵体可见范围内10英尺内的一只生物。{@actSaveFail} 目标被你和灵体{@condition 魅惑|XPHB}1分钟，或直到目标受到任何伤害。"
 									]
 								},
 								{
-									"name": "诡诈",
 									"ENG_name": "Tricksy",
+									"name": "诡诈",
 									"type": "item",
 									"entries": [
 										"灵体在其周围5英尺内填充一个10英尺的立方体空间，用魔法黑暗覆盖，直到其下回合结束。"
@@ -1633,13 +1633,13 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "精类之魂（喷烟）",
 					"ENG_name": "Fey Spirit (Fuming)",
+					"name": "精类之魂（喷烟）",
 					"source": "XPHB",
 					"bonus": [
 						{
-							"name": "精类步",
 							"ENG_name": "Fey Step",
+							"name": "精类步",
 							"entries": [
 								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。在本回合结束前，灵体下一次进行的攻击检定具有优势。"
 							]
@@ -1647,13 +1647,13 @@
 					]
 				},
 				{
-					"name": "精类灵（欢乐）",
 					"ENG_name": "Fey Spirit (Mirthful)",
+					"name": "精类灵（欢乐）",
 					"source": "XPHB",
 					"bonus": [
 						{
-							"name": "精类步",
 							"ENG_name": "Fey Step",
+							"name": "精类步",
 							"entries": [
 								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。{@actSave wis} DC等于你的法术豁免DC，灵体可见范围内10英尺内的一只生物。{@actSaveFail} 目标被你和灵体{@condition 魅惑|XPHB}1分钟，或直到目标受到任何伤害。"
 							]
@@ -1661,13 +1661,13 @@
 					]
 				},
 				{
-					"name": "仙灵（调皮）",
 					"ENG_name": "Fey Spirit (Tricksy)",
+					"name": "仙灵（调皮）",
 					"source": "XPHB",
 					"bonus": [
 						{
-							"name": "精类步",
 							"ENG_name": "Fey Step",
+							"name": "精类步",
 							"entries": [
 								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。灵体在其周围5英尺内填充一个10英尺的立方体空间，用魔法黑暗覆盖，直到其下回合结束。"
 							]
@@ -1677,8 +1677,8 @@
 			]
 		},
 		{
-			"name": "邪魔灵魄",
 			"ENG_name": "Fiendish Spirit",
+			"name": "邪魔灵魄",
 			"source": "XPHB",
 			"page": 327,
 			"summonedBySpell": "邪魔召唤术|XPHB",
@@ -1736,22 +1736,22 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "焚身爆（仅限恶魔）",
 					"ENG_name": "Death Throes (Demon Only)",
+					"name": "焚身爆（仅限恶魔）",
 					"entries": [
 						"当灵体生命值降至0或法术结束时，灵体会爆炸。{@actSave dex} 豁免DC等于你的法术豁免DC，灵体周围10英尺爆发范围内的每个生物需进行豁免。{@actSaveFail} 受到{@damage 2d10}加上法术等级的火属性伤害。{@actSaveSuccess} 成功则只受到一半伤害。"
 					]
 				},
 				{
-					"name": "魔鬼视界（仅限魔鬼）",
 					"ENG_name": "Devil's Sight (Devil Only)",
+					"name": "魔鬼视界（仅限魔鬼）",
 					"entries": [
 						"魔法黑暗不会阻碍灵体的黑暗视觉。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"该灵体对法术和其他魔法效果的豁免检定具有优势。"
 					]
@@ -1759,31 +1759,31 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"灵体进行的攻击次数等于这个法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "啃咬（仅限于恶魔）",
 					"ENG_name": "Bite (Demon Only)",
+					"name": "啃咬（仅限于恶魔）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d12 + 3 + 召唤法术等级} 坏死伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺。{@h}{@damage 1d12 + 3 + 召唤法术等级} 黯蚀伤害。"
 					]
 				},
 				{
-					"name": "爪击（仅限于尤格罗斯魔）",
 					"ENG_name": "Claws (Yugoloth Only)",
+					"name": "爪击（仅限于尤格罗斯魔）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺。{@h}{@damage 1d8 + 3 + 召唤法术等级} 斩击伤害。攻击命中或未命中后，灵体可以立即传送至其可见的未被占据的空间，距离最多30英尺。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺. {@h}{@damage 1d8 + 3 + 召唤法术等级} 挥砍伤害. 在攻击命中或未命中后, 该灵体可以立即传送至其可见的、未被占据的空间, 最远 30 尺."
 					]
 				},
 				{
-					"name": "火焰打击（仅限恶魔）",
 					"ENG_name": "Fiery Strike (Devil Only)",
+					"name": "火焰打击（仅限恶魔）",
 					"entries": [
-						"{@atkr 米，半径} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及范围5英尺或射程150英尺。{@h}{@damage 2d6 + 3 + 召唤法术等级} 火焰伤害。"
+						"{@atkr 米，半径} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 范围5尺或射程150尺. {@h}{@damage 2d6 + 3 + 召唤法术等级}火焰伤害。"
 					]
 				}
 			],
@@ -1811,8 +1811,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "恶魔之魂",
 					"ENG_name": "Fiendish Spirit (Demon)",
+					"name": "恶魔之魂",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1861,8 +1861,8 @@
 					]
 				},
 				{
-					"name": "恶魔之魂",
 					"ENG_name": "Fiendish Spirit (Devil)",
+					"name": "恶魔之魂",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1911,8 +1911,8 @@
 					]
 				},
 				{
-					"name": "恶魔灵（尤格罗斯）",
 					"ENG_name": "Fiendish Spirit (Yugoloth)",
+					"name": "恶魔灵（尤格罗斯）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -1957,8 +1957,8 @@
 			]
 		},
 		{
-			"name": "巨虫术",
 			"ENG_name": "Giant Insect",
+			"name": "巨虫术",
 			"source": "XPHB",
 			"page": 279,
 			"summonedBySpell": "巨虫术|XPHB",
@@ -2002,8 +2002,8 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "蛛行术",
 					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
 					"entries": [
 						"该昆虫能够攀爬困难的表面，包括天花板，而无需进行属性检定。"
 					]
@@ -2011,31 +2011,31 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"该昆虫进行的攻击次数等于法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "毒刺攻击",
 					"ENG_name": "Poison Jab",
+					"name": "毒刺攻击",
 					"entries": [
 						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 范围10尺. {@h}{@damage 1d6 + 3 + 召唤法术等级} 穿刺伤害外加 {@damage 1d4} 毒素伤害。"
 					]
 				},
 				{
-					"name": "蛛网箭（仅限蜘蛛）",
 					"ENG_name": "Web Bolt (Spider Only)",
+					"name": "蛛网箭（仅限蜘蛛）",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack}, 射程 60 英尺 {@h}{@damage 1d10 + 3 + 召唤法术等级} 钝击伤害, 并且目标的速度在昆虫的下个回合开始时降为 0。"
+						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，射程 60 英尺 {@h}{@damage 1d10 + 3 + 召唤法术等级} 钝击伤害，并且目标的速度减至 0，直到昆虫的下一回合开始。"
 					]
 				}
 			],
 			"bonus": [
 				{
-					"name": "毒液喷溅（仅限蜈蚣）",
 					"ENG_name": "Venomous Spew (Centipede Only)",
+					"name": "毒液喷溅（仅限蜈蚣）",
 					"entries": [
 						"{@actSave con} 你的法术豁免DC，昆虫可以看到的10英尺内的一只生物。{@actSaveFail} 目标直到昆虫下一回合开始时处于{@condition 中毒|XPHB}状态。"
 					]
@@ -2066,8 +2066,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "巨型昆虫（蜈蚣）",
 					"ENG_name": "Giant Insect (Centipede)",
+					"name": "巨型昆虫（蜈蚣）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [
@@ -2085,8 +2085,8 @@
 					}
 				},
 				{
-					"name": "巨型昆虫（蜘蛛）",
 					"ENG_name": "Giant Insect (Spider)",
+					"name": "巨型昆虫（蜘蛛）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [
@@ -2106,8 +2106,8 @@
 					"bonus": null
 				},
 				{
-					"name": "巨型昆虫（黄蜂）",
 					"ENG_name": "Giant Insect (Wasp)",
+					"name": "巨型昆虫（黄蜂）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [
@@ -2129,8 +2129,8 @@
 			]
 		},
 		{
-			"name": "超凡坐骑",
 			"ENG_name": "Otherworldly Steed",
+			"name": "超凡坐骑",
 			"source": "XPHB",
 			"page": 273,
 			"summonedBySpell": "寻获坐骑|XPHB",
@@ -2178,8 +2178,8 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "生命联结",
 					"ENG_name": "Life Bond",
+					"name": "生命联结",
 					"entries": [
 						"当你从1级或更高级别的法术中恢复生命值时，如果你在它5英尺范围内，坐骑也会恢复相同数量的生命值。"
 					]
@@ -2187,8 +2187,8 @@
 			],
 			"action": [
 				{
-					"name": "异界冲击",
 					"ENG_name": "Otherworldly Slam",
+					"name": "异界冲击",
 					"entries": [
 						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺. {@h}{@damage 1d8 + 召唤法术等级}的 radiant（天界）, psychic（精类）, 或 necrotic（魔裔）伤害。"
 					]
@@ -2196,22 +2196,22 @@
 			],
 			"bonus": [
 				{
-					"name": "堕落凝视（仅限恶魔；长休后重置）",
 					"ENG_name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
+					"name": "堕落凝视（仅限恶魔；长休后重置）",
 					"entries": [
 						"{@actSave wis} DC等于你的法术豁免DC，坐骑可以看到的60英尺内的生物。{@actSaveFail} 目标在你的下一个回合结束前处于{@condition 恐慌|XPHB}状态。"
 					]
 				},
 				{
-					"name": "仙灵步（仅限仙灵；长休后重置）",
 					"ENG_name": "Fey Step (Fey Only; Recharges after a Long Rest)",
+					"name": "仙灵步（仅限仙灵；长休后重置）",
 					"entries": [
 						"这匹坐骑带着它的骑手传送到你选择的未被占据的空间，距离它最多60英尺。"
 					]
 				},
 				{
-					"name": "治疗之触（仅限天界生物；长休后重置）",
 					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
+					"name": "治疗之触（仅限天界生物；长休后重置）",
 					"entries": [
 						"5英尺内的生物恢复的生命值点数等于{@dice 2d8 + 召唤法术等级}。"
 					]
@@ -2233,8 +2233,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "不死灵魄",
 			"ENG_name": "Undead Spirit",
+			"name": "不死灵魄",
 			"source": "XPHB",
 			"page": 328,
 			"summonedBySpell": "亡灵召唤术|XPHB",
@@ -2288,15 +2288,15 @@
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
-					"name": "腐灭灵光（仅限腐尸）",
 					"ENG_name": "Festering Aura (Putrid Only)",
+					"name": "腐灭灵光（仅限腐尸）",
 					"entries": [
 						"{@actSave con} DC等于你的法术豁免DC，任何生物（除了你）在它的回合开始时处于来自灵体的5英尺范围内的辐射区域。{@actSaveFail} 该生物直到它的下一个回合开始时处于{@condition 中毒|XPHB}状态。"
 					]
 				},
 				{
-					"name": "虚体移动（仅限于虚灵）",
 					"ENG_name": "Incorporeal Passage (Ghostly Only)",
+					"name": "虚体移动（仅限于虚灵）",
 					"entries": [
 						"这个灵体可以像穿过困难地形一样穿过其他生物和物体。如果它在某个物体内部结束回合，它会被传送到最近的未被占据的空间，并根据移动的英尺数每5英尺受到{@damage 1d10}力能伤害。"
 					]
@@ -2304,29 +2304,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"灵体进行的攻击次数等于这个法术等级的一半（向下取整）。"
 					]
 				},
 				{
-					"name": "致死之触（仅限于虚灵）",
 					"ENG_name": "Deathly Touch (Ghostly Only)",
+					"name": "致死之触（仅限于虚灵）",
 					"entries": [
 						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，射程5英尺。{@h}{@damage 1d8 + 3 + summonSpellLevel} 亡灵伤害，并且目标在其下个回合结束前处于{@condition 恐慌|XPHB}状态。"
 					]
 				},
 				{
-					"name": "暗澹箭（仅限于骷髅）",
 					"ENG_name": "Grave Bolt (Skeletal Only)",
+					"name": "暗澹箭（仅限于骷髅）",
 					"entries": [
 						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 射程150英尺。{@h}{@damage 2d4 + 3 + summonSpellLevel} 坏死伤害。"
 					]
 				},
 				{
-					"name": "腐烂爪击（仅限于腐尸）。",
 					"ENG_name": "Rotting Claw (Putrid Only)",
+					"name": "腐烂爪击（仅限于腐尸）。",
 					"entries": [
 						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5英尺。{@h}{@damage 1d6 + 3 + summonSpellLevel} 斩击伤害。如果目标处于{@condition 中毒|XPHB}状态，则直到其下一回合结束前处于{@condition 麻痹|XPHB}状态。"
 					]
@@ -2362,8 +2362,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "不死之魂（幽灵形态）",
 					"ENG_name": "Undead Spirit (Ghostly)",
+					"name": "不死之魂（幽灵形态）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -2415,8 +2415,8 @@
 					]
 				},
 				{
-					"name": "不死之魂（腐臭）",
 					"ENG_name": "Undead Spirit (Putrid)",
+					"name": "不死之魂（腐臭）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
@@ -2466,8 +2466,8 @@
 					]
 				},
 				{
-					"name": "不死之魂（骷髅）",
 					"ENG_name": "Undead Spirit (Skeletal)",
+					"name": "不死之魂（骷髅）",
 					"source": "XPHB",
 					"_mod": {
 						"action": [

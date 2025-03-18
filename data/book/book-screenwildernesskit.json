@@ -1,15 +1,15 @@
 {
 	"data": [
 		{
+			"ENG_name": "Wilderness Journeys",
 			"type": "section",
 			"name": "荒野之旅",
-			"ENG_name": "Wilderness Journeys",
 			"entries": [
 				"此表格提供了在荒野旅行中进行游戏的指导以及在旅途中跟踪物资的指南。",
 				{
+					"ENG_name": "Journey Cycles",
 					"type": "entries",
 					"name": "旅程循环",
-					"ENG_name": "Journey Cycles",
 					"entries": [
 						"一次旅行发生在周期中，每个周期代表在荒野中旅行的天数。DM首先决定旅程是短途还是长途，这取决于角色到达目的地需要多长时间。旅程的长度决定了周期代表多少天；对于短途旅行，每个周期是一天，或者对于长途旅行，每个周期是7天。",
 						"对于每个周期，按顺序遵循以下步骤：",
@@ -18,39 +18,39 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "1. Weather",
 									"type": "item",
 									"name": "1. 天气",
-									"ENG_name": "1. Weather",
-									"entry": "DM决定周期的主要天气条件。你可以选择天气，或者在DM屏幕上的{@table 天气|DMG}表格上掷骰来决定天气，包括{@note None}。"
+									"entry": "DM决定周期的主要天气条件。你可以选择天气，或者在DM屏幕上的{@table 天气|DMG}表格上掷骰来决定天气，包括{@note ({@table 天气；降水|DMG|降水}; {@table 天气；风|DMG|风势})}。"
 								},
 								{
+									"ENG_name": "2. Pace",
 									"type": "item",
 									"name": "2. 步伐",
-									"ENG_name": "2. Pace",
 									"entry": "玩家们选择队伍在周期内的行进速度：慢速、正常或快速。请参阅DM屏幕上的{@table 旅行步调|PHB}表格，了解每种速度的详细信息。"
 								},
 								{
+									"ENG_name": "3. Navigate",
 									"type": "item",
 									"name": "3. 导航",
-									"ENG_name": "3. Navigate",
 									"entry": "地下城主决定冒险者是否有迷路的风险，遵循下文中\"迷路\"部分的指南。"
 								},
 								{
+									"ENG_name": "4. Encounter",
 									"type": "item",
 									"name": "4. 遭遇",
-									"ENG_name": "4. Encounter",
 									"entry": "掷一个{@dice d10}骰子。如果是1，则角色在本周期遇到了某事。DM决定发生什么，或者在荒野遭遇表上掷骰。"
 								},
 								{
+									"ENG_name": "5. Supplies",
 									"type": "item",
 									"name": "5. 补给品",
-									"ENG_name": "5. Supplies",
 									"entry": "为队伍中必须进食或饮水的每个生物消耗食物和水，参考下面的\"食物和水\"部分。"
 								},
 								{
+									"ENG_name": "6. Progress",
 									"type": "item",
 									"name": "6. 进展",
-									"ENG_name": "6. Progress",
 									"entry": "追踪队伍在周期内的里程进度。您可以使用此套件中的六边形地图来记录队伍的当前位置。"
 								}
 							]
@@ -59,9 +59,9 @@
 					"id": "001"
 				},
 				{
+					"ENG_name": "Becoming Lost",
 					"type": "entries",
 					"name": "迷路",
-					"ENG_name": "Becoming Lost",
 					"entries": [
 						"当旅行者沿着已建立的小径或道路行走，或者视线内有地标时，不太可能迷路。在这些情况下，假设一群冒险者不会迷路。",
 						"以下是可能导致团队迷路的情况：",
@@ -81,9 +81,9 @@
 					"id": "002"
 				},
 				{
+					"ENG_name": "Random Encounter",
 					"type": "entries",
 					"name": "随机遭遇",
-					"ENG_name": "Random Encounter",
 					"entries": [
 						"如果随机遭遇发生，DM可以在像《珊娜萨的万事指南》这样的书中的表格上掷骰，或者使用这里的荒野遭遇表。",
 						{
@@ -279,9 +279,9 @@
 					"type": "entries",
 					"entries": [
 						{
+							"ENG_name": "Food and Water",
 							"type": "entries",
 							"name": "粮食与水",
-							"ENG_name": "Food and Water",
 							"entries": [
 								"生物每周期需要一定单位的食物和水。《食物和水需求》表格列出了生物每周期所需的食物单位和水单位数量，并表明了每周期每个生物单位食物的成本。单位的重量由周期决定：",
 								{
@@ -289,15 +289,15 @@
 									"style": "list-hang-notitle",
 									"items": [
 										{
+											"ENG_name": "Short Cycle:",
 											"type": "item",
 											"name": "短周期：",
-											"ENG_name": "Short Cycle:",
 											"entry": "1单位 = 1磅/加仑的食物/水"
 										},
 										{
+											"ENG_name": "Long Cycle:",
 											"type": "item",
 											"name": "长周期：",
-											"ENG_name": "Long Cycle:",
 											"entry": "1单位 = 7磅/加仑的食物/水"
 										}
 									]
@@ -361,9 +361,9 @@
 							"id": "005"
 						},
 						{
+							"ENG_name": "Tracking Supplies",
 							"type": "entries",
 							"name": "追踪物资",
-							"ENG_name": "Tracking Supplies",
 							"entries": [
 								"使用随附的补给追踪器记录您是在追踪短周期还是长周期的旅程，以及您携带了多少单位的食物和水。在每个周期的补给步骤中，为消耗的每个食物或水单位划掉一个框。",
 								"一个无法进食或饮水的角色每未满足一项需求就会获得1级{@condition 力竭}。通过这种方式获得的力竭在角色能够摄入足够的食物和水之前无法消除。"
@@ -371,9 +371,9 @@
 							"id": "006"
 						},
 						{
+							"ENG_name": "Foraging",
 							"type": "entries",
 							"name": "觅食",
-							"ENG_name": "Foraging",
 							"entries": [
 								"角色可以在队伍以正常或慢速行进时狩猎或收集食物和水。搜寻食物的角色进行一次感知（{@skill 生存}）检定，难度等级由地形决定（见DM屏幕上的搜寻表格）。成功检定时，角色收集的食物单位等于{@dice 1d6}加上他们的感知调整值。重复掷骰以获取饮用水。"
 							],
@@ -386,15 +386,15 @@
 			"id": "000"
 		},
 		{
+			"ENG_name": "Wilderness Chases",
 			"type": "section",
 			"name": "荒野追逐",
-			"ENG_name": "Wilderness Chases",
 			"entries": [
 				"当在荒野中开始追逐时，DM可以使用这些规则来确定追逐者是否捕捉到他们的猎物。",
 				{
+					"ENG_name": "Playing a Chase",
 					"type": "entries",
 					"name": "进行追逐",
-					"ENG_name": "Playing a Chase",
 					"entries": [
 						"追逐在多轮中展开，每轮每个追逐参与者都会轮流行动。",
 						"以下是进行追逐时应遵循的步骤：",
@@ -403,33 +403,33 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "1. Establish positions",
 									"type": "item",
 									"name": "1. 确定位置",
-									"ENG_name": "1. Establish positions",
 									"entry": "确定猎物和追捕者彼此之间的距离。猎物和追捕者可能是个人或一个团队。在追逐过程中，DM会跟踪这个距离。如果使用这个套装中的干擦六边形地图来跟踪距离，你可以确定每个六边形代表多少尺：5尺，10尺，或更多。"
 								},
 								{
+									"ENG_name": "2. Roll initiative",
 									"type": "item",
 									"name": "2. 掷先攻",
-									"ENG_name": "2. Roll initiative",
 									"entry": "参与追逐的每个人都进行先攻骰，以确定追逐中他们行动的顺序。"
 								},
 								{
+									"ENG_name": "3. Roll for a complication",
 									"type": "item",
 									"name": "3. 掷骰以解决复杂情况",
-									"ENG_name": "3. Roll for a complication",
 									"entry": "当你的回合开始时，掷一个{@dice d20}骰子，并参照荒野追逐复杂性表，看看是否有意外事件使你的回合变得复杂。"
 								},
 								{
+									"ENG_name": "4. Move And take an action",
 									"type": "item",
 									"name": "4. 移动并采取行动",
-									"ENG_name": "4. Move And take an action",
 									"entry": "在你的回合，你可以进行一次行动，并且在那一次行动之前或之后，你可以移动至等于你速度的距离。查看\"战斗中的行动\"表格了解在追逐中你可以进行的行动（如果你采取了{@action 疾走}行动，请参阅此表格背面的\"猛冲\"部分）。如果你有可用的附赠动作，你也会在你的回合中进行，但每回合不超过一次。"
 								},
 								{
+									"ENG_name": "5. Begin the next round",
 									"type": "item",
 									"name": "5. 开始新一轮",
-									"ENG_name": "5. Begin the next round",
 									"entry": "当参与追逐的每个人都完成了他们的回合后，这一轮结束，DM将根据这张纸另一面的\"结束追逐\"部分中详细描述的规则来确定追逐是否结束。如果追逐没有结束，请重复步骤3-5，直到它结束。"
 								}
 							]
@@ -460,7 +460,7 @@
 								],
 								[
 									4,
-									"一条溪流、峡谷或岩床挡住了你的去路。进行一次{@dc 10}力量（{@skill 运动}）或敏捷（{@skill 特技}）检定（由你选择）以跨越障碍。若检定失败，该障碍视为10英尺的{@quickref 困难地形||3}。"
+									"一条溪流、峡谷或岩床挡住了你的去路。进行一个{@dc 10}力量（{@skill 运动}）或敏捷（{@skill 特技}）检定（由你选择）以穿过障碍。若检定失败，此障碍视为10英尺的{@quickref 困难地形||3}。"
 								],
 								[
 									5,
@@ -493,19 +493,19 @@
 							]
 						},
 						{
+							"ENG_name": "Dashing",
 							"type": "entries",
 							"name": "疾奔中",
-							"ENG_name": "Dashing",
 							"entries": [
 								"在追逐过程中，你可以有限次数地使用{@action 疾走}动作，之后你就会面临{@condition 力竭}的风险。这个次数等于3加上你体质的加值。在追逐中，每次超过这个次数后额外使用的{@action 疾走}动作都需要你在回合结束时通过一个{@dc 10}体质检定，否则获得1级{@condition 力竭}。",
-								"如果你的{@condition 力竭}达到5级，你就会退出追逐，因为你的速度变为0。通过完成短休或长休，你可以移除你在追逐中因多次采取{@condition 力竭}行动而获得的所有{@condition 力竭}等级。"
+								"如果你的{@condition 力竭}达到5级，你就会退出追逐，因为你的速度变为0。通过完成短休或长休，你可以移除你在追逐中因多次采取{@action 疾走}行动而获得的所有{@condition 力竭}等级。"
 							],
 							"id": "00a"
 						},
 						{
+							"ENG_name": "Reactions",
 							"type": "entries",
 							"name": "反应",
-							"ENG_name": "Reactions",
 							"entries": [
 								"在追逐中，你可以像平常一样进行反应，但你不能对其他追逐参与者进行借机攻击，因为假设你们都在同一个方向上同时移动。然而，追逐参与者仍然可能成为不参与追逐的生物进行借机攻击的目标。例如，一个冒险者在追逐强盗时经过森林中的狼，可能会引起狼的借机攻击。"
 							],
@@ -515,9 +515,9 @@
 					"id": "009"
 				},
 				{
+					"ENG_name": "Ending a Chase",
 					"type": "entries",
 					"name": "结束追逐",
-					"ENG_name": "Ending a Chase",
 					"entries": [
 						"当一方或另一方停止时，当猎物逃脱时，或者至少有一个追逐者在5尺内接近猎物时，追逐结束。",
 						"如果双方都没有放弃追逐，猎物可以在每个回合结束时，也就是所有追逐者轮到行动之后，进行一次敏捷（{@skill 隐匿}）检定。处于{@condition 失能}状态的猎物无法进行此检定，没有掩护物的猎物也无法进行。将检定的总值与追逐者的被动感知（{@skill 察觉}）得分进行比较。如果猎物由多个生物组成，它们都要进行这个检定。如果猎物的检定总值高于最高被动得分，那个猎物就逃脱了，不再参与追逐。",
@@ -561,18 +561,18 @@
 					"id": "00c"
 				},
 				{
+					"ENG_name": "Splitting Up",
 					"type": "entries",
 					"name": "分头行动",
-					"ENG_name": "Splitting Up",
 					"entries": [
 						"被追逐的生物可以分成更小的群体。这种策略迫使追踪者要么分散他们的力量，要么允许一些猎物逃脱。如果追逐分成了几个较小的追逐，分别解决每个追逐。运行一个追逐的一轮，然后是下一个追逐的一轮，依此类推，跟踪每组单独的距离。"
 					],
 					"id": "00d"
 				},
 				{
+					"ENG_name": "Role Reversal",
 					"type": "entries",
 					"name": "角色反转",
-					"ENG_name": "Role Reversal",
 					"entries": [
 						"在追逐中，追捕者有可能变成猎物。例如，角色们在森林中追逐一个强盗时，可能会吸引其他强盗的注意。当他们追逐逃跑的强盗时，也必须躲避追逐他们的强盗。为新来的人投掷先攻，并同时进行两次追逐。在另一种情境中，逃跑的强盗可能会跑进他们同伙的怀抱。人数不足的角色可能会决定逃跑，而强盗则在后面追赶。"
 					],

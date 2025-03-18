@@ -15,8 +15,8 @@
 	},
 	"monster": [
 		{
-			"name": "贝拉希拉",
 			"ENG_name": "Belashyrra",
+			"name": "贝拉希拉",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 286,
@@ -89,43 +89,43 @@
 			},
 			"trait": [
 				{
-					"name": "异界心灵",
 					"ENG_name": "Alien Mind",
+					"name": "异界心灵",
 					"entries": [
 						"如果生物试图读取Belashyrra的思想或对其造成心灵伤害，该生物必须成功进行一次{@dc 22}智力豁免检定，否则将被{@condition 震慑}持续1分钟。处于{@condition 震慑}状态的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
 				},
 				{
-					"name": "眼贼",
 					"ENG_name": "Eye Thief",
+					"name": "眼贼",
 					"entries": [
 						"贝拉希拉可以通过120尺内所有生物的眼睛来观察。它可以通过120尺内的任何生物使用其眼射线，就好像它在那个生物的空间中一样。"
 					]
 				},
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果贝拉希尔拉的豁免检定失败，它可以选择成功。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"贝拉希拉在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
 				},
 				{
-					"name": "再生",
 					"ENG_name": "Regeneration",
+					"name": "再生",
 					"entries": [
 						"贝拉希拉在它的回合开始时恢复20点生命值。如果它受到光耀伤害，这个特性在下一个回合开始时不会生效。贝拉希拉只有在它的回合开始时生命值为0且没有再生时才会死亡。"
 					]
 				},
 				{
-					"name": "传送术",
 					"ENG_name": "Teleport",
+					"name": "传送术",
 					"entries": [
 						"作为附赠动作，Belashyrra可以传送至其能看到的未被占据的空间，传送距离最多30尺。"
 					]
@@ -133,22 +133,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"贝拉希拉用它的爪子进行两次攻击，并使用一次眼射线。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 14}，触及5尺，单一目标。{@h}17（{@damage 3d6 + 7}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "眼波射线",
 					"ENG_name": "Eye Ray",
+					"name": "眼波射线",
 					"entries": [
 						"贝拉希拉选择以下魔法眼射线之一，瞄准它能看到的120尺范围内的一个生物：",
 						{
@@ -156,30 +156,30 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "1. Psyche-Reconstruction Ray",
 									"type": "item",
 									"name": "1. 心灵重建射线",
-									"ENG_name": "1. Psyche-Reconstruction Ray",
 									"style": "italic",
 									"entry": "目标必须进行一次{@dc 22}感知豁免，若失败则受到49点（{@damage 9d10}）心灵伤害，成功则只受一半伤害。如果此伤害将生物的生命值降至0，该生物死亡并转化为一只由贝拉希拉控制的观察者，并在贝拉希拉之后立即行动。除了{@spell 祈愿术}法术外，没有任何方法可以将目标恢复原形。"
 								},
 								{
+									"ENG_name": "2. Domination Ray",
 									"type": "item",
 									"name": "2. 支配射线",
-									"ENG_name": "2. Domination Ray",
 									"style": "italic",
 									"entry": "目标必须成功通过一次{@dc 22}感知豁免，否则将被贝拉希拉{@condition 魅惑}1分钟或直到目标受到伤害为止。贝拉希拉可以向被{@condition 魅惑}的生物发出心灵感应的命令（无需动作），该生物会尽力服从。"
 								},
 								{
+									"ENG_name": "3. Mind-Weakening Ray",
 									"type": "item",
 									"name": "3. 心智削弱射线",
-									"ENG_name": "3. Mind-Weakening Ray",
 									"style": "italic",
 									"entry": "目标必须成功通过一次{@dc 22}智力豁免检定，否则将受到36（{@damage 8d8}）点心灵伤害，并且在一分钟内无法施法或激活魔法物品。目标可以在每个回合结束时重复进行豁免检定，成功则终止该效果。"
 								},
 								{
+									"ENG_name": "4. Blinding Ray",
 									"type": "item",
 									"name": "4. 致盲射线",
-									"ENG_name": "4. Blinding Ray",
 									"style": "italic",
 									"entry": "目标生物以及其周围10尺内的所有生物都必须成功进行一次体质豁免检定（{@dc 22}），否则将受到19（{@damage 3d12}）点光耀伤害，并在1分钟内处于{@condition 目盲}状态。在这种致盲状态结束之前，Belyshyrra可以通过{@condition 目盲}生物的眼睛看到外界。{@condition 目盲}生物可以在每个回合结束时重复进行豁免检定，若成功则结束该效果。"
 								}
@@ -190,30 +190,30 @@
 			],
 			"legendary": [
 				{
-					"name": "爪击",
 					"ENG_name": "Claw",
+					"name": "爪击",
 					"entries": [
 						"贝拉希拉进行一次爪击攻击。"
 					]
 				},
 				{
-					"name": "植入恐惧（消耗2个动作）",
 					"ENG_name": "Implant Fear (Costs 2 Actions)",
+					"name": "植入恐惧（消耗2个动作）",
 					"entries": [
 						"贝拉希拉以一个它可见且距离它60英尺内的生物为目标。目标必须成功通过一个{@dc 22}的感知豁免，否则将受到22（{@damage 4d10}）点心灵伤害，并立即使用其反应（如果可用）以尽可能远离贝拉希拉，移动距离不超过其速度。"
 					]
 				},
 				{
-					"name": "撕裂现实（消耗3个行动）",
 					"ENG_name": "Rend Reality (Costs 3 Actions)",
+					"name": "撕裂现实（消耗3个行动）",
 					"entries": [
 						"Belashyrra在其周围区域撕裂现实的束缚。在Belashyrra 10尺范围内的每个生物都必须成功进行一次{@dc 22}体质豁免检定，否则将受到19点（{@damage 3d12}）力场伤害并获得一级{@condition 力竭}。"
 					]
 				}
 			],
 			"legendaryGroup": {
-				"name": "贝拉希拉",
 				"ENG_name": "Belashyrra",
+				"name": "贝拉希拉",
 				"source": "ERLW"
 			},
 			"traitTags": [
@@ -262,8 +262,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "骸骨骑士",
 			"ENG_name": "Bone Knight",
+			"name": "骸骨骑士",
 			"source": "ERLW",
 			"page": 316,
 			"size": [
@@ -323,8 +323,8 @@
 			"cr": "5",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"骑士是一个8级施法者。他的施法属性是魅力（法术豁免{@dc 14}，法术攻击{@hit 6}）。他准备了以下圣骑士法术："
@@ -355,15 +355,15 @@
 			],
 			"trait": [
 				{
-					"name": "骸骨指挥官",
 					"ENG_name": "Commander of Bones",
+					"name": "骸骨指挥官",
 					"entries": [
 						"作为附赠动作，骑士可以指定一个它能看到的，距离它30尺以内的骷髅或僵尸。目标必须进行一次{@dc 14}的感知豁免。豁免失败，目标必须服从骑士的命令，直到骑士死亡或骑士作为附赠动作释放它。骑士可以这样同时指挥多达十二个不死生物。"
 					]
 				},
 				{
-					"name": "苍白旗帜之主",
 					"ENG_name": "Master of the Pallid Banner",
+					"name": "苍白旗帜之主",
 					"entries": [
 						"当在骑士60尺范围内时，骑士的任何不死生物盟友在对抗任何使不死生物转身的效果的豁免检定上具有优势。"
 					]
@@ -371,22 +371,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"骑士用其中一件武器进行两次攻击。"
 					]
 				},
 				{
-					"name": "巨剑",
 					"ENG_name": "Greatsword",
+					"name": "巨剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}11 ({@damage 2d6 + 4}) 点挥砍伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程150/600尺，单一目标。{@h}5（{@damage 1d8 + 1}）点穿刺伤害。"
 					]
@@ -433,8 +433,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "幻身灵",
 			"ENG_name": "Changeling",
+			"name": "幻身灵",
 			"source": "ERLW",
 			"page": 317,
 			"size": [
@@ -489,8 +489,8 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "改变外貌",
 					"ENG_name": "Change Appearance",
+					"name": "改变外貌",
 					"entries": [
 						"幻身灵可以使用它的行动来变化成它见过的中型人形生物，或者恢复其真实形态。除了体型之外，它在每种形态下的具体数值都是相同的。它穿着或携带的任何装备不会被变形。如果它死亡，它会恢复到其真实形态。"
 					]
@@ -498,22 +498,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"幻身灵使用其匕首进行两次攻击。"
 					]
 				},
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或20/60尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "令人不安的面容（短休或长休后重新充能）",
 					"ENG_name": "Unsettling Visage (Recharges after a Short or Long Rest)",
+					"name": "令人不安的面容（短休或长休后重新充能）",
 					"entries": [
 						"幻身灵周围30尺内的所有生物都必须进行一次{@dc 13}感知豁免检定，否则将被{@condition 恐慌}状态影响1分钟。生物可以在每个回合结束时重复进行豁免检定，成功则结束自身的效果。"
 					]
@@ -551,8 +551,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "足爪龙(迅猛龙)",
 			"ENG_name": "Clawfoot",
+			"name": "足爪龙(迅猛龙)",
 			"group": [
 				"Dinosaurs"
 			],
@@ -589,15 +589,15 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果至少有一个爪足的盟友在生物5尺范围内，并且该盟友没有处于{@condition 失能}（失去行动能力）状态，则爪足在对该生物的攻击检定上具有优势。"
 					]
 				},
 				{
-					"name": "猛扑",
 					"ENG_name": "Pounce",
+					"name": "猛扑",
 					"entries": [
 						"如果爪足在同一个回合内至少直线移动20尺朝一个生物方向，然后用爪子攻击并击中目标，那个目标必须成功进行一次{@dc 11}力量豁免检定，否则会被击成{@condition 倒地}状态。如果目标处于{@condition 倒地}状态，爪足可以作为附赠动作对其进行一次咬击攻击。"
 					]
@@ -605,22 +605,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"爪足生物进行两次攻击：一次用它的咬击，一次用它的爪击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7 ({@damage 1d8 + 3}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7 ({@damage 1d8 + 3}) 点挥砍伤害。"
 					]
@@ -628,8 +628,8 @@
 			],
 			"altArt": [
 				{
-					"name": "爪足猛禽",
 					"ENG_name": "Clawfoot Raptor",
+					"name": "爪足猛禽",
 					"source": "WGE"
 				}
 			],
@@ -658,20 +658,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "科林·德尔马科",
 			"ENG_name": "Corrin Delmaco",
+			"name": "科林·德尔马科",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 271,
 			"_copy": {
-				"name": "密探",
 				"ENG_name": "Spy",
+				"name": "密探",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "敦实半身人",
 						"ENG_name": "Stout Halfling",
+						"name": "敦实半身人",
 						"source": "PHB"
 					}
 				],
@@ -699,8 +699,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "嶙峋异变怪",
 			"ENG_name": "Dolgaunt",
+			"name": "嶙峋异变怪",
 			"source": "ERLW",
 			"page": 290,
 			"size": [
@@ -751,15 +751,15 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "反射闪避",
 					"ENG_name": "Evasion",
+					"name": "反射闪避",
 					"entries": [
 						"如果多尔高特受到允许它进行敏捷豁免检定以只承受一半伤害的效果影响，那么多尔高特如果豁免成功则不承受任何伤害，如果豁免失败则只承受一半伤害。如果它处于{@condition 失能}状态，则不能使用这个特性。"
 					]
 				},
 				{
-					"name": "无甲防御",
 					"ENG_name": "Unarmored Defense",
+					"name": "无甲防御",
 					"entries": [
 						"当多尔冈特没有穿戴盔甲且没有持有盾牌时，它的护甲等级（AC）包括其感知调整值。"
 					]
@@ -767,29 +767,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"多尔贡进行两次触手攻击和两次徒手攻击。多达两次触手攻击可以被生命吸取替代。"
 					]
 				},
 				{
-					"name": "触须",
 					"ENG_name": "Tentacle",
+					"name": "触须",
 					"entries": [
 						"{@atk mw} {@hit 6} 命中，范围 15 英尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 钝击伤害。如果目标是大型或更小的生物，则目标被{@condition 擒抱}（逃脱 {@dc 12}）。直到擒抱结束，多尔高特无法对另一个目标使用同一触手。多尔高特有两条触手。"
 					]
 				},
 				{
-					"name": "徒手打击",
 					"ENG_name": "Unarmed Strike",
+					"name": "徒手打击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}6（{@damage 1d4 + 4}）钝击伤害。"
 					]
 				},
 				{
-					"name": "活力吸取",
 					"ENG_name": "Vitality Drain",
+					"name": "活力吸取",
 					"entries": [
 						"被多尔高恩触须{@condition 擒抱}的一个生物必须进行一次{@dc 11}体质豁免检定。若检定失败，目标受到9（{@damage 2d8}）点黯蚀伤害，且多尔高恩回复等于所受黯蚀伤害一半的生命值。"
 					]
@@ -825,8 +825,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "狰狞异变怪",
 			"ENG_name": "Dolgrim",
+			"name": "狰狞异变怪",
 			"source": "ERLW",
 			"page": 291,
 			"size": [
@@ -870,8 +870,8 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "双重意识",
 					"ENG_name": "Dual Consciousness",
+					"name": "双重意识",
 					"entries": [
 						"Dolgrim 在对抗被{@condition 目盲}、{@condition 魅惑}、{@condition 耳聋}、{@condition 恐慌}、{@condition 震慑}以及被击昏{@condition 昏迷}的豁免检定上具有优势。"
 					]
@@ -879,29 +879,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"多尔格里姆进行三次攻击。"
 					]
 				},
 				{
-					"name": "钉头锤",
 					"ENG_name": "Morningstar",
+					"name": "钉头锤",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "矛",
 					"ENG_name": "Spear",
+					"name": "矛",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或射程20/60尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害，或者如果用双手进行近战攻击则为6 ({@damage 1d8 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "手弩",
 					"ENG_name": "Hand Crossbow",
+					"name": "手弩",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程30/120尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害。"
 					]
@@ -937,8 +937,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "暮鬼婆",
 			"ENG_name": "Dusk Hag",
+			"name": "暮鬼婆",
 			"source": "ERLW",
 			"page": 292,
 			"size": [
@@ -996,8 +996,8 @@
 			"cr": "6",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"女巫的施法能力基于魅力（法术豁免 {@dc 15}）。她天生可以施展以下法术，且不需要任何材料成分："
@@ -1022,8 +1022,8 @@
 			],
 			"trait": [
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"鬼婆为抵抗法术和其它魔法效应而作的豁免检定具有优势。"
 					]
@@ -1031,22 +1031,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"女巫进行两次噩梦触摸攻击。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}5（{@damage 1d6 + 2}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "梦魇之触",
 					"ENG_name": "Nightmare Touch",
+					"name": "梦魇之触",
 					"entries": [
 						"{@atk ms} 命中{@hit 7}，触及5尺，单一生物。{@h}18点（{@damage 4d6 + 4}）心灵伤害。如果目标处于{@condition 昏迷}状态，它将额外受到10点（{@damage 3d6}）心灵伤害，并在女巫死亡或诅咒被移除之前一直被诅咒。被诅咒的生物在完成一次长休后，其生命值最大值减少5点（{@dice 1d10}）。"
 					]
@@ -1054,8 +1054,8 @@
 			],
 			"reaction": [
 				{
-					"name": "食梦",
 					"ENG_name": "Dream Eater",
+					"name": "食梦",
 					"entries": [
 						"当一个老妖婆能在30英尺内看到的{@condition 昏迷}生物恢复意识时，老妖婆可以迫使该生物进行一次{@dc 15}的感知豁免。除非豁免成功，否则该生物受到11（{@damage 2d10}）点心灵伤害，且老妖婆恢复等同于所造成伤害的生命值。"
 					]
@@ -1105,8 +1105,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "迪恩",
 			"ENG_name": "Dyrrn",
+			"name": "迪恩",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 288,
@@ -1178,36 +1178,36 @@
 			"cr": "24",
 			"trait": [
 				{
-					"name": "异界心灵",
 					"ENG_name": "Alien Mind",
+					"name": "异界心灵",
 					"entries": [
 						"如果一个生物试图读取Dyrnn的思想或对其造成心灵伤害，该生物必须进行一次{@dc 23}智力豁免检定，否则将被{@condition 震慑}状态影响1分钟。处于{@condition 震慑}状态的生物可以在其每个回合结束时重复进行豁免检定，成功则结束自身的效果。"
 					]
 				},
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果迪林失败了一个豁免检定，它可以选择成功。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"迪伦在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
 				},
 				{
-					"name": "再生",
 					"ENG_name": "Regeneration",
+					"name": "再生",
 					"entries": [
 						"Dyrrn在它的回合开始时恢复20点生命值。如果Dyrrn受到光耀伤害，这个特性在它下一个回合开始时不会生效。只有当Dyrrn在回合开始时生命值为0且没有再生时，Dyrrn才会死亡。"
 					]
 				},
 				{
-					"name": "传送术",
 					"ENG_name": "Teleport",
+					"name": "传送术",
 					"entries": [
 						"作为附赠动作，Dyrrn可以传送至其能看到的30尺内的未被占据的空间。"
 					]
@@ -1215,30 +1215,30 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"Dyrrn进行一次触手鞭击攻击，并使用一次腐化。如果Dyrrn有一个生物处于{@condition 擒抱}状态，它可以将触手鞭击攻击替换为抽取大脑。"
 					]
 				},
 				{
-					"name": "触手鞭打",
 					"ENG_name": "Tentacle Whip",
+					"name": "触手鞭打",
 					"entries": [
 						"{@atk mw} {@hit 15} 命中，触及10尺，单一目标。{@h}24（{@damage 3d10 + 8}）点挥砍伤害。如果目标是中型或更小的生物，它将被{@condition 擒抱}（逃脱{@dc 23}），并被拉入距离迪伦5尺内的一个未被占据的空间，且必须成功通过一次{@dc 23}的智力豁免否则将被{@condition 震慑}直到此次擒抱结束。迪伦在此次擒抱结束前无法对另一个目标使用同一触须鞭。迪伦有两条触须鞭。"
 					]
 				},
 				{
-					"name": "腐败",
 					"ENG_name": "Corruption",
+					"name": "腐败",
 					"entries": [
 						"迪伦瞄准其视线范围内60尺内的一个生物。目标必须成功进行一次{@dc 23}的体质豁免检定，否则将受到22点（{@damage 4d6 + 8}）的暗蚀伤害并被腐化1分钟。",
 						"一个腐化生物的肉体以异乎寻常的方式扭曲。该生物在攻击检定上具有劣势，其速度减半，如果它试图施法，它必须先进行一次{@dc 15}智力检定，若失败则法术失效并被浪费。该腐化生物可以在其每个回合结束时重复进行该豁免检定，成功则结束对其自身的影响。"
 					]
 				},
 				{
-					"name": "采脑",
 					"ENG_name": "Extract Brain",
+					"name": "采脑",
 					"entries": [
 						"{@atk mw} 命中骰命中{@hit 15}，触及范围5尺，一个被Dyrryn{@condition 失能}且处于{@condition 擒抱}（失去行动能力）状态的生物。{@h}55（{@damage 10d10}）点穿刺伤害。如果这伤害使目标生命值降至0点，Dyrryn通过提取并吞噬其大脑来杀死目标。"
 					]
@@ -1246,30 +1246,30 @@
 			],
 			"legendary": [
 				{
-					"name": "触手鞭打",
 					"ENG_name": "Tentacle Whip",
+					"name": "触手鞭打",
 					"entries": [
 						"Dyrrn使用其触手鞭进行一次攻击。"
 					]
 				},
 				{
-					"name": "生成异怪（消耗2个行动）",
 					"ENG_name": "Spawn Aberration (Costs 2 Actions)",
+					"name": "生成异怪（消耗2个行动）",
 					"entries": [
 						"迪林在它5尺范围内的一个未被占据的空间中吐出一个噬脑怪。噬脑怪受迪林控制，并在迪林之后立即在主动权顺序中行动。"
 					]
 				},
 				{
-					"name": "心灵震爆 (消耗 3动作)",
 					"ENG_name": "Mind Blast (Costs 3 Actions)",
+					"name": "心灵震爆 (消耗 3动作)",
 					"entries": [
 						"Dyrrn 魔法性地在60尺锥形区域内发出心灵能量。该区域内的每个生物必须成功进行一次智力豁免检定（{@dc 23}），否则将受到30（{@damage 5d8 + 8}）点心灵伤害，并在1分钟内处于{@condition 震慑}状态。生物可以在每个回合结束时重复进行豁免检定，若成功则结束该效果。"
 					]
 				}
 			],
 			"legendaryGroup": {
-				"name": "迪恩",
 				"ENG_name": "Dyrrn",
+				"name": "迪恩",
 				"source": "ERLW"
 			},
 			"traitTags": [
@@ -1322,8 +1322,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "迅速信使",
 			"ENG_name": "Expeditious Messenger",
+			"name": "迅速信使",
 			"group": [
 				"Homunculi"
 			],
@@ -1374,15 +1374,15 @@
 			"cr": "1/8",
 			"trait": [
 				{
-					"name": "飞掠",
 					"ENG_name": "Flyby",
+					"name": "飞掠",
 					"entries": [
 						"当信使飞出敌人的攻击范围时，不会引发借机攻击。"
 					]
 				},
 				{
-					"name": "传念联结",
 					"ENG_name": "Telepathic Bond",
+					"name": "传念联结",
 					"entries": [
 						"当信使与其主人处于同一存在平面时，它可以神奇地将其感知传达给主人，两者可以进行心灵感应交流。"
 					]
@@ -1390,8 +1390,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及 5 尺或射程 20/60 尺，单一目标。{@h}5（{@damage 1d4 + 3}）的穿刺伤害。"
 					]
@@ -1413,8 +1413,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "快龙(雷利诺龙)",
 			"ENG_name": "Fastieth",
+			"name": "快龙(雷利诺龙)",
 			"group": [
 				"Dinosaurs"
 			],
@@ -1447,8 +1447,8 @@
 			"cr": "1/4",
 			"trait": [
 				{
-					"name": "迅捷{@recharge 5}",
 					"ENG_name": "Quickness {@recharge 5}",
+					"name": "迅捷{@recharge 5}",
 					"entries": [
 						"法斯蒂斯可以将闪避动作作为附赠动作进行。"
 					]
@@ -1456,8 +1456,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}8（{@damage 1d8 + 4}）点穿刺伤害。"
 					]
@@ -1474,15 +1474,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "加拉",
 			"ENG_name": "Garra",
+			"name": "加拉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 272,
 			"_copy": {
-				"name": "半食人魔 (半兽食人魔)",
 				"ENG_name": "Half-Ogre (Ogrillon)",
+				"name": "半食人魔 (半兽食人魔)",
 				"source": "MM"
 			},
 			"alignment": [
@@ -1493,8 +1493,8 @@
 			"hasToken": true
 		},
 		{
-			"name": "窃梦梦灵",
 			"ENG_name": "Hashalaq Quori",
+			"name": "窃梦梦灵",
 			"group": [
 				"Quori"
 			],
@@ -1557,8 +1557,8 @@
 			"cr": "9",
 			"spellcasting": [
 				{
-					"name": "天生施法（灵能）",
 					"ENG_name": "Innate Spellcasting (Psionics)",
+					"name": "天生施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"奎瑞的施法属性为智力（法术豁免 {@dc 16}）。它能天生施放以下法术，且无需任何材料成分："
@@ -1582,29 +1582,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"夸里使用其心灵冲击两次。"
 					]
 				},
 				{
-					"name": "甜美之触",
 					"ENG_name": "Idyllic Touch",
+					"name": "甜美之触",
 					"entries": [
 						"{@atk ms} 命中{@hit 8}，触及5尺，单一目标。{@h}9（{@damage 1d10 + 4}）力场伤害。如果目标是一个生物，它必须成功进行一次{@dc 16}感知豁免检定，否则因大笑而变得{@condition 倒地}状态。"
 					]
 				},
 				{
-					"name": "心灵戳刺",
 					"ENG_name": "Mind Thrust",
+					"name": "心灵戳刺",
 					"entries": [
 						"奎翁以它60英尺内可见的一个生物为目标。目标必须进行一次{@dc 16}的感知豁免检定，若失败则受到18（{@damage 4d8}）点心灵伤害，成功则受到一半伤害。"
 					]
 				},
 				{
-					"name": "附身{@recharge}",
 					"ENG_name": "Possession {@recharge}",
+					"name": "附身{@recharge}",
 					"entries": [
 						"一个在逡巡者（quori）可见范围内5英尺内的人形生物必须成功进行一个{@dc 16}的魅力豁免，否则将被逡巡者附身；随后逡巡者消失，目标陷入{@condition 失能}（失能）状态并失去对身体的控制。逡巡者现在控制着身体，但不会剥夺目标的意识。逡巡者不能被任何攻击、法术或其他效应作为目标，并且保留其阵营、智力、智慧、魅力以及对{@condition 魅惑}（魅惑）和{@condition 恐慌}（恐惧）的免疫。除此之外，逡巡者使用被附身目标的统计数据，但无法获得目标的知识、职业特性或熟练项。",
 						"附身持续至身体降至0生命值，或夸里作为附赠动作结束它，或夸里被如{@spell 反制善恶}法术这样的效果强制驱逐。当附身结束时，夸里在身体5尺内的未占空间重新出现。目标在成功豁免检定或附身结束后的24小时内对此夸里的附身免疫。"
@@ -1613,8 +1613,8 @@
 			],
 			"reaction": [
 				{
-					"name": "伤痛反冲",
 					"ENG_name": "Empathic Feedback",
+					"name": "伤痛反冲",
 					"entries": [
 						"当寇瑞在其60英尺范围内能看到的一个生物对其造成伤害时，寇瑞可以迫使该生物进行一次{@dc 16}智力豁免，豁免失败则受到11（{@damage 2d10}）点心灵伤害。"
 					]
@@ -1660,8 +1660,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "梦启者",
 			"ENG_name": "Inspired",
+			"name": "梦启者",
 			"source": "ERLW",
 			"page": 294,
 			"size": [
@@ -1722,8 +1722,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "天生施法（灵能）",
 					"ENG_name": "Innate Spellcasting (Psionics)",
+					"name": "天生施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"受启者的施法属性为智力（法术豁免 {@dc 13}）。它可以天生施放以下法术，且不需要任何材料成分："
@@ -1746,8 +1746,8 @@
 			],
 			"trait": [
 				{
-					"name": "双重心灵",
 					"ENG_name": "Dual Mind",
+					"name": "双重心灵",
 					"entries": [
 						"受启迪者在感知豁免检定上具有优势。"
 					]
@@ -1755,22 +1755,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"启迪者进行两次晶钢匕首攻击。它可以将一次攻击替换为恶毒嘲讽。"
 					]
 				},
 				{
-					"name": "晶钢匕首",
 					"ENG_name": "Crysteel Dagger",
+					"name": "晶钢匕首",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）点穿刺伤害加上10（{@damage 3d6}）力场伤害。"
 					]
 				},
 				{
-					"name": "恶意嘲讽（戏法）",
 					"ENG_name": "Vicious Mockery (Cantrip)",
+					"name": "恶意嘲讽（戏法）",
 					"entries": [
 						"灵感生物向一个它能看到且距离在60英尺内的生物释放一连串带有微妙魅惑的侮辱。如果目标能听到灵感生物的声音，目标必须成功通过一次{@dc 13}的感知豁免，否则将受到2点（{@damage 1d4}）心灵伤害，并在其下一个回合结束前的下一次攻击检定中获得劣势。"
 					]
@@ -1778,20 +1778,20 @@
 			],
 			"variant": [
 				{
+					"ENG_name": "Quori Vessel",
 					"type": "variant",
 					"name": "夸里容器",
-					"ENG_name": "Quori Vessel",
 					"entries": [
 						"受启者是夸里灵体的容器，允许夸里在容器被占据时显现其部分力量。受启者可以根据占据它的夸里类型获得不同的益处。夸里也可以访问受启者的知识和特性。",
 						{
+							"ENG_name": "Hashalaq",
 							"type": "variantInner",
 							"name": "哈萨拉克",
-							"ENG_name": "Hashalaq",
 							"entries": [
 								{
+									"ENG_name": "Suggestion (3/Day)",
 									"type": "entries",
 									"name": "建议（每日3次）",
-									"ENG_name": "Suggestion (3/Day)",
 									"entries": [
 										"受启迪者可以施放{@spell 暗示术}法术（法术豁免{@dc 13}），无需任何材料组件。"
 									]
@@ -1799,22 +1799,22 @@
 							]
 						},
 						{
+							"ENG_name": "Kalaraq",
 							"type": "variantInner",
 							"name": "卡拉拉克",
-							"ENG_name": "Kalaraq",
 							"entries": [
 								{
+									"ENG_name": "All Around Vision",
 									"type": "entries",
 									"name": "全方位视觉",
-									"ENG_name": "All Around Vision",
 									"entries": [
 										"受启发者不能处于{@status 被突袭}状态。"
 									]
 								},
 								{
+									"ENG_name": "Arcane Eye (3/Day)",
 									"type": "entries",
 									"name": "奥术之眼（每日3次）",
-									"ENG_name": "Arcane Eye (3/Day)",
 									"entries": [
 										"受启迪者可以施放{@spell 秘法眼}法术，无需任何材料组件。"
 									]
@@ -1822,14 +1822,14 @@
 							]
 						},
 						{
+							"ENG_name": "Tsucora",
 							"type": "variantInner",
 							"name": "Tsucora",
-							"ENG_name": "Tsucora",
 							"entries": [
 								{
+									"ENG_name": "Fear (1/Day)",
 									"type": "entries",
 									"name": "恐惧（每日1次）",
-									"ENG_name": "Fear (1/Day)",
 									"entries": [
 										"受启发者可以施放{@spell 恐惧术}法术（法术豁免{@dc 13}），无需任何材料成分。"
 									]
@@ -1873,8 +1873,8 @@
 			"hasFluffImages": true,
 			"_versions": [
 				{
-					"name": "灵感者（奎里容器；哈沙拉克）",
 					"ENG_name": "Inspired (Quori Vessel; Hashalaq)",
+					"name": "灵感者（奎里容器；哈沙拉克）",
 					"source": "EGW",
 					"_mod": {
 						"_": {
@@ -1889,8 +1889,8 @@
 					"variant": null
 				},
 				{
-					"name": "受启迪者（奎里容器；卡拉拉克）",
 					"ENG_name": "Inspired (Quori Vessel; Kalaraq)",
+					"name": "受启迪者（奎里容器；卡拉拉克）",
 					"source": "EGW",
 					"_mod": {
 						"_": {
@@ -1904,8 +1904,8 @@
 						"trait": {
 							"mode": "appendArr",
 							"items": {
-								"name": "全方位视觉",
 								"ENG_name": "All Around Vision",
+								"name": "全方位视觉",
 								"entries": [
 									"受启发者不能处于{@status 被突袭}状态。"
 								]
@@ -1915,8 +1915,8 @@
 					"variant": null
 				},
 				{
-					"name": "受启迪者（夸里容器；Tsucora）",
 					"ENG_name": "Inspired (Quori Vessel; Tsucora)",
+					"name": "受启迪者（夸里容器；Tsucora）",
 					"source": "EGW",
 					"_mod": {
 						"_": {
@@ -1933,8 +1933,8 @@
 			]
 		},
 		{
-			"name": "白铁守卫",
 			"ENG_name": "Iron Defender",
+			"name": "白铁守卫",
 			"group": [
 				"Homunculi"
 			],
@@ -1989,15 +1989,15 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "敏锐感官",
 					"ENG_name": "Keen Senses",
+					"name": "敏锐感官",
 					"entries": [
 						"防御者在进行感知（{@skill 察觉}）检定时具有优势。"
 					]
 				},
 				{
-					"name": "传念联结",
 					"ENG_name": "Telepathic Bond",
+					"name": "传念联结",
 					"entries": [
 						"当守护者与其主人处于同一存在层面时，它可以将自己的感知通过魔法传递给主人，两者可以进行心灵感应交流。"
 					]
@@ -2005,8 +2005,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害。如果目标是一个生物，它必须通过一次{@dc 13}力量豁免检定，否则将额外受到3 ({@damage 1d6}) 点穿刺伤害并被{@condition 擒抱}（逃脱{@dc 13}）。防御者一次只能以这种方式{@condition 擒抱}一个生物。"
 					]
@@ -2038,8 +2038,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "百目梦灵",
 			"ENG_name": "Kalaraq Quori",
+			"name": "百目梦灵",
 			"group": [
 				"Quori"
 			],
@@ -2126,8 +2126,8 @@
 			"cr": "19",
 			"spellcasting": [
 				{
-					"name": "天生施法（灵能）",
 					"ENG_name": "Innate Spellcasting (Psionics)",
+					"name": "天生施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"寇基的施法属性为魅力（法术豁免 {@dc 21}，法术攻击命中 {@hit 13}）。它天生可以施放以下法术，且不需要任何施法材料："
@@ -2148,22 +2148,22 @@
 			],
 			"trait": [
 				{
-					"name": "全域视野",
 					"ENG_name": "All-Around Vision",
+					"name": "全域视野",
 					"entries": [
-						"夸里在没有被{@status 被突袭}的情况下不能被{@condition 失能}。"
+						"夸里在没有被{@condition 失能}的情况下不能被{@status 被突袭}。"
 					]
 				},
 				{
-					"name": "虚体移动",
 					"ENG_name": "Incorporeal Movement",
+					"name": "虚体移动",
 					"entries": [
 						"奎尔可以通过其他生物和物体，仿佛它们是{@quickref 困难地形||3}。如果它在一个物体内结束回合，将受到5（{@damage 1d10}）点力场伤害。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"奎里在对抗法术和其他魔法效果的豁免检定中具有优势。"
 					]
@@ -2171,44 +2171,44 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"夸里进行两次灵魂绑定攻击。或者，它可以用奥术爆炸进行四次攻击。"
 					]
 				},
 				{
-					"name": "奥能爆发",
 					"ENG_name": "Arcane Blast",
+					"name": "奥能爆发",
 					"entries": [
 						"{@atk rs} 命中{@hit 13}，射程120尺，单一目标。{@h}12 ({@damage 1d10 + 7}) 力场伤害。"
 					]
 				},
 				{
-					"name": "缚魂术",
 					"ENG_name": "Soul Binding",
+					"name": "缚魂术",
 					"entries": [
 						"{@atk ms} 命中{@hit 13}，触及5尺，单一目标。{@h}29（{@damage 4d10 + 7}）黯蚀伤害。如果生物因这次攻击降至0生命值，则死亡，其灵魂被囚禁在夸里的一只眼睛中。除非夸里被摧毁，否则目标无法通过任何手段复活，除非使用{@spell 祈愿术}。"
 					]
 				},
 				{
-					"name": "心灵种子（每日一次）",
 					"ENG_name": "Mind Seed (1/Day)",
+					"name": "心灵种子（每日一次）",
 					"entries": [
 						"奎瑞接触一个类人生物，该生物必须成功通过一次{@dc 21}智力豁免，否则将被诅咒。诅咒持续至被移除诅咒或{@spell 高等复原术}法术解除。",
 						"受诅咒的目标每24小时承受1级{@condition 力竭}，完成长休也无法降低其{@condition 力竭}等级。如果受诅咒的目标达到{@condition 力竭}等级6，它不会死亡，而是成为魅灵控制下的奴仆，其所有{@condition 力竭}都将被移除。只有{@spell 祈愿术}可以将此奴仆从控制中解放出来。"
 					]
 				},
 				{
-					"name": "眼睛群涌{@recharge}",
 					"ENG_name": "Swarm of Eyes {@recharge}",
+					"name": "眼睛群涌{@recharge}",
 					"entries": [
 						"夸里在其60尺范围内可见的某点为中心，创造出一个30尺半径的球形区域，充满了幽灵般的眼睛。该区域内的每个生物都必须进行一次{@dc 21}感知豁免检定。失败时，生物受到45点（{@damage 10d8}）心灵伤害，并在1分钟内处于{@condition 目盲}状态。成功时，生物受到的伤害减半，并且不会{@condition 目盲}。处于{@condition 目盲}状态的生物可以在每个回合结束时重复进行豁免检定，成功则结束此效果。"
 					]
 				},
 				{
-					"name": "附身{@recharge}",
 					"ENG_name": "Possession {@recharge}",
+					"name": "附身{@recharge}",
 					"entries": [
 						"夸里可以看到的5尺内的一个类人生物必须成功进行一次{@dc 21}魅力豁免检定，否则将被夸里附身；附身后夸里消失，目标处于{@condition 失能}状态并失去对身体的控制。夸里现在控制着身体，但不会剥夺目标的意识。夸里不能成为任何攻击、法术或其他效果的目标，它保留自己的阵营、感知、感知、魅力，以及对{@condition 魅惑}和{@condition 恐慌}的免疫。它使用被附身目标的属性，但不获得目标的知识、职业特性或熟练度。",
 						"附身持续至身体降至0生命值，或夸里作为附赠动作结束它，或夸里被如{@spell 反制善恶}法术这样的效果强制驱逐。当附身结束时，夸里在身体5尺内的未占空间重新出现。目标在成功豁免检定或附身结束后的24小时内对此夸里的附身免疫。"
@@ -2266,8 +2266,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "离梦人",
 			"ENG_name": "Kalashtar",
+			"name": "离梦人",
 			"source": "ERLW",
 			"page": 317,
 			"size": [
@@ -2314,8 +2314,8 @@
 			"cr": "1/4",
 			"trait": [
 				{
-					"name": "双重心灵",
 					"ENG_name": "Dual Mind",
+					"name": "双重心灵",
 					"entries": [
 						"卡拉沙塔人在感知豁免检定上有优势。"
 					]
@@ -2323,15 +2323,15 @@
 			],
 			"action": [
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或20/60尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
-					"name": "心灵戳刺",
 					"ENG_name": "Mind Thrust",
+					"name": "心灵戳刺",
 					"entries": [
 						"卡拉什塔选择一个它能看到、且在它30英尺内的生物为目标。该目标必须成功通过一次{@dc 12}的感知豁免，否则将受到11（{@damage 2d10}）点心灵伤害。"
 					]
@@ -2362,8 +2362,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "坎纳斯亡灵士兵",
 			"ENG_name": "Karrnathi Undead Soldier",
+			"name": "坎纳斯亡灵士兵",
 			"source": "ERLW",
 			"page": 295,
 			"size": [
@@ -2418,15 +2418,15 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果至少有一名士兵的盟友在生物5尺范围内，并且该盟友没有处于{@condition 失能}状态，则士兵在对生物的攻击检定上具有优势。"
 					]
 				},
 				{
-					"name": "不死坚韧",
 					"ENG_name": "Undead Fortitude",
+					"name": "不死坚韧",
 					"entries": [
 						"如果伤害使士兵降至0生命值，除非伤害是辐射伤害或来自重击，否则必须进行一次体质豁免检定，难度等级为5加上受到的伤害。如果成功，士兵的生命值会降至1点。"
 					]
@@ -2434,22 +2434,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"士兵使用其中一种武器进行三次攻击。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7 ({@damage 1d8 + 3}) 点挥砍伤害，如果用双手使用，则为8 ({@damage 1d10 + 3}) 点挥砍伤害。"
 					]
 				},
 				{
-					"name": "长弓",
 					"ENG_name": "Longbow",
+					"name": "长弓",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程150/600尺，单一目标。{@h}6（{@damage 1d8 + 2}）点穿刺伤害。"
 					]
@@ -2457,8 +2457,8 @@
 			],
 			"reaction": [
 				{
-					"name": "格挡",
 					"ENG_name": "Parry",
+					"name": "格挡",
 					"entries": [
 						"士兵在对抗一次命中它的近战攻击时，其AC（护甲等级）增加3点。为此，士兵必须能看到攻击者并且手持近战武器。"
 					]
@@ -2497,8 +2497,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "罪髓女士",
 			"ENG_name": "Lady Illmarrow",
+			"name": "罪髓女士",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 296,
@@ -2583,8 +2583,8 @@
 			"cr": "22",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"伊尔玛罗是一位20级的施法者。她的施法能力是智力（法术豁免难度{@dc 23}，法术攻击命中骰{@hit 15}）。伊尔玛罗准备了以下法师法术："
@@ -2678,22 +2678,22 @@
 			],
 			"trait": [
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果伊尔玛罗失败于一次豁免检定，她可以选择成功。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"伊尔马罗在对抗法术和其他魔法效果的豁免检定上有优势。"
 					]
 				},
 				{
-					"name": "复生",
 					"ENG_name": "Rejuvenation",
+					"name": "复生",
 					"entries": [
 						"当伊尔玛罗的生命值降至0时，她的身体化为尘土，她的装备被留下。在{@dice 1d10}天后，她会获得一个新的身体，恢复所有的生命值，并再次活跃起来。新的身体出现在她被摧毁位置的两百英里范围内。"
 					]
@@ -2701,22 +2701,22 @@
 			],
 			"action": [
 				{
-					"name": "颤栗之触（戏法）",
 					"ENG_name": "Chill Touch (Cantrip)",
+					"name": "颤栗之触（戏法）",
 					"entries": [
 						"{@atk rs} 命中{@hit 15}，射程120尺，单一生物。{@h}18（{@damage 4d8}）黯蚀伤害，目标直到Illmarrow下一回合开始前不能恢复生命值。如果目标是不死生物，直到Illmarrow下一回合结束前，其对Illmarrow的攻击检定还有劣势。"
 					]
 				},
 				{
-					"name": "麻痹之爪",
 					"ENG_name": "Paralyzing Claw",
+					"name": "麻痹之爪",
 					"entries": [
 						"{@atk mw} {@hit 10} 命中，范围 5 英尺，一个生物。{@h}13（{@damage 3d6 + 3}）挥砍伤害外加 10（{@damage 3d6}）寒冷伤害，且目标必须成功通过一个 {@dc 20} 体质豁免检定，否则将被 {@condition 麻痹} 1 分钟。目标可以在每回合结束时重复豁免检定，成功则结束对其自身的效果。"
 					]
 				},
 				{
-					"name": "毒性吐息 {@recharge 5}",
 					"ENG_name": "Poison Breath {@recharge 5}",
+					"name": "毒性吐息 {@recharge 5}",
 					"entries": [
 						"伊尔马罗在30尺的锥形区域内呼出有毒气体。该区域内的每个生物都必须进行一次{@dc 20}体质豁免检定。如果检定失败，生物会受到35 ({@damage 10d6})点毒素伤害，并在1分钟内处于{@condition 中毒}状态。在这种状态下{@condition 中毒}，生物不能恢复生命值。如果检定成功，生物受到的伤害减半，并且不会{@condition 中毒}。",
 						"任何因这种伤害而降至0生命值的人形生物死亡，并在伊尔玛罗下一回合开始时作为僵尸复活。僵尸在伊尔玛罗之后立即在主动权计算中行动，并永久性地受她指挥，遵循她的口头命令。"
@@ -2725,29 +2725,29 @@
 			],
 			"legendary": [
 				{
-					"name": "戏法",
 					"ENG_name": "Cantrip",
+					"name": "戏法",
 					"entries": [
 						"伊尔马罗施放了一个戏法。"
 					]
 				},
 				{
-					"name": "麻痹之爪",
 					"ENG_name": "Paralyzing Claw",
+					"name": "麻痹之爪",
 					"entries": [
 						"伊尔玛罗使用她的麻痹爪击。"
 					]
 				},
 				{
-					"name": "恐怖存在（消耗2个行动）",
 					"ENG_name": "Frightening Presence (Costs 2 Actions)",
+					"name": "恐怖存在（消耗2个行动）",
 					"entries": [
 						"伊尔玛罗选择她能看见的30英尺范围内的最多三个生物为目标。每个目标必须成功通过一次{@dc 20}的感知豁免，否则将陷入{@condition 恐慌}状态，持续1分钟。一个{@condition 恐慌}的目标可以在每个回合结束时重复进行豁免检定，成功则在其身上结束该效果。如果目标的豁免检定成功或效果在其身上结束，目标在接下来的24小时内对伊尔玛罗的恐怖存在免疫。"
 					]
 				},
 				{
-					"name": "毒气呼吸（消耗3个动作）",
 					"ENG_name": "Poison Breath (Costs 3 Actions)",
+					"name": "毒气呼吸（消耗3个动作）",
 					"entries": [
 						"伊尔玛罗重新充能她的毒气呼吸并使用它。"
 					]
@@ -2818,8 +2818,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "活化燃烧之手",
 			"ENG_name": "Living Burning Hands",
+			"name": "活化燃烧之手",
 			"source": "ERLW",
 			"page": 298,
 			"size": [
@@ -2882,15 +2882,15 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "无定形",
 					"ENG_name": "Amorphous",
+					"name": "无定形",
 					"entries": [
 						"这个活体法术可以通过宽仅1英寸的空间移动，而无需挤压。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"活体法术在对抗法术和其他魔法效果的豁免检定上有优势。"
 					]
@@ -2898,15 +2898,15 @@
 			],
 			"action": [
 				{
-					"name": "魔法打击",
 					"ENG_name": "Magical Strike",
+					"name": "魔法打击",
 					"entries": [
 						"{@atk ms} 命中{@hit 5}，触及范围5尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 火焰伤害。"
 					]
 				},
 				{
-					"name": "法术模仿 {@recharge 5}",
 					"ENG_name": "Spell Mimicry {@recharge 5}",
+					"name": "法术模仿 {@recharge 5}",
 					"entries": [
 						"活化法术在15尺锥形范围内释放出一片薄薄的火焰。该区域内的每个生物必须进行一次{@dc 13}敏捷豁免，豁免失败则受到10（{@damage 3d6}）点火焰伤害，豁免成功则伤害减半。"
 					]
@@ -2933,8 +2933,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "活化死云术",
 			"ENG_name": "Living Cloudkill",
+			"name": "活化死云术",
 			"source": "ERLW",
 			"page": 299,
 			"size": [
@@ -2997,15 +2997,15 @@
 			"cr": "7",
 			"trait": [
 				{
-					"name": "无定形",
 					"ENG_name": "Amorphous",
+					"name": "无定形",
 					"entries": [
 						"这个活体法术可以通过宽仅1英寸的空间移动，而无需挤压。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"活体法术在对抗法术和其他魔法效果的豁免检定上有优势。"
 					]
@@ -3013,22 +3013,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"活体法术进行两次魔法打击攻击。"
 					]
 				},
 				{
-					"name": "魔法打击",
 					"ENG_name": "Magical Strike",
+					"name": "魔法打击",
 					"entries": [
 						"{@atk ms} 命中{@hit 8}，触及10尺，单一目标。{@h}22 ({@dice 5d6 + 5}) 点毒素伤害。"
 					]
 				},
 				{
-					"name": "法术模仿 {@recharge 5}",
 					"ENG_name": "Spell Mimicry {@recharge 5}",
+					"name": "法术模仿 {@recharge 5}",
 					"entries": [
 						"活体法术在其60尺范围内创造一个直径40尺的雾气球体（雾气可以绕过角落）。当生物在一个回合中首次进入雾气区域或在其回合开始时位于雾气中，它必须进行一次{@dc 16}体质豁免，豁免失败则受到22 ({@damage 5d8})点毒素伤害，豁免成功则伤害减半。",
 						"浓雾在每个回合开始时从活体法术处移动10英尺，沿着地面滚动并通过开口。浓雾持续10分钟，或直到活体法术的{@status 专注}结束（如同在{@status 专注||专注于}法术一样）。"
@@ -3059,8 +3059,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "活化闪电束",
 			"ENG_name": "Living Lightning Bolt",
+			"name": "活化闪电束",
 			"source": "ERLW",
 			"page": 299,
 			"size": [
@@ -3123,15 +3123,15 @@
 			"cr": "5",
 			"trait": [
 				{
-					"name": "无定形",
 					"ENG_name": "Amorphous",
+					"name": "无定形",
 					"entries": [
 						"这个活体法术可以通过宽仅1英寸的空间移动，而无需挤压。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"活体法术在对抗法术和其他魔法效果的豁免检定上有优势。"
 					]
@@ -3139,22 +3139,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"活体法术进行两次魔法打击攻击。"
 					]
 				},
 				{
-					"name": "魔法打击",
 					"ENG_name": "Magical Strike",
+					"name": "魔法打击",
 					"entries": [
 						"{@atk ms} 命中{@hit 7}，触及10尺，单一目标。{@h}21（{@damage 5d6 + 4}）闪电伤害。"
 					]
 				},
 				{
-					"name": "法术模仿 {@recharge 5}",
 					"ENG_name": "Spell Mimicry {@recharge 5}",
+					"name": "法术模仿 {@recharge 5}",
 					"entries": [
 						"活体法术释放出一道100英尺长、5英尺宽的闪电线。该线中的每个生物都必须进行一次{@dc 15}敏捷豁免检定，豁免失败会受到28（{@damage 8d6}）点闪电伤害，豁免成功则只受到一半伤害。"
 					]
@@ -3184,8 +3184,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "魔匠师",
 			"ENG_name": "Magewright",
+			"name": "魔匠师",
 			"source": "ERLW",
 			"page": 318,
 			"size": [
@@ -3226,8 +3226,8 @@
 			"cr": "0",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"法师匠人的施法能力基于智力（法术豁免 {@dc 12}）。要施展其仪式法术，法师匠人必须提供额外的材料成分，其价值为法术等级乘以20金币。这些成分在仪式完成时被消耗。法师匠人知晓以下法术："
@@ -3244,8 +3244,8 @@
 			],
 			"action": [
 				{
-					"name": "匕首",
 					"ENG_name": "Dagger",
+					"name": "匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 3}，触及5尺或20/60尺，单一目标。{@h}3（{@damage 1d4 + 1}）点穿刺伤害。"
 					]
@@ -3275,8 +3275,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "摩达克什",
 			"ENG_name": "Mordakhesh",
+			"name": "摩达克什",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 301,
@@ -3352,8 +3352,8 @@
 			"cr": "15",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"莫达克赫斯的施法能力是魅力（法术豁免 {@dc 18}，法术攻击命中 {@hit 10}）。莫达克赫斯天生可以施展以下法术，且不需要材料成分："
@@ -3379,8 +3379,8 @@
 			],
 			"trait": [
 				{
-					"name": "有限魔免",
 					"ENG_name": "Limited Magic Immunity",
+					"name": "有限魔免",
 					"entries": [
 						"莫达克什不受6级或更低级别的法术影响或侦测，除非他愿意。莫达克什在对抗所有其他法术和魔法效果的豁免检定中具有优势。"
 					]
@@ -3388,22 +3388,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"莫达克什进行三次大剑攻击。"
 					]
 				},
 				{
-					"name": "巨剑",
 					"ENG_name": "Greatsword",
+					"name": "巨剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 10}，触及5尺，单一目标。{@h}12（{@damage 2d6 + 5}）挥砍伤害加上5（{@damage 1d10}）力场伤害。"
 					]
 				},
 				{
-					"name": "繁彩球",
 					"ENG_name": "Chromatic Orb",
+					"name": "繁彩球",
 					"entries": [
 						"{@atk rs} 命中{@hit 10}，射程120尺，单一生物。{@h}13点（{@dice 3d8}）伤害，由Mordakhesh选择伤害类型：酸性、寒冷、火焰、闪电、毒素或雷鸣。"
 					]
@@ -3411,22 +3411,22 @@
 			],
 			"legendary": [
 				{
-					"name": "攻击",
 					"ENG_name": "Attack",
+					"name": "攻击",
 					"entries": [
 						"莫达克什进行一次武器攻击或施放{@spell 繁彩球}。"
 					]
 				},
 				{
-					"name": "多彩抗性",
 					"ENG_name": "Chromatic Resistance",
+					"name": "多彩抗性",
 					"entries": [
 						"莫达克什获得对其选择的一种伤害类型（酸、冷、火、闪电、毒素或雷鸣）的抗性，直到他的下一回合开始。"
 					]
 				},
 				{
-					"name": "战争领主的命令（消耗2个动作）",
 					"ENG_name": "Warlord's Command (Costs 2 Actions)",
+					"name": "战争领主的命令（消耗2个动作）",
 					"entries": [
 						"莫达克什指定他能看到的最多两个盟友，距离他30尺以内。如果目标能看到并听到他，目标可以作为反应进行一次武器攻击，并在攻击检定上获得优势。"
 					]
@@ -3477,8 +3477,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "光辉偶像",
 			"ENG_name": "Radiant Idol",
+			"name": "光辉偶像",
 			"source": "ERLW",
 			"page": 308,
 			"size": [
@@ -3548,8 +3548,8 @@
 			"cr": "11",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"光辉偶像的施法能力基于魅力（法术豁免 {@dc 17}）。光辉偶像天生可以施放以下法术，且无需任何材料成分："
@@ -3574,15 +3574,15 @@
 			],
 			"trait": [
 				{
-					"name": "伪神光环",
 					"ENG_name": "Aura of False Divinity",
+					"name": "伪神光环",
 					"entries": [
-						"如果生物在其回合开始时处于辐射偶像30尺范围内，并且辐射偶像没有处于{@condition 失能}状态，必须进行一次{@condition 失能}感知豁免检定。豁免失败的生物将被辐射偶像{@condition 魅惑}。以这种方式被{@condition 魅惑}的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。一旦生物成功通过豁免检定，它将对该辐射偶像的虚假神性光环免疫24小时。"
+						"如果生物在其回合开始时处于辐射偶像30尺范围内，并且辐射偶像没有处于{@condition 失能}状态，必须进行一次{@dc 17}感知豁免检定。豁免失败的生物将被辐射偶像{@condition 魅惑}。以这种方式被{@condition 魅惑}的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。一旦生物成功通过豁免检定，它将对该辐射偶像的虚假神性光环免疫24小时。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"光辉偶像在对抗法术和其他魔法效果的豁免检定中具有优势。"
 					]
@@ -3590,22 +3590,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"光辉偶像进行两次近战攻击。"
 					]
 				},
 				{
-					"name": "链枷",
 					"ENG_name": "Flail",
+					"name": "链枷",
 					"entries": [
 						"{@atk mw} 命中{@hit 10}，触及5尺，单一目标。{@h}10（{@damage 1d8 + 6}）钝击伤害加上18（{@damage 4d8}）光耀伤害。"
 					]
 				},
 				{
-					"name": "光辉打击（每日1次）",
 					"ENG_name": "Radiant Strike (1/Day)",
+					"name": "光辉打击（每日1次）",
 					"entries": [
 						"光辉偶像选择一个它可见的、距离它60英尺内的地面点。在那里会出现一个30英尺半径、40英尺高的明亮光柱，直到光辉偶像的下一个回合开始。光柱出现时位于其中的每个生物，或在光柱内结束其回合的生物，必须进行一次{@dc 17}体质豁免检定，若豁免失败则受到36（{@damage 8d8}）点光耀伤害，若豁免成功则受到一半伤害。"
 					]
@@ -3661,8 +3661,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "拉克·塔尔赫什",
 			"ENG_name": "Rak Tulkhesh",
+			"name": "拉克·塔尔赫什",
 			"shortName": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
@@ -3750,8 +3750,8 @@
 			"cr": "28",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"拉克·图尔克什的施法能力是魅力（法术豁免{@dc 24}）。他天生能够施放以下法术，无需任何材料组件："
@@ -3773,29 +3773,29 @@
 			],
 			"trait": [
 				{
-					"name": "致命重击",
 					"ENG_name": "Deadly Critical",
+					"name": "致命重击",
 					"entries": [
 						"拉克·图尔克什在掷骰得到19或20时会打出重击，并且伤害骰要掷三次，而不是两次。"
 					]
 				},
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果拉克·图尔克什未能通过豁免检定，他可以选择成功。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"拉克·图尔克什在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
 				},
 				{
-					"name": "兵刃风暴",
 					"ENG_name": "Whirlwind of Weapons",
+					"name": "兵刃风暴",
 					"entries": [
 						"一个武器的魔法光环围绕着拉克·图尔克什，半径为10尺。在他的每个回合开始时，光环内的任何其他生物都会受到14 ({@damage 4d6}) 点力场伤害。"
 					]
@@ -3803,29 +3803,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"拉克·图尔克什进行四次武器攻击。"
 					]
 				},
 				{
-					"name": "生成近战武器",
 					"ENG_name": "Spawned Melee Weapon",
+					"name": "生成近战武器",
 					"entries": [
 						"{@atk mw} 命中{@hit 17}，触及范围10尺，单一目标。{@h}28 ({@damage 3d12 + 9}) 力场伤害。"
 					]
 				},
 				{
-					"name": "生成远程武器",
 					"ENG_name": "Spawned Ranged Weapon",
+					"name": "生成远程武器",
 					"entries": [
 						"{@atk rw} 命中{@hit 12}，射程150/600尺，单一目标。{@h}17 ({@damage 3d8 + 4}) 力场伤害。"
 					]
 				},
 				{
-					"name": "变形",
 					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
 						"拉克·图尔克什能够通过魔法变形成一个人形生物、野兽或巨人，其挑战等级不高于他自身的等级，或者变回他的真身。如果他死亡，他会恢复真身。他穿戴或携带的任何装备会被新形态吸收或携带（由他选择）。",
 						"在新形态下，拉克·图尔克什保留了他的阵营、生命值、命中骰、说话能力、熟练度、传奇抗性以及感知、感知和魅力的数值，以及这个动作。他的其他具体数值和能力被新形态的相应数据所替代，除了该形态的任何职业特性或传奇动作。"
@@ -3834,22 +3834,22 @@
 			],
 			"legendary": [
 				{
-					"name": "攻击",
 					"ENG_name": "Attack",
+					"name": "攻击",
 					"entries": [
 						"拉克·图尔克什进行一次武器攻击。"
 					]
 				},
 				{
-					"name": "结束魔法（消耗2个动作）",
 					"ENG_name": "End Magic (Costs 2 Actions)",
+					"name": "结束魔法（消耗2个动作）",
 					"entries": [
 						"拉克·图尔克什施放了{@spell 解除魔法}。"
 					]
 				},
 				{
-					"name": "挑衅愤怒（消耗3个动作）",
 					"ENG_name": "Provoke Rage (Costs 3 Actions)",
+					"name": "挑衅愤怒（消耗3个动作）",
 					"entries": [
 						"拉克·图尔克什60尺范围内的每个生物必须进行一次{@dc 24}感知豁免。豁免失败的生物必须使用其反应来进行一次近战武器攻击，攻击范围内的任意生物。如果没有生物在范围内，它将对射程内的任意生物进行远程武器攻击，必要时会投掷其武器。这次攻击具有优势，并且在伤害骰上获得+4的加值。"
 					]
@@ -3899,20 +3899,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "军士",
 			"ENG_name": "Sergeant",
+			"name": "军士",
 			"source": "ERLW",
 			"page": 197,
 			"_copy": {
-				"name": "警卫",
 				"ENG_name": "Guard",
+				"name": "警卫",
 				"source": "MM"
 			},
 			"hasToken": true
 		},
 		{
-			"name": "化兽者",
 			"ENG_name": "Shifter",
+			"name": "化兽者",
 			"source": "ERLW",
 			"page": 319,
 			"size": [
@@ -3964,8 +3964,8 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "变换（短休或长休后重新充能）",
 					"ENG_name": "Shifting (Recharges after a Short or Long Rest)",
+					"name": "变换（短休或长休后重新充能）",
 					"entries": [
 						"作为附赠动作，化兽者在1分钟内或直到其死亡前采取更加野兽化的形态。化兽者获得5点临时生命值。在激活此特性时，它可以进行一次咬击攻击，并且在其野兽形态下的每个回合作为附赠动作也可以进行咬击攻击。"
 					]
@@ -3973,15 +3973,15 @@
 			],
 			"action": [
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}6（{@damage 1d6 + 3}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一生物。{@h}5（{@damage 1d4 + 3}）点穿刺伤害。"
 					]
@@ -4008,8 +4008,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "苏·卡特什",
 			"ENG_name": "Sul Khatesh",
+			"name": "苏·卡特什",
 			"shortName": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
@@ -4096,8 +4096,8 @@
 			"cr": "28",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"苏尔·卡特什的施法能力是智力（法术豁免{@dc 26}，法术攻击命中{@hit 18}）。她天生能够无需材料组件施放以下法术："
@@ -4133,22 +4133,22 @@
 			],
 			"trait": [
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果苏尔·卡特什失败豁免检定，她可以选择成功。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"苏尔·卡特什在对抗法术和其他魔法效果的豁免检定中具有优势。"
 					]
 				},
 				{
-					"name": "魔法主宰",
 					"ENG_name": "Master of Magic",
+					"name": "魔法主宰",
 					"entries": [
 						"苏尔·卡特什在维持{@status 专注}的体质豁免检定中具有优势。"
 					]
@@ -4156,36 +4156,36 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"苏尔·卡特什使用奥术爆炸进行四次攻击。"
 					]
 				},
 				{
-					"name": "奥能爆发",
 					"ENG_name": "Arcane Blast",
+					"name": "奥能爆发",
 					"entries": [
 						"{@atk rs} {@hit 18} 命中，射程 120 尺，单一目标。{@h}15（{@damage 1d10 + 10}）点力场伤害。"
 					]
 				},
 				{
-					"name": "魔法杖",
 					"ENG_name": "Magic Staff",
+					"name": "魔法杖",
 					"entries": [
 						"{@atk mw} 命中{@hit 12}，触及5尺，单一目标。{@h}36（{@damage 5d12 + 4}）力场伤害。"
 					]
 				},
 				{
-					"name": "奥术灾变（长休后重置）",
 					"ENG_name": "Arcane Cataclysm (Recharges after a Long Rest)",
+					"name": "奥术灾变（长休后重置）",
 					"entries": [
 						"苏尔-卡斯召唤魔法能量球，这些能量球坠落在她可视范围内1英里内的三个不同地点。每个地点为中心，40英尺半径范围内的每个生物都必须进行{@dc 26}敏捷豁免，豁免失败则受到71（{@damage 11d12}）点力场伤害，豁免成功则受到一半伤害。若生物处于多个魔法爆发的范围内，只会受到一次影响。每个魔法爆发的区域随后会成为一个{@spell 反魔法场}，持续1小时。苏尔-卡斯和她施放的法术不受这些力场的影响。"
 					]
 				},
 				{
-					"name": "变形",
 					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
 						"苏尔·卡特什可以神奇地变化形态成为一个类人生物、野兽或巨人，其挑战等级不高于她自己的，或者变回她的真正形态。如果她死亡，她会恢复到她的真正形态。她穿戴或携带的任何装备会被新形态吸收或携带（苏尔·卡特什的选择）。",
 						"在新形态中，苏尔·卡塔什保留她的阵营、生命值、生命骰、说话能力、熟练度、传奇抗性以及感知、感知和魅力的数值，以及这个动作。她的其他具体数值和能力被新形态的相应数值所取代，除了该形态的任何职业特性或传奇动作。"
@@ -4194,22 +4194,22 @@
 			],
 			"legendary": [
 				{
-					"name": "攻击",
 					"ENG_name": "Attack",
+					"name": "攻击",
 					"entries": [
 						"苏尔·卡塔什使用她的奥术冲击进行两次攻击，或者使用她的魔法法杖进行一次攻击。"
 					]
 				},
 				{
-					"name": "吞噬魔法（消耗2个行动）",
 					"ENG_name": "Consume Magic (Costs 2 Actions)",
+					"name": "吞噬魔法（消耗2个行动）",
 					"entries": [
 						"苏尔哈泰什以120英尺内专注于{@status 专注||专注于}法术的生物为目标。目标必须成功通过{@dc 26}体质豁免，否则其{@status 专注}将被打破，并且苏尔哈泰什将根据该法术的环位获得5点临时生命值。"
 					]
 				},
 				{
-					"name": "疯狂的秘密（消耗3个动作）",
 					"ENG_name": "Maddening Secrets (Costs 3 Actions)",
+					"name": "疯狂的秘密（消耗3个动作）",
 					"entries": [
 						"苏尔·卡特什向她60尺内能看到的生物耳语一个奥术秘密。目标必须成功进行一次{@dc 26}感知豁免检定，否则消耗一个3级或更低的法术位，并对它周围30尺内的所有生物造成26（{@damage 4d12}）点力场伤害。如果一个生物未能通过豁免检定且无法消耗法术位，则在它下一个回合结束前处于{@condition 震慑}状态。"
 					]
@@ -4265,8 +4265,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "塔卡南刺客",
 			"ENG_name": "Tarkanan Assassin",
+			"name": "塔卡南刺客",
 			"source": "ERLW",
 			"page": 320,
 			"size": [
@@ -4324,8 +4324,8 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"这个刺客的施法能力是体质（法术攻击命中{@hit 4}）。它天生能够无需材料组件施放以下法术："
@@ -4343,8 +4343,8 @@
 			],
 			"trait": [
 				{
-					"name": "不稳定龙纹",
 					"ENG_name": "Unstable Mark",
+					"name": "不稳定龙纹",
 					"entries": [
 						"当刺客施放天生的法术时，刺客周围10尺内的每个生物必须进行一次{@dc 12}体质豁免检定，失败则受到4（{@damage 1d8}）力场伤害，成功则伤害减半。"
 					]
@@ -4352,29 +4352,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"刺客进行两次短剑攻击。"
 					]
 				},
 				{
-					"name": "短剑",
 					"ENG_name": "Shortsword",
+					"name": "短剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及范围5尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害加上7 ({@damage 2d6}) 毒素伤害。"
 					]
 				},
 				{
-					"name": "火球术（戏法）",
 					"ENG_name": "Fire Bolt (Cantrip)",
+					"name": "火球术（戏法）",
 					"entries": [
 						"{@atk rs} 命中{@hit 4}，射程120尺，单一目标。{@h}11 ({@damage 2d10})火焰伤害。如果被此法术击中的易燃物体没有被穿戴或携带，则会被点燃。"
 					]
 				},
 				{
-					"name": "七彩光球（每日一次）",
 					"ENG_name": "Chromatic Orb (1/Day)",
+					"name": "七彩光球（每日一次）",
 					"entries": [
 						"{@atk rs} 命中{@hit 4}，射程90尺，单一生物。{@h}18 ({@dice 4d8})点伤害，类型由刺客选择：酸性、寒冷、火焰、闪电、毒素或雷鸣。"
 					]
@@ -4422,8 +4422,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "刀锋统主",
 			"ENG_name": "The Lord of Blades",
+			"name": "刀锋统主",
 			"shortName": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
@@ -4494,8 +4494,8 @@
 			"cr": "18",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"刀锋领主是一个20级施法者。他的施法能力是智力（法术豁免难度{@dc 18}，法术攻击命中需要{@hit 10}）。他准备了以下奇械师法术："
@@ -4554,29 +4554,29 @@
 			],
 			"trait": [
 				{
-					"name": "精金镀层",
 					"ENG_name": "Adamantine Plating",
+					"name": "精金镀层",
 					"entries": [
 						"对刀刃领主的任何重击变为普通攻击。"
 					]
 				},
 				{
-					"name": "利刃装甲",
 					"ENG_name": "Bladed Armor",
+					"name": "利刃装甲",
 					"entries": [
-						"擒抱'刃之主'或被其{@condition 擒抱}的生物会受到13（{@condition 擒抱}）点挥砍伤害。如果在擒抱或被'刃之主'{@condition 擒抱}的状态下开始回合，生物会受到13（{@condition 擒抱}）点挥砍伤害。"
+						"擒抱'刃之主'或被其{@condition 擒抱}的生物会受到13（{@damage 3d8}）点挥砍伤害。如果在擒抱或被'刃之主'{@condition 擒抱}的状态下开始回合，生物会受到13（{@damage 3d8}）点挥砍伤害。"
 					]
 				},
 				{
-					"name": "冲锋",
 					"ENG_name": "Charge",
+					"name": "冲锋",
 					"entries": [
 						"如果刀刃领主在同一回合内至少直线移动10尺靠近目标，然后使用他的精金六刃击中目标，目标将额外受到11（{@damage 2d10}）点挥砍伤害。如果目标是一个生物，它必须通过一个{@dc 19}的力量豁免检定，否则会被推后最多10尺并被击倒为{@condition 倒地}状态。"
 					]
 				},
 				{
-					"name": "战俑特性",
 					"ENG_name": "Warforged Resilience",
+					"name": "战俑特性",
 					"entries": [
 						"刃之领主在对抗{@condition 中毒}状态的豁免检定中具有优势，对疾病免疫，魔法无法使他进入睡眠状态。"
 					]
@@ -4584,29 +4584,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"刀锋领主进行三次攻击：两次使用他的精金六刃剑，一次使用他的刀刃翅膀。"
 					]
 				},
 				{
-					"name": "精金六刃",
 					"ENG_name": "Adamantine Sixblade",
+					"name": "精金六刃",
 					"entries": [
 						"{@atk mw} 命中{@hit 11}，触及10尺，单一目标。{@h}21（{@damage 3d10 + 5}）挥砍伤害加上7（{@damage 2d6}）力场伤害。"
 					]
 				},
 				{
-					"name": "刀翼",
 					"ENG_name": "Bladed Wings",
+					"name": "刀翼",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 11}，触及范围5尺或射程20/60尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 挥砍伤害。"
 					]
 				},
 				{
-					"name": "火球术（戏法）",
 					"ENG_name": "Fire Bolt (Cantrip)",
+					"name": "火球术（戏法）",
 					"entries": [
 						"{@atk rs} 命中{@hit 10}，射程120尺，单一目标。{@h}22（{@damage 4d10}）火焰伤害。"
 					]
@@ -4614,29 +4614,29 @@
 			],
 			"legendary": [
 				{
-					"name": "攻击",
 					"ENG_name": "Attack",
+					"name": "攻击",
 					"entries": [
 						"刀刃领主进行一次武器攻击。"
 					]
 				},
 				{
-					"name": "戏法",
 					"ENG_name": "Cantrip",
+					"name": "戏法",
 					"entries": [
 						"刀锋领主施放他的一个戏法。"
 					]
 				},
 				{
-					"name": "施放法术（消耗2个动作）",
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
+					"name": "施放法术（消耗2个动作）",
 					"entries": [
 						"刀锋领主从他的法术列表中施放一个2级或更低的法术，该法术需要1个动作来施放。"
 					]
 				},
 				{
-					"name": "刀刃冲刺（消耗3个动作）",
 					"ENG_name": "Blade Dash (Costs 3 Actions)",
+					"name": "刀刃冲刺（消耗3个动作）",
 					"entries": [
 						"刀锋领主以他的速度移动，不引发借机攻击，然后使用他的精金六刃剑进行一次攻击。他可以对每个他经过的生物进行一次刀刃翅膀攻击。"
 					]
@@ -4689,8 +4689,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "螯爪梦灵",
 			"ENG_name": "Tsucora Quori",
+			"name": "螯爪梦灵",
 			"group": [
 				"Quori"
 			],
@@ -4751,8 +4751,8 @@
 			"cr": "7",
 			"spellcasting": [
 				{
-					"name": "天生施法（灵能）",
 					"ENG_name": "Innate Spellcasting (Psionics)",
+					"name": "天生施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"夸里（Quori）的施法能力是魅力（法术豁免{@dc 14}）。它能够天生施放以下法术，无需任何材料："
@@ -4770,36 +4770,36 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"夸里进行三次攻击：一次钳击，一次爪击，以及一次刺击。"
 					]
 				},
 				{
-					"name": "钳击",
 					"ENG_name": "Pincer",
+					"name": "钳击",
 					"entries": [
 						"{@atk mw} {@hit 6} 命中，触及 5 英尺，单一目标。{@h}8 ({@damage 1d10 + 3}) 钝击伤害。如果目标是大型或更小的生物，则目标被{@condition 擒抱}（逃脱 {@dc 14}）。奎瑞有两个钳子，每个钳子可以擒抱一个目标。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及范围5尺，单一目标。{@h}13 ({@damage 4d4 + 3}) 挥砍伤害。"
 					]
 				},
 				{
-					"name": "刺针",
 					"ENG_name": "Stinger",
+					"name": "刺针",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及10尺，单一生物。{@h}8点（{@damage 1d10 + 3}）点穿刺伤害加上10点（{@damage 3d6}）心灵伤害，目标必须进行一次{@dc 14}感知豁免检定，否则在1分钟内对夸里感到{@condition 恐慌}。目标可以在每个回合结束时重复进行豁免检定，成功则结束此效果。"
 					]
 				},
 				{
-					"name": "附身{@recharge}",
 					"ENG_name": "Possession {@recharge}",
+					"name": "附身{@recharge}",
 					"entries": [
 						"寇瑞所见的距离它5英尺内的一个人形生物必须成功通过一次{@dc 14}的魅力豁免，否则将被寇瑞附身；寇瑞随后消失，目标将处于{@condition 失能}状态并失去对身体的控制。此时寇瑞控制着身体，但不会剥夺目标的意识。寇瑞不能被任何攻击、法术或其他效果作为目标，并保留其阵营、智力、智慧、魅力，以及对{@condition 魅惑}和{@condition 恐慌}的免疫。除此之外，它将使用被附身目标的统计数据，但不会获得目标的知识、职业特性或熟练项。",
 						"附身持续至身体降至0生命值，或夸里作为附赠动作结束它，或夸里被如{@spell 反制善恶}法术这样的效果强制驱逐。当附身结束时，夸里在身体5尺内的未占空间重新出现。目标在成功豁免检定或附身结束后的24小时内对此夸里的附身免疫。"
@@ -4850,8 +4850,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "不朽议员",
 			"ENG_name": "Undying Councilor",
+			"name": "不朽议员",
 			"source": "ERLW",
 			"page": 311,
 			"size": [
@@ -4920,8 +4920,8 @@
 			"cr": "10",
 			"spellcasting": [
 				{
-					"name": "施法",
 					"ENG_name": "Spellcasting",
+					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"这位议员是一个13级施法者。其施法能力是感知（法术豁免难度{@dc 17}，法术攻击命中需要{@hit 9}）。他准备了以下牧师法术："
@@ -4995,15 +4995,15 @@
 			],
 			"trait": [
 				{
-					"name": "光辉光环",
 					"ENG_name": "Aura of Radiance",
+					"name": "光辉光环",
 					"entries": [
 						"议员通过魔法在15尺半径内散发出明亮的光芒，并在额外的15尺范围内散发出微光。议员可以将这种光芒熄灭或恢复，作为附赠动作。如果明亮的光芒与由3级或更低级别的法术创造的黑暗区域重叠，那么创造那片黑暗的法术将被解除。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"该顾问在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
@@ -5011,29 +5011,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"顾问进行两次光辉触摸攻击。"
 					]
 				},
 				{
-					"name": "光耀之触",
 					"ENG_name": "Radiant Touch",
+					"name": "光耀之触",
 					"entries": [
 						"{@atk ms} 命中{@hit 9}，触及范围5尺，单一目标。{@h}15 ({@damage 3d6 + 5}) 光耀伤害。"
 					]
 				},
 				{
-					"name": "治愈之触 (3/日)",
 					"ENG_name": "Healing Touch (3/Day)",
+					"name": "治愈之触 (3/日)",
 					"entries": [
 						"\"顾问触碰另一个生物。目标魔法性地恢复了18点生命值（{@dice 3d8 + 5}），并从困扰它的一个诅咒中被解放出来（顾问选择）。\""
 					]
 				},
 				{
-					"name": "火焰打击（5级法术；需要法术位）",
 					"ENG_name": "Flame Strike (5th-Level Spell; Requires a Spell Slot)",
+					"name": "火焰打击（5级法术；需要法术位）",
 					"entries": [
 						"议政官选择一个它可以看到的60英尺内的点。以该点为中心，半径10英尺、高度40英尺的圆柱体内的每个生物必须进行一次{@dc 17}敏捷豁免。豁免失败的生物受到14点（{@damage 4d6}）火焰伤害和14点（{@damage 4d6}）光耀伤害，豁免成功则只受到一半伤害。如果议政官使用6环或更高的法术位施放此法术，每比5环高一个等级，火焰伤害或光耀伤害（由议政官选择）增加{@dice 1d6}。"
 					]
@@ -5042,15 +5042,15 @@
 			"legendaryActions": 2,
 			"legendary": [
 				{
-					"name": "touch",
 					"ENG_name": "Touch",
+					"name": "touch",
 					"entries": [
 						"议员使用其光辉触摸进行一次攻击。"
 					]
 				},
 				{
-					"name": "闪烁光环（消耗2个动作）",
 					"ENG_name": "Shimmering Aura (Costs 2 Actions)",
+					"name": "闪烁光环（消耗2个动作）",
 					"entries": [
 						"顾问将正能量引导至其光辉光环中。直到顾问下回合结束，它在30尺半径内散发明亮光芒，额外30尺范围内散发微光。任何在其回合开始时位于明亮光芒中的生物必须进行一次{@dc 17}体质豁免检定，否则在顾问下回合结束前处于{@condition 目盲}状态。"
 					]
@@ -5105,8 +5105,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "不朽战士",
 			"ENG_name": "Undying Soldier",
+			"name": "不朽战士",
 			"source": "ERLW",
 			"page": 311,
 			"size": [
@@ -5178,15 +5178,15 @@
 			"cr": "2",
 			"trait": [
 				{
-					"name": "照明",
 					"ENG_name": "Illumination",
+					"name": "照明",
 					"entries": [
 						"士兵通过魔法在10尺半径内散发出明亮的光芒，并在额外的10尺范围内散发出微光。士兵可以将这种光芒熄灭或恢复，作为附赠动作。"
 					]
 				},
 				{
-					"name": "驱散抗性",
 					"ENG_name": "Turn Resistance",
+					"name": "驱散抗性",
 					"entries": [
 						"该士兵在对抗任何使不死生物转身的效果的豁免检定上具有优势。"
 					]
@@ -5194,15 +5194,15 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"士兵进行两次矛攻击。"
 					]
 				},
 				{
-					"name": "矛",
 					"ENG_name": "Spear",
+					"name": "矛",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及5尺或20/60尺，单一目标。{@h}6（{@damage 1d6 + 3}）点穿刺伤害，或者如果用双手进行近战攻击则为7（{@damage 1d8 + 3}）点穿刺伤害，如果目标是恶魔或不死生物，则额外造成9（{@damage 2d8}）光耀伤害。"
 					]
@@ -5241,8 +5241,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "维伦那猎鹰",
 			"ENG_name": "Valenar Hawk",
+			"name": "维伦那猎鹰",
 			"source": "ERLW",
 			"page": 312,
 			"size": [
@@ -5281,15 +5281,15 @@
 			"cr": "1/8",
 			"trait": [
 				{
-					"name": "结伴",
 					"ENG_name": "Bonding",
+					"name": "结伴",
 					"entries": [
 						"鹰可以神奇地与它能看到的一个生物绑定，这发生在它在30尺内观察那个生物至少1小时后立即进行。绑定持续到鹰与不同的生物绑定或直到绑定的生物死亡。在绑定期间，鹰和绑定的生物可以在最远100尺的距离内通过心灵感应相互沟通。"
 					]
 				},
 				{
-					"name": "敏锐视觉",
 					"ENG_name": "Keen Sight",
+					"name": "敏锐视觉",
 					"entries": [
 						"鹰依赖视觉进行的感知（{@skill 察觉}）检定具有优势。"
 					]
@@ -5297,8 +5297,8 @@
 			],
 			"action": [
 				{
-					"name": "禽爪",
 					"ENG_name": "Talons",
+					"name": "禽爪",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}6（{@damage 1d4 + 4}）挥砍伤害。"
 					]
@@ -5323,8 +5323,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "维伦那猎犬",
 			"ENG_name": "Valenar Hound",
+			"name": "维伦那猎犬",
 			"source": "ERLW",
 			"page": 312,
 			"size": [
@@ -5367,15 +5367,15 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "结伴",
 					"ENG_name": "Bonding",
+					"name": "结伴",
 					"entries": [
 						"猎犬可以神奇地与它能看到的一个生物绑定，这发生在它在30尺内观察那个生物至少1小时后立即进行。绑定持续到猎犬与不同的生物绑定或直到绑定的生物死亡。在绑定期间，猎犬和绑定的生物可以在最远100尺的距离内通过心灵感应相互沟通。"
 					]
 				},
 				{
-					"name": "敏锐嗅听觉",
 					"ENG_name": "Keen Hearing and Smell",
+					"name": "敏锐嗅听觉",
 					"entries": [
 						"猎犬进行依赖听觉和嗅觉的感知（{@skill 察觉}）检定时具有优势。"
 					]
@@ -5383,8 +5383,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}6（{@damage 1d6 + 3}）点穿刺伤害。如果目标是一个生物，它必须进行一次{@dc 13}力量豁免检定，否则会被击成{@condition 倒地}状态。"
 					]
@@ -5416,8 +5416,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "维伦那骏马",
 			"ENG_name": "Valenar Steed",
+			"name": "维伦那骏马",
 			"source": "ERLW",
 			"page": 313,
 			"size": [
@@ -5455,8 +5455,8 @@
 			"cr": "1/2",
 			"trait": [
 				{
-					"name": "结伴",
 					"ENG_name": "Bonding",
+					"name": "结伴",
 					"entries": [
 						"坐骑可以神奇地与它能看到的一个生物绑定，这发生在它在30尺内观察那个生物至少1小时后立即进行。绑定持续到坐骑与不同的生物绑定或直到绑定的生物死亡。在绑定期间，坐骑和绑定的生物可以在最远100尺的距离内通过心灵感应相互沟通。"
 					]
@@ -5464,8 +5464,8 @@
 			],
 			"action": [
 				{
-					"name": "蹄击",
 					"ENG_name": "Hooves",
+					"name": "蹄击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）点钝击伤害。"
 					]
@@ -5488,8 +5488,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "巨像战俑",
 			"ENG_name": "Warforged Colossus",
+			"name": "巨像战俑",
 			"source": "ERLW",
 			"page": 314,
 			"size": [
@@ -5558,36 +5558,36 @@
 			"cr": "25",
 			"trait": [
 				{
-					"name": "不变形态",
 					"ENG_name": "Immutable Form",
+					"name": "不变形态",
 					"entries": [
 						"巨像对任何会改变其形态的法术或效果免疫。"
 					]
 				},
 				{
-					"name": "传奇抗性 (3/日)",
 					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
 					"entries": [
 						"如果巨人在豁免检定中失败，它可以选择成功。"
 					]
 				},
 				{
-					"name": "魔法抗性",
 					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
 					"entries": [
 						"巨像在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
 				},
 				{
-					"name": "攻城怪物",
 					"ENG_name": "Siege Monster",
+					"name": "攻城怪物",
 					"entries": [
 						"巨人对物体和结构造成双倍伤害。"
 					]
 				},
 				{
-					"name": "高耸恐怖",
 					"ENG_name": "Towering Terror",
+					"name": "高耸恐怖",
 					"entries": [
 						"任何在巨像开始其回合时距离它30尺以内的敌人必须进行一次{@dc 26}感知豁免检定，否则将被{@condition 恐慌}直到敌人的下一个回合开始。如果敌人的豁免检定成功，它将在未来24小时内对这巨像的高耸恐怖免疫。"
 					]
@@ -5595,37 +5595,37 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"巨人进行三次攻击\u2014\u2014一次用其撞击，两次用其奥术炮塔\u2014\u2014然后使用踩踏。"
 					]
 				},
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
 						"{@atk mw} {@hit 18}命中，触及20尺，单一目标。{@h}29（{@damage 3d12 + 10}）钝击伤害，并且巨像可以将目标推向远离它最多20尺。"
 					]
 				},
 				{
-					"name": "魔能炮台",
 					"ENG_name": "Eldritch Turret",
+					"name": "魔能炮台",
 					"entries": [
 						"{@atk rs}{@hit 18} 命中，射程300英尺，单一目标。{@h}18（{@damage 4d8}）点力场伤害，若目标是生物，则被击倒{@condition 倒地}。"
 					]
 				},
 				{
-					"name": "践踏",
 					"ENG_name": "Stomp",
+					"name": "践踏",
 					"entries": [
-						"巨像在距离它20英尺的地面上跺脚。以该点为中心、半径20英尺、高20英尺的圆柱范围内的任何生物必须成功通过一个{@dc 26}敏捷豁免检定，否则将受到33（{@damage 6d10}）点钝击伤害并{@condition}。直到巨像再次使用跺脚或移动，该生物将被{@condition}。当以这种方式被{@condition}时，该生物（或另一个在它5英尺内的生物）可以使用它的动作进行一次{@dc 26}力量检定。如果成功，该生物将被重新安置到它选择的巨像5英尺内的一个未被占据的空间，并且不再被{@condition}。",
+						"巨像在它周围20英尺范围内的某一点上踩踏一只脚。以该点为中心，20英尺半径、20英尺高的圆柱范围内的任何生物必须成功通过{@dc 26}的敏捷豁免，否则将受到33（{@damage 6d10}）的钝击伤害并倒地{@condition 倒地}。直到巨像再次使用踩踏或移动之前，该生物被{@condition 束缚}。以这种方式被{@condition 束缚}时，该生物（或距离它5英尺内的另一个生物）可以使用其动作进行一次{@dc 26}的力量检定。若成功，该生物可重新定位到巨像5英尺内的一个未被占据的空间，且不再被{@condition 束缚}。",
 						"结构物，以及既不穿戴也不携带的非魔法物体，如果它们在圆柱体内（无豁免），会受到相同数量的伤害。"
 					]
 				},
 				{
-					"name": "焚化光束 {@recharge 5}",
 					"ENG_name": "Incinerating Beam {@recharge 5}",
+					"name": "焚化光束 {@recharge 5}",
 					"entries": [
 						"巨人发射一束150尺长、10尺宽的光线。在线中的每个生物都必须进行一次敏捷豁免检定，{@dc 26}，失败则受到60 ({@damage 11d10}) 光耀伤害，成功则伤害减半。如果生物的生命值因此光束降至0点，则会被解离，留下它穿戴或携带的任何物品。"
 					]
@@ -5671,8 +5671,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "战俑士兵",
 			"ENG_name": "Warforged Soldier",
+			"name": "战俑士兵",
 			"source": "ERLW",
 			"page": 320,
 			"size": [
@@ -5727,8 +5727,8 @@
 			"cr": "1",
 			"trait": [
 				{
-					"name": "战俑特性",
 					"ENG_name": "Warforged Resilience",
+					"name": "战俑特性",
 					"entries": [
 						"构装生物在对抗{@condition 中毒}的豁免检定上具有优势，并且对疾病免疫。魔法不能使其入睡。"
 					]
@@ -5736,22 +5736,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"战铸机人进行两次臂刃攻击。"
 					]
 				},
 				{
-					"name": "臂刃",
 					"ENG_name": "Armblade",
+					"name": "臂刃",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}6（{@damage 1d6 + 3}）点挥砍伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及5尺或射程30/120尺，单一目标。{@h}6（{@damage 1d6 + 3}）点穿刺伤害。"
 					]
@@ -5759,8 +5759,8 @@
 			],
 			"reaction": [
 				{
-					"name": "守护",
 					"ENG_name": "Protection",
+					"name": "守护",
 					"entries": [
 						"当战铸体可以看到的攻击者对5尺内的生物进行攻击骰时，战铸体可以使攻击骰获得不利。"
 					]
@@ -5790,8 +5790,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "泰坦战俑",
 			"ENG_name": "Warforged Titan",
+			"name": "泰坦战俑",
 			"source": "ERLW",
 			"page": 315,
 			"size": [
@@ -5845,15 +5845,15 @@
 			"cr": "8",
 			"trait": [
 				{
-					"name": "平台",
 					"ENG_name": "Platforms",
+					"name": "平台",
 					"entries": [
 						"战铸机人泰坦在其底盘内建有两座平台。每个平台上可以乘坐一个中体型或更小的生物而不需要挤压。要对距离战铸机人5尺内的靶标进行近战攻击，他们必须使用长矛或具有射程的武器，并且目标必须是大体型或更大。"
 					]
 				},
 				{
-					"name": "攻城怪物",
 					"ENG_name": "Siege Monster",
+					"name": "攻城怪物",
 					"entries": [
 						"战铸体泰坦对物体和结构造成双倍伤害。"
 					]
@@ -5861,29 +5861,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"战铸体泰坦进行一次斧手攻击和一次锤拳攻击。"
 					]
 				},
 				{
-					"name": "斧手",
 					"ENG_name": "Axehand",
+					"name": "斧手",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及10尺，单一目标。{@h}19（{@damage 3d8 + 6}）挥砍伤害，如果目标处于{@condition 倒地}状态，则额外造成11（{@condition 倒地}）挥砍伤害。"
+						"{@atk mw} 命中{@hit 9}，触及10尺，单一目标。{@h}19（{@damage 3d8 + 6}）挥砍伤害，如果目标处于{@condition 倒地}状态，则额外造成11（{@damage 2d10}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "锤拳",
 					"ENG_name": "Hammerfist",
+					"name": "锤拳",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及10尺，单一目标。{@h}19点（{@damage 3d8 + 6}）钝击伤害。如果目标是一个生物，它必须进行一次{@dc 17}力量豁免检定，否则会被击倒{@condition 倒地}。"
 					]
 				},
 				{
-					"name": "横扫斧 {@recharge}",
 					"ENG_name": "Sweeping Axe {@recharge}",
+					"name": "横扫斧 {@recharge}",
 					"entries": [
 						"战铸体泰坦用其斧手进行横扫，它周围10尺内的每个生物都必须进行一次敏捷豁免检定，{@dc 17}。失败的生物将受到19 ({@damage 3d8 + 6}) 挥砍伤害，成功的生物则只受到一半的伤害。"
 					]
@@ -5921,8 +5921,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "扎吉亚罗刹",
 			"ENG_name": "Zakya Rakshasa",
+			"name": "扎吉亚罗刹",
 			"source": "ERLW",
 			"page": 309,
 			"size": [
@@ -5990,8 +5990,8 @@
 			"cr": "5",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"罗刹的天生施法能力是魅力（法术豁免难度{@dc 11}）。罗刹可以天生施放以下法术，无需任何材料："
@@ -6010,22 +6010,22 @@
 			],
 			"trait": [
 				{
-					"name": "有限魔免",
 					"ENG_name": "Limited Magic Immunity",
+					"name": "有限魔免",
 					"entries": [
 						"罗刹不能被1级或更低级别的法术影响或侦测，除非它愿意。它对所有其他法术和魔法效果的豁免检定具有优势。"
 					]
 				},
 				{
-					"name": "魔法武器",
 					"ENG_name": "Magic Weapons",
+					"name": "魔法武器",
 					"entries": [
 						"罗刹的武器攻击具有魔法效果。"
 					]
 				},
 				{
-					"name": "战斗专长（1/回合）",
 					"ENG_name": "Martial Prowess (1/Turn)",
+					"name": "战斗专长（1/回合）",
 					"entries": [
 						"当夜叉用近战武器攻击命中一个生物时，该攻击会额外造成11点（{@dice 2d10}）与武器类型相同的伤害，并且该生物必须进行一次{@dc 15}力量豁免检定。若检定失败，夜叉可以将生物推开至多10英尺，将生物击倒为{@condition 倒地}状态，或让生物掉落一件夜叉选择的它正持有的物品。"
 					]
@@ -6033,22 +6033,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"罗刹进行三次近战武器攻击。或者，它可以用其标枪进行两次远程攻击。"
 					]
 				},
 				{
-					"name": "长剑",
 					"ENG_name": "Longsword",
+					"name": "长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}8（{@damage 1d8 + 4}）挥砍伤害，或者如果用双手使用则为9（{@damage 1d10 + 4}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "标枪",
 					"ENG_name": "Javelin",
+					"name": "标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 7}，触及范围5尺或射程30/120尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
 					]

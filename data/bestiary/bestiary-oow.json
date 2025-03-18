@@ -8,13 +8,13 @@
 	},
 	"monster": [
 		{
-			"name": "发条青足龙蛇",
 			"ENG_name": "Clockwork Behir",
+			"name": "发条青足龙蛇",
 			"source": "OoW",
 			"page": 173,
 			"_copy": {
-				"name": "青足龙蛇",
 				"ENG_name": "Behir",
+				"name": "青足龙蛇",
 				"source": "MM"
 			},
 			"type": "construct",
@@ -34,20 +34,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "达格德拉·深炉",
 			"ENG_name": "Dagdra Deepforge",
+			"name": "达格德拉·深炉",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 145,
 			"_copy": {
-				"name": "祭司",
 				"ENG_name": "Priest",
+				"name": "祭司",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "山地矮人",
 						"ENG_name": "Mountain Dwarf",
+						"name": "山地矮人",
 						"source": "PHB"
 					}
 				],
@@ -61,10 +61,10 @@
 					"action": {
 						"mode": "appendArr",
 						"items": {
-							"name": "卷轴服务（每日1次）",
 							"ENG_name": "Scroll Service (1/Day)",
+							"name": "卷轴服务（每日1次）",
 							"entries": [
-								"作为动作，达格德拉从她的{@item 文档术士包|AI}中抽出一个{@item 文档术士包|AI}。卷轴包含一个达格德拉选择的最多3级的法术。只有达格德拉可以使用这个卷轴，1分钟后它将消失。"
+								"作为动作，达格德拉从她的{@item 文档术士包|AI}中抽出一个{@item 法术卷轴}。卷轴包含一个达格德拉选择的最多3级的法术。只有达格德拉可以使用这个卷轴，1分钟后它将消失。"
 							]
 						}
 					}
@@ -91,21 +91,21 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "地狱犬",
 			"ENG_name": "Devil Dog",
+			"name": "地狱犬",
 			"shortName": true,
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 85,
 			"_copy": {
-				"name": "侍僧",
 				"ENG_name": "Acolyte",
+				"name": "侍僧",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "提夫林",
 						"ENG_name": "Tiefling",
+						"name": "提夫林",
 						"source": "PHB"
 					}
 				],
@@ -138,13 +138,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "巨大的触手",
 			"ENG_name": "Enormous Tentacle",
+			"name": "巨大的触手",
 			"source": "OoW",
 			"page": 94,
 			"_copy": {
-				"name": "巨蟒",
 				"ENG_name": "Giant Constrictor Snake",
+				"name": "巨蟒",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -156,8 +156,8 @@
 			},
 			"trait": [
 				{
-					"name": "触及",
 					"ENG_name": "Reach",
+					"name": "触及",
 					"entries": [
 						"触手可以伸到房间的任何地方。"
 					]
@@ -165,8 +165,8 @@
 			],
 			"action": [
 				{
-					"name": "绞缠",
 					"ENG_name": "Constrict",
+					"name": "绞缠",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及 35 尺，单一生物。{@h}13 ({@damage 2d8 + 4}) 钝击伤害，并且目标被{@condition 擒抱}（逃脱 {@dc 16}）。直到这个抓住结束，生物被{@condition 束缚}，触手不能再束缚另一个目标。"
 					]
@@ -183,20 +183,20 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "吉尔达·杜恩",
 			"ENG_name": "Gildha Duhn",
+			"name": "吉尔达·杜恩",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 110,
 			"_copy": {
-				"name": "侍僧",
 				"ENG_name": "Acolyte",
+				"name": "侍僧",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "半兽人",
 						"ENG_name": "Half-Orc",
+						"name": "半兽人",
 						"source": "PHB"
 					}
 				],
@@ -218,15 +218,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "格朗卡",
 			"ENG_name": "Grunka",
+			"name": "格朗卡",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 115,
 			"_copy": {
-				"name": "大地精",
 				"ENG_name": "Hobgoblin",
+				"name": "大地精",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -238,8 +238,8 @@
 					"action": {
 						"mode": "appendArr",
 						"items": {
-							"name": "酸性喷雾枪 {@recharge 5}",
 							"ENG_name": "Acid Spray Gun {@recharge 5}",
+							"name": "酸性喷雾枪 {@recharge 5}",
 							"entries": [
 								"这个大地精喷出一道10英尺锥形的酸液。区域内的每个生物必须进行一次{@dc 10}敏捷豁免，失败则受到7点（{@damage 2d6}）酸液伤害，成功则只受到一半伤害。",
 								"喷雾枪配备了一个可以装满十瓶标准酸液与水混合的罐子，允许它使用五次。"
@@ -263,15 +263,15 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "杰莱恩",
 			"ENG_name": "Jelayne",
+			"name": "杰莱恩",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 84,
 			"_copy": {
-				"name": "骷髅",
 				"ENG_name": "Skeleton",
+				"name": "骷髅",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -293,13 +293,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "机械奇美拉",
 			"ENG_name": "Mechachimera",
+			"name": "机械奇美拉",
 			"source": "OoW",
 			"page": 134,
 			"_copy": {
-				"name": "奇美拉",
 				"ENG_name": "Chimera",
+				"name": "奇美拉",
 				"source": "MM"
 			},
 			"type": "construct",
@@ -310,30 +310,30 @@
 			"hasToken": true
 		},
 		{
-			"name": "缟玛瑙",
 			"ENG_name": "Onyx",
+			"name": "缟玛瑙",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 186,
 			"_copy": {
-				"name": "猫",
 				"ENG_name": "Cat",
+				"name": "猫",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "appendArr",
 						"items": [
 							{
-								"name": "相对大小",
 								"ENG_name": "Relative Size",
+								"name": "相对大小",
 								"entries": [
 									"Onyx所受的任何伤害都减少至0。她在属性检定和豁免检定上具有优势。"
 								]
 							},
 							{
-								"name": "处理奥尼克斯",
 								"ENG_name": "Dealing with Onyx",
+								"name": "处理奥尼克斯",
 								"entries": [
 									"黑玉无法通过战斗被克服或杀死。任何对她进行的武器攻击，如果命中AC 12，则会接触到但不会造成伤害。然而，如果攻击会造成10点或更多伤害，黑玉在她下一回合结束前攻击掷骰会有劣势。如果黑玉会从法术或其他效果中受到10点或更多伤害，会产生相同的结果。施加状态的法术对黑玉正常有效，但这些状态会在猫的下一回合结束时自动结束。"
 								]
@@ -351,8 +351,8 @@
 			},
 			"action": [
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及20尺，单一目标。{@h}11（{@damage 2d10}）挥砍伤害。"
 					]
@@ -363,21 +363,21 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "复制二元冢",
 			"ENG_name": "Replica Duodrone",
+			"name": "复制二元冢",
 			"source": "OoW",
 			"page": 132,
 			"_copy": {
-				"name": "二元冢",
 				"ENG_name": "Duodrone",
+				"name": "二元冢",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "replaceArr",
 						"replace": "解体",
 						"items": {
-							"name": "可拆卸",
 							"ENG_name": "Dismantlable",
+							"name": "可拆卸",
 							"entries": [
 								"如果复制二元冢死亡，它的身体会分解成一堆零件（齿轮、板片、螺丝和电线），留下它的武器以及它携带的其他任何东西。"
 							]
@@ -399,21 +399,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "复制单元冢",
 			"ENG_name": "Replica Monodrone",
+			"name": "复制单元冢",
 			"source": "OoW",
 			"page": 132,
 			"_copy": {
-				"name": "单元冢",
 				"ENG_name": "Monodrone",
+				"name": "单元冢",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "replaceArr",
 						"replace": "解体",
 						"items": {
-							"name": "可拆卸",
 							"ENG_name": "Dismantlable",
+							"name": "可拆卸",
 							"entries": [
 								"如果复制单元冢死亡，它的身体会散落成一堆零件（齿轮、板片、螺丝和电线），留下它的武器和它携带的其他任何物品。"
 							]
@@ -438,21 +438,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "复制五元冢",
 			"ENG_name": "Replica Pentadrone",
+			"name": "复制五元冢",
 			"source": "OoW",
 			"page": 132,
 			"_copy": {
-				"name": "五元冢",
 				"ENG_name": "Pentadrone",
+				"name": "五元冢",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "replaceArr",
 						"replace": "解体",
 						"items": {
-							"name": "可拆卸",
 							"ENG_name": "Dismantlable",
+							"name": "可拆卸",
 							"entries": [
 								"如果复制五元冢死亡，它的身体会分解成一堆零件（齿轮、板片、螺丝和电线），留下它的武器以及它携带的其他任何东西。"
 							]
@@ -474,21 +474,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "复制四元冢",
 			"ENG_name": "Replica Quadrone",
+			"name": "复制四元冢",
 			"source": "OoW",
 			"page": 132,
 			"_copy": {
-				"name": "四元冢",
 				"ENG_name": "Quadrone",
+				"name": "四元冢",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "replaceArr",
 						"replace": "解体",
 						"items": {
-							"name": "可拆卸",
 							"ENG_name": "Dismantlable",
+							"name": "可拆卸",
 							"entries": [
 								"如果复制四元冢死亡，它的身体会散落成一堆零件（齿轮、板片、螺丝和电线），留下它的武器和它携带的其他任何物品。"
 							]
@@ -513,21 +513,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "复制三元冢",
 			"ENG_name": "Replica Tridrone",
+			"name": "复制三元冢",
 			"source": "OoW",
 			"page": 132,
 			"_copy": {
-				"name": "三元冢",
 				"ENG_name": "Tridrone",
+				"name": "三元冢",
 				"source": "MM",
 				"_mod": {
 					"trait": {
 						"mode": "replaceArr",
 						"replace": "解体",
 						"items": {
-							"name": "可拆卸",
 							"ENG_name": "Dismantlable",
+							"name": "可拆卸",
 							"entries": [
 								"如果复制三元冢死亡，它的身体会分解成一堆零件（齿轮、板片、螺丝和电线），留下它的武器和它携带的任何其他东西。"
 							]
@@ -549,13 +549,13 @@
 			"hasToken": true
 		},
 		{
-			"name": "践踏",
 			"ENG_name": "Stomping Foot",
+			"name": "践踏",
 			"source": "OoW",
 			"page": 92,
 			"_copy": {
-				"name": "蠕行之爪",
 				"ENG_name": "Crawling Claw",
+				"name": "蠕行之爪",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -571,8 +571,8 @@
 			},
 			"action": [
 				{
-					"name": "践踏",
 					"ENG_name": "Stomp",
+					"name": "践踏",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}3 ({@damage 1d4 + 1}) 点钝击伤害。"
 					]
@@ -584,21 +584,21 @@
 			"hasToken": true
 		},
 		{
-			"name": "两干斗篷",
 			"ENG_name": "Two Dry Cloaks",
+			"name": "两干斗篷",
 			"shortName": true,
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 162,
 			"_copy": {
-				"name": "密探",
 				"ENG_name": "Spy",
+				"name": "密探",
 				"source": "MM",
 				"_templates": [
 					{
-						"name": "斑猫人",
 						"ENG_name": "Tabaxi",
+						"name": "斑猫人",
 						"source": "VGM"
 					}
 				],
@@ -620,13 +620,13 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "不死鸡蛇兽",
 			"ENG_name": "Undead Cockatrice",
+			"name": "不死鸡蛇兽",
 			"source": "OoW",
 			"page": 114,
 			"_copy": {
-				"name": "蛇鸡兽",
 				"ENG_name": "Cockatrice",
+				"name": "蛇鸡兽",
 				"source": "MM"
 			},
 			"type": "undead",

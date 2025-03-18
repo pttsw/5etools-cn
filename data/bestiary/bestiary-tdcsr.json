@@ -334,7 +334,7 @@
 					"ENG_name": "Flamecharm (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
 					"name": "火焰魅力（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
 					"entries": [
-						"驯火者可以对{@creature 火元素}或其他火元素生物施放{@creature 火元素}法术（豁免{@creature 火元素}）。如果该生物有150或更多的生命值，它在{@quickref 优势与劣势|PHB|2|0|优势}上有{@quickref 豁免检定|PHB|2|1|豁免检定}。"
+						"驯火者可以对{@creature 火元素}或其他火元素生物施放{@spell 支配怪物}法术（豁免{@dc 15}）。如果该生物有150或更多的生命值，它在{@quickref 优势与劣势|PHB|2|0|优势}上有{@quickref 豁免检定|PHB|2|1|豁免检定}。"
 					]
 				}
 			],
@@ -1348,7 +1348,7 @@
 					"ENG_name": "Shadow Smite (1/Turn)",
 					"name": "暗影打击（每回合1次）",
 					"entries": [
-						"当冠军在没有{@quickref 优势与劣势|PHB|2|0|劣势}的情况下用武器攻击击中目标时，他可以选择额外造成49点（{@quickref 优势与劣势|PHB|2|0|劣势}）辐射或黯蚀伤害。"
+						"当冠军在没有{@quickref 优势与劣势|PHB|2|0|劣势}的情况下用武器攻击击中目标时，他可以选择额外造成49点（{@damage 14d6}）辐射或黯蚀伤害。"
 					]
 				},
 				{
@@ -1638,7 +1638,7 @@
 					"ENG_name": "Sneak Attack (1/Turn)",
 					"name": "偷袭 (1/回合)",
 					"entries": [
-						"当这个恶棍用武器攻击击中目标，并且在攻击骰上具有{@quickref 优势与劣势|PHB|2|0|劣势}，或者当目标位于恶棍的盟友5尺范围内且该盟友没有处于{@quickref 优势与劣势|PHB|2|0|优势}状态，同时恶棍在攻击骰上没有{@condition 失能}时，它额外造成14点（{@quickref 优势与劣势|PHB|2|0|劣势}）伤害。"
+						"当这个恶棍用武器攻击击中目标，并且在攻击骰上具有{@quickref 优势与劣势|PHB|2|0|优势}，或者当目标位于恶棍的盟友5尺范围内且该盟友没有处于{@condition 失能}状态，同时恶棍在攻击骰上没有{@quickref 优势与劣势|PHB|2|0|劣势}时，它额外造成14点（{@damage 4d6}）伤害。"
 					]
 				}
 			],
@@ -1763,7 +1763,7 @@
 					"ENG_name": "Intimidating Presence",
 					"name": "威慑之姿",
 					"entries": [
-						"每当执法者用近战攻击击中一个生物时，目标必须成功通过一个{@dc 15}的感知{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将在目标的下一个回合结束前对执法者产生{@condition 恐慌}。执法者及其盟友对以此方式被{@condition 恐慌}的生物进行攻击时具有{@condition 恐慌}。如果目标的{@quickref 豁免检定|PHB|2|1|豁免检定}成功或效果结束，该生物将在接下来的24小时内对执法者的恐吓气场免疫。"
+						"每当执法者用近战攻击击中一个生物时，目标必须成功通过一个{@dc 15}的感知{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将在目标的下一个回合结束前对执法者产生{@condition 恐慌}。执法者及其盟友对以此方式被{@condition 恐慌}的生物进行攻击时具有{@quickref 优势与劣势|PHB|2|0|优势}。如果目标的{@quickref 豁免检定|PHB|2|1|豁免检定}成功或效果结束，该生物将在接下来的24小时内对执法者的恐吓气场免疫。"
 					]
 				}
 			],
@@ -2202,7 +2202,7 @@
 					"ENG_name": "Supernatural Focus",
 					"name": "超自然专注",
 					"entries": [
-						"独眼巨人在进行维持法术的{@quickref 优势与劣势|PHB|2|0|优势}的体质{@quickref 豁免检定|PHB|2|1}时具有{@status 专注}，并且不会因为恶劣天气而失去{@quickref 优势与劣势|PHB|2|0|优势}。"
+						"独眼巨人在进行维持法术的{@status 专注}的体质{@quickref 豁免检定|PHB|2|1}时具有{@quickref 优势与劣势|PHB|2|0|优势}，并且不会因为恶劣天气而失去{@status 专注}。"
 					]
 				}
 			],
@@ -2349,7 +2349,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及范围5尺，单一目标。{@h}8（{@damage 1d10 + 3}）点穿刺伤害，目标必须进行一次{@dc 14}体质{@quickref 豁免检定|PHB|2|1|豁免检定}。失败时，目标受到27点（{@damage 6d8}）毒素伤害并在1分钟内处于{@condition 麻痹}状态。成功时，目标受到的伤害减半且不处于{@condition 麻痹}状态。如果这毒素伤害使目标生命值降至0点，目标稳定但处于{@condition 麻痹}状态1小时，即使恢复生命值后，并且在这样{@condition 麻痹}状态下处于{@condition 中毒}状态。"
+						"{@atk mw} 命中{@hit 7}，触及范围5尺，单一目标。{@h}8（{@damage 1d10 + 3}）点穿刺伤害，目标必须进行一次{@dc 14}体质{@quickref 豁免检定|PHB|2|1|豁免检定}。失败时，目标受到27点（{@damage 6d8}）毒素伤害并在1分钟内处于{@condition 麻痹}状态。成功时，目标受到的伤害减半且不处于{@condition 中毒}状态。如果这毒素伤害使目标生命值降至0点，目标稳定但处于{@condition 中毒}状态1小时，即使恢复生命值后，并且在这样{@condition 中毒}状态下处于{@condition 中毒}状态。"
 					]
 				},
 				{
@@ -2372,7 +2372,7 @@
 					"ENG_name": "Arterial Spray",
 					"name": "动脉喷射",
 					"entries": [
-						"当蜘蛛在其最大生命值的一半以下时受到伤害，它可以在15尺的锥形区域内喷射有毒血液。区域内的每个生物都必须进行一次{@dc 14}体质{@quickref 豁免检定|PHB|2|1|豁免检定}。失败时，生物受到13点（{@damage 3d8}）毒素伤害，并在1分钟内{@condition 麻痹}。成功时，生物受到的伤害减半，并且不会{@condition 麻痹}。如果这种毒素伤害使生物的生命值降至0点，生物稳定但会在1小时内{@condition 麻痹}，即使恢复生命值后也是如此，并在以这种方式{@condition 麻痹}时{@condition 中毒}。"
+						"当蜘蛛在其最大生命值的一半以下时受到伤害，它可以在15尺的锥形区域内喷射有毒血液。区域内的每个生物都必须进行一次{@dc 14}体质{@quickref 豁免检定|PHB|2|1|豁免检定}。失败时，生物受到13点（{@damage 3d8}）毒素伤害，并在1分钟内{@condition 麻痹}。成功时，生物受到的伤害减半，并且不会{@condition 中毒}。如果这种毒素伤害使生物的生命值降至0点，生物稳定但会在1小时内{@condition 中毒}，即使恢复生命值后也是如此，并在以这种方式{@condition 中毒}时{@condition 中毒}。"
 					]
 				}
 			],
@@ -2614,7 +2614,7 @@
 					"ENG_name": "Arcane Surge (4/Day)",
 					"name": "奥术激流（每日4次）",
 					"entries": [
-						"当多蒂击中目标时，只要{@creature 塔里安·达林顿|TDCSR|Tary}没有处于{@condition 失能}状态，{@creature 塔里安·达林顿|TDCSR|Tary}就可以引导魔法能量对目标造成额外14点（{@condition 失能}）力场伤害。"
+						"当多蒂击中目标时，只要{@creature 塔里安·达林顿|TDCSR|Tary}没有处于{@condition 失能}状态，{@creature 塔里安·达林顿|TDCSR|Tary}就可以引导魔法能量对目标造成额外14点（{@damage 4d6}）力场伤害。"
 					]
 				},
 				{
@@ -2749,7 +2749,7 @@
 					"ENG_name": "Keen Sight",
 					"name": "敏锐视觉",
 					"entries": [
-						"巨鹰在依赖视觉的感知（{@quickref 优势与劣势|PHB|2|0|优势}）检定时具有{@skill 察觉}。"
+						"巨鹰在依赖视觉的感知（{@skill 察觉}）检定时具有{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
@@ -3298,7 +3298,7 @@
 					"ENG_name": "Spellbreaker",
 					"name": "破法者",
 					"entries": [
-						"当Grog对正在集中精神施法的生物造成伤害时，该生物在进行维持{@quickref 优势与劣势|PHB|2|0|劣势}的{@quickref 豁免检定|PHB|2|1|豁免检定}时具有{@status 专注}。此外，Grog在对抗5英尺内生物施放的法术的{@quickref 豁免检定|PHB|2|1|豁免检定}时具有{@quickref 豁免检定|PHB|2|1}。"
+						"当Grog对正在集中精神施法的生物造成伤害时，该生物在进行维持{@status 专注}的{@quickref 优势与劣势|PHB|2|0|优势}时具有{@quickref 优势与劣势|PHB|2|0|劣势}。此外，Grog在对抗5英尺内生物施放的法术的{@quickref 豁免检定|PHB|2|1|豁免检定}时具有{@quickref 豁免检定|PHB|2|1}。"
 					]
 				},
 				{
@@ -3528,7 +3528,7 @@
 					"ENG_name": "Sneak Attack (1/Turn)",
 					"name": "偷袭 (1/回合)",
 					"entries": [
-						"当Jourrael在武器攻击中对目标有{@quickref 优势与劣势|PHB|2|0|劣势}并且攻击骰有优势，或者目标在Jourrael未处于{@quickref 优势与劣势|PHB|2|0|优势}的攻击骰情况下，距离Jourrael未{@condition 失能}的盟友5尺内时，Jourrael会对目标额外造成35点（{@quickref 优势与劣势|PHB|2|0|劣势}）伤害。"
+						"当Jourrael在武器攻击中对目标有{@quickref 优势与劣势|PHB|2|0|优势}并且攻击骰有优势，或者目标在Jourrael未处于{@quickref 优势与劣势|PHB|2|0|劣势}的攻击骰情况下，距离Jourrael未{@condition 失能}的盟友5尺内时，Jourrael会对目标额外造成35点（{@damage 10d6}）伤害。"
 					]
 				},
 				{
@@ -3551,7 +3551,7 @@
 					"ENG_name": "Spectral Blade",
 					"name": "幽灵之刃",
 					"entries": [
-						"{@atk mw} 命中{@hit 12}，触及范围5尺，单一目标。{@h}10 ({@damage 1d6 + 7}) 挥砍伤害，目标必须成功进行一次{@dc 14}体质{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被{@condition 中毒}持续1小时。如果{@quickref 豁免检定|PHB|2|1|豁免检定}失败超过5点，目标在以这种方式{@condition 中毒}时也会处于{@condition 中毒}状态。目标如果受到伤害或有其他生物采取行动摇醒它，将会醒来。"
+						"{@atk mw} 命中{@hit 12}，触及范围5尺，单一目标。{@h}10 ({@damage 1d6 + 7}) 挥砍伤害，目标必须成功进行一次{@dc 14}体质{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被{@condition 中毒}持续1小时。如果{@quickref 豁免检定|PHB|2|1|豁免检定}失败超过5点，目标在以这种方式{@condition 中毒}时也会处于{@condition 昏迷}状态。目标如果受到伤害或有其他生物采取行动摇醒它，将会醒来。"
 					]
 				},
 				{
@@ -3797,14 +3797,14 @@
 					"ENG_name": "Fey Ancestry",
 					"name": "精类血统",
 					"entries": [
-						"Keyleth在对抗被{@quickref 优势与劣势|PHB|2|0|优势}的{@quickref 豁免检定|PHB|2|1}上具有{@condition 魅惑}，并且魔法不能让她入睡。"
+						"Keyleth在对抗被{@condition 魅惑}的{@quickref 豁免检定|PHB|2|1}上具有{@quickref 优势与劣势|PHB|2|0|优势}，并且魔法不能让她入睡。"
 					]
 				},
 				{
 					"ENG_name": "Focused",
 					"name": "专注",
 					"entries": [
-						"Keyleth在进行维持法术的{@quickref 优势与劣势|PHB|2|0|优势}的体质{@quickref 豁免检定|PHB|2|1}时具有{@status 专注}。"
+						"Keyleth在进行维持法术的{@status 专注}的体质{@quickref 豁免检定|PHB|2|1}时具有{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
@@ -3827,7 +3827,7 @@
 					"ENG_name": "Meteor ({@creature Earth Elemental} Form Only)",
 					"name": "陨石（仅限{@creature 土元素}形态）",
 					"entries": [
-						"当Keyleth至少下落20尺时，她以流星般的力量着陆。她周围20尺内的所有生物必须成功进行一次{@dc 19}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则每10尺Keyleth下落的距离都会受到{@damage 1d6}点钝击伤害。即使在{@quickref 坠落|XGE|2|0|跌落伤害}形态下，Keyleth依然会受到{@creature 土元素}。"
+						"当Keyleth至少下落20尺时，她以流星般的力量着陆。她周围20尺内的所有生物必须成功进行一次{@dc 19}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则每10尺Keyleth下落的距离都会受到{@damage 1d6}点钝击伤害。即使在{@creature 土元素}形态下，Keyleth依然会受到{@quickref 坠落|XGE|2|0|跌落伤害}。"
 					]
 				},
 				{
@@ -3993,7 +3993,7 @@
 					"ENG_name": "Aura of Protection",
 					"name": "守护灵光",
 					"entries": [
-						"每当山羊骑士或其10尺范围内的友方生物进行{@quickref 豁免检定|PHB|2|1|豁免检定}时，该生物获得+2的加值（已包含在山羊骑士的{@quickref 豁免检定|PHB|2|1|豁免检定}中）。山羊骑士必须保持清醒状态才能授予和获得这个加值。"
+						"每当山羊骑士或其10尺范围内的友方生物进行{@quickref 豁免检定|PHB|2|1|豁免检定}时，该生物获得+2的加值（已包含在山羊骑士的{@quickref 豁免检定|PHB|2|1}中）。山羊骑士必须保持清醒状态才能授予和获得这个加值。"
 					]
 				},
 				{
@@ -4188,7 +4188,7 @@
 					"ENG_name": "Claw {@recharge 5}",
 					"name": "爪击 {@recharge 5}",
 					"entries": [
-						"{@atk mw} 命中{@hit 12}，触及范围5尺，单一目标。{@h}11 ({@damage 1d8 + 7}) 钝击伤害，目标必须成功进行一次{@dc 16}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则其颈部会被放置一个魔法项圈。目标佩戴项圈时，它将被魔法阻止说话并且不能施放任何法术。使用{@item 盗贼工具|PHB}进行一次成功的{@item 盗贼工具|PHB}敏捷检定可以移除项圈。"
+						"{@atk mw} 命中{@hit 12}，触及范围5尺，单一目标。{@h}11 ({@damage 1d8 + 7}) 钝击伤害，目标必须成功进行一次{@dc 16}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则其颈部会被放置一个魔法项圈。目标佩戴项圈时，它将被魔法阻止说话并且不能施放任何法术。使用{@item 盗贼工具|PHB}进行一次成功的{@dc 25}敏捷检定可以移除项圈。"
 					]
 				},
 				{
@@ -6600,7 +6600,7 @@
 					"ENG_name": "Focused",
 					"name": "专注",
 					"entries": [
-						"Scanlan在进行维持法术的{@quickref 优势与劣势|PHB|2|0|优势}的体质{@quickref 豁免检定|PHB|2|1}时具有{@status 专注}。"
+						"Scanlan在进行维持法术的{@status 专注}的体质{@quickref 豁免检定|PHB|2|1}时具有{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
@@ -6639,7 +6639,7 @@
 					"ENG_name": "Bardic Inspiration (6/{@quickref resting|PHB|2|0|Short Rest})",
 					"name": "诗人灵感 (6/{@quickref 休息|PHB|2|0|短休})",
 					"entries": [
-						"Scanlan 给予一个能听到他声音的，距离他60尺以内的生物一个吟游诗人灵感骰。在接下来的10分钟内，该生物可以掷一个{@dice d12}，并将掷出的数字加到它进行的一次属性检定、攻击掷骰或{@quickref 豁免检定|PHB|2|1|豁免检定}上。当 Scanlan 使用这个能力时，直到他的回合结束，他在用{@quickref 优势与劣势|PHB|2|0|优势}进行攻击掷骰时获得{@item 神话雕刻者（崇高状态）|TDCSR|神话刻录者}。"
+						"Scanlan 给予一个能听到他声音的，距离他60尺以内的生物一个吟游诗人灵感骰。在接下来的10分钟内，该生物可以掷一个{@dice d12}，并将掷出的数字加到它进行的一次属性检定、攻击掷骰或{@quickref 豁免检定|PHB|2|1|豁免检定}上。当 Scanlan 使用这个能力时，直到他的回合结束，他在用{@item 神话雕刻者（崇高状态）|TDCSR|神话刻录者}进行攻击掷骰时获得{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
@@ -6847,7 +6847,7 @@
 					"ENG_name": "Focused",
 					"name": "专注",
 					"entries": [
-						"Tary在进行维持法术的{@quickref 优势与劣势|PHB|2|0|优势}的体质{@quickref 豁免检定|PHB|2|1}时具有{@status 专注}。"
+						"Tary在进行维持法术的{@status 专注}的体质{@quickref 豁免检定|PHB|2|1}时具有{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
@@ -6998,7 +6998,7 @@
 					"ENG_name": "Keen Smell",
 					"name": "敏锐嗅觉",
 					"entries": [
-						"Trinket在使用嗅觉进行感知（{@quickref 优势与劣势|PHB|2|0|优势}）检定时拥有{@skill 察觉}。"
+						"Trinket在使用嗅觉进行感知（{@skill 察觉}）检定时拥有{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
@@ -7201,7 +7201,7 @@
 					"ENG_name": "Fey Ancestry",
 					"name": "精类血统",
 					"entries": [
-						"Vex在对抗被{@quickref 优势与劣势|PHB|2|0|优势}的{@quickref 豁免检定|PHB|2|1}上拥有{@condition 魅惑}，魔法不能使她入睡。"
+						"Vex在对抗被{@condition 魅惑}的{@quickref 豁免检定|PHB|2|1}上拥有{@quickref 优势与劣势|PHB|2|0|优势}，魔法不能使她入睡。"
 					]
 				},
 				{
@@ -7215,7 +7215,7 @@
 					"ENG_name": "Sneak Attack (1/Turn)",
 					"name": "偷袭 (1/回合)",
 					"entries": [
-						"维克斯在使用武器攻击命中目标时，如果拥有{@quickref 优势与劣势|PHB|2|0|劣势}，或者目标在5英尺内有维克斯的盟友且该盟友没有{@quickref 优势与劣势|PHB|2|0|优势}，并且维克斯在攻击检定中没有{@condition 失能}，她将额外造成14（{@quickref 优势与劣势|PHB|2|0|劣势}）点伤害。"
+						"维克斯在使用武器攻击命中目标时，如果拥有{@quickref 优势与劣势|PHB|2|0|优势}，或者目标在5英尺内有维克斯的盟友且该盟友没有{@condition 失能}，并且维克斯在攻击检定中没有{@quickref 优势与劣势|PHB|2|0|劣势}，她将额外造成14（{@damage 4d6}）点伤害。"
 					]
 				},
 				{
@@ -7268,7 +7268,7 @@
 					"ENG_name": "Hunter's Mark",
 					"name": "猎人印记",
 					"entries": [
-						"Vex施放{@spell 猎人印记}来标记她能在90尺内看到的生物。在接下来的1小时内，Vex的武器攻击对被标记的生物额外造成{@damage 1d6}伤害，并且在用感知（{@quickref 优势与劣势|PHB|2|0|优势}）和感知（{@skill 察觉}）检定来找到它时，她拥有{@skill 生存}。"
+						"Vex施放{@spell 猎人印记}来标记她能在90尺内看到的生物。在接下来的1小时内，Vex的武器攻击对被标记的生物额外造成{@damage 1d6}伤害，并且在用感知（{@skill 察觉}）和感知（{@skill 生存}）检定来找到它时，她拥有{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				}
 			],

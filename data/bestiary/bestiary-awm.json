@@ -1,8 +1,8 @@
 {
 	"monster": [
 		{
-			"name": "大水蛇",
 			"ENG_name": "Big Water Slurpent",
+			"name": "大水蛇",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -34,15 +34,15 @@
 			"cr": "3",
 			"trait": [
 				{
-					"name": "水中隐形",
 					"ENG_name": "Invisible in Water",
+					"name": "水中隐形",
 					"entries": [
 						"当完全浸没在水中时，大型水蛇是{@condition 隐形}。"
 					]
 				},
 				{
-					"name": "水体联结",
 					"ENG_name": "Water Bound",
+					"name": "水体联结",
 					"entries": [
 						"如果大水蛇离开它所依附的水，或者那些水被破坏，它就会死亡。"
 					]
@@ -50,8 +50,8 @@
 			],
 			"action": [
 				{
-					"name": "绞缠",
 					"ENG_name": "Constrict",
+					"name": "绞缠",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，单一目标。{@h}13 ({@damage 3d6+3}) 钝击伤害。如果目标是中等大小或更小，它将被{@condition 擒抱}（逃脱{@dc 13}），并被拉向大水蛭5尺。直到这次抓住结束，目标将被{@condition 束缚}，大水蛭试图淹死它，并且大水蛭不能再限制另单一目标。"
 					]
@@ -72,8 +72,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "鸟松鼠",
 			"ENG_name": "Birdsquirrel",
+			"name": "鸟松鼠",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -106,8 +106,8 @@
 			"cr": "1/4",
 			"trait": [
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果至少有一个鸟松鼠的盟友在目标生物5尺范围内，并且该盟友不是{@condition 失能}，鸟松鼠在对目标生物的攻击检定上具有优势。"
 					]
@@ -115,22 +115,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"鸟松鼠进行两次攻击：一次用它的咬击，一次用它的爪击。"
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw}命中{@hit 4}，触及范围5尺，单一目标。{@h}5（{@damage 1d6+2}）点穿刺伤害。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及范围：5尺，目标：一个。{@h}4（{@damage 1d4+2}）挥砍伤害。"
 					]
@@ -154,8 +154,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "布恩图猴",
 			"ENG_name": "Boontu Monkey",
+			"name": "布恩图猴",
 			"source": "AWM",
 			"page": 30,
 			"size": [
@@ -185,8 +185,8 @@
 			"cr": "0",
 			"trait": [
 				{
-					"name": "集群战术",
 					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
 					"entries": [
 						"如果至少有一个布恩图猴的盟友在目标生物5尺范围内，并且该盟友不是{@condition 失能}，布恩图猴在对目标生物的攻击检定上具有优势。"
 					]
@@ -194,8 +194,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw}  命中{@hit 1}，射程5尺，单一目标。{@h}1 ({@damage 1d4 - 1}) 点穿刺伤害。"
 					]
@@ -211,8 +211,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "水晶洞人鱼",
 			"ENG_name": "Crystal Cave Merfolk",
+			"name": "水晶洞人鱼",
 			"source": "AWM",
 			"page": 31,
 			"size": [
@@ -247,15 +247,15 @@
 			"cr": "1/8",
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"人鱼可以在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "塞壬之歌",
 					"ENG_name": "Siren Song",
+					"name": "塞壬之歌",
 					"entries": [
 						"悦耳的歌声吸引300尺内的所有类人生物或巨人。目标必须成功进行一次{@dc 11}感知豁免，否则直到歌声结束都会受到{@condition 魅惑}状态影响。"
 					]
@@ -263,8 +263,8 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} {@hit 2}命中，单一目标。{@h}3 ({@damage 1d6}) 点穿刺伤害。"
 					]
@@ -286,8 +286,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "阴暗森林女巫",
 			"ENG_name": "Dankwood Hag",
+			"name": "阴暗森林女巫",
 			"source": "AWM",
 			"page": 31,
 			"size": [
@@ -317,8 +317,8 @@
 			"cr": "3",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"will": [
 						"{@spell 舞光术}",
@@ -333,15 +333,15 @@
 			],
 			"trait": [
 				{
-					"name": "水陆两栖",
 					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
 					"entries": [
 						"鬼婆可以在空气和水中呼吸。"
 					]
 				},
 				{
-					"name": "拟态（绿巫婆）",
 					"ENG_name": "Mimicry (Green Hag)",
+					"name": "拟态（绿巫婆）",
 					"entries": [
 						"鬼婆可以模仿动物和类人生物的声音。听到该声音的生物如果成功通过一次{@dc 14}的感知（{@skill 洞悉}）检定，则可以识破鬼婆的模仿。"
 					]
@@ -349,22 +349,22 @@
 			],
 			"action": [
 				{
-					"name": "幻形",
 					"ENG_name": "Illusory Appearance",
+					"name": "幻形",
 					"entries": [
 						"女巫用魔法幻象覆盖自己，使她看起来像另一个体型和形状大致相同的生物。当女巫选择结束幻象，或她死亡时，幻象会消失。进行一次{@dc 20}智力（{@skill 调查}）检定可以揭穿女巫的伪装。"
 					]
 				},
 				{
-					"name": "隐形通道",
 					"ENG_name": "Invisible Passage",
+					"name": "隐形通道",
 					"entries": [
 						"女巫通过魔法变得{@condition 隐形}，直到她攻击或施放法术，或者直到她的{@status 专注}结束。当她{@condition 隐形}时，她不会留下任何物理证据，只能通过魔法来追踪。"
 					]
 				},
 				{
-					"name": "爪击",
 					"ENG_name": "Claws",
+					"name": "爪击",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，目标：一个。{@h}17（{@damage 2d8 + 4}）挥砍伤害。"
 					]
@@ -396,8 +396,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "嘟嘟小精灵",
 			"ENG_name": "Dum-Dum Goblin",
+			"name": "嘟嘟小精灵",
 			"source": "AWM",
 			"page": 32,
 			"size": [
@@ -432,8 +432,8 @@
 			"cr": "1/4",
 			"trait": [
 				{
-					"name": "迅捷逃逸",
 					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
 						"这个地精可以在每个回合作为附赠动作采取{@action 撤离}或{@action 躲藏}行动。"
 					]
@@ -441,22 +441,22 @@
 			],
 			"action": [
 				{
-					"name": "如果你能抓到我，就来抓我吧！",
 					"ENG_name": "Catch me if you can!",
+					"name": "如果你能抓到我，就来抓我吧！",
 					"entries": [
 						"嘟嘟小精灵会优先选择逃跑和躲藏，而不是战斗！在攻击它们之前，必须进行一次{@dc 15}敏捷检定。"
 					]
 				},
 				{
-					"name": "弯刀",
 					"ENG_name": "Scimitar",
+					"name": "弯刀",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，目标：一个。{@h}3（{@damage 1d6 +2}）挥砍伤害。"
 					]
 				},
 				{
-					"name": "短弓",
 					"ENG_name": "Shortbow",
+					"name": "短弓",
 					"entries": [
 						"{@atk rw}命中{@hit 4}，单一目标。{@h}6（{@damage 1d6 + 2}）点穿刺伤害。"
 					]
@@ -481,8 +481,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "矮人",
 			"ENG_name": "Dwarf",
+			"name": "矮人",
 			"source": "AWM",
 			"page": 32,
 			"size": [
@@ -517,8 +517,8 @@
 			"cr": "1/4",
 			"trait": [
 				{
-					"name": "矮人体魄",
 					"ENG_name": "Dwarven Resilience",
+					"name": "矮人体魄",
 					"entries": [
 						"他们在对抗中毒的豁免检定上具有优势，并且对毒素伤害具有抗性。"
 					]
@@ -526,8 +526,8 @@
 			],
 			"action": [
 				{
-					"name": "短弓",
 					"ENG_name": "Shortbow",
+					"name": "短弓",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，单一目标。{@h}4 ({@damage 1d6 + 1}) 挥砍伤害。"
 					]
@@ -548,8 +548,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "大克鲁姆，紫虫",
 			"ENG_name": "Great Kroom, Purple Worm",
+			"name": "大克鲁姆，紫虫",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -586,8 +586,8 @@
 			"cr": "15",
 			"trait": [
 				{
-					"name": "掘道者",
 					"ENG_name": "Tunneler",
+					"name": "掘道者",
 					"entries": [
 						"这种蠕虫能够以其一半的掘穴速度通过坚硬的岩层，并在其身后留下直径10尺的地道。"
 					]
@@ -595,22 +595,22 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"这只蠕虫进行两次攻击："
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 14}，单一目标。{@h}22（{@damage 3d8}）点穿刺伤害。目标必须进行一次{@dc 19}敏捷豁免，否则被蠕虫吞噬！"
 					]
 				},
 				{
-					"name": "尾刺",
 					"ENG_name": "Tail Stinger",
+					"name": "尾刺",
 					"entries": [
 						"{@atk mw} {@hit 14} 攻击，一个生物。{@h}19 ({@damage 3d6 + 9}) 穿刺伤害 目标必须进行一次 {@dc 19} 体质豁免，否则受到 42 ({@damage 12d6}) 毒素伤害。"
 					]
@@ -638,8 +638,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "愤怒的奥图格",
 			"ENG_name": "Hangry Otyugh",
+			"name": "愤怒的奥图格",
 			"source": "AWM",
 			"page": 33,
 			"size": [
@@ -668,8 +668,8 @@
 			"cr": "5",
 			"trait": [
 				{
-					"name": "有限感应",
 					"ENG_name": "Limited Telepathy",
+					"name": "有限感应",
 					"entries": [
 						"食腐兽可以将简单的话语或图像转换成目标能够理解的语言，在以魔法传导给120尺内任意一个生物。但并不能从目标处获得回复。"
 					]
@@ -677,29 +677,29 @@
 			],
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						" 食腐兽进行三次攻击："
 					]
 				},
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} {@hit 6} 攻击命中, 射程 5 英尺, 一个目标。 {@h}12 ({@damage 2d8 + 3}) 穿刺伤害。目标必须进行一次 {@dc 15} 体质豁免，否则承受 d ({@damage 1d10}) 毒素伤害，直至被治愈。"
 					]
 				},
 				{
-					"name": "触须",
 					"ENG_name": "Tentacle",
+					"name": "触须",
 					"entries": [
 						"{@atk mw} {@hit 6} 命中，触及 10 英尺，一个目标。{@h}7 ({@damage 1d8 + 3}) 钝击伤害，目标必须进行一次 {@dc 19} 体质豁免，否则受到 42 ({@damage 12d6}) 毒素伤害"
 					]
 				},
 				{
-					"name": "猛击",
 					"ENG_name": "Slam",
+					"name": "猛击",
 					"entries": [
 						"目标必须进行一次{@dc 14}体质豁免，否则会被{@condition 擒抱}。"
 					]
@@ -724,8 +724,8 @@
 			"hasFluff": true
 		},
 		{
-			"name": "山丘巨人，布洛波",
 			"ENG_name": "Hill Giant, Blorbo",
+			"name": "山丘巨人，布洛波",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -757,22 +757,22 @@
 			"cr": "4",
 			"action": [
 				{
-					"name": "多重攻击",
 					"ENG_name": "Multiattack",
+					"name": "多重攻击",
 					"entries": [
 						"巨人发动两次巨棒攻击。"
 					]
 				},
 				{
-					"name": "巨棒",
 					"ENG_name": "Greatclub",
+					"name": "巨棒",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，目标：一个。{@h}18（{@damage 3d8 + 5}）钝击伤害。"
 					]
 				},
 				{
-					"name": "掷石",
 					"ENG_name": "Rock",
+					"name": "掷石",
 					"entries": [
 						"{@atk rw} 命中{@hit 8}，单一目标。{@h}21 ({@damage 3d10 + 5})钝击伤害。"
 					]
@@ -797,8 +797,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "萨利思·羽蛇兽",
 			"ENG_name": "Saleeth the Couatl",
+			"name": "萨利思·羽蛇兽",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -836,8 +836,8 @@
 			"cr": "4",
 			"spellcasting": [
 				{
-					"name": "天生施法",
 					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
 						"羽蛇天生施法属性为魅力（法术豁免{@dc 14}），它天生可施展以下法术且仅需相应的言语成分成分："
@@ -868,15 +868,15 @@
 			],
 			"trait": [
 				{
-					"name": "魔法武器",
 					"ENG_name": "Magic Weapons",
+					"name": "魔法武器",
 					"entries": [
 						"羽蛇的武器攻击视为魔法攻击。"
 					]
 				},
 				{
-					"name": "屏蔽心灵",
 					"ENG_name": "Shielded Mind",
+					"name": "屏蔽心灵",
 					"entries": [
 						"羽蛇免疫探知，以及任何能感测其情绪、读取其思想或侦测其位置的效应。"
 					]
@@ -884,22 +884,22 @@
 			],
 			"action": [
 				{
-					"name": "啃咬",
 					"ENG_name": "Bite",
+					"name": "啃咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一生物。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害，目标必须进行一次{@dc 13}体质豁免，否则陷入{@condition 昏迷}状态。其他生物可以使用动作摇醒目标。"
 					]
 				},
 				{
-					"name": "绞缠",
 					"ENG_name": "Constrict",
+					"name": "绞缠",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及10尺，一个中等或更小的生物。{@h}10 ({@damage 2d6 + 3}) 钝击伤害，目标被{@condition 擒抱}（逃脱{@dc 15}）。羽蛇尔一次只能限制一个目标。"
 					]
 				},
 				{
-					"name": "变形",
 					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
 						"羽蛇可以用魔法变形为挑战等级等于或低于其自身的类人生物或野兽，也可以同样用该动作恢复其真实形态。在死亡时，它也会回复其真实形态。它携带或着装的任何装备都将转变为适应新形态，或是直接吸收为新形态的一部分（依照羽蛇的意愿）。",
 						"在新形态之下，羽蛇将保留其游戏数据和对话能力，但其AC、移动方式、力量、敏捷和其他动作项将被新形态的对应条目取代，即它同时获得新形态具有而它本身不具备的数据与能力（不包括职业特性、传奇动作以及巢穴动作）。如果新形态有啃咬攻击，羽蛇也可以在该形态下使用自己的啃咬。"
