@@ -843,7 +843,7 @@ class CreatureBuilder extends Builder {
 	}
 
 	__$getShortNameInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Short Name", {isMarked: true, title: "If not supplied, this will be generated from the creature's full name. Used in Legendary Action header text."});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("缩写", {isMarked: true, title: "If not supplied, this will be generated from the creature's full name. Used in Legendary Action header text."});
 
 		const initialMode = this._state.shortName === true ? "1" : "0";
 
@@ -1977,7 +1977,7 @@ class CreatureBuilder extends Builder {
 	}
 
 	__$getLanguageInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Languages");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("语言");
 
 		const doUpdateState = () => {
 			const raw = $iptLanguages.val().trim();
@@ -1993,11 +1993,11 @@ class CreatureBuilder extends Builder {
 		const availLanguages = Object.entries(Parser.MON_LANGUAGE_TAG_TO_FULL).filter(([k]) => !CreatureBuilder._LANGUAGE_BLOCKLIST.has(k))
 			.map(([k, v]) => v === "Telepathy" ? "telepathy" : v); // lowercase telepathy
 
-		const $btnAddGeneric = $(`<button class="btn btn-xs btn-default mr-2 mkbru_mon__btn-add-sense-language">Add Language</button>`)
+		const $btnAddGeneric = $(`<button class="btn btn-xs btn-default mr-2 mkbru_mon__btn-add-sense-language">新增语言</button>`)
 			.click(async () => {
 				const language = await InputUiUtil.pGetUserString({
-					title: "Enter a Language",
-					default: "Common",
+					title: "输入一个语言",
+					default: "通用语",
 					autocomplete: availLanguages,
 				});
 

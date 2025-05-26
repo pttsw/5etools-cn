@@ -270,7 +270,7 @@ export class CreatureBuilder extends BuilderBase {
 	_getInitialState () {
 		return {
 			...super._getInitialState(),
-			name: "New Creature",
+			name: "新生物",
 			size: [
 				"M",
 			],
@@ -443,9 +443,9 @@ export class CreatureBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Info", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Species", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Core", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "物种", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "核心", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "Defenses", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "Abilities", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "Flavor/Misc", hasBorder: true}),
@@ -460,16 +460,16 @@ export class CreatureBuilder extends BuilderBase {
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
 
 		// INFO
-		BuilderUi.$getStateIptString("Name", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptString("名称", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.$wrpTab);
 		this.__$getShortNameInput(cb).appendTo(infoTab.$wrpTab);
 		this._$selSource = this.$getSourceInput(cb).appendTo(infoTab.$wrpTab);
-		BuilderUi.$getStateIptString("Page", cb, this._state, {}, "page").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptString("页码", cb, this._state, {}, "page").appendTo(infoTab.$wrpTab);
 		this.__$getAlignmentPrefixInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getAlignmentInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getCrInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getProfNoteInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getProfBonusInput(cb).appendTo(infoTab.$wrpTab);
-		BuilderUi.$getStateIptNumber("Level", cb, this._state, {title: "Used for Sidekicks only"}, "level").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptNumber("等级", cb, this._state, {title: "仅用于协力者"}, "level").appendTo(infoTab.$wrpTab);
 
 		// SPECIES
 		this.__$getSizeInput(cb).appendTo(speciesTab.$wrpTab);
@@ -590,7 +590,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getSizeInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Size", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("体型", {isMarked: true});
 
 		const initial = this._state.size;
 
@@ -601,7 +601,7 @@ export class CreatureBuilder extends BuilderBase {
 
 		const rows = [];
 
-		const $btnAddSize = $(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Size</button>`)
+		const $btnAddSize = $(`<button class="ve-btn ve-btn-xs ve-btn-default">新增体型</button>`)
 			.click(() => {
 				const $tagRow = this.__$getSizeInput__getSizeRow(null, rows, setState);
 				$wrpTagRows.append($tagRow.$wrp);
@@ -640,7 +640,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getTypeInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Type", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("类型", {isMarked: true});
 
 		const initial = this._state.type;
 		const initialSwarm = !!initial.swarmSize;
@@ -685,8 +685,8 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		const $selMode = $(`<select class="form-control input-xs mb-2">
-			<option value="0">Creature</option>
-			<option value="1">Swarm</option>
+			<option value="0">生物</option>
+			<option value="1">集群</option>
 		</select>`).val(initialSwarm ? "1" : "0").change(() => {
 			switch ($selMode.val()) {
 				case "0": {
@@ -705,7 +705,7 @@ export class CreatureBuilder extends BuilderBase {
 		// region CHOOSE-FROM TYPE CONTROLS
 		const chooseTypeRows = [];
 
-		const $btnAddChooseType = $(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Type</button>`)
+		const $btnAddChooseType = $(`<button class="ve-btn ve-btn-xs ve-btn-default">新增类型</button>`)
 			.click(() => {
 				const metaTypeRow = this.__$getTypeInput__getChooseTypeRow(null, chooseTypeRows, setState);
 				$wrpChooseTypeRows.append(metaTypeRow.$wrp);
@@ -725,7 +725,7 @@ export class CreatureBuilder extends BuilderBase {
 		// region TAG CONTROLS
 		const tagRows = [];
 
-		const $btnAddTag = $(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Tag</button>`)
+		const $btnAddTag = $(`<button class="ve-btn ve-btn-xs ve-btn-default">新增标签</button>`)
 			.click(() => {
 				const $tagRow = this.__$getTypeInput__getTagRow(null, tagRows, setState);
 				$wrpTagRows.append($tagRow.$wrp);
@@ -758,7 +758,7 @@ export class CreatureBuilder extends BuilderBase {
 			.change(() => {
 				setState();
 			});
-		$$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Type Note</span>${$iptNote}</div>`
+		$$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">标签内容</span>${$iptNote}</div>`
 			.appendTo($rowInner);
 		// endregion
 
@@ -774,7 +774,7 @@ export class CreatureBuilder extends BuilderBase {
 			});
 		if (!isInitialCustom) $selType.val(type || Parser.TP_HUMANOID);
 
-		const $iptTypeCustom = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Custom Type">`)
+		const $iptTypeCustom = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="自定义类型">`)
 			.on("change", () => {
 				setState();
 			});
@@ -811,7 +811,7 @@ export class CreatureBuilder extends BuilderBase {
 			${$selType}
 			${$iptTypeCustom}
 			<label class="ve-flex-v-center mr-2">
-				<span class="mr-2">Custom</span>
+				<span class="mr-2">自定义</span>
 				${$cbIsCustomType}
 			</label>
 			${$btnRemove}
@@ -860,7 +860,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getShortNameInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Short Name", {isMarked: true, title: "If not supplied, this will be generated from the creature's full name. Used in Legendary Action header text."});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("缩写", {isMarked: true, title: "如果没有提供，这将根据生物的全名生成。用于传奇动作标题文本。"});
 
 		const initialMode = this._state.shortName === true ? "1" : "0";
 
@@ -920,7 +920,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getAlignmentPrefixInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Alignment Prefix", {title: `An additional prefix to display before alignment, for example "Typically ".`});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("阵营前缀", {title: `阵营前显示的附加前缀，例如“通常”。`});
 
 		const $ipt = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
 			.val(this._state.alignmentPrefix || "")
@@ -937,7 +937,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getAlignmentInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Alignment", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("阵营", {isMarked: true});
 
 		const doUpdateState = () => {
 			const raw = alignmentRows.map(row => row.getAlignment());
@@ -961,7 +961,7 @@ export class CreatureBuilder extends BuilderBase {
 		}
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Alignment</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">新增阵营</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				CreatureBuilder.__$getAlignmentInput__getAlignmentRow(doUpdateState, alignmentRows).$wrp.appendTo($wrpRows);
@@ -996,10 +996,10 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		const $selMode = $(`<select class="form-control input-xs mb-2">
-				<option value="0">Basic Alignment</option>
-				<option value="1">Chance-Based Alignment/Alignment with Note</option>
-				<option value="2">Special Alignment</option>
-				<option value="3">No Alignment (Sidekick)</option>
+				<option value="0">基础阵营</option>
+				<option value="1">魔改阵营</option>
+				<option value="2">特殊阵营</option>
+				<option value="3">无阵营 (协力者)</option>
 			</select>`).val(initialMode).change(() => {
 			switch ($selMode.val()) {
 				case "0": {
@@ -1033,9 +1033,9 @@ export class CreatureBuilder extends BuilderBase {
 		initialMode === "1" && alignment && $selAlign.val(CreatureBuilder.__$getAlignmentInput__getAlignmentIx(alignment.alignment));
 
 		// MULTIPLE CONTROLS
-		const $iptChance = $(`<input class="form-control form-control--minimal input-xs mr-2" min="1" max="100" placeholder="Chance of alignment">`)
+		const $iptChance = $(`<input class="form-control form-control--minimal input-xs mr-2" min="1" max="100" placeholder="阵营可能性">`)
 			.change(() => doUpdateState());
-		const $iptNote = $(`<input class="form-control form-control--minimal input-xs mx-1" placeholder="Alignment note">`)
+		const $iptNote = $(`<input class="form-control form-control--minimal input-xs mx-1" placeholder="阵营标注">`)
 			.change(() => doUpdateState());
 		const $stageMultiple = $$`<div class="ve-flex-col">
 			<div class="mb-2 ve-flex-v-center">${$iptChance}<span>%</span></div>
@@ -1498,7 +1498,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getSpeedInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Speed", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("速度", {isMarked: true});
 
 		const $getRow = (name, prop) => {
 			const doUpdateProp = () => {
@@ -1520,7 +1520,7 @@ export class CreatureBuilder extends BuilderBase {
 
 			const $iptSpeed = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
 				.change(() => doUpdateProp());
-			const $iptCond = $(`<input class="form-control form-control--minimal input-xs" placeholder="${prop === "fly" ? "(hover)/when..." : "when..."}">`)
+			const $iptCond = $(`<input class="form-control form-control--minimal input-xs" placeholder="${prop === "fly" ? "(漂浮)/当...时" : "当...时"}">`)
 				.change(() => doUpdateProp());
 
 			const initial = this._state.speed[prop];
@@ -1538,18 +1538,18 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		$$`<div class="ve-flex-col">
-		${$getRow("Walk", "walk")}
-		${$getRow("Burrow", "burrow")}
-		${$getRow("Climb", "climb")}
-		${$getRow("Fly", "fly")}
-		${$getRow("Swim", "swim")}
+		${$getRow("步行", "walk")}
+		${$getRow("掘穴", "burrow")}
+		${$getRow("攀爬", "climb")}
+		${$getRow("飞翔", "fly")}
+		${$getRow("游泳", "swim")}
 		</div>`.appendTo($rowInner);
 
 		return $row;
 	}
 
 	__$getAbilityScoreInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Ability Scores", {isMarked: true, isRow: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("属性能力值", {isMarked: true, isRow: true});
 
 		const $getRow = (name, prop) => {
 			const valInitial = this._state[prop] != null && typeof this._state[prop] !== "number"
@@ -1586,7 +1586,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getSaveInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Saving Throws", {isMarked: true, isRow: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("豁免掷骰", {isMarked: true, isRow: true});
 
 		const $getRow = (name, prop) => {
 			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mb-2 ve-text-center">`)
@@ -1980,7 +1980,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getSenseInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Senses");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("感知");
 
 		const doUpdateState = () => {
 			const raw = $iptSenses.val().trim();
@@ -1999,11 +1999,11 @@ export class CreatureBuilder extends BuilderBase {
 					return new ContextUtil.Action(
 						sense.uppercaseFirst(),
 						async () => {
-							const feet = await InputUiUtil.pGetUserNumber({min: 0, int: true, title: "Enter the Number of Feet"});
+							const feet = await InputUiUtil.pGetUserNumber({min: 0, int: true, title: "输入尺数"});
 							if (feet == null) return;
 
 							const curr = $iptSenses.val().trim();
-							const toAdd = `${sense} ${feet} ft.`;
+							const toAdd = `${sense} ${feet} 尺`;
 							$iptSenses.val(curr ? `${curr}, ${toAdd}` : toAdd);
 
 							doUpdateState();
@@ -2012,7 +2012,7 @@ export class CreatureBuilder extends BuilderBase {
 				}),
 		);
 
-		const $btnAddGeneric = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2 mkbru_mon__btn-add-sense-language">Add Sense</button>`)
+		const $btnAddGeneric = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2 mkbru_mon__btn-add-sense-language">新增感知</button>`)
 			.click((evt) => ContextUtil.pOpenMenu(evt, menu));
 
 		const $btnSort = BuilderUi.$getSplitCommasSortButton($iptSenses, doUpdateState);
@@ -2023,7 +2023,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getLanguageInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Languages");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("语言");
 
 		const doUpdateState = () => {
 			const raw = $iptLanguages.val().trim();
@@ -2039,11 +2039,11 @@ export class CreatureBuilder extends BuilderBase {
 		const availLanguages = Object.entries(Parser.MON_LANGUAGE_TAG_TO_FULL).filter(([k]) => !CreatureBuilder._LANGUAGE_BLOCKLIST.has(k))
 			.map(([k, v]) => v === "Telepathy" ? "telepathy" : v); // lowercase telepathy
 
-		const $btnAddGeneric = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2 mkbru_mon__btn-add-sense-language">Add Language</button>`)
+		const $btnAddGeneric = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2 mkbru_mon__btn-add-sense-language">新增语言</button>`)
 			.click(async () => {
 				const language = await InputUiUtil.pGetUserString({
-					title: "Enter a Language",
-					default: "Common",
+					title: "输入一个语言",
+					default: "通用语",
 					autocomplete: availLanguages,
 				});
 
@@ -2063,18 +2063,18 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getCrInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Challenge Rating", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("挑战等级", {isMarked: true});
 
 		const initialMode = this._state.cr != null
 			? this._state.cr.lair ? "1" : this._state.cr.coven ? "2" : ScaleCreature.isCrInScaleRange(this._state) ? "0" : "3"
 			: "4";
 
 		const $selMode = $(`<select class="form-control input-xs mb-2">
-			<option value="0">Basic Challenge Rating</option>
-			<option value="1">Has Lair Challenge Rating</option>
-			<option value="2">Has Coven Challenge Rating</option>
-			<option value="3">Custom Challenge Rating</option>
-			<option value="4">No Challenge Rating</option>
+			<option value="0">基础挑战等级</option>
+			<option value="1">有巢穴的挑战等级</option>
+			<option value="2">有集会的挑战等级</option>
+			<option value="3">自定义挑战等级</option>
+			<option value="4">无挑战等级</option>
 		</select>`).val(initialMode).change(() => {
 			switch ($selMode.val()) {
 				case "0": {
@@ -2129,7 +2129,7 @@ export class CreatureBuilder extends BuilderBase {
 				this._state.cr.lair = $selCrLair.val();
 				cb();
 			});
-		const $stageLair = $$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">While in lair</span>${$selCrLair}</div>`
+		const $stageLair = $$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">在巢穴中时</span>${$selCrLair}</div>`
 			.appendTo($rowInner).toggleVe(initialMode === "1");
 		initialMode === "1" && $selCrLair.val(this._state.cr.cr);
 		// endregion
@@ -2140,7 +2140,7 @@ export class CreatureBuilder extends BuilderBase {
 				this._state.cr.coven = $selCrCoven.val();
 				cb();
 			});
-		const $stageCoven = $$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">While in coven</span>${$selCrCoven}</div>`
+		const $stageCoven = $$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">属于集会时</span>${$selCrCoven}</div>`
 			.appendTo($rowInner).toggleVe(initialMode === "2");
 		initialMode === "2" && $selCrCoven.val(this._state.cr.cr);
 		// endregion
@@ -2178,7 +2178,7 @@ export class CreatureBuilder extends BuilderBase {
 
 	// this doesn't directly affect state, but is used as a helper for other inputs
 	__$getProfBonusInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Proficiency Bonus", {title: `The value used by the builder when calculating other proficiency-based values. If not specified, the value is based on the creature's CR.`});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("熟练度加成", {title: `构建器在计算其他基于熟练度的值时使用的值。如果未指定，则该值基于生物的CR。`});
 
 		const hook = () => {
 			// update proficiency bonus input as required
@@ -2229,7 +2229,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getProfNoteInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Proficiency Note", {title: `The value to display as the "Proficiency Bonus" on the statblock. If not specified, the display value is based on the creature's CR.`});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("熟练度显示值", {title: `在资料卡上显示为“熟练度加成”的值。如果未指定，则显示值基于生物的CR。`});
 
 		const $iptPbNote = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
 			.val(this._state.pbNote || "")

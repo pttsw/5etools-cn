@@ -268,7 +268,7 @@ export class BuilderUi {
 	 */
 	static $getSplitCommasSortButton ($ipt, cb, sortOptions) {
 		sortOptions = sortOptions || {};
-		return $(`<button class="ve-btn ve-btn-xs ve-btn-default">Sort</button>`)
+		return $(`<button class="ve-btn ve-btn-xs ve-btn-default">排序</button>`)
 			.click(() => {
 				const spl = $ipt.val().split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
 				$ipt.val(spl.sort((a, b) => {

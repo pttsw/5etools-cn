@@ -4266,10 +4266,10 @@ Parser.DMGTYPE_JSON_TO_FULL = {
 Parser.DMG_TYPES = ["强酸", "钝击", "冷冻", "火焰", "力场", "闪电", "黯蚀", "穿刺", "毒素", "心灵", "光耀", "挥砍", "雷鸣"];
 Parser.CONDITIONS = ["目盲", "魅惑", "耳聋", "力竭", "恐慌", "擒抱", "失能", "隐形", "麻痹", "石化", "中毒", "倒地", "束缚", "震慑", "昏迷"];
 Parser.SENSES = [
-	{"name": "blindsight", "source": Parser.SRC_PHB},
-	{"name": "darkvision", "source": Parser.SRC_PHB},
-	{"name": "tremorsense", "source": Parser.SRC_MM},
-	{"name": "truesight", "source": Parser.SRC_PHB},
+	{"name": "盲视", "source": Parser.SRC_PHB},
+	{"name": "黑暗视觉", "source": Parser.SRC_PHB},
+	{"name": "颤动感知", "source": Parser.SRC_MM},
+	{"name": "真实视觉", "source": Parser.SRC_PHB},
 ];
 
 Parser.NUMBERS_ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];

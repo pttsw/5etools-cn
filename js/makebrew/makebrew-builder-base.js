@@ -129,7 +129,7 @@ export class BuilderBase extends ProxyBase {
 
 	$getSourceInput (cb) {
 		return BuilderUi.$getStateIptEnum(
-			"Source",
+			"来源",
 			cb,
 			this._state,
 			{

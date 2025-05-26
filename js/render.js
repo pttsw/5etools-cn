@@ -3023,7 +3023,7 @@ Renderer.getFilterSubhashes = function (filters, namespace = null) {
 			return null;
 		}
 
-		if (fName === "preserve") {
+		if (fName === "preserve" || fName === "保护") {
 			return {
 				key: VeCt.FILTER_BOX_SUB_HASH_FLAG_IS_PRESERVE_EXISTING,
 				value: true,
@@ -10415,8 +10415,8 @@ Renderer.monster = class {
 		if (typeof mon.cr === "string") return this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr, isMythic: Renderer.monster.hasMythicActions(mon)});
 
 		const stack = [this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.cr, xp: mon.cr.xp, isMythic: Renderer.monster.hasMythicActions(mon)})];
-		if (mon.cr.lair || mon.cr.xpLair) stack.push(`${this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.lair, xp: mon.cr.xpLair})} when encountered in lair`);
-		if (mon.cr.coven || mon.cr.xpCoven) stack.push(`${this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.coven, xp: mon.cr.xpCoven})} when part of a coven`);
+		if (mon.cr.lair || mon.cr.xpLair) stack.push(`${this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.lair, xp: mon.cr.xpLair})}当受到巢穴的庇护时`);
+		if (mon.cr.coven || mon.cr.xpCoven) stack.push(`${this._getChallengeRatingPart_classic_getBasicCrRender({cr: mon.cr.coven, xp: mon.cr.xpCoven})}属于集会的一部份时`);
 		return stack
 			.filter(Boolean)
 			.joinConjunct(", ", " 或 ");
@@ -10438,8 +10438,8 @@ Renderer.monster = class {
 				.filter(Boolean);
 
 		if (mon.cr != null && typeof mon.cr !== "string") {
-			if (mon.cr.lair || mon.cr.xpLair) ptsXp.push(`${(mon.cr.xpLair ? mon.cr.xpLair.toLocaleString() : null) || Parser.crToXp(mon.cr.lair)} in lair`);
-			if (mon.cr.coven || mon.cr.xpCoven) ptsXp.push(`${(mon.cr.xpCoven ? mon.cr.xpCoven.toLocaleString() : null) || Parser.crToXp(mon.cr.coven)} when part of a coven`);
+			if (mon.cr.lair || mon.cr.xpLair) ptsXp.push(`${(mon.cr.xpLair ? mon.cr.xpLair.toLocaleString() : null) || Parser.crToXp(mon.cr.lair)}在巢穴中时`);
+			if (mon.cr.coven || mon.cr.xpCoven) ptsXp.push(`${(mon.cr.xpCoven ? mon.cr.xpCoven.toLocaleString() : null) || Parser.crToXp(mon.cr.coven)}属于集会的一部分时`);
 		}
 
 		const ptPbVal = Renderer.monster.getPbPart(mon, {isPlainText});
