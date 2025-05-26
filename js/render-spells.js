@@ -189,10 +189,10 @@ class _RenderSpellsImplBase extends RenderPageImplBase {
 		if (fromClassListVariant.length) {
 			const [current, legacy] = Parser.spVariantClassesToCurrentAndLegacy(fromClassListVariant);
 			if (settings.isDisplayVariantClasses && current.length) {
-				stackFroms.push(`<div><span class="bold">可选/变体职业: </span>${Parser.spMainClassesToFull(current)}</div>`);
+				stackFroms.push(`<div><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">可选/变体职业: </span>${Parser.spMainClassesToFull(current)}</div>`);
 			}
 			if (settings.isDisplayVariantClassesLegacy && legacy.length) {
-				stackFroms.push(`<div class="ve-muted"><span class="bold">可选/变体职业 (传奇): </span>${Parser.spMainClassesToFull(legacy)}</div>`);
+				stackFroms.push(`<div class="ve-muted"><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">可选/变体职业 (传奇): </span>${Parser.spMainClassesToFull(legacy)}</div>`);
 			}
 		}
 

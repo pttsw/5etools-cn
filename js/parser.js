@@ -1447,9 +1447,9 @@ Parser.SP_RANGE_TO_ICON = {
 	[Parser.RNG_CYLINDER]: "fa-database",
 	[Parser.RNG_SELF]: "fa-street-view",
 	[Parser.RNG_SIGHT]: "fa-eye",
-	[Parser.RNG_UNLIMITED_SAME_PLANE]: "fa-globe-americas",
+	[Parser.RNG_UNLIMITED_SAME_PLANE]: "fa-earth-americas",
 	[Parser.RNG_UNLIMITED]: "fa-infinity",
-	[Parser.RNG_TOUCH]: "fa-hand-paper",
+	[Parser.RNG_TOUCH]: "fa-hand",
 };
 
 Parser.spRangeTypeToIcon = function (range) {
@@ -1496,7 +1496,9 @@ Parser.spRangeToShortHtml._getAreaStyleString = function (range) {
 	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} help-subtle" title="${Parser.spRangeTypeToFull(range.type)}"></span>`;
 };
 
-Parser.spRangeToFull = function (range) {
+Parser.spRangeToFull = function (range, {styleHint, isDisplaySelfArea = false} = {}) {
+	styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+
 	switch (range.type) {
 		case Parser.RNG_SPECIAL: return Parser.spRangeTypeToFull(range.type);
 		case Parser.RNG_POINT: return Parser.spRangeToFull._renderPoint(range);
@@ -1508,7 +1510,7 @@ Parser.spRangeToFull = function (range) {
 		case Parser.RNG_SPHERE:
 		case Parser.RNG_HEMISPHERE:
 		case Parser.RNG_CYLINDER:
-			return Parser.spRangeToFull._renderArea(range);
+			return Parser.spRangeToFull._renderArea({range, styleHint, isDisplaySelfArea});
 	}
 };
 Parser.spRangeToFull._renderPoint = function (range) {
@@ -1528,7 +1530,8 @@ Parser.spRangeToFull._renderPoint = function (range) {
 			return `${dist.amount} ${dist.amount === 1 ? Parser.getSingletonUnit(dist.type) : Parser.spDistanceTypeToFull(dist.type)}`;
 	}
 };
-Parser.spRangeToFull._renderArea = function (range) {
+Parser.spRangeToFull._renderArea = function ({range, styleHint, isDisplaySelfArea = false}) {
+	if (styleHint !== "classic" && !isDisplaySelfArea) return "Self";
 	const size = range.distance;
 	return `自身 (${size.amount}-${Parser.getSingletonUnit(size.type)}${Parser.spRangeToFull._getAreaStyleString(range)}${range.type === Parser.RNG_CYLINDER ? `${size.amountSecondary != null && size.typeSecondary != null ? `, ${size.amountSecondary}-${Parser.getSingletonUnit(size.typeSecondary)}-高` : ""} 圆柱体` : ""})`;
 };
@@ -2399,7 +2402,7 @@ Parser.CAT_ID_CULT = 19;
 Parser.CAT_ID_BOON = 20;
 Parser.CAT_ID_DISEASE = 21;
 Parser.CAT_ID_METAMAGIC = 22;
-Parser.CAT_ID_MANEUVER_BATTLEMASTER = 23;
+Parser.CAT_ID_MANEUVER_BATTLE_MASTER = 23;
 Parser.CAT_ID_TABLE = 24;
 Parser.CAT_ID_TABLE_GROUP = 25;
 Parser.CAT_ID_MANEUVER_CAVALIER = 26;
@@ -2438,7 +2441,7 @@ Parser.CAT_ID_GROUPS = {
 	"optionalfeature": [
 		Parser.CAT_ID_ELDRITCH_INVOCATION,
 		Parser.CAT_ID_METAMAGIC,
-		Parser.CAT_ID_MANEUVER_BATTLEMASTER,
+		Parser.CAT_ID_MANEUVER_BATTLE_MASTER,
 		Parser.CAT_ID_MANEUVER_CAVALIER,
 		Parser.CAT_ID_ARCANE_SHOT,
 		Parser.CAT_ID_OPTIONAL_FEATURE_OTHER,
@@ -2480,7 +2483,7 @@ Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CULT] = "异教";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_BOON] = "恩惠";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_DISEASE] = "疾病";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_METAMAGIC] = "超魔法";
-Parser.CAT_ID_TO_FULL[Parser.CAT_ID_MANEUVER_BATTLEMASTER] = "战技；战斗大师";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_MANEUVER_BATTLE_MASTER] = "战技；战斗大师";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_TABLE] = "表格";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_TABLE_GROUP] = "表格";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_MANEUVER_CAVALIER] = "战技；骑兵";
@@ -2548,7 +2551,7 @@ Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ARCANE_SHOT] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_OPTIONAL_FEATURE_OTHER] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_FIGHTING_STYLE] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_METAMAGIC] = "optionalfeature";
-Parser.CAT_ID_TO_PROP[Parser.CAT_ID_MANEUVER_BATTLEMASTER] = "optionalfeature";
+Parser.CAT_ID_TO_PROP[Parser.CAT_ID_MANEUVER_BATTLE_MASTER] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_PACT_BOON] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ELEMENTAL_DISCIPLINE] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ARTIFICER_INFUSION] = "optionalfeature";
@@ -2766,6 +2769,7 @@ Parser.bookOrdinalToAbv = (ordinal, {isPreNoSuff = false, isPlainText = false} =
 		case "episode": return `${isPreNoSuff ? " " : ""}${Parser._bookOrdinalToAbv_getPt({ordinal, isPlainText})} ${ordinal.identifier}${isPreNoSuff ? "" : ": "}`;
 		case "appendix": return `${isPreNoSuff ? " " : ""}${Parser._bookOrdinalToAbv_getPt({ordinal, isPlainText})}${ordinal.identifier != null ? ` ${ordinal.identifier}` : ""}${isPreNoSuff ? "" : ": "}`;
 		case "level": return `${isPreNoSuff ? " " : ""}${Parser._bookOrdinalToAbv_getPt({ordinal, isPlainText})} ${ordinal.identifier}${isPreNoSuff ? "" : ": "}`;
+		case "section": return `${isPreNoSuff ? " " : ""}${Parser._bookOrdinalToAbv_getPt({ordinal, isPlainText})} ${ordinal.identifier}${isPreNoSuff ? "" : ": "}`;
 		default: throw new Error(`Unhandled ordinal type "${ordinal.type}"`);
 	}
 };
@@ -2776,6 +2780,7 @@ Parser._bookOrdinalToAbv_getPt = ({ordinal, isPlainText = false}) => {
 		case "chapter": return isPlainText ? `Ch.` : `<span title="Chapter">Ch.</span>`;
 		case "episode": return isPlainText ? `Ep.` : `<span title="Episode">Ep.</span>`;
 		case "appendix": return isPlainText ? `App.` : `<span title="Appendix">App.</span>`;
+		case "section": return isPlainText ? `Sec.` : `<span title="Section">Sec.</span>`;
 		case "level": return `Level`;
 		default: throw new Error(`Unhandled ordinal type "${ordinal.type}"`);
 	}
@@ -4265,12 +4270,22 @@ Parser.DMGTYPE_JSON_TO_FULL = {
 
 Parser.DMG_TYPES = ["强酸", "钝击", "冷冻", "火焰", "力场", "闪电", "黯蚀", "穿刺", "毒素", "心灵", "光耀", "挥砍", "雷鸣"];
 Parser.CONDITIONS = ["目盲", "魅惑", "耳聋", "力竭", "恐慌", "擒抱", "失能", "隐形", "麻痹", "石化", "中毒", "倒地", "束缚", "震慑", "昏迷"];
-Parser.SENSES = [
+Parser._SENSES_LEGACY = [
 	{"name": "盲视", "source": Parser.SRC_PHB},
 	{"name": "黑暗视觉", "source": Parser.SRC_PHB},
 	{"name": "颤动感知", "source": Parser.SRC_MM},
 	{"name": "真实视觉", "source": Parser.SRC_PHB},
 ];
+Parser._SENSES_MODERN = [
+	{"name": "盲视", "source": Parser.SRC_XPHB},
+	{"name": "黑暗视觉", "source": Parser.SRC_XPHB},
+	{"name": "颤动感知", "source": Parser.SRC_XPHB},
+	{"name": "真实视觉", "source": Parser.SRC_XPHB},
+];
+Parser.getSenses = function ({styleHint = null} = {}) {
+	styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+	return styleHint === "classic" ? Parser._SENSES_LEGACY : Parser._SENSES_MODERN;
+};
 
 Parser.NUMBERS_ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 Parser.NUMBERS_TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];

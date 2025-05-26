@@ -80,6 +80,9 @@ class PageFilterEquipment extends PageFilterBase {
 		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", cnHeader:"武器伤害类型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a.item), Parser.dmgTypeToFull(b.item))});
 		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", cnHeader:"武器伤害骰", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
 		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader:"护甲类型", displayFn: it => it === 0 ? "None" : it});
+		this._rangeFilterNormal = new RangeFilter({header: "Normal", cnHeader:"正常", displayFn: it => it === 0 ? "None" : `${it} ft.`});
+		this._rangeFilterLong = new RangeFilter({header: "Long", cnHeader:"长", displayFn: it => it === 0 ? "None" : `${it} ft.`});
+		this._rangeFilter = new MultiFilter({header: "Range", cnHeader:"范围", filters: [this._rangeFilterNormal, this._rangeFilterLong]});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader:"杂项",
@@ -98,6 +101,17 @@ class PageFilterEquipment extends PageFilterBase {
 		return (item.ac || 0) + Number(item.bonusAc);
 	}
 
+	static _RE_RANGE = /^(?<rangeShort>\d+)(?:\/(?<rangeLong>\d+))?$/;
+
+	static _mutateForFilters_getFilterRanges (item) {
+		if (!item.range) return null;
+		const mRange = this._RE_RANGE.exec(item.range);
+		if (!mRange) return null;
+		const {rangeShort: rangeShortRaw, rangeLong: rangeLongRaw} = mRange.groups;
+		if (!rangeLongRaw) return {normal: Number(rangeShortRaw)};
+		return {normal: Number(rangeShortRaw), long: Number(rangeLongRaw)};
+	}
+
 	static _mutateForFilters_mutFilterValue (item) {
 		if (item.value || item.valueMult) {
 			item._l_value = Parser.itemValueToFullMultiCurrency(item, {isShortForm: true}).replace(/ +/g, "\u00A0");
@@ -105,6 +119,13 @@ class PageFilterEquipment extends PageFilterBase {
 		}
 
 		item._l_value = "\u2014";
+	}
+
+	static _mutateForFilters_getFilterAttachedSpells (item) {
+		const flat = Renderer.item.getFlatAttachedSpells(item);
+		if (!flat) return flat;
+		return flat
+			.map(it => it.toLowerCase().split("#")[0].split("|")[0]);
 	}
 
 	static mutateForFilters (item) {
@@ -161,6 +182,16 @@ class PageFilterEquipment extends PageFilterBase {
 			: null;
 
 		item._fAc = this._mutateForFilters_getFilterAc(item);
+		const ranges = this._mutateForFilters_getFilterRanges(item);
+		if (ranges) {
+			item._fRangeNormal = ranges.normal;
+			item._fRangeLong = ranges.long;
+		} else {
+			item._fRangeNormal = null;
+			item._fRangeLong = null;
+		}
+
+		item._fAttachedSpells = this._mutateForFilters_getFilterAttachedSpells(item);
 
 		item._l_weight = Parser.itemWeightToFull(item, true) || "\u2014";
 		this._mutateForFilters_mutFilterValue(item);
@@ -175,6 +206,8 @@ class PageFilterEquipment extends PageFilterBase {
 		this._damageTypeFilter.addItem(item.dmgType);
 		this._damageDiceFilter.addItem(item._fDamageDice);
 		this._acFilter.addItem(item._fAc);
+		this._rangeFilterNormal.addItem(item._fRangeNormal);
+		this._rangeFilterLong.addItem(item._fRangeLong);
 		this._poisonTypeFilter.addItem(item.poisonTypes);
 		this._miscFilter.addItem(item._fMisc);
 		this._masteryFilter.addItem(item._fMastery);
@@ -192,6 +225,7 @@ class PageFilterEquipment extends PageFilterBase {
 			this._damageTypeFilter,
 			this._damageDiceFilter,
 			this._acFilter,
+			this._rangeFilter,
 			this._miscFilter,
 			this._poisonTypeFilter,
 			this._masteryFilter,
@@ -211,6 +245,10 @@ class PageFilterEquipment extends PageFilterBase {
 			it.dmgType,
 			it._fDamageDice,
 			it._fAc,
+			[
+				it._fRangeNormal,
+				it._fRangeLong,
+			],
 			it._fMisc,
 			it.poisonTypes,
 			it._fMastery,
@@ -416,7 +454,7 @@ class PageFilterItems extends PageFilterEquipment {
 
 		this._sourceFilter.addItem(item.source);
 		this._tierFilter.addItem(item._fTier);
-		this._attachedSpellsFilter.addItem(item.attachedSpells);
+		this._attachedSpellsFilter.addItem(item._fAttachedSpells);
 		this._lootTableFilter.addItem(item.lootTables);
 		this._baseItemFilter.addItem(item._fBaseItem);
 		this._baseSourceFilter.addItem(item._baseSource);
@@ -446,6 +484,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._damageTypeFilter,
 			this._damageDiceFilter,
 			this._acFilter,
+			this._rangeFilter,
 			this._bonusFilter,
 			this._defenseFilter,
 			this._conditionImmuneFilter,
@@ -477,6 +516,10 @@ class PageFilterItems extends PageFilterEquipment {
 			it.dmgType,
 			it._fDamageDice,
 			it._fAc,
+			[
+				it._fRangeNormal,
+				it._fRangeLong,
+			],
 			it._fBonus,
 			[
 				it._fVuln,
@@ -492,7 +535,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fBaseItemAll,
 			it._baseSource,
 			it.optionalfeatures,
-			it.attachedSpells,
+			it._fAttachedSpells,
 		);
 	}
 }

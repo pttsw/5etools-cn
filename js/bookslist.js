@@ -182,6 +182,7 @@ export class AdventuresBooksList {
 					alias: (it.alias || []).map(it => `"${it}"`).join(","),
 					ENG_name: it.ENG_name,
 					ENG_hash: UrlUtil.autoEncodeEngHash(it),
+					storyline: it.storyline || "",
 				},
 				{
 					$btnToggleExpand,
