@@ -13,9 +13,42 @@
 						{
 							"key": "system.bonuses.rsak.damage",
 							"mode": "ADD",
-							"value": "+(@srd5e.name.奥术冲击 * @abilities.魅力.mod)"
+							"value": "+(@srd5e.name.eldritchblast * @abilities.cha.mod)"
 						}
 					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Ambush",
+			"name": "伏击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"roll": {
+						"ENG_name": "Bonus",
+						"name": "附赠动作",
+						"formula": "@scale.battle-master.superiority.die"
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -26,37 +59,48 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arcanePropulsion"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Arcane Propulsion Armor",
 					"name": "奥能动力甲",
+					"enchantmentRiderParent": "奥术推进",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.attributes.movement.walk",
 							"mode": "ADD",
 							"value": "5"
 						}
-					],
-					"enchantmentRiderParent": "XY7pERdPxxb8bjlq",
-					"transfer": true
+					]
 				},
 				{
 					"ENG_name": "Arcane Propulsion",
+					"foundryId": "arcanePropulsion",
 					"name": "奥术推进",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": "奥术推进"
+							"value": "of Arcane Propulsion"
 						},
 						{
 							"key": "system.attunement",
@@ -66,11 +110,9 @@
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "XY7pERdPxxb8bjlq"
+					]
 				}
 			],
 			"subEntities": {
@@ -108,34 +150,45 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "armorOfMagicalSt"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Armor of Magical Strength",
+					"foundryId": "armorOfMagicalSt",
 					"name": "魔法力量护甲",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "OVERRIDE",
-							"value": "魔法力量的{}"
+							"value": "{} of Magical Strength"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						},
 						{
 							"key": "system.activation.type",
 							"mode": "OVERRIDE",
-							"value": "反应"
+							"value": "reaction"
 						},
 						{
 							"key": "system.activation.cost",
@@ -145,7 +198,7 @@
 						{
 							"key": "system.uses.per",
 							"mode": "OVERRIDE",
-							"value": "充能"
+							"value": "charges"
 						},
 						{
 							"key": "system.uses.max",
@@ -155,7 +208,7 @@
 						{
 							"key": "system.activation.condition",
 							"mode": "OVERRIDE",
-							"value": "当穿戴者进行力量检定或豁免检定，或者会被击倒时"
+							"value": "when the wearer makes a Strength check or saving throw or would be knocked prone"
 						},
 						{
 							"key": "system.uses.recovery",
@@ -165,15 +218,14 @@
 						{
 							"key": "system.description.value",
 							"mode": "OVERRIDE",
-							"value": "<p><strong>物品：一套盔甲（需要调谐）</strong></p> <p>这套盔甲有6次充能。穿戴者可以以以下方式消耗盔甲的充能：</p> <ul> <li> <p>当穿戴者进行力量检定或力量豁免检定时，它可以消耗1次充能，以增加等于其智力调整值的额外加值（当前为，[[/r @abilities.int.mod]]）</p> </li> <li> <p>如果生物会被击倒，它可以使用其反应来消耗1次充能以避免被击倒。</p> </li> </ul> <p>盔甲在黎明时每天恢复1d6次消耗的充能。</p> <p><strong>铸造笔记</strong></p> <p>此特性被配置为反应。对于使用力量检定/豁免检定，只需将充能减少1即可。</p> "
+							"value": "<p><em>Item: A suit of armor (requires attunement)</em></p> <p>This armor has 6 charges. The wearer can expend the armor's charges in the following ways:</p> <ul> <li> <p>When the wearer makes a Strength check or a Strength saving throw, it can expend 1 charge to add a bonus to the roll equal to its Intelligence modifier (currently, [[/r @abilities.int.mod]]).</p> </li> <li> <p>If the creature would be knocked prone, it can use its reaction to expend 1 charge to avoid being knocked prone.</p> </li> </ul> <p>The armor regains 1d6 expended charges daily at dawn.</p> <p><strong>Foundry Note</strong></p> <p>This feature is configured as a Reaction. For use with a Strength check/saving throw simply reduce the charges by 1.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						}
-					],
-					"type": "enchantment"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -182,70 +234,443 @@
 			"ENG_name": "Armor of Shadows",
 			"name": "幽影护甲",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Armor of Shadows",
+			"name": "幽影护甲",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Mage Armor",
+					"name": "法师护甲",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"value": "8"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"effects": [
+						{
+							"foundryId": "armorOfShadows"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Mage Armor",
+					"foundryId": "armorOfShadows",
+					"name": "法师护甲",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"seconds": 28800
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.calc",
+							"mode": "OVERRIDE",
+							"value": "mage"
+						}
+					],
+					"description": "目标的基础AC变为13加上其敏捷调整值。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Ascendant Step",
 			"name": "星移步法",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Ascendant Step",
+			"name": "星移步法",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "分钟",
+						"concentration": true,
+						"value": "10"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "ascendantStep"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Levitating",
+					"foundryId": "ascendantStep",
+					"name": "悬浮",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"seconds": 600
+					},
+					"description": "目标只能通过推或拉触及范围内的固定物体或表面（如墙壁或天花板）来移动，使其能够像攀爬一样移动。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Bait and Switch",
+			"name": "换位诈术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Switch Places",
+					"name": "交换位置",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你在自己回合内处于生物5尺范围内"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "willing"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "5"
+					},
+					"roll": {
+						"ENG_name": "Armor Class Bonus",
+						"name": "护甲等级加值",
+						"formula": "@scale.battle-master.superiority.die"
+					},
+					"effects": [
+						{
+							"foundryId": "baitAndSwitch"
+						},
+						{
+							"foundryId": "baitAndSwitch1"
+						},
+						{
+							"foundryId": "baitAndSwitch2"
+						},
+						{
+							"foundryId": "baitAndSwitch3"
+						},
+						{
+							"foundryId": "baitAndSwitch4"
+						},
+						{
+							"foundryId": "baitAndSwitch5"
+						},
+						{
+							"foundryId": "baitAndSwitch6"
+						},
+						{
+							"foundryId": "baitAndSwitch7"
+						},
+						{
+							"foundryId": "baitAndSwitch8"
+						},
+						{
+							"foundryId": "baitAndSwitch9"
+						},
+						{
+							"foundryId": "baitAndSwitch10"
+						},
+						{
+							"foundryId": "baitAndSwitch11"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Baited AC +1",
+					"foundryId": "baitAndSwitch",
+					"name": "诱饵AC +1",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +2",
+					"foundryId": "baitAndSwitch1",
+					"name": "诱饵 AC +2",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 2
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +3",
+					"foundryId": "baitAndSwitch2",
+					"name": "诱饵 AC +3",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 3
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +4",
+					"foundryId": "baitAndSwitch3",
+					"name": "诱饵护甲等级 +4",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 4
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +5",
+					"foundryId": "baitAndSwitch4",
+					"name": "诱饵AC +5",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 5
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +6",
+					"foundryId": "baitAndSwitch5",
+					"name": "诱饵 AC +6",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 6
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +7",
+					"foundryId": "baitAndSwitch6",
+					"name": "诱饵护甲等级 +7",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 7
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +8",
+					"foundryId": "baitAndSwitch7",
+					"name": "诱饵AC +8",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 8
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +9",
+					"foundryId": "baitAndSwitch8",
+					"name": "诱饵护甲等级 +9",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 9
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +10",
+					"foundryId": "baitAndSwitch9",
+					"name": "诱饵 AC +10",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 10
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +11",
+					"foundryId": "baitAndSwitch10",
+					"name": "诱饵AC +11",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 11
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				},
+				{
+					"ENG_name": "Baited AC +12",
+					"foundryId": "baitAndSwitch11",
+					"name": "诱饵 AC +12",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 12
+						}
+					],
+					"description": "直到你的下个回合开始，你或另一个生物（由你选择）获得等同于掷出数字的AC加值。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Beast Speech",
 			"name": "野兽之语",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Bewitching Whispers",
 			"name": "惑人低语",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Book of Ancient Secrets",
 			"name": "远古奥秘之书",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -254,29 +679,40 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "bootsOfTheWindin"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Boots of the Winding Path",
+					"foundryId": "bootsOfTheWindin",
 					"name": "折返之靴",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "OVERRIDE",
-							"value": "折返之靴"
+							"value": "Boots of the Winding Path"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这些靴子时，生物可以在当前回合内，作为附赠动作，传送至最多15尺远的空位，该生物必须在当前回合的某个时刻曾经占据过那个空间。</p>"
+							"value": "<p>While wearing these boots, a creature can teleport up to 15 feet as a bonus action to an unoccupied space the creature can see. The creature must have occupied that space at some point during the current turn.</p>"
 						},
 						{
 							"key": "system.activation.cost",
@@ -286,7 +722,7 @@
 						{
 							"key": "system.activation.type",
 							"mode": "OVERRIDE",
-							"value": "附赠动作"
+							"value": "bonus"
 						},
 						{
 							"key": "system.range.value",
@@ -301,10 +737,46 @@
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						}
-					],
-					"type": "enchantment"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Careful Spell",
+			"name": "谨慎法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Careful Spell",
+					"name": "谨慎法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个法术并强迫其他生物进行豁免检定时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "@abilities.cha.mod",
+							"type": "creature"
+						}
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -313,14 +785,14 @@
 			"ENG_name": "Chains of Carceri",
 			"name": "卡瑟利之链",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -329,14 +801,113 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "符文",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "反应"
-					}
-				]
+				"type.subtype": "符文"
 			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "reaction"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Commander's Strike",
+			"name": "指挥官奇袭",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Directed Attack",
+					"name": "定向攻击",
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "当你在你的回合进行攻击动作时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "能看见或听见你"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Commanding Presence",
+			"name": "领导风范",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你进行魅力（威吓、表演或说服）检定"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"roll": {
+						"ENG_name": "Bonus",
+						"name": "附赠动作",
+						"formula": "@scale.battle-master.superiority.die"
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -357,9 +928,201 @@
 						{
 							"key": "system.attributes.senses.special",
 							"mode": "ADD",
-							"value": "魔鬼视界"
+							"value": "Devil's Sight"
 						}
 					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Devil's Sight",
+			"name": "魔鬼视界",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.senses.darkvision",
+							"mode": "UPGRADE",
+							"value": 120
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Disarming Attack",
+			"name": "缴械攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "",
+						"condition": "当你用攻击掷骰命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						],
+						"onSave": "full"
+					},
+					"save": {
+						"ability": [
+							"str"
+						],
+						"dc": {
+							"formula": "8 + max(@abilities.dex.mod, @abilities.str.mod) + @prof"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Distant Spell",
+			"name": "远程法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Distant Spell",
+					"name": "远程法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个射程至少为5尺的法术或当你施放一个射程为触碰的法术时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Distracting Strike",
+			"name": "扰乱打击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "damage",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						]
+					},
+					"effects": [
+						{
+							"foundryId": "distractingStrik"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Distracted",
+					"foundryId": "distractingStrik",
+					"name": "分心",
+					"duration": {
+						"turns": 1
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -368,14 +1131,14 @@
 			"ENG_name": "Dreadful Word",
 			"name": "恐惧箴言",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -400,14 +1163,134 @@
 			"ENG_name": "Eldritch Sight",
 			"name": "魔能视界",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Eldritch Smite",
+			"name": "魔能斩",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Smite",
+					"name": "猛击",
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "用你的契约武器击中一个生物"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "1",
+								"target": "法术.契约.数值"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(1 + @spells.pact.level)d8"
+								},
+								"types": [
+									"力场"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Eldritch Spear",
+			"name": "魔能长枪",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Increase Range",
+					"name": "增加射程",
+					"type": "enchant",
+					"activation": {
+						"type": ""
+					},
+					"restrictions": {
+						"allowMagical": true
+					},
+					"effects": [
+						{
+							"foundryId": "eldritchSpear"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "eldritchSpear",
+					"type": "enchantment",
+					"disabled": true,
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.range.value",
+							"mode": "ADD",
+							"value": "@classes.warlock.levels * 30"
+						},
+						{
+							"key": "name",
+							"mode": "ADD",
+							"value": ", Eldritch Spear"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Empowered Spell",
+			"name": "强效法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Empowered Spell",
+					"name": "强效法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放法术进行伤害掷骰时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -416,75 +1299,104 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "武器",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"ENG_name": "Enhanced Arcane Focus",
+					"name": "增强奥术法器",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "enhancedArcaneFo"
+						}
+					]
+				},
+				{
+					"ENG_name": "Enhanced Arcane Focus +2",
+					"name": "增强奥术法器 +2",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "enhancedArcaneF2"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Enhanced Arcane Focus",
+					"foundryId": "enhancedArcaneFo",
 					"name": "增强奥术法器",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
 							"value": ", Enhanced Arcane Focus"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>持有这个物品时，生物在法术攻击检定中获得+1的加成。此外，生物在进行法术攻击时忽略半掩体的影响。</p> <p>当你在这个职业达到10级时，这个加成会增加到+2。</p> <p><strong>铸造厂备注</strong></p> <p>注入在10级时会自动增加，但它不会自动更新已经附魔的物品。重新附魔物品以获得更高的加成。</p>"
+							"value": "<p>While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p> <p>The bonus increases to +2 when you reach 10th level in this class.</p> <p><strong>Foundry Note</strong></p> <p>The infusion will automatically increase at level 10 but it will not automatically update already enchanted Items. Re-enchant the Item to grant the higher bonus.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "OVERRIDE",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "syx3ZXUoQwVJUZxP"
+					]
 				},
 				{
 					"ENG_name": "Enhanced Arcane Focus +2",
+					"foundryId": "enhancedArcaneF2",
 					"name": "增强奥术法器 +2",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
 							"value": ", Enhanced Arcane Focus"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>持有这个物品时，生物在法术攻击检定中获得+1的加成。此外，生物在进行法术攻击时忽略半掩体的影响。</p> <p>当你在这个职业达到10级时，这个加成会增加到+2。</p> <p><strong>铸造厂备注</strong></p> <p>注入在10级时会自动增加，但它不会自动更新已经附魔的物品。重新附魔物品以获得更高的加成。</p>"
+							"value": "<p>While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p> <p>The bonus increases to +2 when you reach 10th level in this class.</p> <p><strong>Foundry Note</strong></p> <p>The infusion will automatically increase at level 10 but it will not automatically update already enchanted Items. Re-enchant the Item to grant the higher bonus.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "OVERRIDE",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "I4qB050rdgSsoIEd"
+					]
 				},
 				{
 					"ENG_name": "Enhanced Arcane Focus",
 					"name": "增强奥术法器",
+					"enchantmentRiderParent": "增强奥术之",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.bonuses.msak.attack",
@@ -496,13 +1408,13 @@
 							"mode": "ADD",
 							"value": "1"
 						}
-					],
-					"enchantmentRiderParent": "syx3ZXUoQwVJUZxP",
-					"transfer": true
+					]
 				},
 				{
 					"ENG_name": "Enhanced Arcane Focus +2",
 					"name": "增强奥术法器 +2",
+					"enchantmentRiderParent": "增强奥术F2",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.bonuses.msak.attack",
@@ -514,9 +1426,7 @@
 							"mode": "ADD",
 							"value": "2"
 						}
-					],
-					"enchantmentRiderParent": "I4qB050rdgSsoIEd",
-					"transfer": true
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -527,69 +1437,98 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
-			"effects": [
+			"activities": [
 				{
 					"ENG_name": "Enhanced Defense",
 					"name": "增强防御",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "enhancedDefense"
+						}
+					]
+				},
+				{
+					"ENG_name": "Enhanced Defense +2",
+					"name": "增强防御 +2",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "enhancedDefense2"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Enhanced Defense",
+					"foundryId": "enhancedDefense",
+					"name": "增强防御",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 增强防御"
+							"value": ", Enhanced Defense"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>生物穿戴（盔甲）或持有（盾牌）注入的物品时，获得+1的护甲等级加成。</p> <p>当你在这个职业达到10级时，这个加成会增加到+2。</p> <p><strong>铸造厂备注</strong></p> <p>注入在10级时会自动增加，但它不会自动更新已经附魔的物品。重新附魔物品以获得更高的加成。</p>"
+							"value": "<p>A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</p> <p>The bonus increases to +2 when you reach 10th level in this class.</p> <p><strong>Foundry Note</strong></p> <p>The infusion will automatically increase at level 10 but it will not automatically update already enchanted Items. Re-enchant the Item to grant the higher bonus.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.armor.magicalBonus",
 							"mode": "ADD",
 							"value": "1"
 						}
-					],
-					"type": "enchantment"
+					]
 				},
 				{
 					"ENG_name": "Enhanced Defense +2",
+					"foundryId": "enhancedDefense2",
 					"name": "增强防御 +2",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 增强防御"
+							"value": ", Enhanced Defense"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>生物穿戴（盔甲）或持有（盾牌）注入的物品时，获得+1的护甲等级加成。</p> <p>当你在这个职业达到10级时，这个加成会增加到+2。</p> <p><strong>铸造厂备注</strong></p> <p>注入在10级时会自动增加，但它不会自动更新已经附魔的物品。重新附魔物品以获得更高的加成。</p>"
+							"value": "<p>A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</p> <p>The bonus increases to +2 when you reach 10th level in this class.</p> <p><strong>Foundry Note</strong></p> <p>The infusion will automatically increase at level 10 but it will not automatically update already enchanted Items. Re-enchant the Item to grant the higher bonus.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.armor.magicalBonus",
 							"mode": "ADD",
 							"value": "2"
 						}
-					],
-					"type": "enchantment"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -600,69 +1539,242 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "武器",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
-			"effects": [
+			"activities": [
 				{
 					"ENG_name": "Enhanced Weapon",
 					"name": "增强武器",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "enhancedWeapon"
+						}
+					]
+				},
+				{
+					"ENG_name": "Enhanced Weapon +2",
+					"name": "强化武器 +2",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "enhancedWeapon2"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Enhanced Weapon",
+					"foundryId": "enhancedWeapon",
+					"name": "增强武器",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 强化武器"
+							"value": ", Enhanced Weapon"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>这把魔法武器在使用时攻击和伤害骰投掷获得+1的加成。</p> <p>当你在这个职业达到10级时，这个加成会增加到+2。</p> <p><strong>铸造厂备注</strong></p> <p>Active Effect自动处理加成的增加。</p>"
+							"value": "<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it.</p> <p>The bonus increases to +2 when you reach 10th level in this class.</p> <p><strong>Foundry Note</strong></p> <p>The increase is handled automatically by the Active Effect.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.magicalBonus",
 							"mode": "ADD",
 							"value": "1"
 						}
-					],
-					"type": "enchantment"
+					]
 				},
 				{
 					"ENG_name": "Enhanced Weapon +2",
+					"foundryId": "enhancedWeapon2",
 					"name": "强化武器 +2",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 强化武器"
+							"value": ", Enhanced Weapon"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>这把魔法武器在使用时攻击和伤害骰投掷获得+1的加成。</p> <p>当你在这个职业达到10级时，这个加成会增加到+2。</p> <p><strong>铸造厂备注</strong></p> <p>Active Effect自动处理加成的增加。</p>"
+							"value": "<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it.</p> <p>The bonus increases to +2 when you reach 10th level in this class.</p> <p><strong>Foundry Note</strong></p> <p>The increase is handled automatically by the Active Effect.</p> "
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.magicalBonus",
 							"mode": "ADD",
 							"value": "2"
 						}
-					],
-					"type": "enchantment"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Evasive Footwork",
+			"name": "灵巧步法",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Evade",
+					"name": "闪避",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"roll": {
+						"ENG_name": "AC Bonus",
+						"name": "AC加值",
+						"formula": "@scale.battle-master.superiority.die"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Extended Spell",
+			"name": "延效法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Extended Spell",
+					"name": "延效法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个持续时间为1分钟或更长的法术时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Feinting Attack",
+			"name": "诡诈攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "damage",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "5"
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						]
+					},
+					"effects": [
+						{
+							"foundryId": "feintingAttack"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Feinted",
+					"foundryId": "feintingAttack",
+					"name": "佯攻",
+					"duration": {
+						"turns": 1
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -671,14 +1783,47 @@
 			"ENG_name": "Fiendish Vigor",
 			"name": "邪魔活力",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Fiendish Vigor",
+			"name": "邪魔活力",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "False Life",
+					"name": "虚假生命",
+					"type": "heal",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"临时生命值"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "8 + 4"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -687,14 +1832,16 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "符文",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "符文"
 			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "none"
+					}
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Restrained",
@@ -715,18 +1862,21 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "符文",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "附赠动作"
-					}
-				]
+				"type.subtype": "符文"
 			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					}
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Sturdy",
 					"name": "坚固",
+					"transfer": true,
 					"duration": {
 						"rounds": 1,
 						"seconds": 600
@@ -752,8 +1902,285 @@
 							"mode": "ADD",
 							"value": "+2"
 						}
-					],
-					"transfer": true
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Gaze of Two Minds",
+			"name": "共视感官",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Gaze of Two Minds",
+					"name": "共视感官",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "willing",
+							"special": "接触"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Gift of the Depths",
+			"name": "深海赠礼",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Gift Water Breathing",
+					"name": "馈赠水下呼吸",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"value": "24"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "10",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "30"
+					},
+					"effects": [
+						{
+							"foundryId": "giftOfTheDepths"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Water Breathing",
+					"foundryId": "giftOfTheDepths",
+					"name": "水下呼吸",
+					"duration": {
+						"seconds": 86400
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Gift of the Protectors",
+			"name": "守护馈赠",
+			"source": "XPHB",
+			"system": {
+				"uses.max": "(max(1,@abilities.cha.mod))"
+			},
+			"activities": [
+				{
+					"ENG_name": "Protect",
+					"name": "保护",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/activity/save.svg",
+					"activation": {
+						"type": "",
+						"condition": "当页面上的任何生物的生命值降至0但未被直接杀死时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "1"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					}
+				},
+				{
+					"ENG_name": "Write Name",
+					"name": "写入名称",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/trait.svg",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Erase Name",
+					"name": "擦除名称",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/trait-languages.svg",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-1"
+							}
+						]
+					},
+					"range": {
+						"units": "touch"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Goading Attack",
+			"name": "挑衅攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "",
+						"condition": "当你用攻击掷骰命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						],
+						"onSave": "full"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"formula": "8 + max(@abilities.dex.mod, @abilities.str.mod) + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "goadingAttack"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Goaded",
+					"foundryId": "goadingAttack",
+					"name": "被激怒",
+					"transfer": true,
+					"duration": {
+						"turns": 1
+					},
+					"description": "目标在攻击你以外的其他目标时，其攻击检定具有劣势，此效果持续至你的下个回合结束。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Heightened Spell",
+			"name": "升阶法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Heightened Spell",
+					"name": "升阶法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个迫使生物进行豁免检定的法术时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "2",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -764,59 +2191,69 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "helmOfAwareness"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Helm of Awareness",
+					"foundryId": "helmOfAwareness",
 					"name": "警觉之盔",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": "，感知的"
+							"value": ", of Awareness"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这个头盔时，生物在先攻骰上有优势。此外，除非穿戴者处于&ref[失去能力]{失去能力}状态，否则不能被&ref[突袭]{突袭}。</p>"
+							"value": "<p>While wearing this helmet, a creature has advantage on initiative rolls. In addition, the wearer can't be &amp;Reference[surprise]{surprised}, provided it isn't &amp;Reference[incapacitated]{incapacitated}.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						}
-					],
-					"type": "enchantment"
+					]
 				},
 				{
 					"ENG_name": "Helm of Awareness",
 					"name": "警觉之盔",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.ci.value",
 							"mode": "ADD",
-							"value": "被突袭"
+							"value": "surprised"
 						},
 						{
 							"key": "flags.dnd5e.initiativeAdv",
 							"mode": "OVERRIDE",
 							"value": "true"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -827,18 +2264,21 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "符文",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "附赠动作"
-					}
-				]
+				"type.subtype": "符文"
 			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					}
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Resilience",
 					"name": "韧性",
+					"transfer": true,
 					"duration": {
 						"rounds": 1,
 						"seconds": 60
@@ -847,20 +2287,19 @@
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "穿刺"
+							"value": "piercing"
 						},
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "钝击"
+							"value": "bludgeoning"
 						},
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "斩击"
+							"value": "slashing"
 						}
-					],
-					"transfer": true
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -871,42 +2310,974 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Investment of the Chain Master",
+			"name": "链主赋能",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Find Familiar with Flight",
+					"name": "寻找飞行魔宠",
+					"type": "summon",
+					"activation": {
+						"type": "hour",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "1",
+								"target": "法术.契约.数值"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "space"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "10"
+					},
+					"profiles": [
+						{
+							"ENG_name": "CR 0 Beast",
+							"cr": "0",
+							"name": "CR 0 野兽",
+							"types": [
+								"野兽"
+							]
+						}
+					],
+					"summon": {
+						"mode": "cr"
+					},
+					"creatureTypes": [
+						"天界语",
+						"精类",
+						"邪魔"
+					],
+					"match": {
+						"saves": true
+					},
+					"effects": [
+						{
+							"foundryId": "investmentOfTheC"
+						}
+					]
+				},
+				{
+					"ENG_name": "Find Familiar with Swimming",
+					"name": "寻找熟悉游泳的魔宠",
+					"type": "summon",
+					"activation": {
+						"type": "hour",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "1",
+								"target": "法术.契约.数值"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "space"
+						}
+					},
+					"range": {
+						"value": "10",
+						"units": "ft"
+					},
+					"profiles": [
+						{
+							"ENG_name": "CR 0 Beast",
+							"cr": "0",
+							"name": "CR 0 野兽",
+							"types": [
+								"野兽"
+							]
+						}
+					],
+					"summon": {
+						"mode": "cr"
+					},
+					"creatureTypes": [
+						"天界语",
+						"精类",
+						"邪魔"
+					],
+					"match": {
+						"saves": true
+					},
+					"effects": [
+						{
+							"foundryId": "investmentOfTheC"
+						}
+					]
+				},
+				{
+					"ENG_name": "Invest with Resistance",
+					"name": "抵抗附魔",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/trait-damage-resistances.svg",
+					"activation": {
+						"type": "reaction"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "你的魔宠"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "investmentOfThe1"
+						},
+						{
+							"foundryId": "investmentOfThe2"
+						},
+						{
+							"foundryId": "investmentOfThe3"
+						},
+						{
+							"foundryId": "investmentOfThe4"
+						},
+						{
+							"foundryId": "investmentOfThe5"
+						},
+						{
+							"foundryId": "investmentOfThe6"
+						},
+						{
+							"foundryId": "investmentOfThe7"
+						},
+						{
+							"foundryId": "investmentOfThe8"
+						},
+						{
+							"foundryId": "investmentOfThe9"
+						},
+						{
+							"foundryId": "investmentOfTh10"
+						},
+						{
+							"foundryId": "investmentOfTh11"
+						},
+						{
+							"foundryId": "investmentOfTh12"
+						},
+						{
+							"foundryId": "investmentOfTh13"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Investment of Flight",
+					"foundryId": "investmentOfTheC",
+					"name": "飞行之赐",
+					"changes": [
+						{
+							"key": "system.attributes.movement.fly",
+							"mode": "UPGRADE",
+							"value": 40
+						}
+					]
+				},
+				{
+					"ENG_name": "Investment of Swimming",
+					"name": "游泳之赐",
+					"changes": [
+						{
+							"key": "system.attributes.movement.swim",
+							"mode": "UPGRADE",
+							"value": 40
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Acid",
+					"foundryId": "investmentOfThe1",
+					"name": "抵抗酸性",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "acid"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Bludgeoning",
+					"foundryId": "investmentOfThe2",
+					"name": "抵抗钝击",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "bludgeoning"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Cold",
+					"foundryId": "investmentOfThe3",
+					"name": "抗寒",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "cold"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Fire",
+					"foundryId": "investmentOfThe4",
+					"name": "火焰抗性",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "fire"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Force",
+					"foundryId": "investmentOfThe5",
+					"name": "抗力",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "force"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Lightning",
+					"foundryId": "investmentOfThe6",
+					"name": "闪电抗性",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "lightning"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Necrotic",
+					"foundryId": "investmentOfThe7",
+					"name": "抵抗死灵",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "necrotic"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Piercing",
+					"foundryId": "investmentOfThe8",
+					"name": "抵抗穿刺",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "piercing"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Poison",
+					"foundryId": "investmentOfThe9",
+					"name": "抗毒",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "poison"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Psychic",
+					"foundryId": "investmentOfTh10",
+					"name": "抵抗心灵伤害",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "psychic"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Radiant",
+					"foundryId": "investmentOfTh11",
+					"name": "抵抗光耀",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "radiant"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Slashing",
+					"foundryId": "investmentOfTh12",
+					"name": "抵抗挥砍伤害",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "slashing"
+						}
+					]
+				},
+				{
+					"ENG_name": "Resist Thunder",
+					"foundryId": "investmentOfTh13",
+					"name": "雷电抗性",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "thunder"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Lifedrinker",
+			"name": "饮命者",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "每回合一次，当你用契约武器命中一个生物时"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"types": [
+									"黯蚀",
+									"心灵",
+									"光耀"
+								]
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Heal (Largest Hit Die)",
+					"name": "治愈术（最大生命骰）",
+					"type": "heal",
+					"activation": {
+						"type": "",
+						"condition": "每回合一次，当你用契约武器命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最大"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@attributes.hd.largestAvailable + (max(1,@abilities.con.mod))"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				},
+				{
+					"ENG_name": "Heal (Smallest Hit Die)",
+					"name": "治疗（最小的生命骰）",
+					"type": "heal",
+					"activation": {
+						"type": "",
+						"condition": "每回合一次，当你用契约武器命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最小"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@attributes.hd.smallestAvailable + (max(1,@abilities.con.mod))"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Lunging Attack",
+			"name": "突刺攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "damage",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Maneuvering Attack",
+			"name": "灵动攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Maneuver",
+					"name": "战技",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你用攻击掷骰命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "willing",
+							"special": "能看见或听见你"
+						}
+					},
+					"roll": {
+						"ENG_name": "Attack Bonus",
+						"name": "攻击加值",
+						"formula": "@scale.battle-master.superiority.die"
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Mask of Many Faces",
 			"name": "千面之脸",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Mask of Many Faces",
+			"name": "千面之脸",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "maskOfManyFaces"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Disguised",
+					"foundryId": "maskOfManyFaces",
+					"name": "伪装",
+					"duration": {
+						"seconds": 3600
+					},
+					"description": "要识破你的伪装，一个生物必须采取研究动作来检查你的外貌，并在对抗你法术豁免DC的[[/check ability=int skill=inv]]检定中成功。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Master of Myriad Forms",
 			"name": "万形之主",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Master of Myriad Forms",
+			"name": "万形之主",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Aquatic Adaptation",
+					"name": "水生适应",
+					"type": "utility",
+					"img": "icons/creatures/fish/fish-bluefin-yellow-blue.webp",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"concentration": true,
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "masterOfMyriadFo"
+						}
+					]
+				},
+				{
+					"ENG_name": "Change Appearance",
+					"name": "改变外貌",
+					"type": "utility",
+					"img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"concentration": true,
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "masterOfMyriadF1"
+						}
+					]
+				},
+				{
+					"ENG_name": "Natural Weapons",
+					"name": "天生武器",
+					"type": "utility",
+					"img": "icons/creatures/abilities/fang-tooth-blood-red.webp",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"concentration": true,
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "masterOfMyriadF2"
+						}
+					]
+				},
+				{
+					"ENG_name": "Attack: Claws",
+					"name": "攻击：利爪",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"range": {
+						"units": "ft",
+						"value": "5"
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "unarmed"
+						},
+						"ability": "施法"
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"bonus": "@mod",
+								"types": [
+									"斩击"
+								]
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Attack: Fangs/Horns",
+					"name": "攻击：尖牙/角",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"range": {
+						"value": "5",
+						"units": "ft"
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "unarmed"
+						},
+						"ability": "施法"
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"bonus": "@mod",
+								"types": [
+									"穿刺"
+								]
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Attack: Hooves",
+					"name": "攻击：蹄击",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"range": {
+						"value": "5",
+						"units": "ft"
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "unarmed"
+						},
+						"ability": "施法"
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"bonus": "@mod",
+								"types": [
+									"钝击"
+								]
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Aquatic Adaptation",
+					"foundryId": "masterOfMyriadFo",
+					"name": "水生适应",
+					"duration": {
+						"seconds": 3600
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.swim",
+							"mode": "UPGRADE",
+							"value": 1
+						}
+					],
+					"description": "你可以在水下呼吸，并获得等于你速度的游泳速度。"
+				},
+				{
+					"ENG_name": "Altered Appearance",
+					"foundryId": "masterOfMyriadF1",
+					"name": "改变外貌",
+					"duration": {
+						"seconds": 3600
+					}
+				},
+				{
+					"ENG_name": "Natural Weapon",
+					"foundryId": "masterOfMyriadF2",
+					"name": "天生武器",
+					"duration": {
+						"seconds": 3600
+					},
+					"description": "当你使用徒手打击造成伤害时，新生长的部分会依照括号内类型造成1d6点伤害，而非正常的徒手打击伤害，且你使用施法关键属性调整值代替力量值进行攻击检定和伤害掷骰。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Menacing Attack",
+			"name": "恐吓攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "",
+						"condition": "当你用攻击掷骰命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						],
+						"onSave": "full"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"formula": "8 + max(@abilities.dex.mod, @abilities.str.mod) + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "menacingAttack"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Menaced",
+					"foundryId": "menacingAttack",
+					"name": "受威胁",
+					"duration": {
+						"turns": 1
+					},
+					"statuses": [
+						"恐慌"
+					]
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -915,34 +3286,45 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "mindSharpener"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Mind Sharpener",
+					"foundryId": "mindSharpener",
 					"name": "思维砥石",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "OVERRIDE",
-							"value": "{0}的心灵锐化"
+							"value": "{} of Mind Sharpening"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>这个注入的物品可以给穿戴者一个冲击，以重新集中他们的注意力。该物品有4次充能。当穿戴者在维持法术集中的体质豁免检定失败时，穿戴者可以使用其反应来消耗物品的1次充能，以代替失败。该物品在黎明时每天恢复1d4次消耗的充能。</p>"
+							"value": "<p>The infused item can send a jolt to the wearer to refocus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain concentration on a spell, the wearer can use its reaction to expend 1 of the item's charges to succeed instead. The item regains 1d4 expended charges daily at dawn.</p>"
 						},
 						{
 							"key": "system.activation.type",
 							"mode": "OVERRIDE",
-							"value": "反应"
+							"value": "reaction"
 						},
 						{
 							"key": "system.activation.cost",
@@ -952,12 +3334,12 @@
 						{
 							"key": "system.activation.condition",
 							"mode": "OVERRIDE",
-							"value": "当穿戴者未能通过专注检定时"
+							"value": "When the wearer fails a concentration check"
 						},
 						{
 							"key": "system.uses.per",
 							"mode": "OVERRIDE",
-							"value": "充能"
+							"value": "charges"
 						},
 						{
 							"key": "system.uses.max",
@@ -972,10 +3354,9 @@
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						}
-					],
-					"type": "enchantment"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -984,71 +3365,566 @@
 			"ENG_name": "Minions of Chaos",
 			"name": "混沌手下",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Mire the Mind",
 			"name": "心灵泥沼",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Misty Visions",
 			"name": "迷雾幻影",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "One with Shadows",
+			"name": "融身入影",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "小时",
+						"concentration": true,
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"effects": [
+						{
+							"foundryId": "oneWithShadows"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Invisible",
+					"foundryId": "oneWithShadows",
+					"name": "隐形",
+					"duration": {
+						"seconds": 3600
+					},
+					"statuses": [
+						"隐形"
+					],
+					"description": "该法术在目标进行攻击检定、造成伤害或施放法术之后立即提前结束。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Otherworldly Leap",
 			"name": "超凡跳跃",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Otherworldly Leap",
+			"name": "超凡跳跃",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"effects": [
+						{
+							"foundryId": "otherworldlyLeap"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Jump",
+					"foundryId": "otherworldlyLeap",
+					"name": "跳跃术",
+					"duration": {
+						"rounds": 1,
+						"seconds": 60
+					},
+					"description": "法术持续期间，该生物每回合可消耗10尺移动力进行一次至多30尺的跳跃。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Pact of the Blade",
 			"name": "刃之魔契",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Pact of the Blade",
+			"name": "刃之魔契",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Forge Pact Weapon",
+					"name": "铸造契约武器",
+					"type": "enchant",
+					"activation": {
+						"type": "bonus"
+					},
+					"restrictions": {
+						"allowMagical": true,
+						"categories": [
+							"简单M",
+							"武术家"
+						],
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "pactOfTheBlade",
+							"riders": {
+								"activity": [
+									{
+										"foundryId": "pactOfTheBlade"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Spellcasting Attack",
+					"foundryId": "pactOfTheBlade",
+					"name": "法术攻击",
+					"type": "attack",
+					"img": "systems/dnd5e/icons/svg/properties/magical.svg",
+					"activation": {
+						"type": "action"
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "weapon"
+						},
+						"ability": "施法"
+					},
+					"damage": {
+						"includeBase": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Pact Weapon",
+					"foundryId": "pactOfTheBlade",
+					"name": "契约武器",
+					"type": "enchantment",
+					"disabled": true,
+					"transfer": true,
+					"changes": [
+						{
+							"key": "name",
+							"mode": "ADD",
+							"value": ", Pact Weapon"
+						},
+						{
+							"key": "system.proficient",
+							"mode": "OVERRIDE",
+							"value": 1
+						},
+						{
+							"key": "system.properties",
+							"mode": "ADD",
+							"value": "foc"
+						},
+						{
+							"key": "system.damage.base.types",
+							"mode": "ADD",
+							"value": "necrotic"
+						},
+						{
+							"key": "system.damage.base.types",
+							"mode": "ADD",
+							"value": "psychic"
+						},
+						{
+							"key": "system.damage.base.types",
+							"mode": "ADD",
+							"value": "radiant"
+						},
+						{
+							"key": "system.damage.versatile.types",
+							"mode": "ADD",
+							"value": "necrotic"
+						},
+						{
+							"key": "system.damage.versatile.types",
+							"mode": "ADD",
+							"value": "psychic"
+						},
+						{
+							"key": "system.damage.versatile.types",
+							"mode": "ADD",
+							"value": "radiant"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Pact of the Chain",
+			"name": "链之魔契",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Find Familiar",
+					"name": "寻获魔宠",
+					"type": "summon",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "1",
+								"target": "法术.契约.数值"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "space"
+						}
+					},
+					"range": {
+						"value": "10",
+						"units": "ft"
+					},
+					"profiles": [
+						{
+							"ENG_name": "CR 0 Beast",
+							"cr": "0",
+							"name": "CR 0 野兽",
+							"types": [
+								"野兽"
+							]
+						}
+					],
+					"summon": {
+						"mode": "cr"
+					},
+					"creatureTypes": [
+						"天界语",
+						"精类",
+						"邪魔"
+					]
+				},
+				{
+					"ENG_name": "Find Familiar (Expanded Options)",
+					"name": "寻找魔宠（扩展选项）",
+					"type": "summon",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "1",
+								"target": "法术.契约.数值"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "space"
+						}
+					},
+					"range": {
+						"value": "10",
+						"units": "ft"
+					},
+					"profiles": [
+						{
+							"uuid": "@creature[小魔鬼|xmm]"
+						},
+						{
+							"uuid": "@creature[伪龙|xmm]"
+						},
+						{
+							"uuid": "@creature[夸塞魔|xmm]"
+						},
+						{
+							"uuid": "@creature[奇迹斯芬克斯|xmm]"
+						},
+						{
+							"uuid": "@creature[骷髅|xmm]"
+						},
+						{
+							"uuid": "@creature 蝌蚪魔（史拉蟾幼体）|xmm]"
+						},
+						{
+							"uuid": "@creature[小精灵|xmm]"
+						},
+						{
+							"uuid": "@creature[毒蛇|xmm]"
+						}
+					],
+					"creatureTypes": [
+						"天界语",
+						"精类",
+						"邪魔"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Parry",
+			"name": "格挡",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "heal",
+					"activation": {
+						"type": "reaction",
+						"condition": "当另一个生物以近战攻击掷骰对你造成伤害时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@scale.battle-master.superiority.die"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Precision Attack",
+			"name": "精准攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你进行攻击检定未命中时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"roll": {
+						"ENG_name": "Bonus",
+						"name": "附赠动作",
+						"formula": "@scale.battle-master.superiority.die"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Pushing Attack",
+			"name": "推撞攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "",
+						"condition": "当你用攻击掷骰命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						],
+						"onSave": "full"
+					},
+					"save": {
+						"ability": [
+							"str"
+						],
+						"dc": {
+							"formula": "8 + max(@abilities.dex.mod, @abilities.str.mod) + @prof"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Quickened Spell",
+			"name": "瞬发法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Quickened Spell",
+					"name": "瞬发法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个施法时间为1个动作的法术时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "2",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1057,34 +3933,45 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "武器",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "radiantWeapon"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Radiant Weapon",
+					"foundryId": "radiantWeapon",
 					"name": "光耀武器",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 辐射"
+							"value": ", Radiant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>这把魔法武器在使用时，攻击和伤害骰投掷获得+1的加成。持有它时，使用者可以采取一个附赠动作使其在30尺半径内散发明亮的光芒，并在额外的30尺内散发微光。使用者可以以一个附赠动作熄灭光芒。</p> <p>该武器有4次充能。在被攻击击中后，使用者可以立即以反应消耗1次充能，并使攻击者在攻击者的下一个回合结束前目盲，除非攻击者在对抗你的法术豁免DC的体质豁免检定中成功。该武器每天黎明时恢复1d4次消耗的充能。</p> <p><strong>铸造厂备注</strong></p> <p>这种注入增加了攻击和伤害骰的加成以及充能，但它们不会自动消耗，也不会在每次使用时提示你。这是为了使用武器的普通能力。聊天卡包括一个选项，如果需要，可以消耗充能。</p> <p>这种注入还授予了[[/item Radiant Weapon Reaction]]物品，用于处理其充能和豁免检定。当注入被移除时，反应物品也将被移除。</p>"
+							"value": "<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.</p> <p>The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker's next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn.</p> <p><strong>Foundry Note</strong></p> <p>This infusion adds the bonus to attack and damage rolls and the charges but they are not automatically consumed nor are you prompted on each use. This is to enable quick use of the weapon's normal abilities. The chat card includes an option to consume the charge if needed.</p> <p>This infusion also grants the [[/item Radiant Weapon Reaction]] item for handling its charges and saving throw. When the infusion is removed the reaction item will be as well.</p> "
 						},
 						{
 							"key": "system.activation.type",
 							"mode": "OVERRIDE",
-							"value": "反应"
+							"value": "reaction"
 						},
 						{
 							"key": "system.activation.cost",
@@ -1094,12 +3981,12 @@
 						{
 							"key": "system.activation.condition",
 							"mode": "OVERRIDE",
-							"value": "被攻击击中后"
+							"value": "After being hit by an attack"
 						},
 						{
 							"key": "system.uses.per",
 							"mode": "OVERRIDE",
-							"value": "充能"
+							"value": "charges"
 						},
 						{
 							"key": "system.uses.max",
@@ -1114,7 +4001,7 @@
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.magicalBonus",
@@ -1124,10 +4011,56 @@
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Rally",
+			"name": "重整旗鼓",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "heal",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "ally",
+							"special": "能看见或听见你"
+						}
+					},
+					"healing": {
+						"types": [
+							"临时生命值"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@scale.battle-master.superiority.die + (floor(@classes.fighter.levels/2))"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -1138,39 +4071,50 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "武器",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "repeatingShot"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Repeating Shot",
+					"foundryId": "repeatingShot",
 					"name": "连射武器",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 连发射击"
+							"value": ", Repeating Shot"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>这把魔法武器在使用进行远程攻击时，攻击和伤害骰投掷获得+1的加成，并且如果它具有装填属性，则忽略该属性。</p> <p>如果武器没有弹药，它会自行产生，当使用者用它进行远程攻击时自动创造一件魔法弹药。由武器创造的弹药在击中或错过目标的瞬间消失。</p>"
+							"value": "<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it's used to make a ranged attack, and it ignores the loading property if it has it.</p> <p>If the weapon lacks ammunition, it produces its own, automatically creating one piece of magic ammunition when the wielder makes a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</p>"
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "-LOD"
+							"value": "-lod"
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.magicalBonus",
@@ -1180,10 +4124,49 @@
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Repelling Blast",
+			"name": "斥力魔爆",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Make Repelling",
+					"name": "制作排斥",
+					"type": "enchant",
+					"activation": {
+						"type": ""
+					},
+					"restrictions": {
+						"allowMagical": true
+					},
+					"effects": [
+						{
+							"foundryId": "repellingBlast"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "repellingBlast",
+					"type": "enchantment",
+					"disabled": true,
+					"transfer": true,
+					"changes": [
+						{
+							"key": "name",
+							"mode": "ADD",
+							"value": ", Repelling"
 						}
 					],
-					"type": "enchantment"
+					"description": "选择一个你所知的需要进行攻击检定的术士小法术。当你用该小法术击中一个大型或更小的生物时，你可以将该生物推向远离你直线方向最多10英尺。"
 				}
 			],
 			"migrationVersion": 3
@@ -1194,26 +4177,34 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"effects": [
+						{
+							"foundryId": "replicatedMagicI"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Replicated Magic Item",
+					"foundryId": "replicatedMagicI",
 					"name": "复制魔法物品",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 复制"
+							"value": ", Replicated"
 						}
-					],
-					"type": "enchantment"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -1224,29 +4215,40 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "repulsionShield"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Repulsion Shield",
+					"foundryId": "repulsionShield",
 					"name": "斥力之盾",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 排斥护盾"
+							"value": ", Repulsion Shield"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>生物在使用这个盾牌时获得+1的护甲等级加成。</p> <p>这个盾牌有4次充能。持有它时，使用者可以在被近战攻击击中后立即使用反应消耗1次盾牌的充能，并将攻击者推开最多15尺。每天黎明时，盾牌恢复1d4次消耗的充能。</p> <p><strong>铸造厂备注</strong></p> <p>这个注入包括护甲等级的加成。</p>"
+							"value": "<p>A creature gains a +1 bonus to Armor Class while wielding this shield.</p> <p>The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield's charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.</p> <p><strong>Foundry Note</strong></p> <p>This Infusion includes the bonus to armor class.</p> "
 						},
 						{
 							"key": "system.armor.magicalBonus",
@@ -1256,12 +4258,12 @@
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						},
 						{
 							"key": "system.activation.type",
 							"mode": "OVERRIDE",
-							"value": "反应"
+							"value": "reaction"
 						},
 						{
 							"key": "system.activation.cost",
@@ -1271,7 +4273,7 @@
 						{
 							"key": "system.uses.per",
 							"mode": "OVERRIDE",
-							"value": "充能"
+							"value": "charges"
 						},
 						{
 							"key": "system.uses.max",
@@ -1281,7 +4283,7 @@
 						{
 							"key": "system.activation.condition",
 							"mode": "ADD",
-							"value": "在被近战攻击击中后立即"
+							"value": "Immediately after being hit by a melee attack"
 						},
 						{
 							"key": "system.uses.recovery",
@@ -1291,10 +4293,9 @@
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						}
-					],
-					"type": "enchantment"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -1305,375 +4306,530 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"ENG_name": "Acid Resistance",
+					"name": "强酸抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceAcid"
+						}
+					]
+				},
+				{
+					"ENG_name": "Cold Resistance",
+					"name": "寒冷抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceCold"
+						}
+					]
+				},
+				{
+					"ENG_name": "Fire Resistance",
+					"name": "火焰抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceFire"
+						}
+					]
+				},
+				{
+					"ENG_name": "Force Resistance",
+					"name": "力量抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceForc"
+						}
+					]
+				},
+				{
+					"ENG_name": "Lightning Resistance",
+					"name": "闪电抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceLigh"
+						}
+					]
+				},
+				{
+					"ENG_name": "Necrotic Resistance",
+					"name": "黯蚀抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceNecr"
+						}
+					]
+				},
+				{
+					"ENG_name": "Poison Resistance",
+					"name": "毒素抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistancePois"
+						}
+					]
+				},
+				{
+					"ENG_name": "Psychic Resistance",
+					"name": "心灵抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistancePsyc"
+						}
+					]
+				},
+				{
+					"ENG_name": "Radiant Resistance",
+					"name": "光辉抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceRadi"
+						}
+					]
+				},
+				{
+					"ENG_name": "Thunder Resistance",
+					"name": "雷霆抗性",
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "arResistanceThun"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Acid Resistance",
+					"foundryId": "arResistanceAcid",
 					"name": "强酸抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 抗酸性"
+							"value": ", Acid Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对强酸伤害具有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to acid damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "ufnjdkye4AwCNw3y"
+					]
 				},
 				{
 					"ENG_name": "Cold Resistance",
+					"foundryId": "arResistanceCold",
 					"name": "寒冷抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 抗寒"
+							"value": ", Cold Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对冷冻伤害具有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to cold damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "IwMxrYsS7HFjX4Oi"
+					]
 				},
 				{
 					"ENG_name": "Fire Resistance",
+					"foundryId": "arResistanceFire",
 					"name": "火焰抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 火焰抗性"
+							"value": ", Fire Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对火焰伤害有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to fire damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "BaA8aaeV86SWrjFp"
+					]
 				},
 				{
 					"ENG_name": "Force Resistance",
+					"foundryId": "arResistanceForc",
 					"name": "力量抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 力量抗性"
+							"value": ", Force Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对力场伤害有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to force damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "hCI4vspbQZLRR92W"
+					]
 				},
 				{
 					"ENG_name": "Lightning Resistance",
+					"foundryId": "arResistanceLigh",
 					"name": "闪电抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 抗电"
+							"value": ", Lightning Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对闪电伤害具有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to lightning damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "6a8ZKAYbgRClp31A"
+					]
 				},
 				{
 					"ENG_name": "Necrotic Resistance",
+					"foundryId": "arResistanceNecr",
 					"name": "黯蚀抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 死灵抗性"
+							"value": ", Necrotic Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对黯蚀伤害有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to necrotic damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "sUfuFKyLRr8SHrW1"
+					]
 				},
 				{
 					"ENG_name": "Poison Resistance",
+					"foundryId": "arResistancePois",
 					"name": "毒素抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 毒素抗性"
+							"value": ", Poison Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对毒素伤害有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to poison damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "urJlfLzdn7EMQVeI"
+					]
 				},
 				{
 					"ENG_name": "Psychic Resistance",
+					"foundryId": "arResistancePsyc",
 					"name": "心灵抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 心灵抗性"
+							"value": ", Psychic Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对心灵伤害具有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to psychic damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "PMg1xUSzmdfkehmk"
+					]
 				},
 				{
 					"ENG_name": "Radiant Resistance",
+					"foundryId": "arResistanceRadi",
 					"name": "光辉抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 辐射抗性"
+							"value": ", Radiant Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对光耀伤害具有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to radiant damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "d91sC1CVni1UqvD9"
+					]
 				},
 				{
 					"ENG_name": "Thunder Resistance",
+					"foundryId": "arResistanceThun",
 					"name": "雷霆抗性",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 雷霆抗性"
+							"value": ", Thunder Resistant"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这件盔甲时，生物对雷鸣伤害有抗性。</p>"
+							"value": "<p>While wearing this armor, a creature has resistance to thunder damage.</p>"
 						},
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment",
-					"foundryId": "53ofZQaLsaqm16Wv"
+					]
 				},
 				{
 					"ENG_name": "Acid Resistance",
 					"name": "强酸抗性",
+					"enchantmentRiderParent": "抗酸",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "强酸"
+							"value": "acid"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "ufnjdkye4AwCNw3y"
+					]
 				},
 				{
 					"ENG_name": "Cold Resistance",
 					"name": "寒冷抗性",
+					"enchantmentRiderParent": "寒冷抗性",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "冷冻"
+							"value": "cold"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "IwMxrYsS7HFjX4Oi"
+					]
 				},
 				{
 					"ENG_name": "Fire Resistance",
 					"name": "火焰抗性",
+					"enchantmentRiderParent": "火焰抗性",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "火焰"
+							"value": "fire"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "BaA8aaeV86SWrjFp"
+					]
 				},
 				{
 					"ENG_name": "Force Resistance",
 					"name": "力量抗性",
+					"enchantmentRiderParent": "力场伤害抗性",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "力场"
+							"value": "force"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "hCI4vspbQZLRR92W"
+					]
 				},
 				{
 					"ENG_name": "Lightning Resistance",
 					"name": "闪电抗性",
+					"enchantmentRiderParent": "光抗力",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "闪电"
+							"value": "lightning"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "6a8ZKAYbgRClp31A"
+					]
 				},
 				{
 					"ENG_name": "Necrotic Resistance",
 					"name": "黯蚀抗性",
+					"enchantmentRiderParent": "亡灵抗性",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "黯蚀"
+							"value": "necrotic"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "sUfuFKyLRr8SHrW1"
+					]
 				},
 				{
 					"ENG_name": "Poison Resistance",
 					"name": "毒素抗性",
+					"enchantmentRiderParent": "毒素抗性",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "毒素"
+							"value": "poison"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "urJlfLzdn7EMQVeI"
+					]
 				},
 				{
 					"ENG_name": "Psychic Resistance",
 					"name": "心灵抗性",
+					"enchantmentRiderParent": "心灵抗力",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "心灵"
+							"value": "psychic"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "PMg1xUSzmdfkehmk"
+					]
 				},
 				{
 					"ENG_name": "Radiant Resistance",
 					"name": "光辉抗性",
+					"enchantmentRiderParent": "抗辐射",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "光耀"
+							"value": "radiant"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "d91sC1CVni1UqvD9"
+					]
 				},
 				{
 					"ENG_name": "Thunder Resistance",
 					"name": "雷霆抗性",
+					"enchantmentRiderParent": "雷电抗性",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
-							"value": "雷鸣"
+							"value": "thunder"
 						}
-					],
-					"transfer": true,
-					"enchantmentRiderParent": "53ofZQaLsaqm16Wv"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -1684,34 +4840,45 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "武器",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "weapon"
+					},
+					"effects": [
+						{
+							"foundryId": "returningWeapon"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Returning Weapon",
+					"foundryId": "returningWeapon",
 					"name": "回力武器",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 回返"
+							"value": ", Returning"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>这把魔法武器在使用时，攻击和伤害骰投掷会获得+1的加值，并且在用于远程攻击后会立即返回使用者手中。</p>"
+							"value": "<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder's hand immediately after it is used to make a ranged attack.</p>"
 						},
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "毫克"
+							"value": "mgc"
 						},
 						{
 							"key": "system.magicalBonus",
@@ -1721,10 +4888,71 @@
 						{
 							"key": "system.properties",
 							"mode": "ADD",
-							"value": "退休"
+							"value": "ret"
 						}
-					],
-					"type": "enchantment"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Riposte",
+			"name": "反击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Riposte Damage",
+					"name": "反击伤害",
+					"type": "damage",
+					"activation": {
+						"type": "reaction",
+						"condition": "当一个生物使用近战攻击掷骰未命中你时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						]
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -1733,28 +4961,59 @@
 			"ENG_name": "Sculptor of Flesh",
 			"name": "重塑血肉",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Seeking Spell",
+			"name": "追踪法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Seeking Spell",
+					"name": "追踪法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你进行法术的攻击检定且未命中时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Sign of Ill Omen",
 			"name": "凶兆符记",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1763,34 +5022,45 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "炼金术师灌注",
-				"enchantment.restrictions.type": "装备",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "none"
-					}
-				]
+				"type.subtype": "炼金术师灌注"
 			},
+			"activities": [
+				{
+					"type": "enchant",
+					"activation": {
+						"type": "special"
+					},
+					"restrictions": {
+						"type": "equipment"
+					},
+					"effects": [
+						{
+							"foundryId": "spellRefuelingRi"
+						}
+					]
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Spell-Refueling Ring",
+					"foundryId": "spellRefuelingRi",
 					"name": "法力恢复戒指",
+					"type": "enchantment",
 					"changes": [
 						{
-							"key": "名称",
+							"key": "name",
 							"mode": "ADD",
-							"value": ", 法术充能"
+							"value": ", Spell-Refueling"
 						},
 						{
 							"key": "system.description.value",
 							"mode": "ADD",
-							"value": "<p>穿戴这枚戒指时，生物可以作为动作恢复一个已消耗的法术位。恢复的法术位可以是3级或更低。一旦使用，戒指直到下一个黎明前不能再使用。</p>"
+							"value": "<p>While wearing this ring, the creature can recover one expended spell slot as an action. The recovered slot can be of 3rd level or lower. Once used, the ring can't be used again until the next dawn.</p>"
 						},
 						{
 							"key": "system.activation.type",
 							"mode": "OVERRIDE",
-							"value": "动作"
+							"value": "action"
 						},
 						{
 							"key": "system.activation.cost",
@@ -1800,7 +5070,7 @@
 						{
 							"key": "system.uses.per",
 							"mode": "OVERRIDE",
-							"value": "黎明"
+							"value": "dawn"
 						},
 						{
 							"key": "system.uses.max",
@@ -1815,10 +5085,9 @@
 						{
 							"key": "system.attunement",
 							"mode": "OVERRIDE",
-							"value": "必需的"
+							"value": "required"
 						}
-					],
-					"type": "enchantment"
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -1829,26 +5098,28 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "符文",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "反应"
-					}
-				]
+				"type.subtype": "符文"
 			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "reaction"
+					}
+				}
+			],
 			"effects": [
 				{
 					"ENG_name": "Judiciousness",
 					"name": "审慎",
+					"transfer": true,
 					"changes": [
 						{
 							"key": "system.attributes.senses.darkvision",
 							"mode": "UPGRADE",
 							"value": "120"
 						}
-					],
-					"transfer": true
+					]
 				},
 				{
 					"ENG_name": "Judged",
@@ -1870,56 +5141,360 @@
 			"source": "TCE",
 			"system": {
 				"type.value": "惑控",
-				"type.subtype": "符文",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "附赠动作"
-					}
-				]
+				"type.subtype": "符文"
 			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Subtle Spell",
+			"name": "精妙法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Subtle Spell",
+					"name": "精妙法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个法术"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Sweeping Attack",
+			"name": "横扫攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "damage",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "距离原目标5英尺内且在触及范围内"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Tactical Assessment",
+			"name": "战术预估",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你进行智力（历史或调查）检定或感知（洞悉）检定时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"roll": {
+						"ENG_name": "Bonus",
+						"name": "附赠动作",
+						"formula": "@scale.battle-master.superiority.die"
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Thief of Five Fates",
 			"name": "命运窃贼",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Transmuted Spell",
+			"name": "转化法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Transmuted Spell",
+					"name": "转化法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个造成酸蚀、冷冻、火焰、闪电、毒素或雷鸣伤害的法术时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Trip Attack",
+			"name": "摔绊攻击",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "",
+						"condition": "当你用攻击掷骰命中一个生物时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Superiority Die",
+										"name": "卓越骰"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.battle-master.superiority.die"
+								},
+								"types": [
+									"强酸",
+									"钝击",
+									"冷冻",
+									"火焰",
+									"力场",
+									"闪电",
+									"黯蚀",
+									"穿刺",
+									"毒素",
+									"心灵",
+									"光耀",
+									"斩击",
+									"雷鸣"
+								]
+							}
+						],
+						"onSave": "full"
+					},
+					"save": {
+						"ability": [
+							"str"
+						],
+						"dc": {
+							"formula": "8 + max(@abilities.dex.mod, @abilities.str.mod) + @prof"
+						}
+					}
+				}
+			],
+			"effects": [],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Twinned Spell",
+			"name": "孪生法术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Twinned Spell",
+					"name": "孪生法术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你施放一个可以升阶以额外指定一个目标的法术时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Visions of Distant Realms",
 			"name": "穹宇尽视",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Whispers of the Grave",
 			"name": "坟墓低语",
 			"source": "PHB",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.value": null
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"value": null
 					}
-				]
-			},
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Whispers of the Grave",
+			"name": "坟墓低语",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Whisper",
+					"name": "低语",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "10"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "object",
+							"special": "尸体"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Witch Sight",
+			"name": "巫术视界",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.senses.truesight",
+							"mode": "UPGRADE",
+							"value": 30
+						}
+					]
+				}
+			],
 			"migrationVersion": 3
 		}
 	]

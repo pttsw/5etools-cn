@@ -40,6 +40,9 @@
 				"黑暗视觉 60 尺"
 			],
 			"passive": 10,
+			"immune": [
+				"心灵"
+			],
 			"languages": [
 				"深潜语",
 				"理解你所知道的语言"
@@ -304,7 +307,7 @@
 					"ENG_name": "Slam",
 					"name": "猛击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及 5 英尺。{@h}造成等同于{@damage 1d4 + 3} + 你的施法能力调整值的力场伤害（中型或更小），{@damage 2d6 + 3} + 你的施法能力调整值（大型），或{@damage 2d12 + 3} + 你的施法能力调整值（巨型）。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及5尺。{@h}造成：{@damage (召唤法术等级 - 4)d4 + 3|1d4 + 3}点力场伤害；或{@damage (召唤法术等级 - 3)d6 + 3|2d6 + 3}+你的施法关键属性调整值（大型）；或{@damage (summonSpellLevel - 3)d12 + 3|2d12 + 3}+你的施法关键属性调整值（巨型）。"
 					]
 				}
 			],
@@ -329,7 +332,7 @@
 							"ENG_name": "Slam",
 							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺. {@h}造成等同于{@damage 2d12 + 3} + 你的施法关键属性调整值的力场伤害。"
+								"{@atkr m} {@hitYourSpellAttack}, 触及5尺. {@h}造成等于{@damage (召唤法术等级 - 3)d12 + 3|2d12 + 3} + 你的施法关键属性调整值的力场伤害。"
 							]
 						}
 					]
@@ -346,7 +349,7 @@
 							"ENG_name": "Slam",
 							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}造成等于{@damage 2d6 + 3} + 你的施法属性调整值的力场伤害。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}造成相当于{@damage (召唤法术等级 - 3)d6 + 3|2d6 + 3}点+你的施法关键属性调整值的力场伤害。"
 							]
 						}
 					]
@@ -363,7 +366,7 @@
 							"ENG_name": "Slam",
 							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺。{@h} 造成 {@damage 1d4 + 3} + 你的施法属性调整值的力场伤害。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及5尺。{@h}造成等于{@damage (召唤法术等级 - 4)d4 + 3|1d4 + 3} + 你的施法关键属性调整值的力场伤害。"
 							]
 						}
 					]
@@ -1571,36 +1574,32 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Fey Step",
-					"name": "精类步",
+					"name": "Fey Step",
 					"entries": [
-						"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。然后根据灵体选择的心情，发生以下效果之一：",
+						"The spirit magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on the spirit's chosen mood:",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"ENG_name": "Fuming",
-									"name": "愤怒",
+									"name": "Fuming",
 									"type": "item",
 									"entries": [
-										"在本回合结束前，灵体下一次进行的攻击检定具有优势。"
+										"The spirit has Advantage on the next attack roll it makes before the end of this turn."
 									]
 								},
 								{
-									"ENG_name": "Mirthful",
-									"name": "欢欣",
+									"name": "Mirthful",
 									"type": "item",
 									"entries": [
-										"{@actSave wis} DC等于你的法术豁免DC，灵体可见范围内10英尺内的一只生物。{@actSaveFail} 目标被你和灵体{@condition 魅惑|XPHB}1分钟，或直到目标受到任何伤害。"
+										"{@actSave wis} DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. {@actSaveFail} The target is {@condition Charmed|XPHB} by you and the spirit for 1 minute or until the target takes any damage."
 									]
 								},
 								{
-									"ENG_name": "Tricksy",
-									"name": "诡诈",
+									"name": "Tricksy",
 									"type": "item",
 									"entries": [
-										"灵体在其周围5英尺内填充一个10英尺的立方体空间，用魔法黑暗覆盖，直到其下回合结束。"
+										"The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn."
 									]
 								}
 							]
@@ -1638,10 +1637,9 @@
 					"source": "XPHB",
 					"bonus": [
 						{
-							"ENG_name": "Fey Step",
-							"name": "精类步",
+							"name": "Fey Step",
 							"entries": [
-								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。在本回合结束前，灵体下一次进行的攻击检定具有优势。"
+								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. The spirit has Advantage on the next attack roll it makes before the end of this turn."
 							]
 						}
 					]
@@ -1652,10 +1650,9 @@
 					"source": "XPHB",
 					"bonus": [
 						{
-							"ENG_name": "Fey Step",
-							"name": "精类步",
+							"name": "Fey Step",
 							"entries": [
-								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。{@actSave wis} DC等于你的法术豁免DC，灵体可见范围内10英尺内的一只生物。{@actSaveFail} 目标被你和灵体{@condition 魅惑|XPHB}1分钟，或直到目标受到任何伤害。"
+								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. {@actSave wis} DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. {@actSaveFail} The target is {@condition Charmed|XPHB} by you and the spirit for 1 minute or until the target takes any damage."
 							]
 						}
 					]
@@ -1666,10 +1663,9 @@
 					"source": "XPHB",
 					"bonus": [
 						{
-							"ENG_name": "Fey Step",
-							"name": "精类步",
+							"name": "Fey Step",
 							"entries": [
-								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。灵体在其周围5英尺内填充一个10英尺的立方体空间，用魔法黑暗覆盖，直到其下回合结束。"
+								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn."
 							]
 						}
 					]
@@ -1753,7 +1749,7 @@
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"该灵体对法术和其他魔法效果的豁免检定具有优势。"
+						"该精魂在对抗法术和其他魔法效果的豁免检定上具有优势。"
 					]
 				}
 			],
@@ -1961,6 +1957,7 @@
 			"name": "巨虫术",
 			"source": "XPHB",
 			"page": 279,
+			"srd52": true,
 			"summonedBySpell": "巨虫术|XPHB",
 			"summonedBySpellLevel": 4,
 			"size": [
@@ -2034,10 +2031,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Venomous Spew (Centipede Only)",
-					"name": "毒液喷溅（仅限蜈蚣）",
+					"name": "Venomous Spew (Centipede Only)",
 					"entries": [
-						"{@actSave con} 你的法术豁免DC，昆虫可以看到的10英尺内的一只生物。{@actSaveFail} 目标直到昆虫下一回合开始时处于{@condition 中毒|XPHB}状态。"
+						"{@actSave con} Your spell save DC, one creature the insect can see within 10 feet. {@actSaveFail} The target has the {@condition Poisoned|XPHB} condition until the start of the insect's next turn."
 					]
 				}
 			],
@@ -2196,24 +2192,21 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
-					"name": "堕落凝视（仅限恶魔；长休后重置）",
+					"name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
 					"entries": [
-						"{@actSave wis} DC等于你的法术豁免DC，坐骑可以看到的60英尺内的生物。{@actSaveFail} 目标在你的下一个回合结束前处于{@condition 恐慌|XPHB}状态。"
+						"{@actSave wis} DC equals your spell save DC, one creature within 60 feet the steed can see. {@actSaveFail} The target has the {@condition Frightened|XPHB} condition until the end of your next turn."
 					]
 				},
 				{
-					"ENG_name": "Fey Step (Fey Only; Recharges after a Long Rest)",
-					"name": "仙灵步（仅限仙灵；长休后重置）",
+					"name": "Fey Step (Fey Only; Recharges after a Long Rest)",
 					"entries": [
-						"这匹坐骑带着它的骑手传送到你选择的未被占据的空间，距离它最多60英尺。"
+						"The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself."
 					]
 				},
 				{
-					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
-					"name": "治疗之触（仅限天界生物；长休后重置）",
+					"name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
 					"entries": [
-						"5英尺内的生物恢复的生命值点数等于{@dice 2d8 + 召唤法术等级}。"
+						"One creature within 5 feet of the steed regains a number of Hit Points equal to {@dice 2d8 + summonSpellLevel}."
 					]
 				}
 			],
@@ -2230,7 +2223,121 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"ENG_name": "Otherworldly Steed (Celestial)",
+					"name": "异界坐骑（天界）",
+					"source": "XPHB",
+					"_mod": {
+						"bonus": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Fell Glare (Fiend Only; Recharges after a Long Rest)",
+									"Fey Step (Fey Only; Recharges after a Long Rest)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
+									"with": "Healing Touch (Recharges after a Long Rest)"
+								}
+							}
+						]
+					},
+					"type": "celestial",
+					"action": [
+						{
+							"ENG_name": "Otherworldly Slam",
+							"name": "异界冲击",
+							"entries": [
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}{@damage 1d8 + 法术等级}的光耀伤害。"
+							]
+						}
+					],
+					"damageTags": [
+						"R"
+					],
+					"conditionInflict": null,
+					"savingThrowForced": null
+				},
+				{
+					"ENG_name": "Otherworldly Steed (Fey)",
+					"name": "异界坐骑（精类）",
+					"source": "XPHB",
+					"_mod": {
+						"bonus": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Fell Glare (Fiend Only; Recharges after a Long Rest)",
+									"Healing Touch (Celestial Only; Recharges after a Long Rest)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Fey Step (Fey Only; Recharges after a Long Rest)",
+									"with": "Fey Step (Recharges after a Long Rest)"
+								}
+							}
+						]
+					},
+					"type": "fey",
+					"action": [
+						{
+							"ENG_name": "Otherworldly Slam",
+							"name": "异界冲击",
+							"entries": [
+								"{@atkr m}{@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及5尺。{@h}{@damage 1d8+召唤法术环位}心灵伤害。"
+							]
+						}
+					],
+					"damageTags": [
+						"Y"
+					],
+					"conditionInflict": null,
+					"savingThrowForced": null
+				},
+				{
+					"ENG_name": "Otherworldly Steed (Fiend)",
+					"name": "异界坐骑（魔裔）",
+					"source": "XPHB",
+					"_mod": {
+						"bonus": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Fey Step (Fey Only; Recharges after a Long Rest)",
+									"Healing Touch (Celestial Only; Recharges after a Long Rest)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
+									"with": "Fell Glare (Recharges after a Long Rest)"
+								}
+							}
+						]
+					},
+					"type": "fiend",
+					"action": [
+						{
+							"ENG_name": "Otherworldly Slam",
+							"name": "异界冲击",
+							"entries": [
+								"{@atkr m} {@hitYourSpellAttack}, 触及5尺. {@h}{@damage 1d8 + 召唤法术等级} 黯蚀伤害。"
+							]
+						}
+					],
+					"damageTags": [
+						"N"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Undead Spirit",

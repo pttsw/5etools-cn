@@ -647,7 +647,7 @@
 			],
 			"savingThrowForced": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1455,11 +1455,11 @@
 				"MW"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2244,7 +2244,7 @@
 					"ENG_name": "Tail",
 					"name": "尾击",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及10尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 点穿刺伤害。如果目标是一个生物，它必须在一次{@dc 15}力量豁免检定中成功，否则会被击倒{@condition 倒地}。"
+						"{@atk mw} {@hit 7} 攻击命中，触及范围 10 尺，目标为未被蜥蜴擒抱的生物。{@h}12 ({@damage 2d6 + 5}) 钝击伤害。如果目标是生物，则必须成功通过一次 {@dc 15} 力量豁免检定，否则被击倒 {@condition 倒地}。"
 					]
 				},
 				{
@@ -2262,6 +2262,7 @@
 			],
 			"damageTags": [
 				"A",
+				"B",
 				"P"
 			],
 			"miscTags": [
@@ -3507,7 +3508,7 @@
 				"失能"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},
@@ -4630,12 +4631,12 @@
 				"束缚"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},
@@ -5902,7 +5903,7 @@
 				"智力"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6110,7 +6111,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6311,7 +6312,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6615,12 +6616,12 @@
 			],
 			"savingThrowForced": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7302,11 +7303,32 @@
 						"吸血鬼拥有以下弱点：",
 						{
 							"type": "list",
+							"style": "列表-悬垂子特性",
 							"items": [
-								"禁止。吸血鬼没有居住者之一的邀请就不能进入住所。",
-								"被流水伤害。吸血鬼在其回合结束时处于流水中，将受到20点强酸伤害。",
-								"木桩穿心。吸血鬼在其休眠地处于{@condition 失能}状态时，如果以木质穿刺伤害武器刺穿其心脏，则该吸血鬼将被摧毁。",
-								"日照过敏。吸血鬼在其自己的回合开始时若处于阳光直射下，则受20点光耀伤害。此外，他的攻击检定与属性检定也具有劣势。"
+								{
+									"ENG_name": "Forbiddance",
+									"type": "itemSub",
+									"name": "[!@ 2fb3f59c-39ff-11f0-bae2-0242ac110004]",
+									"entry": "吸血鬼没有居住者之一的邀请就不能进入住宅。"
+								},
+								{
+									"ENG_name": "Harmed by Running Water",
+									"type": "itemSub",
+									"name": "被流动的水伤害",
+									"entry": "吸血鬼在流动的水中结束其回合时受到20点强酸伤害。"
+								},
+								{
+									"ENG_name": "Stake to the Heart",
+									"type": "itemSub",
+									"name": "木桩穿心",
+									"entry": "当一个用木头制成的穿刺武器刺入吸血鬼的心脏时，如果它在其休息处处于{@condition 失能}状态，它将被摧毁。"
+								},
+								{
+									"ENG_name": "Sunlight Hypersensitivity",
+									"type": "itemSub",
+									"name": "[!@ 2fb4a96a-39ff-11f0-bae2-0242ac110004]",
+									"entry": "吸血鬼在阳光下开始其回合时受到20点光耀伤害。处于阳光下时，其攻击骰与属性检定具有劣势。"
+								}
 							]
 						}
 					]
@@ -7378,7 +7400,7 @@
 				"麻痹"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true

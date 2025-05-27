@@ -400,7 +400,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -748,7 +748,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1492,7 +1492,7 @@
 				"隐形"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"魅力",
@@ -1670,7 +1670,7 @@
 				"束缚"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2020,7 +2020,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -2190,7 +2190,7 @@
 			"damageTagsSpell": [],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},
@@ -2517,13 +2517,13 @@
 				"倒地"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3413,7 +3413,7 @@
 				"THW"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3595,7 +3595,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3796,7 +3796,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -3935,7 +3935,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},
@@ -4143,10 +4143,36 @@
 					"name": "吸血鬼弱点",
 					"entries": [
 						"施特拉德有以下缺陷：",
-						"{@i 禁入。}",
-						"{@i 流水之伤}",
-						"{@i 木桩穿心。}如果一个由木头制成的穿刺武器在吸血鬼在棺材中处于{@condition 失能}时被插入其心脏，吸血鬼将被{@condition 麻痹}直到木桩被移除。",
-						"{@i 日光过敏。} 当处于阳光下时，施特拉德在他的回合开始时受到20点光耀伤害，并且在攻击检定和属性检定时处于劣势。"
+						{
+							"type": "list",
+							"style": "列表-悬垂子特性",
+							"items": [
+								{
+									"ENG_name": "Forbiddance",
+									"type": "itemSub",
+									"name": "[!@ 263db278-39ff-11f0-bae2-0242ac110004]",
+									"entry": "未经居住者的邀请，他无法进入住所。"
+								},
+								{
+									"ENG_name": "Harmed by Running Water",
+									"type": "itemSub",
+									"name": "被流动的水伤害",
+									"entry": "如果他结束回合时处于流动的水中，他将受到20点强酸伤害。"
+								},
+								{
+									"ENG_name": "Stake to the Heart",
+									"type": "itemSub",
+									"name": "木桩穿心",
+									"entry": "如果一支木质穿刺武器在他{@condition 无力}{@b}于棺材中时刺入他的心脏，他将一直处于{@condition 麻痹}状态，直到木桩被移除。"
+								},
+								{
+									"ENG_name": "Sunlight Hypersensitivity",
+									"type": "itemSub",
+									"name": "[!@ 263e30e0-39ff-11f0-bae2-0242ac110004]",
+									"entry": "处于阳光下时，斯特拉德在其回合开始时受到20点光耀伤害，且其攻击检定和属性检定具有劣势"
+								}
+							]
+						}
 					]
 				}
 			],
@@ -4265,7 +4291,7 @@
 				"昏迷"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedLegendary": [
 				"魅力"
@@ -4274,7 +4300,7 @@
 				"体质",
 				"敏捷",
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4719,7 +4745,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},
@@ -4863,10 +4889,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Bite",
-					"name": "啃咬",
+					"name": "Bite",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及5尺，一个被枯萎{@condition 擒抱}的生物。{@h}19（{@damage 3d8 + 6}）点穿刺伤害。"
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one creature {@condition grappled} by the blight. {@h}19 ({@damage 3d8 + 6}) piercing damage."
 					]
 				}
 			],
@@ -5277,7 +5302,7 @@
 					"ENG_name": "Vengeful Glare",
 					"name": "复仇怒视",
 					"entries": [
-						"弗拉基米尔可以在30尺范围内以施特拉德为目标，前提是他能看到施特拉德。施特拉德必须进行一次{@dc 15}感知豁免。如果失败，施特拉德将被{@condition 麻痹}，直到弗拉基米尔对他造成伤害，或直到弗拉基米尔下一个回合结束。当麻痹结束时，施特拉德将在1分钟内对弗拉基米尔感到{@condition 恐慌}。施特拉德可以在每个回合结束时重新进行豁免检定，如果他能看到弗拉基米尔，则处于劣势，成功则结束{@condition 恐慌}状态。"
+						"弗拉基米尔可以瞄准30英尺范围内的斯特拉德，前提是他能看到斯特拉德。斯特拉德必须进行一次{@dc 15}感知豁免检定。若豁免失败，斯特拉德将陷入{@condition 麻痹}状态，直到弗拉基米尔对其造成伤害，或直到弗拉基米尔的下一回合结束。当麻痹状态结束时，斯特拉德将{@condition 恐慌}弗拉基米尔1分钟。斯特拉德可以在自己每个回合结束时重复进行豁免检定，若他能看到弗拉基米尔，则检定具有劣势。若豁免成功，则{@condition 恐慌}状态将解除。"
 					]
 				}
 			],
@@ -5308,7 +5333,7 @@
 				"MW"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,

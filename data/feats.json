@@ -120,7 +120,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 202,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "G",
 			"prerequisite": [
 				{
@@ -516,7 +517,8 @@
 			"name": "警觉",
 			"source": "XPHB",
 			"page": 200,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "O",
 			"entries": [
 				"你获得了以下好处。",
@@ -543,7 +545,8 @@
 			"name": "箭术",
 			"source": "XPHB",
 			"page": 209,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -798,7 +801,8 @@
 			"name": "英勇战斗之恩惠",
 			"source": "XPHB",
 			"page": 210,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -837,6 +841,8 @@
 			"name": "次元旅行之恩惠",
 			"source": "XPHB",
 			"page": 210,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -939,7 +945,8 @@
 			"name": "扭曲命运之恩惠",
 			"source": "XPHB",
 			"page": 210,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -1017,6 +1024,8 @@
 			"name": "无敌攻势之恩惠",
 			"source": "XPHB",
 			"page": 211,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -1225,6 +1234,8 @@
 			"name": "法术回忆恩赐",
 			"source": "XPHB",
 			"page": 211,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -1261,7 +1272,8 @@
 			"name": "暗夜精魂之恩惠",
 			"source": "XPHB",
 			"page": 211,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -1308,6 +1320,8 @@
 			"name": "真实视觉之恩惠",
 			"source": "XPHB",
 			"page": 211,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "EB",
 			"prerequisite": [
 				{
@@ -1931,7 +1945,8 @@
 			"name": "防御",
 			"source": "XPHB",
 			"page": 209,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -2363,6 +2378,7 @@
 			"name": "对决",
 			"source": "XPHB",
 			"page": 209,
+			"srd52": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -3161,6 +3177,8 @@
 			"name": "擒抱者",
 			"source": "XPHB",
 			"page": 204,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "G",
 			"prerequisite": [
 				{
@@ -3223,7 +3241,8 @@
 			"name": "巨武器战斗",
 			"source": "XPHB",
 			"page": 209,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -4536,7 +4555,8 @@
 			"name": "魔法学徒",
 			"source": "XPHB",
 			"page": 201,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "O",
 			"repeatable": true,
 			"repeatableHidden": true,
@@ -5134,7 +5154,7 @@
 				"骑乘战斗|XPHB"
 			],
 			"entries": [
-				"骑乘时的你就像一头怪兽。当正在骑乘且未处于{@condition 失能}时，你获得下列增益：",
+				"当你在{@book 骑乘|PHB|9|骑乘战斗}时是一名危险的对手。当你骑乘且未处于{@condition 失能}状态时，你将获得以下益处：",
 				{
 					"type": "list",
 					"items": [
@@ -5174,7 +5194,7 @@
 					"type": "entries",
 					"name": "骑乘攻击",
 					"entries": [
-						"当你骑乘时，对距离你的坐骑5英尺内且体型比你坐骑至少小一个尺寸的未骑乘生物进行攻击检定时，你有优势。"
+						"处于{@book 骑乘|XPHB|1|骑乘战斗}时，你对坐骑5尺范围内任何未骑乘且体型至少比坐骑小一级的生物进行攻击检定具有优势。"
 					]
 				},
 				{
@@ -5190,7 +5210,7 @@
 					"type": "entries",
 					"name": "转向",
 					"entries": [
-						"当你骑乘时，如果敌人攻击你的坐骑并且击中了，你可以将这次攻击转移至自己，只要你不处于{@condition 失能|XPHB}状态。"
+						"当{@book 骑乘|XPHB|1|骑乘战斗}时，若你不处于{@condition 失能|XPHB}状态，可使命中坐骑的攻击改为命中你。"
 					]
 				}
 			]
@@ -5621,7 +5641,7 @@
 					"type": "entries",
 					"name": "酿毒",
 					"entries": [
-						"你获得使用毒剂工具的熟练度。花费1小时使用该工具并消耗价值50金币的材料，你可以制作出数量等于你的熟练加值的毒药剂量。作为奖励行动，你可以将一剂毒药涂抹在武器或弹药上。一旦涂抹，毒药保持其效力1分钟，或者直到你用带有{@condition 中毒|XPHB}状态的物品造成伤害，以先到者为准。当一个生物受到带有{@condition 中毒|XPHB}状态的物品的伤害时，该生物必须通过一次体质豁免检定（{@dc 8}加上由本专长提升的能力修正值以及你的熟练加值）或受到{@damage 2d8}点毒素伤害，并且直到你的下一个回合结束都处于{@condition 中毒|XPHB}状态。"
+						"你获得毒药学工具箱的熟练项。花费1小时使用该工具箱并消耗价值50金币的材料，你可以制造等同于你熟练加值数量的毒药剂量。以一个附赠动作，你可以将一份毒药剂量涂抹在武器或弹药上。涂抹后，毒药能保持效力1分钟，或直到你用淬毒物品造成伤害（以先到者为准）。当生物受到淬毒物品的伤害时，该生物必须成功通过一次体质豁免（{@dc 8}加上本专长提升的能力调整值与你熟练加值的总和），否则受到{@damage 2d8}点毒素伤害并陷入{@condition 中毒|XPHB}状态，持续至你的下个回合结束。"
 					]
 				}
 			],
@@ -5687,7 +5707,7 @@
 					"type": "entries",
 					"name": "长杆打击",
 					"entries": [
-						"在你使用{@action 攻击|XPHB}动作并以长棍、长矛或具有重型和长柄属性的武器进行攻击后，你可以立即使用一个附加动作，以武器的另一端进行一次近战攻击。该武器造成钝击伤害，且此次攻击的伤害骰为{@dice d4}。"
+						"当你使用{@action 攻击|XPHB}动作并以{@item 长棍|XPHB}、{@item 矛|XPHB}或其他任何{@filter 具有重型与触及属性的武器|items|type=近战武器；远程武器|属性=重型;范围}发动攻击后，可立即用一个附赠动作以武器相反端发动近战攻击。此次攻击造成钝击伤害，且伤害骰为{@dice d4}。"
 					]
 				},
 				{
@@ -5695,7 +5715,7 @@
 					"type": "entries",
 					"name": "反应打击",
 					"entries": [
-						"当你持有长棍、长矛或具有重型和触及特性的武器时，你可以采取反应来做一次近战攻击，攻击进入你用该武器达到的距离范围内的生物。"
+						"当你持有一根{@item 长棍|XPHB}、一把{@item 矛|XPHB}，或一把{@filter 具有重型与触及属性的武器|items|type=近战武器；远程武器|属性=重型;范围}时，你可以用一个反应动作对该武器触及范围内的生物进行一次近战攻击。"
 					]
 				}
 			]
@@ -5775,6 +5795,7 @@
 			"name": "守护",
 			"source": "XPHB",
 			"page": 209,
+			"srd52": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -6315,8 +6336,21 @@
 					"innate": {
 						"_": {
 							"daily": {
-								"1": [
-									"通晓语言"
+								"1e": [
+									"通晓语言",
+									"云雾术",
+									"致伤术",
+									"繁彩球",
+									"易容术",
+									"燃烧之手",
+									"动物交谈",
+									"艾嘉西斯之铠",
+									"神莓术",
+									"大步奔行",
+									"命令术",
+									"纠缠术",
+									"庇护术",
+									"雷鸣波"
 								]
 							}
 						}
@@ -6433,7 +6467,8 @@
 			"name": "凶蛮打手",
 			"source": "XPHB",
 			"page": 201,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "O",
 			"entries": [
 				"你已经训练有素，能够造成特别破坏性的打击。在你的每个回合中，每当你用武器击中目标时，你可以投掷武器的伤害骰子两次，并选择任一结果对目标造成伤害。"
@@ -7111,7 +7146,8 @@
 			"name": "熟习",
 			"source": "XPHB",
 			"page": 201,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "O",
 			"repeatable": true,
 			"repeatableHidden": true,
@@ -8695,7 +8731,8 @@
 			"name": "双武器战斗",
 			"source": "XPHB",
 			"page": 210,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"category": "FS",
 			"prerequisite": [
 				{

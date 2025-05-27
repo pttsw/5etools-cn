@@ -79,10 +79,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Spring Attack",
-					"name": "春季攻击",
+					"name": "Spring Attack",
 					"entries": [
-						"阿卡伊拉伊采取解除武装行动。"
+						"The achaierai takes the Disengage action."
 					]
 				}
 			],
@@ -326,7 +325,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -526,10 +525,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Displace",
-					"name": "位移",
+					"name": "Displace",
 					"entries": [
-						"巴尔泽布尔使用魔法传送，连同他穿戴和携带的任何装备，最多可以传送到120尺外他能看到的未被占据的空间。"
+						"Baalzebul magically teleports, along with any equipment he is wearing and carrying, up to 120 feet to an unoccupied space he can see."
 					]
 				}
 			],
@@ -612,7 +610,7 @@
 				"魅力",
 				"体质",
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -751,10 +749,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Relentless Hunter",
-					"name": "无情猎手",
+					"name": "Relentless Hunter",
 					"entries": [
-						"贝比利特可以使用附赠动作来标记它已经伤害过的猎物。一次只能标记一个生物。贝比利特总是知道当前存在平面上被标记猎物的确切位置，不会被它突袭，并且在所有针对它的攻击检定上具有优势。"
+						"The bebilith may use a bonus action to mark prey that it has damaged. Only one creature can be marked at a time. The bebilith always knows the exact location of the marked prey on the current plane of existence, can't be surprised by it, and has advantage on all attack rolls against it."
 					]
 				}
 			],
@@ -1153,10 +1150,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Prey",
-					"name": "猎物",
+					"name": "Prey",
 					"entries": [
-						"杀手集中注意力在它能看到的60尺范围内的一个单一生物上。之后，杀手每次在回合中首次击中该生物时，会额外造成7（{@damage 2d6}）点伤害。"
+						"The slayer focuses on a single creature it can see within 60 feet. Afterwards, the first time each turn that the slayer hits that creature, the slayer does an additional 7 ({@damage 2d6}) damage."
 					]
 				}
 			],
@@ -1327,28 +1323,31 @@
 					"ENG_name": "Vampire Weaknesses",
 					"name": "吸血鬼弱点",
 					"entries": [
-						"Bodhi Irenicus有以下缺陷："
-					]
-				},
-				{
-					"ENG_name": "Elvish Song",
-					"name": "精灵之歌",
-					"entries": [
-						"菩提无法忍受用精灵语演唱的歌曲。能说精灵语的生物可以使用动作来唱一首精灵歌曲。如果菩提在歌手60尺范围内并且能听到歌曲，她在攻击和豁免检定上具有劣势。"
-					]
-				},
-				{
-					"ENG_name": "Stake to the Heart",
-					"name": "木桩穿心",
-					"entries": [
-						"如果一把木制的穿刺武器在她休息的地方被插入Bodhi的心脏，而她处于{@condition 失能}状态，Bodhi将被{@condition 麻痹}，直到这根木桩被移除。"
-					]
-				},
-				{
-					"ENG_name": "Sunlight Hypersensitivity",
-					"name": "日照过敏",
-					"entries": [
-						"当博迪在日光下开始她的回合时，她会受到20点光耀伤害。在日光下时，她的攻击检定和属性检定上会有劣势。"
+						"Bodhi Irenicus有以下缺陷：",
+						{
+							"type": "list",
+							"style": "列表-悬垂子特性",
+							"items": [
+								{
+									"ENG_name": "Elvish Song",
+									"type": "itemSub",
+									"name": "精灵之歌",
+									"entry": "菩提无法忍受用精灵语演唱的歌曲。能说精灵语的生物可以使用动作来唱一首精灵歌曲。如果菩提在歌手60尺范围内并且能听到歌曲，她在攻击和豁免检定上具有劣势。"
+								},
+								{
+									"ENG_name": "Stake to the Heart",
+									"type": "itemSub",
+									"name": "木桩穿心",
+									"entry": "如果一把木制的穿刺武器在她休息的地方被插入Bodhi的心脏，而她处于{@condition 失能}状态，Bodhi将被{@condition 麻痹}，直到这根木桩被移除。"
+								},
+								{
+									"ENG_name": "Sunlight Hypersensitivity",
+									"type": "itemSub",
+									"name": "日照过敏",
+									"entry": "当博迪在日光下开始她的回合时，她会受到20点光耀伤害。在日光下时，她的攻击检定和属性检定上会有劣势。"
+								}
+							]
+						}
 					]
 				}
 			],
@@ -1446,7 +1445,7 @@
 				"魅惑"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1567,17 +1566,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Crossbow Expert",
-					"name": "强弩专家",
+					"name": "Crossbow Expert",
 					"entries": [
-						"博里维克在他的下一次重型弩攻击中，为他的攻击或伤害骰增加了 {@damage 1d10}。"
+						"Borivik adds {@damage 1d10} to his next attack or damage roll with his Heavy Crossbow attack."
 					]
 				},
 				{
-					"ENG_name": "Nimble Escape",
-					"name": "迅捷逃逸",
+					"name": "Nimble Escape",
 					"entries": [
-						"Borivik可以采取脱离战斗或隐藏动作。"
+						"Borivik can take the Disengage or Hide action."
 					]
 				}
 			],
@@ -1777,7 +1774,7 @@
 				"O"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2151,10 +2148,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Invisibility (Recharges after a Short or Long Rest)",
-					"name": "隐形（短休或长休后充能）",
+					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"达格林可以魔法地变为{@condition 隐形}，持续1小时，或者直到他攻击或施放法术。达格林穿戴或携带的任何装备都会随他一起变为{@condition 隐形}。"
+						"Dagryn magically turns {@condition invisible} for 1 hour or until he attacks or casts a spell. Any equipment Dagryn wears or carries turns {@condition invisible} with him."
 					]
 				}
 			],
@@ -2198,7 +2194,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2434,7 +2430,7 @@
 				"体质",
 				"敏捷",
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2702,7 +2698,7 @@
 				"隐形"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2866,10 +2862,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Summon Hell Hounds",
-					"name": "召唤地狱猎犬",
+					"name": "Summon Hell Hounds",
 					"entries": [
-						"Edwin通过魔法召唤了三只{@creature 地狱犬||地狱猎犬}。召唤出的地狱猎犬出现在Edwin周围60尺内未被占据的空间中，并作为Edwin的盟友行动。它们会持续存在10分钟，直到它们或Edwin死亡，或者直到Edwin作为一个动作解散它们。"
+						"Edwin magically summons three {@creature hell hound||hell hounds}. The summoned hell hounds appear in an unoccupied space within 60 feet of Edwin, and act as Edwin's allies. They remain for 10 minutes, until they or Edwin dies, or until Edwin dismisses them as an action."
 					]
 				}
 			],
@@ -2916,7 +2911,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3102,7 +3097,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4023,10 +4018,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Cunning Action",
-					"name": "灵巧动作",
+					"name": "Cunning Action",
 					"entries": [
-						"Imoen进行冲刺、脱离战斗或隐藏动作。"
+						"Imoen takes the Dash, Disengage, or Hide action."
 					]
 				}
 			],
@@ -4188,10 +4182,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Mighty Summons (1/Day)",
-					"name": "强大召唤（每日一次）",
+					"name": "Mighty Summons (1/Day)",
 					"entries": [
-						"贾希拉召唤了三个挑战等级2的野兽或六个挑战等级1的野兽。这些被召唤的生物拥有最大生命值，并且它们造成的伤害被视为魔法伤害，用于克服对非魔法攻击和伤害的免疫和抗性。"
+						"Jaheira summons three CR 2 Beasts or six CR 1 Beasts. These summoned creatures have maximum hit points and the damage they inflict is considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
 					]
 				}
 			],
@@ -4526,7 +4519,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4661,7 +4654,7 @@
 				"RW"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4853,10 +4846,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Summon Demodand (1/Day)",
-					"name": "召唤恶魔（每日一次）",
+					"name": "Summon Demodand (1/Day)",
 					"entries": [
-						"克鲁巴尔投掷一个{@dice d6}。结果为1-2时，召唤两名盟友{@creature 法拉斯图追踪者|马布约夫|法拉斯特潜行者}，结果为3-4时，召唤一名盟友{@creature 凯卢巴领事|马布约夫}。"
+						"The kelubar rolls a {@dice d6}. A result of 1-2 summons in two allied {@creature farastu stalker|MaBJoV|farastu stalkers}, a result of 3-4 summons in one allied {@creature kelubar consul|MaBJoV}."
 					]
 				}
 			],
@@ -4906,7 +4898,7 @@
 				"体质"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5017,10 +5009,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Kivan's Mark",
-					"name": "Kivan的标记",
+					"name": "Kivan's Mark",
 					"entries": [
-						"基万指定一个他可以看到的60英尺内的生物作为他的猎物。每当基万在回合中用武器攻击命中他的猎物时，猎物将受到额外7（{@damage 2d6}）点来自武器的伤害。"
+						"Kivan designates one creature he can see within 60 feet as his prey. The first time each turn that Kivan hits his prey with a weapon attack, the prey takes an extra 7 ({@damage 2d6}) damage from the weapon."
 					]
 				}
 			],
@@ -5187,10 +5178,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Rage",
-					"name": "狂暴",
+					"name": "Rage",
 					"entries": [
-						"Lothar愤怒持续1分钟。在他愤怒期间，他在力量检定和力量豁免检定上有优势。他在愤怒状态下造成的伤害增加+4。在愤怒期间，他对钝击、穿刺和挥砍伤害具有抗性。Lothar在愤怒状态下不能施放法术。"
+						"Lothar rages for 1 minute. During his rage he has advantage on Strength checks and Strength saving throws. He gains a +4 bonus to damage while he is in a rage. He has resistance to bludgeoning, piercing, and slashing damage while in a rage. Lothar can't cast spells while in a rage."
 					]
 				}
 			],
@@ -5236,7 +5226,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5437,10 +5427,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Ashen Teleport",
-					"name": "灰烬传送",
+					"name": "Ashen Teleport",
 					"entries": [
-						"梅菲斯托的身体和他穿戴或携带的任何装备化为灰烬，然后他可以魔法传送至他能看到的120尺内的未被占据的空间，并重新形成。"
+						"Mephistopheles' body and any equipment he is wearing or carrying turns to ash, then he magically teleports up to 120 feet to an unoccupied space he can see and reforms."
 					]
 				}
 			],
@@ -5519,7 +5508,7 @@
 				"体质",
 				"敏捷",
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5621,19 +5610,18 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Go for the Eyes, Boo",
-					"name": "瞄准眼睛，布",
+					"name": "Go for the Eyes, Boo",
 					"entries": [
-						"作为附赠动作，Minsc 和 Boo 对话并获得灵感进入狂战士狂暴状态，持续1分钟。在这种狂暴状态下，Minsc 获得以下效果：",
+						"As a bonus action, Minsc talks to Boo and gains the inspiration to go into a berserker fury, for 1 minute. While in this berserking fury Minsc gains the following:",
 						{
 							"type": "list",
 							"items": [
-								"Minsc 在力量检定和力量豁免检定上具有优势。",
-								"明斯克在使用近战武器时，伤害骰获得+4的加值。",
-								"明斯克对钝击、穿刺和挥砍伤害有抗性。",
-								"Minsc可以在他每个回合的附赠动作中进行一次单次近战武器攻击。",
-								"Minsc不能被{@condition 魅惑}或{@condition 恐慌}。如果Minsc在进入狂暴愤怒状态时被{@condition 魅惑}或{@condition 恐慌}，该效果在愤怒持续期间将被暂停。",
-								"如果Minsc降至0生命值且没有直接死亡，他可以进行一次{@dc 10}体质豁免检定。如果他成功，他的生命值会降至1点。每次他在第一次之后使用这个特性，DC会增加5点。24小时后，DC重置为10。"
+								"Minsc has advantage on Strength checks and Strength saving throws.",
+								"Minsc gains a +4 bonus to damage rolls when using a melee weapon.",
+								"Minsc has resistance to bludgeoning, piercing, and slashing damage.",
+								"Minsc can make a single melee weapon attack as a bonus action on each of his turns.",
+								"Minsc can't be {@condition charmed} or {@condition frightened}. If Minsc is {@condition charmed} or {@condition frightened} when he enters his berserking fury, the effect is suspended for the duration of the rage",
+								"If Minsc drops to 0 hit points and doesn't die outright, he can make a {@dc 10} Constitution saving throw. If he succeeds, he drops to 1 hit point instead. Each time he uses this feature after the first, the DC increases by 5. After 24 hours, the DC resets to 10."
 							]
 						}
 					]
@@ -5993,7 +5981,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6342,17 +6330,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Dispel",
-					"name": "解除",
+					"name": "Dispel",
 					"entries": [
-						"Pazuzu施放{@spell 解除魔法}，自动解除目标上所有6级或更低级别的法术。"
+						"Pazuzu casts {@spell dispel magic}, automatically dispelling any spell of 6th level or lower on the target."
 					]
 				},
 				{
-					"ENG_name": "Hasted Greatsword",
-					"name": "加速的巨剑",
+					"name": "Hasted Greatsword",
 					"entries": [
-						"Pazuzu使用他的魔法巨剑赋予自己以下能力，直到他下一回合开始。Pazuzu的速度现在加倍，他的护甲等级获得+2加值，他在敏捷豁免检定中具有优势，并额外获得一次巨剑攻击。"
+						"Pazuzu uses his magic greatsword to grant him the following abilities until the start of his next turn. Pazuzu's speed is now doubled, he gains a +2 bonus to AC, has advantage on Dexterity saving throws, and gains one additional Greatsword attack."
 					]
 				}
 			],
@@ -6418,12 +6404,12 @@
 			"savingThrowForced": [
 				"敏捷",
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"魅力",
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6583,10 +6569,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Slippery Step (2/Day)",
-					"name": "滑行步伐（每日2次）",
+					"name": "Slippery Step (2/Day)",
 					"entries": [
-						"Pelyious 可以传送至多30尺到他能看到的未被占据的空间，并且可以使用改变形态。"
+						"Pelyious teleports up to 30 feet to an unoccupied space he can see and may use Change Shape."
 					]
 				}
 			],
@@ -6636,7 +6621,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6871,7 +6856,7 @@
 				"体质",
 				"敏捷",
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7059,7 +7044,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7273,7 +7258,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7446,10 +7431,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Summon Demodand (1/Day)",
-					"name": "召唤恶魔（每日一次）",
+					"name": "Summon Demodand (1/Day)",
 					"entries": [
-						"沙托掷一个{@dice d6}。结果为1-2时召唤两个同盟的{@creature 法拉斯图追踪者|马布约夫|法拉斯特潜行者}，结果为3-4时召唤一个同盟的{@creature 沙托守卫|马布约夫}。"
+						"The shator rolls a {@dice d6}. A result of 1-2 summons in two allied {@creature farastu stalker|MaBJoV|farastu stalkers}, a result of 3-4 summons in one allied {@creature shator warden|MaBJoV}."
 					]
 				}
 			],
@@ -7505,7 +7489,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7657,7 +7641,7 @@
 				"隐形"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7803,7 +7787,7 @@
 				"失能"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8133,11 +8117,10 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Change Shape",
-					"name": "变形",
+					"name": "Change Shape",
 					"entries": [
-						"Ssendam变化为小型或中型的人形生物，或者变成一个看起来像金色变形虫的小异怪，或者变回她金色的史拉蟾形态。她穿戴或携带的任何装备不会发生转变。如果她死亡，她会恢复到她的真身形态。她在人形形态下的具体数值，除了体型外，与她的其他形态相同。",
-						"在她的变形虫形态中，Ssendam 还具有以下变化的相同具体数值。她不能采取任何行动（除了她的变形动作）、说话或操纵物体。她有40尺的移动速度，并且可以进入敌对生物的空间并停留在那里。此外，Ssendam 可以通过宽仅1英寸的空间移动，而不需要挤压。她在力量和敏捷豁免检定上具有优势，并且对所有伤害（除了心灵和辐射伤害）具有抗性。"
+						"Ssendam polymorphs into a Small or Medium-sized Humanoid, into a Small Aberration that looks like a golden amoeba, or back into this, her golden slaad form. Any equipment she is wearing or carrying isn't transformed. She reverts to her true form if she dies. Her statistics in the Humanoid forms, other than her size, are the same.",
+						"While in her amoeba form, Ssendam also has the same statistics with the following changes. She can't take any actions (except her Change Shape action), speak, or manipulate objects. She has a movement speed of 40 feet and can enter a hostile creature's space and stop there. In addition, Ssendam can move through a space as narrow as 1 inch wide without squeezing. She has advantage on Strength and Dexterity saving throws, and has resistance to all damage except psychic and radiant."
 					]
 				}
 			],
@@ -8223,7 +8206,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8342,10 +8325,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Mounted",
-					"name": "骑乘",
+					"name": "Mounted",
 					"entries": [
-						"如果Suldil没有骑乘，她可以使用附赠动作通过魔法传送到她的年轻青铜龙坐骑上，前提是Suldil和年轻青铜龙在同一存在平面上。当她传送时，Suldil会连同她穿戴或携带的任何装备一起出现在年轻青铜龙的背上。在骑乘且未被{@condition 失能}时，Suldil不能被突袭，她和她的坐骑在敏捷豁免检定上有优势。"
+						"If Suldil isn't mounted, she can use a bonus action to magically teleport onto her young bronze dragon mount, provided Suldil and the young bronze dragon are on the same plane of existence. When she teleports, Suldil appears astride the young bronze dragon along with any equipment she is wearing or carrying. While mounted and not {@condition incapacitated}, Suldil can't be surprised, and both her and her mount gain advantage on Dexterity saving throws."
 					]
 				}
 			],
@@ -8941,10 +8923,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Shadow Stealth",
-					"name": "幽影隐匿",
+					"name": "Shadow Stealth",
 					"entries": [
-						"在昏暗或黑暗中时，Valygar可以作为附赠动作采取隐藏行动。"
+						"While in dim light or darkness, Valygar can take the Hide action as a bonus action."
 					]
 				}
 			],
@@ -9101,10 +9082,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Nimble Escape",
-					"name": "迅捷逃逸",
+					"name": "Nimble Escape",
 					"entries": [
-						"Vellin可以采取解除武装或隐藏行动。"
+						"Vellin can take the Disengage or Hide action."
 					]
 				}
 			],
@@ -9325,7 +9305,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9644,7 +9624,7 @@
 			],
 			"savingThrowForced": [
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9796,7 +9776,7 @@
 			],
 			"savingThrowForced": [
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9933,10 +9913,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Bladesong (1/Day)",
-					"name": "剑歌（每日1次）",
+					"name": "Bladesong (1/Day)",
 					"entries": [
-						"Xan可以使用附赠动作来开始一次剑歌。他的剑歌持续1分钟。在使用剑歌时，他的移动速度增加到40尺，他的AC获得+3的加值，并且他在所有{@status 专注}检定中获得+3的加值。"
+						"Xan can use a bonus action to start a bladesong. His bladesong lasts for 1 minute. While using bladesong his movement increases to 40 ft., he gains a +3 bonus to his AC and he gains a +3 bonus to all {@status concentration} checks."
 					]
 				}
 			],
@@ -9975,7 +9954,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -10175,7 +10154,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,

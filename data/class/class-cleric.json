@@ -509,7 +509,8 @@
 			"name": "牧师",
 			"source": "XPHB",
 			"page": 68,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"edition": "one",
 			"primaryAbility": [
 				{
@@ -2273,6 +2274,7 @@
 				"受祝击|牧师||锻造|XGE|8|TCE",
 				"锻炉与烈焰的圣徒|牧师||锻造|XGE|17"
 			],
+			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
@@ -2364,6 +2366,7 @@
 				"受祝击|牧师||坟墓|XGE|8|TCE",
 				"引魂明灯|牧师||坟墓|XGE|17"
 			],
+			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
@@ -2853,7 +2856,8 @@
 			"className": "牧师",
 			"classSource": "XPHB",
 			"page": 73,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"edition": "one",
 			"additionalSpells": [
 				{
@@ -3441,6 +3445,8 @@
 			"name": "圣职",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 1,
@@ -3467,6 +3473,8 @@
 			"name": "防御者",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 1,
@@ -3479,6 +3487,8 @@
 			"name": "施法",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 1,
@@ -3548,6 +3558,8 @@
 			"name": "奇术使",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 1,
@@ -3560,6 +3572,8 @@
 			"name": "引导神力",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 2,
@@ -3587,6 +3601,8 @@
 			"name": "神圣火花",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 2,
@@ -3605,6 +3621,8 @@
 			"name": "驱散亡灵",
 			"source": "XPHB",
 			"page": 70,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 2,
@@ -3622,6 +3640,8 @@
 			"name": "牧师子职",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 3,
@@ -3634,6 +3654,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 4,
@@ -3646,6 +3668,8 @@
 			"name": "灼净亡灵",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 5,
@@ -3658,6 +3682,8 @@
 			"name": "子职特性",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 6,
@@ -3670,6 +3696,8 @@
 			"name": "受祝击",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 7,
@@ -3679,23 +3707,45 @@
 					"type": "entries",
 					"entries": [
 						{
-							"ENG_name": "Divine Strike",
-							"type": "entries",
-							"name": "神圣打击",
-							"entries": [
-								"每个你的回合一次，当你以一次使用武器的攻击命中了一个生物时，你对其造成额外{@damage 1d8}光耀或黯蚀伤害（由你选择）。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "神圣打击|牧师|XPHB|7"
 						},
 						{
-							"ENG_name": "Potent Spellcasting",
-							"type": "entries",
-							"name": "强力施法",
-							"entries": [
-								"你将你的感知调整值加到你用任何牧师戏法造成的伤害上。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "强力施法|牧师|XPHB|7"
 						}
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Divine Strike",
+			"name": "神圣打击",
+			"source": "XPHB",
+			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"每个你的回合一次，当你以一次使用武器的攻击命中了一个生物时，你对其造成额外{@damage 1d8}光耀或黯蚀伤害（由你选择）。"
+			]
+		},
+		{
+			"ENG_name": "Potent Spellcasting",
+			"name": "强力施法",
+			"source": "XPHB",
+			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
+			"className": "牧师",
+			"classSource": "XPHB",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"你将你的感知调整值加到你用任何牧师戏法造成的伤害上。"
 			]
 		},
 		{
@@ -3703,6 +3753,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 8,
@@ -3715,6 +3767,8 @@
 			"name": "神圣干预",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 10,
@@ -3727,6 +3781,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 12,
@@ -3739,6 +3795,8 @@
 			"name": "精通受祝击",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 14,
@@ -3772,6 +3830,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 16,
@@ -3784,6 +3844,8 @@
 			"name": "子职特性",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 17,
@@ -3796,6 +3858,8 @@
 			"name": "传奇恩惠",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 19,
@@ -3808,6 +3872,8 @@
 			"name": "进阶神圣干预",
 			"source": "XPHB",
 			"page": 71,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"level": 20,
@@ -7683,7 +7749,9 @@
 				"subclassSource": "PHB",
 				"level": 2,
 				"_preserve": {
-					"page": true
+					"page": true,
+					"srd": true,
+					"basicRules": true
 				}
 			}
 		},
@@ -7706,7 +7774,9 @@
 				"subclassSource": "PHB",
 				"level": 1,
 				"_preserve": {
-					"page": true
+					"page": true,
+					"srd": true,
+					"basicRules": true
 				}
 			}
 		},
@@ -8520,7 +8590,8 @@
 			"name": "生命领域",
 			"source": "XPHB",
 			"page": 73,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"subclassShortName": "生命",
@@ -8549,7 +8620,8 @@
 			"name": "生命门徒",
 			"source": "XPHB",
 			"page": 73,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"subclassShortName": "生命",
@@ -8565,7 +8637,8 @@
 			"name": "生命领域法术",
 			"source": "XPHB",
 			"page": 73,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"subclassShortName": "生命",
@@ -8611,7 +8684,8 @@
 			"name": "维持生命",
 			"source": "XPHB",
 			"page": 73,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"subclassShortName": "生命",
@@ -8631,7 +8705,8 @@
 			"name": "神佑医者",
 			"source": "XPHB",
 			"page": 74,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"subclassShortName": "生命",
@@ -8647,7 +8722,8 @@
 			"name": "极效治疗",
 			"source": "XPHB",
 			"page": 74,
-			"freeRules2024": true,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "牧师",
 			"classSource": "XPHB",
 			"subclassShortName": "生命",

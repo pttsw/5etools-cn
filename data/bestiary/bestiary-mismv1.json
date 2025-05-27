@@ -98,35 +98,31 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Bubbles of Whimsy (2/Day)",
-					"name": "幻想泡泡（每日2次）",
+					"name": "Bubbles of Whimsy (2/Day)",
 					"entries": [
-						"珊瑚从她的角上产生出一串魔法泡泡。这些泡泡飘向珊瑚能看到的60尺内的生物。掷一个{@dice d6}来确定泡泡的效果：",
+						"Coral produces a stream of magical bubbles from her horn. These bubbles float toward a creature Coral can see within 60 feet of herself. Roll a {@dice d6} to determine the bubbles' effect:",
 						{
 							"type": "list",
 							"items": [
 								{
-									"ENG_name": "1-2: Bolstering Treat",
-									"name": "1-2: 鼓舞治疗",
+									"name": "1-2: Bolstering Treat",
 									"type": "item",
 									"entries": [
-										"泡沫变成了{@dice 1d4}个饼干，出现在目标的空间中。如果目标立即使用其反应来吃一个饼干，它将获得11（{@dice 2d8 + 2}）点临时生命值。任何剩余的饼干都很美味，但不会带来任何好处。"
+										"The bubbles transform into {@dice 1d4} cookies that appear in the target's space. The target gains 11 ({@dice 2d8 + 2}) temporary hit points if it immediately uses its reaction to eat one of the cookies. Any leftover cookies are delicious but confer no benefits."
 									]
 								},
 								{
-									"ENG_name": "3-4: Sparkle Burst",
-									"name": "3-4: 闪光爆发",
+									"name": "3-4: Sparkle Burst",
 									"type": "item",
 									"entries": [
-										"泡泡变成了围绕目标旋转的闪光，然后向外爆开。每个在目标5尺范围内的生物必须成功进行一次体质豁免检定（{@dc 16}），否则直到Coral的下一回合开始都会处于{@condition 目盲}状态。"
+										"The bubbles transform into glitter that swirls around the target before bursting outward. Each creature within 5 feet of the target must succeed on a {@dc 16} Constitution saving throw or have the {@condition blinded} condition until the start of Coral's next turn."
 									]
 								},
 								{
-									"ENG_name": "5-6: Stink Bomb Shield",
-									"name": "5-6: 臭气弹盾牌",
+									"name": "5-6: Stink Bomb Shield",
 									"type": "item",
 									"entries": [
-										"这些气泡变成了一股恶臭的气体云，围绕着目标并为其提供掩护。直到Coral的下一回合开始气体消失之前，目标处于{@quickref 掩护||3||半身掩护}状态。"
+										"The bubbles transform into a foul-smelling cloud of gas that surrounds and shields the target. The target has {@quickref Cover||3||half cover} until the gas disappears at the start of Coral's next turn."
 									]
 								}
 							]
@@ -134,10 +130,9 @@
 					]
 				},
 				{
-					"ENG_name": "Gift of Speech (1/Day)",
-					"name": "言语之赐（每日1次）",
+					"name": "Gift of Speech (1/Day)",
 					"entries": [
-						"珊瑚选择一个在她10尺范围内她能看到的野兽。目标获得理解并使用通用语或森林语（珊瑚的选择）说话的能力，持续10分钟。"
+						"Coral targets one Beast she can see within 10 feet of herself. The target gains the ability to understand and speak Common or Sylvan (Coral's choice) for 10 minutes."
 					]
 				}
 			],
@@ -337,7 +332,7 @@
 			],
 			"savingThrowForced": [
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"力量"
@@ -474,10 +469,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Nimble Escape",
-					"name": "迅捷逃逸",
+					"name": "Nimble Escape",
 					"entries": [
-						"Rain 采取了\"脱战\"或\"隐蔽\"行动。"
+						"Rain takes either the Disengage or the Hide action."
 					]
 				}
 			],
@@ -742,17 +736,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Change Shape",
-					"name": "变形",
+					"name": "Change Shape",
 					"entries": [
-						"塞斯通过魔法变成一个小型人形生物或一个微小或小型的野兽，同时保留他的游戏具体数值（除了他的尺寸）。如果塞斯的生命值降到0点或使用另一个附赠动作来结束它，这种变形就会结束。"
+						"Seth magically transforms into a Small Humanoid or a Beast that is Tiny or Small, while retaining his game statistics (other than his size). This transformation ends if Seth is reduced to 0 hit points or uses another bonus action to end it."
 					]
 				},
 				{
-					"ENG_name": "Superspeed (2/Day)",
-					"name": "超速（每日2次）",
+					"name": "Superspeed (2/Day)",
 					"entries": [
-						"塞斯的速度在保持{@status 专注}状态期间翻倍（就像在{@status 专注||专注于}时保持专注一样）。在他以这种方式增加速度时，所有对他的攻击投掷都会处于不利状态，并且他变得部分非物质化，允许他像穿过困难地形一样穿过生物和物体。如果塞斯在回合结束时位于物体内部，他会承受5 ({@damage 1d10}) 点力场伤害。"
+						"Seth's speed is doubled for as long as he maintains {@status concentration} (as if {@status concentration||concentrating} on a spell). While his speed is increased in this way, all attack rolls against him are made with disadvantage, and he becomes partially incorporeal, allowing him to move through creatures and objects as if they were difficult terrain. Seth takes 5 ({@damage 1d10}) force damage if he ends his turn inside an object."
 					]
 				}
 			],
@@ -918,10 +910,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Wind Dash (2/Day)",
-					"name": "疾风冲刺（每日2次）",
+					"name": "Wind Dash (2/Day)",
 					"entries": [
-						"谢尔顿召唤出一阵强风并以他的速度飞行。这种移动不会引起借机攻击。在这次移动结束时，谢尔顿周围5英尺内的每个生物必须成功通过一次{@dc 15}力量豁免检定，否则会获得{@condition 倒地}状态，因为强风在谢尔顿周围爆发。"
+						"Sheldon summons a powerful gust of wind and flies up to his speed. This movement doesn't provoke opportunity attacks. At the end of this movement, each creature within 5 feet of Sheldon must succeed on a {@dc 15} Strength saving throw or have the {@condition prone} condition, as the wind bursts around Sheldon."
 					]
 				}
 			],

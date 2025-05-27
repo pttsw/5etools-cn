@@ -510,7 +510,7 @@
 				"体质",
 				"敏捷",
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -760,7 +760,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -977,7 +977,7 @@
 				"source": "WDMM"
 			},
 			"savingThrowForcedLegendary": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1219,7 +1219,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -1493,7 +1493,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -1742,7 +1742,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},
@@ -2117,7 +2117,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -2470,7 +2470,7 @@
 				"体质",
 				"敏捷",
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3063,7 +3063,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3944,7 +3944,7 @@
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4411,7 +4411,7 @@
 			],
 			"savingThrowForced": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -5534,7 +5534,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -6208,10 +6208,36 @@
 					"name": "吸血鬼弱点",
 					"entries": [
 						"卓拉克有以下缺陷：",
-						"{@i 禁入。} 卓拉克没有其中一位居住者的邀请就不能进入住宅。",
-						"{@i 流水之伤} 如果Zorak在他的回合结束时处于流水中，他会受到20点强酸伤害。",
-						"{@i 木桩穿心。} 如果在佐拉克在其休息地处于{@condition 失能}状态时，将一根木制的穿刺武器刺入佐拉克的心脏，佐拉克将被{@condition 麻痹}，直到木桩被移除。",
-						"{@i 日光过敏。} 卓拉克在日光下开始他的回合时，会受到20点光耀伤害。在日光下，他的攻击检定和属性检定具有劣势。"
+						{
+							"type": "list",
+							"style": "列表-悬垂子特性",
+							"items": [
+								{
+									"ENG_name": "Forbiddance",
+									"type": "itemSub",
+									"name": "[!@ 3394e2fc-39ff-11f0-bae2-0242ac110004]",
+									"entry": "佐拉克未经居住者的邀请无法进入住所。"
+								},
+								{
+									"ENG_name": "Harmed by Running Water",
+									"type": "itemSub",
+									"name": "被流动的水伤害",
+									"entry": "若佐拉克在其回合结束时身处流水中，将受到20点强酸伤害。"
+								},
+								{
+									"ENG_name": "Stake to the Heart",
+									"type": "itemSub",
+									"name": "木桩穿心",
+									"entry": "如果一把木制的穿刺武器在佐拉克于其休息处处于{@condition 失能}状态时被刺入其心脏，佐拉克将保持{@condition 麻痹}状态直至木桩被移除。"
+								},
+								{
+									"ENG_name": "Sunlight Hypersensitivity",
+									"type": "itemSub",
+									"name": "[!@ 33958fcc-39ff-11f0-bae2-0242ac110004]",
+									"entry": "佐拉克在阳光下开始其回合时受到20点光耀伤害。在阳光下，其攻击检定和属性检定具有劣势"
+								}
+							]
+						}
 					]
 				}
 			],
@@ -6329,7 +6355,7 @@
 				"魅惑"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true
 		},

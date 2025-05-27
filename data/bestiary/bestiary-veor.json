@@ -179,10 +179,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Silver Fire (2/Day)",
-					"name": "银色火焰（每日2次）",
+					"name": "Silver Fire (2/Day)",
 					"entries": [
-						"灿烂的银色火焰无害地环绕着阿卢斯特里尔并赋予她力量。银色火焰持续1小时，或者直到她处于{@condition 失能}（失去能力）状态，或者使用另一个附赠动作来熄灭它。在银色火焰的环绕下，阿卢斯特里尔获得了30尺内的真实视觉，并可以使用她的银焰行动。此外，阿卢斯特里尔不受魔法的影响，这些魔法会确定她的阵营、生物类型、思想或真实性。"
+						"Brilliant silver fire harmlessly wreathes Alustriel and empowers her. The silver fire lasts for 1 hour or until she has the {@condition incapacitated} condition or uses another bonus action to quench it. While wreathed in silver fire, Alustriel gains truesight within 30 feet and can use her Argent Blaze action. In addition, Alustriel is unaffected by magic that would ascertain her alignment, creature type, thoughts, or truthfulness."
 					]
 				}
 			],
@@ -225,7 +224,7 @@
 				"敏捷"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -459,17 +458,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Command Ally",
-					"name": "指挥盟友",
+					"name": "Command Ally",
 					"entries": [
-						"副官选择一个它可以看到的，距离自己30尺内的盟友。如果目标可以看到或听到副官，目标可以使用其反应进行一次近战攻击，如果可用，并且在攻击骰上具有优势。"
+						"The lieutenant targets one ally it can see within 30 feet of itself. If the target can see or hear the lieutenant, the target can make one melee attack using its reaction, if available, and has advantage on the attack roll."
 					]
 				},
 				{
-					"ENG_name": "Rally the Troops (1/Day)",
-					"name": "集结部队（每日1次）",
+					"name": "Rally the Troops (1/Day)",
 					"entries": [
-						"中尉结束自身以及它能看到的30尺范围内每个它选择的生物的{@condition 魅惑}和{@condition 恐慌}状态。"
+						"The lieutenant ends the {@condition charmed} and {@condition frightened} conditions on itself and each creature of its choice that it can see within 30 feet of itself."
 					]
 				}
 			],
@@ -611,10 +608,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Dash",
-					"name": "疾走",
+					"name": "Dash",
 					"entries": [
-						"侦察兵以自己的速度移动，不会激起借机攻击。"
+						"The scout moves up to its speed without provoking opportunity attacks."
 					]
 				}
 			],
@@ -760,7 +756,7 @@
 			],
 			"savingThrowForced": [
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1130,7 +1126,7 @@
 				},
 				{
 					"ENG_name": "Teleport",
-					"name": "传送术",
+					"name": "[!@ 3231bb56-39ff-11f0-bae2-0242ac110004]",
 					"entries": [
 						"卡姆拉什通过魔法传送，连同她穿戴或携带的任何装备，最多可以传送到120尺外她能看到的未被占用的空间。"
 					]
@@ -1145,7 +1141,7 @@
 			],
 			"actionTags": [
 				"多重攻击",
-				"传送术"
+				"[!@ 3231bb56-39ff-11f0-bae2-0242ac110004]"
 			],
 			"languageTags": [
 				"AB",
@@ -1670,7 +1666,7 @@
 			],
 			"savingThrowForced": [
 				"智力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1784,10 +1780,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Crush",
-					"name": "碾压",
+					"name": "Crush",
 					"entries": [
-						"德格洛斯针对当前被它{@condition 擒抱}的一个生物。目标必须进行一次{@dc 18}力量豁免检定，失败时受到15 ({@damage 2d8 + 6})点钝击伤害，成功则伤害减半。"
+						"The degloth targets one creature currently {@condition grappled} by it. The target must make a {@dc 18} Strength saving throw, taking 15 ({@damage 2d8 + 6}) bludgeoning damage on a failed save or half as much damage on a successful one."
 					]
 				}
 			],
@@ -1988,12 +1983,11 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Soul Siphon",
-					"name": "灵魂虹吸",
+					"name": "Soul Siphon",
 					"entries": [
-						"假巫妖针对它能看到的120尺范围内的一个生物施法。目标必须进行一次{@dc 22}魅力豁免检定；如果目标处于{@condition 昏迷}状态，则在这个豁免检定上处于劣势。目标在失败时受到21 ({@damage 6d6})点力场伤害，成功则伤害减半。然后，假巫妖恢复等同于所受力场伤害数值的生命值。",
-						"如果此伤害使目标的生命值降至0点，目标立即死亡，其身体消失，其灵魂被困在假巫妖头骨内的一个灵魂宝石中。24小时后，宝石将灵魂转移到假巫妖的创造者那里。",
-						"当伪巫妖的生命值降至0点时，它将被摧毁并解体，留下背后的宝石。压碎宝石会释放出被困住的灵魂，此时灵魂的身体将在最近的未被占据的空间重新形成，并且处于其灵魂被困时的相同状态。"
+						"The false lich targets one creature it can see within 120 feet of itself. The target must make a {@dc 22} Charisma saving throw; if the target has the {@condition unconscious} condition, it has disadvantage on this saving throw. The target takes 21 ({@damage 6d6}) force damage on a failed save or half as much damage on a successful one. The false lich then regains a number of hit points equal to the amount of force damage taken.",
+						"If this damage reduces the target to 0 hit points, the target immediately dies, its body disappears, and its soul is trapped inside one of the soul gems within the false lich's skull. After 24 hours, the gem transfers the soul to the false lich's creator.",
+						"When the false lich is reduced to 0 hit points, it is destroyed and disintegrates, leaving behind the gems. Crushing a gem releases any souls trapped within, at which point the soul's body re-forms in an unoccupied space nearest to the gem and in the same state as it was when its soul was trapped."
 					]
 				}
 			],
@@ -2053,10 +2047,10 @@
 			],
 			"savingThrowForced": [
 				"魅力",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2225,16 +2219,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Overdrive (Recharges after Finishing a Short or Long Rest)",
-					"name": "超速驱动（在完成短休或长休后重新充能）",
+					"name": "Overdrive (Recharges after Finishing a Short or Long Rest)",
 					"entries": [
-						"格莱芙进入一种持续1分钟或直到她处于{@condition 失能}（失去能力）状态的超速状态。在超速状态下，格莱芙获得以下好处：",
+						"Glaive enters a state of overdrive that lasts for 1 minute or until she has the {@condition incapacitated} condition. While in overdrive, Glaive gains the following benefits:",
 						{
 							"type": "list",
 							"items": [
-								"格拉夫在力量检定和力量豁免检定上具有优势。",
-								"当格莱芙进行近战武器攻击时，她在伤害骰上获得+4的加值。",
-								"格莱夫的速度增加到50尺。"
+								"Glaive has advantage on Strength checks and Strength saving throws.",
+								"When Glaive makes a melee weapon attack, she gains a +4 bonus to the damage roll.",
+								"Glaive's speed increases to 50 feet."
 							]
 						}
 					]
@@ -2362,10 +2355,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Devastating Roll",
-					"name": "毁灭性翻滚",
+					"name": "Devastating Roll",
 					"entries": [
-						"巨型机甲移动其速度范围内的距离。在这次移动中，巨型机甲可以穿过处于{@condition 倒地}状态生物的空间。当巨型机甲在这次移动中首次进入一个{@condition 倒地}生物的空间时，该生物必须进行一次{@dc 18}敏捷豁免检定，失败则受到55 ({@damage 10d10})点钝击伤害，成功则伤害减半。"
+						"The juggernaut moves up to its speed. During this movement, the juggernaut can move through the spaces of creatures with the {@condition prone} condition. When the juggernaut enters the space of a {@condition prone} creature for the first time during this movement, the creature must make a {@dc 18} Dexterity saving throw, taking 55 ({@damage 10d10}) bludgeoning damage on a failed save or half as much damage on a successful one."
 					]
 				}
 			],
@@ -3124,17 +3116,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Change Shape",
-					"name": "变形",
+					"name": "Change Shape",
 					"entries": [
-						"卡斯变形为一个中等大小的雾气云团。在这种形态下，卡斯具有20尺的飞行速度，可以悬停，并可以进入一个敌对生物的空间并停留在那里。在雾气形态中，只要空气能通过那个空间，卡斯就可以不挤压地通过那个空间，但他不能通过水。卡斯在力量、敏捷和体质豁免检定上具有优势，并且除了作为他的吸血鬼弱点特性所承受的伤害外，他对所有非魔法伤害都免疫。在雾气形态中，卡斯不能采取任何行动，说话或操纵物体。"
+						"Kas transforms into a Medium cloud of mist. While in this form, Kas has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. While in mist form, Kas can pass through a space without squeezing as long as air can pass through that space, but he can't pass through water. Kas has advantage on Strength, Dexterity, and Constitution saving throws, and he is immune to all nonmagical damage except the damage he takes as part of his Vampire Weaknesses trait. While in mist form, Kas can't take any actions, speak, or manipulate objects."
 					]
 				},
 				{
-					"ENG_name": "Menacing Glare",
-					"name": "威胁凝视",
+					"name": "Menacing Glare",
 					"entries": [
-						"卡斯以自己60尺范围内可以看到的一个生物为目标。目标必须成功通过一个{@dc 23}感知豁免检定，否则将处于{@condition 恐慌}（恐惧）状态，直到卡斯的下一个回合开始。"
+						"Kas targets one creature he can see within 60 feet of himself. The target must succeed on a {@dc 23} Wisdom saving throw or have the {@condition frightened} condition until the start of Kas's next turn."
 					]
 				}
 			],
@@ -3203,7 +3193,7 @@
 				"恐慌"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3494,10 +3484,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Mirror Stealth",
-					"name": "镜面潜行",
+					"name": "Mirror Stealth",
 					"entries": [
-						"在距离反射面5尺以内的地方，例如镜子，镜影生物会采取隐蔽行动。"
+						"While within 5 feet of a reflective surface, such as a mirror, the mirror shade takes the Hide action."
 					]
 				}
 			],
@@ -3521,7 +3510,7 @@
 				"恐慌"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3706,10 +3695,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Demand Loyalty",
-					"name": "要求忠诚",
+					"name": "Demand Loyalty",
 					"entries": [
-						"米斯卡用魔法结束自己以及自己120尺范围内任何盟友的{@condition 魅惑}（魅惑）和{@condition 恐慌}（恐惧）状态。"
+						"Miska magically ends the {@condition charmed} and {@condition frightened} conditions on himself and on any of his allies within 120 feet of himself."
 					]
 				}
 			],
@@ -3781,11 +3769,11 @@
 			],
 			"savingThrowForced": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4134,10 +4122,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Change Shape",
-					"name": "变形",
+					"name": "Change Shape",
 					"entries": [
-						"菲萨拉祖变换成螃蟹、蛛化精灵或巨型螃蟹，或恢复其真实形态。除了大小之外，它的游戏具体数值在每种形态中都是相同的。它穿戴或携带的任何装备不会发生变换。"
+						"The phisarazu transforms into a crab, drider, or giant crab, or returns to its true form. Its game statistics, except for its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed."
 					]
 				}
 			],
@@ -4169,7 +4156,7 @@
 				"MW"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4303,10 +4290,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Assess Weakness",
-					"name": "评估弱点",
+					"name": "Assess Weakness",
 					"entries": [
-						"夸维尔斯库评估了它能看到的40尺内的生物。直到夸维尔斯库下一回合开始，它在对该生物的攻击检定上具有优势。"
+						"The quavilithku sizes up a creature it can see within 40 feet of itself. Until the start of the quavilithku's next turn, it has advantage on attack rolls against the creature."
 					]
 				}
 			],
@@ -4522,10 +4508,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Demand Loyalty",
-					"name": "要求忠诚",
+					"name": "Demand Loyalty",
 					"entries": [
-						"拉克鲁皮斯魔法性地结束了自身及自身周围60尺内任意数量盟友的{@condition 魅惑}（魅惑）和{@condition 恐慌}（恐惧）状态。"
+						"The raklupis magically ends the {@condition charmed} and {@condition frightened} conditions on itself and on any number of allies within 60 feet of itself."
 					]
 				}
 			],
@@ -4570,7 +4555,7 @@
 				"体质"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5051,11 +5036,10 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Stifling Webs {@recharge 5}",
-					"name": "窒息之网 {@recharge 5}",
+					"name": "Stifling Webs {@recharge 5}",
 					"entries": [
-						"蜘蛛龙在自己相邻区域内织出30尺的立方体强粘性蛛网。蛛网持续1分钟，是困难地形，并轻微遮蔽其区域。生物在自己的回合开始时位于蛛网中，或在其回合内首次进入蛛网时，必须成功进行一次{@dc 15}敏捷豁免检定，否则在蛛网中时将处于{@condition 束缚}状态。作为一个动作，生物可以通过成功进行一次{@dc 15}力量检定来使自己或另一生物从蛛网中解脱。",
-						"如果一个5尺立方体的蛛网在单一回合内至少承受10点酸性、火焰或挥砍伤害，则会被摧毁。"
+						"The spiderdragon spins a 30-foot cube of strong, sticky webbing in an area adjacent to itself. The webbing lasts for 1 minute, is difficult terrain, and lightly obscures its area. A creature that starts its turn in the webbing or enters the webbing for the first time on its turn must succeed on a {@dc 15} Dexterity saving throw or have the {@condition restrained} condition while in the web. As an action, a creature can free itself or another creature from the web by succeeding on a {@dc 15} Strength check.",
+						"A 5-foot cube of the web is destroyed if it takes at least 10 acid, fire, or slashing damage on a single turn."
 					]
 				}
 			],
@@ -5170,10 +5154,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Lure Charm",
-					"name": "诱惑魅力",
+					"name": "Lure Charm",
 					"entries": [
-						"星垂钓者的诱饵发出迷人的星光，瞄准星垂钓者视线范围内120英尺内的一个生物。目标必须成功通过一次{@dc 13}的感知豁免，否则将获得{@condition 魅惑}状态，直到星垂钓者的下一回合开始。当以这种方式被{@condition 魅惑}时，目标获得{@condition 失能}状态，并必须在其回合中使用其移动来直接向星垂钓者移动；被{@condition 魅惑}的目标不会避免借机攻击，但会避开伤害地形。一个目标一次只能被一个星垂钓者{@condition 魅惑}。"
+						"The star angler's lure flares with enchanting starlight, targeting one creature the star angler can see within 120 feet of itself. The target must succeed on a {@dc 13} Wisdom saving throw or have the {@condition charmed} condition until the start of the star angler's next turn. While {@condition charmed} in this way, the target has the {@condition incapacitated} condition and must use its movement on its turn to move directly toward the star angler; a {@condition charmed} target doesn't avoid opportunity attacks, but it does avoid damaging terrain. A target can be {@condition charmed} by only one star angler at a time."
 					]
 				}
 			],
@@ -5196,7 +5179,7 @@
 				"魅惑"
 			],
 			"savingThrowForced": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5343,21 +5326,25 @@
 					"ENG_name": "Vampire Weaknesses",
 					"name": "吸血鬼弱点",
 					"entries": [
-						"施特拉德有以下缺陷："
-					]
-				},
-				{
-					"ENG_name": "Harmed by Running Water",
-					"name": "被流动的水伤害",
-					"entries": [
-						"当施特拉德处于流动的水中时，如果他在该处结束回合，他将受到20点强酸伤害，并且他不能使用变形能力。"
-					]
-				},
-				{
-					"ENG_name": "Sunlight Hypersensitivity",
-					"name": "日照过敏",
-					"entries": [
-						"当处于阳光下时，施特拉德在自己的回合开始时受到20点光耀伤害，攻击掷骰和属性检定时处于劣势，并且不能使用他的变形成附赠动作。"
+						"施特拉德有以下缺陷：",
+						{
+							"type": "list",
+							"style": "列表-悬垂子特性",
+							"items": [
+								{
+									"ENG_name": "Harmed by Running Water",
+									"type": "itemSub",
+									"name": "被流动的水伤害",
+									"entry": "当施特拉德处于流动的水中时，如果他在该处结束回合，他将受到20点强酸伤害，并且他不能使用变形能力。"
+								},
+								{
+									"ENG_name": "Sunlight Hypersensitivity",
+									"type": "itemSub",
+									"name": "日照过敏",
+									"entry": "当处于阳光下时，施特拉德在自己的回合开始时受到20点光耀伤害，攻击掷骰和属性检定时处于劣势，并且不能使用他的变形成附赠动作。"
+								}
+							]
+						}
 					]
 				}
 			],
@@ -5394,31 +5381,27 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Bite",
-					"name": "啃咬",
+					"name": "Bite",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及5尺，单一生物，该生物必须具有{@condition 魅惑}（魅惑）或{@condition 擒抱}（擒抱）状态。{@h}7（{@damage 1d6 + 4}）点穿刺伤害加上10（{@damage 3d6}）黯蚀伤害。目标的生命值最大值减少，减少量等于受到的黯蚀伤害，施特拉德恢复等同于该数量的生命值。这种减少持续到目标完成一次长休。如果目标的生命值最大值减少到0，目标死亡。以这种方式被杀死并埋葬的人形生物在下一个夜晚作为吸血鬼后代在施特拉德的控制下复活。"
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one creature that has the {@condition charmed} or {@condition grappled} condition. {@h}7 ({@damage 1d6 + 4}) piercing damage plus 10 ({@damage 3d6}) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken, and Strahd regains a number of hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0. A Humanoid slain in this way and then buried rises the following night as a vampire spawn under Strahd's control."
 					]
 				},
 				{
-					"ENG_name": "Change Shape",
-					"name": "变形",
+					"name": "Change Shape",
 					"entries": [
-						"施特拉德变换成新形态或恢复其真实形态。他穿戴的任何物品都会随他一起变化，但他携带的任何物品则不会。如果施特拉德死亡，他将恢复其真实形态。当变换成新形态时，施特拉德选择以下选项之一："
+						"Strahd transforms into a new form or back into his true form. Anything he is wearing transforms with him, but nothing he is carrying does. He reverts to his true form if he dies. When transforming into a new form, Strahd chooses one of the following options:"
 					]
 				},
 				{
-					"ENG_name": "Beast Form",
-					"name": "野兽形态",
+					"name": "Beast Form",
 					"entries": [
-						"施特拉德变身为一只小型蝙蝠（飞行速度30尺）或中型狼（速度40尺）。在那个形态下，他不能说话，并且除了大小和速度之外，他保留了自己的游戏具体数值。"
+						"Strahd transforms into a Tiny bat (flying speed 30 ft.) or a Medium wolf (speed 40 ft.). While in that form, he can't speak, and he retains his game statistics other than his size and speed."
 					]
 				},
 				{
-					"ENG_name": "Mist Form",
-					"name": "迷雾形态",
+					"name": "Mist Form",
 					"entries": [
-						"施特拉德变成了一团中等大小的雾气。在这种形态下，施特拉德具有20尺的飞行速度，可以悬停，并可以进入敌对生物的空间并停留在那里。在雾气形态中，只要空气可以通过那个空间，施特拉德就可以通过空间而不需要挤压，但他不能通过水。施特拉德在力量、敏捷和体质豁免检定上具有优势，并且除了作为他的吸血鬼弱点特征所承受的伤害外，他对所有非魔法伤害都免疫。在雾气形态时，施特拉德不能采取任何行动，说话或操纵物体。"
+						"Strahd transforms into a Medium cloud of mist. While in this form, Strahd has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. While in mist form, Strahd can pass through a space without squeezing as long as air can pass through that space, but he can't pass through water. Strahd has advantage on Strength, Dexterity, and Constitution saving throws, and he is immune to all nonmagical damage except the damage he takes as part of his Vampire Weaknesses trait. While in mist form, Strahd can't take any actions, speak, or manipulate objects."
 					]
 				}
 			],
@@ -5483,11 +5466,11 @@
 			],
 			"savingThrowForced": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5639,10 +5622,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Abyssal Visage (2/Day)",
-					"name": "深渊面容（每日2次）",
+					"name": "Abyssal Visage (2/Day)",
 					"entries": [
-						"在1分钟内，塔莎获得30尺的飞行速度，对毒素伤害和{@condition 中毒}状态免疫，并且在对任何未满生命值的生物进行攻击检定时具有优势。如果塔莎处于{@condition 失能}状态，或者她使用另一个附赠动作来取消这些好处，则这些好处会提前结束。"
+						"For 1 minute, Tasha gains a flying speed of 30 feet, is immune to poison damage and the {@condition poisoned} condition, and has advantage on attack rolls against any creature that doesn't have all its hit points. These benefits end early if Tasha has the {@condition incapacitated} condition or if she uses another bonus action to dismiss them."
 					]
 				}
 			],
@@ -5697,7 +5679,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6010,10 +5992,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Vile Teleport",
-					"name": "邪恶传送",
+					"name": "Vile Teleport",
 					"entries": [
-						"维克纳连同他穿戴或携带的任何装备，可以传送至他能看到的30尺内的未被占据的空间。他可以选择使他目的地15尺内的每个生物受到10点（{@damage 3d6}）心灵伤害。如果至少有一个生物受到此伤害，维克纳恢复80点生命值。"
+						"Vecna teleports, along with any equipment he is wearing or carrying, up to 30 feet to an unoccupied space he can see. He can cause each creature of his choice within 15 feet of his destination space to take 10 ({@damage 3d6}) psychic damage. If at least one creature takes this damage, Vecna regains 80 hit points."
 					]
 				}
 			],
@@ -6080,7 +6061,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6205,10 +6186,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Stomp",
-					"name": "践踏",
+					"name": "Stomp",
 					"entries": [
-						"{@atk mw} {@hit 9} 攻击，范围 5 英尺，一个{@condition 倒地}的生物。{@h}27（{@damage 4d10 + 5}）钝击伤害。"
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one {@condition prone} creature. {@h}27 ({@damage 4d10 + 5}) bludgeoning damage."
 					]
 				}
 			],
@@ -6640,10 +6620,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Stunning Scintillation {@recharge 5}",
-					"name": "眩目闪光 {@recharge 5}",
+					"name": "Stunning Scintillation {@recharge 5}",
 					"entries": [
-						"Windfall 从他的外套中散发出令人眼花缭乱的色彩。每个在 Windfall 30 英尺范围内且能看见他的生物必须成功通过 {@dc 23} 体质豁免检定，否则将获得 {@condition 震慑} 状态，直到 Windfall 的下一个回合开始。"
+						"Windfall emits an overwhelming array of colors from her coat. Each creature within 30 feet of Windfall that can see her must succeed on a {@dc 23} Constitution saving throw or have the {@condition stunned} condition until the start of Windfall's next turn."
 					]
 				}
 			],
@@ -6710,12 +6689,12 @@
 			"savingThrowForced": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,

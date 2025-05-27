@@ -50,12 +50,12 @@
 						{
 							"key": "system.traits.weaponProf.value",
 							"mode": "ADD",
-							"value": "短弓"
+							"value": "shortbow"
 						},
 						{
 							"key": "system.traits.weaponProf.value",
 							"mode": "ADD",
-							"value": "长弓"
+							"value": "longbow"
 						}
 					]
 				}
@@ -73,7 +73,7 @@
 					"transfer": true,
 					"changes": [
 						{
-							"key": "flags.dnd5e.武器致命一击阈值",
+							"key": "flags.dnd5e.weaponCriticalThreshold",
 							"mode": "OVERRIDE",
 							"value": 19
 						}
@@ -128,59 +128,107 @@
 			"name": "哈兹瑞恩",
 			"source": "HotDQ",
 			"system": {
-				"magicalBonus": "+1",
-				"activities": [
-					{
-						"type": "attack",
-						"attack.bonus": "+1",
-						"damage.parts": [
+				"magicalBonus": "+1"
+			},
+			"activities": [
+				{
+					"type": "attack",
+					"attack": {
+						"bonus": "+1"
+					},
+					"damage": {
+						"parts": [
 							{
-								"custom.enabled": true,
-								"custom.formula": "2d6+1",
+								"custom": {
+									"enabled": true,
+									"formula": "2d6+1"
+								},
 								"types": [
 									"斩击"
 								]
 							},
 							{
-								"custom.enabled": true,
-								"custom.formula": "1d6",
+								"custom": {
+									"enabled": true,
+									"formula": "1d6"
+								},
 								"types": [
 									"黯蚀"
 								]
 							}
 						]
 					}
-				]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Healer's Kit",
+			"name": "[!@ c326a1f4-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"type": "consumable",
+			"system": {
+				"uses.max": "10",
+				"type.value": "饰品"
 			},
+			"activities": [
+				{
+					"ENG_name": "Stabilize",
+					"name": "安定",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "[!@ c326add4-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Oversized Longbow",
 			"name": "超大长弓",
 			"source": "WDH",
-			"system": {
-				"activities": [
-					{
-						"type": "damage",
-						"damage.parts": [
+			"activities": [
+				{
+					"type": "damage",
+					"damage": {
+						"parts": [
 							{
-								"custom.enabled": true,
-								"custom.formula": "2",
+								"custom": {
+									"enabled": true,
+									"formula": "2"
+								},
 								"types": [
 									"d"
 								]
 							},
 							{
-								"custom.enabled": true,
-								"custom.formula": "p",
+								"custom": {
+									"enabled": true,
+									"formula": "p"
+								},
 								"types": [
 									"i"
 								]
 							}
 						]
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -203,7 +251,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",

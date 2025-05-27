@@ -340,17 +340,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Flameform (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "火焰形态（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "Flameform (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
 					"entries": [
-						"驯火者可以转变成一只{@creature 火元素}。它的游戏具体数值被元素生物的具体数值所替代，但驯火者保留其阵营、个性以及感知、感知和魅力得分，以及所有技能和{@quickref 豁免检定|PHB|2|1|豁免检定}熟练度。在这种形态下，驯火者不能施放法术。当驯火者在这种形态下降至0生命值、陷入{@condition 昏迷}状态或死亡时，它会恢复到其类人形态。它最多可以以火焰形态存在5小时，或者作为附赠动作恢复到其类人形态。"
+						"The firetamer can transform into a {@creature fire elemental}. Its game statistics are replaced by the statistics of the elemental, but the firetamer retains its alignment, personality, and Intelligence, Wisdom, and Charisma scores, and all of its skill and {@quickref saving throws|PHB|2|1|saving throw} proficiencies. While in this form, the firetamer can't cast spells. When the firetamer is reduced to 0 hit points, falls {@condition unconscious}, or dies in this form, it reverts to its humanoid form. It can remain in flameform for up to 5 hours or until it reverts to its humanoid form as a bonus action."
 					]
 				},
 				{
-					"ENG_name": "Druidic Recovery",
-					"name": "德鲁伊恢复",
+					"name": "Druidic Recovery",
 					"entries": [
-						"如果火焰操控者使用火焰形态处于{@creature 火元素}形态，它可以消耗一个法术位来恢复{@dice 1d8}点生命值，每消耗一级法术位恢复的生命值增加。"
+						"If the firetamer is in {@creature fire elemental} form using Flameform, it can expend a spell slot to regain {@dice 1d8} hit points per level of the spell slot expended."
 					]
 				}
 			],
@@ -719,7 +717,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1391,17 +1389,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Cunning Action",
-					"name": "灵巧动作",
+					"name": "Cunning Action",
 					"entries": [
-						"冠军采取{@action 疾走}、{@action 撤离}或{@action 躲藏}行动。"
+						"The Champion takes the {@action Dash}, {@action Disengage}, or {@action Hide} action."
 					]
 				},
 				{
-					"ENG_name": "Boots of Haste (1/Day)",
-					"name": "急速之靴（每日1次）",
+					"name": "Boots of Haste (1/Day)",
 					"entries": [
-						"冠军点击他的鞋跟，对自己施放{@spell 加速术}。当法术结束时，他不会感到昏昏欲睡。"
+						"The Champion clicks his heels together, casting {@spell haste} on himself. He doesn't suffer from lethargy when the spell ends."
 					]
 				}
 			],
@@ -1667,10 +1663,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Cunning Action",
-					"name": "灵巧动作",
+					"name": "Cunning Action",
 					"entries": [
-						"这个恶棍可以采取{@action 疾走}、{@action 撤离}或{@action 躲藏}行动。"
+						"The cutthroat can take the {@action Dash}, {@action Disengage}, or {@action Hide} action."
 					]
 				}
 			],
@@ -1785,10 +1780,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Second Wind (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "第二次呼吸（在进行{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "Second Wind (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
 					"entries": [
-						"执行者恢复12点生命值"
+						"The enforcer regains 12 hit points"
 					]
 				}
 			],
@@ -3348,21 +3342,20 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Rage (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "狂暴（在进行{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "Rage (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
 					"entries": [
-						"Grog进入一种持续到他{@condition 昏迷}或选择结束它（无需动作）的狂暴状态。在狂暴期间，Grog获得以下好处：",
+						"Grog enters a rage that lasts until he falls {@condition unconscious} or chooses to end it (no action required). While raging, Grog gains the following benefits:",
 						{
 							"type": "list",
 							"items": [
-								"他在力量检定和力量{@quickref 优势与劣势|PHB|2|0|优势}上具有{@quickref 豁免检定|PHB|2|1}。",
-								"当他用近战武器攻击命中目标时，他额外造成4点伤害（包含在攻击中）",
-								"他对钝击、穿刺和挥砍伤害具有抗性",
-								"他不能被{@condition 魅惑}或{@condition 恐慌}",
-								"他可以进行额外的近战武器攻击（包含在多重攻击行动中）"
+								"He has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Strength checks and Strength {@quickref saving throws|PHB|2|1}.",
+								"He deals an extra 4 damage when he hits a target with a melee weapon attack (included in attacks)",
+								"He has resistance to bludgeoning, piercing, and slashing damage",
+								"He can't be {@condition charmed} or {@condition frightened}",
+								"He can make an additional melee weapon attack (included in the Multiattack action)"
 							]
 						},
-						"当Grog的狂暴结束时，他获得一级{@condition 力竭}状态。"
+						"When Grog's rage ends, he gains one level of {@condition exhaustion}."
 					]
 				}
 			],
@@ -3564,17 +3557,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Cunning Action",
-					"name": "灵巧动作",
+					"name": "Cunning Action",
 					"entries": [
-						"Jourrael可以采取{@action 疾走}、{@action 撤离}或{@action 躲藏}行动。"
+						"Jourrael can take the {@action Dash}, {@action Disengage}, or {@action Hide} action."
 					]
 				},
 				{
-					"ENG_name": "Mirrored Form (Recharges after a {@quickref resting|PHB|2|0|Short Rest})",
-					"name": "镜像形态（在一次{@quickref 休息|PHB|2|0|短休}后重新充能）",
+					"name": "Mirrored Form (Recharges after a {@quickref resting|PHB|2|0|Short Rest})",
 					"entries": [
-						"Jourrael显现出三个虚幻的复制体，它们在她的空间中盘旋。每当一个生物用攻击瞄准Jourrael时，投掷一个{@dice d20}来看是否击中了一个复制体。如果有三个复制体，6或更高的点数就会击中一个复制体。有两个复制体时，8或更高的点数就会击中一个复制体。只有一个复制体时，11或更高的点数就会击中它。复制体的AC是17，如果被击中就会被摧毁。Jourrael可以作为一个附赠动作隐藏复制体。"
+						"Jourrael manifests three illusory duplicates that hover in her space. Each time a creature targets Jourrael with an attack, roll a {@dice d20} to see if it hits one of the duplicates. If there are three duplicates, a duplicate is targeted on a roll of 6 or higher. With two duplicates, a duplicate is targeted on a roll of 8 or higher. A single duplicate is targeted on a roll of 11 or higher. A duplicate's AC is 17, and it is destroyed if hit. Jourrael can hide the duplicates as a bonus action."
 					]
 				}
 			],
@@ -3840,17 +3831,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Wild Shape",
-					"name": "荒野形态",
+					"name": "Wild Shape",
 					"entries": [
-						"Keyleth使用魔法{@spell 变形术|PHB|变形术}变成一个挑战等级6或更低的野兽或元素生物。她的游戏具体数值被新形态的具体数值所替代，但她保留了自己的阵营、个性以及感知、感知和魅力得分。她还保留了所有的技能和{@quickref 豁免检定|PHB|2|1|豁免检定}熟练度，此外还获得了新形态的熟练度。她承担新形态的生命值和生命骰，并在她恢复到正常形态时回到她变形前的生命值数量。她穿戴或携带的任何装备被她的新形态吸收或携带（她选择）。她可以通过一个附赠动作恢复到她的类人形态，或者当她进入{@condition 昏迷}状态时恢复。她在野性形态下的攻击是魔法的，她可以在变形时施放法术。"
+						"Keyleth magically {@spell polymorph|phb|polymorphs} into a beast or elemental of CR 6 or lower. Her game statistics are replaced by the statistics of the new form, but she retains her alignment, personality, and Intelligence, Wisdom, and Charisma scores. She also retains all of her skill and {@quickref saving throws|PHB|2|1|saving throw} proficiencies, in addition to gaining those of the new form. She assumes the new form's hit points and Hit Dice and returns to the number of hit points she had when she reverts to her normal form. Any equipment she is wearing or carrying is absorbed or borne by her new form (her choice). She reverts to her humanoid form as a bonus action, or when she falls {@condition unconscious}. Her attacks in Wild Shape form are magical, and she can cast spells while transformed."
 					]
 				},
 				{
-					"ENG_name": "Healing Word (4th Level)",
-					"name": "治疗之言（4级法术）",
+					"name": "Healing Word (4th Level)",
 					"entries": [
-						"Keyleth施放了{@spell 治愈真言}，为自己或她60尺范围内能看到的另一个生物恢复了16点（{@dice 4d4 + 6}）生命值。"
+						"Keyleth casts {@spell healing word}, restoring 16 ({@dice 4d4 + 6}) hit points to herself or another creature she can see within 60 feet of her."
 					]
 				}
 			],
@@ -3886,7 +3875,7 @@
 				"体质",
 				"敏捷",
 				"力量",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4055,7 +4044,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"魅力",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5040,17 +5029,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Battle Priest (5/{@quickref resting|PHB|2|0|Long Rest})",
-					"name": "战斗祭司 (5/{@quickref 休息|PHB|2|0|长休})",
+					"name": "Battle Priest (5/{@quickref resting|PHB|2|0|Long Rest})",
 					"entries": [
-						"如果派克使用{@action 攻击}动作，她可以作为附赠动作进行一次武器攻击。"
+						"If Pike uses the {@action Attack} action, she can make one weapon attack as a bonus action."
 					]
 				},
 				{
-					"ENG_name": "{@spell Healing Word} (4th Level)",
-					"name": "{@spell 治愈真言}（4级法术）",
+					"name": "{@spell Healing Word} (4th Level)",
 					"entries": [
-						"派克施放{@spell 治愈真言}，恢复她自己或她能看到的60尺范围内的另一个生物16（{@dice 4d4 + 6}）点生命值。"
+						"Pike casts {@spell healing word}, restoring 16 ({@dice 4d4 + 6}) hit points to herself or another creature she can see within 60 feet of her."
 					]
 				}
 			],
@@ -5114,7 +5101,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5497,10 +5484,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Aggressive",
-					"name": "好斗",
+					"name": "Aggressive",
 					"entries": [
-						"屠戮领主可以向它能看到的敌对生物移动，距离最多为其移动速度。"
+						"The Slaughter Lord can move up to its speed toward a hostile creature it can see."
 					]
 				}
 			],
@@ -5573,7 +5559,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5663,10 +5649,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Nimble Escape",
-					"name": "迅捷逃逸",
+					"name": "Nimble Escape",
 					"entries": [
-						"刺刺侠可以使用{@action 撤离}或{@action 躲藏}动作。"
+						"The stabby-stabber can use the {@action Disengage} or {@action Hide} action."
 					]
 				}
 			],
@@ -5866,10 +5851,9 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Inescapable Sight",
-					"name": "逃不掉的视线",
+					"name": "Inescapable Sight",
 					"entries": [
-						"被选中者选择了一个受{@filter 一个4级或更低级别的幻术法术|spells|school=I|level=0;1;2;3;4}。被选中者选择的一个影响目标的幻象被驱散。"
+						"The Chosen selects a creature or object under the effect of {@filter an illusion spell of 4th level or lower|spells|school=I|level=0;1;2;3;4}. One illusion of the Chosen's choice affecting the target is dispelled."
 					]
 				}
 			],
@@ -5904,7 +5888,7 @@
 			"savingThrowForcedSpell": [
 				"魅力",
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6093,7 +6077,7 @@
 			],
 			"savingThrowForcedSpell": [
 				"体质",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6629,24 +6613,21 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Arcane Fist (8th Level)",
-					"name": "奥术之拳（8级）",
+					"name": "Arcane Fist (8th Level)",
 					"entries": [
-						"{@atk ms} {@hit 11} 命中，范围5尺，单一目标。{@h}45（{@damage 10d8}）点力场伤害。斯坎兰只能在专注于{@spell 毕格比之手||Arcane Hand}法术时使用此附加动作。"
+						"{@atk ms} {@hit 11} to hit, reach 5 ft., one target. {@h}45 ({@damage 10d8}) force damage. Scanlan can use this bonus action only while concentrating on the {@spell Bigby's Hand||arcane hand} spell."
 					]
 				},
 				{
-					"ENG_name": "Bardic Inspiration (6/{@quickref resting|PHB|2|0|Short Rest})",
-					"name": "诗人灵感 (6/{@quickref 休息|PHB|2|0|短休})",
+					"name": "Bardic Inspiration (6/{@quickref resting|PHB|2|0|Short Rest})",
 					"entries": [
-						"Scanlan 给予一个能听到他声音的，距离他60尺以内的生物一个吟游诗人灵感骰。在接下来的10分钟内，该生物可以掷一个{@dice d12}，并将掷出的数字加到它进行的一次属性检定、攻击掷骰或{@quickref 豁免检定|PHB|2|1|豁免检定}上。当 Scanlan 使用这个能力时，直到他的回合结束，他在用{@item 神话雕刻者（崇高状态）|TDCSR|神话刻录者}进行攻击掷骰时获得{@quickref 优势与劣势|PHB|2|0|优势}。"
+						"Scanlan grants a Bardic Inspiration die to one creature other than himself within 60 feet of him who can hear him. Once within the next 10 minutes, the creature can roll a {@dice d12} and add the number rolled to one ability check, attack roll, or {@quickref saving throws|PHB|2|1|saving throw} it makes.  When Scanlan uses this ability, he gains {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on attack rolls with {@item Mythcarver (Exalted)|TDCSR|Mythcarver} until the end of his turn."
 					]
 				},
 				{
-					"ENG_name": "{@spell Healing Word} (5th Level)",
-					"name": "{@spell 治愈真言} (5级)",
+					"name": "{@spell Healing Word} (5th Level)",
 					"entries": [
-						"Scanlan 施放了一个{@spell 治愈真言}，恢复自己或他能看到的60尺范围内的另一个生物18（{@dice 5d4 + 6}）点生命值。"
+						"Scanlan casts {@spell healing word}, restoring 18 ({@dice 5d4 + 6}) hit points to himself or another creature he can see within 60 feet of him."
 					]
 				}
 			],
@@ -6697,7 +6678,7 @@
 				"魅力",
 				"体质",
 				"敏捷",
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7258,17 +7239,15 @@
 			],
 			"bonus": [
 				{
-					"ENG_name": "Cunning Action",
-					"name": "灵巧动作",
+					"name": "Cunning Action",
 					"entries": [
-						"Vex 采取了{@action 疾走}、{@action 撤离}或{@action 躲藏}行动。"
+						"Vex takes the {@action Dash}, {@action Disengage}, or {@action Hide} action."
 					]
 				},
 				{
-					"ENG_name": "Hunter's Mark",
-					"name": "猎人印记",
+					"name": "Hunter's Mark",
 					"entries": [
-						"Vex施放{@spell 猎人印记}来标记她能在90尺内看到的生物。在接下来的1小时内，Vex的武器攻击对被标记的生物额外造成{@damage 1d6}伤害，并且在用感知（{@skill 察觉}）和感知（{@skill 生存}）检定来找到它时，她拥有{@quickref 优势与劣势|PHB|2|0|优势}。"
+						"Vex casts {@spell hunter's mark} to mark a creature she can see within 90 feet of her. For 1 hour, Vex's weapon attacks deal an extra {@damage 1d6} damage to the marked creature, and she has {@quickref Advantage and Disadvantage|PHB|2|0|advantage} on Wisdom ({@skill Perception}) and Wisdom ({@skill Survival}) checks made to find it."
 					]
 				}
 			],
@@ -7486,7 +7465,7 @@
 				"昏迷"
 			],
 			"savingThrowForcedSpell": [
-				"睿智"
+				"感知"
 			],
 			"hasToken": true,
 			"hasFluff": true,

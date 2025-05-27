@@ -30,6 +30,7 @@
 				{
 					"ENG_name": "Carapace",
 					"name": "甲壳",
+					"disabled": true,
 					"transfer": true,
 					"changes": [
 						{
@@ -37,8 +38,7 @@
 							"mode": "ADD",
 							"value": "+ 1"
 						}
-					],
-					"disabled": true
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -58,7 +58,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -78,25 +78,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -107,25 +117,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -136,25 +156,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -165,25 +195,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -194,25 +234,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -223,25 +273,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -252,25 +312,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -281,25 +351,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -310,25 +390,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -339,25 +429,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -368,25 +468,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -397,25 +507,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -426,25 +546,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -455,25 +585,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -484,25 +624,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -513,25 +663,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -542,25 +702,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -571,25 +741,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -600,25 +780,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -629,25 +819,35 @@
 			"raceSource": "EGW",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -658,24 +858,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -686,24 +896,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -714,24 +934,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -742,24 +972,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -770,24 +1010,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -798,24 +1048,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -826,24 +1086,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -854,24 +1124,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -882,24 +1162,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -910,24 +1200,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -938,24 +1238,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -966,24 +1276,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -994,24 +1314,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1022,24 +1352,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1050,24 +1390,34 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "特殊",
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "special"
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1078,25 +1428,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1107,25 +1467,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1136,25 +1506,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1165,25 +1545,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1194,25 +1584,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "30",
-						"target.template.units": "ft",
-						"target.template.type": "线状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "30",
+							"units": "ft",
+							"type": "line"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1223,25 +1623,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1252,25 +1662,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1281,25 +1701,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"dex"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1310,25 +1740,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1339,25 +1779,35 @@
 			"raceSource": "PHB",
 			"system": {
 				"range.units": "self",
-				"duration.units": "立即",
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1,
-						"target.template.size": "15",
-						"target.template.units": "ft",
-						"target.template.type": "锥状"
+				"duration.units": "立即"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					},
-					{
-						"type": "save",
-						"save.ability": [
+					"target": {
+						"template": {
+							"size": "15",
+							"units": "ft",
+							"type": "cone"
+						}
+					}
+				},
+				{
+					"type": "save",
+					"save": {
+						"ability": [
 							"con"
 						],
-						"save.dc.calculation": "con"
+						"dc": {
+							"calculation": "con"
+						}
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1397,7 +1847,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -1467,22 +1917,24 @@
 			"source": "MPMM",
 			"raceName": "阿斯莫",
 			"raceSource": "MPMM",
-			"system": {
-				"activities": [
-					{
-						"type": "damage",
-						"damage.parts": [
+			"activities": [
+				{
+					"type": "damage",
+					"damage": {
+						"parts": [
 							{
-								"custom.enabled": true,
-								"custom.formula": "(@attributes.prof)d4",
+								"custom": {
+									"enabled": true,
+									"formula": "(@attributes.prof)d4"
+								},
 								"types": [
 									"治疗"
 								]
 							}
 						]
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1491,22 +1943,24 @@
 			"source": "VGM",
 			"raceName": "阿斯莫",
 			"raceSource": "VGM",
-			"system": {
-				"activities": [
-					{
-						"type": "damage",
-						"damage.parts": [
+			"activities": [
+				{
+					"type": "damage",
+					"damage": {
+						"parts": [
 							{
-								"custom.enabled": true,
-								"custom.formula": "@details.level",
+								"custom": {
+									"enabled": true,
+									"formula": "@details.level"
+								},
 								"types": [
 									"治疗"
 								]
 							}
 						]
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1515,15 +1969,15 @@
 			"source": "GGR",
 			"raceName": "人马",
 			"raceSource": "GGR",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1607,7 +2061,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -1634,7 +2088,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -1661,7 +2115,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -1688,7 +2142,7 @@
 						{
 							"key": "system.attributes.ac.calc",
 							"mode": "OVERRIDE",
-							"value": "自定义"
+							"value": "custom"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -1706,15 +2160,15 @@
 			"source": "VGM",
 			"raceName": "守护者阿斯莫",
 			"raceSource": "VGM",
-			"system": {
-				"activities": [
-					{
-						"type": "utility",
-						"activation.type": "动作",
-						"activation.value": 1
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"value": 1
 					}
-				]
-			},
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1727,6 +2181,7 @@
 				{
 					"ENG_name": "Natural Armor",
 					"name": "天生护甲",
+					"disabled": true,
 					"transfer": true,
 					"changes": [
 						{
@@ -1734,8 +2189,7 @@
 							"mode": "ADD",
 							"value": "+ 4"
 						}
-					],
-					"disabled": true
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -1750,6 +2204,7 @@
 				{
 					"ENG_name": "Natural Armor",
 					"name": "天生护甲",
+					"disabled": true,
 					"transfer": true,
 					"changes": [
 						{
@@ -1757,8 +2212,7 @@
 							"mode": "ADD",
 							"value": "+ 1"
 						}
-					],
-					"disabled": true
+					]
 				}
 			],
 			"migrationVersion": 3

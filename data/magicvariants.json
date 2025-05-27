@@ -60,7 +60,8 @@
 				"namePrefix": "+1 ",
 				"source": "XDMG",
 				"page": 228,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "uncommon",
 				"bonusWeapon": "+1",
 				"entries": [
@@ -118,7 +119,8 @@
 				"namePrefix": "+1 ",
 				"source": "XDMG",
 				"page": 230,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"bonusAc": "+1",
 				"entries": [
@@ -180,7 +182,8 @@
 				"namePrefix": "+1 ",
 				"source": "XDMG",
 				"page": 303,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "uncommon",
 				"bonusAc": "+1",
 				"entries": [
@@ -237,7 +240,8 @@
 				"namePrefix": "+1 ",
 				"source": "XDMG",
 				"page": 324,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "uncommon",
 				"bonusWeapon": "+1",
 				"entries": [
@@ -329,7 +333,8 @@
 				"namePrefix": "+2 ",
 				"source": "XDMG",
 				"page": 228,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"bonusWeapon": "+2",
 				"entries": [
@@ -387,7 +392,8 @@
 				"namePrefix": "+2 ",
 				"source": "XDMG",
 				"page": 230,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"bonusAc": "+2",
 				"entries": [
@@ -449,7 +455,8 @@
 				"namePrefix": "+2 ",
 				"source": "XDMG",
 				"page": 303,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"bonusAc": "+2",
 				"entries": [
@@ -506,7 +513,8 @@
 				"namePrefix": "+2 ",
 				"source": "XDMG",
 				"page": 324,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"bonusWeapon": "+2",
 				"entries": [
@@ -598,7 +606,8 @@
 				"namePrefix": "+3 ",
 				"source": "XDMG",
 				"page": 228,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"bonusWeapon": "+3",
 				"entries": [
@@ -656,7 +665,8 @@
 				"namePrefix": "+3 ",
 				"source": "XDMG",
 				"page": 230,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"bonusAc": "+3",
 				"entries": [
@@ -718,7 +728,8 @@
 				"namePrefix": "+3 ",
 				"source": "XDMG",
 				"page": 303,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"bonusAc": "+3",
 				"entries": [
@@ -775,7 +786,8 @@
 				"namePrefix": "+3 ",
 				"source": "XDMG",
 				"page": 324,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"bonusWeapon": "+3",
 				"entries": [
@@ -939,7 +951,8 @@
 				"namePrefix": "精金",
 				"source": "XDMG",
 				"page": 227,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "uncommon",
 				"entries": [
 					"这件武器或弹药由精金制成，精金是现存最坚硬的物质之一。每当这件武器或弹药击中一个物体时，该攻击将造成{@variantrule 重击|XPHB}。"
@@ -1026,6 +1039,8 @@
 				"nameSuffix": " 杀戮之",
 				"source": "XDMG",
 				"page": 228,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"entries": [
 					"这种魔法弹药旨在击杀特定类型的生物，由DM选择或通过下表随机决定。如果该类型的生物受到弹药的伤害，则该生物进行一次{@dc 17}体质豁免检定，若豁免失败则额外承受{@damage 6d10}力场伤害，若豁免成功则额外承受一半的力场伤害。",
@@ -1140,9 +1155,13 @@
 					"穿戴这件盔甲时，你可以使用你的反应来使自己在对法术的豁免检定中获得优势。一旦使用了这个特性，直到下一个黎明之前都不能再次使用。",
 					"此外，当你穿着这件盔甲时，你可以使用它来施放{@spell 反魔法场}法术，无需任何法术材料。一旦这个属性被使用，直到下一个黎明它才能再次使用。"
 				],
-				"attachedSpells": [
-					"反魔法场"
-				]
+				"attachedSpells": {
+					"daily": {
+						"1e": [
+							"反魔法场"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -1230,7 +1249,8 @@
 				"nameSuffix": " 酸性抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"强酸"
 				],
@@ -1291,7 +1311,8 @@
 				"nameSuffix": " 寒冷抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"冷冻"
 				],
@@ -1352,7 +1373,8 @@
 				"nameSuffix": " 火焰抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"火焰"
 				],
@@ -1413,7 +1435,8 @@
 				"nameSuffix": " 力量抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"力场"
 				],
@@ -1558,7 +1581,8 @@
 				"nameSuffix": " 抗电属性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"闪电"
 				],
@@ -1619,7 +1643,8 @@
 				"nameSuffix": " 死灵抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"黯蚀"
 				],
@@ -1680,7 +1705,8 @@
 				"nameSuffix": " 毒素抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"毒素"
 				],
@@ -1741,7 +1767,8 @@
 				"nameSuffix": " 心灵抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"心灵"
 				],
@@ -1802,7 +1829,8 @@
 				"nameSuffix": "的辐射抗性",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"光耀"
 				],
@@ -1844,9 +1872,13 @@
 						]
 					}
 				],
-				"attachedSpells": [
-					"希望信标"
-				]
+				"attachedSpells": {
+					"daily": {
+						"1e": [
+							"希望信标"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -1929,7 +1961,8 @@
 				"nameSuffix": " 雷霆抗性之",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"雷鸣"
 				],
@@ -1960,7 +1993,8 @@
 				"nameSuffix": "弱点（钝击）",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"钝击"
 				],
@@ -2003,7 +2037,8 @@
 				"nameSuffix": "脆弱 (穿刺)",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"穿刺"
 				],
@@ -2046,7 +2081,8 @@
 				"nameSuffix": "易伤（挥砍）",
 				"source": "XDMG",
 				"page": 231,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"resist": [
 					"斩击"
 				],
@@ -2107,10 +2143,16 @@
 					"这件护甲有5次充能。穿戴时，你可以使用一个附赠动作消耗1次或多次充能，从护甲中施放下列法术之一，目标为自己：{@spell 跳跃术}（1次充能）或{@spell 浮空术}（2次充能）。",
 					"这件盔甲在黎明时分每天恢复{@dice 1d4 + 1}点已消耗的充能。"
 				],
-				"attachedSpells": [
-					"跳跃术",
-					"浮空术"
-				]
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"跳跃术"
+						],
+						"2": [
+							"浮空术"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -2272,7 +2314,8 @@
 				"namePrefix": "狂战士",
 				"source": "XDMG",
 				"page": 236,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"reqAttune": true,
 				"curse": true,
@@ -2651,7 +2694,8 @@
 				"namePrefix": "舞空",
 				"source": "XDMG",
 				"page": 248,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
@@ -2712,6 +2756,8 @@
 				"namePrefix": "守卫者",
 				"source": "XDMG",
 				"page": 252,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"reqAttune": true,
 				"bonusWeapon": "+3",
@@ -2769,6 +2815,8 @@
 				"namePrefix": "恶魔",
 				"source": "XDMG",
 				"page": 252,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"reqAttune": true,
 				"curse": true,
@@ -2907,6 +2955,8 @@
 				"namePrefix": "屠龙者",
 				"source": "XDMG",
 				"page": 254,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"bonusWeapon": "+1",
 				"entries": [
@@ -3156,7 +3206,8 @@
 				"namePrefix": "矮人",
 				"source": "XDMG",
 				"page": 255,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"bonusAc": "+2",
 				"entries": [
@@ -3188,7 +3239,7 @@
 				"namePrefix": "艾弗利提",
 				"source": "XDMG",
 				"page": 257,
-				"freeRules2024": true,
+				"basicRules2024": true,
 				"immune": [
 					"火焰"
 				],
@@ -3224,7 +3275,8 @@
 				"namePrefix": "精灵",
 				"source": "XDMG",
 				"page": 257,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"grantsProficiency": true,
 				"bonusAc": "+1",
@@ -3257,7 +3309,8 @@
 				"namePrefix": "能量",
 				"source": "XDMG",
 				"page": 257,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"otherSources": [
 					{
 						"source": "UtHftLH"
@@ -3915,9 +3968,13 @@
 					"穿戴这件盔甲时，你在尝试避免或结束自身受到的{@condition 魅惑}状态的豁免检定上有优势。",
 					"这件盔甲拥有3次充能。你可以用一个动作消耗一次充能以从这件盔甲施放 {@spell 强迫术} 法术（豁免 {@dc 15}）。盔甲在每天黎明时恢复 {@dice 1d3} 已消耗的充能。"
 				],
-				"attachedSpells": [
-					"强迫术"
-				]
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"强迫术"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -3969,7 +4026,8 @@
 				"namePrefix": "火焰舌",
 				"source": "XDMG",
 				"page": 263,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"reqAttune": true,
 				"entries": [
@@ -4133,7 +4191,8 @@
 				"namePrefix": "霜之印记",
 				"source": "XDMG",
 				"page": 263,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
@@ -4232,7 +4291,8 @@
 				"namePrefix": "巨人杀手",
 				"source": "XDMG",
 				"page": 264,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"bonusWeapon": "+1",
 				"entries": [
@@ -4311,9 +4371,13 @@
 					"当你穿戴这副护甲时，你在避免或解除自身恐惧状态的豁免检定中具有优势。",
 					"这件护甲有 3 点充能。你可以消耗 1 点充能来施放 {@spell 安定心神} 法术（豁免 {@dc 15}）。这件护甲每天黎明时恢复 {@dice 1d3} 点已消耗的充能。"
 				],
-				"attachedSpells": [
-					"安定心神"
-				]
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"安定心神"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -4336,6 +4400,8 @@
 				"nameSuffix": "雷击",
 				"source": "XDMG",
 				"page": 265,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"reqAttune": true,
 				"ability": {
@@ -4488,6 +4554,8 @@
 				"namePrefix": "圣洁复仇者",
 				"source": "XDMG",
 				"page": 269,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"reqAttune": "由圣武士",
 				"reqAttuneTags": [
@@ -4898,9 +4966,13 @@
 						]
 					}
 				],
-				"attachedSpells": [
-					"祈愿术"
-				],
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"祈愿术"
+						]
+					}
+				},
 				"lootTables": [
 					"魔法物品表I"
 				]
@@ -4952,6 +5024,8 @@
 				"namePrefix": "当该武器在你身上时，你还获得{=bonusSavingThrow}豁免检定的加成。",
 				"source": "XDMG",
 				"page": 275,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"reqAttune": true,
 				"bonusWeapon": "+1",
@@ -4976,9 +5050,13 @@
 						]
 					}
 				],
-				"attachedSpells": [
-					"祈愿术|XPHB"
-				],
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"祈愿术|XPHB"
+						]
+					}
+				},
 				"lootTables": [
 					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|XDMG"
 				]
@@ -5211,7 +5289,8 @@
 				"namePrefix": "秘银",
 				"source": "XDMG",
 				"page": 279,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "uncommon",
 				"entries": [
 					"秘银是一种轻质、柔软的金属。秘银链甲或胸甲可以穿在普通衣服下面。",
@@ -5518,7 +5597,8 @@
 				"namePrefix": "九转夺命",
 				"source": "XDMG",
 				"page": 281,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"reqAttune": true,
 				"bonusWeapon": "+2",
@@ -5560,7 +5640,8 @@
 				"namePrefix": "语低语道：\"愿敌人迅速败亡。誓言",
 				"source": "XDMG",
 				"page": 282,
-				"freeRules2024": true,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
@@ -5612,9 +5693,13 @@
 					"这件优雅的武器上装饰着跳跃的海豚和漂浮的水母的雕刻。使用这把魔法武器进行攻击和伤害骰时，你获得{=bonusWeapon}的加值，并且在使用这把武器在水下时，你忽略{@quickref 水下战斗|PHB|3|0|使用这把武器在水下进行远程武器攻击时的正常惩罚}。双手将武器举在你面前时，你的游泳速度为30尺。",
 					"此外，当你持有这把武器时，你可以使用一个动作来施放{@spell 水中呼吸}法术。一旦使用了这个属性，直到下一个黎明之前它不能再次使用。"
 				],
-				"attachedSpells": [
-					"水中呼吸"
-				]
+				"attachedSpells": {
+					"daily": {
+						"1e": [
+							"水中呼吸"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -5913,14 +5998,20 @@
 				"nameSuffix": "的空灵",
 				"source": "XDMG",
 				"page": 286,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"reqAttune": true,
 				"entries": [
 					"当你穿戴这件盔甲时，你可以进行一次{@action 魔法|XPHB}动作并使用命令词以获得{@spell 以太化|XPHB}法术的效果。如果你脱下盔甲或进行一次{@action 魔法|XPHB}动作来重复命令词，该法术将立即结束。这件盔甲的这一属性直到次日黎明前无法再次使用。"
 				],
-				"attachedSpells": [
-					"以太化|XPHB"
-				],
+				"attachedSpells": {
+					"daily": {
+						"1e": [
+							"以太化|XPHB"
+						]
+					}
+				},
 				"lootTables": [
 					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|XDMG"
 				]
@@ -6559,6 +6650,8 @@
 				"nameSuffix": "生命吸取",
 				"source": "XDMG",
 				"page": 314,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"reqAttune": true,
 				"entries": [
@@ -6679,6 +6772,8 @@
 				"nameSuffix": "锋锐",
 				"source": "XDMG",
 				"page": 314,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "very rare",
 				"reqAttune": true,
 				"entries": [
@@ -6888,6 +6983,8 @@
 				"nameSuffix": "创伤",
 				"source": "XDMG",
 				"page": 314,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"reqAttune": true,
 				"entries": [
@@ -6951,9 +7048,13 @@
 						]
 					}
 				],
-				"attachedSpells": [
-					"传讯术|XPHB"
-				],
+				"attachedSpells": {
+					"daily": {
+						"1e": [
+							"传讯术|XPHB"
+						]
+					}
+				},
 				"lootTables": [
 					"军备 - 常见|XDMG",
 					"法器 - 普通|XDMG"
@@ -7043,6 +7144,8 @@
 				"namePrefix": "恶毒",
 				"source": "XDMG",
 				"page": 318,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "rare",
 				"entries": [
 					"这件魔法武器对其命中的任何生物造成额外的{@damage 2d6}伤害。这个额外伤害的类型与武器的常规伤害相同。"
@@ -7116,6 +7219,8 @@
 				"namePrefix": "斩首",
 				"source": "XDMG",
 				"page": 318,
+				"srd52": true,
+				"basicRules2024": true,
 				"rarity": "legendary",
 				"reqAttune": true,
 				"bonusWeapon": "+3",
@@ -7292,13 +7397,23 @@
 						]
 					}
 				],
-				"attachedSpells": [
-					"命令术",
-					"诚实之域",
-					"强迫术",
-					"放逐术",
-					"支配人类"
-				]
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"命令术"
+						],
+						"2": [
+							"诚实之域"
+						],
+						"4": [
+							"放逐术",
+							"强迫术"
+						],
+						"5": [
+							"支配人类"
+						]
+					}
+				}
 			}
 		},
 		{
@@ -7435,9 +7550,13 @@
 						]
 					}
 				],
-				"attachedSpells": [
-					"风墙术"
-				]
+				"attachedSpells": {
+					"daily": {
+						"1e": [
+							"风墙术"
+						]
+					}
+				}
 			}
 		}
 	],

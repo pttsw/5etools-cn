@@ -1,6 +1,35 @@
 {
 	"feat": [
 		{
+			"ENG_name": "Actor",
+			"name": "[!@ c320e368-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Mimicry",
+					"name": "[!@ c320e9b2-39fe-11f0-bae2-0242ac110004]",
+					"type": "check",
+					"activation": {
+						"type": ""
+					},
+					"target": {
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"check": {
+						"associated": [
+							"INS"
+						],
+						"dc": {
+							"calculation": "[!@ c320f2fe-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Alert",
 			"name": "警觉",
 			"source": "PHB",
@@ -12,6 +41,813 @@
 							"key": "flags.dnd5e.initiativeAlert",
 							"mode": "OVERRIDE",
 							"value": true
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Alert",
+			"name": "警觉",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "flags.dnd5e.initiativeAlert",
+							"mode": "ADD",
+							"value": true
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Archery",
+			"name": "[!@ c320fe2a-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"ENG_name": "Archery Style",
+					"name": "箭术风格",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.bonuses.rwak.attack",
+							"mode": "ADD",
+							"value": 2
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Blind Fighting",
+			"name": "[!@ c321069a-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.senses.blindsight",
+							"mode": "UPGRADE",
+							"value": 10
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Dimensional Travel",
+			"name": "[!@ c3210b5e-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Teleport",
+					"name": "传送术",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "在你进行攻击动作后立即"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "space",
+							"special": "未占据空间"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "30"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Energy Resistance",
+			"name": "能量抗性赐福",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Choose Resistances",
+					"name": "选择抗性",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+					"activation": {
+						"type": "",
+						"condition": "每当你完成一次长休"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "boonOfEnergyResi"
+						},
+						{
+							"foundryId": "boonOfEnergyRes1"
+						},
+						{
+							"foundryId": "boonOfEnergyRes2"
+						},
+						{
+							"foundryId": "boonOfEnergyRes3"
+						},
+						{
+							"foundryId": "boonOfEnergyRes4"
+						},
+						{
+							"foundryId": "boonOfEnergyRes5"
+						},
+						{
+							"foundryId": "boonOfEnergyRes6"
+						},
+						{
+							"foundryId": "boonOfEnergyRes7"
+						},
+						{
+							"foundryId": "boonOfEnergyRes8"
+						}
+					]
+				},
+				{
+					"ENG_name": "Energy Redirection",
+					"name": "能量重定向",
+					"type": "save",
+					"activation": {
+						"type": "reaction"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "不处于全身掩护后方"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 12,
+								"bonus": "@abilities.con.mod",
+								"types": [
+									"[!@ c32132e6-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3213660-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32138c2-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3213bec-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c321477c-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3214b0a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3214d8a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32150dc-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215352-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32156b8-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215a0a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215d5c-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3216068-39fe-11f0-bae2-0242ac110004]"
+								]
+							}
+						],
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"[!@ c32165cc-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c321693c-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Acid: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyResi",
+					"name": "酸蚀：能量抗性恩赐",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "acid"
+						}
+					]
+				},
+				{
+					"ENG_name": "Cold: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes1",
+					"name": "冷冻: 能量抗性恩惠",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "cold"
+						}
+					]
+				},
+				{
+					"ENG_name": "Fire: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes2",
+					"name": "火焰：能量抗性恩赐",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "fire"
+						}
+					]
+				},
+				{
+					"ENG_name": "Lightning: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes3",
+					"name": "闪电：能量抗性恩惠",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "lightning"
+						}
+					]
+				},
+				{
+					"ENG_name": "Necrotic: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes4",
+					"name": "黯蚀：能量抗性恩惠",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "necrotic"
+						}
+					]
+				},
+				{
+					"ENG_name": "Poison: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes5",
+					"name": "毒素：能量抗性恩赐",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "poison"
+						}
+					]
+				},
+				{
+					"ENG_name": "Psychic: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes6",
+					"name": "灵能：能量抗性恩惠",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "psychic"
+						}
+					]
+				},
+				{
+					"ENG_name": "Radiant: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes7",
+					"name": "光辉：能量抗性恩惠",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "radiant"
+						}
+					]
+				},
+				{
+					"ENG_name": "Thunder: Boon of Energy Resistance",
+					"foundryId": "boonOfEnergyRes8",
+					"name": "雷鸣：能量抗性恩赐",
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "thunder"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Fate",
+			"name": "[!@ c321970e-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Improve Fate",
+					"name": "改善命运",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你或60尺内的另一生物在D20检定中成功或失败时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"roll": {
+						"ENG_name": "Bonus/Penalty",
+						"name": "加值/减值",
+						"formula": "2d4"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Fortitude",
+			"name": "[!@ c321a988-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Fortify Health",
+					"name": "强化生命值",
+					"type": "heal",
+					"activation": {
+						"type": "",
+						"condition": "每当你恢复生命值时"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@abilities.con.mod"
+					}
+				}
+			],
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.hp.bonuses.overall",
+							"mode": "ADD",
+							"value": 40
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Recovery",
+			"name": "[!@ c321ba72-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Last Stand",
+					"name": "最后抵抗",
+					"type": "heal",
+					"activation": {
+						"type": "",
+						"condition": "当你生命值将降至0点时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "(floor((@attributes.hp.max / 2)))"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				},
+				{
+					"ENG_name": "Recover Vitality",
+					"name": "恢复活力",
+					"type": "heal",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true,
+							"max": "10"
+						},
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"scaling": {
+									"mode": "amount"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "(@scaling)d10"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Speed",
+			"name": "[!@ c321d21e-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.movement.walk",
+							"mode": "ADD",
+							"value": 30
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of Spell Recall",
+			"name": "法术回忆恩赐",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Free Cast Roll",
+					"name": "自由施法骰",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "每当你使用1至4环法术位施放法术时"
+					},
+					"roll": {
+						"ENG_name": "Roll",
+						"name": "掷骰",
+						"formula": "1d4"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Boon of the Night Spirit",
+			"name": "[!@ c321e574-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Merge with the Shadows",
+					"name": "与暗影融合",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "boonOfTheNightSp"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"disabled": true,
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "acid"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "bludgeoning"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "cold"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "fire"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "force"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "lightning"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "necrotic"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "piercing"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "poison"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "slashing"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "thunder"
+						}
+					]
+				},
+				{
+					"ENG_name": "Merged with Shadows",
+					"foundryId": "boonOfTheNightSp",
+					"name": "与暗影融合",
+					"statuses": [
+						"隐形"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Charger",
+			"name": "[!@ c321f730-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Charge Attack",
+					"name": "冲锋攻击",
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "如果你在近战攻击命中前直线移动至少 10 尺"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"types": [
+									"[!@ c32132e6-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3213660-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32138c2-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3213bec-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c321477c-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3214b0a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3214d8a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32150dc-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215352-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32156b8-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215a0a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215d5c-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3216068-39fe-11f0-bae2-0242ac110004]"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Chef",
+			"name": "[!@ c3221b34-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"ENG_name": "Replenishing Meal",
+					"name": "补充餐",
+					"type": "heal",
+					"activation": {
+						"type": "",
+						"condition": "作为短休的一部分"
+					},
+					"target": {
+						"affects": {
+							"count": "4 + @熟练",
+							"type": "creature",
+							"special": "谁吃了食物"
+						}
+					},
+					"healing": {
+						"number": 1,
+						"denomination": 8,
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						}
+					}
+				},
+				{
+					"ENG_name": "Bolstering Treats",
+					"name": "强化治疗",
+					"type": "heal",
+					"activation": {
+						"type": "hour",
+						"value": 1
+					},
+					"duration": {
+						"units": "小时",
+						"value": "8"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-(@prof)"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"healing": {
+						"types": [
+							"临时生命值"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@prof"
+					}
+				},
+				{
+					"ENG_name": "Eat Treat",
+					"name": "吃零食",
+					"type": "utility",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Defense",
+			"name": "[!@ c32247b2-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Defensive Duelist",
+			"name": "[!@ c3224c6c-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Parry",
+					"name": "[!@ c3225040-39fe-11f0-bae2-0242ac110004]",
+					"type": "utility",
+					"activation": {
+						"type": "reaction"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "defensiveDuelist"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "defensiveDuelist",
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": "@prof"
 						}
 					]
 				}
@@ -39,6 +875,100 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Dueling",
+			"name": "[!@ c3225c66-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.bonuses.mwak.damage",
+							"mode": "ADD",
+							"value": 2
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Durable",
+			"name": "[!@ c32260e4-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Speedy Recovery (Largest Die)",
+					"name": "快速恢复（最大骰）",
+					"type": "heal",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最大"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@attributes.hd.largestAvailable"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				},
+				{
+					"ENG_name": "Speedy Recovery (Smallest Die)",
+					"name": "快速恢复（最小骰）",
+					"type": "heal",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最小"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@attributes.hd.smallestAvailable"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Elven Accuracy",
 			"name": "精灵之准",
 			"source": "XGE",
@@ -57,6 +987,310 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Great Weapon Master",
+			"name": "[!@ c32280ba-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Heavy Weapon Damage",
+					"name": "重型武器伤害",
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "当你使用具有重型属性的武器在你的回合作为攻击动作的一部分命中一个生物时"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"bonus": "@prof",
+								"types": [
+									"[!@ c32132e6-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3213660-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32138c2-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3213bec-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c321477c-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3214b0a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3214d8a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32150dc-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215352-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c32156b8-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215a0a-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3215d5c-39fe-11f0-bae2-0242ac110004]",
+									"[!@ c3216068-39fe-11f0-bae2-0242ac110004]"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Healer",
+			"name": "[!@ c322a5f4-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Heal d6",
+					"name": "治疗d6",
+					"type": "heal",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "1d6r1 + @prof"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				},
+				{
+					"ENG_name": "Heal d8",
+					"name": "治疗d8",
+					"type": "heal",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"healing": {
+						"number": 1,
+						"denomination": 8,
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "1d8r1 + @prof"
+						},
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@prof"
+					}
+				},
+				{
+					"ENG_name": "Heal d10",
+					"name": "治疗d10",
+					"type": "heal",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"healing": {
+						"number": 1,
+						"denomination": 10,
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "1d10r1 + @prof"
+						},
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@prof"
+					}
+				},
+				{
+					"ENG_name": "Heal d12",
+					"name": "治疗骰d12",
+					"type": "heal",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"healing": {
+						"number": 1,
+						"denomination": 12,
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "1d12r1 + @prof"
+						},
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@prof"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Heavy Armor Master",
+			"name": "[!@ c322d038-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.traits.dm.amount.bludgeoning",
+							"mode": "ADD",
+							"value": "-(@prof)"
+						},
+						{
+							"key": "system.traits.dm.amount.piercing",
+							"mode": "ADD",
+							"value": "-(@prof)"
+						},
+						{
+							"key": "system.traits.dm.amount.slashing",
+							"mode": "ADD",
+							"value": "-(@prof)"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Inspiring Leader",
+			"name": "[!@ c322d5b0-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Inspire with Wisdom",
+					"name": "以智慧感召",
+					"type": "heal",
+					"activation": {
+						"type": "special",
+						"condition": "当你完成一次短休或长休时"
+					},
+					"target": {
+						"affects": {
+							"count": "6",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "30"
+					},
+					"healing": {
+						"types": [
+							"临时生命值"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@details.level + @abilities.wis.mod"
+					}
+				},
+				{
+					"ENG_name": "Inspire with Charisma",
+					"name": "以魅力鼓舞",
+					"type": "heal",
+					"activation": {
+						"type": "special",
+						"condition": "当你完成一次短休或长休时"
+					},
+					"target": {
+						"affects": {
+							"count": "6",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"healing": {
+						"types": [
+							"临时生命值"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@details.level + @abilities.cha.mod"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Interception",
+			"name": "[!@ c322f112-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Intercept",
+					"name": "拦截",
+					"type": "heal",
+					"activation": {
+						"type": "reaction",
+						"condition": "当一个你能看到的生物使用攻击掷骰命中你5尺范围内的另一个生物时"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"healing": {
+						"number": 1,
+						"denomination": 10,
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@prof"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Lucky",
 			"name": "幸运",
 			"source": "PHB",
@@ -67,16 +1301,127 @@
 						"period": "lr",
 						"type": "recoverAll"
 					}
-				],
-				"activities": [
+				]
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "none",
+						"value": 0
+					},
+					"roll": {
+						"formula": "1d20"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Lucky",
+			"name": "幸运",
+			"source": "XPHB",
+			"system": {
+				"uses.max": "@prof",
+				"uses.recovery": [
 					{
-						"type": "utility",
-						"activation.type": "none",
-						"activation.value": 0,
-						"roll.formula": "1d20"
+						"period": "lr",
+						"type": "recoverAll"
 					}
 				]
 			},
+			"activities": [
+				{
+					"ENG_name": "Advantage",
+					"name": "[!@ c3230d46-39fe-11f0-bae2-0242ac110004]",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/dice/d20.svg",
+					"activation": {
+						"type": "",
+						"condition": "当你为 D20 检定投掷 d20 骰子时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				},
+				{
+					"ENG_name": "Disadvantage",
+					"name": "[!@ c3231764-39fe-11f0-bae2-0242ac110004]",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/dice/d20.svg",
+					"activation": {
+						"type": "",
+						"condition": "当一个生物对你进行攻击检定并投掷d20时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Mage Slayer",
+			"name": "[!@ c3232240-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Guard Mind",
+					"name": "守御心灵",
+					"type": "utility",
+					"activation": {
+						"type": "",
+						"condition": "当你未能通过智力、感知或魅力豁免检定"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Medium Armor Master",
+			"name": "[!@ c32330aa-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.bonus",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -111,6 +1456,445 @@
 							"key": "flags.dnd5e.observantFeat",
 							"mode": "OVERRIDE",
 							"value": true
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Poisoner",
+			"name": "[!@ c32340c2-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"ENG_name": "Create Poison Doses",
+					"name": "制造毒素剂量",
+					"type": "utility",
+					"activation": {
+						"type": "hour",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-@prof"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Apply Poison",
+					"name": "涂抹毒药",
+					"type": "enchant",
+					"img": "systems/dnd5e/icons/svg/damage/poison.svg",
+					"activation": {
+						"type": "bonus"
+					},
+					"restrictions": {
+						"allowMagical": true
+					},
+					"effects": [
+						{
+							"foundryId": "poisoner",
+							"riders": {
+								"activity": [
+									{
+										"foundryId": "poisoner"
+									}
+								]
+							}
+						},
+						{
+							"foundryId": "poisoner1",
+							"riders": {
+								"activity": [
+									{
+										"foundryId": "poisoner1"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Poison Save (Dexterity)",
+					"foundryId": "poisoner",
+					"name": "毒素豁免（敏捷）",
+					"type": "save",
+					"description": {
+						"chatFlavor": "失败时&参考[中毒]"
+					},
+					"activation": {
+						"type": ""
+					},
+					"duration": {
+						"units": "轮次",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "任何"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 8,
+								"types": [
+									"[!@ c3215352-39fe-11f0-bae2-0242ac110004]"
+								]
+							}
+						],
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"[!@ c321693c-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c32165cc-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				},
+				{
+					"ENG_name": "Poison Save (Intelligence)",
+					"foundryId": "poisoner1",
+					"name": "毒素豁免（智力）",
+					"type": "save",
+					"description": {
+						"chatFlavor": "失败时&参考[中毒]"
+					},
+					"activation": {
+						"type": ""
+					},
+					"duration": {
+						"units": "轮次",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "任何"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 8,
+								"types": [
+									"[!@ c3215352-39fe-11f0-bae2-0242ac110004]"
+								]
+							}
+						],
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"[!@ c321693c-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c323847e-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Poisoned (Dex)",
+					"foundryId": "poisoner",
+					"name": "中毒（敏捷）",
+					"type": "enchantment",
+					"duration": {
+						"seconds": 60
+					},
+					"changes": [
+						{
+							"key": "name",
+							"mode": "ADD",
+							"value": ", Poisoned"
+						}
+					],
+					"description": "当生物因该中毒物品受到伤害时，该生物必须成功通过一次[[/save ability=con]]豁免检定（DC为8加上因该专长提升的能力调整值及你的熟练加值），否则将受到2d8点毒素伤害，并在你的下个回合结束前获得&Reference[Poisoned（中毒）]状态。"
+				},
+				{
+					"ENG_name": "Poisoned (Int)",
+					"foundryId": "poisoner1",
+					"name": "中毒（智力）",
+					"type": "enchantment",
+					"duration": {
+						"seconds": 60
+					},
+					"changes": [
+						{
+							"key": "name",
+							"mode": "ADD",
+							"value": ", Poisoned"
+						}
+					],
+					"description": "当生物因该中毒物品受到伤害时，该生物必须成功通过一次[[/save ability=con]]豁免检定（DC为8加上因该专长提升的能力调整值及你的熟练加值），否则将受到2d8点毒素伤害，并在你的下个回合结束前获得&Reference[Poisoned（中毒）]状态。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Polearm Master",
+			"name": "[!@ c323a83c-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Pole Strike",
+					"name": "长杆打击",
+					"type": "attack",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "weapon"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 4,
+								"types": [
+									"钝击"
+								]
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Reactive Strike",
+					"name": "反应打击",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/damage/bludgeoning.svg",
+					"activation": {
+						"type": "reaction"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Protection",
+			"name": "守护",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Protect",
+					"name": "保护",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "当你可见的生物攻击一个在你5英尺内且不是你的目标时"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "protection"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Protected",
+					"foundryId": "protection",
+					"name": "受保护的",
+					"transfer": true,
+					"duration": {
+						"turns": 1
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Ritual Caster",
+			"name": "[!@ c323d686-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Fast Ritual Cast",
+					"name": "快速仪式施法",
+					"type": "utility",
+					"activation": {
+						"type": "special"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Sentinel",
+			"name": "[!@ c323e040-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"ENG_name": "Halted",
+					"name": "停滞",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.walk",
+							"mode": "OVERRIDE",
+							"value": 0
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Shield Master",
+			"name": "[!@ c323e996-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Shield Bash",
+					"name": "[!@ c323ee00-39fe-11f0-bae2-0242ac110004]",
+					"type": "save",
+					"activation": {
+						"type": "",
+						"condition": "如果你在攻击动作中以一把近战武器命中5尺范围内的一个生物"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"[!@ c323fd46-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c323fd46-39fe-11f0-bae2-0242ac110004]"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "shieldMaster"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Shield Bashed",
+					"foundryId": "shieldMaster",
+					"name": "盾牌猛击",
+					"statuses": [
+						"[!@ c3240804-39fe-11f0-bae2-0242ac110004]"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Slasher",
+			"name": "[!@ c3240c5a-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"effects": [
+				{
+					"ENG_name": "Slashed",
+					"name": "挥砍",
+					"duration": {
+						"turns": 1
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.walk",
+							"mode": "ADD",
+							"value": -10
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Speedy",
+			"name": "迅捷",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.movement.walk",
+							"mode": "ADD",
+							"value": 10
 						}
 					]
 				}
@@ -156,6 +1940,193 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Tavern Brawler",
+			"name": "斗殴高手",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Enhanced Unarmed Strike",
+					"name": "简易武器术",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "unarmed"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "1d4r1 + @abilities.str.mod"
+								},
+								"number": 1,
+								"denomination": 4,
+								"bonus": "@abilities.str.mod",
+								"types": [
+									"钝击"
+								]
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "flags.dnd5e.tavernBrawlerFeat",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Telekinetic",
+			"name": "[!@ c3242e60-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Telekinetic Shove: Intelligence",
+					"name": "念动推挤: 智力",
+					"type": "save",
+					"img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "你可以看到"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "30"
+					},
+					"damage": {
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"[!@ c323fd46-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c323847e-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				},
+				{
+					"ENG_name": "Telekinetic Shove: Wisdom",
+					"name": "念动推击：感知",
+					"type": "save",
+					"img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "你可以看到"
+						}
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"damage": {
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"[!@ c323fd46-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c3245016-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				},
+				{
+					"ENG_name": "Telekinetic Shove: Charisma",
+					"name": "念力推挤：魅力",
+					"type": "save",
+					"img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "你可以看到"
+						}
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"damage": {
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"[!@ c323fd46-39fe-11f0-bae2-0242ac110004]"
+						],
+						"dc": {
+							"calculation": "[!@ c320f2fe-39fe-11f0-bae2-0242ac110004]"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Telepathic",
+			"name": "[!@ c324660a-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Telepathic Utterance",
+					"name": "心灵感应术",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+					"activation": {
+						"type": ""
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					}
+				},
+				{
+					"ENG_name": "Expend Use",
+					"name": "消耗使用次数",
+					"type": "utility",
+					"activation": {
+						"type": ""
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Tough",
 			"name": "健壮",
 			"source": "PHB",
@@ -176,6 +2147,125 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Tough",
+			"name": "健壮",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.hp.bonuses.level",
+							"mode": "ADD",
+							"value": 2
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Unarmed Fighting",
+			"name": "[!@ c3248248-39fe-11f0-bae2-0242ac110004]",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Unarmed Strike (Weapon in Hand)",
+					"name": "徒手打击（手持武器）",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "unarmed"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 6,
+								"bonus": "@abilities.str.mod",
+								"types": [
+									"钝击"
+								]
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Unarmed Strike (Empty Hand)",
+					"name": "徒手打击（空手）",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "unarmed"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"bonus": "@abilities.str.mod",
+								"types": [
+									"钝击"
+								]
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Grappled Damage",
+					"name": "擒抱伤害",
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "在你的每个回合开始时"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "被你擒抱"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 4,
+								"types": [
+									"钝击"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "War Caster",
 			"name": "战地施法者",
 			"source": "PHB",
@@ -187,6 +2277,24 @@
 							"key": "system.attributes.concentration.roll.mode",
 							"mode": "OVERRIDE",
 							"value": "1"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "War Caster",
+			"name": "战地施法者",
+			"source": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.concentration.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
 					]
 				}

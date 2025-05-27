@@ -499,6 +499,8 @@
 			"name": "德鲁伊",
 			"source": "XPHB",
 			"page": 78,
+			"srd52": true,
+			"basicRules2024": true,
 			"edition": "one",
 			"primaryAbility": [
 				{
@@ -669,7 +671,7 @@
 					"colLabels": [
 						"荒野形态",
 						"{@filter 戏法|spells|level=0|class=德鲁伊}",
-						"准备法术"
+						"{@filter 准备法术|spells|level=!0|class=德鲁伊}"
 					],
 					"rows": [
 						[
@@ -1421,6 +1423,7 @@
 				"隐匿通途|德鲁伊||梦境|XGE|10",
 				"梦境行者|德鲁伊||梦境|XGE|14"
 			],
+			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1830,6 +1833,8 @@
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"page": 84,
+			"srd52": true,
+			"basicRules2024": true,
 			"edition": "one",
 			"additionalSpells": [
 				{
@@ -2406,6 +2411,8 @@
 			"name": "德鲁伊语",
 			"source": "XPHB",
 			"page": 80,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 1,
@@ -2419,6 +2426,8 @@
 			"name": "术师",
 			"source": "XPHB",
 			"page": 80,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 1,
@@ -2431,6 +2440,8 @@
 			"name": "原初誓约",
 			"source": "XPHB",
 			"page": 80,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 1,
@@ -2457,6 +2468,8 @@
 			"name": "施法",
 			"source": "XPHB",
 			"page": 79,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 1,
@@ -2526,6 +2539,8 @@
 			"name": "卫士",
 			"source": "XPHB",
 			"page": 80,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 1,
@@ -2538,6 +2553,8 @@
 			"name": "荒野伙伴",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 2,
@@ -2551,6 +2568,8 @@
 			"name": "荒野形态",
 			"source": "XPHB",
 			"page": 80,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 2,
@@ -2668,6 +2687,8 @@
 			"name": "德鲁伊子职",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 3,
@@ -2680,6 +2701,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 4,
@@ -2692,6 +2715,8 @@
 			"name": "荒野复苏",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 5,
@@ -2705,6 +2730,8 @@
 			"name": "子职特性",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 6,
@@ -2717,6 +2744,8 @@
 			"name": "元素之怒",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 7,
@@ -2726,23 +2755,45 @@
 					"type": "entries",
 					"entries": [
 						{
-							"ENG_name": "Potent Spellcasting",
-							"type": "entries",
-							"name": "强力施法",
-							"entries": [
-								"你将你的感知调整值加在你的以德鲁伊戏法造成的伤害上。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "强力施法|德鲁伊|XPHB|7"
 						},
 						{
-							"ENG_name": "Primal Strike",
-							"type": "entries",
-							"name": "原初打击",
-							"entries": [
-								"每个你的回合内一次，当你以一次武器攻击或荒野变形后野兽形态的攻击命中一个生物时，你可以对目标额外造成{@damage 1d8}冷冻、火焰、闪电或雷鸣伤害（由你命中时选择）。"
-							]
+							"type": "refClassFeature",
+							"classFeature": "原初打击|德鲁伊|XPHB|7"
 						}
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Potent Spellcasting",
+			"name": "强力施法",
+			"source": "XPHB",
+			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"你将你的感知调整值加在你的以德鲁伊戏法造成的伤害上。"
+			]
+		},
+		{
+			"ENG_name": "Primal Strike",
+			"name": "原初打击",
+			"source": "XPHB",
+			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
+			"className": "德鲁伊",
+			"classSource": "XPHB",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"每个你的回合内一次，当你以一次武器攻击或荒野变形后野兽形态的攻击命中一个生物时，你可以对目标额外造成{@damage 1d8}冷冻、火焰、闪电或雷鸣伤害（由你命中时选择）。"
 			]
 		},
 		{
@@ -2750,6 +2801,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 8,
@@ -2762,6 +2815,8 @@
 			"name": "子职特性",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 10,
@@ -2774,6 +2829,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 12,
@@ -2786,6 +2843,8 @@
 			"name": "子职特性",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 14,
@@ -2798,6 +2857,8 @@
 			"name": "元素神威",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 15,
@@ -2831,6 +2892,8 @@
 			"name": "属性值提升",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 16,
@@ -2843,6 +2906,8 @@
 			"name": "野兽施法",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 18,
@@ -2855,6 +2920,8 @@
 			"name": "传奇恩惠",
 			"source": "XPHB",
 			"page": 81,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 19,
@@ -2867,6 +2934,8 @@
 			"name": "大德鲁伊",
 			"source": "XPHB",
 			"page": 82,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"level": 20,
@@ -4452,7 +4521,8 @@
 				"subclassSource": "PHB",
 				"level": 2,
 				"_preserve": {
-					"page": true
+					"page": true,
+					"srd": true
 				}
 			}
 		},
@@ -4622,6 +4692,8 @@
 			"name": "大地结社",
 			"source": "XPHB",
 			"page": 84,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"subclassShortName": "大地",
@@ -4645,6 +4717,8 @@
 			"name": "大地结社法术",
 			"source": "XPHB",
 			"page": 84,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"subclassShortName": "大地",
@@ -4779,6 +4853,8 @@
 			"name": "大地之援",
 			"source": "XPHB",
 			"page": 85,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"subclassShortName": "大地",
@@ -4794,6 +4870,8 @@
 			"name": "自然恢复",
 			"source": "XPHB",
 			"page": 85,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"subclassShortName": "大地",
@@ -4810,6 +4888,8 @@
 			"name": "自然之护",
 			"source": "XPHB",
 			"page": 85,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"subclassShortName": "大地",
@@ -4860,6 +4940,8 @@
 			"name": "自然庇护所",
 			"source": "XPHB",
 			"page": 86,
+			"srd52": true,
+			"basicRules2024": true,
 			"className": "德鲁伊",
 			"classSource": "XPHB",
 			"subclassShortName": "大地",
