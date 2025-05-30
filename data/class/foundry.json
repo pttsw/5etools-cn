@@ -2157,7 +2157,7 @@
 				"uses.max": "1 + min(floor(@classes.cleric.levels / 6), 1) + min(floor(@classes.cleric.levels / 18), 1)",
 				"uses.recovery": [
 					{
-						"period": "天",
+						"period": "day",
 						"type": "recoverAll"
 					}
 				]
@@ -2694,7 +2694,7 @@
 				"uses.max": "@scale.artificer.infused",
 				"uses.recovery": [
 					{
-						"period": "充能",
+						"period": "charges",
 						"type": "recoverAll"
 					}
 				]
@@ -8186,7 +8186,7 @@
 			"level": 2,
 			"system": {
 				"duration.value": 10,
-				"duration.units": "分钟"
+				"duration.units": "minute"
 			},
 			"migrationVersion": 3
 		},
@@ -9053,7 +9053,7 @@
 				"range.value": 30,
 				"range.units": "ft",
 				"duration.value": 1,
-				"duration.units": "分钟"
+				"duration.units": "minute"
 			},
 			"activities": [
 				{
@@ -9156,7 +9156,7 @@
 				"uses.max": "@classes.druid.levels",
 				"uses.recovery": [
 					{
-						"period": "充能",
+						"period": "charges",
 						"type": "recoverAll"
 					}
 				]

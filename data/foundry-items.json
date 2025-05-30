@@ -5,7 +5,7 @@
 			"name": "屏障刺青（大）",
 			"source": "TCE",
 			"system": {
-				"armor.type": "重型",
+				"armor.type": "heavy",
 				"armor.dex": 0,
 				"armor.value": 18
 			},
@@ -16,7 +16,7 @@
 			"name": "屏障刺青（中）",
 			"source": "TCE",
 			"system": {
-				"armor.type": "中型",
+				"armor.type": "medium",
 				"armor.dex": 2,
 				"armor.value": 15
 			},
@@ -27,7 +27,7 @@
 			"name": "屏障刺青（小）",
 			"source": "TCE",
 			"system": {
-				"armor.type": "轻型",
+				"armor.type": "light",
 				"armor.value": 12
 			},
 			"migrationVersion": 3
@@ -164,12 +164,12 @@
 		},
 		{
 			"ENG_name": "Healer's Kit",
-			"name": "[!@ c326a1f4-39fe-11f0-bae2-0242ac110004]",
+			"name": "医疗包",
 			"source": "XPHB",
 			"type": "consumable",
 			"system": {
 				"uses.max": "10",
-				"type.value": "饰品"
+				"type.value": "trinket"
 			},
 			"activities": [
 				{
@@ -191,7 +191,7 @@
 						"affects": {
 							"count": "1",
 							"type": "creature",
-							"special": "[!@ c326add4-39fe-11f0-bae2-0242ac110004]"
+							"special": "昏迷"
 						}
 					}
 				}
