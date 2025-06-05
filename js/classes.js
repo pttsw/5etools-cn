@@ -2438,7 +2438,7 @@ ClassesPage.SubclassComparisonBookView = class extends BookModeViewBase {
 			});
 
 			const subclassStateItemsVisiblePrev = subclassStateItems.filter(li => this._parent.get(li.values.stateKey));
-			const $btnSave = $(`<button class="ve-btn ve-btn-default mr-2">Save</button>`)
+			const $btnSave = $(`<button class="ve-btn ve-btn-default mr-2" data-i18n="save">Save</button>`)
 				.click(async () => {
 					const nxtState = {isViewActiveScComp: false};
 

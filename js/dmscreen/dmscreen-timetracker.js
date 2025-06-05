@@ -3242,7 +3242,7 @@ class TimeTrackerRoot_Settings_Event extends TimeTrackerComponent {
 		const $iptName = ComponentUiUtil.$getIptStr(fauxComponent, "name", {$ele: $(`<input class="form-control input-xs form-control--minimal mb-2 no-shrink">`)});
 		const $iptEntries = ComponentUiUtil.$getIptEntries(fauxComponent, "entries", {$ele: $(`<textarea class="form-control input-xs form-control--minimal resize-none mb-2 h-100"></textarea>`)});
 
-		const $btnOk = $(`<button class="ve-btn ve-btn-default">Save</button>`)
+		const $btnOk = $(`<button class="ve-btn ve-btn-default" data-i18n='Save'></button>`)
 			.click(() => doClose(true));
 
 		$$`<div class="ve-flex-col h-100">

@@ -3469,10 +3469,10 @@ class CreatureBuilder extends Builder {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Stat Block"}),
-				new TabUiUtil.TabMeta({name: "Info"}),
-				new TabUiUtil.TabMeta({name: "Images"}),
-				new TabUiUtil.TabMeta({name: "Data"}),
+				new TabUiUtil.TabMeta({name: "资料卡"}),
+				new TabUiUtil.TabMeta({name: "信息"}),
+				new TabUiUtil.TabMeta({name: "图片"}),
+				new TabUiUtil.TabMeta({name: "数据"}),
 				new TabUiUtil.TabMeta({name: "Markdown"}),
 			],
 			{

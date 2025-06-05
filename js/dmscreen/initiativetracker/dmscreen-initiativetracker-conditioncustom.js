@@ -96,7 +96,7 @@ export class InitiativeTrackerConditionCustomEdit extends BaseComponent {
 	}
 
 	_render_$getFooter ({rdState}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100" data-i18n='Save'></button>`)
 			.click(() => rdState.cbDoClose(true));
 
 		return $$`<div class="w-100 py-3 no-shrink">

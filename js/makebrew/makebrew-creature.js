@@ -3530,11 +3530,11 @@ export class CreatureBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Stat Block"}),
-				new TabUiUtil.TabMeta({name: "Info"}),
-				new TabUiUtil.TabMeta({name: "Images"}),
-				new TabUiUtil.TabMeta({name: "Data"}),
-				new TabUiUtil.TabMeta({name: "Markdown"}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_stat_block")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_info")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_images")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_data")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_markdown")}),
 			],
 			{
 				tabGroup: "output",
