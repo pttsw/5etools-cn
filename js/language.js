@@ -3,6 +3,7 @@
 globalThis.I18nUtil = {};
 
 const cachedLanguage = localStorage.getItem('LANGUAGES_INDEX');
+const i18nAttrRegex = /^data-i18n-(.+)$/;
 
 I18nUtil.LANGUAGES_INDEX = cachedLanguage || "zh_CN";
 
@@ -13,20 +14,12 @@ const observer = new MutationObserver((mutationsList) => {
             mutation.addedNodes.forEach((node) => {
                 if (node.nodeType === Node.ELEMENT_NODE) {
                     // 递归检查新增节点及其子节点
-                    const elements =  Array.from(node.querySelectorAll('[data-i18n]'));
-                    if (node.hasAttribute('data-i18n')) {
+                    const elements =  Array.from(node.querySelectorAll('[data-i18n],[attribute^="data-i18n-"]'));
+                    if (node.hasAttribute('data-i18n') || Array.from(node.attributes).some(attr => i18nAttrRegex.test(attr.name))) {
                         elements.push(node);
                     }
                     elements.forEach((element) => {
-                        const key = element.getAttribute('data-i18n');
-                        if (key && propertiesLoaded && $.i18n && $.i18n.prop) {
-                            try {
-                                element.textContent = $.i18n.prop(key);
-                            } catch (error) {
-                                console.error(error);
-                                element.textContent = key;
-                            }
-                        }
+                        I18nUtil.__translateElement(element);
                     });
                 }
             });
@@ -42,17 +35,39 @@ jQuery(document).ready(function () {
 
 let propertiesLoaded = false;
 
-I18nUtil.updateTranslations = function() {
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (key && $.i18n && $.i18n.prop) {
-            try {
-                element.textContent = $.i18n.prop(key);
-            } catch (error) {
-                console.error(error);
-                element.textContent = key;
+I18nUtil.__translateElement = (element) => {
+    const key = element.getAttribute('data-i18n');
+    if (key && $.i18n && $.i18n.prop) {
+        try {
+            element.textContent = $.i18n.prop(key);
+        } catch (error) {
+            console.error(error);
+            element.textContent = key;
+        }
+    }
+
+    const attributes = element.attributes;
+    for (let i = 0; i < attributes.length; i++) {
+        const attr = attributes[i];
+        const match = i18nAttrRegex.exec(attr.name);
+        if (match) {
+            const key = attr.value;
+            const targetAttr = match[1];
+            if (key && $.i18n && $.i18n.prop) {
+                try {
+                    element.setAttribute(targetAttr, $.i18n.prop(key));
+                } catch (error) {
+                    console.error(error);
+                    element.setAttribute(targetAttr, key);
+                }
             }
         }
+    }
+}
+
+I18nUtil.updateTranslations = function() {
+    document.querySelectorAll('[data-i18n],[attribute^="data-i18n-"]').forEach(element => {
+        I18nUtil.__translateElement(element);
     });
 };
 // $(".lan_select").change(function () {  

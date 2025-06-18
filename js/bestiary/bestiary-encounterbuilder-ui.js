@@ -74,17 +74,17 @@ export class EncounterBuilderUiBestiary extends EncounterBuilderUi {
 	_render_groupAndDifficulty ({rdState, $parentGroupAndDifficulty}) {
 		super._render_groupAndDifficulty({rdState, $parentGroupAndDifficulty});
 
-		const $btnSaveToUrl = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Save to URL</button>`)
+		const $btnSaveToUrl = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2" data-i18n="save_to_url"></button>`)
 			.click(() => this._sublistManager.pHandleClick_download({isUrl: true, $eleCopyEffect: $btnSaveToUrl}));
-		const $btnSaveToFile = $(`<button class="ve-btn ve-btn-default ve-btn-xs">保存到文件</button>`)
+		const $btnSaveToFile = $(`<button class="ve-btn ve-btn-default ve-btn-xs" data-i18n="save_to_url"></button>`)
 			.click(() => this._sublistManager.pHandleClick_download());
-		const $btnLoadFromFile = $(`<button class="ve-btn ve-btn-default ve-btn-xs">从文件加载</button>`)
+		const $btnLoadFromFile = $(`<button class="ve-btn ve-btn-default ve-btn-xs" data-i18n="load_from_file"></button>`)
 			.click(evt => this._sublistManager.pHandleClick_upload({isAdditive: evt.shiftKey}));
-		const $btnCopyAsText = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2" title="SHIFT for Multi-Line Format">Copy as Text</button>`).click((evt) => this._handleClickCopyAsText(evt));
-		const $btnReset = $(`<button class="ve-btn ve-btn-danger ve-btn-xs" title="SHIFT to Reset Players">重置</button>`)
+		const $btnCopyAsText = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2" data-i18n-title="shift_for_multi_line_format" data-i18n="copy_as_text"></button>`).click((evt) => this._handleClickCopyAsText(evt));
+		const $btnReset = $(`<button class="ve-btn ve-btn-danger ve-btn-xs" data-i18n-title="shift_to_reset_players" data-i18n="Reset"></button>`)
 			.click((evt) => this._sublistManager.pHandleClick_new(evt));
 
-		const $btnBackToStatblocks = $(`<button class="ve-btn ve-btn-success ve-btn-xs">Back to Stat Blocks</button>`).click((evt) => this._handleClickBackToStatblocks(evt));
+		const $btnBackToStatblocks = $(`<button class="ve-btn ve-btn-success ve-btn-xs" data-i18n="back_to_stat_blocks"></button>`).click((evt) => this._handleClickBackToStatblocks(evt));
 
 		$$`<div class="ve-flex-col w-100">
 			<hr class="hr-1">
