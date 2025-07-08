@@ -284,7 +284,7 @@ class ItemsPage extends ListPage {
 				{
 					hash,
 					source,
-					page: item.page,
+					...ListItem.getCommonValues(item),
 					type,
 					cost: item.value || 0,
 					weight: Parser.weightValueToNumber(item.weight),
@@ -338,7 +338,7 @@ class ItemsPage extends ListPage {
 				{
 					hash,
 					source,
-					page: item.page,
+					...ListItem.getCommonValues(item),
 					type,
 					rarity: item.rarity,
 					CN_rarity: Parser.RARITIES_TO_CN[item.rarity] || item.rarity,

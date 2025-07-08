@@ -564,11 +564,11 @@ let classList;
 let bgList;
 let trinketList;
 let nameTables;
-let $selCha;
-let $selRace;
-let $selBg;
-let $selClass;
-let $selAge;
+let selCha;
+let selRace;
+let selBg;
+let selClass;
+let selAge;
 
 function rollTrinket () {
 	return rollOnArray(trinketList);
@@ -579,24 +579,24 @@ function onJsonLoad (lifeData, nameData) {
 	classList = lifeData.lifeClass.sort((a, b) => SortUtil.ascSort(a.name, b.name));
 	trinketList = lifeData.lifeTrinket;
 
-	$selRace = $(`#race`).empty().attr("disabled", false);
-	$selCha = $(`#cha`).empty().attr("disabled", false);
-	$selBg = $(`#background`).empty().attr("disabled", false);
-	$selClass = $(`#class`).empty().attr("disabled", false);
-	$selAge = $(`#age`).empty().attr("disabled", false);
+	selRace = es(`#race`).empty().attr("disabled", false);
+	selCha = es(`#cha`).empty().attr("disabled", false);
+	selBg = es(`#background`).empty().attr("disabled", false);
+	selClass = es(`#class`).empty().attr("disabled", false);
+	selAge = es(`#age`).empty().attr("disabled", false);
 
-	$selRace.append(`<option value="Random" selected>随机</option>`);
-	$selRace.append(`<option value="Other">其他</option>`);
-	RACES_SELECTABLE.forEach(r => $selRace.append(`<option value="${r}">${r}</option>`));
-	RACES_UNSELECTABLE.forEach(r => $selRace.append(`<option class="italic" value="${r}">${r}</option>`));
-	$selCha.append(`<option value="Random">随机</option>`);
+	selRace.appends(`<option value="Random" selected>随机</option>`);
+	selRace.appends(`<option value="Other">其他</option>`);
+	RACES_SELECTABLE.forEach(r => selRace.appends(`<option value="${r}">${r}</option>`));
+	RACES_UNSELECTABLE.forEach(r => selRace.appends(`<option class="italic" value="${r}">${r}</option>`));
+	selCha.appends(`<option value="Random">随机</option>`);
 	for (let i = -5; i <= 5; ++i) {
-		$selCha.append(`<option value="${i}" ${i === 0 ? "selected" : ""}>${i >= 0 ? "+" : ""}${i}</option>`);
+		selCha.appends(`<option value="${i}" ${i === 0 ? "selected" : ""}>${i >= 0 ? "+" : ""}${i}</option>`);
 	}
-	$selBg.append(`<option value="-1" selected>随机</option>`);
-	bgList.forEach((b, i) => $selBg.append(`<option value="${i}">${b.name}</option>`));
-	$selClass.append(`<option value="-1" selected>随机</option>`);
-	classList.forEach((c, i) => $selClass.append(`<option value="${i}">${c.name}</option>`));
+	selBg.appends(`<option value="-1" selected>随机</option>`);
+	bgList.forEach((b, i) => selBg.appends(`<option value="${i}">${b.name}</option>`));
+	selClass.appends(`<option value="-1" selected>随机</option>`);
+	classList.forEach((c, i) => selClass.appends(`<option value="${i}">${c.name}</option>`));
 
 	[
 		{val: "", text: "随机", style: "font-style: normal;"},
@@ -606,7 +606,7 @@ function onJsonLoad (lifeData, nameData) {
 		{val: "70", text: "41&mdash;50岁", class: "italic"},
 		{val: "90", text: "51&mdash;60岁", class: "italic"},
 		{val: "100", text: "61岁或更老", class: "italic"},
-	].forEach(age => $selAge.append(`<option value="${age.val}" ${age.style ? `style="${age.style}"` : ""} ${age.class ? `class="${age.class}"` : ""}>${age.text}</option>`));
+	].forEach(age => selAge.appends(`<option value="${age.val}" ${age.style ? `style="${age.style}"` : ""} ${age.class ? `class="${age.class}"` : ""}>${age.text}</option>`));
 
 	nameTables = {};
 	nameData.name.filter(it => it.source === Parser.SRC_XGE)
@@ -661,19 +661,19 @@ let ptrParentLastName = {}; // store the last name so we can use it for both par
 // PARENTS
 async function pSectParents () {
 	knowParents = RNG(100) > 5;
-	const selRace = $selRace.val();
+	const valRace = selRace.val();
 	race = (() => {
-		if (selRace === "Random") return GenUtil.getFromTable(SUPP_RACE, RNG(100)).result;
-		else if (selRace === "Other") {
+		if (valRace === "Random") return GenUtil.getFromTable(SUPP_RACE, RNG(100)).result;
+		else if (valRace === "Other") {
 			// generate anything besides the values displayed in the dropdown
 			let out;
 			do out = GenUtil.getFromTable(SUPP_RACE, RNG(100)).result;
 			while (RACES_SELECTABLE.includes(out));
 			return out;
-		} else return selRace;
+		} else return valRace;
 	})();
 
-	const $parents = $(`#parents`);
+	const parents = es(`#parents`);
 	const knowParentsStr = knowParents ? "<b>父母:</b> 你知道你的父母是谁。" : "<b>Parents:</b> 你不知道你的父母是谁。";
 
 	let parentage = null;
@@ -704,9 +704,9 @@ async function pSectParents () {
 	}
 
 	if (selRace === "Other") {
-		$parents.html(concatSentences(`<b>种族:</b> 其他 ${fmtChoice(`${race}; generated using the {@table Supplemental Tables; Race|XGE|Supplemental Race} table`, true)}`, knowParentsStr, parentage));
+		parents.html(concatSentences(`<b>种族:</b> 其他 ${fmtChoice(`${race}; generated using the {@table Supplemental Tables; Race|XGE|Supplemental Race} table`, true)}`, knowParentsStr, parentage));
 	} else {
-		$parents.html(concatSentences(`<b>种族:</b> ${race}${selRace === "Random" ? ` ${fmtChoice("generated using the {@table Supplemental Tables; Race|XGE|Supplemental Race} table", true)}` : ""}`, knowParentsStr, parentage));
+		parents.html(concatSentences(`<b>种族:</b> ${race}${selRace === "Random" ? ` ${fmtChoice("generated using the {@table Supplemental Tables; Race|XGE|Supplemental Race} table", true)}` : ""}`, knowParentsStr, parentage));
 	}
 
 	if (knowParents) {
@@ -722,26 +722,26 @@ async function pSectParents () {
 			race: parentRaces.length > 1 ? parentRaces[1] : parentRaces[0],
 			gender: "Male",
 		});
-		$parents.append(`<h5>母亲</h5>`);
-		$parents.append(joinParaList(mum));
-		$parents.append(`<h5>父亲</h5>`);
-		$parents.append(joinParaList(dad));
+		parents.appends(ee`<h5>母亲</h5>`);
+		parents.appends(`<div>${joinParaList(mum)}</div>`);
+		parents.appends(ee`<h5>父亲</h5>`);
+		parents.appends(`<div>${joinParaList(dad)}</div>`);
 	}
 }
 
 // BIRTHPLACE
 function sectBirthplace () {
-	const $birthplace = $(`#birthplace`);
+	const birthplace = es(`#birthplace`);
 	const rollBirth = RNG(100);
 	const birth = `<b>出生地:</b> ${GenUtil.getFromTable(BIRTHPLACES, rollBirth).result}`;
 
 	const strangeBirth = RNG(100) === 100 ? "A strange event coincided with your birth: the moon briefly turning red, all the milk within a mile spoiling, the water in the area freezing solid in midsummer, all the iron in the home rusting or turning to silver, or some other unusual event of your choice" : "";
-	$birthplace.html(concatSentences(birth, strangeBirth));
+	birthplace.html(concatSentences(birth, strangeBirth));
 }
 
 // SIBLINGS
 async function pSectSiblings () {
-	const $siblings = $(`#siblings`);
+	const siblings = es(`#siblings`);
 	function getBirthOrder () {
 		const rollBirthOrder = RNG(6) + RNG(6);
 		if (rollBirthOrder < 3) {
@@ -774,94 +774,94 @@ async function pSectSiblings () {
 	}
 
 	if (sibCount > 0) {
-		$siblings.empty();
-		$siblings.append(`<p>你有${sibCount}个兄弟姐妹。</p>`);
+		siblings.empty();
+		siblings.appends(`<p>你有${sibCount}个兄弟姐妹。</p>`);
 		for (let i = 0; i < sibCount; ++i) {
 			const siblingType = rollOnArray(["兄弟", "姐妹"]);
-			$siblings.append(`<h5>${getBirthOrder()}兄弟姐妹${fmtChoice(siblingType, true)}</h5>`);
-			$siblings.append(joinParaList(await getPersonDetails({
+			siblings.appends(`<h5>${getBirthOrder()}兄弟姐妹${fmtChoice(siblingType, true)}</h5>`);
+			siblings.appends(ee`<div>${joinParaList(await getPersonDetails({
 				gender: siblingType === "兄弟" ? "男性" : "女性",
 				parentRaces: parentRaces,
 				isSibling: true,
-			})));
+			}))}</div>`);
 		}
 	} else {
-		$siblings.html("你是独生子。");
+		siblings.html("你是独生子。");
 	}
 }
 
 // FAMILY
 function sectFamily () {
 	function getChaVal () {
-		const raw = $selCha.val();
+		const raw = selCha.val();
 		if (raw === "Random") return RollerUtil.randomise(11) - 6;
 		else return Number(raw);
 	}
 
-	const $family = $(`#family`);
-	$family.empty();
-	$family.append(`<b>家庭成员：</b> ${GenUtil.getFromTable(FAMILY, RNG(100)).result}<br>`);
+	const family = es(`#family`);
+	family.empty();
+	family.appends(ee`<div>${`<b>家庭成员：</b> ${GenUtil.getFromTable(FAMILY, RNG(100)).result}<br>`}</div>`);
 	let famIndex = 1;
-	const $btnSuppFam = $(`<button class="ve-btn ve-btn-xs ve-btn-default ve-btn-supp-fam no-print"></button>`).on("click", async () => {
+	const btnSuppFam = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-btn-supp-fam no-print"></button>`.onn("click", async () => {
 		const supDetails = await getPersonDetails();
-		const $wrpRes = $(`<div class="life__output-wrp-border p-3 my-2"></div>`);
-		$wrpRes.append(`<h5 class="mt-0">随机家庭成员${famIndex++}</h5>`);
-		$wrpRes.append(joinParaList(supDetails));
-		$btnSuppFam.css("margin-bottom", 5);
-		$btnSuppFam.after($wrpRes);
+		const wrpRes = ee`<div class="life__output-wrp-border p-3 my-2"></div>`;
+		wrpRes.appends(`<h5 class="mt-0">随机家庭成员${famIndex++}</h5>`);
+		wrpRes.appends(ee`<div>${joinParaList(supDetails)}</div>`);
+		btnSuppFam.css({marginBottom: "5px"});
+		btnSuppFam.after(wrpRes);
 	});
-	$family.append(`<span class="note">你可以在“关系表”上掷骰子来确定你的家庭成员或你生活中其他重要人物对你的感觉。你还可以使用“种族”、“职业”和“阵营”表来了解更多关于抚养你的家庭成员或监护人的信息。</span>`);
-	$family.append($btnSuppFam);
+	family.appends(`<span class="note">你可以在“关系表”上掷骰子来确定你的家庭成员或你生活中其他重要人物对你的感觉。你还可以使用“种族”、“职业”和“阵营”表来了解更多关于抚养你的家庭成员或监护人的信息。</span>`);
+	family.appends(btnSuppFam);
 
 	const rollFamLifestyle = GenUtil.getFromTable(FAMILY_LIFESTYLE, RNG(6) + RNG(6) + RNG(6));
-	$family.append(`<b>家庭类型：</b> ${rollFamLifestyle.result}<br>`);
+	family.appends(ee`<div><b>家庭类型：</b> ${rollFamLifestyle.result}<br></div>`);
 	const rollFamHome = Math.min(Math.max(RNG(100) + rollFamLifestyle.modifier, 0), 111);
 	const rollFamHomeRes = GenUtil.getFromTable(CHILDHOOD_HOME, rollFamHome).result;
-	$family.append(`<b>儿时的家：</b> ${rollFamHomeRes}<br>`);
+	family.appends(ee`<div><b>儿时的家：</b> ${rollFamHomeRes}<br></div>`);
 
 	const rollChildMems = Math.min(Math.max(RNG(6) + RNG(6) + RNG(6) + getChaVal(), 3), 18);
-	$family.append(`<b>儿时记忆：</b> ${GenUtil.getFromTable(CHILDHOOD_MEMORIES, rollChildMems).result}`);
+	family.appends(ee`<div><b>儿时记忆：</b> ${GenUtil.getFromTable(CHILDHOOD_MEMORIES, rollChildMems).result}</div>`);
 }
 
 // PERSONAL DECISIONS
 function sectPersonalDecisions () {
-	const $personal = $(`#personal`).empty();
-	const selBg = Number($selBg.val());
-	const myBg = selBg === -1 ? rollOnArray(bgList) : bgList[selBg];
-	$personal.append(`<b>背景：</b> ${myBg.name}<br>`);
-	$personal.append(`<b>我成为一名${myBg.name}的原因：</b> ${rollOnArray(myBg.reasons)}`);
+	const personal = es(`#personal`).empty();
+	const valBg = Number(selBg.val());
+	const myBg = valBg === -1 ? rollOnArray(bgList) : bgList[valBg];
+	personal.appends(ee`<div>${`<b>背景：</b> ${myBg.name}<br>`}</div>`);
+	personal.appends(ee`<div>${`<b>我成为一名${myBg.name}的原因：</b> ${rollOnArray(myBg.reasons)}`}</div>`);
 }
 
 // CLASS TRAINING
 function sectClassTraining () {
-	const $clss = $(`#clss`).empty();
-	const selClass = Number($selClass.val());
-	const myClass = selClass === -1 ? rollOnArray(classList) : classList[selClass];
-	$clss.append(`<b>职业：</b> ${myClass.name}<br>`);
-	$clss.append(`<b>我成为一名${myClass.name}的原因：</b> ${rollOnArray(myClass.reasons)}`);
+	const clss = es(`#clss`).empty();
+	const valClass = Number(selClass.val());
+	const myClass = valClass === -1 ? rollOnArray(classList) : classList[valClass];
+	clss.appends(ee`<div>${`<b>职业：</b> ${myClass.name}<br>`}</div>`);
+	clss.appends(ee`<div>${`<b>我成为一名${myClass.name}的原因：</b> ${rollOnArray(myClass.reasons)}`}</div>`);
 }
 
 // LIFE EVENTS
 function sectLifeEvents () {
-	const $events = $(`#events`).empty();
+	const events = es(`#events`).empty();
 	marriageIndex = 0;
-	const age = GenUtil.getFromTable(LIFE_EVENTS_AGE, Number($selAge.val()) || RNG(100));
-	$events.append(`<b>Current age:</b> ${age.result} ${fmtChoice(`${age.age} year${age.age > 1 ? "s" : ""} old`, true)}`);
+	const age = GenUtil.getFromTable(LIFE_EVENTS_AGE, Number(selAge.val()) || RNG(100));
+	events.appends(ee`<div>${`<b>Current age:</b> ${age.result} ${fmtChoice(`${age.age} year${age.age > 1 ? "s" : ""} old`, true)}`}</div>`);
 
 	for (let i = 0; i < age.events; ++i) {
-		const $dispResult = $(`<div></div>`);
-		const $dispNextRoll = $(`<div></div>`);
+		const dispResult = ee`<div></div>`;
+		const dispNextRoll = ee`<div></div>`;
 
 		const recurseNextRolls = (evt) => {
 			if (!evt.nextRoll) return;
 
 			if (evt.nextRoll.title) {
-				$(`<div class="life__output-wrp-border p-3 my-2">
+				ee`<div class="life__output-wrp-border p-3 my-2">
 					<h5 class="mt-0">${evt.nextRoll.title}</h5>
 					${joinParaList(evt.nextRoll.result)}
-				</div>`).appendTo($dispNextRoll);
+				</div>`.appendTo(dispNextRoll);
 			} else {
-				$dispNextRoll.append(`${joinParaList(evt.nextRoll.result)}<br>`);
+				dispNextRoll.appends(ee`<div>${`${joinParaList(evt.nextRoll.result)}<br>`}</div>`);
 			}
 
 			return recurseNextRolls(evt.nextRoll);
@@ -869,30 +869,30 @@ function sectLifeEvents () {
 
 		const doRollAndDisplay = ({isScrollIntoView = false} = {}) => {
 			const evt = GenUtil.getFromTable(LIFE_EVENTS, RNG(100));
-			$dispResult.html(evt.result);
-			$dispNextRoll.empty();
+			dispResult.html(evt.result);
+			dispNextRoll.empty();
 			recurseNextRolls(evt);
-			if (isScrollIntoView) $wrpEvent[0].scrollIntoView({block: "nearest", inline: "nearest"});
+			if (isScrollIntoView) wrpEvent.scrollIntoView({block: "nearest", inline: "nearest"});
 		};
 
 		doRollAndDisplay();
 
-		const $btnReroll = $(`<button class="ve-btn ve-btn-default ve-btn-xxs">Reroll</button>`)
-			.click(() => doRollAndDisplay({isScrollIntoView: true}));
+		const btnReroll = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">Reroll</button>`
+			.onn("click", () => doRollAndDisplay({isScrollIntoView: true}));
 
-		const $wrpEvent = $$`<div class="ve-flex-col">
+		const wrpEvent = ee`<div class="ve-flex-col">
 			<div class="ve-flex-v-center mb-1 mt-2">
 				<h5 class="my-0 mr-2">Life Event ${i + 1}</h5>
-				${$btnReroll}
+				${btnReroll}
 			</div>
-			${$dispResult}
-			${$dispNextRoll}
-		</div>`.appendTo($events);
+			${dispResult}
+			${dispNextRoll}
+		</div>`.appendTo(events);
 	}
 }
 
 async function pRoll () {
-	$(`.life__output`).removeClass("ve-hidden");
+	em(`.life__output`).map(ele => ele.removeClass("ve-hidden"));
 
 	await pSectParents();
 	sectBirthplace();
@@ -915,15 +915,9 @@ window.addEventListener("load", async () => {
 	]);
 	onJsonLoad(lifeData, nameData);
 
-	$(`#age`).on("change", function () {
-		if ($(this).val()) {
-			$(this).addClass("italic");
-		} else {
-			$(this).removeClass("italic");
-		}
-	});
+	const selAge = es(`#age`).onn("change", () => selAge.toggleClass("italic", !!selAge.val()));
 
-	$(`#xge_link`).replaceWith(Renderer.get().render(`{@book 《珊娜萨的万事指南》|XGE|1|This Is Your Life}`));
+	es(`#xge_link`).replaceWith(e_({outer: (Renderer.get().render(`{@book 《珊娜萨的万事指南》|XGE|1|This Is Your Life}`))}));
 
 	window.dispatchEvent(new Event("toolsLoaded"));
 });

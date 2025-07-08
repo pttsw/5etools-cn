@@ -706,7 +706,7 @@ class ModalFilterSpells extends ModalFilterBase {
 				hash,
 				source,
 				sourceJson: spell.source,
-				page: spell.page,
+				...ListItem.getCommonValues(spell),
 				level: spell.level,
 				time,
 				school: Parser.spSchoolAbvToFull(spell.school),

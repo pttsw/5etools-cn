@@ -5382,9 +5382,9 @@
 					}
 				}
 			],
-			"languageProficiencies": [
+			"toolProficiencies": [
 				{
-					"anyStandard": 2
+					"anyArtisansTool": 1
 				}
 			],
 			"startingEquipment": [
@@ -5400,6 +5400,7 @@
 				},
 				{
 					"_": [
+						"two-person tent|phb",
 						{
 							"special": "以你家族颜色为主的披风"
 						},
@@ -5505,6 +5506,10 @@
 								"d8",
 								"特点"
 							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
 							"rows": [
 								[
 									"1",
@@ -5542,13 +5547,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"理想"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -5579,13 +5584,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"牵挂"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -5616,13 +5621,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"缺点"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -5652,9 +5657,7 @@
 							]
 						}
 					],
-					"data": {
-						"isFeature": true
-					}
+					"name": "Suggested Characteristics"
 				}
 			],
 			"hasFluff": true
@@ -5666,13 +5669,13 @@
 			"page": 5,
 			"skillProficiencies": [
 				{
-					"nature": true,
-					"survival": true
+					"insight": true,
+					"persuasion": true
 				}
 			],
-			"toolProficiencies": [
+			"languageProficiencies": [
 				{
-					"anyArtisansTool": 1
+					"anyStandard": 2
 				}
 			],
 			"startingEquipment": [
@@ -6504,7 +6507,12 @@
 			],
 			"languageProficiencies": [
 				{
-					"anyStandard": 2
+					"anyStandard": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
 				}
 			],
 			"startingEquipment": [
@@ -17627,6 +17635,7 @@
 						{
 							"special": "长外套"
 						},
+						"traveler's clothes|phb",
 						{
 							"special": "材料包"
 						}
@@ -17680,8 +17689,13 @@
 					"type": "entries",
 					"name": "魔法血脉异象",
 					"entries": [
+						"Hardship in your past has forged you into an unstoppable living weapon. This hardship is essential to you and is at the heart of a personal philosophy or ethos that often guides your actions. You can roll on the following table to determine this hardship or choose one that best fits your character.",
 						{
 							"type": "table",
+							"colLabels": [
+								"d6",
+								"Hardship"
+							],
 							"colStyles": [
 								"col-2 text-center",
 								"col-10"
@@ -17744,6 +17758,10 @@
 								"d8",
 								"特点"
 							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
 							"rows": [
 								[
 									"1",
@@ -17781,13 +17799,14 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
+							"caption": "Marine Ideals",
 							"colLabels": [
 								"d6",
 								"理想"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -17818,13 +17837,14 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
+							"caption": "Marine Bonds",
 							"colLabels": [
 								"d6",
 								"牵挂"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -17855,13 +17875,14 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
+							"caption": "Marine Flaws",
 							"colLabels": [
 								"d6",
 								"缺点"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -17890,10 +17911,7 @@
 								]
 							]
 						}
-					],
-					"data": {
-						"isFeature": true
-					}
+					]
 				}
 			],
 			"hasFluff": true
@@ -17906,12 +17924,12 @@
 			"skillProficiencies": [
 				{
 					"athletics": true,
-					"survival": true
+					"persuasion": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"vehicles (water)": true,
+					"anyGamingSet": 1,
 					"vehicles (land)": true
 				}
 			],
@@ -18012,7 +18030,7 @@
 								]
 							]
 						}
-					]
+					}
 				},
 				{
 					"ENG_name": "Suggested Characteristics",
@@ -18028,8 +18046,8 @@
 								"特点"
 							],
 							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -18074,8 +18092,8 @@
 								"理想"
 							],
 							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -18112,8 +18130,8 @@
 								"牵挂"
 							],
 							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -18150,8 +18168,8 @@
 								"缺点"
 							],
 							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -18180,7 +18198,8 @@
 								]
 							]
 						}
-					]
+					],
+					"name": "Suggested Characteristics"
 				}
 			],
 			"hasFluff": true
@@ -18192,19 +18211,25 @@
 			"page": 152,
 			"skillProficiencies": [
 				{
-					"athletics": true,
+					"history": true,
 					"persuasion": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 1
 				}
 			],
 			"toolProficiencies": [
 				{
-					"anyGamingSet": 1,
-					"vehicles (land)": true
+					"anyGamingSet": 1
 				}
 			],
 			"startingEquipment": [
 				{
 					"_": [
+						"fine clothes|phb",
+						"signet ring|phb",
 						{
 							"item": "旅行者服装|PHB",
 							"displayName": "所属佣兵团的制服"
@@ -18274,14 +18299,14 @@
 			"ENG_name": "Merchant",
 			"name": "商人",
 			"source": "XPHB",
-			"page": 182,
+			"page": 183,
 			"edition": "one",
 			"ability": [
 				{
 					"choose": {
 						"weighted": {
 							"from": [
-								"con",
+								"str",
 								"int",
 								"cha"
 							],
@@ -18296,7 +18321,7 @@
 					"choose": {
 						"weighted": {
 							"from": [
-								"con",
+								"str",
 								"int",
 								"cha"
 							],
@@ -18311,25 +18336,25 @@
 			],
 			"feats": [
 				{
-					"lucky|xphb": true
+					"Skilled|xphb": true
 				}
 			],
 			"skillProficiencies": [
 				{
-					"animal handling": true,
+					"history": true,
 					"persuasion": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"navigator's tools": true
+					"anyGamingSet": 1
 				}
 			],
 			"startingEquipment": [
 				{
 					"A": [
 						{
-							"item": "navigator's tools|xphb"
+							"item": "gaming set|xphb"
 						},
 						{
 							"item": "小包|xphb",
@@ -18339,7 +18364,7 @@
 							"item": "旅行者服装|xphb"
 						},
 						{
-							"value": 2200
+							"value": 2900
 						}
 					],
 					"B": [
@@ -18397,19 +18422,18 @@
 			"page": 5,
 			"skillProficiencies": [
 				{
-					"deception": true,
-					"performance": true
+					"intimidation": true,
+					"religion": true
 				}
 			],
-			"toolProficiencies": [
+			"languageProficiencies": [
 				{
-					"anyArtisansTool": 1,
-					"anyMusicalInstrument": 1
+					"anyStandard": 2
 				}
 			],
 			"startingEquipment": [
 				{
-					"a": [
+					"_": [
 						{
 							"equipmentType": "工匠工具"
 						}
@@ -18428,6 +18452,38 @@
 							"containsValue": 1000
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"expanded": {
+						"s0": [
+							"friends#c",
+							"guidance#c"
+						],
+						"s1": [
+							"command",
+							"illusory script"
+						],
+						"s2": [
+							"enthrall",
+							"ray of enfeeblement",
+							"zone of truth"
+						],
+						"s3": [
+							"bestow curse",
+							"speak with dead",
+							"spirit guardians"
+						],
+						"s4": [
+							"blight",
+							"death ward",
+							"leomund's secret chest"
+						],
+						"s5": [
+							"geas"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -18459,6 +18515,7 @@
 					"ENG_name": "Lifestyle",
 					"name": "生活方式",
 					"type": "entries",
+					"name": "Feature: Leverage",
 					"entries": [
 						"富裕"
 					]
@@ -18467,6 +18524,7 @@
 					"ENG_name": "Overview",
 					"name": "概述",
 					"type": "entries",
+					"name": "Orzhov Guild Spells",
 					"entries": [
 						"从你山顶的家中，你一生都在俯瞰（字面意义上和可能比喻意义上）穆尔马斯特那些未受洗的大众。你穿着皮草镶边的长袍，受过视觉和表演艺术的训练，这标志着你富有且可能出身高贵；你是危险之城的贵族成员。你的直系家庭成员中没有人坐在刀刃议会上，甚至没有人是佐尔或佐拉......但。尽管如此，你是穆尔马斯特精英之一，无论你个人是否渴望更高的地位，你都在贵族聚集的舞厅中感到自在，在那里他们策划、密谋、做生意、讨论艺术，最重要的是，要被看到，也要被看到。"
 					]
@@ -18485,16 +18543,19 @@
 				{
 					"ENG_name": "Suggested Characteristics",
 					"type": "entries",
+					"name": "Suggested Characteristics",
 					"entries": [
+						"Members of the Orzhov Syndicate range from the decadent nobility at the top of the oligarchy to the debt-ridden wretches at the bottom. You fall somewhere between those extremes, so you might behave with the arrogance of the very rich or the humility of the impoverished.",
 						{
 							"type": "table",
+							"caption": "Personality Traits",
 							"colLabels": [
 								"d8",
 								"特点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -18533,13 +18594,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Ideals",
 							"colLabels": [
 								"d6",
 								"理想"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -18570,13 +18632,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Bonds",
 							"colLabels": [
 								"d6",
 								"牵挂"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -18607,13 +18670,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Flaws",
 							"colLabels": [
 								"d6",
 								"缺点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -18682,7 +18746,142 @@
 			],
 			"toolProficiencies": [
 				{
-					"anyGamingSet": 1
+					"type": "entries",
+					"name": "Contacts",
+					"entries": [
+						"The Orzhov Syndicate operates according to a strict hierarchy built on a network of connections among old, wealthy families. Your family might provide important contacts, while your family's activities in crime, banking, or debt collection could tie you to members of other guilds.",
+						"Roll twice on the Orzhov Contacts table (for an ally and a rival) and once on the Non-Orzhov Contacts table.",
+						{
+							"type": "table",
+							"caption": "Orzhov Contacts",
+							"colLabels": [
+								"d8",
+								"Contact"
+							],
+							"colStyles": [
+								"text-center col-2",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"The spirit of an ancestor has taken an interest in me."
+								],
+								[
+									"2",
+									"An older cousin has the ear of a powerful oligarch."
+								],
+								[
+									"3",
+									"I know a knight who is responsible for collecting debts from powerful people."
+								],
+								[
+									"4",
+									"A vampire pontiff tried to use me as a pawn in past schemes."
+								],
+								[
+									"5",
+									"A silent spirit follows me around."
+								],
+								[
+									"6",
+									"A sibling has keys to parts of Vizkopa Bank."
+								],
+								[
+									"7",
+									"A giant thinks I'm adorable."
+								],
+								[
+									"8",
+									"I regularly offer tribute to an angel, and the angel has been kind to me in turn."
+								]
+							]
+						},
+						{
+							"type": "table",
+							"caption": "Non-Orzhov Contacts",
+							"colLabels": [
+								"d10",
+								"Contact"
+							],
+							"colStyles": [
+								"text-center col-2",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"An Azorius arrester is always snooping into my family's business transactions."
+								],
+								[
+									"2",
+									"A Boros paladin saved my life, to my everlasting shame."
+								],
+								[
+									"3",
+									"I know a shopkeeper who is secretly a Dimir agent and tries to make sure that I keep that secret hidden."
+								],
+								[
+									"4",
+									"I'm fascinated by the culture of the Golgari kraul, and I have formed a friendship with one of their death priests."
+								],
+								[
+									"5",
+									"A Gruul druid hates me but would never dare to touch me."
+								],
+								[
+									"6",
+									"I know an Izzet engineer who is desperate to pay off a debt accrued by a deceased relative."
+								],
+								[
+									"7",
+									"Roll an additional Orzhov contact; you can decide if the contact is an ally or a rival."
+								],
+								[
+									"8",
+									"My childhood friend is now a Rakdos torturer. We still meet for drinks occasionally."
+								],
+								[
+									"9",
+									"I have the key to a vault where a Selesnya druid is hiding an item of secret shame."
+								],
+								[
+									"10",
+									"I was married to a Simic bioengineer."
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "How Do I Fit In?",
+					"entries": [
+						"The structure of the Orzhov Syndicate means that you are always doing the bidding of someone higher up the ladder than you are. Ultimately, your role in the guild is defined by whatever the people (and spirits) above you decide for you.",
+						"For most of your career, you can expect to engage in some aspect of the day-to-day criminal operations of the guild. That can mean throwing your weight around to enforce the will of the guild or using religious authority to extort offerings from the people. But it can also mean doing various errands for your superiors, from bearing messages to carrying out assassinations."
+					]
+				}
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Outlander",
+			"source": "PHB",
+			"page": 136,
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"survival": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyMusicalInstrument": 1
 				}
 			],
 			"startingEquipment": [
@@ -18693,6 +18892,7 @@
 						{
 							"special": "家系族谱"
 						},
+						"traveler's clothes|phb",
 						{
 							"special": "钱包",
 							"containsValue": 2500
@@ -18792,7 +18992,14 @@
 									"如果你伤害了我，我会摧毁你，毁掉你的名声，并在你的土地上撒盐。"
 								]
 							]
-						},
+						}
+					]
+				},
+				{
+					"name": "Suggested Characteristics",
+					"type": "entries",
+					"entries": [
+						"Often considered rude and uncouth among civilized folk, outlanders have little respect for the niceties of life in the cities. The ties of tribe, clan, family, and the natural world of which they are a part are the most important bonds to most outlanders.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -18924,25 +19131,35 @@
 								"int",
 								"cha"
 							],
-							"weights": [
-								2,
-								1
-							]
-						}
-					}
-				},
-				{
-					"choose": {
-						"weighted": {
-							"from": [
-								"str",
-								"int",
-								"cha"
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
-							"weights": [
-								1,
-								1,
-								1
+							"rows": [
+								[
+									"1",
+									"I am too enamored of ale, wine, and other intoxicants."
+								],
+								[
+									"2",
+									"There's no room for caution in a life lived to the fullest."
+								],
+								[
+									"3",
+									"I remember every insult I've received and nurse a silent resentment toward anyone who's ever wronged me."
+								],
+								[
+									"4",
+									"I am slow to trust members of other races, tribes, and societies."
+								],
+								[
+									"5",
+									"Violence is my answer to almost any challenge."
+								],
+								[
+									"6",
+									"Don't expect me to save those who can't save themselves. It is nature's way that the strong thrive and the weak perish."
+								]
 							]
 						}
 					}
@@ -19025,8 +19242,7 @@
 					]
 				}
 			],
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"ENG_name": "Orzhov Representative",
@@ -19035,13 +19251,14 @@
 			"page": 72,
 			"skillProficiencies": [
 				{
-					"intimidation": true,
-					"religion": true
+					"stealth": true,
+					"survival": true
 				}
 			],
-			"languageProficiencies": [
+			"toolProficiencies": [
 				{
-					"anyStandard": 2
+					"anyArtisansTool": 1,
+					"vehicles (land)": true
 				}
 			],
 			"startingEquipment": [
@@ -19053,6 +19270,7 @@
 						{
 							"special": "由十枚金币组成的一英尺长的链子"
 						},
+						"healer's kit|phb",
 						{
 							"special": "祭袍"
 						},
@@ -19194,8 +19412,8 @@
 								"特点"
 							],
 							"colStyles": [
-								"text-center col-2",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -19240,8 +19458,8 @@
 								"理想"
 							],
 							"colStyles": [
-								"text-center col-2",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -19278,8 +19496,8 @@
 								"牵挂"
 							],
 							"colStyles": [
-								"text-center col-2",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -19316,8 +19534,8 @@
 								"缺点"
 							],
 							"colStyles": [
-								"text-center col-2",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -19347,6 +19565,97 @@
 							]
 						}
 					]
+				}
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Phlan Refugee",
+			"source": "ALElementalEvil",
+			"page": 6,
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"athletics": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyArtisansTool": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"_": [
+						{
+							"equipmentType": "toolArtisan"
+						},
+						{
+							"special": "token of the life you once knew"
+						},
+						"traveler's clothes|phb",
+						{
+							"item": "pouch|phb",
+							"containsValue": 1500
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Insight}, {@skill Athletics}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiencies:",
+							"entry": "One type of {@filter artisan's tools|items|source=phb|miscellaneous=mundane|type=artisan's tools}"
+						},
+						{
+							"type": "item",
+							"name": "Languages:",
+							"entry": "One of your choice"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "A set of {@filter artisan's tools|items|source=phb|miscellaneous=mundane|type=artisan's tools} (one of your choice), a token of the life you once knew, a set of {@item traveler's clothes|phb}, and a belt {@item pouch|phb} containing 15 gp"
+						}
+					]
+				},
+				{
+					"name": "Lifestyle",
+					"type": "entries",
+					"entries": [
+						"Modest"
+					]
+				},
+				{
+					"name": "Overview",
+					"type": "entries",
+					"entries": [
+						"Gone are the happier days of walking into the Laughing Goblin Inn after a hard day's labor. Everything has changed, and you are lucky to be alive. Back in Phlan you could count yourself among those street-wise folks who knew when to pay a bribe and who to work with to make a living. Your ability to listen to the winds of change have saved you before, and this time they allowed you to be one of the lucky few who escaped Phlan with something more than just the shirt on your back."
+					]
+				},
+				{
+					"name": "Feature: Phlan Survivor",
+					"type": "entries",
+					"entries": [
+						"Whatever your prior standing was, you are now one of the many refugees that have come to Mulmaster. You are able to find refuge with others from Phlan and those who sympathize with your plight. Within Mulmaster this means that you can find a place to bed down, recover, and hide from the watch with either other refugees from Phlan, or the Zhents within the ghettos. Note: This feature is a variant of the Folk Hero feature."
+					],
+					"data": {
+						"isFeature": true
+					}
 				},
 				{
 					"ENG_name": "Contacts",
@@ -19363,8 +19672,8 @@
 								"联系"
 							],
 							"colStyles": [
-								"text-center col-2",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -19409,8 +19718,8 @@
 								"联系"
 							],
 							"colStyles": [
-								"text-center col-2",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -19476,8 +19785,8 @@
 			"page": 136,
 			"skillProficiencies": [
 				{
-					"athletics": true,
-					"survival": true
+					"medicine": true,
+					"persuasion": true
 				}
 			],
 			"languageProficiencies": [
@@ -19487,7 +19796,7 @@
 			],
 			"toolProficiencies": [
 				{
-					"anyMusicalInstrument": 1
+					"anyArtisansTool": 1
 				}
 			],
 			"startingEquipment": [
@@ -19617,13 +19926,14 @@
 						"化外之民时常被城市居民当作粗鲁蠢笨的家伙，而无法在城市生活中获得尊重。而大多数的化外之民则会将自身与部族，氏族，家族或是大自然的联系视为自身的牵绊。",
 						{
 							"type": "table",
+							"caption": "",
 							"colLabels": [
 								"d8",
 								"特点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -19662,13 +19972,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "",
 							"colLabels": [
 								"d6",
 								"理想"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -19699,13 +20010,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "",
 							"colLabels": [
 								"d6",
 								"牵挂"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -19736,13 +20048,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "",
 							"colLabels": [
 								"d6",
 								"缺点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -19774,7 +20087,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Phlan Insurgent",
@@ -19783,14 +20097,28 @@
 			"page": 6,
 			"skillProficiencies": [
 				{
-					"stealth": true,
-					"survival": true
+					"arcana": true,
+					"choose": {
+						"from": [
+							"religion",
+							"insight",
+							"nature",
+							"intimidation",
+							"history",
+							"stealth",
+							"perception",
+							"medicine",
+							"survival",
+							"persuasion",
+							"performance",
+							"athletics"
+						]
+					}
 				}
 			],
-			"toolProficiencies": [
+			"languageProficiencies": [
 				{
-					"anyArtisansTool": 1,
-					"vehicles (land)": true
+					"anyStandard": 2
 				}
 			],
 			"startingEquipment": [
@@ -19816,6 +20144,9 @@
 					]
 				}
 			],
+			"fromFeature": {
+				"feats": true
+			},
 			"entries": [
 				{
 					"type": "list",
@@ -19845,6 +20176,7 @@
 					"ENG_name": "Lifestyle",
 					"name": "生活方式",
 					"type": "entries",
+					"name": "Factions of Sigil",
 					"entries": [
 						"贫穷"
 					]
@@ -19853,6 +20185,7 @@
 					"ENG_name": "Overview",
 					"name": "概述",
 					"type": "entries",
+					"name": "Feature: Conviction",
 					"entries": [
 						"沃根沙拉克斯占领菲兰的记忆在你脑海中清晰如昨。你当时正忙于日常事务，当绿龙的部队从下水道涌出，袭击了你的家园。菲兰的许多市民，无论老少，都被俘虏、杀害或作为对残破病毒的贡品。你自己也是那些被俘虏的人之一。但是，无论是在冒险者的帮助下，还是通过你自己的智慧和坚定的决心，你逃脱了。",
 						"你没有逃离这个地区，而是选择留下来战斗。在镇外和致命的荆棘丛中找到庇护所，你向恶疫之泪及其怪物盟友发起攻击。你学会了在绝望和危急的情况下生存，物资匮乏，增援的到来也不确定。你已经习惯了在夜幕的掩护下行动，尽你所能给予打击，为在目前被占领的费兰失去的朋友和家人复仇。你将驱逐沃根沙克斯，或者在尝试中死去。"
@@ -19862,6 +20195,7 @@
 					"ENG_name": "Origin",
 					"name": "起源",
 					"type": "entries",
+					"name": "Suggested Characteristics",
 					"entries": [
 						"从你作为镇民的生活被剥离后，你已经适应了菲兰周围荒野的艰苦生活。你曾经从事的贸易仍然影响着你的人生观，你处理事情的方式，以及你对反抗残破病毒的抵抗运动的贡献。你可以在下面的表格上掷骰子来确定你在陷落前的职业是什么，或者选择最适合你角色的一个（从一般列或特定列中选择，但不能同时选择）。",
 						{
@@ -19872,9 +20206,12 @@
 								"起源（特定）"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-4",
-								"col-7"
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"d6",
+								"Personality Trait"
 							],
 							"rows": [
 								[
@@ -19936,6 +20273,7 @@
 					"ENG_name": "Suggested Characteristics",
 					"name": "建议人物特征",
 					"type": "entries",
+					"name": "Building a Planar Philosopher Character",
 					"entries": [
 						"你放弃了作为菲兰市民所知的生活。然而，残破病毒的入侵在你内心深处回响。也许你有一些朋友或家人能够和你一起逃脱。或者，也许每一个你深爱的人都在陷落期间丧生或失踪了。你可能知道有人不顾一切地在荆棘中生存，你渴望将他们从城镇的危险生活中解放出来。",
 						{
@@ -20097,7 +20435,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Phlan Refugee",
@@ -20106,8 +20445,8 @@
 			"page": 6,
 			"skillProficiencies": [
 				{
-					"insight": true,
-					"athletics": true
+					"acrobatics": true,
+					"performance": true
 				}
 			],
 			"languageProficiencies": [
@@ -20117,12 +20456,23 @@
 			],
 			"toolProficiencies": [
 				{
-					"anyArtisansTool": 1
+					"choose": {
+						"from": [
+							"anyArtisansTool",
+							"musical instrument"
+						]
+					}
 				}
 			],
 			"startingEquipment": [
 				{
 					"_": [
+						"ink (1-ounce bottle)|phb",
+						"ink pen|phb"
+					]
+				},
+				{
+					"a": [
 						{
 							"equipmentType": "工匠工具"
 						},
@@ -20137,7 +20487,7 @@
 					]
 				}
 			],
-			"entries": [
+			"additionalSpells": [
 				{
 					"type": "list",
 					"style": "list-hang-notitle",
@@ -20198,16 +20548,20 @@
 				{
 					"ENG_name": "Suggested Characteristics",
 					"type": "entries",
+					"name": "Feature: Prismari Initiate",
 					"entries": [
+						"You gain the {@feat Strixhaven Initiate|SCC} feat and must choose Prismari within it.",
+						"In addition, if you have the Spellcasting or Pact Magic feature, the spells on the Prismari Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)",
 						{
 							"type": "table",
+							"caption": "Prismari Spells",
 							"colLabels": [
 								"d8",
 								"特点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -20244,6 +20598,18 @@
 								]
 							]
 						},
+						"Consider customizing how your spells look when you cast them. You might wield your Prismari spells with dynamic, gestural movement\u2014as much dance as somatic component. Even a blast of fire in your hands is a sculpted work of art; elemental forces make grand designs as you hurl spells. These forces might linger on your body or in your clothes as decorative elements after your spells are dissipated, as sparks dance in your hair and your touch leaves tracings of frost on whatever you touch."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"type": "entries",
+					"name": "Building a Prismari Character",
+					"entries": [
+						"Any class or subclass that wields elemental forces of cold, fire, lightning, and wind can be a good fit in Prismari. Druids and sorcerers are common in Prismari, and wizards who study the Schools of {@class Wizard|PHB|Evocation|Evocation|PHB} or {@class Wizard|PHB|Transmutation|Transmutation|PHB} are also well represented. Clerics aren't very common in this school, but some with the {@class Cleric|PHB|Tempest domain|Tempest|PHB} end up here.",
+						"Beyond the ranks of traditional spellcasters, Prismari students also include monks who follow the {@class Monk|PHB|Way of the Four Elements|Four Elements|PHB}. Some acrobatic rogues and fighters (including those who emulate the archetype of the {@class Fighter|PHB|Eldritch Knight|Eldritch Knight|PHB}) also delight in the athleticism of Prismari performance.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -20359,7 +20725,8 @@
 					"name": "建议人物特征"
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Plaintiff",
@@ -20368,8 +20735,8 @@
 			"page": 50,
 			"skillProficiencies": [
 				{
-					"medicine": true,
-					"persuasion": true
+					"arcana": true,
+					"nature": true
 				}
 			],
 			"languageProficiencies": [
@@ -20385,16 +20752,53 @@
 			"startingEquipment": [
 				{
 					"_": [
+						"ink (1-ounce bottle)|phb",
+						"ink pen|phb",
+						"abacus|phb",
 						{
 							"equipmentType": "工匠工具"
 						},
 						"高级服装|PHB",
 						{
-							"value": 2000
+							"special": "school uniform"
+						},
+						{
+							"item": "pouch|phb",
+							"containsValue": 1500
 						}
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"expanded": {
+						"s1": [
+							"entangle",
+							"guiding bolt"
+						],
+						"s2": [
+							"enlarge/reduce",
+							"vortex warp|scc"
+						],
+						"s3": [
+							"aura of vitality",
+							"haste"
+						],
+						"s4": [
+							"control water",
+							"freedom of movement"
+						],
+						"s5": [
+							"circle of power",
+							"passwall"
+						]
+					}
+				}
+			],
+			"fromFeature": {
+				"additionalSpells": true,
+				"feats": true
+			},
 			"entries": [
 				{
 					"type": "list",
@@ -20441,11 +20845,12 @@
 					"ENG_name": "Suggested Characteristics",
 					"name": "建议人物特征",
 					"type": "entries",
+					"name": "Feature: Quandrix Initiate",
 					"entries": [
 						"起诉人有很多种。有些是无辜的旁观者，只想得到公平合理的伤害赔偿。 还有一些是专业的法庭讼棍，为了获得巨额赔偿而竭尽全力装出一副受了委屈的样子。",
 						{
 							"type": "table",
-							"caption": "",
+							"caption": "Quandrix Spells",
 							"colLabels": [
 								"d8",
 								"特点"
@@ -20489,6 +20894,18 @@
 								]
 							]
 						},
+						"Consider customizing how your spells look when you cast them. Your Quandrix spells might manifest amid kaleidoscopic swirls of fractal patterns, amplifying the tiniest movements of your somatic components. When your magic creates or alters creatures, it might briefly surround the targets with shimmering fractal designs or tessellated patterns."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"type": "entries",
+					"name": "Building a Quandrix Character",
+					"entries": [
+						"Any spellcasting class or subclass can work well for a Quandrix character. Both the scholarly focus of wizards (especially those who study the Schools of {@class Wizard|PHB|Abjuration|Abjuration|PHB}, {@class Wizard|PHB|Illusion|Illusion|PHB}, or {@class Wizard|PHB|Transmutation|Transmutation|PHB}) and the metamagic manipulations of sorcerers are welcome in Quandrix, and many druids explore the patterns of nature in Quandrix as well. A few clerics, particularly those with the {@class Cleric|PHB|Knowledge|Knowledge|PHB} or {@class Cleric|PHB|Nature|Nature|PHB} domains, study in Quandrix as well.",
+						"Aside from traditional spellcasters, a few characters of other classes find homes in Quandrix. Some fighters, monks, rangers, and rogues study here, using Quandrix principles to train their minds.",
 						{
 							"type": "table",
 							"caption": "",
@@ -20623,12 +21040,12 @@
 			],
 			"feats": [
 				{
-					"scion of the outer planes|sato": true
+					"acrobatics": true,
+					"performance": true
 				}
 			],
-			"skillProficiencies": [
+			"languageProficiencies": [
 				{
-					"arcana": true,
 					"choose": {
 						"from": [
 							"宗教",
@@ -20647,9 +21064,9 @@
 					}
 				}
 			],
-			"languageProficiencies": [
+			"toolProficiencies": [
 				{
-					"anyStandard": 2
+					"anyMusicalInstrument": 1
 				}
 			],
 			"startingEquipment": [
@@ -20661,20 +21078,53 @@
 						{
 							"special": "你指导哲学的宣言"
 						},
+						"costume clothes|phb",
 						{
 							"item": "寻常服装|PHB",
 							"displayName": "你派系风格的普通服装"
 						},
+						"common clothes|phb",
 						{
 							"item": "小包|PHB",
 							"containsValue": 1000
+						},
+						{
+							"special": "bottle of sweet, red juice"
 						}
 					]
 				}
 			],
-			"fromFeature": {
-				"feats": true
-			},
+			"additionalSpells": [
+				{
+					"expanded": {
+						"s0": [
+							"fire bolt#c",
+							"vicious mockery#c"
+						],
+						"s1": [
+							"burning hands",
+							"dissonant whispers",
+							"hellish rebuke"
+						],
+						"s2": [
+							"crown of madness",
+							"enthrall",
+							"flaming sphere"
+						],
+						"s3": [
+							"fear",
+							"haste"
+						],
+						"s4": [
+							"confusion",
+							"wall of fire"
+						],
+						"s5": [
+							"dominate person"
+						]
+					}
+				}
+			],
 			"entries": [
 				{
 					"type": "list",
@@ -20892,6 +21342,7 @@
 						"致力于多元宇宙特定哲学的冒险者会受到那些接受这些信仰的派系的欢迎。位面哲学家个性特征表建议了你的角色可能采纳的各种特征。",
 						{
 							"type": "table",
+							"caption": "Rakdos Guild Spells",
 							"colStyles": [
 								"col-2 text-center",
 								"col-10"
@@ -20899,6 +21350,10 @@
 							"colLabels": [
 								"d6",
 								"特点"
+							],
+							"colStyles": [
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -21087,7 +21542,7 @@
 								"spells"
 							],
 							"colStyles": [
-								"col-2 text-center",
+								"text-center col-2",
 								"col-10"
 							],
 							"rows": [
@@ -21181,10 +21636,17 @@
 							]
 						}
 					]
+				},
+				{
+					"type": "entries",
+					"name": "How Do I Fit In?",
+					"entries": [
+						"The Cult of Rakdos encourages independent action on the part of its members. Its goal is fomenting chaos, and it firmly believes in putting its own house in disorder before carrying that mission into the larger city. So your role is to execute your vision of grand satire and disruptive performance art, as you aspire to outdo your guild mates and attract the attention of Rakdos himself.",
+						"You work as part of a troupe, with your artistic talents used in service to a ringmaster's vision. But your performance is your own, and no one expects you to follow a script. In fact, if you go through a performance without doing something you haven't done before, you're clearly not trying hard enough."
+					]
 				}
 			],
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"ENG_name": "Quandrix Student",
@@ -21198,18 +21660,13 @@
 			],
 			"skillProficiencies": [
 				{
-					"arcana": true,
-					"nature": true
+					"deception": true,
+					"religion": true
 				}
 			],
 			"languageProficiencies": [
 				{
-					"anyStandard": 1
-				}
-			],
-			"toolProficiencies": [
-				{
-					"anyArtisansTool": 1
+					"any": 1
 				}
 			],
 			"startingEquipment": [
@@ -21224,6 +21681,7 @@
 						{
 							"special": "校服"
 						},
+						"common clothes|phb",
 						{
 							"item": "小包|PHB",
 							"containsValue": 1500
@@ -21541,7 +21999,7 @@
 								"表演者类型"
 							],
 							"colStyles": [
-								"text-center col-2",
+								"col-2 text-center",
 								"col-10"
 							],
 							"rows": [
@@ -21654,7 +22112,7 @@
 								"特点"
 							],
 							"colStyles": [
-								"text-center col-2",
+								"col-2 text-center",
 								"col-10"
 							],
 							"rows": [
@@ -21691,7 +22149,60 @@
 									"我无法忍受事物可预测，所以我喜欢在每种情况下添加一点混乱。"
 								]
 							]
+						}
+					]
+				}
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Revelry Pirate (Sailor)",
+			"source": "EGW",
+			"page": 203,
+			"_copy": {
+				"name": "Sailor",
+				"source": "PHB"
+			},
+			"hasFluff": true
+		},
+		{
+			"name": "Rewarded",
+			"source": "BMT",
+			"page": 57,
+			"feats": [
+				{
+					"lucky|phb": true
+				},
+				{
+					"magic initiate|phb": true
+				},
+				{
+					"skilled|phb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"persuasion": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"_": [
+						{
+							"special": "bottle of black ink"
 						},
+						"ink pen|phb",
 						{
 							"type": "table",
 							"caption": "理想",
@@ -21731,6 +22242,30 @@
 							]
 						},
 						{
+							"type": "item",
+							"name": "Tool Proficiencies:",
+							"entries": [
+								"One {@filter gaming set|items|source=phb|miscellaneous=mundane|type=gaming set} of your choice (such as {@item playing card set|phb|playing cards} or {@item three-dragon ante set|phb|three-dragon ante cards})"
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Feature: Fortune's Favor",
+					"entries": [
+						"Your unexpected good fortune is reflected by a minor boon. You gain the {@feat Lucky}, {@feat Magic Initiate}, or {@feat Skilled} feat (your choice). Your choice of feat reflects the transformation that changed your life. An encounter with a genie who gave you three wishes might have resulted in magical powers represented by Magic Initiate. If you paid off all your family debts with a fortuitous round of three-dragon ante, you might be Lucky instead. Alternatively, you could use the Skilled feat to reflect whatever trial you endured to secure your new destiny and to model the knowledge and abilities imparted to you by whatever force transformed your life."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"type": "entries",
+					"name": "Suggested Characteristics",
+					"entries": [
+						"Your character's perspective on life has changed thanks to their new destiny. The Rewarded Personality Traits table suggests traits you might adopt for your character and cards from the {@item Deck of Many Things} that might have prompted this trait.",
+						{
 							"type": "table",
 							"caption": "牵挂",
 							"colLabels": [
@@ -21738,7 +22273,7 @@
 								"牵挂"
 							],
 							"colStyles": [
-								"text-center col-2",
+								"col-2 text-center",
 								"col-10"
 							],
 							"rows": [
@@ -21823,8 +22358,12 @@
 								"联系"
 							],
 							"colStyles": [
-								"text-center col-2",
+								"col-2 text-center",
 								"col-10"
+							],
+							"colLabels": [
+								"d6",
+								"Trinket"
 							],
 							"rows": [
 								[
@@ -21927,7 +22466,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Reformed Cultist",
@@ -21936,13 +22476,18 @@
 			"page": 185,
 			"skillProficiencies": [
 				{
-					"deception": true,
-					"religion": true
+					"history": true,
+					"investigation": true
 				}
 			],
 			"languageProficiencies": [
 				{
-					"any": 1
+					"anyStandard": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyArtisansTool": 1
 				}
 			],
 			"startingEquipment": [
@@ -22189,22 +22734,22 @@
 			"ENG_name": "Rewarded",
 			"name": "受宠者",
 			"source": "BMT",
-			"page": 57,
+			"page": 58,
 			"feats": [
 				{
-					"lucky|phb": true
-				},
-				{
-					"magic initiate|phb": true
+					"alert|phb": true
 				},
 				{
 					"skilled|phb": true
+				},
+				{
+					"tough|phb": true
 				}
 			],
 			"skillProficiencies": [
 				{
-					"insight": true,
-					"persuasion": true
+					"stealth": true,
+					"survival": true
 				}
 			],
 			"languageProficiencies": [
@@ -22228,6 +22773,7 @@
 							"special": "纸张",
 							"quantity": 5
 						},
+						"hunting trap|phb",
 						{
 							"item": "gaming set|PHB",
 							"displayName": "游戏套装（与您选择的熟练度相匹配）"
@@ -22399,12 +22945,12 @@
 			"skillProficiencies": [
 				{
 					"history": true,
-					"investigation": true
+					"perception": true
 				}
 			],
 			"languageProficiencies": [
 				{
-					"anyStandard": 1
+					"giant": true
 				}
 			],
 			"toolProficiencies": [
@@ -22429,6 +22975,9 @@
 					]
 				}
 			],
+			"fromFeature": {
+				"feats": true
+			},
 			"entries": [
 				{
 					"type": "list",
@@ -22475,10 +23024,12 @@
 					"ENG_name": "Suggested Characteristics",
 					"name": "建议人物特征",
 					"type": "entries",
+					"name": "Rune Styles",
 					"entries": [
 						"如果你对之前的实习感到满意，那么这次的分手可能是友好的。如果没有，可能是武装警卫把你从房子里带走了。如果你在上一份工作中被忽略，你可能会感到愤怒、习惯性的冷漠，以及对尸体埋葬地点的敏锐认知(也许是字面意思)交织在一起。",
 						{
 							"type": "table",
+							"caption": "Rune Style",
 							"colLabels": [
 								"d8",
 								"特点"
@@ -22521,7 +23072,31 @@
 									"我成为高层管理人员只是时间问题。 我只需要对我的上级拍马屁，然后打倒我下面的人。"
 								]
 							]
-						},
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Building a Rune Carver Character",
+					"entries": [
+						"Scholarly pursuits, ancient mysteries, or a fateful encounter might inspire a character to pursue the secrets of a rune carver."
+					]
+				},
+				{
+					"name": "Feature: Rune Shaper",
+					"type": "entries",
+					"entries": [
+						"You gain the {@feat Rune Shaper|BGG} feat."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"name": "Suggested Characteristics",
+					"type": "entries",
+					"entries": [
+						"The Rune Carver Personality Traits table suggests a variety of traits you might adopt for your character.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -22558,7 +23133,90 @@
 									"力量。 金钱很好，但真正的力量意味着永远不必说抱歉。（邪恶）"
 								]
 							]
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sage",
+			"source": "PHB",
+			"page": 137,
+			"basicRules": true,
+			"reprintedAs": [
+				"Sage|XPHB"
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"history": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 2
+				}
+			],
+			"startingEquipment": [
+				{
+					"_": [
+						"ink (1-ounce bottle)|phb",
+						{
+							"special": "quill"
 						},
+						{
+							"special": "small knife"
+						},
+						{
+							"special": "letter from a dead colleague posing a question you have not yet been able to answer"
+						},
+						"common clothes|phb",
+						{
+							"item": "pouch|phb",
+							"containsValue": 1000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Arcana}, {@skill History}"
+						},
+						{
+							"type": "item",
+							"name": "Languages:",
+							"entry": "Two of your choice"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "A {@item Ink (1-ounce bottle)|phb|bottle of black ink}, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of {@item common clothes|phb}, and a belt {@item pouch|phb} containing 10 gp"
+						}
+					]
+				},
+				{
+					"name": "Feature: Researcher",
+					"type": "entries",
+					"entries": [
+						"When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"name": "Specialty",
+					"type": "entries",
+					"entries": [
+						"To determine the nature of your scholarly training, roll a d8 or choose from the options in the table below.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -22566,8 +23224,8 @@
 								"牵挂"
 							],
 							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -22595,7 +23253,14 @@
 									"虽然我与人相处得不好，但我的宠物对我来说意味着世界。"
 								]
 							]
-						},
+						}
+					]
+				},
+				{
+					"name": "Suggested Characteristics",
+					"type": "entries",
+					"entries": [
+						"Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly\u2014sometimes in its own right, sometimes as a means toward other ideals.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -22603,8 +23268,8 @@
 								"缺点"
 							],
 							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -22752,10 +23417,6 @@
 						"从不幸中崛起塑造了一个人的视角。《毁灭性格特征表》为你的角色推荐了一些可能采纳的性格特征（以及可能引发这些特征的毁灭性卡牌）。",
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"特点"
@@ -22806,10 +23467,43 @@
 						"当你创建角色时，你可以在废墟小饰品表上掷一次骰，而不是在{@book 玩家手册|PHB}中的小饰品表上掷骰。",
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
+							"colLabels": [
+								"d6",
+								"Bond"
 							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"It is my duty to protect my students."
+								],
+								[
+									"2",
+									"I have an ancient text that holds terrible secrets that must not fall into the wrong hands."
+								],
+								[
+									"3",
+									"I work to preserve a library, university, scriptorium, or monastery."
+								],
+								[
+									"4",
+									"My life's work is a series of tomes related to a specific field of lore."
+								],
+								[
+									"5",
+									"I've been searching my whole life for the answer to a certain question."
+								],
+								[
+									"6",
+									"I sold my soul for knowledge. I hope to do great deeds and win it back."
+								]
+							]
+						},
+						{
+							"type": "table",
 							"colLabels": [
 								"d6",
 								"饰品"
@@ -22844,8 +23538,7 @@
 					]
 				}
 			],
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"ENG_name": "Rune Carver",
@@ -22859,23 +23552,56 @@
 			],
 			"skillProficiencies": [
 				{
-					"history": true,
-					"perception": true
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
 				}
 			],
-			"languageProficiencies": [
+			"feats": [
 				{
-					"giant": true
+					"magic initiate; wizard|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"history": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"anyArtisansTool": 1
+					"calligrapher's supplies": true
 				}
 			],
 			"startingEquipment": [
 				{
-					"_": [
+					"A": [
 						{
 							"equipmentType": "工匠工具"
 						},
@@ -22891,9 +23617,6 @@
 					]
 				}
 			],
-			"fromFeature": {
-				"feats": true
-			},
 			"entries": [
 				{
 					"type": "list",
@@ -23043,20 +23766,20 @@
 			"ENG_name": "Sage",
 			"name": "智者",
 			"source": "PHB",
-			"page": 137,
-			"basicRules": true,
+			"page": 139,
 			"reprintedAs": [
 				"智者|XPHB"
 			],
 			"skillProficiencies": [
 				{
-					"arcana": true,
-					"history": true
+					"athletics": true,
+					"perception": true
 				}
 			],
-			"languageProficiencies": [
+			"toolProficiencies": [
 				{
-					"anyStandard": 2
+					"navigator's tools": true,
+					"vehicles (water)": true
 				}
 			],
 			"startingEquipment": [
@@ -23069,6 +23792,7 @@
 						{
 							"special": "小刀"
 						},
+						"silk rope (50 feet)|phb",
 						{
 							"special": "一封去世同事信件其内载有你尚不能解答的问题"
 						},
@@ -23340,16 +24064,15 @@
 			"ENG_name": "Sage",
 			"name": "智者",
 			"source": "XPHB",
-			"page": 183,
-			"basicRules2024": true,
+			"page": 184,
 			"edition": "one",
 			"ability": [
 				{
 					"choose": {
 						"weighted": {
 							"from": [
-								"con",
-								"int",
+								"str",
+								"dex",
 								"wis"
 							],
 							"weights": [
@@ -23363,8 +24086,8 @@
 					"choose": {
 						"weighted": {
 							"from": [
-								"con",
-								"int",
+								"str",
+								"dex",
 								"wis"
 							],
 							"weights": [
@@ -23378,18 +24101,18 @@
 			],
 			"feats": [
 				{
-					"magic initiate; wizard|xphb": true
+					"tavern brawler|xphb": true
 				}
 			],
 			"skillProficiencies": [
 				{
-					"arcana": true,
-					"history": true
+					"acrobatics": true,
+					"perception": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"calligrapher's supplies": true
+					"navigator's tools": true
 				}
 			],
 			"startingEquipment": [
@@ -23412,7 +24135,7 @@
 							"item": "法袍|xphb"
 						},
 						{
-							"value": 800
+							"value": 2000
 						}
 					],
 					"B": [
@@ -23473,19 +24196,18 @@
 			],
 			"skillProficiencies": [
 				{
-					"athletics": true,
+					"investigation": true,
 					"perception": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"navigator's tools": true,
-					"vehicles (water)": true
+					"calligrapher's supplies": true
 				}
 			],
 			"startingEquipment": [
 				{
-					"_": [
+					"A": [
 						{
 							"item": "短棒|PHB",
 							"displayName": "缠索栓（短棒）"
@@ -23527,7 +24249,16 @@
 							"entry": "一根挽缆栓（{@item 短棒|PHB}），{@item 丝绳(50尺)|PHB}，兔脚或穿孔小石头一类的护身符（或从第5章的{@item 饰品|PHB}列表中掷骰决定），一套{@item 寻常服装|PHB}，以及一个装有10 gp的{@item 小包|PHB}"
 						}
 					]
-				},
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Secret Identity",
+			"source": "ALRageOfDemons",
+			"page": 9,
+			"skillProficiencies": [
 				{
 					"ENG_name": "Feature: Ship's Passage",
 					"name": "特性：船家路子",
@@ -23701,7 +24432,8 @@
 								]
 							]
 						}
-					]
+					],
+					"name": "Suggested Characteristics"
 				}
 			],
 			"hasFluff": true
@@ -23747,18 +24479,29 @@
 			],
 			"feats": [
 				{
-					"tavern brawler|xphb": true
+					"nature": true,
+					"persuasion": true
 				}
 			],
-			"skillProficiencies": [
+			"languageProficiencies": [
 				{
-					"acrobatics": true,
-					"perception": true
+					"choose": {
+						"from": [
+							"elvish",
+							"other",
+							"sylvan"
+						]
+					}
 				}
 			],
 			"toolProficiencies": [
 				{
-					"navigator's tools": true
+					"choose": {
+						"from": [
+							"anyArtisansTool",
+							"musical instrument"
+						]
+					}
 				}
 			],
 			"startingEquipment": [
@@ -23776,15 +24519,46 @@
 						{
 							"item": "旅行者服装|xphb"
 						},
+						"healer's kit|phb",
+						"robes|phb",
+						"common clothes|phb",
 						{
-							"value": 2000
-						}
-					],
-					"B": [
-						{
-							"value": 5000
+							"item": "pouch|phb",
+							"containsValue": 500
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"expanded": {
+						"s0": [
+							"druidcraft#c",
+							"friends#c"
+						],
+						"s1": [
+							"animal friendship",
+							"charm person"
+						],
+						"s2": [
+							"aid",
+							"animal messenger",
+							"calm emotions",
+							"warding bond"
+						],
+						"s3": [
+							"plant growth",
+							"speak with plants"
+						],
+						"s4": [
+							"aura of life",
+							"conjure minor elementals"
+						],
+						"s5": [
+							"awaken",
+							"commune with nature"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -24031,6 +24805,7 @@
 					"ENG_name": "Feature: Secret Identity",
 					"name": "特性：秘密身份",
 					"type": "entries",
+					"name": "Feature: Conclave's Shelter",
 					"entries": [
 						"你创建了一个秘密身份，用来隐藏你的真实种族，并为在希尔斯法尔的存在提供一个掩护解释。此外，只要你看过要伪造的文件种类或笔迹的样本，你就可以伪造文件，包括官方文件和个人信件。注意：这个特性是Charlatan特性的一个变体。"
 					],
@@ -24041,7 +24816,10 @@
 				{
 					"ENG_name": "Suggested Characteristics",
 					"type": "entries",
+					"name": "Selesnya Guild Spells",
 					"entries": [
+						"{@i Prerequisite: Spellcasting or Pact Magic class feature}",
+						"For you, the spells on the Selesnya Guild Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)",
 						{
 							"type": "table",
 							"colLabels": [
@@ -24049,8 +24827,12 @@
 								"特点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"Spell Level",
+								"Spells"
 							],
 							"rows": [
 								[
@@ -24087,15 +24869,24 @@
 								]
 							]
 						},
+						"Members of the Selesnya Conclave refer to their magic as \"doruvati,\" a Sylvan word meaning \"gift.\" When you use these gifts of Mat'Selesnya, graceful swirls of green and silver light dance in the air around you, and phantasmal green leaves might waft through the air. A sensation of gentle warmth and the smell of spring flowers or autumn leaves might accompany your spells."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Suggested Characteristics",
+					"entries": [
+						"Most members of the Selesnya Conclave are true believers\u2014the tight-knit community allows little room for the cynical or disillusioned. They are spiritual, empathetic, and generally peaceful\u2014unless roused to action. Their flaws and bonds alike grow naturally from their close ties to the community.",
 						{
 							"type": "table",
+							"caption": "Personality Traits",
 							"colLabels": [
 								"d6",
 								"理想"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -24126,13 +24917,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Ideals",
 							"colLabels": [
 								"d6",
 								"牵挂"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -24163,13 +24955,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Bonds",
 							"colLabels": [
 								"d6",
 								"缺点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -24338,7 +25131,7 @@
 							"type": "table",
 							"caption": "瑟雷尼亚公会法术",
 							"colStyles": [
-								"col-2 text-center",
+								"text-center col-2",
 								"col-10"
 							],
 							"colLabels": [
@@ -26186,7 +26979,7 @@
 								"缺点"
 							],
 							"colStyles": [
-								"col-2 text-center",
+								"text-center col-2",
 								"col-10"
 							],
 							"rows": [
@@ -26299,6 +27092,7 @@
 					"ENG_name": "Feature: Military Rank",
 					"name": "特性：军衔",
 					"type": "entries",
+					"name": "Feature: Researcher",
 					"entries": [
 						"你作为士兵时曾获得过军衔。那些忠于你之前所在组织的士兵仍会承认你的权威与影响，而其中军衔比你低的人甚至依然会遵从你的命令。凭借军衔的影响，你可以向其他士兵临时征用简单的装备或马匹。并且还可以凭此随意通过那些承认你军衔的友方军队大营和堡垒。"
 					],
@@ -26310,17 +27104,19 @@
 					"ENG_name": "Specialty",
 					"name": "手法",
 					"type": "entries",
+					"name": "Simic Guild Spells",
 					"entries": [
 						"你在身为士兵的时期曾在你的小组或部队中任职一个特定的专职。参照下表投一个d8随机决定角色的专职，或是直接从表中自行选择：",
 						{
 							"type": "table",
+							"caption": "Personality Traits",
 							"colLabels": [
 								"d8",
 								"职能"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26367,13 +27163,14 @@
 						"战争的恐怖连同兵役中的严苛纪律在所有的士兵心中刻下了印记，塑造了他们的理想，凝成了牢固的牵绊，甚至还会在他们身上留下伤疤，或是使他们变得对恐惧、羞愧和憎恨等情绪更加敏感。",
 						{
 							"type": "table",
+							"caption": "Ideals",
 							"colLabels": [
 								"d8",
 								"特点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26412,13 +27209,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Flaws",
 							"colLabels": [
 								"d6",
 								"理想"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26446,16 +27244,25 @@
 									"国家Nation。我的城市、国家和人民是最重要的事。（任意）"
 								]
 							]
-						},
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Contacts",
+					"entries": [
+						"The fluid nature of clades, whose rosters span different laboratories and change as researchers discover new interests, creates abundant connections among the Simic. The guild members live in watery sinkholes called zonots, and their isolation shelters them from much contact with outsiders. Nonetheless, a fair number of Simic members are former members of other guilds.",
+						"Roll twice on the Simic Contacts table (for an ally and a rival) and once on the Non-Simic Contacts table.",
 						{
 							"type": "table",
+							"caption": "Simic Contacts",
 							"colLabels": [
 								"d6",
 								"牵挂"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26486,13 +27293,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Non-Simic Contacts",
 							"colLabels": [
 								"d6",
 								"缺点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"text-center col-2",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26521,6 +27329,14 @@
 								]
 							]
 						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "How Do I Fit In?",
+					"entries": [
+						"As a Simic adventurer, your mission likely aligns with the Adaptationist philosophy; the disagreements and tensions among the guilds will soon erupt into open conflict, and your guild needs your help to ensure that the Simic survive. That help might come in the form of defending against Golgari incursions into Simic zonots or shielding Simic research from Azorius intrusion. It could also involve more subtle, diplomatic work to maintain balance among the guilds, or subterfuge aimed at undermining another guild's grab for power.",
+						"Self-improvement is also an important part of your mission. Anything you can do to make yourself more capable\u2014whether learning a new spell or adopting a new hybridizing mutation\u2014gives the Simic a stronger weapon in its arsenal. The combine must change to survive, and that means individual members of the guild must grow and adapt as well."
 					]
 				}
 			],
@@ -26574,12 +27390,12 @@
 			"skillProficiencies": [
 				{
 					"athletics": true,
-					"intimidation": true
+					"deception": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"anyGamingSet": 1
+					"vehicles (water)": true
 				}
 			],
 			"startingEquipment": [
@@ -26607,7 +27423,7 @@
 							"item": "旅行者服装|xphb"
 						},
 						{
-							"value": 1400
+							"special": "fancy leather vest"
 						}
 					],
 					"B": [
@@ -26739,6 +27555,7 @@
 					"ENG_name": "Feature: Ex-Convict",
 					"name": "特性：前罪犯",
 					"type": "entries",
+					"name": "Feature: Down Low",
 					"entries": [
 						"你在监禁期间获得的知识让你能够洞察当地的守卫和狱卒。你知道哪些人会接受贿赂，或者为你视而不见。你还可以寻求其他罪犯的帮助，以躲避当局的追捕。注意：这个特性是\"宫廷人物\"特性的一个变体。"
 					],
@@ -26750,16 +27567,63 @@
 					"ENG_name": "Suggested Characteristics",
 					"name": "建议人物特征",
 					"type": "entries",
+					"name": "Claim to Fame",
 					"entries": [
+						"Every smuggler has that one tale that sets them apart from common criminals. By wits, sailing skill, or a silver tongue, you lived to tell the story\u2014and you tell it often. You can roll on the following table to determine your claim or choose one that best fits your character.",
 						{
 							"type": "table",
+							"colLabels": [
+								"d6",
+								"Accomplishment"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"Spirit of the Whale. You smuggled stolen dwarven spirits in the body of a dead whale being pulled behind a fishing boat. When you delivered the goods, the corpse suddenly exploded, sending whale meat and whiskey bottles for half a mile."
+								],
+								[
+									"2",
+									"Cart and Sword. You drove a cart filled with stolen art through the middle of a battlefield while singing sea shanties to confuse the combatants."
+								],
+								[
+									"3",
+									"The Recruit. You enlisted in another nation's navy for the purpose of smuggling stolen jewels to a distant port. You attained a minor rank before disappearing from the navy and making your way here."
+								],
+								[
+									"4",
+									"River of Shadows. Your riverboat accidentally slipped through the veil into the Shadowfell for several hours. While you were there, you sold some stolen dragonborn artifacts before returning to this plane and paddling home."
+								],
+								[
+									"5",
+									"Gold-Hearted. You agreed to transport a family escaping a war. The baby began to cry at a checkpoint, and you gave the guards all your gold to let you pass. The family never found out about this gesture."
+								],
+								[
+									"6",
+									"Playing Both Sides. You once smuggled crates of crossbow bolts and bundles of arrows, each destined for an opposing side in a regional war, at the same time. The buyers arrived within moments of each other but did not discover your trickery."
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Suggested Characteristics",
+					"entries": [
+						"In general, smugglers value survival, and then profit, above other things. One could be a part of a larger organization, or might run a small smuggling vessel of their own. Smugglers live the lies they have told, and they have a natural ability to recall all the falsehoods and half-truths they have ever spouted.",
+						{
+							"type": "table",
+							"caption": "Smuggler Personality Traits",
 							"colLabels": [
 								"d8",
 								"特点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26798,13 +27662,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Smuggler Ideals",
 							"colLabels": [
 								"d6",
 								"理想"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26835,13 +27700,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Smuggler Bonds",
 							"colLabels": [
 								"d6",
 								"牵挂"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26872,13 +27738,14 @@
 						},
 						{
 							"type": "table",
+							"caption": "Smuggler Flaws",
 							"colLabels": [
 								"d6",
 								"缺点"
 							],
 							"colStyles": [
-								"col-1 text-center",
-								"col-11"
+								"col-2 text-center",
+								"col-10"
 							],
 							"rows": [
 								[
@@ -26932,8 +27799,8 @@
 			],
 			"toolProficiencies": [
 				{
-					"cook's utensils": true,
-					"artisan's tools": true
+					"anyGamingSet": 1,
+					"vehicles (land)": true
 				}
 			],
 			"startingEquipment": [
@@ -26945,9 +27812,21 @@
 						{
 							"special": "一双厚手套"
 						},
+						"common clothes|phb",
+						{
+							"item": "pouch|phb",
+							"containsValue": 1000
+						}
+					]
+				},
+				{
+					"a": [
 						{
 							"special": "带兜帽的斗篷"
 						}
+					],
+					"b": [
+						"playing card set|phb"
 					]
 				}
 			],
@@ -26981,12 +27860,9 @@
 					"type": "entries",
 					"name": "生存印记",
 					"entries": [
+						"During your time as a soldier, you had a specific role to play in your unit or army. Roll a d8 or choose from the options in the table below to determine your role:",
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d8",
 								"生存印记"
@@ -27045,6 +27921,10 @@
 								"d8",
 								"特点"
 							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
 							"rows": [
 								[
 									"1",
@@ -27082,13 +27962,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"理想"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -27119,13 +27999,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"牵挂"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -27156,13 +28036,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"缺点"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -27191,10 +28071,7 @@
 								]
 							]
 						}
-					],
-					"data": {
-						"isFeature": true
-					}
+					]
 				}
 			],
 			"hasFluff": true
@@ -27206,18 +28083,100 @@
 			"page": 9,
 			"skillProficiencies": [
 				{
-					"animal handling": true,
-					"nature": true
-				}
-			],
-			"languageProficiencies": [
-				{
-					"giant": true
+					"athletics": true,
+					"intimidation": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"herbalism kit": true
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "spear|xphb"
+						},
+						{
+							"item": "shortbow|xphb"
+						},
+						{
+							"item": "arrows (20)|xphb"
+						},
+						{
+							"item": "gaming set|xphb"
+						},
+						{
+							"item": "healer's kit|xphb"
+						},
+						{
+							"item": "quiver|xphb"
+						},
+						{
+							"item": "traveler's clothes|xphb"
+						},
+						{
+							"value": 1400
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Ability Scores:",
+							"entry": "Strength, Dexterity, Constitution"
+						},
+						{
+							"type": "item",
+							"name": "Feat:",
+							"entry": "{@feat Savage Attacker|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Skill Proficiencies:",
+							"entry": "{@skill Athletics|XPHB}, {@skill Intimidation|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiency:",
+							"entry": "Choose one kind of {@item Gaming Set|XPHB}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment:",
+							"entry": "Choose A or B: (A) {@item Spear|XPHB}, {@item Shortbow|XPHB}, {@item Arrow|XPHB|20 Arrows}, {@item Gaming Set|XPHB} (same as above), {@item Healer's Kit|XPHB}, {@item Quiver|XPHB}, {@item Traveler's Clothes|XPHB}, 14 GP; or (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Stojanow Prisoner",
+			"source": "ALCurseOfStrahd",
+			"page": 8,
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1,
+					"thieves' tools": true
 				}
 			],
 			"startingEquipment": [
@@ -27469,18 +28428,18 @@
 			"page": 11,
 			"skillProficiencies": [
 				{
-					"investigation": true,
-					"persuasion": true
+					"animal handling": true,
+					"nature": true
 				}
 			],
 			"languageProficiencies": [
 				{
-					"elvish": true
+					"giant": true
 				}
 			],
 			"toolProficiencies": [
 				{
-					"thieves' tools": true
+					"herbalism kit": true
 				}
 			],
 			"startingEquipment": [
@@ -27494,8 +28453,11 @@
 							"item": "高级服装|PHB",
 							"displayName": "警长徽章（徽章）一套高档衣服"
 						},
+						"hunting trap|phb",
+						"common clothes|phb",
 						{
-							"value": 1700
+							"item": "pouch|phb",
+							"containsValue": 500
 						}
 					]
 				}
@@ -27563,6 +28525,7 @@
 					"ENG_name": "Suggested Characteristics",
 					"type": "entries",
 					"entries": [
+						"Ticklebelly nomads only venture into civilization when necessary. You are social within your tribe, with tribes of other nomads, and even with the stone giant tribes that populate the Giant's Cairn. However, other communities tend to either put you on your guard or put you in a state of wonder. Was it this wonder that enticed you into a life of adventuring? On the other hand, you are fiercely protective of and dedicated to your tribe. Perhaps it was this dedication that led you to venture out; either of your own will or at the behest of your tribe's leaders.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -27744,8 +28707,7 @@
 			],
 			"toolProficiencies": [
 				{
-					"thieves' tools": true,
-					"cartographer's tools": true
+					"thieves' tools": true
 				}
 			],
 			"startingEquipment": [
@@ -27865,6 +28827,10 @@
 								"d8",
 								"特点"
 							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
 							"rows": [
 								[
 									"1",
@@ -27902,13 +28868,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"理想"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -27939,13 +28905,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"牵挂"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -27976,13 +28942,13 @@
 						},
 						{
 							"type": "table",
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
 							"colLabels": [
 								"d6",
 								"缺点"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
 							],
 							"rows": [
 								[
@@ -28012,9 +28978,7 @@
 							]
 						}
 					],
-					"data": {
-						"isFeature": true
-					}
+					"name": "Suggested Characteristics"
 				}
 			],
 			"hasFluff": true

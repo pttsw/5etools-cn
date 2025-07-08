@@ -728,7 +728,7 @@ class ModalFilterBestiary extends ModalFilterBase {
 				hash,
 				source,
 				sourceJson: mon.source,
-				page: mon.page,
+				...ListItem.getCommonValues(mon),
 				type,
 				cr,
 				ENG_name: mon.ENG_name,

@@ -2216,6 +2216,68 @@
 				}
 			],
 			"migrationVersion": 3
+		},
+		{
+			"name": "Stonecunning",
+			"source": "XPHB",
+			"raceName": "Dwarf",
+			"raceSource": "XPHB",
+			"system": {
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Stonecunning",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "minute",
+						"value": "10"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "stonecunning"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "stonecunning",
+					"duration": {
+						"seconds": 600
+					},
+					"changes": [
+						{
+							"key": "system.attributes.senses.tremorsense",
+							"mode": "ADD",
+							"value": 60
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
 		}
 	]
 }

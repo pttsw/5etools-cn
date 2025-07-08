@@ -472,11 +472,7 @@ class BestiaryPage extends ListPageMultiSource {
 				source,
 				type,
 				cr,
-				group: mon.group ? [mon.group].flat().join(",") : "",
-				alias: (mon.alias || []).map(it => `"${it}"`).join(","),
-				page: mon.page,
-				ENG_name: mon.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(mon),
+				...ListItem.getCommonValues(mon),
 			},
 			{
 				isExcluded,

@@ -615,7 +615,7 @@ class ModalFilterItems extends ModalFilterBase {
 				hash,
 				source,
 				sourceJson: item.source,
-				page: item.page,
+				...ListItem.getCommonValues(item),
 				type,
 				ENG_name: item.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(item),

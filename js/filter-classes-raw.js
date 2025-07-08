@@ -522,9 +522,7 @@ class ModalFilterClasses extends ModalFilterBase {
 			`${cls.name} -- ${cls.source}`,
 			{
 				source: `${source} -- ${cls.name}`,
-				ENG_name: cls.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
-				page: cls.page,
+				...ListItem.getCommonValues(cls),
 			},
 			{
 				ixClass: clsI,
@@ -549,9 +547,7 @@ class ModalFilterClasses extends ModalFilterBase {
 			`${cls.name} -- ${cls.source} -- ${sc.name} -- ${sc.source}`,
 			{
 				source: `${cls.source} -- ${cls.name} -- ${source} -- ${sc.name}`,
-				ENG_name: cls.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
-				page: sc.page,
+				...ListItem.getCommonValues(sc),
 			},
 			{
 				ixClass: clsI,

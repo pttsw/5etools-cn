@@ -141,10 +141,10 @@ class NavBar {
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "plutonium.html", "Plutonium (Foundry MOD) 功能");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
-		this._addElement_li(NavBar._CAT_UTILITIES, "https://wiki.tercept.net/en/betteR20", "Roll20 脚本小帮手", {isExternal: true});
+		this._addElement_li(NavBar._CAT_UTILITIES, "https://wiki.tercept.net/en/betteR20", "Roll20 脚本小帮手", {isExternal: true, isExternalMark: true});
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "changelog.html", "更新日志");
-		this._addElement_li(NavBar._CAT_UTILITIES, NavBar._getCurrentWikiHelpPage(), "Help", {isExternal: true});
+		this._addElement_li(NavBar._CAT_UTILITIES, NavBar._getCurrentWikiHelpPage(), "Page Help", {isExternal: true, isExternalMark: true});
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "privacy-policy.html", "隐私政策");
 
@@ -236,6 +236,8 @@ class NavBar {
 				title: "Remove all preloaded data, and clear away any caches.",
 			},
 		);
+
+		this._addElement_li(null, "https://wiki.tercept.net/en/5eTools", "Help", {isRoot: true, isExternal: true});
 	}
 
 	static _getNode (category) {
@@ -378,7 +380,9 @@ class NavBar {
 	 * @param [opts.aHash] - Optional hash to be appended to the base href
 	 * @param [opts.isRoot] - If the item is a root navbar element.
 	 * @param [opts.isExternal] - If the item is an external link.
+	 * @param [opts.isExternalMark] - If an "external link" icon should be shown.
 	 * @param [opts.date] - A date to prefix the list item with.
+	 * @param [opts.title] - Title for this nav item.
 	 * @param [opts.isAddDateSpacer] - True if this item has no date, but is in a list of items with dates.
 	 * @param [opts.source] - A source associated with this item, which should be displayed as a colored marker.
 	 * @param [opts.isInAccordion] - True if this item is inside an accordion.
@@ -405,6 +409,7 @@ class NavBar {
 			li.onmouseenter = function () { NavBar._handleItemMouseEnter(this); };
 			li.onclick = function () { NavBar._dropdowns.forEach(ele => NavBar._closeDropdownElement(ele)); };
 		}
+		if (opts.title) li.setAttribute("title", opts.title);
 
 		const a = document.createElement("a");
 		a.href = href;
@@ -414,6 +419,9 @@ class NavBar {
 
 		if (opts.isExternal) {
 			a.setAttribute("target", "_blank");
+			a.setAttribute("rel", "noopener noreferrer");
+		}
+		if (opts.isExternalMark) {
 			a.classList.add("inline-split-v-center");
 			a.classList.add("w-100");
 			a.innerHTML = `<span>${aText}</span><span class="glyphicon glyphicon-new-window"></span>`;
@@ -863,21 +871,6 @@ NavBar._timerMousePos = {};
 NavBar._cachedInstallEvent = null;
 
 NavBar.InteractionManager = class {
-	static _onClick_button_dayNight (evt) {
-		evt.preventDefault();
-		styleSwitcher.cycleDayNightMode();
-	}
-
-	static _onContext_button_dayNight (evt) {
-		evt.preventDefault();
-		styleSwitcher.cycleDayNightMode(-1);
-	}
-
-	static _onClick_button_wideMode (evt) {
-		evt.preventDefault();
-		styleSwitcher.toggleWide();
-	}
-
 	static async _pOnClick_button_saveStateFile (evt) {
 		evt.preventDefault();
 		const sync = StorageUtil.syncGetDump();
