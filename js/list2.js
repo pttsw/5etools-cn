@@ -23,6 +23,8 @@ class ListItem {
 			group: ent.group ? ent.group.join(",") : "",
 			alias: (ent.alias || []).map(it => `"${it}"`).join(","),
 			page: ent.page,
+			ENG_name: ent.ENG_name,
+			ENG_hash: UrlUtil.autoEncodeEngHash(ent),
 		};
 	}
 
