@@ -2157,7 +2157,7 @@
 		},
 		{
 			"ENG_name": "Arrow of Slaying (*)",
-			"name": "屠杀箭 (通用)",
+			"name": "屠杀箭 (*)",
 			"edition": "classic",
 			"type": "GV|DMG",
 			"requires": [
@@ -2568,32 +2568,6 @@
 			}
 		},
 		{
-			"ENG_name": "Comet Smasher",
-			"name": "彗星碎击者",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"type": "M",
-					"dmgType": "B"
-				},
-				{
-					"type": "M|XPHB",
-					"dmgType": "B"
-				}
-			],
-			"inherits": {
-				"namePrefix": "彗星破碎者",
-				"source": "DoDk",
-				"page": 230,
-				"rarity": "very rare",
-				"reqAttune": true,
-				"entries": [
-					"这种钝器的头部由一块巨大的德尔里姆水晶制成，水晶中噼啪作响地充斥着奥术能量。当你使用此武器进行攻击并命中时，目标会受到额外的（{@damage 3d6}）点死灵伤害。",
-					"当使用这件武器进行攻击投掷时，如果你掷出了20，它将释放一个奥术异常（详见《德拉肯海姆的地下城》）。你可以在表格上掷两次骰，并选择任一结果。"
-				]
-			}
-		},
-		{
 			"ENG_name": "Corpse Slayer",
 			"name": "屠尸者",
 			"type": "GV|DMG",
@@ -2768,30 +2742,6 @@
 				],
 				"lootTables": [
 					"实现 - 罕见完全放入袋中的动物或植物物质会被吞噬，永远消失。|XDMG"
-				]
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Delerium-Forged Blade",
-			"name": "妄铸锋刃",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"sword": true
-				}
-			],
-			"inherits": {
-				"namePrefix": "狂乱锻造之刃",
-				"source": "DoDk",
-				"page": 230,
-				"rarity": "rare",
-				"bonusWeapon": "+2",
-				"entries": [
-					"这把剑的剑柄中嵌着一个小巧的幻觉碎片，它被玻璃包裹着，像宝石一样镶嵌其中。剑身由陨铁制成，并掺杂了幻觉尘埃，这使得它散发出柔和的八色光芒。",
-					"使用这个武器进行攻击和伤害判定时，你获得{=bonusWeapon}的加值。",
-					"当你使用这件武器进行攻击时，你可以使用你的施法能力调整值，而不是力量或敏捷，来进行攻击和伤害骰。此外，你可以将这件武器作为施法焦点使用。",
-					"当你使用该武器对人形生物进行攻击掷骰并掷出20时，该人形生物必须进行一次{@dc 15}体质豁免检定，若失败则额外受到({@damage 3d6})点暗蚀伤害，并获得一个{@adventure 污染层数|DoDk|12}。"
 				]
 			},
 			"hasFluffImages": true
@@ -4453,29 +4403,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Hardened Delerium-tipped Arrows",
-			"name": "覆妄质强化箭",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"arrow": true
-				},
-				{
-					"bolt": true
-				}
-			],
-			"inherits": {
-				"namePrefix": "硬化的幻觉剂涂覆",
-				"source": "DoDk",
-				"page": 230,
-				"rarity": "rare",
-				"entries": [
-					"这件弹药拥有一个精炼的谵妄箭头。任何被使用这种箭的远程攻击命中的生物将额外受到（{@damage 3d6}）点死灵伤害，并且必须成功通过一个 {@dc 15} 体质豁免检定，否则将获得一个 {@adventure 污染层数|DoDk|12}。一旦命中目标，谵妄箭头将化为尘土，箭矢变得非魔法。"
-				]
-			},
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Hellfire Weapon",
 			"name": "地狱火武器",
 			"type": "GV|DMG",
@@ -5062,27 +4989,6 @@
 				]
 			},
 			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Lycan Weapon",
-			"name": "猎兽武器",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"weapon": true
-				}
-			],
-			"inherits": {
-				"namePrefix": "狼人",
-				"source": "GHLoE",
-				"page": 111,
-				"rarity": "rare",
-				"bonusWeapon": "+2",
-				"entries": [
-					"这些武器由兽化人变形者的爪子、牙齿和骨头制成，它们对其他兽化人变形者或吸血鬼特别有效。使用这件武器进行攻击和伤害骰时，你获得{=bonusWeapon}的加值。",
-					"此外，对狼人进行一次成功的攻击时，目标会被强制变回人类形态，除非它在一次{@dc 10}的魅力豁免中成功。同时，使用狼人武器对吸血鬼造成的伤害在生物完成一次短休息之前无法再生。"
-				]
-			}
 		},
 		{
 			"ENG_name": "Mariner's Armor",
@@ -6428,34 +6334,6 @@
 			}
 		},
 		{
-			"ENG_name": "Starcrossed Bow",
-			"name": "穿星弓",
-			"type": "GV|DMG",
-			"requires": [
-				{
-					"bow": true
-				},
-				{
-					"crossbow": true
-				}
-			],
-			"inherits": {
-				"namePrefix": "星辰交错",
-				"source": "DoDk",
-				"page": 232,
-				"rarity": "rare",
-				"reqAttune": true,
-				"bonusWeapon": "+2",
-				"recharge": "拂晓",
-				"rechargeAmount": 3,
-				"charges": 3,
-				"entries": [
-					"这张魔法弓或弩在通常装填弩箭的托架上有着复杂的幻觉碎片和聚焦透镜排列，它不是通过物理装填，而是神奇地召唤自己的投射物。使用这件武器，你在攻击和伤害骰上获得{=bonusWeapon}的加值，它造成光耀伤害而不是穿刺伤害，并且忽略弹药和装填属性。",
-					"这把武器有3个充能，每天黎明时恢复。当你用它进行远程攻击命中时，你可以使箭矢在一道耀眼的光芒中爆炸。你击中的目标以及其10英尺范围内的任何生物都必须通过一次{@dc 15}体质豁免检定，否则会失明直到你的下一个回合结束。"
-				]
-			}
-		},
-		{
 			"ENG_name": "Starshot Crossbow",
 			"name": "射星弩",
 			"type": "GV|DMG",
@@ -7038,7 +6916,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"entries": [
-					"当你持有这件武器时，你能理解所有妖精的无声交流，他们也能理解你的。",
+					"当你随身携带此武器时，你可以理解所有精类的非文字交流方式，而它们也能理解你的表达。",
 					{
 						"ENG_name": "Secret Message",
 						"type": "entries",
@@ -7288,7 +7166,7 @@
 				"tier": "次要",
 				"rarity": "common",
 				"entries": [
-					"这种弹药威力巨大。被击中的生物必须进行一次{@dc 10}的力量豁免检定，否则将被击{@condition 倒地}。"
+					"这种弹药能造成沉重打击。被击中的生物必须成功通过{@dc 10}力量豁免检定，否则将被击倒{@condition 倒地}。"
 				]
 			}
 		},

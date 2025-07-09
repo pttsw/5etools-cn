@@ -1,0 +1,757 @@
+{
+	"spell": [
+		{
+			"ENG_name": "Conjure the Deep Haze",
+			"name": "浓厚污霭咒唤术",
+			"source": "DoDk",
+			"page": 226,
+			"level": 5,
+			"school": "C",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层{@adventure 污染层数|DoDk|12}。",
+				"选择施法距离内的一点，以那一点为中心，你创造出一个充斥着 浓厚污霭 的20尺半径球状区域。这些雾霭会绕过转角传播，在持续时间内持续存在并使区域内变为重度遮蔽环境。若有一股强风吹散这股雾霭，法术也将提前结束。",
+				"当一个生物在回合中第一次进入法术区域或在该区域内开始其回合时，该生物必须通过一次体质豁免检定。如果豁免失败，它将受到（{@damage 8d6}) 坏死伤害，并获得一级 {@adventure 污染层数|DoDk|12}。如果豁免成功，该生物只受到一半的伤害，并且不会获得任何 {@adventure 污染层数|DoDk|12}。即使生物屏住呼吸或不需要呼吸，也会受到影响。"
+			],
+			"savingThrow": [
+				"体质"
+			],
+			"miscTags": [
+				"OBS"
+			]
+		},
+		{
+			"ENG_name": "Contaminated Power",
+			"name": "污染之力",
+			"source": "DoDk",
+			"page": 226,
+			"level": 8,
+			"school": "T",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "附赠动作"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一块价值500gp的妄质晶块，作为法术的耗材",
+					"cost": 50000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层{@adventure 污染层数|DoDk|12}。你从手中的妄质晶块中汲取无法被束缚的奥术魔法。直至法术结束前，你获得以下增益：",
+				{
+					"type": "list",
+					"items": [
+						"当你施展一个造成强酸、火焰、闪电、或毒素伤害的法术，你可以将该伤害类型改为力场、黯蚀、心灵、或光耀。",
+						"每回合一次。当你的法术造成伤害时，若该法术同时给予了目标污染层数，你就可以额外造成给予{@damage 1d12}点/每{@adventure 污染层数|DoDk|12}的黯蚀伤害。",
+						"当你施展的法术强迫一个生物进行一次豁免来抵抗法术的效应，你可以选择让自己获得一层 {@adventure 污染层数|DoDk|12} ，以此来迫使该生物对抗此法术进行的首次豁免具有劣势。"
+					]
+				},
+				"该法术不能被法术 {@spell 解除魔法} 所解除。"
+			],
+			"damageInflict": [
+				"黯蚀"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Contamination Immunity",
+			"name": "污染免疫",
+			"source": "DoDk",
+			"page": 226,
+			"level": 7,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "分钟"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一朵混合入价值250gp的特制提纯液中的魔能百合，均作为法术的耗材",
+					"cost": 25000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 24
+					}
+				}
+			],
+			"entries": [
+				"直到法术结束为止，由你触碰的一个自愿生物将免疫黯蚀伤害且无法获得任何  {@adventure 污染层数|DoDk|12}。此外，即使在污霭中，该生物依旧可以正常休息。",
+				"该法术会在生物施展任何一个\"受污染Contaminated\"的法术的瞬间提前结束。"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Delerium Blast",
+			"name": "妄能爆破",
+			"source": "DoDk",
+			"page": 227,
+			"level": 4,
+			"school": "V",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 150
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层{@adventure 污染层数|DoDk|12}。",
+				"你点燃手中持有的一块精神碎片中储存的奥术能量，并将其投向你能看到的范围中的一个空间。它在20英尺半径的球体内爆炸出一股不稳定的精神能量，淹没了其中生物的思维和感官。球体内的每个生物都必须通过一次智力豁免检定。失败豁免的生物将受到({@damage 10d6})点精神伤害，并直到其下一个回合结束前变得（{@condition 失能}）。成功豁免的目标则只受到一半的伤害，并且不受该法术的其他效果影响。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "At Higher Levels",
+					"type": "entries",
+					"name": "升环施法效应",
+					"entries": [
+						"当你使用5级或更高等级的法术位来施放此法术时，每高于4级的法术位会使伤害增加{@damage 2d6}。"
+					]
+				}
+			],
+			"conditionInflict": [
+				"失能"
+			],
+			"savingThrow": [
+				"智力"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"ENG_name": "Delerium Orb",
+			"name": "妄彩球",
+			"source": "DoDk",
+			"page": 227,
+			"level": 1,
+			"school": "V",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层 {@adventure 污染层数|DoDk|12}。你从手中的这枚妄质晶片之中汲取魔法能量，然后将这股悖论能量向着一个生物爆裂袭去。选择一项属性，然后选择一项伤害类型（在冷冻、火焰、闪电、黯蚀、心灵、光耀伤害中选择）。法术目标必须通过一次所选属性的豁免检定，若豁免失败将受到{@damage 6d6}点所选类型的伤害，豁免成功则只受半数的伤害。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "At Higher Levels",
+					"type": "entries",
+					"name": "升环施法效应",
+					"entries": [
+						"当你使用2环或更高等级的法术位施展此法术时，每高于1环一级，伤害增加{@damage 2d6}。"
+					]
+				}
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"ENG_name": "Forced Evolution",
+			"name": "强制进化",
+			"source": "DoDk",
+			"page": 227,
+			"level": 4,
+			"school": "T",
+			"time": [
+				{
+					"number": 8,
+					"unit": "小时"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一份使用稀有材料与妄质尘制作的炼金混合物，价值250gp，作为本法术给目标服用所用的耗材",
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你用本法术转换一个由 {@adventure 污染|DoDk|12} 导致的变异。你移除法术目标身上现存的一项变异，并给予他为另一项变异作为代替。具体哪一项新的变异，由你的GM选择或随机决定（详见《德拉肯海姆之墟》的附录C）"
+			]
+		},
+		{
+			"ENG_name": "Neutralizing Field",
+			"name": "中和场域",
+			"source": "DoDk",
+			"page": 228,
+			"level": 5,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "sphere",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一枚价值1000gp的妄质水晶或神圣遗物",
+					"cost": 100000
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你无效化周遭的污染魔法能量，创造出以你自身为中心，半径10尺球状区域的立场。立场内的所有生物（包括你自己）的 {@adventure 污染层数|DoDk|12}无法被增加，且免疫于黯蚀伤害。此外，立场内无法施展任何\"受污染Contaminated\"的法术。"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Octarine Spray",
+			"name": "第八虹光喷射",
+			"source": "DoDk",
+			"page": 228,
+			"level": 7,
+			"school": "V",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "cone",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层 {@adventure 污染层数|DoDk|12}。无数第八虹色的射线在你的手中闪烁，每一条射线都有着不同的颜色、不同的能力、不同的用途，如下表所示。每个身处60尺锥状范围的生物必须通过一次体质豁免。然后你为每个法术目标投掷一枚{@dice d8}来决定影响该生物的射线有何种效果。",
+				{
+					"type": "table",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"d8",
+						"第八虹光喷射效应"
+					],
+					"rows": [
+						[
+							"1",
+							"若豁免失败，目标将受到{@damage 20d6}点心灵伤害；豁免成功则只受半数伤害。"
+						],
+						[
+							"2",
+							"若豁免失败，目标将受到{@damage 20d6}点黯蚀伤害；豁免成功则只受半数伤害。"
+						],
+						[
+							"3",
+							"若豁免失败，目标将受到{@damage 20d6}点力场伤害；豁免成功则只受半数伤害。"
+						],
+						[
+							"4",
+							"若豁免失败，目标将受到{@damage 20d6}点光耀伤害；豁免成功则只受半数伤害。"
+						],
+						[
+							"5",
+							"若豁免失败，目标将受到{@damage 20d6}点雷鸣伤害；豁免成功则只受半数伤害。"
+						],
+						[
+							"6",
+							"在每个受影响目标的回合开始时，它必须得消耗自己全部的移动力径直移动向着它可见的、离它最近的生物。然后，受影响生物使用其动作，对着其触及范围内的一名随机生物发起一次近战武器攻击。如果它的触及范围内没有生物，受影响的目标本回合不作任何事。在他的每个回合结束时，受影响的生物都可以进行一次感知豁免，若该次豁免成功则终止该效应对它的影响。"
+						],
+						[
+							"7",
+							"在每个受影响目标的回合开始时，它都将承受一层  {@adventure 污染层数|DoDk|12}。而在每个它的回合结束时，它都可以通过一次体质豁免，若该次豁免成功则终止该效应对它的影响，但承受的{@adventure 污染层数|DoDk|12}仍然保留。"
+						],
+						[
+							"8",
+							"{@b 特殊。} 目标将受到额外一道射线影响。重复投掷两次本效应表。此法术并没有对同一生物施加效应的数量限制。"
+						]
+					]
+				}
+			],
+			"damageInflict": [
+				"力场",
+				"黯蚀",
+				"心灵",
+				"光耀",
+				"雷鸣"
+			],
+			"savingThrow": [
+				"体质",
+				"感知"
+			],
+			"miscTags": [
+				"RO"
+			]
+		},
+		{
+			"ENG_name": "Purge Contamination",
+			"name": "祛除污染",
+			"source": "DoDk",
+			"page": 228,
+			"level": 3,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "小时"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "价值合计100gp的炼金液或圣水，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你将炼金液或圣水涂抹在一个遭受 污染Contamination 的类人生物身上，同时严格念诵一大段魔法咒文，以此驱逐目标身上的污染。当你完成此法术的施展后，目标身上所有的 {@adventure 污染层数|DoDk|12} 与污染带来的变异都将被移除，但目标将承受 {@condition 力竭}层数/每移除{@adventure 污染层数|DoDk|12}。"
+			],
+			"conditionInflict": [
+				"力竭"
+			]
+		},
+		{
+			"ENG_name": "Ray of Contamination",
+			"name": "污染射线",
+			"source": "DoDk",
+			"page": 229,
+			"level": 6,
+			"school": "N",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层 {@adventure 污染层数|DoDk|12}。一道第八虹色的射线自你的指尖喷发，射向施法距离内你可见的一个生物。该生物必须通过一次体质豁免。豁免失败时，该生物将受到{@damage 16d6}点黯蚀伤害，并获得{@dice 1d4}层 {@adventure 污染层数|DoDk|12}。豁免成功时，该生物只受半数伤害，且不会因此获得{@adventure 污染层数|DoDk|12}。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "At Higher Levels",
+					"type": "entries",
+					"name": "升环施法效应",
+					"entries": [
+						"当你使用7环或更高环阶法术位施展这个法术时，使用的法术位每比6环高1环，你就可以为本法术多指定一个目标（不过所有目标互相之间不能相距超过30尺）。"
+					]
+				}
+			],
+			"damageInflict": [
+				"黯蚀"
+			],
+			"savingThrow": [
+				"体质"
+			],
+			"miscTags": [
+				"SCT",
+				"SGT"
+			]
+		},
+		{
+			"ENG_name": "Ride the Rifts",
+			"name": "驱隙电闪",
+			"source": "DoDk",
+			"page": 228,
+			"level": 3,
+			"school": "C",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "line",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层 {@adventure 污染层数|DoDk|12}。一道60尺长、5尺宽的线状魔能闪电自你爆裂而出，向着你所选的方向呼啸而去。线状区域内的每个生物都必须通过一次敏捷豁免。若豁免失败，生物将受到{@damage 10d6}点闪电伤害，豁免成功则只受半数伤害。那之后，你可以立刻传送到线状区域内的一处你可见的、未被占据的空间中。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "At Higher Levels",
+					"type": "entries",
+					"name": "升环施法效应",
+					"entries": [
+						"当你使用4级或更高等级的法术位施展此法术时，每超过3级的法术位，伤害增加{@damage 2d6}。"
+					]
+				}
+			],
+			"damageInflict": [
+				"闪电"
+			],
+			"savingThrow": [
+				"敏捷"
+			],
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"ENG_name": "Sacrament of the Falling Fire",
+			"name": "天火圣礼",
+			"source": "DoDk",
+			"page": 229,
+			"level": 9,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "小时"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "每受术生物一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"本法术只能在被 浓厚污霭 覆盖的区域中施展。",
+				"你举行一场神圣的仪式，洗礼至多12名虔诚、自愿、且生物类型为类人生物的生物。每个受术生物都需要将一枚妄质晶片嵌入自己的胸口，而他们将因此被圣化 （详见《德拉肯海姆之墟》第三章中记述的 天火信众Followers of the Falling Fire 资料）。",
+				"当你完成法术的施展后，每个受术者周围都会出现一只敌对的{@creature 幽影}并攻击对应的受术生物\u2014\u2014而它们便是每个角色内心深处黑暗的显化。GM也许可以让那些心中承载着强烈愤怒、恐惧、或仇恨的角色周围出现一只{@creature 缚灵}用以代替这样的幽影显化。"
+			]
+		},
+		{
+			"ENG_name": "Siphon Contamination",
+			"name": "污染转嫁",
+			"source": "DoDk",
+			"page": 229,
+			"level": 6,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "小时"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "价值500gp的特制炼金液，以及价值5000gp的妄质晶簇。均作为法术的耗材",
+					"cost": 50000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"这个费时费力又不好用的法术能将一个生物身上的 {@adventure 污染|DoDk|12} 层数全数转移至另一个生物身上。当你施展这个法术时，你必须先触碰一个自愿的类人生物（至少具有一层 {@adventure 污染层数|DoDk|12}），或一个目前已遭受污染而被转化为怪兽形态的、原先是类人生物的生物；然后再去触碰另一个自愿承接污染的类人生物。",
+				"如果两个被触碰生物都是自愿的类人生物，你可以将前者身上的所有{@adventure 污染层数|DoDk|12}与变异全数移除，令后者获得等额的{@adventure 污染层数|DoDk|12}。",
+				"如果前者是已承受怪兽化{@adventure 污染|DoDk|12}的、原先是类人生物的生物，而后者是自愿的类人生物（且角色等级或挑战等级大于或等于前者变形后的挑战等级）的情况下。你将那个受污染的生物转化回其原始形态\u2014\u2014但，后者会立刻承受6层 {@adventure 污染层数|DoDk|12}，并立刻遭受怪物变形效应。",
+				"承接污染等级的这个生物（即后者）不可以用任何方式阻止或反制它即将承受的任何{@adventure 污染层数|DoDk|12}与即将遭受的任何变化，否则本法术立刻失败并不产生任何效果。"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Warp Bolt",
+			"name": "扭曲矢",
+			"source": "DoDk",
+			"page": 229,
+			"level": 2,
+			"school": "V",
+			"subschools": [
+				"受污染的"
+			],
+			"time": [
+				{
+					"number": 1,
+					"unit": "动作"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一片价值100gp的妄质晶片，作为法术的耗材",
+					"cost": 10000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"施展此法术时，你立刻获得一层  {@adventure 污染层数|DoDk|12}。选择施法距离内的一个生物，一段带有第八虹色的电弧射线袭向该生物。如果该生物具有至少一级的 {@adventure 污染层数|DoDk|12} ，本次攻击自动命中。你对其进行一次远程法术攻击。命中时，目标将受到{@damage 6d6}黯蚀伤害，并获得一层 {@adventure 污染层数|DoDk|12}。",
+				"持续时间内，你在每个自己回合中都可以再次用你的动作再次发射这道电弧。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "At Higher Levels",
+					"type": "entries",
+					"name": "升环施法效应",
+					"entries": [
+						"当你使用3环或更高环阶法术位施展这个法术时，使用的法术位每比2环高1环，你就可以为本法术多选择一个目标。"
+					]
+				}
+			],
+			"damageInflict": [
+				"黯蚀"
+			],
+			"spellAttack": [
+				"R"
+			]
+		}
+	]
+}

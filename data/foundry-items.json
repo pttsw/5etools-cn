@@ -1,6 +1,270 @@
 {
 	"item": [
 		{
+			"ENG_name": "Acid",
+			"name": "强酸",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Throw Acid",
+					"name": "投掷酸液",
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creatureOrObject",
+							"special": "你可以看到"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "20"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 6,
+								"types": [
+									"强酸"
+								]
+							}
+						],
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "dex"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Alchemist's Fire",
+			"name": "炽火胶",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creatureOrObject",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "20"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 4,
+								"types": [
+									"火焰"
+								]
+							}
+						],
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "dex"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "alchemistsFire"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Burning.",
+					"foundryId": "alchemistsFire",
+					"name": "燃烧。",
+					"description": "规则参考：&Reference[燃烧]。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Alchemist's Supplies",
+			"name": "炼金工具",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "check",
+					"activation": {
+						"type": "action"
+					},
+					"check": {
+						"ability": "int",
+						"dc": {
+							"formula": "15"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Antitoxin",
+			"name": "抗毒剂",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus",
+						"value": 1
+					},
+					"duration": {
+						"value": "1",
+						"units": "小时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "antitoxin"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "antitoxin",
+					"duration": {
+						"seconds": 3600
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Ball Bearings",
+			"name": "滚珠轴承",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Spill Ball Bearings",
+					"name": "洒出滚珠轴承",
+					"type": "save",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"type": "square",
+							"size": "10",
+							"units": "ft"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "10"
+					},
+					"damage": {
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"formula": "10"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "ballBearings"
+						}
+					]
+				},
+				{
+					"ENG_name": "Recover Ball Bearings",
+					"name": "回收铁珠",
+					"type": "utility",
+					"activation": {
+						"type": "minute",
+						"value": 10
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-1"
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Tripped",
+					"foundryId": "ballBearings",
+					"name": "绊倒",
+					"statuses": [
+						"倒地"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Barrier Tattoo (Large)",
 			"name": "屏障刺青（大）",
 			"source": "TCE",
@@ -30,6 +294,43 @@
 				"armor.type": "light",
 				"armor.value": 12
 			},
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Basic Poison",
+			"name": "基础毒药",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "damage",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 4,
+								"types": [
+									"毒素"
+								]
+							}
+						]
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -63,7 +364,8 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Bullseye Lantern",
+			"ENG_name": "Bullseye Lantern",
+			"name": "牛眼提灯",
 			"source": "XPHB",
 			"activities": [
 				{
@@ -74,7 +376,7 @@
 					},
 					"duration": {
 						"value": "6",
-						"units": "hour"
+						"units": "小时"
 					},
 					"consumption": {
 						"targets": [
@@ -96,11 +398,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Butcher's Bib",
+			"ENG_name": "Butcher's Bib",
+			"name": "屠夫围裙",
 			"source": "EGW",
 			"effects": [
 				{
-					"name": "Butcher's Bib",
+					"ENG_name": "Butcher's Bib",
+					"name": "屠夫围裙",
 					"transfer": true,
 					"changes": [
 						{
@@ -114,7 +418,8 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Caltrops",
+			"ENG_name": "Caltrops",
+			"name": "铁蒺藜",
 			"source": "XPHB",
 			"activities": [
 				{
@@ -143,7 +448,7 @@
 						"value": "5"
 					},
 					"damage": {
-						"onSave": "half",
+						"onSave": "一半",
 						"parts": [
 							{
 								"custom": {
@@ -151,7 +456,7 @@
 									"formula": "1"
 								},
 								"types": [
-									"piercing"
+									"穿刺"
 								]
 							}
 						]
@@ -173,8 +478,9 @@
 			],
 			"effects": [
 				{
+					"ENG_name": "Slowed",
 					"foundryId": "caltrops",
-					"name": "Slowed",
+					"name": "减速",
 					"duration": {
 						"turns": 1
 					},
@@ -210,11 +516,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Candle",
+			"ENG_name": "Candle",
+			"name": "蜡烛",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Light",
+					"ENG_name": "Light",
+					"name": "轻型",
 					"type": "utility",
 					"activation": {
 						"type": ""
@@ -232,11 +540,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Chain",
+			"ENG_name": "Chain",
+			"name": "链之魔契",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Wrap Chain Check",
+					"ENG_name": "Wrap Chain Check",
+					"name": "缠绕铁链检定",
 					"type": "check",
 					"activation": {
 						"type": "action",
@@ -246,7 +556,7 @@
 						"affects": {
 							"count": "1",
 							"type": "creature",
-							"special": "Has the Grappled, Incapacitated, or Restrained condition"
+							"special": "具有擒抱、失能或束缚状态"
 						}
 					},
 					"range": {
@@ -258,12 +568,13 @@
 							"formula": "13"
 						},
 						"associated": [
-							"ath"
+							"运动"
 						]
 					}
 				},
 				{
-					"name": "Escape Check",
+					"ENG_name": "Escape Check",
+					"name": "逃脱检定",
 					"type": "check",
 					"activation": {
 						"type": "action",
@@ -274,12 +585,13 @@
 							"formula": "18"
 						},
 						"associated": [
-							"acr"
+							"熟练"
 						]
 					}
 				},
 				{
-					"name": "Burst Chain Check",
+					"ENG_name": "Burst Chain Check",
+					"name": "爆发连锁检定",
 					"type": "check",
 					"activation": {
 						"type": "action",
@@ -290,7 +602,7 @@
 							"formula": "20"
 						},
 						"associated": [
-							"ath"
+							"运动"
 						]
 					}
 				}
@@ -298,17 +610,20 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Dynamite",
+			"ENG_name": "Dynamite",
+			"name": "炸药",
 			"source": "TDCSR",
 			"img": "icons/weapons/thrown/bomb-timer.webp",
 			"migrationVersion": 3
 		},
 		{
-			"name": "Gloves of Thievery",
+			"ENG_name": "Gloves of Thievery",
+			"name": "窃贼手套",
 			"source": "DMG",
 			"effects": [
 				{
-					"name": "Fast Hands",
+					"ENG_name": "Fast Hands",
+					"name": "快手",
 					"transfer": true,
 					"changes": [
 						{
@@ -322,23 +637,27 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Gluebomb",
+			"ENG_name": "Gluebomb",
+			"name": "胶水炸弹",
 			"source": "TDCSR",
 			"img": "icons/weapons/thrown/bomb-metal-brown.webp",
 			"migrationVersion": 3
 		},
 		{
-			"name": "Gnomengarde Grenade",
+			"ENG_name": "Gnomengarde Grenade",
+			"name": "侏儒园手雷",
 			"source": "DC",
 			"type": "consumable",
 			"migrationVersion": 3
 		},
 		{
-			"name": "Grappling Hook",
+			"ENG_name": "Grappling Hook",
+			"name": "爪钩",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Throw",
+					"ENG_name": "Throw",
+					"name": "投掷",
 					"type": "check",
 					"activation": {
 						"type": "action"
@@ -349,7 +668,7 @@
 					},
 					"check": {
 						"associated": [
-							"acr"
+							"熟练"
 						],
 						"dc": {
 							"formula": "13"
@@ -360,7 +679,8 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Hazirawn",
+			"ENG_name": "Hazirawn",
+			"name": "哈兹瑞恩",
 			"source": "HotDQ",
 			"system": {
 				"magicalBonus": "+1"
@@ -379,7 +699,7 @@
 									"formula": "2d6+1"
 								},
 								"types": [
-									"slashing"
+									"斩击"
 								]
 							},
 							{
@@ -388,7 +708,7 @@
 									"formula": "1d6"
 								},
 								"types": [
-									"necrotic"
+									"黯蚀"
 								]
 							}
 						]
@@ -398,7 +718,8 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Healer's Kit",
+			"ENG_name": "Healer's Kit",
+			"name": "医疗包",
 			"source": "XPHB",
 			"type": "consumable",
 			"system": {
@@ -408,7 +729,8 @@
 			},
 			"activities": [
 				{
-					"name": "Stabilize",
+					"ENG_name": "Stabilize",
+					"name": "安定",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -425,7 +747,7 @@
 						"affects": {
 							"count": "1",
 							"type": "creature",
-							"special": "Unconscious"
+							"special": "昏迷"
 						}
 					}
 				}
@@ -433,11 +755,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Holy Water",
+			"ENG_name": "Holy Water",
+			"name": "圣水",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Throw",
+					"ENG_name": "Throw",
+					"name": "投掷",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -466,11 +790,11 @@
 								"number": 2,
 								"denomination": 8,
 								"types": [
-									"radiant"
+									"光耀"
 								]
 							}
 						],
-						"onSave": "half"
+						"onSave": "一半"
 					},
 					"save": {
 						"ability": [
@@ -485,7 +809,8 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Hooded Lantern",
+			"ENG_name": "Hooded Lantern",
+			"name": "附盖提灯",
 			"source": "XPHB",
 			"activities": [
 				{
@@ -496,7 +821,7 @@
 					},
 					"duration": {
 						"value": "6",
-						"units": "hour"
+						"units": "小时"
 					},
 					"consumption": {
 						"targets": [
@@ -518,14 +843,15 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Hunting Trap",
+			"ENG_name": "Hunting Trap",
+			"name": "狩猎陷阱",
 			"source": "XPHB",
 			"activities": [
 				{
 					"type": "save",
 					"activation": {
 						"type": "",
-						"condition": "Steps on the plate"
+						"condition": "踏入压力板"
 					},
 					"target": {
 						"affects": {
@@ -534,7 +860,7 @@
 						}
 					},
 					"range": {
-						"units": "spec"
+						"units": "专长"
 					},
 					"damage": {
 						"parts": [
@@ -542,7 +868,7 @@
 								"number": 1,
 								"denomination": 4,
 								"types": [
-									"piercing"
+									"穿刺"
 								]
 							}
 						],
@@ -563,14 +889,15 @@
 					]
 				},
 				{
-					"name": "Escape",
+					"ENG_name": "Escape",
+					"name": "逃脱",
 					"type": "check",
 					"activation": {
 						"type": "action"
 					},
 					"check": {
 						"associated": [
-							"ath"
+							"运动"
 						],
 						"dc": {
 							"formula": "13"
@@ -580,18 +907,21 @@
 			],
 			"effects": [
 				{
+					"ENG_name": "Trapped",
 					"foundryId": "huntingTrap",
-					"name": "Trapped"
+					"name": "被困"
 				}
 			],
 			"migrationVersion": 3
 		},
 		{
-			"name": "Lamp",
+			"ENG_name": "Lamp",
+			"name": "油灯",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Light",
+					"ENG_name": "Light",
+					"name": "轻型",
 					"type": "utility",
 					"activation": {
 						"type": "action",
@@ -599,7 +929,7 @@
 					},
 					"duration": {
 						"value": "6",
-						"units": "hour"
+						"units": "小时"
 					},
 					"consumption": {
 						"targets": [
@@ -624,11 +954,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Manacles",
+			"ENG_name": "Manacles",
+			"name": "镣铐",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Bind",
+					"ENG_name": "Bind",
+					"name": "绑定",
 					"type": "check",
 					"activation": {
 						"type": "action"
@@ -645,7 +977,7 @@
 						"affects": {
 							"count": "1",
 							"type": "creature",
-							"special": "Grappled, Incapacitated, or Restrained"
+							"special": "擒抱、失能或束缚"
 						}
 					},
 					"range": {
@@ -654,7 +986,7 @@
 					},
 					"check": {
 						"associated": [
-							"slt"
+							"静默疗法"
 						],
 						"dc": {
 							"formula": "13"
@@ -667,14 +999,15 @@
 					]
 				},
 				{
-					"name": "Escape Check",
+					"ENG_name": "Escape Check",
+					"name": "逃脱检定",
 					"type": "check",
 					"activation": {
 						"type": "action"
 					},
 					"check": {
 						"associated": [
-							"slt"
+							"静默疗法"
 						],
 						"dc": {
 							"formula": "20"
@@ -682,14 +1015,15 @@
 					}
 				},
 				{
-					"name": "Burst Check",
+					"ENG_name": "Burst Check",
+					"name": "爆发检定",
 					"type": "check",
 					"activation": {
 						"type": "action"
 					},
 					"check": {
 						"associated": [
-							"ath"
+							"运动"
 						],
 						"dc": {
 							"formula": "25"
@@ -697,45 +1031,47 @@
 					}
 				}
 			],
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Butcher's Bib",
-			"name": "屠夫围裙",
-			"source": "EGW",
 			"effects": [
 				{
-					"ENG_name": "Butcher's Bib",
-					"name": "屠夫围裙",
-					"transfer": true,
-					"changes": [
-						{
-							"key": "flags.dnd5e.weaponCriticalThreshold",
-							"mode": "OVERRIDE",
-							"value": 19
-						}
-					]
+					"ENG_name": "Manacled",
+					"foundryId": "manacles",
+					"name": "被镣铐束缚"
 				}
 			],
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Dynamite",
-			"name": "炸药",
-			"source": "TDCSR",
-			"img": "icons/weapons/thrown/bomb-timer.webp",
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Gloves of Thievery",
-			"name": "窃贼手套",
-			"source": "DMG",
-			"effects": [
+			"ENG_name": "Net",
+			"name": "捕网",
+			"source": "XPHB",
+			"activities": [
 				{
-					"ENG_name": "Fast Hands",
-					"name": "快手",
-					"transfer": true,
-					"changes": [
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"value": "15",
+						"units": "ft"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "dex"
+						}
+					},
+					"effects": [
 						{
 							"foundryId": "net"
 						}
@@ -746,52 +1082,22 @@
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Gluebomb",
-			"name": "胶水炸弹",
-			"source": "TDCSR",
-			"img": "icons/weapons/thrown/bomb-metal-brown.webp",
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Gnomengarde Grenade",
-			"name": "侏儒园手雷",
-			"source": "DC",
-			"type": "consumable",
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Hazirawn",
-			"name": "哈兹瑞恩",
-			"source": "HotDQ",
-			"system": {
-				"magicalBonus": "+1"
-			},
+			"ENG_name": "Oil",
+			"name": "灯油",
+			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Throw",
+					"ENG_name": "Throw",
+					"name": "投掷",
 					"type": "save",
 					"activation": {
 						"type": "action"
 					},
-					"damage": {
-						"parts": [
+					"consumption": {
+						"targets": [
 							{
-								"custom": {
-									"enabled": true,
-									"formula": "2d6+1"
-								},
-								"types": [
-									"斩击"
-								]
-							},
-							{
-								"custom": {
-									"enabled": true,
-									"formula": "1d6"
-								},
-								"types": [
-									"黯蚀"
-								]
+								"type": "itemUses",
+								"value": "1"
 							}
 						]
 					},
@@ -806,7 +1112,7 @@
 						"value": "20"
 					},
 					"damage": {
-						"onSave": "half"
+						"onSave": "一半"
 					},
 					"save": {
 						"ability": [
@@ -816,24 +1122,11 @@
 							"calculation": "dex"
 						}
 					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Healer's Kit",
-			"name": "医疗包",
-			"source": "XPHB",
-			"type": "consumable",
-			"system": {
-				"uses.max": "10",
-				"type.value": "trinket"
-			},
-			"activities": [
+				},
 				{
-					"ENG_name": "Stabilize",
-					"name": "安定",
-					"type": "utility",
+					"ENG_name": "Douse Space",
+					"name": "浸透空间",
+					"type": "damage",
 					"activation": {
 						"type": "action"
 					},
@@ -853,8 +1146,7 @@
 						},
 						"affects": {
 							"count": "1",
-							"type": "creature",
-							"special": "昏迷"
+							"type": "space"
 						}
 					},
 					"range": {
@@ -866,7 +1158,7 @@
 							{
 								"bonus": "5",
 								"types": [
-									"fire"
+									"火焰"
 								]
 							}
 						]
@@ -944,6 +1236,70 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Rope",
+			"name": "绳索",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Tie Knot",
+					"name": "打结",
+					"type": "check",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"check": {
+						"associated": [
+							"静默疗法"
+						],
+						"dc": {
+							"formula": "10"
+						}
+					}
+				},
+				{
+					"ENG_name": "Burst Rope",
+					"name": "爆裂绳索",
+					"type": "check",
+					"activation": {
+						"type": "action"
+					},
+					"check": {
+						"associated": [
+							"运动"
+						],
+						"dc": {
+							"formula": "20"
+						}
+					}
+				},
+				{
+					"ENG_name": "Escape Check",
+					"name": "逃脱检定",
+					"type": "check",
+					"activation": {
+						"type": "action"
+					},
+					"check": {
+						"associated": [
+							"熟练"
+						],
+						"dc": {
+							"formula": "15"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Sentinel Shield",
 			"name": "警戒之盾",
 			"source": "DMG",
@@ -964,6 +1320,26 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Signal Whistle",
+			"name": "信号笛",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Whistle",
+					"name": "哨子",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"range": {
+						"units": "ft",
+						"value": "600"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Stink Bomb",
 			"name": "臭气弹",
 			"source": "TDCSR",
@@ -978,11 +1354,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Thieves' Tools",
+			"ENG_name": "Thieves' Tools",
+			"name": "盗贼工具",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Pick a Lock/Disarm a Trap",
+					"ENG_name": "Pick a Lock/Disarm a Trap",
+					"name": "撬锁/解除陷阱",
 					"type": "check",
 					"activation": {
 						"type": "action"
@@ -998,11 +1376,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Tinderbox",
+			"ENG_name": "Tinderbox",
+			"name": "火绒盒",
 			"source": "XPHB",
 			"activities": [
 				{
-					"name": "Light",
+					"ENG_name": "Light",
+					"name": "轻型",
 					"type": "utility",
 					"activation": {
 						"type": "bonus"
@@ -1012,7 +1392,8 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Torch",
+			"ENG_name": "Torch",
+			"name": "火把",
 			"source": "XPHB",
 			"activities": [
 				{
@@ -1023,7 +1404,7 @@
 					},
 					"duration": {
 						"value": "1",
-						"units": "hour"
+						"units": "小时"
 					},
 					"consumption": {
 						"targets": [
@@ -1056,7 +1437,7 @@
 									"formula": "1"
 								},
 								"types": [
-									"fire"
+									"火焰"
 								]
 							}
 						]

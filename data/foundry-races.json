@@ -21,6 +21,55 @@
 	],
 	"raceFeature": [
 		{
+			"ENG_name": "Adrenaline Rush",
+			"name": "肾上腺素激增",
+			"source": "XPHB",
+			"raceName": "兽人",
+			"raceSource": "XPHB",
+			"system": {
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"ENG_name": "Adrenaline Rush: Dash",
+					"name": "肾上腺素爆发：疾冲",
+					"type": "heal",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"临时生命值"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@prof"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Animal Enhancement",
 			"name": "动物强化",
 			"source": "GGR",
@@ -1811,6 +1860,343 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Breath Weapon",
+			"name": "吐息武器",
+			"source": "XPHB",
+			"raceName": "龙裔",
+			"raceSource": "XPHB",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"ENG_name": "Breath Weapon (Cone)",
+					"name": "喷吐武器（锥形）",
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "cone",
+							"size": "15"
+						},
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.dragonborn.breath"
+								},
+								"types": [
+									"强酸",
+									"冷冻",
+									"火焰",
+									"毒素",
+									"闪电"
+								]
+							}
+						],
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "con"
+						}
+					}
+				},
+				{
+					"ENG_name": "Breath Weapon (Line)",
+					"name": "喷吐武器（线形）",
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "line",
+							"size": "30",
+							"width": "5"
+						},
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@scale.dragonborn.breath"
+								},
+								"types": [
+									"强酸",
+									"冷冻",
+									"火焰",
+									"毒素",
+									"闪电"
+								]
+							}
+						],
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "con"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Celestial Revelation",
+			"name": "天界启示",
+			"source": "XPHB",
+			"raceName": "阿斯莫",
+			"raceSource": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Heavenly Wings",
+					"name": "天界之翼",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "celestialRevelat"
+						}
+					]
+				},
+				{
+					"ENG_name": "Inner Radiance",
+					"name": "内在光辉",
+					"type": "damage",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "radius",
+							"size": "10"
+						},
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@prof"
+								},
+								"types": [
+									"光耀"
+								]
+							}
+						]
+					},
+					"effects": [
+						{
+							"foundryId": "celestialRevela1"
+						}
+					]
+				},
+				{
+					"ENG_name": "Necrotic Shroud",
+					"name": "死灵环绕",
+					"type": "save",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "radius",
+							"size": "10"
+						},
+						"affects": {
+							"type": "enemy"
+						}
+					},
+					"damage": {
+						"onSave": "一半"
+					},
+					"save": {
+						"ability": [
+							"cha"
+						],
+						"dc": {
+							"calculation": "cha"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "celestialRevela2"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Heavenly Wings",
+					"foundryId": "celestialRevelat",
+					"name": "天界之翼",
+					"duration": {
+						"seconds": 60
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.fly",
+							"mode": "UPGRADE",
+							"value": 1
+						}
+					]
+				},
+				{
+					"ENG_name": "Searing Radiance",
+					"foundryId": "celestialRevela1",
+					"name": "炽热光耀",
+					"duration": {
+						"seconds": 60
+					}
+				},
+				{
+					"ENG_name": "Necrotic Shroud",
+					"foundryId": "celestialRevela2",
+					"name": "死灵环绕",
+					"duration": {
+						"seconds": 60
+					},
+					"statuses": [
+						"恐慌"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Draconic Flight",
+			"name": "龙族飞行",
+			"source": "XPHB",
+			"raceName": "龙裔",
+			"raceSource": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Draconic Flight",
+					"name": "龙族飞行",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "10"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "draconicFlight"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "draconicFlight",
+					"duration": {
+						"seconds": 600
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Dwarven Toughness",
 			"name": "矮人刚毅",
 			"source": "PHB",
@@ -1826,6 +2212,26 @@
 							"key": "system.attributes.hp.bonuses.level",
 							"mode": "ADD",
 							"value": "+ 1"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Dwarven Toughness",
+			"name": "矮人刚毅",
+			"source": "XPHB",
+			"raceName": "矮人",
+			"raceSource": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.hp.bonuses.level",
+							"mode": "ADD",
+							"value": 1
 						}
 					]
 				}
@@ -1964,6 +2370,51 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Healing Hands",
+			"name": "治愈之手",
+			"source": "XPHB",
+			"raceName": "阿斯莫",
+			"raceSource": "XPHB",
+			"activities": [
+				{
+					"type": "heal",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "(@prof)d4"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Hooves",
 			"name": "蹄击",
 			"source": "GGR",
@@ -1996,6 +2447,81 @@
 							"key": "system.attributes.ac.bonus",
 							"mode": "ADD",
 							"value": "+ 1"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Large Form",
+			"name": "大型形态",
+			"source": "XPHB",
+			"raceName": "歌利亚",
+			"raceSource": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Enlarge",
+					"name": "变巨",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "10"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "largeForm"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "largeForm",
+					"duration": {
+						"seconds": 600
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.walk",
+							"mode": "ADD",
+							"value": 10
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Luck",
+			"name": "幸运",
+			"source": "XPHB",
+			"raceName": "半身人语",
+			"raceSource": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "flags.dnd5e.halflingLucky",
+							"mode": "OVERRIDE",
+							"value": true
 						}
 					]
 				}
@@ -2155,6 +2681,26 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Powerful Build",
+			"name": "强力构筑",
+			"source": "XPHB",
+			"raceName": "歌利亚",
+			"raceSource": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "flags.dnd5e.powerfulBuild",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Radiant Soul",
 			"name": "光耀之魂",
 			"source": "VGM",
@@ -2166,6 +2712,47 @@
 					"activation": {
 						"type": "action",
 						"value": 1
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Relentless Endurance",
+			"name": "坚韧不屈",
+			"source": "XPHB",
+			"raceName": "兽人",
+			"raceSource": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Relentlessly Endure",
+					"name": "不屈不挠的忍耐",
+					"type": "heal",
+					"activation": {
+						"type": "",
+						"condition": "当你生命值降至0点但未被直接击杀时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "1"
 					}
 				}
 			],
@@ -2218,9 +2805,10 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Stonecunning",
+			"ENG_name": "Stonecunning",
+			"name": "石中精妙",
 			"source": "XPHB",
-			"raceName": "Dwarf",
+			"raceName": "矮人",
 			"raceSource": "XPHB",
 			"system": {
 				"uses.max": "@prof",
@@ -2233,13 +2821,14 @@
 			},
 			"activities": [
 				{
-					"name": "Stonecunning",
+					"ENG_name": "Stonecunning",
+					"name": "石中精妙",
 					"type": "utility",
 					"activation": {
 						"type": "bonus"
 					},
 					"duration": {
-						"units": "minute",
+						"units": "分钟",
 						"value": "10"
 					},
 					"consumption": {

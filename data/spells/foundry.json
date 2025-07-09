@@ -1,6 +1,128 @@
 {
 	"spell": [
 		{
+			"ENG_name": "Absorb Elements",
+			"name": "吸收元素",
+			"source": "XGE",
+			"system": {
+				"target.affects.type": "self"
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "当你受到强酸、冷冻、火焰、闪电、或雷鸣伤害时执行"
+					},
+					"effects": [
+						{
+							"foundryId": "absorbElements1"
+						},
+						{
+							"foundryId": "absorbElements2"
+						},
+						{
+							"foundryId": "absorbElements3"
+						},
+						{
+							"foundryId": "absorbElements4"
+						},
+						{
+							"foundryId": "absorbElements5"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Acid Resistance",
+					"foundryId": "absorbElements1",
+					"name": "强酸抗性",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "acid"
+						}
+					]
+				},
+				{
+					"ENG_name": "Cold Resistance",
+					"foundryId": "absorbElements2",
+					"name": "寒冷抗性",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "cold"
+						}
+					]
+				},
+				{
+					"ENG_name": "Fire Resistance",
+					"foundryId": "absorbElements3",
+					"name": "火焰抗性",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "fire"
+						}
+					]
+				},
+				{
+					"ENG_name": "Lightning Resistance",
+					"foundryId": "absorbElements4",
+					"name": "闪电抗性",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "lightning"
+						}
+					]
+				},
+				{
+					"ENG_name": "Thunder Resistance",
+					"foundryId": "absorbElements5",
+					"name": "雷霆抗性",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "thunder"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Aid",
 			"name": "援助术",
 			"source": "XPHB",
@@ -544,19 +666,19 @@
 							"ENG_name": "Huge Object (costs 3)",
 							"count": "floor(@attributes.spell.mod / 3)",
 							"name": "巨型物体（需消耗3）",
-							"uuid": "@creature[活化物件（巨型）|XPHb"
+							"uuid": "@creature[活化物件（巨型）|xphb]"
 						},
 						{
 							"ENG_name": "Large Object (costs 2)",
 							"count": "floor(@attributes.spell.mod / 2)",
 							"name": "大型物品（消耗2）",
-							"uuid": "@creature[活化物体（大型）|XPHb"
+							"uuid": "@creature[活化物体（大型）|xphb]"
 						},
 						{
 							"ENG_name": "Medium Object",
 							"count": "@attributes.spell.mod",
 							"name": "中型物体",
-							"uuid": "@creature[活化物体（中型或更小）|XPHb"
+							"uuid": "@creature[活化物体（中型或更小）|xphb]"
 						}
 					],
 					"match": {
@@ -6385,7 +6507,6 @@
 				{
 					"ENG_name": "Cataleptic",
 					"name": "僵直症",
-					"transfer": true,
 					"duration": {
 						"seconds": 3600
 					},
@@ -6522,19 +6643,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[天界战马|XPHb",
+							"uuid": "@creature[天界战马|xphb]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（精类）|XPHb",
+							"uuid": "@creature[异界坐骑（精类）|xphb]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（魔鬼）|XPHb",
+							"uuid": "@creature[异界坐骑（魔鬼）|xphb]",
 							"level": {
 								"max": 3
 							}
@@ -6562,19 +6683,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[天界战马|XPHb",
+							"uuid": "@creature[天界战马|xphb]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（精类）|XPHb",
+							"uuid": "@creature[异界坐骑（精类）|xphb]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（魔鬼）|XPHb",
+							"uuid": "@creature[异界坐骑（魔鬼）|xphb]",
 							"level": {
 								"min": 4
 							}
@@ -7610,7 +7731,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "当生物处于{@condition 魅惑}状态时，若其行为直接违背你的命令，则会受到[[/damage 5d10 type=psyhic]]点心灵伤害。该伤害每天最多生效一次。"
+					"description": "当目标{@condition 魅惑}时，若其行为直接违背你的命令，将受到[[/damage 5d10 type=psychic]]心灵伤害。每日最多触发一次此伤害。"
 				}
 			],
 			"migrationVersion": 3
@@ -7627,13 +7748,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[巨型昆虫（蜈蚣）|XPHb"
+							"uuid": "@creature[巨型昆虫（蜈蚣）|xphb]"
 						},
 						{
-							"uuid": "@creature[巨型昆虫（蜘蛛）|XPHb"
+							"uuid": "@creature[巨型昆虫（蜘蛛）|xphb]"
 						},
 						{
-							"uuid": "@creature[巨型昆虫（黄蜂）|XPHb"
+							"uuid": "@creature[巨型昆虫（黄蜂）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -9850,6 +9971,17 @@
 					}
 				}
 			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Lightning Lure",
+			"name": "闪电牵引",
+			"source": "TCE",
+			"system": {
+				"range.value": 15,
+				"range.units": "ft",
+				"target.template.type": ""
+			},
 			"migrationVersion": 3
 		},
 		{
@@ -15207,13 +15339,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@生物[异变精灵（眼魔族）]|XPHb"
+							"uuid": "@生物[异变精灵（眼魔族）]|xphb]"
 						},
 						{
-							"uuid": "@生物[异变灵（史拉蟾）]|XPHb"
+							"uuid": "@生物[异变灵（史拉蟾）]|xphb]"
 						},
 						{
-							"uuid": "@生物[异常之魂（星之后裔）]|XPHb"
+							"uuid": "@生物[异常之魂（星之后裔）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15279,13 +15411,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@生物[野兽之灵（空气）]|XPHb"
+							"uuid": "@生物[野兽之灵（空气）]|xphb]"
 						},
 						{
-							"uuid": "@creature[野兽灵（陆地）]|XPHb"
+							"uuid": "@creature[野兽灵（陆地）]|xphb]"
 						},
 						{
-							"uuid": "@creature[野兽精灵（水）]|XPHb"
+							"uuid": "@creature[野兽精灵（水）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15348,12 +15480,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@生物[天界灵（复仇者）]|XPHb"
+							"uuid": "@生物[天界灵（复仇者）]|xphb]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@生物[天界精灵（守护者）]|XPHb"
+							"uuid": "@生物[天界精灵（守护者）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15421,17 +15553,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构造灵（粘土）]|XPHb"
+							"uuid": "@creature[构造灵（粘土）]|xphb]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@生物[构装生物之灵（金属）]|XPHb"
+							"uuid": "@生物[构装生物之灵（金属）]|xphb]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@生物[构装生物之魂（石头）]|XPHb"
+							"uuid": "@生物[构装生物之魂（石头）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15488,7 +15620,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[龙类精魂|XPHb"
+							"uuid": "@creature[龙类精魂|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15561,22 +15693,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "Air",
-							"uuid": "@生物[元素之魂（空气）]|XPHb"
+							"uuid": "@生物[元素之魂（空气）]|xphb]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素灵（土）]|XPHb"
+							"uuid": "@creature[元素灵（土）]|xphb]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@生物[元素精灵（火）]|XPHb"
+							"uuid": "@生物[元素精灵（火）]|xphb]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[元素精灵（水）]|XPHb"
+							"uuid": "@creature[元素精灵（水）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15642,13 +15774,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[精类灵（冒烟的）]|XPHb"
+							"uuid": "@creature[精类灵（冒烟的）]|xphb]"
 						},
 						{
-							"uuid": "@生物[精类之魂（欢乐）]|XPHb"
+							"uuid": "@生物[精类之魂（欢乐）]|xphb]"
 						},
 						{
-							"uuid": "@生物[精类精灵（淘气）]|XPHb"
+							"uuid": "@生物[精类精灵（淘气）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15718,17 +15850,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[恶魔灵体]|XPHb"
+							"uuid": "@creature[恶魔灵体]|xphb]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@生物[恶魔之魂（恶魔）]|XPHb"
+							"uuid": "@生物[恶魔之魂（恶魔）]|xphb]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[邪恶灵体（尤格罗斯）]|XPHb"
+							"uuid": "@creature[邪恶灵体（尤格罗斯）]|xphb]"
 						}
 					],
 					"bonuses": {
@@ -15833,13 +15965,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@生物[不死生物（幽灵）]|XPHb"
+							"uuid": "@生物[不死生物（幽灵）]|xphb]"
 						},
 						{
-							"uuid": "@creature[不死生物[腐臭的]|XPHb"
+							"uuid": "@creature[不死生物[腐臭的]|xphb]"
 						},
 						{
-							"uuid": "@生物[不死灵（骷髅）]|XPHb"
+							"uuid": "@生物[不死灵（骷髅）]|xphb]"
 						}
 					],
 					"bonuses": {

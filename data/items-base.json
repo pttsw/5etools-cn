@@ -678,6 +678,9 @@
 		{
 			"ENG_name": "Crystal",
 			"name": "水晶",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "PHB",
 			"page": 151,
 			"srd": true,
@@ -695,6 +698,9 @@
 		{
 			"ENG_name": "Crystal",
 			"name": "水晶",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "XPHB",
 			"page": 224,
 			"srd52": true,
@@ -2734,6 +2740,9 @@
 		{
 			"ENG_name": "Orb",
 			"name": "法球",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "PHB",
 			"page": 151,
 			"srd": true,
@@ -2751,6 +2760,9 @@
 		{
 			"ENG_name": "Orb",
 			"name": "法球",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "XPHB",
 			"page": 224,
 			"srd52": true,
@@ -3238,6 +3250,9 @@
 		{
 			"ENG_name": "Rod",
 			"name": "权杖",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "PHB",
 			"page": 151,
 			"srd": true,
@@ -3255,6 +3270,9 @@
 		{
 			"ENG_name": "Rod",
 			"name": "权杖",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "XPHB",
 			"page": 224,
 			"srd52": true,
@@ -3948,6 +3966,9 @@
 		{
 			"ENG_name": "Staff",
 			"name": "法杖",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "PHB",
 			"page": 151,
 			"srd": true,
@@ -3973,6 +3994,9 @@
 		{
 			"ENG_name": "Staff",
 			"name": "法杖",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "XPHB",
 			"page": 224,
 			"srd52": true,
@@ -3987,7 +4011,7 @@
 				"V"
 			],
 			"mastery": [
-				"Topple|XPHB"
+				"失衡|XPHB"
 			],
 			"dmg1": "1d6",
 			"dmgType": "B",
@@ -4045,6 +4069,9 @@
 		{
 			"ENG_name": "Thelarr",
 			"name": "斯拉尔管",
+			"alias": [
+				"鸣杖"
+			],
 			"source": "SCAG",
 			"page": 124,
 			"type": "INS",
@@ -4173,6 +4200,9 @@
 		{
 			"ENG_name": "Wand",
 			"name": "魔杖",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "PHB",
 			"page": 151,
 			"srd": true,
@@ -4190,6 +4220,9 @@
 		{
 			"ENG_name": "Wand",
 			"name": "魔杖",
+			"group": [
+				"Arcane Focus"
+			],
 			"source": "XPHB",
 			"page": 224,
 			"srd52": true,
@@ -4359,6 +4392,9 @@
 		{
 			"ENG_name": "Wooden Staff",
 			"name": "木质法杖",
+			"group": [
+				"Druidic Focus"
+			],
 			"source": "PHB",
 			"page": 151,
 			"srd": true,
@@ -4383,6 +4419,9 @@
 		{
 			"ENG_name": "Wooden Staff",
 			"name": "木质法杖",
+			"group": [
+				"Druidic Focus"
+			],
 			"source": "XPHB",
 			"page": 225,
 			"srd52": true,
@@ -4397,7 +4436,7 @@
 				"V"
 			],
 			"mastery": [
-				"Topple|XPHB"
+				"失衡|XPHB"
 			],
 			"dmg1": "1d6",
 			"dmgType": "B",
@@ -4545,7 +4584,7 @@
 			"abbreviation": "AF",
 			"source": "XDMG",
 			"page": 72,
-			"template": "{{prop_name_lower}} ({{item.range}}英尺； {{item.ammoType}})",
+			"template": "{{prop_name}} ({{item.range}}\u00A0英尺；{{item.ammoType}})",
 			"entries": [
 				{
 					"ENG_name": "Ammunition",
@@ -4580,7 +4619,7 @@
 			"abbreviation": "BF",
 			"source": "XDMG",
 			"page": 72,
-			"template": "{{prop_name}}",
+			"template": "{{属性名称}}",
 			"entries": [
 				{
 					"ENG_name": "Burst Fire",
@@ -4784,7 +4823,7 @@
 					"type": "entries",
 					"name": "触及",
 					"entries": [
-						"当你使用长柄武器攻击时，它会将你的触及范围增加5英尺，同时在使用它进行机会攻击时确定你的触及范围也会增加。"
+						"使用长兵器攻击时，你的触及范围增加5英尺，同时在确定你用它进行{@action 借机攻击|XPHB|借机攻击}的触及范围时也增加5英尺。"
 					]
 				}
 			]
@@ -4812,7 +4851,7 @@
 			"abbreviation": "RLD",
 			"source": "XDMG",
 			"page": 72,
-			"template": "{{prop_name_lower}} ({{item.reload}} 发)",
+			"template": "{{prop_name}} ({{item.reload}} 发)",
 			"entries": [
 				{
 					"ENG_name": "Reload",

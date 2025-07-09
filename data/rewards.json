@@ -264,6 +264,33 @@
 			]
 		},
 		{
+			"ENG_name": "Blessing of the Lone Champion",
+			"name": "孤独勇士的祝福",
+			"source": "DrDe",
+			"type": "Blessing",
+			"entries": [
+				"你获得以下增益效果：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Heroic Inspiration",
+							"type": "item",
+							"name": "英雄激励",
+							"entry": "当你完成一次{@variantrule 长休|XPHB}或{@variantrule 短休|XPHB|短}，以及当DM让你进行先攻检定时，你会获得{@variantrule 英雄激励|XPHB}。"
+						},
+						{
+							"ENG_name": "Temporary Hit Points",
+							"type": "item",
+							"name": "临时生命值",
+							"entry": "当你获得此祝福或升级时，你将获得等于你等级10倍的{@variantrule 临时生命值|XPHB}。"
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Blessing of the Morninglord",
 			"name": "晨光之主的祝福",
 			"source": "IDRotF",
@@ -1068,6 +1095,77 @@
 			]
 		},
 		{
+			"ENG_name": "Charm of Cozmioko's Glory",
+			"name": "科兹米奥科荣耀魅符",
+			"source": "DrDe",
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"火墙术|xphb#7"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"这个护符将黄铜龙科兹米奥科的正义复仇注入你体内。你可以使用它作为魔法动作并选择以下效果之一：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Cozmioko's Fire",
+							"type": "item",
+							"name": "科兹米奥科的火焰",
+							"entry": "你施放{@spell 火墙术|XPHB}法术（7环版本，法术豁免{@dc 20}），且无需法术成分。"
+						},
+						{
+							"ENG_name": "Cozmioko's Light",
+							"type": "item",
+							"name": "科兹米奥克之光",
+							"entry": "你恢复28（{@dice 8d6}）点生命值。"
+						},
+						{
+							"ENG_name": "Cozmioko's Revenge",
+							"type": "item",
+							"name": "科兹米奥科的复仇",
+							"entry": "你持握的一把近战武器会在一分钟内或直到你不再持握该武器时被灌注超自然力量。每回合一次，当你以此武器命中龙类时，该龙类会受到额外{@dice 3d6}点该武器类型的伤害。"
+						}
+					]
+				},
+				"一旦你使用了这个护身符，它就会从你身上消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Cure Wounds",
+			"name": "疗伤咒",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"治愈伤口#3"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
+			"entries": [
+				"此护符允许你以动作施放 {@spell 疗伤术} 法术（3环版本），且无需任何成分。该护符的施法关键属性为感知。使用一次后，此护符便会消散。"
+			]
+		},
+		{
 			"ENG_name": "Charm of Darkvision",
 			"name": "黑暗视觉之护咒",
 			"source": "DMG",
@@ -1124,6 +1222,29 @@
 			"type": "Charm",
 			"entries": [
 				"当你获得这个护符时，你将长出一条短小的残余尾巴，除非你已经有尾巴了。当你进行属性检定、攻击检定或豁免检定时，你可以使用这个护符来获得投掷的优势。一旦使用九次，护符会从你身上消失，你的残余尾巴也会随之消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Druidcraft",
+			"name": "德鲁伊技艺魅惑",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"德鲁伊伎俩"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"这个护符允许你以一个动作施展{@spell 德鲁伊伎俩}戏法，而无需任何法术成分。使用三次后，该护符会从你身上消失。"
 			]
 		},
 		{
@@ -1228,6 +1349,29 @@
 			]
 		},
 		{
+			"ENG_name": "Charm of Invisibility",
+			"name": "隐形魅力护符",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"隐形术"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"此护符允许你无需任何成分、以动作施放{@spell 隐形术}法术。使用三次后，该护符会从你身上消失。"
+			]
+		},
+		{
 			"ENG_name": "Charm of Lesser Conscription",
 			"name": "小规模征召魅惑",
 			"source": "BGDIA",
@@ -1235,6 +1379,29 @@
 			"type": "Charm",
 			"entries": [
 				"在你拥有这个魅惑时，你会吸引苍蝇。作为动作，你可以激活这个魅惑来召唤一个{@creature 猬魔}，两个{@creature 须魔||须魔}，或者三个{@creature 棘魔||棘魔}。所有的恶魔会同时出现在你30尺范围内的未被占据的空间中。每个恶魔都会服从你的命令，并急切地为你服务9天或直到它死亡，然后该恶魔就会消失。一旦所有由这个魅惑召唤的恶魔消失，魅惑也会从你身上消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Lightning Bolt",
+			"name": "闪电束护符",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"闪电束"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"这个护符允许你以一个动作施放{@spell 闪电束}法术（豁免{@dc 15}），且无需任何法术成分。一旦使用，这个护符就会消失。"
 			]
 		},
 		{
@@ -1265,6 +1432,29 @@
 			"type": "Charm",
 			"entries": [
 				"当你因受到伤害而降至0点生命值时，你可以选择降至1点生命值。一旦使用了九次，这个魅力就会消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Purplemancy",
+			"name": "紫法蛊惑",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"妖火"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"这个护符允许你以附赠动作而非动作施放{@spell 妖火}法术（仅限紫光；豁免{@dc 15}），且无需法术成分。使用三次后，此护符会从你身上消失。"
 			]
 		},
 		{
@@ -1337,6 +1527,29 @@
 			"type": "Charm",
 			"entries": [
 				"作为动作，你可以触摸一个非魔法物品，或一个较大的非魔法物品的一部分，其大小适合在一个5尺立方体内。目标将被还原为尘土。一旦使用三次，这个护符将从你身上消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Sending",
+			"name": "传讯术护符",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"短讯术"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"此护符允许你以动作施放{@spell 短讯术}法术且无需任何成分。使用一次后，该护符会从你身上消失。"
 			]
 		},
 		{
@@ -1925,6 +2138,29 @@
 			]
 		},
 		{
+			"ENG_name": "Charm of Vicious Mockery",
+			"name": "恶意嘲讽护符",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"恶言相向"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"这个护符允许你以动作施放{@spell 恶言相向}戏法（5环版本；豁免{@dc 15}）。使用三次后，护符将从你身上消失。"
+			]
+		},
+		{
 			"ENG_name": "Charm of Vitality",
 			"name": "活力之护咒",
 			"source": "DMG",
@@ -2121,8 +2357,8 @@
 			]
 		},
 		{
-			"ENG_name": "Dark Gift of Savnok the Inscrutible",
-			"name": "Savnok the Inscrutible的黑暗礼物",
+			"ENG_name": "Dark Gift of Savnok the Inscrutable",
+			"name": "深不可测者萨夫诺克的黑暗赠礼",
 			"source": "CoS",
 			"page": 192,
 			"type": "Charm",

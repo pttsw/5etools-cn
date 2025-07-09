@@ -299,7 +299,7 @@
 						]
 					},
 					"ability": "cha",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"action": [
@@ -778,7 +778,7 @@
 						]
 					},
 					"ability": "cha",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -2166,6 +2166,55 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Kharbek",
+			"name": "卡贝克",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "CM",
+			"page": 167,
+			"_copy": {
+				"ENG_name": "Scout",
+				"name": "斥候",
+				"source": "MM",
+				"_templates": [
+					{
+						"ENG_name": "Mountain Dwarf",
+						"name": "山地矮人",
+						"source": "PHB"
+					}
+				],
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "侦查员",
+						"with": "卡贝克",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Exhaustion",
+							"name": "力竭",
+							"entries": [
+								"哈贝克有5层{@condition 力竭}。"
+							]
+						}
+					}
+				}
+			},
+			"hp": {
+				"average": 1,
+				"formula": "3d8 + 3"
+			},
+			"languages": [
+				"通用语",
+				"矮人语"
+			],
+			"tokenCredit": "黑曜石娱乐",
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
 			"ENG_name": "Kiddywidget",
 			"name": "Kiddywidget",
 			"source": "CM",
@@ -2367,7 +2416,7 @@
 						]
 					},
 					"ability": "wis",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -2725,7 +2774,7 @@
 						]
 					},
 					"ability": "int",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"action": [
@@ -2890,7 +2939,7 @@
 						]
 					},
 					"ability": "cha",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -3244,7 +3293,7 @@
 						]
 					},
 					"ability": "cha",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -3733,7 +3782,7 @@
 						]
 					},
 					"ability": "int",
-					"displayAs": "动作"
+					"displayAs": "action"
 				}
 			],
 			"action": [

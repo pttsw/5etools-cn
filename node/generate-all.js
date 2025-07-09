@@ -1,3 +1,5 @@
+import i18n from 'i18n';
+import "../js/language.js"
 import "../js/parser.js";
 import "../js/utils.js";
 import "../js/utils-config.js";
