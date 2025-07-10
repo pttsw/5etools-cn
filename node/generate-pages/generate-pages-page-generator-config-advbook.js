@@ -25,7 +25,7 @@ class _PageGeneratorQuickref extends PageGeneratorAdventureBookBase {
 
 	_pageTitle = "快速参照(2014)";
 	_navbarTitle = "快速参照(2014)";
-	_navbarDescription = "Browse content. Press F to find, and G to go to page.";
+	_navbarDescription = I18nUtil.get("page.book.page_subtitle");
 	_scriptIdentAdvBook = "quickreference";
 	_advBookPlaceholder = `Trans rights are human rights.`;
 }

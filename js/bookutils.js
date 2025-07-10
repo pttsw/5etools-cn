@@ -631,7 +631,7 @@ export class BookUtil {
 	static async _booksHashChange_pHandleFound ({fromIndex, homebrewData, bookId, hashParts, $contents, isNewBook}) {
 		document.title = `${fromIndex.name} - 5etools`;
 		$(`#page__title`).html(this._booksHashChange_getCleanName(fromIndex));
-		$(`#page__subtitle`).html("Browse content. Press F to find, and G to go to page.");
+		$(`#page__subtitle`).html(I18nUtil.get("page.book.page_subtitle"));
 		await this._pLoadChapter(fromIndex, bookId, hashParts, homebrewData, $contents);
 		NavBar.highlightCurrentPage();
 		if (isNewBook) MiscUtil.scrollPageTop();

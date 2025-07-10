@@ -99,7 +99,7 @@ class BestiarySublistManager extends SublistManager {
 
 		const cellsText = [name, type, cr];
 
-		const $hovStatblock = $(`<span class="ve-col-1-4 help help--hover best-ecgen__visible" data-i18n='tab_stat_block'></span>`)
+		const $hovStatblock = $(`<span class="ve-col-1-4 help help--hover best-ecgen__visible" data-i18n='common.tabs.stat_block'></span>`)
 			.mouseover(evt => this._encounterBuilder.doStatblockMouseOver({
 				evt,
 				ele: $hovStatblock[0],

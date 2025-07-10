@@ -3634,8 +3634,8 @@ Renderer.utils = class {
 		$td.fastSetHtml(Renderer.utils.getFluffTabContent({entity, fluff, isImageTab}));
 	}
 
-	static HTML_NO_INFO = `<i data-i18n='html_no_info'></i>`;
-	static HTML_NO_IMAGES = "<i data-i18n='html_no_images'></i>";
+	static HTML_NO_INFO = `<i data-i18n='common.tabs.no_info'></i>`;
+	static HTML_NO_IMAGES = "<i data-i18n='common.tabs.no_images'></i>";
 
 	/* ----- */
 
@@ -15566,7 +15566,7 @@ Renderer.hover = class {
 				<script type="text/javascript" defer src="js/utils.js"></script>
 				<script type="text/javascript" defer src="lib/jquery.js"></script>
 				<script type="text/javascript" defer src="lib/jquery.i18n.properties.min.js"></script>
-				<script type="text/javascript" defer src="js/language.js"></script>
+				<script type="text/javascript" defer src="js/locale.js"></script>
 				</body></html>
 			`);
 

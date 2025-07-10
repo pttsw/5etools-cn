@@ -1,10 +1,10 @@
-import i18n from 'i18n';
-import "../js/language.js"
+import "./locale/i18n.js"
 import "../js/parser.js";
 import "../js/utils.js";
 import "../js/utils-config.js";
 
 async function main () {
+	await import("./generate-i18n.js");
 	await import("./generate-dmscreen-reference.js");
 	await import("./generate-quick-reference.js");
 	await (await import("./generate-tables-data.js")).default;
