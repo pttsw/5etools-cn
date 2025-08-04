@@ -5878,7 +5878,7 @@
 					"uses": {
 						"recovery": [
 							{
-								"period": "turn",
+								"period": "回合",
 								"type": "recoverAll"
 							}
 						],
@@ -6364,7 +6364,7 @@
 					"statuses": [
 						"昏迷"
 					],
-					"description": "目标陷入{@condition 昏迷}状态，持续1分钟或直到受到任何伤害。昏迷的目标在其每个回合结束时重复进行豁免检定，成功则在自己身上结束该效果。"
+					"description": "目标陷入{@condition 昏迷}状态1分钟或直到受到任何伤害。昏迷的目标在其每回合结束时重复进行豁免检定，成功则终止其身上的该效果。"
 				}
 			],
 			"migrationVersion": 3
@@ -6420,7 +6420,7 @@
 					"statuses": [
 						"目盲"
 					],
-					"description": "目标获得{@condition 目盲}状态，持续到其下一个回合结束"
+					"description": "目标获得{@condition 目盲}状态，直到其下个回合结束"
 				}
 			],
 			"migrationVersion": 3
@@ -18470,17 +18470,17 @@
 						{
 							"ENG_name": "Beast of the Land",
 							"name": "大地野兽",
-							"uuid": "@creature[陆地野兽|xphb]"
+							"uuid": "@creature[大地野兽|XPHB]"
 						},
 						{
 							"ENG_name": "Beast of the Sea",
 							"name": "海洋野兽",
-							"uuid": "@creature[海兽|xphb]"
+							"uuid": "@creature[海洋野兽|XPHB]"
 						},
 						{
 							"ENG_name": "Beast of the Sky",
 							"name": "天空野兽",
-							"uuid": "@creature 天空野兽|xphb]"
+							"uuid": "@creature[天空野兽|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -18532,17 +18532,17 @@
 						{
 							"ENG_name": "Beast of the Land",
 							"name": "大地野兽",
-							"uuid": "@creature[陆地野兽|xphb]"
+							"uuid": "@creature[大地野兽|XPHB]"
 						},
 						{
 							"ENG_name": "Beast of the Sea",
 							"name": "海洋野兽",
-							"uuid": "@creature[海兽|xphb]"
+							"uuid": "@creature[海洋野兽|XPHB]"
 						},
 						{
 							"ENG_name": "Beast of the Sky",
 							"name": "天空野兽",
-							"uuid": "@creature 天空野兽|xphb]"
+							"uuid": "@creature[天空野兽|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -19455,7 +19455,7 @@
 						"type": "bonus"
 					},
 					"spell": {
-						"uuid": "@spell[法师之手|xphb]"
+						"uuid": "@spell[法师之手|XPHB]"
 					}
 				}
 			],
@@ -21267,7 +21267,7 @@
 						"max": "max(1,@abilities.cha.mod)"
 					},
 					"spell": {
-						"uuid": "@spell[雾步|xphb]",
+						"uuid": "@spell[迷踪步|XPHB]",
 						"level": 2,
 						"properties": [
 							"声音",
@@ -21367,7 +21367,7 @@
 						"condition": "受到伤害后"
 					},
 					"spell": {
-						"uuid": "@spell[雾步|xphb]",
+						"uuid": "@spell[迷踪步|XPHB]",
 						"level": 2,
 						"properties": [
 							"声音",
@@ -22733,17 +22733,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "Air",
-							"uuid": "@生物[野兽之灵（空气）]|xphb]"
+							"uuid": "@creature[野兽之魂（空气）|XPHB]"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "@creature[野兽灵（陆地）]|xphb]"
+							"uuid": "@creature[野性灵（陆地）|XPHB]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "饮水",
-							"uuid": "@creature[野兽精灵（水）]|xphb]"
+							"uuid": "@creature[野兽之魂（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -22790,17 +22790,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "@creature[精类灵（冒烟的）]|xphb]"
+							"uuid": "@creature[精类之魂（喷烟）|XPHB]"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "@生物[精类之魂（欢乐）]|xphb]"
+							"uuid": "@creature[精类灵（欢乐）|XPHB]"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "@生物[精类精灵（淘气）]|xphb]"
+							"uuid": "@creature[仙灵（调皮）|XPHB]"
 						}
 					],
 					"bonuses": {

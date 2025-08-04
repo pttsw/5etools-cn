@@ -11808,7 +11808,7 @@
 					"ENG_name": "Smelting Charge {@recharge 5}",
 					"name": "熔炼充能 {@recharge 5}",
 					"entries": [
-						"蛇发女妖可以移动等同于其{@variantrule 速度|XPHB}的距离而不引发{@action 借机攻击|XPHB|Opportunity Attacks}，并且可以穿过中型或更小体型生物占据的空间。在此次移动中每当蛇发女妖首次进入一个生物的空间时，该目标将承受以下效果。{@actSave 敏捷} {@dc 16}。{@actSaveFail} 13（{@damage 2d8 + 4}）点穿刺伤害加13（{@damage 3d8}）点火焰伤害，且目标被拉入蛇发女妖的空间并获得{@condition 擒抱|XPHB}状态（逃脱{@dc 14}）；若蛇发女妖已经擒抱着一个生物，则目标改为获得{@condition 倒地|XPHB}状态。在擒抱结束前，目标维持{@condition 束缚|XPHB}状态。当蛇发女妖移动时，被{@condition 擒抱|XPHB}的目标随之移动，且不消耗额外移动力。"
+						"蛇发女妖可以移动至多{@variantrule 速度|XPHB}而不引发{@action 借机攻击|XPHB|Opportunity Attacks}，并且可以穿过中型或更小体型生物占据的空间。每当蛇发女妖在此次移动中首次进入一个生物的空间时，该目标将受到以下效果影响。{@actSave 敏捷} {@dc 16}。{@actSaveFail} 13（{@damage 2d8 + 4}）点穿刺伤害加13（{@damage 3d8}）点火焰伤害，且目标被拉入蛇发女妖的空间并陷入{@condition 擒抱|XPHB}状态（逃脱{@dc 14}）；若蛇发女妖已擒抱一个生物，则目标改为陷入{@condition 倒地|XPHB}状态。擒抱持续期间，目标处于{@condition 束缚|XPHB}状态。当蛇发女妖移动时，被{@condition 擒抱|XPHB}的目标随之移动，不消耗额外移动力。"
 					]
 				}
 			],
@@ -22136,7 +22136,7 @@
 					"ENG_name": "Burn",
 					"name": "燃烧",
 					"entries": [
-						"{@atkr m} 近战攻击，触及5尺 {@h}10（{@damage 2d6 + 3}）点火焰伤害。若目标是生物或可燃物，将开始{@hazard 燃烧|XPHB}。"
+						"{@atkr m} {@hit 6}，触及5尺。{@h}10（{@damage 2d6 + 3}）火焰伤害。若目标为生物或可燃物，则开始{@hazard 焚烧|XPHB}。"
 					]
 				}
 			],

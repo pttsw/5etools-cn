@@ -332,7 +332,7 @@
 							"ENG_name": "Slam",
 							"name": "猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack}, 触及5尺. {@h}造成等于{@damage (召唤法术等级 - 3)d12 + 3|2d12 + 3} + 你的施法关键属性调整值的力场伤害。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及5尺。{@h}造成相当于{@damage (summonSpellLevel - 3)d12 + 3|2d12 + 3} + 你的施法关键属性调整值的力场伤害。"
 							]
 						}
 					]
@@ -426,7 +426,7 @@
 					"ENG_name": "Beast's Strike",
 					"name": "野兽之击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺 {@h}{@dice 1d8 + 2} 加上你的感知调整值的钝击、穿刺或挥砍伤害（在召唤野兽时选择）。如果野兽在攻击前至少直线移动了20尺到达目标，目标将额外受到{@damage 1d6}同类型伤害，如果目标是大型或更小的生物，则目标将处于{@condition 倒地|XPHB}状态。"
+						"{@atkr m} {@hitYourSpellAttack}, 触及5尺. {@h}{@damage 1d8 + 2}加上你的感知调整值的钝击、穿刺或挥砍伤害（你在召唤野兽时选择）。如果该野兽在命中前朝目标直线移动至少20尺，则目标额外受到{@damage 1d6}相同类型的伤害，且若目标为大型或更小的生物，则陷入{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -499,7 +499,7 @@
 					"ENG_name": "Beast's Strike",
 					"name": "野兽之击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及 5 尺. {@h}{@dice 1d6 + 2} 加你的感知调整值的钝击或穿刺伤害（你在召唤野兽时选择）, 且目标陷入{@condition 擒抱|XPHB}状态（逃脱 DC 等于你的法术豁免 DC）。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}，触及5尺{@h}{@damage 1d6 + 2}加你的感知调整值的钝击或穿刺伤害（召唤野兽时选择），且目标陷入{@condition 擒抱|XPHB}状态（逃脱DC等于你的法术豁免DC）。"
 					]
 				}
 			],
@@ -575,7 +575,7 @@
 					"ENG_name": "Beast's Strike",
 					"name": "野兽之击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}{@dice 1d4 + 3} 加上你的感知调整值的挥砍伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 触及5尺。{@h}{@damage 1d4 + 3} 加上你的感知调整值的挥砍伤害。"
 					]
 				}
 			],

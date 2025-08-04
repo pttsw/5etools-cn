@@ -636,12 +636,12 @@
 						{
 							"ENG_name": "Skeleton (bones)",
 							"name": "骷髅（骨架）",
-							"uuid": "@creature[骷髅|xmm]"
+							"uuid": "@creature[骷髅|XMM]"
 						},
 						{
 							"ENG_name": "Zombie (corpse)",
 							"name": "僵尸（尸体）",
-							"uuid": "@creature[僵尸|xmm]"
+							"uuid": "@creature[丧尸|XMM]"
 						}
 					]
 				}
@@ -666,19 +666,19 @@
 							"ENG_name": "Huge Object (costs 3)",
 							"count": "floor(@attributes.spell.mod / 3)",
 							"name": "巨型物体（需消耗3）",
-							"uuid": "@creature[活化物件（巨型）|xphb]"
+							"uuid": "@creature[活化物件(巨型)|XPHB]"
 						},
 						{
 							"ENG_name": "Large Object (costs 2)",
 							"count": "floor(@attributes.spell.mod / 2)",
 							"name": "大型物品（消耗2）",
-							"uuid": "@creature[活化物体（大型）|xphb]"
+							"uuid": "@creature[活化物体(大型)|XPHB]"
 						},
 						{
 							"ENG_name": "Medium Object",
 							"count": "@attributes.spell.mod",
 							"name": "中型物体",
-							"uuid": "@creature[活化物体（中型或更小）|xphb]"
+							"uuid": "@creature[活化物体（中型或更小）|XPHB]"
 						}
 					],
 					"match": {
@@ -1243,7 +1243,7 @@
 					"duration": {
 						"turns": 1
 					},
-					"description": "目标在其下一回合开始前无法采取{@action 反应动作}。"
+					"description": "目标在其下一回合开始前无法进行反应动作。"
 				}
 			],
 			"migrationVersion": 3
@@ -1584,7 +1584,7 @@
 					"statuses": [
 						"失能"
 					],
-					"description": "目标在此期间处于{@condition 失能}状态。法术结束时，目标将回到原先位置；若空间被占据，则出现在最近的未被占据空间。若目标是异怪、天界生物、元素、精类或邪魔，且法术持续1分钟，则目标不会返回，而是会被传送到与其生物类型相关的随机位面（由DM决定）。"
+					"description": "目标在该处获得&Reference[Incapacitated apply=false]状态。法术结束时，目标会重新出现在它离开的空间，如果该空间被占据则出现在最近的未被占据空间。若目标是异怪、天界生物、元素生物、精类或邪魔，且法术持续1分钟，则目标不会返回，而是被传送到与其生物类型相关的随机位面（由DM选择）。"
 				}
 			],
 			"migrationVersion": 3
@@ -2417,7 +2417,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "目标陷入{@condition 魅惑}状态直到法术结束，或直到你或你的盟友对其造成伤害。被魅惑的生物对你{@b 友善}。当法术结束时，目标会意识到它曾被你所魅惑。"
+					"description": "目标获得&Reference[Charmed apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友善。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
 			],
 			"migrationVersion": 3
@@ -2465,7 +2465,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "目标获得{@condition 魅惑}状态（直到法术结束或你或你的盟友对其造成伤害为止）。被魅惑的生物对你表现出{@condition 友善}态度。法术结束时，目标会意识到自己曾被你所魅惑。"
+					"description": "目标获得{@condition 魅惑|apply=false}状态，直到法术结束或你或你的盟友对其造成伤害为止。被魅惑的生物对你{@condition 友善}。当法术结束时，目标会知道它被你{@condition 魅惑}过。"
 				}
 			],
 			"migrationVersion": 3
@@ -2810,7 +2810,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "你可以使用一个附赠动作指定一个与你水平的方向。每个{@condition 魅惑}目标必须在其下一回合尽其所能朝该方向移动，选择最安全的路线。以此法移动后，目标需重复进行[[/save ability=wis]]豁免检定，成功则自身身上的法术终止。"
+					"description": "你可以使用一个附赠动作指定一个与你水平的方向。每个&Reference[魅惑 apply=false]目标必须在其下一回合尽其所能地朝该方向移动，并选择最安全的路线。以此方式移动后，目标需重复进行[[/save ability=wis]]豁免检定，成功则自身身上的法术终止。"
 				}
 			],
 			"migrationVersion": 3
@@ -3354,7 +3354,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒|apply=false}状态时，其在指定属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3375,7 +3375,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒|apply=false}状态时，其在指定属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3396,7 +3396,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒|apply=false}状态时，其在指定属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3417,7 +3417,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒|apply=false}状态时，其在指定属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3438,7 +3438,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒|apply=false}状态时，其在指定属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3459,7 +3459,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒|apply=false}状态时，其在指定属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3769,25 +3769,25 @@
 					"profiles": [
 						{
 							"count": "@item.level - 3",
-							"uuid": "@creature[食尸鬼|xmm]"
+							"uuid": "@creature[食尸鬼|XMM]"
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "@creature[食尸鬼|xmm]",
+							"uuid": "@creature[妖鬼|XMM]",
 							"level": {
 								"min": 8
 							}
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "@creature[幽魂|xmm]",
+							"uuid": "@creature[尸妖|XMM]",
 							"level": {
 								"min": 8
 							}
 						},
 						{
 							"count": "2",
-							"uuid": "@creature[木乃伊|xmm]",
+							"uuid": "@creature[木乃伊|XMM]",
 							"level": {
 								"min": 9
 							}
@@ -4791,7 +4791,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "每当&Reference[charmed apply=false]目标受到伤害时，它会重复进行[[/save ability=wis]]豁免检定，若成功则终止其身上的法术效果。"
+					"description": "每当被&Reference[魅惑 apply=false]的目标受到伤害时，它需重新进行[[/save ability=wis]]豁免检定，成功则解除自身法术。"
 				}
 			],
 			"migrationVersion": 3
@@ -6092,7 +6092,7 @@
 						"束缚"
 					],
 					"descriptionEntries": [
-						"目标处于{@condition 束缚|restrained apply=false}状态直到法术结束。",
+						"目标获得&Reference[restrained apply=false]状态，直到法术结束。",
 						"当目标处于束缚状态时，每回合开始时受到 [[/damage 1d6 type=piercing]] （超过1级后每个法术位等级再加1d6）点伤害。目标或可触及它的生物可以花费一个动作，进行一次[[/check ability=str skill=ath]] 检定对抗你的法术豁免DC。若成功，则法术终止。"
 					]
 				}
@@ -6275,7 +6275,7 @@
 					"statuses": [
 						"束缚"
 					],
-					"description": "一个受到{@condition 束缚}（不应用状态）的生物可以使用一个动作进行一次[[/check ability=str skill=ath dc=@attributes.spell.dc]]检定对抗你的法术豁免DC，成功则结束自身这个状态。"
+					"description": "一个&Reference[Restrained apply=false]生物可以用一个动作进行[[/check ability=str skill=ath dc=@attributes.spell.dc]]检定对抗你的法术豁免DC，成功则结束自身该状态。"
 				}
 			],
 			"migrationVersion": 3
@@ -6643,19 +6643,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[天界战马|xphb]",
+							"uuid": "@creature[异界坐骑（天界）|XPHB]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（精类）|xphb]",
+							"uuid": "@creature[异界坐骑（精类）|XPHB]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（魔鬼）|xphb]",
+							"uuid": "@creature[异界坐骑（魔裔）|XPHB]",
 							"level": {
 								"max": 3
 							}
@@ -6683,19 +6683,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[天界战马|xphb]",
+							"uuid": "@creature[异界坐骑（天界）|XPHB]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（精类）|xphb]",
+							"uuid": "@creature[异界坐骑（精类）|XPHB]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（魔鬼）|xphb]",
+							"uuid": "@creature[异界坐骑（魔裔）|XPHB]",
 							"level": {
 								"min": 4
 							}
@@ -6786,7 +6786,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[僵尸|xmm]"
+							"uuid": "@creature[丧尸|XMM]"
 						}
 					]
 				}
@@ -7731,7 +7731,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "当目标{@condition 魅惑}时，若其行为直接违背你的命令，将受到[[/damage 5d10 type=psychic]]心灵伤害。每日最多触发一次此伤害。"
+					"description": "当目标处于&Reference[魅惑 apply=false]状态时，若其行为直接违背你的命令，则会受到[[/damage 5d10 type=psychic]]点心灵伤害。该伤害每天最多生效一次。"
 				}
 			],
 			"migrationVersion": 3
@@ -7748,13 +7748,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[巨型昆虫（蜈蚣）|xphb]"
+							"uuid": "@creature[巨型昆虫（蜈蚣）|XPHB]"
 						},
 						{
-							"uuid": "@creature[巨型昆虫（蜘蛛）|xphb]"
+							"uuid": "@creature[巨型昆虫（蜘蛛）|XPHB]"
 						},
 						{
-							"uuid": "@creature[巨型昆虫（黄蜂）|xphb]"
+							"uuid": "@creature[巨型昆虫（黄蜂）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -9610,7 +9610,7 @@
 					"statuses": [
 						"束缚"
 					],
-					"description": "牢牢固定在地面的锁链将目标束缚在原地。目标处于{@condition 束缚|Restrained}状态且无法以任何方式移动。"
+					"description": "牢牢固定在地面的锁链将目标束缚在原地。目标处于&Reference[束缚 apply=false]状态，且无法以任何方式移动。"
 				},
 				{
 					"ENG_name": "Hedged Prison",
@@ -9631,7 +9631,7 @@
 					"statuses": [
 						"昏迷"
 					],
-					"description": "目标获得{@condition 昏迷|apply=false}状态且无法被唤醒。"
+					"description": "目标处于{@condition 昏迷|apply=false}状态且无法被唤醒。"
 				}
 			],
 			"migrationVersion": 3
@@ -11803,7 +11803,7 @@
 					"statuses": [
 						"震慑"
 					],
-					"description": "处于{@condition 震慑|PHB}状态的目标在其每回合结束时需进行一次[[/save ability=con]]豁免检定，成功则终止该状态。"
+					"description": "目标受到&Reference[震慑 apply=false]影响时，在其每回合结束时需进行一次[[/save ability=con]]豁免检定，成功则终止该状态。"
 				},
 				{
 					"ENG_name": "No Movement",
@@ -14786,7 +14786,7 @@
 							"value": 0.5
 						}
 					],
-					"description": "该生物在{@em Emanation}范围内的速度减半。"
+					"description": "该生物在辐射范围内的速度减半。"
 				}
 			],
 			"migrationVersion": 3
@@ -14802,7 +14802,7 @@
 						{
 							"ENG_name": "Reaper Spirit",
 							"name": "收割者灵魄",
-							"uuid": "@生物[收割者精灵]|bmt]"
+							"uuid": "@creature[收割者灵魄|BMT]"
 						}
 					]
 				}
@@ -14934,7 +14934,7 @@
 					"duration": {
 						"rounds": 1
 					},
-					"description": "直到你的下个回合结束，它会发出半径10尺的微光，并且无法从{@condition 隐形}状态中获益。"
+					"description": "直到你的下一个回合结束，它会在10英尺半径范围内发出微光，并且无法受益于&Reference[隐形]状态。"
 				}
 			],
 			"migrationVersion": 3
@@ -15300,17 +15300,17 @@
 						{
 							"ENG_name": "Beholderkin",
 							"name": "巨眼怪族",
-							"uuid": "@生物[异变精灵（眼魔族）]|tce"
+							"uuid": "@creature[异常灵（贝赫尔金）|TCE]"
 						},
 						{
 							"ENG_name": "Slaad",
 							"name": "史拉蟾语",
-							"uuid": "@生物[异变灵（史拉蟾）]|tce"
+							"uuid": "@creature[异怪灵（史拉蟾）|TCE]"
 						},
 						{
 							"ENG_name": "Star Spawn",
 							"name": "星之子",
-							"uuid": "@生物[异常之魂（星之后裔）]|tce"
+							"uuid": "@creature[异变之魂（星种）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15339,13 +15339,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@生物[异变精灵（眼魔族）]|xphb]"
+							"uuid": "@creature[异常灵（贝赫尔金）|XPHB]"
 						},
 						{
-							"uuid": "@生物[异变灵（史拉蟾）]|xphb]"
+							"uuid": "@creature[异怪灵（史拉蟾）|XPHB]"
 						},
 						{
-							"uuid": "@生物[异常之魂（星之后裔）]|xphb]"
+							"uuid": "@creature[异变之魂（星种）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15373,17 +15373,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "Air",
-							"uuid": "@生物[野兽之灵（空气）]|tce"
+							"uuid": "@creature[野兽之魂（空气）|TCE]"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "@creature[野兽灵（陆地）]|tce"
+							"uuid": "@creature[野性灵（陆地）|TCE]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[野兽精灵（水）]|tce"
+							"uuid": "@creature[野兽之魂（水）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15411,13 +15411,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@生物[野兽之灵（空气）]|xphb]"
+							"uuid": "@creature[野兽之魂（空气）|XPHB]"
 						},
 						{
-							"uuid": "@creature[野兽灵（陆地）]|xphb]"
+							"uuid": "@creature[野性灵（陆地）|XPHB]"
 						},
 						{
-							"uuid": "@creature[野兽精灵（水）]|xphb]"
+							"uuid": "@creature[野兽之魂（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15444,12 +15444,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@生物[天界灵（复仇者）]|tce"
+							"uuid": "@creature[天界灵（复仇者）|TCE]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@生物[天界精灵（守护者）]|tce"
+							"uuid": "@creature[天界之魂（守卫者）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15480,12 +15480,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@生物[天界灵（复仇者）]|xphb]"
+							"uuid": "@creature[天界灵（复仇者）|XPHB]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@生物[天界精灵（守护者）]|xphb]"
+							"uuid": "@creature[天界之魂（守卫者）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15512,17 +15512,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构造灵（粘土）]|tce"
+							"uuid": "@creature[构造灵（黏土）|TCE]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@生物[构装生物之灵（金属）]|tce"
+							"uuid": "@creature[构装生物之魂（金属）|TCE]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@生物[构装生物之魂（石头）]|tce"
+							"uuid": "@creature[构装生物之灵（石）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15553,17 +15553,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构造灵（粘土）]|xphb]"
+							"uuid": "@creature[构造灵（黏土）|XPHB]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@生物[构装生物之灵（金属）]|xphb]"
+							"uuid": "@creature[构装生物之魂（金属）|XPHB]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@生物[构装生物之魂（石头）]|xphb]"
+							"uuid": "@creature[构装生物之灵（石）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15591,17 +15591,17 @@
 						{
 							"ENG_name": "Chromatic",
 							"name": "多彩的",
-							"uuid": "@生物[龙族精灵（彩色）]|堕落至黑暗"
+							"uuid": "@creature[龙族之魂（彩色）|FTD]"
 						},
 						{
 							"ENG_name": "Gem",
 							"name": "宝石",
-							"uuid": "@生物[龙族之灵（宝石）]|堕落至黑暗"
+							"uuid": "@creature[龙族之魂（宝石）|FTD]"
 						},
 						{
 							"ENG_name": "Metallic",
 							"name": "金属的",
-							"uuid": "@生物[龙灵（金属）]|堕落至黑暗"
+							"uuid": "@creature[龙族之魂（金属）|FTD]"
 						}
 					]
 				}
@@ -15620,7 +15620,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[龙类精魂|xphb]"
+							"uuid": "@creature[龙类灵魄|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15648,22 +15648,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "Air",
-							"uuid": "@生物[元素之魂（空气）]|tce"
+							"uuid": "@creature[元素灵（风）|TCE]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素灵（土）]|tce"
+							"uuid": "@creature[元素之灵（土）|TCE]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@生物[元素精灵（火）]|tce"
+							"uuid": "@creature[元素灵（火）|TCE]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[元素精灵（水）]|tce"
+							"uuid": "@creature[元素精灵（水）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15693,22 +15693,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "Air",
-							"uuid": "@生物[元素之魂（空气）]|xphb]"
+							"uuid": "@creature[元素灵（风）|XPHB]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素灵（土）]|xphb]"
+							"uuid": "@creature[元素之灵（土）|XPHB]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@生物[元素精灵（火）]|xphb]"
+							"uuid": "@creature[元素灵（火）|XPHB]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[元素精灵（水）]|xphb]"
+							"uuid": "@creature[元素精灵（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15735,17 +15735,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "@creature[精类灵（冒烟的）]|tce"
+							"uuid": "@creature[精类之魂（喷烟）|TCE]"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "@生物[精类之魂（欢乐）]|tce"
+							"uuid": "@creature[精类灵（欢乐）|TCE]"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "@生物[精类精灵（淘气）]|tce"
+							"uuid": "@creature[仙灵（调皮）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15774,13 +15774,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[精类灵（冒烟的）]|xphb]"
+							"uuid": "@creature[精类之魂（喷烟）|XPHB]"
 						},
 						{
-							"uuid": "@生物[精类之魂（欢乐）]|xphb]"
+							"uuid": "@creature[精类灵（欢乐）|XPHB]"
 						},
 						{
-							"uuid": "@生物[精类精灵（淘气）]|xphb]"
+							"uuid": "@creature[仙灵（调皮）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15808,17 +15808,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[恶魔灵体]|tce"
+							"uuid": "@creature[恶魔之魂|TCE]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@生物[恶魔之魂（恶魔）]|tce"
+							"uuid": "@creature[恶魔之魂|TCE]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[邪恶灵体（尤格罗斯）]|tce"
+							"uuid": "@creature[恶魔灵（尤格罗斯）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15850,17 +15850,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[恶魔灵体]|xphb]"
+							"uuid": "@creature[恶魔之魂|XPHB]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@生物[恶魔之魂（恶魔）]|xphb]"
+							"uuid": "@creature[恶魔之魂|XPHB]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[邪恶灵体（尤格罗斯）]|xphb]"
+							"uuid": "@creature[恶魔灵（尤格罗斯）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15889,17 +15889,17 @@
 						{
 							"ENG_name": "Fury",
 							"name": "狂怒",
-							"uuid": "@生物[影灵（狂怒）]|tce"
+							"uuid": "@creature[暗影灵（狂怒）|TCE]"
 						},
 						{
 							"ENG_name": "Despair",
 							"name": "绝望",
-							"uuid": "@creature[阴影精灵（绝望）]|tce"
+							"uuid": "@creature[暗影灵（绝望）|TCE]"
 						},
 						{
 							"ENG_name": "Fear",
 							"name": "恐惧术",
-							"uuid": "@生物[阴影灵（恐惧）]|tce"
+							"uuid": "@creature[阴影之魂（恐惧）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15926,17 +15926,17 @@
 						{
 							"ENG_name": "Ghostly",
 							"name": "幽灵般的",
-							"uuid": "@生物[不死生物（幽灵）]|tce"
+							"uuid": "@creature[不死之魂（幽灵形态）|TCE]"
 						},
 						{
 							"ENG_name": "Putrid",
 							"name": "恶臭",
-							"uuid": "@creature[不死生物[腐臭的]|tce"
+							"uuid": "@creature[不死之魂（腐臭）|TCE]"
 						},
 						{
 							"ENG_name": "Skeletal",
 							"name": "骷髅",
-							"uuid": "@生物[不死灵（骷髅）]|tce"
+							"uuid": "@creature[不死之魂（骷髅）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15965,13 +15965,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@生物[不死生物（幽灵）]|xphb]"
+							"uuid": "@creature[不死之魂（幽灵形态）|XPHB]"
 						},
 						{
-							"uuid": "@creature[不死生物[腐臭的]|xphb]"
+							"uuid": "@creature[不死之魂（腐臭）|XPHB]"
 						},
 						{
-							"uuid": "@生物[不死灵（骷髅）]|xphb]"
+							"uuid": "@creature[不死之魂（骷髅）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16134,7 +16134,7 @@
 					"statuses": [
 						"目盲"
 					],
-					"description": "受此法术{@condition 目盲|Blinded|apply=false}影响的生物在其每个回合结束时需再次进行[[/save ability=con format=long]]豁免检定，成功则终止该效应。"
+					"description": "受此法术{@condition 目盲}影响的生物在其每回合结束时需再进行一次[[/save ability=con format=long]]（体质豁免），成功则终止该效果。"
 				}
 			],
 			"migrationVersion": 3
@@ -16708,7 +16708,7 @@
 						"失能",
 						"倒地"
 					],
-					"description": "在持续时间内陷入{@condition 倒地 apply=false}和{@condition  incapacitated apply=false}状态。期间，若其能够发笑则会不受控制地大笑，且无法自行解除{@condition 倒地}状态。在其每回合结束时以及每次受到伤害时，需再次进行[[/save ability=wis dc=@attributes.spell.dc]]豁免检定。若该豁免因受到伤害触发，则其具有优势。豁免成功则法术终止。"
+					"description": "在法术持续时间内，目标处于{@condition 倒地 apply=false}和{@condition 失能 apply=false}状态。在此期间，如果目标能够发笑，则会不受控制地大笑，并且无法自行解除{@condition 倒地}状态。在它的每个回合结束时以及每次受到伤害时，目标需再进行一次[[/save ability=wis dc=@attributes.spell.dc]]豁免检定。若豁免检定由受到伤害触发，则目标具有优势。豁免成功时，法术终止。"
 				}
 			],
 			"migrationVersion": 3
@@ -18642,7 +18642,7 @@
 					"name": "辐射豁免",
 					"type": "save",
 					"description": {
-						"chatFlavor": "推动10尺，如果失败则陷入{@condition 倒地}"
+						"chatFlavor": "推动10尺，失败则&Reference[倒地]"
 					},
 					"activation": {
 						"type": "",

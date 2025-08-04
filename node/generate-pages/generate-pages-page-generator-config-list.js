@@ -615,7 +615,7 @@ class _PageGeneratorListVehicles extends PageGeneratorListBase {
 
 class _PageGeneratorListBastions extends PageGeneratorListBase {
 	_page = UrlUtil.PG_BASTIONS;
-	_pageTitle = "Bastions";
+	_pageTitle = "据点";
 	_scriptIdentList = "bastions";
 	_isHasRenderer = false;
 
@@ -628,7 +628,7 @@ class _PageGeneratorListBastions extends PageGeneratorListBase {
 	_btnsList = [
 		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "facilityType", text: "类型"}),
 		HtmlGeneratorListButtons.getBtn({width: "3", sortIdent: "name", text: "名称"}),
-		HtmlGeneratorListButtons.getBtn({width: "1", sortIdent: "level", text: "Level"}),
+		HtmlGeneratorListButtons.getBtn({width: "1", sortIdent: "level", text: "等级"}),
 		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "prerequisite", text: "先决条件"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
@@ -636,7 +636,7 @@ class _PageGeneratorListBastions extends PageGeneratorListBase {
 	_btnsSublist = [
 		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "facilityType", text: "类型"}),
 		HtmlGeneratorListButtons.getBtn({width: "3", sortIdent: "name", text: "名称"}),
-		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "level", text: "Level"}),
+		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "level", text: "等级"}),
 		HtmlGeneratorListButtons.getBtn({width: "5", sortIdent: "prerequisite", text: "先决条件"}),
 	];
 
