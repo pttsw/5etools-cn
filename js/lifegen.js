@@ -99,7 +99,7 @@ async function getPersonDetails (opts) {
 				return resultLast ? resultLast.result : "";
 			})();
 
-			out.unshift(`<i><b title="Generated using the random name tables found in Xanathar's Guide to Everything">Name:</b> ${resultFirst.result}${lastName ? ` ${lastName}` : ""}</i>`);
+			out.unshift(`<i><b title="Generated using the random name tables found in Xanathar's Guide to Everything">名字:</b> ${resultFirst.result}${lastName ? ` ${lastName}` : ""}</i>`);
 		}
 	}
 
@@ -846,7 +846,7 @@ function sectLifeEvents () {
 	const events = es(`#events`).empty();
 	marriageIndex = 0;
 	const age = GenUtil.getFromTable(LIFE_EVENTS_AGE, Number(selAge.val()) || RNG(100));
-	events.appends(ee`<div>${`<b>Current age:</b> ${age.result} ${fmtChoice(`${age.age} year${age.age > 1 ? "s" : ""} old`, true)}`}</div>`);
+	events.appends(ee`<div>${`<b>当前年龄:</b> ${age.result} ${fmtChoice(`${age.age} 岁`, true)}`}</div>`);
 
 	for (let i = 0; i < age.events; ++i) {
 		const dispResult = ee`<div></div>`;
@@ -877,12 +877,12 @@ function sectLifeEvents () {
 
 		doRollAndDisplay();
 
-		const btnReroll = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">Reroll</button>`
+		const btnReroll = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">重骰</button>`
 			.onn("click", () => doRollAndDisplay({isScrollIntoView: true}));
 
 		const wrpEvent = ee`<div class="ve-flex-col">
 			<div class="ve-flex-v-center mb-1 mt-2">
-				<h5 class="my-0 mr-2">Life Event ${i + 1}</h5>
+				<h5 class="my-0 mr-2">人生大事 ${i + 1}</h5>
 				${btnReroll}
 			</div>
 			${dispResult}

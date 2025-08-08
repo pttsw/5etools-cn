@@ -1,7 +1,7 @@
 import {StatGenUiRenderLevelOneEntityBase} from "./statgen-ui-comp-levelone-entitybase.js";
 
 export class StatGenUiRenderLevelOneRace extends StatGenUiRenderLevelOneEntityBase {
-	_title = "Species";
+	_title = I18nUtil.get("common.species");
 	_titleShort = "Species";
 	_propIxEntity = "common_ixRace";
 	_propIxAbilityScoreSet = "common_ixAbilityScoreSetRace";

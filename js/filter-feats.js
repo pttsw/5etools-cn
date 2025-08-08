@@ -119,7 +119,7 @@ class PageFilterFeats extends PageFilterBase {
 			if (feat.skillToolLanguageProficiencies.some(it => (it.choose || []).some(x => x.from || [].includes("anyLanguage")))) feat._fBenefits.push("语言熟练项");
 		}
 		this._mutateForFilters_commonMisc(feat);
-		if (feat.repeatable != null) feat._fMisc.push(feat.repeatable ? "Repeatable" : "Not Repeatable");
+		if (feat.repeatable != null) feat._fMisc.push(I18nUtil.get(feat.repeatable ? "page.feats.repeatable" : "page.feats.not_repeatable"));
 
 		feat._slAbility = ability.asTextShort || VeCt.STR_NONE;
 		feat._slPrereq = prereqText;
@@ -191,7 +191,7 @@ class ModalFilterFeats extends ModalFilterBase {
 		opts = opts || {};
 		super({
 			...opts,
-			modalTitle: `Feat${opts.isRadio ? "" : "s"}`,
+			modalTitle: I18nUtil.get("common.feat", _ => `Feat${opts.isRadio ? "" : "s"}`),
 			pageFilter: new PageFilterFeats(),
 		});
 	}

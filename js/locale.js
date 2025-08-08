@@ -31,18 +31,20 @@ I18nUtil.loadProperties = (language) => {
     });
 }
 
-I18nUtil.get = (key) => {
+I18nUtil.get = (key, defaultFunc = (k) => k.split('.').at(-1).replaceAll('_', ' ')) => {
     try {
         if (!key) {
             return "";
         }
         if (propertiesLoaded && $.i18n && $.i18n.prop) {
-            return $.i18n.prop(key);
+            const searchKey = key.replaceAll(' ','_').replaceAll(';','_').toLowerCase();
+            console.log(searchKey)
+            return $.i18n.prop(searchKey);
         }
-        return key;
+        return defaultFunc(key);
     } catch (error) {
         console.error(error);
-        return key;
+        return defaultFunc(key);
     }
 };
 

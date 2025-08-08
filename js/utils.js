@@ -3659,6 +3659,7 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CREATURE_FEATURES] = UrlUtil.URL_TO_HASH_
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_VEHICLE_FEATURES] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OBJECT_FEATURES] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TRAP_FEATURES] = UrlUtil.URL_TO_HASH_GENERIC;
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_STATGEN] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_QUICKREF] = ({name, ixChapter, ixHeader}) => {
 	const hashParts = ["bookref-quick", ixChapter, UrlUtil.encodeForHash(name.toLowerCase())];
 	if (ixHeader) hashParts.push(ixHeader);
@@ -3779,6 +3780,7 @@ UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CREATURE_FEATURES] = UrlUtil.URL_TO_E
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VEHICLE_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OBJECT_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TRAP_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_STATGEN] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_QUICKREF] = ({ENG_name, ixChapter, ixHeader}) => {
 	const hashParts = ["bookref-quick", ixChapter, UrlUtil.encodeForHash(ENG_name.toLowerCase())];
 	if (ixHeader) hashParts.push(ixHeader);

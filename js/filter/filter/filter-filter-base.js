@@ -187,7 +187,7 @@ export class FilterBase extends BaseComponent {
 			tag: "button",
 			clazz: `ve-btn ve-btn-default ${isMulti ? "ve-btn-xxs" : "ve-btn-xs"}`,
 			click: () => this._uiMeta.isHidden = !this._uiMeta.isHidden,
-			html: "Hide",
+			html: I18nUtil.get('common.button.hide'),
 		});
 	}
 

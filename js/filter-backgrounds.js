@@ -53,7 +53,7 @@ class PageFilterBackgrounds extends PageFilterBase {
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
-		this._featsFilter = new SearchableFilter({header: "Feats", itemSortFn: SortUtil.ascSortLower});
+		this._featsFilter = new SearchableFilter({header: "Feats", cnHeader:"专长", itemSortFn: SortUtil.ascSortLower});
 	}
 
 	static _mutateForFilters_getFilterFeats (bg) {
@@ -66,7 +66,7 @@ class PageFilterBackgrounds extends PageFilterBase {
 						switch (k) {
 							case "any": return "(Any)";
 							case "anyFromCategory": return `(Any From Category)`;
-							default: return k.split("|")[0].toTitleCase();
+							default: return I18nUtil.get(`page.backgrounds.${k.split("|")[0]}`,(k) => k.split('.').at(-1).replace('_', ' ').toTitleCase());
 						}
 					});
 			});

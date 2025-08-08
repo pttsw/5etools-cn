@@ -12,6 +12,8 @@ const config = {
   "delete": ['删除', '刪除', 'Delete'],
   "cancel": ['取消', '取消', 'Cancel'],
   "remove": ['移除', '移除', 'Remove'],
+  "hide": ['隐藏', '隱藏', 'Hide'],
+  "show": ['显示', '顯示', 'Show'],
   "yes": ['是', '是', 'Yes'],
   "no": ['否', '否', 'No'],
 

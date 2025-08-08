@@ -217,7 +217,7 @@ export class LootGenUi extends BaseComponent {
 			filterExpression,
 			valuesOverride: {
 				"Miscellaneous": {
-					"Reprinted": PILL_STATE__IGNORE,
+					"重印": PILL_STATE__IGNORE,
 				},
 			},
 		});

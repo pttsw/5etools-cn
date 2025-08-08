@@ -9,6 +9,7 @@ class PageFilterCharCreationOptions extends PageFilterBase {
 		super();
 		this._typeFilter = new Filter({
 			header: "Feature Type",
+			cnHeader: "能力类型",
 			items: [],
 			displayFn: Parser.charCreationOptionTypeToFull,
 			itemSortFn: PageFilterCharCreationOptions._filterFeatureTypeSort,

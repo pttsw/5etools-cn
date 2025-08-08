@@ -2231,26 +2231,26 @@ Parser.featCategoryFromFull = (full) => {
 
 // NOTE: These need to be reflected in omnidexer.js to be indexed
 Parser.OPT_FEATURE_TYPE_TO_FULL = {
-	AI: "Artificer Infusion",
-	ED: "Elemental Discipline",
-	EI: "Eldritch Invocation",
-	MM: "Metamagic",
-	"MV": "Maneuver",
-	"MV:B": "Maneuver, Battle Master",
-	"MV:C2-UA": "Maneuver, Cavalier V2 (UA)",
-	"AS:V1-UA": "Arcane Shot, V1 (UA)",
-	"AS:V2-UA": "Arcane Shot, V2 (UA)",
-	"AS": "Arcane Shot",
-	OTH: "Other",
-	"FS:F": "Fighting Style; Fighter",
-	"FS:B": "Fighting Style; Bard",
-	"FS:P": "Fighting Style; Paladin",
-	"FS:R": "Fighting Style; Ranger",
-	"PB": "Pact Boon",
+	AI: I18nUtil.get("page.optionalfeatures.artificer_infusion"),
+	ED: I18nUtil.get("page.optionalfeatures.elemental_discipline"),
+	EI: I18nUtil.get("page.optionalfeatures.eldritch_invocation"),
+	MM: I18nUtil.get("page.optionalfeatures.metamagic"),
+	"MV": I18nUtil.get("page.optionalfeatures.maneuver"),
+	"MV:B": I18nUtil.get("page.optionalfeatures.maneuver__battle_master"),
+	"MV:C2-UA": I18nUtil.get("page.optionalfeatures.maneuver__cavalier") + " V2 (UA)",
+	"AS:V1-UA": I18nUtil.get("page.optionalfeatures.arcane_shot") + ", V1 (UA)",
+	"AS:V2-UA": I18nUtil.get("page.optionalfeatures.arcane_shot") + ", V2 (UA)",
+	"AS": I18nUtil.get("page.optionalfeatures.arcane_shot"),
+	OTH: I18nUtil.get("page.optionalfeatures.other"),
+	"FS:F": I18nUtil.get("page.optionalfeatures.fighting_style__fighter"),
+	"FS:B": I18nUtil.get("page.optionalfeatures.fighting_style__bard"),
+	"FS:P": I18nUtil.get("page.optionalfeatures.fighting_style__paladin"),
+	"FS:R": I18nUtil.get("page.optionalfeatures.fighting_style__ranger"),
+	"PB": I18nUtil.get("page.optionalfeatures.pact_boon"),
 	"OR": "Onomancy Resonant",
-	"RN": "符文骑士符文",
-	"AF": "Alchemical Formula",
-	"TT": "Traveler's Trick",
+	"RN": I18nUtil.get("page.optionalfeatures.rune_knight_rune"),
+	"AF": I18nUtil.get("page.optionalfeatures.alchemical_formula"),
+	"TT": I18nUtil.get("page.optionalfeatures.travelers_trick"),
 };
 
 Parser.optFeatureTypeToFull = function (type) {
@@ -2261,11 +2261,11 @@ Parser.optFeatureTypeToFull = function (type) {
 };
 
 Parser.CHAR_OPTIONAL_FEATURE_TYPE_TO_FULL = {
-	"SG": "Supernatural Gift",
-	"OF": "Optional Feature",
-	"DG": "Dark Gift",
-	"RF:B": "Replacement Feature: Background",
-	"CS": "Character Secret", // Specific to IDRotF (rules on page 14)
+	"SG": I18nUtil.get("page.charcreationoptions.supernatural_gift"),
+	"OF": I18nUtil.get("page.charcreationoptions.optional_feature"),
+	"DG": I18nUtil.get("page.charcreationoptions.dark_gift"),
+	"RF:B": I18nUtil.get("page.charcreationoptions.replacement_feature__background"),
+	"CS": I18nUtil.get("page.charcreationoptions.character_secret"), // Specific to IDRotF (rules on page 14)
 };
 
 Parser.charCreationOptionTypeToFull = function (type) {

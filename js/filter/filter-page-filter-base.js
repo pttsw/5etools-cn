@@ -12,7 +12,7 @@ export class PageFilterBase {
 	}
 
 	static defaultMiscellaneousDeselFn (val) {
-		return val === "Reprinted";
+		return val === "Reprinted" || val === "重印";
 	}
 
 	constructor (opts) {

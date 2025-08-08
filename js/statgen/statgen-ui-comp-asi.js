@@ -35,7 +35,7 @@ export class StatGenUiCompAsi extends BaseComponent {
 							this._doPulseThrottled();
 						});
 
-					const $btnFeat = namespace !== "ability" ? $(`<div class="w-100p ve-text-center">Feat</div>`) : $(`<button class="ve-btn ve-btn-xs ve-btn-default w-50p">专长</button>`)
+					const $btnFeat = namespace !== "ability" ? $(`<div class="w-100p ve-text-center">${I18nUtil.get("common.feat")}</div>`) : $(`<button class="ve-btn ve-btn-xs ve-btn-default w-50p">专长</button>`)
 						.click(() => {
 							this._parent.state[propMode] = "feat";
 							this._doPulseThrottled();
@@ -221,7 +221,7 @@ export class StatGenUiCompAsi extends BaseComponent {
 					hkIxFeat();
 
 					const $row = $$`<div class="ve-flex-v-end py-3 px-1 statgen-asi__row">
-						<div class="ve-btn-group"><div class="w-100p ve-text-center">专长</div></div>
+						<div class="ve-btn-group"><div class="w-100p ve-text-center">${I18nUtil.get("common.feat")}</div></div>
 						<div class="vr-4"></div>
 						${$stgFeat}
 					</div>`.appendTo($wrpRowsInner);
@@ -235,7 +235,7 @@ export class StatGenUiCompAsi extends BaseComponent {
 					hkIxFeat();
 
 					const $row = $$`<div class="ve-flex-v-end py-3 px-1 statgen-asi__row">
-						<div class="ve-btn-group"><div class="w-100p ve-text-center">专长</div></div>
+						<div class="ve-btn-group"><div class="w-100p ve-text-center">${I18nUtil.get("common.feat")}</div></div>
 						<div class="vr-4"></div>
 						${$stgFeat}
 					</div>`.appendTo($wrpRowsInner);
@@ -485,9 +485,9 @@ export class StatGenUiCompAsi extends BaseComponent {
 			${$stgBackground}
 
 			<hr class="hr-3 hr--dotted">
-			<h4 class="my-2 bold">Additional Feats</h4>
+			<h4 class="my-2 bold">${I18nUtil.get("page.statgen.additional_feats")}</h4>
 			<label class="w-100 ve-flex-v-center mb-2">
-				<div class="mr-2 no-shrink">Number of additional feats:</div>${wrpCountFeatsCustom}
+				<div class="mr-2 no-shrink">${I18nUtil.get("page.statgen.number_of_additional_feats")}:</div>${wrpCountFeatsCustom}
 			</label>
 			${$wrpRowsCustom}
 		`;

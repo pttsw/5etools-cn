@@ -90,7 +90,7 @@ export class ModalFilterBase {
 		const $wrpForm = $$`<div class="ve-flex-col w-100 mb-1">${$wrpFormTop}${$wrpFormBottom}${$wrpFormHeaders}</div>`;
 		const $wrpList = this._$getWrpList();
 
-		const $btnConfirm = opts.isBuildUi ? null : $(`<button class="ve-btn ve-btn-default">Confirm</button>`);
+		const $btnConfirm = opts.isBuildUi ? null : $(`<button class="ve-btn ve-btn-default">${I18nUtil.get("common.button.confirm")}</button>`);
 
 		this._list = new List({
 			$iptSearch,
@@ -285,7 +285,7 @@ export class ModalFilterBase {
 		const {$modalInner, doClose} = await UiUtil.pGetShowModal({
 			isHeight100: true,
 			isWidth100: true,
-			title: `Filter/Search for ${this._modalTitle}`,
+			title: `${I18nUtil.get("common.filter.filter_search_for")} ${this._modalTitle}`,
 			cbClose: (isDataEntered) => {
 				if (this._filterCache) this._filterCache.$wrpModalInner.detach();
 				if (!isDataEntered) resolve([]);
