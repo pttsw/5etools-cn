@@ -1584,7 +1584,7 @@
 					"statuses": [
 						"失能"
 					],
-					"description": "目标在该处获得&Reference[Incapacitated apply=false]状态。法术结束时，目标会重新出现在它离开的空间，如果该空间被占据则出现在最近的未被占据空间。若目标是异怪、天界生物、元素生物、精类或邪魔，且法术持续1分钟，则目标不会返回，而是被传送到与其生物类型相关的随机位面（由DM选择）。"
+					"description": "目标在该处时获得&Reference[Incapacitated apply=false]状态。法术结束时，目标会重新出现在它离开的空间，若该空间被占据则出现在最近的未被占据空间。若目标是异怪、天界生物、元素生物、精类或邪魔，且法术持续1分钟，则目标不会返回，而是被传送到与其生物类型相关的随机位面（由DM选择）。"
 				}
 			],
 			"migrationVersion": 3
@@ -2417,7 +2417,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "目标获得&Reference[Charmed apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友善。当法术结束时，目标会意识到它曾被你所魅惑。"
+					"description": "目标获得{@condition 魅惑}状态（&Reference[Charmed apply=false]），直到法术结束或你及盟友对其造成伤害为止。被魅惑的生物对你保持友善。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
 			],
 			"migrationVersion": 3
@@ -2465,7 +2465,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "目标获得{@condition 魅惑|apply=false}状态，直到法术结束或你或你的盟友对其造成伤害为止。被魅惑的生物对你{@condition 友善}。当法术结束时，目标会知道它被你{@condition 魅惑}过。"
+					"description": "目标获得&Reference[charmed apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友好。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
 			],
 			"migrationVersion": 3
@@ -2810,7 +2810,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "你可以使用一个附赠动作指定一个与你水平的方向。每个&Reference[魅惑 apply=false]目标必须在其下一回合尽其所能地朝该方向移动，并选择最安全的路线。以此方式移动后，目标需重复进行[[/save ability=wis]]豁免检定，成功则自身身上的法术终止。"
+					"description": "你可以使用一个附赠动作指定一个与你水平的方向。每个&Reference[魅惑 apply=false]目标必须在其下一回合尽可能多地朝该方向移动，并选择最安全的路线。以此方式移动后，目标需重复进行[[/save ability=wis]]豁免检定，成功则法术对其终止。"
 				}
 			],
 			"migrationVersion": 3
@@ -3354,7 +3354,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒|apply=false}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3375,7 +3375,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒|apply=false}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3396,7 +3396,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒|apply=false}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3417,7 +3417,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒|apply=false}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3438,7 +3438,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒|apply=false}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -3459,7 +3459,7 @@
 						{
 							"type": "list",
 							"items": [
-								"当目标处于{@condition 中毒}状态时，其在所选属性上的豁免检定具有劣势。",
+								"当目标处于{@condition 中毒|apply=false}状态时，其在所选属性上的豁免检定具有劣势。",
 								"目标必须在其每个回合结束时重复进行[[/save ability=con format=long]]，直到获得三次成功或失败。",
 								"每当目标受到一个可以结束中毒状态的效应时，目标必须通过一次[[/save ability=con format=long]]（体质豁免），否则该状态不会结束。"
 							]
@@ -6275,7 +6275,7 @@
 					"statuses": [
 						"束缚"
 					],
-					"description": "一个&Reference[Restrained apply=false]生物可以用一个动作进行[[/check ability=str skill=ath dc=@attributes.spell.dc]]检定对抗你的法术豁免DC，成功则结束自身该状态。"
+					"description": "一个处于{@condition 束缚|Restrained apply=false}状态的生物可以执行一个动作进行[[/check ability=str skill=ath dc=@attributes.spell.dc]]检定对抗你的法术豁免DC，成功则结束自身该状态。"
 				}
 			],
 			"migrationVersion": 3
@@ -7731,7 +7731,7 @@
 					"statuses": [
 						"魅惑"
 					],
-					"description": "当目标处于&Reference[魅惑 apply=false]状态时，若其行为直接违背你的命令，则会受到[[/damage 5d10 type=psychic]]点心灵伤害。该伤害每天最多生效一次。"
+					"description": "当目标处于{@condition 魅惑}状态时，若其行为直接违背你的命令，则会受到[[/damage 5d10 type=psychic]]点心灵伤害。该伤害每天最多生效一次。"
 				}
 			],
 			"migrationVersion": 3
@@ -9631,7 +9631,7 @@
 					"statuses": [
 						"昏迷"
 					],
-					"description": "目标处于{@condition 昏迷|apply=false}状态且无法被唤醒。"
+					"description": "目标处于&Reference[昏迷 apply=false]状态且无法被唤醒。"
 				}
 			],
 			"migrationVersion": 3
@@ -11803,7 +11803,7 @@
 					"statuses": [
 						"震慑"
 					],
-					"description": "目标受到&Reference[震慑 apply=false]影响时，在其每回合结束时需进行一次[[/save ability=con]]豁免检定，成功则终止该状态。"
+					"description": "目标受到{@condition 震慑}时，在其每回合结束时需进行一次[[/save ability=con]]体质豁免，成功则终止该状态。"
 				},
 				{
 					"ENG_name": "No Movement",
@@ -14786,7 +14786,7 @@
 							"value": 0.5
 						}
 					],
-					"description": "该生物在辐射范围内的速度减半。"
+					"description": "生物在辐射范围内时速度减半。"
 				}
 			],
 			"migrationVersion": 3
@@ -16134,7 +16134,7 @@
 					"statuses": [
 						"目盲"
 					],
-					"description": "受此法术{@condition 目盲}影响的生物在其每回合结束时需再进行一次[[/save ability=con format=long]]（体质豁免），成功则终止该效果。"
+					"description": "受此法术{@condition 目盲|Blinded apply=false}影响的生物在其每回合结束时需再进行一次[[/save ability=con format=long]]（体质豁免），成功则终止该效果。"
 				}
 			],
 			"migrationVersion": 3
@@ -16708,7 +16708,7 @@
 						"失能",
 						"倒地"
 					],
-					"description": "在法术持续时间内，目标处于{@condition 倒地 apply=false}和{@condition 失能 apply=false}状态。在此期间，如果目标能够发笑，则会不受控制地大笑，并且无法自行解除{@condition 倒地}状态。在它的每个回合结束时以及每次受到伤害时，目标需再进行一次[[/save ability=wis dc=@attributes.spell.dc]]豁免检定。若豁免检定由受到伤害触发，则目标具有优势。豁免成功时，法术终止。"
+					"description": "在持续时间内具有{@condition 倒地 apply=false}和{@condition 失能 apply=false}状态。在此期间，如果它能够发笑，则会不受控制地大笑，并且无法自行解除{@condition 倒地}状态。在它的每个回合结束时以及每次受到伤害时，它需要进行一次[[/save ability=wis dc=@attributes.spell.dc]]豁免检定。如果豁免是由伤害触发的，则目标在检定中具有优势。豁免成功时，法术终止。"
 				}
 			],
 			"migrationVersion": 3

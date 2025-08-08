@@ -98,10 +98,10 @@ export class LootGenUi extends BaseComponent {
 		},
 	};
 	static _DRAGON_AGES = [
-		"Wyrmling",
-		"Young",
-		"Adult",
-		"Ancient",
+		I18nUtil.get("page.lootgen.wyrmling"),
+		I18nUtil.get("page.lootgen.young"),
+		I18nUtil.get("page.lootgen.adult"),
+		I18nUtil.get("page.lootgen.ancient"),
 	];
 
 	constructor ({spells, items, ClsLootGenOutput}) {
@@ -163,13 +163,20 @@ export class LootGenUi extends BaseComponent {
 			.pMap(async type => {
 				return {
 					type,
-					tableEntry: await DataLoader.pCacheAndGet(UrlUtil.PG_TABLES, Parser.SRC_DMG, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES]({name: `Magic Item Table ${type}`, source: Parser.SRC_DMG})),
+					tableEntry: await DataLoader.pCacheAndGet(UrlUtil.PG_TABLES, Parser.SRC_DMG, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES]({name: `${I18nUtil.get("page.lootgen.magic_item_table_")}${type}`, source: Parser.SRC_DMG})),
 				};
 			});
-
-		const tablesMagicItemsXdmg = await ["Arcana", "Armaments", "Implements", "Relics"]
+		// const tablesMagicItemsXdmg = await ["Arcana", "Armaments", "Implements", "Relics"]
+		// const tablesMagicItemsXdmg = await [I18nUtil.get("奥术", "军备", "法器", "遗物"]
+		const tablesMagicItemsXdmg = await [I18nUtil.get("page.lootgen.arcana"), I18nUtil.get("page.lootgen.armaments"), I18nUtil.get("page.lootgen.implements"), I18nUtil.get("page.lootgen.relics")]
 			.flatMap(theme => {
-				return ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"]
+				// return ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"]
+				// return ["常见", "罕见", "稀有", "非常稀有", "传说"]
+				return [I18nUtil.get("page.lootgen.common"), 
+					I18nUtil.get("page.lootgen.uncommon"),
+					I18nUtil.get("page.lootgen.rare"),
+					I18nUtil.get("page.lootgen.very_rare"),
+					I18nUtil.get("page.lootgen.legendary")]
 					.map(rarity => ({
 						name: `${theme} - ${rarity}`,
 						type: `${theme.toLowerCase()}.${rarity.toLowerCase()}`,
@@ -324,11 +331,11 @@ export class LootGenUi extends BaseComponent {
 		const {stgLhs: stgLhs_, stgRhs: stgRhs_} = this._render_getStages({stg, stgLhs, stgRhs});
 
 		const iptTabMetas = [
-			new TabUiUtil.TabMeta({name: "Random Treasure by CR", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Loot Tables", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Party Loot", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Dragon Hoard", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Gems/Art Objects Generator", isHeadHidden: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: I18nUtil.get("page.lootgen.random_treasure_by_cr"), hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: I18nUtil.get("page.lootgen.loot_tables"), hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: I18nUtil.get("page.lootgen.party_loot"), hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: I18nUtil.get("page.lootgen.dragon_hoard"), hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: I18nUtil.get("page.lootgen.gems_art_objects_generator"), isHeadHidden: true, hasBackground: true}),
 			new TabUiUtil.TabMeta({
 				type: "buttons",
 				isSplitStart: true,
@@ -389,20 +396,20 @@ export class LootGenUi extends BaseComponent {
 
 		const cbIsHoard = ComponentUiUtil.getCbBool(this, "ft_isHoard");
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._ft_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`
+		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._doClearOutput());
 
 		ee`<div class="ve-flex-col py-2 px-3">
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">Challenge Rating</div>
+				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.challenge_rating")}</div>
 				${selChallenge}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Is Treasure Hoard?</div>
+				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.is_treasure_hoard")}</div>
 				${cbIsHoard}
 			</label>
 
@@ -413,7 +420,7 @@ export class LootGenUi extends BaseComponent {
 
 			<hr class="hr-3">
 
-			<div class="ve-small italic">${this.constructor._er(`Based on the tables and rules in the {@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|Treasure Tables}`)}, pages 133-149.</div>
+			<div class="ve-small italic">${this.constructor._er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|Treasure Tables}的表格生成`)}, 第 133-149页.</div>
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 
@@ -434,8 +441,8 @@ export class LootGenUi extends BaseComponent {
 		);
 
 		const lootOutput = new this._ClsLootGenOutput({
-			type: `Individual Treasure: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
-			name: `{@b Individual Treasure} for challenge rating {@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
+			type: `${I18nUtil.get("page.lootgen.individual_treasure")}: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
+			name: `{@b ${I18nUtil.get("page.lootgen.individual_treasure")} for ${I18nUtil.get("page.lootgen.challenge_rating")} {@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
 		});
 		this._doAddOutput({lootOutput});
@@ -690,10 +697,10 @@ export class LootGenUi extends BaseComponent {
 		};
 		this._addHookBase("pulseItemsFiltered", hkPulseItem);
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._lt_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`
+		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._doClearOutput());
 
 		const hrHelp = ee`<hr class="hr-3">`;
@@ -859,10 +866,10 @@ export class LootGenUi extends BaseComponent {
 		// endregion
 
 		// region Buttons
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._pl_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`
+		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._doClearOutput());
 		// endregion
 
@@ -1021,10 +1028,10 @@ export class LootGenUi extends BaseComponent {
 
 		const cbIsPreferRandomMagicItems = ComponentUiUtil.getCbBool(this, "dh_isPreferRandomMagicItems");
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._dh_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`
+		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._doClearOutput());
 
 		ee`<div class="ve-flex-col py-2 px-3">
@@ -1109,10 +1116,10 @@ export class LootGenUi extends BaseComponent {
 				btnRoll.click();
 			});
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Roll Loot</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._goa_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear Output</button>`
+		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._doClearOutput());
 
 		ee`<div class="ve-flex-col py-2 px-3">
