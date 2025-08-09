@@ -11808,7 +11808,7 @@
 					"ENG_name": "Smelting Charge {@recharge 5}",
 					"name": "熔炼充能 {@recharge 5}",
 					"entries": [
-						"蛇发女妖可以移动至多{@variantrule 速度|XPHB}而不引发{@action 借机攻击|XPHB|Opportunity Attacks}，且能穿过中型或更小体型生物占据的空间。每当蛇发女妖在此次移动中首次进入某生物空间时，该目标将受到以下效果影响。{@actSave 敏捷} {@dc 16}。{@actSaveFail} 13（{@damage 2d8 + 4}）点穿刺伤害加13（{@damage 3d8}）点火焰伤害，且目标被拉入蛇发女妖的空间并陷入{@condition 擒抱|XPHB}状态（逃脱{@dc 14}）；若蛇发女妖已擒抱另一生物，则目标改为陷入{@condition 倒地|XPHB}状态。擒抱持续期间，目标处于{@condition 束缚|XPHB}状态。当蛇发女妖移动时，被{@condition 擒抱|XPHB}的目标随之移动，不消耗额外移动力。"
+						"蛇发女妖可以移动等同于其{@variantrule 速度|XPHB}的距离而不引发{@action 借机攻击|XPHB|借机攻击}，并且可以穿过中型或更小体型生物占据的空间。在此次移动中每当蛇发女妖首次进入一个生物的空间时，该目标将承受以下效果。{@actSave dex} {@dc 16}。{@actSaveFail} 13（{@damage 2d8 + 4}）点穿刺伤害加13（{@damage 3d8}）点火焰伤害，且目标被拉入蛇发女妖的空间并获得{@condition 擒抱|XPHB}状态（逃脱{@dc 14}）；若蛇发女妖已经{@condition 擒抱|XPHB}着一个生物，则目标改为获得{@condition 倒地|XPHB}状态。在擒抱结束前，目标维持{@condition 束缚|XPHB}状态。当蛇发女妖移动时，被{@condition 擒抱|XPHB}的目标随之移动，且不消耗额外移动力。"
 					]
 				}
 			],
@@ -13857,7 +13857,7 @@
 				},
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m}{@hit 7}，触及5尺。{@h}10（{@damage 1d12 + 4}）钝击伤害。如果目标是中型或更小的生物，它将处于{@condition 倒地|XPHB}状态。"
 					]
@@ -17654,7 +17654,7 @@
 			"action": [
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m} {@hit 2}，触及5尺，{@h}2（{@damage 1d4}）钝击伤害。"
 					]
@@ -20763,7 +20763,7 @@
 			"action": [
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m} {@hit 5}，触及 5 尺。{@h}6（{@damage 1d6 + 3}）钝击伤害。如果目标体型为大型或更小，并且麋鹿在攻击前立即向目标直线移动了 20 英尺以上，则目标额外受到 3（{@damage 1d6}）钝击伤害并获得{@condition 倒地|XPHB}状态。"
 					]
@@ -25153,7 +25153,7 @@
 			"action": [
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m} {@hit 6}, 触及 10 英尺. {@h}11 ({@damage 2d6 + 4}) 钝击伤害加 5 ({@damage 2d4}) 光耀伤害. 如果目标是巨型或更小的生物，并且麋鹿在攻击前直线移动了 20 英尺或更多，目标将额外受到 5 ({@damage 2d4}) 钝击伤害并获得{@condition 倒地|XPHB}状态。"
 					]
@@ -25431,7 +25431,7 @@
 			"action": [
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m} {@hit 5}，触及 5 英尺。{@h}6（{@damage 1d6 + 3}）点钝击伤害。如果目标是大型或更小的生物，并且山羊在该次攻击前直线向其移动了 20 英尺或更远，目标额外受到 5（{@damage 2d4}）点钝击伤害，并获得{@condition 倒地|XPHB}状态。"
 					]
@@ -26071,7 +26071,7 @@
 			"action": [
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m} {@hit 4}，触及5尺。{@h}9（{@damage 2d6 + 2}）钝击伤害，如果海马在攻击前向目标直线移动了20尺或更多，则为11（{@damage 2d8 + 2}）钝击伤害。"
 					]
@@ -28784,7 +28784,7 @@
 			"action": [
 				{
 					"ENG_name": "Ram",
-					"name": "攻城槌",
+					"name": "冲撞",
 					"entries": [
 						"{@atkr m}{@hit 2}，触及5尺。{@h}1点钝击伤害，如果山羊在攻击前直线向目标移动了20尺或更多，则造成2（{@damage 1d4}）点钝击伤害。"
 					]

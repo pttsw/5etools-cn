@@ -887,12 +887,14 @@ Parser.coinAbvToFull = function (coin) {
 /**
  * @param currency Object of the form `{pp: <n>, gp: <m>, ... }`.
  * @param isDisplayEmpty If "empty" values (i.e., those which are 0) should be displayed.
+ * @param styleHint
  */
-Parser.getDisplayCurrency = function (currency, {isDisplayEmpty = false} = {}) {
+Parser.getDisplayCurrency = function (currency, {isDisplayEmpty = false, styleHint = null} = {}) {
+	styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 	return [...Parser.COIN_ABVS]
 		.reverse()
 		.filter(abv => isDisplayEmpty ? currency[abv] != null : currency[abv])
-		.map(abv => `${currency[abv].toLocaleString()} ${abv}`)
+		.map(abv => `${currency[abv].toLocaleString()} ${styleHint === "classic" ? abv : abv.toUpperCase()}`)
 		.join(", ");
 };
 
@@ -1182,12 +1184,12 @@ Parser.skillProficienciesToFull = function (skillProficiencies, {styleHint = nul
 				const count = chObj.count ?? 1;
 				if (chObj.from.length === 18) {
 					ptChoose = styleHint === "classic"
-						? `choose any ${count === 1 ? "skill" : chObj.count}`
-						: `选择 ${chObj.count}个`;
+						? `选择任意${count === 1 ? "技能" : `${chObj.count}个`}`
+						: Renderer.get().render(`{@i 选择任意${chObj.count}个技能} (参考 {@book 第一章|XPHB|1|技能列表})`);
 				} else {
 					ptChoose = styleHint === "classic"
-						? `choose ${count} from ${chObj.from.map(it => getRenderedSkill(it)).joinConjunct(", ", " 和 ")}`
-						: Renderer.get().render(`{@i Choose ${count}:} ${chObj.from.map(it => getRenderedSkill(it)).joinConjunct(", ", " 或 ")}`);
+						? `从${chObj.from.map(it => getRenderedSkill(it)).joinConjunct(", ", " 和 ")}中选择 ${count} 个`
+						: Renderer.get().render(`{@i 选择${count}个:} ${chObj.from.map(it => getRenderedSkill(it)).joinConjunct(", ", " 或 ")}`);
 				}
 			}
 

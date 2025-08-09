@@ -35,6 +35,8 @@ const config = {
   "manage_contents": ["管理内容", "管理内容", "Manage Contents"],
   "view_contents": ["查看内容", "查看内容", "View Contents"],
   "view_json": ["查看JSON", "查看JSON", "View JSON"],
+
+  "reroll": ["重骰", "重骰", "reroll"],
 }
 
 export default transferLangConfig(config)

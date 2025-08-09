@@ -66,7 +66,7 @@ export class StatGenUiRenderLevelOneRace extends StatGenUiRenderLevelOneEntityBa
 
 		const $stgTashasControls = $$`<div class="ve-flex-col w-100">
 			<label class="ve-flex-v-center mb-1">
-				<div class="mr-2">Allow Origin Customization</div>
+				<div class="mr-2">${I18nUtil.get("page.statgen.allow_origin_customization")}</div>
 				${ComponentUiUtil.$getCbBool(this._parent, "common_isTashas")}
 			</label>
 			

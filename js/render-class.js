@@ -39,7 +39,7 @@ class _RenderClassesSidebarImplBase {
 
 			eleMulticlassing: this._getCommonElements_multiclassing({comp, cls, renderer}),
 
-			eleReprinted: this._getCommonElements_reprinted({comp, cls, renderer}),
+			elePage: this._getCommonElements_page({comp, cls, renderer}),
 		};
 	}
 
@@ -213,13 +213,11 @@ class _RenderClassesSidebarImplBase {
 
 	/* ----- */
 
-	_getCommonElements_reprinted ({comp, cls, renderer}) {
-		if (!cls.reprintedAs) return null;
-
+	_getCommonElements_page ({comp, cls, renderer}) {
 		const ele = e_({
 			tag: "tr",
 			html: `<td class="cls-side__section pt-3" colspan="6">
-				<i>${Renderer.utils.getReprintedAsHtml(cls)}.</i>
+				${Renderer.utils.getSourceAndPageTrHtml(cls)}
 			</td>`,
 		});
 
@@ -260,10 +258,10 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 		const ele = e_({
 			tag: "tr",
 			html: `<td colspan="6" class="cls-side__section">
-				<h5 class="cls-side__section-head">Hit Points</h5>
-				<div><strong>Hit Dice:</strong> ${renderer.render(Renderer.class.getHitDiceEntry(cls.hd, {styleHint: this._style}))}</div>
-				<div><strong>Hit Points at 1st Level:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd, {styleHint: this._style})}</div>
-				<div><strong>Hit Points at Higher Levels:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, {styleHint: this._style})}</div>
+				<h5 class="cls-side__section-head">${I18nUtil.get("page.classes.hit_points")}</h5>
+				<div><strong>${I18nUtil.get("page.classes.hit_dice")}:</strong> ${renderer.render(Renderer.class.getHitDiceEntry(cls.hd, {styleHint: this._style}))}</div>
+				<div><strong>${I18nUtil.get("page.classes.hit_points_at_first_level")}:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd, {styleHint: this._style})}</div>
+				<div><strong>${I18nUtil.get("page.classes.hit_points_at_higher_levels")}:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, {styleHint: this._style})}</div>
 			</td>`,
 		});
 
@@ -307,12 +305,12 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 		const ele = e_({
 			tag: "tr",
 			html: `<td colspan="6" class="cls-side__section">
-				<h5 class="cls-side__section-head">Proficiencies</h5>
-				<div><b>Armor:</b> <span>${profs.armor ? Renderer.class.getRenderedArmorProfs(profs.armor, {styleHint: this._style}) : "none"}</span></div>
-				<div><b>Weapons:</b> <span>${profs.weapons ? Renderer.class.getRenderedWeaponProfs(profs.weapons, {styleHint: this._style}) : "none"}</span></div>
-				<div><b>Tools:</b> <span>${profs.tools ? Renderer.class.getRenderedToolProfs(profs.tools, {styleHint: this._style}) : "none"}</span></div>
-				<div><b>Saving Throws:</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "none"}</span></div>
-				<div><b>Skills:</b> <span>${profs.skills ? Renderer.class.getRenderedSkillProfs(profs.skills, {styleHint: this._style}) : "none"}</span></div>
+				<h5 class="cls-side__section-head">${I18nUtil.get("page.classes.proficiencies")}</h5>
+				<div><b>${I18nUtil.get("page.classes.armor")}:</b> <span>${profs.armor ? Renderer.class.getRenderedArmorProfs(profs.armor, {styleHint: this._style}) : "none"}</span></div>
+				<div><b>${I18nUtil.get("page.classes.weapons")}:</b> <span>${profs.weapons ? Renderer.class.getRenderedWeaponProfs(profs.weapons, {styleHint: this._style}) : "none"}</span></div>
+				<div><b>${I18nUtil.get("page.classes.tools")}:</b> <span>${profs.tools ? Renderer.class.getRenderedToolProfs(profs.tools, {styleHint: this._style}) : "none"}</span></div>
+				<div><b>${I18nUtil.get("page.classes.saving_throws")}:</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "none"}</span></div>
+				<div><b>${I18nUtil.get("page.classes.skills")}:</b> <span>${profs.skills ? Renderer.class.getRenderedSkillProfs(profs.skills, {styleHint: this._style}) : "none"}</span></div>
 			</td>`,
 		});
 
@@ -332,7 +330,7 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 			eleGroup,
 			eleRequirements,
 			eleMulticlassing,
-			eleReprinted,
+			elePage,
 		} = this._getCommonElements({
 			comp,
 			cls,
@@ -360,7 +358,7 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 			${eleProficiencies}
 			${eleStartingEquipment}
 			${eleMulticlassing}
-			${eleReprinted}
+			${elePage}
 
 			<tr><th class="ve-tbl-border" colspan="6"></th></tr>
 		</table>`;
@@ -424,7 +422,7 @@ class _RenderClassesSidebarImplOne extends _RenderClassesSidebarImplBase {
 			eleGroup,
 			eleRequirements,
 			eleMulticlassing,
-			eleReprinted,
+			elePage,
 		} = this._getCommonElements({
 			comp,
 			cls,
@@ -448,7 +446,7 @@ class _RenderClassesSidebarImplOne extends _RenderClassesSidebarImplBase {
 			${eleRequirements}
 			${eleCoreTraits}
 			${eleMulticlassing}
-			${eleReprinted}
+			${elePage}
 
 			<tr><th class="ve-tbl-border" colspan="6"></th></tr>
 		</table>`;

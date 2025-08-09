@@ -38,7 +38,7 @@ I18nUtil.get = (key, defaultFunc = (k) => k.split('.').at(-1).replaceAll('_', ' 
         }
         if (propertiesLoaded && $.i18n && $.i18n.prop) {
             const searchKey = key.replaceAll(' ','_').replaceAll(';','_').toLowerCase();
-            console.log(searchKey)
+            // console.log(searchKey)
             return $.i18n.prop(searchKey);
         }
         return defaultFunc(key);

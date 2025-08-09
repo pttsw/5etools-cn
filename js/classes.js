@@ -374,7 +374,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				isUseJquery: true,
 			},
 		});
-		SortUtil.initBtnSortHandlers($("#filtertools"), this._list);
+		SortUtil.initBtnSortHandlers(es("#filtertools"), this._list);
 
 		this._filterBox = await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
@@ -519,7 +519,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		data.subclass.forEach(sc => {
 			if (sc.className === VeCt.STR_GENERIC || sc.classSource === VeCt.STR_GENERIC) return;
 
-			const cls = this._dataList.find(c => c.name.toLowerCase() === sc.className.toLowerCase() && c.source.toLowerCase() === (sc.classSource || Parser.SRC_PHB).toLowerCase());
+			const cls = this._dataList.find(c => (c.name.toLowerCase() === sc.className.toLowerCase() || c.ENG_name.toLowerCase() === sc.className.toLowerCase()) && c.source.toLowerCase() === (sc.classSource || Parser.SRC_PHB).toLowerCase());
 			if (!cls) {
 				JqueryUtil.doToast({
 					content: `Could not add subclass; could not find class with name: ${sc.className} and source ${sc.classSource || Parser.SRC_PHB}`,

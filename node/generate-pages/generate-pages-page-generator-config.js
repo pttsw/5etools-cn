@@ -17,13 +17,10 @@ class _PageGeneratorMaps extends PageGeneratorGeneric {
 		"maps",
 	];
 
-	_scripts = [
-		"maps-util.js",
-		"maps.js",
-	];
-
 	_scriptsModules = [
 		"render-map.js",
+		"maps-util.js",
+		"maps.js",
 	];
 }
 

@@ -155,7 +155,6 @@ class PageFilterRaces extends PageFilterBase {
 		this._mutateForFilters_commonMisc(r);
 		if (r._isBaseRace) r._fMisc.push("基础种族");
 		if (r._isBaseRace || !r._isSubRace) r._fMisc.push("关键种族");
-		if (r._isCopy) r._fMisc.push("修改副本");
 		if (r.lineage) r._fMisc.push("血缘");
 
 		const ability = r.ability ? Renderer.getAbilityData(r.ability, {isOnlyShort: true, isCurrentLineage: r.lineage === "VRGR"}) : {asTextShort: "无"};
@@ -273,7 +272,7 @@ class ModalFilterRaces extends ModalFilterBase {
 
 	async _pLoadAllData () {
 		return [
-			...((await DataUtil.race.loadJSON()).race || []),
+			...(await DataLoader.pCacheAndGetAllSite(UrlUtil.PG_RACES)),
 			...((await DataUtil.race.loadPrerelease({isAddBaseRaces: false})).race || []),
 			...((await DataUtil.race.loadBrew({isAddBaseRaces: false})).race || []),
 		];

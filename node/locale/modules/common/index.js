@@ -16,6 +16,7 @@ const common = transferLangConfig({
   "author": ['作者', '作者', 'Author'],
   "authors": ['作者', '作者', 'Authors'],
   "origin": ['资源', '资源', 'Origin'],
+  "any": ['任意', '任意', 'Any'],
 })
 
 

@@ -22,6 +22,7 @@ const config = {
     "magic_initiate__druid":["魔法学徒（德鲁伊）", "魔法學徒（德魯伊）", "Magic Initiate; Druid"],
     "magic_initiate__wizard":["魔法学徒（法师）", "魔法學徒（法師）", "Magic Initiate; Wizard"],
     
+    "origin":["身世","身世","Origin"],
 }
 
 export default transferLangConfig(config)

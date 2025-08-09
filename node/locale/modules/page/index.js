@@ -9,6 +9,7 @@ import statgen from './statgen.js'
 import lootgen from './lootgen.js'
 import manageprelease from './manageprelease.js'
 import makebrew from './makebrew.js'
+import classes from './classes.js'
 
 // 公共部分
 // const common = transferLangConfig({
@@ -21,6 +22,7 @@ export default {
     // ...common['zh_CN'],
     book: book['zh_CN'],
     enconterbuilder: enconterbuilder['zh_CN'],
+    classes: classes['zh_CN'],
     backgrounds: backgrounds['zh_CN'],
     feats: feats['zh_CN'],
     charcreationoptions: charcreationoptions['zh_CN'],
@@ -34,6 +36,7 @@ export default {
     // ...common['zh-Hant'],
     book: book['zh-Hant'],
     enconterbuilder: enconterbuilder['zh-Hant'],
+    classes: classes['zh-Hant'],
     backgrounds: backgrounds['zh-Hant'],
     feats: feats['zh-Hant'],
     charcreationoptions: charcreationoptions['zh-Hant'],
@@ -49,6 +52,7 @@ export default {
     enconterbuilder: enconterbuilder['en-US'],
     backgrounds: backgrounds['en-US'],
     feats: feats['en-US'],
+    classes: classes['en-US'],
     charcreationoptions: charcreationoptions['en-US'],
     optionalfeatures: optionalfeatures['en-US'],
     statgen: statgen['en-US'],

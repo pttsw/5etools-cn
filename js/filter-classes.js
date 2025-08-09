@@ -30,14 +30,15 @@ class PageFilterClassesBase extends PageFilterBase {
 
 		this._optionsFilter = new OptionsFilter({
 			header: "Other/Text Options",
+			cnHeader:"其他/文本选项",
 			defaultState: {
 				isDisplayClassIfSubclassActive: false,
 				isClassFeatureVariant: true,
 			},
 			displayFn: k => {
 				switch (k) {
-					case "isClassFeatureVariant": return "Class Feature Options/Variants";
-					case "isDisplayClassIfSubclassActive": return "Display Class if Any Subclass is Visible";
+					case "isClassFeatureVariant": return I18nUtil.get("page.classes.class_feature_options_variants");
+					case "isDisplayClassIfSubclassActive": return I18nUtil.get("page.classes.display_class_if_any_subclass_is_visible");
 					default: throw new Error(`Unhandled key "${k}"`);
 				}
 			},

@@ -169,6 +169,74 @@
 					}
 				}
 			]
+		},
+		{
+			"ENG_name": "Challenge 0-4",
+			"name": "挑战等级 0-4",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 0,
+			"crMax": 4,
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"coins": {
+						"gp": "3d6"
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "Challenge 5-10",
+			"name": "挑战等级 5-10",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 5,
+			"crMax": 10,
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"coins": {
+						"gp": "2d8*10"
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "Challenge 11-16",
+			"name": "挑战等级 11-16",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 11,
+			"crMax": 16,
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"coins": {
+						"pp": "2d10*10"
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "Challenge 17+",
+			"name": "挑战等级 17+",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 17,
+			"crMax": 30,
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"coins": {
+						"pp": "2d8*100"
+					}
+				}
+			]
 		}
 	],
 	"hoard": [
@@ -1612,6 +1680,98 @@
 					]
 				}
 			]
+		},
+		{
+			"ENG_name": "Challenge 0-4",
+			"name": "挑战等级 0-4",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 0,
+			"crMax": 4,
+			"coins": {
+				"gp": "2d4*100"
+			},
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"magicItems": [
+						{
+							"type": "randomByLevel",
+							"amount": "1d4-1"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Challenge 5-10",
+			"name": "挑战等级 5-10",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 5,
+			"crMax": 10,
+			"coins": {
+				"gp": "8d10*100"
+			},
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"magicItems": [
+						{
+							"type": "randomByLevel",
+							"amount": "1d3"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Challenge 11-16",
+			"name": "挑战等级 11-16",
+			"source": "XDMG",
+			"page": 138,
+			"crMin": 11,
+			"crMax": 16,
+			"coins": {
+				"gp": "8d8*1000"
+			},
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"magicItems": [
+						{
+							"type": "randomByLevel",
+							"amount": "1d4"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Challenge 17+",
+			"name": "挑战等级 17+",
+			"source": "XDMG",
+			"page": 120,
+			"crMin": 17,
+			"crMax": 30,
+			"coins": {
+				"gp": "6d10*10000"
+			},
+			"table": [
+				{
+					"min": 1,
+					"max": 100,
+					"magicItems": [
+						{
+							"type": "randomByLevel",
+							"amount": "1d6"
+						}
+					]
+				}
+			]
 		}
 	],
 	"dragon": [
@@ -2171,6 +2331,9 @@
 				"{@item 红纹石}（不透明的浅粉红色）",
 				"{@item 虎眼石}（半透明的棕色带有金色中心）",
 				"{@item 绿松石} (不透明的浅蓝绿色)"
+			],
+			"reprintedAs": [
+				"价值 10gp 的宝石|XDMG"
 			]
 		},
 		{
@@ -2192,6 +2355,9 @@
 				"{@item 缠丝玛瑙}（不透明的红色和白色条纹）",
 				"{@item 星光粉晶}（半透明的玫瑰色石头，中心有白色星形）",
 				"{@item 锆石} (透明的淡蓝绿色)"
+			],
+			"reprintedAs": [
+				"价值 50gp 的宝石|XDMG"
 			]
 		},
 		{
@@ -2211,6 +2377,9 @@
 				"{@item 珍珠} (不透明的光泽白色、黄色或粉红色)",
 				"{@item 尖晶石}（透明的红色、红棕色或深绿色）",
 				"{@item 电气石}（透明的淡绿色、蓝色、棕色或红色）"
+			],
+			"reprintedAs": [
+				"价值 100gp 的宝石|XDMG"
 			]
 		},
 		{
@@ -2226,6 +2395,9 @@
 				"{@item 蓝尖晶石} (透明深蓝色)",
 				"{@item 橄榄石} (透明的浓郁橄榄绿色)",
 				"{@item 黄玉}（透明的金黄色）"
+			],
+			"reprintedAs": [
+				"价值 500gp 的宝石|XDMG"
 			]
 		},
 		{
@@ -2243,6 +2415,9 @@
 				"{@item 星彩红宝石} (半透明的红宝石，带有白色星形中心)",
 				"{@item 星彩蓝宝石} (半透明蓝色蓝宝石，中心有白色星形)",
 				"{@item 黄色蓝宝石}（透明的火黄色或黄绿色）"
+			],
+			"reprintedAs": [
+				"价值 1,000金币 的宝石|XDMG"
 			]
 		},
 		{
@@ -2256,6 +2431,115 @@
 				"{@item 钻石} (透明蓝白色、金丝雀黄、粉红、棕色或蓝色)",
 				"{@item 红锆石}（透明的火橙色）",
 				"{@item 红宝石}（透明的鲜红色至深红色）"
+			],
+			"reprintedAs": [
+				"价值 5,000金币 的宝石|XDMG"
+			]
+		},
+		{
+			"ENG_name": "10 GP Gemstones",
+			"name": "价值 10gp 的宝石",
+			"source": "XDMG",
+			"page": 214,
+			"type": 10,
+			"table": [
+				"{@item 蓝铜矿|XDMG} (深绿色)",
+				"{@item 条纹玛瑙|XDMG} (淡蓝色)",
+				"{@item 蓝水晶|XDMG} (灰黑色)",
+				"{@item 眼纹玛瑙|XDMG}（灰、白、棕、蓝或绿的圈）",
+				"{@item 赭石|XDMG}（橙红色至红棕色）",
+				"{@item 天青石|XDMG}（浅蓝和深蓝带有黄色斑点）",
+				"{@item 孔雀石|XDMG} (条纹浅绿和深绿色)",
+				"{@item 藓纹玛瑙|XDMG} (蓝色，黑色，或棕色)",
+				"{@item 黑曜石|XDMG} (深蓝色)",
+				"{@item 红纹石|XDMG} (白色，烟灰色或黄色)",
+				"{@item 虎眼石|XDMG}（棕色带金色中心）",
+				"{@item 绿松石|XDMG}（白色带有浅蓝色光芒）"
+			]
+		},
+		{
+			"ENG_name": "50 GP Gemstones",
+			"name": "价值 50gp 的宝石",
+			"source": "XDMG",
+			"page": 214,
+			"type": 50,
+			"table": [
+				"{@item 血石|XDMG}（红白相间的条纹）",
+				"{@item 红玉髓|XDMG}（金黄色）",
+				"{@item 蓝玉髓|XDMG} (带有白色星形中心的粉红石头)",
+				"{@item 绿玉髓|XDMG}（黄色绿色到淡绿色）",
+				"{@item 黄水晶|XDMG} (浅黄色)",
+				"{@item 碧玉|XDMG}（蓝色、黑色或棕色）",
+				"{@item 月石|XDMG}（浅蓝绿色）",
+				"{@item 缟玛瑙|XDMG}（黑白相间的条纹，或者纯黑色或白色）",
+				"{@item 石英|XDMG}（蓝色、白色、金丝雀黄、粉红色、棕色或蓝色）",
+				"{@item 缠丝玛瑙|XDMG}（红色与白色条纹）",
+				"{@item 星光粉晶|XDMG}（带有白色星形中心的玫瑰色石头）",
+				"{@item 锆石|XDMG}（深紫色）"
+			]
+		},
+		{
+			"ENG_name": "100 GP Gemstones",
+			"name": "价值 100gp 的宝石",
+			"source": "XDMG",
+			"page": 214,
+			"type": 100,
+			"table": [
+				"{@item 琥珀|XDMG} (淡金色到深金色)",
+				"{@item 紫晶|XDMG} (红色、棕色绿色或紫色)",
+				"{@item 金绿玉|XDMG}（黄绿色至浅绿色）",
+				"{@item 珊瑚|XDMG}（深红色）",
+				"{@item 石榴石|XDMG} (从鲜红色到深绯红色)",
+				"{@item 翡翠|XDMG}（浅绿色、深绿色或白色）",
+				"{@item 黑玉|XDMG}（深黑色）",
+				"{@item 珍珠|XDMG}（光泽白、黄或粉）",
+				"{@item 尖晶石|XDMG}（红色、红棕色或深绿色）",
+				"{@item 电气石|XDMG}（浅绿色、蓝色、棕色或红色）"
+			]
+		},
+		{
+			"ENG_name": "500 GP Gemstones",
+			"name": "价值 500gp 的宝石",
+			"source": "XDMG",
+			"page": 214,
+			"type": 500,
+			"table": [
+				"{@item 紫翠玉|XDMG}（深绿色）",
+				"{@item 蓝晶|XDMG}（淡蓝绿色）",
+				"{@item 黑珍珠|XDMG}（纯黑色）",
+				"{@item 蓝尖晶石|XDMG} (中蓝)",
+				"{@item 橄榄石|XDMG} (深亮绿色)",
+				"{@item 黄玉|XDMG}（金黄色）"
+			]
+		},
+		{
+			"ENG_name": "1,000 GP Gemstones",
+			"name": "价值 1,000金币 的宝石",
+			"source": "XDMG",
+			"page": 214,
+			"type": 1000,
+			"table": [
+				"{@item 黑蛋白石|XDMG} (淡蓝色带有绿色和金色的斑点)",
+				"{@item 蓝色蓝宝石|XDMG} (带有白色星形中心的红宝石)",
+				"{@item 祖母绿|XDMG}（蓝宝石带有白色星形中心）",
+				"{@item 火蛋白石|XDMG} (炽热的红色)",
+				"{@item 蛋白石|XDMG}（淡蓝色带绿色和金色斑点）",
+				"{@item 星彩红宝石|XDMG}（炽热的黄色或黄绿色）",
+				"{@item 星彩蓝宝石|XDMG}（带有发光亮点的光泽黑色）",
+				"{@item 黄色蓝宝石|XDMG}（炽热橙）"
+			]
+		},
+		{
+			"ENG_name": "5,000 GP Gemstones",
+			"name": "价值 5,000金币 的宝石",
+			"source": "XDMG",
+			"page": 214,
+			"type": 5000,
+			"table": [
+				"{@item 黑蓝宝石|XDMG}（光泽黑色，带有发光的高光）",
+				"{@item 钻石|XDMG}（蓝白色、金丝雀色、粉色、棕色或蓝色）",
+				"{@item 红锆石|XDMG}（火橙色）",
+				"{@item 红宝石|XDMG}（从清澈的红色到深红色）"
 			]
 		}
 	],
@@ -2277,6 +2561,9 @@
 				"{@item 镶在彩绘木框中的小镜子}",
 				"{@item 绣花丝绸手帕}",
 				"{@item 内里画着彩绘肖像的金质链坠盒}"
+			],
+			"reprintedAs": [
+				"25 gp 艺术品|XDMG"
 			]
 		},
 		{
@@ -2296,6 +2583,9 @@
 				"{@item 镶有翡翠的黄铜马克杯}",
 				"{@item 装着绿松石动物塑像的盒子}",
 				"{@item 带银金装饰的黄金鸟笼}"
+			],
+			"reprintedAs": [
+				"250 gp 艺术品|XDMG"
 			]
 		},
 		{
@@ -2315,6 +2605,9 @@
 				"{@item 由白银和黄金制成的胸针}",
 				"{@item 带黄金配件和嵌体的黑曜石雕像}",
 				"{@item 涂成金色的战争面具}"
+			],
+			"reprintedAs": [
+				"750 gp 艺术品|XDMG"
 			]
 		},
 		{
@@ -2334,6 +2627,9 @@
 				"{@item 镶有四颗蓝晶的黄金头饰}",
 				"{@item 用蓝色蓝宝石和月长石来模仿眼睛的眼罩}",
 				"一串小粉红珍珠的{@item 串有小粒粉红珍珠的项链}"
+			],
+			"reprintedAs": [
+				"2,500 gp 艺术品|XDMG"
 			]
 		},
 		{
@@ -2351,6 +2647,104 @@
 				"{@item 涂成金色的儿童石棺}",
 				"{@item 翡翠游戏盘和纯金棋子}",
 				"{@item 镶有宝石的金丝象牙角杯}"
+			],
+			"reprintedAs": [
+				"7,500 gp 艺术品|XDMG"
+			]
+		},
+		{
+			"ENG_name": "25 GP Art Objects",
+			"name": "25 gp 艺术品",
+			"source": "XDMG",
+			"page": 215,
+			"type": 25,
+			"table": [
+				"{@item 银水壶|XDMG}",
+				"{@item 骨制雕像|XDMG}",
+				"{@item 金手镯|XDMG}",
+				"{@item 金丝织制的法衣|XDMG}",
+				"{@item 由银丝缝制的黑天鹅绒面具|XDMG}",
+				"{@item 点缀着银丝的铜制酒杯|XDMG}",
+				"{@item 成对的骨制骰子|XDMG}",
+				"{@item 手持镜，镶嵌在彩绘木框中|XDMG}",
+				"{@item 绣花丝绸手帕|XDMG}",
+				"{@item 内里画着彩绘肖像的金质链坠盒|XDMG}"
+			]
+		},
+		{
+			"ENG_name": "250 GP Art Objects",
+			"name": "250 gp 艺术品",
+			"source": "XDMG",
+			"page": 215,
+			"type": 250,
+			"table": [
+				"{@item 镶有血石的金戒指|XDMG}",
+				"{@item 象牙制雕像|XDMG}",
+				"{@item 镶嵌宝石的金手镯|XDMG}",
+				"{@item 带宝石坠饰的银项链|XDMG}",
+				"{@item 青铜王冠|XDMG}",
+				"{@item 金丝绣花的丝绸长袍|XDMG}",
+				"{@item 制作精良的挂毯，尺寸为10英尺乘10英尺|XDMG}",
+				"{@item 镶有翡翠的黄铜马克杯|XDMG}",
+				"{@item 装着绿松石动物塑像的盒子|XDMG}",
+				"{@item 镀金鸟笼，带有金银丝细工|XDMG}"
+			]
+		},
+		{
+			"ENG_name": "750 GP Art Objects",
+			"name": "750 gp 艺术品",
+			"source": "XDMG",
+			"page": 215,
+			"type": 750,
+			"table": [
+				"{@item 镶有月长石的银酒杯|XDMG}",
+				"{@item 一捆代表一位著名作曲家失落挽歌的乐谱|XDMG}",
+				"{@item 雕刻着象牙镶嵌和锆石宝石的木制竖琴|XDMG}",
+				"{@item 金色神像|XDMG}",
+				"{@item 金梳，形状像一条龙，眼睛是红石榴石|XDMG}",
+				"{@item 压印着金箔并镶有紫晶的软木瓶塞|XDMG}",
+				"{@item 精细的、真人大小的龙裔头骨，用白铜铸造|XDMG}",
+				"{@item 由白银和黄金制成的胸针|XDMG}",
+				"{@item 带黄金配件和嵌体的黑曜石雕像|XDMG}",
+				"{@item 涂成金色的战争面具|XDMG}"
+			]
+		},
+		{
+			"ENG_name": "2,500 GP Art Objects",
+			"name": "2,500 gp 艺术品",
+			"source": "XDMG",
+			"page": 215,
+			"type": 2500,
+			"table": [
+				"{@item 镶有火蛋白石的纯金链条|XDMG}",
+				"{@item 古老的油画杰作|XDMG}",
+				"{@item 镶有众多月长石且由绣花丝绸和天鹅绒织造而成的披风|XDMG}",
+				"{@item 镶嵌着祖母绿的白金手镯|XDMG}",
+				"{@item 镶着碎宝石的绣花手套|XDMG}",
+				"{@item 宝石脚镯|XDMG}",
+				"{@item 黄金音乐盒|XDMG}",
+				"{@item 镶有四颗蓝晶的黄金头饰|XDMG}",
+				"{@item 装饰着细小蓝宝石和月光石的眼罩|XDMG}",
+				"一条{@item 串有小粒粉红珍珠的项链|XDMG}"
+			]
+		},
+		{
+			"ENG_name": "7,500 GP Art Objects",
+			"name": "7,500 gp 艺术品",
+			"source": "XDMG",
+			"page": 215,
+			"type": 7500,
+			"table": [
+				"{@item 镶有宝石的黄金王冠|XDMG}",
+				"{@item 镶有宝石的铂金戒指|XDMG}",
+				"{@item 镶嵌红宝石的金雕像|XDMG}",
+				"{@item 镶有祖母绿的金杯|XDMG}",
+				"{@item 饰有铂金丝的黄金首饰盒|XDMG}",
+				"{@item 一套金质套娃|XDMG}",
+				"{@item 翡翠游戏棋盘配金色棋子|XDMG}",
+				"{@item 镶有宝石的金丝象牙角杯|XDMG}",
+				"{@item 镀金的皇家马车或葬礼船|XDMG}",
+				"{@item 带有黑珍珠的仪式金甲|XDMG}"
 			]
 		}
 	],
@@ -8072,6 +8466,177 @@
 					"min": 91,
 					"max": 100,
 					"item": "{@item 至恶护符|XDMG}"
+				}
+			]
+		},
+		{
+			"ENG_name": "By Level - Levels 1-4",
+			"name": "按等级 - 1至4级",
+			"source": "XDMG",
+			"page": 218,
+			"type": "byLevel.1-4",
+			"table": [
+				{
+					"min": 1,
+					"max": 54,
+					"choose": {
+						"fromMatching": {
+							"rarity": "common"
+						}
+					}
+				},
+				{
+					"min": 55,
+					"max": 91,
+					"choose": {
+						"fromMatching": {
+							"rarity": "uncommon"
+						}
+					}
+				},
+				{
+					"min": 92,
+					"max": 100,
+					"choose": {
+						"fromMatching": {
+							"rarity": "rare"
+						}
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "By Level - Levels 5-10",
+			"name": "按等级 - 5至10级",
+			"source": "XDMG",
+			"page": 218,
+			"type": "byLevel.5-10",
+			"table": [
+				{
+					"min": 1,
+					"max": 30,
+					"choose": {
+						"fromMatching": {
+							"rarity": "common"
+						}
+					}
+				},
+				{
+					"min": 31,
+					"max": 81,
+					"choose": {
+						"fromMatching": {
+							"rarity": "uncommon"
+						}
+					}
+				},
+				{
+					"min": 82,
+					"max": 98,
+					"choose": {
+						"fromMatching": {
+							"rarity": "rare"
+						}
+					}
+				},
+				{
+					"min": 99,
+					"max": 100,
+					"choose": {
+						"fromMatching": {
+							"rarity": "very rare"
+						}
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "By Level - Levels 11-16",
+			"name": "按等级 - 11至16级",
+			"source": "XDMG",
+			"page": 218,
+			"type": "byLevel.11-16",
+			"table": [
+				{
+					"min": 1,
+					"max": 11,
+					"choose": {
+						"fromMatching": {
+							"rarity": "common"
+						}
+					}
+				},
+				{
+					"min": 12,
+					"max": 34,
+					"choose": {
+						"fromMatching": {
+							"rarity": "uncommon"
+						}
+					}
+				},
+				{
+					"min": 35,
+					"max": 70,
+					"choose": {
+						"fromMatching": {
+							"rarity": "rare"
+						}
+					}
+				},
+				{
+					"min": 71,
+					"max": 93,
+					"choose": {
+						"fromMatching": {
+							"rarity": "very rare"
+						}
+					}
+				},
+				{
+					"min": 94,
+					"max": 100,
+					"choose": {
+						"fromMatching": {
+							"rarity": "legendary"
+						}
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "By Level - Levels 17-20",
+			"name": "按等级 - 17至20级",
+			"source": "XDMG",
+			"page": 218,
+			"type": "byLevel.17-20",
+			"table": [
+				{
+					"min": 1,
+					"max": 20,
+					"choose": {
+						"fromMatching": {
+							"rarity": "rare"
+						}
+					}
+				},
+				{
+					"min": 21,
+					"max": 64,
+					"choose": {
+						"fromMatching": {
+							"rarity": "very rare"
+						}
+					}
+				},
+				{
+					"min": 65,
+					"max": 100,
+					"choose": {
+						"fromMatching": {
+							"rarity": "legendary"
+						}
+					}
 				}
 			]
 		}

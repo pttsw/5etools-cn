@@ -1,4 +1,5 @@
 import {TOOLTIP_NOTHING} from "./lootgen-const.js";
+import {LootGenUtils} from "./lootgen-utils.js";
 
 export class LootGenOutput {
 	static _TIERS = ["other", "minor", "major"];
@@ -27,7 +28,7 @@ export class LootGenOutput {
 
 	_getEleTitleSplit () {
 		const btnRivet = !globalThis.IS_VTT && ExtensionUtil.ACTIVE
-			? ee`<button title="Send to Foundry (SHIFT for Temporary Import)" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-send"></span></button>`
+			? ee`<button title="Send to Foundry (SHIFT for Temporary Import)" class="no-print ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-send"></span></button>`
 				.onn("click", evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
 			: null;
 
@@ -51,8 +52,8 @@ export class LootGenOutput {
 		const elesParts = [
 			this._render_getPtValueSummary(),
 			this._render_getPtCoins(),
-			...this._render_getPtGemsArtObjects({loot: this._gems, name: "gemstones"}),
-			...this._render_getPtGemsArtObjects({loot: this._artObjects, name: "art objects"}),
+			...this._render_getPtGemsArtObjects({loot: this._gems, name: I18nUtil.get("page.lootgen.gemstones")}),
+			...this._render_getPtGemsArtObjects({loot: this._artObjects, name: I18nUtil.get("page.lootgen.art_objects")}),
 			this._render_getPtDragonMundaneItems(),
 			...this._render_getPtMagicItems(),
 		]
@@ -207,7 +208,12 @@ export class LootGenOutput {
 			this._artObjects?.length ? this._artObjects.map(it => it.type * it.count * 100).sum() : 0,
 		].sum();
 
-		return ee`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} gp worth of coins, art objects, and/or gems, as follows:</li>`;
+		if (I18nUtil.LANGUAGES_INDEX == "zh_CN") {
+			return ee`<li class="italic ve-muted">总计价值${(totalValue / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")}的货币、艺术品和/或宝石，如下：</li>`;
+		}
+		return ee`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} worth of coins, art objects, and/or gems, as follows:</li>`;
+
+
 	}
 
 	_render_getPtCoins () {
@@ -217,10 +223,10 @@ export class LootGenOutput {
 		const breakdown = [...Parser.COIN_ABVS]
 			.reverse()
 			.filter(it => this._coins[it])
-			.map(it => `${this._coins[it].toLocaleString()} ${it}`);
+			.map(it => `${this._coins[it].toLocaleString()} ${LootGenUtils.getCoinageLabel(it)}`);
 
 		return ee`
-			<li>${(total / 100).toLocaleString()} gp in coinage:</li>
+			<li>${(total / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} in coinage:</li>
 			<ul>
 				${breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>
@@ -231,7 +237,7 @@ export class LootGenOutput {
 		if (!this._dragonMundaneItems) return null;
 
 		return ee`
-			<li>${this._dragonMundaneItems.count} mundane item${this._dragonMundaneItems.count !== 1 ? "s" : ""}:</li>
+			<li>${this._dragonMundaneItems.count} ${I18nUtil.LANGUAGES_INDEX == "zh_CN" ? "个普通物品": `mundane item${this._dragonMundaneItems.count !== 1 ? "s" : ""}`}:</li>
 			<ul>
 				${this._dragonMundaneItems.breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>
@@ -243,7 +249,7 @@ export class LootGenOutput {
 
 		return loot.map(lt => {
 			return ee`
-			<li>${(lt.type).toLocaleString()} gp ${name} (×${lt.count}; worth ${((lt.type * lt.count)).toLocaleString()} gp total):</li>
+			<li>${(lt.type).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} ${name} (×${lt.count}; 总计价值${((lt.type * lt.count)).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")}):</li>
 			<ul>
 				${Object.entries(lt.breakdown).map(([result, count]) => `<li>${Renderer.get().render(result)}${count > 1 ? `, ×${count}` : ""}</li>`).join("")}
 			</ul>
@@ -290,7 +296,7 @@ export class LootGenOutput {
 				}
 
 				return ee`
-					<li>Magic Items${magicItems.tag ? ` (${Renderer.get().render(magicItems.tag)})` : ""}${(magicItems.count || 0) > 1 ? ` (×${magicItems.count})` : ""}</li>
+					<li>${I18nUtil.get("page.lootgen.magic_items")}${magicItems.tag ? ` (${Renderer.get().render(magicItems.tag)})` : ""}${(magicItems.count || 0) > 1 ? ` (×${magicItems.count})` : ""}</li>
 					<ul>${magicItems.breakdown.map(it => it.getRender())}</ul>
 				`;
 			});

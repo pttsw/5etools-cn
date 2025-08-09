@@ -35,7 +35,11 @@ export class StatGenUtilAdditionalFeats {
 
 					if (featSet.anyFromCategory) {
 						const cnt = featSet.anyFromCategory.count || 1;
-						out.push(`Choose any ${Parser.featCategoryToFull(featSet.anyFromCategory.category)}${cnt > 1 ? ` ${Parser.numberToText(featSet.any)}` : ""}`);
+						if (I18nUtil.LANGUAGES_INDEX == "zh_CN") {
+							out.push(`选择任意${Parser.featCategoryToFull(featSet.anyFromCategory.category)}${cnt > 1 ? ` ${Parser.numberToText(featSet.any)}个` : ""}`);
+						}else {
+							out.push(`Choose any ${Parser.featCategoryToFull(featSet.anyFromCategory.category)}${cnt > 1 ? ` ${Parser.numberToText(featSet.any)}` : ""}`);
+						}
 					}
 
 					this.getUidsStatic(featSet)
