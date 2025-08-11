@@ -175,11 +175,11 @@ export class FilterSnapshotManager extends BaseComponent {
 	getBtn () {
 		const menu = ContextUtil.getMenu([
 			new ContextUtil.Action(
-				"Take Snapshot",
+				I18nUtil.get("common.filter.take_snapshot"),
 				() => this.pHandleClick_takeSnapshot(),
 			),
 			new ContextUtil.Action(
-				"Take Snapshot and Make Default",
+				I18nUtil.get("common.filter.take_snapshot_and_make_default"),
 				async () => {
 					const boxSnapshotInfo = await this.pHandleClick_takeSnapshot();
 					if (!boxSnapshotInfo) return;
@@ -201,12 +201,12 @@ export class FilterSnapshotManager extends BaseComponent {
 			),
 			null,
 			new ContextUtil.Action(
-				"Manage Snapshots",
+				I18nUtil.get("common.filter.manage_snapshot"),
 				() => this.pHandleClick_manageSnapshots(),
 			),
 		]);
 
-		return ee`<button class="ve-btn ve-btn-default ve-btn-xs">Manage Defaults</button>`
+		return ee`<button class="ve-btn ve-btn-default ve-btn-xs">${I18nUtil.get("common.filter.manage_defaults")}</button>`
 			.onn("click", evt => ContextUtil.pOpenMenu(evt, menu));
 	}
 

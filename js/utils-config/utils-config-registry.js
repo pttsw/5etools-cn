@@ -5,12 +5,12 @@ import {StyleSwitcher} from "../styleswitch.js";
 
 const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 	groupId: "styleSwitcher",
-	name: "Appearance",
+	name: I18nUtil.get("common.preferences.appearance"),
 	configSettings: [
 		new (
 			class extends ConfigSettingExternal {
 				_configId = "theme";
-				_name = "Theme";
+				_name = I18nUtil.get("common.preferences.theme");
 				_help = "The color theme to be applied.";
 				_isRowLabel = true;
 
@@ -19,7 +19,7 @@ const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 		)(),
 		new ConfigSettingEnum({
 			configId: "style",
-			name: `<span>Style <span class="ve-small">(see also: <a href="https://2014.5e.tools" rel="noopener noreferrer" target="_blank">2014.5e.tools</a>)</span></span>`,
+			name: `<span>${I18nUtil.get("common.preferences.style")} <span class="ve-small">(see also: <a href="https://2014.5e.tools" rel="noopener noreferrer" target="_blank">2014.5e.tools</a>)</span></span>`,
 			help: `The styling to be applied when rendering specific information (stat blocks, etc.). Does not affect what content is available, only how it is displayed. See also: https://2014.5e.tools.`,
 			isRowLabel: true,
 			isReloadRequired: true,
@@ -33,7 +33,7 @@ const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 		new (
 			class extends ConfigSettingExternal {
 				_configId = "isWideMode";
-				_name = "Wide Mode (Experimental)";
+				_name = I18nUtil.get("common.preferences.wide_mode");
 				_help = "This feature is unsupported. Expect bugs.";
 				_isRowLabel = true;
 

@@ -21,7 +21,7 @@ class VariantClassFilter extends Filter {
 
 class MultiFilterClasses extends MultiFilter {
 	constructor (opts) {
-		super({header: "Classes", mode: "or", filters: [opts.classFilter, opts.subclassFilter, opts.variantClassFilter], ...opts});
+		super({header: "Classes", cnHeader:"职业", mode: "or", filters: [opts.classFilter, opts.subclassFilter, opts.variantClassFilter], ...opts});
 
 		this._classFilter = opts.classFilter;
 		this._subclassFilter = opts.subclassFilter;
@@ -48,7 +48,7 @@ class MultiFilterClasses extends MultiFilter {
 			this,
 			"isVariantSplit",
 			{
-				ele: e_({tag: "button", clazz: "ve-btn ve-btn-default ve-btn-xs", text: "Include Variants"}),
+				ele: e_({tag: "button", clazz: "ve-btn ve-btn-default ve-btn-xs", text: I18nUtil.get('common.filter.include_variants')}),
 				isInverted: true,
 				stateName: "meta",
 				stateProp: "_meta",

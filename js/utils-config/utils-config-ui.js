@@ -59,7 +59,7 @@ export class ConfigUi {
 		const {$modalInner, $modalFooter, doClose} = UiUtil.getShowModal({
 			isUncappedWidth: true,
 			isUncappedHeight: true,
-			title: "Preferences",
+			title: I18nUtil.get("common.preferences.preferences"),
 			headerType: 3,
 			isHeaderBorder: true,
 			overlayColor: "transparent",

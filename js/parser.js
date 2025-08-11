@@ -3036,13 +3036,13 @@ Parser.CONDITION_TO_COLOR = {
 };
 
 Parser.RULE_TYPE_TO_FULL = {
-	"C": "Core",
-	"O": "Optional",
-	"P": "Prerelease",
-	"V": "Variant",
-	"VO": "Variant Optional",
-	"VV": "Variant Variant",
-	"U": "Unknown",
+	"C": I18nUtil.get("parser.core"),
+	"O": I18nUtil.get("parser.optional"),
+	"P": I18nUtil.get("parser.prerelease"),
+	"V": I18nUtil.get("parser.variant"),
+	"VO": I18nUtil.get("parser.variant_optional"),
+	"VV": I18nUtil.get("parser.variant_variant"),
+	"U": I18nUtil.get("parser.unknown"),
 };
 
 Parser.ruleTypeToFull = function (ruleType) {
@@ -3391,11 +3391,11 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_SD] = "Shivering Death";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_ACfaS] = "A Copper for a Song";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_DotS] = "Dragons of the Sandstone City";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "Tarot Deck";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = "Dungeon Master's Screen";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = "Dungeon Master's Screen: Wilderness Kit";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_DUNGEON_KIT] = "Dungeon Master's Screen: Dungeon Kit";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_SPELLJAMMER] = "Dungeon Master's Screen: Spelljammer";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XSCREEN] = "Dungeon Master's Screen (2024)";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN}`);
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_WILDERNESS_KIT}`);
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_DUNGEON_KIT] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_DUNGEON_KIT}`);
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_SPELLJAMMER] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_SPELLJAMMER}`);
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XSCREEN] = I18nUtil.get(`parser.source.${Parser.SRC_XSCREEN}`);
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HF] = "英雄盛宴";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HFFotM] = "Heroes' Feast: Flavors of the Multiverse";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HFStCM] = "英雄盛宴：救救孩子的菜谱";

@@ -2,6 +2,8 @@ import { transferLangConfig } from '../../config.js'
 import button from './button.js'
 import tabs from './tabs.js'
 import filter from './filter.js'
+import preferences from './preferences.js'
+
 // 公共部分
 const common = transferLangConfig({
   "no-data": ['没有数据', '沒有數據', 'No Data'],
@@ -17,17 +19,20 @@ export default {
     button: button['zh_CN'],
     tabs: tabs['zh_CN'],
     filter: filter['zh_CN'],
+    preferences: preferences['zh_CN'],
   },
   'zh-Hant': {
     ...common['zh-Hant'],
     button: button['zh-Hant'],
     tabs: tabs['zh-Hant'],
     filter: filter['zh-Hant'],
+    preferences: preferences['zh-Hant'],
   },
   'en-US': {
     ...common['en-US'],
     button: button['en-US'],
     tabs: tabs['en-US'],
     filter: filter['en-US'],
+    preferences: preferences['en-US'],
   }
 }

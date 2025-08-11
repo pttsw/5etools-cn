@@ -152,7 +152,7 @@ class NavBar {
 		this._addElement_button(
 			NavBar._CAT_SETTINGS,
 			{
-				html: "Preferences",
+				html: I18nUtil.get("common.preferences.preferences"),
 				click: () => {
 					ConfigUi.show();
 					NavBar._closeAllDropdowns();

@@ -201,8 +201,8 @@ export class SourceFilter extends Filter {
 		const btnOnlyPrimary = e_({
 			tag: "button",
 			clazz: `ve-btn ve-btn-default w-100 ${opts.isMulti ? "ve-btn-xxs" : "ve-btn-xs"}`,
-			html: `Include References`,
-			title: `Consider entities as belonging to every source they appear in (i.e. reprints) as well as their primary source`,
+			html: I18nUtil.get("common.filter.include_references"),
+			title: I18nUtil.get("common.filter.include_references_tooltip"),
 			click: () => this._meta.isIncludeOtherSources = !this._meta.isIncludeOtherSources,
 		});
 		const hkIsIncludeOtherSources = () => {
