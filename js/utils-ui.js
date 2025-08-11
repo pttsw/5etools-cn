@@ -3783,10 +3783,6 @@ class SourceUiUtil {
 				${$iptColorNight}
 			</div></div>
 			<div class="ui-source__row mb-2"><div class="ve-col-12 ve-flex-v-center">
-				<span class="mr-2 ui-source__name help" title="A color which should be used when displaying the source abbreviation, when using a &quot;Night&quot; theme. If unspecified, &quot;Color&quot; will be used for both &quot;Day&quot; and &quot;Night&quot; themes.">Color (Night)</span>
-				${$iptColorNight}
-			</div></div>
-			<div class="ui-source__row mb-2"><div class="ve-col-12 ve-flex-v-center">
 				<span class="mr-2 ui-source__name help" title="自制内容的原始链接，例如GM网站页面">来源链接</span>
 				${$iptUrl}
 			</div></div>

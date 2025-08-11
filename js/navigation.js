@@ -102,14 +102,14 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_UTILITIES, "search.html", "搜索");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "blocklist.html", "内容黑名单");
-		this._addElement_li(NavBar._CAT_UTILITIES, "manageprerelease.html", "Prerelease Content Manager");
+		this._addElement_li(NavBar._CAT_UTILITIES, "manageprerelease.html", I18nUtil.get("page.manageprelease.manage_prerelease_content"));
 		this._addElement_li(NavBar._CAT_UTILITIES, "managebrew.html", "管理所有自制内容");
 		this._addElement_buttonSplit(
 			NavBar._CAT_UTILITIES,
 			{
 				metas: [
 					{
-						html: "Load All Partnered Content",
+						html: I18nUtil.get("page.manageprelease.load_all_partnered_content"),
 						click: async evt => {
 							evt.stopPropagation();
 							evt.preventDefault();
@@ -119,7 +119,7 @@ class NavBar {
 					},
 					{
 						html: `<span class="glyphicon glyphicon-link"></span>`,
-						title: `Export Prerelease Content/Homebrew List as URL`,
+						title: I18nUtil.get("page.manageprelease.export_prerelease_content_homebrew_list_as_url"),
 						click: async evt => {
 							evt.stopPropagation();
 							evt.preventDefault();
@@ -135,7 +135,7 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_UTILITIES, "inittrackerplayerview.html", "先攻追踪器:玩家视图");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "renderdemo.html", "渲染器 Demo");
-		this._addElement_li(NavBar._CAT_UTILITIES, "makebrew.html", "Homebrew Builder");
+		this._addElement_li(NavBar._CAT_UTILITIES, "makebrew.html", I18nUtil.get("page.makebrew.title"));
 		this._addElement_li(NavBar._CAT_UTILITIES, "makecards.html", "RPG 卡片 JSON 生成器");
 		this._addElement_li(NavBar._CAT_UTILITIES, "converter.html", "文本转换器");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
@@ -858,7 +858,7 @@ NavBar._CAT_ADVENTURES = "冒险模组";
 NavBar._CAT_REFERENCES = "参照数据";
 NavBar._CAT_UTILITIES = "其他功能";
 NavBar._CAT_SETTINGS = "设置";
-NavBar._CAT_CACHE = "Preload Data";
+NavBar._CAT_CACHE = "缓存数据";
 
 NavBar._navbar = null;
 

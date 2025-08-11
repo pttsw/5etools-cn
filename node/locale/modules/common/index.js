@@ -10,6 +10,12 @@ const common = transferLangConfig({
   "feat": ["专长", "专长", "Feat"],
   "background":['背景','背景', 'Background'],
   "species":['种族','种族', 'Species'],
+
+  "source": ['来源', '來源', 'Source'],
+  "type":['类型', '類型', 'Type'],
+  "author": ['作者', '作者', 'Author'],
+  "authors": ['作者', '作者', 'Authors'],
+  "origin": ['资源', '资源', 'Origin'],
 })
 
 

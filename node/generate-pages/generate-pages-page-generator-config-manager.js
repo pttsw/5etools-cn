@@ -1,3 +1,4 @@
+import { I18n } from "i18n";
 import {PageGeneratorManagerBase} from "./generate-pages-page-generator.js";
 
 class _PageGeneratorManagebrew extends PageGeneratorManagerBase {
@@ -15,8 +16,8 @@ class _PageGeneratorManagebrew extends PageGeneratorManagerBase {
 class _PageGeneratorManageprerelease extends PageGeneratorManagerBase {
 	_page = "manageprerelease.html";
 
-	_pageTitle = "Manage Prerelease Content";
-	_navbarDescription = "View, Add, and Delete Prerelease Content.";
+	_pageTitle = I18nUtil.get("page.manageprelease.manage_prerelease_content");
+	_navbarDescription = I18nUtil.get("page.manageprelease.manage_prerelease_content_subtitle");
 
 	_scriptsModules = [
 		"manageexternal/manageexternal-utils.js",

@@ -19,8 +19,8 @@ export class PrereleaseUtil_ extends BrewUtil2Base {
 	PAGE_MANAGE = UrlUtil.PG_MANAGE_PRERELEASE;
 	URL_REPO_DEFAULT = VeCt.URL_PRERELEASE;
 	URL_REPO_ROOT_DEFAULT = VeCt.URL_ROOT_PRERELEASE;
-	DISPLAY_NAME = "prerelease content";
-	DISPLAY_NAME_PLURAL = "prereleases";
+	DISPLAY_NAME = I18nUtil.get("page.manageprelease.prerelease_content");
+	DISPLAY_NAME_PLURAL = I18nUtil.get("page.manageprelease.prerelease");
 	DEFAULT_AUTHOR = "Wizards of the Coast";
 	STYLE_BTN = "ve-btn-primary";
 	IS_PREFER_DATE_ADDED = false;

@@ -7,6 +7,9 @@ import charcreationoptions from './charcreationoptions.js'
 import optionalfeatures from './optionalfeatures.js'
 import statgen from './statgen.js'
 import lootgen from './lootgen.js'
+import manageprelease from './manageprelease.js'
+import makebrew from './makebrew.js'
+
 // 公共部分
 // const common = transferLangConfig({
 //   "no-data": ['没有数据', '沒有數據', 'No Data'],
@@ -24,6 +27,8 @@ export default {
     optionalfeatures: optionalfeatures['zh_CN'],
     statgen: statgen['zh_CN'],
     lootgen: lootgen['zh_CN'],
+    manageprelease: manageprelease['zh_CN'],
+    makebrew: makebrew['zh_CN'],
   },
   'zh-Hant': {
     // ...common['zh-Hant'],
@@ -35,6 +40,8 @@ export default {
     optionalfeatures: optionalfeatures['zh-Hant'],
     statgen: statgen['zh-Hant'],
     lootgen: lootgen['zh-Hant'],
+    manageprelease: manageprelease['zh-Hant'],
+    makebrew: makebrew['zh-Hant'],
   },
   'en-US': {
     // ...common['en-US'],
@@ -46,6 +53,8 @@ export default {
     optionalfeatures: optionalfeatures['en-US'],
     statgen: statgen['en-US'],
     lootgen: lootgen['en-US'],
+    manageprelease: manageprelease['en-US'],
+    makebrew: makebrew['en-US'],
   }
 }
 

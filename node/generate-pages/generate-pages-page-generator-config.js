@@ -4,6 +4,7 @@ import {PAGE_GENERATORS_ADVENTURE_BOOK} from "./generate-pages-page-generator-co
 import {PageGeneratorGeneric} from "./generate-pages-page-generator.js";
 import {PAGE_GENERATORS_TABLEPAGE} from "./generate-pages-page-generator-config-tablepage.js";
 import {PAGE_GENERATORS_MANAGER} from "./generate-pages-page-generator-config-manager.js";
+import { I18n } from "i18n";
 
 class _PageGeneratorMaps extends PageGeneratorGeneric {
 	_filename = "page/template-page-maps.hbs";
@@ -245,8 +246,8 @@ class _PageGeneratorMakebrew extends PageGeneratorGeneric {
 	_filename = "page/template-page-makebrew.hbs";
 	_page = "makebrew.html";
 
-	_pageTitle = "Homebrew Builder";
-	_navbarDescription = "Input values on left, view the results on the right.";
+	_pageTitle = I18nUtil.get("page.makebrew.title");
+	_navbarDescription = I18nUtil.get("page.makebrew.subtitle");
 
 	_stylesheets = [
 		"makebrew",
