@@ -3332,7 +3332,7 @@ Renderer.utils = class {
 				? `${isText ? "" : `the <span title="Systems Reference Document (5.1)">`}SRD 5.1${isText ? "" : `</span>`}${typeof it.srd === "string" ? ` (as &quot;${it.srd}&quot;)` : ""}`
 				: "";
 		const basicRulesText = it.basicRules2024
-			? `the Basic Rules (2024)${typeof it.basicRules2024 === "string" ? ` (as &quot;${it.basicRules2024}&quot;)` : ""}`
+			? `基础规则 (2024)${typeof it.basicRules2024 === "string" ? ` (as &quot;${it.basicRules2024}&quot;)` : ""}`
 			: it.basicRules
 				? `基础规则 (2014)${typeof it.basicRules === "string" ? ` (as &quot;${it.basicRules}&quot;)` : ""}`
 				: "";
@@ -14869,18 +14869,21 @@ Renderer.generic = class {
 
 				switch (duration.type) {
 					case "special":
-						if (duration.concentration) return `{@status Concentration${ptSrcStatus}}`;
-						return `Special${ptCondition}`;
+						if (duration.concentration) return `{@status ${I18nUtil.get("page.spells.concentration")}${ptSrcStatus}}`;
+						return `${I18nUtil.get("page.spells.special")}${ptCondition}`;
 					case "instant":
-						return `Instantaneous${ptCondition}`;
+						return `${I18nUtil.get("page.spells.instantaneous")}${ptCondition}`;
 					case "timed":
-						return `${duration.concentration ? `{@status Concentration${ptSrcStatus}}, ` : ""}${duration.concentration ? "u" : duration.duration.upTo ? "U" : ""}${duration.concentration || duration.duration.upTo ? "p to " : ""}${duration.duration.amount} ${duration.duration.amount === 1 ? duration.duration.type : `${duration.duration.type}s`}${ptCondition}`;
+						if (I18nUtil.LANGUAGES_INDEX == "zh_CN") {
+							return `${duration.concentration ? `{@status ${I18nUtil.get("page.spells.concentration")}${ptSrcStatus}}, ` : ""}${duration.concentration || duration.duration.upTo ? "至多" : ""}${duration.duration.amount} ${Parser.spTimeUnitToFull(duration.duration.type)}${ptCondition}`;
+						}
+						return `${duration.concentration ? `{@status ${I18nUtil.get("page.spells.concentration")}${ptSrcStatus}}, ` : ""}${duration.concentration ? "u" : duration.duration.upTo ? "U" : ""}${duration.concentration || duration.duration.upTo ? "p to " : ""}${duration.duration.amount} ${duration.duration.amount === 1 ? duration.duration.type : `${duration.duration.type}s`}${ptCondition}`;
 					case "permanent": {
-						if (!duration.ends) return `Permanent${ptCondition}`;
+						if (!duration.ends) return `${I18nUtil.get("page.spells.permanent")}${ptCondition}`;
 
 						const endsToJoin = duration.ends.map(m => Parser.spEndTypeToFull(m));
 						hasSubOr = hasSubOr || endsToJoin.length > 1;
-						return `Until ${endsToJoin.joinConjunct(", ", " or ")}${ptCondition}`;
+						return `${I18nUtil.get("common.until")} ${endsToJoin.joinConjunct(", ", ` ${I18nUtil.get("common.or")} `)}${ptCondition}`;
 					}
 				}
 			});
