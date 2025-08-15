@@ -141,7 +141,7 @@ export class ConverterUtils {
 	static isTitleLine (line) {
 		line = line.trim();
 
-		const lineNoPrefix = line.replace(/^Feature: /, "");
+		const lineNoPrefix = line.replace(/^Feature: /, "").replace(/^特性：/, "");
 		if (lineNoPrefix.length && lineNoPrefix.toTitleCase() === lineNoPrefix) return true;
 
 		if (/[.!?:]/.test(line)) return false;

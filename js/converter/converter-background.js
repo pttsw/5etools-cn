@@ -214,7 +214,7 @@ export class ConverterBackground extends ConverterFeatureBase {
 	}
 
 	static _doBackgroundPostProcess_feature (background, options) {
-		const entFeature = background.entries.find(ent => ent.name?.startsWith("Feature: "));
+		const entFeature = background.entries.find(ent => ent.name?.startsWith("Feature: ") || ent.name?.startsWith("特性："));
 		if (!entFeature) return;
 
 		(entFeature.data ||= {}).isFeature = true;
