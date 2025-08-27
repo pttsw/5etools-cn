@@ -258,10 +258,10 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 		const ele = e_({
 			tag: "tr",
 			html: `<td colspan="6" class="cls-side__section">
-				<h5 class="cls-side__section-head">${I18nUtil.get("page.classes.hit_points")}</h5>
-				<div><strong>${I18nUtil.get("page.classes.hit_dice")}:</strong> ${renderer.render(Renderer.class.getHitDiceEntry(cls.hd, {styleHint: this._style}))}</div>
-				<div><strong>${I18nUtil.get("page.classes.hit_points_at_first_level")}:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd, {styleHint: this._style})}</div>
-				<div><strong>${I18nUtil.get("page.classes.hit_points_at_higher_levels")}:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, {styleHint: this._style})}</div>
+				<h5 class="cls-side__section-head">${I18nUtil.get("common.hit_points")}</h5>
+				<div><strong>${I18nUtil.get("common.hit_dice")}:</strong> ${renderer.render(Renderer.class.getHitDiceEntry(cls.hd, {styleHint: this._style}))}</div>
+				<div><strong>${I18nUtil.get("common.hit_points_at_first_level")}:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd, {styleHint: this._style})}</div>
+				<div><strong>${I18nUtil.get("common.hit_points_at_higher_levels")}:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, {styleHint: this._style})}</div>
 			</td>`,
 		});
 

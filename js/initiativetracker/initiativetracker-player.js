@@ -157,7 +157,7 @@ export class InitiativeTrackerPlayerMessageHandlerV1 {
 		}
 
 		this._$head.append(`
-			<div class="w-100 split-v-center min-w-100p ${this._isCompact ? "ve-text-center" : ""}">Creature/Status</div>
+			<div class="w-100 split-v-center min-w-100p ${this._isCompact ? "ve-text-center" : ""}">${I18nUtil.get("page.dmscreen.creature_status")}</div>
 			<div class="min-w-100p ${this._isCompact ? "ve-text-center" : ""}">Health</div>
 			${(data.statsCols || []).map(statCol => `<div class="initp__h_stat">${statCol.abbreviation || ""}</div>`).join("")}
 			<div class="initp__h_score${this._isCompact ? " initp__h_score--compact" : ""}">${this._isCompact ? "#" : "Init."}</div>

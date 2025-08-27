@@ -2,8 +2,7 @@ import { transferLangConfig } from '../../config.js'
 
 const config = {
     // render-class.js
-    "hit_points":["生命值","生命值","Hit Points"],
-    "hit_dice":["生命骰","生命骰","Hit Dice"],
+
     "hit_points_at_first_level":["1级时的生命值","1級時的生命值","Hit Points at 1st Level"],
     "hit_points_at_higher_levels":["更高等级时的生命值","更高等級時的生命值","Hit Points at Higher Levels"],
 

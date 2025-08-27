@@ -10,6 +10,7 @@ const common = transferLangConfig({
   "feat": ["专长", "专长", "Feat"],
   "background":['背景','背景', 'Background'],
   "species":['种族','种族', 'Species'],
+  "creature":['生物','生物', 'Creature'],
 
   "source": ['来源', '來源', 'Source'],
   "type":['类型', '類型', 'Type'],
@@ -17,9 +18,23 @@ const common = transferLangConfig({
   "authors": ['作者', '作者', 'Authors'],
   "origin": ['资源', '资源', 'Origin'],
   "any": ['任意', '任意', 'Any'],
-
+  "name": ['名称', '名稱', 'Name'],
   "until": ['直到', '直到', 'Until'],
   "or": ['或', '或', 'or'],
+  
+  "hit_points":["生命值","生命值","Hit Points"],
+  "hit_dice":["生命骰","生命骰","Hit Dice"],
+  "armor_class":["护甲等级","护甲等级","Armor Class"],
+  "speed": ["移动速度", "移动速度", "Speed"],
+  "proficiency_bonus": ["熟练度加值", "熟练度加值", "Proficiency Bonus"],
+  "challenge_rating": ["挑战等级", "", "Challenge Rating"],
+  "challenge": ["挑战", "挑战", "Challenge"],
+  "spell_level": ["法术环阶", "法术环阶", "Spell Level"],
+  "skills": ["技能", "技能", "Skills"],
+  "senses": ["感官", "感官", "Senses"],
+  "languages": ["语言", "语言", "Languages"],
+  "actions": ["动作", "动作", "Actions"],
+
 })
 
 

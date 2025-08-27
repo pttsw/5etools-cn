@@ -163,7 +163,7 @@ export class RenderableCollectionRowDataBase extends RenderableCollectionAsyncGe
 			comp,
 			"name",
 			{
-				html: `<input class="form-control input-sm name dm-init__ipt-name dm-init-lockable dm-init__row-input" placeholder="Name">`,
+				html: `<input class="form-control input-sm name dm-init__ipt-name dm-init-lockable dm-init__row-input" placeholder="${I18nUtil.get("common.name")}">`,
 			},
 		).appendTo($wrpLhs);
 	}

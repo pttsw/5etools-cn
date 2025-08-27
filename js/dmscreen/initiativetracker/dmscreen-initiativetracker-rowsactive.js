@@ -144,7 +144,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 	/* ----- */
 
 	_pPopulateRow_conditions ({comp, $wrpLhs}) {
-		const $btnAddCond = $(`<button class="ve-btn ve-btn-warning ve-btn-xs dm-init__row-btn dm-init__row-btn-flag" title="Add Condition" tabindex="-1"><span class="glyphicon glyphicon-flag"></span></button>`)
+		const $btnAddCond = $(`<button class="ve-btn ve-btn-warning ve-btn-xs dm-init__row-btn dm-init__row-btn-flag" title="${I18nUtil.get("page.dmscreen.add_contition")}" tabindex="-1"><span class="glyphicon glyphicon-flag"></span></button>`)
 			.on("click", async () => {
 				const compAdd = new InitiativeTrackerConditionAdd({conditionsCustom: MiscUtil.copyFast(this._comp._state.conditionsCustom)});
 				const [isDataEntered, conditionToAdd] = await compAdd.pGetShowModalResults();
@@ -201,12 +201,12 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 				: IS_PLAYER_VISIBLE_NONE,
 			false,
 		)
-			.title("Shown in player view")
+			.title(I18nUtil.get("page.dmscreen.shown_in_player_view"))
 			.addClass("dm-init__row-btn")
 			.addClass("dm-init__btn_eye")
 			.appendTo($wrpRhs);
 
-		$(`<button class="ve-btn ve-btn-danger ve-btn-xs dm-init__row-btn dm-init-lockable" title="Delete (SHIFT to Also Delete Similar)" tabindex="-1"><span class="glyphicon glyphicon-trash"></span></button>`)
+		$(`<button class="ve-btn ve-btn-danger ve-btn-xs dm-init__row-btn dm-init-lockable" title="${I18nUtil.get("common.button.delete")} (${I18nUtil.get("page.dmscreen.shift_to_delete_similar")})" tabindex="-1"><span class="glyphicon glyphicon-trash"></span></button>`)
 			.appendTo($wrpRhs)
 			.on("click", evt => {
 				if (this._comp._state.isLocked) return;
@@ -404,13 +404,13 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 }
 
 export class InitiativeTrackerRowDataViewActive extends InitiativeTrackerRowDataViewBase {
-	_TextHeaderLhs = "Creature/Status";
+	_TextHeaderLhs = I18nUtil.get("page.dmscreen.creature_status");
 	_ClsRenderableCollectionRowData = _RenderableCollectionRowDataActive;
 
 	_render_$getWrpHeaderRhs ({rdState}) {
 		return $$`<div class="dm-init__row-rhs">
-			<div class="dm-init__header dm-init__header--input dm-init__header--input-wide" title="Hit Points">HP</div>
-			<div class="dm-init__header dm-init__header--input" title="Initiative Score">#</div>
+			<div class="dm-init__header dm-init__header--input dm-init__header--input-wide" title="${I18nUtil.get("common.hit_points")}">HP</div>
+			<div class="dm-init__header dm-init__header--input" title="${I18nUtil.get("page.dmscreen.initiative_score")}">#</div>
 			<div class="dm-init__spc-header-buttons"></div>
 		</div>`;
 	}

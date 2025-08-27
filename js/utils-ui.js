@@ -1664,7 +1664,7 @@ class SearchUiUtil {
 				|| fromDeepIndex(d)
 				|| ExcludeUtil.isExcluded(d.u, Parser.pageCategoryToProp(d.c), d.s, {isNoCount: true})
 			) return;
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? I18nUtil.get("common.creature") : Parser.pageCategoryToFull(d.c);
 			if (isAlternate) d.cf = `alt_${d.cf}`;
 			initIndexForFullCat(d);
 			if (!isAlternate) availContent.ALL.addDoc(d);
@@ -1682,7 +1682,7 @@ class SearchUiUtil {
 			brewIndex.forEach(d => {
 				if (SearchUiUtil._isNoHoverCat(d.c) || fromDeepIndex(d)) return;
 				d.cf = Parser.pageCategoryToFull(d.c);
-				d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
+				d.cf = d.c === Parser.CAT_ID_CREATURE ? I18nUtil.get("common.creature") : Parser.pageCategoryToFull(d.c);
 				initIndexForFullCat(d);
 				availContent.ALL.addDoc(d);
 				availContent[d.cf].addDoc(d);
@@ -1999,7 +1999,11 @@ class SearchWidget {
 
 			if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 				const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
-				this._$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+				if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
+					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`)
+				} else {
+					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+				}
 			}
 		} else {
 			if (!searchInput.trim()) this.__showMsgInputRequired();
@@ -2064,7 +2068,7 @@ class SearchWidget {
 
 		const toAdd = Omnidexer.decompressIndex(indexer.getIndex());
 		toAdd.forEach(d => {
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? I18nUtil.get("common.creature") : Parser.pageCategoryToFull(d.c);
 			SearchWidget.CONTENT_INDICES.ALL.addDoc(d);
 			SearchWidget.CONTENT_INDICES[d.cf].addDoc(d);
 		});

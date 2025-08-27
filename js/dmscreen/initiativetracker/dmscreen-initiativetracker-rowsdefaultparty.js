@@ -59,7 +59,7 @@ export class InitiativeTrackerRowDataViewDefaultParty extends InitiativeTrackerR
 
 	_render_$getWrpHeaderRhs ({rdState}) {
 		return $$`<div class="dm-init__row-rhs">
-			<div class="dm-init__header dm-init__header--input dm-init__header--input-wide" title="Hit Points">HP</div>
+			<div class="dm-init__header dm-init__header--input dm-init__header--input-wide" title="${I18nUtil.get("common.hit_points")}">HP</div>
 			<div class="dm-init__spc-header-buttons--single"></div>
 		</div>`;
 	}

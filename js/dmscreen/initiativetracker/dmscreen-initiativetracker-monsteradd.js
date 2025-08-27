@@ -273,7 +273,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 		const pDoSearch = async () => {
 			const searchTerm = $iptSearch.val().trim();
 
-			const index = this._board.availContent["Creature"];
+			const index = this._board.availContent["生物"];
 			const results = await OmnisearchBacking.pGetFilteredResults(
 				index.search(searchTerm, {
 					fields: {
@@ -306,7 +306,11 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 
 				if (resultCount > this.constructor._RESULTS_MAX_DISPLAY) {
 					const diff = resultCount - this.constructor._RESULTS_MAX_DISPLAY;
-					$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+					if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
+						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`)
+					} else {
+						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+					}
 				}
 			} else {
 				if (!searchTerm.trim()) showMsgIpt();
@@ -332,7 +336,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 			true,
 			new _MonstersToLoad({
 				count: this._getCntToAdd(),
-				name: res.doc.n,
+				name: res.doc.cn,
 				source: res.doc.s,
 				isRollHp: this._state.isRollHp,
 			}),
@@ -348,7 +352,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 
 		return $$`
 			<div class="ui-search__row ve-flex-v-center" tabindex="0">
-				<span>${res.doc.n}</span>
+				<span>${res.doc.cn}</span>
 				<div class="ve-flex-vh-center">
 					<span class="mr-2">${res.doc.s ? `<i title="${Parser.sourceJsonToFull(res.doc.s)}">${Parser.sourceJsonToAbv(res.doc.s)}${res.doc.p ? ` p${res.doc.p}` : ""}</i>` : ""}</span>
 					${$btnCustomize}

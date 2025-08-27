@@ -42,7 +42,7 @@ export class InitiativeTrackerDefaultParty extends BaseComponent {
 	}
 
 	_render_$getBtnAdd ({rdState}) {
-		return $(`<button class="ve-btn ve-btn-default ve-btn-xs" title="Add Player"><span class="glyphicon glyphicon-plus"></span></button>`)
+		return $(`<button class="ve-btn ve-btn-default ve-btn-xs" title="${I18nUtil.get("page.dmscreen.add_player")}"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.on("click", async () => {
 				this._comp._state[this._prop] = [
 					...this._comp._state[this._prop],

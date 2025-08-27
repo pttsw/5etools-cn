@@ -84,7 +84,7 @@ export class InitiativeTrackerConditionAdd extends BaseComponent {
 		const {$modalInner, doClose, pGetResolved} = UiUtil.getShowModal({
 			isMinHeight0: true,
 			isHeaderBorder: true,
-			title: "Add Condition",
+			title: I18nUtil.get("page.dmscreen.add_contition"),
 			$titleSplit: this._render_$getBtnEditCustom({rdState}),
 		});
 		rdState.cbDoClose = doClose;

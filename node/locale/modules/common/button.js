@@ -37,6 +37,10 @@ const config = {
   "view_json": ["查看JSON", "查看JSON", "View JSON"],
 
   "reroll": ["重骰", "重骰", "reroll"],
+
+  "move": ["移动", "移动", "Move"],
+  "close": ["关闭", "关闭", "Close"],
+  "configure": ["配置", "配置", "Configure"],
 }
 
 export default transferLangConfig(config)

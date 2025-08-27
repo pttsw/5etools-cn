@@ -351,7 +351,7 @@ export class InitiativeTrackerNetworking {
 
 		const $wrpTop = UiUtil.$getAddModalRow($modalInner, "div");
 
-		const $btnAddClient = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add Client">Add Player</button>`).click(() => addClientRow());
+		const $btnAddClient = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add Client">${I18nUtil.get("page.dmscreen.add_player")}</button>`).click(() => addClientRow());
 
 		const $btnCopyServers = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Copy any available server tokens to the clipboard">Copy Server Tokens</button>`)
 			.click(async () => {

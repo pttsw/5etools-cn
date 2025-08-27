@@ -11,6 +11,7 @@ import manageprelease from './manageprelease.js'
 import makebrew from './makebrew.js'
 import classes from './classes.js'
 import spells from './spells.js'
+import dmscreen from './dmscreen.js'
 
 // 公共部分
 // const common = transferLangConfig({
@@ -33,6 +34,7 @@ export default {
     manageprelease: manageprelease['zh_CN'],
     makebrew: makebrew['zh_CN'],
     spells: spells['zh_CN'],
+    dmscreen: dmscreen['zh_CN'],
   },
   'zh-Hant': {
     // ...common['zh-Hant'],
@@ -48,6 +50,7 @@ export default {
     manageprelease: manageprelease['zh-Hant'],
     makebrew: makebrew['zh-Hant'],
     spells: spells['zh-Hant'],
+    dmscreen: dmscreen['zh-Hant'],
   },
   'en-US': {
     // ...common['en-US'],
@@ -63,6 +66,7 @@ export default {
     manageprelease: manageprelease['en-US'],
     makebrew: makebrew['en-US'],
     spells: spells['en-US'],
+    dmscreen: dmscreen['en-US'],
   }
 }
 

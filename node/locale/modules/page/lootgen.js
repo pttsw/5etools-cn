@@ -19,7 +19,6 @@ const config = {
     //tabs
     "adventure_rewards_by_cr": ["按CR生成冒险奖励", "", "Adventure Rewards by CR"],
     "random_treasure_by_cr": ["按CR随机生成", "", "Random Treasure by CR"],
-    "challenge_rating": ["挑战等级", "", "Challenge Rating"],
     "is_treasure_hoard": ["是库藏宝藏？", "", "Is Treasure Hoard?"],
     "treasure_hoard": ["库藏宝藏", "", "Treasure Hoard"],
     "character_level": ["角色等级", "", "Character Level"],

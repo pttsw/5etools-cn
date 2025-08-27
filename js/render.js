@@ -9392,14 +9392,14 @@ class _RenderCompactBestiaryImplBase {
 	/* ----- */
 
 	_getCommonHtmlParts_attributeHeaders ({mon, isInlinedToken, isShowSpellLevelScaler, isShowClassLevelScaler, classLevelScalerClass}) {
-		const labelAc = this._style !== "classic" ? "AC" : "Armor Class";
-		const titleAc = this._style !== "classic" ? `title="Armor Class"` : "";
+		const labelAc = this._style !== "classic" ? "AC" : I18nUtil.get("common.armor_class");
+		const titleAc = this._style !== "classic" ? `title="${I18nUtil.get("common.armor_class")}"` : "";
 
-		const labelHp = this._style !== "classic" ? "HP" : "Hit Points";
-		const titleHp = this._style !== "classic" ? `title="Hit Points"` : "";
+		const labelHp = this._style !== "classic" ? "HP" : I18nUtil.get("common.hit_points");
+		const titleHp = this._style !== "classic" ? `title="${I18nUtil.get("common.hit_points")}"` : "";
 
-		const labelCr = isShowSpellLevelScaler ? "Spell Level" : isShowClassLevelScaler ? (classLevelScalerClass ? "Class Level" : "Level") : (this._style !== "classic" ? "CR" : "Challenge");
-		const titleCr = isShowSpellLevelScaler ? "" : isShowClassLevelScaler ? "" : (this._style !== "classic" ? `title="Challenge Rating"` : "");
+		const labelCr = isShowSpellLevelScaler ? I18nUtil.get("common.spell_level") : isShowClassLevelScaler ? (classLevelScalerClass ? "Class Level" : "Level") : (this._style !== "classic" ? "CR" : I18nUtil.get("common.challenge"));
+		const titleCr = isShowSpellLevelScaler ? "" : isShowClassLevelScaler ? "" : (this._style !== "classic" ? `title="${I18nUtil.get("common.challenge_rating")}"` : "");
 
 		const ptInitiative = this._style !== "classic" ? Renderer.monster.getInitiativePart(mon) : "";
 		const ptPb = this._style === "classic" ? Renderer.monster.getPbPart(mon) : "";
@@ -9408,9 +9408,9 @@ class _RenderCompactBestiaryImplBase {
 			<th class="ve-text-left" colspan="${this._style === "classic" ? "2" : "1"}" ${titleAc}>${labelAc}</th>
 			${ptInitiative ? `<th class="ve-text-left" colspan="1" title="Initiative">Init.</th>` : ""}
 			<th class="ve-text-left" colspan="2" ${titleHp}>${labelHp}</th>
-			<th class="ve-text-left" colspan="2">Speed</th>
+			<th class="ve-text-left" colspan="2">${I18nUtil.get("common.speed")}</th>
 			<th class="ve-text-left" colspan="2" ${titleCr}>${labelCr}</th>
-			${ptPb ? `<th class="ve-text-left" colspan="1" title="Proficiency Bonus">PB</th>` : ""}
+			${ptPb ? `<th class="ve-text-left" colspan="1" title="${I18nUtil.get("common.proficiency_bonus")}">PB</th>` : ""}
 			${isInlinedToken ? `<th colspan="1"></th>` : ""}
 		</tr>`;
 	}
@@ -9472,7 +9472,7 @@ class _RenderCompactBestiaryImplBase {
 	}
 
 	_getCommonHtmlParts_skills ({mon, renderer}) {
-		return mon.skill ? `<p><b>Skills</b> ${Renderer.monster.getSkillsString(renderer, mon)}</p>` : "";
+		return mon.skill ? `<p><b>${I18nUtil.get("common.skills")}</b> ${Renderer.monster.getSkillsString(renderer, mon)}</p>` : "";
 	}
 
 	_getCommonHtmlParts_tools ({mon, renderer}) {
@@ -9494,11 +9494,11 @@ class _RenderCompactBestiaryImplBase {
 	_getCommonHtmlParts_senses ({mon, opts}) {
 		if (opts.isHideSenses) return "";
 		const pt = Renderer.monster.getSensesPart(mon, {isTitleCase: this._style !== "classic"});
-		return pt ? `<p><b>Senses</b> ${pt}</p>` : "";
+		return pt ? `<p><b>${I18nUtil.get("common.senses")}</b> ${pt}</p>` : "";
 	}
 
 	_getCommonHtmlParts_languages ({mon, opts}) {
-		return opts.isHideLanguages ? "" : `<p><b>Languages</b> ${Renderer.monster.getRenderedLanguages(mon.languages)}</p>`;
+		return opts.isHideLanguages ? "" : `<p><b>${I18nUtil.get("common.languages")}</b> ${Renderer.monster.getRenderedLanguages(mon.languages)}</p>`;
 	}
 
 	/* ----- */
@@ -9507,7 +9507,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: {...mon, action: entsAction},
 			renderer,
-			title: "Actions",
+			title: I18nUtil.get("common.actions"),
 			key: "action",
 			depth: 2,
 			styleHint: this._style,

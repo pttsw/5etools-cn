@@ -41,7 +41,7 @@ class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
 
 		ee`<div class="ve-flex-col py-2 px-3">
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.challenge_rating")}</div>
+				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("common.challenge_rating")}</div>
 				${selChallenge}
 			</label>
 
@@ -82,7 +82,7 @@ class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
 
 		const lootOutput = new this._ClsLootGenOutput({
 			type: `${I18nUtil.get("page.lootgen.individual_treasure")}: ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
-			name: `{@b ${I18nUtil.get("page.lootgen.individual_treasure")}} for ${I18nUtil.get("page.lootgen.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
+			name: `{@b ${I18nUtil.get("page.lootgen.individual_treasure")}} for ${I18nUtil.get("common.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
 		});
 		this._outputManager.doAddOutput({lootOutput});
@@ -160,7 +160,7 @@ export class LootGenGeneratorFindTreasure extends LootGenGeneratorFindTreasureBa
 	}
 
 	_getHoardLootOutputName () {
-		return `{@b ${I18nUtil.get("page.lootgen.hoard")}} for ${I18nUtil.get("page.lootgen.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`;
+		return `{@b ${I18nUtil.get("page.lootgen.hoard")}} for ${I18nUtil.get("common.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`;
 	}
 }
 
@@ -210,7 +210,7 @@ export class LootGenGeneratorFindTreasure24 extends LootGenGeneratorFindTreasure
 	}
 
 	_getHoardLootOutputName () {
-		return `{@b ${I18nUtil.get("page.lootgen.hoard")}} for ${I18nUtil.get("page.lootgen.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}} and ${I18nUtil.get("page.lootgen.character_level")} {@b ${this.constructor._CHARACTER_LEVEL_RANGES[this._state.ft_characterLevel].label}}`;
+		return `{@b ${I18nUtil.get("page.lootgen.hoard")}} for ${I18nUtil.get("common.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}} and ${I18nUtil.get("page.lootgen.character_level")} {@b ${this.constructor._CHARACTER_LEVEL_RANGES[this._state.ft_characterLevel].label}}`;
 	}
 
 	_getDefaultState () {

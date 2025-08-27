@@ -1652,7 +1652,7 @@ class Panel {
 		);
 	}
 
-	doPopulate_GenericEmbed (url, title = "Embed") {
+	doPopulate_GenericEmbed (url, title = I18nUtil.get("page.dmscreen.embed")) {
 		const meta = {u: url};
 		this.set$ContentTab(
 			PANEL_TYP_GENERIC_EMBED,
@@ -2114,11 +2114,11 @@ class Panel {
 				})
 				.appendTo($pnl);
 
-			const $ctrlMove = $(`<div class="panel-control-icon glyphicon glyphicon-move" title="Move"></div>`).appendTo($ctrlBar);
+			const $ctrlMove = $(`<div class="panel-control-icon glyphicon glyphicon-move" title="${I18nUtil.get("common.button.move")}"></div>`).appendTo($ctrlBar);
 			$ctrlMove.on("click", () => {
 				this.toggleMovable();
 			});
-			const $ctrlEmpty = $(`<div class="panel-control-icon glyphicon glyphicon-remove" title="Close"></div>`).appendTo($ctrlBar);
+			const $ctrlEmpty = $(`<div class="panel-control-icon glyphicon glyphicon-remove" title="${I18nUtil.get("common.button.close")}"></div>`).appendTo($ctrlBar);
 			$ctrlEmpty.on("click", () => {
 				this.getReplacementPanel();
 			});
@@ -3081,12 +3081,12 @@ class AddMenuVideoTab extends AddMenuTab {
 			const $tab = $(`<div class="ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`);
 
 			const $wrpYT = $(`<div class="ui-modal__row"></div>`).appendTo($tab);
-			const $iptUrlYT = $(`<input class="form-control" placeholder="Paste YouTube URL">`)
+			const $iptUrlYT = $(`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_youtube_url")}">`)
 				.on("keydown", (e) => {
 					if (e.key === "Enter") $btnAddYT.click();
 				})
 				.appendTo($wrpYT);
-			const $btnAddYT = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`).appendTo($wrpYT);
+			const $btnAddYT = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`).appendTo($wrpYT);
 			$btnAddYT.on("click", () => {
 				let url = $iptUrlYT.val().trim();
 				const m = /https?:\/\/(www\.)?youtube\.com\/watch\?v=(.*?)(&.*$|$)/.exec(url);
@@ -3104,12 +3104,12 @@ class AddMenuVideoTab extends AddMenuTab {
 			});
 
 			const $wrpTwitch = $(`<div class="ui-modal__row"></div>`).appendTo($tab);
-			const $iptUrlTwitch = $(`<input class="form-control" placeholder="Paste Twitch URL">`)
+			const $iptUrlTwitch = $(`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_twitch_url")}">`)
 				.on("keydown", (e) => {
 					if (e.key === "Enter") $btnAddTwitch.click();
 				})
 				.appendTo($wrpTwitch);
-			const $btnAddTwitch = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`).appendTo($wrpTwitch);
+			const $btnAddTwitch = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`).appendTo($wrpTwitch);
 			const $btnAddTwitchChat = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed Chat</button>`).appendTo($wrpTwitch);
 			const getTwitchM = (url) => {
 				return /https?:\/\/(www\.)?twitch\.tv\/(.*?)(\?.*$|$)/.exec(url);
@@ -3147,12 +3147,12 @@ class AddMenuVideoTab extends AddMenuTab {
 			});
 
 			const $wrpGeneric = $(`<div class="ui-modal__row"></div>`).appendTo($tab);
-			const $iptUrlGeneric = $(`<input class="form-control" placeholder="Paste any URL">`)
+			const $iptUrlGeneric = $(`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_any_url")}">`)
 				.on("keydown", (e) => {
 					if (e.key === "Enter") $iptUrlGeneric.click();
 				})
 				.appendTo($wrpGeneric);
-			const $btnAddGeneric = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`).appendTo($wrpGeneric);
+			const $btnAddGeneric = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`).appendTo($wrpGeneric);
 			$btnAddGeneric.on("click", () => {
 				let url = $iptUrlGeneric.val().trim();
 				if (url) {
@@ -3236,7 +3236,7 @@ class AddMenuImageTab extends AddMenuTab {
 
 			// region URL
 			const $wrpUtl = $(`<div class="ui-modal__row"></div>`).appendTo($tab);
-			const $iptUrl = $(`<input class="form-control" placeholder="Paste image URL">`)
+			const $iptUrl = $(`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_image_url")}">`)
 				.on("keydown", (e) => {
 					if (e.key === "Enter") $btnAddUrl.click();
 				})
@@ -3299,11 +3299,11 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			$$`<div class="ui-modal__row">
-			<span>Initiative Tracker</span>
+			<span>${I18nUtil.get("page.dmscreen.initiative_tracker")}</span>
 			${$btnTracker}
 			</div>`.appendTo($tab);
 
-			const $btnTrackerCreatureViewer = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnTrackerCreatureViewer = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("button.add")}</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerCreatureViewer({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3480,7 +3480,7 @@ class AddMenuSearchTab extends AddMenuTab {
 		switch (this.subType) {
 			case "content": return $(`
 				<div class="ui-search__row" tabindex="0">
-					<span><span class="ve-muted">${r.doc.cf}</span> ${r.doc.n}</span>
+					<span><span class="ve-muted">${r.doc.cf}</span> ${r.doc.cn}</span>
 					<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 				</div>
 			`);
@@ -3607,7 +3607,12 @@ class AddMenuSearchTab extends AddMenuTab {
 
 				if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 					const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
-					this.$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+					if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
+						this.$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`)
+					}
+					else {
+						this.$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+					}
 				}
 			} else {
 				if (!srch.trim()) this.showMsgIpt();
