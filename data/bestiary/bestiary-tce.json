@@ -66,14 +66,14 @@
 			"trait": [
 				{
 					"ENG_name": "Regeneration (Slaad Only)",
-					"name": "再生（仅限史拉蟾）",
+					"name": "再生（仅史拉蟾）",
 					"entries": [
 						"如果这个异怪至少有1点生命值，在它的回合开始时恢复5点生命值。"
 					]
 				},
 				{
 					"ENG_name": "Whispering Aura (Star Spawn Only)",
-					"name": "低语灵光（仅限星之子）",
+					"name": "低语灵光（仅星之子）",
 					"entries": [
 						"在异怪的每个回合开始时，每个在异怪5尺范围内的生物必须成功进行一次对抗你法术豁免DC的感知豁免检定，否则会受到{@damage 2d6}心灵伤害，前提是异怪不是{@condition 失能}状态。"
 					]
@@ -89,21 +89,21 @@
 				},
 				{
 					"ENG_name": "Eye Ray (Beholderkin Only)",
-					"name": "眼波射线Eye Ray（仅限类眼魔）",
+					"name": "眼波射线（仅类眼魔）",
 					"entries": [
 						"{@atk rs} {@hitYourSpellAttack}, 射程150尺, 一个生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 点心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Slaad Only)",
-					"name": "爪击Claws（仅限史拉蟾）",
+					"name": "爪击（仅史拉蟾）",
 					"entries": [
 						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害。如果目标是一个生物，直到异怪下一回合开始之前，它不能恢复生命值。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Slam (Star Spawn Only)",
-					"name": "灵能猛击Psychic Slam（仅限星之子）",
+					"name": "灵能猛击Psychic Slam（仅星之子）",
 					"entries": [
 						"{@atk ms} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
 					]
@@ -132,21 +132,21 @@
 			"_versions": [
 				{
 					"ENG_name": "Aberrant Spirit (Beholderkin)",
-					"name": "异常灵（贝赫尔金）",
+					"name": "异怪灵魄（类眼魔）",
 					"source": "TCE",
 					"_mod": {
 						"action": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"爪击Claws（仅限史拉蟾）",
-									"灵能猛击Psychic Slam（仅限星之子）"
+									"爪击（仅史拉蟾）",
+									"灵能猛击Psychic Slam（仅星之子）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "眼波射线Eye Ray（仅限类眼魔）",
+									"rename": "眼波射线（仅类眼魔）",
 									"with": "眼波射线"
 								}
 							}
@@ -169,20 +169,20 @@
 				},
 				{
 					"ENG_name": "Aberrant Spirit (Slaad)",
-					"name": "异怪灵（史拉蟾）",
+					"name": "异怪灵魄（史拉蟾）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"低语灵光（仅限星之子）"
+									"低语灵光（仅星之子）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "再生（仅限史拉蟾）",
+									"rename": "再生（仅史拉蟾）",
 									"with": "再生"
 								}
 							}
@@ -191,14 +191,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"眼波射线Eye Ray（仅限类眼魔）",
-									"灵能猛击Psychic Slam（仅限星之子）"
+									"眼波射线（仅类眼魔）",
+									"灵能猛击Psychic Slam（仅星之子）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "爪击Claws（仅限史拉蟾）",
+									"rename": "爪击（仅史拉蟾）",
 									"with": "爪击"
 								}
 							}
@@ -219,20 +219,20 @@
 				},
 				{
 					"ENG_name": "Aberrant Spirit (Star Spawn)",
-					"name": "异变之魂（星种）",
+					"name": "异怪灵魄（星之子）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"再生（仅限史拉蟾）"
+									"再生（仅史拉蟾）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "低语灵光（仅限星之子）",
+									"rename": "低语灵光（仅星之子）",
 									"with": "低语灵光"
 								}
 							}
@@ -241,14 +241,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"眼波射线Eye Ray（仅限类眼魔）",
-									"爪击Claws（仅限史拉蟾）"
+									"眼波射线（仅类眼魔）",
+									"爪击（仅史拉蟾）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "灵能猛击Psychic Slam（仅限星之子）",
+									"rename": "灵能猛击Psychic Slam（仅星之子）",
 									"with": "心灵冲击"
 								}
 							}
@@ -522,7 +522,7 @@
 			"action": [
 				{
 					"ENG_name": "Shred",
-					"name": "撕咬",
+					"name": "撕扯",
 					"entries": [
 						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d4 + 3 + PB} 挥砍伤害"
 					]
@@ -571,15 +571,15 @@
 				"walk": 30,
 				"climb": {
 					"number": 30,
-					"condition": "（仅限陆地）"
+					"condition": "（仅陆地）"
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅限空气）"
+					"condition": "（仅空气）"
 				},
 				"swim": {
 					"number": 30,
-					"condition": "（仅限水）"
+					"condition": "（仅水）"
 				}
 			},
 			"str": 18,
@@ -598,21 +598,21 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing (Water Only)",
-					"name": "水下呼吸（仅限水）",
+					"name": "水下呼吸（仅水中）",
 					"entries": [
 						"这只野兽只能在水下呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Flyby (Air Only)",
-					"name": "飞掠（仅限空）",
+					"name": "飞掠（仅空中）",
 					"entries": [
 						"当野兽飞出敌人的攻击范围时，它不会引发借机攻击。"
 					]
 				},
 				{
 					"ENG_name": "Pack Tactics (Land and Water Only)",
-					"name": "集群战术（仅限陆与水）",
+					"name": "集群战术（仅陆地和水中）",
 					"entries": [
 						"如果至少有一个野兽的盟友在生物5尺范围内，并且该盟友不是{@condition 失能}状态，那么野兽对生物的攻击检定有优势。"
 					]
@@ -656,21 +656,21 @@
 			"_versions": [
 				{
 					"ENG_name": "Bestial Spirit (Air)",
-					"name": "野兽之魂（空气）",
+					"name": "野兽灵魄（空）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"水下呼吸（仅限水）",
-									"集群战术（仅限陆与水）"
+									"水下呼吸（仅水中）",
+									"集群战术（仅陆地和水中）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "飞掠（仅限空）",
+									"rename": "飞掠（仅空中）",
 									"with": "飞掠"
 								}
 							}
@@ -689,21 +689,21 @@
 				},
 				{
 					"ENG_name": "Bestial Spirit (Land)",
-					"name": "野性灵（陆地）",
+					"name": "野兽灵魄（陆）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"水下呼吸（仅限水）",
-									"飞掠（仅限空）"
+									"水下呼吸（仅水中）",
+									"飞掠（仅空中）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "集群战术（仅限陆与水）",
+									"rename": "集群战术（仅陆地和水中）",
 									"with": "集群战术"
 								}
 							}
@@ -722,20 +722,20 @@
 				},
 				{
 					"ENG_name": "Bestial Spirit (Water)",
-					"name": "野兽之魂（水）",
+					"name": "野兽灵魄（水）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"飞掠（仅限空）"
+									"飞掠（仅空中）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "集群战术（仅限陆与水）",
+									"rename": "集群战术（仅陆地和水中）",
 									"with": "集群战术"
 								}
 							}
@@ -774,7 +774,7 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（自然护甲）+ 2（仅限防御者）"
+					"special": "11 + 法术等级（自然护甲）+ 2（仅防御者）"
 				}
 			],
 			"hp": {
@@ -815,21 +815,21 @@
 				},
 				{
 					"ENG_name": "Radiant Bow (Avenger Only)",
-					"name": "光耀之弓（仅限复仇圣灵）",
+					"name": "光耀之弓（仅复仇圣灵）",
 					"entries": [
 						"{@atk rw} 命中骰：{@hitYourSpellAttack}，射程150/600尺，单一目标。{@h}{@damage 2d6 + 2 + 召唤法术等级}光耀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Radiant Mace (Defender Only)",
-					"name": "光耀之锤（仅限守护圣灵）",
+					"name": "光耀之锤（仅守护圣灵）",
 					"entries": [
 						"{@atk mw} {@hitYourSpellAttack} 攻击命中，射程5英尺，一个目标。{@h}{@damage 1d10 + 3 + 召唤法术等级} 光耀伤害，并且天界生物可以选择自己或目标10英尺内它能看见的另一个生物。被选择的生物获得 {@dice 1d10} 临时生命值。"
 					]
 				},
 				{
 					"ENG_name": "Healing Touch (1/Day)",
-					"name": "治愈之触（1/日）",
+					"name": "治愈之触 (1/日)",
 					"entries": [
 						"天界生物触碰另一个生物。目标通过魔法恢复生命值，等于{@dice 2d8 + 召唤法术等级}。"
 					]
@@ -856,20 +856,20 @@
 			"_versions": [
 				{
 					"ENG_name": "Celestial Spirit (Avenger)",
-					"name": "天界灵（复仇者）",
+					"name": "天界灵魄（复仇圣灵）",
 					"source": "TCE",
 					"_mod": {
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "光耀之弓（仅限复仇圣灵）",
+									"rename": "光耀之弓（仅复仇圣灵）",
 									"with": "光辉之弓"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "光耀之锤（仅限守护圣灵）"
+								"names": "光耀之锤（仅守护圣灵）"
 							}
 						]
 					},
@@ -884,20 +884,20 @@
 				},
 				{
 					"ENG_name": "Celestial Spirit (Defender)",
-					"name": "天界之魂（守卫者）",
+					"name": "天界灵魄（守护圣灵）",
 					"source": "TCE",
 					"_mod": {
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "光耀之锤（仅限守护圣灵）",
+									"rename": "光耀之锤（仅守护圣灵）",
 									"with": "光辉权杖"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "光耀之弓（仅限复仇圣灵）"
+								"names": "光耀之弓（仅复仇圣灵）"
 							}
 						]
 					},
@@ -969,14 +969,14 @@
 			"trait": [
 				{
 					"ENG_name": "Heated Body (Metal Only)",
-					"name": "灼热之躯（仅限金属）",
+					"name": "灼热之躯（仅金属）",
 					"entries": [
 						"任何生物在5尺范围内触摸构装生物或用近战攻击击中它时，会受到{@damage 1d10}火焰伤害。"
 					]
 				},
 				{
 					"ENG_name": "Stony Lethargy (Stone Only)",
-					"name": "石迷昏眠（仅限石）",
+					"name": "石迷昏眠（仅岩石）",
 					"entries": [
 						"当一个生物在构装生物10尺范围内开始其回合时，构装生物可以迫使它进行一次对抗你法术豁免DC的感知豁免检定。如果豁免失败，目标不能使用反应，并且其速度减半，直到它下一个回合的开始。"
 					]
@@ -1001,7 +1001,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Berserk Lashing (Clay Only)",
-					"name": "狂怒乱击（仅限粘土）",
+					"name": "狂怒乱击（仅粘土）",
 					"entries": [
 						"当构装生物受到伤害时，它会对它5尺范围内的随机生物进行一次猛击攻击。如果没有生物在攻击范围内，构装生物会以不超过其速度的一半向它能看到的敌人移动，且不会引发借机攻击。"
 					]
@@ -1024,14 +1024,14 @@
 			"_versions": [
 				{
 					"ENG_name": "Construct Spirit (Clay)",
-					"name": "构造灵（黏土）",
+					"name": "构装灵魄（粘土）",
 					"source": "TCE",
 					"_mod": {
 						"reaction": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "狂怒乱击（仅限粘土）",
+									"rename": "狂怒乱击（仅粘土）",
 									"with": "狂暴猛击"
 								}
 							}
@@ -1044,20 +1044,20 @@
 				},
 				{
 					"ENG_name": "Construct Spirit (Metal)",
-					"name": "构装生物之魂（金属）",
+					"name": "构装灵魄（金属）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "灼热之躯（仅限金属）",
+									"rename": "灼热之躯（仅金属）",
 									"with": "灼热之躯"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "石迷昏眠（仅限石）"
+								"names": "石迷昏眠（仅岩石）"
 							}
 						]
 					},
@@ -1065,20 +1065,20 @@
 				},
 				{
 					"ENG_name": "Construct Spirit (Stone)",
-					"name": "构装生物之灵（石）",
+					"name": "构装灵魄（岩石）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "石迷昏眠（仅限石）",
+									"rename": "石迷昏眠（仅岩石）",
 									"with": "石肤昏睡"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "灼热之躯（仅限金属）"
+								"names": "灼热之躯（仅金属）"
 							}
 						]
 					},
@@ -1217,11 +1217,11 @@
 				},
 				"burrow": {
 					"number": 40,
-					"condition": "（仅限地面）"
+					"condition": "（仅地面）"
 				},
 				"swim": {
 					"number": 40,
-					"condition": "（仅限水）"
+					"condition": "（仅水）"
 				},
 				"canHover": true
 			},
@@ -1242,7 +1242,7 @@
 						"雷鸣"
 					],
 					"cond": true,
-					"note": "（仅限空气）"
+					"note": "（仅空气）"
 				},
 				{
 					"resist": [
@@ -1250,14 +1250,14 @@
 						"斩击"
 					],
 					"cond": true,
-					"note": "（仅限地面）"
+					"note": "（仅地面）"
 				},
 				{
 					"resist": [
 						"强酸"
 					],
 					"cond": true,
-					"note": "（仅限水）"
+					"note": "（仅水）"
 				}
 			],
 			"immune": [
@@ -1267,7 +1267,7 @@
 						"火焰"
 					],
 					"cond": true,
-					"note": "（仅限火焰）"
+					"note": "（仅火焰）"
 				}
 			],
 			"conditionImmune": [
@@ -1284,7 +1284,7 @@
 			"trait": [
 				{
 					"ENG_name": "Amorphous Form (Air, Fire, and Water Only)",
-					"name": "不定形态（仅限于气、火和水）",
+					"name": "不定形态（仅气、火、水）",
 					"entries": [
 						"该元素生物可以穿过宽仅1英寸的空间而无需挤压。"
 					]
@@ -1329,14 +1329,14 @@
 			"_versions": [
 				{
 					"ENG_name": "Elemental Spirit (Air)",
-					"name": "元素灵（风）",
+					"name": "元素灵魄（气）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "不定形态（仅限于气、火和水）",
+									"rename": "不定形态（仅气、火、水）",
 									"with": "不定形形态"
 								}
 							}
@@ -1374,7 +1374,7 @@
 				},
 				{
 					"ENG_name": "Elemental Spirit (Earth)",
-					"name": "元素之灵（土）",
+					"name": "元素灵魄（土）",
 					"source": "TCE",
 					"_mod": {
 						"action": {
@@ -1407,14 +1407,14 @@
 				},
 				{
 					"ENG_name": "Elemental Spirit (Fire)",
-					"name": "元素灵（火）",
+					"name": "元素灵魄（火）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "不定形态（仅限于气、火和水）",
+									"rename": "不定形态（仅气、火、水）",
 									"with": "不定形形态"
 								}
 							}
@@ -1444,14 +1444,14 @@
 				},
 				{
 					"ENG_name": "Elemental Spirit (Water)",
-					"name": "元素精灵（水）",
+					"name": "元素灵魄（水）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "不定形态（仅限于气、火和水）",
+									"rename": "不定形态（仅气、火、水）",
 									"with": "不定形形态"
 								}
 							}
@@ -1602,7 +1602,7 @@
 			"_versions": [
 				{
 					"ENG_name": "Fey Spirit (Fuming)",
-					"name": "精类之魂（喷烟）",
+					"name": "妖精灵魄（愤怒）",
 					"source": "TCE",
 					"bonus": [
 						{
@@ -1615,7 +1615,7 @@
 				},
 				{
 					"ENG_name": "Fey Spirit (Mirthful)",
-					"name": "精类灵（欢乐）",
+					"name": "妖精灵魄（欢欣）",
 					"source": "TCE",
 					"bonus": [
 						{
@@ -1628,7 +1628,7 @@
 				},
 				{
 					"ENG_name": "Fey Spirit (Tricksy)",
-					"name": "仙灵（调皮）",
+					"name": "妖精灵魄（诡诈）",
 					"source": "TCE",
 					"bonus": [
 						{
@@ -1670,11 +1670,11 @@
 				"walk": 40,
 				"climb": {
 					"number": 40,
-					"condition": "（仅限恶魔）"
+					"condition": "（仅恶魔）"
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅限恶魔）"
+					"condition": "（仅恶魔）"
 				}
 			},
 			"str": 13,
@@ -1711,14 +1711,14 @@
 				},
 				{
 					"ENG_name": "Death Throes (Demon Only)",
-					"name": "焚身爆（仅限恶魔）",
+					"name": "焚身爆（仅恶魔）",
 					"entries": [
 						"当这个恶魔的生命值降至0点或法术结束时，恶魔会爆炸，并且每个在其10尺范围内的生物必须进行一次敏捷豁免检定，对抗你的法术豁免DC。一个生物在失败的豁免检定上会受到{@damage 2d10 + 召唤法术等级}火焰伤害，在成功的豁免检定上则受到一半的伤害。"
 					]
 				},
 				{
 					"ENG_name": "Devil's Sight (Devil Only)",
-					"name": "魔鬼视界（仅限魔鬼）",
+					"name": "魔鬼视界（仅魔鬼）",
 					"entries": [
 						"魔法黑暗不会妨碍这个恶魔的黑暗视觉。"
 					]
@@ -1734,21 +1734,21 @@
 				},
 				{
 					"ENG_name": "Bite (Demon Only)",
-					"name": "啃咬（仅限于恶魔）",
+					"name": "啃咬（仅恶魔）",
 					"entries": [
 						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 黯蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Yugoloth Only)",
-					"name": "爪击（仅限于尤格罗斯魔）",
+					"name": "爪击（仅尤格罗斯魔）",
 					"entries": [
 						"{@atk mw} {@hitYourSpellAttack} 命中，范围 5 尺，单一目标。{@h}{@damage 1d8 + 3 + 召唤法术等级} 挥砍伤害。在攻击命中或未命中后，恶魔可以立即魔法传送至 30 尺内它可见的未被占据的空间。"
 					]
 				},
 				{
 					"ENG_name": "Hurl Flame (Devil Only)",
-					"name": "投掷烈焰（仅限于魔鬼）",
+					"name": "投掷烈焰（仅魔鬼）",
 					"entries": [
 						"{@atk rs} {@hitYourSpellAttack} 命中，射程150尺，单一目标。{@h}{@damage 2d6 + 3 + summonSpellLevel} 火焰伤害。如果目标是一个可燃物体且没有被穿戴或携带，它也会着火。"
 					]
@@ -1782,35 +1782,35 @@
 			"_versions": [
 				{
 					"ENG_name": "Fiendish Spirit (Demon)",
-					"name": "恶魔之魂",
+					"name": "邪魔灵魄（恶魔）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "焚身爆（仅限恶魔）",
+									"rename": "焚身爆（仅恶魔）",
 									"with": "临终苦难"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "魔鬼视界（仅限魔鬼）"
+								"names": "魔鬼视界（仅魔鬼）"
 							}
 						],
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "啃咬（仅限于恶魔）",
+									"rename": "啃咬（仅恶魔）",
 									"with": "啃咬"
 								}
 							},
 							{
 								"mode": "removeArr",
 								"names": [
-									"爪击（仅限于尤格罗斯魔）",
-									"投掷烈焰（仅限于魔鬼）"
+									"爪击（仅尤格罗斯魔）",
+									"投掷烈焰（仅魔鬼）"
 								]
 							}
 						]
@@ -1832,35 +1832,35 @@
 				},
 				{
 					"ENG_name": "Fiendish Spirit (Devil)",
-					"name": "恶魔之魂",
+					"name": "邪魔灵魄（魔鬼）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "魔鬼视界（仅限魔鬼）",
+									"rename": "魔鬼视界（仅魔鬼）",
 									"with": "魔鬼视界"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "焚身爆（仅限恶魔）"
+								"names": "焚身爆（仅恶魔）"
 							}
 						],
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "投掷烈焰（仅限于魔鬼）",
+									"rename": "投掷烈焰（仅魔鬼）",
 									"with": "投掷烈焰"
 								}
 							},
 							{
 								"mode": "removeArr",
 								"names": [
-									"啃咬（仅限于恶魔）",
-									"爪击（仅限于尤格罗斯魔）"
+									"啃咬（仅恶魔）",
+									"爪击（仅尤格罗斯魔）"
 								]
 							}
 						]
@@ -1882,15 +1882,15 @@
 				},
 				{
 					"ENG_name": "Fiendish Spirit (Yugoloth)",
-					"name": "恶魔灵（尤格罗斯）",
+					"name": "邪魔灵魄（尤格罗斯魔）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"焚身爆（仅限恶魔）",
-									"魔鬼视界（仅限魔鬼）"
+									"焚身爆（仅恶魔）",
+									"魔鬼视界（仅魔鬼）"
 								]
 							}
 						],
@@ -1898,15 +1898,15 @@
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "爪击（仅限于尤格罗斯魔）",
+									"rename": "爪击（仅尤格罗斯魔）",
 									"with": "爪击"
 								}
 							},
 							{
 								"mode": "removeArr",
 								"names": [
-									"啃咬（仅限于恶魔）",
-									"投掷烈焰（仅限于魔鬼）"
+									"啃咬（仅恶魔）",
+									"投掷烈焰（仅魔鬼）"
 								]
 							}
 						]
@@ -2375,14 +2375,14 @@
 			"trait": [
 				{
 					"ENG_name": "Terror Frenzy (Fury Only)",
-					"name": "惧怖狂怒（仅限暴怒）",
+					"name": "惧怖狂怒（仅暴怒）",
 					"entries": [
 						"该灵体对处于{@condition 恐慌}状态的生物进行攻击时具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Weight of Sorrow (Despair Only)",
-					"name": "哀伤之重（仅限绝望）",
+					"name": "哀伤之重（仅绝望）",
 					"entries": [
 						"任何生物，除了你，如果在其回合开始时位于灵体5尺范围内，其移动速度将减少20尺，直到该生物下一个回合开始。"
 					]
@@ -2405,7 +2405,7 @@
 				},
 				{
 					"ENG_name": "Dreadful Scream (1/Day)",
-					"name": "恐惧尖叫（1/日）",
+					"name": "恐惧尖叫 (1/日)",
 					"entries": [
 						"该灵体发出尖叫。在其30尺范围内的每个生物必须成功进行一次对抗您法术豁免DC的感知豁免检定，否则将被{@condition 恐慌}状态影响1分钟。处于{@condition 恐慌}状态的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
@@ -2449,13 +2449,13 @@
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "哀伤之重（仅限绝望）",
+									"rename": "哀伤之重（仅绝望）",
 									"with": "悲伤之重"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "惧怖狂怒（仅限暴怒）"
+								"names": "惧怖狂怒（仅暴怒）"
 							}
 						]
 					},
@@ -2487,13 +2487,13 @@
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "惧怖狂怒（仅限暴怒）",
+									"rename": "惧怖狂怒（仅暴怒）",
 									"with": "恐怖狂乱"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "哀伤之重（仅限绝望）"
+								"names": "哀伤之重（仅绝望）"
 							}
 						]
 					},
@@ -2667,14 +2667,14 @@
 			"trait": [
 				{
 					"ENG_name": "Incorporeal Passage (Ghostly Only)",
-					"name": "虚体移动（仅限于虚灵）",
+					"name": "虚体通行（仅幽体）",
 					"entries": [
 						"该灵体可以像通过困难地形一样穿过其他生物和物体{@quickref 困难地形||3}。如果它在回合结束时位于物体内部，则会被传送到最近的空位，并根据移动的每5尺距离受到{@damage 1d10}力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Festering Aura (Putrid Only)",
-					"name": "腐灭灵光（仅限腐尸）",
+					"name": "腐灭灵光（仅腐尸）",
 					"entries": [
 						"任何生物，除了你之外，如果在其回合开始时处于灵体5尺范围内，必须进行一次对抗你法术豁免DC的体质豁免检定，否则直到其下一个回合开始时将处于{@condition 中毒}状态。"
 					]
@@ -2690,21 +2690,21 @@
 				},
 				{
 					"ENG_name": "Deathly Touch (Ghostly Only)",
-					"name": "致死之触（仅限于虚灵）",
+					"name": "致死之触（仅幽体）",
 					"entries": [
 						"{@atk mw} {@hitYourSpellAttack}命中，触及范围5尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 黯蚀伤害，生物必须通过对抗你法术豁免DC的感知豁免检定，否则直到目标下一个回合结束时被{@condition 恐慌}不死生物。"
 					]
 				},
 				{
 					"ENG_name": "Grave Bolt (Skeletal Only)",
-					"name": "暗澹箭（仅限于骷髅）",
+					"name": "暗澹箭（仅骷髅）",
 					"entries": [
 						"{@atk rs} {@hitYourSpellAttack} 命中，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 黯蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Rotting Claw (Putrid Only)",
-					"name": "腐烂爪击（仅限于腐尸）。",
+					"name": "腐灭爪击（仅腐尸）",
 					"entries": [
 						"{@atk mw} {@hitYourSpellAttack}命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + summonSpellLevel} 挥砍伤害。如果目标处于{@condition 中毒}状态，它必须在对抗你的法术豁免DC的体质豁免检定中成功，否则在其下一回合结束前处于{@condition 麻痹}状态。"
 					]
@@ -2739,35 +2739,35 @@
 			"_versions": [
 				{
 					"ENG_name": "Undead Spirit (Ghostly)",
-					"name": "不死之魂（幽灵形态）",
+					"name": "亡灵灵魄（幽体）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "虚体移动（仅限于虚灵）",
+									"rename": "虚体通行（仅幽体）",
 									"with": "无形通道"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "腐灭灵光（仅限腐尸）"
+								"names": "腐灭灵光（仅腐尸）"
 							}
 						],
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "致死之触（仅限于虚灵）",
+									"rename": "致死之触（仅幽体）",
 									"with": "死亡之触"
 								}
 							},
 							{
 								"mode": "removeArr",
 								"names": [
-									"暗澹箭（仅限于骷髅）",
-									"腐烂爪击（仅限于腐尸）。"
+									"暗澹箭（仅骷髅）",
+									"腐灭爪击（仅腐尸）"
 								]
 							}
 						]
@@ -2792,35 +2792,35 @@
 				},
 				{
 					"ENG_name": "Undead Spirit (Putrid)",
-					"name": "不死之魂（腐臭）",
+					"name": "亡灵灵魄（腐尸）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "腐灭灵光（仅限腐尸）",
+									"rename": "腐灭灵光（仅腐尸）",
 									"with": "腐化光环"
 								}
 							},
 							{
 								"mode": "removeArr",
-								"names": "虚体移动（仅限于虚灵）"
+								"names": "虚体通行（仅幽体）"
 							}
 						],
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "腐烂爪击（仅限于腐尸）。",
+									"rename": "腐灭爪击（仅腐尸）",
 									"with": "腐烂之爪"
 								}
 							},
 							{
 								"mode": "removeArr",
 								"names": [
-									"致死之触（仅限于虚灵）",
-									"暗澹箭（仅限于骷髅）"
+									"致死之触（仅幽体）",
+									"暗澹箭（仅骷髅）"
 								]
 							}
 						]
@@ -2843,22 +2843,22 @@
 				},
 				{
 					"ENG_name": "Undead Spirit (Skeletal)",
-					"name": "不死之魂（骷髅）",
+					"name": "亡灵灵魄（骷髅）",
 					"source": "TCE",
 					"_mod": {
 						"action": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "暗澹箭（仅限于骷髅）",
+									"rename": "暗澹箭（仅骷髅）",
 									"with": "墓穴射线"
 								}
 							},
 							{
 								"mode": "removeArr",
 								"names": [
-									"致死之触（仅限于虚灵）",
-									"腐烂爪击（仅限于腐尸）。"
+									"致死之触（仅幽体）",
+									"腐灭爪击（仅腐尸）"
 								]
 							}
 						]

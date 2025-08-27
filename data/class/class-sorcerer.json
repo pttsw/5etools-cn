@@ -1134,7 +1134,7 @@
 			],
 			"classFeatures": [
 				"施法|术士|XPHB|1",
-				"天生施法|术士|XPHB|1",
+				"天生术法|术士|XPHB|1",
 				"魔力泉涌|术士|XPHB|2",
 				"超魔法|术士|XPHB|2",
 				"超魔法选项|术士|XPHB|2",
@@ -1148,7 +1148,7 @@
 					"classFeature": "子职特性|术士|XPHB|6",
 					"gainSubclassFeature": true
 				},
-				"化身施法|术士|XPHB|7",
+				"术法化身|术士|XPHB|7",
 				"属性值提升|术士|XPHB|8",
 				"超魔法|术士|XPHB|10",
 				"属性值提升|术士|XPHB|12",
@@ -2130,7 +2130,7 @@
 		},
 		{
 			"ENG_name": "Aberrant Sorcery",
-			"name": "异常魔法术",
+			"name": "畸变术法",
 			"shortName": "异常的",
 			"source": "XPHB",
 			"className": "术士",
@@ -2163,7 +2163,7 @@
 				}
 			],
 			"subclassFeatures": [
-				"异常魔法术|术士|XPHB|异常的|XPHB|3",
+				"畸变术法|术士|XPHB|异常的|XPHB|3",
 				"灵能术法|术士|XPHB|异常的|XPHB|6",
 				"心灵防御|术士|XPHB|异常的|XPHB|6",
 				"血肉启示|术士|XPHB|异常的|XPHB|14",
@@ -2173,7 +2173,7 @@
 		},
 		{
 			"ENG_name": "Clockwork Sorcery",
-			"name": "发条魔法术",
+			"name": "时械术法",
 			"shortName": "发条",
 			"source": "XPHB",
 			"className": "术士",
@@ -2205,7 +2205,7 @@
 				}
 			],
 			"subclassFeatures": [
-				"发条魔法术|术士|XPHB|发条|XPHB|3",
+				"时械术法|术士|XPHB|发条|XPHB|3",
 				"律令之壁|术士|XPHB|发条|XPHB|6",
 				"序列意识|术士|XPHB|发条|XPHB|14",
 				"时械矩阵|术士|XPHB|发条|XPHB|18"
@@ -2214,7 +2214,7 @@
 		},
 		{
 			"ENG_name": "Draconic Sorcery",
-			"name": "龙族魔法",
+			"name": "龙族术法",
 			"shortName": "龙族血脉",
 			"source": "XPHB",
 			"className": "术士",
@@ -2248,16 +2248,16 @@
 				}
 			],
 			"subclassFeatures": [
-				"龙族魔法|术士|XPHB|龙族血脉|XPHB|3",
+				"龙族术法|术士|XPHB|龙族血脉|XPHB|3",
 				"元素亲和|术士|XPHB|龙族血脉|XPHB|6",
 				"龙翼|术士|XPHB|龙族血脉|XPHB|14",
-				"龙之伙伴|术士|XPHB|龙族血脉|XPHB|18"
+				"龙伴|术士|XPHB|龙族血脉|XPHB|18"
 			],
 			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Wild Magic Sorcery",
-			"name": "野性魔法术",
+			"name": "狂野术法",
 			"shortName": "狂野魔法",
 			"source": "XPHB",
 			"className": "术士",
@@ -2265,7 +2265,7 @@
 			"page": 149,
 			"edition": "one",
 			"subclassFeatures": [
-				"野性魔法术|术士|XPHB|狂野魔法|XPHB|3",
+				"狂野术法|术士|XPHB|狂野魔法|XPHB|3",
 				"扭曲幸运|术士|XPHB|狂野魔法|XPHB|6",
 				"掌控混沌|术士|XPHB|狂野魔法|XPHB|14",
 				"控制涌动|术士|XPHB|狂野魔法|XPHB|18"
@@ -2757,7 +2757,7 @@
 		},
 		{
 			"ENG_name": "Innate Sorcery",
-			"name": "天生施法",
+			"name": "天生术法",
 			"source": "XPHB",
 			"page": 140,
 			"srd52": true,
@@ -2867,7 +2867,7 @@
 						{
 							"ENG_name": "Converting Spell Slots to Sorcery Points",
 							"type": "entries",
-							"name": "将法术位转换为法术点数",
+							"name": "法术位转化为术法点",
 							"entries": [
 								"你可以消耗一个法术位来获得等于该法术位等级的法术点数（无需动作）。"
 							]
@@ -3090,7 +3090,7 @@
 		},
 		{
 			"ENG_name": "Sorcery Incarnate",
-			"name": "化身施法",
+			"name": "术法化身",
 			"source": "XPHB",
 			"page": 141,
 			"srd52": true,
@@ -4150,7 +4150,7 @@
 			"entries": [
 				"{@i 1级畸变心智特性}",
 				"当你达到相应的术士等级时，你习得下表中的额外法术，如下方灵能法术表所示的那样。这些法术对你是术士法术，但不计入你术士已知法术数量。",
-				"每当你提升术士等级时，你可以选择一个环数相同的新法术来替换你因此特性习得的一个法术。该法术必须为一个{@filter 来自术士、邪术师或法师法术列表中的预言或惑控法术|spells|class=术士;邪术师;法师|school=D;E|level=1;2;3;4;5}。",
+				"每当你提升术士等级时，你可以选择一个环数相同的新法术来替换你因此特性习得的一个法术。该法术必须为一个{@filter 来自术士、魔契师或法师法术列表中的预言或惑控法术|spells|class=术士;魔契师;法师|school=D;E|level=1;2;3;4;5}。",
 				{
 					"type": "table",
 					"caption": "灵能法术",
@@ -4315,7 +4315,7 @@
 			"entries": [
 				"{@i 1级时械之魂特性}",
 				"当你达到相应的术士等级时，你习得下表中的额外法术，如下方时械法术表所示的那样。这些法术对你是术士法术，但不计入你术士已知法术数量。",
-				"每当你提升术士等级时，你可以选择一个环数相同的新法术来替换你因此特性习得的一个法术。该法术必须为一个{@filter 来自术士、邪术师或法师法术列表中的防护法术或变化法术|spells|class=术士;邪术师;法师|school=A;T|level=1;2;3;4;5}。",
+				"每当你提升术士等级时，你可以选择一个环数相同的新法术来替换你因此特性习得的一个法术。该法术必须为一个{@filter 来自术士、魔契师或法师法术列表中的防护法术或变化法术|spells|class=术士;魔契师;法师|school=A;T|level=1;2;3;4;5}。",
 				{
 					"type": "table",
 					"caption": "时械法术",
@@ -4546,7 +4546,7 @@
 			"header": 2,
 			"entries": [
 				"自1级起，当你达到相应的术士等级时，你习得符文法术表中的额外法术。这些法术对你而言视为术士法术，且不受术士表上已知法术一栏的数量限制。",
-				"每当你提升术士等级时，你可以选择一个环数相同的新法术来替换你因此特性习得的一个法术。该法术必须为一个{@filter 一个来自术士、邪术师或法师法术列表中的防护或变化法术|spells|school=A;T|class=术士;邪术师;法师}。",
+				"每当你提升术士等级时，你可以选择一个环数相同的新法术来替换你因此特性习得的一个法术。该法术必须为一个{@filter 一个来自术士、魔契师或法师法术列表中的防护或变化法术|spells|school=A;T|class=术士;魔契师;法师}。",
 				{
 					"type": "table",
 					"caption": "符文法术",
@@ -5335,7 +5335,7 @@
 		},
 		{
 			"ENG_name": "Aberrant Sorcery",
-			"name": "异常魔法术",
+			"name": "畸变术法",
 			"source": "XPHB",
 			"page": 145,
 			"className": "术士",
@@ -5475,7 +5475,7 @@
 						{
 							"ENG_name": "Glistening Flight",
 							"type": "entries",
-							"name": "闪光飞行",
+							"name": "闪耀飞翔",
 							"entries": [
 								"你获得了等同于你的{@variantrule 速度|XPHB}的{@variantrule 飞行速度|XPHB}，并且你可以悬停。当你飞行时，你的皮肤会因粘液或异域光芒而闪闪发光。"
 							]
@@ -5483,7 +5483,7 @@
 						{
 							"ENG_name": "See the Invisible",
 							"type": "entries",
-							"name": "看见隐形",
+							"name": "识破隐形",
 							"entries": [
 								"你能看见任何在你60英尺范围内且不在{@variantrule 掩护|XPHB|全身掩护}后的{@condition 隐形|XPHB}生物。你的眼睛也会变黑或变成扭动的感知触须。"
 							]
@@ -5491,7 +5491,7 @@
 						{
 							"ENG_name": "Wormlike Movement",
 							"type": "entries",
-							"name": "蠕虫般的移动",
+							"name": "蠕行移动",
 							"entries": [
 								"你的身体，以及你穿戴或携带的任何装备，变得黏滑而柔韧。你可以穿过任何窄至1英寸的空间，并且你可以花费5英尺的移动来逃脱非魔法的束缚或{@condition 擒抱|XPHB}状态。"
 							]
@@ -5523,7 +5523,7 @@
 		},
 		{
 			"ENG_name": "Clockwork Sorcery",
-			"name": "发条魔法术",
+			"name": "时械术法",
 			"source": "XPHB",
 			"page": 146,
 			"className": "术士",
@@ -5719,7 +5719,7 @@
 						{
 							"ENG_name": "Repair",
 							"type": "entries",
-							"name": "修补",
+							"name": "修复",
 							"entries": [
 								"任何完全位于{@variantrule 立方 [效应区域]|XPHB|立方}内受损的物体都会立即被修复。"
 							]
@@ -5727,7 +5727,7 @@
 						{
 							"ENG_name": "Dispel",
 							"type": "entries",
-							"name": "解除",
+							"name": "破法",
 							"entries": [
 								"每个6级及以下等级的法术都结束于你选择的生物和物体上，位于{@variantrule 立方 [效应区域]|XPHB|立方}内。"
 							]
@@ -5738,7 +5738,7 @@
 		},
 		{
 			"ENG_name": "Draconic Sorcery",
-			"name": "龙族魔法",
+			"name": "龙族术法",
 			"source": "XPHB",
 			"page": 148,
 			"srd52": true,
@@ -5869,7 +5869,7 @@
 		},
 		{
 			"ENG_name": "Dragon Companion",
-			"name": "龙之伙伴",
+			"name": "龙伴",
 			"source": "XPHB",
 			"page": 148,
 			"srd52": true,
@@ -5887,7 +5887,7 @@
 		},
 		{
 			"ENG_name": "Wild Magic Sorcery",
-			"name": "野性魔法术",
+			"name": "狂野术法",
 			"source": "XPHB",
 			"page": 149,
 			"className": "术士",

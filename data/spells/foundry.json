@@ -54,7 +54,7 @@
 				{
 					"ENG_name": "Cold Resistance",
 					"foundryId": "absorbElements2",
-					"name": "寒冷抗性",
+					"name": "冷冻抗性",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -105,7 +105,7 @@
 				{
 					"ENG_name": "Thunder Resistance",
 					"foundryId": "absorbElements5",
-					"name": "雷霆抗性",
+					"name": "雷鸣抗性",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -174,7 +174,7 @@
 				{
 					"ENG_name": "Level 2: +5 Max HP",
 					"foundryId": "aid",
-					"name": "2级：+5最大生命值",
+					"name": "2环：+5 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -190,7 +190,7 @@
 				{
 					"ENG_name": "Level 3: +10 Max HP",
 					"foundryId": "aid1",
-					"name": "3级：+10最大生命值",
+					"name": "3环： +10 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -206,7 +206,7 @@
 				{
 					"ENG_name": "Level 4: +15 Max HP",
 					"foundryId": "aid2",
-					"name": "4级：+15最大生命值",
+					"name": "4环：+15 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -222,7 +222,7 @@
 				{
 					"ENG_name": "Level 5: +20 Max HP",
 					"foundryId": "aid3",
-					"name": "5级：+20最大生命值",
+					"name": "5环：+20 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -238,7 +238,7 @@
 				{
 					"ENG_name": "Level 6: +25 Max HP",
 					"foundryId": "aid4",
-					"name": "6级：+25 最大生命值",
+					"name": "6环：+25 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -254,7 +254,7 @@
 				{
 					"ENG_name": "Level 7: +30 Max HP",
 					"foundryId": "aid5",
-					"name": "7级：+30 最大生命值",
+					"name": "7环：+30 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -270,7 +270,7 @@
 				{
 					"ENG_name": "Level 8: +35 Max HP",
 					"foundryId": "aid6",
-					"name": "8级：+35最大生命值",
+					"name": "8环：+35 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -286,7 +286,7 @@
 				{
 					"ENG_name": "Level 9: +40 Max HP",
 					"foundryId": "aid7",
-					"name": "9级：+40最大生命值",
+					"name": "9环：+40 最大生命值",
 					"duration": {
 						"seconds": 28800
 					},
@@ -386,7 +386,7 @@
 				},
 				{
 					"ENG_name": "Attack: Claws",
-					"name": "攻击：利爪",
+					"name": "攻击：爪击",
 					"type": "attack",
 					"activation": {
 						"type": "action"
@@ -421,7 +421,7 @@
 				},
 				{
 					"ENG_name": "Attack: Fangs/Horns",
-					"name": "攻击：尖牙/角",
+					"name": "攻击：尖牙/击",
 					"type": "attack",
 					"activation": {
 						"type": "action"
@@ -510,7 +510,7 @@
 				{
 					"ENG_name": "Altered Appearance",
 					"foundryId": "alterSelf1",
-					"name": "改变外貌",
+					"name": "改变容貌",
 					"duration": {
 						"seconds": 3600
 					}
@@ -665,20 +665,20 @@
 						{
 							"ENG_name": "Huge Object (costs 3)",
 							"count": "floor(@attributes.spell.mod / 3)",
-							"name": "巨型物体（需消耗3）",
+							"name": "巨型物体（消耗 3）",
 							"uuid": "@creature[活化物件(巨型)|XPHB]"
 						},
 						{
 							"ENG_name": "Large Object (costs 2)",
 							"count": "floor(@attributes.spell.mod / 2)",
-							"name": "大型物品（消耗2）",
+							"name": "大型物体（消耗 2）",
 							"uuid": "@creature[活化物体(大型)|XPHB]"
 						},
 						{
 							"ENG_name": "Medium Object",
 							"count": "@attributes.spell.mod",
 							"name": "中型物体",
-							"uuid": "@creature[活化物体（中型或更小）|XPHB]"
+							"uuid": "@creature[活化物件（中型或更小）|XPHB]"
 						}
 					],
 					"match": {
@@ -739,7 +739,7 @@
 				},
 				{
 					"ENG_name": "Antipathy Save",
-					"name": "反感豁免",
+					"name": "嫌恶术豁免",
 					"type": "save",
 					"img": "icons/magic/control/modfiy-luck-fortune-red.webp",
 					"activation": {
@@ -778,7 +778,7 @@
 				},
 				{
 					"ENG_name": "Sympathy Save",
-					"name": "同调豁免",
+					"name": "关怀术豁免",
 					"type": "save",
 					"img": "icons/magic/control/modfiy-luck-fortune-gray.webp",
 					"activation": {
@@ -1158,7 +1158,7 @@
 				},
 				{
 					"ENG_name": "Frost Damage",
-					"name": "冷冻伤害",
+					"name": "霜冻伤害",
 					"type": "damage",
 					"activation": {
 						"type": "",
@@ -1239,7 +1239,7 @@
 				{
 					"ENG_name": "No Reactions",
 					"foundryId": "armsOfHadar",
-					"name": "无法使用反应动作",
+					"name": "无法反应",
 					"duration": {
 						"turns": 1
 					},
@@ -1285,7 +1285,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Aura",
-					"name": "创造光环",
+					"name": "创造灵光",
 					"type": "heal",
 					"activation": {
 						"type": "action"
@@ -1331,7 +1331,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Aura",
-					"name": "创造光环",
+					"name": "创造灵光",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -1368,7 +1368,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Aura",
-					"name": "创造光环",
+					"name": "创造灵光",
 					"type": "heal",
 					"img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
 					"activation": {
@@ -1699,7 +1699,7 @@
 				{
 					"ENG_name": "Befuddled",
 					"foundryId": "befuddlement",
-					"name": "困惑",
+					"name": "摧心",
 					"descriptionEntries": [
 						"豁免失败时，目标受到10d12心灵伤害且无法施法或执行魔法动作。每30天结束时，目标可重复进行[[/save ability=wis]]豁免，成功则终止该效果。此效果也可通过{@spell 高等复原术|XPHB}、{@spell 医疗术|XPHB}或{@spell 祈愿术|XPHB}法术解除。"
 					]
@@ -1832,7 +1832,7 @@
 				{
 					"ENG_name": "Cursed Resilience",
 					"foundryId": "bestowCurse1",
-					"name": "诅咒韧性",
+					"name": "诅咒抗性",
 					"duration": {
 						"seconds": 60
 					},
@@ -1894,7 +1894,7 @@
 				},
 				{
 					"ENG_name": "Blade Ring",
-					"name": "利刃之环",
+					"name": "剑刃之环",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -2015,7 +2015,7 @@
 				{
 					"ENG_name": "Blessed",
 					"foundryId": "bless",
-					"name": "祝福",
+					"name": "受祝福",
 					"duration": {
 						"seconds": 60,
 						"rounds": 10
@@ -2512,7 +2512,7 @@
 				{
 					"ENG_name": "Blocked Healing",
 					"foundryId": "chillTouch",
-					"name": "治疗阻隔",
+					"name": "阻隔治疗",
 					"duration": {
 						"rounds": 1
 					},
@@ -2583,7 +2583,7 @@
 				{
 					"ENG_name": "Circle's Power",
 					"foundryId": "circleOfPower",
-					"name": "教团之力",
+					"name": "法阵原力",
 					"duration": {
 						"seconds": 600
 					}
@@ -2750,7 +2750,7 @@
 				{
 					"ENG_name": "Comprehension",
 					"foundryId": "comprehendLangua",
-					"name": "理解",
+					"name": "通晓",
 					"duration": {
 						"rounds": 1,
 						"seconds": 3600
@@ -2985,7 +2985,7 @@
 				},
 				{
 					"ENG_name": "Searing Light",
-					"name": "灼热光辉是一个神圣的咒语，它创造了一束神圣的光，可以烧伤牧师的敌人，尤其是不死生物。[^2^]",
+					"name": "灼热之光",
 					"type": "save",
 					"activation": {
 						"type": ""
@@ -3047,7 +3047,7 @@
 				},
 				{
 					"ENG_name": "Teleport and Attack",
-					"name": "传送与攻击",
+					"name": "传送并攻击",
 					"type": "utility",
 					"activation": {
 						"type": "bonus"
@@ -3208,7 +3208,7 @@
 				},
 				{
 					"ENG_name": "Emanation Save",
-					"name": "辐射豁免",
+					"name": "光环豁免",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/statuses/concentrating.svg",
 					"activation": {
@@ -3476,7 +3476,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Contingency",
-					"name": "创建应急术",
+					"name": "创建触发术",
 					"type": "enchant",
 					"activation": {
 						"type": "action"
@@ -3499,7 +3499,7 @@
 				{
 					"ENG_name": "Contingency Spell",
 					"foundryId": "contingency",
-					"name": "应急法术",
+					"name": "触发法术",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 864000
@@ -3561,7 +3561,7 @@
 				},
 				{
 					"ENG_name": "Flood, Part, or Redirect",
-					"name": "洪水、分离或导流",
+					"name": "上涨、分水或导水",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -3796,7 +3796,7 @@
 				},
 				{
 					"ENG_name": "Reassert Control",
-					"name": "重新确立控制",
+					"name": "重新控制",
 					"type": "utility",
 					"img": "icons/magic/death/skull-humanoid-crown-white-blue.webp",
 					"activation": {
@@ -3866,7 +3866,7 @@
 				{
 					"ENG_name": "Spectral Crown",
 					"foundryId": "crownOfMadness",
-					"name": "幽灵王冠",
+					"name": "灵体王冠",
 					"duration": {
 						"rounds": 1,
 						"seconds": 60
@@ -4026,7 +4026,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Bead",
-					"name": "制造念珠",
+					"name": "制造珠体",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/damage/force.svg",
 					"activation": {
@@ -4054,7 +4054,7 @@
 				},
 				{
 					"ENG_name": "Touch Bead",
-					"name": "触媒珠",
+					"name": "触碰珠体",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/trait-skills.svg",
 					"activation": {
@@ -4392,7 +4392,7 @@
 				{
 					"ENG_name": "Disguised",
 					"foundryId": "disguiseSelf",
-					"name": "伪装",
+					"name": "易容",
 					"duration": {
 						"seconds": 3600
 					},
@@ -4473,7 +4473,7 @@
 				{
 					"ENG_name": "Dispelling Evil and Good",
 					"foundryId": "dispelEvilAndGoo",
-					"name": "破除善恶",
+					"name": "反制善恶",
 					"duration": {
 						"rounds": 1
 					},
@@ -4530,7 +4530,7 @@
 			"activities": [
 				{
 					"ENG_name": "Unholy Creature Damage",
-					"name": "邪恶生物伤害",
+					"name": "不洁生物伤害",
 					"type": "damage",
 					"activation": {
 						"type": "action"
@@ -4693,7 +4693,7 @@
 				{
 					"ENG_name": "Dominated",
 					"foundryId": "dominateBeast",
-					"name": "被操控",
+					"name": "被支配",
 					"duration": {
 						"seconds": 60
 					},
@@ -4740,7 +4740,7 @@
 				{
 					"ENG_name": "Dominated",
 					"foundryId": "dominateMonster",
-					"name": "被操控",
+					"name": "被支配",
 					"duration": {
 						"seconds": 3600
 					},
@@ -4784,7 +4784,7 @@
 				{
 					"ENG_name": "Dominated",
 					"foundryId": "dominatePerson",
-					"name": "被操控",
+					"name": "被支配",
 					"duration": {
 						"seconds": 60
 					},
@@ -4940,7 +4940,7 @@
 				{
 					"ENG_name": "Trance State",
 					"foundryId": "dream",
-					"name": "冥想状态",
+					"name": "出神状态",
 					"duration": {
 						"seconds": 28800
 					},
@@ -5031,7 +5031,7 @@
 				},
 				{
 					"ENG_name": "End of Turn Fissures",
-					"name": "回合结束裂隙",
+					"name": "回合结束时裂开",
 					"type": "save",
 					"img": "icons/magic/earth/lava-stone-fire-eye.webp",
 					"description": {
@@ -5195,7 +5195,7 @@
 				{
 					"ENG_name": "Elemental Acid +1",
 					"foundryId": "elementalWeapon",
-					"name": "元素酸蚀 +1",
+					"name": "元素强酸 +1",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5236,7 +5236,7 @@
 				{
 					"ENG_name": "Elemental Cold +1",
 					"foundryId": "elementalWeapon1",
-					"name": "元素寒冰 +1",
+					"name": "元素冷冻 +1",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5277,7 +5277,7 @@
 				{
 					"ENG_name": "Elemental Fire +1",
 					"foundryId": "elementalWeapon2",
-					"name": "元素之火 +1",
+					"name": "元素火焰 +1",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5400,7 +5400,7 @@
 				{
 					"ENG_name": "Elemental Acid +2",
 					"foundryId": "elementalWeapon5",
-					"name": "元素酸蚀 +2",
+					"name": "元素强酸 +2",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5441,7 +5441,7 @@
 				{
 					"ENG_name": "Elemental Cold +2",
 					"foundryId": "elementalWeapon6",
-					"name": "元素冻寒 +2",
+					"name": "元素冷冻 +2",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5482,7 +5482,7 @@
 				{
 					"ENG_name": "Elemental Fire +2",
 					"foundryId": "elementalWeapon7",
-					"name": "元素之火 +2",
+					"name": "元素火焰 +2",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5523,7 +5523,7 @@
 				{
 					"ENG_name": "Elemental Lightning +2",
 					"foundryId": "elementalWeapon8",
-					"name": "元素闪电+2",
+					"name": "元素闪电 +2",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5564,7 +5564,7 @@
 				{
 					"ENG_name": "Elemental Thunder +2",
 					"foundryId": "elementalWeapon9",
-					"name": "元素雷霆 +2",
+					"name": "元素雷鸣 +2",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5605,7 +5605,7 @@
 				{
 					"ENG_name": "Elemental Acid +3",
 					"foundryId": "elementalWeapo10",
-					"name": "元素酸蚀 +3",
+					"name": "元素强酸 +3",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5645,7 +5645,7 @@
 				{
 					"ENG_name": "Elemental Cold +3",
 					"foundryId": "elementalWeapo11",
-					"name": "元素寒冰 +3",
+					"name": "元素冷冻 +3",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5685,7 +5685,7 @@
 				{
 					"ENG_name": "Elemental Fire +3",
 					"foundryId": "elementalWeapo12",
-					"name": "元素之火 +3",
+					"name": "元素火焰 +3",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5765,7 +5765,7 @@
 				{
 					"ENG_name": "Elemental Thunder +3",
 					"foundryId": "elementalWeapo14",
-					"name": "元素雷霆 +3",
+					"name": "元素雷鸣 +3",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 3600
@@ -5824,7 +5824,7 @@
 				},
 				{
 					"ENG_name": "Sculpt Element",
-					"name": "塑形元素",
+					"name": "法术塑形",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/damage/bludgeoning.svg",
 					"activation": {
@@ -5885,7 +5885,7 @@
 				{
 					"ENG_name": "Enhanced Strength",
 					"foundryId": "enhanceAbility",
-					"name": "增强力量",
+					"name": "强化力量",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5894,7 +5894,7 @@
 				{
 					"ENG_name": "Enhanced Dexterity",
 					"foundryId": "enhanceAbility1",
-					"name": "敏捷提升",
+					"name": "强化敏捷",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5921,7 +5921,7 @@
 				{
 					"ENG_name": "Enhanced Charisma",
 					"foundryId": "enhanceAbility4",
-					"name": "魅力提升",
+					"name": "强化魅力",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5986,7 +5986,7 @@
 				{
 					"ENG_name": "Reduced",
 					"foundryId": "enlargereduce1",
-					"name": "削弱",
+					"name": "缩小",
 					"duration": {
 						"seconds": 60
 					},
@@ -6202,7 +6202,7 @@
 			"activities": [
 				{
 					"ENG_name": "Enter Border Ethereal",
-					"name": "进入边域以太界",
+					"name": "进入边界以太",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -6506,7 +6506,7 @@
 			"effects": [
 				{
 					"ENG_name": "Cataleptic",
-					"name": "僵直症",
+					"name": "假死",
 					"duration": {
 						"seconds": 3600
 					},
@@ -6643,7 +6643,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异界坐骑（天界）|XPHB]",
+							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
 							"level": {
 								"max": 3
 							}
@@ -6655,7 +6655,7 @@
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（魔裔）|XPHB]",
+							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
 							"level": {
 								"max": 3
 							}
@@ -6683,7 +6683,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异界坐骑（天界）|XPHB]",
+							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
 							"level": {
 								"min": 4
 							}
@@ -6695,7 +6695,7 @@
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（魔裔）|XPHB]",
+							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
 							"level": {
 								"min": 4
 							}
@@ -6776,7 +6776,7 @@
 				},
 				{
 					"ENG_name": "Raise Zombie",
-					"name": "召唤僵尸",
+					"name": "复活僵尸",
 					"type": "summon",
 					"activation": {
 						"type": ""
@@ -7214,7 +7214,7 @@
 				},
 				{
 					"ENG_name": "Damage Forbidden Creature",
-					"name": "禁忌生物伤害",
+					"name": "伤害禁制生物",
 					"type": "damage",
 					"activation": {
 						"type": "",
@@ -7256,7 +7256,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Cage",
-					"name": "制造牢笼",
+					"name": "制造监牢",
 					"type": "utility",
 					"img": "icons/environment/traps/cage-grey-steel.webp",
 					"activation": {
@@ -7297,12 +7297,12 @@
 		},
 		{
 			"ENG_name": "Foresight",
-			"name": "预警术",
+			"name": "预见术",
 			"source": "XPHB",
 			"activities": [
 				{
 					"ENG_name": "Bestow Foresight",
-					"name": "预知馈赠",
+					"name": "预见",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -7444,7 +7444,7 @@
 				{
 					"ENG_name": "Unrestricted Movement",
 					"foundryId": "freedomOfMovemen",
-					"name": "自由移动",
+					"name": "自如行动",
 					"duration": {
 						"seconds": 3600
 					},
@@ -7724,7 +7724,7 @@
 				{
 					"ENG_name": "Under Orders",
 					"foundryId": "geas",
-					"name": "奉命行事",
+					"name": "受指使",
 					"duration": {
 						"seconds": 2592000
 					},
@@ -7748,13 +7748,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[巨型昆虫（蜈蚣）|XPHB]"
+							"uuid": "@creature[巨虫（蜈蚣）|XPHB]"
 						},
 						{
-							"uuid": "@creature[巨型昆虫（蜘蛛）|XPHB]"
+							"uuid": "@creature[巨虫（蜘蛛）|XPHB]"
 						},
 						{
-							"uuid": "@creature[巨型昆虫（黄蜂）|XPHB]"
+							"uuid": "@creature[巨虫（黄蜂）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -7792,7 +7792,7 @@
 				{
 					"ENG_name": "Glib",
 					"foundryId": "glibness",
-					"name": "油嘴滑舌",
+					"name": "花言巧语",
 					"duration": {
 						"seconds": 3600
 					}
@@ -8106,7 +8106,7 @@
 				{
 					"ENG_name": "Acrobatic Guidance",
 					"foundryId": "guidance",
-					"name": "杂技指引",
+					"name": "特技指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8121,7 +8121,7 @@
 				{
 					"ENG_name": "Animal Handling Guidance",
 					"foundryId": "guidance1",
-					"name": "驯兽引导",
+					"name": "驯兽指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8151,7 +8151,7 @@
 				{
 					"ENG_name": "Athletic Guidance",
 					"foundryId": "guidance3",
-					"name": "运动引导",
+					"name": "运动指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8166,7 +8166,7 @@
 				{
 					"ENG_name": "Deception Guidance",
 					"foundryId": "guidance4",
-					"name": "欺瞒引导",
+					"name": "欺瞒指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8196,7 +8196,7 @@
 				{
 					"ENG_name": "Insight Guidance",
 					"foundryId": "guidance6",
-					"name": "洞察指引",
+					"name": "洞悉指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8271,7 +8271,7 @@
 				{
 					"ENG_name": "Persuasion Guidance",
 					"foundryId": "guidance11",
-					"name": "劝导指引",
+					"name": "游说指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8286,7 +8286,7 @@
 				{
 					"ENG_name": "Perception Guidance",
 					"foundryId": "guidance12",
-					"name": "感知指引",
+					"name": "察觉指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8301,7 +8301,7 @@
 				{
 					"ENG_name": "Performance Guidance",
 					"foundryId": "guidance13",
-					"name": "演出指导",
+					"name": "表演指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8331,7 +8331,7 @@
 				{
 					"ENG_name": "Sleight of Hand Guidance",
 					"foundryId": "guidance15",
-					"name": "手上功夫引导",
+					"name": "巧手指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8346,7 +8346,7 @@
 				{
 					"ENG_name": "Stealth Guidance",
 					"foundryId": "guidance16",
-					"name": "潜行指引",
+					"name": "隐匿指引",
 					"duration": {
 						"seconds": 60
 					},
@@ -8525,7 +8525,7 @@
 				},
 				{
 					"ENG_name": "Apply Lethargy",
-					"name": "施加迟缓",
+					"name": "施加怠惰",
 					"type": "utility",
 					"activation": {
 						"type": ""
@@ -8589,7 +8589,7 @@
 				{
 					"ENG_name": "Lethargy",
 					"foundryId": "haste1",
-					"name": "嗜睡",
+					"name": "怠惰",
 					"duration": {
 						"rounds": 1
 					},
@@ -8692,7 +8692,7 @@
 				},
 				{
 					"ENG_name": "Cast and Heat",
-					"name": "铸造与加热",
+					"name": "施放并加热",
 					"type": "damage",
 					"activation": {
 						"type": "action"
@@ -8887,7 +8887,7 @@
 				{
 					"ENG_name": "Bravery",
 					"foundryId": "heroism",
-					"name": "勇敢",
+					"name": "勇气",
 					"duration": {
 						"seconds": 60
 					},
@@ -8983,7 +8983,7 @@
 				{
 					"ENG_name": "Hexed Dexterity",
 					"foundryId": "hex1",
-					"name": "诅咒敏捷",
+					"name": "敏捷诅咒",
 					"duration": {
 						"rounds": 1,
 						"seconds": 3600
@@ -9009,7 +9009,7 @@
 				{
 					"ENG_name": "Hexed Intelligence",
 					"foundryId": "hex3",
-					"name": "被诅咒的智力",
+					"name": "智力诅咒",
 					"duration": {
 						"rounds": 1,
 						"seconds": 3600
@@ -9022,7 +9022,7 @@
 				{
 					"ENG_name": "Hexed Wisdom",
 					"foundryId": "hex4",
-					"name": "诅咒智慧",
+					"name": "感知诅咒",
 					"duration": {
 						"rounds": 1,
 						"seconds": 3600
@@ -9035,7 +9035,7 @@
 				{
 					"ENG_name": "Hexed Charisma",
 					"foundryId": "hex5",
-					"name": "魅惑术",
+					"name": "魅力诅咒",
 					"duration": {
 						"rounds": 1,
 						"seconds": 3600
@@ -9149,7 +9149,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Aura",
-					"name": "创造光环",
+					"name": "创造灵光",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
 					"activation": {
@@ -9163,7 +9163,7 @@
 				},
 				{
 					"ENG_name": "Fiend/Undead Save",
-					"name": "魔族/不死生物豁免",
+					"name": "邪魔/不死生物豁免",
 					"type": "save",
 					"activation": {
 						"type": ""
@@ -9203,7 +9203,7 @@
 				{
 					"ENG_name": "Holy Protection",
 					"foundryId": "holyAura",
-					"name": "神圣防护",
+					"name": "圣洁防护",
 					"duration": {
 						"seconds": 60
 					}
@@ -9320,7 +9320,7 @@
 			"activities": [
 				{
 					"ENG_name": "Bonus Mark Damage",
-					"name": "奖励印记伤害",
+					"name": "额外印记伤害",
 					"type": "damage",
 					"activation": {
 						"type": ""
@@ -9853,7 +9853,7 @@
 			"activities": [
 				{
 					"ENG_name": "Recall Chest",
-					"name": "召回储物箱",
+					"name": "召回箱中",
 					"type": "summon",
 					"activation": {
 						"type": "action"
@@ -9870,7 +9870,7 @@
 				},
 				{
 					"ENG_name": "Hide Chest",
-					"name": "隐藏胸甲",
+					"name": "隐藏箱子",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -9911,7 +9911,7 @@
 				{
 					"ENG_name": "Levitating",
 					"foundryId": "levitate",
-					"name": "悬浮",
+					"name": "浮空",
 					"duration": {
 						"seconds": 600
 					},
@@ -10106,7 +10106,7 @@
 				},
 				{
 					"ENG_name": "Possess Humanoid",
-					"name": "占据类人生物",
+					"name": "附身类人",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/multiclass.svg",
 					"activation": {
@@ -10158,7 +10158,7 @@
 				{
 					"ENG_name": "Catatonic",
 					"foundryId": "magicJar",
-					"name": "紧张性精神症",
+					"name": "紧张",
 					"statuses": [
 						"沉默"
 					],
@@ -10662,7 +10662,7 @@
 				},
 				{
 					"ENG_name": "Lingering Acid Damage",
-					"name": "持续性酸蚀伤害",
+					"name": "持续性强酸伤害",
 					"type": "damage",
 					"activation": {
 						"type": "action"
@@ -10688,7 +10688,7 @@
 				{
 					"ENG_name": "Lingering Acid",
 					"foundryId": "melfsAcidArrow",
-					"name": "酸蚀残留",
+					"name": "持续性强酸",
 					"duration": {
 						"turns": 1
 					},
@@ -10718,7 +10718,7 @@
 				{
 					"ENG_name": "Mind Blanked",
 					"foundryId": "mindBlank",
-					"name": "心灵空白",
+					"name": "心灵被屏蔽",
 					"duration": {
 						"seconds": 86400
 					},
@@ -10899,7 +10899,7 @@
 				{
 					"ENG_name": "Duplicate A",
 					"foundryId": "mirrorImage",
-					"name": "重复 A",
+					"name": "分身 A",
 					"duration": {
 						"seconds": 60
 					},
@@ -10914,7 +10914,7 @@
 				{
 					"ENG_name": "Duplicate B",
 					"foundryId": "mirrorImage1",
-					"name": "复制 B",
+					"name": "分身 B",
 					"duration": {
 						"seconds": 60
 					},
@@ -10929,7 +10929,7 @@
 				{
 					"ENG_name": "Duplicate C",
 					"foundryId": "mirrorImage2",
-					"name": "复制C",
+					"name": "分身 C",
 					"duration": {
 						"seconds": 60
 					},
@@ -10976,7 +10976,7 @@
 				{
 					"ENG_name": "Memory Modification",
 					"foundryId": "modifyMemory",
-					"name": "记忆修改",
+					"name": "记忆被篡改",
 					"duration": {
 						"seconds": 60
 					},
@@ -11021,7 +11021,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Door",
-					"name": "创造门户",
+					"name": "造门",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -11104,7 +11104,7 @@
 				{
 					"ENG_name": "Masked",
 					"foundryId": "nystulsMagicAura",
-					"name": "戴面具的",
+					"name": "被遮盖",
 					"duration": {
 						"seconds": 86400
 					},
@@ -11379,7 +11379,7 @@
 				{
 					"ENG_name": "Concealed",
 					"foundryId": "passWithoutTrace",
-					"name": "隐蔽",
+					"name": "隐匿",
 					"duration": {
 						"seconds": 3600
 					},
@@ -11463,7 +11463,7 @@
 				},
 				{
 					"ENG_name": "Phantasm Damage",
-					"name": "幻影伤害",
+					"name": "魅影伤害",
 					"type": "damage",
 					"activation": {
 						"type": ""
@@ -11611,7 +11611,7 @@
 				{
 					"ENG_name": "Bound to Service",
 					"foundryId": "planarBinding",
-					"name": "契约服役",
+					"name": "服务契约",
 					"duration": {
 						"seconds": 86400
 					},
@@ -11662,7 +11662,7 @@
 				},
 				{
 					"ENG_name": "Enrichment",
-					"name": "丰富",
+					"name": "富集",
 					"type": "utility",
 					"img": "icons/skills/trades/farming-wheat-circle-yellow.webp",
 					"activation": {
@@ -11934,7 +11934,7 @@
 				},
 				{
 					"ENG_name": "Indigo Save (Con)",
-					"name": "靛蓝豁免（体质）",
+					"name": "靛色豁免（体质）",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/abilities/constitution.svg",
 					"activation": {
@@ -11963,7 +11963,7 @@
 				},
 				{
 					"ENG_name": "Violet Save (Wis)",
-					"name": "紫晶豁免（感知）",
+					"name": "紫色豁免（感知）",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/abilities/wisdom.svg",
 					"activation": {
@@ -11995,7 +11995,7 @@
 				{
 					"ENG_name": "Petrifying (Indigo)",
 					"foundryId": "prismaticSpray",
-					"name": "石化（靛蓝）",
+					"name": "石化（靛）",
 					"statuses": [
 						"束缚"
 					],
@@ -12006,7 +12006,7 @@
 				{
 					"ENG_name": "Teleporting (Violet)",
 					"foundryId": "prismaticSpray1",
-					"name": "传送（紫色）",
+					"name": "传送（紫）",
 					"duration": {
 						"rounds": 1
 					},
@@ -12025,7 +12025,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Wall",
-					"name": "创造之墙",
+					"name": "制造墙体",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -12046,7 +12046,7 @@
 				},
 				{
 					"ENG_name": "Create Globe",
-					"name": "创造球体",
+					"name": "制造球体",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -12169,7 +12169,7 @@
 				{
 					"ENG_name": "Restrained (Indigo)",
 					"foundryId": "prismaticWall1",
-					"name": "束缚（靛蓝）",
+					"name": "束缚（靛）",
 					"statuses": [
 						"束缚"
 					],
@@ -12180,7 +12180,7 @@
 				{
 					"ENG_name": "Blinded (Violet)",
 					"foundryId": "prismaticWall2",
-					"name": "目盲（紫罗兰色）",
+					"name": "目盲（紫）",
 					"duration": {
 						"rounds": 1
 					},
@@ -12280,7 +12280,7 @@
 				{
 					"ENG_name": "Acid Protection",
 					"foundryId": "protectionFromEn",
-					"name": "酸蚀防护",
+					"name": "强酸防护",
 					"duration": {
 						"seconds": 3600
 					},
@@ -12295,7 +12295,7 @@
 				{
 					"ENG_name": "Cold Protection",
 					"foundryId": "protectionFromE1",
-					"name": "寒冷防护",
+					"name": "冷冻防护",
 					"duration": {
 						"seconds": 3600
 					},
@@ -12310,7 +12310,7 @@
 				{
 					"ENG_name": "Fire Protection",
 					"foundryId": "protectionFromE2",
-					"name": "防火措施",
+					"name": "火焰防护",
 					"duration": {
 						"seconds": 3600
 					},
@@ -12340,7 +12340,7 @@
 				{
 					"ENG_name": "Thunder Protection",
 					"foundryId": "protectionFromE4",
-					"name": "雷电防护",
+					"name": "雷鸣防护",
 					"duration": {
 						"seconds": 3600
 					},
@@ -12376,7 +12376,7 @@
 				{
 					"ENG_name": "Protected",
 					"foundryId": "protectionFromEv",
-					"name": "受保护的",
+					"name": "被保护",
 					"duration": {
 						"seconds": 600
 					},
@@ -12406,7 +12406,7 @@
 				{
 					"ENG_name": "Poison Protection",
 					"foundryId": "protectionFromPo",
-					"name": "防毒",
+					"name": "毒素防护",
 					"duration": {
 						"seconds": 3600
 					},
@@ -12463,7 +12463,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 1)",
 					"foundryId": "raiseDead",
-					"name": "复活虚弱（第一天）",
+					"name": "复生虚弱（第一天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -12506,7 +12506,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 2)",
 					"foundryId": "raiseDead1",
-					"name": "复活虚弱（第2天）",
+					"name": "复生虚弱（第二天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -12549,7 +12549,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 4)",
 					"foundryId": "raiseDead3",
-					"name": "复生后遗症（第4天）",
+					"name": "复生虚弱（第四天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -12592,7 +12592,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 3)",
 					"foundryId": "raiseDead2",
-					"name": "复活虚弱（第3天）",
+					"name": "复生虚弱（第三天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -12642,7 +12642,7 @@
 			"activities": [
 				{
 					"ENG_name": "Forge Telepathic Link",
-					"name": "锻造心灵链接",
+					"name": "锻造心灵联结",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -12658,7 +12658,7 @@
 				{
 					"ENG_name": "Bonded Telepathy",
 					"foundryId": "rarysTelepathicB",
-					"name": "心灵感应羁绊",
+					"name": "心灵羁绊",
 					"duration": {
 						"seconds": 3600
 					},
@@ -12708,7 +12708,7 @@
 				{
 					"ENG_name": "Brief Enfeeblement",
 					"foundryId": "rayOfEnfeeblemen",
-					"name": "短暂虚弱",
+					"name": "短暂衰弱",
 					"duration": {
 						"rounds": 1
 					},
@@ -12717,7 +12717,7 @@
 				{
 					"ENG_name": "Enervated",
 					"foundryId": "rayOfEnfeebleme1",
-					"name": "力竭",
+					"name": "衰弱",
 					"duration": {
 						"seconds": 60
 					},
@@ -12974,7 +12974,7 @@
 				{
 					"ENG_name": "Acid Protection",
 					"foundryId": "resistance",
-					"name": "酸蚀防护",
+					"name": "强酸防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -12992,7 +12992,7 @@
 				{
 					"ENG_name": "Cold Protection",
 					"foundryId": "resistance2",
-					"name": "寒冷防护",
+					"name": "冷冻防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13001,7 +13001,7 @@
 				{
 					"ENG_name": "Fire Protection",
 					"foundryId": "resistance3",
-					"name": "防火措施",
+					"name": "火焰防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13019,7 +13019,7 @@
 				{
 					"ENG_name": "Necrotic Protection",
 					"foundryId": "resistance5",
-					"name": "死灵防护",
+					"name": "暗蚀防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13028,7 +13028,7 @@
 				{
 					"ENG_name": "Piercing Protection",
 					"foundryId": "resistance6",
-					"name": "穿刺抗性",
+					"name": "穿刺防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13037,7 +13037,7 @@
 				{
 					"ENG_name": "Poison Protection",
 					"foundryId": "resistance7",
-					"name": "防毒",
+					"name": "毒素防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13046,7 +13046,7 @@
 				{
 					"ENG_name": "Radiant Protection",
 					"foundryId": "resistance8",
-					"name": "光辉护佑",
+					"name": "光耀防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13064,7 +13064,7 @@
 				{
 					"ENG_name": "Thunder Protection",
 					"foundryId": "resistance10",
-					"name": "雷电防护",
+					"name": "雷鸣防护",
 					"duration": {
 						"seconds": 60
 					},
@@ -13130,7 +13130,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 1)",
 					"foundryId": "resurrection",
-					"name": "复活虚弱（第一天）",
+					"name": "复生虚弱（第一天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -13173,7 +13173,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 2)",
 					"foundryId": "resurrection1",
-					"name": "复活虚弱（第2天）",
+					"name": "复生虚弱（第二天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -13216,7 +13216,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 3)",
 					"foundryId": "resurrection2",
-					"name": "复活虚弱（第3天）",
+					"name": "复生虚弱（第三天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -13259,7 +13259,7 @@
 				{
 					"ENG_name": "Resurrection Sickness (Day 4)",
 					"foundryId": "resurrection3",
-					"name": "复生后遗症（第4天）",
+					"name": "复生虚弱（第四天）",
 					"changes": [
 						{
 							"key": "system.bonuses.abilities.check",
@@ -13302,7 +13302,7 @@
 				{
 					"ENG_name": "Spell Taxed",
 					"foundryId": "resurrection4",
-					"name": "法术税",
+					"name": "法术代价",
 					"duration": {
 						"seconds": 86400
 					},
@@ -13426,12 +13426,12 @@
 		},
 		{
 			"ENG_name": "Scrying",
-			"name": "探知",
+			"name": "探知术",
 			"source": "XPHB",
 			"activities": [
 				{
 					"ENG_name": "Secondhand and Picture",
-					"name": "二手与图片",
+					"name": "二手图片信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13451,7 +13451,7 @@
 				},
 				{
 					"ENG_name": "Secondhand and Garment",
-					"name": "二手衣物",
+					"name": "二手衣物信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13471,7 +13471,7 @@
 				},
 				{
 					"ENG_name": "Secondhand and Body Part",
-					"name": "二手与身体部位",
+					"name": "二手身体部位信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13491,7 +13491,7 @@
 				},
 				{
 					"ENG_name": "Firsthand and Picture",
-					"name": "亲历与图景",
+					"name": "一手图片信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13511,7 +13511,7 @@
 				},
 				{
 					"ENG_name": "Firsthand and Garment",
-					"name": "初手与服饰",
+					"name": "一手衣物信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13531,7 +13531,7 @@
 				},
 				{
 					"ENG_name": "Firsthand and Body Part",
-					"name": "第一手和身体部位",
+					"name": "一手身体部位信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13551,7 +13551,7 @@
 				},
 				{
 					"ENG_name": "Extensive and Picture",
-					"name": "扩展与图片",
+					"name": "熟悉图片信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13571,7 +13571,7 @@
 				},
 				{
 					"ENG_name": "Extensive and Garment",
-					"name": "扩展与服饰",
+					"name": "熟悉衣物信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13591,7 +13591,7 @@
 				},
 				{
 					"ENG_name": "Extensive and Body Part",
-					"name": "广泛性与身体部位",
+					"name": "熟悉身体部位信息",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -13794,7 +13794,7 @@
 				{
 					"ENG_name": "Changed Appearance",
 					"foundryId": "seeming",
-					"name": "改变外观",
+					"name": "改变容貌",
 					"duration": {
 						"seconds": 28800
 					},
@@ -13912,7 +13912,7 @@
 				{
 					"ENG_name": "Shimmering Field",
 					"foundryId": "shieldOfFaith",
-					"name": "闪烁原野",
+					"name": "闪烁场域",
 					"duration": {
 						"seconds": 600
 					},
@@ -13967,7 +13967,7 @@
 				{
 					"ENG_name": "Shillelagh (1d8)",
 					"foundryId": "shillelagh",
-					"name": "木棍术（1d8）",
+					"name": "橡棍术（1d8）",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 60
@@ -14018,7 +14018,7 @@
 				{
 					"ENG_name": "Shillelagh (1d10)",
 					"foundryId": "shillelagh1",
-					"name": "橡棍术 (1d10)",
+					"name": "橡棍术（1d10）",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 60
@@ -14268,7 +14268,7 @@
 				{
 					"ENG_name": "Shocked",
 					"foundryId": "shockingGrasp",
-					"name": "震惊",
+					"name": "电击",
 					"duration": {
 						"turns": 1
 					},
@@ -14550,7 +14550,7 @@
 				{
 					"ENG_name": "Stabilized",
 					"foundryId": "spareTheDying",
-					"name": "已稳定",
+					"name": "稳定",
 					"statuses": [
 						"稳重"
 					]
@@ -14616,7 +14616,7 @@
 				{
 					"ENG_name": "Speaking with Plants",
 					"foundryId": "speakWithPlants",
-					"name": "与植物交谈",
+					"name": "植物交流",
 					"duration": {
 						"seconds": 600
 					}
@@ -14696,7 +14696,7 @@
 			"activities": [
 				{
 					"ENG_name": "Emanation Save",
-					"name": "辐射豁免",
+					"name": "光环豁免",
 					"type": "save",
 					"activation": {
 						"type": ""
@@ -14990,7 +14990,7 @@
 				{
 					"ENG_name": "Stinking Poison",
 					"foundryId": "stinkingCloud",
-					"name": "恶臭毒药",
+					"name": "臭毒",
 					"duration": {
 						"turns": 1
 					},
@@ -15123,7 +15123,7 @@
 				},
 				{
 					"ENG_name": "Turn 3: Lightning",
-					"name": "第3回合：闪电",
+					"name": "回合3：闪电",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/statuses/exhaustion-3.svg",
 					"activation": {
@@ -15165,7 +15165,7 @@
 				},
 				{
 					"ENG_name": "Turn 4: Hailstones",
-					"name": "第4回合：冰雹",
+					"name": "回合4：冰雹",
 					"type": "damage",
 					"img": "systems/dnd5e/icons/svg/statuses/exhaustion-4.svg",
 					"activation": {
@@ -15198,7 +15198,7 @@
 				},
 				{
 					"ENG_name": "Turn 5+: Gusts and Rain",
-					"name": "第5+轮：狂风暴雨",
+					"name": "回合5+：狂风暴雨",
 					"type": "damage",
 					"img": "systems/dnd5e/icons/svg/statuses/exhaustion-5.svg",
 					"activation": {
@@ -15277,7 +15277,7 @@
 				{
 					"ENG_name": "Pursuing Suggestion",
 					"foundryId": "suggestion",
-					"name": "追随建议",
+					"name": "追随暗示",
 					"duration": {
 						"seconds": 28800
 					},
@@ -15299,18 +15299,18 @@
 					"profiles": [
 						{
 							"ENG_name": "Beholderkin",
-							"name": "巨眼怪族",
-							"uuid": "@creature[异常灵（贝赫尔金）|TCE]"
+							"name": "类眼魔",
+							"uuid": "@creature[异怪灵魄（类眼魔）|TCE]"
 						},
 						{
 							"ENG_name": "Slaad",
 							"name": "史拉蟾语",
-							"uuid": "@creature[异怪灵（史拉蟾）|TCE]"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|TCE]"
 						},
 						{
 							"ENG_name": "Star Spawn",
 							"name": "星之子",
-							"uuid": "@creature[异变之魂（星种）|TCE]"
+							"uuid": "@creature[异怪灵魄（星之子）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15339,13 +15339,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异常灵（贝赫尔金）|XPHB]"
+							"uuid": "@creature[异怪灵魄（类眼魔）|XPHB]"
 						},
 						{
-							"uuid": "@creature[异怪灵（史拉蟾）|XPHB]"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|XPHB]"
 						},
 						{
-							"uuid": "@creature[异变之魂（星种）|XPHB]"
+							"uuid": "@creature[异怪灵魄（星之子）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15373,17 +15373,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[野兽之魂（空气）|TCE]"
+							"uuid": "@creature[野兽灵魄（空）|TCE]"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "@creature[野性灵（陆地）|TCE]"
+							"uuid": "@creature[野兽灵魄（陆）|TCE]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[野兽之魂（水）|TCE]"
+							"uuid": "@creature[野兽灵魄（水）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15411,13 +15411,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[野兽之魂（空气）|XPHB]"
+							"uuid": "@creature[野兽灵魄（空）|XPHB]"
 						},
 						{
-							"uuid": "@creature[野性灵（陆地）|XPHB]"
+							"uuid": "@creature[野兽灵魄（陆）|XPHB]"
 						},
 						{
-							"uuid": "@creature[野兽之魂（水）|XPHB]"
+							"uuid": "@creature[野兽灵魄（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15444,12 +15444,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@creature[天界灵（复仇者）|TCE]"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|TCE]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@creature[天界之魂（守卫者）|TCE]"
+							"uuid": "@creature[天界灵魄（守护圣灵）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15480,12 +15480,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@creature[天界灵（复仇者）|XPHB]"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|XPHB]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@creature[天界之魂（守卫者）|XPHB]"
+							"uuid": "@creature[天界灵魄（守护圣灵）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15512,17 +15512,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构造灵（黏土）|TCE]"
+							"uuid": "@creature[构装灵魄（粘土）|TCE]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@creature[构装生物之魂（金属）|TCE]"
+							"uuid": "@creature[构装灵魄（金属）|TCE]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@creature[构装生物之灵（石）|TCE]"
+							"uuid": "@creature[构装灵魄（岩石）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15553,17 +15553,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构造灵（黏土）|XPHB]"
+							"uuid": "@creature[构装灵魄（粘土）|XPHB]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@creature[构装生物之魂（金属）|XPHB]"
+							"uuid": "@creature[构装灵魄（金属）|XPHB]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@creature[构装生物之灵（石）|XPHB]"
+							"uuid": "@creature[构装灵魄（岩石）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15590,7 +15590,7 @@
 					"profiles": [
 						{
 							"ENG_name": "Chromatic",
-							"name": "多彩的",
+							"name": "多彩",
 							"uuid": "@creature[龙族之魂（彩色）|FTD]"
 						},
 						{
@@ -15600,7 +15600,7 @@
 						},
 						{
 							"ENG_name": "Metallic",
-							"name": "金属的",
+							"name": "金属",
 							"uuid": "@creature[龙族之魂（金属）|FTD]"
 						}
 					]
@@ -15648,22 +15648,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[元素灵（风）|TCE]"
+							"uuid": "@creature[元素灵魄（气）|TCE]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素之灵（土）|TCE]"
+							"uuid": "@creature[元素灵魄（土）|TCE]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@creature[元素灵（火）|TCE]"
+							"uuid": "@creature[元素灵魄（火）|TCE]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[元素精灵（水）|TCE]"
+							"uuid": "@creature[元素灵魄（水）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15693,22 +15693,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[元素灵（风）|XPHB]"
+							"uuid": "@creature[元素灵魄（气）|XPHB]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素之灵（土）|XPHB]"
+							"uuid": "@creature[元素灵魄（土）|XPHB]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@creature[元素灵（火）|XPHB]"
+							"uuid": "@creature[元素灵魄（火）|XPHB]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[元素精灵（水）|XPHB]"
+							"uuid": "@creature[元素灵魄（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15735,17 +15735,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "@creature[精类之魂（喷烟）|TCE]"
+							"uuid": "@creature[妖精灵魄（愤怒）|TCE]"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "@creature[精类灵（欢乐）|TCE]"
+							"uuid": "@creature[妖精灵魄（欢欣）|TCE]"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "@creature[仙灵（调皮）|TCE]"
+							"uuid": "@creature[妖精灵魄（诡诈）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15774,13 +15774,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[精类之魂（喷烟）|XPHB]"
+							"uuid": "@creature[妖精灵魄（愤怒）|XPHB]"
 						},
 						{
-							"uuid": "@creature[精类灵（欢乐）|XPHB]"
+							"uuid": "@creature[妖精灵魄（欢欣）|XPHB]"
 						},
 						{
-							"uuid": "@creature[仙灵（调皮）|XPHB]"
+							"uuid": "@creature[妖精灵魄（诡诈）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15808,17 +15808,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[恶魔之魂|TCE]"
+							"uuid": "@creature[邪魔灵魄（恶魔）|TCE]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@creature[恶魔之魂|TCE]"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|TCE]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[恶魔灵（尤格罗斯）|TCE]"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15850,17 +15850,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[恶魔之魂|XPHB]"
+							"uuid": "@creature[邪魔灵魄（恶魔）|XPHB]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@creature[恶魔之魂|XPHB]"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|XPHB]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[恶魔灵（尤格罗斯）|XPHB]"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -15925,18 +15925,18 @@
 					"profiles": [
 						{
 							"ENG_name": "Ghostly",
-							"name": "幽灵般的",
-							"uuid": "@creature[不死之魂（幽灵形态）|TCE]"
+							"name": "幽体",
+							"uuid": "@creature[亡灵灵魄（幽体）|TCE]"
 						},
 						{
 							"ENG_name": "Putrid",
-							"name": "恶臭",
-							"uuid": "@creature[不死之魂（腐臭）|TCE]"
+							"name": "腐尸",
+							"uuid": "@creature[亡灵灵魄（腐尸）|TCE]"
 						},
 						{
 							"ENG_name": "Skeletal",
 							"name": "骷髅",
-							"uuid": "@creature[不死之魂（骷髅）|TCE]"
+							"uuid": "@creature[亡灵灵魄（骷髅）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -15965,13 +15965,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[不死之魂（幽灵形态）|XPHB]"
+							"uuid": "@creature[亡灵灵魄（幽体）|XPHB]"
 						},
 						{
-							"uuid": "@creature[不死之魂（腐臭）|XPHB]"
+							"uuid": "@creature[亡灵灵魄（腐尸）|XPHB]"
 						},
 						{
-							"uuid": "@creature[不死之魂（骷髅）|XPHB]"
+							"uuid": "@creature[亡灵灵魄（骷髅）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16031,7 +16031,7 @@
 				},
 				{
 					"ENG_name": "Create New Sunbeam",
-					"name": "创造新日光束",
+					"name": "创造新阳炎射线",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/statuses/concentrating.svg",
 					"activation": {
@@ -16700,7 +16700,7 @@
 				{
 					"ENG_name": "Uncontrollable Laughter",
 					"foundryId": "tashasHideousLau",
-					"name": "无法控制的大笑",
+					"name": "失控狂笑",
 					"duration": {
 						"seconds": 60
 					},
@@ -16765,7 +16765,7 @@
 			"activities": [
 				{
 					"ENG_name": "Attack and Pull",
-					"name": "攻击并拉扯",
+					"name": "攻击并拉回",
 					"type": "attack",
 					"activation": {
 						"type": "action"
@@ -16987,7 +16987,7 @@
 				{
 					"ENG_name": "Universal Communication",
 					"foundryId": "tongues",
-					"name": "通用传讯",
+					"name": "通用交流",
 					"duration": {
 						"seconds": 3600
 					},
@@ -17048,7 +17048,7 @@
 			"activities": [
 				{
 					"ENG_name": "Grant Truesight",
-					"name": "授予真实视野",
+					"name": "授予真实视觉",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -17164,7 +17164,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Tsunami",
-					"name": "召唤海啸",
+					"name": "制造海啸",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -17426,7 +17426,7 @@
 				{
 					"ENG_name": "Lingering Acid",
 					"foundryId": "vitriolicSphere",
-					"name": "酸蚀残留",
+					"name": "持续性强酸",
 					"duration": {
 						"turns": 1
 					},
@@ -17442,7 +17442,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Wall",
-					"name": "创造之墙",
+					"name": "制造墙体",
 					"type": "save",
 					"img": "icons/magic/fire/flame-burning-fence.webp",
 					"activation": {
@@ -17487,7 +17487,7 @@
 				},
 				{
 					"ENG_name": "Create Ring",
-					"name": "制造戒指",
+					"name": "制造环型",
 					"type": "save",
 					"img": "icons/magic/fire/barrier-wall-flame-ring-yellow.webp",
 					"activation": {
@@ -17614,7 +17614,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Globe",
-					"name": "创造球体",
+					"name": "制造球体",
 					"type": "save",
 					"img": "icons/magic/water/barrier-ice-shield.webp",
 					"activation": {
@@ -17795,7 +17795,7 @@
 			"activities": [
 				{
 					"ENG_name": "Create Wall",
-					"name": "创造之墙",
+					"name": "制造墙体",
 					"type": "save",
 					"img": "icons/magic/nature/root-vine-entwined-thorns.webp",
 					"activation": {
@@ -17840,7 +17840,7 @@
 				},
 				{
 					"ENG_name": "Create Circle",
-					"name": "创造结界",
+					"name": "创造圆形",
 					"type": "save",
 					"img": "icons/magic/nature/trap-spikes-thorns-green.webp",
 					"activation": {
@@ -18216,7 +18216,7 @@
 				{
 					"ENG_name": "Frightening Terrors",
 					"foundryId": "weird",
-					"name": "惊骇恐怖",
+					"name": "惊骇恐惧",
 					"duration": {
 						"seconds": 60
 					},
@@ -18348,7 +18348,7 @@
 				},
 				{
 					"ENG_name": "Create Segmented Wall",
-					"name": "创建分段墙",
+					"name": "创建分段墙壁",
 					"type": "save",
 					"activation": {
 						"type": "action"
@@ -18409,7 +18409,7 @@
 					},
 					"roll": {
 						"ENG_name": "Strength Sap Duration",
-						"name": "力量吸取 持续时间",
+						"name": "力量减益持续时间",
 						"formula": "2d4[days]"
 					},
 					"effects": [
@@ -18423,7 +18423,7 @@
 				{
 					"ENG_name": "Wish Stress",
 					"foundryId": "wish",
-					"name": "祈愿负担",
+					"name": "祈愿代价",
 					"changes": [
 						{
 							"key": "system.abilities.str.value",
@@ -18542,7 +18542,7 @@
 			"activities": [
 				{
 					"ENG_name": "Teleport to Sanctuary",
-					"name": "传送至圣所",
+					"name": "传送至圣殿",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/trait-saves.svg",
 					"activation": {
@@ -18551,7 +18551,7 @@
 				},
 				{
 					"ENG_name": "Designate Sanctuary",
-					"name": "指定庇护所",
+					"name": "指定圣殿",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/items/background.svg",
 					"activation": {
@@ -18639,7 +18639,7 @@
 				},
 				{
 					"ENG_name": "Emanation Save",
-					"name": "辐射豁免",
+					"name": "光环豁免",
 					"type": "save",
 					"description": {
 						"chatFlavor": "推动10尺，失败则&Reference[倒地]"

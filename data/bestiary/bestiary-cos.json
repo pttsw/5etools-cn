@@ -39,7 +39,7 @@
 			"page": 93,
 			"_copy": {
 				"ENG_name": "Vampire Spawn",
-				"name": "吸血鬼衍体",
+				"name": "初生吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -295,7 +295,7 @@
 							"spells": [
 								"{@spell 死云术}",
 								"{@spell 指使术}",
-								"{@spell 探知}"
+								"{@spell 探知术}"
 							]
 						},
 						"6": {
@@ -1176,7 +1176,7 @@
 			"page": 47,
 			"_copy": {
 				"ENG_name": "Vampire Spawn",
-				"name": "吸血鬼衍体",
+				"name": "初生吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -1226,7 +1226,7 @@
 			"page": 70,
 			"_copy": {
 				"ENG_name": "Vampire Spawn",
-				"name": "吸血鬼衍体",
+				"name": "初生吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -1685,7 +1685,7 @@
 			"page": 64,
 			"_copy": {
 				"ENG_name": "Vampire Spawn",
-				"name": "吸血鬼衍体",
+				"name": "初生吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -2251,7 +2251,7 @@
 			"page": 93,
 			"_copy": {
 				"ENG_name": "Vampire Spawn",
-				"name": "吸血鬼衍体",
+				"name": "初生吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4092,7 +4092,7 @@
 							"slots": 1,
 							"spells": [
 								"{@spell 活化物件}",
-								"{@spell 探知}"
+								"{@spell 探知术}"
 							]
 						}
 					},
@@ -4162,7 +4162,7 @@
 								{
 									"ENG_name": "Stake to the Heart",
 									"type": "itemSub",
-									"name": "木桩穿心",
+									"name": "桩刺",
 									"entry": "如果在他{@condition 失能}于棺材中时，将木制的穿刺武器刺入他的心脏，他将被{@condition 麻痹}，直到木桩被移除。"
 								},
 								{
@@ -4179,14 +4179,14 @@
 			"action": [
 				{
 					"ENG_name": "Multiattack (Vampire Form Only)",
-					"name": "多重攻击（仅限吸血鬼形态）",
+					"name": "多重攻击（仅吸血鬼形态）",
 					"entries": [
 						"施特拉德进行两次攻击，其中只能有一次是咬击。"
 					]
 				},
 				{
 					"ENG_name": "Unarmed Strike (Vampire or Wolf Form Only)",
-					"name": "无武器攻击（仅限吸血鬼或狼形态）",
+					"name": "无武器攻击（仅吸血鬼或狼形态）",
 					"entries": [
 						"{@atk mw} {@hit 9} 攻击命中，触及5尺，一个目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，外加14 ({@damage 4d6}) 黯蚀伤害。如果目标是生物，斯特拉德可以选择擒抱它（逃脱 {@dc 18}）而不是造成挥砍伤害。"
 					]
@@ -4195,7 +4195,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及范围5尺，单一愿意的生物，或被施特拉德{@condition 擒抱}的生物，或处于{@condition 失能}或{@condition 束缚}状态的生物。{@h}7（{@damage 1d6 + 4}）点穿刺伤害加上10（{@damage 3d6}）黯蚀伤害。目标的生命值最大值减少的量等于所受的黯蚀伤害，施特拉德恢复等同于该量的生命值。这种减少持续到目标完成一次长休。如果目标的生命值最大值减少到0，目标死亡。以这种方式被杀死并被埋葬的类人生物在下一个夜晚以施特拉德控制下的{@creature 吸血鬼衍体}复活。"
+						"{@atk mw} 命中{@hit 9}，触及范围5尺，单一愿意的生物，或被施特拉德{@condition 擒抱}的生物，或处于{@condition 失能}或{@condition 束缚}状态的生物。{@h}7（{@damage 1d6 + 4}）点穿刺伤害加上10（{@damage 3d6}）黯蚀伤害。目标的生命值最大值减少的量等于所受的黯蚀伤害，施特拉德恢复等同于该量的生命值。这种减少持续到目标完成一次长休。如果目标的生命值最大值减少到0，目标死亡。以这种方式被杀死并被埋葬的类人生物在下一个夜晚以施特拉德控制下的{@creature 初生吸血鬼}复活。"
 					]
 				},
 				{
@@ -4700,7 +4700,7 @@
 							"spells": [
 								"{@spell 毕格比之手}",
 								"{@spell 寒冰锥}",
-								"{@spell 探知}"
+								"{@spell 探知术}"
 							]
 						},
 						"6": {
@@ -4796,7 +4796,7 @@
 		},
 		{
 			"ENG_name": "Tree Blight",
-			"name": "树木枯萎",
+			"name": "枯树怪",
 			"source": "CoS",
 			"page": 230,
 			"otherSources": [
@@ -4805,7 +4805,7 @@
 				}
 			],
 			"reprintedAs": [
-				"树木枯萎|XMM"
+				"枯树怪|XMM"
 			],
 			"size": [
 				"H"
@@ -4874,14 +4874,14 @@
 				},
 				{
 					"ENG_name": "Branch",
-					"name": "树枝",
+					"name": "枯枝撞击",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及15尺，单一目标。{@h}16（{@damage 3d6 + 6}）钝击伤害。"
 					]
 				},
 				{
 					"ENG_name": "Grasping Root",
-					"name": "根系擒缚",
+					"name": "根系缠绕",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及范围15尺，单一生物，且未被枯萎{@condition 擒抱}。{@h}目标被{@condition 擒抱}（逃脱{@dc 15}）。直到抓握结束，目标在其每个回合开始时承受9（{@damage 1d6 + 6}）钝击伤害。根的AC为15，并且可以通过一次性造成6点或更多挥砍伤害来切断。切断根不会伤害枯萎，但会结束抓握。"
 					]
@@ -5348,7 +5348,7 @@
 			"page": 93,
 			"_copy": {
 				"ENG_name": "Vampire Spawn",
-				"name": "吸血鬼衍体",
+				"name": "初生吸血鬼",
 				"source": "MM",
 				"_mod": {
 					"*": {

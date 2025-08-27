@@ -69,11 +69,11 @@
 				"walk": 30,
 				"fly": {
 					"number": 30,
-					"condition": "（悬浮；仅限空中飞人）"
+					"condition": "（悬浮；仅空中飞人）"
 				},
 				"swim": {
 					"number": 30,
-					"condition": "（仅限潜水员）"
+					"condition": "（仅潜水员）"
 				},
 				"canHover": true
 			},
@@ -92,7 +92,7 @@
 				"perception": "+7"
 			},
 			"senses": [
-				"盲视 60 尺（仅限哨兵）",
+				"盲视 60 尺（仅哨兵）",
 				"黑暗视觉 60 尺"
 			],
 			"passive": 17,
@@ -115,16 +115,16 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Diplomat and Medic Only)",
-					"name": "施法（仅限外交官和医疗兵）",
+					"name": "施法（仅外交官和医疗兵）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"这个机器人施放以下法术之一，不需要材料成分，并使用智力作为施法能力："
 					],
 					"daily": {
 						"2e": [
-							"{@spell 疗伤术}（作为3环法术；仅限医护兵）",
+							"{@spell 疗伤术}（作为3环法术；仅医护兵）",
 							"{@spell 鉴定术}",
-							"{@spell 巧言术}（仅限外交官）"
+							"{@spell 巧言术}（仅外交官）"
 						]
 					},
 					"ability": "int",
@@ -166,7 +166,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Parry (Duelist Only)",
-					"name": "招架（仅限剑客）",
+					"name": "招架（仅剑客）",
 					"entries": [
 						"这个机器人在其护甲等级上加3来对抗一次命中它的近战攻击骰。这样做的话，机器人必须能看到攻击者。"
 					]
@@ -295,7 +295,7 @@
 						"reaction": {
 							"mode": "renameArr",
 							"renames": {
-								"rename": "招架（仅限剑客）",
+								"rename": "招架（仅剑客）",
 								"with": "格挡"
 							}
 						}
@@ -761,7 +761,7 @@
 					],
 					"will": [
 						"{@spell 光亮术}",
-						"{@spell 法师护甲}（仅限自身）",
+						"{@spell 法师护甲}（仅自身）",
 						"{@spell 法师之手}",
 						"{@spell 次级幻影}"
 					],
@@ -790,7 +790,7 @@
 				},
 				{
 					"ENG_name": "Arcane Burst",
-					"name": "奥能爆",
+					"name": "奥能爆发",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 5}，触及5尺或射程120尺，单一目标。{@h}8（{@damage 1d10 + 3}）力场伤害。"
 					]
@@ -2494,7 +2494,7 @@
 			"action": [
 				{
 					"ENG_name": "Arcane Burst",
-					"name": "奥能爆",
+					"name": "奥能爆发",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 4}，触及5尺或射程120尺，单一目标。{@h}7 ({@damage 1d10 + 2}) 力场伤害。"
 					]
@@ -2593,7 +2593,7 @@
 				},
 				{
 					"ENG_name": "Poison Jab",
-					"name": "毒刺攻击",
+					"name": "猛毒刺",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 6}，触及5尺或30/120尺，单一目标。{@h}13（{@damage 4d4 + 3}）点穿刺伤害，并且目标必须成功进行一次{@dc 16}体质豁免检定，否则在1分钟内获得{@condition 中毒}状态。目标可以在每个回合结束时重复豁免检定，成功则结束该效果。"
 					]
@@ -3998,7 +3998,7 @@
 						"2e": [
 							"{@spell 启蒙术}（作为动作）",
 							"{@spell 神莓术}",
-							"{@spell 植物滋长}（仅限动作）"
+							"{@spell 植物滋长}（仅动作）"
 						],
 						"1e": [
 							"{@spell 英雄宴}（作为一个动作）",
@@ -4307,7 +4307,7 @@
 				},
 				{
 					"ENG_name": "Arcane Burst",
-					"name": "奥能爆",
+					"name": "奥能爆发",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 5}，触及5尺或射程120尺，单一目标。{@h}8（{@damage 1d10 + 3}）光耀伤害。"
 					]
@@ -5132,7 +5132,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (4/Day)",
-					"name": "传奇抗性（每日4次）",
+					"name": "传奇抗性（4/天）",
 					"entries": [
 						"如果扎尔贡未能通过豁免检定，它可以选择成功。"
 					]

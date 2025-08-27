@@ -2269,11 +2269,11 @@
 			"speed": {
 				"walk": {
 					"number": 40,
-					"condition": "（仅限狼形态）"
+					"condition": "（仅狼形态）"
 				},
 				"burrow": {
 					"number": 5,
-					"condition": "（仅限狐狸形态）"
+					"condition": "（仅狐狸形态）"
 				},
 				"climb": {
 					"number": 30,
@@ -2281,7 +2281,7 @@
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅限猫头鹰形态）"
+					"condition": "（仅猫头鹰形态）"
 				}
 			},
 			"str": 12,
@@ -2300,7 +2300,7 @@
 				"survival": "+6"
 			},
 			"senses": [
-				"黑暗视觉 60 尺（仅限兽形态）"
+				"黑暗视觉 60 尺（仅兽形态）"
 			],
 			"passive": 16,
 			"resist": [
@@ -2314,7 +2314,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Humanoid Form Only)",
-					"name": "施法（仅限人形态）",
+					"name": "施法（仅人形态）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"这位德鲁伊是一个9级施法者。其施法能力是感知（法术豁免{@dc 14}；法术攻击命中{@hit 6}）。他准备了以下德鲁伊法术："
@@ -2378,14 +2378,14 @@
 				},
 				{
 					"ENG_name": "Ice Sickle (Humanoid Form Only)",
-					"name": "冰镰（仅限人形态）",
+					"name": "冰镰（仅人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}3（{@damage 1d4 + 1}）挥砍伤害加上5（{@damage 2d4}）冷冻伤害。"
 					]
 				},
 				{
 					"ENG_name": "Maul (Beast Form Only)",
-					"name": "猛击（仅限野兽形态）",
+					"name": "猛击（仅野兽形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及范围5尺，单一目标。{@h}3点（{@damage 1d4 + 1}）点穿刺伤害。"
 					]
@@ -2770,7 +2770,7 @@
 		},
 		{
 			"ENG_name": "Gnoll Vampire",
-			"name": "豺狼人吸血鬼",
+			"name": "鬣狗人吸血鬼",
 			"source": "IDRotF",
 			"page": 290,
 			"size": [
@@ -2829,7 +2829,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"豺狼人"
+				"鬣狗人"
 			],
 			"cr": "8",
 			"trait": [
@@ -2894,7 +2894,7 @@
 								{
 									"ENG_name": "Stake to the Heart",
 									"type": "itemSub",
-									"name": "木桩穿心",
+									"name": "桩刺",
 									"entry": "如果一根由木头制成的穿刺武器在吸血鬼处于其休息场所的{@condition 失能}状态下被插入其心脏，吸血鬼将被{@condition 麻痹}，直到该木桩被移除。"
 								},
 								{
@@ -2911,35 +2911,35 @@
 			"action": [
 				{
 					"ENG_name": "Multiattack (Vampire Form Only)",
-					"name": "多重攻击（仅限吸血鬼形态）",
+					"name": "多重攻击（仅吸血鬼形态）",
 					"entries": [
 						"吸血鬼进行两次攻击：一次用其咬击，一次用其爪击。"
 					]
 				},
 				{
 					"ENG_name": "Bite (Hyena or Vampire Form Only)",
-					"name": "咬击（仅限鬣狗形态或吸血鬼形态）",
+					"name": "咬击（仅鬣狗形态或吸血鬼形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一生物。{@h}12（{@damage 2d6 + 5}）点穿刺伤害加上9（{@damage 2d8}）黯蚀伤害。目标的生命值上限减少等同于所受黯蚀伤害的数值，而吸血鬼恢复等同于该数值的生命值。该减少持续直到目标完成一次长休。如果目标的生命值上限被减少到0，则目标死亡。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Vampire Form Only)",
-					"name": "爪击（仅限吸血鬼形态）",
+					"name": "爪击（仅吸血鬼形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}10（{@damage 2d4 + 5}）挥砍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Frightful Cackle (Hyena or Vampire Form Only)",
-					"name": "恐怖狂笑（仅限鬣狗或吸血鬼形态）",
+					"name": "恐怖狂笑（仅鬣狗或吸血鬼形态）",
 					"entries": [
 						"吸血鬼发出令人毛骨悚然的狂笑。每个吸血鬼选择的、在吸血鬼120尺范围内并且能听到其狂笑的生物必须进行一次{@dc 15}感知豁免检定，否则将被{@condition 恐慌}状态影响1分钟。一个生物可以在其每个回合结束时重复进行豁免检定，成功则结束该效果。如果一个生物的豁免检定成功或者该效果对其结束，该生物在接下来的24小时内对吸血鬼的恐怖狂笑免疫。"
 					]
 				},
 				{
 					"ENG_name": "Sickening Gaze (Hyena or Vampire Form Only)",
-					"name": "令人作呕的凝视（仅限鬣狗或吸血鬼形态）",
+					"name": "令人作呕的凝视（仅鬣狗或吸血鬼形态）",
 					"entries": [
 						"吸血鬼瞄准它能看到的30尺范围内的一个类人生物。如果目标能看到吸血鬼，目标必须成功进行一次对抗这种魔法的{@dc 15}体质豁免检定，否则在24小时内将被{@condition 中毒}。成功进行豁免检定的生物在24小时内对这种吸血鬼的令人作呕的目光免疫。"
 					]
@@ -3056,7 +3056,7 @@
 					"daily": {
 						"1e": [
 							"{@spell 支配怪物}",
-							"{@spell 异界传送}（仅限自身）"
+							"{@spell 异界传送}（仅自身）"
 						]
 					},
 					"ability": "int"
@@ -3645,11 +3645,11 @@
 					"daily": {
 						"3e": [
 							"{@spell 侦测魔法}",
-							"{@spell 变巨/缩小术}（仅限自身）",
+							"{@spell 变巨/缩小术}（仅自身）",
 							"{@spell 妖火}",
-							"{@spell 隐形术}（仅限自身）",
+							"{@spell 隐形术}（仅自身）",
 							"{@spell 变形术}",
-							"{@spell 石肤术}（仅限自身）"
+							"{@spell 石肤术}（仅自身）"
 						]
 					},
 					"ability": "wis"
@@ -5043,7 +5043,7 @@
 								{
 									"ENG_name": "Stake to the Heart",
 									"type": "itemSub",
-									"name": "木桩穿心",
+									"name": "桩刺",
 									"entry": "当一个用木头制成的穿刺武器刺入吸血鬼的心脏时，如果它在其休息处处于{@condition 失能}状态，它将被摧毁。"
 								},
 								{
@@ -7664,7 +7664,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Hellish Rebuke (2/Day)",
-					"name": "地狱斥责（2/日）",
+					"name": "炼狱叱喝（2/日）",
 					"entries": [
 						"当Xardorok被他能看到的60尺内的生物伤害时，伤害他的生物将被地狱火焰所包围，必须进行一次{@dc 15}敏捷豁免检定，失败时受到16({@damage 3d10})点火焰伤害，成功则只受到一半的伤害。"
 					]

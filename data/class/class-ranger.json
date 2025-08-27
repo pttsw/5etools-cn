@@ -1009,7 +1009,7 @@
 				"猎人|游侠||猎人||3",
 				"防守战术|游侠||猎人||7",
 				"多重攻击|游侠||猎人||11",
-				"高效猎人防术|游侠||猎人||15"
+				"高效防守战术|游侠||猎人||15"
 			]
 		},
 		{
@@ -1532,8 +1532,8 @@
 			"subclassFeatures": [
 				"猎人|游侠|XPHB|猎人|XPHB|3",
 				"防守战术|游侠|XPHB|猎人|XPHB|7",
-				"你获得了游侠子类中的一个特性。|游侠|XPHB|猎人|XPHB|11",
-				"高效猎人防术|游侠|XPHB|猎人|XPHB|15"
+				"高阶猎杀技艺|游侠|XPHB|猎人|XPHB|11",
+				"高效防守战术|游侠|XPHB|猎人|XPHB|15"
 			],
 			"hasFluffImages": true
 		}
@@ -1573,7 +1573,7 @@
 			"level": 1,
 			"entries": [
 				"第1级起，你针对一种特定类型敌人的研究令你有着充足的经验用以追踪、狩猎乃至与之交流。",
-				"从下列种类中选择其一作为宿敌： {@filter 异怪|bestiary|type=异怪}, {@filter 野兽|bestiary|type=野兽}、{@filter 天界生物|bestiary|type=天界生物}, {@filter 构装体|bestiary|type=构装体}、{@filter 龙|bestiary|type=龙}、{@filter 元素生物|bestiary|type=元素生物}、{@filter 精类|bestiary|type=精类}、{@filter 邪魔|bestiary|type=邪魔}、{@filter 巨人|bestiary|type=巨人}、{@filter 怪兽|bestiary|type=怪兽}、{@filter 泥怪|bestiary|type=泥怪}、{@filter 植物|bestiary|type=植物}、{@filter 不死生物|bestiary|type=不死生物}。或者作为另一种方案，你也可以选择两个{@filter 类人生物|bestiary|type=类人生物}种族（例如{@creature 豺狼人||豺狼人}和{@creature 兽人||兽人}）作为宿敌。",
+				"从下列种类中选择其一作为宿敌： {@filter 异怪|bestiary|type=异怪}, {@filter 野兽|bestiary|type=野兽}、{@filter 天界生物|bestiary|type=天界生物}, {@filter 构装体|bestiary|type=构装体}、{@filter 龙|bestiary|type=龙}、{@filter 元素生物|bestiary|type=元素生物}、{@filter 精类|bestiary|type=精类}、{@filter 邪魔|bestiary|type=邪魔}、{@filter 巨人|bestiary|type=巨人}、{@filter 怪兽|bestiary|type=怪兽}、{@filter 泥怪|bestiary|type=泥怪}、{@filter 植物|bestiary|type=植物}、{@filter 不死生物|bestiary|type=不死生物}。或者作为另一种方案，你也可以选择两个{@filter 类人生物|bestiary|type=类人生物}种族（例如{@creature 鬣狗人||鬣狗人}和{@creature 兽人||兽人}）作为宿敌。",
 				"追踪宿敌时，你的感知（{@skill 生存}）检定，以及回想关于宿敌信息时进行的智力检定具有优势。",
 				"获得该特性时，如果你选择的宿敌具有语言能力，则你还可以学会宿敌所知晓的一门语言。",
 				"第6和第14级时，你将分别获得一个额外的宿敌以及相关语言。另外，随着等级的提升，你所选择的宿敌应该与你在冒险中所遭遇怪物的种类层次相符。"
@@ -2388,7 +2388,7 @@
 						{
 							"ENG_name": "Decrease Exhaustion",
 							"type": "entries",
-							"name": "减少疲劳",
+							"name": "减少力竭",
 							"entries": [
 								"每当你完成一次{@variantrule 短休|XPHB}，如果你有任何{@condition 力竭|XPHB}等级，它将减少1。"
 							]
@@ -2887,7 +2887,7 @@
 				"选择猎人范型，意味着你接受文明社会与惊粟荒野间的交界作为你的战斗岗位。走上猎人之路后，你将学习专业的战斗技巧，并面临的各种威胁：从狂暴的食人魔和成群的兽人，到高耸的巨人和可怕的龙都是你前进的障碍。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "猎物|游侠||猎人||3"
+					"subclassFeature": "猎杀技艺|游侠||猎人||3"
 				}
 			]
 		},
@@ -2909,7 +2909,7 @@
 		},
 		{
 			"ENG_name": "Hunter's Prey",
-			"name": "猎物",
+			"name": "猎杀技艺",
 			"source": "PHB",
 			"page": 93,
 			"srd": true,
@@ -3151,7 +3151,7 @@
 		},
 		{
 			"ENG_name": "Superior Hunter's Defense",
-			"name": "高效猎人防术",
+			"name": "高效防守战术",
 			"source": "PHB",
 			"page": 93,
 			"srd": true,
@@ -4100,7 +4100,7 @@
 						{
 							"ENG_name": "Restoring or Replacing the Beast",
 							"type": "entries",
-							"name": "恢复或替换野兽",
+							"name": "复活或替换野兽",
 							"entries": [
 								"如果野兽在最近一小时内死亡，你可以采取一个{@action 魔法|XPHB}动作来触摸它并消耗一个法术位。野兽在1分钟后复活，其所有{@variantrule 生命值|XPHB}恢复。",
 								"每当你完成一次{@variantrule 长休|XPHB}，你可以召唤一个不同的原始野兽，它出现在你5英尺范围内的一个未被占据的空间内。你选择它的状态块和外观。如果你已经通过这个特性拥有了一个野兽，当新的野兽出现时，旧的会消失。"
@@ -4366,7 +4366,7 @@
 				{
 					"ENG_name": "Ambusher's Leap",
 					"type": "entries",
-					"name": "幽暗突袭者的跳跃",
+					"name": "伏击者之跃",
 					"entries": [
 						"在每场战斗的第一个回合开始时，你的{@variantrule 速度|XPHB}增加10英尺，直到该回合结束。"
 					]
@@ -4374,7 +4374,7 @@
 				{
 					"ENG_name": "Dreadful Strike",
 					"type": "entries",
-					"name": "恐怖打击",
+					"name": "恐惧打击",
 					"entries": [
 						"当你使用武器攻击一个生物并击中时，你可以额外造成{@damage 2d6}心灵伤害。你每个回合只能使用这个特性一次，你可以使用的次数等于你智慧调整值的次数（最少一次），并且在你完成一次{@variantrule 长休|XPHB}后恢复所有已使用的使用次数。"
 					]
@@ -4518,7 +4518,7 @@
 				{
 					"ENG_name": "Mass Fear",
 					"type": "entries",
-					"name": "群体恐惧",
+					"name": "群慌",
 					"entries": [
 						"目标生物以及它周围10英尺内的所有生物都必须进行一次对抗你法术豁免DC的智慧豁免。豁免失败的生物将处于{@condition 恐慌|XPHB}状态，直到你的下一个回合开始。"
 					]
@@ -4557,7 +4557,7 @@
 				"你在野外和其他地方追踪猎物，利用你作为猎人的能力来保护自然和各地的人们免受那些想要摧毁它们的力量的伤害。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "猎物|游侠|XPHB|猎人|XPHB|3"
+					"subclassFeature": "猎杀技艺|游侠|XPHB|猎人|XPHB|3"
 				},
 				{
 					"type": "refSubclassFeature",
@@ -4583,7 +4583,7 @@
 		},
 		{
 			"ENG_name": "Hunter's Prey",
-			"name": "猎物",
+			"name": "猎杀技艺",
 			"source": "XPHB",
 			"page": 127,
 			"srd52": true,
@@ -4658,7 +4658,7 @@
 		},
 		{
 			"ENG_name": "Superior Hunter's Prey",
-			"name": "你获得了游侠子类中的一个特性。",
+			"name": "高阶猎杀技艺",
 			"source": "XPHB",
 			"page": 127,
 			"srd52": true,
@@ -4675,7 +4675,7 @@
 		},
 		{
 			"ENG_name": "Superior Hunter's Defense",
-			"name": "高效猎人防术",
+			"name": "高效防守战术",
 			"source": "XPHB",
 			"page": 127,
 			"srd52": true,

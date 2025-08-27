@@ -859,7 +859,7 @@
 				},
 				"手稳就准|游荡者|XPHB|3",
 				"属性值提升|游荡者|XPHB|4",
-				"狡诈攻击|游荡者|XPHB|5",
+				"诡诈打击|游荡者|XPHB|5",
 				"直觉闪避|游荡者|XPHB|5",
 				"专精|游荡者|XPHB|6",
 				"反射闪避|游荡者|XPHB|7",
@@ -1933,7 +1933,7 @@
 			"subclassFeatures": [
 				"刺客|游荡者|XPHB|刺客|XPHB|3",
 				"专业渗透|游荡者|XPHB|刺客|XPHB|9",
-				"武器涂毒|游荡者|XPHB|刺客|XPHB|13",
+				"淬毒武器|游荡者|XPHB|刺客|XPHB|13",
 				"致命一击|游荡者|XPHB|刺客|XPHB|17"
 			],
 			"hasFluffImages": true
@@ -2524,7 +2524,7 @@
 		},
 		{
 			"ENG_name": "Cunning Strike",
-			"name": "狡诈攻击",
+			"name": "诡诈打击",
 			"source": "XPHB",
 			"page": 129,
 			"srd52": true,
@@ -2540,15 +2540,15 @@
 					"entries": [
 						{
 							"type": "refClassFeature",
-							"classFeature": "中毒（消耗：1d6）|游荡者|XPHB|5|XPHB"
+							"classFeature": "投毒（花费：1d6）|游荡者|XPHB|5|XPHB"
 						},
 						{
 							"type": "refClassFeature",
-							"classFeature": "绊倒（消耗：1d6）|游荡者|XPHB|5|XPHB"
+							"classFeature": "摔绊（花费：1d6）|游荡者|XPHB|5|XPHB"
 						},
 						{
 							"type": "refClassFeature",
-							"classFeature": "撤退（消耗：1d6）|游荡者|XPHB|5|XPHB"
+							"classFeature": "撤步（花费：1d6）|游荡者|XPHB|5|XPHB"
 						}
 					]
 				}
@@ -2556,7 +2556,7 @@
 		},
 		{
 			"ENG_name": "Poison (Cost: 1d6)",
-			"name": "中毒（消耗：1d6）",
+			"name": "投毒（花费：1d6）",
 			"source": "XPHB",
 			"page": 129,
 			"srd52": true,
@@ -2571,7 +2571,7 @@
 		},
 		{
 			"ENG_name": "Trip (Cost: 1d6)",
-			"name": "绊倒（消耗：1d6）",
+			"name": "摔绊（花费：1d6）",
 			"source": "XPHB",
 			"page": 129,
 			"srd52": true,
@@ -2599,7 +2599,7 @@
 		},
 		{
 			"ENG_name": "Withdraw (Cost: 1d6)",
-			"name": "撤退（消耗：1d6）",
+			"name": "撤步（花费：1d6）",
 			"source": "XPHB",
 			"page": 129,
 			"srd52": true,
@@ -2739,7 +2739,7 @@
 		},
 		{
 			"ENG_name": "Daze (Cost: 2d6)",
-			"name": "眩晕（消耗：2d6）",
+			"name": "恍惚（花费：2d6）",
 			"source": "XPHB",
 			"page": 131,
 			"srd52": true,
@@ -2768,15 +2768,15 @@
 					"entries": [
 						{
 							"type": "refClassFeature",
-							"classFeature": "眩晕（消耗：2d6）|游荡者|XPHB|14|XPHB"
+							"classFeature": "恍惚（花费：2d6）|游荡者|XPHB|14|XPHB"
 						},
 						{
 							"type": "refClassFeature",
-							"classFeature": "击昏（消耗：6d6）|游荡者|XPHB|14|XPHB"
+							"classFeature": "击昏（花费：6d6）|游荡者|XPHB|14|XPHB"
 						},
 						{
 							"type": "refClassFeature",
-							"classFeature": "遮蔽（消耗：3d6）|游荡者|XPHB|14|XPHB"
+							"classFeature": "眩目（花费：3d6）|游荡者|XPHB|14|XPHB"
 						}
 					]
 				}
@@ -2784,7 +2784,7 @@
 		},
 		{
 			"ENG_name": "Knock Out (Cost: 6d6)",
-			"name": "击昏（消耗：6d6）",
+			"name": "击昏（花费：6d6）",
 			"source": "XPHB",
 			"page": 131,
 			"srd52": true,
@@ -2798,7 +2798,7 @@
 		},
 		{
 			"ENG_name": "Obscure (Cost: 3d6)",
-			"name": "遮蔽（消耗：3d6）",
+			"name": "眩目（花费：3d6）",
 			"source": "XPHB",
 			"page": 131,
 			"srd52": true,
@@ -4103,7 +4103,7 @@
 				{
 					"ENG_name": "Prepared Spells of 1st+ Level",
 					"type": "entries",
-					"name": "准备的1级及以上法术",
+					"name": "一环及以上的准备法术",
 					"entries": [
 						"你准备这个特性可用的1环以上法术列表。首先，选择三个1环法师法术。推荐选择{@spell 魅惑人类|XPHB}、{@spell 易容术|XPHB}和{@spell 云雾术|XPHB}。",
 						"你的法术列表中的法术数量随着你获得盗贼等级而增加，如奥术诡术师法术施展表中的准备法术列所示。每当这个数量增加时，选择额外的法师法术，直到你的法术列表中的法术数量与奥术诡术师法术施展表中的数字相匹配。所选法术必须是你有法术位的等级。例如，如果你是一名7级盗贼，你的准备法术列表可以包括五个1级或2级的法师法术，以任何组合。"
@@ -4273,7 +4273,7 @@
 						{
 							"ENG_name": "Masterful Mimicry",
 							"type": "entries",
-							"name": "精通模仿",
+							"name": "模仿大师",
 							"entries": [
 								"你可以准确无误地模仿另一个人的说话或笔迹，或者两者都模仿，如果你至少花了1小时研究他们。"
 							]
@@ -4281,7 +4281,7 @@
 						{
 							"ENG_name": "Roving Aim",
 							"type": "entries",
-							"name": "游荡瞄准",
+							"name": "机动瞄准",
 							"entries": [
 								"使用稳定瞄准时，你的{@variantrule 速度|XPHB}不会减少至0。"
 							]
@@ -4292,7 +4292,7 @@
 		},
 		{
 			"ENG_name": "Envenom Weapons",
-			"name": "武器涂毒",
+			"name": "淬毒武器",
 			"source": "XPHB",
 			"page": 134,
 			"className": "游荡者",
@@ -4604,7 +4604,7 @@
 							"type": "entries",
 							"name": "使用物件",
 							"entries": [
-								"进行{@action 利用|XPHB}动作，或者进行{@action 魔法|XPHB}动作来使用需要该动作的魔法物品。"
+								"进行{@action 操作|XPHB}动作，或者进行{@action 魔法|XPHB}动作来使用需要该动作的魔法物品。"
 							]
 						}
 					]
@@ -4631,7 +4631,7 @@
 						{
 							"ENG_name": "Climber",
 							"type": "entries",
-							"name": "攀爬者",
+							"name": "攀爬工具",
 							"entries": [
 								"你获得了等同于你的{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
 							]
@@ -4639,7 +4639,7 @@
 						{
 							"ENG_name": "Jumper",
 							"type": "entries",
-							"name": "猫跃",
+							"name": "跳跃者",
 							"entries": [
 								"你可以使用你的敏捷而不是力量来确定你的跳跃距离。"
 							]
@@ -4694,7 +4694,7 @@
 						{
 							"ENG_name": "Stealth Attack (Cost: 1d6)",
 							"type": "entries",
-							"name": "偷袭攻击（消耗：1d6）",
+							"name": "无声袭击（花费：1d6）",
 							"entries": [
 								"如果你在进行{@action 躲藏|XPHB}动作时具有{@condition 隐形|XPHB}状态，如果你在回合结束时处于{@variantrule 掩护|XPHB|四分之三掩护}或{@variantrule 掩护|XPHB|全身掩护}后面，这次攻击不会结束你的这个状态。"
 							]

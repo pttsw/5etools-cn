@@ -1897,10 +1897,10 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Human Form Only)",
-					"name": "施法（仅限人形态）",
+					"name": "施法（仅人形态）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"深渊者是一个5级施法者。其施法能力是魅力（法术豁免难度{@dc 12}，法术攻击命中需要{@hit 4}）。它有两个3环法术位，这些法术位在完成短休或长休后会恢复，并且知道以下邪术师法术："
+						"深渊者是一个5级施法者。其施法能力是魅力（法术豁免难度{@dc 12}，法术攻击命中需要{@hit 4}）。它有两个3环法术位，这些法术位在完成短休或长休后会恢复，并且知道以下魔契师法术："
 					],
 					"spells": {
 						"0": {
@@ -1936,7 +1936,7 @@
 				},
 				{
 					"ENG_name": "Olhydra's Armor (Human Form Only)",
-					"name": "奥莉德拉之护甲 (限定人类型态)",
+					"name": "奥莉德拉之护甲 (仅人类型态)",
 					"entries": [
 						"探渊者可以随意施放{@spell 法师护甲}，且无需消耗材料成分。"
 					]
@@ -1945,14 +1945,14 @@
 			"action": [
 				{
 					"ENG_name": "Constrict (Serpent Form Only)",
-					"name": "绞缠 (限定蛇型态)",
+					"name": "绞缠 (仅蛇型态)",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及范围5尺，单一目标。{@h}9 ({@damage 2d6 + 2}) 钝击伤害。如果目标是中型或更小，它将被{@condition 擒抱}（逃脱{@dc 12}）。直到摔跤结束，目标将被{@condition 束缚}，并且深潜者不能再挤压另单一目标。"
 					]
 				},
 				{
 					"ENG_name": "Dagger (Human Form Only)",
-					"name": "匕首 (限定人类型态)",
+					"name": "匕首 (仅人类型态)",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 4}，触及5尺或20/60尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
 					]
@@ -2452,7 +2452,7 @@
 						"5": {
 							"slots": 1,
 							"spells": [
-								"{@spell 探知}"
+								"{@spell 探知术}"
 							]
 						}
 					},
@@ -5118,7 +5118,7 @@
 							"slots": 3,
 							"spells": [
 								"{@spell 死云术}",
-								"{@spell 探知}"
+								"{@spell 探知术}"
 							]
 						},
 						"6": {
@@ -6793,7 +6793,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "犀牛",
-						"with": "鲨蜥兽"
+						"with": "鲨蜥"
 					}
 				}
 			},

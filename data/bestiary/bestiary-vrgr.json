@@ -90,7 +90,7 @@
 				},
 				{
 					"ENG_name": "Vine Lash",
-					"name": "藤鞭",
+					"name": "藤鞭抽击",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及20尺，单一目标。{@h}11 ({@damage 2d6 + 4}) 挥砍伤害。如果目标是一个生物，它将被{@condition 擒抱}（逃脱{@dc 15}）。直到抓住结束，目标将被{@condition 束缚}。植物有四根藤蔓，每根藤蔓可以抓住单一目标。"
 					]
@@ -186,7 +186,7 @@
 			"trait": [
 				{
 					"ENG_name": "Compression",
-					"name": "压缩",
+					"name": "柔韧躯体",
 					"entries": [
 						"无骨生物可以通过任何至少1英寸宽的开口而无需挤压。它也可以挤压以适应一个小型生物能够适应的空间。"
 					]
@@ -680,21 +680,21 @@
 			"action": [
 				{
 					"ENG_name": "Gnashing Bite (Gnashing Head Only)",
-					"name": "撕咬攻击（仅限撕咬头部）",
+					"name": "撕咬攻击（仅撕咬头部）",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}4 ({@damage 1d6 + 1}) 点穿刺伤害加上7 ({@damage 2d6})黯蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Mind-Bending Bite (Aberrant Head Only)",
-					"name": "心灵扭曲之咬（仅限畸变头部）",
+					"name": "心灵扭曲之咬（仅畸变头部）",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}4（{@damage 1d6 + 1}）点穿刺伤害加上5（{@damage 1d10}）黯蚀伤害，目标必须进行一次{@dc 10}智力豁免检定，否则直到其下一回合结束前不能进行反应。此外，在它的下一回合，目标必须选择它是否进行移动、动作或附赠动作；它只能选择三者中的一个。"
 					]
 				},
 				{
 					"ENG_name": "Petrifying Bite (Petrifying Head Only)",
-					"name": "石化咬击（仅限石化头部）",
+					"name": "石化咬击（仅石化头部）",
 					"entries": [
 						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}3（{@damage 1d4 + 1}）点穿刺伤害，目标必须进行一次{@dc 10}体质豁免检定，否则将被{@condition 束缚}，开始变成石头。目标在其下一回合结束时必须重复豁免检定。成功则效果结束。失败则目标将被{@condition 石化}10分钟。"
 					]
@@ -1229,7 +1229,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (4/Day)",
-					"name": "传奇抗性（每日4次）",
+					"name": "传奇抗性（4/天）",
 					"entries": [
 						"如果使者未能通过豁免检定，它可以选择成功。"
 					]
@@ -1372,7 +1372,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Magic Allergy (1/Day)",
-					"name": "魔法过敏（1/日）",
+					"name": "魔法过敏 (1/日)",
 					"entries": [
 						"在30尺范围内的生物对格雷米什卡施放法术后，格雷米什卡可以立即自发地对魔法做出反应。掷一个{@dice d6}来确定效果：",
 						{
@@ -1972,7 +1972,7 @@
 					],
 					"daily": {
 						"1": [
-							"{@spell 异界传送}（仅限自身）"
+							"{@spell 异界传送}（仅自身）"
 						],
 						"3e": [
 							"{@spell 变身术}",
@@ -2472,21 +2472,21 @@
 				},
 				{
 					"ENG_name": "Bite (Dire Wolf or Hybrid Form Only)",
-					"name": "咬击（仅限恐狼或混合形态）",
+					"name": "咬击（仅恐狼或混合形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}13 ({@damage 2d8 + 4}) 点穿刺伤害加上14 ({@damage 4d6})黯蚀伤害。如果目标是人形生物，它必须成功进行一次{@dc 17}体质豁免检定，否则会被诅咒患上狼人症。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Dire Wolf or Hybrid Form Only)",
-					"name": "爪击（仅限恐狼形态或混合形态）",
+					"name": "爪击（仅恐狼形态或混合形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）挥砍伤害。如果目标是一个生物，它必须通过一次力量豁免检定（{@dc 17}），否则会被击倒{@condition 倒地}。"
 					]
 				},
 				{
 					"ENG_name": "Longsword (Humanoid Form Only)",
-					"name": "长剑（仅限人形态）",
+					"name": "长剑（仅人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}13（{@damage 2d8 + 4}）挥砍伤害，如果用双手使用则为15（{@damage 2d10 + 4}）挥砍伤害。"
 					]
@@ -4279,21 +4279,21 @@
 				},
 				{
 					"ENG_name": "Amorphous (Malleable Mass Only)",
-					"name": "不定形（仅限可塑体）",
+					"name": "不定形（仅可塑体）",
 					"entries": [
 						"这个恐怖生物可以通过任何至少1英寸宽的开口而无需挤压。"
 					]
 				},
 				{
 					"ENG_name": "Bile Body (Oozing Organs Only)",
-					"name": "胆汁之躯（仅限流质器官）",
+					"name": "胆汁之躯（仅流质器官）",
 					"entries": [
 						"任何触碰到恐怖生物或用近战攻击命中它的生物都会受到5（{@damage 1d10}）强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Relentless Stride (Loathsome Limbs Only)",
-					"name": "无情步伐（仅限可憎肢体）",
+					"name": "无情步伐（仅可憎肢体）",
 					"entries": [
 						"该恐怖生物可以穿过另一生物的占据空间。在此移动期间，恐怖生物每回合首次进入一个生物的空间时，该生物必须成功通过一次{@dc 16}力量豁免，否则将被击倒{@condition 倒地}。"
 					]
@@ -4789,28 +4789,28 @@
 			"action": [
 				{
 					"ENG_name": "Multiattack (Human or Hybrid Form Only)",
-					"name": "多重攻击（仅限人形或混合形态）",
+					"name": "多重攻击（仅人形或混合形态）",
 					"entries": [
 						"狼人乌鸦进行两次武器攻击，其中一次可以是使用它的手弩。"
 					]
 				},
 				{
 					"ENG_name": "Beak (Raven or Hybrid Form Only)",
-					"name": "喙（仅限乌鸦形态或混合形态）",
+					"name": "喙（仅乌鸦形态或混合形态）",
 					"entries": [
 						"{@atk mw} {@hit 4} 攻击，触及5尺，一个目标。{@h}乌鸦形态下造成1点穿刺伤害，或者混种形态下造成4（{@damage 1d4 + 2}）点穿刺伤害。如果目标是人形生物，它必须成功通过一次{@dc 10}体质豁免检定，否则将遭受鸦人狼化诅咒。"
 					]
 				},
 				{
 					"ENG_name": "Shortsword (Human or Hybrid Form Only)",
-					"name": "短剑（仅限人类形态或混合形态）",
+					"name": "短剑（仅人类形态或混合形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Hand Crossbow (Human or Hybrid Form Only)",
-					"name": "手弩（仅限人形或混合形态）",
+					"name": "手弩（仅人形或混合形态）",
 					"entries": [
 						"{@atk rw} 命中{@hit 4}，射程30/120尺，单一目标。{@h}5 ({@damage 1d6 + 2}) 点穿刺伤害。"
 					]
@@ -5066,7 +5066,7 @@
 				},
 				{
 					"ENG_name": "Virulent Miasma (1/Day)",
-					"name": "剧毒瘴气（1/日）",
+					"name": "剧毒瘴气 (1/日)",
 					"entries": [
 						"瘟疫传播者在自身为中心的30尺半径球体内释放有毒气体。在该区域内的每个生物都必须进行一次体质豁免检定（{@dc 12}），若失败则受到14点（{@damage 4d6}）毒素伤害，若成功则伤害减半。若一个类人生物因此伤害生命值降至0点，则1分钟后死亡并作为僵尸复活（僵尸的状态栏见《怪物手册》），僵尸在主动权计数中紧随瘟疫传播者之后行动。"
 					]
