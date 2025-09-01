@@ -260,8 +260,8 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 			html: `<td colspan="6" class="cls-side__section">
 				<h5 class="cls-side__section-head">${I18nUtil.get("common.hit_points")}</h5>
 				<div><strong>${I18nUtil.get("common.hit_dice")}:</strong> ${renderer.render(Renderer.class.getHitDiceEntry(cls.hd, {styleHint: this._style}))}</div>
-				<div><strong>${I18nUtil.get("common.hit_points_at_first_level")}:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd, {styleHint: this._style})}</div>
-				<div><strong>${I18nUtil.get("common.hit_points_at_higher_levels")}:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, {styleHint: this._style})}</div>
+				<div><strong>${I18nUtil.get("page.classes.hit_points_at_first_level")}:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd, {styleHint: this._style})}</div>
+				<div><strong>${I18nUtil.get("page.classes.hit_points_at_higher_levels")}:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, {styleHint: this._style})}</div>
 			</td>`,
 		});
 
@@ -309,7 +309,7 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 				<div><b>${I18nUtil.get("page.classes.armor")}:</b> <span>${profs.armor ? Renderer.class.getRenderedArmorProfs(profs.armor, {styleHint: this._style}) : "none"}</span></div>
 				<div><b>${I18nUtil.get("page.classes.weapons")}:</b> <span>${profs.weapons ? Renderer.class.getRenderedWeaponProfs(profs.weapons, {styleHint: this._style}) : "none"}</span></div>
 				<div><b>${I18nUtil.get("page.classes.tools")}:</b> <span>${profs.tools ? Renderer.class.getRenderedToolProfs(profs.tools, {styleHint: this._style}) : "none"}</span></div>
-				<div><b>${I18nUtil.get("page.classes.saving_throws")}:</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "none"}</span></div>
+				<div><b>${I18nUtil.get("common.saving_throws")}:</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "none"}</span></div>
 				<div><b>${I18nUtil.get("page.classes.skills")}:</b> <span>${profs.skills ? Renderer.class.getRenderedSkillProfs(profs.skills, {styleHint: this._style}) : "none"}</span></div>
 			</td>`,
 		});

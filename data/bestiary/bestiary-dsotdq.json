@@ -1161,7 +1161,7 @@
 				},
 				{
 					"ENG_name": "Noxious Breath {@recharge 5}",
-					"name": "有毒气息 {@recharge 5}",
+					"name": "毒气吐息{@recharge 5}",
 					"entries": [
 						"龙裔呼出一团15尺锥形的毒气。区域内的每个生物必须进行一次{@dc 14}的体质豁免。若豁免失败，该生物受到21（{@damage 6d6}）点毒素伤害，并获得1级{@condition 力竭}。若豁免成功，该生物只受到一半伤害，不会获得{@condition 力竭}，并且在24小时内对所有龙裔的毒气吐息免疫。"
 					]
@@ -2686,9 +2686,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Divisive Whispers",
+					"ENG_name": "Divisive Whispers",
+					"name": "分裂耳语",
 					"entries": [
-						"Caradoc magically whispers to one creature within 60 feet of himself. The target must succeed on a {@dc 15} Wisdom saving throw, or the target must immediately use its reaction to make a melee attack against another creature of Caradoc's choice (wasting its reaction if there are no other creatures within reach)."
+						"Caradoc通过魔法向60尺范围内的一个生物低语。目标必须通过一次{@dc 15}感知豁免检定，否则目标必须立即使用其反应对Caradoc选择的另一个生物进行近战攻击（如果没有其他生物在范围内，则浪费其反应）。"
 					]
 				}
 			],
@@ -4600,7 +4601,7 @@
 			"action": [
 				{
 					"ENG_name": "Poison Dagger",
-					"name": "毒匕首",
+					"name": "剧毒匕首",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 5}，触及范围5尺或射程20/60尺，单一目标。{@h}5（{@damage 1d4 + 3}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 					]
@@ -4608,9 +4609,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Helpful",
+					"ENG_name": "Helpful",
+					"name": "好帮手",
 					"entries": [
-						"Iriad takes the {@action Help} action."
+						"Iriad采取了{@action 协助}行动。"
 					]
 				}
 			],
@@ -4746,9 +4748,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -4786,7 +4789,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 9}，触及范围5尺或射程20/60尺，单一目标。{@h}7（{@damage 1d4 + 5}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 							]
@@ -4835,9 +4838,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -4875,7 +4879,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 9}，触及范围5尺或射程20/60尺，单一目标。{@h}7（{@damage 1d4 + 5}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 							]
@@ -4891,9 +4895,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -4923,9 +4928,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -4964,9 +4970,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -5000,7 +5007,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 6}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5026,9 +5033,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -5064,7 +5072,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5099,9 +5107,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -5137,7 +5146,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5179,9 +5188,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -5217,7 +5227,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5259,9 +5269,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -5299,7 +5310,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 7}，触及5尺或20/60尺，单一目标。{@h}6 ({@damage 1d4 + 4}) 点穿刺伤害加上3 ({@damage 1d6}) 毒素伤害。"
 							]
@@ -5341,9 +5352,10 @@
 						"bonus": {
 							"mode": "appendArr",
 							"items": {
-								"name": "Cunning Action",
+								"ENG_name": "Cunning Action",
+								"name": "灵巧动作",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
+									"在战斗中，Iriad的回合，她可以将{@action 疾走}、{@action 撤离}或{@action 躲藏}动作作为附赠动作。"
 								]
 							}
 						}
@@ -5381,7 +5393,7 @@
 					"action": [
 						{
 							"ENG_name": "Poison Dagger",
-							"name": "毒匕首",
+							"name": "剧毒匕首",
 							"entries": [
 								"{@atk mw,rw} 命中{@hit 8}，触及范围5尺或射程20/60尺，单一目标。{@h}6（{@damage 1d4 + 4}）点穿刺伤害加上3（{@damage 1d6}）毒素伤害。"
 							]
@@ -5786,9 +5798,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Dragon Queen's Favor",
+					"ENG_name": "Dragon Queen's Favor",
+					"name": "龙后之宠",
 					"entries": [
-						"Kansaldi or one creature she can see within 60 feet of herself magically regains 17 ({@dice 2d12 + 4}) hit points."
+						"Kansaldi或她60尺范围内能看到的一个生物通过魔法恢复了17（{@dice 2d12 + 4}）点生命值。"
 					]
 				}
 			],
@@ -6057,9 +6070,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Elusive",
+					"ENG_name": "Elusive",
+					"name": "飘忽不定",
 					"entries": [
-						"The kender takes the Disengage or Hide action."
+						"侏儒采取了脱身或隐藏行动。"
 					]
 				}
 			],
@@ -8325,9 +8339,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Elusive",
+					"ENG_name": "Elusive",
+					"name": "飘忽不定",
 					"entries": [
-						"Tem takes the Disengage or Hide action."
+						"特姆采取解除武装或隐藏行动。"
 					]
 				}
 			],

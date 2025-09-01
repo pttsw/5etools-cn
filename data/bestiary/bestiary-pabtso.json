@@ -83,7 +83,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"狂热者施放以下任意一个法术，无需任何材料，使用魅力作为施法能力（法术豁免{@dc 15}）："
@@ -143,9 +143,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Void Warp {@recharge 5}",
+					"ENG_name": "Void Warp {@recharge 5}",
+					"name": "虚空扭曲 {@recharge 5}",
 					"entries": [
-						"The zealot teleports, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 120 feet of itself, leaving a churning void in the space it left. Immediately after it teleports, each creature within 30 feet of the void other than the zealot must make a {@dc 15} Strength saving throw. On a failed save, a creature takes 18 ({@damage 4d8}) force damage and is pulled to the unoccupied space closest to the void. On a successful save, the creature takes half as much damage only. The void then disappears."
+						"狂热者传送至其视野内120英尺范围内的一处未被占据的空间，随身携带的任何装备也会一同传送，并在其离开的位置留下一个翻腾的虚空。传送后，虚空周围30英尺内除了狂热者以外的每个生物必须进行一次{@dc 15}力量豁免。豁免失败的生物受到18（{@damage 4d8}）点力场伤害，并被拉至最靠近虚空的未被占据的空间。豁免成功的生物只受到一半伤害。随后，虚空消失。"
 					]
 				}
 			],
@@ -445,15 +446,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Phantasmal Duplicates",
+					"ENG_name": "Phantasmal Duplicates",
+					"name": "幻象分身",
 					"entries": [
-						"The mutate magically projects up to four illusory copies of itself. These duplicates make it difficult to ascertain the mutate's true location and last until the end of the mutate's next turn. While the copies exist, attack rolls against the mutate are made with disadvantage."
+						"变异生物通过魔法投射出最多四个自己的幻象副本。这些副本使得确定变异生物的真实位置变得困难，并持续到变异生物下一个回合结束。在副本存在时，对变异生物的攻击检定带有不利条件。"
 					]
 				},
 				{
-					"name": "Psychic Moan {@recharge}",
+					"ENG_name": "Psychic Moan {@recharge}",
+					"name": "心灵呻吟 {@recharge}",
 					"entries": [
-						"The mutate lets out a moan charged with psychic energy. Each creature within 60 feet of the mutate that isn't an Aberration must succeed on a {@dc 16} Wisdom saving throw or take 17 ({@damage 5d6}) psychic damage and have the {@condition frightened} condition until the end of the mutate's next turn."
+						"变异体发出充满心灵能量的呻吟。每个在变异体60尺范围内且不是异怪的生物必须成功进行一次{@dc 16}感知豁免检定，否则将受到17（{@damage 5d6}）心灵伤害，并在变异体下一个回合结束前处于{@condition 恐慌}状态。"
 					]
 				}
 			],
@@ -766,9 +769,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Leech",
+					"ENG_name": "Leech",
+					"name": "水蛭",
 					"entries": [
-						"The gemmule targets one creature within 5 feet of itself and forces the target to make a {@dc 14} Dexterity saving throw. On a failed save, the gemmule enters the target's space and attaches to the target. While the gemmule is attached, the target takes 7 ({@damage 3d4}) piercing damage at the start of each of its turns, and the gemmule can't use Leech again until it detaches. It can detach itself by spending 5 feet of its movement. As an action, the target or a creature within 5 feet of the target can detach the gemmule by succeeding on a {@dc 15} Strength check."
+						"宝石虫针对其自身5尺范围内的一个生物，并强迫目标进行一次{@dc 14}敏捷豁免检定。若豁免失败，宝石虫进入目标的空间并附着于目标。当宝石虫附着时，目标在其每个回合开始时受到7（{@damage 3d4}）点穿刺伤害，并且宝石虫在脱离之前不能再次使用寄生。它可以通过花费5尺的移动来自行脱离。作为一个动作，目标或目标5尺范围内的生物可以通过成功进行一次{@dc 15}力量检定来使宝石虫脱离。"
 					]
 				}
 			],
@@ -970,9 +974,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Burst of Heat {@recharge 5}",
+					"ENG_name": "Burst of Heat {@recharge 5}",
+					"name": "热能爆发 {@recharge 5}",
 					"entries": [
-						"The auger releases an intense burst of heat in a 30-foot-radius sphere centered on itself. This heat spreads around corners. Each creature in this area must make a {@dc 17} Constitution saving throw, taking 13 ({@damage 3d8}) fire damage on a failed save, or half as much damage on a successful one."
+						"钻地者在自身为中心30英尺半径的球体内释放出一股强烈的热量。这种热量能够绕过角落。该区域内的每个生物必须进行一次{@dc 17}体魄豁免检定，豁免失败则受到13（{@damage 3d8}）点火焰伤害，豁免成功则伤害减半。"
 					]
 				}
 			],
@@ -1097,11 +1102,12 @@
 			],
 			"bonus": [
 				{
-					"name": "Consume Creature",
+					"ENG_name": "Consume Creature",
+					"name": "吞噬生物",
 					"entries": [
-						"The flesh meld targets one Large or smaller creature within 5 feet of itself that it's grappling. The target must succeed on a {@dc 15} Dexterity saving throw or be swallowed by the flesh meld. The flesh meld can have one creature swallowed at a time.",
-						"A swallowed creature no longer has the {@condition grappled} condition. While swallowed, it has the {@condition blinded} and {@condition restrained} conditions, has {@quickref Cover||3||total cover} against attacks and other effects outside the flesh meld, and takes 10 ({@damage 3d6}) necrotic damage at the start of each of the flesh meld's turns. If this damage reduces a swallowed creature to 0 hit points, the creature dies, and the flesh meld consumes its body.",
-						"If the flesh meld takes 30 damage or more on a single turn from the swallowed creature, the flesh meld must succeed on a {@dc 15} Constitution saving throw at the end of that turn or regurgitate the creature, which falls with the {@condition prone} condition in a space within 5 feet of the flesh meld. If the flesh meld dies, the swallowed creature is no longer {@condition restrained} by it and can escape from the corpse by using 10 feet of movement, exiting with the {@condition prone} condition."
+						"血肉融合体可以以5英尺内为大型或更小的被其擒抱的生物为目标。该目标必须成功通过一次{@dc 15}的敏捷豁免否则被血肉融合体吞噬。每次血肉融合体只能吞噬一个生物。",
+						"被吞噬的生物不再具有{@condition 擒抱}状态。在被吞噬期间，它具有{@condition 目盲}和{@condition 束缚}状态，对来自肉体融合体外的攻击和其他效果具有{@quickref 掩护||3||全身掩护}，并且在肉体融合的每个回合开始时受到10 ({@damage 3d6}) 点坏死伤害。如果此伤害将被吞噬的生物的生命值减少到0点，该生物死亡，肉体融合会消耗其身体。",
+						"如果肉体融合在单一回合内被吞噬的生物造成30点或更多伤害，肉体融合必须在该回合结束时成功进行一次{@dc 15}体质豁免检定，否则将呕吐出生物，该生物以{@condition 倒地}状态落在肉体融合5尺范围内的空间。如果肉体融合死亡，被吞噬的生物不再被它{@condition 束缚}，并可以使用10尺的移动距离从尸体中逃脱，以{@condition 倒地}状态离开。"
 					]
 				}
 			],
@@ -1257,15 +1263,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Nimble Escape",
+					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
-						"The goblin takes the Disengage or Hide action."
+						"地精采取了脱离战斗或隐藏行动。"
 					]
 				},
 				{
-					"name": "Telekinetic Shove",
+					"ENG_name": "Telekinetic Shove",
+					"name": "心灵遥控推击",
 					"entries": [
-						"The goblin targets one creature it can see within 30 feet of itself with a thrust of telekinetic force. The target must succeed on a {@dc 13} Strength saving throw or have the {@condition prone} condition."
+						"地精用心灵力量的推力瞄准它可以看到的30尺范围内的一个生物。目标必须成功进行一次力量豁免检定（{@dc 13}），否则将处于{@condition 倒地}状态。"
 					]
 				}
 			],
@@ -1360,7 +1368,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"地精施放以下任意一个法术，无需施法材料，使用智力作为施法能力（法术豁免{@dc 13}）："
@@ -1421,9 +1429,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Nimble Escape",
+					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
-						"The goblin takes the Disengage or Hide action."
+						"地精采取了脱离战斗或隐藏行动。"
 					]
 				}
 			],
@@ -1563,7 +1572,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"格勒灵能生物施放以下法术之一，无需法术成分并使用魅力作为施法关键属性（法术豁免 {@dc 12}）："
@@ -2004,9 +2013,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Teleport (2/Day)",
+					"ENG_name": "Teleport (2/Day)",
+					"name": "传送（每日2次）",
 					"entries": [
-						"Glasstaff magically teleports, along with any equipment he is wearing or carrying, up to 30 feet to an unoccupied space he can see."
+						"格拉斯塔夫可以魔法般地传送，连同他穿戴或携带的任何装备，最多30尺到达他能看到的未被占据的空间。"
 					]
 				}
 			],
@@ -2097,7 +2107,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"长老大脑施放以下法术之一，不需要法术材料，使用智力作为施法能力（法术豁免{@dc 17}）："
@@ -2158,9 +2168,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Psychic Link",
+					"ENG_name": "Psychic Link",
+					"name": "心灵链接",
 					"entries": [
-						"The elder brain targets one creature with the {@condition incapacitated} condition that the elder brain senses with its Creature Sense trait and establishes a psychic link with the target. Until the link ends, the elder brain can perceive everything the target senses. The target becomes aware that something is linked to its mind once it no longer has the {@condition incapacitated} condition, and the elder brain can terminate the link at any time (no action required). The target can use an action on its turn to attempt to break the link, doing so with a successful {@dc 17} Charisma check. If the target breaks the link this way, the target takes 10 ({@damage 3d6}) psychic damage. The link also ends if the target and the elder brain are more than 1 mile apart. The elder brain can form psychic links with up to ten creatures at a time."
+						"主脑会以它通过生物感知特性感知到的具有{@condition 失能}状态的一个生物为目标，并与其建立心灵链接。直到链接结束，主脑能够感知到目标所感知到的一切。当目标不再具有{@condition 失能}状态时，它会意识到有什么东西与它的心灵链接在了一起，而主脑可以随时终止链接（无需动作）。目标可以在其回合使用一个动作尝试打破链接，成功通过 {@dc 17} 魅力检定即可。如果目标以这种方式打破链接，它将受到 10（{@damage 3d6}）点心灵伤害。如果目标与主脑之间的距离超过 1 英里，链接也会结束。主脑最多可以同时与十个生物建立心灵链接。"
 					]
 				}
 			],
@@ -2326,9 +2337,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Siphon Thoughts",
+					"ENG_name": "Siphon Thoughts",
+					"name": "思维吸取",
 					"entries": [
-						"The intellect snare targets one creature it is grappling. The target must make a {@dc 17} Intelligence saving throw, taking 21 ({@damage 6d6}) psychic damage on a failed save, or half as much damage on a successful one. The intellect snare then regains a number of hit points equal to the amount of damage taken."
+						"智力陷阱针对心智蠕虫正在抓握的一个生物。目标必须进行一次{@dc 17}智力豁免检定，若失败则受到21（{@damage 6d6}）点心灵伤害，若成功则受到一半的伤害。智力陷阱随后恢复等同于所受伤害数值的生命值。"
 					]
 				}
 			],
@@ -2465,7 +2477,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Lowarnizel 施放以下任意一个法术，无需法术材料，并使用智力作为施法能力（法术豁免{@dc 16}）:"
@@ -2515,7 +2527,7 @@
 				},
 				{
 					"ENG_name": "Singularity Breath {@recharge 5}",
-					"name": "奇点之息 {@recharge 5}",
+					"name": "奇点吐息{@recharge 5}",
 					"entries": [
 						"洛瓦尼泽尔创造一个闪耀的重力珠，然后释放能量形成一个30英尺的锥形区域。区域内的每个生物必须进行一次{@dc 17}的力量豁免。豁免失败时，生物受到36（{@damage 8d8}）点力场伤害，并且其速度变为0，直到龙的下一个回合开始。豁免成功时，生物仅受到一半伤害。"
 					]
@@ -2523,9 +2535,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"Lowarnizel magically transforms into any creature that is Medium or Small, while retaining his game statistics (other than his size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"Lowarnizel 可以魔法般地转变成任何中等大小或小型的生物，同时保留他的游戏具体数值（除了他的体型）。如果龙的生命值降至0点，或者使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				}
 			],
@@ -2662,7 +2675,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"灵吸怪施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 17}）："
@@ -2872,7 +2885,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"灵吸怪施放以下任意一个法术，无需法术材料，并使用智力作为施法能力（法术豁免{@dc 16}）:"
@@ -3590,7 +3603,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Negate Spell (3/Day)",
-					"name": "抵消法术（每日3次）",
+					"name": "中和法术（3/日）",
 					"entries": [
 						"Oshundo 针对其60尺范围内能够感知的正在施法的生物。如果法术等级为3级或更低，该法术失败，但任何法术位或充能点不会浪费。"
 					]
@@ -3828,7 +3841,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"灰烬亡灵施放以下任意一个法术，无需施法材料，使用智力作为施法能力（法术豁免{@dc 14}）："
@@ -3914,7 +3927,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"蔓生怪施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 8}）："
@@ -4005,7 +4018,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Qunbraxel 施放以下任意一个法术，无需法术材料，并使用魅力作为施法能力（法术豁免{@dc 16}）:"
@@ -4059,7 +4072,7 @@
 				},
 				{
 					"ENG_name": "Eldritch Bolt",
-					"name": "魔能箭",
+					"name": "魔能矢",
 					"entries": [
 						"{@atk rs} 命中{@hit 8}，射程120尺，单一目标。{@h}20（{@damage 3d10 + 4}）力场伤害。"
 					]
@@ -4287,7 +4300,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"折射施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 19}）："
@@ -4327,7 +4340,7 @@
 				},
 				{
 					"ENG_name": "Legendary Resistance (5/Day)",
-					"name": "传奇抗性（每日5次）",
+					"name": "传奇抗性（5/日）",
 					"entries": [
 						"如果折射未能通过豁免检定，它可以选择成功。"
 					]
@@ -4531,7 +4544,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"当鲁西瑟德未能通过豁免检定时，他可以选择成功。"
 					]
@@ -4562,15 +4575,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Brain Tendrils {@recharge 5}",
+					"ENG_name": "Brain Tendrils {@recharge 5}",
+					"name": "脑触须 {@recharge 5}",
 					"entries": [
-						"Ruxithid unleashes a flurry of crystalline psychic tendrils from his brain, targeting one creature that he can see within 30 feet of himself. The target must succeed on a {@dc 15} Dexterity saving throw or take 9 ({@damage 2d8}) psychic damage and have the {@condition stunned} condition until the start of Ruxithid's next turn."
+						"鲁西蒂德从他的大脑释放出一系列水晶般的精神触须，目标是他自己30尺范围内可以看到的一个生物。目标必须成功通过一个{@dc 15}敏捷豁免检定，否则将受到9 ({@damage 2d8})点心灵伤害，并在鲁西蒂德的下一回合开始之前处于{@condition 震慑}状态。"
 					]
 				},
 				{
-					"name": "Combat Command",
+					"ENG_name": "Combat Command",
+					"name": "战斗指令",
 					"entries": [
-						"Ruxithid commands one allied creature he can see within 60 feet of himself to strike. The creature can immediately use its reaction to make one melee weapon attack against a target within its reach."
+						"鲁西斯命令他能看见的60尺内的盟友生物进行攻击。该生物可以立即使用其反应来进行一次近战武器攻击，目标在其攻击范围内。"
 					]
 				}
 			],

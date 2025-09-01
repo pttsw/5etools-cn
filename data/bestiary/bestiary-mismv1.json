@@ -90,7 +90,7 @@
 				},
 				{
 					"ENG_name": "Tail Thump",
-					"name": "尾巴重击",
+					"name": "尾击",
 					"entries": [
 						"Coral 猛击她的尾巴，向她60尺内能看到的一个生物释放出一股魔法力量。目标必须进行一次{@dc 16}敏捷豁免。豁免失败，目标受到22（{@damage 4d10}）力场伤害，并进入{@condition 倒地}状态。豁免成功，目标只受到一半的伤害。如果这次伤害使目标的生命值降至0，目标死亡，其身体化为细尘。"
 					]
@@ -98,31 +98,35 @@
 			],
 			"bonus": [
 				{
-					"name": "Bubbles of Whimsy (2/Day)",
+					"ENG_name": "Bubbles of Whimsy (2/Day)",
+					"name": "幻想泡泡（每日2次）",
 					"entries": [
-						"Coral produces a stream of magical bubbles from her horn. These bubbles float toward a creature Coral can see within 60 feet of herself. Roll a {@dice d6} to determine the bubbles' effect:",
+						"珊瑚从她的角上产生出一串魔法泡泡。这些泡泡飘向珊瑚能看到的60尺内的生物。掷一个{@dice d6}来确定泡泡的效果：",
 						{
 							"type": "list",
 							"items": [
 								{
-									"name": "1-2: Bolstering Treat",
+									"ENG_name": "1-2: Bolstering Treat",
+									"name": "1-2: 鼓舞治疗",
 									"type": "item",
 									"entries": [
-										"The bubbles transform into {@dice 1d4} cookies that appear in the target's space. The target gains 11 ({@dice 2d8 + 2}) temporary hit points if it immediately uses its reaction to eat one of the cookies. Any leftover cookies are delicious but confer no benefits."
+										"泡沫变成了{@dice 1d4}个饼干，出现在目标的空间中。如果目标立即使用其反应来吃一个饼干，它将获得11（{@dice 2d8 + 2}）点临时生命值。任何剩余的饼干都很美味，但不会带来任何好处。"
 									]
 								},
 								{
-									"name": "3-4: Sparkle Burst",
+									"ENG_name": "3-4: Sparkle Burst",
+									"name": "3-4: 闪光爆发",
 									"type": "item",
 									"entries": [
-										"The bubbles transform into glitter that swirls around the target before bursting outward. Each creature within 5 feet of the target must succeed on a {@dc 16} Constitution saving throw or have the {@condition blinded} condition until the start of Coral's next turn."
+										"泡泡变成了围绕目标旋转的闪光，然后向外爆开。每个在目标5尺范围内的生物必须成功进行一次体质豁免检定（{@dc 16}），否则直到Coral的下一回合开始都会处于{@condition 目盲}状态。"
 									]
 								},
 								{
-									"name": "5-6: Stink Bomb Shield",
+									"ENG_name": "5-6: Stink Bomb Shield",
+									"name": "5-6: 臭气弹盾牌",
 									"type": "item",
 									"entries": [
-										"The bubbles transform into a foul-smelling cloud of gas that surrounds and shields the target. The target has {@quickref Cover||3||half cover} until the gas disappears at the start of Coral's next turn."
+										"这些气泡变成了一股恶臭的气体云，围绕着目标并为其提供掩护。直到Coral的下一回合开始气体消失之前，目标处于{@quickref 掩护||3||半身掩护}状态。"
 									]
 								}
 							]
@@ -130,9 +134,10 @@
 					]
 				},
 				{
-					"name": "Gift of Speech (1/Day)",
+					"ENG_name": "Gift of Speech (1/Day)",
+					"name": "言语之赐（每日1次）",
 					"entries": [
-						"Coral targets one Beast she can see within 10 feet of herself. The target gains the ability to understand and speak Common or Sylvan (Coral's choice) for 10 minutes."
+						"珊瑚选择一个在她10尺范围内她能看到的野兽。目标获得理解并使用通用语或森林语（珊瑚的选择）说话的能力，持续10分钟。"
 					]
 				}
 			],
@@ -172,7 +177,7 @@
 		},
 		{
 			"ENG_name": "Dandylion",
-			"name": "丹迪莲",
+			"name": "蒲公英狮",
 			"source": "MisMV1",
 			"page": 6,
 			"size": [
@@ -284,7 +289,7 @@
 				},
 				{
 					"ENG_name": "Rejuvenating Seedpods (2/Day)",
-					"name": "再生种子荚（每日2次）",
+					"name": "复苏之种荚（2/日）",
 					"entries": [
 						"蒲公英狮从它的尾巴释放出一阵种子荚，形成一个以自己为中心的10尺半径的球体。蒲公英狮可以选择球体内的每个生物立即结束以下条件之一（生物选择）：{@condition 目盲}、{@condition 耳聋}、{@condition 麻痹}或{@condition 中毒}。此外，球体内的所有土壤都得到了丰富，恢复了该区域内枯萎的植被到健康状态，并使得该区域内的所有作物在下一年产生双倍的正常收成。"
 					]
@@ -293,7 +298,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Roar of Pride",
-					"name": "骄傲的咆哮",
+					"name": "骄傲之咆哮",
 					"entries": [
 						"当60英尺范围内的一个生物用攻击骰击中蒲公英狮时，蒲公英狮可以发出一声愤怒的咆哮。触发此反应的生物必须成功通过一个{@dc 15}的感知豁免检定，否则直到蒲公英狮的下个回合结束，它将处于{@condition 恐慌}状态。"
 					]
@@ -447,7 +452,7 @@
 				},
 				{
 					"ENG_name": "Haloed Horn Burst {@recharge 5}",
-					"name": "光环号角爆发 {@recharge 5}",
+					"name": "独角光环爆发{@recharge 5}",
 					"entries": [
 						"Rain 使用她的光环号角产生以下魔法效果之一："
 					]
@@ -461,7 +466,7 @@
 				},
 				{
 					"ENG_name": "Healing Rainbows",
-					"name": "治愈彩虹",
+					"name": "治愈之虹",
 					"entries": [
 						"『雨』释放出一波复苏的七彩光芒，形成30尺的锥形。在区域中『雨』选择的每个生物恢复18（{@dice 4d8}）点生命值。"
 					]
@@ -469,9 +474,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Nimble Escape",
+					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
-						"Rain takes either the Disengage or the Hide action."
+						"Rain 采取了\"脱战\"或\"隐蔽\"行动。"
 					]
 				}
 			],
@@ -503,7 +509,7 @@
 		},
 		{
 			"ENG_name": "Scrapper",
-			"name": "拾荒者",
+			"name": "废铁战械",
 			"source": "MisMV1",
 			"page": 10,
 			"size": [
@@ -563,7 +569,7 @@
 			"trait": [
 				{
 					"ENG_name": "Electrified Chassis",
-					"name": "电气化底盘",
+					"name": "带电外壳",
 					"entries": [
 						"当一个生物在5尺范围内用近战攻击击中拾荒者时，它会受到19（{@damage 3d12}）点闪电伤害。"
 					]
@@ -579,21 +585,21 @@
 				},
 				{
 					"ENG_name": "Spike Punch",
-					"name": "尖刺冲拳",
+					"name": "尖刺拳击",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}14（{@damage 2d8 + 5}）钝击伤害加上5（{@damage 1d10}）点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Wires",
-					"name": "电线",
+					"name": "线缆",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及范围 20 尺，一个大型或更小的生物。{@h}目标进入{@condition 擒抱}状态（逃脱{@dc 16}），并且必须在一次力量豁免检定中成功（{@dc 16}），否则会被拉入拾荒者周围5尺内的未占用空间，并承受19 ({@damage 3d12}) 点闪电伤害。拾荒者一次只能以这种方式{@condition 擒抱}一个生物。"
 					]
 				},
 				{
 					"ENG_name": "Eye Beam {@recharge 5}",
-					"name": "眼射线 {@recharge 5}",
+					"name": "眼波射线 {@recharge 5}",
 					"entries": [
 						"这个碎击者从它伸出的眼睛向它120英尺范围内可见的一个生物发射一束魔法光束。目标必须进行一次{@dc 16}敏捷豁免，若失败则受到44（{@damage 8d10}）点力场伤害，若成功则受到一半伤害。"
 					]
@@ -728,7 +734,7 @@
 				},
 				{
 					"ENG_name": "Riptide Breath {@recharge 5}",
-					"name": "潮汐呼吸 {@recharge 5}",
+					"name": "激流吐息 {@recharge 5}",
 					"entries": [
 						"赛斯呼出一股冰冷的水流，形成一个30英尺的锥形区域。该区域内的每个生物必须进行一次{@dc 16}的体质豁免检定。若检定失败，该生物将受到36点（{@damage 8d8}）的寒冷伤害，并在其下一回合结束前处于{@condition 失能}状态。若检定成功，该生物仅受到一半的伤害。"
 					]
@@ -736,15 +742,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"Seth magically transforms into a Small Humanoid or a Beast that is Tiny or Small, while retaining his game statistics (other than his size). This transformation ends if Seth is reduced to 0 hit points or uses another bonus action to end it."
+						"塞斯通过魔法变成一个小型人形生物或一个微小或小型的野兽，同时保留他的游戏具体数值（除了他的尺寸）。如果塞斯的生命值降到0点或使用另一个附赠动作来结束它，这种变形就会结束。"
 					]
 				},
 				{
-					"name": "Superspeed (2/Day)",
+					"ENG_name": "Superspeed (2/Day)",
+					"name": "超速（每日2次）",
 					"entries": [
-						"Seth's speed is doubled for as long as he maintains {@status concentration} (as if {@status concentration||concentrating} on a spell). While his speed is increased in this way, all attack rolls against him are made with disadvantage, and he becomes partially incorporeal, allowing him to move through creatures and objects as if they were difficult terrain. Seth takes 5 ({@damage 1d10}) force damage if he ends his turn inside an object."
+						"塞斯的速度在保持{@status 专注}状态期间翻倍（就像在{@status 专注||专注于}时保持专注一样）。在他以这种方式增加速度时，所有对他的攻击投掷都会处于不利状态，并且他变得部分非物质化，允许他像穿过困难地形一样穿过生物和物体。如果塞斯在回合结束时位于物体内部，他会承受5 ({@damage 1d10}) 点力场伤害。"
 					]
 				}
 			],
@@ -788,7 +796,7 @@
 		},
 		{
 			"ENG_name": "Sheldon the Blueberry Dragon",
-			"name": "蓝莓龙谢尔顿",
+			"name": "蓝莓龙希尔顿",
 			"isNamedCreature": true,
 			"source": "MisMV1",
 			"page": 14,
@@ -850,7 +858,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"Sheldon 施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 14}）："
@@ -902,7 +910,7 @@
 				},
 				{
 					"ENG_name": "Jetstream Breath {@recharge 5}",
-					"name": "喷射气流呼吸 {@recharge 5}",
+					"name": "急流吐息{@recharge 5}",
 					"entries": [
 						"谢尔顿呼出一行60英尺长、5英尺宽的魔法之风。该区域内的每个生物都必须进行一次{@dc 15}力量豁免。若豁免失败，该生物受到21（{@damage 6d6}）点力场伤害，被推开15英尺，并获得{@condition 倒地}状态。若豁免成功，该生物仅受到一半伤害。"
 					]
@@ -910,9 +918,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Wind Dash (2/Day)",
+					"ENG_name": "Wind Dash (2/Day)",
+					"name": "疾风冲刺（每日2次）",
 					"entries": [
-						"Sheldon summons a powerful gust of wind and flies up to his speed. This movement doesn't provoke opportunity attacks. At the end of this movement, each creature within 5 feet of Sheldon must succeed on a {@dc 15} Strength saving throw or have the {@condition prone} condition, as the wind bursts around Sheldon."
+						"谢尔顿召唤出一阵强风并以他的速度飞行。这种移动不会引起借机攻击。在这次移动结束时，谢尔顿周围5英尺内的每个生物必须成功通过一次{@dc 15}力量豁免检定，否则会获得{@condition 倒地}状态，因为强风在谢尔顿周围爆发。"
 					]
 				}
 			],

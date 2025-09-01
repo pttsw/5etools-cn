@@ -2045,7 +2045,7 @@ globalThis.Renderer = function () {
 			case "@atkr":
 				textStack[0] += `<i>${Renderer.attackTagToFull(text, {isRoll: tag === "@atkr"})}</i>`;
 				break;
-			case "@actSave": textStack[0] += `<i>${Parser.attAbvToFull(text)} Saving Throw:</i>`; break;
+			case "@actSave": textStack[0] += `<i>${Parser.attAbvToFull(text)} ${I18nUtil.get("common.saving_throw")}:</i>`; break;
 			case "@actSaveSuccess": textStack[0] += `<i>Success:</i>`; break;
 			case "@actSaveFail": {
 				const [ordinal] = Renderer.splitTagByPipe(text);
@@ -5263,7 +5263,7 @@ Renderer.tag = class {
 	static TagActSave = class extends this._TagBaseAt {
 		tagName = "actSave";
 
-		_getStripped (tag, text) { return `${Parser.attAbvToFull(text)} Saving Throw:`; }
+		_getStripped (tag, text) { return `${Parser.attAbvToFull(text)} ${I18nUtil.get("common.saving_throw")}:`; }
 	};
 
 	static TagActSaveSuccess = class extends this._TagBaseAt {

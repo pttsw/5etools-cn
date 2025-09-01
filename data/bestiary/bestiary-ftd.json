@@ -85,7 +85,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免难度等级{@dc 18}）："
@@ -143,7 +143,7 @@
 				},
 				{
 					"ENG_name": "Singularity Breath {@recharge 5}",
-					"name": "奇点之息 {@recharge 5}",
+					"name": "奇点吐息{@recharge 5}",
 					"entries": [
 						"龙在口中创造了一个闪耀的引力珠，然后释放能量形成90英尺的锥形区域。该区域内的每个生物必须进行一次 {@dc 20} 力量豁免检定。若检定失败，该生物受到45（{@damage 10d8}）点力场伤害，并且其速度降为0，直到龙的下一回合开始。若检定成功，该生物受到一半伤害，且速度不受影响。"
 					]
@@ -151,15 +151,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -173,14 +175,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Explosive Crystal (Costs 3 Actions)",
-					"name": "爆炸性水晶（消耗3个行动）",
+					"name": "爆裂碎晶（花费2个动作）",
 					"entries": [
 						"龙吐出一颗紫水晶，在它可以看到的60英尺内的某一点爆炸。以该点为中心，半径20英尺范围内的每个生物必须成功通过一个{@dc 20}的敏捷豁免检定，否则将受到13（{@damage 3d8}）的力场伤害并被击{@condition 倒地}。"
 					]
@@ -412,7 +414,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 16}）："
@@ -466,7 +468,7 @@
 				},
 				{
 					"ENG_name": "Scintillating Breath {@recharge 5}",
-					"name": "闪耀之息 {@recharge 5}",
+					"name": "辉光吐息{@recharge 5}",
 					"entries": [
 						"龙在60英尺锥形范围内呼出一道耀眼的辉光。区域内的每个生物必须进行一次{@dc 17}的体质豁免，豁免失败则受到40（{@damage 9d8}）点光耀伤害，豁免成功则只受到一半伤害。龙随后通过吸收部分光耀能量获得15点临时生命值。"
 					]
@@ -474,15 +476,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -496,14 +500,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Starlight Strike (Costs 3 Actions)",
-					"name": "星光打击（消耗3个行动点）",
+					"name": "星光射击（花费3个动作）",
 					"entries": [
 						"龙对它能看到的60英尺范围内的一个生物释放出一道灼热的星光线。目标必须成功通过一个{@dc 17}的敏捷豁免检定，否则将受到31（{@damage 9d6})点光耀伤害。"
 					]
@@ -782,7 +786,7 @@
 				},
 				{
 					"ENG_name": "Nightmare Breath {@recharge 5}",
-					"name": "噩梦之息 {@recharge 5}",
+					"name": "噩梦吐息{@recharge 5}",
 					"entries": [
 						"巨龙在60英尺锥形范围内呼出一团孢子云。该区域内的每个生物必须进行一次 {@dc 16} 感知豁免检定。若检定失败，该生物受到33（{@damage 6d10}）点心灵伤害，并且在1分钟内对巨龙 {@condition 恐慌}。若检定成功，该生物只受到一半的伤害，且无额外效果。 {@condition 恐慌} 的生物可以在其每个回合结束时重复豁免检定，成功则结束此效果。"
 					]
@@ -791,7 +795,7 @@
 			"legendary": [
 				{
 					"ENG_name": "Commanding Spores",
-					"name": "指挥孢子",
+					"name": "命令孢子",
 					"entries": [
 						"这条龙会向它能看到的、30英尺范围内的一个生物释放孢子。目标必须成功通过一项{@dc 16}的感知豁免检定，否则它将使用其反应对触手可及的一个随机生物进行一次近战武器攻击。如果没有生物在触手可及范围内，或者目标无法进行反应，它将受到5（{@damage 1d10}）点心灵伤害。"
 					]
@@ -805,7 +809,7 @@
 				},
 				{
 					"ENG_name": "Spore Salvo (Costs 2 Actions)",
-					"name": "孢子齐射（消耗2个行动）",
+					"name": "孢子喷发（花费2个动作）",
 					"entries": [
 						"龙在其可见的30英尺范围内的生物周围释放有毒孢子。目标必须成功通过一个{@dc 16}的体质豁免检定，否则将受到17（{@damage 5d6}）点毒素伤害，并在1分钟内处于{@condition 中毒}状态。{@condition 中毒}的生物可以在其每个回合结束时重复进行豁免检定，成功则结束此效果。"
 					]
@@ -1052,7 +1056,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免难度等级{@dc 17}）："
@@ -1083,7 +1087,7 @@
 				},
 				{
 					"ENG_name": "Shift Perception (1/Day)",
-					"name": "感知转换（每日1次）",
+					"name": "转换知觉（1/日）",
 					"entries": [
 						"龙可以施放{@spell 幻景}，无需法术材料，使用智力作为施法能力（法术豁免难度等级{@dc 17}）。"
 					]
@@ -1120,7 +1124,7 @@
 				},
 				{
 					"ENG_name": "Disorienting Breath {@recharge 5}",
-					"name": "迷惑之息 {@recharge 5}",
+					"name": "惑心吐息{@recharge 5}",
 					"entries": [
 						"这只龙在60尺锥形范围内呼出一波心智紊乱。区域内的每个生物必须进行一次{@dc 18}智力豁免。若豁免失败，该生物受到42点（{@damage 12d6}）心灵伤害，并且在它的下一个回合结束之前，当它进行攻击检定或属性检定时，必须掷一颗{@dice d6}并从总结果中减去掷出的数值。若豁免成功，该生物只受到一半伤害且没有额外效果。"
 					]
@@ -1128,15 +1132,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -1150,14 +1156,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Emerald Embers (Costs 3 Actions)",
-					"name": "翡翠余烬（消耗3个行动）",
+					"name": "翠炎火烬（花费3个动作）",
 					"entries": [
 						"龙在它可见的60英尺范围内的一个生物周围创造了一团舞动的绿色火焰。目标必须成功通过一次{@dc 17}敏捷豁免，否则将受到31（{@damage 9d6}）点火焰伤害。"
 					]
@@ -1443,7 +1449,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"龙可以使用下列吐息武器之一:",
 						{
@@ -1481,7 +1487,7 @@
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"龙使用施法。"
 					]
@@ -1713,7 +1719,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免难度等级{@dc 17}）："
@@ -1777,7 +1783,7 @@
 				},
 				{
 					"ENG_name": "Debilitating Breath {@recharge 5}",
-					"name": "致残之息 {@recharge 5}",
+					"name": "衰弱吐息{@recharge 5}",
 					"entries": [
 						"龙在60英尺的锥形范围内呼出一阵高音调的、几乎听不见的声波。该区域内的每一个生物都必须进行一次{@dc 19}体质豁免。豁免失败的生物将受到44（{@damage 8d10}）点雷鸣伤害，并{@condition 失能}直到其下一回合结束。豁免成功的生物只受到一半的伤害，并且不会{@condition 失能}。"
 					]
@@ -1785,15 +1791,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -1807,14 +1815,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Telekinetic Fling (Costs 3 Actions)",
-					"name": "心灵投掷（消耗3个行动点）",
+					"name": "念力飞掷（花费3个动作）",
 					"entries": [
 						"巨龙选择一个在它60英尺范围内可见的未被穿戴或携带的小型或更小的物体，并魔法般地将该物体投掷向它能在该物体60英尺范围内看到的生物。目标必须成功通过一次{@dc 17}的敏捷豁免，否则将受到31（{@damage 9d6}）点钝击伤害。"
 					]
@@ -2065,7 +2073,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免难度等级{@dc 17}）："
@@ -2091,7 +2099,7 @@
 				},
 				{
 					"ENG_name": "Fabricate (1/Day)",
-					"name": "制造（每日1次）",
+					"name": "鬼斧神工（1/日）",
 					"entries": [
 						"龙族可以施放{@spell 鬼斧神工}法术，无需法术材料，并且使用智力作为施法能力。"
 					]
@@ -2128,7 +2136,7 @@
 				},
 				{
 					"ENG_name": "Desiccating Breath {@recharge 5}",
-					"name": "枯萎之息 {@recharge 5}",
+					"name": "干枯吐息{@recharge 5}",
 					"entries": [
 						"巨龙在60尺锥形范围内呼出黄绿色的死灵能量。该区域内的每个生物必须进行一次{@dc 17}体质豁免检定。若检定失败，该生物受到35（{@damage 10d6}）点死灵伤害，并陷入虚弱状态，直到其下一个回合结束。虚弱的生物在基于力量的能力检定和力量豁免检定上具有劣势，且其依赖力量的武器攻击造成一半伤害。若检定成功，该生物只受到一半伤害，且不会陷入虚弱状态。"
 					]
@@ -2136,15 +2144,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -2158,14 +2168,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Essential Reduction (Costs 3 Actions)",
-					"name": "本质削减（消耗3个行动）",
+					"name": "解归本源（花费3个动作）",
 					"entries": [
 						"龙选择一个它可以看到的，在它60英尺范围内未被穿戴或携带的生物或物体作为目标。目标必须成功通过一个{@dc 17}体质豁免检定，否则将受到28（{@damage 8d6}）点黯蚀伤害。如果此伤害将目标的生命值降至0，目标将化为灰尘。"
 					]
@@ -2318,7 +2328,7 @@
 		},
 		{
 			"ENG_name": "Amethyst Dragon Wyrmling",
-			"name": "紫水晶龙幼龙",
+			"name": "紫晶龙雏龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -2397,7 +2407,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免难度等级{@dc 13}）："
@@ -2432,7 +2442,7 @@
 				},
 				{
 					"ENG_name": "Singularity Breath {@recharge 5}",
-					"name": "奇点之息 {@recharge 5}",
+					"name": "奇点吐息{@recharge 5}",
 					"entries": [
 						"龙在口中创造出一个闪耀的重力珠，然后以15英尺锥形释放能量。该区域内的每个生物都必须进行一次{@dc 13}力量豁免检定。若失败，生物受到22（{@damage 5d8}）点力场伤害，并且其速度降至0，直到龙的下一个回合开始。若成功，生物只受一半伤害，且速度不受影响。"
 					]
@@ -2639,7 +2649,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"太古龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 26}，法术攻击命中{@hit 18}）："
@@ -2660,7 +2670,7 @@
 			"trait": [
 				{
 					"ENG_name": "Gem Awakening (Recharges after a Short or Long Rest)",
-					"name": "宝石觉醒（短休或长休后重新充能）",
+					"name": "宝石觉醒（短休或长休后充能）",
 					"entries": [
 						"如果太古龙的生命值降至0点，它当前的生命值总量将重置为400点生命值，它将重新充能其呼吸武器，并恢复所有已消耗的传奇抗性使用次数。此外，在接下来的一小时内，太古龙现在可以使用其群体心灵感应行动。在太古龙的宝石觉醒激活后击败它，奖励队伍额外的90,000经验值（总共180,000经验值）。"
 					]
@@ -2704,14 +2714,14 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"巨龙在300尺锥形区域内呼出压倒性力量。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免。豁免失败时，该生物受到71（{@damage 11d12}）力场伤害并被{@condition 倒地}。豁免成功时，该生物受到一半伤害且不会被{@condition 倒地}。无论成功或失败，该生物的速度变为0，直到其下一回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Mass Telekinesis (Gem Awakening Only; Recharges after a Short or Long Rest)",
-					"name": "群体心灵传动（仅限宝石觉醒；短休或长休后重新充能）",
+					"name": "群体心灵遥控（仅宝石觉醒状态，短休或长休后充能）",
 					"entries": [
 						"龙族长老可以指定它视线范围内120尺内的任意数量的生物和物体。没有单一目标的重量可以超过4000磅，如果物体被穿戴或携带，则不能被指定为目标。每个被指定的生物必须成功进行一次{@dc 26} 力量豁免检定，否则将被龙族长老的心灵感应力场所{@condition 束缚}。在生物的回合结束时，它可以重复进行豁免检定，如果成功则结束这个效果。",
 						"在太古巨龙的回合结束时，它可以将其心灵遥感抓取的每个生物或物体向任意方向移动最多60尺，但不能超过距离它自身120尺的范围。此外，它可以选择任何数量以这种方式{@condition 束缚}的生物，并对每个生物造成45点（{@damage 7d12}）的力场伤害。"
@@ -2720,15 +2730,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The greatwyrm magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the greatwyrm is reduced to 0 hit points or uses a bonus action to end it."
+						"太古龙使用魔法变身为任何中体型或小体型的生物，同时保留其游戏具体数值（除了体型）。如果太古龙的生命值降至0点或使用附赠动作来结束变身，这种变身就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The greatwyrm magically teleports to an unoccupied space it can see within 60 feet of it."
+						"巨龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -2742,14 +2754,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"太古龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Beam (Costs 3 Actions)",
-					"name": "心灵光束（消耗3个行动点）",
+					"name": "灵能束（花费3个动作）",
 					"entries": [
 						"太古龙发出一条90尺长、10尺宽的灵能光束。该区域内的每个生物都必须进行一次智力豁免检定（{@dc 26}），豁免失败则受到27点（{@damage 5d10}）心灵伤害，豁免成功则伤害减半。"
 					]
@@ -2983,7 +2995,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下任意一个法术，无需法术材料，使用智力作为施法属性（法术豁免{@dc 23}，法术攻击命中{@hit 15}）："
@@ -3044,7 +3056,7 @@
 				},
 				{
 					"ENG_name": "Singularity Breath {@recharge 5}",
-					"name": "奇点之息 {@recharge 5}",
+					"name": "奇点吐息{@recharge 5}",
 					"entries": [
 						"龙在其口中创造出一个闪耀的重力珠，然后将能量释放为一个90英尺的锥形区域。区域内的每个生物必须进行一次{@dc 23}的力量豁免。若豁免失败，该生物受到63（{@damage 14d8}）的力场伤害，并且其速度降为0，直到龙的下一回合开始。若豁免成功，该生物受到一半的伤害，并且其速度不会降低。"
 					]
@@ -3052,15 +3064,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -3074,14 +3088,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Explosive Crystal (Costs 3 Actions)",
-					"name": "爆炸性水晶（消耗3个行动）",
+					"name": "爆裂碎晶（花费2个动作）",
 					"entries": [
 						"巨龙吐出一颗紫水晶，在其可见的60英尺范围内某点爆炸。以该点为中心，半径20英尺球体内的每个生物必须成功通过{@dc 23}敏捷豁免，否则受到18（{@damage 4d8}）点力场伤害并被击倒{@condition 倒地}。"
 					]
@@ -3314,7 +3328,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙族施放以下任意一个法术，无需法术材料，并且使用智力作为施法能力（法术豁免{@dc 19}）："
@@ -3369,7 +3383,7 @@
 				},
 				{
 					"ENG_name": "Scintillating Breath {@recharge 5}",
-					"name": "闪耀之息 {@recharge 5}",
+					"name": "辉光吐息{@recharge 5}",
 					"entries": [
 						"龙在90英尺的锥形范围内呼出一阵耀眼的辉光。该区域内的每个生物必须进行一次{@dc 22}体质豁免检定，若豁免失败则受到49点（{@damage 11d8}）光耀伤害，若豁免成功则受到一半伤害。随后，龙通过吸收部分光耀能量获得25点临时生命值。"
 					]
@@ -3377,15 +3391,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -3399,14 +3415,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Starlight Strike (Costs 3 Actions)",
-					"name": "星光打击（消耗3个行动点）",
+					"name": "星光射击（花费3个动作）",
 					"entries": [
 						"龙向60英尺内它能看到的生物释放一道灼热的星光。目标必须成功通过一个{@dc 19}敏捷豁免检定，否则将受到38点（{@damage 11d6}）光耀伤害。"
 					]
@@ -3686,7 +3702,7 @@
 				},
 				{
 					"ENG_name": "Nightmare Breath {@recharge 5}",
-					"name": "噩梦之息 {@recharge 5}",
+					"name": "噩梦吐息{@recharge 5}",
 					"entries": [
 						"龙在一处90英尺的锥形区域内呼出一团孢子云。该区域内的每个生物必须进行一次{@dc 19}的感知豁免。若豁免失败，该生物受到49（{@damage 9d10}）点心灵伤害，并且对龙{@condition 恐慌}1分钟。若豁免成功，该生物受到一半的伤害，且无其他效果。{@condition 恐慌}的生物可以在每个回合结束时重复进行豁免，成功则结束对其自身的效应。"
 					]
@@ -3695,7 +3711,7 @@
 			"legendary": [
 				{
 					"ENG_name": "Commanding Spores",
-					"name": "指挥孢子",
+					"name": "命令孢子",
 					"entries": [
 						"龙在它可以看见的30英尺范围内的一名生物周围释放孢子。目标必须成功通过一次{@dc 19}的感知豁免检定，否则将使用它的反应对触及范围内的一个随机生物进行一次近战武器攻击。如果没有生物在触及范围内，或者目标无法使用反应，它将受到11点（{@damage 2d10}）的精神伤害。"
 					]
@@ -3709,7 +3725,7 @@
 				},
 				{
 					"ENG_name": "Spore Salvo (Costs 2 Actions)",
-					"name": "孢子齐射（消耗2个行动）",
+					"name": "孢子喷发（花费2个动作）",
 					"entries": [
 						"这只龙会向它能看到的一个30英尺内的生物周围释放有毒孢子。目标必须成功通过一个{@dc 19}的体质豁免，否则将受到28（{@damage 8d6}）点毒素伤害并陷入{@condition 中毒}状态，持续1分钟。{@condition 中毒}的生物可以在每个回合结束时再次进行豁免，成功则结束其身上的效果。"
 					]
@@ -3949,7 +3965,7 @@
 				},
 				{
 					"ENG_name": "Blessing of the Sea (Recharges after a Short or Long Rest)",
-					"name": "海洋的祝福（短休或长休后重新充能）",
+					"name": "大海护佑（短休或长休后充能）",
 					"entries": [
 						"如果龙龟的生命值降至0点，它当前的生命值总量将重置为350点生命值，并重新充能其蒸汽呼吸。此外，龙龟现在可以使用\"Mythic Actions\"部分中的选项，持续1小时。在龙龟的海洋祝福激活后击败它，奖励队伍额外的62,000经验值（总共124,000经验值）。"
 					]
@@ -4023,7 +4039,7 @@
 				},
 				{
 					"ENG_name": "Boiling Aura (Costs 3 Actions)",
-					"name": "沸腾光环（消耗3次行动）",
+					"name": "沸腾灵光（花费3个动作）",
 					"entries": [
 						"龙龟散发出强烈的热量。直到龙龟的下一个回合开始，每当一个生物在龙龟 20 尺范围内开始其回合时，该生物必须成功通过一次 {@dc 24} 体质豁免，否则受到 40 点（{@damage 9d8}）火焰伤害。在水中并不会使此伤害获得抗性。"
 					]
@@ -4042,7 +4058,7 @@
 				},
 				{
 					"ENG_name": "Armor of Storms (Costs 2 Actions)",
-					"name": "风暴护甲（消耗2次行动）",
+					"name": "风暴化胄（花费3个动作）",
 					"entries": [
 						"闪电暂时围绕着龙龟，它在下一回合开始前获得40点临时生命值。在所有这些临时生命值耗尽之前，任何接触龙龟或使用近战攻击命中它的生物都会受到26（{@damage 4d12}）点闪电伤害。"
 					]
@@ -4266,7 +4282,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙族施放以下任意一个法术，无需法术材料，并且使用智力作为施法能力（法术豁免{@dc 20}）："
@@ -4305,7 +4321,7 @@
 				},
 				{
 					"ENG_name": "Warp Perception (1/Day)",
-					"name": "扭曲感知（每日1次）",
+					"name": "转换知觉（1/日）",
 					"entries": [
 						"龙族可以施放{@spell 海市蜃楼}法术，无需法术材料，并且使用智力作为施法能力。"
 					]
@@ -4335,7 +4351,7 @@
 				},
 				{
 					"ENG_name": "Disorienting Breath {@recharge 5}",
-					"name": "迷惑之息 {@recharge 5}",
+					"name": "惑心吐息{@recharge 5}",
 					"entries": [
 						"龙在90英尺的锥形区域内呼出一波心灵失调。该区域内的每个生物必须进行一次 {@dc 22} 智力豁免检定。若豁免失败，该生物受到56（{@damage 16d6}）点心灵伤害，并且直到其下个回合结束，当该生物进行攻击检定或能力检定时，必须掷一次 {@dice d8} 并将总结果减去掷出的数值。若豁免成功，该生物只受到一半伤害，且无额外效果。"
 					]
@@ -4343,15 +4359,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -4365,14 +4383,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Emerald Embers (Costs 3 Actions)",
-					"name": "翡翠余烬（消耗3个行动）",
+					"name": "翠炎火烬（花费3个动作）",
 					"entries": [
 						"龙在它能看到的60英尺范围内的一个生物周围创造一团跳动的绿色火焰。目标必须成功通过一次{@dc 20}敏捷豁免检定，否则将受到42点（{@damage 12d6}）火焰伤害。"
 					]
@@ -4660,7 +4678,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"龙可以使用下列吐息武器之一:",
 						{
@@ -4698,7 +4716,7 @@
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"龙使用施法。"
 					]
@@ -4926,7 +4944,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙族施放以下任意一个法术，无需法术材料，并且使用智力作为施法能力（法术豁免{@dc 20}）："
@@ -4991,7 +5009,7 @@
 				},
 				{
 					"ENG_name": "Debilitating Breath {@recharge 5}",
-					"name": "致残之息 {@recharge 5}",
+					"name": "衰弱吐息{@recharge 5}",
 					"entries": [
 						"龙在90英尺的锥形范围内呼出一阵尖锐的、几乎听不见的声波。区域内的每个生物必须进行一次{@dc 23}体质豁免。若豁免失败，该生物受到55（{@damage 10d10}）点雷鸣伤害，并且陷入{@condition 失能}状态，直到其下一个回合结束。若豁免成功，该生物只受到一半伤害，且不会陷入{@condition 失能}状态。"
 					]
@@ -4999,15 +5017,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -5021,14 +5041,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Telekinetic Fling (Costs 3 Actions)",
-					"name": "心灵投掷（消耗3个行动点）",
+					"name": "念力飞掷（花费3个动作）",
 					"entries": [
 						"龙选择一个它可以看到的60英尺内的中型或更小的未被穿戴或携带的物体，并将其魔法般地投向它可以看到的60英尺内的一个生物。目标必须进行一次{@dc 20}敏捷豁免检定，否则将受到42（{@damage 12d6}）点钝击伤害。"
 					]
@@ -5267,7 +5287,7 @@
 				},
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"如果海蛇未能通过豁免检定，它可以选择成功。"
 					]
@@ -5311,7 +5331,7 @@
 				},
 				{
 					"ENG_name": "Rime Breath {@recharge 5}",
-					"name": "霜冻吐息 {@recharge 5}",
+					"name": "寒霜吐息{@recharge 5}",
 					"entries": [
 						"海蛇吐出一道60尺的锥形寒气。该区域内的每个生物必须进行一次{@dc 18}体质豁免，豁免失败者将受到49（{@damage 9d10}）点冷冻伤害，豁免成功则伤害减半。"
 					]
@@ -5450,7 +5470,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙族施放以下任意一个法术，无需法术材料，并且使用智力作为施法能力（法术豁免{@dc 19}）："
@@ -5477,7 +5497,7 @@
 				},
 				{
 					"ENG_name": "Fabricate (1/Day)",
-					"name": "制造（每日1次）",
+					"name": "鬼斧神工（1/日）",
 					"entries": [
 						"龙族可以施放{@spell 鬼斧神工}法术，无需法术材料，并且使用智力作为施法能力。"
 					]
@@ -5514,7 +5534,7 @@
 				},
 				{
 					"ENG_name": "Desiccating Breath {@recharge 5}",
-					"name": "枯萎之息 {@recharge 5}",
+					"name": "干枯吐息{@recharge 5}",
 					"entries": [
 						"这条龙在90英尺的锥形区域内呼出黄绿色的死灵能量。该区域内的每个生物必须进行一次{@dc 20}体质豁免检定。若豁免失败，该生物将受到49（{@damage 14d6}）点死灵伤害，并且在其下一回合结束前被虚弱。虚弱的生物在进行基于力量的能力检定和力量豁免检定时具有劣势，并且依赖力量的武器攻击造成的伤害减半。若豁免成功，该生物受到一半伤害且不会被虚弱。"
 					]
@@ -5522,15 +5542,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The dragon magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the dragon is reduced to 0 hit points or uses a bonus action to end it."
+						"龙可以魔法地转变成一个中体型或小体型的任何生物，同时保留其游戏具体数值（除了体型）。如果龙的生命值降至0点或使用附赠动作来结束这种转变，这种转变就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The dragon magically teleports to an unoccupied space it can see within 60 feet of it."
+						"龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -5544,14 +5566,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Essential Reduction (Costs 3 Actions)",
-					"name": "本质削减（消耗3个行动）",
+					"name": "解归本源（花费3个动作）",
 					"entries": [
 						"龙选择一个它可以看到的、未被穿着或携带的生物或物体，且其距离不超过60英尺。目标必须成功通过一次{@dc 19}体质豁免，否则将受到40点（{@damage 9d8}）的黯蚀伤害。如果此伤害将目标的生命值降低至0，它将化为尘埃。"
 					]
@@ -5778,14 +5800,14 @@
 				},
 				{
 					"ENG_name": "Fire Aura (Fire Form Only)",
-					"name": "火焰光环（仅火焰形态）",
+					"name": "炽焰灵光（仅火焰形态）",
 					"entries": [
 						"在活化吐息的每个回合开始时，位于其5尺范围内的每个生物受到3（{@damage 1d6}）点火焰伤害，并且光环内未被穿戴或携带的可燃物体会被点燃。任何接触活化吐息或用近战攻击命中它的生物会受到3（{@damage 1d6}）点火焰伤害。"
 					]
 				},
 				{
 					"ENG_name": "Putrid Aura (Acid and Poison Forms Only)",
-					"name": "恶臭光环（仅酸性和毒素形态）",
+					"name": "腐臭灵光（仅强酸和毒素形态）",
 					"entries": [
 						"一个生物在其回合开始时，如果位于活化气息5英尺范围内，必须成功通过一次{@dc 15}体质豁免检定，否则直到其下一个回合开始前陷入{@condition 中毒}状态。如果一个生物触碰到活化气息或用近战攻击击中它，将受到3（{@damage 1d6}）点强酸伤害。"
 					]
@@ -5809,9 +5831,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Lightning Burst (Lightning Form Only)",
+					"ENG_name": "Lightning Burst (Lightning Form Only)",
+					"name": "闪电爆发（仅闪电形态）",
 					"entries": [
-						"The animated breath magically teleports to an unoccupied space it can see within 30 feet of it. Each creature within 5 feet of the animated breath after it teleports takes 3 ({@damage 1d6}) lightning damage."
+						"这个活化吐息魔法般地传送到它视线范围内30英尺内一个未被占据的空间。在它传送后，每个位于活化吐息5英尺范围内的生物会受到3（{@damage 1d6}）点雷电伤害。"
 					]
 				}
 			],
@@ -5933,14 +5956,14 @@
 			"trait": [
 				{
 					"ENG_name": "Platinum Brilliance (Recharges after a Short or Long Rest)",
-					"name": "铂金光辉（短休或长休后重新充能）",
+					"name": "白金之耀（短休或长休后充能）",
 					"entries": [
 						"如果方面的生命值将降至0点，他的生命值总数将重置为500点，他的呼吸武器会重新充能，并且他将恢复所有已使用的传奇抗性。此外，方面现在可以使用\"神话行动\"部分中的选项，持续1小时。在巴哈姆特的铂金光辉激活后击败他，给予队伍额外的155,000经验值（总共310,000经验值）。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (5/Day)",
-					"name": "传奇抗性（每日5次）",
+					"name": "传奇抗性（5/日）",
 					"entries": [
 						"如果方面未能通过豁免检定，他可以选择成功。"
 					]
@@ -5977,7 +6000,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"方面使用以下呼吸武器之一：",
 						{
@@ -5987,7 +6010,7 @@
 								{
 									"ENG_name": "Exalting Breath",
 									"type": "item",
-									"name": "颂扬之息",
+									"name": "赞许之息",
 									"entries": [
 										"化身呼出天界山的治愈之风，形成一个300尺的锥形区域。由化身选定的该区域内的每个生物恢复71（{@dice 13d10}）点生命值，并且由化身选定的该区域内死亡不超过1小时的每个生物将被复活，并恢复所有生命值。"
 									]
@@ -5995,7 +6018,7 @@
 								{
 									"ENG_name": "Platinum Breath",
 									"type": "item",
-									"name": "铂金吐息",
+									"name": "白金吐息",
 									"entries": [
 										"化身呼出闪耀的铂金火焰，形成一个300英尺的锥形区域。该区域内的每个生物必须进行一次{@dc 26}敏捷豁免，豁免失败则受到66（{@damage 12d10}）点光耀伤害，豁免成功则受到一半伤害。"
 									]
@@ -6007,9 +6030,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The aspect magically transforms into any Humanoid or Beast, while retaining his game statistics (other than his size). This transformation ends if the aspect is reduced to 0 hit points or if he uses a bonus action to end it."
+						"方面通过魔法变换成任何类人生物或野兽形态，同时保留他自身的游戏具体数值（除了体型）。如果方面的生命值降至0点，或者他使用附赠动作来结束这种变换，变换就会结束。"
 					]
 				}
 			],
@@ -6023,7 +6047,7 @@
 				},
 				{
 					"ENG_name": "Furious Bite (Costs 2 Actions)",
-					"name": "狂暴咬击（消耗2次行动）",
+					"name": "狂怒啃咬（花费2个动作）",
 					"entries": [
 						"该化身进行一次啃咬攻击。如果攻击命中一个生物，目标必须进行一次{@dc 27}的感知豁免，豁免失败则对化身产生{@condition 恐慌}状态，效果持续到目标的下个回合结束。"
 					]
@@ -6035,14 +6059,14 @@
 			"mythic": [
 				{
 					"ENG_name": "Celestial Shield (Costs 2 Actions)",
-					"name": "天界护盾（消耗2次行动）",
+					"name": "天界之盾（花费2个动作）",
 					"entries": [
 						"方面在自己周围显现出七个幽灵般的{@creature 远古金龙||古老金龙}来保护他；直到他下一个回合开始之前，他获得77点临时生命值。"
 					]
 				},
 				{
 					"ENG_name": "Celestial Lances (Costs 3 Actions)",
-					"name": "天界之矛（消耗3次行动）",
+					"name": "天界之枪（花费3个动作）",
 					"entries": [
 						"该化身召唤四支巨大的魔法力场长矛，坠落至他视线范围内150英尺内的四个不同点并随即消失。以每个点为中心的20英尺半径、100英尺高的圆柱范围内的每生物都必须成功进行{@dc 27}敏捷豁免，否则受到24（{@damage 7d6}）点力场伤害。处于多支长矛区域内的生物只会受到一次影响。"
 					]
@@ -6180,14 +6204,14 @@
 			"trait": [
 				{
 					"ENG_name": "Chromatic Wrath (Recharges after a Short or Long Rest)",
-					"name": "多彩之怒（短休或长休后重新充能）",
+					"name": "色彩狂怒（短休或长休后充能）",
 					"entries": [
 						"如果方面的生命值将降至0点，她的生命值总数将重置为500点，她的多彩火焰会重新充能，并且她将恢复所有已使用的传奇抗性。此外，方面现在可以使用\"神话行动\"部分中的选项，持续1小时。在提亚马特的多彩之怒激活后击败她，给予队伍额外的155,000经验值（总共310,000经验值）。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (5/Day)",
-					"name": "传奇抗性（每日5次）",
+					"name": "传奇抗性（5/日）",
 					"entries": [
 						"如果方面未能通过豁免检定，她可以选择成功。"
 					]
@@ -6224,7 +6248,7 @@
 				},
 				{
 					"ENG_name": "Chromatic Flames {@recharge 5}",
-					"name": "多彩火焰 {@recharge 5}",
+					"name": "色彩烈焰{@recharge 5}",
 					"entries": [
 						"该化身在300英尺的锥形范围内呼出多彩火焰。该区域内的每个生物都必须进行一次{@dc 27}敏捷豁免。豁免失败时，该生物受到71点（{@damage 11d12}）伤害，伤害类型由化身选择：酸、冷、火、电击或毒素。豁免成功时，该生物只受到一半伤害。"
 					]
@@ -6240,7 +6264,7 @@
 				},
 				{
 					"ENG_name": "Furious Bite (Costs 2 Actions)",
-					"name": "狂暴咬击（消耗2次行动）",
+					"name": "狂怒啃咬（花费2个动作）",
 					"entries": [
 						"该化身进行一次啃咬攻击。如果攻击命中一个生物，目标必须成功通过一次{@dc 27}的感知豁免，否则在本回合结束前对该化身陷入{@condition 恐慌}状态。"
 					]
@@ -6252,14 +6276,14 @@
 			"mythic": [
 				{
 					"ENG_name": "Hurl Through Avernus (Costs 2 Actions)",
-					"name": "投掷至阿弗纳斯（消耗2次行动）",
+					"name": "投入阿弗纳斯（花费2个动作）",
 					"entries": [
 						"该化身瞄准她正在擒抱的生物。该生物必须成功通过一次{@dc 25}魅力豁免检定，否则受到44点 ({@damage 8d10}) 心灵伤害并被放逐到阿弗纳斯（九层地狱的第一层）。在该化身的下一个回合开始时，该生物重新出现在化身10英尺内的一个未被占据的空间中。"
 					]
 				},
 				{
 					"ENG_name": "Chromatic Flare (Costs 3 Actions)",
-					"name": "七彩光爆（消耗3次行动）",
+					"name": "色彩爆发（花费3个动作）",
 					"entries": [
 						"化身爆发出元素能量。在化身为中心的60英尺半径球体内，化身所选择的每个生物都必须进行一次{@dc 27}敏捷豁免。豁免失败时，该生物受到39（{@damage 6d12}）点伤害，伤害类型由化身选择：酸蚀、寒冷、火焰、闪电或毒素。豁免成功时，该生物受到一半伤害。"
 					]
@@ -6309,7 +6333,7 @@
 		},
 		{
 			"ENG_name": "Black Greatwyrm",
-			"name": "黑色古老龙",
+			"name": "太古黑龙",
 			"group": [
 				"Chromatic Dragon"
 			],
@@ -6384,7 +6408,7 @@
 			"trait": [
 				{
 					"ENG_name": "Chromatic Awakening (Recharges after a Short or Long Rest)",
-					"name": "多彩觉醒（短休或长休后重新充能）",
+					"name": "多彩觉醒（短休或长休后充能）",
 					"entries": [
 						"如果龙族的当前生命值将降至0点，它的生命值总数将重置为425点，它的呼吸武器会重新充能，并且它将恢复所有已使用的传奇抗性。此外，龙族现在可以使用\"神话行动\"部分中的选项，持续1小时。在龙族的多彩觉醒激活后击败它，给予队伍额外的105,000经验值（总共210,000经验值）。"
 					]
@@ -6435,7 +6459,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙在300尺的锥形区域内吐出一股能量。该区域内的每个生物必须进行{@dc 26}敏捷豁免检定。若豁免失败，该生物受到78点（{@damage 12d12}）酸蚀伤害。若豁免成功，该生物只受到一半伤害。"
 					]
@@ -6458,7 +6482,7 @@
 				},
 				{
 					"ENG_name": "Arcane Spear (Costs 3 Actions)",
-					"name": "奥术之矛（消耗3次行动）",
+					"name": "奥术长矛（花费3个动作）",
 					"entries": [
 						"巨龙创造了四根魔法力场长矛。每根长矛都会打击巨龙选择的、在其120英尺范围内可见的生物，对其目标造成12点（{@damage 1d8 + 8}）力场伤害，然后消失。"
 					]
@@ -6477,7 +6501,7 @@
 				},
 				{
 					"ENG_name": "Chromatic Flare (Costs 2 Actions)",
-					"name": "七彩光爆（消耗2次行动）",
+					"name": "色彩爆发（花费2个动作）",
 					"entries": [
 						"古龙迸发出元素能量。以古龙为中心，半径60英尺球形范围内的每个生物必须成功通过一次{@dc 26}敏捷豁免，否则将受到22（{@damage 5d8}）点酸伤害。"
 					]
@@ -6620,7 +6644,7 @@
 		},
 		{
 			"ENG_name": "Blue Greatwyrm",
-			"name": "蓝龙巨龙",
+			"name": "太古蓝龙",
 			"group": [
 				"Chromatic Dragon"
 			],
@@ -6695,7 +6719,7 @@
 			"trait": [
 				{
 					"ENG_name": "Chromatic Awakening (Recharges after a Short or Long Rest)",
-					"name": "多彩觉醒（短休或长休后重新充能）",
+					"name": "多彩觉醒（短休或长休后充能）",
 					"entries": [
 						"如果龙族的当前生命值将降至0点，它的生命值总数将重置为425点，它的呼吸武器会重新充能，并且它将恢复所有已使用的传奇抗性。此外，龙族现在可以使用\"神话行动\"部分中的选项，持续1小时。在龙族的多彩觉醒激活后击败它，给予队伍额外的105,000经验值（总共210,000经验值）。"
 					]
@@ -6746,7 +6770,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙在一个300尺的锥形区域内喷出一股能量冲击波。该区域内的每个生物都必须进行一次{@dc 26}敏捷豁免检定。豁免失败的生物将受到78点（{@damage 12d12}）闪电伤害。豁免成功的生物受到的伤害减半。"
 					]
@@ -6769,7 +6793,7 @@
 				},
 				{
 					"ENG_name": "Arcane Spear (Costs 3 Actions)",
-					"name": "奥术之矛（消耗3次行动）",
+					"name": "奥术长矛（花费3个动作）",
 					"entries": [
 						"巨龙创造了四根魔法力场长矛。每根长矛都会打击巨龙选择的、在其120英尺范围内可见的生物，对其目标造成12点（{@damage 1d8 + 8}）力场伤害，然后消失。"
 					]
@@ -6788,7 +6812,7 @@
 				},
 				{
 					"ENG_name": "Chromatic Flare (Costs 2 Actions)",
-					"name": "七彩光爆（消耗2次行动）",
+					"name": "色彩爆发（花费2个动作）",
 					"entries": [
 						"太古龙爆发出元素能量。以太古龙为中心，60尺半径范围内的每个生物都必须成功进行一次{@dc 26}敏捷豁免检定，否则将受到22点（{@damage 5d8}）闪电伤害。"
 					]
@@ -6931,7 +6955,7 @@
 		},
 		{
 			"ENG_name": "Brass Greatwyrm",
-			"name": "黄铜龙太古龙",
+			"name": "太古黄铜龙",
 			"group": [
 				"Metallic Dragon"
 			],
@@ -7058,7 +7082,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙使用以下呼吸武器之一：",
 						{
@@ -7068,7 +7092,7 @@
 								{
 									"ENG_name": "Elemental Breath",
 									"type": "item",
-									"name": "元素之息",
+									"name": "元素吐息",
 									"entries": [
 										"古龙呼出元素能量，形成一个300尺的锥形区域。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免，豁免失败则受到84（{@damage 13d12}）点火焰伤害，豁免成功则受到一半伤害。"
 									]
@@ -7076,7 +7100,7 @@
 								{
 									"ENG_name": "Sapping Breath",
 									"type": "item",
-									"name": "吸取气息",
+									"name": "弱化吐息",
 									"entries": [
 										"巨龙在300英尺的锥形范围内喷出毒气。该区域内的每个生物必须进行一次{@dc 25}的体质豁免。豁免失败时，该生物将陷入{@condition 昏迷}状态，持续1分钟。豁免成功时，该生物在攻击检定和豁免检定上具有劣势，直到巨龙的下一回合结束。{@condition 昏迷}的生物可以在每个其回合结束时重复进行豁免检定，成功时结束该效果。"
 									]
@@ -7122,7 +7146,7 @@
 				},
 				{
 					"ENG_name": "Shattering Roar (Costs 2 Actions)",
-					"name": "震碎之吼（消耗2个行动）",
+					"name": "粉碎咆哮（花费2个动作）",
 					"entries": [
 						"巨龙释放出一次魔法咆哮。位于巨龙为中心120英尺半径球体内的每个生物必须成功通过一次 {@dc 26} 体魄豁免检定，否则受到19（{@damage 3d12}）点雷鸣伤害，并且直到其下个回合结束前处于 {@condition 失能} 状态。"
 					]
@@ -7279,7 +7303,7 @@
 		},
 		{
 			"ENG_name": "Bronze Greatwyrm",
-			"name": "青铜龙太古龙",
+			"name": "太古青铜龙",
 			"group": [
 				"Metallic Dragon"
 			],
@@ -7406,7 +7430,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙使用以下呼吸武器之一：",
 						{
@@ -7416,7 +7440,7 @@
 								{
 									"ENG_name": "Elemental Breath",
 									"type": "item",
-									"name": "元素之息",
+									"name": "元素吐息",
 									"entries": [
 										"太古龙在300尺的锥形区域内呼出元素能量。该区域内的每个生物都必须进行一次{@dc 25}敏捷豁免检定，失败则受到84点（{@damage 13d12}）闪电伤害，成功则伤害减半。"
 									]
@@ -7424,7 +7448,7 @@
 								{
 									"ENG_name": "Sapping Breath",
 									"type": "item",
-									"name": "吸取气息",
+									"name": "弱化吐息",
 									"entries": [
 										"巨龙在300英尺的锥形范围内喷出毒气。该区域内的每个生物必须进行一次{@dc 25}的体质豁免。豁免失败时，该生物将陷入{@condition 昏迷}状态，持续1分钟。豁免成功时，该生物在攻击检定和豁免检定上具有劣势，直到巨龙的下一回合结束。{@condition 昏迷}的生物可以在每个其回合结束时重复进行豁免检定，成功时结束该效果。"
 									]
@@ -7470,7 +7494,7 @@
 				},
 				{
 					"ENG_name": "Shattering Roar (Costs 2 Actions)",
-					"name": "震碎之吼（消耗2个行动）",
+					"name": "粉碎咆哮（花费2个动作）",
 					"entries": [
 						"巨龙释放出一次魔法咆哮。位于巨龙为中心120英尺半径球体内的每个生物必须成功通过一次 {@dc 26} 体魄豁免检定，否则受到19（{@damage 3d12}）点雷鸣伤害，并且直到其下个回合结束前处于 {@condition 失能} 状态。"
 					]
@@ -7627,7 +7651,7 @@
 		},
 		{
 			"ENG_name": "Copper Greatwyrm",
-			"name": "铜龙太古龙",
+			"name": "太古赤铜龙",
 			"group": [
 				"Metallic Dragon"
 			],
@@ -7754,7 +7778,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙使用以下呼吸武器之一：",
 						{
@@ -7764,7 +7788,7 @@
 								{
 									"ENG_name": "Elemental Breath",
 									"type": "item",
-									"name": "元素之息",
+									"name": "元素吐息",
 									"entries": [
 										"太古龙在300尺的锥形区域内呼出元素能量。该区域内的每个生物都必须进行一次{@dc 25}敏捷豁免检定，失败则受到84点（{@damage 13d12}）强酸伤害，成功则伤害减半。"
 									]
@@ -7772,7 +7796,7 @@
 								{
 									"ENG_name": "Sapping Breath",
 									"type": "item",
-									"name": "吸取气息",
+									"name": "弱化吐息",
 									"entries": [
 										"巨龙在300英尺的锥形范围内喷出毒气。该区域内的每个生物必须进行一次{@dc 25}的体质豁免。豁免失败时，该生物将陷入{@condition 昏迷}状态，持续1分钟。豁免成功时，该生物在攻击检定和豁免检定上具有劣势，直到巨龙的下一回合结束。{@condition 昏迷}的生物可以在每个其回合结束时重复进行豁免检定，成功时结束该效果。"
 									]
@@ -7818,7 +7842,7 @@
 				},
 				{
 					"ENG_name": "Shattering Roar (Costs 2 Actions)",
-					"name": "震碎之吼（消耗2个行动）",
+					"name": "粉碎咆哮（花费2个动作）",
 					"entries": [
 						"巨龙释放出一次魔法咆哮。位于巨龙为中心120英尺半径球体内的每个生物必须成功通过一次 {@dc 26} 体魄豁免检定，否则受到19（{@damage 3d12}）点雷鸣伤害，并且直到其下个回合结束前处于 {@condition 失能} 状态。"
 					]
@@ -7975,7 +7999,7 @@
 		},
 		{
 			"ENG_name": "Crystal Dragon Wyrmling",
-			"name": "水晶龙幼龙",
+			"name": "水晶龙雏龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -8047,7 +8071,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力："
@@ -8070,7 +8094,7 @@
 				},
 				{
 					"ENG_name": "Scintillating Breath {@recharge 5}",
-					"name": "闪耀之息 {@recharge 5}",
+					"name": "辉光吐息{@recharge 5}",
 					"entries": [
 						"龙在15尺的锥形区域内呼出一束耀眼的光辉。该区域内的每个生物都必须进行一次{@dc 12}体质豁免检定，失败则受到18点（{@damage 4d8}）光耀伤害，成功则伤害减半。随后，龙通过吸收部分辐射能量获得5点临时生命值。"
 					]
@@ -8204,7 +8228,7 @@
 		},
 		{
 			"ENG_name": "Crystal Greatwyrm",
-			"name": "水晶太古龙",
+			"name": "太古水晶龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -8283,7 +8307,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"太古龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 26}，法术攻击命中{@hit 18}）："
@@ -8304,7 +8328,7 @@
 			"trait": [
 				{
 					"ENG_name": "Gem Awakening (Recharges after a Short or Long Rest)",
-					"name": "宝石觉醒（短休或长休后重新充能）",
+					"name": "宝石觉醒（短休或长休后充能）",
 					"entries": [
 						"如果太古龙的生命值降至0点，它当前的生命值总量将重置为400点生命值，它将重新充能其呼吸武器，并恢复所有已消耗的传奇抗性使用次数。此外，在接下来的一小时内，太古龙现在可以使用其群体心灵感应行动。在太古龙的宝石觉醒激活后击败它，奖励队伍额外的90,000经验值（总共180,000经验值）。"
 					]
@@ -8348,14 +8372,14 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"巨龙在300尺锥形区域内呼出压倒性力量。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免。豁免失败时，该生物受到71（{@damage 11d12}）力场伤害并被{@condition 倒地}。豁免成功时，该生物受到一半伤害且不会被{@condition 倒地}。无论成功或失败，该生物的速度变为0，直到其下一回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Mass Telekinesis (Gem Awakening Only; Recharges after a Short or Long Rest)",
-					"name": "群体心灵传动（仅限宝石觉醒；短休或长休后重新充能）",
+					"name": "群体心灵遥控（仅宝石觉醒状态，短休或长休后充能）",
 					"entries": [
 						"龙族长老可以指定它视线范围内120尺内的任意数量的生物和物体。没有单一目标的重量可以超过4000磅，如果物体被穿戴或携带，则不能被指定为目标。每个被指定的生物必须成功进行一次{@dc 26} 力量豁免检定，否则将被龙族长老的心灵感应力场所{@condition 束缚}。在生物的回合结束时，它可以重复进行豁免检定，如果成功则结束这个效果。",
 						"在太古巨龙的回合结束时，它可以将其心灵遥感抓取的每个生物或物体向任意方向移动最多60尺，但不能超过距离它自身120尺的范围。此外，它可以选择任何数量以这种方式{@condition 束缚}的生物，并对每个生物造成45点（{@damage 7d12}）的力场伤害。"
@@ -8364,15 +8388,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The greatwyrm magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the greatwyrm is reduced to 0 hit points or uses a bonus action to end it."
+						"太古龙使用魔法变身为任何中体型或小体型的生物，同时保留其游戏具体数值（除了体型）。如果太古龙的生命值降至0点或使用附赠动作来结束变身，这种变身就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The greatwyrm magically teleports to an unoccupied space it can see within 60 feet of it."
+						"巨龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -8386,14 +8412,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"太古龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Beam (Costs 3 Actions)",
-					"name": "心灵光束（消耗3个行动点）",
+					"name": "灵能束（花费3个动作）",
 					"entries": [
 						"太古龙发出一条90尺长、10尺宽的灵能光束。该区域内的每个生物都必须进行一次智力豁免检定（{@dc 26}），豁免失败则受到27点（{@damage 5d10}）心灵伤害，豁免成功则伤害减半。"
 					]
@@ -8619,7 +8645,7 @@
 				},
 				{
 					"ENG_name": "Nightmare Breath {@recharge 5}",
-					"name": "噩梦之息 {@recharge 5}",
+					"name": "噩梦吐息{@recharge 5}",
 					"entries": [
 						"龙在15尺的锥形区域内喷出一团孢子云。该区域内的每个生物都必须进行一次{@dc 11}感知豁免检定。豁免失败的生物受到5点（{@damage 1d10}）心灵伤害，并在1分钟内对龙感到{@condition 恐慌}。豁免成功的生物受到一半的伤害，且没有额外效果。感到{@condition 恐慌}的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
@@ -8759,7 +8785,7 @@
 		},
 		{
 			"ENG_name": "Dracohydra",
-			"name": "多头龙蜥",
+			"name": "多头龙蛇",
 			"source": "FTD",
 			"page": 176,
 			"size": [
@@ -8847,7 +8873,7 @@
 				},
 				{
 					"ENG_name": "Prismatic Breath {@recharge 4}",
-					"name": "七彩之息 {@recharge 4}",
+					"name": "繁彩吐息{@recharge 4}",
 					"entries": [
 						"龙蛇多头蜥的头部在60尺的锥形区域内呼出一股多彩能量。该区域内的每个生物都必须进行一次{@dc 17}敏捷豁免检定。豁免失败的生物将受到33点（{@damage 6d10}）伤害，伤害类型由龙蛇多头蜥选择：酸性、冰冻、火焰、闪电或毒素。成功通过豁免的生物受到的伤害减半。"
 					]
@@ -9492,7 +9518,7 @@
 				},
 				{
 					"ENG_name": "Noxious Breath {@recharge 5}",
-					"name": "有毒气息 {@recharge 5}",
+					"name": "毒气吐息{@recharge 5}",
 					"entries": [
 						"龙裔呼出一团15尺锥形的毒气。区域内的每个生物必须进行一次{@dc 14}的体质豁免。若豁免失败，该生物受到21（{@damage 6d6}）点毒素伤害，并获得1级{@condition 力竭}。若豁免成功，该生物只受到一半伤害，不会获得{@condition 力竭}，并且在24小时内对所有龙裔的毒气吐息免疫。"
 					]
@@ -9501,7 +9527,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Magic Shield (3/Day)",
-					"name": "魔法盾牌 (3/日)",
+					"name": "魔法护盾（3/日）",
 					"entries": [
 						"当龙兽被攻击检定时击中时，它可以在自己周围创造出一个{@condition 隐形}的魔法力场屏障，使其在对抗那次攻击时护甲等级获得+5的加值，并可能使攻击落空。"
 					]
@@ -9554,7 +9580,7 @@
 		},
 		{
 			"ENG_name": "Draconic Shard",
-			"name": "龙族碎片",
+			"name": "龙灵碎晶",
 			"source": "FTD",
 			"page": 181,
 			"size": [
@@ -9646,7 +9672,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"碎片施放以下任意一个法术，不需要法术材料，并使用智力作为施法能力（法术豁免{@dc 20}）："
@@ -9707,14 +9733,14 @@
 				},
 				{
 					"ENG_name": "Telekinetic Rend",
-					"name": "心灵感应撕裂",
+					"name": "念动撕裂",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 12}，触及5尺或距离120尺，单一目标。{@h}15 ({@damage 2d8 + 6}) 力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Inhabit Object",
-					"name": "附身物体",
+					"name": "占据物件",
 					"entries": [
 						"碎片将它的心灵精华注入它可见的30英尺内的中型或更小非智慧物体，然后消失，魔法般地附身于该物体。该物体使用碎片的AC，且对物体造成的任何伤害都会作用于碎片的生命值。碎片会一直寄居于该物体中，直到它使用一个动作离开；直到它被驱散；直到它的生命值降至0；或者直到一个能结束附身的效果，例如{@spell 反制善恶}法术，被施加于它。当它离开物体时，它会出现在最近的空闲位置。",
 						"如果物体原本不是魔法物品，被龙晶碎片占据时，它会变成魔法物品，并且在物体的某处会出现一个与龙晶碎片生前所属宝石龙种类相匹配的微小裂开的宝石。龙晶碎片可以使物体使用它自己的飞行速度飞行，使用它的感官，口头或心灵感应地说话，施放法术，并使用它的传奇行动。",
@@ -9741,14 +9767,14 @@
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"碎片使用法术施放。"
 					]
 				},
 				{
 					"ENG_name": "Commanding Thought (Costs 2 Actions)",
-					"name": "命令思维（消耗2个动作）",
+					"name": "思想强令（花费2个动作）",
 					"entries": [
 						"碎片瞄准它能看到的30尺范围内的生物。目标必须成功进行一次{@dc 20}感知豁免检定，否则直到其下一回合结束时被{@condition 魅惑}。以这种方式被{@condition 魅惑}时，目标成为碎片的傀儡，按照其心灵感应的命令行动和移动。在碎片控制下，目标在其回合上只能进行攻击（碎片选择目标）或疾跑行动。"
 					]
@@ -9936,7 +9962,7 @@
 			"_versions": [
 				{
 					"ENG_name": "Draconic Spirit (Chromatic)",
-					"name": "龙族之魂（彩色）",
+					"name": "龙类灵魄（繁彩）",
 					"source": "FTD",
 					"resist": [
 						"强酸",
@@ -9948,7 +9974,7 @@
 				},
 				{
 					"ENG_name": "Draconic Spirit (Gem)",
-					"name": "龙族之魂（宝石）",
+					"name": "龙类灵魄（宝石）",
 					"source": "FTD",
 					"resist": [
 						"力场",
@@ -9960,7 +9986,7 @@
 				},
 				{
 					"ENG_name": "Draconic Spirit (Metallic)",
-					"name": "龙族之魂（金属）",
+					"name": "龙类灵魄（金属）",
 					"source": "FTD",
 					"resist": [
 						"强酸",
@@ -10181,7 +10207,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Biting Rebuke",
-					"name": "咬合斥责",
+					"name": "反咬还击",
 					"entries": [
 						"选定目标在5尺范围内的生物对其造成伤害后，可以立即对该生物进行一次优势加成的短剑攻击。"
 					]
@@ -10300,7 +10326,7 @@
 				},
 				{
 					"ENG_name": "Thunder Bolt",
-					"name": "雷霆之击",
+					"name": "雷音箭",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 5}，触及5尺或60尺，单一目标。{@h}13（{@damage 3d8}）雷鸣伤害，并且目标被水平推向远离说话者最多10尺。"
 					]
@@ -10309,7 +10335,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Disarming Words (3/Day)",
-					"name": "解除武装之言（每日3次）",
+					"name": "止戈之言（3/日）",
 					"entries": [
 						"当说话者能看到的60尺范围内的生物进行伤害骰时，说话者可以掷一个{@dice d6}，并将掷出的数字从那次伤害骰中减去。"
 					]
@@ -10629,7 +10655,7 @@
 				},
 				{
 					"ENG_name": "Slime Breath {@recharge}",
-					"name": "粘液呼吸 {@recharge}",
+					"name": "粘液吐息{@recharge}",
 					"entries": [
 						"泥怪喷射出一团胶状物质，形成一个30尺锥形区域。该区域内的每个生物必须进行一次{@dc 14}敏捷豁免。若豁免失败，该生物受到22（{@damage 4d10}）点酸蚀伤害，并被直线拉向泥怪，最多30尺。若豁免成功，该生物受到一半的伤害且不会被拉动。"
 					]
@@ -10753,7 +10779,7 @@
 				},
 				{
 					"ENG_name": "Pinion",
-					"name": "翼",
+					"name": "骨翼",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}12点（{@damage 2d6 + 5}）点穿刺伤害。如果目标是中型或更小的生物，它将被骨翼压住并被{@condition 束缚}。魔像有两个骨翼，每个可以限制一个目标。如果一个生物被一个骨翼{@condition 束缚}，魔像就不能用它攻击。任何被骨翼{@condition 束缚}的生物可以在自己的回合开始时，通过成功的{@dc 17}力量（{@skill 运动}）检定来解放自己。"
 					]
@@ -10869,7 +10895,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (1/Day)",
-					"name": "传奇抗性（每日1次）",
+					"name": "传奇抗性（1/日）",
 					"entries": [
 						"如果龙裔在豁免检定中失败，它可以选择成功。"
 					]
@@ -10899,7 +10925,7 @@
 				},
 				{
 					"ENG_name": "Radiant Breath {@recharge}",
-					"name": "光辉之息 {@recharge}",
+					"name": "光耀吐息{@recharge}",
 					"entries": [
 						"龙裔吐出一道火焰般的光辉，形成一个30尺的锥形区域。该区域内的每个生物都必须进行一次{@dc 15} 敏捷豁免检定，失败则受到44 ({@damage 8d10}) 光耀伤害，成功则伤害减半。当龙裔使用这个动作时，它可以选择锥形区域内最多三个生物。这些生物不会受到光辉的伤害，反而会各自恢复22 ({@dice 4d10}) 点生命值。"
 					]
@@ -10956,7 +10982,7 @@
 				{
 					"ac": 17,
 					"from": [
-						"心灵防御"
+						"精神防御"
 					]
 				}
 			],
@@ -11004,7 +11030,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙裔施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 15}，法术攻击命中{@hit 7}）："
@@ -11023,14 +11049,14 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (1/Day)",
-					"name": "传奇抗性（每日1次）",
+					"name": "传奇抗性（1/日）",
 					"entries": [
 						"如果龙裔在豁免检定中失败，它可以选择成功。"
 					]
 				},
 				{
 					"ENG_name": "Mental Defense",
-					"name": "心灵防御",
+					"name": "精神防御",
 					"entries": [
 						"当龙裔未穿戴任何护甲时，其护甲等级（AC）包含其智力调整值。"
 					]
@@ -11053,7 +11079,7 @@
 				},
 				{
 					"ENG_name": "Heat Breath {@recharge}",
-					"name": "热息 {@recharge}",
+					"name": "灼热吐息{@recharge}",
 					"entries": [
 						"龙裔在30尺锥形范围内呼出一波炽热的气息。该区域内的每个生物必须进行一次{@dc 14}体质豁免，豁免失败则受到27（{@damage 6d8}）点火焰伤害，豁免成功则受到一半伤害。该区域内的金属物体会变得炽热发红，直到龙裔的下个回合结束。在其回合开始时与炽热物体有物理接触的生物必须进行一次{@dc 14}体质豁免。豁免失败则该生物受到9（{@damage 2d8}）点火焰伤害，并且直到其下个回合开始前其攻击检定具有劣势。"
 					]
@@ -11160,7 +11186,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (1/Day)",
-					"name": "传奇抗性（每日1次）",
+					"name": "传奇抗性（1/日）",
 					"entries": [
 						"如果龙裔在豁免检定中失败，它可以选择成功。"
 					]
@@ -11183,7 +11209,7 @@
 				},
 				{
 					"ENG_name": "Necrotic Breath {@recharge}",
-					"name": "死灵气息 {@recharge}",
+					"name": "暗蚀吐息{@recharge}",
 					"entries": [
 						"龙裔在30尺的锥形区域内喷出阴影火焰。该区域内的每个生物都必须进行一次{@dc 15}感知豁免检定。豁免失败的生物受到36点（{@damage 8d8}）黯蚀伤害，并在1分钟内对龙裔感到{@condition 恐慌}。豁免成功的生物受到一半的伤害，并且不会感到{@condition 恐慌}。感到{@condition 恐慌}的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
@@ -11275,7 +11301,7 @@
 			"trait": [
 				{
 					"ENG_name": "Cloying Miasma",
-					"name": "令人作呕的瘴气",
+					"name": "反胃恶臭",
 					"entries": [
 						"这个怪物周围环绕着一种有毒的恶臭。在怪物回合开始时，任何在其5尺范围内的生物都必须成功进行一次{@dc 14} 体质豁免检定，否则将被{@condition 中毒}直到怪物下一个回合开始。"
 					]
@@ -11312,14 +11338,14 @@
 				},
 				{
 					"ENG_name": "Acidic Spit",
-					"name": "酸性唾沫",
+					"name": "酸液喷吐",
 					"entries": [
 						"{@atk rw} 命中{@hit 5}，射程：60尺，单一目标。{@h}10 ({@damage 3d6}) 强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Acid Belch {@recharge 5}",
-					"name": "酸液喷吐 {@recharge 5}",
+					"name": "强酸唾液{@recharge 5}",
 					"entries": [
 						"这个怪物喷出一团酸性气体，形成一个30英尺的锥形范围。该区域内的每个生物必须进行一次{@dc 14}的体质豁免检定，若失败则受到28（{@damage 8d6}）点酸性伤害，若成功则只受到一半伤害。"
 					]
@@ -11608,7 +11634,7 @@
 			"trait": [
 				{
 					"ENG_name": "Draconic Essence",
-					"name": "龙族精华",
+					"name": "龙族精粹",
 					"entries": [
 						"当你召唤龙兽时，选择一种伤害类型：酸性、冰冻、火焰、闪电或毒素。所选类型决定了龙兽的伤害免疫以及其注入攻击特性的伤害。"
 					]
@@ -11626,7 +11652,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Infused Strikes",
-					"name": "注入打击",
+					"name": "注能打击",
 					"entries": [
 						"当幼龙能够看到的30尺范围内的另一个生物用武器攻击命中目标时，幼龙会用其精华注入攻击，导致目标额外受到{@damage 1d6}点伤害，伤害类型由其龙族精华决定。"
 					]
@@ -11720,14 +11746,14 @@
 				},
 				{
 					"ENG_name": "Barbed Proboscis",
-					"name": "带刺的触须",
+					"name": "钩刺虫吻",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}8（{@damage 1d6 + 5}）点穿刺伤害加上9（{@damage 2d8}）黯蚀伤害，并且卵猎者恢复等于所造成黯蚀伤害的生命值。"
 					]
 				},
 				{
 					"ENG_name": "Torpor Spores {@recharge 5}",
-					"name": "休眠孢子 {@recharge 5}",
+					"name": "迟钝孢子{@recharge 5}",
 					"entries": [
 						"蛋猎手释放出一团闪烁的蓝色孢子。以蛋猎手为中心，半径30英尺范围内的每个生物必须成功通过一次{@dc 14}体质豁免，否则将被{@condition 中毒}1分钟。当以此方式{@condition 中毒}时，生物在其回合中只能执行一个动作或一个额外动作，但不能同时执行两者，且无法执行反应。生物可以在其每个回合结束时重复进行豁免检定，成功则结束此效果。如果生物的豁免检定成功或效果结束，该生物将在接下来的24小时内对此蛋猎手的麻痹孢子免疫。"
 					]
@@ -11736,7 +11762,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Rapid Adaptation",
-					"name": "快速适应",
+					"name": "迅捷适应",
 					"entries": [
 						"当蛋猎者受到伤害时，它对该伤害获得抗性。"
 					]
@@ -11840,7 +11866,7 @@
 				},
 				{
 					"ENG_name": "Egg Tooth",
-					"name": "卵齿",
+					"name": "卵牙",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及 5 尺，单一目标。{@h}10 ({@damage 2d6 + 3}) 点穿刺伤害，如果目标是一个物体，则为 17 ({@damage 4d6 + 3}) 点穿刺伤害。"
 					]
@@ -11848,9 +11874,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Rapid Movement",
+					"ENG_name": "Rapid Movement",
+					"name": "快速移动",
 					"entries": [
-						"The egg hunter takes the Dash or Disengage action."
+						"蛋猎者采取疾跑或脱离战斗行动。"
 					]
 				}
 			],
@@ -11875,7 +11902,7 @@
 		},
 		{
 			"ENG_name": "Elder Brain Dragon",
-			"name": "长老脑龙",
+			"name": "主脑龙",
 			"source": "FTD",
 			"page": 194,
 			"size": [
@@ -11995,7 +12022,7 @@
 				},
 				{
 					"ENG_name": "Tadpole Brine Breath {@recharge 5}",
-					"name": "蝌蚪盐水呼吸 {@recharge 5}",
+					"name": "蝌蚪液喷流{@recharge 5}",
 					"entries": [
 						"龙吐出一道海水，在一条120尺长、15尺宽的直线上。该区域内的每个生物都必须进行一次{@dc 22} 体质豁免检定，失败则受到55 ({@damage 10d10}) 心灵伤害，成功则伤害减半。无论成功或失败，如果生物不是构装生物或不死生物，它将被灵吸怪蝌蚪寄生。",
 						"感染期间，生物在其每个回合开始时承受16点（{@damage 3d10}）心灵伤害。生物可以在其每个回合结束时重复进行豁免检定，连续成功三次后结束此效果。如果生物被魔法击中，该魔法可以结束诅咒或恢复40点生命值或更多，那么寄生在生物体内的蝌蚪会立即死亡，结束对生物的效果。",
@@ -12013,7 +12040,7 @@
 				},
 				{
 					"ENG_name": "Shatter Concentration (Costs 2 Actions)",
-					"name": "震碎专注（消耗2个行动）",
+					"name": "凝神粉碎（花费2个动作）",
 					"entries": [
 						"龙以它正在缠绕的生物为目标。目标对它施放的法术或维持的能力的{@status 专注}状态结束，并且目标受到19点（{@damage 3d12}）心灵伤害。"
 					]
@@ -12059,7 +12086,7 @@
 		},
 		{
 			"ENG_name": "Emerald Dragon Wyrmling",
-			"name": "翡翠龙幼龙",
+			"name": "翡翠龙雏龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -12131,7 +12158,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 12}）："
@@ -12163,7 +12190,7 @@
 				},
 				{
 					"ENG_name": "Disorienting Breath {@recharge 5}",
-					"name": "迷惑之息 {@recharge 5}",
+					"name": "惑心吐息{@recharge 5}",
 					"entries": [
 						"龙吐出一道心理不和的波动，形成一个15尺的锥形区域。该区域内的每个生物都必须进行一次{@dc 12} 智力豁免检定。豁免失败的生物将受到17 ({@damage 5d6}) 心灵伤害，并且在其下一个回合结束之前，当该生物进行攻击骰或属性检定时，必须掷一个{@dice d4} 并将掷出的数字从总和中减去。成功通过豁免的生物受到的伤害减半，且没有额外效果。"
 					]
@@ -12300,7 +12327,7 @@
 		},
 		{
 			"ENG_name": "Emerald Greatwyrm",
-			"name": "翡翠龙太古龙",
+			"name": "太古翡翠龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -12379,7 +12406,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"太古龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 26}，法术攻击命中{@hit 18}）："
@@ -12400,7 +12427,7 @@
 			"trait": [
 				{
 					"ENG_name": "Gem Awakening (Recharges after a Short or Long Rest)",
-					"name": "宝石觉醒（短休或长休后重新充能）",
+					"name": "宝石觉醒（短休或长休后充能）",
 					"entries": [
 						"如果太古龙的生命值降至0点，它当前的生命值总量将重置为400点生命值，它将重新充能其呼吸武器，并恢复所有已消耗的传奇抗性使用次数。此外，在接下来的一小时内，太古龙现在可以使用其群体心灵感应行动。在太古龙的宝石觉醒激活后击败它，奖励队伍额外的90,000经验值（总共180,000经验值）。"
 					]
@@ -12444,14 +12471,14 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"巨龙在300尺锥形区域内呼出压倒性力量。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免。豁免失败时，该生物受到71（{@damage 11d12}）力场伤害并被{@condition 倒地}。豁免成功时，该生物受到一半伤害且不会被{@condition 倒地}。无论成功或失败，该生物的速度变为0，直到其下一回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Mass Telekinesis (Gem Awakening Only; Recharges after a Short or Long Rest)",
-					"name": "群体心灵传动（仅限宝石觉醒；短休或长休后重新充能）",
+					"name": "群体心灵遥控（仅宝石觉醒状态，短休或长休后充能）",
 					"entries": [
 						"龙族长老可以指定它视线范围内120尺内的任意数量的生物和物体。没有单一目标的重量可以超过4000磅，如果物体被穿戴或携带，则不能被指定为目标。每个被指定的生物必须成功进行一次{@dc 26} 力量豁免检定，否则将被龙族长老的心灵感应力场所{@condition 束缚}。在生物的回合结束时，它可以重复进行豁免检定，如果成功则结束这个效果。",
 						"在太古巨龙的回合结束时，它可以将其心灵遥感抓取的每个生物或物体向任意方向移动最多60尺，但不能超过距离它自身120尺的范围。此外，它可以选择任何数量以这种方式{@condition 束缚}的生物，并对每个生物造成45点（{@damage 7d12}）的力场伤害。"
@@ -12460,15 +12487,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The greatwyrm magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the greatwyrm is reduced to 0 hit points or uses a bonus action to end it."
+						"太古龙使用魔法变身为任何中体型或小体型的生物，同时保留其游戏具体数值（除了体型）。如果太古龙的生命值降至0点或使用附赠动作来结束变身，这种变身就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The greatwyrm magically teleports to an unoccupied space it can see within 60 feet of it."
+						"巨龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -12482,14 +12511,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"太古龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Beam (Costs 3 Actions)",
-					"name": "心灵光束（消耗3个行动点）",
+					"name": "灵能束（花费3个动作）",
 					"entries": [
 						"太古龙发出一条90尺长、10尺宽的灵能光束。该区域内的每个生物都必须进行一次智力豁免检定（{@dc 26}），豁免失败则受到27点（{@damage 5d10}）心灵伤害，豁免成功则伤害减半。"
 					]
@@ -12640,7 +12669,7 @@
 		},
 		{
 			"ENG_name": "Eyedrake",
-			"name": "眼魔龙",
+			"name": "眼龙兽",
 			"source": "FTD",
 			"page": 199,
 			"size": [
@@ -12717,7 +12746,7 @@
 				},
 				{
 					"ENG_name": "Antimagic Breath {@recharge}",
-					"name": "反魔法气息 {@recharge}",
+					"name": "反魔法吐息{@recharge}",
 					"entries": [
 						"眼龙发出一道魔法波动，覆盖30尺的锥形区域。该区域内的每个生物都必须进行一次{@dc 14}体质豁免检定，失败则受到39点（{@damage 6d12}）力场伤害，成功则伤害减半。该区域内眼龙选择的生物和物体上的所有3级或更低级别的法术都会结束。"
 					]
@@ -12733,7 +12762,7 @@
 							"items": [
 								{
 									"ENG_name": "1: Freezing Ray",
-									"name": "1: 冰冻射线",
+									"name": "1. 冻结射线",
 									"entries": [
 										"目标必须进行一次{@dc 14}体质豁免检定。若豁免失败，目标受到17（{@damage 5d6}）点冷冻伤害，且其速度在它的下一回合结束前减半。若豁免成功，目标只受到一半伤害，且不受额外效果影响。"
 									],
@@ -12741,7 +12770,7 @@
 								},
 								{
 									"ENG_name": "2: Debilitating Ray",
-									"name": "2: 衰弱射线",
+									"name": "2. 虚弱射线",
 									"entries": [
 										"目标必须成功进行一次{@dc 14} 体质豁免检定，否则将受到7 ({@damage 2d6}) 雷鸣伤害，并在其下一个回合结束前处于{@condition 失能}状态。"
 									],
@@ -12749,7 +12778,7 @@
 								},
 								{
 									"ENG_name": "3: Repulsion Ray",
-									"name": "3: 排斥射线",
+									"name": "3. 斥退射线",
 									"entries": [
 										"目标必须成功通过一次{@dc 14}力量豁免检定，否则将受到14点（{@damage 4d6}）力场伤害，并被推向远离眼龙最多60尺。"
 									],
@@ -12757,7 +12786,7 @@
 								},
 								{
 									"ENG_name": "4: Fire Ray",
-									"name": "4: 火焰射线",
+									"name": "4. 火焰射线",
 									"entries": [
 										"目标必须进行一次{@dc 14} 敏捷豁免检定，失败则受到21 ({@damage 6d6}) 火焰伤害，成功则伤害减半。"
 									],
@@ -12765,7 +12794,7 @@
 								},
 								{
 									"ENG_name": "5: Paralyzing Ray",
-									"name": "5: 麻痹射线",
+									"name": "5. 麻痹射线",
 									"entries": [
 										"目标必须成功通过一次{@dc 14}体质豁免检定，否则将被{@condition 麻痹}1分钟。目标可以在自己的每个回合结束时重复进行豁免检定，成功则结束该效果。"
 									],
@@ -12773,7 +12802,7 @@
 								},
 								{
 									"ENG_name": "6: Death Ray",
-									"name": "6: 死亡射线",
+									"name": "6. 致死射线",
 									"entries": [
 										"目标必须进行一次{@dc 14} 敏捷豁免检定，失败则受到28 ({@damage 8d6}) 黯蚀伤害，成功则伤害减半。如果射线将目标的生命值降至0点，目标将死亡。"
 									],
@@ -12911,46 +12940,52 @@
 			],
 			"bonus": [
 				{
-					"name": "Crystal Dart",
+					"ENG_name": "Crystal Dart",
+					"name": "水晶飞镖",
 					"entries": [
-						"{@atk rs} {@hit 5} to hit, range 30 ft., one target. {@h}7 ({@damage 1d10 + 2}) force damage, and one of the following effects occurs, determined by the kind of dragon that created the gem stalker:"
+						"{@atk rs} 命中{@hit 5}，射程30尺，单一目标。{@h}7（{@damage 1d10 + 2}）力场伤害，并且根据创造宝石潜行者的龙的种类，发生以下效果之一："
 					]
 				},
 				{
-					"name": "Amethyst",
+					"ENG_name": "Amethyst",
+					"name": "紫晶",
 					"entries": [
-						"The gem stalker can teleport to an unoccupied space it can see within 30 feet of it."
+						"宝石追猎者可以传送到它能看到的30尺范围内的未被占据的空间。"
 					]
 				},
 				{
-					"name": "Crystal",
+					"ENG_name": "Crystal",
+					"name": "水晶",
 					"entries": [
-						"The gem stalker gains a number of temporary hit points equal to the damage dealt."
+						"宝石行者获得等同于造成的伤害值的临时生命值。"
 					]
 				},
 				{
-					"name": "Emerald",
+					"ENG_name": "Emerald",
+					"name": "祖母绿",
 					"entries": [
-						"The target must roll a {@dice d4} and subtract the number rolled from the next attack roll it makes before the start of the gem stalker's next turn."
+						"目标必须掷一个{@dice d4}，并将掷出的数字从它在宝石追踪者下一个回合开始前所做的下一次攻击骰中减去。"
 					]
 				},
 				{
-					"name": "Sapphire",
+					"ENG_name": "Sapphire",
+					"name": "蓝宝石",
 					"entries": [
-						"The target must succeed on a {@dc 13} Strength saving throw or be pushed horizontally up to 10 feet away from the gem stalker and be knocked {@condition prone}."
+						"目标必须成功通过一个 {@dc 13} 的力量豁免检定，否则将被水平推离宝石追猎者最多10英尺，并被击倒 {@condition 倒地}。"
 					]
 				},
 				{
-					"name": "Topaz",
+					"ENG_name": "Topaz",
+					"name": "黄玉",
 					"entries": [
-						"The target must succeed on a {@dc 13} Constitution saving throw or be {@condition poisoned} until the start of the gem stalker's next turn."
+						"目标必须成功通过一次{@dc 13}体质豁免检定，否则将被{@condition 中毒}，直到宝石追踪者的下一回合开始。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Protective Link",
-					"name": "保护链接",
+					"name": "守护链接",
 					"entries": [
 						"当宝石追猎者能看到的另一个生物在其30尺范围内即将受到伤害时，宝石追猎者减少该伤害10点（{@dice 3d6}）。然后宝石追猎者受到等于该数值的伤害。"
 					]
@@ -13112,7 +13147,7 @@
 				},
 				{
 					"ENG_name": "Terrifying Breath {@recharge}",
-					"name": "恐怖气息 {@recharge}",
+					"name": "恐惧吐息{@recharge}",
 					"entries": [
 						"幽灵龙呼出一片90英尺锥形的阴影迷雾。该区域内的每个生物必须进行一次{@dc 21}体质豁免检定。若豁免失败，该生物将受到40（{@damage 9d8}）点冷冻伤害，并且在1分钟内对幽灵龙{@condition 恐慌}。若豁免成功，该生物仅受到一半伤害，且不会{@condition 恐慌}。",
 						"当生物对幽灵龙感到{@condition 恐慌}时，它将处于{@condition 麻痹}状态。感到{@condition 恐慌}的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。",
@@ -13193,7 +13228,7 @@
 			"action": [
 				{
 					"ENG_name": "Peck",
-					"name": "啄击",
+					"name": "喙击",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}7 ({@damage 1d10 + 2}) 点穿刺伤害。"
 					]
@@ -13209,7 +13244,7 @@
 		},
 		{
 			"ENG_name": "Gold Greatwyrm",
-			"name": "金龙太古龙",
+			"name": "太古金龙",
 			"group": [
 				"Metallic Dragon"
 			],
@@ -13336,7 +13371,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙使用以下呼吸武器之一：",
 						{
@@ -13346,7 +13381,7 @@
 								{
 									"ENG_name": "Elemental Breath",
 									"type": "item",
-									"name": "元素之息",
+									"name": "元素吐息",
 									"entries": [
 										"古龙呼出元素能量，形成一个300尺的锥形区域。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免，豁免失败则受到84（{@damage 13d12}）点火焰伤害，豁免成功则受到一半伤害。"
 									]
@@ -13354,7 +13389,7 @@
 								{
 									"ENG_name": "Sapping Breath",
 									"type": "item",
-									"name": "吸取气息",
+									"name": "弱化吐息",
 									"entries": [
 										"巨龙在300英尺的锥形范围内喷出毒气。该区域内的每个生物必须进行一次{@dc 25}的体质豁免。豁免失败时，该生物将陷入{@condition 昏迷}状态，持续1分钟。豁免成功时，该生物在攻击检定和豁免检定上具有劣势，直到巨龙的下一回合结束。{@condition 昏迷}的生物可以在每个其回合结束时重复进行豁免检定，成功时结束该效果。"
 									]
@@ -13400,7 +13435,7 @@
 				},
 				{
 					"ENG_name": "Shattering Roar (Costs 2 Actions)",
-					"name": "震碎之吼（消耗2个行动）",
+					"name": "粉碎咆哮（花费2个动作）",
 					"entries": [
 						"巨龙释放出一次魔法咆哮。位于巨龙为中心120英尺半径球体内的每个生物必须成功通过一次 {@dc 26} 体魄豁免检定，否则受到19（{@damage 3d12}）点雷鸣伤害，并且直到其下个回合结束前处于 {@condition 失能} 状态。"
 					]
@@ -13566,7 +13601,7 @@
 		},
 		{
 			"ENG_name": "Green Greatwyrm",
-			"name": "绿龙太古龙",
+			"name": "太古绿龙",
 			"group": [
 				"Chromatic Dragon"
 			],
@@ -13641,7 +13676,7 @@
 			"trait": [
 				{
 					"ENG_name": "Chromatic Awakening (Recharges after a Short or Long Rest)",
-					"name": "多彩觉醒（短休或长休后重新充能）",
+					"name": "多彩觉醒（短休或长休后充能）",
 					"entries": [
 						"如果龙族的当前生命值将降至0点，它的生命值总数将重置为425点，它的呼吸武器会重新充能，并且它将恢复所有已使用的传奇抗性。此外，龙族现在可以使用\"神话行动\"部分中的选项，持续1小时。在龙族的多彩觉醒激活后击败它，给予队伍额外的105,000经验值（总共210,000经验值）。"
 					]
@@ -13692,7 +13727,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙在300尺的锥形区域内呼出一股能量爆炸。该区域内的每个生物都必须进行一次{@dc 26}敏捷豁免检定。豁免失败的生物将受到78点（{@damage 12d12}）毒素伤害。成功通过豁免的生物受到的伤害减半。"
 					]
@@ -13715,7 +13750,7 @@
 				},
 				{
 					"ENG_name": "Arcane Spear (Costs 3 Actions)",
-					"name": "奥术之矛（消耗3次行动）",
+					"name": "奥术长矛（花费3个动作）",
 					"entries": [
 						"巨龙创造了四根魔法力场长矛。每根长矛都会打击巨龙选择的、在其120英尺范围内可见的生物，对其目标造成12点（{@damage 1d8 + 8}）力场伤害，然后消失。"
 					]
@@ -13734,7 +13769,7 @@
 				},
 				{
 					"ENG_name": "Chromatic Flare (Costs 2 Actions)",
-					"name": "七彩光爆（消耗2次行动）",
+					"name": "色彩爆发（花费2个动作）",
 					"entries": [
 						"龙族长老爆发出元素能量。以龙族长老为中心，60尺半径范围内的球形区域内的每个生物都必须成功进行一次{@dc 26} 敏捷豁免检定，否则将受到22 ({@damage 5d8}) 毒素伤害。"
 					]
@@ -13877,7 +13912,7 @@
 		},
 		{
 			"ENG_name": "Hoard Mimic",
-			"name": "宝藏拟身怪",
+			"name": "宝库拟身怪",
 			"source": "FTD",
 			"page": 204,
 			"size": [
@@ -13933,7 +13968,7 @@
 			"trait": [
 				{
 					"ENG_name": "False Appearance (Hoard Form Only)",
-					"name": "虚假外观（仅在财宝形态）",
+					"name": "拟形(仅宝库形态)",
 					"entries": [
 						"如果拟态生物在战斗开始时保持静止，它在其先攻骰上有优势。此外，如果一个生物没有观察到拟态生物移动或行动，该生物必须成功进行一次{@dc 18} 智力（{@skill 调查}）检定，以识别出拟态生物是有生命的。"
 					]
@@ -13963,7 +13998,7 @@
 				},
 				{
 					"ENG_name": "Caustic Mist {@recharge 5}",
-					"name": "腐蚀雾气 {@recharge 5}",
+					"name": "腐蚀薄雾{@recharge 5}",
 					"entries": [
 						"拟态生物在30尺的锥形区域内喷射出细小的酸雾。该区域内的每个生物都必须进行一次{@dc 14} 敏捷豁免检定。豁免失败的生物将受到27 ({@damage 6d8}) 强酸伤害，并在其下个回合结束前处于{@condition 目盲}状态。成功通过豁免的生物受到的伤害减半，并且不会{@condition 目盲}。"
 					]
@@ -14014,7 +14049,7 @@
 		},
 		{
 			"ENG_name": "Hoard Scarab",
-			"name": "宝藏圣甲虫",
+			"name": "宝库圣甲虫",
 			"source": "FTD",
 			"page": 205,
 			"size": [
@@ -14073,9 +14108,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Scale Dust (1/Day)",
+					"ENG_name": "Scale Dust (1/Day)",
+					"name": "鳞粉（每日1次）",
 					"entries": [
-						"The scarab releases magical glittering dust from its wings. Each creature within 5 feet of the scarab must succeed on a {@dc 13} Dexterity saving throw or be outlined in blue light for 10 minutes. While outlined in this way, a creature sheds dim light in a 10-foot radius and can't benefit from being {@condition invisible}. In addition, every Dragon within 1 mile of the creature becomes aware of it and can unerringly track the creature. Casting {@spell dispel magic} on the creature ends the effect on it."
+						"圣甲虫从其翅膀释放出魔法闪烁的粉尘。距离圣甲虫5英尺范围内的每个生物必须成功通过一个{@dc 13}的敏捷豁免检定，否则将在10分钟内被蓝光勾勒。以这种方式被勾勒的生物会在10英尺半径内散发昏暗的光，并且不能从{@condition 隐形}状态中获益。此外，距离该生物1英里内的每条龙都会察觉到它并能精确追踪该生物。对该生物施放{@spell 解除魔法}可结束此效果。"
 					]
 				}
 			],
@@ -14210,14 +14246,14 @@
 				},
 				{
 					"ENG_name": "Sapping Presence",
-					"name": "吸取存在",
+					"name": "削弱威仪",
 					"entries": [
 						"空心龙选择的每个生物，在其60尺范围内，都必须进行一次{@dc 19}感知豁免检定。豁免失败的生物，其速度减半，并且在其下一回合结束前攻击骰有劣势。成功通过豁免的生物，将对该空心龙的削弱存在免疫24小时。"
 					]
 				},
 				{
 					"ENG_name": "Radiant Breath {@recharge 5}",
-					"name": "光辉之息 {@recharge 5}",
+					"name": "光耀吐息{@recharge 5}",
 					"entries": [
 						"空洞龙在一个60尺的锥形区域内喷出光辉烈焰。该区域内的每个生物都必须进行一次敏捷豁免检定（{@dc 19}），豁免失败则受到54点（{@damage 12d8}）光耀伤害，豁免成功则伤害减半。"
 					]
@@ -14233,14 +14269,14 @@
 				},
 				{
 					"ENG_name": "Ghostly Binding (Costs 2 Actions)",
-					"name": "幽灵束缚（消耗2个行动）",
+					"name": "幽魂束缚（花费2个动作）",
 					"entries": [
 						"空心龙在其周围60英尺范围内创造一个它所能看到的生物的以太束缚。目标必须成功通过一个{@dc 19}力量豁免投掷，否则将被{@condition 束缚}，直到龙的下一个回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Booming Scales (Costs 3 Actions)",
-					"name": "轰鸣鳞片（消耗3个动作）",
+					"name": "爆鳞（花费3个动作）",
 					"entries": [
 						"空洞龙的骨架中突然爆发出一阵极其刺耳的巨响。在空洞龙10尺范围内的每个生物都必须进行一次体质豁免检定（{@dc 19}），豁免失败则受到24点（{@damage 7d6}）雷鸣伤害，豁免成功则伤害减半。"
 					]
@@ -14358,7 +14394,7 @@
 				},
 				{
 					"ENG_name": "Blood-Chilling Roar {@recharge 4}",
-					"name": "冰血咆哮 {@recharge 4}",
+					"name": "破胆咆哮 {@recharge 4}",
 					"entries": [
 						"狮龙发出一声恐怖的吼叫，声音可以传播到300尺外。任何在狮龙30尺范围内能听到其吼叫的生物都必须成功通过一次{@dc 14}感知豁免检定，否则将对狮龙感到{@condition 恐慌}1分钟。如果豁免失败的差值达到5或更多，该生物同样会在这1分钟内处于{@condition 麻痹}状态。生物可以在自己的回合结束时重复进行豁免检定，成功则结束该效果。如果目标的豁免检定成功或该效果对其结束，目标将对这只狮龙的血寒之吼免疫，持续时间为接下来的24小时。"
 					]
@@ -14482,7 +14518,7 @@
 				},
 				{
 					"ENG_name": "Calming Mist {@recharge 5}",
-					"name": "平静之雾 {@recharge 5}",
+					"name": "镇定喷雾{@recharge 5}",
 					"entries": [
 						"和平使者在自己为中心的30尺半径球形区域内释放一种平静气体。该区域内的每个生物都必须成功通过一次{@dc 14}魅力豁免检定，否则将被和平使者{@condition 魅惑}1分钟。以这种方式被{@condition 魅惑}的生物将处于{@condition 失能}状态，速度变为0。"
 					]
@@ -14604,7 +14640,7 @@
 				},
 				{
 					"ENG_name": "Calming Mist {@recharge 5}",
-					"name": "平静之雾 {@recharge 5}",
+					"name": "镇定喷雾{@recharge 5}",
 					"entries": [
 						"鸣禽释放出一团半径5英尺的镇静气体，以自身为中心。在该区域内的每个生物必须成功通过一次{@dc 11}魅力豁免检定，否则将被鸣禽{@condition 魅惑}1分钟。当以这种方式被{@condition 魅惑}时，该生物将处于{@condition 失能}状态，且速度为0。"
 					]
@@ -14641,7 +14677,7 @@
 		},
 		{
 			"ENG_name": "Moonstone Dragon Wyrmling",
-			"name": "月石龙幼龙",
+			"name": "月石龙雏龙",
 			"source": "FTD",
 			"page": 213,
 			"size": [
@@ -14706,7 +14742,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"龙可以使用下列吐息武器之一:",
 						{
@@ -14852,7 +14888,7 @@
 		},
 		{
 			"ENG_name": "Red Greatwyrm",
-			"name": "红龙族长老",
+			"name": "太古红龙",
 			"group": [
 				"Chromatic Dragon"
 			],
@@ -14927,7 +14963,7 @@
 			"trait": [
 				{
 					"ENG_name": "Chromatic Awakening (Recharges after a Short or Long Rest)",
-					"name": "多彩觉醒（短休或长休后重新充能）",
+					"name": "多彩觉醒（短休或长休后充能）",
 					"entries": [
 						"如果龙族的当前生命值将降至0点，它的生命值总数将重置为425点，它的呼吸武器会重新充能，并且它将恢复所有已使用的传奇抗性。此外，龙族现在可以使用\"神话行动\"部分中的选项，持续1小时。在龙族的多彩觉醒激活后击败它，给予队伍额外的105,000经验值（总共210,000经验值）。"
 					]
@@ -14978,7 +15014,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙在300尺的锥形区域内呼出一股能量爆炸。该区域内的每个生物都必须进行一次{@dc 26}敏捷豁免检定。豁免失败的生物将受到78点（{@damage 12d12}）火焰伤害。成功通过豁免的生物受到的伤害减半。"
 					]
@@ -15001,7 +15037,7 @@
 				},
 				{
 					"ENG_name": "Arcane Spear (Costs 3 Actions)",
-					"name": "奥术之矛（消耗3次行动）",
+					"name": "奥术长矛（花费3个动作）",
 					"entries": [
 						"巨龙创造了四根魔法力场长矛。每根长矛都会打击巨龙选择的、在其120英尺范围内可见的生物，对其目标造成12点（{@damage 1d8 + 8}）力场伤害，然后消失。"
 					]
@@ -15020,7 +15056,7 @@
 				},
 				{
 					"ENG_name": "Chromatic Flare (Costs 2 Actions)",
-					"name": "七彩光爆（消耗2次行动）",
+					"name": "色彩爆发（花费2个动作）",
 					"entries": [
 						"巨龙爆发出元素能量。以巨龙为中心，半径60英尺范围内的每个生物必须成功通过一次{@dc 26}敏捷豁免，否则将受到22（{@damage 5d8}）点火焰伤害。"
 					]
@@ -15249,7 +15285,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力："
@@ -15290,7 +15326,7 @@
 				},
 				{
 					"ENG_name": "Debilitating Breath {@recharge 5}",
-					"name": "致残之息 {@recharge 5}",
+					"name": "衰弱吐息{@recharge 5}",
 					"entries": [
 						"龙在15尺的锥形区域内呼出一种高频率、几乎听不见的声音脉冲。该区域内的每个生物都必须进行一次{@dc 13}体质豁免检定。豁免失败的生物将受到22点（{@damage 4d10}）雷鸣伤害，并在其下一回合结束前处于{@condition 失能}状态。成功通过豁免的生物受到的伤害减半，并且不会处于{@condition 失能}状态。"
 					]
@@ -15430,7 +15466,7 @@
 		},
 		{
 			"ENG_name": "Sapphire Greatwyrm",
-			"name": "蓝宝石龙族长老",
+			"name": "太古蓝宝石龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -15509,7 +15545,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"太古龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 26}，法术攻击命中{@hit 18}）："
@@ -15530,7 +15566,7 @@
 			"trait": [
 				{
 					"ENG_name": "Gem Awakening (Recharges after a Short or Long Rest)",
-					"name": "宝石觉醒（短休或长休后重新充能）",
+					"name": "宝石觉醒（短休或长休后充能）",
 					"entries": [
 						"如果太古龙的生命值降至0点，它当前的生命值总量将重置为400点生命值，它将重新充能其呼吸武器，并恢复所有已消耗的传奇抗性使用次数。此外，在接下来的一小时内，太古龙现在可以使用其群体心灵感应行动。在太古龙的宝石觉醒激活后击败它，奖励队伍额外的90,000经验值（总共180,000经验值）。"
 					]
@@ -15574,14 +15610,14 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"巨龙在300尺锥形区域内呼出压倒性力量。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免。豁免失败时，该生物受到71（{@damage 11d12}）力场伤害并被{@condition 倒地}。豁免成功时，该生物受到一半伤害且不会被{@condition 倒地}。无论成功或失败，该生物的速度变为0，直到其下一回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Mass Telekinesis (Gem Awakening Only; Recharges after a Short or Long Rest)",
-					"name": "群体心灵传动（仅限宝石觉醒；短休或长休后重新充能）",
+					"name": "群体心灵遥控（仅宝石觉醒状态，短休或长休后充能）",
 					"entries": [
 						"龙族长老可以指定它视线范围内120尺内的任意数量的生物和物体。没有单一目标的重量可以超过4000磅，如果物体被穿戴或携带，则不能被指定为目标。每个被指定的生物必须成功进行一次{@dc 26} 力量豁免检定，否则将被龙族长老的心灵感应力场所{@condition 束缚}。在生物的回合结束时，它可以重复进行豁免检定，如果成功则结束这个效果。",
 						"在太古巨龙的回合结束时，它可以将其心灵遥感抓取的每个生物或物体向任意方向移动最多60尺，但不能超过距离它自身120尺的范围。此外，它可以选择任何数量以这种方式{@condition 束缚}的生物，并对每个生物造成45点（{@damage 7d12}）的力场伤害。"
@@ -15590,15 +15626,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The greatwyrm magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the greatwyrm is reduced to 0 hit points or uses a bonus action to end it."
+						"太古龙使用魔法变身为任何中体型或小体型的生物，同时保留其游戏具体数值（除了体型）。如果太古龙的生命值降至0点或使用附赠动作来结束变身，这种变身就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The greatwyrm magically teleports to an unoccupied space it can see within 60 feet of it."
+						"巨龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -15612,14 +15650,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"太古龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Beam (Costs 3 Actions)",
-					"name": "心灵光束（消耗3个行动点）",
+					"name": "灵能束（花费3个动作）",
 					"entries": [
 						"太古龙发出一条90尺长、10尺宽的灵能光束。该区域内的每个生物都必须进行一次智力豁免检定（{@dc 26}），豁免失败则受到27点（{@damage 5d10}）心灵伤害，豁免成功则伤害减半。"
 					]
@@ -15771,7 +15809,7 @@
 		},
 		{
 			"ENG_name": "Silver Greatwyrm",
-			"name": "银龙族长老",
+			"name": "太古银龙",
 			"group": [
 				"Metallic Dragon"
 			],
@@ -15898,7 +15936,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"太古龙使用以下呼吸武器之一：",
 						{
@@ -15908,7 +15946,7 @@
 								{
 									"ENG_name": "Elemental Breath",
 									"type": "item",
-									"name": "元素之息",
+									"name": "元素吐息",
 									"entries": [
 										"龙族长老吐出元素能量，形成一个300尺的锥形区域。该区域内的每个生物都必须进行一次{@dc 25} 敏捷豁免检定，失败则受到84 ({@damage 13d12}) 冷冻伤害，成功则伤害减半。"
 									]
@@ -15916,7 +15954,7 @@
 								{
 									"ENG_name": "Sapping Breath",
 									"type": "item",
-									"name": "吸取气息",
+									"name": "弱化吐息",
 									"entries": [
 										"巨龙在300英尺的锥形范围内喷出毒气。该区域内的每个生物必须进行一次{@dc 25}的体质豁免。豁免失败时，该生物将陷入{@condition 昏迷}状态，持续1分钟。豁免成功时，该生物在攻击检定和豁免检定上具有劣势，直到巨龙的下一回合结束。{@condition 昏迷}的生物可以在每个其回合结束时重复进行豁免检定，成功时结束该效果。"
 									]
@@ -15962,7 +16000,7 @@
 				},
 				{
 					"ENG_name": "Shattering Roar (Costs 2 Actions)",
-					"name": "震碎之吼（消耗2个行动）",
+					"name": "粉碎咆哮（花费2个动作）",
 					"entries": [
 						"巨龙释放出一次魔法咆哮。位于巨龙为中心120英尺半径球体内的每个生物必须成功通过一次 {@dc 26} 体魄豁免检定，否则受到19（{@damage 3d12}）点雷鸣伤害，并且直到其下个回合结束前处于 {@condition 失能} 状态。"
 					]
@@ -16120,7 +16158,7 @@
 		},
 		{
 			"ENG_name": "Swarm of Hoard Scarabs",
-			"name": "财宝甲虫群",
+			"name": "宝库圣甲虫集群",
 			"source": "FTD",
 			"page": 205,
 			"size": [
@@ -16196,7 +16234,7 @@
 			"action": [
 				{
 					"ENG_name": "Swarm of Bites",
-					"name": "虫群啃咬",
+					"name": "集群噬咬",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及0尺，一群生物中的空间内的一个生物。{@h}13（{@damage 3d6 + 3}）点穿刺伤害，或者如果虫群的生命值是其最大值的一半或更少时，造成6（{@damage 1d6 + 3}）点穿刺伤害，并且目标在下一次回合开始前攻击检定时具有劣势。"
 					]
@@ -16204,9 +16242,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Scale Dust (1/Day)",
+					"ENG_name": "Scale Dust (1/Day)",
+					"name": "鳞粉（每日1次）",
 					"entries": [
-						"The swarm releases magical glittering dust from its wings. Each creature within 10 feet of the swarm must succeed on a {@dc 13} Dexterity saving throw or be outlined in blue light for 10 minutes. While outlined in this way, a creature sheds dim light in a 10-foot radius and can't benefit from being {@condition invisible}. In addition, every Dragon within 1 mile of the creature becomes aware of it and can unerringly track the creature. Casting {@spell dispel magic} on the creature ends the effect on it."
+						"这个虫群从其翅膀释放出魔法般的闪闪发光的尘埃。虫群周围10尺内的每个生物都必须成功进行一次{@dc 13} 敏捷豁免检定，否则会被蓝色光芒勾勒出轮廓，持续10分钟。在这种勾勒下，生物在10尺半径内发出微弱的光亮，并且不能从{@condition 隐形}状态中获益。此外，每条距离生物1英里以内的龙都会对它有所察觉，并且可以准确地追踪该生物。对生物施放{@spell 解除魔法}法术可以结束这个效果。"
 					]
 				}
 			],
@@ -16233,7 +16272,7 @@
 		},
 		{
 			"ENG_name": "Topaz Dragon Wyrmling",
-			"name": "黄玉幼龙",
+			"name": "黄玉龙雏龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -16303,7 +16342,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 12}）："
@@ -16336,7 +16375,7 @@
 				},
 				{
 					"ENG_name": "Desiccating Breath {@recharge 5}",
-					"name": "枯萎之息 {@recharge 5}",
+					"name": "干枯吐息{@recharge 5}",
 					"entries": [
 						"龙呼出一道15尺锥形的黄绿色死灵能量。该区域内的每个生物必须进行一个{@dc 11}的体质豁免检定。若豁免失败，该生物受到21（{@damage 6d6}）点死灵伤害，并在其下一回合结束之前被虚弱。被虚弱的生物在基于力量的能力检定和力量豁免检定上具有劣势，且依赖于力量的武器攻击造成一半伤害。若豁免成功，该生物只受到一半伤害且不会被虚弱。"
 					]
@@ -16466,7 +16505,7 @@
 		},
 		{
 			"ENG_name": "Topaz Greatwyrm",
-			"name": "黄玉龙族长老",
+			"name": "太古黄玉龙",
 			"group": [
 				"Gem Dragon"
 			],
@@ -16545,7 +16584,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"太古龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 26}，法术攻击命中{@hit 18}）："
@@ -16566,7 +16605,7 @@
 			"trait": [
 				{
 					"ENG_name": "Gem Awakening (Recharges after a Short or Long Rest)",
-					"name": "宝石觉醒（短休或长休后重新充能）",
+					"name": "宝石觉醒（短休或长休后充能）",
 					"entries": [
 						"如果太古龙的生命值降至0点，它当前的生命值总量将重置为400点生命值，它将重新充能其呼吸武器，并恢复所有已消耗的传奇抗性使用次数。此外，在接下来的一小时内，太古龙现在可以使用其群体心灵感应行动。在太古龙的宝石觉醒激活后击败它，奖励队伍额外的90,000经验值（总共180,000经验值）。"
 					]
@@ -16610,14 +16649,14 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"巨龙在300尺锥形区域内呼出压倒性力量。该区域内的每个生物必须进行一次{@dc 25}敏捷豁免。豁免失败时，该生物受到71（{@damage 11d12}）力场伤害并被{@condition 倒地}。豁免成功时，该生物受到一半伤害且不会被{@condition 倒地}。无论成功或失败，该生物的速度变为0，直到其下一回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Mass Telekinesis (Gem Awakening Only; Recharges after a Short or Long Rest)",
-					"name": "群体心灵传动（仅限宝石觉醒；短休或长休后重新充能）",
+					"name": "群体心灵遥控（仅宝石觉醒状态，短休或长休后充能）",
 					"entries": [
 						"龙族长老可以指定它视线范围内120尺内的任意数量的生物和物体。没有单一目标的重量可以超过4000磅，如果物体被穿戴或携带，则不能被指定为目标。每个被指定的生物必须成功进行一次{@dc 26} 力量豁免检定，否则将被龙族长老的心灵感应力场所{@condition 束缚}。在生物的回合结束时，它可以重复进行豁免检定，如果成功则结束这个效果。",
 						"在太古巨龙的回合结束时，它可以将其心灵遥感抓取的每个生物或物体向任意方向移动最多60尺，但不能超过距离它自身120尺的范围。此外，它可以选择任何数量以这种方式{@condition 束缚}的生物，并对每个生物造成45点（{@damage 7d12}）的力场伤害。"
@@ -16626,15 +16665,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The greatwyrm magically transforms into any creature that is Medium or Small, while retaining its game statistics (other than its size). This transformation ends if the greatwyrm is reduced to 0 hit points or uses a bonus action to end it."
+						"太古龙使用魔法变身为任何中体型或小体型的生物，同时保留其游戏具体数值（除了体型）。如果太古龙的生命值降至0点或使用附赠动作来结束变身，这种变身就会结束。"
 					]
 				},
 				{
-					"name": "Psychic Step",
+					"ENG_name": "Psychic Step",
+					"name": "心灵步",
 					"entries": [
-						"The greatwyrm magically teleports to an unoccupied space it can see within 60 feet of it."
+						"巨龙通过魔法传送到它能看到的60尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -16648,14 +16689,14 @@
 				},
 				{
 					"ENG_name": "Psionics (Costs 2 Actions)",
-					"name": "灵能（消耗2个行动）",
+					"name": "灵能（花费2个动作）",
 					"entries": [
 						"太古龙使用心灵步或施法。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Beam (Costs 3 Actions)",
-					"name": "心灵光束（消耗3个行动点）",
+					"name": "灵能束（花费3个动作）",
 					"entries": [
 						"太古龙发出一条90尺长、10尺宽的灵能光束。该区域内的每个生物都必须进行一次智力豁免检定（{@dc 26}），豁免失败则受到27点（{@damage 5d10}）心灵伤害，豁免成功则伤害减半。"
 					]
@@ -16806,7 +16847,7 @@
 		},
 		{
 			"ENG_name": "White Greatwyrm",
-			"name": "白龙族长老",
+			"name": "太古白龙",
 			"group": [
 				"Chromatic Dragon"
 			],
@@ -16881,7 +16922,7 @@
 			"trait": [
 				{
 					"ENG_name": "Chromatic Awakening (Recharges after a Short or Long Rest)",
-					"name": "多彩觉醒（短休或长休后重新充能）",
+					"name": "多彩觉醒（短休或长休后充能）",
 					"entries": [
 						"如果龙族的当前生命值将降至0点，它的生命值总数将重置为425点，它的呼吸武器会重新充能，并且它将恢复所有已使用的传奇抗性。此外，龙族现在可以使用\"神话行动\"部分中的选项，持续1小时。在龙族的多彩觉醒激活后击败它，给予队伍额外的105,000经验值（总共210,000经验值）。"
 					]
@@ -16932,7 +16973,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"龙族长老吐出一道能量爆发，形成一个300尺的锥形区域。该区域内的每个生物都必须进行一次{@dc 26} 敏捷豁免检定。失败则生物受到78 ({@damage 12d12}) 冷冻伤害。成功则伤害减半。"
 					]
@@ -16955,7 +16996,7 @@
 				},
 				{
 					"ENG_name": "Arcane Spear (Costs 3 Actions)",
-					"name": "奥术之矛（消耗3次行动）",
+					"name": "奥术长矛（花费3个动作）",
 					"entries": [
 						"巨龙创造了四根魔法力场长矛。每根长矛都会打击巨龙选择的、在其120英尺范围内可见的生物，对其目标造成12点（{@damage 1d8 + 8}）力场伤害，然后消失。"
 					]
@@ -16974,7 +17015,7 @@
 				},
 				{
 					"ENG_name": "Chromatic Flare (Costs 2 Actions)",
-					"name": "七彩光爆（消耗2次行动）",
+					"name": "色彩爆发（花费2个动作）",
 					"entries": [
 						"这条太古龙散发出元素能量。以太古龙为中心，60尺半径范围内的球形区域内的每个生物都必须成功通过一次{@dc 26}敏捷豁免检定，否则将受到22点（{@damage 5d8}）冷冻伤害。"
 					]
@@ -17197,7 +17238,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 16}）："
@@ -17247,7 +17288,7 @@
 				},
 				{
 					"ENG_name": "Singularity Breath {@recharge 5}",
-					"name": "奇点之息 {@recharge 5}",
+					"name": "奇点吐息{@recharge 5}",
 					"entries": [
 						"巨龙在口中创造出一个闪耀的重力珠，然后在30英尺的锥形范围内释放能量。该区域内的每个生物必须进行一次{@dc 17}的力量豁免检定。若豁免失败，该生物将受到36（{@damage 8d8}）的力场伤害，且其速度降为0，直到巨龙的下一回合开始。若豁免成功，该生物只受到一半的伤害，且其速度不会降低。"
 					]
@@ -17452,7 +17493,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下任意一个法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 16}）："
@@ -17495,7 +17536,7 @@
 				},
 				{
 					"ENG_name": "Scintillating Breath {@recharge 5}",
-					"name": "闪耀之息 {@recharge 5}",
+					"name": "辉光吐息{@recharge 5}",
 					"entries": [
 						"这条龙向30尺锥形区域喷吐出耀眼的辐射波。区域内的每个生物必须进行一次{@dc 15}体质豁免，豁免失败则受到27（{@damage 6d8}）点光耀伤害，豁免成功则只受到一半伤害。随后，这条龙会吸收一部分辐射能量，获得10点临时生命值。"
 					]
@@ -17730,7 +17771,7 @@
 				},
 				{
 					"ENG_name": "Nightmare Breath {@recharge 5}",
-					"name": "噩梦之息 {@recharge 5}",
+					"name": "噩梦吐息{@recharge 5}",
 					"entries": [
 						"龙在30尺的锥形区域内呼出一团孢子云。该区域内的每个生物都必须进行一次{@dc 14}感知豁免检定。豁免失败的生物将受到22点（{@damage 4d10}）心灵伤害，并且在1分钟内对龙感到{@condition 恐慌}。成功通过豁免的生物受到的伤害减半，且没有额外效果。处于{@condition 恐慌}状态的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
@@ -18158,7 +18199,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 14}）:"
@@ -18211,7 +18252,7 @@
 				},
 				{
 					"ENG_name": "Disorienting Breath {@recharge 5}",
-					"name": "迷惑之息 {@recharge 5}",
+					"name": "惑心吐息{@recharge 5}",
 					"entries": [
 						"龙吐出一道心理不和的波动，形成一个30尺的锥形区域。该区域内的每个生物都必须进行一次{@dc 15} 智力豁免检定。豁免失败的生物将受到31 ({@damage 9d6}) 心灵伤害，并且在其下个回合结束之前，当该生物进行攻击骰或属性检定时，必须掷一个{@dice d6} 并将掷出的数字从总和中减去。成功通过豁免的生物受到的伤害减半，且没有额外效果。"
 					]
@@ -18457,7 +18498,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"龙可以使用下列吐息武器之一:",
 						{
@@ -18683,7 +18724,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下任意一个法术，不需要法术材料，并使用智力作为施法能力（法术豁免{@dc 15}）："
@@ -18739,7 +18780,7 @@
 				},
 				{
 					"ENG_name": "Debilitating Breath {@recharge 5}",
-					"name": "致残之息 {@recharge 5}",
+					"name": "衰弱吐息{@recharge 5}",
 					"entries": [
 						"龙在30尺的锥形区域内释放出一种高频率、几乎听不见的声音脉冲。该区域内的每个生物都必须进行一次{@dc 17}体质豁免检定。豁免失败的生物将受到33点（{@damage 6d10}）雷鸣伤害，并在其下一回合结束前处于{@condition 失能}状态。成功通过豁免的生物受到的伤害减半，并且不会处于{@condition 失能}状态。"
 					]
@@ -18994,7 +19035,7 @@
 				},
 				{
 					"ENG_name": "Rime Breath {@recharge 5}",
-					"name": "霜冻吐息 {@recharge 5}",
+					"name": "寒霜吐息{@recharge 5}",
 					"entries": [
 						"海蛇呼出一道30英尺的锥形寒气。该区域内的每个生物必须进行一次{@dc 14}的体质豁免，若豁免失败则受到38点（{@damage 7d10}）的冷冻伤害，若豁免成功则只受到一半伤害。"
 					]
@@ -19113,7 +19154,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"龙施放以下法术之一，无需法术材料，使用智力作为施法能力（法术豁免{@dc 14}）:"
@@ -19161,7 +19202,7 @@
 				},
 				{
 					"ENG_name": "Desiccating Breath {@recharge 5}",
-					"name": "枯萎之息 {@recharge 5}",
+					"name": "干枯吐息{@recharge 5}",
 					"entries": [
 						"巨龙喷吐出30尺锥形的黄色死灵能量。该区域内的每个生物必须进行一次{@dc 13}的体质豁免。豁免失败时，该生物受到28（{@damage 8d6}）点死灵伤害，并被削弱至其下一个回合结束。被削弱的生物在进行基于力量的能力检定时具有劣势，并且在力量豁免上具有劣势，且该生物依赖于力量的武器攻击造成一半伤害。豁免成功时，该生物受到一半伤害且不会被削弱。"
 					]

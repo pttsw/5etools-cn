@@ -10,7 +10,6 @@ const config = {
     "armor":["护甲","甲體","Armor"],
     "weapons":["武器","武器","Weapons"],
     "tools":["工具","工具","Tools"],
-    "saving_throws":["豁免骰","豁免骰","Saving Throws"],
     "skills":["技能","技能","Skills"],
 
     //filter-classes.js

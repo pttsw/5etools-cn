@@ -29,31 +29,31 @@
 								{
 									"ENG_name": "New Monsters",
 									"type": "item",
-									"name": "新怪物",
+									"name": "全新怪物",
 									"entry": "数十种新怪物，包括更多高级威胁，已准备好挑战各个级别的角色。"
 								},
 								{
 									"ENG_name": "Refined Rules",
 									"type": "item",
-									"name": "精修规则",
+									"name": "优化规则",
 									"entry": "每个属性数据块都已更新，以便于使用和游戏平衡。"
 								},
 								{
 									"ENG_name": "Enhanced Stat Blocks",
 									"type": "item",
-									"name": "增强的统计数据块",
+									"name": "改进数据卡",
 									"entry": "新的属性块设计和语言优先考虑游戏中至关重要的细节。"
 								},
 								{
 									"ENG_name": "Versatile Groups",
 									"type": "item",
-									"name": "多功能团体",
+									"name": "通用分组",
 									"entry": "NPC现在与其他怪物一同出现，可以代表任何类人生物种类的个体。"
 								},
 								{
 									"ENG_name": "Improved Organization",
 									"type": "item",
-									"name": "改进的组织",
+									"name": "改进编排",
 									"entry": "怪物现在按其名称的字母顺序排列。同一怪物的变体被分组在一起。"
 								},
 								{
@@ -71,7 +71,7 @@
 				{
 					"ENG_name": "Stat Block Overview",
 					"type": "section",
-					"name": "属性块概览",
+					"name": "数据卡概览",
 					"page": 5,
 					"entries": [
 						"怪物具有一个包含在游戏中使用它所需规则的属性块。属性块分为以下几个部分，与示例属性块\u2014\u2014吸血鬼仆从相对应：",
@@ -96,7 +96,7 @@
 										{
 											"ENG_name": "Name and General Details",
 											"type": "item",
-											"name": "名称与概述",
+											"name": "名称和基础信息",
 											"entry": "怪物名称后面跟随其体型、生物类型（以及任何描述性标签）和阵营。"
 										}
 									]
@@ -110,7 +110,7 @@
 										{
 											"ENG_name": "Combat Highlights",
 											"type": "item",
-											"name": "战斗亮点",
+											"name": "关键战斗信息",
 											"entry": "此处提供了{@variantrule 护甲等级|XPHB}、{@variantrule 生命值|XPHB}、{@variantrule 速度|XPHB}和{@variantrule 先攻|XPHB}。"
 										}
 									]
@@ -152,7 +152,7 @@
 										{
 											"ENG_name": "Traits",
 											"type": "item",
-											"name": "特性",
+											"name": "特质",
 											"entry": "怪物的特性，无论何时或在特定情况下激活的，都会出现在这里。"
 										}
 									]
@@ -242,7 +242,7 @@
 										{
 											"ENG_name": "Individual",
 											"type": "item",
-											"name": "梅尔奇斯雇佣了一艘船，将队伍带到阿梅迪奥丛林。使用地图确定海上旅行的时间，取决于冒险者开始旅行的地点，并假设船每天覆盖大约1½个六边形区域。在旅程接近结束时，当船只穿越杰克莱亚湾时，它遭到了一群敌对的萨胡金人的袭击，包括两名萨胡金祭司、六名萨胡金战士和一名水元素。（假设船员避开了这些可怕的怪物，让角色和梅尔奇斯处理这个威胁。）第一阶段在梅尔奇斯和角色划小船上岸时结束。",
+											"name": "个体",
 											"entry": "该怪物没有宝藏堆，但它可能保存有金钱财宝。"
 										},
 										{
@@ -256,7 +256,7 @@
 										{
 											"ENG_name": "None",
 											"type": "item",
-											"name": "none",
+											"name": "无",
 											"entry": "这个怪物不关心宝藏。怪物所拥有的任何宝藏都是偶然的。"
 										}
 									]
@@ -288,7 +288,7 @@
 						{
 							"ENG_name": "Stat Blocks",
 							"type": "entries",
-							"name": "状态块",
+							"name": "数据卡",
 							"page": 6,
 							"entries": [
 								"每个条目至少包含一个属性块。属性块将在下一节中详细探讨。"
@@ -301,7 +301,7 @@
 				{
 					"ENG_name": "Parts of a Stat Block",
 					"type": "section",
-					"name": "属性区块的部分",
+					"name": "数据卡的组成部分",
 					"id": "009",
 					"page": 6,
 					"entries": [
@@ -567,7 +567,7 @@
 						{
 							"ENG_name": "Resistances and Vulnerabilities",
 							"type": "entries",
-							"name": "抗性和弱点是《Dungeons & Dragons》中描述生物对某些类型伤害的敏感度的机制。如果一个生物对某种伤害类型有抗性（Resistance），那么该类型的伤害会减少一半。如果生物对该伤害类型有弱点（Vulnerability），则受到的伤害会加倍。这些规则在计算总伤害时，是在所有其他伤害加成或减免之后应用的。例如，如果一个生物对钝击伤害有抗性，并且受到25点钝击伤害，同时它还处于一个减少所有伤害5点的魔法光环中，那么首先将25点伤害减少5点，然后再减半，最终生物受到10点伤害。如果生物对同一伤害类型有多个抗性或弱点，它们不会叠加计算，而是只算作一次。例如，如果一个生物对火焰伤害有抗性，同时也对所有非魔法伤害有抗性，那么非魔法火焰伤害对生物的伤害会减半，而不是减少到四分之三。",
+							"name": "抗性与易伤",
 							"page": 7,
 							"entries": [
 								"这些条目列出了怪物的{@variantrule 抗性|XPHB|抗性}和{@variantrule 易伤|XPHB|易伤}（如果有的话）。更多信息请参阅{@book 玩家手册|XPHB}。"
@@ -620,7 +620,7 @@
 						{
 							"ENG_name": "Running a Monster",
 							"type": "inset",
-							"name": "运行怪物",
+							"name": "运作怪物",
 							"page": 8,
 							"entries": [
 								"为确保怪物能按照其{@variantrule 挑战等级|XPHB}行动，在战斗中请遵循以下规则：",
@@ -643,7 +643,7 @@
 										{
 											"ENG_name": "Bonus Actions, Reactions, Legendary Actions",
 											"type": "item",
-											"name": "额外动作、反应动作、传奇动作",
+											"name": "附赠动作、反应及传奇动作",
 											"entry": "如果该怪物的属性栏中有奖励动作、反应动作或传奇动作，确保它尽可能频繁地使用它们。"
 										}
 									]
@@ -915,7 +915,7 @@
 						{
 							"ENG_name": "Traits",
 							"type": "entries",
-							"name": "特性",
+							"name": "特质",
 							"page": 8,
 							"entries": [
 								"怪物的特质，如果有的话，是始终或特定情况下激活的特性。"
@@ -932,7 +932,7 @@
 								{
 									"ENG_name": "Attack Notation",
 									"type": "entries",
-									"name": "攻击表示法",
+									"name": "攻击的格式",
 									"page": 8,
 									"entries": [
 										"怪物的攻击条目会标明该攻击是近战还是远程攻击，并提供攻击骰的加值、攻击范围或射程以及命中后的效果。除非条目中另有说明，否则攻击是针对单一目标的。有关{@book 不同类型的攻击|XPHB|1|发动攻击}的详细信息，请参阅{@book 玩家手册|XPHB}。",
@@ -949,7 +949,7 @@
 										{
 											"ENG_name": "Miss",
 											"type": "entries",
-											"name": "未命中",
+											"name": "失手",
 											"page": 9,
 											"entries": [
 												"如果攻击在未命中时有触发效果，该信息将跟随在\"未命中：\"标注之后。"
@@ -959,7 +959,7 @@
 										{
 											"ENG_name": "Hit or Miss",
 											"type": "entries",
-											"name": "命中或未命中",
+											"name": "命中或失手",
 											"page": 9,
 											"entries": [
 												"如果攻击具有无论是否命中目标都会触发的效果，该信息将跟随在\"命中或未命中:\"标记之后。"
@@ -972,7 +972,7 @@
 								{
 									"ENG_name": "Saving Throw Effect Notation",
 									"type": "entries",
-									"name": "豁免检定表示尝试抵抗法术、陷阱、毒素、疾病或类似威胁。你通常不会选择进行豁免检定；当角色或怪物面临伤害风险时，会被迫进行一次豁免检定。进行豁免检定时，需要投掷一个20面骰（d20）并加上相应的能力修正值。例如，进行敏捷豁免检定时，会使用你的敏捷修正值。豁免检定可能会受到情境加值或减值的修改，并可能受到优势和劣势的影响，由主持人决定。每个职业至少在两项豁免检定中给予熟练度。例如，法师在智力豁免检定中具有熟练度。与技能熟练度一样，对豁免检定的熟练度可以让角色在使用特定能力检定时加上他的熟练加值。一些怪物也具有豁免检定熟练度。豁免检定的难度等级由引起它的效应决定。例如，法术允许的豁免检定的难度等级由施法者的施法能力和熟练加值决定。成功或失败的豁免检定的结果也会在允许豁免的效果中详细说明。通常，成功的豁免意味着生物不受伤害或减少伤害。",
+									"name": "豁免效应的格式",
 									"page": 9,
 									"entries": [
 										"如果一个效果强制进行豁免检定，效果会指出所需的豁免类型，然后提供豁免的DC，描述哪些生物需要进行豁免，并解释豁免失败或成功时会发生什么。",
@@ -983,7 +983,7 @@
 								{
 									"ENG_name": "Damage Notation",
 									"type": "entries",
-									"name": "伤害表示法",
+									"name": "伤害的格式",
 									"page": 9,
 									"entries": [
 										"属性块通常会为每次伤害提供一个数值和一个骰子表达式。例如，一次攻击可能在命中时造成4（{@damage 1d4 + 2}）点伤害。你可以决定是否使用括号中的数值或骰子表达式；不要同时使用两者。"
@@ -1021,7 +1021,7 @@
 										{
 											"ENG_name": "Casting Times of 1+ Minutes",
 											"type": "entries",
-											"name": "施法时间为1分钟以上",
+											"name": "施法时间超过1分钟",
 											"page": 9,
 											"entries": [
 												"如果一个法术的施法时间为1分钟或更长，但被列为一个施法动作，除非该动作的描述另有说明，否则怪物不会仅在一个动作中施放该法术；怪物必须在每个回合中采取{@action 魔法|XPHB}动作并保持{@status 专注|XPHB}来施放该法术，如{@book 玩家手册|XPHB}中所述。"
@@ -1068,7 +1068,7 @@
 						{
 							"ENG_name": "Limited Usage",
 							"type": "entries",
-							"name": "限制次数",
+							"name": "使用限制",
 							"page": 9,
 							"entries": [
 								"状态栏中的某些部分对使用次数有限制。以下是使用限制的最常见方式：",
@@ -1095,7 +1095,7 @@
 										{
 											"ENG_name": "Recharge after a Short or Long Rest",
 											"type": "item",
-											"name": "短休或长休后重新充能",
+											"name": "短休或长休后充能",
 											"entries": [
 												"此标注表示怪物可以使用该数据块部分一次，之后必须完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}才能再次使用。"
 											]
@@ -1113,7 +1113,7 @@
 		{
 			"ENG_name": "Monsters A to Z",
 			"type": "section",
-			"name": "怪物大全 A 到 Z",
+			"name": "怪物A 到 Z",
 			"page": 10,
 			"entries": [
 				{
@@ -1196,7 +1196,7 @@
 						"{@creature 粘土魔像|XMM}",
 						"{@creature 蛰伏伪怪|XMM}",
 						"{@creature 云巨人|XMM}",
-						"{@creature 蛇鸡兽|XMM}",
+						"{@creature 蛇鸡|XMM}",
 						"{@creature 蛇鸡王|XMM}",
 						"{@creature 巨神兵|XMM}",
 						"{@creature 平民|XMM}",
@@ -1410,8 +1410,8 @@
 						"{@creature 祭司|XMM}",
 						"{@creature 伪龙|XMM}",
 						"{@creature 紫虫|XMM}",
-						"{@creature 泽地熊人|XMM}",
-						"{@creature 泽地熊人·索诺祭司|XMM}",
+						"{@creature 幽邃熊怪|XMM}",
+						"{@creature 幽邃熊怪·索诺祭司|XMM}",
 						"{@creature 夸塞魔|XMM}",
 						"{@creature 罗刹|XMM}",
 						"{@creature 红龙雏龙|XMM}",
@@ -1922,13 +1922,13 @@
 						{
 							"ENG_name": "Awakened Plants",
 							"type": "section",
-							"name": "觉醒植物",
+							"name": "启蒙植物",
 							"page": 23,
 							"entries": [
 								{
 									"ENG_name": "Awakened Plants",
 									"type": "statblock",
-									"name": "觉醒植物",
+									"name": "启蒙植物",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -2016,13 +2016,13 @@
 						{
 							"ENG_name": "Azers",
 							"type": "section",
-							"name": "阿瑟族",
+							"name": "火矮人们",
 							"page": 25,
 							"entries": [
 								{
 									"ENG_name": "Azers",
 									"type": "statblock",
-									"name": "阿瑟族",
+									"name": "火矮人们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -2619,13 +2619,13 @@
 						{
 							"ENG_name": "Blights",
 							"type": "section",
-							"name": "枯萎",
+							"name": "枯萎怪",
 							"page": 43,
 							"entries": [
 								{
 									"ENG_name": "Blights",
 									"type": "statblock",
-									"name": "枯萎",
+									"name": "枯萎怪",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -3124,13 +3124,13 @@
 						{
 							"ENG_name": "Bugbears",
 							"type": "section",
-							"name": "巨魔",
+							"name": "熊地精",
 							"page": 62,
 							"entries": [
 								{
 									"ENG_name": "Bugbears",
 									"type": "statblock",
-									"name": "巨魔",
+									"name": "熊地精",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -3171,13 +3171,13 @@
 						{
 							"ENG_name": "Bulettes",
 							"type": "section",
-							"name": "鲨蜥兽们",
+							"name": "鲨蜥们",
 							"page": 63,
 							"entries": [
 								{
 									"ENG_name": "Bulettes",
 									"type": "statblock",
-									"name": "鲨蜥兽们",
+									"name": "鲨蜥们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -3672,13 +3672,13 @@
 						{
 							"ENG_name": "Cockatrices",
 							"type": "section",
-							"name": "蛇鸡兽们",
+							"name": "蛇鸡们",
 							"page": 75,
 							"entries": [
 								{
 									"ENG_name": "Cockatrices",
 									"type": "statblock",
-									"name": "蛇鸡兽们",
+									"name": "蛇鸡们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -3690,7 +3690,7 @@
 								{
 									"ENG_name": "Cockatrice",
 									"type": "statblock",
-									"name": "蛇鸡兽",
+									"name": "蛇鸡",
 									"tag": "creature",
 									"source": "XMM",
 									"style": "狭窄"
@@ -3798,13 +3798,13 @@
 						{
 							"ENG_name": "Copper Dragons",
 							"type": "section",
-							"name": "铜龙",
+							"name": "赤铜龙",
 							"page": 78,
 							"entries": [
 								{
 									"ENG_name": "Copper Dragons",
 									"type": "statblock",
-									"name": "铜龙",
+									"name": "赤铜龙",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -7830,13 +7830,13 @@
 						{
 							"ENG_name": "Lemures",
 							"type": "section",
-							"name": "食尸鬼们",
+							"name": "劣魔们",
 							"page": 194,
 							"entries": [
 								{
 									"ENG_name": "Lemures",
 									"type": "statblock",
-									"name": "食尸鬼们",
+									"name": "劣魔们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -8777,13 +8777,13 @@
 						{
 							"ENG_name": "Myconids",
 							"type": "section",
-							"name": "成年蕈人",
+							"name": "蕈人",
 							"page": 222,
 							"entries": [
 								{
 									"ENG_name": "Myconids",
 									"type": "statblock",
-									"name": "成年蕈人",
+									"name": "蕈人",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -9361,13 +9361,13 @@
 						{
 							"ENG_name": "Performers",
 							"type": "section",
-							"name": "表演者们",
+							"name": "演艺者们",
 							"page": 236,
 							"entries": [
 								{
 									"ENG_name": "Performers",
 									"type": "statblock",
-									"name": "表演者们",
+									"name": "演艺者们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -9895,13 +9895,13 @@
 						{
 							"ENG_name": "Quaggoths",
 							"type": "section",
-							"name": "泽地熊人们",
+							"name": "幽邃熊怪们",
 							"page": 251,
 							"entries": [
 								{
 									"ENG_name": "Quaggoths",
 									"type": "statblock",
-									"name": "泽地熊人们",
+									"name": "幽邃熊怪们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -9923,7 +9923,7 @@
 								{
 									"ENG_name": "Quaggoth",
 									"type": "statblock",
-									"name": "泽地熊人",
+									"name": "幽邃熊怪",
 									"tag": "creature",
 									"source": "XMM",
 									"style": "狭窄"
@@ -9931,7 +9931,7 @@
 								{
 									"ENG_name": "Quaggoth Thonot",
 									"type": "statblock",
-									"name": "泽地熊人·索诺祭司",
+									"name": "幽邃熊怪·索诺祭司",
 									"tag": "creature",
 									"source": "XMM",
 									"style": "狭窄"
@@ -10163,13 +10163,13 @@
 						{
 							"ENG_name": "Revenants",
 							"type": "section",
-							"name": "还魂尸们",
+							"name": "还魂鬼们",
 							"page": 259,
 							"entries": [
 								{
 									"ENG_name": "Revenants",
 									"type": "statblock",
-									"name": "还魂尸们",
+									"name": "还魂鬼们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -10717,13 +10717,13 @@
 						{
 							"ENG_name": "Shadow Dragons",
 							"type": "section",
-							"name": "影龙们",
+							"name": "幽影龙们",
 							"page": 274,
 							"entries": [
 								{
 									"ENG_name": "Shadow Dragons",
 									"type": "statblock",
-									"name": "影龙们",
+									"name": "幽影龙们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -11202,13 +11202,13 @@
 						{
 							"ENG_name": "Sphinxes",
 							"type": "section",
-							"name": "斯芬克斯群",
+							"name": "斯芬克斯们",
 							"page": 291,
 							"entries": [
 								{
 									"ENG_name": "Sphinxes",
 									"type": "statblock",
-									"name": "斯芬克斯群",
+									"name": "斯芬克斯们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -11459,13 +11459,13 @@
 						{
 							"ENG_name": "Stirges",
 							"type": "section",
-							"name": "蝠蝇们",
+							"name": "蚊蝠们",
 							"page": 299,
 							"entries": [
 								{
 									"ENG_name": "Stirges",
 									"type": "statblock",
-									"name": "蝠蝇们",
+									"name": "蚊蝠们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -11757,13 +11757,13 @@
 						{
 							"ENG_name": "Toughs",
 							"type": "section",
-							"name": "硬汉们",
+							"name": "打手们",
 							"page": 307,
 							"entries": [
 								{
 									"ENG_name": "Toughs",
 									"type": "statblock",
-									"name": "硬汉们",
+									"name": "打手们",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -13006,13 +13006,13 @@
 						{
 							"ENG_name": "Yuan-ti",
 							"type": "section",
-							"name": "原体蛇人",
+							"name": "蛇人",
 							"page": 342,
 							"entries": [
 								{
 									"ENG_name": "Yuan-ti",
 									"type": "statblock",
-									"name": "原体蛇人",
+									"name": "蛇人",
 									"prop": "monsterFluff",
 									"source": "XMM",
 									"data": {
@@ -14381,7 +14381,7 @@
 									"{@creature 魔冢·四元冢|XMM}"
 								],
 								[
-									"{@creature 泽地熊人孢子奴仆|MM}",
+									"{@creature 幽邃熊怪孢子奴仆|MM}",
 									"{@creature 蕈人孢子奴仆|XMM}"
 								],
 								[
@@ -14928,7 +14928,7 @@
 								],
 								[
 									"1/2",
-									"{@creature 蛇鸡兽|XMM}, {@creature 巨山羊|XMM}, {@creature 巨黄蜂|XMM}, {@creature 鬣狗人武者|XMM}, {@creature 大地精武者|XMM}, {@creature 化豺|XMM}, {@creature 虫群|XMM}, {@creature 座狼|XMM}"
+									"{@creature 蛇鸡|XMM}, {@creature 巨山羊|XMM}, {@creature 巨黄蜂|XMM}, {@creature 鬣狗人武者|XMM}, {@creature 大地精武者|XMM}, {@creature 化豺|XMM}, {@creature 虫群|XMM}, {@creature 座狼|XMM}"
 								],
 								[
 									"1",
@@ -15272,11 +15272,11 @@
 								],
 								[
 									"2",
-									"{@creature 食腐虫|XMM}, {@creature 石像鬼|XMM}, {@creature 胶质方块|XMM}, {@creature 妖鬼|XMM}, {@creature 呓语之口|XMM}, {@creature 穴居攫怪|XMM}, {@creature 噬脑怪|XMM}, {@creature 拟身怪|XMM}, {@creature 骷髅牛头人|XMM}, {@creature 蕈人王|XMM}, {@creature 诺斯异怪|XMM}, {@creature 赭冻怪|XMM}, {@creature 食人魔|XMM}, {@creature 食人魔僵尸|XMM}, {@creature 作祟幽灵|XMM}, {@creature 泽地熊人|XMM}, {@creature 蚊蝠集群|XMM}"
+									"{@creature 食腐虫|XMM}, {@creature 石像鬼|XMM}, {@creature 胶质方块|XMM}, {@creature 妖鬼|XMM}, {@creature 呓语之口|XMM}, {@creature 穴居攫怪|XMM}, {@creature 噬脑怪|XMM}, {@creature 拟身怪|XMM}, {@creature 骷髅牛头人|XMM}, {@creature 蕈人王|XMM}, {@creature 诺斯异怪|XMM}, {@creature 赭冻怪|XMM}, {@creature 食人魔|XMM}, {@creature 食人魔僵尸|XMM}, {@creature 作祟幽灵|XMM}, {@creature 幽邃熊怪|XMM}, {@creature 蚊蝠集群|XMM}"
 								],
 								[
 									"3",
-									"{@creature 石化蜥蜴|XMM}, {@creature 熊地精追猎者|XMM}, {@creature 变形怪|XMM}, {@creature 燃火骷髅|XMM}, {@creature 地精咒术师|XMM}, {@creature 触须怪|XMM}, {@creature 地狱犬|XMM}, {@creature 大地精长官|XMM}, {@creature 恐爪怪|XMM}, {@creature 寇涛监督|XMM}, {@creature 巴弗灭的牛头人|XMM}, {@creature 相位蜘蛛|XMM}, {@creature 泽地熊人·索诺祭司|XMM}, {@creature 观察者眼魔|XMM}, {@creature 血仆|XMM}, {@creature 水诡|XMM}, {@creature 尸妖|XMM}"
+									"{@creature 石化蜥蜴|XMM}, {@creature 熊地精追猎者|XMM}, {@creature 变形怪|XMM}, {@creature 燃火骷髅|XMM}, {@creature 地精咒术师|XMM}, {@creature 触须怪|XMM}, {@creature 地狱犬|XMM}, {@creature 大地精长官|XMM}, {@creature 恐爪怪|XMM}, {@creature 寇涛监督|XMM}, {@creature 巴弗灭的牛头人|XMM}, {@creature 相位蜘蛛|XMM}, {@creature 幽邃熊怪·索诺祭司|XMM}, {@creature 观察者眼魔|XMM}, {@creature 血仆|XMM}, {@creature 水诡|XMM}, {@creature 尸妖|XMM}"
 								],
 								[
 									"4",
@@ -15977,7 +15977,7 @@
 										"{@creature 鲨蜥仔|XMM}",
 										"{@creature 食腐虫|XMM}",
 										"{@creature 奇美拉|XMM}",
-										"{@creature 蛇鸡兽|XMM}",
+										"{@creature 蛇鸡|XMM}",
 										"{@creature 蛇鸡王|XMM}",
 										"{@creature 亡命恶犬|XMM}",
 										"{@creature 移位兽|XMM}",
@@ -16004,8 +16004,8 @@
 										"{@creature 相位蜘蛛|XMM}",
 										"{@creature 原初枭熊|XMM}",
 										"{@creature 紫虫|XMM}",
-										"{@creature 泽地熊人|XMM}",
-										"{@creature 泽地熊人·索诺祭司|XMM}",
+										"{@creature 幽邃熊怪|XMM}",
+										"{@creature 幽邃熊怪·索诺祭司|XMM}",
 										"{@creature 百足魔兽|XMM}",
 										"{@creature 鹏鸟|XMM}",
 										"{@creature 锈蚀怪|XMM}",
@@ -16216,7 +16216,7 @@
 									"ENG_name": "Dragons, Chromatic",
 									"type": "list",
 									"style": "列表标题",
-									"name": "龙类，彩色龙",
+									"name": "色彩龙",
 									"items": [
 										"黑龙（全部）（{@creature 成年黑龙|XMM}，{@creature 远古黑龙|XMM}，{@creature 黑龙雏龙|XMM}，{@creature 青年黑龙|XMM}）",
 										"蓝龙（全部）（{@creature 成年蓝龙|XMM}、{@creature 远古蓝龙|XMM}、{@creature 蓝龙雏龙|XMM}、{@creature 青年蓝龙|XMM}）",
@@ -16321,7 +16321,7 @@
 									"ENG_name": "CR 0",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 0",
+									"name": "CR 0",
 									"items": [
 										"{@creature 启蒙灌木|XMM}",
 										"{@creature 狒狒|XMM}",
@@ -16449,7 +16449,7 @@
 									"items": [
 										"{@creature 猿|XMM}",
 										"{@creature 黑熊|XMM}",
-										"{@creature 蛇鸡兽|XMM}",
+										"{@creature 蛇鸡|XMM}",
 										"{@creature 鳄鱼|XMM}",
 										"{@creature 暗幕魔兽|XMM}",
 										"{@creature 尘魔蝠|XMM}",
@@ -16585,7 +16585,7 @@
 										"{@creature 白熊|XMM}",
 										"{@creature 作祟幽灵|XMM}",
 										"{@creature 祭司|XMM}",
-										"{@creature 泽地熊人|XMM}",
+										"{@creature 幽邃熊怪|XMM}",
 										"{@creature 犀牛|XMM}",
 										"{@creature 剑齿虎|XMM}",
 										"{@creature 鲨华祭司|XMM}",
@@ -16631,7 +16631,7 @@
 										"{@creature 梦魇|XMM}",
 										"{@creature 枭熊|XMM}",
 										"{@creature 相位蜘蛛|XMM}",
-										"{@creature 泽地熊人·索诺祭司|XMM}",
+										"{@creature 幽邃熊怪·索诺祭司|XMM}",
 										"{@creature 斥候队长|XMM}",
 										"{@creature 观察者眼魔|XMM}",
 										"{@creature 蠕行之爪集群|XMM}",
@@ -16896,7 +16896,7 @@
 									"ENG_name": "CR 13",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 13",
+									"name": "CR 13",
 									"items": [
 										"{@creature 成年黄铜龙|XMM}",
 										"{@creature 成年白龙|XMM}",
@@ -16978,7 +16978,7 @@
 									"ENG_name": "CR 19",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 19",
+									"name": "CR 19",
 									"items": [
 										"{@creature 巴洛炎魔|XMM}"
 									]
@@ -16987,7 +16987,7 @@
 									"ENG_name": "CR 20",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 20",
+									"name": "CR 20",
 									"items": [
 										"{@creature 远古黄铜龙|XMM}",
 										"{@creature 远古白龙|XMM}",
@@ -16999,7 +16999,7 @@
 									"ENG_name": "CR 21",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 21",
+									"name": "CR 21",
 									"items": [
 										"{@creature 远古黑龙|XMM}",
 										"{@creature 远古赤铜龙|XMM}",
@@ -17012,7 +17012,7 @@
 									"ENG_name": "CR 22",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 22",
+									"name": "CR 22",
 									"items": [
 										"{@creature 远古青铜龙|XMM}",
 										"{@creature 远古绿龙|XMM}",
@@ -17023,7 +17023,7 @@
 									"ENG_name": "CR 23",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 23",
+									"name": "CR 23",
 									"items": [
 										"{@creature 远古蓝龙|XMM}",
 										"{@creature 远古银龙|XMM}",
@@ -17036,7 +17036,7 @@
 									"ENG_name": "CR 24",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 24",
+									"name": "CR 24",
 									"items": [
 										"{@creature 远古金龙|XMM}",
 										"{@creature 远古红龙|XMM}"
@@ -17046,7 +17046,7 @@
 									"ENG_name": "CR 25",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 25",
+									"name": "CR 25",
 									"items": [
 										"{@creature 巨神兵|XMM}"
 									]
@@ -17055,7 +17055,7 @@
 									"ENG_name": "CR 30",
 									"type": "list",
 									"style": "列表标题",
-									"name": "挑战等级 30",
+									"name": "CR 30",
 									"items": [
 										"{@creature 泰拉斯奎巨兽|XMM}"
 									]
@@ -17142,7 +17142,7 @@
 						{
 							"ENG_name": "Concept Artists:",
 							"type": "item",
-							"name": "{\"title\": \"概念艺术家：\"}",
+							"name": "概念艺术家：",
 							"entry": "卡洛·阿雷利亚诺、安德鲁·贝克、迈克尔·布鲁萨德、约翰·格雷洛、贾克斯·杰克逊、亚历克斯·康斯塔德、卡特琳娜·拉顿、西蒙·李、安东尼奥·曼萨内多、马特·米勒德、亚伦·米勒、肖恩·默里、史蒂芬·奥克利、亚历山大·奥斯特罗夫斯基、安娜·波德沃娜、努尔·拉赫曼、杰森·莱恩维尔、切斯·斯通、克里斯托·苏莉、贾斯汀·斯威特、约翰·特德里克、坎贝尔·怀特、布莱恩·怀尼亚"
 						},
 						{
@@ -17184,7 +17184,7 @@
 						{
 							"ENG_name": "Based on the Monster Manual (2014) by",
 							"type": "item",
-							"name": "基于《怪物图鉴》（2014年版）",
+							"name": "基于《怪物图鉴》(2014)",
 							"nameDot": false,
 							"entry": "克里斯托弗·珀金斯（主编）, 杰里米·克劳福德, 彼得·李, 迈克·梅尔斯, 罗伯特·J·施瓦尔布, 马特·瑟内特, 克里斯·西姆斯, 罗德尼·汤普森, 史蒂夫·汤森, 詹姆斯·怀亚特"
 						},

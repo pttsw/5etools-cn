@@ -91,7 +91,7 @@
 				},
 				{
 					"ENG_name": "Time Breath {@recharge 5}",
-					"name": "时间之息{@recharge 5}",
+					"name": "时光吐息{@recharge 5}",
 					"entries": [
 						"龙在60英尺的锥形范围内呼出一波闪烁的光芒。该区域内未被携带或穿戴的非魔法物品和植被化为尘埃。该区域内的每个生物必须进行一次{@dc 20}体质豁免。若豁免失败，该生物受到36（{@damage 8d8}）点力场伤害，并因与时间流不同步而受到魔法削弱。当生物处于这种状态时，针对它的攻击检定具有优势，且它获得{@condition 中毒}状态。若豁免成功，该生物只受到一半伤害。被削弱的生物可以在每个回合结束时重复进行豁免，成功三次后该效果结束。"
 					]
@@ -240,7 +240,7 @@
 				},
 				{
 					"ENG_name": "Legendary Resistance (5/Day)",
-					"name": "传奇抗性（每日5次）",
+					"name": "传奇抗性（5/日）",
 					"entries": [
 						"龙豁免失败时，可以将其改为豁免成功。"
 					]
@@ -263,14 +263,14 @@
 				},
 				{
 					"ENG_name": "Time Breath {@recharge 5}",
-					"name": "时间之息{@recharge 5}",
+					"name": "时光吐息{@recharge 5}",
 					"entries": [
 						"龙吐出一道闪烁的光波，形成一个90尺的圆锥区域。该区域内的非魔法物体和植被，如果不是被穿戴或携带，将化为尘土。该区域内的每个生物都必须进行一次{@dc 24}体质豁免检定。若豁免失败，生物将受到52（{@damage 8d12}）力场伤害，并因与时间流脱同步而被魔法削弱。在生物处于这种状态时，对它的攻击检定具有优势，它将处于{@condition 中毒}状态，其他生物对其造成的伤害具有抗性。若豁免成功，生物只受到一半的伤害。被削弱的生物可以在每个回合结束时重复豁免检定，在连续成功三次后结束此效果。"
 					]
 				},
 				{
 					"ENG_name": "Time Gate (1/Day)",
-					"name": "时间之门（每日一次）",
+					"name": "时光之门（1/日）",
 					"entries": [
 						"巨龙在其双角之间的空间中或在其视线范围内30英尺内的一个未被占据的空间中召唤出一个直径20英尺的圆形传送门。传送门连接至任何存在位面上的一个精确位置，时间点可以是距离现在最多8,000年的过去或未来。传送门持续存在24小时，或直到巨龙的{@status 专注}结束（如同在{@status 专注||专注于}一个法术）。传送门在每个位面上都有一个正面和背面。只有通过传送门的正面才能进行穿越。任何通过传送门的生物或物品都会被传送到目的地，出现在离传送门最近的未被占据的空间中。神祇和其他位面统治者可以阻止巨龙在其面前或其领域内任何地方开启传送门。"
 					]
@@ -424,16 +424,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Defier's Whim",
+					"ENG_name": "Defier's Whim",
+					"name": "反抗者之愿",
 					"entries": [
-						"The null takes the Dash, Disengage, or Use an Object action."
+						"虚无体采取冲刺、脱离战斗或使用物品的动作。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Nullify Spell (3/Day)",
-					"name": "抵消法术（每日3次）",
+					"name": "抹消法术（3/日）",
 					"entries": [
 						"空无生物念出一个魔法反制词来打断它能看到的正在施展法术的生物。若该法术为3环或更低，则法术失败且不产生效果。若该法术为4环或更高，空无生物需进行一次智力检定（{@dc 10} + 法术环数）。检定成功时，法术失败且不产生效果。"
 					]
@@ -578,15 +579,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Aura of Blades",
+					"ENG_name": "Aura of Blades",
+					"name": "刀刃光环",
 					"entries": [
-						"The aurumach manifests a spectral, golden aura of blades around itself. While this aura is manifested, each creature that starts its turn within 10 feet of the aurumach must make a {@dc 19} Dexterity saving throw, taking 16 ({@damage 3d10}) force damage on a failed save, or half as much damage on a successful one. The aura disappears after 1 minute, when the aurumach has the {@condition incapacitated} condition or dies, or when the aurumach uses a bonus action to end it."
+						"奥鲁马克在自身周围显化出一圈金色的灵体刀锋光环。当此光环显化时，每个在其10英尺范围内开始回合的生物都必须进行一次{@dc 19}敏捷豁免，豁免失败会受到16（{@damage 3d10})的力场伤害，成功则只承受一半伤害。光环在1分钟后消失，当奥鲁马克处于{@condition 失能}状态或死亡时，或当奥鲁马克使用一个附加动作来结束它时，光环也会消失。"
 					]
 				},
 				{
-					"name": "Invoke Weakness {@recharge 5}",
+					"ENG_name": "Invoke Weakness {@recharge 5}",
+					"name": "唤起弱点 {@recharge 5}",
 					"entries": [
-						"The aurumach attempts to use its magic to weaken the defenses of a creature it can see within 120 feet of itself. The target must succeed on a {@dc 19} Wisdom saving throw or become cursed until the end of the aurumach's next turn. The next time the aurumach hits the cursed target with a Manifested Blade or Gleaming Ray attack, the target takes an extra 27 ({@damage 6d8}) force damage."
+						"金魔像试图使用其魔法削弱其自身120尺范围内能看到的生物的防御。目标必须成功进行一次{@dc 19}感知豁免，否则在金魔像下一回合结束前被诅咒。下一次金魔像用显灵之刃或闪耀射线攻击被诅咒的目标时，目标将额外受到27点（{@damage 6d8}）力场伤害。"
 					]
 				}
 			],
@@ -934,7 +937,7 @@
 				},
 				{
 					"ENG_name": "Miasma of Discord {@recharge 5}",
-					"name": "不和的瘴气 {@recharge 5}",
+					"name": "不谐瘴气{@recharge 5}",
 					"entries": [
 						"巴恩罗斯呼出灰色的蒸汽，这些蒸汽在它能看到的120尺内的某点凝聚。蒸汽填满以该点为中心的20尺半径球体，然后消失。该区域内的每个非尤戈罗斯生物必须进行一次{@dc 19}感知豁免检定。豁免失败的生物会受到35 ({@damage 10d6}) 心灵伤害，并在下一个回合结束前处于{@condition 魅惑}状态。以这种方式{@condition 魅惑}的生物将其盟友视为敌人，其身体和装备的颜色变为灰色。成功通过豁免的生物只受到一半的伤害。"
 					]
@@ -1157,9 +1160,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Mighty Leap",
+					"ENG_name": "Mighty Leap",
+					"name": "大步飞跃",
 					"entries": [
-						"The bariaur jumps a distance up to its walking speed."
+						"巴里亚乌可以跳到其步行速度的距离。"
 					]
 				}
 			],
@@ -1302,9 +1306,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Soothing Word (3/Day)",
+					"ENG_name": "Soothing Word (3/Day)",
+					"name": "安抚之词（每日3次）",
 					"entries": [
-						"The void soother speaks a magical word of mercy, healing one creature it can see within 60 feet of itself. The target regains 4 ({@dice 1d4 + 2}) hit points."
+						"虚空安抚者说出一个具有魔力的仁慈之词，治愈其自身60尺范围内能看到的一个生物。目标恢复4点（{@dice 1d4 + 2}）生命值。"
 					]
 				}
 			],
@@ -1407,9 +1412,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Illumination",
+					"ENG_name": "Illumination",
+					"name": "照明",
 					"entries": [
-						"The cranium rat sheds dim light from its exposed brain in a 5-foot radius or extinguishes the light."
+						"颅鼠从其暴露的大脑发出微弱的光芒，照亮5尺半径的范围，或者熄灭这光芒。"
 					]
 				}
 			],
@@ -1496,7 +1502,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"这个群体施展以下法术之一，无需法术材料，并使用智力作为施法能力（法术豁免{@dc 13}）："
@@ -1553,9 +1559,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Illumination",
+					"ENG_name": "Illumination",
+					"name": "照明",
 					"entries": [
-						"The swarm sheds dim light from its brains in a 5-foot radius, increases the illumination to bright light in a 5- to 20-foot radius and dim light for an additional number of feet equal to the chosen radius, or extinguishes the light."
+						"这个虫群从它的大脑发出微弱的光线，覆盖5尺半径的范围，将5尺到20尺半径内的照明增强为明亮光线，并将额外的尺数等于所选半径的范围内照明变为微弱光线，或者熄灭光线。"
 					]
 				}
 			],
@@ -1697,9 +1704,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Assassin's Agility",
+					"ENG_name": "Assassin's Agility",
+					"name": "刺客的敏捷",
 					"entries": [
-						"The cuprilach takes the Dash or Disengage action, or it makes one Burnished Blade attack."
+						"库普瑞拉赫采取冲刺或解除行动，或者进行一次抛光利刃攻击。"
 					]
 				}
 			],
@@ -1840,7 +1848,7 @@
 				},
 				{
 					"ENG_name": "Grasping Ground {@recharge}",
-					"name": "抓握地面 {@recharge}",
+					"name": "地之攫 {@recharge}",
 					"entries": [
 						"达巴斯使一个它可以看到的20英尺见方的地面区域在其60英尺范围内长出由石头构成的抓握触手。该区域内达巴斯选择的每个生物必须成功通过一次{@dc 13}敏捷豁免，否则会受到9（{@damage 2d8}）点钝击伤害并陷入{@condition 擒抱}状态（逃脱{@dc 13}）。当以这种方式陷入{@condition 擒抱}时，该生物还会处于{@condition 束缚}状态。这些触手会在1分钟后消失，或者达巴斯的{@status 专注}结束（如同{@status 专注||专注于}于一个法术）时消失。"
 					]
@@ -1940,7 +1948,7 @@
 			"trait": [
 				{
 					"ENG_name": "Shadowy Form",
-					"name": "幽影形态",
+					"name": "影绰之形",
 					"entries": [
 						"当暗织者处于微光或黑暗中时，除非暗织者处于{@condition 失能}状态，否则对其的攻击检定都会受到劣势影响。"
 					]
@@ -2162,7 +2170,7 @@
 				},
 				{
 					"ENG_name": "Lightning Rays {@recharge}",
-					"name": "雷电射线{@recharge}",
+					"name": "闪电光束{@recharge}",
 					"entries": [
 						"十吨重的生物从其眼中释放出一连串的闪电。十吨重生物周围30尺内的每个生物都必须进行一次{@dc 13}敏捷豁免检定，若失败则受到38（{@damage 7d10}）闪电伤害，若成功则受到一半的伤害。"
 					]
@@ -2258,7 +2266,7 @@
 			"trait": [
 				{
 					"ENG_name": "Aura of Doom",
-					"name": "末日灵光",
+					"name": "毁灭灵光",
 					"entries": [
 						"任何在其回合开始时处于末日领主10尺范围内的生物必须进行一次{@dc 16}体质豁免，失败则受到18点（{@damage 4d8}）黯蚀伤害，成功则受到一半的伤害。如果末日领主没有处于{@condition 失能}状态，它可以在其回合开始时（无需动作）抑制或恢复这个光环。"
 					]
@@ -2288,7 +2296,7 @@
 				},
 				{
 					"ENG_name": "Entropic Javelin",
-					"name": "混乱标枪",
+					"name": "熵能标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 9}，触及范围5尺或射程30/120尺，单一目标。{@h}8点（{@damage 1d6 + 5}）点穿刺伤害加上14点（{@damage 4d6}）黯蚀伤害。被这次攻击杀死的生物，其身体以及它穿戴或携带的一切，除了魔法物品外，都会被化为灰烬。"
 					]
@@ -2395,7 +2403,7 @@
 				},
 				{
 					"ENG_name": "Entropic Javelin",
-					"name": "混乱标枪",
+					"name": "熵能标枪",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 7}，触及范围 5 尺或射程 30/120 尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害加上 13 ({@damage 2d12}) 黯蚀伤害。被这个攻击杀死的生物，其身体以及它穿戴或携带的一切物品，除了魔法物品外，都会被化为灰烬。"
 					]
@@ -2493,7 +2501,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"知识吞噬者施放以下法术之一，不需要法术材料，使用智力作为其施法能力（法术豁免{@dc 15}）。它必须已经消耗了相应的大脑数量才能施放法术，如下所示："
@@ -2665,7 +2673,7 @@
 			"trait": [
 				{
 					"ENG_name": "Headfirst Charge",
-					"name": "头槌冲锋",
+					"name": "埋头冲锋",
 					"entries": [
 						"如果伊奎纳直线移动至少30尺，朝向一个生物，并在5尺内结束移动，那个生物必须成功进行一次{@dc 17}力量豁免检定，否则会受到14 ({@damage 4d6}) 钝击伤害并进入{@condition 倒地}状态。"
 					]
@@ -2695,7 +2703,7 @@
 				},
 				{
 					"ENG_name": "Shout {@recharge}",
-					"name": "呼喊{@recharge}",
+					"name": "咆哮{@recharge}",
 					"entries": [
 						"马形生物发出一声震耳欲聋的吼叫。距离马形生物30英尺范围内的每个生物必须成功通过一次{@dc 14}体质豁免，否则将获得{@condition 震慑}状态，直到马形生物的下一个回合结束。"
 					]
@@ -2730,7 +2738,7 @@
 		},
 		{
 			"ENG_name": "Farastu Demodand",
-			"name": "法拉斯特魔能兽",
+			"name": "法拉斯特魔",
 			"source": "MPP",
 			"page": 26,
 			"otherSources": [
@@ -2872,7 +2880,7 @@
 				},
 				{
 					"ENG_name": "Summon Demodand (1/Day)",
-					"name": "召唤恶魔（每日一次）",
+					"name": "召唤妖魔（1/日）",
 					"entries": [
 						"法拉斯特有40%的几率召唤1个法拉斯特小恶魔。召唤出的小恶魔出现在法拉斯特60尺内的未被占据的空间，作为法拉斯特的盟友行动，并且不能召唤其他小恶魔。它将持续存在1分钟，直到它或法拉斯特死亡，或者直到法拉斯特作为动作将其解散。"
 					]
@@ -3011,25 +3019,28 @@
 			],
 			"bonus": [
 				{
-					"name": "Commanding Words",
+					"ENG_name": "Commanding Words",
+					"name": "命令真言",
 					"entries": [
-						"The shaker speaks magical words to order a creature it can see within 30 feet of itself. The target must succeed on a {@dc 14} Wisdom saving throw or be affected by one of the following effects (choose one or roll a {@dice d4}):",
+						"摇动者念出魔法咒语，命令它能看到的30尺范围内的生物。目标必须成功进行一次{@dc 14}感知豁免检定，否则会受到以下效果之一的影响（选择一个或掷一个{@dice d4}）：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "1-2: Grovel",
 									"type": "item",
-									"name": "1-2: Grovel",
+									"name": "1-2: 卑躬屈膝",
 									"entries": [
-										"The target takes 14 ({@damage 4d6}) psychic damage, drops whatever it is holding, and has the {@condition prone} condition."
+										"目标受到14（{@damage 4d6}）点心灵伤害，放下它所持有的任何物品，并处于{@condition 倒地}状态。"
 									]
 								},
 								{
+									"ENG_name": "3-4: Cower",
 									"type": "item",
-									"name": "3-4: Cower",
+									"name": "3-4: 畏缩",
 									"entries": [
-										"The target takes 10 ({@damage 3d6}) psychic damage and has the {@condition frightened} condition until the end of its next turn."
+										"目标受到10（{@damage 3d6}）点心灵伤害，并在下一个回合结束前处于{@condition 恐慌}状态。"
 									]
 								}
 							]
@@ -3072,7 +3083,7 @@
 		},
 		{
 			"ENG_name": "Ferrumach Rilmani",
-			"name": "费鲁马克里尔马尼",
+			"name": "黑铁卿",
 			"source": "MPP",
 			"page": 44,
 			"otherSources": [
@@ -3322,16 +3333,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Spatial Loophole",
+					"ENG_name": "Spatial Loophole",
+					"name": "空间漏洞",
 					"entries": [
-						"The law bender teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+						"法则弯曲者连同其穿戴或携带的任何装备一起传送，至多30尺到它能看到的未被占据的空间。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Probability Loophole (3/Day)",
-					"name": "概率漏洞（每日3次）",
+					"name": "概率漏洞（3/日）",
 					"entries": [
 						"当法律扭曲者或它能看到的生物进行攻击检定、豁免检定或属性检定时，法律扭曲者可以使该检定获得优势或劣势。"
 					]
@@ -3429,7 +3441,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"吉斯人施展以下法术之一，无需法术材料，使用感知作为施法能力（法术豁免{@dc 15}）："
@@ -3478,7 +3490,7 @@
 				},
 				{
 					"ENG_name": "Psychic Bolt",
-					"name": "灵能束",
+					"name": "灵能矢",
 					"entries": [
 						"{@atk rs} 命中{@hit 7}，射程60尺，单一生物。{@h}21点（{@damage 4d8 + 3}）心灵伤害。"
 					]
@@ -3487,7 +3499,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Future Insight (3/Day)",
-					"name": "未来洞察（每日3次）",
+					"name": "洞见未来（3/日）",
 					"entries": [
 						"当吉斯泽莱人或它能看到的生物进行攻击检定、豁免检定或属性检定时，吉斯泽莱人可以使这次检定获得优势或劣势。"
 					]
@@ -3587,7 +3599,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"吉斯泽莱施放以下法术之一，不需要法术材料，使用感知作为施法能力（法术豁免{@dc 13}）："
@@ -3633,32 +3645,36 @@
 			],
 			"bonus": [
 				{
-					"name": "Matter Manipulation {@recharge 4}",
+					"ENG_name": "Matter Manipulation {@recharge 4}",
+					"name": "物质操控 {@recharge 4}",
 					"entries": [
-						"The githzerai manipulates the energy of the plane of existence it's on to produce one of the following effects (choose one or roll a {@dice d6}):",
+						"吉斯人操纵其存在的位面的能源，以产生以下效果之一（选择一个或掷一个{@dice d6}）：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "1-2: Astral Step",
 									"type": "item",
-									"name": "1-2: Astral Step",
+									"name": "1-2: 星界步",
 									"entries": [
-										"The githzerai can teleport, along with any equipment it is wearing or carrying, up to 40 feet to an unoccupied space it can see. In addition, its walking speed increases to 40 feet until the start of its next turn."
+										"吉斯泽莱人可以传送，连同它所穿戴或携带的任何装备，最多40尺到它能看到的未被占据的空间。此外，它的行走速度增加到40尺，直到其下一个回合开始。"
 									]
 								},
 								{
+									"ENG_name": "3-4: Growth",
 									"type": "item",
-									"name": "3-4: Growth",
+									"name": "3-4: 成长",
 									"entries": [
-										"Flowers and vines grow around the githzerai until the start of its next turn, then vanish; the ground within 15 feet of the githzerai is difficult terrain for other creatures while the flowers and vines are present."
+										"花朵和藤蔓在吉斯族人周围生长，直到其下一个回合开始时消失；在花朵和藤蔓存在时，吉斯族人周围15尺范围内的地面对其他生物来说是困难地形。"
 									]
 								},
 								{
+									"ENG_name": "5-6: Retaliating Light",
 									"type": "item",
-									"name": "5-6: Retaliating Light",
+									"name": "5-6: 反击之光",
 									"entries": [
-										"Multicolored lights surround the githzerai until the start of its next turn. For the effect's duration, whenever a creature within 5 feet of the githzerai hits it with a melee attack roll, that creature takes 3 ({@damage 1d6}) force damage, as magic lashes out in retribution."
+										"彩色光芒环绕着吉斯人，直到其下一个回合开始。在效果持续期间，每当一个生物在吉斯人5尺范围内对其进行近战攻击骰时，那个生物会受到3 ({@damage 1d6}) 力场伤害，因为魔法以报复的形式爆发出来。"
 									]
 								}
 							]
@@ -3756,7 +3772,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"吉斯泽莱人施放以下法术之一，不需要法术材料，使用感知作为施法能力（法术豁免{@dc 14}）："
@@ -3801,14 +3817,14 @@
 				},
 				{
 					"ENG_name": "Psychic Bolt",
-					"name": "灵能束",
+					"name": "灵能矢",
 					"entries": [
 						"{@atk rs} 命中{@hit 6}，射程 60 尺，单一生物。{@h}17 ({@damage 5d6}) 心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Pacifying Touch",
-					"name": "安定之触",
+					"name": "抚慰之触",
 					"entries": [
 						"吉斯泽莱触摸其5英尺范围内的一个可见生物。目标必须成功通过一次{@dc 14}智力豁免检定，否则吉斯泽莱将为目标选择一个行动：攻击、施法或疾走。受影响的生物在1分钟内无法执行该行动。在目标每回合结束时，它可以重复豁免检定，成功则结束此效果。成功通过豁免检定的目标在24小时内对此吉斯泽莱的安抚之触免疫。"
 					]
@@ -3945,7 +3961,7 @@
 		},
 		{
 			"ENG_name": "Harmonium Captain",
-			"name": "和谐之音队长",
+			"name": "和谐营·军士队长",
 			"source": "MPP",
 			"page": 58,
 			"otherSources": [
@@ -4028,7 +4044,7 @@
 				},
 				{
 					"ENG_name": "Dictate {@recharge 5}",
-					"name": "命令{@recharge 5}",
+					"name": "强令执行{@recharge 5}",
 					"entries": [
 						"船长可以口头命令其60尺范围内能够看到的最多三个生物。这个魔法命令必须是采取行动或克制不采取行动（例如，\"放下你们的武器\"）。",
 						"目标必须成功通过一个 {@dc 14} 感知豁免检定，否则会陷入 {@condition 魅惑} 状态，持续1分钟。在此期间，目标会遵循船长的命令。如果目标受到伤害或成功完成了命令，效果会提前结束。如果命令对目标自身有直接危害，例如命令它走入火中，目标将自动通过豁免检定。",
@@ -4245,9 +4261,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phase (2/Day)",
+					"ENG_name": "Phase (2/Day)",
+					"name": "相位移动（每日2次）",
 					"entries": [
-						"The remnant becomes partially incorporeal for as long as it maintains {@status concentration} on the effect (as if {@status concentration||concentrating} on a spell). While partially incorporeal, the remnant has resistance to bludgeoning, piercing, and slashing damage."
+						"遗迹在保持对效果的{@status 专注}期间（就像在{@status 专注||专注于}施法一样）部分变为非物质状态。在部分非物质状态下，遗迹对钝击、穿刺和挥砍伤害具有抗性。"
 					]
 				}
 			],
@@ -4609,9 +4626,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The archon magically transforms into any Medium or Large dog or wolf while retaining its game statistics (other than its size and losing its Shining Blade attack). The archon reverts to its true form if reduced to 0 hit points or if it uses a bonus action to do so."
+						"天使通过魔法转变成任何中型或大型的狗或狼，同时保留其游戏具体数值（除了其大小和失去其光辉之刃攻击）。如果天使的生命值降至0点，或如果它使用附赠动作这样做，它将恢复其真实形态。"
 					]
 				}
 			],
@@ -4786,7 +4804,7 @@
 				},
 				{
 					"ENG_name": "Summon Demodand (1/Day)",
-					"name": "召唤恶魔（每日一次）",
+					"name": "召唤妖魔（1/日）",
 					"entries": [
 						"克卢巴尔有40%的几率召唤它选择的{@dice 1d2}个法拉斯图斯恶魔仆从或1个克卢巴尔恶魔仆从。被召唤的恶魔仆从出现在克卢巴尔60尺范围内的未被占据的空间内，作为克卢巴尔的盟友行动，并且不能召唤其他恶魔仆从。它将持续存在1分钟，直到它或克卢巴尔死亡，或者直到克卢巴尔作为一个动作将其解散。"
 					]
@@ -4794,9 +4812,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Nauseating Fog {@recharge}",
+					"ENG_name": "Nauseating Fog {@recharge}",
+					"name": "令人作呕的雾气 {@recharge}",
 					"entries": [
-						"The kelubar magically creates a cloud of greenish fog that fills a 20-foot-radius sphere centered on a point within 120 feet of itself. The cloud remains for 1 minute or until the kelubar uses this bonus action again. The cloud is heavily obscured and difficult terrain. Any creature that starts its turn in the cloud or enters the cloud for the first time on a turn must succeed on a {@dc 17} Constitution saving throw or have the {@condition poisoned} condition until the end of its next turn."
+						"克鲁巴通过魔法制造出一团绿色雾气，形成一个以自身为中心120尺范围内某点的20尺半径球体。雾气持续1分钟，或者直到克鲁巴再次使用这个附赠动作。雾气区域是重度遮蔽且为困难地形。任何在其回合开始时位于雾气中或在回合中首次进入雾气的生物必须成功进行一次{@dc 17}体质豁免检定，否则直到其下一回合结束时处于{@condition 中毒}状态。"
 					]
 				}
 			],
@@ -5196,9 +5215,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Shift Radiance",
+					"ENG_name": "Shift Radiance",
+					"name": "切换光耀",
 					"entries": [
-						"The archon reduces its Illumination to shed only dim light in a 5-foot radius, or it returns the light to full intensity."
+						"天使减少其照明强度，只在5尺半径内散发出微弱的光线，或者它将光线恢复到完整强度。"
 					]
 				}
 			],
@@ -5461,9 +5481,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Marked for Pursuit (3/Day)",
+					"ENG_name": "Marked for Pursuit (3/Day)",
+					"name": "追击标记（每日3次）",
 					"entries": [
-						"The bloodhound attempts to place a magical mark on a creature it can see within 30 feet of itself. The target must succeed on a {@dc 13} Charisma saving throw or become cursed for 24 hours. A creature missing any of its hit points has disadvantage on this saving throw. While cursed in this way, the bloodhound can sense the direction and distance to the target as long as the two are on the same plane of existence. If the target isn't on the same plane, the bloodhound knows what plane the target is on."
+						"血猎犬试图在其30尺范围内可以看到的生物上放置一个魔法标记。目标必须成功进行一次{@dc 13}魅力豁免检定，否则将被诅咒24小时。任何失去生命值的生物在这次豁免检定上处于劣势。以这种方式被诅咒的生物，只要两者存在于同一存在位面上，血猎犬就能感知目标的方向和距离。如果目标不在同一个位面上，血猎犬知道目标所在的位面。"
 					]
 				}
 			],
@@ -5584,25 +5605,28 @@
 			],
 			"bonus": [
 				{
-					"name": "Planar Smithing",
+					"ENG_name": "Planar Smithing",
+					"name": "铸界为物",
 					"entries": [
-						"The matter smith magically manipulates the energy of the plane of existence it's on to produce one of the following effects (choose one or roll a {@dice d4}):",
+						"物质术士通过魔法操控其所在存在位面的能量，产生以下效果之一（选择一个或掷一个{@dice d4}）：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
+									"ENG_name": "1-2: Chains",
 									"type": "item",
-									"name": "1-2: Chains",
+									"name": "1-2: 链条",
 									"entries": [
-										"The matter smith creates spectral bindings around a creature it can see within 30 feet of itself. The target must succeed on a {@dc 13} Dexterity saving throw or have the {@condition restrained} condition until the end of its next turn."
+										"物质工匠在自己周围30尺内能看到的生物周围创造出幽灵般的束缚。目标必须成功进行一次{@dc 13}敏捷豁免检定，否则直到其下一回合结束时处于{@condition 束缚}状态。"
 									]
 								},
 								{
+									"ENG_name": "3-4: Magic Shield",
 									"type": "item",
-									"name": "3-4: Magic Shield",
+									"name": "3-4: 魔法盾牌",
 									"entries": [
-										"The matter smith conjures a floating, spectral shield that grants the matter smith a +5 bonus to its AC until the shield disappears at the start of the matter smith's next turn. The first time a creature misses a melee attack roll against the matter smith while the shield is conjured, that creature takes 7 ({@damage 2d6}) force damage."
+										"物质铁匠召唤出一个漂浮的灵质盾牌，使物质铁匠的AC获得+5加值，直到铁匠的下一个回合开始时盾牌消失。当盾牌被召唤时，第一次错失近战攻击掷骰的生物将受到7（{@damage 2d6}）点力场伤害。"
 									]
 								}
 							]
@@ -6756,7 +6780,7 @@
 				},
 				{
 					"ENG_name": "Summon Demodand (1/Day)",
-					"name": "召唤恶魔（每日一次）",
+					"name": "召唤妖魔（1/日）",
 					"entries": [
 						"沙托有50%的几率召唤其选择的{@dice 1d4}个法拉斯图恶魔侍从、{@dice 1d2}个克鲁巴恶魔侍从，或者1个沙托恶魔侍从。被召唤的恶魔侍从出现在沙托60尺范围内的未被占据的空间内，作为沙托的盟友行动，并且不能召唤其他恶魔侍从。它将持续存在1分钟，直到它或沙托死亡，或者直到沙托作为一个动作将其解散。"
 					]
@@ -6989,9 +7013,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Teleport",
+					"ENG_name": "Teleport",
+					"name": "传送术",
 					"entries": [
-						"Shemeshka teleports, along with any equipment she is wearing or carrying, up to 60 feet to an unoccupied space she can see."
+						"Shemeshka 传送，连同她穿戴或携带的任何装备，最多60尺到她能看到的未被占据的空间。"
 					]
 				}
 			],
@@ -7154,10 +7179,11 @@
 			],
 			"bonus": [
 				{
-					"name": "Enchanting Presence",
+					"ENG_name": "Enchanting Presence",
+					"name": "惑控之仪",
 					"entries": [
-						"Each creature within 30 feet of the muse must make a {@dc 13} Wisdom saving throw. On a failed save, the creature has the {@condition charmed} condition for 1 minute. On a successful save, the creature becomes immune to any muse's Enchanting Presence for 24 hours.",
-						"Whenever the muse deals damage to the {@condition charmed} creature, the {@condition charmed} creature can repeat the saving throw, ending the effect on itself on a success."
+						"缪斯周围30尺内的每个生物都必须进行一次{@dc 13}感知豁免检定。豁免失败的生物将处于{@condition 魅惑}状态，持续1分钟。豁免成功的生物在接下来的24小时内对任何缪斯的迷人存在免疫。",
+						"每当缪斯对{@condition 魅惑}生物造成伤害时，{@condition 魅惑}生物可以重复进行豁免检定，成功则结束自身的效果。"
 					]
 				}
 			],
@@ -7271,9 +7297,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Illumination",
+					"ENG_name": "Illumination",
+					"name": "照明",
 					"entries": [
-						"The sunfly sheds bright light in a 5-foot radius and dim light for an additional 5 feet, or it uses a bonus action to extinguish the light."
+						"太阳蝶在5尺半径内散发明亮光线，并在额外的5尺内散发微光，或者它可以使用附赠动作熄灭光线。"
 					]
 				}
 			],
@@ -7379,9 +7406,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Illumination",
+					"ENG_name": "Illumination",
+					"name": "照明",
 					"entries": [
-						"The swarm sheds bright light in a 15-foot radius and dim light for an additional 15 feet, or it uses a bonus action to extinguish the light."
+						"这个虫群在15尺半径内散发出明亮的光线，并且在额外的15尺内散发出昏暗的光线，或者它可以使用附赠动作来熄灭光线。"
 					]
 				}
 			],
@@ -7482,7 +7510,7 @@
 				},
 				{
 					"ENG_name": "Time Breath {@recharge 5}",
-					"name": "时间之息{@recharge 5}",
+					"name": "时光吐息{@recharge 5}",
 					"entries": [
 						"巨龙呼出一波闪烁的光芒，形成一个15尺的锥形区域。该区域内未被穿戴或携带的非魔法物品和植被会化为尘埃。区域内的每个生物必须进行一次{@dc 14}的体质豁免检定。若豁免失败，该生物将受到27（{@damage 6d8}）点力场伤害，并因与时间流不同步而魔法性地被削弱。在该状态下，攻击该生物时具有优势。若豁免成功，该生物只受到一半伤害。被削弱生物可以在其每回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
@@ -8147,7 +8175,7 @@
 				},
 				{
 					"ENG_name": "Time Breath {@recharge 5}",
-					"name": "时间之息{@recharge 5}",
+					"name": "时光吐息{@recharge 5}",
 					"entries": [
 						"巨龙呼出一道闪烁的光波，形成一个30尺的锥形区域。该区域内未被穿戴或携带的非魔法物品和植被将化为尘埃。该区域内的每个生物必须进行一次{@dc 17}的体质豁免检定。若豁免失败，该生物将受到31点（{@damage 7d8}）的力场伤害，并因与时间流不同步而被魔法性地削弱。当生物处于此状态时，对其进行的攻击检定具有优势。若豁免成功，该生物仅受到一半的伤害。被削弱的生物可以在其每回合结束时重复进行豁免检定，若其在两次检定中成功，则该效果结束。"
 					]

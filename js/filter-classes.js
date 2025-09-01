@@ -6,6 +6,7 @@ class PageFilterClassesBase extends PageFilterBase {
 
 		this._primaryAbilityFilter = new Filter({
 			header: "Primary Ability",
+			cnHeader: "关键属性",
 			items: [
 				"str",
 				"dex",

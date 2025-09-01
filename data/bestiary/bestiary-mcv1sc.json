@@ -94,7 +94,7 @@
 				},
 				{
 					"ENG_name": "Web Strand",
-					"name": "蛛网束",
+					"name": "绞网",
 					"entries": [
 						"{@atk rw} 命中{@hit 13}，触及120尺，单一生物。{@h}目标被{@condition 擒抱}（逃脱{@dc 18}）。蛛网丝可以被攻击并摧毁（AC 12；20生命值；易受火焰伤害；对钝击、毒素和心灵伤害免疫）。蜘蛛可以使用其蛛网丝同时缠绕多达六个生物。"
 					]
@@ -109,9 +109,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Snare Ship (1/Day)",
+					"ENG_name": "Snare Ship (1/Day)",
+					"name": "陷阱船（每日1次）",
 					"entries": [
-						"The spider weaves a magical web around a spelljamming ship it can see within 120 feet of itself. The web lasts for 1 minute and suppresses the magic of any spelljamming helm aboard the ship. Decks and other surfaces of the ship that aren't enclosed become difficult terrain until the effect ends. The web is impervious to damage but is destroyed by a successful casting of {@spell dispel magic} ({@dc 18})."
+						"蜘蛛在其自身120尺范围内可以看到的法术船周围编织了一个魔法网。这个网持续1分钟，并抑制船上任何法术船盔的魔法。船上的甲板和其他未封闭的表面在效果结束前变成困难地形。这个网对伤害是不可渗透的，但可以通过成功施放的{@spell 解除魔法}（{@dc 18}）来摧毁。"
 					]
 				}
 			],
@@ -145,7 +146,7 @@
 		},
 		{
 			"ENG_name": "Clockwork Horror",
-			"name": "发条恐怖生物",
+			"name": "发条恐怪",
 			"source": "MCV1SC",
 			"page": 4,
 			"size": [
@@ -212,7 +213,7 @@
 			"trait": [
 				{
 					"ENG_name": "Shutdown",
-					"name": "关闭",
+					"name": "关机",
 					"entries": [
 						"如果被{@spell 解除魔法}目标，恐怖生物必须通过一次体质豁免检定对抗施法者的法术豁免DC，否则将{@condition 昏迷}1分钟或直到它受到任何伤害。"
 					]
@@ -242,21 +243,21 @@
 				},
 				{
 					"ENG_name": "Rotating Saw",
-					"name": "旋转锯",
+					"name": "旋转电锯",
 					"entries": [
 						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）点挥砍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Jolt",
-					"name": "雷电冲击",
+					"name": "闪电震荡",
 					"entries": [
 						"{@atk rs} 命中{@hit 4}，射程120尺，单一目标。{@h}7 ({@damage 1d10 + 2})点闪电伤害。"
 					]
 				},
 				{
 					"ENG_name": "Spelljamming Helm Interface",
-					"name": "法术船盔接口",
+					"name": "接入法驱魔舵",
 					"entries": [
 						"这个恐怖生物附着在它5尺范围内可以看到的法术跳跃头盔上，并立即与之调谐。如果另一个生物已经与头盔调谐，当这个恐怖生物开始调谐时，那个生物与头盔的调谐就会结束。尽管恐怖生物不是施法者，它仍然可以操作头盔。恐怖生物可以作为一个附赠动作从头盔上脱离，这会结束它与头盔的调谐。"
 					]
@@ -288,7 +289,7 @@
 		},
 		{
 			"ENG_name": "Eldritch Lich",
-			"name": "幽冥巫妖",
+			"name": "骇异巫妖",
 			"source": "MCV1SC",
 			"page": 6,
 			"size": [
@@ -387,7 +388,7 @@
 			"trait": [
 				{
 					"ENG_name": "Far Realm Parasite",
-					"name": "远域寄生虫",
+					"name": "遥远国度寄生虫",
 					"entries": [
 						"巫妖的躯干内寄居着一条蠕虫状的寄生虫，它包含着巫妖的灵魂。当巫妖死亡时，它会内爆成寄生虫，然后消失到远界。在{@dice 2d4}天内，寄生虫会使巫妖在它死亡的地方{@dice 1d4}英里范围内重新出现。如果巫妖是在用来困住不死生物的魔法圈中死亡的，巫妖将作为一只拥有巫妖所有记忆的{@creature 食腐兽}重新出现。"
 					]
@@ -433,7 +434,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Far Realm Step",
-					"name": "远域步",
+					"name": "遥远国度步伐",
 					"entries": [
 						"巫妖及其穿戴或携带的任何装备在受到伤害后立即通过魔法传送至其可以看到的60尺内的未被占据的空间。"
 					]
@@ -493,7 +494,7 @@
 		},
 		{
 			"ENG_name": "Fractine",
-			"name": "分形者",
+			"name": "分形",
 			"source": "MCV1SC",
 			"page": 7,
 			"size": [
@@ -562,7 +563,7 @@
 				},
 				{
 					"ENG_name": "Scrying Focus",
-					"name": "窥视焦点",
+					"name": "探知法器",
 					"entries": [
 						"施法者可以在施放{@spell 探知术}法术或类似魔法时，使用分形者作为替代焦点，前提是施法者和分形者彼此相距不超过5尺。"
 					]
@@ -585,7 +586,7 @@
 			"action": [
 				{
 					"ENG_name": "Extradimensional Touch",
-					"name": "跨维度触碰",
+					"name": "超维度触击",
 					"entries": [
 						"{@atk ms} 命中{@hit 5}，触及范围5尺，单一目标。{@h}24 ({@damage 8d6}) 力场伤害。"
 					]
@@ -593,11 +594,12 @@
 			],
 			"bonus": [
 				{
-					"name": "Imprison",
+					"ENG_name": "Imprison",
+					"name": "囚禁",
 					"entries": [
-						"The fractine targets one creature of its size or smaller in its space. The target must succeed on a {@dc 16} Dexterity saving throw or be imprisoned in a demiplane. While the creature is imprisoned, a distorted image of it can be seen on the fractine's two-dimensional surface.",
-						"The demiplane moves with the fractine, has indestructible and opaque walls, and is only as big as it needs to be to contain the target, which doesn't suffer from hunger or thirst while imprisoned. No other creature can enter the demiplane, and the fractine can't be harmed from within the demiplane.",
-						"The fractine can imprison only one creature at a time and can release that creature as a bonus action. If the fractine is reduced to 0 hit points, any creature in the fractine's demiplane is released instantly. A released creature reappears in an unoccupied space as close to the fractine (or where it died) as possible. A creature can leave the demiplane on its own by using magic that enables planar travel, such as the {@spell plane shift} spell."
+						"分形生物针对其空间内与其体型相同或更小的一个生物。目标必须通过一次{@dc 16} 敏捷豁免检定，否则将被囚禁在一个半位面中。当生物被囚禁时，可以在分形生物的二维表面上看到一个扭曲的它的形象。",
+						"该半位面随裂隙者移动，拥有不可摧毁且不透明的墙壁，其大小仅足以容纳目标，目标在囚禁期间不会遭受饥饿或口渴。没有其他生物可以进入该半位面，裂隙者在半位面内也不会受到伤害。",
+						"分形者一次只能囚禁一个生物，并可以作为附赠动作释放该生物。如果分形者的命中点数降至0点，任何在分形者的半位面中的生物会立即被释放。被释放的生物会尽可能地出现在分形者（或其死亡地点）附近的未被占据的空间。生物可以通过使用能够实现位面旅行的魔法，例如{@spell 异界传送}法术，自行离开半位面。"
 					]
 				}
 			],
@@ -693,7 +695,7 @@
 			"trait": [
 				{
 					"ENG_name": "Air Envelope",
-					"name": "空气包裹",
+					"name": "气囊",
 					"entries": [
 						"如果它至少有1点生命值，游荡者可以在真空中为自己生成一个空气包层。这个空气包层可以无限期地维持游荡者和其空间内的另一个生物的生命。"
 					]
@@ -753,7 +755,7 @@
 		},
 		{
 			"ENG_name": "Goon Balloon",
-			"name": "傻瓜气球",
+			"name": "怪诞气球",
 			"source": "MCV1SC",
 			"page": 9,
 			"size": [
@@ -841,9 +843,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Float",
+					"ENG_name": "Float",
+					"name": "漂浮",
 					"entries": [
-						"The goon balloon moves up to 20 feet vertically in one direction without provoking opportunity attacks. If it ends this movement suspended in the air, it hovers in place. It can't be knocked {@condition prone} while airborne."
+						"打手气球可以垂直向上移动最多20尺而不引起借机攻击。如果它在结束这个移动时悬浮在空中，它将停留在原地。在空中时，它不能被击倒{@condition 倒地}。"
 					]
 				}
 			],
@@ -881,7 +884,7 @@
 		},
 		{
 			"ENG_name": "Nightmare Beast",
-			"name": "噩梦兽",
+			"name": "梦魇兽",
 			"source": "MCV1SC",
 			"page": 10,
 			"size": [
@@ -926,7 +929,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"如果野兽豁免失败，它可以选择成功。"
 					]
@@ -963,7 +966,7 @@
 				},
 				{
 					"ENG_name": "Disintegration Gaze {@recharge 5}",
-					"name": "解体凝视 {@recharge 5}",
+					"name": "解离凝视{@recharge 5}",
 					"entries": [
 						"野兽针对它能看到的60尺范围内的一个生物。目标必须进行一次{@dc 18}体质豁免检定，失败则受到70（{@damage 10d6 + 40}）力场伤害，成功则只受到一半的伤害。如果这个魔法效果使目标的生命值降至0点，目标将被解离，除了一堆灰烬以及它穿戴或携带的任何装备外，什么都不留下。"
 					]
@@ -971,9 +974,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Teleport (2/Day)",
+					"ENG_name": "Teleport (2/Day)",
+					"name": "传送（每日2次）",
 					"entries": [
-						"The beast magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+						"野兽及其穿戴或携带的任何装备，可以魔法传送至其能看到的120尺内未被占据的空间。"
 					]
 				}
 			],
@@ -987,14 +991,14 @@
 				},
 				{
 					"ENG_name": "Charge (Costs 2 Actions)",
-					"name": "冲锋（消耗2个行动点）",
+					"name": "冲锋（花费2个动作）",
 					"entries": [
 						"野兽以它的移动速度移动，不引起借机攻击，然后进行两次獠牙攻击。"
 					]
 				},
 				{
 					"ENG_name": "Frightful Howl (Costs 2 Actions)",
-					"name": "恐怖嚎叫（消耗2个行动）",
+					"name": "可怕嚎叫（花费2个动作）",
 					"entries": [
 						"野兽在呼出时发出一声嚎叫，释放出一片120尺的圆锥形魔法恐惧气体。在该区域内的任何生物都必须进行一次{@dc 18}感知豁免检定，否则将在1分钟内对野兽感到{@condition 恐慌}。生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
 					]
@@ -1037,7 +1041,7 @@
 		},
 		{
 			"ENG_name": "Puppeteer Parasite",
-			"name": "傀儡操纵寄生虫",
+			"name": "傀儡寄生虫",
 			"source": "MCV1SC",
 			"page": 11,
 			"size": [
@@ -1131,9 +1135,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Suggestion (Psionics; 1/Day)",
+					"ENG_name": "Suggestion (Psionics; 1/Day)",
+					"name": "建议（灵能；每日1次）",
 					"entries": [
-						"The parasite casts the {@spell suggestion} spell, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 13})."
+						"寄生虫施放{@spell 暗示术}法术，不需要法术材料，使用智力作为施法能力（法术豁免{@dc 13}）。"
 					]
 				}
 			],
@@ -1158,7 +1163,7 @@
 		},
 		{
 			"ENG_name": "Star Lancer",
-			"name": "星之枪骑兵",
+			"name": "星辰枪骑兵",
 			"source": "MCV1SC",
 			"page": 12,
 			"size": [
@@ -1227,7 +1232,7 @@
 				},
 				{
 					"ENG_name": "Invisibility Cloak (3/Day)",
-					"name": "隐形斗篷（每日3次）",
+					"name": "隐身斗篷（3/日）",
 					"entries": [
 						"星矛骑士和其选择的一个骑乘生物（由星矛骑士选择）会神奇地变为{@condition 隐形}。这个效果持续到星矛骑士或其骑乘的生物攻击或施法，或者直到星矛骑士的{@status 专注}结束（就像{@status 专注||专注于}施法一样）。任何由{@condition 隐形}生物穿戴或携带的装备在隐形斗篷的持续时间内也是{@condition 隐形}。"
 					]
@@ -1255,7 +1260,7 @@
 		},
 		{
 			"ENG_name": "Yggdrasti",
-			"name": "世界树",
+			"name": "界残片尤迦特斯提",
 			"source": "MCV1SC",
 			"page": 13,
 			"size": [
@@ -1314,7 +1319,7 @@
 			"trait": [
 				{
 					"ENG_name": "Cavities",
-					"name": "腔体",
+					"name": "空腔",
 					"entries": [
 						"伊格德拉西的树干中有{@dice 1d4 + 2}个腔室。每个腔室都足够大，可以容纳一个中型生物，两个小型生物，或八个微型生物。在腔室内的生物对来自腔室外的攻击和其他效果拥有{@quickref 掩护||3||四分之三掩护}。伊格德拉西的腔室之间并不相连。"
 					]
@@ -1328,7 +1333,7 @@
 				},
 				{
 					"ENG_name": "Lightning Conduit",
-					"name": "导电体",
+					"name": "闪电导管",
 					"entries": [
 						"如果世界树受到雷击伤害，它不会受到伤害，而且雷击伤害会被平均分配给所有它正在抓握的生物。此外，世界树恢复了一次使用雷电释放的机会。"
 					]
@@ -1351,14 +1356,14 @@
 				},
 				{
 					"ENG_name": "Root",
-					"name": "根源",
+					"name": "根",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及20尺，单一目标。{@h}12 ({@damage 2d6 + 5})点钝击伤害，如果目标是一个生物，它将被{@condition 擒抱}（逃脱{@dc 15}）。世界树有四根根须，每根都可以缠绕单一目标。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Discharge (3/Day)",
-					"name": "雷电释放（每日3次）",
+					"name": "闪电放射（3/日）",
 					"entries": [
 						"伊格德拉西向自己120尺范围内的一个生物发射闪电。目标必须进行一次{@dc 13} 敏捷豁免检定，失败则受到31（{@damage 7d8}）点闪电伤害，成功则只受到一半的伤害。"
 					]

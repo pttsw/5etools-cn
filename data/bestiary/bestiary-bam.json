@@ -52,7 +52,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"阿图克施放以下任意一个法术，无需法术材料，并使用感知作为施法能力（法术豁免{@dc 12}）："
@@ -94,7 +94,7 @@
 				},
 				{
 					"ENG_name": "Radiant Pellet",
-					"name": "光辉颗粒",
+					"name": "光耀弹",
 					"entries": [
 						"{@atk rs} {@hit 4} 命中，射程60英尺，单一目标。{@h}10（{@damage 4d4}）点光耀伤害。"
 					]
@@ -102,9 +102,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Tongue {@recharge}",
+					"ENG_name": "Tongue {@recharge}",
+					"name": "舌头{@recharge}",
 					"entries": [
-						"The aartuk tries to use its gooey tongue to snare one Large or smaller creature it can see within 30 feet of itself. The target must make a {@dc 12} Dexterity saving throw. On a failed save, the target is {@condition grappled} by the tongue (escape {@dc 14}) and pulled up to 25 feet toward the aartuk. The tongue can grapple one creature at a time."
+						"阿图克尝试使用它黏糊糊的舌头捕捉它能看到的30尺范围内的一个大型或更小的生物。目标必须进行一次{@dc 12}敏捷豁免检定。如果豁免失败，目标将被舌头{@condition 擒抱}（逃脱{@dc 14}）并被拉向阿图克最多25尺。舌头一次只能抓住一个生物。"
 					]
 				}
 			],
@@ -196,7 +197,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"阿图克施展以下任意一个法术，无需法术材料，使用感知作为施法能力："
@@ -237,7 +238,7 @@
 				},
 				{
 					"ENG_name": "Radiant Pellet",
-					"name": "光辉颗粒",
+					"name": "光耀弹",
 					"entries": [
 						"{@atk rs} {@hit 2}命中，射程60尺，单一目标。{@h}7 ({@damage 3d4})光耀伤害。"
 					]
@@ -245,15 +246,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Rally the Troops (1/Day)",
+					"ENG_name": "Rally the Troops (1/Day)",
+					"name": "集结部队（每日1次）",
 					"entries": [
-						"The aartuk magically ends the {@condition charmed} and {@condition frightened} conditions on itself and each creature of its choice that it can see within 30 feet of itself."
+						"阿图克魔法地结束自身的{@condition 魅惑}和{@condition 恐慌}状态，以及它能看到的30尺范围内它选择的每个生物的这些状态。"
 					]
 				},
 				{
-					"name": "Tongue {@recharge}",
+					"ENG_name": "Tongue {@recharge}",
+					"name": "舌头{@recharge}",
 					"entries": [
-						"The aartuk tries to use its gooey tongue to snare one Medium or smaller creature it can see within 30 feet of itself. The target must make a {@dc 12} Dexterity saving throw. On a failed save, the target is {@condition grappled} by the tongue (escape {@dc 11}) and pulled up to 25 feet toward the aartuk. The tongue can grapple one creature at a time."
+						"阿图克尝试使用它黏糊糊的舌头捕捉一个它能看到的、30尺范围内的中等体型或更小的生物。目标必须进行一次{@dc 12} 敏捷豁免检定。如果检定失败，目标将被舌头{@condition 擒抱}（逃脱{@dc 11}），并被拉向阿图克最多25尺。舌头一次只能抓住一个生物。"
 					]
 				}
 			],
@@ -362,7 +365,7 @@
 				},
 				{
 					"ENG_name": "Radiant Pellet",
-					"name": "光辉颗粒",
+					"name": "光耀弹",
 					"entries": [
 						"{@atk rs} 命中{@hit 3}，射程60尺，单一目标。{@h}7 ({@damage 3d4 + 1})光耀伤害。"
 					]
@@ -370,9 +373,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Tongue {@recharge}",
+					"ENG_name": "Tongue {@recharge}",
+					"name": "舌头{@recharge}",
 					"entries": [
-						"The aartuk tries to use its gooey tongue to snare one Medium or smaller creature it can see within 30 feet of itself. The target must make a {@dc 11} Dexterity saving throw. On a failed save, the target is {@condition grappled} by the tongue (escape {@dc 12}) and pulled up to 25 feet toward the aartuk. The tongue can grapple one creature at a time."
+						"aartuk 试图用它黏糊糊的舌头缠住它可见的一个中等体型或更小的生物，该生物必须在它30英尺范围内。目标必须进行一次{@dc 11}敏捷豁免。若豁免失败，目标将被舌头{@condition 擒抱}（逃脱 {@dc 12}）并被拉向 aartuk，最多可拉近25英尺。舌头一次只能擒抱一个生物。"
 					]
 				}
 			],
@@ -470,7 +474,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"龙豁免失败时，可以将其改为豁免成功。"
 					]
@@ -529,9 +533,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phase (3/Day)",
+					"ENG_name": "Phase (3/Day)",
+					"name": "相位移动（每日3次）",
 					"entries": [
-						"The dragon becomes partially incorporeal for as long as it maintains {@status concentration} on the effect (as if {@status concentration||concentrating} on a spell). While partially incorporeal, the dragon has resistance to bludgeoning, piercing, and slashing damage."
+						"龙在保持对效果的{@status 专注}期间（就像{@status 专注||专注于}于一个法术）部分变得无形。在部分无形状态下，龙对钝击、穿刺和挥砍伤害具有抗性。"
 					]
 				}
 			],
@@ -546,7 +551,7 @@
 				},
 				{
 					"ENG_name": "Treacherous Ice",
-					"name": "险恶的冰面",
+					"name": "危险薄冰",
 					"entries": [
 						"以龙可以看见的120尺内的某点为中心，20尺半径范围内的地面被魔法冰覆盖。这些冰对所有生物来说是困难地形，除了月龙。冰持续10分钟，或者直到龙再次使用这个传说行动。"
 					]
@@ -663,14 +668,14 @@
 				},
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"龙豁免失败时，可以将其改为豁免成功。"
 					]
 				},
 				{
 					"ENG_name": "Nebulous Thoughts",
-					"name": "朦胧思维",
+					"name": "朦胧思绪",
 					"entries": [
 						"尝试用魔法读取龙的思维或了解它的想法会自动失败。"
 					]
@@ -714,7 +719,7 @@
 				},
 				{
 					"ENG_name": "Photonic Breath {@recharge 5}",
-					"name": "光子呼吸 {@recharge 5}",
+					"name": "光子吐息{@recharge 5}",
 					"entries": [
 						"龙呼出一个闪烁的辐射能量光点，该光点移动到龙自身180尺范围内可以看到的某一点，然后绽放成一个以该点为中心、半径为30尺的球体。球体内的每个生物都必须进行一次{@dc 19}体质豁免检定，失败时受到55 ({@damage 10d10}) 光耀伤害，成功则伤害减半。"
 					]
@@ -730,7 +735,7 @@
 				},
 				{
 					"ENG_name": "Burst of Light (Costs 2 Actions)",
-					"name": "光明爆发（消耗2个行动）",
+					"name": "耀光爆发（消耗2个动作）",
 					"entries": [
 						"龙在其自身为中心的30尺半径球体内发出魔法光芒。在这个区域内的每个生物都必须成功进行一次{@dc 23}感知豁免检定，否则直到其下一回合结束时将被{@condition 目盲}。"
 					]
@@ -897,9 +902,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phase (3/Day)",
+					"ENG_name": "Phase (3/Day)",
+					"name": "相位移动（每日3次）",
 					"entries": [
-						"The dragon becomes partially incorporeal for as long as it maintains {@status concentration} on the effect (as if {@status concentration||concentrating} on a spell). While partially incorporeal, the dragon has resistance to bludgeoning, piercing, and slashing damage."
+						"龙在保持对效果的{@status 专注}期间（就像{@status 专注||专注于}于一个法术）部分变得无形。在部分无形状态下，龙对钝击、穿刺和挥砍伤害具有抗性。"
 					]
 				}
 			],
@@ -913,7 +919,7 @@
 				},
 				{
 					"ENG_name": "Treacherous Ice",
-					"name": "险恶的冰面",
+					"name": "危险薄冰",
 					"entries": [
 						"以龙可以看见的120尺内的某点为中心，20尺半径范围内的地面被魔法冰覆盖。这些冰对所有生物来说是困难地形，除了月龙。冰持续10分钟，或者直到龙再次使用这个传说行动。"
 					]
@@ -1049,7 +1055,7 @@
 				},
 				{
 					"ENG_name": "Nebulous Thoughts",
-					"name": "朦胧思维",
+					"name": "朦胧思绪",
 					"entries": [
 						"尝试用魔法读取龙的思维或了解它的想法会自动失败。"
 					]
@@ -1093,7 +1099,7 @@
 				},
 				{
 					"ENG_name": "Photonic Breath {@recharge 5}",
-					"name": "光子呼吸 {@recharge 5}",
+					"name": "光子吐息{@recharge 5}",
 					"entries": [
 						"龙呼出一道闪烁的光辉能量点，它移动到龙能看到的240尺范围内的一点，然后扩展成一个以该点为中心的40尺半径的球体。球体内的每个生物都必须进行一次{@dc 23}体质豁免检定，失败则受到66 ({@damage 12d10})点光耀伤害，成功则受到一半的伤害。"
 					]
@@ -1109,7 +1115,7 @@
 				},
 				{
 					"ENG_name": "Blinding Brilliance (Costs 2 Actions)",
-					"name": "致盲光辉（消耗2个行动）",
+					"name": "眩目光辉（消耗2个动作）",
 					"entries": [
 						"龙在其自身为中心的30尺半径球体内发出魔法光芒。在这个区域内的每个生物都必须成功进行一次{@dc 23}感知豁免检定，否则直到其下一回合结束时将被{@condition 目盲}。"
 					]
@@ -1282,7 +1288,7 @@
 				},
 				{
 					"ENG_name": "Radiant Beam (3/Day)",
-					"name": "光辉射线（每日3次）",
+					"name": "光耀束（3/日）",
 					"entries": [
 						"一束魔法光芒从精灵的手中以5尺宽、60尺长的线形闪现而出。在线中的每个生物都必须进行一次{@dc 16}体质豁免检定，失败时受到18（{@damage 4d8}）光耀伤害，成功则伤害减半。"
 					]
@@ -1290,15 +1296,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Starlight Step (3/Day)",
+					"ENG_name": "Starlight Step (3/Day)",
+					"name": "星光步（每日3次）",
 					"entries": [
-						"The elf magically teleports up to 30 feet, along with anything it is wearing or carrying, to an unoccupied space it can see."
+						"该精灵及其穿戴或携带的任何物品可以魔法传送至其能看到的未被占据的空间，传送距离最多30尺。"
 					]
 				},
 				{
-					"name": "Summon Solar Dragon (1/Day)",
+					"ENG_name": "Summon Solar Dragon (1/Day)",
+					"name": "召唤太阳龙（每日1次）",
 					"entries": [
-						"The elf has a 50 percent chance of magically summoning a {@creature young solar dragon|BAM}. A summoned dragon appears in an unoccupied space that the summoner can see, acts on its own initiative count, and is an ally of its summoner. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
+						"精灵有50%的几率神奇地召唤一只{@creature 青年太阳龙|BAM}。被召唤的龙出现在召唤师能看到的未被占据的空间，按照自己的主动性计数行动，并且是召唤师的盟友。它将持续存在10分钟，直到它或它的召唤师死亡，或者直到它的召唤师以一个动作将其解散。"
 					]
 				}
 			],
@@ -1741,7 +1749,7 @@
 				},
 				{
 					"ENG_name": "Rain of Radiance",
-					"name": "光辉之雨",
+					"name": "净光之雨",
 					"entries": [
 						"魔法的、类似火焰的光辉如雨点般落在精灵能看到的60尺范围内的生物上。目标必须进行一次{@dc 16}敏捷豁免检定，失败时受到22 ({@damage 5d8}) 光耀伤害，成功则伤害减半。"
 					]
@@ -1749,9 +1757,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Starlight Step (2/Day)",
+					"ENG_name": "Starlight Step (2/Day)",
+					"name": "星光步伐（每日2次）",
 					"entries": [
-						"The elf magically teleports up to 30 feet, along with anything it is wearing or carrying, to an unoccupied space it can see."
+						"该精灵及其穿戴或携带的任何物品可以魔法传送至其能看到的未被占据的空间，传送距离最多30尺。"
 					]
 				}
 			],
@@ -2162,7 +2171,7 @@
 				},
 				{
 					"ENG_name": "Hideous Rend",
-					"name": "丑陋撕裂",
+					"name": "骇人撕裂",
 					"entries": [
 						"布罗格使用它的四只手针对一个它能看到的，10尺范围内的大型或更小的生物。目标必须成功进行一次{@dc 16}敏捷豁免检定，否则将被{@condition 擒抱}（逃脱{@dc 16}）。直到这次抓住结束，布罗格不能进行拳头攻击或投石攻击，目标在每个回合开始时承受49（{@damage 8d10 + 5}）钝击伤害。如果一个生物因这伤害而生命值降至0点，它将被撕成四片。"
 					]
@@ -2249,7 +2258,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"布拉克萨特施放以下法术之一，不需要法术材料，使用智力作为施法能力（法术豁免{@dc 14}）："
@@ -2290,7 +2299,7 @@
 				},
 				{
 					"ENG_name": "Acid Breath {@recharge}",
-					"name": "酸性吐息 {@recharge}",
+					"name": "强酸吐息{@recharge}",
 					"entries": [
 						"布拉沙特呼出一片15尺的锥形酸液。锥形区域内的每个生物必须进行一次{@dc 18}的体质豁免，豁免失败将受到26点（{@damage 4d12}）酸蚀伤害，豁免成功则伤害减半。"
 					]
@@ -2299,7 +2308,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Psionic Shield (3/Day)",
-					"name": "灵能护盾（每日3次）",
+					"name": "灵能护盾（3/日）",
 					"entries": [
 						"当布拉克萨特将被攻击检定或来自它能看到的源头的{@spell 魔法飞弹}法术击中时，它可以在自己周围创造一个持续到其下一回合开始的{@condition 隐形}魔法力场。这个力场给布拉克萨特提供了+5的AC加值，包括对触发攻击，并且防止{@spell 魔法飞弹}法术对其造成伤害。"
 					]
@@ -2401,7 +2410,7 @@
 			"action": [
 				{
 					"ENG_name": "Swallowing Bite",
-					"name": "吞噬咬击",
+					"name": "囫囵活吞",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}11（{@damage 2d6 + 4}）点穿刺伤害。如果目标是中型或更小的生物，它必须成功进行一次{@dc 13}敏捷豁免检定，否则将被食腐者吞下。食腐者一次只能吞下一个生物。",
 						"被吞噬的生物处于{@condition 目盲}和{@condition 束缚}状态，对来自地精体外的攻击和其他效果有{@quickref 掩护||3||全身掩护}效果，并且在地精的每个回合开始时，由于地精咽喉中的有毒气体，会受到13 ({@damage 3d8}) 点毒素伤害。",
@@ -2515,7 +2524,7 @@
 			"action": [
 				{
 					"ENG_name": "Magical Gift (1/Day)",
-					"name": "魔法赠礼（每日1次）",
+					"name": "魔法赠礼（1/日）",
 					"entries": [
 						"该chwinga目标为它可以看到的5英尺范围内的一个类人生物。目标获得由DM选择的{@filter 超自然魅力|Rewards|type=魅惑}。更多关于超自然魅力的信息，请参阅{@book 第七章|DMG|7|其他奖励}。"
 					]
@@ -2654,14 +2663,14 @@
 			"legendary": [
 				{
 					"ENG_name": "Crushing Tentacle",
-					"name": "压碎触手",
+					"name": "触手碾压",
 					"entries": [
 						"这个恐怖生物压碎它正在缠绕的一个生物。处于{@condition 擒抱}状态的生物必须进行一次{@dc 22}体质豁免，失败则受到18点（{@damage 3d6 + 8}）力场伤害，成功则只受到一半的伤害。"
 					]
 				},
 				{
 					"ENG_name": "Poison Jet (Costs 2 Actions)",
-					"name": "毒液喷射（花费2个行动）",
+					"name": "毒液喷射（消耗2个动作）",
 					"entries": [
 						"恶臭气体从恐怖生物体内喷出，形成一条30尺长、5尺宽的直线。直线中的每个生物都必须成功进行一次{@dc 21}体质豁免检定，否则将受到14 ({@damage 4d6}) 毒素伤害。"
 					]
@@ -2764,7 +2773,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"多华施展以下法术，无需法术成分，并使用魅力作为施法能力（法术豁免{@dc 11}）："
@@ -2781,7 +2790,7 @@
 			"trait": [
 				{
 					"ENG_name": "Merging",
-					"name": "融合",
+					"name": "交融",
 					"entries": [
 						"两个多瓦尔人可以与彼此以及他们选择的第三个愿意的生物进行心灵感应对话，前提是所有三个生物彼此之间距离不超过30尺。"
 					]
@@ -2879,14 +2888,14 @@
 			"trait": [
 				{
 					"ENG_name": "Bioluminescence",
-					"name": "生物发光",
+					"name": "生物光照",
 					"entries": [
 						"只要它至少有1点生命值，审美者就在30尺半径内散发出明亮的光芒，并在额外的30尺内散发出微光，它的内部隔间也被微弱地照亮。"
 					]
 				},
 				{
 					"ENG_name": "Spelljamming",
-					"name": "法术跳跃",
+					"name": "法驱",
 					"entries": [
 						"审美具有法术干扰头盔的特性（见星界冒险者指南），但只有其雷加创造者才能与之协调。"
 					]
@@ -2917,9 +2926,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Jammerscream {@recharge}",
+					"ENG_name": "Jammerscream {@recharge}",
+					"name": "干扰尖叫{@recharge}",
 					"entries": [
-						"The esthetic targets one spelljamming ship within 300 feet of itself, magically suppressing the properties of the ship's spelljamming helm for {@dice 2d10} days. If the ship has more than one helm aboard it, randomly determine which helm is affected. A creature attuned to that helm can choose to make a {@dc 17} Charisma saving throw. On a failed save, the creature takes 42 ({@damage 12d6}) psychic damage, and the helm is suppressed for {@dice 2d10} hours instead of {@dice 2d10} days. On a successful save, the creature takes half as much damage, and the helm is suppressed for {@dice 2d10} minutes instead of {@dice 2d10} days."
+						"该美学以300英尺范围内的一艘法术航行船为目标，魔法性地压制该船法术航行舵的属性，持续{@dice 2d10}天。如果船上有一个以上的舵，随机确定哪个舵受到影响。与该舵调谐的生物可以选择进行一次{@dc 17}魅力豁免。若豁免失败，该生物受到42（{@damage 12d6}）点心灵伤害，且舵的压制时间变为{@dice 2d10}小时而非{@dice 2d10}天。若豁免成功，该生物受到一半伤害，且舵的压制时间变为{@dice 2d10}分钟而非{@dice 2d10}天。"
 					]
 				}
 			],
@@ -3010,7 +3020,7 @@
 			"trait": [
 				{
 					"ENG_name": "Antimagic Gullet",
-					"name": "反魔法咽喉",
+					"name": "反魔法食道",
 					"entries": [
 						"魔法效果，包括由法术和魔法物品产生的效果，但不包括由神器或神灵创造的效果，在眼贩的咽喉内被压制。任何生物在咽喉中为了施放法术或激活魔法物品的特性而消耗的法术位或充能都会被浪费。当效果被压制时，它不会发挥作用，但它被压制的时间计入其持续时间。除非是由神器或神灵创造的，否则来自眼贩咽喉外的法术或魔法效果都不能影响咽喉内的生物或物体。"
 					]
@@ -3152,7 +3162,7 @@
 				},
 				{
 					"ENG_name": "Frightful Bite",
-					"name": "恐怖咬击",
+					"name": "骇人啃咬",
 					"entries": [
 						"{@atk mw} {@hit 6} 命中，触及 5 英尺，一个生物。{@h}8 ({@damage 1d10 + 3}) 穿刺伤害，且每个能够看到妖精并位于其 10 英尺范围内的生物必须成功通过一次 {@dc 13} 感知豁免，否则将在妖精的下个回合结束前对妖精 {@condition 恐慌}。"
 					]
@@ -3173,7 +3183,7 @@
 				},
 				{
 					"ENG_name": "Nightmare Fuel (1/Day)",
-					"name": "噩梦燃料（每日1次）",
+					"name": "噩梦燃料（1/日）",
 					"entries": [
 						"该妖精生物以距自身10尺范围内可见的一个{@condition 昏迷}生物为目标。目标必须成功通过一个{@dc 13}的感知豁免，否则受到27（{@damage 5d10}）点心灵伤害，且该妖精生物获得等同于所造成伤害的临时生命值。"
 					]
@@ -3279,7 +3289,7 @@
 				},
 				{
 					"ENG_name": "Mind-Probing Antennae",
-					"name": "心灵探测触角",
+					"name": "探心触须",
 					"entries": [
 						"嘎吉锁定一个被其{@condition 擒抱}的生物。目标必须进行一个{@dc 12}的感知豁免检定。若豁免失败，目标将受到16（{@damage 3d10}）点心灵伤害，并且嘎吉会神奇地从中提取出它想要知道的一条信息。若豁免成功，目标只受到一半的伤害，并且嘎吉无法获取任何信息。"
 					]
@@ -3415,7 +3425,7 @@
 			"trait": [
 				{
 					"ENG_name": "Firearms Knowledge",
-					"name": "火器学识",
+					"name": "熟习枪械",
 					"entries": [
 						"吉夫对其武器的精通使它能够忽略任何火器的装填属性。"
 					]
@@ -3452,7 +3462,7 @@
 				},
 				{
 					"ENG_name": "Force Grenade",
-					"name": "力量手榴弹",
+					"name": "力场手榴弹",
 					"entries": [
 						"吉夫投掷一枚手榴弹，最远可达 60 英尺，手榴弹在 20 英尺半径范围内爆炸。该区域内的每个生物必须进行一次{@dc 15}敏捷豁免，豁免失败时受到 17 点{@damage 5d6}力场伤害，豁免成功则受到一半伤害。在吉夫投掷手榴弹后，掷一次{@dice d6}；如果掷出 4 或更低，吉夫将没有更多的手榴弹可投掷。"
 					]
@@ -3542,14 +3552,14 @@
 			"trait": [
 				{
 					"ENG_name": "Firearms Knowledge",
-					"name": "火器学识",
+					"name": "熟习枪械",
 					"entries": [
 						"吉夫对其武器的精通使它能够忽略任何火器的装填属性。"
 					]
 				},
 				{
 					"ENG_name": "Headfirst Charge",
-					"name": "头槌冲锋",
+					"name": "埋头冲锋",
 					"entries": [
 						"如果基夫鱼至少直线移动20英尺并结束于一个大型或更小的生物5英尺范围内，该生物必须成功通过一个{@dc 16}力量豁免否则将受到7（{@damage 2d6}）点钝击伤害并被击倒{@condition 倒地}。"
 					]
@@ -3681,14 +3691,14 @@
 			"trait": [
 				{
 					"ENG_name": "Firearms Knowledge",
-					"name": "火器学识",
+					"name": "熟习枪械",
 					"entries": [
 						"吉夫对其武器的精通使它能够忽略任何火器的装填属性。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"如果吉夫未能通过豁免检定，它可以选择成功。"
 					]
@@ -3711,7 +3721,7 @@
 				},
 				{
 					"ENG_name": "Double-Barreled Musket",
-					"name": "双管火枪",
+					"name": "双管火铳",
 					"entries": [
 						"{@atk rw} {@hit 6} 命中，射程 40/120 英尺，一个目标。{@h}28 ({@damage 4d12 + 2}) 穿刺伤害。"
 					]
@@ -3734,7 +3744,7 @@
 				},
 				{
 					"ENG_name": "Weapon of Choice (2 Actions)",
-					"name": "选择武器（2个动作）",
+					"name": "趁手兵器（2个动作）",
 					"entries": [
 						"杰夫进行两次晨星攻击或一次双管火枪攻击。"
 					]
@@ -3827,7 +3837,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"吉斯洋基施放以下任意一个法术，无需法术材料，使用智力作为施法属性（法术豁免{@dc 13}）："
@@ -3863,7 +3873,7 @@
 				},
 				{
 					"ENG_name": "Telekinetic Bolt",
-					"name": "念力箭",
+					"name": "念力矢",
 					"entries": [
 						"{@atk rs} 命中{@hit 5}，射程60尺，单一目标。{@h}13（{@damage 3d6 + 3}）力场伤害。"
 					]
@@ -3871,9 +3881,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Astral Step {@recharge 4}",
+					"ENG_name": "Astral Step {@recharge 4}",
+					"name": "星界步{@recharge 4}",
 					"entries": [
-						"The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+						"吉斯洋基及其穿戴或携带的装备可以传送至其能看到的30尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -3970,7 +3981,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"吉斯扬基施放以下法术之一，无需法术成分且以智力作为施法属性（法术豁免 {@dc 15}）："
@@ -4006,7 +4017,7 @@
 				},
 				{
 					"ENG_name": "Astral Bolt",
-					"name": "星界箭矢",
+					"name": "星界矢",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 7}，触及5尺或60尺，单一目标。{@h}20（{@damage 3d10 + 4}）光耀伤害。"
 					]
@@ -4014,9 +4025,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Astral Step {@recharge 4}",
+					"ENG_name": "Astral Step {@recharge 4}",
+					"name": "星界步{@recharge 4}",
 					"entries": [
-						"The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+						"吉斯洋基及其穿戴或携带的装备可以传送至其能看到的30尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -4107,7 +4119,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"吉斯洋基施放以下法术之一，不需要法术材料，并使用感知作为施法能力值（法术豁免{@dc 16}）："
@@ -4150,7 +4162,7 @@
 				},
 				{
 					"ENG_name": "Telekinetic Bolt",
-					"name": "念力箭",
+					"name": "念力矢",
 					"entries": [
 						"{@atk rs} 命中{@hit 8}，射程60尺，单一目标。{@h}20 ({@damage 3d10 + 4}) 力场伤害。"
 					]
@@ -4158,9 +4170,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Astral Step {@recharge 4}",
+					"ENG_name": "Astral Step {@recharge 4}",
+					"name": "星界步{@recharge 4}",
 					"entries": [
-						"The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+						"吉斯洋基及其穿戴或携带的装备可以传送至其能看到的30尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -4363,9 +4376,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Nimble Escape",
+					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
-						"The hadozee takes the Disengage or Hide action."
+						"哈多兹采取撤离或隐藏行动。"
 					]
 				}
 			],
@@ -4660,7 +4674,7 @@
 			"trait": [
 				{
 					"ENG_name": "Spelljammer Overload",
-					"name": "魔法船超载",
+					"name": "法驱者超载",
 					"entries": [
 						"如果这个水蛭在附着于一艘拥有法术船核心的船只时生命值降至0点，与该核心调谐的生物必须进行一次{@dc 13}体质豁免。若豁免失败，该生物受到10（{@damage 4d4}）点心灵伤害，并陷入{@condition 失能}状态1分钟。若豁免成功，该生物受到一半伤害，并陷入{@condition 失能}状态直到其下一回合结束。"
 					]
@@ -4676,7 +4690,7 @@
 			"action": [
 				{
 					"ENG_name": "Spiked Tentacle",
-					"name": "带刺触手",
+					"name": "尖刺触手",
 					"entries": [
 						"{@atk mw} 命中{@hit 2}，触及范围5尺，单一目标。{@h}2（{@damage 1d4}）点穿刺伤害。"
 					]
@@ -4684,16 +4698,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Attach to Hull",
+					"ENG_name": "Attach to Hull",
+					"name": "附着在船体",
 					"entries": [
-						"The leech attaches itself to a ship's hull in its space, dealing 2 ({@damage 1d4}) piercing damage to the ship (ignoring the ship's damage threshold). This damage can't be repaired until the leech is scraped off the hull. While the leech is attached, its speed is 0, and it can detach itself as a bonus action. As an action, a creature within reach of the leech can to try to scrape it off the hull, doing so with a successful {@dc 18} Strength check. On a failed check, the action is wasted as the leech remains attached to the hull. Removing the leech in this way deals no damage to the leech or the ship."
+						"水蛭附着在其空间中的船体上，对船造成2（{@damage 1d4}）点穿刺伤害（忽略船的损伤阈值）。在水蛭被刮掉之前，这种伤害无法修复。水蛭附着时，其速度为0，并且可以作为附赠动作自行脱离。作为动作，触及水蛭范围内的生物可以尝试将其从船体上刮掉，通过成功的{@dc 18}力量检定来做到这一点。如果检定失败，行动就会浪费，水蛭仍然附着在船体上。以这种方式移除水蛭不会对水蛭或船只造成任何伤害。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Magical Discharge (1/Day)",
-					"name": "魔法释放（每日1次）",
+					"name": "魔法冲击（1/日）",
 					"entries": [
 						"当它受到伤害时，水蛭可以从其眼中释放出一股魔法能量，目标是它能看到的30尺范围内的生物。目标必须进行一次{@dc 13}敏捷豁免，否则受到10点（{@damage 3d6}）力场伤害并在其下一个回合结束前处于{@condition 震慑}状态。"
 					]
@@ -4793,9 +4808,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Flashing Eyes {@recharge}",
+					"ENG_name": "Flashing Eyes {@recharge}",
+					"name": "闪烁之眼 {@recharge}",
 					"entries": [
-						"The kindori emits bright light in a 120-foot cone. Each creature in the cone must succeed on a {@dc 14} Wisdom saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"金多里发出明亮的光芒，形成一个120尺的锥形区域。在锥形区域内的每个生物必须成功进行一次{@dc 14}感知豁免检定，否则将被{@condition 目盲}持续1分钟。生物可以在每个回合结束时重复进行豁免检定，成功则结束自身的致盲效果。"
 					]
 				}
 			],
@@ -4912,9 +4928,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phase (2/Day)",
+					"ENG_name": "Phase (2/Day)",
+					"name": "相位移动（每日2次）",
 					"entries": [
-						"The dragon becomes partially incorporeal for as long as it maintains {@status concentration} on the effect (as if {@status concentration||concentrating} on a spell). While partially incorporeal, the dragon has resistance to bludgeoning, piercing, and slashing damage."
+						"龙在保持对效果的{@status 专注}期间（就像{@status 专注||专注于}于一个法术）部分变得无形。在部分无形状态下，龙对钝击、穿刺和挥砍伤害具有抗性。"
 					]
 				}
 			],
@@ -5117,7 +5134,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"水马施放以下法术之一，不需要法术材料，并使用智力作为施法能力值（法术豁免{@dc 15}）："
@@ -5140,7 +5157,7 @@
 			"trait": [
 				{
 					"ENG_name": "Mercane Telepathy",
-					"name": "默坎心灵感应",
+					"name": "星海商族心灵感应",
 					"entries": [
 						"这个水马族可以与任何它认识的其他水马族进行心灵感应交流，无论它们之间距离多远。"
 					]
@@ -5156,7 +5173,7 @@
 				},
 				{
 					"ENG_name": "Psi-Imbued Blade",
-					"name": "心灵灌注刀刃",
+					"name": "灵能注刃",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）挥砍伤害，如果目标是一个生物，它必须成功进行一次{@dc 15}感知豁免检定，否则直到目标下回合结束时被{@condition 恐慌}。"
 					]
@@ -5309,7 +5326,7 @@
 				},
 				{
 					"ENG_name": "Spit Fire",
-					"name": "烈焰迸发",
+					"name": "喷火",
 					"entries": [
 						"{@atk rw} 命中{@hit 5}，射程60尺，单一目标。{@h}造成13点（{@damage 2d10 + 2}）火焰伤害。"
 					]
@@ -5398,7 +5415,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"内-萨尔古施放以下法术之一，不需要法术材料，并使用智力作为施法能力值（法术豁免{@dc 11}）。它必须已经消耗了施放法术所需的大脑数量，具体如下所示："
@@ -5426,7 +5443,7 @@
 			"trait": [
 				{
 					"ENG_name": "Brain Dump",
-					"name": "脑浆倾倒",
+					"name": "大脑转储",
 					"entries": [
 						"每当内-萨尔古消耗一个大脑时，它就会获得魔法能力，能够说和理解大脑前主人所知道的语言。"
 					]
@@ -5598,7 +5615,7 @@
 			"action": [
 				{
 					"ENG_name": "Swarm of Bites",
-					"name": "虫群啃咬",
+					"name": "集群噬咬",
 					"entries": [
 						"{@atk mw} {@hit 3} 命中，范围 5 英尺，一个生物。{@h}22 ({@damage 6d6 + 1}) 毒素伤害，如果群体的生命值为一半或更少，则为 11 ({@damage 3d6 + 1}) 毒素伤害，且目标必须成功通过 {@dc 12} 体质豁免，否则将受到 {@condition 中毒} 状态影响，持续 1 分钟。目标可以在其每个回合结束时重复进行豁免检定，成功则结束此效果。"
 					]
@@ -5878,7 +5895,7 @@
 				},
 				{
 					"ENG_name": "Eldritch Bolt",
-					"name": "魔能箭",
+					"name": "魔能矢",
 					"entries": [
 						"{@atk rs}{@hit 6}命中，射程120尺，单一目标。{@h}20（{@damage 3d10 + 4}）点力场伤害。"
 					]
@@ -5886,9 +5903,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Enslave (Recharges after a Short or Long Rest)",
+					"ENG_name": "Enslave (Recharges after a Short or Long Rest)",
+					"name": "奴役 (短休或长休之后充能)",
 					"entries": [
-						"The neogi targets one creature it can see within 30 feet of itself. The target must succeed on a {@dc 14} Wisdom saving throw or be magically {@condition charmed} by the neogi for 1 day, or until the neogi dies or is more than 1 mile from the target. The {@condition charmed} target obeys the neogi's commands and can't take reactions, and the neogi and the target can communicate telepathically with each other at a distance of up to 1 mile. Whenever the {@condition charmed} target takes damage, it can repeat the saving throw, ending the effect on itself on a success."
+						"尼吉针对其自身30尺范围内可以看到的一个生物。目标必须成功进行一次{@dc 14}感知豁免检定，否则将被尼吉用魔法{@condition 魅惑}1天，或者直到尼吉死亡或距离目标超过1英里。被{@condition 魅惑}的目标服从尼吉的命令，不能进行反应，并且尼吉和目标可以在最远1英里的距离内心灵感应交流。每当被{@condition 魅惑}的目标受到伤害时，它可以重复进行豁免检定，成功则结束自身的效果。"
 					]
 				}
 			],
@@ -6432,7 +6450,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"普苏隆施放以下任意一种法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 13}）："
@@ -6581,7 +6599,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"普苏隆施放以下任意一个法术，无需法术材料，并且使用智力作为施法能力（法术豁免{@dc 16}）："
@@ -6640,7 +6658,7 @@
 				},
 				{
 					"ENG_name": "Pacify {@recharge 5}",
-					"name": "安抚{@recharge 5}",
+					"name": "镇静{@recharge 5}",
 					"entries": [
 						"灵吸怪指定一个它能看到的，距离自己120尺范围内的生物为目标。目标必须成功进行一次{@dc 16}感知豁免检定，否则将{@condition 昏迷}10分钟。如果目标受到任何伤害，或者另一个生物使用其行动来摇晃目标使其醒来，则该状态结束。"
 					]
@@ -6745,7 +6763,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"普苏隆施放以下任意一种法术，无需法术材料，使用智力作为施法能力（法术豁免{@dc 13}）："
@@ -6880,7 +6898,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"雷加施放以下任意一个法术，无需法术材料，并且使用魅力作为施法能力（法术豁免{@dc 18}）："
@@ -7101,7 +7119,7 @@
 				},
 				{
 					"ENG_name": "Photonic Breath {@recharge 5}",
-					"name": "光子呼吸 {@recharge 5}",
+					"name": "光子吐息{@recharge 5}",
 					"entries": [
 						"龙呼出一颗闪耀的光能微粒，飞向它自己可以看到的120英尺内的一个点，然后在那一点绽放成一个半径10英尺的球体。球体内的每个生物必须进行一次{@dc 14}体质豁免检定，豁免失败则受到22（{@damage 4d10}）点光耀伤害，豁免成功则受到一半伤害。"
 					]
@@ -7214,14 +7232,14 @@
 			"trait": [
 				{
 					"ENG_name": "Dying Burst",
-					"name": "死亡爆发",
+					"name": "最后一爆",
 					"entries": [
 						"当小丑的生命值降至0点时，它会像气球一样爆炸，释放出一股恶臭且腐蚀性的脓液。当小丑爆炸时，距离它5尺内的每一生物都必须进行一次{@dc 12}敏捷豁免，失败则受到10点（{@damage 3d6}）强酸伤害，成功则只受到一半的伤害。"
 					]
 				},
 				{
 					"ENG_name": "Squeakers",
-					"name": "尖叫者",
+					"name": "吱呀作响",
 					"entries": [
 						"这个小丑穿着走路时会发出吱吱声的鞋子。这种吱吱声可以在30尺范围内听到。当小丑的幻象形态生效时，吱吱声会被压制。"
 					]
@@ -7245,9 +7263,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phantasmal Form (3/Day)",
+					"ENG_name": "Phantasmal Form (3/Day)",
+					"name": "幻形术（每日3次）",
 					"entries": [
-						"The clown veils itself and everything it is wearing and carrying in an illusion that makes it look like some other creature of its size or smaller (such as a child) or an object small enough to fit in the clown's space (such as a floating balloon). Maintaining this effect requires the clown's {@status concentration} (as if {@status concentration||concentrating} on a spell), and the illusion fails to hold up to physical inspection. As an action, a creature that can see the clown's illusory form can make a {@dc 15} Wisdom ({@skill Insight}) check, piercing the illusion and discerning the clown's true form on a success."
+						"小丑用它周围以及它穿戴和携带的幻象遮掩自己，使其看起来像是与其体型相同或更小的其他生物（例如一个孩子），或是小丑周围足够小的物体（例如一个漂浮的气球）。维持这种效果需要小丑保持{@status 专注}（如同{@status 专注||专注于}一个法术），而且这个幻象无法通过物理检查。作为一个动作，能够看到小丑幻象形态的生物可以进行一次{@dc 15} 感知（{@skill 洞悉}）检定，若成功则看破幻象并识别出小丑的真实形态。"
 					]
 				}
 			],
@@ -7414,7 +7433,7 @@
 			"trait": [
 				{
 					"ENG_name": "Air Envelope",
-					"name": "空气包裹",
+					"name": "气囊",
 					"entries": [
 						"如果至少有1点生命值，古比鱼在真空中可以为自己生成一个空气包覆层。这个空气包覆层可以无限期地维持古比鱼和其空间内的另一个微小生物的生存。"
 					]
@@ -7430,7 +7449,7 @@
 			"action": [
 				{
 					"ENG_name": "Tail Slap",
-					"name": "尾巴拍击",
+					"name": "尾扫",
 					"entries": [
 						"{@atk mw} 攻击命中{@hit 5}，触及5尺，单一目标。{@h}1钝击伤害。"
 					]
@@ -7511,9 +7530,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Escape",
+					"ENG_name": "Escape",
+					"name": "逃脱",
 					"entries": [
-						"The hamster takes the Dash or Disengage action."
+						"仓鼠采取疾跑或脱离战斗行动。"
 					]
 				}
 			],
@@ -7729,7 +7749,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"苏兰人施展以下任意一个法术，无需法术材料，使用智力作为施法能力："
@@ -8021,7 +8041,7 @@
 			"trait": [
 				{
 					"ENG_name": "Astral Existence",
-					"name": "星界存在",
+					"name": "星界体",
 					"entries": [
 						"这个幻象只能存在于星界。如果它被送到星界以外的地方，这个幻象就会被摧毁。"
 					]
@@ -8051,7 +8071,7 @@
 			"action": [
 				{
 					"ENG_name": "Radiant Eruption",
-					"name": "光辉爆发",
+					"name": "耀光爆",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 6}，触及5尺或距离120尺，单一目标。{@h}造成20点（{@damage 5d6 + 3}）光耀伤害，如果目标是一个生物，它必须进行一次{@dc 14}感知豁免，否则在1分钟内成为{@condition 目盲}。目标可以在每个回合结束时重复豁免尝试，成功则结束此效果。"
 					]
@@ -8180,9 +8200,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Leap",
+					"ENG_name": "Leap",
+					"name": "跳跃",
 					"entries": [
-						"The thri-kreen leaps up to 20 feet in any direction, provided its speed isn't 0."
+						"如果螳螂人的速度不为0，它可以朝任何方向跳跃最多20尺。"
 					]
 				}
 			],
@@ -8294,15 +8315,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Chameleon Carapace",
+					"ENG_name": "Chameleon Carapace",
+					"name": "变色甲壳",
 					"entries": [
-						"The thri-kreen changes the color of its carapace to match the color and texture of its surroundings, gaining advantage on Dexterity ({@skill Stealth}) checks it makes to hide in those surroundings."
+						"螳螂人改变其甲壳的颜色以匹配周围环境的颜色和质地，在那些环境中进行隐藏时，在敏捷（{@skill 隐匿})检定上获得优势。"
 					]
 				},
 				{
-					"name": "Leap",
+					"ENG_name": "Leap",
+					"name": "跳跃",
 					"entries": [
-						"The thri-kreen leaps up to 20 feet in any direction, provided its speed isn't 0."
+						"如果螳螂人的速度不为0，它可以朝任何方向跳跃最多20尺。"
 					]
 				}
 			],
@@ -8392,7 +8415,7 @@
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting (Psionics)",
-					"name": "法术施放（灵能）",
+					"name": "施法（灵能）",
 					"type": "spellcasting",
 					"headerEntries": [
 						"螳螂人施放以下任意一个法术，无需法术材料，并且使用感知作为施法能力："
@@ -8428,14 +8451,14 @@
 				},
 				{
 					"ENG_name": "Psychic Bolt",
-					"name": "灵能束",
+					"name": "灵能矢",
 					"entries": [
 						"{@atk rs} 命中{@hit 6}，射程60尺，单一生物。{@h}造成6点（{@damage 1d6 + 3}）心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Drain Vitality (Recharges after a Short or Long Rest)",
-					"name": "吸取活力（短休或长休后重新充能）",
+					"name": "汲取生机（短休或长休后充能）",
 					"entries": [
 						"螳螂人目标是其自身30尺范围内可以看到的单一生物。目标必须进行一次{@dc 14}体质豁免检定，失败时受到32 ({@damage 5d12}) 黯蚀伤害，成功则受到一半伤害。螳螂人恢复等于造成的伤害的生命值。"
 					]
@@ -8443,9 +8466,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Chameleon Carapace",
+					"ENG_name": "Chameleon Carapace",
+					"name": "变色甲壳",
 					"entries": [
-						"The thri-kreen changes the color of its carapace to match the color and texture of its surroundings, gaining advantage on Dexterity ({@skill Stealth}) checks it makes to hide in those surroundings."
+						"螳螂人改变其甲壳的颜色以匹配周围环境的颜色和质地，在那些环境中进行隐藏时，在敏捷（{@skill 隐匿})检定上获得优势。"
 					]
 				}
 			],
@@ -8717,7 +8741,7 @@
 				},
 				{
 					"ENG_name": "Ship Invisibility (Recharges after a Short or Long Rest)",
-					"name": "船只隐形（短休息或长休息后重新充能）",
+					"name": "全船隐形（短休或长休后充能）",
 					"entries": [
 						"船只及其上的所有生物和物体对不在船上的生物都变得{@condition 隐形}。船长必须集中精神以维持这种魔法效果（就像在{@status 专注||专注于}施法一样），效果持续时间最长可达1小时。如果船长离开船只，效果就会结束。"
 					]
@@ -8990,7 +9014,7 @@
 			"action": [
 				{
 					"ENG_name": "Swallowing Bite",
-					"name": "吞噬咬击",
+					"name": "囫囵活吞",
 					"entries": [
 						"{@atk mw} {@hit 10} 攻击，范围 10 尺，单一目标。{@h}45（{@damage 6d12 + 6}）点穿刺伤害。如果目标是大型或更小的生物，它必须成功通过一次 {@dc 16} 敏捷豁免，否则会被吞噬怪吞下。吞噬怪一次只能吞下一个生物。",
 						"被吞噬的生物处于{@condition 目盲}状态并且{@condition 束缚}，对来自scavver体外的攻击和其他效果具有{@quickref 掩护||3||全身掩护}效果，并且在scavver的每个回合开始时，由于scavver喉部的消化液，会遭受11 ({@damage 2d10}) 点酸液伤害。",
@@ -9000,9 +9024,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Ray of Fear {@recharge 4}",
+					"ENG_name": "Ray of Fear {@recharge 4}",
+					"name": "恐惧射线 {@recharge 4}",
 					"entries": [
-						"The scavver's eye emits an {@condition invisible}, magical ray that targets one creature the scavver can see within 60 feet of itself. The target must succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} of the scavver until the start of the scavver's next turn."
+						"食腐者的眼睛发出一道{@condition 隐形}的魔法射线，目标为食腐者自身60英尺范围内可见的一个生物。目标必须成功通过一项{@dc 16}的感知豁免检定，否则将在食腐者的下一个回合开始前{@condition 恐慌}它。"
 					]
 				}
 			],
@@ -9141,9 +9166,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phase (2/Day)",
+					"ENG_name": "Phase (2/Day)",
+					"name": "相位移动（每日2次）",
 					"entries": [
-						"The dragon becomes partially incorporeal for as long as it maintains {@status concentration} on the effect (as if {@status concentration||concentrating} on a spell). While partially incorporeal, the dragon has resistance to bludgeoning, piercing, and slashing damage."
+						"龙在保持对效果的{@status 专注}期间（就像{@status 专注||专注于}于一个法术）部分变得无形。在部分无形状态下，龙对钝击、穿刺和挥砍伤害具有抗性。"
 					]
 				}
 			],
@@ -9286,7 +9312,7 @@
 				},
 				{
 					"ENG_name": "Photonic Breath {@recharge 5}",
-					"name": "光子呼吸 {@recharge 5}",
+					"name": "光子吐息{@recharge 5}",
 					"entries": [
 						"龙吐出一颗闪耀的辐射能量点，飞向其可见的120英尺内的一点，随后在那一点为中心绽放成半径20英尺的球体。球体内的每个生物必须进行一次{@dc 17}体质豁免检定，豁免失败者受到44（{@damage 8d10}）点辐射伤害，豁免成功则只受一半伤害。"
 					]
@@ -9417,7 +9443,7 @@
 			"trait": [
 				{
 					"ENG_name": "Disembodied Voice",
-					"name": "无实体的声音",
+					"name": "空无之音",
 					"entries": [
 						"在其一生中，佐达尔最多可以三次使周围空气中传出最多二十五个词的信息。它只在有极其重要的事情要说时才开口，任何智力值为2或更高的生物都能理解这条信息。"
 					]
@@ -9431,7 +9457,7 @@
 				},
 				{
 					"ENG_name": "Transport Inhibitor",
-					"name": "传送抑制器",
+					"name": "传送阻抑",
 					"entries": [
 						"佐达尔不能被传送或违背其意愿被送到任何存在位面。"
 					]
@@ -9454,14 +9480,14 @@
 				},
 				{
 					"ENG_name": "Crushing Fist",
-					"name": "粉碎之拳",
+					"name": "粉碎重拳",
 					"entries": [
 						"{@atk mw} 命中{@hit 15}，触及 5 尺，单一目标。{@h}21 ({@damage 2d10 + 10}) 力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Forced Teleport",
-					"name": "强制传送",
+					"name": "强迫传送",
 					"entries": [
 						"佐达尔魔法地扭曲自身周围60尺内它能看到的一个生物周围的空间。目标必须进行一次{@dc 21}体质豁免检定。如果豁免失败，目标受到22 ({@damage 4d10})点力场伤害，并且佐达尔将其连同它穿戴或携带的任何装备一起传送至佐达尔能看到的、能够支撑目标的未被占据的空间，传送距离最多60尺。如果豁免成功，目标受到一半的伤害，并且不会被传送。"
 					]

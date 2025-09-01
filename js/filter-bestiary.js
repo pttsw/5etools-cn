@@ -279,7 +279,11 @@ class PageFilterBestiary extends PageFilterBase {
 		});
 		this._groupFilter = new Filter({
 			header: "Group",
+			cnHeader: "群组",
 			items: [],
+			displayFn: Parser.monGroupTagToFull,
+
+			// displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
 	}
 

@@ -1966,6 +1966,24 @@ Parser.monMiscTagToFull = function (tag) {
 	return Parser._parse_aToB(Parser.MON_MISC_TAG_TO_FULL, tag);
 };
 
+Parser.MON_GROUP_TAG_TO_FULL = {
+	"Angels": "天使",
+	"Beholders": "眼魔",
+	"Chromatic Dragons": "色彩龙",
+	"Demons": "恶魔",
+	"Devils": "魔鬼",
+	"Dinosaurs": "恐龙",
+	"Genies": "巨灵",
+	"Goblinoids": "类地精",
+	"Lycanthropes": "兽化人",
+	"Metallic Dragons": "金属龙",
+	"Titans": "泰坦",
+	"Yugoloths": "尤格罗斯魔",
+};
+Parser.monGroupTagToFull = function (tag) {
+	return Parser._parse_aToB(Parser.MON_GROUP_TAG_TO_FULL, tag);
+};
+
 Parser.MON_LANGUAGE_TAG_TO_FULL = {
 	"AB": "Abyssal",
 	"AQ": "Aquan",
@@ -4532,7 +4550,6 @@ Parser.MON_TAG_TO_CN = {
 	"storm giant": "风暴巨人",
 	"swarm": "集群",
 	"tabaxi": "斑猫人",
-	"saurial": "类蜴人",
 	"thri-kreen": "螳螂人",
 	"tiefling": "提夫林",
 	"titan": "泰坦",
@@ -4548,7 +4565,9 @@ Parser.MON_TAG_TO_CN = {
 	"yuan-ti": "蛇人",
 	"yugoloth": "尤格罗斯魔",
 	"attacker": "攻击手",
-	"defender": "防御者"
+	"defender": "防御者",
+	"genie": "巨灵",
+	"lycanthrope": "兽化人",
 
 }
 

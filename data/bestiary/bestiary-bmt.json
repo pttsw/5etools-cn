@@ -19,7 +19,7 @@
 	"monster": [
 		{
 			"ENG_name": "Advanced Detention Drone",
-			"name": "高级拘留无人机",
+			"name": "高级拘禁无人机",
 			"source": "BMT",
 			"page": 135,
 			"_copy": {
@@ -71,7 +71,7 @@
 		},
 		{
 			"ENG_name": "Ambitious Assassin",
-			"name": "野心刺客",
+			"name": "狂傲杀手",
 			"source": "BMT",
 			"page": 45,
 			"size": [
@@ -135,7 +135,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"如果刺客未能通过豁免检定，它可以选择成功。"
 					]
@@ -176,14 +176,14 @@
 				},
 				{
 					"ENG_name": "Stab (Costs 2 Actions)",
-					"name": "刺击（消耗2个行动）",
+					"name": "刺杀（花费2个动作）",
 					"entries": [
 						"刺客进行一次毒刃攻击。"
 					]
 				},
 				{
 					"ENG_name": "Vanishing Escape (Costs 3 Actions)",
-					"name": "消失逃脱（消耗3个行动）",
+					"name": "隐匿逃逸（花费3个动作）",
 					"entries": [
 						"刺客制造了一个突然的干扰，比如一团令人迷失方向的烟雾或一道耀眼的光芒，覆盖了刺客5尺内10尺立方的区域。刺客选择的那个区域内的每个生物受到9点（{@damage 2d8}）心灵伤害，并且刺客获得{@condition 隐形}状态。这种隐形状态持续到刺客下一个回合结束。"
 					]
@@ -232,7 +232,7 @@
 		},
 		{
 			"ENG_name": "Animated Armor Detention Drone",
-			"name": "活化装甲拘留无人机",
+			"name": "活化盔甲拘禁无人机",
 			"source": "BMT",
 			"page": 135,
 			"_copy": {
@@ -504,9 +504,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Empowering Aegis {@recharge 4}",
+					"ENG_name": "Empowering Aegis {@recharge 4}",
+					"name": "增强护罩 {@recharge 4}",
 					"entries": [
-						"Asteria summons a spectral version of her shield, which orbits and bolsters one creature of Asteria's choice that she can see within 60 feet of herself. The spectral shield lasts until the start of Asteria's next turn. While the shield is orbiting the creature, the creature has {@quickref Cover||3||half cover}, is immune to the {@condition frightened} condition, and makes weapon attack rolls with advantage."
+						"阿斯特丽亚召唤出一个她盾牌的灵体版本，该灵体盾牌环绕并强化阿斯特丽亚选择的60英尺内她能看到的一个生物。灵体盾牌持续到阿斯特丽亚的下一回合开始。当盾牌环绕该生物时，该生物拥有{@quickref 掩护||3||半身掩护}，免疫{@condition 恐慌}状态，并进行带有优势的武器攻击检定。"
 					]
 				}
 			],
@@ -527,7 +528,7 @@
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"Asteria 使用法术施放。"
 					]
@@ -716,7 +717,7 @@
 				},
 				{
 					"ENG_name": "Mucus Spray {@recharge 5}",
-					"name": "粘液喷射 {@recharge 5}",
+					"name": "黏液飞溅{@recharge 5}",
 					"entries": [
 						"奥诺兹奇在一个60尺的锥形区域内喷射粘液。在该锥形区域内的每个生物都必须进行一次{@dc 20}敏捷豁免，豁免失败则受到42（{@damage 12d6}）点强酸伤害，成功则只受到一半的伤害。"
 					]
@@ -739,14 +740,14 @@
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"奥诺兹奇使用施法。"
 					]
 				},
 				{
 					"ENG_name": "Conflagration (Costs 2 Actions)",
-					"name": "烈焰（消耗2个行动）",
+					"name": "烈火缠身（花费2个动作）",
 					"entries": [
 						"火焰短暂地包围了奥诺兹奇。奥诺兹奇15尺范围内的每个生物都必须进行一次{@dc 20}敏捷豁免，豁免失败则受到18（{@damage 4d8}）点火焰伤害，成功则只受到一半的伤害。"
 					]
@@ -809,7 +810,7 @@
 		},
 		{
 			"ENG_name": "Boss Augustus",
-			"name": "老板奥古斯都",
+			"name": "奥古斯都老大",
 			"source": "BMT",
 			"page": 82,
 			"size": [
@@ -886,7 +887,7 @@
 				},
 				{
 					"ENG_name": "Claw (Wolf or Hybrid Form Only)",
-					"name": "爪击（仅狼形态或混合形态）",
+					"name": "爪击（仅狼与半人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}21（{@damage 5d6 + 4}）点穿刺伤害。如果目标是一个生物，它必须成功进行一次{@dc 16}力量豁免，否则会处于{@condition 倒地}状态。"
 					]
@@ -901,15 +902,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"Augustus polymorphs into a wolf-humanoid hybrid, a wolf, or his humanoid form. His statistics, other than his speed, are the same in each form. Any equipment he is wearing or carrying isn't transformed. He reverts to his humanoid form if he dies."
+						"奥古斯都可变形为狼人混合体、狼或其人形态。除了速度之外，他在每种形态下的具体数值都相同。他穿戴或携带的任何装备都不会被变形。如果他死亡，他将恢复人形态。"
 					]
 				},
 				{
-					"name": "Cunning Action",
+					"ENG_name": "Cunning Action",
+					"name": "灵巧动作",
 					"entries": [
-						"Augustus takes the Dash, Disengage, or Hide action."
+						"奥古斯都采取疾跑、脱离战斗或隐藏行动。"
 					]
 				}
 			],
@@ -944,7 +947,7 @@
 		},
 		{
 			"ENG_name": "Boss Delour",
-			"name": "老板德卢尔",
+			"name": "德洛尔老大",
 			"source": "BMT",
 			"page": 83,
 			"size": [
@@ -1048,15 +1051,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"Delour polymorphs into a rat-humanoid hybrid, a Medium giant rat, or his humanoid form. His statistics, other than his size and speed, are the same in each form. Any equipment he is wearing or carrying isn't transformed. He reverts to his humanoid form if he dies."
+						"德卢尔可以变形为鼠类人形混合体、中型巨大鼠或其人形形态。除了他的体型和速度外，每种形态下的具体数值都相同。他穿戴或携带的任何装备都不会被变形。如果他死亡，他将恢复人形形态。"
 					]
 				},
 				{
-					"name": "Cunning Action",
+					"ENG_name": "Cunning Action",
+					"name": "灵巧动作",
 					"entries": [
-						"Delour takes the Dash, Disengage, or Hide action."
+						"德卢尔采取疾跑、脱离战斗或隐藏行动。"
 					]
 				}
 			],
@@ -1384,7 +1389,7 @@
 				},
 				{
 					"ENG_name": "Incite the Hunters (Recharges after a Short or Long Rest)",
-					"name": "激发猎手（短休或长休后重置）",
+					"name": "煽动猎手（短休或长休后充能）",
 					"entries": [
 						"布鲁西法允许每个在自身30尺范围内并拥有不失误追踪者特性的盟友，作为反应对那个盟友不失误追踪者的目标进行一次武器攻击。"
 					]
@@ -1392,16 +1397,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Unerring Tracker",
+					"ENG_name": "Unerring Tracker",
+					"name": "绝对追迹者",
 					"entries": [
-						"Brusipha magically creates a psychic link with one creature she can see. For the next hour, Brusipha knows the current distance and direction to the target if it is on the same plane of existence. The link ends if Brusipha has the {@condition incapacitated} condition or uses this ability on a different target."
+						"布鲁西法与她能看到的一个生物魔法性地创建了一个心灵链接。在接下来的一小时内，如果目标处于同一存在平面上，布鲁西法知道目标当前的距离和方向。如果布鲁西法处于{@condition 失能}状态或对不同目标使用此能力，链接将结束。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Baphomet's Blessing",
-					"name": "巴弗灭的祝福",
+					"name": "巴弗灭之祝福",
 					"entries": [
 						"当布鲁西法将一个敌对生物的生命值降至0点时，她获得8点临时生命值。"
 					]
@@ -1539,7 +1545,7 @@
 				},
 				{
 					"ENG_name": "Reckless Strike (Berserker Form Only)",
-					"name": "鲁莽打击（仅狂战士形态）",
+					"name": "鲁莽强袭（仅狂战士形态）",
 					"entries": [
 						"{@atk mw} 主手武器 + {@hit 3} 命中（具有优势），触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）挥砍伤害，直到甲板守卫者下一回合开始前对其发起的攻击具有优势。"
 					]
@@ -1547,16 +1553,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Swift Step (Acrobat Form Only)",
+					"ENG_name": "Swift Step (Acrobat Form Only)",
+					"name": "迅捷步伐（仅杂技形态）",
 					"entries": [
-						"The deck defender takes the Dash or Disengage action."
+						"甲板守卫者采取疾跑或脱离战斗行动。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Protection (Guardian Form Only)",
-					"name": "保护（仅守护形态）",
+					"name": "保护（仅防卫者形态）",
 					"entries": [
 						"当甲板守卫者能看到的生物攻击除甲板守卫者之外的目标，并且距离甲板守卫者5尺以内时，甲板守卫者使攻击掷骰处于不利状态。"
 					]
@@ -1675,7 +1682,7 @@
 				},
 				{
 					"ENG_name": "Beguiling Whisper",
-					"name": "迷魅低语",
+					"name": "醉人低语",
 					"entries": [
 						"潜入者通过魔法向其30尺范围内能看到的一个生物低语。目标必须成功进行一次{@dc 17}感知豁免检定，否则由于恐惧或喜悦（潜入者选择）而进入{@condition 震慑}状态，直到目标的下一个回合结束，之后目标对该迷人的低语免疫24小时。"
 					]
@@ -1700,14 +1707,14 @@
 				},
 				{
 					"ENG_name": "Stab (Costs 2 Actions)",
-					"name": "刺击（消耗2个行动）",
+					"name": "刺杀（花费2个动作）",
 					"entries": [
 						"潜入者进行一次毒刃攻击。"
 					]
 				},
 				{
 					"ENG_name": "Misdirecting Escape (Costs 3 Actions)",
-					"name": "误导性逃脱（消耗3个行动）",
+					"name": "诱导逃逸（花费3个动作）",
 					"entries": [
 						"渗透者魔法般地获得{@condition 隐形}状态，并在其位置创造一个自身的幻影复制品，随后连同其所穿戴或携带的任何装备一起传送到自身15英尺内的一个未被占据的位置。幻影向图像20英尺内的两个由渗透者选择的生物投掷幻影刀刃。每个目标必须进行一次{@dc 17}的感知豁免，豁免失败则受到13（{@damage 3d8}）点心灵伤害，豁免成功则受到一半伤害。隐形效果持续到渗透者的下一个回合结束。"
 					]
@@ -1904,7 +1911,7 @@
 				},
 				{
 					"ENG_name": "Constrict (Serpent Form Only)",
-					"name": "绞缠 (仅蛇型态)",
+					"name": "绞缠（仅巨蛇形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 11}，触及15尺，一个大型或更小的生物。{@h}16（{@damage 2d10 + 5}）钝击伤害，目标处于{@condition 擒抱}状态（逃脱{@dc 19}）。直到这次缠绕结束，目标在每个回合开始时受到11（{@damage 2d10}）点钝击伤害，尤赖亚不能缠绕另一个目标。"
 					]
@@ -1918,7 +1925,7 @@
 				},
 				{
 					"ENG_name": "Verdant Bolt (Medusa Form Only)",
-					"name": "翠绿之箭（仅美杜莎形态）",
+					"name": "苍翠箭（仅美杜莎形态）",
 					"entries": [
 						"{@atk rs} 命中{@hit 11}，射程120尺，单一目标。{@h}18（{@damage 4d8}）强酸伤害。"
 					]
@@ -1926,15 +1933,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"Euryale changes shape into her Huge serpent form or back into her Medium medusa form. Euryale's game statistics are the same in each form except where noted in this stat block. Any equipment she is wearing or carrying isn't transformed. Euryale reverts to her medusa form if she dies."
+						"尤赖尔可以变化形态，变成她的巨型蛇形态或变回她的中型美杜莎形态。尤赖尔在每种形态中的游戏具体数值相同，除非在此属性块中另有说明。她穿戴或携带的任何装备不会发生转变。如果尤赖尔死亡，她将恢复为美杜莎形态。"
 					]
 				},
 				{
-					"name": "Petrifying Gaze {@recharge 4}",
+					"ENG_name": "Petrifying Gaze {@recharge 4}",
+					"name": "石化凝视{@recharge 4}",
 					"entries": [
-						"Euryale unleashes petrifying magic from her eyes in a 30-foot cone. Each creature in that area must make a {@dc 18} Constitution saving throw if it doesn't have the {@condition blinded} condition. If the saving throw fails by 5 or more, the creature has the {@condition petrified} condition. Otherwise, on a failed save, the creature takes 14 ({@damage 4d6}) force damage, begins to turn to stone, and has the {@condition restrained} condition. The {@condition restrained} creature must repeat the saving throw at the end of its next turn. On a failed save, it has the {@condition petrified} condition, and on a successful save, the effect ends on it, The petrification lasts until the creature is freed by the {@spell Greater Restoration} spell or other magic A creature can use its reaction, if available, to shut its eyes to avoid the saving throw. If the creature does so, it has the {@condition blinded} condition until the end of its next turn."
+						"尤赖尔从她的眼睛中释放出石化魔法，形成一个30尺的圆锥区域。该区域内的每个生物如果没有{@condition 目盲}状态，则必须进行一次{@dc 18}体质豁免检定。如果豁免失败差距在5或以上，生物将进入{@condition 石化}状态。否则，在豁免失败的情况下，生物受到14 ({@damage 4d6}) 力场伤害，开始变成石头，并进入{@condition 束缚}状态。处于{@condition 束缚}状态的生物必须在它下一个回合结束时重新进行豁免检定。如果再次失败，它将进入{@condition 石化}状态，如果成功，则该效果在其身上结束。石化状态持续，直到生物通过{@spell 高等复原术}法术或其他魔法被解除。生物可以使用它的反应（如果可用）来闭上眼睛以避免豁免检定。如果生物这样做，它将进入{@condition 目盲}状态，直到它下一个回合结束。"
 					]
 				}
 			],
@@ -1948,7 +1957,7 @@
 				},
 				{
 					"ENG_name": "Venomous Strike (Costs 2 Actions)",
-					"name": "毒液打击（花费2个行动）",
+					"name": "剧毒打击（花费2个动作）",
 					"entries": [
 						"尤赖尔进行一次蛇咬攻击。如果目标处于{@condition 中毒}状态，攻击将额外造成16 ({@damage 3d10})点毒素伤害。"
 					]
@@ -2078,14 +2087,14 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"如果女巫未能通过豁免检定，她可以选择成功。"
 					]
 				},
 				{
 					"ENG_name": "Trace the Threads (1/Day)",
-					"name": "追踪线索（每日一次）",
+					"name": "追溯命运之线（1/日）",
 					"entries": [
 						"女巫可以施放{@spell 通晓传奇}法术，不需要任何材料组件，并使用感知作为施法能力。"
 					]
@@ -2124,7 +2133,7 @@
 				},
 				{
 					"ENG_name": "Destiny Curse (Costs 2 Actions)",
-					"name": "命运诅咒（消耗2个行动）",
+					"name": "厄运缠身（花费2个动作）",
 					"entries": [
 						"女巫对60尺范围内她能看到的一个生物施加魔法诅咒。该生物必须进行一次{@dc 14}感知豁免检定，如果在过去一分钟内对该女巫造成伤害，则此次豁免检定处于劣势。如果豁免失败，生物在属性检定、攻击骰和豁免检定上将处于劣势，直到诅咒结束。每当被诅咒的生物在这些{@dice d20}投掷中失败一次，它会受到7 ({@damage 2d6}) 力场伤害。诅咒在1分钟后结束；当生物在任何组合中成功进行三次属性检定、攻击骰或豁免检定；或者当女巫再次使用这个动作时结束。"
 					]
@@ -2332,9 +2341,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Ethereal Step {@recharge 4}",
+					"ENG_name": "Ethereal Step {@recharge 4}",
+					"name": "以太步 {@recharge 4}",
 					"entries": [
-						"Gremorly teleports up to 30 feet to an unoccupied space he can see."
+						"格雷莫利传送至他能看到的未被占据的空间，最多30尺。"
 					]
 				}
 			],
@@ -2479,7 +2489,7 @@
 				},
 				{
 					"ENG_name": "Blade Storm {@recharge 5}",
-					"name": "刀刃风暴 {@recharge 5}",
+					"name": "剑刃风暴{@recharge 5}",
 					"entries": [
 						"冠军在其120尺范围内可见的某点为中心，召唤出一个20尺立方体大小的翻涌的幽灵刀刃风暴。风暴持续到冠军下一回合开始。当风暴活跃时，风暴区域成为困难地形。每当一个生物在回合中首次进入风暴区域或在其内开始回合时，它必须进行一次{@dc 19}敏捷豁免，豁免失败则受到27（{@damage 6d8}）点挥砍伤害，豁免成功则只受到一半的伤害。"
 					]
@@ -2488,7 +2498,7 @@
 			"legendary": [
 				{
 					"ENG_name": "Furious Pursuit",
-					"name": "恐惧追击",
+					"name": "狂怒追击",
 					"entries": [
 						"冠军移动其速度的距离，或命令其坐骑移动其速度的距离。这种移动不会引发借机攻击。"
 					]
@@ -2502,7 +2512,7 @@
 				},
 				{
 					"ENG_name": "Menace (Costs 2 Actions)",
-					"name": "威胁（消耗2个行动）",
+					"name": "威吓（花费2个动作）",
 					"entries": [
 						"冠军选择任何它能看到的30尺范围内的生物。每个目标必须成功通过一次{@dc 19}感知豁免，否则直到其下一回合结束时处于{@condition 恐慌}状态。"
 					]
@@ -2656,9 +2666,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Step into Nothing {@recharge 4}",
+					"ENG_name": "Step into Nothing {@recharge 4}",
+					"name": "踏入虚无{@recharge 4}",
 					"entries": [
-						"The champion, along with any equipment it is wearing or carrying, has the {@condition invisible} condition and teleports to an unoccupied space it can see within 30 feet of itself. The champion remains {@condition invisible} until the start of its next turn or immediately after it deals damage."
+						"冠军及其穿戴或携带的任何装备都处于{@condition 隐形}状态，并传送到它能看到的30尺范围内的未被占据的空间。冠军保持{@condition 隐形}状态，直到其下一回合开始或立即在造成伤害后。"
 					]
 				}
 			],
@@ -2679,7 +2690,7 @@
 				},
 				{
 					"ENG_name": "Nullify (Costs 2 Actions)",
-					"name": "无效化（消耗2个行动）",
+					"name": "消除（花费2个动作）",
 					"entries": [
 						"冠军发出一道60尺的圆锥形魔法波动。在该区域内，冠军选择的5级或更低级别的每个法术都会在生物和物体上结束。"
 					]
@@ -2872,14 +2883,14 @@
 				},
 				{
 					"ENG_name": "Furious Pursuit",
-					"name": "恐惧追击",
+					"name": "狂怒追击",
 					"entries": [
 						"冠军移动其速度的距离，或命令其坐骑移动其速度的距离。这种移动不会引发借机攻击。"
 					]
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"冠军使用法术施放。"
 					]
@@ -2984,7 +2995,7 @@
 				},
 				{
 					"ENG_name": "Plane Shift (2/Day)",
-					"name": "位面转移（每日2次）",
+					"name": "位面转移（2/日）",
 					"entries": [
 						"鹰对自己施放{@spell 异界传送}法术，不需要法术成分，使用感知作为施法能力。"
 					]
@@ -2992,9 +3003,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Shadow Dash",
+					"ENG_name": "Shadow Dash",
+					"name": "幽影疾驰",
 					"entries": [
-						"When the hawk is in dim light or darkness, it teleports up to 30 feet to an unoccupied space it can see that is also in dim light or darkness. The hawk then has advantage on the first melee attack it makes before the end of the turn."
+						"当鹰处于微光或黑暗中时，它可以传送至最多30尺外的它能看到的未被占据的空间，该空间也必须处于微光或黑暗中。然后，在回合结束前进行的第一次近战攻击检定中，鹰具有优势。"
 					]
 				}
 			],
@@ -3107,9 +3119,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Shadow Step {@recharge 4}",
+					"ENG_name": "Shadow Step {@recharge 4}",
+					"name": "暗影步{@recharge 4}",
 					"entries": [
-						"The hound magically teleports, along with any equipment it is wearing or carrying, up to 40 feet to an unoccupied space it can see."
+						"猎犬可以魔法地传送，连同它穿戴或携带的任何装备，最多40尺到它可以看到的未被占据的空间。"
 					]
 				}
 			],
@@ -3140,7 +3153,7 @@
 		},
 		{
 			"ENG_name": "Helmed Horror Detention Drone",
-			"name": "恐怖铠甲拘留无人机",
+			"name": "恐怖铠甲拘禁无人机",
 			"source": "BMT",
 			"page": 135,
 			"_copy": {
@@ -3269,7 +3282,7 @@
 			"trait": [
 				{
 					"ENG_name": "Devotion's Call (1/Day)",
-					"name": "奉献之召（每日1次）",
+					"name": "奉献之召（1/日）",
 					"entries": [
 						"美杜莎可以施放{@spell 复生术}法术，不需要任何材料组件，并使用感知作为施法能力。"
 					]
@@ -3321,10 +3334,11 @@
 			],
 			"bonus": [
 				{
-					"name": "Petrifying Gaze {@recharge 4}",
+					"ENG_name": "Petrifying Gaze {@recharge 4}",
+					"name": "石化凝视{@recharge 4}",
 					"entries": [
-						"The medusa unleashes petrifying magic from its eyes in a 30-foot cone. Each creature in that area must make a {@dc 18} Constitution saving throw if it doesn't have the {@condition blinded} condition. If the saving throw fails by 5 or more, the creature has the {@condition petrified} condition. Otherwise, on a failed save, the creature takes 10 ({@damage 3d6}) force damage, begins to turn to stone, and has the {@condition restrained} condition. The {@condition restrained} creature must repeat the saving throw at the end of its next turn. On a failed save, it has the {@condition petrified} condition, and on a successful save, the effect ends on it. The petrification lasts until the creature is freed by the {@spell Greater Restoration} spell or other magic.",
-						"A creature can use its reaction, if available, to shut its eyes to avoid the saving throw. If the creature does so, it has the {@condition blinded} condition until the end of its next turn."
+						"美杜莎从其眼中释放出30尺锥形的石化魔法。该区域内的每个生物，如果未处于{@condition 目盲}状态，则必须进行一次{@dc 18}体质豁免。若豁免失败且差值达到5或更多，该生物将陷入{@condition 石化}状态。否则，若豁免失败，该生物将受到10（{@damage 3d6}）点力场伤害，开始化为石头，并陷入{@condition 束缚}状态。处于{@condition 束缚}状态的生物必须在其下一回合结束时重复进行豁免。若豁免失败，它将陷入{@condition 石化}状态；若豁免成功，此效果将终止。石化状态将持续到该生物被{@spell 高等复原术}或其他魔法解救为止。",
+						"如果生物可用，它可以利用其反应来闭眼以避免进行豁免检定。如果生物这样做，直到其下一回合结束时，它将处于{@condition 目盲}状态。"
 					]
 				}
 			],
@@ -3338,14 +3352,14 @@
 				},
 				{
 					"ENG_name": "Wrathful Blast (Costs 2 Actions)",
-					"name": "愤怒爆炸（消耗2个行动）",
+					"name": "盛怒魔爆（花费2个动作）",
 					"entries": [
 						"美杜莎进行一次愤怒打击攻击。"
 					]
 				},
 				{
 					"ENG_name": "Final Slash (Costs 3 Actions)",
-					"name": "终极斩击（消耗3个行动）",
+					"name": "终末一斩（花费3个动作）",
 					"entries": [
 						"美杜莎进行一次优势的终极刀刃攻击。"
 					]
@@ -3495,7 +3509,7 @@
 			"trait": [
 				{
 					"ENG_name": "Comet's Voice (1/Day)",
-					"name": "彗星之音（每日1次）",
+					"name": "彗星之声（1/日）",
 					"entries": [
 						"大祭司可以使用魅力作为施法能力来施放{@spell 异界探知}法术。"
 					]
@@ -3525,7 +3539,7 @@
 				},
 				{
 					"ENG_name": "Herald's Axe",
-					"name": "使者之斧",
+					"name": "先驱魔斧",
 					"entries": [
 						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}11 ({@damage 1d12 + 5}) 挥砍伤害加上10 ({@damage 3d6}) 黯蚀伤害。"
 					]
@@ -3547,9 +3561,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Star's Hunger",
+					"ENG_name": "Star's Hunger",
+					"name": "星辰之饥",
 					"entries": [
-						"The hierophant targets one creature within 30 feet of the center of its All-Consuming Star. The target must succeed on a {@dc 17} Strength saving throw or be pulled up to 30 feet toward the center of the All-Consuming Star."
+						"神官指定其全噬之星中心30英尺范围内的一个生物为目标。目标必须成功通过{@dc 17}力量豁免检定，否则将被拉向全噬之星中心最多30英尺。"
 					]
 				}
 			],
@@ -3770,7 +3785,7 @@
 				},
 				{
 					"ENG_name": "Curdle Heart (Costs 2 Actions)",
-					"name": "凝固心脏（消耗2个动作）",
+					"name": "心脏停滞（花费2个动作）",
 					"entries": [
 						"Hulgaz使她{@condition 魅惑}的受害者的愉悦感变得酸涩。她选择她能看到的任意数量被她{@condition 魅惑}的生物。每个目标在Hulgaz施加的{@condition 魅惑}状态结束时受到17（{@damage 5d6}）心灵伤害。"
 					]
@@ -3919,7 +3934,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Moment of Foresight (1/Day)",
-					"name": "先见之明（每日1次）",
+					"name": "片刻先见（1/日）",
 					"entries": [
 						"当被攻击检定命中时，入门者可以迫使攻击者重新掷骰并使用新的掷骰结果，这可能会导致攻击落空。"
 					]
@@ -4040,7 +4055,7 @@
 			"trait": [
 				{
 					"ENG_name": "Brilliance (True Form Only)",
-					"name": "光辉（仅真身形态）",
+					"name": "辉耀（仅真实形态）",
 					"entries": [
 						"活生生的征兆在30尺范围内散发明亮的光，并在额外的30尺范围内散发微光。"
 					]
@@ -4071,9 +4086,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The living portent magically transforms into a Humanoid while retaining its game statistics (other than its size and Brilliance trait). The transformation ends if the living portent is reduced to 0 hit points or uses a bonus action to end it."
+						"活生生的征兆通过魔法转化为类人生物，同时保留其游戏具体数值（除了它的大小和光辉特性）。如果活生生的征兆的生命值降至0点或使用附赠动作结束转化，转化就会结束。"
 					]
 				}
 			],
@@ -4089,7 +4105,7 @@
 			"variant": [
 				{
 					"ENG_name": "Servants of Living Stars",
-					"name": "生命之星的仆从",
+					"name": "活体星辰之碎片",
 					"type": "variant",
 					"entries": [
 						"天空中的一些星星是古老的邪恶存在，它们是来自违背现实的遥远领域、拥有神一般力量的外星生物。",
@@ -4107,25 +4123,25 @@
 								{
 									"ENG_name": "Caiphon, the Dream Whisperer",
 									"type": "item",
-									"name": "凯芬，梦境低语者",
+									"name": "凯丰，梦语者",
 									"entry": "一颗紫色的星星，其指引和仆从似乎暂时有所帮助，但其影响不可避免地会导致灾难。"
 								},
 								{
 									"ENG_name": "Hadar, the Dark Hunger",
 									"type": "item",
-									"name": "哈达尔，黑暗的饥饿",
+									"name": "哈达，乌黯之饥渴",
 									"entry": "一颗灰烬红色的垂死之星，它从其手下吸取生命以避免自己的灭亡。"
 								},
 								{
 									"ENG_name": "Khirad, the Star of Secrets",
 									"type": "item",
-									"name": "希拉德，秘密之星",
+									"name": "奇拉德，秘兆之星",
 									"entry": "一颗蓝白色的恒星，其赠予的洞察力揭示了可怕的真相。"
 								},
 								{
 									"ENG_name": "Zhudun, the Corpse Star",
 									"type": "item",
-									"name": "朱敦，尸星",
+									"name": "烛顿，尸星",
 									"entry": "一颗死去的星星，低语着挑战死亡的力量。"
 								}
 							]
@@ -4158,7 +4174,7 @@
 			"_versions": [
 				{
 					"ENG_name": "Living Star (Necrotic)",
-					"name": "生命之星（死灵）",
+					"name": "活体星辰（暗蚀）",
 					"source": "BMT",
 					"_mod": {
 						"*": {
@@ -4176,7 +4192,7 @@
 				},
 				{
 					"ENG_name": "Living Star (Psychic)",
-					"name": "生命之星（心灵）",
+					"name": "活体星辰（心灵）",
 					"source": "BMT",
 					"_mod": {
 						"*": {
@@ -4318,7 +4334,7 @@
 				},
 				{
 					"ENG_name": "Mezzoloth Vortex {@recharge 5}",
-					"name": "麦泽罗斯魔漩涡 {@recharge 5}",
+					"name": "麦泽罗斯旋风{@recharge 5}",
 					"entries": [
 						"马拉克西克斯在其视线范围内90尺内的一个点召唤出旋转的麦泽罗斯魔漩涡。漩涡是一个以该点为中心，半径30尺，高100尺的圆柱体。该区域内除马拉克西克斯之外的每个生物必须进行一次{@dc 20}敏捷豁免检定。检定失败，生物将受到35 ({@damage 10d6})力场伤害，并在圆柱体内时处于{@condition 束缚}状态。检定成功，生物受到的伤害减半，并被推到圆柱体外最近的未被占据的空间。漩涡持续到马拉克西克斯下一回合开始。"
 					]
@@ -4334,7 +4350,7 @@
 				},
 				{
 					"ENG_name": "Attack (Costs 2 Actions)",
-					"name": "攻击（消耗2个行动）",
+					"name": "攻击（花费2个动作）",
 					"entries": [
 						"马拉克西斯进行一次锻造之锤或鞭子攻击。"
 					]
@@ -4553,9 +4569,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Unerring Tracker",
+					"ENG_name": "Unerring Tracker",
+					"name": "绝对追迹者",
 					"entries": [
-						"The minotaur magically creates a psychic link with one creature it can see. For the next hour, the minotaur knows the current distance and direction to the target if it is on the same plane of existence. The link ends if the minotaur has the {@condition incapacitated} condition or uses this ability on a different target."
+						"牛头人魔法地与它能看到的一个生物建立了心灵链接。在接下来的一个小时里，如果目标处于同一存在平面上，牛头人知道目标当前的距离和方向。如果牛头人处于{@condition 失能}状态或对不同目标使用这个能力，链接就会结束。"
 					]
 				}
 			],
@@ -4665,7 +4682,7 @@
 				},
 				{
 					"ENG_name": "Nilbogism",
-					"name": "林布哥主义",
+					"name": "林布哥症",
 					"entries": [
 						"任何试图伤害奥德温的生物必须首先通过一次{@dc 12}的魅力豁免，否则将被施加{@condition 魅惑}状态，直到该生物的下一个回合结束。该生物必须用其动作赞美奥德温。",
 						"奥德勒文无法通过任何方式恢复生命值，包括通过魔法治疗，除非通过他的'命运逆转'反应。"
@@ -4690,9 +4707,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Nimble Escape",
+					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
 					"entries": [
-						"Oddlewin takes the Disengage or Hide action."
+						"奥德莱温采取解除武装或隐藏行动。"
 					]
 				}
 			],
@@ -4740,7 +4758,7 @@
 		},
 		{
 			"ENG_name": "Otherworldly Corrupter",
-			"name": "异界侵蚀",
+			"name": "蚀心异客",
 			"source": "BMT",
 			"page": 47,
 			"size": [
@@ -4851,9 +4869,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The corrupter magically transforms into any creature that is Small or Medium, while retaining its game statistics (other than its size). This transformation ends if the corrupter is reduced to 0 hit points or uses a bonus action to end it."
+						"堕落者能够通过魔法变为任何小型或中型生物，同时保留其游戏具体数值（除了其大小）。如果堕落者的生命值降至0点或使用附赠动作结束这种变化，这种变形就会结束。"
 					]
 				}
 			],
@@ -4876,14 +4895,14 @@
 				},
 				{
 					"ENG_name": "Stab (Costs 2 Actions)",
-					"name": "刺击（消耗2个行动）",
+					"name": "刺杀（花费2个动作）",
 					"entries": [
 						"腐化者进行一次低语之刃攻击。"
 					]
 				},
 				{
 					"ENG_name": "Amorphous Escape (Costs 3 Actions)",
-					"name": "无定形逃脱（消耗3个行动点）",
+					"name": "化形逃逸（花费3个动作）",
 					"entries": [
 						"堕落者溶解成一团不断变化的肉体、触手、眼睛、爪子和嘴巴。堕落者能看到的20尺范围内的最多两个生物必须进行一次{@dc 20}智力豁免检定，失败时受到18 ({@damage 4d8}) 心灵伤害，成功则伤害减半。这种转变持续到堕落者下一个回合结束。在转变期间，堕落者在攻击骰上有优势，对堕落者的攻击骰有劣势，并且它可以穿过至少1英寸宽的空间而不受挤压。"
 					]
@@ -5072,7 +5091,7 @@
 				},
 				{
 					"ENG_name": "Breath Weapon {@recharge 5}",
-					"name": "呼吸武器 {@recharge 5}",
+					"name": "吐息武器{@recharge 5}",
 					"entries": [
 						"帕兹罗德使用以下呼吸武器之一：",
 						{
@@ -5110,7 +5129,7 @@
 				},
 				{
 					"ENG_name": "Cast a Spell (Costs 2 Actions)",
-					"name": "施放法术（消耗2个动作）",
+					"name": "施法（花费2个动作）",
 					"entries": [
 						"帕兹罗德使用法术施放。"
 					]
@@ -5172,7 +5191,7 @@
 		},
 		{
 			"ENG_name": "Quadrone Detention Drone",
-			"name": "四旋翼拘留无人机",
+			"name": "四旋翼拘禁无人机",
 			"group": null,
 			"source": "BMT",
 			"page": 135,
@@ -5294,9 +5313,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Haunt Creature",
+					"ENG_name": "Haunt Creature",
+					"name": "作祟生物",
 					"entries": [
-						"The spirit targets a creature it can see within 10 feet of itself and begins haunting it. While the target is haunted, you and the spirit sense the direction and distance to the target if it is on the same plane of existence as you. Additionally, if the target starts its turn within 10 feet of the spirit, the target must succeed on a Wisdom saving throw against your spell save DC or have the {@condition frightened} condition until the start of the target's next turn. The target remains haunted until it dies, the spirit disappears, or the spirit uses this action again."
+						"这个灵魂锁定了它能看到的10尺范围内的一个生物，并开始缠绕它。当目标被缠绕时，你和这个灵魂能够感知到目标的方向和距离，如果它和你处于同一存在平面上。此外，如果目标在其回合开始时处于灵魂10尺范围内，目标必须成功通过一次对抗你的法术豁免DC的感知豁免，否则直到目标下一回合开始时会获得{@condition 恐慌}状态。目标将一直被缠绕，直到它死亡，灵魂消失，或者灵魂再次使用这个动作。"
 					]
 				}
 			],
@@ -5414,7 +5434,7 @@
 				},
 				{
 					"ENG_name": "Card Spray {@recharge 5}",
-					"name": "卡牌喷射 {@recharge 5}",
+					"name": "飞散卡牌{@recharge 5}",
 					"entries": [
 						"扒手魔法地释放出一道30尺锥形的幽灵卡牌喷雾。该区域内的每个生物必须进行一次{@dc 14}敏捷豁免。豁免失败的生物会受到27 ({@damage 5d10})力场伤害，并在1分钟内获得{@condition 束缚}状态，因为卡牌将其捆绑。如果豁免成功，生物只受到一半的伤害。处于{@condition 束缚}状态的生物可以在每个回合结束时重复豁免尝试，成功则结束该效果。"
 					]
@@ -5644,7 +5664,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Jared 进行三次长剑攻击。"
+						"杰瑞德进行三次长剑攻击。"
 					]
 				},
 				{
@@ -6023,7 +6043,7 @@
 				},
 				{
 					"ENG_name": "Blade of Judgment",
-					"name": "裁决之刃",
+					"name": "判罚之刃",
 					"entries": [
 						"{@atk mw,rw} 攻击命中{@hit 14}，触及5尺或射程60尺，一个目标。{@h}10（{@damage 1d6 + 7}）点穿刺伤害加上27（{@damage 6d8}）点光耀伤害。如果目标是生物，它必须成功通过一次{@dc 22}魅力豁免，否则在其下一回合，它只能移动或执行一个动作，不能同时进行两者。"
 					]
@@ -6055,14 +6075,14 @@
 				},
 				{
 					"ENG_name": "Stab (Costs 2 Actions)",
-					"name": "刺击（消耗2个行动）",
+					"name": "刺杀（花费2个动作）",
 					"entries": [
 						"隐匿的存在进行一次裁决之刃攻击。"
 					]
 				},
 				{
 					"ENG_name": "Searing Radiance (Costs 3 Actions)",
-					"name": "灼热光辉（消耗3个行动点）",
+					"name": "灼热光辉（花费3个动作）",
 					"entries": [
 						"面纱存在的魔法能量以自身为中心散发出一道半径10英尺的耀眼球体光芒，直到其下一个回合结束，在此期间对其进行攻击的掷骰会受到劣势，而它自身的攻击掷骰则获得优势。该球体随面纱存在移动。当另一个生物在其回合开始时处于光芒中或首次进入光芒时，该生物必须进行一次{@dc 22}体质豁免检定，若豁免失败则受到18点（{@damage 4d8}）光耀伤害，成功则受到一半伤害。"
 					]
@@ -6186,7 +6206,7 @@
 				},
 				{
 					"ENG_name": "Beak (Vulture or Hybrid Form Only)",
-					"name": "喙（仅秃鹫形态或混合形态）",
+					"name": "喙啄（仅秃鹫与半人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10 ({@damage 2d6 + 3}) 点穿刺伤害。如果目标是人型生物，它必须在一次{@dc 13}体质豁免中成功，否则直到被{@spell 移除诅咒}法术或类似效果解除诅咒前都会受到诅咒。如果被诅咒的目标降至0生命值，它将变成一只狼鹰，由DM控制，并恢复10生命值。"
 					]
@@ -6208,9 +6228,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Change Shape",
+					"ENG_name": "Change Shape",
+					"name": "变形",
 					"entries": [
-						"The werevulture polymorphs into a vulture-humanoid hybrid, into a vulture, or back into its humanoid form. Its game statistics, other than its speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its humanoid form if it dies."
+						"变形狼鹰在狼鹰人形和狼鹰形态之间变化，或者恢复到它的人类形态。除了速度之外，其游戏具体数值在每种形态下都是相同的。它穿着或携带的任何装备都不会被变形。如果它死亡，它会恢复到人类形态。"
 					]
 				}
 			],

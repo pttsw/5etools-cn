@@ -149,7 +149,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Spell Mimicry (1/Day)",
-					"name": "法术模仿（每日1次）",
+					"name": "法术模仿（1/日）",
 					"entries": [
 						"在古老的存在可以看到的生物施放5级或更低级别的法术后，该生物必须成功进行一次{@dc 22}魅力豁免检定，否则古老的存在立即以相同等级施放相同的法术（法术攻击命中骰{@hit 14}，法术豁免{@dc 22}），不需要材料成分，并选择法术的目标。"
 					]
@@ -1205,15 +1205,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Augment",
+					"ENG_name": "Augment",
+					"name": "增强",
 					"entries": [
-						"The fractal's size increases by one category. While the fractal is Medium or bigger, it makes Strength checks and Strength saving throws with advantage. The fractal can become no larger than Huge via this bonus action."
+						"分形的大小增加一个类别。当分形是中等大小或更大时，它在进行力量检定和力量豁免检定时具有优势。通过这个附赠动作，分形的大小不能超过巨型。"
 					]
 				},
 				{
-					"name": "Diminish",
+					"ENG_name": "Diminish",
+					"name": "削弱",
 					"entries": [
-						"The fractal's size decreases by one category. While the fractal is Tiny, it makes attack rolls, Dexterity checks, and Dexterity saving throws with advantage. The fractal can become no smaller than 1 foot in height via this bonus action."
+						"分形的大小减少一个类别。当分形成为微小体型时，它在进行攻击检定、敏捷检定和敏捷豁免检定时具有优势。通过这个附赠动作，分形的最小高度不能小于1尺。"
 					]
 				}
 			],
@@ -1617,9 +1619,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Shadow Stealth",
+					"ENG_name": "Shadow Stealth",
+					"name": "幽影隐匿",
 					"entries": [
-						"While in dim light or darkness, the inkling takes the Hide action."
+						"在昏暗或黑暗中时，墨迹自动进行隐藏行动。"
 					]
 				}
 			],
@@ -1869,9 +1872,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Chronal Break (1/Day)",
+					"ENG_name": "Chronal Break (1/Day)",
+					"name": "时间断裂（每日1次）",
 					"entries": [
-						"The pledgemage chooses a point within 30 feet of itself, shunting the minds of nearby creatures out of this moment in time. Each creature in a 10-foot-radius sphere centered on that point must succeed on a {@dc 13} Wisdom saving throw or be {@condition incapacitated} until the end of the pledgemage's next turn."
+						"誓约法师选择距离自己30尺内的一个点，将附近生物的意识从这一刻的时间中移出。以该点为中心的10尺半径范围内的每个生物都必须成功进行一次{@dc 13} 感知豁免检定，否则直到誓约法师下一个回合结束时将被{@condition 失能}。"
 					]
 				}
 			],
@@ -2316,9 +2320,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Shift Form",
+					"ENG_name": "Shift Form",
+					"name": "形态转换",
 					"entries": [
-						"The hunter folds into its drone-like sentry form or unfolds into its hunter form. Its game statistics are the same in each form."
+						"猎人折叠成其类似无人机的哨兵形态或展开成其猎人形态。它在每种形态下的战斗具体数值都是相同的。"
 					]
 				}
 			],
@@ -3136,9 +3141,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Surge of Artistry {@recharge 4}",
+					"ENG_name": "Surge of Artistry {@recharge 4}",
+					"name": "艺术涌动 {@recharge 4}",
 					"entries": [
-						"The apprentice moves up to its speed, surrounding itself with elemental magic as it moves. Until the end of its turn, the apprentice can move through the space of other creatures. The first time the apprentice enters a creature's space on a turn, that creature must succeed on a {@dc 12} Dexterity saving throw or be knocked {@condition prone}. If the apprentice ends its turn in another creature's space, the apprentice takes 5 ({@damage 1d10}) force damage and is pushed into the nearest unoccupied space."
+						"学徒以自己的速度移动，移动时周围环绕着元素魔法。直到其回合结束，学徒可以穿过其他生物的空间。学徒在回合中第一次进入生物的空间时，该生物必须进行一次{@dc 12}敏捷豁免，否则会被击倒{@condition 倒地}。如果学徒在其回合结束时处于另一个生物的空间内，学徒会受到5（{@damage 1d10}）力场伤害，并被推入最近的空闲空间。"
 					]
 				}
 			],
@@ -3274,9 +3280,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Surge of Artistry {@recharge 4}",
+					"ENG_name": "Surge of Artistry {@recharge 4}",
+					"name": "艺术涌动 {@recharge 4}",
 					"entries": [
-						"The pledgemage moves up to its speed, surrounding itself with elemental magic as it moves. Until the end of its turn, the pledgemage can move through the space of other creatures. The first time the pledgemage enters a creature's space on a turn, that creature must succeed on a {@dc 13} Dexterity saving throw or be knocked {@condition prone}. If the pledgemage ends its turn in another creature's space, the pledgemage takes 5 ({@damage 1d10}) force damage and is pushed into the nearest unoccupied space."
+						"学徒法师以自己的速度移动，移动时周围环绕着元素魔法。直到其回合结束，学徒法师可以穿过其他生物的空间。学徒法师在回合第一次进入一个生物的空间时，该生物必须成功进行一次{@dc 13}敏捷豁免检定，否则会被击倒{@condition 倒地}。如果学徒法师在其回合结束时位于另一个生物的空间内，学徒法师将受到5（{@damage 1d10}）力场伤害，并被推入最近的未被占据的空间。"
 					]
 				}
 			],
@@ -3412,9 +3419,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Flaming Leap",
+					"ENG_name": "Flaming Leap",
+					"name": "火焰飞跃",
 					"entries": [
-						"The professor is wreathed in flames and jumps up to 30 feet in any direction. When the professor lands, the flames erupt in a 10-foot radius around the professor and then vanish. Each creature of the professor's choice in that area must succeed on a {@dc 15} Dexterity saving throw or take 7 ({@damage 2d6}) fire damage."
+						"教授被火焰包围，可以向任何方向跳跃最多30尺。当教授着陆时，火焰在教授周围10尺半径内爆发，然后消失。教授选择的该区域内的每个生物必须成功进行一次{@dc 15}敏捷豁免检定，否则将受到7（{@damage 2d6}）火焰伤害。"
 					]
 				}
 			],
@@ -3553,9 +3561,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Rushing Wave",
+					"ENG_name": "Rushing Wave",
+					"name": "冲涌波",
 					"entries": [
-						"The professor is momentarily surrounded by a swirling wave of water and moves up to 30 feet. When the professor moves within 5 feet of any other creature during this bonus action, that creature must succeed on a {@dc 15} Strength saving throw, or the creature is knocked {@condition prone} and it can't take reactions until the start of its next turn. A creature can suffer this effect only once during a turn."
+						"教授被一股旋转的水波暂时包围，并移动最多30尺。当教授在这次附赠动作中移动到任何其他生物5尺内时，那个生物必须成功进行一次{@dc 15} 力量豁免检定，否则生物将被击倒{@condition 倒地}，并且在它的下一回合开始前不能进行反应。一个生物在一回合中只能受到这种效果一次。"
 					]
 				}
 			],
@@ -3786,9 +3795,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Vortex Calculus {@recharge 4}",
+					"ENG_name": "Vortex Calculus {@recharge 4}",
+					"name": "漩涡计算 {@recharge 4}",
 					"entries": [
-						"The pledgemage teleports, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 60 feet of itself. Immediately after it teleports, each creature within 20 feet of the space it left must make a {@dc 13} Constitution saving throw. On a failed save, a creature takes 7 ({@damage 2d6}) force damage and is moved 10 feet in a random horizontal direction. On a successful save, a creature takes half as much damage and isn't moved."
+						"誓言法师连同其穿戴或携带的任何装备，传送到自身周围60尺内可以看到的未被占据的空间。传送后，每个在其离开的空间周围20尺内的生物必须进行一次{@dc 13}体质豁免检定。豁免失败的生物将受到7（{@damage 2d6}）力场伤害，并被随机水平移动10尺。成功通过豁免的生物受到的伤害减半，并且不会被移动。"
 					]
 				}
 			],
@@ -3918,21 +3928,24 @@
 			],
 			"bonus": [
 				{
-					"name": "Dilation {@recharge 5}",
+					"ENG_name": "Dilation {@recharge 5}",
+					"name": "扩张{@recharge 5}",
 					"entries": [
-						"The professor magically alters its physical form until it uses this bonus action again, until it is {@condition incapacitated} or dies, or until it dismisses the effect (no action required). Choose one of the following options:"
+						"教授使用魔法改变其身体形态，直到再次使用这个附赠动作，直到它被{@condition 失能}或死亡，或者直到它解除效果（无需动作）。选择以下选项之一："
 					]
 				},
 				{
-					"name": "Expand",
+					"ENG_name": "Expand",
+					"name": "扩展",
 					"entries": [
-						"The professor becomes Large if there is sufficient room for it to grow. It has advantage on attack rolls and on ability checks and saving throws that rely on Strength."
+						"如果有足够的空间供其增长，教授会变成大型。在依赖力量的攻击掷骰和属性检定以及豁免检定上，它具有优势。"
 					]
 				},
 				{
-					"name": "Contract",
+					"ENG_name": "Contract",
+					"name": "合同",
 					"entries": [
-						"The professor becomes Small. Its walking speed increases to 60 feet, attack rolls against it have disadvantage, and it has advantage on ability checks and saving throws that rely on Dexterity."
+						"教授变得小巧。其步行速度增加到60尺，对其的攻击检定处于劣势，并且在依赖于敏捷的属性检定和豁免检定上具有优势。"
 					]
 				}
 			],
@@ -4745,9 +4758,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Demotivate (2/Day)",
+					"ENG_name": "Demotivate (2/Day)",
+					"name": "泄气（每日2次）",
 					"entries": [
-						"The pledgemage hurls magical insults at one creature it can see within 30 feet of itself. The target must succeed on a {@dc 13} Wisdom saving throw or become {@condition frightened} of the pledgemage for 1 minute. While {@condition frightened} in this way, the target can't take reactions, its speed is halved, and any hit the pledgemage scores against the creature is a critical hit. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"学徒法师向它能看到的30尺范围内的一个生物投掷魔法侮辱。目标必须成功进行一次{@dc 13}感知豁免检定，否则在1分钟内对学徒法师产生{@condition 恐慌}。在以这种方式{@condition 恐慌}时，目标不能进行反应，其速度减半，并且学徒法师对该生物的任何命中均为重击。目标可以在每个回合结束时重复豁免检定，成功则结束该效果。"
 					]
 				}
 			],
@@ -5261,9 +5275,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Need Directions",
+					"ENG_name": "Need Directions",
+					"name": "需要方向",
 					"entries": [
-						"The guide takes the Help action."
+						"向导采取了协助动作。"
 					]
 				}
 			],
@@ -5935,9 +5950,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Vociferous Form (1/Day)",
+					"ENG_name": "Vociferous Form (1/Day)",
+					"name": "喧哗形态（每日一次）",
 					"entries": [
-						"The pledgemage transforms into an avatar of plants and shadow. While in this form, the pledgemage adds its Wisdom modifier to its AC if it isn't wearing armor or wielding a shield, and it has advantage on attack rolls against any creature missing hit points. This form lasts for 1 minute or until the pledgemage is reduced to 0 hit points."
+						"誓言法师转变成植物与阴影的化身。在这种形态下，如果誓言法师没有穿戴盔甲或持有盾牌，它会将自己的感知调整值加到其AC上，并且对任何失去生命值的生物进行攻击检定时具有优势。这种形态持续1分钟，或者直到誓言法师的生命值降至0。"
 					]
 				}
 			],
@@ -6367,9 +6383,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Sanguine Tentacles (1/Day)",
+					"ENG_name": "Sanguine Tentacles (1/Day)",
+					"name": "血腥触手（每日1次）",
 					"entries": [
-						"The blood in the copper basin disappears as tentacles of congealed blood fill a 10-foot cube centered at a point on the ground that Y'demi can see within 15 feet of her. The effect lasts for 1 minute, during which time that area is {@quickref difficult terrain||3}. Any creature entering that area for the first time on a turn or starting its turn there must succeed on a {@dc 13} Dexterity saving throw or be {@condition restrained} by the tentacles. A creature that starts its turn {@condition restrained} by the tentacles takes 10 ({@damage 3d6}) bludgeoning damage. A creature {@condition restrained} by the tentacles can use its action to make either a {@dc 13} Strength ({@skill Athletics}) check or a {@dc 13} Dexterity ({@skill Acrobatics}) check, ending the {@condition restrained} condition on itself on a success."
+						"当Y'demi可以看到的地面上一个点为中心，周围10尺的立方体内，铜盆中的血液消失，凝固的血块形成触手。这个效果持续1分钟，在这段时间内，该区域是{@quickref 困难地形||3}。任何生物在回合中首次进入该区域或在其回合开始时在那里，必须成功进行一次{@dc 13}敏捷豁免检定，否则会被触手{@condition 束缚}。被触手{@condition 束缚}的生物在其回合开始时会受到10 ({@damage 3d6}) 钝击伤害。被触手{@condition 束缚}的生物可以使用它的行动来进行一次{@dc 13}力量（{@skill 运动}）检定或{@dc 13}敏捷（{@skill 特技}）检定，成功则结束自身的{@condition 束缚}状态。"
 					]
 				}
 			],

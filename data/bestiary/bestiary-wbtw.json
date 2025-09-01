@@ -125,9 +125,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Quick Fingers",
+					"ENG_name": "Quick Fingers",
+					"name": "快手",
 					"entries": [
-						"Agdon targets one creature within 5 feet of him that he can see and makes a Dexterity ({@skill Sleight of Hand}) check, with a DC equal to 1 + the target's passive Wisdom ({@skill Perception}) score. On a successful check, Agdon pilfers one object weighing 1 pound or less that the target has in its possession but not in its grasp, without the target noticing the theft."
+						"Agdon瞄准一个他能看到的5尺范围内的生物，并进行一次敏捷（{@skill 巧手})检定，难度等级等于1加上目标的被动感知（{@skill 察觉}）得分。在成功的检定下，Agdon能在目标未察觉的情况下偷取目标拥有但未握持的一件重量不超过1磅的物品。"
 					]
 				}
 			],
@@ -525,10 +526,11 @@
 			],
 			"bonus": [
 				{
-					"name": "Swallow",
+					"ENG_name": "Swallow",
+					"name": "吞咽",
 					"entries": [
-						"Bavlorna swallows a Small or smaller creature she is grappling, ending the grapple on it. The swallowed creature is {@condition blinded} and {@condition restrained}, it has {@quickref Cover||3||total cover} against attacks and other effects outside Bavlorna, and it takes 10 ({@damage 3d6}) acid damage at the start of each of its turns. If the swallowed creature is one of Bavlorna's lornlings, Bavlorna gains all the lornling's memories when the acid damage reduces it to 0 hit points.",
-						"Bavlorna can have only one creature swallowed at a time. If Bavlorna dies, a swallowed creature is no longer {@condition restrained} and can escape from the corpse using 5 feet of movement, exiting {@condition prone}."
+						"巴夫洛娜吞下一个她正在摔跤的小型或更小的生物，结束对它的摔跤。被吞下的生物处于{@condition 目盲}和{@condition 束缚}状态，它对巴夫洛娜外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在它的每个回合开始时受到10 ({@damage 3d6}) 酸液伤害。如果被吞下的生物是巴夫洛娜的洛林灵之一，当酸液伤害将其生命值减少到0时，巴夫洛娜会获得洛林灵的所有记忆。",
+						"Bavlorna一次只能吞下一只生物。如果Bavlorna死亡，被吞下的生物不再处于{@condition 束缚}状态，并可以使用5尺的移动力从尸体中逃脱，以{@condition 倒地}状态出现。"
 					]
 				}
 			],
@@ -678,9 +680,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Move Soul Light",
+					"ENG_name": "Move Soul Light",
+					"name": "移动灵魂之光",
 					"entries": [
-						"The brigganock moves its soul light up to 30 feet in any direction to an unoccupied space it can see. At the end of the current turn, the light returns to the brigganock."
+						"布里甘诺克将其灵魂之光移动至多30尺到任何方向的一个它能看到的未被占据的空间。在当前回合结束时，光线返回到布里甘诺克。"
 					]
 				}
 			],
@@ -805,9 +808,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Croak of Charming (Recharges after a Short or Long Rest)",
+					"ENG_name": "Croak of Charming (Recharges after a Short or Long Rest)",
+					"name": "迷人之鸣（短休或长休后重新充能）",
 					"entries": [
-						"The knight makes a loud croak while targeting one creature it can see within 30 feet of it. The target must succeed on a {@dc 12} Wisdom saving throw or be {@condition charmed} until the end of its next turn."
+						"骑士在对其30尺范围内能看到的一个生物发出响亮的叫声。目标必须成功进行一次{@dc 12}感知豁免检定，否则直到它下一个回合结束时将被{@condition 魅惑}。"
 					]
 				}
 			],
@@ -1027,9 +1031,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Unsettling Presence {@recharge}",
+					"ENG_name": "Unsettling Presence {@recharge}",
+					"name": "不安存在 {@recharge}",
 					"entries": [
-						"Clapperclaw targets one creature it can see within 15 feet of it. The target must succeed on a {@dc 11} Wisdom saving throw or be magically {@condition frightened} until the end of Clapperclaw's next turn."
+						"Clapperclaw 以它能看到的15尺范围内的一个生物为目标。目标必须成功进行一次{@dc 11}感知豁免检定，否则会被魔法{@condition 恐慌}，直到Clapperclaw的下一个回合结束。"
 					]
 				}
 			],
@@ -1254,15 +1259,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Feint {@recharge 5}",
+					"ENG_name": "Feint {@recharge 5}",
+					"name": "佯攻{@recharge 5}",
 					"entries": [
-						"Elkhorn targets one creature that he can see within 5 feet of him. Elkhorn has advantage on the next attack roll he makes against that target before the end of his turn. If that attack hits, the target takes an extra 7 ({@damage 2d6}) damage of the weapon's type."
+						"Elkhorn瞄准一个他能看到的5尺范围内的生物。在他回合结束前，Elkhorn对这个目标的下一次攻击骰有优势。如果那次攻击命中，目标将额外受到7（{@damage 2d6}）点该武器类型的伤害。"
 					]
 				},
 				{
-					"name": "Second Wind (Recharges after a Short or Long Rest)",
+					"ENG_name": "Second Wind (Recharges after a Short or Long Rest)",
+					"name": "回气 (短休或长休之后充能)",
 					"entries": [
-						"Elkhorn regains 12 hit points."
+						"Elkhorn 恢复了12点生命值。"
 					]
 				}
 			],
@@ -2081,9 +2088,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Dazzling Light {@recharge 5}",
+					"ENG_name": "Dazzling Light {@recharge 5}",
+					"name": "耀眼光芒{@recharge 5}",
 					"entries": [
-						"Magical, colored light springs from the golem in a 15-foot cone. Each creature in the cone must succeed on a {@dc 10} Constitution saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"魔法的彩色光线从魔像中以15尺的锥形射出。在锥形区域内的每个生物都必须成功进行一次{@dc 10}体质豁免检定，否则将被{@condition 目盲}1分钟。生物可以在每个回合结束时重复进行豁免检定，成功则结束此效果。"
 					]
 				}
 			],
@@ -2538,7 +2546,7 @@
 				},
 				{
 					"ENG_name": "Bewitching Bolt",
-					"name": "迷惑箭",
+					"name": "魅惑光矢",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 16}，触及范围5尺或射程120尺，单一目标。{@h}25（{@damage 5d6 + 8}）闪电伤害，如果目标是一个生物，它必须成功进行一次{@dc 22}感知豁免检定，否则在Iggwilv的下一个回合开始前被{@condition 魅惑}。"
 					]
@@ -2553,9 +2561,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Fey Step",
+					"ENG_name": "Fey Step",
+					"name": "精类步",
 					"entries": [
-						"Iggwilv teleports, along with any equipment she is wearing or carrying, to an unoccupied space she can see within 30 feet of her."
+						"Iggwilv连同她穿戴或携带的任何装备，传送到她能看到的30尺范围内的未被占据的空间。"
 					]
 				}
 			],
@@ -3358,9 +3367,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Cackle {@recharge 4}",
+					"ENG_name": "Cackle {@recharge 4}",
+					"name": "咯咯笑{@recharge 4}",
 					"entries": [
-						"The doll cackles as it targets one or two creatures it can see within 30 feet of it. Each target that can hear the doll's cackling must make a {@dc 11} Wisdom saving throw, succeeding automatically if it has an Intelligence of 4 or lower. On a failed saving throw, the creature takes 5 ({@damage 2d4}) psychic damage and is {@condition incapacitated} for 1 minute as it is overcome by a fit of laughter. At the end of each of its turns, the creature can repeat the saving throw, ending the effect on itself on a success. A creature that succeeds on this saving throw is immune to this doll's Cackle for 24 hours."
+						"娃娃咯咯笑着，瞄准它能看到的30尺范围内的一个或两个生物。每个能听到娃娃笑声的目标必须进行一次{@dc 11}感知豁免检定，如果它的感知为4或更低，则自动成功。豁免失败的生物将受到5（{@damage 2d4}）点心灵伤害，并在1分钟内因大笑过度而变得{@condition 失能}。在每个回合结束时，该生物可以重新进行豁免检定，成功则结束该效果。成功通过这次豁免检定的生物对娃娃的咯咯笑免疫24小时。"
 					]
 				}
 			],
@@ -3672,9 +3682,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Blessing of the Raven Queen (1/Day)",
+					"ENG_name": "Blessing of the Raven Queen (1/Day)",
+					"name": "渡鸦女王的祝福（每日1次）",
 					"entries": [
-						"Light magically teleports, along with any equipment he is wearing or carrying, up to 30 feet to an unoccupied space he can see. Until the start of his next turn, he appears ghostly and gains resistance to all damage."
+						"光之使者使用魔法传送，连同他穿戴或携带的任何装备，最多可以传送到他能看到的30尺内的未被占据的空间。直到他的下一个回合开始，他看起来像鬼魂一样，并获得了对所有伤害的抗性。"
 					]
 				}
 			],
@@ -3822,9 +3833,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Blessing of the Raven Queen (1/Day)",
+					"ENG_name": "Blessing of the Raven Queen (1/Day)",
+					"name": "渡鸦女王的祝福（每日1次）",
 					"entries": [
-						"Witch magically teleports, along with any equipment he is wearing or carrying, up to 30 feet to an unoccupied space he can see. Until the start of his next turn, he appears ghostly and gains resistance to all damage."
+						"巫师使用魔法传送，连同他穿戴或携带的任何装备，最多可以传送到他能看到的30尺内的未被占据的空间。直到他的下一个回合开始，他看起来像鬼魂一样，并获得了对所有伤害的抗性。"
 					]
 				}
 			],
@@ -4878,10 +4890,11 @@
 			],
 			"bonus": [
 				{
-					"name": "Alter Size",
+					"ENG_name": "Alter Size",
+					"name": "改变大小",
 					"entries": [
-						"Skabatha magically shrinks herself to Tiny size (between 4 and 8 inches tall) or returns to her normal size. If Skabatha lacks the room to return to her normal size, she attains the maximum size possible in the space available. Anything she is wearing or carrying changes size along with her.",
-						"As a Tiny creature, Skabatha deals 2 ({@damage 1d4}) poison damage when she hits with a Claw attack. She has advantage on Dexterity ({@skill Stealth}) checks, and disadvantage on Strength checks and Strength saving throws. Her statistics otherwise remain unchanged."
+						"Skabatha使用魔法将自己缩小到小型尺寸（高度在4到8英寸之间），或者恢复到她的正常尺寸。如果Skabatha没有足够的空间恢复到她的正常尺寸，她将达到在可用空间中可能的最大尺寸。她穿着或携带的任何物品也会随着她一起改变尺寸。",
+						"作为一个小型生物，Skabatha 在使用爪击命中时造成 2 ({@damage 1d4}) 点毒素伤害。她在敏捷 ({@skill 隐匿}) 检定时具有优势，而在力量检定和力量豁免检定中处于劣势。她的其他具体数值保持不变。"
 					]
 				}
 			],
@@ -5804,15 +5817,17 @@
 			],
 			"bonus": [
 				{
-					"name": "Flaming Blade",
+					"ENG_name": "Flaming Blade",
+					"name": "火焰之刃",
 					"entries": [
-						"Warduke ignites or extinguishes his flame tongue longsword. While aflame, it sheds bright light in a 40-foot radius and dim light for an additional 40 feet."
+						"沃杜克点燃或熄灭他的火焰舌长剑。当剑上火焰燃烧时，它在40尺半径内发出明亮的光，并且在额外的40尺内发出微光。"
 					]
 				},
 				{
-					"name": "Second Wind (Recharges after a Short or Long Rest)",
+					"ENG_name": "Second Wind (Recharges after a Short or Long Rest)",
+					"name": "回气 (短休或长休之后充能)",
 					"entries": [
-						"Warduke regains 13 hit points."
+						"沃杜克恢复了13点生命值。"
 					]
 				}
 			],
@@ -6092,9 +6107,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Assassin's Whim",
+					"ENG_name": "Assassin's Whim",
+					"name": "暗杀者的奇想",
 					"entries": [
-						"Zarak takes the Dash, Disengage, or Hide action."
+						"扎拉克采取疾跑、脱离战斗或隐藏行动。"
 					]
 				}
 			],
@@ -6251,9 +6267,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Animate Corpse (1/Day)",
+					"ENG_name": "Animate Corpse (1/Day)",
+					"name": "活化尸体（每日1次）",
 					"entries": [
-						"Zargash targets the lifeless corpse of one Humanoid he can see within 30 feet of him and commands it to rise, transforming it into a zombie under his control. The zombie takes its turn immediately after Zargash. Animating the zombie requires Zargash's {@status concentration} (as if {@status concentration||concentrating} on a spell). The zombie reverts to an inanimate corpse after 10 minutes, when it drops to 0 hit points, or when Zargash's {@status concentration} ends."
+						"扎格什锁定了他能看到的30尺内的一具无生命的类人生物尸体，并命令它站起来，将其转变为受他控制的僵尸。僵尸在扎格什之后立即行动。激活僵尸需要扎格什的{@status 专注}（就像在{@status 专注||专注于}施法一样）。僵尸在10分钟后变为无生命的尸体，当它的生命值降至0点，或当扎格什的{@status 专注}结束时。"
 					]
 				}
 			],

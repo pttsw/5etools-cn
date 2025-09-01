@@ -388,7 +388,7 @@
 			],
 			"ac": [
 				{
-					"special": "13加上你智慧调整值"
+					"special": "13加上你感知调整值"
 				}
 			],
 			"hp": {
@@ -454,7 +454,7 @@
 			],
 			"ac": [
 				{
-					"special": "13加上你智慧调整值"
+					"special": "13加上你感知调整值"
 				}
 			],
 			"hp": {
@@ -530,7 +530,7 @@
 			],
 			"ac": [
 				{
-					"special": "13加上你智慧调整值"
+					"special": "13加上你感知调整值"
 				}
 			],
 			"hp": {
@@ -1574,32 +1574,36 @@
 			],
 			"bonus": [
 				{
-					"name": "Fey Step",
+					"ENG_name": "Fey Step",
+					"name": "精类步",
 					"entries": [
-						"The spirit magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on the spirit's chosen mood:",
+						"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。然后根据灵体选择的心情，发生以下效果之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "Fuming",
+									"ENG_name": "Fuming",
+									"name": "愤怒",
 									"type": "item",
 									"entries": [
-										"The spirit has Advantage on the next attack roll it makes before the end of this turn."
+										"在本回合结束前，灵体下一次进行的攻击检定具有优势。"
 									]
 								},
 								{
-									"name": "Mirthful",
+									"ENG_name": "Mirthful",
+									"name": "欢欣",
 									"type": "item",
 									"entries": [
-										"{@actSave wis} DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. {@actSaveFail} The target is {@condition Charmed|XPHB} by you and the spirit for 1 minute or until the target takes any damage."
+										"{@actSave wis} DC等于你的法术豁免DC，灵体可见范围内10英尺内的一只生物。{@actSaveFail} 目标被你和灵体{@condition 魅惑|XPHB}1分钟，或直到目标受到任何伤害。"
 									]
 								},
 								{
-									"name": "Tricksy",
+									"ENG_name": "Tricksy",
+									"name": "诡诈",
 									"type": "item",
 									"entries": [
-										"The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn."
+										"灵体在其周围5英尺内填充一个10英尺的立方体空间，用魔法黑暗覆盖，直到其下回合结束。"
 									]
 								}
 							]
@@ -1637,9 +1641,10 @@
 					"source": "XPHB",
 					"bonus": [
 						{
-							"name": "Fey Step",
+							"ENG_name": "Fey Step",
+							"name": "精类步",
 							"entries": [
-								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. The spirit has Advantage on the next attack roll it makes before the end of this turn."
+								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。在本回合结束前，灵体下一次进行的攻击检定具有优势。"
 							]
 						}
 					]
@@ -1650,9 +1655,10 @@
 					"source": "XPHB",
 					"bonus": [
 						{
-							"name": "Fey Step",
+							"ENG_name": "Fey Step",
+							"name": "精类步",
 							"entries": [
-								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. {@actSave wis} DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. {@actSaveFail} The target is {@condition Charmed|XPHB} by you and the spirit for 1 minute or until the target takes any damage."
+								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。{@actSave wis} DC等于你的法术豁免DC，灵体可见范围内10英尺内的一只生物。{@actSaveFail} 目标被你和灵体{@condition 魅惑|XPHB}1分钟，或直到目标受到任何伤害。"
 							]
 						}
 					]
@@ -1663,9 +1669,10 @@
 					"source": "XPHB",
 					"bonus": [
 						{
-							"name": "Fey Step",
+							"ENG_name": "Fey Step",
+							"name": "精类步",
 							"entries": [
-								"The spirit magically teleports up to 30 feet to an unoccupied space it can see. The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn."
+								"该灵体可以魔法地传送至它可见的未被占据的空间，距离最多30英尺。灵体在其周围5英尺内填充一个10英尺的立方体空间，用魔法黑暗覆盖，直到其下回合结束。"
 							]
 						}
 					]
@@ -2031,9 +2038,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Venomous Spew (Centipede Only)",
+					"ENG_name": "Venomous Spew (Centipede Only)",
+					"name": "毒液喷溅（仅蜈蚣）",
 					"entries": [
-						"{@actSave con} Your spell save DC, one creature the insect can see within 10 feet. {@actSaveFail} The target has the {@condition Poisoned|XPHB} condition until the start of the insect's next turn."
+						"{@actSave con} 你的法术豁免DC，昆虫可以看到的10英尺内的一只生物。{@actSaveFail} 目标直到昆虫下一回合开始时处于{@condition 中毒|XPHB}状态。"
 					]
 				}
 			],
@@ -2192,21 +2200,24 @@
 			],
 			"bonus": [
 				{
-					"name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
+					"ENG_name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
+					"name": "堕落凝视（仅限恶魔；长休后重置）",
 					"entries": [
-						"{@actSave wis} DC equals your spell save DC, one creature within 60 feet the steed can see. {@actSaveFail} The target has the {@condition Frightened|XPHB} condition until the end of your next turn."
+						"{@actSave wis} DC等于你的法术豁免DC，坐骑可以看到的60英尺内的生物。{@actSaveFail} 目标在你的下一个回合结束前处于{@condition 恐慌|XPHB}状态。"
 					]
 				},
 				{
-					"name": "Fey Step (Fey Only; Recharges after a Long Rest)",
+					"ENG_name": "Fey Step (Fey Only; Recharges after a Long Rest)",
+					"name": "仙灵步（仅限仙灵；长休后重置）",
 					"entries": [
-						"The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself."
+						"这匹坐骑带着它的骑手传送到你选择的未被占据的空间，距离它最多60英尺。"
 					]
 				},
 				{
-					"name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
+					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
+					"name": "治疗之触（仅限天界生物；长休后重置）",
 					"entries": [
-						"One creature within 5 feet of the steed regains a number of Hit Points equal to {@dice 2d8 + summonSpellLevel}."
+						"5英尺内的生物恢复的生命值点数等于{@dice 2d8 + 召唤法术等级}。"
 					]
 				}
 			],
@@ -2234,15 +2245,15 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"Fell Glare (Fiend Only; Recharges after a Long Rest)",
-									"Fey Step (Fey Only; Recharges after a Long Rest)"
+									"堕落凝视（仅限恶魔；长休后重置）",
+									"仙灵步（仅限仙灵；长休后重置）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
-									"with": "Healing Touch (Recharges after a Long Rest)"
+									"rename": "治疗之触（仅限天界生物；长休后重置）",
+									"with": "治愈之触（长休后充能）"
 								}
 							}
 						]
@@ -2272,15 +2283,15 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"Fell Glare (Fiend Only; Recharges after a Long Rest)",
-									"Healing Touch (Celestial Only; Recharges after a Long Rest)"
+									"堕落凝视（仅限恶魔；长休后重置）",
+									"治疗之触（仅限天界生物；长休后重置）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "Fey Step (Fey Only; Recharges after a Long Rest)",
-									"with": "Fey Step (Recharges after a Long Rest)"
+									"rename": "仙灵步（仅限仙灵；长休后重置）",
+									"with": "妖精步伐（长休后充能）"
 								}
 							}
 						]
@@ -2310,15 +2321,15 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"Fey Step (Fey Only; Recharges after a Long Rest)",
-									"Healing Touch (Celestial Only; Recharges after a Long Rest)"
+									"仙灵步（仅限仙灵；长休后重置）",
+									"治疗之触（仅限天界生物；长休后重置）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
-									"with": "Fell Glare (Recharges after a Long Rest)"
+									"rename": "堕落凝视（仅限恶魔；长休后重置）",
+									"with": "凶恶凝视（长休后充能）"
 								}
 							}
 						]

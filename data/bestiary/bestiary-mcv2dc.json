@@ -2,7 +2,7 @@
 	"monster": [
 		{
 			"ENG_name": "Dream Eater",
-			"name": "食梦",
+			"name": "噬梦者",
 			"source": "MCV2DC",
 			"page": 3,
 			"size": [
@@ -70,7 +70,7 @@
 			"trait": [
 				{
 					"ENG_name": "Ghastly Visions",
-					"name": "恐怖幻象",
+					"name": "怖惧幻影",
 					"entries": [
 						"每个在其回合开始时处于梦境吞噬者30尺范围内的生物必须进行一次{@dc 16} 感知豁免检定。豁免失败的生物将直到其下一回合开始时对梦境吞噬者感到{@condition 恐慌}。如果生物的豁免检定成功，该生物在接下来的24小时内对梦境吞噬者的幽灵幻象特性免疫。"
 					]
@@ -100,7 +100,7 @@
 				},
 				{
 					"ENG_name": "Ensnaring Shriek",
-					"name": "缠绕尖叫",
+					"name": "诱捕尖啸",
 					"entries": [
 						"{@atk 近战，远程} {@hit 8} 攻击命中，触及 15 尺或射程 60 尺，一个目标。{@h}12 ({@damage 2d6 + 5}) 点心灵伤害，如果目标是中型或更小的生物，目标必须成功通过一次 {@dc 16} 魅力豁免，否则将被拉向梦境吞噬者最多 15 尺。"
 					]
@@ -108,11 +108,12 @@
 			],
 			"bonus": [
 				{
-					"name": "Engulfing Nightmare",
+					"ENG_name": "Engulfing Nightmare",
+					"name": "吞噬噩梦",
 					"entries": [
-						"The dream eater targets one creature within 5 feet of itself. The target must succeed on a {@dc 16} Wisdom saving throw or be engulfed by the dream eater, as the dream eater envelops the creature in a miasma of its worst fears.",
-						"When the dream eater engulfs a target, the dream eater enters its space, and the target immediately takes 10 ({@damage 3d6}) psychic damage. An engulfed target is {@condition restrained} and {@condition blinded}, and it takes an additional 10 ({@damage 3d6}) psychic damage at the start of each of the dream eater's turns. When the dream eater moves, the engulfed target moves with it.",
-						"The dream eater can have only one target engulfed at a time. An engulfed target escapes at the start of its turn by making a {@dc 16} Wisdom saving throw. On a successful save, the target escapes; the target is no longer engulfed, and it enters a space of its choice within 5 feet of the dream eater. A creature within 15 feet of the dream eater also can use its action to attempt to free an engulfed target. Doing so requires the creature to use its action to make a {@dc 16} Charisma ({@skill Persuasion}) check to convince the engulfed target the nightmare isn't real, with the target escaping on a success. The creature making the check takes 10 ({@damage 3d6}) psychic damage, regardless of the check's success or failure, as its mind brushes against the nightmare."
+						"梦魇吞噬者以它自身5英尺范围内的一个生物为目标。目标必须成功通过一次{@dc 16}的感知豁免，否则将被梦魇吞噬者吞噬，因为梦魇吞噬者将目标包裹在其最深的恐惧所形成的瘴气之中。",
+						"当梦境吞噬者吞没一个目标时，梦境吞噬者进入其空间，目标立即受到10 ({@damage 3d6}) 点心灵伤害。被吞没的目标处于{@condition 束缚}和{@condition 目盲}状态，并在梦境吞噬者的每个回合开始时额外受到10 ({@damage 3d6}) 点心灵伤害。当梦境吞噬者移动时，被吞没的目标也随之移动。",
+						"梦魇吞噬者一次只能吞噬一个目标。被吞噬的目标可以在其回合开始时通过进行一次{@dc 16}感知豁免来逃脱。如果豁免成功，目标逃脱；目标不再被吞噬，并且进入梦魇吞噬者5英尺范围内自选的空间。梦魇吞噬者15英尺范围内的生物也可以使用其动作尝试解救被吞噬的目标。解救需要该生物使用其动作进行一次{@dc 16}魅力（{@skill 游说}）检定，以说服被吞噬的目标噩梦不是真实的，如果检定成功，目标逃脱。无论检定成功与否，进行检定的生物都会受到10（{@damage 3d6}）点心灵伤害，因为它的心灵与噩梦接触。"
 					]
 				}
 			],
@@ -152,7 +153,7 @@
 		},
 		{
 			"ENG_name": "Ember",
-			"name": "余烬",
+			"name": "火烬",
 			"isNamedCreature": true,
 			"source": "MCV2DC",
 			"page": 5,
@@ -220,14 +221,14 @@
 			"trait": [
 				{
 					"ENG_name": "Calescent Aura",
-					"name": "炽热光环",
+					"name": "渐炽灵光",
 					"entries": [
 						"在烬的回合开始时，烬可以强迫在他周围10英尺内的任意数量的生物进行一次{@dc 22}体质豁免检定。若检定失败，生物将受到7（{@damage 2d6}）点火焰伤害，并且在它的下一个回合开始之前{@condition 恐慌}烬。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (5/Day)",
-					"name": "传奇抗性（每日5次）",
+					"name": "传奇抗性（5/日）",
 					"entries": [
 						"如果艾伯未能通过豁免检定，他可以选择成功。"
 					]
@@ -264,7 +265,7 @@
 				},
 				{
 					"ENG_name": "Firestorm Breath {@recharge 5}",
-					"name": "烈焰风暴吐息 {@recharge 5}",
+					"name": "焚风吐息{@recharge 5}",
 					"entries": [
 						"埃姆伯呼出滚滚火焰和灰烬，形成一个90尺长的锥形区域。该区域内的每个生物必须进行一次{@dc 22} 敏捷豁免检定。如果检定失败，生物将受到56 ({@damage 16d6}) 火焰伤害，并被推向埃姆伯远离30尺的距离，同时被击倒为{@condition 倒地}状态。如果检定成功，生物受到的伤害减半，且没有其他效果。如果生物因此效果的命中点数降至0点，生物立即死亡，其身体化为灰烬。"
 					]
@@ -272,9 +273,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Alter Shape",
+					"ENG_name": "Alter Shape",
+					"name": "改变形态",
 					"entries": [
-						"Ember magically transforms into a vulture or a mage and retains his alignment, damage immunities, hit points, and Hit Dice, as well as his Intelligence, Wisdom, and Charisma scores. This transformation ends if Ember is reduced to 0 hit points or if he uses another bonus action to end it."
+						"艾伯通过魔法变身为秃鹫或法师，并保留他的阵营、伤害免疫、生命值和生命骰，以及他的感知、感知和魅力得分。如果艾伯的生命值降至0或如果他使用另一个附赠动作来结束它，这种变身就会结束。"
 					]
 				}
 			],
@@ -288,7 +290,7 @@
 				},
 				{
 					"ENG_name": "Searing Bite (Costs 2 Actions)",
-					"name": "灼热撕咬（消耗2个动作）",
+					"name": "灼烧啃咬（花费2个动作）",
 					"entries": [
 						"埃姆伯进行一次咬击。如果攻击命中，它会造成额外的7 ({@damage 2d6}) 火焰伤害。"
 					]
@@ -334,7 +336,7 @@
 		},
 		{
 			"ENG_name": "Forest Master",
-			"name": "森林主宰",
+			"name": "森林之王",
 			"source": "MCV2DC",
 			"page": 6,
 			"size": [
@@ -427,7 +429,7 @@
 			"trait": [
 				{
 					"ENG_name": "Legendary Resistance (2/Day)",
-					"name": "传奇抗性（每日2次）",
+					"name": "传奇抗性（2/日）",
 					"entries": [
 						"如果森林大师未能通过豁免检定，他可以选择成功。"
 					]
@@ -441,7 +443,7 @@
 				},
 				{
 					"ENG_name": "Master of Beasts",
-					"name": "兽群主宰",
+					"name": "百兽之王",
 					"entries": [
 						"森林大师能够理解并与任何野兽沟通，即使这些野兽不懂任何语言。"
 					]
@@ -464,7 +466,7 @@
 				},
 				{
 					"ENG_name": "Moon Bolt",
-					"name": "月之箭",
+					"name": "月光箭",
 					"entries": [
 						"{@atk rs} 命中{@hit 7}，射程60尺，单一目标。{@h}11 ({@damage 2d6 + 4}) 光耀伤害。"
 					]
@@ -472,10 +474,11 @@
 			],
 			"bonus": [
 				{
-					"name": "Erupting Briars {@recharge 4}",
+					"ENG_name": "Erupting Briars {@recharge 4}",
+					"name": "爆发荆棘 {@recharge 4}",
 					"entries": [
-						"The Forest Master touches his horn to the earth and causes a 5-foot-tall wall of briars to erupt in a 90-foot line that is 10 feet wide. When the wall appears, each creature in its area is pushed into the nearest unoccupied space adjacent to the wall and must make a {@dc 15} Dexterity saving throw, taking 27 ({@damage 6d8}) piercing damage on a failed save or half as much damage on a successful one.",
-						"The wall of briars lasts until the start of the Forest Master's next turn. The wall blocks line of sight and counts as difficult terrain for all creatures except the Forest Master. The first time a creature enters the wall's area on a turn, that creature must succeed on a {@dc 15} Dexterity saving throw or take 13 ({@damage 3d8}) piercing damage."
+						"森林大师将他的角触地，使得一道90尺长、10尺高的荆棘墙在一条线上爆发出来。当墙壁出现时，在其区域内的每个生物都会被推到墙壁旁边最近的未被占据的空间，并且必须进行一次{@dc 15}敏捷豁免检定，如果失败将受到27 ({@damage 6d8}) 点穿刺伤害，如果成功则伤害减半。",
+						"棘墙持续到森林之主的下一个回合开始。棘墙阻挡视线，并且对所有除了森林之主以外的生物都视为困难地形。当一个生物在一个回合中首次进入棘墙区域时，该生物必须成功通过一次{@dc 15}敏捷豁免检定，否则会受到13（{@damage 3d8}）点穿刺伤害。"
 					]
 				}
 			],
@@ -525,7 +528,7 @@
 		},
 		{
 			"ENG_name": "Foresworn",
-			"name": "誓约者",
+			"name": "遗誓者",
 			"source": "MCV2DC",
 			"page": 7,
 			"size": [
@@ -620,7 +623,7 @@
 			"trait": [
 				{
 					"ENG_name": "Duty-Bound",
-					"name": "职责束缚",
+					"name": "使命所缚",
 					"entries": [
 						"先知被束缚于执行它生前承诺的唯一任务。只要这个任务未完成，每当先知被摧毁，它就会在3（{@dice 1d6}）天后在之前的位置重新形成，所有生命值完全恢复。"
 					]
@@ -650,7 +653,7 @@
 				},
 				{
 					"ENG_name": "Spectral Polearm",
-					"name": "幽灵长兵器",
+					"name": "灵体长兵",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及范围 5 尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 力场伤害。"
 					]
@@ -658,9 +661,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Phantasmic Battalion {@recharge 5}",
+					"ENG_name": "Phantasmic Battalion {@recharge 5}",
+					"name": "幻象军团 {@recharge 5}",
 					"entries": [
-						"The foresworn summons a battalion of ghostly soldiers to its aid. The ghostly soldiers fill a 10-foot-cube centered on the foresworn, move with the foresworn when the foresworn moves, and last until the start of the foresworn's next turn. While the ghostly soldiers are present, the area they occupy is considered difficult terrain for all creatures except the foresworn, and the foresworn's reach for melee weapon attacks increases by 10 feet."
+						"先知召唤一群幽灵士兵来助战。这些幽灵士兵填充在先知为中心的10尺立方体内，当先知移动时它们也会随之移动，并持续到先知下个回合开始。当幽灵士兵存在时，它们占据的区域对所有生物（除了先知）来说被视为困难地形，并且先知的近战武器攻击范围增加10尺。"
 					]
 				}
 			],
@@ -699,7 +703,7 @@
 		},
 		{
 			"ENG_name": "Irda Seeker",
-			"name": "伊尔达探索者",
+			"name": "艾达探寻者",
 			"source": "MCV2DC",
 			"page": 8,
 			"size": [
@@ -762,14 +766,14 @@
 				},
 				{
 					"ENG_name": "Augment Physicality (1/Day)",
-					"name": "增强体质（每日1次）",
+					"name": "身体强化（1/日）",
 					"entries": [
 						"持续1分钟，探索者通过魔法增强其身体能力并增大尺寸，它穿戴或携带的任何物品也会随之增大。在增强状态下，探索者体型变为大型，并且在进行力量和敏捷豁免检定时具有优势。如果探索者没有足够的空间变为大型，它将达到可用空间内的最大尺寸。"
 					]
 				},
 				{
 					"ENG_name": "Change Shape (1/Day)",
-					"name": "变形（每日1次）",
+					"name": "变形（1/日）",
 					"entries": [
 						"探索者通过魔法变身，看起来和感觉上像它见过的中型人形生物。探索者穿戴或携带的任何装备不会发生变化，探索者的具体数值也不会改变。如果探索者的生命值降至0或使用动作结束变身，探索者将恢复其真实形态。"
 					]
@@ -777,9 +781,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Veil Walk {@recharge 4}",
+					"ENG_name": "Veil Walk {@recharge 4}",
+					"name": "面纱行走 {@recharge 4}",
 					"entries": [
-						"The seeker, along with any equipment it is wearing or carrying, turns {@condition invisible} and teleports to an unoccupied space it can see within 30 feet of itself. The seeker remains {@condition invisible} until the start of its next turn or until immediately after the seeker makes an attack roll, whichever comes first."
+						"探索者及其携带或穿戴的任何装备变为{@condition 隐形}状态，并传送到自身30尺范围内可见的未被占据的空间。探索者保持{@condition 隐形}状态，直到其下一回合开始或直到探索者立即进行攻击检定，以先到者为准。"
 					]
 				}
 			],
@@ -808,7 +813,7 @@
 		},
 		{
 			"ENG_name": "Irda Veil Keeper",
-			"name": "伊尔达面纱守护者",
+			"name": "艾达幻幕卫士",
 			"source": "MCV2DC",
 			"page": 9,
 			"size": [
@@ -900,21 +905,21 @@
 				},
 				{
 					"ENG_name": "Mirage Flare",
-					"name": "幻象闪光",
+					"name": "幻影焰光",
 					"entries": [
 						"{@atk 近战，远程} 命中{@hit 6}，触及：5尺或60尺，单一目标。{@h}11（{@damage 2d6 + 4}）光耀伤害，目标必须成功进行一次感知豁免检定（{@dc 14}），否则在面纱守护者的下一个回合开始前被{@condition 魅惑}。以这种方式被{@condition 魅惑}的生物处于{@condition 失能}状态，因为它被催眠的幻觉所困扰。"
 					]
 				},
 				{
 					"ENG_name": "Augment Physicality (1/Day)",
-					"name": "增强体质（每日1次）",
+					"name": "身体强化（1/日）",
 					"entries": [
 						"持续1分钟，面纱守护者通过魔法模糊其位置，增强其身体能力，并增大其体型，以及它所穿戴或携带的任何物品。当面纱守护者被增强时，对它的攻击检定处于劣势，它变为大型生物，并且在进行力量和敏捷豁免检定时具有优势。如果面纱守护者没有足够的空间变大，它将达到可用空间内的最大尺寸。如果面纱守护者被{@condition 失能}，这些增强效果将结束。"
 					]
 				},
 				{
 					"ENG_name": "Change Shape (3/Day)",
-					"name": "改变形态（每日3次）",
+					"name": "变形（3/日）",
 					"entries": [
 						"面纱守护者可以通过魔法变换其外观和触感，使其看起来和感觉到像是一个它所见过的中等体型的人形生物。面纱守护者穿戴或携带的任何装备不会被变换，且其具体数值不会改变。如果面纱守护者的命中点数降至0点，或者如果面纱守护者使用动作来结束变形，它将恢复其真实形态。"
 					]
@@ -923,7 +928,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Obscuring Mist",
-					"name": "遮蔽雾",
+					"name": "掩蔽幻雾",
 					"entries": [
 						"如果帷幕守护者可以看到30英尺内的生物被攻击，帷幕守护者会用幻雾环绕该生物，给予该生物{@quickref 掩护||3||半身掩护}，直到帷幕守护者的下一个回合开始。"
 					]
@@ -970,7 +975,7 @@
 		},
 		{
 			"ENG_name": "Nevermind Gnome Inventor",
-			"name": "别在意，侏儒发明家",
+			"name": "别管它山侏儒发明家",
 			"source": "MCV2DC",
 			"page": 10,
 			"size": [
@@ -1025,7 +1030,7 @@
 			"trait": [
 				{
 					"ENG_name": "Always Thinking Ahead",
-					"name": "总是提前思考",
+					"name": "卓识远见",
 					"entries": [
 						"发明家在先攻骰上具有优势。"
 					]
@@ -1048,7 +1053,7 @@
 				},
 				{
 					"ENG_name": "Thunderscream Gadget {@recharge 5}",
-					"name": "雷吼装置 {@recharge 5}",
+					"name": "雷鸣装置{@recharge 5}",
 					"entries": [
 						"发明家制造了一个装置，它在发明家周围30尺的锥形区域内发出刺耳的声波。该区域内的每个生物都必须进行一次体质豁免检定（{@dc 14}），失败则受到10点（{@damage 3d6}）雷鸣伤害，成功则伤害减半。"
 					]
@@ -1095,7 +1100,7 @@
 		},
 		{
 			"ENG_name": "Nevermind Gnome Mastermind",
-			"name": "遗忘侏儒主谋",
+			"name": "别管它山侏儒智囊",
 			"source": "MCV2DC",
 			"page": 11,
 			"size": [
@@ -1152,7 +1157,7 @@
 			"trait": [
 				{
 					"ENG_name": "Always Thinking Ahead",
-					"name": "总是提前思考",
+					"name": "卓识远见",
 					"entries": [
 						"主脑在先攻骰上拥有优势。"
 					]
@@ -1175,7 +1180,7 @@
 				},
 				{
 					"ENG_name": "Clockwork Claw",
-					"name": "发条爪",
+					"name": "机关爪",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及：20尺，单一目标。{@h}11（{@damage 2d6 + 4}）点穿刺伤害，如果目标是中型或更小的生物，则目标被{@condition 擒抱}（逃脱{@dc 15}）。直到这次抓住结束，目标在主谋的每个回合开始时受到10（{@damage 3d6}）点穿刺伤害。主谋有两个爪子，每个爪子只能抓住单一目标。"
 					]
@@ -1189,21 +1194,21 @@
 				},
 				{
 					"ENG_name": "Chattergrab",
-					"name": "喋喋不休的抓手",
+					"name": "嘎吱铁嘴",
 					"entries": [
 						"这个装置的某些部分看起来像咬合的金属牙齿。这个装置急速飞向策划者可以看到的60英尺内的一个生物。该生物必须成功通过一个{@dc 16}的敏捷豁免，否则将受到31点({@damage 7d8})的穿刺伤害，并且在本策划者的下一回合开始前被{@condition 失能}。"
 					]
 				},
 				{
 					"ENG_name": "Phasmoball",
-					"name": "幽魂球",
+					"name": "幻觉烟弹",
 					"entries": [
 						"主谋将这个装置发射到自己视线范围内30尺内的某点，装置在10尺半径的球形区域内释放出一团扭曲心智的气体。每个在球形区域内的生物必须进行一次{@dc 16}感知豁免检定，否则将受到11 ({@damage 2d10}) 点心灵伤害，并在主谋的下一个回合开始前对主谋感到{@condition 恐慌}。"
 					]
 				},
 				{
 					"ENG_name": "Thunderscream",
-					"name": "雷鸣怒吼",
+					"name": "雷鸣尖啸",
 					"entries": [
 						"这个装置在主谋周围30尺的锥形区域内发出刺耳的声波。该区域内的每个生物都必须进行一次体质豁免检定（{@dc 16}），失败则受到21点（{@damage 6d6}）雷鸣伤害，成功则伤害减半。"
 					]
@@ -1248,7 +1253,7 @@
 		},
 		{
 			"ENG_name": "Thanoi Hunter",
-			"name": "索诺伊猎人",
+			"name": "海象人猎手",
 			"source": "MCV2DC",
 			"page": 12,
 			"size": [
@@ -1363,7 +1368,7 @@
 		},
 		{
 			"ENG_name": "Traag Draconian",
-			"name": "拖拉格·德拉科尼亚",
+			"name": "塔戈龙人",
 			"source": "MCV2DC",
 			"page": 13,
 			"size": [
@@ -1453,7 +1458,7 @@
 				},
 				{
 					"ENG_name": "Flaming Carnage {@recharge 5}",
-					"name": "烈焰屠杀 {@recharge 5}",
+					"name": "烈焰蹂躏{@recharge 5}",
 					"entries": [
 						"龙裔沉浸于它的怒火之中，周身环绕着火焰并以它的速度移动。龙裔在此次移动过程中可以进入生物的空间。在此移动期间，当龙裔进入一个生物的空间时，该生物必须进行一次{@dc 14}敏捷豁免。如果豁免失败，该生物将受到22（{@damage 4d10}）点火焰伤害并被击倒{@condition 倒地}。如果豁免成功，该生物将受到一半的伤害并被推离到龙裔路径之外最近的空间。一个生物在每回合中只能受到一次该龙裔的烈焰暴怒的影响。"
 					]
@@ -1462,7 +1467,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Violent Retaliation",
-					"name": "暴力反击",
+					"name": "暴力还击",
 					"entries": [
 						"如果距离龙裔10尺内的生物攻击它，龙裔可以对该生物进行一次爪击攻击。如果爪击攻击命中，它将额外造成4 ({@damage 1d8}) 挥砍伤害。"
 					]
@@ -1502,7 +1507,7 @@
 		},
 		{
 			"ENG_name": "Verminaard",
-			"name": "维尔米纳德",
+			"name": "猛敏那",
 			"isNamedCreature": true,
 			"source": "MCV2DC",
 			"page": 15,
@@ -1595,7 +1600,7 @@
 			"trait": [
 				{
 					"ENG_name": "Draconic Command",
-					"name": "龙族命令",
+					"name": "龙之号令",
 					"entries": [
 						"每当维尔米纳德30尺范围内的龙或者具有龙族奉献特性的生物进行攻击检定时，该生物可以掷一个{@dice d4}骰子，并将掷出的数字加到攻击检定上。"
 					]
@@ -1632,7 +1637,7 @@
 				},
 				{
 					"ENG_name": "Malediction",
-					"name": "诅咒",
+					"name": "恶咒",
 					"entries": [
 						"维米纳尔德低声说出一个亵渎的词语，导致不洁之火降临在他可视范围内的一个生物身上，距离不超过60英尺。该生物必须进行一次{@dc 18}敏捷豁免检定，若豁免失败，则受到11（{@damage 2d10}）点黯蚀伤害加11（{@damage 2d10}）点光耀伤害；若豁免成功，则只受到一半伤害。"
 					]
@@ -1640,9 +1645,10 @@
 			],
 			"bonus": [
 				{
-					"name": "Dragon Queen's Favor (5/Day)",
+					"ENG_name": "Dragon Queen's Favor (5/Day)",
+					"name": "龙后之宠 (每日5次)",
 					"entries": [
-						"Verminaard or one creature he can see within 60 feet of himself magically regains 17 ({@dice 2d12 + 4}) hit points."
+						"维尔米纳德或他60尺内可见的一个生物通过魔法恢复了17点生命值（{@dice 2d12 + 4}）。"
 					]
 				}
 			],
@@ -1656,7 +1662,7 @@
 				},
 				{
 					"ENG_name": "Fervent Strike (Costs 2 Actions)",
-					"name": "热忱打击（消耗2个行动）",
+					"name": "狂热打击（花费2个动作）",
 					"entries": [
 						"维尔米纳德进行一次夜行者攻击。如果这次攻击命中，则额外造成7点（{@damage 2d6}）钝击伤害。"
 					]
