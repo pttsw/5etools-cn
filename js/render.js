@@ -3013,7 +3013,7 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 		}
 
 		if (allAbilities || allAbilitiesWithParent) {
-			ptsLong.push(`${ch.count > 1 ? "不同的 " : ""}${amount}`);
+			ptsLong.push(`${ch.count > 1 ? "个不同的 " : ""}${amount}`);
 			ptsShort.push(amount);
 		} else {
 			const ptAbilsLong = ch.from

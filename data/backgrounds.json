@@ -367,7 +367,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 魔法学徒|XPHB}（牧师）"
 						},
 						{
@@ -379,7 +379,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 书法工具|XPHB}"
 						},
 						{
@@ -1083,7 +1083,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 工匠|XPHB}"
 						},
 						{
@@ -1095,7 +1095,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "选择一种{@item 工匠工具|XPHB}"
 						},
 						{
@@ -1637,7 +1637,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "{@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -1954,7 +1954,7 @@
 						],
 						"s4": [
 							"强迫术",
-							"预言术"
+							"预言"
 						],
 						"s5": [
 							"支配人类"
@@ -2035,7 +2035,7 @@
 								],
 								[
 									"4th",
-									"{@spell 强迫术}, {@spell 预言术}"
+									"{@spell 强迫术}, {@spell 预言}"
 								],
 								[
 									"5th",
@@ -2539,7 +2539,7 @@
 		},
 		{
 			"ENG_name": "Baldur's Gate Folk Hero",
-			"name": "博德之门民间英雄",
+			"name": "博德之门平民英雄",
 			"source": "BGDIA",
 			"page": 204,
 			"additionalSources": [
@@ -2559,7 +2559,7 @@
 						"items": [
 							{
 								"ENG_name": "Baldur's Gate Feature: Social Vengeance",
-								"name": "博德之门特性：社会正义",
+								"name": "博德之门特性：仇视社会",
 								"type": "entries",
 								"entries": [
 									"{@note 博德之门特性的效果只能在角色位于博德之门时使用\u2014尽管，根据DM的判断，它们在类似于博德之门的情况下可能具有适用的效果。}",
@@ -2572,12 +2572,12 @@
 							{
 								"ENG_name": "Folk Hero Origins",
 								"type": "entries",
-								"name": "民间英雄起源",
+								"name": "平民英雄起源",
 								"entries": [
 									"民间英雄可能因各种情况而崛起，或者他们的起源可能是一个秘密，因为他们匿名地进行他们的工作。如果你愿意，你可以在民间英雄起源表上掷骰，以确定一个让你走上英雄之路的事件。",
 									{
 										"type": "table",
-										"caption": "民间英雄起源",
+										"caption": "平民英雄起源",
 										"colLabels": [
 											"d6",
 											"起源"
@@ -2642,7 +2642,7 @@
 						"index": 2,
 						"items": {
 							"ENG_name": "Baldur's Gate Feature: Professional Courtesy",
-							"name": "博德之门特色：专业礼遇",
+							"name": "博德之门特性：专业礼遇",
 							"type": "entries",
 							"entries": [
 								"{@note 博德之门特性的效果只能在角色位于博德之门时使用\u2014尽管，根据DM的判断，它们在类似于博德之门的情况下可能具有适用的效果。}",
@@ -2762,7 +2762,7 @@
 						"replace": "特性：特权地位",
 						"items": {
 							"ENG_name": "Baldur's Gate Feature: Patriar",
-							"name": "博德之门特性：贵族",
+							"name": "博德之门特性：宗贵",
 							"type": "entries",
 							"entries": [
 								"{@note 博德之门特性的效果只能在角色位于博德之门时使用\u2014尽管，根据DM的判断，它们在类似于博德之门的情况下可能具有适用的效果。}",
@@ -2779,7 +2779,7 @@
 		},
 		{
 			"ENG_name": "Baldur's Gate Outlander",
-			"name": "博德之门外来者",
+			"name": "博德之门化外之民",
 			"source": "BGDIA",
 			"page": 204,
 			"additionalSources": [
@@ -2799,7 +2799,7 @@
 						"items": [
 							{
 								"ENG_name": "Baldur's Gate Feature: Immigrant Experience",
-								"name": "博德之门特色：移民体验",
+								"name": "博德之门特性：移民经验",
 								"type": "entries",
 								"entries": [
 									"{@note 博德之门特性的效果只能在角色位于博德之门时使用\u2014尽管，根据DM的判断，它们在类似于博德之门的情况下可能具有适用的效果。}",
@@ -2812,12 +2812,12 @@
 							{
 								"ENG_name": "Outlander Origins",
 								"type": "entries",
-								"name": "外来者起源",
+								"name": "化外之民起源",
 								"entries": [
 									"各种各样的外国人每天都被无数的原因从无数的土地吸引到博德之门。外来者起源表为你的角色如何来到博德之门提供了一些想法。",
 									{
 										"type": "table",
-										"caption": "外来者起源",
+										"caption": "化外之民起源",
 										"colLabels": [
 											"d6",
 											"起源"
@@ -2918,7 +2918,7 @@
 						"index": 2,
 						"items": {
 							"ENG_name": "Baldur's Gate Feature: Smuggler's Sense",
-							"name": "博德之门特性：走私者的直觉",
+							"name": "博德之门特性：走私直觉",
 							"type": "entries",
 							"entries": [
 								"{@note 博德之门特性的效果只能在角色位于博德之门时使用\u2014尽管，根据DM的判断，它们在类似于博德之门的情况下可能具有适用的效果。}",
@@ -2963,7 +2963,7 @@
 									{
 										"ENG_name": "Flaming Fist",
 										"type": "entries",
-										"name": "烈焰之拳",
+										"name": "焰拳",
 										"entries": [
 											"如果你在烈焰之拳服役，每十天你都必须到博德兰的座塔报到进行训练，并且你需要定期轮班巡逻下城或外城。作为回报，你可以进入烈焰之拳的堡垒，并与烈焰之拳的军官和其他士兵直接沟通。你还可以无疑问地通过城市的大门\u2014\u2014尽管作为守望者成员，你不能带客人进入上城。此外，你在三个旧桶酒馆总是受到欢迎，三个旧蟾蜍乐于用微笑和一杯啤酒欢迎你。"
 										]
@@ -3001,7 +3001,7 @@
 		},
 		{
 			"ENG_name": "Baldur's Gate Urchin",
-			"name": "博德之门小乞丐",
+			"name": "博德之门流浪儿",
 			"source": "BGDIA",
 			"page": 204,
 			"additionalSources": [
@@ -3020,7 +3020,7 @@
 						"index": 2,
 						"items": {
 							"ENG_name": "Baldur's Gate Feature: Gateguide Connection",
-							"name": "博德之门特性：门卫联系",
+							"name": "博德之门特性：门卫人脉",
 							"type": "entries",
 							"entries": [
 								"{@note 博德之门特性的效果只能在角色位于博德之门时使用\u2014尽管，根据DM的判断，它们在类似于博德之门的情况下可能具有适用的效果。}",
@@ -3037,7 +3037,7 @@
 		},
 		{
 			"ENG_name": "Black Fist Double Agent",
-			"name": "黑拳双重间谍",
+			"name": "黑拳两面间谍",
 			"source": "ALCurseOfStrahd",
 			"page": 2,
 			"skillProficiencies": [
@@ -3133,7 +3133,7 @@
 				},
 				{
 					"ENG_name": "Feature: Double Agent",
-					"name": "特性：双重间谍",
+					"name": "特性：两面间谍",
 					"type": "entries",
 					"entries": [
 						"你在Phlan的病毒之泪驻军中有一个可靠和值得信赖的联系人，你向他传递信息和秘密。作为交换，你可以在Phlan镇内犯下轻微的犯罪行为而不受惩罚。此外，你的黑拳联系人可以帮助你与摄政王、智者领主、黑拳成员或对Phlan难民和叛乱分子表示同情的被废黜贵族和权威人物进行会面。注意：这个特性是贵族特性的一个变体。"
@@ -3419,7 +3419,7 @@
 				{
 					"ENG_name": "Feature: Legion Station",
 					"type": "entries",
-					"name": "特性：军团驻地",
+					"name": "特性：教团驻地",
 					"entries": [
 						"你在波洛斯教团的等级制度中有一个既定的位置。你可以征用简单装备临时使用，并且你可以进入拉尼卡的任何Boros驻军营地，在这些地方你可以安全休息并接受医疗人员的照顾。你每周还会得到1金币（Boros铸造的1-zino硬币）的薪水，这（加上你在驻军中的免费住宿）使你能够在冒险之间维持贫穷的生活方式。"
 					],
@@ -3762,7 +3762,7 @@
 						{
 							"ENG_name": "Tajic, Blade of the Legion",
 							"type": "inset",
-							"name": "塔吉克，军团之刃",
+							"name": "塔疾克，教团之刃",
 							"entries": [
 								"塔吉克是一位火拳，拥有军团之刃这一崇高的称号，使他的等级仅次于天使。他与奥瑞莉亚保持着密切的沟通，尽管城市中最近的事件使他们产生了分歧。塔吉克相信，波洛斯只能信任波洛斯。他坚信，如果没有公会契约，公会之间的任何和平努力都注定会失败。他认为，波洛斯最好将精力用于增强自己，以便他们能够维持现在存在的脆弱平衡\u2014\u2014并在平衡倾斜时保护无辜者。奥瑞莉亚认为他的消极态度有可能毒害其他波洛斯的心灵，并破坏任何和平努力。大多数情况下，出于对天使的尊重，塔吉克将自己的观点保留。"
 							]
@@ -3824,7 +3824,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "{@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Languages:",
@@ -4671,7 +4671,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 熟习|XPHB}"
 						},
 						{
@@ -4683,7 +4683,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 文书伪造工具|XPHB}"
 						},
 						{
@@ -4963,7 +4963,7 @@
 				{
 					"ENG_name": "Feature: A Favor in Turn",
 					"type": "entries",
-					"name": "特性：互惠的人情",
+					"name": "特性：互惠人情",
 					"page": 182,
 					"entries": [
 						"你在{@book 扣环|TDCSR|2|扣环}中已经获得了足够的影响力，以至于每当你接近一个辛迪加活动中心时，你都可以向你的联系人请求一个帮助。请求帮助的内容不能超过20个字，并将被传递给一个未公开的Spireling以获得批准。这个帮助可以采取任何形式，但须经GM批准，GM决定如何实现它。如果需要力量，一个{@book 扣环|TDCSR|2|扣环}的NPC成员可以临时协助你的队伍。如果需要资金，可以提供一笔小额贷款。如果你被监禁，{@book 扣环|TDCSR|2|扣环}的特工可以研究如何将你解救出来或贿赂狱卒。",
@@ -5986,7 +5986,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 警觉|XPHB}"
 						},
 						{
@@ -5998,7 +5998,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 盗贼工具|XPHB}"
 						},
 						{
@@ -6054,7 +6054,7 @@
 						{
 							"ENG_name": "Languages and Tool Proficiencies:",
 							"type": "item",
-							"name": "语言和工具熟练度：",
+							"name": "语言和工具熟练项：",
 							"entry": "任选两项"
 						},
 						{
@@ -6532,7 +6532,7 @@
 		},
 		{
 			"ENG_name": "Dragon Casualty",
-			"name": "龙类伤亡",
+			"name": "龙之殇",
 			"source": "ALCurseOfStrahd",
 			"page": 3,
 			"skillProficiencies": [
@@ -6669,7 +6669,7 @@
 							"colLabels": [
 								"d8",
 								"起源（职业）",
-								"工具熟练"
+								"工具熟练项"
 							],
 							"colStyles": [
 								"col-1 text-center",
@@ -6680,7 +6680,7 @@
 								[
 									"1",
 									"码头工人/渔夫",
-									"{@filter 水上载具|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=载具(水上)}"
+									"{@filter 水上载具|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上)}"
 								],
 								[
 									"2",
@@ -6690,12 +6690,12 @@
 								[
 									"3",
 									"黑拳士兵",
-									"{@filter 赌具|items|source=PHB|miscellaneous=寻常|type=gaming set} 或 {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+									"{@filter 赌具|items|source=PHB|miscellaneous=寻常|type=gaming set} 或 {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 								],
 								[
 									"4",
 									"冒险者/访客",
-									"{@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+									"{@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 								],
 								[
 									"5",
@@ -6735,7 +6735,7 @@
 				},
 				{
 					"ENG_name": "Disfigurement (Optional)",
-					"name": "残疾（可选）",
+					"name": "畸形（可选）",
 					"type": "entries",
 					"entries": [
 						"除了广泛的疤痕外，你可以选择以下选项之一来代表你的畸形。这种畸形纯粹是外观上的，形状怪异，看起来令人恐惧。",
@@ -6743,7 +6743,7 @@
 							"type": "table",
 							"colLabels": [
 								"d8",
-								"残疾"
+								"畸形"
 							],
 							"colStyles": [
 								"col-1 text-center",
@@ -7608,7 +7608,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 音乐家|XPHB}"
 						},
 						{
@@ -7620,7 +7620,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "选择一种{@item 乐器|XPHB}"
 						},
 						{
@@ -7702,7 +7702,7 @@
 				{
 					"ENG_name": "Faceless Persona",
 					"type": "entries",
-					"name": "无面人格",
+					"name": "无面伪装",
 					"entries": [
 						"一个没有面孔的角色在公共形象的面具下冒险。这种形象对他们来说就像他们隐藏的、真实的面孔一样自然，但它掩盖了他们的身份。在无面人物表上掷骰子以确定你的形象，或者与DM合作创建一个独特的形象，适合你的角色并符合你游戏的基调。",
 						{
@@ -7710,7 +7710,7 @@
 							"caption": "",
 							"colLabels": [
 								"d10",
-								"无面人格"
+								"无面伪装"
 							],
 							"colStyles": [
 								"col-1 text-center",
@@ -8684,7 +8684,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 健壮|XPHB}"
 						},
 						{
@@ -8696,7 +8696,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 木匠工具|XPHB}"
 						},
 						{
@@ -9455,7 +9455,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种 {@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}, {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "一种 {@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}, {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -11394,7 +11394,7 @@
 				{
 					"ENG_name": "Feature: Rubblebelt Refuge",
 					"type": "entries",
-					"name": "特性：废墟带避难所",
+					"name": "特性：瓦砾区避难所",
 					"entries": [
 						"你对城市中大多数人避之不及的地区非常熟悉：巨虫肆虐的废墟社区，数十年无人照料的杂草丛生的公园，以及文明人早已放弃的广阔、蔓延的碎石带。你可以在这些地区为你和你的盟友找到一个合适的藏身或休息的地方。此外，你每天还可以在这些地区为自己和最多五名其他人找到食物和淡水。"
 					],
@@ -11847,7 +11847,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 警觉|XPHB}"
 						},
 						{
@@ -11859,7 +11859,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "选择一种 {@item 赌具|XPHB}"
 						},
 						{
@@ -11978,7 +11978,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 魔法学徒|XPHB} （德鲁伊）"
 						},
 						{
@@ -11990,7 +11990,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 制图工具|XPHB}"
 						},
 						{
@@ -12406,7 +12406,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter vehicles (water)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=载具(水上)}"
+							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter vehicles (water)|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -12434,7 +12434,7 @@
 				},
 				{
 					"ENG_name": "Feature: Harborfolk",
-					"name": "特性：港湾民",
+					"name": "特性：港口居民",
 					"type": "entries",
 					"entries": [
 						"你在穆尔马斯特港的码头和水域长大。港口居民记得你，仍然把你当作他们中的一员。他们欢迎你和你同伴。虽然他们可能会向你收费，但他们总是会提供他们所拥有的食物和住所；如果城市守卫在追捕你，他们甚至会隐藏你（但如果是鹰派就不会）。注意：这个特性是民间英雄特性的一个变体。"
@@ -13435,7 +13435,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 医者|XPHB}"
 						},
 						{
@@ -13447,7 +13447,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 草药工具|XPHB}"
 						},
 						{
@@ -13464,7 +13464,7 @@
 		},
 		{
 			"ENG_name": "Hillsfar Merchant",
-			"name": "希尔斯法商人",
+			"name": "远山城商人",
 			"source": "ALRageOfDemons",
 			"page": 7,
 			"skillProficiencies": [
@@ -13509,7 +13509,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具} 和 {@filter vehicles (water)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=载具(水上)}"
+							"entry": "{@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)} 和 {@filter vehicles (water)|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -13538,7 +13538,7 @@
 				},
 				{
 					"ENG_name": "Feature: Factor",
-					"name": "特性：因素",
+					"name": "特性：代理人",
 					"type": "entries",
 					"entries": [
 						"尽管你已经离开了商人的日常生后，你的家族为你指派了一位忠诚的雇员，可能是一个代理人、畜牧经纪人、航海者、商队护卫或文员。这个人是一个平民，可以为你执行日常任务，如购物、传递信息和跑腿。他或她不会为你战斗，也不会跟随你进入明显危险的地方（如地牢），如果经常处于危险或被虐待，他或她会离开。如果他或她被杀，家族会在几天内为你指派另一个。注意：这个特性是贵族骑士的雇员特性的变体。"
@@ -13549,7 +13549,7 @@
 				},
 				{
 					"ENG_name": "Alternate Feature: Trade Contact",
-					"name": "替代特性：贸易联系人",
+					"name": "替换特性：贸易联系人",
 					"type": "entries",
 					"entries": [
 						"你和你的家族在月海地区以及整个剑海岸线上拥有贸易联系，包括商队首领、店主、水手、工匠和农民。在游戏会话中，当你在这些地区冒险时，你可以利用这些联系来获取有关当地区域的信息，或者向这些地区的某人传递信息，即使这两个地区之间相隔很远。注意：这个特性是犯罪联系和研究者特性的变体。"
@@ -13727,7 +13727,7 @@
 		},
 		{
 			"ENG_name": "Hillsfar Smuggler",
-			"name": "希尔斯法走私者",
+			"name": "远山城走私者",
 			"source": "ALRageOfDemons",
 			"page": 8,
 			"skillProficiencies": [
@@ -14111,7 +14111,7 @@
 						],
 						[
 							"德内斯",
-							"一套{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set} 和 {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"一套{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set} 和 {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						],
 						[
 							"加兰达",
@@ -14127,7 +14127,7 @@
 						],
 						[
 							"利兰达尔",
-							"{@item 领航工具|PHB} 和 {@filter 交通工具（海上和空中）|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=水上交通工具;空中交通工具}"
+							"{@item 领航工具|PHB} 和 {@filter 交通工具（海上和空中）|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上);载具(空中)}"
 						],
 						[
 							"梅达尼",
@@ -14135,7 +14135,7 @@
 						],
 						[
 							"奥里恩",
-							"一套{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set} 和 {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"一套{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set} 和 {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						],
 						[
 							"菲亚兰",
@@ -14155,7 +14155,7 @@
 						],
 						[
 							"瓦达利斯",
-							"{@item herbalism kit|PHB} 和 {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"{@item herbalism kit|PHB} 和 {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						]
 					]
 				},
@@ -14544,7 +14544,7 @@
 		},
 		{
 			"ENG_name": "Initiate",
-			"name": "入门者",
+			"name": "学徒",
 			"source": "PSA",
 			"page": 8,
 			"skillProficiencies": [
@@ -14597,7 +14597,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -14788,12 +14788,12 @@
 		},
 		{
 			"ENG_name": "Initiate (Dissenter)",
-			"name": "新手（异见者）",
+			"name": "学徒（异教徒）",
 			"source": "PSA",
 			"page": 11,
 			"_copy": {
 				"ENG_name": "Initiate",
-				"name": "入门者",
+				"name": "学徒",
 				"source": "PSA",
 				"_mod": {
 					"entries": {
@@ -14801,7 +14801,7 @@
 						"replace": "特性：五神的试炼",
 						"items": {
 							"ENG_name": "Feature: Shelter of Dissenters",
-							"name": "特性：异议者的庇护",
+							"name": "特性：异教徒的庇护",
 							"type": "entries",
 							"entries": [
 								"如果异议者希望有任何生存的希望，无论是隐藏在城市中还是被驱逐到沙漠中，他们必须互相帮助。你可以在其他异议者中找到藏身、休息或恢复的地方。他们会帮助你躲避追捕者，甚至可能冒着生命危险来保护你。"
@@ -14950,7 +14950,7 @@
 				},
 				{
 					"ENG_name": "Feature: Official Inquiry",
-					"name": "特性：官方查询",
+					"name": "特性：官方调查",
 					"type": "entries",
 					"entries": [
 						"你擅长获取进入人员和地点的权限来获取你需要的信息。通过快速说话、决心以及看起来官方的文件，你可以进入与你所调查的犯罪相关的地点或接触到个人。那些没有参与你的调查的人避免阻碍你或传递你的请求。此外，当地执法部门对你有坚定的看法，他们认为你要么是个麻烦，要么是他们中的一员。"
@@ -14961,7 +14961,7 @@
 				},
 				{
 					"ENG_name": "Path to Mystery",
-					"name": "神秘之路",
+					"name": "悬秘之路",
 					"type": "entries",
 					"entries": [
 						"你的第一宗案件影响了你对神秘事件的兴趣类型。为什么这宗案件如此有影响力、个人相关或令人精神创伤？除了你之外，它还影响了谁？你为何以及如何参与其中？它解决了吗？它如何让你走上了调查其他神秘事件的道路？掷骰或从第一宗案件表中选择细节，以发展作为调查员职业生涯开始的神秘事件。",
@@ -15322,7 +15322,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -15350,7 +15350,7 @@
 				},
 				{
 					"ENG_name": "Feature: Black-Market Breeder",
-					"name": "特性：黑市繁殖者",
+					"name": "特性：黑市繁育人",
 					"type": "entries",
 					"entries": [
 						"你知道如何找到那些总是在寻找被盗动物和车辆的人，无论是为了提供给动物角斗场，还是为了在非法工作中为一些绝望的流氓提供更快的逃跑手段。这个联系人不仅为你提供该地区哪些动物和车辆需求高的信息，而且还承诺如果你能带给他们这样的动物和车辆，将会给你提供人情和信息（由DM选择）。注意：这是犯罪联系人特性的一个变体。"
@@ -15597,7 +15597,7 @@
 						],
 						"s4": [
 							"次级元素咒唤术",
-							"预言术",
+							"预言",
 							"欧提路克弹力法球"
 						],
 						"s5": [
@@ -15687,7 +15687,7 @@
 								],
 								[
 									"4th",
-									"{@spell 次级元素咒唤术}, {@spell 预言术}, {@spell 欧提路克弹力法球}"
+									"{@spell 次级元素咒唤术}, {@spell 预言}, {@spell 欧提路克弹力法球}"
 								],
 								[
 									"5th",
@@ -16444,7 +16444,7 @@
 		},
 		{
 			"ENG_name": "Luxonborn (Acolyte)",
-			"name": "卢克森后裔（侍僧）",
+			"name": "拉克桑之子（侍僧）",
 			"source": "EGW",
 			"page": 203,
 			"_copy": {
@@ -16849,7 +16849,7 @@
 		},
 		{
 			"ENG_name": "Marine",
-			"name": "海军",
+			"name": "水手",
 			"source": "GoS",
 			"page": 31,
 			"skillProficiencies": [
@@ -16897,7 +16897,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@filter 水上和陆地载具|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具;水上交通工具}"
+							"entry": "{@filter 水上和陆地载具|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地);载具(水上)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -16921,7 +16921,7 @@
 				{
 					"ENG_name": "Hardship Endured",
 					"type": "entries",
-					"name": "经历的困苦",
+					"name": "困苦经历",
 					"entries": [
 						"你过去的艰难困苦已经将你锻造成一件不可阻挡的活武器。这种艰难对你至关重要，它是你个人哲学或信条的核心，通常指导着你的行为。你可以在下面的表格上掷骰子来确定这种艰难，或者选择最适合你角色的一个。",
 						{
@@ -17186,7 +17186,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -17312,7 +17312,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 幸运|XPHB}"
 						},
 						{
@@ -17324,7 +17324,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 领航工具|XPHB}"
 						},
 						{
@@ -17341,7 +17341,7 @@
 		},
 		{
 			"ENG_name": "Mulmaster Aristocrat",
-			"name": "穆尔马斯特贵族",
+			"name": "穆尔玛斯特贵族",
 			"source": "ALElementalEvil",
 			"page": 5,
 			"skillProficiencies": [
@@ -17599,7 +17599,7 @@
 		},
 		{
 			"ENG_name": "Myriad Operative (Criminal)",
-			"name": "无数行动者（罪犯）",
+			"name": "万象会特工（罪犯）",
 			"source": "EGW",
 			"page": 203,
 			"_copy": {
@@ -17950,7 +17950,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 熟习|XPHB}"
 						},
 						{
@@ -17962,7 +17962,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "选择一种 {@item 赌具|XPHB}"
 						},
 						{
@@ -18780,7 +18780,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种 {@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}, {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "一种 {@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}, {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -19714,7 +19714,7 @@
 				{
 					"ENG_name": "Factions of Sigil",
 					"type": "entries",
-					"name": "西吉尔的派系",
+					"name": "印记城的派系",
 					"entries": [
 						"十二个派系在门户之城崛起并变得突出，尽管还有更多的派系存在。你的角色可能属于这些团体中的一个，或者属于另一个意识形态派系，也许是你自己创造的。",
 						"西吉尔的主要派系，将在第2章中进一步详细说明，遵循以下哲学：",
@@ -19881,15 +19881,15 @@
 				{
 					"ENG_name": "Building a Planar Philosopher Character",
 					"type": "entries",
-					"name": "构建一个位面哲学家角色",
+					"name": "创建一个位面哲学家角色",
 					"entries": [
 						"一些位面哲学家团体可能更倾向于某些类型的人物，但总的来说，任何维护并推动这样一群体现的信仰的人物都是受欢迎的。",
 						{
 							"ENG_name": "Planar Philosopher Trinkets",
 							"type": "entries",
-							"name": "位面哲学家小饰品",
+							"name": "位面哲学家饰品",
 							"entries": [
-								"当你创建角色时，你可以在《撒特拉之门》中的{@item 位面哲学家小饰品|SatO|位面哲学家小饰品}表上掷一次骰子，而不是在《玩家手册}中的{@item 饰品|PHB|饰品}表上，以决定你的起始小饰品。"
+								"当你创建角色时，你可以在《撒特拉之门》中的{@item 位面哲学家小饰品|SatO|位面哲学家饰品}表上掷一次骰子，而不是在《玩家手册}中的{@item 饰品|PHB|饰品}表上，以决定你的起始小饰品。"
 							]
 						}
 					]
@@ -20419,7 +20419,7 @@
 					"expanded": {
 						"s0": [
 							"火焰箭#c",
-							"恶言相向#c"
+							"恶言相加#c"
 						],
 						"s1": [
 							"燃烧之手",
@@ -20479,7 +20479,7 @@
 				{
 					"ENG_name": "A Flair for the Dramatic",
 					"type": "entries",
-					"name": "戏剧性的天赋",
+					"name": "戏剧天赋",
 					"entries": [
 						"拉铎司表演风格通常将标准的马戏团式杂技与火焰、铁制尖刺和钩子以及怪物融合在一起。你可以掷一个{@dice d8}或者从表演选项表中选择，以确定你偏好的表演风格。",
 						{
@@ -20562,7 +20562,7 @@
 							"rows": [
 								[
 									"戏法",
-									"{@spell 火焰箭}, {@spell 恶言相向}"
+									"{@spell 火焰箭}, {@spell 恶言相加}"
 								],
 								[
 									"1st",
@@ -20880,7 +20880,7 @@
 		},
 		{
 			"ENG_name": "Reformed Cultist",
-			"name": "改过自新的邪教徒",
+			"name": "前邪教徒",
 			"source": "TDCSR",
 			"page": 185,
 			"skillProficiencies": [
@@ -21124,7 +21124,7 @@
 		},
 		{
 			"ENG_name": "Revelry Pirate (Sailor)",
-			"name": "狂欢海盗（水手）",
+			"name": "狂欢众（水手）",
 			"source": "EGW",
 			"page": 203,
 			"_copy": {
@@ -21285,7 +21285,7 @@
 				{
 					"ENG_name": "Building a Rewarded Character",
 					"type": "entries",
-					"name": "构建一个奖赏角色",
+					"name": "创建一个受宠者",
 					"entries": [
 						"奖赏角色拥有多样化的历史，但他们有一个共同点：在他们的生活突然好转之前，他们曾经运气不佳。他们可能已经放弃了更幸福生活的所有希望，却突然得到了第二次机会。一个奖赏角色通常花费了很多年努力摆脱痛苦的境遇。现在，从他们前生活的（有时是字面意义上的）监狱中解脱出来，他们将忧虑抛诸脑后，成为了冒险者。",
 						"如果你的角色的生命被一个 {@item 万象无常牌} 所改变，考虑是哪张牌起了作用。也许是命运牌撤销了你角色在年轻时犯下的一个悲剧性错误。宝石牌可能消除了一生积累的债务。贤者牌可能提供了逃离绝望局面所需的建议，星星牌将一个能力值提升到了当前数值，或者在抽到月亮牌后施展的 {@spell 祈愿术} 将你的角色从一个商贩转化为一个被魔法和新知识与技能所灌注的初阶法师。如果你在创建高于1级的角色时，他们所拥有的魔法物品可能是由钥匙牌或太阳牌所赐予的。"
@@ -21294,7 +21294,7 @@
 				{
 					"ENG_name": "Rewarded Trinkets",
 					"type": "entries",
-					"name": "奖励小饰品",
+					"name": "奖赏饰品",
 					"entries": [
 						"当你创建角色时，你可以选择在奖励小饰品表上掷一次骰，而不是在《{@book 玩家手册|PHB}》中的小饰品表上掷骰，以确定你的起始小饰品。",
 						{
@@ -21685,7 +21685,7 @@
 				{
 					"ENG_name": "Feature: Still Standing",
 					"type": "entries",
-					"name": "特性：依然屹立",
+					"name": "特性：百折不挠",
 					"entries": [
 						"你已经经历了毁灭性的不幸，但拥有别人意想不到的潜在力量。你获得 {@feat 警觉}、{@feat 熟习} 或 {@feat 健壮} 专长（任选其一）。你选择的专长反映了你如何处理那场永远改变你生活的巨大损失。如果你时刻保持敏锐，抓住每一丝希望，从而从苦难中爬出，选择警觉。如果你加倍努力以夺回曾经属于你的东西，选择熟练。如果你坚忍地承受了不幸，选择坚韧。"
 					],
@@ -21741,7 +21741,7 @@
 				{
 					"ENG_name": "Building a Ruined Character",
 					"type": "entries",
-					"name": "构建一个毁灭后的角色",
+					"name": "创建一个受难者",
 					"entries": [
 						"遭遇不幸之前，这些角色曾经是世界的主宰。许多人曾经富有。其他人来自普通背景，但他们被朋友、家人和爱人所围绕。他们可能曾经名扬四海，或者从未遇到过严重的困难。有些人天生就有特权，或者通过欺骗或虚假的名声而声名鹊起。现在，一个{@item 万象无常牌}\u2014\u2014或其他灾难\u2014\u2014已经像纸牌屋一样将他们击倒。",
 						"如果你的角色的生活被一件{@item 万象无常牌}所毁，考虑是哪张牌的责任。也许你的角色被地牢或虚空牌囚禁了多年，现在他们认识的每个人都已去世。也许你的角色抽到了叛徒牌，而他们最亲近的人\u2014\u2014配偶、孩子或父母\u2014\u2014转向反对他们。火焰牌释放的魔鬼可能已经摧毁了他们的生活。毁灭或利爪牌可能窃取了角色的物质财富或使他们背负巨额债务。"
@@ -21750,7 +21750,7 @@
 				{
 					"ENG_name": "Ruined Trinkets",
 					"type": "entries",
-					"name": "毁灭后的小饰品",
+					"name": "受难饰品",
 					"entries": [
 						"当你创建角色时，你可以在废墟小饰品表上掷一次骰，而不是在{@book 玩家手册|PHB}中的小饰品表上掷骰。",
 						{
@@ -22385,7 +22385,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 魔法学徒|XPHB} （法师）"
 						},
 						{
@@ -22397,7 +22397,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 书法工具|XPHB}"
 						},
 						{
@@ -22467,7 +22467,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@item 领航工具|PHB}, {@filter vehicles (water)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=载具(水上)}"
+							"entry": "{@item 领航工具|PHB}, {@filter vehicles (water)|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -22750,7 +22750,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 斗殴高手|XPHB}"
 						},
 						{
@@ -22762,7 +22762,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 领航工具|XPHB}"
 						},
 						{
@@ -22875,7 +22875,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 熟习|XPHB}"
 						},
 						{
@@ -22887,7 +22887,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 书法工具|XPHB}"
 						},
 						{
@@ -23267,7 +23267,7 @@
 				{
 					"ENG_name": "Feature: Conclave's Shelter",
 					"type": "entries",
-					"name": "特性：议会的庇护",
+					"name": "特性：盟会庇护",
 					"entries": [
 						"作为瑟雷尼亚盟会的成员，你可以指望你的公会伙伴提供住所和帮助。你和你的同伴可以在城市中任何瑟雷尼亚飞地找到藏身或休息的地方，除非你被证明对他们构成危险。飞地的成员将保护你免受法律或任何其他人的追捕，尽管他们不会为此冒险。",
 						"此外，作为公会成员，你可以在瑟雷尼亚飞地免费接受治疗和护理，尽管你需要为法术提供所需的任何材料成分。"
@@ -23670,7 +23670,7 @@
 							"ENG_name": "Languages:",
 							"type": "item",
 							"name": "语言",
-							"entry": "尼瑟瑞尔"
+							"entry": "耐瑟瑞尔"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -23927,7 +23927,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@item 木匠工具|PHB}, {@filter 水上载具|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=载具(水上)}"
+							"entry": "{@item 木匠工具|PHB}, {@filter 水上载具|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -24487,12 +24487,12 @@
 				{
 					"ENG_name": "Clades and Projects",
 					"type": "entries",
-					"name": "氏族与计划",
+					"name": "分支与项目",
 					"entries": [
 						"作为析米克研究者，你是一群多样化个体的一部分，这些个体结合了不同的才能，追求共同的目标\u2014\u2014或者是一个专注于解决即时需求的短期项目的研究员。你可以掷一个{@dice d6}骰子，或从研究选项表中选择来确定你的研究领域。",
 						{
 							"type": "table",
-							"caption": "研究选项",
+							"caption": "调查选项",
 							"colLabels": [
 								"d6",
 								"克拉德/项目"
@@ -24933,7 +24933,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@filter 水上载具|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=载具(水上)}"
+							"entry": "{@filter 水上载具|items|source=phb;dmg|miscellaneous=寻常|type=载具(水上)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -25234,7 +25234,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter vehicles (land)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=陆地交通工具}"
+							"entry": "一种{@filter gaming set|items|source=PHB|miscellaneous=寻常|type=gaming set}, {@filter 载具(陆地)|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}"
 						},
 						{
 							"ENG_name": "Equipment:",
@@ -25580,7 +25580,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 凶蛮打手|XPHB}"
 						},
 						{
@@ -25592,7 +25592,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "选择一种 {@item 赌具|XPHB}"
 						},
 						{
@@ -26212,7 +26212,7 @@
 				},
 				{
 					"ENG_name": "Feature: Investigative Services",
-					"name": "特性：侦查服务",
+					"name": "特性：侦查事业",
 					"type": "entries",
 					"entries": [
 						"你是希尔斯法外部一小支力量的一部分。你有一种与他人沟通的特殊方式，他们似乎在你身边感到自在。你可以动用你的职位让你进入犯罪现场，或者临时征用设备或马匹。当你进入希尔斯法周围的城镇或村庄时，你可以找到一个联系人，他会向你提供当地谣言的信息，并愿意帮助你，仅仅是因为你渴望为任何想要破坏贸易的人获取答案和信息。注意：这个特性是士兵特性的一个变体。"
@@ -27506,7 +27506,7 @@
 						"replace": "特性：权威之音",
 						"items": {
 							"ENG_name": "Feature: Shelter of Dissenters",
-							"name": "特性：异议者的庇护",
+							"name": "特性：异教徒的庇护",
 							"type": "entries",
 							"entries": [
 								"如果异议者希望有任何生存的希望，无论是隐藏在城市中还是被驱逐到沙漠中，他们必须互相帮助。你可以在其他异议者中找到藏身、休息或恢复的地方。他们会帮助你躲避追捕者，甚至可能冒着生命危险来保护你。"
@@ -27955,7 +27955,7 @@
 						{
 							"ENG_name": "Feat:",
 							"type": "item",
-							"name": "特长：",
+							"name": "专长：",
 							"entry": "{@feat 幸运|XPHB}"
 						},
 						{
@@ -27967,7 +27967,7 @@
 						{
 							"ENG_name": "Tool Proficiency:",
 							"type": "item",
-							"name": "工具熟练度：",
+							"name": "工具熟练项：",
 							"entry": "{@item 盗贼工具|XPHB}"
 						},
 						{
@@ -28043,7 +28043,7 @@
 							"ENG_name": "Weapon Proficiencies:",
 							"type": "item",
 							"name": "武器熟练度：",
-							"entry": "{@filter 枪械|items|source=零|type=火器}"
+							"entry": "{@filter 枪械|items|source=null|type=枪械}"
 						},
 						{
 							"ENG_name": "Languages:",
@@ -28353,7 +28353,7 @@
 							"ENG_name": "Tool Proficiencies:",
 							"type": "item",
 							"name": "工具熟练",
-							"entry": "{@item 领航工具|PHB}, {@filter vehicles (space)|items|source=玩家手册；伤害手册|miscellaneous=寻常|type=太空载具}"
+							"entry": "{@item 领航工具|PHB}, {@filter vehicles (space)|items|source=phb;dmg|miscellaneous=寻常|type=载具(太空)}"
 						},
 						{
 							"ENG_name": "Equipment:",
