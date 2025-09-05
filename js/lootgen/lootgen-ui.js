@@ -146,7 +146,7 @@ export class LootGenUi extends BaseComponent {
 		const tablesMagicItemsXdmg = await [I18nUtil.get("page.lootgen.arcana"), I18nUtil.get("page.lootgen.armaments"), I18nUtil.get("page.lootgen.implements"), I18nUtil.get("page.lootgen.relics")]
 			.flatMap(theme => {
 				// return ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"]
-				// return ["常见", "罕见", "稀有", "非常稀有", "传说"]
+				// return ["普通", "非普通", "稀有", "非常稀有", "传说"]
 				return [I18nUtil.get("page.lootgen.common"), 
 					I18nUtil.get("page.lootgen.uncommon"),
 					I18nUtil.get("page.lootgen.rare"),
