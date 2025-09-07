@@ -2039,7 +2039,7 @@
 			"bonus": [
 				{
 					"ENG_name": "Venomous Spew (Centipede Only)",
-					"name": "毒液喷溅（仅蜈蚣）",
+					"name": "剧毒喷涌（仅蜈蚣）",
 					"entries": [
 						"{@actSave con} 你的法术豁免DC，昆虫可以看到的10英尺内的一只生物。{@actSaveFail} 目标直到昆虫下一回合开始时处于{@condition 中毒|XPHB}状态。"
 					]
@@ -2201,21 +2201,21 @@
 			"bonus": [
 				{
 					"ENG_name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
-					"name": "堕落凝视（仅限恶魔；长休后重置）",
+					"name": "堕落凝视（仅限邪魔，长休充能）",
 					"entries": [
 						"{@actSave wis} DC等于你的法术豁免DC，坐骑可以看到的60英尺内的生物。{@actSaveFail} 目标在你的下一个回合结束前处于{@condition 恐慌|XPHB}状态。"
 					]
 				},
 				{
 					"ENG_name": "Fey Step (Fey Only; Recharges after a Long Rest)",
-					"name": "仙灵步（仅限仙灵；长休后重置）",
+					"name": "妖精步伐（仅限妖精，长休充能）",
 					"entries": [
 						"这匹坐骑带着它的骑手传送到你选择的未被占据的空间，距离它最多60英尺。"
 					]
 				},
 				{
 					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
-					"name": "治疗之触（仅限天界生物；长休后重置）",
+					"name": "治愈之触（仅限天族，长休充能）",
 					"entries": [
 						"5英尺内的生物恢复的生命值点数等于{@dice 2d8 + 召唤法术等级}。"
 					]
@@ -2245,14 +2245,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"堕落凝视（仅限恶魔；长休后重置）",
-									"仙灵步（仅限仙灵；长休后重置）"
+									"堕落凝视（仅限邪魔，长休充能）",
+									"妖精步伐（仅限妖精，长休充能）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "治疗之触（仅限天界生物；长休后重置）",
+									"rename": "治愈之触（仅限天族，长休充能）",
 									"with": "治愈之触（长休后充能）"
 								}
 							}
@@ -2283,14 +2283,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"堕落凝视（仅限恶魔；长休后重置）",
-									"治疗之触（仅限天界生物；长休后重置）"
+									"堕落凝视（仅限邪魔，长休充能）",
+									"治愈之触（仅限天族，长休充能）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "仙灵步（仅限仙灵；长休后重置）",
+									"rename": "妖精步伐（仅限妖精，长休充能）",
 									"with": "妖精步伐（长休后充能）"
 								}
 							}
@@ -2321,14 +2321,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"仙灵步（仅限仙灵；长休后重置）",
-									"治疗之触（仅限天界生物；长休后重置）"
+									"妖精步伐（仅限妖精，长休充能）",
+									"治愈之触（仅限天族，长休充能）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "堕落凝视（仅限恶魔；长休后重置）",
+									"rename": "堕落凝视（仅限邪魔，长休充能）",
 									"with": "凶恶凝视（长休后充能）"
 								}
 							}

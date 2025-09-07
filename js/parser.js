@@ -2229,7 +2229,7 @@ Parser.prereqPatronToShort = function (patron) {
 };
 
 Parser.FEAT_CATEGORY_TO_FULL = {
-	"D": "Dragonmark",
+	"D": "龙纹",
 	"G": "通用",
 	"O": "起源",
 	"FS": "战斗风格",

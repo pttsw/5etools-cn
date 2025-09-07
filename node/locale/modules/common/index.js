@@ -37,6 +37,8 @@ const common = transferLangConfig({
   "saving_throws":["豁免骰","豁免骰","Saving Throws"],
   "saving_throw":["豁免骰","豁免骰","Saving Throw"],
 
+  "campaign": ["战役", "战役", "Campaign"],
+
 
 })
 

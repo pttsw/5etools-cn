@@ -4248,7 +4248,7 @@ Renderer.utils = class {
 		static _getHtml_campaign ({v, isListMode}) {
 			return isListMode
 				? v.join("/")
-				: `${v.joinConjunct(", ", " 或 ")} Campaign`;
+				: `${v.joinConjunct(", ", " 或 ")} ${I18nUtil.get("common.campaign")}`;
 		}
 
 		static _getHtml_culture ({v, isListMode}) {
@@ -13862,8 +13862,8 @@ Renderer.charoption = class {
 	}
 
 	static _OPTION_TYPE_ENTRIES = {
-		"RF:B": `{@note You may replace the standard feature of your background with this feature.}`,
-		"CS": `{@note See the {@adventure Character Secrets|IDRotF|0|character secrets} section for more information.}`,
+		"RF:B": I18nUtil.LANGUAGES_INDEX == "zh_CN" ? `{@note 你可以用此特性来替换背景中的标准特性。}` : `{@note You may replace the standard feature of your background with this feature.}`,
+		"CS": I18nUtil.LANGUAGES_INDEX == "zh_CN" ? `{@note 参阅{@adventure 角色秘密|IDRotF|0|角色秘密}章节。}` : `{@note See the {@adventure Character Secrets|IDRotF|0|character secrets} section for more information.}`,
 	};
 
 	static getOptionTypePreText (ent) {
