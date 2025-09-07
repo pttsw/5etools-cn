@@ -997,8 +997,8 @@
 						"mode": "appendArr",
 						"items": {
 							"ENG_name": "Tied Down",
-							"type": "entries",
 							"name": "被束缚",
+							"type": "entries",
 							"entries": [
 								"当被绑在地上时，生物处于{@condition 倒地}状态且{@condition 束缚}。它还遭受了两级的{@condition 力竭}。"
 							]
@@ -1529,7 +1529,7 @@
 							"ENG_name": "Summon Demon (1/Day)",
 							"name": "召唤恶魔 (1/日)",
 							"entries": [
-								"Drivvin 通过魔法召唤一个{@filter 挑战等级6或以下的恶魔|怪物图鉴|challenge rating=[&0;&6]|tag=恶魔|miscellaneous=!swarm}。召唤的恶魔出现在他60尺范围内的未被占据的空间内，作为他的盟友行动，并且不能召唤其他恶魔。召唤的恶魔会一直存在，直到 Drivvin 通过一个动作将其解散，或者直到恶魔的生命值降至0点。"
+								"Drivvin 通过魔法召唤一个{@filter 挑战等级6或以下的恶魔|bestiary|challenge rating=[&0;&6]|tag=恶魔|miscellaneous=!swarm}。召唤的恶魔出现在他60尺范围内的未被占据的空间内，作为他的盟友行动，并且不能召唤其他恶魔。召唤的恶魔会一直存在，直到 Drivvin 通过一个动作将其解散，或者直到恶魔的生命值降至0点。"
 							]
 						}
 					}
@@ -2978,7 +2978,7 @@
 							"ENG_name": "Children of the Night (1/Day)",
 							"name": "夜之子 (1/日)",
 							"entries": [
-								"吸血鬼通过魔法召唤{@dice 2d4}群的{@creature 蝙蝠群||蝙蝠}或{@creature 鼠群||老鼠}，前提是太阳还未升起。在户外时，吸血鬼可以召唤{@dice 3d6}只{@creature 巨蜈蚣||巨型蜈蚣}代替。召唤的生物在{@dice 1d4}回合内到达，作为吸血鬼的盟友并服从其口头命令。这些野兽会持续存在1小时，直到吸血鬼死亡，或直到吸血鬼作为附赠动作将其解散。"
+								"吸血鬼通过魔法召唤{@dice 2d4}群的{@creature 蝙蝠群||蝙蝠}或{@creature 鼠群||老鼠}，前提是太阳还未升起。在户外时，吸血鬼可以召唤{@dice 3d6}只{@creature 巨蜈蚣||巨蜈蚣}代替。召唤的生物在{@dice 1d4}回合内到达，作为吸血鬼的盟友并服从其口头命令。这些野兽会持续存在1小时，直到吸血鬼死亡，或直到吸血鬼作为附赠动作将其解散。"
 							]
 						}
 					}
@@ -2997,7 +2997,7 @@
 							"spells": [
 								"{@spell 神导术}",
 								"{@spell 修复术}",
-								"{@spell 提升抗性}",
+								"{@spell 抵抗术}",
 								"{@spell 奇术}"
 							]
 						},
@@ -3435,7 +3435,7 @@
 			"int": 9,
 			"cha": 9,
 			"languages": [
-				"懂得深渊语",
+				"懂深渊语",
 				"天界生物",
 				"通用语",
 				"龙族血脉",
@@ -3468,7 +3468,7 @@
 			"page": 96,
 			"_copy": {
 				"ENG_name": "Homunculus",
-				"name": "造妖",
+				"name": "人工生命体",
 				"source": "MM",
 				"_mod": {
 					"action": {
@@ -3683,7 +3683,7 @@
 			"page": 77,
 			"_copy": {
 				"ENG_name": "Werebat",
-				"name": "狼蝙蝠",
+				"name": "蝙蝠人",
 				"source": "WDMM",
 				"_mod": {
 					"*": {
@@ -3983,29 +3983,29 @@
 									"items": [
 										{
 											"ENG_name": "1. Paralyzing Ray",
-											"type": "item",
 											"name": "1. 麻痹射线",
+											"type": "item",
 											"style": "italic",
 											"entry": "目标必须进行一次{@dc 14}的体质豁免，豁免失败者将{@condition 麻痹}1分钟。该目标可以在每个其自己回合结束时再次进行该豁免，豁免成功则终止该效应。"
 										},
 										{
 											"ENG_name": "2. Fear Ray",
-											"type": "item",
 											"name": "2. 恐惧射线",
+											"type": "item",
 											"style": "italic",
 											"entry": "目标必须进行一次{@dc 14}的感知豁免，豁免失败者将陷入{@condition 恐慌}1分钟。该目标可以在每个其自己回合结束时再次进行该豁免，豁免成功则终止该效应。"
 										},
 										{
 											"ENG_name": "3. Enervation Ray",
-											"type": "item",
 											"name": "3. 弱能射线",
+											"type": "item",
 											"style": "italic",
 											"entry": "目标必须进行一次{@dc 14}的体质豁免，豁免失败者将受到36（{@damage 8d8}）点黯蚀伤害，豁免成功则伤害减半。"
 										},
 										{
 											"ENG_name": "4. Telekinetic Ray",
-											"type": "item",
 											"name": "4. 心灵遥控射线",
+											"type": "item",
 											"style": "italic",
 											"entry": "如果目标是一个生物，它必须成功通过一次 {@dc 14} 力量豁免检定，否则僵尸将它在任意方向上移动最多30英尺。它会被射线的念力束缚，直到僵尸的下个回合开始或僵尸无法行动为止。如果目标是一个重量不超过300磅且未被穿戴或携带的物体，它会被在任意方向上移动最多30英尺。僵尸还可以通过这条射线对物体进行精细控制，例如操纵一个简单的工具或打开一扇门或容器。"
 										}
@@ -4310,7 +4310,7 @@
 							"mode": "appendArr",
 							"items": {
 								"ENG_name": "Shadowfell Despair",
-								"name": "影界绝望",
+								"name": "堕影绝望",
 								"entries": [
 									"波西亚遭受着影界绝望的折磨，表现为无法动摇的恐惧。在绝望结束之前，她在所有豁免检定上都具有劣势，并获得以下缺陷：\"我确信我会在凡拉克末日中死去。\" 波西亚每次完成长休后都可以尝试结束她的绝望，这需要通过一次 {@dc 15} 的感知豁免检定。一个 {@spell 安定心神} 的法术也可以结束她的绝望，任何能够移除诅咒的法术或其他魔法效果同样有效。"
 								]
@@ -4382,14 +4382,14 @@
 							"items": [
 								{
 									"ENG_name": "Fear Ray",
-									"type": "item",
 									"name": "恐惧射线",
+									"type": "item",
 									"entry": "目标必须成功通过一次{@dc 15}感知豁免检定，否则将被{@condition 恐慌}状态影响1分钟。目标可以在每个回合结束时重复进行豁免检定，成功则结束自身的效果。"
 								},
 								{
 									"ENG_name": "Paralyzing Ray",
-									"type": "item",
 									"name": "麻痹射线",
+									"type": "item",
 									"entry": "目标必须成功进行一次{@dc 15}体质豁免检定，否则将被{@condition 麻痹}1分钟。目标可以在每个回合结束时重复进行豁免检定，成功则结束自身的效果。"
 								}
 							]
@@ -5038,14 +5038,14 @@
 									"items": [
 										{
 											"ENG_name": "Acid Breath",
-											"type": "item",
 											"name": "强酸吐息",
+											"type": "item",
 											"entry": "龙在一条60英尺长、5英尺宽的直线上吐出酸液。该直线上的每个生物必须进行一次{@dc 18}的敏捷豁免，豁免失败时受到58点（{@damage 13d8}）的酸液伤害，豁免成功则只受到一半伤害。"
 										},
 										{
 											"ENG_name": "Paralyzing Breath",
-											"type": "item",
 											"name": "麻痹吐息",
+											"type": "item",
 											"entry": "龙呼出麻痹毒气并覆盖30尺的锥状区域。该区域内的每个生物都必须进行一次{@dc 20}的体质豁免，豁免失败者将陷入持续1分钟的{@condition 麻痹}状态。该生物可以在每次其自己回合结束时再进行一次该豁免，豁免成功则终止其身上的该效应。"
 										}
 									]
@@ -5129,7 +5129,7 @@
 			"int": 9,
 			"cha": 9,
 			"languages": [
-				"懂得深渊语",
+				"懂深渊语",
 				"天界生物",
 				"通用语",
 				"龙族血脉",
@@ -5767,7 +5767,7 @@
 		},
 		{
 			"ENG_name": "Werebat",
-			"name": "狼蝙蝠",
+			"name": "蝙蝠人",
 			"group": [
 				"Lycanthropes"
 			],
@@ -5940,12 +5940,12 @@
 			"page": 84,
 			"_copy": {
 				"ENG_name": "Mule",
-				"name": "骡",
+				"name": "骡子",
 				"source": "MM",
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
-						"replace": "骡",
+						"replace": "骡子",
 						"with": "驴",
 						"flags": "i"
 					}
@@ -6215,26 +6215,26 @@
 							"items": [
 								{
 									"ENG_name": "Forbiddance",
-									"type": "itemSub",
 									"name": "禁制术",
+									"type": "itemSub",
 									"entry": "佐拉克未经居住者的邀请无法进入住所。"
 								},
 								{
 									"ENG_name": "Harmed by Running Water",
-									"type": "itemSub",
 									"name": "被流动的水伤害",
+									"type": "itemSub",
 									"entry": "若佐拉克在其回合结束时身处流水中，将受到20点强酸伤害。"
 								},
 								{
 									"ENG_name": "Stake to the Heart",
-									"type": "itemSub",
 									"name": "桩刺",
+									"type": "itemSub",
 									"entry": "如果一把木制的穿刺武器在佐拉克于其休息处处于{@condition 失能}状态时被刺入其心脏，佐拉克将保持{@condition 麻痹}状态直至木桩被移除。"
 								},
 								{
 									"ENG_name": "Sunlight Hypersensitivity",
-									"type": "itemSub",
 									"name": "日照过敏",
+									"type": "itemSub",
 									"entry": "佐拉克在阳光下开始其回合时受到20点光耀伤害。在阳光下，其攻击检定和属性检定具有劣势"
 								}
 							]

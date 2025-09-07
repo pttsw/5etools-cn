@@ -1042,7 +1042,7 @@
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"identifier": "优越性",
+						"identifier": "优越",
 						"type": "dice",
 						"scale": {
 							"3": {
@@ -1287,43 +1287,6 @@
 						}
 					},
 					"title": "恐怖打击伤害"
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Path of the Zealot",
-			"name": "狂热者道途",
-			"shortName": "狂热者",
-			"source": "XPHB",
-			"className": "野蛮人",
-			"classSource": "XPHB",
-			"advancement": [
-				{
-					"type": "ScaleValue",
-					"configuration": {
-						"identifier": "水池",
-						"type": "dice",
-						"scale": {
-							"3": {
-								"number": 4,
-								"faces": 12
-							},
-							"6": {
-								"number": 5,
-								"faces": 12
-							},
-							"12": {
-								"number": 6,
-								"faces": 12
-							},
-							"17": {
-								"number": 7,
-								"faces": 12
-							}
-						}
-					},
-					"title": "众神战士：池大小"
 				}
 			],
 			"migrationVersion": 3
@@ -1717,8 +1680,8 @@
 						"foundryActivities": [
 							{
 								"ENG_name": "Monk Attack",
-								"foundryId": "martialArts",
 								"name": "武僧攻击",
+								"foundryId": "martialArts",
 								"type": "attack",
 								"activation": {
 									"type": "action",
@@ -2600,8 +2563,8 @@
 			"effects": [
 				{
 					"ENG_name": "Hamstrung",
-					"foundryId": "brutalStrike",
 					"name": "断筋猛击",
+					"foundryId": "brutalStrike",
 					"duration": {
 						"turns": 1
 					},
@@ -2733,8 +2696,8 @@
 			"effects": [
 				{
 					"ENG_name": "Staggered",
-					"foundryId": "improvedBrutalS1",
 					"name": "震撼猛击",
+					"foundryId": "improvedBrutalS1",
 					"duration": {
 						"turns": 1
 					},
@@ -2742,8 +2705,8 @@
 				},
 				{
 					"ENG_name": "Sundered",
-					"foundryId": "improvedBrutalSt",
 					"name": "破势猛击",
+					"foundryId": "improvedBrutalSt",
 					"duration": {
 						"turns": 1
 					},
@@ -2851,8 +2814,8 @@
 					},
 					"roll": {
 						"ENG_name": "Bardic Inspiration",
-						"formula": "@scale.bard.inspiration",
 						"name": "诗人激励",
+						"formula": "@scale.bard.inspiration",
 						"visible": true
 					},
 					"effects": [
@@ -2865,8 +2828,8 @@
 			"effects": [
 				{
 					"ENG_name": "Inspired",
-					"foundryId": "bardicInspiratio",
 					"name": "梦启者",
+					"foundryId": "bardicInspiratio",
 					"duration": {
 						"seconds": 3600
 					},
@@ -3137,11 +3100,14 @@
 						"value": "30"
 					},
 					"healing": {
-						"number": 1,
 						"denomination": 8,
 						"types": [
 							"治疗"
 						],
+						"custom": {
+							"enabled": true,
+							"formula": "(@scale.divine-spark.spark)d8 + @abilities.wis.mod"
+						},
 						"scaling": {
 							"number": 1
 						},
@@ -3181,6 +3147,10 @@
 					"damage": {
 						"parts": [
 							{
+								"custom": {
+									"enabled": true,
+									"formula": "(@scale.divine-spark.spark)d8 + @abilities.wis.mod"
+								},
 								"number": 1,
 								"denomination": 8,
 								"bonus": "@abilities.wis.mod",
@@ -3202,6 +3172,30 @@
 					}
 				}
 			],
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"title": "神圣火花骰数",
+					"configuration": {
+						"identifier": "火花",
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 1
+							},
+							"7": {
+								"value": 2
+							},
+							"13": {
+								"value": 3
+							},
+							"18": {
+								"value": 4
+							}
+						}
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -3215,7 +3209,7 @@
 				{
 					"ENG_name": "Turn Undead",
 					"name": "驱散亡灵",
-					"type": "utility",
+					"type": "save",
 					"activation": {
 						"type": "action"
 					},
@@ -3242,6 +3236,17 @@
 						"units": "ft",
 						"value": "30"
 					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"calculation": "施法"
+						}
+					},
 					"effects": [
 						{
 							"foundryId": "turnUndead"
@@ -3252,15 +3257,16 @@
 			"effects": [
 				{
 					"ENG_name": "Turned",
-					"foundryId": "turnUndead",
 					"name": "转变",
+					"foundryId": "turnUndead",
 					"duration": {
 						"seconds": 60
 					},
 					"statuses": [
 						"恐慌",
 						"失能"
-					]
+					],
+					"description": "在那段持续时间内，它会试图在自己的回合内尽可能远离你。如果该生物受到任何伤害、你处于失能状态或你死亡，则此效果提前结束。"
 				}
 			],
 			"migrationVersion": 3
@@ -3337,8 +3343,8 @@
 			"effects": [
 				{
 					"ENG_name": "Turn Undead",
-					"foundryId": "searUndead",
 					"name": "驱散亡灵",
+					"foundryId": "searUndead",
 					"duration": {
 						"seconds": 60
 					},
@@ -4054,8 +4060,8 @@
 					},
 					"roll": {
 						"ENG_name": "Bonus",
-						"formula": "1d10",
-						"name": "附赠动作"
+						"name": "附赠动作",
+						"formula": "1d10"
 					}
 				}
 			],
@@ -4213,6 +4219,7 @@
 					},
 					"target": {
 						"affects": {
+							"count": "1",
 							"type": "object"
 						}
 					},
@@ -4238,122 +4245,58 @@
 							}
 						}
 					]
-				},
-				{
-					"ENG_name": "Monk Attack",
-					"foundryId": "martialArts",
-					"name": "武僧攻击",
-					"type": "attack",
-					"activation": {
-						"type": "action",
-						"value": 1
-					},
-					"target": {
-						"affects": {
-							"count": "1",
-							"type": "creature"
-						}
-					},
-					"range": {
-						"value": "5",
-						"units": "ft"
-					},
-					"attack": {
-						"ability": "dex",
-						"type": {
-							"value": "melee",
-							"classification": "weapon"
-						}
-					},
-					"damage": {
-						"parts": [
-							{
-								"custom": {
-									"enabled": true,
-									"formula": "@scale.monk.die + @mod"
-								}
-							}
-						]
-					}
 				}
 			],
 			"effects": [
 				{
+					"ENG_name": "Dexterous Attacks & Martial Arts Damage",
+					"name": "敏捷攻击与武艺伤害",
 					"foundryId": "martialArts",
 					"type": "enchantment",
 					"disabled": true,
-					"transfer": true
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.properties",
+							"mode": "ADD",
+							"value": "fin"
+						},
+						{
+							"key": "system.damage.base.custom.enabled",
+							"mode": "OVERRIDE",
+							"value": true
+						},
+						{
+							"key": "system.damage.base.custom.formula",
+							"mode": "OVERRIDE",
+							"value": "@scale.monk.die + @mod"
+						},
+						{
+							"key": "name",
+							"mode": "OVERRIDE",
+							"value": "{} (Martial Arts)"
+						}
+					],
+					"descriptionEntries": [
+						{
+							"ENG_name": "Martial Arts Die",
+							"name": "武艺骰",
+							"type": "entries",
+							"entries": [
+								"你可以投掷[[lookup @scale.monk.die]]来代替你的徒手打击或武僧武器的正常伤害。这个骰子会随着你获得武僧等级而变化，如武僧特性表格中的武艺栏所示。"
+							]
+						},
+						{
+							"ENG_name": "Dexterous Attacks",
+							"name": "敏捷攻击",
+							"type": "entries",
+							"entries": [
+								"你可以使用敏捷调整值代替力量调整值来进行徒手打击和武僧武器的攻击检定和伤害掷骰。此外，当你使用徒手打击的擒抱或推撞选项时，你可以使用敏捷调整值代替力量调整值来决定豁免DC。"
+							]
+						}
+					]
 				}
 			],
-			"subEntities": {
-				"item": [
-					{
-						"ENG_name": "Unarmed Strike (Monk)",
-						"name": "徒手打击（武僧）",
-						"source": "XPHB",
-						"page": 100,
-						"srd52": true,
-						"type": "M",
-						"rarity": "none",
-						"weaponCategory": "简易",
-						"entries": [
-							{
-								"type": "quote",
-								"entries": [
-									"连烤鸡都能拴住。"
-								],
-								"by": "Yamamoto Tsunetomo",
-								"from": "Hagakure Kikigaki"
-							}
-						],
-						"foundrySystem": {
-							"equipped": true
-						},
-						"foundryActivities": [
-							{
-								"ENG_name": "Monk Attack",
-								"foundryId": "martialArts",
-								"name": "武僧攻击",
-								"type": "attack",
-								"activation": {
-									"type": "action",
-									"value": 1
-								},
-								"target": {
-									"affects": {
-										"count": "1",
-										"type": "creature"
-									}
-								},
-								"range": {
-									"value": "5",
-									"units": "ft"
-								},
-								"attack": {
-									"ability": "dex",
-									"type": {
-										"value": "melee",
-										"classification": "weapon"
-									}
-								},
-								"damage": {
-									"parts": [
-										{
-											"custom": {
-												"enabled": true,
-												"formula": "@scale.monk.die + @mod"
-											},
-											"types": [
-												"钝击"
-											]
-										}
-									]
-								}
-							}
-						]
-					}
-				]
-			},
 			"migrationVersion": 3
 		},
 		{
@@ -4428,7 +4371,7 @@
 						"ENG_name": "Focus Point",
 						"name": "专注点",
 						"type": "pointPool",
-						"recharge": "短暂休息",
+						"recharge": "restShort",
 						"count": "@scale.monk.focus"
 					}
 				]
@@ -4497,8 +4440,8 @@
 			"effects": [
 				{
 					"ENG_name": "Patient Defense (Focus Point)",
-					"foundryId": "patientDefense",
 					"name": "坚强防御（专注点）",
+					"foundryId": "patientDefense",
 					"duration": {
 						"turns": 1
 					},
@@ -4508,8 +4451,8 @@
 				},
 				{
 					"ENG_name": "Disengaged",
-					"foundryId": "patientDefense1",
 					"name": "撤离",
+					"foundryId": "patientDefense1",
 					"duration": {
 						"turns": 1
 					},
@@ -4820,8 +4763,8 @@
 			"effects": [
 				{
 					"ENG_name": "Stunned",
-					"foundryId": "stunningStrike",
 					"name": "震慑",
+					"foundryId": "stunningStrike",
 					"duration": {
 						"turns": 1
 					},
@@ -4831,8 +4774,8 @@
 				},
 				{
 					"ENG_name": "Slowed",
-					"foundryId": "stunningStrike1",
 					"name": "减速",
+					"foundryId": "stunningStrike1",
 					"duration": {
 						"turns": 1
 					},
@@ -5445,8 +5388,8 @@
 			"effects": [
 				{
 					"ENG_name": "Abjured",
-					"foundryId": "abjureFoes",
 					"name": "丧胆",
+					"foundryId": "abjureFoes",
 					"duration": {
 						"seconds": 60
 					},
@@ -5492,8 +5435,8 @@
 			"effects": [
 				{
 					"ENG_name": "Courageous",
-					"foundryId": "auraOfCourage",
 					"name": "英勇",
+					"foundryId": "auraOfCourage",
 					"description": "你和你的盟友在你的防护灵光范围内对恐慌状态免疫。"
 				}
 			],
@@ -5768,8 +5711,8 @@
 			"effects": [
 				{
 					"ENG_name": "Veiled",
-					"foundryId": "naturesVeil",
 					"name": "蒙面",
+					"foundryId": "naturesVeil",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -5984,8 +5927,8 @@
 			"effects": [
 				{
 					"ENG_name": "Hiding",
-					"foundryId": "cunningAction",
 					"name": "躲藏中",
+					"foundryId": "cunningAction",
 					"statuses": [
 						"躲藏"
 					]
@@ -6117,8 +6060,8 @@
 			"effects": [
 				{
 					"ENG_name": "Cunning Strike: Poisoned",
-					"foundryId": "poisonCost1d6",
 					"name": "诡诈打击：投毒",
+					"foundryId": "poisonCost1d6",
 					"duration": {
 						"seconds": 60
 					},
@@ -6174,8 +6117,8 @@
 			"effects": [
 				{
 					"ENG_name": "Cunning Strike: Tripped",
-					"foundryId": "tripCost1d6",
 					"name": "诡诈打击：摔绊",
+					"foundryId": "tripCost1d6",
 					"statuses": [
 						"倒地"
 					]
@@ -6303,8 +6246,8 @@
 			"effects": [
 				{
 					"ENG_name": "Devious Strikes: Dazed",
-					"foundryId": "dazeCost2d6",
 					"name": "凶狡打击：恍惚",
+					"foundryId": "dazeCost2d6",
 					"duration": {
 						"turns": 1
 					},
@@ -6356,8 +6299,8 @@
 			"effects": [
 				{
 					"ENG_name": "Devious Strikes: Knocked Out",
-					"foundryId": "knockOutCost6d6",
 					"name": "诡诈打击：击昏",
+					"foundryId": "knockOutCost6d6",
 					"duration": {
 						"seconds": 60
 					},
@@ -6412,8 +6355,8 @@
 			"effects": [
 				{
 					"ENG_name": "Devious Strikes: Blinded",
-					"foundryId": "obscureCost3d6",
 					"name": "凶狡打击：致盲",
+					"foundryId": "obscureCost3d6",
 					"duration": {
 						"turns": 1
 					},
@@ -6923,8 +6866,8 @@
 			"effects": [
 				{
 					"ENG_name": "Mastered",
-					"foundryId": "spellMastery",
 					"name": "精通",
+					"foundryId": "spellMastery",
 					"type": "enchantment",
 					"disabled": true,
 					"transfer": true,
@@ -7032,8 +6975,8 @@
 			"effects": [
 				{
 					"ENG_name": "Signature",
-					"foundryId": "signatureSpells",
 					"name": "招牌",
+					"foundryId": "signatureSpells",
 					"type": "enchantment",
 					"disabled": true,
 					"transfer": true,
@@ -7164,33 +7107,6 @@
 					}
 				}
 			],
-			"chooseSystem": [
-				{
-					"ENG_name": "Necrotic Damage",
-					"name": "黯蚀伤害",
-					"system": {
-						"damage.parts": [
-							[
-								"1d6 + floor(@classes.barbarian.levels / 2)",
-								"necrotic"
-							]
-						]
-					}
-				},
-				{
-					"ENG_name": "Radiant Damage",
-					"name": "光耀伤害",
-					"system": {
-						"damage.parts": [
-							[
-								"1d6 + floor(@classes.barbarian.levels / 2)",
-								"radiant"
-							]
-						]
-					}
-				}
-			],
-			"isChooseSystemRenderEntries": true,
 			"migrationVersion": 3
 		},
 		{
@@ -8008,7 +7924,7 @@
 							{
 								"custom": {
 									"enabled": true,
-									"formula": "@scale.order-domain.divine-strike"
+									"formula": "@scale.trickery-domain.divine-strike"
 								},
 								"types": [
 									"毒素"
@@ -8788,7 +8704,7 @@
 						"ENG_name": "Superiority Die",
 						"name": "卓越骰",
 						"type": "dicePool",
-						"recharge": "短暂休息",
+						"recharge": "restShort",
 						"count": "floor((<$level$> + 1) / 8) + 4",
 						"number": 1,
 						"faces": "8 + (符号(向上取整((<等级$> - 2) / 8) - 1) * 2)"
@@ -9308,8 +9224,8 @@
 				"如果一个选项需要进行豁免投掷，你的奥术射击豁免投掷DC的计算方式如下：",
 				{
 					"ENG_name": "Arcane Shot",
-					"type": "abilityDc",
 					"name": "奥术射击",
+					"type": "abilityDc",
 					"attributes": [
 						"int"
 					]
@@ -9752,8 +9668,8 @@
 						"foundryActivities": [
 							{
 								"ENG_name": "Monk Attack",
-								"foundryId": "martialArts",
 								"name": "武僧攻击",
+								"foundryId": "martialArts",
 								"type": "attack",
 								"activation": {
 									"type": "action",
@@ -12166,8 +12082,8 @@
 			"effects": [
 				{
 					"ENG_name": "Intimidated",
-					"foundryId": "intimidatingPres",
 					"name": "威吓",
+					"foundryId": "intimidatingPres",
 					"duration": {
 						"rounds": 1
 					},
@@ -12234,8 +12150,10 @@
 			"effects": [
 				{
 					"ENG_name": "Rage of the Bear",
-					"foundryId": "rageOfTheWilds",
 					"name": "熊之狂暴",
+					"foundryId": "rageOfTheWilds",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"rounds": 1
 					},
@@ -12362,8 +12280,8 @@
 			"effects": [
 				{
 					"ENG_name": "Aspect of the Owl",
-					"foundryId": "aspectOfTheWilds",
 					"name": "枭熊之形",
+					"foundryId": "aspectOfTheWilds",
 					"changes": [
 						{
 							"key": "attributes.senses.darkvision",
@@ -12431,8 +12349,8 @@
 			"effects": [
 				{
 					"ENG_name": "Power of the Wilds: Ram",
-					"foundryId": "powerOfTheWilds",
 					"name": "兽力威能：角羊",
+					"foundryId": "powerOfTheWilds",
 					"statuses": [
 						"倒地"
 					]
@@ -12746,7 +12664,7 @@
 			"subclassSource": "XPHB",
 			"level": 3,
 			"system": {
-				"uses.max": "@scale.zealot.pool.number",
+				"uses.max": "@scale.warrior-of-the-gods.pool",
 				"uses.recovery": [
 					{
 						"period": "lr",
@@ -12773,7 +12691,7 @@
 						],
 						"scaling": {
 							"allowed": true,
-							"max": "@scale.zealot.pool.number"
+							"max": "@item.uses.value"
 						}
 					},
 					"target": {
@@ -12791,6 +12709,30 @@
 						},
 						"scaling": {
 							"mode": "whole"
+						}
+					}
+				}
+			],
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"title": "池体型",
+					"configuration": {
+						"identifier": "水池",
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 4
+							},
+							"6": {
+								"value": 5
+							},
+							"12": {
+								"value": 6
+							},
+							"17": {
+								"value": 7
+							}
 						}
 					}
 				}
@@ -12983,24 +12925,24 @@
 						"在这种姿态下，你获得以下增益。",
 						{
 							"ENG_name": "Flight",
-							"type": "entries",
 							"name": "飞行",
+							"type": "entries",
 							"entries": [
 								"你拥有等同于你速度的飞行速度且可以悬停。"
 							]
 						},
 						{
 							"ENG_name": "Resistance",
-							"type": "entries",
 							"name": "抗性",
+							"type": "entries",
 							"entries": [
 								"你对黯蚀、心灵和光耀伤害具有抗性。"
 							]
 						},
 						{
 							"ENG_name": "Revivification",
-							"type": "entries",
 							"name": "回春",
+							"type": "entries",
 							"entries": [
 								"当一个距你30英尺内的生物的生命值即将降至0时，你可以使用反应来消耗一次狂暴机会，将该目标的当前生命值改为等于你的野蛮人等级。"
 							]
@@ -13145,8 +13087,8 @@
 					},
 					"roll": {
 						"ENG_name": "Bardic Inspiration",
-						"formula": "@scale.bard.inspiration",
-						"name": "诗人激励"
+						"name": "诗人激励",
+						"formula": "@scale.bard.inspiration"
 					}
 				}
 			],
@@ -13271,8 +13213,8 @@
 			"effects": [
 				{
 					"ENG_name": "Beguiling Fear",
-					"foundryId": "beguilingMagic",
 					"name": "惑心恐惧",
+					"foundryId": "beguilingMagic",
 					"duration": {
 						"seconds": 60
 					},
@@ -13282,8 +13224,8 @@
 				},
 				{
 					"ENG_name": "Beguiling Charm",
-					"foundryId": "beguilingMagic1",
 					"name": "惑心魅力",
+					"foundryId": "beguilingMagic1",
 					"duration": {
 						"seconds": 60
 					},
@@ -13422,8 +13364,8 @@
 			"effects": [
 				{
 					"ENG_name": "Unearthly Appearance",
-					"foundryId": "mantleOfMajesty",
 					"name": "超凡外表",
+					"foundryId": "mantleOfMajesty",
 					"duration": {
 						"seconds": 60
 					},
@@ -13507,8 +13449,8 @@
 			"effects": [
 				{
 					"ENG_name": "Majestic Presence",
-					"foundryId": "unbreakableMajes",
 					"name": "威严气场",
+					"foundryId": "unbreakableMajes",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -13580,8 +13522,8 @@
 					},
 					"roll": {
 						"ENG_name": "Bardic Inspiration",
-						"formula": "@scale.bard.inspiration",
-						"name": "诗人激励"
+						"name": "诗人激励",
+						"formula": "@scale.bard.inspiration"
 					}
 				}
 			],
@@ -13622,8 +13564,8 @@
 					},
 					"roll": {
 						"ENG_name": "Bardic Inspiration",
-						"formula": "@scale.bard.inspiration",
-						"name": "诗人激励"
+						"name": "诗人激励",
+						"formula": "@scale.bard.inspiration"
 					}
 				}
 			],
@@ -14442,7 +14384,7 @@
 							{
 								"custom": {
 									"enabled": true,
-									"formula": "@scale.land.lands-aid"
+									"formula": "@scale.circle-of-the-land.lands-aid"
 								},
 								"types": [
 									"黯蚀"
@@ -14486,7 +14428,7 @@
 						],
 						"custom": {
 							"enabled": true,
-							"formula": "@scale.land.lands-aid"
+							"formula": "@scale.circle-of-the-land.lands-aid"
 						},
 						"scaling": {
 							"number": 1
@@ -14737,8 +14679,8 @@
 			"effects": [
 				{
 					"ENG_name": "Nature's Ward: Arid",
-					"foundryId": "naturesSanctuary",
 					"name": "自然守御：荒漠",
+					"foundryId": "naturesSanctuary",
 					"statuses": [
 						"半掩护"
 					],
@@ -14752,8 +14694,8 @@
 				},
 				{
 					"ENG_name": "Nature's Ward: Polar",
-					"foundryId": "naturesSanctuar1",
 					"name": "自然守御：极地\n",
+					"foundryId": "naturesSanctuar1",
 					"statuses": [
 						"半掩护"
 					],
@@ -14767,8 +14709,8 @@
 				},
 				{
 					"ENG_name": "Nature's Ward: Temperate",
-					"foundryId": "naturesSanctuar2",
 					"name": "自然守御：温带",
+					"foundryId": "naturesSanctuar2",
 					"statuses": [
 						"半掩护"
 					],
@@ -14782,8 +14724,8 @@
 				},
 				{
 					"ENG_name": "Nature's Ward: Tropical",
-					"foundryId": "naturesSanctuar3",
 					"name": "自然守御：热带",
+					"foundryId": "naturesSanctuar3",
 					"statuses": [
 						"半掩护"
 					],
@@ -14987,6 +14929,8 @@
 			"level": 3,
 			"activities": [
 				{
+					"ENG_name": "Manifest Ocean Spray",
+					"name": "显现海洋之雾",
 					"type": "save",
 					"activation": {
 						"type": "bonus"
@@ -15011,7 +14955,7 @@
 						"template": {
 							"units": "ft",
 							"type": "radius",
-							"size": "@scale.sea.wrath-range"
+							"size": "@scale.circle-of-the-sea.wrath-range"
 						},
 						"affects": {
 							"choice": true,
@@ -15040,7 +14984,12 @@
 						"dc": {
 							"calculation": "施法"
 						}
-					}
+					},
+					"effects": [
+						{
+							"foundryId": "wrathOfTheSea"
+						}
+					]
 				},
 				{
 					"ENG_name": "Bonus Action Save",
@@ -15057,7 +15006,7 @@
 						"template": {
 							"units": "ft",
 							"type": "radius",
-							"size": "@scale.sea.wrath-range"
+							"size": "@scale.circle-of-the-sea.wrath-range"
 						},
 						"affects": {
 							"choice": true,
@@ -15087,6 +15036,19 @@
 							"calculation": "施法"
 						}
 					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Manifesting Ocean Spray",
+					"name": "显现海洋浪花",
+					"foundryId": "wrathOfTheSea",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"seconds": 600
+					},
+					"description": "一个[[lookup @scale.circle-of-the-sea.wrath-range]]尺的海洋喷雾光环环绕着你持续10分钟。如果你解除它（无需动作）、再次显现它或处于失能状态，效果将提前结束。"
 				}
 			],
 			"migrationVersion": 3
@@ -15126,7 +15088,7 @@
 						"template": {
 							"units": "ft",
 							"type": "radius",
-							"size": "@scale.sea.wrath-range"
+							"size": "@scale.circle-of-the-sea.wrath-range"
 						},
 						"affects": {
 							"choice": true,
@@ -15229,7 +15191,7 @@
 						"template": {
 							"units": "ft",
 							"type": "radius",
-							"size": "@scale.sea.wrath-range"
+							"size": "@scale.circle-of-the-sea.wrath-range"
 						},
 						"affects": {
 							"choice": true,
@@ -15298,7 +15260,7 @@
 							"units": "ft",
 							"count": "2",
 							"type": "radius",
-							"size": "@scale.sea.wrath-range"
+							"size": "@scale.circle-of-the-sea.wrath-range"
 						},
 						"affects": {
 							"choice": true,
@@ -15343,8 +15305,8 @@
 			"effects": [
 				{
 					"ENG_name": "Stormborn",
-					"foundryId": "oceanicGift",
 					"name": "风暴降生",
+					"foundryId": "oceanicGift",
 					"duration": {
 						"seconds": 600
 					},
@@ -15408,7 +15370,7 @@
 							{
 								"custom": {
 									"enabled": true,
-									"formula": "@scale.stars.die + @abilities.wis.mod"
+									"formula": "@scale.circle-of-the-stars.die + @abilities.wis.mod"
 								},
 								"types": [
 									"光耀"
@@ -15454,7 +15416,7 @@
 						],
 						"custom": {
 							"enabled": true,
-							"formula": "@scale.stars.die + @abilities.wis.mod"
+							"formula": "@scale.circle-of-the-stars.die + @abilities.wis.mod"
 						},
 						"scaling": {
 							"number": 1
@@ -15496,8 +15458,8 @@
 			"effects": [
 				{
 					"ENG_name": "Dragon Form",
-					"foundryId": "dragon",
 					"name": "龙之形",
+					"foundryId": "dragon",
 					"duration": {
 						"seconds": 600
 					},
@@ -15721,7 +15683,7 @@
 						"ENG_name": "Superiority Die",
 						"name": "卓越骰",
 						"type": "dicePool",
-						"recharge": "短暂休息",
+						"recharge": "restShort",
 						"count": "floor((<$level$> + 1) / 8) + 4",
 						"number": 1,
 						"faces": "8 + (符号(向上取整((<等级$> - 2) / 8) - 1) * 2)"
@@ -15921,10 +15883,12 @@
 			"level": 18,
 			"activities": [
 				{
+					"ENG_name": "Heroic Rally",
+					"name": "英气风发",
 					"type": "heal",
 					"activation": {
-						"type": "",
-						"condition": "在你的每个回合开始时"
+						"type": "turnStart",
+						"condition": "若浴血"
 					},
 					"target": {
 						"affects": {
@@ -15937,12 +15901,36 @@
 						],
 						"custom": {
 							"enabled": true,
-							"formula": "5"
+							"formula": "5 + @abilities.con.mod"
 						},
 						"scaling": {
 							"number": 1
 						}
 					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Defy Death",
+					"name": "反抗死亡",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.death.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"descriptionEntries": [
+						{
+							"ENG_name": "Note:",
+							"name": "注：",
+							"type": "entries",
+							"entries": [
+								"此效果不会改变死亡豁免检定掷出18或19时的行为。"
+							]
+						}
+					]
 				}
 			],
 			"migrationVersion": 3
@@ -15963,6 +15951,17 @@
 					"type": "utility",
 					"activation": {
 						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "object",
+							"special": "联结武器"
+						}
+					},
+					"range": {
+						"units": "任何",
+						"special": "相同位面"
 					}
 				},
 				{
@@ -15970,8 +15969,12 @@
 					"name": "武器联结",
 					"type": "enchant",
 					"activation": {
-						"type": "hour",
-						"value": 1
+						"type": "shortRest",
+						"value": 1,
+						"condition": "或1小时"
+					},
+					"duration": {
+						"units": "显示"
 					},
 					"consumption": {
 						"targets": [
@@ -15981,7 +15984,18 @@
 							}
 						]
 					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "object",
+							"special": "当前未绑定的武器"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
 					"restrictions": {
+						"allowMagical": true,
 						"type": "weapon"
 					},
 					"effects": [
@@ -16003,7 +16017,8 @@
 							"mode": "ADD",
 							"value": ", War Bonded"
 						}
-					]
+					],
+					"description": "一旦你将一件武器与自己联结，除非你处于失能状态，否则该武器不会被击落。如果该武器位于同一存在位面，你可以用一个附赠动作召唤该武器，使其立即传送至你手中。"
 				}
 			],
 			"migrationVersion": 3
@@ -16793,8 +16808,8 @@
 			"effects": [
 				{
 					"ENG_name": "Acid Resistance",
-					"foundryId": "elementalEpitom1",
 					"name": "强酸抗性",
+					"foundryId": "elementalEpitom1",
 					"duration": {
 						"seconds": 600
 					},
@@ -16808,8 +16823,8 @@
 				},
 				{
 					"ENG_name": "Cold Resistance",
-					"foundryId": "elementalEpitom2",
 					"name": "冷冻抗性",
+					"foundryId": "elementalEpitom2",
 					"duration": {
 						"seconds": 600
 					},
@@ -16823,8 +16838,8 @@
 				},
 				{
 					"ENG_name": "Fire Resistance",
-					"foundryId": "elementalEpitom3",
 					"name": "火焰抗性",
+					"foundryId": "elementalEpitom3",
 					"duration": {
 						"seconds": 600
 					},
@@ -16838,8 +16853,8 @@
 				},
 				{
 					"ENG_name": "Lightning Resistance",
-					"foundryId": "elementalEpitom4",
 					"name": "闪电抗性",
+					"foundryId": "elementalEpitom4",
 					"duration": {
 						"seconds": 600
 					},
@@ -16853,8 +16868,8 @@
 				},
 				{
 					"ENG_name": "Thunder Resistance",
-					"foundryId": "elementalEpitom5",
 					"name": "雷鸣抗性",
+					"foundryId": "elementalEpitom5",
 					"duration": {
 						"seconds": 600
 					},
@@ -16868,8 +16883,8 @@
 				},
 				{
 					"ENG_name": "Step of the Wind Bonus",
-					"foundryId": "elementalEpitome",
 					"name": "飞檐走壁加值",
+					"foundryId": "elementalEpitome",
 					"duration": {
 						"turns": 1
 					},
@@ -17087,8 +17102,8 @@
 			"effects": [
 				{
 					"ENG_name": "Physician's Touch: Hand of Harm",
-					"foundryId": "physiciansTouch",
 					"name": "生死之触：夺命之手",
+					"foundryId": "physiciansTouch",
 					"statuses": [
 						"中毒"
 					]
@@ -17237,8 +17252,8 @@
 			"effects": [
 				{
 					"ENG_name": "Addled",
-					"foundryId": "openHandTechniqu",
 					"name": "慌神",
+					"foundryId": "openHandTechniqu",
 					"duration": {
 						"turns": 1
 					},
@@ -17246,8 +17261,8 @@
 				},
 				{
 					"ENG_name": "Toppled",
-					"foundryId": "openHandTechniq1",
 					"name": "倾倒",
+					"foundryId": "openHandTechniq1",
 					"statuses": [
 						"倒地"
 					]
@@ -17265,7 +17280,7 @@
 			"subclassSource": "XPHB",
 			"level": 6,
 			"system": {
-				"uses.max": "(max(1,@abilities.wis.mod))",
+				"uses.max": "max(1,@abilities.wis.mod)",
 				"uses.recovery": [
 					{
 						"period": "lr",
@@ -17298,7 +17313,7 @@
 						],
 						"custom": {
 							"enabled": true,
-							"formula": "@scale.monk.die"
+							"formula": "@scale.monk.die + @abilities.wis.mod"
 						},
 						"scaling": {
 							"number": 1
@@ -17398,8 +17413,8 @@
 			"effects": [
 				{
 					"ENG_name": "Lethal Vibrations",
-					"foundryId": "quiveringPalm",
 					"name": "致命震荡",
+					"foundryId": "quiveringPalm",
 					"description": "在这生物体内已经建立了不可察觉且致命的振动。"
 				}
 			],
@@ -17825,8 +17840,8 @@
 			"effects": [
 				{
 					"ENG_name": "Diminished Defiance",
-					"foundryId": "elderChampion",
 					"name": "瓦解反抗",
+					"foundryId": "elderChampion",
 					"duration": {
 						"seconds": 60
 					},
@@ -18184,6 +18199,8 @@
 			"effects": [
 				{
 					"foundryId": "livingLegend",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"seconds": 600
 					},
@@ -18428,8 +18445,8 @@
 				},
 				{
 					"ENG_name": "Frightened",
-					"foundryId": "avengingAngel1",
 					"name": "恐慌",
+					"foundryId": "avengingAngel1",
 					"duration": {
 						"seconds": 60
 					},
@@ -18863,8 +18880,8 @@
 				},
 				{
 					"ENG_name": "Ambusher's Leap",
-					"foundryId": "dreadAmbusher",
 					"name": "伏击者之跃",
+					"foundryId": "dreadAmbusher",
 					"duration": {
 						"turns": 1
 					},
@@ -19121,8 +19138,8 @@
 			"effects": [
 				{
 					"ENG_name": "Multiattack Defense",
-					"foundryId": "defensiveTactics",
 					"name": "防御多重攻击",
+					"foundryId": "defensiveTactics",
 					"duration": {
 						"turns": 1
 					},
@@ -19243,8 +19260,8 @@
 			"effects": [
 				{
 					"ENG_name": "Hunter's Defense: Acid",
-					"foundryId": "superiorHuntersD",
 					"name": "防守战术：强酸",
+					"foundryId": "superiorHuntersD",
 					"duration": {
 						"turns": 1
 					},
@@ -19258,8 +19275,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Bludgeoning",
-					"foundryId": "superiorHunters1",
 					"name": "防守战术：钝击",
+					"foundryId": "superiorHunters1",
 					"duration": {
 						"turns": 1
 					},
@@ -19273,8 +19290,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Cold",
-					"foundryId": "superiorHunters2",
 					"name": "防守战术：冷冻",
+					"foundryId": "superiorHunters2",
 					"duration": {
 						"turns": 1
 					},
@@ -19288,8 +19305,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Fire",
-					"foundryId": "superiorHunters3",
 					"name": "防守战术：火焰",
+					"foundryId": "superiorHunters3",
 					"duration": {
 						"turns": 1
 					},
@@ -19303,8 +19320,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Force",
-					"foundryId": "superiorHunters4",
 					"name": "防守战术：力场",
+					"foundryId": "superiorHunters4",
 					"duration": {
 						"turns": 1
 					},
@@ -19318,8 +19335,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Lightning",
-					"foundryId": "superiorHunters5",
 					"name": "防守战术：闪电",
+					"foundryId": "superiorHunters5",
 					"duration": {
 						"turns": 1
 					},
@@ -19333,8 +19350,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Necrotic",
-					"foundryId": "superiorHunters6",
 					"name": "防守战术：暗蚀",
+					"foundryId": "superiorHunters6",
 					"duration": {
 						"turns": 1
 					},
@@ -19348,8 +19365,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Piercing",
-					"foundryId": "superiorHunters7",
 					"name": "防守战术：穿刺",
+					"foundryId": "superiorHunters7",
 					"duration": {
 						"turns": 1
 					},
@@ -19363,8 +19380,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Poison",
-					"foundryId": "superiorHunters8",
 					"name": "防守战术：毒素",
+					"foundryId": "superiorHunters8",
 					"duration": {
 						"turns": 1
 					},
@@ -19378,8 +19395,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Psychic",
-					"foundryId": "superiorHunters9",
 					"name": "防守战术：心灵",
+					"foundryId": "superiorHunters9",
 					"duration": {
 						"turns": 1
 					},
@@ -19393,8 +19410,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Radiant",
-					"foundryId": "superiorHunter10",
 					"name": "防守战术：光耀",
+					"foundryId": "superiorHunter10",
 					"duration": {
 						"turns": 1
 					},
@@ -19408,8 +19425,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Slashing",
-					"foundryId": "superiorHunter11",
 					"name": "防守战术：挥砍",
+					"foundryId": "superiorHunter11",
 					"duration": {
 						"turns": 1
 					},
@@ -19423,8 +19440,8 @@
 				},
 				{
 					"ENG_name": "Hunter's Defense: Thunder",
-					"foundryId": "superiorHunter12",
 					"name": "防守战术：雷鸣",
+					"foundryId": "superiorHunter12",
 					"duration": {
 						"turns": 1
 					},
@@ -19514,8 +19531,8 @@
 			"effects": [
 				{
 					"ENG_name": "Stolen Spell",
-					"foundryId": "spellThief",
 					"name": "窃法",
+					"foundryId": "spellThief",
 					"duration": {
 						"seconds": 28800
 					},
@@ -19902,8 +19919,8 @@
 					},
 					"roll": {
 						"ENG_name": "Psionic Energy Die",
-						"formula": "@scale.soulknife.die",
-						"name": "灵能骰"
+						"name": "灵能骰",
+						"formula": "@scale.soulknife.die"
 					},
 					"effects": [
 						{
@@ -20090,8 +20107,8 @@
 			"effects": [
 				{
 					"ENG_name": "Veiled",
-					"foundryId": "psychicVeil",
 					"name": "蒙面",
+					"foundryId": "psychicVeil",
 					"duration": {
 						"seconds": 3600
 					},
@@ -20444,8 +20461,8 @@
 			"effects": [
 				{
 					"ENG_name": "Aquatic Adaptation",
-					"foundryId": "revelationInFles",
 					"name": "水生适应",
+					"foundryId": "revelationInFles",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -20455,8 +20472,8 @@
 				},
 				{
 					"ENG_name": "Glistening Flight",
-					"foundryId": "revelationInFle1",
 					"name": "闪耀飞翔",
+					"foundryId": "revelationInFle1",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -20466,8 +20483,8 @@
 				},
 				{
 					"ENG_name": "See the Invisible",
-					"foundryId": "revelationInFle2",
 					"name": "识破隐形",
+					"foundryId": "revelationInFle2",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -20477,8 +20494,8 @@
 				},
 				{
 					"ENG_name": "Wormlike Movement",
-					"foundryId": "revelationInFle3",
 					"name": "蠕行移动",
+					"foundryId": "revelationInFle3",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -20633,8 +20650,8 @@
 					},
 					"roll": {
 						"ENG_name": "Ward Die",
-						"visible": true,
 						"name": "守护骰",
+						"visible": true,
 						"formula": "1d8"
 					},
 					"effects": [
@@ -20647,8 +20664,10 @@
 			"effects": [
 				{
 					"ENG_name": "Warded by Law",
-					"foundryId": "bastionOfLaw",
 					"name": "受律令守护",
+					"foundryId": "bastionOfLaw",
+					"disabled": true,
+					"transfer": true,
 					"description": "当受保护生物受到伤害时，它可以消耗若干这些骰子，掷出它们，并将受到的伤害减少所掷骰子的总和。该保护持续到你完成一次长休，或直到你再次使用此特性。"
 				}
 			],
@@ -21080,8 +21099,8 @@
 			"effects": [
 				{
 					"ENG_name": "Winged",
-					"foundryId": "dragonWings",
 					"name": "飞翼",
+					"foundryId": "dragonWings",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -21281,8 +21300,8 @@
 			"effects": [
 				{
 					"ENG_name": "Taunted",
-					"foundryId": "stepsOfTheFey",
 					"name": "嘲讽",
+					"foundryId": "stepsOfTheFey",
 					"duration": {
 						"turns": 1
 					},
@@ -21380,8 +21399,8 @@
 			"effects": [
 				{
 					"ENG_name": "Disappearing Step",
-					"foundryId": "mistyEscape",
 					"name": "无踪步伐",
+					"foundryId": "mistyEscape",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -21594,7 +21613,7 @@
 						"scaling": {
 							"number": 1
 						},
-						"bonus": "(floor(@职业.邪术师.等级 / 2)) + @属性.魅力.调整值"
+						"bonus": "(floor(@classes.warlock.levels / 2)) + @abilities.cha.mod"
 					}
 				}
 			],
@@ -22225,7 +22244,13 @@
 			"subclassSource": "XPHB",
 			"level": 3,
 			"system": {
-				"uses.max": "(2 * @classes.wizard.levels) + @abilities.int.mod"
+				"uses.max": "(2 * @classes.wizard.levels) + @abilities.int.mod",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "loseAll"
+					}
+				]
 			},
 			"activities": [
 				{
@@ -22245,7 +22270,7 @@
 							},
 							{
 								"type": "itemUses",
-								"value": "-((@classes.wizard.levels * 2) + @abilities.int.mod)"
+								"value": "-@item.uses.max"
 							}
 						]
 					},
@@ -22257,6 +22282,11 @@
 							}
 						],
 						"max": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
 					}
 				},
 				{
@@ -22270,7 +22300,7 @@
 					"consumption": {
 						"scaling": {
 							"allowed": true,
-							"max": "@classes.wizard.levels + @abilities.cha.mod"
+							"max": "@item.uses.value"
 						},
 						"targets": [
 							{
@@ -22300,9 +22330,10 @@
 						"targets": [
 							{
 								"type": "itemUses",
-								"value": "-(@scaling * 2)",
+								"value": "-2",
 								"scaling": {
-									"mode": "amount"
+									"mode": "amount",
+									"formula": "-2"
 								}
 							}
 						]
@@ -22332,9 +22363,10 @@
 							},
 							{
 								"type": "itemUses",
-								"value": "-(@scaling * 2)",
+								"value": "-2",
 								"scaling": {
-									"mode": "amount"
+									"mode": "amount",
+									"formula": "-2"
 								}
 							}
 						]
@@ -22364,7 +22396,7 @@
 					"consumption": {
 						"scaling": {
 							"allowed": true,
-							"max": "@classes.wizard.levels + @abilities.cha.mod"
+							"max": "(2 * @classes.wizard.levels) + @abilities.int.mod"
 						},
 						"targets": [
 							{
@@ -22528,8 +22560,8 @@
 			"effects": [
 				{
 					"ENG_name": "Third Eye: Darkvision",
-					"foundryId": "theThirdEye",
 					"name": "天眼通：黑暗视觉",
+					"foundryId": "theThirdEye",
 					"disabled": true,
 					"transfer": true,
 					"changes": [
@@ -22543,16 +22575,16 @@
 				},
 				{
 					"ENG_name": "Third Eye: Greater Comprehension",
-					"foundryId": "theThirdEye1",
 					"name": "天眼通：高等通晓",
+					"foundryId": "theThirdEye1",
 					"disabled": true,
 					"transfer": true,
 					"description": "第三只眼特性赋予你阅读任何语言的能力。"
 				},
 				{
 					"ENG_name": "See Invisibility",
-					"foundryId": "theThirdEye2",
 					"name": "识破隐形",
+					"foundryId": "theThirdEye2",
 					"disabled": true,
 					"transfer": true,
 					"duration": {

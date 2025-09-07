@@ -481,13 +481,13 @@
 				],
 				"weapons": [
 					"简易",
-					"具有{@filter 灵巧或轻型|items|type=军用武器|特性=巧劲；轻型}属性的军用武器"
+					"具有{@filter 灵巧或轻型|items|type=军用武器|property=灵巧;轻型}属性的军用武器"
 				],
 				"weaponProficiencies": [
 					{
 						"simple": true,
 						"all": {
-							"fromFilter": "type=军用武器|特性=轻型；巧劲"
+							"fromFilter": "type=军用武器|property=轻型;灵巧"
 						}
 					}
 				],
@@ -2462,7 +2462,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你熟练的{@filter 武器|items|type=简单武器；军用武器}，例如{@item 匕首|XPHB|匕首}和{@item 短弓|XPHB|短弓}，使用它们的{@variantrule 武器精通词条|XPHB|精通词条}。",
+				"你使用武器的训练使你能够选择两种你熟练的{@filter 武器|items|type=简易武器;军用武器}，例如{@item 匕首|XPHB|匕首}和{@item 短弓|XPHB|短弓}，使用它们的{@variantrule 武器精通词条|XPHB|精通词条}。",
 				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通词条|XPHB|精通词条}的{@item 弯刀|XPHB|弯刀}和{@item 短剑|XPHB|短剑}。"
 			]
 		},
@@ -2962,8 +2962,8 @@
 					"entries": [
 						{
 							"ENG_name": "Cantrips",
-							"type": "entries",
 							"name": "戏法",
+							"type": "entries",
 							"entries": [
 								"你从法师法术列表中选择三个戏法作为已知法术（{@spell 法师之手}以及另外两个法师法术列表中的自选戏法）。第10级时，你再获得额外一个法师戏法。"
 							]
@@ -2975,8 +2975,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spell Slots",
-							"type": "entries",
 							"name": "施法能力",
+							"type": "entries",
 							"entries": [
 								"\"诡术师施法能力\"表中列出了你用以施展你{@filter 法师法术|spells|class=法师}的1环及更高环阶法术位数量。施展这些法术时，你必须同时消耗一个不低于该法术环阶的法术位。而已消耗的法术位可以通过完成以此长休进行恢复。",
 								"例如，如果你已经习得1环法术{@spell 魅惑人类}，并且有一个1环和一个2环法术位可用，你可以使用任一法术位来施放{@spell 魅惑人类}。"
@@ -2989,8 +2989,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spells Known of 1st-Level and Higher",
-							"type": "entries",
 							"name": "已知法术",
+							"type": "entries",
 							"entries": [
 								"你习得三个自选的1环法师法术，其中两个必须从惑控系和幻术系中选择。",
 								"表格\"诡术师施法能力\"中\"已知法术\"一栏记录了你获得更多已知法术时的相应等级。你只能选择惑控系或幻术系法术，且所获得法术的环阶不能超过你所拥有的最高法术位环阶。例如，如果你在本职业达到第7级，则可以学习一个新的1环法术或2环法术。",
@@ -3005,22 +3005,22 @@
 					"entries": [
 						{
 							"ENG_name": "Spellcasting Ability",
-							"type": "entries",
 							"name": "施法属性",
+							"type": "entries",
 							"entries": [
 								"你通过研究和记忆学习魔法，因此智力是你施展法师法术的关键属性。每当你的法术需要施法属性时均指向你的智力值。而你的法师法术的豁免DC和攻击检定，则使用你的智力调整值",
 								{
 									"ENG_name": "Spell",
-									"type": "abilityDc",
 									"name": "法术",
+									"type": "abilityDc",
 									"attributes": [
 										"int"
 									]
 								},
 								{
 									"ENG_name": "Spell",
-									"type": "abilityAttackMod",
 									"name": "法术",
+									"type": "abilityAttackMod",
 									"attributes": [
 										"int"
 									]
@@ -4084,8 +4084,8 @@
 				"你已经学会了施放法术。请参见{@book 第七章|XPHB|7}了解施法规则。以下信息详细说明了作为奥术诡术师的你如何使用这些规则。",
 				{
 					"ENG_name": "Cantrips",
-					"type": "entries",
 					"name": "戏法",
+					"type": "entries",
 					"entries": [
 						"你知道三个戏法：{@spell 法师之手|XPHB}以及从{@filter 法师法术列表|spells|class=法师}中选择的另外两个戏法（见该职业部分的列表）。推荐选择{@spell 心灵之楔|XPHB}和{@spell 次级幻影|XPHB}。",
 						"每当你获得一个盗贼等级时，你可以用你选择的另一个法师戏法替换你的一个戏法，除了{@spell 法师之手|XPHB}。",
@@ -4094,16 +4094,16 @@
 				},
 				{
 					"ENG_name": "Spell Slots",
-					"type": "entries",
 					"name": "施法能力",
+					"type": "entries",
 					"entries": [
 						"奥术诡术师法术施展表显示你有多少法术位来施放你1级及以上的法术。当你完成一次{@variantrule 长休|XPHB}后，你恢复所有消耗的法术位。"
 					]
 				},
 				{
 					"ENG_name": "Prepared Spells of 1st+ Level",
-					"type": "entries",
 					"name": "一环及以上的准备法术",
+					"type": "entries",
 					"entries": [
 						"你准备这个特性可用的1环以上法术列表。首先，选择三个1环法师法术。推荐选择{@spell 魅惑人类|XPHB}、{@spell 易容术|XPHB}和{@spell 云雾术|XPHB}。",
 						"你的法术列表中的法术数量随着你获得盗贼等级而增加，如奥术诡术师法术施展表中的准备法术列所示。每当这个数量增加时，选择额外的法师法术，直到你的法术列表中的法术数量与奥术诡术师法术施展表中的数字相匹配。所选法术必须是你有法术位的等级。例如，如果你是一名7级盗贼，你的准备法术列表可以包括五个1级或2级的法师法术，以任何组合。"
@@ -4111,24 +4111,24 @@
 				},
 				{
 					"ENG_name": "Changing Your Prepared Spells",
-					"type": "entries",
 					"name": "改变你的准备法术",
+					"type": "entries",
 					"entries": [
 						"每当你获得一个盗贼等级时，你可以用另一个你有法术位的法师法术替换你的法术列表中的一个法术。"
 					]
 				},
 				{
 					"ENG_name": "Spellcasting Ability",
-					"type": "entries",
 					"name": "施法属性",
+					"type": "entries",
 					"entries": [
 						"智力是你施放巫师法术的能力值。"
 					]
 				},
 				{
 					"ENG_name": "Spellcasting Focus",
-					"type": "entries",
 					"name": "法器",
+					"type": "entries",
 					"entries": [
 						"你可以使用一个{@item 奥术法器|XPHB}作为你巫师法术的{@variantrule 法器|XPHB}。"
 					]
@@ -4236,16 +4236,16 @@
 					"entries": [
 						{
 							"ENG_name": "Initiative",
-							"type": "entries",
 							"name": "先攻",
+							"type": "entries",
 							"entries": [
 								"你在{@variantrule 先攻|XPHB}掷骰上具有{@variantrule 优势|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Surprising Strikes",
-							"type": "entries",
 							"name": "惊扰突袭",
+							"type": "entries",
 							"entries": [
 								"在每场战斗的第一轮中，你对尚未轮到的任何生物进行攻击检定时具有{@variantrule 优势|XPHB}。如果你的偷袭攻击在那一回合击中了任何目标，目标将受到额外的伤害，其类型等同于你的盗贼等级。"
 							]
@@ -4272,16 +4272,16 @@
 					"entries": [
 						{
 							"ENG_name": "Masterful Mimicry",
-							"type": "entries",
 							"name": "模仿大师",
+							"type": "entries",
 							"entries": [
 								"你可以准确无误地模仿另一个人的说话或笔迹，或者两者都模仿，如果你至少花了1小时研究他们。"
 							]
 						},
 						{
 							"ENG_name": "Roving Aim",
-							"type": "entries",
 							"name": "机动瞄准",
+							"type": "entries",
 							"entries": [
 								"使用稳定瞄准时，你的{@variantrule 速度|XPHB}不会减少至0。"
 							]
@@ -4302,7 +4302,7 @@
 			"level": 13,
 			"header": 2,
 			"entries": [
-				"当你使用狡诈攻击的中毒选项时，每当目标未能通过豁免检定，它还会受到{@damage 2d6}点中毒伤害。此伤害无视对中毒伤害的{@variantrule 提升抗性|XPHB}。"
+				"当你使用狡诈攻击的中毒选项时，每当目标未能通过豁免检定，它还会受到{@damage 2d6}点中毒伤害。此伤害无视对中毒伤害的{@variantrule 抗性|XPHB}。"
 			]
 		},
 		{
@@ -4430,9 +4430,9 @@
 				"你可以显现出闪烁的心灵能量之刃。每当你进行{@action 攻击|XPHB}动作或进行{@action 借机攻击|XPHB}时，你可以在你的空闲手中显现一把{@item 心灵之刃|XPHB}，并用这把刃进行攻击。这把魔法刃具有以下特性：",
 				{
 					"ENG_name": "Psychic Blade",
+					"name": "心灵之刃",
 					"type": "statblock",
 					"tag": "item",
-					"name": "心灵之刃",
 					"source": "XPHB"
 				},
 				"这把刃在击中或未击中目标后立即消失，如果它造成伤害，不会留下任何痕迹。",
@@ -4593,16 +4593,16 @@
 					"entries": [
 						{
 							"ENG_name": "Sleight of Hand",
-							"type": "entries",
 							"name": "巧手",
+							"type": "entries",
 							"entries": [
 								"进行一次敏捷（{@skill 巧手|XPHB}）检定，使用{@item 盗贼工具|XPHB}来撬锁或解除陷阱，或进行偷窃。"
 							]
 						},
 						{
 							"ENG_name": "Use an Object",
-							"type": "entries",
 							"name": "使用物件",
+							"type": "entries",
 							"entries": [
 								"进行{@action 操作|XPHB}动作，或者进行{@action 魔法|XPHB}动作来使用需要该动作的魔法物品。"
 							]
@@ -4630,16 +4630,16 @@
 					"entries": [
 						{
 							"ENG_name": "Climber",
-							"type": "entries",
 							"name": "攀爬工具",
+							"type": "entries",
 							"entries": [
 								"你获得了等同于你的{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Jumper",
-							"type": "entries",
 							"name": "跳跃者",
+							"type": "entries",
 							"entries": [
 								"你可以使用你的敏捷而不是力量来确定你的跳跃距离。"
 							]
@@ -4693,8 +4693,8 @@
 					"entries": [
 						{
 							"ENG_name": "Stealth Attack (Cost: 1d6)",
-							"type": "entries",
 							"name": "无声袭击（花费：1d6）",
+							"type": "entries",
 							"entries": [
 								"如果你在进行{@action 躲藏|XPHB}动作时具有{@condition 隐形|XPHB}状态，如果你在回合结束时处于{@variantrule 掩护|XPHB|四分之三掩护}或{@variantrule 掩护|XPHB|全身掩护}后面，这次攻击不会结束你的这个状态。"
 							]
@@ -4720,24 +4720,24 @@
 				"你已经学会了如何最大化使用魔法物品，这为你带来了以下好处。",
 				{
 					"ENG_name": "Attunement",
-					"type": "entries",
 					"name": "同调",
+					"type": "entries",
 					"entries": [
 						"你最多可以同时同调于四个魔法物品。"
 					]
 				},
 				{
 					"ENG_name": "Charges",
-					"type": "entries",
 					"name": "充能",
+					"type": "entries",
 					"entries": [
 						"每当你使用消耗充能次数的魔法物品特性时，投掷一个{@dice 1d6}。如果掷出6，你可以不消耗充能次数使用该特性。"
 					]
 				},
 				{
 					"ENG_name": "Scrolls",
-					"type": "entries",
 					"name": "卷轴",
+					"type": "entries",
 					"entries": [
 						"你可以使用任意{@item 法术卷轴|XDMG}，以智力作为施法能力。如果该法术是戏法或1环法术，你可以可靠地施放它。如果卷轴包含更高等级的法术，你必须首先通过一次智力（{@skill 奥秘|XPHB}）检定（难度等级 {@dc 10} 加上法术的等级）。成功通过检定后，你从卷轴中施放该法术。失败则卷轴瓦解。"
 					]

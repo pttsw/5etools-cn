@@ -11077,7 +11077,7 @@ Renderer.monster = class {
 		renderer = renderer || Renderer.get();
 		const dragonVariant = Renderer.monster.dragonCasterVariant.getHtml(mon, {renderer});
 		const variants = mon.variant;
-		if (!variants && !dragonVariant) return null;
+		if (!variants && !dragonVariant) return "";
 
 		const rStack = [];
 		(variants || []).forEach(v => renderer.recursiveRender(v, rStack));
@@ -11635,8 +11635,8 @@ Renderer.item = class {
 		if (item.type) Renderer.item._getHtmlAndTextTypes_type({type: item.type, typeAbv: itemTypeAbv, typeHtml, typeListText, subTypeHtml, showingBase, item});
 		if (item.typeAlt) Renderer.item._getHtmlAndTextTypes_type({type: item.typeAlt, typeAbv: itemTypeAltAbv, typeHtml, typeListText, subTypeHtml, showingBase, item});
 		if (item.firearm) {
-			subTypeHtml.push("火器");
-			typeListText.push("火器");
+			subTypeHtml.push("枪械");
+			typeListText.push("枪械");
 		}
 		if (item.poison) {
 			typeHtml.push(`毒药${item.poisonTypes ? ` (${item.poisonTypes.joinConjunct(", ", " 或 ")})` : ""}`);
@@ -15636,6 +15636,9 @@ Renderer.hover = class {
 	 * @param [opts.isHideBottomBorder]
 	 */
 	static getShowWindow ($content, position, opts) {
+		// eslint-disable-next-line vet-jquery/jquery
+		$content = $($content);
+
 		opts = opts || {};
 		const {isHideBottomBorder, isResizeOnlyWidth} = opts;
 
@@ -15664,6 +15667,7 @@ Renderer.hover = class {
 		const mouseMoveId = `mousemove.${hoverId} touchmove.${hoverId}`;
 		const resizeId = `resize.${hoverId}`;
 		const drag = {};
+		const eventChannel = new EventTarget();
 
 		const brdrTopRightResize = ee`<div class="hoverborder__resize-ne"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1, isResizeOnlyWidth}))
@@ -15723,7 +15727,7 @@ Renderer.hover = class {
 						$wrpContent.css("max-height", "");
 						$hov.css("max-width", "");
 					}
-					Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position});
+					Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position, eventChannel});
 
 					if (drag.type === 9) {
 						// handle mobile button touches
@@ -15786,7 +15790,7 @@ Renderer.hover = class {
 					}
 				}
 			});
-		$(position.window).on(resizeId, () => Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position}));
+		$(position.window).on(resizeId, () => Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position, eventChannel}));
 
 		brdrTop.attr("data-display-title", false);
 		brdrTop.onn("dblclick", () => Renderer.hover._getShowWindow_doToggleMinimizedMaximized({$brdrTop: brdrTop, $hov}));
@@ -15855,12 +15859,12 @@ Renderer.hover = class {
 
 		$body.append($hov);
 
-		Renderer.hover._getShowWindow_setPosition({$hov, $wrpContent, position}, position);
+		Renderer.hover._getShowWindow_setPosition({$hov, $wrpContent, position, eventChannel}, position);
 
 		hoverWindow.zIndex = initialZIndex;
 		hoverWindow.setZIndex = Renderer.hover._getNextZIndex.bind(this, {$hov, hoverWindow});
 
-		hoverWindow.setPosition = Renderer.hover._getShowWindow_setPosition.bind(this, {$hov, $wrpContent, position});
+		hoverWindow.setPosition = Renderer.hover._getShowWindow_setPosition.bind(this, {$hov, $wrpContent, position, eventChannel});
 		hoverWindow.mutScroll = Renderer.hover._getShowWindow_mutScroll.bind(this, {$hov, $wrpContent, position});
 		hoverWindow.setIsPermanent = Renderer.hover._getShowWindow_setIsPermanent.bind(this, {opts, $brdrTop: brdrTop});
 		hoverWindow.doClose = Renderer.hover._getShowWindow_doClose.bind(this, {$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
@@ -15870,6 +15874,8 @@ Renderer.hover = class {
 		hoverWindow.getPosition = Renderer.hover._getShowWindow_getPosition.bind(this, {$hov, $wrpContent, position});
 
 		hoverWindow.$setContent = ($contentNxt) => $wrpContent.empty().append($contentNxt);
+
+		hoverWindow.eventChannel = eventChannel;
 
 		if (opts.isPopout) Renderer.hover._getShowWindow_pDoPopout({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content});
 
@@ -15968,7 +15974,7 @@ Renderer.hover = class {
 		Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
 	}
 
-	static _getShowWindow_setPosition ({$hov, $wrpContent, position}, positionNxt) {
+	static _getShowWindow_setPosition ({$hov, $wrpContent, position, eventChannel}, positionNxt) {
 		switch (positionNxt.mode) {
 			case "autoFromElement": {
 				const bcr = $hov[0].getBoundingClientRect();
@@ -16021,7 +16027,7 @@ Renderer.hover = class {
 			default: throw new Error(`Positioning mode unimplemented: "${positionNxt.mode}"`);
 		}
 
-		Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position});
+		Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position, eventChannel});
 	}
 
 	static _getShowWindow_mutScroll ({$hov, $wrpContent, position}, {deltaPixelsX, deltaPixelsY}) {
@@ -16029,7 +16035,7 @@ Renderer.hover = class {
 		$wrpContent[0].scrollBy(deltaPixelsX, deltaPixelsY);
 	}
 
-	static _getShowWindow_adjustPosition ({$hov, $wrpContent, position}) {
+	static _getShowWindow_adjustPosition ({$hov, $wrpContent, position, eventChannel}) {
 		const eleHov = $hov[0];
 		const wrpContent = $wrpContent[0];
 
@@ -16073,6 +16079,8 @@ Renderer.hover = class {
 				wrpContent.style.height = `${bcr.height}px`;
 			}
 		}
+
+		eventChannel.dispatchEvent(new Event("resize"));
 	}
 
 	static _getShowWindow_getPosition ({$hov, $wrpContent}) {

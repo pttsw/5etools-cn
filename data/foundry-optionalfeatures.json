@@ -21,6 +21,51 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Agonizing Blast",
+			"name": "苦痛魔爆",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Make Agonizing",
+					"name": "制造苦痛",
+					"type": "enchant",
+					"activation": {
+						"type": ""
+					},
+					"restrictions": {
+						"allowMagical": true
+					},
+					"effects": [
+						{
+							"foundryId": "agonizingBlast"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "agonizingBlast",
+					"type": "enchantment",
+					"disabled": true,
+					"transfer": true,
+					"changes": [
+						{
+							"key": "name",
+							"mode": "ADD",
+							"value": ", Agonizing"
+						},
+						{
+							"key": "system.damage.bonus",
+							"mode": "ADD",
+							"value": "@abilities.cha.mod"
+						}
+					],
+					"description": "选择你已知的一个魔契师戏法中造成伤害的戏法。你可以将你的魅力调整值加到该法术的伤害骰上。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Ambush",
 			"name": "伏击",
 			"source": "XPHB",
@@ -92,8 +137,8 @@
 				},
 				{
 					"ENG_name": "Arcane Propulsion",
-					"foundryId": "arcanePropulsion",
 					"name": "奥术推进",
+					"foundryId": "arcanePropulsion",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -170,8 +215,8 @@
 			"effects": [
 				{
 					"ENG_name": "Armor of Magical Strength",
-					"foundryId": "armorOfMagicalSt",
 					"name": "魔法力量护甲",
+					"foundryId": "armorOfMagicalSt",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -277,8 +322,8 @@
 			"effects": [
 				{
 					"ENG_name": "Mage Armor",
-					"foundryId": "armorOfShadows",
 					"name": "法师护甲",
+					"foundryId": "armorOfShadows",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -340,8 +385,8 @@
 			"effects": [
 				{
 					"ENG_name": "Levitating",
-					"foundryId": "ascendantStep",
 					"name": "浮空",
+					"foundryId": "ascendantStep",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -436,8 +481,8 @@
 			"effects": [
 				{
 					"ENG_name": "Baited AC +1",
-					"foundryId": "baitAndSwitch",
 					"name": "诱饵AC +1",
+					"foundryId": "baitAndSwitch",
 					"duration": {
 						"rounds": 1
 					},
@@ -452,8 +497,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +2",
-					"foundryId": "baitAndSwitch1",
 					"name": "诱饵 AC +2",
+					"foundryId": "baitAndSwitch1",
 					"duration": {
 						"rounds": 1
 					},
@@ -468,8 +513,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +3",
-					"foundryId": "baitAndSwitch2",
 					"name": "诱饵 AC +3",
+					"foundryId": "baitAndSwitch2",
 					"duration": {
 						"rounds": 1
 					},
@@ -484,8 +529,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +4",
-					"foundryId": "baitAndSwitch3",
 					"name": "诱饵护甲等级 +4",
+					"foundryId": "baitAndSwitch3",
 					"duration": {
 						"rounds": 1
 					},
@@ -500,8 +545,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +5",
-					"foundryId": "baitAndSwitch4",
 					"name": "诱饵AC +5",
+					"foundryId": "baitAndSwitch4",
 					"duration": {
 						"rounds": 1
 					},
@@ -516,8 +561,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +6",
-					"foundryId": "baitAndSwitch5",
 					"name": "诱饵 AC +6",
+					"foundryId": "baitAndSwitch5",
 					"duration": {
 						"rounds": 1
 					},
@@ -532,8 +577,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +7",
-					"foundryId": "baitAndSwitch6",
 					"name": "诱饵护甲等级 +7",
+					"foundryId": "baitAndSwitch6",
 					"duration": {
 						"rounds": 1
 					},
@@ -548,8 +593,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +8",
-					"foundryId": "baitAndSwitch7",
 					"name": "诱饵AC +8",
+					"foundryId": "baitAndSwitch7",
 					"duration": {
 						"rounds": 1
 					},
@@ -564,8 +609,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +9",
-					"foundryId": "baitAndSwitch8",
 					"name": "诱饵护甲等级 +9",
+					"foundryId": "baitAndSwitch8",
 					"duration": {
 						"rounds": 1
 					},
@@ -580,8 +625,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +10",
-					"foundryId": "baitAndSwitch9",
 					"name": "诱饵 AC +10",
+					"foundryId": "baitAndSwitch9",
 					"duration": {
 						"rounds": 1
 					},
@@ -596,8 +641,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +11",
-					"foundryId": "baitAndSwitch10",
 					"name": "诱饵AC +11",
+					"foundryId": "baitAndSwitch10",
 					"duration": {
 						"rounds": 1
 					},
@@ -612,8 +657,8 @@
 				},
 				{
 					"ENG_name": "Baited AC +12",
-					"foundryId": "baitAndSwitch11",
 					"name": "诱饵 AC +12",
+					"foundryId": "baitAndSwitch11",
 					"duration": {
 						"rounds": 1
 					},
@@ -698,8 +743,8 @@
 			"effects": [
 				{
 					"ENG_name": "Boots of the Winding Path",
-					"foundryId": "bootsOfTheWindin",
 					"name": "折返之靴",
+					"foundryId": "bootsOfTheWindin",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1110,8 +1155,8 @@
 			"effects": [
 				{
 					"ENG_name": "Distracted",
-					"foundryId": "distractingStrik",
 					"name": "分心",
+					"foundryId": "distractingStrik",
 					"duration": {
 						"turns": 1
 					}
@@ -1329,8 +1374,8 @@
 			"effects": [
 				{
 					"ENG_name": "Enhanced Arcane Focus",
-					"foundryId": "enhancedArcaneFo",
 					"name": "增强奥术法器",
+					"foundryId": "enhancedArcaneFo",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1357,8 +1402,8 @@
 				},
 				{
 					"ENG_name": "Enhanced Arcane Focus +2",
-					"foundryId": "enhancedArcaneF2",
 					"name": "增强奥术法器 +2",
+					"foundryId": "enhancedArcaneF2",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1467,8 +1512,8 @@
 			"effects": [
 				{
 					"ENG_name": "Enhanced Defense",
-					"foundryId": "enhancedDefense",
 					"name": "增强防御",
+					"foundryId": "enhancedDefense",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1495,8 +1540,8 @@
 				},
 				{
 					"ENG_name": "Enhanced Defense +2",
-					"foundryId": "enhancedDefense2",
 					"name": "增强防御 +2",
+					"foundryId": "enhancedDefense2",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1569,8 +1614,8 @@
 			"effects": [
 				{
 					"ENG_name": "Enhanced Weapon",
-					"foundryId": "enhancedWeapon",
 					"name": "增强武器",
+					"foundryId": "enhancedWeapon",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1597,8 +1642,8 @@
 				},
 				{
 					"ENG_name": "Enhanced Weapon +2",
-					"foundryId": "enhancedWeapon2",
 					"name": "强化武器 +2",
+					"foundryId": "enhancedWeapon2",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -1758,8 +1803,8 @@
 			"effects": [
 				{
 					"ENG_name": "Feinted",
-					"foundryId": "feintingAttack",
 					"name": "佯攻",
+					"foundryId": "feintingAttack",
 					"duration": {
 						"turns": 1
 					}
@@ -1966,8 +2011,8 @@
 			"effects": [
 				{
 					"ENG_name": "Water Breathing",
+					"name": "水中呼吸",
 					"foundryId": "giftOfTheDepths",
-					"name": "水下呼吸",
 					"duration": {
 						"seconds": 86400
 					}
@@ -2130,8 +2175,8 @@
 			"effects": [
 				{
 					"ENG_name": "Goaded",
-					"foundryId": "goadingAttack",
 					"name": "被激怒",
+					"foundryId": "goadingAttack",
 					"transfer": true,
 					"duration": {
 						"turns": 1
@@ -2198,8 +2243,8 @@
 			"effects": [
 				{
 					"ENG_name": "Helm of Awareness",
-					"foundryId": "helmOfAwareness",
 					"name": "警觉之盔",
+					"foundryId": "helmOfAwareness",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -2343,8 +2388,8 @@
 					"profiles": [
 						{
 							"ENG_name": "CR 0 Beast",
-							"cr": "0",
 							"name": "CR 0 野兽",
+							"cr": "0",
 							"types": [
 								"野兽"
 							]
@@ -2354,7 +2399,7 @@
 						"mode": "cr"
 					},
 					"creatureTypes": [
-						"天界语",
+						"celestial",
 						"精类",
 						"邪魔"
 					],
@@ -2397,8 +2442,8 @@
 					"profiles": [
 						{
 							"ENG_name": "CR 0 Beast",
-							"cr": "0",
 							"name": "CR 0 野兽",
+							"cr": "0",
 							"types": [
 								"野兽"
 							]
@@ -2408,7 +2453,7 @@
 						"mode": "cr"
 					},
 					"creatureTypes": [
-						"天界语",
+						"celestial",
 						"精类",
 						"邪魔"
 					],
@@ -2482,8 +2527,8 @@
 			"effects": [
 				{
 					"ENG_name": "Investment of Flight",
-					"foundryId": "investmentOfTheC",
 					"name": "飞行之赐",
+					"foundryId": "investmentOfTheC",
 					"changes": [
 						{
 							"key": "system.attributes.movement.fly",
@@ -2505,8 +2550,8 @@
 				},
 				{
 					"ENG_name": "Resist Acid",
-					"foundryId": "investmentOfThe1",
 					"name": "抵抗酸性",
+					"foundryId": "investmentOfThe1",
 					"duration": {
 						"turns": 1
 					},
@@ -2520,8 +2565,8 @@
 				},
 				{
 					"ENG_name": "Resist Bludgeoning",
-					"foundryId": "investmentOfThe2",
 					"name": "抵抗钝击",
+					"foundryId": "investmentOfThe2",
 					"duration": {
 						"turns": 1
 					},
@@ -2535,8 +2580,8 @@
 				},
 				{
 					"ENG_name": "Resist Cold",
-					"foundryId": "investmentOfThe3",
 					"name": "抗寒",
+					"foundryId": "investmentOfThe3",
 					"duration": {
 						"turns": 1
 					},
@@ -2550,8 +2595,8 @@
 				},
 				{
 					"ENG_name": "Resist Fire",
-					"foundryId": "investmentOfThe4",
 					"name": "火焰抗性",
+					"foundryId": "investmentOfThe4",
 					"duration": {
 						"turns": 1
 					},
@@ -2565,8 +2610,8 @@
 				},
 				{
 					"ENG_name": "Resist Force",
-					"foundryId": "investmentOfThe5",
 					"name": "抗力",
+					"foundryId": "investmentOfThe5",
 					"duration": {
 						"turns": 1
 					},
@@ -2580,8 +2625,8 @@
 				},
 				{
 					"ENG_name": "Resist Lightning",
-					"foundryId": "investmentOfThe6",
 					"name": "闪电抗性",
+					"foundryId": "investmentOfThe6",
 					"duration": {
 						"turns": 1
 					},
@@ -2595,8 +2640,8 @@
 				},
 				{
 					"ENG_name": "Resist Necrotic",
-					"foundryId": "investmentOfThe7",
 					"name": "抵抗死灵",
+					"foundryId": "investmentOfThe7",
 					"duration": {
 						"turns": 1
 					},
@@ -2610,8 +2655,8 @@
 				},
 				{
 					"ENG_name": "Resist Piercing",
-					"foundryId": "investmentOfThe8",
 					"name": "抵抗穿刺",
+					"foundryId": "investmentOfThe8",
 					"duration": {
 						"turns": 1
 					},
@@ -2625,8 +2670,8 @@
 				},
 				{
 					"ENG_name": "Resist Poison",
-					"foundryId": "investmentOfThe9",
 					"name": "抗毒",
+					"foundryId": "investmentOfThe9",
 					"duration": {
 						"turns": 1
 					},
@@ -2640,8 +2685,8 @@
 				},
 				{
 					"ENG_name": "Resist Psychic",
-					"foundryId": "investmentOfTh10",
 					"name": "抵抗心灵伤害",
+					"foundryId": "investmentOfTh10",
 					"duration": {
 						"turns": 1
 					},
@@ -2655,8 +2700,8 @@
 				},
 				{
 					"ENG_name": "Resist Radiant",
-					"foundryId": "investmentOfTh11",
 					"name": "抵抗光耀",
+					"foundryId": "investmentOfTh11",
 					"duration": {
 						"turns": 1
 					},
@@ -2670,8 +2715,8 @@
 				},
 				{
 					"ENG_name": "Resist Slashing",
-					"foundryId": "investmentOfTh12",
 					"name": "抵抗挥砍伤害",
+					"foundryId": "investmentOfTh12",
 					"duration": {
 						"turns": 1
 					},
@@ -2685,8 +2730,8 @@
 				},
 				{
 					"ENG_name": "Resist Thunder",
-					"foundryId": "investmentOfTh13",
 					"name": "雷电抗性",
+					"foundryId": "investmentOfTh13",
 					"duration": {
 						"turns": 1
 					},
@@ -2942,8 +2987,8 @@
 			"effects": [
 				{
 					"ENG_name": "Disguised",
-					"foundryId": "maskOfManyFaces",
 					"name": "易容",
+					"foundryId": "maskOfManyFaces",
 					"duration": {
 						"seconds": 3600
 					},
@@ -3143,8 +3188,8 @@
 			"effects": [
 				{
 					"ENG_name": "Aquatic Adaptation",
-					"foundryId": "masterOfMyriadFo",
 					"name": "水生适应",
+					"foundryId": "masterOfMyriadFo",
 					"duration": {
 						"seconds": 3600
 					},
@@ -3159,16 +3204,16 @@
 				},
 				{
 					"ENG_name": "Altered Appearance",
-					"foundryId": "masterOfMyriadF1",
 					"name": "改变容貌",
+					"foundryId": "masterOfMyriadF1",
 					"duration": {
 						"seconds": 3600
 					}
 				},
 				{
 					"ENG_name": "Natural Weapon",
-					"foundryId": "masterOfMyriadF2",
 					"name": "天生武器",
+					"foundryId": "masterOfMyriadF2",
 					"duration": {
 						"seconds": 3600
 					},
@@ -3251,8 +3296,8 @@
 			"effects": [
 				{
 					"ENG_name": "Menaced",
-					"foundryId": "menacingAttack",
 					"name": "受威胁",
+					"foundryId": "menacingAttack",
 					"duration": {
 						"turns": 1
 					},
@@ -3290,8 +3335,8 @@
 			"effects": [
 				{
 					"ENG_name": "Mind Sharpener",
-					"foundryId": "mindSharpener",
 					"name": "思维砥石",
+					"foundryId": "mindSharpener",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -3419,8 +3464,8 @@
 			"effects": [
 				{
 					"ENG_name": "Invisible",
-					"foundryId": "oneWithShadows",
 					"name": "隐形",
+					"foundryId": "oneWithShadows",
 					"duration": {
 						"seconds": 3600
 					},
@@ -3478,8 +3523,8 @@
 			"effects": [
 				{
 					"ENG_name": "Jump",
-					"foundryId": "otherworldlyLeap",
 					"name": "跳跃术",
+					"foundryId": "otherworldlyLeap",
 					"duration": {
 						"rounds": 1,
 						"seconds": 60
@@ -3539,8 +3584,8 @@
 				},
 				{
 					"ENG_name": "Spellcasting Attack",
-					"foundryId": "pactOfTheBlade",
 					"name": "法术攻击",
+					"foundryId": "pactOfTheBlade",
 					"type": "attack",
 					"img": "systems/dnd5e/icons/svg/properties/magical.svg",
 					"activation": {
@@ -3561,8 +3606,8 @@
 			"effects": [
 				{
 					"ENG_name": "Pact Weapon",
-					"foundryId": "pactOfTheBlade",
 					"name": "契约武器",
+					"foundryId": "pactOfTheBlade",
 					"type": "enchantment",
 					"disabled": true,
 					"transfer": true,
@@ -3630,15 +3675,6 @@
 						"type": "action",
 						"value": 1
 					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "attribute",
-								"value": "1",
-								"target": "spells.pact.value"
-							}
-						]
-					},
 					"target": {
 						"affects": {
 							"count": "1",
@@ -3652,8 +3688,8 @@
 					"profiles": [
 						{
 							"ENG_name": "CR 0 Beast",
-							"cr": "0",
 							"name": "CR 0 野兽",
+							"cr": "0",
 							"types": [
 								"野兽"
 							]
@@ -3663,7 +3699,7 @@
 						"mode": "cr"
 					},
 					"creatureTypes": [
-						"天界语",
+						"celestial",
 						"精类",
 						"邪魔"
 					]
@@ -3675,15 +3711,6 @@
 					"activation": {
 						"type": "action",
 						"value": 1
-					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "attribute",
-								"value": "1",
-								"target": "spells.pact.value"
-							}
-						]
 					},
 					"target": {
 						"affects": {
@@ -3722,7 +3749,7 @@
 						}
 					],
 					"creatureTypes": [
-						"天界语",
+						"celestial",
 						"精类",
 						"邪魔"
 					]
@@ -3765,7 +3792,7 @@
 						],
 						"custom": {
 							"enabled": true,
-							"formula": "@scale.battle-master.superiority.die"
+							"formula": "@scale.battle-master.superiority.die + max(@abilities.str.mod, @abilities.dex.mod)"
 						},
 						"scaling": {
 							"number": 1
@@ -3933,8 +3960,8 @@
 			"effects": [
 				{
 					"ENG_name": "Radiant Weapon",
-					"foundryId": "radiantWeapon",
 					"name": "光耀武器",
+					"foundryId": "radiantWeapon",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4070,8 +4097,8 @@
 			"effects": [
 				{
 					"ENG_name": "Repeating Shot",
-					"foundryId": "repeatingShot",
 					"name": "连射武器",
+					"foundryId": "repeatingShot",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4173,8 +4200,8 @@
 			"effects": [
 				{
 					"ENG_name": "Replicated Magic Item",
-					"foundryId": "replicatedMagicI",
 					"name": "复制魔法物品",
+					"foundryId": "replicatedMagicI",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4214,8 +4241,8 @@
 			"effects": [
 				{
 					"ENG_name": "Repulsion Shield",
-					"foundryId": "repulsionShield",
 					"name": "斥力之盾",
+					"foundryId": "repulsionShield",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4451,8 +4478,8 @@
 			"effects": [
 				{
 					"ENG_name": "Acid Resistance",
-					"foundryId": "arResistanceAcid",
 					"name": "强酸抗性",
+					"foundryId": "arResistanceAcid",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4474,8 +4501,8 @@
 				},
 				{
 					"ENG_name": "Cold Resistance",
-					"foundryId": "arResistanceCold",
 					"name": "冷冻抗性",
+					"foundryId": "arResistanceCold",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4497,8 +4524,8 @@
 				},
 				{
 					"ENG_name": "Fire Resistance",
-					"foundryId": "arResistanceFire",
 					"name": "火焰抗性",
+					"foundryId": "arResistanceFire",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4520,8 +4547,8 @@
 				},
 				{
 					"ENG_name": "Force Resistance",
-					"foundryId": "arResistanceForc",
 					"name": "力量抗性",
+					"foundryId": "arResistanceForc",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4543,8 +4570,8 @@
 				},
 				{
 					"ENG_name": "Lightning Resistance",
-					"foundryId": "arResistanceLigh",
 					"name": "闪电抗性",
+					"foundryId": "arResistanceLigh",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4566,8 +4593,8 @@
 				},
 				{
 					"ENG_name": "Necrotic Resistance",
-					"foundryId": "arResistanceNecr",
 					"name": "黯蚀抗性",
+					"foundryId": "arResistanceNecr",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4589,8 +4616,8 @@
 				},
 				{
 					"ENG_name": "Poison Resistance",
-					"foundryId": "arResistancePois",
 					"name": "毒素抗性",
+					"foundryId": "arResistancePois",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4612,8 +4639,8 @@
 				},
 				{
 					"ENG_name": "Psychic Resistance",
-					"foundryId": "arResistancePsyc",
 					"name": "心灵抗性",
+					"foundryId": "arResistancePsyc",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4635,8 +4662,8 @@
 				},
 				{
 					"ENG_name": "Radiant Resistance",
-					"foundryId": "arResistanceRadi",
 					"name": "光辉抗性",
+					"foundryId": "arResistanceRadi",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4658,8 +4685,8 @@
 				},
 				{
 					"ENG_name": "Thunder Resistance",
-					"foundryId": "arResistanceThun",
 					"name": "雷鸣抗性",
+					"foundryId": "arResistanceThun",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -4839,8 +4866,8 @@
 			"effects": [
 				{
 					"ENG_name": "Returning Weapon",
-					"foundryId": "returningWeapon",
 					"name": "回力武器",
+					"foundryId": "returningWeapon",
 					"type": "enchantment",
 					"changes": [
 						{
@@ -5019,8 +5046,8 @@
 			"effects": [
 				{
 					"ENG_name": "Spell-Refueling Ring",
-					"foundryId": "spellRefuelingRi",
 					"name": "法力恢复戒指",
+					"foundryId": "spellRefuelingRi",
 					"type": "enchantment",
 					"changes": [
 						{

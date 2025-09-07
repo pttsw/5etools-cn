@@ -159,8 +159,8 @@
 						"阿德拉纳克是为它们的创造者个性化定制的构装生物。使一个符文编织者成为奇迹联盟{@book 奇迹联盟|TDCSR|2|奇迹联盟}候选人的特质之一是对发明的兴趣，并且鼓励符文编织者定制他们创造的任何阿德拉纳克。以下是符文编织者为他们的创造物配备的一些可选特性。大多数阿德拉纳克有一个额外特性，而大多数大师阿德拉纳克有三个。",
 						{
 							"ENG_name": "Advanced Tracking ({@i Recharges after a {@quickref resting|PHB|2|0|Long Rest}})",
+							"name": "高级追踪（{@i 在进行一次{@quickref 长休息|PHB|2|0}后重新充能}）",
 							"type": "entries",
-							"name": "高级追踪（{@i 在{@quickref 休息|PHB|2|0|长休}后恢复}）",
 							"page": 224,
 							"entries": [
 								"当一个生物在对抗阿德拉纳赫的力能射线的{@quickref 豁免检定|PHB|2|1|豁免检定}失败时，阿德拉纳赫可以在接下来的24小时内标记那个生物。只要他们在同一位面，阿德拉纳赫就知道生物的位置方向。如果生物在移动，阿德拉纳赫知道其移动的方向。"
@@ -168,8 +168,8 @@
 						},
 						{
 							"ENG_name": "Arcane Bond",
-							"type": "entries",
 							"name": "奥术联结",
+							"type": "entries",
 							"page": 224,
 							"entries": [
 								"阿德拉纳克的创造者可以在彼此相距1英里内时通过心灵感应与它沟通。作为一个动作，创造者可以通过阿德拉纳克的眼睛看东西，听到它所听到的，直到创造者的下一个回合开始，同时获得阿德拉纳克拥有的任何特殊感官的好处。在这段时间里，创造者在自己的感官方面处于{@condition 耳聋}和{@condition 目盲}状态。"
@@ -177,8 +177,8 @@
 						},
 						{
 							"ENG_name": "Slipstream",
-							"type": "entries",
 							"name": "滑流",
+							"type": "entries",
 							"page": 224,
 							"entries": [
 								"阿德拉纳赫可以随意对自己施放{@spell 隐形术}。当它处于{@condition 隐形}状态时，其速度翻倍。"
@@ -332,7 +332,7 @@
 				},
 				{
 					"ENG_name": "Flamecharm (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "火焰魅力（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "火焰魅力（在{@quickref 休息|PHB|2|0|Short or Long Rest}后重新充能）",
 					"entries": [
 						"驯火者可以对{@creature 火元素}或其他火元素生物施放{@spell 支配怪物}法术（豁免{@dc 15}）。如果该生物有150或更多的生命值，它在{@quickref 优势与劣势|PHB|2|0|优势}上有{@quickref 豁免检定|PHB|2|1|豁免检定}。"
 					]
@@ -341,7 +341,7 @@
 			"bonus": [
 				{
 					"ENG_name": "Flameform (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "火焰形态（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "火焰形态（在{@quickref 休息|PHB|2|0|Short or Long Rest}后重新充能）",
 					"entries": [
 						"驯火者可以转变成一只{@creature 火元素}。它的游戏具体数值被元素生物的具体数值所替代，但驯火者保留其阵营、个性以及感知、感知和魅力得分，以及所有技能和{@quickref 豁免检定|PHB|2|1|豁免检定}熟练度。在这种形态下，驯火者不能施放法术。当驯火者在这种形态下降至0生命值、陷入{@condition 昏迷}状态或死亡时，它会恢复到其类人形态。它最多可以以火焰形态存在5小时，或者作为附赠动作恢复到其类人形态。"
 					]
@@ -600,7 +600,7 @@
 				"intimidation": "+2"
 			},
 			"senses": [
-				"震动感知 30 尺"
+				"颤动感知 30 尺"
 			],
 			"passive": 12,
 			"resist": [
@@ -635,7 +635,7 @@
 						"0": {
 							"spells": [
 								"{@spell 德鲁伊伎俩}",
-								"{@spell 提升抗性}"
+								"{@spell 抵抗术}"
 							]
 						},
 						"1": {
@@ -794,7 +794,7 @@
 							"spells": [
 								"{@spell 德鲁伊伎俩}",
 								"{@spell 毒气喷溅} ({@dice 2d12})",
-								"{@spell 提升抗性}"
+								"{@spell 抵抗术}"
 							]
 						},
 						"1": {
@@ -817,7 +817,7 @@
 							"slots": 3,
 							"spells": [
 								"{@spell 动物咒唤术} （仅水生生物）",
-								"{@spell 水下呼吸}",
+								"{@spell 水中呼吸}",
 								"{@spell 水上行走}"
 							]
 						},
@@ -859,7 +859,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Fishform (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "鱼形态（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "鱼形态（在{@quickref 短暂休息|PHB|2|0|Short or Long Rest}后重新充能）",
 					"entries": [
 						"乘波者可以变形为{@creature 寻猎鲨}或{@creature 巨章鱼}。它的游戏具体数值被所选择生物的具体数值所替代，但乘波者保留了它的阵营，个性，以及感知、感知和魅力得分。它还保留了它的技能熟练度，并在变形为生物时获得了该生物的技能熟练度。当乘波者在这个形态下降至0点生命值、陷入{@condition 昏迷}状态或死亡时，它会变回其人类形态。它可以以鱼形存在最多3小时，或者作为一个附赠动作变回其人类形态。"
 					]
@@ -1154,8 +1154,8 @@
 						"一些半人马骷髅在游戏主持人的判断下可能具有以下额外特性。",
 						{
 							"ENG_name": "Spirit Away",
-							"type": "entries",
 							"name": "灵魂转移",
+							"type": "entries",
 							"page": 256,
 							"entries": [
 								"半人马骨架及其周围5英尺内的至多三个生物会从物质位面魔法般地进入以太位面，反之亦然。一个不自愿的生物如果成功通过一次{@dc 13}魅力{@quickref 豁免检定|PHB|2|1|豁免检定}，则可以抵抗此效果。"
@@ -1201,7 +1201,7 @@
 		},
 		{
 			"ENG_name": "Champion of Ravens",
-			"name": "乌鸦的冠军",
+			"name": "渡鸦勇士",
 			"shortName": "冠军",
 			"alias": [
 				"瓦克斯·伊尔丹"
@@ -1383,7 +1383,7 @@
 				},
 				{
 					"ENG_name": "Touch of Life and Death (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "生命与死亡之触（在进行{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "生命与死亡之触（在进行{@quickref 短休或长休|PHB|2|0}后重新充能）",
 					"entries": [
 						"冠军触碰他5英尺范围内的一个生物，并选择治疗或伤害该生物，恢复55（{@dice 10d10}）点生命值或造成55（{@damage 10d10}）点黯蚀伤害。如果该生物是不情愿的目标，它可以通过一次成功的{@dc 20}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}来避免任一效果。"
 					]
@@ -1786,7 +1786,7 @@
 			"bonus": [
 				{
 					"ENG_name": "Second Wind (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "第二次呼吸（在进行{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "第二次呼吸（在进行{@quickref 短休或长休|PHB|2|0}后重新充能）",
 					"entries": [
 						"执行者恢复12点生命值"
 					]
@@ -2685,7 +2685,7 @@
 			"page": 66,
 			"_copy": {
 				"ENG_name": "Hydra",
-				"name": "多头蛇蜥",
+				"name": "多头蛇",
 				"source": "MM"
 			},
 			"int": 12,
@@ -3319,14 +3319,14 @@
 				},
 				{
 					"ENG_name": "{@item Bloodaxe|EGW}",
-					"name": "{@item 血斧|EGW}",
+					"name": "{@item Bloodaxe|EGW}",
 					"entries": [
 						"{@atk mw} 命中{@hit 16}，触及范围5尺，单一目标。{@h}20（{@damage 1d12 + 14}）挥砍伤害加上3点（{@damage 1d6}）黯蚀伤害。如果目标生命值降至0点，Grog获得10点临时生命值。"
 					]
 				},
 				{
 					"ENG_name": "{@item Dwarven Thrower}",
-					"name": "{@item 矮人飞锤}",
+					"name": "{@item Dwarven Thrower}",
 					"entries": [
 						"{@atk mw,rw} 命中{@hit 17}，触及范围5尺或射程20/60，单一目标。{@h}24 ({@damage 2d8 + 15}) 钝击伤害。"
 					]
@@ -3340,7 +3340,7 @@
 				},
 				{
 					"ENG_name": "Enlarge (Recharges after a {@quickref resting|PHB|2|0|Long Rest})",
-					"name": "变大（在一次{@quickref 休息|PHB|2|0|长休}后重新充能）",
+					"name": "变大（在一次{@quickref 长休|PHB|2|0|Long Rest}后重新充能）",
 					"entries": [
 						"Grog对自己施放了{@spell 变巨/缩小术}法术，使他在10分钟内体型增大。在以这种方式增大时，他对寒冷、火焰、闪电和雷鸣伤害具有抗性。"
 					]
@@ -3349,7 +3349,7 @@
 			"bonus": [
 				{
 					"ENG_name": "Rage (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "狂暴（在进行{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "狂暴（在进行{@quickref 休息|PHB|2|0|短暂或长休息}后重新充能）",
 					"entries": [
 						"Grog进入一种持续到他{@condition 昏迷}或选择结束它（无需动作）的狂暴状态。在狂暴期间，Grog获得以下好处：",
 						{
@@ -3407,7 +3407,7 @@
 			"name": "寂灭幽魂乔瑞尔",
 			"shortName": "Jourrael",
 			"alias": [
-				"不可避免的结局",
+				"命定终局",
 				"凯多幽灵"
 			],
 			"isNamedCreature": true,
@@ -3572,7 +3572,7 @@
 				},
 				{
 					"ENG_name": "Mirrored Form (Recharges after a {@quickref resting|PHB|2|0|Short Rest})",
-					"name": "镜像形态（在一次{@quickref 休息|PHB|2|0|短休}后重新充能）",
+					"name": "镜像形态（在一次{@quickref 短休|PHB|2|0|Short Rest}后重新充能）",
 					"entries": [
 						"Jourrael显现出三个虚幻的复制体，它们在她的空间中盘旋。每当一个生物用攻击瞄准Jourrael时，投掷一个{@dice d20}来看是否击中了一个复制体。如果有三个复制体，6或更高的点数就会击中一个复制体。有两个复制体时，8或更高的点数就会击中一个复制体。只有一个复制体时，11或更高的点数就会击中它。复制体的AC是17，如果被击中就会被摧毁。Jourrael可以作为一个附赠动作隐藏复制体。"
 					]
@@ -3820,7 +3820,7 @@
 					"ENG_name": "Shapechange",
 					"name": "形体变化",
 					"entries": [
-						"Keyleth施放{@spell 形体变化}以变身为一个{@creature 异界神侍}，一个{@creature 成年青铜龙}，或{@filter 另一个挑战等级20或更低的生物，不是构装生物或不死生物|怪物图鉴|Challenge Rating=[0;&20]|type=!构装生物；!不死生物|source=null}。"
+						"Keyleth施放{@spell 形体变化}以变身为一个{@creature 异界神侍}，一个{@creature 成年青铜龙}，或{@filter 另一个挑战等级20或更低的生物，不是构装生物或不死生物|bestiary|Challenge Rating=[0;&20]|type=!construct;!undead|source=null}。"
 					]
 				},
 				{
@@ -3912,7 +3912,7 @@
 					"ac": 20,
 					"from": [
 						"{@item 板甲|PHB|板甲}",
-						"{@item 护盾术|PHB}"
+						"{@item 盾牌|PHB}"
 					]
 				}
 			],
@@ -4267,7 +4267,7 @@
 			},
 			"senses": [
 				"黑暗视觉 60 尺",
-				"震动感知 120 尺"
+				"颤动感知 120 尺"
 			],
 			"passive": 17,
 			"immune": [
@@ -4549,8 +4549,8 @@
 						"阿德拉纳克是为它们的创造者个性化定制的构装生物。使一个符文编织者成为奇迹联盟{@book 奇迹联盟|TDCSR|2|奇迹联盟}候选人的特质之一是对发明的兴趣，并且鼓励符文编织者定制他们创造的任何阿德拉纳克。以下是符文编织者为他们的创造物配备的一些可选特性。大多数阿德拉纳克有一个额外特性，而大多数大师阿德拉纳克有三个。",
 						{
 							"ENG_name": "Advanced Tracking ({@i Recharges after a {@quickref resting|PHB|2|0|Long Rest}})",
+							"name": "高级追踪（{@i 在进行一次{@quickref 长休息|PHB|2|0}后重新充能}）",
 							"type": "entries",
-							"name": "高级追踪（{@i 在{@quickref 休息|PHB|2|0|长休}后恢复}）",
 							"page": 224,
 							"entries": [
 								"当一个生物在对抗阿德拉纳赫的力能射线的{@quickref 豁免检定|PHB|2|1|豁免检定}失败时，阿德拉纳赫可以在接下来的24小时内标记那个生物。只要他们在同一位面，阿德拉纳赫就知道生物的位置方向。如果生物在移动，阿德拉纳赫知道其移动的方向。"
@@ -4558,8 +4558,8 @@
 						},
 						{
 							"ENG_name": "Arcane Bond",
-							"type": "entries",
 							"name": "奥术联结",
+							"type": "entries",
 							"page": 224,
 							"entries": [
 								"阿德拉纳克的创造者可以在彼此相距1英里内时通过心灵感应与它沟通。作为一个动作，创造者可以通过阿德拉纳克的眼睛看东西，听到它所听到的，直到创造者的下一个回合开始，同时获得阿德拉纳克拥有的任何特殊感官的好处。在这段时间里，创造者在自己的感官方面处于{@condition 耳聋}和{@condition 目盲}状态。"
@@ -4567,8 +4567,8 @@
 						},
 						{
 							"ENG_name": "Astral Form ({@i Master Adranach Only; Recharges after a {@quickref resting|PHB|2|0|Long Rest}})",
+							"name": "星界形态（{@i 仅限大师阿德拉纳赫；在一次{@quickref 长休|PHB|2|0|Long Rest}后重新充能}）",
 							"type": "entries",
-							"name": "星界形态（{@i 仅限阿德拉纳赫大师使用；在{@quickref 休息|PHB|2|0|长休}后恢复}）",
 							"page": 224,
 							"entries": [
 								"大师阿德拉纳克可以对自己施放{@spell 星界投影}。"
@@ -4576,8 +4576,8 @@
 						},
 						{
 							"ENG_name": "Slipstream",
-							"type": "entries",
 							"name": "滑流",
+							"type": "entries",
 							"page": 224,
 							"entries": [
 								"阿德拉纳赫可以随意对自己施放{@spell 隐形术}。当它处于{@condition 隐形}状态时，其速度翻倍。"
@@ -4585,8 +4585,8 @@
 						},
 						{
 							"ENG_name": "Truesight ({@i Master Adranach Only})",
+							"name": "真实视觉（{@i 仅大师阿德拉纳克拥有}）",
 							"type": "entries",
-							"name": "真实视觉（{@i 仅限大师阿德拉纳赫}）",
 							"page": 224,
 							"entries": [
 								"阿德拉纳克具有{@sense 真实视觉}能力，范围可达30尺。作为一个动作，它可以将其{@sense 真实视觉}的范围增加到120尺，直到它的下一个回合结束。"
@@ -4627,7 +4627,7 @@
 		},
 		{
 			"ENG_name": "Percival de Rolo",
-			"name": "珀西瓦尔·德·罗洛",
+			"name": "帕西瓦尔·德·罗洛",
 			"shortName": "珀西",
 			"alias": [
 				"珀西瓦尔·弗雷德里克斯坦·冯·穆塞尔·克洛索夫斯基·德·罗洛三世"
@@ -4690,7 +4690,7 @@
 			"trait": [
 				{
 					"ENG_name": "Action Surge (2/{@quickref resting|PHB|2|0|Short Rest})",
-					"name": "行动激增（2/{@quickref 休息|PHB|2|0|短休})",
+					"name": "行动激增（2/{@quickref 短休|PHB|2|0|Short Rest})",
 					"entries": [
 						"在佩西的回合中，他可以额外进行一次行动。"
 					]
@@ -4704,7 +4704,7 @@
 				},
 				{
 					"ENG_name": "Indomitable (3/{@quickref resting|PHB|2|0|Long Rest})",
-					"name": "不屈（3/{@quickref 休息|PHB|2|0|长休}）",
+					"name": "不屈（3/{@quickref resting|PHB|2|0|长休息}）",
 					"entries": [
 						"珀西可以重新掷一次失败的{@quickref 豁免检定|PHB|2|1|豁免检定}。"
 					]
@@ -4763,16 +4763,16 @@
 							"items": [
 								{
 									"ENG_name": "Deadeye",
-									"type": "item",
 									"name": "神射手",
+									"type": "item",
 									"entries": [
 										"珀西在本回合对同一目标的下一次攻击掷骰中获得{@quickref 优势与劣势|PHB|2|0|优势}。"
 									]
 								},
 								{
 									"ENG_name": "Disarm",
-									"type": "item",
 									"name": "缴械",
+									"type": "item",
 									"entries": [
 										"目标必须进行一次{@dc 20}力量{@quickref 豁免检定|PHB|2|1|豁免检定}。若失败，目标将掉落一件由珀西选择的它正持有的物品。"
 									]
@@ -4799,7 +4799,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Absorb Magic (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "吸收魔法（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "吸收魔法（在{@quickref resting|PHB|2|0|短暂或长休息}后重新充能）",
 					"entries": [
 						"当珀西被敌人的法术瞄准时，他可以将法术能量的一部分吸收进{@item 鬼蜮末日（升华）|TDCSR|鬼蜮末日}。法术对他正常生效，但是这件斗篷获得了等于法术等级的充能次数。当他这么做时，他还获得了对该法术造成的伤害类型的一种伤害的抗性，直到他下一个回合结束。"
 					]
@@ -4826,7 +4826,7 @@
 		},
 		{
 			"ENG_name": "Pike Trickfoot",
-			"name": "派克·特里克福特",
+			"name": "派克·巧足",
 			"shortName": "长矛",
 			"alias": [
 				"萨伦瑞的冠军"
@@ -4851,7 +4851,7 @@
 					"ac": 23,
 					"from": [
 						"{@item 黎明殉道者板甲（升华）|TDCSR|黎明殉道者板甲}",
-						"{@item 护盾术|PHB}"
+						"{@item 盾牌|PHB}"
 					]
 				}
 			],
@@ -5016,7 +5016,7 @@
 				},
 				{
 					"ENG_name": "Dawnmartyr's Grace (1/{@quickref resting|PHB|2|0|Long Rest})",
-					"name": "黎明殉道者的恩典（1/{@quickref 休息|PHB|2|0|长休}）",
+					"name": "黎明殉道者的恩典（1/{@quickref resting|PHB|2|0|长休息}）",
 					"entries": [
 						"当派克穿戴着{@item 黎明殉道者板甲（升华）|TDCSR|黎明殉道者板甲}时被降至0生命值，她可以选择让治疗火焰包围自己。她恢复1生命值并站立起来。她周围10尺内的每个敌人将受到7（{@damage 2d6}）火焰伤害或光耀伤害（她选择）。"
 					]
@@ -5041,14 +5041,14 @@
 			"bonus": [
 				{
 					"ENG_name": "Battle Priest (5/{@quickref resting|PHB|2|0|Long Rest})",
-					"name": "战斗祭司 (5/{@quickref 休息|PHB|2|0|长休})",
+					"name": "战斗祭司 (5/{@quickref resting|PHB|2|0|长休息})",
 					"entries": [
 						"如果派克使用{@action 攻击}动作，她可以作为附赠动作进行一次武器攻击。"
 					]
 				},
 				{
 					"ENG_name": "{@spell Healing Word} (4th Level)",
-					"name": "{@spell 治愈真言}（4环法术）",
+					"name": "{@spell 治疗词}（4环法术）",
 					"entries": [
 						"派克施放{@spell 治愈真言}，恢复她自己或她能看到的60尺范围内的另一个生物16（{@dice 4d4 + 6}）点生命值。"
 					]
@@ -5064,7 +5064,7 @@
 				},
 				{
 					"ENG_name": "Everlight's Guidance (3/{@quickref resting|PHB|2|0|Short Rest})",
-					"name": "永恒之光的指引（3/{@quickref 休息|PHB|2|0|短休}）",
+					"name": "永恒之光的指引（3/{@quickref resting|PHB|2|0|短休}）",
 					"entries": [
 						"当派克或她能看到的30尺范围内的生物进行攻击检定时，她可以给予+10的加值给该检定。她可以在检定掷出后但在命中或未命中之前给予这个加值。"
 					]
@@ -5468,7 +5468,7 @@
 					"ENG_name": "Unarmored Defense",
 					"name": "无甲防御",
 					"entries": [
-						"当屠戮领主未穿戴盔甲且未持有{@item 护盾术|PHB}时，其护甲等级(AC)包括其体质调整值。"
+						"当屠戮领主未穿戴盔甲且未持有{@item 盾牌|PHB}时，其护甲等级(AC)包括其体质调整值。"
 					]
 				}
 			],
@@ -5699,7 +5699,7 @@
 		},
 		{
 			"ENG_name": "Remnant Chosen",
-			"name": "残余选民",
+			"name": "残存者-受选之人",
 			"shortName": "被选中者",
 			"group": [
 				"Remnants"
@@ -6158,7 +6158,7 @@
 					"ENG_name": "Unarmored Defense",
 					"name": "无甲防御",
 					"entries": [
-						"当这个格斗者没有穿戴盔甲并且没有持有{@item 护盾术|PHB}时，其AC包括其感知调整值。"
+						"当这个格斗者没有穿戴盔甲并且没有持有{@item 盾牌|PHB}时，其AC包括其感知调整值。"
 					]
 				}
 			],
@@ -6217,7 +6217,7 @@
 				},
 				{
 					"ENG_name": "Endurance (Recharges after a {@quickref resting|PHB|2|0|Short or Long Rest})",
-					"name": "耐力（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "耐力（在{@quickref 短休或长休|PHB|2|0|Short or Long rest}后重新充能）",
 					"entries": [
 						"当这个格斗者受到伤害时，它可以将伤害减少8点（{@dice 1d12 + 2}）。"
 					]
@@ -6349,7 +6349,7 @@
 			"reaction": [
 				{
 					"ENG_name": "Endurance (Recharges after a {@quickref resting|PHB|2|0|Short or Long rest})",
-					"name": "耐力（在{@quickref 休息|PHB|2|0|短休或长休}后重新充能）",
+					"name": "耐力（在{@quickref 短休或长休|PHB|2|0|Short or Long rest}后重新充能）",
 					"entries": [
 						"当风暴之子受到伤害时，它可以减少10点伤害（{@dice 1d12 + 4}）。"
 					]
@@ -6431,7 +6431,7 @@
 		},
 		{
 			"ENG_name": "Scanlan Shorthalt",
-			"name": "斯坎兰·肖特汉",
+			"name": "斯凯兰·短顿",
 			"shortName": "Scanlan",
 			"group": [
 				"Vox Machina"
@@ -6637,14 +6637,14 @@
 				},
 				{
 					"ENG_name": "Bardic Inspiration (6/{@quickref resting|PHB|2|0|Short Rest})",
-					"name": "诗人灵感 (6/{@quickref 休息|PHB|2|0|短休})",
+					"name": "诗人灵感 (6/{@quickref 短休|PHB|2|0|Short Rest})",
 					"entries": [
 						"Scanlan 给予一个能听到他声音的，距离他60尺以内的生物一个吟游诗人灵感骰。在接下来的10分钟内，该生物可以掷一个{@dice d12}，并将掷出的数字加到它进行的一次属性检定、攻击掷骰或{@quickref 豁免检定|PHB|2|1|豁免检定}上。当 Scanlan 使用这个能力时，直到他的回合结束，他在用{@item 神话刻录者（升华）|TDCSR|神话刻录者}进行攻击掷骰时获得{@quickref 优势与劣势|PHB|2|0|优势}。"
 					]
 				},
 				{
 					"ENG_name": "{@spell Healing Word} (5th Level)",
-					"name": "{@spell 治愈真言} (5级)",
+					"name": "{@spell 治疗词} (5级)",
 					"entries": [
 						"Scanlan 施放了一个{@spell 治愈真言}，恢复自己或他能看到的60尺范围内的另一个生物18（{@dice 5d4 + 6}）点生命值。"
 					]
@@ -6854,7 +6854,7 @@
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"Tary 穿戴着一个{@item 光辉头盔}，一件{@item 杂货法袍}，以及一个{@item 公羊戒指}。他携带着一根{@item 流形权杖|TDCSR}，还有一个{@item 次元袋}，{@dice 1d4 + 4}个{@item 力场珠||力量珠}，一把{@item 飞天扫帚}，以及一个{@item 开门钟琴}。"
+						"Tary 穿戴着一个{@item 光辉头盔}，一件{@item 杂货法袍}，以及一个{@item 公羊戒指}。他携带着一根{@item 流形权杖|TDCSR}，还有一个{@item 次元袋}，{@dice 1d4 + 4}个{@item 力场珠||力场珠}，一把{@item 飞天扫帚}，以及一个{@item 开门钟琴}。"
 					]
 				},
 				{
@@ -6882,7 +6882,7 @@
 				},
 				{
 					"ENG_name": "{@item Bead of Force}",
-					"name": "{@item 力场珠}",
+					"name": "{@item Bead of Force}",
 					"entries": [
 						"塔里将一颗{@item 力场珠}投掷至最多60英尺远。位于珠子落点10英尺半径内的每个生物必须成功进行一个{@dc 15}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将受到12（{@damage 5d4}）点力场伤害。随后，一个透明的力场球体会将该区域封闭1分钟。未通过豁免且完全位于该区域内的生物将被困在球体内。"
 					]
@@ -7250,7 +7250,7 @@
 				},
 				{
 					"ENG_name": "Bramble Shot (2/{@quickref resting|PHB|2|0|Short Rest})",
-					"name": "荆棘射击（2/{@quickref 休息|PHB|2|0|短休}）",
+					"name": "荆棘射击（2/{@quickref 短休|PHB|2|0|Short Rest}）",
 					"entries": [
 						"攻击额外造成18点({@damage 4d8}) 点穿刺伤害，目标必须进行一次{@dc 17}力量{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被{@condition 束缚}。目标可以在每个回合结束时重复{@quickref 豁免检定|PHB|2|1|豁免检定}，成功则解除该效果。"
 					]
@@ -7832,7 +7832,7 @@
 			},
 			"senses": [
 				"黑暗视觉 60 尺",
-				"震动感知 120 尺"
+				"颤动感知 120 尺"
 			],
 			"passive": 14,
 			"immune": [

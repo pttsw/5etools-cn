@@ -541,13 +541,13 @@
 			"startingProficiencies": {
 				"weapons": [
 					"简易",
-					"具有{@filter 光亮术|items|type=军用武器|属性=轻}属性的军用武器"
+					"具有{@filter 轻型|items|type=军用武器|property=轻型}属性的军用武器"
 				],
 				"weaponProficiencies": [
 					{
 						"simple": true,
 						"all": {
-							"fromFilter": "type=军用武器|属性=轻"
+							"fromFilter": "type=军用武器|property=轻型"
 						}
 					}
 				],
@@ -1697,7 +1697,7 @@
 			"level": 1,
 			"entries": [
 				"你通过武术训练掌握了使用徒手攻击和武僧武器的战斗风格，这些武器包括{@item 短剑|PHB|短剑}以及任何{@filter 不含双手与重型属性的简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand|property=!重型;!双手}。",
-				"未着装任何护甲也没持用{@item 护盾术|PHB}时，如果你徒手或只持用武僧武器，则你发动的攻击拥有下列增益：",
+				"未着装任何护甲也没持用{@item 盾牌|PHB}时，如果你徒手或只持用武僧武器，则你发动的攻击拥有下列增益：",
 				{
 					"type": "list",
 					"items": [
@@ -2269,10 +2269,10 @@
 					"type": "list",
 					"items": [
 						"{@filter 简易近战武器|items|type=简易武器;近战武器=sand}",
-						"{@filter 具有轻型特性的武术近战武器|items|type=军用武器;近战武器=sand|属性=轻}"
+						"{@filter 具有轻型特性的武术近战武器|items|type=军用武器;近战武器=sand|property=轻型}"
 					]
 				},
-				"当你未装备武器或仅使用武僧武器并且未穿戴护甲或持有{@item 护盾术|XPHB}时，你将获得以下好处。",
+				"当你未装备武器或仅使用武僧武器并且未穿戴护甲或持有{@item 盾牌|XPHB}时，你将获得以下好处。",
 				{
 					"type": "entries",
 					"entries": [
@@ -2318,7 +2318,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"当你不穿戴护甲或不持用{@item 护盾术|XPHB}时，你的基本{@variantrule 护甲等级|XPHB}等于10加上你的敏捷和感知调整值。"
+				"当你不穿戴护甲或不持用{@item 盾牌|XPHB}时，你的基本{@variantrule 护甲等级|XPHB}等于10加上你的敏捷和感知调整值。"
 			]
 		},
 		{
@@ -2423,7 +2423,7 @@
 			"classSource": "XPHB",
 			"level": 2,
 			"entries": [
-				"当你不穿戴护甲或不持用{@item 护盾术|XPHB}时，你的速度增加10英尺。当你达到特定的武僧等级时，这个加值会增加，如武僧特性表所示。"
+				"当你不穿戴护甲或不持用{@item 盾牌|XPHB}时，你的速度增加10英尺。当你达到特定的武僧等级时，这个加值会增加，如武僧特性表所示。"
 			]
 		},
 		{
@@ -2602,7 +2602,7 @@
 			"classSource": "XPHB",
 			"level": 9,
 			"entries": [
-				"当你不穿戴护甲或不持用{@item 护盾术|XPHB}时，你可以在回合中沿着垂直表面移动，或在液体上移动而不会掉落。"
+				"当你不穿戴护甲或不持用{@item 盾牌|XPHB}时，你可以在回合中沿着垂直表面移动，或在液体上移动而不会掉落。"
 			]
 		},
 		{
@@ -2624,24 +2624,24 @@
 					"entries": [
 						{
 							"ENG_name": "Flurry of Blows",
-							"type": "entries",
 							"name": "疾风连击",
+							"type": "entries",
 							"entries": [
 								"你可以消耗1点专注点来使用连击，并用它进行三次空手攻击，而不是两次。"
 							]
 						},
 						{
 							"ENG_name": "Patient Defense",
-							"type": "entries",
 							"name": "坚强防御",
+							"type": "entries",
 							"entries": [
 								"当你消耗一个专注点来使用耐心防御时，你获得的{@variantrule 临时生命值|XPHB}数量等于你的武术骰两次掷骰的结果之和。"
 							]
 						},
 						{
 							"ENG_name": "Step of the Wind",
-							"type": "entries",
 							"name": "飞檐走壁",
+							"type": "entries",
 							"entries": [
 								"当你消耗一个专注点来使用风行步时，你可以选择一个距离你5英尺内且体型为大型或更小的自愿生物。你将该生物随你一起移动，直到你的回合结束。该生物的移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
 							]
@@ -2784,7 +2784,7 @@
 				"amount": 3
 			},
 			"entries": [
-				"在你的回合开始时，你可以消耗3个专注点来增强自己抵御伤害的能力，持续1分钟或者直到你处于{@condition 失能|XPHB}状态。在这段时间里，除了力量伤害外，你对所有伤害都有{@variantrule 提升抗性|XPHB}。"
+				"在你的回合开始时，你可以消耗3个专注点来增强自己抵御伤害的能力，持续1分钟或者直到你处于{@condition 失能|XPHB}状态。在这段时间里，除了力量伤害外，你对所有伤害都有{@variantrule 抗性|XPHB}。"
 			]
 		},
 		{
@@ -2916,20 +2916,20 @@
 					"items": [
 						{
 							"ENG_name": "Draconic Presence",
-							"type": "item",
 							"name": "龙之威仪",
+							"type": "item",
 							"entry": "如果你在一次魅力（{@skill 威吓}）或一次魅力（{@skill 游说}）检定中失败，你可以显现出巨龙的威仪，并用你的反应来重骰此检定。一旦此特性将一次检定结果从失败变为成功，直到你完成一次长休息你无法再使用此特性。"
 						},
 						{
 							"ENG_name": "Draconic Strike",
-							"type": "item",
 							"name": "龙之打击",
+							"type": "item",
 							"entry": "当你以一次徒手攻击对一个目标造成伤害时，你可以将伤害类型改变为强酸，冷冻，火焰，闪电或毒素。"
 						},
 						{
 							"ENG_name": "Tongue of Dragons",
-							"type": "item",
 							"name": "龙之言语",
+							"type": "item",
 							"entry": "你可以说、读、写{@language 龙族血脉}或其他一种你选择的语言。"
 						}
 					]
@@ -2973,14 +2973,14 @@
 					"items": [
 						{
 							"ENG_name": "Frightful Presence",
-							"type": "item",
 							"name": "骇人威仪",
+							"type": "item",
 							"entry": "当你散发出此灵光时，或在维持此灵光时用一个附赠动作，选择灵光范围内的一个生物。目标必须成功通过相当于你气豁免DC的感知豁免，否则对你{@condition 恐慌}1分钟。目标可以在每次自己回合结束时重复一次豁免，豁免成功则效应中止。"
 						},
 						{
 							"ENG_name": "Resistance",
+							"name": "抵抗术",
 							"type": "item",
-							"name": "提升抗性",
 							"entry": "你启动此灵光时选择一种伤害类型：强酸，冷冻，火焰，闪电或毒素。你和你灵光内的盟友对所选伤害类型具有抗性。"
 						}
 					]
@@ -3008,20 +3008,20 @@
 					"items": [
 						{
 							"ENG_name": "Augment Breath",
-							"type": "item",
 							"name": "强化吐息",
+							"type": "item",
 							"entry": "当你使用你的龙之息时，你可以消耗1点气对其塑形并增强其威力。你呼出的龙类能量增长至60尺锥状或90尺长5尺宽线状（由你选择），且范围内的每个生物豁免失败时会受到等同四个你武艺骰的对应类型的伤害，豁免成功则伤害减半。"
 						},
 						{
 							"ENG_name": "Blindsight",
-							"type": "item",
 							"name": "盲视",
+							"type": "item",
 							"entry": "你获得了10英尺范围内的{@sense 盲视}。在这个范围内，你可以有效看到任何不是在{@quickref 掩护||3||全身掩护}后面的东西，即使你处于{@condition 目盲}状态或在黑暗中。此外，你可以在这个范围内看到{@condition 隐形}生物，除非该生物成功地避开了你的视线。"
 						},
 						{
 							"ENG_name": "Explosive Fury",
-							"type": "item",
 							"name": "怒气爆发",
+							"type": "item",
 							"entry": "当你使用古龙之姿时，龙族之怒从你体内爆发。选择你灵光内可见的任意数量的生物，每个生物必须通过一次对抗你的气豁免DC的敏捷豁免，豁免失败者受到{@damage 3d10}强酸，冷冻，火焰，闪电或毒素伤害（由你选择）。"
 						}
 					]
@@ -3068,8 +3068,8 @@
 				"你每次习得新的法门时，还可以将一个你已知的法门替换为另一个符合选择条件的法门。",
 				{
 					"ENG_name": "Casting Elemental Spells",
-					"type": "entries",
 					"name": "施放元素法术",
+					"type": "entries",
 					"entries": [
 						"某些法门让你可以施展法术。通过法门施法也适用正常的施法时间和其它规则，只是你不需要提供材料成分。施法基本规则见玩家手册{@book 第十章|PHB|10} 。",
 						"第5级起，你可以通过消耗额外的气来提升以法门施展法术的环阶，使得法术更具威力。每额外消耗1点气，法术环阶就提升1级。例如，作为一名5级武僧，你通过飞炎击法门来施展法术{@spell 燃烧之手}。则此时你可以消耗3点气来施展2环的{@spell 燃烧之手}（该法门的基本消耗2加上额外消耗1）。",
@@ -3099,7 +3099,7 @@
 									5
 								],
 								[
-									"17至20级",
+									"17-20级",
 									6
 								]
 							]
@@ -3127,15 +3127,15 @@
 					"entries": [
 						{
 							"ENG_name": "Breath of Winter (17th Level Required)",
+							"name": "寒冬之息（需17级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "寒冬之息",
-							"name": "寒冬之息（需17级）"
+							"optionalfeature": "寒冬之息"
 						},
 						{
 							"ENG_name": "Clench of the North Wind (6th Level Required)",
+							"name": "北风之握（需6级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "北风之握",
-							"name": "北风之握（需6级）"
+							"optionalfeature": "北风之握"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -3146,9 +3146,9 @@
 						},
 						{
 							"ENG_name": "Eternal Mountain Defense (17th Level Required)",
+							"name": "苍山庇佑（需17级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "苍山庇佑",
-							"name": "苍山庇佑（需17级）"
+							"optionalfeature": "苍山庇佑"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -3164,33 +3164,33 @@
 						},
 						{
 							"ENG_name": "Flames of the Phoenix (11th Level Required)",
+							"name": "凤凰烈焰（需11级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "凤凰烈焰",
-							"name": "凤凰烈焰（需11级）"
+							"optionalfeature": "凤凰烈焰"
 						},
 						{
 							"ENG_name": "Gong of the Summit (6th Level Required)",
+							"name": "狮吼功（需6级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "狮吼功",
-							"name": "狮吼功（需6级）"
+							"optionalfeature": "狮吼功"
 						},
 						{
 							"ENG_name": "Mist Stance (11th Level Required)",
+							"name": "云雾势（需要11级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "云雾势",
-							"name": "云雾势（需要11级）"
+							"optionalfeature": "云雾势"
 						},
 						{
 							"ENG_name": "Ride the Wind (11th Level Required)",
+							"name": "攀云步（需要11级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "攀云步",
-							"name": "攀云步（需要11级）"
+							"optionalfeature": "攀云步"
 						},
 						{
 							"ENG_name": "River of Hungry Flame (17th Level Required)",
+							"name": "噬焰流（需17级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "噬焰流",
-							"name": "噬焰流（需17级）"
+							"optionalfeature": "噬焰流"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -3210,9 +3210,9 @@
 						},
 						{
 							"ENG_name": "Wave of Rolling Earth (17th Level Required)",
+							"name": "滚石流（需17级）",
 							"type": "refOptionalfeature",
-							"optionalfeature": "滚石流",
-							"name": "滚石流（需17级）"
+							"optionalfeature": "滚石流"
 						}
 					]
 				}
@@ -3624,24 +3624,24 @@
 				"星我之容存在期间，你获得如下增益：",
 				{
 					"ENG_name": "Astral Sight",
-					"type": "entries",
 					"name": "星之视觉",
+					"type": "entries",
 					"entries": [
 						"你可以在黑暗中正常视物，拥有120尺的可视距离，无论其属于魔法黑暗还是非魔法黑暗。"
 					]
 				},
 				{
 					"ENG_name": "Wisdom of the Spirit",
-					"type": "entries",
 					"name": "精魂感知",
+					"type": "entries",
 					"entries": [
 						"你的感知（{@skill 洞悉}）和魅力（{@skill 威吓}）检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Word of the Spirit",
-					"type": "entries",
 					"name": "精魂之语",
+					"type": "entries",
 					"entries": [
 						"当你说话时，你可以将你的话语指向你选择的一个60尺范围内的可视生物，使你的话语只有这个生物才能听到。作为另一种选项，你也可以放大你的声音，让600尺范围的所有生物都能听到你的声音。"
 					]
@@ -3665,16 +3665,16 @@
 				"星我之躯存在期间，你将获得如下增益：",
 				{
 					"ENG_name": "Deflect Energy",
-					"type": "entries",
 					"name": "拨挡能量",
+					"type": "entries",
 					"entries": [
 						"当你受到强酸、冷冻、火焰、力场、闪电、或雷鸣伤害时，你可以用你的反应来拔挡它。当你这么做时，你所受的伤害减少 {@dice 1d10}+你的感知调整值点（至少减少1点）。"
 					]
 				},
 				{
 					"ENG_name": "Empowered Arms",
-					"type": "entries",
 					"name": "猛力之臂",
+					"type": "entries",
 					"entries": [
 						"当你在自己回合用星我之臂攻击命中目标时，你可以对目标造成额外伤害，其数值相当于你的武艺骰。这种额外伤害每回合只能产生一次。"
 					]
@@ -3703,16 +3703,16 @@
 				"当你的星我处于觉醒状态时，你将获得如下增益：",
 				{
 					"ENG_name": "Armor of the Spirit",
-					"type": "entries",
 					"name": "精魂护甲",
+					"type": "entries",
 					"entries": [
 						"你的AC获得+2加值。"
 					]
 				},
 				{
 					"ENG_name": "Astral Barrage",
-					"type": "entries",
 					"name": "星之连击",
+					"type": "entries",
 					"entries": [
 						"当你使用额外攻击特性进行两次攻击时，你可以改为三次攻击，但所有攻击都必须使用星我之臂进行。"
 					]
@@ -4252,10 +4252,10 @@
 				"当你在第3级时选择了这个宗派，你特殊的武术训练使你精通于某些特定武器使用技巧，同时还通透了对书画艺术的研究。你获得以下好处：",
 				{
 					"ENG_name": "Kensei Weapons",
-					"type": "entries",
 					"name": "剑圣武器",
+					"type": "entries",
 					"entries": [
-						"选择两种武器作为你的剑圣武器：一种近战武器和一种远程武器。这些武器可以是{@filter 不具有重型与特殊属性的简易或军用武器|items|source=PHB|type=简单武器；军用武器|property=!重型;!特殊|category=基础|miscellaneous=}，长弓也是一个有效选项。若你尚未掌握这些武器的熟练项则获得之。所选类型的武器对你而言视为武僧武器。该流派的许多特性仅在使用剑圣武器时生效。当你在该职业达到6级、11级和17级时，可依照上述标准选择另一种近战或远程武器作为你的剑圣武器。"
+						"选择两种武器作为你的剑圣武器：一种近战武器和一种远程武器。这些武器可以是{@filter 不具有重型与特殊属性的简易或军用武器|items|source=PHB|type=简易武器;军用武器|property=!重型;!特殊|category=基础|miscellaneous=}，长弓也是一个有效选项。若你尚未掌握这些武器的熟练项则获得之。所选类型的武器对你而言视为武僧武器。该流派的许多特性仅在使用剑圣武器时生效。当你在该职业达到6级、11级和17级时，可依照上述标准选择另一种近战或远程武器作为你的剑圣武器。"
 					]
 				},
 				{
@@ -4273,8 +4273,8 @@
 				},
 				{
 					"ENG_name": "Way of the Brush",
-					"type": "entries",
 					"name": "书画之道",
+					"type": "entries",
 					"entries": [
 						"你在{@item 书法工具|PHB}或{@item 画家工具|PHB}中选择其一，获得其熟练项。"
 					]
@@ -4296,16 +4296,16 @@
 				"第6级起，你能将气灌注到剑圣武器之中，这为你带来以下好处：",
 				{
 					"ENG_name": "Magic Kensei Weapons",
-					"type": "entries",
 					"name": "剑气",
+					"type": "entries",
 					"entries": [
 						"攻击对非魔法攻击或伤害具有抗性或免疫的目标时，你的剑圣武器攻击视为魔法攻击。"
 					]
 				},
 				{
 					"ENG_name": "Deft Strike",
-					"type": "entries",
 					"name": "巧劲",
+					"type": "entries",
 					"entries": [
 						"每个你的回合一次，当你使用剑圣武器命中目标时，你可以消耗1点气使得该武器对该目标造成额外伤害，伤害数值等同于你的武艺骰 。"
 					]
@@ -4457,16 +4457,16 @@
 					"entries": [
 						{
 							"ENG_name": "Reach",
-							"type": "entries",
 							"name": "触及",
+							"type": "entries",
 							"entries": [
 								"当你进行{@variantrule 徒手打击|XPHB}时，你触及的范围比正常情况多出10英尺，因为元素能量从你身上延伸出去。"
 							]
 						},
 						{
 							"ENG_name": "Elemental Strikes",
-							"type": "entries",
 							"name": "元素注拳",
+							"type": "entries",
 							"entries": [
 								"每当你用你的{@variantrule 徒手打击|XPHB}击中目标时，你可以选择让它造成酸、冷、火、闪电或雷伤害，而不是其正常的伤害类型。当你用它造成这些类型中的一种时，你还可以迫使目标进行一次力量豁免检定。如果豁免失败，你可以将目标沿着元素能量的漩涡移动最多10英尺，朝向你或远离你。"
 							]
@@ -4563,24 +4563,24 @@
 				"在你的元素协调激活时，你还获得以下好处。",
 				{
 					"ENG_name": "Damage Resistance",
-					"type": "entries",
 					"name": "伤害抗性",
+					"type": "entries",
 					"entries": [
-						"你获得了以下伤害类型中选择一种的{@variantrule 提升抗性|XPHB}：酸、冷、火、闪电或雷。在你的每个回合开始时，你可以更改这个选择。"
+						"你获得了以下伤害类型中选择一种的{@variantrule 抗性|XPHB}：酸、冷、火、闪电或雷。在你的每个回合开始时，你可以更改这个选择。"
 					]
 				},
 				{
 					"ENG_name": "Destructive Stride",
-					"type": "entries",
 					"name": "破灭奔行",
+					"type": "entries",
 					"entries": [
 						"当你使用风步时，你的{@variantrule 速度|XPHB}在本回合结束前增加20英尺。在此期间，你进入5英尺内的任何你选择的生物所在的空间时，该生物受到等同于你一次武术骰的伤害。伤害类型可以是酸、冷、火、电或雷，由你选择。一个生物每回合只能受到此伤害一次。"
 					]
 				},
 				{
 					"ENG_name": "Empowered Strikes",
-					"type": "entries",
 					"name": "真力注拳",
+					"type": "entries",
 					"entries": [
 						"在你的每个回合中，每当你用{@variantrule 徒手打击|XPHB}击中目标时，你可以造成额外的伤害，额外伤害等于你的武术骰点数。额外伤害的类型与那次攻击造成的伤害类型相同。"
 					]
@@ -4685,16 +4685,16 @@
 					"entries": [
 						{
 							"ENG_name": "Hand of Harm",
-							"type": "entries",
 							"name": "夺命之手",
+							"type": "entries",
 							"entries": [
 								"当你对一个生物使用\"伤害之手\"时，你还可以使得该生物获得{@condition 中毒|XPHB}（中毒）状态，直到你的下一个回合结束。"
 							]
 						},
 						{
 							"ENG_name": "Hand of Healing",
-							"type": "entries",
 							"name": "予命之手",
+							"type": "entries",
 							"entries": [
 								"当你使用\"治愈之手\"时，你还可以结束你治疗的生物身上的以下一种状态：{@condition 目盲|XPHB}（失明）、{@condition 耳聋|XPHB}（失聪）、{@condition 麻痹|XPHB}（瘫痪）、{@condition 中毒|XPHB}（中毒）或{@condition 震慑|XPHB}（昏迷）。"
 							]
@@ -4757,24 +4757,24 @@
 				"每当你用你的\"狂风暴雨\"攻击击中一个生物时，你可以对那个目标施加以下效果之一。",
 				{
 					"ENG_name": "Addle",
-					"type": "entries",
 					"name": "慌神",
+					"type": "entries",
 					"entries": [
 						"目标直到其下一回合开始前不能进行{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				},
 				{
 					"ENG_name": "Push",
-					"type": "entries",
 					"name": "推离",
+					"type": "entries",
 					"entries": [
 						"目标必须成功进行一次力量豁免检定，否则会被推向远离你最多15英尺的位置。"
 					]
 				},
 				{
 					"ENG_name": "Topple",
-					"type": "entries",
 					"name": "失衡",
+					"type": "entries",
 					"entries": [
 						"目标必须成功进行一次敏捷豁免检定，否则会受到{@condition 倒地|XPHB}（倒地）状态。"
 					]
@@ -5008,24 +5008,24 @@
 				"作为完全处于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}中的{@action 魔法|XPHB}动作，你可以消耗3点专注点来用阴影笼罩自己，持续1分钟，直到你处于{@condition 失能|XPHB}，或者直到你的回合结束于{@variantrule 明亮光照|XPHB}中。在被这些阴影笼罩时，你获得以下好处。",
 				{
 					"ENG_name": "Invisibility",
-					"type": "entries",
 					"name": "隐形术",
+					"type": "entries",
 					"entries": [
 						"你处于{@condition 隐形|XPHB}状态。"
 					]
 				},
 				{
 					"ENG_name": "Partially Incorporeal",
-					"type": "entries",
 					"name": "局部虚化",
+					"type": "entries",
 					"entries": [
 						"你可以穿过被占据的空间，就好像它们是{@variantrule 困难地形|XPHB}。如果你的回合在这样一个空间结束，你会被挤到你最后所在的未被占据的空间。"
 					]
 				},
 				{
 					"ENG_name": "Shadow Flurry",
-					"type": "entries",
 					"name": "幽影连击",
+					"type": "entries",
 					"entries": [
 						"你可以不消耗任何专注点来使用你的连击。"
 					]

@@ -52,6 +52,34 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Arveiaturace",
+			"name": "Arveiaturace",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "IDRotF",
+			"page": 105,
+			"_copy": {
+				"ENG_name": "Ancient White Dragon",
+				"name": "远古白龙",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "龙",
+						"with": "Arveiaturace",
+						"flags": "i"
+					}
+				}
+			},
+			"senses": [
+				"盲视60尺（范围外视为目盲）",
+				"黑暗视觉 60 尺"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Auril (First Form)",
 			"name": "欧瑞尔（第一形态）",
 			"isNpc": true,
@@ -154,7 +182,7 @@
 					"ENG_name": "Divine Rejuvenation",
 					"name": "神圣复苏",
 					"entries": [
-						"当奥瑞尔的生命值降至0点时，她的身体会变成泥浆并融化消失。奥瑞尔会立即在她的第一种形态消失的地方60尺范围内的一个未被占据的空间内，以她的{@creature 欧瑞尔（第二形态）|IDRotF|第二形态}重新出现。她的先攻计数不会改变。"
+						"当奥瑞尔的生命值降至0点时，她的身体会变成泥浆并融化消失。奥瑞尔会立即在她的第一种形态消失的地方60尺范围内的一个未被占据的空间内，以她的{@creature 欧瑞尔（第二形态）|IDRotF|第二形貌}重新出现。她的先攻计数不会改变。"
 					]
 				},
 				{
@@ -2324,7 +2352,7 @@
 							"spells": [
 								"{@spell 德鲁伊伎俩}",
 								"{@spell 神导术}",
-								"{@spell 提升抗性}"
+								"{@spell 抵抗术}"
 							]
 						},
 						"1": {
@@ -2881,26 +2909,26 @@
 							"items": [
 								{
 									"ENG_name": "Enraged by Celestial",
-									"type": "itemSub",
 									"name": "因天族而狂怒",
+									"type": "itemSub",
 									"entry": "若它听见有人说出天界语，吸血鬼必须在下个回合尝试攻击该声音来源。如果这些声音来自多个源头且方向相反，吸血鬼将陷入{@condition 束缚}状态。否则，它会移动攻击其感知到的最近声源。"
 								},
 								{
 									"ENG_name": "Repulsed by Perfume",
-									"type": "itemSub",
 									"name": "厌恶香水",
+									"type": "itemSub",
 									"entry": "吸血鬼对任何佩戴香水或携带开启香水容器的生物进行的近战攻击检定具有劣势。"
 								},
 								{
 									"ENG_name": "Stake to the Heart",
-									"type": "itemSub",
 									"name": "桩刺",
+									"type": "itemSub",
 									"entry": "如果一根由木头制成的穿刺武器在吸血鬼处于其休息场所的{@condition 失能}状态下被插入其心脏，吸血鬼将被{@condition 麻痹}，直到该木桩被移除。"
 								},
 								{
 									"ENG_name": "Sunlight Hypersensitivity",
-									"type": "itemSub",
 									"name": "日照过敏",
+									"type": "itemSub",
 									"entry": "吸血鬼在阳光下开始其回合时受到20点光耀伤害。处于阳光下时，其攻击骰与属性检定具有劣势。"
 								}
 							]
@@ -3740,7 +3768,7 @@
 					"ac": 13,
 					"from": [
 						"{@item 兽皮甲|PHB}",
-						"{@item 护盾术|PHB}"
+						"{@item 盾牌|PHB}"
 					]
 				}
 			],
@@ -4600,7 +4628,7 @@
 					"ac": 14,
 					"from": [
 						"{@item 兽皮甲|PHB}",
-						"{@item 护盾术|PHB}"
+						"{@item 盾牌|PHB}"
 					]
 				}
 			],
@@ -4898,7 +4926,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"鳟鱼只能在水下呼吸。"
 					]
@@ -4922,7 +4950,7 @@
 			],
 			"familiar": true,
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"D"
@@ -5030,26 +5058,26 @@
 							"items": [
 								{
 									"ENG_name": "Forbiddance",
-									"type": "itemSub",
 									"name": "禁入",
+									"type": "itemSub",
 									"entry": "吸血鬼没有居住者之一的邀请就不能进入住宅。"
 								},
 								{
 									"ENG_name": "Harmed by Running Water",
-									"type": "itemSub",
 									"name": "被流动的水伤害",
+									"type": "itemSub",
 									"entry": "吸血鬼在流动的水中开始其回合时将受到20点强酸伤害。"
 								},
 								{
 									"ENG_name": "Stake to the Heart",
-									"type": "itemSub",
 									"name": "桩刺",
+									"type": "itemSub",
 									"entry": "当一个用木头制成的穿刺武器刺入吸血鬼的心脏时，如果它在其休息处处于{@condition 失能}状态，它将被摧毁。"
 								},
 								{
 									"ENG_name": "Sunlight Hypersensitivity",
-									"type": "itemSub",
 									"name": "日照过敏",
+									"type": "itemSub",
 									"entry": "吸血鬼在阳光下开始其回合时受到20点光耀伤害。处于阳光下时，其攻击骰与属性检定具有劣势。"
 								}
 							]
@@ -6836,12 +6864,12 @@
 			"page": 244,
 			"_copy": {
 				"ENG_name": "Hydra",
-				"name": "多头蛇蜥",
+				"name": "多头蛇",
 				"source": "MM",
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
-						"replace": "多头蛇蜥",
+						"replace": "多头蛇",
 						"with": "心灵感应五角星"
 					}
 				}
@@ -7384,7 +7412,7 @@
 					"ac": 14,
 					"from": [
 						"{@item 兽皮甲|PHB}",
-						"{@item 护盾术|PHB}"
+						"{@item 盾牌|PHB}"
 					]
 				}
 			],

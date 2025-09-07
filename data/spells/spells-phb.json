@@ -113,8 +113,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，每个目标的生命值上限和当前生命值就额外提高 5 点。"
 					]
@@ -218,24 +218,24 @@
 				"你变换了自身形态。施法时，从以下选项中选择其一生效，并维持至其持续时间结束。你还可以在持续时间内以一个动作在选项间切换。",
 				{
 					"ENG_name": "Aquatic Adaptation",
-					"type": "entries",
 					"name": "水生适应",
+					"type": "entries",
 					"entries": [
 						"你长出鳃和蹼以适应水中行动。你可以在水下呼吸，并且获得等同于步行速度的游泳速度。"
 					]
 				},
 				{
 					"ENG_name": "Change Appearance",
-					"type": "entries",
 					"name": "改变外貌",
+					"type": "entries",
 					"entries": [
 						"你改变了自己的外貌。你可以自行设定自己的外观：包括身高、体重、面部细节、声线、头发长短、肤色以及（可能具有的）独特外貌特征。你可以让自己看起来像是其他种族，但你的角色数值不会改变。你无法改变体型或是基础身体轮廓。例如，如果你两足行动，就不能变为四足生物。你可以在持续时间内以一个动作改变这些外貌细节。"
 					]
 				},
 				{
 					"ENG_name": "Natural Weapons",
-					"type": "entries",
 					"name": "天生武器",
+					"type": "entries",
 					"entries": [
 						"你长出尖牙锐爪、棘刺长角，或是其他类型的一种自选的天生武器。所选的天生武器可以使你的徒手打击造成 {@damage 1d6} 的钝击、挥砍或穿刺伤害，且你视为具有徒手打击的熟练项。另外，该天生武器视为魔法武器，且你在使用它进行的攻击检定和伤害掷骰均具有+1 加值。"
 					]
@@ -291,8 +291,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，就可以多选择一个野兽作为目标。"
 					]
@@ -363,8 +363,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，其法术持续时间就增加 48 小时。"
 					]
@@ -419,7 +419,7 @@
 				}
 			],
 			"entries": [
-				"你施法把其他生物变成野兽。指定施法距离内任意数量的自愿生物，并使每个目标变形为一只 {@filter 挑战等级不超过 4，体型不大于大型的野兽|bestiary|challenge rating=[&0;&4]|type=野兽|size=f;d;t;s;m;l|miscellaneous=!swarm}。你可以在法术持续时间内以一个动作将受术生物变成其他野兽形态。",
+				"你施法把其他生物变成野兽。指定施法距离内任意数量的自愿生物，并使每个目标变形为一只 {@filter 挑战等级不超过 4，体型不大于大型的野兽|bestiary|challenge rating=[&0;&4]|type=beast|size=f;d;t;s;m;l|miscellaneous=!swarm}。你可以在法术持续时间内以一个动作将受术生物变成其他野兽形态。",
 				"每个受术生物的变形效应持续至法术终止，其生命值降至 0 或是死亡时，法术效应也将随之终止。你可以分别为每个目标选择不同的形态。而目标的游戏资料则以所选野兽的游戏资料作替换，并保留其本来的阵营，以及智力、感知和魅力值。目标将使用新形态的生命值。而当其变回通常形态时，该目标的生命值也恢复为变形前的数值。如果目标是因为生命值降至 0 而变回通常形态，则由通常形态承受溢出的伤害。只要溢出伤害不足以将通常形态生命值降至 0，他就不会因此而{@condition 昏迷}。受术生物只能使用新形态的动作，且无法说话或施法。",
 				"目标的装备融入其新形态，而且不能激活或持用装备，也无法以其他任何方式从其装备上获益。"
 			],
@@ -465,15 +465,15 @@
 				}
 			],
 			"entries": [
-				"该法术创造一个不死生物仆从。在施法距离内指定一具中型或小型类人生物遗骨或遗体，并以该法术将污秽的虚假生命力量注入其中，将之唤起为一个不死生物。如果你选择的是遗骨，则目标变为{@creature 骷髅}；选择的是遗体则变为{@creature 僵尸}。该生物的具体游戏资料由 DM 掌控。",
+				"该法术创造一个不死生物仆从。在施法距离内指定一具中型或小型类人生物遗骨或遗体，并以该法术将污秽的虚假生命力量注入其中，将之唤起为一个不死生物。如果你选择的是遗骨，则目标变为{@creature 骷髅}；选择的是遗体则变为{@creature 丧尸}。该生物的具体游戏资料由 DM 掌控。",
 				"在你的任一回合内，你可以使用一个附赠动作并以精神命令操纵 60 尺内任何你用此法术唤起的生物（如果你操纵多个生物，则你的命令可以同时传达给它们全部或是其中的某几个，不过只能使用同一种命令）。你决定被操纵生物下回合的动作和移动。或者，你也可以选择下达宽泛的命令（比如守护某个房间或走廊）。没有接受到你命令的生物则只会对敌对生物作出自卫行为。一旦被下达命令，该生物会持续执行命令直到任务完成。",
 				"这些受操纵生物只会在 24 小时内服从你的命令。如果你在当前的 24 小时时间段终止前再施展该法术，则你对这些生物的操纵时间再延长 24 小时。法术的此种用法只能延长你对至多四个你使用此法术所创造生物的控制时间，而不会创造新的生物。"
 			],
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，就会多唤起两只不死生物，或是多延长对两只不死生物的控制。你无法用同一具骸骨或遗体唤起多个不死生物。"
 					]
@@ -597,8 +597,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，就多唤起两个物件。"
 					]
@@ -724,32 +724,32 @@
 				"除非其来自神器或神本身，否则任何法术和魔法效应都将在场内受压制而无法波及力场内部。在场内施放的法术，其效应被压制的同时其使用的法术位依然被消耗。被压制的魔法效应不会生效，但其持续时间仍然如常计算。",
 				{
 					"ENG_name": "Targeted Effects",
-					"type": "entries",
 					"name": "目标效应",
+					"type": "entries",
 					"entries": [
 						"法术或其他魔法效应以生物或物件为目标时（比如{@spell 魔法飞弹}和{@spell 魅惑人类}），无法对反魔法场内的目标生效。"
 					]
 				},
 				{
 					"ENG_name": "Areas of Magic",
-					"type": "entries",
 					"name": "魔法区域",
+					"type": "entries",
 					"entries": [
 						"法术和其他魔法效应产生的区域影响（比如{@spell 火球术}），无法波及场内部。如果场与某一魔法效应重叠，则该效应在重叠部分被压制。例如，当力场与火墙术产生的火焰重叠时，重叠区域的火焰被压制。如果重叠区域够大，甚至可以将火墙从中间截断。"
 					]
 				},
 				{
 					"ENG_name": "Spells",
-					"type": "entries",
 					"name": "spells",
+					"type": "entries",
 					"entries": [
 						"场中的生物或物件身上生效的法术或其他魔法效应会受到压制。"
 					]
 				},
 				{
 					"ENG_name": "Magic Items",
-					"type": "entries",
 					"name": "魔法物品",
+					"type": "entries",
 					"entries": [
 						"魔法物品的属性和威能在场中受到压制。例如，一把长剑+1 在场中视为一把非魔法长剑。",
 						"用以攻击场内目标的魔法武器以及被身处反魔法场内的攻击者持用的魔法武器，它们的属性和威力都将受到压制。如果一把魔法武器或是一发魔法弹药完全离开反魔法场范围（例如，你从反魔法场内向场外的某个目标发射一支箭矢或是投掷一把标枪），则其中的魔法将在离开力场的瞬间得以恢复。"
@@ -757,24 +757,24 @@
 				},
 				{
 					"ENG_name": "Magical Travel",
-					"type": "entries",
 					"name": "魔法旅行",
+					"type": "entries",
 					"entries": [
 						"以场内区域为起点或终点的传送或位面旅行效应无法生效。在场内，通往某地、某世界或某位面的传送门，以及次元空间的入口（诸如魔绳术所创造的区域）都被暂时关闭。"
 					]
 				},
 				{
 					"ENG_name": "Creatures and Objects",
-					"type": "entries",
 					"name": "生物和物件",
+					"type": "entries",
 					"entries": [
 						"在场内，由魔法创造或召唤的生物或物件暂时消失。如此消失的生物，在场不再覆盖其所占据空间时立刻在该处重新出现。"
 					]
 				},
 				{
 					"ENG_name": "Dispel Magic",
-					"type": "entries",
 					"name": "解除魔法",
+					"type": "entries",
 					"entries": [
 						"任何法术及魔法效应（包括{@spell 解除魔法}）均对反魔法场无效。自然，不同来源的{@spell 反魔法场}之间也不会相互抵消。"
 					]
@@ -829,16 +829,16 @@
 				"此法术吸引或驱赶你指定的生物。在施法距离内指定一个巨型或更小体型的物件或生物，或是一处不超过 200 尺的立方区域。你指定一类智慧生物（例如红龙、地精、吸血鬼等），并为目标注入能吸引或是驱赶所选类型生物的灵光。你可以选择嫌恶或是关怀作为法术的效应。",
 				{
 					"ENG_name": "Antipathy",
-					"type": "entries",
 					"name": "嫌恶",
+					"type": "entries",
 					"entries": [
 						"法术的影响让你选定类型的生物不可遏止的想要远离受术目标。当符合条件的生物看到目标或是距离目标不足 60 尺时，该生物必须进行一次感知豁免并成功通过，否则将陷入{@condition 恐慌}。只要还能看到目标或是在目标 60 尺内，该生物就会维持{@condition 恐慌}状态。陷入该{@condition 恐慌}状态的生物必须自主移动至附近无法看到目标的安全地点。离开目标至少 60 尺且无法看到目标后，该生物的{@condition 恐慌}状态终止。但再次看到目标或是进入目标 60 尺内时他也将再次陷入{@condition 恐慌}。"
 					]
 				},
 				{
 					"ENG_name": "Sympathy",
-					"type": "entries",
 					"name": "关怀",
+					"type": "entries",
 					"entries": [
 						"法术的影响让你选定类型的生物不可遏止的想要接近受术目标。当符合条件的生物看到目标或是距离目标不足60尺时，该生物必须进行一次感知豁免并成功通过，否则便会每回合自主移动并靠近目标。靠近后，该生物不能自主的远离目标。",
 						"若目标对该生物造成伤害或是以其他方式对其造成危害，则该生物可以再进行一次感知豁免以终止效应，详情见下节。"
@@ -846,8 +846,8 @@
 				},
 				{
 					"ENG_name": "Ending the Effect",
-					"type": "entries",
 					"name": "终止效应",
+					"type": "entries",
 					"entries": [
 						"如果受影响的生物在距离目标 60 尺外或是无法看到目标的地方终止其回合，则其可以进行一次感知豁免，豁免成功则不再受法术影响并意识到厌恶感或诱惑力是来自魔法的影响。另外，在法术持续时间内，受影响的生物每 24 小时可以再进行一次感知豁免。"
 					]
@@ -1053,8 +1053,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，临时生命和冷冻伤害就各增加 5 点。"
 					]
@@ -1105,8 +1105,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术的伤害就增加 {@scaledamage 2d6|1-9|1d6}。"
 					]
@@ -1486,8 +1486,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，就能多指定一个目标。"
 					]
@@ -1599,8 +1599,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高法术位施展该法术时，你使用的法术位每比四环高一环，就能多指定一个目标。"
 					]
@@ -1823,8 +1823,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，法术的持续时间变为：{@status 专注}，至多 10 分钟。使用五环或更高法术位时，变为 8 小时。使用七环或更高法术位时，变为 24 小时。使用九环法术位时，法术将持续到被解除。使用五环或更高法术位施展此法术时无需在其持续时间内维持{@status 专注}。"
 					]
@@ -1888,32 +1888,32 @@
 				"施展此法术时，你可以令巨手移动至多 60 尺远并造成下列效应之一。你也可以在自己随后的回合里以一个附赠动作再造成下列效应之一。",
 				{
 					"ENG_name": "Clenched Fist",
-					"type": "entries",
 					"name": "金刚拳",
+					"type": "entries",
 					"entries": [
 						"巨手对自身周围5尺范围内的一个生物（或物件）发动一次打击。此时，巨掌用你的游戏数据发动一次近战法术攻击，此次攻击命中时目标将受到{@damage 4d8}点力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Forceful Hand",
-					"type": "entries",
 					"name": "飞击掌",
+					"type": "entries",
 					"entries": [
 						"巨手尝试推撞自身周围5尺范围内的一个生物。你使用巨手的力量属性进行一次属性检定，与目标的力量（{@skill 运动}）检定作对抗。如果目标的体型不超过中型，则你的检定具有优势。若你胜出对抗时，目标将目标推动 5+你施法属性调整值的五倍 尺（方向由你选择）。巨手将随着目标一起移动，保持自己处在目标周围5尺的范围内。"
 					]
 				},
 				{
 					"ENG_name": "Grasping Hand",
-					"type": "entries",
 					"name": "擒拿掌",
+					"type": "entries",
 					"entries": [
 						"巨手尝试对自身周围5尺范围内的一个体型不超过巨型的生物进行擒抱。你使用巨手的力量属性值来处理本次擒抱。如果目标的体型不超过中型，则你的检定具有优势。在巨手擒抱目标期间，你可以使用一个附赠动作命令巨手对其进行挤压，此时目标将受到 {@damage 2d6}+你的施法属性调整值 点钝击伤害。"
 					]
 				},
 				{
 					"ENG_name": "Interposing Hand",
-					"type": "entries",
 					"name": "护身掌",
+					"type": "entries",
 					"entries": [
 						"这只手会挡在你和你选择的生物之间，直到你给它下达不同的命令。手会移动以保持在你和目标之间，为你提供针对目标的{@quickref 掩护||3||半身掩护}。如果目标的力量值小于或等于手的力量值，目标将无法穿过手所在的空间。如果目标的力量值高于手的力量值，目标可以穿过手所在的空间向你移动，但该空间对目标来说是{@quickref 困难地形||3}。"
 					]
@@ -1922,8 +1922,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高环阶法术位施展此法术时，你使用的法术位每比五环高一环，金刚拳的伤害就会提高{@scaledamage 4d8|5-9|2d8}点，擒拿掌的伤害就会提高{@scaledamage 2d6|5-9|2d6}点。"
 					]
@@ -1987,7 +1987,7 @@
 				}
 			],
 			"entries": [
-				"你创造出一道由魔法能量构成的垂直旋转利刃墙。这道墙出现在施法范围内并持续至法术结束。你可以创造一道长达100英尺、高20英尺、厚5英尺的直线墙，或一道直径60英尺、高20英尺、厚5英尺的环形墙。这道墙为墙后的生物提供{@quickref 掩护||3||四分之三掩护}，其占据的空间为{@quickref 困难地形||3}。",
+				"你创造出一道由魔法能量构成的旋转利刃垂直墙壁。墙壁出现在射程内并持续至法术持续时间结束。你可以创造一道最长100尺、高20尺、厚5尺的直线墙壁，或一道直径60尺、高20尺、厚5尺的环形墙壁。该墙壁为后方生物提供{@quickref 掩护||3||四分之三掩护}，其所在空间为{@quickref 困难地形||3}。",
 				"任何生物在一个回合内第一次进入墙体区域，或者在区域内开始其回合时，必须进行一次敏捷豁免。豁免失败者将受到 {@damage 6d10} 点挥砍伤害。豁免成功则伤害减半。"
 			],
 			"damageInflict": [
@@ -2099,8 +2099,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，就能多指定一个目标。"
 					]
@@ -2154,8 +2154,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高法术位施展该法术时，你使用的法术位每比四环高一环，法术的伤害就增加{@scaledamage 8d8|4-9|1d8}。"
 					]
@@ -2282,8 +2282,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，就可以多指定一个目标。"
 					]
@@ -2437,8 +2437,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，法术的伤害就增加{@scaledamage 2d6|2-9|1d6}。"
 					]
@@ -2499,8 +2499,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术的伤害就增加 {@scaledamage 3d6|1-9|1d6}。"
 					]
@@ -2561,13 +2561,13 @@
 			"entries": [
 				"你指定施法距离内，自己上方一处能看见的点，并在该处生成一片高 10 尺、半径 60 尺的柱状雷云区域。如果你无法看到空中雷云可能形成的位置，则法术失败（例如，当你身处一间不够高大的房间内时）。",
 				"施法时，指定该雷云下一处你能看见的点。再令一束闪电从云端射向该点。在该点 5 尺内的生物必须进行一次敏捷豁免。豁免失败者将受到 {@damage 3d10} 点闪电伤害，豁免成功则伤害减半。直至法术终止前，你都可以在自己回合内使用动作再次发射闪电，并在攻击前指定同一点或另选一点。",
-				"如果你在户外施放这个法术时处于暴风雨中，该法术会让你控制现有的风暴，而不是创造一个新的。在这种情况下，该法术的damage增加{@damage 1d10}。"
+				"若你在施放此法术时处于暴风雨状态的户外，该法术将让你控制现有的风暴而非创造一个新的。在此状态下，法术的伤害增加{@damage 1d10}。"
 			],
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，法术的伤害就增加{@scaledamage 3d10|3-9|1d10}。"
 					]
@@ -2682,8 +2682,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，跳跃后闪电就多分出一束射向一个不同的目标。"
 					]
@@ -2755,8 +2755,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术就能多影响一个目标。而各目标之间距离不能超过 30 尺。"
 					]
@@ -2819,7 +2819,7 @@
 			"entries": [
 				"你在施法距离内某生物所在位置召唤出幽魂般的骨手，夹带着墓穴的刺骨冻寒攻击目标。并对该生物进行一次远程法术攻击，命中时，手掌抓住目标并令其受 {@damage 1d8} 点黯蚀伤害，且直至你下一回合开始前都无法恢复生命值。",
 				"如果你的命中目标为一个不死生物，则其在你下回合结束之前对你发动的攻击检定都具有劣势。",
-				"此法术的伤害在你达到5级时增加{@damage 1d8}（{@damage 2d8}），11级时增加{@damage 3d8}，以及在17级时增加{@damage 4d8}。"
+				"此法术在你达到指定等级时增加{@damage 1d8}。5级（{@damage 2d8}）、11级（{@damage 3d8}）和17级（{@damage 4d8}）"
 			],
 			"scalingLevelDice": {
 				"label": "黯蚀伤害",
@@ -2885,8 +2885,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术的伤害就增加 {@scaledamage 3d8|1-9|1d8}。"
 					]
@@ -2953,8 +2953,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，法术的伤害就增加{@scaledamage 8d6|6-9|2d6}。"
 					]
@@ -3153,8 +3153,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，法术的伤害就增加{@scaledamage 4d4|2-9|2d4}。"
 					]
@@ -3213,8 +3213,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，法术的伤害就增加{@scaledamage 5d8|5-9|1d8}。"
 					]
@@ -3279,8 +3279,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术的掷骰时就增加 {@scaledice 6d10|1-9|2d10}。"
 					]
@@ -3341,40 +3341,40 @@
 				"以下列出一些通常可用的命令单词及其效果。你也可以说出此处没有列明的单词命令，并由DM决定目标将如何行动。如果目标无法完成你的命令，则法术终止。",
 				{
 					"ENG_name": "Approach",
-					"type": "entries",
 					"name": "过来",
+					"type": "entries",
 					"entries": [
 						"目标以最短最直接的路线向你移动，并在到达距你5尺时结束其回合。"
 					]
 				},
 				{
 					"ENG_name": "Drop",
-					"type": "entries",
 					"name": "放下",
+					"type": "entries",
 					"entries": [
 						"目标放下手中持握物并结束其回合。"
 					]
 				},
 				{
 					"ENG_name": "Flee",
-					"type": "entries",
 					"name": "走开",
+					"type": "entries",
 					"entries": [
 						"目标在其回合内以最快最有效的方式远离你。"
 					]
 				},
 				{
 					"ENG_name": "Grovel",
-					"type": "entries",
 					"name": "趴下",
+					"type": "entries",
 					"entries": [
 						"目标趴下{@condition 倒地}并结束其回合。"
 					]
 				},
 				{
 					"ENG_name": "Halt",
-					"type": "entries",
 					"name": "立定",
+					"type": "entries",
 					"entries": [
 						"目标不移动且不作任何动作。飞行生物在原地悬浮（如果它可以这么做）。如果它必须移动才能保持在空中，则其移动最小的距离以保持飞行。"
 					]
@@ -3383,8 +3383,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术就能多影响一个目标。而各目标之间距离不能超过 30 尺。"
 					]
@@ -3714,8 +3714,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，法术伤害就增加{@scaledamage 8d8|5-9|1d8}。"
 					]
@@ -3831,8 +3831,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高法术位施展该法术时，你使用的法术位每比四环高一环，球状区域半径就增加 5 尺。"
 					]
@@ -3891,10 +3891,10 @@
 				{
 					"type": "list",
 					"items": [
-						"一只{@filter 挑战等级 2 或者更低的野兽|bestiary|challenge rating=[&0;&2]|type=野兽|miscellaneous=!swarm}",
-						"两只{@filter 挑战等级 1 或者更低的野兽|bestiary|challenge rating=[&0;&1]|type=野兽|miscellaneous=!swarm}",
-						"四只{@filter 挑战等级 1/2 或更低的野兽|bestiary|challenge rating=[&0;&1/2]|type=野兽|miscellaneous=!swarm}",
-						"八只{@filter 挑战等级 1/4 或更低的野兽|bestiary|challenge rating=[&0;&1/4]|type=野兽|miscellaneous=!swarm}"
+						"一只{@filter 挑战等级 2 或者更低的野兽|bestiary|challenge rating=[&0;&2]|type=beast|miscellaneous=!swarm}",
+						"两只{@filter 挑战等级 1 或者更低的野兽|bestiary|challenge rating=[&0;&1]|type=beast|miscellaneous=!swarm}",
+						"四只{@filter 挑战等级 1/2 或更低的野兽|bestiary|challenge rating=[&0;&1/2]|type=beast|miscellaneous=!swarm}",
+						"八只{@filter 挑战等级 1/4 或更低的野兽|bestiary|challenge rating=[&0;&1/4]|type=beast|miscellaneous=!swarm}"
 					]
 				},
 				"每只野兽同时视为精类生物，并且在生命值降至 0 时，或者法术终止时消失不见。",
@@ -3904,8 +3904,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用更高法术位施展该法术时，选择上文所述召唤选项之一，并显现更多生物：五环法术位显现两倍生物，七环法术位显现三倍生物，九环法术位显现四倍生物。"
 					]
@@ -3998,17 +3998,17 @@
 				}
 			],
 			"entries": [
-				"你召唤一个{@filter 挑战等级 4或更低的天界生物|bestiary|challenge rating=[&0;&4]|type=天界生物|miscellaneous=!swarm}，并使其显现在施法范围内一处你能看见且未被占据的空间。该天界生物在生命值降至 0 时，或者法术终止时消失不见。",
+				"你召唤一个{@filter 挑战等级 4或更低的天界生物|bestiary|challenge rating=[&0;&4]|type=celestial|miscellaneous=!swarm}，并使其显现在施法范围内一处你能看见且未被占据的空间。该天界生物在生命值降至 0 时，或者法术终止时消失不见。",
 				"被召唤的天界生物对你和你的伙伴保持友善关系。你为召唤出来的天界生物骰先攻，它也依此获得其自己的行动回合。该天界生物服从你发出的所有语言命令（不需要你作动作），前提是该命令必须不违反其所属阵营。如果你不发出任何命令，该生物会在敌对生物前保护自己，如果没有敌对生物则不执行任何动作。",
 				"该{@creature 羽蛇||天界生物}的具体数值由 DM 掌控。"
 			],
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
-						"使用九环法术位施展该法术时，你将召唤一个 {@filter 挑战等级 5或更低的天界生物|bestiary|challenge rating=[&0;&5]|type=天界生物|miscellaneous=!swarm}。"
+						"使用九环法术位施展该法术时，你将召唤一个 {@filter 挑战等级 5或更低的天界生物|bestiary|challenge rating=[&0;&5]|type=celestial|miscellaneous=!swarm}。"
 					]
 				}
 			],
@@ -4057,7 +4057,7 @@
 				}
 			],
 			"entries": [
-				"你召唤出一个元素生物仆从。在施法距离内指定一处充满气、土、火、水四物质其一的 10 尺立方区域作为法术目标。一个{@filter 挑战等级 5或更低的元素生物|bestiary|challenge rating=[&0;&5]|type=元素生物|miscellaneous=!swarm}从目标区域成型，并显现在该区域 10 尺内一处未被占据空间。例如，一只{@creature 火元素}从篝火中成型，而一只{@creature 土元素}则从地面上浮现。该生物在生命值降至 0 时，或者法术终止时消失不见。",
+				"你召唤出一个元素生物仆从。在施法距离内指定一处充满气、土、火、水四物质其一的 10 尺立方区域作为法术目标。一个{@filter 挑战等级 5或更低的元素生物|bestiary|challenge rating=[&0;&5]|type=elemental|miscellaneous=!swarm}从目标区域成型，并显现在该区域 10 尺内一处未被占据空间。例如，一只{@creature 火元素}从篝火中成型，而一只{@creature 土元素}则从地面上浮现。该生物在生命值降至 0 时，或者法术终止时消失不见。",
 				"被召唤的元素生物对你和你的伙伴保持友善关系。你为召唤出来的元素生物骰先攻，它也依此获得其自己的行动回合。该元素生物服从你发出的所有语言命令（不需要你作动作）。如果你不发出任何命令，该生物会在敌对生物前保护自己，如果没有敌对生物则不执行任何动作。",
 				"如果你{@status 专注}被打断，该元素生物并不会因此消失不见，但你会因此失去该元素生物的控制权。失控的元素生物对你和你的伙伴变为敌对，并随时准备发动攻击。不受控的元素生物无法被你解散，并在你的召唤开始算起1小时后消失不见。",
 				"该元素生物的具体数值由 DM 掌控。"
@@ -4065,8 +4065,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，召唤生物挑战等级就增加 1。"
 					]
@@ -4115,7 +4115,7 @@
 				}
 			],
 			"entries": [
-				"你召唤一个{@filter 挑战等级 6或更低的精类生物|bestiary|challenge rating=[&0;&6]|type=精类|miscellaneous=!swarm}，或者一个{@filter 挑战等级 6 或者更低的野兽|bestiary|challenge rating=[&0;&6]|type=野兽|miscellaneous=!swarm}。被召唤生物显现在施法距离内一处你能看见且未被占据的空间。该精类生物在生命值降至 0 时，或者法术终止时消失不见。",
+				"你召唤一个{@filter 挑战等级 6或更低的精类生物|bestiary|challenge rating=[&0;&6]|type=fey|miscellaneous=!swarm}，或者一个{@filter 挑战等级 6 或者更低的野兽|bestiary|challenge rating=[&0;&6]|type=beast|miscellaneous=!swarm}。被召唤生物显现在施法距离内一处你能看见且未被占据的空间。该精类生物在生命值降至 0 时，或者法术终止时消失不见。",
 				"被召唤的精类生物对你和你的伙伴保持友善关系。你为召唤出来的精类生物骰先攻，它也依此获得其自己的行动回合。该精类生物服从你发出的所有语言命令（不需要你作动作），前提是该命令必须不违反其所属阵营。如果你不发出任何命令，该生物会在敌对生物前保护自己，如果没有敌对生物则不执行任何动作。",
 				"如果你的{@status 专注}被打断，该精类生物并不会因此消失不见，但你会因此失去该生物的控制权。失去控制的精类生物对你和你的伙伴变为敌对，并随时准备发动攻击。不受控的精类生物无法被你解散，并在你的召唤开始算起 1 小时后消失不见。",
 				"该精类生物的具体数值由 DM 掌控。"
@@ -4123,8 +4123,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，召唤生物挑战等级就增加 1。"
 					]
@@ -4178,10 +4178,10 @@
 				{
 					"type": "list",
 					"items": [
-						"一个{@filter 挑战等级 2或更低的元素生物|bestiary|challenge rating=[&0;&2]|type=元素生物|miscellaneous=!swarm}",
-						"两个{@filter 挑战等级 1或更低的元素生物|bestiary|challenge rating=[&0;&1]|type=元素生物|miscellaneous=!swarm}",
-						"四个{@filter 挑战等级 1/2或更低的元素生物|bestiary|challenge rating=[&0;&1/2]|type=元素生物|miscellaneous=!swarm}",
-						"八个{@filter 挑战等级 1/4或更低的元素生物|bestiary|challenge rating=[&0;&1/4]|type=元素生物|miscellaneous=!swarm}。"
+						"一个{@filter 挑战等级 2或更低的元素生物|bestiary|challenge rating=[&0;&2]|type=elemental|miscellaneous=!swarm}",
+						"两个{@filter 挑战等级 1或更低的元素生物|bestiary|challenge rating=[&0;&1]|type=elemental|miscellaneous=!swarm}",
+						"四个{@filter 挑战等级 1/2或更低的元素生物|bestiary|challenge rating=[&0;&1/2]|type=elemental|miscellaneous=!swarm}",
+						"八个{@filter 挑战等级 1/4或更低的元素生物|bestiary|challenge rating=[&0;&1/4]|type=elemental|miscellaneous=!swarm}。"
 					]
 				},
 				"每个被该法术召唤的元素生物在生命值降至0，或者法术终止时消失不见。",
@@ -4191,8 +4191,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用更高法术位施展该法术时，选择上文所述召唤选项之一，并显现更多生物：六环法术位显现两倍生物，八环法术位显现三倍生物。"
 					]
@@ -4290,10 +4290,10 @@
 				{
 					"type": "list",
 					"items": [
-						"一个{@filter 挑战等级 2或更低的精类生物|bestiary|challenge rating=[&0;&2]|type=精类|miscellaneous=!swarm}",
-						"两个{@filter 挑战等级 1或更低的精类生物|bestiary|challenge rating=[&0;&1]|type=精类|miscellaneous=!swarm}",
-						"四个{@filter 挑战等级 1/2或更低的精类生物|bestiary|challenge rating=[&0;&1/2]|type=精类|miscellaneous=!swarm}",
-						"八个{@filter 挑战等级 1/4或更低的精类生物|bestiary|challenge rating=[&0;&1/4]|type=精类|miscellaneous=!swarm}"
+						"一个{@filter 挑战等级 2或更低的精类生物|bestiary|challenge rating=[&0;&2]|type=fey|miscellaneous=!swarm}",
+						"两个{@filter 挑战等级 1或更低的精类生物|bestiary|challenge rating=[&0;&1]|type=fey|miscellaneous=!swarm}",
+						"四个{@filter 挑战等级 1/2或更低的精类生物|bestiary|challenge rating=[&0;&1/2]|type=fey|miscellaneous=!swarm}",
+						"八个{@filter 挑战等级 1/4或更低的精类生物|bestiary|challenge rating=[&0;&1/4]|type=fey|miscellaneous=!swarm}"
 					]
 				},
 				"每个被该法术召唤的精类生物在生命值降为0，或者法术终止时消失不见。",
@@ -4303,8 +4303,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用更高法术位施展该法术时，选择上文所述召唤选项之一，并显现更多生物：六环法术位显现两倍生物，八环法术位显现三倍生物。"
 					]
@@ -4354,7 +4354,7 @@
 				"ritual": true
 			},
 			"entries": [
-				"你与一位半神、一位早已逝去的贤者的灵魂，或是来自另一个平面的其他某种神秘实体进行精神上的联系。与这种超平面智能的联系可能会使你的精神受到压力甚至崩溃。当你施展这个法术时，进行一次{@dc 15}智力豁免检定。如果检定失败，你将承受{@damage 6d6}心灵伤害，并直到完成一次长休息后才会恢复正常。在精神错乱期间，你无法采取行动，无法理解其他生物的话语，无法阅读，只能说胡话。对你施放{@spell 高等复原术}法术可以解除这个效果。",
+				"你以心灵联系一位半神、一位早已逝去的智者精魄，或其他位面的某种神秘实体。与这种异界智慧接触可能会使你的心智紧张甚至崩溃。当你施放该法术时，进行一次{@dc 15}的智力豁免检定。若失败，你将受到{@damage 6d6}心灵伤害并陷入疯狂状态直至完成一次长休。疯狂期间，你不能执行动作、无法理解其他生物的语言、不能阅读且只会胡言乱语。对你施放的{@spell 高等复原术}可终止此效果。",
 				"豁免成功时，你可以询问该实体五个问题。你必须在法术结束前提出你的问题。而你所提出的每条问题 DM 都可以用一个单词作回答，比如\"是\"\"不是\"\"可能\"\"不可能\"\"没关系\"或是\"不清楚\"（如果该实体不知道该问题答案时）。如果一个单词的答案可能导致误导，DM 可能会用一句短语来作为问题的答案。"
 			],
 			"damageInflict": [
@@ -4406,48 +4406,48 @@
 				"由于法术对目标引发的是自然疾病，因此任何移除疾病或改善疾病状况的效应都可以对受术生物产生影响。",
 				{
 					"ENG_name": "Blinding Sickness",
-					"type": "entries",
 					"name": "失明症",
+					"type": "entries",
 					"entries": [
 						"痛苦缠绕着患病者的意志，并使其眼睛变成奶白色。患病生物进行感知检定和感知豁免时具有劣势，并且承受{@condition 目盲}状态。"
 					]
 				},
 				{
 					"ENG_name": "Filth Fever",
-					"type": "entries",
 					"name": "腐热症",
+					"type": "entries",
 					"entries": [
 						"患者身体发起严重的高烧。患病生物进行力量检定和力量豁免时，以及发动基于力量的攻击检定时具有劣势。"
 					]
 				},
 				{
 					"ENG_name": "Flesh Rot",
-					"type": "entries",
 					"name": "烂肉症",
+					"type": "entries",
 					"entries": [
 						"患者的肌肤逐渐腐朽。患病生物进行魅力检定时具有劣势，并且具有所有伤害类型的伤害易伤。"
 					]
 				},
 				{
 					"ENG_name": "Mindfire",
-					"type": "entries",
 					"name": "脑热症",
+					"type": "entries",
 					"entries": [
 						"患病生物进行智力检定和智力豁免时具有劣势，并且其在战斗中视为受到{@spell 困惑术}效应影响。"
 					]
 				},
 				{
 					"ENG_name": "Seizure",
-					"type": "entries",
 					"name": "癫痫症",
+					"type": "entries",
 					"entries": [
 						"患者全身颤抖不止。患病生物进行敏捷检定和敏捷豁免时，以及发动基于敏捷的攻击检定时具劣势。"
 					]
 				},
 				{
 					"ENG_name": "Slimy Doom",
-					"type": "entries",
 					"name": "恶心症",
+					"type": "entries",
 					"entries": [
 						"患者开始不受控地流血。患病生物进行体质检定和体质豁免时具有劣势。另外每当该生物受到伤害时都会陷入{@condition 震慑}状态，直至其下一回合结束。"
 					]
@@ -4509,7 +4509,7 @@
 				}
 			],
 			"entries": [
-				"选择一个你可以施展的五环或更低环阶法术，该法术的施法时间必须为 1 动作，且必须能够以你自身为目标。你以\"随因法术\"的形式施展该法术，即将其作为所施展触发术的一部分，并且同时消耗该法术与触发术的法术位。该随因法术并不立即生效，而是在特定状况发生时才触发其效应。你在施展这两个法术时，必须描述该触发状况的细节。例如，触发术与 {@spell 水下呼吸}一起施放可以确保 {@spell 水下呼吸}可以在你被水或其他液体淹没时自动触发其效应。",
+				"选择一个你可以施展的五环或更低环阶法术，该法术的施法时间必须为 1 动作，且必须能够以你自身为目标。你以\"随因法术\"的形式施展该法术，即将其作为所施展触发术的一部分，并且同时消耗该法术与触发术的法术位。该随因法术并不立即生效，而是在特定状况发生时才触发其效应。你在施展这两个法术时，必须描述该触发状况的细节。例如，触发术与 {@spell 水中呼吸}一起施放可以确保 {@spell 水中呼吸}可以在你被水或其他液体淹没时自动触发其效应。",
 				"随因法术的效应在相应状况第一次出现时立即生效，而无论你是否想要这么做，在这之后触发术终止。",
 				"随因法术只能对你起作用，哪怕它通常可以指定其他目标现在也无法再作指定。你一次只能使用一个触发术，如果你在已施放该法术时再次施展该法术，则前一个触发术的效应立即终止。另外，当触发术的材料成分不在你的角色身上时，其法术效应也将立即终止。"
 			]
@@ -4605,8 +4605,8 @@
 				"你在法术终止前控制任一片独立的水体，控制范围为你指定的一处边长 100 尺的立方区域。施展该法术时，你可以从以下效应中选择其一生效。在你之后的每个自己回合中，你可以用一个动作重复生效同一效应，或是选择实现另一效应。",
 				{
 					"ENG_name": "Flood",
-					"type": "entries",
 					"name": "上涨",
+					"type": "entries",
 					"entries": [
 						"你使控制区域内水位上涨至多 20 尺。如果该区域包含有滨岸，则水体漫过涨水覆盖的干土。",
 						"如果你指定的区域是一片大水体中的一部分，则你改为制造一片 20 尺高的波浪，并从区域的一边扑向另一边再拍下水面。波浪中任何巨型或更小的载具都会被带到水浪行进的另一边。且所有巨型或更小的载具都有 {@chance 25|||翻船了！|无效果}的几率被倾覆。",
@@ -4615,24 +4615,24 @@
 				},
 				{
 					"ENG_name": "Part Water",
-					"type": "entries",
 					"name": "分水",
+					"type": "entries",
 					"entries": [
 						"你使区域内的水体分开并形成一条水体的沟壑。沟壑从法术区域的一头延伸到另一头，而被分开的水体则在两边形成两道水墙。沟壑维持至法术终止或直至你选择另一个效应。该效应终止时，沟壑会在接下来的一轮里慢慢的恢复成通常的水位。"
 					]
 				},
 				{
 					"ENG_name": "Redirect Flow",
-					"type": "entries",
 					"name": "转向",
+					"type": "entries",
 					"entries": [
 						"你使区域内的水体分开并形成一条水体的沟壑。沟壑从法术区域的一头延伸到另一头，而被分开的水体则在两边形成两道水墙。沟壑维持至法术终止或直至你选择另一个效应。该效应终止时，沟壑会在接下来的一轮里慢慢的恢复成通常的水位。"
 					]
 				},
 				{
 					"ENG_name": "Whirlpool",
-					"type": "entries",
 					"name": "漩涡",
+					"type": "entries",
 					"entries": [
 						"该效应需要水体至少为 50 尺的方形区域并且至少有 25 尺深。你在区域中央形成一个漩涡。其形态为底部宽 5 尺顶部宽 50 尺，且 25 尺高。水中任何在漩涡 25 尺范围内的生物或物件将被漩涡向自身拉动 10 尺。受影响的生物可以进行一次力量（{@skill 运动}）检定来对抗你的法术 DC，以通过游泳脱离漩涡控制。",
 						"任何生物在一个回合内第一次进入漩涡或者在漩涡内开始其回合时，必须进行一次力量豁免。豁免失败者将受到 {@damage 2d8} 点钝击伤害，并被拖入漩涡中心直至法术终止。豁免成功则伤害减半，且不会被拖入漩涡。被拖入漩涡中心的生物可以用其动作尝试游泳来离开漩涡（如上文所述），但它此时进行的力量（{@skill 运动}）检定具有劣势。",
@@ -4852,8 +4852,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你的法术位每比二环高一环，可生效的弹药数量就增加两发。"
 					]
@@ -4909,8 +4909,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，如果被打断法术的环阶不高于你所用的法术位环阶，则该目标法术直接被打断。"
 					]
@@ -4995,16 +4995,16 @@
 				"你施法创造水或者使水枯竭。",
 				{
 					"ENG_name": "Create Water",
-					"type": "entries",
 					"name": "造水",
+					"type": "entries",
 					"entries": [
 						"你在施法距离内一个打开的容器里创造 10 加仑干净的水。或以降雨的方式在施法距离内一处 30 尺的立方区域降下等量水分并浇灭区域内不受遮盖的火苗。"
 					]
 				},
 				{
 					"ENG_name": "Destroy Water",
-					"type": "entries",
 					"name": "枯水",
+					"type": "entries",
 					"entries": [
 						"你使施法距离内一个打开的容器里的 10 加仑水分枯竭不见。或者使施法距离内一片 30 尺立方区域的浓雾消失不见。"
 					]
@@ -5013,8 +5013,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术就多创造或枯竭 10 加仑额外的水分，或者影响的立方区域边长增加 5 尺。"
 					]
@@ -5072,10 +5072,10 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
-						"使用七环法术位施展该法术时，你可以唤起并维持四只 {@creature 食尸鬼||食尸鬼们} 。使用八环法术位施展该法术时，你可以唤起并维持五只 {@creature 食尸鬼||食尸鬼们}，也可以改为唤起并维持两只 {@creature 妖鬼||妖鬼们} ，或两个{@creature 尸妖||尸鬼}。当你使用九环法术位施展该法术时，你可以唤起并维持六只 {@creature 食尸鬼||食尸鬼们}，也可以改为唤起并维持三只 {@creature 妖鬼||妖鬼们}  ，或三个 {@creature 尸妖||尸鬼} ，或两个 {@creature 木乃伊||木乃伊们}。"
+						"使用七环法术位施展该法术时，你可以唤起并维持四只 {@creature 食尸鬼||食尸鬼们} 。使用八环法术位施展该法术时，你可以唤起并维持五只 {@creature 食尸鬼||食尸鬼们}，也可以改为唤起并维持两只 {@creature 妖鬼||妖鬼们} ，或两个{@creature 尸妖||尸妖}。当你使用九环法术位施展该法术时，你可以唤起并维持六只 {@creature 食尸鬼||食尸鬼们}，也可以改为唤起并维持三只 {@creature 妖鬼||妖鬼们}  ，或三个 {@creature 尸妖||尸妖} ，或两个 {@creature 木乃伊||木乃伊们}。"
 					]
 				}
 			],
@@ -5164,8 +5164,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，创造物尺寸的立方边长就加大 5 尺。"
 					]
@@ -5324,8 +5324,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，恢复量就增加{@scaledice 1d8|1-9|1d8}。"
 					]
@@ -5646,15 +5646,15 @@
 			],
 			"entries": [
 				"一束黄光从你的指尖射向施法距离内你指定的一点，并在法术持续时间内在该点凝结成一颗赤红的珠子。当因{@status 专注}被打断或自主决定导致法术终止时，珠子将伴着低吼炸裂成四窜的烈焰并绕过拐角扩散。此时，目标点周边半径 20 尺内的每个生物都必须进行一次敏捷豁免。豁免失败者将承受全部累积的火焰伤害，豁免成功则伤害减半。",
-				"该法术的基础伤害为 {@damage 12d6}。如果在回合结束时珠子还没有引爆，伤害增加 {@damage 1d6}。",
+				"该法术的基础伤害为{@damage 12d6}。若在你的回合结束时此球仍未爆炸，伤害将增加{@damage 1d6}。",
 				"如果珠子爆炸前被生物触碰到，则该生物必须进行一次敏捷豁免。豁免失败则法术立即终止并触发爆炸效应。豁免成功则该生物可将珠子抛开至多 40 尺。当珠子被生物或固态物件撞击时，法术立即终止并且触发爆炸效应。",
 				"火焰伤害区域内没被着装携带的易燃物品将被烈焰点燃。"
 			],
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用八环或更高法术位施展该法术时，你使用的法术位每比七环高一环，基础伤害就提高{@scaledamage 12d6|7-9|1d6}。"
 					]
@@ -6111,8 +6111,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，伤害就提高 {@scaledamage 10d6 + 40|6-9|3d6}。"
 					]
@@ -6175,16 +6175,16 @@
 				"你可以通过以下方式提前终止此法术。",
 				{
 					"ENG_name": "Break Enchantment",
-					"type": "entries",
 					"name": "破除惑控",
+					"type": "entries",
 					"entries": [
 						"你使用动作触碰一个触及范围内的生物。如果该生物受天界生物、元素生物、精类生物、邪魔或不死生物影响而陷入{@condition 魅惑}、{@condition 恐慌}，或是被附身状态，则该生物的{@condition 魅惑}、{@condition 恐慌}或是被附身状态即时结束。"
 					]
 				},
 				{
 					"ENG_name": "Dismissal",
-					"type": "entries",
 					"name": "驱逐",
+					"type": "entries",
 					"entries": [
 						"你使用动作发动一次近战法术攻击，攻击一个天界生物、元素生物、精类生物、邪魔或不死生物。命中时，你可以尝试将该生物驱逐回其原属位面。该生物必须成功通过一此魅力豁免，否则将强制返回其原属位面（若已在原属位面则无效）。比如精类生物会返回妖精荒野，不死生物会返回堕影冥界。"
 					]
@@ -6253,8 +6253,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你直接终止目标身上小于等于该施法环阶的法术效应。"
 					]
@@ -6304,8 +6304,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术的伤害就增加 {@scaledamage 3d6|1-9|1d6}。"
 					]
@@ -6522,8 +6522,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环法术位施展该法术时，持续时间变为：{@status 专注}，至多 10 分钟。使用六环法术位施展该法术时，持续时间变为：{@status 专注}，至多 1 小时。使用七环或更高法术位施展该法术时，持续时间变为：{@status 专注}，至多 8 小时。"
 					]
@@ -6593,8 +6593,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用九环法术位施展该法术时，持续时间变为：{@status 专注}，至多 8 小时。"
 					]
@@ -6661,8 +6661,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环法术位施展该法术时，持续时间变为：{@status 专注}，至多 10 分钟。使用七环法术位施展该法术时，持续时间变为：{@status 专注}，至多 1 小时。使用八环或更高法术位施展该法术时，持续时间变为：{@status 专注}，至多 8 小时。"
 					]
@@ -6880,8 +6880,8 @@
 				"根据施法区域的地形，DM 可以决定是否应用额外的效应。",
 				{
 					"ENG_name": "Fissures",
-					"type": "entries",
 					"name": "裂缝",
+					"type": "entries",
 					"entries": [
 						"在施展此法术的下一个回合开始时，法术影响区域会撕开一道道裂缝。{@dice 1d6}条裂缝在 DM 安排的位置出现。每条裂缝深{@dice 1d10 × 10}尺，宽 10 尺，并由影响区域的一边向另一边延伸。裂缝撕开时，将处于其位置上的生物必须成功通过一次敏捷豁免，否则将坠落其中。豁免成功则该生物移动到裂缝旁边。",
 						"任何处在裂缝上的建筑会直接崩塌（如下所示）。"
@@ -6889,10 +6889,10 @@
 				},
 				{
 					"ENG_name": "Structures",
-					"type": "entries",
 					"name": "建筑",
+					"type": "entries",
 					"entries": [
-						"地震波在施法时及每个回合开始时，对区域内与地面接触的任何建筑造成50点钝击伤害，直到法术结束。如果一个建筑的生命值降到0，它会倒塌并可能对附近的生物造成伤害。位于建筑高度一半距离内的生物必须进行一次敏捷豁免检定。失败的豁免检定导致生物受到{@damage 5d6}点钝击伤害，被击退至{@condition 倒地}状态，并被埋在瓦砾中，需要通过一次{@dc 20}力量（{@skill 运动}）检定动作来逃脱。根据瓦砾的性质，DM可以调整难度等级的高低。成功豁免的生物将只受到一半的伤害，并且不会陷入{@condition 倒地}状态或被埋。"
+						"地震术对区域内与地面接触的任何建筑造成50点钝击伤害，伤害在你施放该法术时以及法术持续期间每个你的回合开始时生效。如果一个建筑的生命值降至0，它会倒塌并可能对附近的生物造成伤害。处于建筑高度一半距离内的生物必须进行一次敏捷豁免检定。若豁免失败，该生物受到{@damage 5d6}钝击伤害，被击{@condition 倒地}并被掩埋在瓦砾中，需用一个动作进行一次{@dc 20}力量（{@skill 运动}）检定以逃脱。DM可根据瓦砾的性质调高或调低DC。若豁免成功，该生物只受到一半伤害且不会{@condition 倒地}或被掩埋。"
 					]
 				}
 			],
@@ -7011,8 +7011,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或六环法术位施展该法术时，攻击检定的加值变为+2，额外伤害变为 {@scaledamage 1d4|3-9|2d4}。使用七环或更高法术位施展该法术时，攻击检定的加值变为+3，额外伤害变为{@scaledamage 1d4|3-9|3d4}。"
 					]
@@ -7071,48 +7071,48 @@
 				"你触碰一个生物，并为其附上魔力强化。选择下列效应之一生效，而目标将在法术终止前维持该法术效应。",
 				{
 					"ENG_name": "Bear's Endurance",
-					"type": "entries",
 					"name": "熊之坚韧",
+					"type": "entries",
 					"entries": [
 						"目标进行体质检定时具有优势。目标同时获得 {@dice 2d6} 的临时生命值，并维持至法术终止。"
 					]
 				},
 				{
 					"ENG_name": "Bull's Strength",
-					"type": "entries",
 					"name": "牛之力量",
+					"type": "entries",
 					"entries": [
 						"目标进行力量检定时具有优势，且其负重翻倍。"
 					]
 				},
 				{
 					"ENG_name": "Cat's Grace",
-					"type": "entries",
 					"name": "猫之优雅",
+					"type": "entries",
 					"entries": [
 						"目标进行敏捷检定时具有优势。另外，目标在非{@condition 失能}状态下不会因 20 尺以内的坠落而伤害。"
 					]
 				},
 				{
 					"ENG_name": "Eagle's Splendor",
-					"type": "entries",
 					"name": "鹰之威仪",
+					"type": "entries",
 					"entries": [
 						"目标进行魅力检定时具优势。"
 					]
 				},
 				{
 					"ENG_name": "Fox's Cunning",
-					"type": "entries",
 					"name": "狐之狡黠",
+					"type": "entries",
 					"entries": [
 						"目标进行智力检定时具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Owl's Wisdom",
-					"type": "entries",
 					"name": "枭之睿智",
+					"type": "entries",
 					"entries": [
 						"目标进行感知检定时具有优势。"
 					]
@@ -7121,8 +7121,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，就可以多指定一个目标。"
 					]
@@ -7250,8 +7250,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就提高 {@scaledamage 1d6|1-9|1d6}。"
 					]
@@ -7424,8 +7424,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用八环或更高法术位施展该法术时，你使用的法术位每比七环高一环，你就可以多指定三个自愿生物作为法术目标（包括你在内）。这些生物在你施法时必须在你 10 尺内。"
 					]
@@ -7588,24 +7588,24 @@
 				"在法术持续时间内，你的眼睛变成充满恐怖力量的漆黑空洞。指定一个 60 尺内你能看见的生物，并迫使其进行一次感知豁免，豁免失败者将承受下列效应之一（由你选择）。在法术终止前的每个自己回合，你都可以使用动作来指定一个目标。不过不能指定那些已经成功通过该豁免的生物。",
 				{
 					"ENG_name": "Asleep",
-					"type": "entries",
 					"name": "沉睡",
+					"type": "entries",
 					"entries": [
 						"目标陷入{@condition 昏迷}。其在受到伤害，或另一个生物使用动作摇晃它时，即可再次醒来。"
 					]
 				},
 				{
 					"ENG_name": "Panicked",
-					"type": "entries",
 					"name": "惊慌",
+					"type": "entries",
 					"entries": [
 						"目标因你而{@condition 恐慌}，这个{@condition 恐慌}的生物必须在每个其自己回合里执行{@action 疾走}动作并移动，且以最短、最安全的路径尽可能的逃离你，直至其无路可逃为止。如果目标移至离你 60 尺远且看不见你的地方，则法术效应终止。"
 					]
 				},
 				{
 					"ENG_name": "Sickened",
-					"type": "entries",
 					"name": "患病",
+					"type": "entries",
 					"entries": [
 						"目标发动攻击检定和进行属性检定时具有劣势。目标在每个其自己回合结束时都可以进行另一个感知豁免，豁免成功则该效应终止。"
 					]
@@ -7765,8 +7765,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，其给予的临时生命值就增加 5。"
 					]
@@ -8041,7 +8041,7 @@
 			},
 			"entries": [
 				"你获得一只为你服务的魔宠。以下列动物为原型选择魔宠的动物精魄外貌：{@creature 蝙蝠}、{@creature 猫}、{@creature 蟹}、{@creature 青蛙} （蟾蜍）、{@creature 鹰}、{@creature 蜥蜴}、{@creature 章鱼}、{@creature 猫头鹰}、{@creature 毒蛇}、鱼（{@creature 食人鱼}）、{@creature 老鼠}、{@creature 渡鸦}、{@creature 海马}、{@creature 蜘蛛},或{@creature 鼬鼠}。魔宠出现在施法距离内一处未被占据的空间，虽然有着所选的生物属性数据，但其种类为天界生物，精类生物或邪魔（由你选择）而不是野兽。",
-				"{@note 额外的{@filter 可选动物形态|bestiary|Miscellaneous=魔宠}可能会根据DM的决定而提供。}",
+				"{@note 额外的{@filter 可选动物形态|bestiary|Miscellaneous=魔宠}可能会在DM的裁量下提供。}",
 				"你的魔宠可脱离你独立行动，不过它会一直遵循你的命令行事。战斗时，它为自己骰先攻，并在自己回合里行动。魔宠无法攻击，但是它能如常执行其他动作。",
 				"当你的魔宠生命值降低到0点时，它会自行消失，变成一种无物理形态的状态。他会在你再次施展这个法术后重新出现。你可以用一个动作，暂时性的解散你的魔宠，它将进入一个小位面等待你的重新召唤。或者你也可以选择永久解散它。暂时解散时，你可以用一个动作召唤它出现在 30 尺内任意未占据的空间中。不论魔宠以何种方式生命值归0或消失进入了小位面，它都会将自己穿着或携带的任何物品丢弃在自己占据的空间中。",
 				"你的魔宠在你身边 100 尺范围内时，你可以与其进行心灵交流。此外，你还可以用一个动作将自己的视觉和听觉切换到魔宠的感官，并一持续至你下一回合。在此期间，你同时享有该魔宠自身的特殊感官，而你本体的感官则等同于陷入{@condition 耳聋||耳聋}以及{@condition 目盲||目盲}状态。",
@@ -8222,7 +8222,7 @@
 			],
 			"entries": [
 				"你发出负能量并贯穿施法距离内你能看见的一个生物使其承受苦痛。该生物必须进行以此体质豁免。豁免失败则受到 {@damage 7d8 + 30} 点黯蚀伤害，豁免成功则伤害减半。",
-				"被该法术杀死的类人生物将在你下一回合开始时唤起为一只受你操控的{@creature 僵尸}，并在随后尽力遵循你的语言指令。"
+				"被该法术杀死的类人生物将在你下一回合开始时唤起为一只受你操控的{@creature 丧尸}，并在随后尽力遵循你的语言指令。"
 			],
 			"damageInflict": [
 				"黯蚀"
@@ -8456,8 +8456,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，其伤害就增加{@scaledamage 8d6|3-9|1d6}。"
 					]
@@ -8523,8 +8523,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比二环高两环，其伤害就增加{@scaledamage 3d6|2,4,6,8|1d6}。"
 					]
@@ -8585,8 +8585,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，其火焰伤害或光耀伤害（自选其一）就增加{@scaledamage 4d6|5-9|1d6}。"
 					]
@@ -8657,8 +8657,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，其伤害就增加 {@scaledamage 2d6|2-9|1d6}。"
 					]
@@ -8790,8 +8790,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，就可以额外再指定一个生物作为法术目标。"
 					]
@@ -8848,8 +8848,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，浓雾的半径就增加 20 尺。"
 					]
@@ -9278,8 +9278,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或八环法术位施展该法术时，持续时间变为 1 年。使用九环法术位施展该法术时，法术将一直持续至被上文提及的法术所终止。"
 					]
@@ -9487,8 +9487,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"当你使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，屏障能阻挡的法术就高一环。"
 					]
@@ -9547,16 +9547,16 @@
 				"刻画符纹时，你可以从爆炸符文和法术符纹两者中选择其一：",
 				{
 					"ENG_name": "Explosive Runes",
-					"type": "entries",
 					"name": "爆炸符文",
+					"type": "entries",
 					"entries": [
 						"符文被触发时将在半径 20 尺球状区域内将爆发魔法能量，并绕过角落扩散。区域内的每个生物必须进行一次敏捷豁免。豁免失败者将受到 {@damage 5d8} 的强酸，冷冻，火焰，闪电，或雷鸣伤害（你在制造符纹时指定），豁免成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "Spell Glyph",
-					"type": "entries",
 					"name": "法术刻文",
+					"type": "entries",
 					"entries": [
 						"你可以施展一个准备好的三环或更低环阶法术，并将其储备在所创造的符纹中。所储备法术必须以一个生物或一个区域为目标，而其以该方式施展时并不会立即生效。符文被触发时将随即施展所储备的法术。如果法术指向一个目标，则以触发符纹的生物为目标；如果法术影响一个区域，则该区域以此生物为中心；如果法术召唤敌对生物或创造伤害性质的物件或陷井，则这些造物将显现在可能靠近触发者的地方并攻击它。如果法术需要{@status 专注}，则其效应将在其最大持续时间内维持。"
 					]
@@ -9565,8 +9565,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，一个爆炸符文的伤害就增加 {@scaledamage 5d8|3-9|1d8}。如果你创造一个法术符纹，则其储备法术的环阶可以与你施放守卫刻文时使用的法术位相同。"
 					]
@@ -9938,32 +9938,32 @@
 				"铜墙铁壁在保护区域内创造下列效应：",
 				{
 					"ENG_name": "Corridors",
-					"type": "entries",
 					"name": "过道",
+					"type": "entries",
 					"entries": [
 						"浓雾充斥受保护的过道使其处于{@quickref 视觉与光照|PHB|2||重度遮蔽}。此外，除你以外的生物在过道上遇到需要选择方向的分叉路口时，有 {@chance 50|||迷失方向！|无效果} 机会误认错的方向为正确的前进方向。"
 					]
 				},
 				{
 					"ENG_name": "Doors",
-					"type": "entries",
 					"name": "门",
+					"type": "entries",
 					"entries": [
 						"所有保护区域内的门都以魔法上锁，等同于使用法术{@spell 秘法锁}封门。此外，你还可以用一个幻象掩盖至多 10 扇门（如同法术{@spell 次级幻影}的虚幻物件效果）来让其看起来有如平整的墙面。"
 					]
 				},
 				{
 					"ENG_name": "Stairs",
-					"type": "entries",
 					"name": "楼梯",
+					"type": "entries",
 					"entries": [
 						"蛛网从上到下布满了保护区域内的楼梯，等同于法术{@spell 蛛网术}的效应。铜墙铁壁法术持续时，即使这些蛛网被焚烧或撕毁，也可以在 10 分钟后重生。"
 					]
 				},
 				{
 					"ENG_name": "Other Spell Effect",
-					"type": "entries",
 					"name": "其他法术效应",
+					"type": "entries",
 					"entries": [
 						"你可以在要塞的保护区域内布置你指定的下列魔法效应之一。",
 						{
@@ -10091,8 +10091,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就增加 {@scaledamage 4d6|1-9|1d6}。"
 					]
@@ -10208,8 +10208,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就增加 {@scaledamage 1d10|1-6|1d10}（最大伤害 {@damage 6d10}）。"
 					]
@@ -10271,80 +10271,80 @@
 				"其次，你可以为该区域绑定一种额外效应。从下列效应选项中选择其一，或从 DM 提供的效应中选择其一生效。其中某些影响区域内生物的效应可以被设定为影响所有生物，影响追随某特定神明或领袖的生物，或是只影响特定生物种类（例如兽人或巨魔）。当一个可受影响生物在一个回合里首次进入该区域，或是在区域内开始其回合时，它可以进行一次魅力豁免。豁免成功则该生物无视此额外效果直至其离开该区域。",
 				{
 					"ENG_name": "Courage",
-					"type": "entries",
 					"name": "勇敢",
+					"type": "entries",
 					"entries": [
 						"区域内的受影响生物不受{@condition 恐慌}。"
 					]
 				},
 				{
 					"ENG_name": "Darkness",
-					"type": "entries",
 					"name": "黑暗术",
+					"type": "entries",
 					"entries": [
 						"区域内处于黑暗环境，普通光源以及比本法术施展法术位更低环阶法术所创造的光源均无法照亮该区域。"
 					]
 				},
 				{
 					"ENG_name": "Daylight",
-					"type": "entries",
 					"name": "昼明术",
+					"type": "entries",
 					"entries": [
 						"区域内处于明亮光照，比本法术施展法术位更环节法术所创造的黑暗无法掩盖亮光。"
 					]
 				},
 				{
 					"ENG_name": "Energy Protection",
-					"type": "entries",
 					"name": "能量防护",
+					"type": "entries",
 					"entries": [
 						"区域内受影响生物对一种由你指定的伤害类型具有抗性，所选类型不包括钝击、穿刺和挥砍。"
 					]
 				},
 				{
 					"ENG_name": "Energy Vulnerability",
-					"type": "entries",
 					"name": "能量易伤",
+					"type": "entries",
 					"entries": [
 						"区域内的受影响生物对一种由你指定的伤害类型具有易伤，所选类型不包括钝击、穿刺和挥砍。"
 					]
 				},
 				{
 					"ENG_name": "Everlasting Rest",
-					"type": "entries",
 					"name": "永恒安息",
+					"type": "entries",
 					"entries": [
 						"区域内埋葬的尸体不能被转化成不死生物。"
 					]
 				},
 				{
 					"ENG_name": "Extradimensional Interference",
-					"type": "entries",
 					"name": "次元干涉",
+					"type": "entries",
 					"entries": [
 						"受影响生物不能通过传送，也不能通过异次元或跨位面途径作移动和旅行。"
 					]
 				},
 				{
 					"ENG_name": "Fear",
-					"type": "entries",
 					"name": "恐惧术",
+					"type": "entries",
 					"entries": [
 						"区域内的受影响生物陷入{@condition 恐慌}。"
 					]
 				},
 				{
 					"ENG_name": "Silence",
-					"type": "entries",
 					"name": "沉默术",
+					"type": "entries",
 					"entries": [
 						"声音无法从区域内发出，区域外的声音也不能传到区域内。"
 					]
 				},
 				{
 					"ENG_name": "Tongues",
-					"type": "entries",
 					"name": "巧言术",
+					"type": "entries",
 					"entries": [
 						"受影响生物与区域内的任何其他生物即使语言不通也可以随意交流。"
 					]
@@ -10572,8 +10572,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"升环施法效应：使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，治疗量就增加 10 点。"
 					]
@@ -10646,8 +10646,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，治疗量就增加 {@scaledice 1d4|1-9|1d4} 点。"
 					]
@@ -10721,8 +10721,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，伤害就增加{@scaledamage 2d8|2-9|1d8}。"
 					]
@@ -10783,8 +10783,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就增加 {@scaledamage 2d10|1-9|1d10}。"
 					]
@@ -10903,8 +10903,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，就能多指定一个目标。"
 					]
@@ -10967,8 +10967,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或四环法术位施展该法术时，其{@status 专注}可以维持至多 8 小时。使用五环或更高法术位施展该法术时，其{@status 专注}可以维持至多 24 小时。"
 					]
@@ -11030,8 +11030,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，你就可以额外指定一个生物。指定目标时，每个目标生物必须身处其他目标 30 尺范围内。"
 					]
@@ -11118,8 +11118,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，你就可以额外指定一个类人生物。指定目标时，每个目标生物必须身处其他目标 30 尺范围内。"
 					]
@@ -11303,8 +11303,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或四环法术位施展该法术时，其{@status 专注}可以维持至多 8 小时。使用五环或更高法术位施展该法术时，其{@status 专注}可以维持至多 24 小时。"
 					]
@@ -11415,8 +11415,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高法术位施展该法术时，你使用的法术位每比四环高一环，钝击伤害就增加{@scaledamage 2d8|4-9|1d8}。"
 					]
@@ -11586,8 +11586,8 @@
 				"你在施展该法术时从下列选项中选择一种监牢的形式。",
 				{
 					"ENG_name": "Burial",
-					"type": "entries",
 					"name": "埋葬",
+					"type": "entries",
 					"entries": [
 						"目标被深埋在远离地表的球状魔法力场内，其大小刚好能包覆住目标。任何事物均无法穿过该力场，且任何生物均无法通过传送或位面旅行进出该力场。"
 					]
@@ -11595,8 +11595,8 @@
 				"此版本法术需要的特殊材料为一个秘银小球。",
 				{
 					"ENG_name": "Chaining",
-					"type": "entries",
 					"name": "锁链",
+					"type": "entries",
 					"entries": [
 						"沉重的锁链牢固地深植于大地，将目标禁锢在原地。目标被{@condition 束缚}至法术终止，其间它不能移动或以任何方式被移动。"
 					]
@@ -11604,8 +11604,8 @@
 				"此版本法术需要的特殊材料为一截精美的贵金属链。",
 				{
 					"ENG_name": "Hedged Prison",
-					"type": "entries",
 					"name": "避世监牢",
+					"type": "entries",
 					"entries": [
 						"该法术将目标传送至一个隔绝了传送和位面旅行的小型半位面。该半位面可以是一个迷宫，一间牢房，一座塔楼，或是任意由你选择的幽闭建筑或区域。"
 					]
@@ -11613,8 +11613,8 @@
 				"此版本法术需要的特殊材料为一个玉制的监牢微缩模型。",
 				{
 					"ENG_name": "Minimus Containment",
-					"type": "entries",
 					"name": "微缩牢笼",
+					"type": "entries",
 					"entries": [
 						"目标被缩小到 1 寸高，并囚禁于一块宝石或是类似的物件里。光线可以正常地穿透宝石（这让目标可以看到外面，其他生物也可以看到里面），但其他任何事物均无法在其内进出，即使是通过传送或位面旅行等手段也不行。只要法术仍然生效，该宝石就无法被切开或打碎。"
 					]
@@ -11622,8 +11622,8 @@
 				"该版本法术需要的特殊材料为一大块透明的宝石，例如刚玉，钻石或红宝石。",
 				{
 					"ENG_name": "Slumber",
-					"type": "entries",
 					"name": "沉睡",
+					"type": "entries",
 					"entries": [
 						"目标陷入昏睡且无法被唤醒。"
 					]
@@ -11631,8 +11631,8 @@
 				"该版本法术需要的特殊材料为稀有的催眠药草。",
 				{
 					"ENG_name": "Ending the Spell",
-					"type": "entries",
 					"name": "终止法术",
+					"type": "entries",
 					"entries": [
 						"无论是法术的哪个版本，你都可以在施法过程中设定一个使法术终止并释放目标的条件。此条件可以按你的意愿设定其明确或复杂的程度，但必须经由 DM 认可该条件的合理性及可实现性。此条件可以根据一个生物的名字，身份或神格来设定，但在其他方面必须基于可观察到的行为或特性，而不能基于诸如等级，职业或生命值这类无形之物。"
 					]
@@ -11755,8 +11755,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就增加 {@scaledamage 3d10|1-9|1d10}。"
 					]
@@ -11818,8 +11818,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比六环高一环，伤害就增加{@scaledamage 4d10|5-9|1d10}。"
 					]
@@ -11891,8 +11891,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，就可以多指定一个目标。"
 					]
@@ -12338,8 +12338,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，上述两种闪电伤害就各增加 {@scaledamage 4d8;2d8|3-9|1d8}。"
 					]
@@ -12403,8 +12403,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，其伤害就增加{@scaledamage 8d6|3-9|1d6}。"
 					]
@@ -12602,8 +12602,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，就能多指定一个目标。"
 					]
@@ -12781,8 +12781,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，法术持续时间就增加 1 小时。"
 					]
@@ -12909,8 +12909,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，该法术就会多制造出一支飞镖。"
 					]
@@ -13026,8 +13026,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，加值增加至+2。使用六环或更高法术位施展该法术时，加值增加至+3。"
 					]
@@ -13082,8 +13082,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，法术会持续至解除且不需要你保持{@status 专注}。"
 					]
@@ -13137,8 +13137,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你使用的法术位每比五环高一环，其治疗量就增加 {@scaledice 3d8|5-9|1d8}。"
 					]
@@ -13270,8 +13270,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，其治疗量就增加{@scaledice 1d4|3-9|1d4}。"
 					]
@@ -13346,8 +13346,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环法术位施展该法术时，持续时间变为 10 日。使用八环法术位施展该法术时，持续时间变为 30 日。使用九环法术位施展该法术时，持续时间变为一年零一日。"
 					]
@@ -13404,7 +13404,7 @@
 			],
 			"entries": [
 				"你将施法距离内一个你能看见的生物放逐到一个迷宫般错综复杂的半位面。目标将一直留在该处直至法术持续时间结束，或者直到它逃出该迷宫。",
-				"目标可以使用其动作尝试逃脱。当它这样做时，它需要进行一个{@dc 20}的智力检定。如果成功，它便会逃脱，法术随即结束（{@creature 牛头人}或{@creature 巨牛魔}恶魔会自动成功）。",
+				"目标可以使用其动作尝试逃脱。当它这样做时，它需要进行一次{@dc 20}的智力检定。如果成功，它便逃脱，且该法术结束（{@creature 牛头人}或{@creature 巨牛魔}恶魔会自动成功）。",
 				"法术终止时，目标将重新出现在它之前消失的位置。如果该位置被占据，则目标出现在最近的未占据位置。"
 			],
 			"abilityCheck": [
@@ -13508,8 +13508,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，其初始伤害和后续伤害就各增加{@scaledamage 4d4;2d4|2-9|1d4}。"
 					]
@@ -13994,8 +13994,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环或更高法术位施展该法术时，你可以改变目标关于过去 7 日内（六环）、30 日内（七环）、1 年内（八环）或者在过去任意时刻（九环）所发生事件的记忆。"
 					]
@@ -14064,8 +14064,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，其伤害就增加{@scaledamage 2d10|2-9|1d10}。"
 					]
@@ -14241,8 +14241,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高法术位施展此法术时，你使用的法术位每比四环高一环，你就可以将被保护的立方区域边长增加 100 尺。比如使用五环法术位时，你就能保护边长至多 200 尺的立方区域。"
 					]
@@ -14461,16 +14461,16 @@
 				"施展此法术时，你选择下列效应中的一个或两个。效应在持续时间内一直存在。如果你每天都对同一个生物或物件施展此法术且每次都选择相同的效应，持续 30 天，幻术就会一直存在直到被解除。",
 				{
 					"ENG_name": "False Aura",
-					"type": "entries",
 					"name": "虚假灵光",
+					"type": "entries",
 					"entries": [
 						"针对目标的灵光侦测法术和魔法效应（例如法术{@spell 侦测魔法}）将显示不同的信息。你可以使一个非魔法物件显示出魔法，一个魔法物件显示出非魔法；或者改变物件的魔法灵光，使其显示出由你选择的特定魔法学派的灵光。当你对物件设置该效应时，你可以使这种虚假的魔法向任何使用此物品的生物显示出来。"
 					]
 				},
 				{
 					"ENG_name": "Mask",
-					"type": "entries",
 					"name": "伪装",
+					"type": "entries",
 					"entries": [
 						"针对目标生物类别的侦测法术和魔法效应（例如圣武士的\"{@classFeature 神圣感知|圣武士|PHB|1}\"，或法术{@spell 徽记术}的触发条件）将显示不同的信息。你选择一种生物类别，其他法术和魔法效应将会认为目标生物属于该类别或者属于该类别所属阵营。"
 					]
@@ -14527,8 +14527,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，其伤害就增加{@scaledamage 10d6|6-9|1d6}。"
 					]
@@ -14878,8 +14878,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高的法术位施展该法术时，你使用的法术位每比四环高一环，伤害就增加{@scaledamage 4d10|4-9|1d10}。"
 					]
@@ -14983,7 +14983,7 @@
 				}
 			],
 			"entries": [
-				"你祈求一个异界个体的援助。你必须对该存在个体有所了解，它可以是一个神，一位原祖，一名恶魔主君，或是其他界域级力量的存在。该存在将派遣一个效忠它的{@filter 天界生物|bestiary|type=天界生物|miscellaneous=!swarm}，{@filter 元素生物|bestiary|type=元素生物|miscellaneous=!swarm}或{@filter 邪魔|bestiary|type=邪魔|miscellaneous=!swarm}来援助你，并使该个生物显现在施法距离内一个未占据空间。如果你知道他们中某个特定生物的名字，则你可以在施展法术时说出其名字来请求指派该生物来援，但是你仍然有可能得到一个不同的生物（由 DM 选择）。",
+				"你祈求一个异界个体的援助。你必须对该存在个体有所了解，它可以是一个神，一位原祖，一名恶魔主君，或是其他界域级力量的存在。该存在将派遣一个效忠它的{@filter 天界生物|bestiary|type=celestial|miscellaneous=!swarm}，{@filter 元素生物|bestiary|type=elemental|miscellaneous=!swarm}或{@filter 邪魔|bestiary|type=fiend|miscellaneous=!swarm}来援助你，并使该个生物显现在施法距离内一个未占据空间。如果你知道他们中某个特定生物的名字，则你可以在施展法术时说出其名字来请求指派该生物来援，但是你仍然有可能得到一个不同的生物（由 DM 选择）。",
 				"该生物出现时，你无法强迫它作任何事。你可以以报酬为交换请求其提供服务，只是它并没任何义务为你实现。请求的任务可以简单（帮我们飞越峡谷，或在一场战斗中提供协助），也可以复杂（暗中监视我们的敌人，或在我们扫荡地城时保护我们）。你必须能与该生物交流以为他服务的报酬讨价还价。",
 				"报酬的形式也可以各式各样。一个天界生物可能会要求为一座同盟的神殿捐献一份相当可观的金币或魔法物品，而一只邪魔可能会索要一次活祭或一份财宝作为礼物。一些生物可能会要求你进行一个任务来换取它们的服务。",
 				"粗略计算，一个可以按分钟计算的任务需要每分钟 100gp 的报酬。一个可以按小时计算的任务需要每小时 1000gp 的报酬。一个可以按日计算的任务（至多 10 日）需要每日 10000gp 的报酬。DM 可以按你施放该法术的环境调整具体的报酬。如果任务与生物的行为准则一致，则报酬可能会被减半甚至放弃。没有风险的任务一般只需要建议报酬的一半，而特别危险的任务可能会需要更大的赠礼。生物极少接受看上去像自杀的任务。",
@@ -15037,14 +15037,14 @@
 				}
 			],
 			"entries": [
-				"你尝试以该法术与一个生物建立誓约使其为你服务，该生物可以是 {@filter 天界生物|bestiary|type=天界生物|miscellaneous=!swarm}、{@filter 元素生物|bestiary|type=元素生物|miscellaneous=!swarm}、{@filter 精类|bestiary|type=精类|miscellaneous=!swarm}、{@filter 邪魔|bestiary|type=邪魔|miscellaneous=!swarm}等生物种类之一。该生物在整个施法过程中必须在法术的施法距离内。典型的情况下，在施展该法术前，生物会先被召唤到一个反向作用的 {@spell 防护法阵}中困住。施法完成后，目标必须进行一次魅力豁免。豁免失败则目标在法术持续时间内与你建立誓约并服务于你。如果该生物由其他法术所召唤或创造，则维持其存在的法术持续时间被延长至符合本法术的持续时间。",
+				"你尝试以该法术与一个生物建立誓约使其为你服务，该生物可以是 {@filter 天界生物|bestiary|type=celestial|miscellaneous=!swarm}、{@filter 元素生物|bestiary|type=elemental|miscellaneous=!swarm}、{@filter 精类|bestiary|type=fey|miscellaneous=!swarm}、{@filter 邪魔|bestiary|type=fiend|miscellaneous=!swarm}等生物种类之一。该生物在整个施法过程中必须在法术的施法距离内。典型的情况下，在施展该法术前，生物会先被召唤到一个反向作用的 {@spell 防护法阵}中困住。施法完成后，目标必须进行一次魅力豁免。豁免失败则目标在法术持续时间内与你建立誓约并服务于你。如果该生物由其他法术所召唤或创造，则维持其存在的法术持续时间被延长至符合本法术的持续时间。",
 				"一个已建立誓约的生物必须尽其最大的能力遵从你的指示。你可以命令该生物在你冒险时陪伴你，或守卫一个地点，又或者传递一个信息。该生物将遵从你所下达指示的字面意义，但是如果此生物与你敌对，则它会努力曲解你的字面意思来达到它自己的目标。如果生物在法术终止前全部完成了你的指示而你们仍处于同一位面时，则它会到你面前向你汇报。如果你们处与不同位面，则它会回到其建立誓约之地，并呆停留该处直至法术终止。"
 			],
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用六环法术位施展该法术时，法术持续时间增为 10 日，七环则增为 30 日，八环为 180 日，九环为一年零一日。"
 					]
@@ -15271,7 +15271,7 @@
 			],
 			"entries": [
 				"该法术将一个施法距离内你能看见的生物变化为一个新的形态。一个非自愿的生物必须进行一次感知豁免来避免此效应。该法术无法对变形生物或生命值为 0 的生物生效。",
-				"法术产生的变化在法术持续时间内得以维持，或直至目标的生命值降为 0 或死亡。新形态可以是挑战等级小于等于目标本身的{@filter 任何野兽|bestiary|type=野兽|miscellaneous=!swarm}（如果目标没有挑战等级，则以其等级为基准）。目标的游戏资料以及心智相关的属性值都将被所选定野兽的属性数据取代。而其阵营和个性则仍然保留。",
+				"法术产生的变化在法术持续时间内得以维持，或直至目标的生命值降为 0 或死亡。新形态可以是挑战等级小于等于目标本身的{@filter 任何野兽|bestiary|type=beast|miscellaneous=!swarm}（如果目标没有挑战等级，则以其等级为基准）。目标的游戏资料以及心智相关的属性值都将被所选定野兽的属性数据取代。而其阵营和个性则仍然保留。",
 				"目标使用其新形态的生命值。当它变回正常形态时，则立即恢复变化前的生命值。如果目标因为生命值降至 0 而变回正常形态，则其正常形态需要承受所有的溢出伤害。只要溢出的伤害没有将该生物正常形态的生命值降为 0，它就不会因打击而陷入昏迷。",
 				"该生物可作出的动作因其新形态而有所限制。它不能说话，不能施法，也不能作出其他需要用手和需要说话的动作。",
 				"目标的装备融入新形态中，但其不能启动，使用，挥舞或以其他方式从其装备上获得增益。"
@@ -15479,8 +15479,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"当你使用三环或更高法术位施展该法术时，你使用的法术位每比二环高一环，治疗量就增加{@scaledice 2d8|2-9|1d8}。"
 					]
@@ -15609,64 +15609,64 @@
 				"八条多彩射线从你的手上闪出。每条射线颜色不同且具有不同的威力和作用。在 60 尺锥状区域内的每个生物必须进行一次敏捷豁免同时掷一次 {@dice d8} 决定生效哪种颜色的射线。",
 				{
 					"ENG_name": "1-Red",
-					"type": "entries",
 					"name": "1-红",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时受 {@damage 10d6} 的火焰伤害，成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "2-Orange",
-					"type": "entries",
 					"name": "2-橙",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时受 {@damage 10d6} 的强酸伤害，成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "3-Yellow",
-					"type": "entries",
 					"name": "3-黄",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时受 {@damage 10d6} 的闪电伤害，成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "4-Green",
-					"type": "entries",
 					"name": "4-绿",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时受 {@damage 10d6} 的毒素伤害，成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "5-Blue",
-					"type": "entries",
 					"name": "5-蓝",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时受 {@damage 10d6} 的冷冻伤害，成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "6-Indigo",
-					"type": "entries",
 					"name": "6-靛",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时受{@condition 束缚}。它必须在其每回合结束时进行一次体质豁免。三次豁免成功后法术终止。三次豁免失败后目标将永久陷入{@condition 石化}状态。成功或失败的豁免不需要连续，只需记下两边的数量直至其中一种达到三次。"
 					]
 				},
 				{
 					"ENG_name": "7-Violet",
-					"type": "entries",
 					"name": "7-紫",
+					"type": "entries",
 					"entries": [
 						"目标豁免失败时陷入{@condition 目盲}。其必须在你下一回合开始时进行一次感知豁免。豁免成功则目盲状态终止。豁免失败则该生物被传送到另一个 DM 指定的位面并且不再{@condition 目盲}。（典型情况是不在家乡位面的生物被驱逐回家，而其他生物通常会被传送到星界或以太位面。）"
 					]
 				},
 				{
 					"ENG_name": "8-Special",
-					"type": "entries",
 					"name": "8-特殊",
+					"type": "entries",
 					"entries": [
 						"目标被两条射线打中。再掷两次，结果为 8 时再重掷。"
 					]
@@ -15741,48 +15741,48 @@
 				"法墙可以被摧毁，不过也必须由红到紫的顺序一次一个光层的通过具体每层。某个光层一旦被摧毁则其在法术持续时间内保持被摧毁状态。{@spell 反魔法场} 无法对法墙生效。",
 				{
 					"ENG_name": "Red",
-					"type": "entries",
 					"name": "红",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时受到{@damage 10d6}的火焰伤害，豁免成功则伤害减半。此光层存在时，非魔法远程攻击无法穿过法墙。光层受至少 25 点冷冻伤害时被摧毁。"
 					]
 				},
 				{
 					"ENG_name": "Orange",
-					"type": "entries",
 					"name": "橙",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时受到{@damage 10d6}的强酸伤害，豁免成功则伤害减半。此光层存在时，魔法远程攻击不能穿过法墙。光层受强风吹袭后被摧毁。"
 					]
 				},
 				{
 					"ENG_name": "Yellow",
-					"type": "entries",
 					"name": "黄",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时受到 {@damage 10d6}的闪电伤害，豁免成功则伤害减半。光层受至少 60 点力场伤害时被摧毁。"
 					]
 				},
 				{
 					"ENG_name": "Green",
-					"type": "entries",
 					"name": "绿",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时受到{@damage 10d6}的毒素伤害，豁免成功则伤害减半。光层在受法术{@spell 穿墙术}，或者其它相同或更高环阶法术在固态表面开口的效应影响时被摧毁。"
 					]
 				},
 				{
 					"ENG_name": "Blue",
-					"type": "entries",
 					"name": "蓝",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时受到{@damage 10d6}的冷冻伤害，豁免成功则伤害减半。光层受至少 25 点火焰伤害时被摧毁。"
 					]
 				},
 				{
 					"ENG_name": "Indigo",
-					"type": "entries",
 					"name": "靛",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时受{@condition 束缚}。其每回合结束时进行一次体质豁免。三次豁免成功后法术终止。三次豁免失败后目标将永久陷入{@condition 石化}状态。成功或失败的豁免不需要连续，只需记下两边的数量直至其中一种达到三次。",
 						"此光层存在时法术无法穿过。光层受{@spell 昼明术}，或者其他相同或更高环阶法术发出的明亮光线照射时被摧毁。"
@@ -15790,8 +15790,8 @@
 				},
 				{
 					"ENG_name": "Violet",
-					"type": "entries",
 					"name": "紫",
+					"type": "entries",
 					"entries": [
 						"生物豁免失败时陷入{@condition 目盲}。其必须在你下一回合开始时进行一次感知豁免。豁免成功则目盲状态终止。豁免失败则该生物被传送到另一个 DM 指定的位面并且不再{@condition 目盲}。（典型情况是不在家乡位面的生物被驱逐回家，而其他生物通常会被传送到星界或以太位面。）该光层在受法术{@spell 解除魔法}，或者其他类似的相同或更高环阶法术所产生的终止法术魔法效应的影响时被摧毁。"
 					]
@@ -15863,7 +15863,7 @@
 			"entries": [
 				"一朵摇曳的火焰出现在你手中。火焰在法术持续时间存在，并且不会伤害你和你的装备。火焰为其周边半径 10 尺范围内提供明亮光照，以及该范围外 10 尺的微光光照。法术将在再次施展该法术，或者以一个动作解除法术时终止。",
 				"此外，你还可以使用火焰发动攻击，并以此终止该法术。施展该法术时，你可以将火焰投向距你 30 尺内的一个生物，并对其发动一次远程法术攻击，命中时目标将受到 {@damage 1d8} 点火焰伤害。你也可以在施展法术后的随后回合里以一个动作实现该行为。",
-				"此法术的伤害在你达到5级时增加{@damage 1d8}（{@damage 2d8}），11级时增加{@damage 3d8}，以及在17级时增加{@damage 4d8}。"
+				"此法术在你达到指定等级时增加{@damage 1d8}。5级（{@damage 2d8}）、11级（{@damage 3d8}）和17级（{@damage 4d8}）"
 			],
 			"scalingLevelDice": {
 				"label": "火焰伤害",
@@ -16477,8 +16477,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就增加 {@scaledamage 2d8|1-9|1d8}。"
 					]
@@ -16801,7 +16801,7 @@
 		},
 		{
 			"ENG_name": "Resistance",
-			"name": "提升抗性",
+			"name": "抵抗术",
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
@@ -16813,7 +16813,7 @@
 				}
 			],
 			"reprintedAs": [
-				"提升抗性|XPHB"
+				"抵抗术|XPHB"
 			],
 			"level": 0,
 			"school": "A",
@@ -17231,8 +17231,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，使用的法术位每比二环高一环，你就能多创造出一道射线。"
 					]
@@ -17393,8 +17393,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，最初一次攻击造成的额外伤害就增加{@scaledamage 1d6|1-9|1d6}。"
 					]
@@ -17697,8 +17697,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，使用的法术位每比二环高一环，法术伤害就增加{@scaledamage 3d8|2-9|1d8}。"
 					]
@@ -18153,8 +18153,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，使用的法术位每比一环高一环，法术的掷骰就增加{@scaledice 5d8|1-9|2d8}。"
 					]
@@ -18660,8 +18660,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，法术的伤害就增加 {@scaledamage 3d8|3-9|1d8}。"
 					]
@@ -18733,8 +18733,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用三环或更高法术位施展该法术时，你使用的法术位每比二环高两环，法术的伤害就增加{@scaledamage 1d8|2,4,6,8|1d8}。"
 					]
@@ -18992,32 +18992,32 @@
 				"你每维持一轮该法术的{@status 专注}，风暴就会在你的回合里产生不同的效应。",
 				{
 					"ENG_name": "Round 2",
-					"type": "entries",
 					"name": "第2轮",
+					"type": "entries",
 					"entries": [
 						"云层中降下酸雨。所有位于云团下方的生物和物件受到{@damage 1d6}点强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Round 3",
-					"type": "entries",
 					"name": "第3轮",
+					"type": "entries",
 					"entries": [
 						"你从云中召下六束闪电击向你指定的六个位于云团下的生物或物件，其中任一生物或物件都只能被该闪电击中一次。遭电击的生物必须进行一次敏捷豁免，豁免失败者将受到{@damage 10d6}点闪电伤害，豁免成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "Round 4",
-					"type": "entries",
 					"name": "第4轮",
+					"type": "entries",
 					"entries": [
 						"冰雹从云团中倾泻而下。所有位于云团下方的生物将受到{@damage 2d6}点钝击伤害。"
 					]
 				},
 				{
 					"ENG_name": "Round 5\u201310",
-					"type": "entries",
 					"name": "第5~10轮",
+					"type": "entries",
 					"entries": [
 						"狂风和冰雨冲袭着云团下的区域，使该区域变为{@quickref 困难地形||3}并造成{@quickref 视觉与光照|PHB|2||重度遮蔽}。该区域内的所有生物受到{@damage 1d6}点冷冻伤害。该区域内无法进行远程武器攻击。而其内的强风和暴雨将对维持法术{@status 专注}造成严重干扰。此外，区域内的强风（风速在每小时 20 到 50 里）会自动吹散区域内的一切魔法或非魔法的烟雾以及其他类似现象。"
 					]
@@ -19319,64 +19319,64 @@
 				"刻画符文时，你可以从下列选项中选择其一作为该法术的效应。符文一旦被触发就会开始发光，使其周围 60 尺半径的球状区域处于微光光照并持续 10 分钟。该时间段过后法术即告终止。符文生效时，所有位于球状区域内的生物即成为法术效应的目标。生物在其回合内第一次进入该区域内或在其中结束其回合时，也同样会成为符文效应的目标。",
 				{
 					"ENG_name": "Death",
-					"type": "entries",
 					"name": "死亡",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次体质豁免，豁免失败者将受到 {@damage 10d10} 点黯蚀伤害，豁免成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "Discord",
-					"type": "entries",
 					"name": "争斗",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次体质豁免。豁免失败者将在接下来的 1 分钟内将不停地与其他生物争吵。该时间段内它无法进行任何有意义的沟通，并且其进行的所有攻击检定和属性检定都具有劣势。"
 					]
 				},
 				{
 					"ENG_name": "Fear",
-					"type": "entries",
 					"name": "恐惧术",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次感知豁免，豁免失败者将陷入 1 分钟的{@condition 恐慌}状态。被{@condition 恐慌}时，该生物将丢弃其所有持握物，并在其每回合里尽力向远离符文的方向移动至少 30 尺。"
 					]
 				},
 				{
 					"ENG_name": "Hopelessness",
-					"type": "entries",
 					"name": "绝望",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次魅力豁免，豁免失败者将陷入持续 1 分钟的绝望。该时间段内它不能进行攻击，也不能对任何生物使用伤害性的能力，法术或其他魔法效应。"
 					]
 				},
 				{
 					"ENG_name": "Insanity",
-					"type": "entries",
 					"name": "疯狂",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次智力豁免，豁免失败者将陷入持续 1 分钟的错乱。陷入错乱的生物不能执行动作，也听不懂其他生物的话语看不懂任何文字，而只会胡言乱语。此时将由 DM 来控制其胡乱的移动。"
 					]
 				},
 				{
 					"ENG_name": "Pain",
-					"type": "entries",
 					"name": "苦痛",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次体质豁免，豁免失败者将因极度的痛苦而陷入 1 分钟的{@condition 失能}状态。"
 					]
 				},
 				{
 					"ENG_name": "Sleep",
-					"type": "entries",
 					"name": "睡眠术",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次感知豁免，豁免失败者将陷入 10 分钟的{@condition 昏迷}状态。该睡眠者受到伤害时将会被惊醒，也可以被其他人用一个动作摇醒或打醒。"
 					]
 				},
 				{
 					"ENG_name": "Stunning",
-					"type": "entries",
 					"name": "震慑",
+					"type": "entries",
 					"entries": [
 						"所有目标必须进行一次感知豁免，豁免失败则陷入 1 分钟的{@condition 震慑}状态。"
 					]
@@ -19507,8 +19507,8 @@
 				"你获得以意念移动操纵生物或物件的能力。施展该法术时，你可以对施法距离内一个你能看见的生物或物件以你的意念造成下列详述的效应。你也可以在随后法术持续时间内的自己的任一回合里以一个动作实现该行为。你可以一轮接一轮地影响同一个目标，也可以在任何时候选择一个新的目标。如果你改变了目标，则之前的目标将不再受该法术影响。",
 				{
 					"ENG_name": "Creature",
-					"type": "entries",
 					"name": "creature",
+					"type": "entries",
 					"entries": [
 						"你可以尝试移动一个巨型或更小的生物。以你的施法属性进行一次属性检定，并与目标生物的力量检定进行对抗。如果你在对抗中胜出，则你可以使该生物朝任何方向（包括竖直向上）移动 30 尺，但不能让它离开施法距离。在你的下一回合结束前，该生物将被你的遥控抓握{@condition 束缚}。而被朝正上方抬起的生物会在半空中悬停。",
 						"在随后的回合中，你可以再次进行前面进行过的对抗来尝试继续抓住该生物（消耗一个动作）。"
@@ -19516,8 +19516,8 @@
 				},
 				{
 					"ENG_name": "Object",
-					"type": "entries",
 					"name": "物件",
+					"type": "entries",
 					"entries": [
 						"你可以尝试移动一个重量不超过 1000 磅的物件。如果该物品没有被任何生物所着装或携带，则你可以自动使它朝任何方向移动 30 尺，但不能让它离开施法距离。",
 						"如果该物件已被着装或携带，则你必须以你的施法属性进行一次属性检定，并与该生物的力量检定进行对抗。如果你在对抗中胜出，则你可以把目标物件从该生物身上拿走，并且使该物体朝任意方向移动 30 尺（但不能让它离开施法距离）。",
@@ -19691,8 +19691,8 @@
 				},
 				{
 					"ENG_name": "Familiarity",
-					"type": "entries",
 					"name": "熟悉程度",
+					"type": "entries",
 					"entries": [
 						"\"永久法阵\"指你知道某永久传送法阵的相关符文序列。\"相关物件\"指你持有一件在过去六个月内从目标地点取来的物件，例如某个法师图书馆内的一本书，某个皇家卧室里床上的亚麻线或某巫妖陵墓里的一块大理石。"
 					]
@@ -19701,32 +19701,32 @@
 				"\"查无此地\"指根本不存在的地点。也许你尝试探知敌人的密室但看到的只是幻象，或者是一个你曾经熟悉但如今已不再存在的地点。",
 				{
 					"ENG_name": "On Target",
-					"type": "entries",
 					"name": "顺利抵达",
+					"type": "entries",
 					"entries": [
 						"你和你的队伍（或目标物件）出现在你意料中的地点。"
 					]
 				},
 				{
 					"ENG_name": "Off Target",
-					"type": "entries",
 					"name": "偏离地点",
+					"type": "entries",
 					"entries": [
 						"你和你的队伍（或目标物件）出现在目的地随机方向上随机距离的一点。距离误差等于原定移动距离×{@dice 1d10 × 1d10}×1%。例如，假设你尝试移动 120 里而不幸偏离目标，并且在掷距离误差时两个 {@dice d10} 投出了 5 和 3，那么你的传送距离误差是原定移动距离的 15%，也就是 18 里。DM 通过掷一次 {@dice d8} 来判误差出现在目的地的哪个方向。1 为正北，2 为东北，3 为正东，依此类推。如果你们想要传送到一个海滨城市但却出现在离岸 18 里远的海上，那你们可有麻烦了。"
 					]
 				},
 				{
 					"ENG_name": "Similar Area",
-					"type": "entries",
 					"name": "相似区域",
+					"type": "entries",
 					"entries": [
 						"你和你的队伍（或目标物件）出现在一个和目的地外观或氛围相似的不同地点。例如，如果你想回你自己的研究室去，则你可能会误打误撞出现在其他法师的研究室里，或是一个陈设有许多和你的研究室里相似工具的炼金用品店。通常你会出现在离目的地最近的相似地区，但由于该法术没有距离限制，你有可能会出现在同一个位面上的任何地点。"
 					]
 				},
 				{
 					"ENG_name": "Mishap",
-					"type": "entries",
 					"name": "遇难",
+					"type": "entries",
 					"entries": [
 						"该法术的意外魔法效果导致这次旅行特别艰难。尝试传送的所有生物（或目标物件）受到 {@damage 3d10} 点力场伤害，随后 DM 重投 d100 并查阅上表来决定你们出现在哪里（你们可能再次遇难，而每次遇难都要承受该伤害）。"
 					]
@@ -20066,8 +20066,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，伤害就增加 {@scaledamage 2d8|1-9|1d8}。"
 					]
@@ -20300,8 +20300,8 @@
 				"该法术对变形生物以及生命值为 0 的目标无效。而不愿被变形的生物可以进行一次感知豁免，豁免成功则不受该法术影响。",
 				{
 					"ENG_name": "Creature into Creature",
-					"type": "entries",
 					"name": "生物变生物",
+					"type": "entries",
 					"entries": [
 						"如果你将一个生物变形成另一种生物，则它的新形态可以是你选择的挑战等级等于或低于受术者挑战等级（如果受术者没有挑战等级则按其角色等级）的任意物种。受术者的游戏资料（包括各精神属性值）将被新形态的数据取代，而其阵营和性格则保持不变。"
 					]
@@ -20311,8 +20311,8 @@
 				"目标的装备融入新形态中，但其不能启动，使用，挥舞或以其他方式从其装备上获得增益。",
 				{
 					"ENG_name": "Object into Creature",
-					"type": "entries",
 					"name": "物件变生物",
+					"type": "entries",
 					"entries": [
 						"你可以将一个物件变成任何一种符合下列要求的生物：生物的体积不能大于原物件，且生物的挑战等级必须{@filter 小于等于9|bestiary|challenge rating=[&0;&9]|miscellaneous=!swarm}。变形出的生物对你和你的同伴保持友善。而战斗中它将会在你的回合内，由你决定其如何行动。该生物的数据由 DM 掌控，并由 DM 来判定其行动结果如何。"
 					]
@@ -20320,8 +20320,8 @@
 				"如果该法术变成永久有效，则你将不再控制该生物。此后，该生物将根据你对待他的方式决定是否对你保持友善。",
 				{
 					"ENG_name": "Creature into Object",
-					"type": "entries",
 					"name": "生物变物件",
+					"type": "entries",
 					"entries": [
 						"如果你将一个生物变形成一个物件，则它连同其穿着携带物一起变成新的形态。变成物件的体型不能比原生物大。受术者的数据变成和该物件一样，在法术终止而受术者变回原形后，它将不会记得在变成物件时所发生的任何事情。"
 					]
@@ -20632,8 +20632,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用四环或更高法术位施展该法术时，你使用的法术位每比三环高一环，法术的伤害就增加 {@scaledamage 3d6|3-9|1d6}。"
 					]
@@ -20759,8 +20759,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用五环或更高法术位施展该法术时，你使用的法术位每比四环高一环，法术的伤害就增加 {@scaledamage 5d8|4-9|1d8}。"
 					]
@@ -20870,8 +20870,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，冰墙出现时造成的伤害就增加 {@scaledamage 10d6|6-9|2d6}，并且通过寒气时受到的伤害也增加 {@scaledamage 5d6|6-9|1d6}。"
 					]
@@ -20994,8 +20994,8 @@
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用七环或更高法术位施展该法术时，你使用的法术位每比六环高一环，两种类型的伤害就都增加{@scaledamage 7d8|6-9|1d8}。"
 					]
@@ -21072,12 +21072,12 @@
 		},
 		{
 			"ENG_name": "Water Breathing",
-			"name": "水下呼吸",
+			"name": "水中呼吸",
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
 			"reprintedAs": [
-				"水下呼吸|XPHB"
+				"水中呼吸|XPHB"
 			],
 			"level": 3,
 			"school": "T",
@@ -21394,7 +21394,7 @@
 			"entries": [
 				"指定施法距离内地面上一点并从中升起了一道烈风形成的墙壁。你可以造出长度至多 50 尺、高度至多 15 尺、厚度至多 1 尺的风墙。你可以自由塑造该墙的形状，不过它必须沿着地面形成一条连续的轨道。风墙持续存在至法术终止。",
 				"风墙出现时，所有位于风墙区域内的生物必须进行一次力量豁免。豁免失败者，将受到 {@damage 3d8} 点钝击伤害，豁免成功则伤害减半。",
-				"强风能够阻挡雾气、烟雾和其他气体。小型或更小的飞行生物或物体无法穿过这堵墙。被带入墙内的松散、轻质材料会向上飞起。射向墙后目标的箭矢、弩箭和其他普通射弹会被向上偏转并自动射偏。（巨人投掷的巨石或攻城器械发射的类似射弹不受影响。）处于{@spell 气化形体}的生物无法穿过它。"
+				"强风将雾、烟和其他气体阻隔在外。小型或更小的飞行生物或物件无法穿过风墙。被带入风墙的松散轻质材料会向上飞起。射向风墙后方目标的箭矢、弩箭和其他普通抛射物会被偏转向上方并自动射偏。（巨人或攻城器械投掷的巨石及类似抛射物不受影响。）处于{@spell 气化形体}状态的生物无法穿过风墙。"
 			],
 			"damageInflict": [
 				"钝击"
@@ -21516,13 +21516,13 @@
 				}
 			],
 			"entries": [
-				"一道噼啪作响的蓝色能量束射向射程内的一个生物，在你和目标之间形成一道持续的闪电弧。对该生物进行一次远程法术攻击。命中时，目标受到{@damage 1d12}闪电伤害，且在法术持续时间内，你在每个回合可以用你的动作自动对目标造成{@damage 1d12}闪电伤害。如果你用你的动作做其他事情，法术结束。如果目标离开了法术的射程或它对你处于{@quickref 掩护||3||全身掩护}状态，法术也会结束。"
+				"一道噼啪作响的蓝色能量束射向射程内的一个生物，在你和目标之间形成持续的闪电弧。对该生物进行一次远程法术攻击。命中时，目标受到{@damage 1d12}闪电伤害，并且在法术持续时间内，你每回合可以用动作自动对目标造成{@damage 1d12}闪电伤害。如果你用动作执行其他行为，法术将终止。如果目标离开法术射程或获得{@quickref 掩护||3||全身掩护}，法术也会终止。"
 			],
 			"entriesHigherLevel": [
 				{
 					"ENG_name": "At Higher Levels",
-					"type": "entries",
 					"name": "升环施法效应",
+					"type": "entries",
 					"entries": [
 						"使用二环或更高法术位施展该法术时，你使用的法术位每比一环高一环，法术的初始伤害就增加{@scaledamage 1d12|1-9|1d12}。"
 					]

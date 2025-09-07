@@ -416,7 +416,7 @@
 			"srd": true,
 			"basicRules": true,
 			"reprintedAs": [
-				"50根针|XPHB"
+				"针 (50)|XPHB"
 			],
 			"edition": "classic",
 			"type": "A",
@@ -466,7 +466,7 @@
 			],
 			"packContents": [
 				{
-					"item": "飞矢|xphb",
+					"item": "弩失|xphb",
 					"quantity": 20
 				}
 			]
@@ -838,8 +838,8 @@
 			"entries": [
 				{
 					"ENG_name": "Special",
-					"type": "entries",
 					"name": "特殊",
+					"type": "entries",
 					"entries": [
 						"如果你在你的回合使用双刃弯刀作为{@action 攻击}动作的一部分进行攻击，你可以在之后立即使用一个奖励动作用它进行近战攻击。这次攻击在命中时造成{@damage 1d4}点挥砍伤害，而不是{@damage 2d4}。"
 					]
@@ -1485,7 +1485,7 @@
 			"dmgType": "P",
 			"crossbow": true,
 			"weapon": true,
-			"ammoType": "飞矢|xphb",
+			"ammoType": "弩失|xphb",
 			"hasFluffImages": true
 		},
 		{
@@ -1608,7 +1608,7 @@
 			"dmgType": "P",
 			"crossbow": true,
 			"weapon": true,
-			"ammoType": "飞矢|xphb",
+			"ammoType": "弩失|xphb",
 			"hasFluffImages": true
 		},
 		{
@@ -1691,8 +1691,8 @@
 				"胡帕克杖看起来是一根结实的棍子，一端被做成投石索模样，另一端被削成尖头。",
 				{
 					"ENG_name": "Special",
-					"type": "entries",
 					"name": "特殊",
+					"type": "entries",
 					"entries": [
 						"当你用这种武器进行近战攻击时，你忽略其弹药属性。你也可以将另一端的投石索作为一种军用远程武器使用。这样做时，你使用其弹药属性，用投石索弹丸作为弹药，并在命中时造成{@damage 1d4}钝击伤害。"
 					]
@@ -1887,8 +1887,8 @@
 			"entries": [
 				{
 					"ENG_name": "Special",
-					"type": "entries",
 					"name": "特殊",
+					"type": "entries",
 					"entries": [
 						"使用一把骑枪攻击5尺范围内目标时具有劣势。另外，当你不在骑乘状态时一根骑枪需要两只手使用。"
 					]
@@ -1913,7 +1913,7 @@
 				"R|XPHB",
 				{
 					"uid": "2H|XPHB",
-					"note": "除非骑乘"
+					"note": "非骑乘状态"
 				}
 			],
 			"mastery": [
@@ -2127,7 +2127,7 @@
 			"dmgType": "P",
 			"crossbow": true,
 			"weapon": true,
-			"ammoType": "飞矢|xphb",
+			"ammoType": "弩失|xphb",
 			"hasFluffImages": true
 		},
 		{
@@ -2679,7 +2679,7 @@
 		},
 		{
 			"ENG_name": "Needles (50)",
-			"name": "50根针",
+			"name": "针 (50)",
 			"source": "XPHB",
 			"page": 222,
 			"srd52": true,
@@ -2729,8 +2729,8 @@
 			"entries": [
 				{
 					"ENG_name": "Special",
-					"type": "entries",
 					"name": "特殊",
+					"type": "entries",
 					"entries": [
 						"一只被捕网命中的大型或更小体型生物将被{@condition 束缚}，束缚状态持续至该生物解脱。捕网不能影响无形体生物，以及巨型或更大体型的生物。一个生物可以用动作进行一次{@dc 10}的力量检定，以解脱自己或其触及范围内另一生物的束缚状态。对网造成5点挥砍伤害（AC 10）同样可以解脱生物的束缚状态而不伤害及生物本身，并以此摧毁捕网进而终止束缚效应。当用捕网以一个动作、附赠动作或反应进行攻击时，你只能攻击一次，而不论你正常情况下可发动攻击的次数。"
 					]
@@ -4070,7 +4070,7 @@
 			"ENG_name": "Thelarr",
 			"name": "斯拉尔管",
 			"alias": [
-				"鸣杖"
+				"哨管"
 			],
 			"source": "SCAG",
 			"page": 124,
@@ -4498,8 +4498,8 @@
 			"entries": [
 				{
 					"ENG_name": "Two-Handed",
-					"type": "entries",
 					"name": "双手",
+					"type": "entries",
 					"entries": [
 						"用该武器攻击时你需要双手并用。这个特性仅在你用武器攻击时生效，仅仅持有它时不要求双手。"
 					]
@@ -4511,12 +4511,12 @@
 			"source": "XPHB",
 			"page": 214,
 			"basicRules2024": true,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Two-Handed",
-					"type": "entries",
 					"name": "双手",
+					"type": "entries",
 					"entries": [
 						"双手持握武器需要你用两只手进行攻击。"
 					]
@@ -4530,12 +4530,12 @@
 			"reprintedAs": [
 				"A|XPHB"
 			],
-			"template": "{{prop_name_lower}} ({{item.range}} 英尺)",
+			"template": "{{prop_name_lower}} ({{item.range}}\\xa0尺)",
 			"entries": [
 				{
 					"ENG_name": "Ammunition",
-					"type": "entries",
 					"name": "弹药",
+					"type": "entries",
 					"entries": [
 						"你可以使用具有弹药属性的武器发动一次远程攻击，前提是你必须先拥有与该武器相对应的弹药。每次使用该武器攻击时，你都必须花费一枚弹药。你从箭袋、矢匣或其它容器中取出弹药的行为将作为攻击的一部分（你需要一只空闲的手来为一把单手武器装填弹药）。战斗结束后，你可以花费一分钟搜索战场，以回收一半所消耗的弹药。",
 						"如果以具有弹药属性的武器发动一次近战攻击，则该武器被视为等同于一把临时武器。另外，一根投石索以该方式使用时必须处于已装填状态。"
@@ -4548,12 +4548,12 @@
 			"source": "XPHB",
 			"page": 213,
 			"basicRules2024": true,
-			"template": "{{prop_name}} （射程 {{item.range}} 英尺；{{item.ammoType}}）",
+			"template": "{{prop_name}} (射程 {{item.range}}\\xa0尺; {{item.ammoType}})",
 			"entries": [
 				{
 					"ENG_name": "Ammunition",
-					"type": "entries",
 					"name": "弹药",
+					"type": "entries",
 					"entries": [
 						"只有当你有弹药可以发射时，你才能使用具有弹药属性的武器进行远程攻击。所需的弹药类型在武器的射程中指定。每次攻击消耗一枚弹药。抽取弹药是攻击的一部分（你需要一个空闲的手来装填单手武器）。战斗结束后，你可以花费1分钟来回收你在战斗中使用的一半弹药（向下取整）；其余的则丢失。"
 					]
@@ -4567,12 +4567,12 @@
 			"reprintedAs": [
 				"AF|XDMG"
 			],
-			"template": "{{prop_name_lower}} ({{item.range}} 英尺)",
+			"template": "{{prop_name_lower}} ({{item.range}}\\xa0尺)",
 			"entries": [
 				{
 					"ENG_name": "Ammunition",
-					"type": "entries",
 					"name": "弹药",
+					"type": "entries",
 					"entries": [
 						"只你可以使用具有弹药属性的武器发动一次远程攻击，前提是你必须先拥有与该武器相对应的弹药。每次使用该武器攻击时，你都必须花费一枚弹药。你从箭袋、矢匣或其它容器中取出弹药的行为将作为攻击的一部分（你需要一只空闲的手来为一把单手武器装填弹药）。火器的弹药会在使用后销毁。",
 						"如果以具有弹药属性的武器发动一次近战攻击，则该武器被视为等同于一把临时武器。另外，一根投石索以该方式使用时必须处于已装填状态。"
@@ -4584,12 +4584,12 @@
 			"abbreviation": "AF",
 			"source": "XDMG",
 			"page": 72,
-			"template": "{{prop_name}} ({{item.range}}\u00A0英尺；{{item.ammoType}})",
+			"template": "{{prop_name}} ({{item.range}}\\xa0尺; {{item.ammoType}})",
 			"entries": [
 				{
 					"ENG_name": "Ammunition",
-					"type": "entries",
 					"name": "弹药",
+					"type": "entries",
 					"entries": [
 						"现代火器使用后，子弹即被销毁。未来式枪械使用的是能量单元，这些能量单元在耗尽时可能通过适当的设备进行再充电，具体由游戏主持人决定。"
 					]
@@ -4607,8 +4607,8 @@
 			"entries": [
 				{
 					"ENG_name": "Burst Fire",
-					"type": "entries",
 					"name": "扫射",
+					"type": "entries",
 					"entries": [
 						"具有爆发火焰属性的武器可以进行单目标攻击，或者它可以在普通射程内喷射出10英尺立方体的区域。区域内的每个生物都必须通过一次{@dc 15}敏捷豁免掷骰，否则将受到武器的普通伤害。此动作消耗十发弹药。"
 					]
@@ -4619,12 +4619,12 @@
 			"abbreviation": "BF",
 			"source": "XDMG",
 			"page": 72,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Burst Fire",
-					"type": "entries",
 					"name": "扫射",
+					"type": "entries",
 					"entries": [
 						"作为一个动作，你可以消耗爆裂火武器10发弹药，在武器的正常射程内朝一个10英尺的{@variantrule 立方 [效应区域]|XPHB|立方}区域喷射射击。该区域内的每个生物必须成功通过一个{@dc 15}的敏捷豁免检定，否则会受到伤害。掷一次武器的伤害骰，并将伤害应用到每个未能通过检定的生物。"
 					]
@@ -4635,12 +4635,12 @@
 			"abbreviation": "ER",
 			"source": "TDCSR",
 			"page": 195,
-			"template": "{{prop_name_lower}} ({{item.reach}} 英尺)",
+			"template": "{{prop_name_lower}} ({{item.reach}}\\xa0尺)",
 			"entriesTemplate": [
 				{
 					"ENG_name": "Extended Reach",
-					"type": "entries",
 					"name": "延长射程",
+					"type": "entries",
 					"page": 195,
 					"entries": [
 						"使用这种武器攻击时，它会增加{{item.reach}}尺到你的攻击范围。这个属性也决定了你使用扩展范围武器进行{@action 借机攻击|PHB|借机攻击}的范围。"
@@ -4659,8 +4659,8 @@
 			"entries": [
 				{
 					"ENG_name": "Finesse",
-					"type": "entries",
 					"name": "灵巧",
+					"type": "entries",
 					"entries": [
 						"使用一把灵巧武器发动攻击时，你可以自由选择力量或敏捷调整值，作为攻击检定和伤害掷骰的加值。而且两个掷骰的加值必须为同一个调整值。"
 					]
@@ -4672,12 +4672,12 @@
 			"source": "XPHB",
 			"page": 213,
 			"basicRules2024": true,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Finesse",
-					"type": "entries",
 					"name": "灵巧",
+					"type": "entries",
 					"entries": [
 						"使用灵巧武器进行攻击时，你可以从力量或敏捷调整值中选择一个用于攻击和伤害检定。你必须对两个检定使用相同的调整值。"
 					]
@@ -4695,8 +4695,8 @@
 			"entries": [
 				{
 					"ENG_name": "Heavy",
-					"type": "entries",
 					"name": "重型",
+					"type": "entries",
 					"entries": [
 						"小型体型生物在使用重型武器时的攻击检定具有劣势。一把重型武器的重量和尺寸对于一个小型生物而言，有点难以驾驭。"
 					]
@@ -4708,12 +4708,12 @@
 			"source": "XPHB",
 			"page": 213,
 			"basicRules2024": true,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Heavy",
-					"type": "entries",
 					"name": "重型",
+					"type": "entries",
 					"entries": [
 						"如果你使用的是重型武器，并且它是近战武器而你的力量值至少不是13，或者它是远程武器而你的敏捷值至少不是13，那么你在攻击检定上具有{@variantrule 劣势|XPHB}。"
 					]
@@ -4731,8 +4731,8 @@
 			"entries": [
 				{
 					"ENG_name": "Light",
-					"type": "entries",
 					"name": "轻型",
+					"type": "entries",
 					"entries": [
 						"一把轻型武器尺寸精巧且易于操控，十分适合用来进行双持武器战斗。"
 					]
@@ -4744,12 +4744,12 @@
 			"source": "XPHB",
 			"page": 213,
 			"basicRules2024": true,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Light",
-					"type": "entries",
 					"name": "轻型",
+					"type": "entries",
 					"entries": [
 						"当你在你的回合中采取{@action 攻击|XPHB}动作并使用轻型武器攻击时，你可以在同一个回合稍后以{@variantrule 附赠动作|XPHB}进行一次额外攻击。那次额外攻击必须使用不同的轻型武器，并且你不会将你的力量或敏捷调整值加到额外攻击的伤害上，除非该调整值是负数。例如，你可以使用一只手的{@item 短剑|XPHB}和另一只手的{@item 匕首|XPHB}通过{@action 攻击|XPHB}动作和{@variantrule 附赠动作|XPHB}进行攻击，但除非你的力量或敏捷调整值是负数，否则你不会将其加到{@variantrule 附赠动作|XPHB}的伤害骰上。"
 					]
@@ -4767,8 +4767,8 @@
 			"entries": [
 				{
 					"ENG_name": "Loading",
-					"type": "entries",
 					"name": "装填",
+					"type": "entries",
 					"entries": [
 						"由于你需要时间对这种武器进行装填，当你用一个动作、一个附赠动作或反应进行射击时，你只能射出一发弹药，且不考虑你正常情况下所能发动的攻击次数。"
 					]
@@ -4780,12 +4780,12 @@
 			"source": "XPHB",
 			"page": 214,
 			"basicRules2024": true,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Loading",
-					"type": "entries",
 					"name": "装填",
+					"type": "entries",
 					"entries": [
 						"当你使用动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}来射击装填类武器时，你只能发射一枚弹药，不管你通常可以进行多少次攻击。"
 					]
@@ -4803,8 +4803,8 @@
 			"entries": [
 				{
 					"ENG_name": "Reach",
-					"type": "entries",
 					"name": "触及",
+					"type": "entries",
 					"entries": [
 						"使用该武器攻击时，它为你的触及范围增加5尺。使用其进行借机攻击时该增值也同样生效。"
 					]
@@ -4816,12 +4816,12 @@
 			"source": "XPHB",
 			"page": 214,
 			"basicRules2024": true,
-			"template": "{{属性名称}}",
+			"template": "{{prop_name}}",
 			"entries": [
 				{
 					"ENG_name": "Reach",
-					"type": "entries",
 					"name": "触及",
+					"type": "entries",
 					"entries": [
 						"使用长兵器攻击时，你的触及范围增加5英尺，同时在确定你用它进行{@action 借机攻击|XPHB|借机攻击}的触及范围时也增加5英尺。"
 					]
@@ -4839,8 +4839,8 @@
 			"entries": [
 				{
 					"ENG_name": "Reload",
-					"type": "entries",
 					"name": "弹容",
+					"type": "entries",
 					"entries": [
 						"具有弹容属性的武器只能发动有限数量的攻击。次数用尽后，一名角色必须用一个动作或一个附赠动作来为其进行装弹作业（由该角色自选）。"
 					]
@@ -4855,8 +4855,8 @@
 			"entries": [
 				{
 					"ENG_name": "Reload",
-					"type": "entries",
 					"name": "弹容",
+					"type": "entries",
 					"entries": [
 						"你可以使用重新装填武器进行有限次数的射击。然后，你必须以一个动作或{@variantrule 附赠动作|XPHB}的方式重新装填武器。"
 					]
@@ -4878,12 +4878,12 @@
 			"reprintedAs": [
 				"T|XPHB"
 			],
-			"template": "{{prop_name_lower}} ({{item.range}} 英尺)",
+			"template": "{{prop_name_lower}} ({{item.range}}\\xa0尺)",
 			"entries": [
 				{
 					"ENG_name": "Thrown",
-					"type": "entries",
 					"name": "投掷",
+					"type": "entries",
 					"entries": [
 						"具有投掷属性的武器可以用来发动一次投掷的远程攻击。如果该武器是一把近战武器，则你以其进行近战攻击时，加于攻击检定和伤害掷骰中的属性调整值同样适用于以其进行的远程攻击。例如，投掷一把手斧时，你使用力量调整值；而投掷一把匕首时，由于其具有灵巧属性，你可以选择使用力量调整值或敏捷调整值。"
 					]
@@ -4899,8 +4899,8 @@
 			"entries": [
 				{
 					"ENG_name": "Thrown",
-					"type": "entries",
 					"name": "投掷",
+					"type": "entries",
 					"entries": [
 						"如果一种武器具有投掷属性，你可以投掷该武器进行远程攻击，并且可以在攻击中抽出该武器。如果这种武器是近战武器，对于攻击和伤害掷骰，使用与使用该武器进行近战攻击时相同的能力调整值。"
 					]
@@ -4918,8 +4918,8 @@
 			"entries": [
 				{
 					"ENG_name": "Versatile",
-					"type": "entries",
 					"name": "两用",
+					"type": "entries",
 					"entries": [
 						"该武器可以用单手或双手来使用。该属性后将跟随一个括号，其内的伤害值即为双手持用该武器进行近战攻击时的伤害值。"
 					]
@@ -4935,8 +4935,8 @@
 			"entries": [
 				{
 					"ENG_name": "Versatile",
-					"type": "entries",
 					"name": "两用",
+					"type": "entries",
 					"entries": [
 						"多功能武器可以用单手或双手使用。属性旁边会有一个括号内的数值，表示使用双手进行近战攻击时武器造成的伤害值。"
 					]
@@ -4951,8 +4951,8 @@
 			"entries": [
 				{
 					"ENG_name": "Vestige of Divergence",
-					"type": "entries",
 					"name": "诀别遗物",
+					"type": "entries",
 					"page": 200,
 					"entries": [
 						"{@note 此物品为分歧之遗物，更多信息请参阅{@book 塔尔多雷的宝藏|TDCSR|5|诀别遗物}。}"
@@ -5203,7 +5203,7 @@
 		},
 		{
 			"ENG_name": "Heavy Armor",
-			"name": "沉重的护甲",
+			"name": "重甲",
 			"abbreviation": "HA",
 			"source": "PHB",
 			"page": 145,
@@ -5213,7 +5213,7 @@
 		},
 		{
 			"ENG_name": "Heavy Armor",
-			"name": "沉重的护甲",
+			"name": "重甲",
 			"abbreviation": "HA",
 			"source": "XPHB",
 			"page": 219,
@@ -5362,8 +5362,8 @@
 			"entries": [
 				{
 					"ENG_name": "Range",
-					"type": "entries",
 					"name": "射程",
+					"type": "entries",
 					"entries": [
 						"一把能用来发动远程攻击的武器有一个在弹药或投掷属性后以括号标明的射程。射程列出了两个数字，其第一个是以尺数计的武器的常规射程normal range，第二个则指出了武器的最大射程long range。攻击一个超过常规射程的目标时，你的攻击检定具有劣势。而你不能攻击一个处于最大射程之外的目标。"
 					]
@@ -5380,8 +5380,8 @@
 			"entries": [
 				{
 					"ENG_name": "Range",
-					"type": "entries",
 					"name": "射程",
+					"type": "entries",
 					"entries": [
 						"远程武器在弹药或投掷属性后的括号内有一个射程。射程列出了两个数字。第一个是武器的正常射程（以英尺为单位），第二个是武器的长射程。当攻击超出正常射程的目标时，你在攻击检定上具有{@variantrule 劣势|XPHB}。你不能攻击超出长射程的目标。"
 					]
@@ -5468,8 +5468,8 @@
 			"entries": [
 				{
 					"ENG_name": "Crew",
-					"type": "entries",
 					"name": "船员",
+					"type": "entries",
 					"entries": [
 						"一艘船需要一群熟练的雇佣船员才能运作。根据《玩家手册》所述，雇佣一名熟练的船员每天至少需要2gp。一艘船所需的最少熟练雇佣船员数量取决于船只的类型。",
 						"你可以使用《地下城主指南》第4章中的\"忠诚度\"可选规则来追踪个别船员或整个船员团队的忠诚度。如果在航行期间至少一半的船员变得不忠诚，船员会转为敌对并发动叛变。如果船只停靠在港口，不忠诚的船员会永远离开船只。"
@@ -5477,8 +5477,8 @@
 				},
 				{
 					"ENG_name": "Passengers",
-					"type": "entries",
 					"name": "乘客",
+					"type": "entries",
 					"entries": [
 						"这表示船只能够容纳的小型和中等体型乘客的数量。",
 						"一般船上的住宿空间都是一间房间内密布的吊床。如果让一艘船配备个人住宿的话，则其载客量为标称的五分之一。",
@@ -5487,24 +5487,24 @@
 				},
 				{
 					"ENG_name": "Cargo",
-					"type": "entries",
 					"name": "货物",
+					"type": "entries",
 					"entries": [
 						"船只能够承载的最大吨位。"
 					]
 				},
 				{
 					"ENG_name": "Damage Threshold",
-					"type": "entries",
 					"name": "伤害阈值",
+					"type": "entries",
 					"entries": [
 						"如果一个船只有伤害阈值。它会免疫所有的伤害除非它所受到的那次伤害等于或大于它的伤害阈值，这会使其正常受到那次伤害。没有等于或超过伤害阈值的伤害会被无视且不对它造成伤害。"
 					]
 				},
 				{
 					"ENG_name": "Ship Repair",
-					"type": "entries",
 					"name": "船舶修理",
+					"type": "entries",
 					"entries": [
 						"受损船只的修理工作可以在船只停靠时进行。修复1点伤害需要1天时间，并且需要花费20gp用于材料和人工。"
 					]
@@ -5521,40 +5521,40 @@
 			"entries": [
 				{
 					"ENG_name": "Speed",
-					"type": "entries",
 					"name": "速度",
+					"type": "entries",
 					"entries": [
 						"逆强风航行的船只速度减半。在无风的情况下（死寂），水上船只无法扬帆航行，必须划桨。平底船和平底划艇用于湖泊和河流。如果顺流而下，将水流速度（通常是每小时3英里）加到车辆速度上。这些交通工具不能逆任何显著的水流划行，但可以由岸上的牲畜拉上游。平底划艇可以携带，重100磅。"
 					]
 				},
 				{
 					"ENG_name": "Crew",
-					"type": "entries",
 					"name": "船员",
+					"type": "entries",
 					"entries": [
 						"一艘比龙骨舟或划艇更大的船需要一队熟练的雇佣船员（见\"{@book 服务|XPHB|6|服务}\"）来运作。所需的最低熟练雇佣船员数量取决于船只的类型。"
 					]
 				},
 				{
 					"ENG_name": "Passengers",
-					"type": "entries",
 					"name": "乘客",
+					"type": "entries",
 					"entries": [
 						"这艘船可以使用吊床容纳的小型和中型乘客数量。配备私人住宿的船只可以搭载五分之一数量的乘客。通常，一个乘客每天需要支付5银币用于吊床，但不同船只的价格可能会有所不同。一个小的私人舱位通常每天需要2金币。"
 					]
 				},
 				{
 					"ENG_name": "Damage Threshold",
-					"type": "entries",
 					"name": "伤害阈值",
+					"type": "entries",
 					"entries": [
 						"参见《玩家手册》中的{@variantrule 伤害阈值|XPHB|术语汇编}。"
 					]
 				},
 				{
 					"ENG_name": "Ship Repair",
-					"type": "entries",
 					"name": "船舶修理",
+					"type": "entries",
 					"entries": [
 						"受损船只的修复可以在船只停泊时进行。修复1点{@variantrule 生命值|XPHB|生命值}需要1天时间，并且需要20金币用于材料和劳动力。如果在物资和熟练劳动力充足的地方进行修复，例如城市造船厂，修复时间和成本都会减半。"
 					]
@@ -5677,32 +5677,32 @@
 				"赌具熟练项指的是精通单独的某种赌博类型，例如三龙牌Three-Dragon Ante或摇色子。",
 				{
 					"ENG_name": "Components",
+					"name": "成分",
 					"type": "entries",
-					"name": "法术成分",
 					"entries": [
 						"一套赌具包含进行对应赌博游戏的全套赌具，例如一副完整的扑克牌或是棋盘与棋子。"
 					]
 				},
 				{
 					"ENG_name": "History",
-					"type": "entries",
 					"name": "历史",
+					"type": "entries",
 					"entries": [
 						"你对赌博的掌握包括对它历史的了解，以及与它有关的重要事件或与之相关的历史名人的知识。"
 					]
 				},
 				{
 					"ENG_name": "Insight",
-					"type": "entries",
 					"name": "洞悉",
+					"type": "entries",
 					"entries": [
 						"和某人赌上一把是了解他们个性的好方法，可以让你更好地分辨他们的谎言，了解他们的情绪。"
 					]
 				},
 				{
 					"ENG_name": "Sleight of Hand",
-					"type": "entries",
 					"name": "巧手",
+					"type": "entries",
 					"entries": [
 						"想出老千的话，巧手是个很有用的技能，比如你可以棋子换位、掌中藏牌、控制骰点。亦或者，对沉浸于赌局的目标进行扒窃也是不错的选择。"
 					]
@@ -5740,24 +5740,24 @@
 				"具有某种乐器熟练项，表明你熟悉演奏它的技巧。你也知道一些该乐器的经典曲目。",
 				{
 					"ENG_name": "History",
-					"type": "entries",
 					"name": "历史",
+					"type": "entries",
 					"entries": [
 						"你的专长帮助你回忆与乐器有关的知识。"
 					]
 				},
 				{
 					"ENG_name": "Performance",
-					"type": "entries",
 					"name": "表演",
+					"type": "entries",
 					"entries": [
 						"当你把乐器融入表演时，你的表演会更有张力。"
 					]
 				},
 				{
 					"ENG_name": "Compose a Tune",
-					"type": "entries",
 					"name": "作曲",
+					"type": "entries",
 					"entries": [
 						"作为长休的一部分，你可以为你的乐器谱写一首新曲子和歌词。你可能会借此给一位贵族留下深刻印象，或是在市井中传唱某些故事。"
 					]
@@ -5796,8 +5796,8 @@
 				"该魔法刺青用一根特殊的针制作，且其图案特别突出了一种颜色({{item.detail1}})。",
 				{
 					"ENG_name": "Tattoo Attunement",
-					"type": "entries",
 					"name": "刺青同调",
+					"type": "entries",
 					"entries": [
 						"同调此物品时，你需要将针持握，并抵在你想要让刺青出现 的那处皮肤上。当同调完成时，针头会化为墨水再变成刺青。",
 						"若你与刺青的同调结束，刺青会消失，针头会再次出现在你的位置中。"
@@ -5805,16 +5805,16 @@
 				},
 				{
 					"ENG_name": "Damage Resistance",
-					"type": "entries",
 					"name": "伤害抗性",
+					"type": "entries",
 					"entries": [
 						"当纹身在你的皮肤上时，你对{{item.resist}}伤害有抗性。"
 					]
 				},
 				{
 					"ENG_name": "Damage Absorption",
-					"type": "entries",
 					"name": "伤害吸收",
+					"type": "entries",
 					"entries": [
 						"当你受到{{item.resist}}伤害时，你可以使用你的反应来获得对该次伤害的免疫，并且你恢复等于你本应受到的伤害一半的生命值。一旦使用了这个反应，直到下一个黎明之前它不能被再次使用。"
 					]

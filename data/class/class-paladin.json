@@ -69,7 +69,7 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和一面{@item 护盾术|PHB} ，或 (b) 两把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}",
+					"(a) 一把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和一面{@item 盾牌|PHB} ，或 (b) 两把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}",
 					"(a) 五把 {@item 标枪|PHB|标枪} 或 (b) 任何 {@filter 简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand}",
 					"(a) 一个{@item 祭司套组|PHB}或 (b) 一个{@item 探索套组|PHB}",
 					"{@item 链甲|PHB} 和一个 {@item 圣徽|PHB}"
@@ -81,7 +81,7 @@
 							{
 								"equipmentType": "军用武器"
 							},
-							"护盾术|PHB"
+							"盾牌|PHB"
 						],
 						"b": [
 							{
@@ -451,7 +451,7 @@
 								"item": "链甲|xphb"
 							},
 							{
-								"item": "护盾术|xphb"
+								"item": "盾牌|xphb"
 							},
 							{
 								"item": "长剑|xphb"
@@ -478,7 +478,7 @@
 					}
 				],
 				"entries": [
-					"{@i 选择A或B：} (A) {@item 链甲|XPHB}, {@item 护盾术|XPHB}, {@item 长剑|XPHB}, 6 {@item 标枪|XPHB|标枪}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 和9金币；或 (B) 150金币。"
+					"{@i 选择A或B：} (A) {@item 链甲|XPHB}, {@item 盾牌|XPHB}, {@item 长剑|XPHB}, 6 {@item 标枪|XPHB|标枪}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 和9金币；或 (B) 150金币。"
 				]
 			},
 			"multiclassing": {
@@ -1784,8 +1784,8 @@
 				"第2级起，你学会通过冥想与祈祷引导神圣魔法，其原理与牧师相仿。参考 {@book 第十章|PHB|10}的施法规则，以及 {@book 第十一章|PHB|11}的 {@filter 圣武士法术列表|spells|class=圣武士}。",
 				{
 					"ENG_name": "Preparing and Casting Spells",
-					"type": "entries",
 					"name": "法术的准备与施展",
+					"type": "entries",
 					"entries": [
 						"\"圣武士职业表\"里记录了你用以施展{@filter 圣武士法术|spells|class=圣武士}的1环及更高环阶法术位数量。施展某个圣武士法术时，你必须同时消耗其对应环阶的法术位。而已消耗的法术位则可以通过完成一次长休进行恢复。",
 						"你可以准备圣武士法术列表中所有符合当前施展条件的法术。准备法术时，你所准备法术的总数等于你的魅力调整值＋你圣武士职业等级的一半（最少可准备一个）。另外，你只能准备已获得相应环阶法术位的法术。",
@@ -1795,22 +1795,22 @@
 				},
 				{
 					"ENG_name": "Spellcasting Ability",
-					"type": "entries",
 					"name": "施法属性",
+					"type": "entries",
 					"entries": [
 						"你的法术源自你坚定信念产生的力量，因此魅力是你施展圣武士法术的关键属性。每当你的圣武士法术需要施法属性是均指向你的魅力值。而你圣武士法术的豁免DC和攻击检定，则使用你的魅力调整值。",
 						{
 							"ENG_name": "Spell",
-							"type": "abilityDc",
 							"name": "法术",
+							"type": "abilityDc",
 							"attributes": [
 								"cha"
 							]
 						},
 						{
 							"ENG_name": "Spell",
-							"type": "abilityAttackMod",
 							"name": "法术",
+							"type": "abilityAttackMod",
 							"attributes": [
 								"cha"
 							]
@@ -1819,8 +1819,8 @@
 				},
 				{
 					"ENG_name": "Spellcasting Focus",
-					"type": "entries",
 					"name": "法器",
+					"type": "entries",
 					"entries": [
 						"你可用{@item 圣徽|PHB}作为施展你圣武士法术的法器。"
 					]
@@ -2151,42 +2151,42 @@
 					"entries": [
 						{
 							"ENG_name": "Spell Slots",
-							"type": "entries",
 							"name": "施法能力",
+							"type": "entries",
 							"entries": [
 								"圣武士特性表显示了你有多少法术位可以用来施放1级及以上的法术。当你完成一个{@variantrule 长休|XPHB}时，你会恢复所有已消耗的法术位。"
 							]
 						},
 						{
 							"ENG_name": "Prepared Spells of Level 1+",
-							"type": "entries",
 							"name": "1环及以上的准备法术",
+							"type": "entries",
 							"entries": [
-								"你准备这个特性可用的1环法术列表。首先，选择两个{@filter 1级圣武士法术|spells|class=圣武士|level=1}。推荐选择{@spell 英雄气概|XPHB}和{@spell 炽焰斩|XPHB}。",
+								"你准备这个特性可用的1环法术列表。首先，选择两个{@filter 1环圣武士法术|spells|class=圣武士|level=1}。推荐选择{@spell 英雄气概|XPHB}和{@spell 炽焰斩|XPHB}。",
 								"随着你获得圣武士等级，你的法术列表上的法术数量会增加，如圣武士特性表中的准备法术列所示。每当这个数量增加时，选择额外的圣武士法术，直到你的法术列表上的法术数量与圣武士特性表中的数字相匹配。所选法术必须是你有法术位的等级。例如，如果你是5级圣武士，你的准备法术列表可以包括六个1级或2级的圣武士法术，以任何组合。",
 								"如果其他圣武士特性赋予你始终准备好的法术，这些法术不计入你使用此特性可以准备的法术数量，但这些法术在其他方面对你来说仍然算作圣武士法术。"
 							]
 						},
 						{
 							"ENG_name": "Changing Your Prepared Spells",
-							"type": "entries",
 							"name": "改变你的准备法术",
+							"type": "entries",
 							"entries": [
 								"每当你完成一个{@variantrule 长休|XPHB}时，你可以用另一个你有法术位的圣武士法术替换你法术列表中的一个法术。"
 							]
 						},
 						{
 							"ENG_name": "Spellcasting Ability",
-							"type": "entries",
 							"name": "施法属性",
+							"type": "entries",
 							"entries": [
 								"魅力是你的圣武士法术的施法能力。"
 							]
 						},
 						{
 							"ENG_name": "Spellcasting Focus",
-							"type": "entries",
 							"name": "法器",
+							"type": "entries",
 							"entries": [
 								"你可以使用一个{@item 圣徽|XPHB}作为你的圣武士法术的{@variantrule 法器|XPHB}。"
 							]
@@ -2206,7 +2206,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你熟练的{@filter 武器|items|type=简单武器；军用武器}，例如{@item 长剑|XPHB|长剑}和{@item 标枪|XPHB|标枪}，使用它们的{@variantrule 武器精通词条|XPHB|精通词条}。",
+				"你使用武器的训练使你能够选择两种你熟练的{@filter 武器|items|type=简易武器;军用武器}，例如{@item 长剑|XPHB|长剑}和{@item 标枪|XPHB|标枪}，使用它们的{@variantrule 武器精通词条|XPHB|精通词条}。",
 				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通词条|XPHB|精通词条}的{@item 戟|XPHB|长戟}和{@item 链枷|XPHB|链枷}。"
 			]
 		},
@@ -2304,8 +2304,8 @@
 				"你获得了一个你选择的圣武士子职业。子职业是一种专业化，它在特定的圣武士等级时赋予你特性。在你的职业生涯中，你将获得你的子职业的每个特性，这些特性的等级不高于你的圣武士等级。",
 				{
 					"ENG_name": "Breaking Your Oath",
-					"type": "inset",
 					"name": "背弃誓言",
+					"type": "inset",
 					"entries": [
 						"圣武士努力保持最高的行为标准，但即使是最专注的圣武士也可能犯错。有时圣武士会违反他们的誓言。",
 						"一个违背誓言的圣武士通常会寻求宽恕，通过整夜的守夜作为悔改的象征或进行禁食。在宽恕仪式之后，圣武士重新开始。",
@@ -2855,8 +2855,8 @@
 					"entries": [
 						{
 							"ENG_name": "Kindle the Light",
-							"type": "entries",
 							"name": "点亮光明",
+							"type": "entries",
 							"entries": [
 								"广传你的慈善与宽怀，点亮希望，驱散绝望。"
 							]
@@ -2868,8 +2868,8 @@
 					"entries": [
 						{
 							"ENG_name": "Shelter the Light",
-							"type": "entries",
 							"name": "守护光明",
+							"type": "entries",
 							"entries": [
 								"守护世间的善美与爱乐，抵挡秽恶的侵噬。守护生命的成长与收获，抵抗凋零的蔓延。"
 							]
@@ -2881,8 +2881,8 @@
 					"entries": [
 						{
 							"ENG_name": "Preserve Your Own Light",
-							"type": "entries",
 							"name": "维持光明",
+							"type": "entries",
 							"entries": [
 								"沉浸歌声与欢笑，享受美丽与艺术，先使自己充满光，再为他人传播光。"
 							]
@@ -2894,8 +2894,8 @@
 					"entries": [
 						{
 							"ENG_name": "Be the Light",
-							"type": "entries",
 							"name": "成为光明",
+							"type": "entries",
 							"entries": [
 								"欢乐与勇气照耀你的善行。你即为光，成为绝望者前行的信标。"
 							]
@@ -3123,8 +3123,8 @@
 					"entries": [
 						{
 							"ENG_name": "Honesty",
-							"type": "entries",
 							"name": "诚实",
+							"type": "entries",
 							"entries": [
 								"不诳语不欺骗，言出必行。"
 							]
@@ -3136,8 +3136,8 @@
 					"entries": [
 						{
 							"ENG_name": "Courage",
-							"type": "entries",
 							"name": "勇敢",
+							"type": "entries",
 							"entries": [
 								"谨慎深思，并无畏躬行。"
 							]
@@ -3149,8 +3149,8 @@
 					"entries": [
 						{
 							"ENG_name": "Compassion",
-							"type": "entries",
 							"name": "怜悯",
+							"type": "entries",
 							"entries": [
 								"援助他人，锄强扶弱。宽恕敌人，用心感化。"
 							]
@@ -3162,8 +3162,8 @@
 					"entries": [
 						{
 							"ENG_name": "Honor",
-							"type": "entries",
 							"name": "荣誉",
+							"type": "entries",
 							"entries": [
 								"公平待人，躬行荣誉为世人树立典范。力行善举，避免造成不必要的伤害。"
 							]
@@ -3175,8 +3175,8 @@
 					"entries": [
 						{
 							"ENG_name": "Duty",
-							"type": "entries",
 							"name": "责任",
+							"type": "entries",
 							"entries": [
 								"对自己的行为和结果负责，为所护卫之人尽责，服从上级。"
 							]
@@ -3395,8 +3395,8 @@
 					"entries": [
 						{
 							"ENG_name": "Fight the Greater Evil",
-							"type": "entries",
 							"name": "寻强敌，心无旁骛",
+							"type": "entries",
 							"entries": [
 								"抉择于追猎誓敌或驱逐妄小时，我必以决战更强之恶者为准绳。"
 							]
@@ -3408,8 +3408,8 @@
 					"entries": [
 						{
 							"ENG_name": "No Mercy for the Wicked",
-							"type": "entries",
 							"name": "对恶徒，绝无怜悯",
+							"type": "entries",
 							"entries": [
 								"或可施恩于常敌，但誓敌无可怜悯。"
 							]
@@ -3421,8 +3421,8 @@
 					"entries": [
 						{
 							"ENG_name": "By Any Means Necessary",
-							"type": "entries",
 							"name": "为胜利，不择手段",
+							"type": "entries",
 							"entries": [
 								"道德之思辨无助于殄灭大敌。"
 							]
@@ -3434,8 +3434,8 @@
 					"entries": [
 						{
 							"ENG_name": "Restitution",
-							"type": "entries",
 							"name": "遇恶果，尽力补偿",
+							"type": "entries",
 							"entries": [
 								"敌人造就的损害仍是我过失，既没能及时阻止理应尽力补救。"
 							]
@@ -3651,8 +3651,8 @@
 					"entries": [
 						{
 							"ENG_name": "Law",
-							"type": "entries",
 							"name": "守序",
+							"type": "entries",
 							"entries": [
 								"律法至上。它是文明的基石并且必须被庄重对待。"
 							]
@@ -3664,8 +3664,8 @@
 					"entries": [
 						{
 							"ENG_name": "Loyalty",
-							"type": "entries",
 							"name": "忠诚",
+							"type": "entries",
 							"entries": [
 								"言出必行。失去了忠诚，誓言和律法将毫无意义。"
 							]
@@ -3677,8 +3677,8 @@
 					"entries": [
 						{
 							"ENG_name": "Courage",
-							"type": "entries",
 							"name": "勇敢",
+							"type": "entries",
 							"entries": [
 								"无所畏惧。你必须愿意在秩序被动摇时挺身而出，即使胜算渺茫。如果你不行动，那么谁会？"
 							]
@@ -3690,8 +3690,8 @@
 					"entries": [
 						{
 							"ENG_name": "Responsibility",
-							"type": "entries",
 							"name": "责任",
+							"type": "entries",
 							"entries": [
 								"恪尽职守。你必须认识到你行动的重要性并为之承担后果，你要尽你最大努力完成你的责任和义务。"
 							]
@@ -3912,32 +3912,32 @@
 				"荣耀之誓的信条驱使着圣武士英勇地追求终将闪耀的传奇之道。",
 				{
 					"ENG_name": "Actions over Words",
-					"type": "entries",
 					"name": "行胜于言",
+					"type": "entries",
 					"entries": [
 						"力争以辉煌的功绩成名，而非只凭空谈。"
 					]
 				},
 				{
 					"ENG_name": "Challenges Are but Tests",
-					"type": "entries",
 					"name": "无惧挑战",
+					"type": "entries",
 					"entries": [
 						"面对困难的鞭挞，也鼓励你的伙伴和你共同面对。"
 					]
 				},
 				{
 					"ENG_name": "Hone the Body",
-					"type": "entries",
 					"name": "磨练其身",
+					"type": "entries",
 					"entries": [
 						"犹如原石荒料，潜能只在你的身体得到磨炼时展现。"
 					]
 				},
 				{
 					"ENG_name": "Discipline the Soul",
-					"type": "entries",
 					"name": "坚毅其魂",
+					"type": "entries",
 					"entries": [
 						"整顿纪律，克服弱点，若非如此，有损荣耀。"
 					]
@@ -4187,24 +4187,24 @@
 				"接受守望之誓的圣武士发誓要保护凡人国度不受来自其他位面的威胁。",
 				{
 					"ENG_name": "Vigilance",
-					"type": "entries",
 					"name": "警惕",
+					"type": "entries",
 					"entries": [
 						"你所面临的威胁狡猾、强大而又超乎常理。时刻警惕他们的腐化。"
 					]
 				},
 				{
 					"ENG_name": "Loyalty",
-					"type": "entries",
 					"name": "忠诚",
+					"type": "entries",
 					"entries": [
 						"永远不要接受来自邪魔或其同伙的礼物或恩惠。忠于你的使命，忠于你的同伴，忠于你的职责。"
 					]
 				},
 				{
 					"ENG_name": "Discipline",
-					"type": "entries",
 					"name": "纪律",
+					"type": "entries",
 					"entries": [
 						"你是抵御星辰之外无尽恐怖的盾牌。你的剑刃必须永远锋利，你的头脑必须永远清晰。"
 					]
@@ -4359,8 +4359,8 @@
 				},
 				{
 					"ENG_name": "Rules Tip: Visibility",
-					"type": "inset",
 					"name": "规则提示：能见度",
+					"type": "inset",
 					"page": 175,
 					"entries": [
 						"云雾和其他效应会遮蔽你，你的敌人以及你的盟友的视线。当你使用引导神力：海巡领域使一个区域陷入重度遮蔽时，该区域内的所有生物都会被完全遮挡住视线，区域外的生物也无法看清里面。无法视物的生物所做的基于视觉的{@quickref 属性检定|PHB|2|0}自动失败，他们看不见的生物对他们的攻击检定具有{@quickref 优势与劣势|PHB|2|0|优势}，而他们对看不见的生物所作的攻击检定具有{@quickref 优势与劣势|PHB|2|0|劣势}.",
@@ -4471,8 +4471,8 @@
 				"自由既可以是无私的美德，也可以是自私的欲望。对于立下远洋之誓的圣武士来说，自由是至高的呼唤，并且应当被所有人享有。",
 				{
 					"ENG_name": "No Greater Life than a Life Lived Free",
-					"type": "entries",
 					"name": "自由至高无上",
+					"type": "entries",
 					"page": 175,
 					"entries": [
 						"每个人都有追逐属于自己的自由的权力。那些用自己的力量支配他人的人应当被击败。"
@@ -4480,8 +4480,8 @@
 				},
 				{
 					"ENG_name": "Trust the Skies",
-					"type": "entries",
 					"name": "高天即为信仰",
+					"type": "entries",
 					"page": 175,
 					"entries": [
 						"劲风的指引，风暴将至的隆隆低鸣，自然乃是预兆的来源，也是应当被听从的集会。"
@@ -4489,8 +4489,8 @@
 				},
 				{
 					"ENG_name": "Adapt Like the Water",
-					"type": "entries",
 					"name": "变化犹如流水",
+					"type": "entries",
 					"page": 175,
 					"entries": [
 						"海洋中的水能流过任何障碍，其本身也能变为最牢固的障碍。它们侵蚀土地来将过去的秘密显露出来，或将秘密吞入其内永不见天日。拥抱水的易变，便能克服一切挑战。"
@@ -4498,8 +4498,8 @@
 				},
 				{
 					"ENG_name": "Explore the Uncharted",
-					"type": "entries",
 					"name": "探索未知之域",
+					"type": "entries",
 					"page": 175,
 					"entries": [
 						"这个世界充满了未知。探究种种谜团的真相，你便能揪出藏匿着自己肮脏事业的罪犯，并找到成为更伟大的存在的道路。"
@@ -4732,24 +4732,24 @@
 					"entries": [
 						{
 							"ENG_name": "Douse the Flame of Hope",
-							"type": "entries",
 							"name": "掐灭希望",
+							"type": "entries",
 							"entries": [
 								"仅仅在战斗中击败敌人是不够的。你的胜利必须显著到彻底击碎敌人的战斗意志。刀剑只能结束生命。恐惧却能终结国家。"
 							]
 						},
 						{
 							"ENG_name": "Rule with an Iron Fist",
-							"type": "entries",
 							"name": "铁腕统治",
+							"type": "entries",
 							"entries": [
 								"一旦你完成了征服，不要容忍任何异议。你说出的话就是法律。遵循的人会被偏爱。不服从的人则会受到惩罚，以儆效尤。"
 							]
 						},
 						{
 							"ENG_name": "Strength Above All",
-							"type": "entries",
 							"name": "力量至上",
+							"type": "entries",
 							"entries": [
 								"你会一直统治下去，直到更强的势力兴起。到那时，你必须变得更强并面对挑战，否则就迎来自己的毁灭。"
 							]
@@ -4910,7 +4910,7 @@
 					"rows": [
 						[
 							"3rd",
-							"{@spell 庇护术}, {@spell 睡眠}"
+							"{@spell 庇护术}, {@spell 睡眠术}"
 						],
 						[
 							"5th",
@@ -4969,8 +4969,8 @@
 					"entries": [
 						{
 							"ENG_name": "Peace",
-							"type": "entries",
 							"name": "和平",
+							"type": "entries",
 							"entries": [
 								"暴力是最后的手段，交流和理解才是持久和平的正解。"
 							]
@@ -4982,8 +4982,8 @@
 					"entries": [
 						{
 							"ENG_name": "Innocence",
-							"type": "entries",
 							"name": "无辜",
+							"type": "entries",
 							"entries": [
 								"所有人生来都是无辜的，他们走向邪恶往往是环境或某些黑暗力量的影响。通过树立正确的榜样，治愈这个残缺世界的创伤，你可以令任何人走上正确的道路。"
 							]
@@ -4995,8 +4995,8 @@
 					"entries": [
 						{
 							"ENG_name": "Patience",
-							"type": "entries",
 							"name": "耐心",
+							"type": "entries",
 							"entries": [
 								"改变需要时间。犯下罪行的人必须被诚实与正义时刻提醒。一旦你播下正义的种子，你就必须日复一日地为其努力，直到最终开花结果。"
 							]
@@ -5008,8 +5008,8 @@
 					"entries": [
 						{
 							"ENG_name": "Wisdom",
-							"type": "entries",
 							"name": "感知",
+							"type": "entries",
 							"entries": [
 								"你的心灵必须时刻保持清醒，而你最终也许会被迫承认失败。既然所有人都可以得到救赎，那么自然也会有人选择步入邪恶之巅。你别无选择，为了大义只能将其剿灭。任何这样的行动都应当经过仔细权衡并考虑清楚其后果，但你一旦做出决定，那么就做到最后。"
 							]
@@ -5182,7 +5182,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"古老魔法沉重地笼罩着你，形成了一个诡异的守护，减弱来自物质位面之外的能量；你和你的盟友在你的保护光环内对死灵、心灵和辐射伤害具有{@variantrule 提升抗性|XPHB}。"
+				"古老魔法沉重地笼罩着你，形成了一个诡异的守护，减弱来自物质位面之外的能量；你和你的盟友在你的保护光环内对死灵、心灵和辐射伤害具有{@variantrule 抵抗术|XPHB}。"
 			]
 		},
 		{
@@ -5216,24 +5216,24 @@
 				"作为一个{@variantrule 附赠动作|XPHB}，你可以将你的保护光环注入原始力量，获得以下好处，持续1分钟或直到你结束它们（无需动作）。一旦你使用这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}。你也可以通过消耗一个5环法术位（无需动作）来恢复使用它。",
 				{
 					"ENG_name": "Diminish Defiance",
-					"type": "entries",
 					"name": "瓦解反抗",
+					"type": "entries",
 					"entries": [
 						"光环内的敌人在对你的法术和神力通道选项的豁免检定中具有{@variantrule 劣势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Regeneration",
-					"type": "entries",
 					"name": "再生",
+					"type": "entries",
 					"entries": [
 						"在每个你的回合开始时，你恢复10点{@variantrule 生命值|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Swift Spells",
-					"type": "entries",
 					"name": "迅捷法术",
+					"type": "entries",
 					"entries": [
 						"每当你施放一个施法时间为动作的法术时，你可以使用一个{@variantrule 附赠动作|XPHB}来施放它。"
 					]
@@ -5398,24 +5398,24 @@
 				"作为一个{@variantrule 附赠动作|XPHB}，你可以将你的保护光环注入神圣力量，获得以下好处，持续10分钟或直到你结束它们（无需动作）。一旦你使用这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}。你也可以通过消耗一个5环法术位（无需动作）来恢复使用它。",
 				{
 					"ENG_name": "Holy Ward",
-					"type": "entries",
 					"name": "至圣守护",
+					"type": "entries",
 					"entries": [
 						"你在任何被恶魔或亡灵强迫进行的豁免检定中具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Radiant Damage",
-					"type": "entries",
 					"name": "光耀伤害",
+					"type": "entries",
 					"entries": [
 						"每当敌人在光环内开始其回合时，该生物会承受等同于你的感召力加值加上你的{@variantrule 熟练项|XPHB|熟练加值}的光耀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Sunlight",
-					"type": "entries",
 					"name": "阳光",
+					"type": "entries",
 					"entries": [
 						"这个光环充满了阳光般的{@variantrule 明亮光照|XPHB}。"
 					]
@@ -5589,24 +5589,24 @@
 				"你可以用关于你伟大事迹的传说\u2014\u2014无论是真实的还是夸张的\u2014\u2014来激发自己。作为一个{@variantrule 附赠动作|XPHB}，你获得以下好处，持续10分钟。一旦你使用这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}。你也可以通过消耗一个5环法术位（无需动作）来恢复使用它。",
 				{
 					"ENG_name": "Charismatic",
-					"type": "entries",
 					"name": "神眷天恩",
+					"type": "entries",
 					"entries": [
 						"你被赋予了超凡的存在，所有魅力检定中具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Saving Throw Reroll",
-					"type": "entries",
 					"name": "重掷豁免",
+					"type": "entries",
 					"entries": [
 						"如果你未能通过一次豁免检定，你可以使用{@variantrule 反应|XPHB}来重投。你必须使用这次新的投掷结果。"
 					]
 				},
 				{
 					"ENG_name": "Unerring Strike",
-					"type": "entries",
 					"name": "无误打击",
+					"type": "entries",
 					"entries": [
 						"在你的每个回合中，每当你使用武器进行攻击检定并失败时，你可以使这次攻击命中。"
 					]
@@ -5757,16 +5757,16 @@
 				"作为一个{@variantrule 附赠动作|XPHB}，你获得以下好处，持续10分钟或直到你结束它们（无需动作）。一旦你使用这个特性，你就不能再次使用它，直到你完成一个{@variantrule 长休|XPHB}。你也可以通过消耗一个5环法术位来恢复使用它（无需动作）。",
 				{
 					"ENG_name": "Flight",
-					"type": "entries",
 					"name": "飞行",
+					"type": "entries",
 					"entries": [
 						"你的背部长出幽灵般的翅膀，拥有{@variantrule 飞行速度|XPHB}60英尺，并且可以悬停。"
 					]
 				},
 				{
 					"ENG_name": "Frightful Aura",
-					"type": "entries",
 					"name": "恐惧灵光",
+					"type": "entries",
 					"entries": [
 						"每当一个敌人在你的防护灵光范围内开始其回合时，该生物必须成功通过一次感知豁免检定，否则将获得{@condition 恐慌|XPHB}状态，持续1分钟或直到它受到任何伤害。对处于{@condition 恐慌|XPHB}状态的生物进行的{@action 攻击|XPHB}检定具有{@variantrule 优势|XPHB}。"
 					]

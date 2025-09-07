@@ -69,7 +69,7 @@
 				"additionalFromBackground": true,
 				"default": [
 					"(a) {@item 链甲|PHB} 或 (b) {@item 皮甲|PHB}、{@item 长弓|PHB} 和 {@item 箭(20)|PHB|20支箭}",
-					"(a) 一把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和一面{@item 护盾术|PHB} ，或 (b) 两把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}",
+					"(a) 一把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和一面{@item 盾牌|PHB} ，或 (b) 两把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}",
 					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或者 (b) 两把{@item 手斧|PHB|手斧}",
 					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}"
 				],
@@ -2805,8 +2805,8 @@
 					"entries": [
 						{
 							"ENG_name": "Maneuvers",
-							"type": "entries",
 							"name": "战技",
+							"type": "entries",
 							"entries": [
 								"你习得三种自选战技，详见后文。战技强化了你的攻击。而你在每次攻击时只能应用一种战技。",
 								"你在第7，第10和第15级时均习得两种新战技。习得新战技时，你还可以额外替换一个已经习得的战技。"
@@ -2819,8 +2819,8 @@
 					"entries": [
 						{
 							"ENG_name": "Superiority Dice",
-							"type": "entries",
 							"name": "卓越骰",
+							"type": "entries",
 							"entries": [
 								"你拥有四个{@dice d8}卓越骰。卓越骰一经使用即消耗，完成短休或长休后恢复。",
 								"你的卓越骰在第7和第15级时各增加一粒。"
@@ -2833,14 +2833,14 @@
 					"entries": [
 						{
 							"ENG_name": "Saving Throws",
-							"type": "entries",
 							"name": "豁免检定",
+							"type": "entries",
 							"entries": [
 								"某些战技需要目标进行豁免检定作抵抗。战技的豁免DC为：",
 								{
 									"ENG_name": "Maneuver",
-									"type": "abilityDc",
 									"name": "战技",
+									"type": "abilityDc",
 									"attributes": [
 										"str",
 										"dex"
@@ -3297,8 +3297,8 @@
 				"第3级时，你学会以武斗技术施展法术的能力。参考{@book 第十章|PHB|10}的施法规则，以及{@book 第十一章|PHB|11}的{@filter 法师法术列表|spells|class=法师}。",
 				{
 					"ENG_name": "Cantrips",
-					"type": "entries",
 					"name": "戏法",
+					"type": "entries",
 					"entries": [
 						"你从{@filter 法师法术列表|spells|class=法师}中选择两个戏法作为已知法术。第10级时，你再获得一个额外的法师戏法。"
 					]
@@ -3308,8 +3308,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spell Slots",
-							"type": "entries",
 							"name": "施法能力",
+							"type": "entries",
 							"entries": [
 								"\"奥法骑士施法能力\"表中列出了你用以施展你的{@filter 法师法术|spells|class=法师}的1环及更高环阶法术位数量。施展这些法术时，你必须同时消耗一个不低于该法术环阶的法术位。而已消耗的法术位可以通过完成一次长休进行恢复。",
 								"例如，如果你已经习得1环法术{@spell 护盾术}，并且有一个1环和一个2环法术位可用，你可以使用任一法术位来施放{@spell 护盾术}。"
@@ -3322,8 +3322,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spells Known of 1st-Level and Higher",
-							"type": "entries",
 							"name": "已知法术",
+							"type": "entries",
 							"entries": [
 								"你习得三个自选的1环法师法术，其中两个必须从防护系和塑能系中选择。",
 								"表格\"奥法骑士施法能力\"中\"已知法术\"一栏记录了你获得更多已知法术时的相应等级。你只能选择防护系或塑能系法术，且所获得法术的环阶不能超过你所拥有的最高法术位环阶。例如，如果你在本职业达到第7级，则可以学习一个新的1环法术或2环法术。",
@@ -3338,22 +3338,22 @@
 					"entries": [
 						{
 							"ENG_name": "Spellcasting Ability",
-							"type": "entries",
 							"name": "施法属性",
+							"type": "entries",
 							"entries": [
 								"你通过研究和记忆学习魔法，因此智力是你施展法师法术的关键属性。每当你的法术需要施法属性时均指向你的智力值。而你法师法术的豁免DC和攻击检定，则使用你的智力调整值。",
 								{
 									"ENG_name": "Spell",
-									"type": "abilityDc",
 									"name": "法术",
+									"type": "abilityDc",
 									"attributes": [
 										"int"
 									]
 								},
 								{
 									"ENG_name": "Spell",
-									"type": "abilityAttackMod",
 									"name": "法术",
+									"type": "abilityAttackMod",
 									"attributes": [
 										"int"
 									]
@@ -3909,15 +3909,15 @@
 						},
 						{
 							"ENG_name": "Hill Rune (7th Level or Higher)",
+							"name": "山丘符文(7级或更高)",
 							"type": "refOptionalfeature",
-							"optionalfeature": "山丘符文|TCE",
-							"name": "山丘符文(7级或更高)"
+							"optionalfeature": "山丘符文|TCE"
 						},
 						{
 							"ENG_name": "Storm Rune (7th Level or Higher)",
+							"name": "风暴符文(7级或更高)",
 							"type": "refOptionalfeature",
-							"optionalfeature": "风暴符文|TCE",
-							"name": "风暴符文(7级或更高)"
+							"optionalfeature": "风暴符文|TCE"
 						}
 					]
 				}
@@ -4111,8 +4111,8 @@
 				"如果一个选项需要进行豁免投掷，你的奥术射击豁免投掷DC的计算方式如下：",
 				{
 					"ENG_name": "Arcane Shot",
-					"type": "abilityDc",
 					"name": "奥术射击",
+					"type": "abilityDc",
 					"attributes": [
 						"int"
 					]
@@ -4555,8 +4555,8 @@
 				"你在战场上的经验已经磨练了你的战斗技巧。你学会了由一种叫做优势骰子的特殊骰子驱动的机动。",
 				{
 					"ENG_name": "Maneuvers",
-					"type": "entries",
 					"name": "战技",
+					"type": "entries",
 					"entries": [
 						"你从该子类描述后文的\"{@filter 机动选项|optionalfeatures|feature type=MV:B|source=XPHB}\"部分中选择学习三种战技。许多战技以某种方式增强攻击。你每次攻击只能使用一种战技。",
 						"当你达到7级、10级和15级战士时，你将学习两个你选择的额外机动。每次你学习新的机动时，你也可以用一个不同的机动替换你已知的一个机动。"
@@ -4564,8 +4564,8 @@
 				},
 				{
 					"ENG_name": "Superiority Dice",
-					"type": "entries",
 					"name": "卓越骰",
+					"type": "entries",
 					"entries": [
 						"你有四个卓越骰，它们为{@dice d8|d8骰子}。当你使用卓越骰时，它会消耗。当完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时，你恢复所有消耗的卓越骰。",
 						"当你达到7级战士（总共五个优势骰子）和15级战士（总共六个优势骰子）时，你会获得额外的优势骰子。"
@@ -4573,8 +4573,8 @@
 				},
 				{
 					"ENG_name": "Saving Throws",
-					"type": "entries",
 					"name": "豁免检定",
+					"type": "entries",
 					"entries": [
 						"如果机动动作需要进行豁免检定，难度等级等于8加上你的力量或敏捷加成（任选其一）和{@variantrule 熟练项|XPHB|熟练加值}。"
 					]
@@ -4886,18 +4886,18 @@
 				"你在战斗中达到韧性的顶峰，赋予你以下好处。",
 				{
 					"ENG_name": "Defy Death",
-					"type": "entries",
 					"name": "反抗死亡",
+					"type": "entries",
 					"entries": [
 						"在{@variantrule 优势|XPHB}上，你具有优势。此外，当你在{@variantrule 死亡豁免检定|XPHB}上掷出18\u201320时，你将获得类似于掷出20的收益。"
 					]
 				},
 				{
 					"ENG_name": "Heroic Rally",
-					"type": "entries",
 					"name": "英气风发",
+					"type": "entries",
 					"entries": [
-						"在你的每个回合开始时，如果你处于{@variantrule 生命值|XPHB|生命值}状态且至少有1点{@variantrule 浴血|XPHB}，你将恢复等同于5加上你的体质调整值的{@variantrule 生命值|XPHB}。"
+						"在你的每个回合开始时，若你处于{@status 浴血|XPHB}状态且至少有1点{@variantrule 生命值|XPHB|生命值}，则你恢复等同于5加上体质调整值的{@variantrule 生命值|XPHB}。"
 					]
 				}
 			]
@@ -4940,8 +4940,8 @@
 				"你已经学会施放法术。关于施法规则，参见{@book 第七章|XPHB|7}。以下信息详细说明了作为奥术骑士你如何使用这些规则。",
 				{
 					"ENG_name": "Cantrips",
-					"type": "entries",
 					"name": "戏法",
+					"type": "entries",
 					"entries": [
 						"你知道两个从{@filter 法师法术列表|spells|class=法师}（详见该职业部分）中自选的戏法。推荐{@spell 冷冻射线|XPHB}和{@spell 电爪|XPHB}。每当你获得一个战士等级时，你可以用{@filter 法师法术列表|spells|class=法师}中的另一个自选戏法替换其中一个戏法。",
 						"当你达到战士等级10时，你可以选择学习另一个巫师戏法。"
@@ -4952,8 +4952,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spell Slots",
-							"type": "entries",
 							"name": "施法能力",
+							"type": "entries",
 							"entries": [
 								"《奥术骑士施法表》显示了你用来施放1级及以上法术的法术位数量。当你完成一个{@variantrule 长休|XPHB}时，你恢复所有已消耗的法术位。"
 							]
@@ -4965,8 +4965,8 @@
 					"entries": [
 						{
 							"ENG_name": "Prepared Spells of Level 1+",
-							"type": "entries",
 							"name": "1环及以上的准备法术",
+							"type": "entries",
 							"entries": [
 								"你准备这个特性可用的1级及以上法术列表。首先，从{@filter 法师法术列表|spells|class=法师}中选择三个1环法术。推荐选择{@spell 燃烧之手|XPHB}、{@spell 跳跃术|XPHB}和{@spell 护盾术|XPHB}。",
 								"随着你获得战士等级，你的法术列表中的法术数量会增加，如《奥术骑士施法表》中的准备法术栏所示。每当这个数量增加时，从{@filter 法师法术列表|spells|class=法师}中选择额外的法术，直到你的法术列表中的法术数量与表格中的数字相匹配。所选法术必须是你有法术位的等级。例如，如果你是一名7级战士，你的准备法术列表可以包括五个1级和2级的巫师法术，可以任意组合。"
@@ -4979,8 +4979,8 @@
 					"entries": [
 						{
 							"ENG_name": "Changing your Prepared Spells",
-							"type": "entries",
 							"name": "更换你的准备法术",
+							"type": "entries",
 							"entries": [
 								"每当你获得战士等级时，你可以用你拥有法术位的另一个巫师法术替换你的法术列表中的一个法术。"
 							]
@@ -4992,8 +4992,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spellcasting Ability",
-							"type": "entries",
 							"name": "施法属性",
+							"type": "entries",
 							"entries": [
 								"智力是你施放巫师法术的能力值。"
 							]
@@ -5005,8 +5005,8 @@
 					"entries": [
 						{
 							"ENG_name": "Spellcasting Focus",
-							"type": "entries",
 							"name": "法器",
+							"type": "entries",
 							"entries": [
 								"你可以使用一个{@item 奥术法器|XPHB}作为你巫师法术的{@variantrule 法器|XPHB}。"
 							]
@@ -5316,7 +5316,7 @@
 				"name": "灵能骰"
 			},
 			"entries": [
-				"你对心灵伤害具有{@variantrule 提升抗性|XPHB}。此外，如果你在回合开始时处于{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态，你可以消耗一个灵能骰（无需动作）并结束所有赋予你这些状态的效果。"
+				"你对心灵伤害具有{@variantrule 抗性|XPHB}。此外，如果你在回合开始时处于{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态，你可以消耗一个灵能骰（无需动作）并结束所有赋予你这些状态的效果。"
 			]
 		},
 		{

@@ -2,8 +2,8 @@
 	"data": [
 		{
 			"ENG_name": "Screen",
-			"type": "section",
 			"name": "屏幕",
+			"type": "section",
 			"entries": [
 				{
 					"type": "table",
@@ -186,11 +186,11 @@
 							"11"
 						],
 						[
-							"水晶，玻璃，冰",
+							"水晶、玻璃、冰",
 							"13"
 						],
 						[
-							"木材，骨头",
+							"木、骨",
 							"15"
 						],
 						[
@@ -198,7 +198,7 @@
 							"17"
 						],
 						[
-							"铁，钢",
+							"铁、钢",
 							"19"
 						],
 						[
@@ -335,8 +335,8 @@
 				},
 				{
 					"ENG_name": "Long Jump",
-					"type": "entries",
 					"name": "跳远",
+					"type": "entries",
 					"entries": [
 						"移动10尺以上，并向上跳到你的体力值那么多尺。当你进行站立长跳时，你只能跳到那个距离的一半。"
 					],
@@ -344,8 +344,8 @@
 				},
 				{
 					"ENG_name": "High Jump",
-					"type": "entries",
 					"name": "跳高",
+					"type": "entries",
 					"entries": [
 						"移动10+尺，并跳过等于3加上你的力量调整值的尺数。当你进行站立高跳时，你只能跳过该距离的一半。"
 					],
@@ -353,8 +353,8 @@
 				},
 				{
 					"ENG_name": "Suffocating",
-					"type": "entries",
 					"name": "窒息",
+					"type": "entries",
 					"entries": [
 						"你能屏住呼吸的时间等于1加上你的体质调整值（最少30秒）。",
 						"如果你喘不过气或者正在窒息，你可以存活的轮数等于你的体质调整值（最少1轮）。在你的下个回合开始时，你的生命值降至0点并且处于濒死状态，直到你能再次呼吸之前，你不能恢复生命值或被稳定。"
@@ -363,8 +363,8 @@
 				},
 				{
 					"ENG_name": "Concentration",
-					"type": "entries",
 					"name": "专注",
+					"type": "entries",
 					"entries": [
 						"如果法术需要通过{@status 专注|PHB}来维持，其描述会指定你可以专注多长时间。你可以随时结束专注（无需动作）。以下因素可以打破专注：",
 						{
@@ -381,8 +381,8 @@
 				},
 				{
 					"ENG_name": "Exhaustion",
-					"type": "entries",
 					"name": "力竭",
+					"type": "entries",
 					"entries": [
 						{
 							"type": "table",
@@ -426,8 +426,8 @@
 				},
 				{
 					"ENG_name": "Conditions",
-					"type": "entries",
 					"name": "状态",
+					"type": "entries",
 					"entries": [
 						{
 							"type": "inlineBlock",
@@ -461,8 +461,8 @@
 				},
 				{
 					"ENG_name": "State of Ruin",
-					"type": "entries",
 					"name": "废墟之境",
+					"type": "entries",
 					"entries": [
 						"滚动这个表格来随机确定地下城区域的一般条件。",
 						{
@@ -515,8 +515,8 @@
 				},
 				{
 					"ENG_name": "Dungeon Encounters",
-					"type": "entries",
 					"name": "地下城遭遇",
+					"type": "entries",
 					"entries": [
 						"在冒险者每天和每晚探索地牢的过程中，你可以掷一个d20骰子来查看是否发生遭遇。如果掷出1，就在下面的表格上进行掷骰。你可以使用怪物动机表来随机确定一个生物的目标。",
 						{
@@ -553,15 +553,15 @@
 				},
 				{
 					"ENG_name": "Dungeon Chambers",
-					"type": "entries",
 					"name": "地下城房间",
+					"type": "entries",
 					"entries": [
 						"要随机确定地牢房间的用途，请在下面的表格上掷骰子。",
 						{
 							"type": "table",
 							"colLabels": [
 								"d100",
-								"作用"
+								"目的"
 							],
 							"colStyles": [
 								"col-2 text-center",
@@ -1255,20 +1255,20 @@
 		},
 		{
 			"ENG_name": "Included Accessories",
-			"type": "section",
 			"name": "包含配件",
+			"type": "section",
 			"entries": [
 				{
 					"ENG_name": "Condition and Hazard Cards",
-					"type": "entries",
 					"name": "状态与危险卡",
+					"type": "entries",
 					"entries": [
 						{
 							"type": "list",
 							"columns": 3,
 							"items": [
 								"{@deck 状态卡|ScreenDungeonKit}",
-								"{@deck 危险卡|ScreenDungeonKit}"
+								"{@deck 危害卡|ScreenDungeonKit}"
 							]
 						},
 						{
@@ -1321,8 +1321,8 @@
 				},
 				{
 					"ENG_name": "Initiative Cards",
-					"type": "entries",
 					"name": "先攻卡",
+					"type": "entries",
 					"entries": [
 						{
 							"type": "list",
@@ -1359,10 +1359,10 @@
 				},
 				{
 					"ENG_name": "Geomorph Cards",
+					"name": "地形卡",
 					"type": "entries",
-					"name": "地形变换卡",
 					"entries": [
-						"36 张地形变形卡 {@deck 地形变换卡|ScreenDungeonKit}，非常适合用来随机生成带有可拼接地图区域的地下城布局：",
+						"36 张地形变形卡 {@deck 地形卡|ScreenDungeonKit}，非常适合用来随机生成带有可拼接地图区域的地下城布局：",
 						{
 							"type": "gallery",
 							"images": [

@@ -97,16 +97,16 @@
 					"ENG_name": "Wind Staff",
 					"name": "风之法杖",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 攻击距离5尺或射程120尺。{@h}7 ({@damage 1d8 + 3}) 钝击伤害外加11 ({@damage 2d10}) 闪电伤害。"
+						"{@atkr m,r} {@hit 5}, 攻击距离5尺或射程120尺。{@h}7 ({@damage 1d8 + 3}) 钝击伤害外加11 ({@damage 2d10}) 闪电伤害。"
 					]
 				}
 			],
 			"environment": [
 				"山地",
-				"位面, 气"
+				"位面, 空中"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -189,16 +189,16 @@
 					"ENG_name": "Wind Javelin",
 					"name": "疾风标枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}, 射程5尺或30/120尺 {@h}5 ({@damage 1d6 + 2}) 点穿刺伤害加2 ({@damage 1d4}) 点雷鸣伤害。{@hom}标枪在远程攻击后立即魔法般地返回枭熊人的手中。"
+						"{@atkr m,r} {@hit 4}, 射程5尺或30/120尺 {@h}5 ({@damage 1d6 + 2}) 点穿刺伤害加2 ({@damage 1d4}) 点雷鸣伤害。{@hom}标枪在远程攻击后立即魔法般地返回枭熊人的手中。"
 					]
 				}
 			],
 			"environment": [
 				"山地",
-				"位面, 气"
+				"位面, 空中"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"languageTags": [
@@ -334,7 +334,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"senseTags": [
 				"D"
@@ -424,7 +424,7 @@
 			],
 			"passive": 20,
 			"languages": [
-				"深语；心灵感应 120 尺"
+				"深语; 心灵感应 120 尺"
 			],
 			"cr": {
 				"cr": "10",
@@ -526,7 +526,7 @@
 				"水下"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -874,7 +874,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "成年",
 			"soundClip": {
@@ -1092,7 +1092,7 @@
 				"荒漠"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "成年",
 			"soundClip": {
@@ -1450,7 +1450,7 @@
 					"daily": {
 						"1e": [
 							"{@spell 侦测思想|XPHB}",
-							"{@spell 水下呼吸|XPHB}"
+							"{@spell 水中呼吸|XPHB}"
 						]
 					},
 					"ability": "cha",
@@ -1536,7 +1536,7 @@
 				"海岸"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"dragonAge": "成年",
 			"soundClip": {
@@ -3003,7 +3003,7 @@
 			"environment": [
 				"荒漠",
 				"山地",
-				"位面, 气"
+				"位面, 空中"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -3038,7 +3038,7 @@
 		},
 		{
 			"ENG_name": "Allosaurus",
-			"name": "异龙",
+			"name": "异特龙",
 			"group": [
 				"Dinosaurs"
 			],
@@ -3280,7 +3280,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "远古",
 			"soundClip": {
@@ -3498,7 +3498,7 @@
 				"荒漠"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "远古",
 			"soundClip": {
@@ -3858,7 +3858,7 @@
 							"{@spell 侦测思想|XPHB}",
 							"{@spell 操控水体|XPHB}",
 							"{@spell 探知术|XPHB}",
-							"{@spell 水下呼吸|XPHB}"
+							"{@spell 水中呼吸|XPHB}"
 						]
 					},
 					"ability": "cha",
@@ -3944,7 +3944,7 @@
 				"海岸"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"dragonAge": "远古",
 			"soundClip": {
@@ -5433,24 +5433,24 @@
 							"items": [
 								{
 									"ENG_name": "Captivated (Forager Only)",
-									"type": "item",
 									"name": "迷醉（仅觅兽）",
+									"type": "item",
 									"entries": [
 										"目标获得{@condition 魅惑|XPHB}状态，持续到其下一回合结束。当{@condition 魅惑|XPHB}时，目标获得{@condition 失能|XPHB}状态。"
 									]
 								},
 								{
 									"ENG_name": "Fearful (Hunter Only)",
-									"type": "item",
 									"name": "畏惧（仅猎兽）",
+									"type": "item",
 									"entries": [
 										"目标获得{@condition 恐慌|XPHB}状态，直到其下一回合结束。"
 									]
 								},
 								{
 									"ENG_name": "Mired (Sage Only)",
-									"type": "item",
 									"name": "困扰（仅睿兽）",
+									"type": "item",
 									"entries": [
 										"目标受到10（{@damage 3d6}）点心灵伤害，并且目标被魔法迷惑，直到其下一个回合结束。在被迷惑期间，目标的豁免检定减去{@dice 1d4}。"
 									]
@@ -5500,24 +5500,24 @@
 							"items": [
 								{
 									"ENG_name": "Fortify (Forager Only)",
-									"type": "item",
 									"name": "卫戍之力（仅觅兽）",
+									"type": "item",
 									"entries": [
 										"动物领主获得 20 {@variantrule 临时生命值|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Marked as Prey (Hunter Only)",
-									"type": "item",
 									"name": "标定猎物（仅猎兽）",
+									"type": "item",
 									"entries": [
 										"动物领主在攻击目标时有{@variantrule 优势|XPHB}，直到动物领主的下一回合开始。"
 									]
 								},
 								{
 									"ENG_name": "Pesky Swarm (Sage Only)",
-									"type": "item",
 									"name": "恼人兽群（仅睿兽）",
+									"type": "item",
 									"entries": [
 										"目标在其下一个回合结束前，在攻击检定和属性检定上具有{@variantrule 劣势|XPHB}。"
 									]
@@ -5553,10 +5553,10 @@
 				}
 			],
 			"environment": [
-				"位面，野兽荒野"
+				"位面, 万兽乡"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"altArt": [
 				{
@@ -6318,7 +6318,7 @@
 		},
 		{
 			"ENG_name": "Arcanaloth",
-			"name": "奥登罗斯魔",
+			"name": "奥法罗斯魔",
 			"group": [
 				"Yugoloths"
 			],
@@ -6391,7 +6391,7 @@
 				"中毒"
 			],
 			"languages": [
-				"全部；心灵感应 120 尺"
+				"全部; 心灵感应 120 尺"
 			],
 			"cr": "12",
 			"spellcasting": [
@@ -6473,7 +6473,7 @@
 					"ENG_name": "Fiendish Burst",
 					"name": "邪能爆",
 					"entries": [
-						"{@atkr 米，半径} {@hit 9}，射程 5 英尺或 120 英尺 {@h}31（{@damage 4d12 + 5}）点暗蚀伤害。"
+						"{@atkr m,r} {@hit 9}，射程 5 英尺或 120 英尺 {@h}31（{@damage 4d12 + 5}）点暗蚀伤害。"
 					]
 				},
 				{
@@ -6495,7 +6495,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层"
+				"位面, 下层"
 			],
 			"treasure": [
 				"奥秘"
@@ -6712,7 +6712,7 @@
 					"ENG_name": "Spectral Claw",
 					"name": "幽魂利爪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 14}，触及 10 尺或射程 60 尺。{@h}17 ({@damage 3d6 + 7}) 力场伤害。如果目标是大型或更小的生物，则获得{@condition 倒地|XPHB}状态。"
+						"{@atkr m,r} {@hit 14}，触及 10 尺或射程 60 尺。{@h}17 ({@damage 3d6 + 7}) 力场伤害。如果目标是大型或更小的生物，则获得{@condition 倒地|XPHB}状态。"
 					]
 				},
 				{
@@ -6956,7 +6956,7 @@
 					"conditionImmune": [
 						"魅惑"
 					],
-					"note": "（带有心灵空白）",
+					"note": "（带有心灵屏障）",
 					"cond": true
 				}
 			],
@@ -7059,7 +7059,7 @@
 					"ENG_name": "Arcane Burst",
 					"name": "奥能爆发",
 					"entries": [
-						"{@atkr 米，半径} {@hit 9}，触及5尺或射程150尺{@h}27（{@damage 4d10 + 5}）力场伤害。"
+						"{@atkr m,r} {@hit 9}，触及5尺或射程150尺{@h}27（{@damage 4d10 + 5}）力场伤害。"
 					]
 				}
 			],
@@ -7230,7 +7230,7 @@
 					"ENG_name": "Radiant Burst",
 					"name": "圣光惩灭",
 					"entries": [
-						"{@atkr 米，半径} {@hit 9}，射程 5 英尺或 60 英尺，{@h}27（{@damage 4d10 + 5}）光耀伤害。"
+						"{@atkr m,r} {@hit 9}，射程 5 英尺或 60 英尺，{@h}27（{@damage 4d10 + 5}）光耀伤害。"
 					]
 				},
 				{
@@ -7246,7 +7246,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -7390,7 +7390,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"soundClip": {
@@ -7672,7 +7672,7 @@
 				"中毒"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "6",
 			"spellcasting": [
@@ -7742,13 +7742,13 @@
 					"ENG_name": "Flame Burst",
 					"name": "炎爆",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}, 触及 5 尺或射程 120 尺 {@h}15 ({@damage 2d10 + 4}) 火焰伤害。"
+						"{@atkr m,r} {@hit 7}, 触及 5 尺或射程 120 尺 {@h}15 ({@damage 2d10 + 4}) 火焰伤害。"
 					]
 				}
 			],
 			"environment": [
 				"山地",
-				"位面，火焰"
+				"位面, 火"
 			],
 			"treasure": [
 				"军备",
@@ -7831,7 +7831,7 @@
 				"中毒"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "2",
 			"trait": [
@@ -7861,7 +7861,7 @@
 			],
 			"environment": [
 				"山地",
-				"位面，火焰"
+				"位面, 火"
 			],
 			"treasure": [
 				"军备",
@@ -8108,7 +8108,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "19",
 			"trait": [
@@ -8174,7 +8174,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
 				"军备"
@@ -8645,7 +8645,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}，触及5尺或射程20/60尺 {@h}8（{@damage 2d4 + 3}）穿刺伤害外加10（{@damage 3d6}）毒素伤害。"
+						"{@atkr m,r} {@hit 6}，触及5尺或射程20/60尺 {@h}8（{@damage 2d4 + 3}）穿刺伤害外加10（{@damage 3d6}）毒素伤害。"
 					]
 				},
 				{
@@ -8821,7 +8821,7 @@
 				"任何"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -8926,7 +8926,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "5",
 			"trait": [
@@ -8983,7 +8983,7 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
 				"任何"
@@ -9086,7 +9086,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -9153,7 +9153,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
 				"任何"
@@ -9427,7 +9427,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "3",
 			"trait": [
@@ -9463,7 +9463,7 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
 				"军备"
@@ -9739,80 +9739,80 @@
 							"items": [
 								{
 									"ENG_name": "1: Charm Ray",
-									"type": "item",
 									"name": "1: 魅惑射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 16}。{@actSaveFail} 13（{@damage 3d8}）点心灵伤害，并且目标获得{@condition 魅惑|XPHB}状态，持续1小时或直到其受到伤害。{@actSaveSuccess} 仅受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "2: Paralyzing Ray",
-									"type": "item",
 									"name": "2: 麻痹射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 16}。{@actSaveFail} 目标获得{@condition 麻痹|XPHB}状态，并在其每个回合结束时重复进行豁免检定，成功则结束此效果。1分钟后，目标自动成功。"
 									]
 								},
 								{
 									"ENG_name": "3: Fear Ray",
-									"type": "item",
 									"name": "3: 恐惧射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 16}。{@actSaveFail} 14 点（{@damage 4d6}）心灵伤害，且目标获得{@condition 恐慌|XPHB}状态，持续至其下一回合结束。{@actSaveSuccess} 仅受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "4: Slowing Ray",
-									"type": "item",
 									"name": "4: 缓慢射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 16}。{@actSaveFail} 18（{@damage 4d8}）点暗蚀伤害。直到目标的下一个回合结束，目标的{@variantrule 速度|XPHB}减半；目标不能使用反应；并且它在自己的回合中只能选择执行一个动作或{@variantrule 附赠动作|XPHB}，不能同时执行两者。{@actSaveSuccess} 仅受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "5: Enervation Ray",
-									"type": "item",
 									"name": "5：汲能射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 16}。{@actSaveFail} 13（{@damage 3d8}）毒素伤害，且目标获得{@condition 中毒|XPHB}状态直到其下一回合结束。在{@condition 中毒|XPHB}状态下，目标无法恢复{@variantrule 生命值|XPHB}。{@actSaveSuccess} 仅造成一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "6: Telekinetic Ray",
-									"type": "item",
 									"name": "6: 念力射线",
+									"type": "item",
 									"entries": [
 										"{@actSave str} {@dc 16}（如果目标是巨型，则自动成功）。{@actSaveFail} 眼魔将目标向任何方向移动最多30英尺。目标处于{@condition 束缚|XPHB}状态，直到眼魔的下一个回合开始或眼魔处于{@condition 失能|XPHB}状态。眼魔还可以通过此射线对物体进行精细控制，例如操纵工具或打开门或容器。"
 									]
 								},
 								{
 									"ENG_name": "7: Sleep Ray",
-									"type": "item",
 									"name": "7：睡眠射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis}{@dc 16}（若目标是构装体或不死生物，则自动成功）。{@actSaveFail} 目标获得{@condition 昏迷|XPHB}状态，持续1分钟。若目标受到伤害，或其5英尺内的生物采取行动唤醒它，该状态结束。"
 									]
 								},
 								{
 									"ENG_name": "8: Petrification Ray",
-									"type": "item",
 									"name": "8: 石化射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 16}。{@actSaveFail 1} 目标获得{@condition 束缚|XPHB}状态，如果它仍然处于{@condition 束缚|XPHB}状态，则在其下一回合结束时重复进行豁免检定，成功则自身结束此效果。{@actSaveFail 2} 目标获得{@condition 石化|XPHB}状态而非{@condition 束缚|XPHB}状态。"
 									]
 								},
 								{
 									"ENG_name": "9: Disintegration Ray",
-									"type": "item",
 									"name": "9：解离射线",
+									"type": "item",
 									"entries": [
 										"{@actSave dex} {@dc 16}。{@actSaveFail} 36（{@damage 8d8}）点力场伤害。如果目标是非魔法物体或由魔法力场构成的造物，它的一块10英尺{@variantrule 立方 [效应区域]|XPHB|立方}会化为尘埃。{@actSaveSuccess} 半伤。{@actSaveSuccessOrFail} 如果目标是生物，且此伤害将其{@variantrule 生命值|XPHB}降至0，它会化为尘埃。"
 									]
 								},
 								{
 									"ENG_name": "10: Death Ray",
-									"type": "item",
 									"name": "10：死亡射线",
+									"type": "item",
 									"entries": [
 										"{@actSave dex} {@dc 16}。{@actSaveFail} 55（{@damage 10d10}）点暗蚀伤害。{@actSaveSuccess} 一半伤害。{@actSaveSuccessOrFail} 如果射线将该目标的{@variantrule 生命值|XPHB}降至0，则目标死亡。"
 									]
@@ -10000,32 +10000,32 @@
 							"items": [
 								{
 									"ENG_name": "1: Paralyzing Ray",
-									"type": "item",
 									"name": "1: 麻痹射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 14}。{@actSaveFail} 目标获得{@condition 麻痹|XPHB}状态，并在其每回合结束时重复进行豁免，成功则结束此效果。1分钟后，它自动成功。"
 									]
 								},
 								{
 									"ENG_name": "2: Fear Ray",
-									"type": "item",
 									"name": "2: 恐惧射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 14}。{@actSaveFail} 13 ({@damage 3d8}) 点心灵伤害，且目标获得{@condition 恐慌|XPHB}状态，持续到其下个回合结束。"
 									]
 								},
 								{
 									"ENG_name": "3: Enervation Ray",
-									"type": "item",
 									"name": "3: 汲能射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 14}。{@actSaveFail} 10点（{@damage 3d6}）黯蚀伤害，并且目标处于{@condition 中毒|XPHB}状态，直到其下一回合结束。当{@condition 中毒|XPHB}时，目标无法恢复{@variantrule 生命值|XPHB}。{@actSaveSuccess} 仅受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "4: Disintegration Ray",
-									"type": "item",
 									"name": "4: 解离射线",
+									"type": "item",
 									"entries": [
 										"{@actSave dex} {@dc 14}。{@actSaveFail} 27（{@damage 5d10}）力场伤害。如果目标是非魔法物品或魔法力场创造的物体，则一个10英尺的{@variantrule 立方 [效应区域]|XPHB|立方}会化为尘埃。{@actSaveSuccess} 伤害减半。{@actSaveSuccessOrFail} 如果目标是生物且此伤害将其生命值降至0{@variantrule 生命值|XPHB}，它会化为尘埃。"
 									]
@@ -10036,7 +10036,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -10134,7 +10134,7 @@
 					"ENG_name": "Bloodied Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"当处于{@variantrule 浴血|XPHB}状态时，狂战士的攻击检定和豁免检定具有{@variantrule 优势|XPHB}。"
+						"当{@status 浴血|XPHB}时，狂战士在攻击检定和豁免检定上具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -10233,7 +10233,7 @@
 					"ENG_name": "Bloodied Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"当处于{@variantrule 浴血|XPHB}状态时，狂战士的攻击检定和豁免检定具有{@variantrule 优势|XPHB}。"
+						"当{@status 浴血|XPHB}时，狂战士在攻击检定和豁免检定上具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -10256,7 +10256,7 @@
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr 米，半径}{@hit 7}，触及5尺或射程30/120尺{@h}18（{@damage 4d6 + 4}）穿刺伤害，且目标的{@variantrule 速度|XPHB}减少5尺，直到狂战士的下一个回合开始。"
+						"{@atkr m,r}{@hit 7}，触及5尺或射程30/120尺{@h}18（{@damage 4d6 + 4}）穿刺伤害，且目标的{@variantrule 速度|XPHB}减少5尺，直到狂战士的下一个回合开始。"
 					]
 				}
 			],
@@ -10482,7 +10482,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "雏龙",
 			"soundClip": {
@@ -10611,7 +10611,7 @@
 					"ENG_name": "Split",
 					"name": "分裂",
 					"entries": [
-						"{@actTrigger} 当布丁为大型或中型且拥有10点或更多的{@variantrule 生命值|XPHB}时，它变为{@variantrule 浴血|XPHB}状态或受到闪电或挥砍伤害。{@actResponse} 布丁分裂成两个新的黑色布丁。每个新的布丁比原来的布丁小一级别，并在其{@variantrule 先攻|XPHB}上行动。原来布丁的{@variantrule 生命值|XPHB}均匀分配给新的布丁（向下取整）。"
+						"{@actTrigger} 当该布丁为大型或中型且拥有10点或更多{@variantrule 生命值|XPHB}时，它变为{@status 浴血|XPHB}或受到闪电或挥砍伤害。{@actResponse} 该布丁分裂成两个新的黑布丁。每个新布丁比原布丁小一个体型，并在其{@variantrule 先攻|XPHB}上行动。原布丁的{@variantrule 生命值|XPHB}被均分给新布丁（向下取整）。"
 					]
 				}
 			],
@@ -10708,7 +10708,7 @@
 			],
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -10970,7 +10970,7 @@
 					"ENG_name": "Beak",
 					"name": "喙啄",
 					"entries": [
-						"{@atkr m} {@hit 4}, 触及 5 尺. {@h}4 ({@damage 1d4 + 2}) 穿刺伤害, 如果目标是{@variantrule 浴血|XPHB}则为 6 ({@damage 1d8 + 2}) 穿刺伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}4（{@damage 1d4 + 2}）穿刺伤害，若目标处于{@status 浴血|XPHB}状态则为6（{@damage 1d8 + 2}）穿刺伤害。"
 					]
 				}
 			],
@@ -11091,7 +11091,7 @@
 				"荒漠"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "雏龙",
 			"soundClip": {
@@ -11172,7 +11172,7 @@
 				"雷鸣"
 			],
 			"languages": [
-				"史拉蟾；心灵感应 60 尺"
+				"史拉蟾语; 心灵感应 60 尺"
 			],
 			"cr": "7",
 			"trait": [
@@ -11208,7 +11208,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"任何"
@@ -11290,7 +11290,7 @@
 					"ENG_name": "Bloodied Fury",
 					"name": "浴血狂怒",
 					"entries": [
-						"当{@variantrule 浴血|XPHB}时，野猪在攻击检定上具有{@variantrule 优势|XPHB}。"
+						"当野猪处于{@status 浴血|XPHB}状态时，它在攻击检定上具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -11393,7 +11393,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "9",
 			"trait": [
@@ -11436,10 +11436,10 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -11571,7 +11571,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"senseTags": [
 				"D"
@@ -11968,7 +11968,7 @@
 				"海岸"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"dragonAge": "雏龙",
 			"soundClip": {
@@ -12189,7 +12189,7 @@
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 触及 10 尺 或 射程 30/120 尺 {@h}13 ({@damage 3d6 + 3}) 穿刺伤害。"
+						"{@atkr m,r} {@hit 5}, 触及 10 尺 或 射程 30/120 尺 {@h}13 ({@damage 3d6 + 3}) 穿刺伤害。"
 					]
 				},
 				{
@@ -12212,7 +12212,7 @@
 			"environment": [
 				"森林",
 				"草地",
-				"位面，妖精荒野",
+				"位面, 妖精荒野",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -12337,14 +12337,14 @@
 					"ENG_name": "Light Hammer",
 					"name": "轻锤",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}（如果目标被{@condition 擒抱|XPHB}，则拥有{@variantrule 优势|XPHB}），触及10尺或射程20/60尺。{@h}9（{@damage 3d4 + 2}）点钝击伤害。"
+						"{@atkr m,r} {@hit 4}（如果目标被{@condition 擒抱|XPHB}，则拥有{@variantrule 优势|XPHB}），触及10尺或射程20/60尺。{@h}9（{@damage 3d4 + 2}）点钝击伤害。"
 					]
 				}
 			],
 			"environment": [
 				"森林",
 				"草地",
-				"位面，妖精荒野",
+				"位面, 妖精荒野",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -12416,7 +12416,7 @@
 			},
 			"senses": [
 				"黑暗视觉 60 尺",
-				"震动感知 120 尺"
+				"颤动感知 120 尺"
 			],
 			"passive": 16,
 			"cr": "5",
@@ -12681,7 +12681,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"traitTags": [
@@ -12800,7 +12800,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"traitTags": [
@@ -12932,7 +12932,7 @@
 				"任何"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -13329,7 +13329,7 @@
 			"environment": [
 				"森林",
 				"草地",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
 				"军备",
@@ -13459,7 +13459,7 @@
 			"environment": [
 				"森林",
 				"草地",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
 				"军备",
@@ -13561,7 +13561,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "8",
 			"trait": [
@@ -13613,10 +13613,10 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -13722,7 +13722,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "6",
 			"trait": [
@@ -13767,10 +13767,10 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -14026,7 +14026,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -14135,7 +14135,7 @@
 					"ENG_name": "Berserk",
 					"name": "失心狂怒",
 					"entries": [
-						"每当魔像开始其回合时{@variantrule 浴血|XPHB}，掷{@dice 1d6}。若结果为6，魔像将狂暴。在狂暴的每一回合中，魔像会攻击它能看到的最近生物。如果没有足够近的生物可以移动并攻击，魔像将攻击物体。一旦魔像进入狂暴状态，它将持续狂暴，直到被摧毁或不再{@variantrule 浴血|XPHB}。"
+						"每当该魔像在其回合开始时处于{@status 浴血|XPHB}状态，需投掷{@dice 1d6}。若结果为6，魔像将陷入失心狂怒。在狂怒期间的每个回合，魔像会攻击其视野范围内最近的生物。若没有足够接近的生物可供移动并攻击，魔像则会攻击一个物件。一旦魔像陷入狂怒，它将持续处于该状态直到被摧毁或不再处于{@status 浴血|XPHB}状态。"
 					]
 				},
 				{
@@ -14182,7 +14182,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -14333,7 +14333,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -14799,7 +14799,7 @@
 					"ENG_name": "Immutable Form",
 					"name": "不变形态",
 					"entries": [
-						"巨像无法变形。"
+						"巨像不能变形。"
 					]
 				},
 				{
@@ -14874,7 +14874,7 @@
 				"任何"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"traitTags": [
 				"不变形态",
@@ -15269,7 +15269,7 @@
 				"光耀"
 			],
 			"languages": [
-				"全部；心灵感应 120 尺"
+				"全部; 心灵感应 120 尺"
 			],
 			"cr": "4",
 			"spellcasting": [
@@ -15351,7 +15351,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -15721,7 +15721,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -15854,7 +15854,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"languageTags": [
 				"C"
@@ -15983,7 +15983,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -16405,11 +16405,11 @@
 				}
 			],
 			"environment": [
-				"位面, 大地",
+				"位面, 土",
 				"幽暗地域"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -16647,7 +16647,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -16845,7 +16845,7 @@
 					],
 					"daily": {
 						"2e": [
-							"{@spell 湮灭波|XPHB}（死灵）",
+							"{@spell 湮灭波|XPHB} (暗蚀)",
 							"{@spell 解除魔法|XPHB}"
 						]
 					},
@@ -17066,7 +17066,7 @@
 					],
 					"daily": {
 						"1e": [
-							"{@spell 湮灭波|XPHB}（死灵）",
+							"{@spell 湮灭波|XPHB} (暗蚀)",
 							"{@spell 解除魔法|XPHB}"
 						]
 					},
@@ -17225,7 +17225,7 @@
 			],
 			"languages": [
 				"通用语",
-				"史拉蟾；心灵感应 60 尺"
+				"史拉蟾语; 心灵感应 60 尺"
 			],
 			"cr": "10",
 			"spellcasting": [
@@ -17298,7 +17298,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"任何"
@@ -17459,80 +17459,80 @@
 							"items": [
 								{
 									"ENG_name": "1: Charm Ray",
-									"type": "item",
 									"name": "1: 魅惑射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 17}。{@actSaveFail} 13 点（{@damage 3d8}）心灵伤害，且目标获得{@condition 魅惑|XPHB}状态，持续 1 小时或直到其受到伤害。{@actSaveSuccess} 仅受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "2: Paralyzing Ray",
-									"type": "item",
 									"name": "2: 麻痹射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 17}。{@actSaveFail} 目标获得{@condition 麻痹|XPHB}状态，并在其每回合结束时重复进行豁免，成功则结束该效果。1分钟后，目标自动成功。"
 									]
 								},
 								{
 									"ENG_name": "3: Fear Ray",
-									"type": "item",
 									"name": "3: 恐惧射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 17}。{@actSaveFail} 10（{@damage 3d6}）点心灵伤害，且目标处于{@condition 恐慌|XPHB}状态，直到其下一回合结束。{@actSaveSuccess} 仅受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "4: Slowing Ray",
-									"type": "item",
 									"name": "4: 缓慢射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 17}。{@actSaveFail} 18（{@damage 4d8}）点暗蚀伤害。直到目标下一个回合结束，目标无法执行反应；其{@variantrule 速度|XPHB}减半；并且在其回合中只能选择执行一个动作或一个{@variantrule 附赠动作|XPHB}，不能同时执行两者。{@actSaveSuccess} 仅造成一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "5: Enervation Ray",
-									"type": "item",
 									"name": "5：汲能射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 17}。{@actSaveFail} 失败则受到16点（{@damage 3d10}）毒素伤害，并且目标在下一回合结束前处于{@condition 中毒|XPHB}状态。当{@condition 中毒|XPHB}时，目标无法恢复{@variantrule 生命值|XPHB}。{@actSaveSuccess} 成功则只受到一半伤害。"
 									]
 								},
 								{
 									"ENG_name": "6: Telekinetic Ray",
-									"type": "item",
 									"name": "6: 念力射线",
+									"type": "item",
 									"entries": [
 										"{@actSave str} {@dc 17}（如果目标是超巨体型，则自动成功）。{@actSaveFail} 死亡暴君可以将目标向任意方向移动至多30英尺。目标将获得{@condition 束缚|XPHB}状态，直到死亡暴君的下一回合开始或死亡暴君处于{@condition 失能|XPHB}状态。死亡暴君还可以通过此射线对物体进行精细控制，例如操纵工具或打开门或容器。"
 									]
 								},
 								{
 									"ENG_name": "7: Sleep Ray",
-									"type": "item",
 									"name": "7：睡眠射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 17}（如果目标是构装体或不死生物，则自动成功）。{@actSaveFail} 目标获得{@condition 昏迷|XPHB}状态，持续1分钟。如果目标受到伤害或5英尺内的生物采取行动唤醒它，该状态结束。"
 									]
 								},
 								{
 									"ENG_name": "8: Petrification Ray",
-									"type": "item",
 									"name": "8: 石化射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 17}。{@actSaveFail 1} 目标获得{@condition 束缚|XPHB}状态，若在其下一回合结束时仍处于{@condition 束缚|XPHB}状态，则需再次进行豁免，成功则此效果对其结束。{@actSaveFail 2} 目标获得{@condition 石化|XPHB}状态而非{@condition 束缚|XPHB}状态。"
 									]
 								},
 								{
 									"ENG_name": "9: Disintegration Ray",
-									"type": "item",
 									"name": "9：解离射线",
+									"type": "item",
 									"entries": [
 										"{@actSave dex} {@dc 17}。{@actSaveFail} 承受36（{@damage 8d8}）点力场伤害。如果目标是魔法力量创造的非魔法物体，则其10英尺{@variantrule 立方 [效应区域]|XPHB|立方}会化为尘土。{@actSaveSuccess} 承受一半伤害。{@actSaveSuccessOrFail} 如果目标是生物且此伤害将其生命值减少至0{@variantrule 生命值|XPHB}，则该生物化为尘土。"
 									]
 								},
 								{
 									"ENG_name": "10: Death Ray",
-									"type": "item",
 									"name": "10：死亡射线",
+									"type": "item",
 									"entries": [
 										"{@actSave dex} {@dc 17}。{@actSaveFail} 55（{@damage 10d10}）点黯蚀伤害。{@actSaveSuccess} 一半伤害。{@actSaveSuccessOrFail} 如果射线将目标的{@variantrule 生命值|XPHB}降至0，目标将死亡。"
 									]
@@ -17547,7 +17547,7 @@
 					"ENG_name": "Negative Energy Cone",
 					"name": "负能量锥域",
 					"entries": [
-						"死亡暴君的中心眼睛在150英尺的{@variantrule 锥状 [效应区域]|XPHB|锥状}范围内释放出一股难以察觉的、带有负能量的魔法波动。在该区域内的生物在死亡暴君的下一回合开始前无法恢复{@variantrule 生命值|XPHB}。该区域内完整的类人尸体立即复生为死亡暴君控制的{@creature 僵尸|XMM}，并在死亡暴君的同一先攻值上立即行动。"
+						"死亡暴君的中心眼睛在150英尺的{@variantrule 锥状 [效应区域]|XPHB|锥状}范围内释放出一股难以察觉的、带有负能量的魔法波动。在该区域内的生物在死亡暴君的下一回合开始前无法恢复{@variantrule 生命值|XPHB}。该区域内完整的类人尸体立即复生为死亡暴君控制的{@creature 丧尸|XMM}，并在死亡暴君的同一先攻值上立即行动。"
 					]
 				}
 			],
@@ -17806,7 +17806,7 @@
 					"ENG_name": "Necrotic Burst",
 					"name": "暗能爆裂",
 					"entries": [
-						"{@atkr 米，半径} {@hit 11}, 近战5尺或远程120尺 {@h}24 ({@damage 7d6}) 黯蚀伤害。"
+						"{@atkr m,r} {@hit 11}, 近战5尺或远程120尺 {@h}24 ({@damage 7d6}) 黯蚀伤害。"
 					]
 				},
 				{
@@ -17953,7 +17953,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"全部；心灵感应 120 尺"
+				"全部; 心灵感应 120 尺"
 			],
 			"cr": "10",
 			"spellcasting": [
@@ -18034,7 +18034,7 @@
 				"位面, 上层"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -18249,7 +18249,7 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -18548,7 +18548,7 @@
 			],
 			"environment": [
 				"海岸",
-				"位面, 气"
+				"位面, 空中"
 			],
 			"treasure": [
 				"奥秘"
@@ -19246,7 +19246,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -19545,7 +19545,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -19804,7 +19804,7 @@
 				"中毒"
 			],
 			"languages": [
-				"原始语（风族语，地族语）"
+				"原初语（风族语，地族语）"
 			],
 			"cr": "1/2",
 			"spellcasting": [
@@ -19853,7 +19853,7 @@
 				}
 			],
 			"environment": [
-				"位面、元素"
+				"位面, 元素"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -20065,7 +20065,7 @@
 			],
 			"environment": [
 				"山地",
-				"位面, 大地",
+				"位面, 土",
 				"幽暗地域"
 			],
 			"soundClip": {
@@ -20156,7 +20156,7 @@
 				"火焰"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "11",
 			"spellcasting": [
@@ -20233,7 +20233,7 @@
 			],
 			"environment": [
 				"荒漠",
-				"位面，火焰"
+				"位面, 火"
 			],
 			"treasure": [
 				"军备"
@@ -20416,7 +20416,7 @@
 					"ENG_name": "Elemental Burst",
 					"name": "元素爆破拳",
 					"entries": [
-						"{@atkr 米，半径} {@hit 15}, 射程30尺或范围150尺 {@h}25 ({@damage 5d6 + 8}) 点由灾难选择的伤害类型：酸蚀、冷冻、火焰、闪电或雷鸣。"
+						"{@atkr m,r} {@hit 15}, 射程30尺或范围150尺 {@h}25 ({@damage 5d6 + 8}) 点由灾难选择的伤害类型：酸蚀、冷冻、火焰、闪电或雷鸣。"
 					]
 				},
 				{
@@ -20430,32 +20430,32 @@
 							"items": [
 								{
 									"ENG_name": "1: Clinging Flames",
-									"type": "item",
 									"name": "1: 焚天业火",
+									"type": "item",
 									"entries": [
 										"{@actSave dex} {@dc 23}，该天启造物可以指定150尺内一个点为中心，所有位于其60尺半径{@variantrule 球状 【效应区域】|XPHB|球状}范围内的生物。{@actSaveFail} 45（{@damage 13d6}）点火焰伤害。{@actSaveSuccess} 伤害减半。{@actSaveSuccessOrFail} 目标开始{@hazard 燃烧|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "2: Freezing Waves",
-									"type": "item",
 									"name": "2: 封冻寒潮",
+									"type": "item",
 									"entries": [
 										"{@actSave str} {@dc 23}，90英尺内的每个生物处于{@variantrule 锥状 [效应区域]|XPHB|锥状}。{@actSaveFail} 22 ({@damage 5d8}) 钝击伤害加 22 ({@damage 5d8}) 冷冻伤害，且目标处于{@condition 倒地|XPHB}状态。{@actSaveSuccess} 仅受半数伤害。{@actSaveSuccessOrFail} 目标的{@variantrule 速度|XPHB}降为0直到其下一回合结束。"
 									]
 								},
 								{
 									"ENG_name": "3: Raging Storm",
-									"type": "item",
 									"name": "3: 呼啸飓风",
+									"type": "item",
 									"entries": [
 										"一片暴风云充满了以灾变者可见的150英尺内某点为中心的60英尺半径的{@variantrule 球状 【效应区域】|XPHB|球状}。这片云持续1分钟或直到灾变者再次使用灾变事件。完全在云中的生物具有{@condition 目盲|XPHB}和{@condition 耳聋|XPHB}状态，并且无法施放带有言语成分的法术。{@actSave dex} {@dc 23}，每个在回合中首次进入云中或在其回合开始时在云中的生物。{@actSaveFail} 18（{@damage 4d8}）闪电伤害加18（{@damage 4d8}）雷鸣伤害。{@actSaveSuccess} 半伤。"
 									]
 								},
 								{
 									"ENG_name": "4: Swallowing Earth",
-									"type": "item",
 									"name": "4: 大地巨口",
+									"type": "item",
 									"entries": [
 										"{@actSave str} {@dc 23}，以地面150英尺内的一点为起点，90英尺内的{@variantrule 立方 [效应区域]|XPHB|立方}内的每个生物。{@actSaveFail} 18点（{@damage 4d8}）钝击伤害加上18点（{@damage 4d8}）强酸伤害，且目标处于{@condition 倒地|XPHB}状态并被埋在瓦砾下。被埋的目标处于{@condition 束缚|XPHB}状态，具有{@variantrule 掩护|XPHB|全身掩护}，并且正在窒息。作为一个动作，被埋的生物或其5英尺内的另一个生物可以进行一次{@dc 18}力量（{@skill 运动|XPHB}）检定。若检定成功，该生物不再被埋。{@actSaveSuccess} 仅受到一半伤害。"
 									]
@@ -20482,7 +20482,7 @@
 				}
 			],
 			"environment": [
-				"位面，元素混沌"
+				"位面, 元素混沌"
 			],
 			"traitTags": [
 				"传奇抗性",
@@ -20631,7 +20631,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -20910,7 +20910,7 @@
 						"{@spell 安定心神|XPHB}",
 						"{@spell 高等复原术|XPHB}",
 						"{@spell 行动无踪|XPHB}",
-						"{@spell 水下呼吸|XPHB}"
+						"{@spell 水中呼吸|XPHB}"
 					],
 					"daily": {
 						"1e": [
@@ -20989,7 +20989,7 @@
 				"任何"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -21159,7 +21159,7 @@
 					"ENG_name": "Otherworldly Strike",
 					"name": "异界打击",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 触及 5 尺 或 射程 30 尺。 {@h}7 ({@damage 1d8 + 3}) 暗蚀 或 光耀 伤害（由圣辉使决定）。"
+						"{@atkr m,r} {@hit 5}, 触及 5 尺 或 射程 30 尺。 {@h}7 ({@damage 1d8 + 3}) 暗蚀 或 光耀 伤害（由圣辉使决定）。"
 					]
 				}
 			],
@@ -21167,7 +21167,7 @@
 				"任何"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"traitTags": [
 				"虚体移动",
@@ -21262,7 +21262,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "12",
 			"trait": [
@@ -21321,7 +21321,7 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
 				"军备"
@@ -21463,7 +21463,7 @@
 				"森林"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -21723,7 +21723,7 @@
 				"森林"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"dragonAge": "成年",
 			"traitTags": [
@@ -21872,7 +21872,7 @@
 				"森林"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -22023,7 +22023,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"traitTags": [
 				"魔鬼视界"
@@ -22121,7 +22121,7 @@
 				"昏迷"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "5",
 			"trait": [
@@ -22172,7 +22172,7 @@
 			],
 			"environment": [
 				"荒漠",
-				"位面，火焰"
+				"位面, 火"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -22429,7 +22429,7 @@
 					"ENG_name": "Fire Ray",
 					"name": "火焰射线",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}，射程 5 尺或 60 尺。{@h}13（{@damage 3d6 + 3}）火焰伤害。"
+						"{@atkr m,r} {@hit 5}，射程 5 尺或 60 尺。{@h}13（{@damage 3d6 + 3}）火焰伤害。"
 					]
 				}
 			],
@@ -22571,7 +22571,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -22668,8 +22668,8 @@
 					"ENG_name": "Berserk",
 					"name": "失心狂怒",
 					"entries": [
-						"每当魔像开始其回合时{@variantrule 浴血|XPHB}，掷{@dice 1d6}。如果结果是6，魔像会陷入狂暴。在狂暴状态下，魔像会攻击它能看到的最近的生物。如果没有足够靠近的生物可供攻击，魔像会攻击物体。一旦魔像陷入狂暴，它将保持这种状态，直到被摧毁或不再{@variantrule 浴血|XPHB}。",
-						"魔像的创造者若在狂暴魔像60英尺范围内，可通过采取行动进行一次{@dc 15}魅力（{@skill 游说|XPHB}）检定来尝试安抚它；魔像必须能够听到其创造者的声音。若检定成功，魔像在下一个回合开始前不再处于狂暴状态，届时如果它仍然处于{@variantrule 浴血|XPHB}状态，它将再次开始为狂暴特性进行投掷。"
+						"每当该魔像在其回合开始时处于{@status 浴血|XPHB}状态，投掷{@dice 1d6}。若结果为6，魔像陷入失心狂怒。在其狂怒期间的每个回合，魔像会攻击它能看见的最近生物。如果没有足够接近的生物可供移动并攻击，魔像会攻击一个物件。一旦魔像陷入失心狂怒，它将保持该状态直到被摧毁或不再处于{@status 浴血|XPHB}状态。",
+						"肉身魔像的创造者若在失心狂怒的魔像60尺范围内，可消耗一个动作尝试通过进行{@dc 15}的魅力（{@skill 游说|XPHB}）检定来安抚它；魔像必须能听见其创造者。若检定成功，魔像将停止失心狂怒状态直到其下个回合开始，届时若仍处于{@status 浴血|XPHB}状态，则会再次开始为失心狂怒特性投掷检定。"
 					]
 				},
 				{
@@ -23915,7 +23915,7 @@
 					"ENG_name": "Horrific Necrosis",
 					"name": "骇怖坏灭",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}，射程5英尺或120英尺。{@h}15（{@damage 2d10 + 4}）点黯蚀伤害，且目标获得{@condition 恐慌|XPHB}状态，持续至其下一回合结束。"
+						"{@atkr m,r} {@hit 7}，射程5英尺或120英尺。{@h}15（{@damage 2d10 + 4}）点黯蚀伤害，且目标获得{@condition 恐慌|XPHB}状态，持续至其下一回合结束。"
 					]
 				}
 			],
@@ -24634,7 +24634,7 @@
 					"ENG_name": "Bloodied Fury",
 					"name": "浴血狂怒",
 					"entries": [
-						"这只野猪在处于{@variantrule 浴血|XPHB}状态时，对近战攻击投掷具有{@variantrule 优势|XPHB}。"
+						"当野猪处于{@status 浴血|XPHB}状态时，它在近战攻击检定上具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -25129,7 +25129,7 @@
 		},
 		{
 			"ENG_name": "Giant Elk",
-			"name": "巨麋鹿",
+			"name": "巨赤鹿",
 			"source": "XMM",
 			"page": 356,
 			"srd52": true,
@@ -25177,7 +25177,7 @@
 				"光耀"
 			],
 			"languages": [
-				"天界生物；懂得通用语",
+				"天族语; 懂通用语",
 				"精灵语",
 				"并且能听懂木族语但无法说出口"
 			],
@@ -25546,7 +25546,7 @@
 					"ENG_name": "Rampage (1/Day)",
 					"name": "横行(1/日)",
 					"entries": [
-						"在对已经处于{@variantrule 浴血|XPHB}的生物造成伤害后，鬣狗可以移动至多其{@variantrule 速度|XPHB}的一半，并进行一次撕咬攻击。"
+						"在对一个已经处于{@status 浴血|XPHB}状态的生物造成伤害后，巨鬣狗可以立即移动至多一半的{@variantrule 速度|XPHB}，并进行一次啃咬攻击。"
 					]
 				}
 			],
@@ -25700,7 +25700,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"章鱼只能在水下呼吸。它可以在水下外屏住呼吸1小时。"
 					]
@@ -25732,7 +25732,7 @@
 				"path": "bestiary/giant-octopus.mp3"
 			},
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"D"
@@ -25802,7 +25802,7 @@
 				"光耀"
 			],
 			"languages": [
-				"天界生物；懂得通用语",
+				"天族语; 懂通用语",
 				"精灵语",
 				"并且能听懂木族语但无法说出口"
 			],
@@ -26095,7 +26095,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"海马只能在水下呼吸。"
 					]
@@ -26123,7 +26123,7 @@
 				"水下"
 			],
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"damageTags": [
 				"B"
@@ -26180,7 +26180,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"鲨鱼只能在水下呼吸。"
 					]
@@ -26210,7 +26210,7 @@
 				"path": "bestiary/giant-shark.mp3"
 			},
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"B"
@@ -26385,7 +26385,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"乌贼只能在水下呼吸。"
 					]
@@ -26427,7 +26427,7 @@
 				"水下"
 			],
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"SD"
@@ -27026,7 +27026,7 @@
 									"ENG_name": "1-4",
 									"type": "item",
 									"name": "1-4",
-									"entry": "目标不做任何事。"
+									"entry": "目标不受影响。"
 								},
 								{
 									"ENG_name": "5-6",
@@ -27205,7 +27205,7 @@
 					"ENG_name": "Draconic Strike",
 					"name": "龙之打击",
 					"entries": [
-						"{@atkr 米，半径} {@hit 10}，触及 10 尺或射程 120 尺。{@h}12（{@damage 2d6 + 5}）挥砍伤害加 17（{@damage 5d6}）火焰伤害，且目标获得{@condition 恐慌|XPHB}状态，直到吉斯扬基的下一回合开始。"
+						"{@atkr m,r} {@hit 10}，触及 10 尺或射程 120 尺。{@h}12（{@damage 2d6 + 5}）挥砍伤害加 17（{@damage 5d6}）火焰伤害，且目标获得{@condition 恐慌|XPHB}状态，直到吉斯扬基的下一回合开始。"
 					]
 				},
 				{
@@ -27217,7 +27217,7 @@
 				}
 			],
 			"environment": [
-				"位面，星界"
+				"位面, 星光"
 			],
 			"treasure": [
 				"军备"
@@ -27373,7 +27373,7 @@
 				}
 			],
 			"environment": [
-				"位面，星界"
+				"位面, 星光"
 			],
 			"treasure": [
 				"军备"
@@ -27515,7 +27515,7 @@
 				}
 			],
 			"environment": [
-				"位面，星界"
+				"位面, 星光"
 			],
 			"treasure": [
 				"军备"
@@ -27672,7 +27672,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"奥秘",
@@ -27812,12 +27812,12 @@
 					"ENG_name": "Psychic Warp",
 					"name": "心灵扭曲",
 					"entries": [
-						"{@atkr 米，半径} {@hit 8}，近战5英尺或远程120英尺 {@h}26 ({@damage 4d10 + 4}) 心灵伤害，且目标受到吉斯泽莱的选择：(A) {@condition 魅惑|XPHB}状态，持续到吉斯泽莱的下一个回合开始，或 (B) {@condition 倒地|XPHB}状态，前提是目标为大型或更小的生物。"
+						"{@atkr m,r} {@hit 8}，近战5英尺或远程120英尺 {@h}26 ({@damage 4d10 + 4}) 心灵伤害，且目标受到吉斯泽莱的选择：(A) {@condition 魅惑|XPHB}状态，持续到吉斯泽莱的下一个回合开始，或 (B) {@condition 倒地|XPHB}状态，前提是目标为大型或更小的生物。"
 					]
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"奥秘",
@@ -27974,7 +27974,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"奥秘",
@@ -28079,7 +28079,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "9",
 			"spellcasting": [
@@ -28146,10 +28146,10 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -28265,7 +28265,7 @@
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}，射程 5 英尺或 20/60 英尺 {@h}11（{@damage 2d6 + 4}）穿刺伤害。"
+						"{@atkr m,r} {@hit 7}，射程 5 英尺或 20/60 英尺 {@h}11（{@damage 2d6 + 4}）穿刺伤害。"
 					]
 				},
 				{
@@ -28386,7 +28386,7 @@
 					"ENG_name": "Abyssal Strike",
 					"name": "深渊打击",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}，触及 5 尺或射程 60 尺。{@h}20（{@damage 5d6 + 3}）毒素伤害。"
+						"{@atkr m,r} {@hit 6}，触及 5 尺或射程 60 尺。{@h}20（{@damage 5d6 + 3}）毒素伤害。"
 					]
 				},
 				{
@@ -28402,7 +28402,7 @@
 					"ENG_name": "Rampage (2/Day)",
 					"name": "横行（2/日）",
 					"entries": [
-						"在对已经处于{@variantrule 浴血|XPHB}状态的生物造成伤害后，鬣狗人立即移动至多其{@variantrule 速度|XPHB}的一半距离，并进行一次深渊打击攻击。"
+						"在已经对处于{@status 浴血|XPHB}状态的生物造成伤害后，该鬣狗人可移动至多一半的{@variantrule 速度|XPHB}，并进行一次深渊打击攻击。"
 					]
 				}
 			],
@@ -28516,7 +28516,7 @@
 					"ENG_name": "Rampage (2/Day)",
 					"name": "横行（2/日）",
 					"entries": [
-						"在对已经处于{@variantrule 浴血|XPHB}状态的生物造成伤害后，鬣狗人立即移动至多其{@variantrule 速度|XPHB}的一半，并进行一次撕咬攻击。"
+						"在已经对处于{@status 浴血|XPHB}状态的生物造成伤害后，该鬣狗人可立即移动至多一半的{@variantrule 速度|XPHB}，并进行一次啃咬攻击。"
 					]
 				}
 			],
@@ -28635,7 +28635,7 @@
 					"ENG_name": "Rampage (2/Day)",
 					"name": "横行（2/日）",
 					"entries": [
-						"在立即对已处于{@variantrule 浴血|XPHB}状态的生物造成伤害后，鬣狗人以最多一半的{@variantrule 速度|XPHB}移动，并进行一次骨鞭攻击。"
+						"在已经处于{@status 浴血|XPHB}状态的生物受到伤害后，豺狼人可立即移动至多一半的{@variantrule 速度|XPHB}，并进行一次骸骨长鞭攻击。"
 					]
 				}
 			],
@@ -28737,7 +28737,7 @@
 					"ENG_name": "Rampage (1/Day)",
 					"name": "横行(1/日)",
 					"entries": [
-						"在立即对已经处于{@variantrule 浴血|XPHB}状态的生物造成伤害后，鬣狗人最多移动其{@variantrule 速度|XPHB}的一半，并进行一次撕裂攻击。"
+						"在已经对处于{@status 浴血|XPHB}状态的生物造成伤害后，鬣狗人可立即移动至多一半的{@variantrule 速度|XPHB}，并进行一次撕裂攻击。"
 					]
 				}
 			],
@@ -28954,12 +28954,12 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"跨位面，阿刻戎",
-				"位面，妖精荒野",
+				"位面, 修罗场",
+				"位面, 妖精荒野",
 				"幽暗地域"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"soundClip": {
@@ -29074,7 +29074,7 @@
 					"ENG_name": "Hex Stick",
 					"name": "咒术棍",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 触及 5 英尺 或 射程 60 英尺. {@h}12 ({@damage 2d8 + 3}) 心灵伤害。"
+						"{@atkr m,r} {@hit 5}, 触及 5 英尺 或 射程 60 英尺. {@h}12 ({@damage 2d8 + 3}) 心灵伤害。"
 					]
 				}
 			],
@@ -29091,12 +29091,12 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"跨位面，阿刻戎",
-				"位面，妖精荒野",
+				"位面, 修罗场",
+				"位面, 妖精荒野",
 				"幽暗地域"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"senseTags": [
@@ -29197,7 +29197,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}，触及5尺或射程20/60尺。{@h}4（{@damage 1d4 + 2}）穿刺伤害。"
+						"{@atkr m,r} {@hit 4}，触及5尺或射程20/60尺。{@h}4（{@damage 1d4 + 2}）穿刺伤害。"
 					]
 				}
 			],
@@ -29214,12 +29214,12 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"跨位面，阿刻戎",
-				"位面，妖精荒野",
+				"位面, 修罗场",
+				"位面, 妖精荒野",
 				"幽暗地域"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"senseTags": [
@@ -29336,12 +29336,12 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"跨位面，阿刻戎",
-				"位面，妖精荒野",
+				"位面, 修罗场",
+				"位面, 妖精荒野",
 				"幽暗地域"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"senseTags": [
@@ -29744,7 +29744,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
 				"军备"
@@ -30067,7 +30067,7 @@
 			],
 			"languages": [
 				"通用语",
-				"史拉蟾；心灵感应 60 尺"
+				"史拉蟾语; 心灵感应 60 尺"
 			],
 			"cr": "9",
 			"spellcasting": [
@@ -30139,7 +30139,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"任何"
@@ -30559,7 +30559,7 @@
 			],
 			"languages": [
 				"通用语",
-				"史拉蟾；心灵感应 60 尺"
+				"史拉蟾语; 心灵感应 60 尺"
 			],
 			"cr": "8",
 			"spellcasting": [
@@ -30613,7 +30613,7 @@
 					"ENG_name": "Chaos Staff",
 					"name": "混沌法杖",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}，触及 10 尺或射程 60 尺。{@h}8（{@damage 1d8 + 4}）点力场伤害。直到斯拉德的下一回合开始，目标的状况由投掷{@dice 1d4}决定：1，{@condition 魅惑|XPHB}；2，{@condition 恐慌|XPHB}；3，{@condition 中毒|XPHB}；或 4，{@condition 失能|XPHB}。"
+						"{@atkr m,r} {@hit 7}，触及 10 尺或射程 60 尺。{@h}8（{@damage 1d8 + 4}）点力场伤害。直到斯拉德的下一回合开始，目标的状况由投掷{@dice 1d4}决定：1，{@condition 魅惑|XPHB}；2，{@condition 恐慌|XPHB}；3，{@condition 中毒|XPHB}；或 4，{@condition 失能|XPHB}。"
 					]
 				}
 			],
@@ -30627,7 +30627,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"任何"
@@ -31208,7 +31208,7 @@
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atkr 米，半径} {@hit 3}，触及 5 尺 或 射程 20/60 尺。{@h}4（{@damage 1d6 + 1}）穿刺伤害。"
+						"{@atkr m,r} {@hit 3}，触及 5 尺 或 射程 20/60 尺。{@h}4（{@damage 1d6 + 1}）穿刺伤害。"
 					]
 				}
 			],
@@ -31303,7 +31303,7 @@
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}, 触及 5 尺 或 射程 30/120 尺 {@h}14 ({@damage 3d6 + 4}) 穿刺伤害。"
+						"{@atkr m,r} {@hit 6}, 触及 5 尺 或 射程 30/120 尺 {@h}14 ({@damage 3d6 + 4}) 穿刺伤害。"
 					]
 				},
 				{
@@ -31466,7 +31466,7 @@
 				"位面, 上层"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -31945,7 +31945,7 @@
 					"ENG_name": "Object Slam",
 					"name": "掷物猛击",
 					"entries": [
-						"{@atkr 米，半径} {@hit 9}（若目标在复仇亡灵的区域内则具有{@variantrule 优势|XPHB}），触及10尺或射程30/90尺。{@h}27（{@damage 5d8 + 5}）钝击伤害。"
+						"{@atkr m,r} {@hit 9}（若目标在复仇亡灵的区域内则具有{@variantrule 优势|XPHB}），触及10尺或射程30/90尺。{@h}27（{@damage 5d8 + 5}）钝击伤害。"
 					]
 				},
 				{
@@ -32068,7 +32068,7 @@
 		},
 		{
 			"ENG_name": "Hell Hound",
-			"name": "地狱犬",
+			"name": "地狱猎犬",
 			"source": "XMM",
 			"page": 165,
 			"srd52": true,
@@ -32145,7 +32145,7 @@
 			],
 			"environment": [
 				"山地",
-				"位面，下层",
+				"位面, 下层",
 				"幽暗地域"
 			],
 			"soundClip": {
@@ -32376,7 +32376,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "8",
 			"trait": [
@@ -32428,7 +32428,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
 				"任何"
@@ -32835,7 +32835,7 @@
 				"草地",
 				"丘陵",
 				"山地",
-				"跨位面，阿刻戎",
+				"位面, 修罗场",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -32956,7 +32956,7 @@
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}，触及5尺或射程30/120尺 {@h}11（{@damage 2d6 + 4}）穿刺伤害，并且目标{@variantrule 速度|XPHB}减少10尺，直到大地精下一回合开始。"
+						"{@atkr m,r} {@hit 6}，触及5尺或射程30/120尺 {@h}11（{@damage 2d6 + 4}）穿刺伤害，并且目标{@variantrule 速度|XPHB}减少10尺，直到大地精下一回合开始。"
 					]
 				},
 				{
@@ -32982,7 +32982,7 @@
 				"草地",
 				"丘陵",
 				"山地",
-				"跨位面，阿刻戎",
+				"位面, 修罗场",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -33106,7 +33106,7 @@
 				"草地",
 				"丘陵",
 				"山地",
-				"跨位面，阿刻戎",
+				"位面, 修罗场",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -33140,7 +33140,7 @@
 		},
 		{
 			"ENG_name": "Homunculus",
-			"name": "造妖",
+			"name": "人工生命体",
 			"source": "XMM",
 			"page": 172,
 			"srd52": true,
@@ -33387,7 +33387,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "11",
 			"trait": [
@@ -33437,10 +33437,10 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -33519,7 +33519,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"鲨鱼只能在水下呼吸。"
 					]
@@ -33542,7 +33542,7 @@
 				"path": "bestiary/hunter-shark.mp3"
 			},
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"B"
@@ -33559,7 +33559,7 @@
 		},
 		{
 			"ENG_name": "Hydra",
-			"name": "多头蛇蜥",
+			"name": "多头蛇",
 			"source": "XMM",
 			"page": 175,
 			"srd52": true,
@@ -33831,7 +33831,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "14",
 			"spellcasting": [
@@ -33882,7 +33882,7 @@
 					"ENG_name": "Ice Spear",
 					"name": "冰矛",
 					"entries": [
-						"{@atkr 米，半径}{@hit 10}，射程5英尺或30/120英尺。{@h}14 ({@damage 2d8 + 5})穿刺伤害，外加10 ({@damage 3d6})寒冰伤害。直到其下一回合结束，目标无法执行{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}，其{@variantrule 速度|XPHB}减少10英尺，并且在回合内只能移动或执行一个动作，不能同时进行。{@hom}投掷后，矛会魔法般地立即返回魔鬼的手中。"
+						"{@atkr m,r}{@hit 10}，射程5英尺或30/120英尺。{@h}14 ({@damage 2d8 + 5})穿刺伤害，外加10 ({@damage 3d6})寒冰伤害。直到其下一回合结束，目标无法执行{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}，其{@variantrule 速度|XPHB}减少10英尺，并且在回合内只能移动或执行一个动作，不能同时进行。{@hom}投掷后，矛会魔法般地立即返回魔鬼的手中。"
 					]
 				},
 				{
@@ -33894,7 +33894,7 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
 				"奥秘"
@@ -34048,7 +34048,7 @@
 				}
 			],
 			"environment": [
-				"位面、元素"
+				"位面, 元素"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -34290,7 +34290,7 @@
 			"languages": [
 				"深渊语",
 				"通用语",
-				"炼狱语；心灵感应 60 尺"
+				"炼狱语; 心灵感应 60 尺"
 			],
 			"cr": "4",
 			"spellcasting": [
@@ -34350,7 +34350,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层",
+				"位面, 下层",
 				"城镇"
 			],
 			"treasure": [
@@ -34988,7 +34988,7 @@
 				"草地"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -35071,7 +35071,7 @@
 			"passive": 14,
 			"resist": [
 				{
-					"special": "参见活体阴影"
+					"special": "看到活体幽影"
 				}
 			],
 			"immune": [
@@ -35131,7 +35131,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -35243,17 +35243,17 @@
 					"ENG_name": "Shadow Blade",
 					"name": "幽影刃",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 近战攻击范围 5 尺 或 远程攻击范围 60 尺 {@h}6 ({@damage 1d6 + 3}) 黯蚀伤害。{@hom}这把武器在远程攻击后立即魔法般地返回到肯库的手中。"
+						"{@atkr m,r} {@hit 5}, 近战攻击范围 5 尺 或 远程攻击范围 60 尺 {@h}6 ({@damage 1d6 + 3}) 黯蚀伤害。{@hom}这把武器在远程攻击后立即魔法般地返回到肯库的手中。"
 					]
 				}
 			],
 			"environment": [
 				"森林",
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"城镇"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"soundClip": {
@@ -35560,7 +35560,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}，触及5尺或射程20/60尺。{@h}4（{@damage 1d4 + 2}）穿刺伤害。"
+						"{@atkr m,r} {@hit 4}，触及5尺或射程20/60尺。{@h}4（{@damage 1d4 + 2}）穿刺伤害。"
 					]
 				}
 			],
@@ -35670,10 +35670,10 @@
 				"束缚"
 			],
 			"languages": [
-				"懂得深渊语",
+				"懂深渊语",
 				"天界语",
 				"炼狱语",
-				"会原始语但无法说话；心灵感应120尺"
+				"和原初语但无法说话; 心灵感应120尺"
 			],
 			"cr": {
 				"cr": "23",
@@ -35882,7 +35882,7 @@
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atkr 米，半径}{@hit 3}，触及 5 尺或射程 20/60 尺 {@h}5（{@damage 1d8 + 1}）穿刺伤害。"
+						"{@atkr m,r}{@hit 3}，触及 5 尺或射程 20/60 尺 {@h}5（{@damage 1d8 + 1}）穿刺伤害。"
 					]
 				},
 				{
@@ -35907,7 +35907,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -36060,7 +36060,7 @@
 					"ENG_name": "Strange Scepter",
 					"name": "怪异圣杖",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}, 范围 5 英尺或射程 120 英尺 {@h}20 ({@damage 5d6 + 3}) 闪电伤害。"
+						"{@atkr m,r} {@hit 6}, 范围 5 英尺或射程 120 英尺 {@h}20 ({@damage 5d6 + 3}) 闪电伤害。"
 					]
 				}
 			],
@@ -36069,7 +36069,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -36196,7 +36196,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -36329,7 +36329,7 @@
 				"幽暗地域"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -36673,7 +36673,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层"
+				"位面, 下层"
 			],
 			"senseTags": [
 				"D"
@@ -36771,7 +36771,7 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -36980,7 +36980,7 @@
 					"ENG_name": "Eldritch Burst",
 					"name": "魔能迸裂",
 					"entries": [
-						"{@atkr 米，半径} {@hit 12}, 5尺范围内或120尺射程 {@h}31（{@damage 4d12 + 5}）点力场伤害。"
+						"{@atkr m,r} {@hit 12}, 5尺范围内或120尺射程 {@h}31（{@damage 4d12 + 5}）点力场伤害。"
 					]
 				},
 				{
@@ -37356,7 +37356,7 @@
 					"ENG_name": "Earth Burst",
 					"name": "地能爆发",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}，触及5尺或射程60尺，{@h}9（{@damage 2d6 + 2}）钝击伤害。"
+						"{@atkr m,r} {@hit 4}，触及5尺或射程60尺，{@h}9（{@damage 2d6 + 2}）钝击伤害。"
 					]
 				},
 				{
@@ -37664,7 +37664,7 @@
 					"ENG_name": "Arcane Burst",
 					"name": "奥能爆发",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}，触及5尺或射程120尺 {@h}16（{@damage 3d8 + 3}）力场伤害。"
+						"{@atkr m,r} {@hit 6}，触及5尺或射程120尺 {@h}16（{@damage 3d8 + 3}）力场伤害。"
 					]
 				}
 			],
@@ -37790,7 +37790,7 @@
 					"ENG_name": "Arcane Burst",
 					"name": "奥能爆发",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 攻击距离 5 尺或射程 120 尺。{@h}14 ({@damage 2d10 + 3}) 力场伤害。"
+						"{@atkr m,r} {@hit 5}, 攻击距离 5 尺或射程 120 尺。{@h}14 ({@damage 2d10 + 3}) 力场伤害。"
 					]
 				}
 			],
@@ -37908,7 +37908,7 @@
 				}
 			],
 			"environment": [
-				"位面、元素"
+				"位面, 元素"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -37981,7 +37981,7 @@
 				"火焰"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "1/2",
 			"trait": [
@@ -38012,7 +38012,7 @@
 				}
 			],
 			"environment": [
-				"位面，火焰"
+				"位面, 火"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -38207,7 +38207,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -38326,7 +38326,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"senseTags": [
 				"D"
@@ -38354,7 +38354,7 @@
 		},
 		{
 			"ENG_name": "Manticore",
-			"name": "蝎尾狮",
+			"name": "刺尾狮",
 			"source": "XMM",
 			"page": 202,
 			"srd52": true,
@@ -38617,7 +38617,7 @@
 				"水下"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -38735,7 +38735,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "16",
 			"trait": [
@@ -38803,7 +38803,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
 				"军备"
@@ -39107,7 +39107,7 @@
 					"ENG_name": "Ocean Spear",
 					"name": "瀚海之矛",
 					"entries": [
-						"{@atkr 米，半径} {@hit 2}, 近战5尺或远程20/60尺{@h}3 ({@damage 1d6})点穿刺伤害加上2 ({@damage 1d4})点冷冻伤害。如果目标是生物，它的{@variantrule 速度|XPHB}在下回合结束前减少10尺。{@hom}投射攻击后，鱼叉会立即魔法般地返回人鱼手中。"
+						"{@atkr m,r} {@hit 2}, 近战5尺或远程20/60尺{@h}3 ({@damage 1d6})点穿刺伤害加上2 ({@damage 1d4})点冷冻伤害。如果目标是生物，它的{@variantrule 速度|XPHB}在下回合结束前减少10尺。{@hom}投射攻击后，鱼叉会立即魔法般地返回人鱼手中。"
 					]
 				}
 			],
@@ -39230,7 +39230,7 @@
 					"ENG_name": "Aquatic Burst",
 					"name": "洋流冲刷",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}, 触及5尺或射程60尺 {@h}20 ({@damage 3d10 + 4}) 冷冻伤害。如果目标是大型或更小的生物，它将处于{@condition 倒地|XPHB}状态。"
+						"{@atkr m,r} {@hit 7}, 触及5尺或射程60尺 {@h}20 ({@damage 3d10 + 4}) 冷冻伤害。如果目标是大型或更小的生物，它将处于{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -39363,7 +39363,7 @@
 					"ENG_name": "Harpoon",
 					"name": "鱼叉",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}，触及5尺或射程20/60尺 {@h}11（{@damage 2d6 + 4}）穿刺伤害。如果目标是大型或更小的生物，梅罗将目标直线拉向自己最多15尺。"
+						"{@atkr m,r} {@hit 6}，触及5尺或射程20/60尺 {@h}11（{@damage 2d6 + 4}）穿刺伤害。如果目标是大型或更小的生物，梅罗将目标直线拉向自己最多15尺。"
 					]
 				}
 			],
@@ -39469,7 +39469,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"炼狱语；心灵感应 60 尺"
+				"炼狱语; 心灵感应 60 尺"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -39526,7 +39526,7 @@
 					"ENG_name": "Mercurial Trident",
 					"name": "变幻三叉戟",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}, 射程 5 英尺或 20/60 英尺。{@h}8 ({@damage 1d8 + 4}) 穿刺伤害加 10 ({@damage 3d6}) 力场伤害。{@hom}三叉戟在远程攻击后立即魔法般地返回梅佐洛斯的爪中。"
+						"{@atkr m,r} {@hit 7}, 射程 5 英尺或 20/60 英尺。{@h}8 ({@damage 1d8 + 4}) 穿刺伤害加 10 ({@damage 3d6}) 力场伤害。{@hom}三叉戟在远程攻击后立即魔法般地返回梅佐洛斯的爪中。"
 					]
 				}
 			],
@@ -39540,7 +39540,7 @@
 				}
 			],
 			"environment": [
-				"位面，焦炎地狱"
+				"位面, 焦炎地狱"
 			],
 			"treasure": [
 				"军备"
@@ -39771,7 +39771,7 @@
 			],
 			"languages": [
 				"深潜语",
-				"地底通用语；心灵感应 120 尺"
+				"地底通用语; 心灵感应 120 尺"
 			],
 			"cr": "7",
 			"gear": [
@@ -39944,7 +39944,7 @@
 			],
 			"languages": [
 				"深潜语",
-				"地底通用语；心灵感应 120 尺"
+				"地底通用语; 心灵感应 120 尺"
 			],
 			"cr": "11",
 			"gear": [
@@ -40017,7 +40017,7 @@
 					"ENG_name": "Arcane Tentacles",
 					"name": "奥术触须",
 					"entries": [
-						"{@atkr 米，半径} {@hit 9}，射程 5 尺或 120 尺。{@h}27 ({@damage 4d10 + 5}) 点心灵伤害，且夺心魔可以将目标传送至其可见的表面上或足以支撑目标的液体中一个未占据的空间，最多 30 尺。如果此伤害将目标的{@variantrule 生命值|XPHB}降为 0，夺心魔会将其杀死并魔法般地吞噬其大脑。"
+						"{@atkr m,r} {@hit 9}，射程 5 尺或 120 尺。{@h}27 ({@damage 4d10 + 5}) 点心灵伤害，且夺心魔可以将目标传送至其可见的表面上或足以支撑目标的液体中一个未占据的空间，最多 30 尺。如果此伤害将目标的{@variantrule 生命值|XPHB}降为 0，夺心魔会将其杀死并魔法般地吞噬其大脑。"
 					]
 				},
 				{
@@ -40235,7 +40235,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -40330,12 +40330,12 @@
 					"ENG_name": "Clockwork Blade",
 					"name": "时械剑刃",
 					"entries": [
-						"{@atkr 米，半径} {@hit 3}, 近战范围5尺或远程范围30尺. {@h}4 ({@damage 1d6 + 1}) 力场伤害. {@hom}在进行远程攻击后，刀刃会立即魔法般地返回到魔像的手中。"
+						"{@atkr m,r} {@hit 3}, 近战范围5尺或远程范围30尺. {@h}4 ({@damage 1d6 + 1}) 力场伤害. {@hom}在进行远程攻击后，刀刃会立即魔法般地返回到魔像的手中。"
 					]
 				}
 			],
 			"environment": [
-				"位面，机械境"
+				"位面, 机械境"
 			],
 			"senseTags": [
 				"U"
@@ -40424,7 +40424,7 @@
 				}
 			],
 			"environment": [
-				"位面，机械境"
+				"位面, 机械境"
 			],
 			"senseTags": [
 				"U"
@@ -40526,7 +40526,7 @@
 				}
 			],
 			"environment": [
-				"位面，机械境"
+				"位面, 机械境"
 			],
 			"senseTags": [
 				"U"
@@ -40634,7 +40634,7 @@
 				}
 			],
 			"environment": [
-				"位面，机械境"
+				"位面, 机械境"
 			],
 			"senseTags": [
 				"U"
@@ -40722,12 +40722,12 @@
 					"ENG_name": "Clockwork Spear",
 					"name": "时械之矛",
 					"entries": [
-						"{@atkr 米，半径} {@hit 3}, 5尺触及或120尺射程 {@h}4 ({@damage 1d6 + 1}) 力场伤害。 {@hom}在远程攻击后，标枪会立即魔法般地回到摩登龙的手中。"
+						"{@atkr m,r} {@hit 3}, 5尺触及或120尺射程 {@h}4 ({@damage 1d6 + 1}) 力场伤害。 {@hom}在远程攻击后，标枪会立即魔法般地回到摩登龙的手中。"
 					]
 				}
 			],
 			"environment": [
-				"位面，机械境"
+				"位面, 机械境"
 			],
 			"senseTags": [
 				"U"
@@ -40831,7 +40831,7 @@
 				}
 			],
 			"environment": [
-				"位面、元素"
+				"位面, 元素"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -41041,7 +41041,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -41284,7 +41284,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -41803,7 +41803,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "13",
 			"trait": [
@@ -41864,10 +41864,10 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -42155,7 +42155,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层"
+				"位面, 下层"
 			],
 			"treasure": [
 				"奥秘"
@@ -42241,7 +42241,7 @@
 				"火焰"
 			],
 			"languages": [
-				"懂得深渊语",
+				"懂深渊语",
 				"通用语",
 				"能理解但不可以说炼狱语"
 			],
@@ -42279,7 +42279,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层"
+				"位面, 下层"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -42510,7 +42510,7 @@
 					"ENG_name": "Beguiling Strike",
 					"name": "迷魅惑心",
 					"entries": [
-						"{@atkr 米，半径} {@hit 8}，触及 5 尺或射程 60 尺。{@h}18（{@damage 4d6 + 4}）点心灵伤害，且目标获得{@condition 魅惑|XPHB}状态，直到贵族的下一回合开始。"
+						"{@atkr m,r} {@hit 8}，触及 5 尺或射程 60 尺。{@h}18（{@damage 4d6 + 4}）点心灵伤害，且目标获得{@condition 魅惑|XPHB}状态，直到贵族的下一回合开始。"
 					]
 				}
 			],
@@ -42726,7 +42726,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"炼狱语；心灵感应 60 尺"
+				"炼狱语; 心灵感应 60 尺"
 			],
 			"cr": "9",
 			"trait": [
@@ -42757,7 +42757,7 @@
 					"ENG_name": "Mercurial Axe",
 					"name": "变幻巨斧",
 					"entries": [
-						"{@atkr 米，半径} {@hit 9}，触及10英尺或射程30/90英尺。{@h}18点（{@damage 2d12 + 5}）挥砍伤害加上10点（{@damage 3d6}）力场伤害。{@hom}斧头在远程攻击后立即神奇地返回到夜鬼婆的手中。"
+						"{@atkr m,r} {@hit 9}，触及10英尺或射程30/90英尺。{@h}18点（{@damage 2d12 + 5}）挥砍伤害加上10点（{@damage 3d6}）力场伤害。{@hom}斧头在远程攻击后立即神奇地返回到夜鬼婆的手中。"
 					]
 				}
 			],
@@ -42771,7 +42771,7 @@
 				}
 			],
 			"environment": [
-				"位面，焦炎地狱"
+				"位面, 焦炎地狱"
 			],
 			"treasure": [
 				"军备"
@@ -42892,7 +42892,7 @@
 					"ENG_name": "Split",
 					"name": "分裂",
 					"entries": [
-						"{@actTrigger} 当果冻怪为大型或中型且拥有10点或更多{@variantrule 生命值|XPHB}时，它变为{@variantrule 浴血|XPHB}或受到闪电或挥砍伤害。{@actResponse} 果冻怪分裂成两个新的赭色果冻怪。每个新果冻怪比原果冻怪体型小一级，并在其{@variantrule 先攻|XPHB}时行动。原果冻怪的{@variantrule 生命值|XPHB}均匀分配给新果冻怪（向下取整）。"
+						"{@actTrigger} 当赭冻怪体型为大型或中型且拥有10点或更多{@variantrule 生命值|XPHB}时，它变为{@status 浴血|XPHB}状态或受到闪电或挥砍伤害。{@actResponse} 赭冻怪分裂成两个新的赭冻怪。每个新赭冻怪的体型比原赭冻怪小一级，并在其{@variantrule 先攻|XPHB}上行动。原赭冻怪的{@variantrule 生命值|XPHB}被均分给新赭冻怪（向下取整）。"
 					]
 				}
 			],
@@ -42976,7 +42976,7 @@
 				},
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"章鱼只能在水下呼吸。"
 					]
@@ -43009,7 +43009,7 @@
 				"path": "bestiary/octopus.mp3"
 			},
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"D"
@@ -43094,7 +43094,7 @@
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 6}, 触及5英尺或射程30/120英尺 {@h}11 ({@damage 2d6 + 4}) 穿刺伤害。"
+						"{@atkr m,r} {@hit 6}, 触及5英尺或射程30/120英尺 {@h}11 ({@damage 2d6 + 4}) 穿刺伤害。"
 					]
 				}
 			],
@@ -43212,7 +43212,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -43298,7 +43298,7 @@
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 触及5尺或射程30/尺120 {@h}6 ({@damage 1d6 + 3})穿刺伤害。"
+						"{@atkr m,r} {@hit 5}, 触及5尺或射程30/尺120 {@h}6 ({@damage 1d6 + 3})穿刺伤害。"
 					]
 				}
 			],
@@ -44058,7 +44058,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"languageTags": [
@@ -44185,7 +44185,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -44320,7 +44320,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -44557,7 +44557,7 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"位面，以太",
+				"位面, 以太",
 				"幽暗地域",
 				"城镇"
 			],
@@ -44733,7 +44733,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"食人鱼只能在水下呼吸。"
 					]
@@ -44753,7 +44753,7 @@
 			],
 			"familiar": true,
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"D"
@@ -44838,7 +44838,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 触及5英尺或射程20/60英尺 {@h}5 ({@damage 1d4 + 3}) 穿刺伤害。"
+						"{@atkr m,r} {@hit 5}, 触及5英尺或射程20/60英尺 {@h}5 ({@damage 1d4 + 3}) 穿刺伤害。"
 					]
 				},
 				{
@@ -44853,7 +44853,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -44953,16 +44953,16 @@
 							"items": [
 								{
 									"ENG_name": "Awestruck",
-									"type": "item",
 									"name": "敬惧",
+									"type": "item",
 									"entries": [
 										"目标获得{@condition 魅惑|XPHB}状态，直到海盗的下一回合开始。"
 									]
 								},
 								{
 									"ENG_name": "Poison",
-									"type": "item",
 									"name": "毒素",
+									"type": "item",
 									"entries": [
 										"目标获得{@condition 中毒|XPHB}状态，直到海盗的下一个回合开始。"
 									]
@@ -45001,7 +45001,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -45136,7 +45136,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -45231,7 +45231,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "20",
 			"spellcasting": [
@@ -45317,10 +45317,10 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -45454,13 +45454,13 @@
 					"ENG_name": "Faerie Dust",
 					"name": "妖精尘",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}，射程5英尺或60英尺{@h}1点光耀伤害，并且目标在妖精的下个回合开始前处于{@condition 魅惑|XPHB}或{@condition 中毒|XPHB}状态（由妖精选择）。"
+						"{@atkr m,r} {@hit 4}，射程5英尺或60英尺{@h}1点光耀伤害，并且目标在妖精的下个回合开始前处于{@condition 魅惑|XPHB}或{@condition 中毒|XPHB}状态（由妖精选择）。"
 					]
 				}
 			],
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
 				"奥秘"
@@ -45604,13 +45604,13 @@
 					"ENG_name": "Faerie Dust",
 					"name": "妖精尘",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}，射程5尺或60尺 {@h}15（{@damage 2d10 + 4}）光耀伤害，并且目标获得{@condition 魅惑|XPHB}或{@condition 中毒|XPHB}状态（由皮克希选择），直到皮克希的下一个回合开始。"
+						"{@atkr m,r} {@hit 7}，射程5尺或60尺 {@h}15（{@damage 2d10 + 4}）光耀伤害，并且目标获得{@condition 魅惑|XPHB}或{@condition 中毒|XPHB}状态（由皮克希选择），直到皮克希的下一个回合开始。"
 					]
 				}
 			],
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
 				"奥秘"
@@ -45719,7 +45719,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"全部；心灵感应 120 尺"
+				"全部; 心灵感应 120 尺"
 			],
 			"cr": "16",
 			"spellcasting": [
@@ -45816,7 +45816,7 @@
 				"位面, 上层"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -46116,7 +46116,7 @@
 					"ENG_name": "Object Slam",
 					"name": "掷物猛击",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}，范围5尺或射程30尺，{@h}7 ({@damage 2d4 + 2}) 钝击伤害。"
+						"{@atkr m,r} {@hit 4}，范围5尺或射程30尺，{@h}7 ({@damage 2d4 + 2}) 钝击伤害。"
 					]
 				},
 				{
@@ -46369,7 +46369,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -46517,7 +46517,7 @@
 			],
 			"treasure": [
 				"个体",
-				"遗物"
+				"圣物"
 			],
 			"languageTags": [
 				"C"
@@ -47158,7 +47158,7 @@
 					"ENG_name": "Bloodied Fury",
 					"name": "浴血狂怒",
 					"entries": [
-						"当{@variantrule 浴血|XPHB}时，夸赛魔在攻击检定上有{@variantrule 优势|XPHB}。"
+						"当幽邃熊怪处于{@status 浴血|XPHB}状态时，它在攻击检定上具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -47174,7 +47174,7 @@
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atkr m}{@hit 5}，触及 5 尺。{@h}6 ({@damage 1d6 + 3}) 挥砍伤害，如果夸格魔处于{@variantrule 浴血|XPHB}状态，则造成 13 ({@damage 3d6 + 3}) 挥砍伤害。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}6（{@damage 1d6 + 3}）挥砍伤害，若幽邃熊怪处于{@status 浴血|XPHB}状态则造成13（{@damage 3d6 + 3}）挥砍伤害。"
 					]
 				}
 			],
@@ -47296,7 +47296,7 @@
 					"ENG_name": "Bloodied Fury",
 					"name": "浴血狂怒",
 					"entries": [
-						"当{@variantrule 浴血|XPHB}时，夸赛魔在攻击检定上有{@variantrule 优势|XPHB}。"
+						"当幽邃熊怪处于{@status 浴血|XPHB}状态时，它在攻击检定上具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -47471,7 +47471,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -47782,11 +47782,11 @@
 				}
 			],
 			"environment": [
-				"位面，九狱",
+				"位面, 九层地狱",
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -48168,7 +48168,7 @@
 				"雷鸣"
 			],
 			"languages": [
-				"史拉蟾；心灵感应 60 尺"
+				"史拉蟾语; 心灵感应 60 尺"
 			],
 			"cr": "5",
 			"trait": [
@@ -48205,7 +48205,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"任何"
@@ -48298,7 +48298,7 @@
 				},
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"鲨鱼只能在水下呼吸。"
 					]
@@ -48322,7 +48322,7 @@
 			},
 			"traitTags": [
 				"集群战术",
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"B"
@@ -49173,7 +49173,7 @@
 		},
 		{
 			"ENG_name": "Sahuagin Baron",
-			"name": "沙华鱼人男爵",
+			"name": "鲨华男爵",
 			"source": "XMM",
 			"page": 265,
 			"size": [
@@ -49221,7 +49221,7 @@
 				"冷冻"
 			],
 			"languages": [
-				"沙华鱼人"
+				"鲨华鱼人"
 			],
 			"cr": "5",
 			"gear": [
@@ -49233,21 +49233,21 @@
 					"ENG_name": "Blood Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"沙华鱼人对任何没有全部{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
+						"鲨华鱼人对任何没有全部{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Limited Amphibiousness",
 					"name": "有限两栖",
 					"entries": [
-						"沙华鱼人可以在空气和水中呼吸,但每隔 4 小时必须至少浸入水中一次,否则在离开水后会窒息。"
+						"鲨华鱼人可以在空气和水中呼吸,但每隔 4 小时必须至少浸入水中一次,否则在离开水后会窒息。"
 					]
 				},
 				{
 					"ENG_name": "Shark Telepathy",
 					"name": "鲨心感应",
 					"entries": [
-						"沙华鱼人可以魔法地控制其周围120英尺内的鲨鱼，使用一种特殊的心灵感应。"
+						"鲨华鱼人可以魔法地控制其周围120英尺内的鲨鱼，使用一种特殊的心灵感应。"
 					]
 				}
 			],
@@ -49256,14 +49256,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"沙华鱼人进行三次三叉戟攻击。"
+						"鲨华鱼人进行三次三叉戟攻击。"
 					]
 				},
 				{
 					"ENG_name": "Trident",
 					"name": "三叉戟",
 					"entries": [
-						"{@atkr 米，半径} 命中{@hit 7}，触及5尺或射程20/60尺。{@h}13（{@damage 2d8 + 4}）穿刺伤害。"
+						"{@atkr m,r} 命中{@hit 7}，触及5尺或射程20/60尺。{@h}13（{@damage 2d8 + 4}）穿刺伤害。"
 					]
 				}
 			],
@@ -49357,7 +49357,7 @@
 				"冷冻"
 			],
 			"languages": [
-				"沙华鱼人"
+				"鲨华鱼人"
 			],
 			"cr": "2",
 			"spellcasting": [
@@ -49385,7 +49385,7 @@
 					"name": "邪魔支援（2/天）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"沙华鱼人施放{@spell 祝福术|XPHB}或{@spell 治愈真言|XPHB}，使用的施法能力与施法相同。"
+						"鲨华鱼人施放{@spell 祝福术|XPHB}或{@spell 治愈真言|XPHB}，使用的施法能力与施法相同。"
 					],
 					"daily": {
 						"2": [
@@ -49405,21 +49405,21 @@
 					"ENG_name": "Blood Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"沙华鱼人对任何没有全部{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
+						"鲨华鱼人对任何没有全部{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Limited Amphibiousness",
 					"name": "有限两栖",
 					"entries": [
-						"沙华鱼人可以在空气和水中呼吸,但每隔 4 小时必须至少浸入水中一次,否则在离开水后会窒息。"
+						"鲨华鱼人可以在空气和水中呼吸,但每隔 4 小时必须至少浸入水中一次,否则在离开水后会窒息。"
 					]
 				},
 				{
 					"ENG_name": "Shark Telepathy",
 					"name": "鲨心感应",
 					"entries": [
-						"沙华鱼人可以魔法地控制其周围120英尺内的鲨鱼，使用一种特殊的心灵感应。"
+						"鲨华鱼人可以魔法地控制其周围120英尺内的鲨鱼，使用一种特殊的心灵感应。"
 					]
 				}
 			],
@@ -49435,7 +49435,7 @@
 					"ENG_name": "Spectral Jaws",
 					"name": "灵体鲨颚",
 					"entries": [
-						"{@atkr 米，半径} {@hit 4}，射程5尺或120尺，{@h}11（{@damage 2d8 + 2}）点力场伤害。"
+						"{@atkr m,r} {@hit 4}，射程5尺或120尺，{@h}11（{@damage 2d8 + 2}）点力场伤害。"
 					]
 				}
 			],
@@ -49519,7 +49519,7 @@
 				"冷冻"
 			],
 			"languages": [
-				"沙华鱼人"
+				"鲨华鱼人"
 			],
 			"cr": "1/2",
 			"trait": [
@@ -49527,21 +49527,21 @@
 					"ENG_name": "Blood Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"沙华鱼人对任何没有全部{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
+						"鲨华鱼人对任何没有全部{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Limited Amphibiousness",
 					"name": "有限两栖",
 					"entries": [
-						"沙华鱼人可以在空气和水中呼吸,但每隔 4 小时必须至少浸入水中一次,否则在离开水后会窒息。"
+						"鲨华鱼人可以在空气和水中呼吸,但每隔 4 小时必须至少浸入水中一次,否则在离开水后会窒息。"
 					]
 				},
 				{
 					"ENG_name": "Shark Telepathy",
 					"name": "鲨心感应",
 					"entries": [
-						"沙华鱼人可以魔法地控制其周围120英尺内的鲨鱼，使用一种特殊的心灵感应。"
+						"鲨华鱼人可以魔法地控制其周围120英尺内的鲨鱼，使用一种特殊的心灵感应。"
 					]
 				}
 			],
@@ -49566,7 +49566,7 @@
 					"ENG_name": "Aquatic Charge",
 					"name": "水下冲锋",
 					"entries": [
-						"沙华鱼人游向其{@variantrule 游泳速度|XPHB}，径直冲向它能看到的敌人。"
+						"鲨华鱼人游向其{@variantrule 游泳速度|XPHB}，径直冲向它能看到的敌人。"
 					]
 				}
 			],
@@ -49639,7 +49639,7 @@
 				"冷冻"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "5",
 			"trait": [
@@ -49663,7 +49663,7 @@
 					"ENG_name": "Flame Spear",
 					"name": "烈焰长矛",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}, 5尺触及或20/60尺射程 {@h}13 ({@damage 2d8 + 4}) 穿刺伤害加7 ({@damage 2d6}) 火焰伤害. {@hom}在远程攻击后，这支长矛会立即魔法般地返回火蛇的手中。"
+						"{@atkr m,r} {@hit 7}, 5尺触及或20/60尺射程 {@h}13 ({@damage 2d8 + 4}) 穿刺伤害加7 ({@damage 2d6}) 火焰伤害. {@hom}在远程攻击后，这支长矛会立即魔法般地返回火蛇的手中。"
 					]
 				},
 				{
@@ -49675,7 +49675,7 @@
 				}
 			],
 			"environment": [
-				"位面，火焰",
+				"位面, 火",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -49780,7 +49780,7 @@
 				}
 			],
 			"environment": [
-				"位面，火焰",
+				"位面, 火",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -49852,7 +49852,7 @@
 				"冷冻"
 			],
 			"languages": [
-				"原初（伊格南）"
+				"原初语（火族语）"
 			],
 			"cr": "15",
 			"trait": [
@@ -49883,7 +49883,7 @@
 					"ENG_name": "Flame Trident",
 					"name": "烈焰三叉戟",
 					"entries": [
-						"{@atkr 米，半径} {@hit 12}，射程5尺或射程30/90尺 {@h}16（{@damage 2d8 + 7}）穿刺伤害外加14（{@damage 4d6}）火焰伤害。{@hom}三叉戟在远程攻击后立即魔法般地返回火蜥蜴手中。"
+						"{@atkr m,r} {@hit 12}，射程5尺或射程30/90尺 {@h}16（{@damage 2d8 + 7}）穿刺伤害外加14（{@damage 4d6}）火焰伤害。{@hom}三叉戟在远程攻击后立即魔法般地返回火蜥蜴手中。"
 					]
 				},
 				{
@@ -49904,7 +49904,7 @@
 				}
 			],
 			"environment": [
-				"位面，火焰",
+				"位面, 火",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -50011,10 +50011,10 @@
 			],
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -50125,16 +50125,16 @@
 							"items": [
 								{
 									"ENG_name": "Charming",
-									"type": "item",
 									"name": "迷人",
+									"type": "item",
 									"entries": [
 										"目标获得{@condition 魅惑|XPHB}状态，持续1分钟。当处于{@condition 魅惑|XPHB}状态时，目标获得{@condition 失能|XPHB}状态，并使用所有移动力在原地跳舞。如果目标受到任何伤害，该效果将结束。"
 									]
 								},
 								{
 									"ENG_name": "Frightening",
-									"type": "item",
 									"name": "恐慌",
+									"type": "item",
 									"entries": [
 										"10（{@damage 2d6 + 3}）点心灵伤害，并且目标获得{@condition 恐慌|XPHB}状态，持续1分钟。如果目标在其回合结束时不在萨特的视线范围内，该状态将结束。"
 									]
@@ -50146,10 +50146,10 @@
 			],
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -50437,7 +50437,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"soundClip": {
@@ -50561,7 +50561,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -50787,7 +50787,7 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"海马只能在水下呼吸。"
 					]
@@ -50807,7 +50807,7 @@
 			],
 			"familiar": true,
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -50917,7 +50917,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -51021,7 +51021,7 @@
 				"束缚"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "4",
 			"trait": [
@@ -51066,7 +51066,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -51143,7 +51143,7 @@
 			"passive": 21,
 			"resist": [
 				{
-					"special": "参见活体阴影"
+					"special": "看到活体幽影"
 				}
 			],
 			"immune": [
@@ -51235,7 +51235,7 @@
 				"source": "XMM"
 			},
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -51396,7 +51396,7 @@
 		},
 		{
 			"ENG_name": "Shield Guardian",
-			"name": "盾卫",
+			"name": "构装盾卫",
 			"source": "XMM",
 			"page": 277,
 			"srd52": true,
@@ -51814,7 +51814,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -51917,7 +51917,7 @@
 				}
 			],
 			"environment": [
-				"位面，混沌"
+				"位面, 混沌海"
 			],
 			"treasure": [
 				"任何"
@@ -51998,7 +51998,7 @@
 				"中毒"
 			],
 			"languages": [
-				"原始语（风族语、火族语）"
+				"原初语（风族语，火族语）"
 			],
 			"cr": "1/4",
 			"trait": [
@@ -52027,7 +52027,7 @@
 				}
 			],
 			"environment": [
-				"位面、元素"
+				"位面, 元素"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -52130,7 +52130,7 @@
 				"中毒"
 			],
 			"languages": [
-				"全部；心灵感应 120 尺"
+				"全部; 心灵感应 120 尺"
 			],
 			"cr": "21",
 			"spellcasting": [
@@ -52218,7 +52218,7 @@
 					"ENG_name": "Flying Sword",
 					"name": "凌空剑",
 					"entries": [
-						"{@atkr 米，半径} {@hit 15}，触及10英尺或射程120英尺。{@h}22 ({@damage 4d6 + 8}) 挥砍伤害加36 ({@damage 8d8}) 光耀伤害。{@hom}在远程攻击后，这把剑会魔法般地返回到太阳骑士的手中或悬停在太阳骑士5英尺范围内。"
+						"{@atkr m,r} {@hit 15}，触及10英尺或射程120英尺。{@h}22 ({@damage 4d6 + 8}) 挥砍伤害加36 ({@damage 8d8}) 光耀伤害。{@hom}在远程攻击后，这把剑会魔法般地返回到太阳骑士的手中或悬停在太阳骑士5英尺范围内。"
 					]
 				},
 				{
@@ -52356,7 +52356,7 @@
 			],
 			"languages": [
 				"深潜语",
-				"地底通用语；心灵感应 120 尺"
+				"地底通用语; 心灵感应 120 尺"
 			],
 			"cr": "3",
 			"action": [
@@ -52385,32 +52385,32 @@
 							"items": [
 								{
 									"ENG_name": "1: Confusion Ray",
-									"type": "item",
 									"name": "1: 困惑射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 12}。{@actSaveFail} 5 ({@damage 2d4}) 点心灵伤害，且目标在下一回合结束前无法进行反应。在下一回合，目标无法移动，并使用其动作对射程内的一个随机目标进行近战或远程攻击。如果目标无法攻击，则该回合什么也不做。"
 									]
 								},
 								{
 									"ENG_name": "2: Paralyzing Ray",
-									"type": "item",
 									"name": "2: 麻痹射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 12}。{@actSaveFail} 目标获得{@condition 麻痹|XPHB}状态，并在每回合结束时重复豁免，成功时结束效果。1分钟后，目标自动成功。"
 									]
 								},
 								{
 									"ENG_name": "3: Fear Ray",
-									"type": "item",
 									"name": "3: 恐惧射线",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 12}。{@actSaveFail} 5（{@damage 2d4}）点心灵伤害，且目标获得{@condition 恐慌|XPHB}状态直至其下一回合结束。"
 									]
 								},
 								{
 									"ENG_name": "4: Wounding Ray",
-									"type": "item",
 									"name": "4: 致伤射线",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 12}。{@actSaveFail} 16（{@damage 3d10}）点黯蚀伤害。{@actSaveSuccess} 半伤。"
 									]
@@ -52474,7 +52474,7 @@
 		},
 		{
 			"ENG_name": "Specter",
-			"name": "幽灵",
+			"name": "恶灵",
 			"source": "XMM",
 			"page": 290,
 			"srd52": true,
@@ -53100,24 +53100,24 @@
 							"items": [
 								{
 									"ENG_name": "First Roar",
-									"type": "item",
 									"name": "初次咆哮",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 20}，范围内的每个敌人需进行检定，范围来自狮身人面像的500英尺{@variantrule 光环 [效应区域]|XPHB|光环}。{@actSaveFail} 目标获得{@condition 恐慌|XPHB}状态，持续1分钟。"
 									]
 								},
 								{
 									"ENG_name": "Second Roar",
-									"type": "item",
 									"name": "二次咆哮",
+									"type": "item",
 									"entries": [
 										"{@actSave wis} {@dc 20}，每个位于狮身人面像500英尺范围内的敌人{@variantrule 光环 [效应区域]|XPHB|光环}。{@actSaveFail} 目标获得{@condition 麻痹|XPHB}状态，并在其每回合结束时重复进行豁免检定，成功则结束该效果。1分钟后，目标自动成功。"
 									]
 								},
 								{
 									"ENG_name": "Third Roar",
-									"type": "item",
 									"name": "三次咆哮",
+									"type": "item",
 									"entries": [
 										"{@actSave con} {@dc 20}，每个生物在以斯芬克斯为中心的500英尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内进行豁免。{@actSaveFail} 44（{@damage 8d10}）点雷鸣伤害，且目标获得{@condition 倒地|XPHB}状态。{@actSaveSuccess} 仅受到一半伤害。"
 									]
@@ -53460,7 +53460,7 @@
 				"中毒"
 			],
 			"languages": [
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "2",
 			"trait": [
@@ -53503,7 +53503,7 @@
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -53606,7 +53606,7 @@
 						"{@spell 侦测魔法|XPHB}",
 						"{@spell 法师之手|XPHB}",
 						"{@spell 次级幻影|XPHB}",
-						"{@spell 水下呼吸|XPHB}"
+						"{@spell 水中呼吸|XPHB}"
 					],
 					"daily": {
 						"2e": [
@@ -53653,7 +53653,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层",
+				"位面, 下层",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -53793,7 +53793,7 @@
 			],
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
 				"军备"
@@ -53832,7 +53832,7 @@
 		},
 		{
 			"ENG_name": "Spy",
-			"name": "密探",
+			"name": "间谍",
 			"source": "XMM",
 			"page": 295,
 			"srd52": true,
@@ -53912,7 +53912,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"soundClip": {
@@ -54037,7 +54037,7 @@
 				"任何"
 			],
 			"treasure": [
-				"法器",
+				"器具",
 				"个体"
 			],
 			"actionTags": [
@@ -54152,7 +54152,7 @@
 				}
 			],
 			"environment": [
-				"位面、元素"
+				"位面, 元素"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -54775,7 +54775,7 @@
 			"languages": [
 				"深渊语",
 				"通用语",
-				"炼狱语；心灵感应 60 尺"
+				"炼狱语; 心灵感应 60 尺"
 			],
 			"cr": "4",
 			"trait": [
@@ -54827,11 +54827,11 @@
 				}
 			],
 			"environment": [
-				"位面，下层",
+				"位面, 下层",
 				"城镇"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -54935,7 +54935,7 @@
 					"ENG_name": "Bites",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及 5 尺。{@h}5 ({@damage 2d4}) 穿刺伤害，如果该群体处于{@variantrule 浴血|XPHB}，则为 2 ({@damage 1d4}) 穿刺伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}5（{@damage 2d4}）穿刺伤害，或2（{@damage 1d4}）穿刺伤害如果该集群处于{@status 浴血|XPHB}状态。"
 					]
 				}
 			],
@@ -55049,7 +55049,7 @@
 					"ENG_name": "Swarm of Grasping Hands",
 					"name": "集群擒拿手",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及 5 尺。{@h}20（{@damage 4d8 + 2}）点黯蚀伤害，如果群体处于{@variantrule 浴血|XPHB}，则为 11（{@damage 2d8 + 2}）点黯蚀伤害。如果目标是中型或更小的生物，则其获得{@condition 倒地|XPHB}状态。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}20（{@damage 4d8 + 2}）黯蚀伤害，若集群处于{@status 浴血|XPHB}状态则造成11（{@damage 2d8 + 2}）黯蚀伤害。若目标是中型或更小的生物，则陷入{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -55172,12 +55172,12 @@
 					"ENG_name": "Rend",
 					"name": "撕裂",
 					"entries": [
-						"{@atkr m}{@hit 4}，触及 5 尺。{@h}12（{@damage 3d6 + 2}）挥砍伤害，如果群体处于{@variantrule 浴血|XPHB}，则造成 9（{@damage 3d4 + 2}）挥砍伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}12（{@damage 3d6 + 2}）挥砍伤害，或当集群处于{@status 浴血|XPHB}状态时造成9（{@damage 3d4 + 2}）挥砍伤害。"
 					]
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"senseTags": [
 				"D"
@@ -55292,7 +55292,7 @@
 					"ENG_name": "Bites",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 3}, 触及5尺。{@h}6 ({@damage 2d4 + 1})毒素伤害，若群体{@variantrule 浴血|XPHB}则为3 ({@damage 1d4 + 1})毒素伤害。"
+						"{@atkr m} {@hit 3}，触及5尺。{@h}6（{@damage 2d4 + 1}）毒素伤害，若集群处于{@status 浴血|XPHB}状态则为3（{@damage 1d4 + 1}）毒素伤害。"
 					]
 				}
 			],
@@ -55394,12 +55394,12 @@
 					"ENG_name": "Bites",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及 5 尺。{@h}9（{@damage 2d6 + 2}）点黯蚀伤害，或 7（{@damage 2d4 + 2}）点黯蚀伤害，若群体处于{@variantrule 浴血|XPHB}状态。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}9（{@damage 2d6 + 2}）黯蚀伤害，若集群处于{@status 浴血|XPHB}状态则为7（{@damage 2d4 + 2}）黯蚀伤害。"
 					]
 				}
 			],
 			"environment": [
-				"位面，下层"
+				"位面, 下层"
 			],
 			"senseTags": [
 				"D"
@@ -55513,12 +55513,12 @@
 					"ENG_name": "Vile Slime",
 					"name": "肮脏软泥",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及 5 尺 {@h}11（{@damage 2d8 + 2}）毒素伤害，或 9（{@damage 2d6 + 2}）毒素伤害如果虫群处于{@variantrule 浴血|XPHB}状态。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}11（{@damage 2d8 + 2}）毒素伤害，若集群处于{@status 浴血|XPHB}状态则为9（{@damage 2d6 + 2}）毒素伤害。"
 					]
 				}
 			],
 			"environment": [
-				"位面，九狱"
+				"位面, 九层地狱"
 			],
 			"traitTags": [
 				"魔鬼视界"
@@ -55607,7 +55607,7 @@
 				},
 				{
 					"ENG_name": "Water Breathing",
-					"name": "水下呼吸",
+					"name": "水中呼吸",
 					"entries": [
 						"这个集群只能在水下呼吸。"
 					]
@@ -55618,7 +55618,7 @@
 					"ENG_name": "Bites",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}（若目标未拥有全部{@variantrule 优势|XPHB}，则具有{@variantrule 生命值|XPHB}），触及 5 尺。{@h}8（{@damage 2d4 + 3}）穿刺伤害，若群体处于{@variantrule 浴血|XPHB}状态，则造成 5（{@damage 1d4 + 3}）穿刺伤害。"
+						"{@atkr m} {@hit 5}（若目标未拥有全部{@variantrule 优势|XPHB}则具有{@variantrule 生命值|XPHB}），触及5尺。{@h}8（{@damage 2d4 + 3}）穿刺伤害，若集群处于{@status 浴血|XPHB}状态则为5（{@damage 1d4 + 3}）穿刺伤害。"
 					]
 				}
 			],
@@ -55626,7 +55626,7 @@
 				"水下"
 			],
 			"traitTags": [
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"D"
@@ -55709,7 +55709,7 @@
 					"ENG_name": "Bites",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 2}，触及5英尺。{@h}5（{@damage 2d4}）穿刺伤害，若群体处于{@variantrule 浴血|XPHB}状态则为2（{@damage 1d4}）穿刺伤害。"
+						"{@atkr m} {@hit 2}，触及5尺。{@h}5（{@damage 2d4}）穿刺伤害，若集群处于{@status 浴血|XPHB}状态则为2（{@damage 1d4}）穿刺伤害。"
 					]
 				}
 			],
@@ -55804,7 +55804,7 @@
 					"ENG_name": "Beaks",
 					"name": "喙啄",
 					"entries": [
-						"{@atkr m} {@hit 4}, 触及 5 尺。{@h}5 ({@damage 1d6 + 2}) 穿刺伤害，或者如果群体处于{@variantrule 浴血|XPHB}状态，则造成 2 ({@damage 1d4}) 穿刺伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}5（{@damage 1d6 + 2}）穿刺伤害，若集群处于{@status 浴血|XPHB}状态则为2（{@damage 1d4}）穿刺伤害。"
 					]
 				},
 				{
@@ -55906,7 +55906,7 @@
 					"ENG_name": "Swarm of Proboscises",
 					"name": "喙群",
 					"entries": [
-						"{@atkr m} {@hit 5}, 触及5尺，{@h}14 ({@damage 2d10 + 3}) 穿刺伤害，若群体处于{@variantrule 浴血|XPHB}，则为8 ({@damage 1d10 + 3}) 穿刺伤害。如果目标是群体空间中的中型或更小的生物，目标将获得{@condition 擒抱|XPHB}状态（逃脱{@dc 13}）。直到擒抱结束，目标在其每回合结束时受到7 ({@damage 2d6}) 黯蚀伤害。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}14（{@damage 2d10 + 3}）穿刺伤害，若集群处于{@status 浴血|XPHB}状态则为8（{@damage 1d10 + 3}）穿刺伤害。若目标是集群所在空间内的中型或更小体型生物，则目标陷入{@condition 擒抱|XPHB}状态（逃脱{@dc 13}）。擒抱持续期间，目标在其每回合结束时受到7（{@damage 2d6}）黯蚀伤害。"
 					]
 				}
 			],
@@ -56005,7 +56005,7 @@
 					"ENG_name": "Bites",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 6}，触及 5 尺。{@h}8（{@damage 1d8 + 4}）穿刺伤害\u2014或 6（{@damage 1d4 + 4}）穿刺伤害，若该群体处于{@variantrule 浴血|XPHB}状态\u2014外加 10（{@damage 3d6}）毒素伤害。"
+						"{@atkr m} {@hit 6}，触及5尺。{@h}8（{@damage 1d8 + 4}）穿刺伤害\u2014\u2014若集群处于{@status 浴血|XPHB}状态则为6（{@damage 1d4 + 4}）穿刺伤害\u2014\u2014外加10（{@damage 3d6}）毒素伤害。"
 					]
 				}
 			],
@@ -56278,7 +56278,7 @@
 			],
 			"passive": 13,
 			"languages": [
-				"瑟尔-克琳；心灵感应 60 英尺"
+				"螳螂语; 心灵感应 60 英尺"
 			],
 			"cr": "1",
 			"action": [
@@ -56396,7 +56396,7 @@
 				"心灵"
 			],
 			"languages": [
-				"瑟莱-克林；心灵感应 120 尺"
+				"螳螂语; 心灵感应 120 尺"
 			],
 			"cr": "8",
 			"spellcasting": [
@@ -56433,7 +56433,7 @@
 					"ENG_name": "Psionic Lance",
 					"name": "灵能长枪",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}, 触及 10 尺或射程 120 尺 {@h}18 ({@damage 4d6 + 4}) 心灵伤害。"
+						"{@atkr m,r} {@hit 7}, 触及 10 尺或射程 120 尺 {@h}18 ({@damage 4d6 + 4}) 心灵伤害。"
 					]
 				}
 			],
@@ -57242,7 +57242,7 @@
 					"ENG_name": "Loathsome Limbs (4/Day)",
 					"name": "扰人断肢（4/日）",
 					"entries": [
-						"如果巨魔在结束任何回合时处于{@variantrule 浴血|XPHB}状态，并在该回合中受到了15点或以上的挥砍伤害，巨魔的一个肢体将被切断，掉落在巨魔所在的位置，并变成一个{@creature 巨魔断肢|XMM}。该肢体在巨魔的回合后立即行动。巨魔每失去一个肢体，将获得1个{@condition 力竭|XPHB}等级，并且它将在下次恢复{@variantrule 生命值|XPHB}时长出替代的肢体。"
+						"如果巨魔在任一回合结束时处于{@status 浴血|XPHB}状态且该回合受到15点或更多挥砍伤害，则巨魔的一截肢体被切断，落入巨魔所在空间，并成为一只{@creature 巨魔断肢|XMM}。该肢体在巨魔的回合后立即行动。巨魔每缺失一截肢体就获得1层{@condition 力竭|XPHB}状态，且它将在下次恢复{@variantrule 生命值|XPHB}时生长出替代肢体。"
 					]
 				},
 				{
@@ -57664,7 +57664,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"炼狱语；心灵感应 120 尺"
+				"炼狱语; 心灵感应 120 尺"
 			],
 			"cr": "13",
 			"spellcasting": [
@@ -57752,7 +57752,7 @@
 				}
 			],
 			"environment": [
-				"位面，下层"
+				"位面, 下层"
 			],
 			"treasure": [
 				"军备"
@@ -57814,7 +57814,7 @@
 		},
 		{
 			"ENG_name": "Umber Hulk",
-			"name": "土巨怪",
+			"name": "掘土巨怪",
 			"source": "XMM",
 			"page": 312,
 			"size": [
@@ -57851,7 +57851,7 @@
 			],
 			"passive": 10,
 			"languages": [
-				"土巨怪"
+				"掘土巨怪"
 			],
 			"cr": "5",
 			"trait": [
@@ -57893,7 +57893,7 @@
 									"ENG_name": "1-4",
 									"type": "item",
 									"name": "1-4",
-									"entry": "目标不做任何事。"
+									"entry": "目标不受影响。"
 								},
 								{
 									"ENG_name": "5-6",
@@ -57994,7 +57994,7 @@
 			"languages": [
 				"天界语",
 				"精灵语",
-				"木族语；心灵感应 120 尺"
+				"木族语; 心灵感应 120 尺"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -58103,7 +58103,7 @@
 			},
 			"environment": [
 				"森林",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"treasure": [
 				"任何"
@@ -58286,32 +58286,32 @@
 							"items": [
 								{
 									"ENG_name": "Forbiddance",
-									"type": "item",
 									"name": "禁入",
+									"type": "item",
 									"entries": [
 										"吸血鬼无法在没有居住者邀请的情况下进入住所。"
 									]
 								},
 								{
 									"ENG_name": "Running Water",
-									"type": "item",
 									"name": "流水",
+									"type": "item",
 									"entries": [
 										"如果吸血鬼在流水中结束其回合，它将受到20点酸蚀伤害。"
 									]
 								},
 								{
 									"ENG_name": "Stake to the Heart",
-									"type": "item",
 									"name": "桩刺",
+									"type": "item",
 									"entries": [
 										"如果在吸血鬼处于其栖息地且具有{@condition 失能|XPHB}状态时，将一件造成穿刺伤害的武器刺入其心脏，则吸血鬼将保持{@condition 麻痹|XPHB}状态，直到武器被移除。"
 									]
 								},
 								{
 									"ENG_name": "Sunlight",
-									"type": "item",
 									"name": "阳光",
+									"type": "item",
 									"entries": [
 										"如果吸血鬼在阳光下开始回合，它将受到20点光耀伤害。在阳光下，它的攻击检定和能力检定将处于{@variantrule 劣势|XPHB}。"
 									]
@@ -58523,7 +58523,7 @@
 					"ENG_name": "Umbral Dagger",
 					"name": "暗影匕首",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}, 近战 5 尺或远程 20/60 尺 {@h}5 ({@damage 1d4 + 3}) 穿刺伤害加 7 ({@damage 3d4}) 黯蚀伤害。如果目标因这次攻击降至 0 {@variantrule 生命值|XPHB}，目标变为 {@variantrule 稳重|XPHB}，但会获得 {@condition 中毒|XPHB} 状态持续 1 小时。当其处于 {@condition 中毒|XPHB} 状态时，目标还会获得 {@condition 麻痹|XPHB} 状态。"
+						"{@atkr m,r} {@hit 5}, 近战 5 尺或远程 20/60 尺 {@h}5 ({@damage 1d4 + 3}) 穿刺伤害加 7 ({@damage 3d4}) 黯蚀伤害。如果目标因这次攻击降至 0 {@variantrule 生命值|XPHB}，目标变为 {@variantrule 稳重|XPHB}，但会获得 {@condition 中毒|XPHB} 状态持续 1 小时。当其处于 {@condition 中毒|XPHB} 状态时，目标还会获得 {@condition 麻痹|XPHB} 状态。"
 					]
 				}
 			],
@@ -58776,32 +58776,32 @@
 							"items": [
 								{
 									"ENG_name": "Forbiddance",
-									"type": "item",
 									"name": "禁入",
+									"type": "item",
 									"entries": [
 										"吸血鬼无法在没有居住者邀请的情况下进入住所。"
 									]
 								},
 								{
 									"ENG_name": "Running Water",
-									"type": "item",
 									"name": "流水",
+									"type": "item",
 									"entries": [
 										"如果吸血鬼在流水中结束其回合，它将受到20点酸蚀伤害。"
 									]
 								},
 								{
 									"ENG_name": "Stake to the Heart",
-									"type": "item",
 									"name": "桩刺",
+									"type": "item",
 									"entries": [
 										"当吸血鬼处于{@condition 失能|XPHB}状态时，如果用一件可以造成穿刺伤害的武器刺入吸血鬼的心脏，吸血鬼会被摧毁。"
 									]
 								},
 								{
 									"ENG_name": "Sunlight",
-									"type": "item",
 									"name": "阳光",
+									"type": "item",
 									"entries": [
 										"如果吸血鬼在阳光下开始回合，它将受到20点光耀伤害。在阳光下，它的攻击检定和能力检定将处于{@variantrule 劣势|XPHB}。"
 									]
@@ -59021,32 +59021,32 @@
 							"items": [
 								{
 									"ENG_name": "Forbiddance",
-									"type": "item",
 									"name": "禁入",
+									"type": "item",
 									"entries": [
 										"吸血鬼无法在没有居住者邀请的情况下进入住所。"
 									]
 								},
 								{
 									"ENG_name": "Running Water",
-									"type": "item",
 									"name": "流水",
+									"type": "item",
 									"entries": [
 										"如果吸血鬼在流水中结束其回合，它将受到20点酸蚀伤害。"
 									]
 								},
 								{
 									"ENG_name": "Stake to the Heart",
-									"type": "item",
 									"name": "桩刺",
+									"type": "item",
 									"entries": [
 										"如果在吸血鬼处于其栖息地且具有{@condition 失能|XPHB}状态时，将一件造成穿刺伤害的武器刺入其心脏，则吸血鬼将保持{@condition 麻痹|XPHB}状态，直到武器被移除。"
 									]
 								},
 								{
 									"ENG_name": "Sunlight",
-									"type": "item",
 									"name": "阳光",
+									"type": "item",
 									"entries": [
 										"如果吸血鬼在阳光下开始回合，它将受到20点光耀伤害。在阳光下，它的攻击检定和能力检定将处于{@variantrule 劣势|XPHB}。"
 									]
@@ -59551,7 +59551,7 @@
 		},
 		{
 			"ENG_name": "Vrock",
-			"name": "弗洛魔",
+			"name": "鹫魔",
 			"group": [
 				"Demons"
 			],
@@ -59610,7 +59610,7 @@
 				"中毒"
 			],
 			"languages": [
-				"深渊语；心灵感应 120 尺"
+				"深渊语; 心灵感应 120 尺"
 			],
 			"cr": "6",
 			"trait": [
@@ -59660,7 +59660,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"treasure": [
 				"军备"
@@ -59903,7 +59903,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],
@@ -59999,16 +59999,16 @@
 							"items": [
 								{
 									"ENG_name": "Sap",
-									"type": "item",
 									"name": "削弱",
+									"type": "item",
 									"entries": [
 										"目标在战士下一回合开始前的下一次攻击掷骰上具有{@variantrule 劣势|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Maneuver",
-									"type": "item",
 									"name": "战技",
+									"type": "item",
 									"entries": [
 										"一个能看见或听见战士的盟友可以使用{@variantrule 反应|XPHB}移动至多其{@variantrule 速度|XPHB}的一半，且不会引发{@action 借机攻击|XPHB|借机攻击}。"
 									]
@@ -60124,7 +60124,7 @@
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atkr 米，半径} {@hit 3}，触及 5 尺 或 射程 20/60 尺。{@h}4（{@damage 1d6 + 1}）穿刺伤害。"
+						"{@atkr m,r} {@hit 3}，触及 5 尺 或 射程 20/60 尺。{@h}4（{@damage 1d6 + 1}）穿刺伤害。"
 					]
 				}
 			],
@@ -60686,7 +60686,7 @@
 					"ENG_name": "Handaxe (Humanoid or Hybrid Form Only)",
 					"name": "手斧（仅类人与混合形态）",
 					"entries": [
-						"{@atkr 米，半径} {@hit 7}, 触及5尺或射程20/60尺. {@h}14 ({@damage 3d6 + 4}) 挥砍伤害."
+						"{@atkr m,r} {@hit 7}, 触及5尺或射程20/60尺. {@h}14 ({@damage 3d6 + 4}) 挥砍伤害."
 					]
 				},
 				{
@@ -60712,7 +60712,7 @@
 				"丘陵"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -60830,7 +60830,7 @@
 					"ENG_name": "Javelin (Humanoid or Hybrid Form Only)",
 					"name": "标枪（仅类人与混合形态）",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}，触及5尺或射程30/120尺 {@h}13（{@damage 3d6 + 3}）穿刺伤害。"
+						"{@atkr m,r} {@hit 5}，触及5尺或射程30/120尺 {@h}13（{@damage 3d6 + 3}）穿刺伤害。"
 					]
 				},
 				{
@@ -61552,13 +61552,13 @@
 					"name": "吸取生命",
 					"entries": [
 						"{@actSave con} {@dc 13}，5英尺内的一个生物。{@actSaveFail} 6点（{@damage 1d8 + 2}）暗蚀伤害，并且目标的{@variantrule 生命值|XPHB|生命值}减少等于所受伤害的数值。",
-						"被这次攻击杀死的人形生物将在24小时后以{@creature 僵尸|XMM}的形式复活，受韦特的控制，除非该人形生物被复活或其尸体被销毁。韦特一次最多只能控制十二只僵尸。"
+						"被这次攻击杀死的人形生物将在24小时后以{@creature 丧尸|XMM}的形式复活，受韦特的控制，除非该人形生物被复活或其尸体被销毁。韦特一次最多只能控制十二只僵尸。"
 					]
 				}
 			],
 			"environment": [
 				"荒漠",
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"沼泽",
 				"幽暗地域",
 				"城镇"
@@ -62124,7 +62124,7 @@
 				"森林",
 				"草地",
 				"丘陵",
-				"位面，妖精荒野"
+				"位面, 妖精荒野"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -62149,7 +62149,7 @@
 		},
 		{
 			"ENG_name": "Wraith",
-			"name": "缚灵",
+			"name": "邪灵",
 			"source": "XMM",
 			"page": 336,
 			"srd52": true,
@@ -62251,12 +62251,12 @@
 					"ENG_name": "Create Specter",
 					"name": "生成幽灵",
 					"entries": [
-						"幽魂以其自身10英尺范围内死亡不超过1分钟的人形尸体为目标。目标的魂魄在其尸体所在空间或最近的未被占据的空间中作为{@creature 幽灵|XMM}升起。幽影处于幽魂的控制之下。幽魂同一时间最多可以控制七个幽影。"
+						"幽魂以其自身10英尺范围内死亡不超过1分钟的人形尸体为目标。目标的魂魄在其尸体所在空间或最近的未被占据的空间中作为{@creature 恶灵|XMM}升起。幽影处于幽魂的控制之下。幽魂同一时间最多可以控制七个幽影。"
 					]
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域"
 			],
 			"soundClip": {
@@ -62485,7 +62485,7 @@
 				}
 			],
 			"environment": [
-				"位面, 大地",
+				"位面, 土",
 				"幽暗地域"
 			],
 			"treasure": [
@@ -62775,7 +62775,7 @@
 					"ENG_name": "Caustic Lash",
 					"name": "苛性鞭笞",
 					"entries": [
-						"{@atkr 米，半径} {@hit 8}，范围10英尺或射程120英尺 {@h}25（{@damage 6d6 + 4}）酸液伤害。"
+						"{@atkr m,r} {@hit 8}，范围10英尺或射程120英尺 {@h}25（{@damage 6d6 + 4}）酸液伤害。"
 					]
 				}
 			],
@@ -62798,7 +62798,7 @@
 				}
 			],
 			"environment": [
-				"位面, 深渊"
+				"位面, 无底深渊"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -62955,7 +62955,7 @@
 				"沼泽"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "青年",
 			"soundClip": {
@@ -63085,7 +63085,7 @@
 				"荒漠"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"dragonAge": "青年",
 			"soundClip": {
@@ -63377,7 +63377,7 @@
 				"海岸"
 			],
 			"treasure": [
-				"法器"
+				"器具"
 			],
 			"dragonAge": "青年",
 			"soundClip": {
@@ -64462,7 +64462,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -64622,7 +64622,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"attachedItems": [
 				"弯刀|phb"
@@ -64788,7 +64788,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -64942,7 +64942,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -65078,7 +65078,7 @@
 					"ENG_name": "Poison Burst (Yuan-ti Form Only)",
 					"name": "毒素迸发（仅蛇人形态）",
 					"entries": [
-						"{@atkr 米，半径} {@hit 5}，射程5尺或120尺。 {@h}12（{@damage 2d8 + 3}）毒素伤害。"
+						"{@atkr m,r} {@hit 5}，射程5尺或120尺。 {@h}12（{@damage 2d8 + 3}）毒素伤害。"
 					]
 				},
 				{
@@ -65105,7 +65105,7 @@
 				"城镇"
 			],
 			"treasure": [
-				"遗物"
+				"圣物"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -65155,7 +65155,7 @@
 		},
 		{
 			"ENG_name": "Zombie",
-			"name": "僵尸",
+			"name": "丧尸",
 			"source": "XMM",
 			"page": 346,
 			"srd52": true,
@@ -65233,7 +65233,7 @@
 				}
 			],
 			"environment": [
-				"位面, 影界",
+				"位面, 堕影冥界",
 				"幽暗地域",
 				"城镇"
 			],

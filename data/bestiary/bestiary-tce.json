@@ -249,7 +249,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "灵能猛击Psychic Slam（仅星之子）",
-									"with": "心灵冲击"
+									"with": "灵能猛击"
 								}
 							}
 						]
@@ -575,11 +575,11 @@
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅空气）"
+					"condition": "（仅空中）"
 				},
 				"swim": {
 					"number": 30,
-					"condition": "（仅水）"
+					"condition": "（仅水中）"
 				}
 			},
 			"str": 18,
@@ -637,7 +637,7 @@
 			"traitTags": [
 				"飞掠",
 				"集群战术",
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"senseTags": [
 				"D"
@@ -750,7 +750,7 @@
 					},
 					"traitTags": [
 						"集群战术",
-						"水下呼吸"
+						"水中呼吸"
 					]
 				}
 			]
@@ -831,7 +831,7 @@
 					"ENG_name": "Healing Touch (1/Day)",
 					"name": "治愈之触 (1/日)",
 					"entries": [
-						"天界生物触碰另一个生物。目标通过魔法恢复生命值，等于{@dice 2d8 + 召唤法术等级}。"
+						"天界生物触碰另一个生物。目标通过魔法恢复生命值，等于{@dice 2d8 + summonSpellLevel}。"
 					]
 				}
 			],
@@ -864,7 +864,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "光耀之弓（仅复仇圣灵）",
-									"with": "光辉之弓"
+									"with": "光耀之弓"
 								}
 							},
 							{
@@ -892,7 +892,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "光耀之锤（仅守护圣灵）",
-									"with": "光辉权杖"
+									"with": "光耀之锤"
 								}
 							},
 							{
@@ -1032,7 +1032,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "狂怒乱击（仅粘土）",
-									"with": "狂暴猛击"
+									"with": "狂怒乱击"
 								}
 							}
 						]
@@ -1073,7 +1073,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "石迷昏眠（仅岩石）",
-									"with": "石肤昏睡"
+									"with": "石迷昏眠"
 								}
 							},
 							{
@@ -1221,7 +1221,7 @@
 				},
 				"swim": {
 					"number": 40,
-					"condition": "（仅水）"
+					"condition": "（仅水中）"
 				},
 				"canHover": true
 			},
@@ -1242,7 +1242,7 @@
 						"雷鸣"
 					],
 					"cond": true,
-					"note": "（仅空气）"
+					"note": "（仅空中）"
 				},
 				{
 					"resist": [
@@ -1257,7 +1257,7 @@
 						"强酸"
 					],
 					"cond": true,
-					"note": "（仅水）"
+					"note": "（仅水中）"
 				}
 			],
 			"immune": [
@@ -1337,7 +1337,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "不定形态（仅气、火、水）",
-									"with": "不定形形态"
+									"with": "不定形态"
 								}
 							}
 						],
@@ -1415,7 +1415,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "不定形态（仅气、火、水）",
-									"with": "不定形形态"
+									"with": "不定形态"
 								}
 							}
 						],
@@ -1452,7 +1452,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "不定形态（仅气、火、水）",
-									"with": "不定形形态"
+									"with": "不定形态"
 								}
 							}
 						],
@@ -1557,20 +1557,20 @@
 							"items": [
 								{
 									"ENG_name": "Fuming",
-									"type": "item",
 									"name": "愤怒",
+									"type": "item",
 									"entry": "在使用精类步后，该精类生物在它回合结束前的下一次攻击检定具有优势。"
 								},
 								{
 									"ENG_name": "Mirthful",
-									"type": "item",
 									"name": "欢欣",
+									"type": "item",
 									"entry": "精类生物可以强迫其视野内10英尺范围内的一个生物进行一次感知豁免，对抗你的法术豁免DC。除非豁免成功，否则目标将被你和精类生物{@condition 魅惑}1分钟，或直到目标受到任何伤害。"
 								},
 								{
 									"ENG_name": "Tricksy",
-									"type": "item",
 									"name": "诡诈",
+									"type": "item",
 									"entry": "在使用精类步后，该精类生物可以立即令魔法黑暗充斥于它5尺内的一个5尺立方区域，魔法黑暗持续直到精类生物的下回合结束。"
 								}
 							]
@@ -1681,7 +1681,7 @@
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅恶魔）"
+					"condition": "（仅魔鬼）"
 				}
 			},
 			"str": 13,
@@ -2755,7 +2755,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "虚体通行（仅幽体）",
-									"with": "无形通道"
+									"with": "虚体通行"
 								}
 							},
 							{
@@ -2768,7 +2768,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "致死之触（仅幽体）",
-									"with": "死亡之触"
+									"with": "致死之触"
 								}
 							},
 							{
@@ -2808,7 +2808,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "腐灭灵光（仅腐尸）",
-									"with": "腐化光环"
+									"with": "腐灭灵光"
 								}
 							},
 							{
@@ -2821,7 +2821,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "腐灭爪击（仅腐尸）",
-									"with": "腐烂之爪"
+									"with": "腐灭爪击"
 								}
 							},
 							{
@@ -2859,7 +2859,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "暗澹箭（仅骷髅）",
-									"with": "墓穴射线"
+									"with": "暗澹箭"
 								}
 							},
 							{

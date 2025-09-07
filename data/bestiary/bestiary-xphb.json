@@ -26,7 +26,7 @@
 				"walk": 30,
 				"fly": {
 					"number": 30,
-					"condition": "（悬浮；仅贝勒布）"
+					"condition": "（悬浮;仅类眼魔）"
 				},
 				"canHover": true
 			},
@@ -241,7 +241,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "灵能猛击（仅夺心魔）",
-									"with": "心灵冲击"
+									"with": "灵能猛击"
 								}
 							}
 						]
@@ -618,11 +618,11 @@
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅空气）"
+					"condition": "（仅空中）"
 				},
 				"swim": {
 					"number": 30,
-					"condition": "（仅水）"
+					"condition": "（仅水中）"
 				}
 			},
 			"str": 18,
@@ -681,7 +681,7 @@
 			"traitTags": [
 				"飞掠",
 				"集群战术",
-				"水下呼吸"
+				"水中呼吸"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -791,7 +791,7 @@
 					},
 					"traitTags": [
 						"集群战术",
-						"水下呼吸"
+						"水中呼吸"
 					]
 				}
 			]
@@ -870,7 +870,7 @@
 					"ENG_name": "Healing Touch (1/Day)",
 					"name": "治愈之触 (1/日)",
 					"entries": [
-						"灵体触碰另一个生物。目标恢复的生命值等于{@dice 2d8 + 召唤法术等级}。"
+						"灵体触碰另一个生物。目标恢复的生命值等于{@dice 2d8 + summonSpellLevel}。"
 					]
 				}
 			],
@@ -898,7 +898,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "光耀之弓（仅复仇圣灵）",
-									"with": "光辉之弓"
+									"with": "光耀之弓"
 								}
 							},
 							{
@@ -927,7 +927,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "光耀之锤（仅守护圣灵）",
-									"with": "光辉权杖"
+									"with": "光耀之锤"
 								}
 							},
 							{
@@ -1064,7 +1064,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "狂怒乱击（仅粘土）",
-									"with": "狂暴猛击"
+									"with": "狂怒乱击"
 								}
 							}
 						]
@@ -1105,7 +1105,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "石迷昏眠（仅岩石）",
-									"with": "石肤昏睡"
+									"with": "石迷昏眠"
 								}
 							},
 							{
@@ -1258,7 +1258,7 @@
 				},
 				"swim": {
 					"number": 40,
-					"condition": "（仅水）"
+					"condition": "（仅水中）"
 				},
 				"canHover": true
 			},
@@ -1279,7 +1279,7 @@
 						"雷鸣"
 					],
 					"cond": true,
-					"note": "（仅空气）"
+					"note": "（仅空中）"
 				},
 				{
 					"resist": [
@@ -1294,7 +1294,7 @@
 						"强酸"
 					],
 					"cond": true,
-					"note": "（仅水）"
+					"note": "（仅水中）"
 				}
 			],
 			"immune": [
@@ -1365,7 +1365,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "不定形态（仅气、火、水）",
-									"with": "不定形形态"
+									"with": "不定形态"
 								}
 							}
 						],
@@ -1443,7 +1443,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "不定形态（仅气、火、水）",
-									"with": "不定形形态"
+									"with": "不定形态"
 								}
 							}
 						],
@@ -1480,7 +1480,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "不定形态（仅气、火、水）",
-									"with": "不定形形态"
+									"with": "不定形态"
 								}
 							}
 						],
@@ -1709,7 +1709,7 @@
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅恶魔）"
+					"condition": "（仅魔鬼）"
 				}
 			},
 			"str": 13,
@@ -1786,7 +1786,7 @@
 					"ENG_name": "Fiery Strike (Devil Only)",
 					"name": "狂焰袭（仅魔鬼）",
 					"entries": [
-						"{@atkr 米，半径} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 范围5尺或射程150尺. {@h}{@damage 2d6 + 3 + 召唤法术等级}火焰伤害。"
+						"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击调整值}, 范围5尺或射程150尺. {@h}{@damage 2d6 + 3 + 召唤法术等级}火焰伤害。"
 					]
 				}
 			],
@@ -2217,7 +2217,7 @@
 					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
 					"name": "治愈之触（仅限天族，长休充能）",
 					"entries": [
-						"5英尺内的生物恢复的生命值点数等于{@dice 2d8 + 召唤法术等级}。"
+						"5英尺内的生物恢复的生命值点数等于{@dice 2d8 + summonSpellLevel}。"
 					]
 				}
 			],
@@ -2376,7 +2376,7 @@
 				"walk": 30,
 				"fly": {
 					"number": 40,
-					"condition": "（悬浮；仅幽灵）"
+					"condition": "（悬浮; 仅幽体）"
 				},
 				"canHover": true
 			},
@@ -2489,7 +2489,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "虚体通行（仅幽体）",
-									"with": "无形通道"
+									"with": "虚体通行"
 								}
 							},
 							{
@@ -2502,7 +2502,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "致死之触（仅幽体）",
-									"with": "死亡之触"
+									"with": "致死之触"
 								}
 							},
 							{
@@ -2542,7 +2542,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "腐灭灵光（仅腐尸）",
-									"with": "腐化光环"
+									"with": "腐灭灵光"
 								}
 							},
 							{
@@ -2555,7 +2555,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "腐灭爪击（仅腐尸）",
-									"with": "腐烂之爪"
+									"with": "腐灭爪击"
 								}
 							},
 							{
@@ -2593,7 +2593,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "暗澹箭（仅骷髅）",
-									"with": "墓穴射线"
+									"with": "暗澹箭"
 								}
 							},
 							{

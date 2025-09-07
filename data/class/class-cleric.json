@@ -82,7 +82,7 @@
 					"(a) {@item 鳞甲|PHB}，(b) {@item 皮甲|PHB}或 (c) {@item 链甲|PHB} （拥有熟练项时可选）",
 					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
 					"(a) 一个{@item 祭司套组|PHB}或 (b) 一个{@item 探索套组|PHB}",
-					"一个{@item 护盾术|PHB}和一个{@item 圣徽|PHB}"
+					"一个{@item 盾牌|PHB}和一个{@item 圣徽|PHB}"
 				],
 				"goldAlternative": "{@dice 5d4 × 10|5d4 × 10|起始金币}",
 				"defaultData": [
@@ -126,7 +126,7 @@
 					},
 					{
 						"_": [
-							"护盾术|PHB",
+							"盾牌|PHB",
 							{
 								"equipmentType": "focusSpellcastingHoly"
 							}
@@ -617,7 +617,7 @@
 								"item": "链甲衫|XPHB"
 							},
 							{
-								"item": "护盾术|XPHB"
+								"item": "盾牌|XPHB"
 							},
 							{
 								"item": "硬头锤|XPHB"
@@ -640,7 +640,7 @@
 					}
 				],
 				"entries": [
-					"{@i 选择A或B：} (A) {@item 链甲衫|XPHB}, {@item 护盾术|XPHB}, {@item 硬头锤|XPHB}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 7 GP; 或 (B) 110 GP"
+					"{@i 选择A或B：} (A) {@item 链甲衫|XPHB}, {@item 盾牌|XPHB}, {@item 硬头锤|XPHB}, {@item 圣徽|XPHB}, {@item 祭司套组|XPHB}, 7 GP; 或 (B) 110 GP"
 				]
 			},
 			"multiclassing": {
@@ -2985,8 +2985,8 @@
 				"你将选择一个与你所信仰神的神职相关的神圣领域。每个领域都有其自己的特性，并且每个领域都提供了与之相关的神的例子。当你在1级时选择它，你的选择会赋予你领域法术和其他特性。当你在2级获得引导神力特性时，它还会赋予你额外的使用引导神力的方式，以及在6级、8级和17级时的额外增益。",
 				{
 					"ENG_name": "Domain Spells",
-					"type": "entries",
 					"name": "领域法术",
+					"type": "entries",
 					"entries": [
 						"每个领域都有其相应的领域法术列表。当你获得表中所对应的牧师等级时，你将同时习得这些法术。领域法术一旦习得，将会一直在你的准备法术列表中，且不计入你的每日准备法术上限。",
 						"某些领域其领域法术可能并不在牧师法术列表中，此时如果你选择了该领域，则你视该领域的领域法术为你的牧师法术。"
@@ -3008,16 +3008,16 @@
 				"你作为神圣力量的导体得以施展牧师法术。参考{@book 第十章|PHB|10}的施法规则，以及{@book 第十一章|PHB|11}的{@filter 牧师法术|spells|class=牧师}。",
 				{
 					"ENG_name": "Cantrips",
-					"type": "entries",
 					"name": "戏法",
+					"type": "entries",
 					"entries": [
 						"第1级时，你选择三个牧师法术列表中的戏法作为已知法术。在获得更高的牧师等级后你还可以习得其它的戏法，具体数据参见\"牧师职业表\"中\"已知戏法\"一栏。"
 					]
 				},
 				{
 					"ENG_name": "Preparing and Casting Spells",
-					"type": "entries",
 					"name": "法术的准备与施展",
+					"type": "entries",
 					"entries": [
 						"\"牧师职业表\"里记录了你用以施展{@filter 牧师法术|spells|class=牧师}的1环及更高环阶法术位数量。施展某个牧师法术时，你必须同时消耗其对应环阶的法术位。已消耗的法术位可在完成长休后恢复。",
 						"你可以准备牧师法术列表中所有符合当前施展条件的法术。准备法术时，你所准备法术的总数等于你的感知调整值＋你的牧师职业等级（最少可以准备一个）。另外，你只能准备已经获得相应环阶法术位的法术。",
@@ -3027,22 +3027,22 @@
 				},
 				{
 					"ENG_name": "Spellcasting Ability",
-					"type": "entries",
 					"name": "施法属性",
+					"type": "entries",
 					"entries": [
 						"你的法术力量来源于你对神的信仰，因此感知是你施展牧师法术的关键属性。每当你的牧师法术需要施法属性时均指向你的感知值。而你牧师法术的豁免DC和攻击检定，则使用你的感知调整值。",
 						{
 							"ENG_name": "Spell",
-							"type": "abilityDc",
 							"name": "法术",
+							"type": "abilityDc",
 							"attributes": [
 								"wis"
 							]
 						},
 						{
 							"ENG_name": "Spell",
-							"type": "abilityAttackMod",
 							"name": "法术",
+							"type": "abilityAttackMod",
 							"attributes": [
 								"wis"
 							]
@@ -3051,16 +3051,16 @@
 				},
 				{
 					"ENG_name": "Ritual Casting",
-					"type": "entries",
 					"name": "仪式施法",
+					"type": "entries",
 					"entries": [
 						"如果你所准备牧师法术中的某法术有带仪式标签，则你可以用这些法术进行仪式施法。"
 					]
 				},
 				{
 					"ENG_name": "Spellcasting Focus",
-					"type": "entries",
 					"name": "法器",
+					"type": "entries",
 					"entries": [
 						"你可以使用{@item 圣徽|PHB}作为施展牧师法术的法器。"
 					]
@@ -3180,7 +3180,7 @@
 			"classSource": "PHB",
 			"level": 5,
 			"entries": [
-				"第5级起，当一个{@filter 挑战等级1/2或更低的不死生物|bestiary|challenge rating=[&0;&1/2]|type=不死生物|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
+				"第5级起，当一个{@filter 挑战等级1/2或更低的不死生物|bestiary|challenge rating=[&0;&1/2]|type=undead|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
 			]
 		},
 		{
@@ -3237,7 +3237,7 @@
 			"classSource": "PHB",
 			"level": 8,
 			"entries": [
-				"第8级开始，当一个{@filter 挑战等级1或更低的不死生物|bestiary|challenge rating=[&0;&1]|type=不死生物|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
+				"第8级开始，当一个{@filter 挑战等级1或更低的不死生物|bestiary|challenge rating=[&0;&1]|type=undead|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
 			]
 		},
 		{
@@ -3281,7 +3281,7 @@
 			"classSource": "PHB",
 			"level": 11,
 			"entries": [
-				"第11级开始，当一个 {@filter 挑战等级2或更低的不死生物|bestiary|challenge rating=[&0;&2]|type=不死生物|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
+				"第11级开始，当一个 {@filter 挑战等级2或更低的不死生物|bestiary|challenge rating=[&0;&2]|type=undead|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
 			]
 		},
 		{
@@ -3310,7 +3310,7 @@
 			"classSource": "PHB",
 			"level": 14,
 			"entries": [
-				"第14级开始，当一个{@filter 挑战等级3或更低的不死生物|bestiary|challenge rating=[&0;&3]|type=不死生物|miscellaneous=!swarm}未能通过对你的驱散亡灵特性的豁免投掷时，该生物将立即被摧毁。"
+				"第14级开始，当一个{@filter 挑战等级3或更低的不死生物|bestiary|challenge rating=[&0;&3]|type=undead|miscellaneous=!swarm}未能通过对你的驱散亡灵特性的豁免投掷时，该生物将立即被摧毁。"
 			]
 		},
 		{
@@ -3339,7 +3339,7 @@
 			"classSource": "PHB",
 			"level": 17,
 			"entries": [
-				"第17级开始，当一个{@filter 挑战等级4或更低的不死生物|bestiary|challenge rating=[&0;&4]|type=不死生物|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
+				"第17级开始，当一个{@filter 挑战等级4或更低的不死生物|bestiary|challenge rating=[&0;&4]|type=undead|miscellaneous=!swarm}未能通过对你的驱散不死生物特性的豁免检定时，该生物会被立即摧毁。"
 			]
 		},
 		{
@@ -3438,7 +3438,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"通过战斗训练，你获得{@filter 军用武器|items|type=军用武器}熟练与{@filter 重甲|items|type=沉重的护甲}受训。"
+				"通过战斗训练，你获得{@filter 军用武器|items|type=军用武器}熟练与{@filter 重甲|items|type=重甲}受训。"
 			]
 		},
 		{
@@ -3458,8 +3458,8 @@
 					"entries": [
 						{
 							"ENG_name": "Cantrips",
-							"type": "entries",
 							"name": "戏法",
+							"type": "entries",
 							"entries": [
 								"你已知{@filter 牧师法术列表|spells|class=牧师}中3个你选择的戏法。推荐选择{@spell 神导术|XPHB}，{@spell 圣火术|XPHB}和{@spell 奇术|XPHB}。",
 								"当你获得牧师等级时，你可以将一道已知戏法用另一道{@filter 牧师法术列表|spells|class=牧师}中的戏法替换。",
@@ -3468,16 +3468,16 @@
 						},
 						{
 							"ENG_name": "Spell Slots",
-							"type": "entries",
 							"name": "施法能力",
+							"type": "entries",
 							"entries": [
 								"牧师特性表显示了你可用于施放1环及以上法术的法术位数量。你在完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的法术位。"
 							]
 						},
 						{
 							"ENG_name": "Prepared Spells of Level 1+",
-							"type": "entries",
 							"name": "1环及以上的准备法术",
+							"type": "entries",
 							"entries": [
 								"你准备了一系列一环或更高的法术，以供此特性施法使用。初始时，从{@filter 牧师法术列表|spells|class=牧师}选择4个一环法术。推荐选择{@spell 祝福术|XPHB}，{@spell 疗伤术|XPHB}，{@spell 光导箭|XPHB}和{@spell 虔诚护盾|XPHB}。",
 								"当你获得牧师等级时，你能准备的法术数量也会随之提升，如同牧师特性表中准备法术一栏所示。每当该数值提升时，从{@filter 牧师法术列表|spells|class=牧师}中选择额外的法术直至你准备的法术数量和该数值相等。你选择的新法术必须是你拥有法术位的法术。例如，作为一个3级牧师，你的准备法术表由6个一环或二环法术组成，可以自由搭配。",
@@ -3486,24 +3486,24 @@
 						},
 						{
 							"ENG_name": "Changing Your Prepared Spells",
-							"type": "entries",
 							"name": "改变你的准备法术",
+							"type": "entries",
 							"entries": [
 								"每当你完成一次{@variantrule 长休|XPHB}时，你可以改变你的准备法术表，将一道或更多已准备法术用其他牧师法术替换，新替换的法术必须是你拥有法术位的法术。"
 							]
 						},
 						{
 							"ENG_name": "Spellcasting Ability",
-							"type": "entries",
 							"name": "施法属性",
+							"type": "entries",
 							"entries": [
 								"感知是你牧师法术的施法关键属性。"
 							]
 						},
 						{
 							"ENG_name": "Spellcasting Focus",
-							"type": "entries",
 							"name": "法器",
+							"type": "entries",
 							"entries": [
 								"你可以使用{@item 圣徽|XPHB}作为你牧师法术的{@variantrule 法器|XPHB}。"
 							]
@@ -3766,16 +3766,16 @@
 					"entries": [
 						{
 							"ENG_name": "Divine Strike",
-							"type": "entries",
 							"name": "神圣打击",
+							"type": "entries",
 							"entries": [
 								"你的神击额外伤害增加到{@damage 2d8}。"
 							]
 						},
 						{
 							"ENG_name": "Potent Spellcasting",
-							"type": "entries",
 							"name": "强力施法",
+							"type": "entries",
 							"entries": [
 								"当你施展一道牧师戏法并用它对一个生物造成伤害时，你可以为你自己或你60尺内的另一个生物注入活力，使其获得等同于你感知调整值两倍的{@variantrule 临时生命值|XPHB}。"
 							]
@@ -4172,8 +4172,8 @@
 					"entries": [
 						{
 							"ENG_name": "Object Reading",
-							"type": "entries",
 							"name": "物件解读",
+							"type": "entries",
 							"entries": [
 								"保持专注于某个物件时，你即可从幻觉中找到其之前的拥有者。1分钟冥想后，你将看到该拥有者如何获得以及如何丢失该物件。以及新近发生的涉及该物体与该拥有者的重大事件。如果对象在近期转交由另一个生物拥有（转交日距施法时的日数必须在等同于你感知值的日数之内），则每个生物你要花费额外1分钟进行冥想，以通过幻觉获得同类的信息。"
 							]
@@ -4185,8 +4185,8 @@
 					"entries": [
 						{
 							"ENG_name": "Area Reading",
-							"type": "entries",
 							"name": "区域解读",
+							"type": "entries",
 							"entries": [
 								"你在冥想时看到的景象是身处位置最近发生的事件（某处的房间、街道、地道、空地，或是与之类似的50尺立方空间），可回溯的日数等于你的感知值。每个重要事件的幻象都将额外花费你1分钟的时间。这些重大事件通常涉及强烈的情感，比如战争和背叛、结婚和谋杀、出生和葬礼等。而这其中也可能包含有一些当时看似平凡无奇，眼下却显得至关重要的事情。"
 							]
@@ -6642,7 +6642,7 @@
 							"rows": [
 								[
 									"1st",
-									"{@spell 妖火}, {@spell 睡眠}"
+									"{@spell 妖火}, {@spell 睡眠术}"
 								],
 								[
 									"3rd",
@@ -6905,7 +6905,7 @@
 					"rows": [
 						[
 							"1st",
-							"{@spell 虚假生命}, {@spell 睡眠}"
+							"{@spell 虚假生命}, {@spell 睡眠术}"
 						],
 						[
 							"3rd",
@@ -7171,16 +7171,16 @@
 					"items": [
 						{
 							"ENG_name": "Blessing of the Watchful Moon",
-							"type": "item",
 							"name": "警觉之月的祝福",
+							"type": "item",
 							"entries": [
 								"在接下来的1小时内，被祝福过的生物的移动速度增加了10尺，并且在涉及使用嗅觉或追踪生物时所做的感知鉴定具有{@quickref 优势与劣势|PHB|2|0|优势}（{@skill 察觉}或{@skill 生存}）。"
 							]
 						},
 						{
 							"ENG_name": "Blessing of the Blood-Drenched Moon",
-							"type": "item",
 							"name": "血染之月的祝福",
+							"type": "item",
 							"entries": [
 								"在接下来的10分钟内，如果受祝福的生物发动攻击检定时，本次攻击检定将具有 {@quickref 优势与劣势|PHB|2|0|优势}，需要其目标周围5尺范围内有至少一名未{@condition 失能}的盟友。"
 							]
@@ -8656,7 +8656,7 @@
 				"name": "引导神力"
 			},
 			"entries": [
-				"以一个{@action 魔法|XPHB}动作，你展示{@item 圣徽|XPHB}并消耗一次引导神力来引导治疗能量恢复等于你牧师等级五倍的{@variantrule 生命值|XPHB}。你选择身边30尺内处于{@variantrule 浴血|XPHB}状态的生物作为此特性的目标（可以包括你），再为其分配从中获得的治疗{@variantrule 生命值|XPHB}。该特性至多将目标的{@variantrule 生命值|XPHB|生命值}恢复至其上限的一半。"
+				"作为一个{@action 魔法|XPHB}动作，你展示你的{@item 圣徽|XPHB}并消耗一次引导神力来唤起治愈能量，可以恢复相当于你牧师等级五倍的{@variantrule 生命值|XPHB}。选择你30尺内的{@status 浴血|XPHB}生物（可以包括你自己），并将这些{@variantrule 生命值|XPHB}分配给它们。此特性不能将生物恢复至超过其{@variantrule 生命值|XPHB|生命值}最大值的一半。"
 			]
 		},
 		{
@@ -8895,24 +8895,24 @@
 				"以一个{@variantrule 附赠动作|XPHB}，你可以消耗一次引导神力次数来创造一个自己的完美视觉幻象并现在你身边30尺内一个你能看见且未被占据的空间。该幻象是无形的且不占据它所在的空间。幻象持续1分钟，或直至你将其解除（无需动作）或陷入{@condition 失能|XPHB}状态。这个幻象栩栩如生，能模仿你的表情和姿势。当幻象存在时，你将获得以下好处：",
 				{
 					"ENG_name": "Cast Spells",
-					"type": "entries",
 					"name": "施法",
+					"type": "entries",
 					"entries": [
 						"你可以如同你在幻象所在位置施展法术，但必须使用你自己的感官。"
 					]
 				},
 				{
 					"ENG_name": "Distract",
-					"type": "entries",
 					"name": "分散注意",
+					"type": "entries",
 					"entries": [
 						"当你和你的幻象都在同一个生物身边5尺内，且该生物可以看见幻象时，由于幻象对目标造成的干扰，你对其进行的攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Move",
-					"type": "entries",
 					"name": "移动",
+					"type": "entries",
 					"entries": [
 						"以一个{@variantrule 附赠动作|XPHB}，你可以移动幻象最多30尺到达一处空间，该空间必须是你120尺内一处可见的未被占据的空间。"
 					]
@@ -8997,16 +8997,16 @@
 					"entries": [
 						{
 							"ENG_name": "Shared Distraction",
-							"type": "entries",
 							"name": "共享分散注意",
+							"type": "entries",
 							"entries": [
 								"当你和你的盟友对幻象5尺范围内的生物进行攻击检定时，该攻击检定具有{@variantrule 优势|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Healing Illusion",
-							"type": "entries",
 							"name": "治愈幻象",
+							"type": "entries",
 							"entries": [
 								"当幻象消失时，你或你选择的5尺范围内的生物恢复等同于你牧师等级的{@variantrule 生命值|XPHB}。"
 							]
@@ -9153,7 +9153,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"你获得对钝击、穿刺、挥砍伤害的{@variantrule 提升抗性|XPHB}。"
+				"你获得对钝击、穿刺、挥砍伤害的{@variantrule 抗性|XPHB}。"
 			]
 		}
 	]

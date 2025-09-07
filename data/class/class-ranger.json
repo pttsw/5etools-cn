@@ -1573,7 +1573,7 @@
 			"level": 1,
 			"entries": [
 				"第1级起，你针对一种特定类型敌人的研究令你有着充足的经验用以追踪、狩猎乃至与之交流。",
-				"从下列种类中选择其一作为宿敌： {@filter 异怪|bestiary|type=异怪}, {@filter 野兽|bestiary|type=野兽}、{@filter 天界生物|bestiary|type=天界生物}, {@filter 构装体|bestiary|type=构装体}、{@filter 龙|bestiary|type=龙}、{@filter 元素生物|bestiary|type=元素生物}、{@filter 精类|bestiary|type=精类}、{@filter 邪魔|bestiary|type=邪魔}、{@filter 巨人|bestiary|type=巨人}、{@filter 怪兽|bestiary|type=怪兽}、{@filter 泥怪|bestiary|type=泥怪}、{@filter 植物|bestiary|type=植物}、{@filter 不死生物|bestiary|type=不死生物}。或者作为另一种方案，你也可以选择两个{@filter 类人生物|bestiary|type=类人生物}种族（例如{@creature 鬣狗人||鬣狗人}和{@creature 兽人||兽人}）作为宿敌。",
+				"从下列种类中选择其一作为宿敌： {@filter 异怪|bestiary|type=aberration}, {@filter 野兽|bestiary|type=beast}、{@filter 天界生物|bestiary|type=celestial}, {@filter 构装体|bestiary|type=construct}、{@filter 龙类|bestiary|type=dragon}、{@filter 元素生物|bestiary|type=elemental}、{@filter 精类|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪兽|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}、{@filter 不死生物|bestiary|type=undead}。或者作为另一种方案，你也可以选择两个{@filter 类人生物|bestiary|type=humanoid}种族（例如{@creature 鬣狗人||鬣狗人}和{@creature 兽人||兽人}）作为宿敌。",
 				"追踪宿敌时，你的感知（{@skill 生存}）检定，以及回想关于宿敌信息时进行的智力检定具有优势。",
 				"获得该特性时，如果你选择的宿敌具有语言能力，则你还可以学会宿敌所知晓的一门语言。",
 				"第6和第14级时，你将分别获得一个额外的宿敌以及相关语言。另外，随着等级的提升，你所选择的宿敌应该与你在冒险中所遭遇怪物的种类层次相符。"
@@ -1682,8 +1682,8 @@
 				"第2级起，你学会运用自然世界的魔法本源进行施法，你的施法方式与德鲁伊类似。参考{@book 第十章|PHB|10}的施法基本规则以及{@book 第十一章|PHB|11}的{@filter 游侠法术列表|spells|class=游侠}。",
 				{
 					"ENG_name": "Spell Slots",
-					"type": "entries",
 					"name": "施法能力",
+					"type": "entries",
 					"entries": [
 						"\"游侠职业表\"中记录了你可用以施展你{@filter 游侠法术|spells|class=游侠}的1环及更高环阶法术位数量。施展某个游侠法术时，你必须同时消耗其对应环阶的法术位。而已消耗的法术位则可以通过完成一次长休进行恢复。",
 						"例如，如果你已经习得一环法术{@spell 化兽为友}，并且有一个一环和二环法术位可用，你可以使用任一法术位来施放{@spell 化兽为友}。"
@@ -1691,8 +1691,8 @@
 				},
 				{
 					"ENG_name": "Spells Known of 1st Level and Higher",
-					"type": "entries",
 					"name": "1环及更高等级已知法术",
+					"type": "entries",
 					"entries": [
 						"你从游侠法术列表里选两个1环法术作为自己的已知法术。",
 						"\"游侠职业表\"中\"已知法术\"一栏记录了你获得更多已知法术时的相应等级。你只能获取已有相应环阶法术位的法术。比如，当你达到第5级时，你将获得一个1环或2环法术。",
@@ -1701,22 +1701,22 @@
 				},
 				{
 					"ENG_name": "Spellcasting Ability",
-					"type": "entries",
 					"name": "施法属性",
+					"type": "entries",
 					"entries": [
 						"你的魔法来自你与自然的同调，因此感知是你施展游侠法术的关键属性。每当你的游侠法术需要施法属性时均指向你的感知值。而你游侠法术的豁免DC和攻击检定，则使用你的感知调整值。",
 						{
 							"ENG_name": "Spell",
-							"type": "abilityDc",
 							"name": "法术",
+							"type": "abilityDc",
 							"attributes": [
 								"wis"
 							]
 						},
 						{
 							"ENG_name": "Spell",
-							"type": "abilityAttackMod",
 							"name": "法术",
+							"type": "abilityAttackMod",
 							"attributes": [
 								"wis"
 							]
@@ -1868,8 +1868,8 @@
 				"该职业等级6级时，获得额外的特性。",
 				{
 					"ENG_name": "Roving",
-					"type": "entries",
 					"name": "越野",
+					"type": "entries",
 					"entries": [
 						"你的步行速度增加5。同时，你获得等于你步行速度的攀爬速度和游泳速度。"
 					]
@@ -1944,8 +1944,8 @@
 				"该职业等级10级时，获得额外的特性。",
 				{
 					"ENG_name": "Tireless",
-					"type": "entries",
 					"name": "不知疲倦",
+					"type": "entries",
 					"entries": [
 						"以一个动作，你能够给予自己{@dice 1d8}+你的感知调整值的临时生命值（至少1点临时生命值）。你能够使用此特性的次数等于你的熟练加值次，当你完成一次长休后，你恢复已消费的全部次数。",
 						"此外，当你完成一次短休时，你的{@condition 力竭}等级减少1级（若有）。"
@@ -2147,16 +2147,16 @@
 					"entries": [
 						{
 							"ENG_name": "Spell Slots",
-							"type": "entries",
 							"name": "施法能力",
+							"type": "entries",
 							"entries": [
 								"游侠特性表显示了你有多少法术位可以用来施放1级以上的法术。当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已使用的法术位。"
 							]
 						},
 						{
 							"ENG_name": "Prepared Spells of Level 1+",
-							"type": "entries",
 							"name": "1环及以上的准备法术",
+							"type": "entries",
 							"entries": [
 								"你准备这个特性可用的1级及以上法术列表。开始时，选择两个{@filter 1级游侠法术|spells|class=游侠|level=1}。推荐选择{@spell 疗伤术|XPHB}和{@spell 诱捕打击|XPHB}。",
 								"随着你获得游侠等级，你的法术列表中的法术数量会增加，如游侠特性表中的准备法术列所示。每当这个数量增加时，选择额外的游侠法术，直到你的法术列表中的法术数量与游侠特性表中的数字相匹配。所选的法术必须是你有法术位的法术等级。例如，如果你是5级游侠，你的准备法术列表可以包括六个1级或2级的游侠法术，以任何组合。",
@@ -2165,24 +2165,24 @@
 						},
 						{
 							"ENG_name": "Changing Your Prepared Spells",
-							"type": "entries",
 							"name": "改变你的准备法术",
+							"type": "entries",
 							"entries": [
 								"每当你完成一次{@variantrule 长休|XPHB}，你可以用另一个你有法术位的游侠法术替换你的法术列表中的一个法术。"
 							]
 						},
 						{
 							"ENG_name": "Spellcasting Ability",
-							"type": "entries",
 							"name": "施法属性",
+							"type": "entries",
 							"entries": [
 								"感知是你的游侠法术的施法能力。"
 							]
 						},
 						{
 							"ENG_name": "Spellcasting Focus",
-							"type": "entries",
 							"name": "法器",
+							"type": "entries",
 							"entries": [
 								"你可以使用一个{@item 德鲁伊法器|XPHB}作为你的游侠法术的{@variantrule 法器|XPHB}。"
 							]
@@ -2202,7 +2202,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你使用武器的训练使你能够选择两种你熟练的{@filter 武器|items|type=简单武器；军用武器}，例如{@item 长弓|XPHB|长弓}和{@item 短剑|XPHB|短剑}，使用它们的{@variantrule 武器精通词条|XPHB|精通词条}。",
+				"你使用武器的训练使你能够选择两种你熟练的{@filter 武器|items|type=简易武器;军用武器}，例如{@item 长弓|XPHB|长弓}和{@item 短剑|XPHB|短剑}，使用它们的{@variantrule 武器精通词条|XPHB|精通词条}。",
 				"每当你完成一次{@variantrule 长休|XPHB}，你可以改变你选择的武器类型。例如，你可以改用{@variantrule 武器精通词条|XPHB|精通词条}的{@item 弯刀|XPHB|弯刀}和{@item 长剑|XPHB|长剑}。"
 			]
 		},
@@ -2223,16 +2223,16 @@
 					"entries": [
 						{
 							"ENG_name": "Expertise",
-							"type": "entries",
 							"name": "专精",
+							"type": "entries",
 							"entries": [
 								"选择一项你没有{@variantrule 专精|XPHB}的技能熟练度。你在这项技能上获得{@variantrule 专精|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Languages",
-							"type": "entries",
 							"name": "语言",
+							"type": "entries",
 							"entries": [
 								"你从{@book 第二章|XPHB|2|选择语言}中的语言表格里选择两种你选择的语言。"
 							]
@@ -2379,16 +2379,16 @@
 					"entries": [
 						{
 							"ENG_name": "Temporary Hit Points",
-							"type": "entries",
 							"name": "临时生命值",
+							"type": "entries",
 							"entries": [
 								"作为一个{@action 魔法|XPHB}动作，你可以给自己增加等于{@dice 1d8}加上你感知调整值（最少为1）的{@variantrule 临时生命值|XPHB}。你可以使用这个动作的次数等于你感知调整值（最少一次），当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已使用的使用次数。"
 							]
 						},
 						{
 							"ENG_name": "Decrease Exhaustion",
-							"type": "entries",
 							"name": "减少力竭",
+							"type": "entries",
 							"entries": [
 								"每当你完成一次{@variantrule 短休|XPHB}，如果你有任何{@condition 力竭|XPHB}等级，它将减少1。"
 							]
@@ -2621,14 +2621,14 @@
 					"items": [
 						{
 							"ENG_name": "Thaumaturgy",
-							"type": "item",
 							"name": "奇术",
+							"type": "item",
 							"entry": "你习得戏法{@spell 奇术}，这对你而言是一个游侠法术。"
 						},
 						{
 							"ENG_name": "Tongue of Dragons",
-							"type": "item",
 							"name": "龙之言语",
+							"type": "item",
 							"entry": "你学会说，读，写龙语或另一门你选择的语言。"
 						}
 					]
@@ -2676,24 +2676,24 @@
 					"items": [
 						{
 							"ENG_name": "Drake Mount",
-							"type": "item",
 							"name": "龙兽坐骑",
+							"type": "item",
 							"entries": [
 								"龙兽成长为中等体型。作为你特别联结的反映，你能够将龙兽当做坐骑骑乘，即使你的体型也为中型。当你骑乘龙兽时，龙兽不能使用从本特性中获得的飞行速度。"
 							]
 						},
 						{
 							"ENG_name": "Magic Fang",
-							"type": "item",
 							"name": "魔法獠牙",
+							"type": "item",
 							"entries": [
 								"龙兽的啃咬攻击额外造成与龙族精粹伤害类型相同的{@damage 1d6}伤害。"
 							]
 						},
 						{
 							"ENG_name": "Resistance",
+							"name": "抗性",
 							"type": "item",
-							"name": "提升抗性",
 							"entries": [
 								"你获得与龙族精粹伤害类型相同的伤害抗性。"
 							]
@@ -2740,24 +2740,24 @@
 					"items": [
 						{
 							"ENG_name": "Empowered Bite",
-							"type": "item",
 							"name": "强化啃咬",
+							"type": "item",
 							"entries": [
 								"龙兽的啃咬攻击额外造成与龙族精粹属性相同的 {@damage 1d6}伤害。（总共{@damage 2d6}额外伤害。）"
 							]
 						},
 						{
 							"ENG_name": "Large Drake",
-							"type": "item",
 							"name": "大型龙兽",
+							"type": "item",
 							"entries": [
 								"你的龙兽成长为大型。当你骑乘龙兽时，使用飞行速度不再受限于牙鳞之联。"
 							]
 						},
 						{
 							"ENG_name": "Reflexive Resistance",
-							"type": "item",
 							"name": "反射抗性",
+							"type": "item",
 							"entries": [
 								"当你与龙兽相距30尺内，你或你的龙兽受到伤害时，你能使用你的反应为你或你的龙兽对这次伤害提供抗性。你能使用本反应的次数与你的熟练值相等，当你完成一次长休后恢复所有的使用次数。"
 							]
@@ -2820,7 +2820,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你获得一个野兽伴侣陪你一起冒险，这名训练有素的伙伴能与你合作无间地战斗。指定一个{@filter 体型不超过中型且挑战等级为1/4或更低的野兽|bestiary|challenge rating=[&0;&1/4]|type=野兽|size=f;d;t;s;m|miscellaneous=!swarm}。将你的熟练加值加到该野兽的AC，攻击检定，伤害掷骰以及其所有具有熟练项的豁免和技能检定中。其生命值上限选用其原上限，或你游侠等级的四倍两者中较高者。跟其他别的生物一样，该野兽也可在短休时使用生命骰。",
+				"你获得一个野兽伴侣陪你一起冒险，这名训练有素的伙伴能与你合作无间地战斗。指定一个{@filter 体型不超过中型且挑战等级为1/4或更低的野兽|bestiary|challenge rating=[&0;&1/4]|type=beast|size=f;d;t;s;m|miscellaneous=!swarm}。将你的熟练加值加到该野兽的AC，攻击检定，伤害掷骰以及其所有具有熟练项的豁免和技能检定中。其生命值上限选用其原上限，或你游侠等级的四倍两者中较高者。跟其他别的生物一样，该野兽也可在短休时使用生命骰。",
 				"动物伴侣会尽可能执行你的命令。它会在轮到你的先攻时行动。你在自己回合内可以用声音指令指示该野兽往何处移动（无需执行其他动作）。你可以用你的动作以声音指令指示它执行{@action 攻击}，{@action 疾走}，{@action 撤离}或{@action 协助}动作。若你无法发出指令，该野兽将自主执行{@action 回避}动作。如果你具有额外攻击特性，则你可以在命令该野兽执行{@action 攻击}动作的同时自己发动一次武器攻击。",
 				"若你陷入{@condition 失能}或并不在场，该野兽将自主活动，并集中致力于保护你和它自己。该野兽此时无需你下达指令即可使用其反应，比如以此发动一次借机攻击。",
 				"身处偏好地形时，如果只有该野兽与你一起，则你仍可以保持隐匿状态以正常步调旅行。",
@@ -3476,8 +3476,8 @@
 				},
 				{
 					"ENG_name": "It's Your Swarm",
-					"type": "inset",
 					"name": "你的集群",
+					"type": "inset",
 					"entries": [
 						"一位集群守卫的集群和法术反应了角色与自然精魂的联系。在游戏中，多抓住机会来描述你自己的集群和游侠法术。比方说，当你的游侠施展气化形体时，施法对象可能会消失在他自己的集群中，而非变为一团雾气，而{@spell 秘法眼}则可以创造出一部分分离的集群为你进行侦查。这样的描述不会改变法术的效应，但它们能让通过特性描述自己的角色更加引人入胜。需要更多个性化法术的指导，请见第三章中的\"定制法术\"一节。",
 						"同样，记住你的集群外表能由你自己定制，别局限于单一的造型。也许精魂的外表会随着游侠的情绪而千变万化，或者随着季节而呈现出不同的形象。这一切都由你自己选择。"
@@ -4091,16 +4091,16 @@
 					"entries": [
 						{
 							"ENG_name": "The Beast in Combat",
-							"type": "entries",
 							"name": "战斗中的野兽",
+							"type": "entries",
 							"entries": [
 								"在战斗中，野兽在你的回合中行动。它可以自行移动并使用它的{@variantrule 反应|XPHB}，但除非使用{@variantrule 附赠动作|XPHB}命令它采取其状态块中的行动或其他行动，否则它采取的唯一动作是{@action 回避|XPHB}动作。当你采取{@action 攻击|XPHB}动作时，也可以牺牲你的一次攻击来命令野兽采取\"野兽攻击\"动作。如果你处于{@condition 失能|XPHB}状态，野兽将自行行动，并且不仅限于{@action 回避|XPHB}动作。"
 							]
 						},
 						{
 							"ENG_name": "Restoring or Replacing the Beast",
-							"type": "entries",
 							"name": "复活或替换野兽",
+							"type": "entries",
 							"entries": [
 								"如果野兽在最近一小时内死亡，你可以采取一个{@action 魔法|XPHB}动作来触摸它并消耗一个法术位。野兽在1分钟后复活，其所有{@variantrule 生命值|XPHB}恢复。",
 								"每当你完成一次{@variantrule 长休|XPHB}，你可以召唤一个不同的原始野兽，它出现在你5英尺范围内的一个未被占据的空间内。你选择它的状态块和外观。如果你已经通过这个特性拥有了一个野兽，当新的野兽出现时，旧的会消失。"
@@ -4365,24 +4365,24 @@
 				"你已经精通了制造恐怖伏击的艺术，赋予你以下好处。",
 				{
 					"ENG_name": "Ambusher's Leap",
-					"type": "entries",
 					"name": "伏击者之跃",
+					"type": "entries",
 					"entries": [
 						"在每场战斗的第一个回合开始时，你的{@variantrule 速度|XPHB}增加10英尺，直到该回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Dreadful Strike",
-					"type": "entries",
 					"name": "恐惧打击",
+					"type": "entries",
 					"entries": [
 						"当你使用武器攻击一个生物并击中时，你可以额外造成{@damage 2d6}心灵伤害。你每个回合只能使用这个特性一次，你可以使用的次数等于你感知调整值的次数（最少一次），并且在你完成一次{@variantrule 长休|XPHB}后恢复所有已使用的使用次数。"
 					]
 				},
 				{
 					"ENG_name": "Initiative Bonus",
-					"type": "entries",
 					"name": "先攻加值",
+					"type": "entries",
 					"entries": [
 						"当你进行{@variantrule 先攻|XPHB}检定时，你可以将你的感知调整值加到检定结果上。"
 					]
@@ -4509,16 +4509,16 @@
 				"你的恐怖打击的灵能伤害变为{@damage 2d8}。此外，当你使用你的恐惧伏击特性的恐怖打击效果时，你可以造成以下其中一项额外效果。",
 				{
 					"ENG_name": "Sudden Strike",
-					"type": "entries",
 					"name": "瞬息打击",
+					"type": "entries",
 					"entries": [
 						"你可以使用同一武器对原始目标5英尺范围内且在武器射程内的另一生物进行攻击。"
 					]
 				},
 				{
 					"ENG_name": "Mass Fear",
-					"type": "entries",
 					"name": "群慌",
+					"type": "entries",
 					"entries": [
 						"目标生物以及它周围10英尺内的所有生物都必须进行一次对抗你法术豁免DC的感知豁免。豁免失败的生物将处于{@condition 恐慌|XPHB}状态，直到你的下一个回合开始。"
 					]
@@ -4600,16 +4600,16 @@
 					"entries": [
 						{
 							"ENG_name": "Colossus Slayer",
-							"type": "entries",
 							"name": "巨像屠夫",
+							"type": "entries",
 							"entries": [
 								"你的顽强可以消耗掉即使是最顽强的敌人。当你用武器击中一个生物时，如果该生物缺少任何{@variantrule 生命值|XPHB}，则武器会对目标造成额外的{@damage 1d8}伤害。你每回合只能造成一次这种额外伤害。"
 							]
 						},
 						{
 							"ENG_name": "Horde Breaker",
-							"type": "entries",
 							"name": "灭族者",
+							"type": "entries",
 							"entries": [
 								"在你的每个回合中，每当你使用武器进行一次攻击时，你可以使用同一把武器对原始目标5英尺范围内、在武器射程内且你本回合尚未攻击过的另一个生物进行一次额外攻击。"
 							]
@@ -4638,16 +4638,16 @@
 					"entries": [
 						{
 							"ENG_name": "Escape the Horde",
-							"type": "entries",
 							"name": "冲出重围",
+							"type": "entries",
 							"entries": [
 								"对你的{@action 借机攻击|XPHB|借机攻击}具有{@variantrule 劣势|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Multiattack Defense",
-							"type": "entries",
 							"name": "防御多重攻击",
+							"type": "entries",
 							"entries": [
 								"当一个生物通过攻击检定命中你时，该生物在本回合内对你进行的所有其他攻击检定都具有{@variantrule 劣势|XPHB}。"
 							]
@@ -4687,7 +4687,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"当你受到伤害时，你可以使用{@variantrule 反应|XPHB}来使自己对该伤害及当前回合内所有相同类型的伤害获得{@variantrule 提升抗性|XPHB}。"
+				"当你受到伤害时，你可以使用{@variantrule 反应|XPHB}来使自己对该伤害及当前回合内所有相同类型的伤害获得{@variantrule 抗性|XPHB}。"
 			]
 		}
 	]

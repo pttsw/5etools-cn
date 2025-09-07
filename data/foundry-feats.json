@@ -244,8 +244,8 @@
 			"effects": [
 				{
 					"ENG_name": "Acid: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyResi",
 					"name": "酸蚀：能量抗性恩赐",
+					"foundryId": "boonOfEnergyResi",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -256,8 +256,8 @@
 				},
 				{
 					"ENG_name": "Cold: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes1",
 					"name": "冷冻: 能量抗性恩惠",
+					"foundryId": "boonOfEnergyRes1",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -268,8 +268,8 @@
 				},
 				{
 					"ENG_name": "Fire: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes2",
 					"name": "火焰：能量抗性恩赐",
+					"foundryId": "boonOfEnergyRes2",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -280,8 +280,8 @@
 				},
 				{
 					"ENG_name": "Lightning: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes3",
 					"name": "闪电：能量抗性恩惠",
+					"foundryId": "boonOfEnergyRes3",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -292,8 +292,8 @@
 				},
 				{
 					"ENG_name": "Necrotic: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes4",
 					"name": "黯蚀：能量抗性恩惠",
+					"foundryId": "boonOfEnergyRes4",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -304,8 +304,8 @@
 				},
 				{
 					"ENG_name": "Poison: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes5",
 					"name": "毒素：能量抗性恩赐",
+					"foundryId": "boonOfEnergyRes5",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -316,8 +316,8 @@
 				},
 				{
 					"ENG_name": "Psychic: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes6",
 					"name": "灵能：能量抗性恩惠",
+					"foundryId": "boonOfEnergyRes6",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -328,8 +328,8 @@
 				},
 				{
 					"ENG_name": "Radiant: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes7",
 					"name": "光辉：能量抗性恩惠",
+					"foundryId": "boonOfEnergyRes7",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -340,8 +340,8 @@
 				},
 				{
 					"ENG_name": "Thunder: Boon of Energy Resistance",
-					"foundryId": "boonOfEnergyRes8",
 					"name": "雷鸣：能量抗性恩赐",
+					"foundryId": "boonOfEnergyRes8",
 					"changes": [
 						{
 							"key": "system.traits.dr.value",
@@ -655,8 +655,8 @@
 				},
 				{
 					"ENG_name": "Merged with Shadows",
-					"foundryId": "boonOfTheNightSp",
 					"name": "与暗影融合",
+					"foundryId": "boonOfTheNightSp",
 					"statuses": [
 						"隐形"
 					]
@@ -1202,7 +1202,7 @@
 					"name": "以感知激励",
 					"type": "heal",
 					"activation": {
-						"type": "special",
+						"type": "shortRest",
 						"condition": "当你完成一次短休或长休时"
 					},
 					"target": {
@@ -1219,6 +1219,9 @@
 						"types": [
 							"临时生命值"
 						],
+						"custom": {
+							"formula": "@details.level + @abilities.wis.mod"
+						},
 						"scaling": {
 							"number": 1
 						},
@@ -1230,7 +1233,7 @@
 					"name": "以魅力鼓舞",
 					"type": "heal",
 					"activation": {
-						"type": "special",
+						"type": "shortRest",
 						"condition": "当你完成一次短休或长休时"
 					},
 					"target": {
@@ -1523,8 +1526,8 @@
 				},
 				{
 					"ENG_name": "Poison Save (Dexterity)",
-					"foundryId": "poisoner",
 					"name": "毒素豁免（敏捷）",
+					"foundryId": "poisoner",
 					"type": "save",
 					"description": {
 						"chatFlavor": "失败时&参考[中毒]"
@@ -1579,8 +1582,8 @@
 				},
 				{
 					"ENG_name": "Poison Save (Intelligence)",
-					"foundryId": "poisoner1",
 					"name": "毒素豁免（智力）",
+					"foundryId": "poisoner1",
 					"type": "save",
 					"description": {
 						"chatFlavor": "失败时&参考[中毒]"
@@ -1637,8 +1640,8 @@
 			"effects": [
 				{
 					"ENG_name": "Poisoned (Dex)",
-					"foundryId": "poisoner",
 					"name": "中毒（敏捷）",
+					"foundryId": "poisoner",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 60
@@ -1654,8 +1657,8 @@
 				},
 				{
 					"ENG_name": "Poisoned (Int)",
-					"foundryId": "poisoner1",
 					"name": "中毒（智力）",
+					"foundryId": "poisoner1",
 					"type": "enchantment",
 					"duration": {
 						"seconds": 60
@@ -1729,7 +1732,7 @@
 		},
 		{
 			"ENG_name": "Protection",
-			"name": "守护",
+			"name": "防护",
 			"source": "XPHB",
 			"activities": [
 				{
@@ -1756,9 +1759,8 @@
 			"effects": [
 				{
 					"ENG_name": "Protected",
-					"foundryId": "protection",
 					"name": "被保护",
-					"transfer": true,
+					"foundryId": "protection",
 					"duration": {
 						"turns": 1
 					}
@@ -1852,8 +1854,8 @@
 			"effects": [
 				{
 					"ENG_name": "Shield Bashed",
-					"foundryId": "shieldMaster",
 					"name": "盾牌猛击",
+					"foundryId": "shieldMaster",
 					"statuses": [
 						"倒地"
 					]
@@ -1885,7 +1887,7 @@
 		},
 		{
 			"ENG_name": "Speedy",
-			"name": "迅捷",
+			"name": "飙速跑者",
 			"source": "XPHB",
 			"effects": [
 				{

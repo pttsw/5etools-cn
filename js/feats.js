@@ -77,6 +77,7 @@ class FeatsPage extends ListPage {
 			dataProps: ["feat"],
 
 			bookViewOptions: {
+				nameSingular: "feat",
 				namePlural: "feats",
 				pageTitle: "Feats Book View",
 			},
