@@ -39,6 +39,16 @@ const common = transferLangConfig({
 
   "campaign": ["战役", "战役", "Campaign"],
 
+  "round": ["轮", "轮", "Round"],
+  "minute": ["分钟", "分钟", "Minute"],
+  "minutes": ["分钟", "分钟", "Minutes"],
+  "hour": ["小时", "小时", "Hour"],
+  "hours": ["小时", "小时", "Hours"],
+  "day": ["天", "天", "Day"],
+  "days": ["天", "天", "Days"],
+  "week": ["周", "周", "Week"],
+  "month": ["月", "月", "Month"],
+  "year": ["年", "年", "Year"],
 
 })
 

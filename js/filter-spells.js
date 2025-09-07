@@ -163,39 +163,39 @@ class PageFilterSpells extends PageFilterBase {
 	static getFilterDuration (spell) {
 		const fDur = spell.duration[0] || {type: "special"};
 		switch (fDur.type) {
-			case "instant": return "Instant";
+			case "instant": return I18nUtil.get("page.spells.instant");
 			case "timed": {
-				if (!fDur.duration) return "Special";
+				if (!fDur.duration) return I18nUtil.get("page.spells.special");
 				switch (fDur.duration.type) {
 					case "turn":
-					case "round": return "1 Round";
+					case "round": return `1 ${I18nUtil.get("common.round")}`;
 
 					case "minute": {
 						const amt = fDur.duration.amount || 0;
-						if (amt <= 1) return "1 Minute";
-						if (amt <= 10) return "10 Minutes";
-						if (amt <= 60) return "1 Hour";
-						if (amt <= 8 * 60) return "8 Hours";
-						return "24+ Hours";
+						if (amt <= 1) return `1 ${I18nUtil.get("common.minute")}`;
+						if (amt <= 10) return `10 ${I18nUtil.get("common.minutes")}`;
+						if (amt <= 60) return `1 ${I18nUtil.get("common.hour")}`;
+						if (amt <= 8 * 60) return `8 ${I18nUtil.get("common.hours")}`;
+						return `24+ ${I18nUtil.get("common.hours")}`;
 					}
 
 					case "hour": {
 						const amt = fDur.duration.amount || 0;
-						if (amt <= 1) return "1 Hour";
-						if (amt <= 8) return "8 Hours";
-						return "24+ Hours";
+						if (amt <= 1) return `1 ${I18nUtil.get("common.hour")}`;
+						if (amt <= 8) return `8 ${I18nUtil.get("common.hours")}`;
+						return `24+ ${I18nUtil.get("common.hours")}`;
 					}
 
 					case "day":
 					case "week":
 					case "month":
-					case "year": return "24+ Hours";
-					default: return "Special";
+					case "year": return `24+ ${I18nUtil.get("common.hours")}`;
+					default: return I18nUtil.get("page.spells.special");
 				}
 			}
-			case "permanent": return "Permanent";
+			case "permanent": return I18nUtil.get("page.spells.permanent");
 			case "special":
-			default: return "Special";
+			default: return I18nUtil.get("page.spells.special");
 		}
 	}
 
@@ -435,7 +435,17 @@ class PageFilterSpells extends PageFilterBase {
 			header: "Duration",
 			isLabelled: true,
 			labelSortFn: null,
-			labels: ["Instant", "1 Round", "1 Minute", "10 Minutes", "1 Hour", "8 Hours", "24+ Hours", "Permanent", "Special"],
+			labels: [
+				I18nUtil.get("page.spells.instant"),
+				`1 ${I18nUtil.get("common.round")}`, 
+				`1 ${I18nUtil.get("common.minute")}`, 
+				`10 ${I18nUtil.get("common.minutes")}`, 
+				`1 ${I18nUtil.get("common.hour")}`, 
+				`8 ${I18nUtil.get("common.hours")}`, 
+				`24+ ${I18nUtil.get("common.hours")}`, 
+				I18nUtil.get("page.spells.permanent"), 
+				I18nUtil.get("page.spells.special"),
+			],
 		});
 		this._rangeFilter = new Filter({
 			cnHeader: "范围",
