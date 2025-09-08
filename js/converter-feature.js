@@ -104,7 +104,7 @@ class BaseParserFeature extends BaseParser {
 					}
 				}
 
-				const mCampaign = /^(?<name>.*)? Campaign$/i.exec(pt);
+				const mCampaign = /^(?<name>.*)? ${I18nUtil.get("common.campaign")}$/i.exec(pt);
 				if (mCampaign) {
 					return (pre.campaign = pre.campaign || []).push(mCampaign.groups.name);
 				}
