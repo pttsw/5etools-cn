@@ -1978,7 +1978,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "侦查员",
-						"with": "埃尔德斯",
+						"with": "埃尔迪斯",
 						"flags": "i"
 					}
 				}
@@ -4108,6 +4108,62 @@
 				"再生",
 				"蛛行术"
 			],
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Rihuud",
+			"name": "里胡德",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "OotA",
+			"page": 59,
+			"_copy": {
+				"ENG_name": "Stone Giant",
+				"name": "石巨人",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "巨人",
+						"with": "里胡德",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Two Heads",
+							"name": "双头",
+							"entries": [
+								"Rihuud在感知（{@skill 察觉}）检定和对抗{@condition 目盲}、{@condition 魅惑}、{@condition 耳聋}、{@condition 恐慌}、{@condition 震慑}或被击{@condition 昏迷}的豁免检定上具有优势。"
+							]
+						}
+					},
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "多重攻击",
+							"items": {
+								"ENG_name": "Multiattack",
+								"name": "多重攻击",
+								"entries": [
+									"Rihuud进行两次徒手打击。"
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "巨棒",
+							"items": {
+								"ENG_name": "Unarmed Strike",
+								"name": "徒手打击",
+								"entries": [
+									"{@atk mw} {@hit 9} 命中，触及10尺，单一目标。{@h}13（{@damage 2d6 + 6}）钝击伤害。"
+								]
+							}
+						}
+					]
+				}
+			},
 			"hasToken": true
 		},
 		{

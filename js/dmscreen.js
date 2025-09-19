@@ -1564,7 +1564,7 @@ class Panel {
 		this.set$ContentTab(
 			PANEL_TYP_ROLLBOX,
 			null,
-			ee`<div class="panel-content-wrapper-inner"></div>`.appends(Renderer.dice.getRoller().addClass("rollbox-panel")),
+			$(ee`<div class="panel-content-wrapper-inner"></div>`.appends(Renderer.dice.getRoller().addClass("rollbox-panel"))),
 			title || "Dice Roller",
 			true,
 			!!title,

@@ -1779,6 +1779,85 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Deflect Missiles",
+			"name": "拨挡飞弹",
+			"source": "PHB",
+			"className": "武僧",
+			"classSource": "PHB",
+			"level": 3,
+			"activities": [
+				{
+					"ENG_name": "Reduce",
+					"name": "缩小",
+					"type": "heal",
+					"activation": {
+						"type": "reaction",
+						"condition": "当你被一次远程武器攻击命中时"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"number": 1,
+						"denomination": 10,
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@abilities.dex.mod + @classes.monk.levels"
+					}
+				},
+				{
+					"ENG_name": "Redirect",
+					"name": "重定向",
+					"type": "attack",
+					"activation": {
+						"type": "",
+						"condition": "如果你将伤害降低至0"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"name": "Ki"
+									}
+								}
+							}
+						]
+					},
+					"range": {
+						"value": "20",
+						"units": "ft"
+					},
+					"attack": {
+						"ability": "dex",
+						"type": {
+							"value": "ranged",
+							"classification": "weapon"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "1@scale.monk.die + @mod"
+								}
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Diamond Soul",
 			"name": "金刚魂",
 			"source": "PHB",

@@ -7,6 +7,11 @@ const config = {
     "screendungeonkit": ['地下城主帷幕：龙', '', "Dungeon Master's Screen: Dungeon Kit"],
     "screenspelljammer": ['地下城主帷幕：魔法船', '', "Dungeon Master's Screen: Spelljammer"],
     "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
+    "dmtcrg":['万象无常牌：参考卡', '', "The Deck of Many Things: Card Reference Guide"],
+    "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
+    "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
+    "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
+    "hotb":['边境英雄', '', "Heroes of the Borderlands"],
 }
 
 export default transferLangConfig(config)

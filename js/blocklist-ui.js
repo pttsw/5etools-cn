@@ -107,6 +107,7 @@ class BlocklistUi {
 	constructor (
 		{
 			wrpContent,
+			wrpContent,
 			data,
 			isCompactUi = false,
 			isAutoSave = true,

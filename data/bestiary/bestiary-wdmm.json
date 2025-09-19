@@ -1388,8 +1388,8 @@
 								]
 							},
 							{
-								"ENG_name": "Merged Heads",
-								"name": "融合的头",
+								"ENG_name": "Two Heads",
+								"name": "双头",
 								"entries": [
 									"这个灰矮人在感知（{@skill 察觉}）检定上拥有优势，并且在对抗被{@condition 魅惑}、{@condition 恐慌}、{@condition 震慑}以及被击昏{@condition 昏迷}的豁免检定上也有优势。"
 								]
@@ -1809,10 +1809,17 @@
 					}
 				}
 			},
+			"alignment": [
+				"L",
+				"G"
+			],
 			"hp": {
 				"average": 80,
 				"formula": "10d8"
 			},
+			"languages": [
+				"通用语"
+			],
 			"hasToken": true
 		},
 		{
@@ -3545,16 +3552,6 @@
 								]
 							}
 						}
-					},
-					"trait": {
-						"mode": "prependArr",
-						"items": {
-							"ENG_name": "Fey Ancestry",
-							"name": "精类血统",
-							"entries": [
-								"玛塔在对抗被{@condition 魅惑}的豁免检定上有优势，魔法无法让她入睡。"
-							]
-						}
 					}
 				}
 			},
@@ -3960,7 +3957,7 @@
 			"page": 52,
 			"_copy": {
 				"ENG_name": "Beholder Zombie",
-				"name": "眼魔僵尸",
+				"name": "眼魔丧尸",
 				"source": "MM",
 				"_mod": {
 					"*": {
@@ -4138,7 +4135,7 @@
 		},
 		{
 			"ENG_name": "Otto",
-			"name": "奥托",
+			"name": "奥图",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "WDMM",
@@ -6157,13 +6154,13 @@
 				"通用语",
 				"矮人语"
 			],
-			"cr": "13",
+			"cr": "14",
 			"trait": [
 				{
 					"ENG_name": "Dwarven Resilience",
 					"name": "矮人体魄",
 					"entries": [
-						"Augrek在对抗毒素的豁免检定中具有优势。"
+						"佐拉克在对抗毒素的豁免检定上具有优势，并且对毒素伤害具有抗性。"
 					]
 				},
 				{

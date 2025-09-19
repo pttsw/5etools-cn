@@ -2049,8 +2049,8 @@ globalThis.Renderer = function () {
 			case "@actSaveSuccess": textStack[0] += `<i>Success:</i>`; break;
 			case "@actSaveFail": {
 				const [ordinal] = Renderer.splitTagByPipe(text);
-				if (ordinal) textStack[0] += `<i>${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()} Failure:</i>`;
-				else textStack[0] += `<i>Failure:</i>`;
+				if (ordinal) textStack[0] += `<i>${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()} 失败:</i>`;
+				else textStack[0] += `<i>失败:</i>`;
 				break;
 			}
 			case "@actSaveFailBy": {
@@ -2058,12 +2058,12 @@ globalThis.Renderer = function () {
 				textStack[0] += `<i>Failure by ${amount} or More:</i>`;
 				break;
 			}
-			case "@actSaveSuccessOrFail": textStack[0] += `<i>Failure or Success:</i>`; break;
-			case "@actTrigger": textStack[0] += `<i>Trigger:</i>`; break;
-			case "@actResponse": textStack[0] += `<i>Response${text.includes("d") ? "\u2014" : ":"}</i>`; break;
+			case "@actSaveSuccessOrFail": textStack[0] += `<i>失败或成功:</i>`; break;
+			case "@actTrigger": textStack[0] += `<i>触发:</i>`; break;
+			case "@actResponse": textStack[0] += `<i>反应:</i>`; break;
 			case "@h": textStack[0] += `<i>命中:</i> `; break;
 			case "@m": textStack[0] += `<i>未命中:</i> `; break;
-			case "@hom": textStack[0] += `<i>Hit or Miss:</i> `; break;
+			case "@hom": textStack[0] += `<i>命中或未命中:</i> `; break;
 			case "@color": {
 				const [toDisplay, color] = Renderer.splitTagByPipe(text);
 				const ptColor = this._renderString_renderTag_getBrewColorPart(color);
@@ -2351,7 +2351,7 @@ globalThis.Renderer = function () {
 			}
 
 			default: {
-				const {name, source, displayText, others, page, hash, hashPreEncoded, pageHover, hashHover, hashPreEncodedHover, preloadId, linkText, subhashes, subhashesHover, isFauxPage, isAllowRedirect} = Renderer.utils.getTagMeta(tag, text);
+				const {name, source, displayText, others, page, hash, hashPreEncoded, pageHover, sourceHover, hashHover, hashPreEncodedHover, preloadId, linkText, subhashes, subhashesHover, isFauxPage, isAllowRedirect} = Renderer.utils.getTagMeta(tag, text);
 
 				const fauxEntry = {
 					type: "link",
@@ -2370,6 +2370,7 @@ globalThis.Renderer = function () {
 
 				if (hashPreEncoded != null) fauxEntry.href.hashPreEncoded = hashPreEncoded;
 				if (pageHover != null) fauxEntry.href.hover.page = pageHover;
+				if (sourceHover != null) fauxEntry.href.hover.source = sourceHover;
 				if (hashHover != null) fauxEntry.href.hover.hash = hashHover;
 				if (hashPreEncodedHover != null) fauxEntry.href.hover.hashPreEncoded = hashPreEncodedHover;
 				if (preloadId != null) fauxEntry.href.hover.preloadId = preloadId;
@@ -4763,16 +4764,16 @@ Renderer.utils = class {
 				if (others.length) {
 					const [subclassShortName, subclassSource, featurePart] = others;
 
-					if (subclassSource) out.source = subclassSource;
-
 					const classStateOpts = {
 						subclass: {
 							shortName: subclassShortName.trim(),
 							source: subclassSource
 								? subclassSource.trim()
-								: Parser.SRC_PHB,
+								: out.source,
 						},
 					};
+
+					out.sourceHover = classStateOpts.subclass.source;
 
 					// Don't include the feature part for hovers, as it is unsupported
 					const hoverSubhashObj = UrlUtil.unpackSubHash(UrlUtil.getClassesPageStatePart(classStateOpts));
@@ -9810,19 +9811,19 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 
 	_getHtmlParts_savingThrows ({mon, renderer}) {
 		if (!mon.save?.special) return "";
-		return `<p><b>Saving Throws</b> ${Renderer.monster.getSave(renderer, "special", mon.save.special)}</p>`;
+		return `<p><b>豁免骰</b> ${Renderer.monster.getSave(renderer, "special", mon.save.special)}</p>`;
 	}
 
 	_getHtmlParts_immunities ({mon}) {
 		const pt = Renderer.monster.getImmunitiesCombinedPart(mon);
 		if (!pt) return "";
-		return `<p><b title="Immunities">Imm.</b> ${pt}</p>`;
+		return `<p><b title="Immunities">免疫</b> ${pt}</p>`;
 	}
 
 	_getHtmlParts_gear ({mon}) {
 		const pt = Renderer.monster.getGearPart(mon);
 		if (!pt) return "";
-		return `<p><b title="Immunities">Gear</b> ${pt}</p>`;
+		return `<p><b title="Immunities">装备</b> ${pt}</p>`;
 	}
 
 	/* ----- */
@@ -10322,7 +10323,7 @@ Renderer.monster = class {
 
 		return e_({
 			tag: "select",
-			clazz: "input-xs form-control form-control--minimal w-initial inline-block ve-popwindow__hidden no-print",
+			clazz: "input-xs form-control form-control--minimal w-initial ve-inline-block ve-popwindow__hidden no-print",
 			name: "mon__sel-summon-spell-level",
 			children: [
 				e_({tag: "option", val: "-1", text: "\u2014"}),
@@ -10340,7 +10341,7 @@ Renderer.monster = class {
 
 		return e_({
 			tag: "select",
-			clazz: "input-xs form-control form-control--minimal w-initial inline-block ve-popwindow__hidden no-print",
+			clazz: "input-xs form-control form-control--minimal w-initial ve-inline-block ve-popwindow__hidden no-print",
 			name: "mon__sel-summon-class-level",
 			children: [
 				e_({tag: "option", val: "-1", text: "\u2014"}),
@@ -10604,9 +10605,9 @@ Renderer.monster = class {
 				const uidTitle = DataUtil.proxy.getUid("item", unpacked, {isMaintainCase: true});
 
 				if (quantity === 1) return renderer.render(`{@item ${uidTitle}}`);
-
-				const displayName = unpacked.name.toPlural();
-				return renderer.render(`${Parser.numberToText(quantity)} {@item ${uidTitle}|${displayName}}`);
+				// 中文不需要负数
+				// const displayName = unpacked.name.toPlural();
+				return renderer.render(`${Parser.numberToText(quantity)} {@item ${uidTitle}}`);
 			})
 			.join(", ");
 	}
@@ -10851,33 +10852,32 @@ Renderer.monster = class {
 
 	/* -------------------------------------------- */
 
-	static getSpellcastingRenderedTraits (renderer, mon, displayAsProp = "trait") {
-		const out = [];
-		(mon.spellcasting || [])
-			.filter(it => (it.displayAs || "trait") === displayAsProp)
-			.forEach(entry => {
+	static getSpellcastingRenderedTraits (renderer, mon, {displayAsProp = "trait"} = {}) {
+		return (mon.spellcasting || [])
+			.filter(entry => (entry.displayAs || "trait") === displayAsProp)
+			.map(entry => {
 				const isLegendaryMythic = ["legendary", "mythic"].includes(displayAsProp);
 
 				// For legendary/mythic, assume list-item format
 				if (isLegendaryMythic) {
-					if (!entry.headerEntries?.length) return;
-					out.push({type: "item", name: entry.name, entries: entry.headerEntries});
-					return;
+					if (!entry.headerEntries?.length) return null;
+					return {type: "item", name: entry.name, entries: entry.headerEntries};
 				}
 
-				entry.type = entry.type || "spellcasting";
+				entry.type ||= "spellcasting";
 				const rendered = renderer.render(entry, 2);
-				if (!rendered.length) return;
-				out.push({name: entry.name, rendered});
-			});
-		return out;
+				if (!rendered.length) return null;
+
+				return {name: entry.name, rendered};
+			})
+			.filter(Boolean);
 	}
 
 	static getOrderedTraits (mon, {fnGetSpellTraits} = {}) {
 		let traits = mon.trait ? MiscUtil.copyFast(mon.trait) : null;
 
 		if (fnGetSpellTraits) {
-			const spellTraits = fnGetSpellTraits(mon, "trait");
+			const spellTraits = fnGetSpellTraits(mon, {displayAsProp: "trait"});
 			if (spellTraits.length) traits = traits ? traits.concat(spellTraits) : spellTraits;
 		}
 
@@ -10896,7 +10896,7 @@ Renderer.monster = class {
 
 		let spellActions;
 		if (fnGetSpellTraits) {
-			spellActions = fnGetSpellTraits(mon, prop);
+			spellActions = fnGetSpellTraits(mon, {displayAsProp: prop});
 		}
 
 		if (!spellActions?.length && !actions?.length) return null;

@@ -1,0 +1,1107 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"XMM": "HotB"
+			}
+		}
+	},
+	"monster": [
+		{
+			"ENG_name": "Curate",
+			"name": "助理牧师",
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"L",
+				"G"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 14,
+			"con": 14,
+			"int": 14,
+			"wis": 18,
+			"cha": 14,
+			"save": {
+				"int": "+5",
+				"wis": "+7",
+				"cha": "+5"
+			},
+			"skill": {
+				"persuasion": "+5",
+				"religion": "+5"
+			},
+			"passive": 14,
+			"conditionImmune": [
+				"魅惑",
+				"恐慌"
+			],
+			"languages": [
+				"天界语",
+				"通用语"
+			],
+			"cr": "6",
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"助理牧师在对抗法术和其他魔法效应的豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Raise the Dead (1/Day)",
+					"name": "死者苏生（1/日）",
+					"entries": [
+						"在一个耗时8小时的仪式中，助理牧师触碰一个在过去7天内死亡的生物。该生物将以1{@variantrule 生命值|XPHB|生命值}复活。助理牧师无法复活因年老而死的生物。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"助理牧师进行三次天界耀光攻击。"
+					]
+				},
+				{
+					"ENG_name": "Celestial Radiance",
+					"name": "天界耀光",
+					"entries": [
+						"{@atkr m,r} {@hit 7}，触及5尺或射程60尺{@h}18（{@damage 4d8}）光耀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Healer's Touch (2/Day)",
+					"name": "医者之触（2/日）",
+					"entries": [
+						"助理牧师触碰另一个生物。该生物恢复13（{@dice 2d8 + 4}）{@variantrule 生命值|XPHB}。"
+					]
+				}
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CE"
+			],
+			"damageTags": [
+				"R"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Gray Ooze Glob",
+			"name": "灰泥球怪",
+			"source": "HotB",
+			"size": [
+				"S"
+			],
+			"type": "ooze",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				9
+			],
+			"hp": {
+				"average": 19,
+				"formula": "3d6 + 9"
+			},
+			"speed": {
+				"walk": 10,
+				"climb": 10
+			},
+			"str": 12,
+			"dex": 6,
+			"con": 16,
+			"int": 1,
+			"wis": 6,
+			"cha": 2,
+			"skill": {
+				"stealth": "+2"
+			},
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 8,
+			"resist": [
+				"强酸",
+				"冷冻",
+				"火焰"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"力竭",
+				"恐慌",
+				"擒抱",
+				"倒地",
+				"束缚"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"ENG_name": "Amorphous",
+					"name": "无定形",
+					"entries": [
+						"该泥怪可以穿过窄至1英寸的空间而无需为此消耗额外移动。"
+					]
+				},
+				{
+					"ENG_name": "Corrosive Form",
+					"name": "腐蚀形态",
+					"entries": [
+						"每当一个生物用近战攻击命中泥怪时，该生物受到2点强酸伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Pseudopod",
+					"name": "伪足",
+					"entries": [
+						"{@atkr m} {@hit 3}，触及5尺。{@h}10（{@damage 2d8 + 1}）强酸伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"无定形"
+			],
+			"senseTags": [
+				"B"
+			],
+			"damageTags": [
+				"A"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Ivlis",
+			"name": "伊夫利斯",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Human"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 49,
+				"formula": "10d8 + 10"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 12,
+			"int": 10,
+			"wis": 14,
+			"cha": 14,
+			"skill": {
+				"deception": "+4",
+				"persuasion": "+4"
+			},
+			"passive": 12,
+			"languages": [
+				"通用语"
+			],
+			"cr": "2",
+			"gear": [
+				"皮甲|XPHB"
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"伊夫利斯进行三次混沌魔爆攻击。若可用，她可以替换其中一次攻击为使用邪恶强令。"
+					]
+				},
+				{
+					"ENG_name": "Chaos Blast",
+					"name": "混沌魔爆",
+					"entries": [
+						"{@atkr m,r} {@hit 4}，触及5尺或射程60尺。{@h}7（{@damage 2d6}）伤害。掷骰{@dice 1d4}决定伤害类型：1，强酸；2，冷冻；3，火焰；4，闪电。"
+					]
+				},
+				{
+					"ENG_name": "Sinister Command {@recharge 5}",
+					"name": "邪恶强令{@recharge 5}",
+					"entries": [
+						"{@actSave wis} {@dc 12}，伊夫利斯60尺内能看见的一个生物。{@actSaveFail} 目标获得{@condition 魅惑|XPHB}状态直到其下个回合结束。当处于{@condition 魅惑|XPHB}状态时，目标获得{@condition 失能|XPHB}状态。"
+					]
+				}
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"魅惑",
+				"失能"
+			],
+			"savingThrowForced": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Jacko",
+			"name": "杰克奥",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "HotB",
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Halfling"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 22,
+				"formula": "5d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 10,
+			"int": 12,
+			"wis": 14,
+			"cha": 16,
+			"skill": {
+				"perception": "+6",
+				"stealth": "+5"
+			},
+			"passive": 16,
+			"languages": [
+				"通用语",
+				"半身人语"
+			],
+			"cr": "1",
+			"gear": [
+				{
+					"item": "匕首|XPHB",
+					"quantity": 6
+				},
+				"易容工具|XPHB"
+			],
+			"trait": [
+				{
+					"ENG_name": "Quick Disguise",
+					"name": "快速易容",
+					"entries": [
+						"杰克奥花费1分钟将自己易容成一个身高体重相近的不同类人生物。当杰克奥处于易容状态时，一个生物可以用研究动作来检查杰克奥的外貌，进行{@dc 13}的智力（{@skill 调查|XPHB}）检定，检定成功则识破他的伪装。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"杰克奥进行二记剧毒匕首攻击。"
+					]
+				},
+				{
+					"ENG_name": "Poison Dagger",
+					"name": "剧毒匕首",
+					"entries": [
+						"{@atkr m,r} {@hit 5}，触及5尺或射程20/60尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害加3（{@damage 1d6}）毒素伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Cunning Action",
+					"name": "灵巧动作",
+					"entries": [
+						"杰克奥执行疾走、撤离或躲藏动作。"
+					]
+				}
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"H"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Kuo-toa Marauder",
+			"name": "寇涛劫掠者",
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d8 + 4"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"str": 14,
+			"dex": 10,
+			"con": 12,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"skill": {
+				"perception": "+4"
+			},
+			"senses": [
+				"黑暗视觉 120 尺",
+				"真实视觉 30 尺"
+			],
+			"passive": 14,
+			"languages": [
+				"通用语",
+				"地底通用语"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
+					"entries": [
+						"寇涛鱼人可以在空气和水中呼吸。"
+					]
+				},
+				{
+					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
+					"entries": [
+						"在阳光照射下，寇涛鱼人进行属性检定和攻击检定时具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Brine Slicer",
+					"name": "盐水切裂者",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}9（{@damage 2d6 + 2}）挥砍伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Slippery",
+					"name": "滑溜",
+					"entries": [
+						"寇涛鱼人执行撤离动作。"
+					]
+				}
+			],
+			"traitTags": [
+				"水陆两栖",
+				"日照敏感"
+			],
+			"senseTags": [
+				"SD",
+				"U"
+			],
+			"languageTags": [
+				"C",
+				"U"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Lizardfolk Warden",
+			"name": "蜥蜴人卫士",
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": "elemental",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 32,
+				"formula": "5d8 + 10"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"str": 15,
+			"dex": 12,
+			"con": 14,
+			"int": 10,
+			"wis": 12,
+			"cha": 8,
+			"skill": {
+				"stealth": "+5",
+				"survival": "+5"
+			},
+			"passive": 11,
+			"languages": [
+				"通用语",
+				"龙语"
+			],
+			"cr": "1",
+			"gear": [
+				"护盾|XPHB"
+			],
+			"trait": [
+				{
+					"ENG_name": "Hold Breath",
+					"name": "屏息",
+					"entries": [
+						"蜥蜴人可以憋气15分钟。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"蜥蜴人进行一次啃咬攻击和一次骨制长矛攻击。"
+					]
+				},
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}5（{@damage 1d6 + 2}）穿刺伤害加3（{@damage 1d6}）毒素伤害。"
+					]
+				},
+				{
+					"ENG_name": "Bone Pike",
+					"name": "骨制长矛",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及10尺。{@h}7（{@damage 1d10 + 2}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Poison Spit",
+					"name": "毒素喷吐",
+					"entries": [
+						"{@atkr r} {@hit 4}，射程60尺。{@h}12（{@damage 3d6 + 2}）毒素伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"屏息"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"RCH"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Narthus",
+			"name": "纳瑟斯",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Human"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d8 + 4"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 11,
+			"con": 12,
+			"int": 10,
+			"wis": 14,
+			"cha": 10,
+			"skill": {
+				"medicine": "+4",
+				"religion": "+2"
+			},
+			"passive": 12,
+			"languages": [
+				"通用语"
+			],
+			"cr": "1",
+			"gear": [
+				"链甲衫|XPHB",
+				"硬头锤|XPHB"
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"纳瑟斯使用秽恶硬头锤和命运飞矢以任意组合方式进行两次攻击。"
+					]
+				},
+				{
+					"ENG_name": "Vile Mace",
+					"name": "秽恶硬头锤",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}5（{@damage 1d6 + 2}）钝击伤害加3（{@damage 1d6}）黯蚀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Fateful Bolt",
+					"name": "命运飞矢",
+					"entries": [
+						"{@atkr r} {@hit 4}，射程120尺{@h}8（{@damage 1d12 + 2}）黯蚀伤害，且在纳瑟斯的下个回合结束前，下一次对该目标的攻击检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B",
+				"N"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Pral",
+			"name": "普拉尔",
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Human"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8 + 16"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 16,
+			"con": 14,
+			"int": 14,
+			"wis": 11,
+			"cha": 14,
+			"save": {
+				"dex": "+5"
+			},
+			"skill": {
+				"athletics": "+4",
+				"deception": "+4"
+			},
+			"passive": 10,
+			"languages": [
+				"通用语"
+			],
+			"cr": "1",
+			"gear": [
+				"皮甲|XPHB",
+				"轻弩|XPHB",
+				"刺剑|XPHB"
+			],
+			"action": [
+				{
+					"ENG_name": "Rapier",
+					"name": "刺剑",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Light Crossbow",
+					"name": "轻弩",
+					"entries": [
+						"{@atkr r} {@hit 5}，射程80/320尺。{@h}7（{@damage 1d8 + 3}）穿刺伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Parry",
+					"name": "格挡",
+					"entries": [
+						"{@actTrigger} 普拉尔在持有武器时被一次近战攻击掷骰命中。{@actResponse} 普拉尔对该次攻击的AC增加2，可能导致攻击失手。"
+					]
+				}
+			],
+			"actionTags": [
+				"格挡"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"RNG"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Sprite Skirmisher",
+			"name": "精魄游击兵",
+			"source": "HotB",
+			"size": [
+				"T"
+			],
+			"type": "fey",
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 10,
+				"formula": "4d4"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 40
+			},
+			"str": 3,
+			"dex": 18,
+			"con": 10,
+			"int": 14,
+			"wis": 13,
+			"cha": 11,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+8"
+			},
+			"passive": 13,
+			"languages": [
+				"通用语",
+				"精灵语",
+				"木族语"
+			],
+			"cr": "1/4",
+			"action": [
+				{
+					"ENG_name": "Needle Sword",
+					"name": "针剑",
+					"entries": [
+						"{@atkr m} {@hit 6}，触及5尺。{@h}6（{@damage 1d4 + 4}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Enchanting Bow",
+					"name": "惑控之弓",
+					"entries": [
+						"{@atkr r} {@hit 6}，射程40/160尺。{@h}1 穿刺伤害，且目标获得{@condition 魅惑|XPHB}状态直到小妖精的下个回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Heart Sight",
+					"name": "心之视界",
+					"entries": [
+						"{@actSave cha} {@dc 10}，小妖精5尺内一个它能看见的生物（天界生物、邪魔、不死生物自动豁免失败）。{@actSaveFail} 小妖精知晓目标的情感。"
+					]
+				},
+				{
+					"ENG_name": "Invisibility",
+					"name": "隐形术",
+					"entries": [
+						"小妖精获得{@condition 隐形|XPHB}状态，持续1分钟。当小妖精进行攻击检定、造成伤害或处于{@condition 失能|XPHB}状态时，此效果提前结束。"
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"E",
+				"S"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"魅惑",
+				"失能",
+				"隐形"
+			],
+			"savingThrowForced": [
+				"魅力"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Vinx",
+			"name": "文克斯",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Dwarf"
+				]
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 11,
+				"formula": "2d8 + 2"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 12,
+			"int": 11,
+			"wis": 13,
+			"cha": 11,
+			"skill": {
+				"perception": "+5",
+				"stealth": "+6",
+				"survival": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"通用语",
+				"矮人语"
+			],
+			"cr": "1/4",
+			"gear": [
+				"皮甲|XPHB",
+				"短剑|XPHB",
+				"投石索|XPHB"
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"文克斯进行两次攻击，可以任意组合使用短剑和投石索。"
+					]
+				},
+				{
+					"ENG_name": "Shortsword",
+					"name": "短剑",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}5（{@damage 1d6 + 2}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Sling",
+					"name": "投石索",
+					"entries": [
+						"{@atkr r} {@hit 4}，射程30/120尺。{@h}4（{@damage 1d4 + 2}）钝击伤害。"
+					]
+				}
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"D"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"RNG"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Wight Lifedrinker",
+			"name": "尸妖饮命者",
+			"source": "HotB",
+			"size": [
+				"M"
+			],
+			"type": "undead",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 82,
+				"formula": "11d8 + 33"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 15,
+			"dex": 14,
+			"con": 16,
+			"int": 10,
+			"wis": 13,
+			"cha": 15,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 13,
+			"resist": [
+				"黯蚀"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"力竭",
+				"中毒"
+			],
+			"languages": [
+				"通用语，外加另外一门语言"
+			],
+			"cr": "3",
+			"gear": [
+				"镶钉皮甲|XPHB"
+			],
+			"trait": [
+				{
+					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
+					"entries": [
+						"处于阳光时，尸妖在属性检定和攻击检定上具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"尸妖进行两次攻击，可使用死灵剑或死灵弓的任意组合。它可以消耗一次攻击来使用饮命。"
+					]
+				},
+				{
+					"ENG_name": "Necrotic Sword",
+					"name": "死灵剑",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）挥砍伤害加4（{@damage 1d8}）黯蚀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Necrotic Bow",
+					"name": "死灵弓",
+					"entries": [
+						"{@atkr r} {@hit 4}，射程150/600尺。{@h}6（{@damage 1d8 + 2}）穿刺伤害外加4（{@damage 1d8}）黯蚀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Drink Life {@recharge 5}",
+					"name": "饮命 {@recharge 5}",
+					"entries": [
+						"{@actSave con} {@dc 13}，5尺内一个生物。{@actSaveFail} 6（{@damage 1d8 + 2}）黯蚀伤害，且尸妖恢复等同于所受黯蚀伤害数值的{@variantrule 生命值|XPHB}。"
+					]
+				}
+			],
+			"traitTags": [
+				"日照敏感"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"N",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}
