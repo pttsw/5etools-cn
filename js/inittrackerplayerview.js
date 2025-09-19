@@ -37,8 +37,8 @@ class InitTrackerPlayerViews extends BaseComponent {
 		const $wrpContent = $(`#page-content`).empty();
 
 		const iptTabMetas = [
-			new TabUiUtil.TabMeta({name: "Standard", hasBorder: true, hasBackground: true}),
-			new TabUiUtil.TabMeta({name: "Manual (Legacy)", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "标准", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "手动（旧版）", hasBorder: true, hasBackground: true}),
 		];
 
 		const tabMetas = this._renderTabs(iptTabMetas, {$parent: $wrpContent, additionalClassesWrpHeads: "initp__fullscreen-hidden"});
@@ -111,7 +111,7 @@ class InitTrackerPlayerViewV1 {
 
 		if (token) $iptServerToken.val(token);
 
-		const $btnConnect = $(`<button class="ve-btn ve-btn-xs ve-btn-primary">Connect</button>`)
+		const $btnConnect = $(`<button class="ve-btn ve-btn-xs ve-btn-primary">连接</button>`)
 			.click(async () => {
 				if (!$iptPlayerName.val().trim()) return $iptPlayerName.addClass("form-control--error");
 				if (!$iptServerToken.val().trim()) return $iptServerToken.addClass("form-control--error");
@@ -132,21 +132,21 @@ class InitTrackerPlayerViewV1 {
 			<div class="initp__initial row">
 				<div class="ve-col-12">
 					<p>
-						The Player View is part of a peer-to-peer (i.e., serverless) system to allow players to connect to a DM's <a href="dmscreen.html">DM Screen</a> initiative tracker. As a player, the usage is as follows:
+						先攻追踪器玩家视图是一个P2P（即无服务器）系统，允许玩家连接到<a href="dmscreen.html">DM帷幕</a>的先攻追踪器。作为玩家，使用方法如下：
 					<ol>
-						<li>Enter a name into the "Player Name" field.</li>
-						<li>Paste a "server token," provided by a DM, into the "Server Token" field.</li>
-						<li>Click "Connect."</li>
+						<li>输入你的姓名到"玩家姓名"输入框。</li>
+						<li>粘贴DM提供的"服务端Token"到"服务端Token"输入框。</li>
+						<li>点击"连接"按钮。</li>
 					</ol>
-					<p>After a short delay, you should be connected to the DM and this page will change to display the encounter in the DM's tracker. <i>Please note that this system is highly experimental. Your experience may vary.</i></p>
+					<p>在短暂的延迟后，你应该能够连接到DM并看到先攻追踪器。 <i>请注意，此系统仍在实验阶段，你的体验可能会有所不同。</i></p>
 				</div>
 			</div>
 
 			<hr class="initp__initial">
 
 			<div class="initp__initial row w-100 ve-flex">
-				<div class="ve-col-5 bold mr-4">Player Name</div>
-				<div class="ve-col-5 bold">Server Token</div>
+				<div class="ve-col-5 bold mr-4">玩家姓名</div>
+				<div class="ve-col-5 bold">服务端Token</div>
 				<div class="ve-col-2 ve-text-center"></div>
 			</div>
 			<div class="initp__initial row w-100 ve-flex mb-4">
@@ -228,7 +228,7 @@ class InitTrackerPlayerViewV0 {
 		ui.init();
 
 		const $dispWarning = $(`<div class="alert alert-warning my-3">
-			<p>Use of &quot;Standard&quot; mode is strongly recommended, as it provides a simplified workflow. If Standard mode is unavailable, &quot;Manual&quot; mode may be used instead.</p>
+			<p>强烈建议使用&quot;标准&quot;模式，因为它更简单。 如果标准模式不可用，&quot;手动（旧版）&quot;模式可以代替使用。</p>
 		</div>`);
 
 		$$(tabMeta.$wrpTab)`<div class="ve-flex-col initp__content px-2 py-3 min-h-0">
@@ -237,21 +237,21 @@ class InitTrackerPlayerViewV0 {
 			<div class="initp__initial ve-flex">
 				<div class="ve-col-12">
 					<p>
-						The Player View is part of a peer-to-peer (i.e., serverless) system to allow players to connect to a DM's DM Screen initiative tracker. As a player, the usage is as follows:
+						先攻追踪器玩家视图是一个P2P（即无服务器）系统，允许玩家连接到DM的先攻追踪器。 作为玩家，使用方法如下：
 					<ol>
-						<li>Paste a "server token," provided by a DM, into the "Server Token" field, and click "Generate Client Token."</li>
-						<li>Wait for a token to appear in the "Client Token" field, copy it, and send it to the DM.</li>
+						<li>粘贴DM提供的"服务器token"到"服务器Token"输入框，然后点击"生成客户端Token"按钮。</li>
+						<li>等待"客户端Token"输入框出现，复制其中的内容，然后发送给DM。</li>
 					</ol>
-					<p>Once the DM accepts your token, this page will change to display the encounter in the DM's tracker.</p>
+					<p>一旦DM接受了你的token，这个页面就会改变，显示DM的先攻追踪器中的战斗。</p>
 				</div>
 			</div>
 
 			<hr class="initp__initial">
 
 			<div class="initp__initial ve-flex-h-center w-100">
-				<div class="ve-col-5 bold">Server Token</div>
+				<div class="ve-col-5 bold">服务端Token</div>
 				<div class="ve-col-2 ve-text-center"></div>
-				<div class="ve-col-5 bold">Client Token</div>
+				<div class="ve-col-5 bold">客户端Token</div>
 			</div>
 			<div class="initp__initial ve-flex-h-center w-100 flex mb-4">
 				<div class="ve-col-5 bold">${$iptServerToken}</div>

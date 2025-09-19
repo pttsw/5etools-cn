@@ -251,6 +251,7 @@ class List {
 	_initFuzzySearch () {
 		elasticlunr.clearStopWords();
 		this._fuzzySearch = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField("s");
 			this.setRef("ix");
 		});

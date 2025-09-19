@@ -14,13 +14,13 @@ export const GROUP_CHECKBOX = "checkbox";
 export const GROUP_CUSTOM = "custom";
 
 export const GROUP_DISPLAY_NAMES = {
-	[GROUP_BASE_STATS]: "General",
-	[GROUP_SAVES]: "Saving Throw",
-	[GROUP_ABILITY_BONUS]: "Ability Bonus",
-	[GROUP_ABILITY_SCORE]: "Ability Score",
-	[GROUP_SKILL]: "Skill",
-	[GROUP_CHECKBOX]: "Checkbox",
-	[GROUP_CUSTOM]: "Custom",
+	[GROUP_BASE_STATS]: "通用",
+	[GROUP_SAVES]: "豁免掷骰",
+	[GROUP_ABILITY_BONUS]: "属性加值",
+	[GROUP_ABILITY_SCORE]: "属性值",
+	[GROUP_SKILL]: "技能",
+	[GROUP_CHECKBOX]: "勾选框",
+	[GROUP_CUSTOM]: "自定义",
 };
 
 export const IS_PLAYER_VISIBLE_NONE = 0;
@@ -191,7 +191,7 @@ class _InitiativeTrackerStatColumnBase {
 class InitiativeTrackerStatColumn_HpFormula extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "hpFormula"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "HP Formula";
+	static NAME = "HP公式";
 
 	_getInitialCellObj ({mon, fluff}) {
 		if (!mon) return {value: null};
@@ -202,7 +202,7 @@ class InitiativeTrackerStatColumn_HpFormula extends _InitiativeTrackerStatColumn
 class InitiativeTrackerStatColumn_ArmorClass extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "armorClass"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Armor Class";
+	static NAME = "护甲等级";
 	static ABV_DEFAULT = "AC";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -214,7 +214,7 @@ class InitiativeTrackerStatColumn_ArmorClass extends _InitiativeTrackerStatColum
 class InitiativeTrackerStatColumn_PassivePerception extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "passivePerception"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Passive Perception";
+	static NAME = "被动感知";
 	static ABV_DEFAULT = "PP";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -226,7 +226,7 @@ class InitiativeTrackerStatColumn_PassivePerception extends _InitiativeTrackerSt
 class InitiativeTrackerStatColumn_Speed extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "speed"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Speed";
+	static NAME = "速度";
 	static ABV_DEFAULT = "SPD";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -242,7 +242,7 @@ class InitiativeTrackerStatColumn_Speed extends _InitiativeTrackerStatColumnBase
 class InitiativeTrackerStatColumn_SpellDc extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "spellDc"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Spell DC";
+	static NAME = "法术DC";
 	static ABV_DEFAULT = "DC";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -272,7 +272,7 @@ class InitiativeTrackerStatColumn_SpellDc extends _InitiativeTrackerStatColumnBa
 class InitiativeTrackerStatColumn_Initiative extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "initiative"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Initiative";
+	static NAME = "先攻";
 	static ABV_DEFAULT = "INIT";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -295,7 +295,7 @@ class InitiativeTrackerStatColumn_Initiative extends _InitiativeTrackerStatColum
 class InitiativeTrackerStatColumn_CR extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "cr"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Challenge Rating (CR)";
+	static NAME = "挑战等级(CR)";
 	static ABV_DEFAULT = "CR";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -310,7 +310,7 @@ class InitiativeTrackerStatColumn_CR extends _InitiativeTrackerStatColumnBase {
 class InitiativeTrackerStatColumn_XP extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "xp"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Experience Points (XP)";
+	static NAME = "经验值(XP)";
 	static ABV_DEFAULT = "XP";
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -333,7 +333,7 @@ class InitiativeTrackerStatColumn_LegendaryActions extends _InitiativeTrackerSta
 
 	static get POPULATE_WITH () { return "legendaryActions"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Legendary Actions";
+	static NAME = "传奇动作";
 	static ABV_DEFAULT = "LA";
 
 	getPlayerFriendlyState ({cell}) {
@@ -415,7 +415,7 @@ class InitiativeTrackerStatColumn_Image extends _InitiativeTrackerStatColumnBase
 
 	static get POPULATE_WITH () { return "image"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "Image";
+	static NAME = "图片";
 	static ABV_DEFAULT = "IMG";
 
 	getPlayerFriendlyState ({cell}) {
@@ -469,9 +469,9 @@ class InitiativeTrackerStatColumn_Image extends _InitiativeTrackerStatColumnBase
 class InitiativeTrackerStatColumn_Save extends _InitiativeTrackerStatColumnBase {
 	static _ATT;
 
-	static get POPULATE_WITH () { return `${this._ATT}Save`; }
+	static get POPULATE_WITH () { return `${this._ATT}豁免`; }
 	static GROUP = GROUP_SAVES;
-	static get NAME () { return `${Parser.attAbvToFull(this._ATT)} Save`; }
+	static get NAME () { return `${Parser.attAbvToFull(this._ATT)}豁免`; }
 	static get ABV_DEFAULT () { return this._ATT.toUpperCase(); }
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -485,9 +485,9 @@ class InitiativeTrackerStatColumn_Save extends _InitiativeTrackerStatColumnBase 
 class InitiativeTrackerStatColumn_AbilityBonus extends _InitiativeTrackerStatColumnBase {
 	static _ATT;
 
-	static get POPULATE_WITH () { return `${this._ATT}Bonus`; }
+	static get POPULATE_WITH () { return `${this._ATT}加值`; }
 	static GROUP = GROUP_ABILITY_BONUS;
-	static get NAME () { return `${Parser.attAbvToFull(this._ATT)} Bonus`; }
+	static get NAME () { return `${Parser.attAbvToFull(this._ATT)}加值`; }
 	static get ABV_DEFAULT () { return this._ATT.toUpperCase(); }
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -511,9 +511,9 @@ class InitiativeTrackerStatColumn_AbilityBonus extends _InitiativeTrackerStatCol
 class InitiativeTrackerStatColumn_AbilityScore extends _InitiativeTrackerStatColumnBase {
 	static _ATT;
 
-	static get POPULATE_WITH () { return `${this._ATT}Score`; }
+	static get POPULATE_WITH () { return `${this._ATT}值`; }
 	static GROUP = GROUP_ABILITY_SCORE;
-	static get NAME () { return `${Parser.attAbvToFull(this._ATT)} Score`; }
+	static get NAME () { return `${Parser.attAbvToFull(this._ATT)}值`; }
 	static get ABV_DEFAULT () { return this._ATT.toUpperCase(); }
 
 	_getInitialCellObj ({mon, fluff}) {
@@ -583,19 +583,19 @@ class _InitiativeTrackerStatColumnCheckboxRoundBase extends _InitiativeTrackerSt
 
 class InitiativeTrackerStatColumn_Checkbox extends _InitiativeTrackerStatColumnCheckboxBase {
 	static get POPULATE_WITH () { return "cbNeutral"; }
-	static NAME = "Checkbox";
+	static NAME = "勾选框";
 }
 
 class InitiativeTrackerStatColumn_CheckboxAutoTurnLow extends _InitiativeTrackerStatColumnCheckboxTurnBase {
 	static get POPULATE_WITH () { return "cbAutoLow"; }
-	static NAME = "Checkbox; clears at start of turn";
+	static NAME = "勾选框; 回合开始时清除";
 
 	static _AUTO_VALUE = false;
 }
 
 class InitiativeTrackerStatColumn_CheckboxAutoTurnHigh extends _InitiativeTrackerStatColumnCheckboxTurnBase {
 	static get POPULATE_WITH () { return "cbAutoHigh"; }
-	static NAME = "Checkbox; ticks at start of turn";
+	static NAME = "勾选框; 回合开始时勾选";
 
 	static _AUTO_VALUE = true;
 
@@ -604,14 +604,14 @@ class InitiativeTrackerStatColumn_CheckboxAutoTurnHigh extends _InitiativeTracke
 
 class InitiativeTrackerStatColumn_CheckboxAutoRoundLow extends _InitiativeTrackerStatColumnCheckboxRoundBase {
 	static get POPULATE_WITH () { return "cbAutoRoundLow"; }
-	static NAME = "Checkbox; clears at start of round";
+	static NAME = "勾选框; 新一轮开始时清除";
 
 	static _AUTO_VALUE = false;
 }
 
 class InitiativeTrackerStatColumn_CheckboxAutoRoundHigh extends _InitiativeTrackerStatColumnCheckboxRoundBase {
 	static get POPULATE_WITH () { return "cbAutoRoundHigh"; }
-	static NAME = "Checkbox; ticks at start of round";
+	static NAME = "勾选框; 新一轮开始时勾选";
 
 	static _AUTO_VALUE = true;
 
@@ -621,7 +621,7 @@ class InitiativeTrackerStatColumn_CheckboxAutoRoundHigh extends _InitiativeTrack
 export class InitiativeTrackerStatColumn_Custom extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return ""; }
 	static GROUP = GROUP_CUSTOM;
-	static NAME = "(Custom)";
+	static NAME = "(自定义)";
 
 	_getInitialCellObj ({mon, fluff}) { return {value: ""}; }
 }

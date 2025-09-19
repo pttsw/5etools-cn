@@ -149,8 +149,8 @@ class _PageGeneratorInittrackerplayerview extends PageGeneratorGeneric {
 	_filename = "page/template-page-inittrackerplayerview.hbs";
 	_page = "inittrackerplayerview.html";
 
-	_pageTitle = "Initiative Tracker Player View";
-	_navbarDescription = "Press F to toggle fullscreen. Good luck.";
+	_pageTitle = "先攻追踪器玩家视图";
+	_navbarDescription = "按F切换全屏，祝你好运！";
 
 	_stylesheets = [
 		"inittrackerplayerview",

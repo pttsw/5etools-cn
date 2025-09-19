@@ -143,7 +143,7 @@ export class InitiativeTrackerNetworking {
 
 	handleClick_playerWindowV1 ({doUpdateExternalStates}) {
 		const {$modalInner} = UiUtil.getShowModal({
-			title: "Configure Player View",
+			title: "配置玩家视图",
 			isUncappedHeight: true,
 			isHeight100: true,
 			cbClose: () => {
@@ -155,13 +155,13 @@ export class InitiativeTrackerNetworking {
 		const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
 
 		const fnDispServerStoppedState = () => {
-			$btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> Start Server`).prop("disabled", false);
+			$btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> 启动服务端`).prop("disabled", false);
 			$btnGetToken.prop("disabled", true);
 			$btnGetLink.prop("disabled", true);
 		};
 
 		const fnDispServerRunningState = () => {
-			$btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> Server Running`).prop("disabled", true);
+			$btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> 服务端运行中`).prop("disabled", true);
 			$btnGetToken.prop("disabled", false);
 			$btnGetLink.prop("disabled", false);
 		};
@@ -175,13 +175,13 @@ export class InitiativeTrackerNetworking {
 				showConnected();
 			});
 
-		const $btnGetToken = $(`<button class="ve-btn ve-btn-default mr-2" disabled><span class="glyphicon glyphicon-copy"></span> Copy Token</button>`).appendTo($wrpHelp)
+		const $btnGetToken = $(`<button class="ve-btn ve-btn-default mr-2" disabled><span class="glyphicon glyphicon-copy"></span> 复制 Token</button>`).appendTo($wrpHelp)
 			.click(async () => {
 				await MiscUtil.pCopyTextToClipboard(this._p2pMetaV1.serverPeer.token);
 				JqueryUtil.showCopiedEffect($btnGetToken);
 			});
 
-		const $btnGetLink = $(`<button class="ve-btn ve-btn-default" disabled><span class="glyphicon glyphicon-link"></span> Copy Link</button>`).appendTo($wrpHelp)
+		const $btnGetLink = $(`<button class="ve-btn ve-btn-default" disabled><span class="glyphicon glyphicon-link"></span> 复制链接</button>`).appendTo($wrpHelp)
 			.click(async () => {
 				const cleanOrigin = window.location.origin.replace(/\/+$/, "");
 				const cleanPathname = window.location.pathname.split("/").slice(0, -1).join("/");
@@ -196,15 +196,15 @@ export class InitiativeTrackerNetworking {
 		$$`<div class="row w-100">
 			<div class="ve-col-12">
 				<p>
-				The Player View is part of a peer-to-peer system to allow players to connect to a DM's initiative tracker. Players should use the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a> page to connect to the DM's instance. As a DM, the usage is as follows:
+				先攻追踪器玩家视图是一个P2P系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
 				<ol>
-					<li>Start the server.</li>
-					<li>Copy your link/token and share it with your players.</li>
-					<li>Wait for them to connect!</li>
+					<li>启动服务器。</li>
+					<li>复制你的链接/Token并与玩家分享。</li>
+					<li>等待他们连接！</li>
 				</ol>
 				</p>
 				<p>${$btnStartServer}${$btnGetLink}${$btnGetToken}</p>
-				<p><i>Please note that this system is highly experimental. Your experience may vary.</i></p>
+				<p><i>请注意！这是一个实验性功能。你的使用体验可能会有所不同。</i></p>
 			</div>
 		</div>`.appendTo($wrpHelp);
 
@@ -213,9 +213,9 @@ export class InitiativeTrackerNetworking {
 		const $wrpConnected = UiUtil.$getAddModalRow($modalInner, "div").addClass("flx-col");
 
 		const showConnected = () => {
-			if (!this._p2pMetaV1.serverPeer) return $wrpConnected.html(`<div class="w-100 ve-flex-vh-center"><i>No clients connected.</i></div>`);
+			if (!this._p2pMetaV1.serverPeer) return $wrpConnected.html(`<div class="w-100 ve-flex-vh-center"><i>客户端未连接。</i></div>`);
 
-			let stack = `<div class="w-100"><h5>Connected Clients:</h5><ul>`;
+			let stack = `<div class="w-100"><h5>已连接的客户端：</h5><ul>`;
 			this._p2pMetaV1.serverPeer.getActiveConnections()
 				.map(it => it.label || "(Unknown)")
 				.sort(SortUtil.ascSortLower)
@@ -316,7 +316,7 @@ export class InitiativeTrackerNetworking {
 
 	handleClick_playerWindowV0 ({doUpdateExternalStates}) {
 		const {$modalInner} = UiUtil.getShowModal({
-			title: "Configure Player View",
+			title: "配置玩家视图",
 			isUncappedHeight: true,
 			isHeight100: true,
 			cbClose: () => {
@@ -325,25 +325,25 @@ export class InitiativeTrackerNetworking {
 		});
 
 		const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
-		const $btnAltGenAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">Generate All</button>`).click(() => $btnGenServerTokens.click());
-		const $btnAltCopyAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">Copy Server Tokens</button>`).click(() => $btnCopyServers.click());
+		const $btnAltGenAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">生成全部</button>`).click(() => $btnGenServerTokens.click());
+		const $btnAltCopyAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">复制服务端Tokens</button>`).click(() => $btnCopyServers.click());
 		$$`<div class="ve-flex w-100">
 			<div class="ve-col-12">
 				<p>
-				The Player View is part of a peer-to-peer (i.e., serverless) system to allow players to connect to a DM's initiative tracker. Players should use the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a> page to connect to the DM's instance. As a DM, the usage is as follows:
+				先攻追踪器玩家视图是一个P2P（即无服务器）系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
 				<ol>
-						<li>Add the required number of players, and input (preferably unique) player names.</li>
-						<li>Click "${$btnAltGenAll}," which will generate a "server token" per player. You can click "${$btnAltCopyAll}" to copy them all as a single block of text, or click on the "Server Token" values to copy them individually. Distribute these tokens to your players (via a messaging service of your choice; we recommend <a href="https://discordapp.com/">Discord</a>). Each player should paste their token into the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a>, following the instructions provided therein.</li>
+						<li>添加所需数量的玩家，并输入玩家姓名（最好唯一）。</li>
+						<li>点击"${$btnAltGenAll},"来为每个玩家生成"服务端token"。 你可以点击"${$btnAltCopyAll}" 来将他们一起复制，或者点击"服务端Token"的值来一个一个复制。将这些Token发给你的玩家。每个玩家需要将他们的Token粘贴到<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>并按照其中的说明进行操作。</li>
 						<li>
-							Get a resulting "client token" from each player via a messaging service of your choice. Then, either:
+							获得每位玩家的"客户端token"，然后对于每个Token:
 							<ol type="a">
-								<li>Click the "Accept Multiple Clients" button, and paste in text containing multiple client tokens. <b>This will try to find tokens in <i>any</i> text, ignoring everything else.</b> Pasting a chatroom log (containing, for example, usernames and timestamps mixed with tokens) is the expected usage.</li>
-								<li>Paste each token into the appropriate "Client Token" field and "Accept Client" on each. A token can be identified by the slugified player name in the first few characters.</li>
+								<li>点击"批量接受客户端"按钮, 并粘贴包含多个客户端token的文本。 <b>这将尝试在任何文本中查找token, 并忽略其他所有内容。</b> 粘贴聊天记录日志（例如包含用户名和时间戳的混合token）是一般的用法。</li>
+								<li>将每个token粘贴到相应的"客户端Token"字段中, 并点击"接受客户端"。 一个token可以通过前几个字符中的玩家名来识别。</li>
 							</ol>
 						</li>
 					</ol>
 				</p>
-				<p>Once a player's client has been "accepted," it will receive updates from the DM's tracker. <i>Please note that this system is highly experimental. Your experience may vary.</i></p>
+				<p>一旦玩家的客户端被"接受"，它将从DM的先攻追踪器接收更新。 <i>请注意，这个系统是高度实验性的。你的体验可能会有所不同。</i></p>
 			</div>
 		</div>`.appendTo($wrpHelp);
 
@@ -353,7 +353,7 @@ export class InitiativeTrackerNetworking {
 
 		const $btnAddClient = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add Client">${I18nUtil.get("page.dmscreen.add_player")}</button>`).click(() => addClientRow());
 
-		const $btnCopyServers = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Copy any available server tokens to the clipboard">Copy Server Tokens</button>`)
+		const $btnCopyServers = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="复制所有未使用的服务器token">复制服务端Tokens</button>`)
 			.click(async () => {
 				const targetRows = this._p2pMetaV0.rows.filter(it => !it.isDeleted && !it.$iptTokenClient.attr("disabled"));
 				if (!targetRows.length) {
@@ -367,14 +367,14 @@ export class InitiativeTrackerNetworking {
 				}
 			});
 
-		const $btnAcceptClients = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Open a prompt into which text containing client tokens can be pasted">Accept Multiple Clients</button>`)
+		const $btnAcceptClients = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="可以粘贴包含客户端token的文本">批量接受客户端</button>`)
 			.click(() => {
-				const {$modalInner, doClose} = UiUtil.getShowModal({title: "Accept Multiple Clients"});
+				const {$modalInner, doClose} = UiUtil.getShowModal({title: "批量接受客户端"});
 
 				const $iptText = $(`<textarea class="form-control dm-init-pl__textarea block mb-2"></textarea>`)
 					.keydown(() => $iptText.removeClass("error-background"));
 
-				const $btnAccept = $(`<button class="ve-btn ve-btn-xs ve-btn-primary block ve-text-center" title="Add Client">Accept Multiple Clients</button>`)
+				const $btnAccept = $(`<button class="ve-btn ve-btn-xs ve-btn-primary block ve-text-center" title="Add Client">批量接受客户端</button>`)
 					.click(async () => {
 						$iptText.removeClass("error-background");
 						const txt = $iptText.val();
@@ -404,15 +404,15 @@ export class InitiativeTrackerNetworking {
 			<div class="ve-flex w-100">
 				<div class="ve-col-12">
 					<div class="ve-flex-inline-v-center mr-2">
-						<span class="mr-1">Add a player (client):</span>
+						<span class="mr-1">添加一个玩家(客户端):</span>
 						${$btnAddClient}
 					</div>
 					<div class="ve-flex-inline-v-center mr-2">
-						<span class="mr-1">Copy all un-paired server tokens:</span>
+						<span class="mr-1">复制所有未使用的服务器token:</span>
 						${$btnCopyServers}
 					</div>
 					<div class="ve-flex-inline-v-center mr-2">
-						<span class="mr-1">Mass-accept clients:</span>
+						<span class="mr-1">批量接受客户端:</span>
 						${$btnAcceptClients}
 					</div>
 				</div>
@@ -421,16 +421,16 @@ export class InitiativeTrackerNetworking {
 
 		UiUtil.addModalSep($modalInner);
 
-		const $btnGenServerTokens = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">Generate All</button>`)
+		const $btnGenServerTokens = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">生成所有</button>`)
 			.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: this._p2pMetaV0.rows}));
 
 		UiUtil.$getAddModalRow($modalInner, "div")
 			.append($$`
 			<div class="ve-flex w-100">
-				<div class="ve-col-2 bold">Player Name</div>
-				<div class="ve-col-3-5 bold">Server Token</div>
+				<div class="ve-col-2 bold">玩家名字</div>
+				<div class="ve-col-3-5 bold">服务端Token</div>
 				<div class="ve-col-1 ve-text-center">${$btnGenServerTokens}</div>
-				<div class="ve-col-3-5 bold">Client Token</div>
+				<div class="ve-col-3-5 bold">客户端Token</div>
 			</div>
 		`);
 
@@ -467,7 +467,7 @@ export class InitiativeTrackerNetworking {
 					JqueryUtil.showCopiedEffect($iptTokenServer);
 				}).disableSpellcheck();
 
-			const $btnGenServerToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Generate Server Token">Generate</button>`)
+			const $btnGenServerToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="生成服务端Token">生成</button>`)
 				.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]}));
 
 			const $iptTokenClient = $(`<input class="form-control input-sm code" disabled>`)
@@ -476,7 +476,7 @@ export class InitiativeTrackerNetworking {
 					if (evt.key === "Enter") $btnAcceptClientToken.click();
 				}).disableSpellcheck();
 
-			const $btnAcceptClientToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Accept Client Token" disabled>Accept Client</button>`)
+			const $btnAcceptClientToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="接受客户端Token" disabled>接受客户端</button>`)
 				.click(async () => {
 					const token = $iptTokenClient.val();
 					if (PeerUtilV0.isValidToken(token)) {

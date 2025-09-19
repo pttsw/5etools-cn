@@ -224,13 +224,13 @@ export class InitiativeTracker extends BaseComponent {
 
 		const menuPlayerWindow = ContextUtil.getMenu([
 			new ContextUtil.Action(
-				"Standard",
+				"标准",
 				async () => {
 					this._networking.handleClick_playerWindowV1({doUpdateExternalStates});
 				},
 			),
 			new ContextUtil.Action(
-				"Manual (Legacy)",
+				"手动（旧版）",
 				async () => {
 					this._networking.handleClick_playerWindowV0({doUpdateExternalStates});
 				},
@@ -264,12 +264,12 @@ export class InitiativeTracker extends BaseComponent {
 
 		const menuConfigure = ContextUtil.getMenu([
 			new ContextUtil.Action(
-				"Settings",
+				"设置",
 				() => pHandleClickSettings(),
 			),
 			null,
 			new ContextUtil.Action(
-				"Edit Default Party",
+				"编辑默认队伍",
 				async () => {
 					await this._compDefaultParty.pGetShowModalResults();
 				},
@@ -288,7 +288,7 @@ export class InitiativeTracker extends BaseComponent {
 			}),
 			null,
 			new ContextUtil.Action(
-				"Import Settings",
+				"导入设置",
 				async () => {
 					const compImportSettings = new InitiativeTrackerSettingsImport({state: MiscUtil.copyFast(this._state)});
 					await compImportSettings.pGetShowModalResults();

@@ -42,7 +42,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 		const rdState = new this.constructor._RenderState();
 
 		const {$modalInner, $modalFooter, doClose, pGetResolved} = UiUtil.getShowModal({
-			title: `Customize Creature \u2014 ${this._mon.name}`,
+			title: `自定义生物 \u2014 ${this._mon.name}`,
 			isHeaderBorder: true,
 			hasFooter: true,
 			isMinHeight0: true,
@@ -54,7 +54,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 		$$($modalInner)`
 			<div class="ve-flex-col py-2 w-100 h-100 ve-overflow-y-auto">
 				<label class="split-v-center mb-2">
-					<span class="w-200p ve-text-right no-shrink mr-2 bold">Custom Name:</span>
+					<span class="w-200p ve-text-right no-shrink mr-2 bold">自定义名字:</span>
 					${$iptCustomName}
 				</label>
 				${this._render_$getRowScaler()}
@@ -85,7 +85,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 				});
 
 			return $$`<label class="split-v-center mb-2">
-				<span class="w-200p ve-text-right no-shrink mr-2 bold">Spell Level:</span>
+				<span class="w-200p ve-text-right no-shrink mr-2 bold">法术环阶:</span>
 				${sel}
 			</label>`;
 		}
@@ -100,13 +100,13 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 				});
 
 			return $$`<label class="split-v-center mb-2">
-				<span class="w-200p ve-text-right no-shrink mr-2 bold">${this._mon.summonedByClass != null ? "Class Level" : "Level"}:</span>
+				<span class="w-200p ve-text-right no-shrink mr-2 bold">${this._mon.summonedByClass != null ? "职业等级" : "等级"}:</span>
 				${sel}
 			</label>`;
 		}
 
 		const dispScaledCr = ee`<span class="inline-block"></span>`;
-		this._addHookBase("scaledCr", () => dispScaledCr.txt(this._state.scaledCr ? Parser.numberToCr(this._state.scaledCr) : `${(this._mon.cr.cr || this._mon.cr)} (default)`))();
+		this._addHookBase("scaledCr", () => dispScaledCr.txt(this._state.scaledCr ? Parser.numberToCr(this._state.scaledCr) : `${(this._mon.cr.cr || this._mon.cr)} (默认)`))();
 
 		const btnScaleCr = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2"><span class="glyphicon glyphicon-signal"></span></button>`
 			.onn("click", async () => {
@@ -134,7 +134,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 	}
 
 	_render_$getFooter ({rdState}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">保存</button>`)
 			.click(() => {
 				rdState.cbDoClose(
 					true,
@@ -236,13 +236,13 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 		const {$modalInner, doClose, pGetResolved} = UiUtil.getShowModal();
 		rdState.cbDoClose = doClose;
 
-		const $iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="Search...">`);
+		const $iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="搜索...">`);
 
 		$$`<div class="split no-shrink">
 			${$iptSearch}
 
 			<div class="ui-search__ipt-search-sub-wrp ve-flex-v-center pr-0">
-				<div class="mr-1">Add</div>
+				<div class="mr-1">添加</div>
 				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 1})} 1</label>
 				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 2})} 2</label>
 				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 3})} 3</label>
@@ -251,7 +251,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: -1})} ${this._$getIptCntToAddCustom()}</label>
 			</div>
 
-			<label class="ui-search__ipt-search-sub-wrp ve-flex-vh-center">${ComponentUiUtil.$getCbBool(this, "isRollHp").addClass("mr-1")} <span>Roll HP</span></label>
+			<label class="ui-search__ipt-search-sub-wrp ve-flex-vh-center">${ComponentUiUtil.$getCbBool(this, "isRollHp").addClass("mr-1")} <span>随机 HP</span></label>
 		</div>`.appendTo($modalInner);
 
 		const $results = $(`<div class="ui-search__wrp-results"></div>`).appendTo($modalInner);
@@ -278,6 +278,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 				index.search(searchTerm, {
 					fields: {
 						n: {boost: 5, expand: true},
+						cn: {boost: 5, expand: true},
 						s: {expand: true},
 					},
 					bool: "AND",
@@ -344,7 +345,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 	}
 
 	_render_$getSearchRow ({rdState, res}) {
-		const $btnCustomize = $(`<button class="ve-btn ve-btn-default ve-btn-xxs" title="Customize"><span class="glyphicon glyphicon-stats"></span></button>`)
+		const $btnCustomize = $(`<button class="ve-btn ve-btn-default ve-btn-xxs" title="自定义"><span class="glyphicon glyphicon-stats"></span></button>`)
 			.on("click", async evt => {
 				evt.stopPropagation();
 				await this._render_pHandleClickCustomize({rdState, res});

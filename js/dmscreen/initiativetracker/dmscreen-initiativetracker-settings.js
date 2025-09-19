@@ -114,7 +114,7 @@ export class InitiativeTrackerSettings extends BaseComponent {
 
 	pGetShowModalResults () {
 		const {$modalInner, $modalFooter, pGetResolved, doClose} = UiUtil.getShowModal({
-			title: "Settings",
+			title: "设置",
 			isUncappedHeight: true,
 			hasFooter: true,
 		});
@@ -134,21 +134,21 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	/* -------------------------------------------- */
 
 	_pGetShowModalResults_renderSection_isRolls ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollInit", text: "Roll initiative"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollHp", text: "Roll hit points"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollGroups", text: "Roll groups of creatures together"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRerollInitiativeEachRound", text: "Reroll initiative each round"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollInit", text: "掷先攻骰"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollHp", text: "掷生命值骰"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollGroups", text: "一组生物一起掷骰"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRerollInitiativeEachRound", text: "每轮重新掷先攻骰"});
 	}
 
 	_pGetShowModalResults_renderSection_playerView ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowExactPlayerHp", text: "Player View: Show exact player HP"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowExactMonsterHp", text: "Player View: Show exact monster HP"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitHideNewMonster", text: "Player View: Auto-hide new monsters"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowOrdinals", text: "Player View: Show ordinals", title: "For example, if you add two Goblins, one will be Goblin (1) and the other Goblin (2), rather than having identical names."});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowExactPlayerHp", text: "玩家视图：显示玩家生命值"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowExactMonsterHp", text: "玩家视图：显示怪物生命值"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitHideNewMonster", text: "玩家视图：自动隐藏新怪物"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowOrdinals", text: "玩家视图：显示序号", title: "例如，如果你添加了两个地精，一个将是地精（1），另一个将是地精（2），而不是具有相同名称的两个地精。"});
 	}
 
 	_pGetShowModalResults_renderSection_additionalCols ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isStatsAddColumns", text: "Additional Columns"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isStatsAddColumns", text: "额外列"});
 		this._pGetShowModalResults_renderSection_additionalCols_head({$modalInner});
 		this._pGetShowModalResults_renderSection_additionalCols_body({$modalInner});
 	}
@@ -179,9 +179,9 @@ export class InitiativeTrackerSettings extends BaseComponent {
 			.click(evt => ContextUtil.pOpenMenu(evt, menuAddStatsCol));
 
 		const $wrpTblStatsHead = $$`<div class="ve-flex-vh-center w-100 mb-2 bb-1p-trans">
-			<div class="ve-col-5">Contains</div>
-			<div class="ve-col-3">Abbreviation</div>
-			<div class="ve-col-1-5 ve-text-center help" title="Only affects creatures. Players are always editable.">Editable</div>
+			<div class="ve-col-5">内容</div>
+			<div class="ve-col-3">缩写</div>
+			<div class="ve-col-1-5 ve-text-center help" title="只影响生物行。玩家行总是可编辑的">可编辑</div>
 			<div class="ve-col-1-5">&nbsp;</div>
 			<div class="ve-col-1 ve-flex-v-center ve-flex-h-right">${$btnAddRow}</div>
 		</div>`

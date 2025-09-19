@@ -294,6 +294,7 @@ export class OmnisearchBacking {
 					{
 						fields: {
 							n: {boost: 5, expand: true},
+							cn: {boost: 5,expand: true},
 							s: {expand: true},
 						},
 						bool: "AND",

@@ -56,7 +56,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 			$lnk.text(comp._state.customName ? comp._state.customName : comp._state.displayName || comp._state.name);
 		})();
 
-		const $btnRename = $(`<button class="ve-btn ve-btn-default ve-btn-xs dm-init-lockable dm-init__btn-creature" title="Rename (SHIFT to Reset)" tabindex="-1"><span class="glyphicon glyphicon-pencil"></span></button>`)
+		const $btnRename = $(`<button class="ve-btn ve-btn-default ve-btn-xs dm-init-lockable dm-init__btn-creature" title="重命名(按SHIFT来重置)" tabindex="-1"><span class="glyphicon glyphicon-pencil"></span></button>`)
 			.click(async evt => {
 				if (this._comp._state.isLocked) return;
 
@@ -67,7 +67,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 				comp._state.customName = customName;
 			});
 
-		const $btnDuplicate = $(`<button class="ve-btn ve-btn-success ve-btn-xs dm-init-lockable dm-init__btn-creature" title="Add Another (SHIFT for Roll New)" tabindex="-1"><span class="glyphicon glyphicon-plus"></span></button>`)
+		const $btnDuplicate = $(`<button class="ve-btn ve-btn-success ve-btn-xs dm-init-lockable dm-init__btn-creature" title="添加另一个(按SHIFT来为新的掷骰)" tabindex="-1"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.click(async (evt) => {
 				if (this._comp._state.isLocked) return;
 

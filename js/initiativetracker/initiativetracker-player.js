@@ -150,7 +150,7 @@ export class InitiativeTrackerPlayerMessageHandlerV1 {
 		if (data.round) {
 			this._$meta.append(`
 				<div class="${this._isCompact ? "ve-flex-vh-center" : "ve-flex-v-center"}${this._isCompact ? " mb-3" : ""}">
-					<div class="mr-2">Round: </div>
+					<div class="mr-2">回合: </div>
 					<div class="bold">${data.round}</div>
 				</div>
 			`);
@@ -158,9 +158,9 @@ export class InitiativeTrackerPlayerMessageHandlerV1 {
 
 		this._$head.append(`
 			<div class="w-100 split-v-center min-w-100p ${this._isCompact ? "ve-text-center" : ""}">${I18nUtil.get("page.dmscreen.creature_status")}</div>
-			<div class="min-w-100p ${this._isCompact ? "ve-text-center" : ""}">Health</div>
+			<div class="min-w-100p ${this._isCompact ? "ve-text-center" : ""}">生命值</div>
 			${(data.statsCols || []).map(statCol => `<div class="initp__h_stat">${statCol.abbreviation || ""}</div>`).join("")}
-			<div class="initp__h_score${this._isCompact ? " initp__h_score--compact" : ""}">${this._isCompact ? "#" : "Init."}</div>
+			<div class="initp__h_score${this._isCompact ? " initp__h_score--compact" : ""}">${this._isCompact ? "#" : "先攻"}</div>
 		`);
 
 		(data.rows || []).forEach(rowData => {

@@ -3052,23 +3052,23 @@ Parser.WEAPON_ABV_TO_FULL = {
 };
 
 Parser.CONDITION_TO_COLOR = {
-	"Blinded": "#525252",
-	"Charmed": "#f01789",
-	"Deafened": "#ababab",
-	"Exhausted": "#947a47",
-	"Frightened": "#c9ca18",
-	"Grappled": "#8784a0",
-	"Incapacitated": "#3165a0",
-	"Invisible": "#7ad2d6",
-	"Paralyzed": "#c00900",
-	"Petrified": "#a0a0a0",
-	"Poisoned": "#4dc200",
-	"Prone": "#5e60a0",
-	"Restrained": "#d98000",
-	"Stunned": "#a23bcb",
-	"Unconscious": "#3a40ad",
+	"被致盲": "#525252",
+	"被魅惑": "#f01789",
+	"耳聋": "#ababab",
+	"力竭": "#947a47",
+	"恐慌": "#c9ca18",
+	"被擒抱": "#8784a0",
+	"失能": "#3165a0",
+	"隐形": "#7ad2d6",
+	"麻痹": "#c00900",
+	"石化": "#a0a0a0",
+	"中毒": "#4dc200",
+	"倒地": "#5e60a0",
+	"被束缚": "#d98000",
+	"被震慑": "#a23bcb",
+	"昏迷": "#3a40ad",
 
-	"Concentration": "#009f7a",
+	"专注": "#009f7a",
 };
 
 Parser.RULE_TYPE_TO_FULL = {

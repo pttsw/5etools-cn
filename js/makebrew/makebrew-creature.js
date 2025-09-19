@@ -208,7 +208,9 @@ export class CreatureBuilder extends BuilderBase {
 			...((await BrewUtil2.pGetBrewProcessed()).makebrewCreatureTrait || []),
 		];
 		this._indexedTraits = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField("n");
+			this.addField("cn");
 			this.setRef("id");
 		});
 		SearchUtil.removeStemmer(this._indexedTraits);
@@ -249,7 +251,9 @@ export class CreatureBuilder extends BuilderBase {
 			...((await BrewUtil2.pGetBrewProcessed()).makebrewCreatureAction || []),
 		];
 		this._indexedActions = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField("n");
+			this.addField("cn");
 			this.setRef("id");
 		});
 		SearchUtil.removeStemmer(this._indexedActions);
@@ -2731,6 +2735,7 @@ export class CreatureBuilder extends BuilderBase {
 									searchOptions: {
 										fields: {
 											n: {boost: 5, expand: true},
+											cn: {boost: 5,expand: true},
 										},
 										expand: true,
 									},
@@ -3017,6 +3022,7 @@ export class CreatureBuilder extends BuilderBase {
 										searchOptions: {
 											fields: {
 												n: {boost: 5, expand: true},
+												cn: {boost: 5,expand: true},
 											},
 											expand: true,
 										},

@@ -60,7 +60,7 @@ export class RenderableCollectionConditions extends RenderableCollectionGenericR
 
 	_populateRow_bindHookTooltip ({comp, $wrpRow, entity}) {
 		const hkTooltip = () => {
-			const turnsText = `${comp._state.turns} turn${comp._state.turns > 1 ? "s" : ""} remaining; CTRL-click to Clear`;
+			const turnsText = `剩余 ${comp._state.turns} 回合; CTRL+左键点击清除`;
 			$wrpRow.title(
 				comp._state.name && comp._state.turns
 					? `${comp._state.name.escapeQuotes()} (${turnsText})`
@@ -152,23 +152,23 @@ export class InitiativeTrackerUtil {
 
 	static _WOUND_META = {
 		[-1]: {
-			text: "Unknown",
+			text: "未知",
 			color: "#a5a5a5",
 		},
 		0: {
-			text: "Healthy",
+			text: "健康",
 			color: MiscUtil.COLOR_HEALTHY,
 		},
 		1: {
-			text: "Hurt",
+			text: "受伤",
 			color: MiscUtil.COLOR_HURT,
 		},
 		2: {
-			text: "Bloodied",
+			text: "浴血",
 			color: MiscUtil.COLOR_BLOODIED,
 		},
 		3: {
-			text: "Defeated",
+			text: "战败",
 			color: MiscUtil.COLOR_DEFEATED,
 		},
 	};
@@ -179,12 +179,12 @@ export class InitiativeTrackerUtil {
 			color: Parser.CONDITION_TO_COLOR[k],
 		})),
 		{
-			name: "Drunk",
+			name: "喝醉",
 			color: "#ffcc00",
 			condName: null,
 		},
 		{
-			name: "!!On Fire!!",
+			name: "!!着火啦!!",
 			color: "#ff6800",
 			condName: null,
 		},

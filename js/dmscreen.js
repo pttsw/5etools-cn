@@ -255,6 +255,7 @@ class Board {
 		await (async () => {
 			const data = await DataUtil.loadJSON("data/generated/bookref-dmscreen-index.json");
 			this.availRules.ALL = elasticlunr(function () {
+				this.use(lunr.ja);
 				this.addField("b");
 				this.addField("s");
 				this.addField("p");
@@ -339,6 +340,7 @@ class Board {
 		adventureOrBookIdToSource[dataProp] = adventureOrBookIdToSource[dataProp] || {};
 
 		indexStorage.ALL = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField(indexIdField);
 			this.addField("c");
 			this.addField("n");
@@ -355,6 +357,7 @@ class Board {
 			adventureOrBookIdToSource[dataProp][adventureOrBook.id] = adventureOrBook.source;
 
 			indexStorage[adventureOrBook.id] = elasticlunr(function () {
+				this.use(lunr.ja);
 				this.addField(indexIdField);
 				this.addField("c");
 				this.addField("n");
@@ -855,7 +858,7 @@ class SideMenu {
 		this.board.exiledPanels.forEach(p => p.get$ContentWrapper().detach());
 		this.$wrpHistory.children().remove();
 		if (this.board.exiledPanels.length) {
-			const $wrpHistHeader = $(`<div class="w-100 mb-2 split-v-center"><span style="font-variant: small-caps;">Recently Removed</span></div>`).appendTo(this.$wrpHistory);
+			const $wrpHistHeader = $(`<div class="w-100 mb-2 split-v-center"><span style="font-variant: small-caps;">近期删除</span></div>`).appendTo(this.$wrpHistory);
 			const $btnHistClear = $(`<button class="ve-btn ve-btn-danger">Clear</button>`).appendTo($wrpHistHeader);
 			$btnHistClear.on("click", () => {
 				this.board.exiledPanels.forEach(p => p.destroy());
@@ -3283,15 +3286,15 @@ class AddMenuSpecialTab extends AddMenuTab {
 		if (!this.$tab) {
 			const $tab = $(`<div class="ui-search__wrp-output underline-tabs ve-overflow-y-auto pr-1" id="${this.tabId}"></div>`);
 
-			const $wrpRoller = $(`<div class="ui-modal__row"><span>Dice Roller <i class="ve-muted">(pins the existing dice roller to a panel)</i></span></div>`).appendTo($tab);
-			const $btnRoller = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Pin</button>`).appendTo($wrpRoller);
+			const $wrpRoller = $(`<div class="ui-modal__row"><span>掷骰器<i class="ve-muted">(将现有的掷骰器固定在面板上)</i></span></div>`).appendTo($tab);
+			const $btnRoller = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">固定</button>`).appendTo($wrpRoller);
 			$btnRoller.on("click", () => {
 				Renderer.dice.bindDmScreenPanel(this.menu.pnl);
 				this.menu.doClose();
 			});
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">添加</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTracker({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3311,7 +3314,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			$$`<div class="ui-modal__row">
-			<span>Initiative Tracker Creature Viewer</span>
+			<span>先攻追踪器生物视图</span>
 			${$btnTrackerCreatureViewer}
 			</div>`.appendTo($tab);
 
@@ -3323,11 +3326,11 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			$$`<div class="ui-modal__row">
-			<span>Initiative Tracker Player View (Standard)</span>
+			<span>先攻追踪器玩家视图 (标准)</span>
 			${$btnPlayerTrackerV1}
 			</div>`.appendTo($tab);
 
-			const $btnPlayerTrackerV0 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnPlayerTrackerV0 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">添加</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV0({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3335,20 +3338,20 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			$$`<div class="ui-modal__row">
-			<span>Initiative Tracker Player View (Manual/Legacy)</span>
+			<span>先攻追踪器玩家视图 (手动/旧版)</span>
 			${$btnPlayerTrackerV0}
 			</div>`.appendTo($tab);
 
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnSublist = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnSublist = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">添加</button>`)
 				.click(async evt => {
 					await this.menu.pnl.pDoMassPopulate_Entities(evt);
 					this.menu.doClose();
 				});
 
 			$$`<div class="ui-modal__row">
-			<span title="Including, but not limited to, a Bestiary Encounter.">Pinned List Entries</span>
+			<span title="Including, but not limited to, a Bestiary Encounter.">固定列表项</span>
 			${$btnSublist}
 			</div>`.appendTo($tab);
 
@@ -3450,6 +3453,7 @@ class AddMenuSearchTab extends AddMenuTab {
 			case "content": return {
 				fields: {
 					n: {boost: 5, expand: true},
+					cn: {boost: 5,expand: true},
 					s: {expand: true},
 				},
 				bool: "AND",

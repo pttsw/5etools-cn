@@ -5835,7 +5835,9 @@ Renderer.tag = class {
 
 			const displayText = flags && flags.includes("x")
 				? compactText
-				: `${flags && flags.includes("u") ? "A" : "a"}rea ${compactText}`;
+				: (I18nUtil.LANGUAGES_INDEX == "zh_CN" 
+					? `区域${compactText}` 
+					: `${flags && flags.includes("u") ? "A" : "a"}rea ${compactText}`);
 
 			return {
 				areaId,

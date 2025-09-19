@@ -26,7 +26,7 @@ export class InitiativeTrackerDefaultParty extends BaseComponent {
 		const rdState = new this.constructor._RenderState();
 
 		const {$modalInner, $modalFooter, pGetResolved, doClose} = UiUtil.getShowModal({
-			title: "Edit Default Party",
+			title: "编辑默认队伍",
 			isHeaderBorder: true,
 			isUncappedHeight: true,
 			hasFooter: true,
@@ -68,7 +68,7 @@ export class InitiativeTrackerDefaultParty extends BaseComponent {
 	/* -------------------------------------------- */
 
 	_render_renderFooter ({rdState, $modalFooter}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">保存</button>`)
 			.click(() => rdState.cbDoClose(true));
 
 		$$($modalFooter)`<div class="w-100 py-3 no-shrink">

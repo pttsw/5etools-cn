@@ -174,14 +174,14 @@ export class InitiativeTrackerConditionAdd extends BaseComponent {
 
 		const $iptColor = ComponentUiUtil.$getIptColor(this, "color", {html: `<input class="form-control" type="color">`});
 
-		const $iptTurns = ComponentUiUtil.$getIptInt(this, "turns", null, {isAllowNull: true, fallbackOnNaN: null, html: `<input class="form-control" placeholder="Unlimited">`})
+		const $iptTurns = ComponentUiUtil.$getIptInt(this, "turns", null, {isAllowNull: true, fallbackOnNaN: null, html: `<input class="form-control" placeholder="无限制">`})
 			.on("keydown", evt => {
 				if (evt.key !== "Enter") return;
 				$iptTurns.trigger("change");
 				this._doSubmit({rdState});
 			});
 
-		const $btnSave = $(`<button class="ve-btn ve-btn-default w-100" title="Save as New Custom Condition"><span class="glyphicon glyphicon-floppy-disk"></span></button>`)
+		const $btnSave = $(`<button class="ve-btn ve-btn-default w-100" title="保存为自定义状态"><span class="glyphicon glyphicon-floppy-disk"></span></button>`)
 			.click(() => {
 				this._state.conditionsCustom = [
 					...this._state.conditionsCustom,
@@ -196,8 +196,8 @@ export class InitiativeTrackerConditionAdd extends BaseComponent {
 		return $$`
 			<div class="ve-flex-v-center mb-2">
 				<div class="small-caps ve-col-5 pr-1">名称</div>
-				<div class="small-caps ve-col-2 px-1">Color</div>
-				<div class="small-caps ve-col-4 px-1">Duration</div>
+				<div class="small-caps ve-col-2 px-1">颜色</div>
+				<div class="small-caps ve-col-4 px-1">持续时间</div>
 				<div class="ve-col-1 pl-1">&nbsp;</div>
 			</div>
 			<div class="ve-flex-v-center mb-3">
@@ -210,7 +210,7 @@ export class InitiativeTrackerConditionAdd extends BaseComponent {
 	}
 
 	_render_$getStgSubmit ({rdState}) {
-		const $btnAdd = $(`<button class="ve-btn ve-btn-primary w-100">Set Condition</button>`)
+		const $btnAdd = $(`<button class="ve-btn ve-btn-primary w-100">设置状态</button>`)
 			.click(() => this._doSubmit({rdState}));
 		return $$`
 			<div class="ve-flex-v-center">
