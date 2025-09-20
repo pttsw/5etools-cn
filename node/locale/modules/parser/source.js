@@ -11,7 +11,7 @@ const config = {
     "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
     "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
     "xscreen":['地下城主帷幕（2024）', '', "Dungeon Master's Screen (2024)"],
-    "hotb":['边境英雄', '', "Heroes of the Borderlands"],
+    "hotb":['边陲之地的英雄们', '', "Heroes of the Borderlands"],
 }
 
 export default transferLangConfig(config)
