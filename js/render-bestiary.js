@@ -557,7 +557,7 @@ class _RenderBestiaryImplClassic extends _RenderBestiaryImplBase {
 			${htmlPtPb}
 		</tr>
 
-		<tr>${opts.selSummonSpellLevel ? ee`<td colspan="6"><strong class="mr-2">Spell Level</strong> ${opts.selSummonSpellLevel}</td>` : ""}</tr>
+		<tr>${opts.selSummonSpellLevel ? ee`<td colspan="6"><strong class="mr-2">法术环阶</strong> ${opts.selSummonSpellLevel}</td>` : ""}</tr>
 		<tr>${opts.selSummonClassLevel ? ee`<td colspan="6"><strong class="mr-2">${opts.classLevelScalerClass ? "Class Level" : "Level"}</strong> ${opts.selSummonClassLevel}</td>` : ""}</tr>
 
 		${htmlPtTraits}
@@ -750,7 +750,7 @@ class _RenderBestiaryImplOne extends _RenderBestiaryImplBase {
 			${this._getTdChallenge(mon, opts)}
 		</tr>
 
-		<tr>${opts.selSummonSpellLevel ? ee`<td colspan="6"><strong class="mr-2">Spell Level</strong> ${opts.selSummonSpellLevel}</td>` : ""}</tr>
+		<tr>${opts.selSummonSpellLevel ? ee`<td colspan="6"><strong class="mr-2">法术环阶</strong> ${opts.selSummonSpellLevel}</td>` : ""}</tr>
 		<tr>${opts.selSummonClassLevel ? ee`<td colspan="6"><strong class="mr-2">${opts.classLevelScalerClass ? "Class Level" : "Level"}</strong> ${opts.selSummonClassLevel}</td>` : ""}</tr>
 
 		${htmlPtTraits}

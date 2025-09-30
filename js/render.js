@@ -2060,7 +2060,7 @@ globalThis.Renderer = function () {
 			}
 			case "@actSaveSuccessOrFail": textStack[0] += `<i>失败或成功:</i>`; break;
 			case "@actTrigger": textStack[0] += `<i>触发:</i>`; break;
-			case "@actResponse": textStack[0] += `<i>反应:</i>`; break;
+			case "@actResponse": textStack[0] += `<i>响应:</i>`; break;
 			case "@h": textStack[0] += `<i>命中:</i> `; break;
 			case "@m": textStack[0] += `<i>未命中:</i> `; break;
 			case "@hom": textStack[0] += `<i>命中或未命中:</i> `; break;
@@ -9811,7 +9811,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 
 	_getHtmlParts_savingThrows ({mon, renderer}) {
 		if (!mon.save?.special) return "";
-		return `<p><b>豁免骰</b> ${Renderer.monster.getSave(renderer, "special", mon.save.special)}</p>`;
+		return `<p><b>${I18nUtil.get("common.saving_throws")}</b> ${Renderer.monster.getSave(renderer, "special", mon.save.special)}</p>`;
 	}
 
 	_getHtmlParts_immunities ({mon}) {

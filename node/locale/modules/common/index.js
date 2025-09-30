@@ -34,8 +34,8 @@ const common = transferLangConfig({
   "senses": ["感官", "感官", "Senses"],
   "languages": ["语言", "语言", "Languages"],
   "actions": ["动作", "动作", "Actions"],
-  "saving_throws":["豁免骰","豁免骰","Saving Throws"],
-  "saving_throw":["豁免骰","豁免骰","Saving Throw"],
+  "saving_throws":["豁免检定","豁免检定","Saving Throws"],
+  "saving_throw":["豁免检定","豁免检定","Saving Throw"],
 
   "campaign": ["战役", "战役", "Campaign"],
 
