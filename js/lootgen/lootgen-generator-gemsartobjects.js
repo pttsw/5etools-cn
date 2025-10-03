@@ -48,7 +48,7 @@ export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 
 			<hr class="hr-3">
 
-			<div class="ve-small italic">${LootGenRender.er(`This custom generator randomly selects gems/art objects up to the target gold amount.`)}</div>
+			<div class="ve-small italic">${LootGenRender.er(`此自定义生成器随机生成宝石/艺术品，直到达到目标金额。`)}</div>
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 

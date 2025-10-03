@@ -1276,7 +1276,8 @@ Parser.spLevelToFull = function (level) {
 Parser.getArticle = function (str) {
 	str = `${str}`;
 	str = str.replace(/\d+/g, (...m) => Parser.numberToText(m[0]));
-	return /^[aeiou]/i.test(str) ? "an" : "a";
+	// return /^[aeiou]/i.test(str) ? "an" : "a";
+	return "一个"
 };
 
 Parser.spLevelToFullLevelText = function (level, { isDash = false, isPluralCantrips = true } = {}) {
@@ -2751,7 +2752,7 @@ Parser.TRAP_HAZARD_TYPE_TO_FULL = {
 	"GEN": "通用",
 	"EST": "奥法风暴",
 	"TRP": "陷阱",
-	"HAUNT": "狩猎陷阱",
+	"HAUNT": "灵异陷阱",
 };
 
 Parser._TIER_TO_LEVEL_RANGE = {
@@ -4797,5 +4798,15 @@ Parser.SubclassToDisplay = function (sc) {
 		return `${sc_name} ${sc_match[2]}`;
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc);
+}
+
+Parser.cultsBoonsTypeToCN = {};
+Parser.cultsBoonsTypeToCN["Demonic"] = "恶魔";
+Parser.cultsBoonsTypeToCN["Elemental"] = "元素";
+Parser.cultsBoonsTypeToCN["Elder Evil"] = "上古邪物";
+Parser.cultsBoonsTypeToCN["Diabolical"] = "魔鬼";
+
+Parser.CultsBoonsTypeToCN = function(type) {
+	return Parser.cultsBoonsTypeToCN[type] || type;
 }
 // endregion

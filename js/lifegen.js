@@ -292,7 +292,7 @@ const CHILDHOOD_HOME = [
 	{min: 0, result: "在街上"},
 	{min: 1, max: 20, result: "破旧的棚屋"},
 	{min: 21, max: 30, result: "无永久居留权；你经常搬家"},
-	{min: 31, max: 40, result: () => `在野外的营地或村庄${choose("营地", "村庄")} in the wilderness`, display: "Encampment or village in the wilderness"},
+	{min: 31, max: 40, result: () => `在野外的营地或村庄${choose("营地", "村庄")}`, display: "Encampment or village in the wilderness"},
 	{min: 41, max: 50, result: "位于破旧街区的公寓"},
 	{min: 51, max: 70, result: "小房子"},
 	{min: 71, max: 90, result: "大房子"},
@@ -674,7 +674,7 @@ async function pSectParents () {
 	})();
 
 	const parents = es(`#parents`);
-	const knowParentsStr = knowParents ? "<b>父母:</b> 你知道你的父母是谁。" : "<b>Parents:</b> 你不知道你的父母是谁。";
+	const knowParentsStr = knowParents ? "<b>父母:</b> 你知道你的父母是谁。" : "<b>父母:</b> 你不知道你的父母是谁。";
 
 	let parentage = null;
 	if (knowParents) {

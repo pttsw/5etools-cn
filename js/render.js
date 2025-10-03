@@ -4133,9 +4133,9 @@ Renderer.utils = class {
 				return Object.entries(obj).map(([profType, prof]) => {
 					switch (profType) {
 						case "skill": {
-							if (prof === true) return isListMode ? `Skill Expertise` : `Expertise in a skill`;
+							if (prof === true) return isListMode ? `技能专精` : `专精于一项技能`;
 							// TODO(Future) speculative; consider revising
-							return isListMode ? `${prof.toTitleCase()} Expertise` : `Expertise in ${prof.toTitleCase()}`;
+							return isListMode ? `${prof.toTitleCase()}专精` : `专精于${prof.toTitleCase()}`;
 						}
 						default: throw new Error(`Unhandled expertise type: "${profType}"`);
 					}
@@ -4168,13 +4168,13 @@ Renderer.utils = class {
 		};
 		static _getHtml_spellcastingFocus ({v, isListMode, isTextOnly, styleHint}) {
 			if (isListMode) {
-				if (v === true) return `Spellcasting Focus`;
-				return v.map(n => this._SCF_TYPE_TO_NAME[n] || `Spellcasting ${n.toTitleCase()}`).join("/");
+				if (v === true) return `法器`;
+				return v.map(n => this._SCF_TYPE_TO_NAME[n] || `施法${n.toTitleCase()}`).join("/");
 			}
 
-			const ptScfSuffix = styleHint === "classic" ? "spellcasting focus" : "{@variantrule Spellcasting Focus|XPHB}";
+			const ptScfSuffix = styleHint === "classic" ? "法器" : "{@variantrule 法器|XPHB}";
 			if (v === true) {
-				const ent = `Ability to use a ${ptScfSuffix}`;
+				const ent = `可以使用${ptScfSuffix}`;
 				return isTextOnly ? Renderer.stripTags(ent) : Renderer.get().render(ent);
 			}
 
@@ -4189,44 +4189,9 @@ Renderer.utils = class {
 					if (!this._SCF_TYPE_TO_NAME[scf]) return scf;
 					return `{@item ${this._SCF_TYPE_TO_NAME[scf]}${styleHint === "classic" ? "" : "|XPHB"}}`;
 				})
-				.joinConjunct(", ", " or ");
+				.joinConjunct(", ", " 或 ");
 
-			const ent = `Ability to use ${ptScf} as a ${ptScfSuffix}`;
-
-			return (isTextOnly ? Renderer.stripTags : Renderer.get().render.bind(Renderer.get()))(ent);
-		}
-
-		static _SCF_TYPE_TO_NAME = {
-			"arcane": "Arcane Focus",
-			"druid": "Druidic Focus",
-			"holy": "Holy Symbol",
-		};
-		static _getHtml_spellcastingFocus ({v, isListMode, keyOptions, isTextOnly, styleHint}) {
-			if (isListMode) {
-				if (v === true) return `Spellcasting Focus`;
-				return v.map(n => this._SCF_TYPE_TO_NAME[n] || `Spellcasting ${n.toTitleCase()}`).join("/");
-			}
-
-			const ptScfSuffix = styleHint === "classic" ? "spellcasting focus" : "{@variantrule Spellcasting Focus|XPHB}";
-			if (v === true) {
-				const ent = `Ability to use a ${ptScfSuffix}`;
-				return isTextOnly ? Renderer.stripTags(ent) : Renderer.get().render(ent);
-			}
-
-			const ptScf = v
-				.map((scf, i) => {
-					if (!i) {
-						const a = Parser.getArticle(this._SCF_TYPE_TO_NAME[scf] || scf);
-						if (!this._SCF_TYPE_TO_NAME[scf]) return `${a} ${scf}`;
-						return `${a} {@item ${this._SCF_TYPE_TO_NAME[scf]}${styleHint === "classic" ? "" : "|XPHB"}}`;
-					}
-
-					if (!this._SCF_TYPE_TO_NAME[scf]) return scf;
-					return `{@item ${this._SCF_TYPE_TO_NAME[scf]}${styleHint === "classic" ? "" : "|XPHB"}}`;
-				})
-				.joinConjunct(", ", " or ");
-
-			const ent = `Ability to use ${ptScf} as a ${ptScfSuffix}`;
+			const ent = `可以使用${ptScf}作为${ptScfSuffix}`;
 
 			return (isTextOnly ? Renderer.stripTags : Renderer.get().render.bind(Renderer.get()))(ent);
 		}
@@ -8945,13 +8910,13 @@ Renderer.trap = class {
 				} : null,
 				ent.hauntBonus ? {
 					type: "item",
-					name: "Haunt Bonus:",
+					name: "灵异加成:",
 					entry: ent.hauntBonus,
 				} : null,
 				ent.hauntBonus && !isNaN(ent.hauntBonus) ? {
 					type: "item",
-					name: "Detection:",
-					entry: `passive Wisdom ({@skill Perception}) score equals or exceeds ${10 + Number(ent.hauntBonus)}`,
+					name: "侦测:",
+					entry: `通过一次DC大于等于${10 + Number(ent.hauntBonus)}的感知({@skill 察觉})检定。`,
 				} : null,
 			]
 				.filter(Boolean);
@@ -9147,7 +9112,7 @@ Renderer.cultboon = class {
 		if (ent.goal) {
 			fauxList.items.push({
 				type: "item",
-				name: "Goals:",
+				name: "目标:",
 				entry: ent.goal.entry,
 			});
 		}
@@ -9155,14 +9120,14 @@ Renderer.cultboon = class {
 		if (ent.cultists) {
 			fauxList.items.push({
 				type: "item",
-				name: "Typical Cultists:",
+				name: "典型教徒:",
 				entry: ent.cultists.entry,
 			});
 		}
 		if (ent.signatureSpells) {
 			fauxList.items.push({
 				type: "item",
-				name: "Signature Spells:",
+				name: "招牌法术:",
 				entry: ent.signatureSpells.entry,
 			});
 		}
@@ -14306,7 +14271,7 @@ Renderer.facility = class {
 
 				if (hire.exact != null) return `${hire.exact}${ptSpace}`;
 				if (hire.min != null && hire.max != null) return `${hire.min}\u2013${hire.max}${ptSpace}`;
-				if (hire.min != null) return `${hire.min}+ (see below${ptSpace ? ";" : ""}${ptSpace})`;
+				if (hire.min != null) return `${hire.min}+ (见下文${ptSpace ? ";" : ""}${ptSpace})`;
 
 				return null;
 			})
@@ -14331,19 +14296,19 @@ Renderer.facility = class {
 				type: "wrappedHtml",
 				html: Renderer.utils.prerequisite.getHtml(ent.prerequisite, {styleHint: "one", isSkipPrefix: true}),
 			};
-			entsList.push({type: "item", name: `Prerequisite:`, entry: entRendered});
+			entsList.push({type: "item", name: `先决条件:`, entry: entRendered});
 		} else if (ent.facilityType !== "basic") {
-			entsList.push({type: "item", name: `Prerequisite:`, entry: "None"});
+			entsList.push({type: "item", name: `先决条件:`, entry: "无"});
 		}
 
 		const entrySpace = this._getFacilityRenderableEntriesMeta_space({ent});
-		if (entrySpace) entsList.push({type: "item", name: `Space:`, entry: entrySpace});
+		if (entrySpace) entsList.push({type: "item", name: `空间:`, entry: entrySpace});
 
 		const entryHirelings = this._getFacilityRenderableEntriesMeta_hirelings({ent});
-		if (entryHirelings) entsList.push({type: "item", name: `Hirelings:`, entry: entryHirelings});
+		if (entryHirelings) entsList.push({type: "item", name: `雇工:`, entry: entryHirelings});
 
 		const entryOrders = this._getFacilityRenderableEntriesMeta_orders({ent});
-		if (entryOrders) entsList.push({type: "item", name: `Order${ent.orders.length !== 1 ? "s" : ""}:`, entry: entryOrders});
+		if (entryOrders) entsList.push({type: "item", name: `指令:`, entry: entryOrders});
 
 		return {
 			entriesDescription: [
@@ -14413,7 +14378,7 @@ Renderer.facility = class {
 	/* -------------------------------------------- */
 
 	static getCompactRenderedString (ent) {
-		const ptLevel = ent.level == null ? "" : `<tr><td colspan="6" class="pb-2 pt-0"><i>Level ${ent.level} Bastion Facility</i></td></tr>`;
+		const ptLevel = ent.level == null ? "" : `<tr><td colspan="6" class="pb-2 pt-0"><i>${ent.level}级据点设施</i></td></tr>`;
 
 		const entriesMeta = Renderer.facility.getFacilityRenderableEntriesMeta(ent);
 		const ptEntries = entriesMeta.entriesDescription.map(entry => `<div class="my-1p">${Renderer.get().render(entry, 2)}</div>`).join("");

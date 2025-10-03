@@ -10,6 +10,7 @@ class PageFilterActions extends PageFilterBase {
 
 		this._timeFilter = new Filter({
 			header: "Type",
+			cnHeader: "类型",
 			displayFn: StrUtil.uppercaseFirst,
 			itemSortFn: SortUtil.ascSortLower,
 		});

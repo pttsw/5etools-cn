@@ -86,24 +86,24 @@ class BastionsPage extends ListPage {
 					name: UtilsTableview.COL_TRANSFORM_NAME,
 					source: UtilsTableview.COL_TRANSFORM_SOURCE,
 					page: UtilsTableview.COL_TRANSFORM_PAGE,
-					_level: {name: "Level", transform: ent => ent.level || ""},
-					_prerequisite: {name: "Prerequisite", transform: ent => ent._slPrereq},
-					_space: {name: "Space",
+					_level: {name: "等级", transform: ent => ent.level || ""},
+					_prerequisite: {name: "先决条件", transform: ent => ent._slPrereq},
+					_space: {name: "空间",
 						transform: ent => {
 							const {entrySpace} = Renderer.facility.getFacilityRenderableEntriesMeta(ent);
 							return Renderer.get().render(entrySpace);
 						}},
-					_hirelings: {name: "Hirelings",
+					_hirelings: {name: "雇工",
 						transform: ent => {
 							const {entryHirelings} = Renderer.facility.getFacilityRenderableEntriesMeta(ent);
 							return Renderer.get().render(entryHirelings);
 						}},
-					_orders: {name: "Orders",
+					_orders: {name: "指令",
 						transform: ent => {
 							const {entryOrders} = Renderer.facility.getFacilityRenderableEntriesMeta(ent);
 							return Renderer.get().render(entryOrders);
 						}},
-					entries: {name: "Text", transform: ent => Renderer.get().render({type: "entries", entries: ent}, 2), flex: 3},
+					entries: {name: "文本", transform: ent => Renderer.get().render({type: "entries", entries: ent}, 2), flex: 3},
 				},
 			},
 		});
@@ -117,7 +117,7 @@ class BastionsPage extends ListPage {
 
 		const hash = UrlUtil.autoEncodeHash(ent);
 		const source = Parser.sourceJsonToAbv(ent.source);
-		const facilityType = (ent.facilityType || "Unknown").toTitleCase();
+		const facilityType = (ent.facilityType || "未知").toTitleCase();
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst__row-border lst__row-inner">
 			<span class="ve-col-2 ve-text-center pl-0 pr-1">${facilityType}</span>

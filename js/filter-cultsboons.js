@@ -6,14 +6,18 @@ class PageFilterCultsBoons extends PageFilterBase {
 
 		this._typeFilter = new Filter({
 			header: "Type",
-			items: ["Boon, Demonic", "Cult"],
+			cnHeader:"类型",
+			items: ["恶魔恩惠", "异教"],
 		});
 		this._subtypeFilter = new Filter({
 			header: "Subtype",
+			cnHeader:"子类",
 			items: [],
+			displayFn: Parser.CultsBoonsTypeToCN.bind(Parser),
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
+			cnHeader:"杂项",
 			items: ["传奇", "重置"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
@@ -22,7 +26,7 @@ class PageFilterCultsBoons extends PageFilterBase {
 
 	static mutateForFilters (it) {
 		this._mutateForFilters_commonSources(it);
-		it._fType = it.__prop === "cult" ? "Cult" : it.type ? `Boon, ${it.type}` : "Boon";
+		it._fType = it.__prop === "cult" ? "异教" : it.type ? `${Parser.CultsBoonsTypeToCN(it.type)}恩惠` : "恩惠";
 		this._mutateForFilters_commonMisc(it);
 	}
 

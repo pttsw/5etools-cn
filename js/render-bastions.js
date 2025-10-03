@@ -27,7 +27,7 @@ class _RenderFacilitiesImplBase extends RenderPageImplBase {
 
 	_getCommonHtmlParts_prerequisites ({ent}) {
 		if (ent.level == null) return "";
-		return `<tr><td colspan="6" class="pb-2 pt-0"><i>Level ${ent.level} Bastion Facility</i></td></tr>`;
+		return `<tr><td colspan="6" class="pb-2 pt-0"><i>${ent.level}级据点设施</i></td></tr>`;
 	}
 
 	/* ----- */

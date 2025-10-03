@@ -153,9 +153,9 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 
 		ee`<div class="ve-flex-col py-2 px-3">
 			<p>
-				Generates a set of magical items for a party, based on the tables and rules in ${LootGenRender.er(`{@book Xanathar's Guide to Everything|XGE|2|awarding magic items}`)}, pages 135-136.
+				基于${LootGenRender.er(`{@book 珊娜萨的万事指南|XGE|2|奖励魔法物品}`)}第135-136页的表格和规则为小队生成一组魔法物品。
 			</p>
-			<p><i>If &quot;Exact Level&quot; is selected, the output will include a proportional number of items for any partially-completed tier.</i></p>
+			<p><i>如果选择了&quot;精确等级&quot;选项，输出中的物品数量将依据游戏阶段完成的比例来计算。</i></p>
 
 			<hr class="hr-3">
 
@@ -163,12 +163,12 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 			${stgExactLevel}
 
 			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">Cumulative with Previous Tiers</div>
+				<div class="mr-2 w-66 no-shrink">包含之前阶段的物品</div>
 				${cbIsCumulative}
 			</label>
 
 			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">Is Exact Level</div>
+				<div class="mr-2 w-66 no-shrink">精确等级</div>
 				${cbIsExactLevel}
 			</label>
 

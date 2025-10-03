@@ -309,7 +309,7 @@ class MapsPage extends BaseComponent {
 		};
 		this._addHookBase("isAllChecked", hkBubbleDown);
 
-		const {wrp: wrpIptSearch} = ComponentUiUtil.getIptStr(this, "search", {placeholder: "Search sources...", decorationLeft: "search", decorationRight: "clear", asMeta: true});
+		const {wrp: wrpIptSearch} = ComponentUiUtil.getIptStr(this, "search", {placeholder: "搜索来源...", decorationLeft: "search", decorationRight: "clear", asMeta: true});
 
 		const cbIsAllChecked = ComponentUiUtil.getCbBool(this, "isAllChecked", {isDisplayNullAsIndeterminate: true, isTreatIndeterminateNullAsPositive: true});
 
@@ -334,7 +334,7 @@ class MapsPage extends BaseComponent {
 		ee(root.empty())`
 			<div class="ve-flex-col h-100 no-shrink maps-menu pr-4 py-3 shadow-big ve-overflow-y-auto smooth-scroll scrollbar-stable mobile__w-100 mobile__my-4">
 				<label class="split-v-center pl-2 py-1">
-					<div class="mr-3 no-shrink">Image Scale</div>
+					<div class="mr-3 no-shrink">缩放</div>
 					${sldImageScale}
 				</label>
 

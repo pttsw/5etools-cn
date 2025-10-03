@@ -145,9 +145,8 @@ class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
 export class LootGenGeneratorFindTreasure extends LootGenGeneratorFindTreasureBase {
 	identifier = "findTreasure";
 	_source = Parser.SRC_DMG;
-
 	_getHtmlBasedOn () {
-		return LootGenRender.er(`Based on the tables and rules in the {@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|Treasure Tables}, pages 133-149.`);
+		return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|宝藏表}第133-149页的表格和规则。`);
 	}
 
 	_render_getStgHoardAdditional () { return null; }
@@ -177,7 +176,7 @@ export class LootGenGeneratorFindTreasure24 extends LootGenGeneratorFindTreasure
 	_source = Parser.SRC_XDMG;
 
 	_getHtmlBasedOn () {
-		return LootGenRender.er(`Based on the tables and rules in the {@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG} page 120 (&quot;{@book Adventure Rewards|XDMG|3|Adventure Rewards}&quot;) and page 218 (&quot;{@book Random Magic Item Rarity|XDMG|6|Random Magic Item Rarity}&quot;).`);
+		return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG}第120页（“{@book 冒险奖励|XDMG|3|冒险奖励}”）和第218页（“{@book 随机魔法物品稀有度|XDMG|6|随机魔法物品稀有度}”）的表格和规则。`);
 	}
 
 	_render_getStgHoardAdditional () {

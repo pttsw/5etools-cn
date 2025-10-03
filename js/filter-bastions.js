@@ -6,23 +6,45 @@ class PageFilterBastions extends PageFilterBase {
 
 		this._typeFilter = new Filter({
 			header: "Type",
+			cnHeader: "类型",
 			items: ["basic", "special"],
 			displayFn: it => it.toTitleCase(),
 			deselFn: (it) => it === "basic",
 		});
 		this._levelFilter = new RangeFilter({
 			header: "Level",
+			cnHeader: "等级",
 			isLabelled: true,
 			labels: ["\u2014", ...Array.from({length: 20}, (_, i) => i + 1)],
 			labelDisplayFn: n => n === "\u2014" ? "None" : n,
 		});
 		this._prereqFilter = new Filter({
 			header: "Prerequisite",
+			cnHeader: "先决条件",
 			items: [...FilterCommon.PREREQ_FILTER_ITEMS],
+			displayFn: function(tag){
+				switch(tag){
+					case "Ability": 	return "属性值";
+					case "Expertise":    return "专精";
+					case "Race": 		return "种族";
+					case "Proficiency": return "熟练";
+					case "Spellcasting":return "施法";
+					case "Background":  return "背景";
+					case "Campaign":    return "战役";
+					case "Feat":        return "专长";
+					case "Psionics":    return "灵能";
+					case "Special":     return "特殊";
+					case "Feature":     return "特性";
+					case "Species":    return "种族";
+					case "Spellcasting Focus": return "法器";
+					default: return tag;
+				}
+			},
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Has Images", "Has Info"],
+			cnHeader: "杂项",
+			items: ["有图片", "Has Info"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});

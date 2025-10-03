@@ -9,7 +9,7 @@ class EncountersPage extends TableListPage {
 		});
 	}
 
-	static _COL_NAME_1 = "Encounter";
+	static _COL_NAME_1 = "遭遇";
 
 	static _FN_SORT (a, b, o) {
 		if (o.sortBy === "name") return SortUtil.ascSortEncounter(a, b);

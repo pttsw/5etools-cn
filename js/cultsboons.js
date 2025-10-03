@@ -68,7 +68,7 @@ class CultsBoonsPage extends ListPage {
 	getListItem (it, bcI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
-		it._lType = it.__prop === "cult" ? "Cult" : "Boon";
+		it._lType = it.__prop === "cult" ? "异教" : "恩惠";
 		it._lSubType = it.type || "\u2014";
 
 		const eleLi = document.createElement("div");
@@ -79,7 +79,7 @@ class CultsBoonsPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst__row-border lst__row-inner">
 			<span class="ve-col-2 ve-text-center pl-0">${it._lType}</span>
-			<span class="ve-col-2 px-1 ve-text-center">${it._lSubType}</span>
+			<span class="ve-col-2 px-1 ve-text-center">${Parser.CultsBoonsTypeToCN(it._lSubType)}</span>
 			<span class="bold ve-col-6 px-1">${it.name}</span>
 			<span class="ve-col-2 ve-text-center ${Parser.sourceJsonToSourceClassname(it.source)} pl-1 pr-0" title="${Parser.sourceJsonToFull(it.source)}">${source}</span>
 		</a>`;
