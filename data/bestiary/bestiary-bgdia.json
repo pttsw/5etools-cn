@@ -449,7 +449,7 @@
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"Arkhan挥舞着{@item 神殿吞食者|BGDIA}并穿戴一套{@item 黑曜燧石龙板甲|BGDIA}。这套盔甲使Arkhan在进行属性检定和豁免检定以避免或结束对他自身的{@condition 擒抱}状态时具有优势。"
+						"Arkhan挥舞着{@item 神殿吞食者|BGDIA}并穿戴一套{@item 黑曜燧石龙板甲|BGDIA}。这套盔甲使Arkhan在进行属性检定和豁免检定以避免或结束对他自身的{@condition 受擒}状态时具有优势。"
 					]
 				}
 			],
@@ -1012,7 +1012,7 @@
 					"ENG_name": "Adhesive",
 					"name": "黏着",
 					"entries": [
-						"骨螺可以使中等大小或更小的物体粘附在其上。触碰骨螺的中等大小或更小的生物会被它{@condition 擒抱}（逃脱{@dc 10}）。"
+						"骨螺可以使中等大小或更小的物体粘附在其上。触碰骨螺的中等大小或更小的生物会被它{@condition 受擒}（逃脱{@dc 10}）。"
 					]
 				},
 				{
@@ -3624,7 +3624,7 @@
 							"ENG_name": "Bite",
 							"name": "啃咬",
 							"entries": [
-								"{@atk mw} {@hit 11} 命中, 触及10尺, 一个目标。 {@h}40 ({@damage 6d10 + 7}) 穿刺伤害加10 ({@damage 3d6}) 黯蚀伤害。如果目标是生物，则被{@condition 擒抱}（逃脱 {@dc 17}）。直到擒抱结束，目标被{@condition 束缚}，且蜈蚣不能咬击另一个目标。"
+								"{@atk mw} {@hit 11} 命中, 触及10尺, 一个目标。 {@h}40 ({@damage 6d10 + 7}) 穿刺伤害加10 ({@damage 3d6}) 黯蚀伤害。如果目标是生物，则{@condition 受擒}（逃脱 {@dc 17}）。直到擒抱结束，目标{@condition 束缚}，且蜈蚣不能咬击另一个目标。"
 							]
 						}
 					}

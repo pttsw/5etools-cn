@@ -21,7 +21,7 @@
 			"name": "黏着",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 会粘附在任何触碰它的物体上。被粘附的巨型或更小的生物也会被其 {@condition 擒抱}（逃脱 {@dc 13}）。逃脱此擒抱的能力检定具有劣势。"
+				"<$title_short_name$> 会粘附在任何触碰它的物体上。被粘附的巨型或更小的生物也会被其 {@condition 受擒}（逃脱 {@dc 13}）。逃脱此擒抱的能力检定具有劣势。"
 			]
 		},
 		{
@@ -256,7 +256,7 @@
 			"name": "伤害转移（窒息地毯）",
 			"source": "MM",
 			"entries": [
-				"当<$short_name$>擒抱一个生物时，<$short_name$>只受到一半的伤害，而被<$short_name$> {@condition 擒抱} 的生物则受到另一半伤害。"
+				"当<$short_name$>擒抱一个生物时，<$short_name$>只受到一半的伤害，而被<$short_name$> {@condition 受擒} 的生物则受到另一半伤害。"
 			]
 		},
 		{
@@ -600,7 +600,7 @@
 			"name": "行动自如",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>忽略{@quickref 困难地形||3}，魔法效果不能降低其速度或使其处于{@condition 束缚}状态。它可以花费5尺的移动力来逃脱非魔法的束缚或被{@condition 擒抱}。"
+				"<$title_short_name$>忽略{@quickref 困难地形||3}，魔法效果不能降低其速度或使其处于{@condition 束缚}状态。它可以花费5尺的移动力来逃脱非魔法的束缚或{@condition 受擒}。"
 			]
 		},
 		{
@@ -632,7 +632,7 @@
 			"name": "擒抱者",
 			"source": "DMG",
 			"entries": [
-				"<$title_short_name$>对任何被它{@condition 擒抱}的生物进行攻击检定时具有优势。"
+				"<$title_short_name$>对任何被它{@condition 受擒}的生物进行攻击检定时具有优势。"
 			]
 		},
 		{
@@ -1879,7 +1879,7 @@
 			"name": "酸性喷射（蜥蜴人）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>在一条30尺长、5尺宽的直线上喷射酸液，前提是它没有生物被{@condition 擒抱}。在该直线上的每个生物必须进行一次DC <$dc__dex$> 敏捷豁免检定，失败时受到10 ({@damage 3d6})点强酸伤害，成功则伤害减半。"
+				"<$title_short_name$>在一条30尺长、5尺宽的直线上喷射酸液，前提是它没有生物{@condition 受擒}。在该直线上的每个生物必须进行一次DC <$dc__dex$> 敏捷豁免检定，失败时受到10 ({@damage 3d6})点强酸伤害，成功则伤害减半。"
 			]
 		},
 		{
@@ -1928,7 +1928,7 @@
 			"name": "咬击（克拉肯）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} {@hit <$命中__力量$>} 命中，射程 5 英尺，一个目标。{@h}<$damage_avg__12+str$> （{@damage 3d8<$damage_mod__str$>}）穿刺伤害。如果目标是大型或更小的生物，被 <$short_name$> 所 {@condition 擒抱}，那么该生物被吞噬，抓握结束。当生物被吞噬时，它处于 {@condition 目盲} 和 {@condition 束缚} 状态，对 <$short_name$> 外部的攻击和其他效果有 {@quickref 掩护||3||全身掩护}，并且在 <$short_name$> 的每个回合开始时承受 42 ({@damage 12d6}) 酸液伤害。如果 <$short_name$> 在一个回合内从体内生物受到 50 点或更多伤害，<$short_name$> 必须在该回合结束时通过 DC <$dc__con$> 的豁免检定，否则会吐出所有被吞噬的生物，它们在 <$short_name$> 10 英尺内的某个空间中处于 {@condition 倒地} 状态。如果 <$short_name$> 死亡，被吞噬的生物不再被它 {@condition 束缚} 并且可以使用 15 英尺移动力从尸体中逃脱，以 {@condition 倒地} 状态离开。"
+				"{@atk mw} {@hit <$命中__力量$>} 命中，射程 5 英尺，一个目标。{@h}<$damage_avg__12+str$> （{@damage 3d8<$damage_mod__str$>}）穿刺伤害。如果目标是大型或更小的生物，被 <$short_name$> 所 {@condition 受擒}，那么该生物被吞噬，抓握结束。当生物被吞噬时，它处于 {@condition 目盲} 和 {@condition 束缚} 状态，对 <$short_name$> 外部的攻击和其他效果有 {@quickref 掩护||3||全身掩护}，并且在 <$short_name$> 的每个回合开始时承受 42 ({@damage 12d6}) 酸液伤害。如果 <$short_name$> 在一个回合内从体内生物受到 50 点或更多伤害，<$short_name$> 必须在该回合结束时通过 DC <$dc__con$> 的豁免检定，否则会吐出所有被吞噬的生物，它们在 <$short_name$> 10 英尺内的某个空间中处于 {@condition 倒地} 状态。如果 <$short_name$> 死亡，被吞噬的生物不再被它 {@condition 束缚} 并且可以使用 15 英尺移动力从尸体中逃脱，以 {@condition 倒地} 状态离开。"
 			]
 		},
 		{
@@ -1944,7 +1944,7 @@
 			"name": "链条（链魔）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，触及10尺，单一目标。{@h}<$damage_avg__7+str$>（{@damage 2d6<$damage_mod__str$>}）挥砍伤害。如果<$short_name$>尚未缠绕另一生物，则目标将被{@condition 擒抱}（逃脱DC <$dc__str$>）。直到这次缠绕结束，目标将被{@condition 束缚}，并在其每个回合开始时受到7（{@damage 2d6}）点穿刺伤害。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，触及10尺，单一目标。{@h}<$damage_avg__7+str$>（{@damage 2d6<$damage_mod__str$>}）挥砍伤害。如果<$short_name$>尚未缠绕另一生物，则目标将{@condition 受擒}（逃脱DC <$dc__str$>）。直到这次缠绕结束，目标将{@condition 束缚}，并在其每个回合开始时受到7（{@damage 2d6}）点穿刺伤害。"
 			]
 		},
 		{
@@ -1986,7 +1986,7 @@
 			"name": "缠绕（青足龙蛇）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，触及5尺，单一大型或更小生物。{@h}17（{@damage 2d10<$damage_mod__str$>}）钝击伤害加上17（{@damage 2d10<$damage_mod__str$>}）挥砍伤害。如果<$short_name$>尚未缠绕另一生物，则目标将被{@condition 擒抱}（逃脱DC <$dc__str$>），并且目标将被{@condition 束缚}直到这次缠绕结束。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，触及5尺，单一大型或更小生物。{@h}17（{@damage 2d10<$damage_mod__str$>}）钝击伤害加上17（{@damage 2d10<$damage_mod__str$>}）挥砍伤害。如果<$short_name$>尚未缠绕另一生物，则目标将{@condition 受擒}（逃脱DC <$dc__str$>），并且目标将{@condition 束缚}直到这次缠绕结束。"
 			]
 		},
 		{
@@ -1994,7 +1994,7 @@
 			"name": "缠绕（蟒蛇）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，触及5尺，单一生物。{@h}<$damage_avg__4+str$>（{@damage 1d8<$伤害修正__力量$>}）钝击伤害，目标被{@condition 擒抱}（逃脱DC <$dc__str$>）。直到这次摔跤结束，生物处于{@condition 束缚}状态，<$short_name$>不能缠绕另一个目标。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，触及5尺，单一生物。{@h}<$damage_avg__4+str$>（{@damage 1d8<$伤害修正__力量$>}）钝击伤害，目标{@condition 受擒}（逃脱DC <$dc__str$>）。直到这次摔跤结束，生物处于{@condition 束缚}状态，<$short_name$>不能缠绕另一个目标。"
 			]
 		},
 		{
@@ -2088,7 +2088,7 @@
 			"name": "吞噬（蔓生怪）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 吞没一个被它{@condition 擒抱}的中等大小或更小的生物。被吞没的目标处于{@condition 目盲}状态，{@condition 束缚}状态，无法呼吸，并且在<$short_name$>的每个回合开始时，必须成功进行一次DC <$dc__con$>的豁免检定，否则将承受13（{@damage 2d8<$damage_mod_力量$>}）的钝击伤害。如果<$short_name$>移动，被吞没的目标也会随之移动。<$title_short_name$>一次只能吞没一个生物。"
+				"<$title_short_name$> 吞没一个被它{@condition 受擒}的中等大小或更小的生物。被吞没的目标处于{@condition 目盲}状态，{@condition 束缚}状态，无法呼吸，并且在<$short_name$>的每个回合开始时，必须成功进行一次DC <$dc__con$>的豁免检定，否则将承受13（{@damage 2d8<$damage_mod_力量$>}）的钝击伤害。如果<$short_name$>移动，被吞没的目标也会随之移动。<$title_short_name$>一次只能吞没一个生物。"
 			]
 		},
 		{
@@ -2155,7 +2155,7 @@
 			"name": "投掷（克拉肯）",
 			"source": "MM",
 			"entries": [
-				"一个被<$short_name$>抓住的大型或更小物体或{@condition 擒抱}的生物被随机方向抛出60英尺并{@condition 倒地}。如果被抛出的目标撞击到坚固的表面，目标每抛出10英尺将受到3点({@damage 1d6})钝击伤害。如果目标被抛向另一个生物，该生物必须成功通过一个DC<$dc__dex$>的敏捷豁免，否则将受到相同的伤害并被{@condition 倒地}。"
+				"一个被<$short_name$>抓住的大型或更小物体或{@condition 受擒}的生物被随机方向抛出60英尺并{@condition 倒地}。如果被抛出的目标撞击到坚固的表面，目标每抛出10英尺将受到3点({@damage 1d6})钝击伤害。如果目标被抛向另一个生物，该生物必须成功通过一个DC<$dc__dex$>的敏捷豁免，否则将受到相同的伤害并{@condition 倒地}。"
 			]
 		},
 		{
@@ -2408,7 +2408,7 @@
 			"name": "卷线（穴居怪）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 将每个被它{@condition 擒抱}的生物直接拉向它，距离最多25尺。"
+				"<$title_short_name$> 将每个被它{@condition 受擒}的生物直接拉向它，距离最多25尺。"
 			]
 		},
 		{
@@ -2456,7 +2456,7 @@
 			"name": "窒息（窒息地毯）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>} ，触及5尺，一个中型或更小的生物。{@h}该生物被{@condition 擒抱}（DC <$dc__str$>）。在此擒抱结束之前，目标被{@condition 束缚}，{@condition 目盲}，并有窒息风险，同时<$short_name$> 无法窒息另一个目标。此外，在目标每回合开始时，目标受到 <$damage_avg__6+str$>（{@damage 2d6<$damage_mod__str$>}）的钝击伤害。"
+				"{@atk mw} 命中{@hit <$命中__力量$>} ，触及5尺，一个中型或更小的生物。{@h}该生物{@condition 受擒}（DC <$dc__str$>）。在此擒抱结束之前，目标{@condition 束缚}，{@condition 目盲}，并有窒息风险，同时<$short_name$> 无法窒息另一个目标。此外，在目标每回合开始时，目标受到 <$damage_avg__6+str$>（{@damage 2d6<$damage_mod__str$>}）的钝击伤害。"
 			]
 		},
 		{
@@ -2514,7 +2514,7 @@
 			"name": "尾巴（六臂蛇魔）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，触及 10 尺，单一生物。{@h}<$damage_avg__11+str$>（{@damage 2d10<$damage_mod__str$>}）钝击伤害。如果目标是中等大小或更小，它将被{@condition 擒抱}（逃脱 DC <$dc__str$>）。直到这次摔跤结束，目标处于{@condition 束缚}状态，<$short_name$>可以自动用尾巴命中目标，且<$short_name$>不能对其他目标进行尾巴攻击。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，触及 10 尺，单一生物。{@h}<$damage_avg__11+str$>（{@damage 2d10<$damage_mod__str$>}）钝击伤害。如果目标是中等大小或更小，它将{@condition 受擒}（逃脱 DC <$dc__str$>）。直到这次摔跤结束，目标处于{@condition 束缚}状态，<$short_name$>可以自动用尾巴命中目标，且<$short_name$>不能对其他目标进行尾巴攻击。"
 			]
 		},
 		{
@@ -2538,7 +2538,7 @@
 			"name": "触须（罗珀）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，触及 50 尺，单一生物。{@h}目标被{@condition 擒抱}（逃脱 DC <$dc__str$>）。直到摔跤结束，目标处于{@condition 束缚}状态，并且在力量检定和力量豁免检定上具有劣势，且<$short_name$>不能使用同一触须对另一个目标进行攻击。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，触及 50 尺，单一生物。{@h}目标{@condition 受擒}（逃脱 DC <$dc__str$>）。直到摔跤结束，目标处于{@condition 束缚}状态，并且在力量检定和力量豁免检定上具有劣势，且<$short_name$>不能使用同一触须对另一个目标进行攻击。"
 			]
 		},
 		{
@@ -2554,7 +2554,7 @@
 			"name": "触手（克拉肯）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，触及 30 尺，单一目标。{@h}<$damage_avg__9+str$>（{@damage 3d6<$damage_mod__str$>0}）钝击伤害，目标被{@condition 擒抱}（逃脱 DC <$dc__str$>）。直到这次摔跤结束，目标处于{@condition 束缚}状态。<$title_short_name$>有十条触手，每条触手可以摔跤一个目标。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，触及 30 尺，单一目标。{@h}<$damage_avg__9+str$>（{@damage 3d6<$damage_mod__str$>0}）钝击伤害，目标{@condition 受擒}（逃脱 DC <$dc__str$>）。直到这次摔跤结束，目标处于{@condition 束缚}状态。<$title_short_name$>有十条触手，每条触手可以摔跤一个目标。"
 			]
 		},
 		{
@@ -2562,7 +2562,7 @@
 			"name": "触手（甲伏怪）",
 			"source": "MM",
 			"entries": [
-				"被<$short_name$>{@condition 擒抱}的生物必须进行一次DC <$dc__con$> 体质豁免检定，否则将被{@condition 中毒}持续1分钟。直到这种毒素结束，目标将处于{@condition 麻痹}状态。目标可以在每个回合结束时重复进行豁免检定，成功则结束此效果。"
+				"被<$short_name$>{@condition 受擒}的生物必须进行一次DC <$dc__con$> 体质豁免检定，否则将{@condition 中毒}持续1分钟。直到这种毒素结束，目标将处于{@condition 麻痹}状态。目标可以在每个回合结束时重复进行豁免检定，成功则结束此效果。"
 			]
 		},
 		{
@@ -2586,7 +2586,7 @@
 			"name": "蛛网绞杀（伊特怪）",
 			"source": "MM",
 			"entries": [
-				"{@atk mw} 命中{@hit <$命中__力量$>}，范围 5 英尺，<$short_name$> 在攻击掷骰上具有优势的中型或小型生物。 {@h}4 ({@damage 1d4<$damage_mod__str$>}) 钝击伤害，并且目标被 {@condition 擒抱}（逃脱 DC <$dc__str$>）。在擒抱结束前，目标无法呼吸，并且 <$short_name$> 对其攻击掷骰具有优势。"
+				"{@atk mw} 命中{@hit <$命中__力量$>}，范围 5 英尺，<$short_name$> 在攻击掷骰上具有优势的中型或小型生物。 {@h}4 ({@damage 1d4<$damage_mod__str$>}) 钝击伤害，并且目标被 {@condition 受擒}（逃脱 DC <$dc__str$>）。在擒抱结束前，目标无法呼吸，并且 <$short_name$> 对其攻击掷骰具有优势。"
 			]
 		},
 		{
@@ -2594,8 +2594,8 @@
 			"name": "淹没（水元素）",
 			"source": "MM",
 			"entries": [
-				"在<$short_name$>空间内的每个生物都必须进行一次DC <$dc__str$> 力量豁免检定。失败时，目标会受到13（{@damage 2d8<$damage_mod_力量$>}）钝击伤害。如果目标是大型或更小，它也会被{@condition 擒抱}（逃脱 DC <$dc__str$>）。直到这次摔跤结束，目标处于{@condition 束缚}状态，并且除非它能在水中呼吸，否则无法呼吸。如果豁免检定成功，目标会被推出<$short_name$>的空间。",
-				"<$title_short_name$> 能够同时抓住一个大型生物或多达两个中型或更小的生物。在每个<$short_name$>的回合开始时，每个被它{@condition 擒抱}的目标会受到13（{@damage 2d8<$damage_mod_力量$>}）钝击伤害。在<$short_name$>周围5尺内的生物可以通过采取行动进行一次DC <$dc__str$> 力量检定并成功，来拉出<$short_name$>中的生物或物体。"
+				"在<$short_name$>空间内的每个生物都必须进行一次DC <$dc__str$> 力量豁免检定。失败时，目标会受到13（{@damage 2d8<$damage_mod_力量$>}）钝击伤害。如果目标是大型或更小，它也会{@condition 受擒}（逃脱 DC <$dc__str$>）。直到这次摔跤结束，目标处于{@condition 束缚}状态，并且除非它能在水中呼吸，否则无法呼吸。如果豁免检定成功，目标会被推出<$short_name$>的空间。",
+				"<$title_short_name$> 能够同时抓住一个大型生物或多达两个中型或更小的生物。在每个<$short_name$>的回合开始时，每个被它{@condition 受擒}的目标会受到13（{@damage 2d8<$damage_mod_力量$>}）钝击伤害。在<$short_name$>周围5尺内的生物可以通过采取行动进行一次DC <$dc__str$> 力量检定并成功，来拉出<$short_name$>中的生物或物体。"
 			]
 		},
 		{
