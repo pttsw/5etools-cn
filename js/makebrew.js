@@ -229,7 +229,7 @@ class PageUi {
 		if (this._settings.activeSource) this._$selSource.val(this._settings.activeSource);
 		else this._$selSource[0].selectedIndex = 0;
 
-		const $btnSourceEdit = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Edit Selected Source</button>`)
+		const $btnSourceEdit = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">编辑当前来源</button>`)
 			.click(() => {
 				const curSourceJson = this._settings.activeSource;
 				const curSource = BrewUtil2.sourceJsonToSource(curSourceJson);
@@ -239,7 +239,7 @@ class PageUi {
 			});
 		$$`<div class="w-100 mb-2">${$btnSourceEdit}</div>`.appendTo($mnu);
 
-		const $btnSourceAdd = $(`<button class="ve-btn ve-btn-default ve-btn-xs">Add New Source</button>`).click(() => {
+		const $btnSourceAdd = $(`<button class="ve-btn ve-btn-default ve-btn-xs">添加新来源</button>`).click(() => {
 			this._doRebuildStageSource({mode: "add"});
 			this.__setStageSource();
 		});

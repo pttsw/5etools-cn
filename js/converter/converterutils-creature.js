@@ -850,7 +850,7 @@ export class TraitActionTag {
 				if (!t.name) return;
 				t.name = t.name.trim();
 
-				const cleanName = Renderer.stripTags(t.ENG_name.trim())
+				const cleanName = Renderer.stripTags((t.ENG_name || t.name).trim())
 					.toLowerCase()
 					.replace(/\([^)]+\)/g, "") // Remove parentheses
 					.trim();

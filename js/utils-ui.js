@@ -1901,7 +1901,7 @@ class SearchWidget {
 
 	__$getRow (r) {
 		return $(`<div class="ui-search__row" tabindex="0">
-			<span>${r.doc.n}</span>
+			<span>${r.doc.cn || r.doc.n}</span>
 			<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 		</div>`);
 	}
@@ -2092,11 +2092,11 @@ class SearchWidget {
 				Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 				const {name: hashNameRaw} = UrlUtil.autoDecodeHash(cpy.u);
 				const hashName = hashNameRaw.toTitleCase();
-				const isRename = hashName.toLowerCase() !== cpy.n.toLowerCase();
+				const isRename = hashName.toLowerCase() !== cpy.cn.toLowerCase();
 				const pts = [
-					isRename ? hashName : cpy.n.toSpellCase(),
+					isRename ? hashName : cpy.cn.toSpellCase(),
 					doc.s !== Parser.SRC_PHB ? doc.s : "",
-					isRename ? cpy.n.toSpellCase() : "",
+					isRename ? cpy.cn.toSpellCase() : "",
 				];
 				while (pts.at(-1) === "") pts.pop();
 				cpy.tag = `{@spell ${pts.join("|")}}`;
@@ -2105,10 +2105,10 @@ class SearchWidget {
 		};
 		if (opts.level != null) nxtOpts.fnFilterResults = result => result.lvl === opts.level;
 
-		const title = opts.level === 0 ? "Select Cantrip" : "Select Spell";
+		const title = opts.level === 0 ? "选择戏法" : "选择法术";
 		return SearchWidget.pGetUserEntitySearch(
 			title,
-			"alt_Spell",
+			"alt_法术",
 			nxtOpts,
 		);
 	}
@@ -2163,7 +2163,7 @@ class SearchWidget {
 				fnTransform: doc => {
 					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
-					cpy.tag = `{@feat ${doc.n}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
+					cpy.tag = `{@feat ${doc.cn}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
 				},
 			},
@@ -2192,7 +2192,7 @@ class SearchWidget {
 				fnTransform: doc => {
 					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
-					cpy.tag = `{@background ${doc.n}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
+					cpy.tag = `{@background ${doc.cn}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
 				},
 			},
@@ -2224,7 +2224,7 @@ class SearchWidget {
 				fnTransform: doc => {
 					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
-					cpy.tag = `{@race ${doc.n}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
+					cpy.tag = `{@race ${doc.cn}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
 				},
 			},
@@ -2253,7 +2253,7 @@ class SearchWidget {
 				fnTransform: doc => {
 					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
-					cpy.tag = `{@optfeature ${doc.n}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
+					cpy.tag = `{@optfeature ${doc.cn}${doc.s !== Parser.SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
 				},
 			},
@@ -2324,7 +2324,7 @@ class SearchWidget {
 			fnTransform: doc => {
 				const cpy = MiscUtil.copyFast(doc);
 				Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
-				cpy.tag = `{@creature ${doc.n}${doc.s !== Parser.SRC_MM ? `|${doc.s}` : ""}}`;
+				cpy.tag = `{@creature ${doc.cn}${doc.s !== Parser.SRC_MM ? `|${doc.s}` : ""}}`;
 				return cpy;
 			},
 		};
@@ -2373,7 +2373,7 @@ class SearchWidget {
 				fnTransform: doc => {
 					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
-					cpy.tag = `{@item ${doc.n}${doc.s !== Parser.SRC_DMG ? `|${doc.s}` : ""}}`;
+					cpy.tag = `{@item ${doc.cn}${doc.s !== Parser.SRC_DMG ? `|${doc.s}` : ""}}`;
 					return cpy;
 				},
 			},

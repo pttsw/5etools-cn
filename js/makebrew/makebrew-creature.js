@@ -9,10 +9,10 @@ import {RenderBestiary} from "../render-bestiary.js";
 export class CreatureBuilder extends BuilderBase {
 	constructor () {
 		super({
-			titleSidebarLoadExisting: "Copy Existing Creature",
-			titleSidebarDownloadJson: "Download Creatures as JSON",
+			titleSidebarLoadExisting: "复制已存在的生物",
+			titleSidebarDownloadJson: "下载生物数据为JSON",
 			metaSidebarDownloadMarkdown: {
-				title: "Download Creatures as Markdown",
+				title: "下载生物数据为Markdown",
 				pFnGetText: (mons) => {
 					return RendererMarkdown.monster.pGetMarkdownDoc(mons);
 				},
@@ -238,10 +238,10 @@ export class CreatureBuilder extends BuilderBase {
 					return {
 						name: item.name,
 						entries: [
-							`{@atk ${ptAtk}} {@hit <$to_hit__${abil}$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+${abil}$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__${abil}$>}) ${Parser.dmgTypeToFull(item.dmgType)} damage.`,
+							`{@atk ${ptAtk}} {@hit <$to_hit__${abil}$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+${abil}$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__${abil}$>}) ${Parser.dmgTypeToFull(item.dmgType)}伤害。`,
 						],
 						entriesFinesse: isFinesse ? [
-							`{@atk ${ptAtk}} {@hit <$to_hit__dex$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+dex$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__dex$>}) ${Parser.dmgTypeToFull(item.dmgType)} damage.`,
+							`{@atk ${ptAtk}} {@hit <$to_hit__dex$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+dex$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__dex$>}) ${Parser.dmgTypeToFull(item.dmgType)}伤害。`,
 						] : null,
 					};
 				})
@@ -379,7 +379,7 @@ export class CreatureBuilder extends BuilderBase {
 	doHandleSourcesAdd () {
 		(this._$eles.$selVariantSources || []).map($sel => {
 			const currSrcJson = $sel.val();
-			$sel.empty().append(`<option value="">(Same as Creature)</option>`);
+			$sel.empty().append(`<option value="">(与此生物相同)</option>`);
 			this._ui.allSources.forEach(srcJson => $sel.append(`<option value="${srcJson.escapeQuotes()}">${Parser.sourceJsonToFull(srcJson).escapeQuotes()}</option>`));
 
 			if (this._ui.allSources.indexOf(currSrcJson)) $sel.val(currSrcJson);
@@ -450,9 +450,9 @@ export class CreatureBuilder extends BuilderBase {
 				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "物种", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "核心", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Defenses", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Abilities", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Flavor/Misc", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "防御", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "属性", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "其他", hasBorder: true}),
 			],
 			{
 				tabGroup: "input",
@@ -499,24 +499,24 @@ export class CreatureBuilder extends BuilderBase {
 		// ABILITIES
 		this.__$getSpellcastingInput(cb).appendTo(abilTab.$wrpTab);
 		this.__$getTraitInput(cb).appendTo(abilTab.$wrpTab);
-		BuilderUi.$getStateIptEntries("Actions Intro", cb, this._state, {}, "actionHeader").appendTo(abilTab.$wrpTab);
+		BuilderUi.$getStateIptEntries("动作介绍", cb, this._state, {}, "actionHeader").appendTo(abilTab.$wrpTab);
 		this.__$getActionInput(cb).appendTo(abilTab.$wrpTab);
-		BuilderUi.$getStateIptEntries("Bonus Actions Intro", cb, this._state, {}, "bonusHeader").appendTo(abilTab.$wrpTab);
+		BuilderUi.$getStateIptEntries("附赠动作介绍", cb, this._state, {}, "bonusHeader").appendTo(abilTab.$wrpTab);
 		this.__$getBonusActionInput(cb).appendTo(abilTab.$wrpTab);
-		BuilderUi.$getStateIptEntries("Reactions Intro", cb, this._state, {}, "reactionHeader").appendTo(abilTab.$wrpTab);
+		BuilderUi.$getStateIptEntries("反应介绍", cb, this._state, {}, "reactionHeader").appendTo(abilTab.$wrpTab);
 		this.__$getReactionInput(cb).appendTo(abilTab.$wrpTab);
 		BuilderUi.$getStateIptNumber(
-			"Legendary Action Count",
+			"传奇动作数",
 			cb,
 			this._state,
 			{
 				title: "If specified, this will override the default number (3) of legendary actions available for the creature.",
-				placeholder: "If left blank, defaults to 3.",
+				placeholder: "如果空着则为3",
 			},
 			"legendaryActions",
 		).appendTo(abilTab.$wrpTab);
 		BuilderUi.$getStateIptNumber(
-			"Legendary Action (Lair) Count",
+			"传奇动作(巢穴)数",
 			cb,
 			this._state,
 			{
@@ -525,7 +525,7 @@ export class CreatureBuilder extends BuilderBase {
 			"legendaryActionsLair",
 		).appendTo(abilTab.$wrpTab);
 		BuilderUi.$getStateIptBoolean(
-			"Name is Proper Noun",
+			"名称是专有名词",
 			cb,
 			this._state,
 			{
@@ -534,18 +534,18 @@ export class CreatureBuilder extends BuilderBase {
 			"isNamedCreature",
 		).appendTo(abilTab.$wrpTab);
 		BuilderUi.$getStateIptEntries(
-			"Legendary Action Intro",
+			"传奇动作介绍",
 			cb,
 			this._state,
 			{
 				title: "If specified, this custom legendary action intro text will override the default.",
-				placeholder: "If left blank, defaults to a generic intro.",
+				placeholder: "如果空着则为通用介绍",
 			},
 			"legendaryHeader",
 		).appendTo(abilTab.$wrpTab);
 		this.__$getLegendaryActionInput(cb).appendTo(abilTab.$wrpTab);
 		this.__$getLegendaryGroupInput(cb).appendTo(abilTab.$wrpTab);
-		BuilderUi.$getStateIptEntries("Mythic Action Intro", cb, this._state, {}, "mythicHeader").appendTo(abilTab.$wrpTab);
+		BuilderUi.$getStateIptEntries("神话动作介绍", cb, this._state, {}, "mythicHeader").appendTo(abilTab.$wrpTab);
 		this.__$getMythicActionInput(cb).appendTo(abilTab.$wrpTab);
 		this.__$getVariantInput(cb).appendTo(abilTab.$wrpTab);
 
@@ -554,11 +554,11 @@ export class CreatureBuilder extends BuilderBase {
 		this.$getFluffInput(cb).appendTo(miscTab.$wrpTab);
 		this.__$getEnvironmentInput(cb).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptStringArray(
-			"Group",
+			"组别",
 			cb,
 			this._state,
 			{
-				shortName: "Group",
+				shortName: "组别",
 				title: "The family this creature belongs to, e.g. 'Modrons' in the case of a Duodrone.",
 			},
 			"group",
@@ -577,13 +577,13 @@ export class CreatureBuilder extends BuilderBase {
 			"dragonCastingColor",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBoolean("NPC", cb, this._state, {title: "If selected, this creature will be filtered out from the Bestiary list by default."}, "isNpc").appendTo(miscTab.$wrpTab);
-		BuilderUi.$getStateIptBoolean("Familiar", cb, this._state, {title: "If selected, this creature will be included when filtering for 'Familiar' in the Bestiary."}, "familiar").appendTo(miscTab.$wrpTab);
+		BuilderUi.$getStateIptBoolean("常见", cb, this._state, {title: "If selected, this creature will be included when filtering for 'Familiar' in the Bestiary."}, "familiar").appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptStringArray(
-			"Search Aliases",
+			"搜索别名",
 			cb,
 			this._state,
 			{
-				shortName: "Alias",
+				shortName: "别名",
 				title: "Alternate names for this creature, e.g. 'Illithid' as an alternative for 'Mind Flayer,' which can be searched in the Bestiary.",
 			},
 			"alias",
@@ -1074,7 +1074,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getAcInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Armor Class", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple(I18nUtil.get("common.armor_class"), {isMarked: true});
 
 		const doUpdateState = () => {
 			this._state.ac = acRows.map($row => $row.getAc());
@@ -1087,7 +1087,7 @@ export class CreatureBuilder extends BuilderBase {
 		this._state.ac.forEach(ac => CreatureBuilder.__$getAcInput__getAcRow(ac, acRows, doUpdateState).$wrp.appendTo($wrpRows));
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Armor Class Source</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">新增护甲等级来源</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				CreatureBuilder.__$getAcInput__getAcRow(null, acRows, doUpdateState).$wrp.appendTo($wrpRows);
@@ -1140,9 +1140,9 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		const $selMode = $(`<select class="form-control input-xs mkbru_mon__ac-split">
-				<option value="0">Unarmored</option>
-				<option value="1">Armor Class From...</option>
-				<option value="2">Special</option>
+				<option value="0">无甲</option>
+				<option value="1">护甲等级来自于...</option>
+				<option value="2">特殊</option>
 			</select>`).val(initialMode).change(() => {
 			switch ($selMode.val()) {
 				case "0": {
@@ -1180,7 +1180,7 @@ export class CreatureBuilder extends BuilderBase {
 			.change(() => doUpdateState())
 			.toggleVe(initialMode === "2");
 
-		const $iptCond = $(`<input class="form-control form-control--minimal input-xs" placeholder="when...">`)
+		const $iptCond = $(`<input class="form-control form-control--minimal input-xs" placeholder="当...时">`)
 			.change(() => doUpdateState());
 		if (ac && ac.condition) $iptCond.val(ac.condition);
 		const $cbBraces = $(`<input type="checkbox" class="mkbru__ipt-cb--plain">`)
@@ -1193,7 +1193,7 @@ export class CreatureBuilder extends BuilderBase {
 		const $wrpFromRows = $(`<div></div>`);
 		if (ac && ac.from) ac.from.forEach(f => CreatureBuilder.__$getAcInput__getFromRow(f, fromRows, doUpdateState).$wrpFrom.appendTo($wrpFromRows));
 
-		const $btnAddFrom = $(`<button class="ve-btn ve-btn-xs ve-btn-default mb-2">Add Another Feature/Item</button>`)
+		const $btnAddFrom = $(`<button class="ve-btn ve-btn-xs ve-btn-default mb-2">新增另一个特性/物品</button>`)
 			.click(() => {
 				CreatureBuilder.__$getAcInput__getFromRow(null, fromRows, doUpdateState).$wrpFrom.appendTo($wrpFromRows);
 				doUpdateState();
@@ -1214,8 +1214,8 @@ export class CreatureBuilder extends BuilderBase {
 		const $wrp = $$`<div class="ve-flex-col mkbru__wrp-rows mkbru__wrp-rows--removable">
 			<div class="ve-flex-v-center mb-2">${$iptAc}${$iptSpecial}${$selMode}</div>
 			${$$`<div>${$stageFrom}</div>`}
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">Condition</span>${$iptCond}</div>
-			<label class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">Surround with brackets</span>${$cbBraces}</label>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">条件</span>${$iptCond}</div>
+			<label class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">用括号括起来</span>${$cbBraces}</label>
 			${$$`<div class="ve-text-right">${$btnRemove}</div>`}
 		</div>`;
 		const out = {$wrp, getAc};
@@ -1226,7 +1226,7 @@ export class CreatureBuilder extends BuilderBase {
 	static __$getAcInput__getFromRow (from, fromRows, doUpdateState) {
 		const getAcFrom = () => $iptFrom.val().trim();
 
-		const $iptFrom = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="From...">`)
+		const $iptFrom = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="来自于...">`)
 			.change(() => doUpdateState());
 		if (from) $iptFrom.val(from);
 
@@ -1240,13 +1240,13 @@ export class CreatureBuilder extends BuilderBase {
 			);
 		}));
 
-		const $btnCommon = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">Feature <span class="caret"></span></button>`)
+		const $btnCommon = $(`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">特性 <span class="caret"></span></button>`)
 			.click(evt => ContextUtil.pOpenMenu(evt, menu));
 
-		const $btnSearchItem = $(`<button class="ve-btn ve-btn-default ve-btn-xs">Item</button>`)
+		const $btnSearchItem = $(`<button class="ve-btn ve-btn-default ve-btn-xs">物品</button>`)
 			.click(() => {
 				const searchWidget = new SearchWidget(
-					{Item: SearchWidget.CONTENT_INDICES.Item},
+					{Item: SearchWidget.CONTENT_INDICES.物品},
 					(doc) => {
 						$iptFrom.val(`{@item ${doc.n}${doc.s !== Parser.SRC_DMG ? `|${doc.s}` : ""}}`.toLowerCase());
 						doUpdateState();
@@ -1255,7 +1255,7 @@ export class CreatureBuilder extends BuilderBase {
 					{defaultCategory: "Item"},
 				);
 				const {$modalInner, doClose} = UiUtil.getShowModal({
-					title: "Select Item",
+					title: "搜索物品",
 					cbClose: () => searchWidget.$wrpSearch.detach(), // guarantee survival of rendered element
 				});
 				$modalInner.append(searchWidget.$wrpSearch);
@@ -1278,7 +1278,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getHpInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Hit Points", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple(I18nUtil.get("common.hit_points"), {isMarked: true});
 
 		const initialMode = (() => {
 			if (this._state.hp.special != null) return "2";
@@ -1326,9 +1326,9 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		const $selMode = $(`<select class="form-control input-xs mb-2">
-			<option value="0">Simple Formula</option>
-			<option value="1">Complex Formula</option>
-			<option value="2">Custom</option>
+			<option value="0">简单公式</option>
+			<option value="1">复杂公式</option>
+			<option value="2">自定义</option>
 		</select>`)
 			.appendTo($rowInner)
 			.val(initialMode)
@@ -1381,7 +1381,7 @@ export class CreatureBuilder extends BuilderBase {
 				doUpdateState();
 			});
 
-		const $btnAutoSimpleFormula = $(`<button class="ve-btn ve-btn-xs ve-btn-default ${this._meta.autoCalc.hpModifier ? "active" : ""}" title="Auto-calculate modifier from Constitution"><span class="glyphicon glyphicon-refresh"></span></button>`)
+		const $btnAutoSimpleFormula = $(`<button class="ve-btn ve-btn-xs ve-btn-default ${this._meta.autoCalc.hpModifier ? "active" : ""}" title="根据体质值自动计算"><span class="glyphicon glyphicon-refresh"></span></button>`)
 			.click(() => {
 				if (this._meta.autoCalc.hpModifier) {
 					this._meta.autoCalc.hpModifier = false;
@@ -1415,7 +1415,7 @@ export class CreatureBuilder extends BuilderBase {
 
 		const $wrpSimpleFormula = $$`<div class="ve-flex-col">
 		<div class="ve-flex-v-center mb-2">
-			<span class="mr-2 mkbru__sub-name--50">Formula</span>
+			<span class="mr-2 mkbru__sub-name--50">公式</span>
 			${$selSimpleNum}
 			<span class="mr-2">d</span>
 			${$selSimpleFace}
@@ -1423,7 +1423,7 @@ export class CreatureBuilder extends BuilderBase {
 			${$iptSimpleMod}
 			${$btnAutoSimpleFormula}
 		</div>
-		<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">Average</span>${$iptSimpleAverage}${$btnAutoSimpleAverage}</div>
+		<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">平均值</span>${$iptSimpleAverage}${$btnAutoSimpleAverage}</div>
 		</div>`.toggleVe(initialMode === "1").appendTo($rowInner);
 		if (initialMode === "0") {
 			const formulaParts = CreatureBuilder.__$getHpInput__getFormulaParts(this._state.hp.formula);
@@ -1467,8 +1467,8 @@ export class CreatureBuilder extends BuilderBase {
 			});
 
 		const $wrpComplexFormula = $$`<div class="ve-flex-col">
-		<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">Formula</span>${$iptComplexFormula}</div>
-		<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">Average</span>${$iptComplexAverage}${$btnAutoComplexAverage}</div>
+		<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">公式</span>${$iptComplexFormula}</div>
+		<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">平均值</span>${$iptComplexAverage}${$btnAutoComplexAverage}</div>
 		</div>`.toggleVe(initialMode === "0").appendTo($rowInner);
 		if (initialMode === "1") {
 			$iptComplexFormula.val(this._state.hp.formula);
@@ -1801,19 +1801,19 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getVulnerableInput (cb) {
-		return this.__$getDefensesInput(cb, "Damage Vulnerabilities", "Vulnerability", "vulnerable");
+		return this.__$getDefensesInput(cb, "伤害易伤", "易伤", "vulnerable");
 	}
 
 	__$getResistInput (cb) {
-		return this.__$getDefensesInput(cb, "Damage Resistances", "Resistance", "resist");
+		return this.__$getDefensesInput(cb, "伤害抗性", "抗性", "resist");
 	}
 
 	__$getImmuneInput (cb) {
-		return this.__$getDefensesInput(cb, "Damage Immunities", "Immunity", "immune");
+		return this.__$getDefensesInput(cb, "伤害免疫", "免疫", "immune");
 	}
 
 	__$getCondImmuneInput (cb) {
-		return this.__$getDefensesInput(cb, "Condition Immunities", "Immunity", "conditionImmune");
+		return this.__$getDefensesInput(cb, "状态免疫", "免疫", "conditionImmune");
 	}
 
 	__$getDefensesInput (cb, rowName, shortName, prop) {
@@ -1839,7 +1839,7 @@ export class CreatureBuilder extends BuilderBase {
 			group.$ele.appendTo($wrpGroups);
 		};
 
-		const $btnAddGroup = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">Add Group</button>`)
+		const $btnAddGroup = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">新增此类别</button>`)
 			.appendTo($wrpControls)
 			.click(() => doAddGroup());
 
@@ -1885,7 +1885,7 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		const optionsList = prop === "conditionImmune" ? Parser.CONDITIONS : Parser.DMG_TYPES;
-		const menu = ContextUtil.getMenu([...optionsList, null, "Special"].map((it, i) => {
+		const menu = ContextUtil.getMenu([...optionsList, null, "特殊"].map((it, i) => {
 			if (it == null) return null;
 
 			return new ContextUtil.Action(
@@ -1908,13 +1908,13 @@ export class CreatureBuilder extends BuilderBase {
 			);
 		}));
 
-		const $btnAddChild = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">Add ${shortName}</button>`)
+		const $btnAddChild = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">新增${shortName}</button>`)
 			.click((evt) => ContextUtil.pOpenMenu(evt, menu));
-		const $btnAddChildGroup = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">Add Child Group</button>`)
+		const $btnAddChildGroup = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">新增子类别</button>`)
 			.click(() => addChild(CreatureBuilder.__$getDefensesInput__getNodeGroup(shortName, prop, children, doUpdateState, depth + 1)));
-		const $iptNotePre = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Pre- note">`)
+		const $iptNotePre = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="前缀">`)
 			.change(() => doUpdateState());
-		const $iptNotePost = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Post- note">`)
+		const $iptNotePost = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="后缀">`)
 			.change(() => doUpdateState());
 		const $btnRemove = $(`<button class="ve-btn ve-btn-xs ve-btn-danger mkbru__btn-rm-row" title="Remove ${shortName} Group"><span class="glyphicon glyphicon-trash"></span></button>`)
 			.click(() => {
@@ -2250,13 +2250,13 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getSpellcastingInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Spellcasting", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("施法", {isMarked: true});
 
 		const traitRows = [];
 		const $wrpRows = $(`<div></div>`).appendTo($rowInner);
 		const $wrpControls = $(`<div></div>`).appendTo($rowInner);
 
-		const $btnAddRow = $(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Spellcasting Trait</button>`)
+		const $btnAddRow = $(`<button class="ve-btn ve-btn-xs ve-btn-default">新增施法特质</button>`)
 			.appendTo($wrpControls)
 			.click(() => {
 				doAddTrait();
@@ -2334,11 +2334,11 @@ export class CreatureBuilder extends BuilderBase {
 			row.$ele.appendTo($wrpSubRows);
 		};
 
-		const $iptName = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="Trait name">`)
+		const $iptName = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="特质名称">`)
 			.change(() => doUpdateState());
-		$iptName.val(trait ? trait.name : "Spellcasting");
+		$iptName.val(trait ? trait.name : "施法");
 
-		const $btnToggleHeader = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">Header</button>`)
+		const $btnToggleHeader = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">标题</button>`)
 			.click(() => {
 				$btnToggleHeader.toggleClass("active");
 				$iptHeader.toggleVe($btnToggleHeader.hasClass("active"));
@@ -2346,7 +2346,7 @@ export class CreatureBuilder extends BuilderBase {
 			})
 			.toggleClass("active", !!(trait && trait.headerEntries));
 
-		const $btnToggleFooter = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">Footer</button>`)
+		const $btnToggleFooter = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">后缀</button>`)
 			.click(() => {
 				$btnToggleFooter.toggleClass("active");
 				$iptFooter.toggleVe($btnToggleFooter.hasClass("active"));
@@ -2356,59 +2356,59 @@ export class CreatureBuilder extends BuilderBase {
 
 		const _CONTEXT_ENTRIES = [
 			{
-				display: "Cantrips",
+				display: "戏法",
 				type: "0",
 				mode: "cantrip",
 			},
 			{
-				display: "\uD835\uDC65th level spells",
+				display: "\uD835\uDC65环法术",
 				mode: "level",
 			},
 			null,
 			{
-				display: "Constant effects",
+				display: "永久效应",
 				type: "constant",
 				mode: "basic",
 			},
 			{
-				display: "At will spells",
+				display: "随意法术",
 				type: "will",
 				mode: "basic",
 			},
 			{
-				display: "\uD835\uDC65/day (/each) spells",
+				display: "\uD835\uDC65/日 (/每个) 法术",
 				type: "daily",
 				mode: "frequency",
 			},
 			null,
 			{
-				display: "\uD835\uDC65/rest (/each) spells",
+				display: "\uD835\uDC65/休息 (/每个) 法术",
 				type: "rest",
 				mode: "frequency",
 			},
 			{
-				display: "\uD835\uDC65/long rest (/each) spells",
+				display: "\uD835\uDC65/长休 (/每个) 法术",
 				type: "restLong",
 				mode: "frequency",
 			},
 			{
-				display: "\uD835\uDC65/week (/each) spells",
+				display: "\uD835\uDC65/周 (/每个) 法术",
 				type: "weekly",
 				mode: "frequency",
 			},
 			{
-				display: "\uD835\uDC65/month (/each) spells",
+				display: "\uD835\uDC65/月 (/每个) 法术",
 				type: "monthly",
 				mode: "frequency",
 			},
 			{
-				display: "\uD835\uDC65/year (/each) spells",
+				display: "\uD835\uDC65/年 (/每个) 法术",
 				type: "yearly",
 				mode: "frequency",
 			},
 			null,
 			{
-				display: "\uD835\uDC65/legendary action(s) (/each) spells",
+				display: "\uD835\uDC65/传奇动作 (/每个) 法术",
 				type: "legendary",
 				mode: "frequency",
 			},
@@ -2430,7 +2430,7 @@ export class CreatureBuilder extends BuilderBase {
 
 					const meta = {mode: contextMeta.mode, type: contextMeta.type};
 					if (contextMeta.mode === "level") {
-						const level = await InputUiUtil.pGetUserNumber({min: 1, int: true, title: "Enter Spell Level"});
+						const level = await InputUiUtil.pGetUserNumber({min: 1, int: true, title: "输入法术环阶"});
 						if (level == null) return;
 						meta.level = level;
 					}
@@ -2449,15 +2449,15 @@ export class CreatureBuilder extends BuilderBase {
 			);
 		}));
 
-		const $btnAddSpell = $(`<button class="ve-btn ve-btn-xs ve-btn-default">Add...</button>`)
+		const $btnAddSpell = $(`<button class="ve-btn ve-btn-xs ve-btn-default">新增...</button>`)
 			.click((evt) => ContextUtil.pOpenMenu(evt, menu));
 
-		const $iptHeader = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2" placeholder="Header text"></textarea>`)
+		const $iptHeader = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2" placeholder="标题文本"></textarea>`)
 			.toggleVe(!!(trait && trait.headerEntries))
 			.change(() => doUpdateState());
 		if (trait && trait.headerEntries) $iptHeader.val(UiUtil.getEntriesAsText(trait.headerEntries));
 
-		const $iptFooter = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2" placeholder="Footer text"></textarea>`)
+		const $iptFooter = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2" placeholder="后缀文本"></textarea>`)
 			.toggleVe(!!(trait && trait.footerEntries))
 			.change(() => doUpdateState());
 		if (trait && trait.footerEntries) $iptFooter.val(UiUtil.getEntriesAsText(trait.footerEntries));
@@ -2538,7 +2538,7 @@ export class CreatureBuilder extends BuilderBase {
 
 		const $wrpItems = $(`<div class="ve-flex-col"></div>`);
 
-		const $btnAdd = $(`<button class="ve-btn ve-btn-xxs ve-btn-default mr-2" title="Add Spell"><span class="glyphicon glyphicon-plus"></span></button>`)
+		const $btnAdd = $(`<button class="ve-btn ve-btn-xxs ve-btn-default mr-2" title="新增法术"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.click(async () => {
 				const options = {};
 
@@ -2579,7 +2579,7 @@ export class CreatureBuilder extends BuilderBase {
 
 			switch (meta.mode) {
 				case "basic": {
-					out.$ele = $$`<i>${meta.type === "constant" ? "Constant Effects" : "At Will"}</i>`;
+					out.$ele = $$`<i>${meta.type === "constant" ? "永久效应" : "随意"}</i>`;
 					out.getKeyPath = () => [meta.type];
 					break;
 				}
@@ -2596,13 +2596,13 @@ export class CreatureBuilder extends BuilderBase {
 
 					const name = (() => {
 						switch (meta.type) {
-							case "daily": return "/Day";
-							case "rest": return "/Rest";
-							case "restLong": return "/Long Rest";
-							case "weekly": return "/Week";
-							case "monthly": return "/Month";
-							case "yearly": return "/Year";
-							case "legendary": return "/Legendary Action(s)";
+							case "daily": return "/日";
+							case "rest": return "/短休或长休";
+							case "restLong": return "/长休";
+							case "weekly": return "/周";
+							case "monthly": return "/月";
+							case "yearly": return "/年";
+							case "legendary": return "/传奇动作";
 						}
 					})();
 
@@ -2618,7 +2618,7 @@ export class CreatureBuilder extends BuilderBase {
 				}
 
 				case "cantrip": {
-					out.$ele = $$`<i>Cantrips</i>`;
+					out.$ele = $$`<i>戏法</i>`;
 					out.getKeyPath = () => ["spells", "0", "spells"];
 					break;
 				}
@@ -2633,10 +2633,10 @@ export class CreatureBuilder extends BuilderBase {
 						.change(() => doUpdateState());
 
 					out.$ele = $$`<div class="ve-flex mkbru_mon__spell-header-wrp mr-4">
-					<div class="italic">${Parser.spLevelToFull(meta.level)}-level Spells</div>
-					<div class="ve-flex-v-center ve-muted small ml-auto"><span>(</span>${$iptSlots}<span class="mr-2">Slots</span></div>
+					<div class="italic">${Parser.spLevelToFull(meta.level)}法术</div>
+					<div class="ve-flex-v-center ve-muted small ml-auto"><span>(</span>${$iptSlots}<span class="mr-2">法术位</span></div>
 					<div class="mkbru_mon__spell-header-divider mr-2"></div>
-					<label class="ve-flex-v-center ve-muted small"><span class="mr-1">Warlock?</span>${$cbWarlock}<span>)</span></label>
+					<label class="ve-flex-v-center ve-muted small"><span class="mr-1">魔契师?</span>${$cbWarlock}<span>)</span></label>
 					</div>`;
 					out.getKeyPath = () => ["spells", `${meta.level}`, "spells"];
 					out.getAdditionalData = () => {
@@ -2714,13 +2714,13 @@ export class CreatureBuilder extends BuilderBase {
 
 	__$getTraitInput (cb) {
 		return this.__$getGenericEntryInput(cb, {
-			name: "Traits",
-			shortName: "Trait",
+			name: "特质",
+			shortName: "特质",
 			prop: "trait",
 			canReorder: false,
 			generators: [
 				{
-					name: "Add Predefined Trait",
+					name: "新增预设特质",
 					action: () => {
 						let traitIndex;
 						return new Promise(resolve => {
@@ -2765,16 +2765,16 @@ export class CreatureBuilder extends BuilderBase {
 	__$getActionInput (cb) {
 		return this.__$getGenericEntryInput(cb,
 			{
-				name: "Actions",
-				shortName: "Action",
+				name: "动作",
+				shortName: "动作",
 				prop: "action",
 				generators: [
 					{
-						name: "Generate Attack",
+						name: "生成攻击",
 						action: () => {
 							return new Promise(resolve => {
 								const {$modalInner, doClose} = UiUtil.getShowModal({
-									title: "Generate Attack",
+									title: "生成攻击",
 									cbClose: (isDataEntered) => {
 										this._generateAttackCache = getState();
 										if (!isDataEntered) return resolve(null);
@@ -2785,7 +2785,7 @@ export class CreatureBuilder extends BuilderBase {
 									isUncappedHeight: true,
 								});
 
-								const $iptName = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="Weapon">`);
+								const $iptName = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="武器">`);
 								const $cbMelee = $(`<input type="checkbox" class="mkbru__ipt-cb--plain">`)
 									.change(() => $stageMelee.toggleVe($cbMelee.prop("checked")))
 									.prop("checked", true);
@@ -2800,12 +2800,12 @@ export class CreatureBuilder extends BuilderBase {
 								const $iptMeleeRange = $(`<input class="form-control form-control--minimal input-xs" value="5">`);
 								const $iptMeleeDamDiceCount = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`);
 								const $iptMeleeDamDiceNum = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="6">`);
-								const $iptMeleeDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (additional bonus damage)">`);
-								const $iptMeleeDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="Melee Damage Type" autocomplete="off">`)
+								const $iptMeleeDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`);
+								const $iptMeleeDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="近战伤害类型" autocomplete="off">`)
 									.typeahead({source: Parser.DMG_TYPES});
 								const $stageMelee = $$`<div class="ve-flex-col"><hr class="hr-3">
-								<div class="bold mb-2">Melee</div>
-								<div class="ve-flex-v-center mb-2"><span class="mr-2 no-shrink">Melee Range (ft.)</span>${$iptMeleeRange}</div>
+								<div class="bold mb-2">近战</div>
+								<div class="ve-flex-v-center mb-2"><span class="mr-2 no-shrink">近战范围 (尺)</span>${$iptMeleeRange}</div>
 								<div class="ve-flex-v-center mb-2">${$iptMeleeDamDiceCount}<span class="mr-2">d</span>${$iptMeleeDamDiceNum}${$iptMeleeDamBonus}${$iptMeleeDamType}</div>
 								</div>`;
 
@@ -2813,42 +2813,42 @@ export class CreatureBuilder extends BuilderBase {
 								const $iptRangedLong = $(`<input class="form-control form-control--minimal input-xs">`);
 								const $iptRangedDamDiceCount = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`);
 								const $iptRangedDamDiceNum = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="6">`);
-								const $iptRangedDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (additional bonus damage)">`);
-								const $iptRangedDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="Ranged Damage Type">`)
+								const $iptRangedDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`);
+								const $iptRangedDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="远程伤害类型">`)
 									.typeahead({source: Parser.DMG_TYPES});
 								const $stageRanged = $$`<div class="ve-flex-col"><hr class="hr-3">
-								<div class="bold mb-2">Ranged</div>
+								<div class="bold mb-2">远程</div>
 								<div class="ve-flex-v-center mb-2">
-									<span class="mr-2 no-shrink">Short Range (ft.)</span>${$iptRangedShort}
-									<span class="mr-2 no-shrink">Long Range (ft.)</span>${$iptRangedLong}
+									<span class="mr-2 no-shrink">短射程 (尺)</span>${$iptRangedShort}
+									<span class="mr-2 no-shrink">长射程 (尺)</span>${$iptRangedLong}
 								</div>
 								<div class="ve-flex-v-center mb-2">${$iptRangedDamDiceCount}<span class="mr-2">d</span>${$iptRangedDamDiceNum}${$iptRangedDamBonus}${$iptRangedDamType}</div>
 								</div>`.hideVe();
 
 								const $iptVersatileDamDiceCount = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`);
 								const $iptVersatileDamDiceNum = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="8">`);
-								const $iptVersatileDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (additional bonus damage)">`);
-								const $iptVersatileDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="Two-Handed Damage Type">`)
+								const $iptVersatileDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`);
+								const $iptVersatileDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="两用伤害类型">`)
 									.typeahead({source: Parser.DMG_TYPES});
 								const $stageVersatile = $$`<div class="ve-flex-col"><hr class="hr-3">
-								<div class="bold mb-2">Versatile Damage</div>
+								<div class="bold mb-2">灵巧伤害</div>
 								<div class="ve-flex-v-center mb-2">${$iptVersatileDamDiceCount}<span class="mr-2">d</span>${$iptVersatileDamDiceNum}${$iptVersatileDamBonus}${$iptVersatileDamType}</div>
 								</div>`.hideVe();
 
 								const $iptBonusDamDiceCount = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`);
 								const $iptBonusDamDiceNum = $(`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="6">`);
-								const $iptBonusDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (additional bonus damage)">`);
-								const $iptBonusDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="Bonus Damage Type">`)
+								const $iptBonusDamBonus = $(`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`);
+								const $iptBonusDamType = $(`<input class="form-control form-control--minimal input-xs" placeholder="额外伤害类型">`)
 									.typeahead({source: Parser.DMG_TYPES});
 								const $stageBonusDamage = $$`<div class="ve-flex-col"><hr class="hr-3">
-								<div class="bold mb-2">Bonus Damage</div>
+								<div class="bold mb-2">额外伤害</div>
 								<div class="ve-flex-v-center mb-2">${$iptBonusDamDiceCount}<span class="mr-2">d</span>${$iptBonusDamDiceNum}${$iptBonusDamBonus}${$iptBonusDamType}</div>
 								</div>`.hideVe();
 
-								const $btnConfirm = $(`<button class="ve-btn ve-btn-sm ve-btn-default mr-2">Add</button>`)
+								const $btnConfirm = $(`<button class="ve-btn ve-btn-sm ve-btn-default mr-2">新增</button>`)
 									.click(() => {
 										if (!$cbMelee.prop("checked") && !$cbRanged.prop("checked")) {
-											return JqueryUtil.doToast({type: "warning", content: "At least one of 'Melee' or 'Ranged' must be selected!"});
+											return JqueryUtil.doToast({type: "warning", content: "必须选择近战或远程攻击！"});
 										} else doClose(true);
 									});
 
@@ -2892,16 +2892,16 @@ export class CreatureBuilder extends BuilderBase {
 									const [melee, ranged] = [$cbMelee.prop("checked") ? "mw" : false, $cbRanged.prop("checked") ? "rw" : false];
 
 									const ptAtk = `{@atk ${[melee ? "mw" : null, ranged ? "rw" : null].filter(Boolean).join(",")}}`;
-									const ptHit = `{@hit ${pb + abilMod}} to hit`;
+									const ptHit = `命中{@hit ${pb + abilMod}}`;
 									const ptRange = [
-										melee ? `reach ${UiUtil.strToInt($iptMeleeRange.val(), 5, {fallbackOnNaN: 5})} ft.` : null,
+										melee ? `触及${UiUtil.strToInt($iptMeleeRange.val(), 5, {fallbackOnNaN: 5})}尺` : null,
 										ranged ? (() => {
 											const vShort = UiUtil.strToInt($iptRangedShort.val(), null, {fallbackOnNaN: null});
 											const vLong = UiUtil.strToInt($iptRangedLong.val(), null, {fallbackOnNaN: null});
-											if (!vShort && !vLong) return `unlimited range`;
-											if (!vShort) return `range ${vLong}/${vLong} ft.`;
-											if (!vLong) return `range ${vShort}/${vShort} ft.`;
-											return `range ${vShort}/${vLong} ft.`;
+											if (!vShort && !vLong) return `无限射程`;
+											if (!vShort) return `射程 ${vLong}/${vLong}尺`;
+											if (!vLong) return `射程 ${vShort}/${vShort}尺`;
+											return `射程 ${vShort}/${vLong}尺`;
 										})() : null,
 									].filter(Boolean).join(" or ");
 
@@ -2914,16 +2914,16 @@ export class CreatureBuilder extends BuilderBase {
 									};
 									const getDamageTypePt = ($ipDamType) => $ipDamType.val().trim() ? ` ${$ipDamType.val().trim()}` : "";
 									const ptDamage = [
-										$cbMelee.prop("checked") ? `${getDamageDicePt($iptMeleeDamDiceCount, $iptMeleeDamDiceNum, $iptMeleeDamBonus)}${getDamageTypePt($iptMeleeDamType)} damage${$cbRanged.prop("checked") ? ` in melee` : ""}` : null,
-										$cbRanged.prop("checked") ? `${getDamageDicePt($iptRangedDamDiceCount, $iptRangedDamDiceNum, $iptRangedDamBonus)}${getDamageTypePt($iptRangedDamType)} damage${$cbMelee.prop("checked") ? ` at range` : ""}` : null,
-										$cbVersatile.prop("checked") ? `${getDamageDicePt($iptVersatileDamDiceCount, $iptVersatileDamDiceNum, $iptVersatileDamBonus)}${getDamageTypePt($iptVersatileDamType)} damage if used with both hands` : null,
-									].filter(Boolean).join(", or ");
-									const ptDamageFull = $cbBonusDamage.prop("checked") ? `${ptDamage}, plus ${getDamageDicePt($iptBonusDamDiceCount, $iptBonusDamDiceNum, $iptBonusDamBonus, true)}${getDamageTypePt($iptBonusDamType)} damage` : ptDamage;
+										$cbMelee.prop("checked") ? `${getDamageDicePt($iptMeleeDamDiceCount, $iptMeleeDamDiceNum, $iptMeleeDamBonus)}${getDamageTypePt($iptMeleeDamType)}伤害${$cbRanged.prop("checked") ? ` in melee` : ""}` : null,
+										$cbRanged.prop("checked") ? `${getDamageDicePt($iptRangedDamDiceCount, $iptRangedDamDiceNum, $iptRangedDamBonus)}${getDamageTypePt($iptRangedDamType)}伤害${$cbMelee.prop("checked") ? ` at range` : ""}` : null,
+										$cbVersatile.prop("checked") ? `如果使用双手攻击则为${getDamageDicePt($iptVersatileDamDiceCount, $iptVersatileDamDiceNum, $iptVersatileDamBonus)}${getDamageTypePt($iptVersatileDamType)}伤害` : null,
+									].filter(Boolean).join(", 或 ");
+									const ptDamageFull = $cbBonusDamage.prop("checked") ? `${ptDamage}, 加上 ${getDamageDicePt($iptBonusDamDiceCount, $iptBonusDamDiceNum, $iptBonusDamBonus, true)}${getDamageTypePt($iptBonusDamType)}伤害` : ptDamage;
 
 									return {
-										name: $iptName.val().trim() || "Unarmed Strike",
+										name: $iptName.val().trim() || "徒手打击",
 										entries: [
-											`${ptAtk} ${ptHit}, ${ptRange}, one target. {@h}${ptDamageFull}.`,
+											`${ptAtk} ${ptHit}, ${ptRange}, 单一目标。 {@h}${ptDamageFull}。`,
 										],
 									};
 								};
@@ -2989,13 +2989,13 @@ export class CreatureBuilder extends BuilderBase {
 								$$`<div class="ve-flex-col">
 								<div class="ve-flex-v-center mb-2">
 									${$iptName}
-									<label class="ve-flex-v-center mr-2"><span class="mr-2">Melee</span>${$cbMelee}</label>
-									<label class="ve-flex-v-center"><span class="mr-2">Ranged</span>${$cbRanged}</label>
+									<label class="ve-flex-v-center mr-2"><span class="mr-2">近</span>${$cbMelee}</label>
+									<label class="ve-flex-v-center"><span class="mr-2">远</span>${$cbRanged}</label>
 								</div>
 								<div class="ve-flex-v-center">
-									<label class="ve-flex-v-center mr-2"><span class="mr-2">Finesse</span>${$cbFinesse}</label>
-									<label class="ve-flex-v-center mr-2"><span class="mr-2">Versatile</span>${$cbVersatile}</label>
-									<label class="ve-flex-v-center"><span class="mr-2">Bonus Damage</span>${$cbBonusDamage}</label>
+									<label class="ve-flex-v-center mr-2"><span class="mr-2">灵巧</span>${$cbFinesse}</label>
+									<label class="ve-flex-v-center mr-2"><span class="mr-2">两用</span>${$cbVersatile}</label>
+									<label class="ve-flex-v-center"><span class="mr-2">额外伤害</span>${$cbBonusDamage}</label>
 								</div>
 								${$stageMelee}
 								${$stageRanged}
@@ -3007,7 +3007,7 @@ export class CreatureBuilder extends BuilderBase {
 						},
 					},
 					{
-						name: "Add Predefined Action",
+						name: "新增预设动作",
 						action: () => {
 							let actionIndex;
 							return new Promise(resolve => {
@@ -3054,19 +3054,19 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getReactionInput (cb) {
-		return this.__$getGenericEntryInput(cb, {name: "Reactions", shortName: "Reaction", prop: "reaction"});
+		return this.__$getGenericEntryInput(cb, {name: "反应", shortName: "反应", prop: "reaction"});
 	}
 
 	__$getBonusActionInput (cb) {
-		return this.__$getGenericEntryInput(cb, {name: "Bonus Actions", shortName: "Bonus Action", prop: "bonus"});
+		return this.__$getGenericEntryInput(cb, {name: "附赠动作", shortName: "附赠动作", prop: "bonus"});
 	}
 
 	__$getLegendaryActionInput (cb) {
-		return this.__$getGenericEntryInput(cb, {name: "Legendary Actions", shortName: "Legendary Action", prop: "legendary"});
+		return this.__$getGenericEntryInput(cb, {name: "传奇动作", shortName: "传奇动作", prop: "legendary"});
 	}
 
 	__$getMythicActionInput (cb) {
-		return this.__$getGenericEntryInput(cb, {name: "Mythic Actions", shortName: "Mythic Action", prop: "mythic"});
+		return this.__$getGenericEntryInput(cb, {name: "神话动作", shortName: "神话动作", prop: "mythic"});
 	}
 
 	__$getGenericEntryInput (cb, options) {
@@ -3093,7 +3093,7 @@ export class CreatureBuilder extends BuilderBase {
 		const rowOptions = {prop: options.prop, shortName: options.shortName, $wrpRowsOuter};
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add ${options.shortName}</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">新增${options.shortName}</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				this.__$getGenericEntryInput__getEntryRow(doUpdateState, doUpdateOrder, rowOptions, entryRows).$ele.appendTo($wrpRows);
@@ -3148,7 +3148,7 @@ export class CreatureBuilder extends BuilderBase {
 			return out;
 		};
 
-		const $iptName = $(`<input class="form-control form-control--minimal input-xs" placeholder="${options.shortName} name">`)
+		const $iptName = $(`<input class="form-control form-control--minimal input-xs" placeholder="${options.shortName}名称">`)
 			.change(() => doUpdateState());
 		if (entry && entry.name) $iptName.val(entry.name.trim());
 
@@ -3210,7 +3210,7 @@ export class CreatureBuilder extends BuilderBase {
 
 			const $ele = $$`<div class="ve-flex-col">
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">来源</span>${$selVariantSource}</div>
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">Page</span>${$iptPage}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--50">页码</span>${$iptPage}</div>
 			</div>`;
 
 			return {$ele, getState};
@@ -3234,9 +3234,9 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getLegendaryGroupInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Legendary Group");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("传奇组");
 
-		this._$selLegendaryGroup = $(`<select class="form-control form-control--minimal input-xs"><option value="-1">None</option></select>`)
+		this._$selLegendaryGroup = $(`<select class="form-control form-control--minimal input-xs"><option value="-1">无</option></select>`)
 			.change(() => {
 				const ix = Number(this._$selLegendaryGroup.val());
 				if (~ix) this._state.legendaryGroup = this._legendaryGroupCache[ix];
@@ -3281,11 +3281,11 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getVariantInput (cb) {
-		return this.__$getGenericEntryInput(cb, {name: "Variants", shortName: "Variant", prop: "variant"});
+		return this.__$getGenericEntryInput(cb, {name: "变体", shortName: "变体", prop: "variant"});
 	}
 
 	__$getTokenInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Token Image");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Token图片");
 
 		const doUpdateState = () => {
 			delete this._state.token;
@@ -3348,9 +3348,9 @@ export class CreatureBuilder extends BuilderBase {
 		const initialMode = this._state.token ? "0" : this._state.tokenHref?.type === "internal" ? "2" : "1";
 
 		const $selMode = $(`<select class="form-control input-xs mr-2">
-			<option value="0">Existing Creature</option>
-			<option value="1">External URL</option>
-			<option value="2">Internal URL</option>
+			<option value="0">已存在的生物</option>
+			<option value="1">外部URL</option>
+			<option value="2">内部URL</option>
 		</select>`)
 			.val(initialMode)
 			.change(() => {
@@ -3425,7 +3425,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getEnvironmentInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Environment", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("环境", {isMarked: true});
 
 		const doUpdateState = () => {
 			const raw = inputs.map(it => it.$ipt.prop("checked") ? it.getVal() : false).filter(Boolean);
@@ -3453,7 +3453,7 @@ export class CreatureBuilder extends BuilderBase {
 			});
 		}
 
-		const $btnAddCustom = $(`<button class="ve-btn ve-btn-default ve-btn-xs mt-2">Add Custom Environment</button>`)
+		const $btnAddCustom = $(`<button class="ve-btn ve-btn-default ve-btn-xs mt-2">新增自定义环境</button>`)
 			.click(() => {
 				CreatureBuilder.__$getEnvironmentInput__getCustomRow(doUpdateState, inputs).$ele.appendTo($wrpIpts);
 			});
@@ -3497,7 +3497,7 @@ export class CreatureBuilder extends BuilderBase {
 
 	__$getSoundClipInput (cb) {
 		// BuilderUi.$getStateIptString(cb, this._state, {type: "url"}, "soundClip").appendTo(miscTab.$wrpTab);
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Sound Clip URL", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("音效URL", {isMarked: true});
 
 		const doUpdateState = () => {
 			const url = $iptUrl.val().trim();
@@ -3536,11 +3536,11 @@ export class CreatureBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_stat_block")}),
-				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_info")}),
-				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_images")}),
-				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_data")}),
-				new TabUiUtil.TabMeta({name: I18nUtil.get("tab_markdown")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("common.tabs.stat_block")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("common.tabs.info")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("common.tabs.images")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("common.tabs.data")}),
+				new TabUiUtil.TabMeta({name: I18nUtil.get("common.tabs.markdown")}),
 			],
 			{
 				tabGroup: "output",
@@ -3627,8 +3627,8 @@ CreatureBuilder._ALIGNMENTS = [
 	["NX", "L", "G", "NY", "E"],
 ];
 CreatureBuilder._AC_COMMON = {
-	"Unarmored Defense": "unarmored defense",
-	"Natural Armor": "natural armor",
+	"无甲防御": "无甲防御",
+	"天生护甲": "天生护甲",
 };
 CreatureBuilder._LANGUAGE_BLOCKLIST = new Set(["CS", "X", "XX"]);
 CreatureBuilder._rowSortOrder = 0;

@@ -390,16 +390,16 @@ export class BuilderBase extends ProxyBase {
 	renderInputControls () {
 		const $wrpControls = this._ui.$wrpInputControls.empty();
 
-		const $btnSave = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2 mkbru__cnt-save">Save</button>`)
+		const $btnSave = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2 mkbru__cnt-save">保存</button>`)
 			.click(() => this._pHandleClick_pSaveBrew())
 			.appendTo($wrpControls);
-		const hkBtnSaveText = () => $btnSave.text(this._meta.isModified ? "Save *" : "Saved");
+		const hkBtnSaveText = () => $btnSave.text(this._meta.isModified ? "保存 *" : "已保存");
 		this._addHook("meta", "isModified", hkBtnSaveText);
 		hkBtnSaveText();
 
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default" title="SHIFT to reset additional state (such as whether or not certain attributes are auto-calculated)">New</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default" title="SHIFT to reset additional state (such as whether or not certain attributes are auto-calculated)">新建</button>`)
 			.click(async (evt) => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Builder", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "重置构建器", htmlDescription: "确定吗？", textYes: "确定", textNo: "取消"})) return;
 				this.reset({isResetAllMeta: !!evt.shiftKey});
 			})
 			.appendTo($wrpControls);
@@ -499,7 +499,7 @@ export class BuilderBase extends ProxyBase {
 	}
 
 	$getFluffInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Flavor Info");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("风格信息");
 
 		const imageRows = [];
 
@@ -532,7 +532,7 @@ export class BuilderBase extends ProxyBase {
 		const $iptEntries = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2"></textarea>`)
 			.change(() => doUpdateState());
 
-		const $btnAddImage = $(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Image</button>`)
+		const $btnAddImage = $(`<button class="ve-btn ve-btn-xs ve-btn-default">新增图片</button>`)
 			.click(async () => {
 				const url = await InputUiUtil.pGetUserString({title: "Enter a URL"});
 				if (!url) return;

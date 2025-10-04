@@ -6,10 +6,10 @@
 class CreatureBuilder extends Builder {
 	constructor () {
 		super({
-			titleSidebarLoadExisting: "Copy Existing Creature",
-			titleSidebarDownloadJson: "Download Creatures as JSON",
+			titleSidebarLoadExisting: "复制已存在的生物",
+			titleSidebarDownloadJson: "下载生物数据为JSON",
 			metaSidebarDownloadMarkdown: {
-				title: "Download Creatures as Markdown",
+				title: "下载生物数据为Markdown",
 				pFnGetText: (mons) => {
 					return RendererMarkdown.monster.pGetMarkdownDoc(mons);
 				},

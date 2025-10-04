@@ -3639,7 +3639,7 @@ Renderer.utils = class {
 	}
 
 	static HTML_NO_INFO = `<i data-i18n='common.tabs.no_info'></i>`;
-	static HTML_NO_IMAGES = "<i data-i18n='common.tabs.no_images'></i>";
+	static HTML_NO_IMAGES = "<i data-i18n='common.tabs.no_image'></i>";
 
 	/* ----- */
 
