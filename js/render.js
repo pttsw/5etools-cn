@@ -1376,7 +1376,7 @@ globalThis.Renderer = function () {
 
 		if (this._SPELLCASTING_PROPS.some(prop => entry[prop])) {
 			const tempList = {type: "list", style: "list-hang-notitle", items: [], data: {isSpellList: true}};
-			if (entry.constant && !hidden.has("constant")) tempList.items.push({type: "itemSpell", name: `Constant:`, entry: this._renderSpellcasting_getRenderableList(entry.constant).join(", ")});
+			if (entry.constant && !hidden.has("constant")) tempList.items.push({type: "itemSpell", name: `永久:`, entry: this._renderSpellcasting_getRenderableList(entry.constant).join(", ")});
 			if (entry.will && !hidden.has("will")) tempList.items.push({type: "itemSpell", name: `随意:`, entry: this._renderSpellcasting_getRenderableList(entry.will).join(", ")});
 
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "recharge", fnGetDurationText: num => `{@recharge ${num}|m}`, isSkipPrefix: true});
@@ -1404,10 +1404,10 @@ globalThis.Renderer = function () {
 			for (const lvl of lvls) {
 				const spells = entry.spells[lvl];
 				if (spells) {
-					let levelCantrip = `${Parser.spLevelToFull(lvl)}${(lvl === 0 ? "s" : " level")}`;
+					let levelCantrip = `${Parser.spLevelToFull(lvl)}`;
 					let slotsAtWill = ` (随意)`;
 					const slots = spells.slots;
-					if (slots >= 0) slotsAtWill = slots > 0 ? ` (${slots} slot${slots > 1 ? "s" : ""})` : ``;
+					if (slots >= 0) slotsAtWill = slots > 0 ? ` (${slots} 法术位)` : ``;
 					if (spells.lower && spells.lower !== lvl) {
 						levelCantrip = `${Parser.spLevelToFull(spells.lower)}-${levelCantrip}`;
 						if (slots >= 0) slotsAtWill = slots > 0 ? ` (${slots}个${Parser.spLevelToFull(lvl)}-法术位)` : ``;
