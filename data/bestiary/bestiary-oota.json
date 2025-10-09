@@ -11,7 +11,8 @@
 		],
 		"otherSources": {
 			"monster": {
-				"MTF": "OotA"
+				"MTF": "OotA",
+				"MM": "OotA"
 			}
 		}
 	},
@@ -4585,6 +4586,16 @@
 						"replace": "地精",
 						"with": "蜘蛛诱饵",
 						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Thrill-Seeker",
+							"name": "惊险追求者",
+							"entries": [
+								"蜘蛛诱饵在避免被{@status 被突袭}的检定上具有优势。"
+							]
+						}
 					}
 				}
 			},
@@ -4639,6 +4650,9 @@
 					}
 				]
 			},
+			"senseTags": [
+				"SD"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -4941,6 +4955,9 @@
 				"土族语",
 				"地底通用语"
 			],
+			"senseTags": [
+				"SD"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -5123,8 +5140,32 @@
 				"土族语",
 				"地底通用语"
 			],
+			"senseTags": [
+				"SD"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Two-Headed Troll",
+			"name": "双头巨魔",
+			"source": "OotA",
+			"page": 211,
+			"_copy": {
+				"ENG_name": "Troll",
+				"name": "巨魔",
+				"source": "MM"
+			},
+			"bonus": [
+				{
+					"ENG_name": "Extra Bite",
+					"name": "额外啃咬",
+					"entries": [
+						"作为其多重攻击的一部分，巨魔可以发动一次啃咬攻击。"
+					]
+				}
+			],
+			"hasToken": true
 		},
 		{
 			"ENG_name": "Vampiric Ixitxachitl",
@@ -5921,6 +5962,16 @@
 						"replace": "地精",
 						"with": "育克育克",
 						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Thrill-Seeker",
+							"name": "惊险追求者",
+							"entries": [
+								"育克育克在避免被{@status 被突袭}的检定上具有优势。"
+							]
+						}
 					}
 				}
 			},

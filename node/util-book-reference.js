@@ -102,7 +102,7 @@ const UtilBookReference = {
 			});
 
 			Object.keys(out).sort().forEach(i => {
-				const sects = out[i].sections;//.sort((a, b) => SortUtil.ascSort(a.name, b.name));
+				const sects = out[i].sections; // .sort((a, b) => SortUtil.ascSort(a.name, b.name));
 				const header = outJson.reference[refType.id];
 				header.contents.push({
 					name: out[i].sectName,

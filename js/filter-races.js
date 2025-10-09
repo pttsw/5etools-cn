@@ -47,12 +47,12 @@ class PageFilterRaces extends PageFilterBase {
 		super();
 
 		this._sizeFilter = new Filter({header: "体型Size", displayFn: Parser.sizeAbvToFull, itemSortFn: PageFilterRaces.filterAscSortSize});
-		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores (Including Subrace)", cnHeader:"属性加值 (包括亚种)"});
+		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores (Including Subrace)", cnHeader: "属性加值 (包括亚种)"});
 		this._baseRaceFilter = new Filter({header: "基础种族Base Race"});
 		this._speedFilter = new Filter({header: "速度Speed", items: ["攀爬", "飞行", "游泳", "步行 (快)", "步行", "步行 (慢)"]});
 		this._traitFilter = new Filter({
 			header: "Traits",
-			cnHeader:"特质",
+			cnHeader: "特质",
 			items: [
 				"两栖",
 				"护甲熟练项",
@@ -82,7 +82,7 @@ class PageFilterRaces extends PageFilterBase {
 		this._vulnerableFilter = FilterCommon.getDamageVulnerableFilter();
 		this._resistFilter = FilterCommon.getDamageResistFilter();
 		this._immuneFilter = FilterCommon.getDamageImmuneFilter();
-		this._defenseFilter = new MultiFilter({header: "Damage", cnHeader:"伤害类型", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
+		this._defenseFilter = new MultiFilter({header: "Damage", cnHeader: "伤害类型", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
 		this._conditionImmuneFilter = FilterCommon.getConditionImmuneFilter();
 		this._languageFilter = new Filter({
 			header: "Languages",
@@ -123,10 +123,10 @@ class PageFilterRaces extends PageFilterBase {
 			isSparse: true,
 			displayFn: it => `${it} 岁`,
 			displayFnTooltip: it => `${it} 岁`,
-		});2
+		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: ["基础种族", "关键种族", "Lineage", "修改副本", "重置", "传奇", "有图片", "有简介"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),

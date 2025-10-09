@@ -76,8 +76,21 @@ function MixinProxyBase (Cls) {
 			});
 		}
 
+		_isEqualSimple (a, b) {
+			if (Object.is(a, b)) return true;
+
+			if (!a || !b) return false;
+
+			const isArrayA = Array.isArray(a);
+			const isArrayB = Array.isArray(b);
+			if (isArrayA !== isArrayB) return false;
+			if (isArrayA) return a.length === 0 && b.length === 0;
+
+			return false;
+		}
+
 		_doProxySet (hookProp, object, prop, value) {
-			if (object[prop] === value) return true;
+			if (this._isEqualSimple(object[prop], value)) return true;
 			const prevValue = object[prop];
 			Reflect.set(object, prop, value);
 			this._doFireHooksAll(hookProp, prop, value, prevValue);
@@ -87,7 +100,7 @@ function MixinProxyBase (Cls) {
 
 		/** As per `_doProxySet`, but the hooks are run strictly in serial. */
 		async _pDoProxySet (hookProp, object, prop, value) {
-			if (object[prop] === value) return true;
+			if (this._isEqualSimple(object[prop], value)) return true;
 			const prevValue = object[prop];
 			Reflect.set(object, prop, value);
 			if (this.__hooksAll[hookProp]) for (const hook of this.__hooksAll[hookProp]) await hook(prop, value, prevValue);
@@ -347,6 +360,7 @@ class UiUtil {
 	 *
 	 * @param {function} [opts.cbClose] Callback run when the modal is closed.
 	 * @param {jQuery} [opts.$titleSplit] Element to have split alongside the title.
+	 * @param {HTMLElement} [opts.eleTitleSplit] Element to have split alongside the title.
 	 * @param {int} [opts.zIndex] Z-index of the modal.
 	 * @param {number} [opts.overlayColor] Overlay color.
 	 * @param {boolean} [opts.isPermanent] If the modal should be impossible to close.
@@ -361,6 +375,9 @@ class UiUtil {
 		opts = opts || {};
 
 		const doc = (opts.window || window).document;
+
+		if (opts.$titleSplit && opts.eleTitleSplit) throw new Error(`Only one of "$titleSplit" and "eleTitleSplit" may be specified!`);
+		const eleTitleSplit = opts.eleTitleSplit || opts.$titleSplit?.[0];
 
 		UiUtil._initModalEscapeHandler({doc});
 		UiUtil._initModalMouseupHandlers({doc});
@@ -452,7 +469,7 @@ class UiUtil {
 								})
 								: null,
 
-							opts.$titleSplit ? opts.$titleSplit[0] : null,
+							eleTitleSplit,
 
 							btnCloseModal,
 						].filter(Boolean),
@@ -1494,7 +1511,7 @@ class TabUiUtil extends TabUiUtilBase {
 		obj.__renderTypedTabMeta_buttons = function ({tabMeta, ixTab, isStacked = false}) {
 			const $btns = tabMeta.buttons.map((meta, j) => {
 				const $btn = $(`<button class="ve-btn ui-tab__btn-tab-head ${isStacked ? `ui-tab__btn-tab-head--stacked` : ""} pt-2p px-4p pb-0 bbr-0 bbl-0 ${meta.type ? `ve-btn-${meta.type}` : "ve-btn-primary"}" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
-					.click(evt => meta.pFnClick(evt, $btn));
+					.on("click", evt => meta.pFnClick({evt, $btn, btn: $btn[0]}));
 				return $btn;
 			});
 
@@ -1560,7 +1577,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 		obj.__renderTypedTabMeta_buttons = function ({tabMeta, ixTab}) {
 			const $btns = tabMeta.buttons.map((meta, j) => {
 				const $btn = $(`<button class="ve-btn ${meta.type ? `ve-btn-${meta.type}` : "ve-btn-primary"} ve-btn-sm" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
-					.click(evt => meta.pFnClick(evt, $btn));
+					.on("click", evt => meta.pFnClick({evt, $btn, btn: $btn[0]}));
 
 				if (j === tabMeta.buttons.length - 1) $btn.addClass(`br-0 btr-0 bbr-0`);
 
@@ -1891,7 +1908,7 @@ class SearchWidget {
 		return this._searchOptions || {
 			fields: {
 				n: {boost: 5, expand: true},
-				cn: {boost: 5,expand: true},
+				cn: {boost: 5, expand: true},
 				s: {expand: true},
 			},
 			bool: "AND",
@@ -2007,7 +2024,7 @@ class SearchWidget {
 			if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 				const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
 				if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`)
+					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
 				} else {
 					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 				}
@@ -2084,6 +2101,9 @@ class SearchWidget {
 	// region entity searches
 	static async pGetUserSpellSearch (opts) {
 		opts = opts || {};
+
+		const styleHint = opts.styleHint || VetoolsConfig.get("styleSwitcher", "style");
+
 		await SearchWidget.P_LOADING_CONTENT;
 
 		const nxtOpts = {
@@ -2099,6 +2119,7 @@ class SearchWidget {
 					isRename ? cpy.cn.toSpellCase() : "",
 				];
 				while (pts.at(-1) === "") pts.pop();
+				if (styleHint !== "classic") pts[0] = pts[0].toTitleCase();
 				cpy.tag = `{@spell ${pts.join("|")}}`;
 				return cpy;
 			},
@@ -4056,7 +4077,7 @@ function MixinBaseComponent (Cls) {
 					if (meta == null) continue;
 
 					meta.data = it; // update any existing pointers
-					if (!meta.$wrpRow && !meta.fnRemoveEles) throw new Error(`A "$wrpRow" or a "fnRemoveEles" property is required for deletes!`);
+					if (!meta.wrpRow && !meta.$wrpRow && !meta.fnRemoveEles) throw new Error(`A "wrpRow", "$wrpRow", or a "fnRemoveEles" property is required for deletes!`);
 
 					if (opts.isDiffMode) meta.__hash = this._getCollectionEntityHash(it);
 
@@ -4065,6 +4086,7 @@ function MixinBaseComponent (Cls) {
 			}
 
 			const doRemoveElements = meta => {
+				if (meta.wrpRow) meta.wrpRow.remove();
 				if (meta.$wrpRow) meta.$wrpRow.remove();
 				if (meta.fnRemoveEles) meta.fnRemoveEles();
 			};
@@ -4137,8 +4159,8 @@ function MixinBaseComponent (Cls) {
 					// If the "get new" function returns null, skip rendering this entity
 					if (meta == null) continue;
 
-					if (!opts.isMultiRender && !meta.$wrpRow && !meta.fnRemoveEles) throw new Error(`A "$wrpRow" or a "fnRemoveEles" property is required for deletes!`);
-					if (opts.isMultiRender && meta.some(it => !it.$wrpRow && !it.fnRemoveEles)) throw new Error(`A "$wrpRow" or a "fnRemoveEles" property is required for deletes!`);
+					if (!opts.isMultiRender && !meta.wrpRow && !meta.$wrpRow && !meta.fnRemoveEles) throw new Error(`A "wrpRow", "$wrpRow", or a "fnRemoveEles" property is required for deletes!`);
+					if (opts.isMultiRender && meta.some(it => !it.wrpRow && !it.$wrpRow && !it.fnRemoveEles)) throw new Error(`A "wrpRow", "$wrpRow", or a "fnRemoveEles" property is required for deletes!`);
 
 					if (opts.isDiffMode) meta.__hash = this._getCollectionEntityHash(it);
 
@@ -4147,6 +4169,7 @@ function MixinBaseComponent (Cls) {
 			}
 
 			const doRemoveElements = meta => {
+				if (meta.wrpRow) meta.wrpRow.remove();
 				if (meta.$wrpRow) meta.$wrpRow.remove();
 				if (meta.fnRemoveEles) meta.fnRemoveEles();
 			};
@@ -4177,7 +4200,7 @@ function MixinBaseComponent (Cls) {
 		_detachCollection (prop, namespace = null) {
 			const renderedLookupProp = namespace ? `${namespace}.${prop}` : prop;
 			const rendered = (this.__rendered[renderedLookupProp] = this.__rendered[renderedLookupProp] || {});
-			Object.values(rendered).forEach(it => it.$wrpRow.detach());
+			Object.values(rendered).forEach(it => (it.wrpRow || it.$wrpRow).detach());
 		}
 
 		/**
@@ -4189,7 +4212,7 @@ function MixinBaseComponent (Cls) {
 		_resetCollectionRenders (prop, namespace = null) {
 			const renderedLookupProp = namespace ? `${namespace}.${prop}` : prop;
 			const rendered = (this.__rendered[renderedLookupProp] = this.__rendered[renderedLookupProp] || {});
-			Object.values(rendered).forEach(it => it.$wrpRow.remove());
+			Object.values(rendered).forEach(it => (it.wrpRow || it.$wrpRow).remove());
 			delete this.__rendered[renderedLookupProp];
 		}
 
@@ -4328,10 +4351,12 @@ class RenderableCollectionBase {
 globalThis.RenderableCollectionBase = RenderableCollectionBase;
 
 class _RenderableCollectionGenericRowsSyncAsyncUtils {
-	constructor ({comp, prop, $wrpRows, namespace}) {
+	constructor ({comp, prop, wrpRows, $wrpRows, namespace}) {
 		this._comp = comp;
 		this._prop = prop;
-		this._$wrpRows = $wrpRows;
+		// TODO(jquery) migrate
+		if (wrpRows && $wrpRows) throw new Error(`Only one of "wrpRows" and "$wrpRows" may be specified!`);
+		this._$wrpRows = $wrpRows || $(wrpRows);
 		this._namespace = namespace;
 	}
 
@@ -4433,12 +4458,12 @@ class RenderableCollectionGenericRows extends RenderableCollectionBase {
 	 */
 	constructor (comp, prop, $wrpRows, opts) {
 		super(comp, prop, opts);
-		this._$wrpRows = $wrpRows;
+		this._$wrpRows = $wrpRows instanceof $ ? $wrpRows : $($wrpRows);
 
 		this._utils = new _RenderableCollectionGenericRowsSyncAsyncUtils({
 			comp,
 			prop,
-			$wrpRows,
+			$wrpRows: this._$wrpRows,
 			namespace: opts?.namespace,
 		});
 	}
@@ -4456,13 +4481,15 @@ class RenderableCollectionGenericRows extends RenderableCollectionBase {
 
 		const $wrpRow = this._$getWrpRow()
 			.appendTo(this._$wrpRows);
+		const wrpRow = e_($wrpRow[0]);
 
-		const renderAdditional = this._populateRow({comp, $wrpRow, entity});
+		const renderAdditional = this._populateRow({comp, $wrpRow, wrpRow, entity});
 
 		return {
 			...(renderAdditional || {}),
 			id: entity.id,
 			comp,
+			wrpRow,
 			$wrpRow,
 		};
 	}
@@ -4479,7 +4506,7 @@ class RenderableCollectionGenericRows extends RenderableCollectionBase {
 	 * @abstract
 	 * @return {?object}
 	 */
-	_populateRow ({comp, $wrpRow, entity}) {
+	_populateRow ({comp, $wrpRow, wrpRow, entity}) {
 		throw new Error(`Unimplemented!`);
 	}
 }
@@ -4558,12 +4585,12 @@ class RenderableCollectionAsyncGenericRows extends RenderableCollectionAsyncBase
 	 */
 	constructor (comp, prop, $wrpRows, opts) {
 		super(comp, prop, opts);
-		this._$wrpRows = $wrpRows;
+		this._$wrpRows = $wrpRows instanceof $ ? $wrpRows : $($wrpRows);
 
 		this._utils = new _RenderableCollectionGenericRowsSyncAsyncUtils({
 			comp,
 			prop,
-			$wrpRows,
+			$wrpRows: this._$wrpRows,
 			namespace: opts?.namespace,
 		});
 	}
@@ -6662,6 +6689,7 @@ class ComponentUiUtil {
 				const displayValue = opts.fnDisplay ? opts.fnDisplay(value, ixValueFrozen) : value;
 
 				rowMetas.push({
+					cb: $cb[0],
 					$cb,
 					displayValue,
 					value: value,
@@ -6710,17 +6738,24 @@ class ComponentUiUtil {
 			hkSearch();
 		}
 
+		const $ele = $$`<div class="ve-flex-col w-100 ve-overflow-y-auto min-h-40p">${$eles}</div>`;
+
 		// Always return this as a "meta" object
 		const unhook = () => rowMetas.forEach(it => it.unhook());
 		return {
-			$ele: $$`<div class="ve-flex-col w-100 ve-overflow-y-auto min-h-40p">${$eles}</div>`,
+			ele: $ele[0],
+			$ele: $ele,
+			iptSearch: $iptSearch?.[0],
 			$iptSearch,
 			rowMetas, // Return this to allow for creating custom UI
 			propIsAcceptable,
 			propPulse,
 			unhook,
-			cleanup: () => {
+			cleanup: ({isRetainState = false} = {}) => {
 				unhook();
+
+				if (isRetainState) return;
+
 				// This will trigger a final "pulse"
 				Object.keys(comp._state)
 					.filter(it => it.startsWith(`${prop}__`))

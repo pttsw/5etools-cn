@@ -22,20 +22,20 @@ class PageFilterBastions extends PageFilterBase {
 			header: "Prerequisite",
 			cnHeader: "先决条件",
 			items: [...FilterCommon.PREREQ_FILTER_ITEMS],
-			displayFn: function(tag){
-				switch(tag){
+			displayFn: function (tag) {
+				switch (tag) {
 					case "Ability": 	return "属性值";
-					case "Expertise":    return "专精";
+					case "Expertise": return "专精";
 					case "Race": 		return "种族";
 					case "Proficiency": return "熟练";
 					case "Spellcasting":return "施法";
-					case "Background":  return "背景";
-					case "Campaign":    return "战役";
-					case "Feat":        return "专长";
-					case "Psionics":    return "灵能";
-					case "Special":     return "特殊";
-					case "Feature":     return "特性";
-					case "Species":    return "种族";
+					case "Background": return "背景";
+					case "Campaign": return "战役";
+					case "Feat": return "专长";
+					case "Psionics": return "灵能";
+					case "Special": return "特殊";
+					case "Feature": return "特性";
+					case "Species": return "种族";
 					case "Spellcasting Focus": return "法器";
 					default: return tag;
 				}

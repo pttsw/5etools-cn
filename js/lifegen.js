@@ -63,10 +63,10 @@ async function getPersonDetails (opts) {
 				// if (nameParts.includes("男性")) maleFirstTables.push(tbl);
 				// else if (nameParts.includes("女性")) femaleFirstTables.push(tbl);
 				// else if (!nameParts.includes("儿童")) surnameTables.push(tbl);
-				const nameParts = tbl.option
-				if (nameParts.indexOf("男性") != -1) maleFirstTables.push(tbl);
-				else if (nameParts.indexOf("女性") != -1) femaleFirstTables.push(tbl);
-				else if (nameParts.indexOf("儿童") == -1) surnameTables.push(tbl);
+				const nameParts = tbl.option;
+				if (nameParts.indexOf("男性") !== -1) maleFirstTables.push(tbl);
+				else if (nameParts.indexOf("女性") !== -1) femaleFirstTables.push(tbl);
+				else if (nameParts.indexOf("儿童") === -1) surnameTables.push(tbl);
 			});
 
 			const chooseFrom = gender === "Other"

@@ -14,13 +14,13 @@ class PageFilterFeats extends PageFilterBase {
 
 		this._categoryFilter = new Filter({
 			header: "Category",
-			cnHeader:"分类",
+			cnHeader: "分类",
 			displayFn: Parser.featCategoryToFull,
 			items: [...Object.keys(Parser.FEAT_CATEGORY_TO_FULL), "其他"],
 		});
 		this._asiFilter = new Filter({
 			header: "Ability Bonus",
-			cnHeader:"属性加值",
+			cnHeader: "属性加值",
 			items: [
 				"str",
 				"dex",
@@ -36,19 +36,19 @@ class PageFilterFeats extends PageFilterBase {
 			header: "Other",
 			cnHeader: "其他",
 			items: [...FilterCommon.PREREQ_FILTER_ITEMS],
-			displayFn: function(tag){
-				switch(tag){
+			displayFn: function (tag) {
+				switch (tag) {
 					case "Ability": 	return "属性值";
 					case "Race": 		return "种族";
 					case "Proficiency": return "熟练";
 					case "Spellcasting":return "施法";
-					case "Background":  return "背景";
-					case "Campaign":    return "战役";
-					case "Feat":        return "专长";
-					case "Psionics":    return "灵能";
-					case "Special":     return "特殊";
-					case "Feature":     return "特性";
-					case "Species":    return "种族";
+					case "Background": return "背景";
+					case "Campaign": return "战役";
+					case "Feat": return "专长";
+					case "Psionics": return "灵能";
+					case "Special": return "特殊";
+					case "Feature": return "特性";
+					case "Species": return "种族";
 					default: return tag;
 				}
 			},
@@ -58,7 +58,7 @@ class PageFilterFeats extends PageFilterBase {
 			cnHeader: "等级",
 			itemSortFn: SortUtil.ascSortNumericalSuffix,
 		});
-		this._prerequisiteFilter = new MultiFilter({header: "Prerequisite", cnHeader:"先决条件", filters: [this._otherPrereqFilter, this._levelFilter]});
+		this._prerequisiteFilter = new MultiFilter({header: "Prerequisite", cnHeader: "先决条件", filters: [this._otherPrereqFilter, this._levelFilter]});
 		this._benefitsFilter = new Filter({
 			header: "Benefits",
 			cnHeader: "增益",
@@ -75,11 +75,11 @@ class PageFilterFeats extends PageFilterBase {
 		this._vulnerableFilter = FilterCommon.getDamageVulnerableFilter();
 		this._resistFilter = FilterCommon.getDamageResistFilter();
 		this._immuneFilter = FilterCommon.getDamageImmuneFilter();
-		this._defenseFilter = new MultiFilter({header: "Damage", cnHeader:"伤害", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
+		this._defenseFilter = new MultiFilter({header: "Damage", cnHeader: "伤害", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
 		this._conditionImmuneFilter = FilterCommon.getConditionImmuneFilter();
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: ["有简介", "有图片", "传奇"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),

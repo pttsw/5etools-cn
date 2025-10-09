@@ -308,7 +308,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 				if (resultCount > this.constructor._RESULTS_MAX_DISPLAY) {
 					const diff = resultCount - this.constructor._RESULTS_MAX_DISPLAY;
 					if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`)
+						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
 					} else {
 						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 					}

@@ -32,6 +32,16 @@ const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 		}),
 		new (
 			class extends ConfigSettingExternal {
+				_configId = "styleRollbox";
+				_name = "Dice Roller Position";
+				_help = "The position of the dice roller.";
+				_isRowLabel = true;
+
+				_getEleExternal () { return StyleSwitcher.getSelRollboxPosition(); }
+			}
+		)(),
+		new (
+			class extends ConfigSettingExternal {
 				_configId = "isWideMode";
 				_name = I18nUtil.get("common.preferences.wide_mode");
 				_help = "This feature is unsupported. Expect bugs.";

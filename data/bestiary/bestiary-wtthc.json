@@ -1,0 +1,1618 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"XMM"
+			]
+		},
+		"otherSources": {
+			"monster": {
+				"XMM": "HotB"
+			}
+		}
+	},
+	"monster": [
+		{
+			"ENG_name": "Ankheg",
+			"name": "掘地虫",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Ankheg",
+				"name": "掘地虫",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Barbed Devil",
+			"name": "猬魔",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Barbed Devil",
+				"name": "猬魔",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Bearded Devil",
+			"name": "须魔",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Bearded Devil",
+				"name": "须魔",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Commoner",
+			"name": "平民",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Commoner",
+				"name": "平民",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Corrupted Rat",
+			"name": "腐化老鼠",
+			"source": "WttHC",
+			"size": [
+				"T"
+			],
+			"type": "monstrosity",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				10
+			],
+			"hp": {
+				"average": 1,
+				"formula": "1d4 - 1"
+			},
+			"speed": {
+				"walk": 20,
+				"climb": 20
+			},
+			"str": 2,
+			"dex": 11,
+			"con": 9,
+			"int": 2,
+			"wis": 11,
+			"cha": 4,
+			"skill": {
+				"perception": "+2",
+				"stealth": "+2"
+			},
+			"senses": [
+				"黑暗视觉 30 尺"
+			],
+			"passive": 11,
+			"cr": "0",
+			"trait": [
+				{
+					"ENG_name": "Agile",
+					"name": "机敏",
+					"entries": [
+						"当老鼠从敌人的触及范围内移动时，它不会引发借机攻击。"
+					]
+				},
+				{
+					"ENG_name": "Death Burst",
+					"name": "临终苦难",
+					"entries": [
+						"老鼠死亡时会爆炸。{@actSave con} {@dc 9}，老鼠周围5尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail} 1点强酸伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 2}，触及5尺。{@h}1 穿刺伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"临终苦难"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"A",
+				"P"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Cultist of Demogorgon",
+			"name": "狄摩高根邪教徒",
+			"source": "WttHC",
+			"size": [
+				"S",
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 10,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"save": {
+				"wis": "+2"
+			},
+			"skill": {
+				"deception": "+2",
+				"religion": "+2"
+			},
+			"passive": 10,
+			"languages": [
+				"普通"
+			],
+			"cr": "1/8",
+			"action": [
+				{
+					"ENG_name": "Ritual Sickle",
+					"name": "仪典小镰刀",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}{@damage 1d4 + 2}挥砍伤害外加1点黯蚀伤害。"
+					]
+				}
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"N"
+			],
+			"miscTags": [
+				"MA",
+				"MLW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Dardew",
+			"name": "达德尤",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
+			"type": "fiend",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				19
+			],
+			"hp": {
+				"average": 105,
+				"formula": "14d8 + 42"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 60
+			},
+			"str": 18,
+			"dex": 18,
+			"con": 16,
+			"int": 14,
+			"wis": 12,
+			"cha": 16,
+			"save": {
+				"int": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"deception": "+6",
+				"perception": "+4",
+				"performance": "+9"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 14,
+			"resist": [
+				"冷冻",
+				"火焰",
+				"闪电",
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"languages": [
+				"深渊语",
+				"普通",
+				"炼狱语"
+			],
+			"cr": "5",
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"达德尤进行两次攻击，以任意组合使用炽热爪击或法力弦击。"
+					]
+				},
+				{
+					"ENG_name": "Fiery Claw",
+					"name": "炽热爪击",
+					"entries": [
+						"{@atkr m} {@hit 7}，触及5尺。{@h}8（{@damage 1d8 + 4}）挥砍伤害外加7（{@damage 2d6}）火焰伤害。"
+					]
+				},
+				{
+					"ENG_name": "Power Chord",
+					"name": "法力弦音",
+					"entries": [
+						"{@actSave con} {@dc 14}，达德尤120尺内能看见的一个生物。{@actSaveFail} 13（{@damage 3d6 + 3}）雷鸣伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Silver Tongue",
+					"name": "巧舌如簧",
+					"entries": [
+						"{@actSave cha} {@dc 14}，达德尤能看见的60尺内一个生物。{@actSaveFail} 该生物获得{@condition 魅惑|XPHB}状态直到达德尤的下个回合开始。"
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"I"
+			],
+			"damageTags": [
+				"F",
+				"S",
+				"T"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"魅惑"
+			],
+			"savingThrowForced": [
+				"魅力",
+				"体质"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Demobat",
+			"name": "恶魔蝙蝠",
+			"source": "WttHC",
+			"size": [
+				"T"
+			],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"Demon"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 21,
+				"formula": "6d4 + 6"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 40
+			},
+			"str": 4,
+			"dex": 16,
+			"con": 12,
+			"int": 2,
+			"wis": 10,
+			"cha": 6,
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 10,
+			"resist": [
+				"冷冻",
+				"闪电"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"cr": "1/2",
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 5}（若目标被恶魔蝙蝠{@condition 受擒|XPHB}则具有{@variantrule 优势|XPHB}），触及5尺。{@h}10（{@damage 2d6 + 3}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Tentacles",
+					"name": "触须",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）挥砍伤害。如果目标是中型或更小的生物，目标将获得{@condition 受擒|XPHB}状态（逃脱{@dc 13}），来自所有四根触须。"
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"触须"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Demodog",
+			"name": "魔狗",
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"Demon"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 27,
+				"formula": "6d6 + 6"
+			},
+			"speed": {
+				"walk": 50
+			},
+			"str": 16,
+			"dex": 15,
+			"con": 12,
+			"int": 6,
+			"wis": 12,
+			"cha": 6,
+			"skill": {
+				"stealth": "+4"
+			},
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 11,
+			"resist": [
+				"冷冻",
+				"闪电"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Pack Tactics",
+					"name": "集群战术",
+					"entries": [
+						"若魔狗的至少一名盟友位于生物5尺内且该盟友不处于{@condition 失能|XPHB}状态，则魔狗对该生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 1d10 + 3}）穿刺伤害。如果目标是中型或更小的生物，它将陷入{@condition 倒地|XPHB}状态。"
+					]
+				}
+			],
+			"traitTags": [
+				"集群战术"
+			],
+			"senseTags": [
+				"B"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"倒地"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Demodragon",
+			"name": "恶魔龙",
+			"source": "WttHC",
+			"size": [
+				"H"
+			],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"Demon"
+				]
+			},
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 102,
+				"formula": "12d12 + 24"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 60
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 19,
+			"dex": 10,
+			"con": 15,
+			"int": 8,
+			"wis": 12,
+			"cha": 10,
+			"save": {
+				"con": "+5",
+				"wis": "+4"
+			},
+			"senses": [
+				"盲视 120 尺"
+			],
+			"passive": 11,
+			"resist": [
+				"强酸",
+				"冷冻",
+				"闪电"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"中毒"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"ENG_name": "Baleful Presence",
+					"name": "凶厄威仪",
+					"entries": [
+						"120尺范围内源自恶魔龙的{@variantrule 光环 [效应区域]|XPHB|光环}内的光源会剧烈闪烁。该区域内{@variantrule 明亮光照|XPHB}的非魔法光源会改为散发{@variantrule 微光光照|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Regeneration",
+					"name": "再生",
+					"entries": [
+						"恶魔龙在每回合开始时若至少有1{@variantrule 生命值|XPHB}，则恢复10{@variantrule 生命值|XPHB|生命值}"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"恶魔龙进行二次啃咬攻击。"
+					]
+				},
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 7}，触及10尺。{@h}11（{@damage 2d6 + 4}）穿刺伤害加4（{@damage 1d8}）强酸伤害。"
+					]
+				},
+				{
+					"ENG_name": "Acid Breath {@recharge 5}",
+					"name": "强酸吐息 {@recharge 5}",
+					"entries": [
+						"{@actSave dex} {@dc 13}，30尺长，5尺宽的{@variantrule 线状 【效应区域】|XPHB|线状}内的每个生物。{@actSaveFail} 22（{@damage 4d10}）强酸伤害。{@actSaveSuccess} 伤害减半。"
+					]
+				}
+			],
+			"traitTags": [
+				"再生"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"吐息武器",
+				"多重攻击"
+			],
+			"damageTags": [
+				"A",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"敏捷"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Demogorgon Spawn",
+			"name": "狄摩高根衍体",
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"Demon"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 17,
+			"dex": 15,
+			"con": 13,
+			"int": 8,
+			"wis": 12,
+			"cha": 7,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 13,
+			"resist": [
+				"冷冻",
+				"闪电"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"中毒"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"ENG_name": "Baleful Presence",
+					"name": "凶厄威仪",
+					"entries": [
+						"60尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内源自该衍体的光源会剧烈闪烁。该区域内{@variantrule 明亮光照|XPHB}的非魔法光源会改为散发{@variantrule 微光光照|XPHB}。\r\n"
+					]
+				},
+				{
+					"ENG_name": "Regeneration",
+					"name": "再生",
+					"entries": [
+						"该衍体在每回合开始时若至少有1{@variantrule 生命值|XPHB}生命值，则恢复5{@variantrule 生命值|XPHB|生命值}生命值。"
+					]
+				},
+				{
+					"ENG_name": "Running Leap",
+					"name": "助跑起跳",
+					"entries": [
+						"通过10尺助跑，该衍体可以{@variantrule 跳远|XPHB}最多30尺。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"该衍体进行二记爪击攻击。"
+					]
+				},
+				{
+					"ENG_name": "Claw",
+					"name": "爪击",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及10尺。{@h}6（{@damage 1d6 + 3}）挥砍伤害。"
+					]
+				},
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害。如果目标是中型或更小的生物，它将陷入{@condition 受擒|XPHB}状态（逃脱{@dc 13}）。当处于{@condition 受擒|XPHB}状态时，目标将陷入{@condition 目盲|XPHB}状态。"
+					]
+				}
+			],
+			"traitTags": [
+				"再生"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"目盲",
+				"受擒"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Dretch",
+			"name": "怯魔",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Dretch",
+				"name": "怯魔",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Flizzlebin",
+			"name": "弗利兹宾",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Gnome"
+				]
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 38,
+				"formula": "7d6 + 14"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 14,
+			"con": 15,
+			"int": 16,
+			"wis": 10,
+			"cha": 12,
+			"skill": {
+				"arcana": "+5",
+				"stealth": "+4"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 10,
+			"languages": [
+				"普通",
+				"矮人语",
+				"侏儒语"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"弗利兹宾对抗法术和其他魔法效应的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Ventriloquist",
+					"name": "腹语师",
+					"entries": [
+						"弗利兹宾可以将他的声音从自身1英里范围内的任何地方投射出去。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Dazzling Confetti",
+					"name": "炫目彩纸",
+					"entries": [
+						"{@atkr m,r} {@hit 5}，触及5尺或射程60尺。{@h}10（{@damage 2d6 + 3}）光耀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Vanishing Trick (3/Day)",
+					"name": "消失戏法（3次/天）",
+					"entries": [
+						"弗利兹宾获得{@condition 隐形|XPHB}状态，持续10分钟。当弗利兹宾进行攻击检定、造成伤害、获得{@condition 失能|XPHB}状态或被摘掉帽子时，此效果提前结束。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Distracting Glitter",
+					"name": "炫目闪光",
+					"entries": [
+						"{@actTrigger} 弗利兹宾被一次攻击检定命中。{@actResponse} 弗利兹宾对该次攻击的AC增加2，可能导致其失手。"
+					]
+				}
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"D",
+				"G"
+			],
+			"damageTags": [
+				"R"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"失能",
+				"隐形"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Giant Corrupted Rat",
+			"name": "巨人腐化老鼠",
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
+			"type": "monstrosity",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 18,
+				"formula": "4d6"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 7,
+			"dex": 16,
+			"con": 12,
+			"int": 2,
+			"wis": 10,
+			"cha": 4,
+			"skill": {
+				"perception": "+12",
+				"stealth": "+5"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 12,
+			"cr": "1/2",
+			"trait": [
+				{
+					"ENG_name": "Death Burst",
+					"name": "临终苦难",
+					"entries": [
+						"老鼠死亡时会爆炸。体质{@variantrule 豁免检定|XPHB} {@dc 11}，老鼠5尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail} 5（{@damage 2d4}）强酸伤害。{@actSaveSuccess} 伤害减半。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}6（{@damage 1d6 + 3}）穿刺伤害加5（{@damage 2d4}）强酸伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"临终苦难"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"A",
+				"P"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Giant Spider",
+			"name": "巨蜘蛛",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Giant Spider",
+				"name": "巨蜘蛛",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Gnoll Warrior",
+			"name": "鬣狗人武者",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Gnoll Warrior",
+				"name": "鬣狗人武者",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Goblin Warrior",
+			"name": "地精武者",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Goblin Warrior",
+				"name": "地精武者",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Guard",
+			"name": "警卫",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Guard",
+				"name": "警卫",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Hell Hound",
+			"name": "地狱猎犬",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Hell Hound",
+				"name": "地狱猎犬",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Imp Trickster",
+			"name": "小魔鬼骗子",
+			"source": "WttHC",
+			"size": [
+				"T"
+			],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"Devil"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 21,
+				"formula": "6d4"
+			},
+			"speed": {
+				"walk": 20,
+				"fly": 40,
+				"climb": 20
+			},
+			"str": 6,
+			"dex": 17,
+			"con": 13,
+			"int": 11,
+			"wis": 12,
+			"cha": 14,
+			"skill": {
+				"deception": "+4",
+				"insight": "+3",
+				"stealth": "+5"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 11,
+			"resist": [
+				"冷冻"
+			],
+			"immune": [
+				"火焰",
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"languages": [
+				"普通",
+				"炼狱语"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"小魔鬼对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Sting",
+					"name": "钉刺",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}{@damage 1d6 + 3}穿刺伤害加{@damage 2d6}毒素伤害。"
+					]
+				},
+				{
+					"ENG_name": "Invisibility",
+					"name": "隐形术",
+					"entries": [
+						"小魔鬼获得{@condition 隐形|XPHB}状态1分钟。此效果会在小魔鬼进行攻击检定或造成伤害后立即提前结束，或者如果小魔鬼处于{@condition 失能|XPHB}状态时也会结束。"
+					]
+				},
+				{
+					"ENG_name": "Shape-Shift",
+					"name": "变形",
+					"entries": [
+						"小魔鬼可以变形为老鼠（{@variantrule 速度|XPHB} 20尺）、渡鸦（20尺，飞行60尺）或蜘蛛（20尺，攀爬20尺），或者恢复其真实形态。除{@variantrule 速度|XPHB}外，每种形态的游戏数据都相同。它所穿戴或携带的任何装备不会被转化。"
+					]
+				}
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"C",
+				"I"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"失能",
+				"隐形"
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Korex",
+			"name": "科雷克斯",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Elf"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 13,
+			"dex": 16,
+			"con": 14,
+			"int": 8,
+			"wis": 12,
+			"cha": 15,
+			"skill": {
+				"perception": "+3",
+				"performance": "+4",
+				"stealth": "+5"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 13,
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"languages": [
+				"普通",
+				"精灵语"
+			],
+			"cr": "2",
+			"gear": [
+				"瘟疫之笛|WttHC"
+			],
+			"trait": [
+				{
+					"ENG_name": "Sewer Speech",
+					"name": "下水道密语",
+					"entries": [
+						"科雷克斯可以理解并与怪兽进行口头交流。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Rancid Knife",
+					"name": "腐臭刀",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 2d4 + 3}）穿刺伤害加7（{@damage 2d6}）毒素伤害，且目标获得{@condition 中毒|XPHB}状态直至科雷克斯的下个回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Entrancing Pipes",
+					"name": "迷魂笛",
+					"entries": [
+						"{@actSave wis} {@dc 12}，科雷克斯120尺内能看见的一个生物。{@actSaveFail} 14（{@damage 4d6}）心灵伤害，且目标获得{@condition 魅惑|XPHB}状态直至科雷克斯的下个回合开始。{@actSaveSuccess} 仅伤害减半。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Skitter",
+					"name": "疾行",
+					"entries": [
+						"科雷克斯使用疾走或撤离动作。"
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"C",
+				"E"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"Y"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"魅惑",
+				"中毒"
+			],
+			"savingThrowForced": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Medusa",
+			"name": "美杜莎",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Medusa",
+				"name": "美杜莎",
+				"source": "XMM"
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Myconid Adult",
+			"name": "蕈人成体",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Myconid Adult",
+				"name": "蕈人成体",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Needle Blight",
+			"name": "枯针怪",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Needle Blight",
+				"name": "枯针怪",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Rilly June",
+			"name": "瑞莉·琼",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"Halfling"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 13,
+				"formula": "3d6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 14,
+			"con": 13,
+			"int": 10,
+			"wis": 13,
+			"cha": 10,
+			"save": {
+				"wis": "+3"
+			},
+			"skill": {
+				"nature": "+2",
+				"perception": "+3",
+				"survival": "+3"
+			},
+			"passive": 13,
+			"languages": [
+				"普通",
+				"半身人语"
+			],
+			"cr": "1/2",
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"瑞莉·琼进行二次干草叉攻击。"
+					]
+				},
+				{
+					"ENG_name": "Hayfork",
+					"name": "干草叉",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "G'wan, Git! (1/Day)",
+					"name": "滚开，小子！(1/天)",
+					"entries": [
+						"{@actSave wis} {@dc 11}，瑞莉·琼60尺内能看见的一个生物。{@actSaveFail} 10（{@damage 3d6}）心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下个回合结束。{@actSaveSuccess} 仅造成伤害减半。"
+					]
+				}
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"H"
+			],
+			"damageTags": [
+				"P",
+				"Y"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"conditionInflict": [
+				"恐慌"
+			],
+			"savingThrowForced": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Scarecrow",
+			"name": "稻草人",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Scarecrow",
+				"name": "稻草人",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Shadow",
+			"name": "幽影",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Shadow",
+				"name": "幽影",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Shrieker Fungus",
+			"name": "尖叫菌",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Shrieker Fungus",
+				"name": "尖叫菌",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Swarm of Corrupted Rats",
+			"name": "腐化老鼠集群",
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "monstrosity",
+				"swarmSize": "T"
+			},
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 27,
+				"formula": "6d8"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 9,
+			"dex": 14,
+			"con": 10,
+			"int": 2,
+			"wis": 11,
+			"cha": 4,
+			"save": {
+				"dex": "+4"
+			},
+			"senses": [
+				"黑暗视觉 30 尺"
+			],
+			"passive": 10,
+			"resist": [
+				"钝击",
+				"穿刺",
+				"斩击"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"受擒",
+				"麻痹",
+				"石化",
+				"倒地",
+				"束缚",
+				"震慑"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Death Burst",
+					"name": "临终苦难",
+					"entries": [
+						"老鼠死亡时会爆炸。{@actSave con} {@dc 10}，老鼠周围10尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail}受到{@damage 2d4}强酸{@variantrule 伤害|XPHB}。{@actSaveSuccess}伤害减半。"
+					]
+				},
+				{
+					"ENG_name": "Swarm",
+					"name": "集群",
+					"entries": [
+						"集群可以占据另一个生物的空间，反之亦然，并且集群可以通过任何足够微型老鼠通过的开口移动。集群无法恢复{@variantrule 生命值|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 2d4 + 2}）穿刺伤害或当集群处于浴血状态时造成{@damage 1d4 + 2}穿刺伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"临终苦难"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Vine Blight Tangler",
+			"name": "枯藤怪缠绕者",
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
+			"type": "plant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 19,
+				"formula": "3d8"
+			},
+			"speed": {
+				"walk": 20
+			},
+			"str": 15,
+			"dex": 8,
+			"con": 14,
+			"int": 5,
+			"wis": 10,
+			"cha": 3,
+			"skill": {
+				"stealth": "+1"
+			},
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 10,
+			"conditionImmune": [
+				"耳聋"
+			],
+			"languages": [
+				"普通"
+			],
+			"cr": "1/2",
+			"action": [
+				{
+					"ENG_name": "Constricting Vine",
+					"name": "藤蔓绞缠",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及10尺。{@h}{@damage 1d10 + 2}钝击伤害。如果目标是大型或更小的生物，它会因三条藤蔓中的一条而陷入{@condition 受擒|XPHB}状态（逃脱{@dc 12}）。"
+					]
+				},
+				{
+					"ENG_name": "Entangling Vines {@recharge 5}",
+					"name": "缠绕藤蔓 {@recharge 5}",
+					"entries": [
+						"枯萎术选择其60尺内一点为中心，半径10尺的{@variantrule 球状 【效应区域】|XPHB|球状}效应区域内，每个仇敌身上会短暂出现抓握的藤蔓。每个目标必须成功通过{@dc 12}的力量豁免检定，否则直到枯萎术的下个回合开始前将处于{@condition 束缚|XPHB}束缚状态。"
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"languageTags": [
+				"C"
+			],
+			"miscTags": [
+				"AOE",
+				"MA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"受擒",
+				"束缚"
+			],
+			"savingThrowForced": [
+				"力量"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Violet Fungus",
+			"name": "紫腐菌",
+			"source": "WttHC",
+			"isReprinted": true,
+			"_copy": {
+				"ENG_name": "Violet Fungus",
+				"name": "紫腐菌",
+				"source": "XMM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

@@ -75,6 +75,17 @@ class PageFilterBestiary extends PageFilterBase {
 		});
 		this._speedFilter = new RangeFilter({header: "Speed", cnHeader: "速度", min: 30, max: 30, suffix: " ft"});
 		this._speedTypeFilter = new Filter({header: "Speed Type", cnHeader: "速度类型", items: [...Parser.SPEED_MODES, "hover"], displayFn: it => Parser.SPEED_TO_CN[it] || StrUtil.uppercaseFirst(it)});
+		this._speedFilterWalk = new RangeFilter({header: "Walk", cnHeader: "步行", min: 30, max: 30, suffix: " ft"});
+		this._speedFilterBurrow = new RangeFilter({header: "Burrow", cnHeader: "掘穴", min: 30, max: 30, suffix: " ft"});
+		this._speedFilterClimb = new RangeFilter({header: "Climb", cnHeader: "攀爬", min: 30, max: 30, suffix: " ft"});
+		this._speedFilterFly = new RangeFilter({header: "Fly", cnHeader: "飞行", min: 30, max: 30, suffix: " ft"});
+		this._speedFilterSwim = new RangeFilter({header: "Swim", cnHeader: "游泳", min: 30, max: 30, suffix: " ft"});
+		this._speedsFilter = new MultiFilter({
+			header: "Speeds",
+			cnHeader: "速度",
+			filters: [this._speedFilterWalk, this._speedFilterBurrow, this._speedFilterClimb, this._speedFilterFly, this._speedFilterSwim],
+			isAddDropdownToggle: true,
+		});
 		this._strengthFilter = new RangeFilter({header: "Strength", cnHeader: "力量", min: 1, max: 30});
 		this._dexterityFilter = new RangeFilter({header: "Dexterity", cnHeader: "敏捷", min: 1, max: 30});
 		this._constitutionFilter = new RangeFilter({header: "Constitution", cnHeader: "体质", min: 1, max: 30});
@@ -96,7 +107,7 @@ class PageFilterBestiary extends PageFilterBase {
 			displayFn: Parser.monTypeToPlural,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._tagFilter = new Filter({header: "Tag", cnHeader:"类型副标", displayFn: it => Parser.MON_TAG_TO_CN[it] || StrUtil.toTitleCase(it)});
+		this._tagFilter = new Filter({header: "Tag", cnHeader: "类型副标", displayFn: it => Parser.MON_TAG_TO_CN[it] || StrUtil.toTitleCase(it)});
 		this._sidekickTypeFilter = new Filter({
 			header: "Sidekick Type",
 			cnHeader: "协力者类型",
@@ -104,7 +115,7 @@ class PageFilterBestiary extends PageFilterBase {
 			displayFn: it => Parser.MON_SIDEKICK_TO_CN[it] || StrUtil.toTitleCase(it),
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._sidekickTagFilter = new Filter({header: "Sidekick Tag", cnHeader: "协力者类型副标", displayFn:it => Parser.MON_SIDEKICK_TO_CN[it] || StrUtil.toTitleCase(it)});
+		this._sidekickTagFilter = new Filter({header: "Sidekick Tag", cnHeader: "协力者类型副标", displayFn: it => Parser.MON_SIDEKICK_TO_CN[it] || StrUtil.toTitleCase(it)});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			cnHeader: "阵营",
@@ -187,7 +198,7 @@ class PageFilterBestiary extends PageFilterBase {
 			items: Parser.ABIL_ABVS.map(abl => Parser.attAbvToFull(abl).toLowerCase()),
 			itemSortFn: null,
 		});
-		this._savingThrowForcedFilter = new MultiFilter({header: "Saving Throw Required", cnHeader:"需要豁免检定", filters: [this._savingThrowForcedFilterBase, this._savingThrowForcedFilterLegendary, this._savingThrowForcedFilterSpells]});
+		this._savingThrowForcedFilter = new MultiFilter({header: "Saving Throw Required", cnHeader: "需要豁免检定", filters: [this._savingThrowForcedFilterBase, this._savingThrowForcedFilterLegendary, this._savingThrowForcedFilterSpells]});
 		this._senseFilter = new Filter({
 			header: "Senses",
 			cnHeader: "感官能力",
@@ -195,7 +206,7 @@ class PageFilterBestiary extends PageFilterBase {
 			items: ["B", "D", "SD", "T", "U"],
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._passivePerceptionFilter = new RangeFilter({header: "Passive Perception", cnHeader:"被动感知", min: 10, max: 10});
+		this._passivePerceptionFilter = new RangeFilter({header: "Passive Perception", cnHeader: "被动感知", min: 10, max: 10});
 		this._skillFilter = new Filter({
 			header: "Skills",
 			cnHeader: "技能",
@@ -219,7 +230,7 @@ class PageFilterBestiary extends PageFilterBase {
 		this._vulnerableFilter = FilterCommon.getDamageVulnerableFilter();
 		this._resistFilter = FilterCommon.getDamageResistFilter();
 		this._immuneFilter = FilterCommon.getDamageImmuneFilter();
-		this._defenseFilter = new MultiFilter({header: "Damage", cnHeader:"伤害", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
+		this._defenseFilter = new MultiFilter({header: "Damage", cnHeader: "伤害", filters: [this._vulnerableFilter, this._resistFilter, this._immuneFilter]});
 		this._conditionImmuneFilter = FilterCommon.getConditionImmuneFilter();
 		this._traitFilter = new Filter({
 			header: "Traits",
@@ -257,7 +268,7 @@ class PageFilterBestiary extends PageFilterBase {
 			max: 9,
 			displayFn: it => Parser.getOrdinalForm(it),
 		});
-		this._spellKnownFilter = new SearchableFilter({header: "Spells Known",cnHeader:"已知法术", displayFn: (it) => it.toTitleCase(), itemSortFn: SortUtil.ascSortLower});
+		this._spellKnownFilter = new SearchableFilter({header: "Spells Known", cnHeader: "已知法术", displayFn: (it) => it.toTitleCase(), itemSortFn: SortUtil.ascSortLower});
 		this._equipmentFilter = new SearchableFilter({header: "Equipment", cnHeader: "装备", displayFn: (it) => it.toTitleCase(), itemSortFn: SortUtil.ascSortLower});
 		this._dragonAgeFilter = new Filter({
 			header: "Dragon Age",
@@ -313,7 +324,7 @@ class PageFilterBestiary extends PageFilterBase {
 		FilterCommon.mutateForFilters_conditionImmune(mon);
 		mon._fSave = mon.save ? Object.keys(mon.save) : [];
 		mon._fSkill = mon.skill ? Object.keys(mon.skill) : [];
-		mon._fPassive = !isNaN(mon.passive) ? Number(mon.passive) : null;
+		mon._fPassive = typeof mon.passive === "number" ? mon.passive : null;
 
 		Parser.ABIL_ABVS
 			.forEach(ab => {
@@ -375,7 +386,15 @@ class PageFilterBestiary extends PageFilterBase {
 		mon._fEquipment = this._getEquipmentList(mon);
 	}
 
+	static _F_SPEED_PROP_MAPPING = Object.fromEntries(Parser.SPEED_MODES.map(prop => [prop, `_fSpeed${prop.uppercaseFirst()}`]));
+
 	static _mutateForFilters_speed (mon) {
+		mon._fSpeedWalk = null;
+		mon._fSpeedBurrow = null;
+		mon._fSpeedClimb = null;
+		mon._fSpeedFly = null;
+		mon._fSpeedSwim = null;
+
 		if (mon.speed == null) {
 			mon._fSpeedType = [];
 			mon._fSpeed = null;
@@ -385,12 +404,23 @@ class PageFilterBestiary extends PageFilterBase {
 		if (typeof mon.speed === "number" && mon.speed > 0) {
 			mon._fSpeedType = ["walk"];
 			mon._fSpeed = mon.speed;
+			mon._fSpeedWalk = mon.speed;
 			return;
 		}
 
-		mon._fSpeedType = Object.keys(mon.speed).filter(k => mon.speed[k]);
-		if (mon._fSpeedType.length) mon._fSpeed = Math.max(...Object.values(mon.speed).map(v => v.number || (isNaN(v) ? 0 : v)));
-		else mon._fSpeed = 0;
+		let maxSpeed = 0;
+		mon._fSpeedType = Parser.SPEED_MODES
+			.filter(prop => {
+				const v = mon.speed[prop];
+				if (!v) return false;
+				if (typeof v !== "number") return false;
+				maxSpeed = Math.max(maxSpeed, v);
+				mon[this._F_SPEED_PROP_MAPPING[prop]] = v;
+				return true;
+			});
+
+		mon._fSpeed = maxSpeed;
+
 		if (mon.speed.canHover) mon._fSpeedType.push("hover");
 	}
 
@@ -516,6 +546,11 @@ class PageFilterBestiary extends PageFilterBase {
 		this._wisdomFilter.addItem(mon._fWis);
 		this._charismaFilter.addItem(mon._fCha);
 		this._speedFilter.addItem(mon._fSpeed);
+		this._speedFilterWalk.addItem(mon._fSpeedWalk);
+		this._speedFilterBurrow.addItem(mon._fSpeedBurrow);
+		this._speedFilterClimb.addItem(mon._fSpeedClimb);
+		this._speedFilterFly.addItem(mon._fSpeedFly);
+		this._speedFilterSwim.addItem(mon._fSpeedSwim);
 		(mon.ac || []).forEach(it => this._acFilter.addItem(it.ac || it));
 		if (mon.hp?.average) this._averageHpFilter.addItem(mon.hp.average);
 		this._tagFilter.addItem(mon._pTypes.tags);
@@ -574,6 +609,7 @@ class PageFilterBestiary extends PageFilterBase {
 			this._sizeFilter,
 			this._speedFilter,
 			this._speedTypeFilter,
+			this._speedsFilter,
 			this._alignmentFilter,
 			this._saveFilter,
 			this._skillFilter,
@@ -619,6 +655,13 @@ class PageFilterBestiary extends PageFilterBase {
 			m.size,
 			m._fSpeed,
 			m._fSpeedType,
+			[
+				m._fSpeedWalk,
+				m._fSpeedBurrow,
+				m._fSpeedClimb,
+				m._fSpeedFly,
+				m._fSpeedSwim,
+			],
 			m._fAlign,
 			m._fSave,
 			m._fSkill,

@@ -1,4 +1,4 @@
-import "./locale/i18n.js"
+import "./locale/i18n.js";
 import "../js/parser.js";
 import "../js/utils.js";
 import {PAGE_GENERATORS} from "./generate-pages/generate-pages-page-generator-config.js";

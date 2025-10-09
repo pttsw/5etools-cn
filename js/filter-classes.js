@@ -21,7 +21,7 @@ class PageFilterClassesBase extends PageFilterBase {
 
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: ["重制", "协力者", "传奇"],
 			deselFn: (it) => { return it === "重制" || it === "协力者"; },
 			displayFnMini: it => it === "重制" ? "Repr." : it,
@@ -31,7 +31,7 @@ class PageFilterClassesBase extends PageFilterBase {
 
 		this._optionsFilter = new OptionsFilter({
 			header: "Other/Text Options",
-			cnHeader:"其他/文本选项",
+			cnHeader: "其他/文本选项",
 			defaultState: {
 				isDisplayClassIfSubclassActive: false,
 				isClassFeatureVariant: true,

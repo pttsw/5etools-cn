@@ -106,7 +106,7 @@ class OmnisearchUi {
 				}),
 			],
 		})
-		.appendTo(eleNavbar);
+			.appendTo(eleNavbar);
 
 		const dispSearchOutput = e_({
 			tag: "div",

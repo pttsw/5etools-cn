@@ -52,10 +52,10 @@ class PageFilterEquipment extends PageFilterBase {
 			deselFn: (it) => PageFilterItems._DEFAULT_HIDDEN_TYPES.has(it),
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
-		this._propertyFilter = new Filter({header: "Property", cnHeader:"物品属性", displayFn: StrUtil.toTitleCase.bind(StrUtil)});
+		this._propertyFilter = new Filter({header: "Property", cnHeader: "物品属性", displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._categoryFilter = new Filter({
 			header: "Category",
-			cnHeader:"分类",
+			cnHeader: "分类",
 			items: ["基础", "通用变体", "特殊变体", "其他"],
 			deselFn: (it) => it === "特殊变体",
 			itemSortFn: null,
@@ -63,7 +63,7 @@ class PageFilterEquipment extends PageFilterBase {
 		});
 		this._costFilter = new RangeFilter({
 			header: "Cost",
-			cnHeader:"价值",
+			cnHeader: "价值",
 			isLabelled: true,
 			isAllowGreater: true,
 			labelSortFn: null,
@@ -78,23 +78,23 @@ class PageFilterEquipment extends PageFilterBase {
 			],
 			labelDisplayFn: it => !it ? "None" : Parser.getDisplayCurrency(CurrencyUtil.doSimplifyCoins({cp: it})),
 		});
-		this._weightFilter = new RangeFilter({header: "Weight", cnHeader:"重量", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
-		this._focusFilter = new Filter({header: "Spellcasting Focus", cnHeader:"法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
-		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", cnHeader:"武器伤害类型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a.item), Parser.dmgTypeToFull(b.item))});
-		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", cnHeader:"武器伤害骰", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
-		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader:"护甲类型", displayFn: it => it === 0 ? "None" : it});
-		this._rangeFilterNormal = new RangeFilter({header: "Normal", cnHeader:"正常", displayFn: it => it === 0 ? "None" : `${it} ft.`});
-		this._rangeFilterLong = new RangeFilter({header: "Long", cnHeader:"长", displayFn: it => it === 0 ? "None" : `${it} ft.`});
-		this._rangeFilter = new MultiFilter({header: "Range", cnHeader:"范围", filters: [this._rangeFilterNormal, this._rangeFilterLong]});
+		this._weightFilter = new RangeFilter({header: "Weight", cnHeader: "重量", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
+		this._focusFilter = new Filter({header: "Spellcasting Focus", cnHeader: "法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
+		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", cnHeader: "武器伤害类型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a.item), Parser.dmgTypeToFull(b.item))});
+		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", cnHeader: "武器伤害骰", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
+		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader: "护甲类型", displayFn: it => it === 0 ? "None" : it});
+		this._rangeFilterNormal = new RangeFilter({header: "Normal", cnHeader: "正常", displayFn: it => it === 0 ? "None" : `${it} ft.`});
+		this._rangeFilterLong = new RangeFilter({header: "Long", cnHeader: "长", displayFn: it => it === 0 ? "None" : `${it} ft.`});
+		this._rangeFilter = new MultiFilter({header: "Range", cnHeader: "范围", filters: [this._rangeFilterNormal, this._rangeFilterLong]});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: [...PageFilterEquipment._MISC_FILTER_ITEMS, ...Object.values(Parser.ITEM_MISC_TAG_TO_FULL)],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
-		this._poisonTypeFilter = new Filter({header: "Poison Type", cnHeader:"毒药类型", items: ["服用", "伤口", "吸入", "接触"], displayFn: StrUtil.toTitleCase.bind(StrUtil)});
-		this._masteryFilter = new Filter({header: "Mastery", cnHeader:"精通", displayFn: this.constructor._getMasteryDisplay.bind(this)});
+		this._poisonTypeFilter = new Filter({header: "Poison Type", cnHeader: "毒药类型", items: ["服用", "伤口", "吸入", "接触"], displayFn: StrUtil.toTitleCase.bind(StrUtil)});
+		this._masteryFilter = new Filter({header: "Mastery", cnHeader: "精通", displayFn: this.constructor._getMasteryDisplay.bind(this)});
 	}
 
 	static _mutateForFilters_getFilterAc (item) {
@@ -338,11 +338,11 @@ class PageFilterItems extends PageFilterEquipment {
 	constructor (opts) {
 		super(opts);
 
-		this._tierFilter = new Filter({header: "Tier", cnHeader:"层级", items: ["none", "主要", "次要"], itemSortFn: null, displayFn: StrUtil.toTitleCase.bind(StrUtil)});
-		this._attachedSpellsFilter = new SearchableFilter({header: "Attached Spells", cnHeader:"附加法术", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
+		this._tierFilter = new Filter({header: "Tier", cnHeader: "层级", items: ["none", "主要", "次要"], itemSortFn: null, displayFn: StrUtil.toTitleCase.bind(StrUtil)});
+		this._attachedSpellsFilter = new SearchableFilter({header: "Attached Spells", cnHeader: "附加法术", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
 		this._lootTableFilter = new Filter({
 			header: "Found On",
-			cnHeader:"位于魔法物品表",
+			cnHeader: "位于魔法物品表",
 			// items: ["Magic Item Table A", "Magic Item Table B", "Magic Item Table C", "Magic Item Table D", "Magic Item Table E", "Magic Item Table F", "Magic Item Table G", "Magic Item Table H", "Magic Item Table I"],
 			items: ["魔法物品表A", "魔法物品表B", "魔法物品表C", "魔法物品表D", "魔法物品表E", "魔法物品表F", "魔法物品表G", "魔法物品表H", "魔法物品表I"],
 			displayFn: it => {
@@ -356,9 +356,9 @@ class PageFilterItems extends PageFilterEquipment {
 			items: [...Parser.ITEM_RARITIES],
 			itemSortFn: null,
 			// displayFn: StrUtil.toTitleCase.bind(StrUtil),
-			displayFn: it => Parser.RARITIES_TO_CN[it] || StrUtil.toTitleCase(it)
+			displayFn: it => Parser.RARITIES_TO_CN[it] || StrUtil.toTitleCase(it),
 		});
-		this._attunementFilter = new Filter({header: "Attunement", cnHeader:"同调", items: [...PageFilterItems._FILTER_BASE_ITEMS_ATTUNEMENT], itemSortFn: PageFilterItems._sortAttunementFilter});
+		this._attunementFilter = new Filter({header: "Attunement", cnHeader: "同调", items: [...PageFilterItems._FILTER_BASE_ITEMS_ATTUNEMENT], itemSortFn: PageFilterItems._sortAttunementFilter});
 		this._bonusFilter = new Filter({
 			header: "Bonus",
 			cnHeader: "加值",
@@ -370,16 +370,16 @@ class PageFilterItems extends PageFilterEquipment {
 			],
 			itemSortFn: null,
 		});
-		this._rechargeTypeFilter = new Filter({header: "Recharge Type",cnHeader:"充能类型", displayFn: Parser.itemRechargeToFull});
+		this._rechargeTypeFilter = new Filter({header: "Recharge Type", cnHeader: "充能类型", displayFn: Parser.itemRechargeToFull});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: ["属性值修正", "充能", "诅咒", "提供语言", "提供熟练项", "魔法", "寻常", "有认知的", "速度修正", ...PageFilterEquipment._MISC_FILTER_ITEMS],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
 		this._baseSourceFilter = new SourceFilter({header: "Base Source", selFn: null});
-		this._baseItemFilter = new SearchableFilter({header: "Base Item", cnHeader:"基础物品", displayFn: this.constructor._getBaseItemDisplay.bind(this.constructor), itemSortFn: SortUtil.ascSortLower});
+		this._baseItemFilter = new SearchableFilter({header: "Base Item", cnHeader: "基础物品", displayFn: this.constructor._getBaseItemDisplay.bind(this.constructor), itemSortFn: SortUtil.ascSortLower});
 		this._optionalfeaturesFilter = new Filter({
 			header: "Feature",
 			cnHeader: "特性",

@@ -2674,7 +2674,7 @@ class CreatureBuilder extends Builder {
 									searchOptions: {
 										fields: {
 											n: {boost: 5, expand: true},
-											cn: {boost: 5,expand: true},
+											cn: {boost: 5, expand: true},
 										},
 										expand: true,
 									},
@@ -2961,7 +2961,7 @@ class CreatureBuilder extends Builder {
 										searchOptions: {
 											fields: {
 												n: {boost: 5, expand: true},
-												cn: {boost: 5,expand: true},
+												cn: {boost: 5, expand: true},
 											},
 											expand: true,
 										},

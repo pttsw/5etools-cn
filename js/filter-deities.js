@@ -14,8 +14,8 @@ class PageFilterDeities extends PageFilterBase {
 
 	constructor () {
 		super();
-		this._pantheonFilter = new Filter({header: "Pantheon",cnHeader:"神系", items: []});
-		this._categoryFilter = new Filter({header: "Category",cnHeader:"类别", items: [VeCt.STR_NONE]});
+		this._pantheonFilter = new Filter({header: "Pantheon", cnHeader: "神系", items: []});
+		this._categoryFilter = new Filter({header: "Category", cnHeader: "类别", items: [VeCt.STR_NONE]});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			cnHeader: "阵营",
@@ -25,12 +25,12 @@ class PageFilterDeities extends PageFilterBase {
 		});
 		this._domainFilter = new Filter({
 			header: "Domain",
-			cnHeader:"领域",
+			cnHeader: "领域",
 			// items: ["Death", "Knowledge", "Life", "Light", "Nature", VeCt.STR_NONE, "Tempest", "Trickery", "War"],
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: ["Grants Piety Features", "有简介", "有图片", "重置", "传奇"],
 			displayFn: StrUtil.uppercaseFirst,
 			isMiscFilter: true,

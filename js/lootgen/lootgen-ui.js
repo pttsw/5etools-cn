@@ -147,7 +147,7 @@ export class LootGenUi extends BaseComponent {
 			.flatMap(theme => {
 				// return ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"]
 				// return ["普通", "非普通", "稀有", "非常稀有", "传说"]
-				return [I18nUtil.get("page.lootgen.common"), 
+				return [I18nUtil.get("page.lootgen.common"),
 					I18nUtil.get("page.lootgen.uncommon"),
 					I18nUtil.get("page.lootgen.rare"),
 					I18nUtil.get("page.lootgen.very_rare"),
@@ -458,7 +458,7 @@ export class LootGenUi extends BaseComponent {
 		]);
 
 		// Update the tab button on-click
-		tabMeta.buttons[0].pFnClick = evt => ContextUtil.pOpenMenu(evt, menuOthers);
+		tabMeta.buttons[0].pFnClick = ({evt}) => ContextUtil.pOpenMenu(evt, menuOthers);
 
 		const hkIsActive = () => {
 			const tab = this._getActiveTab();

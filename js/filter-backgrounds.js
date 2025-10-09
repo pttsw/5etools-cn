@@ -18,22 +18,22 @@ class PageFilterBackgrounds extends PageFilterBase {
 		super();
 
 		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores", cnHeader: "属性值"});
-		this._skillFilter = new Filter({header: "Skill Proficiencies", cnHeader:"技能熟练项", displayFn: StrUtil.toTitleCase.bind(StrUtil)});
+		this._skillFilter = new Filter({header: "Skill Proficiencies", cnHeader: "技能熟练项", displayFn: StrUtil.toTitleCase.bind(StrUtil)});
 		this._prereqFilter = new Filter({
 			header: "Prerequisite",
-			cnHeader:"先决条件",
-			displayFn: function(tag){
-				switch(tag){
+			cnHeader: "先决条件",
+			displayFn: function (tag) {
+				switch (tag) {
 					case "Ability": 	return "属性值";
 					case "Race": 		return "种族";
 					case "Proficiency": return "熟练";
 					case "Spellcasting":return "施法";
-					case "Background":  return "背景";
-					case "Campaign":    return "战役";
-					case "Feat":        return "专长";
-					case "Psionics":    return "灵能";
-					case "Special":     return "特殊";
-					case "Class":       return "职业";
+					case "Background": return "背景";
+					case "Campaign": return "战役";
+					case "Feat": return "专长";
+					case "Psionics": return "灵能";
+					case "Special": return "特殊";
+					case "Class": return "职业";
 					default: return tag;
 				}
 			},
@@ -53,7 +53,7 @@ class PageFilterBackgrounds extends PageFilterBase {
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
-		this._featsFilter = new SearchableFilter({header: "Feats", cnHeader:"专长", itemSortFn: SortUtil.ascSortLower});
+		this._featsFilter = new SearchableFilter({header: "Feats", cnHeader: "专长", itemSortFn: SortUtil.ascSortLower});
 	}
 
 	static _mutateForFilters_getFilterFeats (bg) {
@@ -66,7 +66,7 @@ class PageFilterBackgrounds extends PageFilterBase {
 						switch (k) {
 							case "any": return "(Any)";
 							case "anyFromCategory": return `(Any From Category)`;
-							default: return I18nUtil.get(`page.backgrounds.${k.split("|")[0]}`,(k) => k.split('.').at(-1).replace('_', ' ').toTitleCase());
+							default: return I18nUtil.get(`page.backgrounds.${k.split("|")[0]}`, (k) => k.split(".").at(-1).replace("_", " ").toTitleCase());
 						}
 					});
 			});
@@ -79,15 +79,14 @@ class PageFilterBackgrounds extends PageFilterBase {
 
 		bg.skillProficiencies = bg.skillProficiencies.map(skills => {
 			let res = {};
-			Object.keys(skills).map(skill=> {
+			Object.keys(skills).map(skill => {
 				if (Parser.SKILL_TO_CN[skill]) {
 					res[Parser.SKILL_TO_CN[skill]] = skills[skill];
-				}else{
-					res[skill] = skills[skill]
+				} else {
+					res[skill] = skills[skill];
 				}
 			});
 			return res;
-			
 		});
 
 		const {summary: skillDisplay, collection: skills} = Renderer.generic.getSkillSummary({

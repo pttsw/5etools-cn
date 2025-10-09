@@ -12,7 +12,7 @@ const pDoLint = async () => {
 
 	const eslint = new ESLint({
 		fix: true,
-		flags: ["unstable_config_lookup_from_file"],
+		flags: ["v10_config_lookup_from_file"],
 	});
 
 	const results = await eslint.lintFiles(fileList);

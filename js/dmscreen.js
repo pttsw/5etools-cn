@@ -3453,7 +3453,7 @@ class AddMenuSearchTab extends AddMenuTab {
 			case "content": return {
 				fields: {
 					n: {boost: 5, expand: true},
-					cn: {boost: 5,expand: true},
+					cn: {boost: 5, expand: true},
 					s: {expand: true},
 				},
 				bool: "AND",
@@ -3612,9 +3612,8 @@ class AddMenuSearchTab extends AddMenuTab {
 				if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 					const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
 					if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-						this.$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`)
-					}
-					else {
+						this.$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
+					} else {
 						this.$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 					}
 				}

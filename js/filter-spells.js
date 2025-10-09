@@ -21,7 +21,7 @@ class VariantClassFilter extends Filter {
 
 class MultiFilterClasses extends MultiFilter {
 	constructor (opts) {
-		super({header: "Classes", cnHeader:"职业", mode: "or", filters: [opts.classFilter, opts.subclassFilter, opts.variantClassFilter], ...opts});
+		super({header: "Classes", cnHeader: "职业", mode: "or", filters: [opts.classFilter, opts.subclassFilter, opts.variantClassFilter], ...opts});
 
 		this._classFilter = opts.classFilter;
 		this._subclassFilter = opts.subclassFilter;
@@ -48,7 +48,7 @@ class MultiFilterClasses extends MultiFilter {
 			this,
 			"isVariantSplit",
 			{
-				ele: e_({tag: "button", clazz: "ve-btn ve-btn-default ve-btn-xs", text: I18nUtil.get('common.filter.include_variants')}),
+				ele: e_({tag: "button", clazz: "ve-btn ve-btn-default ve-btn-xs", text: I18nUtil.get("common.filter.include_variants")}),
 				isInverted: true,
 				stateName: "meta",
 				stateProp: "_meta",
@@ -437,13 +437,13 @@ class PageFilterSpells extends PageFilterBase {
 			labelSortFn: null,
 			labels: [
 				I18nUtil.get("page.spells.instant"),
-				`1 ${I18nUtil.get("common.round")}`, 
-				`1 ${I18nUtil.get("common.minute")}`, 
-				`10 ${I18nUtil.get("common.minutes")}`, 
-				`1 ${I18nUtil.get("common.hour")}`, 
-				`8 ${I18nUtil.get("common.hours")}`, 
-				`24+ ${I18nUtil.get("common.hours")}`, 
-				I18nUtil.get("page.spells.permanent"), 
+				`1 ${I18nUtil.get("common.round")}`,
+				`1 ${I18nUtil.get("common.minute")}`,
+				`10 ${I18nUtil.get("common.minutes")}`,
+				`1 ${I18nUtil.get("common.hour")}`,
+				`8 ${I18nUtil.get("common.hours")}`,
+				`24+ ${I18nUtil.get("common.hours")}`,
+				I18nUtil.get("page.spells.permanent"),
 				I18nUtil.get("page.spells.special"),
 			],
 		});
@@ -469,7 +469,7 @@ class PageFilterSpells extends PageFilterBase {
 		this._affectsCreatureTypeFilter = new Filter({
 			cnHeader: "受术种族",
 			header: "Affects Creature Types",
-			items: Parser.MON_TYPES.map(mon=>Parser.MON_TYPE_TO_PLURAL[mon] || mon),
+			items: Parser.MON_TYPES.map(mon => Parser.MON_TYPE_TO_PLURAL[mon] || mon),
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
 	}

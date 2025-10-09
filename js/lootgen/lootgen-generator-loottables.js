@@ -111,7 +111,7 @@ export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 		switch (tableMeta.metaType) {
 			case LOOT_TABLES_TYPE__DMG_MAGIC_ITEMS: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|宝藏表}第133-149页的表格和规则。`);
 			case LOOT_TABLES_TYPE__XGE_FAUX: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XGE)} (零散的选择物品)|XGE|2|零散的选择物品}第135-136页的表格和规则自动生成。`);
-			case LOOT_TABLES_TYPE__XDMG_THEMES: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG|6|随机魔法物品}第326-331页的表格和规则。`);	
+			case LOOT_TABLES_TYPE__XDMG_THEMES: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG|6|随机魔法物品}第326-331页的表格和规则。`);
 			default: throw new Error(`Unhandled table meta-type "${tableMeta.metaType}"`);
 		}
 	}

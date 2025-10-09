@@ -1973,6 +1973,26 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Boots of Elvenkind",
+			"name": "精灵之靴",
+			"source": "XDMG",
+			"effects": [
+				{
+					"ENG_name": "Stealth Advantage",
+					"name": "隐匿优势",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.ste.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Boots of Levitation",
 			"name": "浮空之靴",
 			"source": "XDMG",
@@ -2011,7 +2031,7 @@
 					"name": "点击脚跟",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"effects": [
 						{
@@ -3296,6 +3316,18 @@
 					"foundryId": "cloakOfTheBat",
 					"statuses": [
 						"飞行"
+					]
+				},
+				{
+					"ENG_name": "Stealth Advantage",
+					"name": "隐匿优势",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.ste.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
 					]
 				}
 			],
@@ -12991,10 +13023,39 @@
 						"affects": {
 							"type": "self"
 						}
-					}
+					},
+					"effects": [
+						{
+							"foundryId": "perfumeOfBewitch"
+						}
+					]
 				}
 			],
-			"effects": [],
+			"effects": [
+				{
+					"ENG_name": "Bewitching Scent",
+					"name": "迷醉香气",
+					"foundryId": "perfumeOfBewitch",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"seconds": 3600
+					},
+					"changes": [
+						{
+							"key": "system.skills.per.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.skills.dec.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "在持续时间内，你在对自己5尺范围内的生物施加影响力时，所有魅力（欺瞒和游说）检定具有优势。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -13301,7 +13362,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -13457,7 +13518,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -13508,7 +13569,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -13703,7 +13764,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -13754,7 +13815,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -13855,7 +13916,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -13906,7 +13967,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14219,7 +14280,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14426,7 +14487,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14539,7 +14600,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14656,7 +14717,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14707,7 +14768,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14810,7 +14871,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14898,7 +14959,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -14949,7 +15010,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -15080,7 +15141,7 @@
 					"name": "饮用药水",
 					"type": "utility",
 					"activation": {
-						"type": "action"
+						"type": "bonus"
 					},
 					"consumption": {
 						"targets": [
@@ -17499,8 +17560,8 @@
 					}
 				},
 				{
-					"ENG_name": "Plant Rod",
-					"name": "植物法杖",
+					"ENG_name": "Protective Aura",
+					"name": "防护灵光",
 					"type": "utility",
 					"activation": {
 						"type": "action"
@@ -17550,6 +17611,23 @@
 						},
 						{
 							"key": "system.bonuses.abilities.save",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				},
+				{
+					"ENG_name": "Alertness",
+					"name": "警觉",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.prc.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.attributes.init.roll.mode",
 							"mode": "ADD",
 							"value": 1
 						}
@@ -22589,20 +22667,26 @@
 						"targets": [
 							{
 								"type": "itemUses",
-								"value": "1d6 - 2"
+								"value": "-(1d6 + 1)"
+							},
+							{
+								"type": "activityUses",
+								"value": "1"
 							}
 						]
+					},
+					"uses": {
+						"max": "1"
 					}
 				},
 				{
-					"ENG_name": "Apply Glue",
-					"name": "涂抹胶水",
+					"ENG_name": "Apply Solvent",
+					"name": "使用溶剂",
 					"type": "utility",
 					"activation": {
 						"type": "action"
 					},
 					"duration": {
-						"units": "分钟",
 						"value": "@scaling"
 					},
 					"consumption": {
@@ -22623,8 +22707,9 @@
 					"target": {
 						"template": {
 							"units": "ft",
+							"count": "@缩放",
 							"type": "square",
-							"size": "@scaling"
+							"size": "1"
 						},
 						"affects": {
 							"type": "space"

@@ -579,10 +579,15 @@ globalThis.Renderer = function () {
 		const ptTitle = ptTitleCreditTooltip ? `title="${ptTitleCreditTooltip}"` : "";
 		const pluginDataIsNoLink = this._applyPlugins_useFirst("image_isNoLink", {textStack, meta, options}, {input: entry});
 
+		const ptLabels = this._renderImage_geLabels(entry);
+
 		textStack[0] += `<div class="${this._renderImage_getWrapperClasses(entry, meta)}" ${entry.title && this._isHeaderIndexIncludeImageTitles ? `data-title-index="${this._headerIndex++}"` : ""}>
-			${pluginDataIsNoLink ? "" : `<a href="${href}" target="_blank" rel="noopener noreferrer" ${ptTitle}>`}
-				${this._renderImage_getImg({entry, meta, href, pluginDataIsNoLink, ptTitle})}
-			${pluginDataIsNoLink ? "" : `</a>`}
+			<div class="w-100 h-100 relative">
+				${pluginDataIsNoLink ? "" : `<a class="relative" href="${href}" target="_blank" rel="noopener noreferrer" ${ptTitle}>`}
+					${this._renderImage_getImg({entry, meta, href, pluginDataIsNoLink, ptTitle})}
+				${pluginDataIsNoLink ? "" : `</a>`}
+				${ptLabels}
+			</div>
 		</div>`;
 
 		if (!this._renderImage_isComicStyling(entry) && (entry.title || entry.credit || entry.mapRegions)) {
@@ -665,6 +670,44 @@ globalThis.Renderer = function () {
 				.filter(Boolean)
 				.join(". "),
 		).qq();
+	};
+
+	this._renderImage_geLabels = function (entry) {
+		if (
+			!entry.labelMapRegions
+			|| !globalThis.BookUtil?.curRender?.headerMap
+			|| !globalThis.polylabel
+			|| !entry.width
+			|| !entry.height
+			|| !entry.mapRegions?.length
+		) return "";
+
+		const tagInfo = Renderer.tag.TAG_LOOKUP.area;
+
+		return entry.mapRegions
+			.map(region => {
+				const area = globalThis.BookUtil.curRender.headerMap[region.area];
+				if (!area) return "";
+
+				// TODO(Future) refine
+				// TODO(Future) allow area to define name
+				const areaName = area.name.split(/[.:; ]/)[0].slice(0, 4);
+
+				const mapRegionPointsGeoJson = [region.points];
+				const [xNote, yNote] = polylabel(mapRegionPointsGeoJson);
+
+				const [xLabel, yLabel] = polylabel(mapRegionPointsGeoJson);
+
+				const pctLeft = ((xLabel / entry.width) * 100).toFixed(3);
+				const pctTop = ((yLabel / entry.height) * 100).toFixed(3);
+
+				const hoverMeta = Renderer.hover.getInlineHover(area.entry, {isLargeBookContent: true, depth: area.depth});
+
+				return `<a class="rd__image-label-map-region absolute small-caps dnd-font bold ve-block ve-text-center ve-overflow-hidden" style="left: ${pctLeft}%; top: ${pctTop}%;" href="${tagInfo.getHref(globalThis.BookUtil.curRender, area)}" ${hoverMeta.html}>
+					${areaName}
+				</a>`;
+			})
+			.join("");
 	};
 
 	this._renderImage_getStylePart = function (entry) {
@@ -925,8 +968,10 @@ globalThis.Renderer = function () {
 	};
 
 	this._getPagePart = function (entry, isInset) {
-		if (!Renderer.utils.isDisplayPage(entry.page)) return "";
-		return ` <span class="rd__title-link ${isInset ? `rd__title-link--inset` : ""}">${entry.source ? `<span class="help-subtle" title="${Parser.sourceJsonToFull(entry.source)}">${Parser.sourceJsonToAbv(entry.source)}</span> ` : ""}<span title="Page ${entry.page}">p${entry.page}</span></span>`;
+		const isDisplaySource = !!entry.source;
+		const isDisplayPage = Renderer.utils.isDisplayPage(entry.page);
+		if (!isDisplaySource && !isDisplayPage) return "";
+		return ` <span class="rd__title-link ${isInset ? `rd__title-link--inset` : ""}">${isDisplaySource ? `<span class="help-subtle" title="${Parser.sourceJsonToFull(entry.source)}">${Parser.sourceJsonToAbv(entry.source)}</span> ` : ""}${isDisplayPage ? `<span title="Page ${entry.page}">p${entry.page}</span>` : ""}</span>`;
 	};
 
 	this._renderEntriesSubtypes = function (entry, textStack, meta, options, incDepth) {
@@ -1367,7 +1412,7 @@ globalThis.Renderer = function () {
 		"monthly",
 		"yearly",
 		"ritual",
-		"legendar",
+		"legendary",
 	];
 
 	this._renderSpellcasting_getEntries = function (entry) {
@@ -2297,15 +2342,23 @@ globalThis.Renderer = function () {
 				break;
 			}
 			case "@area": {
-				const {areaId, displayText} = Renderer.tag.TAG_LOOKUP.area.getMeta(tag, text);
+				const tagInfo = Renderer.tag.TAG_LOOKUP.area;
+
+				const {areaId, displayText} = tagInfo.getMeta(tag, text);
 
 				if (!globalThis.BookUtil) { // for the roll20 script
 					textStack[0] += displayText;
-				} else {
-					const area = globalThis.BookUtil.curRender.headerMap[areaId] || {entry: {name: ""}}; // default to prevent rendering crash on bad tag
-					const hoverMeta = Renderer.hover.getInlineHover(area.entry, {isLargeBookContent: true, depth: area.depth});
-					textStack[0] += `<a href="#${globalThis.BookUtil.curRender.curBookId},${area.chapter},${UrlUtil.encodeForHash(area.entry.name)},0" ${hoverMeta.html}>${displayText}</a>`;
+					break;
 				}
+
+				const area = globalThis.BookUtil.curRender.headerMap[areaId];
+				if (!area) {
+					textStack[0] += displayText;
+					break;
+				}
+
+				const hoverMeta = Renderer.hover.getInlineHover(area.entry, {isLargeBookContent: true, depth: area.depth});
+				textStack[0] += `<a href="${tagInfo.getHref(globalThis.BookUtil.curRender, area)}" ${hoverMeta.html}>${displayText}</a>`;
 
 				break;
 			}
@@ -2334,7 +2387,7 @@ globalThis.Renderer = function () {
 				const page = tag === "@book" ? "book.html" : "adventure.html";
 				const [displayText, book, chapter, section, rawNumber] = Renderer.splitTagByPipe(text);
 				const number = rawNumber || 0;
-				const hash = `${book}${chapter ? `${HASH_PART_SEP}${chapter}${section ? `${HASH_PART_SEP}${UrlUtil.encodeForHash(section)}${number != null ? `${HASH_PART_SEP}${UrlUtil.encodeForHash(number)}` : ""}` : ""}` : ""}`;
+				const hash = `${book?.toLowerCase()}${chapter ? `${HASH_PART_SEP}${chapter}${section ? `${HASH_PART_SEP}${UrlUtil.encodeForHash(section)}${number != null ? `${HASH_PART_SEP}${UrlUtil.encodeForHash(number)}` : ""}` : ""}` : ""}`;
 				const fauxEntry = {
 					type: "link",
 					href: {
@@ -4112,8 +4165,8 @@ Renderer.utils = class {
 								return styleHint === "classic" ? `Proficiency with ${prof}s` : `${prof.toTitleCase()} Training`;
 							}
 
-							if (isListMode) return styleHint === "classic" ? `${Parser.ARMOR_FULL_TO_CN[prof] ||prof.toTitleCase()}甲熟练项` : `${Parser.ARMOR_FULL_TO_CN[prof] ||prof.toTitleCase()}甲受训`;
-							return styleHint === "classic" ? `${Parser.ARMOR_FULL_TO_CN[prof] ||prof.toTitleCase()}甲熟练项` : `${Parser.ARMOR_FULL_TO_CN[prof] ||prof.toTitleCase()}甲受训`;
+							if (isListMode) return styleHint === "classic" ? `${Parser.ARMOR_FULL_TO_CN[prof] || prof.toTitleCase()}甲熟练项` : `${Parser.ARMOR_FULL_TO_CN[prof] || prof.toTitleCase()}甲受训`;
+							return styleHint === "classic" ? `${Parser.ARMOR_FULL_TO_CN[prof] || prof.toTitleCase()}甲熟练项` : `${Parser.ARMOR_FULL_TO_CN[prof] || prof.toTitleCase()}甲受训`;
 						}
 						case "weapon": {
 							return isListMode ? `熟练于${prof}武器` : `具有${prof}武器熟练项`;
@@ -5801,14 +5854,19 @@ Renderer.tag = class {
 
 			const displayText = flags && flags.includes("x")
 				? compactText
-				: (I18nUtil.LANGUAGES_INDEX == "zh_CN" 
-					? `区域${compactText}` 
+				: (I18nUtil.LANGUAGES_INDEX === "zh_CN"
+					? `区域${compactText}`
 					: `${flags && flags.includes("u") ? "A" : "a"}rea ${compactText}`);
 
 			return {
 				areaId,
 				displayText,
 			};
+		}
+
+		getHref (bookRender, area) {
+			if (!area) return `javascript:void(0)`;
+			return `#${bookRender.curBookId},${area.chapter},${UrlUtil.encodeForHash(area.entry.name)},0`;
 		}
 	};
 
@@ -9788,7 +9846,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 	_getHtmlParts_gear ({mon}) {
 		const pt = Renderer.monster.getGearPart(mon);
 		if (!pt) return "";
-		return `<p><b title="Immunities">装备</b> ${pt}</p>`;
+		return `<p><b>装备</b> ${pt}</p>`;
 	}
 
 	/* ----- */
@@ -9932,6 +9990,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 
 Renderer.monster = class {
 	static CHILD_PROPS = ["action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting"];
+	static CHILD_PROPS__SPELLCASTING_DISPLAY_AS = ["trait", "action", "bonus", "reaction", "legendary", "mythic"];
 
 	/* -------------------------------------------- */
 
@@ -9940,7 +9999,7 @@ Renderer.monster = class {
 		const shortName = isUseDisplayName ? (mon._displayShortName ?? mon.shortName) : mon.shortName;
 
 		// const prefix = mon.isNamedCreature ? "" : isTitleCase || isSentenceCase ? "The " : "the ";
-		const prefix = ""
+		const prefix = "";
 		if (shortName === true) return `${prefix}${name}`;
 		else if (shortName) return `${prefix}${!prefix && isTitleCase ? shortName.toTitleCase() : shortName.toLowerCase()}`;
 
@@ -10543,15 +10602,16 @@ Renderer.monster = class {
 
 	/* -------------------------------------------- */
 
-	static getImmunitiesCombinedPart (mon) {
+	static getImmunitiesCombinedPart (mon, {isPlainText = false} = {}) {
 		if (!mon.immune && !mon.conditionImmune) return "";
 
-		const ptImmune = mon.immune ? Parser.getFullImmRes(mon.immune, {isTitleCase: true}) : "";
-		const ptConditionImmune = mon.conditionImmune ? Parser.getFullCondImm(mon.conditionImmune, {isTitleCase: true}) : "";
+		const ptImmune = mon.immune ? Parser.getFullImmRes(mon.immune, {isTitleCase: true, isPlainText}) : "";
+		const ptConditionImmune = mon.conditionImmune ? Parser.getFullCondImm(mon.conditionImmune, {isTitleCase: true, isPlainText}) : "";
 
 		const hasSemi = ptImmune && ptConditionImmune && (ptImmune.includes(";") || ptConditionImmune.includes(";"));
+		const joiner = !hasSemi || !isPlainText ? "; " : `<span class="italic">;</span> `;
 
-		return [ptImmune, ptConditionImmune].filter(Boolean).join(hasSemi ? `<span class="italic">;</span> ` : "; ");
+		return [ptImmune, ptConditionImmune].filter(Boolean).join(joiner);
 	}
 
 	/* -------------------------------------------- */
@@ -13829,8 +13889,8 @@ Renderer.charoption = class {
 	}
 
 	static _OPTION_TYPE_ENTRIES = {
-		"RF:B": I18nUtil.LANGUAGES_INDEX == "zh_CN" ? `{@note 你可以用此特性来替换背景中的标准特性。}` : `{@note You may replace the standard feature of your background with this feature.}`,
-		"CS": I18nUtil.LANGUAGES_INDEX == "zh_CN" ? `{@note 参阅{@adventure 角色秘密|IDRotF|0|角色秘密}章节。}` : `{@note See the {@adventure Character Secrets|IDRotF|0|character secrets} section for more information.}`,
+		"RF:B": I18nUtil.LANGUAGES_INDEX === "zh_CN" ? `{@note 你可以用此特性来替换背景中的标准特性。}` : `{@note You may replace the standard feature of your background with this feature.}`,
+		"CS": I18nUtil.LANGUAGES_INDEX === "zh_CN" ? `{@note 参阅{@adventure 角色秘密|IDRotF|0|角色秘密}章节。}` : `{@note See the {@adventure Character Secrets|IDRotF|0|character secrets} section for more information.}`,
 	};
 
 	static getOptionTypePreText (ent) {
@@ -14841,7 +14901,7 @@ Renderer.generic = class {
 					case "instant":
 						return `${I18nUtil.get("page.spells.instantaneous")}${ptCondition}`;
 					case "timed":
-						if (I18nUtil.LANGUAGES_INDEX == "zh_CN") {
+						if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
 							return `${duration.concentration ? `{@status ${I18nUtil.get("page.spells.concentration")}${ptSrcStatus}}, ` : ""}${duration.concentration || duration.duration.upTo ? "至多" : ""}${duration.duration.amount} ${Parser.spTimeUnitToFull(duration.duration.type)}${ptCondition}`;
 						}
 						return `${duration.concentration ? `{@status ${I18nUtil.get("page.spells.concentration")}${ptSrcStatus}}, ` : ""}${duration.concentration ? "u" : duration.duration.upTo ? "U" : ""}${duration.concentration || duration.duration.upTo ? "p to " : ""}${duration.duration.amount} ${duration.duration.amount === 1 ? duration.duration.type : `${duration.duration.type}s`}${ptCondition}`;
@@ -14939,40 +14999,41 @@ Renderer.hover = class {
 	static _getNextId () { return ++Renderer.hover._lastId; }
 
 	static _doInit () {
-		if (!Renderer.hover._isInit) {
-			Renderer.hover._isInit = true;
+		if (Renderer.hover._isInit) return;
+		Renderer.hover._isInit = true;
 
-			$(document.body).on("click", () => Renderer.hover.cleanTempWindows());
+		document.body.addEventListener("click", () => {
+			Renderer.hover.cleanTempWindows();
+		});
 
-			Renderer.hover._contextMenu = ContextUtil.getMenu([
-				new ContextUtil.Action(
-					"Maximize All",
-					() => {
-						const $permWindows = $(`.hoverborder[data-perm="true"]`);
-						$permWindows.attr("data-display-title", "false");
-					},
-				),
-				new ContextUtil.Action(
-					"Minimize All",
-					() => {
-						const $permWindows = $(`.hoverborder[data-perm="true"]`);
-						$permWindows.attr("data-display-title", "true");
-					},
-				),
-				null,
-				new ContextUtil.Action(
-					"Close Others",
-					() => {
-						const hoverId = Renderer.hover._contextMenuLastClicked?.hoverId;
-						Renderer.hover._doCloseAllWindows({hoverIdBlocklist: new Set([hoverId])});
-					},
-				),
-				new ContextUtil.Action(
-					"Close All",
-					() => Renderer.hover._doCloseAllWindows(),
-				),
-			]);
-		}
+		Renderer.hover._contextMenu = ContextUtil.getMenu([
+			new ContextUtil.Action(
+				"Maximize All",
+				() => {
+					const $permWindows = $(`.hoverborder[data-perm="true"]`);
+					$permWindows.attr("data-display-title", "false");
+				},
+			),
+			new ContextUtil.Action(
+				"Minimize All",
+				() => {
+					const $permWindows = $(`.hoverborder[data-perm="true"]`);
+					$permWindows.attr("data-display-title", "true");
+				},
+			),
+			null,
+			new ContextUtil.Action(
+				"Close Others",
+				() => {
+					const hoverId = Renderer.hover._contextMenuLastClicked?.hoverId;
+					Renderer.hover._doCloseAllWindows({hoverIdBlocklist: new Set([hoverId])});
+				},
+			),
+			new ContextUtil.Action(
+				"Close All",
+				() => Renderer.hover._doCloseAllWindows(),
+			),
+		]);
 	}
 
 	static cleanTempWindows () {
@@ -15013,9 +15074,9 @@ Renderer.hover = class {
 		return Renderer.hover._eleCache.get(key);
 	}
 
-	static _handleGenericMouseOverStart ({evt, ele}) {
+	static _handleGenericMouseOverStart ({evt, ele, opts}) {
 		// Don't open on small screens unless forced
-		if (Renderer.hover.isSmallScreen(evt) && !evt.shiftKey) return;
+		if (Renderer.hover.isSmallScreen(evt) && !evt.shiftKey && !opts?.isForceOpenPermanent) return;
 
 		Renderer.hover.cleanTempWindows();
 
@@ -15027,7 +15088,7 @@ Renderer.hover = class {
 
 		meta.isHovered = true;
 		meta.isLoading = true;
-		meta.isPermanent = evt.shiftKey;
+		meta.isPermanent = evt.shiftKey || opts?.isForceOpenPermanent || false;
 
 		return meta;
 	}
@@ -15056,7 +15117,7 @@ Renderer.hover = class {
 			`onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)"`,
 			`onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)"`,
 			`onmousemove="Renderer.hover.handleLinkMouseMove(event, this)"`,
-			`onclick="Renderer.hover.handleLinkClick(event, this)"`,
+			`onclick="Renderer.hover.handleLinkClick(event, this${isFauxPage ? `, {isForceOpenPermanent: true}` : ``})"`,
 			`onwheel="Renderer.hover.handleLinkWheel(event, this)"`,
 			`ondragstart="Renderer.hover.handleLinkDragStart(event, this)"`,
 			`data-vet-page="${page.qq()}"`,
@@ -15086,30 +15147,14 @@ Renderer.hover = class {
 	static async pHandleLinkMouseOver (evt, ele, opts) {
 		Renderer.hover._doInit();
 
-		let page, source, hash, preloadId, customHashId, isFauxPage, isAllowRedirect;
-		if (opts) {
-			page = opts.page;
-			source = opts.source;
-			hash = opts.hash;
-			preloadId = opts.preloadId;
-			customHashId = opts.customHashId;
-			isFauxPage = !!opts.isFauxPage;
-			isAllowRedirect = !!opts.isAllowRedirect;
-		} else {
-			({
-				page,
-				source,
-				hash,
-				preloadId,
-				isFauxPage,
-				isAllowRedirect,
-			} = Renderer.hover.getLinkElementData(ele));
-		}
+		const linkData = Renderer.hover._pHandleLinkMouseOver_getLinkData({ele, opts});
+		let {page, source, hash} = linkData;
+		const {preloadId, customHashId, isFauxPage, isAllowRedirect} = linkData;
 
 		const redirectMeta = await this._pHandleLinkMouseOver_pGetVersionRedirectMeta({page, source, hash, preloadId, customHashId, isAllowRedirect});
 		if (redirectMeta != null) ({page, source, hash} = redirectMeta);
 
-		let meta = Renderer.hover._handleGenericMouseOverStart({evt, ele});
+		let meta = Renderer.hover._handleGenericMouseOverStart({evt, ele, opts});
 		if (meta == null) return;
 
 		if (EventUtil.isCtrlMetaKey(evt)) meta.isFluff = true;
@@ -15199,6 +15244,22 @@ Renderer.hover = class {
 			const fnBind = Renderer.hover.getFnBindListenersCompact(page);
 			if (fnBind && toRender) fnBind(toRender, $content);
 		}
+	}
+
+	static _pHandleLinkMouseOver_getLinkData ({ele, opts}) {
+		if (opts?.isSpecifiedLinkData) {
+			return {
+				page: opts.page,
+				source: opts.source,
+				hash: opts.hash,
+				preloadId: opts.preloadId,
+				customHashId: opts.customHashId,
+				isFauxPage: !!opts.isFauxPage,
+				isAllowRedirect: !!opts.isAllowRedirect,
+			};
+		}
+
+		return Renderer.hover.getLinkElementData(ele);
 	}
 
 	static async _pHandleLinkMouseOver_pGetVersionRedirectMeta ({page, source, hash, preloadId, customHashId, isAllowRedirect}) {
@@ -15336,7 +15397,12 @@ Renderer.hover = class {
 		ele.style.cursor = "";
 	}
 
-	static handleLinkClick (evt, ele) {
+	static handleLinkClick (evt, ele, {isForceOpenPermanent = false} = {}) {
+		// Open faux pages as permanent hover windows
+		if (isForceOpenPermanent) {
+			Renderer.hover.pHandleLinkMouseOver(evt, ele, {isForceOpenPermanent});
+		}
+
 		// Close the window (if not permanent)
 		// Note that this prevents orphan windows when e.g. clicking a specific variant on an Items page magicvariant
 		Renderer.hover.handleLinkMouseLeave(evt, ele);
@@ -15510,7 +15576,7 @@ Renderer.hover = class {
 			win._IS_POPOUT = true;
 			win.document.write(`
 				<!DOCTYPE html>
-				<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
+				<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getClassNamesStyleTheme() : ""}"><head>
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 					<title>${opts.title}</title>
 					${[...document.querySelectorAll(`link[rel="stylesheet"][href]`)].map(ele => ele.outerHTML).join("\n")}
@@ -15564,10 +15630,9 @@ Renderer.hover = class {
 
 			win.Renderer = Renderer;
 
-			let ticks = 50;
-			while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
+			win.document.close();
 
-			win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
+			win._wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
 		}
 
 		let $cpyContent;
@@ -15577,7 +15642,10 @@ Renderer.hover = class {
 			$cpyContent = $content.clone(true, true);
 		}
 
-		$cpyContent.appendTo(win.$wrpHoverContent.empty());
+		win._wrpHoverContent.innerHTML = "";
+		$cpyContent.appendTo(win._wrpHoverContent);
+
+		return win;
 	}
 
 	/* -------------------------------------------- */
@@ -15636,48 +15704,48 @@ Renderer.hover = class {
 		const drag = {};
 		const eventChannel = new EventTarget();
 
-		const brdrTopRightResize = ee`<div class="hoverborder__resize-ne"></div>`
+		const brdrTopRightResize = ee`<div class="hoverborder__resize-ne ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1, isResizeOnlyWidth}));
 		if (isResizeOnlyWidth) brdrTopRightResize.hideVe();
 
-		const brdrRightResize = ee`<div class="hoverborder__resize-e"></div>`
+		const brdrRightResize = ee`<div class="hoverborder__resize-e ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 2, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 2, isResizeOnlyWidth}));
 
-		const brdrBottomRightResize = ee`<div class="hoverborder__resize-se"></div>`
+		const brdrBottomRightResize = ee`<div class="hoverborder__resize-se ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 3, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 3, isResizeOnlyWidth}));
 		if (isResizeOnlyWidth) brdrBottomRightResize.hideVe();
 
-		const brdrBtmResize = ee`<div class="hoverborder__resize-s"></div>`
+		const brdrBtmResize = ee`<div class="hoverborder__resize-s ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 4, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 4, isResizeOnlyWidth}));
 		if (isResizeOnlyWidth) brdrBtmResize.hideVe();
 
-		const brdrBtm = ee`<div class="hoverborder hoverborder--btm ${opts.isBookContent ? "hoverborder-book" : ""}">${brdrBtmResize}</div>`;
+		const brdrBtm = ee`<div class="hoverborder hoverborder--btm ${opts.isBookContent ? "hoverborder-book" : ""} ve-touch-action-none">${brdrBtmResize}</div>`;
 		if (isHideBottomBorder) brdrBtm.hideVe();
 
-		const brdrBtmLeftResize = ee`<div class="hoverborder__resize-sw"></div>`
+		const brdrBtmLeftResize = ee`<div class="hoverborder__resize-sw ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 5, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 5, isResizeOnlyWidth}));
 		if (isResizeOnlyWidth) brdrBtmLeftResize.hideVe();
 
-		const brdrLeftResize = ee`<div class="hoverborder__resize-w"></div>`
+		const brdrLeftResize = ee`<div class="hoverborder__resize-w ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 6, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 6, isResizeOnlyWidth}));
 
-		const brdrTopLeftResize = ee`<div class="hoverborder__resize-nw"></div>`
+		const brdrTopLeftResize = ee`<div class="hoverborder__resize-nw ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 7, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 7, isResizeOnlyWidth}));
 		if (isResizeOnlyWidth) brdrTopLeftResize.hideVe();
 
-		const brdrTopResize = ee`<div class="hoverborder__resize-n"></div>`
+		const brdrTopResize = ee`<div class="hoverborder__resize-n ve-touch-action-none"></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 8, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 8, isResizeOnlyWidth}));
 		if (isResizeOnlyWidth) brdrTopResize.hideVe();
 
-		const brdrTop = ee`<div class="hoverborder hoverborder--top ${opts.isBookContent ? "hoverborder-book" : ""}" ${opts.isPermanent ? `data-perm="true"` : ""}></div>`
+		const brdrTop = ee`<div class="hoverborder hoverborder--top ${opts.isBookContent ? "hoverborder-book" : ""} ve-touch-action-none" ${opts.isPermanent ? `data-perm="true"` : ""}></div>`
 			.onn("mousedown", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 9, isResizeOnlyWidth}))
 			.onn("touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 9, isResizeOnlyWidth}))
 			.onn("contextmenu", (evt) => {
@@ -15838,7 +15906,7 @@ Renderer.hover = class {
 		hoverWindow.doMaximize = Renderer.hover._getShowWindow_doMaximize.bind(this, {$brdrTop: brdrTop, $hov});
 		hoverWindow.doZIndexToFront = Renderer.hover._getShowWindow_doZIndexToFront.bind(this, {$hov, hoverWindow, hoverId});
 
-		hoverWindow.getPosition = Renderer.hover._getShowWindow_getPosition.bind(this, {$hov, $wrpContent, position});
+		hoverWindow.getPosition = Renderer.hover._getShowWindow_getPosition.bind(this, {$hov, hoverWindow, $wrpContent, position});
 
 		hoverWindow.$setContent = ($contentNxt) => $wrpContent.empty().append($contentNxt);
 
@@ -15937,8 +16005,9 @@ Renderer.hover = class {
 	}
 
 	static async _getShowWindow_pDoPopout ({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content}, {evt} = {}) {
-		await Renderer.hover.pDoShowBrowserWindow($content, opts);
+		const winPopup = await Renderer.hover.pDoShowBrowserWindow($content, opts);
 		Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
+		hoverWindow._winPopup = winPopup;
 	}
 
 	static _getShowWindow_setPosition ({$hov, $wrpContent, position, eventChannel}, positionNxt) {
@@ -16050,7 +16119,14 @@ Renderer.hover = class {
 		eventChannel.dispatchEvent(new Event("resize"));
 	}
 
-	static _getShowWindow_getPosition ({$hov, $wrpContent}) {
+	static _getShowWindow_getPosition ({$hov, hoverWindow, $wrpContent}) {
+		if (hoverWindow._winPopup && !hoverWindow._winPopup.closed) {
+			return {
+				wWrpContent: $(hoverWindow._winPopup.document.body).width(),
+				hWrapContent: $(hoverWindow._winPopup.document.body).height(),
+			};
+		}
+
 		return {
 			wWrpContent: $wrpContent.width(),
 			hWrapContent: $wrpContent.height(),
@@ -16103,7 +16179,18 @@ Renderer.hover = class {
 	static getInlineHover (entry, opts) {
 		return {
 			// Re-use link handlers, as the inline version is a simplified version
-			html: `onmouseover="Renderer.hover.handleInlineMouseOver(event, this)" onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)" onmousemove="Renderer.hover.handleLinkMouseMove(event, this)" data-vet-entry="${JSON.stringify(entry).qq()}" ${opts ? `data-vet-opts="${JSON.stringify(opts).qq()}"` : ""} ${Renderer.hover.getPreventTouchString()}`,
+			html: [
+				`onmouseover="Renderer.hover.handleInlineMouseOver(event, this)"`,
+				`onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)"`,
+				`onmousemove="Renderer.hover.handleLinkMouseMove(event, this)"`,
+				`onclick="Renderer.hover.handleLinkClick(event, this)"`,
+				`onwheel="Renderer.hover.handleLinkWheel(event, this)"`,
+				`data-vet-entry="${JSON.stringify(entry).qq()}"`,
+				`${opts ? `data-vet-opts="${JSON.stringify(opts).qq()}"` : ""}`,
+				`${Renderer.hover.getPreventTouchString()}`,
+			]
+				.filter(Boolean)
+				.join(" "),
 		};
 	}
 

@@ -1,6 +1,6 @@
 import fs from "fs";
 import * as ut from "./util.js";
-import "./locale/i18n.js"
+import "./locale/i18n.js";
 import "../js/parser.js";
 import "../js/utils.js";
 import "../js/render.js";

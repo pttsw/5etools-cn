@@ -1,7 +1,7 @@
-import { transferLangConfig } from '../../config.js'
+import { transferLangConfig } from "../../config.js";
 
 const config = {
 
-}
+};
 
-export default transferLangConfig(config)
+export default transferLangConfig(config);

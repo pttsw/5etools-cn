@@ -209,12 +209,10 @@ export class LootGenOutput {
 			this._artObjects?.length ? this._artObjects.map(it => it.type * it.count * 100).sum() : 0,
 		].sum();
 
-		if (I18nUtil.LANGUAGES_INDEX == "zh_CN") {
+		if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
 			return ee`<li class="italic ve-muted">总计价值${(totalValue / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")}的货币、艺术品和/或宝石，如下：</li>`;
 		}
 		return ee`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} worth of coins, art objects, and/or gems, as follows:</li>`;
-
-
 	}
 
 	_render_getPtCoins () {
@@ -238,7 +236,7 @@ export class LootGenOutput {
 		if (!this._dragonMundaneItems) return null;
 
 		return ee`
-			<li>${this._dragonMundaneItems.count} ${I18nUtil.LANGUAGES_INDEX == "zh_CN" ? "个普通物品": `mundane item${this._dragonMundaneItems.count !== 1 ? "s" : ""}`}:</li>
+			<li>${this._dragonMundaneItems.count} ${I18nUtil.LANGUAGES_INDEX === "zh_CN" ? "个普通物品" : `mundane item${this._dragonMundaneItems.count !== 1 ? "s" : ""}`}:</li>
 			<ul>
 				${this._dragonMundaneItems.breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>

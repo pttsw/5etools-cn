@@ -325,6 +325,7 @@ export class InitiativeTrackerNetworking {
 		});
 
 		const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
+		const $btnAltAddPlayer = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">添加玩家</button>`).click(() => $btnAddClient.click());
 		const $btnAltGenAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">生成全部</button>`).click(() => $btnGenServerTokens.click());
 		const $btnAltCopyAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">复制服务端Tokens</button>`).click(() => $btnCopyServers.click());
 		$$`<div class="ve-flex w-100">
@@ -332,7 +333,7 @@ export class InitiativeTrackerNetworking {
 				<p>
 				先攻追踪器玩家视图是一个P2P（即无服务器）系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
 				<ol>
-						<li>添加所需数量的玩家，并输入玩家姓名（最好唯一）。</li>
+						<li>添加所需数量的玩家("${$btnAltAddPlayer}")，并输入玩家姓名（最好唯一）。</li>
 						<li>点击"${$btnAltGenAll},"来为每个玩家生成"服务端token"。 你可以点击"${$btnAltCopyAll}" 来将他们一起复制，或者点击"服务端Token"的值来一个一个复制。将这些Token发给你的玩家。每个玩家需要将他们的Token粘贴到<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>并按照其中的说明进行操作。</li>
 						<li>
 							获得每位玩家的"客户端token"，然后对于每个Token:

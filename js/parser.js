@@ -318,8 +318,8 @@ Parser.SPEED_TO_CN = {
 	"hover": "悬浮",
 	"swim": "游泳",
 	"walk": "步行",
-	"burrow": "掘穴"
-}
+	"burrow": "掘穴",
+};
 Parser._getSpeedString_addSpeed = ({prop, speed, isMetric, unit, stack, styleHint}) => {
 	const ptName = Parser._getSpeedString_getSpeedName({prop, styleHint});
 	const ptValue = Parser._getSpeedString_getVal({prop, speed, isMetric});
@@ -719,7 +719,7 @@ Parser.sourceJsonToMarkerHtml = function (source, {isList = false, isStatsName =
 
 Parser.stringToSlug = function (str) {
 	// return str.trim().toLowerCase().toAscii().replace(/[^\w ]+/g, "").replace(/ +/g, "-");
-	return str.trim().toLowerCase().toAscii().toUrlified().replace(/[^\w ]+/g, "").replace(/ +/g, "-")
+	return str.trim().toLowerCase().toAscii().toUrlified().replace(/[^\w ]+/g, "").replace(/ +/g, "-");
 };
 
 Parser.stringToCasedSlug = function (str) {
@@ -736,8 +736,8 @@ Parser.CLASSES_TO_CN = {
 	"Ranger": "游侠",
 	"Sorcerer": "术士",
 	"Warlock": "邪术师",
-	"Wizard": "法师"
-}
+	"Wizard": "法师",
+};
 Parser.itemValueToFull = function (item, opts = { isShortForm: false, isSmallUnits: false }) {
 	return Parser._moneyToFull(item, "value", "valueMult", opts);
 };
@@ -1265,19 +1265,19 @@ Parser.getOrdinalForm = function (i) {
 	// if (j === 2 && k !== 12) return `${i}nd`;
 	// if (j === 3 && k !== 13) return `${i}rd`;
 	// return `${i}th`;
-	return `${i}`
+	return `${i}`;
 };
 
 Parser.spLevelToFull = function (level) {
 	if (level === 0) return "戏法";
-	else return Parser.getOrdinalForm(level) + '环';
+	else return `${Parser.getOrdinalForm(level)}环`;
 };
 
 Parser.getArticle = function (str) {
 	str = `${str}`;
 	str = str.replace(/\d+/g, (...m) => Parser.numberToText(m[0]));
 	// return /^[aeiou]/i.test(str) ? "an" : "a";
-	return "一个"
+	return "一个";
 };
 
 Parser.spLevelToFullLevelText = function (level, { isDash = false, isPluralCantrips = true } = {}) {
@@ -1533,6 +1533,7 @@ Parser.spRangeToFull._getAreaStyleString = function (range) {
 };
 
 Parser.getSingletonUnit = function (unit, isShort) {
+	if (!unit) return unit;
 	switch (unit) {
 		case Parser.UNT_INCHES:
 			return isShort ? "in." : "inch";
@@ -2274,9 +2275,9 @@ Parser.OPT_FEATURE_TYPE_TO_FULL = {
 	MM: I18nUtil.get("page.optionalfeatures.metamagic"),
 	"MV": I18nUtil.get("page.optionalfeatures.maneuver"),
 	"MV:B": I18nUtil.get("page.optionalfeatures.maneuver__battle_master"),
-	"MV:C2-UA": I18nUtil.get("page.optionalfeatures.maneuver__cavalier") + " V2 (UA)",
-	"AS:V1-UA": I18nUtil.get("page.optionalfeatures.arcane_shot") + ", V1 (UA)",
-	"AS:V2-UA": I18nUtil.get("page.optionalfeatures.arcane_shot") + ", V2 (UA)",
+	"MV:C2-UA": `${I18nUtil.get("page.optionalfeatures.maneuver__cavalier")} V2 (UA)`,
+	"AS:V1-UA": `${I18nUtil.get("page.optionalfeatures.arcane_shot")}, V1 (UA)`,
+	"AS:V2-UA": `${I18nUtil.get("page.optionalfeatures.arcane_shot")}, V2 (UA)`,
 	"AS": I18nUtil.get("page.optionalfeatures.arcane_shot"),
 	OTH: I18nUtil.get("page.optionalfeatures.other"),
 	"FS:F": I18nUtil.get("page.optionalfeatures.fighting_style__fighter"),
@@ -2399,7 +2400,7 @@ Parser.RARITIES_TO_CN = {
 	"varies": "多种",
 	"unknown": "不明",
 	"unknown (magic)": "不明(魔法)",
-	"other": "其他"
+	"other": "其他",
 };
 
 Parser.CAT_ID_CREATURE = 1;
@@ -3044,8 +3045,8 @@ Parser.ARMOR_ABV_TO_FULL = {
 Parser.ARMOR_FULL_TO_CN = {
 	"light": "轻",
 	"medium": "中",
-	"heavy": "重"
-}
+	"heavy": "重",
+};
 
 Parser.WEAPON_ABV_TO_FULL = {
 	"s.": "简易",
@@ -3230,6 +3231,7 @@ Parser.SRC_DrDe_SD = "DrDe-SD";
 Parser.SRC_DrDe_ACfaS = "DrDe-ACfaS";
 Parser.SRC_DrDe_DotS = "DrDe-DotSC";
 Parser.SRC_HotB = "HotB";
+Parser.SRC_WttHC = "WttHC";
 Parser.SRC_TD = "TD";
 Parser.SRC_SCREEN = "Screen";
 Parser.SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
@@ -3417,7 +3419,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_VEoR] = "维克那：毁灭前夜";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XPHB] = "玩家手册(2024)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XDMG] = "地下城城主指南(2024)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XMM] = "怪物图鉴(2025)";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe] = I18nUtil.get(`parser.source.${Parser.SRC_DrDe}`);
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe] = "巨龙迷城";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_DaS] = "Death at Sunset";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_BD] = "Baker's Doesn't";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_TWoO] = "The Will of Orcus";
@@ -3429,6 +3431,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_SD] = "Shivering Death";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_ACfaS] = "A Copper for a Song";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_DotS] = "Dragons of the Sandstone City";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HotB] = "边陲之地的英雄们";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_WttHC] = "怪奇物语：欢迎来到地狱火俱乐部";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "Tarot Deck";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN}`);
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_WILDERNESS_KIT}`);
@@ -3603,6 +3606,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_SD] = "DrDe-SD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_ACfaS] = "DrDe-ACfaS";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_DotS] = "DrDe-DotSC";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HotB] = "HotB";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_WttHC] = "WttHC";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_TD] = "TD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN] = "Scr'14";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN_WILDERNESS_KIT] = "ScrWild";
@@ -3776,6 +3780,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_SD] = Parser.SOURCE_JSON_TO_DATE[Pars
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_ACfaS] = Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe];
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_DotS] = Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe];
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HotB] = "2025-09-16";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_WttHC] = "2025-10-07";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_TD] = "2022-05-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
@@ -3929,6 +3934,7 @@ Parser.SOURCES_ADVENTURES = new Set([
 	Parser.SRC_DrDe_ACfaS,
 	Parser.SRC_DrDe_DotS,
 	Parser.SRC_HotB,
+	Parser.SRC_WttHC,
 
 	Parser.SRC_AWM,
 ]);
@@ -4057,6 +4063,7 @@ Parser.SOURCES_COMEDY = new Set([
 	Parser.SRC_ScoEE,
 	Parser.SRC_HBTD,
 	Parser.SRC_BQGT,
+	Parser.SRC_WttHC,
 ]);
 
 // Any opinionated set of sources that are "other settings"
@@ -4097,6 +4104,7 @@ Parser.SOURCES_NON_FR = new Set([
 	Parser.SRC_ScoEE,
 	Parser.SRC_HBTD,
 	Parser.SRC_BQGT,
+	Parser.SRC_WttHC,
 ]);
 
 // endregion
@@ -4255,6 +4263,7 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	Parser.SRC_DrDe_ACfaS,
 	Parser.SRC_DrDe_DotS,
 	Parser.SRC_HotB,
+	Parser.SRC_WttHC,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src.toLowerCase()] = src;
@@ -4318,7 +4327,7 @@ Parser.PROP_TO_DISPLAY_NAME = {
 	"lairActions": "Lair Action",
 	"regionalEffects": "Regional Effect",
 	"condition": "状态",
-	"disease": "疾病"
+	"disease": "疾病",
 };
 Parser.getPropDisplayName = function (prop, {suffix = ""} = {}) {
 	if (Parser.PROP_TO_DISPLAY_NAME[prop]) return `${Parser.PROP_TO_DISPLAY_NAME[prop]}${suffix}`;
@@ -4464,8 +4473,8 @@ Parser.LANGUAGES_TO_CN = {
 	"terran": "土族语",
 	"thieves' cant": "盗贼黑话",
 	"sylvan": "木族语",
-	"undercommon": "地底通用语"
-}
+	"undercommon": "地底通用语",
+};
 
 Parser.TOOLS_TO_CN = {
 	"alchemist's supplies": "炼金工具",
@@ -4488,7 +4497,7 @@ Parser.TOOLS_TO_CN = {
 	"vehicles (land)": "载具(陆运)",
 	"vehicles (space)": "载具(航空)",
 	"vehicles (water)": "载具(水运)",
-}
+};
 
 Parser.MON_TAG_TO_CN = {
 	"aarakocra": "阿兰寇拉鹰人",
@@ -4592,7 +4601,7 @@ Parser.MON_TAG_TO_CN = {
 	"genie": "巨灵",
 	"lycanthrope": "兽化人",
 
-}
+};
 
 Parser.MON_TAG_PREFIX_TO_CN = {
 	"fire": "火",
@@ -4614,7 +4623,7 @@ Parser.MON_TAG_PREFIX_TO_CN = {
 	"damaran": "达马拉",
 	"chondathan": "琼达斯",
 	"shou": "受国",
-}
+};
 
 Parser.MON_SIDEKICK_TO_CN = {
 	"warrior": "武者",
@@ -4623,8 +4632,8 @@ Parser.MON_SIDEKICK_TO_CN = {
 	"attacker": "攻击手",
 	"defender": "防御者",
 	"healer": "治疗者",
-	"mage": "魔术师"
-}
+	"mage": "魔术师",
+};
 
 Parser.translateKeyInMapToDisplay = function (map, key) {
 	if (typeof key === "string" || key instanceof String) {
@@ -4634,7 +4643,7 @@ Parser.translateKeyInMapToDisplay = function (map, key) {
 		}
 	}
 	return key;
-}
+};
 
 Parser.classKeyToDisplay = {};
 Parser.classKeyToDisplay["wizard"] = "法师";
@@ -4663,7 +4672,7 @@ Parser.ClassToDisplay = function (c) {
 		return `${c_name} ${source}`;
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c);
-}
+};
 
 // subclass
 Parser.subclassKeyToDisplay = {};
@@ -4798,7 +4807,7 @@ Parser.SubclassToDisplay = function (sc) {
 		return `${sc_name} ${sc_match[2]}`;
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc);
-}
+};
 
 Parser.cultsBoonsTypeToCN = {};
 Parser.cultsBoonsTypeToCN["Demonic"] = "恶魔";
@@ -4806,7 +4815,7 @@ Parser.cultsBoonsTypeToCN["Elemental"] = "元素";
 Parser.cultsBoonsTypeToCN["Elder Evil"] = "上古邪物";
 Parser.cultsBoonsTypeToCN["Diabolical"] = "魔鬼";
 
-Parser.CultsBoonsTypeToCN = function(type) {
+Parser.CultsBoonsTypeToCN = function (type) {
 	return Parser.cultsBoonsTypeToCN[type] || type;
-}
+};
 // endregion

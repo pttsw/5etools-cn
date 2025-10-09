@@ -35,9 +35,9 @@ export class StatGenUtilAdditionalFeats {
 
 					if (featSet.anyFromCategory) {
 						const cnt = featSet.anyFromCategory.count || 1;
-						if (I18nUtil.LANGUAGES_INDEX == "zh_CN") {
+						if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
 							out.push(`选择任意${Parser.featCategoryToFull(featSet.anyFromCategory.category)}${cnt > 1 ? ` ${Parser.numberToText(featSet.any)}个` : ""}`);
-						}else {
+						} else {
 							out.push(`Choose any ${Parser.featCategoryToFull(featSet.anyFromCategory.category)}${cnt > 1 ? ` ${Parser.numberToText(featSet.any)}` : ""}`);
 						}
 					}

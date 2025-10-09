@@ -6,8 +6,8 @@
 
 import fs, { symlinkSync } from "fs";
 import path from "path";
-import "../js/parser.js"
-import "../js/utils.js"
+import "../js/parser.js";
+import "../js/utils.js";
 
 function getTokenUrl (ent, name, mediaDir) {
 	if (ent.tokenUrl) return ent.tokenUrl; // TODO(Future) legacy; remove
@@ -15,10 +15,10 @@ function getTokenUrl (ent, name, mediaDir) {
 		// throw new Error(`Could not process ent.token!`);
 		return `./img/${mediaDir}/${ent.token.source}/${Parser.nameToTokenName(ent.token.name)}.webp`;
 	}
-		if (ent.tokenHref) {
-			throw new Error(`Could not process ent.token!`);
-			// return Renderer.utils.getEntryMediaUrl(ent, "tokenHref", "img");
-		}
+	if (ent.tokenHref) {
+		throw new Error(`Could not process ent.token!`);
+		// return Renderer.utils.getEntryMediaUrl(ent, "tokenHref", "img");
+	}
 	return `./img/${mediaDir}/${ent.source}/${Parser.nameToTokenName(name)}.webp`;
 }
 
@@ -41,24 +41,24 @@ function cleanBestiaryFluffImages () {
 			.replace(/\//g, " ");
 	}
 
-	const folderPath = './data/bestiary'
-	const files = fs.readdirSync(folderPath)
+	const folderPath = "./data/bestiary";
+	const files = fs.readdirSync(folderPath);
 
-	files.forEach( (file) => {
+	files.forEach((file) => {
 		const filePath = path.join(folderPath, file);
 		const fileExt = path.extname(file).toLowerCase();
-		
-		if (file.startsWith('bestiary-')) {
+
+		if (file.startsWith("bestiary-")) {
 			const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 			data.monster.forEach(mon => {
-				if(mon.hasToken) {
-					const tokenUrl = getTokenUrl(mon, mon.ENG_name, 'bestiary/tokens')
-					const symlinkUrl = getTokenUrl(mon, mon.name, 'bestiary/tokens');
+				if (mon.hasToken) {
+					const tokenUrl = getTokenUrl(mon, mon.ENG_name, "bestiary/tokens");
+					const symlinkUrl = getTokenUrl(mon, mon.name, "bestiary/tokens");
 					if (fs.existsSync(tokenUrl) && tokenUrl !== symlinkUrl) {
 						if (fs.existsSync(symlinkUrl)) {
-							fs.rmSync(symlinkUrl)
+							fs.rmSync(symlinkUrl);
 						}
-						fs.copyFileSync(tokenUrl, symlinkUrl)
+						fs.copyFileSync(tokenUrl, symlinkUrl);
 						// try {
 						// 	const stats = fs.lstatSync(symlinkUrl);
 						// 	if (stats.isSymbolicLink()) {
@@ -77,13 +77,10 @@ function cleanBestiaryFluffImages () {
 						// 	}
 						// }
 					}
-
-					
 				}
-			})
-
+			});
 		}
-	})
+	});
 
 	console.log(`Done!`);
 }

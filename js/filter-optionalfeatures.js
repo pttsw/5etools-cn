@@ -84,7 +84,7 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			cnHeader:"杂项",
+			cnHeader: "杂项",
 			items: ["有简介", "有图片", "传奇", "提供额外法术"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
@@ -93,21 +93,25 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 
 	static _RE_OPTIONALFEATURE_PACT = /^pact of (?:the )?(?<pactName>[^|]+)(?:\|[^|]+)?$/;
 
-	static _mutateForFilters_getPrerequisitePact (ent) {
-		if (!ent.prerequisite) return [];
+	static _mutateForFilters_getPrerequisitesFeaturePact (ent) {
+		if (!ent.prerequisite) return {};
 
-		const out = [];
+		const out = {prereqPact: [], prereqFeature: []};
 
 		for (const prereq of ent.prerequisite) {
-			if (prereq.pact) out.push(prereq.pact);
+			if (prereq.pact) out.prereqPact.push(prereq.pact);
+			if (prereq.feature) out.prereqFeature.push(...prereq.feature);
 
 			// Modern pacts are linked `optionalfeatures`; convert to "pact" filter format
 			if (!prereq.optionalfeature) continue;
 
 			for (const uid of prereq.optionalfeature) {
 				const m = this._RE_OPTIONALFEATURE_PACT.exec(uid);
-				if (!m) continue;
-				out.push(m.groups.pactName.toTitleCase());
+				if (m) {
+					out.prereqPact.push(m.groups.pactName.toTitleCase());
+					continue;
+				}
+				out.prereqFeature.push(uid.split("|")[0].toTitleCase());
 			}
 		}
 
@@ -121,9 +125,11 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 		ent.featureType = ent.featureType && ent.featureType instanceof Array ? ent.featureType : ent.featureType ? [ent.featureType] : ["OTH"];
 		if (ent.prerequisite) {
 			ent._sPrereq = true;
-			ent._fPrereqPact = this._mutateForFilters_getPrerequisitePact(ent);
+			const {prereqPact, prereqFeature} = this._mutateForFilters_getPrerequisitesFeaturePact(ent);
+			ent._fPrereqPact = prereqPact;
+			ent._fPrereqFeature = prereqFeature;
 			ent._fPrereqPatron = ent.prerequisite.filter(it => it.patron).map(it => it.patron);
-			ent._fprereqSpell = ent.prerequisite
+			ent._fPrereqSpell = ent.prerequisite
 				.filter(it => it.spell)
 				.map(prereq => {
 					return (prereq.spell || [])
@@ -146,7 +152,6 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 							return `Any ${ptChoose}`;
 						});
 				});
-			ent._fprereqFeature = ent.prerequisite.filter(it => it.feature).map(it => it.feature);
 			ent._fPrereqLevel = ent.prerequisite.filter(it => it.level).map(PageFilterOptionalFeatures.getLevelFilterItem.bind(PageFilterOptionalFeatures));
 		}
 
@@ -165,8 +170,8 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 		this._typeFilter.addItem(it.featureType);
 		this._pactFilter.addItem(it._fPrereqPact);
 		this._patronFilter.addItem(it._fPrereqPatron);
-		this._spellFilter.addItem(it._fprereqSpell);
-		this._featureFilter.addItem(it._fprereqFeature);
+		this._spellFilter.addItem(it._fPrereqSpell);
+		this._featureFilter.addItem(it._fPrereqFeature);
 		this._miscFilter.addItem(it._fMisc);
 
 		(it._fPrereqLevel || []).forEach(it => {
@@ -192,9 +197,9 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 			[
 				it._fPrereqPact,
 				it._fPrereqPatron,
-				it._fprereqSpell,
+				it._fPrereqSpell,
 				it._fPrereqLevel,
-				it._fprereqFeature,
+				it._fPrereqFeature,
 			],
 			it._fMisc,
 		);
