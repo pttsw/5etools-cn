@@ -125,7 +125,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 2}，触及5尺。{@h}1 穿刺伤害。"
+						"{@atkr m} {@hit 2}，触及5尺。{@h}1点穿刺伤害。"
 					]
 				}
 			],
@@ -194,7 +194,7 @@
 					"ENG_name": "Ritual Sickle",
 					"name": "仪典小镰刀",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}{@damage 1d4 + 2}挥砍伤害外加1点黯蚀伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}{@damage 1d4 + 2}点挥砍伤害外加1点黯蚀伤害。"
 					]
 				}
 			],
@@ -276,21 +276,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"达德尤进行两次攻击，以任意组合使用炽热爪击或法力弦击。"
+						"达德进行两次攻击，以任意组合使用炽热爪击击或法力弦击。"
 					]
 				},
 				{
 					"ENG_name": "Fiery Claw",
 					"name": "炽热爪击",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}8（{@damage 1d8 + 4}）挥砍伤害外加7（{@damage 2d6}）火焰伤害。"
+						"{@atkr m} {@hit 7}，触及5尺。{@h}8（{@damage 1d8 + 4}）点挥砍伤害外加7（{@damage 2d6}）点火焰伤害。"
 					]
 				},
 				{
 					"ENG_name": "Power Chord",
-					"name": "法力弦音",
+					"name": "法力弦击",
 					"entries": [
-						"{@actSave con} {@dc 14}，达德尤120尺内能看见的一个生物。{@actSaveFail} 13（{@damage 3d6 + 3}）雷鸣伤害。"
+						"{@actSave con} {@dc 14}，达德120尺内能看见的一个生物。{@actSaveFail} 13（{@damage 3d6 + 3}）点雷鸣伤害。"
 					]
 				}
 			],
@@ -299,7 +299,7 @@
 					"ENG_name": "Silver Tongue",
 					"name": "巧舌如簧",
 					"entries": [
-						"{@actSave cha} {@dc 14}，达德尤能看见的60尺内一个生物。{@actSaveFail} 该生物获得{@condition 魅惑|XPHB}状态直到达德尤的下个回合开始。"
+						"{@actSave cha} {@dc 14}，达德能看见的60尺内一个生物。{@actSaveFail} 该生物获得{@condition 魅惑|XPHB}状态直到达德的下个回合开始。"
 					]
 				}
 			],
@@ -387,14 +387,14 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}（若目标被恶魔蝙蝠{@condition 受擒|XPHB}则具有{@variantrule 优势|XPHB}），触及5尺。{@h}10（{@damage 2d6 + 3}）穿刺伤害。"
+						"{@atkr m} {@hit 5}（若目标被恶魔蝠{@condition 受擒|XPHB}则具有{@variantrule 优势|XPHB}），触及5尺。{@h}10（{@damage 2d6 + 3}）点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Tentacles",
 					"name": "触须",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）挥砍伤害。如果目标是中型或更小的生物，目标将获得{@condition 受擒|XPHB}状态（逃脱{@dc 13}），来自所有四根触须。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）点挥砍伤害。如果目标是中型或更小的生物，目标将获得{@condition 受擒|XPHB}状态（逃脱{@dc 13}），来自所有四根触须。"
 					]
 				}
 			],
@@ -474,7 +474,7 @@
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"若魔狗的至少一名盟友位于生物5尺内且该盟友不处于{@condition 失能|XPHB}状态，则魔狗对该生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
+						"若恶魔犬的至少一名盟友位于一个生物5尺内且该盟友不处于{@condition 失能|XPHB}状态，则恶魔犬对该生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -483,7 +483,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 1d10 + 3}）穿刺伤害。如果目标是中型或更小的生物，它将陷入{@condition 倒地|XPHB}状态。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 1d10 + 3}）点穿刺伤害。如果目标是中型或更小的生物，它将陷入{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -566,14 +566,14 @@
 					"ENG_name": "Baleful Presence",
 					"name": "凶厄威仪",
 					"entries": [
-						"120尺范围内源自恶魔龙的{@variantrule 光环 [效应区域]|XPHB|光环}内的光源会剧烈闪烁。该区域内{@variantrule 明亮光照|XPHB}的非魔法光源会改为散发{@variantrule 微光光照|XPHB}。"
+						"源自恶魔龙的120尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内的光源会剧烈闪烁。该区域内{@variantrule 明亮光照|XPHB}的非魔法光源会改为散发{@variantrule 微光光照|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"恶魔龙在每回合开始时若至少有1{@variantrule 生命值|XPHB}，则恢复10{@variantrule 生命值|XPHB|生命值}"
+						"恶魔龙在每回合开始时若至少有1点{@variantrule 生命值|XPHB}，则恢复10点{@variantrule 生命值|XPHB|生命值}"
 					]
 				}
 			],
@@ -589,14 +589,14 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及10尺。{@h}11（{@damage 2d6 + 4}）穿刺伤害加4（{@damage 1d8}）强酸伤害。"
+						"{@atkr m} {@hit 7}，触及10尺。{@h}11（{@damage 2d6 + 4}）点穿刺伤害加4（{@damage 1d8}）点强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Acid Breath {@recharge 5}",
 					"name": "强酸吐息 {@recharge 5}",
 					"entries": [
-						"{@actSave dex} {@dc 13}，30尺长，5尺宽的{@variantrule 线状 【效应区域】|XPHB|线状}内的每个生物。{@actSaveFail} 22（{@damage 4d10}）强酸伤害。{@actSaveSuccess} 伤害减半。"
+						"{@actSave dex} {@dc 13}，30尺长，5尺宽的{@variantrule 线状 【效应区域】|XPHB|线状}区域内的每个生物。{@actSaveFail} 22（{@damage 4d10}）点强酸伤害。{@actSaveSuccess} 伤害减半。"
 					]
 				}
 			],
@@ -684,14 +684,14 @@
 					"ENG_name": "Baleful Presence",
 					"name": "凶厄威仪",
 					"entries": [
-						"60尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内源自该衍体的光源会剧烈闪烁。该区域内{@variantrule 明亮光照|XPHB}的非魔法光源会改为散发{@variantrule 微光光照|XPHB}。\r\n"
+						"源自该衍体60尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内的光源会剧烈闪烁。该区域内{@variantrule 明亮光照|XPHB}的非魔法光源会改为散发{@variantrule 微光光照|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"该衍体在每回合开始时若至少有1{@variantrule 生命值|XPHB}生命值，则恢复5{@variantrule 生命值|XPHB|生命值}生命值。"
+						"该衍体在每回合开始时若至少有1点{@variantrule 生命值|XPHB}生命值，则恢复5点{@variantrule 生命值|XPHB|生命值}生命值。"
 					]
 				},
 				{
@@ -707,21 +707,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"该衍体进行二记爪击攻击。"
+						"该衍体进行二次爪击攻击。"
 					]
 				},
 				{
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及10尺。{@h}6（{@damage 1d6 + 3}）挥砍伤害。"
+						"{@atkr m} {@hit 5}，触及10尺。{@h}6（{@damage 1d6 + 3}）点挥砍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害。如果目标是中型或更小的生物，它将陷入{@condition 受擒|XPHB}状态（逃脱{@dc 13}）。当处于{@condition 受擒|XPHB}状态时，目标将陷入{@condition 目盲|XPHB}状态。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）点穿刺伤害。如果目标是中型或更小的生物，它将陷入{@condition 受擒|XPHB}状态（逃脱{@dc 13}）。当处于{@condition 受擒|XPHB}状态时，目标将陷入{@condition 目盲|XPHB}状态。"
 					]
 				}
 			],
@@ -824,21 +824,21 @@
 					"ENG_name": "Ventriloquist",
 					"name": "腹语师",
 					"entries": [
-						"弗利兹宾可以将他的声音从自身1英里范围内的任何地方投射出去。"
+						"弗利兹宾可以将他的声音从自身1里范围内的任何地方投射出去。"
 					]
 				}
 			],
 			"action": [
 				{
 					"ENG_name": "Dazzling Confetti",
-					"name": "炫目彩纸",
+					"name": "炫彩纸屑",
 					"entries": [
-						"{@atkr m,r} {@hit 5}，触及5尺或射程60尺。{@h}10（{@damage 2d6 + 3}）光耀伤害。"
+						"{@atkr m,r} {@hit 5}，触及5尺或射程60尺。{@h}10（{@damage 2d6 + 3}）点光耀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Vanishing Trick (3/Day)",
-					"name": "消失戏法（3次/天）",
+					"name": "消失戏法（3/日）",
 					"entries": [
 						"弗利兹宾获得{@condition 隐形|XPHB}状态，持续10分钟。当弗利兹宾进行攻击检定、造成伤害、获得{@condition 失能|XPHB}状态或被摘掉帽子时，此效果提前结束。"
 					]
@@ -921,7 +921,7 @@
 					"ENG_name": "Death Burst",
 					"name": "临终苦难",
 					"entries": [
-						"老鼠死亡时会爆炸。体质{@variantrule 豁免检定|XPHB} {@dc 11}，老鼠5尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail} 5（{@damage 2d4}）强酸伤害。{@actSaveSuccess} 伤害减半。"
+						"老鼠死亡时会爆炸。体质{@variantrule 豁免检定|XPHB} {@dc 11}，老鼠5尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail} 5（{@damage 2d4}）点强酸伤害。{@actSaveSuccess} 伤害减半。"
 					]
 				}
 			],
@@ -930,7 +930,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}6（{@damage 1d6 + 3}）穿刺伤害加5（{@damage 2d4}）强酸伤害。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}6（{@damage 1d6 + 3}）点穿刺伤害加5（{@damage 2d4}）点强酸伤害。"
 					]
 				}
 			],
@@ -1093,7 +1093,7 @@
 					"ENG_name": "Sting",
 					"name": "钉刺",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}{@damage 1d6 + 3}穿刺伤害加{@damage 2d6}毒素伤害。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}{@damage 1d6 + 3}点穿刺伤害加{@damage 2d6}点毒素伤害。"
 					]
 				},
 				{
@@ -1187,7 +1187,7 @@
 			],
 			"cr": "2",
 			"gear": [
-				"瘟疫之笛|WttHC"
+				"瘟疫乐笙|WttHC"
 			],
 			"trait": [
 				{
@@ -1201,14 +1201,14 @@
 			"action": [
 				{
 					"ENG_name": "Rancid Knife",
-					"name": "腐臭刀",
+					"name": "腐臭之刃",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 2d4 + 3}）穿刺伤害加7（{@damage 2d6}）毒素伤害，且目标获得{@condition 中毒|XPHB}状态直至科雷克斯的下个回合开始。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 2d4 + 3}）点穿刺伤害加7（{@damage 2d6}）点毒素伤害，且目标获得{@condition 中毒|XPHB}状态直至科雷克斯的下个回合开始。"
 					]
 				},
 				{
 					"ENG_name": "Entrancing Pipes",
-					"name": "迷魂笛",
+					"name": "迷魂之笛",
 					"entries": [
 						"{@actSave wis} {@dc 12}，科雷克斯120尺内能看见的一个生物。{@actSaveFail} 14（{@damage 4d6}）心灵伤害，且目标获得{@condition 魅惑|XPHB}状态直至科雷克斯的下个回合开始。{@actSaveSuccess} 仅伤害减半。"
 					]
@@ -1347,14 +1347,14 @@
 					"ENG_name": "Hayfork",
 					"name": "干草叉",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）穿刺伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "G'wan, Git! (1/Day)",
-					"name": "滚开，小子！(1/天)",
+					"name": "滚开，小子！(1/日)",
 					"entries": [
-						"{@actSave wis} {@dc 11}，瑞莉·琼60尺内能看见的一个生物。{@actSaveFail} 10（{@damage 3d6}）心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下个回合结束。{@actSaveSuccess} 仅造成伤害减半。"
+						"{@actSave wis} {@dc 11}，瑞莉·琼60尺内能看见的一个生物。{@actSaveFail} 10（{@damage 3d6}）点心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下个回合结束。{@actSaveSuccess} 仅造成伤害减半。"
 					]
 				}
 			],
@@ -1482,7 +1482,7 @@
 					"ENG_name": "Death Burst",
 					"name": "临终苦难",
 					"entries": [
-						"老鼠死亡时会爆炸。{@actSave con} {@dc 10}，老鼠周围10尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail}受到{@damage 2d4}强酸{@variantrule 伤害|XPHB}。{@actSaveSuccess}伤害减半。"
+						"老鼠死亡时会爆炸。{@actSave con} {@dc 10}，老鼠周围10尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail}受到{@damage 2d4}点强酸{@variantrule 伤害|XPHB}。{@actSaveSuccess}伤害减半。"
 					]
 				},
 				{
@@ -1498,7 +1498,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 2d4 + 2}）穿刺伤害或当集群处于浴血状态时造成{@damage 1d4 + 2}穿刺伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 2d4 + 2}）点穿刺伤害或当集群处于浴血状态时造成{@damage 1d4 + 2}点穿刺伤害。"
 					]
 				}
 			],
@@ -1567,14 +1567,14 @@
 					"ENG_name": "Constricting Vine",
 					"name": "藤蔓绞缠",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及10尺。{@h}{@damage 1d10 + 2}钝击伤害。如果目标是大型或更小的生物，它会因三条藤蔓中的一条而陷入{@condition 受擒|XPHB}状态（逃脱{@dc 12}）。"
+						"{@atkr m} {@hit 4}，触及10尺。{@h}{@damage 1d10 + 2}点钝击伤害。如果目标是大型或更小的生物，它会因三条藤蔓中的一条而陷入{@condition 受擒|XPHB}状态（逃脱{@dc 12}）。"
 					]
 				},
 				{
 					"ENG_name": "Entangling Vines {@recharge 5}",
 					"name": "缠绕藤蔓 {@recharge 5}",
 					"entries": [
-						"枯萎术选择其60尺内一点为中心，半径10尺的{@variantrule 球状 【效应区域】|XPHB|球状}效应区域内，每个仇敌身上会短暂出现抓握的藤蔓。每个目标必须成功通过{@dc 12}的力量豁免检定，否则直到枯萎术的下个回合开始前将处于{@condition 束缚|XPHB}束缚状态。"
+						"枯藤怪选择其60尺内一点为中心，半径10尺的{@variantrule 球状 【效应区域】|XPHB|球状}效应区域内，每个敌人身上会短暂出现缠绕的藤蔓。每个目标必须成功通过{@dc 12}的力量豁免检定，否则直到枯藤怪的下个回合开始前将处于{@condition 束缚|XPHB}状态。"
 					]
 				}
 			],
