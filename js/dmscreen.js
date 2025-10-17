@@ -3176,7 +3176,7 @@ class AddMenuVideoTab extends AddMenuTab {
 
 class AddMenuImageTab extends AddMenuTab {
 	constructor ({...opts}) {
-		super({...opts, label: "Image"});
+		super({...opts, label: "图片"});
 		this.tabId = this.genTabId("image");
 	}
 
@@ -3186,7 +3186,7 @@ class AddMenuImageTab extends AddMenuTab {
 
 			// region Imgur
 			const $wrpImgur = $(`<div class="ui-modal__row"></div>`).appendTo($tab);
-			$(`<span>Imgur (Anonymous Upload) <i class="ve-muted">(accepts <a href="https://help.imgur.com/hc/articles/115000083326" target="_blank" rel="noopener noreferrer">imgur-friendly formats</a>)</i></span>`).appendTo($wrpImgur);
+			$(`<span>Imgur (匿名上传) <i class="ve-muted">(允许上传<a href="https://help.imgur.com/hc/articles/115000083326" target="_blank" rel="noopener noreferrer">imgur支持的格式</a>)</i></span>`).appendTo($wrpImgur);
 			const $iptFile = $(`<input type="file" class="hidden">`).on("change", (evt) => {
 				const input = evt.target;
 				const reader = new FileReader();
@@ -3266,7 +3266,7 @@ class AddMenuImageTab extends AddMenuTab {
 				.click(() => DmMapper.pHandleMenuButtonClick(this.menu));
 
 			$$`<div class="ui-modal__row">
-				<div>Adventure/Book Map Dynamic Viewer</div>
+				<div>冒险/书籍动态地图查看器</div>
 				${$btnSelectAdventure}
 			</div>`.appendTo($tab);
 			// endregion

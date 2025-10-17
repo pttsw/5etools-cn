@@ -16,7 +16,7 @@
 	"monster": [
 		{
 			"ENG_name": "Anchorite of Talos",
-			"name": "塔洛斯的隐士",
+			"name": "塔洛斯隐士",
 			"source": "DIP",
 			"page": 51,
 			"otherSources": [
@@ -82,7 +82,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"隐士的天生施法能力是感知（法术豁免{@dc 12}）。它天生能够施放以下法术，无需任何材料成分："
+						"隐士的天生施法属性为感知（法术豁免{@dc 12}）。它可以自发施展以下法术而无需法术材料："
 					],
 					"daily": {
 						"3": [
@@ -103,14 +103,14 @@
 					"ENG_name": "Shapechanger",
 					"name": "变形生物",
 					"entries": [
-						"隐士可以使用它的行动来变化成一只野猪或变回它的真身，其真身是人形生物。在每种形态下，它的具体数值都是相同的。它穿戴或携带的任何装备都不会被变形。如果它死亡，它将恢复其真身。"
+						"隐士可以使用它的动作以变形成一个半野猪类人或一只野猪，或变回它类人生物的真实型态。它在各个型态的数据保持不变。任何它所穿戴或携带的装备并不会随着变形发生转变。它会在死亡时回复它的真实型态。"
 					]
 				}
 			],
 			"action": [
 				{
 					"ENG_name": "Clawed Gauntlet (Humanoid Form Only)",
-					"name": "爪形手套（仅人形态）",
+					"name": "带爪手套（仅类人形态）",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}5 ({@damage 1d4 + 3}) 点挥砍伤害。"
 					]
@@ -156,7 +156,7 @@
 		},
 		{
 			"ENG_name": "Don-Jon Raskin",
-			"name": "Don-Jon Raskin",
+			"name": "东容·拉斯坎",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DIP",
@@ -208,14 +208,14 @@
 					"ENG_name": "Brave",
 					"name": "勇气",
 					"entries": [
-						"Don-Jon 在对抗被{@condition 恐慌}的豁免检定上具有优势。"
+						"东容在对抗{@condition 恐慌}的豁免中有优势。"
 					]
 				},
 				{
 					"ENG_name": "Not Dead Yet (Recharges after a Long Rest)",
-					"name": "尚未死去（长休息后重置）",
+					"name": "还没死呢（长休息后充能）",
 					"entries": [
-						"如果伤害使Don-Jon的生命值降至0点，他将改为降至1点生命值，并在他的下一回合结束前获得攻击骰的优势。"
+						"如果东容受到伤害并降至0点生命值，那么他降到1点生命值，并在他下回合结束前的所有攻击中具有优势。"
 					]
 				}
 			],
@@ -224,21 +224,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Don-Jon 进行三次近战攻击。"
+						"东容进行三次近战攻击。"
 					]
 				},
 				{
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} {@hit 2} 命中，触及范围5尺或射程20/60尺，单一目标。{@h}2 ({@damage 1d4}) 点穿刺伤害。"
+						"{@atk mw,rw} 命中{@hit 2}，触及范围5尺或射程20/60尺，单一目标。{@h}2 ({@damage 1d4}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Sling",
 					"name": "投石索",
 					"entries": [
-						"{@atk rw} {@hit 2} 命中，射程 30/120 尺，单一目标。{@h}2 ({@damage 1d4}) 钝击伤害。"
+						"{@atk rw} 命中{@hit 2}，射程 30/120 尺，单一目标。{@h}2 ({@damage 1d4}) 点钝击伤害。"
 					]
 				}
 			],
@@ -270,7 +270,7 @@
 		},
 		{
 			"ENG_name": "Falcon the Hunter",
-			"name": "猎鹰·猎人",
+			"name": "猎人战隼",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DIP",
@@ -328,14 +328,14 @@
 					"ENG_name": "Archer",
 					"name": "弓箭手",
 					"entries": [
-						"当Falcon用长弓或短弓命中目标时，会额外造成一骰的伤害（包含在他的长弓攻击中）。"
+						"当战隼使用长弓或者短弓击中一个敌人时，额外骰一颗伤害骰（已包含入其长弓攻击之中）。"
 					]
 				},
 				{
 					"ENG_name": "Sharpshooter",
 					"name": "神射手",
 					"entries": [
-						"猎鹰的远程武器攻击忽略{@quickref 掩护||3||半身掩护}和{@quickref 掩护||3||四分之三掩护}。"
+						"战隼的远程武器攻击无视{@quickref 掩护||3||半身掩护}与{@quickref 掩护||3||四分之三掩护}。"
 					]
 				}
 			],
@@ -344,7 +344,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Falcon 进行三次近战攻击或两次远程攻击。"
+						"战隼进行三次近战攻击或者两次远程攻击。"
 					]
 				},
 				{
@@ -358,7 +358,7 @@
 					"ENG_name": "Longbow",
 					"name": "长弓",
 					"entries": [
-						"{@atk rw} 命中骰：命中{@hit 4}，射程 150/600 尺，单一目标。{@h}11 ({@damage 2d8 + 2}) 点穿刺伤害。"
+						"{@atk rw} 命中{@hit 4}，射程 150/600 尺，单一目标。{@h}11 ({@damage 2d8 + 2}) 点穿刺伤害。"
 					]
 				}
 			],
@@ -447,7 +447,7 @@
 					"ENG_name": "Relentless (Recharges after a Short or Long Rest)",
 					"name": "坚韧（短休或长休后充能）。",
 					"entries": [
-						"如果Gorthok受到的伤害或少于27点，本应将其生命值降至0点，它的生命值将改为降至1点。"
+						"如果戈索克在承受27点或更少的伤害并被降到0点生命值时，它被降到1点生命值。"
 					]
 				}
 			],
@@ -456,28 +456,28 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Gorthok 进行两次近战攻击：一次使用它的闪电獠牙，一次使用它的雷鸣蹄。"
+						"戈索克进行两次近战攻击：一次用它的闪电獠牙，一次用它的雷鸣蹄击。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Tusks",
 					"name": "闪电獠牙",
 					"entries": [
-						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 挥砍伤害加上7 ({@damage 2d6}) 闪电伤害。"
+						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 点挥砍伤害加上7 ({@damage 2d6})点 闪电伤害。"
 					]
 				},
 				{
 					"ENG_name": "Thunder Hooves",
 					"name": "雷鸣蹄击",
 					"entries": [
-						"{@atk mw} 命中{@hit 8}，触及范围10尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 钝击伤害加上7 ({@damage 2d6}) 雷鸣伤害。"
+						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}12 ({@damage 2d6 + 5}) 钝击伤害加上7 ({@damage 2d6}) 雷鸣伤害。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Bolt {@recharge}",
 					"name": "闪电束 {@recharge}",
 					"entries": [
-						"戈尔托克向它视野内120英尺内的一个生物射出一道闪电。目标必须进行一次{@dc 15}敏捷豁免，若豁免失败则受到18（{@damage 4d8}）点闪电伤害，若豁免成功则受到一半伤害。"
+						"戈索克向120尺内一个可见的生物射出一道闪电。目标必须通过{@dc 15}的敏捷豁免，否则受到18（{@damage 4d8}）点闪电伤害，通过豁免则该伤害减半。"
 					]
 				}
 			],
@@ -506,7 +506,7 @@
 		},
 		{
 			"ENG_name": "Rock Gnome Recluse",
-			"name": "岩石地侏儒隐士",
+			"name": "岩石侏儒隐士",
 			"source": "DIP",
 			"page": 62,
 			"size": [
@@ -577,7 +577,7 @@
 							"spells": [
 								"{@spell 侦测魔法}",
 								"{@spell 法师护甲}",
-								"{@spell 魔法飞弹}（详见下方\"动作\"）",
+								"{@spell 魔法飞弹}（见下文\"动作\"部分）",
 								"{@spell 护盾术}"
 							]
 						}
@@ -599,7 +599,7 @@
 					"ENG_name": "Magic Missile (Expends a 1st-Level Spell Slot)",
 					"name": "魔法飞弹（消耗一个1环法术位）",
 					"entries": [
-						"地精创造了三个魔法飞镖。每个飞镖击中地精选择的120尺内的一个生物，并造成3（{@damage 1d4 + 1}）点力场伤害。"
+						"侏儒创造了三个魔法飞弹。每个飞弹击中侏儒选择的120尺内的一个生物，并造成3（{@damage 1d4 + 1}）点力场伤害。"
 					]
 				},
 				{
@@ -634,7 +634,7 @@
 		},
 		{
 			"ENG_name": "Skeletal Riding Horse",
-			"name": "骷髅骑乘马",
+			"name": "骷髅乘用马",
 			"source": "DIP",
 			"page": 21,
 			"_copy": {

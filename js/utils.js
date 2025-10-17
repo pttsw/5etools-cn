@@ -528,14 +528,14 @@ CleanUtil._DASH_COLLAPSE_REGEX = /[ ]*([\u2014\u2013])[ ]*/g;
 globalThis.SourceUtil = class {
 	static ADV_BOOK_GROUPS = [
 		{group: "core", displayName: "Core"},
-		{group: "supplement", displayName: "Supplements"},
-		{group: "setting", displayName: "Settings"},
-		{group: "setting-alt", displayName: "Additional Settings"},
-		{group: "supplement-alt", displayName: "Extras"},
+		{group: "supplement", displayName: "官方出版物"},
+		{group: "setting", displayName: "设定集"},
+		{group: "setting-alt", displayName: "额外设定集"},
+		{group: "supplement-alt", displayName: "扩展包"},
 		{group: "organized-play", displayName: "Organized Play"},
-		{group: "prerelease", displayName: "Prerelease"},
+		{group: "prerelease", displayName: "预发布"},
 		{group: "homebrew", displayName: "Homebrew"},
-		{group: "screen", displayName: "Screens"},
+		{group: "screen", displayName: "帷幕"},
 		{group: "recipe", displayName: "Recipes"},
 		{group: "other", displayName: "Miscellaneous"},
 	];

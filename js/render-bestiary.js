@@ -632,7 +632,7 @@ class _RenderBestiaryImplOne extends _RenderBestiaryImplBase {
 	_getHtmlParts_gear ({mon}) {
 		const pt = Renderer.monster.getGearPart(mon);
 		if (!pt) return "";
-		return `<tr><td colspan="6"><strong>Gear</strong> ${pt}</td></tr>`;
+		return `<tr><td colspan="6"><strong>装备</strong> ${pt}</td></tr>`;
 	}
 
 	/* ----- */

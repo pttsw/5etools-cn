@@ -447,7 +447,7 @@
 				"cha": "+0"
 			},
 			"senses": [
-				"盲视 120 尺（此半径之外盲视无效）"
+				"盲视120尺（此范围外则视为目盲）"
 			],
 			"passive": 6,
 			"immune": [
@@ -608,7 +608,7 @@
 							"ENG_name": "Light Crossbows",
 							"name": "轻弩",
 							"entries": [
-								"{@atk rw} 命中{@hit 4}，射程80/320尺，单一目标。{@h}6（{@damage 1d8 + 2}）点穿刺伤害。"
+								"{@atk rw} {@hit 4} 命中，远程80/320尺，单一目标。{@h}6（{@damage 1d8 + 2}）穿刺伤害。"
 							]
 						}
 					}
@@ -713,7 +713,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} {@hit 2} 命中，触及范围5尺或射程20/60尺，单一目标。{@h}2 ({@damage 1d4}) 点穿刺伤害。"
+						"{@atk mw,rw} 命中{@hit 2}，触及范围5尺或射程20/60尺，单一目标。{@h}2 ({@damage 1d4}) 点穿刺伤害。"
 					]
 				}
 			],
@@ -2615,7 +2615,7 @@
 					"ENG_name": "Shovel",
 					"name": "铲子",
 					"entries": [
-						"{@atk mw} 命中{@hit 4}，触及范围5尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 钝击伤害。"
+						"{@atk mw} {@hit 4}，触及5尺，单一目标。{@h}4 ({@damage 1d4 + 2})钝击伤害。"
 					]
 				}
 			],
@@ -3106,7 +3106,7 @@
 							"items": [
 								{
 									"ENG_name": "Spectral Longbow",
-									"name": "幽灵长弓",
+									"name": "灵体长弓",
 									"entries": [
 										"{@atk rw} {@hit 2} 命中，射程 150/600 英尺，单一目标。 {@h}4 ({@damage 1d8}) 力场伤害。"
 									]
@@ -4155,7 +4155,7 @@
 								},
 								{
 									"ENG_name": "Harmed by Running Water",
-									"name": "被流动的水伤害",
+									"name": "流水之伤",
 									"type": "itemSub",
 									"entry": "如果他结束回合时处于流动的水中，他将受到20点强酸伤害。"
 								},
