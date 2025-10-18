@@ -219,7 +219,7 @@ export class StatGenUiCompAsi extends BaseComponent {
 				uidsStatic.map((uid, ix) => {
 					const {propIxFeatAbility, propFeatAbilityChooseFrom} = this._parent.getPropsAdditionalFeatsFeatSet_(namespace, "static", ix);
 					const {name, source} = DataUtil.proxy.unpackUid("feat", uid, "feat", {isLower: true});
-					const feat = this._parent.feats.find(it => it.name.toLowerCase() === name && it.source.toLowerCase() === source);
+					const feat = this._parent.feats.find(it => (it.name.toLowerCase() === name || it.ENG_name.toLowerCase() === name) && it.source.toLowerCase() === source);
 					const {stgFeat, hkIxFeat, cleanup} = this._render_getMetaFeat({featStatic: feat, propIxFeatAbility, propFeatAbilityChooseFrom});
 					fnsCleanupGroup.push(cleanup);
 					hkIxFeat();
@@ -576,7 +576,7 @@ export class StatGenUiCompAsi extends BaseComponent {
 		uidsStatic.map((uid, ix) => {
 			const {propIxFeatAbility, propFeatAbilityChooseFrom} = this._parent.getPropsAdditionalFeatsFeatSet_(namespace, "static", ix);
 			const {name, source} = DataUtil.proxy.unpackUid("feat", uid, "feat", {isLower: true});
-			const feat = this._parent.feats.find(it => it.name.toLowerCase() === name && it.source.toLowerCase() === source);
+			const feat = this._parent.feats.find(it => (it.name.toLowerCase() === name || it.ENG_name.toLowerCase() === name) && it.source.toLowerCase() === source);
 
 			const {isFormComplete, out} = this._getFormData_doAddFeatMeta({
 				namespace,
