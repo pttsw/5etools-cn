@@ -9,7 +9,7 @@
 	"monster": [
 		{
 			"ENG_name": "Alax Jadescales",
-			"name": "Alax Jadescales",
+			"name": "阿拉克斯·玉鳞",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "LRDT",
@@ -65,7 +65,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Alax 施放以下任意一个法术，使用感知作为施法能力（法术豁免{@dc 13}）："
+						"阿拉克斯施展下列法术之一，以感知为其施法属性（法术豁免{@dc 13}）："
 					],
 					"will": [
 						"{@spell 德鲁伊伎俩}",
@@ -87,21 +87,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Alax 进行两次火焰打击攻击。"
+						"阿拉克斯发动两次火焰打击。"
 					]
 				},
 				{
 					"ENG_name": "Fire Strike",
 					"name": "火焰打击",
 					"entries": [
-						"{@atk 近战，远程} 命中{@hit 5}，触及5尺或60尺范围，单一目标。{@h}10 ({@damage 2d6 + 3}) 火焰h。"
+						"{@atk ms,rs} 命中{@hit 5}，触及5尺或射程60尺，单一目标。{@h}10 ({@damage 2d6 + 3}) 点火焰伤害。"
 					]
 				},
 				{
 					"ENG_name": "Breath Weapon (Recharges after a Short or Long Rest)",
 					"name": "吐息武器（短休或长休后充能）",
 					"entries": [
-						"阿莱克斯呼出一道15英尺的火焰锥。区域内的每个生物必须进行一次{@dc 12}敏捷豁免，豁免失败则受到14（{@damage 4d6}）点火焰伤害，豁免成功则受到一半伤害。"
+						"阿拉克斯喷出覆盖15尺锥形区域的火焰，该区域内所有生物须进行一次{@dc 12}的敏捷豁免检定，豁免失败者将受到14（{@damage 4d6}）的火焰伤害，豁免成功者只受半数伤害。"
 					]
 				}
 			],
@@ -136,7 +136,7 @@
 		},
 		{
 			"ENG_name": "Ervan Soulfallen",
-			"name": "埃文·灵魂坠落",
+			"name": "埃尔文·堕落灵魂",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "LRDT",
@@ -191,7 +191,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Ervan 使用魅力作为施法能力，施展以下法术之一（法术豁免难度{@dc 14}）："
+						"埃尔文施展下列法术之一，以魅力为其施法属性（法术豁免{@dc 14}）："
 					],
 					"will": [
 						"{@spell 光亮术}",
@@ -216,21 +216,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Ervan 使用他的法杖进行三次奥术冲击攻击。"
+						"埃尔文使用法杖发动三次奥能爆发。"
 					]
 				},
 				{
 					"ENG_name": "Arcane Blast",
 					"name": "奥能爆发",
 					"entries": [
-						"{@atk 近战，远程} 命中{@hit 6}，触及5尺或射程120尺，单一目标。{@h}13（{@damage 3d6 + 3}）力量h。"
+						"{@atk ms,rs} 命中{@hit 6}，触及5尺或射程120尺，单一目标。{@h}13（{@damage 3d6 + 3}）点力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Acid Rain (Recharges after a Short or Long Rest)",
-					"name": "酸雨（短休或长休后重充）",
+					"name": "酸雨（短休或长休后充能）",
 					"entries": [
-						"酸液降落在以厄尔文能看到的一个120英尺内的点为中心的10英尺半径、20英尺高的圆柱区域内。该区域内的每个生物必须进行一次{@dc 14}敏捷豁免，豁免失败则受到22（{@damage 4d10}）点酸蚀伤害，豁免成功则只受到一半伤害。"
+						"酸液从天而降，以埃尔文视野范围120尺内指定的一处为中心点，形成半径10尺高20尺的圆柱形，该区域内所有生物须进行一次{@dc 14}的敏捷豁免检定，豁免失败者受到22（{@damage 4d10}）强酸伤害，豁免成功者只受半数伤害。"
 					]
 				}
 			],
