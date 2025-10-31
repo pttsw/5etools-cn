@@ -1536,6 +1536,43 @@
 				"高效防守战术|游侠|XPHB|猎人|XPHB|15"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Winter Walker",
+			"name": "冬行者",
+			"shortName": "冬行者",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"冰刃|xphb"
+						],
+						"5": [
+							"定身类人|xphb"
+						],
+						"9": [
+							"移除诅咒|xphb"
+						],
+						"13": [
+							"冰风暴|xphb"
+						],
+						"17": [
+							"寒冰锥|xphb"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"冬行者|游侠|XPHB|冬行者|FRHoF|3|FRHoF",
+				"坚韧灵魂|游侠|XPHB|冬行者|FRHoF|7|FRHoF",
+				"寒冰复仇|游侠|XPHB|冬行者|FRHoF|11|FRHoF",
+				"冰封幽灵|游侠|XPHB|冬行者|FRHoF|15|FRHoF"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
@@ -4052,6 +4089,194 @@
 			"header": 2,
 			"entries": [
 				"15级时，你得到了在你的猎物企图干扰你时进行回击的能力。当你的狩猎开始特性目标迫使你进行一次豁免检定时，你可以在进行豁免检定前，立刻用你的反应来对其进行一次武器攻击。一旦你的攻击命中，除了攻击的正常效果外，你本次豁免将自动成功。"
+			]
+		},
+		{
+			"ENG_name": "Frigid Explorer",
+			"name": "极寒探索者",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Biting Cold",
+					"type": "entries",
+					"name": "刺骨严寒",
+					"page": 6,
+					"entries": [
+						"{@variantrule 伤害|XPHB}来自你的武器攻击、游侠法术和游侠特性，忽略对冷冻伤害的{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Frost Resistance",
+					"type": "entries",
+					"name": "霜寒抗性",
+					"page": 6,
+					"entries": [
+						"你对冷冻伤害具有{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Polar Strikes",
+					"type": "entries",
+					"name": "极地打击",
+					"page": 6,
+					"entries": [
+						"当你使用武器以攻击检定命中一个生物时，你可以对目标造成额外的{@damage 1d4}冷冻伤害，该目标每回合只能受到一次此额外伤害。当你达到游侠11级时，此额外伤害增加至{@dice 1d6}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Hunter's Rime",
+			"name": "猎人之诗",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"寒冰覆盖你和你的猎物，保护你并减缓它们的速度。当你施放{@spell 猎人印记|XPHB}时，你获得等于{@dice 1d10}加上你的{@class 游侠|XPHB}等级的{@variantrule 临时生命值|XPHB}。",
+				"此外，当一个生物被你的{@spell 猎人印记|XPHB}标记时，它无法执行{@action 撤离|XPHB}动作。"
+			]
+		},
+		{
+			"ENG_name": "Winter Walker",
+			"name": "冬行者",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"{@i 抵御极寒荒原的惊惧兽}",
+				"冬行者在诸如冰风谷等荒凉冰冻的荒野中磨练技艺。这些冷酷无情的霜覆游侠猎杀出没于极地荒原的怪物，最终自身也化作了凛冽的恐怖存在。冬行者精通冰风谷的各种现象，包括陨落耐瑟瑞尔城市的残留魔法、本地怪物如{@creature 雪人|XMM|雪人们}和{@creature 峭壁猫|SKT|峭壁猫}，以及来自幽暗地域入侵者日益增长的威胁。因其冷酷的实用主义、骇人魔法和对区域的掌控力，冬行者既受人敬畏又令人恐惧。十镇居民认为冬行者频繁接触邪恶实体从而获得了可怖力量。而许多雷格赫德游牧者则相信自然之灵赐予了冬行者独特的诅咒。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "极寒探索者|游侠|XPHB|冬行者|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "猎人之诗|游侠|XPHB|冬行者|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "冬行者法术|游侠|XPHB|冬行者|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Winter Walker Spells",
+			"name": "冬行者法术",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"当你达到冬行者法术表中指定的游侠等级时，你之后始终准备着列出的法术。",
+				{
+					"type": "table",
+					"colLabels": [
+						"游侠等级",
+						"spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 冰刃|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 定身类人|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 移除诅咒|XPHB}"
+						],
+						[
+							"13",
+							"{@spell 冰风暴|XPHB}"
+						],
+						[
+							"17",
+							"{@spell 寒冰锥|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Fortifying Soul",
+			"name": "坚韧灵魂",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"你从险恶环境中生存下来的经验让你能够同时强化自己和盟友。作为一个魔法动作，选择你可见的生物，数量等于你的感知调整值（至少一个）。每个被选中的生物恢复等于{@dice 1d10}加上你的游侠等级{@variantrule 生命值|XPHB}，并且在1小时内避免或结束恐慌状态的豁免检定具有{@variantrule 优势|XPHB}。",
+				"使用此特性后，你必须完成一次{@variantrule 长休|XPHB}才能再次使用。"
+			]
+		},
+		{
+			"ENG_name": "Chilling Retribution",
+			"name": "寒冰复仇",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 11,
+			"header": 2,
+			"entries": [
+				"当一个生物以攻击检定命中你时，你可以采取一个{@variantrule 反应|XPHB}来迫使该生物进行感知豁免检定对抗你的法术豁免DC。豁免失败时，目标获得震慑状态直到你的下个回合结束。当目标被震慑时，其{@variantrule 速度|XPHB}缩小至0尺。",
+				"你可以使用该特性的次数等同于你的感知调整值（最低为1）。你在完成一次{@variantrule 长休|XPHB}后重新获得所有的使用次数。"
+			]
+		},
+		{
+			"ENG_name": "Frozen Haunt",
+			"name": "冰封幽灵",
+			"source": "FRHoF",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "冬行者",
+			"subclassSource": "FRHoF",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"当你施放{@spell 猎人印记|XPHB}时，你可以化身为一个幽灵般的雪白形态。此形态持续到法术结束，当你处于此形态时，你获得以下好处。一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前无法再次使用，除非你消耗一个4级或更高的法术位（无需动作）。",
+				{
+					"ENG_name": "Frozen Soul",
+					"type": "entries",
+					"name": "冰封之魂",
+					"page": 6,
+					"entries": [
+						"你对冷冻伤害具有{@variantrule 免疫|XPHB}。当你首次采用此形态以及在你每个后续回合开始时，你选择的15尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物受到{@damage 2d4}冷冻伤害。"
+					]
+				},
+				{
+					"ENG_name": "Partially Incorporeal",
+					"name": "局部虚化",
+					"type": "entries",
+					"page": 6,
+					"entries": [
+						"你对{@condition 受擒|XPHB}、{@condition 倒地|XPHB}和{@condition 束缚|XPHB}状态具有{@variantrule 免疫|XPHB}。你可以像通过{@variantrule 困难地形|XPHB}一样通过生物和物体，但如果你在一个生物或物体内部结束回合，你会受到{@damage 1d10}力场伤害。如果形态结束时你处于一个生物或物体内部，你将被传送到最近的未占据空间。"
+					]
+				}
 			]
 		},
 		{

@@ -2070,6 +2070,41 @@
 				"窃盗本能|游荡者|XPHB|盗贼|XPHB|17"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Scion of the Three",
+			"name": "三神门徒",
+			"shortName": "三神门徒",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": [
+							{
+								"choose": {
+									"from": [
+										"次级幻影|xphb#c",
+										"剑刃防护|xphb#c",
+										"颤栗之触|xphb#c"
+									],
+									"count": 1
+								}
+							}
+						]
+					},
+					"ability": "int"
+				}
+			],
+			"subclassFeatures": [
+				"三神门徒|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF",
+				"打击恐惧|游荡者|XPHB|三神门徒|FRHoF|9|FRHoF",
+				"恶意灵光|游荡者|XPHB|三神门徒|FRHoF|13|FRHoF",
+				"恐惧化身|游荡者|XPHB|三神门徒|FRHoF|17|FRHoF"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
@@ -4031,6 +4066,156 @@
 			"header": 2,
 			"entries": [
 				"从17级起，你对剑术的精通使你可以在战斗中转败为胜。当你的攻击失手时，你可以选择以优势再投一次攻击检定。一旦你使用了这一特性，直到完成一次短休或长休前你都不能再次使用它。"
+			]
+		},
+		{
+			"ENG_name": "Bloodthirst",
+			"name": "嗜血",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"当你30尺内一个你能看见的敌人在受到伤害后变为{@status 浴血|XPHB}状态但未被直接杀死时，你可以使用一次{@variantrule 反应|XPHB}并{@variantrule 传送|XPHB|传送术}到你能看见的该敌人5尺内一个未占据空间。然后你可以进行一次近战攻击。你可以使用此特性的次数等于你的智力调整值（至少一次），并在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
+			]
+		},
+		{
+			"ENG_name": "Dread Allegiance",
+			"name": "恐惧效忠",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"选择三死神之一：{@deity 灾祸术|费伦|FRHoF}、{@deity 巴尔|费伦|FRHoF}或{@deity 米尔寇|费伦|FRHoF}。你获得对一种伤害类型的{@variantrule 抗性|XPHB}以及施放一个戏法的能力，如下表所述；智力是你施放此戏法的施法属性。当你完成一次{@variantrule 长休|XPHB}后，你可以改变你的选择。",
+				{
+					"type": "table",
+					"page": 7,
+					"colLabels": [
+						"神",
+						"伤害抗性",
+						"戏法"
+					],
+					"colStyles": [
+						"col-4",
+						"col-4",
+						"col-4"
+					],
+					"rows": [
+						[
+							"{@deity 灾祸术|费伦|FRHoF}",
+							"心灵",
+							"{@spell 次级幻影|XPHB}"
+						],
+						[
+							"{@deity 巴尔|费伦|FRHoF}",
+							"毒素",
+							"{@spell 剑刃防护|XPHB}"
+						],
+						[
+							"{@deity 米尔寇|费伦|FRHoF}",
+							"暗蚀",
+							"{@spell 颤栗之触|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Scion of the Three",
+			"name": "三神门徒",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"{@i 成为恶意的恐怖代理人}",
+				"三圣后裔从被称为死亡三神的一群恶神那里汲取力量：暴政之神{@deity 灾祸术|费伦|FRHoF}；暴力和谋杀之神{@deity 巴尔|费伦|FRHoF}；以及死亡之神{@deity 米尔寇|费伦|FRHoF}。虽然该子职业的一些游荡者狂热地效忠于那三个阴森的神祇，但其他人则因诅咒而被迫走上这条道路。无论哪种情况，后裔的力量都表现为各种神秘天赋，以及一种打击和恐吓敌人的不可思议才能。",
+				"三圣后裔在博德之门最为常见，那里死亡三神长期争夺对凡人心灵的影响。对{@deity 灾祸术|费伦|FRHoF}、{@deity 巴尔|费伦|FRHoF}和{@deity 米尔寇|费伦|FRHoF}的地下教派通常将三圣后裔视为他们最有用的代理人。在博德之门以外，世俗的盗贼公会如安姆的幽影盗贼或深水城的散塔林会可能会谨慎地召唤一名三圣后裔来执行特别暴力的契约。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "恐惧效忠|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Strike Fear",
+			"name": "打击恐惧",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"你获得以下{@classFeature 诡诈打击|游荡者|XPHB|5|XPHB}选项。",
+				{
+					"ENG_name": "Terrify (Cost: {@dice 1d6})",
+					"type": "entries",
+					"name": "恐吓（消耗：{@dice 1d6}）",
+					"page": 7,
+					"entries": [
+						"目标必须成功通过一次感知豁免，否则它将获得{@condition 恐慌|XPHB}状态，持续1分钟。当目标以此方式恐慌时，你对目标的攻击检定具有{@variantrule 优势|XPHB}。",
+						"该{@condition 恐慌|XPHB}目标在其每回合结束时重复豁免检定，成功则自身效果结束。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Aura of Malevolence",
+			"name": "恶意灵光",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"level": 13,
+			"header": 2,
+			"entries": [
+				"你散发出与死亡三巨头之一相关的邪恶力量。当你使用嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF并传送时，在你离开的空间或你到达的空间（由你选择）10尺内每个你选择的生物受到等同于你智力调整值的伤害；伤害类型与你通过恐惧效忠特性选择的{@variantrule 抗性|XPHB}相同。此特性造成的{@variantrule 伤害|XPHB}忽略{@variantrule 抗性|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Dread Incarnate",
+			"name": "恐惧化身",
+			"source": "FRHoF",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cutthroat",
+					"type": "entries",
+					"name": "亡命徒",
+					"page": 7,
+					"entries": [
+						"当你完成一次{@variantrule 短休|XPHB}时，你恢复一次已消耗的{@subclassFeature 嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF}使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Murderous Intent",
+					"type": "entries",
+					"name": "杀戮意图",
+					"page": 7,
+					"entries": [
+						"当你为你的{@classFeature 偷袭|游荡者|XPHB|1|XPHB}伤害掷骰时，你可以将骰子掷出的1或2视为3。"
+					]
+				}
 			]
 		},
 		{

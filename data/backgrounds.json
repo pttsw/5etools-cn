@@ -4699,6 +4699,131 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Chondathan Freebooter",
+			"name": "琼达斯自由掠夺者",
+			"source": "FRHoF",
+			"page": 28,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"skilled|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"sleight of hand": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"weaver's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"匕首|xphb",
+						"织布工具|xphb",
+						"背包|xphb",
+						"滚珠|xphb",
+						"篮子|xphb",
+						"铺盖|xphb",
+						"吊桶|xphb",
+						{
+							"item": "口粮|xphb",
+							"quantity": 3,
+							"displayName": "口粮（3天份）"
+						},
+						"绳索|xphb",
+						"信号笛|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 3800
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，敏捷，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 熟习|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 运动|XPHB}和{@skill 巧手|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 织布工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 匕首|XPHB}、{@item 织布工具|XPHB}、{@item 背包|XPHB}、{@item 滚珠|XPHB}、{@item 篮子|XPHB}、{@item 铺盖|XPHB}、{@item 吊桶|XPHB}、{@item 口粮|XPHB}（3天份）、{@item 绳索|XPHB}、{@item 信号笛|XPHB}、{@item 旅行者服装|XPHB}，38金币；或（B）50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "City Watch",
 			"name": "城市守卫",
 			"source": "SCAG",
@@ -6088,6 +6213,136 @@
 			]
 		},
 		{
+			"ENG_name": "Dead Magic Dweller",
+			"name": "死亡魔法栖者",
+			"source": "FRHoF",
+			"page": 28,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"healer|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"medicine": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"leatherworker's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"巨棒|xphb",
+						"leatherworker's tools|xphb",
+						"铺盖|xphb",
+						"毯子|xphb",
+						"医疗包|xphb",
+						"长杆|xphb",
+						{
+							"item": "口粮|xphb",
+							"quantity": 3,
+							"displayName": "口粮（3天份）"
+						},
+						"帐篷|xphb",
+						"火绒盒|xphb",
+						{
+							"item": "火把|xphb",
+							"displayName": "火把",
+							"quantity": 5
+						},
+						"旅行者服装|xphb",
+						"水袋|xphb",
+						{
+							"value": 3200
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 医者|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 医药|XPHB}和{@skill 生存|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item leatherworker's tools|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 巨棒|XPHB}、{@item leatherworker's tools|XPHB}、{@item 铺盖|XPHB}、{@item 毯子|XPHB}、{@item 医疗包|XPHB}、{@item 长杆|XPHB}、{@item 口粮|XPHB}（3天份）、{@item 帐篷|XPHB}、{@item 火绒盒|XPHB}、5{@item 火把|XPHB|火把}、{@item 旅行者服装|XPHB}、{@item 水袋|XPHB}、32 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Dimir Operative",
 			"name": "底密尔特务",
 			"source": "GGR",
@@ -6953,6 +7208,132 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Dragon Cultist",
+			"name": "龙之教团成员",
+			"source": "FRHoF",
+			"page": 29,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"int"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"int"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"cult of the dragon initiate|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"calligrapher's supplies": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"calligrapher's supplies|xphb",
+						"匕首|xphb",
+						"玻璃瓶|xphb",
+						"油灯|xphb",
+						"手铐|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（5瓶）"
+						},
+						{
+							"item": "小包|xphb",
+							"displayName": "小包",
+							"quantity": 2
+						},
+						"法袍|xphb",
+						"绳索|xphb",
+						{
+							"value": 3000
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，体质，智力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 拜龙教龙学徒|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 欺瞒|XPHB} 和 {@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 书法工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 书法工具|XPHB}、{@item 匕首|XPHB}、{@item 玻璃瓶|XPHB}、{@item 油灯|XPHB}、{@item 镣铐|XPHB}、{@item 灯油|XPHB}（5瓶）、2个{@item 小包|XPHB|小包}、{@item 法袍|XPHB}、{@item 绳索|XPHB}，30金币；或(B) 50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Earthspur Miner",
 			"name": "士马刺矿工",
 			"source": "ALElementalEvil",
@@ -7207,6 +7588,124 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "Emerald Enclave Caretaker",
+			"name": "翠绿闲庭守护者",
+			"source": "FRHoF",
+			"page": 29,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"emerald enclave fledgling|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"nature": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"herbalism kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"短弓|xphb",
+						"箭(20)|xphb",
+						"herbalism kit|xphb",
+						"铺盖|xphb",
+						"毯子|xphb",
+						"小包|xphb",
+						"帐篷|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 1300
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，智力，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 翠绿闲庭新兵|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 自然|XPHB}和{@skill 生存|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 草药工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 短弓|XPHB}、20支箭、{@item 草药工具|XPHB}、{@item 铺盖|XPHB}、{@item 毯子|XPHB}、{@item 小包|XPHB}、{@item 帐篷|XPHB}、{@item 旅行者服装|XPHB}，13 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Entertainer",
@@ -9407,6 +9906,121 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Flaming Fist Mercenary",
+			"name": "焰拳佣兵",
+			"source": "FRHoF",
+			"page": 30,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"tough|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"smith's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"硬头锤|xphb",
+						"铁匠工具|xphb",
+						"高档服装|xphb",
+						"手铐|xphb",
+						"便携式攻城锤|xphb",
+						{
+							"value": 400
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 健壮|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 威吓|XPHB}和{@skill 察觉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 铁匠工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 硬头锤|XPHB}、{@item 铁匠工具|XPHB}、{@item 高档服装|XPHB}、{@item 镣铐|XPHB}、{@item 便携式攻城锤|XPHB}，4金币；或(B) 50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Folk Hero",
 			"name": "平民英雄",
 			"source": "PHB",
@@ -10379,6 +10993,120 @@
 							"entries": [
 								"你制作你的角色时，你可以投掷一次门镇守卫 {@item 门镇守卫饰品|SatO|门镇守卫饰品}，作为创建角色时投掷{@item 饰品|PHB|饰品}中饰品表的代替。"
 							]
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Genie Touched",
+			"name": "巨灵触碰",
+			"source": "FRHoF",
+			"page": 30,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"perception": true,
+					"persuasion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"glassblower's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"轻锤|xphb",
+						"glassblower's tools|xphb",
+						"高档服装|xphb",
+						"油灯|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（3瓶）"
+						},
+						"水袋|xphb",
+						{
+							"value": 200
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 魔法学徒|XPHB} （法师）"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 察觉|XPHB}和{@skill 游说|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item glassblower's tools|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 轻锤|XPHB}、{@item glassblower's tools|XPHB}、{@item 高档服装|XPHB}、{@item 油灯|XPHB}、{@item 灯油|XPHB}（3瓶）、{@item 水袋|XPHB}，2金币；或(B) 50金币"
 						}
 					]
 				}
@@ -11808,7 +12536,7 @@
 							"item": "弩矢（20支）|xphb"
 						},
 						{
-							"item": "gaming set|xphb"
+							"equipmentType": "游戏设置"
 						},
 						{
 							"item": "附盖提灯|xphb"
@@ -12608,6 +13336,122 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "Harper",
+			"name": "竖琴手",
+			"source": "FRHoF",
+			"page": 31,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"harper agent|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"performance": true,
+					"sleight of hand": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"disguise kit|xphb",
+						"铺盖|xphb",
+						"服装|xphb",
+						"抓钩|xphb",
+						"绳索|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 1400
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 哈珀特工|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 表演|XPHB}和{@skill 巧手|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 易容工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 易容工具|XPHB}、{@item 铺盖|XPHB}、{@item 服装|XPHB}、{@item 爪钩|XPHB}、{@item 绳索|XPHB}、{@item 旅行者服装|XPHB}，14 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Haunted One",
@@ -14388,6 +15232,129 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Ice Fisher",
+			"name": "冰上渔民",
+			"source": "FRHoF",
+			"page": 31,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"con"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"con"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"alert|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"animal handling": true,
+					"athletics": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"woodcarver's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"木雕工具|xphb",
+						"篮子|xphb",
+						"滑轮组|xphb",
+						"链之魔契|xphb",
+						"狩猎陷阱|xphb",
+						"捕网|xphb",
+						"长杆|xphb",
+						{
+							"item": "口粮|xphb",
+							"quantity": 3,
+							"displayName": "口粮（3天份）"
+						},
+						"旅行者服装|xphb",
+						{
+							"value": 3200
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，敏捷，体质"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 警觉|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 驯兽|XPHB} 和 {@skill 运动|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 木雕工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 木雕工具|XPHB}、{@item 篮子|XPHB}、{@item 滑轮组|XPHB}、{@item 链之魔契|XPHB}、{@item 狩猎陷阱|XPHB}、{@item 捕网|XPHB}、{@item 长杆|XPHB}、{@item 口粮|XPHB}（3天份）、{@item 旅行者服装|XPHB}，32金币；或（B）50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Inheritor",
 			"name": "继承人",
 			"source": "SCAG",
@@ -16131,6 +17098,127 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Knight of the Gauntlet",
+			"name": "铁手套骑士",
+			"source": "FRHoF",
+			"page": 32,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"tyro of the gauntlet|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"medicine": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"smith's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"矛|xphb",
+						"铁匠工具|xphb",
+						"牛眼提灯|xphb",
+						"圣徽|xphb",
+						"手铐|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（5瓶）"
+						},
+						"火绒盒|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 900
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，智力，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 圣拳新兵|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 运动|XPHB}和{@skill 医药|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 铁匠工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 矛|XPHB}，{@item 铁匠工具|XPHB}，{@item 牛眼提灯|XPHB}，{@item 圣徽|XPHB}，{@item 镣铐|XPHB}，{@item 灯油|XPHB}（5瓶），{@item 火绒盒|XPHB}，{@item 旅行者服装|XPHB}，9金币；或（B）50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Knight of the Order",
 			"name": "教团骑士",
 			"source": "SCAG",
@@ -16231,6 +17319,132 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "Lords' Alliance Vassal",
+			"name": "领主联盟封臣",
+			"source": "FRHoF",
+			"page": 32,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"lords' alliance agent|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"persuasion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"calligrapher's supplies": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "标枪|xphb",
+							"displayName": "标枪",
+							"quantity": 2
+						},
+						"calligrapher's supplies|xphb",
+						"高档服装|xphb",
+						"墨水|xphb",
+						{
+							"item": "墨水|xphb",
+							"quantity": 5
+						},
+						{
+							"item": "羊皮纸|xphb",
+							"displayName": "羊皮纸（9张）"
+						},
+						{
+							"value": 1300
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 领主联盟特工|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB}和{@skill 游说|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 书法工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) 2 {@item 标枪|XPHB|标枪}、{@item 书法工具|XPHB}、{@item 高档服装|XPHB}、{@item 墨水|XPHB}、5支{@item 墨水|XPHB}笔、{@item 羊皮纸|XPHB}（9张）、13 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Lorehold Student",
@@ -17340,6 +18554,258 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Moonwell Pilgrim",
+			"name": "月井朝圣者",
+			"source": "FRHoF",
+			"page": 33,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"magic initiate; druid|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"nature": true,
+					"performance": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"painter's supplies": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"长棍|xphb",
+						"painter's supplies|xphb",
+						"铺盖|xphb",
+						"铃铛|xphb",
+						"小包|xphb",
+						"法袍|xphb",
+						"细绳|xphb",
+						"旅行者服装|xphb",
+						"水袋|xphb",
+						{
+							"value": 3800
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 魔法学徒|XPHB} （德鲁伊）"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 自然|XPHB} 和 {@skill 表演|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item painter's supplies|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 长棍|XPHB}、{@item painter's supplies|XPHB}、{@item 铺盖|XPHB}、{@item 铃铛|XPHB}、{@item 小包|XPHB}、{@item 法袍|XPHB}、{@item 细绳|XPHB}、{@item 旅行者服装|XPHB}、{@item 水袋|XPHB}，38金币；或（B）50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Mulhorandi Tomb Raider",
+			"name": "穆尔霍兰德墓穴掠夺者",
+			"source": "FRHoF",
+			"page": 33,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"int"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"int"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"lucky|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"investigation": true,
+					"religion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"mason's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"匕首|xphb",
+						"轻锤|xphb",
+						"mason's tools|xphb",
+						"背包|xphb",
+						"铺盖|xphb",
+						"撬棍|xphb",
+						"梯子|xphb",
+						"长杆|xphb",
+						{
+							"item": "小包|xphb",
+							"displayName": "小包",
+							"quantity": 2
+						},
+						"绳索|xphb",
+						"细绳|xphb",
+						"火绒盒|xphb",
+						{
+							"item": "火把|xphb",
+							"displayName": "火把",
+							"quantity": 5
+						},
+						"旅行者服装|xphb",
+						{
+							"item": "水袋|xphb",
+							"displayName": "水袋 26 GP"
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，体质，智力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 幸运|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 调查|XPHB}和{@skill 宗教|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item mason's tools|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 匕首|XPHB}、{@item 轻锤|XPHB}、{@item mason's tools|XPHB}、{@item 背包|XPHB}、{@item 铺盖|XPHB}、{@item 撬棍|XPHB}、{@item 梯子|XPHB}、{@item 长杆|XPHB}、2个{@item 小包|XPHB|小包}、{@item 绳索|XPHB}、{@item 细绳|XPHB}、{@item 火绒盒|XPHB}、5个{@item 火把|XPHB|火把}、{@item 旅行者服装|XPHB}、{@item 水袋|XPHB} 26金币；或（B）50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Mulmaster Aristocrat",
 			"name": "穆尔玛斯特贵族",
 			"source": "ALElementalEvil",
@@ -17608,6 +19074,124 @@
 				"source": "PHB"
 			},
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "Mythalkeeper",
+			"name": "神话守护者",
+			"source": "FRHoF",
+			"page": 34,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"crafter|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"history": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"jeweler's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"长棍|xphb",
+						"jeweler's tools|xphb",
+						"香水|xphb",
+						"小包|xphb",
+						"法袍|xphb",
+						"铲子|xphb",
+						"细绳|xphb",
+						"水袋|xphb",
+						{
+							"value": 1600
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "智力，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 工匠|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 奥秘|XPHB} 和 {@skill 历史|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item jeweler's tools|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 长棍|XPHB}、{@item jeweler's tools|XPHB}、{@item 香水|XPHB}、{@item 小包|XPHB}、{@item 法袍|XPHB}、{@item 铲子|XPHB}、{@item 细绳|XPHB}、{@item 水袋|XPHB}，16金币；或（B）50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Noble",
@@ -17917,7 +19501,7 @@
 				{
 					"A": [
 						{
-							"item": "gaming set|xphb"
+							"equipmentType": "游戏设置"
 						},
 						{
 							"item": "高档服装|xphb"
@@ -20136,6 +21720,119 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Purple Dragon Squire",
+			"name": "紫龙侍从",
+			"source": "FRHoF",
+			"page": 34,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"purple dragon rook|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"animal handling": true,
+					"insight": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"navigator's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"矛|xphb",
+						"navigator's tools|xphb",
+						"高档服装|xphb",
+						{
+							"value": 900
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 紫龙堡垒|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 驯兽|XPHB} 和 {@skill 洞悉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 领航工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 矛|XPHB}、{@item 领航工具|XPHB}、{@item 高档服装|XPHB}，9 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Quandrix Student",
 			"name": "量析学生",
 			"source": "SCC",
@@ -20879,6 +22576,128 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Rashemi Wanderer",
+			"name": "莱瑟曼流浪汉",
+			"source": "FRHoF",
+			"page": 35,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"tough|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"cartographer's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"cartographer's tools|xphb",
+						"背包|xphb",
+						"铺盖|xphb",
+						"附盖提灯|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（3瓶）"
+						},
+						"绳索|xphb",
+						"火绒盒|xphb",
+						"旅行者服装|xphb",
+						"水袋|xphb",
+						{
+							"value": 2300
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 健壮|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 威吓|XPHB}和{@skill 察觉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 制图工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 制图工具|XPHB}, {@item 背包|XPHB}, {@item 铺盖|XPHB}, {@item 附盖提灯|XPHB}, {@item 灯油|XPHB} (3瓶), {@item 绳索|XPHB}, {@item 火绒盒|XPHB}, {@item 旅行者服装|XPHB}, {@item 水袋|XPHB}, 23金币；或(B) 50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Reformed Cultist",
 			"name": "前邪教徒",
 			"source": "TDCSR",
@@ -21178,8 +22997,8 @@
 							"quantity": 5
 						},
 						{
-							"item": "gaming set|phb",
-							"displayName": "游戏套装（与您选择的熟练度相匹配）"
+							"equipmentType": "游戏设置",
+							"displayName": "与你所选熟练项相匹配的赌具"
 						},
 						"玺戒|phb",
 						"高档服装|phb",
@@ -21635,8 +23454,8 @@
 						},
 						"狩猎陷阱|phb",
 						{
-							"item": "gaming set|phb",
-							"displayName": "游戏套装（与您选择的熟练度相匹配）"
+							"equipmentType": "游戏设置",
+							"displayName": "与你所选熟练项相匹配的赌具"
 						},
 						"旅行者服装|phb",
 						{
@@ -23875,6 +25694,134 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Shadowmasters Exile",
+			"name": "影主流放者",
+			"source": "FRHoF",
+			"page": 35,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"savage attacker|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"acrobatics": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"thieves' tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "匕首|xphb",
+							"displayName": "匕首",
+							"quantity": 2
+						},
+						"thieves' tools|xphb",
+						"铁蒺藜|xphb",
+						"服装|xphb",
+						"抓钩|xphb",
+						"铁钉|xphb",
+						"镜子|xphb",
+						{
+							"item": "小包|xphb",
+							"displayName": "小包",
+							"quantity": 2
+						},
+						"绳索|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 300
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 凶蛮打手|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 特技|XPHB} 和 {@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 盗贼工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) 2把匕首、{@item 盗贼工具|XPHB}、{@item 铁蒺藜|XPHB}、{@item 服装|XPHB}、{@item 爪钩|XPHB}、{@item 铁钉|XPHB}、{@item 镜子|XPHB}、2个{@item 小包|XPHB|小包}、{@item 绳索|XPHB}、{@item 旅行者服装|XPHB}、3金币；或(B) 50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Shipwright",
 			"name": "船木工",
 			"source": "GoS",
@@ -25544,7 +27491,7 @@
 							"item": "箭(20)|xphb"
 						},
 						{
-							"item": "gaming set|xphb"
+							"equipmentType": "游戏设置"
 						},
 						{
 							"item": "医疗包|xphb"
@@ -25600,6 +27547,130 @@
 							"name": "装备：",
 							"type": "item",
 							"entry": "选择A或B：(A) {@item 矛|XPHB}, {@item 短弓|XPHB}, {@item 箭|XPHB|20支箭}, {@item 赌具|XPHB}（同上）, {@item 医疗包|XPHB}, {@item 箭袋|XPHB}, {@item 旅行者服装|XPHB}, 14GP; 或 (B) 50GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Spellfire Initiate",
+			"name": "咒火学徒",
+			"source": "FRHoF",
+			"page": 36,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"spellfire spark|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						{
+							"item": "gaming set|xphb",
+							"displayName": "赌具（同上）"
+						},
+						{
+							"item": "奥术法器|xphb",
+							"displayName": "奥术法器（水晶或魔杖）"
+						},
+						{
+							"item": "小包|xphb",
+							"displayName": "小包",
+							"quantity": 2
+						},
+						"旅行者服装|xphb",
+						{
+							"value": 3600
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 法术火花|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 奥秘|XPHB} 和 {@skill 察觉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种 {@item 赌具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 赌具|XPHB}（同上），{@item 奥术法器|XPHB}（{@item 水晶|XPHB}或{@item 魔杖|XPHB}），2个{@item 小包|XPHB|小包}，{@item 旅行者服装|XPHB}，36 GP；或(B) 50 GP"
 						}
 					]
 				}
@@ -27918,7 +29989,7 @@
 							"item": "thieves' tools|xphb"
 						},
 						{
-							"item": "gaming set|xphb"
+							"equipmentType": "游戏设置"
 						},
 						{
 							"item": "铺盖|xphb"
@@ -29004,6 +31075,132 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "Zhentarim Mercenary",
+			"name": "散塔林会佣兵",
+			"source": "FRHoF",
+			"page": 36,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"zhentarim ruffian|frhof": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"forgery kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"A": [
+						"短棒|xphb",
+						"匕首|xphb",
+						"forgery kit|xphb",
+						"高档服装|xphb",
+						"附盖提灯|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（3瓶）"
+						},
+						{
+							"item": "小包|xphb",
+							"displayName": "小包",
+							"quantity": 2
+						},
+						"细绳|xphb",
+						"火绒盒|xphb",
+						{
+							"value": 1100
+						}
+					],
+					"B": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，敏捷，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 散塔林会恶棍|FRHoF}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 威吓|XPHB}和{@skill 察觉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 文书伪造工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 短棒|XPHB}、{@item 匕首|XPHB}、{@item 文书伪造工具|XPHB}、{@item 高档服装|XPHB}、{@item 附盖提灯|XPHB}、{@item 灯油|XPHB}（3瓶）、2个{@item 小包|XPHB|小包}、{@item 细绳|XPHB}、{@item 火绒盒|XPHB}、11 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

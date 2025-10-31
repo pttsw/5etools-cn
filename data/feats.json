@@ -774,6 +774,98 @@
 			]
 		},
 		{
+			"ENG_name": "Boon of Bloodshed",
+			"name": "嗜血恩惠",
+			"source": "FRHoF",
+			"page": 42,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Killer's Fortune",
+					"name": "杀手之运",
+					"type": "entries",
+					"entries": [
+						"当你可见的一个仇敌生命值被降低到0{@variantrule 生命值|XPHB}时，你在你的下一个回合结束前进行的下一次攻击检定获得{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Power from Pain",
+					"name": "苦痛法力",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你在{@status 浴血|XPHB}状态下进行攻击检定时，你可以对目标造成等于你的{@variantrule 熟练项|XPHB|熟练加值}的额外伤害。该额外伤害的类型与攻击的类型相同。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Bountiful Health",
+			"name": "健康丰饶恩惠",
+			"source": "FRHoF",
+			"page": 42,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Augmented Health",
+					"name": "强化生命值",
+					"type": "entries",
+					"entries": [
+						"当你获得{@variantrule 临时生命值|XPHB}时，你获得的{@variantrule 临时生命值|XPHB}数值增加5。"
+					]
+				},
+				{
+					"ENG_name": "Superior Recuperation",
+					"name": "高端休整",
+					"type": "entries",
+					"entries": [
+						"当你花费一个或多个{@variantrule 生命值骰|XPHB}来恢复{@variantrule 生命值|XPHB}时，你可以改为对每个骰子使用可能的最高数值。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Boon of Combat Prowess",
 			"name": "英勇战斗之恩惠",
 			"source": "XPHB",
@@ -809,6 +901,91 @@
 					"type": "entries",
 					"entries": [
 						"当你的一次攻击检定失手时，你可以将其改为命中。该增益一经使用，下个你的回合开始后你才能再次使用它。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Communication",
+			"name": "交流方式恩惠",
+			"source": "FRHoF",
+			"page": 42,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cunning Speaker",
+					"name": "狡黠言者",
+					"type": "entries",
+					"entries": [
+						"你在影响{@variantrule 敌对 【态度】|XPHB|敌对}生物的属性检定上没有{@variantrule 劣势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Gifted Interpreter",
+					"name": "天赋异禀的翻译者",
+					"type": "entries",
+					"entries": [
+						"你理解你听到或看到手语的任何语言的字面含义，并且你理解你看到的任何书面语言的字面含义。"
+					]
+				},
+				{
+					"ENG_name": "Mental Communication",
+					"name": "心灵交流",
+					"type": "entries",
+					"entries": [
+						"你获得射程为120尺的心灵感应。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Desperate Resilience",
+			"name": "绝望韧性恩惠",
+			"source": "FRHoF",
+			"page": 42,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"con"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Defense of Body and Mind",
+					"name": "天人合一防御",
+					"type": "entries",
+					"entries": [
+						"当你处于{@status 浴血|XPHB}状态时，你对除力场外的所有伤害类型具有{@variantrule 抗性|XPHB}。"
 					]
 				}
 			]
@@ -918,6 +1095,52 @@
 			]
 		},
 		{
+			"ENG_name": "Boon of Exquisite Radiance",
+			"name": "极致光辉恩惠",
+			"source": "FRHoF",
+			"page": 42,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Eternal Rest",
+					"name": "永恒安息",
+					"type": "entries",
+					"entries": [
+						"被你缩小到0{@variantrule 生命值|XPHB}的生物不能变成不死生物。"
+					]
+				},
+				{
+					"ENG_name": "Powerful Radiance",
+					"name": "强大光辉",
+					"type": "entries",
+					"entries": [
+						"当你进行一次造成光耀伤害的伤害掷骰时，你可以改为对每个伤害骰使用可能的最大数值。一旦你使用了这个增益，直到你完成一次{@variantrule 长休|XPHB}前，你都不能再次这样做。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Boon of Fate",
 			"name": "扭曲命运之恩惠",
 			"source": "XPHB",
@@ -959,6 +1182,51 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Boon of Fluid Forms",
+			"name": "流体形态恩惠",
+			"source": "FRHoF",
+			"page": 42,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Shapechanger",
+					"name": "变形生物",
+					"type": "entries",
+					"entries": [
+						"你可以执行一个{@action 魔法|XPHB}动作来变形为{@variantrule 挑战等级|XPHB}不超过10的野兽、类人生物或怪兽。当你变形时，你获得等同于该形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形效果持续1小时，如果你没有剩余的{@variantrule 临时生命值|XPHB}，或者你执行一个{@action 魔法|XPHB}动作来恢复真实形态，则效果提前结束。",
+						"你的游戏数据被所选形态的数据卡所取代，但你保留你的生物类型；阵营；个性；智力、感知和魅力属性值；{@variantrule 生命值|XPHB}；{@variantrule 生命值骰|XPHB}；熟练项；以及交流能力。如果你拥有施法或契约魔法特性，你也保留它。在变形时，你决定你的装备是掉落在地上，还是在你处于新形态时改变大小和形状以适应新形态。",
+						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Hardy Transformation",
+					"name": "坚韧变形",
+					"type": "entries",
+					"entries": [
+						"当你变形时获得{@variantrule 临时生命值|XPHB}，将该{@variantrule 临时生命值|XPHB}的数值增加20。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Boon of Fortitude",
 			"name": "超凡强韧之恩惠",
 			"source": "XPHB",
@@ -992,6 +1260,44 @@
 					"type": "entries",
 					"entries": [
 						"你的生命值上限增加40。此外，每当你恢复生命值时，你可以恢复等于你体质调整值的额外生命值。以此恢复了额外生命值后，直至下个你的回合开始后你才能再次受益于此效果。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Fortune's Favor",
+			"name": "命运宠儿恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Saving Throw Reroll",
+					"name": "重掷豁免",
+					"type": "entries",
+					"entries": [
+						"当你豁免检定失败时，你可以重掷该豁免检定，并且必须使用新的掷骰结果。一旦你使用此增益，直到你的下个回合开始前，你都不能再次使用。"
 					]
 				}
 			]
@@ -1041,6 +1347,58 @@
 			]
 		},
 		{
+			"ENG_name": "Boon of Poison Mastery",
+			"name": "毒素精通恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Antitoxic",
+					"name": "抗毒",
+					"type": "entries",
+					"entries": [
+						"你对 {@variantrule 免疫|XPHB} 和 {@condition 中毒|XPHB} 状态具有免疫。"
+					]
+				},
+				{
+					"ENG_name": "Perfect Poisoner",
+					"name": "完美毒师",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你掷骰以确定生物因你的攻击、法术或特性而承受的毒素伤害时，你可以改为为每个骰子使用可能的最高数值。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Boon of Recovery",
 			"name": "恢复能力之恩惠",
 			"source": "XPHB",
@@ -1082,6 +1440,59 @@
 					"type": "entries",
 					"entries": [
 						"你获得一个有着十枚d10的治疗池。以一个附赠动作，你可以消耗治疗池中任意枚骰子来恢复你的生命值。投掷全部你消耗的骰子，将掷骰结果相加，即是你以此恢复的生命值。当你完成长休时，你的治疗池重获所有被消耗的骰子。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Revelry",
+			"name": "欢宴恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"_": [
+							"奥图迷舞|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Inspire Dance",
+					"name": "激励舞蹈",
+					"type": "entries",
+					"entries": [
+						"你总是准备了{@spell 奥图迷舞|XPHB}法术。你可以无需法术位施放该法术一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放该法术的能力。你也可以使用你所拥有的任何适当等级的法术位来施放该法术。",
+						"当你施放该法术时，它不需要法术成分，并且受到伤害不会打断你对其的{@status 专注|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Sing Out",
+					"name": "出局",
+					"type": "entries",
+					"entries": [
+						"当一个生物在对抗你的{@spell 奥图迷舞|XPHB}豁免检定失败且因此法术而具有{@condition 魅惑|XPHB}状态时，它无法施展具有语言成分的法术，并且如果它能唱歌，就会唱出令人愉悦的胡言乱语。"
 					]
 				}
 			]
@@ -1245,6 +1656,155 @@
 			]
 		},
 		{
+			"ENG_name": "Boon of Terror",
+			"name": "恐惧恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"cha": 1,
+					"max": 30
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true
+				}
+			],
+			"expertise": [
+				{
+					"intimidation": true
+				}
+			],
+			"conditionImmune": [
+				"恐慌"
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Fearless",
+					"name": "无畏",
+					"type": "entries",
+					"entries": [
+						"你对该{@condition 恐慌|XPHB}状态具有{@variantrule 免疫|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Flee, Fools!",
+					"name": "走开，愚人！",
+					"type": "entries",
+					"entries": [
+						"当一个带有{@condition 恐慌|XPHB}状态的生物在你60尺内开始其回合时，你可以采取一个{@variantrule 反应|XPHB}来加剧其恐惧，前提是你能看见该生物且它不在{@variantrule 掩护|XPHB|全身掩护}后面。如果你这样做，该生物必须成功通过一次感知豁免检定（DC 8加上你的魅力调整值和你的{@variantrule 熟练项|XPHB|熟练加值}），否则会花费其回合通过最快可用方式远离你。一旦你使用此增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前不能再使用。"
+					]
+				},
+				{
+					"ENG_name": "Intimidating",
+					"name": "威吓",
+					"type": "entries",
+					"entries": [
+						"你获得威吓技能的{@variantrule 熟练项|XPHB}（若尚未拥有）。你还获得威吓的{@variantrule 专精|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of the Bright Sun",
+			"name": "明亮太阳恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"con",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Daylight Presence",
+					"name": "昼明术存在",
+					"type": "entries",
+					"entries": [
+						"作为{@variantrule 附赠动作|XPHB}，你散发出一个30尺{@variantrule 光环 [效应区域]|XPHB|光环}的{@variantrule 明亮光照|XPHB}，该光照为阳光。如果{@variantrule 光环 [效应区域]|XPHB|光环}的任何区域与由法术创造的{@spell 黑暗术|XPHB}区域重叠，则该法术被驱散。该{@variantrule 光环 [效应区域]|XPHB|光环}持续到你将其解除（无需动作）、死亡或处于{@condition 失能|XPHB}状态为止。"
+					]
+				},
+				{
+					"ENG_name": "Fortifying Light",
+					"name": "强化光明",
+					"type": "entries",
+					"entries": [
+						"当你的昼明术存在激活时，在你每个回合开始时，你和你在昼明术存在范围内能看见的盟友获得10点{@variantrule 临时生命值|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of the Furious Storm",
+			"name": "狂怒风暴恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"resist": [
+				"闪电",
+				"雷鸣"
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Eye of the Storm",
+					"name": "风暴之眼",
+					"type": "entries",
+					"entries": [
+						"你对闪电和雷鸣伤害具有{@variantrule 抗性|XPHB}。当你处于{@status 浴血|XPHB}状态时，你对闪电和雷鸣伤害具有{@variantrule 免疫|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Storm's Strength",
+					"name": "风暴之力",
+					"type": "entries",
+					"entries": [
+						"生物在对抗你的造成闪电或雷鸣伤害的法术的豁免检定中具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Boon of the Night Spirit",
 			"name": "暗夜精魂之恩惠",
 			"source": "XPHB",
@@ -1288,6 +1848,56 @@
 					"type": "entries",
 					"entries": [
 						"身处微光光照或黑暗期间，你具有除心灵和光耀伤害外所有伤害的抗性。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of the Soul Drinker",
+			"name": "噬魂者恩惠",
+			"source": "FRHoF",
+			"page": 43,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"resist": [
+				"冷冻",
+				"黯蚀"
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Grave Resistance",
+					"name": "坟墓抗性",
+					"type": "entries",
+					"entries": [
+						"你拥有{@variantrule 抗性|XPHB}对寒冷伤害和黯蚀伤害的抗性。"
+					]
+				},
+				{
+					"ENG_name": "Siphon Life",
+					"name": "汲取生命",
+					"type": "entries",
+					"entries": [
+						"当一个距离你120尺内的仇敌生命值被降低到0{@variantrule 生命值|XPHB}时，你可以使用一个{@variantrule 反应|XPHB}来恢复50{@variantrule 生命值|XPHB}。一旦你使用了这个增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前无法再次使用。"
 					]
 				}
 			]
@@ -1638,6 +2248,80 @@
 			]
 		},
 		{
+			"ENG_name": "Cold Caster",
+			"name": "冷冻施法者",
+			"source": "FRHoF",
+			"page": 39,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"冷冻射线|xphb#c"
+						]
+					}
+				},
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=法师"
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你学会{@spell 冷冻射线|XPHB}戏法。如果你已经学会该戏法，则改为自选一个不同的法师戏法。该法术的施法属性为通过此专长提升的属性。"
+					]
+				},
+				{
+					"ENG_name": "Frostbite",
+					"name": "霜噬",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你以攻击检定命中一个生物并造成寒冷伤害时，你可以暂时削弱该生物的防御。该生物在你的下个回合结束前进行的下一次豁免检定中减去{@dice 1d4}。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Crafter",
 			"name": "工匠",
 			"source": "XPHB",
@@ -1889,6 +2573,48 @@
 					"type": "entries",
 					"entries": [
 						"当你掷出一次重击命中一名生物并对其造成钝击伤害后，直到你的下个回合开始前，任何以该生物为目标的攻击检定都会具有优势。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Cult of the Dragon Initiate",
+			"name": "拜龙教龙学徒",
+			"source": "FRHoF",
+			"page": 37,
+			"category": "O",
+			"languageProficiencies": [
+				{
+					"draconic": true
+				},
+				{
+					"any": 1
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Dragon's Tongue",
+					"name": "龙之舌卷",
+					"type": "entries",
+					"entries": [
+						"你懂得龙族血脉。如果你在选择此专长时已经懂得龙族血脉，你改为从玩家手册或本书第二章的语言表格中选择一种语言。"
+					]
+				},
+				{
+					"ENG_name": "Dragon's Terror",
+					"name": "龙之恐惧",
+					"type": "entries",
+					"entries": [
+						"你可以执行一个{@action 魔法|XPHB}动作，向一个你30尺内能看见的生物灌输恐惧。目标必须成功通过一次感知豁免检定（DC 8加上你的感知调整值和{@variantrule 熟练项|XPHB|熟练加值}）否则获得{@condition 恐慌|XPHB}状态直到你的下个回合结束。如果目标豁免成功或效果对目标结束时，该目标在24小时内免疫此效果。"
+					]
+				},
+				{
+					"ENG_name": "Inspired by Fear",
+					"name": "梦启者恐惧术",
+					"type": "entries",
+					"entries": [
+						"当你使一个生物陷入{@condition 恐慌|XPHB}状态且你是其恐惧来源时，若你未拥有{@variantrule 英雄激励|XPHB}，则可获得它。一旦你使用此增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}前无法再次使用。"
 					]
 				}
 			]
@@ -2184,6 +2910,63 @@
 			]
 		},
 		{
+			"ENG_name": "Dragonscarred",
+			"name": "龙痕者",
+			"source": "FRHoF",
+			"page": 39,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"拜龙教龙学徒|FRHoF"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"con",
+							"cha"
+						]
+					}
+				}
+			],
+			"resist": [
+				{
+					"choose": {
+						"from": [
+							"强酸",
+							"冷冻",
+							"火焰",
+							"闪电",
+							"毒素"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Damage Resistance",
+					"name": "伤害抗性",
+					"type": "entries",
+					"entries": [
+						"当你获得此专长时，选择强酸、冷冻、火焰、闪电或毒素。你对所选伤害类型具有{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Fearsome Power",
+					"name": "可怖法力",
+					"type": "entries",
+					"entries": [
+						"当你在你的回合中作为攻击或魔法动作的一部分对一个生物造成伤害时，你可以在本回合使用拜龙教龙学徒专长的龙之恐惧增益作为{@variantrule 附赠动作|XPHB}。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Drow High Magic",
 			"name": "高等卓尔魔法",
 			"source": "XGE",
@@ -2331,7 +3114,6 @@
 			"name": "对决",
 			"source": "XPHB",
 			"page": 209,
-			"srd52": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -2640,6 +3422,113 @@
 			]
 		},
 		{
+			"ENG_name": "Emerald Enclave Fledgling",
+			"name": "翠绿闲庭新兵",
+			"source": "FRHoF",
+			"page": 37,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": [
+							"动物交谈|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Speak with Animals",
+					"name": "动物交谈",
+					"type": "entries",
+					"entries": [
+						"你总是准备着{@spell 动物交谈|XPHB}法术，并能用你拥有的任何法术位施放它。智力、感知或魅力是此法术的施法属性（在你选择此专长时决定）。当你以{@variantrule 仪式|XPHB}施放此法术时，其持续时间为8小时。"
+					]
+				},
+				{
+					"ENG_name": "Tag Team",
+					"name": "团队协作",
+					"type": "entries",
+					"entries": [
+						"当你执行{@action 协助|XPHB}动作时，你可以作为同一动作的一部分与5尺内一个愿意的盟友交换位置。此移动不会引发{@action 借机攻击|XPHB|借机攻击}。如果该盟友处于{@condition 失能|XPHB}状态，则你不能使用此增益。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Enclave Magic",
+			"name": "魔法飞地",
+			"source": "FRHoF",
+			"page": 39,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"翠绿闲庭新兵|FRHoF"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"野兽知觉|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Friend to Animals",
+					"name": "动物之友",
+					"type": "entries",
+					"entries": [
+						"你在对野兽使用{@action 影响|XPHB}动作时，在属性检定上具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Two Hearts, One Mind",
+					"name": "二心一意",
+					"type": "entries",
+					"entries": [
+						"你总是准备了{@spell 野兽知觉|XPHB}法术。你可以无需法术位施放它一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。当你使用此特性无需法术位施放它时，它不需要{@status 专注|XPHB}。你也可以使用你拥有的任何适当等级的法术位来施放该法术。该法术的施法属性是由此专长提升的属性。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Fade Away",
 			"name": "匿影无踪",
 			"source": "XGE",
@@ -2671,6 +3560,48 @@
 					"type": "list",
 					"items": [
 						"当你受到伤害之后，你可以立刻用反应魔法性的将自己化为{@condition 隐形} ，持续直至你的下一回合结束，如果你发动攻击、造成伤害、或迫使别人进行豁免这一效果也将提前结束。一旦你使用了这一能力，直到你完成一次短休或长休前你都不能再次使用它。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Fairy Trickster",
+			"name": "仙灵诡术师",
+			"source": "FRHoF",
+			"page": 39,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"dex",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Faerie Trod Trotter",
+					"name": "妖精小径行者",
+					"type": "entries",
+					"entries": [
+						"当你在你的回合中执行{@action 撤离|XPHB}动作时，{@variantrule 困难地形|XPHB}在该回合的剩余时间内不会花费你额外的移动。"
+					]
+				},
+				{
+					"ENG_name": "Flustering Strike",
+					"name": "慌乱打击",
+					"type": "entries",
+					"entries": [
+						"当你以一次攻击检定命中一个生物时，你可以尝试扰乱目标。目标必须成功通过一次感知豁免检定（DC 8加上由该专长提升的属性值的调整值和你{@variantrule 熟练项|XPHB|熟练加值}）否则在直到你的下一个回合结束前在豁免检定上具有{@variantrule 劣势|XPHB}。",
+						"你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。"
 					]
 				}
 			]
@@ -2978,6 +3909,42 @@
 				}
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Genie Magic",
+			"name": "巨灵魔法",
+			"source": "FRHoF",
+			"page": 39,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Wish Magic",
+					"name": "祈愿术魔法",
+					"type": "entries",
+					"entries": [
+						"以一个魔法动作，你可以从术士法术列表中施放一个你选择的施法时间为一个动作的{@filter 从术士法术列表中选择一个1环法术|spells|level=1|class=术士}。一旦你使用了这个增益，在完成一次{@variantrule 长休|XPHB}之前你不能再这样做。该法术的施法属性是由此专长提升的属性。",
+						"当你达到11级时，你使用此专长施放的法术将如同使用2环法术位施放。",
+						"当你达到17级时，该法术如同使用3环法术位施放。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Gift of the Chromatic Dragon",
@@ -3334,6 +4301,94 @@
 						"你获得枪械的熟练项（见城主指南的{@variantrule 枪械|DMG}栏目）。",
 						"你忽略枪械的装填属性。",
 						"你在敌对生物５尺范围内发动远程攻击检定时，不会因此而具有劣势。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Harper Agent",
+			"name": "哈珀特工",
+			"source": "FRHoF",
+			"page": 37,
+			"category": "O",
+			"languageProficiencies": [
+				{
+					"thieves' cant": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyMusicalInstrument": 3
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Thieves' Cant",
+					"name": "盗贼黑话",
+					"type": "entries",
+					"entries": [
+						"你知道盗贼黑话。"
+					]
+				},
+				{
+					"ENG_name": "Instrument Training",
+					"name": "乐器训练",
+					"type": "entries",
+					"entries": [
+						"你获得一个自选{@item 乐器|XPHB}的熟练项。"
+					]
+				},
+				{
+					"ENG_name": "Distracting Melody",
+					"name": "干扰旋律",
+					"type": "entries",
+					"entries": [
+						"当你采取{@action 协助|XPHB}动作来协助一名盟友的攻击检定时，你正在分散注意力的仇敌可以在你30尺内，而非5尺内，前提是该仇敌能够看见或听见你。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Harper Teamwork",
+			"name": "竖琴手团队合作",
+			"source": "FRHoF",
+			"page": 39,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"哈珀特工|FRHoF"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"dex",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Withering Wordplay",
+					"name": "凋零文字游戏",
+					"type": "entries",
+					"entries": [
+						"当你采取{@action 协助|XPHB}动作来协助一名盟友对一名仇敌的攻击检定时，该仇敌在你下个回合开始前进行的第一次豁免检定也具有{@variantrule 劣势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Inspiring Willpower",
+					"name": "鼓舞人心意志力",
+					"type": "entries",
+					"entries": [
+						"如果你成功通过豁免检定以结束自身的{@condition 恐慌|XPHB}或{@condition 麻痹|XPHB}状态，你可以选择你能看见的30尺内一名具有相同状态的盟友。该状态立即为该盟友结束。"
 					]
 				}
 			]
@@ -4229,6 +5284,69 @@
 					"items": [
 						"你习得三门自选语言。",
 						"你可以自创密码。而未经你传授解密方法的人只有两种方法可以破译你的密码：其一是进行智力检定（DC等于你的智力值＋你的熟练加值），或是以魔法破译。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Lordly Resolve",
+			"name": "贵族决心",
+			"source": "FRHoF",
+			"page": 40,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"领主联盟特工|FRHoF"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Standard Bearer",
+					"name": "旗手",
+					"type": "entries",
+					"entries": [
+						"作为{@variantrule 附赠动作|XPHB}，选择你自身60尺内能看见你的至多三个生物。每个目标可以立即使用{@variantrule 反应|XPHB}来使自己站起并结束{@condition 倒地|XPHB}状态，前提是其{@variantrule 速度|XPHB}不为0。此外，你鼓舞目标的决心，持续1分钟或直到你处于{@condition 失能|XPHB}状态。在被鼓舞期间，目标不能被附身或获得{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态；如果目标已被附身、{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}，则目标在对抗相关效果的{@variantrule 优势|XPHB}于任何新的豁免检定。",
+						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Lords' Alliance Agent",
+			"name": "领主联盟特工",
+			"source": "FRHoF",
+			"page": 38,
+			"category": "O",
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Inspiring Strike",
+					"name": "鼓舞打击",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你对一个生物造成{@variantrule 重击|XPHB}时，你可以选择30尺内一个能看见或听见你且没有{@variantrule 英雄激励|XPHB}的盟友。该盟友获得{@variantrule 英雄激励|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Reassert Honor",
+					"name": "重振荣誉",
+					"type": "entries",
+					"entries": [
+						"当你可见的一个敌人对你5尺内的一名盟友造成伤害时，你在你的下一个回合结束前对该敌人进行的下一次攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			]
@@ -5229,6 +6347,82 @@
 			]
 		},
 		{
+			"ENG_name": "Mythal Touched",
+			"name": "密瑟拉接触",
+			"source": "FRHoF",
+			"page": 40,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"ENG_name": "Mythal Ward",
+					"name": "迷锁结界",
+					"type": "entries",
+					"entries": [
+						"如果一个法术攻击命中你或你在对抗一个法术的豁免检定中失败，你可以采取一个{@variantrule 反应|XPHB}反应在密斯特拉之触魔法表格上掷骰以创造一个魔法效应。如果一个效应需要豁免检定，其DC等于8加上由该专长提升的属性调整值和你的{@variantrule 熟练项|XPHB|熟练加值}熟练加值。",
+						"你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。",
+						{
+							"type": "table",
+							"caption": "密瑟拉接触魔法",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"1d20",
+								"效果"
+							],
+							"rows": [
+								[
+									"1-2",
+									"你和你15尺内的每个生物进行一次敏捷豁免检定，豁免失败则受到等于触发法术等级乘以{@dice 1d8}的力场伤害，豁免成功则只受到一半伤害。"
+								],
+								[
+									"3-7",
+									"你和触发法术的施法者形成一个持续1小时的心灵感应链接。"
+								],
+								[
+									"8-10",
+									"重力在以你为中心半径15尺、高60尺的{@variantrule 柱状 [效应区域]|XPHB|柱状}内反转，持续1分钟，依照{@spell 反转重力|XPHB}法术。"
+								],
+								[
+									"11-13",
+									"你和触发法术的施法者各自进行一次体质豁免检定。豁免失败时，该生物获得{@condition 震慑|XPHB}状态直到其下一回合结束。"
+								],
+								[
+									"14-17",
+									"你获得+2的AC加值，持续1分钟，如果触发的是法术攻击，可能使其失手。"
+								],
+								[
+									"18-19",
+									"触发该法术的施法者10尺内任何未被其他生物穿着或携带的可燃非魔法物件会突然起火，受到{@damage 1d4}火焰伤害，并开始燃烧。"
+								],
+								[
+									"20",
+									"触发的法术消散且无效果，用于施放它的动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}被浪费。如果该法术是用法术位施放的，该法术位不会被消耗。"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Observant",
 			"name": "观察力",
 			"source": "PHB",
@@ -5356,6 +6550,51 @@
 					"items": [
 						"当你用{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}发动的攻击命中时，你可以额外掷一枚武器的伤害骰并将其作为额外伤害加入到本次攻击的伤害中，伤害类型与武器本身的伤害类型相同。一旦你使用了这一能力，直到你完成一次短休或长休前你都不能再次使用它。",
 						"使用坚韧不屈种族特质之后，你可以立即以反应进行一次武器攻击。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Order's Resilience",
+			"name": "秩序韧性",
+			"source": "FRHoF",
+			"page": 40,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"圣拳新兵|FRHoF"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Resurge",
+					"name": "复苏",
+					"type": "entries",
+					"entries": [
+						"处于{@condition 倒地|XPHB}状态的情况下，你可以仅消耗5尺移动力来站起来。"
+					]
+				},
+				{
+					"ENG_name": "Stronger Together",
+					"name": "团结就是力量",
+					"type": "entries",
+					"entries": [
+						"如果你在一个没有{@condition 失能|XPHB}状态的盟友5尺范围内，你和该盟友在力量豁免检定上具有{@variantrule 优势|XPHB}。当你处于{@condition 失能|XPHB}状态时，你不能使用此增益。"
 					]
 				}
 			]
@@ -5762,7 +7001,6 @@
 			"name": "守护",
 			"source": "XPHB",
 			"page": 209,
-			"srd52": true,
 			"category": "FS",
 			"prerequisite": [
 				{
@@ -5773,6 +7011,94 @@
 			],
 			"entries": [
 				"当一名你可见的生物以一名位于你5尺内的、除你以外的生物为目标发动攻击，如果你正持握着一面盾牌，你可以用反应将你的盾牌挡在其面前。你对触发反应的攻击检定施加劣势，并且直到你的下一回合开始为止，只要你还处于被守护的目标5尺范围内，其他的任何对守护目标进行的所有攻击检定也都将具有劣势。"
+			]
+		},
+		{
+			"ENG_name": "Purple Dragon Commandant",
+			"name": "紫龙指挥官",
+			"source": "FRHoF",
+			"page": 40,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"紫龙堡垒|FRHoF"
+					]
+				},
+				{
+					"proficiency": [
+						{
+							"weaponGroup": "军用"
+						}
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"ENG_name": "Encourage Ally",
+					"name": "鼓励盟友",
+					"type": "entries",
+					"entries": [
+						"作为{@variantrule 附赠动作|XPHB}，你鼓舞一个你能看见的30尺内的盟友。该盟友获得等于{@dice 2d6}加上此专长提升的属性值的调整值的{@variantrule 临时生命值|XPHB}。你可以使用此{@variantrule 附赠动作|XPHB}的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且你在完成一次{@variantrule 长休|XPHB}后恢复所有使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Last Stand",
+					"name": "背水一战",
+					"type": "entries",
+					"entries": [
+						"你在处于{@status 浴血|XPHB}状态时，{@variantrule 优势|XPHB}于攻击检定。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Purple Dragon Rook",
+			"name": "紫龙堡垒",
+			"source": "FRHoF",
+			"page": 38,
+			"category": "O",
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"洞悉",
+							"表演",
+							"游说"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Entreat",
+					"name": "恳求",
+					"type": "entries",
+					"entries": [
+						"你获得以下一项技能的熟练项：{@skill 洞悉|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Rallying Cry",
+					"name": "重整姿态",
+					"type": "entries",
+					"entries": [
+						"当你掷{@variantrule 先攻|XPHB}且没有{@condition 失能|XPHB}状态时，你可以选择你30尺内能看见的、数量等于你的{@variantrule 熟练项|XPHB|熟练加值}的生物。这些生物获得{@variantrule 英雄激励|XPHB}。",
+						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+					]
+				}
 			]
 		},
 		{
@@ -7584,6 +8910,99 @@
 			]
 		},
 		{
+			"ENG_name": "Spellfire Adept",
+			"name": "法术火焰专家",
+			"source": "FRHoF",
+			"page": 41,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"法术火花|FRHoF"
+					]
+				},
+				{
+					"feature": [
+						"施法",
+						"契约魔法"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Fueled Spellfire",
+					"name": "法术火焰充能",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你施放的法术造成光耀伤害时，你可以消耗最多两个{@variantrule 生命值骰|XPHB}，掷骰并将掷出的全部数值添加到该法术的一个伤害掷骰上。"
+					]
+				},
+				{
+					"ENG_name": "Searing Spellfire",
+					"name": "灼热法术火焰",
+					"type": "entries",
+					"entries": [
+						"当你进行一次造成光耀伤害的伤害掷骰时，它忽略对光耀伤害的{@variantrule 抗性|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Spellfire Spark",
+			"name": "法术火花",
+			"source": "FRHoF",
+			"page": 38,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"圣火术|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Magic Absorption",
+					"name": "魔法吸收",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你受到法术或魔法效应的伤害时，你将受到的全部伤害减少{@dice 1d4}。如果你处于{@condition 失能|XPHB}状态，则无法使用此增益。"
+					]
+				},
+				{
+					"ENG_name": "Spellfire Flame",
+					"name": "法术火花火焰",
+					"type": "entries",
+					"entries": [
+						"你学会戏法{@spell 圣火术|XPHB}。智力、感知或魅力作为该法术的施法属性（选择此专长时决定）。你还可以以{@variantrule 附赠动作|XPHB}施放该戏法，次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Squat Nimbleness",
 			"name": "低身机敏",
 			"source": "XGE",
@@ -7711,6 +9130,55 @@
 					"type": "inset",
 					"entries": [
 						"每个索兰尼亚骑士都是组织中一个骑士团中的成员。在训练过程中，大多数骑士会先加入皇冠骑士团作为起步，而后才转入其他骑士团。无论角色遵循哪条道路，都会保留在骑士团中所学，即便是已经加入了其他骑士团。角色可以更改其所属的骑士团，已获得的索兰尼亚骑士专长仍然生效。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Street Justice",
+			"name": "街头正义",
+			"source": "FRHoF",
+			"page": 41,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Headlock",
+					"name": "头锁",
+					"type": "entries",
+					"entries": [
+						"你的盟友对被你{@condition 受擒|XPHB}的生物进行{@variantrule 优势|XPHB}攻击检定。"
+					]
+				},
+				{
+					"ENG_name": "Sturdy Knot",
+					"name": "牢固结",
+					"type": "entries",
+					"entries": [
+						"当你使用{@item 链条|XPHB}、{@item 镣铐|XPHB}或{@item 绳索|XPHB}来束缚一个生物时，将你的{@variantrule 熟练项|XPHB|熟练加值}添加到逃脱或破坏{@item 链条|XPHB}、{@item 镣铐|XPHB}或{@item 绳索|XPHB}的DC上。"
+					]
+				},
+				{
+					"ENG_name": "Tough Talk",
+					"name": "健壮交谈",
+					"type": "entries",
+					"entries": [
+						"一个生物的{@variantrule 敌对 【态度】|XPHB|敌对}态度不会对你的魅力（{@skill 威吓|XPHB}）检定施加{@variantrule 劣势|XPHB}来影响该生物。"
 					]
 				}
 			]
@@ -8714,6 +10182,32 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Tyro of the Gauntlet",
+			"name": "圣拳新兵",
+			"source": "FRHoF",
+			"page": 38,
+			"category": "O",
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Stand as One",
+					"name": "团结如一",
+					"type": "entries",
+					"entries": [
+						"当一个你5尺内的盟友受到会推离或拉近它的效果影响时，你可以采取一个{@variantrule 反应|XPHB}来防止该盟友被推离或拉近。要获得此增益，该盟友不能处于{@condition 失能|XPHB}状态。"
+					]
+				},
+				{
+					"ENG_name": "Vigilant",
+					"name": "警觉",
+					"type": "entries",
+					"entries": [
+						"当你执行{@action 预备|XPHB}动作时，在你下个回合开始前，下一次对你进行的攻击检定具有{@variantrule 劣势|XPHB}劣势。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Unarmed Fighting",
 			"name": "徒手战斗",
 			"source": "XPHB",
@@ -9007,6 +10501,76 @@
 			],
 			"entries": [
 				"你学会由你的族人保护和尊敬的原初之木的魔法。你习得一个你自选的德鲁伊戏法。同时，你习得法术 {@spell 大步奔行}与{@spell 行动无踪} 。你可以不消耗法术位的施展这两个法术各一次。而你在完成一次长休后你重获以此免费施展这两个法术的使用次数。感知是你施展这三个法术的施法属性。"
+			]
+		},
+		{
+			"ENG_name": "Zhentarim Ruffian",
+			"name": "散塔林会恶棍",
+			"source": "FRHoF",
+			"page": 38,
+			"category": "O",
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Exploit Opening",
+					"name": "利用破绽",
+					"type": "entries",
+					"entries": [
+						"当你为一次{@action 借机攻击|XPHB}掷伤害骰时，你可以掷两次伤害骰子并对目标使用任一结果。"
+					]
+				},
+				{
+					"ENG_name": "Family First",
+					"name": "家庭至上",
+					"type": "entries",
+					"entries": [
+						"如果你在掷{@variantrule 先攻|XPHB}时拥有{@variantrule 英雄激励|XPHB}，你可以消耗它来让你自己和你的盟友在该{@variantrule 先攻|XPHB}掷骰上获得{@variantrule 优势|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Zhentarim Tactics",
+			"name": "散塔林会战术",
+			"source": "FRHoF",
+			"page": 41,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"散塔林会恶棍|FRHoF"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"dex",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Retaliate",
+					"name": "反击",
+					"type": "entries",
+					"entries": [
+						"当一个5尺内的生物用近战攻击命中你后，你可以立即对该生物进行一次{@action 借机攻击|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Versatile Merc",
+					"name": "两用佣兵",
+					"type": "entries",
+					"entries": [
+						"当你完成一次{@variantrule 长休|XPHB}时，选择一个你拥有熟练项的技能。直到你完成下一次{@variantrule 长休|XPHB}前，你在该技能上拥有{@variantrule 专精|XPHB}。"
+					]
+				}
 			]
 		}
 	]

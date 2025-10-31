@@ -1843,6 +1843,35 @@
 				"念力宗师|战士|XPHB|灵能武士|XPHB|18"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Banneret",
+			"name": "旗手",
+			"shortName": "旗手",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"ritual": [
+								"通晓语言|XPHB"
+							]
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"subclassFeatures": [
+				"旗手|战士|XPHB|旗手|FRHoF|3|FRHoF",
+				"团队战术|战士|XPHB|旗手|FRHoF|7|FRHoF",
+				"旗手崩天疾驰|战士|XPHB|旗手|FRHoF|10|FRHoF",
+				"共享恢复力|战士|XPHB|旗手|FRHoF|15|FRHoF",
+				"鼓舞人心的指挥官|战士|XPHB|旗手|FRHoF|18|FRHoF"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
@@ -4511,6 +4540,167 @@
 			"entries": [
 				"18级起，你的战意能延缓死亡的到来。如果你受到会将你的生命值降到0且不会立即杀死你的伤害时，你可以用你的反应来延缓陷入{@condition 昏迷}，且你能立刻进行一个额外的回合并打断当前回合。如果你在这个额外回合中，以0生命值的状态承受伤害，则仍旧如往常一样计为一次死亡豁免失败，且三次死亡豁免失败依旧会杀死你。当这个额外回合结束时，如果你的生命值为0，你依旧会陷入{@condition 昏迷}。",
 				"必须完成一次长休才能再次使用该特性。"
+			]
+		},
+		{
+			"ENG_name": "Banneret",
+			"name": "旗手",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"{@i 以鼓舞人心的领导力集结同伴英雄}",
+				"旗手是英勇与领导力的典范，他们保护无辜者并团结冒险者同伴投身于正义与自由的事业。许多是服务于科米尔、银月联邦、达玛拉、切森塔或费伦其他国度的骑士。他们作为游侠骑士漫游诸国，将对抗邪恶的战斗带往王国边境之外。",
+				"旗手依靠判断力、勇气和对骑士准则的忠诚来引导他们击败邪恶之徒。单独的旗手是技艺精湛的战士，但当领导一群盟友时，这些武者甚至能将装备简陋的民兵转变为凶猛的战团。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "骑士特使|战士|XPHB|旗手|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "群体恢复|战士|XPHB|旗手|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Group Recovery",
+			"name": "群体恢复",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"当你使用你的回气来恢复{@variantrule 生命值|XPHB}时，你可以选择30尺内{@variantrule 光环 [效应区域]|XPHB|光环}源自你自身的盟友，数量最多等于你的魅力调整值（至少一个）。每个被选中的盟友恢复{@variantrule 生命值|XPHB}等于{@dice 1d4}加上你的战士等级。一旦你使用此能力，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前，你无法再次使用它。"
+			]
+		},
+		{
+			"ENG_name": "Knightly Envoy",
+			"name": "骑士特使",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"你懂得如何以优雅的姿态担任贵族大使。你获得以下好处。",
+				{
+					"ENG_name": "Comprehension",
+					"name": "通晓",
+					"type": "entries",
+					"entries": [
+						"你可以施放{@spell 通晓语言|XPHB}法术，但只能作为{@variantrule 仪式|XPHB}。魅力是你的施法关键属性。"
+					]
+				},
+				{
+					"ENG_name": "Polyglot",
+					"type": "entries",
+					"name": "通晓语言",
+					"entries": [
+						"你从《玩家手册》或本书第2章的语言表中学习一种语言。当你完成一次{@variantrule 长休|XPHB}时，你可以将从此特性中学会的语言替换为过去24小时内你曾听到、看到手语或阅读过的另一种语言。"
+					]
+				},
+				{
+					"ENG_name": "Well Spoken",
+					"type": "entries",
+					"name": "能言善辩",
+					"entries": [
+						"你从以下技能中选择一个获得熟练项：{@skill 洞悉|XPHB}、{@skill 威吓|XPHB}、{@skill 游说|XPHB}或{@skill 表演|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Team Tactics",
+			"name": "团队战术",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"当你使用团队恢复时，每个被选中的盟友在{@variantrule D20 检定|XPHB|D20 检定}上获得{@variantrule 优势|XPHB}，直到你的下一回合开始。"
+			]
+		},
+		{
+			"ENG_name": "Rallying Surge",
+			"name": "旗手崩天疾驰",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 10,
+			"header": 2,
+			"entries": [
+				"当你使用动作如潮时，你可以选择30尺内{@variantrule 光环 [效应区域]|XPHB|光环}范围内的盟友，数量最多等于你的魅力调整值（至少一个）。这些盟友中的每一个都可以立即使用一个{@variantrule 反应|XPHB}来执行以下选项之一。",
+				{
+					"ENG_name": "Attack",
+					"name": "攻击",
+					"type": "entries",
+					"entries": [
+						"该盟友使用武器或进行一次{@variantrule 徒手打击|XPHB}攻击。"
+					]
+				},
+				{
+					"ENG_name": "Move",
+					"name": "移动",
+					"type": "entries",
+					"entries": [
+						"该盟友移动至多一半的{@variantrule 速度|XPHB}而不引发{@action 借机攻击|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Shared Resilience",
+			"name": "共享恢复力",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"当你60尺内一个你能看见的盟友豁免失败时，你可以采取一个{@variantrule 反应|XPHB}来消耗一次你的不屈特性使用次数。该盟友可以立即重掷该豁免骰，并获得等于你战士等级的加值；该盟友必须使用新的掷骰结果。"
+			]
+		},
+		{
+			"ENG_name": "Inspiring Commander",
+			"name": "鼓舞人心的指挥官",
+			"source": "FRHoF",
+			"className": "战士",
+			"classSource": "XPHB",
+			"subclassShortName": "旗手",
+			"subclassSource": "FRHoF",
+			"level": 18,
+			"header": 2,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Bolstered Rally",
+					"type": "entries",
+					"name": "鼓舞集结",
+					"entries": [
+						"群体恢复和崩天疾驰的作用范围现在是一个60尺的{@variantrule 光环 [效应区域]|XPHB|光环}。"
+					]
+				},
+				{
+					"ENG_name": "Unshakable Bravery",
+					"type": "entries",
+					"name": "不可动摇的勇气",
+					"entries": [
+						"你对魅惑和恐慌状态具有{@variantrule 免疫|XPHB}。"
+					]
+				}
 			]
 		},
 		{

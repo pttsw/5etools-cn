@@ -2968,6 +2968,50 @@
 				"战斗化身|牧师|XPHB|战争|XPHB|17"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Knowledge Domain",
+			"name": "知识领域",
+			"shortName": "知识",
+			"source": "FRHoF",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"命令术|XPHB",
+							"通晓语言|XPHB",
+							"侦测魔法|XPHB",
+							"侦测思想|XPHB",
+							"鉴定术|XPHB",
+							"心灵尖刺|XPHB"
+						],
+						"5": [
+							"解除魔法|XPHB",
+							"回避侦测|XPHB",
+							"巧言术|XPHB"
+						],
+						"7": [
+							"秘法眼|XPHB",
+							"放逐术|XPHB",
+							"困惑术|XPHB"
+						],
+						"9": [
+							"通晓传奇|XPHB",
+							"探知术|XPHB",
+							"突触静止|XPHB"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"知识领域|牧师|XPHB|知识|FRHoF|3|FRHoF",
+				"无拘心智|牧师|XPHB|知识|FRHoF|6|FRHoF",
+				"神圣预知|牧师|XPHB|知识|FRHoF|17|FRHoF"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
@@ -7642,6 +7686,139 @@
 					"page": true
 				}
 			}
+		},
+		{
+			"ENG_name": "Blessings of Knowledge",
+			"name": "知识祝福",
+			"source": "FRHoF",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "知识",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"你获得自选一种{@item 工匠工具|XPHB}的熟练项，并在以下技能中选择两个获得熟练项：{@skill 奥秘|XPHB}、{@skill 历史|XPHB}、{@skill 自然|XPHB}或{@skill 宗教|XPHB}。你在这两个技能上拥有{@variantrule 专精|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Knowledge Domain",
+			"name": "知识领域",
+			"source": "FRHoF",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "知识",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"{@i 发掘奥秘与掌控心智}",
+				"知识领域将学习与理解置于一切之上。涉足此领域的牧师研究深奥知识，收集古老典籍，探索隐秘之地，并审视心智的运作过程。对他们而言，知识比物质财富更为珍贵，学习本身就是一种崇拜行为。图书馆、大学及其他教育机构也汲取着知识领域的力量。",
+				"知识之神从奥术魔法的大师到工艺与发明的守护神各不相同。在费伦，知识领域的牧师崇拜学识与创造之神，例如{@deity 欧格玛|费伦|FRHoF}和{@deity 贡德|费伦|FRHoF}，以及其他众多神祇。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "知识祝福|牧师|XPHB|知识|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "知识领域法术|牧师|XPHB|知识|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "心灵魔法|牧师|XPHB|知识|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Knowledge Domain Spells",
+			"name": "知识领域法术",
+			"source": "FRHoF",
+			"page": 2,
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "知识",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"当你达到知识领域法术表中指定的牧师等级时，你此后始终准备着列出的法术。",
+				{
+					"type": "table",
+					"colLabels": [
+						"牧师等级",
+						"spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 命令术|XPHB}, {@spell 通晓语言|XPHB}*, {@spell 侦测魔法|XPHB}*, {@spell 侦测思想|XPHB}*, {@spell 鉴定术|XPHB}*, {@spell 心灵尖刺|XPHB}*"
+						],
+						[
+							"5",
+							"{@spell 解除魔法|XPHB}, {@spell 回避侦测|XPHB}, {@spell 巧言术|XPHB}*"
+						],
+						[
+							"7",
+							"{@spell 秘法眼|XPHB}*, {@spell 放逐术|XPHB}, {@spell 困惑术|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 通晓传奇|XPHB}*, {@spell 探知术|XPHB}*, {@spell 突触静止|XPHB}"
+						]
+					],
+					"footnotes": [
+						"*预言学派法术"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mind Magic",
+			"name": "心灵魔法",
+			"source": "FRHoF",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "知识",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"consumes": {
+				"ENG_name": "Channel Divinity",
+				"name": "引导神力",
+				"amount": 1
+			},
+			"entries": [
+				"作为一个魔法动作，你可以消耗一次你的引导神力使用次数来显现你的魔法知识。从知识领域法术表中选择一个你已准备的预言学派法术。作为该动作的一部分，你施放该法术而无需消耗法术位或需要材料成分。"
+			]
+		},
+		{
+			"ENG_name": "Unfettered Mind",
+			"name": "无拘心智",
+			"source": "FRHoF",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "知识",
+			"subclassSource": "FRHoF",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"你获得60尺内的{@variantrule 心灵感应|XPHB}。当你使用此{@variantrule 心灵感应|XPHB}时，你可以同时联系等同于你感知调整值（至少一个）数量的生物。",
+				"此外，你获得智力豁免熟练。如果你已拥有此熟练项，则改为获得一项你尚未拥有的豁免熟练项。"
+			]
+		},
+		{
+			"ENG_name": "Divine Foreknowledge",
+			"name": "神圣预知",
+			"source": "FRHoF",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "知识",
+			"subclassSource": "FRHoF",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"作为一个{@variantrule 附赠动作|XPHB}，你以魔法方式将思维延伸至未来。持续1小时内，你在{@variantrule D20 检定|XPHB|D20 检定}上具有{@variantrule 优势|XPHB}。一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前无法再次使用。你也可以通过消耗一个6级或更高的法术位来恢复此特性的使用次数（无需动作）。"
+			]
 		},
 		{
 			"ENG_name": "Channel Divinity: Knowledge of the Ages",

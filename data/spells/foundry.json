@@ -620,6 +620,99 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Animal Shapes",
+			"name": "动物形态",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Initial Transformation",
+					"name": "初始转化",
+					"type": "transform",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"cr": "4",
+							"sizes": [
+								"微型",
+								"sm",
+								"医疗",
+								"lg"
+							],
+							"types": [
+								"野兽"
+							]
+						}
+					],
+					"transform": {
+						"customize": true,
+						"mode": "cr",
+						"preset": "变形术"
+					},
+					"settings": {
+						"effects": [
+							"起源",
+							"其他起源",
+							"法术"
+						],
+						"keep": [
+							"精神的",
+							"语言",
+							"类型",
+							"hp"
+						],
+						"tempFormula": "@source.attributes.hp.max",
+						"preset": "变形术",
+						"transformTokens": true
+					}
+				},
+				{
+					"ENG_name": "Follow Up Transformations",
+					"name": "后续变形",
+					"type": "transform",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"cr": "4",
+							"sizes": [
+								"微型",
+								"sm",
+								"医疗",
+								"lg"
+							],
+							"types": [
+								"野兽"
+							]
+						}
+					],
+					"transform": {
+						"customize": true,
+						"mode": "cr",
+						"preset": "变形术"
+					},
+					"settings": {
+						"effects": [
+							"起源",
+							"其他起源",
+							"法术"
+						],
+						"keep": [
+							"精神的",
+							"语言",
+							"类型",
+							"hp"
+						],
+						"preset": "变形术",
+						"transformTokens": true
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Animate Dead",
 			"name": "活化死尸",
 			"source": "XPHB",
@@ -1650,6 +1743,18 @@
 					"duration": {
 						"seconds": 60
 					},
+					"changes": [
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.attributes.death.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "目标在进行感知豁免与死亡豁免时具有优势，并且从任何治疗中获得最大可能的生命值恢复。"
 				}
 			],
@@ -1817,6 +1922,149 @@
 				}
 			],
 			"effects": [
+				{
+					"ENG_name": "Cursed Charisma",
+					"name": "诅咒魅力",
+					"duration": {
+						"rounds": 1,
+						"seconds": 60
+					},
+					"statuses": [
+						"诅咒"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.cha.check.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						}
+					],
+					"description": "目标在所选属性的属性检定和豁免检定中具有劣势。"
+				},
+				{
+					"ENG_name": "Cursed Constitution",
+					"name": "诅咒体质",
+					"duration": {
+						"rounds": 1,
+						"seconds": 60
+					},
+					"statuses": [
+						"诅咒"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.con.check.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						}
+					],
+					"description": "目标在所选属性的属性检定和豁免检定中具有劣势。"
+				},
+				{
+					"ENG_name": "Cursed Dexterity",
+					"name": "诅咒敏捷",
+					"duration": {
+						"rounds": 1,
+						"seconds": 60
+					},
+					"statuses": [
+						"诅咒"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.dex.check.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						}
+					],
+					"description": "目标在所选属性的属性检定和豁免检定中具有劣势。"
+				},
+				{
+					"ENG_name": "Cursed Intelligence",
+					"name": "诅咒智力",
+					"duration": {
+						"rounds": 1,
+						"seconds": 60
+					},
+					"statuses": [
+						"诅咒"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.int.check.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						}
+					],
+					"description": "目标在所选属性的属性检定和豁免检定中具有劣势。"
+				},
+				{
+					"ENG_name": "Cursed Strength",
+					"name": "诅咒力量",
+					"duration": {
+						"seconds": 60
+					},
+					"statuses": [
+						"诅咒"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						}
+					],
+					"description": "目标在所选属性的属性检定和豁免检定中具有劣势。"
+				},
+				{
+					"ENG_name": "Cursed Wisdom",
+					"name": "诅咒感知",
+					"duration": {
+						"rounds": 1,
+						"seconds": 60
+					},
+					"statuses": [
+						"诅咒"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						}
+					],
+					"description": "目标在所选属性的属性检定和豁免检定中具有劣势。"
+				},
 				{
 					"ENG_name": "Cursed Attacks",
 					"name": "诅咒攻击",
@@ -3026,7 +3274,7 @@
 						"type": "action"
 					},
 					"bonuses": {
-						"attackDamage": "@mod + (2 * @item.level - 12)d12"
+						"attackDamage": "@mod + (@item.level - 6)d12"
 					},
 					"match": {
 						"attacks": true,
@@ -3092,7 +3340,7 @@
 								],
 								"scaling": {
 									"mode": "whole",
-									"number": 2
+									"number": 1
 								}
 							}
 						]
@@ -5863,9 +6111,6 @@
 			"ENG_name": "Enhance Ability",
 			"name": "强化属性",
 			"source": "XPHB",
-			"system": {
-				"target.affects.count": "@item.level - 1"
-			},
 			"activities": [
 				{
 					"type": "utility",
@@ -5899,6 +6144,13 @@
 					"duration": {
 						"seconds": 3600
 					},
+					"changes": [
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "目标在使用所选属性进行属性检定时具有优势。"
 				},
 				{
@@ -5908,6 +6160,13 @@
 					"duration": {
 						"seconds": 3600
 					},
+					"changes": [
+						{
+							"key": "system.abilities.dex.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "目标在使用所选属性进行属性检定时具有优势。"
 				},
 				{
@@ -5917,6 +6176,13 @@
 					"duration": {
 						"seconds": 3600
 					},
+					"changes": [
+						{
+							"key": "system.abilities.int.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "目标在使用所选属性进行属性检定时具有优势。"
 				},
 				{
@@ -5926,6 +6192,13 @@
 					"duration": {
 						"seconds": 3600
 					},
+					"changes": [
+						{
+							"key": "system.abilities.wis.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "目标在使用所选属性进行属性检定时具有优势。"
 				},
 				{
@@ -5935,6 +6208,13 @@
 					"duration": {
 						"seconds": 3600
 					},
+					"changes": [
+						{
+							"key": "system.abilities.cha.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "目标在使用所选属性进行属性检定时具有优势。"
 				}
 			],
@@ -6010,6 +6290,16 @@
 							"key": "system.bonuses.rwak.damage",
 							"mode": "ADD",
 							"value": "- 1d4"
+						},
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
 					],
 					"description": "目标体型缩小一级\u2014\u2014例如从中型变为小型。同时，目标在力量检定和力量豁免上具有劣势。目标使用缩小后的武器或徒手攻击时，命中后造成的伤害减少1d4（伤害不能低于1）。"
@@ -7334,6 +7624,68 @@
 					"duration": {
 						"seconds": 28800
 					},
+					"changes": [
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.dex.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.con.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.int.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.wis.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.cha.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "在持续时间内，目标在进行D20检定时具有优势，而其他生物对其进行的攻击检定具有劣势。"
 				}
 			],
@@ -7479,6 +7831,11 @@
 							"key": "system.attributes.movement.swim",
 							"mode": "UPGRADE",
 							"value": 1
+						},
+						{
+							"key": "system.attributes.movement.ignoredDifficultTerrain",
+							"mode": "ADD",
+							"value": "all"
 						}
 					]
 				}
@@ -7593,6 +7950,21 @@
 							"key": "img",
 							"mode": "OVERRIDE",
 							"value": "icons/magic/air/wind-vortex-swirl-blue-purple.webp"
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
 					],
 					"description": "目标的唯一移动方式是10尺的飞行速度，且可以悬停。目标可以进入并占据其他生物的空间。目标对钝击、穿刺和挥砍伤害具有抗性；它对&Reference[倒地 apply=false]状态免疫；并且在力量、敏捷和体质豁免上具有优势。目标可以穿过狭窄的开口，但会将液体视作固体表面。目标无法说话或操作物体，其所携带或持握的任何物品都无法掉落、使用或以其他方式互动。最后，目标无法攻击或施放法术。"
@@ -8632,6 +9004,11 @@
 							"key": "system.attributes.ac.bonus",
 							"mode": "ADD",
 							"value": 2
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
 					],
 					"description": "直到法术结束，目标的移动速度翻倍，护甲等级获得+2加值，敏捷豁免检定具有优势，且每回合可获得一个额外的动作。该动作仅能用于执行攻击（仅限一次攻击）、疾冲、撤离、躲藏或使用动作。当法术结束时，目标将陷入失能状态且移动速度降为0，直至其下一回合结束，一股倦怠感席卷全身。"
@@ -9330,7 +9707,39 @@
 					"foundryId": "holyAura",
 					"duration": {
 						"seconds": 60
-					}
+					},
+					"changes": [
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
 				},
 				{
 					"ENG_name": "Blinded",
@@ -11941,6 +12350,25 @@
 							"calculation": "施法"
 						}
 					}
+				},
+				{
+					"type": "transform",
+					"activation": {
+						"type": ""
+					},
+					"profiles": [
+						{
+							"ENG_name": "Creature into Creature",
+							"name": "生物变生物",
+							"types": [
+								"野兽"
+							]
+						}
+					],
+					"transform": {
+						"mode": "cr",
+						"preset": "变形术"
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -13056,6 +13484,16 @@
 							"key": "system.bonuses.rsak.damage",
 							"mode": "ADD",
 							"value": "- 1d8"
+						},
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": -1
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": -1
 						}
 					],
 					"description": "目标在该法术持续时间内进行基于力量的D20检定时具有劣势。在此期间，其所有伤害掷骰还需减去1d8。目标在每个自己回合结束时需重复进行[[/save ability=con]]豁免检定，成功则法术终止。"
@@ -14182,6 +14620,115 @@
 						"昏迷"
 					],
 					"description": "若目标为生物，则其进入假死状态；它获得&Reference[Unconscious apply=false]状态，不会衰老，也不需要食物、水或空气。若目标受到任何伤害，该法术也会终止。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Shapechange",
+			"name": "形体变化",
+			"source": "XPHB",
+			"activities": [
+				{
+					"ENG_name": "Initial Transformation",
+					"name": "初始转化",
+					"type": "transform",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"cr": "max(@details.level, @details.cr)",
+							"types": [
+								"异怪",
+								"野兽",
+								"celestial",
+								"龙",
+								"元素生物",
+								"精类",
+								"邪魔",
+								"巨人语",
+								"类人生物",
+								"怪兽",
+								"泥怪",
+								"植物"
+							]
+						}
+					],
+					"transform": {
+						"customize": true,
+						"mode": "cr",
+						"preset": "变形术"
+					},
+					"settings": {
+						"effects": [
+							"起源",
+							"其他起源",
+							"法术"
+						],
+						"keep": [
+							"精神的",
+							"豁免",
+							"技能",
+							"语言",
+							"spells",
+							"类型",
+							"hp"
+						],
+						"tempFormula": "@source.attributes.hp.max",
+						"preset": "变形术",
+						"transformTokens": true
+					}
+				},
+				{
+					"ENG_name": "Follow Up Transformations",
+					"name": "后续变形",
+					"type": "transform",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"cr": "max(@details.level, @details.cr)",
+							"types": [
+								"异怪",
+								"野兽",
+								"celestial",
+								"龙",
+								"元素生物",
+								"精类",
+								"邪魔",
+								"巨人语",
+								"类人生物",
+								"怪兽",
+								"泥怪",
+								"植物"
+							]
+						}
+					],
+					"transform": {
+						"customize": true,
+						"mode": "cr",
+						"preset": "变形术"
+					},
+					"settings": {
+						"effects": [
+							"起源",
+							"其他起源",
+							"法术"
+						],
+						"keep": [
+							"精神的",
+							"豁免",
+							"技能",
+							"语言",
+							"spells",
+							"类型",
+							"hp"
+						],
+						"preset": "变形术",
+						"transformTokens": true
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -17174,6 +17721,43 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Thaumaturgy",
+			"name": "奇术",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "thaumaturgy"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Booming Voice",
+					"name": "扩音",
+					"foundryId": "thaumaturgy",
+					"duration": {
+						"seconds": 60
+					},
+					"changes": [
+						{
+							"key": "system.skills.itm.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "你的声音在1分钟内会变得比正常响亮三倍。在此期间，你在[[/check ability=cha skill=itm]]检定上具有优势。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Thorn Whip",
 			"name": "荆棘之鞭",
 			"source": "XPHB",
@@ -17437,6 +18021,38 @@
 						"dc": {
 							"calculation": "施法"
 						}
+					}
+				},
+				{
+					"type": "transform",
+					"activation": {
+						"type": ""
+					},
+					"profiles": [
+						{
+							"ENG_name": "Creature into Creature",
+							"name": "生物变生物"
+						},
+						{
+							"ENG_name": "Object into Creature",
+							"name": "物件变生物",
+							"cr": "9"
+						}
+					],
+					"transform": {
+						"customize": true,
+						"mode": "cr",
+						"preset": "变形术"
+					},
+					"settings": {
+						"effects": [
+							"起源",
+							"其他起源",
+							"法术"
+						],
+						"tempFormula": "@source.attributes.hp.max",
+						"preset": "变形术",
+						"transformTokens": true
 					}
 				}
 			],

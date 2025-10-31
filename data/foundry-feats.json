@@ -966,6 +966,19 @@
 					}
 				}
 			],
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.death.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "你进行的死亡豁免具有优势。"
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1858,6 +1871,36 @@
 					"foundryId": "shieldMaster",
 					"statuses": [
 						"倒地"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Skulker",
+			"name": "隐伏者",
+			"source": "XPHB",
+			"effects": [
+				{
+					"ENG_name": "Fog of War",
+					"name": "战争迷雾",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.skills.ste.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"descriptionEntries": [
+						{
+							"ENG_name": "Fog of War",
+							"name": "战争迷雾",
+							"type": "entries",
+							"entries": [
+								"你利用战斗中的分心，在战斗期间作为躲藏动作的一部分进行的任何敏捷（隐匿）检定中获得优势。"
+							]
+						}
 					]
 				}
 			],

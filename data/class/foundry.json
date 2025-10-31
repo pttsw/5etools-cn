@@ -177,22 +177,22 @@
 				{
 					"type": "ScaleValue",
 					"configuration": {
-						"type": "string",
+						"type": "number",
 						"scale": {
 							"1": {
-								"value": "2"
+								"value": 2
 							},
 							"3": {
-								"value": "3"
+								"value": 3
 							},
 							"6": {
-								"value": "4"
+								"value": 4
 							},
 							"12": {
-								"value": "5"
+								"value": 5
 							},
 							"16": {
-								"value": "6"
+								"value": 6
 							}
 						}
 					},
@@ -765,6 +765,47 @@
 		}
 	],
 	"subclass": [
+		{
+			"ENG_name": "Battle Master",
+			"name": "战斗大师",
+			"shortName": "战斗大师",
+			"source": "PHB",
+			"className": "战士",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "优越",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"number": 4,
+								"faces": 8
+							},
+							"7": {
+								"number": 5,
+								"faces": 8
+							},
+							"10": {
+								"number": 5,
+								"faces": 10
+							},
+							"15": {
+								"number": 6,
+								"faces": 10
+							},
+							"18": {
+								"number": 6,
+								"faces": 12
+							}
+						}
+					},
+					"title": "卓越骰"
+				}
+			],
+			"migrationVersion": 3
+		},
 		{
 			"ENG_name": "Nature Domain",
 			"name": "自然领域",
@@ -1643,7 +1684,9 @@
 			"className": "战士",
 			"classSource": "PHB",
 			"level": 1,
-			"isIgnored": true,
+			"entries": [
+				"你选择一种特定的战斗风格作为专长。即使你再次获得选择机会，也不能重复选择相同的战斗风格选项。"
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1884,7 +1927,9 @@
 			"className": "圣武士",
 			"classSource": "PHB",
 			"level": 2,
-			"isIgnored": true,
+			"entries": [
+				"你选择一种特定的战斗风格作为专长。即使你再次获得选择机会，也不能重复选择相同的战斗风格选项。"
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -1954,7 +1999,9 @@
 			"className": "游侠",
 			"classSource": "PHB",
 			"level": 2,
-			"isIgnored": true,
+			"entries": [
+				"你选择一种特定的战斗风格作为专长。即使你再次获得选择机会，也不能重复选择相同的战斗风格选项。"
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -2465,8 +2512,40 @@
 							"key": "system.traits.dr.value",
 							"mode": "ADD",
 							"value": "bludgeoning"
+						},
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
 					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Danger Sense",
+			"name": "险境感知",
+			"source": "XPHB",
+			"className": "野蛮人",
+			"classSource": "XPHB",
+			"level": 2,
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "你在敏捷豁免上具有优势，除非你处于&Reference[失能]状态。"
 				}
 			],
 			"migrationVersion": 3
@@ -3780,20 +3859,28 @@
 			"classSource": "XPHB",
 			"level": 2,
 			"system": {
-				"uses.max": "@scale.druid.wild-shape-uses"
+				"uses.max": "@scale.druid.wild-shape-uses",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					},
+					{
+						"period": "sr",
+						"type": "formula",
+						"formula": "1"
+					}
+				]
 			},
 			"activities": [
 				{
-					"ENG_name": "Wild Shape",
-					"name": "荒野形态",
-					"type": "utility",
+					"type": "transform",
 					"activation": {
-						"type": "bonus",
-						"value": 1
+						"type": "bonus"
 					},
 					"duration": {
-						"value": "(floor(@classes.druid.levels / 2))",
-						"units": "小时"
+						"units": "小时",
+						"value": "(floor(@classes.druid.levels / 2))"
 					},
 					"consumption": {
 						"targets": [
@@ -3807,6 +3894,53 @@
 						"affects": {
 							"type": "self"
 						}
+					},
+					"profiles": [
+						{
+							"ENG_name": "CR ¼",
+							"cr": "0.25",
+							"name": "CR ¼",
+							"types": [
+								"野兽"
+							],
+							"movement": [
+								"飞行术"
+							],
+							"level": {
+								"max": 5
+							}
+						},
+						{
+							"ENG_name": "CR ½",
+							"cr": "0.5",
+							"name": "CR 1/2",
+							"types": [
+								"野兽"
+							],
+							"movement": [
+								"飞行术"
+							],
+							"level": {
+								"min": 6,
+								"max": 7
+							}
+						},
+						{
+							"ENG_name": "CR 1",
+							"name": "CR 1",
+							"cr": "1",
+							"types": [
+								"野兽"
+							],
+							"level": {
+								"min": 8
+							}
+						}
+					],
+					"transform": {
+						"mode": "cr",
+						"identifier": "德鲁伊",
+						"preset": "荒野形态"
 					}
 				}
 			],
@@ -4444,6 +4578,9 @@
 			"className": "武僧",
 			"classSource": "XPHB",
 			"level": 2,
+			"system": {
+				"uses.max": null
+			},
 			"entryData": {
 				"resources": [
 					{
@@ -4454,7 +4591,8 @@
 						"count": "@scale.monk.focus"
 					}
 				]
-			}
+			},
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Patient Defense",
@@ -5305,7 +5443,46 @@
 			"className": "圣武士",
 			"classSource": "XPHB",
 			"level": 2,
-			"isIgnored": true,
+			"entries": [
+				"你获得一个自选的{@filter 战斗风格专长|feats|category=FS}。除了选择这些专长之一，你还可以选择{@feat 受祝福的勇士|XPHB}战斗风格。"
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Paladin's Smite",
+			"name": "圣武斩",
+			"source": "XPHB",
+			"className": "圣武士",
+			"classSource": "XPHB",
+			"level": 2,
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "1"
+					},
+					"spell": {
+						"uuid": "@spell[至圣斩|XPHB]"
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -5637,7 +5814,9 @@
 			"className": "游侠",
 			"classSource": "XPHB",
 			"level": 2,
-			"isIgnored": true,
+			"entries": [
+				"你获得一个自选的{@filter 战斗风格专长|feats|category=FS}。除了选择这些专长之一，你还可以选择{@feat 德鲁伊教勇士|XPHB}战斗风格。"
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -7444,6 +7623,9 @@
 			"subclassShortName": "剑舞",
 			"subclassSource": "XGE",
 			"level": 3,
+			"entries": [
+				"在3级时，你选择一种战斗风格作为专长。你不能多次选择同一个战斗风格选项，即使游戏中有允许你再次选择的机制。"
+			],
 			"isIgnored": true,
 			"migrationVersion": 3
 		},
@@ -8955,25 +9137,18 @@
 					"transfer": true,
 					"changes": [
 						{
-							"key": "flags.dnd5e.remarkableAthlete",
-							"mode": "OVERRIDE",
-							"value": true
+							"key": "system.skills.ath.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.attributes.init.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
 					]
 				}
 			],
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Additional Fighting Style",
-			"name": "额外战斗风格",
-			"source": "PHB",
-			"className": "战士",
-			"classSource": "PHB",
-			"subclassShortName": "勇士",
-			"subclassSource": "PHB",
-			"level": 10,
-			"isIgnored": true,
 			"migrationVersion": 3
 		},
 		{
@@ -12893,6 +13068,43 @@
 					"duration": {
 						"turns": 1
 					},
+					"changes": [
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.attributes.death.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
 					"description": "在狂热者下一回合开始之前，你的攻击检定和豁免检定具有优势。"
 				}
 			],
@@ -14828,17 +15040,65 @@
 			"subclassShortName": "月亮",
 			"subclassSource": "XPHB",
 			"level": 3,
-			"effects": [
+			"activities": [
 				{
-					"disabled": true,
-					"transfer": true,
-					"changes": [
-						{
-							"key": "system.attributes.ac.min",
-							"mode": "UPGRADE",
-							"value": "13 + @abilities.wis.mod"
+					"type": "transform",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "小时",
+						"value": "(floor(@classes.druid.levels / 2))"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Wild Shape|Druid|XPHB|2"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
 						}
-					]
+					},
+					"profiles": [
+						{
+							"ENG_name": "Circle Form Options",
+							"cr": "floor(@classes.druid.levels / 3)",
+							"name": "结社形态选项",
+							"types": [
+								"野兽"
+							],
+							"level": {
+								"min": 8
+							}
+						},
+						{
+							"ENG_name": "Circle Form Options",
+							"name": "结社形态选项",
+							"cr": "floor(@classes.druid.levels / 3)",
+							"types": [
+								"野兽"
+							],
+							"movement": [
+								"飞行术"
+							],
+							"level": {
+								"max": 7
+							}
+						}
+					],
+					"transform": {
+						"mode": "cr",
+						"identifier": "德鲁伊",
+						"preset": "荒野形态"
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -15539,9 +15799,28 @@
 					"ENG_name": "Dragon Form",
 					"name": "龙之形",
 					"foundryId": "dragon",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"seconds": 600
 					},
+					"changes": [
+						{
+							"key": "system.abilities.int.check.roll.min",
+							"mode": "UPGRADE",
+							"value": 10
+						},
+						{
+							"key": "system.abilities.wis.check.roll.min",
+							"mode": "UPGRADE",
+							"value": 10
+						},
+						{
+							"key": "system.attributes.concentration.roll.min",
+							"mode": "UPGRADE",
+							"value": 10
+						}
+					],
 					"description": "一个智者巨龙的星座浮现在你身上。当你进行智力或感知检定，或为了保持专注而进行体质豁免检定时，你可以将d20骰出的9或更低的结果视为10。"
 				}
 			],
@@ -15613,6 +15892,8 @@
 			"effects": [
 				{
 					"foundryId": "starryForm",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"seconds": 600
 					},
@@ -16572,52 +16853,16 @@
 			"level": 3,
 			"activities": [
 				{
-					"ENG_name": "Elemental Attunement",
-					"name": "元素同调",
-					"type": "utility",
-					"activation": {
-						"type": "",
-						"condition": "在你的回合开始时"
-					},
-					"duration": {
-						"units": "分钟",
-						"value": "10"
-					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "itemUses",
-								"value": "1",
-								"target": {
-									"consumes": {
-										"name": "Focus Point"
-									}
-								}
-							}
-						]
-					},
-					"target": {
-						"affects": {
-							"type": "self"
-						}
-					},
-					"effects": [
-						{
-							"foundryId": "elementalAttunem"
-						}
-					]
-				},
-				{
 					"ENG_name": "Elemental Strike",
 					"name": "元素注拳",
+					"foundryId": "elementalAttunem",
 					"type": "attack",
 					"activation": {
 						"type": "action"
 					},
 					"target": {
 						"affects": {
-							"count": "1",
-							"type": "creature"
+							"count": "1"
 						}
 					},
 					"range": {
@@ -16641,10 +16886,12 @@
 								},
 								"types": [
 									"强酸",
+									"钝击",
 									"冷冻",
 									"火焰",
 									"闪电",
-									"雷鸣"
+									"雷鸣",
+									"力场"
 								]
 							}
 						]
@@ -16653,6 +16900,7 @@
 				{
 					"ENG_name": "Elemental Save",
 					"name": "元素豁免",
+					"foundryId": "elementalAttune1",
 					"type": "save",
 					"activation": {
 						"type": "",
@@ -16661,11 +16909,13 @@
 					"target": {
 						"affects": {
 							"count": "1",
-							"type": "creature"
+							"type": "creatureOrObject",
+							"special": "被元素打击的伤害命中"
 						}
 					},
 					"range": {
-						"units": "ft",
+						"units": "专长",
+						"special": "被推动或拉动最多10英尺",
 						"value": "15"
 					},
 					"damage": {
@@ -16679,16 +16929,97 @@
 							"calculation": "wis"
 						}
 					}
+				},
+				{
+					"ENG_name": "Activate Attunement",
+					"name": "激活同调",
+					"type": "enchant",
+					"activation": {
+						"type": "turnStart"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "10"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"name": "Focus Point"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"restrictions": {
+						"allowMagical": true
+					},
+					"enchant": {
+						"self": true,
+						"identifier": "武僧"
+					},
+					"effects": [
+						{
+							"foundryId": "elementalAttunem",
+							"riders": {
+								"activity": [
+									{
+										"foundryId": "elementalAttunem"
+									},
+									{
+										"foundryId": "elementalAttune1"
+									}
+								]
+							}
+						}
+					]
 				}
 			],
 			"effects": [
 				{
+					"ENG_name": "Active Attunement",
 					"foundryId": "elementalAttunem",
+					"name": "主动同调",
+					"type": "enchantment",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"seconds": 600
 					},
-					"descriptionEntries": [
-						"当该特性生效时，你将获得以下增益：{@b 触及}和{@b 元素注拳}。"
+					"changes": [
+						{
+							"key": "name",
+							"mode": "OVERRIDE",
+							"value": "{} (Active)"
+						},
+						{
+							"key": "activities[enchant].activation.type",
+							"mode": "OVERRIDE",
+							"value": "special"
+						},
+						{
+							"key": "activities[enchant].activation.condition",
+							"mode": "OVERRIDE",
+							"value": "at end of duration"
+						},
+						{
+							"key": "activities[enchant].name",
+							"mode": "OVERRIDE",
+							"value": "End Attunement"
+						},
+						{
+							"key": "activities[enchant].consumption.targets",
+							"mode": "OVERRIDE",
+							"value": []
+						}
 					]
 				}
 			],
@@ -18134,6 +18465,69 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Peerless Athlete",
+			"name": "绝伦健将",
+			"source": "XPHB",
+			"className": "圣武士",
+			"classSource": "XPHB",
+			"subclassShortName": "荣耀",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"name": "Channel Divinity"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "peerlessAthlete"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "peerlessAthlete",
+					"duration": {
+						"seconds": 3600
+					},
+					"changes": [
+						{
+							"key": "system.skills.ath.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.skills.acr.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "在1小时内，你在力量（运动）和敏捷（特技）检定上具有优势，并且你的长跳和跳高距离增加10英尺（这段额外距离如常消耗移动力）。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Aura of Alacrity",
 			"name": "迅捷灵光",
 			"source": "XPHB",
@@ -18277,13 +18671,22 @@
 			],
 			"effects": [
 				{
+					"ENG_name": "Living Legend: Charismatic",
 					"foundryId": "livingLegend",
+					"name": "现世传说：魅力非凡",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
 						"seconds": 600
 					},
-					"description": "你被那些关于你伟大事迹的传说\u2014\u2014无论真假或夸张\u2014\u2014所激励。"
+					"changes": [
+						{
+							"key": "system.abilities.cha.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "你被赐予了超凡脱俗的气质，并在所有魅力检定上具有优势。"
 				}
 			],
 			"migrationVersion": 3

@@ -2271,6 +2271,49 @@
 				"驯服浪涌|术士|XPHB|狂野魔法|XPHB|18"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Spellfire Sorcery",
+			"name": "法术火花术法",
+			"shortName": "咒火术法",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"疗伤术|xphb",
+							"光导箭|xphb",
+							"次级复原术|xphb",
+							"灼热射线|xphb"
+						],
+						"5": [
+							"活力灵光|xphb",
+							"解除魔法|xphb"
+						],
+						"6": [
+							"法术反制|xphb"
+						],
+						"7": [
+							"火焰护盾|xphb",
+							"火墙术|xphb"
+						],
+						"9": [
+							"高等复原术|xphb",
+							"焰击术|xphb"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"法术火花术法|术士|XPHB|咒火术法|FRHoF|3|FRHoF",
+				"吸收法术|术士|XPHB|咒火术法|FRHoF|6|FRHoF",
+				"精熟法术火焰|术士|XPHB|咒火术法|FRHoF|14|FRHoF",
+				"法术火焰皇冠|术士|XPHB|咒火术法|FRHoF|18|FRHoF"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
@@ -5124,6 +5167,193 @@
 					"page": true
 				}
 			}
+		},
+		{
+			"ENG_name": "Bolstering Flames",
+			"name": "助燃火焰",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"你或一个你30尺内可见的生物获得等于{@dice 1d4}加上你魅力调整值的{@variantrule 临时生命值|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Radiant Fire",
+			"name": "光辉之火",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"你可见的30英尺内的一个生物受到{@damage 1d4}火焰或光耀伤害（由你选择）。"
+			]
+		},
+		{
+			"ENG_name": "Spellfire Burst",
+			"name": "法术火焰爆发",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"当你作为{@action 魔法|XPHB}动作或{@variantrule 附赠动作|XPHB}的一部分在你的回合花费至少1点术法点时，你可以释放以下一个你选择的魔法效果。你每回合只能这样做一次。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "助燃火焰|术士|XPHB|咒火术法|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "光辉之火|术士|XPHB|咒火术法|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Spellfire Sorcery",
+			"name": "法术火花术法",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"{@i 驾驭原始魔法}",
+				"你的内在力量源于魔法本身之源：魔网。这种连接表现为一种被称为法术火焰的稀有能力，而你则迸发出这种原始魔法的光辉爆发。你对法术火焰的掌控使你能够治疗盟友、灼烧敌人并吸收强大的法术。",
+				"法术火焰的持有者往往有漫游的倾向。许多人在繁华的定居点之间旅行，例如沿着剑湾的那些地方，并运用他们的魔法为公共利益服务。其他人则在同样奇异的土地上漫游时意识到自己奇特的力量，从安诺克沙漠被魔法摧残的荒地到古老帝国神祇触碰的荒野。无论他们在国度中走到哪里，法术火焰术士都会受到对奥术艺术感兴趣的派系的追捧，例如竖琴手同盟、龙巫教和红袍法师。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "法术火焰爆发|术士|XPHB|咒火术法|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "法术火焰法术|术士|XPHB|咒火术法|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Spellfire Spells",
+			"name": "法术火焰法术",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"当你达到法术火焰法术表中指定的术士等级时，你此后始终准备着列出的法术。",
+				{
+					"type": "table",
+					"colLabels": [
+						"术士等级",
+						"spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 疗伤术|XPHB}, {@spell 光导箭|XPHB}, {@spell 次级复原术|XPHB}, {@spell 灼热射线|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 活力灵光|XPHB}, {@spell 解除魔法|XPHB}"
+						],
+						[
+							"7",
+							"{@spell 火焰护盾|XPHB}, {@spell 火墙术|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 高等复原术|XPHB}, {@spell 焰击术|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Absorb Spells",
+			"name": "吸收法术",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"你总是准备了{@spell 法术反制|XPHB}。",
+				"此外，每当目标对抗你施放的{@spell 法术反制|XPHB}的豁免失败时，你恢复{@dice 1d4}点术法点。"
+			]
+		},
+		{
+			"ENG_name": "Honed Spellfire",
+			"name": "精熟法术火焰",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"你的{@subclassFeature 法术火焰爆发|术士|XPHB|咒火术法|FRHoF|3|FRHoF}得到提升。你将你的{@class 术士|XPHB}等级添加到从{@subclassFeature 助燃火焰|术士|XPHB|咒火术法|FRHoF|3|FRHoF}获得的{@variantrule 临时生命值|XPHB}，并且{@subclassFeature 光辉之火|术士|XPHB|咒火术法|FRHoF|3|FRHoF}的伤害增加到{@dice 1d8}。"
+			]
+		},
+		{
+			"ENG_name": "Crown of Spellfire",
+			"name": "法术火焰皇冠",
+			"source": "FRHoF",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "咒火术法",
+			"subclassSource": "FRHoF",
+			"level": 18,
+			"header": 2,
+			"consumes": {
+				"ENG_name": "Sorcery Point",
+				"name": "术法点",
+				"amount": 7
+			},
+			"entries": [
+				"当你使用{@classFeature 天生术法|术士|XPHB|1}时，你可以改变它并用法术火焰的精髓灌注自身，在此次内在法术使用期间获得以下好处。一旦你使用此特性改变内在法术，直到你完成一次{@variantrule 长休|XPHB}前无法再次使用，除非你消耗5点术法点（无需动作）来恢复其使用次数。",
+				{
+					"ENG_name": "Burning Life Force",
+					"type": "entries",
+					"name": "燃烧生命力量",
+					"page": 8,
+					"entries": [
+						"在你的每个回合中，当你被一次攻击骰命中时，你可以消耗最多等同于你魅力调整值（至少为1）数量的{@variantrule 生命值骰|XPHB}。投掷消耗的骰子，并将该攻击造成的伤害值减少等同于投掷总和的数值。"
+					]
+				},
+				{
+					"ENG_name": "Flight",
+					"name": "飞行",
+					"type": "entries",
+					"page": 8,
+					"entries": [
+						"你获得60尺的{@variantrule 飞行速度|XPHB}并且可以悬停。"
+					]
+				},
+				{
+					"ENG_name": "Spell Avoidance",
+					"type": "entries",
+					"name": "法术闪避",
+					"page": 8,
+					"entries": [
+						"当你受到一个允许你进行豁免检定以仅承受一半伤害的法术或魔法效果影响时，若豁免成功则改为不受伤害，若豁免失败则仅承受一半伤害。如果你处于{@condition 失能|XPHB}状态，则无法使用此增益。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Draconic Bloodline",

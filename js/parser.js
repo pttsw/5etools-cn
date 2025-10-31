@@ -748,8 +748,17 @@ Parser.itemValueToFull = function (item, opts = { isShortForm: false, isSmallUni
  * @param {?boolean} [opts.isShortForm]
  * @param {?boolean} [opts.isSmallUnits]
  * @param {?number} [opts.multiplier]
+ * @param {?string} [opts.styleHint]
  */
-Parser.itemValueToFullMultiCurrency = function (item, opts = {isShortForm: false, isSmallUnits: false, multiplier: null}) {
+Parser.itemValueToFullMultiCurrency = function (
+	item,
+	opts = {
+		isShortForm: false,
+		isSmallUnits: false,
+		multiplier: null,
+		styleHint: null,
+	},
+) {
 	return Parser._moneyToFullMultiCurrency(item, "value", "valueMult", opts);
 };
 
@@ -777,7 +786,9 @@ Parser._moneyToFull = function (it, prop, propMult, opts = {isShortForm: false, 
 	return "";
 };
 
-Parser._moneyToFullMultiCurrency = function (it, prop, propMult, {isShortForm, multiplier} = {}) {
+Parser._moneyToFullMultiCurrency = function (it, prop, propMult, {isShortForm, multiplier, styleHint} = {}) {
+	styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+
 	if (it[prop]) {
 		const conversionTable = Parser.getCurrencyConversionTable(it.currencyConversion);
 
@@ -798,8 +809,12 @@ Parser._moneyToFullMultiCurrency = function (it, prop, propMult, {isShortForm, m
 		return [...conversionTable]
 			.reverse()
 			.filter(meta => simplified[meta.coin])
-			.map(meta => `${simplified[meta.coin].toLocaleString(undefined, {maximumFractionDigits: 5})} ${meta.coin}`)
+			.map(meta => `${simplified[meta.coin].toLocaleString(undefined, {maximumFractionDigits: 5})} ${styleHint === "classic" ? meta.coin : meta.coin.toUpperCase()}`)
 			.join(", ");
+	}
+
+	if (it[prop] === 0) {
+		return `0 ${styleHint === "classic" ? "gp" : "GP"}`;
 	}
 
 	if (it[propMult]) return isShortForm ? `×${it[propMult]}` : `基础加值 ×${it[propMult]}`;
@@ -3232,6 +3247,8 @@ Parser.SRC_DrDe_ACfaS = "DrDe-ACfaS";
 Parser.SRC_DrDe_DotS = "DrDe-DotSC";
 Parser.SRC_HotB = "HotB";
 Parser.SRC_WttHC = "WttHC";
+Parser.SRC_FRAiF = "FRAiF";
+Parser.SRC_FRHoF = "FRHoF";
 Parser.SRC_TD = "TD";
 Parser.SRC_SCREEN = "Screen";
 Parser.SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
@@ -3432,6 +3449,8 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_ACfaS] = "一枚铜币换一首歌";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_DotS] = "砂岩城之龙";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HotB] = "边陲之地的英雄们";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_WttHC] = "怪奇物语：欢迎来到地狱火俱乐部";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FRAiF] = "被遗忘的国度：费伦冒险";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FRHoF] = "被遗忘的国度：费伦英雄";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "Tarot Deck";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN}`);
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_WILDERNESS_KIT}`);
@@ -3607,6 +3626,8 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_ACfaS] = "DrDe-ACfaS";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_DotS] = "DrDe-DotSC";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HotB] = "HotB";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_WttHC] = "WttHC";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_FRAiF] = "FRAiF";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_FRHoF] = "FRHoF";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_TD] = "TD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN] = "Scr'14";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN_WILDERNESS_KIT] = "ScrWild";
@@ -3781,6 +3802,8 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_ACfaS] = Parser.SOURCE_JSON_TO_DATE[P
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_DotS] = Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe];
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HotB] = "2025-09-16";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_WttHC] = "2025-10-07";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_FRAiF] = "2025-11-11";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_FRHoF] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_TD] = "2022-05-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
@@ -3935,6 +3958,7 @@ Parser.SOURCES_ADVENTURES = new Set([
 	Parser.SRC_DrDe_DotS,
 	Parser.SRC_HotB,
 	Parser.SRC_WttHC,
+	Parser.SRC_FRAiF,
 
 	Parser.SRC_AWM,
 ]);
@@ -4041,6 +4065,8 @@ Parser.SOURCES_VANILLA = new Set([
 	Parser.SRC_CoA,
 	Parser.SRC_BMT,
 	Parser.SRC_DMTCRG,
+	Parser.SRC_FRAiF,
+	Parser.SRC_FRHoF,
 ]);
 
 // Any opinionated set of sources that are """hilarious, dude"""
@@ -4152,6 +4178,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_XDMG,
 	Parser.SRC_XSCREEN,
 	Parser.SRC_TD,
+	Parser.SRC_FRHoF,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;
@@ -4264,6 +4291,7 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	Parser.SRC_DrDe_DotS,
 	Parser.SRC_HotB,
 	Parser.SRC_WttHC,
+	Parser.SRC_FRAiF,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src.toLowerCase()] = src;

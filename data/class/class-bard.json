@@ -1937,6 +1937,42 @@
 				"战斗魔法|吟游诗人|XPHB|勇气|XPHB|14"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "College of the Moon",
+			"name": "皓月学院",
+			"shortName": "月亮",
+			"source": "FRHoF",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": [
+							{
+								"choose": "level=0|class=德鲁伊",
+								"count": 1
+							}
+						]
+					},
+					"prepared": {
+						"6": {
+							"daily": {
+								"1e": [
+									"月华之光|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"subclassFeatures": [
+				"皓月学院|吟游诗人|XPHB|月亮|FRHoF|3|FRHoF",
+				"月光祝福|吟游诗人|XPHB|月亮|FRHoF|6|FRHoF",
+				"暮色辉煌|吟游诗人|XPHB|月亮|FRHoF|14|FRHoF"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
@@ -3818,6 +3854,117 @@
 				"当被以此法{@condition 魅惑}时，该生物因为畏惧你会公开他的秘密而遵循你的命令。不过它不会为了你而进行危及自身性命的事，也不会为你战斗（除非他已经倾向于这么做了）。它会视你为挚友，并会像密友那样提供关爱和恩惠。",
 				"当此效应结束时，该生物将无法明白为何他会对你如此恐惧。",
 				"必须完成一次长休才能再次使用该特性。"
+			]
+		},
+		{
+			"ENG_name": "College of the Moon",
+			"name": "皓月学院",
+			"source": "FRHoF",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "月亮",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"{@i 用原始传说激励盟友}",
+				"月亮学院的历史可以追溯到月影群岛的古老德鲁伊圈，他们将这一传统的首批吟游诗人委托记录岛屿及其人民的故事。该学院的吟游诗人汲取群岛的精类魔法和月亮井的原始力量来增强盟友、保护自然世界并激发他们的吟游诗作。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "月亮激励|吟游诗人|XPHB|月亮|FRHoF|3|FRHoF"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "原始学识|吟游诗人|XPHB|月亮|FRHoF|3|FRHoF"
+				}
+			]
+		},
+		{
+			"ENG_name": "Moon's Inspiration",
+			"name": "月亮激励",
+			"source": "FRHoF",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "月亮",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"月亮的原始且不断变化的力量流经你，赋予你以下益处。",
+				{
+					"ENG_name": "Inspired Eclipse",
+					"type": "entries",
+					"name": "梦启者月蚀",
+					"entries": [
+						"当你使用一个{@variantrule 附赠动作|XPHB}给予一个生物一个诗人激励骰时，你可以获得隐形状态并传送至多30尺至一个你能看见的未占据空间，作为该{@variantrule 附赠动作|XPHB}的一部分。此隐形状态持续到你下一回合开始，并在你进行攻击检定、造成伤害或施放法术时立即提前结束。"
+					]
+				},
+				{
+					"ENG_name": "Lunar Vitality",
+					"type": "entries",
+					"name": "月华活力",
+					"entries": [
+						"每回合一次，当你使用法术为一个生物恢复{@variantrule 生命值|XPHB}时，你可以消耗一个诗人激励骰，并将恢复的{@variantrule 生命值|XPHB}增加等同于诗人激励骰掷骰结果的数值。该生物的{@variantrule 速度|XPHB}也会增加10尺，直到其下一回合结束。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Primal Lore",
+			"name": "原始学识",
+			"source": "FRHoF",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "月亮",
+			"subclassSource": "FRHoF",
+			"level": 3,
+			"entries": [
+				"你学会德鲁伊语以及一个来自德鲁伊法术列表的戏法。它对你而言视为吟游诗人法术，但不计入你已知的戏法数量。每当你提升一个吟游诗人等级时，你可以将此戏法替换为另一个你选择的来自德鲁伊法术列表的戏法。",
+				"此外，从以下技能中选择一项：{@skill 驯兽|XPHB}、{@skill 洞悉|XPHB}、{@skill 医药|XPHB}、{@skill 自然|XPHB}、{@skill 察觉|XPHB}或{@skill 生存|XPHB}。你熟练于该技能。"
+			]
+		},
+		{
+			"ENG_name": "Blessing of Moonlight",
+			"name": "月光祝福",
+			"source": "FRHoF",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "月亮",
+			"subclassSource": "FRHoF",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"你总是准备了{@spell 月华之光|XPHB}法术。",
+				"当你施放{@spell 月华之光|XPHB}时，你可以修改该法术，使你在法术生效期间发出微光。在发光时，你在5尺范围内散发{@variantrule 微光光照|XPHB}，每当一个生物对抗此月华之光的效果豁免失败时，你选择的另一个你能看见的在你60尺内的生物恢复{@dice 2d4}点{@variantrule 生命值|XPHB}。",
+				"一旦你使用此特性来修改月华之光的施放，直到完成一次{@variantrule 长休|XPHB}前你无法再次使用它。"
+			]
+		},
+		{
+			"ENG_name": "Eventide's Splendor",
+			"name": "暮色辉煌",
+			"source": "FRHoF",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "月亮",
+			"subclassSource": "FRHoF",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"你充满月亮的力量，以以下方式增强你的月亮灵感。",
+				{
+					"ENG_name": "Shadow of the New Moon",
+					"type": "entries",
+					"name": "新月幽影",
+					"entries": [
+						"当你使用梦启月蚀时，获得诗人激励骰的生物也可以获得隐形状态，并立即执行一个{@variantrule 反应|XPHB}以传送至多30尺至一个它能看见的未占据空间。该生物保持隐形状态直到其下一回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Vibrance of the Full Moon",
+					"type": "entries",
+					"name": "满月之华彩",
+					"entries": [
+						"当你使用月华活力时，你可以投掷{@dice 1d6}并用掷出的结果替代消耗一个诗人激励骰。"
+					]
+				}
 			]
 		},
 		{

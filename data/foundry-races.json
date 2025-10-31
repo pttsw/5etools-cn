@@ -3561,6 +3561,37 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Gnomish Cunning",
+			"name": "侏儒狡黠",
+			"source": "XPHB",
+			"raceName": "侏儒",
+			"raceSource": "XPHB",
+			"effects": [
+				{
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "你在智力、感知和魅力的豁免检定上具有优势。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Grit",
 			"name": "坚毅",
 			"source": "PSZ",
@@ -3824,8 +3855,14 @@
 							"key": "system.attributes.movement.walk",
 							"mode": "ADD",
 							"value": 10
+						},
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"mode": "ADD",
+							"value": 1
 						}
-					]
+					],
+					"description": "在持续时间内，你在力量检定上具有优势，并且你的速度增加10尺。一旦你使用了这个特质，直到你完成一次长休前都不能再次使用它。"
 				}
 			],
 			"migrationVersion": 3

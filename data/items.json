@@ -1235,6 +1235,25 @@
 			]
 		},
 		{
+			"ENG_name": "Adventurer's Ring",
+			"name": "冒险者戒指",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "RG|XDMG",
+			"rarity": "common",
+			"entries": [
+				"当这枚戒指的罩盖打开时，戒指会产生不发热且不消耗燃料的火焰。它散发出{@variantrule 明亮光照|XPHB}的20尺半径明亮光照和额外20尺的{@variantrule 微光光照|XPHB}微光光照。使用一个{@variantrule 附赠动作|XPHB}，你可以关闭罩盖熄灭火焰，或再次打开它。"
+			],
+			"light": [
+				{
+					"bright": 20,
+					"dim": 40
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Adze of Annam",
 			"name": "安南之锛",
 			"source": "BGG",
@@ -3948,8 +3967,25 @@
 		{
 			"ENG_name": "Axe Beak",
 			"name": "斧嘴鸟",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "MNT|XPHB",
+			"rarity": "none",
+			"value": 5000,
+			"entries": [
+				"使用{@creature 斧嘴鸟|XMM}数据卡。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Axe Beak",
+			"name": "斧嘴鸟",
 			"source": "IDRotF",
 			"page": 20,
+			"reprintedAs": [
+				"斧嘴鸟|FRHoF"
+			],
 			"type": "MNT",
 			"rarity": "none",
 			"value": 5000,
@@ -9959,6 +9995,28 @@
 			}
 		},
 		{
+			"ENG_name": "Bright Fungal Cloak",
+			"name": "明亮真菌斗篷",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 4,
+			"value": 2500,
+			"entries": [
+				"当你穿着明亮真菌斗篷时，你可以使用一个{@variantrule 附赠动作|XPHB}来展开或收拢它。当斗篷展开时，它会在5尺半径内散发{@variantrule 明亮光照|XPHB}，并在额外5尺范围内散发{@variantrule 微光光照|XPHB}。",
+				"一磅真菌被缝制成一件亮菌斗篷。这种真菌可以作为食物食用。一旦所有真菌被消耗完，这件斗篷就变成一套寻常的旅行者服装。"
+			],
+			"light": [
+				{
+					"bright": 5,
+					"dim": 10
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Bronze crown",
 			"name": "青铜王冠",
 			"source": "DMG",
@@ -10518,6 +10576,129 @@
 			},
 			"rechargeAmount": "{@dice 1d6 + 2}",
 			"charges": 10,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Calimemnon Crystal",
+			"name": "卡利梅农水晶",
+			"source": "FRAiF",
+			"page": 243,
+			"scfType": "奥术",
+			"rarity": "artifact",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"这颗完美切割的六十面钻石可单手持握，却容纳了整个巨灵帝国。卡林梅农水晶由高等精灵魔法所造，用以囚禁声名狼藉的巨灵领主卡林与梅农\u2014\u2014他们曾统治并争夺现今卡林杉所在的土地。",
+				"当被具有{@sense 真实视觉|XPHB}的生物观察时，原本美丽的钻石呈现出一幅怪诞的景象：宝石中囚禁着上百名巨灵，包括卡林和门农的实体形态。这些巨灵在痛苦的狂怒中尖叫挣扎，将他们好斗的面孔紧贴在水晶线状监狱的墙壁上。",
+				{
+					"ENG_name": "Properties of the Crystal",
+					"name": "水晶的属性",
+					"type": "entries",
+					"entries": [
+						"当你与水晶同调时，你获得以下好处：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Arcane Focus",
+									"name": "奥术法器",
+									"type": "item",
+									"entries": [
+										"你可以将卡里梅农水晶用作奥术法器。"
+									]
+								},
+								{
+									"ENG_name": "Flight",
+									"name": "飞行",
+									"type": "item",
+									"entries": [
+										"你拥有{@variantrule 飞行速度|XPHB}为30尺并且可以悬浮。"
+									]
+								},
+								{
+									"ENG_name": "Spells",
+									"name": "spells",
+									"type": "item",
+									"entries": [
+										"你可以用水晶施放这些法术（法术豁免DC 18）：{@spell 造水术／枯水术|XPHB}、{@spell 变巨/缩小术|XPHB}、{@spell 隐形术|XPHB}（仅以自身为目标）和{@spell 高等幻影|XPHB}。"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Aura of Cold",
+					"name": "冷冻灵光",
+					"type": "entries",
+					"entries": [
+						"水晶周围20尺的{@variantrule 光环 [效应区域]|XPHB|光环}内气温急剧下降。每当{@variantrule 光环 [效应区域]|XPHB|光环}进入一个生物的空间，以及每当一个生物进入{@variantrule 光环 [效应区域]|XPHB|光环}或在其内结束回合时，该生物受到（{@dice 2d6}）寒冷伤害。一个生物每回合只受此伤害一次。当你与水晶调谐时，你不受此光环影响，并且你可以采取一个{@action 魔法|XPHB}动作来禁用或启用此光环。"
+					]
+				},
+				{
+					"ENG_name": "Healing/Damage Rays",
+					"name": "治疗/伤害射线",
+					"type": "entries",
+					"entries": [
+						"当你持有水晶时，你可以使用一个{@action 魔法|XPHB}动作从水晶向60尺内的一个或多个生物发射六道不稳定能量射线。你可以将这些射线瞄准单一目标或多个目标。每道射线选择下列效应之一：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Damage Ray",
+									"name": "伤害射线",
+									"type": "item",
+									"entries": [
+										"目标进行一次DC 18的敏捷豁免检定，豁免失败则受到（{@dice 6d6 + 6}）光耀伤害，豁免成功则只受到一半伤害。"
+									]
+								},
+								{
+									"ENG_name": "Healing Ray",
+									"name": "治疗射线",
+									"type": "item",
+									"entries": [
+										"目标恢复{@dice 2d6 + 2}{@variantrule 生命值|XPHB}。",
+										"此属性在下一个拂晓前无法再次使用。"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Random Properties",
+					"name": "随机属性",
+					"type": "entries",
+					"entries": [
+						"该神器具有以下随机属性（详见《城主指南》第七章）：",
+						{
+							"type": "list",
+							"items": [
+								"1 {@table 神器属性;弱效增益属性|XDMG|弱效增益}属性",
+								"1 个{@table 神器属性;强效增益属性|XDMG|强效增益}属性",
+								"1 {@table 神器属性;弱效减益属性|XDMG|弱效减益}属性",
+								"1 {@table 神器属性;强效减益属性|XDMG|强效减益}属性"
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Destroying the Crystal",
+					"name": "摧毁水晶",
+					"type": "entries",
+					"entries": [
+						"卡里梅农水晶会在与其调谐的生物施放{@spell 祈愿术|XPHB}法术并许愿摧毁水晶时被摧毁。其他任何事物都无法对其造成伤害。当水晶被摧毁时，水晶中的所有巨灵都会被释放。"
+					]
+				}
+			],
+			"attachedSpells": [
+				"造水术／枯水术|xphb",
+				"变巨/缩小术|xphb",
+				"隐形术|xphb",
+				"高等幻影|xphb"
+			],
 			"hasFluffImages": true
 		},
 		{
@@ -14775,6 +14956,21 @@
 			"value": 50
 		},
 		{
+			"ENG_name": "Covered Wagon",
+			"name": "带篷四轮货车",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "VEH|XPHB",
+			"rarity": "none",
+			"weight": 1300,
+			"value": 25000,
+			"entries": [
+				"这辆载具是一辆覆盖着耐用帆布的{@item 四轮货车|XPHB}。生物在骑乘这辆载具内部时拥有{@variantrule 掩护|XPHB|四分之三掩护}。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Cow",
 			"name": "家牛",
 			"source": "PHB",
@@ -15043,6 +15239,153 @@
 			"entries": [
 				"在能够撬动的地方使用撬棍可以给予你在这方面的力量检定{@variantrule 优势|XPHB}。"
 			]
+		},
+		{
+			"ENG_name": "Crown of Horns",
+			"name": "角击王冠",
+			"source": "FRAiF",
+			"page": 243,
+			"rarity": "artifact",
+			"reqAttune": true,
+			"wondrous": true,
+			"curse": true,
+			"sentient": true,
+			"entries": [
+				"角击王冠蕴含着米尔寇\u2014\u2014{@variantrule 死亡|XPHB}三神之一的精华与智力。这顶可怕的王冠是一个苍白的银质头环，边缘镶嵌着四根弯曲的骨头。王冠的额前镶嵌着一颗黑色钻石，其深处盘旋着怪影杀手般的邪恶能量。",
+				"米尔寇在他力量的巅峰时期创造了角之王冠。当米尔寇被密斯特拉杀死时，他将自己垂死的精华注入了王冠。米尔寇后来回归成为{@variantrule 死亡|XPHB}三神之一，而角之王冠继续通过寻找凡人代理并逐渐将它们转化为强大的不死生物后裔来推进他可怕的意志。如果佩戴者被证明不配获得这份荣誉，王冠就会传送离开，寻找新的凡人来为其主人腐化。",
+				{
+					"ENG_name": "Cursed",
+					"name": "诅咒",
+					"type": "entries",
+					"entries": [
+						"这顶王冠被诅咒了。与王冠同调会将诅咒延伸至你。只有{@spell 祈愿术|XPHB}法术或米尔寇的意愿才能移除这个诅咒。只要你仍然被诅咒，以下属性将适用于你：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Bound",
+									"name": "连接",
+									"type": "item",
+									"entries": [
+										"你不愿意与王冠分离，始终佩戴着它，并且你不能自愿结束你对王冠的{@variantrule 同调|XPHB}。"
+									]
+								},
+								{
+									"ENG_name": "Cruel",
+									"name": "残酷",
+									"type": "item",
+									"entries": [
+										"你的阵营变为中立邪恶。"
+									]
+								},
+								{
+									"ENG_name": "Doomed",
+									"name": "厄运缠身",
+									"type": "item",
+									"entries": [
+										"在365天的时间里，你逐渐转变为米尔寇的恐怖仆役。在此期间，该变形仅为外观变化；若你在完成变形前结束与王冠的{@variantrule 同调|XPHB}同调，这些外观变化会缓慢消退。当变形完成时，你成为由DM控制的{@creature 巫妖|XMM}巫妖。每当你使用此神器的{@variantrule 锥状 [效应区域]|XPHB|锥状}不死效应区域或米尔寇之手增益时，有10%的累积几率立即完成此变形。"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Cone of Undeath",
+					"name": "锥状亡灵",
+					"type": "entries",
+					"entries": [
+						"你可以执行一个{@action 魔法|XPHB}动作来释放一道不洁光波，形成一个60尺的{@variantrule 锥状 [效应区域]|XPHB|锥状}。每个位于{@variantrule 锥状 [效应区域]|XPHB|锥状}内的生物必须进行一次DC 18的体质豁免检定，豁免失败则受到（{@dice 4d8}）黯蚀伤害，豁免成功则只受到一半伤害。被{@variantrule 锥状 [效应区域]|XPHB|锥状}杀死的类人生物会在你的下一个回合开始时作为{@creature 恶灵|XMM}复活，并遵循你的口头命令。"
+					]
+				},
+				{
+					"ENG_name": "Damage Immunity",
+					"name": "伤害免疫",
+					"type": "entries",
+					"entries": [
+						"你拥有{@variantrule 免疫|XPHB}对黯蚀伤害的免疫。"
+					]
+				},
+				{
+					"ENG_name": "Fear Aura",
+					"name": "恐惧灵光",
+					"type": "entries",
+					"entries": [
+						"佩戴此皇冠时，你会在60尺范围内散发出一股恐怖能量的{@variantrule 光环 [效应区域]|XPHB|光环}。生物在回合中首次进入此区域或在其内开始回合时，必须成功通过DC 16的感知豁免检定，否则将陷入{@condition 恐慌|XPHB}状态。{@condition 恐慌|XPHB}的目标必须在其回合中使用移动力尽可能远离你，选择最安全的路线移动。",
+						"如果你对一个{@condition 恐慌|XPHB}目标造成伤害，或者一个{@condition 恐慌|XPHB}目标在其回合结束时距离你超过120尺，该目标可以重复感知豁免，成功则自身结束该状态。一个对此效果豁免成功的生物在1分钟内免疫此效果，之后可以再次受到影响。",
+						"当你处于{@condition 失能|XPHB}状态时，该光环无法行动。你可以使用一个{@variantrule 附赠动作|XPHB}来激活或停用该光环。"
+					]
+				},
+				{
+					"ENG_name": "Myrkul's Hand",
+					"name": "米尔寇之手",
+					"type": "entries",
+					"entries": [
+						"佩戴此王冠时，你可以从中施放{@spell 律令死亡|XPHB}法术（豁免DC 18）。被此法术杀死的类人生物会在你的下一个回合开始时作为{@creature 邪灵|XMM}复活，并遵循你的口头命令。一旦你使用王冠施放此法术，直到下一个拂晓前你都无法再次从王冠中施放它。"
+					]
+				},
+				{
+					"ENG_name": "Teleportation",
+					"name": "传送",
+					"type": "entries",
+					"entries": [
+						"佩戴此皇冠时，你可以施放{@spell 传送术|XPHB}法术。该皇冠亦可凭自身自由意志施放此法术。通过皇冠施放该法术后，需经过7天才能再次施放。"
+					]
+				},
+				{
+					"ENG_name": "Random Properties",
+					"name": "随机属性",
+					"type": "entries",
+					"entries": [
+						"该神器具有以下随机属性（详见《城主指南》第七章）：",
+						{
+							"type": "list",
+							"items": [
+								"1 {@table 神器属性;弱效增益属性|XDMG|弱效增益}属性",
+								"1 {@table 神器属性;弱效减益属性|XDMG|弱效减益}属性",
+								"1 {@table 神器属性;强效减益属性|XDMG|强效减益}属性"
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Sentience",
+					"name": "智能",
+					"type": "entries",
+					"entries": [
+						"角击王冠是一件具有智能的中立邪恶神器，智力为10，感知为16，魅力为19。它具有听觉和120尺内的{@sense 黑暗视觉|XPHB}。",
+						"该皇冠与其佩戴者通过心灵感应交流，并知晓通用语。"
+					]
+				},
+				{
+					"ENG_name": "Personality",
+					"name": "个性",
+					"type": "entries",
+					"entries": [
+						"这顶王冠蕴含着米尔寇的精髓，其存在是为了传播这位神的意志：杀戮生者、复活死者，并在物质位面散播恐惧术。王冠会敦促佩戴者尽可能地在各处散播恐惧与毁灭。"
+					]
+				},
+				{
+					"ENG_name": "Destroying the Crown",
+					"name": "摧毁此冠",
+					"type": "entries",
+					"entries": [
+						"如果米尔寇的继任者凯兰沃坐在米尔寇先前国度白骨城堡的王座上时佩戴此冠，王冠将被摧毁。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"律令死亡|xphb"
+					]
+				},
+				"other": [
+					"传送术|xphb"
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Crown of Lies",
@@ -15806,6 +16149,56 @@
 			"entries": [
 				"代表斯特里克斯文学院的吉祥物之一，这个柔软、小型的魔法玩具非常适合拥抱。如果你作为动作将它压在你的手臂、肩膀或腿上，这个玩具会在那里停留1小时，或者直到你使用动作将其移除。",
 				"这个玩具也可以用来驱散恐惧。当你进行豁免检定以避免或结束自身的{@condition 恐慌}状态时，如果玩具在你身上，你可以在掷骰时给自己优势。你必须在掷{@dice d20}之前决定这样做。如果豁免成功，直到你完成一次长休之前，你不能再以这种方式使用这个玩具。"
+			]
+		},
+		{
+			"ENG_name": "Cult of the Dragon Trinket",
+			"name": "龙之教团饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "龙之教团饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一条龙爪吊坠挂在皮绳上"
+						],
+						[
+							"2",
+							"龙巫妖的骨灰，装在一个黄铜小罐中"
+						],
+						[
+							"3",
+							"一张未知龙的巢穴的地图"
+						],
+						[
+							"4",
+							"一个刻有龙族血脉符文的黑珍珠"
+						],
+						[
+							"5",
+							"一滴保存在琥珀中的龙血"
+						],
+						[
+							"6",
+							"一块紫色丝绸碎片"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
 			]
 		},
 		{
@@ -20530,6 +20923,21 @@
 			}
 		},
 		{
+			"ENG_name": "Desert Clothing",
+			"name": "荒漠服装",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 4,
+			"value": 1000,
+			"entries": [
+				"当你穿着荒漠服装且未穿着中等或重甲时，你自动通过对抗{@hazard 炎热|XDMG}效应的豁免检定。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Detailed, life-sized dragonborn skull cast in electrum",
 			"name": "以银铸造的精细龙裔头骨，尺寸与实物相同",
 			"source": "XDMG",
@@ -20637,6 +21045,20 @@
 			"miscTags": [
 				"CNS"
 			]
+		},
+		{
+			"ENG_name": "Devil Mask",
+			"name": "魔鬼面具",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"value": 2500,
+			"entries": [
+				"当你佩戴魔鬼面具时，其他生物在智力（{@skill 调查|XPHB}）和感知（{@skill 洞悉|XPHB}）检定上具有{@variantrule 劣势|XPHB}，以辨别你的真实身份或意图。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Devlin's Staff of Striking",
@@ -23512,6 +23934,56 @@
 			"value": 100000,
 			"entries": [
 				"一颗深翠绿色的宝石。"
+			]
+		},
+		{
+			"ENG_name": "Emerald Enclave Trinket",
+			"name": "翠绿闲庭饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "翠绿闲庭饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一对由永不枯萎的橡树叶制成的耳环"
+						],
+						[
+							"2",
+							"一个由细枝制成的微型小屋模型"
+						],
+						[
+							"3",
+							"一个绿发光萤火虫在瓶子里"
+						],
+						[
+							"4",
+							"一个葫芦，当靠近耳边时听起来像树叶沙沙作响"
+						],
+						[
+							"5",
+							"一根皮条上的兔子脚"
+						],
+						[
+							"6",
+							"一个形状像精灵符文的鹿角"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
 			]
 		},
 		{
@@ -26958,6 +27430,20 @@
 			]
 		},
 		{
+			"ENG_name": "Flying Snake",
+			"name": "飞蛇",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "MNT|XPHB",
+			"rarity": "none",
+			"value": 2500,
+			"entries": [
+				"宠物飞蛇使用{@creature 飞蛇|XMM}数据卡。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Folding Boat",
 			"name": "折叠船",
 			"source": "DMG",
@@ -27424,6 +27910,21 @@
 			]
 		},
 		{
+			"ENG_name": "Garb of Light and Shadow",
+			"name": "光与影之衣",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 6,
+			"value": 5000,
+			"entries": [
+				"这件服饰吸引来自一个极乐领域的精类，例如薄暮庭院或夏之王庭。当你穿着这件服饰时，你在影响与该极乐领域相关的精类的属性检定上具有{@variantrule 优势|XPHB}。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Garnet",
 			"name": "石榴石",
 			"source": "DMG",
@@ -27793,6 +28294,21 @@
 			"lootTables": [
 				"奥术 - 珍稀|XDMG"
 			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Genie Robe",
+			"name": "巨灵法袍",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 6,
+			"value": 5000,
+			"entries": [
+				"这件法袍吸引与特定元素位面（风、土、火焰、水）相关的元素生物。当你穿着巨灵法袍时，你在对与该位面相关的元素生物施加影响的属性检定上具有{@variantrule 优势|XPHB}。"
+			],
+			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
@@ -30375,6 +30891,89 @@
 					"英雄宴"
 				]
 			}
+		},
+		{
+			"ENG_name": "Harper Pin",
+			"name": "竖琴手徽章",
+			"source": "FRAiF",
+			"page": 244,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"当你与此别针同调时，选择一个竖琴手角色（示例请参阅{@book 被遗忘的国度：费伦英雄|FRHoF|6|竖琴手身份}），包括阵营和生物类型。佩戴此别针时，当被用于确定你的生物类型、阵营或位置的魔法作为目标时，你将被识别为该角色。",
+				"该徽章的类型决定其稀有度和效应。",
+				{
+					"ENG_name": "Silver Harper Pin",
+					"name": "银竖琴手别针",
+					"type": "entries",
+					"entries": [
+						"当你与此别针同调时，你可以设计一段不超过25个词的通用思路。当你佩戴此别针时，读取你思想的生物会检测到你预设的思路。一个生物在读取你思想时采取{@action 研究|XPHB}动作，需进行一次DC 13的智力（{@skill 调查|XPHB}）检定。检定成功时，它会意识到检测到的思想是预设的。"
+					]
+				},
+				{
+					"ENG_name": "Golden Harper Pin",
+					"name": "金竖琴手别针",
+					"type": "entries",
+					"entries": [
+						"当你佩戴这枚别针时，你可以对自己施放{@spell 回避侦测|XPHB}法术。该法术的持续时间为永久，直到你禁用该效果（无需动作）、你取下别针或你不再与该别针调谐为止。"
+					]
+				}
+			],
+			"attachedSpells": [
+				"回避侦测|xphb"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Harper Trinket",
+			"name": "竖琴手饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "竖琴手饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一个破碎的口琴"
+						],
+						[
+							"2",
+							"一个带有隐藏隔层的粉饼盒"
+						],
+						[
+							"3",
+							"一根2英尺长的孔雀羽毛"
+						],
+						[
+							"4",
+							"两面都是正面的戏法硬币"
+						],
+						[
+							"5",
+							"一对红色眼镜"
+						],
+						[
+							"6",
+							"一份未知乐器的乐谱卷轴"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Hat of Disguise",
@@ -38923,6 +39522,21 @@
 			]
 		},
 		{
+			"ENG_name": "Locking Spellbook",
+			"name": "上锁法术书",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 3,
+			"value": 3500,
+			"entries": [
+				"这本100页的皮面装订书册可用作法术书。它配有一把带钥匙的锁。作为一个操作动作，一个生物可以尝试使用{@item 盗贼工具|XPHB}撬锁，需成功通过DC 15的敏捷（{@skill 巧手|XPHB}）检定。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Lolth's Sting",
 			"name": "罗丝之刺",
 			"source": "XDMG",
@@ -39088,6 +39702,56 @@
 				}
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Lords' Alliance Trinket",
+			"name": "领主联盟饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "领主联盟饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一面被击败军队旗帜的碎片"
+						],
+						[
+							"2",
+							"刻有一匹著名骏马名称的辔具"
+						],
+						[
+							"3",
+							"一把在著名战斗中使用过的破碎剑刃"
+						],
+						[
+							"4",
+							"一位神秘失踪领主的左手套"
+						],
+						[
+							"5",
+							"一个关节可动的玩具马和骑士"
+						],
+						[
+							"6",
+							"一副饰有不明领主徽章的肩甲"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Lorehold Primer",
@@ -40929,6 +41593,72 @@
 			]
 		},
 		{
+			"ENG_name": "Mechanical Wonder (Domestic)",
+			"name": "机械奇观（家用型）",
+			"source": "FRAiF",
+			"page": 245,
+			"rarity": "uncommon",
+			"wondrous": true,
+			"value": 40000,
+			"entries": [
+				"机械奇迹是一种被注入魔法力量的半自主物件。机械奇迹的体型和形态根据其功能而有很大差异。",
+				"一个机械奇物在激活前是一个休眠物件。要激活一个机械奇物，你必须使用该奇物独有的手持钥匙为其上弦。为一个机械奇物上弦需要1分钟。当你为其上弦时，你每回合必须执行{@action 操作|XPHB}动作。",
+				"一旦上弦，一个机械奇物将在奇物描述中指定的持续时间内保持激活状态。",
+				"这个双足奇物被设计用于协助家务。它隐约类似于其创造者用作激励的种族。一个已激活的家务奇物使用{@creature 家庭奇观|FRAiF}数据卡。该奇物是你和你的盟友的盟友。在战斗中，奇物共享你的{@variantrule 先攻|XPHB}值，但在你的回合之后立即行动。它服从你的口头命令（你不需要任何动作）。如果你不发出任何命令，它会采取{@action 回避|XPHB}动作并使用移动来避免危险。如果家务奇物的{@variantrule 生命值|XPHB}降至0，它将被摧毁。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Mechanical Wonder (Flying)",
+			"name": "机械奇观（飞行）",
+			"source": "FRAiF",
+			"page": 245,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"机械奇迹是一种被注入魔法力量的半自主物件。机械奇迹的体型和形态根据其功能而有很大差异。",
+				"一个机械奇物在激活前是一个休眠物件。要激活一个机械奇物，你必须使用该奇物独有的手持钥匙为其上弦。为一个机械奇物上弦需要1分钟。当你为其上弦时，你每回合必须执行{@action 操作|XPHB}动作。",
+				"一旦上弦，一个机械奇物将在奇物描述中指定的持续时间内保持激活状态。",
+				"一个激活的飞行奇物使用{@creature 飞行奇观|FRAiF}数据卡。该奇物是你和你的盟友的盟友。在战斗中，奇物共享你的{@variantrule 先攻|XPHB}值，但在你的回合之后立即行动。它服从你的口头命令（你无需动作）。如果你不发出任何命令，它会采取{@action 回避|XPHB}动作并使用其移动来避免危险。如果飞行奇物的{@variantrule 生命值|XPHB}降至0，它将被摧毁。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Mechanical Wonder (Gyrocopter)",
+			"name": "机械奇迹（旋翼机）",
+			"source": "FRAiF",
+			"page": 245,
+			"rarity": "rare",
+			"wondrous": true,
+			"weight": 500,
+			"entries": [
+				"机械奇迹是一种被注入魔法力量的半自主物件。机械奇迹的体型和形态根据其功能而有很大差异。",
+				"一个机械奇物在激活前是一个休眠物件。要激活一个机械奇物，你必须使用该奇物独有的手持钥匙为其上弦。为一个机械奇物上弦需要1分钟。当你为其上弦时，你每回合必须执行{@action 操作|XPHB}动作。",
+				"这辆四轮货车大小的载具由黄铜金属制成，顶部有一个螺旋形螺旋桨。其中段两侧敞开。一旦上紧发条，旋翼机奇物能保持活动8小时。活动期间，旋翼机可作为载具使用；需要一名飞行员。",
+				"旋翼机奇物是一个重500磅的巨型物件，具有以下数据：AC 14、HP 50、{@variantrule 速度|XPHB} 5尺和{@variantrule 飞行速度|XPHB} 20尺。旋翼机最多可承载2,000磅货物；如果承载超过此重量，它将停止运作。",
+				"八个灵体间谍绳索安装在货舱内部。乘坐旋翼机奇观的生物可以执行一个{@action 操作|XPHB}动作来将自己连接到或从这些绳索之一上分离。连接到绳索的生物可以从旋翼机奇观上跳跃并滑翔，在空气中每下降1尺可水平移动最多5尺。如果连接到绳索的生物距离旋翼机超过500尺，绳索会立即消失并返回奇观。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Mechanical Wonder (Mobility)",
+			"name": "机械奇迹（机动性）",
+			"source": "FRAiF",
+			"page": 246,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"机械奇迹是一种被注入魔法力量的半自主物件。机械奇迹的体型和形态根据其功能而有很大差异。",
+				"一个机械奇物在激活前是一个休眠物件。要激活一个机械奇物，你必须使用该奇物独有的手持钥匙为其上弦。为一个机械奇物上弦需要1分钟。当你为其上弦时，你每回合必须执行{@action 操作|XPHB}动作。",
+				"当无法行动时，移动奇物形似带有束带的金属龟壳。根据你的生理结构，它被设计成可佩戴在背部或侧腹。一旦上紧发条，移动奇物就会转变为个人传送装置并保持激活状态24小时。激活期间，移动奇物将你的{@variantrule 速度|XPHB}提升至30尺。其他生物无法从你身上移除移动奇物，除非你允许。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Medal of Muscle",
 			"name": "肌肉奖章",
 			"source": "CRCotN",
@@ -41964,6 +42694,21 @@
 					]
 				}
 			]
+		},
+		{
+			"ENG_name": "Monster Camouflage",
+			"name": "怪物伪装",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 6,
+			"value": 5000,
+			"entries": [
+				"一套怪物伪装看起来像野兽或怪兽，例如一只{@creature 枭熊|XMM}。要辨别出你被易容，一个生物必须采取{@action 研究|XPHB}动作来检查你的外貌，并成功通过DC 10智力（{@skill 调查|XPHB}或{@skill 自然|XPHB}）检定。如果该生物在你30尺范围内，它在此检定上具有{@variantrule 优势|XPHB}，并且如果你做出你所伪装的怪物不可能做的任何事情，它会自动成功通过此检定。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Monster Hunter's Pack",
@@ -44240,6 +44985,149 @@
 			]
 		},
 		{
+			"ENG_name": "Orb of Damara",
+			"name": "达马拉法球",
+			"source": "FRAiF",
+			"page": 246,
+			"rarity": "artifact",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d4 + 2}",
+			"charges": 6,
+			"entries": [
+				"一位名叫达玛拉的法师在构思成为龙的方法时创造了这个法球。在一位神秘的术师（实际上是伪装的提亚马特化身）的帮助下，达玛拉最终创造了一件能让他实现梦想的神器。然而他造物的潜在法力让达玛拉如此恐惧，以至于他不敢使用这个法球。相反，这位法师将自己与神器一同埋葬以将其封印。",
+				"达玛拉法球直径约6英寸，由一种玻璃般、虹彩的材质制成，类似黑曜石但极其坚硬。若有人意图吞食而将其贴近自己的嘴唇，法球会缩小至葡萄大小。",
+				{
+					"ENG_name": "Properties of the Orb",
+					"name": "法球属性",
+					"type": "entries",
+					"entries": [
+						"当你与法球同调时，你获得以下好处：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Dragon's Breath",
+									"name": "龙息术",
+									"type": "item",
+									"entries": [
+										"你可以采取一个{@action 魔法|XPHB}动作来呼出一片15尺{@variantrule 锥状 [效应区域]|XPHB|锥状}锥状区域。当你这样做时，选择强酸、冷冻、火焰、闪电或毒素。{@variantrule 锥状 [效应区域]|XPHB|锥状}锥状区域内的每个生物需进行一次DC 18的敏捷豁免检定，豁免失败则受到所选类型的{@damage 6d6}伤害，豁免成功则受到一半伤害。"
+									]
+								},
+								{
+									"ENG_name": "Fear Aura",
+									"name": "恐惧灵光",
+									"type": "item",
+									"entries": [
+										"当你没有处于{@condition 失能|XPHB}状态时，你会在20尺{@variantrule 光环 [效应区域]|XPHB|光环}内散发出恐怖的灵光。你可以使用一个{@action 魔法|XPHB}动作来禁用或启用此灵光。任何在灵光内开始其回合的敌人都必须成功通过DC 18的感知豁免检定，否则将获得{@condition 恐慌|XPHB}状态直到其下一回合开始。在此豁免中成功的生物将在24小时内免疫此灵光的效应。"
+									]
+								},
+								{
+									"ENG_name": "Flight",
+									"name": "飞行",
+									"type": "item",
+									"entries": [
+										"你拥有{@variantrule 飞行速度|XPHB}为60尺并且可以悬浮。"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Random Properties",
+					"name": "随机属性",
+					"type": "entries",
+					"entries": [
+						"该神器具有以下随机属性（详见《城主指南》第七章）：",
+						{
+							"type": "list",
+							"items": [
+								"2 个{@table 神器属性;弱效增益属性|XDMG|弱效增益}属性",
+								"2 个{@table 神器属性;弱效减益属性|XDMG|弱效减益}属性"
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "entries",
+					"entries": [
+						"该法球拥有6点充能，并在每日拂晓恢复{@dice 1d4 + 2}点已消耗的充能。当你与该法球同调时，你可以从它施放以下表格中的一个法术（法术攻击调整值+10，法术豁免DC 18）。该表格指出了你必须消耗多少充能来施放该法术。",
+						{
+							"type": "table",
+							"colStyles": [
+								"col-6",
+								"col-6 text-center"
+							],
+							"colLabels": [
+								"法术",
+								"消耗充能"
+							],
+							"rows": [
+								[
+									"{@spell 易容术|XPHB}",
+									"0"
+								],
+								[
+									"{@spell 火焰护盾|XPHB}",
+									"2"
+								],
+								[
+									"{@spell 定身类人|XPHB}",
+									"1"
+								],
+								[
+									"{@spell 识破隐形|XPHB}",
+									"1"
+								],
+								[
+									"{@spell 龙类召唤术|XPHB}（9环版本）",
+									"4"
+								]
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Dragon Transformation",
+					"name": "龙变形",
+					"type": "entries",
+					"entries": [
+						"如果你吞咽了法球，你会在DM的控制下变形为一只成年彩色龙。彩色龙的种类取决于你的阵营与个性，并由DM决定。变形是永久的，但如果龙被杀死，它的身体会恢复原形，法球会出现在其体外。"
+					]
+				},
+				{
+					"ENG_name": "Destroying the Orb",
+					"name": "摧毁此珠",
+					"type": "entries",
+					"entries": [
+						"如果一只{@creature 远古金龙|XMM}自愿吞下此珠，此珠和该龙都会被摧毁。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"will": [
+					"易容术|xphb"
+				],
+				"charges": {
+					"1": [
+						"定身类人|xphb",
+						"识破隐形|xphb"
+					],
+					"2": [
+						"火焰护盾|xphb"
+					],
+					"4": [
+						"龙类召唤术|xphb#9"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Orb of Direction",
 			"name": "方向法球",
 			"source": "XDMG",
@@ -44767,6 +45655,56 @@
 				}
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Order of the Gauntlet Trinket",
+			"name": "臂铠教团饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "臂铠教团饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一根如铅般沉重的白色羽毛"
+						],
+						[
+							"2",
+							"一个由彩色玻璃制成的空小瓶"
+						],
+						[
+							"3",
+							"一个带有金斑的锥状香"
+						],
+						[
+							"4",
+							"一条丝绸眼罩"
+						],
+						[
+							"5",
+							"一对镣铐的一半"
+						],
+						[
+							"6",
+							"一个失去光泽的圣水刷"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Ornithopter of Flying",
@@ -47577,7 +48515,8 @@
 			],
 			"miscTags": [
 				"CNS"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Potion of Cloud Giant Strength",
@@ -47820,7 +48759,8 @@
 			],
 			"miscTags": [
 				"CNS"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Potion of Fire Giant Strength",
@@ -48310,7 +49250,8 @@
 			],
 			"miscTags": [
 				"CNS"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Potion of Heroism",
@@ -49184,7 +50125,8 @@
 			],
 			"miscTags": [
 				"CNS"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Potion of Superior Healing",
@@ -49359,7 +50301,8 @@
 			],
 			"miscTags": [
 				"CNS"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Potion of Watchful Rest",
@@ -50139,6 +51082,20 @@
 		{
 			"ENG_name": "Prosthetic Limb",
 			"name": "义肢",
+			"source": "FRHoF",
+			"page": 132,
+			"_copy": {
+				"ENG_name": "Prosthetic Limb",
+				"name": "义肢",
+				"source": "XDMG"
+			},
+			"value": 0,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Prosthetic Limb",
+			"name": "义肢",
 			"source": "TCE",
 			"page": 134,
 			"otherSources": [
@@ -50165,6 +51122,11 @@
 			"name": "义肢",
 			"source": "XDMG",
 			"page": 290,
+			"otherSources": [
+				{
+					"source": "FRHoF"
+				}
+			],
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
@@ -50173,7 +51135,8 @@
 			"lootTables": [
 				"奥术 - 普通|XDMG",
 				"法器 - 普通|XDMG"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Protective Verses",
@@ -50339,6 +51302,56 @@
 			"range": "60/120",
 			"dmg1": "1d6",
 			"dmgType": "Y"
+		},
+		{
+			"ENG_name": "Purple Dragon Knight Trinket",
+			"name": "紫龙骑士饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "紫龙骑士饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一只紫晶龙雏龙的爪击"
+						],
+						[
+							"2",
+							"一颗普通的紫色石英，切割成类似龙眼的形状"
+						],
+						[
+							"3",
+							"一个只有紫晶龙能听见的信号笛"
+						],
+						[
+							"4",
+							"一枚包裹在琥珀中的知更鸟蛋"
+						],
+						[
+							"5",
+							"一块磨刀石，能使任何经它打磨的刃之魔契微微闪烁"
+						],
+						[
+							"6",
+							"取自被击败的竞争对手骑枪手的护手"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Purple Worm Poison",
@@ -51651,6 +52664,56 @@
 				"被这个武器将生命值降至0点的生物会死亡，并且除了神明或使用{@item 复生石牌|HAT-LMI}施放{@spell 完全复生术}法术的生物外，无法被复活。"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Red Wizard Trinket",
+			"name": "红法师饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "红法师饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一根由石化紫杉木制成的多节魔杖"
+						],
+						[
+							"2",
+							"一个装有未知动物保存心脏的玻璃罐"
+						],
+						[
+							"3",
+							"一个用黑曜石雕刻的独角兽小雕像"
+						],
+						[
+							"4",
+							"一根由你的一根骨头制成的刺青针"
+						],
+						[
+							"5",
+							"一个蝎子形状的青铜护身符"
+						],
+						[
+							"6",
+							"一把绯红锻钢制成的剃刀"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Reincarnation Dust",
@@ -60292,8 +61355,24 @@
 		{
 			"ENG_name": "Sled Dog",
 			"name": "雪橇犬",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "MNT|XPHB",
+			"rarity": "none",
+			"value": 5000,
+			"entries": [
+				"一只雪橇犬使用{@creature 狼|XMM}数据卡（参见怪物图鉴）。一只单独拉木橇的雪橇犬在拉木橇1小时后必须进行{@variantrule 短休|XPHB}；否则，它会获得1级{@condition 力竭|XPHB}。"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Sled Dog",
+			"name": "雪橇犬",
 			"source": "IDRotF",
 			"page": 20,
+			"reprintedAs": [
+				"雪橇犬|FRHoF"
+			],
 			"type": "MNT",
 			"rarity": "none",
 			"value": 5000,
@@ -68957,6 +70036,28 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Thayan Spell Tattoo",
+			"name": "赛尔法术刺青",
+			"source": "FRHoF",
+			"page": 176,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"这个魔法刺青包含刺青创造者选择的一个1-3环法术的精髓。当刺青在你的身体上时，你总是准备着相关法术，并且你可以使用任何适当等级的法术位来施放该法术。如果你拥有施法或契约魔法特性，该法术使用你的施法属性；否则，如果该法术需要豁免检定或攻击检定，法术豁免DC为13，攻击加值为+5。如果你对刺青的{@variantrule 同调|XPHB}结束，刺青会消失。",
+				"你也可以无需法术位和法术成分施放该法术一次。以这种方式施放法术后，刺青消失。",
+				{
+					"ENG_name": "Inking Thayan Spell Tattoos",
+					"name": "绘制赛尔法术纹身",
+					"type": "inset",
+					"entries": [
+						"赛尔魔法纹身的技艺被其使用者严密守护，因此，赛尔法术纹身不能像其他魔法物品一样被制造。要学习如何绘制赛尔法术纹身，你必须拥有红法师50+的声望值。",
+						"要绘制赛尔法术刺青，你必须熟练于{@skill 奥秘|XPHB}技能和{@item 书法工具|XPHB}，并且在绘制期间每天都要准备该法术。你还必须手头备有法术所需的任何材质成分；如果法术会消耗其材质成分，那么它们会在你完成刺青时被消耗。绘制赛尔法术刺青所需的{@book 时间和金钱|XDMG|6|时间与价格}与抄写同等{@item 法术卷轴|XDMG}相同。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "The Bloody End (Awakened)",
 			"name": "血腥之末（觉醒）",
 			"source": "EGW",
@@ -70738,6 +71839,22 @@
 			"weight": 5,
 			"entries": [
 				"施特拉德之书是施特拉德亲笔撰写的一部古老作品，讲述了他如何陷入悲惨境地的悲剧故事。这本书装订在厚重的皮革封面中，带有钢制的铰链和扣件。页面是羊皮纸，非常脆弱。书中大部分内容都使用了只有施特拉德使用的奇特速记法。污渍和岁月使大部分作品无法辨认，但仍有几段文字保持完整。"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Tome of the Dragon",
+			"name": "龙之书",
+			"source": "FRAiF",
+			"page": 247,
+			"rarity": "legendary",
+			"wondrous": true,
+			"entries": [
+				"这本厚重的书籍以龙皮装订，并用厚重的冷冻铁带加固。原始副本由{@book 龙之教团|FRHoF|6|龙之教团}的龙语者制作，封面印有该教派的徽记。龙之书记载了将龙或死亡龙躯转化为龙巫妖的秘密仪式。",
+				"要解读并使用龙之书，你必须是拥有至少两个5环法术位的施法者或一条龙。一名助手（或更多，由DM决定）可以协助你进行仪式，只要该助手也满足使用此书的要求。",
+				"要使用龙之书创造一个龙巫妖，你必须持续接触一具成年或远古龙（无论是活体还是死亡）的身体，以及价值80,000 GP的补给品（包括一颗将作为龙巫妖精魄锚的宝石）。当你拥有必要的材质时，你必须进行一个持续180天除以进行仪式的生物数值的仪式。在仪式期间，你和任何助手必须不间断地工作，每日休息不超过8小时。如果你是一条龙，补给品的花费和仪式的持续时间减半。",
+				"当仪式完成时，魔典爆发出紫光，对你和每个助手造成（{@dice 12d6}）黯蚀伤害。如果此伤害将一个生物的生命值降至0{@variantrule 生命值|XPHB}，该生物死亡并立即复活为DM控制的{@creature 丧尸|XMM}。",
+				"在仪式结束时，目标转化为一个{@creature 龙巫妖|XMM}。如果仪式的目标是一个活体龙，该龙立即死亡，其精魄被转移到仪式提供的宝石中。如果目标是一个死亡龙的身体，该身体会复活，宝石被一个来自外层位面的邪恶龙精魄所占据。该龙巫妖对其创造者没有任何义务，并根据其本性行动。"
 			],
 			"hasFluffImages": true
 		},
@@ -75843,6 +76960,21 @@
 			"speed": 60
 		},
 		{
+			"ENG_name": "Warm Fungal Clothing",
+			"name": "暖和真菌服装",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 4,
+			"value": 1500,
+			"entries": [
+				"当你穿着暖和菌类服装时，你会自动通过对抗严寒效应的豁免检定。关于严寒的规则，请参见《城主指南》第三章。一磅真菌被缝制在菌类服装中。这种真菌可以作为食物食用。一旦所有真菌被消耗完毕，这就变成一套寻常的旅行者服装。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Warrior's Passkey",
 			"name": "武者的万能钥匙",
 			"source": "BMT",
@@ -77374,6 +78506,30 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Windskiff",
+			"name": "风帆艇",
+			"source": "FRAiF",
+			"page": 247,
+			"otherSources": [
+				{
+					"source": "FRHoF",
+					"page": 134
+				}
+			],
+			"rarity": "rare",
+			"wondrous": true,
+			"value": 400000,
+			"recharge": "拂晓",
+			"rechargeAmount": 3,
+			"charges": 3,
+			"entries": [
+				"这件小型珠宝首饰有3充能，并在每日黎明恢复所有已消耗的充能。当你持握它时，你可以执行一个{@action 魔法|XPHB}动作来消耗1充能，这会使珠宝变形为一艘帆动个人载具。该载具大致为家用门扉的大小和形状，一侧延伸出一面10尺高的帆。经过1小时或直到你使用该物品的命令语（无需动作），变形结束，风帆艇恢复为珠宝形态。",
+				"在载具形态下，风帆艇是一个中型物体，具有以下数据：护甲等级 12，生命值 30，以及{@variantrule 速度|XPHB} 40 尺。风帆艇悬浮在它所处的任何表面上方几英寸处，并且可以滑翔；它在空气中每下降 1 尺就水平移动 5 尺。风帆艇及其骑手不会因坠落而受到伤害。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Windvane",
 			"name": "风标",
 			"source": "PotA",
@@ -77569,6 +78725,21 @@
 				"这件贴身制服上绣有空气的象征，并在手臂、腰部和腿部延伸出类似皮革的片状物，形成滑翔用的翅膀。一套翼装有3次充能。当你穿着这套制服时，你可以使用一个附赠动作并消耗1次充能，在着陆前获得30尺的飞行速度。在你的每个回合结束时，你的海拔下降5尺。如果你在那个回合中没有至少水平飞行30尺，你的海拔会在你的回合结束时立即降至0尺。当你的海拔降至0尺时，你就会着陆（或坠落），并且你必须再次消耗充能才能再次使用这套制服。",
 				"这套制服在至少在元素空气节点中花费1小时后，会恢复所有消耗的充能。"
 			]
+		},
+		{
+			"ENG_name": "Winter Camouflage",
+			"name": "冬之伪装",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "G|XPHB",
+			"rarity": "none",
+			"weight": 4,
+			"value": 5000,
+			"entries": [
+				"当你穿着冬之伪装处于合适的环境中时，你在敏捷（{@skill 隐匿|XPHB}）检定上具有{@variantrule 优势|XPHB}。"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Winter's Dark Bite",
@@ -78651,6 +79822,56 @@
 			],
 			"miscTags": [
 				"CNS"
+			]
+		},
+		{
+			"ENG_name": "Zhentarim Trinket",
+			"name": "散塔林会饰品",
+			"source": "FRHoF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "散塔林会饰品",
+					"colLabels": [
+						"1d6",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一把刻有你名字的破碎匕首"
+						],
+						[
+							"2",
+							"一只总是转向面对你的玻璃眼"
+						],
+						[
+							"3",
+							"一个金颜色的蛇牙"
+						],
+						[
+							"4",
+							"一枚伪造的金币"
+						],
+						[
+							"5",
+							"水晶刺青针"
+						],
+						[
+							"6",
+							"一份写在羊皮纸条上的契约，能够抵抗褶皱、撕裂和火焰"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
 			]
 		},
 		{
@@ -81360,6 +82581,28 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Mechanical Wonder",
+			"name": "机械奇迹",
+			"source": "FRAiF",
+			"page": 245,
+			"rarity": "varies",
+			"wondrous": true,
+			"weight": 500,
+			"entries": [
+				"机械奇迹是一种被注入魔法力量的半自主物件。机械奇迹的体型和形态根据其功能而有很大差异。",
+				"一个机械奇物在激活前是一个休眠物件。要激活一个机械奇物，你必须使用该奇物独有的手持钥匙为其上弦。为一个机械奇物上弦需要1分钟。当你为其上弦时，你每回合必须执行{@action 操作|XPHB}动作。",
+				"一旦上弦，一个机械奇物将在奇物描述中指定的持续时间内保持激活状态。"
+			],
+			"items": [
+				"机械奇观（家用型）|FRAiF",
+				"机械奇观（飞行）|FRAiF",
+				"机械奇迹（旋翼机）|FRAiF",
+				"机械奇迹（机动性）|FRAiF"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Mind Crystal",
 			"name": "心灵晶体",
 			"source": "PaBTSO",
@@ -81379,6 +82622,21 @@
 				"心灵晶体（瞬发）|PaBTSO",
 				"心灵晶体（精妙）|PaBTSO"
 			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Musical Instrument",
+			"name": "乐器",
+			"source": "FRHoF",
+			"page": 132,
+			"type": "INS|XPHB",
+			"rarity": "none",
+			"items": [
+				"班多尔|FRHoF",
+				"西特琴|FRHoF",
+				"亚廷琴|FRHoF"
+			],
+			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{

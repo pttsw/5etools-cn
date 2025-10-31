@@ -814,6 +814,33 @@
 			"hasToken": true
 		},
 		{
+			"ENG_name": "Blacktongue Bullywug",
+			"name": "黑舌啵灵蛙",
+			"source": "WDMM",
+			"page": 110,
+			"_copy": {
+				"ENG_name": "Bullywug",
+				"name": "啵灵蛙",
+				"source": "MM",
+				"_mod": {
+					"action": {
+						"mode": "replaceArr",
+						"replace": "矛",
+						"items": [
+							{
+								"ENG_name": "Spear",
+								"name": "矛",
+								"entries": [
+									"{@atk mw,rw} 命中{@hit 3} ，触及5尺或射程20/60尺，一个目标。{@h}4（{@damage 1d6 + 1}）穿刺伤害，或5（{@damage 1d8 + 1}）穿刺伤害（如果用双手进行近战攻击）。被啵灵蛙的矛攻击命中的生物必须成功通过{@dc 13}的体质豁免否则{@condition 中毒}1分钟。以此方式{@condition 中毒}的生物同时被{@condition 麻痹}。该生物可以在其每个回合结束时重复该豁免检定，成功则结束对其自身的该效果。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Bore Worm",
 			"name": "钻地蠕虫",
 			"source": "WDMM",
@@ -1882,6 +1909,38 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Flying Wand",
+			"name": "飞行魔杖",
+			"source": "WDMM",
+			"page": 105,
+			"_copy": {
+				"ENG_name": "Flying Sword",
+				"name": "凌空剑",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\b剑\\b",
+						"with": "魔杖"
+					}
+				}
+			},
+			"action": [
+				{
+					"ENG_name": "Magic Missile",
+					"name": "魔法飞弹",
+					"entries": [
+						"该魔杖向一个它能在60尺内侦查到的生物射出一发魔法力场飞镖。当飞镖精准命中时，目标受到3（{@damage 1d4 + 1}）点力场伤害。"
+					]
+				}
+			],
+			"tokenCredit": "Hayden Stutz",
+			"damageTags": [
+				"O"
 			],
 			"hasToken": true
 		},
@@ -6020,6 +6079,28 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Xorta",
+			"name": "Xorta",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 98,
+			"_copy": {
+				"ENG_name": "Stone Giant",
+				"name": "石巨人",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "巨人",
+						"with": "Xorta",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Zalthar Shadowdusk",
 			"name": "扎尔萨·暮影",
 			"isNpc": true,
@@ -6436,6 +6517,14 @@
 					}
 				}
 			},
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"{@item 秘银板甲|DMG}"
+					]
+				}
+			],
 			"hasToken": true
 		}
 	]
