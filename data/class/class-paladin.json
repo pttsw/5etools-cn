@@ -1716,9 +1716,9 @@
 			],
 			"subclassFeatures": [
 				"巨灵贵族之誓|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF",
-				"元素护盾灵光|圣武士|XPHB|巨灵贵族|FRHoF|7|FRHoF",
+				"元素守御灵光|圣武士|XPHB|巨灵贵族|FRHoF|7|FRHoF",
 				"元素叱喝|圣武士|XPHB|巨灵贵族|FRHoF|15|FRHoF",
-				"贵族后裔|圣武士|XPHB|巨灵贵族|FRHoF|20|FRHoF"
+				"贵族使徒|圣武士|XPHB|巨灵贵族|FRHoF|20|FRHoF"
 			],
 			"hasFluffImages": true
 		}
@@ -5117,7 +5117,7 @@
 		},
 		{
 			"ENG_name": "Dao's Crush",
-			"name": "土巨灵的镇压",
+			"name": "土巨灵之碾压",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5130,12 +5130,12 @@
 				"amount": 1
 			},
 			"entries": [
-				"大地在你至圣斩的目标周围升起。目标陷入擒抱状态（逃脱DC等于你的法术豁免DC）。被擒抱时，目标陷入束缚状态。"
+				"大地在你的目标周围隆起，目标陷入受擒状态（逃脱DC等于你的法术豁免DC）。在受擒期间，该目标处于束缚状态。"
 			]
 		},
 		{
 			"ENG_name": "Djinni's Escape",
-			"name": "巨灵逃脱",
+			"name": "气巨灵之遁形",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5148,12 +5148,12 @@
 				"amount": 1
 			},
 			"entries": [
-				"你{@variantrule 传送|XPHB|传送术}到自身30尺内一个你能看见的未占据空间，并呈现半虚体形态，此形态持续到你下一个回合结束。在此形态下，你对钝击、穿刺和挥砍伤害具有{@variantrule 抵抗术|XPHB}，并且对{@condition 受擒|XPHB}、{@condition 倒地|XPHB}和{@condition 束缚|XPHB}状态具有{@variantrule 免疫|XPHB}。"
+				"你可以{@variantrule 传送|XPHB|传送术}至30尺范围内的一处你可见的、未被占据的空间，并化为半虚体的形态，这一形态持续至你的下个回合结束。在此形态期间，你具有钝击、穿刺、挥砍伤害的{@variantrule 抵抗术|XPHB}，并且{@variantrule 免疫|XPHB}{@condition 受擒|XPHB}、{@condition 倒地|XPHB}和{@condition 束缚|XPHB}状态。"
 			]
 		},
 		{
 			"ENG_name": "Efreeti's Fury",
-			"name": "火巨灵的狂怒",
+			"name": "火巨灵之狂怒",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5166,12 +5166,12 @@
 				"amount": 1
 			},
 			"entries": [
-				"你至圣斩的目标额外受到{@damage 2d4}火焰伤害，并且火焰从目标跳跃到你自身30尺内另一个你能看见的生物。第二个生物也受到{@damage 2d4}火焰伤害。"
+				"你的目标额外受到{@damage 2d4}点火焰伤害，火焰也会弹射到你自身30尺范围内可见的另一生物，该生物也受到{@damage 2d4}火焰伤害。"
 			]
 		},
 		{
 			"ENG_name": "Elemental Smite",
-			"name": "元素生物猛击",
+			"name": "元素斩",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5179,22 +5179,22 @@
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
-				"在你施放{@spell 至圣斩|XPHB}后立即，你可以消耗一次{@classFeature 引导神力|圣武士|XPHB|3|XPHB}的使用次数并触发以下效果之一。",
+				"在你对目标施展{@spell 至圣斩|XPHB}法术之后，你可以立即消耗一次{@classFeature 引导神力|圣武士|XPHB|3|XPHB}的使用次数并触发以下效应之一：",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "土巨灵的镇压|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
+					"subclassFeature": "土巨灵之碾压|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "巨灵逃脱|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
+					"subclassFeature": "气巨灵之遁形|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "火巨灵的狂怒|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
+					"subclassFeature": "火巨灵之狂怒|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "巨灵崩天疾驰|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
+					"subclassFeature": "水巨灵之激流|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
 				}
 			]
 		},
@@ -5246,7 +5246,7 @@
 		},
 		{
 			"ENG_name": "Genie's Splendor",
-			"name": "巨灵之华",
+			"name": "巨灵流光",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5254,13 +5254,13 @@
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
-				"当你未穿戴任何护甲时，你的基础{@variantrule 护甲等级|XPHB}等于10加上你的敏捷和魅力调整值。你可以使用盾牌并仍然获得此好处。",
+				"未着装护甲时，你的基础{@variantrule 护甲等级|XPHB}等于10+你的敏捷调整值＋你的魅力调整值，你可以持有盾牌并从中受益。",
 				"你还可以从以下技能中选择一个获得熟练项：{@skill 特技|XPHB}、{@skill 威吓|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}。"
 			]
 		},
 		{
 			"ENG_name": "Marid's Surge",
-			"name": "巨灵崩天疾驰",
+			"name": "水巨灵之激流",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5273,7 +5273,7 @@
 				"amount": 1
 			},
 			"entries": [
-				"你的至圣斩目标以及你选择的每个位于你10尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的生物需进行力量豁免对抗你的法术豁免DC。豁免失败时，生物将被推开15尺远离你并获得倒地状态。"
+				"你的至圣斩目标以及你选择的每个位于你10尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的生物需一次对抗你法术豁免DC的力量豁免。豁免失败的生物被直线推开15尺并陷入倒地状态。"
 			]
 		},
 		{
@@ -5287,20 +5287,20 @@
 			"level": 3,
 			"entries": [
 				"{@i 驾驭来自巨灵的元素流光}",
-				"宣誓贵族巨灵誓约的圣武士崇敬元素位面的力量。通过立下此誓言，圣武士从四种不同类型的巨灵\u2014\u2014土巨灵，大地之主；气巨灵，空气之主；火巨灵，火焰之主；以及水巨灵，流水之主\u2014\u2014汲取力量。在费伦，许多立下此誓言的圣武士来自卡林杉，一个巨灵遍布的国度。",
-				"立下此誓约的圣武士通常会承担带领他们穿越国度乃至多元宇宙\u2014\u2014包括元素位面的任务。这些圣武士遵循以下教义：",
+				"立下巨灵贵族之誓的圣武士，尊崇着元素位面的伟力。通过缔结此誓言，圣武士自四种类型不同的巨灵处获得力量\u2014\u2014土巨灵，大地之主；气巨灵，大气之主；火巨灵，火焰之主；水巨灵，流水之主。在费伦，立下此誓言的圣武士大多来自卡林珊，一片巨灵众多的土地。",
+				"立下这一誓言的圣武士经常要执行穿越诸国度、横跨多元宇宙\u2014\u2014甚至包括元素位面在内的任务。这些圣武士秉持着如下信条：",
 				{
 					"type": "list",
 					"page": 5,
 					"items": [
-						"在毁灭的灰烬中播撒造物术的种子。",
-						"以辉煌与优雅引领前行。",
-						"尊重元素，并畏惧它们的怒火。"
+						"破而后立，重塑新生。",
+						"辉煌为旌，优雅为引。",
+						"尊重元素，敬其怒火。"
 					]
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "元素生物猛击|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
+					"subclassFeature": "元素斩|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
 				},
 				{
 					"type": "refSubclassFeature",
@@ -5308,13 +5308,13 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "巨灵之华|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
+					"subclassFeature": "巨灵流光|圣武士|XPHB|巨灵贵族|FRHoF|3|FRHoF"
 				}
 			]
 		},
 		{
 			"ENG_name": "Aura of Elemental Shielding",
-			"name": "元素护盾灵光",
+			"name": "元素守御灵光",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5323,8 +5323,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"从以下伤害类型中选择一种：强酸、冷冻、火焰、闪电或雷鸣。你和你的盟友在你的守护灵光范围内对该伤害类型具有{@variantrule 抵抗术|XPHB}。",
-				"在你的每个回合开始时，你可以将此特性影响的伤害类型更改为列出的其他选项之一（无需动作）。"
+				"选择以下伤害类型之一：强酸、寒冷、火焰、闪电或雷鸣。你和位于你守护灵光内的盟友具有该伤害类型的{@variantrule 抵抗术|XPHB}。",
+				"在你每个回合开始时，你可以将此特性影响的伤害类型更改为其他列出的选项之一（无需动作）。"
 			]
 		},
 		{
@@ -5338,13 +5338,13 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"当你被一次攻击骰命中时，你可以采取一个{@variantrule 反应|XPHB}来使该攻击对你造成的伤害减半（向下取整）并迫使攻击者进行一次对抗你法术豁免DC的敏捷豁免。若豁免失败，攻击者受到等于{@dice 2d10}加上你魅力调整值的以下一种类型伤害（由你选择）：强酸、冷冻、火焰、闪电或雷鸣。若豁免成功，攻击者受到一半伤害。",
+				"当你被一次攻击检定命中时，你可以使用{@variantrule 反应|XPHB}使该攻击对你造成的伤害减半（向下取整）并且迫使攻击者进行一次对抗你的法术豁免DC的敏捷检定。豁免失败，攻击者受到等同于{@dice 2d10}+你魅力调整值的伤害。该伤害是以下类型之一（由你选择）：强酸、寒冷、火焰、闪电或雷鸣。豁免成功，则攻击者受到一半伤害。",
 				"你能使用此特性的次数为你的魅力调整值（最少一次）。你在完成一次{@variantrule 长休|XPHB}后重获所有消耗的次数。"
 			]
 		},
 		{
 			"ENG_name": "Noble Scion",
-			"name": "贵族后裔",
+			"name": "贵族使徒",
 			"source": "FRHoF",
 			"className": "圣武士",
 			"classSource": "XPHB",
@@ -5360,16 +5360,16 @@
 					"type": "entries",
 					"page": 5,
 					"entries": [
-						"你拥有{@variantrule 飞行速度|XPHB}为60尺并且可以悬浮。"
+						"你获得60尺的{@variantrule 飞行速度|XPHB}，并且可以悬浮。"
 					]
 				},
 				{
 					"ENG_name": "Minor Wish",
-					"type": "entries",
 					"name": "次级祈愿术",
+					"type": "entries",
 					"page": 5,
 					"entries": [
-						"当你或你{@classFeature 守护灵光|圣武士|XPHB|6|XPHB}范围内的盟友在{@variantrule D20 检定|XPHB}中失败时，你可以使用一个{@variantrule 反应|XPHB}使该{@variantrule D20 检定|XPHB}成功。"
+						"当你或处于你{@classFeature 守护灵光|圣武士|XPHB|6|XPHB}范围内的盟友在一次{@variantrule D20 检定|XPHB}中失败时，你可以使用{@variantrule 反应|XPHB}将该次{@variantrule D20 检定|XPHB}改为成功。"
 					]
 				}
 			]
