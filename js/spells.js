@@ -54,7 +54,7 @@ class SpellsSublistManager extends SublistManager {
 			}),
 			new SublistCell({
 				text: concentration,
-				title: concentration ? "Concentration" : "",
+				title: concentration ? "专注" : "",
 			}),
 			range,
 		];

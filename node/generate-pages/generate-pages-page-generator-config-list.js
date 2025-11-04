@@ -145,7 +145,7 @@ class _PageGeneratorListConditionsDiseases extends PageGeneratorListBase {
 
 class _PageGeneratorListCultsBoons extends PageGeneratorListBase {
 	_page = UrlUtil.PG_CULTS_BOONS;
-	_pageTitle = "异教 & 超自然恩惠";
+	_pageTitle = "异教 & 超自然赠礼";
 	_scriptIdentList = "cultsboons";
 
 	_btnsList = [

@@ -187,13 +187,13 @@ class PageUi {
 
 		const prevMode = this._settings.activeBuilder;
 
-		const $wrpMode = $(`<div class="w-100 split-v-center"><div class="sidemenu__row__label mr-2">Mode</div></div>`).appendTo($mnu);
+		const $wrpMode = $(`<div class="w-100 split-v-center"><div class="sidemenu__row__label mr-2">模式</div></div>`).appendTo($mnu);
 		this._$selBuilderMode = $(`
 			<select class="form-control input-xs">
-				<option value="creatureBuilder">Creature</option>
-				<option value="legendaryGroupBuilder">Legendary Group</option>
-				<option value="spellBuilder">Spell</option>
-				<option value="none" class="italic">Everything Else?</option>
+				<option value="creatureBuilder">生物</option>
+				<option value="legendaryGroupBuilder">传奇组</option>
+				<option value="spellBuilder">法术</option>
+				<option value="none" class="italic">其他内容？</option>
 			</select>
 		`)
 			.appendTo($wrpMode)

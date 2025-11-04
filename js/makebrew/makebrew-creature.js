@@ -886,8 +886,8 @@ export class CreatureBuilder extends BuilderBase {
 		};
 
 		const $selMode = $(`<select class="form-control input-xs mb-2">
-			<option value="0">Custom</option>
-			<option value="1">Use Full Name</option>
+			<option value="0">自定义</option>
+			<option value="1">使用全名</option>
 		</select>`)
 			.change(() => {
 				switch ($selMode.val()) {

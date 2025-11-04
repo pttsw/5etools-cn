@@ -92,7 +92,7 @@ export class SpellBuilder extends BuilderBase {
 	_getInitialState () {
 		return {
 			...super._getInitialState(),
-			name: "New Spell",
+			name: "新法术",
 			level: 1,
 			school: "A",
 			time: [
@@ -115,7 +115,7 @@ export class SpellBuilder extends BuilderBase {
 			classes: {
 				fromClassList: [
 					{
-						name: "Wizard",
+						name: "法师",
 						source: VetoolsConfig.get("styleSwitcher", "style") === SITE_STYLE__CLASSIC ? Parser.SRC_PHB : Parser.SRC_XPHB,
 					},
 				],
@@ -176,10 +176,10 @@ export class SpellBuilder extends BuilderBase {
 		this._resetTabs({tabGroup: "input"});
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Info", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Details", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Sources", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Flavor/Misc", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "详细信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "来源", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "其他", hasBorder: true}),
 			],
 			{
 				tabGroup: "input",
@@ -191,19 +191,19 @@ export class SpellBuilder extends BuilderBase {
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
 
 		// INFO
-		BuilderUi.$getStateIptString("Name", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptString("名字", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.$wrpTab);
 		this._$selSource = this.$getSourceInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getOtherSourcesInput(cb).appendTo(infoTab.$wrpTab);
-		BuilderUi.$getStateIptString("Page", cb, this._state, {}, "page").appendTo(infoTab.$wrpTab);
-		BuilderUi.$getStateIptEnum("Level", cb, this._state, {nullable: false, fnDisplay: (it) => Parser.spLevelToFull(it), vals: [...new Array(21)].map((_, i) => i)}, "level").appendTo(infoTab.$wrpTab);
-		BuilderUi.$getStateIptEnum("School", cb, this._state, {nullable: false, fnDisplay: (it) => Parser.spSchoolAbvToFull(it), vals: [...Parser.SKL_ABVS]}, "school").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptString("页码", cb, this._state, {}, "page").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptEnum("环节", cb, this._state, {nullable: false, fnDisplay: (it) => Parser.spLevelToFull(it), vals: [...new Array(21)].map((_, i) => i)}, "level").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptEnum("学派", cb, this._state, {nullable: false, fnDisplay: (it) => Parser.spSchoolAbvToFull(it), vals: [...Parser.SKL_ABVS]}, "school").appendTo(infoTab.$wrpTab);
 		BuilderUi.$getStateIptStringArray(
-			"Subschools",
+			"子学派",
 			cb,
 			this._state,
 			{
-				shortName: "Subschool",
-				title: "Found in some homebrew, for example the 'Clockwork' sub-school.",
+				shortName: "子学派",
+				title: "在一些自制法术中出现，例如“时械”子学派。",
 			},
 			"subschools",
 		).appendTo(infoTab.$wrpTab);
@@ -214,16 +214,16 @@ export class SpellBuilder extends BuilderBase {
 		this.__$getComponentInput(cb).appendTo(detailsTab.$wrpTab);
 		this.__$getMetaInput(cb).appendTo(detailsTab.$wrpTab);
 		this.__$getDurationInput(cb).appendTo(detailsTab.$wrpTab);
-		BuilderUi.$getStateIptEntries("Text", cb, this._state, {fnPostProcess: BuilderUi.fnPostProcessDice}, "entries").appendTo(detailsTab.$wrpTab);
+		BuilderUi.$getStateIptEntries("说明", cb, this._state, {fnPostProcess: BuilderUi.fnPostProcessDice}, "entries").appendTo(detailsTab.$wrpTab);
 		const iptEntriesHigherLevelMeta = BuilderUi.$getStateIptEntries(
-			"&quot;Higher-Level Spell Slot&quot; Text",
+			"&quot;升环施法&quot; 说明",
 			cb,
 			this._state,
 			{
 				nullable: true,
 				fnGetHeader: state => {
 					if (this._meta.styleHint === "classic") return "At Higher Levels";
-					return state.level === 0 ? "Cantrip Upgrade" : "Using a Higher-Level Spell Slot";
+					return state.level === 0 ? "戏法升环" : "升环施法";
 				},
 				fnPostProcess: BuilderUi.fnPostProcessDice,
 				asMeta: true,
@@ -266,9 +266,9 @@ export class SpellBuilder extends BuilderBase {
 
 		// FLAVOR/MISC
 		this.$getFluffInput(cb).appendTo(miscTab.$wrpTab);
-		$(`<div class="ve-flex-vh-center w-100 mb-2"><i>Note: the following data is used by filters on the Spells page.</i></div>`).appendTo(miscTab.$wrpTab);
+		$(`<div class="ve-flex-vh-center w-100 mb-2"><i>注意：以下数据会用于法术页面的筛选功能。</i></div>`).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Damage Inflicted",
+			"伤害类型",
 			cb,
 			this._state,
 			{
@@ -279,7 +279,7 @@ export class SpellBuilder extends BuilderBase {
 			"damageInflict",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Conditions Inflicted",
+			"施加的状态",
 			cb,
 			this._state,
 			{
@@ -290,7 +290,7 @@ export class SpellBuilder extends BuilderBase {
 			"conditionInflict",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Spell Attack Type",
+			"法术攻击类型",
 			cb,
 			this._state,
 			{
@@ -301,7 +301,7 @@ export class SpellBuilder extends BuilderBase {
 			"spellAttack",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Saving Throw",
+			"豁免检定",
 			cb,
 			this._state,
 			{
@@ -312,7 +312,7 @@ export class SpellBuilder extends BuilderBase {
 			"savingThrow",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Ability Check",
+			"属性检定",
 			cb,
 			this._state,
 			{
@@ -323,7 +323,7 @@ export class SpellBuilder extends BuilderBase {
 			"abilityCheck",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Area Type",
+			"效应区域",
 			cb,
 			this._state,
 			{
@@ -334,7 +334,7 @@ export class SpellBuilder extends BuilderBase {
 			"areaTags",
 		).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
-			"Misc Tags",
+			"其他",
 			cb,
 			this._state,
 			{
@@ -354,7 +354,7 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	__$getOtherSourcesInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Other Sources", {isMarked: true, title: "For example, various spells in Xanathar's Guide to Everything can also be found in the Elemental Evil Player's Companion."});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("其他来源", {isMarked: true, title: "例如，《珊娜萨的万事指南》中的许多法术也可以在《元素邪恶玩家书》中找到。"});
 
 		const doUpdateState = () => {
 			const out = otherSourceRows.map(row => row.getOtherSource()).filter(Boolean);
@@ -369,7 +369,7 @@ export class SpellBuilder extends BuilderBase {
 		(this._state.otherSources || []).forEach(it => this.__$getOtherSourcesInput__getOtherSourceRow(doUpdateState, otherSourceRows, it).$wrp.appendTo($wrpRows));
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Other Source</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加其他来源</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				this.__$getOtherSourcesInput__getOtherSourceRow(doUpdateState, otherSourceRows, null).$wrp.appendTo($wrpRows);
@@ -404,7 +404,7 @@ export class SpellBuilder extends BuilderBase {
 		const $wrpBtnRemove = $(`<div class="ve-text-right mb-2"></div>`);
 		const $wrp = $$`<div class="ve-flex-col mkbru__wrp-rows mkbru__wrp-rows--removable">
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">来源</span>${compSelSource.$getWrp()}</div>
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Page</span>${$iptPage}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">页码</span>${$iptPage}</div>
 			${$wrpBtnRemove}
 		</div>`;
 		this.constructor.$getBtnRemoveRow(doUpdateState, otherSourceRows, out, $wrp, "Other Source").appendTo($wrpBtnRemove);
@@ -415,7 +415,7 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	__$getTimeInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Casting Time", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("施法时间", {isMarked: true});
 
 		const doUpdateState = () => {
 			this._state.time = timeRows.map(row => row.getTime());
@@ -428,7 +428,7 @@ export class SpellBuilder extends BuilderBase {
 		this._state.time.forEach(time => SpellBuilder.__$getTimeInput__getTimeRow(doUpdateState, timeRows, time).$wrp.appendTo($wrpRows));
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Casting Time</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加施法时间</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				SpellBuilder.__$getTimeInput__getTimeRow(doUpdateState, timeRows, {number: 1, unit: Parser.SP_TM_ACTION}).$wrp.appendTo($wrpRows);
@@ -466,14 +466,14 @@ export class SpellBuilder extends BuilderBase {
 				doUpdateState();
 			});
 
-		const $iptCond = $(`<input class="form-control form-control--minimal input-xs" placeholder="which you take when...">`)
+		const $iptCond = $(`<input class="form-control form-control--minimal input-xs" placeholder="当你做...时触发">`)
 			.change(() => doUpdateState())
 			.val(time.condition);
 
 		const out = {getTime};
 
 		const $stageCond = $$`<div class="ve-flex-v-center mb-2">
-			<span class="mr-2 mkbru__sub-name--33">Condition</span>${$iptCond}
+			<span class="mr-2 mkbru__sub-name--33">条件</span>${$iptCond}
 		</div>`.toggleVe(ixInitial === 2);
 
 		const $wrpBtnRemove = $(`<div class="ve-text-right mb-2"></div>`);
@@ -490,7 +490,7 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	__$getRangeInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Range", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("范围", {isMarked: true});
 
 		const isInitialDistance = !!this._state.range.distance;
 		const isInitialAmount = this._state.range.distance && this._state.range.distance.amount != null;
@@ -522,7 +522,7 @@ export class SpellBuilder extends BuilderBase {
 			} else doUpdateState();
 		});
 		$$`<div class="ve-flex-v-center">
-			<span class="mr-2 mkbru__sub-name--33">Range Type</span>
+			<span class="mr-2 mkbru__sub-name--33">范围类型</span>
 			${$selRange}
 		</div>`.appendTo($rowInner);
 
@@ -539,7 +539,7 @@ export class SpellBuilder extends BuilderBase {
 			} else doUpdateState();
 		});
 		const $stageDistance = $$`<div class="ve-flex-v-center mt-2">
-			<span class="mr-2 mkbru__sub-name--33">Distance Type</span>
+			<span class="mr-2 mkbru__sub-name--33">距离类型</span>
 			${$selDistance}
 		</div>`.appendTo($rowInner).toggleVe(isInitialDistance);
 
@@ -549,7 +549,7 @@ export class SpellBuilder extends BuilderBase {
 			.change(() => doUpdateState())
 			.val(initialAmount);
 		const $stageAmount = $$`<div class="ve-flex-v-center mt-2">
-			<span class="mr-2 mkbru__sub-name--33">Distance Amount</span>
+			<span class="mr-2 mkbru__sub-name--33">距离数值</span>
 			${$iptAmount}
 		</div>`.appendTo($rowInner).toggleVe(isInitialAmount);
 
@@ -557,7 +557,7 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	__$getComponentInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Components", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("成分", {isMarked: true});
 
 		const initialMaterialMode = (!this._state.components || this._state.components.m == null)
 			? "0"
@@ -609,10 +609,10 @@ export class SpellBuilder extends BuilderBase {
 			.change(() => doUpdateState());
 
 		const $selMaterial = $(`<select class="form-control input-xs">
-			<option value="0">(None)</option>
-			<option value="1">Has Material Component</option>
-			<option value="2">Has Consumable/Costed Material Component</option>
-			<option value="3">Has Generic Material Component</option>
+			<option value="0">(无)</option>
+			<option value="1">有材料成分</option>
+			<option value="2">有消耗品/成本材料成分</option>
+			<option value="3">有通用材料成分</option>
 		</select>`).val(initialMaterialMode).change(() => {
 			switch ($selMaterial.val()) {
 				case "0": $stageMaterial.hideVe(); $stageMaterialConsumable.hideVe(); break;
@@ -625,14 +625,14 @@ export class SpellBuilder extends BuilderBase {
 		});
 
 		$$`<div>
-			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33">Verbal</div>${$cbVerbal}</div>
-			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33">Somatic</div>${$cbSomatic}</div>
-			<div class="ve-flex-v-center mt-2"><div class="mr-2 mkbru__sub-name--33">Royalty</div>${$cbRoyalty}</div>
-			<div class="ve-flex-v-center"><div class="mr-2 mkbru__sub-name--33">Material Type</div>${$selMaterial}</div>
+			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33">言语</div>${$cbVerbal}</div>
+			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33">姿势</div>${$cbSomatic}</div>
+			<div class="ve-flex-v-center mt-2"><div class="mr-2 mkbru__sub-name--33">版税</div>${$cbRoyalty}</div>
+			<div class="ve-flex-v-center"><div class="mr-2 mkbru__sub-name--33">材料类型</div>${$selMaterial}</div>
 		</div>`.appendTo($rowInner);
 
 		// BASIC MATERIAL
-		const $stageMaterial = $$`<div class="ve-flex-v-center mt-2"><div class="mr-2 mkbru__sub-name--33">Materials</div>${$iptMaterial}</div>`.appendTo($rowInner).toggleVe(initialMaterialMode === "1" || initialMaterialMode === "2");
+		const $stageMaterial = $$`<div class="ve-flex-v-center mt-2"><div class="mr-2 mkbru__sub-name--33">材料</div>${$iptMaterial}</div>`.appendTo($rowInner).toggleVe(initialMaterialMode === "1" || initialMaterialMode === "2");
 
 		// CONSUMABLE MATERIAL
 		const $cbConsumed = $(`<input type="checkbox" class="mkbru__ipt-cb--plain">`)
@@ -641,17 +641,17 @@ export class SpellBuilder extends BuilderBase {
 		const $iptCost = $(`<input class="form-control form-control--minimal input-xs mr-1">`)
 			.val(this._state.components && this._state.components.m && this._state.components.m.cost ? this._state.components.m.cost : null)
 			.change(() => doUpdateState());
-		const TITLE_FILTERS_EXTERNAL = "Used in filtering/external applications. The full text of the material component should be entered in the &quot;Materials&quot; field, above.";
+		const TITLE_FILTERS_EXTERNAL = "用于筛选等其他功能。您应在上方的“材料”输入框中填写完整的材料成分说明。";
 		const $stageMaterialConsumable = $$`<div class="mt-2">
-			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33 help" title="${TITLE_FILTERS_EXTERNAL}">Is Consumed</div>${$cbConsumed}</div>
-			<div class="ve-flex-v-center"><div class="mr-2 mkbru__sub-name--33 help" title="${TITLE_FILTERS_EXTERNAL} Specified in copper pieces (1gp = 100cp).">Component Cost</div>${$iptCost}<div>cp</div></div>
+			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33 help" title="${TITLE_FILTERS_EXTERNAL}">是消耗品？</div>${$cbConsumed}</div>
+			<div class="ve-flex-v-center"><div class="mr-2 mkbru__sub-name--33 help" title="${TITLE_FILTERS_EXTERNAL}以铜币来计算(1gp = 100cp).">成分价值</div>${$iptCost}<div>cp</div></div>
 		</div>`.appendTo($rowInner).toggleVe(initialMaterialMode === "2");
 
 		return $row;
 	}
 
 	__$getMetaInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Tags", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("标签", {isMarked: true});
 
 		const doUpdateState = () => {
 			const out = {};
@@ -671,15 +671,15 @@ export class SpellBuilder extends BuilderBase {
 			.change(() => doUpdateState());
 
 		$$`<div>
-			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33">Ritual</div>${$cbRitual}</div>
-			<div class="ve-flex-v-center"><div class="mr-2 mkbru__sub-name--33">Technomagic</div>${$cbTechnomagic}</div>
+			<div class="ve-flex-v-center mb-2"><div class="mr-2 mkbru__sub-name--33">仪式</div>${$cbRitual}</div>
+			<div class="ve-flex-v-center"><div class="mr-2 mkbru__sub-name--33">技术魔法</div>${$cbTechnomagic}</div>
 		</div>`.appendTo($rowInner);
 
 		return $row;
 	}
 
 	__$getDurationInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Duration", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("持续时间", {isMarked: true});
 
 		const doUpdateState = () => {
 			this._state.duration = durationRows.map(row => row.getDuration());
@@ -692,7 +692,7 @@ export class SpellBuilder extends BuilderBase {
 		this._state.duration.forEach(duration => SpellBuilder.__$getDurationInput__getDurationRow(doUpdateState, durationRows, duration).$wrp.appendTo($wrpRows));
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Duration</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加持续时间</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				SpellBuilder.__$getDurationInput__getDurationRow(doUpdateState, durationRows, {type: "instant"}).$wrp.appendTo($wrpRows);
@@ -744,7 +744,7 @@ export class SpellBuilder extends BuilderBase {
 		// AMOUNT
 		const ixInitialAmount = duration.duration ? AMOUNT_TYPES.indexOf(duration.duration.type) : "0";
 		const $selAmountType = $(`<select class="form-control input-xs">
-			${AMOUNT_TYPES.map((it, i) => `<option value="${i}">${it.toTitleCase()}s</option>`).join("")}
+			${AMOUNT_TYPES.map((it, i) => `<option value="${i}">${it}</option>`).join("")}
 		</select>`).val(ixInitialAmount).change(() => doUpdateState());
 		const $iptAmount = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
 			.val(duration.duration ? duration.duration.amount : null)
@@ -756,8 +756,8 @@ export class SpellBuilder extends BuilderBase {
 			.prop("checked", duration.duration ? duration.duration.upTo : false)
 			.change(() => doUpdateState());
 		const $stageAmount = $$`<div class="ve-flex-col mb-2">
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Concentration</span>${$cbConc}</div>
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="For a spell with Concentration, this has no effect, as it is assumed that the spell can be ended at any time by ending concentration.">Up To...</span>${$cbUpTo}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">专注</span>${$cbConc}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="对于需要专注的法术，此选项无效。因为那些法术可以通过结束专注状态来随时终止。">至多...</span>${$cbUpTo}</div>
 			<div class="ve-flex-v-center">${$iptAmount}${$selAmountType}</div>
 		</div>`.toggleVe(!!typeInitial.hasAmount);
 
@@ -779,7 +779,7 @@ export class SpellBuilder extends BuilderBase {
 
 		const $wrpBtnRemove = $(`<div class="ve-text-right mb-2"></div>`);
 		const $wrp = $$`<div class="ve-flex-col mkbru__wrp-rows mkbru__wrp-rows--removable">
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Duration Type</span>${$selDurationType}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">持续时间类型</span>${$selDurationType}</div>
 			${$stageAmount}
 			${$stageEnds}
 			${$wrpBtnRemove}
@@ -823,8 +823,8 @@ export class SpellBuilder extends BuilderBase {
 			? {name: "Evocation", source: Parser.SRC_PHB}
 			: {name: "Evoker", source: Parser.SRC_XPHB};
 
-		const [$rowCls, $rowInnerCls] = BuilderUi.getLabelledRowTuple("Classes", {isMarked: true});
-		const [$rowSc, $rowInnerSc] = BuilderUi.getLabelledRowTuple("Subclasses", {isMarked: true});
+		const [$rowCls, $rowInnerCls] = BuilderUi.getLabelledRowTuple("职业", {isMarked: true});
+		const [$rowSc, $rowInnerSc] = BuilderUi.getLabelledRowTuple("子职", {isMarked: true});
 
 		const classRows = [];
 		const subclassRows = [];
@@ -847,7 +847,7 @@ export class SpellBuilder extends BuilderBase {
 		doRefreshCls();
 
 		const $wrpBtnAddCls = $(`<div></div>`).appendTo($rowInnerCls);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Class</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加职业</button>`)
 			.appendTo($wrpBtnAddCls)
 			.click(() => {
 				this.__$getClassesInputs__getClassRow(doUpdateState, classRows, MiscUtil.copy(DEFAULT_CLASS)).$wrp.appendTo($wrpRowsCls);
@@ -864,7 +864,7 @@ export class SpellBuilder extends BuilderBase {
 		doRefreshSc();
 
 		const $wrpBtnAddSc = $(`<div></div>`).appendTo($rowInnerSc);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Subclass</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加子职</button>`)
 			.appendTo($wrpBtnAddSc)
 			.click(() => {
 				this.__$getClassesInputs__getSubclassRow(doUpdateState, subclassRows, {class: MiscUtil.copy(DEFAULT_CLASS), subclass: MiscUtil.copy(DEFAULT_SUBCLASS)}).$wrp.appendTo($wrpRowsSc);
@@ -891,8 +891,8 @@ export class SpellBuilder extends BuilderBase {
 
 		const $wrpBtnRemove = $(`<div class="ve-text-right mb-2"></div>`);
 		const $wrp = $$`<div class="ve-flex-col mkbru__wrp-rows mkbru__wrp-rows--removable">
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Class Name</span>${$iptClass}</div>
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Class Source</span>${compSelSource.$getWrp()}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">职业名字</span>${$iptClass}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">职业来源</span>${compSelSource.$getWrp()}</div>
 			${$wrpBtnRemove}
 		</div>`;
 		this.constructor.$getBtnRemoveRow(doUpdateState, classRows, out, $wrp, "Class").appendTo($wrpBtnRemove);
@@ -961,7 +961,7 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	__$getRaces (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Species", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("种族", {isMarked: true});
 
 		const doUpdateState = () => {
 			const races = raceRows.map(row => row.getRace()).filter(Boolean);
@@ -982,7 +982,7 @@ export class SpellBuilder extends BuilderBase {
 		doRefresh();
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add Species</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加种族</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				this.__$getRaces__getRaceRow(doUpdateState, raceRows, null).$wrp.appendTo($wrpRows);
@@ -1025,8 +1025,8 @@ export class SpellBuilder extends BuilderBase {
 		const $wrp = $$`<div class="ve-flex-col mkbru__wrp-rows">
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">名称</span>${$iptRace}</div>
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">来源</span>${compSelSource.$getWrp()}</div>
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="The name of the base race, e.g. &quot;Elf&quot;. This is used in filtering.">Base Name</span>${$iptBaseRace}</div>
-			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="For example, the &quot;Elf&quot; base race has a source of &quot;${Parser.SRC_PHB}&quot;">Base Source</span>${compSelSourceBase.$getWrp()}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="基础种族的名字，例如“精灵”。这个主要用于筛选功能。">基础种族</span>${$iptBaseRace}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="例如“精灵”的基础来源是“${Parser.SRC_PHB}”。">基础来源</span>${compSelSourceBase.$getWrp()}</div>
 			${$wrpBtnRemove}
 		</div>`;
 		this.constructor.$getBtnRemoveRow(doUpdateState, raceRows, out, $wrp, "Species").appendTo($wrpBtnRemove);
@@ -1059,7 +1059,7 @@ export class SpellBuilder extends BuilderBase {
 		doRefresh();
 
 		const $wrpBtnAdd = $(`<div></div>`).appendTo($rowInner);
-		$(`<button class="ve-btn ve-btn-xs ve-btn-default">Add ${nameSingle}</button>`)
+		$(`<button class="ve-btn ve-btn-xs ve-btn-default">添加${nameSingle}</button>`)
 			.appendTo($wrpBtnAdd)
 			.click(() => {
 				this.__$getSimpleSource__getIdentRow(doUpdateState, rows, null, optsRow).$wrp.appendTo($wrpRows);
@@ -1104,8 +1104,8 @@ export class SpellBuilder extends BuilderBase {
 	__$getBackgrounds (cb) {
 		return this.__$getSimpleSource({
 			cb,
-			nameSingle: "Background",
-			namePlural: "Backgrounds",
+			nameSingle: "背景",
+			namePlural: "背景",
 			prop: "backgrounds",
 			propTracker: "backgroundSources",
 		});
@@ -1114,8 +1114,8 @@ export class SpellBuilder extends BuilderBase {
 	__$getOptionalfeatures (cb) {
 		return this.__$getSimpleSource({
 			cb,
-			nameSingle: "Optional Feature",
-			namePlural: "Optional Features",
+			nameSingle: "可选特性",
+			namePlural: "可选特性",
 			prop: "optionalfeatures",
 			propTracker: "optionalfeatureSources",
 		});
@@ -1124,8 +1124,8 @@ export class SpellBuilder extends BuilderBase {
 	__$getFeats (cb) {
 		return this.__$getSimpleSource({
 			cb,
-			nameSingle: "Feat",
-			namePlural: "Feats",
+			nameSingle: "专长",
+			namePlural: "专长",
 			prop: "feats",
 			propTracker: "featSources",
 		});
@@ -1134,8 +1134,8 @@ export class SpellBuilder extends BuilderBase {
 	__$getCharoptions (cb) {
 		return this.__$getSimpleSource({
 			cb,
-			nameSingle: "Character Creation Option",
-			namePlural: "Character Creation Options",
+			nameSingle: "角色创建选项",
+			namePlural: "角色创建选项",
 			prop: "charoptions",
 			propTracker: "charoptionSources",
 		});
@@ -1144,8 +1144,8 @@ export class SpellBuilder extends BuilderBase {
 	__$getRewards (cb) {
 		return this.__$getSimpleSource({
 			cb,
-			nameSingle: "Supernatural Gift/Reward",
-			namePlural: "Supernatural Gifts and Rewards",
+			nameSingle: "超自然赠礼/奖励",
+			namePlural: "超自然赠礼和奖励",
 			prop: "rewards",
 			propTracker: "rewardSources",
 		});
@@ -1193,10 +1193,10 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	__$getSourcesGenerated (cb, fnsDoRefreshSources) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Generated", {isMarked: true});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("生成的来源", {isMarked: true});
 
 		const getBtnAdd = () => {
-			const $btn = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="Generate additional spell sources based on the spell's current sources (for example, Eldritch Knight Fighter for a Wizard spell).">Generate Additional</button>`)
+			const $btn = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="基于当前法术的来源生成额外来源（例如，为法师法术生成奥法骑士战士来源）。">添加额外来源</button>`)
 				.click(async () => {
 					try {
 						$btn.prop("disabled", true);
@@ -1256,10 +1256,10 @@ export class SpellBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Spell"}),
-				new TabUiUtil.TabMeta({name: "Info"}),
-				new TabUiUtil.TabMeta({name: "Images"}),
-				new TabUiUtil.TabMeta({name: "Data"}),
+				new TabUiUtil.TabMeta({name: "法术"}),
+				new TabUiUtil.TabMeta({name: "信息"}),
+				new TabUiUtil.TabMeta({name: "图片"}),
+				new TabUiUtil.TabMeta({name: "数据"}),
 				new TabUiUtil.TabMeta({name: "Markdown"}),
 			],
 			{

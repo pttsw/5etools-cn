@@ -4570,9 +4570,9 @@ Renderer.utils = class {
 					toRoll: "1d2",
 					successThresh: 1,
 					successMax: 2,
-					displayText: displayText || "flip a coin",
-					chanceSuccessText: textSuccess || `Heads`,
-					chanceFailureText: textFailure || `Tails`,
+					displayText: displayText || "掷一枚硬币",
+					chanceSuccessText: textSuccess || `正面`,
+					chanceFailureText: textFailure || `反面`,
 					isColorSuccessFail: !textSuccess && !textFailure,
 					rollable: true,
 				};
@@ -5525,7 +5525,7 @@ Renderer.tag = class {
 
 		_getStripped (tag, text) {
 			const [displayText] = Renderer.splitTagByPipe(text);
-			return displayText || "flip a coin";
+			return displayText || "掷一枚硬币";
 		}
 	};
 
@@ -9601,7 +9601,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: {...mon, legendary: entsLegendaryAction},
 			renderer,
-			title: "Legendary Actions",
+			title: "传奇动作",
 			key: "legendary",
 			depth: 2,
 			styleHint: this._style,
@@ -9613,7 +9613,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: {...mon, mythic: entsMythicAction},
 			renderer,
-			title: "Mythic Actions",
+			title: "神话动作",
 			key: "mythic",
 			depth: 2,
 			styleHint: this._style,
@@ -9628,7 +9628,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: legGroup,
 			renderer,
-			title: "Lair Actions",
+			title: "巢穴动作",
 			key: "lairActions",
 			depth: 1,
 			styleHint: this._style,
@@ -9640,7 +9640,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: legGroup,
 			renderer,
-			title: "Regional Effects",
+			title: "区域效应",
 			key: "regionalEffects",
 			depth: 1,
 			styleHint: this._style,
@@ -11094,9 +11094,9 @@ Renderer.monster = class {
 			tgt.push(...MiscUtil.copyFast(thisGroup[prop]));
 		};
 
-		handleGroupProp(tgtLair, "lairActions", "Lair Actions");
-		handleGroupProp(tgtLair, "regionalEffects", "Regional Effects");
-		handleGroupProp(cpy.entries, "mythicEncounter", `${mon.name} as a Mythic Encounter`);
+		handleGroupProp(tgtLair, "lairActions", "巢穴动作");
+		handleGroupProp(tgtLair, "regionalEffects", "区域效应");
+		handleGroupProp(cpy.entries, "mythicEncounter", `将${mon.name}作为一次神话遭遇`);
 
 		return cpy;
 	}

@@ -1310,7 +1310,7 @@ Parser.spMetaToArr = function (meta) {
 	return Object.entries(meta)
 		.filter(([_, v]) => v)
 		.sort(SortUtil.ascSort)
-		.map(([k]) => k);
+		.map(([k]) => k === "ritual" ? "仪式" : (k === "technomagic" ? "技术" : k));
 };
 
 Parser.spMetaToFull = function (meta) {
@@ -1340,7 +1340,7 @@ Parser.spTimeListToFull = function (times, isStripTags) {
 };
 
 Parser.getTimeToFull = function (time) {
-	return `${time.number ? `${time.number} ` : ""}${time.unit === "bonus" ? "bonus action" : time.unit}${time.number > 1 ? "s" : ""}`;
+	return `${time.number ? `${time.number} ` : ""}${Parser.spTimeUnitToFull(time.unit)}`;
 };
 
 Parser.getMinutesToFull = function (mins, {isShort = false} = {}) {
@@ -1375,18 +1375,19 @@ Parser.RNG_UNLIMITED_SAME_PLANE = "plane";
 Parser.RNG_TOUCH = "touch";
 Parser.SP_RANGE_TYPE_TO_FULL = {
 	[Parser.RNG_SPECIAL]: "特殊",
-	[Parser.RNG_POINT]: "Point",
-	[Parser.RNG_LINE]: "线型",
-	[Parser.RNG_CUBE]: "立方体",
-	[Parser.RNG_CONE]: "锥形",
+	[Parser.RNG_POINT]: "点状",
+	[Parser.RNG_LINE]: "线状",
+	[Parser.RNG_CUBE]: "立方",
+	[Parser.RNG_CONE]: "锥状",
 	[Parser.RNG_RADIUS]: "半径",
-	[Parser.RNG_SPHERE]: "Sphere",
-	[Parser.RNG_HEMISPHERE]: "半球体",
-	[Parser.RNG_CYLINDER]: "Cylinder",
+	[Parser.RNG_EMANATION]: "光环",
+	[Parser.RNG_SPHERE]: "球状",
+	[Parser.RNG_HEMISPHERE]: "半球",
+	[Parser.RNG_CYLINDER]: "圆柱",
 	[Parser.RNG_SELF]: "自身",
-	[Parser.RNG_SIGHT]: "Sight",
+	[Parser.RNG_SIGHT]: "视线",
 	[Parser.RNG_UNLIMITED]: "无限",
-	[Parser.RNG_UNLIMITED_SAME_PLANE]: "Unlimited on the same plane",
+	[Parser.RNG_UNLIMITED_SAME_PLANE]: "在同一位面上无限",
 	[Parser.RNG_TOUCH]: "触及",
 };
 
@@ -1619,21 +1620,21 @@ Parser.spDurationToFull = function (durations, {isPlainText = false, styleHint} 
 };
 
 Parser.DURATION_TYPES = [
-	{type: "instant", full: "即效"},
-	{type: "timed", hasAmount: true},
-	{type: "permanent", hasEnds: true},
-	{type: "special"},
+	{type: "instant", full: "立即"},
+	{type: "timed", hasAmount: true, full: "一段时间"},
+	{type: "permanent", hasEnds: true, full: "永久"},
+	{type: "special", full: "特殊"},
 ];
 
 Parser.DURATION_AMOUNT_TYPES = [
-	"turn",
-	"round",
-	"minute",
-	"hour",
-	"day",
-	"week",
-	"month",
-	"year",
+	"轮",
+	"回合",
+	"分钟",
+	"小时",
+	"天",
+	"周",
+	"月",
+	"年",
 ];
 
 Parser.spClassesToFull = function (sp, {isTextOnly = false, subclassLookup = {}} = {}) {
@@ -1737,7 +1738,7 @@ Parser.SP_MISC_TAG_TO_FULL = {
 	"SGT": "需要视野",
 	"PRM": "永久效应",
 	"SCL": "动态变化的效应",
-	"SCT": "Scaling Targets",
+	"SCT": "可扩展目标",
 	"SMN": "召唤生物",
 	"MAC": "改变AC",
 	"TP": "传送",

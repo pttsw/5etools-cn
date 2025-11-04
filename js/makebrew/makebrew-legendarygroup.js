@@ -46,7 +46,7 @@ export class LegendaryGroupBuilder extends BuilderBase {
 	_getInitialState () {
 		return {
 			...super._getInitialState(),
-			name: "New Legendary Group",
+			name: "新传奇组",
 			lairActions: [],
 			regionalEffects: [],
 			mythicEncounter: [],
@@ -96,10 +96,10 @@ export class LegendaryGroupBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Info", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Lair Actions", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Regional Effects", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "Mythic Encounter", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "巢穴动作", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "区域效应", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "神话遭遇", hasBorder: true}),
 			],
 			{
 				tabGroup: "input",
@@ -111,7 +111,7 @@ export class LegendaryGroupBuilder extends BuilderBase {
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
 
 		// INFO
-		BuilderUi.$getStateIptString("Name", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.$wrpTab);
+		BuilderUi.$getStateIptString("名字", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.$wrpTab);
 		this._$selSource = this.$getSourceInput(cb).appendTo(infoTab.$wrpTab);
 
 		// LAIR ACTIONS
@@ -125,15 +125,15 @@ export class LegendaryGroupBuilder extends BuilderBase {
 	}
 
 	__$getLairActionsInput (cb) {
-		return BuilderUi.$getStateIptEntries("Lair Actions", cb, this._state, {}, "lairActions");
+		return BuilderUi.$getStateIptEntries("巢穴动作", cb, this._state, {}, "lairActions");
 	}
 
 	__$getRegionalEffectsInput (cb) {
-		return BuilderUi.$getStateIptEntries("Regional Effects", cb, this._state, {}, "regionalEffects");
+		return BuilderUi.$getStateIptEntries("区域效应", cb, this._state, {}, "regionalEffects");
 	}
 
 	__$getMythicEncounterEffectsInput (cb) {
-		return BuilderUi.$getStateIptEntries("Mythic Encounter", cb, this._state, {}, "mythicEncounter");
+		return BuilderUi.$getStateIptEntries("神话遭遇", cb, this._state, {}, "mythicEncounter");
 	}
 
 	renderOutput () {
@@ -147,8 +147,8 @@ export class LegendaryGroupBuilder extends BuilderBase {
 		this._resetTabs({tabGroup: "output"});
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "Legendary Group"}),
-				new TabUiUtil.TabMeta({name: "Data"}),
+				new TabUiUtil.TabMeta({name: "传奇组"}),
+				new TabUiUtil.TabMeta({name: "数据"}),
 			],
 			{
 				tabGroup: "output",

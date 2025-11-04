@@ -2082,7 +2082,7 @@ export class ConverterCreature extends ConverterBase {
 				(stats.size = stats.size || []).push(tk[0].toUpperCase());
 			}
 		}
-		stats.size.sort(SortUtil.ascSortSize);
+		// stats.size.sort(SortUtil.ascSortSize);
 		// endregion
 
 		const tksNoSize = tks.slice(ixSizeLast + 1);

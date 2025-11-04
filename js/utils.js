@@ -54,11 +54,11 @@ globalThis.VeCt = {
 
 	LOC_HOSTNAME_CANCER: "5e.tools",
 
-	URL_BREW: `https://github.com/TheGiddyLimit/homebrew`,
-	URL_ROOT_BREW: `https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/`, // N.b. must end with a slash
-	URL_ROOT_BREW_IMG: `https://raw.githubusercontent.com/TheGiddyLimit/homebrew-img/main/`, // N.b. must end with a slash
-	URL_PRERELEASE: `https://github.com/TheGiddyLimit/unearthed-arcana`,
-	URL_ROOT_PRERELEASE: `https://raw.githubusercontent.com/TheGiddyLimit/unearthed-arcana/master/`, // As above
+	URL_BREW: `https://github.com/tjliqy/homebrew`,
+	URL_ROOT_BREW: `https://raw.githubusercontent.com/tjliqy/homebrew/master/`, // N.b. must end with a slash
+	URL_ROOT_BREW_IMG: `https://raw.githubusercontent.com/tjliqy/homebrew-img/main/`, // N.b. must end with a slash
+	URL_PRERELEASE: `https://github.com/tjliqy/unearthed-arcana`,
+	URL_ROOT_PRERELEASE: `https://raw.githubusercontent.com/tjliqy/unearthed-arcana/master/`, // As above
 
 	STR_NO_ATTUNEMENT: "无需同调",
 
