@@ -22,7 +22,7 @@
 				{
 					"type": "list",
 					"items": [
-						"样式标签；{@bold 需要加粗的文本}（替代 {@b 速记}), {@italic 需要斜体显示的文本}（替代 {@i 速记}), {@underline 一些需要被下划线标记的文本}（替代 {@u 速记}), {@underlineDouble 一些需要被下划线标记的文本}（替代 {@u2 速记}), {@strike 需要删除线的文本}, （替代 {@s 速记}), , {@strikeDouble 需要删除线的文本}, （替代 {@s2 速记}), {@color 颜色|e40707}/{@color 颜色变量|--RGB名称} 标签, {@highlight 高亮} 标签, {@sup 上标} 标签, {@sub 下标} 标签, {@kbd 键盘} 标签, {@code print(\"hello world\")} 标签, 杂项 {@style 风格|小型大写字母；小型；大写；D&D字体} 标签, {@font 替代字体|Comic Sans MS} 标签",
+						"样式标签；{@bold 需要加粗的文本}（替代 {@b 简化写法}), {@italic 需要斜体显示的文本}（替代 {@i 简化写法}), {@underline 一些需要被下划线标记的文本}（替代 {@u 简化写法}), {@underlineDouble 一些需要被下划线标记的文本}（替代 {@u2 简化写法}), {@strike 需要删除线的文本}, （替代 {@s 简化写法}), , {@strikeDouble 需要删除线的文本}, （替代 {@s2 简化写法}), {@color 颜色|e40707}/{@color 颜色变量|--RGB名称} 标签, {@highlight 高亮} 标签, {@sup 上标} 标签, {@sub 下标} 标签, {@kbd 键盘} 标签, {@code print(\"hello world\")} 标签, 杂项 {@style 风格|小型大写字母；小型；大写；D&D字体} 标签, {@font 替代字体|Comic Sans MS} 标签",
 						"此外，使用{@note 注释标签}来添加勘误或Twitter上的\"设计师脚注\"，以及{@tip 提示标签|一个注释}。",
 						"骰子滚动标签；使用{@dice 1d2-2+2d3+5}进行常规骰子滚动（{@dice 1d6;2d6}用于多个选项；{@dice 1d6 + #$prompt_number:min=1,title=请输入一个数字!,default=123$#}用于输入提示），具有扩展的{@dice 1d20+2|显示文本}和{@dice 1d20+2|显示文本|由名字掷骰}，以及一个特殊的'命中'版本，它假定要滚动一个d20 {@hit +7}（并且在{@kbd SHIFT键}+点击时滚动优势，在{@kbd ALT}+点击时滚动劣势）。还有{@damage 1d12+3}，它将在{@kbd SHIFT键}+点击时滚动重击，并且在{@kbd ALT}+点击时滚动半伤害（向下取整），以及{@d20 -4}，它也将滚动优势/劣势，尽管在适当的地方推荐使用@hit标签。法术可以有缩放骰子标签，（1级时的伤害为2d6或3d6，每超过2级就额外添加一个{@scaledamage 2d6;3d6|2-9|1d6}；或者，使用1点psi点时滚动2d6，每额外花费一个psi点就添加一个{@scaledice 2d6|1,3,5,7,9|1d6|PSI|额外金额}），用于当法术效果在更高级别时扩展。{@ability 力量 20}, {@savingThrow 力量 5}, 和{@skillCheck 动物处理 5}用作内部简写，但可能在其他地方也有用。",
 						"自动骰子标签；如上所述，但在渲染时会自动掷骰子并显示结果：{@autodice 2d10+2}。",
@@ -630,7 +630,7 @@
 						{
 							"type": "statblockInline",
 							"style": "嵌入",
-							"dataType": "怪物",
+							"dataType": "monster",
 							"data": {
 								"ENG_name": "Unicorn",
 								"name": "独角兽",
@@ -811,7 +811,7 @@
 						{
 							"type": "statblockInline",
 							"collapsed": true,
-							"dataType": "法术",
+							"dataType": "spell",
 							"data": {
 								"ENG_name": "Fireball",
 								"name": "火球术",
@@ -861,7 +861,7 @@
 						"使用\"依赖项\"和\"_copy\"来复制一个已存在的内容片段：",
 						{
 							"type": "statblockInline",
-							"dataType": "怪物",
+							"dataType": "monster",
 							"dependencies": [
 								"MM"
 							],

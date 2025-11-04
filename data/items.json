@@ -10005,7 +10005,7 @@
 			"value": 2500,
 			"entries": [
 				"当你穿着明亮真菌斗篷时，你可以使用一个{@variantrule 附赠动作|XPHB}来展开或收拢它。当斗篷展开时，它会在5尺半径内散发{@variantrule 明亮光照|XPHB}，并在额外5尺范围内散发{@variantrule 微光光照|XPHB}。",
-				"一磅真菌被缝制成一件亮菌斗篷。这种真菌可以作为食物食用。一旦所有真菌被消耗完，这件斗篷就变成一套寻常的旅行者服装。"
+				"一磅真菌被缝制成一件明亮真菌斗篷。这种真菌可以作为食物食用。一旦所有真菌被消耗，这件斗篷就变成一套普通的{@item 旅行者服装|XPHB}。"
 			],
 			"light": [
 				{
@@ -16833,6 +16833,24 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Deathdance",
+			"name": "死亡之舞",
+			"source": "FRAiF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"value": 20000,
+			"poison": true,
+			"entries": [
+				"一个受到死亡之舞影响的生物必须成功通过{@dc 13}的体质豁免否则获得{@condition 中毒|XPHB}状态1分钟。类人生物自动通过此豁免。该生物在以这种方式{@condition 失能|XPHB}时还会获得{@condition 中毒|XPHB}状态，因为它会不受控制地扭动。"
+			],
+			"poisonTypes": [
+				"伤口"
+			],
+			"miscTags": [
+				"CNS"
+			]
+		},
+		{
 			"ENG_name": "Deathwalker's Ward (Awakened)",
 			"name": "死亡行者的披挂（觉醒）",
 			"source": "TDCSR",
@@ -18405,7 +18423,7 @@
 					"con",
 					"int",
 					"wis",
-					"cha"
+					"叉"
 				],
 				"count": 1,
 				"amount": 2
@@ -18865,7 +18883,7 @@
 					"con",
 					"int",
 					"wis",
-					"cha"
+					"叉"
 				],
 				"count": 1,
 				"amount": 2
@@ -19015,7 +19033,7 @@
 					"name": "彗星",
 					"type": "entries",
 					"entries": [
-						"下一次你与一个或多个{@variantrule 敌对 【态度】|XPHB|敌对}生物进入战斗时，你可以在掷{@variantrule 先攻|XPHB}时选择其中一个作为你的敌人。如果在那次战斗中你将你的敌人减少到0{@variantrule 生命值|XPHB}，你在接下来的1年内对死亡豁免掷骰有{@variantrule 优势|XPHB}。如果其他人将你选择的敌人减少到0{@variantrule 生命值|XPHB}，或者你没有选择敌人，这张卡没有效果。"
+						"下次你与一个或多个{@variantrule 敌对 【态度】|XPHB|敌对}生物进入战斗时，你可以在投掷{@variantrule 先攻|XPHB}时选择其中一个作为你的敌人。如果你在那场战斗中把你的敌人{@variantrule 生命值|XPHB}降至0，你在接下来1年内进行{@variantrule 死亡豁免检定|XPHB|死亡豁免}时具有{@variantrule 优势|XPHB}。如果其他人把你的选定敌人{@variantrule 生命值|XPHB}降至0，或者你没有选择敌人，此卡牌无效。"
 					]
 				},
 				{
@@ -26287,6 +26305,21 @@
 				"TT"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Ffolk Sailing Ship",
+			"name": "弗尔克帆船",
+			"source": "FRAiF",
+			"type": "SHP|XPHB",
+			"rarity": "none",
+			"value": 2000000,
+			"crew": 20,
+			"vehAc": 15,
+			"vehHp": 400,
+			"vehDmgThresh": 20,
+			"vehSpeed": 2,
+			"capPassenger": 20,
+			"capCargo": 100
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Bronze Griffon",
@@ -36427,7 +36460,7 @@
 						],
 						[
 							"00",
-							"{@creature 索尔石怪}"
+							"{@creature 石鼎兽}"
 						]
 					]
 				}
@@ -36579,7 +36612,7 @@
 						],
 						[
 							"00",
-							"{@creature 索尔石怪|XMM}"
+							"{@creature 石鼎兽|XMM}"
 						]
 					]
 				}
@@ -39531,7 +39564,7 @@
 			"weight": 3,
 			"value": 3500,
 			"entries": [
-				"这本100页的皮面装订书册可用作法术书。它配有一把带钥匙的锁。作为一个操作动作，一个生物可以尝试使用{@item 盗贼工具|XPHB}撬锁，需成功通过DC 15的敏捷（{@skill 巧手|XPHB}）检定。"
+				"这本100页的皮革装订典籍可作为法术书使用。它通过一把带钥匙的锁扣合。作为一个{@action 操作|XPHB}动作，生物可以尝试使用{@item 盗贼工具|XPHB}撬锁，需成功通过DC 15的敏捷（{@skill 巧手|XPHB}）检定。"
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -39955,7 +39988,7 @@
 								[
 									"3",
 									"破碎",
-									"{@creature 女妖}"
+									"{@creature 报丧妖}"
 								],
 								[
 									"4",
@@ -44330,6 +44363,21 @@
 				"法器 - 极珍稀|XDMG"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Norlander Longship",
+			"name": "诺兰德长船",
+			"source": "FRAiF",
+			"type": "SHP|XPHB",
+			"rarity": "none",
+			"value": 2000000,
+			"crew": 50,
+			"vehAc": 17,
+			"vehHp": 300,
+			"vehDmgThresh": 15,
+			"vehSpeed": 6,
+			"capPassenger": 100,
+			"capCargo": 10
 		},
 		{
 			"ENG_name": "Oathbow",
@@ -50792,6 +50840,24 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Prespra",
+			"name": "普雷斯普拉",
+			"source": "FRAiF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"value": 30000,
+			"poison": true,
+			"entries": [
+				"一个受到普雷斯普拉影响的生物必须成功通过{@dc 11}的体质豁免否则受到3（{@dice 1d6}）毒素伤害并获得{@condition 中毒|XPHB}状态。该生物在以此方式{@condition 目盲|XPHB}时还会获得{@condition 中毒|XPHB}状态。该生物在其每回合开始时重复进行豁免检定，若豁免失败则受到3（{@dice 1d6}）毒素伤害。若豁免成功，该效应对该生物结束。"
+			],
+			"poisonTypes": [
+				"服用"
+			],
+			"miscTags": [
+				"CNS"
+			]
+		},
+		{
 			"ENG_name": "Pressure Capsule",
 			"name": "压力胶囊",
 			"source": "GoS",
@@ -51305,14 +51371,14 @@
 		},
 		{
 			"ENG_name": "Purple Dragon Knight Trinket",
-			"name": "紫龙骑士饰品",
+			"name": "紫龙骑士团饰品",
 			"source": "FRHoF",
 			"type": "G|XPHB",
 			"rarity": "none",
 			"entries": [
 				{
 					"type": "table",
-					"caption": "紫龙骑士饰品",
+					"caption": "紫龙骑士团饰品",
 					"colLabels": [
 						"1d6",
 						"饰品"
@@ -57483,6 +57549,21 @@
 				"每次使用这个神器都会产生一个可怕的副作用：一个被使用者所知的人也会从现实中被抹去。在使用毁灭石后，反派掷一个{@dice d20}：在5-20的范围内，他们的一个盟友解体，在1-4的范围内，玩家角色中的一个解体。",
 				"如果一个生物在'Thalivar's Beacon'任务中将其灵魂绑定到毁灭石上，当使用这个神器时它就会爆炸，绑定到它上面的生物将会解体，从现实中消失，只能通过{@spell 祈愿术}法术或类似的魔法才能被带回。"
 			]
+		},
+		{
+			"ENG_name": "Rusted Hulk",
+			"name": "锈蚀巨怪",
+			"source": "FRAiF",
+			"type": "SHP|XPHB",
+			"rarity": "none",
+			"value": 5000000,
+			"crew": 60,
+			"vehAc": 18,
+			"vehHp": 500,
+			"vehDmgThresh": 25,
+			"vehSpeed": 2,
+			"capPassenger": 90,
+			"capCargo": 250
 		},
 		{
 			"ENG_name": "Ryath Root",
@@ -71850,7 +71931,7 @@
 			"rarity": "legendary",
 			"wondrous": true,
 			"entries": [
-				"这本厚重的书籍以龙皮装订，并用厚重的冷冻铁带加固。原始副本由{@book 龙之教团|FRHoF|6|龙之教团}的龙语者制作，封面印有该教派的徽记。龙之书记载了将龙或死亡龙躯转化为龙巫妖的秘密仪式。",
+				"这本厚重的书籍以龙皮装订，并用厚重的冷冻铁带加固。原始副本由{@book 龙巫教|FRHoF|6|龙巫教}的龙语者制作，封面印有该教派的徽记。龙之书记载了将龙或死亡龙躯转化为龙巫妖的秘密仪式。",
 				"要解读并使用龙之书，你必须是拥有至少两个5环法术位的施法者或一条龙。一名助手（或更多，由DM决定）可以协助你进行仪式，只要该助手也满足使用此书的要求。",
 				"要使用龙之书创造一个龙巫妖，你必须持续接触一具成年或远古龙（无论是活体还是死亡）的身体，以及价值80,000 GP的补给品（包括一颗将作为龙巫妖精魄锚的宝石）。当你拥有必要的材质时，你必须进行一个持续180天除以进行仪式的生物数值的仪式。在仪式期间，你和任何助手必须不间断地工作，每日休息不超过8小时。如果你是一条龙，补给品的花费和仪式的持续时间减半。",
 				"当仪式完成时，魔典爆发出紫光，对你和每个助手造成（{@dice 12d6}）黯蚀伤害。如果此伤害将一个生物的生命值降至0{@variantrule 生命值|XPHB}，该生物死亡并立即复活为DM控制的{@creature 丧尸|XMM}。",
@@ -74582,6 +74663,24 @@
 			]
 		},
 		{
+			"ENG_name": "Ulcrun",
+			"name": "乌尔克伦",
+			"source": "FRAiF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"value": 100000,
+			"poison": true,
+			"entries": [
+				"一个受到乌尔克伦影响的生物必须成功通过{@dc 15}的体质豁免否则受到21（{@dice 6d6}）毒素伤害并获得1级{@condition 力竭|XPHB}。"
+			],
+			"poisonTypes": [
+				"伤口"
+			],
+			"miscTags": [
+				"CNS"
+			]
+		},
+		{
 			"ENG_name": "Unbreakable Arrow",
 			"name": "不破箭矢",
 			"source": "XGE",
@@ -76969,7 +77068,7 @@
 			"weight": 4,
 			"value": 1500,
 			"entries": [
-				"当你穿着暖和菌类服装时，你会自动通过对抗严寒效应的豁免检定。关于严寒的规则，请参见《城主指南》第三章。一磅真菌被缝制在菌类服装中。这种真菌可以作为食物食用。一旦所有真菌被消耗完毕，这就变成一套寻常的旅行者服装。"
+				"当你穿着暖和真菌服装时，你会自动通过对抗极端寒冷效果的豁免。关于极端寒冷的规则，请参阅《地下城主指南》第三章。一磅真菌被缝入真菌服装中。这种真菌可以作为食物食用。一旦所有真菌被消耗，这就变成一套普通的{@item 旅行者服装|XPHB}。"
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -77552,6 +77651,20 @@
 			"type": "$A|XDMG",
 			"rarity": "none",
 			"value": 25000
+		},
+		{
+			"ENG_name": "Whaleboat",
+			"name": "捕鲸船",
+			"source": "FRAiF",
+			"type": "SHP|XPHB",
+			"rarity": "none",
+			"value": 50000,
+			"crew": 6,
+			"vehAc": 13,
+			"vehHp": 100,
+			"vehDmgThresh": 10,
+			"vehSpeed": 3,
+			"capPassenger": 1
 		},
 		{
 			"ENG_name": "Wheat",
@@ -78825,7 +78938,7 @@
 					"变形术",
 					"冷冻射线"
 				],
-				"ability": "cha"
+				"ability": "叉"
 			},
 			"hasFluffImages": true
 		},
@@ -79663,6 +79776,24 @@
 			"value": 100,
 			"entries": [
 				"亚查（发音为 YAH-chah）是一种无害的、肉质丰富的甲虫，大小与人类的手差不多，以蠕虫和蛆为食。它移动缓慢（步行速度10尺），容易捕捉。患有蓝雾热病的生物如果吃了生的或煮熟的亚查，可以立即对该疾病进行优势豁免检定（见\"疾病\"，第40页）"
+			]
+		},
+		{
+			"ENG_name": "Yellow Death",
+			"name": "黄色死亡",
+			"source": "FRAiF",
+			"type": "G|XPHB",
+			"rarity": "none",
+			"value": 15000,
+			"poison": true,
+			"entries": [
+				"一个受到黄死影响的生物需进行一次{@dc 13}的体质豁免。若豁免失败，该生物受到14（{@dice 4d6}）毒素伤害并获得{@condition 中毒|XPHB}状态1分钟。若豁免成功，该生物仅受到一半伤害。"
+			],
+			"poisonTypes": [
+				"服用"
+			],
+			"miscTags": [
+				"CNS"
 			]
 		},
 		{

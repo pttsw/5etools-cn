@@ -5629,6 +5629,12 @@ Renderer.tag = class {
 		page = UrlUtil.PG_BESTIARY;
 	};
 
+	static TagCreatureFluff = class extends this._TagPipedDisplayTextThird {
+		tagName = "creatureFluff";
+		defaultSource = Parser.SRC_MM;
+		page = "monsterFluff";
+	};
+
 	static TagCult = class extends this._TagPipedDisplayTextThird {
 		tagName = "cult";
 		defaultSource = Parser.SRC_MTF;
@@ -6007,6 +6013,7 @@ Renderer.tag = class {
 		new this.TagClass(),
 		new this.TagCondition(),
 		new this.TagCreature(),
+		new this.TagCreatureFluff(),
 		new this.TagCult(),
 		new this.TagDeck(),
 		new this.TagDisease(),
@@ -7390,6 +7397,12 @@ class _RenderCompactSpellsImplBase extends _RenderCompactImplBase {
 		if (fromClassList.length) {
 			const [current] = Parser.spClassesToCurrentAndLegacy(fromClassList);
 			stack.push(`<div><span class="bold">Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
+		}
+
+		const fromClassListVariant = Renderer.spell.getCombinedClasses(ent, "fromClassListVariant");
+		if (fromClassListVariant.length) {
+			const [current, legacy] = Parser.spVariantClassesToCurrentAndLegacy(fromClassListVariant);
+			stack.push(`<div><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">Optional/Variant Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
 		}
 
 		return stack.join("");
@@ -10064,7 +10077,7 @@ Renderer.monster = class {
 		if (styleHint === "classic") {
 			return {
 				entries: [
-					`${legendaryNameTitle} can take ${legendaryActions} legendary action${legendaryActions > 1 ? "s" : ""}${legendaryActionsLair !== legendaryActions ? ` (or ${legendaryActionsLair} when in ${proPossessive} lair)` : ""}, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. ${legendaryNameTitle} regains spent legendary actions at the start of ${proPossessive} turn.`,
+					`${legendaryNameTitle} 可以执行 ${legendaryActions}个传奇动作${legendaryActionsLair !== legendaryActions ? ` (或在${proPossessive}巢穴内${legendaryActionsLair}个)` : ""}，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。 ${legendaryNameTitle}在其${proPossessive}回合开始时重获所有传奇动作。`,
 				],
 			};
 		}
@@ -10073,7 +10086,7 @@ Renderer.monster = class {
 		return {
 			entries: [
 				// `${legendaryNameTitle}可以执行 ${legendaryActions} 个传奇动作，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。${legendaryNameTitle}在其回合开始时重获所有传奇动作。`,
-				`{@note Legendary Action Uses: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (${legendaryActionsLair} in Lair)` : ""}. Immediately after another creature's turn, ${legendaryNameSentence} can expend a use to take one of the following actions. ${legendaryNameTitle} regains all expended uses at the start of each of ${proPossessive} turns.}`,
+				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}. ${legendaryNameSentence}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在其${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
 			],
 		};
 	}
@@ -12535,13 +12548,13 @@ Renderer.item = class {
 			if (item.stealth) {
 				Renderer.item._initFullEntries(item);
 				const wrapped = styleHint === "classic"
-					? "The wearer has disadvantage on Dexterity ({@skill Stealth}) checks."
-					: "The wearer has {@variantrule Disadvantage|XPHB} on Dexterity ({@skill Stealth|XPHB}) checks.";
+					? "穿戴者在敏捷({@skill 隐匿})检定上具有劣势。"
+					: "穿戴者在敏捷({@skill 隐匿|XPHB})检定上具有{@variantrule 劣势|XPHB}。";
 				item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type"}});
 			}
 			if (itemTypeAbv === Parser.ITM_TYP_ABV__HEAVY_ARMOR && item.strength) {
 				Renderer.item._initFullEntries(item);
-				item._fullEntries.push({type: "wrapper", wrapped: `If the wearer has a Strength score lower than ${item.strength}, their speed is reduced by 10 feet.`, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type"}});
+				item._fullEntries.push({type: "wrapper", wrapped: `如果穿戴者的力量值低于${item.strength}，那么他的速度就会减少10尺。`, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type"}});
 			}
 		}
 		if (itemTypeAbv === Parser.ITM_TYP_ABV__SPELLCASTING_FOCUS) {
@@ -13113,7 +13126,18 @@ Renderer.table = class {
 	}
 
 	static getConvertedEncounterTableName (group, tableRaw) {
-		return `${group.name}${tableRaw.caption ? ` ${tableRaw.caption}` : ""}${/\bencounters?\b/i.test(group.name) ? "" : " 遭遇"}${tableRaw.minlvl && tableRaw.maxlvl ? ` (Levels ${tableRaw.minlvl}\u2014${tableRaw.maxlvl})` : ""}`;
+		const baseName = tableRaw.caption
+			? tableRaw.caption
+			: [
+				tableRaw.captionPrefix,
+				group.name,
+				tableRaw.captionSuffix,
+				/\bencounters?\b/i.test(group.name) ? "" : "遭遇",
+			]
+				.filter(Boolean)
+				.join(" ");
+
+		return `${baseName}${tableRaw.minlvl && tableRaw.maxlvl ? ` (Levels ${tableRaw.minlvl}\u2014${tableRaw.maxlvl})` : ""}`;
 	}
 
 	static getConvertedNameTableName (group, tableRaw) {

@@ -3958,7 +3958,6 @@ Parser.SOURCES_ADVENTURES = new Set([
 	Parser.SRC_DrDe_DotS,
 	Parser.SRC_HotB,
 	Parser.SRC_WttHC,
-	Parser.SRC_FRAiF,
 
 	Parser.SRC_AWM,
 ]);
@@ -4179,6 +4178,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_XSCREEN,
 	Parser.SRC_TD,
 	Parser.SRC_FRHoF,
+	Parser.SRC_FRAiF,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;
@@ -4291,7 +4291,6 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	Parser.SRC_DrDe_DotS,
 	Parser.SRC_HotB,
 	Parser.SRC_WttHC,
-	Parser.SRC_FRAiF,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src.toLowerCase()] = src;
