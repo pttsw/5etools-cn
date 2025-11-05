@@ -11,7 +11,7 @@ export class AlignmentUtil {
 		});
 		// endregion
 
-		const orParts = (align || "").split(/ or /g).map(it => it.trim().replace(/[.,;]$/g, "").trim());
+		const orParts = (align || "").split(/ or /g).map(it => it.trim().replace(/[.,;，。；、]$/g, "").trim());
 		const out = [];
 
 		orParts.forEach(part => {
@@ -63,6 +63,37 @@ AlignmentUtil.ALIGNMENTS_RAW = {
 	"unaligned": ["U"],
 
 	"any alignment": ["A"],
+
+	"守序善良": ["L", "G"],
+	"中立善良": ["N", "G"],
+	"混乱善良": ["C", "G"],
+	"混乱中立": ["C", "N"],
+	"守序邪恶": ["L", "E"],
+	"守序中立": ["L", "N"],
+	"中立邪恶": ["N", "E"],
+	"混乱邪恶": ["C", "E"],
+
+	"(?:任意)?非-?善良(阵营)?": ["L", "NX", "C", "NY", "E"],
+	"(?:任意)?非-?守序(阵营)?": ["NX", "C", "G", "NY", "E"],
+	"(?:任意)?非-?邪恶(阵营)?": ["L", "NX", "C", "NY", "G"],
+	"(?:任意)?非-?混乱(阵营)?": ["NX", "L", "G", "NY", "E"],
+
+	"(?:任意)?混乱(阵营)?": ["C", "G", "NY", "E"],
+	"(?:任意)?邪恶(阵营)?": ["L", "NX", "C", "E"],
+	"(?:任意)?守序(阵营)?": ["L", "G", "NY", "E"],
+	"(?:任意)?善良(阵营)?": ["L", "NX", "C", "G"],
+
+	"善良": ["G"],
+	"守序": ["L"],
+	"中立": ["N"],
+	"混乱": ["C"],
+	"邪恶": ["E"],
+
+	"任意中立(阵营)?": ["NX", "NY", "N"],
+
+	"无阵营": ["U"],
+
+	"任意阵营": ["A"],
 };
 AlignmentUtil.ALIGNMENTS = {};
 Object.entries(AlignmentUtil.ALIGNMENTS_RAW).forEach(([k, v]) => {

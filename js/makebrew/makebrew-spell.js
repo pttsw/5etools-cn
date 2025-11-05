@@ -37,10 +37,10 @@ const _SPELL_DIST_TYPES = [
 export class SpellBuilder extends BuilderBase {
 	constructor () {
 		super({
-			titleSidebarLoadExisting: "Copy Existing Spell",
-			titleSidebarDownloadJson: "Download Spells as JSON",
+			titleSidebarLoadExisting: "复制已存在的法术",
+			titleSidebarDownloadJson: "下载法术为JSON",
 			prop: "spell",
-			titleSelectDefaultSource: "(Same as Spell)",
+			titleSelectDefaultSource: "(与法术相同)",
 		});
 
 		this._subclassLookup = {};

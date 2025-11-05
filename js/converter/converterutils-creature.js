@@ -2168,7 +2168,7 @@ export class SpeedConvert {
 	static tryConvertSpeed (mon, cbMan) {
 		if (typeof mon.speed !== "string") return;
 
-		let line = mon.speed.trim().replace(/^speed[:.]?\s*/i, "");
+		let line = mon.speed.trim().replace(/(?:^speed|移动速度|速度)[：:.]?\s*/i, "");
 
 		const out = {};
 		let byHand = false;
@@ -2181,7 +2181,7 @@ export class SpeedConvert {
 
 		this._splitSpeed(line).map(it => it.trim()).forEach(s => {
 			// For e.g. shapechanger speeds, store them behind a "condition" on the previous speed
-			if (prevSpeed && /^\((\w+?\s+)?(\d+)\s*ft\.?( .*)?\)$/i.test(s)) {
+			if (prevSpeed && /^\((\w+?\s+)?(\d+)\s*(?:ft|尺)\.?( .*)?\)$/i.test(s)) {
 				if (typeof out[prevSpeed] === "number") out[prevSpeed] = {number: out[prevSpeed], condition: s};
 				else out[prevSpeed].condition = s;
 				prevSpeed = null;
@@ -2189,7 +2189,7 @@ export class SpeedConvert {
 			}
 
 			// E.g. "20 ft., Climb or Fly 20 ft. (DM's choice)"
-			const mOrDmsChoice = /^(?<mode1>\w+) or (?<mode2>\w+) (?<feet>\d+) ft\. (?<note>\(DM's choice\))$/i.exec(s);
+			const mOrDmsChoice = /^(?<mode1>\w+) or (?<mode2>\w+) (?<feet>\d+) (?:ft|尺)\. (?<note>\(DM's choice\))$/i.exec(s);
 			if (mOrDmsChoice) {
 				let {mode1, mode2, feet, note} = mOrDmsChoice.groups;
 
@@ -2209,7 +2209,7 @@ export class SpeedConvert {
 				return;
 			}
 
-			const mBasic = /^(?<mode>\w+?\s+)?(?<feet>\d+)\s*ft\.?(?<condition> .*)?$/i.exec(s);
+			const mBasic = /^(?<mode>\w+?\s+)?(?<feet>\d+)\s*(?:ft|尺)\.?(?<condition> .*)?$/i.exec(s);
 			if (!mBasic) return setByHand();
 
 			let {mode, feet, condition} = mBasic.groups;
@@ -2480,7 +2480,7 @@ export class CreatureSpecialEquipmentTagger {
 
 		mon.trait = mon.trait
 			.map(ent => {
-				if (!/\bEquipment\b/.test(ent.name || "")) return ent;
+				if (!/\bEquipment\b|装备[：:]?/.test(ent.name || "")) return ent;
 				return ItemTag.tryRun(ent, {styleHint});
 			});
 	}

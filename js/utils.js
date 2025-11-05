@@ -256,9 +256,9 @@ Array.prototype.joinConjunct || Object.defineProperty(Array.prototype, "joinConj
 });
 
 globalThis.StrUtil = class {
-	static COMMAS_NOT_IN_PARENTHESES_REGEX = /,\s?(?![^(]*\))/g;
-	static COMMA_SPACE_NOT_IN_PARENTHESES_REGEX = /, (?![^(]*\))/g;
-	static SEMICOLON_SPACE_NOT_IN_PARENTHESES_REGEX = /; (?![^(]*\))/g;
+	static COMMAS_NOT_IN_PARENTHESES_REGEX = /[,，]\s?(?![^(]*\))/g;
+	static COMMA_SPACE_NOT_IN_PARENTHESES_REGEX = /[,，] (?![^(]*\))/g;
+	static SEMICOLON_SPACE_NOT_IN_PARENTHESES_REGEX = /[;；] (?![^(]*\))/g;
 
 	static uppercaseFirst (string) {
 		return string.uppercaseFirst();

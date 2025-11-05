@@ -312,7 +312,7 @@ export class ConverterUtils {
 	}
 
 	static _getStatblockLineHeaderRegExp ({reStartStr}) {
-		return new RegExp(`\\s*${reStartStr}\\s*?(?::|\\.|\\b)\\s*`, "i");
+		return new RegExp(`\\s*${reStartStr}\\s*?(?::|\\.|：|\\s|\\b)\\s*`, "i");
 	}
 
 	/* -------------------------------------------- */

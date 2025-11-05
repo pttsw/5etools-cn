@@ -92,19 +92,19 @@ export class ConverterCreature extends ConverterBase {
 		"UTILITY SPELL", // homebrew
 	];
 
-	static _RE_START_ARMOR_CLASS = "(?:Armor Class|AC)";
-	static _RE_START_INITIATIVE = "(?:Initiative)";
-	static _RE_START_HIT_POINTS = "(?:Hit Points|HP)";
-	static _RE_START_SPEED = "(?:Speed)";
+	static _RE_START_ARMOR_CLASS = "(?:Armor Class|AC|护甲等级)";
+	static _RE_START_INITIATIVE = "(?:Initiative|先攻)";
+	static _RE_START_HIT_POINTS = "(?:Hit Points|HP|生命值|生命)";
+	static _RE_START_SPEED = "(?:Speed|移动速度|速度)";
 	static _RE_START_SAVING_THROWS = "(?:Saving Throw|Save)s?";
-	static _RE_START_SKILLS = "Skills?";
+	static _RE_START_SKILLS = "(?:Skills?|技能)";
 	static _RE_START_DAMAGE_VULN = "(?:Damage )?Vulnerabilit(?:y|ies)";
 	static _RE_START_DAMAGE_RES = "(?:Damage )?Resistances?";
 	static _RE_START_DAMAGE_IMM = "Damage Immunit(?:y|ies)";
 	static _RE_START_CONDITION_IMM = "Condition Immunit(?:y|ies)";
 	static _RE_START_COMBINED_IMM = "Immunit(?:y|ies)";
-	static _RE_START_SENSES = "Senses?";
-	static _RE_START_LANGUAGES = "Languages?";
+	static _RE_START_SENSES = "(?:Senses?|感官)";
+	static _RE_START_LANGUAGES = "(?:Languages?|语言)";
 	static _RE_START_CHALLENGE = "Challenge";
 	static _RE_START_PROF_BONUS = "Proficiency Bonus(?: \\(PB\\))?";
 	static _RE_START_GEAR = "Gear";
@@ -239,8 +239,8 @@ export class ConverterCreature extends ConverterBase {
 			if (
 				ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_ARMOR_CLASS, line: meta.curLine})
 			) {
-				const [ptAc, ptInit] = meta.curLine.split(/\s+Initiative\s*/).map(it => it.trim()).filter(Boolean);
-				stats.ac = ConverterUtils.getStatblockLineHeaderText({reStartStr: "(?:Armor Class|AC)", line: ptAc});
+				const [ptAc, ptInit] = meta.curLine.split(/\s+(Initiative|先攻)\s*/).map(it => it.trim()).filter(Boolean);
+				stats.ac = ConverterUtils.getStatblockLineHeaderText({reStartStr: "(?:Armor Class|AC|护甲等级)", line: ptAc});
 				if (ptInit) stats.initiative = ptInit;
 				continue;
 			}
@@ -270,7 +270,8 @@ export class ConverterCreature extends ConverterBase {
 			}
 
 			// ability scores
-			if (/STR\s*DEX\s*CON\s*INT\s*WIS\s*CHA/i.test(meta.curLine)) {
+			if (/STR\s*DEX\s*CON\s*INT\s*WIS\s*CHA/i.test(meta.curLine)
+				|| /力量\s*感知\s*体质\s*智力\s*智慧\s*魅力/i.test(meta.curLine)) {
 				// skip forward a line and grab the ability scores
 				++meta.ixToConvert;
 				this._mutAbilityScoresFromSingleLine(stats, meta);
@@ -285,16 +286,18 @@ export class ConverterCreature extends ConverterBase {
 			}
 
 			// Alternate ability scores (alternating lines of abbreviation and score)
-			if (Parser.ABIL_ABVS.includes(meta.curLine.toLowerCase())) {
+			const tst = Object.values(Parser.ATB_ABV_TO_FULL)
+			if (Parser.ABIL_ABVS.includes(meta.curLine.toLowerCase())
+				|| Object.values(Parser.ATB_ABV_TO_FULL).includes(meta.curLine.toLowerCase())) {
 				// skip forward a line and grab the ability score
 				++meta.ixToConvert;
 				switch (meta.curLine.toLowerCase()) {
-					case "str": stats.str = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
-					case "dex": stats.dex = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
-					case "con": stats.con = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
-					case "int": stats.int = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
-					case "wis": stats.wis = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
-					case "cha": stats.cha = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
+					case Parser.attAbvToFull("str"): case "str": stats.str = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
+					case Parser.attAbvToFull("dex"): case "dex": stats.dex = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
+					case Parser.attAbvToFull("con"): case "con": stats.con = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
+					case Parser.attAbvToFull("int"): case "int": stats.int = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
+					case Parser.attAbvToFull("wis"): case "wis": stats.wis = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
+					case Parser.attAbvToFull("cha"): case "cha": stats.cha = this._tryGetStat(meta.toConvert[meta.ixToConvert]); continue;
 				}
 			}
 
@@ -790,7 +793,8 @@ export class ConverterCreature extends ConverterBase {
 	}
 
 	static _handleAbilityScores_modSaveTable ({stats, meta, options}) {
-		if (!/^Mod\s+Save(\s+Mod\s+Save\s+Mod\s+Save)?$/i.test(meta.curLine)) return false;
+		if (!/^Mod\s+Save(\s+Mod\s+Save\s+Mod\s+Save)?$/i.test(meta.curLine)
+		&& !/^调整值\s+豁免(\s+调整值\s+豁免\s+调整值\s+豁免)?$/i.test(meta.curLine)) return false;
 		++meta.ixToConvert;
 		meta.initCurLine();
 
@@ -799,6 +803,7 @@ export class ConverterCreature extends ConverterBase {
 		while (true) {
 			if (
 				/^Mod\s+Save/i.test(meta.curLine)
+				|| /^调整值\s+豁免/i.test(meta.curLine)
 				|| meta.isSkippableCurLine()
 			) {
 				++meta.ixToConvert;
@@ -806,7 +811,7 @@ export class ConverterCreature extends ConverterBase {
 				continue;
 			}
 
-			if (!/^(str|dex|con|int|wis|cha)\s+/i.test(meta.curLine)) break;
+			if (!/^(str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)\s+/i.test(meta.curLine)) break;
 
 			abilLines.push(meta.curLine);
 			++meta.ixToConvert;
@@ -849,7 +854,7 @@ export class ConverterCreature extends ConverterBase {
 		}
 
 		for (const l of abilLines) {
-			const mAbil = /^(?<abil>str|dex|con|int|wis|cha)\s*(?<score>\d+)\s+(?<bonus>[-+]\d+)\s+(?<save>[-+]\d+)$/i.exec(l);
+			const mAbil = /^(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)\s*(?<score>\d+)\s+(?<bonus>[-+]\d+)\s+(?<save>[-+]\d+)$/i.exec(l);
 			if (!mAbil) {
 				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Ability scores require manual conversion`);
 				return false;
@@ -913,9 +918,9 @@ export class ConverterCreature extends ConverterBase {
 	static _doCleanInitiative (stats, options) {
 		if (!stats.initiative) return delete stats.initiative;
 
-		const mInit = /^(?<bonus>[-+]\d+) \((?<score>\d+)\)$/.exec(stats.initiative);
+		const mInit = /^(?<bonus>[-+]\d+)\s?(\(|（)(?<score>\d+)(\)|）)$/.exec(stats.initiative);
 		if (!mInit) {
-			return options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Initiative requires manual conversion`);
+			return options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}先攻"${stats.initiative}"不支持自动转换`);
 		}
 
 		const bonusNum = Number(mInit.groups.bonus);
@@ -928,8 +933,10 @@ export class ConverterCreature extends ConverterBase {
 			return delete stats.initiative;
 		}
 
+		// Convert CR to PB
+		if (!stats.cr) return options.cbWarning(`${stats.name ? `(${stats.name})` : ""}请检查CR`);
 		const pb = Parser.crToPb(stats.cr);
-		if (!pb) return options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Initiative requires manual conversion`);
+		if (!pb) return options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}CR"${stats.cr}"不支持自动转换`);
 
 		const bonusNumPassive = bonusNum + 10;
 		if (bonusNumPassive === scoreNum) {
@@ -966,7 +973,7 @@ export class ConverterCreature extends ConverterBase {
 			}
 		}
 
-		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Initiative requires manual conversion`);
+		options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}先攻写法不支持自动转换`);
 	}
 
 	/* -------------------------------------------- */
@@ -1820,8 +1827,8 @@ export class ConverterCreature extends ConverterBase {
 		SpellcastingTraitHiddenConvert.mutStatblock({stats, props: Renderer.monster.CHILD_PROPS, styleHint: options.styleHint});
 		AcConvert.tryPostProcessAc({
 			mon: stats,
-			cbMan: (ac) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}AC "${ac}" requires manual conversion`),
-			cbErr: (ac) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Failed to parse AC "${ac}"`),
+			cbMan: (ac) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}的"${ac}"AC不支持自动转换`),
+			cbErr: (ac) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}转换AC "${ac}"失败`),
 			styleHint: options.styleHint,
 		});
 		TagCreatureSubEntryInto.tryRun(stats, (atk) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Manual attack tagging required for "${atk}"`));
@@ -2011,13 +2018,13 @@ export class ConverterCreature extends ConverterBase {
 	}
 
 	static _getSequentialAbilityScoreSectionLineCount (stats, meta) {
-		if (stats.str != null) return false; // Skip if we already have ability scores
+		if (stats.str != null) return 0; // Skip if we already have ability scores
 
 		let cntLines = 0;
 		const nextSixLines = [];
 		for (let i = meta.ixToConvert; nextSixLines.length < 6; ++i) {
 			const line = (meta.toConvert[i] || "").toLowerCase();
-			if (Parser.ABIL_ABVS.includes(line)) nextSixLines.push(line);
+			if (Parser.ABIL_ABVS.includes(line) || Object.values(Parser.ATB_ABV_TO_FULL).includes(line)) nextSixLines.push(line);
 			else break;
 			cntLines++;
 		}
@@ -2036,8 +2043,9 @@ export class ConverterCreature extends ConverterBase {
 
 	static _tryGetStat (strLine) {
 		try {
-			return this._tryConvertNumber(/(\d+) ?\(.*?\)/.exec(strLine)[1]);
+			return this._tryConvertNumber(/(\d+) ?[(（].*?[)）]/.exec(strLine)[1]);
 		} catch (e) {
+			// console.warn(`从"${strLine}"解析属性值时出错，要求格式为11 (+1)`);
 			return 0;
 		}
 	}
@@ -2102,7 +2110,7 @@ export class ConverterCreature extends ConverterBase {
 				stats.type = pt.trim();
 			} else {
 				stats.alignment = pt.toLowerCase().trim();
-				AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`Alignment "${ali}" requires manual conversion`));
+				AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`"${ali}"阵营不支持自动转换`));
 			}
 			return;
 		}
@@ -2114,7 +2122,7 @@ export class ConverterCreature extends ConverterBase {
 		stats.type = spl.slice(0, ixAlignmentStart).join(", ").trim();
 
 		stats.alignment = spl.slice(ixAlignmentStart).join(", ").toLowerCase();
-		AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`Alignment "${ali}" requires manual conversion`));
+		AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`"${ali}"阵营不支持自动转换`));
 	}
 
 	static _setCleanSizeTypeAlignment_postProcess (stats, meta, options) {
@@ -2218,7 +2226,7 @@ export class ConverterCreature extends ConverterBase {
 			split.forEach(s => {
 				const m = reSkill.exec(s);
 				if (!m) {
-					options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Skill "${s}" requires manual conversion`);
+					options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}的"${s}"技能不支持自动转换。`);
 					return;
 				}
 				newSkills[m.groups.skill] = m.groups.val.replace(/\b\+?pb\b/g, "PB");
@@ -2419,21 +2427,21 @@ export class ConverterCreature extends ConverterBase {
 		let xp = null; let xpLair = null;
 
 		line = line
-			.replace(/(?<=\()(?<amount>[0-9,]+)\s*XP(?=\))/i, (...m) => {
-				const amountRaw = m.last().amount.replace(/,/, "");
+			.replace(/(?<=[(（])(?<amount>[0-9,]+)\s*XP(?=[)）])/i, (...m) => {
+				const amountRaw = m.at(-1).amount.replace(/,/, "");
 				if (isNaN(amountRaw)) return m[0];
 
 				xp = Number(amountRaw);
 
 				return "";
 			})
-			.replace(/\(\s*\)/g, "")
+			.replace(/[(（]\s*[)）]/g, "")
 			.trim();
 
-		const rePtOneXpIntro = /(?<=\()\s*/.source;
+		const rePtOneXpIntro = /(?<=[(（])\s*/.source;
 		const rePtOneXpAmount = /(?<amount>[0-9,]+)/.source;
 		const rePtOneXpAmountLair = /( or (?<amountLair>[0-9,]+) in lair)?/.source;
-		const rePtOneXpOutro = /(?:;\s*)?/.source;
+		const rePtOneXpOutro = /(?:[;；]\s*)?/.source;
 
 		const reXpOnePre = new RegExp(`${rePtOneXpIntro}XP ${rePtOneXpAmount}${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
 		const reXpOnePost = new RegExp(`${rePtOneXpIntro}${rePtOneXpAmount} XP${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
@@ -2461,19 +2469,19 @@ export class ConverterCreature extends ConverterBase {
 			});
 
 		line = line
-			.replace(/(?<=\()PB (?<pb>\+\d+)(?=\))/i, (...m) => {
+			.replace(/(?<=[(（])PB (?<pb>\+\d+)(?=[)）])/i, (...m) => {
 				// (Assume standard PB)
 				return "";
 			})
-			.replace(/\(\s*\)/g, "")
+			.replace(/[(（]\s*[)）]/g, "")
 			.trim();
 
 		line = line
-			.replace(/(?<=\()PB (?<pb>equals your Proficiency Bonus)(?=\))/i, (...m) => {
+			.replace(/(?<=[(（])PB (?<pb>(?:equals your Proficiency Bonus|等于你的熟练加值))(?=[)）])/i, (...m) => {
 				stats.pbNote = m.at(-1).pb;
 				return "";
 			})
-			.replace(/\(\s*\)/g, "")
+			.replace(/[(（]\s*[)）]/g, "")
 			.trim();
 
 		if (!line) return;
@@ -2497,7 +2505,7 @@ export class ConverterCreature extends ConverterBase {
 		}
 
 		if (!/^(\d+\/\d+|\d+)$/.test(line)) {
-			cbWarning(`${stats.name ? `(${stats.name}) ` : ""}CR requires manual conversion "${line}"`);
+			cbWarning(`${stats.name ? `(${stats.name})的` : ""}CR"${line}"无法自动转换`);
 			return;
 		}
 
