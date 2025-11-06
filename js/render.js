@@ -7396,13 +7396,13 @@ class _RenderCompactSpellsImplBase extends _RenderCompactImplBase {
 		const fromClassList = Renderer.spell.getCombinedClasses(ent, "fromClassList");
 		if (fromClassList.length) {
 			const [current] = Parser.spClassesToCurrentAndLegacy(fromClassList);
-			stack.push(`<div><span class="bold">Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
+			stack.push(`<div><span class="bold">职业: </span>${Parser.spMainClassesToFull(current)}</div>`);
 		}
 
 		const fromClassListVariant = Renderer.spell.getCombinedClasses(ent, "fromClassListVariant");
 		if (fromClassListVariant.length) {
 			const [current, legacy] = Parser.spVariantClassesToCurrentAndLegacy(fromClassListVariant);
-			stack.push(`<div><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">Optional/Variant Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
+			stack.push(`<div><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">可选/变体职业: </span>${Parser.spMainClassesToFull(current)}</div>`);
 		}
 
 		return stack.join("");
@@ -7447,8 +7447,8 @@ Renderer.spell = class {
 		return `<b>施法时间:</b> ${Parser.spTimeListToFull(spell.time, spell.meta, {styleHint})}`;
 	}
 
-	static getHtmlPtRange (spell, {styleHint = null, isDisplaySelfArea = false} = {}) { return `<b>射程:</b> ${Parser.spRangeToFull(spell.range, {styleHint, isDisplaySelfArea})}`; }
-	static getHtmlPtComponents (spell) { return `<b>构材:</b> ${Parser.spComponentsToFull(spell.components, spell.level)}`; }
+	static getHtmlPtRange (spell, {styleHint = null, isDisplaySelfArea = false} = {}) { return `<b>施法距离:</b> ${Parser.spRangeToFull(spell.range, {styleHint, isDisplaySelfArea})}`; }
+	static getHtmlPtComponents (spell) { return `<b>法术成分:</b> ${Parser.spComponentsToFull(spell.components, spell.level)}`; }
 	static getHtmlPtDuration (spell, {styleHint = null} = {}) { return `<b>持续时间:</b> ${Parser.spDurationToFull(spell.duration, {styleHint})}`; }
 
 	/* -------------------------------------------- */
@@ -9467,7 +9467,7 @@ class _RenderCompactBestiaryImplBase {
 
 		return `<tr>
 			<th class="ve-text-left" colspan="${this._style === "classic" ? "2" : "1"}" ${titleAc}>${labelAc}</th>
-			${ptInitiative ? `<th class="ve-text-left" colspan="1" title="Initiative">Init.</th>` : ""}
+			${ptInitiative ? `<th class="ve-text-left" colspan="1" title="Initiative">先攻.</th>` : ""}
 			<th class="ve-text-left" colspan="2" ${titleHp}>${labelHp}</th>
 			<th class="ve-text-left" colspan="2">${I18nUtil.get("common.speed")}</th>
 			<th class="ve-text-left" colspan="2" ${titleCr}>${labelCr}</th>
@@ -9547,7 +9547,7 @@ class _RenderCompactBestiaryImplBase {
 	}
 
 	_getCommonHtmlParts_resistances ({mon}) {
-		const label = this._style === "classic" ? "Damage Res." : "Res.";
+		const label = this._style === "classic" ? "伤害抗性" : "抗性";
 		const ptTitle = this._style === "classic" ? "Damage Resistances" : "Resistances";
 		return mon.resist ? `<p><b ${ptTitle}>${label}</b> ${Parser.getFullImmRes(mon.resist, {isTitleCase: this._style !== "classic"})}</p>` : "";
 	}
@@ -9579,7 +9579,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: {...mon, bonus: entsBonusAction},
 			renderer,
-			title: "Bonus Actions",
+			title: "附赠动作",
 			key: "bonus",
 			depth: 2,
 			styleHint: this._style,
@@ -9590,7 +9590,7 @@ class _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: {...mon, reaction: entsReaction},
 			renderer,
-			title: "Reactions",
+			title: "反应",
 			key: "reaction",
 			depth: 2,
 			styleHint: this._style,
@@ -9890,7 +9890,7 @@ class _RenderCompactBestiaryImplOne extends _RenderCompactBestiaryImplBase {
 		return Renderer.monster.getCompactRenderedStringSection({
 			ent: {...mon, trait: entsTrait},
 			renderer,
-			title: "Traits",
+			title: "特质",
 			key: "trait",
 			depth: 2,
 			styleHint: this._style,
@@ -10052,9 +10052,9 @@ Renderer.monster = class {
 
 	/* -------------------------------------------- */
 
-	static getPronounSubject (mon) { return mon.isNamedCreature ? "they" : "it"; }
-	static getPronounObject (mon) { return mon.isNamedCreature ? "them" : "its"; }
-	static getPronounPossessive (mon) { return mon.isNamedCreature ? "their" : "its"; }
+	static getPronounSubject (mon) { return mon.isNamedCreature ? "它们" : "它"; }
+	static getPronounObject (mon) { return mon.isNamedCreature ? "它们" : "它"; }
+	static getPronounPossessive (mon) { return mon.isNamedCreature ? "它们的" : "它的"; }
 
 	/* -------------------------------------------- */
 
@@ -10086,7 +10086,7 @@ Renderer.monster = class {
 		return {
 			entries: [
 				// `${legendaryNameTitle}可以执行 ${legendaryActions} 个传奇动作，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。${legendaryNameTitle}在其回合开始时重获所有传奇动作。`,
-				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}. ${legendaryNameSentence}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在其${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
+				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}. ${legendaryNameSentence}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
 			],
 		};
 	}

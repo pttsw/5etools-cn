@@ -165,6 +165,34 @@ Parser.textToNumber = function (str) {
 		case "seventy": return 70;
 		case "eighty": return 80;
 		case "ninety": return 90;
+		case "零": return 0;
+		case "一": return 1;
+		case "二": return 2;
+		case "三": return 3;
+		case "四": return 4;
+		case "五": return 5;
+		case "六": return 6;
+		case "七": return 7;
+		case "八": return 8;
+		case "九": return 9;
+		case "十": return 10;
+		case "十一": return 11;
+		case "十二": return 12;
+		case "十三": return 13;
+		case "十四": return 14;
+		case "十五": return 15;
+		case "十六": return 16;
+		case "十七": return 17;
+		case "十八": return 18;
+		case "十九": return 19;
+		case "二十": return 20;
+		case "三十": return 30;
+		case "四十": return 40;
+		case "五十": return 50;
+		case "六十": return 60;
+		case "七十": return 70;
+		case "八十": return 80;
+		case "九十": return 90;
 	}
 	return NaN;
 };
@@ -1385,7 +1413,7 @@ Parser.SP_RANGE_TYPE_TO_FULL = {
 	[Parser.RNG_HEMISPHERE]: "半球",
 	[Parser.RNG_CYLINDER]: "圆柱",
 	[Parser.RNG_SELF]: "自身",
-	[Parser.RNG_SIGHT]: "视线",
+	[Parser.RNG_SIGHT]: "视野",
 	[Parser.RNG_UNLIMITED]: "无限",
 	[Parser.RNG_UNLIMITED_SAME_PLANE]: "在同一位面上无限",
 	[Parser.RNG_TOUCH]: "触及",
@@ -1602,7 +1630,7 @@ Parser.spComponentsToFull = function (comp, level, {isPlainText = false} = {}) {
 };
 
 Parser.SP_END_TYPE_TO_FULL = {
-	"dispel": "dispelled",
+	"dispel": "被解除",
 	"trigger": "triggered",
 	"discharge": "discharged",
 };

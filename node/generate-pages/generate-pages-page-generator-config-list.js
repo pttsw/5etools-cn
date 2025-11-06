@@ -525,7 +525,7 @@ class _PageGeneratorListSpells extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "1-7", sortIdent: "time", text: "时间"}),
 		HtmlGeneratorListButtons.getBtn({width: "1-2", sortIdent: "school", text: "学派"}),
 		HtmlGeneratorListButtons.getBtn({width: "0-6", sortIdent: "concentration", title: "专注", text: "专"}),
-		HtmlGeneratorListButtons.getBtn({width: "2-4", sortIdent: "range", text: "射程"}),
+		HtmlGeneratorListButtons.getBtn({width: "2-4", sortIdent: "range", text: "范围"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
 
@@ -535,7 +535,7 @@ class _PageGeneratorListSpells extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "1-8", sortIdent: "time", text: "时间"}),
 		HtmlGeneratorListButtons.getBtn({width: "1-6", sortIdent: "school", text: "学派"}),
 		HtmlGeneratorListButtons.getBtn({width: "0-7", sortIdent: "concentration", title: "专注", text: "专"}),
-		HtmlGeneratorListButtons.getBtn({width: "3-2", sortIdent: "range", text: "射程"}),
+		HtmlGeneratorListButtons.getBtn({width: "3-2", sortIdent: "range", text: "范围"}),
 	];
 
 	_isPrinterView = true;

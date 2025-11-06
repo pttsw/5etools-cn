@@ -8,7 +8,7 @@ export class SpellConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Spell",
+				name: "法术",
 				converterId: "spell",
 				canSaveLocal: true,
 				modes: ["txt"],

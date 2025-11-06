@@ -413,14 +413,14 @@ export class ConverterUi extends BaseComponent {
 			},
 		);
 
-		ee`<div class="w-100 split-v-center"><div class="sidemenu__row__label">Mode</div>${selConverter}</div>`
+		ee`<div class="w-100 split-v-center"><div class="sidemenu__row__label">模式</div>${selConverter}</div>`
 			.appendTo(mnu);
 
 		ConverterUiUtil.renderSideMenuDivider(mnu);
 
 		// region mult-part parsing options
 		const iptInputSeparator = ComponentUiUtil.getIptStr(this, "inputSeparator").addClass("code");
-		ee`<div class="w-100 split-v-center mb-2"><div class="sidemenu__row__label help mr-2" title="A separator used to mark the end of one to-be-converted entity (creature, spell, etc.) so that multiple entities can be converted in one run. If left blank, the entire input text will be parsed as one entity.">Separator</div>${iptInputSeparator}</div>`
+		ee`<div class="w-100 split-v-center mb-2"><div class="sidemenu__row__label help mr-2" title="分隔符用于标记一个可转换内容（生物、法术等）的结束。从而一次转换多个内容。如果空着，则所有的文本将被解析为一个内容。">分隔符</div>${iptInputSeparator}</div>`
 			.appendTo(mnu);
 
 		const selAppendPrependMode = ComponentUiUtil.getSelEnum(
@@ -434,7 +434,7 @@ export class ConverterUi extends BaseComponent {
 				fnDisplay: val => val.toTitleCase(),
 			},
 		);
-		ee`<div class="w-100 split-v-center"><div class="sidemenu__row__label mr-2" title="Sets output order when using the &quot;Parse and Add&quot; button, or parsing multiple blocks of text using a separator.">On Add</div>${selAppendPrependMode}</div>`
+		ee`<div class="w-100 split-v-center"><div class="sidemenu__row__label mr-2" title="设定点击“转换并新增”或者使用分隔符转换后的排序方式。">转换顺序</div>${selAppendPrependMode}</div>`
 			.appendTo(mnu);
 
 		ConverterUiUtil.renderSideMenuDivider(mnu);
@@ -466,7 +466,7 @@ export class ConverterUi extends BaseComponent {
 		const asCleanString = CleanUtil.getCleanJson(obj, {isFast: false});
 		if (append) {
 			const strs = [asCleanString, this._outText];
-			if (this._state.appendPrependMode === "prepend") strs.reverse();
+			if (this._state.appendPrependMode === ConverterUi._APPEND_PREPEND_MODE__PREPEND) strs.reverse();
 			this._outText = strs.map(it => it.trimEnd()).join(",\n");
 			this._state.hasAppended = true;
 		} else {
@@ -494,8 +494,8 @@ export class ConverterUi extends BaseComponent {
 }
 ConverterUi.STORAGE_INPUT = "converterInput";
 ConverterUi.STORAGE_STATE = "converterState";
-ConverterUi._APPEND_PREPEND_MODE__APPEND = "append";
-ConverterUi._APPEND_PREPEND_MODE__PREPEND = "prepend";
+ConverterUi._APPEND_PREPEND_MODE__APPEND = "正序";
+ConverterUi._APPEND_PREPEND_MODE__PREPEND = "逆序";
 ConverterUi._DEFAULT_STATE = {
 	hasAppended: false,
 	appendPrependMode: ConverterUi._APPEND_PREPEND_MODE__APPEND,

@@ -109,7 +109,7 @@ export class ConverterUtils {
 			// Heuristic: single-column text is generally 50-60 characters; shorter lines with no other text are likely not name lines
 			spl.join("").length <= 40
 			&& spl.map(it => it.trim()).filter(Boolean).length === 2
-			&& /^[.!?:]$/.test(spl[1])
+			&& /^[.!?:。！？：]$/.test(spl[1])
 		) return false;
 
 		// ignore everything inside parentheses
@@ -117,7 +117,7 @@ export class ConverterUtils {
 		if (!namePart) return false; // (If this is _everything_ cancel)
 
 		const reStopwords = new RegExp(`^(${StrUtil.TITLE_LOWER_WORDS.join("|")})$`, "i");
-		const tokens = namePart.split(/([ ,;:]+)/g);
+		const tokens = namePart.split(/([ ,;:，；：]+)/g);
 		const cleanTokens = tokens.filter(it => {
 			const isStopword = reStopwords.test(it.trim());
 			reStopwords.lastIndex = 0;
@@ -135,17 +135,28 @@ export class ConverterUtils {
 		if (exceptions && exceptions.has(namePartNoStopwords.toLowerCase())) return false;
 
 		// if it's in title case after removing all stopwords, it's a name
-		return namePartNoStopwords.toTitleCase() === namePartNoStopwords;
+		if (namePartNoStopwords.toTitleCase() !== namePartNoStopwords) return false;
+
+		if (/[\u4e00-\u9fa5]/.test(namePartNoStopwords)) {
+			// 计算中文字符数量
+			const chineseCount = namePartNoStopwords.match(/[\u4e00-\u9fa5]/g)?.length || 0;
+			return chineseCount <= 10;
+		}
+		return true;
 	}
 
 	static isTitleLine (line) {
 		line = line.trim();
 
 		const lineNoPrefix = line.replace(/^Feature: /, "").replace(/^特性：/, "");
-		if (lineNoPrefix.length && lineNoPrefix.toTitleCase() === lineNoPrefix) return true;
+		if (lineNoPrefix.length && lineNoPrefix.toTitleCase() === lineNoPrefix && !(/[\u4e00-\u9fa5]/.test(lineNoPrefix))) return true;
 
-		if (/[.!?:]/.test(line)) return false;
-		return line.toTitleCase() === line;
+		if (/[.!?:。！？：]/.test(line)) return false;
+
+		if (line.toTitleCase() !== line) return false;
+
+		const chineseCount = line.match(/[\u4e00-\u9fa5]/g)?.length || 0;
+		return chineseCount <= 10;
 	}
 
 	static isListItemLine (line) { return /^[•●]/.test(line.trim()); }
@@ -160,7 +171,7 @@ export class ConverterUtils {
 		if (
 			isKeepPunctuation
 			// If the name ends with something besides ".", maintain it
-			|| /^[?!:]"?$/.test(spl[1])
+			|| /^[?!:？！：]"?$/.test(spl[1])
 		) out.name += spl[1].trim();
 
 		return out;
@@ -169,13 +180,13 @@ export class ConverterUtils {
 	static _CONTRACTIONS = new Set(["Mr.", "Mrs.", "Ms.", "Dr."]);
 
 	static _getMergedSplitName ({line, splitterPunc}) {
-		let spl = line.split(splitterPunc || /([.!?:]+)/g);
+		let spl = line.split(splitterPunc || /([.!?:。！？：]+)/g);
 
 		// Handle e.g. "Feature: Name of the Feature"
 		if (
 			spl.length === 3
-			&& spl[0] === "Feature"
-			&& spl[1] === ":"
+			&& (spl[0] === "Feature" || spl[0] === "特性")
+			&& (spl[1] === ":" || spl[1] === "：")
 			&& spl[2].toTitleCase() === spl[2]
 		) return [spl.join("")];
 
@@ -188,8 +199,10 @@ export class ConverterUtils {
 				|| /^\d+-\d+:?$/.test(spl[0])
 				// Handle e.g. "Action 1: Close In. ...
 				|| /^Action \d+$/.test(spl[0])
+				|| /^动作\s*\d+[:：].+/.test(spl[0])
 				// Handle e.g. "5th Level: Lay Low (3/Day). ..."
 				|| /^\d+(?:st|nd|rd|th) Level$/.test(spl[0])
+				|| /^(?:\d+|[一二三四五六七八九十])\s*环$/.test(spl[0])
 			)
 		) {
 			spl = [
@@ -249,7 +262,7 @@ export class ConverterUtils {
 	static getCleanTraitActionName (name) {
 		return name
 			// capitalize unit in e.g. "(3/Day)"
-			.replace(/(\(\d+\/)([a-z])([^)]+\))/g, (...m) => `${m[1]}${m[2].toUpperCase()}${m[3]}`)
+			.replace(/([(（]\d+\/)([a-z])([^)）]+[)）])/g, (...m) => `${m[1]}${m[2].toUpperCase()}${m[3]}`)
 		;
 	}
 
@@ -266,11 +279,12 @@ export class ConverterUtils {
 			char = string[i];
 
 			switch (char) {
+				case "）":
 				case ")": {
 					// scan back through the stack, remove last parens
 					let foundOpen = -1;
 					for (let j = cleanString.length - 1; j >= 0; --j) {
-						if (cleanString[j] === "(") {
+						if (cleanString[j] === "(" || cleanString[j] === "（") {
 							foundOpen = j;
 							break;
 						}
@@ -312,7 +326,7 @@ export class ConverterUtils {
 	}
 
 	static _getStatblockLineHeaderRegExp ({reStartStr}) {
-		return new RegExp(`\\s*${reStartStr}\\s*?(?::|\\.|：|\\s|\\b)\\s*`, "i");
+		return new RegExp(`\\s*${reStartStr}\\s*?(?::|\\.|：|\\s|\\b)?\\s*`, "i");
 	}
 
 	/* -------------------------------------------- */

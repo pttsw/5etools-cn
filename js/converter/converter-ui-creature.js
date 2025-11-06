@@ -9,7 +9,7 @@ export class CreatureConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Creature",
+				name: "生物",
 				converterId: "monster",
 				canSaveLocal: true,
 				modes: ["txt", "md"],
@@ -25,7 +25,7 @@ export class CreatureConverterUi extends ConverterUiBase {
 		wrpSidebar.empty();
 
 		ee`<div class="w-100 split-v-center">
-			<small>This parser is <span class="help" title="It is notably poor at handling text split across multiple lines, as Carriage Return is used to separate blocks of text.">very particular</span> about its input. Use at your own risk.</small>
+			<small>这个转换器对文本格式的要求<span class="help" title="It is notably poor at handling text split across multiple lines, as Carriage Return is used to separate blocks of text.">非常严格！</span> 请确保输入的文本符合要求，如果遇到任何问题请联系管理员（不保证修好啊！）。</small>
 		</div>`.appendTo(wrpSidebar);
 
 		ConverterUiUtil.renderSideMenuDivider(wrpSidebar);

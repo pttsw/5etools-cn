@@ -150,4 +150,10 @@ export class ConverterBase {
 	static _hasEntryContent (trait) {
 		return trait && (trait.name || (trait.entries.length === 1 && trait.entries[0]) || trait.entries.length > 1);
 	}
+
+	static _splitNameToChineseAndEnglish (originName) {
+		const names = originName.split(/[|｜]/);
+		if (names.length !== 2) return [originName, ""];
+		return names.map(name => name.replace(/\s+/g, ""));
+	}
 }

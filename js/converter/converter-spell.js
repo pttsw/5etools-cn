@@ -4,15 +4,15 @@ import {TagCondition} from "./converterutils-tags.js";
 import {AbilityCheckTagger, DamageImmuneTagger, DamageInflictTagger, DamageResTagger, DamageVulnTagger, MiscTagsTagger, SavingThrowTagger, ScalingLevelDiceTagger, SpellAttackTagger} from "./converterutils-spell.js";
 import {ConverterConst} from "./converterutils-const.js";
 import {TagJsons} from "./converterutils-entries.js";
-import {SITE_STYLE__CLASSIC} from "../consts.js";
+import {SITE_STYLE__CLASSIC, SITE_STYLE__ONE} from "../consts.js";
 import {EntryCoalesceEntryLists, EntryCoalesceRawLines} from "./converterutils-entrycoalesce.js";
 import {PropOrder} from "../utils-proporder.js";
 
 export class ConverterSpell extends ConverterBase {
-	static _RE_START_RANGE = "Range";
-	static _RE_START_COMPONENTS = "Components?";
-	static _RE_START_DURATION = "Duration";
-	static _RE_START_CLASS = "Class(?:es)?";
+	static _RE_START_RANGE = "(?:Range|范围|距离|施法范围|施法距离)";
+	static _RE_START_COMPONENTS = "(?:Components?|组件|组件消耗|成分|施法成分|法术成分)";
+	static _RE_START_DURATION = "(?:Duration|持续时间)";
+	static _RE_START_CLASS = "(?:Class(?:es)?|职业|施法职业)";
 
 	static _REQUIRED_PROPS = [
 		"level",
@@ -39,7 +39,7 @@ export class ConverterSpell extends ConverterBase {
 	static doParseText (inText, options) {
 		options = this._getValidOptions(options);
 
-		if (!inText || !inText.trim()) return options.cbWarning("No input!");
+		if (!inText || !inText.trim()) return options.cbWarning("没有输入！");
 		const toConvert = this._getCleanInput(inText, options)
 			.split("\n")
 			.filter(it => it && it.trim());
@@ -59,7 +59,9 @@ export class ConverterSpell extends ConverterBase {
 
 			// name of spell
 			if (i === 0) {
-				spell.name = this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase);
+				const [name, nameEn] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
+				spell.name = name;
+				spell.ENG_name = nameEn;
 				continue;
 			}
 
@@ -76,28 +78,31 @@ export class ConverterSpell extends ConverterBase {
 			}
 
 			// range
-			if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_RANGE, line: curLine})) {
+			if (!spell.range
+				&& ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_RANGE, line: curLine})) {
 				this._setCleanRange(spell, curLine, options);
 				continue;
 			}
 
 			// components
-			if (
-				ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_COMPONENTS, line: curLine})
+			if (!spell.components
+				&& ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_COMPONENTS, line: curLine})
 			) {
 				this._setCleanComponents(spell, curLine, options);
 				continue;
 			}
 
 			// duration
-			if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_DURATION, line: curLine})) {
+			if (!spell.duration
+				&& ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_DURATION, line: curLine})) {
 				// avoid absorbing main body text
 				this._setCleanDuration(spell, curLine, options);
 				continue;
 			}
 
 			// class spell lists (alt)
-			if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_CLASS, line: curLine})) {
+			if (!spell.classes
+				&& ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_CLASS, line: curLine})) {
 				// avoid absorbing main body text
 				this._setCleanClasses(spell, curLine, options);
 				continue;
@@ -108,7 +113,7 @@ export class ConverterSpell extends ConverterBase {
 				ptrI,
 				toConvert,
 				{
-					fnStop: (curLine) => /^(?:At Higher Levels|Class(?:es)?|Cantrip Upgrade|Using a Higher-Level Spell Slot)/gi.test(curLine),
+					fnStop: (curLine) => /^(?:At Higher Levels|Class(?:es)?|Cantrip Upgrade|Using a Higher-Level Spell Slot|升环施法效应|升环施法)/gi.test(curLine),
 				},
 			);
 			i = ptrI._;
@@ -117,7 +122,7 @@ export class ConverterSpell extends ConverterBase {
 				ptrI,
 				toConvert,
 				{
-					fnStop: (curLine) => /^Classes/gi.test(curLine),
+					fnStop: (curLine) => /^Classes|环阶/gi.test(curLine),
 				},
 			);
 			i = ptrI._;
@@ -137,7 +142,7 @@ export class ConverterSpell extends ConverterBase {
 		const statsOut = PropOrder.getOrdered(spell, "spell");
 
 		const missingProps = this._REQUIRED_PROPS.filter(prop => statsOut[prop] == null);
-		if (missingProps.length) options.cbWarning(`${statsOut.name ? `(${statsOut.name}) ` : ""}Missing properties: ${missingProps.join(", ")}`);
+		if (missingProps.length) options.cbWarning(`${statsOut.name ? `(${statsOut.name}) ` : ""}缺少词条: ${missingProps.join(", ")}`);
 
 		options.cbOutput(statsOut, options.isAppend);
 
@@ -149,9 +154,14 @@ export class ConverterSpell extends ConverterBase {
 
 		const titles = [
 			"Casting Time",
+			"(施法)?时间",
 			"Range",
+			"(施法)?范围",
+			"(施法)?距离",
 			"Components?",
+			"(法术)?成分",
 			"Duration",
+			"持续时间",
 		];
 
 		for (let i = 0; i < titles.length - 1; ++i) {
@@ -170,14 +180,14 @@ export class ConverterSpell extends ConverterBase {
 	// SHARED UTILITY FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
 	static _tryConvertSchool (s, {cbMan = null} = {}) {
 		const school = (s.school || "").toLowerCase().trim();
-		if (!school) return cbMan ? cbMan(`Spell school "${s.school}" requires manual conversion`) : null;
+		if (!school) return cbMan ? cbMan(`法术学派"${s.school}"无法自动转换。`) : null;
 
 		const out = ConverterSpell._RES_SCHOOL.find(it => it.regex.test(school));
 		if (out) {
 			s.school = out.output;
 			return;
 		}
-		if (cbMan) cbMan(`Spell school "${s.school}" requires manual conversion`);
+		if (cbMan) cbMan(`法术学派"${s.school}"无法自动转换。`);
 	}
 
 	static _doSpellPostProcess (stats, options) {
@@ -198,7 +208,7 @@ export class ConverterSpell extends ConverterBase {
 		]
 			.forEach(prop => {
 				EntryCoalesceEntryLists.mutCoalesce(stats, prop, {styleHint: options.styleHint});
-				TagJsons.mutTagObjectStrictCapsWords(state.entity, {keySet: new Set([prop]), styleHint: options.styleHint});
+				TagJsons.mutTagObjectStrictCapsWords(stats, {keySet: new Set([prop]), styleHint: options.styleHint});
 				TagJsons.mutTagObject(stats, {keySet: new Set([prop]), isOptimistic: false, styleHint: options.styleHint});
 			});
 
@@ -224,9 +234,10 @@ export class ConverterSpell extends ConverterBase {
 		const rawLine = line;
 		line = ConverterUtils.cleanDashes(line).trim();
 
-		const mCantrip = /cantrip/i.exec(line);
+		const mCantrip = /(?:cantrip|戏法)/i.exec(line);
 		const mSpellLeve = /^(?<level>\d+)(?:st|nd|rd|th)?[- ]level/i.exec(line)
-			|| /^Level (?<level>\d+)\b/i.exec(line);
+			|| /^Level (?<level>\d+)\b/i.exec(line)
+			|| /^(?<level>[一二三四五六七八九十]+|\d+)\s?环/i.exec(line);
 
 		if (mCantrip) {
 			let trailing = line.slice(mCantrip.index + "cantrip".length, line.length).trim();
@@ -236,7 +247,7 @@ export class ConverterSpell extends ConverterBase {
 
 			// TODO implement as required (see at e.g. Deep Magic series)
 			if (trailing) {
-				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Level/school/ritual trailing part "${trailing}" requires manual conversion`);
+				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}环阶/学派/仪式后缀部分"${trailing}"无法自动转换`);
 			}
 
 			stats.level = 0;
@@ -260,14 +271,22 @@ export class ConverterSpell extends ConverterBase {
 				MiscUtil.set(stats, "meta", "ritual", true);
 			}
 
-			stats.level = Number(mSpellLeve.groups.level);
+			stats.level = Parser.textToNumber(mSpellLeve.groups.level);
 
-			const [tkSchool, ...tksSchoolRest] = line.trim().split(" ");
+			// 英文（一般用空格分割）
+			let [tkSchool, ...tksSchoolRest] = line.trim().split(" ");
 			stats.school = tkSchool;
 
 			if (/^(?:school|spell)$/i.test(tksSchoolRest[0] || 0)) tksSchoolRest.shift();
-
 			let trailing = tksSchoolRest.join(" ");
+
+			// 处理中文（可能因为没有空格而和后续的职业等内容连在一起）
+			const cnScoolPattern = new RegExp(`(?:${Object.values(Parser.SP_SCHOOL_ABV_TO_FULL).join("|")})`);
+			const mCnScool = cnScoolPattern.exec(tkSchool);
+			if (mCnScool) {
+				stats.school = mCnScool[0];
+				trailing = tkSchool.slice(mCnScool[0].length) + trailing;
+			}
 			trailing = this._setCleanLevelSchoolRitual_trailingClassGroup({stats, options, trailing});
 
 			// TODO further handling of non-school text (see e.g. Deep Magic series)
@@ -288,13 +307,17 @@ export class ConverterSpell extends ConverterBase {
 		const classNames = [];
 
 		const out = trailing
-			.split(/([()])/g)
+			.split(/([（()）])/g)
 			.map(tk => {
 				return tk
 					.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX)
 					.map(tk => {
 						return tk
 							.replace(new RegExp(ConverterConst.STR_RE_CLASS, "i"), (...m) => {
+								classNames.push(m.last().name);
+								return "";
+							})
+							.replace(new RegExp(ConverterConst.STR_RE_CLASS_CN, "i"), (...m) => {
 								classNames.push(m.last().name);
 								return "";
 							})
@@ -305,7 +328,7 @@ export class ConverterSpell extends ConverterBase {
 					.join(",");
 			})
 			.join("")
-			.replace(/\(\s*\)/g, "")
+			.replace(/(?:法术|学派)?\s*[（(]\s*[）)]/g, "")
 			.trim();
 
 		if (!classNames.length) return out;
@@ -322,7 +345,7 @@ export class ConverterSpell extends ConverterBase {
 				break;
 			}
 
-			case "one": {
+			case SITE_STYLE__ONE: {
 				const tgt = MiscUtil.getOrSet(stats, "classes", "fromClassList", []);
 				tgt.push(
 					...classNames.map(name => ({
@@ -340,53 +363,53 @@ export class ConverterSpell extends ConverterBase {
 	}
 
 	static _setCleanRange (stats, line, options) {
-		const getUnit = (str) => /\b(miles?|mi\.)\b/.test(str.toLowerCase()) ? "miles" : "feet";
+		const getUnit = (str) => /\b(miles?|mi\.|里|英里)\b/.test(str.toLowerCase()) ? "miles" : "feet";
 
 		const range = ConverterUtils.cleanDashes(ConverterUtils.getStatblockLineHeaderText({reStartStr: this._RE_START_RANGE, line}));
 
-		if (range.toLowerCase() === "self") return stats.range = {type: "point", distance: {type: "self"}};
-		if (range.toLowerCase() === "special") return stats.range = {type: "special"};
-		if (range.toLowerCase() === "unlimited") return stats.range = {type: "point", distance: {type: "unlimited"}};
-		if (range.toLowerCase() === "unlimited on the same plane") return stats.range = {type: "point", distance: {type: "plane"}};
-		if (range.toLowerCase() === "sight") return stats.range = {type: "point", distance: {type: "sight"}};
-		if (range.toLowerCase() === "touch") return stats.range = {type: "point", distance: {type: "touch"}};
+		if (["self", "自身", "自己"].includes(range.toLowerCase())) return stats.range = {type: "point", distance: {type: "self"}};
+		if (["special", "特殊"].includes(range.toLowerCase())) return stats.range = {type: "special"};
+		if (["unlimited", "无限"].includes(range.toLowerCase())) return stats.range = {type: "point", distance: {type: "unlimited"}};
+		if (["unlimited on the same plane", "在同一位面上无限"].includes(range.toLowerCase())) return stats.range = {type: "point", distance: {type: "plane"}};
+		if (["sight", "视野"].includes(range.toLowerCase())) return stats.range = {type: "point", distance: {type: "sight"}};
+		if (["touch", "触及"].includes(range.toLowerCase())) return stats.range = {type: "point", distance: {type: "touch"}};
 
 		const cleanRange = range.replace(/(\d),(\d)/g, "$1$2");
 
-		const mFeetMiles = /^(?<amount>\d+) (?<unit>feet|foot|ft\.?|miles?|mi\.?)$/i.exec(cleanRange);
+		const mFeetMiles = /^(?<amount>\d+)\s*(?<unit>feet|foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)$/i.exec(cleanRange);
 		if (mFeetMiles) return stats.range = {type: "point", distance: {type: getUnit(mFeetMiles.groups.unit), amount: Number(mFeetMiles.groups.amount)}};
 
-		const mSelfEmanation = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?) emanation\)$/i.exec(cleanRange);
+		const mSelfEmanation = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)( emanation|\s*光环)[)）]$/i.exec(cleanRange);
 		if (mSelfEmanation) return stats.range = {type: "emanation", distance: {type: getUnit(mSelfEmanation[2]), amount: Number(mSelfEmanation[1])}};
 
-		const mSelfRadius = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?) radius\)$/i.exec(cleanRange);
+		const mSelfRadius = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)\s*(radius|半径)[)）]$/i.exec(cleanRange);
 		if (mSelfRadius) return stats.range = {type: "radius", distance: {type: getUnit(mSelfRadius[2]), amount: Number(mSelfRadius[1])}};
 
-		const mSelfSphere = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?)(?:[- ]radius)? sphere\)$/i.exec(cleanRange);
+		const mSelfSphere = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)(?:[- ]radius|\s*半径)?\s*(sphere|的?球状|球形|球型)[)）]$/i.exec(cleanRange);
 		if (mSelfSphere) return stats.range = {type: "sphere", distance: {type: getUnit(mSelfSphere[2]), amount: Number(mSelfSphere[1])}};
 
-		const mSelfCone = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?) cone\)$/i.exec(cleanRange);
+		const mSelfCone = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)\s*(cone|锥状|锥形|锥型)[)）]$/i.exec(cleanRange);
 		if (mSelfCone) return stats.range = {type: "cone", distance: {type: getUnit(mSelfCone[2]), amount: Number(mSelfCone[1])}};
 
-		const mSelfLine = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?) line\)$/i.exec(cleanRange);
+		const mSelfLine = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)\s*(line|线状|线形|线型)[)）]$/i.exec(cleanRange);
 		if (mSelfLine) return stats.range = {type: "line", distance: {type: getUnit(mSelfLine[2]), amount: Number(mSelfLine[1])}};
 
-		const mSelfCube = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?) cube\)$/i.exec(cleanRange);
+		const mSelfCube = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)\s*(cube|立方体|立方型|立方|正方体)[)）]$/i.exec(cleanRange);
 		if (mSelfCube) return stats.range = {type: "cube", distance: {type: getUnit(mSelfCube[2]), amount: Number(mSelfCube[1])}};
 
-		const mSelfHemisphere = /^self \((\d+)[- ](foot|ft\.?|miles?|mi\.?)(?:[- ]radius)? hemisphere\)$/i.exec(cleanRange);
+		const mSelfHemisphere = /^(self |自身\s*)[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)(?:[- ]radius|\s*半径)?\s*(hemisphere|半球形|半球型|半球)[)）]$/i.exec(cleanRange);
 		if (mSelfHemisphere) return stats.range = {type: "hemisphere", distance: {type: getUnit(mSelfHemisphere[2]), amount: Number(mSelfHemisphere[1])}};
 
 		// region Homebrew
-		const mPointCube = /^(?<point>\d+) (?<unit>feet|foot|ft\.?|miles?|mi\.?) \((\d+)[- ](foot|ft\.?|miles?|mi\.?) cube\)$/i.exec(cleanRange);
+		const mPointCube = /^(?<point>\d+)\s*(?<unit>feet|foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)\s*[(（](\d+)[- ]?(foot|ft\.?|miles?|mi\.?|尺|英尺|里|英里)\s*(cube|立方体|立方型|立方|正方体)[)）]$/i.exec(cleanRange);
 		if (mPointCube) return stats.range = {type: "point", distance: {type: getUnit(mPointCube.groups.unit), amount: Number(mPointCube.groups.point)}};
 		// endregion
 
-		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Range part "${range}" requires manual conversion`);
+		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}施法距离部分"${range}"无法自动转换`);
 	}
 
 	static _getCleanTimeUnit (unit, isDuration, options) {
-		unit = unit.toLowerCase().trim();
+		unit = unit.toLowerCase().trim().replace("个", "");
 		switch (unit) {
 			case "days":
 			case "weeks":
@@ -409,14 +432,39 @@ export class ConverterSpell extends ConverterBase {
 
 			case "bonus action": return "bonus";
 
+			case "日":
+			case "天":
+				return "day";
+			case "周":
+			case "星期":
+				return "week";
+			case "月":
+				return "month";
+			case "年":
+				return "year";
+			case "时":
+			case "小时":
+				return "hour";
+			case "分":
+			case "分钟":
+				return "minute";
+			case "动作":
+				return "action";
+			case "轮":
+				return "round";
+			case "反应":
+				return "reaction";
+			case "附赠动作":
+				return "bonus action";
+
 			default:
-				options.cbWarning(`Unit part "${unit}" requires manual conversion`);
+				options.cbWarning(`单位部分"${unit}"无法自动转换`);
 				return unit;
 		}
 	}
 
 	static _setCleanCastingTime (stats, line, options) {
-		const allParts = ConverterUtils.getStatblockLineHeaderText({reStartStr: "Casting Time", line});
+		const allParts = ConverterUtils.getStatblockLineHeaderText({reStartStr: "(?:Casting Time|施法时间)", line});
 		const parts = /\b(?:reaction|which you (?:take|use))\b/i.test(allParts)
 			? [allParts]
 			: allParts.split(/; | or /gi);
@@ -425,19 +473,19 @@ export class ConverterSpell extends ConverterBase {
 			.map(it => it.trim())
 			.filter(Boolean)
 			.map(str => {
-				if (str.toLowerCase() === "ritual") {
+				if (str.toLowerCase() === "ritual" || str.toLowerCase() === "仪式") {
 					MiscUtil.set(stats, "meta", "ritual", true);
 					return null;
 				}
 
-				const mNumber = /^(?<count>\d+)?(?<rest>.*?)$/.exec(str);
+				const mNumber = /^(?<count>[一二三四五六七八九十]+|\d+)?(?<rest>.*?)$/.exec(str);
 
 				if (!mNumber) {
 					options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Casting time part "${str}" requires manual conversion`);
 					return str;
 				}
 
-				const amount = mNumber.groups.count ? Number(mNumber.groups.count.trim()) : null;
+				const amount = mNumber.groups.count ? Parser.textToNumber(mNumber.groups.count.trim()) : null;
 				const [unit, ...conditionParts] = mNumber.groups.rest.split(", ");
 
 				const mNote = /^(?<unit>.*) \((?<note>.*)\)$/.exec(unit);
@@ -461,6 +509,7 @@ export class ConverterSpell extends ConverterBase {
 		if (currency) return Parser.COIN_CONVERSIONS[Parser.COIN_ABVS.indexOf(currency.toLowerCase())];
 
 		switch (currencyLong.toLowerCase()) {
+			case "金币":
 			case "gold": {
 				return Parser.COIN_CONVERSIONS[Parser.COIN_ABVS.indexOf("gp")];
 			}
@@ -483,10 +532,10 @@ export class ConverterSpell extends ConverterBase {
 					case "v": stats.components.v = true; break;
 					case "s": stats.components.s = true; break;
 					default: {
-						if (lowerPt.startsWith("m ")) {
-							const materialText = pt.replace(/^m\s*\((.*)\)$/i, "$1").trim();
-							const mCost = /(?<count>\d*,?\d+)\+?\s?(?:(?<currency>cp|sp|ep|gp|pp)|(?:(?<currencyLong>gold)(?: pieces)?))/gi.exec(materialText);
-							const isConsumed = pt.toLowerCase().includes("consume");
+						if (/^m\s*[(（](.*)[)）]$/i.test(lowerPt)) {
+							const materialText = pt.replace(/^m\s*[(（](.*)[)）]$/i, "$1").trim();
+							const mCost = /(?<count>\d*,?\d+)\+?\s?(?:(?<currency>cp|sp|ep|gp|pp)|(?:(?<currencyLong>(?:gold|金币))(?: pieces)?))/gi.exec(materialText);
+							const isConsumed = /(?:consume|消耗|花费|耗材)/i.test(pt.toLowerCase());
 
 							if (mCost) {
 								const valueMult = this._getComponentCurrencyMult({mCost});
@@ -506,7 +555,7 @@ export class ConverterSpell extends ConverterBase {
 								stats.components.m = materialText;
 							}
 						} else if (lowerPt.startsWith("r ")) stats.components.r = true;
-						else options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Components part "${pt}" requires manual conversion`);
+						else options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}法术成分部分"${pt}"无法自动转换`);
 					}
 				}
 			});
@@ -515,13 +564,13 @@ export class ConverterSpell extends ConverterBase {
 	static _setCleanDuration (stats, line, options) {
 		const {durStr, condition} = this._setCleanDuration_getInput({line, options});
 
-		if (durStr.toLowerCase() === "instantaneous") return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "instant"}], condition});
-		if (durStr.toLowerCase() === "special") return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "special"}], condition});
-		if (durStr.toLowerCase() === "permanent") return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "permanent"}], condition});
+		if (["instantaneous", "立即"].includes(durStr.toLowerCase())) return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "instant"}], condition});
+		if (["special", "特殊"].includes(durStr.toLowerCase())) return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "special"}], condition});
+		if (["permanent", "永久"].includes(durStr.toLowerCase())) return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "permanent"}], condition});
 
-		if (durStr.toLowerCase() === "concentration") return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "special", concentration: true}], condition});
+		if (["concentration", "专注"].includes(durStr.toLowerCase())) return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "special", concentration: true}], condition});
 
-		const mConcOrUpTo = /^(?<conc>concentration, )?up to (?<amount>\d+|an?) (?<unit>hour|minute|turn|round|week|month|day|year)(?:s)?$/i.exec(durStr);
+		const mConcOrUpTo = /^(?<conc>(?:concentration|专注)[,，]\s*)?(?:up to|至多)\s*(?<amount>\d+|an?)\s*(?<unit>hour|minute|turn|round|week|month|day|year|时|小时|分|分钟|轮|回合|周|星期|月|天|日|年)(?:s)?$/i.exec(durStr);
 		if (mConcOrUpTo) {
 			const amount = mConcOrUpTo.groups.amount.toLowerCase().startsWith("a") ? 1 : Number(mConcOrUpTo.groups.amount);
 			const out = {type: "timed", duration: {type: this._getCleanTimeUnit(mConcOrUpTo.groups.unit, true, options), amount}};
@@ -530,11 +579,11 @@ export class ConverterSpell extends ConverterBase {
 			return stats.duration = this._setCleanDurationn_getOutput({duration: [out], condition});
 		}
 
-		const mTimed = /^(\d+) (hour|minute|turn|round|week|month|day|year)(?:s)?$/i.exec(durStr);
+		const mTimed = /^(\d+)\s?(hour|minute|turn|round|week|month|day|year|时|小时|分|分钟|轮|回合|周|星期|月|天|日|年)(?:s)?$/i.exec(durStr);
 
 		if (mTimed) return stats.duration = this._setCleanDurationn_getOutput({duration: [{type: "timed", duration: {type: this._getCleanTimeUnit(mTimed[2], true, options), amount: Number(mTimed[1])}}], condition});
 
-		const mDispelledTriggered = /^until dispelled( or triggered)?$/i.exec(durStr);
+		const mDispelledTriggered = /^(?:until dispelled|直到被解除)(?: or triggered|或被?触发)?$/i.exec(durStr);
 		if (mDispelledTriggered) {
 			const out = {type: "permanent", ends: ["dispel"]};
 			if (mDispelledTriggered[1]) out.ends.push("trigger");
@@ -549,7 +598,7 @@ export class ConverterSpell extends ConverterBase {
 
 		// TODO handle splitting "or"'d durations up as required
 
-		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Duration part "${durStr}" requires manual conversion`);
+		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}持续时间部分"${durStr}"无法自动转换`);
 	}
 
 	static _setCleanDuration_getInput ({line, options}) {
@@ -630,7 +679,15 @@ ConverterSpell._RES_SCHOOL = Object.entries({
 	"evocation": "V",
 	"illusion": "I",
 	"divination": "D",
+	"变化": "T",
+	"死灵": "N",
+	"咒法": "C",
+	"防护": "A",
+	"惑控": "E",
+	"塑能": "V",
+	"幻术": "I",
+	"预言": "D",
 }).map(([k, v]) => ({
 	output: v,
-	regex: RegExp(`^${k}(?: school)?$`, "i"),
+	regex: RegExp(`^${k}(?: school|学派|法术)?$`, "i"),
 }));

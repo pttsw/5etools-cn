@@ -79,6 +79,21 @@ export class ConverterCreature extends ConverterBase {
 		"CHALLENGE",
 		"PROFICIENCY BONUS",
 		"GEAR",
+		"豁免检定",
+		"技能",
+		"伤害易伤",
+		"易伤",
+		"伤害抗性",
+		"抗性",
+		"伤害免疫",
+		"免疫",
+		"状态免疫",
+		"感官",
+		"语言",
+		"挑战",
+		"熟练加值",
+		"熟练项加值",
+		"装备",
 	];
 
 	static _NO_ABSORB_TITLES = [
@@ -90,6 +105,14 @@ export class ConverterCreature extends ConverterBase {
 		"REACTION",
 		"BONUS ACTION",
 		"UTILITY SPELL", // homebrew
+		"特质",
+		"动作",
+		"传奇动作",
+		"VILLAIN ACTION", // 不知道怎么翻
+		"神话动作",
+		"反应",
+		"附赠动作",
+		"UTILITY SPELL", // 不知道怎么翻
 	];
 
 	static _RE_START_ARMOR_CLASS = "(?:Armor Class|AC|护甲等级)";
@@ -98,16 +121,16 @@ export class ConverterCreature extends ConverterBase {
 	static _RE_START_SPEED = "(?:Speed|移动速度|速度)";
 	static _RE_START_SAVING_THROWS = "(?:Saving Throw|Save)s?";
 	static _RE_START_SKILLS = "(?:Skills?|技能)";
-	static _RE_START_DAMAGE_VULN = "(?:Damage )?Vulnerabilit(?:y|ies)";
-	static _RE_START_DAMAGE_RES = "(?:Damage )?Resistances?";
-	static _RE_START_DAMAGE_IMM = "Damage Immunit(?:y|ies)";
+	static _RE_START_DAMAGE_VULN = "(?:Damage |伤害)?(?:Vulnerabilit(?:y|ies)|易伤)";
+	static _RE_START_DAMAGE_RES = "(?:Damage |伤害)?(?:Resistances?|抗性)";
+	static _RE_START_DAMAGE_IMM = "(?:Damage |伤害)?(?:Immunit(?:y|ies)|免疫)";
 	static _RE_START_CONDITION_IMM = "Condition Immunit(?:y|ies)";
 	static _RE_START_COMBINED_IMM = "Immunit(?:y|ies)";
 	static _RE_START_SENSES = "(?:Senses?|感官)";
 	static _RE_START_LANGUAGES = "(?:Languages?|语言)";
 	static _RE_START_CHALLENGE = "Challenge";
 	static _RE_START_PROF_BONUS = "Proficiency Bonus(?: \\(PB\\))?";
-	static _RE_START_GEAR = "Gear";
+	static _RE_START_GEAR = "(?:Gear|装备)";
 
 	static _LINE_MODES = {
 		UNKNOWN: "unknown",
@@ -150,7 +173,9 @@ export class ConverterCreature extends ConverterBase {
 	static _isStartNextLineParsingPhase ({line}) {
 		return /^(?:trait|action|legendary action|mythic action|reaction|bonus action)s?(?:\s+\([^)]+\))?$/i.test(line)
 			// Homebrew
-			|| /^(?:feature|villain action|utility spell)s?(?:\s+\([^)]+\))?$/i.test(line);
+			|| /^(?:feature|villain action|utility spell)s?(?:\s+\([^)]+\))?$/i.test(line)
+			|| /^(?:特质|动作|传奇动作|神话动作|反应|附赠动作)(?:\s+[(（][^)]）]+[)]）])?$/i.test(line)
+			|| /^(?:特征|villain action|utility spell)(?:\s+[(（][^)]）]+[)]）])?$/i.test(line);
 	}
 
 	static _isNonMergeableEntryLine_noSentenceBreak ({line, lineNxt}) {
@@ -475,7 +500,7 @@ export class ConverterCreature extends ConverterBase {
 					lineMode = this._LINE_MODES.UNKNOWN;
 
 					// Homebrew
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "FEATURES?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BREW_FEATURES;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:FEATURES?|特征)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BREW_FEATURES;
 
 					// Homebrew
 					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "UTILITY SPELLS?", line: meta.curLine.toUpperCase()})) {
@@ -488,25 +513,25 @@ export class ConverterCreature extends ConverterBase {
 						}
 					}
 
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "TRAITS?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.TRAITS;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:TRAITS?|特质)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.TRAITS;
 
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "ACTIONS?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.ACTIONS;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:ACTIONS?|动作)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.ACTIONS;
 					if (lineMode === this._LINE_MODES.ACTIONS) {
 						const mActionNote = /actions:?\s*\((.*?)\)/gi.exec(meta.curLine);
 						if (mActionNote) stats.actionNote = mActionNote[1];
 					}
 
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "REACTIONS?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.REACTIONS;
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "BONUS ACTIONS?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BONUS_ACTIONS;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:REACTIONS?|反应)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.REACTIONS;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:BONUS ACTIONS?|附赠动作)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BONUS_ACTIONS;
 
 					if (
-						ConverterUtils.isStatblockLineHeaderStart({reStartStr: "LEGENDARY ACTIONS?", line: meta.curLine.toUpperCase()})
+						ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:LEGENDARY ACTIONS?|传奇动作)", line: meta.curLine.toUpperCase()})
 						// Homebrew
 						|| ConverterUtils.isStatblockLineHeaderStart({reStartStr: "VILLAIN ACTIONS?", line: meta.curLine.toUpperCase()})
 					) lineMode = this._LINE_MODES.LEGENDARY_ACTIONS;
 					isLegendaryDescription = lineMode === this._LINE_MODES.LEGENDARY_ACTIONS;
 
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "MYTHIC ACTIONS", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.MYTHIC_ACTIONS;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:MYTHIC ACTIONS|神话动作)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.MYTHIC_ACTIONS;
 					isMythicDescription = lineMode === this._LINE_MODES.MYTHIC_ACTIONS;
 
 					meta.ixToConvert++;
@@ -571,7 +596,7 @@ export class ConverterCreature extends ConverterBase {
 				// collect subsequent paragraphs
 				while (
 					meta.curLine
-					&& !ConverterUtils.isNameLine(meta.curLine, {exceptions: new Set(["cantrips"]), splitterPunc: /([.?!])/g})
+					&& !ConverterUtils.isNameLine(meta.curLine, {exceptions: new Set(["cantrips"]), splitterPunc: /([.?!。？！])/g})
 					&& !this._isStartNextLineParsingPhase({line: meta.curLine})
 				) {
 					if (
@@ -603,7 +628,7 @@ export class ConverterCreature extends ConverterBase {
 					DiceConvert.convertTraitActionDice(curTrait);
 
 					switch (lineMode) {
-						case this._LINE_MODES.UNKNOWN: options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Discarded un-categorizable entry "${JSON.stringify(curTrait)}"!`); break;
+						case this._LINE_MODES.UNKNOWN: options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}以下内容因无法识别分类而丢弃！ "${JSON.stringify(curTrait)}"`); break;
 						case this._LINE_MODES.TRAITS: if (this._hasEntryContent(curTrait)) stats.trait.push(curTrait); break;
 						case this._LINE_MODES.ACTIONS: if (this._hasEntryContent(curTrait)) stats.action.push(curTrait); break;
 						case this._LINE_MODES.REACTIONS: if (this._hasEntryContent(curTrait)) stats.reaction.push(curTrait); break;
@@ -696,8 +721,13 @@ export class ConverterCreature extends ConverterBase {
 			"Bonus Actions?",
 			"Reactions?",
 			"Actions?",
+			"传奇动作",
+			"Villain Actions?",
+			"附赠动作",
+			"反应",
+			"动作",
 		]
-			.map(it => ({re: new RegExp(`\\n\\s*${it.split("").join("\\s*")}\\s*\\n`, "g"), original: it.replace(/[^a-zA-Z ]/g, "")}))
+			.map(it => ({re: new RegExp(`\\n\\s*${it.split("").join("\\s*")}\\s*\\n`, "g"), original: it.replace(/[^a-zA-Z附赠传奇动作反应 ]/g, "")}))
 			.forEach(({re, original}) => clean = clean.replace(re, `\n${original}\n`));
 		// endregion
 
@@ -794,7 +824,8 @@ export class ConverterCreature extends ConverterBase {
 
 	static _handleAbilityScores_modSaveTable ({stats, meta, options}) {
 		if (!/^Mod\s+Save(\s+Mod\s+Save\s+Mod\s+Save)?$/i.test(meta.curLine)
-		&& !/^调整值\s+豁免(\s+调整值\s+豁免\s+调整值\s+豁免)?$/i.test(meta.curLine)) return false;
+		&& !/^调整值\s+豁免(\s+调整值\s+豁免\s+调整值\s+豁免)?$/i.test(meta.curLine)
+		&& !/^调整\s+豁免(\s+调整\s+豁免\s+调整\s+豁免)?$/i.test(meta.curLine)) return false;
 		++meta.ixToConvert;
 		meta.initCurLine();
 
@@ -804,6 +835,7 @@ export class ConverterCreature extends ConverterBase {
 			if (
 				/^Mod\s+Save/i.test(meta.curLine)
 				|| /^调整值\s+豁免/i.test(meta.curLine)
+				|| /^调整\s+豁免/i.test(meta.curLine)
 				|| meta.isSkippableCurLine()
 			) {
 				++meta.ixToConvert;
@@ -829,7 +861,7 @@ export class ConverterCreature extends ConverterBase {
 			const zipped = abilLines
 				.flatMap(pt => {
 					return pt
-						.split(/(str|dex|con|int|wis|cha)/i)
+						.split(/(str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)/i)
 						.filter(Boolean)
 						.reduce((accum, val) => {
 							const tgt = accum.at(-1);
@@ -856,12 +888,12 @@ export class ConverterCreature extends ConverterBase {
 		for (const l of abilLines) {
 			const mAbil = /^(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)\s*(?<score>\d+)\s+(?<bonus>[-+]\d+)\s+(?<save>[-+]\d+)$/i.exec(l);
 			if (!mAbil) {
-				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Ability scores require manual conversion`);
+				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}属性值格式错误！不支持自动转换！`);
 				return false;
 			}
 
 			const {abil, score, save} = mAbil.groups;
-			const abilProp = abil.toLowerCase();
+			const abilProp = Parser.attFullToAbv(abil.toLowerCase());
 
 			stats[abilProp] = Number(score);
 
@@ -1012,7 +1044,7 @@ export class ConverterCreature extends ConverterBase {
 					return null;
 				}
 
-				const mUses = /^Legendary Action Uses: (?<cnt>\d+)( \((?<cntLair>\d+) in Lair\))?/gi.exec(ent.entries[0]);
+				const mUses = /^(?:Legendary Action Uses|传奇动作次数)[:：]\s*(?<cnt>\d+)(\s*[(（](?:(?<cntLair>\d+) in Lair|在巢穴中则为\s*(?<cntLair>\d+))[)）])?/gi.exec(ent.entries[0]);
 				if (!hasName && mUses) {
 					const {cnt, cntLair} = mUses.groups;
 
@@ -2217,7 +2249,7 @@ export class ConverterCreature extends ConverterBase {
 
 	static _setCleanSkills (stats, line, options) {
 		stats.skill = ConverterUtils.getStatblockLineHeaderText({reStartStr: this._RE_START_SKILLS, line}).toLowerCase();
-		const split = stats.skill.split(",").map(it => it.trim()).filter(Boolean);
+		const split = stats.skill.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
 
 		const reSkill = new RegExp(`^(?<skill>${Object.keys(Parser.SKILL_TO_ATB_ABV).join("|")})\\s+(?<val>.*)$`, "i");
 
@@ -2440,11 +2472,11 @@ export class ConverterCreature extends ConverterBase {
 
 		const rePtOneXpIntro = /(?<=[(（])\s*/.source;
 		const rePtOneXpAmount = /(?<amount>[0-9,]+)/.source;
-		const rePtOneXpAmountLair = /( or (?<amountLair>[0-9,]+) in lair)?/.source;
-		const rePtOneXpOutro = /(?:[;；]\s*)?/.source;
+		const rePtOneXpAmountLair = /(?: or (?<amountLair>[0-9,]+) in lair|在巢穴中则为\s*(?<amountLair>[0-9,]+))?/.source;
+		const rePtOneXpOutro = /\s*(?:[;；]\s*)?/.source;
 
-		const reXpOnePre = new RegExp(`${rePtOneXpIntro}XP ${rePtOneXpAmount}${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
-		const reXpOnePost = new RegExp(`${rePtOneXpIntro}${rePtOneXpAmount} XP${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
+		const reXpOnePre = new RegExp(`${rePtOneXpIntro}XP ${rePtOneXpAmount}(?:[,，])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
+		const reXpOnePost = new RegExp(`${rePtOneXpIntro}${rePtOneXpAmount} XP(?:[,，])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
 
 		[
 			reXpOnePre,

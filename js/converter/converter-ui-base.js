@@ -7,7 +7,7 @@ export class ConverterUiBase extends BaseComponent {
 		switch (mode) {
 			case "html": return "HTML";
 			case "md": return "Markdown";
-			case "txt": return "Text";
+			case "txt": return "文本";
 			default: throw new Error(`Unimplemented!`);
 		}
 	}
@@ -128,7 +128,7 @@ export class ConverterUiBase extends BaseComponent {
 
 	_renderSidebarSamplesPart (parent, wrpSidebar) {
 		const btnsSamples = this._modes.map(mode => {
-			return ee`<button class="ve-btn ve-btn-xs ve-btn-default">Sample ${ConverterUiBase._getDisplayMode(mode)}</button>`
+			return ee`<button class="ve-btn ve-btn-xs ve-btn-default">${ConverterUiBase._getDisplayMode(mode)}范例</button>`
 				.onn("click", () => {
 					const sample = this._getSample(mode);
 					if (!sample) {
@@ -159,14 +159,14 @@ export class ConverterUiBase extends BaseComponent {
 		hkMode();
 
 		if (hasModes) {
-			const selMode = ComponentUiUtil.getSelEnum(this, "mode", {values: this._modes, html: `<select class="form-control input-xs select-inline"></select>`, fnDisplay: it => `Parse as ${ConverterUiBase._getDisplayMode(it)}`});
+			const selMode = ComponentUiUtil.getSelEnum(this, "mode", {values: this._modes, html: `<select class="form-control input-xs select-inline"></select>`, fnDisplay: it => `从${ConverterUiBase._getDisplayMode(it)}转换`});
 			ee`<div class="w-100 mt-2 ve-flex-vh-center-around">${selMode}</div>`.appendTo(wrpSidebar);
 		}
 
 		if (this._titleCaseFields) {
 			const cbTitleCase = ComponentUiUtil.getCbBool(this, "isTitleCase");
 			ee`<div class="w-100 mt-2 split-v-center">
-				<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should the creature's name be converted to title-case? Useful when pasting a name which is all-caps."><span>Title-Case Name</span>
+				<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="自动将英文生物名改为驼峰命名"><span>驼峰命名（中文没啥用）</span>
 				${cbTitleCase}
 			</label></div>`.appendTo(wrpSidebar);
 		}
@@ -185,7 +185,7 @@ export class ConverterUiBase extends BaseComponent {
 		const iptPage = ComponentUiUtil.getIptInt(this, "page", 0)
 			.addClass("max-w-80p");
 		ee`<div class="w-100 split-v-center">
-			<div class="sidemenu__row__label mr-2 help" title="Note that a line of the form &quot;PAGE=&lt;page number&gt;&quot; in the Input will set the page in the Output, ignoring any value set here. This is especially useful when parsing multiple inputs delimited by a separator.">Page</div>
+			<div class="sidemenu__row__label mr-2 help" title="Note that a line of the form &quot;PAGE=&lt;page number&gt;&quot; in the Input will set the page in the Output, ignoring any value set here. This is especially useful when parsing multiple inputs delimited by a separator.">页数</div>
 			<div class="ve-btn-group input-group ve-flex-v-center h-100">
 				${getBtnIncrementDecrement(-1)}
 				${iptPage}
@@ -299,7 +299,7 @@ export class ConverterUiBase extends BaseComponent {
 				wrpSourceOverlay.appendTo(modalMeta.eleModalInner);
 			});
 
-		const btnSourceAdd = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Add New</button>`.onn("click", () => {
+		const btnSourceAdd = ee`<button class="ve-btn ve-btn-default ve-btn-xs">新增来源</button>`.onn("click", () => {
 			rebuildStageSource({mode: "add"});
 			modalMeta = UiUtil.getShowModal({
 				isHeight100: true,

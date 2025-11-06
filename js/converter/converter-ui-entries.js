@@ -7,7 +7,7 @@ export class EntryConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Generic",
+				name: "通用",
 				converterId: "generic",
 				canSaveLocal: false,
 				modes: ["md"],
