@@ -59,9 +59,7 @@ export class ConverterSpell extends ConverterBase {
 
 			// name of spell
 			if (i === 0) {
-				const [name, nameEn] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
-				spell.name = name;
-				spell.ENG_name = nameEn;
+				[spell.name, spell.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
 				continue;
 			}
 

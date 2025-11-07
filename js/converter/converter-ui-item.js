@@ -8,7 +8,7 @@ export class ItemConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Item",
+				name: "物品",
 				converterId: "item",
 				canSaveLocal: true,
 				modes: ["txt"],

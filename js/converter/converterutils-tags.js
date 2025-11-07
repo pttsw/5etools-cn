@@ -366,8 +366,10 @@ export class TagCondition extends ConverterTaggerInitializable {
 					postObject: () => nameStack.pop(),
 					string: [
 						(str) => {
-							if (nameStack.includes("Antimagic Susceptibility")) return str;
-							if (nameStack.includes("Sneak Attack (1/Turn)")) return str;
+							if (nameStack.includes("Antimagic Susceptibility")
+								|| nameStack.includes("魔力依赖")
+								|| nameStack.includes("Sneak Attack (1/Turn)")
+								|| nameStack.includes("偷袭 (1/回合)")) return str;
 							str = this._walkerStringHandlerStrict({styleHint, str, inflictedSet, inflictedAllowlist, blocklistNames});
 							return this._walkerStringHandler({styleHint, str, inflictedSet, inflictedAllowlist, blocklistNames});
 						},
@@ -681,14 +683,22 @@ export class ArtifactPropertiesTag {
 	static tryRun (it, opts) {
 		const walker = MiscUtil.getWalker({keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST});
 		walker.walk(it, {
-			string: (str) => str.replace(/major beneficial|minor beneficial|major detrimental|minor detrimental/gi, (...m) => {
+			string: (str) => str.replace(/major beneficial|minor beneficial|major detrimental|minor detrimental|主要增益|强效增益|弱效增益|次要增益|主要减益|强效减益|弱效减益|次要减益/gi, (...m) => {
 				const mode = m[0].trim().toLowerCase();
 
 				switch (mode) {
-					case "major beneficial": return `{@table Artifact Properties; Major Beneficial Properties|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
-					case "minor beneficial": return `{@table Artifact Properties; Minor Beneficial Properties|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
-					case "major detrimental": return `{@table Artifact Properties; Major Detrimental Properties|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
-					case "minor detrimental": return `{@table Artifact Properties; Minor Detrimental Properties|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
+					case "主要增益":
+					case "强效增益":
+					case "major beneficial": return `{@table 神器词条; 主要增益词条|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
+					case "弱效增益":
+					case "次要增益":
+					case "minor beneficial": return `{@table 神器词条; 次要增益词条|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
+					case "主要减益":
+					case "强效减益":
+					case "major detrimental": return `{@table 神器词条; 主要减益词条|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
+					case "弱效减益":
+					case "次要减益":
+					case "minor detrimental": return `{@table 神器词条; 次要减益词条|${opts.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_DMG : Parser.SRC_XDMG}|${m[0]}}`;
 				}
 			}),
 		});

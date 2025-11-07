@@ -152,8 +152,19 @@ export class ConverterBase {
 	}
 
 	static _splitNameToChineseAndEnglish (originName) {
-		const names = originName.split(/[|｜]/);
-		if (names.length !== 2) return [originName, ""];
-		return names.map(name => name.replace(/\s+/g, ""));
+		let names = originName.split(/[|｜]/);
+		let cnNames = [];
+		let enNames = [];
+		if (names.length !== 2) {
+			names = originName.split(" ");
+		}
+		names.map(n => {
+			if (/[\u4e00-\u9fa5]/.test(n)) {
+				cnNames.push(n.trim());
+			} else {
+				enNames.push(n.trim());
+			}
+		});
+		return [cnNames.join(" "), enNames.join(" ")];
 	}
 }

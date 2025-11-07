@@ -78,7 +78,7 @@ export class ConverterItem extends ConverterBase {
 
 			// name of item
 			if (i === 0) {
-				item.name = this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase);
+				[item.name, item.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
 				continue;
 			}
 
@@ -163,19 +163,20 @@ export class ConverterItem extends ConverterBase {
 		const handlePartRarity = (rarity) => {
 			rarity = rarity.trim().toLowerCase();
 			switch (rarity) {
-				case "common": stats.rarity = rarity; return true;
-				case "uncommon": stats.rarity = rarity; return true;
-				case "rare": stats.rarity = rarity; return true;
-				case "very rare": stats.rarity = rarity; return true;
-				case "legendary": stats.rarity = rarity; return true;
-				case "artifact": stats.rarity = rarity; return true;
-				case "varies":
-				case "rarity varies": {
+				case "普通": case "common": stats.rarity = rarity; return true;
+				case "非普通": case "uncommon": stats.rarity = rarity; return true;
+				case "珍稀": case "rare": stats.rarity = rarity; return true;
+				case "极珍稀": case "very rare": stats.rarity = rarity; return true;
+				case "传说": case "legendary": stats.rarity = rarity; return true;
+				case "神器": case "artifact": stats.rarity = rarity; return true;
+				case "多种": case "varies":
+				case "多种稀有度": case "rarity varies": {
 					stats.rarity = "varies";
 					stats.__prop = "itemGroup";
 					return true;
 				}
-				case "unknown rarity": {
+				case "未知":
+				case "未知稀有度": case "unknown rarity": {
 					// Make a best-guess as to whether or not the item is magical
 					if (stats.wondrous || stats.staff) stats.rarity = "unknown (magic)";
 					if (
@@ -203,16 +204,16 @@ export class ConverterItem extends ConverterBase {
 
 			// region wondrous/item type/staff/etc.
 			switch (partLower) {
-				case "wondrous item": stats.wondrous = true; continue;
-				case "wondrous item (tattoo)": stats.wondrous = true; stats.tattoo = true; continue;
-				case "staff": stats.staff = true; continue;
-				case "potion": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_POTION : Parser.ITM_TYP__POTION; continue;
-				case "ammunition": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_AMMUNITION : Parser.ITM_TYP__AMMUNITION; continue;
-				case "ring": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_RING : Parser.ITM_TYP__RING; continue;
-				case "rod": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_ROD : Parser.ITM_TYP__ROD; continue;
-				case "wand": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_WAND : Parser.ITM_TYP__WAND; continue;
-				case "scroll": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_SCROLL : Parser.ITM_TYP__SCROLL; continue;
-				case "adventuring gear": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_ADVENTURING_GEAR : Parser.ITM_TYP__ADVENTURING_GEAR; continue;
+				case "奇物": case "wondrous item": stats.wondrous = true; continue;
+				case "奇物(纹身)": case "wondrous item (tattoo)": stats.wondrous = true; stats.tattoo = true; continue;
+				case "法杖": case "staff": stats.staff = true; continue;
+				case "药水": case "potion": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_POTION : Parser.ITM_TYP__POTION; continue;
+				case "子弹": case "弹药": case "ammunition": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_AMMUNITION : Parser.ITM_TYP__AMMUNITION; continue;
+				case "戒指": case "指环": case "ring": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_RING : Parser.ITM_TYP__RING; continue;
+				case "权杖": case "rod": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_ROD : Parser.ITM_TYP__ROD; continue;
+				case "魔杖": case "wand": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_WAND : Parser.ITM_TYP__WAND; continue;
+				case "法术卷轴": case "卷轴": case "scroll": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_SCROLL : Parser.ITM_TYP__SCROLL; continue;
+				case "冒险装备": case "adventuring gear": stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_ADVENTURING_GEAR : Parser.ITM_TYP__ADVENTURING_GEAR; continue;
 			}
 			// endregion
 
@@ -221,15 +222,15 @@ export class ConverterItem extends ConverterBase {
 			const isHandledRarity = handlePartRarity(partLower);
 			if (isHandledRarity) continue;
 
-			if (partLower.includes("(requires attunement")) {
-				const [rarityRaw, ...rest] = part.split("(");
+			if (/[(（]\s?(?:requires attunement|.*需.*同调)/i.test(partLower)) {
+				const [rarityRaw, ...rest] = part.split(/[(（]/);
 				const rarity = rarityRaw.trim().toLowerCase();
 
 				const isHandledRarity = rarity ? handlePartRarity(rarity) : true;
-				if (!isHandledRarity) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Rarity "${rarityRaw}" requires manual conversion`);
+				if (!isHandledRarity) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}稀有度 "${rarityRaw}" 无法自动转换`);
 
 				let attunement = rest.join("(");
-				attunement = attunement.replace(/^requires attunement/i, "").replace(/\)/, "").trim();
+				attunement = attunement.replace(/^(requires attunement|需要?同调)/i, "").replace(/[)）]/, "").trim();
 				if (!attunement) {
 					stats.reqAttune = true;
 				} else {
@@ -237,18 +238,18 @@ export class ConverterItem extends ConverterBase {
 				}
 
 				// if specific attunement is required, absorb any further parts which are class names
-				if (/(^| )by a /i.test(stats.reqAttune)) {
+				if (/(^| )by a /i.test(stats.reqAttune) || /(^| )需要?由?.*同调/i.test(stats.reqAttune)) {
 					for (let ii = i + 1; ii < parts.length; ++ii) {
 						const nxtPart = parts[ii]
 							.trim()
-							.replace(/^(?:or|and) /, "")
+							.replace(/^(?:or|and|或|和|与)\s?/, "")
 							.trim()
-							.replace(/\)$/, "")
+							.replace(/[)）]$/, "")
 							.trim()
 							.toLowerCase();
 						const isClassName = ConverterItem._ALL_CLASSES.some(cls => cls.name.toLowerCase() === nxtPart);
 						if (isClassName) {
-							stats.reqAttune += `, ${parts[ii].replace(/\)$/, "")}`;
+							stats.reqAttune += `, ${parts[ii].replace(/[)）]$/, "")}`;
 							i = ii;
 						}
 					}
@@ -262,18 +263,18 @@ export class ConverterItem extends ConverterBase {
 			const isGenericWeaponArmor = this._setCleanTaglineInfo_mutIsGenericWeaponArmor({stats, part, partLower, options});
 			if (isGenericWeaponArmor) continue;
 
-			const mBaseWeapon = /^(?<ptPre>weapon|staff|rod) \((?<ptParens>[^)]+)\)$/i.exec(part);
+			const mBaseWeapon = /^(?<ptPre>weapon|staff|rod|武器|法杖|权杖)\s?[(（](?<ptParens>[^)）]+)[)）]$/i.exec(part);
 			if (mBaseWeapon) {
-				if (mBaseWeapon.groups.ptPre.toLowerCase() === "staff") stats.staff = true;
-				if (mBaseWeapon.groups.ptPre.toLowerCase() === "rod") {
+				if (mBaseWeapon.groups.ptPre.toLowerCase() === "staff" || mBaseWeapon.groups.ptPre.toLowerCase() === "法杖") stats.staff = true;
+				if (mBaseWeapon.groups.ptPre.toLowerCase() === "rod" || mBaseWeapon.groups.ptPre.toLowerCase() === "权杖") {
 					if (stats.type) {
-						throw new Error(`Multiple types! "${stats.type}" -> "${mBaseWeapon.groups.ptParens}"`);
+						throw new Error(`多个类型！ "${stats.type}" -> "${mBaseWeapon.groups.ptParens}"`);
 					}
 					stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_ROD : Parser.ITM_TYP__ROD;
 				}
 
 				const ptsParens = ConverterUtils.splitConjunct(mBaseWeapon.groups.ptParens);
-				const ptsParensNoAny = ptsParens.map(pt => pt.replace(/^any /i, ""));
+				const ptsParensNoAny = ptsParens.map(pt => pt.replace(/^any /i, "").replace(/^任意/i, ""));
 
 				if (
 					ptsParensNoAny.every(pt => this._GENERIC_REQUIRES_LOOKUP_WEAPON_CATEGORY[pt.toLowerCase()])
@@ -289,14 +290,14 @@ export class ConverterItem extends ConverterBase {
 				}
 
 				const baseItems = ptsParens.map(pt => ConverterItem.getItem(pt, {styleHint: options.styleHint}));
-				if (baseItems.some(it => it == null) || !baseItems.length) throw new Error(`Could not find base item(s) for "${mBaseWeapon.groups.ptParens}"`);
+				if (baseItems.some(it => it == null) || !baseItems.length) throw new Error(`无法找到"${mBaseWeapon.groups.ptParens}"的基础物品`);
 
 				if (baseItems.length === 1) {
 					baseItem = baseItems[0];
 					continue;
 				}
 
-				if (options.styleHint === SITE_STYLE__CLASSIC) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Multiple base item(s) for "${mBaseWeapon.groups.ptParens}"`);
+				if (options.styleHint === SITE_STYLE__CLASSIC) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}由多个基础物品"${mBaseWeapon.groups.ptParens}"`);
 
 				// e.g. XDMG items have broken down "any sword" into a specific list of items
 				(stats.requires ||= [])
@@ -305,7 +306,7 @@ export class ConverterItem extends ConverterBase {
 				continue;
 			}
 
-			const mBaseArmor = /^armou?r \((?<type>[^)]+)\)$/i.exec(part);
+			const mBaseArmor = /^(?:armou?r |护甲\s?)[(（](?<type>[^)）]+)[)）]$/i.exec(part);
 			if (mBaseArmor) {
 				if (this._setCleanTaglineInfo_isMutAnyArmor({stats, mBaseArmor, options})) {
 					stats.__genericType = true;
@@ -314,10 +315,10 @@ export class ConverterItem extends ConverterBase {
 
 				const ptsParens = ConverterUtils.splitConjunct(mBaseArmor.groups.type);
 
-				const ptsParensClean = ptsParens.map(pt => pt.replace(/ armor$/i, ""));
+				const ptsParensClean = ptsParens.map(pt => pt.replace(/(?: armor|甲)$/i, ""));
 
-				const [ptsInclude, ptsExclude] = ptsParensClean.segregate(pt => !/^\bbut not\b/i.test(pt))
-					.map((arr, i) => !i ? arr : arr.map(pt => pt.replace(/^\bbut not\b/i, "").trim()));
+				const [ptsInclude, ptsExclude] = ptsParensClean.segregate(pt => !/^(?:\bbut not\b|除了?)/i.test(pt))
+					.map((arr, i) => !i ? arr : arr.map(pt => pt.replace(/^(?:\bbut not\b|除了?)/i, "").trim()));
 
 				if (
 					ptsParensClean.length > 1
@@ -340,13 +341,13 @@ export class ConverterItem extends ConverterBase {
 				}
 
 				baseItem = this._setCleanTaglineInfo_getArmorBaseItem(mBaseArmor.groups.type, options);
-				if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor.groups.type}"`);
+				if (!baseItem) throw new Error(`无法找到基础物品"${mBaseArmor.groups.type}"`);
 				continue;
 			}
 			// endregion
 
 			// Warn about any unprocessed input
-			options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Tagline part "${part}" requires manual conversion`);
+			options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}标签部分"${part}"无法自动转换`);
 		}
 
 		this._setCleanTaglineInfo_handleBaseItem(stats, baseItem, options);
@@ -355,22 +356,25 @@ export class ConverterItem extends ConverterBase {
 	static _GENERIC_CATEGORY_TO_PROP = {
 		"sword": "sword",
 		"polearm": "polearm",
+
+		"剑": "sword",
+		"戟": "polearm",
 	};
 
 	static _setCleanTaglineInfo_mutIsGenericWeaponArmor ({stats, part, partLower, options}) {
-		if (partLower === "weapon" || partLower === "weapon (any)") {
+		if (partLower === "weapon" || partLower === "weapon (any)" || /^武器\s?([(（]任意[)）])?$/.test(partLower)) {
 			(stats.requires ||= []).push(...this._setCleanTaglineInfo_getGenericRequires({stats, str: "weapon", options}));
 			stats.__genericType = true;
 			return true;
 		}
 
-		if (/^armou?r(?: \(any\))?$/.test(partLower)) {
+		if (/^armou?r(?: \(any\))?$/.test(partLower) || /^护甲\s?([(（]任意[)）])?$/.test(partLower)) {
 			(stats.requires ||= []).push(...this._setCleanTaglineInfo_getGenericRequires({stats, str: "armor", options}));
 			stats.__genericType = true;
 			return true;
 		}
 
-		const mWeaponAnyX = /^weapon \(any (?<ptParens>[^)]+)\)$/i.exec(part);
+		const mWeaponAnyX = /^weapon \(any (?<ptParens>[^)]+)\)$/i.exec(part) || /^武器\s?[(（]任意\s?(?<ptParens>[^)]+)[)）]$/i.exec(part);
 		if (mWeaponAnyX) {
 			const ptsAny = ConverterUtils.splitConjunct(mWeaponAnyX.groups.ptParens);
 			// e.g. "any ammunition or melee weapon"
@@ -378,13 +382,13 @@ export class ConverterItem extends ConverterBase {
 
 			(stats.requires ||= []).push(...this._setCleanTaglineInfo_getGenericRequires({stats, str: mWeaponAnyX.groups.ptParens.trim(), options}));
 
-			if (mWeaponAnyX[1].trim().toLowerCase() === "ammunition") stats.ammo = true;
+			if (mWeaponAnyX[1].trim().toLowerCase() === "ammunition" || mWeaponAnyX[1].trim() === "弹药") stats.ammo = true;
 
 			stats.__genericType = true;
 			return true;
 		}
 
-		const mWeaponCategory = /^weapon \((?<category>[^)]+)\)$/i.exec(part);
+		const mWeaponCategory = /^weapon \((?<category>[^)]+)\)$/i.exec(part) || /^武器\s?[(（](?<category>[^)）]+)[)）]$/i.exec(part);
 		if (!mWeaponCategory) return false;
 
 		const ptsCategory = ConverterUtils.splitConjunct(mWeaponCategory.groups.category);
@@ -402,23 +406,30 @@ export class ConverterItem extends ConverterBase {
 	static _setCleanTaglineInfo_getArmorBaseItem (name, options) {
 		let baseItem = ConverterItem.getItem(name, {styleHint: options.styleHint});
 		if (!baseItem) baseItem = ConverterItem.getItem(`${name} armor`, {styleHint: options.styleHint}); // "armor (plate)" -> "plate armor"
+		if (!baseItem) baseItem = ConverterItem.getItem(`${name}甲`, {styleHint: options.styleHint}); // "armor (plate)" -> "plate armor"
 		return baseItem;
 	}
 
 	static _setCleanTaglineInfo_getProcArmorPart ({pt, options}) {
 		switch (pt) {
 			case "light":
+			case "轻":
 			case "light armor":
+			case "轻甲":
 				return {"type": options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR};
 			case "medium":
+			case "中":
 			case "medium armor":
+			case "中甲":
 				return {"type": options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MEDIUM_ARMOR : Parser.ITM_TYP__MEDIUM_ARMOR};
 			case "heavy":
+			case "重":
 			case "heavy armor":
+			case "重甲":
 				return {"type": options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_HEAVY_ARMOR : Parser.ITM_TYP__HEAVY_ARMOR};
 			default: {
 				const baseItem = this._setCleanTaglineInfo_getArmorBaseItem(pt, options);
-				if (!baseItem) throw new Error(`Could not find base item "${pt}"`);
+				if (!baseItem) throw new Error(`无法找到基础物品"${pt}"`);
 
 				return {name: baseItem.name};
 			}
@@ -426,10 +437,10 @@ export class ConverterItem extends ConverterBase {
 	}
 
 	static _setCleanTaglineInfo_isMutAnyArmor ({stats, mBaseArmor, options}) {
-		if (/^any /i.test(mBaseArmor.groups.type)) {
-			const ptAny = mBaseArmor.groups.type.replace(/^any /i, "");
+		if (/^any /i.test(mBaseArmor.groups.type) || /^任意/i.test(mBaseArmor.groups.type)) {
+			const ptAny = mBaseArmor.groups.type.replace(/^any /i, "").replace(/^任意/i, "");
 
-			if (/^armor$/.test(ptAny)) {
+			if (/^(armor|护甲)$/.test(ptAny)) {
 				(stats.requires ||= [])
 					.push(...[
 						{"type": options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR},
@@ -439,19 +450,19 @@ export class ConverterItem extends ConverterBase {
 				return true;
 			}
 
-			const [ptInclude, ptExclude] = ptAny.split(/(?:, )?\b(?:except|but not)\b/i).map(it => it.trim()).filter(Boolean);
+			const [ptInclude, ptExclude] = ptAny.split(/(?:,， )?\b(?:except\b|but not\b|除了)/i).map(it => it.trim()).filter(Boolean);
 
 			if (ptInclude) {
 				stats.requires = [
 					...(stats.requires || []),
-					...ptInclude.split(/\bor\b|,/g).map(it => it.trim()).filter(Boolean).map(it => this._setCleanTaglineInfo_getProcArmorPart({pt: it, options})),
+					...ptInclude.split(/\bor\b|,|，|或|和/g).map(it => it.trim()).filter(Boolean).map(it => this._setCleanTaglineInfo_getProcArmorPart({pt: it, options})),
 				];
 			}
 
 			if (ptExclude) {
 				Object.assign(
 					stats.excludes = stats.excludes || {},
-					ptExclude.split(/\bor\b|,/g).map(it => it.trim()).filter(Boolean).mergeMap(it => this._setCleanTaglineInfo_getProcArmorPart({pt: it, options})),
+					ptExclude.split(/\bor\b|,|，|或|和/g).map(it => it.trim()).filter(Boolean).mergeMap(it => this._setCleanTaglineInfo_getProcArmorPart({pt: it, options})),
 				);
 			}
 
@@ -461,7 +472,7 @@ export class ConverterItem extends ConverterBase {
 		const ptsType = ConverterUtils.splitConjunct(mBaseArmor.groups.type);
 
 		if (!ptsType
-			.every(ptType => /^(?:light|medium|heavy)$/i.test(ptType))
+			.every(ptType => /^(?:light|medium|heavy|轻|中|重)$/i.test(ptType))
 		) return false;
 		ptsType
 			.forEach(ptType => {
@@ -518,27 +529,61 @@ export class ConverterItem extends ConverterBase {
 
 		"arrow": [{"arrow": true}],
 		"bolt": [{"bolt": true}],
+
+		"武器": [{"weapon": true}],
+		"剑": [{"sword": true}],
+		"斧": [{"axe": true}],
+		"斧子": [{"axe": true}],
+		"弓": [{"bow": true}],
+		"弩": [{"crossbow": true}],
+		"十字弩": [{"crossbow": true}],
+		"矛": [{"spear": true}],
+		"戟": [{"polearm": true}],
+		"匕": [{"dagger": true}],
+		"匕首": [{"dagger": true}],
+		"刺剑": [{"rapier": true}],
+		"短棒": [{"club": true}],
+		"锤子": [{"hammer": true}],
+		"硬头锤": [{"mace": true}],
+		"法杖": [{"staff": true}],
+
+		"箭": [{"arrow": true}],
+		"箭矢": [{"arrow": true}],
+		"弩失": [{"bolt": true}],
 	};
 
 	static _GENERIC_REQUIRES_LOOKUP_WEAPON_CATEGORY = {
 		"ammunition": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_AMMUNITION : Parser.ITM_TYP__AMMUNITION}, {"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_AMMUNITION_FUTURISTIC : Parser.ITM_TYP__AMMUNITION_FUTURISTIC}],
+		"弹药": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_AMMUNITION : Parser.ITM_TYP__AMMUNITION}, {"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_AMMUNITION_FUTURISTIC : Parser.ITM_TYP__AMMUNITION_FUTURISTIC}],
 
 		"melee": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON}],
+		"近战": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON}],
 		"melee weapon": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON}],
+		"近战武器": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON}],
 
 		"simple": [{"weaponCategory": "simple"}],
+		"简易": [{"weaponCategory": "simple"}],
 		"simple weapon": [{"weaponCategory": "simple"}],
+		"简易武器": [{"weaponCategory": "simple"}],
 		"martial": [{"weaponCategory": "martial"}],
+		"军用": [{"weaponCategory": "martial"}],
 		"martial weapon": [{"weaponCategory": "martial"}],
+		"军用武器": [{"weaponCategory": "martial"}],
 
 		"simple melee weapon": ({styleHint}) => [{"weaponCategory": "simple", "type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON}],
-
+		"简易近战武器": ({styleHint}) => [{"weaponCategory": "simple", "type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON}],
 		"bludgeoning": [{"dmgType": "B"}],
+		"钝击": [{"dmgType": "B"}],
+
 		"weapon that deals bludgeoning damage": [{"dmgType": "B"}],
+		"造成钝击伤害的武器": [{"dmgType": "B"}],
 		"piercing": [{"dmgType": "P"}],
+		"穿刺": [{"dmgType": "P"}],
 		"slashing": [{"dmgType": "S"}],
+		"挥砍": [{"dmgType": "S"}],
 
 		"melee bludgeoning weapon": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON, "dmgType": "B"}],
+		"近战钝击武器": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON, "dmgType": "B"}],
 	};
 
 	static _GENERIC_REQUIRES_LOOKUP_WEAPON = {
@@ -568,18 +613,26 @@ export class ConverterItem extends ConverterBase {
 
 	static _GENERIC_REQUIRES_LOOKUP_ARMOR = {
 		"light": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR}],
+		"轻型": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR}],
 		"medium": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MEDIUM_ARMOR : Parser.ITM_TYP__MEDIUM_ARMOR}],
+		"中型": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MEDIUM_ARMOR : Parser.ITM_TYP__MEDIUM_ARMOR}],
 		"heavy": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_HEAVY_ARMOR : Parser.ITM_TYP__HEAVY_ARMOR}],
+		"重型": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_HEAVY_ARMOR : Parser.ITM_TYP__HEAVY_ARMOR}],
 
 		"hide": ({styleHint}) => [{"name": "Hide Armor", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"兽皮甲": ({styleHint}) => [{"name": "兽皮甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"half plate": ({styleHint}) => [{"name": "Half Plate Armor", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"半身板甲": ({styleHint}) => [{"name": "半身板甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"plate": ({styleHint}) => [{"name": "Plate Armor", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"板甲": ({styleHint}) => [{"name": "板甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"chain mail": ({styleHint}) => [{"name": "Chain Mail", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
-		"chain shirt": ({styleHint}) => [{"name": "Chain Shirt", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"链甲": ({styleHint}) => [{"name": "链甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"链甲衫": ({styleHint}) => [{"name": "链甲衫", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 	};
 
 	static _GENERIC_EXCLUDES_LOOKUP_ARMOR = {
 		"hide": {"name": "Hide Armor"},
+		"兽皮甲": {"name": "兽皮甲"},
 	};
 
 	static _setCleanTaglineInfo_getGenericRequires ({stats, str, options}) {
@@ -591,7 +644,7 @@ export class ConverterItem extends ConverterBase {
 		const lookupArmor = this._GENERIC_REQUIRES_LOOKUP_ARMOR[strLookup];
 		if (lookupArmor) return typeof lookupArmor === "function" ? lookupArmor({styleHint: options.styleHint}) : MiscUtil.copyFast(lookupArmor);
 
-		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Tagline part "${str}" requires manual conversion`);
+		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}标签部分"${str}"无法自动转换`);
 		return [{[str.toCamelCase()]: true}];
 	}
 
@@ -625,8 +678,8 @@ export class ConverterItem extends ConverterBase {
 	static _setWeight (stats, options) {
 		const strEntries = JSON.stringify(stats.entries);
 
-		strEntries.replace(/weighs ([a-zA-Z0-9,]+) (pounds?|lbs?\.|tons?)/, (...m) => {
-			if (m[2].toLowerCase().trim().startsWith("ton")) throw new Error(`Handling for tonnage is unimplemented!`);
+		strEntries.replace(/weighs ([a-zA-Z0-9,]+)\s?(pounds?|lbs?\.|tons?|磅)/, (...m) => {
+			if (/^(?:ton|吨)/.test(m[2].toLowerCase().trim())) throw new Error(`不支持处理单位 吨！`);
 
 			const noCommas = m[1].replace(/,/g, "");
 			if (!isNaN(noCommas)) stats.weight = Number(noCommas);
@@ -634,12 +687,12 @@ export class ConverterItem extends ConverterBase {
 			const fromText = Parser.textToNumber(m[1]);
 			if (!isNaN(fromText)) stats.weight = fromText;
 
-			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Weight "${m[1]}" requires manual conversion`);
+			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}重量 "${m[1]}" 无法自动转换`);
 		});
 	}
 
 	static _setQuarterstaffStats (stats, options) {
-		const cpyStatsQuarterstaff = MiscUtil.copy(ConverterItem._ALL_ITEMS.find(it => it.name === "Quarterstaff" && it.source === (options.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_PHB : Parser.SRC_XPHB)));
+		const cpyStatsQuarterstaff = MiscUtil.copy(ConverterItem._ALL_ITEMS.find(it => (it.name === "Quarterstaff" || it.name === "长棍") && it.source === (options.styleHint === SITE_STYLE__CLASSIC ? Parser.SRC_PHB : Parser.SRC_XPHB)));
 
 		// remove unwanted properties
 		delete cpyStatsQuarterstaff.name;

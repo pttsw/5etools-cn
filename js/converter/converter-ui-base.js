@@ -280,11 +280,11 @@ export class ConverterUiBase extends BaseComponent {
 
 		ee`<div class="w-100 mb-2 split-v-center"><div class="sidemenu__row__label mr-2">来源</div>${selSource}</div>`.appendTo(wrpSidebar);
 
-		const btnSourceEdit = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Edit Selected</button>`
+		const btnSourceEdit = ee`<button class="ve-btn ve-btn-default ve-btn-xs">编辑当前来源</button>`
 			.onn("click", () => {
 				const curSourceJson = this._state.source;
 				if (!curSourceJson) {
-					JqueryUtil.doToast({type: "warning", content: "No source selected!"});
+					JqueryUtil.doToast({type: "warning", content: "未选择来源！"});
 					return;
 				}
 

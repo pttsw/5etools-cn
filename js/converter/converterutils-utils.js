@@ -1,5 +1,5 @@
 export class ConverterUtils {
-	static _RE_SPLIT_CONJUNCT = /(?:,? (?:and|or) |, )/gi;
+	static _RE_SPLIT_CONJUNCT = /(?:,? (?:and|or) |, |和|或|，)/gi;
 
 	static splitConjunct (str) {
 		return str
