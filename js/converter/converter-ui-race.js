@@ -8,7 +8,7 @@ export class RaceConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Species",
+				name: "种族",
 				converterId: "race",
 				canSaveLocal: true,
 				modes: ["txt", "md"],

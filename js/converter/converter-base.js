@@ -34,7 +34,7 @@ export class ConverterBase {
 
 		iptClean = CleanUtil.getCleanString(iptClean, {isFast: false})
 			// Ensure CR always has a space before the dash
-			.replace(/(Challenge)([-\u2012-\u2014\u2212])/, "$1 $2");
+			.replace(/(Challenge|挑战等级)([-\u2012-\u2014\u2212])/, "$1 $2");
 
 		// Connect together words which are divided over two lines
 		iptClean = iptClean
@@ -47,14 +47,23 @@ export class ConverterBase {
 
 		iptClean = this._getCleanInput_quotes(iptClean, `"`, `"`);
 
+		iptClean = this._getCleanInput_parens(iptClean, "（", "）");
+		iptClean = this._getCleanInput_parens(iptClean, "【", "】");
+		iptClean = this._getCleanInput_quotes(iptClean, "“", "”");
+		iptClean = this._getCleanInput_quotes(iptClean, "《", "》");
+
 		// Connect lines ending in, or starting in, a comma
 		iptClean = iptClean
 			.replace(/, *\n */g, ", ")
-			.replace(/ *\n, */g, ", ");
+			.replace(/ *\n, */g, ", ")
+			.replace(/， *\n */g, "，")
+			.replace(/ *\n， */g, "，");
 
 		iptClean = iptClean
 			// Connect together e.g. `5d10\nForce damage`
 			.replace(new RegExp(`(?<start>\\d+) *\\n(?<end>${ConverterConst.STR_RE_DAMAGE_TYPE} damage)\\b`, "gi"), (...m) => `${m.last().start} ${m.last().end}`)
+			// 拼接如： `5d10\n力场伤害`
+			.replace(new RegExp(`(?<start>\\d+) *\\n(?<end>${ConverterConst.STR_RE_DAMAGE_TYPE}伤害)`, "gi"), (...m) => `${m.last().start} ${m.last().end}`)
 			// Connect together likely determiners/conjunctions/etc.
 			.replace(new RegExp(`\\s+${this._RE_PT_APPROX_GENERIC_JOINER}\\n`, "g"), (...m) => m[0].replace(this._RE_WHITESPACE, " "))
 			.replace(new RegExp(`\\n${this._RE_PT_APPROX_GENERIC_JOINER}\\s+`, "g"), (...m) => m[0].replace(this._RE_WHITESPACE, " "))

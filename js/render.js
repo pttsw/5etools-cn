@@ -2585,7 +2585,7 @@ Renderer.ENTRIES_WITH_CHILDREN = [
 	{type: "table", key: "rows"},
 ];
 
-Renderer._INLINE_HEADER_TERMINATORS = new Set([".", ",", "!", "?", ";", ":", `"`]);
+Renderer._INLINE_HEADER_TERMINATORS = new Set([".", ",", "!", "?", ";", ":", `"`,"。", "，", "！", "？", "：","”"]);
 
 Renderer._STYLE_TAG_ID_TO_STYLE = {
 	"small-caps": "small-caps",

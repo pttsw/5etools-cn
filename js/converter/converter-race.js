@@ -27,6 +27,8 @@ export class ConverterRace extends ConverterFeatureBase {
 			.filter(line => {
 				if (/[yY]ou have the following traits[.:]$/.test(line)) return false;
 				if (/As [^.]+, you have (?:these|the following) special traits[.:]$/.test(line)) return false;
+				if (/你获得[以如]下特[质性][.:。：]$/.test(line)) return false;
+				if (/作为[^.]+[,，] ?你(?:获得|拥有|有)[以如]下[^.]*特[质性][.:。：]$/.test(line)) return false;
 				return true;
 			});
 
@@ -79,14 +81,15 @@ export class ConverterRace extends ConverterFeatureBase {
 	}
 
 	static _doParseText_stepName (state) {
-		const name = state.curLine.replace(/ Traits$/i, "");
-		state.entity.name = this._getAsTitle("name", name, state.options.titleCaseFields, state.options.isTitleCase);
-
+		const name = state.curLine.replace(/( Traits|特[质性])$/i, "");
+		[state.entity.name, state.entity.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
+		state.entity.name = state.entity.name.replace(/( Traits|特[质性])$/i, "");
+		state.entity.ENG_name = state.entity.ENG_name.replace(/( Traits|特[质性])$/i, "");
 		// region Skip repeated name line
 		const nextLineMeta = state.getNextLineMeta();
 
 		if (
-			new RegExp(`^${name.escapeRegexp()} Traits$`).test(nextLineMeta.nxtLine.trim())
+			new RegExp(`^${name.escapeRegexp()} (?:Traits|特[质性])$`).test(nextLineMeta.nxtLine.trim())
 		) {
 			state.ixToConvert = nextLineMeta.ixToConvertNext;
 		}
@@ -264,12 +267,12 @@ export class ConverterRace extends ConverterFeatureBase {
 	}
 
 	static _doRacePostProcess_size (race, options) {
-		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^Size:?$/i}) || {};
-		if (entry?.entries?.length !== 1) return options.cbWarning(`Could not convert size\u2014no valid "Size" entry found!`);
+		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^(?:Size|体型)[:：]?$/i}) || {};
+		if (entry?.entries?.length !== 1) return options.cbWarning(`无法转换体型\u2014未找到 "体型" 属性！`);
 
 		const text = entry.entries[0];
 
-		const mOnlySize = /^(?<size>Medium|Small|Tiny)\.?$/.exec(text);
+		const mOnlySize = /^(?<size>Medium|Small|Tiny|中型|小型|微型)\.?$/.exec(text);
 		if (mOnlySize) {
 			race.size = [
 				mOnlySize.groups.size.toUpperCase()[0],
@@ -283,7 +286,8 @@ export class ConverterRace extends ConverterFeatureBase {
 		}
 
 		const mSimple = /\b(?:You are|Your size is) (?<size>Medium|Small|Tiny)\.?$/.exec(text)
-			|| /, (?:you are|your size is) (?<size>Medium|Small|Tiny)\.?$/.exec(text);
+			|| /, (?:you are|your size is) (?<size>Medium|Small|Tiny)\.?$/.exec(text)
+			|| /你(的体型)?[是为](?<size>Medium|Small|Tiny|中型|小型|微型)\.?$/.exec(text);
 		if (mSimple) {
 			race.size = [
 				mSimple.groups.size.toUpperCase()[0],
@@ -297,7 +301,7 @@ export class ConverterRace extends ConverterFeatureBase {
 		}
 
 		// "Medium (about 4–5 feet tall)"
-		const mSimpleShort = /^(?<size>Medium|Small|Tiny) \([^)]+\)$/.exec(text);
+		const mSimpleShort = /^(?<size>Medium|Small|Tiny|中型|小型|微型) *[(（][^)）]+[)）]$/.exec(text);
 		if (mSimpleShort) {
 			race.size = [
 				mSimpleShort.groups.size.toUpperCase()[0],
@@ -312,7 +316,8 @@ export class ConverterRace extends ConverterFeatureBase {
 
 		// "Choose whether you are Small or Medium sized."
 		const mChooseTwo = /\b(?:You are|Your size is) (?<size1>Medium) or (?<size2>Small)\b/.exec(text)
-			|| /\bChoose whether you are (?<size1>Small) or (?<size2>Medium) sized?\b/.exec(text);
+			|| /\bChoose whether you are (?<size1>Small) or (?<size2>Medium) sized?\b/.exec(text)
+			|| /你(的体型)?[是为](?<size1>中型)或(?<size2>小型)/.exec(text);
 		if (mChooseTwo) {
 			race.size = [
 				mChooseTwo.groups.size1.toUpperCase()[0],
@@ -329,7 +334,7 @@ export class ConverterRace extends ConverterFeatureBase {
 		}
 
 		// "Medium (about 4-7 feet tall) or Small (about 2-4 feet tall), chosen when you select this species"
-		const mChooseTwoSpecies = /^(?<size1>Medium) \([^)]+\) or (?<size2>Small) \([^)]+\)/.exec(text);
+		const mChooseTwoSpecies = /^(?<size1>Medium|中型) ?[(（][^)）]+[)）](?: or |或)(?<size2>Small|小型) ?[(（][^)）]+[)）]/i.exec(text);
 		if (mChooseTwoSpecies) {
 			race.size = [
 				mChooseTwoSpecies.groups.size1.toUpperCase()[0],
@@ -349,12 +354,13 @@ export class ConverterRace extends ConverterFeatureBase {
 	}
 
 	static _doRacePostProcess_speed (race, options) {
-		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^Speed:?$/i}) || {};
-		if (entry?.entries?.length !== 1) return options.cbWarning(`Could not convert speed\u2014no valid "Speed" entry found!`);
+		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^(?:Speed|移动速度|速度)[:：]?$/i}) || {};
+		if (entry?.entries?.length !== 1) return options.cbWarning(`无法转换移动速度\u2014未找到 "移动速度" 属性！`);
 
 		const text = entry.entries[0];
 
-		const mSimple = /Your (?:base )?(?:walking )?speed is (?<speed>\d+) feet\.?$/.exec(text);
+		const mSimple = /Your (?:base )?(?:walking )?speed is (?<speed>\d+) feet\.?$/.exec(text)
+			|| /你的?(?:基础)?(?:步行|移动)?速度[是为](?<speed>\d+)英?尺。?$/.exec(text);
 		if (mSimple) {
 			race.speed = Number(mSimple.groups.speed);
 
@@ -365,7 +371,8 @@ export class ConverterRace extends ConverterFeatureBase {
 			return;
 		}
 
-		const mSimpleShort = /^(?<speed>\d+) feet\.?$/.exec(text);
+		const mSimpleShort = /^(?<speed>\d+) feet\.?$/.exec(text)
+		|| /^(?<speed>\d+) ?英?尺。?$/.exec(text);
 		if (mSimpleShort) {
 			race.speed = Number(mSimpleShort.groups.speed);
 
@@ -376,7 +383,8 @@ export class ConverterRace extends ConverterFeatureBase {
 			return;
 		}
 
-		const mAltEqual = /Your (?:base )?walking speed is (?<speed>\d+) feet, and you have a (?<modeAlt>swim(?:ming)?|climb(?:ing)?) speed equal to your walking speed\./.exec(text);
+		const mAltEqual = /Your (?:base )?walking speed is (?<speed>\d+) feet, and you have a (?<modeAlt>swim(?:ming)?|climb(?:ing)?) speed equal to your walking speed\./.exec(text)
+			|| /你的(?:基础)?步行速度[是为] ?(?<speed>\d+) ?英?尺[,，] ?(?:同时|并且)你拥有(?:等同?于你的?步行速度|与你的?步行速度相同)的(?<modeAlt>游泳|攀爬)速度。?/.exec(text);
 		if (mAltEqual) {
 			const propAlt = this._doRacePostProcess_speed_getAltProp(mAltEqual.groups.modeAlt);
 			race.speed = {
@@ -393,7 +401,8 @@ export class ConverterRace extends ConverterFeatureBase {
 			return;
 		}
 
-		const mAltSingle = /Your (?:base )?walking speed is (?<speed>\d+) feet, and you have a (?<modeAlt>swim(?:ming)?|climb(?:ing)?) speed of (?<speedAlt>\d+) feet\./.exec(text);
+		const mAltSingle = /Your (?:base )?walking speed is (?<speed>\d+) feet, and you have a (?<modeAlt>swim(?:ming)?|climb(?:ing)?) speed of (?<speedAlt>\d+) feet\./.exec(text)
+		|| /你的(?:基础)?步行速度[是为] ?(?<speed>\d+) ?英?尺[,，] ?(?:同时|并且)?你拥有 ?(?<speedAlt>\d+) ?英?尺的(?<modeAlt>游泳|攀爬)速度。?/.exec(text);
 		if (mAltSingle) {
 			const propAlt = this._doRacePostProcess_speed_getAltProp(mAltSingle.groups.modeAlt);
 			race.speed = {
@@ -410,15 +419,17 @@ export class ConverterRace extends ConverterFeatureBase {
 			return;
 		}
 
-		options.cbWarning(`Speed text "${text}" requires manual conversion!`);
+		options.cbWarning(`速度文本 "${text}" 无法自动解析！`);
 	}
 
 	static _doRacePostProcess_speed_getAltProp (str) {
 		switch (str.toLowerCase().trim()) {
+			case "游泳":
 			case "swimming":
 			case "swim":
 				return "swim";
 
+			case "攀爬":
 			case "climbing":
 			case "climb":
 				return "climb";
@@ -439,9 +450,12 @@ export class ConverterRace extends ConverterFeatureBase {
 				entry.entries,
 				{
 					string: (str) => {
-						found = /\byou have a flying speed equal to your walking speed\b/i.test(str)
+						found = (/\byou have a flying speed equal to your walking speed\b/i.test(str)
 							&& !/\b(?:temporarily|temporary)\b/i.test(str)
-							&& !/\buntil [^.]+ ends\b/i.test(str);
+							&& !/\buntil [^.]+ ends\b/i.test(str))
+							|| (/你拥有(?:等同?于你的?步行速度|与你的?步行速度相同)的飞行速度/i.test(str)
+								&& !/临时/i.test(str)
+								&& !/直到[^.]+结束/i.test(str));
 
 						if (found) return true;
 					},
@@ -459,13 +473,13 @@ export class ConverterRace extends ConverterFeatureBase {
 		}
 	}
 
-	static _RE_CREATURE_TYPES = new RegExp(`^You are(?: an?)? (?<type>${Parser.MON_TYPES.map(it => it.uppercaseFirst()).join("|")})(?:\\.|$)`);
+	static _RE_CREATURE_TYPES = new RegExp(`^(?:You are(?: an?)? |你是(?:一个)?)(?<type>${Parser.MON_TYPES.map(it => it.uppercaseFirst()).join("|")})(?:\\.|。|$)`);
 	static _RE_CREATURE_TYPES_SHORT = new RegExp(`^(?<type>${Parser.MON_TYPES.map(it => it.uppercaseFirst()).join("|")})\\.?$`);
 	static _doRacePostProcess_creatureType (race, options) {
-		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^Creature Type:?$/i}) || {};
+		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^(?:Creature Type|生物类型)[:：]?$/i}) || {};
 		if (!entry) return; // If unspecified, defaults to humanoid
 
-		if (entry?.entries?.length !== 1) return options.cbWarning(`Could not convert creature type\u2014no valid "Creature Type" entry found!`);
+		if (entry?.entries?.length !== 1) return options.cbWarning(`无法转换生物类型文本\u2014未找到 "生物类型" 文本！`);
 
 		let text = entry.entries[0];
 
@@ -474,13 +488,13 @@ export class ConverterRace extends ConverterFeatureBase {
 			const type = mSimpleShort.groups.type.toLowerCase();
 
 			// Filter out "redundant" creature type info, as we assume "undefined" = "humanoid"
-			if (isInRoot && type === Parser.TP_HUMANOID) {
+			if (isInRoot && (type === Parser.TP_HUMANOID || type === Parser.MON_TYPE_TO_PLURAL[Parser.TP_HUMANOID])) {
 				race.entries = race.entries.filter(it => it !== entry);
 				return;
 			}
 
 			race.creatureTypes = [type];
-			entryParentList.items = entryParentList.items.filter(it => it !== entry);
+			// entryParentList.items = entryParentList.items.filter(it => it !== entry);
 
 			return;
 		}
@@ -488,7 +502,7 @@ export class ConverterRace extends ConverterFeatureBase {
 		let isSimple = true;
 		const types = [];
 		text = text
-			.replace(/^You are a Humanoid(?:\.|$)/i, () => {
+			.replace(/^(?:You are a Humanoid|你是(?:一个)?类人生物)(?:\.|。|$)/i, () => {
 				types.push(Parser.TP_HUMANOID);
 				return "";
 			})
@@ -503,11 +517,18 @@ export class ConverterRace extends ConverterFeatureBase {
 				isSimple = false;
 				return "";
 			})
+			.replace(/如果有任何[前提|先决条件]或效[果应]需要你作为(?:一个)?(?<tag>.+)[,，]你也被视[作为]\k<tag>[.。]/, (...m) => {
+				race.creatureTypeTags = [m.last().tag.toLowerCase()];
+				isSimple = false;
+				return "";
+			})
 		;
 
 		// Filter out "redundant" creature type info, as we assume "undefined" = "humanoid"
 		if (isInRoot) {
-			if (types.length === 1 && types[0] === Parser.TP_HUMANOID && !race.creatureTypeTags?.length) {
+			if (types.length === 1
+				&& (types[0] === Parser.TP_HUMANOID || types[0] === Parser.MON_TYPE_TO_PLURAL[Parser.TP_HUMANOID])
+				&& !race.creatureTypeTags?.length) {
 				race.entries = race.entries.filter(it => it !== entry);
 			}
 		} else {
@@ -520,12 +541,12 @@ export class ConverterRace extends ConverterFeatureBase {
 		}
 
 		if (text) {
-			options.cbWarning(`Creature Type "${text}" requires manual conversion!`);
+			options.cbWarning(`生物类型 "${text}" 无法自动转换！`);
 		}
 	}
 
 	static _doRacePostProcess_darkvision (race, options) {
-		const {entry} = this._getNamedEntry({race, reName: /^Darkvision:?$/i}) || {};
+		const {entry} = this._getNamedEntry({race, reName: /^(?:Darkvision|黑暗视觉)[:：]?$/i}) || {};
 		if (!entry?.entries?.length) return;
 
 		const walker = MiscUtil.getWalker({isNoModification: true, isBreakOnReturn: true});
@@ -535,14 +556,17 @@ export class ConverterRace extends ConverterFeatureBase {
 				string: (str) => {
 					const stStripped = Renderer.stripTags(str);
 
-					const mDarkvision = /\bsee [^.]+ dim light [^.]+ (?<radius>\d+) feet [^.]+ bright light/i.exec(stStripped);
+					const mDarkvision = /\bsee [^.]+ dim light [^.]+ (?<radius>\d+) feet [^.]+ bright light/i.exec(stStripped)
+					|| /在?(?:昏暗|微光)(?:环境|照明|光照|条件)[下中里][,，]?你(?:可以|能)[在将]你(?:周围)? ?(?<radius>\d+) ?英?尺(?:范围)?内的区域(?:视为|当做)明亮光照/i.exec(stStripped);
 					if (mDarkvision) {
 						race.darkvision = Number(mDarkvision.groups.radius);
 						return true;
 					}
 
 					const mDarkvisionShort = /You have Darkvision with a range of (?<radius>\d+) feet/i.exec(stStripped)
-						|| /You have (?<radius>\d+) feet of Darkvision/i.exec(stStripped);
+						|| /You have (?<radius>\d+) feet of Darkvision/i.exec(stStripped)
+						|| /你的黑暗视觉(?:能力)?提升至 ?(?<radius>\d+) ?英?尺/i.exec(stStripped)
+						|| /你(?:拥有|获得) ?(?<radius>\d+) ?英?尺的黑暗视觉(?:能力)?/i.exec(stStripped);
 					if (mDarkvisionShort) {
 						race.darkvision = Number(mDarkvisionShort.groups.radius);
 						return true;

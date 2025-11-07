@@ -6,7 +6,7 @@ import {ConverterUtils} from "./converterutils-utils.js";
 export class ConverterFeatureBase extends ConverterBase {
 	static _doParse_getInitialState (inText, options) {
 		if (!inText || !inText.trim()) {
-			options.cbWarning("No input!");
+			options.cbWarning("没有输入！");
 			return {};
 		}
 
