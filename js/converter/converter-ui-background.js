@@ -8,7 +8,7 @@ export class BackgroundConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Background",
+				name: "背景",
 				converterId: "background",
 				canSaveLocal: true,
 				modes: ["txt"],

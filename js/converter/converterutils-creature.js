@@ -23,7 +23,7 @@ export class AcConvert {
 		const parts = mon.ac.trim().split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
 		parts.forEach(pt => {
 			// Use two expressions to ensure parentheses are paired
-			const mAc = /^(\d+)(?: \((.*?)\))?$/.exec(pt) || /^(\d+)(?: (.*?))?$/.exec(pt);
+			const mAc = /^(\d+)(?:\s?[(（](.*?)[)）])?$/.exec(pt) || /^(\d+)(?: (.*?))?$/.exec(pt);
 
 			if (!mAc) {
 				if (cbErr) cbErr(pt, `${`${mon.name} ${mon.source} p${mon.page}`.padEnd(48)} => ${pt}`);
@@ -119,8 +119,8 @@ export class AcConvert {
 			fromClean
 				.trim()
 				.toLowerCase()
-				.replace(/^\(|\)$/g, "")
-				.split(",")
+				.replace(/^[(（]|[)）]$/g, "")
+				.split(/[,，、]/)
 				.map(it => it.trim())
 				.filter(Boolean)
 				.forEach(fromLow => {
@@ -224,8 +224,8 @@ export class AcConvert {
 
 		switch (fromLow) {
 			// region unhandled/other
-			case "unarmored defense":
-			case "suave defense":
+			case "unarmored defense": case "无甲防御":
+			case "suave defense": case "潇洒防御":
 			case "armor scraps":
 			case "barding scraps":
 			case "patchwork armor":
@@ -297,8 +297,9 @@ export class AcConvert {
 			// region au naturel
 			case "natural armor":
 			case "natural armour":
+			case "天生护甲":
 			case "natural":
-				return "natural armor";
+				return "天生护甲";
 				// endregion
 
 			// region spells

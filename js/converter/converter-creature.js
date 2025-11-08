@@ -119,16 +119,16 @@ export class ConverterCreature extends ConverterBase {
 	static _RE_START_INITIATIVE = "(?:Initiative|先攻)";
 	static _RE_START_HIT_POINTS = "(?:Hit Points|HP|生命值|生命)";
 	static _RE_START_SPEED = "(?:Speed|移动速度|速度)";
-	static _RE_START_SAVING_THROWS = "(?:Saving Throw|Save)s?";
+	static _RE_START_SAVING_THROWS = "(?:Saving Throw|Save|豁免检定|豁免)s?";
 	static _RE_START_SKILLS = "(?:Skills?|技能)";
 	static _RE_START_DAMAGE_VULN = "(?:Damage |伤害)?(?:Vulnerabilit(?:y|ies)|易伤)";
 	static _RE_START_DAMAGE_RES = "(?:Damage |伤害)?(?:Resistances?|抗性)";
 	static _RE_START_DAMAGE_IMM = "(?:Damage |伤害)?(?:Immunit(?:y|ies)|免疫)";
-	static _RE_START_CONDITION_IMM = "Condition Immunit(?:y|ies)";
+	static _RE_START_CONDITION_IMM = "(?:Condition Immunit(?:y|ies)|状态免疫)";
 	static _RE_START_COMBINED_IMM = "Immunit(?:y|ies)";
 	static _RE_START_SENSES = "(?:Senses?|感官)";
 	static _RE_START_LANGUAGES = "(?:Languages?|语言)";
-	static _RE_START_CHALLENGE = "Challenge";
+	static _RE_START_CHALLENGE = "(?:Challenge|挑战(?:等级)?)";
 	static _RE_START_PROF_BONUS = "Proficiency Bonus(?: \\(PB\\))?";
 	static _RE_START_GEAR = "(?:Gear|装备)";
 
@@ -296,7 +296,7 @@ export class ConverterCreature extends ConverterBase {
 
 			// ability scores
 			if (/STR\s*DEX\s*CON\s*INT\s*WIS\s*CHA/i.test(meta.curLine)
-				|| /力量\s*感知\s*体质\s*智力\s*智慧\s*魅力/i.test(meta.curLine)) {
+				|| /力量\s*敏捷\s*体质\s*智力\s*感知\s*魅力/i.test(meta.curLine)) {
 				// skip forward a line and grab the ability scores
 				++meta.ixToConvert;
 				this._mutAbilityScoresFromSingleLine(stats, meta);
@@ -2064,7 +2064,7 @@ export class ConverterCreature extends ConverterBase {
 	}
 
 	static _mutAbilityScoresFromSingleLine (stats, meta) {
-		const abilities = meta.toConvert[meta.ixToConvert].trim().replace(/[-\u2012-\u2014\u2212]+/g, "-").split(/ ?\(([+-])?[0-9]*\) ?/g);
+		const abilities = meta.toConvert[meta.ixToConvert].trim().replace(/[-\u2012-\u2014\u2212]+/g, "-").split(/ ?[(（]([+-])?[0-9]*[)）] ?/g);
 		stats.str = this._tryConvertNumber(abilities[0]);
 		stats.dex = this._tryConvertNumber(abilities[2]);
 		stats.con = this._tryConvertNumber(abilities[4]);
@@ -2228,10 +2228,11 @@ export class ConverterCreature extends ConverterBase {
 		if (!stats.save?.trim()) return;
 
 		// convert to object format
-		const spl = stats.save.split(",").map(it => it.trim().toLowerCase()).filter(it => it);
+		const spl = stats.save.split(/[,，]/).map(it => it.trim().toLowerCase()).filter(it => it);
 		const out = {};
 		spl.forEach(it => {
-			const m = /^(?<abil>\w+)\s*(?<sign>[-+])\s*(?<save>\d+)(?<plusPb>(?:\s+plus\s+|\s*\+\s*)PB)?$/i.exec(it);
+			const m = /^(?<abil>\w+)\s*(?<sign>[-+])\s*(?<save>\d+)(?<plusPb>(?:\s+plus\s+|\s*\+\s*)PB)?$/i.exec(it)
+			|| /^(?<abil>[\u4e00-\u9fa5a-zA-Z0-9_]+)\s*(?<sign>[-+])\s*(?<save>\d+)(?<plusPb>(?:\s+plus\s+|\s*\+\s*)PB)?$/i.exec(it);
 			if (m) {
 				out[m.groups.abil.slice(0, 3)] = `${m.groups.sign}${m.groups.save}${m.groups.plusPb ? m.groups.plusPb.replace(/\bpb\b/gi, "PB") : ""}`;
 				return;
@@ -2242,7 +2243,7 @@ export class ConverterCreature extends ConverterBase {
 				return;
 			}
 
-			options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Save "${it}" requires manual conversion`);
+			options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}豁免 "${it}" 不支持自动转换。`);
 		});
 		stats.save = out;
 	}
@@ -2251,14 +2252,14 @@ export class ConverterCreature extends ConverterBase {
 		stats.skill = ConverterUtils.getStatblockLineHeaderText({reStartStr: this._RE_START_SKILLS, line}).toLowerCase();
 		const split = stats.skill.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
 
-		const reSkill = new RegExp(`^(?<skill>${Object.keys(Parser.SKILL_TO_ATB_ABV).join("|")})\\s+(?<val>.*)$`, "i");
+		const reSkill = new RegExp(`^(?<skill>${Object.keys(Parser.SKILL_TO_ATB_ABV).join("|")})\\s?(?<val>.*)$`, "i");
 
 		const newSkills = {};
 		try {
 			split.forEach(s => {
 				const m = reSkill.exec(s);
 				if (!m) {
-					options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}的"${s}"技能不支持自动转换。`);
+					options.cbWarning(`${stats.name ? `(${stats.name})的 ` : ""}技能 "${s}" 不支持自动转换。`);
 					return;
 				}
 				newSkills[m.groups.skill] = m.groups.val.replace(/\b\+?pb\b/g, "PB");

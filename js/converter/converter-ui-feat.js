@@ -8,7 +8,7 @@ export class FeatConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Feat",
+				name: "专长",
 				converterId: "feat",
 				canSaveLocal: true,
 				modes: ["txt"],

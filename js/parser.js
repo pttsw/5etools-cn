@@ -489,7 +489,7 @@ Parser.SKILL_TO_ATB_ABV = {
 	"欺瞒": "cha",
 	"威吓": "cha",
 	"表演": "cha",
-	"说服": "cha",
+	"游说": "cha",
 };
 
 Parser.skillToAbilityAbv = function (skill) {

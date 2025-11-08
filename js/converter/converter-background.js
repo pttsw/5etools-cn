@@ -62,11 +62,11 @@ export class ConverterBackground extends ConverterFeatureBase {
 		return entityOut;
 	}
 
-	static _RE_LINE_START_ABILITY_SCORES = /^Ability Scores:/;
-	static _RE_LINE_START_FEAT = /^Feat:/;
-	static _RE_LINE_START_SKILL_PROFICIENCIES = /^Skill Proficienc(?:ies|y):/;
-	static _RE_LINE_START_TOOL_PROFICIENCIES = /^Tool Proficienc(?:ies|y):/;
-	static _RE_LINE_START_EQUIPMENT = /^Equipment:/;
+	static _RE_LINE_START_ABILITY_SCORES = /^(?:Ability Scores|属性值?)[:：]/;
+	static _RE_LINE_START_FEAT = /^(?:Feat|专长)[:：]/;
+	static _RE_LINE_START_SKILL_PROFICIENCIES = /^(?:Skill Proficienc(?:ies|y)|技能熟练项?)[:：]/;
+	static _RE_LINE_START_TOOL_PROFICIENCIES = /^(?:Tool Proficienc(?:ies|y)|工具熟练项?)[:：]/;
+	static _RE_LINE_START_EQUIPMENT = /^(?:Equipment|装备)[:：]/;
 
 	static _getNextParseStep ({state}) {
 		const nxtLineMeta = state.getNextLineMeta();
@@ -82,8 +82,9 @@ export class ConverterBackground extends ConverterFeatureBase {
 	}
 
 	static _doParseText_stepName (state) {
-		const name = state.curLine.replace(/ Traits$/i, "");
-		state.entity.name = this._getAsTitle("name", name, state.options.titleCaseFields, state.options.isTitleCase);
+		[state.entity.name, state.entity.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
+		state.entity.name = state.entity.name.replace(/( Traits|特[质性])$/i, "");
+		state.entity.ENG_name = state.entity.ENG_name.replace(/( Traits|特[质性])$/i, "");
 	}
 
 	static _doParseText_stepAbilityScores (state, options) {
@@ -98,7 +99,7 @@ export class ConverterBackground extends ConverterFeatureBase {
 
 		const lookup = Object.fromEntries(Object.entries(Parser.ATB_ABV_TO_FULL).map(([abv, abil]) => [abil.toLowerCase(), abv]));
 		const abilsUnknown = tks.filter(tk => !lookup[tk]);
-		if (abilsUnknown.length) return options.cbWarning(`Could not convert ability scores\u2014unknown ability name${abilsUnknown.length === 1 ? "" : "s"} ${abilsUnknown.map(it => `"${it}"`).join(", ")}!`);
+		if (abilsUnknown.length) return options.cbWarning(`无法转换属性值\u2014未知属性名：${abilsUnknown.map(it => `"${it}"`).join(", ")}！`);
 
 		state._one_listItems.push({
 			type: "item",
@@ -119,7 +120,7 @@ export class ConverterBackground extends ConverterFeatureBase {
 
 		const tks = state.curLine
 			.replace(this._RE_LINE_START_FEAT, "")
-			.replace(/\(see [^)]+\)/g, "")
+			.replace(/[(（](?:see|见|参考) [^)）]+[)）]/g, "")
 			.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX)
 			.map(it => it.trim().toLowerCase())
 			.filter(Boolean);
@@ -220,7 +221,7 @@ export class ConverterBackground extends ConverterFeatureBase {
 	}
 
 	static _doBackgroundPostProcess_feature (background, options) {
-		const entFeature = background.entries.find(ent => ent.name?.startsWith("Feature: ") || ent.name?.startsWith("特性："));
+		const entFeature = background.entries.find(ent => /^(?:Feature|特性)[：:]/i.test(ent.name));
 		if (!entFeature) return;
 
 		(entFeature.data ||= {}).isFeature = true;

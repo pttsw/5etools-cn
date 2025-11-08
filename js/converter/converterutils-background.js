@@ -1,8 +1,8 @@
 class BackgroundConverterConst {
-	static RE_NAME_SKILLS = /^Skill Proficienc(?:ies|y):/;
-	static RE_NAME_TOOLS = /^(?:Tools?|Tool Proficienc(?:ies|y)):/;
-	static RE_NAME_LANGUAGES = /^Languages?:/;
-	static RE_NAME_EQUIPMENT = /^Equipment?:/;
+	static RE_NAME_SKILLS = /^(?:Skill Proficienc(?:ies|y)|技能熟练项?)[:：]/;
+	static RE_NAME_TOOLS = /^(?:Tools?|Tool Proficienc(?:ies|y)|工具|工具熟练项?)[:：]/;
+	static RE_NAME_LANGUAGES = /^(?:Languages?|语言)[:：]/;
+	static RE_NAME_EQUIPMENT = /^(?:Equipment?:|装备)[:：]/;
 }
 
 export class ConverterBackgroundUtil {
@@ -588,7 +588,7 @@ export class BackgroundSkillTollLanguageEquipmentCoalesce {
 		BackgroundConverterConst.RE_NAME_SKILLS,
 		BackgroundConverterConst.RE_NAME_TOOLS,
 		BackgroundConverterConst.RE_NAME_LANGUAGES,
-		/^Equipment:/,
+		BackgroundConverterConst.RE_NAME_EQUIPMENT,
 	];
 
 	static _isToCompact (ent) {
@@ -616,7 +616,8 @@ export class BackgroundSkillToolLanguageTag {
 		const skillProf = list.items.find(ent => BackgroundConverterConst.RE_NAME_SKILLS.test(ent.name));
 		if (!skillProf) return;
 
-		const mOneStaticOneChoice = /^(?<predefined>.*)\band one choice from the following:(?<choices>.*)$/i.exec(skillProf.entry);
+		const mOneStaticOneChoice = /^(?<predefined>.*)\band one choice from the following:(?<choices>.*)$/i.exec(skillProf.entry)
+		|| /^(?<predefined>.*)并从(?<choices>.*)中选择一项$/i.exec(skillProf.entry);
 		if (mOneStaticOneChoice) {
 			const predefined = {};
 			mOneStaticOneChoice.groups.predefined
@@ -646,7 +647,8 @@ export class BackgroundSkillToolLanguageTag {
 			return;
 		}
 
-		if (/^Two of the following:/.test(skillProf.entry)) {
+		if (/^Two of the following:/.test(skillProf.entry)
+			|| /^从.*中选择两项/.test(skillProf.entry)) {
 			const choices = [];
 			skillProf.entry
 				.replace(/{@skill (?<skill>[^}]+)/g, (...m) => {
@@ -666,7 +668,7 @@ export class BackgroundSkillToolLanguageTag {
 			return;
 		}
 
-		if (!/^({@skill [^}]+}(?:, | and )?)+$/.test(skillProf.entry)) return cbWarning(`(${bg.name}) Skills require manual tagging`);
+		if (!/^({@skill [^}]+}(?:, | and )?)+$/.test(skillProf.entry)) return cbWarning(`(${bg.name}) 的技能需要手动打Tag`);
 
 		bg.skillProficiencies = [
 			skillProf.entry
@@ -675,7 +677,7 @@ export class BackgroundSkillToolLanguageTag {
 				.mergeMap(str => {
 					const reTag = /^{@skill (?<skill>[^}]+)}$/.exec(str);
 					if (reTag) return {[reTag.groups.skill.toLowerCase().trim().replace(/\|xphb$/, "")]: true};
-					throw new Error(`Couldn't find tag in ${str}`);
+					throw new Error(`无法找到${str}中的技能Tag`);
 				}),
 		];
 	}

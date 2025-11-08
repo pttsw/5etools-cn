@@ -41,7 +41,7 @@ export class ConverterFeat extends ConverterFeatureBase {
 				case "category": this._doParseText_stepCategory(state, options); state.stage = "prerequisites"; break;
 				case "prerequisites": this._doParseText_stepPrerequisites(state, options); state.stage = "entries"; break;
 				case "entries": this._doParseText_stepEntries(state, options); break;
-				default: throw new Error(`Unknown stage "${state.stage}"`);
+				default: throw new Error(`无法转换的部分："${state.stage}"`);
 			}
 		}
 		state.doPostLoop();
@@ -61,11 +61,11 @@ export class ConverterFeat extends ConverterFeatureBase {
 	}
 
 	static _doParseText_stepName (state) {
-		state.entity.name = this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase);
+		[state.entity.name, state.entity.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
 	}
 
 	static _doParseText_stepCategory (state, options) {
-		const mFeatCategory = /^(?<category>General|Origin|Fighting Style|Epic Boon)(?: Feat)?/.exec(state.curLine);
+		const mFeatCategory = /^(?<category>General|Origin|Fighting Style|Epic Boon|通用|起源|战斗风格|传奇恩惠)(?: Feat|专长)?/.exec(state.curLine);
 		if (!mFeatCategory) {
 			state.ixToConvert--;
 			return;
@@ -76,36 +76,36 @@ export class ConverterFeat extends ConverterFeatureBase {
 		let remaining = state.curLine.slice(mFeatCategory[0].length).trim();
 		if (!remaining) return;
 
-		remaining = remaining.replace(/^\((.*)\)$/, "$1");
+		remaining = remaining.replace(/^[(（](.*)[)）]$/, "$1");
 
-		if (!/^prerequisite:/gi.test(remaining)) {
-			options.cbWarning(`(${state.entity.name}) Prerequisites requires manual conversion`);
+		if (!/^(?:prerequisite|先决条件)[:：]/gi.test(remaining)) {
+			options.cbWarning(`(${state.entity.name})的先决条件"${remaining}"需要手动转换`);
 			return;
 		}
 
 		(state.entity.entries ||= [])
 			.push({
-				name: "Prerequisite:",
+				name: "先决条件:",
 				entries: [
 					remaining
-						.replace(/^prerequisite:/gi, "")
+						.replace(/^(?:prerequisite|先决条件)[:：]/gi, "")
 						.trim(),
 				],
 			});
 	}
 
 	static _doParseText_stepPrerequisites (state, options) {
-		if (!/^prerequisite:/i.test(state.curLine)) {
+		if (!/^(?:prerequisite|先决条件)[:：]/i.test(state.curLine)) {
 			state.ixToConvert--;
 			return;
 		}
 
 		(state.entity.entries ||= [])
 			.push({
-				name: "Prerequisite:",
+				name: "先决条件:",
 				entries: [
 					state.curLine
-						.replace(/^prerequisite:/i, "")
+						.replace(/^(?:prerequisite|先决条件)[:：]/i, "")
 						.trim(),
 				],
 			});
@@ -144,7 +144,7 @@ export class ConverterFeat extends ConverterFeatureBase {
 
 	// SHARED PARSING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
 	static _mutMergeHangingListItems (feat, options) {
-		const ixStart = feat.entries.findIndex(ent => typeof ent === "string" && /(?:following|these) benefits:$/.test(ent));
+		const ixStart = feat.entries.findIndex(ent => typeof ent === "string" && /(?:following|these|以下|这些)(?: benefits|增益(?:效[果应])?)[:：。]$/.test(ent));
 		if (!~ixStart) return;
 
 		let list;

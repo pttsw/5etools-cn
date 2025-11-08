@@ -8,7 +8,7 @@ export class TableConverterUi extends ConverterUiBase {
 				ui,
 				converterData,
 
-				name: "Table",
+				name: "表格",
 				converterId: "table",
 				modes: ["html", "md"],
 				prop: "table",

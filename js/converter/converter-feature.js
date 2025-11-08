@@ -25,17 +25,17 @@ export class ConverterFeatureBase extends ConverterBase {
 	/* -------------------------------------------- */
 
 	static _doPostProcess_setPrerequisites (state, options) {
-		const [entsPrereq, entsRest] = state.entity.entries.segregate(ent => ent.name === "Prerequisite:");
+		const [entsPrereq, entsRest] = state.entity.entries.segregate(ent => /(:?Prerequisite|先决条件|先决)[:：]/i.test(ent.name));
 		if (!entsPrereq.length) return;
 
 		if (entsPrereq.length > 1) {
-			options.cbWarning(`(${state.entity.name}) Prerequisites requires manual conversion`);
+			options.cbWarning(`(${state.entity.name}) 先决条件无法自动转换`);
 			return;
 		}
 
 		const [entPrereq] = entsPrereq;
 		if (entPrereq.entries.length > 1 || (typeof entPrereq.entries[0] !== "string")) {
-			options.cbWarning(`(${state.entity.name}) Prerequisites requires manual conversion`);
+			options.cbWarning(`(${state.entity.name}) 先决条件无法自动转换`);
 			return;
 		}
 		const [entPrereqString] = entPrereq.entries;
@@ -130,7 +130,7 @@ export class ConverterFeatureBase extends ConverterBase {
 	static _doPostProcess_setPrerequisites_handleStack ({state, options, tkStack, preAbilsMeta}) {
 		if (!tkStack.length) return;
 
-		while ([",", ";"].includes(tkStack.at(-1))) tkStack.pop();
+		while ([",", ";", "，", "；"].includes(tkStack.at(-1))) tkStack.pop();
 		const joinedStack = tkStack.join(" ").trim();
 
 		const parts = joinedStack.split(
@@ -276,6 +276,7 @@ export class ConverterFeatureBase extends ConverterBase {
 			this._PREREQUISITE_TRIE = new Trie();
 			[
 				"Spellcasting or Pact Magic Feature",
+				"施法或契约魔法特性",
 			]
 				.forEach(str => this._PREREQUISITE_TRIE.add(str));
 		}
@@ -319,18 +320,18 @@ export class ConverterFeatureBase extends ConverterBase {
 	/* -------------------------------------------- */
 
 	static _doPostProcess_setAbility (entity, options) {
-		const asiEntries = entity.entries.filter(it => (it.name || "").toLowerCase() === "ability score increase");
+		const asiEntries = entity.entries.filter(it => (it.name || "").toLowerCase() === "ability score increase" || (it.name || "").toLowerCase() === "属性值提升");
 		if (!asiEntries.length) return false;
 
 		if (asiEntries.length > 1) {
-			options.cbWarning(`Multiple Ability Score Increase entries found!`);
+			options.cbWarning(`发现多个属性值增加项！`);
 			return false;
 		}
 
 		const [entry] = asiEntries;
 
 		if (entry.entries.length !== 1 || typeof entry.entries[0] !== "string") {
-			options.cbWarning(`Ability Score Increase requires manual conversion!`);
+			options.cbWarning(`属性值增加项无法自动转换！`);
 			return false;
 		}
 
@@ -339,7 +340,9 @@ export class ConverterFeatureBase extends ConverterBase {
 		// "Your Strength score increases by 2."
 		const mSimple = new RegExp(`^Your (?<ability>${Object.values(Parser.ATB_ABV_TO_FULL).join("|")}) score increases by (?<amount>\\d+)\\.?$`, "i").exec(ent)
 			// "Increase your Charisma score by 1, to a maximum of 20."
-			|| new RegExp(`^Increase your (?<ability>${Object.values(Parser.ATB_ABV_TO_FULL).join("|")}) score by (?<amount>\\d+)(?:, to a maximum of (?<max>20|30))?\\.?$`, "i").exec(ent);
+			|| new RegExp(`^Increase your (?<ability>${Object.values(Parser.ATB_ABV_TO_FULL).join("|")}) score by (?<amount>\\d+)(?:, to a maximum of (?<max>20|30))?\\.?$`, "i").exec(ent)
+			// "你的魅力属性值提升1，至多提升至20。"
+			|| new RegExp(`^你的(?<ability>${Object.values(Parser.ATB_ABV_TO_FULL).join("|")})(?:属性值?|值)(?:提升|增?加)(?<amount>\\d+)点?(?:[,，](?:上限为|至多提升至)(?<max>20|30))?[.。]?$`, "i").exec(ent);
 		if (mSimple) {
 			const asi = {
 				[this._doRacePostProcess_ability_getAbilityName(mSimple.groups.ability)]: Number(mSimple.groups.amount),
