@@ -5,8 +5,8 @@ export class AlignmentUtil {
 		let alignmentPrefix;
 
 		// region Support WBtW and onwards formatting
-		align = align.trim().replace(/^typically\s+/, () => {
-			alignmentPrefix = "typically ";
+		align = align.trim().replace(/^(?:typically|通常)\s*/, () => {
+			alignmentPrefix = "通常";
 			return "";
 		});
 		// endregion

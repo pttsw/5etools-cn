@@ -331,6 +331,11 @@ export class ConverterCreature extends ConverterBase {
 				continue;
 			}
 
+			// 转换属性值：力量13（+1）敏捷14（+2）体质16（+3）
+			if (this._handleAbilityScores_cn_inline({stats, meta, options})) {
+				continue;
+			}
+
 			// Alternate ability scores (special)
 			if (this._handleAbilityScores_special({stats, meta})) {
 				continue;
@@ -881,7 +886,7 @@ export class ConverterCreature extends ConverterBase {
 		}
 
 		if (abilLines.length !== 6) {
-			options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Ability scores require manual conversion`);
+			options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}属性值格式错误！不支持自动转换！`);
 			return false;
 		}
 
@@ -904,6 +909,29 @@ export class ConverterCreature extends ConverterBase {
 		return true;
 	}
 
+	static _handleAbilityScores_cn_inline ({stats, meta, options}) {
+		// 转换类似：力量13（+1）敏捷14（+2）体质16（+3）
+		let match_count = 0;
+		const regex = new RegExp(`(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)(?<score>\\d+)[(（](?<save>[-+]\\d+)[)）]`, "g");
+		let i = meta.ixToConvert;
+		for (; i < meta.toConvert.length; ++i) {
+			const l = meta.toConvert[i].trim();
+			let m = regex.exec(l);
+			if (!m) break;
+			while (m !== null) {
+				// 避免正则.lastIndex导致的无限循环（全局匹配时需注意）
+				if (m.index === regex.lastIndex) {
+					regex.lastIndex++;
+				}
+				// 将属性名转换为缩写并存储数值
+				stats[Parser.attFullToAbv(m.groups.abil)] = Number(m.groups.score);
+				match_count++;
+				m = regex.exec(l);
+			}
+		}
+		meta.ixToConvert = i;
+		return match_count === Parser.ABIL_ABVS.length;
+	}
 	static _handleAbilityScores_special ({stats, meta}) {
 		const matches = [];
 
@@ -2129,7 +2157,7 @@ export class ConverterCreature extends ConverterBase {
 
 		const spl = tksNoSize.join("").split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
 		if (!spl.length) {
-			options.cbWarning(`Type/Alignment "${tksNoSize.join("")}" requires manual conversion`);
+			options.cbWarning(`类型/阵营 "${tksNoSize.join("")}" 不支持自动转换`);
 			return;
 		}
 
@@ -2509,6 +2537,13 @@ export class ConverterCreature extends ConverterBase {
 			.replace(/[(（]\s*[)）]/g, "")
 			.trim();
 
+		line = line
+			.replace(/[(（]?熟练加值\s?(?<pb>\+\d+)[)）]?/i, (...m) => {
+				// (Assume standard PB)
+				return "";
+			})
+			.replace(/[(（]?熟练加值\s?(?<pb>\+\d+)[)）]/g, "")
+			.trim();
 		line = line
 			.replace(/(?<=[(（])PB (?<pb>(?:equals your Proficiency Bonus|等于你的熟练加值))(?=[)）])/i, (...m) => {
 				stats.pbNote = m.at(-1).pb;
