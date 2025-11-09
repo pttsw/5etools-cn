@@ -156,6 +156,9 @@ export class PageFilterBase {
 		if (this._hasSoundClip(ent)) ent._fMisc.push("有发音音频");
 
 		if (this.isReprinted(ent)) ent._fMisc.push("重印");
+
+		if (ent.tokenCustom) ent._fMisc.push("有自定义/非官方Token");
+		if (ent.tokenCredit) ent._fMisc.push("有Token作者");
 	}
 	// endregion
 }

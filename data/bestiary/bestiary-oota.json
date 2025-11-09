@@ -152,6 +152,7 @@
 					}
 				}
 			},
+			"tokenCustom": true,
 			"traitTags": [
 				"妖精血统",
 				"日照敏感"
@@ -456,6 +457,7 @@
 				"黑暗视觉 30 尺",
 				"颤动感知 60 尺"
 			],
+			"tokenCustom": true,
 			"traitTags": [
 				"敏锐感官",
 				"掘道者"
@@ -2226,6 +2228,14 @@
 			"speed": {
 				"walk": 25
 			},
+			"languages": [
+				"鬣狗人",
+				"深渊语"
+			],
+			"languageTags": [
+				"AB",
+				"OTH"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -2424,6 +2434,7 @@
 				}
 			},
 			"tokenCredit": "Garcia",
+			"tokenCustom": true,
 			"spellcastingTags": [
 				"CC",
 				"I"
@@ -2709,6 +2720,7 @@
 				"地底通用语",
 				"通用语"
 			],
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -3666,6 +3678,7 @@
 					}
 				}
 			},
+			"tokenCustom": true,
 			"spellcastingTags": [
 				"CC",
 				"I"
@@ -4107,6 +4120,7 @@
 					"ability": "wis"
 				}
 			],
+			"tokenCustom": true,
 			"savingThrowForcedSpell": [
 				"体质",
 				"敏捷",
@@ -4684,6 +4698,7 @@
 					}
 				]
 			},
+			"tokenCustom": true,
 			"senseTags": [
 				"SD"
 			],
@@ -5107,6 +5122,7 @@
 					]
 				}
 			],
+			"tokenCustom": true,
 			"attachedItems": [
 				"巨棒|PHB"
 			],
@@ -5455,6 +5471,7 @@
 					}
 				}
 			],
+			"tokenCustom": true,
 			"spellcastingTags": [
 				"I"
 			],
@@ -5616,6 +5633,7 @@
 				"E"
 			],
 			"cr": "5",
+			"tokenCustom": true,
 			"traitTags": [
 				"妖精血统",
 				"日照敏感"
@@ -5747,6 +5765,76 @@
 			"int": 18,
 			"hasToken": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Yantha Coaxrock",
+			"name": "Yantha Coaxrock",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "OotA",
+			"page": 138,
+			"_copy": {
+				"ENG_name": "Deep Gnome (Svirfneblin)",
+				"name": "地底侏儒（斯涅布力）",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "侏儒",
+						"with": "Yantha",
+						"flags": "i"
+					}
+				}
+			},
+			"int": 16,
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"扬塔是一位5级施法者。她的施法能力是智力（法术豁免 {@dc 13}）。她准备以下法师法术："
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell 舞光术}",
+								"{@spell 交友术}",
+								"{@spell 修复术}",
+								"{@spell 魔法伎俩}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell 通晓语言}",
+								"{@spell 侦测魔法}",
+								"{@spell 谭森浮碟术}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell 侦测思想}",
+								"{@spell 定身类人}"
+							]
+						},
+						"3": {
+							"slots": 2,
+							"spells": [
+								"{@spell 短讯术}"
+							]
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"tokenCredit": "Paizo",
+			"tokenCustom": true,
+			"spellcastingTags": [
+				"CW"
+			],
+			"hasToken": true
 		},
 		{
 			"ENG_name": "Yestabrod",

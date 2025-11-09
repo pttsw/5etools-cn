@@ -3412,7 +3412,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EFR] = "艾伯伦：失落的圣物";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_RMBRE] = "瑞克与莫蒂：BRE";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_RMR] = "龙与地下城 vs. 瑞克与莫蒂：基础规则";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MFF] = "魔邓肯邪魔开本";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_AWM] = "与魔克同行";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_AWM] = "与穆克一起冒险";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_IMR] = "重建炼狱机器";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SADS] = "蓝宝石周年纪念骰套组";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EGW] = "荒洲探险家指南";
@@ -4176,6 +4176,8 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_AI,
 	Parser.SRC_ERLW,
 	Parser.SRC_RMR,
+	Parser.SRC_AWM,
+	Parser.SRC_MGELFT,
 	Parser.SRC_EGW,
 	Parser.SRC_MOT,
 	Parser.SRC_TCE,
@@ -4345,7 +4347,9 @@ Parser.PROP_TO_TAG = {
 	"itemGroup": "item",
 	"magicvariant": "item",
 };
+Parser._RE_PROP_RAW_PREFIX = /^raw_/;
 Parser.getPropTag = function (prop) {
+	prop = prop.replace(Parser._RE_PROP_RAW_PREFIX, "");
 	if (Parser.PROP_TO_TAG[prop]) return Parser.PROP_TO_TAG[prop];
 	if (prop?.endsWith("Fluff")) return null;
 	return prop;

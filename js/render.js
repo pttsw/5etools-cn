@@ -3452,6 +3452,24 @@ Renderer.utils = class {
 		return `</tbody></table>`;
 	}
 
+	static getTokenMetadataAttributes (ent, {displayName = null} = {}) {
+		const tokenName = displayName || ent.name;
+
+		const ptTitle = [
+			ent.tokenCredit ? `作者: ${ent.tokenCredit.qq()}` : "",
+			ent.tokenCustom ? `这是自定义/非官方token。` : "",
+		]
+			.filter(Boolean)
+			.join(" ");
+
+		return [
+			`alt="Token图${tokenName ? `: ${tokenName.qq()}` : ""}"`,
+			ptTitle ? `title="${ptTitle}"` : "",
+		]
+			.filter(Boolean)
+			.join(" ");
+	}
+
 	static TabButton = function ({label, fnChange, fnPopulate, isVisible}) {
 		this.label = label;
 		this.fnChange = fnChange;

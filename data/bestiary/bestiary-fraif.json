@@ -1262,7 +1262,7 @@
 					"ENG_name": "Whirlpool",
 					"name": "漩涡",
 					"entries": [
-						"{@actSave str} {@dc 18}，每个在比哈·巴比尔的30尺辐射范围内的生物。{@actSaveFail} 10（{@damage 3d6}）力场伤害，并且目标被直线拉向比哈·巴比尔的15尺。{@actSaveSuccess} 仅伤害减半。{@actSaveSuccessOrFail} 比哈·巴比尔在她的下一个回合开始前不能再次使用此动作。"
+						"{@actSave str} {@dc 18}，比哈·巴比尔周围30尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail} 10（{@damage 3d6}）力场伤害，且目标被直线拉向比哈·巴比尔15尺。{@actSaveSuccess} 仅受一半伤害。{@actSaveSuccessOrFail} 比哈·巴比尔直到她的下个回合开始前无法再次使用此动作。"
 					]
 				}
 			],
@@ -2025,11 +2025,6 @@
 					]
 				}
 			],
-			"legendaryGroup": {
-				"ENG_name": "Deep Dragon",
-				"name": "深龙",
-				"source": "FRAiF"
-			},
 			"environment": [
 				"幽暗地域"
 			],
@@ -2089,7 +2084,9 @@
 				"average": 5,
 				"formula": "1d8 + 1"
 			},
-			"speed": {},
+			"speed": {
+				"walk": 30
+			},
 			"str": 13,
 			"dex": 8,
 			"con": 13,
@@ -5965,11 +5962,6 @@
 					]
 				}
 			],
-			"legendaryGroup": {
-				"ENG_name": "Deep Dragon",
-				"name": "深龙",
-				"source": "FRAiF"
-			},
 			"environment": [
 				"幽暗地域"
 			],

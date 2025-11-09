@@ -53,10 +53,11 @@
 					"ENG_name": "Constrict",
 					"name": "绞缠",
 					"entries": [
-						"{@atk mw} 命中{@hit 5}，单一目标。{@h}13 ({@damage 3d6+3}) 钝击伤害。如果目标是中等大小或更小，它将{@condition 受擒}（逃脱{@dc 13}），并被拉向大水蛭5尺。直到这次抓住结束，目标将{@condition 束缚}，大水蛭试图淹死它，并且大水蛭不能再限制另单一目标。"
+						"{@atk mw} {@hit 5} 命中，单一目标。{@h}13（{@damage 3d6+3}）钝击伤害。如果目标是中型或更小，则被{@condition 受擒}（逃脱{@dc 13}）并被拉向大水蛞5尺。直到此{@action 擒抱}结束，目标被{@condition 束缚}，大水蛞试图将其溺毙，且大水蛞无法绞缠另一个目标。"
 					]
 				}
 			],
+			"tokenCustom": true,
 			"damageTags": [
 				"B"
 			],
@@ -65,7 +66,6 @@
 			],
 			"conditionInflict": [
 				"受擒",
-				"隐形",
 				"束缚"
 			],
 			"hasToken": true,
@@ -202,8 +202,12 @@
 				}
 			],
 			"familiar": true,
+			"tokenCustom": true,
 			"traitTags": [
 				"集群战术"
+			],
+			"damageTags": [
+				"P"
 			],
 			"miscTags": [
 				"MW"
@@ -271,6 +275,7 @@
 					]
 				}
 			],
+			"tokenCustom": true,
 			"traitTags": [
 				"水陆两栖"
 			],
@@ -279,6 +284,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"conditionInflict": [
+				"魅惑"
 			],
 			"savingThrowForced": [
 				"感知"
@@ -321,14 +329,13 @@
 					"ENG_name": "Innate Spellcasting",
 					"name": "天生施法",
 					"type": "spellcasting",
+					"headerEntries": [
+						"鬼婆的施法关键属性是魅力（法术豁免{@dc 12}）。她可以天生施放下列法术："
+					],
 					"will": [
 						"{@spell 舞光术}",
 						"{@spell 次级幻影}",
 						"{@spell 恶言相加}"
-					],
-					"footerEntries": [
-						"女巫的施法能力是魅力",
-						"（法术豁免{@dc 12}）。它天生能够施放以下法术："
 					]
 				}
 			],
@@ -371,6 +378,7 @@
 					]
 				}
 			],
+			"tokenCustom": true,
 			"traitTags": [
 				"水陆两栖",
 				"拟声"
@@ -386,9 +394,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"conditionInflict": [
-				"隐形"
 			],
 			"savingThrowForcedSpell": [
 				"感知"
@@ -515,6 +520,9 @@
 			"wis": 11,
 			"cha": 10,
 			"passive": 0,
+			"resist": [
+				"毒素"
+			],
 			"cr": "1/4",
 			"trait": [
 				{
@@ -551,6 +559,7 @@
 		{
 			"ENG_name": "Great Kroom, Purple Worm",
 			"name": "紫虫，伟大的喀戎姆",
+			"shortName": "伟大的喀戎姆",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -617,10 +626,6 @@
 					]
 				}
 			],
-			"environment": [
-				"荒漠",
-				"幽暗地域"
-			],
 			"traitTags": [
 				"掘道者"
 			],
@@ -629,6 +634,7 @@
 				"吞咽"
 			],
 			"damageTags": [
+				"I",
 				"P"
 			],
 			"miscTags": [
@@ -688,19 +694,19 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} {@hit 6} 攻击命中, 射程 5 英尺, 一个目标。 {@h}12 ({@damage 2d8 + 3}) 穿刺伤害。目标必须进行一次 {@dc 15} 体质豁免，否则承受 d ({@damage 1d10}) 毒素伤害，直至被治愈。"
+						"{@atk mw} {@hit 6} 命中，触及 5 尺，一个目标。{@h}12（{@damage 2d8 + 3}）穿刺伤害。目标必须进行{@dc 15}的体质豁免，否则受到 6（{@damage 1d10}）毒素伤害直到被治愈。"
 					]
 				},
 				{
 					"ENG_name": "Tentacle",
 					"name": "触须",
 					"entries": [
-						"{@atk mw} {@hit 6} 命中，触及 10 英尺，一个目标。{@h}7 ({@damage 1d8 + 3}) 钝击伤害，目标必须进行一次 {@dc 19} 体质豁免，否则受到 42 ({@damage 12d6}) 毒素伤害"
+						"{@atk mw} {@hit 6} 命中，触及10尺，一个目标。{@h}7（{@damage 1d8 + 3}）钝击伤害。目标必须进行一次{@dc 19}的体质豁免，否则受到42（{@damage 12d6}）毒素伤害。"
 					]
 				},
 				{
-					"ENG_name": "Slam",
-					"name": "猛击",
+					"ENG_name": "Slam!",
+					"name": "猛击！",
 					"entries": [
 						"目标必须进行一次{@dc 14}体质豁免，否则会{@condition 受擒}。"
 					]
@@ -709,17 +715,22 @@
 			"environment": [
 				"幽暗地域"
 			],
+			"tokenCustom": true,
 			"actionTags": [
 				"多重攻击",
 				"触须"
 			],
 			"damageTags": [
 				"B",
+				"I",
 				"P"
 			],
 			"miscTags": [
 				"MW",
 				"RCH"
+			],
+			"conditionInflict": [
+				"受擒"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -727,6 +738,7 @@
 		{
 			"ENG_name": "Hill Giant, Blorbo",
 			"name": "山丘巨人布洛博",
+			"shortName": "布洛博",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -800,6 +812,7 @@
 		{
 			"ENG_name": "Saleeth the Couatl",
 			"name": "羽蛇萨莱斯",
+			"shortName": "萨莱斯",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AWM",
@@ -879,7 +892,7 @@
 					"ENG_name": "Shielded Mind",
 					"name": "屏蔽心灵",
 					"entries": [
-						"羽蛇免疫探知，以及任何能感测其情绪、读取其思想或侦测其位置的效应。"
+						"该羽蛇免疫{@spell 探知术}以及任何能感知其情绪、读取其思想或侦测其位置的效果。"
 					]
 				}
 			],
@@ -888,25 +901,26 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 8}，触及5尺，单一生物。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害，目标必须进行一次{@dc 13}体质豁免，否则陷入{@condition 昏迷}状态。其他生物可以使用动作摇醒目标。"
+						"{@atk mw} {@hit 8} 命中，触及5尺，一个生物。{@h}8（{@damage 1d6 + 5}）穿刺伤害。目标必须进行一次{@dc 13}的体质豁免，否则陷入{@condition 昏迷}。另一个生物可以用一个动作摇醒目标。"
 					]
 				},
 				{
 					"ENG_name": "Constrict",
 					"name": "绞缠",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及10尺，一个中等或更小的生物。{@h}10 ({@damage 2d6 + 3}) 钝击伤害，目标{@condition 受擒}（逃脱{@dc 15}）。羽蛇尔一次只能限制一个目标。"
+						"{@atk mw} {@hit 6} 命中，触及10尺，一个中型或更小的生物。{@h}10（{@damage 2d6 + 3}）钝击伤害。目标被{@condition 受擒}（逃脱{@dc 15}）。羽蛇一次只能约束一个目标。"
 					]
 				},
 				{
 					"ENG_name": "Change Shape",
 					"name": "变形",
 					"entries": [
-						"羽蛇可以用魔法变形为挑战等级等于或低于其自身的类人生物或野兽，也可以同样用该动作恢复其真实形态。在死亡时，它也会回复其真实形态。它携带或着装的任何装备都将转变为适应新形态，或是直接吸收为新形态的一部分（依照羽蛇的意愿）。",
+						"羽蛇魔法地变形成{@filter 一个挑战等级等于或低于其自身的类人生物或野兽|bestiary|Challenge Rating=[&0;&4]|type=beast;humanoid}，或变回其真实形态。如果死亡，它会恢复真实形态。它所穿戴或携带的任何装备会被新形态吸收或携带（由羽蛇选择）。",
 						"在新形态之下，羽蛇将保留其游戏数据和对话能力，但其AC、移动方式、力量、敏捷和其他动作项将被新形态的对应条目取代，即它同时获得新形态具有而它本身不具备的数据与能力（不包括职业特性、传奇动作以及巢穴动作）。如果新形态有啃咬攻击，羽蛇也可以在该形态下使用自己的啃咬。"
 					]
 				}
 			],
+			"tokenCustom": true,
 			"traitTags": [
 				"魔法武器"
 			],
@@ -928,7 +942,8 @@
 				"RCH"
 			],
 			"conditionInflict": [
-				"受擒"
+				"受擒",
+				"昏迷"
 			],
 			"savingThrowForcedSpell": [
 				"感知"
