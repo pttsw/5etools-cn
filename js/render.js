@@ -10549,7 +10549,7 @@ Renderer.monster = class {
 		const pts = [
 			mon.senses ? Renderer.utils.getRenderedSenses(mon.senses, {isTitleCase}) : "",
 			passive != null
-				? `被动感知 ${passive}`
+				? `被动察觉 ${passive}`
 				: (isForcePassive || mon.senses) ? "\u2014" : "",
 		]
 			.filter(Boolean);

@@ -214,7 +214,7 @@ class InitiativeTrackerStatColumn_ArmorClass extends _InitiativeTrackerStatColum
 class InitiativeTrackerStatColumn_PassivePerception extends _InitiativeTrackerStatColumnBase {
 	static get POPULATE_WITH () { return "passivePerception"; }
 	static GROUP = GROUP_BASE_STATS;
-	static NAME = "被动感知";
+	static NAME = "被动察觉";
 	static ABV_DEFAULT = "PP";
 
 	_getInitialCellObj ({mon, fluff}) {

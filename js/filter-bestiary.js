@@ -206,7 +206,7 @@ class PageFilterBestiary extends PageFilterBase {
 			items: ["B", "D", "SD", "T", "U"],
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._passivePerceptionFilter = new RangeFilter({header: "Passive Perception", cnHeader: "被动感知", min: 10, max: 10});
+		this._passivePerceptionFilter = new RangeFilter({header: "Passive Perception", cnHeader: "被动察觉", min: 10, max: 10});
 		this._skillFilter = new Filter({
 			header: "Skills",
 			cnHeader: "技能",
