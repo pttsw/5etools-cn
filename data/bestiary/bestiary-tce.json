@@ -32,7 +32,7 @@
 			],
 			"ac": [
 				{
-					"special": "11加上法术等级（自然护甲）"
+					"special": "11 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
@@ -42,7 +42,7 @@
 				"walk": 30,
 				"fly": {
 					"number": 30,
-					"condition": "（仅限贝赫尔族；悬浮）"
+					"condition": "（仅限眼魔衍体；悬浮）"
 				},
 				"canHover": true
 			},
@@ -68,14 +68,14 @@
 					"ENG_name": "Regeneration (Slaad Only)",
 					"name": "再生（仅史拉蟾）",
 					"entries": [
-						"如果这个异怪至少有1点生命值，在它的回合开始时恢复5点生命值。"
+						"该异怪在它的每个回合开始时恢复5点生命值，前提是它至少有1点生命值。"
 					]
 				},
 				{
 					"ENG_name": "Whispering Aura (Star Spawn Only)",
 					"name": "低语灵光（仅星之子）",
 					"entries": [
-						"在异怪的每个回合开始时，每个在异怪5尺范围内的生物必须成功进行一次对抗你法术豁免DC的感知豁免检定，否则会受到{@damage 2d6}心灵伤害，前提是异怪不是{@condition 失能}状态。"
+						"在每个异怪回合开始时，异怪5尺范围内的每个生物必须成功通过一次对抗你法术豁免DC的感知豁免，否则受到{@damage 2d6}心灵伤害，前提是该异怪未处于{@condition 失能}状态。"
 					]
 				}
 			],
@@ -84,28 +84,28 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"这个异怪进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"该异怪发动的攻击次数等于此法术等级的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Eye Ray (Beholderkin Only)",
 					"name": "眼波射线（仅类眼魔）",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack}, 射程150尺, 一个生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 点心灵伤害。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，范围150尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Slaad Only)",
 					"name": "爪击（仅史拉蟾）",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害。如果目标是一个生物，直到异怪下一回合开始之前，它不能恢复生命值。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，一个目标。{@h}{@damage 1d10 + 3 + summonSpellLevel} 挥砍伤害。如果目标是生物，在异怪的下个回合开始前，它无法恢复生命值。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Slam (Star Spawn Only)",
-					"name": "灵能猛击Psychic Slam（仅星之子）",
+					"name": "灵能猛击（仅星之子）",
 					"entries": [
-						"{@atk ms} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
+						"{@atk ms} 命中{@hitYourSpellAttack}，触及 5 尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
 					]
 				}
 			],
@@ -141,7 +141,7 @@
 								"mode": "removeArr",
 								"names": [
 									"爪击（仅史拉蟾）",
-									"灵能猛击Psychic Slam（仅星之子）"
+									"灵能猛击（仅星之子）"
 								]
 							},
 							{
@@ -193,7 +193,7 @@
 								"mode": "removeArr",
 								"names": [
 									"眼波射线（仅类眼魔）",
-									"灵能猛击Psychic Slam（仅星之子）"
+									"灵能猛击（仅星之子）"
 								]
 							},
 							{
@@ -249,7 +249,7 @@
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "灵能猛击Psychic Slam（仅星之子）",
+									"rename": "灵能猛击（仅星之子）",
 									"with": "灵能猛击"
 								}
 							}
@@ -311,11 +311,11 @@
 			],
 			"ac": [
 				{
-					"special": "13 + 基础攻击加值（天然护甲）"
+					"special": "13+PB（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "5 + 你的游侠等级的五倍（野兽拥有的命中骰子数量[d8s]等于你的游侠等级）"
+				"special": "5 + 你游侠等级的五倍（野兽拥有与你游侠等级相同数量的生命骰[d8]）"
 			},
 			"speed": {
 				"walk": 40,
@@ -340,14 +340,14 @@
 					"ENG_name": "Charge",
 					"name": "冲锋",
 					"entries": [
-						"如果这个生物在同一个回合中至少直线移动20尺朝向目标，然后用猛击攻击命中它，目标将额外受到{@damage 1d6}点挥砍伤害。如果目标是一个生物，它必须进行一次对抗你法术豁免DC的力量豁免检定，否则会被击倒{@condition 倒地}。"
+						"如果该野兽直线移动至少20尺冲向目标，并在同一回合内用巨锤攻击命中目标，则目标额外受到{@damage 1d6}挥砍伤害。如果目标是生物，则必须成功通过对抗你法术豁免DC的力量豁免，否则被击倒{@condition 倒地}。"
 					]
 				},
 				{
 					"ENG_name": "Primal Bond",
 					"name": "原初联结",
 					"entries": [
-						"你可以将你的熟练加值加到野兽进行的任何属性检定或豁免检定上。"
+						"你可以将你的熟练加值添加到野兽进行的任何属性检定或豁免检定中。"
 					]
 				}
 			],
@@ -356,7 +356,7 @@
 					"ENG_name": "Maul",
 					"name": "巨锤",
 					"entries": [
-						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d8 + 2 + 基础攻击加值}挥砍伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单个目标。{@h}{@damage 1d8 + 2 + PB} 挥砍伤害。"
 					]
 				}
 			],
@@ -396,11 +396,11 @@
 			],
 			"ac": [
 				{
-					"special": "13 + 基础攻击加值（天然护甲）"
+					"special": "13+PB（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "5 + 你的游侠等级的五倍（野兽拥有的命中骰子数量[d8s]等于你的游侠等级）"
+				"special": "5 + 你游侠等级的五倍（野兽拥有与你游侠等级相同数量的生命骰[d8]）"
 			},
 			"speed": {
 				"walk": 5,
@@ -425,14 +425,14 @@
 					"ENG_name": "Amphibious",
 					"name": "水陆两栖",
 					"entries": [
-						"这个生物可以呼吸空气和水。"
+						"野兽可以在空气和水中呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Primal Bond",
 					"name": "原初联结",
 					"entries": [
-						"你可以将你的熟练加值加到野兽进行的任何属性检定或豁免检定上。"
+						"你可以将你的熟练加值添加到野兽进行的任何属性检定或豁免检定中。"
 					]
 				}
 			],
@@ -441,7 +441,7 @@
 					"ENG_name": "Binding Strike",
 					"name": "攫击",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d6 + 2 + 职业等级加值}穿刺伤害或{@damage 1d6 + 2 + PB}钝击伤害（由你选择），并且目标{@condition 受擒}（逃脱DC等于你的施法豁免DC）。直到这个缠绕结束，野兽不能对另一个目标使用这个攻击。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及 5 尺，一个目标。{@h}{@damage 1d6 + 2 + PB} 穿刺伤害或 {@damage 1d6 + 2 + PB} 钝击伤害（由你选择），且目标被 {@condition 受擒}（逃脱 DC 等于你的施法豁免 DC）。直到此擒抱结束前，野兽不能对另一个目标使用此攻击。"
 					]
 				}
 			],
@@ -481,11 +481,11 @@
 			],
 			"ac": [
 				{
-					"special": "13 + 基础攻击加值（天然护甲）"
+					"special": "13+PB（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "4 + 你的游侠等级的四倍（野兽拥有的命中骰子数量[d6s]等于你的游侠等级）"
+				"special": "4 + 你游侠等级的四倍（野兽拥有与你游侠等级相同数量的生命骰[d6s]）"
 			},
 			"speed": {
 				"walk": 10,
@@ -510,14 +510,14 @@
 					"ENG_name": "Flyby",
 					"name": "飞掠",
 					"entries": [
-						"当野兽飞出敌人的攻击范围时，它不会引发借机攻击。"
+						"该野兽在飞出敌人的触及范围时不会引发借机攻击。"
 					]
 				},
 				{
 					"ENG_name": "Primal Bond",
 					"name": "原初联结",
 					"entries": [
-						"你可以将你的熟练加值加到野兽进行的任何属性检定或豁免检定上。"
+						"你可以将你的熟练加值添加到野兽进行的任何属性检定或豁免检定中。"
 					]
 				}
 			],
@@ -526,7 +526,7 @@
 					"ENG_name": "Shred",
 					"name": "撕扯",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d4 + 3 + PB} 挥砍伤害"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单个目标。{@h}{@damage 1d4 + 3 + PB} 挥砍伤害"
 					]
 				}
 			],
@@ -563,11 +563,11 @@
 			],
 			"ac": [
 				{
-					"special": "11加上法术等级（自然护甲）"
+					"special": "11 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "20（仅限空气）或30（仅限陆地和水） +5×每比2环高的法术等级"
+				"special": "20（仅限空气）或30（仅限陆地和水） + 每比2环高1环法术位增加5"
 			},
 			"speed": {
 				"walk": 30,
@@ -602,21 +602,21 @@
 					"ENG_name": "Water Breathing (Water Only)",
 					"name": "水下呼吸（仅水中）",
 					"entries": [
-						"这只野兽只能在水下呼吸。"
+						"该野兽仅能在水下呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Flyby (Air Only)",
 					"name": "飞掠（仅空中）",
 					"entries": [
-						"当野兽飞出敌人的攻击范围时，它不会引发借机攻击。"
+						"该野兽在飞出敌人的触及范围时不会引发借机攻击。"
 					]
 				},
 				{
 					"ENG_name": "Pack Tactics (Land and Water Only)",
 					"name": "集群战术（仅陆地和水中）",
 					"entries": [
-						"如果至少有一个野兽的盟友在生物5尺范围内，并且该盟友不是{@condition 失能}状态，那么野兽对生物的攻击检定有优势。"
+						"野兽在对一个生物进行攻击检定时具有优势，前提是该野兽的至少一个盟友位于该生物5尺内且该盟友未处于{@condition 失能}状态。"
 					]
 				}
 			],
@@ -625,14 +625,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"该野兽进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"该野兽进行相当于此法术环阶一半（向下取整）次数的攻击。"
 					]
 				},
 				{
 					"ENG_name": "Maul",
 					"name": "巨锤",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d8 + 4 + summonSpellLevel} 穿刺伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单个目标。{@h}{@damage 1d8 + 4 + summonSpellLevel} 穿刺伤害。"
 					]
 				}
 			],
@@ -777,11 +777,11 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（自然护甲）+ 2（仅防御者）"
+					"special": "11 + 法术环阶（天生护甲） + 2（仅限防御者）"
 				}
 			],
 			"hp": {
-				"special": "40 + 每超过5环法术等级10"
+				"special": "40 + 每比5环高一环法术等级增加10"
 			},
 			"speed": {
 				"walk": 30,
@@ -813,28 +813,28 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"天界生物进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"天界灵魄发动相当于该法术环阶一半（向下取整）次数的攻击。"
 					]
 				},
 				{
 					"ENG_name": "Radiant Bow (Avenger Only)",
 					"name": "光耀之弓（仅复仇圣灵）",
 					"entries": [
-						"{@atk rw} 命中骰：{@hitYourSpellAttack}，射程150/600尺，单一目标。{@h}{@damage 2d6 + 2 + 召唤法术等级}光耀伤害。"
+						"{@atk rw} {@hitYourSpellAttack} 命中，范围150/600尺，单一目标。{@h}{@damage 2d6 + 2 + summonSpellLevel}光耀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Radiant Mace (Defender Only)",
 					"name": "光耀之锤（仅守护圣灵）",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 攻击命中，射程5英尺，一个目标。{@h}{@damage 1d10 + 3 + 召唤法术等级} 光耀伤害，并且天界生物可以选择自己或目标10英尺内它能看见的另一个生物。被选择的生物获得 {@dice 1d10} 临时生命值。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，一个目标。{@h}{@damage 1d10 + 3 + summonSpellLevel}光耀伤害，且天界灵魄可以选择自身或目标10尺内另一个可见生物。被选中的生物获得{@dice 1d10}临时生命值。"
 					]
 				},
 				{
 					"ENG_name": "Healing Touch (1/Day)",
 					"name": "治愈之触 (1/日)",
 					"entries": [
-						"天界生物触碰另一个生物。目标通过魔法恢复生命值，等于{@dice 2d8 + summonSpellLevel}。"
+						"天界灵魄触碰另一个生物。目标将魔法性地恢复等于 {@dice 2d8 + summonSpellLevel} 的生命值。"
 					]
 				}
 			],
@@ -878,7 +878,7 @@
 					},
 					"ac": [
 						{
-							"special": "11加上法术等级（自然护甲）"
+							"special": "11 + 法术环阶（天生护甲）"
 						}
 					],
 					"miscTags": [
@@ -906,7 +906,7 @@
 					},
 					"ac": [
 						{
-							"special": "13 加上法术等级（自然护甲）"
+							"special": "13 + 法术环阶（天生护甲）"
 						}
 					],
 					"miscTags": [
@@ -935,11 +935,11 @@
 			],
 			"ac": [
 				{
-					"special": "13 加上法术等级（自然护甲）"
+					"special": "13 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "40 +15×每比4环高的法术等级"
+				"special": "40 + 每个高于4环的法术等级额外+15"
 			},
 			"speed": {
 				"walk": 30
@@ -974,14 +974,14 @@
 					"ENG_name": "Heated Body (Metal Only)",
 					"name": "灼热之躯（仅金属）",
 					"entries": [
-						"任何生物在5尺范围内触摸构装生物或用近战攻击击中它时，会受到{@damage 1d10}火焰伤害。"
+						"一个生物在距离构装灵魄 5尺内接触它或用近战攻击命中它时，受到{@damage 1d10}点火焰伤害。"
 					]
 				},
 				{
 					"ENG_name": "Stony Lethargy (Stone Only)",
 					"name": "石迷昏眠（仅岩石）",
 					"entries": [
-						"当一个生物在构装生物10尺范围内开始其回合时，构装生物可以迫使它进行一次对抗你法术豁免DC的感知豁免检定。如果豁免失败，目标不能使用反应，并且其速度减半，直到它下一个回合的开始。"
+						"当构装灵魄可见的一个生物在其10尺内开始其回合时，构装灵魄能迫使其进行一次对抗你的法术豁免DC的感知豁免。豁免失败时，目标无法使用反应且其速度减半，直到其下个回合开始。"
 					]
 				}
 			],
@@ -990,14 +990,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"这个构造物进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"构装灵魄发动攻击的次数等于该法术环阶的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Slam",
 					"name": "猛击",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack}命中，触及范围5尺，单一目标。{@h}{@damage 1d8 + 4 + 召唤法术等级} 钝击伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d8 + 4 + summonSpellLevel} 钝击伤害。"
 					]
 				}
 			],
@@ -1006,7 +1006,7 @@
 					"ENG_name": "Berserk Lashing (Clay Only)",
 					"name": "狂怒乱击（仅粘土）",
 					"entries": [
-						"当构装生物受到伤害时，它会对它5尺范围内的随机生物进行一次猛击攻击。如果没有生物在攻击范围内，构装生物会以不超过其速度的一半向它能看到的敌人移动，且不会引发借机攻击。"
+						"当该构装受到伤害时，它会对其5尺内的一个随机生物进行一次猛击攻击。如果没有生物在触及范围内，该构装会向其可见的一个敌人移动最多其速度一半的距离，且不会引发借机攻击。"
 					]
 				}
 			],
@@ -1116,7 +1116,7 @@
 				}
 			],
 			"hp": {
-				"special": "10 加上你吟游诗人等级的五倍"
+				"special": "10+你吟游诗人等级的五倍"
 			},
 			"speed": {
 				"walk": 30,
@@ -1168,9 +1168,9 @@
 			"action": [
 				{
 					"ENG_name": "Force-Empowered Slam",
-					"name": "力场猛击",
+					"name": "力场动能猛击",
 					"entries": [
-						"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d10 + 基础攻击加值}力场伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单个你可见的目标。{@h}{@damage 1d10 + PB} 力场伤害。"
 					]
 				}
 			],
@@ -1207,17 +1207,17 @@
 			],
 			"ac": [
 				{
-					"special": "11加上法术等级（自然护甲）"
+					"special": "11 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "50 +10×每比4环高的法术等级"
+				"special": "50 + 法术环阶每比4环高1环增加10"
 			},
 			"speed": {
 				"walk": 40,
 				"fly": {
 					"number": 40,
-					"condition": "（仅气；悬浮）"
+					"condition": "（仅限气；悬浮）"
 				},
 				"burrow": {
 					"number": 40,
@@ -1290,7 +1290,7 @@
 					"ENG_name": "Amorphous Form (Air, Fire, and Water Only)",
 					"name": "不定形态（仅气、火、水）",
 					"entries": [
-						"该元素生物可以穿过宽仅1英寸的空间而无需挤压。"
+						"该元素可以穿过窄至1英寸宽的空间而无需挤入。"
 					]
 				}
 			],
@@ -1299,14 +1299,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"元素生物进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"元素灵魄进行攻击的次数等于此法术后续等级的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Slam",
 					"name": "猛击",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及范围 5 尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害（仅限空气、土和水）或火焰伤害（仅限火）。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害（仅限气、土和水元素灵魄）或火焰伤害（仅限火元素灵魄）。"
 					]
 				}
 			],
@@ -1353,7 +1353,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
+									"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1389,7 +1389,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
+									"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1431,7 +1431,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + 召唤法术等级} 火焰伤害。"
+									"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 火焰伤害。"
 								]
 							}
 						}
@@ -1468,7 +1468,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk mw} 命中骰：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
+									"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d10 + 4 + summonSpellLevel} 钝击伤害。"
 								]
 							}
 						}
@@ -1508,7 +1508,7 @@
 			],
 			"ac": [
 				{
-					"special": "12 + 法术等级（天然护甲）"
+					"special": "12 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
@@ -1539,14 +1539,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"精类进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"精类发动的攻击次数等于该法术环阶的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Shortsword",
 					"name": "短剑",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 攻击命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + summonSpellLevel} 穿刺伤害 {@damage + 1d6} 力场伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + summonSpellLevel} 穿刺伤害 {@damage + 1d6} 力场伤害。"
 					]
 				}
 			],
@@ -1555,7 +1555,7 @@
 					"ENG_name": "Fey Step",
 					"name": "妖精跨步",
 					"entries": [
-						"精类魔法地传送至其能看到的空位，最多30尺远。然后根据精类选择的心情，会发生以下效果之一：",
+						"该精类以魔法传送到至多30尺内一个它能看见的未占据空间。然后根据该精类选择的情绪，发生以下效果之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
@@ -1564,19 +1564,19 @@
 									"ENG_name": "Fuming",
 									"name": "愤怒",
 									"type": "item",
-									"entry": "在使用精类步后，该精类生物在它回合结束前的下一次攻击检定具有优势。"
+									"entry": "该精类在本次回合结束前进行的下一次攻击检定具有优势。"
 								},
 								{
 									"ENG_name": "Mirthful",
 									"name": "欢欣",
 									"type": "item",
-									"entry": "精类生物可以强迫其视野内10英尺范围内的一个生物进行一次感知豁免，对抗你的法术豁免DC。除非豁免成功，否则目标将被你和精类生物{@condition 魅惑}1分钟，或直到目标受到任何伤害。"
+									"entry": "该精类可以强迫一个它可见的10尺内的生物进行一次对抗你的法术豁免DC的感知豁免。除非豁免成功，否则目标将被你与精类{@condition 魅惑}，持续1分钟或直到目标受到任何伤害。"
 								},
 								{
 									"ENG_name": "Tricksy",
 									"name": "诡诈",
 									"type": "item",
-									"entry": "在使用精类步后，该精类生物可以立即令魔法黑暗充斥于它5尺内的一个5尺立方区域，魔法黑暗持续直到精类生物的下回合结束。"
+									"entry": "该精类能在其5尺内一个5尺立方区域中创造魔法黑暗，该黑暗持续到其下个回合结束。"
 								}
 							]
 						}
@@ -1619,7 +1619,7 @@
 							"ENG_name": "Fey Step",
 							"name": "妖精跨步",
 							"entries": [
-								"精类魔法般地传送至其视线范围内的未被占据的空间，距离最多30尺。在本回合结束前，精类的下一次攻击检定获得优势。"
+								"该精类生物魔法性地传送至多30尺到一个它能看见的未占据空间。该精类生物在本回合结束前进行的下一次攻击检定具有优势。"
 							]
 						}
 					]
@@ -1633,7 +1633,7 @@
 							"ENG_name": "Fey Step",
 							"name": "妖精跨步",
 							"entries": [
-								"妖精魔法性地传送至多30英尺到一个它可以看到的未被占据的空间。妖精可以迫使它可以看到的10英尺范围内的一个生物进行一次对抗你法术豁免DC的感知豁免。除非豁免成功，否则目标将被你和妖精{@condition 魅惑}1分钟或直到目标受到任何伤害。"
+								"该精类生物以魔法方式传送至多30尺至一个它能看见的未占据空间。该精类生物可以强迫一个它在10尺内能看见的生物进行一次对抗你的法术豁免DC的感知豁免。除非豁免成功，否则目标将被你和该精类生物{@condition 魅惑}，持续1分钟或直到目标受到任何伤害。"
 							]
 						}
 					]
@@ -1647,7 +1647,7 @@
 							"ENG_name": "Fey Step",
 							"name": "妖精跨步",
 							"entries": [
-								"精类魔法地传送至她能看见的30尺内的未被占据的空间。精类可以在她5尺范围内的5尺立方体内填充魔法黑暗，这将持续到她下一回合结束。"
+								"该精类以魔法传送至多30尺到一个它能看见的未占据空间。该精类能用一个5尺立方体的魔法黑暗填满其5尺内的一个空间，该黑暗持续到其下一回合结束。"
 							]
 						}
 					]
@@ -1673,11 +1673,11 @@
 			],
 			"ac": [
 				{
-					"special": "12 + 法术等级（天然护甲）"
+					"special": "12 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "50（仅限恶魔）或 40（仅限魔鬼）或 60（仅限尤格洛斯） +15×每比6环高的法术等级"
+				"special": "50（仅限恶魔）或 40（仅限魔鬼）或 60（仅限尤格罗斯魔）+ 15 点每比6环高一环"
 			},
 			"speed": {
 				"walk": 40,
@@ -1719,21 +1719,21 @@
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"恶魔在对抗法术和其他魔法效果的豁免检定中具有优势。"
+						"该邪魔对抗法术和其他魔法效应的豁免具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Death Throes (Demon Only)",
 					"name": "焚身爆（仅恶魔）",
 					"entries": [
-						"当这个恶魔的生命值降至0点或法术结束时，恶魔会爆炸，并且每个在其10尺范围内的生物必须进行一次敏捷豁免检定，对抗你的法术豁免DC。一个生物在失败的豁免检定上会受到{@damage 2d10 + 召唤法术等级}火焰伤害，在成功的豁免检定上则受到一半的伤害。"
+						"当该邪魔生命值降至0或法术终止时，该邪魔爆炸，其10尺范围内的每个生物必须进行一次对抗你法术豁免DC的敏捷豁免。豁免失败时，生物受到{@damage 2d10 + 召唤法术等级}点火焰伤害，豁免成功则伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "Devil's Sight (Devil Only)",
 					"name": "魔鬼视界（仅魔鬼）",
 					"entries": [
-						"魔法黑暗不会妨碍这个恶魔的黑暗视觉。"
+						"魔法黑暗不会阻碍该邪魔的黑暗视觉。"
 					]
 				}
 			],
@@ -1742,28 +1742,28 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"这个魔鬼进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"邪魔进行攻击的次数等于该法术环阶的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Bite (Demon Only)",
 					"name": "啃咬（仅恶魔）",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 黯蚀伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 黯蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Yugoloth Only)",
 					"name": "爪击（仅尤格罗斯魔）",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，范围 5 尺，单一目标。{@h}{@damage 1d8 + 3 + 召唤法术等级} 挥砍伤害。在攻击命中或未命中后，恶魔可以立即魔法传送至 30 尺内它可见的未被占据的空间。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及 5 尺，一个目标。{@h}{@damage 1d8 + 3 + summonSpellLevel} 挥砍伤害。攻击命中或失手后，邪魔可以立即魔法传送到30尺内一个它可见的未占据空间。"
 					]
 				},
 				{
 					"ENG_name": "Hurl Flame (Devil Only)",
-					"name": "投掷烈焰（仅魔鬼）",
+					"name": "灼烧烈焰（仅限魔鬼）",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，射程150尺，单一目标。{@h}{@damage 2d6 + 3 + summonSpellLevel} 火焰伤害。如果目标是一个可燃物体且没有被穿戴或携带，它也会着火。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，范围150尺，单一目标。{@h}{@damage 2d6 + 3 + summonSpellLevel} 火焰伤害。如果目标是一个未被穿着或携带的可燃物件，它也会着火。"
 					]
 				}
 			],
@@ -1824,7 +1824,7 @@
 								"mode": "removeArr",
 								"names": [
 									"爪击（仅尤格罗斯魔）",
-									"投掷烈焰（仅魔鬼）"
+									"灼烧烈焰（仅限魔鬼）"
 								]
 							}
 						]
@@ -1866,7 +1866,7 @@
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "投掷烈焰（仅魔鬼）",
+									"rename": "灼烧烈焰（仅限魔鬼）",
 									"with": "投掷烈焰"
 								}
 							},
@@ -1920,7 +1920,7 @@
 								"mode": "removeArr",
 								"names": [
 									"啃咬（仅恶魔）",
-									"投掷烈焰（仅魔鬼）"
+									"灼烧烈焰（仅限魔鬼）"
 								]
 							}
 						]
@@ -1965,7 +1965,7 @@
 				}
 			],
 			"hp": {
-				"special": "1 + 你的智力调整值 + 你的奇械师等级（人工生命体拥有的命中骰子数量[d4s]等于你的奇械师等级）"
+				"special": "1+你的智力调整值+你的奇械师等级（人工生命仆从拥有与你奇械师等级相同数量的生命骰[D4]）"
 			},
 			"speed": {
 				"walk": 20,
@@ -1978,11 +1978,11 @@
 			"wis": 10,
 			"cha": 7,
 			"save": {
-				"dex": "+2 加上PB"
+				"dex": "+2 加 PB"
 			},
 			"skill": {
 				"perception": "+0 加 PB × 2",
-				"stealth": "+2 加上PB"
+				"stealth": "+2 加 PB"
 			},
 			"senses": [
 				"黑暗视觉 60 尺"
@@ -2004,7 +2004,7 @@
 					"ENG_name": "Evasion",
 					"name": "反射闪避",
 					"entries": [
-						"如果人工生命体受到允许其进行敏捷豁免以承受一半伤害的效果影响，如果豁免成功，它实际上不会受到伤害；如果豁免失败，则只承受一半伤害。如果人工生命体处于{@condition 失能}，则无法使用这个特性。"
+						"如果人工生命仆从受到一个允许它进行敏捷豁免以仅受一半伤害的效果影响，则它在豁免成功时不受伤害，豁免失败时仅受一半伤害。如果它处于{@condition 失能}状态，则无法使用此特性。"
 					]
 				}
 			],
@@ -2014,16 +2014,16 @@
 					"ENG_name": "Force Strike",
 					"name": "力场打击",
 					"entries": [
-						"{@atk rw} 命中检定：{@hitYourSpellAttack}，射程30尺，你能看到的一个目标。{@h}{@damage 1d4 + PB}力场伤害。"
+						"{@atk rw} {@hitYourSpellAttack} 命中，范围30尺，单个你可见的目标。{@h}{@damage 1d4 + PB} 力场伤害。"
 					]
 				}
 			],
 			"reaction": [
 				{
 					"ENG_name": "Channel Magic",
-					"name": "传递法术",
+					"name": "引导魔法",
 					"entries": [
-						"人工生命体传递你施放的具有接触范围的法术。人工生命体必须在你120尺范围内。"
+						"人工生命仆从传递你施放的一个范围为接触的法术。人工生命仆从必须在你120尺范围内。"
 					]
 				}
 			],
@@ -2104,7 +2104,7 @@
 					"ENG_name": "Spider Climb",
 					"name": "蛛行术",
 					"entries": [
-						"拟身怪能够攀爬困难的表面，包括在天花板上倒挂，无需进行属性检定。"
+						"拟身怪可以攀爬困难表面，包括倒挂于天花板，而无需进行属性检定。"
 					]
 				}
 			],
@@ -2113,14 +2113,14 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 3}，触及：5尺，单一目标。{@h}1点穿刺伤害加上2点（{@damage 1d4}）强酸伤害。"
+						"{@atk mw} {@hit 3} 命中，触及5尺，单个目标。{@h}1点穿刺伤害加2（{@damage 1d4}）强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Shape-Shift",
 					"name": "变形",
 					"entries": [
-						"拟身怪变化成物体或恢复其真正的无定形形态。它在每种形态下的具体数值都相同。它穿戴或携带的任何装备不会被转变。如果它死亡，它会恢复其真实形态。"
+						"拟身怪变形为一个物件或变回其真实的无定型形态。其具体数值在每种形态下都相同。它所穿着或携带的任何装备都不会被转化。如果它死亡，则会恢复其真实形态。"
 					]
 				}
 			],
@@ -2220,58 +2220,58 @@
 				"昏迷"
 			],
 			"languages": [
-				"理解与它共鸣的生物的语言，但无法说话"
+				"懂得与之同调的生物的语言但不会说"
 			],
 			"trait": [
 				{
 					"ENG_name": "Immutable Existence",
 					"name": "不变存在",
 					"entries": [
-						"该仆从对任何会改变其形态或将其传送到另一个存在的平面的法术或效果免疫。"
+						"机仆免疫任何可以改变其形态或将其送至另一个存在位面的法术或效应。"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"仆从对法术和其他魔法效果的豁免检定具有优势，并且对它进行的法术攻击具有劣势。"
+						"机仆在抵抗法术和其他魔法效应时进行的豁免检定具有优势，并且对其进行的法术攻击具有劣势。"
 					]
 				},
 				{
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"仆从在其回合开始时恢复10点生命值。如果它的生命值降至0点，这个特性将不会生效，直到一个调谐的生物花费24小时修复这个神器，或者这个神器受到闪电伤害。"
+						"机仆在它的回合开始时回复10点生命值。如果它被降低到0点生命值，则该特质无法生效直到一个与之同调的生物耗费24小时维修神器或直到神器受到闪电伤害。"
 					]
 				},
 				{
 					"ENG_name": "Standing Leap",
 					"name": "立定跳远",
 					"entries": [
-						"仆从的立定跳远可达50尺，立定跳高可达25尺，无论是否助跑。"
+						"无论是否助跑，机仆最远可以跳50尺，最高25尺。"
 					]
 				},
 				{
 					"ENG_name": "Unusual Nature",
 					"name": "非凡本质",
 					"entries": [
-						"这个仆从不需要空气、食物、饮水或睡眠。"
+						"机仆无须空气、菜园、饮水和睡眠术。"
 					]
 				}
 			],
 			"action": [
 				{
 					"ENG_name": "Destructive Fist",
-					"name": "毁灭铁拳",
+					"name": "毁灭拳击",
 					"entries": [
-						"{@atk mw} 命中{@hit 17}，触及10尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。或 远程武器攻击：命中{@hit 17}，触及120尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。如果目标是一个物体，它会受到三倍伤害。"
+						"{@atk mw} {@hit 17}命中，触及10尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。或远程武器攻击：{@hit 17}命中，范围120尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。如果目标为物件，它受到三倍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Crushing Leap",
-					"name": "飞跃冲击",
+					"name": "碾压跳跃",
 					"entries": [
-						"如果仆从在其移动过程中至少跳跃了25尺，它可以使用这个动作以双脚着地在包含一个或多个其他生物的空间内。这些生物中的每一个都被推到仆从5尺范围内的未被占据的空间，并必须进行一次{@dc 25}敏捷豁免检定。未通过豁免的生物会受到26 ({@damage 4d12})点钝击伤害并被击倒{@condition 倒地}。成功通过豁免的生物受到一半的伤害，并且不会被击倒{@condition 倒地}。"
+						"如果机仆在其移动中跳跃至少25尺，它能用该动作着陆在一处由一个或多个其他生物占据的空间。该空间内的每个生物被推到机仆身边5尺内一处未被占据的空间内，并必须进行一次{@dc 25}的敏捷豁免。豁免失败者受到26（{@damage 4d12}）钝击伤害并被击{@condition 倒地}。豁免成功则伤害减半，且不会因此被击{@condition 倒地}。"
 					]
 				}
 			],
@@ -2305,7 +2305,7 @@
 		},
 		{
 			"ENG_name": "Reflection",
-			"name": "反影",
+			"name": "幽影",
 			"source": "TCE",
 			"page": 158,
 			"_copy": {
@@ -2316,7 +2316,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "幽影",
-						"with": "反影"
+						"with": "幽影"
 					}
 				}
 			},
@@ -2358,11 +2358,11 @@
 			],
 			"ac": [
 				{
-					"special": "11加上法术等级（自然护甲）"
+					"special": "11 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "35 +15×每比3环高的法术等级"
+				"special": "35 + 法术环阶每比3环高一环就增加15"
 			},
 			"speed": {
 				"walk": 40
@@ -2391,14 +2391,14 @@
 					"ENG_name": "Terror Frenzy (Fury Only)",
 					"name": "惧怖狂怒（仅暴怒）",
 					"entries": [
-						"该灵体对处于{@condition 恐慌}状态的生物进行攻击时具有优势。"
+						"该灵魄对恐慌生物发动的{@condition 恐慌}检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Weight of Sorrow (Despair Only)",
 					"name": "哀伤之重（仅绝望）",
 					"entries": [
-						"任何生物，除了你，如果在其回合开始时位于灵体5尺范围内，其移动速度将减少20尺，直到该生物下一个回合开始。"
+						"除你之外的所有生物在该灵魄 5 尺内开始回合时，其速度降低 20 尺直到该生物的下回合开始。"
 					]
 				}
 			],
@@ -2407,30 +2407,30 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"这个灵体进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"该灵魄发动攻击的次数等于该法术环阶的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Chilling Rend",
-					"name": "冻寒撕裂",
+					"name": "暗影撕裂",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，范围5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 寒冷伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 寒冷伤害。"
 					]
 				},
 				{
 					"ENG_name": "Dreadful Scream (1/Day)",
-					"name": "恐惧尖叫 (1/日)",
+					"name": "恐怖之仪尖啸（1/白昼）",
 					"entries": [
-						"该灵体发出尖叫。在其30尺范围内的每个生物必须成功进行一次对抗您法术豁免DC的感知豁免检定，否则将被{@condition 恐慌}状态影响1分钟。处于{@condition 恐慌}状态的生物可以在每个回合结束时重复进行豁免检定，成功则结束该效果。"
+						"该灵魄发出尖啸。其30尺内的每个生物必须成功通过对抗你法术豁免DC的感知豁免否则被{@condition 恐慌}1分钟。该{@condition 恐慌}生物可以在其每个回合结束时重复该豁免，成功则自身身上的该效应结束。"
 					]
 				}
 			],
 			"bonus": [
 				{
 					"ENG_name": "Shadow Stealth (Fear Only)",
-					"name": "暗影潜藏（仅恐惧）",
+					"name": "阴影隐匿（仅限恐惧术）",
 					"entries": [
-						"在昏暗或黑暗中时，灵体会进行隐藏行动。"
+						"当处于微光光照或黑暗中时，该灵魄进行躲藏动作。"
 					]
 				}
 			],
@@ -2457,7 +2457,7 @@
 			"_versions": [
 				{
 					"ENG_name": "Shadow Spirit (Despair)",
-					"name": "暗影灵（绝望）",
+					"name": "暗影灵魄（绝望）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
@@ -2465,7 +2465,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "哀伤之重（仅绝望）",
-									"with": "悲伤之重"
+									"with": "忧伤重负"
 								}
 							},
 							{
@@ -2478,14 +2478,14 @@
 				},
 				{
 					"ENG_name": "Shadow Spirit (Fear)",
-					"name": "阴影之魂（恐惧）",
+					"name": "暗影灵魄（恐惧术）",
 					"source": "TCE",
 					"_mod": {
 						"bonus": [
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "暗影潜藏（仅恐惧）",
+									"rename": "阴影隐匿（仅限恐惧术）",
 									"with": "幽影隐匿"
 								}
 							}
@@ -2495,7 +2495,7 @@
 				},
 				{
 					"ENG_name": "Shadow Spirit (Fury)",
-					"name": "暗影灵（狂怒）",
+					"name": "暗影灵魄（狂怒）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
@@ -2503,7 +2503,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "惧怖狂怒（仅暴怒）",
-									"with": "恐怖狂乱"
+									"with": "恐惧狂乱"
 								}
 							},
 							{
@@ -2541,7 +2541,7 @@
 				}
 			],
 			"hp": {
-				"special": "2 加上你的智力调整值加上你的工匠等级的五倍（防御者拥有等于你的工匠等级的命中骰子数[d8s]）"
+				"special": "2+你的智力调整值+你奇械师等级的五倍（钢铁守卫拥有与你奇械师等级相同数量的生命骰[D8]）"
 			},
 			"speed": {
 				"walk": 40
@@ -2553,11 +2553,11 @@
 			"wis": 10,
 			"cha": 6,
 			"save": {
-				"dex": "+1 加上PB",
-				"con": "+2 加上PB"
+				"dex": "+1 加 PB",
+				"con": "+2 加 PB"
 			},
 			"skill": {
-				"athletics": "+2 加上PB",
+				"athletics": "+2 加 PB",
 				"perception": "+0 加 PB × 2"
 			},
 			"senses": [
@@ -2581,7 +2581,7 @@
 					"ENG_name": "Vigilant",
 					"name": "警觉",
 					"entries": [
-						"防御者不能处于{@status 被突袭}状态。"
+						"该守卫无法被{@status 被突袭}。"
 					]
 				}
 			],
@@ -2591,14 +2591,14 @@
 					"ENG_name": "Force-Empowered Rend",
 					"name": "力场动能撕扯",
 					"entries": [
-						"{@atk mw} 命中检定：{@hitYourSpellAttack}，触及5尺，你能看到的一个目标。{@h}{@damage 1d8 + PB}力场伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单个你可见的目标。{@h}{@damage 1d8 + PB}点力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Repair (3/Day)",
 					"name": "修理（3次/天）",
 					"entries": [
-						"防御者内部的魔法机制恢复{@dice 2d8 + 基础攻击加值}生命值给自己或5尺范围内的任意构装生物或物体。"
+						"钢铁守卫体内的魔法机制恢复其自身或5尺内的一个构装体或物体{@dice 2d8 + PB}点生命值。"
 					]
 				}
 			],
@@ -2607,7 +2607,7 @@
 					"ENG_name": "Deflect Attack",
 					"name": "招架攻击",
 					"entries": [
-						"防御者对它能看到的，并且在其5尺范围内的一个生物的攻击检定施加不利条件，前提是该攻击检定的目标不是防御者本身。"
+						"钢铁守卫迫使一个它可见的、距离它5尺内的生物的攻击检定承受劣势，前提是此次攻击检定针对的是钢铁守卫以外的生物。"
 					]
 				}
 			],
@@ -2642,17 +2642,17 @@
 			],
 			"ac": [
 				{
-					"special": "11加上法术等级（自然护甲）"
+					"special": "11 + 法术环阶（天生护甲）"
 				}
 			],
 			"hp": {
-				"special": "30（仅限幽灵和腐臭）或 20（仅限骨骼）+10×每比3环高的法术等级"
+				"special": "30（仅限幽灵与腐化）或20（仅限骷髅） + 法术环阶每比3环高一环增加10"
 			},
 			"speed": {
 				"walk": 30,
 				"fly": {
 					"number": 40,
-					"condition": "（仅幽灵形态；悬浮）"
+					"condition": "（仅限幽灵形态；悬浮）"
 				},
 				"canHover": true
 			},
@@ -2684,14 +2684,14 @@
 					"ENG_name": "Incorporeal Passage (Ghostly Only)",
 					"name": "虚体通行（仅幽体）",
 					"entries": [
-						"该灵体可以像通过困难地形一样穿过其他生物和物体{@quickref 困难地形||3}。如果它在回合结束时位于物体内部，则会被传送到最近的空位，并根据移动的每5尺距离受到{@damage 1d10}力场伤害。"
+						"该灵魄可以如同通过{@quickref 困难地形||3}一般穿过其他生物和物体。如果它在某个物体内部结束其回合，则会被传送到最近的未占据空间，并且每移动5尺就受到{@damage 1d10}点力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Festering Aura (Putrid Only)",
 					"name": "腐灭灵光（仅腐尸）",
 					"entries": [
-						"任何生物，除了你之外，如果在其回合开始时处于灵体5尺范围内，必须进行一次对抗你法术豁免DC的体质豁免检定，否则直到其下一个回合开始时将处于{@condition 中毒}状态。"
+						"任何生物，除你之外，若在其回合开始时处于该灵魄5尺范围内，必须成功通过一次对抗你法术豁免DC的体质豁免，否则将陷入{@condition 中毒}状态直到其下个回合开始。"
 					]
 				}
 			],
@@ -2700,21 +2700,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"这个灵体进行的攻击次数等于这个法术等级的一半（向下取整）。"
+						"该灵魄发动攻击的次数等于该法术环阶的一半（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Deathly Touch (Ghostly Only)",
 					"name": "致死之触（仅幽体）",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack}命中，触及范围5尺，单一生物。{@h}{@damage 1d8 + 3 + 召唤法术等级} 黯蚀伤害，生物必须通过对抗你法术豁免DC的感知豁免检定，否则直到目标下一个回合结束时被{@condition 恐慌}不死生物。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，一个生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 黯蚀伤害，且该生物必须成功通过一次对抗你法术豁免DC的感知豁免否则直到目标下一回合结束前对不死生物陷入{@condition 恐慌}。"
 					]
 				},
 				{
 					"ENG_name": "Grave Bolt (Skeletal Only)",
 					"name": "暗澹箭（仅骷髅）",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 黯蚀伤害。"
+						"{@atk rs} {@hitYourSpellAttack} 命中，范围150尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 黯蚀伤害。"
 					]
 				},
 				{
