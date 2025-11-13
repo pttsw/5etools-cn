@@ -2024,9 +2024,9 @@ class SearchWidget {
 			if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 				const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
 				if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
+					this._$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
 				} else {
-					this.$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+					this._$wrpResults.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 				}
 			}
 		} else {
@@ -2351,8 +2351,8 @@ class SearchWidget {
 		};
 
 		return SearchWidget.pGetUserEntitySearch(
-			"Select Creature",
-			"Creature",
+			"选择生物",
+			"生物",
 			nxtOpts,
 		);
 	}

@@ -6,10 +6,10 @@ import {RenderBestiary} from "../render-bestiary.js";
 export class LegendaryGroupBuilder extends BuilderBase {
 	constructor () {
 		super({
-			titleSidebarLoadExisting: "Copy Existing Legendary Group",
-			titleSidebarDownloadJson: "Download Legendary Groups as JSON",
+			titleSidebarLoadExisting: "复制已存在的传奇组",
+			titleSidebarDownloadJson: "下载传奇组为JSON",
 			prop: "legendaryGroup",
-			titleSelectDefaultSource: "(Same as Legendary Group)",
+			titleSelectDefaultSource: "(与传奇组相同)",
 		});
 
 		this._renderOutputDebounced = MiscUtil.debounce(() => this._renderOutput(), 50);
