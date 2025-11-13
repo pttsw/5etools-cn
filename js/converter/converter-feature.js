@@ -134,7 +134,7 @@ export class ConverterFeatureBase extends ConverterBase {
 		const joinedStack = tkStack.join(" ").trim();
 
 		const parts = joinedStack.split(
-			joinedStack.includes(";")
+			(joinedStack.includes(";") || joinedStack.includes("；"))
 				? StrUtil.SEMICOLON_SPACE_NOT_IN_PARENTHESES_REGEX
 				: StrUtil.COMMA_SPACE_NOT_IN_PARENTHESES_REGEX,
 		);
@@ -142,41 +142,60 @@ export class ConverterFeatureBase extends ConverterBase {
 		const pre = {};
 
 		parts.forEach(pt => {
-			pt = pt.trim().replace(/[,;]\s*$/, "");
+			pt = pt.trim().replace(/[,;，；]\s*$/, "");
 
 			if (/^the ability to cast at least one spell$/i.test(pt)) return pre.spellcasting = true;
 
-			if (/^spellcasting$/i.test(pt)) return pre.spellcasting2020 = true;
-			if (/^pact magic feature$/i.test(pt)) return pre.spellcasting2020 = true;
-			if (/^Spellcasting or Pact Magic Feature$/i.test(pt)) return pre.spellcasting2020 = true;
+			if (/^(?:spellcasting|施法能力|施法)$/i.test(pt)) return pre.spellcasting2020 = true;
+			if (/^(?:pact magic feature|契约魔法|契约魔法特性)$/i.test(pt)) return pre.spellcasting2020 = true;
+			if (/^(?:Spellcasting or Pact Magic Feature|施法或契约魔法特性)$/i.test(pt)) return pre.spellcasting2020 = true;
 
-			if (/^spellcasting feature$/i.test(pt)) return pre.spellcastingFeature = true;
-			if (/^spellcasting feature from a class that prepares spells$/i.test(pt)) return pre.spellcastingPrepared = true;
+			if (/^(?:spellcasting feature|施法特性)$/i.test(pt)) return pre.spellcastingFeature = true;
+			if (/^(?:spellcasting feature from a class that prepares spells|需要准备法术的施法职业特性)$/i.test(pt)) return pre.spellcastingPrepared = true;
 
-			if (/proficiency with a martial weapon/i.test(pt)) {
+			if (/^(?:proficiency with a martial weapon|熟练于军用武器)$/i.test(pt)) {
 				pre.proficiency ||= [{}];
 				pre.proficiency[0].weapon = "martial";
 				return;
 			}
 
-			if (/Martial Weapon Proficiency/i.test(pt)) {
+			if (/^(?:Martial Weapon Proficiency|军用武器熟练项)$/i.test(pt)) {
 				pre.proficiency ||= [{}];
 				pre.proficiency[0].weaponGroup = "martial";
 				return;
 			}
 
 			const mArmor = /^(?<armorType>Light|Medium|Heavy) Armor (?:Training|Proficiency)$/i.exec(pt)
-				|| /^(?<armorType>Shield) (?:Training|Proficiency)$/i.exec(pt);
+				|| /^(?<armorType>Shield) (?:Training|Proficiency)$/i.exec(pt)
+				|| /^(?<armorType>轻|中|重)甲(?:受训|熟练|熟练项)$/i.exec(pt)
+				|| /^(?<armorType>盾牌)(?:受训|熟练|熟练项)$/i.exec(pt);
 			if (mArmor) {
 				pre.proficiency ||= [{}];
-				pre.proficiency[0].armor = mArmor.groups.armorType.toLowerCase();
+				switch (mArmor.groups.armorType) {
+					case "Light":
+					case "轻":
+						pre.proficiency[0].armor = "light";
+						break;
+					case "Medium":
+					case "中":
+						pre.proficiency[0].armor = "medium";
+						break;
+					case "Heavy":
+					case "重":
+						pre.proficiency[0].armor = "heavy";
+						break;
+					case "Shield":
+					case "盾牌":
+						pre.proficiency[0].armor = "shield";
+						break;
+				}
 				return;
 			}
 
-			const mLevel = /^(?<level>\d+).. level$/i.exec(pt);
+			const mLevel = /^(?<level>\d+)..(?: level|级)$/i.exec(pt);
 			if (mLevel) return pre.level = Number(mLevel.groups.level);
 
-			const mLevelAlt = /^Level (?<level>\d+)\+?$/i.exec(pt);
+			const mLevelAlt = /^(?:Level |等级\s?)(?<level>\d+)\+?$/i.exec(pt);
 			if (mLevelAlt) return pre.level = Number(mLevelAlt.groups.level);
 
 			const mAbilityPlain = new RegExp(`^(${Object.values(Parser.ATB_ABV_TO_FULL).join("|")})$`).exec(pt);
@@ -185,11 +204,11 @@ export class ConverterFeatureBase extends ConverterBase {
 				return;
 			}
 
-			const mAbility = new RegExp(`^${Object.entries(Parser.ATB_ABV_TO_FULL).map(([abv, full]) => `(?:or )?(?<${abv}>${full})?(?:,? )?`).join("")} (?:score of )?(?<score>\\d+)(?:\\+| or higher)$`).exec(pt);
+			const mAbility = new RegExp(`^${Object.entries(Parser.ATB_ABV_TO_FULL).map(([abv, full]) => `(?:or |或)?(?<${abv}>${full})?(?:,? )?`).join("")} (?:score of )?(?<score>\\d+)(?:\\+| or higher)$`).exec(pt);
 			if (mAbility) {
 				// Expect only one ability score threshold (i.e. no "str 15 OR dex 13")
 				if (preAbilsMeta.score) {
-					options.cbWarning(`(${state.entity.name}) Ability score prerequisite "${pt}" requires manual conversion`);
+					options.cbWarning(`(${state.entity.name}) 属性值先决条件 "${pt}" 无法自动转换`);
 					return;
 				}
 
@@ -197,19 +216,19 @@ export class ConverterFeatureBase extends ConverterBase {
 				Parser.ABIL_ABVS
 					.filter(abv => mAbility.groups[abv])
 					.forEach(abv => {
-						if (preAbilsMeta.abils.includes(abv)) return options.cbWarning(`(${state.entity.name}) Ability score prerequisite (${abv}) requires manual conversion`);
+						if (preAbilsMeta.abils.includes(abv)) return options.cbWarning(`(${state.entity.name})属性值先决条件 (${abv}) 无法自动转换`);
 						preAbilsMeta.abils.push(abv);
 					});
 
 				return;
 			}
 
-			const mFeat = /^(?<name>.*?) feat$/i.exec(pt);
+			const mFeat = /^(?<name>.*?)(?: feat|专长)$/i.exec(pt);
 			if (mFeat) {
 				pre.feat ||= [];
 				const rawFeat = mFeat.groups.name.toLowerCase().trim();
 
-				const [ptName, ptSpecifier] = rawFeat.split(/ \(([^)]+)\)$/);
+				const [ptName, ptSpecifier] = rawFeat.split(/ [(（]([^)）]+)[)）]$/);
 				if (!ptSpecifier) return pre.feat.push(`${rawFeat}|${state.entity.source.toLowerCase()}`);
 
 				return pre.feat.push(`${ptName}|${state.entity.source.toLowerCase()}|${rawFeat}`);
@@ -224,7 +243,7 @@ export class ConverterFeatureBase extends ConverterBase {
 				});
 			}
 
-			const mAlignment = /^(?<align>.*?) alignment/i.exec(pt);
+			const mAlignment = /^(?<align>.*?)(?: alignment|阵营)/i.exec(pt);
 			if (mAlignment) {
 				const {alignment} = AlignmentUtil.tryGetConvertedAlignment(mAlignment.groups.align);
 				if (alignment) {
@@ -233,12 +252,13 @@ export class ConverterFeatureBase extends ConverterBase {
 				}
 			}
 
-			const mCampaign = /^(?<name>.*)? ${I18nUtil.get("common.campaign")}$/i.exec(pt);
+			const mCampaign = /^(?<name>.*)?(?: campaign|战役)$/i.exec(pt);
 			if (mCampaign) {
 				return (pre.campaign = pre.campaign || []).push(mCampaign.groups.name);
 			}
 
-			const mClass = new RegExp(`^${ConverterConst.STR_RE_CLASS}(?: class)?$`, "i").exec(pt);
+			const mClass = new RegExp(`^${ConverterConst.STR_RE_CLASS}(?: class)?$`, "i").exec(pt)
+			|| new RegExp(`^${ConverterConst.STR_RE_CLASS_CN}(?:职业)?$`, "i").exec(pt);
 			if (mClass) {
 				return pre.level = {
 					level: 1,
@@ -249,20 +269,20 @@ export class ConverterFeatureBase extends ConverterBase {
 				};
 			}
 
-			const mFeature = /^(?<name>.*) Feature$/.exec(pt);
+			const mFeature = /^(?<name>.*)(?: Feature|特性)$/.exec(pt);
 			if (mFeature) {
 				pre.feature = [mFeature.groups.name];
 				return;
 			}
 
-			const mCulture = /^(?<name>.*) Culture$/.exec(pt);
+			const mCulture = /^(?<name>.*)(?: Culture|文化)$/.exec(pt);
 			if (mCulture) {
 				pre.culture = [mCulture.groups.name];
 				return;
 			}
 
 			pre.other = pt;
-			options.cbWarning(`(${state.entity.name}) Prerequisite "${pt}" requires manual conversion`);
+			options.cbWarning(`(${state.entity.name}) 先决条件 "${pt}" 无法自动转换`);
 		});
 
 		if (!Object.keys(pre).length) return null;

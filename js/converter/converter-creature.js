@@ -129,7 +129,7 @@ export class ConverterCreature extends ConverterBase {
 	static _RE_START_SENSES = "(?:Senses?|感官)";
 	static _RE_START_LANGUAGES = "(?:Languages?|语言)";
 	static _RE_START_CHALLENGE = "(?:Challenge|挑战(?:等级)?)";
-	static _RE_START_PROF_BONUS = "Proficiency Bonus(?: \\(PB\\))?";
+	static _RE_START_PROF_BONUS = "(?:Proficiency Bonus(?: \\(PB\\))?|熟练加值)";
 	static _RE_START_GEAR = "(?:Gear|装备)";
 
 	static _LINE_MODES = {
@@ -1594,7 +1594,7 @@ export class ConverterCreature extends ConverterBase {
 
 			// armor class
 			if (step === 2) {
-				stats.ac = ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine).replace(/(?:Armor Class|AC)/g, "").trim();
+				stats.ac = ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine).replace(/(?:Armor Class|AC|护甲等级)/g, "").trim();
 				step++;
 				continue;
 			}
@@ -1628,62 +1628,62 @@ export class ConverterCreature extends ConverterBase {
 
 			if (step === 8) {
 				// saves (optional)
-				if (~meta.curLine.indexOf("Saving Throws")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_SAVING_THROWS, line: meta.curLine})) {
 					this._setCleanSaves(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
 				// skills (optional)
-				if (~meta.curLine.indexOf("Skills")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_SKILLS, line: meta.curLine})) {
 					this._setCleanSkills(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
 				// damage vulnerabilities (optional)
-				if (~meta.curLine.indexOf("Damage Vulnerabilities")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_DAMAGE_VULN, line: meta.curLine})) {
 					this._setCleanDamageVuln(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
 				// damage resistances (optional)
-				if (~meta.curLine.indexOf("Damage Resistance")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_DAMAGE_RES, line: meta.curLine})) {
 					this._setCleanDamageRes(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
 				// damage immunities (optional)
-				if (~meta.curLine.indexOf("Damage Immunities")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_DAMAGE_IMM, line: meta.curLine})) {
 					this._setCleanDamageImm(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
 				// condition immunities (optional)
-				if (~meta.curLine.indexOf("Condition Immunities")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_CONDITION_IMM, line: meta.curLine})) {
 					this._setCleanConditionImm(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
 				// senses
-				if (~meta.curLine.indexOf("Senses")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_SENSES, line: meta.curLine})) {
 					this._setCleanSenses({stats, line: ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), cbWarning: options.cbWarning, styleHint: options.styleHint});
 					continue;
 				}
 
 				// languages
-				if (~meta.curLine.indexOf("Languages")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_LANGUAGES, line: meta.curLine})) {
 					this._setCleanLanguages(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine));
 					continue;
 				}
 
 				// CR
-				if (~meta.curLine.indexOf("Challenge")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_CHALLENGE, line: meta.curLine})) {
 					meta.curLine = ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine);
-					this._setCleanCr(stats, meta, {cbWarning: options.cbWarning});
+					this._setCleanCr(stats, meta, {cbWarning: options.cbWarning, header: this._RE_START_CHALLENGE});
 					continue;
 				}
 
 				// PB
-				if (~meta.curLine.indexOf("Proficiency Bonus")) {
+				if (ConverterUtilsMarkdown.isStatblockLineHeaderStart({reStartStr: this._RE_START_PROF_BONUS, line: meta.curLine})) {
 					this._setCleanPbNote(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine));
 					continue;
 				}
@@ -1691,7 +1691,7 @@ export class ConverterCreature extends ConverterBase {
 				const [nextLine1, nextLine2] = this._getNextLinesMarkdown(meta, {ixCur: i, isPrevBlank, nextPrevBlank}, 2);
 
 				// Skip past Giffyglyph builder junk
-				if (nextLine1 && nextLine2 && ~nextLine1.indexOf("Attacks") && ~nextLine2.indexOf("Attack DCs")) {
+				if (nextLine1 && nextLine2 && (~nextLine1.indexOf("Attacks") || ~nextLine1.indexOf("攻击")) && (~nextLine2.indexOf("Attack DCs") || ~nextLine2.indexOf("攻击DC"))) {
 					i = this._advanceLinesMarkdown(meta, {ixCur: i, isPrevBlank, nextPrevBlank}, 2);
 				}
 

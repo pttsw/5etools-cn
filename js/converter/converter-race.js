@@ -350,7 +350,7 @@ export class ConverterRace extends ConverterFeatureBase {
 			return;
 		}
 
-		options.cbWarning(`Size text "${text}" requires manual conversion!`);
+		options.cbWarning(`体型文本 "${text}" 无法自动转换！`);
 	}
 
 	static _doRacePostProcess_speed (race, options) {
@@ -360,7 +360,7 @@ export class ConverterRace extends ConverterFeatureBase {
 		const text = entry.entries[0];
 
 		const mSimple = /Your (?:base )?(?:walking )?speed is (?<speed>\d+) feet\.?$/.exec(text)
-			|| /你的?(?:基础)?(?:步行|移动)?速度[是为](?<speed>\d+)英?尺。?$/.exec(text);
+			|| /你?的?(?:基础)?(?:步行|移动)?速度[是为]?(?<speed>\d+)英?尺。?$/.exec(text);
 		if (mSimple) {
 			race.speed = Number(mSimple.groups.speed);
 
@@ -473,7 +473,7 @@ export class ConverterRace extends ConverterFeatureBase {
 		}
 	}
 
-	static _RE_CREATURE_TYPES = new RegExp(`^(?:You are(?: an?)? |你是(?:一个)?)(?<type>${Parser.MON_TYPES.map(it => it.uppercaseFirst()).join("|")})(?:\\.|。|$)`);
+	static _RE_CREATURE_TYPES = new RegExp(`^(?:You are(?: an?)? |你(?:是|属于)(?:一个)?)(?<type>${Parser.MON_TYPES.map(it => it.uppercaseFirst()).join("|")})(?:生物)?(?:\\.|。|$)`);
 	static _RE_CREATURE_TYPES_SHORT = new RegExp(`^(?<type>${Parser.MON_TYPES.map(it => it.uppercaseFirst()).join("|")})\\.?$`);
 	static _doRacePostProcess_creatureType (race, options) {
 		const {entry, isInRoot, entryParentList} = this._getNamedEntry({race, reName: /^(?:Creature Type|生物类型)[:：]?$/i}) || {};

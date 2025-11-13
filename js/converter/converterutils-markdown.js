@@ -24,7 +24,7 @@ export class ConverterUtilsMarkdown { // Or "CUM" for short.
 
 	static getNoLeadingSymbols (line) {
 		const removeFirstInnerStar = line.trim().startsWith("*");
-		const clean = line.replace(/^[^A-Za-z0-9]*/, "").trim();
+		const clean = line.replace(/^[^\u4e00-\u9fa5A-Za-z0-9]*/, "").trim();
 		return removeFirstInnerStar ? clean.replace(/\*/, "") : clean;
 	}
 
@@ -36,4 +36,12 @@ export class ConverterUtilsMarkdown { // Or "CUM" for short.
 	static isListItem (line) { return this._RE_LI_LEADING_SYMBOL.test(line); }
 
 	static getNoLeadingListSymbol (line) { return line.replace(this._RE_LI_LEADING_SYMBOL, "").trim(); }
+
+	static isStatblockLineHeaderStart ({reStartStr, line}) {
+		return this._getStatblockLineHeaderRegExp({reStartStr: `(?:-\\s)?(?:\\*\\*)?${reStartStr}(?:\\*\\*)?`}).exec(line)?.index === 0;
+	}
+
+	static _getStatblockLineHeaderRegExp ({reStartStr}) {
+		return new RegExp(`\\s*${reStartStr}\\s*?(?::|\\.|：|\\s|\\b)?\\s*`, "i");
+	}
 }
