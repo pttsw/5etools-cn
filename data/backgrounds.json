@@ -4034,6 +4034,126 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Carouser",
+			"name": "狂欢者",
+			"source": "ABH",
+			"page": 6,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"tireless reveler|abh": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"persuasion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"gaming set": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"匕首|xphb",
+						{
+							"item": "gaming set|xphb",
+							"displayName": "游戏套装（与所选熟练项相同）"
+						},
+						"高档服装|xphb",
+						"玻璃瓶|xphb",
+						"镜子|xphb",
+						"香水|xphb",
+						"小包|xphb",
+						"火绒盒|xphb",
+						{
+							"value": 1900
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 不知疲倦的狂欢者|ABH}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 欺瞒|XPHB}和{@skill 游说|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiency:",
+							"name": "工具熟练项：",
+							"type": "item",
+							"entry": "选择一种 {@item 赌具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 匕首|XPHB}、{@item 赌具|XPHB}（同上）、{@item 高档服装|XPHB}、{@item 玻璃瓶|XPHB}、{@item 镜子|XPHB}、{@item 香水|XPHB}、{@item 小包|XPHB}、{@item 火绒盒|XPHB}，19 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true
+		},
+		{
 			"ENG_name": "Celebrity Adventurer's Scion",
 			"name": "名人冒险家的后裔",
 			"source": "AI",
@@ -14926,7 +15046,7 @@
 							"name": "工具熟练",
 							"type": "item",
 							"entries": [
-								"两种，视家族决定：房产代理工具熟练"
+								"从家族工具熟练度表中选择两项熟练项"
 							]
 						},
 						{
@@ -15008,7 +15128,7 @@
 					"name": "职能",
 					"type": "entries",
 					"entries": [
-						"你总是在为你的家族收集信息，但当男爵们给你特定任务时，你通常从事什么工作呢？房产代理职能表提供了一些可能性。",
+						"你总是在为你的家族收集信息。但当男爵们为了特殊的任务前来找你时，你通常在干什么工作呢？通过选择或掷骰从下表中决定你的职责。",
 						{
 							"type": "table",
 							"caption": "家族代理人角色",
@@ -15073,7 +15193,7 @@
 					"name": "建议人物特征",
 					"type": "entries",
 					"entries": [
-						"房产代理有很多种。请结合你所服务的家族以及你的工作类型来选择人物特征。",
+						"家族代理人有很多种。请结合你所服务的家族以及你的工作类型选择或掷骰决定特征。",
 						{
 							"type": "table",
 							"caption": "个性特点",
@@ -28890,6 +29010,256 @@
 						"使用 《玩家手册》中\" {@background 化外之民}\"的特征表格作为你的基础特征和动机，并在适当的时候修改条目以让其符合你作为乌斯伽部族成员的身份。",
 						"即使已经离开了自己的部族（至少现在是这样），但你仍坚持以同胞的传统过活。你绝不会砍下一棵仍活着的树，且不会不赞同相同的事在眼前发生。乌斯伽人的\"祖丘 ancestral mounds\"作为乌斯伽保护其图腾精魂所在，以及部族各英雄埋葬之处的大丘陵，被你视为神圣之地。",
 						"你的牵绊很可能与你的部族或某些乌斯伽人的哲念或文化相关（甚至可能与乌斯伽自身相关）。你的理想是个人的选择，它可能与你同胞的风土人情密切相关，当然也不会与你身为乌斯伽人所代表的其他东西相违背或妥协。"
+					]
+				}
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Vampire Devotee",
+			"name": "吸血鬼信徒",
+			"source": "ABH",
+			"page": 6,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"vampire's plaything|abh": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"persuasion": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"cook's utensils|xphb",
+						"高档服装|xphb",
+						{
+							"item": "玻璃瓶|xphb",
+							"quantity": 2,
+							"displayName": "玻璃瓶"
+						},
+						"医疗包|xphb",
+						"香水|xphb",
+						"油灯|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（3瓶）"
+						},
+						"水袋|xphb",
+						{
+							"value": 1900
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 吸血鬼的玩物|ABH}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 游说|XPHB}和{@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiency:",
+							"name": "工具熟练项：",
+							"type": "item",
+							"entry": "{@item 厨师工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 厨师工具|XPHB}、{@item 高档服装|XPHB}、2个{@item 玻璃瓶|XPHB|玻璃瓶}、{@item 医疗包|XPHB}、{@item 香水|XPHB}、{@item 油灯|XPHB}、{@item 灯油|XPHB}（3瓶）、{@item 水袋|XPHB}、19 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Vampire Survivor",
+			"name": "吸血鬼生还者",
+			"source": "ABH",
+			"page": 7,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"vampire hunter|abh": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"religion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"woodcarver's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"木雕工具|xphb",
+						"撬棍|xphb",
+						"附盖提灯|xphb",
+						{
+							"item": "圣徽|xphb",
+							"displayName": "圣徽（圣物匣）"
+						},
+						"圣水|xphb",
+						"镜子|xphb",
+						{
+							"item": "灯油|xphb",
+							"displayName": "灯油（3瓶）"
+						},
+						"火绒盒|xphb",
+						"旅行者服装|xphb",
+						"水袋|xphb",
+						{
+							"value": 400
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，体质，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 吸血鬼猎人|ABH}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB} 和 {@skill 宗教|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiency:",
+							"name": "工具熟练项：",
+							"type": "item",
+							"entry": "{@item 木雕工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 木雕工具|XPHB}、{@item 撬棍|XPHB}、{@item 附盖提灯|XPHB}、{@item 圣徽|XPHB}（{@item 圣物匣|XPHB}）、{@item 圣水|XPHB}、{@item 镜子|XPHB}、{@item 灯油|XPHB}（3瓶）、{@item 火绒盒|XPHB}、{@item 旅行者服装|XPHB}、{@item 水袋|XPHB}，4 GP；或 (B) 50 GP"
+						}
 					]
 				}
 			],

@@ -2373,6 +2373,92 @@
 		{
 			"ENG_name": "Dhampir",
 			"name": "半血裔",
+			"source": "ABH",
+			"page": 7,
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": {
+				"walk": 35,
+				"climb": true
+			},
+			"darkvision": 60,
+			"resist": [
+				"黯蚀"
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型(约4-7尺高)或小型(约2-4尺高)，在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你有范围为60尺的{@sense 黑暗视觉|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
+					"type": "entries",
+					"entries": [
+						"你拥有等于你{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。当你达到角色等级3时，你可以在垂直表面和天花板上移动，同时保持双手空闲。"
+					]
+				},
+				{
+					"ENG_name": "Trace of Undeath",
+					"type": "entries",
+					"name": "亡灵之痕",
+					"entries": [
+						"你对死灵伤害有{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Vampiric Bite",
+					"name": "吸血啃咬",
+					"type": "entries",
+					"entries": [
+						"当你使用你的{@variantrule 徒手打击|XPHB}并造成伤害时，你可以选择用你的尖牙进行啃咬。你造成等于{@dice 1d4}加上你的体质调整值的穿刺伤害，而不是{@variantrule 徒手打击|XPHB}的正常伤害。",
+						"此外，当你对一个不是构装体或不死生物的生物造成此伤害时，你可以通过以下方式之一强化自身：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Drain",
+									"type": "item",
+									"name": "汲取",
+									"entries": [
+										"你恢复等于所造成穿刺伤害的{@variantrule 生命值|XPHB}。"
+									]
+								},
+								{
+									"ENG_name": "Strengthen",
+									"type": "item",
+									"name": "强化",
+									"entries": [
+										"你在接下来一分钟内进行的下一次属性检定或攻击检定获得加值；该加值等于造成的穿刺伤害。"
+									]
+								}
+							]
+						},
+						"你可以使用此特性的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Dhampir",
+			"name": "半血裔",
 			"source": "VRGR",
 			"page": 16,
 			"lineage": "VRGR",
@@ -3890,7 +3976,7 @@
 					"ENG_name": "Artisan's Expertise",
 					"name": "专精工匠",
 					"entries": [
-						"你可以选择两种{@filter 工匠工具|items|source=phb|miscellaneous=寻常|type=工匠工具}（工匠工具）并拥有其熟练度。在使用这些选择的熟练度进行任何属性检定时，你的熟练加值会翻倍。此外，每当你进行与任何建筑构造（包括建筑物、运河和渡槽等公共工程，以及支撑吉拉普大部分建筑的庞大齿轮工程）起源相关的智力（{@skill 历史}）检定时，你会被视为具有{@skill 历史}技能熟练度，并将你的熟练加值翻倍加入到检定中，而不是通常的熟练加值。"
+						"你可以选择两种{@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}（工匠工具）并拥有其熟练度。在使用这些选择的熟练度进行任何属性检定时，你的熟练加值会翻倍。此外，每当你进行与任何建筑构造（包括建筑物、运河和渡槽等公共工程，以及支撑吉拉普大部分建筑的庞大齿轮工程）起源相关的智力（{@skill 历史}）检定时，你会被视为具有{@skill 历史}技能熟练度，并将你的熟练加值翻倍加入到检定中，而不是通常的熟练加值。"
 					],
 					"type": "entries"
 				},
@@ -5263,7 +5349,7 @@
 					"name": "星界火花",
 					"type": "entries",
 					"entries": [
-						"你与星界的精神连接使你能够神秘地接触神圣力量的火花，你可以通过你的武器引导这种力量。当你用{@filter 简易或军用武器|items|source=phb|category=基础|type=军用武器;简易武器}击中目标时，你可以使目标额外承受等于你熟练加值的力场伤害。",
+						"你与星界的精神连接使你能够神秘地接触神圣力量的火花，你可以通过你的武器引导这种力量。当你用{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}击中目标时，你可以使目标额外承受等于你熟练加值的力场伤害。",
 						"你可以使用这个特性的次数等于你的熟练加值，但你每回合不能使用超过一次。当你完成一次长休后，你会恢复所有已使用的点数。"
 					]
 				},
@@ -8014,7 +8100,7 @@
 					"ENG_name": "Martial Training",
 					"name": "战争训练",
 					"entries": [
-						"你熟练掌握了两种你选择的{@filter 军用武器|items|source=phb|category=基础|type=军用武器}和轻型盔甲。"
+						"你熟练掌握了两种你选择的{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和轻型盔甲。"
 					],
 					"type": "entries"
 				},
@@ -9852,7 +9938,7 @@
 					"ENG_name": "Cunning Artisan",
 					"name": "能工巧匠",
 					"entries": [
-						"作为短休的一部分，你可以从被杀死的野兽、构装体、龙、怪物或体型为小型或更大的植物生物身上收集骨头和皮毛，以制作以下物品之一：一面{@item 护盾术|PHB}、一根{@item 短棒|PHB}、一支{@item 标枪|PHB}，或者{@dice 1d4}支{@item 飞镖|PHB|飞镖}或{@item 吹箭|PHB|吹箭}。使用此特性时，你需要一把刀刃，例如一把{@item 匕首|PHB}，或合适的{@filter 工匠工具|items|source=phb|miscellaneous=寻常|type=工匠工具}，例如{@item leatherworker's tools|PHB}。"
+						"作为短休的一部分，你可以从被杀死的野兽、构装体、龙、怪物或体型为小型或更大的植物生物身上收集骨头和皮毛，以制作以下物品之一：一面{@item 护盾术|PHB}、一根{@item 短棒|PHB}、一支{@item 标枪|PHB}，或者{@dice 1d4}支{@item 飞镖|PHB|飞镖}或{@item 吹箭|PHB|吹箭}。使用此特性时，你需要一把刀刃，例如一把{@item 匕首|PHB}，或合适的{@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}，例如{@item leatherworker's tools|PHB}。"
 					],
 					"type": "entries"
 				},
@@ -19581,7 +19667,7 @@
 					"name": "工匠直觉",
 					"type": "entries",
 					"entries": [
-						"当你进行{@skill 奥秘}鉴定或者使用{@filter 工匠工具|items|source=phb|miscellaneous=寻常|type=工匠工具}进行属性检定时，你能掷一个{@dice d4}，并把结果加到检定结果上。"
+						"当你进行{@skill 奥秘}鉴定或者使用{@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}进行属性检定时，你能掷一个{@dice d4}，并把结果加到检定结果上。"
 					]
 				},
 				{

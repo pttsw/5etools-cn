@@ -774,6 +774,142 @@
 			]
 		},
 		{
+			"ENG_name": "Bloodlust",
+			"name": "嗜血",
+			"source": "ABH",
+			"page": 9,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Powerful Recovery",
+					"type": "entries",
+					"name": "强力恢复",
+					"entries": [
+						"当你掷一个{@variantrule 生命值|XPHB|生命值}骰来恢复{@variantrule 生命值|XPHB}时，你可以将掷出的1或2视为3。"
+					]
+				},
+				{
+					"ENG_name": "Sanguine Feast",
+					"type": "entries",
+					"name": "血色盛宴",
+					"entries": [
+						"每回合一次，当你用一个攻击掷骰命中一个非构装或不死生物的浴血生物时，你可以消耗一个{@variantrule 生命值|XPHB|生命值}骰，掷骰并恢复等于掷骰结果加上你体质调整值的{@variantrule 生命值|XPHB}。",
+						"你可以使用此特性的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Bomber",
+			"name": "轰炸者",
+			"source": "ABH",
+			"page": 9,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"dex": 1
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Far Lobber",
+					"type": "entries",
+					"name": "远距投手",
+					"entries": [
+						"当你使用{@action 攻击|XPHB}动作投掷小瓶或烧瓶时，你可以以你自身40尺内能看见的一个物体或生物为目标。"
+					]
+				},
+				{
+					"ENG_name": "Long Shots",
+					"name": "百步穿杨",
+					"type": "entries",
+					"entries": [
+						"使用投掷武器进行远程攻击时，在长距离范围内进行攻击不会使你的攻击检定受到{@variantrule 劣势|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Blazing Dawn",
+			"name": "爆燃黎明恩惠",
+			"source": "ABH",
+			"page": 11,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"immune": [
+				"光耀"
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Beloved of the Sun",
+					"type": "entries",
+					"name": "太阳之爱",
+					"entries": [
+						"你对光耀伤害具有{@variantrule 免疫|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Blazing Strike",
+					"type": "entries",
+					"name": "爆燃打击",
+					"entries": [
+						"当你用武器攻击命中一个生物时，伤害可以是光耀或武器的正常伤害类型（由你选择）。"
+					]
+				},
+				{
+					"ENG_name": "Burst of Sunlight",
+					"type": "entries",
+					"name": "阳光爆发",
+					"entries": [
+						"每回合一次，当你以一次攻击命中一个生物并造成光耀伤害时，你可以从自身散发出30尺半径的{@variantrule 明亮光照|XPHB}和额外30尺的{@variantrule 微光光照|XPHB}，持续至你的下个回合开始。此光照为日光。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Boon of Bloodshed",
 			"name": "血海漂橹之恩惠",
 			"source": "FRHoF",
@@ -1342,6 +1478,101 @@
 					"type": "entries",
 					"entries": [
 						"当你为一次攻击检定投掷的{@dice d20}骰出了20时，你可以对目标造成额外伤害，你造成的额外伤害等于你以此专长提升的属性的属性值，伤害类型与这次攻击的伤害类型相同。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Looming Shadows",
+			"name": "暗影笼罩恩赐",
+			"source": "ABH",
+			"page": 11,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Shadowy Stretch",
+					"type": "entries",
+					"name": "暗影延伸",
+					"entries": [
+						"当你进行{@action 攻击|XPHB}动作时，你的近战武器攻击触及范围增加10尺，直到你的回合结束。"
+					]
+				},
+				{
+					"ENG_name": "Dancing Silhouette",
+					"type": "entries",
+					"name": "舞动剪影",
+					"entries": [
+						"你可以将{@action 回避|XPHB}动作作为{@variantrule 附赠动作|XPHB}使用。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Misty Escape",
+			"name": "雾遁恩赐",
+			"source": "ABH",
+			"page": 11,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1e": [
+									"气化形体|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Gaseous Form",
+					"name": "气化形体",
+					"type": "entries",
+					"entries": [
+						"如果你的{@variantrule 生命值|XPHB}降至0但未被直接杀死，你可以改为降至1{@variantrule 生命值|XPHB|生命值}并施放{@spell 气化形体|XPHB}而不消耗法术位（无需动作）。当你以此方式施放该法术时，你只能以自身为目标，你的{@variantrule 飞行速度|XPHB}为20尺，并且在法术持续时间内每回合开始时恢复10{@variantrule 生命值|XPHB}。该法术的施法属性是由此专长提升的属性。",
+						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
 					]
 				}
 			]
@@ -2172,6 +2403,57 @@
 			]
 		},
 		{
+			"ENG_name": "Cloying Mists",
+			"name": "令人窒息的迷雾",
+			"source": "ABH",
+			"page": 9,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"_": [
+							"云雾术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Arise, Fog",
+					"type": "entries",
+					"name": "雾起",
+					"entries": [
+						"你总是准备了{@spell 云雾术|XPHB}法术。你可以无需法术位施放它，并且你必须完成一次{@variantrule 长休|XPHB}才能再次以此方式施放它。你也可以使用你拥有的适当等级的法术位来施放它。你施放该法术的施法属性是由此专长提升的属性。"
+					]
+				},
+				{
+					"ENG_name": "Grasping Mist",
+					"type": "entries",
+					"name": "缠绕迷雾",
+					"entries": [
+						"每当你施放{@spell 云雾术|XPHB}时，法术{@variantrule 球状 【效应区域】|XPHB|球状}内的非魔法火焰将被熄灭，且除你和你的盟友外的生物在法术{@variantrule 速度|XPHB}内的{@variantrule 球状 【效应区域】|XPHB|球状}将缩小5尺。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Cohort of Chaos",
 			"name": "混乱与共者",
 			"source": "SatO",
@@ -2688,6 +2970,43 @@
 					"type": "entries",
 					"entries": [
 						"如果你正持用一把灵巧武器，且另一个生物以一次近战攻击命中你，你可以采取一个{@variantrule 反应|XPHB}来将你的{@variantrule 熟练项|XPHB|熟练加值}添加到你的{@variantrule 护甲等级|XPHB}，可能使该次攻击未命中你。你获得此加值到你的AC对抗近战攻击，直到你的下个回合开始。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Delicious Pain",
+			"name": "痛之甘美",
+			"source": "ABH",
+			"page": 9,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Toughened Flesh",
+					"type": "entries",
+					"name": "坚韧皮肤",
+					"entries": [
+						"在你受到钝击、穿刺或挥砍伤害后，你可以立即使用一个{@variantrule 反应|XPHB}来获得对钝击、穿刺和挥砍伤害的{@variantrule 抗性|XPHB}，直到你的下个回合开始。一旦你使用了这个好处，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前，你不能再使用它。"
 					]
 				}
 			]
@@ -3756,7 +4075,7 @@
 					"name": "妖精魔法",
 					"type": "entries",
 					"entries": [
-						"从{@filter 预言或惑控|spells|level=1|school=E;D}魔法学派中选择一个1级法术。你总是准备着该法术和{@spell 迷踪步|XPHB}法术。你可以不消耗法术位施放这些法术。一旦你以此方式施放其中任一法术，直到你完成一次{@variantrule 长休|XPHB}前，你不能再以此方式施放该法术。你也可以使用你拥有的相应等级的法术位来施放这些法术。这些法术的施法关键属性是由此专长提升的属性。"
+						"从预言或附魔学派中选择一个{@filter 1级预言术或附魔系法术|spells|level=1|school=E;D}。你总是准备着该法术和{@spell 迷踪步|XPHB}法术。你可以不消耗法术位施放这些法术。一旦你以此方式施放其中任一法术，在完成一次{@variantrule 长休|XPHB}前你不能再以此方式施放该法术。你也可以使用你拥有的相应等级的法术位来施放这些法术。这些法术的施法关键属性是由此专长提升的属性。"
 					]
 				}
 			],
@@ -3962,7 +4281,7 @@
 							"name": "繁彩注魔",
 							"type": "item",
 							"entries": [
-								"以一个附赠动作，你可以触碰一把{@filter 简易或军用武器|items|source=phb|category=基础|type=军用武器;简易武器}，向它注入以下能量之一：强酸，寒冷，火焰，闪电或毒素。在之后一分钟内，该武器在命中时额外造成{@damage 1d4}你所选伤害类型的伤害。使用此特性后，你在完成一次长休前不能再次使用。"
+								"以一个附赠动作，你可以触碰一把{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}，向它注入以下能量之一：强酸，寒冷，火焰，闪电或毒素。在之后一分钟内，该武器在命中时额外造成{@damage 1d4}你所选伤害类型的伤害。使用此特性后，你在完成一次长休前不能再次使用。"
 							]
 						},
 						{
@@ -5190,6 +5509,79 @@
 			]
 		},
 		{
+			"ENG_name": "Light Bringer",
+			"name": "光照使者",
+			"source": "ABH",
+			"page": 10,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ENG_name": "Light",
+					"name": "光亮术",
+					"known": {
+						"_": [
+							"光亮术|xphb#c"
+						]
+					}
+				},
+				{
+					"ENG_name": "Cleric Cantrip",
+					"name": "牧师戏法",
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=牧师",
+								"count": 1
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Sacred Magic",
+					"type": "entries",
+					"name": "神圣魔法",
+					"entries": [
+						"你习得{@spell 光亮术|XPHB}法术且施放时无需材料成分。若你已习得该戏法，则改为自选一个不同的牧师戏法。该法术的施法关键属性为通过此专长提升的属性。"
+					]
+				},
+				{
+					"ENG_name": "Solar Luminance",
+					"type": "entries",
+					"name": "炽天神侍辉光",
+					"entries": [
+						"当你施放{@spell 光亮术|XPHB}时，你可以让该法术的光照成为阳光。一旦你使用了此好处，直到你完成一次{@variantrule 长休|XPHB}前，你无法再次使用它。"
+					]
+				},
+				{
+					"ENG_name": "Sun's Healing",
+					"type": "entries",
+					"name": "太阳治愈",
+					"entries": [
+						"作为在阳光下的一个{@variantrule 附赠动作|XPHB}，你可以消耗一个你的{@variantrule 生命值骰|XPHB}，掷骰，并恢复等于掷骰结果的{@variantrule 生命值|XPHB}。一旦你使用此好处，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}前，你无法再次使用它。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Lightly Armored",
 			"name": "轻甲运用",
 			"source": "PHB",
@@ -5347,6 +5739,43 @@
 					"type": "entries",
 					"entries": [
 						"当你可见的一个敌人对你5尺内的一名盟友造成伤害时，你在你的下一个回合结束前对该敌人进行的下一次攻击检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Love Bites",
+			"name": "爱之啃咬",
+			"source": "ABH",
+			"page": 10,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Endearing Pain",
+					"type": "entries",
+					"name": "惹人怜爱的痛苦",
+					"entries": [
+						"在你用近战武器或{@variantrule 徒手打击|XPHB}对一个生物造成伤害后，你可以立即使用一个{@variantrule 附赠动作|XPHB}使目标获得{@condition 魅惑|XPHB}状态，此状态持续到你的下个回合开始或直到你或你的盟友对其造成伤害。一旦你使用了这个好处，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前你无法再次使用它。"
 					]
 				}
 			]
@@ -6548,7 +6977,7 @@
 				{
 					"type": "list",
 					"items": [
-						"当你用{@filter 简易或军用武器|items|source=phb|category=基础|type=军用武器;简易武器}发动的攻击命中时，你可以额外掷一枚武器的伤害骰并将其作为额外伤害加入到本次攻击的伤害中，伤害类型与武器本身的伤害类型相同。一旦你使用了这一能力，直到你完成一次短休或长休前你都不能再次使用它。",
+						"当你用{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}发动的攻击命中时，你可以额外掷一枚武器的伤害骰并将其作为额外伤害加入到本次攻击的伤害中，伤害类型与武器本身的伤害类型相同。一旦你使用了这一能力，直到你完成一次短休或长休前你都不能再次使用它。",
 						"使用坚韧不屈种族特质之后，你可以立即以反应进行一次武器攻击。"
 					]
 				}
@@ -6985,6 +7414,11 @@
 					"any": 1
 				}
 			],
+			"expertise": [
+				{
+					"anyProficientSkill": 1
+				}
+			],
 			"entries": [
 				"你学习那些新鲜事物时总是有着极高的天赋，你获得下列增益：",
 				{
@@ -7102,6 +7536,43 @@
 			]
 		},
 		{
+			"ENG_name": "Putrefy",
+			"name": "腐烂",
+			"source": "ABH",
+			"page": 10,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Necrosis",
+					"name": "腐坏",
+					"type": "entries",
+					"entries": [
+						"当你进行一次造成黯蚀伤害的伤害掷骰时，你可以使一个受到该伤害的生物获得{@condition 中毒|XPHB}状态，直到你的下个回合开始。一旦你使用了这个好处，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}前，你都不能再次使用它。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Quicksmithing",
 			"name": "迅匠之技",
 			"source": "PSK",
@@ -7165,6 +7636,43 @@
 					"type": "entries",
 					"entries": [
 						"音乐盒打开时，将以适中的音量奏响固定的一首的歌曲。音乐播放完毕，或音乐盒被关闭时，音乐盒将停止发声。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Rebuke",
+			"name": "斥责",
+			"source": "ABH",
+			"page": 10,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Radiant Strike",
+					"name": "光耀打击",
+					"type": "entries",
+					"entries": [
+						"当你进行一次造成光耀伤害的伤害掷骰时，你可以使一个巨型或更小的受到该伤害的生物获得{@condition 倒地|XPHB}状态。一旦你使用了这个好处，直到你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前，你不能再使用它。"
 					]
 				}
 			]
@@ -8154,7 +8662,7 @@
 					"name": "幽影魔法",
 					"type": "entries",
 					"entries": [
-						"从幻术或死灵学派的法术中选择一个{@filter 1环法术|spells|level=1|school=I;N}。你总是准备着该法术和{@spell 隐形术|XPHB}法术。你可以不消耗法术位施放这些法术。当你以此方式施放其中任一法术后，在完成一次{@variantrule 长休|XPHB}前你不能再以此方式施放该法术。你也可以使用相应环位的法术位来施放这些法术。这些法术的施法关键属性是此专长所提升的属性。"
+						"从幻术或死灵学派中选择一个{@filter 1级幻术或死灵法术|spells|level=1|school=I;N}。你总是准备着该法术和{@spell 隐形术|XPHB}法术。你可以不消耗法术位施放这些法术。以此方式施放其中任一法术后，在完成一次{@variantrule 长休|XPHB}前你不能再以此方式施放该法术。你也可以使用相应等级的法术位来施放这些法术。这些法术的施法关键属性是由此专长提升的属性。"
 					]
 				}
 			]
@@ -10140,6 +10648,16 @@
 			]
 		},
 		{
+			"ENG_name": "Tireless Reveler",
+			"name": "不知疲倦的狂欢者",
+			"source": "ABH",
+			"page": 8,
+			"category": "O",
+			"entries": [
+				"当你能看见的60英尺内盟友消耗{@variantrule 英雄激励|XPHB}时，若你未拥有该激励则可获得{@variantrule 英雄激励|XPHB}。此效果可使用次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后恢复所有已用次数。"
+			]
+		},
+		{
 			"ENG_name": "Tough",
 			"name": "健壮",
 			"source": "PHB",
@@ -10159,6 +10677,57 @@
 			"category": "O",
 			"entries": [
 				"当你获得此专长时，你的{@variantrule 生命值|XPHB|生命值}上限增加相当于你角色等级两倍的数值。此后每当你获得一个角色等级，你的{@variantrule 生命值|XPHB|生命值}上限额外增加2点{@variantrule 生命值|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Treacherous Allure",
+			"name": "危险的诱惑",
+			"source": "ABH",
+			"page": 10,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"_": [
+							"魅惑人类|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Enchanting Presence",
+					"name": "惑控之仪",
+					"type": "entries",
+					"entries": [
+						"你总是准备了{@spell 魅惑人类|XPHB}法术。你可以无需法术位施放它，并且你必须完成一次{@variantrule 长休|XPHB}才能再次以此方式施放它。你也可以使用你拥有的相应等级的法术位来施放它。你施放该法术的施法属性是由此专长提升的属性。"
+					]
+				},
+				{
+					"ENG_name": "Inevitable Betrayal",
+					"type": "entries",
+					"name": "必然背叛",
+					"entries": [
+						"你对具有{@condition 魅惑|XPHB}状态的生物进行{@variantrule 优势|XPHB}检定时具有优势。"
+					]
+				}
 			]
 		},
 		{
@@ -10223,6 +10792,112 @@
 			"entries": [
 				"当你用{@variantrule 徒手打击|XPHB}命中并造成伤害时，你可以造成等于{@damage 1d6}加上你的力量调整值的钝击伤害，以替代{@variantrule 徒手打击|XPHB}的正常伤害。如果你在发动攻击时没有持有任何武器或{@item 盾牌|XPHB}，则{@dice d6}变为{@dice d8}。",
 				"每当你的回合开始时，你还可以对一个因你{@condition 受擒|XPHB}的生物造成{@damage 1d4}点钝击伤害。"
+			]
+		},
+		{
+			"ENG_name": "Vampire Hunter",
+			"name": "吸血鬼猎人",
+			"source": "ABH",
+			"page": 8,
+			"category": "O",
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Adroit Escape",
+					"type": "entries",
+					"name": "灵巧逃脱",
+					"entries": [
+						"你在尝试挣脱非魔法束缚或{@condition 受擒|XPHB}状态时具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Vitality Ward",
+					"type": "entries",
+					"name": "活力护盾",
+					"entries": [
+						"当你受到黯蚀伤害时，你可以采取一个{@variantrule 反应|XPHB}来减轻伤害。投掷等同于你{@variantrule 熟练项|XPHB|熟练加值}的d6骰子，并将它们相加。将你受到的黯蚀伤害减少此总数。一旦你使用此好处，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前，你无法再次使用它。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Vampire Touched",
+			"name": "吸血鬼之触",
+			"source": "ABH",
+			"page": 10,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"_": [
+							"蛛行术|xphb",
+							{
+								"choose": "level=1|school=E;I"
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Vampire Magic",
+					"type": "entries",
+					"name": "吸血鬼魔法",
+					"entries": [
+						"从附魔或幻术学派中选择一个1级法术。你总是准备该法术和{@spell 蛛行术|XPHB}法术。你可以不消耗法术位施放这些法术，但当你以这种方式施放{@spell 蛛行术|XPHB}时，你必须以自身为目标，并且你必须完成一次{@variantrule 长休|XPHB}后才能再次以这种方式施放每个法术。你也可以使用你拥有的相应等级的法术位来施放任一法术。这些法术的施法关键属性是由此专长提升的属性。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Vampire's Plaything",
+			"name": "吸血鬼的玩物",
+			"source": "ABH",
+			"page": 9,
+			"category": "O",
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Decanting",
+					"type": "entries",
+					"name": "倾注",
+					"entries": [
+						"当你完成一次{@variantrule 长休|XPHB}时，只要你有空的小瓶或烧瓶，就可以制作一瓶{@item 治疗药水|XDMG}或解毒剂。这些液体在你完成另一次{@variantrule 长休|XPHB}时就会蒸发。"
+					]
+				},
+				{
+					"ENG_name": "Timely Retreat",
+					"type": "entries",
+					"name": "及时撤退",
+					"entries": [
+						"你可以用一个{@variantrule 附赠动作|XPHB}来执行{@action 疾走|XPHB}动作或{@action 撤离|XPHB}动作。你可以使用此好处的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Vampiric Connection",
+					"name": "血裔连结",
+					"type": "entries",
+					"entries": [
+						"DM决定你前吸血鬼主人的命运。当你和你前吸血鬼主人在同一个位面时，该吸血鬼可以与你心灵感应交流，并且你可以选择允许该吸血鬼通过你的感官来感知。"
+					]
+				}
 			]
 		},
 		{

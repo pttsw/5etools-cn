@@ -1778,7 +1778,8 @@
 				"敏捷",
 				"感知"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Fazrian",
@@ -1821,7 +1822,8 @@
 				"体质"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Fidelio",
@@ -2195,8 +2197,7 @@
 				"敏捷",
 				"感知"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"ENG_name": "Gorzil's Gang Troglodyte",
@@ -6114,7 +6115,58 @@
 				"E"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Xarann A'Daragon",
+			"name": "Xarann A'Daragon",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 145,
+			"_copy": {
+				"ENG_name": "Assassin",
+				"name": "刺客",
+				"source": "MM",
+				"_templates": [
+					{
+						"ENG_name": "Drow",
+						"name": "卓尔",
+						"source": "PHB"
+					}
+				],
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "刺客",
+						"with": "萨兰",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Special Equipment",
+							"name": "特殊装备",
+							"entries": [
+								"夏兰穿着一件{@i 魔斗篷}，一件卓尔制造的{@item 精灵斗篷}。如果连续暴露在阳光下1小时，它会失去魔法。"
+							]
+						}
+					}
+				}
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"languages": [
+				"精灵语",
+				"地底通用语"
+			],
+			"languageTags": [
+				"E",
+				"U"
+			]
 		},
 		{
 			"ENG_name": "Xorta",

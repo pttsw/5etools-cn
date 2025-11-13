@@ -1818,7 +1818,7 @@ globalThis.Renderer = function () {
 		if (fromPlugins) return void (textStack[0] += fromPlugins);
 
 		if (!page || !source || !hash) {
-			this._renderDataHeader(textStack, displayName, entry.style, {isStats: !isFluff, htmlNameExpanded, htmlNameCollapsed});
+			this._renderDataHeader(textStack, displayName, entry.style, {isStats: !isFluff});
 			textStack[0] += `<tr>
 				<td colspan="6">
 					<i class="text-danger">Cannot load ${asTag ? `&quot;${asTag}&quot;` : displayName}! An unknown tag/prop, source, or hash was provided.</i>
@@ -3460,7 +3460,7 @@ Renderer.utils = class {
 			ent.tokenCustom ? `这是自定义/非官方token。` : "",
 		]
 			.filter(Boolean)
-			.join(" ");
+			.join(". ");
 
 		return [
 			`alt="Token图${tokenName ? `: ${tokenName.qq()}` : ""}"`,
@@ -4865,6 +4865,7 @@ Renderer.utils = class {
 
 			// TODO(Future) revise/expand
 			case "@creatureFluff": { out.isFauxPage = true; out.page = "monsterFluff"; break; }
+			case "@raceFluff": { out.isFauxPage = true; out.page = "raceFluff"; break; }
 
 			default: throw new Error(`Unhandled tag "${tag}"`);
 		}
@@ -5743,6 +5744,12 @@ Renderer.tag = class {
 		page = UrlUtil.PG_RACES;
 	};
 
+	static TagRaceFluff = class extends this._TagPipedDisplayTextThird {
+		tagName = "raceFluff";
+		defaultSource = Parser.SRC_PHB;
+		page = "raceFluff";
+	};
+
 	static TagRecipe = class extends this._TagPipedDisplayTextThird {
 		tagName = "recipe";
 		defaultSource = Parser.SRC_HF;
@@ -6047,6 +6054,7 @@ Renderer.tag = class {
 		new this.TagOptfeature(),
 		new this.TagPsionic(),
 		new this.TagRace(),
+		new this.TagRaceFluff(),
 		new this.TagRecipe(),
 		new this.TagReward(),
 		new this.TagVehicle(),

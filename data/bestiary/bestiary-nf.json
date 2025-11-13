@@ -1,0 +1,951 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"FRAiF": "NF",
+				"XMM": "NF"
+			}
+		}
+	},
+	"monster": [
+		{
+			"ENG_name": "Caldron Magen",
+			"name": "大锅魔像",
+			"source": "NF",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				20
+			],
+			"hp": {
+				"average": 67,
+				"formula": "9d8 + 27"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 18,
+			"dex": 13,
+			"con": 16,
+			"int": 10,
+			"wis": 10,
+			"cha": 10,
+			"skill": {
+				"perception": "+4"
+			},
+			"passive": 14,
+			"immune": [
+				"强酸",
+				"毒素"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"力竭",
+				"恐慌",
+				"麻痹",
+				"石化",
+				"中毒"
+			],
+			"languages": [
+				"理解通用语以及两门其他语言，但不会说"
+			],
+			"cr": "4",
+			"trait": [
+				{
+					"ENG_name": "Disintegration",
+					"name": "解体",
+					"entries": [
+						"如果魔像死亡，它会化为灰尘，只留下它穿戴或携带的物品。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"魔像在对抗法术和其他魔法效果的豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"魔像进行两次攻击，使用延伸拳击或强酸唾液的任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Extended Fist",
+					"name": "延伸拳击",
+					"entries": [
+						"{@atkr m} {@hit 6}，触及15尺。{@h}8（{@damage 1d8 + 4}）钝击伤害加5（{@damage 1d10}）强酸伤害。如果目标是中型或更小的生物，它被其中一只拳头获得{@condition 受擒|XPHB}状态（逃脱{@dc 14}）。"
+					]
+				},
+				{
+					"ENG_name": "Acid Spittle",
+					"name": "强酸唾沫",
+					"entries": [
+						"{@atkr r} {@hit 6}，范围60尺。{@h}13（{@damage 2d8 + 4}）强酸伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"X"
+			],
+			"damageTags": [
+				"A",
+				"B"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Eldritch Eddy",
+			"name": "诡秘漩涡",
+			"source": "NF",
+			"size": [
+				"L"
+			],
+			"type": "construct",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 144,
+				"formula": "17d10 + 51"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": {
+					"number": 40,
+					"condition": "(悬浮)"
+				},
+				"canHover": true
+			},
+			"str": 10,
+			"dex": 12,
+			"con": 16,
+			"int": 12,
+			"wis": 9,
+			"cha": 17,
+			"save": {
+				"dex": "+4",
+				"int": "+4",
+				"cha": "+6"
+			},
+			"senses": [
+				"盲视 60 尺"
+			],
+			"passive": 9,
+			"resist": [
+				"力场"
+			],
+			"immune": [
+				"火焰",
+				"闪电"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"力竭",
+				"恐慌",
+				"麻痹",
+				"石化",
+				"中毒"
+			],
+			"languages": [
+				"理解通用语以及一门其他语言，但不会说"
+			],
+			"cr": "6",
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"该涡流在对抗法术和其他魔法效果的豁免上具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"涡旋发动两次攻击，使用灼热挥击或奥能箭的任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Searing Swipe",
+					"name": "灼热挥击",
+					"entries": [
+						"{@atkr m} {@hit 6}，触及10尺。{@h}13（{@damage 3d6 + 3}）火焰或闪电伤害（艾迪的选择）。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Bolt",
+					"name": "奥能箭",
+					"entries": [
+						"{@atkr r} {@hit 6}，范围120尺。{@h}14（{@damage 2d10 + 3}）力场伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Eldritch Overload",
+					"name": "诡术过载",
+					"entries": [
+						"{@actTrigger} 漩涡受到伤害。{@actResponse d}{@actSave str} {@dc 14}，漩涡选择的5尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物。{@actSaveFail} 7（{@damage 2d6}）力场伤害，且目标获得{@condition 倒地|XPHB}状态。"
+					]
+				}
+			],
+			"environment": [
+				"城镇"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"X"
+			],
+			"damageTags": [
+				"F",
+				"L",
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"倒地"
+			],
+			"savingThrowForced": [
+				"力量"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Phaerimm Elder",
+			"name": "费林姆长老",
+			"source": "NF",
+			"size": [
+				"H"
+			],
+			"type": "aberration",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 218,
+				"formula": "23d12 + 69"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 60,
+					"condition": "(悬浮)"
+				},
+				"canHover": true
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 18,
+			"dex": 16,
+			"con": 17,
+			"int": 17,
+			"wis": 16,
+			"cha": 18,
+			"save": {
+				"con": "+8",
+				"int": "+8",
+				"wis": "+8",
+				"cha": "+9"
+			},
+			"skill": {
+				"arcana": "+13",
+				"insight": "+8",
+				"perception": "+8"
+			},
+			"senses": [
+				"真实视觉 120 尺"
+			],
+			"passive": 18,
+			"conditionImmune": [
+				"魅惑",
+				"恐慌"
+			],
+			"languages": [
+				"心灵感应 120 尺，理解通用语和深潜语但不能说话"
+			],
+			"cr": "14",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"法瑞姆施放下列法术之一，无需法术成分并使用魅力作为施法属性（法术豁免 {@dc 17}）："
+					],
+					"will": [
+						"{@spell 命令术|XPHB}（3环版本）",
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 侦测思想|XPHB}",
+						"{@spell 法师之手|XPHB}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell 鹰眼术|XPHB}",
+							"{@spell 指使术|XPHB}",
+							"{@spell 高等幻影|XPHB}",
+							"{@spell 海市蜃楼|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"法瑞姆在法术触发时使用与施法相同的施法属性施放{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "reaction",
+					"hidden": [
+						"日常"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"法瑞姆在对抗法术和其他魔法效应的豁免检定中具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"法瑞姆进行三次心灵鞭笞攻击。它可以将其中的一次攻击替换为（A）一次恶毒毒刺攻击，或（B）使用施法能力施放{@spell 命令术|XPHB}（3级版本）。"
+					]
+				},
+				{
+					"ENG_name": "Mind Lash",
+					"name": "心灵之鞭",
+					"entries": [
+						"{@atkr m,r} {@hit 9}, 触及10尺或范围120尺。{@h}32（{@damage 6d8 + 4}）心灵伤害。"
+					]
+				},
+				{
+					"ENG_name": "Vicious Stinger",
+					"name": "恶毒毒刺",
+					"entries": [
+						"{@atkr m} {@hit 9}，触及5尺。{@h}11（{@damage 2d6 + 4}）穿刺伤害加26（{@damage 4d12}）毒药伤害，且目标的{@variantrule 速度|XPHB}缩小至0尺直到法瑞姆的下个回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Siphon Magic {@recharge 5}",
+					"name": "虹吸魔法 {@recharge 5}",
+					"entries": [
+						"该弗米蚁族生物专注于一个它10尺内能看见的魔法物品。当它这样做时，弗米蚁族生物会吸取该魔法物品的所有充能。无论是否吸取到充能，该弗米蚁族生物都能在那天额外施放一次{@spell 鹰眼术|XPHB}、{@spell 指使术|XPHB}、{@spell 高等幻影|XPHB}和{@spell 海市蜃楼|XPHB}。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Teleport",
+					"name": "传送",
+					"entries": [
+						"法瑞姆传送至多30尺到一个它能看见的未占据空间。"
+					]
+				}
+			],
+			"environment": [
+				"幽暗地域",
+				"城镇"
+			],
+			"treasure": [
+				"奥秘",
+				"器具"
+			],
+			"attachedItems": [
+				"心灵之鞭|VGM"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"多重攻击",
+				"传送"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"conditionInflictSpell": [
+				"魅惑",
+				"倒地"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Phaerimm Scout",
+			"name": "费林姆斥候",
+			"source": "NF",
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 12,
+			"dex": 13,
+			"con": 12,
+			"int": 15,
+			"wis": 16,
+			"cha": 16,
+			"save": {
+				"int": "+4",
+				"cha": "+5"
+			},
+			"skill": {
+				"perception": "+5"
+			},
+			"senses": [
+				"真实视觉 60 尺"
+			],
+			"passive": 15,
+			"conditionImmune": [
+				"魅惑"
+			],
+			"languages": [
+				"心灵感应 120 尺，理解通用语和深潜语但不能说话"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"法瑞姆施放下列法术之一，无需法术成分并使用魅力作为施法属性（法术豁免 {@dc 13}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 侦测思想|XPHB}",
+						"{@spell 法师之手|XPHB}"
+					],
+					"daily": {
+						"1": [
+							"{@spell 鹰眼术|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"法瑞姆在对抗法术和其他魔法效应的豁免检定中具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"费林魔使用毒刺或心灵扭曲射线以任意组合进行两次攻击。"
+					]
+				},
+				{
+					"ENG_name": "Stinger",
+					"name": "刺针",
+					"entries": [
+						"{@atkr m} {@hit 3}，触及5尺。{@h}4（{@damage 1d6 + 1}）穿刺伤害外加9（{@damage 2d8}）毒素伤害。"
+					]
+				},
+				{
+					"ENG_name": "Mindwarp Ray",
+					"name": "心灵扭曲射线",
+					"entries": [
+						"{@atkr r} {@hit 5}, 范围 120 尺。{@h}6 ({@damage 1d6 + 3}) 心灵伤害，且目标获得{@condition 魅惑|XPHB}状态直到法瑞姆的下个回合开始。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Uncanny Dodge",
+					"name": "直觉闪避",
+					"entries": [
+						"{@actTrigger} 法瑞姆被一次攻击骰命中。{@actResponse} 法瑞姆将该攻击造成的伤害减半（向下取整）。"
+					]
+				}
+			],
+			"environment": [
+				"幽暗地域",
+				"城镇"
+			],
+			"treasure": [
+				"奥秘",
+				"器具"
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"魅惑"
+			],
+			"savingThrowForcedSpell": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Terran Magen",
+			"name": "土灵魔像",
+			"source": "NF",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				21
+			],
+			"hp": {
+				"average": 121,
+				"formula": "22d8 + 22"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 20,
+					"condition": "(悬浮)"
+				},
+				"canHover": true
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 16,
+			"dex": 10,
+			"con": 12,
+			"int": 10,
+			"wis": 18,
+			"cha": 10,
+			"save": {
+				"wis": "+7"
+			},
+			"skill": {
+				"perception": "+7"
+			},
+			"passive": 17,
+			"immune": [
+				"毒素",
+				"雷鸣"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"力竭",
+				"恐慌",
+				"麻痹",
+				"石化",
+				"中毒"
+			],
+			"languages": [
+				"理解通用语以及两门其他语言，但不会说"
+			],
+			"cr": "8",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"魔像施展以下法术之一，无需材料成分并使用感知作为施法属性（法术豁免 {@dc 15}）："
+					],
+					"will": [
+						"{@spell 法师之手|XPHB}",
+						"{@spell 修复术|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell 解离术|XPHB}",
+							"{@spell 地动术|XPHB}",
+							"{@spell 塑石术|XPHB}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Disintegration",
+					"name": "解体",
+					"entries": [
+						"如果魔像死亡，它会化为灰尘，只留下它穿戴或携带的物品。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"魔像在对抗法术和其他魔法效果的豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"魔像发动两次攻击，使用锤击或雷鸣轰击任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Hammer Fist",
+					"name": "锤击拳击",
+					"entries": [
+						"{@atkr m} {@hit 6}，触及5尺。{@h}16（{@damage 3d8 + 3}）钝击伤害外加13（{@damage 3d8}）力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Thunderous Boom",
+					"name": "雷鸣轰响",
+					"entries": [
+						"{@atkr r} {@hit 7}，范围 60 尺。{@h}28（{@damage 8d6}）雷鸣伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"X"
+			],
+			"damageTags": [
+				"B",
+				"O",
+				"T"
+			],
+			"damageTagsSpell": [
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForcedSpell": [
+				"敏捷"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Virvos Magen",
+			"name": "维尔沃斯魔像",
+			"source": "NF",
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				21
+			],
+			"hp": {
+				"average": 110,
+				"formula": "17d8 + 34"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 20,
+					"condition": "(悬浮)"
+				},
+				"canHover": true
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 12,
+			"dex": 10,
+			"con": 14,
+			"int": 10,
+			"wis": 10,
+			"cha": 16,
+			"skill": {
+				"perception": "+6"
+			},
+			"passive": 16,
+			"immune": [
+				"毒素",
+				"心灵"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"力竭",
+				"恐慌",
+				"麻痹",
+				"石化",
+				"中毒"
+			],
+			"languages": [
+				"理解通用语以及两门其他语言，但不会说"
+			],
+			"cr": "6",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"魔像施展以下法术之一，无需材料成分并使用魅力作为施法属性（法术豁免 {@dc 14}）："
+					],
+					"will": [
+						"{@spell 舞光术|XPHB}",
+						"{@spell 次级幻影|XPHB}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell 催眠图纹|XPHB}",
+							"{@spell 高等幻影|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Disintegration",
+					"name": "解体",
+					"entries": [
+						"如果魔像死亡，它会化为灰尘，只留下它穿戴或携带的物品。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"魔像在对抗法术和其他魔法效果的豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"魔像进行两次心灵冲击攻击。"
+					]
+				},
+				{
+					"ENG_name": "Psychic Blast",
+					"name": "心灵震爆",
+					"entries": [
+						"{@atkr m,r} {@hit 6}，触及5尺或范围60尺{@h}21（{@damage 6d6}）心灵伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"X"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflictSpell": [
+				"魅惑",
+				"失能"
+			],
+			"savingThrowForcedSpell": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}
