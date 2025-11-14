@@ -2,11 +2,11 @@
 
 class PageFilterBestiary extends PageFilterBase {
 	static _NEUT_ALIGNS = ["NX", "NY"];
-	static MISC_FILTER_SPELLCASTER = "Spellcaster, ";
+	static MISC_FILTER_SPELLCASTER = "施法者, ";
 	static _RE_SPELL_TAG = /{@spell ([^}]+)}/g;
 	static _RE_ITEM_TAG = /{@item ([^}]+)}/g;
 	static _WALKER = null;
-	static _DRAGON_AGES = ["wyrmling", "young", "adult", "ancient", "greatwyrm", "aspect"];
+	static _DRAGON_AGES = ["雏龙", "青年", "成年", "远古", "太古龙", "化身"];
 
 	// region static
 	static sortMonsters (a, b, o) {
@@ -107,7 +107,7 @@ class PageFilterBestiary extends PageFilterBase {
 			displayFn: Parser.monTypeToPlural,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._tagFilter = new Filter({header: "Tag", cnHeader: "类型副标", displayFn: it => Parser.MON_TAG_TO_CN[it] || StrUtil.toTitleCase(it)});
+		this._tagFilter = new Filter({header: "Tag", cnHeader: "副类型", displayFn: it => Parser.MON_TAG_TO_CN[it] || StrUtil.toTitleCase(it)});
 		this._sidekickTypeFilter = new Filter({
 			header: "Sidekick Type",
 			cnHeader: "协力者类型",
@@ -115,11 +115,11 @@ class PageFilterBestiary extends PageFilterBase {
 			displayFn: it => Parser.MON_SIDEKICK_TO_CN[it] || StrUtil.toTitleCase(it),
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._sidekickTagFilter = new Filter({header: "Sidekick Tag", cnHeader: "协力者类型副标", displayFn: it => Parser.MON_SIDEKICK_TO_CN[it] || StrUtil.toTitleCase(it)});
+		this._sidekickTagFilter = new Filter({header: "Sidekick Tag", cnHeader: "协力者副类型", displayFn: it => Parser.MON_SIDEKICK_TO_CN[it] || StrUtil.toTitleCase(it)});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			cnHeader: "阵营",
-			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A", "No Alignment"],
+			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A", "无阵营"],
 			displayFn: alignment => Parser.alignmentAbvToFull(alignment).toTitleCase(),
 			itemSortFn: null,
 		});
@@ -249,9 +249,9 @@ class PageFilterBestiary extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
-			items: ["Familiar", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "Bonus Actions", "Lair Actions", "Legendary", "Mythic", "Adventure NPC", "Spellcaster", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "Regional Effects", "Reactions", "重置", "Swarm", "Has Variants", "Modified Copy", "Has Alternate Token", "有简介", "有图片", "有Token", "Has Recharge", "传奇", "AC from Item(s)", "AC from Natural Armor", "AC from Unarmored Defense", "Summoned by Spell", "Summoned by Class", "Reduced Threat"],
+			items: ["常见", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "附赠动作", "巢穴动作", "传奇", "神话", "冒险NPC", "施法者", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "区域效应", "反应", "重置", "集群", "有变体", "修改过的副本", "由替换Token", "有简介", "有图片", "有Token", "有充能", "传奇", "物品提供AC", "天生护甲提供AC", "无甲防御提供AC", "由法术召唤", "由职业召唤", "低威胁"],
 			displayFn: (it) => Parser.monMiscTagToFull(it).uppercaseFirst(),
-			deselFn: (it) => ["Adventure NPC", "重置"].includes(it),
+			deselFn: (it) => ["冒险NPC", "重置"].includes(it),
 			itemSortFn: PageFilterBestiary.ascSortMiscFilter,
 			isMiscFilter: true,
 		});
@@ -285,6 +285,7 @@ class PageFilterBestiary extends PageFilterBase {
 		});
 		this._treasureFilter = new Filter({
 			header: "Treasure",
+			cnHeader: "宝藏",
 			items: [...Parser.TREASURE_TYPES],
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
@@ -318,7 +319,7 @@ class PageFilterBestiary extends PageFilterBase {
 			else if (tempAlign.length === 1 && tempAlign.includes("N")) Array.prototype.push.apply(tempAlign, PageFilterBestiary._NEUT_ALIGNS);
 			mon._fAlign = tempAlign;
 		} else {
-			mon._fAlign = ["No Alignment"];
+			mon._fAlign = ["无阵营"];
 		}
 		FilterCommon.mutateForFilters_damageVulnResImmune(mon);
 		FilterCommon.mutateForFilters_conditionImmune(mon);
@@ -336,43 +337,43 @@ class PageFilterBestiary extends PageFilterBase {
 		this._mutateForFilters_commonMisc(mon);
 		mon._fMisc.push(...mon.miscTags || []);
 		for (const it of (mon.trait || [])) {
-			if (it.name && it.name.startsWith("Unarmored Defense")) mon._fMisc.push("AC from Unarmored Defense");
+			if (it.name && it.name.startsWith("无甲防御")) mon._fMisc.push("无甲防御提供AC");
 		}
 		for (const it of (mon.ac || [])) {
 			if (!it.from) continue;
-			if (it.from.includes("natural armor")) mon._fMisc.push("AC from Natural Armor");
-			if (it.from.some(x => x.startsWith("{@item "))) mon._fMisc.push("AC from Item(s)");
-			if (!mon._fMisc.includes("AC from Unarmored Defense") && it.from.includes("Unarmored Defense")) mon._fMisc.push("AC from Unarmored Defense");
+			if (it.from.includes("natural armor")) mon._fMisc.push("天生护甲提供AC");
+			if (it.from.some(x => x.startsWith("{@item "))) mon._fMisc.push("物品提供AC");
+			if (!mon._fMisc.includes("无甲防御提供AC") && it.from.includes("无甲防御")) mon._fMisc.push("无甲防御提供AC");
 		}
-		if (Renderer.monster.hasLegendaryActions(mon)) mon._fMisc.push("Legendary");
-		if (Renderer.monster.hasMythicActions(mon)) mon._fMisc.push("Mythic");
-		if (Renderer.monster.hasReactions(mon)) mon._fMisc.push("Reactions");
-		if (Renderer.monster.hasBonusActions(mon)) mon._fMisc.push("Bonus Actions");
-		if (mon.familiar) mon._fMisc.push("Familiar");
-		if (mon.type.swarmSize) mon._fMisc.push("Swarm");
+		if (Renderer.monster.hasLegendaryActions(mon)) mon._fMisc.push("传奇");
+		if (Renderer.monster.hasMythicActions(mon)) mon._fMisc.push("神话");
+		if (Renderer.monster.hasReactions(mon)) mon._fMisc.push("反应");
+		if (Renderer.monster.hasBonusActions(mon)) mon._fMisc.push("附赠动作");
+		if (mon.familiar) mon._fMisc.push("常见");
+		if (mon.type.swarmSize) mon._fMisc.push("集群");
 		if (mon.spellcasting) {
-			mon._fMisc.push("Spellcaster");
+			mon._fMisc.push("施法者");
 			for (const sc of mon.spellcasting) {
 				if (sc.ability) mon._fMisc.push(`${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${Parser.attAbvToFull(sc.ability)}`);
 			}
 		}
-		if (mon.isNpc) mon._fMisc.push("Adventure NPC");
-		if (mon.isNamedCreature) mon._fMisc.push("Named Creature");
+		if (mon.isNpc) mon._fMisc.push("冒险NPC");
+		if (mon.isNamedCreature) mon._fMisc.push("有名字的生物");
 		const legGroup = DataUtil.monster.getLegendaryGroup(mon);
 		if (legGroup) {
-			if (legGroup.lairActions) mon._fMisc.push("Lair Actions");
-			if (legGroup.regionalEffects) mon._fMisc.push("Regional Effects");
+			if (legGroup.lairActions) mon._fMisc.push("巢穴动作");
+			if (legGroup.regionalEffects) mon._fMisc.push("区域效应");
 		}
-		if (mon.variant) mon._fMisc.push("Has Variants");
-		if (mon.altArt) mon._fMisc.push("Has Alternate Token");
+		if (mon.variant) mon._fMisc.push("有变体");
+		if (mon.altArt) mon._fMisc.push("由替换Token");
 		if (Renderer.monster.hasToken(mon)) mon._fMisc.push("有Token");
 		if (this._hasFluff(mon)) mon._fMisc.push("有简介");
 		if (this._hasFluffImages(mon)) mon._fMisc.push("有图片");
-		if (this._hasRecharge(mon)) mon._fMisc.push("Has Recharge");
-		if (mon._versionBase_isVersion) mon._fMisc.push("Is Variant");
-		if (mon.summonedBySpell) mon._fMisc.push("Summoned by Spell");
-		if (mon.summonedByClass) mon._fMisc.push("Summoned by Class");
-		if (mon._copy_templates?.some(({name, source}) => name === "Reduced Threat" && source === Parser.SRC_TYP)) mon._fMisc.push("Reduced Threat");
+		if (this._hasRecharge(mon)) mon._fMisc.push("有充能");
+		if (mon._versionBase_isVersion) mon._fMisc.push("是变体");
+		if (mon.summonedBySpell) mon._fMisc.push("由法术召唤");
+		if (mon.summonedByClass) mon._fMisc.push("由职业召唤");
+		if (mon._copy_templates?.some(({name, source}) => name === "低威胁" && source === Parser.SRC_TYP)) mon._fMisc.push("低威胁");
 
 		const spellcasterMeta = this._getSpellcasterMeta(mon);
 		if (spellcasterMeta) {
@@ -567,7 +568,7 @@ class PageFilterBestiary extends PageFilterBase {
 		this._spellSlotLevelFilter.addItem(mon._fSpellSlotLevels);
 		this._spellKnownFilter.addItem(mon._fSpellsKnown);
 		this._equipmentFilter.addItem(mon._fEquipment);
-		if (mon._versionBase_isVersion) this._miscFilter.addItem("Is Variant");
+		if (mon._versionBase_isVersion) this._miscFilter.addItem("是变体");
 		this._miscFilter.addItem(mon._fMisc);
 		this._damageTypeFilterBase.addItem(mon.damageTags);
 		this._damageTypeFilterLegendary.addItem(mon.damageTagsLegendary);

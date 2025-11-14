@@ -2003,18 +2003,18 @@ Parser.monSpellcastingTagToFull = function (tag) {
 };
 
 Parser.MON_MISC_TAG_TO_FULL = {
-	"AOE": "Has Areas of Effect",
-	"CUR": "Inflicts Curse",
-	"DIS": "Inflicts Disease",
-	"HPR": "Has HP Reduction",
-	"MW": "Has Weapon Attacks, Melee",
-	"RW": "Has Weapon Attacks, Ranged",
-	"MA": "Has Attacks, Melee",
-	"RA": "Has Attacks, Ranged",
-	"MLW": "Has Melee Weapons",
-	"RNG": "Has Ranged Weapons",
-	"RCH": "Has Reach Attacks",
-	"THW": "Has Thrown Weapons",
+	"AOE": "有范围效应",
+	"CUR": "施加诅咒",
+	"DIS": "施加疾病",
+	"HPR": "有HP减益",
+	"MW": "有近战武器攻击",
+	"RW": "有远程武器攻击",
+	"MA": "有近战攻击",
+	"RA": "有远程攻击",
+	"MLW": "有近战武器",
+	"RNG": "有远程武器",
+	"RCH": "有触及攻击",
+	"THW": "有投掷武器",
 };
 Parser.monMiscTagToFull = function (tag) {
 	return Parser._parse_aToB(Parser.MON_MISC_TAG_TO_FULL, tag);
@@ -2022,15 +2022,25 @@ Parser.monMiscTagToFull = function (tag) {
 
 Parser.MON_GROUP_TAG_TO_FULL = {
 	"Angels": "天使",
+	"Animated Objects": "活化物件",
 	"Beholders": "眼魔",
+	"Chromatic Dragon": "色彩龙",
 	"Chromatic Dragons": "色彩龙",
 	"Demons": "恶魔",
 	"Devils": "魔鬼",
 	"Dinosaurs": "恐龙",
+	"Gem Dragon": "宝石龙",
 	"Genies": "巨灵",
 	"Goblinoids": "类地精",
+	"Hags": "鬼婆",
+	"Homunculi": "人工生命体",
 	"Lycanthropes": "兽化人",
+	"Metallic Dragon": "金属龙",
 	"Metallic Dragons": "金属龙",
+	"Modrons": "魔冢",
+	"Nymph": "宁芙",
+	"Quori": "梦灵",
+	"Sphinxes": "斯芬克斯",
 	"Titans": "泰坦",
 	"Yugoloths": "尤格罗斯魔",
 };
@@ -2045,7 +2055,7 @@ Parser.MON_LANGUAGE_TAG_TO_FULL = {
 	"C": "Common",
 	"CE": "Celestial",
 	"CS": "不能说已知语言",
-	"CSL": "Common Sign Language",
+	"CSL": "通用手语",
 	"D": "Dwarvish",
 	"DR": "Draconic",
 	"DS": "Deep Speech",
@@ -2230,10 +2240,10 @@ Parser.getEnvironmentDisplayName = function (env) {
 	return Parser.ENVIRONMENT_DISPLAY_NAMES[env] || env.toTitleCase();
 };
 
-Parser.TREASURE_TYPES = ["arcana", "armaments", "implements", "relics"];
+Parser.TREASURE_TYPES = ["奥秘", "军备", "器具", "遗物"];
 
 Parser.getTreasureTypeEntry = function (typ) {
-	if (Parser.TREASURE_TYPES.includes(typ)) return `{@table Random Magic Items - ${typ.toTitleCase()}|${Parser.SRC_XDMG}|${typ.toTitleCase()}}`;
+	if (Parser.TREASURE_TYPES.includes(typ)) return `{@table 随机魔法物品 - ${typ.toTitleCase()}|${Parser.SRC_XDMG}|${typ.toTitleCase()}}`;
 	return typ.toTitleCase();
 };
 
@@ -4381,11 +4391,11 @@ Parser.PROP_TO_DISPLAY_NAME = {
 	"makebrewCreatureTrait": "Homebrew Builder Creature Trait",
 	"charoption": "Other Character Creation Option",
 
-	"bonus": "Bonus Action",
-	"legendary": "Legendary Action",
-	"mythic": "Mythic Action",
-	"lairActions": "Lair Action",
-	"regionalEffects": "Regional Effect",
+	"bonus": "附赠动作",
+	"legendary": "传奇动作",
+	"mythic": "神话动作",
+	"lairActions": "巢穴动作",
+	"regionalEffects": "区域效应",
 	"condition": "状态",
 	"disease": "疾病",
 };
@@ -4590,10 +4600,11 @@ Parser.MON_TAG_TO_CN = {
 	"gem": "宝石龙",
 	"genasi": "元素裔",
 	"gith": "吉斯人",
-	"gnoll": "豺狼人",
+	"gnoll": "鬣狗人",
 	"gnome": "侏儒",
 	"goblinoid": "类地精",
-	"grimlock": "石盲蛮族",
+	"grimlock": "幽邃盲族",
+	"grippli": "格里普利人",
 	"goliath": "歌利亚",
 	"grung": "格龙蛙人",
 	"hag": "鬼婆",

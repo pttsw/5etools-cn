@@ -8850,15 +8850,15 @@ class BookModeViewBase {
 		};
 
 		const selColumns = ee`<select class="form-control input-sm">
-			<option value="0">Two (book style)</option>
-			<option value="1">One</option>
+			<option value="0">两列 (同书中样式)</option>
+			<option value="1">单列</option>
 		</select>`
 			.onn("change", () => onChangeSelColumns());
 		selColumns.val(`${lastColumns ?? 0}`);
 		onChangeSelColumns();
 
 		const wrpPrint = ee`<div class="w-100 ve-flex">
-			<div class="ve-flex-vh-center"><div class="mr-2 no-wrap help-subtle" title="Applied when printing the page.">Print columns:</div>${selColumns}</div>
+			<div class="ve-flex-vh-center"><div class="mr-2 no-wrap help-subtle" title="Applied when printing the page.">打印列数：</div>${selColumns}</div>
 		</div>`.appendTo(wrp);
 
 		return {wrp, wrpPrint};
@@ -8869,7 +8869,7 @@ class BookModeViewBase {
 	_getEleNoneVisible () { return null; }
 
 	_getBtnNoneVisibleClose () {
-		return ee`<button class="ve-btn ve-btn-default">Close</button>`
+		return ee`<button class="ve-btn ve-btn-default">关闭</button>`
 			.onn("click", () => this.setStateClosed());
 	}
 

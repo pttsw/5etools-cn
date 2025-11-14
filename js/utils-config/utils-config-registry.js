@@ -54,9 +54,9 @@ const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 });
 
 const _MARKDOWN_TAG_RENDER_MODES = {
-	"convertMarkdown": "Convert to Markdown",
-	"ignore": "Leave As-Is",
-	"convertText": "Convert to Text",
+	"convertMarkdown": "转换为Markdown",
+	"ignore": "保持原样",
+	"convertText": "转换为文本",
 };
 
 const settingsGroupMarkdown = new ConfigSettingsGroup({
@@ -65,8 +65,8 @@ const settingsGroupMarkdown = new ConfigSettingsGroup({
 	configSettings: [
 		new ConfigSettingEnum({
 			configId: "tagRenderMode",
-			name: `Tag Handling (<code>@tag</code>)`,
-			help: `The output to produce when rendering a 5etools "@tag".`,
+			name: `Tag 处理方式(<code>@tag</code>)`,
+			help: `对5etools中"@tag"格式的处理方法。`,
 			isRowLabel: true,
 			default: "convertMarkdown",
 			values: [
@@ -78,15 +78,15 @@ const settingsGroupMarkdown = new ConfigSettingsGroup({
 		}),
 		new ConfigSettingBoolean({
 			configId: "isAddColumnBreaks",
-			name: `Add GM Binder Column Breaks (<code>\\\\columnbreak</code>)`,
-			help: `If "\\\\columnbreak"s should be added to exported Markdown, at an approximate column breakpoint.`,
+			name: `添加 GM Binder 列间隔符 (<code>\\\\columnbreak</code>)`,
+			help: `如果要求导出的Markdown包含列间隔符，则在会列间隔处添加"\\\\columnbreak"。`,
 			isRowLabel: true,
 			default: false,
 		}),
 		new ConfigSettingBoolean({
 			configId: "isAddPageBreaks",
-			name: `Add GM Binder Page Breaks (<code>\\\\pagebreak</code>)`,
-			help: `If "\\\\pagebreak"s should be added to exported Markdown, at an approximate page breakpoint.`,
+			name: `添加 GM Binder 页间隔符 (<code>\\\\pagebreak</code>)`,
+			help: `如果要求导出的Markdown包含页间隔符，则在会页间隔处添加"\\\\pagebreak"。`,
 			isRowLabel: true,
 			default: false,
 		}),

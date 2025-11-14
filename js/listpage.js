@@ -2496,7 +2496,7 @@ class ListPageBookView extends BookModeViewBase {
 	_getEleNoneVisible () {
 		return ee`<div class="w-100 ve-flex-col ve-flex-h-center no-shrink no-print mb-3 mt-auto">
 			<div class="mb-2 ve-flex-vh-center min-h-0">
-				<span class="initial-message initial-message--med">If you wish to view multiple ${this._namePlural}, please first make a list</span>
+				<span class="initial-message initial-message--med">如果你想同时打印多个${this._namePlural}，请先创建一个列表</span>
 			</div>
 			<div class="ve-flex-vh-center">${this._getBtnNoneVisibleClose()}</div>
 		</div>`;
@@ -2591,16 +2591,16 @@ class ListPageBookView extends BookModeViewBase {
 	}
 
 	_getControlsMarkdown () {
-		const btnDownloadMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm">Download as Markdown</button>`
+		const btnDownloadMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm">下载为Markdown</button>`
 			.onn("click", () => DataUtil.userDownloadText(`${UrlUtil.getCurrentPage().replace(".html", "")}.md`, this._getVisibleAsMarkdown()));
 
-		const btnCopyMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"></span></button>`
+		const btnCopyMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="复制Markdown到剪贴板"><span class="glyphicon glyphicon-copy"></span></button>`
 			.onn("click", async () => {
 				await MiscUtil.pCopyTextToClipboard(this._getVisibleAsMarkdown());
 				JqueryUtil.showCopiedEffect(btnCopyMarkdown);
 			});
 
-		const btnDownloadMarkdownSettings = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"></span></button>`
+		const btnDownloadMarkdownSettings = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="Markdown设置"><span class="glyphicon glyphicon-cog"></span></button>`
 			.onn("click", async () => RendererMarkdown.pShowSettingsModal());
 
 		return ee`<div class="ve-flex-v-center ve-btn-group ml-3">
@@ -2619,7 +2619,7 @@ class ListPageBookView extends BookModeViewBase {
 		this._fnsCleanupCompRender.push(() => this._comp._removeHookBase("isRenderCopies", hkIsRenderCopies));
 
 		return ee`<label class="ve-flex-vh-center ml-3">
-			<span class="mr-2 help" title="If enabled, each copy of a listed ${this._nameSingular} will be displayed separately. This may be preferable when printing handouts.">Show Duplicates</span> 
+			<span class="mr-2 help" title="If enabled, each copy of a listed ${this._nameSingular} will be displayed separately. This may be preferable when printing handouts.">显示重复项</span> 
 			${cbIsRenderCopies}
 		</label>`;
 	}

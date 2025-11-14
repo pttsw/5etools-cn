@@ -175,7 +175,7 @@ export class ManageBrewUi {
 		const {eleModalInner} = UiUtil.getShowModal({
 			isHeight100: true,
 			isWidth100: true,
-			title: `Manage ${brewUtil.DISPLAY_NAME.toTitleCase()}`,
+			title: `管理${brewUtil.DISPLAY_NAME.toTitleCase()}`,
 			isUncappedHeight: true,
 			titleSplit: ee`<div class="ve-flex-v-center ve-btn-group">
 				${ui._getBtnPullAll(rdState)}

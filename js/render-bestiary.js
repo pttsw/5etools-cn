@@ -608,7 +608,7 @@ class _RenderBestiaryImplOne extends _RenderBestiaryImplBase {
 	_getHtmlParts_armorClass ({mon, renderer, isInlinedToken}) {
 		return `<tr><td colspan="6">
 			<div class="split-v-center lst-is-exporting-image__no-wrap ${isInlinedToken ? `stats__wrp-avoid-token` : ""}">
-				<div><strong title="Armor Class">AC</strong> ${mon.ac == null ? "\u2014" : Parser.acToFull(mon.ac, {renderer})}</div>
+				<div><strong title="护甲等级">AC</strong> ${mon.ac == null ? "\u2014" : Parser.acToFull(mon.ac, {renderer})}</div>
 				<div><strong>先攻</strong> ${Renderer.monster.getInitiativePart(mon)}</div>
 			</div>
 		</td></tr>`;

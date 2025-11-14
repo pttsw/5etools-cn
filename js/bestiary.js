@@ -212,16 +212,16 @@ class BestiaryPageBookView extends ListPageBookView {
 			return RendererMarkdown.monster.pGetMarkdownDoc(toRender);
 		};
 
-		const btnDownloadMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm">Download as Markdown</button>`
+		const btnDownloadMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm">下载为Markdown</button>`
 			.onn("click", async () => DataUtil.userDownloadText("bestiary.md", await pGetAsMarkdown()));
 
-		const btnCopyMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"></span></button>`
+		const btnCopyMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="复制Markdown到剪贴板"><span class="glyphicon glyphicon-copy"></span></button>`
 			.onn("click", async () => {
 				await MiscUtil.pCopyTextToClipboard(await pGetAsMarkdown());
 				JqueryUtil.showCopiedEffect(btnCopyMarkdown);
 			});
 
-		const btnDownloadMarkdownSettings = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"></span></button>`
+		const btnDownloadMarkdownSettings = ee`<button class="ve-btn ve-btn-default ve-btn-sm px-2" title="Markdown设置"><span class="glyphicon glyphicon-cog"></span></button>`
 			.onn("click", async () => RendererMarkdown.pShowSettingsModal());
 
 		ee`<div class="ve-flex-v-center ve-btn-group ml-2">
@@ -317,54 +317,54 @@ class BestiaryPage extends ListPageMultiSource {
 					name: UtilsTableview.COL_TRANSFORM_NAME,
 					source: UtilsTableview.COL_TRANSFORM_SOURCE,
 					page: UtilsTableview.COL_TRANSFORM_PAGE,
-					size: {name: "Size", transform: size => Renderer.utils.getRenderedSize(size)},
-					type: {name: "Type", transform: type => Parser.monTypeToFullObj(type).asText},
-					alignment: {name: "Alignment", transform: align => Parser.alignmentListToFull(align)},
+					size: {name: "体型", transform: size => Renderer.utils.getRenderedSize(size)},
+					type: {name: "类型", transform: type => Parser.monTypeToFullObj(type).asText},
+					alignment: {name: "阵营", transform: align => Parser.alignmentListToFull(align)},
 					ac: {name: "AC", transform: ac => ac != null ? Parser.acToFull(ac) : ""},
 					hp: {name: "HP", transform: hp => hp != null ? Renderer.monster.getRenderedHp(hp) : ""},
-					_speed: {name: "Speed", transform: mon => Parser.getSpeedString(mon)},
+					_speed: {name: "速度", transform: mon => Parser.getSpeedString(mon)},
 					...Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: {name: Parser.attAbvToFull(ab)}})),
-					_save: {name: "Saving Throws", transform: mon => Renderer.monster.getSavesPart(mon)},
-					_skill: {name: "Skills", transform: mon => Renderer.monster.getSkillsString(Renderer.get(), mon)},
-					vulnerable: {name: "Damage Vulnerabilities", transform: it => Parser.getFullImmRes(it)},
-					resist: {name: "Damage Resistances", transform: it => Parser.getFullImmRes(it)},
-					immune: {name: "Damage Immunities", transform: it => Parser.getFullImmRes(it)},
-					conditionImmune: {name: "Condition Immunities", transform: it => Parser.getFullCondImm(it)},
-					_senses: {name: "Senses", transform: mon => Renderer.monster.getSensesPart(mon, {isForcePassive: true})},
-					languages: {name: "Languages", transform: it => Renderer.monster.getRenderedLanguages(it)},
+					_save: {name: "豁免骰", transform: mon => Renderer.monster.getSavesPart(mon)},
+					_skill: {name: "技能", transform: mon => Renderer.monster.getSkillsString(Renderer.get(), mon)},
+					vulnerable: {name: "伤害易伤", transform: it => Parser.getFullImmRes(it)},
+					resist: {name: "伤害抗性", transform: it => Parser.getFullImmRes(it)},
+					immune: {name: "伤害免疫", transform: it => Parser.getFullImmRes(it)},
+					conditionImmune: {name: "状态免疫", transform: it => Parser.getFullCondImm(it)},
+					_senses: {name: "感官", transform: mon => Renderer.monster.getSensesPart(mon, {isForcePassive: true})},
+					languages: {name: "语言", transform: it => Renderer.monster.getRenderedLanguages(it)},
 					_cr: {name: "CR", transform: mon => Renderer.monster.getChallengeRatingPart(mon)},
 					_trait: {
-						name: "Traits",
+						name: "特质",
 						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedTraits}),
 						flex: 3,
 					},
 					_action: {
-						name: "Actions",
+						name: "动作",
 						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedActions}),
 						flex: 3,
 					},
 					_bonus: {
-						name: "Bonus Actions",
+						name: "附赠动作",
 						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedBonusActions}),
 						flex: 3,
 					},
 					_reaction: {
-						name: "Reactions",
+						name: "反应",
 						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedReactions}),
 						flex: 3,
 					},
 					_legendary: {
-						name: "Legendary Actions",
+						name: "传奇动作",
 						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedLegendaryActions}),
 						flex: 3,
 					},
 					_mythic: {
-						name: "Mythic Actions",
+						name: "神话动作",
 						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedMythicActions}),
 						flex: 3,
 					},
 					_lairActions: {
-						name: "Lair Actions",
+						name: "巢穴动作",
 						transform: mon => {
 							const legGroup = DataUtil.monster.getLegendaryGroup(mon);
 							if (!legGroup?.lairActions?.length) return "";
@@ -373,7 +373,7 @@ class BestiaryPage extends ListPageMultiSource {
 						flex: 3,
 					},
 					_regionalEffects: {
-						name: "Regional Effects",
+						name: "区域效应",
 						transform: mon => {
 							const legGroup = DataUtil.monster.getLegendaryGroup(mon);
 							if (!legGroup?.regionalEffects?.length) return "";
@@ -381,8 +381,8 @@ class BestiaryPage extends ListPageMultiSource {
 						},
 						flex: 3,
 					},
-					environment: {name: "Environment", transform: it => Renderer.monster.getRenderedEnvironment(it)},
-					treasure: {name: "Treasure", transform: it => Renderer.monster.getRenderedTreasure(it)},
+					environment: {name: "环境", transform: it => Renderer.monster.getRenderedEnvironment(it)},
+					treasure: {name: "宝藏", transform: it => Renderer.monster.getRenderedTreasure(it)},
 				},
 			},
 			propEntryData: "monster",
@@ -554,7 +554,7 @@ class BestiaryPage extends ListPageMultiSource {
 		this._profDiceMode = await StorageUtil.pGetForPage("proficiencyDiceMode") || _BestiaryConsts.PROF_MODE_BONUS;
 
 		const hk = () => {
-			$btnProfBonusDice.text(this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE ? "Use Proficiency Bonus" : "Use Proficiency Dice");
+			$btnProfBonusDice.text(this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE ? "使用熟练加值" : "使用熟练骰");
 			this._$pgContent.attr("data-proficiency-dice-mode", this._profDiceMode);
 			StorageUtil.pSetForPage("proficiencyDiceMode", this._profDiceMode).then(null);
 		};
@@ -711,7 +711,7 @@ class BestiaryPage extends ListPageMultiSource {
 	) {
 		Renderer.get().setFirstSection(true);
 
-		const btnScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : ee`<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr ve-btn ve-btn-xs ve-btn-default ve-popwindow__hidden no-print lst-is-exporting-image__hidden"><span class="glyphicon glyphicon-signal"></span></button>`
+		const btnScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : ee`<button id="btn-scale-cr" title="基于CR调整数据（实验功能）" class="mon__btn-scale-cr ve-btn ve-btn-xs ve-btn-default ve-popwindow__hidden no-print lst-is-exporting-image__hidden"><span class="glyphicon glyphicon-signal"></span></button>`
 			.onn("click", (evt) => {
 				evt.stopPropagation();
 				const win = (evt.view || {}).window;

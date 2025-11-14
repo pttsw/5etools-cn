@@ -59,11 +59,11 @@ class UtilsTableview {
 				});
 			});
 
-		const $btnCsv = $(`<button class="ve-btn ve-btn-primary">Download CSV</button>`).click(() => {
+		const $btnCsv = $(`<button class="ve-btn ve-btn-primary">下载CSV</button>`).click(() => {
 			DataUtil.userDownloadText(`${title}.csv`, this._getAsCsv({colTransforms, rdState}));
 		});
 
-		const $btnCopy = $(`<button class="ve-btn ve-btn-primary">Copy CSV to Clipboard</button>`).click(async () => {
+		const $btnCopy = $(`<button class="ve-btn ve-btn-primary">复制CSV到剪贴板</button>`).click(async () => {
 			await MiscUtil.pCopyTextToClipboard(this._getAsCsv({colTransforms, rdState}));
 			JqueryUtil.showCopiedEffect($btnCopy);
 		});
@@ -139,8 +139,8 @@ class UtilsTableview {
 	}
 
 	// region Default/generic transforms
-	static COL_TRANSFORM_NAME = {name: "Name"};
-	static COL_TRANSFORM_SOURCE = {name: "Source", transform: (it) => `<span class="${Parser.sourceJsonToSourceClassname(it)}" title="${Parser.sourceJsonToFull(it)}">${Parser.sourceJsonToAbv(it)}</span>`};
-	static COL_TRANSFORM_PAGE = {name: "Page"};
+	static COL_TRANSFORM_NAME = {name: "名称"};
+	static COL_TRANSFORM_SOURCE = {name: "来源", transform: (it) => `<span class="${Parser.sourceJsonToSourceClassname(it)}" title="${Parser.sourceJsonToFull(it)}">${Parser.sourceJsonToAbv(it)}</span>`};
+	static COL_TRANSFORM_PAGE = {name: "页码"};
 	// endregion
 }

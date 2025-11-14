@@ -94,7 +94,7 @@ class FilterCommon {
 		if (val.special) return out.push("Other");
 
 		if (typeof val !== "string") return;
-		out.push(isConditional ? `${val} (Conditional)` : val);
+		out.push(isConditional ? `${val} (有条件的)` : val);
 	}
 
 	static mutateForFilters_conditionImmune (ent) {
