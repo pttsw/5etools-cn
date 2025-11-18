@@ -3017,17 +3017,74 @@
 	{
 		"ver": "2.10.2",
 		"date": "2025-07-17",
-		"txt": "- 增加据点页面的\"表格视图\"按钮\n- 在列表页支持`stats:...`/`info:...`/`text:...`搜索实体名称\n- 增加术语汇编中的DMG'24 可选/变体规则\n- 在资料卡页面增加\"传奇\"来源标志\n- 在法术页的表格视图中增加子职列；增加\"职业\"和\"可选/变体规则的\"的来源列\n- 修复了在DM屏幕中无法重命名选项卡的问题\n- 修复了移动设备上Omnisearch结果的样式问题\n- 修复了Omnisearch将页面结果标记为\"SRD\"的问题\n- 修复了Omnisearch结果生成中潜在的竞态条件问题\n- Added Table View button to Bastions page\n- Added entity name to searchable text when using `stats:...`/`info:...`/`text:...` on list pages\n- Added DMG'24 optional/variant rules to Rules Glossary\n- Added \"Legacy\" signifier to source in statblock headers\n- Added subclasses column to Spells page Table View; added sources to \"Classes\" and \"Optional/Variant Classes\" columns\n- Fixed inability to rename tabs in DM Screen\n- Fixed Omnisearch result styling on mobile\n- Fixed Omnisearch marking page results as \"SRD\"\n- Fixed potential race condition in Omnisearch results generation\n- (Brew) Added source `\"colorNight\"` support; added \"Color (Night)\" to source editor\n- (Brew) Added \"View Contents\" button for non-editable homebrew (and moved \"View JSON\" button into menu)\n- (Brew) Added `text-justify` style\n- (Brew) Fixed Optional Features failing to display class in list view when marked visible\n- (Fixed typos/added tags)"
+		"txt": "- Added Table View button to Bastions page\n- Added entity name to searchable text when using `stats:...`/`info:...`/`text:...` on list pages\n- Added DMG'24 optional/variant rules to Rules Glossary\n- Added \"Legacy\" signifier to source in statblock headers\n- Added subclasses column to Spells page Table View; added sources to \"Classes\" and \"Optional/Variant Classes\" columns\n- Fixed inability to rename tabs in DM Screen\n- Fixed Omnisearch result styling on mobile\n- Fixed Omnisearch marking page results as \"SRD\"\n- Fixed potential race condition in Omnisearch results generation\n- (Brew) Added source `\"colorNight\"` support; added \"Color (Night)\" to source editor\n- (Brew) Added \"View Contents\" button for non-editable homebrew (and moved \"View JSON\" button into menu)\n- (Brew) Added `text-justify` style\n- (Brew) Fixed Optional Features failing to display class in list view when marked visible\n- (Fixed typos/added tags)"
 	},
 	{
 		"ver": "2.11.0",
 		"date": "2025-08-09",
 		"title": "Gimme The Loot",
-		"txt": "- 修正战利品生成器，增加2024的内容。Revised Loot Generator to include '24 content\n  - 增加按CR生成冒险奖励('24)选项 Added \"Adventure Rewards by CR ('24)\" section\n  - 增加添加随机宝石/艺术品筛选器选项 Added \"Set Random Gems/Art Objects Filters\" option\n- 修正物品链接，在\"现代\"模式下失败重定向到'24版本 Fixed item links failing to redirect to '24 versions when in \"Modern\" mode\n- 增加增加列表页面搜索语法`\"name:<query>\",...` Added `\"name:<query>\",...` syntax to list page search\n- 增加物品页面特定变体的基本物品显示 Added base item display to Items page specific variants\n- 增加更多页面的\"修订\"杂项筛选器；增加\"有发音音频\"杂项筛选器到怪物和种族页面 Added \"Modified Copy\" Miscellaneous filter to more pages; added \"Has Pronunciation Audio\" Miscellaneous filter to Bestiary and Races pages\n- 增加可嵌入的_[hopefully]_描述到SEO页面 Added embeddable _[hopefully]_ descriptions to SEO pages\n- 增加职业源/页面信息到类页面侧边栏 Added class source/page info to Classes page sidebar\n- 增加模组、书籍的免责声明 Added comedy disclaimers to adventures/books (thanks @ Lyra)\n- Fixed Items page showing inherited reprint information from generic variants on specific variants\n- Fixed Tables page sublist failing to use \"number prefix\" custom sorting\n- Fixed Rivet button being displayed in printouts\n- Fixed Bestiary attribute label clipping issue when exporting as image\n- Fixed Classes page rendering of '24 \"choose\" skills\n- Fixed filters failing to include loaded prerelease content by default; this may now be controlled via the \"Deselect Prerelease Content Sources by Default\" option\n- Fixed Omnisearch failing to open first result if `Enter` was pressed before results load\n- (Brew) Added '24-specific samples to various Text Converter modes\n- (Brew) Added rudimentary '24 background handling to Text Converter\n- (Brew) Fixed crash when using `\"organized-play\"` group in adventures/books\n- (Fixed typos/added tags)\n"
+		"txt": "- Revised Loot Generator to include '24 content\n  - Added \"Adventure Rewards by CR ('24)\" section\n  - Added \"Set Random Gems/Art Objects Filters\" option\n  - Fixed item links failing to redirect to '24 versions when in \"Modern\" mode\n- Added `\"name:<query>\",...` syntax to list page search\n- Added base item display to Items page specific variants\n- Added \"Modified Copy\" Miscellaneous filter to more pages; added \"Has Pronunciation Audio\" Miscellaneous filter to Bestiary and Races pages\n- Added embeddable _[hopefully]_ descriptions to SEO pages\n- Added class source/page info to Classes page sidebar\n- Added comedy disclaimers to adventures/books (thanks @ Lyra)\n- Fixed Items page showing inherited reprint information from generic variants on specific variants\n- Fixed Tables page sublist failing to use \"number prefix\" custom sorting\n- Fixed Rivet button being displayed in printouts\n- Fixed Bestiary attribute label clipping issue when exporting as image\n- Fixed Classes page rendering of '24 \"choose\" skills\n- Fixed filters failing to include loaded prerelease content by default; this may now be controlled via the \"Deselect Prerelease Content Sources by Default\" option\n- Fixed Omnisearch failing to open first result if `Enter` was pressed before results load\n- (Brew) Added '24-specific samples to various Text Converter modes\n- (Brew) Added rudimentary '24 background handling to Text Converter\n- (Brew) Fixed crash when using `\"organized-play\"` group in adventures/books\n- (Fixed typos/added tags)"
 	},
 	{
 		"ver": "2.11.1",
 		"date": "2025-08-15",
-		"txt": "- 增加ALT+滚轮滚动预览内容\n- (Brew) 修复了保存当前Homebrew列表到URL时的崩溃问题\n- Added ALT+scroll to hover links to scroll preview content \n- (Brew) Fixed crash when saving current homebrew list to URL\n- (Fixed typos/added tags)"
+		"txt": "- Added ALT+scroll to hover links to scroll preview content \n- (Brew) Fixed crash when saving current homebrew list to URL\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.11.2",
+		"date": "2025-09-07",
+		"txt": "- Added expanded range to Items page \"Cost\" filter, with 200 GP to 100,000 GP increments\n- Added \"Show Duplicates\" option to Items page Printer View, to support printing multiple handouts when more than one item of a given type is added to a list\n- Fixed DM Screen Initiative Tracker failing to connect\n- Fixed Markdown rendering of tables on the Tables Page\n- Fixed creature CR sliders on mobile\n- (Brew) Added `color` support to `psionicTypes`\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.11.3",
+		"date": "2025-09-09",
+		"txt": "- Fixed DM Screen crash when pinning Dice Roller\n- (Brew) Relaxed `summonedBySpell` requirement for creature summon spell level scaling\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.12.0",
+		"date": "2025-09-17",
+		"title": "The Other Borderlands",
+		"txt": "- Added _Heroes of the Borderlands_ content\n- Fixed creature Markdown rendering of non-\"trait\" spellcasting\n- (Brew) Added list of updated homebrews to Homebrew Manager \"Update All\" notification (and made the notification persistent)\n- (Brew) Added support for scaling hit dice when scaling creature by Spell Level\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.12.1",
+		"date": "2025-10-04",
+		"txt": "- Added \"Dice Roller Position\" setting to Preferences\n- Clicking a hoverable fake-link (e.g. when searching \"Tremorsense\" in Omnisearch) now opens a pinned window, allowing the result to be viewed on mobile\n- The Optional Feature \"Feature Prerequisite\" filter now includes optional feature prerequisites\n- Added per-mode speed filters to Bestiary\n- Revised creature Markdown rendering to better support '24 formatting\n- Fixed Dynamic Map Viewer \"Zoom to Fit\" failing when popped out into separate browser window\n- Fixed Statgen \"Copy to Link\" failing to retain much of the available state\n- Fixed Statgen \"Load from File\"/load from URL resetting nested sections\n- Fixed rare Statgen crash when using \"Reset All\" after selecting an ability-increasing feat via Ability Score Increases\n- (Brew) Added \"Display As\"/\"Hidden\" support to spellcasting in Creature Homebrew Builder\n- (Brew) Added \"Open Page\" support for homebrew. Note that these pages will not appear in a sitemap nor have previewable embeds, but will auto-load the appropriate homebrew when visited.\n- (Brew) Improved Species Text Converter handling of creature type/size/speed\n- (Fixed typos/added tags)/added tags)"
+	},
+	{
+		"ver": "2.13.0",
+		"date": "2025-10-08",
+		"title": "Peaked In High School",
+		"txt": "- Added _Stranger Things: Welcome to the Hellfire Club_ content\n- (Brew) Added automatic page reload to the Homebrew Manager (and Prerelease Content Manager), to ease finding content via Omnisearch/the Navbar after load\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.14.0",
+		"date": "2025-10-30",
+		"title": "As Seen On BG3",
+		"titleAlt": "Forgotten, Not Forgiven",
+		"txt": "- Added _Forgotten Realms: Heroes of Faerûn_ content\n- Added _Forgotten Realms: Adventures in Faerûn_ creatures and items _[more to come Soon:tm:, I've been busy getting spooky/being ill this week 🎃]_\n- Added Dynamic Map Viewer support to Stranger Things: Welcome to the Hellfire Club\n- Added \"Track Hit Points as Damage\" option to DM Screen Initiative Tracker, which switches HP tracking from \"count down from full\" to \"count up from zero\"\n- Fixed white flash when loading page in Night Mode(s)\n- Fixed Loot Generator crash when all candidate items are filtered out\n- Fixed filter links failing to populate all filter values in some cases\n- Fixed Statgen Point Buy budget being un-editable when using Custom Rules\n- Fixed style options failing to be included in saved state file\n- Fixed \"Select Subclasses\" modal failing to populate when opened from Classes page Subclass Comparison view\n- (Brew) Added support for persisting \"Update All\" notification between reloads\n- (Brew) Added file/dir arguments to the `test-adventure-book-map-names.js` script\n- (Brew) Added rudimentary `_copy` handling to Homebrew Builder\n- (Brew) Added support for \"(Legacy)\" classes to Spell Text Converter\n- (Brew) Improved Background Text Converter handling of A/B equipment choices; '24-style text\n- (Brew) Added support for >300px adventure/book covers\n- (Brew) Fixed Spell Text Converter failing to add damage tags for '24 spells\n- (Brew) Fixed Backgrounds \"Skill Proficiencies\" filter display of homebrew skill sources\n- (Brew) Fixed Text Converter handling of '14 item property names\n- (Brew) Fixed Text Converter tagging of '24 Opportunity Attacks\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.14.1",
+		"date": "2025-10-31",
+		"txt": "- Added Optional/Variant Classes to compact spell view\n- Fixed Initiative Tracker Player View \"fullscreen\" hotkey\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.15.0",
+		"date": "2025-11-02",
+		"title": "Remembered the Rest of the Realms",
+		"txt": "- Added remaining _Forgotten Realms: Adventures in Faerûn_ content\n- Added Morte's Planar Parade encounters to Encounter Generator page\n- Added parent sources to various adventures/books in the Navbar, to make it more obvious which are from larger books/sets\n- Fixed Navbar incorrectly merging sources across adventure/book types\n- (Brew) Improved Text Converter tagging of various rules terms\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.16.0",
+		"date": "2025-11-09",
+		"title": "Mukkabout",
+		"txt": "- Added _Adventure with Muk_ and _Muk's Guide to Everything He Learned From Tasha_ book content (thanks @ Lyra)\n- Added Dynamic Map Viewer support to Forgotten Realms: Adventures in Faerûn\n- Added \"Has Custom/Unofficial Token\" and \"Has Token Credit\" Miscellaneous filters to Bestiary\n- Fixed Classes page \"Feeling Lucky?\" button\n- Fixed Adventure/Book pages failing to apply same search filtering to cover images as to list items\n- Fixed creature Markdown rendering of hit points; passive perception\n- (Brew) Improved Text Converter tagging of `@trap`s\n- (Added workaround for failing Docker builds)\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.17.0",
+		"date": "2025-11-13",
+		"title": "Vamp Anthem",
+		"txt": "- Added _Astarion's Book of Hungers_ and _Netheril's Fall_ content\n- Added _Forgotten Realms: Adventures in Faerûn_ tokens\n- (Brew) Added `\"raceFluff\"` `\"statblock\"` support\n- (Brew) Fixed crash when setting blocklist from homebrew/prerelease file\n- (Fixed typos/added tags)"
 	}
 ]
