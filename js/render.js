@@ -4301,19 +4301,19 @@ Renderer.utils = class {
 		static _getHtml_campaign ({v, isListMode}) {
 			return isListMode
 				? v.join("/")
-				: `${v.joinConjunct(", ", " 或 ")} ${I18nUtil.get("common.campaign")}`;
+				: `${v.joinConjunct(", ", " 或 ")} 战役}`;
 		}
 
 		static _getHtml_culture ({v, isListMode}) {
 			return isListMode
 				? v.join("/")
-				: `${v.joinConjunct(", ", " 或 ")} Culture`;
+				: `${v.joinConjunct(", ", " 或 ")} 邪教`;
 		}
 
 		static _getHtml_membership ({v, isListMode}) {
 			return isListMode
 				? v.join("/")
-				: `Membeership in the ${v.joinConjunct(", ", " or ")}`;
+				: `${v.joinConjunct(", ", " 或 ")} 成员`;
 		}
 
 		static _getHtml_group ({v, isListMode}) {
@@ -8240,8 +8240,8 @@ Renderer.optionalfeature = class {
 Renderer.reward = class {
 	static getRewardRenderableEntriesMeta (ent) {
 		const ptSubtitle = [
-			(ent.type || "").toTitleCase(),
-			ent.rarity ? ent.rarity.toTitleCase() : "",
+			Parser.rewardTypeToCN(ent.type || "").toTitleCase(),
+			Parser.rarityToCN(ent.rarity || "").toTitleCase(),
 		]
 			.filter(Boolean)
 			.join(", ");
@@ -8920,10 +8920,10 @@ Renderer.object = class {
 			entrySize: `{@i ${ent.objectType !== "GEN" ? `${Renderer.utils.getRenderedSize(ent.size)} ${ent.creatureType ? Parser.monTypeToFullObj(ent.creatureType).asText : "物件"}` : `Variable size object`}}`,
 
 			entryCreatureCapacity: ent.capCrew != null || ent.capPassenger != null
-				? `{@b Creature Capacity:} ${Renderer.vehicle.getShipCreatureCapacity(ent)}`
+				? `{@b 生物容量：} ${Renderer.vehicle.getShipCreatureCapacity(ent)}`
 				: null,
 			entryCargoCapacity: ent.capCargo != null
-				? `{@b Cargo Capacity:} ${Renderer.vehicle.getShipCargoCapacity(ent)}`
+				? `{@b 货物容量：} ${Renderer.vehicle.getShipCargoCapacity(ent)}`
 				: null,
 			entryArmorClass: ent.ac != null
 				? `{@b 护甲等级:} ${ent.ac.special ?? ent.ac}`
@@ -8947,7 +8947,7 @@ Renderer.object = class {
 				? `{@b 伤害易伤:} ${Parser.getFullImmRes(ent.vulnerable)}`
 				: null,
 			entryConditionImmunities: ent.conditionImmune
-				? `{@b 条件免疫:} ${Parser.getFullCondImm(ent.conditionImmune, {isEntry: true})}`
+				? `{@b 状态免疫:} ${Parser.getFullCondImm(ent.conditionImmune, {isEntry: true})}`
 				: null,
 			entrySenses: ent.senses
 				? `{@b 感官:} ${Renderer.utils.getSensesEntry(ent.senses)}`
@@ -11667,9 +11667,9 @@ Renderer.item = class {
 				attunementCat = "需同调";
 				attunement = "(需同调)";
 			} else if (item[prop] === "optional") {
-				attunementCat = "Attunement Optional";
-				attunement = "(attunement optional)";
-			} else if (item[prop].toLowerCase().startsWith("by")) {
+				attunementCat = "可选同调";
+				attunement = "(可选同调)";
+			} else if (item[prop].toLowerCase().startsWith("由")) {
 				attunementCat = "需由...同调";
 				attunement = `(需由${Renderer.get().render(item[prop])}同调)`;
 			} else {
@@ -13239,16 +13239,16 @@ Renderer.vehicle = class {
 	static getVehicleRenderableEntriesMeta (ent) {
 		return {
 			entryDamageVulnerabilities: ent.vulnerable
-				? `{@b Damage Vulnerabilities} ${Parser.getFullImmRes(ent.vulnerable)}`
+				? `{@b 伤害易伤} ${Parser.getFullImmRes(ent.vulnerable)}`
 				: null,
 			entryDamageResistances: ent.resist
-				? `{@b Damage Resistances} ${Parser.getFullImmRes(ent.resist)}`
+				? `{@b 伤害抗性} ${Parser.getFullImmRes(ent.resist)}`
 				: null,
 			entryDamageImmunities: ent.immune
-				? `{@b Damage Immunities} ${Parser.getFullImmRes(ent.immune)}`
+				? `{@b 伤害免疫} ${Parser.getFullImmRes(ent.immune)}`
 				: null,
 			entryConditionImmunities: ent.conditionImmune
-				? `{@b Condition Immunities} ${Parser.getFullCondImm(ent.conditionImmune, {isEntry: true})}`
+				? `{@b 状态免疫} ${Parser.getFullCondImm(ent.conditionImmune, {isEntry: true})}`
 				: null,
 		};
 	}
@@ -13288,23 +13288,23 @@ Renderer.vehicle = class {
 			const entriesOtherOthers = (ent.other || []).filter(it => it.name !== "Actions");
 
 			return {
-				entrySizeDimensions: `{@i ${Parser.sizeAbvToFull(ent.size)} vehicle${ent.dimensions ? ` (${ent.dimensions.join(" by ")})` : ""}}`,
+				entrySizeDimensions: `{@i ${Parser.sizeAbvToFull(ent.size)}载具${ent.dimensions ? ` (${ent.dimensions.join(" by ")})` : ""}}`,
 				entryCreatureCapacity: ent.capCrew != null || ent.capPassenger != null
-					? `{@b Creature Capacity} ${Renderer.vehicle.getShipCreatureCapacity(ent)}`
+					? `{@b 生物容量} ${Renderer.vehicle.getShipCreatureCapacity(ent)}`
 					: null,
 				entryCargoCapacity: ent.capCargo != null
-					? `{@b Cargo Capacity} ${Renderer.vehicle.getShipCargoCapacity(ent)}`
+					? `{@b 货物容量} ${Renderer.vehicle.getShipCargoCapacity(ent)}`
 					: null,
 				entryTravelPace: ent.pace != null
-					? `{@b Travel Pace} ${ent.pace} miles per hour (${ent.pace * 24} miles per day)`
+					? `{@b 旅行步调} ${ent.pace}英里/小时 (${ent.pace * 24}英里/天)`
 					: null,
 				entryTravelPaceNote: ent.pace != null
-					? `[{@b Speed} ${ent.pace * 10} ft.]`
+					? `[{@b 速度} ${ent.pace * 10}尺]`
 					: null,
 				entryTravelPaceNoteTitle: ent.pace != null
 					? VetoolsConfig.get("styleSwitcher", "style") === "classic"
-						? `Based on "Special Travel Pace," ${Parser.sourceJsonToAbv(Parser.SRC_DMG)} p242`
-						: `Based on "Travel Pace," ${Parser.sourceJsonToAbv(Parser.SRC_XDMG)} p39`
+						? `基于《${Parser.sourceJsonToAbv(Parser.SRC_DMG)}》p242 “特殊旅行步调”`
+						: `基于《${Parser.sourceJsonToAbv(Parser.SRC_XDMG)}》p39 “旅行步调”`
 					: null,
 
 				entriesOtherActions: entriesOtherActions.length ? entriesOtherActions : null,
@@ -13333,7 +13333,7 @@ Renderer.vehicle = class {
 				items: [
 					{
 						type: "item",
-						name: `Speed (${spd.mode})`,
+						name: `速度 (${Parser.speedToCn(spd.mode)})`,
 						entries: spd.entries,
 					},
 				],
@@ -13351,10 +13351,10 @@ Renderer.vehicle = class {
 		static getSectionHpEntriesMeta_ ({entry, isEach = false}) {
 			return {
 				entryArmorClass: entry.ac
-					? `{@b Armor Class} ${entry.ac}`
+					? `{@b 护甲等级} ${entry.ac}`
 					: null,
 				entryHitPoints: entry.hp
-					? `{@b Hit Points} ${entry.hp}${isEach ? ` each` : ""}${entry.dt ? ` (damage threshold ${entry.dt})` : ""}${entry.hpNote ? `; ${entry.hpNote}` : ""}`
+					? `{@b 生命值} ${isEach ? ` 每个` : ""}${entry.hp}${entry.dt ? ` (伤害阈值 ${entry.dt})` : ""}${entry.hpNote ? `; ${entry.hpNote}` : ""}`
 					: null,
 			};
 		}
@@ -13377,7 +13377,7 @@ Renderer.vehicle = class {
 		static getControlSection_ (renderer, control) {
 			if (!control) return "";
 			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">Control: ${control.name}</h3></td></tr>
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">操纵: ${control.name}</h3></td></tr>
 				<tr><td colspan="6" class="stats__sect-row-inner">
 				${Renderer.vehicle.ship.getSectionHpPart_(renderer, control)}
 				<div class="rd__b--1">${renderer.render({entries: control.entries})}</div>
@@ -13399,7 +13399,7 @@ Renderer.vehicle = class {
 			if (!move) return "";
 
 			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">${move.isControl ? `Control and ` : ""}Movement: ${move.name}</h3></td></tr>
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">${move.isControl ? `操纵和` : ""}移动: ${move.name}</h3></td></tr>
 				<tr><td colspan="6" class="stats__sect-row-inner">
 				${Renderer.vehicle.ship.getSectionHpPart_(renderer, move)}
 				${(move.locomotion || []).map(entry => Renderer.vehicle.ship._getMovementSection_getLocomotionSection({renderer, entry})).join("")}
@@ -13410,7 +13410,7 @@ Renderer.vehicle = class {
 
 		static getWeaponSection_ (renderer, weap) {
 			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">Weapons: ${weap.name}${weap.count ? ` (${weap.count})` : ""}</h3></td></tr>
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">武器: ${weap.name}${weap.count ? ` (${weap.count})` : ""}</h3></td></tr>
 				<tr><td colspan="6" class="stats__sect-row-inner">
 				${Renderer.vehicle.ship.getSectionHpPart_(renderer, weap, !!weap.count)}
 				${renderer.render({entries: weap.entries})}
@@ -13461,20 +13461,20 @@ Renderer.vehicle = class {
 					colStyles: ["col-6", "col-6"],
 					rows: [
 						[
-							`{@b Armor Class:} ${ptAc}`,
-							`{@b Cargo:} ${ent.capCargo ? `${ent.capCargo} ton${ent.capCargo === 1 ? "" : "s"}` : "\u2014"}`,
+							`{@b 护甲等级:} ${ptAc}`,
+							`{@b 货物:} ${ent.capCargo ? `${ent.capCargo} ton${ent.capCargo === 1 ? "" : "s"}` : "\u2014"}`,
 						],
 						[
-							`{@b Hit Points:} ${ent.hull?.hp ?? "\u2014"}`,
-							`{@b Crew:} ${ent.capCrew ?? "\u2014"}${ent.capCrewNote ? ` ${ent.capCrewNote}` : ""}`,
+							`{@b 生命值:} ${ent.hull?.hp ?? "\u2014"}`,
+							`{@b 船员:} ${ent.capCrew ?? "\u2014"}${ent.capCrewNote ? ` ${ent.capCrewNote}` : ""}`,
 						],
 						[
-							`{@b Damage Threshold:} ${ent.hull?.dt ?? "\u2014"}`,
+							`{@b 伤害阈值:} ${ent.hull?.dt ?? "\u2014"}`,
 							`{@b Keel/Beam:} ${(ent.dimensions || ["\u2014"]).join("/")}`,
 						],
 						[
-							`{@b Speed:} ${ptSpeedPace}`,
-							`{@b Cost:} ${ent.cost != null ? Parser.vehicleCostToFull(ent) : "\u2014"}`,
+							`{@b 速度:} ${ptSpeedPace}`,
+							`{@b 花费:} ${ent.cost != null ? Parser.vehicleCostToFull(ent) : "\u2014"}`,
 						],
 					],
 				},
@@ -13538,9 +13538,9 @@ Renderer.vehicle = class {
 				: "\u2014";
 
 			return {
-				entryArmorClass: `{@b Armor Class:} ${entry.ac == null ? "\u2014" : entry.ac}`,
-				entryHitPoints: `{@b Hit Points:} ${entry.hp == null ? "\u2014" : entry.hp}`,
-				entryCost: `{@b Cost:} ${ptCosts}`,
+				entryArmorClass: `{@b 护甲等级:} ${entry.ac == null ? "\u2014" : entry.ac}`,
+				entryHitPoints: `{@b 生命值:} ${entry.hp == null ? "\u2014" : entry.hp}`,
+				entryCost: `{@b 花费:} ${ptCosts}`,
 			};
 		}
 
@@ -13616,10 +13616,10 @@ Renderer.vehicle = class {
 			${Renderer.vehicle.ship.getCrewCargoPaceSection_(ent, {entriesMetaShip})}
 			${Renderer.vehicle._getAbilitySection(ent)}
 			${Renderer.vehicle._getResImmVulnSection(ent, {entriesMeta})}
-			${ent.action ? Renderer.vehicle.ship.getSectionTitle_("Actions") : ""}
+			${ent.action ? Renderer.vehicle.ship.getSectionTitle_("动作") : ""}
 			${ent.action ? `<tr><td colspan="6" class="stats__sect-row-inner">${Renderer.vehicle.ship.getActionPart_(renderer, ent)}</td></tr>` : ""}
 			${(entriesMetaShip.entriesOtherActions || []).map(Renderer.vehicle.ship.getOtherSection_.bind(this, renderer)).join("")}
-			${ent.hull ? `${Renderer.vehicle.ship.getSectionTitle_("Hull")}
+			${ent.hull ? `${Renderer.vehicle.ship.getSectionTitle_("船体")}
 			<tr><td colspan="6" class="stats__sect-row-inner">
 			${Renderer.vehicle.ship.getSectionHpPart_(renderer, ent.hull)}
 			</td></tr>` : ""}
@@ -13633,13 +13633,13 @@ Renderer.vehicle = class {
 
 	static getShipCreatureCapacity (veh) {
 		return [
-			veh.capCrew ? `${veh.capCrew} crew` : null,
-			veh.capPassenger ? `${veh.capPassenger} passenger${veh.capPassenger === 1 ? "" : "s"}` : null,
+			veh.capCrew ? `${veh.capCrew}名船员` : null,
+			veh.capPassenger ? `${veh.capPassenger}名乘客` : null,
 		].filter(Boolean).join(", ");
 	}
 
 	static getShipCargoCapacity (veh) {
-		return typeof veh.capCargo === "string" ? veh.capCargo : `${veh.capCargo} ton${veh.capCargo === 1 ? "" : "s"}`;
+		return typeof veh.capCargo === "string" ? veh.capCargo : `${veh.capCargo}吨`;
 	}
 
 	static _getRenderedString_spelljammer (veh, opts) {
@@ -13677,16 +13677,16 @@ Renderer.vehicle = class {
 			const ptAc = ent.ac ?? dexMod === 0 ? `19` : `${19 + dexMod} (19 while motionless)`;
 
 			return {
-				entrySizeWeight: `{@i ${Parser.sizeAbvToFull(ent.size)} vehicle (${ent.weight.toLocaleString()} lb.)}`,
-				entryCreatureCapacity: `{@b Creature Capacity} ${Renderer.vehicle.getInfwarCreatureCapacity(ent)}`,
-				entryCargoCapacity: `{@b Cargo Capacity} ${Parser.weightToFull(ent.capCargo)}`,
-				entryArmorClass: `{@b Armor Class} ${ptAc}`,
-				entryHitPoints: `{@b Hit Points} ${ent.hp.hp}${ptDtMt ? ` (${ptDtMt})` : ""}`,
-				entrySpeed: `{@b Speed} ${ent.speed} ft.`,
-				entrySpeedNote: `[{@b Travel Pace} ${Math.floor(ent.speed / 10)} miles per hour (${Math.floor(ent.speed * 24 / 10)} miles per day)]`,
+				entrySizeWeight: `{@i ${Parser.sizeAbvToFull(ent.size)}载具 (${ent.weight.toLocaleString()}磅)}`,
+				entryCreatureCapacity: `{@b 生物容量} ${Renderer.vehicle.getInfwarCreatureCapacity(ent)}`,
+				entryCargoCapacity: `{@b 货物容量} ${Parser.weightToFull(ent.capCargo)}`,
+				entryArmorClass: `{@b 护甲等级} ${ptAc}`,
+				entryHitPoints: `{@b 生命值} ${ent.hp.hp}${ptDtMt ? ` (${ptDtMt})` : ""}`,
+				entrySpeed: `{@b 速度} ${ent.speed}尺`,
+				entrySpeedNote: `[{@b 旅行步调} ${Math.floor(ent.speed / 10)}英里/小时 (${Math.floor(ent.speed * 24 / 10)}英里/天)]`,
 				entrySpeedNoteTitle: VetoolsConfig.get("styleSwitcher", "style") === "classic"
-					? `Based on "Special Travel Pace," ${Parser.sourceJsonToAbv(Parser.SRC_DMG)} p242`
-					: `Based on "Travel Pace," ${Parser.sourceJsonToAbv(Parser.SRC_XDMG)} p39`,
+					? `基于《${Parser.sourceJsonToAbv(Parser.SRC_DMG)}》p242 “特殊旅行步调”`
+					: `基于《${Parser.sourceJsonToAbv(Parser.SRC_XDMG)}》p39 “旅行步调”`,
 			};
 		}
 	};
@@ -13792,16 +13792,16 @@ Renderer.language = class {
 
 		if (ent.entries) entriesContent.push(...ent.entries);
 		if (ent.dialects) {
-			entriesContent.push(`This language is a family which includes the following dialects: ${ent.dialects.sort(SortUtil.ascSortLower).join(", ")}. Creatures that speak different dialects of the same language can communicate with one another.`);
+			entriesContent.push(`此语言包括${ent.dialects.sort(SortUtil.ascSortLower).join("、")}几种方言，懂得其中一种方言的生物可以和懂得另一种方言的生物交流。`);
 		}
 
-		if (!entriesContent.length && !hasMeta) entriesContent.push("{@i No information available.}");
+		if (!entriesContent.length && !hasMeta) entriesContent.push("{@i 无可用信息。}");
 
 		return {
-			entryType: ent.type ? `{@i ${ent.type.toTitleCase()} language}` : null,
-			entryTypicalSpeakers: ent.typicalSpeakers ? `{@b Typical Speakers:} ${ent.typicalSpeakers.join(", ")}` : null,
-			entryOrigin: ent.origin ? `{@b Origin:} ${ent.origin}` : null,
-			entryScript: ent.script ? `{@b Script:} ${ent.script}` : null,
+			entryType: ent.type ? `{@i ${Parser.languageToCn(ent.type) || ent.type.toTitleCase()} 语言}` : null,
+			entryTypicalSpeakers: ent.typicalSpeakers ? `{@b 主要使用范围:} ${ent.typicalSpeakers.join(", ")}` : null,
+			entryOrigin: ent.origin ? `{@b 来源:} ${ent.origin}` : null,
+			entryScript: ent.script ? `{@b 文字:} ${ent.script}` : null,
 			entriesContent: entriesContent.length ? entriesContent : null,
 		};
 	}

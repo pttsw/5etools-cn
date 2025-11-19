@@ -347,7 +347,13 @@ Parser.SPEED_TO_CN = {
 	"swim": "游泳",
 	"walk": "步行",
 	"burrow": "掘穴",
+	"water": "水面",
 };
+
+Parser.speedToCn = function (prop) {
+	return Parser._parse_aToB(Parser.SPEED_TO_CN, prop);
+};
+
 Parser._getSpeedString_addSpeed = ({prop, speed, isMetric, unit, stack, styleHint}) => {
 	const ptName = Parser._getSpeedString_getSpeedName({prop, styleHint});
 	const ptValue = Parser._getSpeedString_getVal({prop, speed, isMetric});
@@ -2323,26 +2329,26 @@ Parser.featCategoryFromFull = (full) => {
 
 // NOTE: These need to be reflected in omnidexer.js to be indexed
 Parser.OPT_FEATURE_TYPE_TO_FULL = {
-	AI: I18nUtil.get("page.optionalfeatures.artificer_infusion"),
-	ED: I18nUtil.get("page.optionalfeatures.elemental_discipline"),
-	EI: I18nUtil.get("page.optionalfeatures.eldritch_invocation"),
-	MM: I18nUtil.get("page.optionalfeatures.metamagic"),
-	"MV": I18nUtil.get("page.optionalfeatures.maneuver"),
-	"MV:B": I18nUtil.get("page.optionalfeatures.maneuver__battle_master"),
-	"MV:C2-UA": `${I18nUtil.get("page.optionalfeatures.maneuver__cavalier")} V2 (UA)`,
-	"AS:V1-UA": `${I18nUtil.get("page.optionalfeatures.arcane_shot")}, V1 (UA)`,
-	"AS:V2-UA": `${I18nUtil.get("page.optionalfeatures.arcane_shot")}, V2 (UA)`,
-	"AS": I18nUtil.get("page.optionalfeatures.arcane_shot"),
-	OTH: I18nUtil.get("page.optionalfeatures.other"),
-	"FS:F": I18nUtil.get("page.optionalfeatures.fighting_style__fighter"),
-	"FS:B": I18nUtil.get("page.optionalfeatures.fighting_style__bard"),
-	"FS:P": I18nUtil.get("page.optionalfeatures.fighting_style__paladin"),
-	"FS:R": I18nUtil.get("page.optionalfeatures.fighting_style__ranger"),
-	"PB": I18nUtil.get("page.optionalfeatures.pact_boon"),
+	AI: "奇械师注法",
+	ED: "法门",
+	EI: "魔能祈唤",
+	MM: "超魔法",
+	"MV": "战技",
+	"MV:B": "战技，战斗大师",
+	"MV:C2-UA": "战技，骑兵 V2 (UA)",
+	"AS:V1-UA": "奥术射击, V1 (UA)",
+	"AS:V2-UA": "奥术射击, V2 (UA)",
+	"AS": "奥术射击",
+	OTH: "其他",
+	"FS:F": "战斗风格，战士",
+	"FS:B": "战斗风格，吟游诗人",
+	"FS:P": "战斗风格，圣武士",
+	"FS:R": "战斗风格，游侠",
+	"PB": "魔契恩泽",
 	"OR": "Onomancy Resonant",
-	"RN": I18nUtil.get("page.optionalfeatures.rune_knight_rune"),
-	"AF": I18nUtil.get("page.optionalfeatures.alchemical_formula"),
-	"TT": I18nUtil.get("page.optionalfeatures.travelers_trick"),
+	"RN": "符文骑士符文",
+	"AF": "炼金配方",
+	"TT": "旅者技艺",
 };
 
 Parser.optFeatureTypeToFull = function (type) {
@@ -2353,11 +2359,11 @@ Parser.optFeatureTypeToFull = function (type) {
 };
 
 Parser.CHAR_OPTIONAL_FEATURE_TYPE_TO_FULL = {
-	"SG": I18nUtil.get("page.charcreationoptions.supernatural_gift"),
-	"OF": I18nUtil.get("page.charcreationoptions.optional_feature"),
-	"DG": I18nUtil.get("page.charcreationoptions.dark_gift"),
-	"RF:B": I18nUtil.get("page.charcreationoptions.replacement_feature__background"),
-	"CS": I18nUtil.get("page.charcreationoptions.character_secret"), // Specific to IDRotF (rules on page 14)
+	"SG": "超自然赠礼",
+	"OF": "可选特性",
+	"DG": "黑暗赠礼",
+	"RF:B": "替换特性，背景",
+	"CS": "角色秘密", // Specific to IDRotF (rules on page 14)
 };
 
 Parser.charCreationOptionTypeToFull = function (type) {
@@ -2457,6 +2463,9 @@ Parser.RARITIES_TO_CN = {
 	"other": "其他",
 };
 
+Parser.rarityToCN = function (rarity) {
+	return Parser._parse_aToB(Parser.RARITIES_TO_CN, rarity) || rarity;
+};
 Parser.CAT_ID_CREATURE = 1;
 Parser.CAT_ID_SPELL = 2;
 Parser.CAT_ID_BACKGROUND = 3;
@@ -4410,6 +4419,8 @@ Parser.PROP_TO_DISPLAY_NAME = {
 	"regionalEffects": "区域效应",
 	"condition": "状态",
 	"disease": "疾病",
+
+	"Magical Contagion": "魔法疫病",
 };
 Parser.getPropDisplayName = function (prop, {suffix = ""} = {}) {
 	if (Parser.PROP_TO_DISPLAY_NAME[prop]) return `${Parser.PROP_TO_DISPLAY_NAME[prop]}${suffix}`;
@@ -4556,6 +4567,16 @@ Parser.LANGUAGES_TO_CN = {
 	"thieves' cant": "盗贼黑话",
 	"sylvan": "木族语",
 	"undercommon": "地底通用语",
+
+	//Types
+	"standard": "标准",
+	"exotic": "特种",
+	"secret": "秘密",
+	"rare": "稀有",
+};
+
+Parser.languageToCn = function (lang) {
+	return Parser._parse_aToB(Parser.LANGUAGES_TO_CN, lang);
 };
 
 Parser.TOOLS_TO_CN = {
@@ -4569,16 +4590,24 @@ Parser.TOOLS_TO_CN = {
 	"disguise kit": "易容工具",
 	"forgery kit": "文书伪造工具",
 	"gaming set": "赌博工具",
+	"glassblower's tools": "玻璃匠工具",
 	"herbalism kit": "草药工具",
+	"jeweler's tools": "珠宝匠工具",
+	"leatherworker's tools": "皮匠工具",
+	"mason's tools": "石匠工具",
 	"musical instrument": "乐器",
 	"navigator's tools": "领航工具",
+	"painter's supplies": "画家工具",
 	"poisoner's kit": "制毒工具",
+	"smith's tools": "铁匠工具",
 	"thieves' tools": "盗贼工具",
 	"tinker's tools": "修理工具",
 	"vehicles (air)": "载具(空运)",
 	"vehicles (land)": "载具(陆运)",
 	"vehicles (space)": "载具(航空)",
 	"vehicles (water)": "载具(水运)",
+	"weaver's tools": "织布工具",
+	"woodcarver's tools": "木雕工具",
 };
 
 Parser.MON_TAG_TO_CN = {
@@ -4909,5 +4938,20 @@ Parser.cultsBoonsTypeToCN["Diabolical"] = "魔鬼";
 
 Parser.CultsBoonsTypeToCN = function (type) {
 	return Parser.cultsBoonsTypeToCN[type] || type;
+};
+
+Parser.REWARD_TYPE_TO_CN = {};
+Parser.REWARD_TYPE_TO_CN["Blessing"] = "祝福";
+Parser.REWARD_TYPE_TO_CN["Boon"] = "恩赐";
+Parser.REWARD_TYPE_TO_CN["Charm"] = "护咒";
+Parser.REWARD_TYPE_TO_CN["Curse"] = "诅咒";
+Parser.REWARD_TYPE_TO_CN["Draconic Gift"] = "龙族赠礼";
+Parser.REWARD_TYPE_TO_CN["Fragment of Suffering"] = "痛苦碎片";
+Parser.REWARD_TYPE_TO_CN["Inhabitation"] = "附体";
+Parser.REWARD_TYPE_TO_CN["Piety Trait"] = "虔信特质";
+Parser.REWARD_TYPE_TO_CN["Other"] = "其他";
+
+Parser.rewardTypeToCN = function (type) {
+	return Parser._parse_aToB(Parser.REWARD_TYPE_TO_CN, type);
 };
 // endregion

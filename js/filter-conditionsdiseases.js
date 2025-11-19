@@ -5,8 +5,8 @@ class PageFilterConditionsDiseases extends PageFilterBase {
 	static _PROPS = new Set(["condition", "disease", "status"]);
 
 	static getDisplayProp (prop) {
-		if (!this._PROPS.has(prop)) return prop;
-		return prop === "status" ? "Other" : Parser.getPropDisplayName(prop);
+		if (!this._PROPS.has(prop)) return Parser.getPropDisplayName(prop);
+		return prop === "status" ? "其他" : Parser.getPropDisplayName(prop);
 	}
 	// endregion
 

@@ -424,7 +424,7 @@ class _RenderBestiaryImplClassic extends _RenderBestiaryImplBase {
 	}
 
 	_getHtmlParts_conditionImmunities ({mon}) {
-		return mon.conditionImmune ? `<tr><td colspan="6"><strong>条件免疫</strong> ${Parser.getFullCondImm(mon.conditionImmune)}</td></tr>` : "";
+		return mon.conditionImmune ? `<tr><td colspan="6"><strong>状态免疫</strong> ${Parser.getFullCondImm(mon.conditionImmune)}</td></tr>` : "";
 	}
 
 	/* ----- */

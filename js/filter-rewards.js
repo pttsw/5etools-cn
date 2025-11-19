@@ -6,22 +6,27 @@ class PageFilterRewards extends PageFilterBase {
 
 		this._typeFilter = new Filter({
 			header: "Type",
+			cnHeader: "类型",
 			items: [
 				"Blessing",
 				"Boon",
 				"Charm",
+				"Curse",
 			],
+			displayFn: Parser.rewardTypeToCN.bind(Parser),
 		});
 		this._rarityFilter = new Filter({
 			header: "Rarity",
+			cnHeader: "稀有度",
 			items: ["unknown", ...Parser.RARITIES],
 			itemSortFn: null,
-			displayFn: StrUtil.toTitleCase.bind(StrUtil),
+			displayFn: Parser.rarityToCN.bind(Parser),
 		});
 		this._benefitsFilter = new Filter({
 			header: "Benefits",
+			cnHeader: "增益",
 			items: [
-				"Spellcasting",
+				"施法",
 			],
 		});
 		this._miscFilter = new Filter({
@@ -38,7 +43,7 @@ class PageFilterRewards extends PageFilterBase {
 
 		it._fRarity = it.rarity || "unknown";
 		it._fBenefits = [
-			it.additionalSpells ? "Spellcasting" : null,
+			it.additionalSpells ? "施法" : null,
 		].filter(Boolean);
 
 		this._mutateForFilters_commonMisc(it);

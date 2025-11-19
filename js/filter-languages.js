@@ -4,8 +4,8 @@ class PageFilterLanguages extends PageFilterBase {
 	constructor () {
 		super();
 
-		this._typeFilter = new Filter({header: "Type", items: ["standard", "exotic", "rare", "secret"], itemSortFn: null, displayFn: StrUtil.uppercaseFirst});
-		this._scriptFilter = new Filter({header: "Script", displayFn: StrUtil.uppercaseFirst});
+		this._typeFilter = new Filter({header: "Type", cnHeader: "类型", items: ["standard", "exotic", "rare", "secret"], itemSortFn: null, displayFn: Parser.languageToCn.bind(Parser)});
+		this._scriptFilter = new Filter({header: "Script", cnHeader: "文字", displayFn: StrUtil.uppercaseFirst});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",

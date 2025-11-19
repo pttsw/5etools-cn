@@ -62,10 +62,10 @@ class FilterCommon {
 	static getConditionImmuneFilter () {
 		return new Filter({
 			header: "Condition Immunity",
-			cnHeader: "条件免疫",
+			cnHeader: "状态免疫",
 			items: this._CONDS,
 			displayFnMini: str => `免疫 ${str.toTitleCase()}`,
-			displayFnTitle: str => `条件免疫: ${str.toTitleCase()}`,
+			displayFnTitle: str => `状态免疫: ${str.toTitleCase()}`,
 			displayFn: StrUtil.uppercaseFirst,
 		});
 	}

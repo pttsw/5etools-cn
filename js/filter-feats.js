@@ -105,8 +105,8 @@ class PageFilterFeats extends PageFilterBase {
 		feat._fBenefits = [
 			...(feat.traitTags || []),
 			feat.resist ? "伤害抗性" : null,
-			feat.immune ? "Damage Immunity" : null,
-			feat.conditionImmune ? "Condition Immunity" : null,
+			feat.immune ? "伤害免疫" : null,
+			feat.conditionImmune ? "状态免疫" : null,
 			feat.skillProficiencies ? "技能熟练项" : null,
 			feat.additionalSpells ? "施法" : null,
 			feat.armorProficiencies ? "护甲熟练项" : null,

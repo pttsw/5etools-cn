@@ -82,7 +82,7 @@ class LanguagesPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst__row-border lst__row-inner">
 			<span class="ve-col-6 bold pl-0 pr-1">${it.name}</span>
-			<span class="ve-col-2 px-1 ve-text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
+			<span class="ve-col-2 px-1 ve-text-center">${(Parser.languageToCn(it.type || "\u2014")).uppercaseFirst()}</span>
 			<span class="ve-col-2 px-1 ve-text-center">${(it.script || "\u2014").toTitleCase()}</span>
 			<span class="ve-col-2 ve-text-center ${Parser.sourceJsonToSourceClassname(it.source)} pl-1 pr-0" title="${Parser.sourceJsonToFull(it.source)}">${source}</span>
 		</a>`;

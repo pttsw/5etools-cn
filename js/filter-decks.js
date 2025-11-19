@@ -6,9 +6,10 @@ class PageFilterDecks extends PageFilterBase {
 
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Has Card Art", "传奇"],
+			cnHeader: "杂项",
+			items: ["有卡图", "传奇"],
 			isMiscFilter: true,
-			selFn: it => it === "Has Card Art",
+			selFn: it => it === "有卡图",
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
 	}
@@ -16,7 +17,7 @@ class PageFilterDecks extends PageFilterBase {
 	static mutateForFilters (ent) {
 		this._mutateForFilters_commonSources(ent);
 		this._mutateForFilters_commonMisc(ent);
-		if (ent.hasCardArt) ent._fMisc.push("Has Card Art");
+		if (ent.hasCardArt) ent._fMisc.push("有卡图");
 	}
 
 	addToFilters (ent, isExcluded) {

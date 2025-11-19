@@ -314,7 +314,7 @@ class _PageGeneratorListTrapsHazards extends PageGeneratorListBase {
 
 class _PageGeneratorListRewards extends PageGeneratorListBase {
 	_page = UrlUtil.PG_REWARDS;
-	_pageTitle = "Supernatural Gifts & Rewards";
+	_pageTitle = "其他奖励";
 	_scriptIdentList = "rewards";
 
 	_btnsList = [

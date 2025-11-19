@@ -1613,7 +1613,7 @@ class ListPage {
 		// endregion
 
 		if (dispPageTagline) {
-			dispPageTagline.innerHTML += ` 按J/K来移动光标${isPreviewable ? `, M to expand` : ""}.`;
+			dispPageTagline.innerHTML += ` 按J/K来移动光标${isPreviewable ? `，按M来展开` : ""}.`;
 			this._initList_bindWindowHandlers();
 		}
 

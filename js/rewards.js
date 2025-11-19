@@ -74,7 +74,7 @@ class RewardsPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst__row-border lst__row-inner">
 			<span class="ve-col-0-3 px-0 ve-flex-vh-center lst__btn-toggle-expand ve-self-flex-stretch no-select">[+]</span>
-			<span class="ve-col-2 ve-text-center px-1">${reward.type}</span>
+			<span class="ve-col-2 ve-text-center px-1">${Parser.rewardTypeToCN(reward.type)}</span>
 			<span class="bold ve-col-7-7 px-1">${reward.name}</span>
 			<span class="ve-col-2 ve-text-center ${Parser.sourceJsonToSourceClassname(reward.source)} pl-1 pr-0" title="${Parser.sourceJsonToFull(reward.source)}">${source}</span>
 		</a>

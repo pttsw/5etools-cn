@@ -31,7 +31,7 @@ class PageFilterDeities extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
-			items: ["Grants Piety Features", "有简介", "有图片", "重置", "传奇"],
+			items: ["虔信值特性", "有简介", "有图片", "重置", "传奇"],
 			displayFn: StrUtil.uppercaseFirst,
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
@@ -49,7 +49,7 @@ class PageFilterDeities extends PageFilterBase {
 		this._mutateForFilters_commonMisc(ent);
 		if (ent.entries) ent._fMisc.push("有简介");
 		if (ent.symbolImg) ent._fMisc.push("有图片");
-		if (ent.piety) ent._fMisc.push("Grants Piety Features");
+		if (ent.piety) ent._fMisc.push("虔信值特性");
 	}
 
 	addToFilters (ent, isExcluded) {

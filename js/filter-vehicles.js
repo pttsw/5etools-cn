@@ -6,22 +6,23 @@ class PageFilterVehicles extends PageFilterBase {
 
 		this._vehicleTypeFilter = new Filter({
 			header: "Vehicle Type",
+			cnHeader: "载具类型",
 			items: [],
 			displayFn: Parser.vehicleTypeToFull,
 			isSortByDisplayItems: true,
 		});
 		this._upgradeTypeFilter = new Filter({
 			header: "Upgrade Type",
+			cnHeader: "升级类型",
 			items: [],
 			displayFn: Parser.vehicleTypeToFull,
 			isSortByDisplayItems: true,
 		});
-		this._terrainFilter = new Filter({header: "Terrain", items: ["land", "sea", "air"], displayFn: StrUtil.uppercaseFirst});
-		this._speedFilter = new RangeFilter({header: "Speed"});
-		this._acFilter = new RangeFilter({header: "Armor Class"});
-		this._hpFilter = new RangeFilter({header: "Hit Points"});
-		this._hpFilter = new RangeFilter({header: "Hit Points"});
-		this._creatureCapacityFilter = new RangeFilter({header: "Creature Capacity"});
+		this._terrainFilter = new Filter({header: "Terrain", cnHeader: "地形", items: ["land", "sea", "air"], displayFn: StrUtil.uppercaseFirst});
+		this._speedFilter = new RangeFilter({header: "Speed", cnHeader: "速度"});
+		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader: "护甲等级"});
+		this._hpFilter = new RangeFilter({header: "Hit Points", cnHeader: "生命值"});
+		this._creatureCapacityFilter = new RangeFilter({header: "Creature Capacity", cnHeader: "生物容量"});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",

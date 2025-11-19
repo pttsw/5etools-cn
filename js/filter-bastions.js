@@ -8,7 +8,7 @@ class PageFilterBastions extends PageFilterBase {
 			header: "Type",
 			cnHeader: "类型",
 			items: ["basic", "special"],
-			displayFn: it => it.toTitleCase(),
+			displayFn: it => it === "basic" ? "基础" : "特殊",
 			deselFn: (it) => it === "basic",
 		});
 		this._levelFilter = new RangeFilter({
@@ -27,6 +27,7 @@ class PageFilterBastions extends PageFilterBase {
 					case "Ability": 	return "属性值";
 					case "Expertise": return "专精";
 					case "Race": 		return "种族";
+					case "Membership": return "成员";
 					case "Proficiency": return "熟练";
 					case "Spellcasting":return "施法";
 					case "Background": return "背景";

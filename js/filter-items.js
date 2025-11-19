@@ -272,7 +272,7 @@ class PageFilterItems extends PageFilterEquipment {
 		"renaissance",
 		"trade bar",
 	]);
-	static _FILTER_BASE_ITEMS_ATTUNEMENT = ["需要同调", "需要由...同调", "可选同调", VeCt.STR_NO_ATTUNEMENT];
+	static _FILTER_BASE_ITEMS_ATTUNEMENT = ["需要同调", "需由...同调", "可选同调", VeCt.STR_NO_ATTUNEMENT];
 
 	// region static
 	static sortItems (a, b, o) {

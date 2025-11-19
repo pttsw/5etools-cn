@@ -63,6 +63,7 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 		});
 		this._featureFilter = new Filter({
 			header: "Feature",
+			cnHeader: "特性",
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 		});
 		this._levelFilter = new Filter({
