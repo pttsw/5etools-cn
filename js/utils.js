@@ -3698,7 +3698,7 @@ globalThis.UrlUtil = {
 	},
 
 	getStateKeySubclass (sc) {
-		return UrlUtil.encodeArrayForHash(["sub", sc.ENG_shortName || sc.ENG_name || sc.shortName || sc.name, sc.source]);
+		return UrlUtil.encodeArrayForHash(["sub",  sc.shortName || sc.name || sc.ENG_shortName || sc.ENG_name, sc.source]);
 	},
 
 	unpackStateKeySubclass (str) {
