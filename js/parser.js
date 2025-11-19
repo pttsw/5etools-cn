@@ -4757,6 +4757,15 @@ Parser.ClassToDisplay = function (c) {
 	return Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c);
 };
 
+Parser.ClassToEngDisplay = function (c) {
+	let c_match = c.match(/([^()]*)( ?\((.*)\))?/);
+	if (c_match && c_match[2]) {
+		let c_name = c_match[1].replace(/ *$/, "");
+		let source = c_match[3] === "Revised" ? "(修订)" : c_match[2];
+		return `${c_name} ${source}`;
+	}
+	return c;
+};
 // subclass
 Parser.subclassKeyToDisplay = {};
 Parser.subclassKeyToDisplay["alchemist"] = "炼金师";

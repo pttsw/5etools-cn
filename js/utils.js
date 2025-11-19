@@ -3810,7 +3810,7 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS] = it => UrlUtil.encodeArrayForHash(it.name, SourceUtil.getEntitySource(it));
-UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES] = it => UrlUtil.encodeArrayForHash(Parser.ClassToDisplay(it.name), it.source);
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_FEATS] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES] = UrlUtil.URL_TO_HASH_GENERIC;
@@ -3932,7 +3932,7 @@ UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BESTIARY] = UrlUtil.URL_TO_ENG_HASH_G
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_SPELLS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
-UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES] = (it) => UrlUtil.encodeForHash([Parser.ClassToDisplay(it.ENG_name), it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_FEATS] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
 UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES] = UrlUtil.URL_TO_ENG_HASH_GENERIC;
@@ -4227,7 +4227,7 @@ if (!IS_DEPLOYED && !globalThis.IS_VTT && typeof window !== "undefined") {
 		if (EventUtil.noModifierKeys(e) && typeof d20 === "undefined") {
 			if (e.key === "#") {
 				const spl = window.location.href.split("/");
-				window.prompt("Copy to clipboard: Ctrl+C, Enter", `https://5e.tools/${spl[spl.length - 1]}`);
+				window.prompt("复制到剪贴板: Ctrl+C, 回车", `https://5e.kiwee.top#/${spl[spl.length - 1]}`);
 			}
 		}
 	});
@@ -4503,7 +4503,7 @@ globalThis.MultiSourceUtil = class {
 		switch (prop) {
 			case "class":
 			case "classFluff":
-				return (ent.name || "").toLowerCase().split(" ").at(-1);
+				return (ent.ENG_name || ent.name || "").toLowerCase().split(" ").at(-1);
 			case "subclass":
 			case "subclassFluff":
 				return (ent.className || "").toLowerCase().split(" ").at(-1);
@@ -4514,7 +4514,8 @@ globalThis.MultiSourceUtil = class {
 
 	static isEntityIndexKeyMatch (indexKey, prop, ent) {
 		if (indexKey == null) return true;
-		return indexKey === MultiSourceUtil.getIndexKey(prop, ent);
+		const msIndexKey = MultiSourceUtil.getIndexKey(prop, ent);
+		return indexKey === msIndexKey || Parser.ClassToDisplay(indexKey) === msIndexKey;
 	}
 };
 
