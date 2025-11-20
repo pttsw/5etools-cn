@@ -13470,7 +13470,7 @@ Renderer.vehicle = class {
 						],
 						[
 							`{@b 伤害阈值:} ${ent.hull?.dt ?? "\u2014"}`,
-							`{@b Keel/Beam:} ${(ent.dimensions || ["\u2014"]).join("/")}`,
+							`{@b 龙骨/横梁:} ${(ent.dimensions || ["\u2014"]).join("/")}`,
 						],
 						[
 							`{@b 速度:} ${ptSpeedPace}`,
@@ -13510,7 +13510,7 @@ Renderer.vehicle = class {
 			const isMultiple = entry.count != null && entry.count > 1;
 
 			return {
-				entryName: `${isMultiple ? `${entry.count} ` : ""}${entry.name}${entry.crew ? ` (Crew: ${entry.crew}${isMultiple ? " each" : ""})` : ""}`,
+				entryName: `${isMultiple ? `${entry.count} ` : ""}${entry.name}${entry.crew ? ` (船员: ${isMultiple ? "每个" : ""}${entry.crew}人)` : ""}`,
 			};
 		}
 
