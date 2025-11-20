@@ -17777,6 +17777,126 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Lorwyn Expert",
+			"name": "洛温专家",
+			"source": "LFL",
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"child of the sun|lfl": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"athletics": true,
+					"nature": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"cartographer's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"长棍|xphb",
+						"cartographer's tools|xphb",
+						"背包|xphb",
+						"篮子|xphb",
+						{
+							"item": "羊皮纸|xphb",
+							"quantity": 4,
+							"displayName": "羊皮纸（4张）"
+						},
+						"绳索|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 2900
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 太阳之子|LFL}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 运动|XPHB}和{@skill 自然|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiency:",
+							"name": "工具熟练项：",
+							"type": "item",
+							"entry": "{@item 制图工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 长棍|XPHB}、{@item 制图工具|XPHB}、{@item 背包|XPHB}、{@item 篮子|XPHB}、{@item 羊皮纸|XPHB}（4张）、{@item 绳索|XPHB}、{@item 旅行者服装|XPHB}，29金币；或(B) 50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Luxonborn (Acolyte)",
 			"name": "拉克桑之子（侍僧）",
 			"source": "EGW",
@@ -23170,7 +23290,7 @@
 					"name": "特性：命运宠儿",
 					"type": "entries",
 					"entries": [
-						"你那出人意料的好运反映在一个微小的恩惠上。你获得{@feat 幸运}、{@feat 魔法学徒}或{@feat 熟习}专长（由你选择）。你所选择的专长反映了改变了你生活的变形。与某位给予你三个愿望的巨灵的邂逅可能导致了由魔法学徒专长所展现的魔法力量。如果你以一次幸运的三龙牌局偿清了你所有的家庭债务，则可能代之以幸运专长。要不然就是，你可以用熟习专长来反映出你为争取到崭新宿命，以及塑造由改变了你生命的力量所赐予的知识与属性而经受的各种考验。"
+						"一个微小的益处反映出你那出人意料的好运。你获得{@feat 幸运}，{@feat 魔法学徒}，或者{@feat 熟习}专长（由你选择）。你所选择的专长即反映了改变了你生活的变化。与某位给予你三个愿望的巨灵的邂逅可能导致了由魔法学徒专长所展现的魔法力量。如果你以一次偶然的三龙牌局偿清了你所有的家庭债务，则可能代之以幸运专长。要不然就是，你可以用熟习专长来反映出你为争取到崭新命运，以及塑造由改变了你生活的力量所赐予的知识与能力而经受的各种考验。"
 					],
 					"data": {
 						"isFeature": true
@@ -25934,6 +26054,127 @@
 							"name": "装备：",
 							"type": "item",
 							"entry": "选择A或B：(A) 2把匕首、{@item 盗贼工具|XPHB}、{@item 铁蒺藜|XPHB}、{@item 服装|XPHB}、{@item 爪钩|XPHB}、{@item 铁钉|XPHB}、{@item 镜子|XPHB}、2个{@item 小包|XPHB|小包}、{@item 绳索|XPHB}、{@item 旅行者服装|XPHB}、3金币；或(B) 50金币"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Shadowmoor Expert",
+			"name": "暗影沼泽专家",
+			"source": "LFL",
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"shadowmoor hexer|lfl": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"acrobatics": true,
+					"deception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"glassblower's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"匕首|xphb",
+						"glassblower's tools|xphb",
+						"背包|xphb",
+						"狩猎陷阱|xphb",
+						"油灯|xphb",
+						{
+							"item": "灯油|xphb",
+							"quantity": 3,
+							"displayName": "灯油（3瓶）"
+						},
+						"旅行者服装|xphb",
+						"水袋|xphb",
+						{
+							"value": 800
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 影沼咒术师|LFL}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 特技|XPHB}和{@skill 欺瞒|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiency:",
+							"name": "工具熟练项：",
+							"type": "item",
+							"entry": "{@item glassblower's tools|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 匕首|XPHB}、{@item glassblower's tools|XPHB}、{@item 背包|XPHB}、{@item 狩猎陷阱|XPHB}、{@item 油灯|XPHB}、{@item 灯油|XPHB}（3瓶）、{@item 旅行者服装|XPHB}、{@item 水袋|XPHB}，8 GP；或(B) 50 GP"
 						}
 					]
 				}

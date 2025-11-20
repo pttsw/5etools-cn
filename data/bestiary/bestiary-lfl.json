@@ -1,0 +1,978 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"XMM": "LFL"
+			}
+		}
+	},
+	"monster": [
+		{
+			"ENG_name": "Incarnation of Transience",
+			"name": "短暂化身",
+			"group": [
+				"Incarnation of Nature"
+			],
+			"source": "LFL",
+			"size": [
+				"H"
+			],
+			"type": "fey",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 142,
+				"formula": "15d12 + 45"
+			},
+			"speed": {
+				"walk": 40,
+				"swim": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 21,
+			"dex": 20,
+			"con": 17,
+			"int": 10,
+			"wis": 14,
+			"cha": 16,
+			"save": {
+				"dex": "+8",
+				"con": "+6"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 12,
+			"conditionImmune": [
+				"受擒",
+				"麻痹",
+				"石化",
+				"倒地",
+				"束缚"
+			],
+			"languages": [
+				"木族语; 心灵感应 120 尺"
+			],
+			"cr": "7",
+			"trait": [
+				{
+					"ENG_name": "Ephemeral Movement",
+					"name": "转瞬即逝移动",
+					"entries": [
+						"化身可以穿过其他生物和物件，如同它们是{@variantrule 困难地形|XPHB}，且它的移动不会引发借机攻击。如果它在物件内结束回合，则受到5（{@damage 1d10}）力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"该化身在对抗法术和其他魔法效应的豁免检定中具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"该化身进行三次攻击，使用啃咬或瘴气团进行任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 8}，触及5尺。{@h}14（{@damage 2d8 + 5}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Miasmic Globule",
+					"name": "瘴气球体",
+					"entries": [
+						"{@atkr r} {@hit 8}，射程60/120尺。{@h}15（{@damage 6d4}）强酸伤害，且目标的{@variantrule 速度|XPHB}速度缩小10尺直到化身的下个回合结束。"
+					]
+				},
+				{
+					"ENG_name": "Spectral Stampede",
+					"name": "灵体间谍奔腾",
+					"entries": [
+						"化身沿直线移动至多80尺。每个其进入空间的生物成为以下效果的目标一次。{@actSave dex} {@dc 16}。{@actSaveFail} 18（{@damage 4d8}）力场伤害。如果目标是化身体型或更小，则获得{@condition 倒地|XPHB}状态。{@actSaveSuccess} 仅伤害减半。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Shape-Shift",
+					"name": "变形",
+					"entries": [
+						"该化身将其体型变为中型、大型或巨型。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"S",
+				"TP"
+			],
+			"damageTags": [
+				"A",
+				"O",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"倒地"
+			],
+			"savingThrowForced": [
+				"敏捷"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Incarnation of Vibrance",
+			"name": "生机化身",
+			"group": [
+				"Incarnation of Nature"
+			],
+			"source": "LFL",
+			"size": [
+				"H"
+			],
+			"type": "fey",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 230,
+				"formula": "20d12 + 100"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 20,
+			"dex": 17,
+			"con": 20,
+			"int": 10,
+			"wis": 16,
+			"cha": 21,
+			"save": {
+				"con": "+9",
+				"cha": "+9"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 13,
+			"resist": [
+				"光耀"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"恐慌"
+			],
+			"languages": [
+				"木族语; 心灵感应 120 尺"
+			],
+			"cr": "10",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"该化身施展以下法术之一，无需法术成分并使用魅力作为施法属性："
+					],
+					"will": [
+						"{@spell 昼明术|XPHB}",
+						"{@spell 德鲁伊伎俩|XPHB}",
+						"{@spell 植物滋长|XPHB}"
+					],
+					"daily": {
+						"1": [
+							"{@spell 目盲术／耳聋术|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"该化身在对抗法术和其他魔法效应的豁免检定中具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"化身进行二次藤蔓攻击并使用光耀爆裂。若可用，它可以用一次施法来施放{@spell 目盲术／耳聋术|XPHB}以替代一次藤蔓攻击。"
+					]
+				},
+				{
+					"ENG_name": "Vine",
+					"name": "藤蔓",
+					"entries": [
+						"{@atkr m} {@hit 9}，触及20尺。{@h}18（{@damage 3d8 + 5}）钝击伤害。如果目标是化身的体型或更小，它会因其中一条藤蔓而获得{@condition 受擒|XPHB}状态（逃脱{@dc 15}）。"
+					]
+				},
+				{
+					"ENG_name": "Radiant Blast",
+					"name": "光耀爆裂",
+					"entries": [
+						"{@actSave con} {@dc 17}，化身选择的20尺{@variantrule 光环 [效应区域]|XPHB|光环}效应区域内的每个生物。{@actSaveFail} 该生物受到14（{@damage 2d8 + 5}）光耀伤害。{@actSaveSuccess} 伤害减半。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Shape-Shift",
+					"name": "变形",
+					"entries": [
+						"该化身将其体型变为中型、大型或巨型。"
+					]
+				},
+				{
+					"ENG_name": "Teleport",
+					"name": "传送",
+					"entries": [
+						"该化身向其能看见的一个未占据空间传送至多60尺。当该化身有一个生物{@condition 受擒|XPHB}时，它不能传送。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击",
+				"传送"
+			],
+			"languageTags": [
+				"S",
+				"TP"
+			],
+			"damageTags": [
+				"B",
+				"R"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"conditionInflictSpell": [
+				"目盲",
+				"耳聋"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"savingThrowForcedSpell": [
+				"体质"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Lorwyn Giant",
+			"name": "洛温巨人",
+			"source": "LFL",
+			"size": [
+				"H"
+			],
+			"type": "giant",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 115,
+				"formula": "11d12 + 44"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 21,
+			"dex": 13,
+			"con": 18,
+			"int": 9,
+			"wis": 16,
+			"cha": 8,
+			"save": {
+				"con": "+7",
+				"wis": "+6"
+			},
+			"passive": 13,
+			"languages": [
+				"普通",
+				"巨人语"
+			],
+			"cr": "6",
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"巨人进行二次攻击，使用石剑或巨石的任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Stone Sword",
+					"name": "岩石剑",
+					"entries": [
+						"{@atkr m} {@hit 8}，触及15尺。{@h}21（{@damage 3d10 + 5}）挥砍伤害。"
+					]
+				},
+				{
+					"ENG_name": "Boulder",
+					"name": "巨石",
+					"entries": [
+						"{@atkr r} {@hit 8}，射程60/240尺。{@h}14（{@damage 2d8 + 5}）钝击伤害。如果目标是大型或更小的生物，它获得{@condition 倒地|XPHB}状态。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Name Sleep {@recharge 5}",
+					"name": "名称 睡眠术 {@recharge 5}",
+					"entries": [
+						"巨人陷入深沉的恢复性沉睡。巨人获得20{@variantrule 临时生命值|XPHB}并具有{@condition 昏迷|XPHB}状态，直到它受到伤害或它的下一个回合结束。巨人在1分钟内进行属性检定和豁免检定时具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"GI"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"倒地",
+				"昏迷"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Merrow Doublespeaker",
+			"name": "迈罗人鱼双舌者",
+			"source": "LFL",
+			"size": [
+				"M"
+			],
+			"type": "monstrosity",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 67,
+				"formula": "9d8 + 27"
+			},
+			"speed": {
+				"walk": 20,
+				"swim": 40
+			},
+			"str": 18,
+			"dex": 17,
+			"con": 16,
+			"int": 12,
+			"wis": 13,
+			"cha": 16,
+			"save": {
+				"dex": "+5",
+				"cha": "+5"
+			},
+			"skill": {
+				"deception": "+5",
+				"stealth": "+5"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 11,
+			"languages": [
+				"普通",
+				"原初语（水族语）"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"迈罗人鱼施展以下法术之一，无需材质成分并使用魅力作为施法属性（法术豁免{@dc 13}）："
+					],
+					"will": [
+						"{@spell 命令术|XPHB}",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 次级幻影|XPHB}"
+					],
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
+					"entries": [
+						"迈罗人鱼可在水里和空气中呼吸。"
+					]
+				},
+				{
+					"ENG_name": "Mimicry",
+					"name": "拟声",
+					"entries": [
+						"迈罗人鱼可以模仿声音和动物声响。听到模仿的生物可以通过一次成功的{@dc 15}感知（{@skill 洞悉|XPHB}）检定来分辨出它们是模仿的。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"迈罗人鱼进行三次脊刺扫尾攻击。它可以将其中的一次攻击替换为使用施法来施放{@spell 命令术|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Spined Tail",
+					"name": "尖刺扫尾",
+					"entries": [
+						"{@atkr m,r} {@hit 6}，触及5尺或射程20/60尺。{@h}14（{@damage 3d6 + 4}）穿刺伤害。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"treasure": [
+				"个体"
+			],
+			"traitTags": [
+				"水陆两栖",
+				"拟声"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AQ",
+				"C",
+				"P"
+			],
+			"damageTags": [
+				"P"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflictSpell": [
+				"倒地"
+			],
+			"savingThrowForcedSpell": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Merrow Haranguer",
+			"name": "迈罗人鱼斥候",
+			"source": "LFL",
+			"size": [
+				"M"
+			],
+			"type": "monstrosity",
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 90,
+				"formula": "12d8 + 36"
+			},
+			"speed": {
+				"walk": 5,
+				"swim": 40
+			},
+			"str": 18,
+			"dex": 18,
+			"con": 16,
+			"int": 14,
+			"wis": 15,
+			"cha": 19,
+			"save": {
+				"dex": "+7",
+				"cha": "+7"
+			},
+			"skill": {
+				"performance": "+7",
+				"persuasion": "+7"
+			},
+			"passive": 12,
+			"languages": [
+				"普通",
+				"原初语（水族语）"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"ENG_name": "Amphibious",
+					"name": "水陆两栖",
+					"entries": [
+						"迈罗人鱼可在水里和空气中呼吸。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"迈罗人鱼进行三次攻击，使用珊瑚节杖和{@condition 中毒|XPHB}长弓以任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Coral Scepter",
+					"name": "珊瑚节杖",
+					"entries": [
+						"{@atkr m} {@hit 7}，触及5尺。{@h}14（{@damage 2d10 + 4}）钝击伤害。"
+					]
+				},
+				{
+					"ENG_name": "Poisoned Longbow",
+					"name": "中毒长弓",
+					"entries": [
+						"{@atkr r} {@hit 7}，射程150/600尺。{@h}8（{@damage 1d8 + 4}）穿刺伤害加7（{@damage 2d6}）毒素伤害。"
+					]
+				},
+				{
+					"ENG_name": "Invective",
+					"name": "谩骂",
+					"entries": [
+						"{@actSave wis} {@dc 15}，迈罗人鱼60尺内能看见的最多三个生物。{@actSaveFail} 14（{@damage 4d6}）心灵伤害，且该生物在迈罗人鱼的下个回合结束前其下一次攻击检定具有{@variantrule 劣势|XPHB}。{@actSaveSuccess} 仅伤害减半。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"treasure": [
+				"个体"
+			],
+			"traitTags": [
+				"水陆两栖"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AQ",
+				"C",
+				"P"
+			],
+			"damageTags": [
+				"B",
+				"I",
+				"P",
+				"Y"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RNG"
+			],
+			"savingThrowForced": [
+				"感知"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Noggle Ransacker",
+			"name": "诺格尔掠夺者",
+			"source": "LFL",
+			"size": [
+				"S"
+			],
+			"type": "fey",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 13,
+				"formula": "3d6 + 3"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 15,
+			"con": 13,
+			"int": 8,
+			"wis": 10,
+			"cha": 12,
+			"skill": {
+				"stealth": "+4"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 10,
+			"languages": [
+				"普通",
+				"木族语"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"ENG_name": "Siege Monster",
+					"name": "攻城怪物",
+					"entries": [
+						"诺格尔对物件和建筑造成双倍伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Sabotaging Swipe",
+					"name": "破坏挥击",
+					"entries": [
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）挥砍伤害。如果目标穿着护甲，则受到以下效果。{@actSave dex} {@dc 12}。{@actSaveFail} 护甲提供的AC受到-1减值。目标可以消耗一个动作来从其护甲上移除该减值。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Nimble Escape",
+					"name": "迅捷逃逸",
+					"entries": [
+						"诺格尔执行撤离或躲藏动作。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"treasure": [
+				"个体"
+			],
+			"traitTags": [
+				"攻城怪物"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"savingThrowForced": [
+				"敏捷"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Noggle Wild Mage",
+			"name": "诺格狂野魔法师",
+			"source": "LFL",
+			"size": [
+				"S"
+			],
+			"type": "fey",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d6 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 16,
+			"con": 14,
+			"int": 10,
+			"wis": 12,
+			"cha": 17,
+			"save": {
+				"con": "+4",
+				"cha": "+5"
+			},
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"passive": 11,
+			"languages": [
+				"普通",
+				"木族语"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Bloodied Wild Magic",
+					"name": "浴血狂野魔法",
+					"entries": [
+						"当{@status 浴血|XPHB}时，诺格尔的{@variantrule 飞行速度|XPHB}为30尺，并且它可以选择其造成的任何伤害为力场伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"诺格尔进行两次攻击，以任意组合使用诺格尔棍或迷惑射线。"
+					]
+				},
+				{
+					"ENG_name": "Noggling Stick",
+					"name": "诺格林棍",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）钝击伤害加2（{@damage 1d4}）心灵伤害。"
+					]
+				},
+				{
+					"ENG_name": "Befuddling Ray",
+					"name": "迷惑射线",
+					"entries": [
+						"{@atkr r} {@hit 5}，射程60尺 {@h}6（{@damage 1d6 + 3}）心灵伤害，且目标在诺格尔的下个回合结束前从下一次豁免检定中减去{@dice 1d4}。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"treasure": [
+				"个体"
+			],
+			"tokenCustom": true,
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"B",
+				"Y"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Shadowmoor Giant",
+			"name": "影沼巨人",
+			"source": "LFL",
+			"size": [
+				"H"
+			],
+			"type": "giant",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 172,
+				"formula": "15d12 + 75"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 22,
+			"dex": 14,
+			"con": 20,
+			"int": 7,
+			"wis": 19,
+			"cha": 8,
+			"save": {
+				"con": "+8",
+				"wis": "+7"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 14,
+			"languages": [
+				"巨人语"
+			],
+			"cr": "8",
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"巨人进行三次攻击，以任意组合使用树棍或巨石。"
+					]
+				},
+				{
+					"ENG_name": "Tree Club",
+					"name": "树棍",
+					"entries": [
+						"{@atkr m} {@hit 9}，触及15尺。{@h}17（{@damage 2d10 + 6}）钝击伤害。"
+					]
+				},
+				{
+					"ENG_name": "Boulder",
+					"name": "巨石",
+					"entries": [
+						"{@atkr r} {@hit 9}，射程60/240尺。{@h}13（{@damage 2d6 + 6}）钝击伤害。如果目标是大型或更小的生物，它获得{@condition 倒地|XPHB}状态。"
+					]
+				},
+				{
+					"ENG_name": "Wild Magic Cataclysm {@recharge 5}",
+					"name": "狂野魔法灾变{@recharge 5}",
+					"entries": [
+						"{@actSave dex} {@dc 15}，位于120尺内一点为中心、半径20尺的{@variantrule 球状 【效应区域】|XPHB|球状}效应区域内的每个生物。{@actSaveFail} 28（{@damage 8d6}）伤害（掷{@dice 1d4}以确定伤害类型：1\u2014强酸；2\u2014火焰；3\u2014闪电；4\u2014雷鸣）。{@actSaveSuccess} 伤害减半。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 妖精荒野"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"tokenCustom": true,
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"GI"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"AOE",
+				"MA",
+				"MLW",
+				"RA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"倒地"
+			],
+			"savingThrowForced": [
+				"敏捷"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		}
+	]
+}

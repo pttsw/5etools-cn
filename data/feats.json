@@ -802,7 +802,7 @@
 					"name": "强力恢复",
 					"type": "entries",
 					"entries": [
-						"当你掷一个{@variantrule 生命值|XPHB|生命值}骰来恢复{@variantrule 生命值|XPHB}时，你可以将掷出的1或2视为3。"
+						"当你掷一个{@variantrule 生命值骰|XPHB|生命值骰}来恢复{@variantrule 生命值|XPHB}时，你可以将任何掷出1或2的结果视为3。"
 					]
 				},
 				{
@@ -810,7 +810,7 @@
 					"name": "血色盛宴",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你用一个攻击掷骰命中一个非构装或不死生物的浴血生物时，你可以消耗一个{@variantrule 生命值|XPHB|生命值}骰，掷骰并恢复等于掷骰结果加上你体质调整值的{@variantrule 生命值|XPHB}。",
+						"每回合一次，当你用攻击检定命中一个非构装体或不死生物的{@status 浴血|XPHB}生物时，你可以消耗一个{@variantrule 生命值骰|XPHB|生命值骰}，掷骰，并恢复等于掷骰数值加上你体质调整值的{@variantrule 生命值|XPHB}。",
 						"你可以使用此特性的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
 					]
 				}
@@ -847,7 +847,7 @@
 					"name": "百步穿杨",
 					"type": "entries",
 					"entries": [
-						"使用投掷武器进行远程攻击时，在长距离范围内进行攻击不会使你的攻击检定受到{@variantrule 劣势|XPHB}。"
+						"使用{@itemProperty T|XPHB|投掷}武器进行远程攻击时，在长射程攻击不会对你的攻击检定施加{@variantrule 劣势|XPHB}。"
 					]
 				}
 			]
@@ -2398,6 +2398,52 @@
 					"type": "entries",
 					"entries": [
 						"通过1小时的工作或当你完成一次{@variantrule 长休|XPHB}时，如果你手头有食材和{@item 厨师工具|XPHB}，你可以烹饪出数量等于你{@variantrule 临时生命值|XPHB}的零嘴。这些特殊零嘴在制作后持续8小时。一个生物可以使用{@variantrule 附赠动作|XPHB}来吃下一份这样的零嘴，获得等于你{@variantrule 熟练项|XPHB|熟练加值}的{@variantrule 熟练项|XPHB|熟练加值}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Child of the Sun",
+			"name": "太阳之子",
+			"source": "LFL",
+			"category": "O",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									"妖火|xphb"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Eyes of Eirdu",
+					"name": "艾尔杜之眼",
+					"type": "entries",
+					"entries": [
+						"你和10尺内的盟友在避免或结束{@condition 目盲|XPHB}状态的豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Faerie Fire",
+					"name": "妖火",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 妖火|XPHB}法术。智力、感知或魅力是你的施法属性（选择此专长时决定）。你可以无需法术位施放一次，完成一次{@variantrule 长休|XPHB}后恢复以此方式施放的能力。你也可以使用任何你拥有的法术位来施放该法术。",
+						"当你使用此增益施放{@spell 妖火|XPHB}而不消耗法术位时，受到伤害不会打断你对该法术的{@status 专注|XPHB}。"
 					]
 				}
 			]
@@ -4491,7 +4537,7 @@
 				}
 			],
 			"entries": [
-				"当你用双手持握的一把近战武器发动了一次攻击并为其进行伤害掷骰时，若该武器具有双手或多用词条，那么你便可以将伤害骰投出的1和2都视为3。"
+				"当你使用双手持握的近战武器进行攻击并掷伤害骰时，你可以将伤害骰上的任何1或2视为3。该武器必须具有{@itemProperty 2h|XPHB|双手}或{@itemProperty V|XPHB|两用}属性才能获得此增益。"
 			]
 		},
 		{
@@ -4618,7 +4664,7 @@
 					"type": "list",
 					"items": [
 						"你获得枪械的熟练项（见城主指南的{@variantrule 枪械|DMG}栏目）。",
-						"你忽略枪械的装填属性。",
+						"你忽略枪械的{@itemProperty LD|PHB|装填}属性。",
 						"你在敌对生物５尺范围内发动远程攻击检定时，不会因此而具有劣势。"
 					]
 				}
@@ -7831,7 +7877,7 @@
 					"type": "list",
 					"items": [
 						"当你双手持握双刃弯刀时，你的AC得到+1加值。",
-						"在使用双刃弯刀时视同具有灵巧属性。"
+						"双刃弯刀在你持握时具有{@itemProperty F|PHB|灵巧}属性。"
 					]
 				}
 			]
@@ -8663,6 +8709,51 @@
 					"type": "entries",
 					"entries": [
 						"从幻术或死灵学派中选择一个{@filter 1级幻术或死灵法术|spells|level=1|school=I;N}。你总是准备着该法术和{@spell 隐形术|XPHB}法术。你可以不消耗法术位施放这些法术。以此方式施放其中任一法术后，在完成一次{@variantrule 长休|XPHB}前你不能再以此方式施放该法术。你也可以使用相应等级的法术位来施放这些法术。这些法术的施法关键属性是由此专长提升的属性。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Shadowmoor Hexer",
+			"name": "影沼咒术师",
+			"source": "LFL",
+			"category": "O",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"脆弱诅咒|xphb"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Hex",
+					"name": "脆弱诅咒",
+					"type": "entries",
+					"entries": [
+						"你总是准备了{@spell 脆弱诅咒|XPHB}法术。智力、感知或魅力是你的该法术的施法属性（选择此专长时选择）。你可以无需法术位施放它一次，并且当你完成一次{@variantrule 长休|XPHB}时恢复以此方式施放它的能力。你也可以使用你拥有的任何法术位施放该法术。"
+					]
+				},
+				{
+					"ENG_name": "Curse Magic",
+					"name": "诅咒魔法",
+					"type": "entries",
+					"entries": [
+						"当你被一个你用{@spell 脆弱诅咒|XPHB}诅咒的生物用攻击检定命中时，该生物受到等同于你{@variantrule 熟练项|XPHB|熟练加值}的心灵伤害。一个生物每回合只会受到此伤害一次。"
 					]
 				}
 			]
@@ -10623,8 +10714,8 @@
 				{
 					"type": "list",
 					"items": [
-						"对你来说，任何不具有投掷特性的简易或军用近战武器视作具有投掷特性。单手武器具有20尺常规射程和60尺最大射程，而双手武器具有15尺常规射程和30尺最大射程。",
-						"对你来说，原本已具有投掷特性的武器常规射程增加20尺，最大射程增加40尺。",
+						"简易和军用近战武器若无投掷属性，对你而言则具有{@itemProperty T|PHB|投掷}属性。单手武器的正常射程为20尺，最大射程为60尺；双手武器的正常射程为15尺，最大射程为30尺。",
+						"已具有{@itemProperty T|PHB|投掷}属性的武器为你增加20尺短射程和40尺长射程。",
 						"当你使用一件轻型武器进行一次投掷武器攻击未命中时，武器会在回合结束时如同回旋镖一般飞回你的手中（除非有什么东西阻止它飞回来）。你可以以此抓住并收起尽可能多的武器。"
 					]
 				}
@@ -10879,7 +10970,7 @@
 					"name": "倾注",
 					"type": "entries",
 					"entries": [
-						"当你完成一次{@variantrule 长休|XPHB}时，只要你有空的小瓶或烧瓶，就可以制作一瓶{@item 治疗药水|XDMG}或解毒剂。这些液体在你完成另一次{@variantrule 长休|XPHB}时就会蒸发。"
+						"当你完成一次{@variantrule 长休|XPHB}时，你可以制造一瓶{@item 治疗药水|XDMG}或一瓶{@item 抗毒剂|XPHB}，只要你有一个空的{@item 小瓶|XPHB}或{@item 扁瓶|XPHB}。这些液体在你完成另一次{@variantrule 长休|XPHB}时蒸发。"
 					]
 				},
 				{

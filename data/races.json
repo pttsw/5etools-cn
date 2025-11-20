@@ -1284,6 +1284,18 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Boggart",
+			"name": "博格特",
+			"source": "LFL",
+			"_copy": {
+				"ENG_name": "Goblin",
+				"name": "地精",
+				"source": "MPMM"
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Bugbear",
 			"name": "熊地精",
 			"source": "ERLW",
@@ -2461,6 +2473,9 @@
 			"name": "半血裔",
 			"source": "VRGR",
 			"page": 16,
+			"reprintedAs": [
+				"半血裔|ABH"
+			],
 			"lineage": "VRGR",
 			"size": [
 				"S",
@@ -4111,6 +4126,247 @@
 		{
 			"ENG_name": "Elf",
 			"name": "精灵",
+			"source": "LFL",
+			"_copy": {
+				"ENG_name": "Elf",
+				"name": "精灵",
+				"source": "XPHB",
+				"_mod": {
+					"entries": {
+						"mode": "replaceArr",
+						"replace": "精灵血系",
+						"items": {
+							"ENG_name": "Elven Lineage",
+							"name": "精灵血系",
+							"type": "entries",
+							"entries": [
+								"你属于一支精灵血系，并因此获得了超自然能力。从精灵血系表格中选择其一。你获得该血系的1级好处。",
+								"当你到达3级和5级时，你分别习得一道表格上更高级的法术；你时刻准备着这道习得的法术，且可以不消耗法术位施展此法术一次，当你完成一次{@variantrule 长休|XPHB}时，你重获施展该道法术的能力。你也可以用任何你拥有的相应环阶法术位施展该道法术。",
+								"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。",
+								{
+									"type": "table",
+									"caption": "精灵血系",
+									"colLabels": [
+										"血统",
+										"1环",
+										"3环",
+										"5环"
+									],
+									"colStyles": [
+										"col-2",
+										"col-6",
+										"col-2",
+										"col-2"
+									],
+									"rows": [
+										[
+											"洛温",
+											"你知晓{@spell 荆棘之鞭|XPHB}戏法。每当你完成一次长休时，你可以用{@filter 德鲁伊法术列表|spells|class=德鲁伊}中的另一个戏法替换该戏法。",
+											"{@spell 命令术|XPHB}",
+											"{@spell 沉默术|XPHB}"
+										],
+										[
+											"影沼",
+											"你的{@sense 黑暗视觉|XPHB}射程增加到120尺。你还知晓{@spell 点点星芒|XPHB}戏法。",
+											"{@spell 英雄气概|XPHB}",
+											"{@spell 遗体防腐|XPHB}"
+										]
+									]
+								}
+							]
+						}
+					}
+				}
+			},
+			"additionalSpells": [
+				{
+					"ENG_name": "Lorwyn",
+					"name": "洛温",
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"命令术|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"沉默术|xphb"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=德鲁伊"
+								}
+							]
+						}
+					}
+				},
+				{
+					"ENG_name": "Shadowmoor",
+					"name": "影沼",
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"英雄气概|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"遗体防腐|xphb"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"点点星芒|xphb#c"
+						]
+					}
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"ENG_name": "Elf; Lorwyn Lineage",
+					"name": "精灵；洛温血统",
+					"source": "LFL",
+					"_mod": {
+						"entries": {
+							"mode": "replaceArr",
+							"replace": "精灵血系",
+							"items": {
+								"ENG_name": "Elven Lineage (Lorwyn)",
+								"name": "精灵血系（洛温）",
+								"type": "entries",
+								"entries": [
+									"你属于一个赋予你超自然能力的血统。你知晓{@spell 荆棘之鞭|XPHB}戏法。每当你完成一次长休时，你可以用{@filter 德鲁伊法术列表|spells|class=德鲁伊}中的另一个戏法替换该戏法。",
+									"当你达到角色等级3时，你学会{@spell 命令术|XPHB}法术。当你达到角色等级5时，你还学会{@spell 沉默术|XPHB}法术。你总是准备着这些法术，并且你可以无需法术位各施放一次这些法术。一旦你使用此特质施放了其中任一法术，直到你完成一次{@variantrule 长休|XPHB}前，你都无法再次使用此特质施放该法术。你也可以使用你拥有的相应等级的法术位来施放该法术。",
+									"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
+								]
+							}
+						}
+					},
+					"additionalSpells": [
+						{
+							"innate": {
+								"3": {
+									"daily": {
+										"1": [
+											"命令术|xphb"
+										]
+									}
+								},
+								"5": {
+									"daily": {
+										"1": [
+											"沉默术|xphb"
+										]
+									}
+								}
+							},
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"known": {
+								"1": {
+									"_": [
+										{
+											"choose": "level=0|class=德鲁伊"
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Elf; Shadowmoor Lineage",
+					"name": "精灵；影沼血统",
+					"source": "LFL",
+					"_mod": {
+						"entries": {
+							"mode": "replaceArr",
+							"replace": "精灵血系",
+							"items": {
+								"ENG_name": "Elven Lineage (Shadowmoor)",
+								"name": "精灵血系（影沼）",
+								"type": "entries",
+								"entries": [
+									"你属于一个赋予你超自然能力的血统。你的{@sense 黑暗视觉|XPHB}射程增加到120尺。你还知晓{@spell 点点星芒|XPHB}戏法。",
+									"当你达到角色等级3时，你学会{@spell 英雄气概|XPHB}法术。当你达到角色等级5时，你还学会{@spell 遗体防腐|XPHB}法术。你总是准备着这些法术，并且你可以无需法术位各施放一次这些法术。一旦你使用此特质施放了其中任一法术，直到你完成一次{@variantrule 长休|XPHB}前，你无法再次使用此特质施放该法术。你也可以使用你拥有的相应等级的法术位来施放该法术。",
+									"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
+								]
+							}
+						}
+					},
+					"darkvision": 120,
+					"additionalSpells": [
+						{
+							"innate": {
+								"3": {
+									"daily": {
+										"1": [
+											"英雄气概|xphb"
+										]
+									}
+								},
+								"5": {
+									"daily": {
+										"1": [
+											"遗体防腐|xphb"
+										]
+									}
+								}
+							},
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"known": {
+								"1": [
+									"点点星芒|xphb#c"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Elf",
+			"name": "精灵",
 			"source": "PHB",
 			"page": 21,
 			"srd": true,
@@ -4444,20 +4700,34 @@
 					"name": "精灵; 卓尔血统",
 					"source": "XPHB",
 					"_mod": {
-						"entries": {
-							"mode": "replaceArr",
-							"replace": "精灵血系",
-							"items": {
-								"ENG_name": "Elven Lineage (Drow)",
-								"name": "精灵血系 (卓尔)",
-								"type": "entries",
-								"entries": [
-									"你属于一支精灵血系，并因此获得了超自然能力。你的黑暗视觉提升至120尺。你习得戏法{@spell 舞光术|XPHB}。",
-									"当你到达3级时，你习得法术{@spell 妖火|XPHB}。当你到达5级时，你习得法术{@spell 黑暗术|XPHB}。你时刻准备着这道习得的法术，且可以不消耗法术位施展此法术一次，当你完成一次{@variantrule 长休|XPHB}时，你重获施展该道法术的能力。你也可以用任何你拥有的相应环阶法术位施展该道法术。",
-									"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
-								]
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "精灵血系",
+								"items": {
+									"ENG_name": "Elven Lineage (Drow)",
+									"name": "精灵血系 (卓尔)",
+									"type": "entries",
+									"entries": [
+										"你属于一支精灵血系，并因此获得了超自然能力。你的黑暗视觉提升至120尺。你习得戏法{@spell 舞光术|XPHB}。",
+										"当你到达3级时，你习得法术{@spell 妖火|XPHB}。当你到达5级时，你习得法术{@spell 黑暗术|XPHB}。你时刻准备着这道习得的法术，且可以不消耗法术位施展此法术一次，当你完成一次{@variantrule 长休|XPHB}时，你重获施展该道法术的能力。你也可以用任何你拥有的相应环阶法术位施展该道法术。",
+										"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
+									]
+								}
+							},
+							{
+								"mode": "replaceArr",
+								"replace": "黑暗视觉",
+								"items": {
+									"ENG_name": "Darkvision",
+									"name": "黑暗视觉",
+									"type": "entries",
+									"entries": [
+										"你拥有120尺{@sense 黑暗视觉|XPHB}。"
+									]
+								}
 							}
-						}
+						]
 					},
 					"darkvision": 120,
 					"additionalSpells": [
@@ -4834,6 +5104,93 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Faerie",
+			"name": "仙灵",
+			"source": "LFL",
+			"_copy": {
+				"ENG_name": "Fairy",
+				"name": "仙灵",
+				"source": "MPMM",
+				"_mod": {
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Faerie Lineage",
+							"type": "entries",
+							"name": "仙灵血统",
+							"entries": [
+								"作为洛温或暗影荒原的本地居民，你可以获得额外的特质。",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"ENG_name": "Lorwyn",
+											"name": "洛温",
+											"type": "item",
+											"entries": [
+												"你不会获得任何额外的特质。"
+											]
+										},
+										{
+											"ENG_name": "Shadowmoor",
+											"name": "影沼",
+											"type": "item",
+											"entries": [
+												"你拥有120尺{@sense 黑暗视觉|XPHB}。"
+											]
+										}
+									]
+								}
+							]
+						}
+					}
+				}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"ENG_name": "Faerie; Lorwyn",
+					"name": "仙灵；洛温",
+					"source": "LFL",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "removeArr",
+								"names": "仙灵血统"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Faerie; Shadowmoor",
+					"name": "仙灵；影沼",
+					"source": "LFL",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "prependArr",
+								"items": {
+									"ENG_name": "Darkvision",
+									"name": "黑暗视觉",
+									"type": "entries",
+									"entries": [
+										"你拥有120尺{@sense 黑暗视觉|XPHB}。"
+									]
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "仙灵血统"
+							}
+						]
+					},
+					"darkvision": 120
+				}
+			]
+		},
+		{
 			"ENG_name": "Fairy",
 			"name": "仙灵",
 			"source": "MPMM",
@@ -5191,6 +5548,76 @@
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Flamekin",
+			"name": "焰灵",
+			"source": "LFL",
+			"_copy": {
+				"ENG_name": "Genasi",
+				"name": "元素裔",
+				"source": "MPMM",
+				"_mod": {
+					"entries": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"ENG_name": "Fire Resistance",
+								"name": "火焰抗性",
+								"type": "entries",
+								"entries": [
+									"你对火焰伤害具有抗性。"
+								]
+							},
+							{
+								"ENG_name": "Reach to the Blaze",
+								"name": "烈焰之触",
+								"type": "entries",
+								"entries": [
+									"你知晓戏法{@spell 燃火术}。从3级开始，你可以使用该特质施展{@spell 燃烧之手}法术。从5级开始，你也可以使用该特质施展{@spell 火焰刀}法术，且无需材料成分。一旦你使用了该特质施展了{@spell 燃烧之手}或{@spell 火焰刀}，直到完成一次长休前，你不能再次使用该特质施展那个法术。你也能用你拥有的相应法术环阶的法术位来施展这些法术。",
+									"当你使用此特质施展法术时，智力，感知或魅力是你的施法属性（当你选择该种族时进行决定）。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"resist": [
+				"火焰"
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"燃烧之手"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"火焰刀"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"燃火术#c"
+						]
+					}
+				}
+			],
+			"hasFluff": true
 		},
 		{
 			"ENG_name": "Genasi",
@@ -9069,6 +9496,94 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Kithkin",
+			"name": "吉斯灵",
+			"source": "LFL",
+			"_copy": {
+				"ENG_name": "Halfling",
+				"name": "半身人",
+				"source": "XPHB",
+				"_mod": {
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Kithkin Lineage",
+							"type": "entries",
+							"name": "吉斯灵血统",
+							"entries": [
+								"作为洛温或暗影荒原的本地居民，你可以获得额外的特质。",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"ENG_name": "Lorwyn",
+											"name": "洛温",
+											"type": "item",
+											"entries": [
+												"你不会获得任何额外的特质。"
+											]
+										},
+										{
+											"ENG_name": "Shadowmoor",
+											"name": "影沼",
+											"type": "item",
+											"entries": [
+												"你拥有120尺{@sense 黑暗视觉|XPHB}。"
+											]
+										}
+									]
+								}
+							]
+						}
+					}
+				}
+			},
+			"darkvision": 120,
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"ENG_name": "Kithkin; Lorwyn",
+					"name": "吉斯灵；洛温",
+					"source": "LFL",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "removeArr",
+								"names": "吉斯灵血统"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Kithkin; Shadowmoor",
+					"name": "吉斯灵；影沼",
+					"source": "LFL",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "prependArr",
+								"items": {
+									"ENG_name": "Darkvision",
+									"name": "黑暗视觉",
+									"type": "entries",
+									"entries": [
+										"你拥有120尺{@sense 黑暗视觉|XPHB}。"
+									]
+								}
+							},
+							{
+								"mode": "removeArr",
+								"names": "吉斯灵血统"
+							}
+						]
+					},
+					"darkvision": 120
+				}
+			]
+		},
+		{
 			"ENG_name": "Kobold",
 			"name": "狗头人",
 			"source": "DMG",
@@ -10088,6 +10603,69 @@
 						"你能够说、读、写水族语和通用语。"
 					],
 					"type": "entries"
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Lorwyn Changeling",
+			"name": "洛温幻身灵",
+			"source": "LFL",
+			"creatureTypes": [
+				"精类"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 120,
+			"skillProficiencies": [
+				{
+					"performance": true
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型(约4-7尺高)或小型(约2-4尺高)，在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Shape Self",
+					"name": "自我塑形",
+					"type": "entries",
+					"entries": [
+						"作为一个动作，你可以将你的身体重塑为两条腿的类人形态或四条腿的野兽形态。当你拥有类人形态时，你可以穿着适合你体型的类人生物的衣服和护甲。"
+					]
+				},
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你拥有120尺{@sense 黑暗视觉|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Delightful Imitator",
+					"type": "entries",
+					"name": "愉悦模仿者",
+					"entries": [
+						"你拥有{@skill 表演|XPHB}技能的熟练项。"
+					]
+				},
+				{
+					"ENG_name": "Unpredictable Movement",
+					"type": "entries",
+					"name": "不可预知移动",
+					"entries": [
+						"当你掷{@variantrule 先攻|XPHB}且该掷骰没有{@variantrule 劣势|XPHB}时，你可以将{@action 疾走|XPHB}动作作为{@variantrule 反应|XPHB}来执行。"
+					]
 				}
 			],
 			"hasFluff": true,
@@ -11609,6 +12187,92 @@
 					"type": "entries",
 					"entries": [
 						"你短暂地回忆起了过去的瞬间，这可能是来自许多年前或上一世的逝去回忆。当你进行一个使用一项技能的属性检定时，你可以在看到{@dice d20}的结果后立刻投掷一枚{@dice d6}，并将{@dice d6}的结果加在此检定上。你可以使用此特性的次数等同于你的熟练值，并且你在结束一次长休时重新获得所有已消耗的次数。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Rimekin",
+			"name": "霜裔",
+			"source": "LFL",
+			"creatureTypes": [
+				"类人生物"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"resist": [
+				"冷冻"
+			],
+			"additionalSpells": [
+				{
+					"known": {
+						"1": [
+							"冷冻射线|xphb#c"
+						]
+					},
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"冰刃|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"火焰刀|xphb"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型(约4-7尺高)或小型(约2-4尺高)，在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Cold Fire Magic",
+					"type": "entries",
+					"name": "冷冻火焰魔法",
+					"entries": [
+						"你知晓{@spell 冷冻射线|XPHB}戏法。当你达到3级和5级角色等级时，你分别习得{@spell 冰刃|XPHB}法术和{@spell 火焰刀|XPHB}法术。你总是已准备这些法术。你可以无需法术位各施放一次这些法术，并且当你完成一次{@variantrule 长休|XPHB}后，你重获以此方式施放这些法术的能力。你也可以使用你拥有的任何合适等级的法术位来施放这些法术。当你使用此特质施放{@spell 火焰刀|XPHB}时，该法术造成寒冷伤害而非火焰伤害。",
+						"智力、感知或魅力是这些法术的施法属性（当你选择此种族时选择该属性）。"
+					]
+				},
+				{
+					"ENG_name": "Cold Resistance",
+					"name": "冷冻抗性",
+					"type": "entries",
+					"entries": [
+						"你对冷冻伤害具有{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你有范围为60尺的{@sense 黑暗视觉|XPHB}。"
 					]
 				}
 			],

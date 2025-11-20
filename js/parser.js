@@ -3299,6 +3299,7 @@ Parser.SRC_FRAiF = "FRAiF";
 Parser.SRC_FRHoF = "FRHoF";
 Parser.SRC_ABH = "ABH";
 Parser.SRC_NF = "NF";
+Parser.SRC_LFL = "LFL";
 Parser.SRC_TD = "TD";
 Parser.SRC_SCREEN = "Screen";
 Parser.SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
@@ -3480,7 +3481,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SatO] = "印记城与外域";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ToFW] = "命运之轮的轮转";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MPP] = "莫提的位面游记";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BMT] = "万象无常书";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DMTCRG] = I18nUtil.get(`parser.source.${Parser.SRC_DMTCRG}`);
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DMTCRG] = "万象无常牌：参考卡";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_QftIS] = "来自无尽阶梯的委托集";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_VEoR] = "维克那：毁灭前夜";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XPHB] = "玩家手册(2024)";
@@ -3503,6 +3504,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FRAiF] = "被遗忘的国度：费伦冒�
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FRHoF] = "被遗忘的国度：费伦英雄";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ABH] = "阿斯带来的饥渴卷册";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NF] = "耐瑟瑞尔的陨落";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LFL] = "洛温：初光";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "Tarot Deck";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN}`);
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_WILDERNESS_KIT}`);
@@ -3682,6 +3684,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_FRAiF] = "FRAiF";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_FRHoF] = "FRHoF";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ABH] = "ABH";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_NF] = "NF";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_LFL] = "LFL";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_TD] = "TD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN] = "Scr'14";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN_WILDERNESS_KIT] = "ScrWild";
@@ -3860,6 +3863,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_FRAiF] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_FRHoF] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ABH] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_NF] = "2025-11-11";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_LFL] = "2025-11-18";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_TD] = "2022-05-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
@@ -4188,6 +4192,7 @@ Parser.SOURCES_NON_FR = new Set([
 	Parser.SRC_HBTD,
 	Parser.SRC_BQGT,
 	Parser.SRC_WttHC,
+	Parser.SRC_LFL,
 ]);
 
 // endregion
@@ -4241,6 +4246,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_FRAiF,
 	Parser.SRC_ABH,
 	Parser.SRC_NF,
+	Parser.SRC_LFL,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;
