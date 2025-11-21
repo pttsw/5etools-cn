@@ -264,7 +264,7 @@ export class InitiativeTrackerPlayerMessageHandlerV1 {
 			imageHref: InitiativeTrackerUtil.getImageOrTokenHref({imageHref, tokenUrl}),
 		});
 
-		const ele = ee`<img src="${tokenUrl}" class="w-24p w-24p" alt="Token Image">`
+		const ele = ee`<img src="${tokenUrl}" class="w-24p w-24p" alt="Token图">`
 			.onn("mouseover", evt => hoverMeta.mouseOver(evt, ele[0]))
 			.onn("mousemove", evt => hoverMeta.mouseMove(evt, ele[0]))
 			.onn("mouseleave", evt => hoverMeta.mouseLeave(evt, ele[0]));

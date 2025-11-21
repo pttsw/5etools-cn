@@ -127,18 +127,18 @@ export class EncounterBuilderUi extends BaseComponent {
 			modeRandom = mode;
 			btnRandom
 				.txt(`Random ${mode.toTitleCase()}`)
-				.tooltip(`Randomly generate ${Parser.getArticle(mode)} ${mode.toTitleCase()} encounter`);
+				.tooltip(`Randomly generate ${Parser.getArticle(mode)} ${Parser.encounterDifficultyToCn(mode)} encounter`);
 		};
 
 		const getLiRandom = (mode) => {
-			return ee`<li title="Randomly generate ${Parser.getArticle(mode)} ${mode.toTitleCase()} encounter"><a href="#">Random ${mode.toTitleCase()}</a></li>`
+			return ee`<li title="随机生成${Parser.getArticle(mode)}${Parser.encounterDifficultyToCn(mode)}难度遭遇"><a href="#">随机${Parser.encounterDifficultyToCn(mode)}难度</a></li>`
 				.onn("click", async (evt) => {
 					evt.preventDefault();
 					await pSetRandomMode(mode);
 				});
 		};
 
-		const btnRandom = ee`<button class="ve-btn ve-btn-primary ecgen__btn-random-adjust" title="Randomly generate a Medium encounter">Random Medium</button>`
+		const btnRandom = ee`<button class="ve-btn ve-btn-primary ecgen__btn-random-adjust" title="随机生成一个中等难度遭遇">随机中等难度</button>`
 			.onn("click", async evt => {
 				evt.preventDefault();
 				await pSetRandomMode(modeRandom);
@@ -173,19 +173,19 @@ export class EncounterBuilderUi extends BaseComponent {
 
 			modeAdjust = mode;
 			btnAdjust
-				.txt(`Adjust to ${mode.toTitleCase()}`)
-				.tooltip(`Adjust the current encounter difficulty to ${mode.toTitleCase()}`);
+				.txt(`调整至${Parser.encounterDifficultyToCn(mode)}难度`)
+				.tooltip(`调整当前遭遇至${Parser.encounterDifficultyToCn(mode)}难度`);
 		};
 
 		const getLiAdjust = (mode) => {
-			return ee`<li title="Adjust the current encounter difficulty to ${mode.toTitleCase()}"><a href="#">Adjust to ${mode.toTitleCase()}</a></li>`
+			return ee`<li title="调整当前遭遇至${Parser.encounterDifficultyToCn(mode)}难度"><a href="#">调整至${Parser.encounterDifficultyToCn(mode)}难度</a></li>`
 				.onn("click", async (evt) => {
 					evt.preventDefault();
 					await pSetAdjustMode(mode);
 				});
 		};
 
-		const btnAdjust = ee`<button class="ve-btn ve-btn-primary ecgen__btn-random-adjust" title="Adjust the current encounter difficulty to Medium">Adjust to Medium</button>`
+		const btnAdjust = ee`<button class="ve-btn ve-btn-primary ecgen__btn-random-adjust" title="调整当前遭遇至中等难度">调整至中等难度</button>`
 			.onn("click", async evt => {
 				evt.preventDefault();
 				await pSetAdjustMode(modeAdjust);
@@ -267,7 +267,7 @@ export class EncounterBuilderUi extends BaseComponent {
 		})();
 
 		ee(parentGroupAndDifficulty)`
-		<h3 class="mt-1 m-2">Group Info</h3>
+		<h3 class="mt-1 m-2">队伍信息</h3>
 		<div class="ve-flex">
 			${stgSimple}
 			${stgAdvanced}
@@ -294,15 +294,15 @@ export class EncounterBuilderUi extends BaseComponent {
 	}
 
 	_renderGroupAndDifficulty_getGroupEles_simple () {
-		const btnAddPlayers = ee`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Level</button>`
+		const btnAddPlayers = ee`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> 添加另一等级的队伍</button>`
 			.onn("click", () => this._comp.doAddPlayer());
 
 		const wrpRows = ee`<div class="ve-flex-col w-100"></div>`;
 
 		const stg = ee`<div class="w-70 ve-flex-col">
 			<div class="ve-flex">
-				<div class="w-20">Players:</div>
-				<div class="w-20">Level:</div>
+				<div class="w-20">玩家:</div>
+				<div class="w-20">等级:</div>
 			</div>
 
 			${wrpRows}
@@ -328,10 +328,10 @@ export class EncounterBuilderUi extends BaseComponent {
 	}
 
 	_renderGroupAndDifficulty_getGroupEles_advanced () {
-		const btnAddPlayers = ee`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Player</button>`
+		const btnAddPlayers = ee`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> 新增另一玩家</button>`
 			.onn("click", () => this._comp.doAddPlayer());
 
-		const btnAddAdvancedCol = ee`<button class="ve-btn ve-btn-primary ve-btn-xxs ecgen-player__btn-inline h-ipt-xs bl-0 bb-0 bbl-0 bbr-0 btl-0 ml-n1" title="Add Column" tabindex="-1"><span class="glyphicon glyphicon-list-alt"></span></button>`
+		const btnAddAdvancedCol = ee`<button class="ve-btn ve-btn-primary ve-btn-xxs ecgen-player__btn-inline h-ipt-xs bl-0 bb-0 bbl-0 bbr-0 btl-0 ml-n1" title="新增列" tabindex="-1"><span class="glyphicon glyphicon-list-alt"></span></button>`
 			.onn("click", () => this._comp.doAddColExtraAdvanced());
 
 		const wrpHeaders = ee`<div class="ve-flex"></div>`;
@@ -360,7 +360,7 @@ export class EncounterBuilderUi extends BaseComponent {
 
 			<div class="row">
 				<div class="w-100">
-					${Renderer.get().render(`{@note Additional columns will be imported into the DM Screen.}`)}
+					${Renderer.get().render(`{@note 额外的列将被导入到DM帷幕中。}`)}
 				</div>
 			</div>
 		</div>`;
@@ -382,22 +382,22 @@ export class EncounterBuilderUi extends BaseComponent {
 
 		return ee`<div class="ve-flex-v-center">
 			<label class="ve-flex-v-center">
-				<div class="mr-2">Advanced Mode</div>
+				<div class="mr-2">高级模式</div>
 				${cbAdvanced}
 			</label>
 		</div>`;
 	}
 
 	static _TITLE_DIFFICULTIES = {
-		easy: "An easy encounter doesn't tax the characters' resources or put them in serious peril. They might lose a few hit points, but victory is pretty much guaranteed.",
-		medium: "A medium encounter usually has one or two scary moments for the players, but the characters should emerge victorious with no casualties. One or more of them might need to use healing resources.",
-		hard: "A hard encounter could go badly for the adventurers. Weaker characters might get taken out of the fight, and there's a slim chance that one or more characters might die.",
-		deadly: "A deadly encounter could be lethal for one or more player characters. Survival often requires good tactics and quick thinking, and the party risks defeat",
-		absurd: "An &quot;absurd&quot; encounter is a deadly encounter as per the rules, but is differentiated here to provide an additional tool for judging just how deadly a &quot;deadly&quot; encounter will be. It is calculated as: &quot;deadly + (deadly - hard)&quot;.",
+		easy: "一次简单的遭遇几乎不会消耗角色们的资源，也不会给他们造成严重的后果，他们可能只是失去几点生命值，但胜利几乎是板上钉钉的事。",
+		medium: "一次中等的遭遇通常会让玩家们经历一两次惊心时刻，但是不会对角色们造成任何伤亡。只是其中若干人员可能会需要使用治疗资源。",
+		hard: " 对冒险者们而言，一次困难的遭遇可能会发展得很糟糕。较弱的角色可能会在战斗中被清除，甚至有较小的可能导致一个或多个角色因此死亡。",
+		deadly: "对某些玩家而言，致命的遭遇可以造成足以致命的后果。此时需要优秀的策略和快速的思考才能确保生还，而失败时也必须承当相应的风险。",
+		absurd: "“荒谬”的遭遇按规则来说属于致命的遭遇，但在此处单独划分一类，旨在提供一种额外的工具，用于精准判断某场 “致命” 遭遇的实际致命程度。其XP的计算方式为：致命 +（致命 - 困难）",
 	};
-	static _TITLE_BUDGET_DAILY = "This provides a rough estimate of the adjusted XP value for encounters the party can handle before the characters will need to take a long rest.";
-	static _TITLE_XP_TO_NEXT_LEVEL = "The total XP required to allow each member of the party to level up to their next level.";
-	static _TITLE_TTK = "Time to Kill: The estimated number of turns the party will require to defeat the encounter. This assumes single-target damage only.";
+	static _TITLE_BUDGET_DAILY = "这样就可以粗略的计算出在角色们需要进行一次长休前，队伍可处理遭遇的校正XP值。";
+	static _TITLE_XP_TO_NEXT_LEVEL = "🙆‍♀️队伍中每个角色都能升一级的总XP";
+	static _TITLE_TTK = "Time to Kill: 队伍完成这次遭遇需要的预估回合数。假设每次攻击都是单目标攻击。";
 
 	static _getDifficultyKey ({partyMeta, encounterXpInfo}) {
 		if (encounterXpInfo.adjustedXp >= partyMeta.easy && encounterXpInfo.adjustedXp < partyMeta.medium) return "easy";
@@ -409,7 +409,7 @@ export class EncounterBuilderUi extends BaseComponent {
 	}
 
 	static _getDifficultyHtml ({partyMeta, difficulty}) {
-		return `<span class="help-subtle" title="${this._TITLE_DIFFICULTIES[difficulty]}">${difficulty.toTitleCase()}:</span> ${partyMeta[difficulty].toLocaleString()} XP`;
+		return `<span class="help-subtle" title="${this._TITLE_DIFFICULTIES[difficulty]}">${Parser.encounterDifficultyToCn(difficulty)}:</span> ${partyMeta[difficulty].toLocaleString()} XP`;
 	}
 
 	_renderGroupAndDifficulty_getGroupInfoRhs () {
@@ -451,10 +451,10 @@ export class EncounterBuilderUi extends BaseComponent {
 				.html(`<span class="help" title="${this.constructor._TITLE_TTK}">TTK:</span> ${EncounterBuilderUiTtk.getApproxTurnsToKill({partyMeta, creatureMetas: this._comp.creatureMetas}).toFixed(2)}`);
 
 			dispBudgetDaily
-				.html(`<span class="help-subtle" title="${this.constructor._TITLE_BUDGET_DAILY}">Daily Budget:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
+				.html(`<span class="help-subtle" title="${this.constructor._TITLE_BUDGET_DAILY}">每日XP:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
 
 			dispExpToLevel
-				.html(`<span class="help-subtle" title="${this.constructor._TITLE_XP_TO_NEXT_LEVEL}">XP to Next Level:</span> ${partyMeta.xpToNextLevel.toLocaleString()} XP`);
+				.html(`<span class="help-subtle" title="${this.constructor._TITLE_XP_TO_NEXT_LEVEL}">升级XP:</span> ${partyMeta.xpToNextLevel.toLocaleString()} XP`);
 		})();
 
 		return ee`<div class="w-30 ve-text-right">
@@ -482,7 +482,7 @@ export class EncounterBuilderUi extends BaseComponent {
 
 			const difficulty = this.constructor._getDifficultyKey({partyMeta, encounterXpInfo});
 
-			dispDifficulty.txt(`Difficulty: ${difficulty.toTitleCase()}`);
+			dispDifficulty.txt(`难度: ${Parser.encounterDifficultyToCn(difficulty)}`);
 		})();
 
 		return ee`<div class="w-50">
@@ -505,8 +505,8 @@ export class EncounterBuilderUi extends BaseComponent {
 				encounterXpInfo = EncounterBuilderXpInfo.getDefault(),
 			} = this._state.derivedGroupAndDifficulty;
 
-			dispXpRawTotal.txt(`Total XP: ${encounterXpInfo.baseXp.toLocaleString()}`);
-			dispXpRawPerPlayer.txt(`(${Math.floor(encounterXpInfo.baseXp / partyMeta.cntPlayers).toLocaleString()} per player)`);
+			dispXpRawTotal.txt(`总XP: ${encounterXpInfo.baseXp.toLocaleString()}`);
+			dispXpRawPerPlayer.txt(`(每位玩家${Math.floor(encounterXpInfo.baseXp / partyMeta.cntPlayers).toLocaleString()})`);
 
 			const infoEntry = EncounterBuilderUiHelp.getHelpEntry({partyMeta, encounterXpInfo});
 
@@ -525,8 +525,8 @@ export class EncounterBuilderUi extends BaseComponent {
 				Renderer.hover.updatePredefinedHover(rdState.infoHoverId, infoEntry);
 			}
 
-			dispXpAdjustedTotal.html(`Adjusted XP <span class="ve-small ve-muted ml-2" title="XP Multiplier">(×${encounterXpInfo.playerAdjustedXpMult})</span>: <b class="ml-2">${encounterXpInfo.adjustedXp.toLocaleString()}</b>`);
-			dispXpAdjustedPerPlayer.txt(`(${Math.floor(encounterXpInfo.adjustedXp / partyMeta.cntPlayers).toLocaleString()} per player)`);
+			dispXpAdjustedTotal.html(`建议XP <span class="ve-small ve-muted ml-2" title="XP 乘数">(×${encounterXpInfo.playerAdjustedXpMult})</span>: <b class="ml-2">${encounterXpInfo.adjustedXp.toLocaleString()}</b>`);
+			dispXpAdjustedPerPlayer.txt(`(每位玩家${Math.floor(encounterXpInfo.adjustedXp / partyMeta.cntPlayers).toLocaleString()})`);
 		})();
 
 		return ee`<div class="w-50 ve-text-right">

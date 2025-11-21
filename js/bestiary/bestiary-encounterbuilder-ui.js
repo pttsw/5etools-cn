@@ -35,10 +35,10 @@ export class EncounterBuilderUiBestiary extends EncounterBuilderUi {
 	}
 
 	_render_saveLoad () {
-		const btnSave = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Save Encounter</button>`
+		const btnSave = ee`<button class="ve-btn ve-btn-default ve-btn-xs">保存遭遇</button>`
 			.onn("click", evt => this._sublistManager.pHandleClick_save(evt));
 
-		const btnLoad = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Load Encounter</button>`
+		const btnLoad = ee`<button class="ve-btn ve-btn-default ve-btn-xs">加载遭遇</button>`
 			.onn("click", evt => this._sublistManager.pHandleClick_load(evt));
 
 		ee(document.getElementById("best-ecgen__wrp-save-controls"))`<div class="ve-flex-col">
@@ -146,7 +146,7 @@ export class EncounterBuilderUiBestiary extends EncounterBuilderUi {
 		const encounterXpInfo = EncounterBuilderCreatureMeta.getEncounterXpInfo(this._comp.creatureMetas, this._getPartyMeta());
 
 		const monCount = this._sublistManager.sublistItems.map(it => it.data.count).sum();
-		dispCrTotal.html(`${monCount} creature${monCount === 1 ? "" : "s"}; ${encounterXpInfo.baseXp.toLocaleString()} XP (<span class="help" title="Adjusted Encounter XP">Enc</span>: ${(encounterXpInfo.adjustedXp).toLocaleString()} XP)`);
+		dispCrTotal.html(`${monCount}个生物; ${encounterXpInfo.baseXp.toLocaleString()} XP (<span class="help" title="调整后的遭遇XP">遭遇</span>: ${(encounterXpInfo.adjustedXp).toLocaleString()} XP)`);
 	}
 
 	/* -------------------------------------------- */
@@ -304,7 +304,7 @@ export class EncounterBuilderUiBestiary extends EncounterBuilderUi {
 			children: [
 				e_({
 					tag: "button",
-					title: `Add (SHIFT for 5)`,
+					title: `新增 (按住SHIFT加5个)`,
 					clazz: `ve-btn ve-btn-success ve-btn-xs best-ecgen__btn-list`,
 					click: evt => this._handleClick({evt, entity: this._bestiaryPage.dataList_[monId], mode: "add"}),
 					children: [
@@ -316,7 +316,7 @@ export class EncounterBuilderUiBestiary extends EncounterBuilderUi {
 				}),
 				e_({
 					tag: "button",
-					title: `Subtract (SHIFT for 5)`,
+					title: `减少 (按住SHIFT减5个)`,
 					clazz: `ve-btn ve-btn-danger ve-btn-xs best-ecgen__btn-list`,
 					click: evt => this._handleClick({evt, entity: this._bestiaryPage.dataList_[monId], mode: "subtract"}),
 					children: [
@@ -331,16 +331,16 @@ export class EncounterBuilderUiBestiary extends EncounterBuilderUi {
 	}
 
 	getSublistButtonsMeta (sublistItem) {
-		const btnAdd = ee`<button title="Add (SHIFT for 5)" class="ve-btn ve-btn-success ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-plus"></span></button>`
+		const btnAdd = ee`<button title="新增 (按住SHIFT加5个)" class="ve-btn ve-btn-success ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-plus"></span></button>`
 			.onn("click", evt => this._handleClick({evt, entity: sublistItem.data.entity, mode: "add"}));
 
-		const btnSub = ee`<button title="Subtract (SHIFT for 5)" class="ve-btn ve-btn-danger ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-minus"></span></button>`
+		const btnSub = ee`<button title="减少 (按住SHIFT减5个)" class="ve-btn ve-btn-danger ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-minus"></span></button>`
 			.onn("click", evt => this._handleClick({evt, entity: sublistItem.data.entity, mode: "subtract"}));
 
-		const btnRandomize = ee`<button title="Randomize Monster" class="ve-btn ve-btn-default ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-random"></span></button>`
+		const btnRandomize = ee`<button title="随机怪物" class="ve-btn ve-btn-default ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-random"></span></button>`
 			.onn("click", evt => this._pHandleShuffleClick({evt, sublistItem}));
 
-		const btnLock = ee`<button title="Lock Monster against Randomizing/Adjusting" class="ve-btn ve-btn-default ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-lock"></span></button>`
+		const btnLock = ee`<button title="锁定怪物防止被随机/调整" class="ve-btn ve-btn-default ve-btn-xs best-ecgen__btn-list"><span class="glyphicon glyphicon-lock"></span></button>`
 			.onn("click", () => this._sublistManager.pSetDataEntry({sublistItem, key: "isLocked", value: !sublistItem.data.isLocked}))
 			.toggleClass("active", sublistItem.data.isLocked);
 

@@ -34,7 +34,7 @@ export class EncounterBuilderRenderableCollectionPlayersSimple extends Renderabl
 			.addClass("no-shrink")
 			.addClass("bl-0");
 
-		const btnRemove = this._utils.getBtnDelete({entity, title: "Remove Player Group"})
+		const btnRemove = this._utils.getBtnDelete({entity, title: "删除玩家组"})
 			.addClass("ecgen-player__btn-inline")
 			.addClass("h-ipt-xs")
 			.addClass("no-shrink")

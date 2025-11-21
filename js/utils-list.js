@@ -428,7 +428,7 @@ class SaveManager extends BaseComponent {
 		const isWarnUnsaved = this._isWarnUnsavedChanges(exportedSublist);
 		if (
 			isWarnUnsaved
-			&& !await InputUiUtil.pGetUserBoolean({title: "Discard Unsaved Changes", htmlDescription: `You have unsaved changes.<br>Are you sure you want to create a new list, discarding these changes?`, textYes: "Yes", textNo: "Cancel"})
+			&& !await InputUiUtil.pGetUserBoolean({title: "丢弃未保存更改", htmlDescription: `您有未保存的更改。<br>是否确认创建新列表，丢弃这些更改？`, textYes: "确认", textNo: "取消"})
 		) return false;
 
 		if (
@@ -436,7 +436,7 @@ class SaveManager extends BaseComponent {
 			!isWarnUnsaved
 			&& this._isWarnNeverSaved(exportedSublist)
 			// endregion
-			&& !await InputUiUtil.pGetUserBoolean({title: "Discard Unsaved List", htmlDescription: `Your current list has not been saved.<br>Are you sure you want to create a new list, discarding this one?`, textYes: "Yes", textNo: "Cancel"})
+			&& !await InputUiUtil.pGetUserBoolean({title: "丢弃未保存列表", htmlDescription: `当前列表未保存。<br>是否确认创建新列表，丢弃当前列表？`, textYes: "确认", textNo: "取消"})
 		) return false;
 
 		this._doNew();
@@ -497,11 +497,11 @@ class SaveManager extends BaseComponent {
 		const $wrpIsReference = !this._isReferencable
 			? null
 			: $$`<label class="ve-flex-v-center mr-2">
-				<div class="mr-1 help" title="Turning this on will make a copy of the list as it currently exists, allowing the original to be modified or deleted without affecting the copy. Leaving this off will instead keep a reference to the list, so any change to the list will be reflected in applications which make use of it.">Make Copy</div>
+				<div class="mr-1 help" title="Turning this on will make a copy of the list as it currently exists, allowing the original to be modified or deleted without affecting the copy. Leaving this off will instead keep a reference to the list, so any change to the list will be reflected in applications which make use of it.">创建副本</div>
 				${ComponentUiUtil.$getCbBool(this, "isLoadAsCopy")}
 			</label>`;
 
-		const $btnExportAll = $(`<button class="ve-btn ve-btn-default ve-btn-xs" title="Save All Lists to File">Export All</button>`)
+		const $btnExportAll = $(`<button class="ve-btn ve-btn-default ve-btn-xs" title="导出所有列表到文件">全部导出</button>`)
 			.click(() => {
 				DataUtil.userDownload(
 					ListUtil.getDownloadNameSaves({page: this._page}),
@@ -514,7 +514,7 @@ class SaveManager extends BaseComponent {
 
 		const $btnImportAll = this._isReadOnlyUi
 			? null
-			: $(`<button class="ve-btn ve-btn-default ve-btn-xs" title="Load Lists from File">Import All</button>`)
+			: $(`<button class="ve-btn ve-btn-default ve-btn-xs" title="从文件导入所有列表">全部导入</button>`)
 				.click(async () => {
 					const {jsons, errors} = await InputUiUtil.pGetUserUploadJson({
 						expectedFileTypes: [ListUtil.getDownloadFiletypeSaves({page: this._page})],
@@ -545,7 +545,7 @@ class SaveManager extends BaseComponent {
 		</div>`;
 
 		const {$modalInner, doClose, pGetResolved} = await UiUtil.pGetShowModal({
-			title: "Load Saved List",
+			title: "加载已保存列表",
 			isMinHeight0: true,
 			isHeight100: true,
 			isWidth100: true,
@@ -558,7 +558,7 @@ class SaveManager extends BaseComponent {
 
 		const $wrpRows = $(`<div class="ve-flex-col"></div>`);
 
-		const $dispNoSaves = $(`<div class="ve-flex-col"><i class="ve-muted ve-text-center">No saves found.</i></div>`);
+		const $dispNoSaves = $(`<div class="ve-flex-col"><i class="ve-muted ve-text-center">未找到已保存的内容。</i></div>`);
 
 		const $btnExpandCollapseAll = $(`<button class="ve-btn ve-btn-default ve-btn-xs px-1 ve-flex-vh-center h-100 no-shrink"></button>`)
 			.click(() => {
@@ -646,7 +646,7 @@ class SaveManager extends BaseComponent {
 		const save = this._getOrCreateActiveSave();
 
 		if (!save.entity.name) {
-			const name = await InputUiUtil.pGetUserString({title: "List Name"});
+			const name = await InputUiUtil.pGetUserString({title: "列表名"});
 			if (!name || !name.trim().length) return;
 
 			save.entity.name = name;
@@ -737,7 +737,7 @@ class SaveManager extends BaseComponent {
 		};
 	}
 
-	$getBtnDownloadSave_ ({save, title = "Download", cbOnSave = null}) {
+	$getBtnDownloadSave_ ({save, title = "下载", cbOnSave = null}) {
 		return $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="${title.qq()}"><span class="glyphicon glyphicon-download"></span></button>`)
 			.click(async evt => {
 				evt.stopPropagation();
@@ -848,7 +848,7 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 			$wrpPreview.toggleVe(!!comp._state.manager_loader_isExpanded);
 			$btnExpand
 				.text(comp._state.manager_loader_isExpanded ? `[\u2013]` : `[+]`)
-				.title(comp._state.manager_loader_isExpanded ? "Collapse Preview" : "Expand Preview");
+				.title(comp._state.manager_loader_isExpanded ? "折叠预览" : "展开预览");
 
 			if (!comp._state.manager_loader_isExpanded) return;
 
@@ -873,7 +873,7 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 		comp._addHookBase("manager_loader_isExpanded", hkIsExpanded);
 		hkIsExpanded();
 
-		const $btnLoad = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-primary" title="Load"><span class="glyphicon glyphicon-ok"></span></button>`)
+		const $btnLoad = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-primary" title="加载"><span class="glyphicon glyphicon-ok"></span></button>`)
 			.click(evt => {
 				evt.stopPropagation();
 				this._comp._state.activeId = save.id;
@@ -886,7 +886,7 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 
 		const $btnDelete = this._isReadOnlyUi
 			? null
-			: $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>`)
+			: $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-danger" title="删除"><span class="glyphicon glyphicon-trash"></span></button>`)
 				.click(evt => {
 					evt.stopPropagation();
 					this._comp._state.saves = this._comp._state.saves.filter(it => it.id !== save.id);
@@ -958,28 +958,28 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 			this._comp._triggerCollectionUpdate("saves");
 		});
 
-		const $iptName = ComponentUiUtil.$getIptStr(comp, "name", {placeholder: "(Unnamed List)"});
+		const $iptName = ComponentUiUtil.$getIptStr(comp, "name", {placeholder: "(未命名列表)"});
 
 		const $dispCount = $(`<div class="absolute right-0 z-index-1 no-events ve-flex-vh-center ve-muted pr-2 ve-small" title="Number of Pinned List Items"></div>`);
 
-		const $btnNew = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="New Pinned List"><span class="glyphicon glyphicon-file"></span></button>`)
+		const $btnNew = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="新建固定列表"><span class="glyphicon glyphicon-file"></span></button>`)
 			.click(evt => this._cbOnNew(evt));
 
-		const $btnDuplicate = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="Duplicate Pinned List"><span class="glyphicon glyphicon-duplicate"></span></button>`)
+		const $btnDuplicate = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="拷贝固定列表"><span class="glyphicon glyphicon-duplicate"></span></button>`)
 			.click(evt => this._cbOnDuplicate(evt));
 
-		const $btnSave = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="Save Pinned List"><span class="glyphicon glyphicon-floppy-disk"></span></button>`)
+		const $btnSave = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="保存固定列表"><span class="glyphicon glyphicon-floppy-disk"></span></button>`)
 			.click(evt => this._cbOnSave(evt));
 
-		const $btnLoad = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="Load Pinned List"><span class="glyphicon glyphicon-folder-open"></span></button>`)
+		const $btnLoad = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="加载固定列表"><span class="glyphicon glyphicon-folder-open"></span></button>`)
 			.click(evt => this._cbOnLoad(evt));
 
-		const $btnDownload = this._comp.$getBtnDownloadSave_({save, title: "Download Pinned List", cbOnSave: this._cbOnSave});
+		const $btnDownload = this._comp.$getBtnDownloadSave_({save, title: "下载固定列表", cbOnSave: this._cbOnSave});
 
-		const $btnUpload = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="Upload Pinned List"><span class="glyphicon glyphicon-upload"></span></button>`)
+		const $btnUpload = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="上传固定列表"><span class="glyphicon glyphicon-upload"></span></button>`)
 			.click(evt => this._cbOnUpload(evt));
 
-		const $btnReset = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="Reload Pinned List"><span class="glyphicon glyphicon-refresh"></span></button>`)
+		const $btnReset = $(`<button class="ve-btn ve-btn-5et ve-btn-xs ve-btn-default" title="重置固定列表"><span class="glyphicon glyphicon-refresh"></span></button>`)
 			.click(evt => this._cbOnReset(evt, ListUtil.getWithoutManagerState(comp.toObject("*"))));
 
 		const hkBtnReset = () => $btnReset.prop("disabled", !comp._state.manager_isSaved);
@@ -990,7 +990,7 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 		const $wrpRow = $$`<div class="ve-flex-col my-2 w-100">
 			<div class="ve-flex-v-center">
 				<div class="ve-flex-v-center mr-1 w-100 min-w-0 relative">
-					<div class="mr-2 ve-muted">List:</div>
+					<div class="mr-2 ve-muted">表:</div>
 					${$iptName}
 					${$dispCount}
 				</div>

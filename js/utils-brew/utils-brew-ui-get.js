@@ -122,7 +122,7 @@ export class GetBrewUi {
 			const rdState = new this._RenderState();
 			const {eleModalInner} = UiUtil.getShowModal({
 				isHeight100: true,
-				title: `Get ${brewUtil.DISPLAY_NAME.toTitleCase()}`,
+				title: `获取${brewUtil.DISPLAY_NAME.toTitleCase()}`,
 				isUncappedHeight: true,
 				isWidth100: true,
 				overlayColor: isParentModal ? "transparent" : undefined,

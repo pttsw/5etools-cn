@@ -1570,7 +1570,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 	async _render_pInitSubclassControls ($wrp) {
 		const cls = this.activeClass;
 
-		const $btnSelAll = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="全选(按SHIFT键筛选常用选项；按CTRL键筛选官方补充内容)"><span class="glyphicon glyphicon-check"></span></button>`)
+		const $btnSelAll = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="全选(按住SHIFT键筛选常用选项；按CTRL键筛选官方补充内容)"><span class="glyphicon glyphicon-check"></span></button>`)
 			.click(evt => {
 				const allStateKeys = cls.subclasses.map(sc => UrlUtil.getStateKeySubclass(sc));
 				if (evt.shiftKey) {

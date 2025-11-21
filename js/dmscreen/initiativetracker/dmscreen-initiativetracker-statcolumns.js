@@ -445,7 +445,7 @@ class InitiativeTrackerStatColumn_Image extends _InitiativeTrackerStatColumnBase
 
 	$getRendered ({comp, mon, networking = null}) {
 		const $ele = $$`<div class="mr-3p ve-flex-vh-center w-40p">
-			<img src="${comp._state.tokenUrl}" class="w-30p h-30p" alt="Token Image">
+			<img src="${comp._state.tokenUrl}" class="w-30p h-30p" alt="Token图">
 		</div>`;
 
 		if (networking != null) {

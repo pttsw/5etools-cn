@@ -4969,4 +4969,15 @@ Parser.RECIPE_CATEGORY_TO_CN = {
 Parser.recipeCategoryToCn = function (type) {
 	return Parser._parse_aToB(Parser.RECIPE_CATEGORY_TO_CN, type.toTitleCase());
 };
+
+Parser.ENCONTER_DIFFICULTY_TO_CN = {
+	"easy": "简单",
+	"medium": "中等",
+	"hard": "困难",
+	"deadly": "致命",
+	"absurd": "荒谬",
+};
+Parser.encounterDifficultyToCn = function (type) {
+	return Parser._parse_aToB(Parser.ENCONTER_DIFFICULTY_TO_CN, type.toLowerCase());
+};
 // endregion

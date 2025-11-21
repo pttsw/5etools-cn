@@ -116,7 +116,7 @@ class BestiarySublistManager extends SublistManager {
 			.mousemove(evt => hovTokenMeta.mouseMove(evt, $hovToken[0]))
 			.mouseleave(evt => hovTokenMeta.mouseLeave(evt, $hovToken[0]));
 
-		const $hovImage = $(`<span class="ve-col-1-2 best-ecgen__visible help help--hover">Image</span>`);
+		const $hovImage = $(`<span class="ve-col-1-2 best-ecgen__visible help help--hover">图片</span>`);
 		Renderer.monster.hover.bindFluffImageMouseover({mon, $ele: $hovImage});
 
 		const $ptCr = (() => {
@@ -645,7 +645,7 @@ class BestiaryPage extends ListPageMultiSource {
 		}
 
 		const tabMetaStats = new Renderer.utils.TabButton({
-			label: "资料卡",
+			label: "数据卡",
 			fnChange: () => {
 				this._$wrpBtnProf.append(this._$btnProf);
 				this._tokenDisplay.doShow();

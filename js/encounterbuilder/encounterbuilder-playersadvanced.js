@@ -44,7 +44,7 @@ export class EncounterBuilderRenderableCollectionPlayersAdvanced extends Rendera
 		comp._addHookBase("extras", hkExtras);
 		hkExtras();
 
-		const btnRemove = this._utils.getBtnDelete({entity, title: "Remove Player"})
+		const btnRemove = this._utils.getBtnDelete({entity, title: "删除玩家"})
 			.addClass("ecgen-player__btn-inline")
 			.addClass("h-ipt-xs")
 			.addClass("no-shrink")

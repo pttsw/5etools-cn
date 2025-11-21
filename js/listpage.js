@@ -425,8 +425,8 @@ class SublistManager {
 		await this.pDoSublistRemove({entity, doFinalize: true});
 	}
 
-	getTitleBtnAdd () { return `Add (SHIFT for ${this._shiftCountAddSubtract}) (Hotkey: p)`; }
-	getTitleBtnSubtract () { return `Subtract (SHIFT for ${this._shiftCountAddSubtract}) (Hotkey: P)`; }
+	getTitleBtnAdd () { return `新增 (按住SHIFT加${this._shiftCountAddSubtract}个) (快捷键: p)`; }
+	getTitleBtnSubtract () { return `减少 (按住SHIFT减${this._shiftCountAddSubtract}个) (快捷键: P)`; }
 
 	async pHandleClick_btnAdd ({entity, isMultiple = false}) {
 		const addCount = isMultiple ? this._shiftCountAddSubtract : 1;
@@ -531,7 +531,7 @@ class SublistManager {
 
 		await this._pSaveSublist();
 
-		JqueryUtil.doToast(`Saved "${saveInfo.name}"!`);
+		JqueryUtil.doToast(`"${saveInfo.name}"已保存！`);
 
 		return true;
 	}

@@ -2233,7 +2233,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__$getProfNoteInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("熟练度显示值", {title: `在资料卡上显示为“熟练度加成”的值。如果未指定，则显示值基于生物的CR。`});
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("熟练度显示值", {title: `在数据卡上显示为“熟练度加成”的值。如果未指定，则显示值基于生物的CR。`});
 
 		const $iptPbNote = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
 			.val(this._state.pbNote || "")

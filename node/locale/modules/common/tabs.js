@@ -2,7 +2,7 @@ import { transferLangConfig } from "../../config.js";
 
 const config = {
 	// Tab Names
-	"stat_block": ["资料卡", "资料卡", "Stat Block"],
+	"stat_block": ["数据卡", "数据卡", "Stat Block"],
 	"info": ["信息", "信息", "Info"],
 	"images": ["图片", "圖片", "Images"],
 	"data": ["数据", "數據", "Data"],

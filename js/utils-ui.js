@@ -2547,13 +2547,13 @@ class InputUiUtil {
 		return ee`<button class="ve-btn ve-btn-primary mr-2">${opts.buttonText || "OK"}</button>`
 			.onn("click", evt => {
 				evt.stopPropagation();
-				if (comp && !comp._state.isValid) return JqueryUtil.doToast({content: `Please enter valid input!`, type: "warning"});
+				if (comp && !comp._state.isValid) return JqueryUtil.doToast({content: `请确认输入有效！`, type: "warning"});
 				doClose(true);
 			});
 	}
 
 	static _getBtnCancel ({comp = null, opts, doClose}) {
-		return ee`<button class="ve-btn ve-btn-default">Cancel</button>`
+		return ee`<button class="ve-btn ve-btn-default">取消</button>`
 			.onn("click", evt => {
 				evt.stopPropagation();
 				doClose(false);
@@ -2561,7 +2561,7 @@ class InputUiUtil {
 	}
 
 	static _getBtnSkip ({comp = null, opts, doClose}) {
-		return !opts.isSkippable ? null : ee`<button class="ve-btn ve-btn-default ml-3">Skip</button>`
+		return !opts.isSkippable ? null : ee`<button class="ve-btn ve-btn-default ml-3">跳过</button>`
 			.onn("click", evt => {
 				evt.stopPropagation();
 				doClose(VeCt.SYM_UI_SKIP);
@@ -3533,8 +3533,8 @@ class InputUiUtil {
 
 					const msgExpectedTypes = expectedFileTypes != null
 						? expectedFileTypes.length
-							? `the expected file type was &quot;${expectedFileTypes.join("/")}&quot;`
-							: `no file type was expected`
+							? `预期文件类型为"${expectedFileTypes.join("/")}"`
+							: `未指定预期文件类型`
 						: null;
 
 					reader.onload = async () => {
@@ -3548,10 +3548,10 @@ class InputUiUtil {
 								&& json.fileType
 								&& !expectedFileTypes.includes(json.fileType)
 								&& !(await InputUiUtil.pGetUserBoolean({
-									textYes: "Yes",
-									textNo: "Cancel",
-									title: "File Type Mismatch",
-									htmlDescription: `The file "${name}" has the type "${json.fileType}" when ${msgExpectedTypes}.<br>Are you sure you want to upload this file?`,
+									textYes: "确认",
+									textNo: "取消",
+									title: "无法匹配文件类型",
+									htmlDescription: `文件"${name}"的类型为"${json.fileType}"，与预期类型${msgExpectedTypes}不匹配。<br>是否继续上传此文件？`,
 								}));
 
 							if (!isSkipFile) {
@@ -3859,7 +3859,7 @@ class SourceUiUtil {
 				${$iptName}
 			</div></div>
 			<div class="ui-source__row mb-2"><div class="ve-col-12 ve-flex-v-center">
-				<span class="mr-2 ui-source__name help" title="标题的缩写形式。这将显示在网站上的列表中，以及资料卡或数据条目的右上角；例如，“MM”">标题缩写</span>
+				<span class="mr-2 ui-source__name help" title="标题的缩写形式。这将显示在网站上的列表中，以及数据卡或数据条目的右上角；例如，“MM”">标题缩写</span>
 				${$iptAbv}
 			</div></div>
 			<div class="ui-source__row mb-2"><div class="ve-col-12 ve-flex-v-center">
