@@ -255,7 +255,7 @@ class Board {
 		await (async () => {
 			const data = await DataUtil.loadJSON("data/generated/bookref-dmscreen-index.json");
 			this.availRules.ALL = elasticlunr(function () {
-				this.use(lunr.ja);
+				this.use(lunr.zh);
 				this.addField("b");
 				this.addField("s");
 				this.addField("p");
@@ -340,7 +340,7 @@ class Board {
 		adventureOrBookIdToSource[dataProp] = adventureOrBookIdToSource[dataProp] || {};
 
 		indexStorage.ALL = elasticlunr(function () {
-			this.use(lunr.ja);
+			this.use(lunr.zh);
 			this.addField(indexIdField);
 			this.addField("c");
 			this.addField("n");
@@ -357,7 +357,7 @@ class Board {
 			adventureOrBookIdToSource[dataProp][adventureOrBook.id] = adventureOrBook.source;
 
 			indexStorage[adventureOrBook.id] = elasticlunr(function () {
-				this.use(lunr.ja);
+				this.use(lunr.zh);
 				this.addField(indexIdField);
 				this.addField("c");
 				this.addField("n");

@@ -208,7 +208,7 @@ export class CreatureBuilder extends BuilderBase {
 			...((await BrewUtil2.pGetBrewProcessed()).makebrewCreatureTrait || []),
 		];
 		this._indexedTraits = elasticlunr(function () {
-			this.use(lunr.ja);
+			this.use(lunr.zh);
 			this.addField("n");
 			this.addField("cn");
 			this.setRef("id");
@@ -251,7 +251,7 @@ export class CreatureBuilder extends BuilderBase {
 			...((await BrewUtil2.pGetBrewProcessed()).makebrewCreatureAction || []),
 		];
 		this._indexedActions = elasticlunr(function () {
-			this.use(lunr.ja);
+			this.use(lunr.zh);
 			this.addField("n");
 			this.addField("cn");
 			this.setRef("id");

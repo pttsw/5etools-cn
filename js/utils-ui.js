@@ -1655,7 +1655,7 @@ class SearchUiUtil {
 		const fromDeepIndex = (d) => d.d; // flag for "deep indexed" content that refers to the same item
 
 		availContent.ALL = elasticlunr(function () {
-			this.use(lunr.ja);
+			this.use(lunr.zh);
 			this.addField("n");
 			this.addField("cn");
 			this.addField("cf");
@@ -1670,7 +1670,7 @@ class SearchUiUtil {
 		const initIndexForFullCat = (doc) => {
 			if (!availContent[doc.cf]) {
 				availContent[doc.cf] = elasticlunr(function () {
-					this.use(lunr.ja);
+					this.use(lunr.zh);
 					this.addField("n");
 					this.addField("cn");
 					this.addField("cf");
@@ -2483,7 +2483,7 @@ class SearchWidget {
 
 	static async _pGetIndex (customIndexSubSpecs) {
 		const index = elasticlunr(function () {
-			this.use(lunr.ja);
+			this.use(lunr.zh);
 			this.addField("n");
 			this.addField("cn");
 			this.addField("cf");

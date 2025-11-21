@@ -18,7 +18,7 @@ export class OmnisearchBacking {
 	static async _pDoSearchLoad () {
 		elasticlunr.clearStopWords();
 		this._searchIndex = elasticlunr(function () {
-			this.use(lunr.ja);
+			this.use(lunr.zh);
 			this.addField("n");
 			this.addField("cn");
 			this.addField("cf");
@@ -273,7 +273,7 @@ export class OmnisearchBacking {
 		},
 	) {
 		if (!syntaxMetas.length) {
-			return this._searchIndex.search(
+			const results = this._searchIndex.search(
 				searchTerm,
 				{
 					fields: {
@@ -285,6 +285,28 @@ export class OmnisearchBacking {
 					expand: true,
 				},
 			);
+
+			// If the query contains Han characters, also do a substring pass on the
+			// indexed documents to catch cases where segmentation/tokenisation
+			// missed matches (e.g. "红龙" vs "青年红龙"). Merge any missing
+			// documents into the main results with a modest score so they appear
+			// after exact/strong hits.
+			if (/\p{Script=Han}/u.test(searchTerm)) {
+				const docs = Object.values(this._searchIndex.documentStore.docs);
+				const subMatches = docs
+					.filter(d => (d.cn && d.cn.includes(searchTerm)) || (d.n && d.n.includes(searchTerm)))
+					.map(d => ({doc: d, score: 0.65}));
+
+				// Build a map of existing results by id
+				const map = new Map();
+				if (results && results.length) results.forEach(r => map.set(r.doc.id, r));
+				// Add substring matches if missing
+				subMatches.forEach(m => { if (!map.has(m.doc.id)) map.set(m.doc.id, m); });
+				const merged = [...map.values()].sort((a, b) => SortUtil.ascSort(b.score, a.score));
+				if (merged.length) return merged;
+			}
+
+			return results;
 		}
 
 		const resultsUnfiltered = searchTerm
