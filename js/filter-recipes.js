@@ -16,20 +16,23 @@ class PageFilterRecipes extends PageFilterBase {
 
 		this._typeFilter = new Filter({
 			header: "Category",
-			displayFn: StrUtil.toTitleCase.bind(StrUtil),
+			cnHeader: "类别",
+			displayFn: Parser.recipeCategoryToCn.bind(Parser),
 			itemSortFn: SortUtil.ascSortLower,
 		});
 		this._dishTypeFilter = new Filter({
 			header: "Dish Type",
+			cnHeader: "菜肴类型",
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._servesFilter = new RangeFilter({header: "Serves", min: 1, max: 1});
-		this._timeFilterTotal = new RangeFilter({header: "Total", min: 10, max: 60, displayFn: time => Parser.getMinutesToFull(time, {isShort: true}), displayFnTooltip: Parser.getMinutesToFull});
-		this._timeFilterPreparation = new RangeFilter({header: "Preparation", min: 10, max: 60, displayFn: time => Parser.getMinutesToFull(time, {isShort: true}), displayFnTooltip: Parser.getMinutesToFull});
-		this._timeFilterCooking = new RangeFilter({header: "Cooking", min: 10, max: 60, displayFn: time => Parser.getMinutesToFull(time, {isShort: true}), displayFnTooltip: Parser.getMinutesToFull});
+		this._servesFilter = new RangeFilter({header: "Serves", cnHeader: "适合人数", min: 1, max: 1});
+		this._timeFilterTotal = new RangeFilter({header: "Total", cnHeader: "总用时", min: 10, max: 60, displayFn: time => Parser.getMinutesToFull(time, {isShort: true}), displayFnTooltip: Parser.getMinutesToFull});
+		this._timeFilterPreparation = new RangeFilter({header: "Preparation", cnHeader: "准备用时", min: 10, max: 60, displayFn: time => Parser.getMinutesToFull(time, {isShort: true}), displayFnTooltip: Parser.getMinutesToFull});
+		this._timeFilterCooking = new RangeFilter({header: "Cooking", cnHeader: "烹饪用时", min: 10, max: 60, displayFn: time => Parser.getMinutesToFull(time, {isShort: true}), displayFnTooltip: Parser.getMinutesToFull});
 		this._timeFilter = new MultiFilter({
 			header: "Time",
+			cnHeader: "用时",
 			filters: [this._timeFilterTotal, this._timeFilterPreparation, this._timeFilterCooking],
 		});
 		this._dietFilter = new Filter({
@@ -39,11 +42,13 @@ class PageFilterRecipes extends PageFilterBase {
 		});
 		this._allergensFilter = new Filter({
 			header: "Allergens",
+			cnHeader: "过敏原",
 			displayFn: StrUtil.toTitleCase.bind(StrUtil),
 			itemSortFn: SortUtil.ascSortLower,
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
+			cnHeader: "杂项",
 			items: ["传奇"],
 			isMiscFilter: true,
 			displayFn: PageFilterRecipes._miscTagToFull,

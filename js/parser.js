@@ -3151,19 +3151,19 @@ Parser.ruleTypeToFull = function (ruleType) {
 };
 
 Parser.VEHICLE_TYPE_TO_FULL = {
-	"SHIP": "Ship",
-	"SPELLJAMMER": "Spelljammer Ship",
-	"INFWAR": "Infernal War Machine",
-	"CREATURE": "Creature",
-	"OBJECT": "Object",
-	"SHP:H": "Ship Upgrade, Hull",
-	"SHP:M": "Ship Upgrade, Movement",
-	"SHP:W": "Ship Upgrade, Weapon",
-	"SHP:F": "Ship Upgrade, Figurehead",
-	"SHP:O": "Ship Upgrade, Miscellaneous",
-	"IWM:W": "Infernal War Machine Variant, Weapon",
-	"IWM:A": "Infernal War Machine Upgrade, Armor",
-	"IWM:G": "Infernal War Machine Upgrade, Gadget",
+	"SHIP": "船",
+	"SPELLJAMMER": "魔法船",
+	"INFWAR": "地狱战争机器",
+	"CREATURE": "生物",
+	"OBJECT": "物件",
+	"SHP:H": "船只升级, 船壳",
+	"SHP:M": "船只升级, 操纵",
+	"SHP:W": "船只升级, 武器",
+	"SHP:F": "船只升级, 船首像",
+	"SHP:O": "船只升级, 杂项",
+	"IWM:W": "地狱战争机器变体, 武器",
+	"IWM:A": "地狱战争机器升级, 护甲",
+	"IWM:G": "地狱战争机器升级, 装置",
 };
 
 Parser.vehicleTypeToFull = function (vehicleType) {
@@ -4953,5 +4953,14 @@ Parser.REWARD_TYPE_TO_CN["Other"] = "其他";
 
 Parser.rewardTypeToCN = function (type) {
 	return Parser._parse_aToB(Parser.REWARD_TYPE_TO_CN, type);
+};
+
+Parser.RECIPE_CATEGORY_TO_CN = {
+	"Dwarven": "矮人",
+	"Elixir/Ale": "灵药/麦酒",
+	"Elven": "精灵",
+};
+Parser.recipeCategoryToCn = function (type) {
+	return Parser._parse_aToB(Parser.RECIPE_CATEGORY_TO_CN, type.toTitleCase());
 };
 // endregion
