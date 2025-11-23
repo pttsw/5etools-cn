@@ -54,21 +54,21 @@ export class ManageBrewUi {
 				},
 			),
 			new ContextUtil.Action(
-				"Manage Homebrew",
+				"管理自制内容",
 				async evt => {
 					this._onClickBtnManagePrereleaseBrew({brewUtil: BrewUtil2, isGoToPage: evt.shiftKey});
 				},
 			),
 			null,
 			new ContextUtil.Action(
-				"Load All Partnered Content",
+				"加载所有第三方合作内容",
 				async evt => {
 					await this.pOnClickBtnLoadAllPartnered();
 				},
 			),
 			null,
 			new ContextUtil.Action(
-				"Delete All Loaded Content",
+				"删除所有已加载内容",
 				async evt => {
 					await this._pOnClickBtnDeleteAllLoadedContent();
 				},
@@ -89,7 +89,7 @@ export class ManageBrewUi {
 			BrewUtil2.pGetCntBrewsPartnered({isSilent: true}),
 		])).sum();
 		if (!cntAvailable) {
-			JqueryUtil.doToast({type: "warning", content: `No partnered content available!`});
+			JqueryUtil.doToast({type: "warning", content: `没有可用的第三方合作内容！`});
 			return;
 		}
 
@@ -117,7 +117,7 @@ export class ManageBrewUi {
 			throw e;
 		}
 
-		if (brewDocs.length) JqueryUtil.doToast(`Loaded partnered content!`);
+		if (brewDocs.length) JqueryUtil.doToast(`已加载第三方合作内容！`);
 
 		if (PrereleaseUtil.isReloadRequired()) PrereleaseUtil.doLocationReload();
 		if (BrewUtil2.isReloadRequired()) BrewUtil2.doLocationReload();
@@ -126,13 +126,13 @@ export class ManageBrewUi {
 	static async _pOnClickBtnDeleteAllLoadedContent () {
 		if (
 			!await InputUiUtil.pGetUserBoolean({
-				title: `Delete All Loaded ${PrereleaseUtil.DISPLAY_NAME.toTitleCase()} and ${BrewUtil2.DISPLAY_NAME.toTitleCase()}`,
+				title: `删除所以已加载的${PrereleaseUtil.DISPLAY_NAME.toTitleCase()}和${BrewUtil2.DISPLAY_NAME.toTitleCase()}`,
 				htmlDescription: `<div>
-					<div>Are you sure?</div>
-					<div class="ve-muted"><i>Note that this will <b>not</b> delete your Editable ${PrereleaseUtil.DISPLAY_NAME.toTitleCase()} and Editable ${BrewUtil2.DISPLAY_NAME.toTitleCase()}.</i></div>
+					<div>你确定吗？</div>
+					<div class="ve-muted"><i>注意：这将<b>不会</b>删除您的可编辑${PrereleaseUtil.DISPLAY_NAME.toTitleCase()}和可编辑${BrewUtil2.DISPLAY_NAME.toTitleCase()}。</i></div>
 				</div>`,
-				textYes: "Yes",
-				textNo: "Cancel",
+				textYes: "是",
+				textNo: "取消",
 			})
 		) return;
 
@@ -142,7 +142,7 @@ export class ManageBrewUi {
 				BrewUtil2.pDeleteUneditableBrews(),
 			]);
 		} catch (e) {
-			JqueryUtil.doToast({type: "danger", content: `Failed to load partnered content! ${VeCt.STR_SEE_CONSOLE}`});
+			JqueryUtil.doToast({type: "danger", content: `删除所有已加载内容失败！ ${VeCt.STR_SEE_CONSOLE}`});
 			throw e;
 		}
 
@@ -162,7 +162,7 @@ export class ManageBrewUi {
 			&& !await BrewUtil2.pHasEditableSourceJson()
 		) return;
 
-		JqueryUtil.doToast({type: "warning", content: `Note: you have Editable ${PrereleaseUtil.DISPLAY_NAME} or ${BrewUtil2.DISPLAY_NAME}. This cannot be exported as part of a URL, and so was not included.`});
+		JqueryUtil.doToast({type: "warning", content: `警告：您有可编辑的${PrereleaseUtil.DISPLAY_NAME}或${BrewUtil2.DISPLAY_NAME}。这不能作为URL的一部分导出，因此未包含在内。`});
 	}
 
 	/* -------------------------------------------- */
@@ -197,7 +197,7 @@ export class ManageBrewUi {
 			.addClass(this._isModal ? "ve-btn-xs" : "ve-btn-sm")
 			.onn("click", async evt => {
 				if (!evt.shiftKey) {
-					if (!await InputUiUtil.pGetUserBoolean({title: `Delete All ${this._brewUtil.DISPLAY_NAME.toTitleCase()}`, htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: `删除所有${this._brewUtil.DISPLAY_NAME.toTitleCase()}`, htmlDescription: "你确定吗？", textYes: "是", textNo: "取消"})) return;
 
 					await this._pDoDeleteAll(rdState);
 
@@ -206,10 +206,10 @@ export class ManageBrewUi {
 
 				if (
 					!await InputUiUtil.pGetUserBoolean({
-						title: `Delete All ${this._brewUtil.DISPLAY_NAME.toTitleCase()} and ${brewUtilOther.DISPLAY_NAME.toTitleCase()}`,
-						htmlDescription: "Are you sure?",
-						textYes: "Yes",
-						textNo: "Cancel",
+						title: `删除所有${this._brewUtil.DISPLAY_NAME.toTitleCase()}和${brewUtilOther.DISPLAY_NAME.toTitleCase()}`,
+						htmlDescription: "你确定吗？",
+						textYes: "是",
+						textNo: "取消",
 					})
 				) return;
 
@@ -259,7 +259,7 @@ export class ManageBrewUi {
 			JqueryUtil.doToast({content: `Update failed! ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
 			throw e;
 		}
-		if (!brewDocsUpdated?.length) return JqueryUtil.doToast(`Update complete! No ${this._brewUtil.DISPLAY_NAME} was updated.`);
+		if (!brewDocsUpdated?.length) return JqueryUtil.doToast(`更新完成！没有${this._brewUtil.DISPLAY_NAME}被更新。`);
 
 		await this._pRender_pBrewList(rdState);
 
@@ -290,7 +290,7 @@ export class ManageBrewUi {
 		const messageInfo = {
 			isAutoHide: false,
 			contentHtml: `<div>
-				<div>Update complete! ${brewDocsUpdated.length} ${brewDocsUpdated.length === 1 ? `${this._brewUtil.DISPLAY_NAME} was` : `${this._brewUtil.DISPLAY_NAME_PLURAL} were`} updated.</div>
+				<div>更新完成！${brewDocsUpdated.length} ${brewDocsUpdated.length === 1 ? `${this._brewUtil.DISPLAY_NAME}被` : `${this._brewUtil.DISPLAY_NAME_PLURAL}被`}更新。</div>
 				${htmlListRows ? `<ul class="mt-2 mb-0">${htmlListRows}</ul>` : ""}
 			</div>`,
 		};
@@ -317,10 +317,10 @@ export class ManageBrewUi {
 		const btnGet = ee`<button class="ve-btn ${this._brewUtil.STYLE_BTN} ve-btn-sm">${I18nUtil.get("common.button.get")} ${this._brewUtil.DISPLAY_NAME.toTitleCase()}</button>`
 			.onn("click", () => this._pHandleClick_btnGetBrew(rdState));
 
-		const btnCustomUrl = ee`<button class="ve-btn ${this._brewUtil.STYLE_BTN} ve-btn-sm px-2" title="Set Custom Repository URL"><span class="glyphicon glyphicon-cog"></span></button>`
+		const btnCustomUrl = ee`<button class="ve-btn ${this._brewUtil.STYLE_BTN} ve-btn-sm px-2" title="设置自定义仓库URL"><span class="glyphicon glyphicon-cog"></span></button>`
 			.onn("click", () => this._pHandleClick_btnSetCustomRepo());
 
-		const btnLoadPartnered = ee`<button class="ve-btn ve-btn-default ve-btn-sm">Load All Partnered</button>`
+		const btnLoadPartnered = ee`<button class="ve-btn ve-btn-default ve-btn-sm">加载所有合作内容</button>`
 			.onn("click", () => this._pHandleClick_btnLoadPartnered(rdState));
 
 		const btnLoadFromFile = ee`<button class="ve-btn ve-btn-default ve-btn-sm">${I18nUtil.get("common.button.load_from_file")}</button>`
@@ -400,8 +400,8 @@ export class ManageBrewUi {
 		const enteredUrl = await InputUiUtil.pGetUserString({
 			title: `${this._brewUtil.DISPLAY_NAME.toTitleCase()} URL`,
 			htmlDescription: `<p>
-				Provide a link to a ${this._brewUtil.DISPLAY_NAME} JSON.
-				<br><span class="ve-muted">Note that for GitHub links, this should be the &quot;Raw&quot; link.</span>
+				提供${this._brewUtil.DISPLAY_NAME} 的JSON链接。
+				<br><span class="ve-muted">注意：对于GitHub链接，这应该是仓库根路径链接。</span>
 			</p>`,
 		});
 		if (!enteredUrl || !enteredUrl.trim()) return;
@@ -445,10 +445,10 @@ export class ManageBrewUi {
 		const customBrewUtl = await this._brewUtil.pGetCustomUrl();
 
 		const nxtUrl = await InputUiUtil.pGetUserString({
-			title: `${this._brewUtil.DISPLAY_NAME.toTitleCase()} Repository URL`,
+			title: `${this._brewUtil.DISPLAY_NAME.toTitleCase()} 自定义仓库URL`,
 			elePre: ee`<div>
-				<p>Leave blank to use the <a href="${this._brewUtil.URL_REPO_DEFAULT}" rel="noopener noreferrer" target="_blank">default ${this._brewUtil.DISPLAY_NAME} repo</a>.</p>
-				<div>Note that for GitHub URLs, the <code>raw.</code> URL must be used. For example, <code>${this._brewUtil.URL_REPO_ROOT_DEFAULT.replace(/TheGiddyLimit/g, "YourUsernameHere")}</code></div>
+				<p>请输入自定义${this._brewUtil.DISPLAY_NAME} 仓库URL。留空则使用默认${this._brewUtil.DISPLAY_NAME} 仓库。</p>
+				<div>注意：对于GitHub链接，这应该是仓库根路径链接。例如，<code>${this._brewUtil.URL_REPO_ROOT_DEFAULT.replace(/TheGiddyLimit/g, "YourUsernameHere")}</code></div>
 				<hr class="hr-3">
 			</div>`,
 			default: customBrewUtl,

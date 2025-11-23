@@ -4406,17 +4406,17 @@ Parser.getTagProps = function (tag) {
 };
 
 Parser.PROP_TO_DISPLAY_NAME = {
-	"variantrule": "Rule",
-	"optionalfeature": "Option/Feature",
-	"magicvariant": "Magic Item Variant",
-	"baseitem": "Item (Base)",
-	"item": "Item",
-	"adventure": "Adventure",
-	"adventureData": "Adventure Text",
-	"book": "Book",
-	"bookData": "Book Text",
-	"makebrewCreatureTrait": "Homebrew Builder Creature Trait",
-	"charoption": "Other Character Creation Option",
+	"variantrule": "术语汇编",
+	"optionalfeature": "职业能力选项",
+	"magicvariant": "魔法物品变体",
+	"baseitem": "基础物品",
+	"item": "物品",
+	"adventure": "模组",
+	"adventureData": "模组文本",
+	"book": "书籍",
+	"bookData": "书籍文本",
+	"makebrewCreatureTrait": "自制内容生成器生物特质",
+	"charoption": "其他角色创建选项",
 
 	"bonus": "附赠动作",
 	"legendary": "传奇动作",
@@ -4427,6 +4427,34 @@ Parser.PROP_TO_DISPLAY_NAME = {
 	"disease": "疾病",
 
 	"Magical Contagion": "魔法疫病",
+
+	// added for Chinese localization
+	"action": "动作",
+	"background": "背景",
+	"boon": "恩赐",
+	"cult": "邪教",
+	"deity": "神祇",
+	"facility": "据点",
+	"feat": "专长",
+	"foundrySpell": "Foundry 法术",
+	"hazard": "危害",
+	"itemProperty": "物品特性",
+	"itemType": "物品类型",
+	"itemTypeAdditionalEntries": "物品类型附加条目",
+	"language": "语言",
+	"legendaryGroup": "传奇组",
+	"monster": "怪物",
+	"object": "物件",
+	"psionic": "灵能",
+	"race": "种族",
+	"recipe": "食谱",
+	"reward": "奖励",
+	"roll20Spell": "Roll20 法术",
+	"spell": "法术",
+	"spell foundry data": "Foundry 法术数据",
+	"table": "表格",
+	"trap": "陷阱",
+	"vehicle": "载具",
 };
 Parser.getPropDisplayName = function (prop, {suffix = ""} = {}) {
 	if (Parser.PROP_TO_DISPLAY_NAME[prop]) return `${Parser.PROP_TO_DISPLAY_NAME[prop]}${suffix}`;

@@ -15,6 +15,7 @@ export class GetBrewUi {
 			const pageProps = brewUtil.getPageProps({fallback: ["*"]});
 			super({
 				header: "Category",
+				cnHeader: "类别",
 				items: [],
 				displayFn: brewUtil.getPropDisplayName.bind(brewUtil),
 				selFn: prop => pageProps.includes("*") || pageProps.includes(prop),
@@ -42,7 +43,7 @@ export class GetBrewUi {
 			const btnPage = e_({
 				tag: "button",
 				clazz: `ve-btn ve-btn-default w-100 ve-btn-xs`,
-				text: `Select for Page...`,
+				text: `根据页面筛选...`,
 				click: evt => ContextUtil.pOpenMenu(evt, menu),
 			});
 
@@ -67,26 +68,35 @@ export class GetBrewUi {
 			this._typeFilter = new GetBrewUi._TypeFilter({brewUtil});
 			this._statusFilter = new Filter({
 				header: "Status",
+				cnHeader: "状态",
 				items: [
 					"ready",
 					"wip",
 					"deprecated",
 					"invalid",
 				],
-				displayFn: StrUtil.toTitleCase.bind(StrUtil),
+				displayFn: it => {
+					switch (it) {
+						case "ready": return "就绪";
+						case "wip": return "进行中";
+						case "deprecated": return "已弃用";
+						case "invalid": return "无效";
+					}
+				},
 				itemSortFn: null,
 				deselFn: it => this.constructor._STATUS_FILTER_DEFAULT_DESELECTED.has(it),
 			});
 			this._miscFilter = new Filter({
 				header: "Miscellaneous",
-				items: ["Partnered", "Sample"],
-				deselFn: it => it === "Sample",
+				cnHeader: "杂项",
+				items: ["Partnered", "范例"],
+				deselFn: it => it === "范例",
 			});
 		}
 
 		static mutateForFilters (brewInfo) {
 			brewInfo._fMisc = [];
-			if (brewInfo._brewAuthor && brewInfo._brewAuthor.toLowerCase().startsWith("sample -")) brewInfo._fMisc.push("Sample");
+			if (brewInfo._brewAuthor && brewInfo._brewAuthor.toLowerCase().startsWith("sample -")) brewInfo._fMisc.push("范例");
 			if (brewInfo.sources?.some(ab => ab.startsWith(Parser.SRC_UA_ONE_PREFIX))) brewInfo._fMisc.push("One D&D");
 			if (brewInfo._brewIsPartnered) brewInfo._fMisc.push("Partnered");
 		}
@@ -200,11 +210,11 @@ export class GetBrewUi {
 
 		const wrpRows = ee`<div class="list smooth-scroll max-h-unset"><div class="lst__row ve-flex-col"><div class="lst__wrp-cells lst__row-border lst__row-inner ve-flex w-100"><i>加载中...</i></div></div></div>`;
 
-		const btnFilter = ee`<button class="ve-btn ve-btn-default ve-btn-sm">Filter</button>`;
+		const btnFilter = ee`<button class="ve-btn ve-btn-default ve-btn-sm">筛选</button>`;
 
-		const btnToggleSummaryHidden = ee`<button class="ve-btn ve-btn-default" title="Toggle Filter Summary Display"><span class="glyphicon glyphicon-resize-small"></span></button>`;
+		const btnToggleSummaryHidden = ee`<button class="ve-btn ve-btn-default" title="切换筛选摘要显示"><span class="glyphicon glyphicon-resize-small"></span></button>`;
 
-		const iptSearch = ee`<input type="search" class="search manbrew__search form-control w-100 lst__search lst__search--no-border-h" placeholder="Find ${this._brewUtil.DISPLAY_NAME}...">`
+		const iptSearch = ee`<input type="search" class="search manbrew__search form-control w-100 lst__search lst__search--no-border-h" placeholder="搜索${this._brewUtil.DISPLAY_NAME}...">`
 			.onn("keydown", evt => this._pHandleKeydown_iptSearch(evt, rdState));
 		const dispCntVisible = ee`<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>`;
 
@@ -232,8 +242,8 @@ export class GetBrewUi {
 		</div>`;
 
 		ee(wrp)`
-		<div class="mt-1"><i>A list of ${this._brewUtil.DISPLAY_NAME} available in the public repository. Click a name to load the ${this._brewUtil.DISPLAY_NAME}, or view the source directly.${this._brewUtil.IS_EDITABLE ? `<br>
-		Contributions are welcome; see the <a href="${this._brewUtil.URL_REPO_DEFAULT}/blob/master/README.md" target="_blank" rel="noopener noreferrer">README</a>, or stop by our <a href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">Discord</a>.` : ""}</i></div>
+		<div class="mt-1"><i>公共仓库中可用的${this._brewUtil.DISPLAY_NAME}列表。点击名称加载${this._brewUtil.DISPLAY_NAME}，或直接查看源码。${this._brewUtil.IS_EDITABLE ? `<br>
+		欢迎贡献; 查看<a href="${this._brewUtil.URL_REPO_DEFAULT}/blob/master/README.md" target="_blank" rel="noopener noreferrer">README</a>或者<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=zo7jw88cLsqp2hAkK3ssn_kEbtvy8vu4&jump_from=webapi&authKey=yyG97ItP+M1BGl171cFJ+vzAmHZGRMdvKompSckZjpj8gYcCUV/3efeHvaD3850/"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="5et汉化组" title="5et汉化组"></a>。` : ""}</i></div>
 		<hr class="hr-3">
 		<div class="lst__form-top">
 			${btnAddSelected}

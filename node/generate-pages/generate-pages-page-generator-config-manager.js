@@ -5,7 +5,7 @@ class _PageGeneratorManagebrew extends PageGeneratorManagerBase {
 	_page = "managebrew.html";
 
 	_pageTitle = "管理自制内容";
-	_navbarDescription = "View, Add, and Delete Homebrew.";
+	_navbarDescription = "查看、新增、删除自制内容。";
 
 	_scriptsModules = [
 		"manageexternal/manageexternal-utils.js",

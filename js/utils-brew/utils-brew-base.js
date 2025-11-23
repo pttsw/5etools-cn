@@ -1133,8 +1133,8 @@ export class BrewUtil2Base {
 
 	getPropDisplayName (prop) {
 		switch (prop) {
-			case "adventure": return "Adventure Contents/Info";
-			case "book": return "Book Contents/Info";
+			case "adventure": return "冒险模组/信息";
+			case "book": return "书籍/信息";
 		}
 		return Parser.getPropDisplayName(prop);
 	}
