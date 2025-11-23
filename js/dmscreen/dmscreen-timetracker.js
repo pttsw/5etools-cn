@@ -41,7 +41,7 @@ export class TimeTracker {
 class TimeTrackerUtil {
 	static pGetUserWindBearing (def) {
 		return InputUiUtil.pGetUserDirection({
-			title: "Wind Bearing (Direction)",
+			title: "风向 (方向)",
 			default: def,
 			stepButtons: ["N", "NE", "E", "SE", "S", "SW", "W", "NW"],
 		});
@@ -340,7 +340,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 			id: CryptUtil.uid(),
 			data: {
 				...TimeTrackerBase._DEFAULT_STATE__DAY,
-				name: `${Parser.numberToText(i + 1)}day`.uppercaseFirst(),
+				name: `周${Parser.numberToText(i + 1)}`.uppercaseFirst(),
 			},
 		};
 	}
@@ -350,7 +350,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 			id: CryptUtil.uid(),
 			data: {
 				...TimeTrackerBase._DEFAULT_STATE__MONTH,
-				name: `${Parser.numberToText(i + 1)}uary`.uppercaseFirst(),
+				name: `${Parser.numberToText(i + 1)}月`.uppercaseFirst(),
 				days: 30,
 			},
 		};
@@ -391,7 +391,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 			id: CryptUtil.uid(),
 			data: {
 				...TimeTrackerBase._DEFAULT_STATE__SEASON,
-				name: `Season ${i + 1}`,
+				name: `第${i + 1}季`,
 				startDay: i * 90,
 				endDay: ((i + 1) * 90) - 1,
 			},
@@ -428,7 +428,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 			id: CryptUtil.uid(),
 			data: {
 				...TimeTrackerBase._DEFAULT_STATE__MOON,
-				name: `Moon ${i + 1}`,
+				name: `${i + 1}月`,
 			},
 		};
 	}
@@ -438,7 +438,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 	}
 
 	static formatYearInfo (year, yearInfos, eraInfos, abbreviate) {
-		return `Year ${year + 1}${yearInfos.length ? ` (<span class="italic">${yearInfos.map(it => it.name.escapeQuotes()).join("/")}</span>)` : ""}${eraInfos.length ? `, ${eraInfos.map(it => `${it.dayOfEra + 1} <span ${abbreviate ? `title="${it.name.escapeQuotes()}"` : ``}>${(abbreviate ? it.abbreviation : it.name).escapeQuotes()}</span>${abbreviate ? "" : ` (${it.abbreviation.escapeQuotes()})`}`).join("/")}` : ""}`;
+		return `第${year + 1}年${yearInfos.length ? ` (<span class="italic">${yearInfos.map(it => it.name.escapeQuotes()).join("/")}</span>)` : ""}${eraInfos.length ? `, ${eraInfos.map(it => `${it.dayOfEra + 1} <span ${abbreviate ? `title="${it.name.escapeQuotes()}"` : ``}>${(abbreviate ? it.abbreviation : it.name).escapeQuotes()}</span>${abbreviate ? "" : ` (${it.abbreviation.escapeQuotes()})`}`).join("/")}` : ""}`;
 	}
 
 	static $getCvsMoon (moonInfo) {
@@ -625,14 +625,14 @@ TimeTrackerBase._DEFAULT_STATE = {
 		.map((_, i) => TimeTrackerBase.getGenericMoon(i)),
 };
 TimeTrackerBase._MOON_PHASES = [
-	"new-moon",
-	"waxing-crescent",
-	"first-quarter",
-	"waxing-gibbous",
-	"full-moon",
-	"waning-gibbous",
-	"last-quarter",
-	"waning-crescent",
+	"新月",
+	"蛾眉月",
+	"上弦月",
+	"盈凸月",
+	"满月",
+	"亏凸月",
+	"下弦月",
+	"残月",
 ];
 TimeTrackerBase._MOON_RENDER_RES = 32;
 TimeTrackerBase._MIN_TIME = 1;
@@ -677,9 +677,9 @@ class TimeTrackerRoot extends TimeTrackerBase {
 		this._compCalendar.render($wrpCalendar, pod);
 		this._compSettings.render($wrpSettings, pod);
 
-		const $btnShowClock = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2" title="Clock"><span class="glyphicon glyphicon-time"></span></button>`)
+		const $btnShowClock = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2" title="时钟"><span class="glyphicon glyphicon-time"></span></button>`)
 			.click(() => this._state.tab = 0);
-		const $btnShowCalendar = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-3" title="Calendar"><span class="glyphicon glyphicon-calendar"></span></button>`)
+		const $btnShowCalendar = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-3" title="日历"><span class="glyphicon glyphicon-calendar"></span></button>`)
 			.click(() => this._state.tab = 1);
 		const $btnShowSettings = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-3" title="设置"><span class="glyphicon glyphicon-cog"></span></button>`)
 			.click(() => this._state.tab = 2);
@@ -694,9 +694,9 @@ class TimeTrackerRoot extends TimeTrackerBase {
 		this._addHookBase("tab", hookShowTab);
 		hookShowTab();
 
-		const $btnReset = $(`<button class="ve-btn ve-btn-xs ve-btn-danger" title="Reset Clock/Calendar Time to First Day"><span class="glyphicon glyphicon-refresh"></span></button>`)
+		const $btnReset = $(`<button class="ve-btn ve-btn-xs ve-btn-danger" title="重置时钟/日历时间为第一天"><span class="glyphicon glyphicon-refresh"></span></button>`)
 			.click(async () => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "重置", htmlDescription: "你确定吗？", textYes: "确定", textNo: "取消"})) return;
 				Object.assign(this._state, {time: 0, isBrowseMode: false, browseTime: null});
 			});
 
@@ -847,7 +847,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 			);
 		};
 
-		const $btnNextSunrise = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="Skip time to the next sunrise. Skips to later today if it is currently night time, or to tomorrow otherwise.">Next Sunrise</button>`)
+		const $btnNextSunrise = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="跳过到下一个日出前的时间。如果已经到凌晨了，则会跳到当天早上，否则调到转天早上。">下一个日出</button>`)
 			.click(() => {
 				const timeInfo = getTimeInfo({isBase: true});
 				const {
@@ -861,7 +861,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 
 				const sunriseHour = seasonInfos[0].sunriseHour;
 				if (sunriseHour > this._parent.get("hoursPerDay")) {
-					return JqueryUtil.doToast({content: "Could not skip to next sunrise\u2014sunrise time is greater than the number of hours in a day!", type: "warning"});
+					return JqueryUtil.doToast({content: "无法跳转到下一天\u2014日出时间超过了一天的小时数！", type: "warning"});
 				}
 
 				if (numHours < sunriseHour) {
@@ -878,7 +878,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 				}
 			});
 
-		const $btnNextDay = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="Skip time to next midnight.">Next Day</button>`)
+		const $btnNextDay = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="跳过到下一个凌晨前的时间。">下一天</button>`)
 			.click(() => doModTime(getSecsToNextDay(getTimeInfo({isBase: true})), {isBase: true}));
 
 		const $getIpt = (propMax, timeProp, multProp) => {
@@ -982,7 +982,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 			}
 			if (lastDay !== numDays) {
 				lastDay = numDays;
-				$wrpDays.text(`Day ${numDays + 1}`);
+				$wrpDays.text(`第${numDays + 1}天`);
 			}
 
 			doUpdate$Ipt($iptHours, "hoursPerDay", numHours);
@@ -995,7 +995,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 					const isDay = numHours >= it.sunriseHour && numHours < it.sunsetHour;
 					const hoursToDayNight = isDay ? it.sunsetHour - numHours
 						: numHours < it.sunriseHour ? it.sunriseHour - numHours : (this._parent.get("hoursPerDay") + it.sunriseHour) - numHours;
-					return `<b class="mr-2">${isDay ? "Day" : "Night"}</b> <span class="small ve-muted">(${hoursToDayNight === 1 ? `Less than 1 hour` : `More than ${hoursToDayNight - 1} hour${hoursToDayNight === 2 ? "" : "s"}`} to sun${isDay ? "set" : "rise"})</span>`;
+					return `<b class="mr-2">${isDay ? "白天" : "夜晚"}</b> <span class="small ve-muted">(${hoursToDayNight === 1 ? `开始不到1小时` : `距离日${isDay ? "落" : "出"}${hoursToDayNight - 1}个多小时`})</span>`;
 				}).join("/");
 
 				if (dayNightHtml !== lastDayNightHtml) {
@@ -1123,24 +1123,24 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 		this._parent.addHook("moons", hookClock);
 		hookClock();
 
-		const $btnSubDay = $(`<button class="ve-btn ve-btn-xxs ve-btn-default dm-time__btn-day"  title="Subtract Day (SHIFT for 5)">-</button>`)
+		const $btnSubDay = $(`<button class="ve-btn ve-btn-xxs ve-btn-default dm-time__btn-day"  title="减一天(按住SHIFT减五天)">-</button>`)
 			.click(evt => doModTime(-1 * this._parent.get("hoursPerDay") * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : 1), {isBase: true}));
-		const $btnAddDay = $(`<button class="ve-btn ve-btn-xxs ve-btn-default dm-time__btn-day" title="Add Day (SHIFT for 5)">+</button>`)
+		const $btnAddDay = $(`<button class="ve-btn ve-btn-xxs ve-btn-default dm-time__btn-day" title="加一天(按住SHIFT加五天)">+</button>`)
 			.click(evt => doModTime(this._parent.get("hoursPerDay") * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : 1), {isBase: true}));
 
-		const $btnAddHour = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--top" title="Add Hour (SHIFT for 5, CTRL for 12)">+</button>`)
+		const $btnAddHour = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--top" title="加一小时(按住SHIFT加5小时,按住CTRL加12小时)">+</button>`)
 			.click(evt => doModTime(this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : (EventUtil.isCtrlMetaKey(evt) ? 12 : 1)), {isBase: true}));
-		const $btnSubHour = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--bottom" title="Subtract Hour (SHIFT for 5, CTRL for 12)">-</button>`)
+		const $btnSubHour = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--bottom" title="减一小时(按住SHIFT减5小时,按住CTRL减12小时)">-</button>`)
 			.click(evt => doModTime(-1 * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : (EventUtil.isCtrlMetaKey(evt) ? 12 : 1)), {isBase: true}));
 
-		const $btnAddMinute = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--top" title="Add Minute (SHIFT for 5, CTRL for 15, Both for 30)">+</button>`)
+		const $btnAddMinute = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--top" title="加一分钟(按住SHIFT加5分钟,按住CTRL加15分钟,同时按住加30分钟)">+</button>`)
 			.click(evt => doModTime(this._parent.get("secondsPerMinute") * (evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
-		const $btnSubMinute = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--bottom" title="Subtract Minute (SHIFT for 5, CTRL for 15, Both for 30)">-</button>`)
+		const $btnSubMinute = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--bottom" title="减一分钟(按住SHIFT减5分钟,按住CTRL减15分钟,同时按住减30分钟)">-</button>`)
 			.click(evt => doModTime(-1 * this._parent.get("secondsPerMinute") * (evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
 
-		const $btnAddSecond = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--top" title="Add Second (SHIFT for 5, CTRL for 15, Both for 30)">+</button>`)
+		const $btnAddSecond = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--top" title="加一秒(按住SHIFT加5秒,按住CTRL加15秒,同时按住加30秒)">+</button>`)
 			.click(evt => doModTime((evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
-		const $btnSubSecond = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--bottom" title="Subtract Second (SHIFT for 5, CTRL for 15, Both for 30)">-</button>`)
+		const $btnSubSecond = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-time dm-time__btn-time--bottom" title="减一秒(按住SHIFT减5秒,按住CTRL减15秒,同时按住减30秒)">-</button>`)
 			.click(evt => doModTime(-1 * (evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
 
 		const $btnIsPaused = $(`<button class="ve-btn ve-btn-default"><span class="glyphicon glyphicon-pause"></span></button>`)
@@ -1150,11 +1150,11 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 		this._parent.addHook("isAutoPaused", hookPaused);
 		hookPaused();
 
-		const $btnAddLongRest = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="Add Long Rest (SHIFT for Subtract)">Long Rest</button>`)
+		const $btnAddLongRest = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="添加一次长休时间 (按住SHIFT改为减去)">长休</button>`)
 			.click(evt => doModTime((evt.shiftKey ? -1 : 1) * this._parent.get("hoursPerLongRest") * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute"), {isBase: true}));
-		const $btnAddShortRest = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2" title="Add Short Rest (SHIFT for Subtract)">Short Rest</button>`)
+		const $btnAddShortRest = $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2" title="添加一次短休时间 (按住SHIFT改为减去)">短休</button>`)
 			.click(evt => doModTime((evt.shiftKey ? -1 : 1) * this._parent.get("minutesPerShortRest") * this._parent.get("secondsPerMinute"), {isBase: true}));
-		const $btnAddTurn = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="Add Round (6 seconds) (SHIFT for Subtract)">Add Round</button>`)
+		const $btnAddTurn = $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="添加一个回合时间 (按住SHIFT改为减去)">回合</button>`)
 			.click(evt => doModTime((evt.shiftKey ? -1 : 1) * this._parent.get("secondsPerRound"), {isBase: true}));
 
 		const $wrpWeather = $(`<div class="ve-flex dm-time__wrp-weather">`);
@@ -1225,7 +1225,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 		this._parent = parent;
 		const {getTimeInfo} = parent;
 
-		const $btnRandomise = $(`<button class="ve-btn ve-btn-xxs ve-btn-default dm-time__btn-random-weather" title="Roll Weather (SHIFT to Reroll Using Previous Settings)"><span class="fal fa-dice"></span></button>`)
+		const $btnRandomise = $(`<button class="ve-btn ve-btn-xxs ve-btn-default dm-time__btn-random-weather" title="随机生成天气 (按住SHIFT重新使用之前的设置)"><span class="fal fa-dice"></span></button>`)
 			.click(async evt => {
 				const randomState = await TimeTrackerRoot_Clock_RandomWeather.pGetUserInput(
 					{
@@ -1257,7 +1257,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 							iconClass: `fal ${meta.icon}`,
 						};
 					}),
-					title: "Temperature",
+					title: "温度",
 					default: ixCur,
 				});
 
@@ -1294,7 +1294,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 							buttonClass: `ve-btn-default`,
 						};
 					}),
-					title: "Weather",
+					title: "天气",
 					default: ixCur,
 				});
 
@@ -1354,7 +1354,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 							iconContent: `<div class="mb-1 whitespace-normal dm-time__wind-speed">${this._parent.get("unitsWindSpeed") === "mph" ? `${meta.mph} mph` : `${meta.kmph} km/h`}</div>`,
 						};
 					}),
-					title: "Wind Speed",
+					title: "风速",
 					default: ixCur,
 				});
 
@@ -1430,11 +1430,11 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 		hookEnvEffects();
 
 		$$`<div class="ve-flex-col w-100 ve-flex-vh-center">
-			<div class="ve-flex-vh-center small mb-1"><span class="small-caps mr-2">Weather</span>${$btnRandomise}</div>
+			<div class="ve-flex-vh-center small mb-1"><span class="small-caps mr-2">天气</span>${$btnRandomise}</div>
 			<div class="mb-2">${$btnTemperature}${$btnPrecipitation}</div>
 
 			<div class="ve-flex-col ve-flex-vh-center">
-				<div class="small small-caps">Wind</div>
+				<div class="small small-caps">风向/风速</div>
 				<div class="mb-1">${$btnWindDirection}</div>
 				<div>${$btnWindSpeed}</div>
 			</div>
@@ -1446,32 +1446,32 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 	_getDefaultState () { return MiscUtil.copy(TimeTrackerRoot_Clock_Weather._DEFAULT_STATE); }
 }
 TimeTrackerRoot_Clock_Weather._TEMPERATURES = [
-	"freezing",
-	"cold",
-	"mild",
-	"hot",
-	"scorching",
+	"冰冷",
+	"寒冷",
+	"适宜",
+	"炎热",
+	"炽热",
 ];
 TimeTrackerRoot_Clock_Weather._PRECIPICATION = [
-	"sunny",
-	"cloudy",
-	"foggy",
-	"rain-light",
-	"rain-heavy",
-	"thunderstorm",
-	"hail",
-	"snow",
+	"晴",
+	"多云",
+	"雾",
+	"小雨",
+	"大雨",
+	"雷暴",
+	"冰雹",
+	"雪",
 ];
 TimeTrackerRoot_Clock_Weather._WIND_SPEEDS = [
-	"calm",
-	"breeze-light",
-	"breeze-moderate",
-	"breeze-strong",
-	"gale-near",
-	"gale",
-	"gale-severe",
-	"storm",
-	"hurricane",
+	"无风",
+	"微风",
+	"和风",
+	"强风",
+	"疾风",
+	"大风",
+	"烈风",
+	"暴风",
+	"飓风",
 ];
 TimeTrackerRoot_Clock_Weather._DEFAULT_STATE = {
 	temperature: TimeTrackerRoot_Clock_Weather._TEMPERATURES[2],
@@ -1615,7 +1615,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 				return $btn;
 			});
 
-		const $btnOk = $(`<button class="ve-btn ve-btn-default">Confirm and Roll Weather</button>`)
+		const $btnOk = $(`<button class="ve-btn ve-btn-default">确认并随机生成天气</button>`)
 			.click(() => {
 				if (!this._state.allowedTemperatures.length || !this._state.allowedPrecipitations.length || !this._state.allowedWindSpeeds.length) {
 					JqueryUtil.doToast({content: `Please select allowed values for all sections!`, type: "warning"});
@@ -1624,18 +1624,18 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 
 		$$`<div class="ve-flex-col w-100 h-100">
 			<div class="ve-flex-col">
-				<h5>Allowed Temperatures</h5>
+				<h5>可选的温度</h5>
 				<div class="ve-flex">${$btnsTemperature}</div>
 			</div>
 			<div class="ve-flex-col">
-				<h5>Allowed Precipitation Types</h5>
+				<h5>可选的天气</h5>
 				<div class="ve-flex">${$btnsPrecipitation}</div>
 			</div>
 			<div class="ve-flex-v-center mt-2">
-				<h5 class="mr-2">Prevailing Wind Direction</h5>${$btnWindDirection}
+				<h5 class="mr-2">主导风向</h5>${$btnWindDirection}
 			</div>
 			<div class="ve-flex-col">
-				<h5>Allowed Wind Speeds</h5>
+				<h5>可选的风速</h5>
 				<div class="ve-flex">${$btnsWindSpeed}</div>
 			</div>
 			<div class="ve-flex-vh-center">${$btnOk}</div>
@@ -1723,7 +1723,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 
 		return new Promise(resolve => {
 			const {$modalInner, doClose} = UiUtil.getShowModal({
-				title: "Random Weather Configuration",
+				title: "随机天气生成器",
 				isUncappedHeight: true,
 				cbClose: (isDataEntered) => {
 					if (!isDataEntered) resolve(null);
@@ -1771,7 +1771,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 			this._parent.component,
 			"isBrowseMode",
 			{
-				$ele: $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="When enabled, the current calendar view will be saved. You can then freely browse. When you're done, disable Browse mode to return to your original view.">Browse</button>`),
+				$ele: $(`<button class="ve-btn ve-btn-xs ve-btn-default" title="当启用此选项时，当前日历试图将被暂存，你可以随意浏览其他日期，当你浏览结束后，你可以禁用此选项以返回保存的视图。">浏览模式</button>`),
 				fnHookPost: val => {
 					if (val) this._parent.set("browseTime", this._parent.get("time"));
 					else this._parent.set("browseTime", null);
@@ -1873,14 +1873,14 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 		opts = opts || {};
 		const {doModTime, getTimeInfo} = parent;
 
-		const $btnSubDay = opts.isHideDays ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="Subtract Day (SHIFT for 5)">\u2212D</button>`)
+		const $btnSubDay = opts.isHideDays ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="减一天(按住SHIFT减5天)">\u2212D</button>`)
 			.click(evt => doModTime(-1 * getTimeInfo().secsPerDay * (evt.shiftKey ? 5 : 1)));
-		const $btnAddDay = opts.isHideDays ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="Add Day (SHIFT for 5)">D+</button>`)
+		const $btnAddDay = opts.isHideDays ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="加一天(按住SHIFT加5天)">D+</button>`)
 			.click(evt => doModTime(getTimeInfo().secsPerDay * (evt.shiftKey ? 5 : 1)));
 
-		const $btnSubWeek = opts.isHideWeeks ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="Subtract Week (SHIFT for 5)">\u2212W</button>`)
+		const $btnSubWeek = opts.isHideWeeks ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="减一周(按住SHIFT减5周)">\u2212W</button>`)
 			.click(evt => doModTime(-1 * getTimeInfo().secsPerWeek * (evt.shiftKey ? 5 : 1)));
-		const $btnAddWeek = opts.isHideWeeks ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="Add Week (SHIFT for 5)">W+</button>`)
+		const $btnAddWeek = opts.isHideWeeks ? null : $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="加一周(按住SHIFT加5周)">W+</button>`)
 			.click(evt => doModTime(getTimeInfo().secsPerWeek * (evt.shiftKey ? 5 : 1)));
 
 		const doModMonths = (numMonths) => {
@@ -1930,14 +1930,14 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 			}
 		};
 
-		const $btnSubMonth = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="Subtract Month (SHIFT for 5)">\u2212M</button>`)
+		const $btnSubMonth = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="减一个月(按住SHIFT减五个月)">\u2212M</button>`)
 			.click(evt => doModMonths(evt.shiftKey ? -5 : -1));
-		const $btnAddMonth = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="Add Month (SHIFT for 5)">M+</button>`)
+		const $btnAddMonth = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="加一个月(按住SHIFT加五个月)">M+</button>`)
 			.click(evt => doModMonths(evt.shiftKey ? 5 : 1));
 
-		const $btnSubYear = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="Subtract Year (SHIFT for 5)">\u2212Y</button>`)
+		const $btnSubYear = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust"  title="减一年(按住SHIFT减五年)">\u2212Y</button>`)
 			.click(evt => doModTime(-1 * getTimeInfo().secsPerYear * (evt.shiftKey ? 5 : 1)));
-		const $btnAddYear = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="Add Year (SHIFT for 5)">Y+</button>`)
+		const $btnAddYear = $(`<button class="ve-btn ve-btn-xs ve-btn-default dm-time__btn-date-adjust" title="加一年(按住SHIFT加五年)">Y+</button>`)
 			.click(evt => doModTime(getTimeInfo().secsPerYear * (evt.shiftKey ? 5 : 1)));
 
 		const $iptYear = $(`<input class="form-control form-control--minimal ve-text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-right" title="Year">`)

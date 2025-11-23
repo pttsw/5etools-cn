@@ -5,17 +5,17 @@ export class MoneyConverter {
 
 		const COIN_WEIGHT = 0.02;
 		const CURRENCY = [
-			new MoneyConverterUnit("Copper", 1, "cp"),
-			new MoneyConverterUnit("Silver", 10, "sp"),
-			new MoneyConverterUnit("Electrum", 50, "ep"),
-			new MoneyConverterUnit("Gold", 100, "gp"),
-			new MoneyConverterUnit("Platinum", 1000, "pp"),
-			new MoneyConverterUnit("Nib (WDH)", 1, "nib"),
-			new MoneyConverterUnit("Shard (WDH)", 10, "shard"),
-			new MoneyConverterUnit("Taol (WDH)", 200, "taol"),
-			new MoneyConverterUnit("Dragon (WDH)", 100, "dgn"),
-			new MoneyConverterUnit("Sun (WDH)", 1000, "sun"),
-			new MoneyConverterUnit("Harbor Moon (WDH)", 5000, "moon"),
+			new MoneyConverterUnit("铜币", 1, "cp"),
+			new MoneyConverterUnit("银币", 10, "sp"),
+			new MoneyConverterUnit("银金币", 50, "ep"),
+			new MoneyConverterUnit("金币", 100, "gp"),
+			new MoneyConverterUnit("铂金币", 1000, "pp"),
+			new MoneyConverterUnit("尖儿 (WDH)", 1, "nib"),
+			new MoneyConverterUnit("碎子 (WDH)", 10, "shard"),
+			new MoneyConverterUnit("陶尔 (WDH)", 200, "taol"),
+			new MoneyConverterUnit("龙 (WDH)", 100, "dgn"),
+			new MoneyConverterUnit("太阳 (WDH)", 1000, "sun"),
+			new MoneyConverterUnit("湾月 (WDH)", 5000, "moon"),
 		];
 		const CURRENCY_INDEXED = [...CURRENCY].map((it, i) => {
 			it.ix = i;
@@ -141,11 +141,11 @@ export class MoneyConverter {
 			board.doSaveStateDebounced();
 		};
 
-		const buildCurrency$Select = (isOutput) => $(`<select class="form-control input-sm" style="padding: 5px">${isOutput ? `<option value="-1">(No conversion)</option>` : ""}${CURRENCY.map((c, i) => `<option value="${i}">${c.n}</option>`).join("")}</select>`);
+		const buildCurrency$Select = (isOutput) => $(`<select class="form-control input-sm" style="padding: 5px">${isOutput ? `<option value="-1">(未指定)</option>` : ""}${CURRENCY.map((c, i) => `<option value="${i}">${c.n}</option>`).join("")}</select>`);
 
 		const addRow = (currency, count) => {
 			const $row = $(`<div class="dm-money__row"></div>`).appendTo($wrpRows);
-			const $iptCount = $(`<input type="number" step="1" placeholder="Coins" class="form-control input-sm">`).appendTo($row).change(doUpdate);
+			const $iptCount = $(`<input type="number" step="1" placeholder="数量" class="form-control input-sm">`).appendTo($row).change(doUpdate);
 			if (count != null) $iptCount.val(count);
 			const $selCurrency = buildCurrency$Select().appendTo($row).change(doUpdate);
 			$selCurrency.val(currency == null ? DEFAULT_CURRENCY : currency);
@@ -160,7 +160,7 @@ export class MoneyConverter {
 		const $wrpCtrl = $(`<div class="split dm-money__ctrl"></div>`).appendTo($wrpConverter);
 		const $wrpCtrlLhs = $(`<div class="dm-money__ctrl__lhs split-child" style="width: 66%;"></div>`).appendTo($wrpCtrl);
 		const $wrpBtnAddSettings = $(`<div class="split"></div>`).appendTo($wrpCtrlLhs);
-		const $btnAddRow = $(`<button class="ve-btn ve-btn-primary ve-btn-sm" title="Add Row"><span class="glyphicon glyphicon-plus"></span></button>`)
+		const $btnAddRow = $(`<button class="ve-btn ve-btn-primary ve-btn-sm" title="添加一行"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.appendTo($wrpBtnAddSettings)
 			.click(() => {
 				addRow();
@@ -170,11 +170,11 @@ export class MoneyConverter {
 			.appendTo($wrpBtnAddSettings)
 			.click(() => {
 				const {$modalInner} = UiUtil.getShowModal({
-					title: "Settings",
+					title: "设置",
 					cbClose: () => doUpdate(),
 				});
 				[...CURRENCY_INDEXED].reverse().forEach(cx => {
-					UiUtil.$getAddModalRowCb($modalInner, `Disable ${cx.n} in Output`, disabledCurrency, cx.ix);
+					UiUtil.$getAddModalRowCb($modalInner, `在输出中禁用 ${cx.n}`, disabledCurrency, cx.ix);
 				});
 			});
 		const $iptOut = $(`<input class="form-control input-sm dm-money__out" disabled/>`)
@@ -185,7 +185,7 @@ export class MoneyConverter {
 			});
 
 		const $wrpCtrlRhs = $(`<div class="dm-money__ctrl__rhs split-child" style="width: 33%;"></div>`).appendTo($wrpCtrl);
-		const $iptSplit = $(`<input type="number" min="1" step="1" placeholder="Split Between..." class="form-control input-sm">`).appendTo($wrpCtrlRhs).change(doUpdate);
+		const $iptSplit = $(`<input type="number" min="1" step="1" placeholder="分成...份" class="form-control input-sm">`).appendTo($wrpCtrlRhs).change(doUpdate);
 		const $selOut = buildCurrency$Select(true).appendTo($wrpCtrlRhs).change(doUpdate);
 
 		$wrpConverter.data("getState", () => {

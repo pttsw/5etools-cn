@@ -3075,7 +3075,7 @@ class AddMenuTab {
 
 class AddMenuVideoTab extends AddMenuTab {
 	constructor ({...opts}) {
-		super({...opts, label: "Embed"});
+		super({...opts, label: "内嵌"});
 		this.tabId = this.genTabId("tube");
 	}
 
@@ -3113,7 +3113,7 @@ class AddMenuVideoTab extends AddMenuTab {
 				})
 				.appendTo($wrpTwitch);
 			const $btnAddTwitch = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`).appendTo($wrpTwitch);
-			const $btnAddTwitchChat = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed Chat</button>`).appendTo($wrpTwitch);
+			const $btnAddTwitchChat = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">内嵌聊天</button>`).appendTo($wrpTwitch);
 			const getTwitchM = (url) => {
 				return /https?:\/\/(www\.)?twitch\.tv\/(.*?)(\?.*$|$)/.exec(url);
 			};
@@ -3231,7 +3231,7 @@ class AddMenuImageTab extends AddMenuTab {
 				const ix = this.menu.pnl.doPopulate_Loading("Uploading"); // will be null if not in tabbed mode
 				this.menu.doClose();
 			}).appendTo($tab);
-			const $btnAdd = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Upload</button>`).appendTo($wrpImgur);
+			const $btnAdd = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">上传</button>`).appendTo($wrpImgur);
 			$btnAdd.on("click", () => {
 				$iptFile.click();
 			});
@@ -3244,7 +3244,7 @@ class AddMenuImageTab extends AddMenuTab {
 					if (e.key === "Enter") $btnAddUrl.click();
 				})
 				.appendTo($wrpUtl);
-			const $btnAddUrl = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpUtl);
+			const $btnAddUrl = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`).appendTo($wrpUtl);
 			$btnAddUrl.on("click", () => {
 				let url = $iptUrl.val().trim();
 				if (url) {
@@ -3262,7 +3262,7 @@ class AddMenuImageTab extends AddMenuTab {
 			$(`<hr class="hr-2">`).appendTo($tab);
 
 			// region Adventure dynamic viewer
-			const $btnSelectAdventure = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnSelectAdventure = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.click(() => DmMapper.pHandleMenuButtonClick(this.menu));
 
 			$$`<div class="ui-modal__row">
@@ -3278,7 +3278,7 @@ class AddMenuImageTab extends AddMenuTab {
 
 class AddMenuSpecialTab extends AddMenuTab {
 	constructor ({...opts}) {
-		super({...opts, label: "Special"});
+		super({...opts, label: "特殊"});
 		this.tabId = this.genTabId("special");
 	}
 
@@ -3294,7 +3294,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			});
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">添加</button>`)
+			const $btnTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTracker({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3306,7 +3306,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			${$btnTracker}
 			</div>`.appendTo($tab);
 
-			const $btnTrackerCreatureViewer = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("button.add")}</button>`)
+			const $btnTrackerCreatureViewer = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerCreatureViewer({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3318,7 +3318,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			${$btnTrackerCreatureViewer}
 			</div>`.appendTo($tab);
 
-			const $btnPlayerTrackerV1 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $btnPlayerTrackerV1 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV1({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3330,7 +3330,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 			${$btnPlayerTrackerV1}
 			</div>`.appendTo($tab);
 
-			const $btnPlayerTrackerV0 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">添加</button>`)
+			const $btnPlayerTrackerV0 = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.on("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV0({board: this._board, panel: this.menu.pnl});
 					this.menu.doClose();
@@ -3344,7 +3344,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnSublist = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">添加</button>`)
+			const $btnSublist = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.click(async evt => {
 					await this.menu.pnl.pDoMassPopulate_Entities(evt);
 					this.menu.doClose();
@@ -3357,35 +3357,35 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $btnSwitchToEmbedTag = $(`<button class="ve-btn ve-btn-default ve-btn-xxs">embed</button>`)
+			const $btnSwitchToEmbedTag = $(`<button class="ve-btn ve-btn-default ve-btn-xxs">内嵌</button>`)
 				.on("click", async () => {
-					await this.menu.pSetActiveTab(this.menu.getTab({label: "Embed"}));
+					await this.menu.pSetActiveTab(this.menu.getTab({label: "内嵌"}));
 				});
 
-			const $wrpText = $$`<div class="ui-modal__row"><span>Basic Text Box <i class="ve-muted">(for a feature-rich editor, ${$btnSwitchToEmbedTag} a Google Doc or similar)</i></span></div>`.appendTo($tab);
-			const $btnText = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpText);
+			const $wrpText = $$`<div class="ui-modal__row"><span>基础文本框 <i class="ve-muted">(若要使用富文本，请在${$btnSwitchToEmbedTag}页中插入一个Google Doc或类似的编辑器)</i></span></div>`.appendTo($tab);
+			const $btnText = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`).appendTo($wrpText);
 			$btnText.on("click", () => {
 				this.menu.pnl.doPopulate_TextBox();
 				this.menu.doClose();
 			});
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $wrpUnitConverter = $(`<div class="ui-modal__row"><span>Unit Converter</span></div>`).appendTo($tab);
-			const $btnUnitConverter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpUnitConverter);
+			const $wrpUnitConverter = $(`<div class="ui-modal__row"><span>单位换算器</span></div>`).appendTo($tab);
+			const $btnUnitConverter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`).appendTo($wrpUnitConverter);
 			$btnUnitConverter.on("click", () => {
 				this.menu.pnl.doPopulate_UnitConverter();
 				this.menu.doClose();
 			});
 
-			const $wrpMoneyConverter = $(`<div class="ui-modal__row"><span>Coin Converter</span></div>`).appendTo($tab);
-			const $btnMoneyConverter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpMoneyConverter);
+			const $wrpMoneyConverter = $(`<div class="ui-modal__row"><span>汇率换算器</span></div>`).appendTo($tab);
+			const $btnMoneyConverter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`).appendTo($wrpMoneyConverter);
 			$btnMoneyConverter.on("click", () => {
 				this.menu.pnl.doPopulate_MoneyConverter();
 				this.menu.doClose();
 			});
 
-			const $wrpCounter = $(`<div class="ui-modal__row"><span>Counter</span></div>`).appendTo($tab);
-			const $btnCounter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpCounter);
+			const $wrpCounter = $(`<div class="ui-modal__row"><span>计数器</span></div>`).appendTo($tab);
+			const $btnCounter = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`).appendTo($wrpCounter);
 			$btnCounter.on("click", () => {
 				this.menu.pnl.doPopulate_Counter();
 				this.menu.doClose();
@@ -3393,8 +3393,8 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $wrpTimeTracker = $(`<div class="ui-modal__row"><span>In-Game Clock/Calendar</span></div>`).appendTo($tab);
-			const $btnTimeTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`).appendTo($wrpTimeTracker);
+			const $wrpTimeTracker = $(`<div class="ui-modal__row"><span>游戏内时钟/日历</span></div>`).appendTo($tab);
+			const $btnTimeTracker = $(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`).appendTo($wrpTimeTracker);
 			$btnTimeTracker.on("click", () => {
 				this.menu.pnl.doPopulate_TimeTracker();
 				this.menu.doClose();
@@ -3402,8 +3402,8 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			$(`<hr class="hr-2">`).appendTo($tab);
 
-			const $wrpBlank = $(`<div class="ui-modal__row"><span class="help" title="For those who don't like plus signs.">Blank Space</span></div>`).appendTo($tab);
-			$(`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`)
+			const $wrpBlank = $(`<div class="ui-modal__row"><span class="help" title="不喜欢有加号按钮的可以用这个">空白占位框</span></div>`).appendTo($tab);
+			$(`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`)
 				.on("click", () => {
 					this.menu.pnl.doPopulate_Blank();
 					this.menu.doClose();
@@ -3556,6 +3556,25 @@ class AddMenuSearchTab extends AddMenuTab {
 			const searchOptions = this._getSearchOptions();
 			const index = this.indexes[this.cat];
 			let results = index.search(srch, searchOptions);
+			// If the query contains Han characters, also do a substring pass on the
+			// indexed documents to catch cases where segmentation/tokenisation
+			// missed matches (e.g. "红龙" vs "青年红龙"). Merge any missing
+			// documents into the main results with a modest score so they appear
+			// after exact/strong hits.
+			if (/\p{Script=Han}/u.test(srch)) {
+				const docs = Object.values(index.documentStore.docs);
+				const subMatches = docs
+					.filter(d => (d.cn && d.cn.includes(srch)) || (d.n && d.n.includes(srch)))
+					.map(d => ({doc: d, score: 0.65}));
+
+				// Build a map of existing results by id
+				const map = new Map();
+				if (results && results.length) results.forEach(r => map.set(r.doc.id, r));
+				// Add substring matches if missing
+				subMatches.forEach(m => { if (!map.has(m.doc.id)) map.set(m.doc.id, m); });
+				const merged = [...map.values()].sort((a, b) => SortUtil.ascSort(b.score, a.score));
+				if (merged.length) results = merged;
+			}
 
 			if (this.subType === "content") {
 				results = await OmnisearchBacking.pGetFilteredResults(results);
@@ -3787,7 +3806,7 @@ const bookLoader = new BookLoader();
 
 class NoteBox {
 	static make$Notebox (board, content) {
-		const $iptText = $(`<textarea class="panel-content-textarea" placeholder="Supports inline rolls and content tags (CTRL-q with the caret in the text to activate the embed):\n • Inline rolls,  [[1d20+2]]\n • Content tags (as per the Demo page), {@creature goblin}, {@spell fireball}\n • Link tags, {@link https://5e.tools}">${content || ""}</textarea>`)
+		const $iptText = $(`<textarea class="panel-content-textarea" placeholder="支持文本内掷骰和内容标签(将光标置于标签内，按下 CTRL+q 组合键激活嵌入的功能及内容。):\n • 文本内掷骰,  [[1d20+2]]\n • 内容标签 (和渲染器Demo中的一样), {@creature 地精}, {@spell 火球术}\n • 链接标签, {@link https://5e.kiwee.top}">${content || ""}</textarea>`)
 			.on("keydown", async evt => {
 				const key = EventUtil.getKeyIgnoreCapsLock(evt);
 
@@ -3880,12 +3899,12 @@ class NoteBox {
 class UnitConverter {
 	static make$Converter (board, state) {
 		const units = [
-			new UnitConverterUnit("Inches", "2.54", "Centimetres", "0.394"),
-			new UnitConverterUnit("Feet", "0.305", "Metres", "3.28"),
-			new UnitConverterUnit("Miles", "1.61", "Kilometres", "0.620"),
-			new UnitConverterUnit("Pounds", "0.454", "Kilograms", "2.20"),
-			new UnitConverterUnit("Gallons", "3.79", "Litres", "0.264"),
-			new UnitConverterUnit("Gallons", "8", "Pints", "0.125"),
+			new UnitConverterUnit("英寸", "2.54", "厘米", "0.394"),
+			new UnitConverterUnit("英尺", "0.305", "米", "3.28"),
+			new UnitConverterUnit("英里", "1.61", "公里", "0.620"),
+			new UnitConverterUnit("磅", "0.454", "千克", "2.20"),
+			new UnitConverterUnit("加仑", "3.79", "升", "0.264"),
+			new UnitConverterUnit("加仑", "8", "品脱", "0.125"),
 		];
 
 		let ixConv = state.c || 0;
