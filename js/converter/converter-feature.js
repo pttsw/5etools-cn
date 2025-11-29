@@ -4,6 +4,10 @@ import {AlignmentUtil} from "./converterutils-utils-alignment.js";
 import {ConverterUtils} from "./converterutils-utils.js";
 
 export class ConverterFeatureBase extends ConverterBase {
+	static _RE_FEAT_TYPE = /\b(?<category>General|Origin|Fighting Style|Epic Boon|Dragonmark|通用|起源|战斗风格|传奇恩惠|龙纹)\b/;
+
+	/* -------------------------------------------- */
+
 	static _doParse_getInitialState (inText, options) {
 		if (!inText || !inText.trim()) {
 			options.cbWarning("没有输入！");
@@ -223,6 +227,13 @@ export class ConverterFeatureBase extends ConverterBase {
 				return;
 			}
 
+			if (/^Can't Have Another Dragonmark Feat$/i.test(pt)) return pre.exclusiveFeatCategory = ["D"];
+
+			const mFeatCategory = new RegExp(`^Any ${this._RE_FEAT_TYPE.source}(?: Feat|专长)?`, "i").exec(pt);
+			if (mFeatCategory) {
+				return pre.featCategory = [Parser.featCategoryFromFull(mFeatCategory.groups.category)];
+			}
+
 			const mFeat = /^(?<name>.*?)(?: feat|专长)$/i.exec(pt);
 			if (mFeat) {
 				pre.feat ||= [];
@@ -234,7 +245,7 @@ export class ConverterFeatureBase extends ConverterBase {
 				return pre.feat.push(`${ptName}|${state.entity.source.toLowerCase()}|${rawFeat}`);
 			}
 
-			const mBackground = /^(?<name>.*?) background$/i.exec(pt);
+			const mBackground = /^(?<name>.*?) (?:background|背景)$/i.exec(pt);
 			if (mBackground) {
 				const name = mBackground.groups.name.trim();
 				return (pre.background = pre.background || []).push({

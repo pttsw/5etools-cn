@@ -3,8 +3,78 @@
 		{
 			"ENG_name": "Aberrant Dragonmark",
 			"name": "异种龙纹",
+			"source": "EFA",
+			"page": 39,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "con",
+					"prepared": {
+						"_": {
+							"rest": {
+								"1": [
+									{
+										"choose": "level=1|class=术士"
+									}
+								]
+							}
+						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=术士"
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Aberrant Fortitude",
+					"type": "entries",
+					"name": "异种坚定",
+					"entries": [
+						"当你体质豁免检定失败时，你可以采取一个{@variantrule 反应|XPHB}来掷{@dice 1d4}并将掷出的数值添加到豁免检定中，可能将失败变为成功。一旦你使用了这个增益，直到你完成一次{@variantrule 长休|XPHB}前都不能再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Aberrant Magic",
+					"type": "entries",
+					"name": "畸变魔法",
+					"entries": [
+						"你从术士法术列表中选择一个戏法。此外，从该法术列表中选择一个1环法术。你总是准备着该法术。你可以无需法术位施放该法术一次，并且当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时恢复以此方式施放该法术的能力。你也可以使用你拥有的任何法术位来施放该法术。体质是该法术的施法属性。"
+					]
+				},
+				{
+					"ENG_name": "Aberrant Surge",
+					"type": "entries",
+					"name": "畸变崩天疾驰",
+					"entries": [
+						"当你施放此专长的1环法术时，你可以消耗一个你的{@variantrule 生命值骰|XPHB}并掷骰。如果你掷出偶数，你获得等于掷骰数值的{@variantrule 临时生命值|XPHB}。如果你掷出奇数，你30尺内的一个生物（不包括你）受到等于掷骰数值的力场伤害。如果射程内没有其他生物，你受到该伤害。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Aberrant Dragonmark",
+			"name": "异种龙纹",
 			"source": "ERLW",
 			"page": 52,
+			"reprintedAs": [
+				"异种龙纹|EFA"
+			],
 			"prerequisite": [
 				{
 					"other": "没有其他龙纹"
@@ -105,7 +175,7 @@
 									"name": "额外选项：更强的异种力量",
 									"type": "entries",
 									"entries": [
-										"在DM的选择下，拥有异种龙纹专长的角色有机会展现更大的力量。当你达到10级时，这个角色有{@chance 10}的几率获得{@filter 传奇恩惠|rewards|type=恩惠}（从《{@book 城主指南|DMG}》第7章的选项中选择）。如果角色没有得到传奇恩惠，他在下次升级时仍有{@chance 10}的机会获得。",
+										"在DM的选择下，拥有异种龙纹专长的角色有机会展现更大的力量。当你达到10级时，这个角色有{@chance 10}的几率获得{@filter 传奇恩惠|大功告成|type=恩惠}（从《{@book 城主指南|DMG}》第7章的选项中选择）。如果角色没有得到传奇恩惠，他在下次升级时仍有{@chance 10}的机会获得。",
 										"如果角色得到了一个传奇恩惠，由DM来决定具体效果或随机决定效果。该角色同时永久性地失去一个生命骰，其最大生命值相应地减少一个生命骰加上其体质调整值（最少减少1）。这一减少无法以任何方法解除。"
 									]
 								}
@@ -1724,6 +1794,373 @@
 					"type": "entries",
 					"entries": [
 						"当一个生物在对抗你的{@spell 奥图迷舞|XPHB}豁免检定失败且因此法术而具有{@condition 魅惑|XPHB}状态时，它无法施展具有语言成分的法术，并且如果它能唱歌，就会唱出令人愉悦的胡言乱语。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boon of Siberys",
+			"name": "西伯瑞斯恩惠",
+			"source": "EFA",
+			"page": 45,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19,
+					"campaign": [
+						"艾伯伦"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"additionalSpells": [
+				{
+					"ENG_name": "Mark of Handling",
+					"name": "畜牧龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"动物形态|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Storm",
+					"name": "暴风龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"操控天气|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Making",
+					"name": "创造龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"创造半位面|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Hospitality",
+					"name": "招待龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"英雄宴|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Warding",
+					"name": "警戒龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"迷宫术|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Sentinel",
+					"name": "守护龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"心灵屏障|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Passage",
+					"name": "通行龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"异界传送|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Shadow",
+					"name": "阴影龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"投影术|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Healing",
+					"name": "医疗龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"再生术|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Scribing",
+					"name": "抄录龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"徽记术|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Finding",
+					"name": "探索龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"传送术|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Mark of Detection",
+					"name": "侦测龙纹",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"真知术|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Sorcerer Spell",
+					"name": "术士法术",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7;8|class=术士"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Aberrant Magic",
+					"type": "entries",
+					"name": "畸变魔法",
+					"entries": [
+						"从{@filter 术士法术列表|spells|class=术士|level=0;1;2;3;4;5;6;7;8}中选择一个8环或更低的法术，或从西伯瑞斯龙纹法术表中选择一个法术（该表格包含龙纹建议，如果你想将法术与某个龙纹关联）。你总是准备着该法术。你可以无需法术位或法术成分施放它一次，并在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的适当等级的法术位来施放此法术。智力、感知或魅力是你施放此法术的施法属性（在获得此专长时选择）。",
+						{
+							"type": "table",
+							"caption": "西伯瑞斯龙纹法术",
+							"colStyles": [
+								"col-6",
+								"col-6"
+							],
+							"colLabels": [
+								"法术",
+								"建议龙纹"
+							],
+							"rows": [
+								[
+									"{@spell 动物形态|XPHB}",
+									"操控"
+								],
+								[
+									"{@spell 操控天气|XPHB}",
+									"风暴"
+								],
+								[
+									"{@spell 创造半位面|XPHB}",
+									"创造"
+								],
+								[
+									"{@spell 英雄宴|XPHB}",
+									"好客"
+								],
+								[
+									"{@spell 迷宫术|XPHB}",
+									"守卫"
+								],
+								[
+									"{@spell 心灵屏障|XPHB}",
+									"哨兵"
+								],
+								[
+									"{@spell 异界传送|XPHB}",
+									"通行"
+								],
+								[
+									"{@spell 投影术|XPHB}",
+									"幽影"
+								],
+								[
+									"{@spell 再生术|XPHB}",
+									"治疗"
+								],
+								[
+									"{@spell 徽记术|XPHB}",
+									"抄写"
+								],
+								[
+									"{@spell 传送术|XPHB}",
+									"发现"
+								],
+								[
+									"{@spell 真知术|XPHB}",
+									"侦测"
+								]
+							]
+						}
 					]
 				}
 			]
@@ -4304,7 +4741,7 @@
 					"name": "祈愿魔法",
 					"type": "entries",
 					"entries": [
-						"以一个魔法动作，你可以从术士法术列表中施放一个你选择的施法时间为一个动作的{@filter 从术士法术列表中选择一个1环法术|spells|level=1|class=术士}。一旦你使用了这个增益，在完成一次{@variantrule 长休|XPHB}之前你不能再这样做。该法术的施法属性是由此专长提升的属性。",
+						"作为{@action 魔法|XPHB}动作，你可以从术士法术列表中施放一个你选择的{@filter 从术士法术列表中选择一个1环法术|spells|level=1|class=术士}，该法术的施法时间为一个动作。一旦你使用了这个增益，在完成一次{@variantrule 长休|XPHB}前你不能再这样做。该法术的施法属性是由此专长提升的属性。",
 						"当你达到11级时，你使用此专长施放的法术将如同使用2环法术位施放。",
 						"当你达到17级时，该法术如同使用3环法术位施放。"
 					]
@@ -4596,6 +5033,632 @@
 					"type": "entries",
 					"entries": [
 						"当你用近战武器造成{@variantrule 重击|XPHB}或用近战武器将生物的{@variantrule 生命值|XPHB}降至0时，你可以立即用同一把武器进行一次{@variantrule 附赠动作|XPHB}攻击。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Aberrant Mark",
+			"name": "高等畸变标记",
+			"source": "EFA",
+			"page": 43,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"异种龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"con": 1
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Fortitude",
+					"type": "entries",
+					"name": "强化坚定园",
+					"entries": [
+						"当你使用你的异种龙纹专长的异种坚定增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。你现在还可以在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后重获异种坚定的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Mark of Inspiration",
+					"type": "entries",
+					"name": "激励标记",
+					"entries": [
+						"当你施放一个戏法时，你可以掷一个或二个你未消耗的{@variantrule 生命值骰|XPHB}。你获得等于掷骰数值加上你的体质调整值的{@variantrule 临时生命值|XPHB}，并且你选择的30尺内的一个生物（不包括你）受到等于掷骰数值的力场伤害。那些骰子随后被消耗。",
+						"你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Detection",
+			"name": "高等侦测龙纹",
+			"source": "EFA",
+			"page": 43,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"侦测龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 侦测龙纹|EFA}专长的推理直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Shared Detection",
+					"type": "entries",
+					"name": "共享侦测",
+					"entries": [
+						"当你使用你的{@feat 侦测龙纹|EFA}专长的魔法侦测增益来施放{@spell 识破隐形|XPHB}而无需法术位时，你可以选择你30尺内能看见的一个生物。该生物也在法术持续时间内获得该法术的增益。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Finding",
+			"name": "高等探索龙纹",
+			"source": "EFA",
+			"page": 43,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"探索龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 探索龙纹|EFA}专长的猎人直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Finding",
+					"type": "entries",
+					"name": "强化发现",
+					"entries": [
+						"当你使用你的{@feat 探索龙纹|EFA}的寻者魔法增益来施放{@spell 猎人印记|XPHB}而无需法术位时，该法术的射程加倍，并且你可以修改该法术使得目标在持续时间内无法从{@condition 隐形|XPHB}状态中获益。"
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Greater Mark of Handling",
+			"name": "高等畜牧龙纹",
+			"source": "EFA",
+			"page": 43,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"畜牧龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 畜牧龙纹|EFA}专长的野性直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Handling",
+					"type": "entries",
+					"name": "强化操控",
+					"entries": [
+						"当你处于骑乘状态时，在你用近战攻击掷骰命中你坐骑5尺内的目标后，你的坐骑可以采取一个{@variantrule 反应|XPHB}来移动最多其{@variantrule 速度|XPHB}或采取{@action 攻击|XPHB}动作仅进行一次攻击（由你选择）。"
+					]
+				},
+				{
+					"ENG_name": "Subdue Animal",
+					"type": "entries",
+					"name": "驯服动物",
+					"entries": [
+						"作为一个{@action 魔法|XPHB}动作，你对你30尺内能看见的一只野兽或怪兽施加命令。目标必须成功通过一次感知豁免检定（DC 8加上你的感知调整值和{@variantrule 熟练项|XPHB|熟练加值}）否则获得{@condition 恐慌|XPHB}状态直到你的下个回合开始。你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且你在完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Healing",
+			"name": "高等医疗龙纹",
+			"source": "EFA",
+			"page": 44,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"医疗龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 医疗龙纹|EFA}专长的医疗直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Healing",
+					"type": "entries",
+					"name": "强化治疗",
+					"entries": [
+						"你现在可以使用你的{@feat 医疗龙纹|EFA}专长的治愈之触增益来施放{@spell 疗伤术|XPHB}而不消耗法术位，次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。此外，当你施放{@spell 疗伤术|XPHB}并掷骰决定恢复的{@variantrule 生命值|XPHB}数值时，你可以将掷骰结果中的任何1或2视为3。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Hospitality",
+			"name": "高等招待龙纹",
+			"source": "EFA",
+			"page": 44,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"招待龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 招待龙纹|EFA}专长的永恒款待增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Hospitality",
+					"type": "entries",
+					"name": "强化好客",
+					"entries": [
+						"当你施放{@spell 净化食粮|XPHB}时，你可以修改该法术使其不产生正常效果，而是让你选择的30尺内的每个生物得到恢复。每个受影响的生物的{@condition 力竭|XPHB}等级缩小1级，并且该生物获得等于你的{@variantrule 临时生命值|XPHB}加上你的智力、感知或魅力调整值（在你选择此专长时决定）的{@variantrule 熟练项|XPHB|熟练加值}。一旦你使用此增益修改了该法术，直到你完成一次{@variantrule 长休|XPHB}前不能再这样做。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Making",
+			"name": "高等创造龙纹",
+			"source": "EFA",
+			"page": 44,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"通行龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 创造龙纹|EFA}专长的工匠直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Finding",
+					"type": "entries",
+					"name": "强化发现",
+					"entries": [
+						"当你使用你的{@feat 创造龙纹|EFA}专长的魔力制造增益来无法术位施放{@spell 魔化武器|XPHB}时，你以3环版本施放该法术。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Passage",
+			"name": "高等通行龙纹",
+			"source": "EFA",
+			"page": 44,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"通行龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 通行龙纹|EFA}专长的直觉行动增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Passage",
+					"type": "entries",
+					"name": "强化通行",
+					"entries": [
+						"当你使用你的{@feat 通行龙纹|EFA}专长的魔法通行增益来施放{@spell 迷踪步|XPHB}而不消耗法术位时，你还可以在传送前选择至多两个你30尺内能看见的愿意生物。每个目标可以随后使用{@variantrule 反应|XPHB}来传送至多30尺到一个它能看见的未占据空间。"
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Greater Mark of Scribing",
+			"name": "高等抄录龙纹",
+			"source": "EFA",
+			"page": 44,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"抄录龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 抄录龙纹|EFA}专长的天才文员增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Inspired Scribing",
+					"type": "entries",
+					"name": "梦启者抄写",
+					"entries": [
+						"当你施放{@spell 通晓语言|XPHB}时，你可以修改该法术以包含你30尺内能看见的至多三个自愿生物。每个选民生物在持续时间内也获得该法术的增益。此外，在法术持续时间内，你和选民生物可以在彼此1英里范围内通过心灵感应相互交流。一旦你使用此增益修改了该法术，直到你完成一次{@variantrule 长休|XPHB}前，你无法再次这样做。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Sentinel",
+			"name": "高等守护龙纹",
+			"source": "EFA",
+			"page": 44,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"守护龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 守护龙纹|EFA}专长的守卫直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Sentinel",
+					"type": "entries",
+					"name": "强化哨兵",
+					"entries": [
+						"当你使用你的{@feat 守护龙纹|EFA}专长的警醒护卫增益时，你还可以作为该同一{@variantrule 反应|XPHB}的一部分用武器或{@variantrule 徒手打击|XPHB}进行一次攻击。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Shadow",
+			"name": "高等阴影龙纹",
+			"source": "EFA",
+			"page": 45,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"阴影龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 阴影龙纹|EFA}专长的狡诈直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Shadow",
+					"type": "entries",
+					"name": "强化幽影",
+					"entries": [
+						"当你使用你的{@feat 阴影龙纹|EFA}专长的阴影塑形增益来不消耗法术位施放{@spell 隐形术|XPHB}时，你以3环版本施放该法术。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Greater Mark of Storm",
+			"name": "高等暴风龙纹",
+			"source": "EFA",
+			"page": 45,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"暴风龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 暴风龙纹|EFA}专长的驭风者直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Storm",
+					"type": "entries",
+					"name": "强化风暴",
+					"entries": [
+						"当你使用你的{@feat 暴风龙纹|EFA}专长的风暴魔法增益来施放{@spell 造风术|XPHB}而无需法术位时，你在法术持续时间内还会获得{@variantrule 飞行速度|XPHB}为60尺。"
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Greater Mark of Warding",
+			"name": "高等警戒龙纹",
+			"source": "EFA",
+			"page": 45,
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"警戒龙纹|EFA"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Improved Intuition",
+					"type": "entries",
+					"name": "强化直觉",
+					"entries": [
+						"当你使用你的{@feat 警戒龙纹|EFA}专长的守卫直觉增益时，你可以掷{@dice 1d6}而非{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Warding",
+					"type": "entries",
+					"name": "强化守卫",
+					"entries": [
+						"当一个生物对你或你30尺内能看见的生物进行攻击检定时，你可以采取一个{@variantrule 反应|XPHB}来使该掷骰获得{@variantrule 劣势|XPHB}。你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且你在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
 					]
 				}
 			]
@@ -6420,6 +7483,1543 @@
 			]
 		},
 		{
+			"ENG_name": "Mark of Detection",
+			"name": "侦测龙纹",
+			"source": "EFA",
+			"page": 39,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"识破隐形|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"侦测魔法|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"侦测善恶|xphb",
+							"鉴定术|xphb"
+						],
+						"s2": [
+							"侦测思想|xphb",
+							"寻找陷阱|xphb"
+						],
+						"s3": [
+							"鹰眼术|xphb",
+							"回避侦测|xphb"
+						],
+						"s4": [
+							"秘法眼|xphb",
+							"预言术|xphb"
+						],
+						"s5": [
+							"通晓传奇|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Deductive Intuition",
+					"type": "entries",
+					"name": "推理直觉",
+					"entries": [
+						"当你进行一次智力（{@skill 调查|XPHB}）或感知（{@skill 洞悉|XPHB}）检定时，你可以投掷{@dice 1d4}并将掷骰结果添加到属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Magical Detection",
+					"type": "entries",
+					"name": "魔法侦测",
+					"entries": [
+						"你总是准备了{@spell 侦测魔法|XPHB}和{@spell 侦测毒性和疾病|XPHB}法术。你可以无需法术位施放每个法术一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何合适等级的法术位来施放这些法术。智力、感知或魅力是这些法术的施法属性（在选择此专长时选择）。",
+						"当你达到角色等级3时，你还总是准备了{@spell 识破隐形|XPHB}法术并能以同样的方式施放它。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"type": "entries",
+					"name": "龙纹法术",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，侦测龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "侦测龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 侦测善恶|XPHB}, {@spell 鉴定术|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 侦测思想|XPHB}, {@spell 寻找陷阱|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 鹰眼术|XPHB}, {@spell 回避侦测|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 秘法眼|XPHB}, {@spell 预言术|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 通晓传奇|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Finding",
+			"name": "探索龙纹",
+			"source": "EFA",
+			"page": 39,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"物件定位术|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"猎人印记|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"妖火|xphb",
+							"大步奔行|xphb"
+						],
+						"s2": [
+							"动植物定位术|xphb",
+							"心灵尖刺|xphb"
+						],
+						"s3": [
+							"鹰眼术|xphb",
+							"植物交谈|xphb"
+						],
+						"s4": [
+							"预言术|xphb",
+							"生物定位术|xphb"
+						],
+						"s5": [
+							"问道自然|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Hunter's Intuition",
+					"type": "entries",
+					"name": "猎人直觉",
+					"entries": [
+						"当你进行一次感知（{@skill 察觉|XPHB}或{@skill 生存|XPHB}）检定时，你可以投掷{@dice 1d4}并将骰出的数值添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Finder's Magic",
+					"type": "entries",
+					"name": "寻者魔法",
+					"entries": [
+						"你总是准备了{@spell 猎人印记|XPHB}法术。你可以无需法术位施放它一次，并且当你完成一次{@variantrule 长休|XPHB}时恢复以此方式施放它的能力。你也可以使用你拥有的任何适当等级的法术位来施放它。智力、感知或魅力是你施放该法术的施法属性（在选择此专长时选择）。",
+						"当你达到角色等级3时，你还总是准备了{@spell 物件定位术|XPHB}法术并能以同样的方式施放它。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，探索龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "探索龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 妖火|XPHB}, {@spell 大步奔行|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 动植物定位术|XPHB}, {@spell 心灵尖刺|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 鹰眼术|XPHB}, {@spell 植物交谈|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 预言术|XPHB}, {@spell 生物定位术|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 问道自然|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Handling",
+			"name": "畜牧龙纹",
+			"source": "EFA",
+			"page": 39,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"动物交谈|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"化兽为友|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"命令术|xphb",
+							"寻获魔宠|xphb"
+						],
+						"s2": [
+							"野兽知觉|xphb",
+							"安定心神|xphb"
+						],
+						"s3": [
+							"希望信标|xphb",
+							"动物咒唤术|xphb"
+						],
+						"s4": [
+							"生命灵光|xphb",
+							"支配野兽|xphb"
+						],
+						"s5": [
+							"启蒙术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Wild Intuition",
+					"type": "entries",
+					"name": "野性直觉",
+					"entries": [
+						"当你进行一次智力（{@skill 自然|XPHB}）或感知（{@skill 驯兽|XPHB}）检定时，你可以投掷{@dice 1d4}并将掷出的数值添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Primal Connection",
+					"type": "entries",
+					"name": "原初联结",
+					"entries": [
+						"你总是已准备{@spell 化兽为友|XPHB}和{@spell 动物交谈|XPHB}法术。你可以无需法术位施放每个法术一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放该法术的能力。你也可以使用你拥有的任何法术位来施放这些法术。智力、感知或魅力是这些法术的施法属性（在选择此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Monstrous Connections",
+					"type": "entries",
+					"name": "怪物关联",
+					"entries": [
+						"当你达到角色等级3时，若生物的智力值为3或更低，你可以在施放{@spell 化兽为友|XPHB}或{@spell 动物交谈|XPHB}时以怪兽为目标。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，畜牧龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "畜牧龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 命令术|XPHB}, {@spell 寻获魔宠|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 野兽知觉|XPHB}, {@spell 安定心神|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 希望信标|XPHB}, {@spell 动物咒唤术|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 生命灵光|XPHB}, {@spell 支配野兽|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 启蒙术|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Healing",
+			"name": "医疗龙纹",
+			"source": "EFA",
+			"page": 40,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"次级复原术|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"疗伤术|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"虚假生命|xphb",
+							"治愈真言|xphb"
+						],
+						"s2": [
+							"复苏秘法|xphb",
+							"治疗祷言|xphb"
+						],
+						"s3": [
+							"活力灵光|xphb",
+							"群体治愈真言|xphb"
+						],
+						"s4": [
+							"生命灵光|xphb",
+							"净化灵光|xphb"
+						],
+						"s5": [
+							"高等复原术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Medical Intuition",
+					"type": "entries",
+					"name": "医疗直觉",
+					"entries": [
+						"当你进行一次感知（{@skill 医药|XPHB}）检定或使用{@item 草药工具|XPHB}进行一次属性检定时，你可以掷{@dice 1d4}并将掷出的数值添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Healing Touch",
+					"type": "entries",
+					"name": "治愈之触",
+					"entries": [
+						"你总是准备了{@spell 疗伤术|XPHB}法术。你可以无需法术位施放它一次，并且当你完成一次{@variantrule 长休|XPHB}时，你重新获得以此方式施放它的能力。你也可以使用你拥有的任何适当等级的法术位来施放它。智力、感知或魅力是你施放该法术的施法属性（在选择此专长时选择）。",
+						"当你达到角色等级3时，你还总是准备了{@spell 次级复原术|XPHB}法术并能以同样的方式施放它。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，医疗龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "医疗龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 虚假生命|XPHB}, {@spell 治愈真言|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 复苏秘法|XPHB}, {@spell 治疗祷言|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 活力灵光|XPHB}, {@spell 群体治愈真言|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 生命灵光|XPHB}, {@spell 净化灵光|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 高等复原术|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Hospitality",
+			"name": "招待龙纹",
+			"source": "EFA",
+			"page": 40,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"安定心神|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"净化食粮|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"神莓术|xphb",
+							"睡眠术|xphb"
+						],
+						"s2": [
+							"援助术|xphb",
+							"强化属性|xphb"
+						],
+						"s3": [
+							"造粮术|xphb",
+							"李欧蒙小屋|xphb"
+						],
+						"s4": [
+							"净化灵光|xphb",
+							"魔邓肯私人密室|xphb"
+						],
+						"s5": [
+							"圣居|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Ever Hospitable",
+					"type": "entries",
+					"name": "永恒款待",
+					"entries": [
+						"当你进行一次魅力（{@skill 游说|XPHB}）检定或使用{@item 酿酒工具|XPHB}或{@item 厨师工具|XPHB}进行属性检定时，你可以掷{@dice 1d4}并将掷骰结果添加到属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Innkeeper's Magic",
+					"type": "entries",
+					"name": "掌柜魔法",
+					"entries": [
+						"你总是准备了{@spell 净化食粮|XPHB}和{@spell 隐形仆役|XPHB}法术。你可以无需法术位施放每个法术一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何合适等级的法术位来施放这些法术。智力、感知或魅力是这些法术的施法属性（在选择此专长时选择）。",
+						"当你达到角色等级3时，你还会始终准备着{@spell 安定心神|XPHB}法术并能以同样的方式施放它"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，招待龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "招待龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 神莓术|XPHB}, {@spell 睡眠术|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 援助术|XPHB}, {@spell 强化属性|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 造粮术|XPHB}, {@spell 李欧蒙小屋|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 净化灵光|XPHB}, {@spell 魔邓肯私人密室|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 圣居|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Making",
+			"name": "创造龙纹",
+			"source": "EFA",
+			"page": 40,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"修复术|xphb#c"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"魔化武器|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"鉴定术|xphb",
+							"谭森浮碟术|xphb"
+						],
+						"s2": [
+							"不灭明焰|xphb",
+							"灵体武器|xphb"
+						],
+						"s3": [
+							"召唤箭雨|xphb",
+							"元素武器|xphb"
+						],
+						"s4": [
+							"鬼斧神工|xphb",
+							"塑石术|xphb"
+						],
+						"s5": [
+							"造物术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Artisan's Intuition",
+					"type": "entries",
+					"name": "工匠直觉",
+					"entries": [
+						"当你进行一次智力（{@skill 奥秘|XPHB}）检定或使用{@item 工匠工具|XPHB}进行属性检定时，你可以掷{@dice 1d4}并将掷出的数值添加到属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Spellsmith",
+					"type": "entries",
+					"name": "魔力制造",
+					"entries": [
+						"你知晓{@spell 修复术|XPHB}戏法。你还总是准备了{@spell 魔化武器|XPHB}法术。你可以无需法术位施放该法术一次，并且当你完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何法术位来施放它。智力、感知或魅力是你施放这些法术的施法属性（在选择此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，创造龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "创造龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 鉴定术|XPHB}, {@spell 谭森浮碟术|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 不灭明焰|XPHB}, {@spell 灵体武器|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 召唤箭雨|XPHB}, {@spell 元素武器|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 鬼斧神工|XPHB}, {@spell 塑石术|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 造物术|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Passage",
+			"name": "通行龙纹",
+			"source": "EFA",
+			"page": 41,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"迷踪步|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"脚底抹油|xphb",
+							"跳跃术|xphb"
+						],
+						"s2": [
+							"寻获坐骑|xphb",
+							"行动无踪|xphb"
+						],
+						"s3": [
+							"闪现术|xphb",
+							"魅影驹|xphb"
+						],
+						"s4": [
+							"任意门|xphb",
+							"行动自如|xphb"
+						],
+						"s5": [
+							"传送法阵|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Courier's Speed",
+					"type": "entries",
+					"name": "信使极速",
+					"entries": [
+						"你的{@variantrule 速度|XPHB}增加5尺。"
+					]
+				},
+				{
+					"ENG_name": "Intuitive Motion",
+					"type": "entries",
+					"name": "直觉行动",
+					"entries": [
+						"当你进行力量（{@skill 运动|XPHB}）或敏捷（{@skill 特技|XPHB}）检定时，你可以掷{@dice 1d4}并将骰出的数值添加到属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Magical Passage",
+					"type": "entries",
+					"name": "魔法通行",
+					"entries": [
+						"你总是准备了{@spell 迷踪步|XPHB}法术。你可以无需法术位施放该法术一次，并且当你完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何法术位来施放它。智力、感知或魅力是你施放该法术的施法属性（在选择此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，通行龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "通行龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 脚底抹油|XPHB}, {@spell 跳跃术|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 寻获坐骑|XPHB}, {@spell 行动无踪|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 闪现术|XPHB}, {@spell 魅影驹|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 任意门|XPHB}, {@spell 行动自如|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 传送法阵|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Scribing",
+			"name": "抄录龙纹",
+			"source": "EFA",
+			"page": 41,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"传讯术|xphb#c"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"魔嘴术|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"通晓语言|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"命令术|xphb",
+							"迷幻手稿|xphb"
+						],
+						"s2": [
+							"动物信使|xphb",
+							"沉默术|xphb"
+						],
+						"s3": [
+							"短讯术|xphb",
+							"巧言术|xphb"
+						],
+						"s4": [
+							"秘法眼|xphb",
+							"困惑术|xphb"
+						],
+						"s5": [
+							"托梦术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Gifted Scribe",
+					"type": "entries",
+					"name": "天才文员",
+					"entries": [
+						"当你进行一次智力（{@skill 历史|XPHB}）检定或使用{@item 书法工具|XPHB}进行一次属性检定时，你可以投掷{@dice 1d4}并将掷出的数值添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Scribe's Insight",
+					"type": "entries",
+					"name": "文员领悟",
+					"entries": [
+						"你知晓{@spell 传讯术|XPHB}戏法。你还总是准备着{@spell 通晓语言|XPHB}法术。你可以无需法术位施放它一次，并且当你完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何适当等级的法术位来施放它。智力、感知或魅力是你施放该法术的施法属性（在选择此专长时选择）。",
+						"当你达到角色等级3时，你还总是准备着{@spell 魔嘴术|XPHB}法术并能以同样的方式施放它。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，抄录龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "抄录龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 命令术|XPHB}, {@spell 迷幻手稿|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 动物信使|XPHB}, {@spell 沉默术|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 短讯术|XPHB}, {@spell 巧言术|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 秘法眼|XPHB}, {@spell 困惑术|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 托梦术|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Sentinel",
+			"name": "守护龙纹",
+			"source": "EFA",
+			"page": 41,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"护盾术|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"强令对决|xphb",
+							"虔诚护盾|xphb"
+						],
+						"s2": [
+							"守护之链|xphb",
+							"诚实之域|xphb"
+						],
+						"s3": [
+							"法术反制|xphb",
+							"防护能量伤害|xphb"
+						],
+						"s4": [
+							"防死结界|xphb",
+							"信仰守卫|xphb"
+						],
+						"s5": [
+							"毕格比之手|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Sentinel's Intuition",
+					"type": "entries",
+					"name": "守卫直觉",
+					"entries": [
+						"当你进行一次感知（{@skill 洞悉|XPHB}或{@skill 察觉|XPHB}）检定时，你可以投掷{@dice 1d4}并将掷骰结果添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Guardian's Shield",
+					"type": "entries",
+					"name": "卫护之盾",
+					"entries": [
+						"你总是准备着{@spell 护盾术|XPHB}法术。你可以无需法术位施放该法术一次，并且当你完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何法术位来施放它。智力、感知或魅力是你施放该法术的施法属性（在选择此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Vigilant Guardian",
+					"type": "entries",
+					"name": "警醒护卫",
+					"entries": [
+						"当一个你5尺内能看见的生物被攻击检定命中时，你可以使用一个{@variantrule 反应|XPHB}来与该生物交换位置，并由你承受该攻击。你可以使用此特性的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，守护龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "守护龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 强令对决|XPHB}, {@spell 虔诚护盾|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 守护之链|XPHB}, {@spell 诚实之域|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 法术反制|XPHB}, {@spell 防护能量伤害|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 防死结界|XPHB}, {@spell 信仰守卫|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 毕格比之手|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Shadow",
+			"name": "阴影龙纹",
+			"source": "EFA",
+			"page": 42,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"次级幻影|xphb#c"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"隐形术|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"易容术|xphb",
+							"无声幻影|xphb"
+						],
+						"s2": [
+							"黑暗术|xphb",
+							"行动无踪|xphb"
+						],
+						"s3": [
+							"鹰眼术|xphb",
+							"高等幻影|xphb"
+						],
+						"s4": [
+							"高等隐形术|xphb",
+							"幻景|xphb"
+						],
+						"s5": [
+							"假象术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cunning Intuition",
+					"type": "entries",
+					"name": "狡诈直觉",
+					"entries": [
+						"当你进行一次敏捷（{@skill 隐匿|XPHB}）或魅力（{@skill 表演|XPHB}）检定时，你可以投掷{@dice 1d4}并将骰出的数值添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Shape Shadows",
+					"type": "entries",
+					"name": "阴影塑形",
+					"entries": [
+						"你知晓{@spell 次级幻影|XPHB}戏法。你还总是准备了{@spell 隐形术|XPHB}法术。你可以无需法术位施放它一次，并且当你完成一次{@variantrule 长休|XPHB}时恢复以此方式施放它的能力。你也可以使用你拥有的任何适当等级的法术位来施放它。智力、感知或魅力是这些法术的施法属性（当你选择此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，阴影龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "阴影龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 易容术|XPHB}, {@spell 无声幻影|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 黑暗术|XPHB}, {@spell 行动无踪|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 鹰眼术|XPHB}, {@spell 高等幻影|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 高等隐形术|XPHB}, {@spell 幻景|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 假象术|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Storm",
+			"name": "暴风龙纹",
+			"source": "EFA",
+			"page": 42,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"鸣雷破|xphb#c"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"造风术|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"羽落术|xphb",
+							"云雾术|xphb"
+						],
+						"s2": [
+							"浮空术|xphb",
+							"粉碎音波|xphb"
+						],
+						"s3": [
+							"雪雨暴|xphb",
+							"风墙术|xphb"
+						],
+						"s4": [
+							"次级元素咒唤术|xphb",
+							"操控水体|xphb"
+						],
+						"s5": [
+							"元素咒唤术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Windwright's Intuition",
+					"type": "entries",
+					"name": "驭风者直觉",
+					"entries": [
+						"当你进行一次敏捷（{@skill 特技|XPHB}）检定或使用{@item 领航工具|XPHB}进行一次属性检定时，你可以掷{@dice 1d4}并将掷出的数值加到该属性检定上。"
+					]
+				},
+				{
+					"ENG_name": "Storm's Boon",
+					"type": "entries",
+					"name": "暴风恩惠",
+					"entries": [
+						"你对闪电伤害具有{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Storm Magic",
+					"type": "entries",
+					"name": "风暴魔法",
+					"entries": [
+						"你知晓{@spell 鸣雷破|XPHB}戏法。当你达到角色等级3时，你还总是准备了{@spell 造风术|XPHB}法术。你可以无需法术位施放该法术一次，并且当你完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。你也可以使用你拥有的任何适当等级的法术位来施放它。智力、感知或魅力是这些法术的施法属性（在选择此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，暴风龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "暴风龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 羽落术|XPHB}, {@spell 云雾术|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 浮空术|XPHB}, {@spell 粉碎音波|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 雪雨暴|XPHB}, {@spell 风墙术|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 次级元素咒唤术|XPHB}, {@spell 操控水体|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 元素咒唤术|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mark of Warding",
+			"name": "警戒龙纹",
+			"source": "EFA",
+			"page": 42,
+			"category": "D",
+			"prerequisite": [
+				{
+					"campaign": [
+						"艾伯伦"
+					],
+					"exclusiveFeatCategory": [
+						"D"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"3": {
+							"daily": {
+								"1": [
+									"秘法锁|xphb"
+								]
+							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"警报术|xphb",
+									"法师护甲|xphb"
+								]
+							}
+						}
+					},
+					"expanded": {
+						"s1": [
+							"黯冰狱铠|xphb",
+							"庇护术|xphb"
+						],
+						"s2": [
+							"敲击术|xphb",
+							"涅斯图魔法灵光|xphb"
+						],
+						"s3": [
+							"守卫刻文|xphb",
+							"防护法阵|xphb"
+						],
+						"s4": [
+							"李欧蒙秘藏箱|xphb",
+							"魔邓肯忠犬|xphb"
+						],
+						"s5": [
+							"防活物护罩|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Warder's Intuition",
+					"type": "entries",
+					"name": "守卫直觉",
+					"entries": [
+						"当你进行一次智力（{@skill 调查|XPHB}）检定或使用{@item 盗贼工具|XPHB}的属性检定时，你可以掷{@dice 1d4}并将掷出的数值添加到该属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Wards and Seals",
+					"type": "entries",
+					"name": "警卫封印",
+					"entries": [
+						"你总是准备了{@spell 警报术|XPHB}和{@spell 法师护甲|XPHB}法术。你可以无需法术位施放每个法术一次，并且当你完成一次{@variantrule 长休|XPHB}后，你重新获得以此方式施放它的能力。",
+						"你也可以使用任何你拥有的相应等级的法术位来施放这些法术。智力、感知或魅力是这些法术的施法属性（在你选择此专长时选择）。",
+						"当你达到角色等级3时，你还会始终准备好{@spell 秘法锁|XPHB}法术并能以同样的方式施放它。"
+					]
+				},
+				{
+					"ENG_name": "Spells of the Mark",
+					"name": "龙纹法术",
+					"type": "entries",
+					"entries": [
+						"如果你拥有施法或契约魔法职业特性，警戒龙纹法术列表中的法术将被添加到该特性的法术列表中。",
+						{
+							"type": "table",
+							"caption": "警戒龙纹法术",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"法术环阶",
+								"法术"
+							],
+							"rows": [
+								[
+									"1",
+									"{@spell 黯冰狱铠|XPHB}, {@spell 庇护术|XPHB}"
+								],
+								[
+									"2",
+									"{@spell 敲击术|XPHB}, {@spell 涅斯图魔法灵光|XPHB}"
+								],
+								[
+									"3",
+									"{@spell 守卫刻文|XPHB}, {@spell 防护法阵|XPHB}"
+								],
+								[
+									"4",
+									"{@spell 李欧蒙秘藏箱|XPHB}, {@spell 魔邓肯忠犬|XPHB}"
+								],
+								[
+									"5",
+									"{@spell 防活物护罩|XPHB}"
+								]
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Martial Adept",
 			"name": "战技专家",
 			"source": "PHB",
@@ -7397,6 +9997,56 @@
 					"type": "entries",
 					"entries": [
 						"当你持握一把{@item 长棍|XPHB}、一把{@item 矛|XPHB}或一把{@filter 同时具有重型词条与触及词条的武器|items|type=melee weapon;ranged weapon|property=heavy;reach=sand}时，你可以使用一个{@variantrule 反应|XPHB}对进入该武器触及范围内的生物进行一次近战攻击。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Potent Dragonmark",
+			"name": "强力龙纹",
+			"source": "EFA",
+			"page": 45,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"featCategory": [
+						"D"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						],
+						"amount": 1,
+						"entry": "将你的龙纹专长所使用的施法属性值提高1点，最高为20。"
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Dragonmark Preparation",
+					"type": "entries",
+					"name": "龙纹预备",
+					"entries": [
+						"你总是准备着标记法术列表上的法术（如果有的话）。"
+					]
+				},
+				{
+					"ENG_name": "Dragonmark Spellcasting",
+					"type": "entries",
+					"name": "龙纹施法",
+					"entries": [
+						"你拥有一个额外的法术位来施放由你的龙纹专长所授予的法术。该法术位的等级为你等级的一半（向上取整），最高为5环。当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时，你恢复已消耗的法术位。你只能使用此法术位来施放因你的龙纹专长或此专长的龙纹预备增益而预备的法术。"
 					]
 				}
 			]
@@ -9057,7 +11707,7 @@
 				}
 			],
 			"entries": [
-				"你获得共计三项自选的{@table 技能列表; 技能|XPHB|技能}和{@filter 工具|items|type=工具;工匠工具;乐器;游戏套装;载具（陆地）;载具（水上）}熟练。",
+				"你获得任意三个{@table 技能列表; 技能|XPHB|技能}或{@filter 工具|items|type=工具;工匠工具;乐器;赌具}的熟练项。",
 				{
 					"ENG_name": "Repeatable",
 					"name": "可重复",

@@ -950,167 +950,93 @@
 			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 192,
-			"size": [
-				"H"
-			],
-			"type": "giant",
+			"_copy": {
+				"ENG_name": "Cloud Giant",
+				"name": "云巨人",
+				"source": "MM",
+				"_mod": {
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"ENG_name": "Spellcasting",
+								"name": "施法",
+								"type": "spellcasting",
+								"headerEntries": [
+									"Sansuri施放以下法术之一，不需要材料成分，使用智力作为施法能力（法术豁免{@dc 15}；法术攻击命中{@hit 7}）："
+								],
+								"will": [
+									"{@spell 法师之手}",
+									"{@spell 传讯术}",
+									"{@spell 魔法伎俩}",
+									"{@spell 冷冻射线}"
+								],
+								"daily": {
+									"2e": [
+										"{@spell 秘法锁}",
+										"{@spell 造风术}",
+										"{@spell 隐形术}",
+										"{@spell 魔法飞弹}",
+										"{@spell 隐形仆役}"
+									],
+									"1e": [
+										"{@spell 法术无效结界}",
+										"{@spell 加速术}",
+										"{@spell 催眠图纹}",
+										"{@spell 冰风暴}",
+										"{@spell 闪电束}",
+										"{@spell 魔邓肯之剑}",
+										"{@spell 力场墙}"
+									]
+								},
+								"ability": "int",
+								"displayAs": "action"
+							}
+						]
+					},
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "钉头锤",
+							"items": [
+								{
+									"ENG_name": "Spear",
+									"name": "矛",
+									"entries": [
+										"{@atk mw} 命中{@hit 12}，触及10尺，单一目标。{@h}21（{@damage 3d8 + 8}）点穿刺伤害。"
+									]
+								}
+							]
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "多重攻击",
+							"items": [
+								{
+									"ENG_name": "Multiattack",
+									"name": "多重攻击",
+									"entries": [
+										"桑苏里进行两次矛攻击。"
+									]
+								}
+							]
+						}
+					]
+				}
+			},
 			"alignment": [
 				"N",
 				"E"
 			],
-			"ac": [
-				{
-					"ac": 14,
-					"from": [
-						"天生护甲"
-					]
-				}
-			],
-			"hp": {
-				"average": 200,
-				"formula": "16d12 + 96"
-			},
-			"speed": {
-				"walk": 40
-			},
-			"str": 27,
-			"dex": 10,
-			"con": 22,
 			"int": 16,
-			"wis": 16,
-			"cha": 16,
-			"save": {
-				"con": "+10",
-				"wis": "+7",
-				"cha": "+7"
-			},
-			"skill": {
-				"insight": "+7",
-				"perception": "+7"
-			},
-			"passive": 17,
 			"languages": [
 				"气族语",
 				"通用语",
 				"巨人"
 			],
 			"cr": "11",
-			"spellcasting": [
-				{
-					"ENG_name": "Innate Spellcasting",
-					"name": "天生施法",
-					"type": "spellcasting",
-					"headerEntries": [
-						"桑苏里的先天施法能力是魅力。她能够先天施放以下法术，无需任何材料成分："
-					],
-					"will": [
-						"{@spell 侦测魔法}",
-						"{@spell 云雾术}",
-						"{@spell 光亮术}"
-					],
-					"daily": {
-						"3e": [
-							"{@spell 羽落术}",
-							"{@spell 飞行术}",
-							"{@spell 迷踪步}",
-							"{@spell 心灵遥控}"
-						],
-						"1e": [
-							"{@spell 操控天气}",
-							"{@spell 气化形体}"
-						]
-					},
-					"ability": "cha"
-				},
-				{
-					"ENG_name": "Spellcasting",
-					"name": "施法",
-					"type": "spellcasting",
-					"headerEntries": [
-						"Sansuri施放以下法术之一，不需要材料成分，使用智力作为施法能力（法术豁免{@dc 15}；法术攻击命中{@hit 7}）："
-					],
-					"will": [
-						"{@spell 法师之手}",
-						"{@spell 传讯术}",
-						"{@spell 魔法伎俩}",
-						"{@spell 冷冻射线}"
-					],
-					"daily": {
-						"2e": [
-							"{@spell 秘法锁}",
-							"{@spell 造风术}",
-							"{@spell 隐形术}",
-							"{@spell 魔法飞弹}",
-							"{@spell 隐形仆役}"
-						],
-						"1e": [
-							"{@spell 法术无效结界}",
-							"{@spell 加速术}",
-							"{@spell 催眠图纹}",
-							"{@spell 冰风暴}",
-							"{@spell 闪电束}",
-							"{@spell 魔邓肯之剑}",
-							"{@spell 力场墙}"
-						]
-					},
-					"ability": "int",
-					"displayAs": "action"
-				}
-			],
-			"trait": [
-				{
-					"ENG_name": "Keen Smell",
-					"name": "敏锐嗅觉",
-					"entries": [
-						"Sansuri在依赖嗅觉的感知（{@skill 察觉}）检定上有优势。"
-					]
-				}
-			],
-			"action": [
-				{
-					"ENG_name": "Fling",
-					"name": "抛掷",
-					"entries": [
-						"桑苏里试图将她10英尺范围内的一个中型或小型生物投掷出去。目标必须成功通过一个{@dc 20}敏捷豁免检定，否则将被桑苏里选定方向水平投掷至多60英尺，并{@condition 倒地}，每被投掷10英尺便受到{@damage 1d8}钝击伤害。"
-					]
-				},
-				{
-					"ENG_name": "Wind Aura",
-					"name": "风之灵光",
-					"entries": [
-						"一股魔法风环绕着桑苏里。这个风的光环是一个10尺半径的球体，只要桑苏里保持对它的{@status 专注}（就像{@status 专注||专注于}于一个法术一样），它就会持续存在。当光环生效时，桑苏里对远程武器攻击的AC获得+2的加值，并且光环内的所有明火都会被熄灭，除非它们是魔法火焰。"
-					]
-				},
-				{
-					"ENG_name": "Multiattack",
-					"name": "多重攻击",
-					"entries": [
-						"桑苏里进行两次矛攻击。"
-					]
-				},
-				{
-					"ENG_name": "Morningstar",
-					"name": "钉头锤",
-					"entries": [
-						"{@atk mw} 命中{@hit 12}，触及10尺，单一目标。{@h}21（{@damage 3d8 + 8}）点穿刺伤害。"
-					]
-				},
-				{
-					"ENG_name": "Rock",
-					"name": "掷石",
-					"entries": [
-						"{@atk rw} 命中{@hit 12}，射程60/240尺，单一目标。{@h}30 ({@damage 4d10 + 8}) 点钝击伤害。"
-					]
-				}
-			],
 			"attachedItems": [
-				"钉头锤|PHB"
-			],
-			"traitTags": [
-				"敏锐感官"
-			],
-			"actionTags": [
-				"多重攻击"
+				"矛|PHB"
 			],
 			"languageTags": [
 				"AU",
@@ -1138,16 +1064,10 @@
 				"RCH",
 				"RW"
 			],
-			"conditionInflict": [
-				"倒地"
-			],
 			"conditionInflictSpell": [
 				"魅惑",
 				"失能",
 				"隐形"
-			],
-			"savingThrowForced": [
-				"敏捷"
 			],
 			"savingThrowForcedSpell": [
 				"敏捷",
@@ -3474,6 +3394,7 @@
 				"I"
 			],
 			"miscTags": [
+				"AOE",
 				"MW",
 				"RCH",
 				"RW"

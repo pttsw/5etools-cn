@@ -6,6 +6,120 @@
 	},
 	"background": [
 		{
+			"ENG_name": "Aberrant Heir",
+			"name": "畸变继承人",
+			"source": "EFA",
+			"page": 25,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"aberrant dragonmark|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"history": true,
+					"intimidation": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"匕首|xphb",
+						"disguise kit|xphb",
+						"服装|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 1600
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 异种龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 历史|XPHB}和{@skill 威吓|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 易容工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 匕首|XPHB}、{@item 易容工具|XPHB}、{@item 服装|XPHB}、{@item 旅行者服装|XPHB}，16 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Acolyte",
 			"name": "侍僧",
 			"source": "PHB",
@@ -677,6 +791,123 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "Archaeologist",
+			"name": "考古学家",
+			"source": "EFA",
+			"page": 26,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"skilled|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"history": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"cartographer's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"cartographer's tools|xphb",
+						"牛眼提灯|xphb",
+						"地图|xphb",
+						"地图或卷轴匣|xphb",
+						"铲子|xphb",
+						"帐篷|xphb",
+						"旅行者服装|xphb",
+						{
+							"value": 1700
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 熟习|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 历史|XPHB}和{@skill 生存|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 制图工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 制图工具|XPHB}、{@item 牛眼提灯|XPHB}、{@item 地图|XPHB}、{@item 地图或卷轴匣|XPHB}、{@item 铲子|XPHB}、{@item 帐篷|XPHB}、{@item 旅行者服装|XPHB}，17 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Archaeologist",
@@ -7819,7 +8050,7 @@
 							"ENG_name": "Equipment:",
 							"name": "装备：",
 							"type": "item",
-							"entry": "选择A或B：(A) {@item 短弓|XPHB}、20支箭、{@item 草药工具|XPHB}、{@item 铺盖|XPHB}、{@item 毯子|XPHB}、{@item 小包|XPHB}、{@item 帐篷|XPHB}、{@item 旅行者服装|XPHB}，13 GP；或 (B) 50 GP"
+							"entry": "选择A或B：（A）{@item 短弓|XPHB}，{@item 箭|XPHB|20支箭}，{@item 草药工具|XPHB}，{@item 铺盖|XPHB}，{@item 毯子|XPHB}，{@item 小包|XPHB}，{@item 帐篷|XPHB}，{@item 旅行者服装|XPHB}，13金币；或（B）50金币"
 						}
 					]
 				}
@@ -14953,8 +15184,123 @@
 		{
 			"ENG_name": "House Agent",
 			"name": "房产代理",
+			"source": "EFA",
+			"page": 26,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"lucky|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"investigation": true,
+					"persuasion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyArtisansTool": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"工匠工具|xphb",
+						"高档服装|xphb",
+						{
+							"value": 2000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 幸运|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 调查|XPHB} 和 {@skill 游说|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种{@item 工匠工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 工匠工具|XPHB}（同上），{@item 高档服装|XPHB}，20 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Agent",
+			"name": "房产代理",
 			"source": "ERLW",
 			"page": 53,
+			"reprintedAs": [
+				"房产代理|EFA"
+			],
 			"skillProficiencies": [
 				{
 					"investigation": true,
@@ -15350,6 +15696,1495 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"ENG_name": "House Cannith Heir",
+			"name": "卡尼斯家族继承人",
+			"source": "EFA",
+			"page": 27,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"int"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"int"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of making|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"investigation": true,
+					"sleight of hand": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyArtisansTool": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"工匠工具|xphb",
+						"撬棍|xphb",
+						"高档服装|xphb",
+						{
+							"item": "小包|xphb",
+							"displayName": "小包",
+							"quantity": 2
+						},
+						{
+							"value": 1700
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 创造龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 调查|XPHB}和{@skill 巧手|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种{@item 工匠工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 工匠工具|XPHB}（同上），{@item 撬棍|XPHB}，{@item 高档服装|XPHB}，2 {@item 小包|XPHB|小包}，17 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Deneith Heir",
+			"name": "邓奈斯家族继承人",
+			"source": "EFA",
+			"page": 27,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of sentinel|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"矛|xphb",
+						"短弓|xphb",
+						"箭(20)|xphb",
+						"赌具|xphb",
+						"高档服装|xphb",
+						"医疗包|xphb",
+						"箭袋|xphb",
+						{
+							"value": 100
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 守护龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB}和{@skill 察觉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种 {@item 赌具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 矛|XPHB}，{@item 短弓|XPHB}，{@item 箭|XPHB|20支箭}，{@item 赌具|XPHB}（同上），{@item 高档服装|XPHB}，{@item 医疗包|XPHB}，{@item 箭袋|XPHB}，1 GP；或（B）50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Ghallanda Heir",
+			"name": "伽兰达家族继承人",
+			"source": "EFA",
+			"page": 28,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of hospitality|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"persuasion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"cook's utensils|xphb",
+						"高档服装|xphb",
+						"铁壶|xphb",
+						"油灯|xphb",
+						{
+							"item": "灯油|xphb",
+							"quantity": 5
+						},
+						"香水|xphb",
+						{
+							"value": 2600
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 招待龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB}和{@skill 游说|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 厨师工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 厨师工具|XPHB}、{@item 高档服装|XPHB}、{@item 铁壶|XPHB}、{@item 油灯|XPHB}、{@item 灯油|XPHB}（5瓶）、{@item 香水|XPHB}，26 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Jorasco Heir",
+			"name": "乔拉斯克家族继承人",
+			"source": "EFA",
+			"page": 28,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of healing|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"medicine": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"herbalism kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"herbalism kit|xphb",
+						"高档服装|xphb",
+						"医疗包|xphb",
+						{
+							"value": 2500
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，体质，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 医疗龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 医药|XPHB} 和 {@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 草药工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 草药工具|XPHB}、{@item 高档服装|XPHB}、{@item 医疗包|XPHB}，25 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Kundarak Heir",
+			"name": "昆达拉克家族继承人",
+			"source": "EFA",
+			"page": 29,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"int"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"con",
+								"int"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of warding|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"investigation": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"thieves' tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"thieves' tools|xphb",
+						"高档服装|xphb",
+						{
+							"value": 1000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，体质，智力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 警戒龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 奥秘|XPHB}和{@skill 调查|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 盗贼工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 盗贼工具|XPHB}, {@item 高档服装|XPHB}, 10 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Lyrandar Heir",
+			"name": "林兰德家族继承人",
+			"source": "EFA",
+			"page": 29,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"str",
+								"dex",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of storm|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"acrobatics": true,
+					"nature": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"navigator's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"领航工具|xphb",
+						"高档服装|xphb",
+						{
+							"value": 1000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "力量，敏捷，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 暴风龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 特技|XPHB}和{@skill 自然|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 领航工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 领航工具|XPHB}、{@item 高档服装|XPHB}、10 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Medani Heir",
+			"name": "梅丹尼家族继承人",
+			"source": "EFA",
+			"page": 30,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of detection|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"investigation": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"disguise kit|xphb",
+						"高档服装|xphb",
+						{
+							"value": 1000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 侦测龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB}和{@skill 调查|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 易容工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 易容工具|XPHB}, {@item 高档服装|XPHB}, 10 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Orien Heir",
+			"name": "欧瑞恩家族继承人",
+			"source": "EFA",
+			"page": 30,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"int"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"int"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of passage|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"acrobatics": true,
+					"athletics": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"cartographer's tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"cartographer's tools|xphb",
+						"高档服装|xphb",
+						"地图|xphb",
+						"地图或卷轴匣|xphb",
+						{
+							"value": 1800
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，体质，智力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 通行龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 特技|XPHB}和{@skill 运动|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 制图工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 制图工具|XPHB}、{@item 高档服装|XPHB}、{@item 地图|XPHB}、{@item 地图或卷轴匣|XPHB}，18 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Phiarlan Heir",
+			"name": "费奥兰家族继承人",
+			"source": "EFA",
+			"page": 31,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of shadow|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"disguise kit|xphb",
+						"高档服装|xphb",
+						{
+							"value": 1000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 阴影龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 欺瞒|XPHB} 和 {@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 易容工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 易容工具|XPHB}, {@item 高档服装|XPHB}, 10 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Sivis Heir",
+			"name": "西维斯家族继承人",
+			"source": "EFA",
+			"page": 31,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of scribing|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"history": true,
+					"perception": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"calligrapher's supplies": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"书法工具|xphb",
+						"高档服装|xphb",
+						"墨水|xphb",
+						{
+							"item": "墨水笔|xphb",
+							"quantity": 5
+						},
+						{
+							"item": "纸张|xphb",
+							"quantity": 30
+						},
+						{
+							"item": "羊皮纸|xphb",
+							"quantity": 9
+						},
+						{
+							"value": 800
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "智力，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 抄录龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 历史|XPHB} 和 {@skill 察觉|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 书法工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 书法工具|XPHB}、{@item 高档服装|XPHB}、{@item 墨水|XPHB}、5支{@item 墨水笔|XPHB|墨水笔}、{@item 纸张|XPHB}（30张）、{@item 羊皮纸|XPHB}（9张）、8 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Tharashk Heir",
+			"name": "萨拉释克家族继承人",
+			"source": "EFA",
+			"page": 32,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of finding|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"perception": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"赌具|xphb",
+						"攀爬工具|xphb",
+						"高档服装|xphb",
+						"狩猎陷阱|xphb",
+						"手铐|xphb",
+						{
+							"value": 200
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，智力，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 探索龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 察觉|XPHB} 和 {@skill 生存|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种 {@item 赌具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 赌具|XPHB}（同上），{@item 攀爬工具|XPHB}，{@item 高档服装|XPHB}，{@item 狩猎陷阱|XPHB}，{@item 镣铐|XPHB}，2 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Thuranni Heir",
+			"name": "索兰尼家族继承人",
+			"source": "EFA",
+			"page": 32,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of shadow|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"performance": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyMusicalInstrument": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"乐器|xphb",
+						"服装|xphb",
+						"高档服装|xphb",
+						{
+							"value": 1300
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 阴影龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 表演|XPHB}和{@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种{@item 乐器|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 乐器|XPHB}（同上），{@item 服装|XPHB}，{@item 高档服装|XPHB}，13 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "House Vadalis Heir",
+			"name": "瓦塔利斯家族继承人",
+			"source": "EFA",
+			"page": 33,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"mark of handling|efa": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"animal handling": true,
+					"nature": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"herbalism kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"herbalism kit|xphb",
+						"高档服装|xphb",
+						"捕网|phb",
+						{
+							"value": 2900
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 畜牧龙纹|EFA}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 驯兽|XPHB}和{@skill 自然|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 草药工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 草药工具|XPHB}, {@item 高档服装|XPHB}, {@item 捕网|PHB}, 29 GP；或(B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ice Fisher",
@@ -15900,6 +17735,124 @@
 					}
 				}
 			},
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Inquisitive",
+			"name": "调查员",
+			"source": "EFA",
+			"page": 33,
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"alert|xphb": true
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"investigation": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"thieves' tools": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"thieves' tools|xphb",
+						"牛眼提灯|xphb",
+						"撬棍|xphb",
+						{
+							"item": "灯油|xphb",
+							"quantity": 10
+						},
+						"旅行者服装|xphb",
+						{
+							"value": 1000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，智力，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 警觉|XPHB}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB}和{@skill 调查|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 盗贼工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 盗贼工具|XPHB}、{@item 牛眼提灯|XPHB}、{@item 撬棍|XPHB}、{@item 灯油|XPHB}（10瓶）、{@item 旅行者服装|XPHB}，10 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		},

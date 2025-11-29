@@ -1983,10 +1983,69 @@
 		{
 			"ENG_name": "Changeling",
 			"name": "幻身灵",
+			"source": "EFA",
+			"page": 34,
+			"edition": "one",
+			"creatureTypes": [
+				"精类"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"欺瞒",
+							"洞悉",
+							"威吓",
+							"游说"
+						],
+						"count": 2
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型(约4-7尺高)或小型(约2-4尺高)，在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Changeling Instincts",
+					"name": "幻身灵本能",
+					"type": "entries",
+					"entries": [
+						"得益于你与精类国度的联系，你从以下技能中选择两个获得熟练项：{@skill 欺瞒|XPHB}、{@skill 洞悉|XPHB}、{@skill 威吓|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Shape-Shifter",
+					"type": "entries",
+					"name": "化兽者",
+					"entries": [
+						"作为一个动作，你可以变形以改变你的外貌和声音。你决定变化的细节，包括你的肤色、头发长度和性别。你还可以调整你的身高和体重，并可以在中型和小型之间改变你的体型。你可以使自己看起来像另一个可玩种族的成员，但你的游戏数据不会改变。你不能复制你从未见过的个体的外貌，并且你必须采用与你具有相同基本肢体排列的形态。此特质不会改变你的服装和装备。",
+						"当你使用此特质变形时，你在魅力检定上具有{@variantrule 优势|XPHB}。",
+						"你保持新形态直到你用一个动作恢复你的真实形态。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Changeling",
+			"name": "幻身灵",
 			"source": "ERLW",
 			"page": 17,
 			"reprintedAs": [
-				"幻身灵|MPMM"
+				"幻身灵|MPMM",
+				"幻身灵|EFA"
 			],
 			"size": [
 				"M"
@@ -2095,6 +2154,9 @@
 			"name": "幻身灵",
 			"source": "MPMM",
 			"page": 10,
+			"reprintedAs": [
+				"幻身灵|EFA"
+			],
 			"lineage": "VRGR",
 			"creatureTypes": [
 				"精类"
@@ -3799,7 +3861,7 @@
 					"ENG_name": "Tool Proficiency",
 					"name": "工具熟练项",
 					"entries": [
-						"你获得一个工匠工具的熟练项，从以下项目中自选其一：{@item 铁匠工具|PHB}，{@item 酿酒工具|PHB}，或{@item mason's tools|PHB}。"
+						"你获得自选一种{@item 工匠工具|PHB}的熟练项：{@item 铁匠工具|PHB}、{@item 酿酒工具|PHB}或{@item mason's tools|PHB}。"
 					],
 					"type": "entries"
 				},
@@ -4161,7 +4223,7 @@
 									"rows": [
 										[
 											"洛温",
-											"你知晓{@spell 荆棘之鞭|XPHB}戏法。每当你完成一次长休时，你可以用{@filter 德鲁伊法术列表|spells|class=德鲁伊}中的另一个戏法替换该戏法。",
+											"你知晓{@spell 荆棘之鞭|XPHB}戏法。每当你完成一次{@variantrule 长休|XPHB}时，你可以将该戏法替换为{@filter 德鲁伊法术列表|spells|class=德鲁伊}中的另一个戏法。",
 											"{@spell 命令术|XPHB}",
 											"{@spell 沉默术|XPHB}"
 										],
@@ -4264,7 +4326,7 @@
 								"name": "精灵血系（洛温）",
 								"type": "entries",
 								"entries": [
-									"你属于一个赋予你超自然能力的血统。你知晓{@spell 荆棘之鞭|XPHB}戏法。每当你完成一次长休时，你可以用{@filter 德鲁伊法术列表|spells|class=德鲁伊}中的另一个戏法替换该戏法。",
+									"你属于一个赋予你超自然能力的血统。你知晓{@spell 荆棘之鞭|XPHB}戏法。每当你完成一次{@variantrule 长休|XPHB}时，你可以将该戏法替换为来自{@filter 德鲁伊法术列表|spells|class=德鲁伊}的另一个戏法。",
 									"当你达到角色等级3时，你学会{@spell 命令术|XPHB}法术。当你达到角色等级5时，你还学会{@spell 沉默术|XPHB}法术。你总是准备着这些法术，并且你可以无需法术位各施放一次这些法术。一旦你使用此特质施放了其中任一法术，直到你完成一次{@variantrule 长休|XPHB}前，你都无法再次使用此特质施放该法术。你也可以使用你拥有的相应等级的法术位来施放该法术。",
 									"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
 								]
@@ -4647,19 +4709,19 @@
 							"rows": [
 								[
 									"卓尔",
-									"你的黑暗视觉提升至120尺。你习得戏法{@spell 舞光术|XPHB}。",
+									"你的{@sense 黑暗视觉|XPHB}射程增加到120尺。你还知道{@spell 舞光术|XPHB}戏法。",
 									"{@spell 妖火|XPHB}",
 									"{@spell 黑暗术|XPHB}"
 								],
 								[
 									"高等精灵",
-									"你知晓戏法{@spell 魔法伎俩|XPHB}。每当你完成长休时，你可以将它替换为另一个{@filter 巫师法术列表中的戏法|spells|level=0|class=法师}。",
+									"你知晓{@spell 魔法伎俩|XPHB}戏法。每当你完成一次{@variantrule 长休|XPHB}后，你可以将该戏法替换为{@filter 巫师法术列表中的戏法|spells|level=0|class=法师}。",
 									"{@spell 侦测魔法|XPHB}",
 									"{@spell 迷踪步|XPHB}"
 								],
 								[
 									"木精灵",
-									"你的速度提升至35尺。你知晓戏法{@spell 德鲁伊伎俩|XPHB}。",
+									"你的{@variantrule 速度|XPHB}增加至35尺。你还知晓{@spell 德鲁伊伎俩|XPHB}戏法。",
 									"{@spell 大步奔行|XPHB}",
 									"{@spell 行动无踪|XPHB}"
 								]
@@ -4709,7 +4771,7 @@
 									"name": "精灵血系 (卓尔)",
 									"type": "entries",
 									"entries": [
-										"你属于一支精灵血系，并因此获得了超自然能力。你的黑暗视觉提升至120尺。你习得戏法{@spell 舞光术|XPHB}。",
+										"你属于一个赋予你超自然能力的血统。你的{@sense 黑暗视觉|XPHB}范围增加到120尺。你还知晓{@spell 舞光术|XPHB}戏法。",
 										"当你到达3级时，你习得法术{@spell 妖火|XPHB}。当你到达5级时，你习得法术{@spell 黑暗术|XPHB}。你时刻准备着这道习得的法术，且可以不消耗法术位施展此法术一次，当你完成一次{@variantrule 长休|XPHB}时，你重获施展该道法术的能力。你也可以用任何你拥有的相应环阶法术位施展该道法术。",
 										"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
 									]
@@ -4776,7 +4838,7 @@
 								"name": "精灵血系 (高等精灵)",
 								"type": "entries",
 								"entries": [
-									"你属于一支精灵血系，并因此获得了超自然能力。你习得戏法{@spell 魔法伎俩|XPHB}。每当你完成长休时，你可以将它替换为另一个{@filter 巫师法术列表中的戏法|spells|level=0|class=法师}。",
+									"你属于一个赋予你超自然能力的血统。你知晓{@spell 魔法伎俩|XPHB}戏法。每当你完成一次{@variantrule 长休|XPHB}时，你可以将该戏法替换为{@filter 巫师法术列表中的戏法|spells|level=0|class=法师}。",
 									"当你到达3级时，你习得法术{@spell 侦测魔法|XPHB}。当你到达5级时，你习得法术{@spell 迷踪步|XPHB}。你时刻准备着这道习得的法术，且可以不消耗法术位施展此法术一次，当你完成一次{@variantrule 长休|XPHB}时，你重获施展该道法术的能力。你也可以用任何你拥有的相应环阶法术位施展该道法术。",
 									"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
 								]
@@ -4833,7 +4895,7 @@
 								"name": "精灵血系 (木精灵)",
 								"type": "entries",
 								"entries": [
-									"你属于一支精灵血系，并因此获得了超自然能力。你的速度提升至35尺。你知晓戏法{@spell 德鲁伊伎俩|XPHB}。",
+									"你属于一个赋予你超自然能力的血统。你的{@variantrule 速度|XPHB}增加至35尺。你还知晓{@spell 德鲁伊伎俩|XPHB}戏法。",
 									"当你到达3级时，你习得法术{@spell 大步奔行|XPHB}。当你到达5级时，你习得法术{@spell 行动无踪|XPHB}。你时刻准备着这道习得的法术，且可以不消耗法术位施展此法术一次，当你完成一次{@variantrule 长休|XPHB}时，你重获施展该道法术的能力。你也可以用任何你拥有的相应环阶法术位施展该道法术。",
 									"当你选择血系时，选择智力、感知、或魅力之一，该属性即是你用此特质施展法术时的施法属性。"
 								]
@@ -5785,7 +5847,7 @@
 					"name": "枪械精通",
 					"type": "entries",
 					"entries": [
-						"你和枪械有一种神秘连接，这背后的渊源可追溯至诘弗人的诸神，谁钟情于此类武器。你拥有所有枪械的熟练项，并无视任何枪械的装填属性。此外，使用枪械攻击最大射程内的敌人时，你的远程武器攻击检定不会因为超过常规射程具有劣势。"
+						"你与枪械有一种神秘连接，这可以追溯到诘弗人的诸神，他们曾为这类武器而欣喜。你熟练于所有枪械，并且忽略任何枪械的{@itemProperty LD||装填}属性。此外，用枪械进行远程攻击不会使你的攻击检定具有劣势。"
 					]
 				},
 				{
@@ -9032,8 +9094,75 @@
 		{
 			"ENG_name": "Kalashtar",
 			"name": "离梦人",
+			"source": "EFA",
+			"page": 35,
+			"edition": "one",
+			"creatureTypes": [
+				"异怪"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"traitTags": [
+				"技能熟练项"
+			],
+			"resist": [
+				"心灵"
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型（约6-7英尺高）"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Dual Mind",
+					"name": "双重思想",
+					"type": "entries",
+					"entries": [
+						"你在感知和魅力豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Mental Discipline",
+					"name": "磨练心智",
+					"type": "entries",
+					"entries": [
+						"你对心灵伤害具有{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Mind Link",
+					"name": "心灵链接",
+					"type": "entries",
+					"entries": [
+						"你拥有射程为你等级10倍尺的心灵感应。当你使用此特质与一个生物进行心灵感应交谈时，你可以采取一个{@action 魔法|XPHB}动作，给予该生物与你进行心灵感应交谈的能力，持续1小时或直到你采取另一个{@action 魔法|XPHB}动作来结束此效果。"
+					]
+				},
+				{
+					"ENG_name": "Severed from Dreams",
+					"name": "梦境隔绝",
+					"type": "entries",
+					"entries": [
+						"你不能成为托梦术的目标。此外，当你完成一次{@variantrule 长休|XPHB}时，你获得一个自选技能的熟练项。该熟练项持续到你完成另一次{@variantrule 长休|XPHB}为止。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Kalashtar",
+			"name": "离梦人",
 			"source": "ERLW",
 			"page": 29,
+			"reprintedAs": [
+				"离梦人|EFA"
+			],
 			"size": [
 				"M"
 			],
@@ -9490,6 +9619,98 @@
 						"你能够说、读、写通用语和赫努拉语。"
 					],
 					"type": "entries"
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Khoravar",
+			"name": "科拉瓦",
+			"source": "EFA",
+			"page": 36,
+			"edition": "one",
+			"creatureTypes": [
+				"类人生物"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"traitTags": [
+				"技能熟练项",
+				"工具熟练项"
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=牧师;德鲁伊;法师"
+								}
+							]
+						}
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型（约4-6英尺高）或小型（约2-4英尺高），在你选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你有范围为60尺的{@sense 黑暗视觉|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Fey Ancestry",
+					"name": "妖精血统",
+					"type": "entries",
+					"entries": [
+						"你在避免或结束魅惑状态的豁免检定中具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Fey Gift",
+					"name": "精类赠礼",
+					"type": "entries",
+					"entries": [
+						"你知晓交友术戏法。每当你完成一次{@variantrule 长休|XPHB}时，你可以将该戏法替换为牧师、德鲁伊或法师法术列表中的另一个戏法。智力、感知或魅力作为其施法属性（选择此种族时选择该属性）。"
+					]
+				},
+				{
+					"ENG_name": "Lethargy Resilience",
+					"type": "entries",
+					"name": "怠惰恢复力",
+					"entries": [
+						"当你为避免或结束昏迷状态而进行的豁免检定失败时，你可以改为成功。一旦你使用了这个特质，在完成{@dice 1d4}次长休前不能再使用。"
+					]
+				},
+				{
+					"ENG_name": "Skill Versatility",
+					"name": "多才多艺",
+					"type": "entries",
+					"entries": [
+						"你获得一个自选技能的熟练项或一个工具的熟练项。每当你完成一次{@variantrule 长休|XPHB}时，你可以将其替换为另一个技能或工具熟练项。"
+					]
 				}
 			],
 			"hasFluff": true,
@@ -12695,10 +12916,204 @@
 		{
 			"ENG_name": "Shifter",
 			"name": "化兽者",
+			"source": "EFA",
+			"page": 37,
+			"edition": "one",
+			"creatureTypes": [
+				"类人生物"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"特技",
+							"运动",
+							"威吓",
+							"生存"
+						]
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型(约4-7尺高)或小型(约2-4尺高)，在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Bestial Instincts",
+					"name": "野兽本能",
+					"type": "entries",
+					"entries": [
+						"引导内心的野兽，你获得下列一项自选技能的熟练项：{@skill 特技|XPHB}、{@skill 运动|XPHB}、{@skill 威吓|XPHB}或{@skill 生存|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你有范围为60尺的{@sense 黑暗视觉|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Shifting",
+					"name": "化形",
+					"type": "entries",
+					"entries": [
+						"作为{@variantrule 附赠动作|XPHB}，你可以变形以呈现更野兽化的外貌。此变形持续1分钟，或直到你以{@variantrule 附赠动作|XPHB}恢复至正常外貌。当你化形时，你获得等于2倍{@variantrule 熟练项|XPHB|熟练加值}的{@variantrule 临时生命值|XPHB}。你可以化形次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。",
+						"每当你化形时，你获得以下选项之一的增益（在选择此种族时选择）",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Beasthide",
+									"name": "兽皮",
+									"type": "item",
+									"entries": [
+										"你获得{@dice 1d6}点额外的{@variantrule 临时生命值|XPHB}。化形时，你的{@variantrule 护甲等级|XPHB}获得+1加值。"
+									]
+								},
+								{
+									"ENG_name": "Longtooth",
+									"name": "长牙",
+									"type": "item",
+									"entries": [
+										"当你化形时以及在你化形期间的其他回合中作为{@variantrule 附赠动作|XPHB}，你可以使用你伸长的尖牙进行一次{@variantrule 徒手打击|XPHB}。如果你用这次{@variantrule 徒手打击|XPHB}命中并造成伤害，你可以造成等于{@dice 1d6}加上你的力量调整值的穿刺伤害，以取代{@variantrule 徒手打击|XPHB}的正常伤害。"
+									]
+								},
+								{
+									"ENG_name": "Swiftstride",
+									"name": "疾驰",
+									"type": "item",
+									"entries": [
+										"当你处于化形状态时，你的{@variantrule 速度|XPHB}增加10尺。此外，当一个生物在其回合结束时处于你5尺范围内，你可以作为{@variantrule 反应|XPHB}移动最多10尺。此灵敏反应移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
+									]
+								},
+								{
+									"ENG_name": "Wildhunt",
+									"name": "狩猎",
+									"type": "item",
+									"entries": [
+										"化形时，你在感知检定上具有{@variantrule 优势|XPHB}。此外，你30尺内没有生物能在对你进行的攻击检定上具有{@variantrule 优势|XPHB}，除非你处于失能状态。"
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"ENG_name": "Shifter; Beasthide",
+					"name": "化兽者; 兽皮",
+					"source": "EFA",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "化形",
+								"items": {
+									"ENG_name": "Shifting (Beasthide)",
+									"name": "化形 (兽皮)",
+									"type": "entries",
+									"entries": [
+										"作为{@variantrule 附赠动作|XPHB}，你可以变形以呈现更野兽化的外貌。此变形持续1分钟，或直到你以{@variantrule 附赠动作|XPHB}恢复至正常外貌。当你化形时，你获得等于2倍{@variantrule 熟练项|XPHB|熟练加值}的{@variantrule 临时生命值|XPHB}。你可以化形次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。",
+										"每当你化形时，你获得{@dice 1d6}点额外的{@variantrule 临时生命值|XPHB}。化形期间，你的{@variantrule 护甲等级|XPHB}获得+1加值。"
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Shifter; Longtooth",
+					"name": "化兽者; 长牙",
+					"source": "EFA",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "化形",
+								"items": {
+									"ENG_name": "Shifting (Longtooth)",
+									"name": "化形 (长牙)",
+									"type": "entries",
+									"entries": [
+										"作为{@variantrule 附赠动作|XPHB}，你可以变形以呈现更野兽化的外貌。此变形持续1分钟，或直到你以{@variantrule 附赠动作|XPHB}恢复至正常外貌。当你化形时，你获得等于2倍{@variantrule 熟练项|XPHB|熟练加值}的{@variantrule 临时生命值|XPHB}。你可以化形次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。",
+										"当你化形时以及在你化形期间的其他回合中作为{@variantrule 附赠动作|XPHB}，你可以使用你伸长的尖牙进行一次{@variantrule 徒手打击|XPHB}。如果你用这次{@variantrule 徒手打击|XPHB}命中并造成伤害，你可以造成等于{@dice 1d6}加上你的力量调整值的穿刺伤害，以取代{@variantrule 徒手打击|XPHB}的正常伤害。"
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Shifter; Swiftstride",
+					"name": "化兽者; 疾驰",
+					"source": "EFA",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "化形",
+								"items": {
+									"ENG_name": "Shifting (Swiftstride)",
+									"name": "化形 (疾驰)",
+									"type": "entries",
+									"entries": [
+										"作为{@variantrule 附赠动作|XPHB}，你可以变形以呈现更野兽化的外貌。此变形持续1分钟，或直到你以{@variantrule 附赠动作|XPHB}恢复至正常外貌。当你化形时，你获得等于2倍{@variantrule 熟练项|XPHB|熟练加值}的{@variantrule 临时生命值|XPHB}。你可以化形次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。",
+										"当你处于化形状态时，你的{@variantrule 速度|XPHB}增加10尺。此外，当一个生物在其回合结束时处于你5尺范围内，你可以作为{@variantrule 反应|XPHB}移动最多10尺。此灵敏反应移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Shifter; Wildhunt",
+					"name": "化兽者; 狩猎",
+					"source": "EFA",
+					"_mod": {
+						"entries": [
+							{
+								"mode": "replaceArr",
+								"replace": "化形",
+								"items": {
+									"ENG_name": "Shifting (Wildhunt)",
+									"name": "化形 (狩猎)",
+									"type": "entries",
+									"entries": [
+										"作为{@variantrule 附赠动作|XPHB}，你可以变形以呈现更野兽化的外貌。此变形持续1分钟，或直到你以{@variantrule 附赠动作|XPHB}恢复至正常外貌。当你化形时，你获得等于2倍{@variantrule 熟练项|XPHB|熟练加值}的{@variantrule 临时生命值|XPHB}。你可以化形次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。",
+										"化形时，你在感知检定上具有{@variantrule 优势|XPHB}。此外，你30尺内没有生物能在对你进行的攻击检定上具有{@variantrule 优势|XPHB}，除非你处于失能状态。"
+									]
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ENG_name": "Shifter",
+			"name": "化兽者",
 			"source": "ERLW",
 			"page": 33,
 			"reprintedAs": [
-				"化兽者|MPMM"
+				"化兽者|MPMM",
+				"化兽者|EFA"
 			],
 			"size": [
 				"M"
@@ -12787,6 +13202,9 @@
 			"name": "化兽者",
 			"source": "MPMM",
 			"page": 32,
+			"reprintedAs": [
+				"化兽者|EFA"
+			],
 			"lineage": "VRGR",
 			"size": [
 				"M"
@@ -13513,7 +13931,7 @@
 					"name": "副臂",
 					"type": "entries",
 					"entries": [
-						"在你的两只主臂下方，还拥有两只稍微小一些的副臂。这些副臂可以用于操纵一个物件、打开或关闭一扇门或容器、捡起或放下一个微型物件、或持用一把具有轻型属性的武器。"
+						"你有两条稍小的副臂位于你的主臂下方。副臂可以操纵一个物件、打开或关闭一扇门或容器、拾起或放下一个微型物件，或挥舞一把具有{@itemProperty L||光亮术}属性的武器。"
 					]
 				},
 				{
@@ -13740,19 +14158,19 @@
 							"rows": [
 								[
 									"深渊语",
-									"你获得对毒素伤害的抗性。你习得戏法{@spell 毒气喷溅|XPHB}。",
+									"你拥有对毒素伤害的{@variantrule 抗性|XPHB}。你还知晓{@spell 毒气喷溅|XPHB}戏法。",
 									"{@spell 致病射线|XPHB}",
 									"{@spell 定身类人|XPHB}"
 								],
 								[
 									"冥界",
-									"你获得对暗蚀伤害的抗性。你习得戏法{@spell 颤栗之触|XPHB}。",
+									"你拥有对黯蚀伤害的{@variantrule 抗性|XPHB}。你还知晓{@spell 颤栗之触|XPHB}戏法。",
 									"{@spell 虚假生命|XPHB}",
 									"{@spell 衰弱射线|XPHB}"
 								],
 								[
 									"炼狱语",
-									"你获得对火焰伤害的抗性。你习得戏法{@spell 火焰箭|XPHB}。",
+									"你拥有对火焰伤害的{@variantrule 抗性|XPHB}。你还知道{@spell 火焰箭|XPHB}戏法。",
 									"{@spell 炼狱叱喝|XPHB}",
 									"{@spell 黑暗术|XPHB}"
 								]
@@ -14939,8 +15357,95 @@
 		{
 			"ENG_name": "Warforged",
 			"name": "战俑",
+			"source": "EFA",
+			"page": 38,
+			"edition": "one",
+			"creatureTypes": [
+				"构装体"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"traitTags": [
+				"修整强化",
+				"天生护甲"
+			],
+			"skillProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"resist": [
+				"毒素"
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型（约6-8英尺高）或小型（约3-4英尺高），在你选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Construct Resilience",
+					"type": "entries",
+					"name": "构装体恢复力",
+					"entries": [
+						"你对毒素伤害具有{@variantrule 抗性|XPHB}。你在避免或结束中毒状态的豁免检定上也有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Integrated Protection",
+					"name": "集成防护",
+					"type": "entries",
+					"entries": [
+						"你获得{@variantrule 护甲等级|XPHB}的+1加值。此外，你穿戴的护甲在你活着时不会违背你的意愿被移除。"
+					]
+				},
+				{
+					"ENG_name": "Sentry's Rest",
+					"name": "哨兵式休息",
+					"type": "entries",
+					"entries": [
+						"你不需要睡眠，魔法也不能使你陷入睡眠。如果你在6小时内保持无法行动且静止的状态，你可以完成一次{@variantrule 长休|XPHB}。在此期间，你看起来是惰性的但保持清醒。"
+					]
+				},
+				{
+					"ENG_name": "Specialized Design",
+					"name": "专业设计",
+					"type": "entries",
+					"entries": [
+						"你选择一项技能和一种工具，获得其熟练。"
+					]
+				},
+				{
+					"ENG_name": "Tireless",
+					"type": "entries",
+					"name": "不知疲倦",
+					"entries": [
+						"你不会因脱水、饥饿或窒息获得{@condition 力竭|XPHB}等级。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Warforged",
+			"name": "战俑",
 			"source": "ERLW",
 			"page": 35,
+			"reprintedAs": [
+				"战俑|EFA"
+			],
 			"size": [
 				"M"
 			],
@@ -16322,6 +16827,12 @@
 			"raceName": "矮人",
 			"raceSource": "PHB",
 			"page": 51,
+			"reprintedAs": [
+				{
+					"uid": "警戒龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"int": 1
@@ -16777,6 +17288,12 @@
 			"raceName": "精灵",
 			"raceSource": "PHB",
 			"page": 49,
+			"reprintedAs": [
+				{
+					"uid": "阴影龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"cha": 1
@@ -18360,6 +18877,12 @@
 			"raceName": "侏儒",
 			"raceSource": "PHB",
 			"page": 47,
+			"reprintedAs": [
+				{
+					"uid": "抄录龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"cha": 1
@@ -18512,7 +19035,7 @@
 					"ENG_name": "Tinker",
 					"name": "修补匠",
 					"entries": [
-						"你拥有工匠工具（{@item tinker's tools|PHB}）的熟练项。使用这些工具时，你可以花费1小时时间和10gp材料制作一个微型的发条机械装置（AC5，HP1）。该装置在24小时后将自动停止运作（除非你再花费1小时来修理它让它保持运作），你也可以使用你的动作主动使其停止运作。它停止运作后，你将收回用来制造它的材料。你最多可以同时激活三个这样的装置。",
+						"你拥有{@item 工匠工具|PHB}（{@item tinker's tools|PHB}）的熟练项。使用这些工具，你可以花费1小时和10金币价值的材料来制造一个微型发条装置（AC 5，1 hp）。该装置在24小时后停止运作（除非你花费1小时修理以保持装置运作），或者当你使用动作将其拆解时；此时，你可以回收用于制造它的材料。你最多可以同时拥有三个这样的激活装置。",
 						"制作装置时，你选择下列选项之一：",
 						{
 							"ENG_name": "Clockwork Toy",
@@ -18923,6 +19446,12 @@
 			"raceName": "半精灵",
 			"raceSource": "PHB",
 			"page": 40,
+			"reprintedAs": [
+				{
+					"uid": "侦测龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"wis": 2,
@@ -19056,6 +19585,12 @@
 			"raceName": "半精灵",
 			"raceSource": "PHB",
 			"page": 50,
+			"reprintedAs": [
+				{
+					"uid": "暴风龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"cha": 2,
@@ -19485,6 +20020,12 @@
 			"raceName": "半兽人",
 			"raceSource": "PHB",
 			"page": 41,
+			"reprintedAs": [
+				{
+					"uid": "探索龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"traitTags": [
 				"龙纹",
 				"技能加值骰"
@@ -19751,6 +20292,12 @@
 			"raceName": "半身人",
 			"raceSource": "PHB",
 			"page": 43,
+			"reprintedAs": [
+				{
+					"uid": "医疗龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"wis": 1
@@ -19867,6 +20414,12 @@
 			"raceName": "半身人",
 			"raceSource": "PHB",
 			"page": 44,
+			"reprintedAs": [
+				{
+					"uid": "招待龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"cha": 1
@@ -20137,6 +20690,12 @@
 			"raceName": "人类",
 			"raceSource": "PHB",
 			"page": 42,
+			"reprintedAs": [
+				{
+					"uid": "畜牧龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"wis": 2,
@@ -20268,6 +20827,12 @@
 			"raceName": "人类",
 			"raceSource": "PHB",
 			"page": 45,
+			"reprintedAs": [
+				{
+					"uid": "创造龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"int": 2,
@@ -20339,7 +20904,7 @@
 					"name": "匠师天赋",
 					"type": "entries",
 					"entries": [
-						"你获得自选一种工匠工具的熟练项。"
+						"你获得一种自选的{@item 工匠工具|PHB}类型的熟练项。"
 					]
 				},
 				{
@@ -20401,6 +20966,12 @@
 			"raceName": "人类",
 			"raceSource": "PHB",
 			"page": 46,
+			"reprintedAs": [
+				{
+					"uid": "通行龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"speed": 35,
 			"ability": [
 				{
@@ -20527,6 +21098,12 @@
 			"raceName": "人类",
 			"raceSource": "PHB",
 			"page": 48,
+			"reprintedAs": [
+				{
+					"uid": "守护龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"con": 2,
@@ -20699,6 +21276,12 @@
 			"raceName": "人类",
 			"raceSource": "PHB",
 			"page": 41,
+			"reprintedAs": [
+				{
+					"uid": "探索龙纹|EFA",
+					"tag": "专长"
+				}
+			],
 			"ability": [
 				{
 					"con": 1,

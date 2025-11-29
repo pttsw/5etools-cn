@@ -1292,6 +1292,54 @@
 			]
 		},
 		{
+			"ENG_name": "Lichen Plague",
+			"name": "苔藓瘟疫",
+			"source": "FRAiF",
+			"type": "Magical Contagion",
+			"entries": [
+				"与胆汁苔藓孢子接触的野兽、巨人、类人生物或怪兽有感染可怕疾病的风险，因为苔藓在其身体上扎根并生长到大脑中。生物在感染后 {@dice 1d4} 天会遭受以下影响：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Skinroot",
+							"type": "item",
+							"name": "皮根病",
+							"entry": "该疫病首先表现为身体随机区域出现不超过1平方英寸的黄绿色苔藓斑块。当感染者完成一次长休时，必须成功通过{@dc 14}的体质豁免，否则随着苔藓向头部蔓延，获得1级力竭。此力竭等级持续到该生物身上的疫病结束。"
+						},
+						{
+							"ENG_name": "Mindroot",
+							"type": "item",
+							"name": "心智根须",
+							"entry": "一个感染了苔藓疫病的类人生物死亡时，会立即作为一具{@creature 丧尸|XMM}在DM的控制下复活。"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Fighting the Contagion",
+							"name": "抵抗疫病",
+							"type": "entries",
+							"entries": [
+								"当感染者完成一次长休时，需进行一次{@dc 14}的体质豁免。如果该生物成功通过三次此类豁免，则疫病效果结束，且该生物将永久免疫苔藓瘟疫。成功的豁免检定无需连续。"
+							]
+						},
+						{
+							"ENG_name": "Spreading the Contagion",
+							"name": "传播疫病",
+							"type": "entries",
+							"entries": [
+								"任何野兽、巨人、类人生物或怪兽与受感染生物身上的苔藓发生皮肤接触时，必须成功通过{@dc 14}的体质豁免否则会感染苔藓瘟疫。豁免成功时，该生物在接下来的24小时内不会感染苔藓瘟疫。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Mindfire",
 			"name": "脑热症",
 			"source": "PHB",
@@ -1299,6 +1347,48 @@
 			"entries": [
 				"患病生物进行智力检定和智力豁免时具有劣势，并且其在战斗中视为受到{@spell 困惑术}效应影响。",
 				"{@note 这种疾病可以通过{@spell 疫病术}法术施加。}"
+			]
+		},
+		{
+			"ENG_name": "Mudpox",
+			"name": "泥痘病",
+			"source": "FRAiF",
+			"type": "Magical Contagion",
+			"entries": [
+				"接触来自幽暗地域的死泥怪与融雪和泥浆混合后，一直让人们生病。任何野兽或类人生物接触被泥痘污染的泥浆后，必须成功通过{@dc 12}的体质豁免否则被感染，遭受以下效果：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Disrupted Digestion",
+							"type": "item",
+							"name": "消化紊乱",
+							"entry": "每日黎明，该生物必须成功通过一次{@dc 12}的体质豁免否则会吐出前一天吃下的食物，并获得1级力竭。如果该生物连续三次成功通过此豁免，则疫病结束。"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Fighting the Contagion",
+							"name": "抵抗疫病",
+							"type": "entries",
+							"entries": [
+								"一个{@spell 医疗术|XPHB}或{@spell 次级复原术|XPHB}法术会立即结束该疫病。"
+							]
+						},
+						{
+							"ENG_name": "Spreading the Contagion",
+							"name": "传播疫病",
+							"type": "entries",
+							"entries": [
+								"任何与感染泥痘的类人生物进行皮肤接触的类人生物必须成功通过{@dc 12}的体质豁免否则也会感染该疫病。如果该生物在此豁免中成功，它在接下来的24小时内不会从该特定感染生物处感染此疫病。"
+							]
+						}
+					]
+				}
 			]
 		},
 		{

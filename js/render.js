@@ -3804,6 +3804,8 @@ Renderer.utils = class {
 			"psionics",
 			"feature",
 			"feat",
+			"featCategory",
+			"optionalfeature",
 			"background",
 			"item",
 			"itemType",
@@ -3813,6 +3815,7 @@ Renderer.utils = class {
 			"group",
 			"other",
 			"otherSummary",
+			"exclusiveFeatCategory",
 			undefined,
 		]
 			.mergeMap((k, i) => ({[k]: i}));
@@ -3890,6 +3893,8 @@ Renderer.utils = class {
 								case "patron": return this._getHtml_patron({v, isListMode, keyOptions, isTextOnly, styleHint});
 								case "spell": return this._getHtml_spell({v, isListMode, keyOptions, isTextOnly, styleHint});
 								case "feat": return this._getHtml_feat({v, isListMode, keyOptions, isTextOnly, styleHint});
+								case "featCategory": return this._getHtml_featCategory({v, isListMode, keyOptions, isTextOnly, styleHint});
+								case "exclusiveFeatCategory": return this._getHtml_exclusiveFeatCategory({v, isListMode, keyOptions, isTextOnly, styleHint});
 								case "optionalfeature": return this._getHtml_optionalfeature({v, isListMode, keyOptions, isTextOnly, styleHint});
 								case "feature": return this._getHtml_feature({v, isListMode, keyOptions, isTextOnly, styleHint});
 								case "item": return this._getHtml_item({v, isListMode, keyOptions, isTextOnly, styleHint});
@@ -4026,6 +4031,30 @@ Renderer.utils = class {
 
 		static _getHtml_feat ({v, isListMode, keyOptions, isTextOnly, styleHint}) {
 			return this._getHtml_uidTag({v, isListMode, keyOptions, isTextOnly, styleHint, tag: "feat"});
+		}
+
+		static _getHtml_featCategory ({v, isListMode, keyOptions, isTextOnly, styleHint}) {
+			if (isListMode) {
+				const ptTypes = v.map(featCategory => Parser.featCategoryToFull(featCategory))
+					.join("/");
+				return `任意 ${ptTypes}`;
+			}
+
+			const ptTypes = v.map(featCategory => Parser.featCategoryToFull(featCategory))
+				.joinConjunct(", ", " 或 ");
+			return `任意 ${ptTypes} 专长`;
+		}
+
+		static _getHtml_exclusiveFeatCategory ({v, isListMode, keyOptions, isTextOnly, styleHint}) {
+			if (isListMode) {
+				const ptTypes = v.map(featCategory => Parser.featCategoryToFull(featCategory))
+					.join("/");
+				return `只有 ${ptTypes}`;
+			}
+
+			const ptTypes = v.map(featCategory => Parser.featCategoryToFull(featCategory))
+				.joinConjunct(", ", " 或 ");
+			return `不能获得另一个 ${ptTypes} 专长`;
 		}
 
 		static _getHtml_optionalfeature ({v, isListMode, keyOptions, isTextOnly, styleHint}) {
@@ -4252,6 +4281,7 @@ Renderer.utils = class {
 			"arcane": "奥术法器",
 			"druid": "德鲁伊法器",
 			"holy": "圣徽",
+			"artisansTool": "工匠工具",
 		};
 		static _getHtml_spellcastingFocus ({v, isListMode, isTextOnly, styleHint}) {
 			if (isListMode) {
@@ -4397,14 +4427,14 @@ Renderer.utils = class {
 		return Renderer.get().render(sensesEntry);
 	}
 
-	static getEntryMediaUrl (entry, prop, mediaDir) {
+	static getEntryMediaUrl (entry, prop, mediaDir, {isUrlEncode = false} = {}) {
 		if (!entry[prop]) return "";
 
 		let href = "";
 		if (entry[prop].type === "internal") {
-			href = UrlUtil.link(Renderer.get().getMediaUrl(mediaDir, entry[prop].path));
+			href = UrlUtil.link(Renderer.get().getMediaUrl(mediaDir, isUrlEncode ? encodeURI(entry[prop].path) : entry[prop].path));
 		} else if (entry[prop].type === "external") {
-			href = entry[prop].url;
+			href = isUrlEncode ? encodeURI(entry[prop].url) : entry[prop].url;
 		}
 		return href;
 	}
@@ -11869,7 +11899,7 @@ Renderer.item = class {
 		return `
 		${Renderer.utils.getExcludedTr({entity: item, dataProp: "item", page: UrlUtil.PG_ITEMS})}
 		${Renderer.utils.getNameTr(item, {page: UrlUtil.PG_ITEMS, isEmbeddedEntity: opts.isEmbeddedEntity})}
-		<tr><td class="rd-item__type-rarity-attunement" colspan="6">${Renderer.item.getTypeRarityAndAttunementHtml(typeRarityText, subTypeText, tierText)}</td></tr>
+		<tr><td class="rd-item__type-rarity-attunement" colspan="6">${Renderer.item.getTypeRarityAndAttunementHtml(typeRarityText, subTypeText, tierText, {styleHint})}</td></tr>
 		<tr>
 			<td colspan="2">${[Parser.itemValueToFullMultiCurrency(item, {styleHint}), Parser.itemWeightToFull(item)].filter(Boolean).join(", ").uppercaseFirst()}</td>
 			<td colspan="4">
@@ -11883,13 +11913,23 @@ Renderer.item = class {
 		return item._fullAdditionalEntries?.length || item._fullEntries?.length || item.entries?.length;
 	}
 
-	static getTypeRarityAndAttunementHtml (typeRarityText, subTypeText, tierText) {
+	static getTypeRarityAndAttunementHtml (typeRarityText, subTypeText, tierText, {styleHint = null} = {}) {
+		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+
+		typeRarityText ||= "";
+		subTypeText ||= "";
+		tierText ||= "";
+
+		const ptTypeRarity = styleHint === "classic" ? typeRarityText.uppercaseFirst() : typeRarityText.toTitleCase();
+		const ptTier = styleHint === "classic" ? subTypeText.uppercaseFirst() : subTypeText.toTitleCase();
+		const ptSubtype = styleHint === "classic" ? tierText.uppercaseFirst() : tierText.toTitleCase();
+
 		return `<div class="ve-flex-col">
 			${typeRarityText || tierText ? `<div class="split ${subTypeText ? "mb-1" : ""}">
-				<div class="italic">${(typeRarityText || "").uppercaseFirst()}</div>
-				<div class="no-wrap ${tierText ? `ml-2` : ""}">${(tierText || "").uppercaseFirst()}</div>
+				<div class="italic">${ptTypeRarity}</div>
+				<div class="no-wrap ${tierText ? `ml-2` : ""}">${ptTier}</div>
 			</div>` : ""}
-			${subTypeText ? `<div class="italic">${subTypeText.uppercaseFirst()}</div>` : ""}
+			${subTypeText ? `<div class="italic">${ptSubtype}</div>` : ""}
 		</div>`;
 	}
 
@@ -13234,7 +13274,7 @@ Renderer.table = class {
 };
 
 Renderer.vehicle = class {
-	static CHILD_PROPS = ["movement", "weapon", "other", "action", "trait", "reaction", "control", "actionStation"];
+	static CHILD_PROPS = ["movement", "weapon", "station", "other", "action", "trait", "reaction", "control", "actionStation"];
 
 	static getVehicleRenderableEntriesMeta (ent) {
 		return {
@@ -13267,6 +13307,7 @@ Renderer.vehicle = class {
 		switch (ent.vehicleType) {
 			case "SHIP": return Renderer.vehicle._getRenderedString_ship(ent, opts);
 			case "SPELLJAMMER": return Renderer.vehicle._getRenderedString_spelljammer(ent, opts);
+			case "ELEMENTAL_AIRSHIP": return Renderer.vehicle._getRenderedString_elementalAirship(ent, opts);
 			case "INFWAR": return Renderer.vehicle._getRenderedString_infwar(ent, opts);
 			case "CREATURE": return Renderer.monster.getCompactRenderedString(ent, {...opts, isHideLanguages: true, isHideSenses: true, isCompact: opts.isCompact ?? false, page: UrlUtil.PG_VEHICLES});
 			case "OBJECT": return Renderer.object.getCompactRenderedString(ent, {...opts, isCompact: opts.isCompact ?? false, page: UrlUtil.PG_VEHICLES});
@@ -13441,18 +13482,96 @@ Renderer.vehicle = class {
 		}
 	};
 
-	static spelljammer = class {
-		static getVehicleSpelljammerRenderableEntriesMeta (ent) {
+	static spelljammerElementalAirship = class {
+		static _getRenderableEntriesMeta_getPtPace (ent) {
+			if (!ent.pace) return "";
+
+			const isMulti = Object.keys(ent.pace).length > 1;
+
+			return Parser.SPEED_MODES
+				.map(mode => {
+					const pace = ent.pace[mode];
+					if (!pace) return null;
+
+					const asNum = Parser.vulgarToNumber(pace);
+					return `{@tip ${isMulti && mode !== "walk" ? `${mode} ` : ""}${pace} mph|${asNum * 24}里每天}`;
+				})
+				.filter(Boolean)
+				.join(", ");
+		}
+
+		static getRenderableEntriesMeta (ent) {
 			const ptAc = ent.hull?.ac
 				? `${ent.hull.ac}${ent.hull.acFrom ? ` (${ent.hull.acFrom.join(", ")})` : ""}`
 				: "\u2014";
 
+			return {
+				entryAc: `{@b 护甲等级:} ${ptAc}`,
+				entryCargo: `{@b 货物:} ${ent.capCargo ? `${ent.capCargo}吨` : "\u2014"}`,
+				entryHitPoints: `{@b 生命值:} ${ent.hull?.hp ?? "\u2014"}`,
+				entryCrew: `{@b 船员:} ${ent.capCrew ?? "\u2014"}${ent.capCrewNote ? ` ${ent.capCrewNote}` : ""}`,
+				entryDamageThreshold: `{@b 伤害阈值:} ${ent.hull?.dt ?? "\u2014"}`,
+				entryCost: `{@b 花费:} ${ent.cost != null ? Parser.vehicleCostToFull(ent) : "\u2014"}`,
+				entryPacePt: this._getRenderableEntriesMeta_getPtPace(ent),
+			};
+		}
+
+		/* -------------------------------------------- */
+
+		static getStationEntriesMeta (entry) {
+			const ptSize = entry.size ? Renderer.utils.getRenderedSize(entry.size) : null;
+
+			const ptCosts = entry.costs?.length
+				? entry.costs.map(cost => {
+					return `${Parser.vehicleCostToFull(cost) || "\u2014"}${cost.note ? ` (${cost.note})` : ""}`;
+				}).join(", ")
+				: "\u2014";
+
+			return {
+				entrySize: ptSize ? `{@i ${ptSize}物件}` : null,
+				entryArmorClass: `{@b 护甲等级:} ${entry.ac == null ? "\u2014" : entry.ac}`,
+				entryHitPoints: `{@b 生命值:} ${entry.hp == null ? "\u2014" : entry.hp}`,
+				entryCost: `{@b 花费:} ${ptCosts}`,
+			};
+		}
+
+		static getStationSection_ ({entriesMetaParent, renderer, entry, isDisplayEmptyCost = false} = {}) {
+			const entriesMeta = Renderer.vehicle.spelljammerElementalAirship.getStationEntriesMeta(entry);
+
+			const ptAction = entry.action?.length
+				? entry.action.map(act => `<div class="mt-1">${renderer.render(act, 2)}</div>`).join("")
+				: "";
+			return `
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">${entriesMetaParent.entryName}</h3></td></tr>
+				<tr><td colspan="6" class="stats__sect-row-inner">
+				${entriesMeta.entrySize ? `<div class="mb-2">${renderer.render(entriesMeta.entrySize)}</div>` : ""}
+				<div>${renderer.render(entriesMeta.entryArmorClass)}</div>
+				<div>${renderer.render(entriesMeta.entryHitPoints)}</div>
+				${isDisplayEmptyCost || entry.costs?.length ? `<div>${renderer.render(entriesMeta.entryCost)}</div>` : ""}
+				${entry.entries?.length ? `<div class="mt-2">${renderer.render({entries: entry.entries})}</div>` : ""}
+				${ptAction}
+				</td></tr>
+			`;
+		}
+	};
+
+	static spelljammer = class {
+		static getRenderableEntriesMeta (ent) {
+			const {
+				entryAc,
+				entryCargo,
+				entryHitPoints,
+				entryCrew,
+				entryDamageThreshold,
+				entryCost,
+				entryPacePt,
+			} = Renderer.vehicle.spelljammerElementalAirship.getRenderableEntriesMeta(ent);
+
 			const ptSpeed = ent.speed != null
 				? Parser.getSpeedString(ent, {isSkipZeroWalk: true})
 				: "";
-			const ptPace = Renderer.vehicle.spelljammer._getVehicleSpelljammerRenderableEntriesMeta_getPtPace({ent});
 
-			const ptSpeedPace = [ptSpeed, ptPace].filter(Boolean).join(" ");
+			const ptSpeedPace = [ptSpeed, ptSpeed ? `(${entryPacePt})` : entryPacePt].filter(Boolean).join(" ");
 
 			return {
 				entryTableSummary: {
@@ -13461,52 +13580,35 @@ Renderer.vehicle = class {
 					colStyles: ["col-6", "col-6"],
 					rows: [
 						[
-							`{@b 护甲等级:} ${ptAc}`,
-							`{@b 货物:} ${ent.capCargo ? `${ent.capCargo} ton${ent.capCargo === 1 ? "" : "s"}` : "\u2014"}`,
+							entryAc,
+							entryCargo,
 						],
 						[
-							`{@b 生命值:} ${ent.hull?.hp ?? "\u2014"}`,
-							`{@b 船员:} ${ent.capCrew ?? "\u2014"}${ent.capCrewNote ? ` ${ent.capCrewNote}` : ""}`,
+							entryHitPoints,
+							entryCrew,
 						],
 						[
-							`{@b 伤害阈值:} ${ent.hull?.dt ?? "\u2014"}`,
+							entryDamageThreshold,
 							`{@b 龙骨/横梁:} ${(ent.dimensions || ["\u2014"]).join("/")}`,
 						],
 						[
 							`{@b 速度:} ${ptSpeedPace}`,
-							`{@b 花费:} ${ent.cost != null ? Parser.vehicleCostToFull(ent) : "\u2014"}`,
+							entryCost,
 						],
 					],
 				},
 			};
 		}
 
-		static _getVehicleSpelljammerRenderableEntriesMeta_getPtPace (ent) {
-			if (!ent.pace) return "";
-
-			const isMulti = Object.keys(ent.pace).length > 1;
-
-			const out = Parser.SPEED_MODES
-				.map(mode => {
-					const pace = ent.pace[mode];
-					if (!pace) return null;
-
-					const asNum = Parser.vulgarToNumber(pace);
-					return `{@tip ${isMulti && mode !== "walk" ? `${mode} ` : ""}${pace} mph|${asNum * 24} miles per day}`;
-				})
-				.filter(Boolean)
-				.join(", ");
-
-			return `(${out})`;
-		}
-
 		static getSummarySection_ (renderer, ent) {
-			const entriesMetaSpelljammer = Renderer.vehicle.spelljammer.getVehicleSpelljammerRenderableEntriesMeta(ent);
+			const entriesMeta = Renderer.vehicle.spelljammer.getRenderableEntriesMeta(ent);
 
-			return `<tr><td colspan="6">${renderer.render(entriesMetaSpelljammer.entryTableSummary)}</td></tr>`;
+			return `<tr><td colspan="6">${renderer.render(entriesMeta.entryTableSummary)}</td></tr>`;
 		}
 
-		static getSectionWeaponEntriesMeta (entry) {
+		/* -------------------------------------------- */
+
+		static getStationEntriesMeta (entry) {
 			const isMultiple = entry.count != null && entry.count > 1;
 
 			return {
@@ -13514,44 +13616,76 @@ Renderer.vehicle = class {
 			};
 		}
 
-		static getWeaponSection_ (renderer, entry) {
-			const entriesMetaSectionWeapon = Renderer.vehicle.spelljammer.getSectionWeaponEntriesMeta(entry);
-
-			const ptAction = entry.action?.length
-				? entry.action.map(act => `<div class="mt-1">${renderer.render(act, 2)}</div>`).join("")
-				: "";
-			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">${entriesMetaSectionWeapon.entryName}</h3></td></tr>
-				<tr><td colspan="6" class="stats__sect-row-inner">
-				${Renderer.vehicle.spelljammer.getSectionHpCostPart_(renderer, entry)}
-				${entry.entries?.length ? `<div>${renderer.render({entries: entry.entries})}</div>` : ""}
-				${ptAction}
-				</td></tr>
-			`;
+		static getStationSection_ ({entry, renderer}) {
+			const entriesMeta = Renderer.vehicle.spelljammer.getStationEntriesMeta(entry);
+			return Renderer.vehicle.spelljammerElementalAirship.getStationSection_({entriesMetaParent: entriesMeta, entry, renderer, isDisplayEmptyCost: true});
 		}
+	};
 
-		static getSectionHpCostEntriesMeta (entry) {
-			const ptCosts = entry.costs?.length
-				? entry.costs.map(cost => {
-					return `${Parser.vehicleCostToFull(cost) || "\u2014"}${cost.note ? ` (${cost.note})` : ""}`;
-				}).join(", ")
-				: "\u2014";
+	static elementalAirship = class {
+		static getRenderableEntriesMeta (ent) {
+			const {
+				entryAc,
+				entryCargo,
+				entryHitPoints,
+				entryCrew,
+				entryDamageThreshold,
+				entryCost,
+				entryPacePt,
+			} = Renderer.vehicle.spelljammerElementalAirship.getRenderableEntriesMeta(ent);
+
+			const ptSpeed = ent.speed != null
+				? Parser.getSpeedString(ent, {isSkipZeroWalk: true})
+				: "";
+
+			const ptPaceSpeed = [entryPacePt, ptSpeed ? `(${ptSpeed})` : null].filter(Boolean).join(" ");
 
 			return {
-				entryArmorClass: `{@b 护甲等级:} ${entry.ac == null ? "\u2014" : entry.ac}`,
-				entryHitPoints: `{@b 生命值:} ${entry.hp == null ? "\u2014" : entry.hp}`,
-				entryCost: `{@b 花费:} ${ptCosts}`,
+				entryTableSummary: {
+					type: "table",
+					style: "summary",
+					colStyles: ["col-6", "col-6"],
+					rows: [
+						[
+							entryAc,
+							entryCrew,
+						],
+						[
+							entryHitPoints,
+							`{@b 乘客:} ${ent.capPassenger ? ent.capPassenger : "\u2014"}`,
+						],
+						[
+							entryDamageThreshold,
+							entryCargo,
+						],
+						[
+							`{@b 速度:} ${ptPaceSpeed}`,
+							entryCost,
+						],
+					],
+				},
 			};
 		}
 
-		static getSectionHpCostPart_ (renderer, entry) {
-			const entriesMetaSectionHpCost = Renderer.vehicle.spelljammer.getSectionHpCostEntriesMeta(entry);
+		static getSummarySection_ (renderer, ent) {
+			const entriesMeta = Renderer.vehicle.elementalAirship.getRenderableEntriesMeta(ent);
 
-			return `
-				<div>${renderer.render(entriesMetaSectionHpCost.entryArmorClass)}</div>
-				<div>${renderer.render(entriesMetaSectionHpCost.entryHitPoints)}</div>
-				<div class="mb-2">${renderer.render(entriesMetaSectionHpCost.entryCost)}</div>
-			`;
+			return `<tr><td colspan="6">${renderer.render(entriesMeta.entryTableSummary)}</td></tr>`;
+		}
+
+		/* -------------------------------------------- */
+
+		static getStationEntriesMeta (entry) {
+			const isMultiple = entry.count != null && entry.count > 1;
+
+			return {
+				entryName: `${entry.name}${isMultiple ? ` (${entry.count})` : ""}`,
+			};
+		}
+
+		static getStationSection_ ({entry, renderer}) {
+			const entriesMeta = Renderer.vehicle.elementalAirship.getStationEntriesMeta(entry);
+			return Renderer.vehicle.spelljammerElementalAirship.getStationSection_({entriesMetaParent: entriesMeta, entry, renderer});
 		}
 	};
 
@@ -13651,7 +13785,21 @@ Renderer.vehicle = class {
 			${Renderer.utils.getExcludedTr({entity: veh, dataProp: "vehicle", page: UrlUtil.PG_VEHICLES})}
 			${Renderer.utils.getNameTr(veh, {isInlinedToken, page: UrlUtil.PG_VEHICLES})}
 			${Renderer.vehicle.spelljammer.getSummarySection_(renderer, veh)}
-			${(veh.weapon || []).map(Renderer.vehicle.spelljammer.getWeaponSection_.bind(this, renderer)).join("")}
+			${(veh.weapon || []).map(entry => Renderer.vehicle.spelljammer.getStationSection_({entry, renderer})).join("")}
+		`;
+	}
+
+	static _getRenderedString_elementalAirship (veh, opts) {
+		const renderer = Renderer.get();
+
+		const isInlinedToken = !opts.isCompact && Renderer.vehicle.hasToken(veh);
+
+		return `
+			${Renderer.utils.getExcludedTr({entity: veh, dataProp: "vehicle", page: UrlUtil.PG_VEHICLES})}
+			${Renderer.utils.getNameTr(veh, {isInlinedToken, page: UrlUtil.PG_VEHICLES})}
+			${Renderer.vehicle.elementalAirship.getSummarySection_(renderer, veh)}
+			${(veh.weapon || []).map(entry => Renderer.vehicle.elementalAirship.getStationSection_({entry, renderer})).join("")}
+			${(veh.station || []).map(entry => Renderer.vehicle.elementalAirship.getStationSection_({entry, renderer})).join("")}
 		`;
 	}
 
@@ -14446,6 +14594,7 @@ Renderer.facility = class {
 		if (entryOrders) entsList.push({type: "item", name: `指令:`, entry: entryOrders});
 
 		return {
+			entryLevel: ent.level ? `{@i ${ent.level}级据点设施` : null,
 			entriesDescription: [
 				entsList.length
 					? {
@@ -14513,9 +14662,9 @@ Renderer.facility = class {
 	/* -------------------------------------------- */
 
 	static getCompactRenderedString (ent) {
-		const ptLevel = ent.level == null ? "" : `<tr><td colspan="6" class="pb-2 pt-0"><i>${ent.level}级据点设施</i></td></tr>`;
-
 		const entriesMeta = Renderer.facility.getFacilityRenderableEntriesMeta(ent);
+
+		const ptLevel = entriesMeta.entryLevel ? `<tr><td colspan="6" class="pb-2 pt-0">${Renderer.get().render(entriesMeta.entryLevel, 2)}</td></tr>` : "";
 		const ptEntries = entriesMeta.entriesDescription.map(entry => `<div class="my-1p">${Renderer.get().render(entry, 2)}</div>`).join("");
 
 		return `
@@ -15006,12 +15155,12 @@ Renderer.generic = class {
 		return ent.hasToken; // An implicit token
 	}
 
-	static getTokenUrl (ent, mediaDir, {isIgnoreImplicit = false} = {}) {
+	static getTokenUrl (ent, mediaDir, {isIgnoreImplicit = false, isUrlEncode = false} = {}) {
 		if (ent.tokenUrl) return ent.tokenUrl; // TODO(Future) legacy; remove
-		if (ent.token) return Renderer.get().getMediaUrl("img", `${mediaDir}/${ent.token.source}/${Parser.nameToTokenName(ent.token.name)}.webp`);
-		if (ent.tokenHref) return Renderer.utils.getEntryMediaUrl(ent, "tokenHref", "img");
+		if (ent.token) return Renderer.get().getMediaUrl("img", `${mediaDir}/${ent.token.source}/${Parser.nameToTokenName(ent.token.name, {isUrlEncode})}.webp`);
+		if (ent.tokenHref) return Renderer.utils.getEntryMediaUrl(ent, "tokenHref", "img", {isUrlEncode});
 		if (isIgnoreImplicit) return null;
-		return Renderer.get().getMediaUrl("img", `${mediaDir}/${ent.source}/${Parser.nameToTokenName(ent.ENG_name)}.webp`);
+		return Renderer.get().getMediaUrl("img", `${mediaDir}/${ent.source}/${Parser.nameToTokenName(ent.ENG_name, {isUrlEncode})}.webp`);
 	}
 };
 

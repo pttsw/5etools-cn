@@ -24,6 +24,7 @@
 				}
 			],
 			"tokenCredit": "Kim Jong Min",
+			"tokenCustom": true,
 			"altArt": [
 				{
 					"ENG_name": "Automatic Ballista (Top-Down)",
@@ -74,6 +75,7 @@
 				}
 			],
 			"tokenCredit": "warmtail",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -183,6 +185,7 @@
 				}
 			],
 			"tokenCredit": "Hitokiri",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -282,6 +285,7 @@
 				}
 			],
 			"tokenCredit": "Ostap Mocanu",
+			"tokenCustom": true,
 			"altArt": [
 				{
 					"ENG_name": "Clockwork Trebuchet (Top-Down)",
@@ -315,6 +319,7 @@
 				}
 			],
 			"tokenCredit": "Ensemble Studios",
+			"tokenCustom": true,
 			"altArt": [
 				{
 					"ENG_name": "Decrepit Mangonel (Top-Down)",
@@ -323,6 +328,68 @@
 				}
 			],
 			"hasToken": true
+		},
+		{
+			"ENG_name": "Eldritch Cannon",
+			"name": "魔能炮台",
+			"source": "EFA",
+			"size": [
+				"T",
+				"S"
+			],
+			"objectType": "U",
+			"ac": 18,
+			"hp": {
+				"special": "5 × 你的奇械师等级（对火炮施放{@spell 修复术|XPHB}可为其恢复{@dice 2d6}点生命值）"
+			},
+			"immune": [
+				"毒素",
+				"心灵"
+			],
+			"entries": [
+				"{@note 由{@subclassFeature 魔能炮台|奇械师|EFA|魔炮师|EFA|3}子职业特性创造。}"
+			],
+			"actionEntries": [
+				{
+					"ENG_name": "Activate Cannon (Requires You to be within 60 Feet of the Cannon)",
+					"type": "entries",
+					"name": "启动火炮（需要你在火炮60尺内）",
+					"entries": [
+						"作为{@variantrule 附赠动作|XPHB}，你命令魔能炮台使用下方的投火机、力场弩炮或防御者选项；你可以在该选项之前或之后命令魔能炮台移动最多15尺：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"page": 10,
+							"items": [
+								{
+									"ENG_name": "Flamethrower",
+									"name": "投火机",
+									"type": "item",
+									"entries": [
+										"该火炮向15尺的{@variantrule 锥状 [效应区域]|XPHB|锥状}区域喷射火焰。该区域内的每个生物需进行对抗{@dcYourSpellSave}的敏捷豁免检定，豁免失败则受到{@damage 2d8}火焰伤害，豁免成功则受到一半伤害。{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内未被穿着或携带的可燃物件开始燃烧。"
+									]
+								},
+								{
+									"ENG_name": "Force Ballista",
+									"name": "力场弩炮",
+									"type": "item",
+									"entries": [
+										"从炮台向120尺内的一个生物或物件发动一次远程法术攻击。命中时，目标受到{@damage 2d8}力场伤害，且如果目标是生物，它会被推离炮台最多5尺。"
+									]
+								},
+								{
+									"ENG_name": "Protector",
+									"name": "防御者",
+									"type": "item",
+									"entries": [
+										"该火炮爆发出一股正能量，使其自身和你选择的10尺内的每个生物获得等于{@dice 1d8}加上你的智力调整值（最低为+1）点{@variantrule 临时生命值|XPHB}。"
+									]
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Eldritch Cannon, Flamethrower",
@@ -531,6 +598,7 @@
 				}
 			],
 			"tokenCredit": "Frank Pusateri",
+			"tokenCustom": true,
 			"altArt": [
 				{
 					"ENG_name": "Enchanted Ballista (Top-Down)",
@@ -567,6 +635,7 @@
 				}
 			],
 			"tokenCredit": "Ruane Manning",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -593,6 +662,7 @@
 				}
 			],
 			"tokenCredit": "Sega, Games Workshop",
+			"tokenCustom": true,
 			"altArt": [
 				{
 					"ENG_name": "Forge Launcher (Top-Down)",
@@ -770,7 +840,7 @@
 				"心灵"
 			],
 			"entries": [
-				"侏儒特快投递器是一种弹射器，不过不是用来弹射物品，而是用抛物线来投掷生物。侏儒特快投递器是与{@item 防止跌落背包|DSotDQ}（见{@area \"冒险用品\"|498|x}部分）一起设计的，用来加快交通速度。该装置可以容纳一个中型或更小的生物。在发射之前，侏儒特快投递器必须被装载和瞄准。装载需要1个动作，瞄准需要1个动作，发射需要1个动作。",
+				"侏儒特快投递器是一种设计用来投掷生物而非投射物的弹射装置，能够将生物以高弧线抛出。侏儒特快投递器是与{@item 防止跌落背包|DSotDQ}（参见{@adventure \"冒险用品\"|DSotDQ|8|冒险用品}章节）共同设计，以加速运输。该装置可容纳一个中型或更小的生物。在使用前，侏儒特快投递器必须被装载和瞄准。装载侏儒特快投递器需要1个动作，瞄准需要1个动作，发射需要1个动作。",
 				"在你进行瞄准侏儒特快投递器的动作时，你可以将抛掷生物动作的最大水平距离设定为60尺、150尺或300尺。"
 			],
 			"actionEntries": [
@@ -892,6 +962,7 @@
 				}
 			],
 			"tokenCredit": "Unfor art",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -946,6 +1017,7 @@
 				}
 			],
 			"tokenCredit": "Games Workshop",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -1061,6 +1133,7 @@
 				}
 			],
 			"tokenCredit": "WTactics",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -1112,6 +1185,7 @@
 				"攻城塔是一个可移动的木制结构，其主体由梁架和墙身上的板条组成。大型木轮或滚轴允许士兵或负重牲畜推动或拉动塔楼。中型或更小的生物可以使用攻城塔到达高达40尺的城墙顶部。塔内的生物对来自塔外的攻击具有{@quickref 掩护||3||全身掩护}。"
 			],
 			"tokenCredit": "Roman Topchiy",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -1180,6 +1254,7 @@
 				}
 			],
 			"tokenCredit": "Sega, Games Workshop",
+			"tokenCustom": true,
 			"altArt": [
 				{
 					"ENG_name": "Storm Cannon (Top-Down)",
@@ -1222,6 +1297,7 @@
 				}
 			],
 			"tokenCredit": "Funcom",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -1318,6 +1394,7 @@
 				}
 			],
 			"tokenCredit": "Roman Topchiy",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{

@@ -348,7 +348,7 @@ export class ConverterSpell extends ConverterBase {
 				tgt.push(
 					...classNames.map(name => ({
 						name,
-						source: Parser.SRC_XPHB,
+						source: (name === "Artificer" || name === "奇械师") ? Parser.SRC_EFA : Parser.SRC_XPHB,
 					})),
 				);
 				break;

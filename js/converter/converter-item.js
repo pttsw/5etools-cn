@@ -584,6 +584,11 @@ export class ConverterItem extends ConverterBase {
 
 		"melee bludgeoning weapon": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON, "dmgType": "B"}],
 		"近战钝击武器": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MELEE_WEAPON : Parser.ITM_TYP__MELEE_WEAPON, "dmgType": "B"}],
+
+		"martial with the ammunition property": ({styleHint}) => [{"weaponCategory": "martial", "property": styleHint === SITE_STYLE__ONE ? Parser.ITM_PROP__ODND_AMMUNITION : Parser.ITM_PROP__AMMUNITION}],
+		"有子弹词条的军用武器": ({styleHint}) => [{"weaponCategory": "martial", "property": styleHint === SITE_STYLE__ONE ? Parser.ITM_PROP__ODND_AMMUNITION : Parser.ITM_PROP__AMMUNITION}],
+		"martial with the thrown property": ({styleHint}) => [{"weaponCategory": "martial", "property": styleHint === SITE_STYLE__ONE ? Parser.ITM_PROP__ODND_THROWN : Parser.ITM_PROP__THROWN}],
+		"有投掷词条的军用武器": ({styleHint}) => [{"weaponCategory": "martial", "property": styleHint === SITE_STYLE__ONE ? Parser.ITM_PROP__ODND_THROWN : Parser.ITM_PROP__THROWN}],
 	};
 
 	static _GENERIC_REQUIRES_LOOKUP_WEAPON = {

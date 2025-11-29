@@ -11,6 +11,9 @@
 					"page": 54
 				}
 			],
+			"reprintedAs": [
+				"奇械师|EFA"
+			],
 			"edition": "classic",
 			"hd": {
 				"number": 1,
@@ -482,6 +485,510 @@
 			"subclassTitle": "奇械师专业",
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Artificer",
+			"name": "奇械师",
+			"source": "EFA",
+			"edition": "one",
+			"primaryAbility": [
+				{
+					"int": true
+				}
+			],
+			"hd": {
+				"number": 1,
+				"faces": 8
+			},
+			"proficiency": [
+				"con",
+				"int"
+			],
+			"spellcastingAbility": "int",
+			"casterProgression": "奇械师",
+			"preparedSpellsProgression": [
+				2,
+				3,
+				4,
+				5,
+				6,
+				6,
+				7,
+				7,
+				9,
+				9,
+				10,
+				10,
+				11,
+				11,
+				12,
+				12,
+				14,
+				14,
+				15,
+				15
+			],
+			"preparedSpellsChange": "长休",
+			"cantripProgression": [
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				3,
+				3,
+				3,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4
+			],
+			"featProgression": [
+				{
+					"ENG_name": "Epic Boon",
+					"name": "传奇恩惠",
+					"category": [
+						"EB"
+					],
+					"progression": {
+						"19": 1
+					}
+				}
+			],
+			"startingProficiencies": {
+				"armor": [
+					"light",
+					"medium",
+					"shield"
+				],
+				"weapons": [
+					"简易"
+				],
+				"tools": [
+					"{@item 盗贼工具|XPHB}",
+					"{@item 修补工具|XPHB}",
+					"一种你选择的{@item 工匠工具|XPHB}类型"
+				],
+				"toolProficiencies": [
+					{
+						"thieves' tools": true,
+						"tinker's tools": true,
+						"anyArtisansTool": 1
+					}
+				],
+				"skills": [
+					{
+						"choose": {
+							"from": [
+								"奥秘",
+								"历史",
+								"调查",
+								"医药",
+								"自然",
+								"察觉",
+								"巧手"
+							],
+							"count": 2
+						}
+					}
+				]
+			},
+			"startingEquipment": {
+				"additionalFromBackground": true,
+				"defaultData": [
+					{
+						"A": [
+							{
+								"item": "镶钉皮甲|XPHB"
+							},
+							{
+								"item": "匕首|XPHB"
+							},
+							{
+								"item": "盗贼工具|XPHB"
+							},
+							{
+								"item": "修补工具|XPHB"
+							},
+							{
+								"item": "地城套组|XPHB"
+							},
+							{
+								"value": 1600
+							}
+						],
+						"B": [
+							{
+								"value": 15000
+							}
+						]
+					}
+				],
+				"entries": [
+					"{@i 选择A或B：}（A）{@item 镶钉皮甲|XPHB}、{@item 匕首|XPHB}、{@item 盗贼工具|XPHB}、{@item 修补工具|XPHB}、{@item 地城套组|XPHB}和16 GP；或（B）150 GP"
+				]
+			},
+			"multiclassing": {
+				"proficienciesGained": {
+					"armor": [
+						"light",
+						"medium",
+						"shield"
+					],
+					"tools": [
+						"{@item 修补工具|XPHB}"
+					],
+					"toolProficiencies": [
+						{
+							"tinker's tools": true
+						}
+					],
+					"skills": [
+						{
+							"choose": {
+								"from": [
+									"奥秘",
+									"历史",
+									"调查",
+									"医药",
+									"自然",
+									"察觉",
+									"巧手"
+								],
+								"count": 1
+							}
+						}
+					]
+				}
+			},
+			"classTableGroups": [
+				{
+					"colLabels": [
+						"计划已知",
+						"魔法物品",
+						"{@filter 已知戏法|spells|source=|level=0|class=奇械师}",
+						"准备法术"
+					],
+					"rows": [
+						[
+							"\u2014",
+							"\u2014",
+							2,
+							2
+						],
+						[
+							4,
+							2,
+							2,
+							3
+						],
+						[
+							4,
+							2,
+							2,
+							4
+						],
+						[
+							4,
+							2,
+							2,
+							5
+						],
+						[
+							4,
+							2,
+							2,
+							6
+						],
+						[
+							5,
+							3,
+							2,
+							6
+						],
+						[
+							5,
+							3,
+							2,
+							7
+						],
+						[
+							5,
+							3,
+							2,
+							7
+						],
+						[
+							5,
+							3,
+							2,
+							9
+						],
+						[
+							6,
+							4,
+							3,
+							9
+						],
+						[
+							6,
+							4,
+							3,
+							10
+						],
+						[
+							6,
+							4,
+							3,
+							10
+						],
+						[
+							6,
+							4,
+							3,
+							11
+						],
+						[
+							7,
+							5,
+							4,
+							11
+						],
+						[
+							7,
+							5,
+							4,
+							12
+						],
+						[
+							7,
+							5,
+							4,
+							12
+						],
+						[
+							7,
+							5,
+							4,
+							14
+						],
+						[
+							8,
+							6,
+							4,
+							14
+						],
+						[
+							8,
+							6,
+							4,
+							15
+						],
+						[
+							8,
+							6,
+							4,
+							15
+						]
+					]
+				},
+				{
+					"title": "每环法术位",
+					"colLabels": [
+						"{@filter 1st|spells|level=1|class=奇械师}",
+						"{@filter 2nd|spells|level=2|class=奇械师}",
+						"{@filter 3rd|spells|level=3|class=奇械师}",
+						"{@filter 4th|spells|level=4|class=奇械师}",
+						"{@filter 5th|spells|level=5|class=奇械师}"
+					],
+					"rowsSpellProgression": [
+						[
+							2,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							2,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							2,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							2,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							2,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							1
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							1
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2
+						]
+					]
+				}
+			],
+			"classFeatures": [
+				"施法|奇械师|EFA|1|EFA",
+				"修补匠的魔法|奇械师|EFA|1|EFA",
+				"仿制魔法物品|奇械师|EFA|2|EFA",
+				{
+					"classFeature": "奇械师子职|奇械师|EFA|3|EFA",
+					"gainSubclassFeature": true
+				},
+				"属性值提升|奇械师|EFA|4|EFA",
+				{
+					"classFeature": "子职特性|奇械师|EFA|5|EFA",
+					"gainSubclassFeature": true
+				},
+				"魔法物品修补匠|奇械师|EFA|6|EFA",
+				"灵光一闪|奇械师|EFA|7|EFA",
+				"属性值提升|奇械师|EFA|8|EFA",
+				{
+					"classFeature": "子职特性|奇械师|EFA|9|EFA",
+					"gainSubclassFeature": true
+				},
+				"魔法物品熟稔|奇械师|EFA|10|EFA",
+				"储法物品|奇械师|EFA|11|EFA",
+				"属性值提升|奇械师|EFA|12|EFA",
+				"高等巧计|奇械师|EFA|14|EFA",
+				{
+					"classFeature": "子职特性|奇械师|EFA|15|EFA",
+					"gainSubclassFeature": true
+				},
+				"属性值提升|奇械师|EFA|16|EFA",
+				"魔法物品大师|奇械师|EFA|18|EFA",
+				"传奇恩惠|奇械师|EFA|19|EFA",
+				"奇械之魂|奇械师|EFA|20|EFA"
+			],
+			"subclassTitle": "奇械师子职",
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	],
 	"subclass": [
@@ -498,6 +1005,9 @@
 					"source": "ERLW",
 					"page": 58
 				}
+			],
+			"reprintedAs": [
+				"炼金师|奇械师|EFA|EFA"
 			],
 			"edition": "classic",
 			"additionalSpells": [
@@ -542,6 +1052,9 @@
 			"className": "奇械师",
 			"classSource": "TCE",
 			"page": 15,
+			"reprintedAs": [
+				"装甲师|奇械师|EFA|EFA"
+			],
 			"edition": "classic",
 			"additionalSpells": [
 				{
@@ -590,6 +1103,9 @@
 					"source": "ERLW",
 					"page": 59
 				}
+			],
+			"reprintedAs": [
+				"魔炮师|奇械师|EFA|EFA"
 			],
 			"edition": "classic",
 			"additionalSpells": [
@@ -640,6 +1156,9 @@
 					"page": 60
 				}
 			],
+			"reprintedAs": [
+				"战地匠师|奇械师|EFA|EFA"
+			],
 			"edition": "classic",
 			"additionalSpells": [
 				{
@@ -674,9 +1193,952 @@
 				"改良守卫|奇械师|TCE|战地匠师|TCE|15"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Alchemist",
+			"name": "炼金师",
+			"shortName": "炼金师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"治愈真言|XPHB",
+							"致病射线|XPHB"
+						],
+						"5": [
+							"炽焰法球|XPHB",
+							"马友夫强酸箭|XPHB"
+						],
+						"9": [
+							"气化形体|XPHB",
+							"群体治愈真言|XPHB"
+						],
+						"13": [
+							"防死结界|XPHB",
+							"浓酸球|XPHB"
+						],
+						"17": [
+							"死云术|XPHB",
+							"死者复活|XPHB"
+						]
+					},
+					"innate": {
+						"9": {
+							"daily": {
+								"int": [
+									"次级复原术|XPHB"
+								]
+							}
+						},
+						"15": {
+							"daily": {
+								"1": [
+									"塔莎泡泡坩埚|XPHB"
+								]
+							}
+						}
+					}
+				}
+			],
+			"subclassFeatures": [
+				"炼金师|奇械师|EFA|炼金师|EFA|3|EFA",
+				"炼金术掌握|奇械师|EFA|炼金师|EFA|5|EFA",
+				"复原药剂|奇械师|EFA|炼金师|EFA|9|EFA",
+				"化学专家|奇械师|EFA|炼金师|EFA|15|EFA"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Armorer",
+			"name": "装甲师",
+			"shortName": "装甲师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"魔法飞弹|XPHB",
+							"雷鸣波|XPHB"
+						],
+						"5": [
+							"镜影术|XPHB",
+							"粉碎音波|XPHB"
+						],
+						"9": [
+							"催眠图纹|XPHB",
+							"闪电束|XPHB"
+						],
+						"13": [
+							"火焰护盾|XPHB",
+							"高等隐形术|XPHB"
+						],
+						"17": [
+							"穿墙术|XPHB",
+							"力场墙|XPHB"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"装甲师|奇械师|EFA|装甲师|EFA|3|EFA",
+				"额外攻击|奇械师|EFA|装甲师|EFA|5|EFA",
+				"高等装甲师|奇械师|EFA|装甲师|EFA|9|EFA",
+				"完美装甲|奇械师|EFA|装甲师|EFA|15|EFA"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Artillerist",
+			"name": "魔炮师",
+			"shortName": "魔炮师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"护盾术|XPHB",
+							"雷鸣波|XPHB"
+						],
+						"5": [
+							"灼热射线|XPHB",
+							"粉碎音波|XPHB"
+						],
+						"9": [
+							"火球术|XPHB",
+							"风墙术|XPHB"
+						],
+						"13": [
+							"冰风暴|XPHB",
+							"火墙术|XPHB"
+						],
+						"17": [
+							"寒冰锥|XPHB",
+							"力场墙|XPHB"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"魔炮师|奇械师|EFA|魔炮师|EFA|3|EFA",
+				"奥法火器|奇械师|EFA|魔炮师|EFA|5|EFA",
+				"高爆炮台|奇械师|EFA|魔炮师|EFA|9|EFA",
+				"坚固要塞|奇械师|EFA|魔炮师|EFA|15|EFA"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Battle Smith",
+			"name": "战地匠师",
+			"shortName": "战地匠师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"英雄气概|XPHB",
+							"护盾术|XPHB"
+						],
+						"5": [
+							"闪耀斩|XPHB",
+							"守护之链|XPHB"
+						],
+						"9": [
+							"活力灵光|XPHB",
+							"召唤箭雨|XPHB"
+						],
+						"13": [
+							"净化灵光|XPHB",
+							"火焰护盾|XPHB"
+						],
+						"17": [
+							"放逐斩|XPHB",
+							"群体疗伤术|XPHB"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"战地匠师|奇械师|EFA|战地匠师|EFA|3|EFA",
+				"额外攻击|奇械师|EFA|战地匠师|EFA|5|EFA",
+				"奥能震荡|奇械师|EFA|战地匠师|EFA|9|EFA",
+				"改良守卫|奇械师|EFA|战地匠师|EFA|15|EFA"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Cartographer",
+			"name": "制图师",
+			"shortName": "制图师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"妖火|XPHB",
+							"光导箭|XPHB",
+							"治愈真言|XPHB"
+						],
+						"5": [
+							"物件定位术|XPHB",
+							"心灵尖刺|XPHB"
+						],
+						"9": [
+							"召雷术|XPHB",
+							"鹰眼术|XPHB"
+						],
+						"13": [
+							"放逐术|XPHB",
+							"生物定位术|XPHB"
+						],
+						"17": [
+							"探知术|XPHB",
+							"传送法阵|XPHB"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"制图师|奇械师|EFA|制图师|EFA|3|EFA",
+				"制导精准|奇械师|EFA|制图师|EFA|5|EFA",
+				"灵巧移动|奇械师|EFA|制图师|EFA|9|EFA",
+				"高端地图集|奇械师|EFA|制图师|EFA|15|EFA"
+			],
+			"hasFluffImages": true
 		}
 	],
 	"classFeature": [
+		{
+			"ENG_name": "Spellcasting",
+			"name": "施法",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 1,
+			"entries": [
+				"你已学会如何通过物件引导魔法能量。关于施法的规则，请参阅{@book 玩家手册|XPHB}。下方的信息详细说明了你如何将这些规则与奇械师法术一起使用，这些法术出现在职业描述后方的奇械师法术列表中。",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Tools Required",
+							"name": "必备工具",
+							"type": "entries",
+							"entries": [
+								"你通过工具产生你的奇械师法术。你可以使用{@item 盗贼工具|XPHB}、{@item 修补工具|XPHB}或另一种你具有熟练项的{@item 工匠工具|XPHB}作为{@variantrule 法器|XPHB}，并且当你施放奇械师法术时，你必须手持其中一个法器（意味着当你施放该法术时，该法术具有{@i M}成分）。"
+							]
+						},
+						{
+							"ENG_name": "Cantrips",
+							"type": "entries",
+							"name": "戏法",
+							"entries": [
+								"你知晓两个自选的奇械师戏法。推荐{@spell 酸液飞溅|XPHB}和{@spell 魔法伎俩|XPHB}。",
+								"每当你完成一次{@variantrule 长休|XPHB}后，你可以将此特性中的一个戏法替换为另一个你选择的奇械师戏法。",
+								"当你达到奇械师等级10级和14级时，你学会另一个自选的奇械师戏法，如奇械师特性表格的戏法栏所示。"
+							]
+						},
+						{
+							"ENG_name": "Spell Slots",
+							"type": "entries",
+							"name": "法术位",
+							"entries": [
+								"奇械师特性表格显示你有多少法术位来施放你的1环及以上法术。当你完成一次{@variantrule 长休|XPHB}后，你恢复所有已消耗的法术位。"
+							]
+						},
+						{
+							"ENG_name": "Prepared Spells of Level 1+",
+							"type": "entries",
+							"name": "1环及以上的准备法术",
+							"entries": [
+								"你准备可以用于此特性施放的1环及以上的法术列表。开始时，选择两个1环奇械师法术。推荐{@spell 疗伤术|XPHB}和{@spell 油腻术|XPHB}。",
+								"你列表中的法术数量会随着奇械师等级提升而增加，如奇械师特性表格的准备法术栏所示。每当该数值增加时，选择额外的奇械师法术直到你列表中的法术数量与表格中的数值匹配。所选法术必须是你拥有法术位的等级。例如，如果你是一名5级奇械师，你的准备法术列表可以包含六个1环和2环的奇械师法术，以任意组合。",
+								"如果另一个奇械师特性给予你总是准备着的法术，那些法术不计入你可以用此特性准备的法术数量，但那些法术在其他方面视为你的奇械师法术。"
+							]
+						},
+						{
+							"ENG_name": "Changing Your Prepared Spells",
+							"type": "entries",
+							"name": "改变你的准备法术",
+							"entries": [
+								"每当你完成一次{@variantrule 长休|XPHB}时，你可以改变你的准备法术列表，将其中的任何法术替换为其他你拥有法术位的奇械师法术。"
+							]
+						},
+						{
+							"ENG_name": "Spellcasting Ability",
+							"name": "施法属性",
+							"type": "entries",
+							"entries": [
+								"智力是你奇械师法术的施法属性。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Tinker's Magic",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 1,
+			"entries": [
+				"你知晓{@spell 修复术|XPHB}戏法。",
+				"作为持有{@item 修补工具|XPHB}时的一个{@action 魔法|XPHB}动作，你可以在自身5尺内的一个未占据空间中创造一个物品，从以下列表中选择该物品：",
+				{
+					"type": "list",
+					"style": "list-hang",
+					"columns": 3,
+					"items": [
+						"{@item 滚珠|XPHB}",
+						"{@item 篮子|XPHB}",
+						"{@item 铺盖|XPHB}",
+						"{@item 铃铛|XPHB}",
+						"{@item 毯子|XPHB}",
+						"{@item 滑轮组|XPHB}",
+						"{@item 玻璃瓶|XPHB|玻璃瓶}",
+						"{@item 吊桶|XPHB}",
+						"{@item 铁蒺藜|XPHB}",
+						"{@item 蜡烛|XPHB}",
+						"{@item 撬棍|XPHB}",
+						"{@item 扁瓶|XPHB}",
+						"{@item 爪钩|XPHB}",
+						"{@item 狩猎陷阱|XPHB}",
+						"{@item 壶|XPHB}",
+						"{@item 油灯|XPHB}",
+						"{@item 镣铐|XPHB}",
+						"{@item 捕网|XPHB}",
+						"{@item 灯油|XPHB}",
+						"{@item 纸张|XPHB}",
+						"{@item 羊皮纸|XPHB}",
+						"{@item 长杆|XPHB}",
+						"{@item 小包|XPHB}",
+						"{@item 绳索|XPHB}",
+						"{@item 麻袋|XPHB}",
+						"{@item 铲子|XPHB}",
+						"{@item 铁钉|XPHB|铁钉}",
+						"{@item 细绳|XPHB}",
+						"{@item 火绒盒|XPHB}",
+						"{@item 火把|XPHB}",
+						"{@item 小瓶|XPHB}"
+					]
+				},
+				"参见{@book 玩家手册|XPHB}中该物品的规则。该物品持续到你完成一次{@variantrule 长休|XPHB}为止，届时它会消失。",
+				"你可以使用此特性的次数等于你的智力调整值（至少一次），并且你在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
+			]
+		},
+		{
+			"ENG_name": "Replicate Magic Item",
+			"name": "仿制魔法物品",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 2,
+			"entries": [
+				"你学会了用于制作魔法物品的奥术方案。",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Plans Known",
+							"name": null,
+							"type": "entries",
+							"entries": [
+								"当你获得此特性时，从魔法物品方案（奇械师等级2+）表格中选择四个方案学习（见{@book 城主指南|XDMG}以获取物品描述）。推荐{@item 次元袋|XDMG}、{@item 水下呼吸帽|XDMG}、{@item 短讯石|XDMG}和{@item +1 战法师魔杖|XDMG|战法师魔杖}。每当你提升奇械师等级时，你可以将一个已知方案替换为你符合条件的新方案。",
+								"当你达到特定奇械师等级时，你将学会另一个自选方案，如奇械师特性表格中的计划已知栏所示。当你选择要学习的方案时，你可以从任何符合资格的魔法物品方案表格中选择；你的资格基于你的奇械师等级。"
+							]
+						},
+						{
+							"ENG_name": "Creating an Item",
+							"type": "entries",
+							"name": "创造物品",
+							"entries": [
+								"当你完成一次{@variantrule 长休|XPHB}时，如果你手上有{@item 修补工具|XPHB}，你可以创建一个或两个不同的魔法物品。每个物品都基于你为此特性所知的一个方案。",
+								"如果创造的物品需要{@variantrule 同调|XPHB}，你可以在创造它的瞬间立即同调。如果你决定稍后同调该物品，必须使用{@variantrule 同调|XPHB}的正常流程进行同调。",
+								"当你达到奇械师特性表格的魔法物品栏中指定的特定奇械师等级时，你在长休结束时可以创造的魔法物品数量增加。你创造的每个物品必须基于你知道的一个不同方案。",
+								"你无法通过此特性拥有超过奇械师特性表格中对应你等级的魔法物品栏所示数量的魔法物品。若你尝试超出此特性的最大魔法物品数量，最旧的物品会消失，然后新物品出现。"
+							]
+						},
+						{
+							"ENG_name": "Duration",
+							"type": "entries",
+							"name": "持续时间",
+							"entries": [
+								"由该特性创造的魔法物品功能与正常魔法物品相同，但其魔法并非永久性；当你死亡时，该魔法物品会在{@dice 1d4}天后消失。如果你用新方案替换已知方案，任何用被替换方案创造的魔法物品会立即消失。",
+								"如果你通过此特性创造的物品是一个容器，例如{@item 次元袋|XDMG}，并且它消失了，其内容物会无害地出现在其空间内及周围。"
+							]
+						},
+						{
+							"ENG_name": "Spellcasting Focus",
+							"name": "法器",
+							"type": "entries",
+							"entries": [
+								"你可以使用该特性创造出的任何魔杖或武器作为{@variantrule 法器|XPHB}，以替代使用一套工匠工具。"
+							]
+						},
+						{
+							"ENG_name": "Crafting More Magic Items",
+							"type": "inset",
+							"name": "制作更多魔法物品",
+							"entries": [
+								"仿制魔法物品特性并非奇械师制作魔法物品的唯一方式。{@book 城主指南|XDMG|6|制作魔法物品}为想要制作各种魔法物品的角色\u2014\u2014不仅仅是奇械师\u2014\u2014提供了规则。尽管许多不同的角色都能制作魔法物品，但奇械师能比其他人更快地完成；每个奇械师子职都能提高角色制作特定类别物品的速度。",
+								"当奇械师使用城主指南中的正常规则制造魔法物品时，该角色不会获得与该物品的特殊联系。提及由你的仿制魔法物品特性所创造物品的职业特性不适用于你通过其他方式制造的物品。"
+							]
+						},
+						{
+							"caption": "魔法物品方案（奇械师等级2+）",
+							"type": "table",
+							"colLabels": [
+								"魔法物品方案",
+								"同调"
+							],
+							"colStyles": [
+								"col-9",
+								"col-3 text-center"
+							],
+							"rows": [
+								[
+									"{@item 炼金壶|XDMG}",
+									"No"
+								],
+								[
+									"{@item 次元袋|XDMG}",
+									"No"
+								],
+								[
+									"{@item 水下呼吸帽|XDMG}",
+									"No"
+								],
+								[
+									"{@filter 通用魔法物品，不是药水、卷轴或诅咒物品|items|source=|type=!potion;!scroll|rarity=common|category=|miscellaneous=!诅咒}*",
+									"不同"
+								],
+								[
+									"{@item 夜视镜|XDMG}",
+									"No"
+								],
+								[
+									"{@item 多重工具|EFA}",
+									"是"
+								],
+								[
+									"{@item 连射武器|EFA}",
+									"是"
+								],
+								[
+									"{@item 回力武器|EFA}",
+									"No"
+								],
+								[
+									"{@item 攀爬绳|XDMG}",
+									"No"
+								],
+								[
+									"{@item 短讯石|XDMG}",
+									"No"
+								],
+								[
+									"{@item +1 盾牌|XDMG|盾牌 +1}",
+									"No"
+								],
+								[
+									"{@item 搜魔魔杖|XDMG}",
+									"No"
+								],
+								[
+									"{@item 探秘魔杖|XDMG}",
+									"No"
+								],
+								[
+									"{@item +1 战法师魔杖|XDMG|战法师魔杖 +1}",
+									"是"
+								],
+								[
+									"{@item +1 武器|XDMG|+1 武器}",
+									"No"
+								],
+								[
+									"{@item +1 神功绑带|XDMG|神威绑带，+1}",
+									"No"
+								]
+							],
+							"footnotes": [
+								"*你可以多次学习此选项，且每次必须选择一个不同的物品；每个选定的物品计为一个不同的方案。"
+							]
+						},
+						{
+							"caption": "魔法物品方案（奇械师等级6+）",
+							"type": "table",
+							"colLabels": [
+								"魔法物品方案",
+								"同调"
+							],
+							"colStyles": [
+								"col-9",
+								"col-3 text-center"
+							],
+							"rows": [
+								[
+									"{@item +1 护甲|XDMG|+1护甲}",
+									"No"
+								],
+								[
+									"{@item 精灵之靴|XDMG}",
+									"No"
+								],
+								[
+									"{@item 折返之靴|EFA}",
+									"是"
+								],
+								[
+									"{@item 精灵斗篷|XDMG}",
+									"是"
+								],
+								[
+									"{@item 蝠鲼斗篷|XDMG}",
+									"是"
+								],
+								[
+									"{@item 炫目武器|EFA}",
+									"是"
+								],
+								[
+									"{@item 魅惑镜片|XDMG}",
+									"是"
+								],
+								[
+									"{@item 微视镜片|XDMG}",
+									"No"
+								],
+								[
+									"{@item 窃贼手套|XDMG}",
+									"No"
+								],
+								[
+									"{@item 警觉之盔|EFA}",
+									"No"
+								],
+								[
+									"{@item 显像提灯|XDMG}",
+									"No"
+								],
+								[
+									"{@item 思维砥石|EFA}",
+									"是"
+								],
+								[
+									"{@item 适应项链|XDMG}",
+									"是"
+								],
+								[
+									"{@item 颤栗乐笙|XDMG}",
+									"No"
+								],
+								[
+									"{@item 斥力之盾|EFA}",
+									"No"
+								],
+								[
+									"{@item 善泳戒指|XDMG}",
+									"No"
+								],
+								[
+									"{@item 水行戒指|XDMG}",
+									"No"
+								],
+								[
+									"{@item 警戒之盾|XDMG}",
+									"No"
+								],
+								[
+									"{@item 法力恢复戒指|EFA}",
+									"是"
+								],
+								[
+									"{@item 魔法飞弹魔杖|XDMG}",
+									"No"
+								],
+								[
+									"{@item 蛛网魔杖|XDMG}",
+									"是"
+								],
+								[
+									"{@item 警戒武器|XDMG}",
+									"是"
+								]
+							]
+						},
+						{
+							"caption": "魔法物品方案（奇械师等级10+）",
+							"type": "table",
+							"colLabels": [
+								"魔法物品方案",
+								"同调"
+							],
+							"colStyles": [
+								"col-9",
+								"col-3 text-center"
+							],
+							"rows": [
+								[
+									"{@item 抗性护甲|XDMG}",
+									"是"
+								],
+								[
+									"{@item 淬毒匕首|XDMG}",
+									"No"
+								],
+								[
+									"{@item 精灵链甲|XDMG}",
+									"No"
+								],
+								[
+									"{@item 羽落戒指|XDMG}",
+									"是"
+								],
+								[
+									"{@item 跳跃戒指|XDMG}",
+									"是"
+								],
+								[
+									"{@item 心灵护盾戒指|XDMG}",
+									"是"
+								],
+								[
+									"{@item +2 盾牌|XDMG|盾牌，+2}",
+									"No"
+								],
+								[
+									"{@filter 非普通奇物，且未被诅咒|items|source=|type=奇物|rarity=uncommon|category=|miscellaneous=!诅咒}*",
+									"不同"
+								],
+								[
+									"{@item +2 战法师魔杖|XDMG|战法师魔杖，+2}",
+									"是"
+								],
+								[
+									"{@item +2 武器|XDMG|+2 武器}",
+									"No"
+								],
+								[
+									"{@item +2 神功绑带|XDMG|神威绑带，+2}",
+									"No"
+								]
+							],
+							"footnotes": [
+								"*你可以多次学习此选项，且每次必须选择一个不同的物品；每个选定的物品计为一个不同的方案。"
+							]
+						},
+						{
+							"caption": "魔法物品方案（奇械师等级14+）",
+							"type": "table",
+							"colLabels": [
+								"魔法物品方案",
+								"同调"
+							],
+							"colStyles": [
+								"col-9",
+								"col-3 text-center"
+							],
+							"rows": [
+								[
+									"{@item +2 护甲|XDMG|+2 弹药}",
+									"No"
+								],
+								[
+									"{@item 吸矢盾|XDMG}",
+									"是"
+								],
+								[
+									"{@item 焰舌|XDMG}",
+									"是"
+								],
+								[
+									"{@filter 珍稀奇物，非诅咒|items|source=|type=奇物|rarity=rare|category=|miscellaneous=!诅咒}*",
+									"不同"
+								],
+								[
+									"{@item 自由行动戒指|XDMG}",
+									"是"
+								],
+								[
+									"{@item 防护戒指|XDMG}",
+									"是"
+								],
+								[
+									"{@item 公羊戒指|XDMG}",
+									"是"
+								]
+							],
+							"footnotes": [
+								"*你可以多次学习此选项，且每次必须选择一个不同的物品；每个选定的物品计为一个不同的方案。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Artificer Subclass",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得一个你选择的奇械师子职。{@subclass 炼金师|奇械师|EFA|EFA}、{@subclass 装甲师|奇械师|EFA|EFA}、{@subclass 魔炮师|奇械师|EFA|EFA}、{@subclass 战地匠师|奇械师|EFA|EFA}和{@subclass 制图师|奇械师|EFA|EFA}子职在此职业描述之后详述。子职是一种专精，在特定奇械师等级授予你特性。在你的剩余职业生涯中，你获得你子职的每个特性，只要它们不高于你的奇械师等级。"
+			]
+		},
+		{
+			"ENG_name": "Ability Score Improvement",
+			"name": "属性值提升",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 4,
+			"entries": [
+				"你获得{@feat 属性值提升|XPHB}专长或另一个你符合条件且自选的专长。你在奇械师等级8、12和16时再次获得此特性。"
+			]
+		},
+		{
+			"ENG_name": "Subclass feature",
+			"name": "子职特性",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 5,
+			"entries": [
+				"你获得一个来自你的奇械师子职的特性。"
+			]
+		},
+		{
+			"ENG_name": "Magic Item Tinker",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 6,
+			"entries": [
+				"你的{@classFeature 仿制魔法物品|奇械师|EFA|2|EFA}特性获得以下选项。",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Charge Magic Item",
+							"type": "entries",
+							"name": "冲锋魔法物品",
+							"entries": [
+								"作为{@variantrule 附赠动作|XPHB}，你可以接触你5尺内一个你通过仿制魔法物品创造且使用充能的魔法物品。你消耗一个1环或更高的法术位并为该物品充能。该物品恢复的充能数等于所消耗法术位的环数。"
+							]
+						},
+						{
+							"ENG_name": "Drain Magic Item",
+							"type": "entries",
+							"name": "吸取魔法物品",
+							"entries": [
+								"作为{@variantrule 附赠动作|XPHB}，你可以接触一个你通过仿制魔法物品创造的5尺内的魔法物品，并使其消失，将其魔法能量转化为一个法术位。如果物品是普通则为1环，如果物品是非普通或珍稀则为2环。一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前不能再次使用。你通过此特性创造的任何法术位在你完成一次{@variantrule 长休|XPHB}时消失。"
+							]
+						},
+						{
+							"ENG_name": "Transmute Magic Item",
+							"type": "entries",
+							"name": "转化魔法物品",
+							"entries": [
+								"作为一个{@action 魔法|XPHB}动作，你可以接触一个你5尺内通过仿制魔法物品创造的魔法物品，并将其转变为另一个不同的魔法物品。生成的物品必须基于你已知的魔法物品方案。一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前不能再次使用。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Flash of Genius",
+			"name": "灵光一闪",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 7,
+			"entries": [
+				"当你或一个你30尺内能看见的生物在属性检定或豁免检定中失败时，你可以执行一个{@variantrule 反应|XPHB}来为掷骰添加一个加值，可能使其成功。该加值等于你的智力调整值（最低为+1）。",
+				"你可以使用此{@variantrule 反应|XPHB}的次数等于你的智力调整值（至少一次）。当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已消耗的使用次数。"
+			]
+		},
+		{
+			"ENG_name": "Ability Score Improvement",
+			"name": "属性值提升",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 8,
+			"entries": [
+				"你获得{@feat 属性值提升|XPHB}专长或另一个你符合条件且选择的专长。"
+			]
+		},
+		{
+			"ENG_name": "Subclass feature",
+			"name": "子职特性",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 9,
+			"entries": [
+				"你获得一个来自你的奇械师子职的特性。"
+			]
+		},
+		{
+			"ENG_name": "Magic Item Adept",
+			"name": "魔法物品熟稔",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 10,
+			"entries": [
+				"你现在可以同时与最多四件魔法物品同调。"
+			]
+		},
+		{
+			"ENG_name": "Spell-Storing Item",
+			"name": "储法物品",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 11,
+			"entries": [
+				"每当你完成一次{@variantrule 长休|XPHB}时，你可以接触一件简易或军用武器或一件你可以用作{@variantrule 法器|XPHB}的物品，并在其中储存一个法术，选择一个施法时间为动作且不需要消耗材料成分的1环、2环或3环奇械师法术（你无需准备该法术）。",
+				"当持握该物件时，一个生物可以执行一个{@action 魔法|XPHB}动作来从中产生该法术的效果，使用你的施法属性调整值。如果该法术需要{@status 专注|XPHB}，该生物必须保持专注。一旦一个生物使用该物件产生了该法术的效果，该物件直到该生物的下个回合开始前都不能再以此方式使用。",
+				"该法术会留在该物件中，直到它被使用的次数等于你智力调整值的两倍（最低为两次）或直到你再次使用此特性将一个法术储存在一个物件中。"
+			]
+		},
+		{
+			"ENG_name": "Ability Score Improvement",
+			"name": "属性值提升",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 12,
+			"entries": [
+				"你获得{@feat 属性值提升|XPHB}专长或另一个你符合条件且选择的专长。"
+			]
+		},
+		{
+			"ENG_name": "Advanced Artifice",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 14,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Magic Item Savant",
+							"name": "魔法物品专家",
+							"type": "entries",
+							"entries": [
+								"你现在可以同时与最多五件魔法物品同调。"
+							]
+						},
+						{
+							"ENG_name": "Refreshed Genius",
+							"type": "entries",
+							"name": "焕发天才",
+							"entries": [
+								"当你完成一次{@variantrule 短休|XPHB}时，你恢复一次已消耗的{@classFeature 灵光一闪|奇械师|EFA|7|EFA}特性的使用次数。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Subclass feature",
+			"name": "子职特性",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 15,
+			"entries": [
+				"你获得一个来自你的奇械师子职的特性。"
+			]
+		},
+		{
+			"ENG_name": "Ability Score Improvement",
+			"name": "属性值提升",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 16,
+			"entries": [
+				"你获得{@feat 属性值提升|XPHB}专长或另一个你符合条件且选择的专长。"
+			]
+		},
+		{
+			"ENG_name": "Magic Item Master",
+			"name": "魔法物品大师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 18,
+			"entries": [
+				"你现在最多可以同时同调于六个魔法物品。"
+			]
+		},
+		{
+			"ENG_name": "Epic Boon",
+			"name": "传奇恩惠",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 19,
+			"entries": [
+				"你获得一个传奇恩惠专长或另一个你符合条件且自选的专长。推荐{@feat 能量抗性之恩惠|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Soul of Artifice",
+			"name": "奇械之魂",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"level": 20,
+			"entries": [
+				"你已与你的魔法物品建立了神秘连接，可以从中汲取援助。你获得以下好处。",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"ENG_name": "Cheat Death",
+							"type": "entries",
+							"name": "欺骗死亡",
+							"entries": [
+								"如果你被减少到0{@variantrule 生命值|XPHB}但未被直接杀死，你可以解离任意数量由你的仿制魔法物品特性创造的非普通或珍稀魔法物品。如果你这样做，你的{@variantrule 生命值|XPHB}将改为等于20乘以被解离的魔法物品数量。"
+							]
+						},
+						{
+							"ENG_name": "Magical Guidance",
+							"type": "entries",
+							"name": "魔法指引",
+							"entries": [
+								"当你完成一次{@variantrule 短休|XPHB}时，如果你与至少一件魔法物品{@variantrule 同调|XPHB}，你恢复所有已消耗的{@classFeature 灵光一闪|奇械师|EFA|7|EFA}使用次数。"
+							]
+						}
+					]
+				}
+			]
+		},
 		{
 			"ENG_name": "Magical Tinkering",
 			"name": "魔法工艺",
@@ -1233,6 +2695,1285 @@
 		}
 	],
 	"subclassFeature": [
+		{
+			"ENG_name": "Alchemist",
+			"name": "炼金师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"{@i 制造魔法灵药和药水}",
+				"炼金师是结合试剂产生魔法效应的专家。炼金师使用他们的造物赋予生命和剥夺生命。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "ì|奇械师|EFA|炼金师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "炼金师法术|奇械师|EFA|炼金师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "实验性灵药|奇械师|EFA|炼金师|EFA|3|EFA"
+				}
+			]
+		},
+		{
+			"ENG_name": "Alchemist Spells",
+			"name": "炼金师法术",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"当你达到炼金师法术表格中指定的奇械师等级时，你此后始终准备所列出的法术。",
+				{
+					"caption": "炼金师法术",
+					"type": "table",
+					"colLabels": [
+						"奇械师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 治愈真言|XPHB}, {@spell 致病射线|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 炽焰法球|XPHB}, {@spell 马友夫强酸箭|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 气化形体|XPHB}, {@spell 群体治愈真言|XPHB}"
+						],
+						[
+							"13",
+							"{@spell 防死结界|XPHB}, {@spell 浓酸球|XPHB}"
+						],
+						[
+							"17",
+							"{@spell 死云术|XPHB}, {@spell 死者复活|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Experimental Elixir",
+			"name": "实验性灵药",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"每当你持有{@item 炼金工具|XPHB}完成一次{@variantrule 长休|XPHB}时，你可以使用该工具魔法般地制造两瓶灵药。对于每瓶灵药，在实验性灵药表格上掷骰以确定灵药的效果，当有人饮用灵药时触发该效果。灵药出现在一个小瓶中，当灵药被饮用或倒出时小瓶消失。如果在你完成一次{@variantrule 长休|XPHB}时仍有任何灵药剩余，该灵药及其小瓶都会消失。",
+				{
+					"ENG_name": "Drinking an Elixir",
+					"type": "entries",
+					"name": "饮用一瓶灵药",
+					"entries": [
+						"作为一个{@variantrule 附赠动作|XPHB}，一个生物可以饮用该灵药或将其给予5尺内的另一个生物。"
+					]
+				},
+				{
+					"ENG_name": "Creating Additional Elixirs",
+					"type": "entries",
+					"name": "制造额外灵药",
+					"entries": [
+						"作为持有炼金工具时的一个{@action 魔法|XPHB}动作，你可以消耗一个法术位来创造另一份灵药。当你如此做时，你可以从实验性灵药表格中选择其效果，而非进行掷骰。",
+						"当你达到特定奇械师等级时，你可以在每次{@variantrule 长休|XPHB}结束时制作一份额外的灵药：5级时总共三份，9级时四份，15级时五份。"
+					]
+				},
+				{
+					"caption": "实验性灵药",
+					"type": "table",
+					"colLabels": [
+						"1d6",
+						"效果"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"{@b 治疗。} 饮用者恢复等于 {@dice 2d8} 加上你的智力调整值的 {@variantrule 生命值|XPHB}。当你达到奇械师等级9（{@dice 1d8}）和15（{@dice 3d8}）时，恢复的 {@variantrule 生命值|XPHB} 数值增加 {@dice 4d8}。"
+						],
+						[
+							"2",
+							"{@b 迅捷。} 饮用者的{@variantrule 速度|XPHB}在1小时内增加10尺。当你达到奇械师等级9（15尺）和15（20尺）时，此加值增加。"
+						],
+						[
+							"3",
+							"{@b 韧性。} 饮用者在10分钟内获得AC+1加值。当你达到奇械师等级9（1小时）和15（8小时）时，持续时间增加。"
+						],
+						[
+							"4",
+							"{@b 勇气。} 饮用者可以掷 {@dice 1d4} 并将掷出的数值添加到接下来1分钟内进行的每次攻击检定和豁免检定中。当你达到奇械师等级9（10分钟）和15（1小时）时，持续时间增加。"
+						],
+						[
+							"5",
+							"{@b 飞行。} 饮用者获得10尺的{@variantrule 飞行速度|XPHB}，持续10分钟。当你达到奇械师等级9（20尺）和15（30尺）时，{@variantrule 飞行速度|XPHB}增加。"
+						],
+						[
+							"6",
+							"你通过选择此表格中的其他一行来确定灵药的效果。"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Tools of the Trade",
+			"name": "ì",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Tool Proficiency",
+					"name": "工具熟练项",
+					"type": "entries",
+					"entries": [
+						"你获得炼金工具和{@item 草药工具|XPHB}的熟练项。如果你已经拥有其中一种熟练项，则获得一种你选择的其他类型工匠工具的熟练项（或者如果你已拥有两种，则获得两种其他类型）。"
+					]
+				},
+				{
+					"ENG_name": "Potion Crafting",
+					"type": "entries",
+					"name": "药水手作",
+					"entries": [
+						"当你使用《城主指南》中的制造规则酿造药水时，所需制造时间减半。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Alchemical Savant",
+			"name": "炼金术掌握",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 5,
+			"header": 2,
+			"entries": [
+				"每当你使用你的{@item 炼金工具|XPHB}作为{@variantrule 法器|XPHB}施法时，你在该法术的一个掷骰上获得加值。该掷骰必须恢复{@variantrule 生命值|XPHB}或是造成强酸、火焰或毒素伤害的伤害掷骰。该加值等于你的智力调整值（最低加值为+1）。"
+			]
+		},
+		{
+			"ENG_name": "Restorative Reagents",
+			"name": "复原药剂",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"你可以施放{@spell 次级复原术|XPHB}而不消耗法术位且无需准备该法术，前提是你使用{@item 炼金工具|XPHB}作为{@variantrule 法器|XPHB}。你可以这样做的次数等于你的智力调整值（至少一次），并且你在完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。"
+			]
+		},
+		{
+			"ENG_name": "Chemical Mastery",
+			"name": "化学专家",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "炼金师",
+			"subclassSource": "EFA",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Alchemical Eruption",
+					"type": "entries",
+					"name": "炼金天灾爆发",
+					"entries": [
+						"当你施放一个对目标造成强酸、火焰或毒素伤害的奇械师法术时，你也可以对该目标造成{@damage 2d8}力场伤害。你每回合只能使用此增益一次。"
+					]
+				},
+				{
+					"ENG_name": "Chemical Resistance",
+					"type": "entries",
+					"name": "化学抗性",
+					"entries": [
+						"你获得对强酸伤害和毒素伤害的{@variantrule 抗性|XPHB}。你还获得对中毒状态的{@variantrule 免疫|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Conjured Cauldron",
+					"type": "entries",
+					"name": "咒唤吊挂大锅",
+					"entries": [
+						"你可以施放{@spell 塔莎泡泡坩埚|XPHB}而不消耗法术位、不准备该法术且无需材质成分，前提是你使用炼金工具作为{@variantrule 法器|XPHB}。一旦你使用了此特性，在完成一次{@variantrule 长休|XPHB}前你不能再次使用它。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Arcane Armor",
+			"name": "奥能装甲",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"当你手持铁匠工具时，你可以用一个{@action 魔法|XPHB}动作将你穿着的一套盔甲转变为奥能装甲。该盔甲会保持为奥能装甲，直到你装着另一套盔甲或你死亡。",
+				"当你穿着你的奥能装甲时，你获得以下好处。",
+				{
+					"ENG_name": "No Strength Requirement",
+					"type": "entries",
+					"name": "无力量要求",
+					"entries": [
+						"如果你的盔甲通常对穿戴者的力量有要求，奥能装甲能让你无视它。"
+					]
+				},
+				{
+					"ENG_name": "Quick Don and Doff",
+					"type": "entries",
+					"name": "快速装着和卸除",
+					"entries": [
+						"你可以用一个{@action 操作|XPHB}动作装着或卸除该护甲。该护甲无法违背你的意愿被移除。"
+					]
+				},
+				{
+					"ENG_name": "Spellcasting Focus",
+					"name": "法器",
+					"type": "entries",
+					"entries": [
+						"你可以将奥能装甲用作你奇械师法术的{@variantrule 法器|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Armor Model",
+			"name": "装甲型号",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你可以定制你的奥能装甲。当你这样做时，选择以下装甲型号之一：{@subclassFeature 无畏号|奇械师|EFA|装甲师|EFA|3|EFA}、{@subclassFeature 守护者|奇械师|EFA|装甲师|EFA|3|EFA}或{@subclassFeature 渗透者|奇械师|EFA|装甲师|EFA|3|EFA}。你选择的型号在你穿着时会给予你特殊益处。",
+				"每个型号包括一个特殊武器。当你使用该武器攻击时，你可以将你的智力调整值，而非力量或敏捷调整值，添加到攻击和伤害掷骰中。",
+				"你可以在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时改变装甲的型号，前提是你手中有{@item 铁匠工具|XPHB}。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "无畏号|奇械师|EFA|装甲师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "守护者|奇械师|EFA|装甲师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "渗透者|奇械师|EFA|装甲师|EFA|3|EFA"
+				}
+			]
+		},
+		{
+			"ENG_name": "Armorer",
+			"name": "装甲师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"{@i 制造魔法护甲以增强你的属性}",
+				"装甲师将护甲改造得几乎像第二形态一样。护甲被增强以磨练装甲师的魔法，释放强大的攻击，并生成强大的防御。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "ì|奇械师|EFA|装甲师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "装甲师法术|奇械师|EFA|装甲师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "奥能装甲|奇械师|EFA|装甲师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "装甲型号|奇械师|EFA|装甲师|EFA|3|EFA"
+				}
+			]
+		},
+		{
+			"ENG_name": "Armorer Spells",
+			"name": "装甲师法术",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"当你达到装甲师法术表格中指定的奇械师等级时，你此后始终准备所列出的法术。",
+				{
+					"caption": "装甲师法术",
+					"type": "table",
+					"colLabels": [
+						"奇械师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 魔法飞弹|XPHB}, {@spell 雷鸣波|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 镜影术|XPHB}, {@spell 粉碎音波|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 催眠图纹|XPHB}, {@spell 闪电束|XPHB}"
+						],
+						[
+							"13",
+							"{@spell 火焰护盾|XPHB}, {@spell 高等隐形术|XPHB}"
+						],
+						[
+							"17",
+							"{@spell 穿墙术|XPHB}, {@spell 力场墙|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Dreadnaught",
+			"name": "无畏号",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你将你的护甲设计成在战斗中成为一座高耸的巨像。它具有以下特性：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Force Demolisher",
+							"type": "item",
+							"name": "力场毁灭者",
+							"entries": [
+								"一道奥术破城锤或攻城大锤从你的护甲中投射而出。该破城锤视为具有{@itemProperty R|XPHB|触及}属性的简易近战武器，并在命中时造成{@damage 1d10}力场伤害。如果你用破城锤命中一个体型至少比你小一级的生物，你可以将该生物推离自身最多10尺，或将其拉向自身最多10尺。"
+							]
+						},
+						{
+							"ENG_name": "Giant Stature",
+							"type": "item",
+							"name": "巨人体型",
+							"entries": [
+								"作为{@variantrule 附赠动作|XPHB}，你变形并放大你的护甲，持续1分钟。在持续时间内，你的触及增加5尺，并且如果你小于大型，则你变为大型，连同你穿戴的任何物品。如果没有足够的空间让你增大体型，你的体型不会变化。你可以使用这个{@variantrule 附赠动作|XPHB}的次数等于你的智力调整值（至少一次）。当你完成一次{@variantrule 长休|XPHB}时，你恢复所有已使用的次数。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Guardian",
+			"name": "守护者",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你将装甲设计为适合冲锋陷阵。它拥有下列特性：",
+				{
+					"ENG_name": "Thunder Pulse",
+					"type": "item",
+					"name": "雷鸣脉冲",
+					"entries": [
+						"你可以通过护甲释放冲击波。该脉冲视为简易近战武器并在命中时造成{@damage 1d8}雷鸣伤害。被脉冲命中的生物在攻击除你以外的目标时攻击检定具有{@variantrule 劣势|XPHB}，直到你的下个回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Defensive Field",
+					"name": "防护场",
+					"type": "item",
+					"entries": [
+						"处于浴血状态时，你可以使用一个{@variantrule 附赠动作|XPHB}来获得等于你奇械师等级的{@variantrule 临时生命值|XPHB}。如果你卸除该护甲，则会失去这些{@variantrule 临时生命值|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Infiltrator",
+			"name": "渗透者",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你为更隐秘的行动定制了护甲。它拥有以下特性：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Lightning Launcher",
+							"name": "闪电发射器",
+							"type": "item",
+							"entries": [
+								"一个宝石般的节点出现在你的护甲上，你可以从中发射闪电弩失。该发射器视为一把简易远程武器，正常射程90尺，最大射程300尺，命中时造成{@damage 1d6}闪电伤害。在你的每个回合中一次，当你用该发射器命中一个生物时，你可以对该目标造成额外{@damage 1d6}闪电伤害。"
+							]
+						},
+						{
+							"ENG_name": "Powered Steps",
+							"name": "动力步伐",
+							"type": "item",
+							"entries": [
+								"你的{@variantrule 速度|XPHB}增加5尺。"
+							]
+						},
+						{
+							"ENG_name": "Dampening Field",
+							"name": "减震场",
+							"type": "item",
+							"entries": [
+								"你在敏捷（{@skill 隐匿|XPHB}）检定上具有{@variantrule 优势|XPHB}。如果该护甲对此类检定施加{@variantrule 劣势|XPHB}，则{@variantrule 优势|XPHB}和{@variantrule 劣势|XPHB}相互抵消，如常。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Tools of the Trade",
+			"name": "ì",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Armor Training",
+					"type": "entries",
+					"name": "护甲受训",
+					"entries": [
+						"你获得重甲受训。"
+					]
+				},
+				{
+					"ENG_name": "Tool Proficiency",
+					"name": "工具熟练项",
+					"type": "entries",
+					"entries": [
+						"你获得铁匠工具的熟练项。如果你已有此工具熟练项，则你获得一种自选的其他类型工匠工具的熟练项。"
+					]
+				},
+				{
+					"ENG_name": "Armor Crafting",
+					"type": "entries",
+					"name": "护甲手作",
+					"entries": [
+						"当你制造非魔法或魔法护甲时，所需制造时间减半。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Extra Attack",
+			"name": "额外攻击",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 5,
+			"header": 2,
+			"entries": [
+				"当你在自己的回合执行{@action 攻击|XPHB}动作时，你可以发动两次攻击而非一次。"
+			]
+		},
+		{
+			"ENG_name": "Improved Armorer",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Armor Replication",
+					"type": "entries",
+					"name": "护甲复制",
+					"entries": [
+						"你为你的仿制魔法物品特性学习一个额外的方案，且它必须属于护甲类别。如果你替换该方案，你必须用另一个护甲方案替换它。",
+						"此外，你可以用该特性额外创造一个物品，且该物品也必须是护甲类别。"
+					]
+				},
+				{
+					"ENG_name": "Improved Arsenal",
+					"type": "entries",
+					"name": "强化军械库",
+					"entries": [
+						"你使用奥能装甲型号的特殊武器进行攻击和伤害掷骰时获得+1加值。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Perfected Armor",
+			"name": "完美装甲",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "装甲师",
+			"subclassSource": "EFA",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"你的奥能装甲根据其型号获得额外好处，如下所述。",
+				{
+					"ENG_name": "Dreadnaught",
+					"name": "无畏号",
+					"type": "entries",
+					"entries": [
+						"你的力场毁灭者的伤害骰增加至{@damage 2d6}力场伤害。",
+						"此外，当你使用巨人体型时，你的触及增加10尺，你的体型可以增长至大型或巨型（由你选择），并且在持续时间内你在力量检定和力量豁免检定上具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Guardian",
+					"name": "守护者",
+					"type": "entries",
+					"entries": [
+						"你的雷鸣脉冲的伤害骰提升至{@damage 1d10}雷鸣伤害。",
+						"此外，当一个你能看见的巨型或更小的生物在其回合结束时处于你30尺内，你可以采取一个{@variantrule 反应|XPHB}来魔法性地迫使该生物进行一次对抗你法术豁免DC的力量豁免检定。豁免失败时，你将该生物直接朝你方向拉动至多25尺至一个未占据空间。如果你将目标拉至距离你自身5尺内的空间，你可以作为此{@variantrule 反应|XPHB}的一部分对其发动一次近战武器攻击。",
+						"你可以使用此{@variantrule 反应|XPHB}的次数等于你的智力调整值（至少一次），并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已使用的次数。"
+					]
+				},
+				{
+					"ENG_name": "Infiltrator",
+					"name": "渗透者",
+					"type": "entries",
+					"entries": [
+						"你的闪电发射器的伤害骰提升至{@damage 2d6}闪电伤害。任何从你的闪电发射器受到闪电伤害的生物会闪烁魔法光芒直到你的下个回合开始。闪烁的生物在5尺半径内散发{@variantrule 微光光照|XPHB}，并且它在对你进行攻击检定时具有{@variantrule 劣势|XPHB}，因为光芒会在它攻击你时电击它。",
+						"此外，作为{@variantrule 附赠动作|XPHB}，你可以获得等于两倍{@variantrule 速度|XPHB}的{@variantrule 飞行速度|XPHB}，直到当前回合结束。你可以使用此{@variantrule 附赠动作|XPHB}的次数等于你的智力调整值（至少一次），并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已使用的次数。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Artillerist",
+			"name": "魔炮师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"{@i 从远处掌控毁灭性法力}",
+				"魔炮师专精于使用魔法在战场上猛投能量、投射物和爆炸。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "ì|奇械师|EFA|魔炮师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "魔炮师法术|奇械师|EFA|魔炮师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "魔能炮台|奇械师|EFA|魔炮师|EFA|3|EFA"
+				}
+			]
+		},
+		{
+			"ENG_name": "Artillerist Spells",
+			"name": "魔炮师法术",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"当你达到魔炮师法术表格中指定的奇械师等级时，你此后始终准备所列出的法术。",
+				{
+					"caption": "魔炮师法术",
+					"type": "table",
+					"colLabels": [
+						"奇械师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 护盾术|XPHB}, {@spell 雷鸣波|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 灼热射线|XPHB}, {@spell 粉碎音波|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 火球术|XPHB}, {@spell 风墙术|XPHB}"
+						],
+						[
+							"13",
+							"{@spell 冰风暴|XPHB}, {@spell 火墙术|XPHB}"
+						],
+						[
+							"17",
+							"{@spell 寒冰锥|XPHB}, {@spell 力场墙|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Eldritch Cannon",
+			"name": "魔能炮台",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"使用{@item 铁匠工具|XPHB}或{@item 木雕工具|XPHB}，你可以采取一个{@action 魔法|XPHB}动作在你自身5尺内的水平面上一个未占据空间创造一个小型或微型{@object 魔能炮台|EFA}。你决定它的外貌，包括你是否携带它（以及你为后者选择腿或轮子）。如果它被缩小到0{@variantrule 生命值|XPHB}或1小时后，它会消失。你可以通过一个{@action 魔法|XPHB}动作提前解散它。",
+				"一旦你创造了一个魔能炮台，你就不能再这样做，直到你完成一次{@variantrule 长休|XPHB}或消耗一个法术位来创造一个。你一次只能拥有一个魔能炮台，并且当你已经拥有一个时无法再创造。"
+			]
+		},
+		{
+			"ENG_name": "Tools of the Trade",
+			"name": "ì",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Ranged Weaponry",
+					"type": "entries",
+					"name": "远程武器",
+					"entries": [
+						"你获得{@filter 军事远程武器|items|type=军用武器;远程武器=沙子}的熟练项。"
+					]
+				},
+				{
+					"ENG_name": "Tool Proficiency",
+					"name": "工具熟练项",
+					"type": "entries",
+					"entries": [
+						"你获得木雕工具的熟练项。如果你已有此熟练项，则获得一种自选的其他类型工匠工具的熟练项。"
+					]
+				},
+				{
+					"ENG_name": "Wand Crafting",
+					"type": "entries",
+					"name": "魔杖手作",
+					"entries": [
+						"当你制造一个魔法魔杖时，所需时间减半。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Arcane Firearm",
+			"name": "奥法火器",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 5,
+			"header": 2,
+			"entries": [
+				"当你完成一次{@variantrule 长休|XPHB}时，你可以使用{@item 木雕工具|XPHB}将特殊符文雕刻到{@item 权杖|XPHB}、{@item 法杖|XPHB}、{@item 魔杖|XPHB}或{@filter 军用远程武器|items|type=军用武器;远程武器=沙子}上，从而将其转化为你的奥法火器。如果你之后在不同物品上雕刻这些符文，它们会从原物件上消失。否则这些符文将无限期持续存在。",
+				"你可以将你的奥法火器用作奇械师法术的{@variantrule 法器|XPHB}。当你通过该枪械施放一个奇械师法术时，掷{@damage 1d8}，并且你获得一个等于掷骰数值的加值到该法术的一个伤害掷骰上。"
+			]
+		},
+		{
+			"ENG_name": "Explosive Cannon",
+			"name": "高爆炮台",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"你创造的每个{@object 魔能炮台|EFA}现在更具破坏性。你获得以下好处。",
+				{
+					"ENG_name": "Detonate",
+					"type": "entries",
+					"name": "引爆",
+					"entries": [
+						"当你的炮台受到伤害时，若你在其60尺范围内，可以采取一个{@variantrule 反应|XPHB}来命令炮台引爆。这样做会摧毁炮台，并迫使每个在其20尺范围内的生物进行一次对抗你法术豁免DC的敏捷豁免检定，豁免失败则受到{@damage 3d10}力场伤害，豁免成功则只受一半伤害。"
+					]
+				},
+				{
+					"ENG_name": "Firepower",
+					"type": "entries",
+					"name": "火力",
+					"entries": [
+						"该火炮的伤害掷骰和防御者提供的{@variantrule 临时生命值|XPHB}数值增加{@dice 1d8}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Fortified Position",
+			"name": "坚固要塞",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "魔炮师",
+			"subclassSource": "EFA",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"你是使用你的{@object 魔能炮台|EFA}构筑防御良好的阵位的大师。你获得以下好处。",
+				{
+					"ENG_name": "Double Firepower",
+					"type": "item",
+					"name": "双面火力",
+					"entries": [
+						"你现在可以同时拥有两门火炮，并且你可以用同一个{@action 魔法|XPHB}动作创造两门。（如果你消耗一个法术位来创造第一门火炮，你必须消耗另一个法术位来创造第二门。）你可以用同一个{@variantrule 附赠动作|XPHB}激活它们两者，命令它们使用相同的激活选项或不同的选项。当你拥有两门火炮时，你不能创造第三门。"
+					]
+				},
+				{
+					"ENG_name": "Shimmering Field Projection",
+					"type": "entries",
+					"name": "闪烁场域投射",
+					"entries": [
+						"你和你的盟友在你的{@object 魔能炮台|EFA}10尺内拥有{@variantrule 掩护|XPHB|半身掩护}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Battle Ready",
+			"name": "战斗准备",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你的战斗训练和魔法实验以两种方式取得了回报。",
+				{
+					"ENG_name": "Arcane Empowerment",
+					"type": "entries",
+					"name": "奥术强化",
+					"entries": [
+						"当你使用魔法武器攻击时，你可以用智力调整值代替力量或敏捷调整值来进行攻击和伤害掷骰。"
+					]
+				},
+				{
+					"ENG_name": "Weapon Knowledge",
+					"type": "entries",
+					"name": "武器知识",
+					"entries": [
+						"你获得{@filter 军用武器|items|type=军用武器}的熟练项。你可以将你拥有熟练项的武器作为你奇械师法术的{@variantrule 法器|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Battle Smith",
+			"name": "战地匠师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"{@i 命令构装守护者}",
+				"战地匠师是防御者和医疗兵的结合体，是保护他人和修复物资与人员的专家。为了协助他们的工作，战地匠师会有一个{@creature 钢铁守卫|EFA}相伴，这是他们自己创造的防护性同伴。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "ì|奇械师|EFA|战地匠师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "战地匠师法术|奇械师|EFA|战地匠师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "战斗准备|奇械师|EFA|战地匠师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "钢铁守卫|奇械师|EFA|战地匠师|EFA|3|EFA"
+				}
+			]
+		},
+		{
+			"ENG_name": "Battle Smith Spells",
+			"name": "战地匠师法术",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"当你达到战地匠师法术表格中指定的奇械师等级时，你此后始终准备着列出的法术。",
+				{
+					"caption": "战地匠师法术",
+					"type": "table",
+					"colLabels": [
+						"奇械师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 英雄气概|XPHB}, {@spell 护盾术|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 闪耀斩|XPHB}, {@spell 守护之链|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 活力灵光|XPHB}, {@spell 召唤箭雨|XPHB}"
+						],
+						[
+							"13",
+							"{@spell 净化灵光|XPHB}, {@spell 火焰护盾|XPHB}"
+						],
+						[
+							"17",
+							"{@spell 放逐斩|XPHB}, {@spell 群体疗伤术|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Steel Defender",
+			"name": "钢铁守卫",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你的修补为你带来了一个同伴，一个{@creature 钢铁守卫|EFA}。你决定防御者的外貌以及它有两条腿还是四条腿；你的选择不会影响防御者的游戏数据。",
+				"该{@creature 钢铁守卫|EFA|防御者}对你和你的盟友{@variantrule 友好 【态度】|XPHB|友好}并服从你。如果你死亡，它会消失。",
+				{
+					"ENG_name": "The Defender in Combat",
+					"type": "entries",
+					"name": "钢铁守卫在战斗",
+					"entries": [
+						"在战斗中，防御者会在你的回合行动。它可以自行移动和使用{@variantrule 反应|XPHB}，但除非你使用{@variantrule 附赠动作|XPHB}命令它执行一个动作，否则它只能执行{@action 回避|XPHB}动作。如果你处于{@condition 失能|XPHB}状态，防御者会自行行动且不受限于{@action 回避|XPHB}动作。"
+					]
+				},
+				{
+					"ENG_name": "Restoring or Replacing the Defender",
+					"type": "entries",
+					"name": "修复或替换钢铁守卫",
+					"entries": [
+						"如果防御者在过去1小时内死亡，你可以使用一个{@action 魔法|XPHB}动作来接触它并消耗一个法术位。防御者会在1分钟后复活，并恢复所有{@variantrule 生命值|XPHB}。",
+						"每当你完成一次{@variantrule 长休|XPHB}，如果你手中有{@item 铁匠工具|XPHB}，就可以创建一个新的{@creature 钢铁守卫|EFA|防御者}。如果你已经通过此特性拥有一个防御者，则第一个防御者会消失。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Tools of the Trade",
+			"name": "ì",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Tool Proficiency",
+					"name": "工具熟练项",
+					"type": "entries",
+					"entries": [
+						"你获得铁匠工具的熟练项。如果你已有此熟练项，则获得一种自选的其他类型的工匠工具的熟练项。"
+					]
+				},
+				{
+					"ENG_name": "Weapon Crafting",
+					"type": "entries",
+					"name": "武器手作",
+					"entries": [
+						"当你制造非魔法或魔法武器时，所需时间减半。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Extra Attack",
+			"name": "额外攻击",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 5,
+			"header": 2,
+			"entries": [
+				"你在你的回合执行{@action 攻击|XPHB}动作时，可以攻击两次而非一次。当你执行{@action 攻击|XPHB}动作时，可以放弃其中一次攻击来命令你的{@creature 钢铁守卫|EFA}执行力场强化撕裂动作。"
+			]
+		},
+		{
+			"ENG_name": "Arcane Jolt",
+			"name": "奥能震荡",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"当你使用魔法武器以攻击检定命中一个目标或你的{@creature 钢铁守卫|EFA}命中一个目标时，你可以通过打击引导魔法能量来创造以下效应之一：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Destructive Energy",
+							"type": "item",
+							"name": "毁灭能量",
+							"entries": [
+								"目标受到额外的{@damage 2d6}点力场伤害。"
+							]
+						},
+						{
+							"ENG_name": "Restorative Energy",
+							"type": "item",
+							"name": "恢复能量",
+							"entries": [
+								"选择你能看见的目标30尺内的一个生物或物件。治疗能量流入所选目标，为其恢复{@dice 2d6}{@variantrule 生命值|XPHB}。"
+							]
+						}
+					]
+				},
+				"你可以使用此能量的次数等于你的智力调整值（至少一次），但每回合最多只能使用一次。当你完成一次{@variantrule 长休|XPHB}后，你恢复所有已消耗的使用次数。"
+			]
+		},
+		{
+			"ENG_name": "Improved Defender",
+			"name": "改良守卫",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"你的{@subclassFeature 奥能震荡|奇械师|EFA|战地匠师|EFA|9|EFA}和{@creature 钢铁守卫|EFA}变得更加强大，赋予以下增益。",
+				{
+					"ENG_name": "Improved Jolt",
+					"type": "entries",
+					"name": "改良电震",
+					"entries": [
+						"你的奥能震荡的额外伤害和治疗都提升至{@dice 4d6}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Deflection",
+					"type": "entries",
+					"name": "改良偏转",
+					"entries": [
+						"每当你的{@creature 钢铁守卫|EFA}使用其招架攻击时，攻击手受到等于{@dice 1d4}加上你的智力调整值的力场伤害。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Adventurer's Atlas",
+			"name": "冒险者图鉴",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"每当你持用{@item 制图工具|XPHB}完成一次{@variantrule 长休|XPHB}时，你可以使用该工具通过接触至少两个生物（其中一个可以是你自己）来创建一套魔法地图，最多生物数量等于1加上你的智力调整值（最少两个生物）。每个目标获得一张魔法地图，该地图会不断更新以显示所有地图持有者的相对位置，但对所有其他人来说都是无法辨认的。这些地图持续到你死亡或你再次使用此特性为止，此时任何由该特性创建的现有地图会立即消失。",
+				"当携带该地图时，目标获得以下好处。",
+				{
+					"ENG_name": "Awareness",
+					"type": "entries",
+					"name": "警觉",
+					"entries": [
+						"目标在其{@variantrule 先攻|XPHB}检定上增加{@dice 1d4}。"
+					]
+				},
+				{
+					"ENG_name": "Positioning",
+					"type": "entries",
+					"name": "定位",
+					"entries": [
+						"目标知晓与其处于同一存在位面的所有其他地图持有者的位置。当施放法术或创造另一个需要能够看见效果目标的效应时，地图持有者可以无视视线或掩护来以另一个地图持有者为目标，只要该地图持有者仍处于效应射程内。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Cartographer",
+			"name": "制图师",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"{@i 绘制动荡中的优势航线}",
+				"制图师是顶级的导航员和侦察代理人。使用他们的造物，制图师可以高亮威胁、佑护盟友，并开辟通往遥远地点的传送门。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "ì|奇械师|EFA|制图师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "制图师法术|奇械师|EFA|制图师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "冒险者图鉴|奇械师|EFA|制图师|EFA|3|EFA"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "制图魔法|奇械师|EFA|制图师|EFA|3|EFA"
+				}
+			]
+		},
+		{
+			"ENG_name": "Cartographer Spells",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"当你达到制图师法术表格中指定的奇械师等级时，你此后始终准备所列出的法术。",
+				{
+					"caption": "制图师法术",
+					"type": "table",
+					"colLabels": [
+						"奇械师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 妖火|XPHB}, {@spell 光导箭|XPHB}, {@spell 治愈真言|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 物件定位术|XPHB}, {@spell 心灵尖刺|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 召雷术|XPHB}, {@spell 鹰眼术|XPHB}"
+						],
+						[
+							"13",
+							"{@spell 放逐术|XPHB}, {@spell 生物定位术|XPHB}"
+						],
+						[
+							"17",
+							"{@spell 探知术|XPHB}, {@spell 传送法阵|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mapping Magic",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Illuminated Cartography",
+					"type": "entries",
+					"name": "发光地图绘图师",
+					"entries": [
+						"你可以施放{@spell 妖火|XPHB}而不消耗法术位，将受影响的生物轮廓描绘得如同墨水勾勒一般。你可以如此施放的次数等于你的智力调整值（至少一次），并且你在完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Portal Jump",
+					"type": "entries",
+					"name": "传送门跳跃术",
+					"entries": [
+						"在你的回合，你可以消耗等于你{@variantrule 速度|XPHB}一半（向下取整）的移动力，传送到你能看见的自身10尺内未占据空间，或30尺内持有你冒险者图鉴地图的生物5尺内未占据空间。如果你的{@variantrule 速度|XPHB}为0，则无法使用此增益。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Tools of the Trade",
+			"name": "ì",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Tool Proficiency",
+					"name": "工具熟练项",
+					"type": "entries",
+					"entries": [
+						"你获得{@item 书法工具|XPHB}和{@item 制图工具|XPHB}的熟练项。如果你已经拥有其中一种熟练项，则获得一种其他类型的工匠工具的熟练项（如果你已拥有两种，则获得两种其他类型的工匠工具的熟练项）。"
+					]
+				},
+				{
+					"ENG_name": "Scroll Crafting",
+					"type": "entries",
+					"name": "卷轴手作",
+					"entries": [
+						"当你使用{@book 玩家手册|PHB}中的手作规则来抄写{@item 法术卷轴|XDMG}时，制造它所需的时间减半。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Guided Precision",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 5,
+			"header": 2,
+			"entries": [
+				"每回合一次，每当你从你的制图师法术列表中施放一个法术或使用攻击检定命中一个受你的{@spell 妖火|XPHB}影响的生物时，你可以将你的智力调整值添加到该法术或攻击的一个伤害掷骰上。",
+				"此外，受到伤害不会使你失去对{@spell 妖火|XPHB}的{@status 专注|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Ingenious Movement",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"当你使用你的{@classFeature 灵光一闪|奇械师|EFA|7|EFA}时，你或一个你选择的你能看见的30尺内愿意的生物可以传送至多30尺至一个你能看见的未占据空间，作为同一个{@variantrule 反应|XPHB}的一部分。"
+			]
+		},
+		{
+			"ENG_name": "Superior Atlas",
+			"name": null,
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "制图师",
+			"subclassSource": "EFA",
+			"level": 15,
+			"header": 2,
+			"entries": [
+				"你的冒险者图鉴得到提升，获得以下好处。",
+				{
+					"ENG_name": "Safe Haven",
+					"type": "entries",
+					"name": "世外桃源",
+					"entries": [
+						"当地图持有者将被减少至0{@variantrule 生命值|XPHB}但未被直接杀死时，该生物可以摧毁其地图。该生物的{@variantrule 生命值|XPHB}改为等于你奇械师等级两倍的数值，且该生物被传送到你5尺内或另一个它选择的地图持有者5尺内的未占据空间。"
+					]
+				},
+				{
+					"ENG_name": "Unerring Path",
+					"type": "entries",
+					"name": "绝不偏航路途",
+					"entries": [
+						"如果你是冒险者图鉴的地图持有者之一，你可以施放{@spell 寻路术|XPHB}而不消耗法术位、不准备该法术且不需要法术成分。一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+					]
+				}
+			]
+		},
 		{
 			"ENG_name": "Alchemist",
 			"name": "炼金师",

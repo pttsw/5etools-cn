@@ -2349,6 +2349,7 @@ Parser.OPT_FEATURE_TYPE_TO_FULL = {
 	"RN": "符文骑士符文",
 	"AF": "炼金配方",
 	"TT": "旅者技艺",
+	"RP": "声望特权",
 };
 
 Parser.optFeatureTypeToFull = function (type) {
@@ -2881,10 +2882,12 @@ Parser.imageTypeToFull = function (imageType) {
 	return Parser._parse_aToB(Parser.IMAGE_TYPE_TO_FULL, imageType, "Other");
 };
 
-Parser.nameToTokenName = function (name) {
-	return name
+Parser.nameToTokenName = function (name, {isUrlEncode = false} = {}) {
+	const out = name
 		.toAscii()
 		.replace(/"/g, "");
+	if (!isUrlEncode) return out;
+	return encodeURIComponent(out);
 };
 
 Parser.bytesToHumanReadable = function (bytes, {fixedDigits = 2} = {}) {
@@ -3153,6 +3156,7 @@ Parser.ruleTypeToFull = function (ruleType) {
 Parser.VEHICLE_TYPE_TO_FULL = {
 	"SHIP": "船",
 	"SPELLJAMMER": "魔法船",
+	"ELEMENTAL_AIRSHIP": "元素飞艇",
 	"INFWAR": "地狱战争机器",
 	"CREATURE": "生物",
 	"OBJECT": "物件",
@@ -3300,6 +3304,7 @@ Parser.SRC_FRHoF = "FRHoF";
 Parser.SRC_ABH = "ABH";
 Parser.SRC_NF = "NF";
 Parser.SRC_LFL = "LFL";
+Parser.SRC_EFA = "EFA";
 Parser.SRC_TD = "TD";
 Parser.SRC_SCREEN = "Screen";
 Parser.SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
@@ -3505,6 +3510,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FRHoF] = "被遗忘的国度：费伦英�
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ABH] = "阿斯带来的饥渴卷册";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NF] = "耐瑟瑞尔的陨落";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LFL] = "洛温：初光";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EFA] = "艾伯伦: Forge of the Artificer";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "Tarot Deck";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN}`);
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = I18nUtil.get(`parser.source.${Parser.SRC_SCREEN_WILDERNESS_KIT}`);
@@ -3685,6 +3691,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_FRHoF] = "FRHoF";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ABH] = "ABH";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_NF] = "NF";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_LFL] = "LFL";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_EFA] = "EFA";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_TD] = "TD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN] = "Scr'14";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN_WILDERNESS_KIT] = "ScrWild";
@@ -3864,6 +3871,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_FRHoF] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ABH] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_NF] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_LFL] = "2025-11-18";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_EFA] = "2025-12-09";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_TD] = "2022-05-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
@@ -4193,6 +4201,7 @@ Parser.SOURCES_NON_FR = new Set([
 	Parser.SRC_BQGT,
 	Parser.SRC_WttHC,
 	Parser.SRC_LFL,
+	Parser.SRC_EFA,
 ]);
 
 // endregion
@@ -4247,6 +4256,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_ABH,
 	Parser.SRC_NF,
 	Parser.SRC_LFL,
+	Parser.SRC_EFA,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;

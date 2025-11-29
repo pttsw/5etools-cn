@@ -2685,6 +2685,40 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Dazzling Weapon",
+			"name": "炫目武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易"
+				},
+				{
+					"weaponCategory": "军用"
+				}
+			],
+			"inherits": {
+				"namePrefix": "炫目",
+				"source": "EFA",
+				"page": 112,
+				"rarity": "rare",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d4}",
+				"charges": 4,
+				"entries": [
+					"这把魔法武器在使用它进行的攻击和伤害掷骰上提供{=bonusWeapon}加值。当你持握它时，你可以使用一个{@variantrule 附赠动作|XPHB}使其散发出30尺半径的{@variantrule 明亮光照|XPHB}和额外30尺的{@variantrule 微光光照|XPHB}。你可以使用一个{@variantrule 附赠动作|XPHB}来熄灭光线。",
+					"该武器有4充能。你可以在被攻击检定命中后立即采取一个{@variantrule 反应|XPHB}以消耗武器的1充能并迫使攻击手进行一次DC 15体质豁免检定。豁免失败时，攻击手获得{@condition 目盲|XPHB}状态直到其下一回合结束。该武器在拂晓时恢复{@dice 1d4}已消耗的充能。"
+				],
+				"light": [
+					{
+						"bright": 30,
+						"dim": 60
+					}
+				]
+			}
+		},
+		{
 			"ENG_name": "Defender",
 			"name": "防御者",
 			"edition": "classic",
@@ -6044,6 +6078,58 @@
 							"这件武器被诅咒了，与它共鸣会将诅咒延续到你身上。除非使用{@spell 移除诅咒}法术或类似的魔法解除诅咒，否则你不愿意与这把武器分离。每当你用这把武器攻击生物并且在攻击骰上掷出1时，你将遭受一个{@spell 变形术}法术的效果，持续1小时，通过掷骰来确定你的新形态。"
 						]
 					}
+				]
+			}
+		},
+		{
+			"ENG_name": "Repeating Shot",
+			"name": "连射武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易",
+					"property": "A|XPHB"
+				},
+				{
+					"weaponCategory": "军用",
+					"property": "A|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "重复",
+				"source": "EFA",
+				"page": 112,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"这把魔法武器在用其进行远程攻击时，为攻击和伤害掷骰提供{=bonusWeapon}加值，并且如果它具有{@itemProperty LD|XPHB|装填}属性则忽略该属性。",
+					"如果该武器缺少弹药，它会自动产生，当持有者用它进行远程攻击掷骰时自动创造一枚魔法弹药。该武器创造的弹药在命中或未命中目标的瞬间消失。"
+				]
+			}
+		},
+		{
+			"ENG_name": "Returning Weapon",
+			"name": "回力武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "简易",
+					"property": "T|XPHB"
+				},
+				{
+					"weaponCategory": "军用",
+					"property": "T|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "返回",
+				"source": "EFA",
+				"page": 112,
+				"rarity": "uncommon",
+				"bonusWeapon": "+1",
+				"entries": [
+					"这把魔法武器在使用它进行的攻击和伤害掷骰上提供{=bonusWeapon}加值，并且在用它进行远程攻击掷骰后立即返回你的手中。"
 				]
 			}
 		},
