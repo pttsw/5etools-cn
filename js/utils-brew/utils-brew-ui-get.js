@@ -155,6 +155,7 @@ export class GetBrewUi {
 		switch (o.sortBy) {
 			case "name": return this.constructor._sortUrlList_byName(a, b);
 			case "author": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSortLower, "_brewAuthor");
+			case "translator": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSortLower, "_brewTranslator");
 			case "category": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSortLower, "_brewPropDisplayName");
 			case "added": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSort, "_brewAdded");
 			case "modified": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSort, "_brewModified");
@@ -228,15 +229,16 @@ export class GetBrewUi {
 		const wrpMiniPills = ee`<div class="fltr__mini-view ve-btn-group"></div>`;
 
 		const btnSortAddedPublished = this._brewUtil.IS_PREFER_DATE_ADDED
-			? `<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="added">Added</button>`
-			: `<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="published">Published</button>`;
+			? `<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="added">收录时间</button>`
+			: `<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="published">发布时间</button>`;
 
 		const wrpSort = ee`<div class="filtertools manbrew__filtertools ve-btn-group input-group input-group--bottom ve-flex no-shrink">
 			<label class="ve-col-0-5 pr-0 ve-btn ve-btn-default ve-btn-xs ve-flex-vh-center">${rdState.cbAll}</label>
 			<button class="ve-col-3-5 sort ve-btn ve-btn-default ve-btn-xs" data-sort="name">名称</button>
-			<button class="ve-col-3 sort ve-btn ve-btn-default ve-btn-xs" data-sort="author">Author</button>
-			<button class="ve-col-1-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">Category</button>
-			<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="modified">Modified</button>
+			<button class="ve-col-3 sort ve-btn ve-btn-default ve-btn-xs" data-sort="author">作者</button>
+			<button class="ve-col-3 sort ve-btn ve-btn-default ve-btn-xs" data-sort="translator">译者</button>
+			<button class="ve-col-1-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">分类</button>
+			<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="modified">修改时间</button>
 			${btnSortAddedPublished}
 			<button class="sort ve-btn ve-btn-default ve-btn-xs ve-grow" disabled>来源</button>
 		</div>`;
@@ -351,6 +353,7 @@ export class GetBrewUi {
 						}),
 						btnAdd,
 						e_({tag: "span", clazz: "ve-col-3", text: brewInfo._brewAuthor}),
+						e_({tag: "span", clazz: "ve-col-3", text: brewInfo._brewTranslator}),
 						e_({tag: "span", clazz: "ve-col-1-2 ve-text-center mobile__text-clip-ellipsis", text: brewInfo._brewPropDisplayName, title: brewInfo._brewPropDisplayName}),
 						e_({tag: "span", clazz: "ve-col-1-4 ve-text-center code", text: timestampModified}),
 						e_({tag: "span", clazz: "ve-col-1-4 ve-text-center code", text: timestampAddedPublished}),

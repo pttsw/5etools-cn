@@ -660,6 +660,7 @@ export class BrewUtil2Base {
 				out._brewPublished = timestamps[out.path]?.p ?? 0;
 				out._brewInternalSources = metaIndex[out.name]?.n || [];
 				out._brewStatus = metaIndex[out.name]?.s || "ready";
+				out._brewTranslator = metaIndex[out.name]?.t || "机翻";
 				out._brewIsPartnered = !!metaIndex[out.name]?.p;
 				out._brewEdition = metaIndex[out.name]?.e === 0 ? SITE_STYLE__CLASSIC : SITE_STYLE__ONE;
 				out._brewPropDisplayName = this.getPropDisplayName(out.dirProp);
