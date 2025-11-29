@@ -384,7 +384,7 @@ export class BuilderUi {
 			});
 		};
 
-		return $(`<div class="ml-2 ui-drag__patch" title="Drag to Reorder">
+		return $(`<div class="ml-2 ui-drag__patch" title="拖拽排序">
 		<div class="ui-drag__patch-col"><div>&#8729</div><div>&#8729</div><div>&#8729</div></div>
 		<div class="ui-drag__patch-col"><div>&#8729</div><div>&#8729</div><div>&#8729</div></div>
 		</div>`).mousedown(() => doDragRender());

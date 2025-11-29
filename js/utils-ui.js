@@ -3647,7 +3647,7 @@ class DragReorderUiUtil {
 			});
 		};
 
-		return $(`<div class="m${opts.marginSide || "l"}-2 ui-drag__patch" title="Drag to Reorder">
+		return $(`<div class="m${opts.marginSide || "l"}-2 ui-drag__patch" title="拖拽排序">
 		<div class="ui-drag__patch-col"><div>&#8729</div><div>&#8729</div><div>&#8729</div></div>
 		<div class="ui-drag__patch-col"><div>&#8729</div><div>&#8729</div><div>&#8729</div></div>
 		</div>`).mousedown(() => doDragRender());
@@ -3707,7 +3707,7 @@ class DragReorderUiUtil {
 			});
 		};
 
-		return $(`<div class="mr-2 ui-drag__patch" title="Drag to Reorder">
+		return $(`<div class="mr-2 ui-drag__patch" title="拖拽排序">
 		<div class="ui-drag__patch-col"><div>&#8729</div><div>&#8729</div><div>&#8729</div></div>
 		<div class="ui-drag__patch-col"><div>&#8729</div><div>&#8729</div><div>&#8729</div></div>
 		</div>`).mousedown(() => doDragRender());
