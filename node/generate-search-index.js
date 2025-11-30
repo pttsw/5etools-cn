@@ -1,5 +1,6 @@
 import fs from "fs";
 import {Command} from "commander";
+import "./locale/i18n.js";
 import "../js/parser.js";
 import "../js/utils.js";
 import "../js/utils-ui.js";
