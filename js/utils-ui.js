@@ -2741,7 +2741,7 @@ class InputUiUtil {
 		if (!isAlert) {
 			buttons.push(
 				new this.GenericButtonInfo({
-					text: textNo || "Cancel",
+					text: textNo || "取消",
 					clazzIcon: "glyphicon glyphicon-remove",
 					isSmall: true,
 					value: false,
