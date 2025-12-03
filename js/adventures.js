@@ -24,6 +24,7 @@ class AdventuresList extends AdventuresBooksList {
 					<span class="ve-col-5-5 bold mobile__text-clip-ellipsis">${adv.name}</span>
 					<span class="ve-col-2-5 mobile__text-clip-ellipsis">${adv.storyline || "\u2014"}</span>
 					<span class="ve-col-1 ve-text-center mobile__text-clip-ellipsis">${AdventuresList._getLevelsStr(adv)}</span>
+					<span class="ve-col-1 ve-text-center mobile__text-clip-ellipsis">${adv.translator || "机翻"}</span>
 					<span class="ve-col-1-7 ve-text-center mobile__text-clip-ellipsis code">${AdventuresBooksList._getDateStr(adv)}</span>
 				`;
 			},
