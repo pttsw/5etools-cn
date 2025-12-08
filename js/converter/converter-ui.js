@@ -216,7 +216,7 @@ export class ConverterUi extends BaseComponent {
 			const willOverwrite = overwriteMeta.map(it => it.isOverwrite).filter(Boolean);
 			if (
 				willOverwrite.length
-				&& !await InputUiUtil.pGetUserBoolean({title: "Overwrite Entries", htmlDescription: `This will overwrite ${willOverwrite.length} entr${willOverwrite.length === 1 ? "y" : "ies"}. Are you sure?`, textYes: "Yes", textNo: "Cancel"})
+				&& !await InputUiUtil.pGetUserBoolean({title: "Overwrite Entries", htmlDescription: `This will overwrite ${willOverwrite.length} entr${willOverwrite.length === 1 ? "y" : "ies"}. 你确定吗？`, textYes: "Yes", textNo: "Cancel"})
 			) {
 				return;
 			}
@@ -292,7 +292,7 @@ export class ConverterUi extends BaseComponent {
 				if (
 					isAppend
 					&& !this._state.hasAppended
-					&& !await InputUiUtil.pGetUserBoolean({title: "Are you Sure?", htmlDescription: "You're about to overwrite multiple entries. Are you sure?", textYes: "Yes", textNo: "Cancel"})
+					&& !await InputUiUtil.pGetUserBoolean({title: "Are you Sure?", htmlDescription: "You're about to overwrite multiple entries. 你确定吗？", textYes: "是的", textNo: "取消"})
 				) return;
 
 				const chunks = (this._state.inputSeparator

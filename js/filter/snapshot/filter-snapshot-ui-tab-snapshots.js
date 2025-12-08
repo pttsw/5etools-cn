@@ -143,7 +143,7 @@ export class FilterSnapshotUiTabSnapshots {
 					const selectedSnapshotIds = this._getSelectedSnapshotIds();
 					if (!selectedSnapshotIds.length) return JqueryUtil.doToast({content: `Please select some snapshots first!`, type: "warning"});
 
-					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Snapshots", htmlDescription: `This will delete ${selectedSnapshotIds.length} snapshot${selectedSnapshotIds.length === 1 ? "" : "s"}. Are you sure?`, textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Snapshots", htmlDescription: `This will delete ${selectedSnapshotIds.length} snapshot${selectedSnapshotIds.length === 1 ? "" : "s"}. 你确定吗？`, textYes: "Yes", textNo: "Cancel"})) return;
 
 					const toDelete = new Set(selectedSnapshotIds);
 

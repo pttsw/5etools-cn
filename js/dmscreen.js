@@ -571,7 +571,7 @@ class Board {
 			.on("click", () => handleClickDownload());
 
 		const handleClickPurge = async () => {
-			if (!await InputUiUtil.pGetUserBoolean({title: "Purge", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+			if (!await InputUiUtil.pGetUserBoolean({title: "Purge", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 			await StorageUtil.pRemove(VeCt.STORAGE_DMSCREEN);
 			doClose(true);
 		};
@@ -782,7 +782,7 @@ class SideMenu {
 			const h = Number($iptHeight.val());
 
 			if (w > 10 || h > 10) {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Too Many Panels", htmlDescription: "That's a lot of panels. Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "Too Many Panels", htmlDescription: "That's a lot of panels. 你确定吗？", textYes: "是的", textNo: "取消"})) return;
 			}
 
 			this.board.setDimensions(w, h);
@@ -841,7 +841,7 @@ class SideMenu {
 		const $wrpReset = $(`<div class="w-100 split-v-center"></div>`).appendTo(this.$mnu);
 		const $btnReset = $(`<button class="ve-btn ve-btn-danger" style="width: 100%;">重置帷幕</button>`).appendTo($wrpReset);
 		$btnReset.on("click", async () => {
-			if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+			if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 			this.board.doReset();
 		});
 		renderDivider();

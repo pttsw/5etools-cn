@@ -59,7 +59,7 @@ function addMonsterFeatures (mfData) {
 	// when clicking a row in the "Monster Statistics by Challenge Rating" table
 	em("#msbcr tr:not(:has(th))").map(ele =>
 		ele.onn("click", async function () {
-			if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "This will reset the calculator. Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+			if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "This will reset the calculator. 你确定吗？", textYes: "是的", textNo: "取消"})) return;
 			const [tdCr, , , tdAc, tdHp, tdAtk, tdDpr, tdSave] = this.children;
 
 			es("#expectedcr").val(tdCr.innerHTML.trim());
@@ -160,7 +160,7 @@ function addMonsterFeatures (mfData) {
 	em("#monsterfeatures .crc__wrp_mon_features input").map(ele => ele.onn("change", calculateCr));
 
 	es("#crcalc_reset").onClick(async () => {
-		if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+		if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 		window.location = "";
 		parseUrl();
 	});

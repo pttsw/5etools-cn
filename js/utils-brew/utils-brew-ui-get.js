@@ -191,10 +191,10 @@ export class GetBrewUi {
 		if (!cntSel) return;
 
 		const isSave = await InputUiUtil.pGetUserBoolean({
-			title: `Selected ${this._brewUtil.DISPLAY_NAME}`,
-			htmlDescription: `You have ${cntSel} ${cntSel === 1 ? this._brewUtil.DISPLAY_NAME : this._brewUtil.DISPLAY_NAME_PLURAL} selected which ${cntSel === 1 ? "is" : "are"} not yet loaded. Would you like to load ${cntSel === 1 ? "it" : "them"}?`,
-			textYes: "Load",
-			textNo: "Discard",
+			title: `已选择 ${this._brewUtil.DISPLAY_NAME}`,
+			htmlDescription: `你选择了${cntSel} ${cntSel === 1 ? this._brewUtil.DISPLAY_NAME : this._brewUtil.DISPLAY_NAME_PLURAL}但没有加载。你是否要加载 ${cntSel === 1 ? "它" : "它们"}?`,
+			textYes: "加载",
+			textNo: "取消",
 		});
 		if (!isSave) return;
 
@@ -427,7 +427,7 @@ export class GetBrewUi {
 
 		if (!listItems.length) return JqueryUtil.doToast({type: "warning", content: `Please select some ${this._brewUtil.DISPLAY_NAME_PLURAL} first!`});
 
-		if (listItems.length > 25 && !await InputUiUtil.pGetUserBoolean({title: "Are you sure?", htmlDescription: `<div>You area about to load ${listItems.length} ${this._brewUtil.DISPLAY_NAME} files.<br>Loading large quantities of ${this._brewUtil.DISPLAY_NAME_PLURAL} can lead to performance and stability issues.</div>`, textYes: "Continue"})) return;
+		if (listItems.length > 25 && !await InputUiUtil.pGetUserBoolean({title: "你确定吗？", htmlDescription: `<div>You area about to load ${listItems.length} ${this._brewUtil.DISPLAY_NAME} files.<br>Loading large quantities of ${this._brewUtil.DISPLAY_NAME_PLURAL} can lead to performance and stability issues.</div>`, textYes: "Continue"})) return;
 
 		rdState.cbAll.checked = false;
 		rdState.list.items.forEach(item => {
@@ -438,7 +438,7 @@ export class GetBrewUi {
 		await Promise.allSettled(listItems.map(it => it.data.pFnDoDownload({isLazy: true})));
 		const lazyDepsAdded = await this._brewUtil.pAddBrewsLazyFinalize();
 		this._brewsLoaded.push(...lazyDepsAdded);
-		JqueryUtil.doToast(`Finished loading selected ${this._brewUtil.DISPLAY_NAME}!`);
+		JqueryUtil.doToast(`已选择的${this._brewUtil.DISPLAY_NAME}资源加载完成`);
 	}
 
 	async _pHandleClick_btnGetRemote ({evt, btn, url, isLazy}) {

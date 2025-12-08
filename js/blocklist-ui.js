@@ -391,7 +391,7 @@ class BlocklistUi {
 			.onn("click", evt => this._pImport(evt));
 		const btnReset = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Reset List</button>`
 			.onn("click", async () => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Blocklist", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Blocklist", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 				this._reset();
 			});
 		// endregion
@@ -637,7 +637,7 @@ class BlocklistUi {
 			this._comp.source === "*"
 			&& category === "*"
 			&& hash === "*"
-			&& !await InputUiUtil.pGetUserBoolean({title: "Exclude All", htmlDescription: `This will exclude all content from all list pages. Are you sure?`, textYes: "Yes", textNo: "Cancel"})
+			&& !await InputUiUtil.pGetUserBoolean({title: "Exclude All", htmlDescription: `This will exclude all content from all list pages. 你确定吗？`, textYes: "是的", textNo: "取消"})
 		) return;
 
 		if (this._addExclude(displayName, hash, category, this._comp.source)) {

@@ -101,16 +101,16 @@ class MakeCards extends BaseComponent {
 		const menuSearch = ContextUtil.getMenu(this._render_getContextMenuOptions());
 
 		const iptSearch = ee`<input type="search" class="form-control mr-2" placeholder="Search cards...">`;
-		const btnAdd = ee`<button class="ve-btn ve-btn-primary mr-2"><span class="glyphicon glyphicon-plus"></span> Add</button>`
+		const btnAdd = ee`<button class="ve-btn ve-btn-primary mr-2"><span class="glyphicon glyphicon-plus"></span> 添加</button>`
 			.onn("click", evt => ContextUtil.pOpenMenu(evt, menuSearch));
-		const btnReset = ee`<button class="ve-btn ve-btn-danger mr-2"><span class="glyphicon glyphicon-trash"></span> Reset</button>`
+		const btnReset = ee`<button class="ve-btn ve-btn-danger mr-2"><span class="glyphicon glyphicon-trash"></span> 重置</button>`
 			.onn("click", async () => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 				this._list.removeAllItems();
 				this._list.update();
 				this._doSaveStateDebounced();
 			});
-		const btnExport = ee`<button class="ve-btn ve-btn-default"><span class="glyphicon glyphicon-download"></span> Export JSON</button>`
+		const btnExport = ee`<button class="ve-btn ve-btn-default"><span class="glyphicon glyphicon-download"></span> 导出 JSON</button>`
 			.onn("click", () => {
 				const toDownload = this._list.items.map(it => {
 					const entityMeta = MakeCards._AVAILABLE_TYPES[it.values.entityType];

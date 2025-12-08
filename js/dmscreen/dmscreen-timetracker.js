@@ -2774,7 +2774,7 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $getBtnReset = (...props) => {
 			return $(`<button class="ve-btn ve-btn-xs ve-btn-default mr-2">Reset Section</button>`)
 				.click(async () => {
-					if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: "重置", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 					props.forEach(prop => this._parent.set(prop, TimeTrackerBase._DEFAULT_STATE[prop]));
 				});
 		};

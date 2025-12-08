@@ -16,6 +16,7 @@ globalThis.HASH_SUB_LIST_SEP = "~";
 globalThis.HASH_SUB_KV_SEP = ":";
 globalThis.HASH_BLANK = "blankhash";
 globalThis.HASH_SUB_NONE = "null";
+globalThis.URL_PROXY = "https://gh-proxy.org/",
 
 globalThis.VeCt = {
 	STR_NONE: "无",
@@ -54,11 +55,12 @@ globalThis.VeCt = {
 
 	LOC_HOSTNAME_CANCER: "5e.tools",
 
-	URL_BREW: `https://github.com/tjliqy/homebrew`,
-	URL_ROOT_BREW: `https://raw.githubusercontent.com/tjliqy/homebrew/cn/`, // N.b. must end with a slash
-	URL_ROOT_BREW_IMG: `https://raw.githubusercontent.com/tjliqy/homebrew-img/main/`, // N.b. must end with a slash
+
+	URL_BREW: `https://github.com/tjliqy/homebrew/`,
+	URL_ROOT_BREW: `${URL_PROXY}https://raw.githubusercontent.com/tjliqy/homebrew/cn/`, // N.b. must end with a slash
+	URL_ROOT_BREW_IMG: `${URL_PROXY}https://raw.githubusercontent.com/tjliqy/homebrew-img/main/`, // N.b. must end with a slash
 	URL_PRERELEASE: `https://github.com/tjliqy/unearthed-arcana`,
-	URL_ROOT_PRERELEASE: `https://raw.githubusercontent.com/tjliqy/unearthed-arcana/cn/`, // As above
+	URL_ROOT_PRERELEASE: `${URL_PROXY}https://raw.githubusercontent.com/tjliqy/unearthed-arcana/cn/`, // As above
 
 	STR_NO_ATTUNEMENT: "无需同调",
 

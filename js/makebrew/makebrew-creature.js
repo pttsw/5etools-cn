@@ -2515,7 +2515,7 @@ export class CreatureBuilder extends BuilderBase {
 				if (currState) {
 					delete currState.name; // ignore name key
 					if ((currState.headerEntries || currState.footerEntries || Object.keys(currState).some(it => it !== "headerEntries" && it !== "footerEntries"))) {
-						if (!await InputUiUtil.pGetUserBoolean({title: "Remove Trait", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+						if (!await InputUiUtil.pGetUserBoolean({title: "Remove Trait", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 					}
 				}
 
@@ -2899,7 +2899,7 @@ export class CreatureBuilder extends BuilderBase {
 
 								const $btnReset = $(`<button class="ve-btn ve-btn-sm ve-btn-danger">重置</button>`)
 									.click(async () => {
-										if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+										if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 
 										setState({
 											iptName: "",
@@ -3220,7 +3220,7 @@ export class CreatureBuilder extends BuilderBase {
 			.click(async () => {
 				const currState = getState();
 				if (currState && currState.entries) {
-					if (!await InputUiUtil.pGetUserBoolean({title: `Remove ${options.shortName}`, htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: `Remove ${options.shortName}`, htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 				}
 				entryRows.splice(entryRows.indexOf(out), 1);
 				$ele.empty().remove();

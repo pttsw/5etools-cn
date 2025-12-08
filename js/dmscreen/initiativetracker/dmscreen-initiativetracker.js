@@ -305,7 +305,7 @@ export class InitiativeTracker extends BaseComponent {
 		const $btnReset = $(`<button title="${I18nUtil.get("page.dmscreen.reset_tracker")}" class="ve-btn ve-btn-danger ve-btn-xs dm-init-lockable"><span class="glyphicon glyphicon-trash"></span></button>`)
 			.click(async () => {
 				if (this._state.isLocked) return;
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "重置", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 
 				const stateNxt = {
 					rows: await this._compDefaultParty.pGetConvertedDefaultPartyActiveRows(),

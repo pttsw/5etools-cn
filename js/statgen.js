@@ -100,7 +100,7 @@ class StatGenPage {
 						pFnClick: async () => {
 							if (!await InputUiUtil.pGetUserBoolean({
 								title: "Reset All",
-								htmlDescription: `<div>This will reset all inputs in all tabs.<br>Are you sure?</div>`,
+								htmlDescription: `<div>This will reset all inputs in all tabs.<br>你确定吗？</div>`,
 							})) return;
 
 							this._statGenUi.doResetAll();

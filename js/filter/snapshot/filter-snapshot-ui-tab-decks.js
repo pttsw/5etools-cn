@@ -86,7 +86,7 @@ export class FilterSnapshotUiTabSnapshotDecks {
 					const selectedSnapshotDeckIds = this._getSelectedSnapshotDeckIds();
 					if (!selectedSnapshotDeckIds.length) return JqueryUtil.doToast({content: `Please select some snapshot decks first!`, type: "warning"});
 
-					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Snapshot Decks", htmlDescription: `This will delete ${selectedSnapshotDeckIds.length} snapshot deck${selectedSnapshotDeckIds.length === 1 ? "" : "s"}. Are you sure?`, textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Snapshot Decks", htmlDescription: `This will delete ${selectedSnapshotDeckIds.length} snapshot deck${selectedSnapshotDeckIds.length === 1 ? "" : "s"}. 你确定吗？`, textYes: "Yes", textNo: "Cancel"})) return;
 
 					const toDelete = new Set(selectedSnapshotDeckIds);
 

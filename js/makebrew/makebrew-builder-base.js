@@ -246,7 +246,7 @@ export class BuilderBase extends ProxyBase {
 				.click(async () => {
 					if (
 						this.getOnNavMessage()
-						&& !await InputUiUtil.pGetUserBoolean({title: "Discard Unsaved Changes", htmlDescription: "You have unsaved changes. Are you sure?", textYes: "Yes", textNo: "Cancel"})
+						&& !await InputUiUtil.pGetUserBoolean({title: "Discard Unsaved Changes", htmlDescription: "You have unsaved changes. 你确定吗？", textYes: "是的", textNo: "取消"})
 					) return;
 					await this.pHandleSidebarEditUniqueId(ent.uniqueId);
 				});
@@ -339,7 +339,7 @@ export class BuilderBase extends ProxyBase {
 
 			const $btnDelete = $(`<button class="ve-btn ve-btn-xs ve-btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>`)
 				.click(async () => {
-					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Entity", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Entity", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 
 					if (this._state.uniqueId === ent.uniqueId) this.reset();
 					await BrewUtil2.pRemoveEditableBrewEntity(this._prop, ent.uniqueId);
