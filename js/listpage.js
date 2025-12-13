@@ -1336,7 +1336,7 @@ class ListPage {
 
 		// We expect these pages when `Boolean(IS_DEPLOYED)`, but, enable for local testing
 		return {
-			name: "Open Page",
+			name: "在新页面打开",
 			type: "link",
 			fn: () => {
 				const {page, source, hash} = fnGetPageSourceHash();
@@ -1864,7 +1864,7 @@ class ListPage {
 	_bindOtherButtons (opts) {
 		opts = opts || {};
 
-		const $btnOptions = this._getOrTabRightButton(`sublist-other`, `option-vertical`, {title: "Other Options"});
+		const $btnOptions = this._getOrTabRightButton(`sublist-other`, `option-vertical`, {title: "其他选项"});
 
 		const contextOptions = [
 			new ContextUtil.Action(
@@ -1890,12 +1890,12 @@ class ListPage {
 				evt => this._sublistManager.pHandleClick_download({isUrl: evt.shiftKey, $eleCopyEffect: $btnOptions}),
 			),
 			new ContextUtil.Action(
-				"上传钉选列表(SHIFT for Add Only)",
+				"上传钉选列表(按住SHIFT来添加)",
 				evt => this._sublistManager.pHandleClick_upload({isAdditive: evt.shiftKey}),
 			),
 			null,
 			new ContextUtil.Action(
-				"Copy Link to Filters (Extensible)",
+				"复制筛选链接 (扩展)",
 				evt => this._pHandleClick_doCopyFilterLink(evt),
 			),
 		];
@@ -1904,7 +1904,7 @@ class ListPage {
 			if (contextOptions.length) contextOptions.push(null); // Add a spacer after the previous group
 
 			const action = new ContextUtil.Action(
-				"Edit in Homebrew Builder",
+				"在自制内容编辑器中编辑",
 				() => {
 					const meta = opts.sendToBrew.fnGetMeta();
 					const toLoadData = [meta.page, meta.source, meta.hash];
@@ -2207,7 +2207,7 @@ class ListPage {
 		];
 		const menu = ContextUtil.getMenu(actions);
 
-		const $btnOptions = $(`<button class="ve-btn ve-btn-default ve-btn-xs stats__btn-stats-name" title="Other Options"><span class="glyphicon glyphicon-option-vertical"></span></button>`)
+		const $btnOptions = $(`<button class="ve-btn ve-btn-default ve-btn-xs stats__btn-stats-name" title="其他选项"><span class="glyphicon glyphicon-option-vertical"></span></button>`)
 			.click(evt => ContextUtil.pOpenMenu(evt, menu));
 
 		return $$`<div class="ve-flex-v-center ve-btn-group ml-2">${$btnOptions}</div>`;

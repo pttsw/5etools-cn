@@ -410,7 +410,7 @@ export class BookUtil {
 			]);
 		}
 
-		const btnMenu = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Other Options"><span class="glyphicon glyphicon-option-vertical"></span></button>`
+		const btnMenu = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="其他选项"><span class="glyphicon glyphicon-option-vertical"></span></button>`
 			.onn("click", evt => ContextUtil.pOpenMenu(evt, this._TOP_MENU));
 
 		ee`<div class="no-print ve-flex-v-center ve-btn-group">${btnEntireBook}${btnToggleNarrow}${btnMenu}</div>`.appendTo(wrpControls);

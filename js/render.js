@@ -1201,11 +1201,11 @@ globalThis.Renderer = function () {
 	};
 
 	this._getPtExpandCollapse = function () {
-		return `<span class="rd__h-toggle ml-2 clickable no-select no-print lst-is-exporting-image__hidden" data-rd-h-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
+		return `<span class="rd__h-toggle ml-2 clickable no-select no-print lst-is-exporting-image__hidden" data-rd-h-toggle-button="true" title="折叠/展开（按住CTRL切换所有）">[\u2013]</span>`;
 	};
 
 	this._getPtExpandCollapseSpecial = function () {
-		return `<span class="rd__h-toggle ml-2 clickable no-select no-print lst-is-exporting-image__hidden" data-rd-h-special-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
+		return `<span class="rd__h-toggle ml-2 clickable no-select no-print lst-is-exporting-image__hidden" data-rd-h-special-toggle-button="true" title="折叠/展开（按住CTRL切换所有）">[\u2013]</span>`;
 	};
 
 	/* -------------------------------------------- */
@@ -1343,7 +1343,7 @@ globalThis.Renderer = function () {
 			textStack,
 			meta,
 			options,
-			displayName: entry.name ? `Variant: ${entry.name}` : "Variant",
+			displayName: entry.name ? `变体：${entry.name}` : "变体",
 			headerTag: `h4`,
 			pagePart,
 			partPageExpandCollapse,
@@ -10162,98 +10162,98 @@ Renderer.monster = class {
 		// Community-created (legacy)
 		static _LVL_TO_COLOR_TO_SPELLS__UNOFFICIAL = {
 			2: {
-				黑: ["darkness", "Melf's acid arrow", "fog cloud", "scorching ray"],
-				绿: ["ray of sickness", "charm person", "detect thoughts", "invisibility", "suggestion"],
-				白: ["ice knife|XGE", "Snilloc's snowball swarm|XGE"],
-				黄铜: ["see invisibility", "magic mouth", "blindness/deafness", "sleep", "detect thoughts"],
-				青铜: ["gust of wind", "misty step", "locate object", "blur", "witch bolt", "thunderwave", "shield"],
-				赤铜: ["knock", "sleep", "detect thoughts", "blindness/deafness", "tasha's hideous laughter"],
+				黑: ["黑暗术", "马友夫强酸箭", "云雾术", "灼热射线"],
+				绿: ["致病射线", "魅惑人类", "侦测思想", "隐形术", "暗示术"],
+				白: ["冰刃|XGE", "史尼洛雪球群|XGE"],
+				黄铜: ["识破隐形", "魔嘴术", "目盲术/耳聋术", "睡眠术", "侦测思想"],
+				青铜: ["造风术", "迷踪步", "物件定位术", "朦胧术", "巫术箭", "雷鸣波", "护盾术"],
+				赤铜: ["敲击术", "睡眠术", "侦测思想", "目盲术/耳聋术", "塔莎狂笑术"],
 			},
 			3: {
-				蓝: ["wall of sand|XGE", "thunder step|XGE", "lightning bolt", "blink", "magic missile", "slow"],
-				红: ["fireball", "scorching ray", "haste", "erupting earth|XGE", "Aganazzar's scorcher|XGE"],
-				金: ["slow", "fireball", "dispel magic", "counterspell", "Aganazzar's scorcher|XGE", "shield"],
-				银: ["sleet storm", "protection from energy", "catnap|XGE", "locate object", "identify", "Leomund's tiny hut"],
+				蓝: ["沙墙术|XGE", "雷霆步|XGE", "闪电束", "闪现术", "魔法飞弹", "缓慢术"],
+				红: ["火球术", "灼热射线", "加速术", "土石喷发|XGE", "阿迦纳萨喷火术|XGE"],
+				金: ["缓慢术", "火球术", "解除魔法", "法术反制", "阿迦纳萨喷火术|XGE", "护盾术"],
+				银: ["雪雨暴", "防护能量", "假寐术|XGE", "物件定位术", "鉴定术", "李欧蒙小屋"],
 			},
 			4: {
-				黑: ["vitriolic sphere|XGE", "sickening radiance|XGE", "Evard's black tentacles", "blight", "hunger of Hadar"],
-				白: ["fire shield", "ice storm", "sleet storm"],
-				黄铜: ["charm monster|XGE", "sending", "wall of sand|XGE", "hypnotic pattern", "tongues"],
-				赤铜: ["polymorph", "greater invisibility", "confusion", "stinking cloud", "major image", "charm monster|XGE"],
+				黑: ["浓酸球|XGE", "致病辐射|XGE", "艾伐黑触手", "枯萎术", "哈达之欲"],
+				白: ["火焰护盾", "冰风暴", "雪雨暴"],
+				黄铜: ["魅惑怪物|XGE", "短讯术", "沙墙术|XGE", "催眠图纹", "巧言术"],
+				赤铜: ["变形术", "高等隐形术", "困惑术", "臭云术", "高等幻影", "魅惑怪物|XGE"],
 			},
 			5: {
-				蓝: ["telekinesis", "hold monster", "dimension door", "wall of stone", "wall of force"],
-				绿: ["cloudkill", "charm monster|XGE", "modify memory", "mislead", "hallucinatory terrain", "dimension door"],
-				青铜: ["steel wind strike|XGE", "control winds|XGE", "watery sphere|XGE", "storm sphere|XGE", "tidal wave|XGE"],
-				金: ["hold monster", "immolation|XGE", "wall of fire", "greater invisibility", "dimension door"],
-				银: ["cone of cold", "ice storm", "teleportation circle", "skill empowerment|XGE", "creation", "Mordenkainen's private sanctum"],
+				蓝: ["心灵遥控", "定身怪物", "任意门", "石墙术", "力场墙"],
+				绿: ["死云术", "魅惑怪物|XGE", "篡改记忆", "假象术", "幻景", "任意门"],
+				青铜: ["钢风斩|XGE", "操控风力|XGE", "碧水法球|XGE", "风暴法球|XGE", "潮涌|XGE"],
+				金: ["定身怪物", "焚烧术|XGE", "火墙术", "高等隐形术", "任意门"],
+				银: ["寒冰锥", "冰风暴", "传送法阵", "授予技能|XGE", "造物术", "魔邓肯私人密室"],
 			},
 			6: {
-				白: ["cone of cold", "wall of ice"],
-				黄铜: ["scrying", "Rary's telepathic bond", "Otto's irresistible dance", "legend lore", "hold monster", "dream"],
+				白: ["寒冰锥", "冰墙术"],
+				黄铜: ["探知术", "拉瑞心灵联结", "奥图迷舞", "通晓传奇", "定身怪物", "托梦术"],
 			},
 			7: {
-				黑: ["power word pain|XGE", "finger of death", "disintegrate", "hold monster"],
-				蓝: ["chain lightning", "forcecage", "teleport", "etherealness"],
-				绿: ["project image", "mirage arcane", "prismatic spray", "teleport"],
-				青铜: ["whirlwind|XGE", "chain lightning", "scatter|XGE", "teleport", "disintegrate", "lightning bolt"],
-				赤铜: ["symbol", "simulacrum", "reverse gravity", "project image", "Bigby's hand", "mental prison|XGE", "seeming"],
-				银: ["Otiluke's freezing sphere", "prismatic spray", "wall of ice", "contingency", "arcane gate"],
+				黑: ["律令痛苦|XGE", "死亡一指", "解离术", "定身怪物"],
+				蓝: ["连锁闪电", "力场监牢", "传送术", "以太化"],
+				绿: ["投影术", "海市蜃楼", "虹光喷射", "传送术"],
+				青铜: ["旋风术|XGE", "连锁闪电", "散射术|XGE", "传送术", "解离术", "闪电束"],
+				赤铜: ["徽记术", "拟像术", "反转重力", "投影术", "毕格比之手", "精神监狱|XGE", "伪装术"],
+				银: ["欧提路克冰封法球", "虹光喷射", "冰墙术", "触发术", "秘法门"],
 			},
 			8: {
-				金: ["sunburst", "delayed blast fireball", "antimagic field", "teleport", "globe of invulnerability", "maze"],
+				金: ["阳炎爆", "延迟爆裂火球", "反魔法场", "传送术", "法术无效结界", "迷宫术"],
 			},
 		};
 		// From Fizban's Treasury of Dragons
 		static _LVL_TO_COLOR_TO_SPELLS__FTD = {
 			1: {
-				深: ["command", "dissonant whispers", "faerie fire"],
+				深: ["命令术", "不谐低语", "妖火"],
 			},
 			2: {
-				黑: ["blindness/deafness", "create or destroy water"],
-				绿: ["invisibility", "speak with animals"],
-				白: ["gust of wind"],
-				黄铜: ["create or destroy water", "speak with animals"],
-				青铜: ["beast sense", "detect thoughts", "speak with animals"],
-				赤铜: ["lesser restoration", "phantasmal force"],
+				黑: ["目盲术/耳聋术", "造水术/枯水术"],
+				绿: ["隐形术", "动物交谈"],
+				白: ["造风术"],
+				黄铜: ["造水术/枯水术", "动物交谈"],
+				青铜: ["野兽知觉", "侦测思想", "动物交谈"],
+				赤铜: ["次级复原术", "魅影之力"],
 			},
 			3: {
-				蓝: ["create or destroy water", "major image"],
-				红: ["bane", "heat metal", "hypnotic pattern", "suggestion"],
-				金: ["bless", "cure wounds", "slow", "suggestion", "zone of truth"],
-				银: ["beacon of hope", "calm emotions", "hold person", "zone of truth"],
-				深: ["command", "dissonant whispers", "faerie fire", "water breathing"],
+				蓝: ["造水术/枯水术", "高等幻影"],
+				红: ["灾祸术", "灼热金属", "催眠图纹", "暗示术"],
+				金: ["祝福术", "疗伤术", "缓慢术", "暗示术", "诚实之域"],
+				银: ["希望信标", "安定心神", "定身类人", "诚实之域"],
+				深: ["命令术", "不谐低语", "妖火", "水中呼吸"],
 			},
 			4: {
-				黑: ["blindness/deafness", "create or destroy water", "plant growth"],
-				白: ["gust of wind"],
-				黄铜: ["create or destroy water", "speak with animals", "suggestion"],
-				赤铜: ["lesser restoration", "phantasmal force", "stone shape"],
+				黑: ["目盲术/耳聋术", "造水术/枯水术", "植物滋长"],
+				白: ["造风术"],
+				黄铜: ["造水术/枯水术", "动物交谈", "暗示术"],
+				赤铜: ["次级复原术", "魅影之力", "塑石术"],
 			},
 			5: {
-				蓝: ["arcane eye", "create or destroy water", "major image"],
-				红: ["bane", "dominate person", "heat metal", "hypnotic pattern", "suggestion"],
-				绿: ["invisibility", "plant growth", "speak with animals"],
-				青铜: ["beast sense", "control water", "detect thoughts", "speak with animals"],
-				金: ["bless", "commune", "cure wounds", "geas", "slow", "suggestion", "zone of truth"],
-				银: ["beacon of hope", "calm emotions", "hold person", "polymorph", "zone of truth"],
+				蓝: ["秘法眼", "造水术/枯水术", "高等幻影"],
+				红: ["灾祸术", "支配人类", "灼热金属", "催眠图纹", "暗示术"],
+				绿: ["隐形术", "植物滋长", "动物交谈"],
+				青铜: ["野兽知觉", "操控水体", "侦测思想", "动物交谈"],
+				金: ["祝福术", "通神术", "疗伤术", "指使术", "缓慢术", "暗示术", "诚实之域"],
+				银: ["希望信标", "安定心神", "定身类人", "变形术", "诚实之域"],
 			},
 			6: {
-				白: ["gust of wind", "ice storm"],
-				黄铜: ["create or destroy water", "locate creature", "speak with animals", "suggestion"],
-				深: ["command", "dissonant whispers", "faerie fire", "passwall", "water breathing"],
+				白: ["造风术", "冰风暴"],
+				黄铜: ["造水术/枯水术", "生物定位术", "动物交谈", "暗示术"],
+				深: ["命令术", "不谐低语", "妖火", "穿墙术", "水中呼吸"],
 			},
 			7: {
-				黑: ["blindness/deafness", "create or destroy water", "insect plague", "plant growth"],
-				蓝: ["arcane eye", "create or destroy water", "major image", "project image"],
-				红: ["bane", "dominate person", "heat metal", "hypnotic pattern", "power word stun", "suggestion"],
-				绿: ["invisibility", "mass suggestion", "plant growth", "speak with animals"],
-				青铜: ["beast sense", "control water", "detect thoughts", "heroes' feast", "speak with animals"],
-				赤铜: ["lesser restoration", "move earth", "phantasmal force", "stone shape"],
-				银: ["beacon of hope", "calm emotions", "hold person", "polymorph", "teleport", "zone of truth"],
+				黑: ["目盲术/耳聋术", "造水术/枯水术", "疫病虫群", "植物滋长"],
+				蓝: ["秘法眼", "造水术/枯水术", "高等幻影", "投影术"],
+				红: ["灾祸术", "支配人类", "灼热金属", "催眠图纹", "律令震慑", "暗示术"],
+				绿: ["隐形术", "mass 暗示术", "植物滋长", "动物交谈"],
+				青铜: ["野兽知觉", "操控水体", "侦测思想", "英雄宴", "动物交谈"],
+				赤铜: ["次级复原术", "地动术", "魅影之力", "塑石术"],
+				银: ["希望信标", "安定心神", "定身类人", "变形术", "传送术", "诚实之域"],
 			},
 			8: {
-				金: ["bless", "commune", "cure wounds", "geas", "plane shift", "slow", "suggestion", "word of recall", "zone of truth"],
+				金: ["祝福术", "通神术", "疗伤术", "指使术", "异界传送", "缓慢术", "暗示术", "回返真言", "诚实之域"],
 			},
 		};
 
@@ -10334,7 +10334,8 @@ Renderer.monster = class {
 				source: Parser.SRC_FTD,
 				entries: [
 					`${Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart(meta)}`,
-					`A suggested spell list is shown below, but you can also choose spells to reflect the dragon's character. A dragon who innately casts {@filter druid|spells|class=druid} spells feels different from one who casts {@filter warlock|spells|class=warlock} spells. You can also give a dragon spells of a higher level than this rule allows, but such a tweak might increase the dragon's challenge rating\u2014especially if those spells deal damage or impose conditions on targets.`,
+					`下面是建议的法术列表，但你也可以根据龙的性格来选择其他法术。施放{@filter 德鲁伊|spells|class=druid}法术的龙和施放{@filter 魔契师|spells|class=warlock}法术的龙会给人不同的感觉。你也可以选择比此规则允许的环阶更高的法术，但是这样可能会增加龙的挑战等级，尤其是这些法术可能对目标造成伤害或施加状态时。
+`,
 					{
 						type: "list",
 						items: exampleSpellsFtd.map(it => `{@spell ${it}}`),
@@ -10348,7 +10349,7 @@ Renderer.monster = class {
 				entries: [
 					"龙作为天生的魔法生物，其随着年龄的增长可能会逐渐掌握一些法术，此时便可以使用该变体。",
 					`一条青年龙或更年长的龙天生可以施展的法术数量等同于其魅力调整值。每个法术每日只能施展一次，且不需任何材料成分，而该法术的环阶也不能超过这条龙挑战等级的三分之一（向下取整）。该龙的法术攻击加值等于其熟练加值＋其魅力调整值。该龙的法术豁免DC等于8＋其熟练加值＋其魅力调整值。`,
-					`{@note ${Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart({...meta, isSeeSpellsPageNote: true})}${exampleSpellsUnofficial?.length ? ` A selection of examples are shown below:` : ""}}`,
+					`{@note ${Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart({...meta, isSeeSpellsPageNote: true})}${exampleSpellsUnofficial?.length ? ` 选择范例如下：` : ""}}`,
 				],
 			};
 			if (dragon.source !== Parser.SRC_MM) {
@@ -11766,11 +11767,11 @@ Renderer.item = class {
 	static _getHtmlAndTextTypes_type ({type, typeAbv, typeHtml, typeListText, subTypeHtml, showingBase, item}) {
 		const fullType = Renderer.item.getItemTypeName(type);
 
-		const isSub = (typeListText.some(it => it.includes("weapon")) && fullType.includes("weapon"))
-			|| (typeListText.some(it => it.includes("armor")) && fullType.includes("armor"));
+		const isSub = (typeListText.some(it => it.includes("weapon") || it.includes("武器")) && (fullType.includes("weapon") || fullType.includes("武器")))
+			|| (typeListText.some(it => it.includes("armor")|| it.includes("护甲")) && (fullType.includes("armor")) || (fullType.includes("护甲")));
 
 		if (!showingBase && !!item.baseItem) (isSub ? subTypeHtml : typeHtml).push(`${fullType} (${Renderer.get().render(`{@item ${item.baseItem}}`)})`);
-		else if (typeAbv === Parser.ITM_TYP_ABV__SHIELD) (isSub ? subTypeHtml : typeHtml).push(Renderer.get().render(`armor ({@item shield|phb})`));
+		else if (typeAbv === Parser.ITM_TYP_ABV__SHIELD) (isSub ? subTypeHtml : typeHtml).push(Renderer.get().render(`护甲 ({@item 盾牌|phb})`));
 		else (isSub ? subTypeHtml : typeHtml).push(fullType);
 
 		typeListText.push(fullType);

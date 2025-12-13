@@ -237,7 +237,7 @@ export class FilterBase extends BaseComponent {
 
 				ContextUtil.pOpenMenu(evt, menu).then(null);
 			},
-			html: `<span title="Other Options" class="glyphicon glyphicon-option-vertical"></span>`,
+			html: `<span title="其他选项" class="glyphicon glyphicon-option-vertical"></span>`,
 		});
 	}
 

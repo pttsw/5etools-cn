@@ -16,7 +16,7 @@ I18nUtil.loadProperties = (language) => {
 	propertiesLoaded = true;
 	$.i18n.properties({
 		name: "5e", // 资源文件名称
-		path: "languages/", // 资源文件所在目录路径
+		path: "/languages/", // 资源文件所在目录路径
 		mode: "map", // 模式：变量或 Map
 		language: targetLanguage, // 对应的语言
 		cache: false,
