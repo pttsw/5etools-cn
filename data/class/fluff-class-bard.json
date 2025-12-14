@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"subclassFluff"
+		]
+	},
 	"classFluff": [
 		{
 			"ENG_name": "Bard",
@@ -396,12 +401,39 @@
 	],
 	"subclassFluff": [
 		{
+			"ENG_name": "Bard",
+			"name": "吟游诗人",
+			"shortName": "吟游诗人",
+			"source": "XGE",
+			"className": "吟游诗人",
+			"classSource": "PHB",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "classes/XGE/Bard.webp"
+					},
+					"width": 1000,
+					"height": 491
+				}
+			]
+		},
+		{
 			"ENG_name": "College of Glamour",
 			"name": "迷惑学院",
 			"shortName": "迷惑",
 			"source": "XGE",
 			"className": "吟游诗人",
 			"classSource": "PHB",
+			"_copy": {
+				"ENG_name": "Bard",
+				"name": "吟游诗人",
+				"shortName": "吟游诗人",
+				"source": "XGE",
+				"className": "吟游诗人",
+				"classSource": "PHB"
+			},
 			"entries": [
 				{
 					"type": "quote",
@@ -419,17 +451,28 @@
 			"source": "XGE",
 			"className": "吟游诗人",
 			"classSource": "PHB",
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "classes/XGE/Swords Bard.webp"
-					},
-					"width": 732,
-					"height": 1000
+			"_copy": {
+				"ENG_name": "Bard",
+				"name": "吟游诗人",
+				"shortName": "吟游诗人",
+				"source": "XGE",
+				"className": "吟游诗人",
+				"classSource": "PHB",
+				"_mod": {
+					"images": {
+						"mode": "appendArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "classes/XGE/Swords Bard.webp"
+							},
+							"width": 732,
+							"height": 1000
+						}
+					}
 				}
-			]
+			}
 		},
 		{
 			"ENG_name": "College of Whispers",
@@ -438,6 +481,28 @@
 			"source": "XGE",
 			"className": "吟游诗人",
 			"classSource": "PHB",
+			"_copy": {
+				"ENG_name": "Bard",
+				"name": "吟游诗人",
+				"shortName": "吟游诗人",
+				"source": "XGE",
+				"className": "吟游诗人",
+				"classSource": "PHB",
+				"_mod": {
+					"images": {
+						"mode": "appendArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "classes/XGE/Whispers Bard.webp"
+							},
+							"width": 1000,
+							"height": 578
+						}
+					}
+				}
+			},
 			"entries": [
 				{
 					"type": "quote",
@@ -445,17 +510,6 @@
 						"大声点！边上尖叫声这么吵我根本听不清你的低语。哎，这根本没用。我还是得想办法把让尖叫停下来吧。那就用解离术把周围都清空吧。"
 					],
 					"by": "姗娜萨"
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "classes/XGE/Whispers Bard.webp"
-					},
-					"width": 1000,
-					"height": 578
 				}
 			]
 		},

@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"subclass"
+		]
+	},
 	"class": [
 		{
 			"ENG_name": "Artificer",
@@ -1045,6 +1050,29 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Alchemist",
+			"name": "炼金师",
+			"shortName": "炼金师",
+			"source": "TCE",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"_copy": {
+				"ENG_name": "Alchemist",
+				"name": "炼金师",
+				"source": "TCE",
+				"shortName": "炼金师",
+				"className": "奇械师",
+				"classSource": "TCE",
+				"_preserve": {
+					"page": true,
+					"otherSources": true,
+					"srd": true,
+					"basicRules": true,
+					"reprintedAs": true
+				}
+			}
+		},
+		{
 			"ENG_name": "Armorer",
 			"name": "装甲师",
 			"shortName": "装甲师",
@@ -1089,6 +1117,29 @@
 				"完美装甲|奇械师|TCE|装甲师|TCE|15"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Armorer",
+			"name": "装甲师",
+			"shortName": "装甲师",
+			"source": "TCE",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"_copy": {
+				"ENG_name": "Armorer",
+				"name": "装甲师",
+				"source": "TCE",
+				"shortName": "装甲师",
+				"className": "奇械师",
+				"classSource": "TCE",
+				"_preserve": {
+					"page": true,
+					"otherSources": true,
+					"srd": true,
+					"basicRules": true,
+					"reprintedAs": true
+				}
+			}
 		},
 		{
 			"ENG_name": "Artillerist",
@@ -1143,6 +1194,29 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Artillerist",
+			"name": "魔炮师",
+			"shortName": "魔炮师",
+			"source": "TCE",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"_copy": {
+				"ENG_name": "Artillerist",
+				"name": "魔炮师",
+				"source": "TCE",
+				"shortName": "魔炮师",
+				"className": "奇械师",
+				"classSource": "TCE",
+				"_preserve": {
+					"page": true,
+					"otherSources": true,
+					"srd": true,
+					"basicRules": true,
+					"reprintedAs": true
+				}
+			}
+		},
+		{
 			"ENG_name": "Battle Smith",
 			"name": "战地匠师",
 			"shortName": "战地匠师",
@@ -1193,6 +1267,29 @@
 				"改良守卫|奇械师|TCE|战地匠师|TCE|15"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Battle Smith",
+			"name": "战地匠师",
+			"shortName": "战地匠师",
+			"source": "TCE",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"_copy": {
+				"ENG_name": "Battle Smith",
+				"name": "战地匠师",
+				"source": "TCE",
+				"shortName": "战地匠师",
+				"className": "奇械师",
+				"classSource": "TCE",
+				"_preserve": {
+					"page": true,
+					"otherSources": true,
+					"srd": true,
+					"basicRules": true,
+					"reprintedAs": true
+				}
+			}
 		},
 		{
 			"ENG_name": "Alchemist",
@@ -1566,7 +1663,7 @@
 							"entries": [
 								"当你完成一次{@variantrule 长休|XPHB}时，如果你手上有{@item 修补工具|XPHB}，你可以创建一个或两个不同的魔法物品。每个物品都基于你为此特性所知的一个方案。",
 								"如果创造的物品需要{@variantrule 同调|XPHB}，你可以在创造它的瞬间立即同调。如果你决定稍后同调该物品，必须使用{@variantrule 同调|XPHB}的正常流程进行同调。",
-								"当你达到奇械师特性表格的魔法物品栏中指定的特定奇械师等级时，你在长休结束时可以创造的魔法物品数量增加。你创造的每个物品必须基于你知道的一个不同方案。",
+								"当你达到奇械师特性表中魔法物品栏指定的特定奇械师等级时，你在一次{@variantrule 长休|XPHB}结束时可以创造的魔法物品数量会增加。你创造的每件物品必须基于你所知的不同图纸。",
 								"你无法通过此特性拥有超过奇械师特性表格中对应你等级的魔法物品栏所示数量的魔法物品。若你尝试超出此特性的最大魔法物品数量，最旧的物品会消失，然后新物品出现。"
 							]
 						},
@@ -1584,7 +1681,7 @@
 							"name": "法器",
 							"type": "entries",
 							"entries": [
-								"你可以使用该特性创造出的任何魔杖或武器作为{@variantrule 法器|XPHB}，以替代使用一套工匠工具。"
+								"你可以使用此特性创造的任何魔杖或武器作为{@variantrule 法器|XPHB}，代替使用一套{@item 工匠工具|XPHB}。"
 							]
 						},
 						{
@@ -1593,7 +1690,7 @@
 							"type": "inset",
 							"entries": [
 								"仿制魔法物品特性并非奇械师制作魔法物品的唯一方式。{@book 城主指南|XDMG|6|制作魔法物品}为想要制作各种魔法物品的角色\u2014\u2014不仅仅是奇械师\u2014\u2014提供了规则。尽管许多不同的角色都能制作魔法物品，但奇械师能比其他人更快地完成；每个奇械师子职都能提高角色制作特定类别物品的速度。",
-								"当奇械师使用城主指南中的正常规则制造魔法物品时，该角色不会获得与该物品的特殊联系。提及由你的仿制魔法物品特性所创造物品的职业特性不适用于你通过其他方式制造的物品。"
+								"当奇械师使用{@book 城主指南|XDMG|6|制作魔法物品}中的常规规则制作魔法物品时，该角色不会获得与该物品的特殊联系。那些提及由你的仿制魔法物品专长所创造物品的职业特性，不适用于你通过其他方式制作的物品。"
 							]
 						},
 						{
@@ -2792,7 +2889,7 @@
 					"name": "制造额外灵药",
 					"type": "entries",
 					"entries": [
-						"作为持有炼金工具时的一个{@action 魔法|XPHB}动作，你可以消耗一个法术位来创造另一份灵药。当你如此做时，你可以从实验性灵药表格中选择其效果，而非进行掷骰。",
+						"作为持有{@item 炼金工具|XPHB}时的一个{@action 魔法|XPHB}动作，你可以消耗一个法术位来制造另一瓶灵药。当你这样做时，你可以从实验性灵药表格中选择其效应而非随机掷骰。",
 						"当你达到特定奇械师等级时，你可以在每次{@variantrule 长休|XPHB}结束时制作一份额外的灵药：5级时总共三份，9级时四份，15级时五份。"
 					]
 				},
@@ -2852,7 +2949,7 @@
 					"name": "工具熟练项",
 					"type": "entries",
 					"entries": [
-						"你获得炼金工具和{@item 草药工具|XPHB}的熟练项。如果你已经拥有其中一种熟练项，则获得一种你选择的其他类型工匠工具的熟练项（或者如果你已拥有两种，则获得两种其他类型）。"
+						"你获得{@item 炼金工具|XPHB}和{@item 草药工具|XPHB}的熟练项。若你已拥有其中一项熟练项，则改为获得一种自选的{@item 工匠工具|XPHB}熟练项（若两项均已掌握，则可选择两种其他类型的工匠工具）。"
 					]
 				},
 				{
@@ -2860,7 +2957,7 @@
 					"name": "药水手作",
 					"type": "entries",
 					"entries": [
-						"当你使用《城主指南》中的制造规则酿造药水时，所需制造时间减半。"
+						"当你使用{@book 城主指南|XDMG|6|制作魔法物品}中的制作规则酿造药水时，所需的制作时间减半。"
 					]
 				}
 			]
@@ -2918,7 +3015,7 @@
 					"name": "炼金抗性",
 					"type": "entries",
 					"entries": [
-						"你获得对强酸伤害和毒素伤害的{@variantrule 抗性|XPHB}。你还获得对中毒状态的{@variantrule 免疫|XPHB}。"
+						"你获得对强酸伤害和毒素伤害的{@variantrule 抗性|XPHB}。你还获得对{@condition 中毒|XPHB}状态的{@variantrule 免疫|XPHB}。"
 					]
 				},
 				{
@@ -2926,7 +3023,7 @@
 					"name": "咒唤坩埚",
 					"type": "entries",
 					"entries": [
-						"你可以施放{@spell 塔莎泡泡坩埚|XPHB}而不消耗法术位、不准备该法术且无需材质成分，前提是你使用炼金工具作为{@variantrule 法器|XPHB}。一旦你使用了此特性，在完成一次{@variantrule 长休|XPHB}前你不能再次使用它。"
+						"你可以施放{@spell 塔莎泡泡坩埚|XPHB}而不消耗法术位、不准备该法术且无需材质成分，前提是你使用{@item 炼金工具|XPHB}作为{@variantrule 法器|XPHB}。一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
 					]
 				}
 			]
@@ -2941,7 +3038,7 @@
 			"subclassSource": "EFA",
 			"level": 3,
 			"entries": [
-				"当你手持铁匠工具时，你可以用一个{@action 魔法|XPHB}动作将你穿着的一套盔甲转变为奥能装甲。该盔甲会保持为奥能装甲，直到你装着另一套盔甲或你死亡。",
+				"当你手上有{@item 铁匠工具|XPHB}时，你可以用一个{@action 魔法|XPHB}动作将你穿着的一套盔甲转变为奥能装甲。该盔甲会保持为奥能装甲，直到你装着另一套盔甲或你死亡为止。",
 				"当你穿着你的奥能装甲时，你获得以下好处。",
 				{
 					"ENG_name": "No Strength Requirement",
@@ -3132,7 +3229,7 @@
 					"name": "防护场",
 					"type": "item",
 					"entries": [
-						"处于浴血状态时，你可以使用一个{@variantrule 附赠动作|XPHB}来获得等于你奇械师等级的{@variantrule 临时生命值|XPHB}。如果你卸除该护甲，则会失去这些{@variantrule 临时生命值|XPHB}。"
+						"处于{@status 浴血|XPHB}状态时，你可以使用一个{@variantrule 附赠动作|XPHB}来获得等同于你奇械师等级的{@variantrule 临时生命值|XPHB}。若卸下护甲则会失去这些{@variantrule 临时生命值|XPHB}。"
 					]
 				}
 			]
@@ -3204,7 +3301,7 @@
 					"name": "工具熟练项",
 					"type": "entries",
 					"entries": [
-						"你获得铁匠工具的熟练项。如果你已有此工具熟练项，则你获得一种自选的其他类型工匠工具的熟练项。"
+						"你获得{@item 铁匠工具|XPHB}的熟练项。如果你已经拥有该工具熟练项，则你可以选择获得另一种{@item 工匠工具|XPHB}的熟练项。"
 					]
 				},
 				{
@@ -3415,7 +3512,7 @@
 					"name": "工具熟练项",
 					"type": "entries",
 					"entries": [
-						"你获得木雕工具的熟练项。如果你已有此熟练项，则获得一种自选的其他类型工匠工具的熟练项。"
+						"你获得{@item 木雕工具|XPHB}的熟练项。如果你已有此熟练项，则获得一种你选择的其他类型的{@item 工匠工具|XPHB}的熟练项。"
 					]
 				},
 				{
@@ -3423,7 +3520,7 @@
 					"name": "魔杖手作",
 					"type": "entries",
 					"entries": [
-						"当你制造一个魔法魔杖时，所需时间减半。"
+						"当你制作一个魔法{@item 魔杖|XPHB}时，所需时间减半。"
 					]
 				}
 			]
@@ -3656,7 +3753,7 @@
 					"name": "工具熟练项",
 					"type": "entries",
 					"entries": [
-						"你获得铁匠工具的熟练项。如果你已有此熟练项，则获得一种自选的其他类型的工匠工具的熟练项。"
+						"你获得{@item 铁匠工具|XPHB}的熟练项。如果你已有此熟练项，则可以选择获得另一种{@item 工匠工具|XPHB}的熟练项。"
 					]
 				},
 				{
@@ -3902,7 +3999,7 @@
 					"name": "工具熟练项",
 					"type": "entries",
 					"entries": [
-						"你获得{@item 书法工具|XPHB}和{@item 制图工具|XPHB}的熟练项。如果你已经拥有其中一种熟练项，则获得一种其他类型的工匠工具的熟练项（如果你已拥有两种，则获得两种其他类型的工匠工具的熟练项）。"
+						"你获得{@item 书法工具|XPHB}和{@item 制图工具|XPHB}的熟练项。若你已拥有其中一项熟练项，则你可以选择获得另一种{@item 工匠工具|XPHB}的熟练项（若你已拥有两项熟练项，则可选择获得另外两种）。"
 					]
 				},
 				{

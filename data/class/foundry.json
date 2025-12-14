@@ -3163,15 +3163,22 @@
 			"level": 1,
 			"effects": [
 				{
-					"ENG_name": "Thaumaturge",
-					"name": "奇术使",
+					"ENG_name": "Thaumaturge (Arcana)",
+					"name": "奇术师（奥秘）",
 					"transfer": true,
 					"changes": [
 						{
 							"key": "system.skills.arc.bonuses.check",
 							"mode": "ADD",
 							"value": "(max(1,@abilities.wis.mod))"
-						},
+						}
+					]
+				},
+				{
+					"ENG_name": "Thaumaturge (Religion)",
+					"name": "奇术师（宗教）",
+					"transfer": true,
+					"changes": [
 						{
 							"key": "system.skills.rel.bonuses.check",
 							"mode": "ADD",
@@ -16498,7 +16505,7 @@
 						}
 					},
 					"range": {
-						"units": "touch"
+						"units": "触碰"
 					},
 					"restrictions": {
 						"allowMagical": true,

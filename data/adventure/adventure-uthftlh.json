@@ -158,14 +158,14 @@
 								"\"快点！\"她尖声道。\"独角兽小独陷入危险了！如果你们心中存有善良，那就跟上我！\""
 							]
 						},
-						"带翼的身影是拂柳，一个试图拯救小独的{@creature 小妖精|XMM}。她向东穿过树林，朝着打斗的声响飞去。",
+						"带翼的身影是拂柳，一个试图拯救小独的{@creature 小仙灵|XMM}。她向东穿过树林，朝着打斗的声响飞去。",
 						{
 							"ENG_name": "Woodland Pool",
 							"name": "林地水池",
 							"type": "entries",
 							"id": "00a",
 							"entries": [
-								"当角色们跟着拂柳，他们会来到林地水池空地的最西端，凯雷克的仆从在此处死死控制住小独。拂柳冲向空地的西北边缘。她的朋友敲敲，另一只{@creature 小妖精|XMM}，位于空地的东南角附近。小独不再是系列动画里的幼兽了，她现在是一只完全成熟的独角兽。",
+								"当角色们跟着拂柳，他们会来到林地水池空地的最西端，凯雷克的仆从在此处死死控制住小独。拂柳冲向空地的西北边缘。她的朋友敲敲，另一只{@creature 小仙灵|XMM}，位于空地的东南角附近。小独不再是系列动画里的幼兽了，她现在是一只完全成熟的独角兽。",
 								"就在不久之前，凯雷克用他的拐杖敲了敲小独的头部，魔法性地取下并偷走了她的角。那时拂柳和敲敲撞见了这一场景。虽然他们没能阻止凯雷克，后者通过附近一个奇怪的传送门逃走了，但他们正在攻击控制小独的施法者仆从。",
 								{
 									"ENG_name": "Woodland Pool Features",
@@ -324,7 +324,7 @@
 											"type": "list",
 											"items": [
 												"小独角兽，在缠结于{@item 捕网|XPHB}中时具有{@condition 束缚|XPHB}状态",
-												"两个{@creature 小妖精|XMM|精魄}，柳刷和敲击术",
+												"两个{@creature 小仙灵|XMM|小仙灵}，柳刷和敲击术",
 												"一个名为狗扑的{@creature 熊地精武者|XMM}，站在60尺高的悬崖上的类地精",
 												"十名{@creature 啵灵蛙武者|XMM|啵灵蛙武者}，他们听从狗扑的命令"
 											]
@@ -340,11 +340,11 @@
 										},
 										{
 											"ENG_name": "Sprites",
-											"name": "精魄",
+											"name": "小仙灵",
 											"type": "entries",
 											"id": "00f",
 											"entries": [
-												"拂柳和敲敲位于高树枝上，以避免被近战波及。{@creature 小妖精|XMM|精魄}用她们的箭矢射击烟球菇，希望爆炸的真菌能够让附近的啵灵蛙中毒（见前文\"{@adventure 林地水池特性|UtHftLH|0|林地水池特性}\"节）。拂柳和敲敲会向任何被爆炸的烟球菇影响到的角色道歉。"
+												"拂柳和敲敲位于高树枝上，以避免被近战波及。{@creature 小仙灵|XMM|小仙灵}用她们的箭矢射击烟球菇，希望爆炸的真菌能够让附近的啵灵蛙中毒（见前文\"{@adventure 林地水池特性|UtHftLH|0|林地水池特性}\"节）。拂柳和敲敲会向任何被爆炸的烟球菇影响到的角色道歉。"
 											]
 										},
 										{
@@ -1970,7 +1970,7 @@
 						"{@creature 熊地精武者|XMM}*",
 						"{@creature 啵灵蛙武者|XMM}*",
 						"{@creature 魔法师|XMM}*",
-						"{@creature 小妖精}",
+						"{@creature 小仙灵}",
 						"{@creature 座狼|XMM}*",
 						"{@creature 战马}",
 						"{@creature 啵灵蛙沼地大贤|XMM}*"
@@ -2124,7 +2124,7 @@
 					"items": [
 						"{@spell 援助术|XPHB}",
 						"{@spell 祝福术|XPHB}",
-						"{@spell 目盲术／耳聋术|XPHB}",
+						"{@spell 目盲术/耳聋术|XPHB}",
 						"{@spell 燃烧之手|XPHB}",
 						"{@spell 通晓语言|XPHB}",
 						"{@spell 寒冰锥|XPHB}",
@@ -2282,26 +2282,36 @@
 									"name": "数字设计师：",
 									"type": "item",
 									"entry": "Jay Jani, Bailey Vaughan"
-								},
-								{
-									"ENG_name": "Translator:",
-									"name": "翻译：",
-									"type": "item",
-									"entry": "东风，萧永念，Amethyst Dragonlord"
-								},
-								{
-									"ENG_name": "Proofreader:",
-									"name": "校对",
-									"type": "item",
-									"entry": "东风，闪星"
-								},
-								{
-									"ENG_name": "Editor:",
-									"name": "编辑",
-									"type": "item",
-									"entry": "Kiwee"
 								}
 							]
+						}
+					]
+				},
+				{
+					"ENG_name": "5et-cn translator",
+					"name": "5et汉化",
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "翻译",
+							"type": "item",
+							"entry": "东风，萧永念，Amethyst Dragonlord"
+						},
+						{
+							"name": "校对",
+							"type": "item",
+							"entry": "东风，闪星"
+						},
+						{
+							"name": "编辑",
+							"type": "item",
+							"entry": "Kiwee"
+						},
+						{
+							"name": "原文地址",
+							"type": "item",
+							"entry": "https://www.goddessfantasy.net/bbs/index.php?topic=152777.0"
 						}
 					]
 				}

@@ -99,38 +99,38 @@ class BestiarySublistManager extends SublistManager {
 
 		const cellsText = [name, type, cr];
 
-		const $hovStatblock = $(`<span class="ve-col-1-4 help help--hover best-ecgen__visible" data-i18n='common.tabs.stat_block'></span>`)
-			.mouseover(evt => this._encounterBuilder.doStatblockMouseOver({
+		const hovStatblock = ee`<span class="ve-col-1-4 help help--hover best-ecgen__visible" data-i18n='common.tabs.stat_block'></span>`
+			.onn("mouseover", evt => this._encounterBuilder.doStatblockMouseOver({
 				evt,
-				ele: $hovStatblock[0],
+				ele: hovStatblock,
 				source: mon.source,
 				hash: hashBase,
 				customHashId: this._getCustomHashId({entity: mon}),
 			}))
-			.mousemove(evt => Renderer.hover.handleLinkMouseMove(evt, $hovStatblock[0]))
-			.mouseleave(evt => Renderer.hover.handleLinkMouseLeave(evt, $hovStatblock[0]));
+			.onn("mousemove", evt => Renderer.hover.handleLinkMouseMove(evt, hovStatblock))
+			.onn("mouseleave", evt => Renderer.hover.handleLinkMouseLeave(evt, hovStatblock));
 
 		const hovTokenMeta = EncounterBuilderUiBestiary.getTokenHoverMeta(mon);
-		const $hovToken = !hovTokenMeta ? $(`<span class="ve-col-1-2 best-ecgen__visible"></span>`) : $(`<span class="ve-col-1-2 best-ecgen__visible help help--hover">Token</span>`)
-			.mouseover(evt => hovTokenMeta.mouseOver(evt, $hovToken[0]))
-			.mousemove(evt => hovTokenMeta.mouseMove(evt, $hovToken[0]))
-			.mouseleave(evt => hovTokenMeta.mouseLeave(evt, $hovToken[0]));
+		const hovToken = !hovTokenMeta ? ee`<span class="ve-col-1-2 best-ecgen__visible"></span>` : ee`<span class="ve-col-1-2 best-ecgen__visible help help--hover">Token</span>`
+			.onn("mouseover", evt => hovTokenMeta.mouseOver(evt, hovToken))
+			.onn("mousemove", evt => hovTokenMeta.mouseMove(evt, hovToken))
+			.onn("mouseleave", evt => hovTokenMeta.mouseLeave(evt, hovToken));
 
-		const $hovImage = $(`<span class="ve-col-1-2 best-ecgen__visible help help--hover">图片</span>`);
-		Renderer.monster.hover.bindFluffImageMouseover({mon, $ele: $hovImage});
+		const hovImage = ee`<span class="ve-col-1-2 best-ecgen__visible help help--hover">图片</span>`;
+		Renderer.monster.hover.bindFluffImageMouseover({mon, ele: hovImage});
 
-		const $ptCr = (() => {
-			if (!ScaleCreature.isCrInScaleRange(mon)) return $(`<span class="ve-col-1-2 ve-text-center">${cr}</span>`);
+		const ptCr = (() => {
+			if (!ScaleCreature.isCrInScaleRange(mon)) return ee`<span class="ve-col-1-2 ve-text-center">${cr}</span>`;
 
 			const iptCr = ee`<input value="${cr}" class="w-100 ve-text-center form-control form-control--minimal input-xs">`
-				.onn("click", () => iptCr.select())
+				.onn("click", () => iptCr.selecte())
 				.onn("change", () => this._encounterBuilder.pDoCrChange(iptCr, mon, mon._scaledCr));
 
-			return $$`<span class="ve-col-1-2 ve-text-center">${iptCr}</span>`;
+			return ee`<span class="ve-col-1-2 ve-text-center">${iptCr}</span>`;
 		})();
 
-		const $eleCount1 = $(`<span class="ve-col-2 ve-text-center">${count}</span>`);
-		const $eleCount2 = $(`<span class="ve-col-2 pr-0 ve-text-center">${count}</span>`);
+		const eleCount1 = ee`<span class="ve-col-2 ve-text-center">${count}</span>`;
+		const eleCount2 = ee`<span class="ve-col-2 pr-0 ve-text-center">${count}</span>`;
 
 		const listItem = new ListItem(
 			hash,
@@ -149,7 +149,7 @@ class BestiarySublistManager extends SublistManager {
 				count,
 				customHashId,
 				isLocked,
-				$elesCount: [$eleCount1, $eleCount2],
+				elesCount: [eleCount1, eleCount2],
 				fnsUpdate: [],
 				entity: mon,
 				entityBase: await DataLoader.pCacheAndGetHash(
@@ -163,24 +163,24 @@ class BestiarySublistManager extends SublistManager {
 		const sublistButtonsMeta = this._encounterBuilder.getSublistButtonsMeta(listItem);
 		listItem.data.fnsUpdate.push(sublistButtonsMeta.fnUpdate);
 
-		listItem.ele = $$`<div class="lst__row lst__row--sublist ve-flex-col lst__row--bestiary-sublist">
+		listItem.ele = ee`<div class="lst__row lst__row--sublist ve-flex-col lst__row--bestiary-sublist">
 			<a href="#${hash}" draggable="false" class="best-ecgen__hidden lst__row-border lst__row-inner">
 				${this.constructor._getRowCellsHtml({values: cellsText, templates: this.constructor._ROW_TEMPLATE.slice(0, 3)})}
-				${$eleCount1}
+				${eleCount1}
 			</a>
 
 			<div class="lst__wrp-cells best-ecgen__visible--flex lst__row-border lst__row-inner">
 				${sublistButtonsMeta.wrp}
 				<span class="best-ecgen__name--sub ve-col-3-5">${name}</span>
-				${$hovStatblock}
-				${$hovToken}
-				${$hovImage}
-				${$ptCr}
-				${$eleCount2}
+				${hovStatblock}
+				${hovToken}
+				${hovImage}
+				${ptCr}
+				${eleCount2}
 			</div>
 		</div>`
-			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
-			.click(evt => this._handleBestiaryLinkClickSub(evt, listItem));
+			.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
+			.onn("click", evt => this._handleBestiaryLinkClickSub(evt, listItem));
 
 		return listItem;
 	}
@@ -392,8 +392,8 @@ class BestiaryPage extends ListPageMultiSource {
 			listSyntax: new ListSyntaxBestiary({fnGetDataList: () => this._dataList, pFnGetFluff}),
 		});
 
-		this._$wrpBtnProf = null;
-		this._$btnProf = null;
+		this._wrpBtnProf = null;
+		this._btnProf = null;
 
 		this._profDiceMode = null;
 
@@ -549,17 +549,17 @@ class BestiaryPage extends ListPageMultiSource {
 	}
 
 	async _pPageInit_pProfBonusDiceToggle () {
-		const $btnProfBonusDice = $("button#profbonusdice");
+		this._btnProf = e_(document.getElementById("profbonusdice"));
 
 		this._profDiceMode = await StorageUtil.pGetForPage("proficiencyDiceMode") || _BestiaryConsts.PROF_MODE_BONUS;
 
 		const hk = () => {
-			$btnProfBonusDice.text(this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE ? "使用熟练加值" : "使用熟练骰");
-			this._$pgContent.attr("data-proficiency-dice-mode", this._profDiceMode);
+			this._btnProf.txt(this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE ? "使用熟练加值" : "使用熟练骰");
+			this._pgContent.attr("data-proficiency-dice-mode", this._profDiceMode);
 			StorageUtil.pSetForPage("proficiencyDiceMode", this._profDiceMode).then(null);
 		};
 
-		$btnProfBonusDice.click(() => {
+		this._btnProf.onn("click", () => {
 			if (this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE) {
 				this._profDiceMode = _BestiaryConsts.PROF_MODE_BONUS;
 				hk();
@@ -587,12 +587,16 @@ class BestiaryPage extends ListPageMultiSource {
 	}
 
 	_bindProfDiceHandlers () {
-		this._$pgContent
-			.on(`mousedown`, `[data-roll-prof-type]`, evt => {
+		this._pgContent
+			.onn(`mousedown`, evt => {
+				if (!evt.target.parentElement?.getAttribute("data-roll-prof-type")) return;
+
 				if (this._profDiceMode !== _BestiaryConsts.PROF_MODE_BONUS) evt.preventDefault();
 			})
-			.on(`click`, `[data-roll-prof-type]`, evt => {
-				const parent = evt.currentTarget.closest(`[data-roll-prof-type]`);
+			.onn(`click`, evt => {
+				if (!evt.target.parentElement?.getAttribute("data-roll-prof-type")) return;
+
+				const parent = evt.target.closest(`[data-roll-prof-type]`);
 
 				const type = parent?.dataset?.rollProfType;
 				if (!type) return;
@@ -635,19 +639,18 @@ class BestiaryPage extends ListPageMultiSource {
 		this._lastRender.isScaledSpellSummon = isScaledSpellSummon;
 		this._lastRender.isScaledClassSummon = isScaledClassSummon;
 
-		this._$wrpBtnProf = this._$wrpBtnProf || $(`#wrp-profbonusdice`);
+		this._wrpBtnProf = this._wrpBtnProf || e_(document.getElementById("wrp-profbonusdice"));
 
-		this._$pgContent.empty();
+		this._pgContent.empty();
 
-		if (this._$btnProf != null) {
-			this._$wrpBtnProf.append(this._$btnProf);
-			this._$btnProf = null;
+		if (this._btnProf != null) {
+			this._wrpBtnProf.appends(this._btnProf);
 		}
 
 		const tabMetaStats = new Renderer.utils.TabButton({
 			label: "数据卡",
 			fnChange: () => {
-				this._$wrpBtnProf.append(this._$btnProf);
+				if (this._btnProf) this._wrpBtnProf.appends(this._btnProf);
 				this._tokenDisplay.doShow();
 			},
 			fnPopulate: () => this._renderStatblock_doBuildStatsTab({mon, isScaledCr, isScaledSpellSummon, isScaledClassSummon}),
@@ -657,8 +660,8 @@ class BestiaryPage extends ListPageMultiSource {
 		Renderer.utils.bindTabButtons({
 			tabButtons: [tabMetaStats],
 			tabLabelReference: [tabMetaStats].map(it => it.label),
-			$wrpTabs: this._$wrpTabs,
-			$pgContent: this._$pgContent,
+			wrpTabs: this._wrpTabs,
+			pgContent: this._pgContent,
 		});
 
 		Promise.all([
@@ -675,7 +678,6 @@ class BestiaryPage extends ListPageMultiSource {
 					new Renderer.utils.TabButton({
 						label: "简介",
 						fnChange: () => {
-							this._$btnProf = this._$wrpBtnProf.children().length ? this._$wrpBtnProf.children().detach() : this._$btnProf;
 							this._tokenDisplay.doHide();
 						},
 						fnPopulate: () => this._renderStats_doBuildFluffTab({ent: mon}),
@@ -684,7 +686,6 @@ class BestiaryPage extends ListPageMultiSource {
 					new Renderer.utils.TabButton({
 						label: "图片",
 						fnChange: () => {
-							this._$btnProf = this._$wrpBtnProf.children().length ? this._$wrpBtnProf.children().detach() : this._$btnProf;
 							this._tokenDisplay.doHide();
 						},
 						fnPopulate: () => this._renderStats_doBuildFluffTab({ent: mon, isImageTab: true}),
@@ -695,8 +696,8 @@ class BestiaryPage extends ListPageMultiSource {
 				Renderer.utils.bindTabButtons({
 					tabButtons: tabMetas.filter(it => it.isVisible),
 					tabLabelReference: tabMetas.map(it => it.label),
-					$wrpTabs: this._$wrpTabs,
-					$pgContent: this._$pgContent,
+					wrpTabs: this._wrpTabs,
+					pgContent: this._pgContent,
 				});
 			});
 	}
@@ -822,7 +823,7 @@ class BestiaryPage extends ListPageMultiSource {
 			Renderer.get().addPlugin("string_@dc", pluginDc);
 			Renderer.get().addPlugin("dice", pluginDice);
 
-			this._$pgContent.empty().append(RenderBestiary.$getRenderedCreature(mon, {btnScaleCr, btnResetScaleCr, selSummonSpellLevel, selSummonClassLevel, classLevelScalerClass: mon.summonedByClass}));
+			this._pgContent.empty().appends(RenderBestiary.getRenderedCreature(mon, {btnScaleCr, btnResetScaleCr, selSummonSpellLevel, selSummonClassLevel, classLevelScalerClass: mon.summonedByClass}));
 		} finally {
 			Renderer.get().removePlugin("dice", pluginDice);
 			Renderer.get().removePlugin("string_@dc", pluginDc);

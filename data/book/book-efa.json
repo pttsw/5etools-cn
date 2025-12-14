@@ -1355,9 +1355,9 @@
 					"entries": [
 						"{@i 一次4级角色的冒险}",
 						{
-							"ENG_name": "The Sharn Inquisitive: Gold Dragon Burns!",
-							"name": "萨恩好奇志：金龙燃烧！",
+							"ENG_name": "The Sharn Inquisitive\u2014Gold Dragon Burns!",
 							"type": "insetReadaloud",
+							"name": "萨恩调查员\u2014\u2014金龙伯恩斯！",
 							"id": "1a7",
 							"entries": [
 								"{@b 位于终末之地下层塔楼的和平金龙旅馆正在燃烧，恶毒的掠夺者正在攻击逃离燃烧建筑的赞助人。}!",
@@ -3003,7 +3003,7 @@
 				"另一方面，伊尔莫格雷夫有着宝藏猎人的声誉，他通过出售从{@book 达贡|ERLW|5|达贡}、{@book 希恩德瑞克|ERLW|6|希恩德瑞克}和其他地点的考古挖掘中盗取的神器和宝藏来积累财富。几个世纪以来，无数的学生、学者和冒险者都为该大学作为走私活动和洗劫过去的掩护的声誉做出了贡献。",
 				"运行一个莫格雷夫探险队战役，如果你想模仿挑战者教授、印第安纳·琼斯、劳拉·克劳馥和其他探险家学者的动作冒险冒险。",
 				{
-					"ENG_name": "Morgrave Chartacters",
+					"ENG_name": "Morgrave Characters",
 					"name": "莫格雷夫角色",
 					"type": "section",
 					"id": "220",
@@ -3833,9 +3833,9 @@
 					"entries": [
 						"{@i 一场适合3级角色的冒险}",
 						{
-							"ENG_name": "The Sharn Inquisitive: Rivals Race To Wretched Ruin",
-							"name": "萨恩好奇志：竞争对手竞相前往乞食废墟",
+							"ENG_name": "The Sharn Inquisitive\u2014Rivals Race To Wretched Ruin",
 							"type": "insetReadaloud",
+							"name": "萨恩好奇志\u2014\u2014竞争对手冲向破败废墟",
 							"id": "264",
 							"entries": [
 								"并非一支而是两支来自莫格雷夫大学的探险队于本周出发探索所谓的蟹庙宇，该庙宇于上个月在飓临城附近被发现。哪支队伍将率先穿越致命的沙贡海峡，穿过天坠半岛的丛林，并发现巨蟹的秘密？"
@@ -4316,7 +4316,8 @@
 								"{@vehicle 漫游者飞艇|EFA}"
 							]
 						}
-					]
+					],
+					"id": "00c"
 				},
 				{
 					"ENG_name": "Upgrading an Airship",
@@ -4596,58 +4597,11 @@
 											"entries": [
 												"你可以使用以下表格来生成冒险者在天空中航行时的随机遭遇。",
 												{
-													"type": "table",
-													"caption": "空中遭遇",
-													"colLabels": [
-														"1d10",
-														"遭遇"
-													],
-													"colStyles": [
-														"col-2 text-center",
-														"col-10"
-													],
-													"rows": [
-														[
-															"1",
-															"一艘闪亮的{@book 林兰德风巡舰|EFA|7|林兰德风巡舰概述}由一位友好但傲慢的{@creature 贵血天骄|XMM}或{@creature 林兰德后裔|EFA}驾驶（在{@area 第五章|217|x}中描述）"
-														],
-														[
-															"2",
-															"一艘{@book 漫游者飞艇|EFA|7|漫游者飞艇概述}，其船员为敌对的{@dice 2d4}名{@creature 海盗|XMM|海盗们}和一名{@creature 海盗船长|XMM}"
-														],
-														[
-															"3",
-															"{@dice 2d6} {@book 林兰德天空轻舟|EFA|7|林兰德天空轻舟概述} 聚集进行一场比赛；船只的飞行员态度冷漠，但对任何干扰他们活动的人感到不满"
-														],
-														[
-															"4",
-															"一艘废弃的林兰德风巡舰，在其引擎的元素核心破碎后搁浅在天空"
-														],
-														[
-															"5",
-															"{@dice 1d4} {@creature 气元素|XMM|气元素} 创造云雾雕塑"
-														],
-														[
-															"6",
-															"{@dice 2d6} {@creature 狮鹫|XMM|狮鹫} 保卫它们的领地"
-														],
-														[
-															"7",
-															"两个{@creature 隐秘斯芬克斯|XMM|秘密的斯芬克斯们}，试图弄清楚飞艇是如何飞行的"
-														],
-														[
-															"8",
-															"三只{@creature 飞龙|XMM|飞龙}正在捕猎"
-														],
-														[
-															"9",
-															"一群{@dice 2d4}只{@creature 鹿鹰|XMM|鹿鹰}躲藏在云雾中，等待伏击毫无防备的旅人"
-														],
-														[
-															"10",
-															"一只寻找食物带回巢穴的{@creature 鹏鸟|XMM}"
-														]
-													]
+													"ENG_name": "Airborne Encounters",
+													"name": "空中遭遇",
+													"type": "statblock",
+													"source": "EFA",
+													"tag": "table"
 												}
 											]
 										}
