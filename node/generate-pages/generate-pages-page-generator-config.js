@@ -59,7 +59,7 @@ class _PageGeneratorBlocklist extends PageGeneratorGeneric {
 	_page = "blocklist.html";
 
 	_pageTitle = "内容黑名单";
-	_navbarDescription = "Exclude content and export configurations.";
+	_navbarDescription = "拉黑内容及导出配置。";
 
 	_scripts = [
 		"blocklist-ui.js",

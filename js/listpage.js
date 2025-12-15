@@ -271,40 +271,40 @@ class SublistManager {
 			),
 			this._getContextActionRemove(),
 			new ContextUtil.Action(
-				"Clear List",
+				"清空列表",
 				() => this.pDoSublistRemoveAll(),
 			),
 			null,
 			new ContextUtil.Action(
-				"Roll on List",
+				"在列表上掷骰",
 				(evt) => this._rollSubListed({evt}),
 				{title: "SHIFT to Skip Animation"},
 			),
 			null,
 			new ContextUtil.Action(
-				"Send to DM Screen",
+				"发送到DM帷幕",
 				(evt) => this._pDoSendSublistToDmScreen({evt}),
 				{title: "A DM Screen panel will be created for each entry. SHIFT to use tabs."},
 			),
 			ExtensionUtil.ACTIVE
 				? new ContextUtil.Action(
-					"Send to Foundry",
+					"发送到Foundry",
 					() => this._pDoSendSublistToFoundry(),
 					{title: "A Rivet import will be run for each entry."},
 				)
 				: undefined,
 			null,
 			new ContextUtil.Action(
-				"Download JSON Data",
+				"下载JSON数据",
 				() => this._pHandleJsonDownload(),
 			),
 			new ContextUtil.Action(
-				"Download Markdown Data",
+				"下载Markdown数据",
 				() => this._pHandleMarkdownDownload(),
 			),
 			null,
 			new ContextUtil.Action(
-				"Copy as Markdown Table",
+				"复制为Markdown表格",
 				() => this._pHandleCopyAsMarkdownTable(),
 			),
 		].filter(it => it !== undefined);

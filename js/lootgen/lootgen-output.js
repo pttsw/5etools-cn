@@ -29,11 +29,11 @@ export class LootGenOutput {
 
 	_getEleTitleSplit () {
 		const btnRivet = !globalThis.IS_VTT && ExtensionUtil.ACTIVE
-			? ee`<button title="Send to Foundry (SHIFT for Temporary Import)" class="no-print ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-send"></span></button>`
+			? ee`<button title="发送到Foundry (按住SHIFT以临时导入)" class="no-print ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-send"></span></button>`
 				.onn("click", evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
 			: null;
 
-		const btnDownload = ee`<button title="Download JSON" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-download glyphicon--top-2p"></span></button>`
+		const btnDownload = ee`<button title="下载JSON" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-download glyphicon--top-2p"></span></button>`
 			.onn("click", () => this._pDoSaveAsJson());
 
 		return ee`<div class="ve-btn-group">

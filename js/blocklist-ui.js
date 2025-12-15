@@ -259,8 +259,7 @@ class BlocklistUi {
 		this._wrpControls = ee`<div ${this._isCompactUi ? "" : `class="bg-solid py-5 px-3 shadow-big b-1p"`}></div>`;
 
 		const iptSearch = ee`<input type="search" class="search form-control lst__search lst__search--no-border-h h-100">`.disableSpellcheck();
-
-		const btnReset = ee`<button class="ve-btn ve-btn-default">Reset Search</button>`
+		const btnReset = ee`<button class="ve-btn ve-btn-default">重置搜索</button>`
 			.onn("click", () => {
 				iptSearch.val("");
 				this._list.reset();
@@ -280,8 +279,8 @@ class BlocklistUi {
 
 			<hr class="${this._isCompactUi ? "hr-2" : "hr-5"}">
 
-			<h4 class="my-0">Blocklist</h4>
-			<div class="ve-muted ${this._isCompactUi ? "mb-2" : "mb-3"}"><i>Rows marked with an asterisk (*) in a field match everything in that field.</i></div>
+			<h4 class="my-0">黑名单</h4>
+			<div class="ve-muted ${this._isCompactUi ? "mb-2" : "mb-3"}"><i>星号(*)标记的行块表示匹配所有内容。</i></div>
 
 			<div class="ve-flex-col min-h-0">
 				<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
@@ -376,29 +375,29 @@ class BlocklistUi {
 		this._wrpSelName = ee`<div class="w-100 ve-flex"></div>`;
 		this._doHandleSourceCategorySelChange();
 
-		const btnAddExclusion = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Add to Blocklist</button>`
+		const btnAddExclusion = ee`<button class="ve-btn ve-btn-default ve-btn-xs">添加到黑名单</button>`
 			.onn("click", () => this._pAdd());
 		// endregion
 
 		// Utility controls
 		const btnSendToFoundry = !globalThis.IS_VTT && ExtensionUtil.ACTIVE
-			? ee`<button title="Send to Foundry" class="ve-btn ve-btn-xs ve-btn-default mr-2"><span class="glyphicon glyphicon-send"></span></button>`
+			? ee`<button title="发送到Foundry" class="ve-btn ve-btn-xs ve-btn-default mr-2"><span class="glyphicon glyphicon-send"></span></button>`
 				.onn("click", evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
 			: null;
-		const btnExport = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Export List</button>`
+		const btnExport = ee`<button class="ve-btn ve-btn-default ve-btn-xs">导出黑名单</button>`
 			.onn("click", () => this._export());
-		const btnImport = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="SHIFT for Add Only">Import List</button>`
+		const btnImport = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="SHIFT for Add Only">导入黑名单</button>`
 			.onn("click", evt => this._pImport(evt));
-		const btnReset = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Reset List</button>`
+		const btnReset = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">重置黑名单</button>`
 			.onn("click", async () => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Blocklist", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "重置黑名单", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
 				this._reset();
 			});
 		// endregion
 
 		ee(this._wrpControls.empty())`<div class="${this._isCompactUi ? "mb-2" : "mb-5"} ve-flex-v-center mobile__ve-flex-col mobile__ve-flex-ai-start">
 			<div class="ve-flex-vh-center mr-4 mobile__mr-0 mobile__mb-2">
-				<div class="mr-2">UA/Etc. Sources</div>
+				<div class="mr-2">UA等资源</div>
 				<div class="ve-flex-v-center ve-btn-group">
 					${btnExcludeAllUa}
 					${btnIncludeAllUa}
@@ -406,7 +405,7 @@ class BlocklistUi {
 			</div>
 
 			<div class="ve-flex-vh-center mr-3 mobile__mr-0 mobile__mb-2">
-				<div class="mr-2">Comedy Sources</div>
+				<div class="mr-2">喜剧资源</div>
 				<div class="ve-flex-v-center ve-btn-group">
 					${btnExcludeAllComedySources}
 					${btnIncludeAllComedySources}
@@ -414,7 +413,7 @@ class BlocklistUi {
 			</div>
 
 			<div class="ve-flex-vh-center mr-3 mobile__mr-0 mobile__mb-2">
-				<div class="mr-2">Non-<i>Forgotten Realms</i></div>
+				<div class="mr-2">非-<i>被遗忘的国度</i></div>
 				<div class="ve-flex-v-center ve-btn-group">
 					${btnExcludeAllNonForgottenRealmsSources}
 					${btnIncludeAllNonForgottenRealmsSources}
@@ -422,7 +421,7 @@ class BlocklistUi {
 			</div>
 
 			<div class="ve-flex-vh-center mr-3 mobile__mr-0 mobile__mb-2">
-				<div class="mr-2">&apos;24 Sources</div>
+				<div class="mr-2">&apos;24资源</div>
 				<div class="ve-flex-v-center ve-btn-group">
 					${btnExcludeModernSources}
 					${btnIncludeModernSources}
@@ -430,7 +429,7 @@ class BlocklistUi {
 			</div>
 
 			<div class="ve-flex-vh-center mr-3 mobile__mr-0 mobile__mb-2">
-				<div class="mr-2">All Sources</div>
+				<div class="mr-2">所有来源</div>
 				<div class="ve-flex-v-center ve-btn-group">
 					${btnExcludeAllSources}
 					${btnIncludeAllSources}
@@ -472,11 +471,11 @@ class BlocklistUi {
 	}
 
 	_getBtn_addToBlocklist () {
-		return ee`<button class="ve-btn ve-btn-danger ve-btn-xs w-20p h-21p ve-flex-vh-center" title="Add to Blocklist"><span class="glyphicon glyphicon-trash"></span></button>`;
+		return ee`<button class="ve-btn ve-btn-danger ve-btn-xs w-20p h-21p ve-flex-vh-center" title="添加到黑名单"><span class="glyphicon glyphicon-trash"></span></button>`;
 	}
 
 	_getBtn_removeFromBlocklist () {
-		return ee`<button class="ve-btn ve-btn-success ve-btn-xs w-20p h-21p ve-flex-vh-center" title="Remove from Blocklist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
+		return ee`<button class="ve-btn ve-btn-success ve-btn-xs w-20p h-21p ve-flex-vh-center" title="从黑名单移除"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
 	}
 
 	_doHandleSourceCategorySelChange () {
@@ -594,7 +593,7 @@ class BlocklistUi {
 		const id = this._listId++;
 		const sourceFull = Parser.sourceJsonToFull(source);
 
-		const btnRemove = ee`<button class="ve-btn ve-btn-xxs ve-btn-danger">Remove</button>`
+		const btnRemove = ee`<button class="ve-btn ve-btn-xxs ve-btn-danger">删除</button>`
 			.onn("click", () => {
 				this._remove(id, hash, category, source);
 			});
@@ -613,8 +612,6 @@ class BlocklistUi {
 			{
 				category: display.displayCategory,
 				source: sourceFull,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				displayName: displayName,

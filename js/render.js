@@ -3311,7 +3311,7 @@ Renderer.utils = class {
 	}
 
 	static getBtnSendToFoundryHtml ({isMb = true} = {}) {
-		return `<button title="Send to Foundry (SHIFT for Temporary Import)" class="no-print ve-btn ve-btn-xs ve-btn-default stats__btn-stats-name mx-2 ${isMb ? "mb-2" : ""} ve-self-flex-end lst-is-exporting-image__hidden" onclick="ExtensionUtil.pDoSendStats(event, this)" draggable="true" ondragstart="ExtensionUtil.doDragStart(event, this)"><span class="glyphicon glyphicon-send"></span></button>`;
+		return `<button title="发送到Foundry (按住SHIFT以临时导入)" class="no-print ve-btn ve-btn-xs ve-btn-default stats__btn-stats-name mx-2 ${isMb ? "mb-2" : ""} ve-self-flex-end lst-is-exporting-image__hidden" onclick="ExtensionUtil.pDoSendStats(event, this)" draggable="true" ondragstart="ExtensionUtil.doDragStart(event, this)"><span class="glyphicon glyphicon-send"></span></button>`;
 	}
 
 	static isDisplayPage (page) { return page != null && ((!isNaN(page) && page > 0) || isNaN(page)); }

@@ -1373,6 +1373,10 @@ Parser.spTimeListToFull = function (times, isStripTags) {
 	return times.map(t => `${Parser.getTimeToFull(t)}${t.condition ? `, ${isStripTags ? Renderer.stripTags(t.condition) : Renderer.get().render(t.condition)}` : ""}`).join(" or ");
 };
 
+Parser.spTimeFullToUnit = function (timeFull) {
+	return Parser._parse_bToA(Parser.SP_TIME_TO_FULL, timeFull);
+};
+
 Parser.getTimeToFull = function (time) {
 	return `${time.number ? `${time.number} ` : ""}${Parser.spTimeUnitToFull(time.unit)}`;
 };
@@ -4465,6 +4469,16 @@ Parser.PROP_TO_DISPLAY_NAME = {
 	"table": "表格",
 	"trap": "陷阱",
 	"vehicle": "载具",
+	"card": "卡牌",
+	"class": "职业",
+	"classFeature": "职业特性",
+	"deck": "牌组",
+	"itemGroup": "物品分组",
+	"itemMastery": "物品专精",
+	"status": "状态",
+	"subclass": "子职",
+	"subclassFeature": "子职特性",
+	"vehicleUpgrade": "载具升级",
 };
 Parser.getPropDisplayName = function (prop, {suffix = ""} = {}) {
 	if (Parser.PROP_TO_DISPLAY_NAME[prop]) return `${Parser.PROP_TO_DISPLAY_NAME[prop]}${suffix}`;
