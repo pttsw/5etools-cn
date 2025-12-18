@@ -80,6 +80,7 @@ export class ConverterCreature extends ConverterBase {
 		"PROFICIENCY BONUS",
 		"GEAR",
 		"豁免检定",
+		"豁免",
 		"技能",
 		"伤害易伤",
 		"易伤",
@@ -161,8 +162,8 @@ export class ConverterCreature extends ConverterBase {
 
 		if (ConverterUtils.isNameLine(nxtLine)) return false; // avoid absorbing the start of traits
 		if (ConverterUtils.isListItemLine(nxtLine)) return false;
-		if (this._NO_ABSORB_TITLES.some(it => nxtLine.toUpperCase().includes(it))) return false;
-		if (this._NO_ABSORB_SUBTITLES.some(it => nxtLine.toUpperCase().startsWith(it))) return false;
+		if (this._NO_ABSORB_TITLES.some(it => nxtLine.toUpperCase().trim().includes(it))) return false;
+		if (this._NO_ABSORB_SUBTITLES.some(it => nxtLine.toUpperCase().trim().startsWith(it))) return false;
 
 		meta.ixToConvert++;
 		meta.curLine = `${meta.curLine.trim()} ${nxtLine.trim()}`;
@@ -171,11 +172,12 @@ export class ConverterCreature extends ConverterBase {
 	}
 
 	static _isStartNextLineParsingPhase ({line}) {
-		return /^(?:trait|action|legendary action|mythic action|reaction|bonus action)s?(?:\s+\([^)]+\))?$/i.test(line)
+		const [cn, en] = ConverterUtils.splitNameToChineseAndEnglish(line);
+		return /^(?:trait|action|legendary action|mythic action|reaction|bonus action)s?(?:\s+\([^)]+\))?$/i.test(en)
 			// Homebrew
-			|| /^(?:feature|villain action|utility spell)s?(?:\s+\([^)]+\))?$/i.test(line)
-			|| /^(?:特质|动作|传奇动作|神话动作|反应|附赠动作)(?:\s+[(（][^)]）]+[)]）])?$/i.test(line)
-			|| /^(?:特征|villain action|utility spell)(?:\s+[(（][^)]）]+[)]）])?$/i.test(line);
+			|| /^(?:feature|villain action|utility spell)s?(?:\s+\([^)]+\))?$/i.test(en)
+			|| /^(?:特质|动作|传奇动作|神话动作|反应|附赠动作)(?:\s+[(（][^)]）]+[)]）])?$/i.test(cn)
+			|| /^(?:特性|villain action|utility spell)(?:\s+[(（][^)]）]+[)]）])?$/i.test(cn);
 	}
 
 	static _isNonMergeableEntryLine_noSentenceBreak ({line, lineNxt}) {
@@ -235,6 +237,7 @@ export class ConverterCreature extends ConverterBase {
 				// endregion
 
 				stats.name = this._getAsTitle("name", meta.curLine, options.titleCaseFields, options.isTitleCase);
+				[stats.name, stats.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(stats.name);
 				// If the name is immediately repeated, skip it
 				if ((meta.toConvert[meta.ixToConvert + 1] || "").trim() === meta.curLine) meta.toConvert.splice(meta.ixToConvert + 1, 1);
 				continue;
@@ -264,7 +267,7 @@ export class ConverterCreature extends ConverterBase {
 			if (
 				ConverterUtils.isStatblockLineHeaderStart({reStartStr: this._RE_START_ARMOR_CLASS, line: meta.curLine})
 			) {
-				const [ptAc, ptInit] = meta.curLine.split(/\s+(Initiative|先攻)\s*/).map(it => it.trim()).filter(Boolean);
+				const [ptAc, ptInit] = meta.curLine.split(/\s+(?:Initiative|先攻)\s*/).map(it => it.trim()).filter(Boolean);
 				stats.ac = ConverterUtils.getStatblockLineHeaderText({reStartStr: "(?:Armor Class|AC|护甲等级)", line: ptAc});
 				if (ptInit) stats.initiative = ptInit;
 				continue;
@@ -505,7 +508,7 @@ export class ConverterCreature extends ConverterBase {
 					lineMode = this._LINE_MODES.UNKNOWN;
 
 					// Homebrew
-					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:FEATURES?|特征)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BREW_FEATURES;
+					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "(?:FEATURES?|特性)", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BREW_FEATURES;
 
 					// Homebrew
 					if (ConverterUtils.isStatblockLineHeaderStart({reStartStr: "UTILITY SPELLS?", line: meta.curLine.toUpperCase()})) {
@@ -591,7 +594,9 @@ export class ConverterCreature extends ConverterBase {
 					isMythicDescription = false;
 				} else {
 					const {name, entry} = ConverterUtils.splitNameLine(meta.curLine);
-					curTrait.name = name;
+					const [cn, en] = ConverterUtils.splitNameToChineseAndEnglish(name);
+					curTrait.name = cn;
+					curTrait.ENG_name = en;
 					curTrait.entries.push(entry);
 				}
 
@@ -829,7 +834,7 @@ export class ConverterCreature extends ConverterBase {
 
 	static _handleAbilityScores_modSaveTable ({stats, meta, options}) {
 		if (!/^(?:Ability\s+Score\s+)?Mod\s+Save(?:\s+(?:Ability\s+Score\s+)?Mod\s+Save\s+Mod\s+Save)?$/i.test(meta.curLine)
-		&& !/^(?:属性)?调整值?\s+豁免(\s+调整值?\s+豁免\s+调整值?\s+豁免)?$/i.test(meta.curLine)) return false;
+		&& !/^(?:属性)?调整值?\s*豁免(\s+调整值?\s*豁免\s+调整值?\s*豁免)?\s*$/i.test(meta.curLine)) return false;
 		++meta.ixToConvert;
 		meta.initCurLine();
 
@@ -908,9 +913,9 @@ export class ConverterCreature extends ConverterBase {
 	}
 
 	static _handleAbilityScores_cn_inline ({stats, meta, options}) {
-		// 转换类似：力量13（+1）敏捷14（+2）体质16（+3）
 		let match_count = 0;
-		const regex = new RegExp(`(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)(?<score>\\d+)[(（](?<save>[-+]\\d+)[)）]`, "g");
+		// 转换类似：力量13（+1）敏捷14（+2）体质16（+3）
+		const regex = /(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)(?<score>\d+)[(（](?<save>[-+]\d+)[)）]/g;
 		let i = meta.ixToConvert;
 		for (; i < meta.toConvert.length; ++i) {
 			const l = meta.toConvert[i].trim();
@@ -1885,8 +1890,8 @@ export class ConverterCreature extends ConverterBase {
 		SpellcastingTraitHiddenConvert.mutStatblock({stats, props: Renderer.monster.CHILD_PROPS, styleHint: options.styleHint});
 		AcConvert.tryPostProcessAc({
 			mon: stats,
-			cbMan: (ac) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}的"${ac}"AC不支持自动转换`),
-			cbErr: (ac) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}转换AC "${ac}"失败`),
+			cbMan: (ac) => options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}AC"${ac}"不支持自动转换`),
+			cbErr: (ac) => options.cbWarning(`${stats.name ? `(${stats.name})` : ""}转换AC "${ac}"失败`),
 			styleHint: options.styleHint,
 		});
 		TagCreatureSubEntryInto.tryRun(stats, (atk) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Manual attack tagging required for "${atk}"`));
@@ -1896,7 +1901,7 @@ export class ConverterCreature extends ConverterBase {
 		TagCondition.tryTagConditionsSpells(
 			stats,
 			{
-				cbMan: (sp) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Spell "${sp}" could not be found during condition tagging`),
+				cbMan: (sp) => options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}"${sp}" 在自动打标签时无法找到对应的法术`),
 				isTagInflicted: true,
 			},
 		);
@@ -1935,7 +1940,7 @@ export class ConverterCreature extends ConverterBase {
 		if (!stats[prop]) return;
 		const spellcasting = [];
 		stats[prop] = stats[prop].map(ent => {
-			if (!ent.name || !/\b(?:Coven Magic|Spellcasting)\b/i.test(ent.name)) return ent;
+			if (!ent.name || (!/\b(?:Coven Magic|Spellcasting)\b/i.test(ent.name) && !/集会魔法|施法/.test(ent.name))) return ent;
 			const parsed = SpellcastingTraitConvert.tryParseSpellcasting(
 				ent,
 				{
@@ -2167,7 +2172,7 @@ export class ConverterCreature extends ConverterBase {
 			if (isType) {
 				stats.type = pt.trim();
 			} else {
-				stats.alignment = pt.toLowerCase().trim();
+				stats.alignment = pt.toLowerCase().trim().replace(/^绝对/, "");
 				AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`"${ali}"阵营不支持自动转换`));
 			}
 			return;
@@ -2179,7 +2184,7 @@ export class ConverterCreature extends ConverterBase {
 
 		stats.type = spl.slice(0, ixAlignmentStart).join(", ").trim();
 
-		stats.alignment = spl.slice(ixAlignmentStart).join(", ").toLowerCase();
+		stats.alignment = spl.slice(ixAlignmentStart).map(ali => ali.trim().replace(/^绝对/, "")).join(", ").toLowerCase();
 		AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`"${ali}"阵营不支持自动转换`));
 	}
 
@@ -2288,7 +2293,7 @@ export class ConverterCreature extends ConverterBase {
 					options.cbWarning(`${stats.name ? `(${stats.name})的 ` : ""}技能 "${s}" 不支持自动转换。`);
 					return;
 				}
-				newSkills[m.groups.skill] = m.groups.val.replace(/\b\+?pb\b/g, "PB");
+				newSkills[Parser.cnSkillToEn(m.groups.skill)] = m.groups.val.replace(/\b\+?pb\b/g, "PB");
 			});
 			stats.skill = newSkills;
 			if (stats.skill[""]) delete stats.skill[""]; // remove empty properties
@@ -2416,22 +2421,23 @@ export class ConverterCreature extends ConverterBase {
 						pt = pt.trim();
 						if (!pt) return;
 
-						if (!pt.toLowerCase().includes("passive perception")) {
+						if (!pt.toLowerCase().includes("passive perception") && !/被动察觉/i.test(pt)) {
 							if (styleHint === SITE_STYLE__CLASSIC) return tempSenses.push(pt.toLowerCase());
 
 							return tempSenses.push(
 								pt
-									.replace(/magical Darkness/g, `magical {@variantrule Darkness|XPHB}`),
+									.replace(/magical Darkness/g, `magical {@variantrule Darkness|XPHB}`).
+									replace(/魔法黑暗/g, `魔法{@variantrule 黑暗|XPHB}`)
 							);
 						}
 
-						let ptPassive = pt.replace(/^passive perception/i, "").trim();
+						let ptPassive = pt.replace(/^passive perception/i, "").replace(/^被动察觉/i, "").trim();
 						if (!isNaN(ptPassive)) return stats.passive = this._tryConvertNumber(ptPassive);
 
 						if (
 							!/^\d+\s+(?:plus|\+)\s+PB$/i.test(ptPassive)
 							&& !/^\d+\s+(?:plus|\+)\s+\(PB\s*(?:×|\*|x|times)\s*\d+\)$/i.test(ptPassive)
-						) return cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Passive perception "${ptPassive}" requires manual conversion`);
+						) return cbWarning(`${stats.name ? `(${stats.name})的` : ""}被动察觉 "${ptPassive}" 不支持自动转换`);
 
 						// Handle e.g. "10 plus PB"
 						stats.passive = ptPassive;
@@ -2502,8 +2508,8 @@ export class ConverterCreature extends ConverterBase {
 		const rePtOneXpAmountLair = /(?: or (?<amountLair>[0-9,]+) in lair|在巢穴中则为\s*(?<amountLair>[0-9,]+))?/.source;
 		const rePtOneXpOutro = /\s*(?:[;；]\s*)?/.source;
 
-		const reXpOnePre = new RegExp(`${rePtOneXpIntro}XP ${rePtOneXpAmount}(?:[,，])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
-		const reXpOnePost = new RegExp(`${rePtOneXpIntro}${rePtOneXpAmount} XP(?:[,，])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
+		const reXpOnePre = new RegExp(`${rePtOneXpIntro}XP ?${rePtOneXpAmount}(?:[,，；])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
+		const reXpOnePost = new RegExp(`${rePtOneXpIntro}${rePtOneXpAmount} XP(?:[,，；])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
 
 		[
 			reXpOnePre,
@@ -2528,7 +2534,7 @@ export class ConverterCreature extends ConverterBase {
 			});
 
 		line = line
-			.replace(/(?<=[(（])PB (?<pb>\+\d+)(?=[)）])/i, (...m) => {
+			.replace(/(?<=[(（])PB ?(?<pb>\+\d+)(?=[)）])/i, (...m) => {
 				// (Assume standard PB)
 				return "";
 			})

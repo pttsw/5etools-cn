@@ -20,7 +20,7 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 	static _PageFilter = class extends PageFilterBase {
 		constructor () {
 			super();
-			this._categoryFilter = new Filter({header: "Category"});
+			this._categoryFilter = new Filter({header: "Category", cnHeader: "分类"});
 		}
 
 		_getNamespaceSnapshots () { return "PageFilterManageEditableBrewContents"; }

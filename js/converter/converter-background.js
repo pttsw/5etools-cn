@@ -3,6 +3,7 @@ import {ConverterFeatureBase} from "./converter-feature.js";
 import {ItemTag, TagJsons} from "./converterutils-entries.js";
 import {BackgroundSkillTollLanguageEquipmentCoalesce, BackgroundSkillToolLanguageTag, ConverterBackgroundUtil, EquipmentBreakdown} from "./converterutils-background.js";
 import {EntryCoalesceEntryLists, EntryCoalesceRawLines} from "./converterutils-entrycoalesce.js";
+import {ConverterUtils} from "./converterutils-utils.js";
 import {SITE_STYLE__CLASSIC, SITE_STYLE__ONE} from "../consts.js";
 import {PropOrder} from "../utils-proporder.js";
 
@@ -44,6 +45,7 @@ export class ConverterBackground extends ConverterFeatureBase {
 				case "skillProficiencies": this._doParseText_stepSkillProficiencies(state, options); state.stage = this._getNextParseStep({state}); break;
 				case "toolProficiencies": this._doParseText_stepToolProficiencies(state, options); state.stage = this._getNextParseStep({state}); break;
 				case "equipment": this._doParseText_stepEquipment(state, options); state.stage = this._getNextParseStep({state}); break;
+				case "language": this._doParseText_stepLanguage(state, options); state.stage = this._getNextParseStep({state}); break;
 				case "entries": this._doParseText_stepEntries(state, options); break;
 				case null: break;
 				default: throw new Error(`Unknown stage "${state.stage}"`);
@@ -67,6 +69,7 @@ export class ConverterBackground extends ConverterFeatureBase {
 	static _RE_LINE_START_SKILL_PROFICIENCIES = /^(?:Skill Proficienc(?:ies|y)|技能熟练项?)[:：]/;
 	static _RE_LINE_START_TOOL_PROFICIENCIES = /^(?:Tool Proficienc(?:ies|y)|工具熟练项?)[:：]/;
 	static _RE_LINE_START_EQUIPMENT = /^(?:Equipment|装备)[:：]/;
+	static _RE_LINE_START_LANGUAGE = /^(?:Language|语言)[:：]/;
 
 	static _getNextParseStep ({state}) {
 		const nxtLineMeta = state.getNextLineMeta();
@@ -78,11 +81,12 @@ export class ConverterBackground extends ConverterFeatureBase {
 		if (this._RE_LINE_START_SKILL_PROFICIENCIES.test(nxtLine)) return "skillProficiencies";
 		if (this._RE_LINE_START_TOOL_PROFICIENCIES.test(nxtLine)) return "toolProficiencies";
 		if (this._RE_LINE_START_EQUIPMENT.test(nxtLine)) return "equipment";
+		if (this._RE_LINE_START_LANGUAGE.test(nxtLine)) return "language";
 		return "entries";
 	}
 
 	static _doParseText_stepName (state) {
-		[state.entity.name, state.entity.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
+		[state.entity.name, state.entity.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
 		state.entity.name = state.entity.name.replace(/( Traits|特[质性])$/i, "");
 		state.entity.ENG_name = state.entity.ENG_name.replace(/( Traits|特[质性])$/i, "");
 	}
@@ -164,6 +168,16 @@ export class ConverterBackground extends ConverterFeatureBase {
 	static _doParseText_stepEquipment (state, options) {
 		const lineNoHeader = state.curLine
 			.replace(this._RE_LINE_START_EQUIPMENT, "");
+
+		state._one_listItems.push({
+			type: "item",
+			name: state.curLine.slice(0, state.curLine.length - lineNoHeader.length).trim(),
+			entry: state.curLine.slice(state.curLine.length - lineNoHeader.length).trim(),
+		});
+	}
+	static _doParseText_stepLanguage (state, options) {
+		const lineNoHeader = state.curLine
+			.replace(this._RE_LINE_START_LANGUAGE, "");
 
 		state._one_listItems.push({
 			type: "item",

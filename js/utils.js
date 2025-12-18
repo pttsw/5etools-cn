@@ -258,9 +258,9 @@ Array.prototype.joinConjunct || Object.defineProperty(Array.prototype, "joinConj
 });
 
 globalThis.StrUtil = class {
-	static COMMAS_NOT_IN_PARENTHESES_REGEX = /[,，、]\s?(?![^(（]*[)）])/g;
-	static COMMA_SPACE_NOT_IN_PARENTHESES_REGEX = /[,，、] (?![^(（]*[)）])/g;
-	static SEMICOLON_SPACE_NOT_IN_PARENTHESES_REGEX = /[;；] (?![^(（]*[)）])/g;
+	static COMMAS_NOT_IN_PARENTHESES_REGEX = /[,，、] ?(?![^(（]*[)）])/g;
+	static COMMA_SPACE_NOT_IN_PARENTHESES_REGEX = /[,，、] ?(?![^(（]*[)）])/g;
+	static SEMICOLON_SPACE_NOT_IN_PARENTHESES_REGEX = /(?:; |； ?)(?![^(（]*[)）])/g;
 
 	static uppercaseFirst (string) {
 		return string.uppercaseFirst();
@@ -7858,6 +7858,7 @@ globalThis.RollerUtil = {
 RollerUtil.DICE_REGEX = new RegExp(RollerUtil._DICE_REGEX_STR, "g");
 RollerUtil.DICE_REGEX_FULLMATCH = new RegExp(`^\\s*${RollerUtil._DICE_REGEX_STR}\\s*$`);
 RollerUtil.REGEX_DAMAGE_DICE = /(?<average>\d+)(?<prefix> \((?:{@dice |{@damage ))(?<diceExp>[-+0-9d ]*)(?<suffix>}\)(?:\s*\+\s*the spell's level)? [a-z]+( \([-a-zA-Z0-9 ]+\))?( or [a-z]+( \([-a-zA-Z0-9 ]+\))?)? damage)/gi;
+RollerUtil.REGEX_CN_DAMAGE_DICE = /(?<average>\d+)(?<prefix> ?[(（](?:{@dice |{@damage ))(?<diceExp>[-+0-9d ]*)(?<suffix>}[)）](?:\s*(?:\+|加上?)\s*(?:你的)?法术环阶)? ?[a-z\u4e00-\u9fa5]+( ?[(（][-a-zA-Z0-9\u4e00-\u9fa5 ]+[)）])?( ?或 ?[a-z\u4e00-\u9fa5]+( ?[(（][-a-zA-Z0-9\u4e00-\u9fa5 ]+[)）])?)?伤害)/gi;
 RollerUtil.REGEX_DAMAGE_FLAT = /(?<prefix>Hit(?: or Miss)?: |Miss: |{@hom}|{@h}|{@m})(?<flatVal>[0-9]+)(?<suffix> [a-z]+( \([-a-zA-Z0-9 ]+\))?( or [a-z]+( \([-a-zA-Z0-9 ]+\))?)? damage)/gi;
 RollerUtil._REGEX_ROLLABLE_COL_LABEL = /^(.*?\d)(\s*[-+/*^×÷]\s*)([a-zA-Z0-9 ]+)$/;
 RollerUtil._REGEX_ROLLABLE_COL_TRAILING_VARIABLE = /^(.*?\d)(\s*[-+/*^×÷]\s*)(#\$.*?\$#)$/;

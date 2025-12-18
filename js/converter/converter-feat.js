@@ -3,6 +3,7 @@ import {ConverterFeatureBase} from "./converter-feature.js";
 import {TagCondition} from "./converterutils-tags.js";
 import {EntryCoalesceEntryLists, EntryCoalesceRawLines} from "./converterutils-entrycoalesce.js";
 import {TagJsons} from "./converterutils-entries.js";
+import {ConverterUtils} from "./converterutils-utils.js";
 import {PropOrder} from "../utils-proporder.js";
 
 class _ConversionStateTextFeat extends ConversionStateTextBase {
@@ -61,7 +62,7 @@ export class ConverterFeat extends ConverterFeatureBase {
 	}
 
 	static _doParseText_stepName (state) {
-		[state.entity.name, state.entity.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
+		[state.entity.name, state.entity.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
 	}
 
 	static _doParseText_stepCategory (state, options) {

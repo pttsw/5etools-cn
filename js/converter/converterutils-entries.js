@@ -151,9 +151,9 @@ export class SpellTag extends ConverterTaggerInitializable {
 			.unique()
 			.filter(n => !this._NON_STANDARD.has(n));
 
-		this._SPELL_NAME_REGEX = new RegExp(`\\b(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
-		this._SPELL_NAME_REGEX_SPELL = new RegExp(`\\b(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) (spell|cantrip)`, "gi");
-		this._SPELL_NAME_REGEX_AND = new RegExp(`\\b(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) (and {@spell)`, "gi");
+		this._SPELL_NAME_REGEX = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
+		this._SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) ?(spell|cantrip|法术|戏法)`, "gi");
+		this._SPELL_NAME_REGEX_AND = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) (and {@spell)`, "gi");
 		this._SPELL_NAME_REGEX_CAST = new RegExp(`(?<prefix>casts?(?: the(?: spell)?)? )(?<spell>${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
 		this._SPELL_NAME_REGEX_STRICT = new RegExp(`^(${Object.values(this._SPELL_NAMES).map(it => it.name.escapeRegexp()).join("|")})$`, "g");
 	}

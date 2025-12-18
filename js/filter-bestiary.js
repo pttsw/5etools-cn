@@ -6,7 +6,7 @@ class PageFilterBestiary extends PageFilterBase {
 	static _RE_SPELL_TAG = /{@spell ([^}]+)}/g;
 	static _RE_ITEM_TAG = /{@item ([^}]+)}/g;
 	static _WALKER = null;
-	static _DRAGON_AGES = ["雏龙", "青年", "成年", "远古", "太古龙", "化身"];
+	static _DRAGON_AGES = ["雏龙", "青年", "成年", "远古", "太古", "化身"];
 
 	// region static
 	static sortMonsters (a, b, o) {

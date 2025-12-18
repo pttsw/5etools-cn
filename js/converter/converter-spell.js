@@ -59,7 +59,7 @@ export class ConverterSpell extends ConverterBase {
 
 			// name of spell
 			if (i === 0) {
-				[spell.name, spell.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
+				[spell.name, spell.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
 				continue;
 			}
 

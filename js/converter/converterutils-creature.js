@@ -4,6 +4,7 @@ import {ConverterConst} from "./converterutils-const.js";
 import {ItemTag, SpellTag} from "./converterutils-entries.js";
 import {VetoolsConfig} from "../utils-config/utils-config-config.js";
 import {SITE_STYLE__CLASSIC} from "../consts.js";
+import { ConverterUtils } from "./converterutils-utils.js";
 
 export class AcConvert {
 	static _ITEM_LOOKUP = null;
@@ -23,18 +24,17 @@ export class AcConvert {
 		const parts = mon.ac.trim().split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
 		parts.forEach(pt => {
 			// Use two expressions to ensure parentheses are paired
-			const mAc = /^(\d+)(?:\s?[(（](.*?)[)）])?$/.exec(pt) || /^(\d+)(?: (.*?))?$/.exec(pt);
-
+			const mAc = /^(?<acRaw>\d+)(?:\s?[(（](?<fromRaw>.*?)[)）])?$/.exec(pt) 
+				|| /^(?<acRaw>\d+)(?: (?<fromRaw>.*?))?$/.exec(pt)
+				|| /^(?<fromRaw>.*?)(?<acRaw>\d+)(?:\s?(?<fromRawAlt>.*?))?$/.exec(pt);
 			if (!mAc) {
 				if (cbErr) cbErr(pt, `${`${mon.name} ${mon.source} p${mon.page}`.padEnd(48)} => ${pt}`);
 				nuAc.push(pt);
 				return;
 			}
-
-			const [, acRaw, fromRaw] = mAc;
-
+			let {acRaw, fromRaw, fromRawAlt} = mAc.groups;
 			const acNum = Number(acRaw);
-
+			if (fromRawAlt) fromRaw += fromRawAlt;
 			// Plain number
 			if (!fromRaw) return nuAc.push(acNum);
 
@@ -58,6 +58,16 @@ export class AcConvert {
 						condition: nxtCond,
 						braces: true,
 					});
+					return from || "";
+				});
+				
+			// region Handle alternates of the form:
+			//   - `狼与半人形态下（天生护甲）`
+			fromClean = fromClean
+				.replace(/^(?:(?<nxtCond>.*?形态下?)([（（](?<from>.+)[)）])?)$/i, (...m) => {
+					const {nxtCond, from} = m.at(-1);
+					cur.condition = nxtCond;
+					cur.braces = true;
 					return from || "";
 				});
 			// endregion
@@ -91,6 +101,40 @@ export class AcConvert {
 				})
 				.trim()
 				.replace(/(?<nxtVal>\d+)? (?<nxtCond>in .*? form)$/i, (...m) => {
+					if (m.last().nxtVal) {
+						nuAcTail.push({
+							ac: Number(m.last().nxtVal),
+							condition: m.last().nxtCond,
+							braces: true,
+						});
+						return "";
+					}
+
+					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
+					cur.condition = m[0].trim().toLowerCase();
+					return "";
+				})
+				.trim();
+			// endregion
+
+			// region Handle "在...形态下" parts
+			fromClean = fromClean
+				.replace(/(?<nxtVal>\d+)? ?[(（](?<nxtCond>在?.*?形态下?)[)）]$/i, (...m) => {
+					if (m.last().nxtVal) {
+						nuAcTail.push({
+							ac: Number(m.last().nxtVal),
+							condition: m.last().nxtCond,
+							braces: true,
+						});
+						return "";
+					}
+
+					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
+					cur.condition = m[0].trim().toLowerCase();
+					return "";
+				})
+				.trim()
+				.replace(/(?<nxtCond>在?.*?形态下?) ?(?<nxtVal>\d+)?$/i, (...m) => {
 					if (m.last().nxtVal) {
 						nuAcTail.push({
 							ac: Number(m.last().nxtVal),
@@ -163,8 +207,8 @@ export class AcConvert {
 								if (!numMatch) throw new Error("Spell AC but no leading number?");
 
 								let spell = null;
-								if (numMatch[2] === "mage armor") spell = `{@spell mage armor}`;
-								else if (numMatch[2] === "barkskin") spell = `{@spell barkskin}`;
+								if (numMatch[2] === "mage armor") spell = `{@spell 法师护甲}`;
+								else if (numMatch[2] === "barkskin") spell = `{@spell 树肤术}`;
 								else throw new Error(`Unhandled spell! ${numMatch[2]}`);
 
 								nuAcTail.push({
@@ -175,7 +219,24 @@ export class AcConvert {
 
 								return;
 							}
-
+							const mSpell = /(?<spellName>法师护甲|树肤术)时? ?(?<acVal>\d+)?$/.exec(fromLow);
+							if (mSpell) {
+								const {spellName, acVal} = mSpell.groups;
+								const spell = `{@spell ${spellName}}`;
+								if (spellName !== "法师护甲" && spellName !== "树肤术")
+									throw new Error(`Unhandled spell! ${spellName}`);
+								if (acVal) {
+									nuAcTail.push({
+										ac: Number(acVal),
+										condition: `${spell}时`,
+										braces: true,
+									});
+									return;
+								}
+								if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${spell}"`);
+								cur.condition = `${spell}时`;
+								return;
+							}
 							if (/^in .*? form$/i.test(fromLow)) {
 								// If there's an existing condition, flag a warning
 								if (cur.condition && cbMan) cbMan(fromLow, `AC requires manual checking: ${mon.name} ${mon.source} p${mon.page}`);
@@ -226,9 +287,9 @@ export class AcConvert {
 			// region unhandled/other
 			case "unarmored defense": case "无甲防御":
 			case "suave defense": case "潇洒防御":
-			case "armor scraps":
-			case "barding scraps":
-			case "patchwork armor":
+			case "armor scraps": case "残破护甲":
+			case "barding scraps": case "残破具装":
+			case "patchwork armor": case "拼凑护甲":
 			case "see natural armor feature":
 			case "barkskin trait":
 			case "sylvan warrior":
@@ -279,9 +340,9 @@ export class AcConvert {
 
 			// region homebrew
 			// "Flee, Mortals!" retainers
-			case "light armor":
-			case "medium armor":
-			case "heavy armor":
+			case "light armor": case "轻甲":
+			case "medium armor": case "中甲":
+			case "heavy armor": case "重甲":
 				return fromLow;
 			// "Flee, Mortals!"
 			case "issenblau plating":
@@ -303,29 +364,35 @@ export class AcConvert {
 				// endregion
 
 			// region spells
-			case "foresight bonus": return `{@spell foresight} bonus`;
-			case "natural barkskin": return `natural {@spell barkskin}`;
-			case "mage armor": return "{@spell mage armor}";
+			case "foresight bonus": case "预见术加值": case "预见术增益": return `{@spell 预见术}加值`;
+			case "natural barkskin": case "天生树肤术": return `天生{@spell 树肤术}`;
+			case "mage armor": case "法师护甲": return "{@spell 法师护甲}";
 			// endregion
 
 			// region armor (mostly handled by the item lookup; these are mis-named exceptions (usually for homebrew))
-			case "chainmail":
+			case "chainmail": case "链甲":
 			case "chain armor":
-				return "{@item chain mail|phb}";
+				return "{@item 链甲|phb}";
 
-			case "plate mail":
+			case "plate mail": case "板甲":
 			case "platemail":
 			case "full plate":
-				return "{@item plate armor|phb}";
+				return "{@item 板甲|phb}";
 
-			case "half-plate": return "{@item half plate armor|phb}";
+			case "half-plate": case "半身板甲":
+				return "{@item 半身板甲|phb}";
 
-			case "scale armor": return "{@item scale mail|phb}";
-			case "splint armor": return "{@item splint armor|phb}";
-			case "chain shirt": return "{@item chain shirt|phb}";
-			case "shields": return "{@item shield|phb|shields}";
+			case "scale armor": case "鳞甲":
+				return "{@item 鳞甲|phb}";
+			case "splint armor": case "板条甲":
+				return "{@item 板条甲|phb}";
+			case "chain shirt": case "链甲衫":
+				return "{@item 链甲衫|phb}";
+			case "shields": case "盾牌":
+				return "{@item 盾牌|phb}";
 
-			case "spiked shield": return "{@item shield|phb|spiked shield}";
+			case "spiked shield": case "刺盾":
+				return "{@item 盾牌|phb|刺盾}";
 			// endregion
 
 			// region magic items
@@ -343,6 +410,7 @@ export class AcConvert {
 			// endregion
 
 			default: {
+				if (/^\+\d[\u4e00-\u9fa5]/.test(fromLow)) fromLow = fromLow.slice(0,2) + " " + fromLow.slice(2);
 				if (lookup[fromLow]) {
 					const itemMeta = lookup[fromLow];
 
@@ -350,7 +418,7 @@ export class AcConvert {
 					return `{@item ${itemMeta.name}${itemMeta.source === Parser.SRC_DMG ? "|" : `|${itemMeta.source}`}|${fromLow}}`;
 				}
 
-				if (/scraps of .*?armor/i.test(fromLow)) { // e.g. "scraps of hide armor"
+				if (/scraps of .*?armor/i.test(fromLow) || /破损的.*?甲/i.test(fromLow)) { // e.g. "scraps of hide armor" "破损的皮甲"
 					return fromLow;
 				}
 
@@ -366,7 +434,7 @@ export class AcConvert {
 			AcConvert._ITEM_LOOKUP[lowName] = {source: item.source, isExact: true};
 			if (isClassicSource) AcConvert._ITEM_LOOKUP_CLASSIC[lowName] = AcConvert._ITEM_LOOKUP[lowName];
 
-			const noArmorName = lowName.replace(/(^|\s)(?:armor|mail)(\s|$)/g, "$1$2").trim().replace(/\s+/g, " ");
+			const noArmorName = lowName.replace(/(^|\s)(?:armor|mail|甲)(\s|$)/g, "$1$2").trim().replace(/\s+/g, " ");
 			if (noArmorName !== lowName) {
 				AcConvert._ITEM_LOOKUP[noArmorName] = {source: item.source, name: lowName};
 				if (isClassicSource) AcConvert._ITEM_LOOKUP_CLASSIC[noArmorName] = AcConvert._ITEM_LOOKUP[noArmorName];
@@ -376,7 +444,7 @@ export class AcConvert {
 		};
 
 		const handlePlusName = ({item, lowName, isClassicSource}) => {
-			const mBonus = /^(.+) (\+\d+)$/.exec(lowName);
+			const mBonus = /^(.+) ?(\+\d+)$/.exec(lowName);
 			if (!mBonus) return;
 
 			const plusFirstName = `${mBonus[2]} ${mBonus[1]}`;
@@ -425,13 +493,13 @@ class _CreatureImmunityResistanceVulnerabilityConverterBase {
 		return ipt
 			// Split e.g.
 			// "Bludgeoning and Piercing from nonmagical attacks, Acid, Fire, Lightning"
-			.split(/(.*\b(?:from|by)\b[^,;.!?]+)(?:[,;] ?)?/gi)
+			.split(/(.*(?:\b(?:from|by)\b|来自)[^,;.!?、，；。！？]+)(?:[,;、，；] ?)?/gi)
 			.map(it => it.trim())
 			.filter(Boolean)
 
 			// Split e.g.
 			// "poison; bludgeoning, piercing, and slashing from nonmagical attacks"
-			.flatMap(pt => pt.split(";"))
+			.flatMap(pt => pt.split(/[;；]/))
 			.map(it => it.trim())
 			.filter(Boolean)
 		;
@@ -452,9 +520,9 @@ class _CreatureImmunityResistanceVulnerabilityConverterBase {
 		if (!ipt) return null;
 
 		let noteAll = null;
-		if (ipt.startsWith("(") && ipt.endsWith(")")) {
+		if (/^[(（][^)）]+[)）]$/.test(ipt)) {
 			ipt = ipt
-				.replace(/^\(([^)]+)\)$/, "$1")
+				.replace(/^[(（]([^)）]+)[)）]$/, "$1")
 				// Reflected in `TagImmResVulnConditional`
 				.replace(/ (in .* form)$/i, (...m) => {
 					noteAll = m[1];
@@ -473,14 +541,20 @@ class _CreatureImmunityResistanceVulnerabilityConverterBase {
 				const newGroup = [];
 
 				section
-					.split(/,/g)
+					.split(/[,，、]/g)
 					.forEach(pt => {
-						pt = pt.trim().replace(/^and /i, "").trim();
+						pt = pt.trim().replace(/^(?:and |和|以及|且)/i, "").trim();
 
 						const special = this._getSpecialFromPart({pt});
 						if (special) return out.push(special);
 
 						pt = pt.replace(/\((?:from|with|except) [^)]+\)$/i, (...m) => {
+							if (note) throw new Error(`Already has note!`);
+							note = m[0];
+							return "";
+						}).trim();
+
+						pt = pt.replace(/[(（](?:来自|除了?)[^)）]+[)）]$/i, (...m) => {
 							if (note) throw new Error(`Already has note!`);
 							note = m[0];
 							return "";
@@ -498,6 +572,12 @@ class _CreatureImmunityResistanceVulnerabilityConverterBase {
 							return "";
 						}).trim();
 
+						pt = pt.replace(/非魔法的?$/i, (...m) => {
+							if (note) throw new Error(`Already has note!`);
+							note = m[0];
+							return "";
+						}).trim();
+
 						const ixPreNote = this._getIxPreNote({pt});
 						if (ixPreNote > 0) {
 							preNote = pt.slice(0, ixPreNote).trim();
@@ -508,7 +588,7 @@ class _CreatureImmunityResistanceVulnerabilityConverterBase {
 						if (!pt) return;
 
 						pt
-							.split(/ and /gi)
+							.split(/(?: and |和|以及|且)/gi)
 							.forEach(val => newGroup.push(val));
 					});
 
@@ -584,22 +664,50 @@ export class TagCreatureSubEntryInto {
 	static _PROPS = ["action", "reaction", "bonus", "trait", "legendary", "mythic", "variant"];
 	static _MAP = {
 		"melee weapon attack:": "{@atk mw}",
+		"近战武器攻击:": "{@atk mw}",
+		"近战武器攻击：": "{@atk mw}",
 		"ranged weapon attack:": "{@atk rw}",
+		"远程武器攻击:": "{@atk rw}",
+		"远程武器攻击：": "{@atk rw}",
 		"melee attack:": "{@atk m}",
+		"近战攻击:": "{@atk m}",
+		"近战攻击：": "{@atk m}",
 		"ranged attack:": "{@atk r}",
+		"远程攻击:": "{@atk r}",
+		"远程攻击：": "{@atk r}",
 		"area attack:": "{@atk a}",
+		"范围攻击:": "{@atk a}",
+		"范围攻击：": "{@atk a}",
 		"area weapon attack:": "{@atk aw}",
+		"范围武器攻击:": "{@atk aw}",
+		"范围武器攻击：": "{@atk aw}",
 		"melee spell attack:": "{@atk ms}",
+		"近战法术攻击:": "{@atk ms}",
+		"近战法术攻击：": "{@atk ms}",
 		"melee or ranged weapon attack:": "{@atk mw,rw}",
+		"近战或远程武器攻击:": "{@atk ms,rs}",
+		"近战或远程武器攻击：": "{@atk ms,rs}",
 		"ranged spell attack:": "{@atk rs}",
+		"范围法术攻击:": "{@atk rs}",
+		"范围法术攻击：": "{@atk rs}",
 		"melee or ranged spell attack:": "{@atk ms,rs}",
+		"近战或远程法术攻击:": "{@atk ms,rs}",
+		"近战或远程法术攻击：": "{@atk ms,rs}",
 		"melee or ranged attack:": "{@atk m,r}",
+		"近战或远程攻击:": "{@atk m,r}",
+		"近战或远程攻击：": "{@atk m,r}",
 		"melee power attack:": "{@atk mp}",
 		"ranged power attack:": "{@atk rp}",
 		"melee or ranged power attack:": "{@atk mp,rp}",
 		"melee attack roll:": "{@atkr m}",
+		"近战攻击掷骰:": "{@atkr m}",
+		"近战攻击掷骰：": "{@atkr m}",
 		"ranged attack roll:": "{@atkr r}",
+		"远程攻击掷骰:": "{@atkr r}",
+		"远程攻击掷骰：": "{@atkr r}",
 		"melee or ranged attack roll:": "{@atkr m,r}",
+		"近战或远程攻击掷骰:": "{@atkr m,r}",
+		"近战或远程攻击掷骰：": "{@atkr m,r}",
 	};
 
 	static _WALKER = null;
@@ -624,9 +732,12 @@ export class TagCreatureSubEntryInto {
 							return str
 								// "Trigger: ..."
 								.replace(/^(Trigger:)(?= )/g, (...m) => `{@actTrigger}`)
+								.replace(/^触发[:：]/g, (...m) => `{@actTrigger}`)
 								// "Response: ..."
 								.replace(/(?<=^|[.!?;] )(Response:)(?= )/g, (...m) => `{@actResponse}`)
+								.replace(/(?<=^|[.!?;。！？；] ?)(响应[:：])/g, (...m) => `{@actResponse}`)
 								.replace(/(?<=^|[.!?;] )(Response[-\u2012-\u2014])(?=[A-Z])/g, (...m) => `{@actResponse d}`)
+								.replace(/(?<=^|[.!?;。！？；] ?)(响应[-\u2012-\u2014])/g, (...m) => `{@actResponse d}`)
 
 								// "Melee Weapon Attack: ..."
 								// "Melee Attack Roll: ..."
@@ -640,25 +751,48 @@ export class TagCreatureSubEntryInto {
 
 									return m[0];
 								})
+								.replace(/^(?<text>[近战远程范围武器或法术]*攻击(?:掷骰)?[:：])/g, (...m) => {
+									const {text} = m.at(-1);
+
+									if (this._MAP[text]) return this._MAP[text];
+
+									if (cbMan) cbMan(text);
+
+									return m[0];
+								})
 								// "Strength Saving Throw: ..."
 								.replace(/((?<abil>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma) Saving Throw:)(?= )/g, (...m) => {
 									const {abil} = m.at(-1);
 									return `{@actSave ${abil.toLowerCase().slice(0, 3)}}`;
 								})
+								.replace(/((?<abil>力量|敏捷|体质|智力|感知|魅力)豁免(?:掷骰|检定)?[:：])/g, (...m) => {
+									const {abil} = m.at(-1);
+									return `{@actSave ${Parser.attFullToAbv(abil)}}`;
+								})
 								// "Failure or Success: ..."
 								.replace(/(?<=^|[.!?;] )(Failure or Success:)(?= )/g, (...m) => `{@actSaveSuccessOrFail}`)
-								.replace(/(?<=^|[.!?;] )(Success or Failure:)(?= )/g, (...m) => `{@actSaveSuccessOrFail}`)
+								.replace(/(?<=^|[.!?;] )(Failure or Success:)(?= )/g, (...m) => `{@actSaveSuccessOrFail}`)
+								.replace(/(?<=^|[.!?;。！？；] ?)(成功或失败[:：])/g, (...m) => `{@actSaveSuccessOrFail}`)
+								.replace(/(?<=^|[.!?;。！？；] ?)(失败或成功[:：])/g, (...m) => `{@actSaveSuccessOrFail}`)
 								// "Success: ..."
 								.replace(/(?<=^|[.!?;] )(Success:)(?= )/g, (...m) => `{@actSaveSuccess}`)
+								.replace(/(?<=^|[.!?;。！？；] ?)(成功[:：])/g, (...m) => `{@actSaveSuccess}`)
 								// "Failure: ..."
 								.replace(/(?<=^|[.!?;] )(?<ordinal>First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth) (?:Failure:)(?= )/g, (...m) => {
+									return `{@actSaveFail ${Parser.textToNumber(m.at(-1).ordinal)}}`;
+								})
+								.replace(/(?<=^|[.!?;。！？；] ?)第?(?<ordinal>首|一|二|三|四|五|六|七|八|九|十)次(?:失败[:：])/g, (...m) => {
 									return `{@actSaveFail ${Parser.textToNumber(m.at(-1).ordinal)}}`;
 								})
 								// "Failure by X or More: ..."
 								.replace(/(?<=^|[.!?;] ) (?:Failure by (?<amount>\d+) or More:)(?= )/g, (...m) => {
 									return `{@actSaveFailBy ${m.at(-1).amount}}`;
 								})
+								.replace(/(<?<=^|[.!?;。！？；] ?)(?:失败差值 ?(?<amount>\d+) ?或更多[:：])/g, (...m) => {
+									return `{@actSaveFailBy ${m.at(-1).amount}}`;
+								})
 								.replace(/(?<=^|[.!?;] )(Failure:)(?= )/g, (...m) => `{@actSaveFail}`)
+								.replace(/(?<=^|[.!?;。！？；] ?)(失败[:：])/g, (...m) => `{@actSaveFail}`)
 							;
 						},
 					},
@@ -682,9 +816,13 @@ export class TagHit {
 				const str = JSON.stringify(it.entries, null, "\t");
 				const out = str
 					.replace(/Hit or Miss: /g, "{@hom}")
+					.replace(/命中或(?:未命中|失手)[:：]/g, "{@hom}")
 					.replace(/Miss or Hit: /g, "{@hom}")
+					.replace(/(?:未命中|失手)或命中[:：]/g, "{@hom}")
 					.replace(/Hit: /g, "{@h}")
+					.replace(/命中[:：]/g, "{@h}")
 					.replace(/Miss: /g, "{@m}")
+					.replace(/(?:未命中|失手)[:：]/g, "{@m}")
 				;
 				it.entries = JSON.parse(out);
 			});
@@ -703,7 +841,8 @@ export class TagDc {
 		m[prop] = m[prop]
 			.map(it => {
 				const str = JSON.stringify(it, null, "\t");
-				const out = str.replace(/DC (\d+)(\s+plus PB|\s*\+\s*PB)?/g, "{@dc $1$2}");
+				const out = str.replace(/DC (\d+)(\s+plus PB|\s*\+\s*PB)?/g, "{@dc $1$2}")
+					.replace(/DC(\d+)(\s+加\s?PB|\s*\+\s*PB)?/g, "{@dc $1$2}");
 				return JSON.parse(out);
 			});
 	}
@@ -725,25 +864,43 @@ export class AlignmentConvert {
 export class TraitActionTag {
 	static _TAGS = { // true = map directly; string = map to this string
 		trait: {
-			"turn immunity": "Turn Immunity",
-			"brute": "Brute",
-			"antimagic susceptibility": "Antimagic Susceptibility",
-			"sneak attack": "Sneak Attack",
-			"reckless": "Reckless",
-			"web sense": "Web Sense",
-			"flyby": "Flyby",
-			"pounce": "Pounce",
-			"water breathing": "Water Breathing",
+			"turn immunity": "免疫驱散",
+			"免疫驱散": "免疫驱散",
+			"brute": "残暴",
+			"残暴": "残暴",
+			"antimagic susceptibility": "反魔法易感",
+			"反魔法易感": "反魔法易感",
+			"sneak attack": "偷袭",
+			"偷袭": "偷袭",
+			"reckless": "鲁莽",
+			"鲁莽": "鲁莽",
+			"web sense": "蛛网感知",
+			"蛛网感知": "蛛网感知",
+			"flyby": "飞掠",
+			"飞掠": "飞掠",
+			"飞越": "飞掠",
+			"pounce": "猛扑",
+			"猛扑": "猛扑",
+			"扑杀": "猛扑",
+			"water breathing": "水中呼吸",
+			"水中呼吸": "水中呼吸",
 
-			"turn resistance": "Turn Resistance",
-			"turn defiance": "Turn Resistance",
-			"turning defiance": "Turn Resistance",
-			"turn resistance aura": "Turn Resistance",
-			"undead fortitude": "Undead Fortitude",
+			"turn resistance": "驱散抗性",
+			"turn defiance": "驱散抗性",
+			"turning defiance": "驱散抗性",
+			"turn resistance aura": "驱散抗性",
+			"驱散抗性": "驱散抗性",
+			"undead fortitude": "不死坚韧",
+			"不死坚韧": "不死坚韧",
 
-			"aggressive": "Aggressive",
-			"illumination": "Illumination",
-			"rampage": "Rampage",
+			"aggressive": "好斗",
+			"好斗": "好斗",
+			"illumination": "照明",
+			"照明": "照明",
+			"发光": "照明",
+			"rampage": "横行",
+			"横行": "横行",
+			"暴走": "横行",
 			"rejuvenation": "Rejuvenation",
 			"web walker": "Web Walker",
 			"incorporeal movement": "Incorporeal Movement",
@@ -851,9 +1008,9 @@ export class TraitActionTag {
 				if (!t.name) return;
 				t.name = t.name.trim();
 
-				const cleanName = Renderer.stripTags((t.ENG_name || t.name).trim())
+				const cleanName = Renderer.stripTags((t.name).trim())
 					.toLowerCase()
-					.replace(/\([^)]+\)/g, "") // Remove parentheses
+					.replace(/[(（][^)）]+[)）]/g, "") // Remove parentheses
 					.trim();
 
 				const mapped = lookup[cleanName];
@@ -863,13 +1020,17 @@ export class TraitActionTag {
 				}
 
 				if (this._isTraits(prop)) {
-					if (cleanName.startsWith("keen ")) return this._doAdd({tags, tag: "Keen Senses", allowlist});
-					if (cleanName.endsWith(" absorption")) return this._doAdd({tags, tag: "Damage Absorption", allowlist});
-					if (cleanName.endsWith(" camouflage")) return this._doAdd({tags, tag: "Camouflage", allowlist});
+					if (cleanName.startsWith("keen ")) return this._doAdd({tags, tag: "敏锐感官", allowlist});
+					if (cleanName.startsWith("敏锐")) return this._doAdd({tags, tag: "敏锐感官", allowlist});
+					if (cleanName.endsWith(" absorption")) return this._doAdd({tags, tag: "伤害吸收", allowlist});
+					if (cleanName.endsWith("吸收")) return this._doAdd({tags, tag: "伤害吸收", allowlist});
+					if (cleanName.endsWith(" camouflage")) return this._doAdd({tags, tag: "伪装", allowlist});
+					if (cleanName.endsWith("伪装")) return this._doAdd({tags, tag: "伪装", allowlist});
 				}
 
 				if (this._isActions(prop)) {
-					if (/\bbreath\b/.test(cleanName)) return this._doAdd({tags, tag: "Breath Weapon", allowlist});
+					if (/\bbreath\b/.test(cleanName)) return this._doAdd({tags, tag: "吐息武器", allowlist});
+					if (/吐息/.test(cleanName)) return this._doAdd({tags, tag: "吐息武器", allowlist});
 				}
 
 				if (cbMan) cbMan(prop, tags, cleanName);
@@ -893,7 +1054,7 @@ export class TraitActionTag {
 	}
 
 	static _doTagDeepRoot_trait ({m, tags, allowlist}) {
-		if (m.senses?.some(s => /\bunimpeded by magical darkness\b/i.test(Renderer.stripTags(s)))) return this._doAdd({tags, tag: "Devil's Sight", allowlist});
+		if (m.senses?.some(s => /\bunimpeded by magical darkness\b/i.test(Renderer.stripTags(s)) || /不受魔法黑暗影响/i.test(Renderer.stripTags(s)))) return this._doAdd({tags, tag: "魔鬼视界", allowlist});
 	}
 
 	static _isTraits (prop) { return prop === "trait"; }
@@ -1059,7 +1220,7 @@ export class SenseFilterTag {
 					.forEach(s => {
 						Object.entries(SenseFilterTag.TAGS).forEach(([k, v]) => {
 							if (s.includes(k)) {
-								if (v === "D" && /\d\d\d ft/.exec(s)) senseTags.add("SD");
+								if (v === "D" && /\d\d\d(?: ft| ?英尺)/.exec(s)) senseTags.add("SD");
 								else senseTags.add(v);
 							}
 						});
@@ -1075,9 +1236,13 @@ export class SenseFilterTag {
 }
 SenseFilterTag.TAGS = {
 	"blindsight": "B",
+	"盲视": "B",
 	"darkvision": "D",
+	"黑暗视觉": "D",
 	"tremorsense": "T",
+	"震颤感知": "T",
 	"truesight": "U",
+	"真实视觉": "U"
 };
 
 export class SpellcastingTypeTag {
@@ -1090,11 +1255,17 @@ export class SpellcastingTypeTag {
 				if (!sc.name) return;
 
 				let isAdded = false;
+				if (sc.ENG_name) {
+					if (/(^|[^a-zA-Z])psionics([^a-zA-Z]|$)/gi.exec(sc.ENG_name)) { tags.add("P"); isAdded = true; }
+					if (/(^|[^a-zA-Z])innate([^a-zA-Z]|$)/gi.exec(sc.ENG_name)) { tags.add("I"); isAdded = true; }
+					if (/(^|[^a-zA-Z])form([^a-zA-Z]|$)/gi.exec(sc.ENG_name)) { tags.add("F"); isAdded = true; }
+					if (/(^|[^a-zA-Z])shared([^a-zA-Z]|$)/gi.exec(sc.ENG_name)) { tags.add("S"); isAdded = true; }
+				}
+				if (/(^|[^\u4e00-\u9fa5])灵能([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("P"); isAdded = true; }
+				if (/(^|[^\u4e00-\u9fa5])天生([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("I"); isAdded = true; }
+				if (/(^|[^\u4e00-\u9fa5])形态([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("F"); isAdded = true; }
+				if (/(^|[^\u4e00-\u9fa5])共享([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("S"); isAdded = true; }
 
-				if (/(^|[^a-zA-Z])psionics([^a-zA-Z]|$)/gi.exec(sc.name)) { tags.add("P"); isAdded = true; }
-				if (/(^|[^a-zA-Z])innate([^a-zA-Z]|$)/gi.exec(sc.name)) { tags.add("I"); isAdded = true; }
-				if (/(^|[^a-zA-Z])form([^a-zA-Z]|$)/gi.exec(sc.name)) { tags.add("F"); isAdded = true; }
-				if (/(^|[^a-zA-Z])shared([^a-zA-Z]|$)/gi.exec(sc.name)) { tags.add("S"); isAdded = true; }
 
 				if (sc.headerEntries) {
 					const strHeader = JSON.stringify(sc.headerEntries);
@@ -1119,15 +1290,15 @@ export class SpellcastingTypeTag {
 	}
 }
 SpellcastingTypeTag.CLASSES = {
-	"CA": /(^|[^a-zA-Z])artificer([^a-zA-Z]|$)/gi,
-	"CB": /(^|[^a-zA-Z])bard([^a-zA-Z]|$)/gi,
-	"CC": /(^|[^a-zA-Z])cleric([^a-zA-Z]|$)/gi,
-	"CD": /(^|[^a-zA-Z])druid([^a-zA-Z]|$)/gi,
-	"CP": /(^|[^a-zA-Z])paladin([^a-zA-Z]|$)/gi,
-	"CR": /(^|[^a-zA-Z])ranger([^a-zA-Z]|$)/gi,
-	"CS": /(^|[^a-zA-Z])sorcerer([^a-zA-Z]|$)/gi,
-	"CL": /(^|[^a-zA-Z])warlock([^a-zA-Z]|$)/gi,
-	"CW": /(^|[^a-zA-Z])wizard([^a-zA-Z]|$)/gi,
+	"CA": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:artificer|奇械师)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CB": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:bard|吟游诗人)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CC": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:cleric|牧师)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CD": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:druid|德鲁伊)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CP": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:paladin|圣武士)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CR": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:ranger|游侠)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CS": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:sorcerer|(?!邪)术士)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CL": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:warlock|邪术师|魔契师)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
+	"CW": /(^|[^a-zA-Z\u4e00-\u9fa5])(?:wizard|法师)([^a-zA-Z\u4e00-\u9fa5]|$)/gi,
 };
 
 /** @abstract */
@@ -1172,7 +1343,7 @@ class _PrimaryLegendarySpellsTaggerBase {
 			if (
 				it.name
 				&& this._BLOCKLIST_NAMES
-				&& this._BLOCKLIST_NAMES.has(it.name.toLowerCase().trim().replace(/\([^)]+\)/g, ""))
+				&& this._BLOCKLIST_NAMES.has(it.name.toLowerCase().trim().replace(/[(（][^)）]+[)）]/g, ""))
 			) return;
 
 			if (!it.entries) return;
@@ -1287,6 +1458,7 @@ export class DamageTypeTag extends _PrimaryLegendarySpellsTaggerBase {
 	//   Note that these names should exclude parenthetical parts (as these are removed before lookup)
 	static _BLOCKLIST_NAMES = new Set([
 		"vampire weaknesses",
+		"吸血鬼弱点",
 	]);
 
 	static _init () {
@@ -1297,16 +1469,23 @@ export class DamageTypeTag extends _PrimaryLegendarySpellsTaggerBase {
 	static _handleString ({m = null, str, outSet}) {
 		str.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
 			suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, type) => outSet.add(this._TYPE_LOOKUP[type.toLowerCase()]));
+		}).replace(RollerUtil.REGEX_CN_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
+			suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, type) => outSet.add(this._TYPE_LOOKUP[type]));
 		});
 
 		str.replace(this._STATIC_DAMAGE_REGEX, (m0, type) => {
+			outSet.add(this._TYPE_LOOKUP[type.toLowerCase()]);
+		}).replace(this._STATIC_DAMAGE_CN_REGEX, (m0, type) => {
 			outSet.add(this._TYPE_LOOKUP[type.toLowerCase()]);
 		});
 
 		str.replace(this._TARGET_TAKES_DAMAGE_REGEX, (m0, type) => {
 			outSet.add(this._TYPE_LOOKUP[type.toLowerCase()]);
+		}).replace(this._TARGET_TAKES_DAMAGE_CN_REGEX, (m0, type) => {
+			outSet.add(this._TYPE_LOOKUP[type.toLowerCase()]);
 		});
 
+		// TODO(kiwee) 召唤伤害暂未处理中文，找到例子后再说
 		if (this._isSummon(m)) {
 			str.split(/[.?!]/g)
 				.forEach(sentence => {
@@ -1326,7 +1505,9 @@ export class DamageTypeTag extends _PrimaryLegendarySpellsTaggerBase {
 	}
 }
 DamageTypeTag._STATIC_DAMAGE_REGEX = new RegExp(`\\d+ ${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._STATIC_DAMAGE_CN_REGEX = new RegExp(`\\d+ ?${ConverterConst.STR_RE_DAMAGE_TYPE} ?伤害`, "gi");
 DamageTypeTag._TARGET_TAKES_DAMAGE_REGEX = new RegExp(`(?:a|the) target takes (?:{@dice |{@damage )[^}]+} ?${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._TARGET_TAKES_DAMAGE_CN_REGEX = new RegExp(`目标收到 ?(?:{@dice |{@damage )[^}]+} ?点?的? ?${ConverterConst.STR_RE_DAMAGE_TYPE} ?伤害`, "gi");
 DamageTypeTag._SUMMON_DAMAGE_REGEX = /(?:{@dice |{@damage )[^}]+}(?:\s*\+\s*the spell's level)? ([a-z]+( \([-a-zA-Z0-9 ]+\))?( or [a-z]+( \([-a-zA-Z0-9 ]+\))?)? damage)/gi;
 DamageTypeTag._TYPE_LOOKUP = {};
 
@@ -1345,7 +1526,7 @@ export class MiscTag {
 		this._WALKER = MiscUtil.getWalker({isNoModification: true, keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST});
 
 		const weaponsBase = items
-			.filter(it => it._category === "Basic" && it.type && [Parser.ITM_TYP_ABV__MELEE_WEAPON, Parser.ITM_TYP_ABV__RANGED_WEAPON].includes(DataUtil.itemType.unpackUid(it.type).abbreviation));
+			.filter(it => (it._category === "Basic" || it._category === "基础") && it.type && [Parser.ITM_TYP_ABV__MELEE_WEAPON, Parser.ITM_TYP_ABV__RANGED_WEAPON].includes(DataUtil.itemType.unpackUid(it.type).abbreviation));
 
 		this._MELEE_WEAPON_MATCHERS = weaponsBase
 			.filter(it => it.type && DataUtil.itemType.unpackUid(it.type).abbreviation === Parser.ITM_TYP_ABV__MELEE_WEAPON)
@@ -1420,6 +1601,9 @@ export class MiscTag {
 					str
 						.replace(/reach (\d+) ft\./g, (...m) => {
 							if (Number(m[1]) > 5) this._addTag({tagSet, allowlistTags, tag: "RCH"});
+						})
+						.replace(/触及 ?(\d+) ?英?尺/g, (...m) => {
+							if (Number(m[1]) > 5) this._addTag({tagSet, allowlistTags, tag: "RCH"});
 						});
 				},
 			},
@@ -1475,10 +1659,13 @@ export class MiscTag {
 				string: (str) => {
 					const strClean = str
 						.replace(/{@spell bestow curse[^}]+}/gi, " - ") // Ignore the spell; it already has a dedicated filter
+						.replace(/{@spell 降咒[^}]+}/gi, " - ") // Ignore the spell; it already has a dedicated filter
 					;
 
 					const isCurseLine = /\bbe(?:comes)? cursed\b/.test(strClean)
 						|| /\bis cursed\b/.test(strClean)
+						|| /施加诅咒/i.test(strClean)
+						|| /被诅咒/i.test(strClean)
 					;
 
 					if (!isCurseLine) return;
@@ -1487,6 +1674,9 @@ export class MiscTag {
 					const isLimitedDuration = /\bfor \d+ (turn|round|minute)s?\b/i.test(strClean)
 						|| /\bfor 1 hour\b/i.test(strClean) // Consider e.g. "24 hours" sufficient time
 						|| /\bnext turn\b/i.test(strClean)
+						|| /持续 ?\d+ ?(回合|轮|分钟?)/i.test(strClean)
+						|| /持续 ?1 ?小时/i.test(strClean)
+						|| /下一?回合/i.test(strClean)
 					;
 
 					if (isLimitedDuration) return false;
@@ -1514,6 +1704,9 @@ export class MiscTag {
 
 		/\bany effect that cures disease\b/i,
 		/\buntil the disease is cured\b/i,
+
+		/陷入疾病状态/i,
+		/感染了?[^.!?]+疾?病/i,
 	];
 
 	static _handleProp_disease (
@@ -1550,10 +1743,13 @@ export class MiscTag {
 
 					// AoE effects
 					strStripped.replace(/\d+-foot[- ](line|cube|cone|emanation|radius|sphere|hemisphere|cylinder)/g, () => this._addTag({tagSet, allowlistTags, tag: "AOE"}));
+					strStripped.replace(/\d+英?尺[- 的]?(线[状形型]|立方|锥[状形型]|光环|半径|球[状形型]|半球[状形型]|圆?柱)/g, () => this._addTag({tagSet, allowlistTags, tag: "AOE"}));
 					strStripped.replace(/each creature within \d+ feet/gi, () => this._addTag({tagSet, allowlistTags, tag: "AOE"}));
+					strStripped.replace(/\d+英?尺内的?(?:每个|所有)生物/gi, () => this._addTag({tagSet, allowlistTags, tag: "AOE"}));
 
 					// Hit point max reduction
 					strStripped.replace(/\bhit point maximum (?:is reduced|decreases?)\b/gi, () => this._addTag({tagSet, allowlistTags, tag: "HPR"}));
+					strStripped.replace(/生命值上限.*(?:减损|降低)/gi, () => this._addTag({tagSet, allowlistTags, tag: "HPR"}));
 				},
 			},
 		);
@@ -1605,7 +1801,7 @@ export class SpellcastingTraitConvert {
 		let hasAnyHeader = false;
 		entsRestInput
 			.forEach(line => {
-				line = line.replace(/,\s*\*/g, ",*"); // put asterisks on the correct side of commas
+				line = line.replace(/[,，]\s*\*/g, ",*"); // put asterisks on the correct side of commas
 
 				const entFaux = {entries: [line]};
 				const propPathUsage = this.getMutUsagePropPath({entry: entFaux, prop});
@@ -1619,19 +1815,19 @@ export class SpellcastingTraitConvert {
 					return;
 				}
 
-				if (/^Constant(?::| -) /.test(line)) {
+				if (/^Constant(?::| -) /.test(line) || /^持续(?::|：| -)/.test(line)) {
 					hasAnyHeader = true;
 					spellcastingEntry.constant = this._getParsedSpells({line, isMarkdown, styleHint});
 					return;
 				}
 
-				if (/^At[- ][Ww]ill(?::| -) /.test(line)) {
+				if (/^At[- ][Ww]ill(?::| -) /.test(line) || /^随意(?::|：| -)/.test(line)) {
 					hasAnyHeader = true;
 					spellcastingEntry.will = this._getParsedSpells({line, isMarkdown, styleHint});
 					return;
 				}
 
-				if (line.includes("Cantrip")) {
+				if (line.includes("Cantrip") || line.includes("戏法")) {
 					hasAnyHeader = true;
 					const value = this._getParsedSpells({line, isMarkdown, styleHint});
 					if (!spellcastingEntry.spells) spellcastingEntry.spells = {"0": {"spells": []}};
@@ -1656,6 +1852,32 @@ export class SpellcastingTraitConvert {
 							const mSlots = /\((\d) slots?\)/.exec(line);
 							if (!mSlots) throw new Error(`Could not find slot count!`);
 							out.slots = parseInt(mSlots[1]);
+						}
+					}
+					// add these last, to have nicer ordering
+					out.spells = allSpells;
+
+					spellcastingEntry.spells[property] = out;
+					return;
+				}
+				// 英文环阶
+				if (/(\d|一|二|三|四|五|六|七|八|九|十) ?环/.test(line) && /(?:: |：| - )/.test(line)) {
+					hasAnyHeader = true;
+					let property = line.substring(0, 1);
+					const allSpells = this._getParsedSpells({line, isMarkdown, styleHint});
+					spellcastingEntry.spells = spellcastingEntry.spells || {};
+
+					const out = {};
+					if (line.includes("法术位")) {
+						const mWarlock = /^(\d|一|二|三|四|五|六|七|八|九|十) ?环?-(\d|一|二|三|四|五|六|七|八|九|十)环 ?[(（](\d|一|二|三|四|五|六|七|八|九|十) (\d|一|二|三|四|五|六|七|八|九|十) ?个?法术位[）)]/.exec(line);
+						if (mWarlock) {
+							out.lower = Parser.textToNumber(mWarlock[1]);
+							out.slots = Parser.textToNumber(mWarlock[3]);
+							property = Parser.textToNumber(mWarlock[4]);
+						} else {
+							const mSlots = /[(（](\d|一|二|三|四|五|六|七|八|九|十) ?个?法术位?[）)]/.exec(line);
+							if (!mSlots) throw new Error(`找不到法术位数量！`);
+							out.slots = Parser.textToNumber(mSlots[1]);
 						}
 					}
 					// add these last, to have nicer ordering
@@ -1713,6 +1935,7 @@ export class SpellcastingTraitConvert {
 			return line;
 		}
 
+		// TODO(Kiwee) 这里需要一个例子，不太好弄感觉
 		line = line
 			.replace(/(?<ptPre>casts? (?:the )?)(?<ptSpellsRaw>[^.,?!:]+)(?<ptPost>\.| spell |at[ -]will)/g, (...m) => {
 				const {ptPre, ptSpellsRaw, ptPost} = m.at(-1);
@@ -1766,6 +1989,11 @@ export class SpellcastingTraitConvert {
 		{re: /(?<cnt>\d+)\/week(?<ptEach> each)?/i, prop: "weekly"},
 		{re: /(?<cnt>\d+)\/month(?<ptEach> each)?/i, prop: "monthly"},
 		{re: /(?<cnt>\d+)\/year(?<ptEach> each)?/i, prop: "yearly"},
+		{re: /(?<ptEach>每项)?(?<cnt>\d+)\/休息?/i, prop: "rest"},
+		{re: /(?<ptEach>每项)?(?<cnt>\d+)\/[日天]/i, prop: "daily"},
+		{re: /(?<ptEach>每项)?(?<cnt>\d+)\/(?:周|星期)/i, prop: "weekly"},
+		{re: /(?<ptEach>每项)?(?<cnt>\d+)\/月/i, prop: "monthly"},
+		{re: /(?<ptEach>每项)?(?<cnt>\d+)\/年/i, prop: "yearly"},
 	];
 
 	static _USES_RE_INFOS_ENTRY = this._USES_RE_INFOS_NAME
@@ -1805,7 +2033,8 @@ export class SpellcastingTraitConvert {
 		}
 
 		if (["legendary", "mythic"].includes(prop)) {
-			const mCosts = /\(Costs (?<cnt>\d+) Actions[);]/i.exec(entry.name);
+			const mCosts = /\(Costs (?<cnt>\d+) Actions[);]/i.exec(entry.name)
+			|| /[(（](?:花费|消耗)(?<cnt>\d+)[个项]?动作[);）；]/i.exec(entry.name);
 			// (Mythic Actions consume Legendary Action uses)
 			if (mCosts) return ["legendary", mCosts.groups.cnt];
 			return ["legendary", "1"];
@@ -1827,7 +2056,8 @@ export class SpellcastingTraitConvert {
 				return str.slice(frequencyMeta.length);
 			}
 
-			if (/finish a (?<ptRestLong>{@variantrule Long Rest\|XPHB}|Long Rest)/.test(str)) {
+			if (/finish a (?<ptRestLong>{@variantrule Long Rest\|XPHB}|Long Rest)/.test(str)
+				|| /(?:结束|完成)(?:一次)?(?<ptRestLong>{@variantrule 长休\|XPHB}|长休)/.test(str)) {
 				outWalker = ["restLong", "1"];
 				return str;
 			}
@@ -1841,7 +2071,7 @@ export class SpellcastingTraitConvert {
 	/* -------------------------------------------- */
 
 	static _getParsedSpells ({line, isMarkdown, styleHint}) {
-		const mLabelSep = /(?::| -) /.exec(line);
+		const mLabelSep = /(?:: | - |：)/.exec(line);
 		let spellPart = line.substring((mLabelSep?.index || 0) + (mLabelSep?.[0]?.length || 0)).trim();
 
 		if (isMarkdown) {
@@ -1862,7 +2092,7 @@ export class SpellcastingTraitConvert {
 		}
 
 		// move asterisks before commas (e.g. "chaos bolt,*" -> "chaos bolt*,")
-		spellPart = spellPart.replace(/,\s*\*/g, "*,");
+		spellPart = spellPart.replace(/[,，]\s*\*/g, "*,");
 
 		return spellPart.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => this._parseSpell(it, {styleHint}));
 	}
@@ -1888,13 +2118,17 @@ export class SpellcastingTraitConvert {
 			str = str.substring(0, ixAsterisk);
 		}
 
-		const ixParenOpen = str.indexOf(" (");
+		const ixParenOpen = str.indexOf(" (") || str.indexOf("（");
 		if (~ixParenOpen) {
 			ptsSuffix.unshift(str.substring(ixParenOpen).trim());
 			str = str.substring(0, ixParenOpen);
 		}
 
-		str = this._parseSpell_getNonSrdSpellName(str);
+		// 提取中文名称，并修正译名
+		const [chineseName, _] = ConverterUtils.splitNameToChineseAndEnglish(str);
+		const pureName = TaggerUtils.SPELL_NAME_CORRECTIONS[chineseName] || chineseName;
+
+		str = this._parseSpell_getNonSrdSpellName(pureName);
 
 		return [
 			`{@spell ${str}${this._parseSpell_getSourcePart(str, {styleHint})}}`,
@@ -1925,6 +2159,10 @@ export class SpellcastingTraitConvert {
 				const {op, num, suffix} = m.at(-1);
 				return ` {@hit ${op === "-" ? "-" : ""}${num}}${suffix}`;
 			})
+			.replace(/(?<prefix>法术攻击命中)(?<op>[-+])(?<num>\d+)/g, (...m) => {
+				const {prefix,op, num} = m.at(-1);
+				return `${prefix}{@hit ${op === "-" ? "-" : ""}${num}}`;
+			})
 		;
 	}
 
@@ -1932,6 +2170,8 @@ export class SpellcastingTraitConvert {
 		if (spellcastingEntry.headerEntries) {
 			const m = /strength|dexterity|constitution|charisma|intelligence|wisdom/gi.exec(JSON.stringify(spellcastingEntry.headerEntries));
 			if (m) spellcastingEntry.ability = m[0].substring(0, 3).toLowerCase();
+			const cm = /力量|体质|敏捷|魅力|智力|感知/gi.exec(JSON.stringify(spellcastingEntry.headerEntries));
+			if (cm) spellcastingEntry.ability = Parser.attFullToAbv(cm[0])
 		}
 	}
 
@@ -1956,7 +2196,8 @@ export class SpellcastingTraitConvert {
 		if (!arrayOther?.length) return;
 		arrayOther.forEach(ent => {
 			if (!ent.name) return;
-			const mName = /^(.*?) \((\d(?:st|nd|rd|th)-level spell; (\d+\/day)|cantrip)\)/i.exec(ent.name);
+			const mName = /^(.*?) \((\d(?:st|nd|rd|th)-level spell; (\d+\/day)|cantrip)\)/i.exec(ent.name)
+				|| /^(.*?) [(（](\d ?环(?:法术)?[;；] ?(\d+\/[日天])|戏法)[)）]/i.exec(ent.name);
 			if (!mName) return;
 
 			const [, spellName, spellLevelRecharge, spellRecharge] = mName;
@@ -1964,7 +2205,7 @@ export class SpellcastingTraitConvert {
 			const spellTag = this._parseSpell(spellName, {styleHint});
 			const uids = this._getSpellUids(spellTag);
 
-			if (spellLevelRecharge.toLowerCase() === "cantrip") {
+			if (spellLevelRecharge.toLowerCase() === "cantrip" || spellLevelRecharge === "戏法") {
 				spellcastingEntry.will = spellcastingEntry.will || [];
 				if (this._isExistingSpell(spellcastingEntry.will, uids)) return;
 				spellcastingEntry.will.push({entry: spellTag, hidden: true});
@@ -1973,6 +2214,8 @@ export class SpellcastingTraitConvert {
 
 			const [numCharges, rechargeDuration] = spellRecharge.toLowerCase().split("/").map(it => it.trim()).filter(Boolean);
 			switch (rechargeDuration) {
+				case "日":
+				case "天":
 				case "day": {
 					const chargeKey = `${numCharges}e`;
 					const tgt = MiscUtil.getOrSet(spellcastingEntry, "daily", chargeKey, []);
@@ -2009,6 +2252,7 @@ export class SpellcastingTraitConvert {
 export class SpellcastingTraitHiddenConvert {
 	static _WALKER;
 	static _RE_SPELL = /{@spell (?<text>[^}]+)}(?<ptLevel> \(level \d+ version\))?/g;
+	static _RE_CN_SPELL = /{@spell (?<text>[^}]+)}(?<ptLevel> ?[(（]\d+ ?环版本?[)）])?/g;
 
 	static _getSpellUid (text) {
 		const unpacked = DataUtil.proxy.unpackUid("spell", text, "spell", {isLower: true});
@@ -2022,6 +2266,8 @@ export class SpellcastingTraitHiddenConvert {
 		this._WALKER.walk(stats.spellcasting, {string: str => {
 			[...str.matchAll(this._RE_SPELL)]
 				.forEach(m => spellUidsExisting.add(this._getSpellUid(m.groups.text)));
+			[...str.matchAll(this._RE_CN_SPELL)]
+				.forEach(m => spellUidsExisting.add(this._getSpellUid(m.groups.text)));
 		}});
 
 		return spellUidsExisting;
@@ -2030,7 +2276,9 @@ export class SpellcastingTraitHiddenConvert {
 	static _mutStatblockProp_getSpellcastingSameAbility ({stats, entSub}) {
 		let spellcastingTraitNameLower = null;
 		this._WALKER.walk(entSub.entries, {string: str => {
-			const mUsesTheSame = /using the same spellcasting ability as (?<name>[^.!?]+)/i.exec(str);
+			const mUsesTheSame = /using the same spellcasting ability as (?<name>[^.!?]+)/i.exec(str)
+			// 使用与施法动作相同的施法属性
+				|| /使用[与和] ?(?<name>[.!?。！？]+) ?(?:相同|一样|同样)的施法属性/i.exec(str);
 			if (mUsesTheSame) return spellcastingTraitNameLower = mUsesTheSame.groups.name.trim().toLowerCase();
 		}});
 		if (!spellcastingTraitNameLower) return null;
@@ -2041,10 +2289,10 @@ export class SpellcastingTraitHiddenConvert {
 	static _mutStatblockProp_getOtherAbility ({stats, entSub}) {
 		let abil = null;
 		this._WALKER.walk(entSub.entries, {string: str => {
-			const mUsing = /using (?<abilRaw>\w+) as the spellcasting ability/i.exec(str);
+			const mUsing = /using (?<abilRaw>\w+) as the spellcasting ability/i.exec(str)
+				|| /用 ?(?<abilRaw>[\u4e00-\u9fa5]+) ?作为施法属性/i.exec(str);
 			if (!mUsing) return;
-
-			return abil = mUsing.groups.abilRaw.toLowerCase().slice(0, 3);
+			return abil = Parser.attFullToAbv(mUsing.groups.abilRaw.toLowerCase()).slice(0, 3);
 		}});
 		return abil;
 	}
@@ -2064,6 +2312,14 @@ export class SpellcastingTraitHiddenConvert {
 
 				this._WALKER.walk(entSub.entries, {string: str => {
 					[...str.matchAll(this._RE_SPELL)]
+						.forEach(m => {
+							const {text, ptLevel} = m.groups;
+							if (spellUidsExisting.has(this._getSpellUid(text))) return;
+
+							const {name, source} = DataUtil.proxy.unpackUid("spell", text, "spell");
+							spellTags.push(`{@spell ${name}|${source}}${ptLevel || ""}`);
+						});
+					[...str.matchAll(this._RE_CN_SPELL)]
 						.forEach(m => {
 							const {text, ptLevel} = m.groups;
 							if (spellUidsExisting.has(this._getSpellUid(text))) return;
@@ -2121,6 +2377,15 @@ export class RechargeConvert {
 					return m[0];
 				}
 				return `{@recharge ${num}}`;
+			}).replace(/[(（](充能) ?(\d.*?)[)）]$/gi, (...m) => {
+				if (cbAll) cbAll(m[2]);
+				const num = m[2][0];
+				if (num === "6") return `{@recharge}`;
+				if (isNaN(Number(num))) {
+					if (cbMan) cbMan(traitOrAction.name);
+					return m[0];
+				}
+				return `{@recharge ${num}}`;
 			});
 		}
 	}
@@ -2128,10 +2393,11 @@ export class RechargeConvert {
 
 export class SpeedConvert {
 	static _SPEED_TYPES = new Set(Parser.SPEED_MODES);
+	static _SPEED_TYPES_CN = new Set(Parser.SPEED_MODES_CN);
 
 	static _splitSpeed (str) {
-		const cSplitter = str.includes(";") ? ";" : ",";
-
+		// const cSplitter = str.includes(";") ? ";" : ",";
+		const splitWithSemi = str.includes(";") || str.includes("；");
 		let ret = [];
 		let stack = "";
 		let cntParens = 0;
@@ -2145,13 +2411,23 @@ export class SpeedConvert {
 			.forEach(c => {
 				switch (c) {
 					case ",":
+					case "，":
+					case "、":
+						if (splitWithSemi) return stack += c;
+						if (!cntParens) return checkPopStack();
+						return stack += c;
 					case ";":
-						if (cSplitter !== c) return stack += c;
+					case "；":
+						if (!splitWithSemi) return stack += c;
 						if (!cntParens) return checkPopStack();
 						return stack += c;
 
-					case "(": cntParens++; return stack += c;
-					case ")": cntParens--; return stack += c;
+					case "(":
+					case "（":
+						cntParens++; return stack += c;
+					case ")":
+					case "）":
+						cntParens--; return stack += c;
 
 					default: return stack += c;
 				}
@@ -2165,7 +2441,7 @@ export class SpeedConvert {
 		if (!mon.speed?.fly?.condition) return;
 
 		mon.speed.fly.condition = mon.speed.fly.condition.trim();
-		if (mon.speed.fly.condition.toLowerCase().includes("hover")) mon.speed.canHover = true;
+		if (mon.speed.fly.condition.toLowerCase().includes("hover") || mon.speed.fly.condition.toLowerCase().includes("悬浮")) mon.speed.canHover = true;
 	}
 
 	static tryConvertSpeed (mon, cbMan) {
@@ -2212,17 +2488,39 @@ export class SpeedConvert {
 				return;
 			}
 
-			const mBasic = /^(?<mode>\w+?\s+)?(?<feet>\d+)\s*(?:ft|尺)\.?(?<condition> .*)?$/i.exec(s);
+			const mCnOrDmsChoice = /^(?<mode1>[\u4e00-\u9fa5]+) ?或 ?(?<mode2>[\u4e00-\u9fa5]+) ?(?<feet>\d+) ?英?尺 ?(?<note>[(（]由?DM(?:选择|决定)[)）])$/i.exec(s);
+			if (mCnOrDmsChoice) {
+				let {mode1, mode2, feet, note} = mCnOrDmsChoice.groups;
+
+				mode1 = mode1.trim().toLowerCase();
+				if (!this._SPEED_TYPES_CN.has(mode1)) return setByHand();
+				mode2 = mode2.trim().toLowerCase();
+				if (!this._SPEED_TYPES_CN.has(mode2)) return setByHand();
+				feet = Number(feet);
+
+				out.choose = {
+					from: [mode1, mode2],
+					amount: feet,
+					note: note.trim(),
+				};
+				prevSpeed = null;
+
+				return;
+			}
+
+			const mBasic = /^(?<mode>\w+?\s+)?(?<feet>\d+)\s*(?:ft|尺)\.?(?<condition> .*)?$/i.exec(s)
+				|| /^(?<mode>[\u4e00-\u9fa5]+)\s?(?<feet>\d+)\s?英?尺(?<condition>.*)?$/i.exec(s);
 			if (!mBasic) return setByHand();
 
 			let {mode, feet, condition} = mBasic.groups;
 			feet = Number(feet);
 
-			mode = mode ? mode.trim().toLowerCase() : "walk";
+			mode = mode ? mode.trim().toLowerCase() : "步行";
 
-			if (!this._SPEED_TYPES.has(mode)) return setByHand();
+			if (!this._SPEED_TYPES.has(mode) && !this._SPEED_TYPES_CN.has(mode)) return setByHand();
 
 			prevSpeed = mode;
+			mode = this._SPEED_TYPES.has(mode) ? mode : Parser.cnToSpeed(mode);
 			if (condition) {
 				if (out[mode]) {
 					// e.g. Werebear (XMM)
@@ -2252,13 +2550,13 @@ export class SpeedConvert {
 					return val % 5 !== 0;
 				}).length
 		) {
-			if (cbMan) cbMan(`${mon.name ? `(${mon.name}) ` : ""}Speed likely requires manual conversion: "${line}"`);
+			if (cbMan) cbMan(`${mon.name ? `(${mon.name})的` : ""}速度"${line}"可能需要手动转换`);
 		}
 
 		// flag speed as needing hand-parsing
 		if (byHand) {
 			out.UNPARSED_SPEED = line;
-			if (cbMan) cbMan(`${mon.name ? `(${mon.name}) ` : ""}Speed requires manual conversion: "${line}"`);
+			if (cbMan) cbMan(`${mon.name ? `(${mon.name})的` : ""}速度"${line}"不支持自动转换`);
 		}
 
 		mon.speed = out;
@@ -2309,7 +2607,7 @@ export class DetectNamedCreature {
 			if (!prop) return;
 			if (typeof it[prop][0] !== "string") return;
 
-			const namePart = (mon.name.split(/[ ,:.!;]/g)[0] || "").trim().escapeRegexp();
+			const namePart = (mon.name.split(/[ ,:.!;，、；。！；]/g)[0] || "").trim().escapeRegexp();
 
 			const isNotNamedCreature = new RegExp(`^The ${namePart}`).test(it[prop][0]);
 			const isNamedCreature = new RegExp(`^${namePart}`).test(it[prop][0]);
@@ -2340,7 +2638,6 @@ export class TagImmResVulnConditional {
 			if (
 				note.startsWith("while ")
 				|| note.startsWith("from ")
-				|| note.startsWith("from ")
 				|| note.startsWith("if ")
 				|| note.startsWith("against ")
 				|| note.startsWith("except ")
@@ -2349,7 +2646,21 @@ export class TagImmResVulnConditional {
 				|| /in .* form$/i.test(note)
 			) {
 				obj.cond = true;
-			}
+			} else {
+				const cnNote = obj.note.trim().replace(/^[(（]/, "").replace(/^伤害/, "").trim();
+				if (
+					cnNote.startsWith("当") 
+					|| cnNote.startsWith("来自")
+					|| cnNote.startsWith("如果")
+					|| cnNote.startsWith("若")
+					|| cnNote.startsWith("对抗")
+					|| cnNote.startsWith("除")
+					|| cnNote.endsWith("时")
+					|| /形态下?$/.test(cnNote)
+				){
+					obj.cond = true;
+				}
+			} 
 		}
 
 		if (obj[prop]) obj[prop].forEach(it => this._handleProp_recurse(it, prop));
@@ -2363,6 +2674,10 @@ export class DragonAgeTag {
 
 		mon.name.replace(/\b(?<age>young|adult|wyrmling|greatwyrm|ancient|aspect)\b/i, (...m) => {
 			mon.dragonAge = m.last().age.toLowerCase();
+		});
+		mon.name.replace(/(?<age>青年|成年|雏龙|太古|远古|化身)/i, (...m) => {
+			mon.dragonAge = m.last().age.toLowerCase();
+			
 		});
 	}
 }
@@ -2461,6 +2776,10 @@ export class CreatureSavingThrowTagger extends _PrimaryLegendarySpellsTaggerBase
 			})
 			.replace(/{@actSave (?<abil>str|dex|con|int|wis|cha)}/g, (...m) => {
 				outSet.add(Parser.attAbvToFull(m.at(-1).abil.toLowerCase()).toLowerCase());
+			})
+			.replace(/{@dc (?<save>[^|}]+)(?:\|[^}]+)?}\s?的?(?<abil>力量|敏捷|体质|智力|感知|魅力)豁免/i, (...m) => {
+				outSet.add(m.last().abil);
+				return "";
 			})
 		;
 	}

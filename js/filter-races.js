@@ -36,11 +36,11 @@ class PageFilterRaces extends PageFilterBase {
 	// endregion
 
 	static _TRAIT_DISPLAY_VALUES = {
-		"Monstrous Race": "Monstrous Species",
-		"NPC Race": "NPC Species",
-		"Uncommon Race": "Uncommon Species",
+		"Monstrous Race": "怪物种族",
+		"NPC Race": "NPC种族",
+		"Uncommon Race": "罕见种族",
 
-		"Armor Proficiency": "Armor Training",
+		"Armor Proficiency": "护甲受训",
 	};
 
 	constructor () {
@@ -76,7 +76,7 @@ class PageFilterRaces extends PageFilterBase {
 			],
 			displayFn: val => this.constructor._TRAIT_DISPLAY_VALUES[val] || val,
 			deselFn: (it) => {
-				return it === "NPC Race";
+				return it === "NPC Race" || it === "NPC种族";
 			},
 		});
 		this._vulnerableFilter = FilterCommon.getDamageVulnerableFilter();

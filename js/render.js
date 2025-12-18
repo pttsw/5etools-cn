@@ -1431,7 +1431,7 @@ globalThis.Renderer = function () {
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "charges", fnGetDurationText: num => ` charge${num === 1 ? "" : "s"}`});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "rest", durationText: "/休息"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "restLong", durationText: "/长休"});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/天"});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/日"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "weekly", durationText: "/周"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "monthly", durationText: "/月"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "yearly", durationText: "/年"});
@@ -1488,7 +1488,7 @@ globalThis.Renderer = function () {
 				const isHideEach = !perDur[lvl] && perDur[lvlEach].length === 1;
 				tempList.items.push({
 					type: "itemSpell",
-					name: `${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}${isHideEach ? "" : ` each`}:`,
+					name: `${isHideEach ? "" : `每项`}${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
 					entry: this._renderSpellcasting_getRenderableList(perDur[lvlEach]).join(", "),
 				});
 			}
@@ -9615,14 +9615,14 @@ class _RenderCompactBestiaryImplBase {
 	}
 
 	_getCommonHtmlParts_vulnerabilities ({mon}) {
-		const label = this._style === "classic" ? "Damage Vuln." : "Vuln.";
-		const ptTitle = this._style === "classic" ? "Damage Vulnerabilities" : "Vulnerabilities";
+		const label = this._style === "classic" ? "伤害易伤" : "易伤";
+		const ptTitle = this._style === "classic" ? "伤害易伤" : "易伤";
 		return mon.vulnerable ? `<p><b ${ptTitle}>${label}</b> ${Parser.getFullImmRes(mon.vulnerable, {isTitleCase: this._style !== "classic"})}</p>` : "";
 	}
 
 	_getCommonHtmlParts_resistances ({mon}) {
 		const label = this._style === "classic" ? "伤害抗性" : "抗性";
-		const ptTitle = this._style === "classic" ? "Damage Resistances" : "Resistances";
+		const ptTitle = this._style === "classic" ? "伤害抗性" : "抗性";
 		return mon.resist ? `<p><b ${ptTitle}>${label}</b> ${Parser.getFullImmRes(mon.resist, {isTitleCase: this._style !== "classic"})}</p>` : "";
 	}
 
@@ -11470,7 +11470,7 @@ Renderer.monster.CHILD_PROPS_EXTENDED.forEach(prop => {
 
 Renderer.monsterAction.getWeaponLookupName = act => {
 	return (act.name || "")
-		.replace(/\(.*\)$/, "") // remove parenthetical text (e.g. "(Humanoid or Hybrid Form Only)" off the end
+		.replace(/[(（].*[)）]$/, "") // remove parenthetical text (e.g. "(Humanoid or Hybrid Form Only)" off the end
 		.trim()
 		.toLowerCase()
 	;
@@ -13358,7 +13358,7 @@ Renderer.vehicle = class {
 					? `{@b 货物容量} ${Renderer.vehicle.getShipCargoCapacity(ent)}`
 					: null,
 				entryTravelPace: ent.pace != null
-					? `{@b 旅行步调} ${ent.pace}英里/小时 (${ent.pace * 24}英里/天)`
+					? `{@b 旅行步调} ${ent.pace}英里/小时 (${ent.pace * 24}英里/日)`
 					: null,
 				entryTravelPaceNote: ent.pace != null
 					? `[{@b 速度} ${ent.pace * 10}尺]`
@@ -13852,7 +13852,7 @@ Renderer.vehicle = class {
 				entryArmorClass: `{@b 护甲等级} ${ptAc}`,
 				entryHitPoints: `{@b 生命值} ${ent.hp.hp}${ptDtMt ? ` (${ptDtMt})` : ""}`,
 				entrySpeed: `{@b 速度} ${ent.speed}尺`,
-				entrySpeedNote: `[{@b 旅行步调} ${Math.floor(ent.speed / 10)}英里/小时 (${Math.floor(ent.speed * 24 / 10)}英里/天)]`,
+				entrySpeedNote: `[{@b 旅行步调} ${Math.floor(ent.speed / 10)}英里/小时 (${Math.floor(ent.speed * 24 / 10)}英里/日)]`,
 				entrySpeedNoteTitle: VetoolsConfig.get("styleSwitcher", "style") === "classic"
 					? `基于《${Parser.sourceJsonToAbv(Parser.SRC_DMG)}》p242 “特殊旅行步调”`
 					: `基于《${Parser.sourceJsonToAbv(Parser.SRC_XDMG)}》p39 “旅行步调”`,
@@ -14588,7 +14588,7 @@ Renderer.facility = class {
 
 	static _getFacilityRenderableEntriesMeta_orders ({ent}) {
 		if (!ent.orders) return null;
-		return ent.orders.map(it => it.toTitleCase()).joinConjunct(", ", " or ");
+		return ent.orders.map(it => it.toTitleCase()).joinConjunct("、", "或");
 	}
 
 	static getFacilityRenderableEntriesMeta (ent) {

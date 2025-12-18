@@ -78,7 +78,7 @@ export class ConverterItem extends ConverterBase {
 
 			// name of item
 			if (i === 0) {
-				[item.name, item.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
+				[item.name, item.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(this._getAsTitle("name", curLine, options.titleCaseFields, options.isTitleCase));
 				continue;
 			}
 
@@ -306,7 +306,7 @@ export class ConverterItem extends ConverterBase {
 				continue;
 			}
 
-			const mBaseArmor = /^(?:armou?r |护甲\s?)[(（](?<type>[^)）]+)[)）]$/i.exec(part);
+			const mBaseArmor = /^(?:armou?r |[护盔]甲\s?)[(（](?<type>[^)）]+)[)）]$/i.exec(part);
 			if (mBaseArmor) {
 				if (this._setCleanTaglineInfo_isMutAnyArmor({stats, mBaseArmor, options})) {
 					stats.__genericType = true;
@@ -368,7 +368,7 @@ export class ConverterItem extends ConverterBase {
 			return true;
 		}
 
-		if (/^armou?r(?: \(any\))?$/.test(partLower) || /^护甲\s?([(（]任意[)）])?$/.test(partLower)) {
+		if (/^armou?r(?: \(any\))?$/.test(partLower) || /^[护盔]甲\s?([(（]任意[)）])?$/.test(partLower)) {
 			(stats.requires ||= []).push(...this._setCleanTaglineInfo_getGenericRequires({stats, str: "armor", options}));
 			stats.__genericType = true;
 			return true;
@@ -440,7 +440,7 @@ export class ConverterItem extends ConverterBase {
 		if (/^any /i.test(mBaseArmor.groups.type) || /^任意/i.test(mBaseArmor.groups.type)) {
 			const ptAny = mBaseArmor.groups.type.replace(/^any /i, "").replace(/^任意/i, "");
 
-			if (/^(armor|护甲)$/.test(ptAny)) {
+			if (/^(armor|[护盔]甲)$/.test(ptAny)) {
 				(stats.requires ||= [])
 					.push(...[
 						{"type": options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR},
@@ -656,7 +656,9 @@ export class ConverterItem extends ConverterBase {
 	static _RE_CATEGORIES_PREFIX_SUFFIX = /(?:weapon|blade|armor|sword|polearm|bow|crossbow|axe|hammer|ammunition|arrows?|bolts?|plate|chain)/;
 	static _RE_CATEGORIES_PREFIX = new RegExp(`^${this._RE_CATEGORIES_PREFIX_SUFFIX.source} `, "i");
 	static _RE_CATEGORIES_SUFFIX = new RegExp(` ${this._RE_CATEGORIES_PREFIX_SUFFIX.source}$`, "i");
-
+	static _RE_CATEGORIES_PREFIX_SUFFIX_CN = /(?:武器|刃|护甲|剑|长兵|钩镰|钩镰兵|弩|十字弩|斧|斧子|锤|锤子|弹药|子弹|弓|箭|甲|链)/;
+	static _RE_CATEGORIES_PREFIX_CN = new RegExp(`^${this._RE_CATEGORIES_PREFIX_SUFFIX_CN.source}`, "i");
+	static _RE_CATEGORIES_SUFFIX_CN = new RegExp(`${this._RE_CATEGORIES_PREFIX_SUFFIX_CN.source}$`, "i");
 	static _setCleanTaglineInfo_handleGenericType (stats, options) {
 		if (!stats.__genericType) return;
 		delete stats.__genericType;
@@ -664,15 +666,18 @@ export class ConverterItem extends ConverterBase {
 		let prefixSuffixName = stats.name;
 		prefixSuffixName = prefixSuffixName
 			.replace(this._RE_CATEGORIES_PREFIX, "")
-			.replace(this._RE_CATEGORIES_SUFFIX, "");
+			.replace(this._RE_CATEGORIES_SUFFIX, "")
+			.replace(this._RE_CATEGORIES_PREFIX_CN, "")
+			.replace(this._RE_CATEGORIES_SUFFIX_CN, "");
 		const isSuffix = /^\s*of /i.test(prefixSuffixName);
-
+		const isCNSuffix = /^\s*之/i.test(prefixSuffixName);
 		stats.inherits = MiscUtil.copy(stats);
 		// Clean/move inherit props into inherits object
 		["name", "requires", "excludes", "ammo"].forEach(prop => delete stats.inherits[prop]); // maintain some props on base object
 		Object.keys(stats.inherits).forEach(k => delete stats[k]);
 
 		if (isSuffix) stats.inherits.nameSuffix = ` ${prefixSuffixName.trim()}`;
+		else if (isCNSuffix) stats.inherits.nameSuffix = `${prefixSuffixName.trim()} `;
 		else stats.inherits.namePrefix = `${prefixSuffixName.trim()} `;
 
 		stats.__prop = "magicvariant";
@@ -683,7 +688,7 @@ export class ConverterItem extends ConverterBase {
 	static _setWeight (stats, options) {
 		const strEntries = JSON.stringify(stats.entries);
 
-		strEntries.replace(/weighs ([a-zA-Z0-9,]+)\s?(pounds?|lbs?\.|tons?|磅)/, (...m) => {
+		strEntries.replace(/weighs ([a-zA-Z0-9,]+)\s?(pounds?|lbs?\.|tons?|磅|吨)/, (...m) => {
 			if (/^(?:ton|吨)/.test(m[2].toLowerCase().trim())) throw new Error(`不支持处理单位 吨！`);
 
 			const noCommas = m[1].replace(/,/g, "");

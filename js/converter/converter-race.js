@@ -3,6 +3,7 @@ import {ConverterUtilsMarkdown} from "./converterutils-markdown.js";
 import {TagJsons} from "./converterutils-entries.js";
 import {RaceImmResVulnTag, RaceLanguageTag, RaceTraitTag} from "./converterutils-race.js";
 import {EntryCoalesceEntryLists, EntryCoalesceRawLines} from "./converterutils-entrycoalesce.js";
+import {ConverterUtils} from "./converterutils-utils.js";
 import {ConverterFeatureBase} from "./converter-feature.js";
 import {SITE_STYLE__CLASSIC, SITE_STYLE__ONE} from "../consts.js";
 import {PropOrder} from "../utils-proporder.js";
@@ -82,7 +83,7 @@ export class ConverterRace extends ConverterFeatureBase {
 
 	static _doParseText_stepName (state) {
 		const name = state.curLine.replace(/( Traits|特[质性])$/i, "");
-		[state.entity.name, state.entity.ENG_name] = this._splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
+		[state.entity.name, state.entity.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
 		state.entity.name = state.entity.name.replace(/( Traits|特[质性])$/i, "");
 		state.entity.ENG_name = state.entity.ENG_name.replace(/( Traits|特[质性])$/i, "");
 		// region Skip repeated name line

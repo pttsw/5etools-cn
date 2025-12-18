@@ -80,7 +80,7 @@ export class ConverterUi extends BaseComponent {
 
 		es(`#editable`).onn("click", () => {
 			this._outReadOnly = false;
-			JqueryUtil.doToast({type: "warning", content: "Enabled editing. Note that edits will be overwritten as you parse new stat blocks."});
+			JqueryUtil.doToast({type: "warning", content: "已启用输出编辑。注意：再次点击“转换”按钮会覆盖编辑的输出内容。"});
 		});
 
 		let hovWindowPreview = null;
@@ -499,7 +499,7 @@ ConverterUi._APPEND_PREPEND_MODE__PREPEND = "逆序";
 ConverterUi._DEFAULT_STATE = {
 	hasAppended: false,
 	appendPrependMode: ConverterUi._APPEND_PREPEND_MODE__APPEND,
-	converter: "Creature",
+	converter: "monster",
 	sourceJson: "",
 	inputSeparator: "===",
 };

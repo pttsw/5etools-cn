@@ -221,7 +221,7 @@ export class CreatureBuilder extends BuilderBase {
 
 		this._jsonCreatureActions = [
 			...items
-				.filter(it => !it._isItemGroup && it._category === "Basic" && it.type && [Parser.ITM_TYP_ABV__MELEE_WEAPON, Parser.ITM_TYP_ABV__RANGED_WEAPON].includes(DataUtil.itemType.unpackUid(it.type).abbreviation) && it.dmg1 && it.dmgType)
+				.filter(it => !it._isItemGroup && (it._category === "Basic" || it._category === "基础") && it.type && [Parser.ITM_TYP_ABV__MELEE_WEAPON, Parser.ITM_TYP_ABV__RANGED_WEAPON].includes(DataUtil.itemType.unpackUid(it.type).abbreviation) && it.dmg1 && it.dmgType)
 				.map(item => {
 					const mDice = /^(?<count>\d+)d(?<face>\d+)\b/i.exec(item.dmg1);
 					if (!mDice) return null;

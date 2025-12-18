@@ -16,7 +16,7 @@ export class RenderRaces {
 			${entriesMeta.entryAttributes ? renderer.render(entriesMeta.entryAttributes) : ""}
 			${entriesMeta.entryAttributes ? `<div class="w-100 py-1"></div>` : ""}
 			${renderer.render(entriesMeta.entryMain, 1)}
-			${ent.traitTags && ent.traitTags.includes("NPC Race") ? `<section class="ve-muted">
+			${ent.traitTags && (ent.traitTags.includes("NPC Race") || ent.traitTags.includes("NPC种族")) ? `<section class="ve-muted">
 				${renderer.render(`{@note Note: This race is listed in the {@i Dungeon Master's Guide} as an option for creating NPCs. It is not designed for use as a playable race.}`, 2)}
 			 </section>` : ""}
 		</td></tr>

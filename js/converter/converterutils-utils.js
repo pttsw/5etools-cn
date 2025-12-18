@@ -1,5 +1,5 @@
 export class ConverterUtils {
-	static _RE_SPLIT_CONJUNCT = /(?:,? (?:and|or) |, |和|或|，)/gi;
+	static _RE_SPLIT_CONJUNCT = /(?:,? (?:and|or) |, |、|和|或|，)/gi;
 
 	static splitConjunct (str) {
 		return str
@@ -147,8 +147,10 @@ export class ConverterUtils {
 
 	static isTitleLine (line) {
 		line = line.trim();
+		
+		if (line.startsWith("特性：")) return true;
 
-		const lineNoPrefix = line.replace(/^Feature: /, "").replace(/^特性：/, "");
+		const lineNoPrefix = line.replace(/^Feature: /, "").replace(/^特性[：:]/, "");
 		if (lineNoPrefix.length && lineNoPrefix.toTitleCase() === lineNoPrefix && !(/[\u4e00-\u9fa5]/.test(lineNoPrefix))) return true;
 
 		if (/[.!?:。！？：]/.test(line)) return false;
@@ -190,6 +192,15 @@ export class ConverterUtils {
 			&& spl[2].toTitleCase() === spl[2]
 		) return [spl.join("")];
 
+		// Handle e.g. "特性：特性名 Feature: Name of the Feature"
+		if (
+			spl.length === 5
+			&& (spl[0] === "特性")
+			&& (spl[1] === ":" || spl[1] === "：")
+			&& (spl[2].endsWith("Feature"))
+			&& (spl[3] === ":" || spl[3] === "：")
+			&& spl[4].toTitleCase() === spl[4]
+		) return [spl.join("")];
 		if (
 			spl.length > 3
 			&& (
@@ -339,4 +350,68 @@ export class ConverterUtils {
 		Object.assign(obj, tmp);
 		return obj;
 	}
+
+static splitNameToChineseAndEnglish (originName) {
+    let cnName = '';
+    let enName = '';
+    let cnBracket = '';
+	let enBracket = '';
+
+    // 去除首尾空格
+    const trimmedName = originName
+	.trim()
+	.replace(/[（(][a-zA-Z0-9\s\/]+[)）]$/i, (...m) => {
+        enBracket = m[0].trim();
+        return '';
+    })
+	.trim()
+	.replace(/[（(][\u4e00-\u9fa50-9\s\/-~]+[)）]$/i, (...m) => {
+        cnBracket = m[0].trim();
+        return '';
+    })
+	.trim()
+	;
+
+    const pattern = /^([a-zA-Z0-9\s]+)\s*([\u4e00-\u9fa5]+)$|^([\u4e00-\u9fa5]+)\s*([a-zA-Z0-9\s]+)$|^([\u4e00-\u9fa5]+)$|^([a-zA-Z0-9\s]+)$/;
+    const match = trimmedName.match(pattern);
+    
+    if (match) {
+        // 英文在前中文在后的情况
+        if (match[1] && match[2]) {
+            enName = match[1].trim();
+            cnName = match[2].trim();
+        }
+        // 中文在前英文在后的情况
+        else if (match[3] && match[4]) {
+            cnName = match[3].trim();
+            enName = match[4].trim();
+        }
+        // 只有中文的情况
+        else if (match[5]) {
+            cnName = match[5].trim();
+        }
+        // 只有英文的情况
+        else if (match[6]) {
+            enName = match[6].trim();
+        }
+    }
+    
+    // 如果没有匹配到，使用原始逻辑作为 fallback
+    if (!cnName && !enName) {
+        let names = trimmedName.split(/[|｜]/);
+        if (names.length !== 2) {
+            names = trimmedName.split(/\s+/);
+        }
+        names.forEach(n => {
+            if (/[\u4e00-\u9fa5]/.test(n)) {
+                cnName = cnName ? `${cnName} ${n.trim()}` : n.trim();
+            } else {
+                enName = enName ? `${enName} ${n.trim()}` : n.trim();
+            }
+        });
+    }
+    if (cnBracket) cnName = `${cnName}${cnBracket}`;
+    if (enBracket) enName = `${enName} ${enBracket}`;
+    return [cnName, enName];
+}
 }

@@ -167,7 +167,9 @@ Parser.textToNumber = function (str) {
 		case "ninety": return 90;
 		case "零": return 0;
 		case "一": return 1;
+		case "首": return 1;
 		case "二": return 2;
+		case "两": return 2;
 		case "三": return 3;
 		case "四": return 4;
 		case "五": return 5;
@@ -354,6 +356,10 @@ Parser.speedToCn = function (prop) {
 	return Parser._parse_aToB(Parser.SPEED_TO_CN, prop);
 };
 
+Parser.cnToSpeed = function (prop) {
+	return Parser._parse_bToA(Parser.SPEED_TO_CN, prop);
+};
+
 Parser._getSpeedString_addSpeed = ({prop, speed, isMetric, unit, stack, styleHint}) => {
 	const ptName = Parser._getSpeedString_getSpeedName({prop, styleHint});
 	const ptValue = Parser._getSpeedString_getVal({prop, speed, isMetric});
@@ -374,6 +380,7 @@ Parser._getSpeedString_getCondition = ({speed}) => speed.condition ? ` ${Rendere
 Parser._getSpeedString_getSpeedName = ({prop, styleHint}) => prop === "walk" ? "" : `${Parser.SPEED_TO_CN[prop] || prop[styleHint === "classic" ? "toString" : "toTitleCase"]()} `;
 
 Parser.SPEED_MODES = ["walk", "burrow", "climb", "fly", "swim"];
+Parser.SPEED_MODES_CN = Parser.SPEED_MODES.map(prop => Parser.speedToCn(prop));
 
 Parser.SPEED_TO_PROGRESSIVE = {
 	"walk": "walking",
@@ -479,7 +486,7 @@ Parser.levelToPb = function (level) {
 
 Parser.SKILL_TO_ATB_ABV = {
 	"运动": "str",
-	"体操": "dex",
+	"特技": "dex",
 	"巧手": "dex",
 	"隐匿": "dex",
 	"奥秘": "int",
@@ -523,6 +530,10 @@ Parser.SKILL_TO_CN = {
 	"persuasion": "游说",
 };
 
+Parser.cnSkillToEn = function (skill) {
+	return Parser._parse_bToA(Parser.SKILL_TO_CN, skill);
+};
+
 Parser.SKILL_TO_SHORT = {
 	"athletics": "ath",
 	"acrobatics": "acro",
@@ -558,6 +569,16 @@ Parser.LANGUAGES_STANDARD = [
 	"Halfling",
 	"Orc",
 ];
+Parser.LANGUAGES_STANDARD_CN = [
+	"通用语",
+	"矮人语",
+	"精灵语",
+	"巨人语",
+	"侏儒语",
+	"地精语",
+	"半人语",
+	"兽人语",
+];
 
 Parser.LANGUAGES_EXOTIC = [
 	"Abyssal",
@@ -574,15 +595,38 @@ Parser.LANGUAGES_EXOTIC = [
 	"Undercommon",
 ];
 
+Parser.LANGUAGES_EXOTIC_CN = [
+	"深渊语",
+	"水族语",
+	"空气语",
+	"天界语",
+	"龙语",
+	"深潜语",
+	"火族语",
+	"炼狱语",
+	"原初语",
+	"木族语",
+	"土族语",
+	"地底通用语",
+];
+
 Parser.LANGUAGES_SECRET = [
 	"Druidic",
 	"Thieves' cant",
+];
+
+Parser.LANGUAGES_SECRET_CN = [
+	"德鲁伊语",
+	"盗贼黑话",
 ];
 
 Parser.LANGUAGES_ALL = [
 	...Parser.LANGUAGES_STANDARD,
 	...Parser.LANGUAGES_EXOTIC,
 	...Parser.LANGUAGES_SECRET,
+	...Parser.LANGUAGES_STANDARD_CN,
+	...Parser.LANGUAGES_EXOTIC_CN,
+	...Parser.LANGUAGES_SECRET_CN,
 ].sort();
 
 Parser.acToFull = function (ac, {renderer = null, isHideFrom = false} = {}) {
@@ -608,6 +652,8 @@ Parser.acToFull = function (ac, {renderer = null, isHideFrom = false} = {}) {
 				inBraces = true;
 			}
 
+			if (cur.condition) stack += `${renderer.render(cur.condition)}`;
+
 			stack += cur.ac;
 
 			if (!isHideFrom && cur.from) {
@@ -630,7 +676,6 @@ Parser.acToFull = function (ac, {renderer = null, isHideFrom = false} = {}) {
 				}
 			}
 
-			if (cur.condition) stack += ` ${renderer.render(cur.condition)}`;
 
 			if (inBraces && !isNxtBraces) {
 				stack += ")";
@@ -4686,7 +4731,7 @@ Parser.MON_TAG_TO_CN = {
 	"bullywug": "狂蛙人",
 	"cattle": "牛",
 	"changeling": "幻身灵",
-	"chromatic": "太古龙",
+	"chromatic": "色彩龙",
 	"cleric": "牧师",
 	"cloud giant": "云巨人",
 	"demon": "恶魔",

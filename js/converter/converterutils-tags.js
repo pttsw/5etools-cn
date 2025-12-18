@@ -35,8 +35,19 @@ export class TaggerUtils {
 		return doFind(this._ALL_LEGENDARY_GROUPS);
 	}
 
+	static SPELL_NAME_CORRECTIONS = {
+		"冻寒之触": "颤栗之触",
+		"提升抗性": "抵抗术",
+		"操纵死尸": "活化死尸",
+		"操纵尸体": "活化死尸",
+		"侦测毒性与疾病": "侦测毒性和疾病",
+		"人类定身术": "定身类人",
+		"水中呼吸": "水下呼吸",
+	};
+
 	static findSpell ({name, source}) {
 		name = name.toLowerCase();
+		name = this.SPELL_NAME_CORRECTIONS[name] || name;
 		source = source.toLowerCase();
 
 		const doFind = arr => arr.find(s => (s.name.toLowerCase() === name || (typeof s.srd === "string" && s.srd.toLowerCase() === name) || (typeof s.srd52 === "string" && s.srd52.toLowerCase() === name)) && s.source.toLowerCase() === source);
@@ -101,11 +112,13 @@ export class TaggerUtils {
 	static walkerStringHandlerStrictCapsWords (targetTags, ptrStack, str, meta) {
 		const tagSplit = Renderer.splitByTags(str);
 
-		const reTokenStr = /([ .!?:;,()])/.source;
+		const reTokenStr = /([ .!?:;,()。！？：；，、（）])/.source;
 		const reTokenSplit = new RegExp(reTokenStr, "g");
 		const reTokenCheck = new RegExp(reTokenStr);
 
 		const reCapsFirst = /^[A-Z]+[a-z']*$/;
+
+		const chineseWord = /^[\u4e00-\u9fa5]*$/;
 
 		const setLower = new Set(StrUtil.TITLE_LOWER_WORDS);
 		const setUpper = new Set([...StrUtil.TITLE_UPPER_WORDS, ...StrUtil.TITLE_UPPER_WORDS_PLURAL].map(it => it.toUpperCase()));
@@ -172,6 +185,11 @@ export class TaggerUtils {
 							return;
 						}
 
+						if (chineseWord.test(tk) && tk.length < 10) {
+							stack.push(tk);
+							return;
+						}
+
 						flush();
 						ptrStack._ += tk;
 					});
@@ -209,11 +227,11 @@ export class TaggerUtils {
 }
 
 export class TagCondition extends ConverterTaggerInitializable {
-	static _STATUS_MATCHER = new RegExp(`\\b(concentration|surprised)\\b`, "gi");
-	static _STATUS_MATCHER_ALT = new RegExp(`\\b(concentrating)\\b`, "gi");
+	static _STATUS_MATCHER = new RegExp(`(专注(?!于)|被突袭)`, "gi");
+	static _STATUS_MATCHER_ALT = new RegExp(`(专注于)`, "gi");
 
 	static _STATUS_MATCHER_ALT_REPLACEMENTS = {
-		"concentrating": "concentration",
+		"专注于": "专注",
 	};
 
 	static _conditionMatcherCore = null;
@@ -233,8 +251,8 @@ export class TagCondition extends ConverterTaggerInitializable {
 		const statusesXphb = conditionData.status
 			.filter(cond => cond.source === Parser.SRC_XPHB);
 
-		this._conditionMatcherCore = new RegExp(`\\b(?<name>${conditionsXphb.map(it => it.name).join("|")})\\b`, "g");
-		this._statusMatcherCore = new RegExp(`\\b(?<name>${statusesXphb.map(it => it.name).join("|")})\\b`, "g");
+		this._conditionMatcherCore = new RegExp(`(?<name>${conditionsXphb.map(it => it.name).join("|")})`, "g");
+		this._statusMatcherCore = new RegExp(`(?<name>${statusesXphb.map(it => it.name).join("|")})`, "g");
 
 		const conditionsPhb = conditionData.condition
 			.filter(cond => cond.source === Parser.SRC_PHB);
@@ -243,7 +261,7 @@ export class TagCondition extends ConverterTaggerInitializable {
 			...conditionsPhb.map(it => it.name.toLowerCase().escapeRegexp()),
 			...(conditionsBrew || []).map(it => it.name.toLowerCase().escapeRegexp()),
 		];
-		this._conditionMatcher = new RegExp(`\\b(${conditions.join("|")})\\b`, "g");
+		this._conditionMatcher = new RegExp(`(${conditions.join("|")})`, "g");
 		this._conditionSourceMapBrew = conditionsBrew.mergeMap(({name, source}) => ({[name.toLowerCase()]: source}));
 	}
 
@@ -612,10 +630,16 @@ export class DiceConvert {
 				// Handle e.g. `+3 to hit`
 				// Handle e.g. `+3 plus PB to hit`
 				.replace(/(?<op>[-+])?(?<bonus>\d+(?: (?:plus|minus|[-+]) PB)?)(?= to hit\b)/g, (...m) => `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`)
+				// Handle E.g. "命中+3"
+				// Handle E.g. "命中+3 加 PB"
+				.replace(/(?<=命中)(?<op>[-+])?(?<bonus>\d+(?: ?[-+加减] ?PB)?)/g, (...m) => `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`)
 				// Handle E.g. "... Attack Roll: +5, ..."
 				.replace(/(?<=Attack Roll: )(?<op>[-+])?(?<bonus>\d+(?: (?:plus|minus|[-+]) PB)?)(?=,| \()/g, (...m) => `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`)
+				// Handle E.g. "攻击掷骰：+5，..."
+				.replace(/(?<=攻击掷骰[：:] ?)(?<op>[-+])?(?<bonus>\d+(?: ?[-+加减] ?PB)?)(?=,| \(|（|，)/g, (...m) => `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`)
 				// Handle E.g. "... Attack Roll: Bonus equals your spell attack modifier, ..."
 				.replace(/(?<=Attack Roll: )Bonus equals your spell attack modifier(?=,)/g, (...m) => `{@hitYourSpellAttack Bonus equals your spell attack modifier}`)
+				.replace(/(?<=攻击掷骰[：:] ?)加值等于你的法术攻击(?:加值|调整值)(?=[,，])/g, (...m) => `{@hitYourSpellAttack 加值等于你的法术攻击加值}`)
 			;
 		}
 
@@ -706,7 +730,7 @@ export class ArtifactPropertiesTag {
 
 export class SkillTag extends ConverterTaggerInitializable {
 	static _RE_BASIC_XPHB = null;
-	static _RE_BASIC = /^(?<name>Acrobatics|Animal Handling|Arcana|Athletics|Deception|History|Insight|Intimidation|Investigation|Medicine|Nature|Perception|Performance|Persuasion|Religion|Sleight of Hand|Stealth|Survival)$/g;
+	static _RE_BASIC = /^(?<name>Acrobatics|特技|Animal Handling|驯兽|Arcana|奥秘|Athletics|运动|Deception|欺瞒|History|历史|Insight|洞悉|Intimidation|威吓|Investigation|调查|Medicine|医药|Nature|自然|Perception|察觉|Performance|表演|Persuasion|游说|Religion|宗教|Sleight of Hand|巧手|Stealth|隐匿|Survival|生存)$/g;
 
 	static async _pInit () {
 		const skillData = await DataLoader.pCacheAndGetAllSite("skill");
@@ -801,7 +825,7 @@ export class SkillTag extends ConverterTaggerInitializable {
 
 export class ActionTag extends ConverterTaggerInitializable {
 	static _RE_BASIC_XPHB = null;
-	static _RE_BASIC_CLASSIC = /^(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)$/g;
+	static _RE_BASIC_CLASSIC = /^(Attack|攻击|Dash|疾走|Disengage|撤离|Dodge|回避|Help|协助|Hide|躲藏|Ready|预备|Search|搜索|Use an Object|使用物件|shove a creature|推撞对手)$/g;
 
 	static async _pInit () {
 		const actionData = await DataUtil.action.loadJSON();
@@ -850,6 +874,7 @@ export class ActionTag extends ConverterTaggerInitializable {
 		return strMod
 			.replace(this._RE_BASIC_XPHB, (...m) => `{@action ${m.at(-1).name}|${Parser.SRC_XPHB}}`)
 			.replace(/\bOpportunity Attacks\b/g, (...m) => `{@action Opportunity Attack|XPHB|Opportunity Attacks}`)
+			.replace(/借机攻击\b/g, (...m) => `{@action 借机攻击|XPHB|借机攻击}`)
 		;
 	}
 
@@ -867,6 +892,7 @@ export class ActionTag extends ConverterTaggerInitializable {
 
 			strMod = `${strMod.slice(0, mAction.index)}${replaceAs}${strMod.slice(ixMatchEnd, strMod.length)}`
 				.replace(/{@action Attack} (and|or) damage roll/g, "Attack $1 damage roll")
+				.replace(/{@action 攻击} ?(和|或) ?伤害掷骰/g, "攻击 $1 伤害掷骰")
 			;
 
 			this._RE_BASIC_CLASSIC.lastIndex += replaceAs.length - 1;
@@ -881,6 +907,7 @@ export class ActionTag extends ConverterTaggerInitializable {
 export class SenseTag extends ConverterTaggerInitializable {
 	static _RE_BASIC_XPHB = null;
 	static _RE_BASIC = /\b(?<name>tremorsense|blindsight|truesight|darkvision)\b/ig;
+	static _RE_BASIC_CN = /(?<name>震颤感知|盲视|真是视觉|黑暗视觉)/ig;
 
 	static async _pInit () {
 		const senseData = await DataLoader.pCacheAndGetAllSite("sense");
@@ -889,6 +916,7 @@ export class SenseTag extends ConverterTaggerInitializable {
 			.filter(skill => skill.source === Parser.SRC_XPHB);
 
 		this._RE_BASIC_XPHB = new RegExp(`\\b(?<name>${(coreSenses.map(sense => sense.name).join("|"))})\\b`, "g");
+		this._RE_BASIC_XPHB_CN = new RegExp(`(?<name>${(coreSenses.map(sense => sense.name).join("|"))})`, "g");
 	}
 
 	/**
@@ -940,6 +968,7 @@ export class SenseTag extends ConverterTaggerInitializable {
 	static _fnTag_one (strMod) {
 		return strMod
 			.replace(this._RE_BASIC_XPHB, (...m) => `{@sense ${m.at(-1).name}|${Parser.SRC_XPHB}}`)
+			.replace(this._RE_BASIC_XPHB_CN, (...m) => `{@sense ${m.at(-1).name}|${Parser.SRC_XPHB}}`)
 		;
 	}
 
@@ -947,6 +976,9 @@ export class SenseTag extends ConverterTaggerInitializable {
 		return strMod.replace(this._RE_BASIC, (...m) => {
 			const {name} = m.at(-1);
 			return `{@sense ${name}${name.toLowerCase() === "tremorsense" ? "|MM" : ""}}`;
+		}).replace(this._RE_BASIC_CN, (...m) => {
+			const {name} = m.at(-1);
+			return `{@sense ${name}${name.toLowerCase() === "震颤感知" ? "|MM" : ""}}`;
 		});
 	}
 }

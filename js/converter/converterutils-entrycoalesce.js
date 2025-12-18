@@ -284,7 +284,7 @@ export class EntryCoalesceRawLines {
 				}
 			}
 
-			if (typeof entry !== "string") this.stack.push(entry);
+			if (typeof entry !== "string" && entry.type !== "table") this.stack.push(entry);
 		}
 
 		incrementLine ({offset = 1, isPrevLineNameLine = false} = {}) {
@@ -366,10 +366,11 @@ export class EntryCoalesceRawLines {
 
 			if (ConverterUtils.isTitleLine(state.curLine)) {
 				state.popNestedEntries(); // this implicitly pops nested lists
-
+				const [name, enName] = ConverterUtils.splitNameToChineseAndEnglish(state.curLine.trim());
 				const entry = {
 					type: "entries",
-					name: state.curLine.trim(),
+					name: name,
+					ENG_name: enName,
 					entries: [],
 				};
 

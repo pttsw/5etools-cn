@@ -648,7 +648,7 @@ export class BackgroundSkillToolLanguageTag {
 		}
 
 		if (/^Two of the following:/.test(skillProf.entry)
-			|| /^从.*中选择两项/.test(skillProf.entry)) {
+			|| /^从.*中任?选择?两项/.test(skillProf.entry)) {
 			const choices = [];
 			skillProf.entry
 				.replace(/{@skill (?<skill>[^}]+)/g, (...m) => {
@@ -668,15 +668,15 @@ export class BackgroundSkillToolLanguageTag {
 			return;
 		}
 
-		if (!/^({@skill [^}]+}(?:, | and )?)+$/.test(skillProf.entry)) return cbWarning(`(${bg.name}) 的技能需要手动打Tag`);
+		if (!/^({@skill [^}]+}(?:, | and |，|、|和)?)+$/.test(skillProf.entry)) return cbWarning(`(${bg.name}) 的技能需要手动打Tag`);
 
 		bg.skillProficiencies = [
 			skillProf.entry
-				.split(/, | and /)
+				.split(/, | and |，|、|和/)
 				.map(ent => ent.trim())
 				.mergeMap(str => {
 					const reTag = /^{@skill (?<skill>[^}]+)}$/.exec(str);
-					if (reTag) return {[reTag.groups.skill.toLowerCase().trim().replace(/\|xphb$/, "")]: true};
+					if (reTag) return {[Parser.cnSkillToEn(reTag.groups.skill.toLowerCase().trim().replace(/\|xphb$/, ""))]: true};
 					throw new Error(`无法找到${str}中的技能Tag`);
 				}),
 		];
@@ -783,7 +783,7 @@ export class BackgroundSkillToolLanguageTag {
 
 		const languageProficiencies = this._getLanguageTags({langProf});
 		if (!languageProficiencies) {
-			cbWarning(`(${bg.name}) Language proficiencies require manual tagging in "${langProf.entry}"`);
+			cbWarning(`(${bg.name}) 的语言熟练项："${langProf.entry}" 需要手动打Tag`);
 			return;
 		}
 		bg.languageProficiencies = languageProficiencies;
@@ -800,22 +800,27 @@ export class BackgroundSkillToolLanguageTag {
 		const mSingle = new RegExp(`^${reStrLanguage}$`, "i").exec(str);
 		if (mSingle) return [{[mSingle[1].toLowerCase()]: true}];
 
-		const mDoubleAnd = new RegExp(`^${reStrLanguage} and ${reStrLanguage}$`, "i").exec(str);
+		const mDoubleAnd = new RegExp(`^${reStrLanguage}(?: and | ?[和与] ?)${reStrLanguage}$`, "i").exec(str);
 		if (mDoubleAnd) return [{[mDoubleAnd[1].toLowerCase()]: true, [mDoubleAnd[2].toLowerCase()]: true}];
 
-		const mDoubleAndChoose = new RegExp(`^${reStrLanguage} and one other language of your choice$`, "i").exec(str);
+		const mDoubleAndChoose = new RegExp(`^${reStrLanguage} and one other language of your choice$`, "i").exec(str)
+		|| new RegExp(`^${reStrLanguage}[与和]另一[项门]你(?:自选|选择)的语言$`, "i").exec(str);
 		if (mDoubleAndChoose) return [{[mDoubleAndChoose[1].toLowerCase()]: true, "anyStandard": true}];
 
-		const mDoubleOr = new RegExp(`^${reStrLanguage} or ${reStrLanguage}$`, "i").exec(str);
+		const mDoubleOr = new RegExp(`^${reStrLanguage}(?: or | ?或 ?)${reStrLanguage}$`, "i").exec(str);
 		if (mDoubleOr) return [{[mDoubleOr[1].toLowerCase()]: true}, {[mDoubleOr[2].toLowerCase()]: true}];
 
-		const mNumAny = /^(?:any )?((?<count>one|two) )?of your choice$/i.exec(str);
+		const mNumAny = /^(?:any )?((?<count>one|two) )?of your choice$/i.exec(str)
+		|| /^你?(?:自选|选择)的?(?:任意)?(?<count>一|两|三|四)?门?语言$/i.exec(str);
 		if (mNumAny) return [{"anyStandard": Parser.textToNumber(mNumAny.groups?.count || "one")}];
 
-		const mNumExotic = /^(?:(?:any|choose) )?((?<count>one|two) )?exotic language(?: \([^)]+\))?$/i.exec(str);
+		const mNumExotic = /^(?:(?:any|choose) )?((?<count>one|two) )?exotic language(?: \([^)]+\))?$/i.exec(str)
+		|| /^(你?(?:自选|选择)?的?(?:任意)?(?<count>一|两|三|四)?门?)?特种语言$/i.exec(str);
 		if (mNumExotic) return [{"anyExotic": Parser.textToNumber(mNumExotic.groups?.count || "one")}];
 
-		const mSingleOrAlternate = new RegExp(`^${reStrLanguage} or one of your choice if you already speak ${reStrLanguage}$`, "i").exec(str);
+		const mSingleOrAlternate = new RegExp(`^${reStrLanguage} or one of your choice if you already speak ${reStrLanguage}$`, "i").exec(str)
+		|| new RegExp(`^${reStrLanguage}，或如果你已经熟悉${reStrLanguage}了就自选一门语言$`, "i").exec(str);
+		
 		if (mSingleOrAlternate) return [{[mSingle[1].toLowerCase()]: true}, {"anyStandard": 1}];
 
 		return null;
