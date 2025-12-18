@@ -2703,7 +2703,7 @@ Renderer.attackTagToFull = function (tagStr, {isRoll = false} = {}) {
 			});
 		}
 	}
-	return `${tagGroups.map(it => renderTag(it)).join(" 或 ")}攻击${isRoll ? " 掷骰" : ""}:`;
+	return `${tagGroups.map(it => renderTag(it)).join(" 或 ")}攻击${isRoll ? "检定" : ""}:`;
 };
 
 Renderer.splitFirstSpace = function (string) {

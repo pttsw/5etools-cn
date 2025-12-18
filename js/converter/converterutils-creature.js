@@ -702,12 +702,16 @@ export class TagCreatureSubEntryInto {
 		"melee attack roll:": "{@atkr m}",
 		"近战攻击掷骰:": "{@atkr m}",
 		"近战攻击掷骰：": "{@atkr m}",
+		"近战攻击检定:": "{@atkr m}",
+		"近战攻击检定：": "{@atkr m}",
 		"ranged attack roll:": "{@atkr r}",
 		"远程攻击掷骰:": "{@atkr r}",
 		"远程攻击掷骰：": "{@atkr r}",
+		"远程攻击检定:": "{@atkr r}",
+		"远程攻击检定：": "{@atkr r}",
 		"melee or ranged attack roll:": "{@atkr m,r}",
-		"近战或远程攻击掷骰:": "{@atkr m,r}",
-		"近战或远程攻击掷骰：": "{@atkr m,r}",
+		"近战或远程攻击检定:": "{@atkr m,r}",
+		"近战或远程攻击检定：": "{@atkr m,r}",
 	};
 
 	static _WALKER = null;
@@ -751,7 +755,7 @@ export class TagCreatureSubEntryInto {
 
 									return m[0];
 								})
-								.replace(/^(?<text>[近战远程范围武器或法术]*攻击(?:掷骰)?[:：])/g, (...m) => {
+								.replace(/^(?<text>[近战远程范围武器或法术]*攻击(?:掷骰|检定)?[:：])/g, (...m) => {
 									const {text} = m.at(-1);
 
 									if (this._MAP[text]) return this._MAP[text];
