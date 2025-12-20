@@ -126,8 +126,11 @@ export class SpellTag extends ConverterTaggerInitializable {
 	static _SPELL_NAMES_LEGACY = {};
 	static _SPELL_NAME_REGEX = null;
 	static _SPELL_NAME_REGEX_SPELL = null;
+	static _CN_PREFIX_SPELL_NAME_REGEX_SPELL = null;
+	static _CN_SUFFIX_SPELL_NAME_REGEX_SPELL = null;
 	static _SPELL_NAME_REGEX_AND = null;
 	static _SPELL_NAME_REGEX_CAST = null;
+	static _CN_SPELL_NAME_REGEX_CAST = null;
 
 	static _NON_STANDARD = new Set([
 		// Skip "Divination" to avoid tagging occurrences of the school
@@ -152,9 +155,12 @@ export class SpellTag extends ConverterTaggerInitializable {
 			.filter(n => !this._NON_STANDARD.has(n));
 
 		this._SPELL_NAME_REGEX = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
-		this._SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) ?(spell|cantrip|法术|戏法)`, "gi");
-		this._SPELL_NAME_REGEX_AND = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) (and {@spell)`, "gi");
+		this._SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) (spell|cantrip)`, "gi");
+		this._CN_SUFFIX_SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\s?(法术|戏法)`, "gi");
+		this._CN_PREFIX_SPELL_NAME_REGEX_SPELL = new RegExp(`(法术|戏法)\s?(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
+		this._SPELL_NAME_REGEX_AND = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\s?((?:and|和)\s?{@spell)`, "gi");
 		this._SPELL_NAME_REGEX_CAST = new RegExp(`(?<prefix>casts?(?: the(?: spell)?)? )(?<spell>${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
+		this._CN_SPELL_NAME_REGEX_CAST = new RegExp(`(?<prefix>施放?法术?)\s?(?<spell>${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
 		this._SPELL_NAME_REGEX_STRICT = new RegExp(`^(${Object.values(this._SPELL_NAMES).map(it => it.name.escapeRegexp()).join("|")})$`, "g");
 	}
 
@@ -198,12 +204,24 @@ export class SpellTag extends ConverterTaggerInitializable {
 					if (!spellMeta) return m[0];
 					if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
 					return `{@spell ${m[1]}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}} ${m[2]}`;
+				})
+				.replace(this._CN_SUFFIX_SPELL_NAME_REGEX_SPELL, (...m) => {
+					const spellMeta = this._getSpellMeta({name: m[1], styleHint});
+					if (!spellMeta) return m[0];
+					if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
+					return `{@spell ${m[1]}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}}${m[2]}`;
+				})
+				.replace(this._CN_PREFIX_SPELL_NAME_REGEX_SPELL, (...m) => {
+					const spellMeta = this._getSpellMeta({name: m[2], styleHint});
+					if (!spellMeta) return m[0];
+					if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
+					return `${m[1]}{@spell ${m[2]}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}}`;
 				});
 		}
 
 		// Tag common spells which often don't have e.g. the word "spell" nearby
 		strMod = strMod
-			.replace(/\b(antimagic field|dispel magic)\b/gi, (...m) => {
+			.replace(/(反魔法场|解除魔法)\b/gi, (...m) => {
 				const spellMeta = this._getSpellMeta({name: m[1], styleHint});
 				if (!spellMeta) return m[0];
 				if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
@@ -212,6 +230,12 @@ export class SpellTag extends ConverterTaggerInitializable {
 
 		strMod = strMod
 			.replace(this._SPELL_NAME_REGEX_CAST, (...m) => {
+				const spellMeta = this._getSpellMeta({name: m.last().spell, styleHint});
+				if (!spellMeta) return m[0];
+				if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
+				return `${m.last().prefix}{@spell ${m.last().spell}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}}`;
+			})
+			.replace(this._CN_SPELL_NAME_REGEX_CAST, (...m) => {
 				const spellMeta = this._getSpellMeta({name: m.last().spell, styleHint});
 				if (!spellMeta) return m[0];
 				if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
@@ -225,7 +249,7 @@ export class SpellTag extends ConverterTaggerInitializable {
 				if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
 				return `{@spell ${m[1]}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}} ${m[2]}`;
 			})
-			.replace(/(spells(?:|[^.!?:{]*): )([^.!?]+)/gi, (...mOuter) => {
+			.replace(/((?:spells|法术)(?:|[^.!?:{。！？：]*)[:：]\s?)([^.!?。！？]+)/gi, (...mOuter) => {
 				const spellPart = mOuter[2].replace(this._SPELL_NAME_REGEX, (...m) => {
 					const spellMeta = this._getSpellMeta({name: m[1], styleHint});
 					if (!spellMeta) return m[0];
@@ -240,6 +264,12 @@ export class SpellTag extends ConverterTaggerInitializable {
 				if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
 				return `${m.last().prefix}{@spell ${m.last().spell}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}}`;
 			})
+			.replace(this._CN_SPELL_NAME_REGEX_CAST, (...m) => {
+				const spellMeta = this._getSpellMeta({name: m.last().spell, styleHint});
+				if (!spellMeta) return m[0];
+				if (blocklistNames?.isBlocked(spellMeta.name)) return m[0];
+				return `${m.last().prefix}{@spell ${m.last().spell}${spellMeta.source !== Parser.SRC_PHB ? `|${spellMeta.source}` : ""}}`;
+			});
 		;
 	}
 
@@ -746,6 +776,7 @@ export class TrapTag extends ConverterTaggerInitializable {
 	static _RE_BASIC_XDMG = null;
 	static _RE_BASIC_XDMG_LOWER = null;
 	static _RE_TRAP_SEE = /\b(?<name>Fire-Breathing Statue|Sphere of Annihilation|Collapsing Roof|Falling Net|Pits|Poison Darts|Poison Needle|Rolling Sphere)(?<suffix> \(see)/gi;
+	static _RE_CN_TRAP_SEE = /\b(?<name>喷火雕像|湮灭法球|塌方|落网|陷坑|毒镖|毒针|滚石)(?<suffix>\s?[(（]见)/gi;
 
 	static async _pInit () {
 		const trapData = await DataLoader.pCacheAndGetAllSite("trap");
@@ -753,8 +784,8 @@ export class TrapTag extends ConverterTaggerInitializable {
 		const coreTraps = [...trapData]
 			.filter(ent => ent.source === Parser.SRC_XDMG);
 
-		this._RE_BASIC_XDMG = new RegExp(`\\b(?<name>${(coreTraps.map(ent => ent.name).join("|"))})\\b`, "g");
-		this._RE_BASIC_XDMG_LOWER = new RegExp(`\\b(?<name>${(coreTraps.map(ent => ent.name.toLowerCase()).join("|"))})\\b`, "g");
+		this._RE_BASIC_XDMG = new RegExp(`(?<name>${(coreTraps.map(ent => ent.name).join("|"))})`, "g");
+		this._RE_BASIC_XDMG_LOWER = new RegExp(`(?<name>${(coreTraps.map(ent => ent.name.toLowerCase()).join("|"))})`, "g");
 	}
 
 	/**
@@ -815,6 +846,10 @@ export class TrapTag extends ConverterTaggerInitializable {
 				const {name, suffix} = m.at(-1);
 				return `{@trap ${name}}${suffix}`;
 			})
+			.replace(this._RE_CN_TRAP_SEE, (...m) => {
+				const {name, suffix} = m.at(-1);
+				return `{@trap ${name}}${suffix}`;
+			})
 		;
 	}
 
@@ -852,6 +887,7 @@ export class TrapTag extends ConverterTaggerInitializable {
 export class HazardTag extends ConverterTaggerInitializable {
 	static _RE_BASIC_XPHB = null;
 	static _RE_HAZARD_SEE = /\b(?<name>High Altitude|Brown Mold|Green Slime|Webs|Yellow Mold|Extreme Cold|Extreme Heat|Heavy Precipitation|Strong Wind|Desecrated Ground|Frigid Water|Quicksand|Razorvine|Slippery Ice|Thin Ice)(?<suffix> \(see)/gi;
+	static _RE_CN_HAZARD_SEE = /\b(?<name>高海拔|棕霉菌|绿软泥|蛛网|黄霉菌|极度寒冷|极度高温|暴雨雪|强风|亵渎之地|寒冷水域|流沙|刃藤|光滑冰面|薄冰)(?<suffix>\s?[(（]见)/gi;
 
 	static async _pInit () {
 		const hazardData = await DataLoader.pCacheAndGetAllSite("hazard");
@@ -859,7 +895,7 @@ export class HazardTag extends ConverterTaggerInitializable {
 		const coreHazards = [...hazardData]
 			.filter(ent => ent.source === Parser.SRC_XPHB);
 
-		this._RE_BASIC_XPHB = new RegExp(`\\b(?<name>${(coreHazards.map(ent => ent.name).join("|"))})\\b`, "g");
+		this._RE_BASIC_XPHB = new RegExp(`(?<name>${(coreHazards.map(ent => ent.name).join("|"))})`, "g");
 	}
 
 	/**
@@ -920,6 +956,10 @@ export class HazardTag extends ConverterTaggerInitializable {
 				const {name, suffix} = m.at(-1);
 				return `{@hazard ${name}}${suffix}`;
 			})
+			.replace(this._RE_CN_HAZARD_SEE, (...m) => {
+				const {name, suffix} = m.at(-1);
+				return `{@hazard ${name}}${suffix}`;
+			})
 		;
 	}
 
@@ -971,7 +1011,7 @@ export class CreatureTag {
 		});
 		const res = Object.entries(bySource)
 			.mergeMap(([source, names]) => {
-				const re = new RegExp(`\\b(${names.map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
+				const re = new RegExp(`(${names.map(it => it.escapeRegexp()).join("|")})`, "gi");
 				return {[source]: re};
 			});
 		// endregion
@@ -1034,6 +1074,13 @@ export class ChanceTag {
 	static _fnTag (strMod) {
 		return strMod
 			.replace(/\b(?<pct>\d+)(?: percent)(?<suffix> chance)/g, (...m) => `{@chance ${m.at(-1).pct}}${m.at(-1).suffix}`)
+			.replace(/百分之(?<pct>[\u4e00-\u9fa5\d]+)(?<suffix>的?概率)/g, (...m) => {
+				// 处理中文概率，例如“百分之50的概率”
+				const pctM = m.at(-1).pct;
+				if (!isNaN(Number(pctM))) return`{@chance ${pctM}}${m.at(-1).suffix}`;
+				const pctNum = Parser.textToNumber(pctM);
+				return`{@chance ${pctNum}}${m.at(-1).suffix}`;
+			})
 		;
 	}
 }
@@ -1067,17 +1114,27 @@ export class QuickrefTag {
 	static _fnTag (strMod) {
 		return strMod
 			.replace(QuickrefTag._RE_BASIC, (...m) => `{@quickref ${QuickrefTag._LOOKUP_BASIC[m[0].toLowerCase()]}}`)
+			.replace(QuickrefTag._RE_CN_BASIC, (...m) => `{@quickref ${QuickrefTag._LOOKUP_CN_BASIC[m[0]]}}`)
 			.replace(QuickrefTag._RE_VISION, (...m) => `{@quickref ${QuickrefTag._LOOKUP_VISION[m[0].toLowerCase()]}||${m[0]}}`)
+			.replace(QuickrefTag._RE_CN_VISION, (...m) => `{@quickref ${QuickrefTag._LOOKUP_CN_VISION[m[0]]}||${m[0]}}`)
 			.replace(QuickrefTag._RE_COVER, (...m) => `{@quickref ${QuickrefTag._LOOKUP_COVER[m[0].toLowerCase()]}||${m[0]}}`)
+			.replace(QuickrefTag._RE_CN_COVER, (...m) => `{@quickref ${QuickrefTag._LOOKUP_CN_COVER[m[0]]}||${m[0]}}`)
 		;
 	}
 }
 QuickrefTag._RE_BASIC = /\b([Dd]ifficult [Tt]errain|Vision and Light)\b/g;
+QuickrefTag._RE_CN_BASIC = /(困难地型|视野与光照)/g;
 QuickrefTag._RE_VISION = /\b(dim light|bright light|lightly obscured|heavily obscured)\b/gi;
+QuickrefTag._RE_CN_VISION = /(微光光照|明亮光照|轻度遮蔽|重度遮蔽)/g;
 QuickrefTag._RE_COVER = /\b(half cover|three-quarters cover|total cover)\b/gi;
+QuickrefTag._RE_CN_COVER = /(半掩护|四分之三掩护|全掩护)/gi;
 QuickrefTag._LOOKUP_BASIC = {
 	"difficult terrain": "difficult terrain||3",
 	"vision and light": "Vision and Light||2",
+};
+QuickrefTag._LOOKUP_CN_BASIC = {
+	"困难地型": "困难地型||3",
+	"视野与光照": "视野与光照||2",
 };
 QuickrefTag._LOOKUP_VISION = {
 	"bright light": "Vision and Light||2",
@@ -1085,10 +1142,21 @@ QuickrefTag._LOOKUP_VISION = {
 	"lightly obscured": "Vision and Light||2",
 	"heavily obscured": "Vision and Light||2",
 };
+QuickrefTag._LOOKUP_CN_VISION = {
+	"明亮光照": "明亮光照||2",
+	"微光光照": "微光光照||2",
+	"轻度遮蔽": "轻度遮蔽||2",
+	"重度遮蔽": "重度遮蔽||2",
+};
 QuickrefTag._LOOKUP_COVER = {
 	"half cover": "Cover||3",
 	"three-quarters cover": "Cover||3",
 	"total cover": "Cover||3",
+};
+QuickrefTag._LOOKUP_CN_COVER = {
+	"半掩护": "掩护||3",
+	"四分之三掩护": "掩护||3",
+	"全掩护": "掩护||3",
 };
 
 export class CoreRuleTag extends ConverterTaggerInitializable {
@@ -1124,7 +1192,7 @@ export class CoreRuleTag extends ConverterTaggerInitializable {
 				this._LOOKUP_XPHB[nameNoPlural] = rule;
 			});
 
-		this._RE_BASIC_XPHB = new RegExp(`\\b(?<ruleName>${(Object.keys(this._LOOKUP_XPHB).join("|"))})\\b`, "g");
+		this._RE_BASIC_XPHB = new RegExp(`(?<ruleName>${(Object.keys(this._LOOKUP_XPHB).join("|"))})`, "g");
 	}
 
 	static _tryRun (it, {styleHint = null} = {}) {
@@ -1162,25 +1230,53 @@ export class CoreRuleTag extends ConverterTaggerInitializable {
 			.replace(/{@variantrule Proficiency\|XPHB} Bonus/g, (...m) => {
 				return `{@variantrule Proficiency|XPHB|Proficiency Bonus}`;
 			})
+			.replace(/{@variantrule 熟练\|XPHB}加值/g, (...m) => {
+				return `{@variantrule 熟练|XPHB|熟练加值}`;
+			})
 			.replace(/Short or {@variantrule Long Rest\|XPHB}/g, (...m) => {
 				return `{@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}`;
+			})
+			.replace(/短或{@variantrule Long Rest\|XPHB}/g, (...m) => {
+				return `{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}`;
 			})
 			.replace(/(Half|Three-Quarters|Total) {@variantrule Cover\|XPHB}/g, (...m) => {
 				return `{@variantrule Cover|XPHB|${m[1]} Cover}`;
 			})
+			.replace(/(半|四分之三|全){@variantrule 掩护\|XPHB}/g, (...m) => {
+				return `{@variantrule 掩护|XPHB|${m[1]}掩护}`;
+			})
 			.replace(/\b(Cone|Cube|Cylinder|Emanation|Line|Sphere)\b/g, (...m) => {
 				return `{@variantrule ${m[1]} [Area of Effect]|XPHB|${m[1]}}`;
+			})
+			.replace(/(锥[形型状]|立方|圆柱|柱[形型状]|光环|线[形型状]|球[形型状体])\b/g, (...m) => {
+				let area = m[1];
+				switch (area[0]) {
+					case "锥": area = "锥状";
+					case "圆": case "柱": area = "圆状";
+					case "线": area = "线状"; 
+					case "球": area = "球状";
+				}
+				return `{@variantrule ${area} [效应区域]|XPHB|${area}}`;
 			})
 			.replace(/\b(Friendly|Hostile|Indifferent)\b/g, (...m) => {
 				return `{@variantrule ${m[1]} [Attitude]|XPHB|${m[1]}}`;
 			})
+			.replace(/(友好|敌对|中立)/g, (...m) => {
+				return `{@variantrule ${m[1]} [态度]|XPHB|${m[1]}}`;
+			})
 			.replace(/\b(Death Saving Throws)\b/g, (...m) => {
 				return `{@variantrule Death Saving Throw|XPHB|${m[1]}}`;
 			})
+			.replace(/(死亡豁免)/g, (...m) => {
+				return `{@variantrule 死亡豁免|XPHB|${m[1]}}`;
+			})
 			.replace(/{@variantrule Hit Points\|XPHB\|Hit Point} Die\b/g, `{@variantrule Hit Point Dice|XPHB|Hit Point Die}`)
+			.replace(/{@variantrule 生命值\|XPHB\|生命值}骰\b/g, `{@variantrule 生命值骰|XPHB|生命值骰}`)
 			.replace(/\b(Legendary) {@variantrule Action\|XPHB}/g, "$1 Action")
+			.replace(/传奇{@variantrule 动作\|XPHB}/g, "传奇动作")
 			.replace(/{@variantrule Flying\|XPHB} (Sword)/g, "Flying $1")
 			.replace(/(?<!{@variantrule )(?:{@dice )?D20(?:})? Test(?<plural>s?)/g, (...m) => `{@variantrule D20 Test|XPHB${m.at(-1).plural ? `|D20 Tests` : ""}}`)
+			.replace(/(?<!{@variantrule )(?:{@dice )?D20(?:})?\s?检定/g, (...m) => `{@variantrule D20 检定|XPHB}`)
 		;
 	}
 
@@ -1267,6 +1363,23 @@ export class FeatTag extends ConverterTaggerInitializable {
 					.join("|");
 				return `${pre}{@feat ${uidFinal}}${post}`;
 			})
+			.replace(/(?<pre>获得)(?<name>.*)(?<post>专长)/, (...m) => {
+				const {pre, post, name} = m.at(-1);
+				const feat = this._getFeat(name);
+				if (!feat) return m[0];
+				const uid = DataUtil.proxy.getUid("feat", feat, {isMaintainCase: true});
+				const [uidName, ...uidRest] = uid.split("|");
+
+				// Tag display name not expected
+				if (name.toLowerCase() !== uidName.toLowerCase()) throw new Error(`Unimplemented!`);
+
+				const uidFinal = [
+					name,
+					...uidRest,
+				]
+					.join("|");
+				return `${pre}{@feat ${uidFinal}}${post}`;
+			})
 		;
 	}
 
@@ -1301,7 +1414,7 @@ export class AdventureBookTag extends ConverterTaggerInitializable {
 
 			this[meta.propRes] = contents[meta.propData]
 				.map(({name, id}) => {
-					const re = new RegExp(`\\b${name.escapeRegexp()}\\b`, "g");
+					const re = new RegExp(`\${name.escapeRegexp()}`, "g");
 					return str => str.replace(re, (...m) => `{@${meta.tag} ${m[0]}|${id}}`);
 				});
 		}

@@ -683,6 +683,7 @@ class ModalFilterSpells extends ModalFilterBase {
 		eleRow.className = "px-0 w-100 ve-flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS](spell);
+		const ENG_hash = UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_SPELLS](spell);
 		const source = Parser.sourceJsonToAbv(spell.source);
 		const levelText = PageFilterSpells.getTblLevelStr(spell);
 		const time = PageFilterSpells.getTblTimeStr(spell.time[0]);
@@ -725,7 +726,7 @@ class ModalFilterSpells extends ModalFilterBase {
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,
 				ENG_name: spell.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(spell),
+				ENG_hash,
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,

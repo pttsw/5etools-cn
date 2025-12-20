@@ -83,9 +83,13 @@ export class EntryCoalesceEntryLists {
 		};
 
 		const isIntroString = ({str, entNxt}) => {
-			return str.trim().endsWith(":")
+			const en_intro =  str.trim().endsWith(":")
 				&& /\b(choose|choice|one of the following|following benefits|options)\b/i.exec(str)
 				&& entNxt?.type === "entries";
+			const cn_intro =  /[:：]$/.test(str.trim())
+				&& /(选择|其中的?一个|其中之一|以下增益|选项)/i.exec(str)
+				&& entNxt?.type === "entries";
+			return en_intro || cn_intro;
 		};
 
 		// Walk for "string into entries"
@@ -188,7 +192,7 @@ export class EntryCoalesceEntryLists {
 
 		for (let i = 0; i < stats[prop].length; ++i) {
 			const ent = stats[prop][i];
-			if (ent.type !== "entries" || ent.entries?.length !== 1 || !ent.name?.endsWith(":")) break;
+			if (ent.type !== "entries" || ent.entries?.length !== 1 || !ent.name?.endsWith(":") || !ent.name?.endsWith("：")) break;
 			ixEnd = i;
 		}
 
@@ -224,7 +228,7 @@ export class EntryCoalesceEntryLists {
 						|| typeof itmLast.entries.at(-1) !== "string"
 					) return arr;
 
-					if (!/^(When|Once)/i.test(itmLast.entries.at(-1))) return arr;
+					if (!/^(When|Once|每?当|一旦)/i.test(itmLast.entries.at(-1))) return arr;
 
 					const txtLast = itmLast.entries.pop();
 					arr.push(txtLast);
@@ -352,10 +356,12 @@ export class EntryCoalesceRawLines {
 				state.popNestedEntries(); // this implicitly pops nested lists
 
 				const {name, entry} = ConverterUtils.splitNameLine(state.curLine);
+				const [cnName, enName ] = ConverterUtils.splitNameToChineseAndEnglish(name);
 
 				const parentEntry = {
 					type: "entries",
-					name,
+					name: cnName,
+					ENG_name: enName,
 					entries: [entry],
 				};
 
@@ -431,8 +437,9 @@ export class EntryCoalesceRawLines {
 				.map(it => it.trim())
 				.filter(Boolean);
 			if (!Renderer.table.isRollableCell(cell0)) break;
+			const cell0Number = cell0.replace(/^(\d+)\.$/g, "$1");
 			rows.push([
-				cell0,
+				cell0Number,
 				rest.join(" "),
 			]);
 			offsetIx++;

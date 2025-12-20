@@ -481,6 +481,7 @@ export class ManageBrewUi {
 			<button class="ve-col-1 ve-btn ve-btn-default ve-btn-xs" disabled>${I18nUtil.get("common.type")}</button>
 			<button class="ve-col-3 ve-btn ve-btn-default ve-btn-xs" data-sort="source">${I18nUtil.get("common.source")}</button>
 			<button class="ve-col-3 ve-btn ve-btn-default ve-btn-xs" data-sort="authors">${I18nUtil.get("common.authors")}</button>
+			<button class="ve-col-3 ve-btn ve-btn-default ve-btn-xs" data-sort="translator">翻译</button>
 			<button class="ve-col-3 ve-btn ve-btn-default ve-btn-xs" disabled>${I18nUtil.get("common.origin")}</button>
 			<button class="ve-col-1-5 ve-btn ve-btn-default ve-btn-xs ve-grow" disabled>&nbsp;</button>
 		</div>`;
@@ -600,13 +601,13 @@ export class ManageBrewUi {
 					clazz: `ve-btn ve-btn-xxs ve-btn-default ${!hasConverters ? "disabled" : ""}`,
 					title: hasConverters ? `Converted by: ${brewSource.convertedBy.join(", ").qq()}` : "(No conversion credit given)",
 					children: [
-						e_({tag: "span", clazz: "mobile__hidden", text: "View Converters"}),
-						e_({tag: "span", clazz: "mobile__visible", text: "Convs.", title: "View Converters"}),
+						e_({tag: "span", clazz: "mobile__hidden", text: "查看编辑"}),
+						e_({tag: "span", clazz: "mobile__visible", text: "编辑", title: "查看编辑"}),
 					],
 					click: () => {
 						if (!hasConverters) return;
 						const {eleModalInner} = UiUtil.getShowModal({
-							title: `Converted By:${brewSource.convertedBy.length === 1 ? ` ${brewSource.convertedBy.join("")}` : ""}`,
+							title: `编辑者:${brewSource.convertedBy.length === 1 ? ` ${brewSource.convertedBy.join("")}` : ""}`,
 							isMinHeight0: true,
 						});
 
@@ -616,6 +617,7 @@ export class ManageBrewUi {
 				});
 
 				const authorsFull = [(brewSource.authors || [])].flat(2).join(", ");
+				const translatorsFull = [(brewSource.translators || [])].flat(2).join(", ");
 
 				const lnkUrl = brewSource.url
 					? e_({
@@ -647,6 +649,11 @@ export class ManageBrewUi {
 							clazz: `ve-col-4 px-1`,
 							text: authorsFull,
 						}),
+						e_({
+							tag: "span",
+							clazz: `ve-col-4 px-1`,
+							text: translatorsFull,
+						}),
 						lnkUrl,
 						e_({
 							tag: "div",
@@ -661,6 +668,7 @@ export class ManageBrewUi {
 				return {
 					eleRow,
 					authorsFull,
+					translatorsFull,
 					name: brewSource.full || SOURCE_UNKNOWN_FULL,
 					abbreviation: brewSource.abbreviation || SOURCE_UNKNOWN_ABBREVIATION,
 				};
@@ -800,6 +808,7 @@ export class ManageBrewUi {
 			brewName,
 			{
 				authors: rowsSubMetas.map(it => it.authorsFull).join(", "),
+				translators: rowsSubMetas.map(it => it.translatorsFull).join(", "),
 				abbreviation: rowsSubMetas.map(it => it.abbreviation).join(", "),
 				ENG_name: rowsSubMetas.ENG_name || rowsSubMetas.name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(rowsSubMetas),

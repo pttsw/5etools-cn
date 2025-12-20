@@ -227,8 +227,8 @@ export class TaggerUtils {
 }
 
 export class TagCondition extends ConverterTaggerInitializable {
-	static _STATUS_MATCHER = new RegExp(`(专注(?!于)|被突袭)`, "gi");
-	static _STATUS_MATCHER_ALT = new RegExp(`(专注于)`, "gi");
+	static _STATUS_MATCHER = new RegExp(`(专注(?!于)|被突袭|措手不及)`, "gi");
+	static _STATUS_MATCHER_ALT = new RegExp(`[(（]专注于[)）]`, "gi");
 
 	static _STATUS_MATCHER_ALT_REPLACEMENTS = {
 		"专注于": "专注",
@@ -294,7 +294,7 @@ export class TagCondition extends ConverterTaggerInitializable {
 
 				if (styleHint === SITE_STYLE__CLASSIC) return `{@status ${name}}`;
 
-				if (name === "surprised") return `{@status ${name}|${Parser.SRC_XPHB}}`; // Surprised is never capitalized
+				if (name === "surprised" || name === "措手不及" || name === "被突袭") return `{@status 措手不及|${Parser.SRC_XPHB}}`; // Surprised is never capitalized
 				return `{@status ${name.toTitleCase()}|${Parser.SRC_XPHB}}`;
 			})
 			.replace(this._STATUS_MATCHER_ALT, (...m) => {
@@ -391,7 +391,7 @@ export class TagCondition extends ConverterTaggerInitializable {
 							if (nameStack.includes("Antimagic Susceptibility")
 								|| nameStack.includes("魔力依赖")
 								|| nameStack.includes("Sneak Attack (1/Turn)")
-								|| nameStack.includes("偷袭 (1/回合)")) return str;
+								|| /偷袭\s?[(（]1\/回合[)）]/.test(str)) return str;
 							str = this._walkerStringHandlerStrict({styleHint, str, inflictedSet, inflictedAllowlist, blocklistNames});
 							return this._walkerStringHandler({styleHint, str, inflictedSet, inflictedAllowlist, blocklistNames});
 						},

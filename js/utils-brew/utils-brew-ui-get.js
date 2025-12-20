@@ -236,7 +236,7 @@ export class GetBrewUi {
 			<label class="ve-col-0-5 pr-0 ve-btn ve-btn-default ve-btn-xs ve-flex-vh-center">${rdState.cbAll}</label>
 			<button class="ve-col-3-5 sort ve-btn ve-btn-default ve-btn-xs" data-sort="name">名称</button>
 			<button class="ve-col-3 sort ve-btn ve-btn-default ve-btn-xs" data-sort="author">作者</button>
-			<button class="ve-col-3 sort ve-btn ve-btn-default ve-btn-xs" data-sort="translator">翻译/编辑</button>
+			<button class="ve-col-3 sort ve-btn ve-btn-default ve-btn-xs" data-sort="translator">翻译</button>
 			<button class="ve-col-1-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">分类</button>
 			<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="modified">修改时间</button>
 			${btnSortAddedPublished}

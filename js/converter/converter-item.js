@@ -57,7 +57,7 @@ export class ConverterItem extends ConverterBase {
 	static doParseText (inText, options) {
 		options = this._getValidOptions(options);
 
-		if (!inText || !inText.trim()) return options.cbWarning("No input!");
+		if (!inText || !inText.trim()) return options.cbWarning("未输入内容！");
 		const toConvert = this._getCleanInput(inText, options)
 			.split("\n")
 			.filter(it => it && it.trim());
@@ -122,6 +122,7 @@ export class ConverterItem extends ConverterBase {
 			EntryCoalesceEntryLists.mutCoalesce(stats, "entries", {styleHint: options.styleHint});
 
 			if (/is a (tiny|small|medium|large|huge|gargantuan) object/i.test(JSON.stringify(stats.entries))) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Item may be an object!`);
+			if (/是一个(微|小|重|大|巨大?|超巨)[型形]物件/i.test(JSON.stringify(stats.entries))) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}物品可能是一个物件!`);
 		}
 		this._doItemPostProcess_addTags(stats, options);
 		BasicTextClean.tryRun(stats);
@@ -297,7 +298,7 @@ export class ConverterItem extends ConverterBase {
 					continue;
 				}
 
-				if (options.styleHint === SITE_STYLE__CLASSIC) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}由多个基础物品"${mBaseWeapon.groups.ptParens}"`);
+				if (options.styleHint === SITE_STYLE__CLASSIC) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}继承了多个基础物品"${mBaseWeapon.groups.ptParens}"`);
 
 				// e.g. XDMG items have broken down "any sword" into a specific list of items
 				(stats.requires ||= [])
@@ -618,26 +619,26 @@ export class ConverterItem extends ConverterBase {
 
 	static _GENERIC_REQUIRES_LOOKUP_ARMOR = {
 		"light": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR}],
-		"轻型": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR}],
+		"轻": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_LIGHT_ARMOR : Parser.ITM_TYP__LIGHT_ARMOR}],
 		"medium": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MEDIUM_ARMOR : Parser.ITM_TYP__MEDIUM_ARMOR}],
-		"中型": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MEDIUM_ARMOR : Parser.ITM_TYP__MEDIUM_ARMOR}],
+		"中": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_MEDIUM_ARMOR : Parser.ITM_TYP__MEDIUM_ARMOR}],
 		"heavy": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_HEAVY_ARMOR : Parser.ITM_TYP__HEAVY_ARMOR}],
-		"重型": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_HEAVY_ARMOR : Parser.ITM_TYP__HEAVY_ARMOR}],
+		"重": ({styleHint}) => [{"type": styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_HEAVY_ARMOR : Parser.ITM_TYP__HEAVY_ARMOR}],
 
 		"hide": ({styleHint}) => [{"name": "Hide Armor", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
-		"兽皮甲": ({styleHint}) => [{"name": "兽皮甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"兽皮": ({styleHint}) => [{"name": "兽皮甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"half plate": ({styleHint}) => [{"name": "Half Plate Armor", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
-		"半身板甲": ({styleHint}) => [{"name": "半身板甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"半身板": ({styleHint}) => [{"name": "半身板甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"plate": ({styleHint}) => [{"name": "Plate Armor", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
-		"板甲": ({styleHint}) => [{"name": "板甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"板": ({styleHint}) => [{"name": "板甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"chain mail": ({styleHint}) => [{"name": "Chain Mail", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
-		"链甲": ({styleHint}) => [{"name": "链甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
+		"链": ({styleHint}) => [{"name": "链甲", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 		"链甲衫": ({styleHint}) => [{"name": "链甲衫", "source": styleHint === SITE_STYLE__ONE ? Parser.SRC_XPHB : Parser.SRC_PHB}],
 	};
 
 	static _GENERIC_EXCLUDES_LOOKUP_ARMOR = {
 		"hide": {"name": "Hide Armor"},
-		"兽皮甲": {"name": "兽皮甲"},
+		"兽皮": {"name": "兽皮甲"},
 	};
 
 	static _setCleanTaglineInfo_getGenericRequires ({stats, str, options}) {
@@ -673,12 +674,12 @@ export class ConverterItem extends ConverterBase {
 		const isCNSuffix = /^\s*之/i.test(prefixSuffixName);
 		stats.inherits = MiscUtil.copy(stats);
 		// Clean/move inherit props into inherits object
-		["name", "requires", "excludes", "ammo"].forEach(prop => delete stats.inherits[prop]); // maintain some props on base object
+		["name", "ENG_name", "requires", "excludes", "ammo"].forEach(prop => delete stats.inherits[prop]); // maintain some props on base object
 		Object.keys(stats.inherits).forEach(k => delete stats[k]);
 
 		if (isSuffix) stats.inherits.nameSuffix = ` ${prefixSuffixName.trim()}`;
 		else if (isCNSuffix) stats.inherits.nameSuffix = `${prefixSuffixName.trim()} `;
-		else stats.inherits.namePrefix = `${prefixSuffixName.trim()} `;
+		else stats.inherits.namePrefix = `${prefixSuffixName.trim()}`;
 
 		stats.__prop = "magicvariant";
 		stats.type = options.styleHint === SITE_STYLE__ONE ? Parser.ITM_TYP__ODND_GENERIC_VARIANT : Parser.ITM_TYP__GENERIC_VARIANT;
@@ -688,8 +689,8 @@ export class ConverterItem extends ConverterBase {
 	static _setWeight (stats, options) {
 		const strEntries = JSON.stringify(stats.entries);
 
-		strEntries.replace(/weighs ([a-zA-Z0-9,]+)\s?(pounds?|lbs?\.|tons?|磅|吨)/, (...m) => {
-			if (/^(?:ton|吨)/.test(m[2].toLowerCase().trim())) throw new Error(`不支持处理单位 吨！`);
+		strEntries.replace(/weighs ([a-zA-Z0-9,]+) (pounds?|lbs?\.|tons?)/, (...m) => {
+			if (m[2].toLowerCase().trim().startsWith("ton")) throw new Error(`Handling for tonnage is unimplemented!`);
 
 			const noCommas = m[1].replace(/,/g, "");
 			if (!isNaN(noCommas)) stats.weight = Number(noCommas);
@@ -697,8 +698,21 @@ export class ConverterItem extends ConverterBase {
 			const fromText = Parser.textToNumber(m[1]);
 			if (!isNaN(fromText)) stats.weight = fromText;
 
-			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}重量 "${m[1]}" 无法自动转换`);
+			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Weight "${m[1]}" requires manual conversion`);
 		});
+
+		strEntries.replace(/重量?为?\s?([\u4e00-\u9fa50-9,]+)\s?(英?磅|吨)/, (...m) => {
+			if (m[2].toLowerCase().trim().startsWith("吨")) throw new Error(`不支持自动处理单位“吨”！`);
+
+			const noCommas = m[1].replace(/,/g, "");
+			if (!isNaN(noCommas)) stats.weight = Number(noCommas);
+
+			const fromText = Parser.textToNumber(m[1]);
+			if (!isNaN(fromText)) stats.weight = fromText;
+
+			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}重量 "${m[1]}"不支持自动转换`);
+		});
+		
 	}
 
 	static _setQuarterstaffStats (stats, options) {

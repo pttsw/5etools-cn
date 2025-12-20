@@ -44,7 +44,7 @@ class _PageGeneratorAdventures extends PageGeneratorAdventuresBooksBase {
 		HtmlGeneratorListButtons.getBtn({width: "5-5", sortIdent: "name", text: "名称"}),
 		HtmlGeneratorListButtons.getBtn({width: "2-5", sortIdent: "storyline", text: "故事情节"}),
 		HtmlGeneratorListButtons.getBtn({width: "1", sortIdent: "level", text: "等级"}),
-		HtmlGeneratorListButtons.getBtn({width: "1", sortIdent: "translator", text: "翻译/编辑"}),
+		HtmlGeneratorListButtons.getBtn({width: "1", sortIdent: "translator", text: "翻译"}),
 		HtmlGeneratorListButtons.getBtn({width: "1-7", sortIdent: "published", text: "出版时间"}),
 	];
 }
@@ -61,7 +61,7 @@ class _PageGeneratorBooks extends PageGeneratorAdventuresBooksBase {
 	_btnsList = [
 		HtmlGeneratorListButtons.getBtn({width: "1-3", sortIdent: "group", text: "类型"}),
 		HtmlGeneratorListButtons.getBtn({width: "7-3", sortIdent: "name", text: "名称"}),
-		HtmlGeneratorListButtons.getBtn({width: "1-3", sortIdent: "translator", text: "翻译/编辑"}),
+		HtmlGeneratorListButtons.getBtn({width: "1-3", sortIdent: "translator", text: "翻译"}),
 		HtmlGeneratorListButtons.getBtn({sortIdent: "published", text: "出版时间"}),
 	];
 }

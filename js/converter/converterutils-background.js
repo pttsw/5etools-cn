@@ -92,10 +92,11 @@ export class EquipmentBreakdown {
 
 		blocklistSplits.forEach((str, i) => entry = entry.replace(str, `__SPLIT_${i}__`));
 
-		if (/^Choose A or B:/.test(entry)) {
-			entry = entry.replace(/^Choose A or B: \(A\)\s*/, "");
+		if (/^(?:Choose A or B:|选择\s?A\s?或\s?B\s?[:：])/.test(entry)) {
+			entry = entry.replace(/^Choose A or B: \(A\)\s*/, "")
+				.replace(/^选择\s?A\s?或\s?B\s?[:：]\s?[(（]A[）)]\s*/, "")
 			const [ptA, ptB] = entry
-				.split("; or (B) ")
+				.split(/(?:; or \(B\) |[;；]或[(（]B[)）])\s?/)
 				.map(pt => pt.trim()).filter(Boolean);
 
 			const startingA = this._getConvertedPartInfo({
@@ -157,13 +158,13 @@ export class EquipmentBreakdown {
 				// Strip leading "and" and trailing punctuation
 				pt = pt
 					.trim()
-					.replace(/^and /i, "")
-					.replace(/[.!?]$/, "")
+					.replace(/^(?:and |和|以及)/i, "")
+					.replace(/[.!?。！？]$/, "")
 					.trim();
 
 				// Split up choices
 				const ptChoices = this._splitChoices({str: pt, allowlistOrEnds})
-					.map(c => c.trim().replace(/,$/, "").trim());
+					.map(c => c.trim().replace(/[,，、]$/, "").trim());
 
 				const outChoices = ptChoices
 					.map(ch => {
@@ -179,7 +180,19 @@ export class EquipmentBreakdown {
 								);
 								return "";
 							})
+							.replace(/^(任意一|一|一|两|三|四|五|六|七|八|九|十|\d+)[\u4e00-\u9fa5]/i, (...m) => {
+								quantity = Parser.textToNumber(
+									m[1]
+										.replace(/^任意/i, "").trim()
+								);
+								return "";
+							})
 							.replace(/\((?<amount>\d+) days' worth\)$/i, (...m) => {
+								const {amount} = m.at(-1);
+								quantity = Parser.textToNumber(amount.trim());
+								return m[0];
+							})
+							.replace(/[(（](?<amount>\d+)天份[)）]$/i, (...m) => {
 								const {amount} = m.at(-1);
 								quantity = Parser.textToNumber(amount.trim());
 								return m[0];
@@ -205,16 +218,28 @@ export class EquipmentBreakdown {
 								valueCp += Parser.coinValueToNumber(m[2]);
 								return "";
 							})
+							.replace(/(包括|含有|内含|价值)\s?(\d+\s*(?:[csgep]p|金币|银币|铜币|铂金币|银金币|白金币))(\s+[(（][^)）]+[)）])?的?/gi, (...m) => {
+								switch (m[1].toLowerCase().trim()) {
+									case "包括":
+									case "含有":
+									case "内含": cntValueContainingWith += 1; break;
+									case "价值": cntValueWorth += 1; break;
+									default: throw new Error(`Unhandled "${m[1]}"`);
+								}
+
+								valueCp += Parser.coinValueToNumber(m[2]);
+								return "";
+							})
 							.replace(/\s+/g, " ")
 							.trim()
 							// Handle e.g. "1 sp"--the quantity will have been pulled out already
-							.replace(/^[csgep]p$/gi, (...m) => {
+							.replace(/^[csgep]p|金币|银币|铜币|铂金币|银金币|白金币$/gi, (...m) => {
 								valueCp = Parser.coinValueToNumber(`${quantity} ${m[0]}`);
 								return "";
 							})
 							.trim()
 							// Handle e.g. "(10 gp)"
-							.replace(/\((\d+\s*[csgep]p)\)/gi, (...m) => {
+							.replace(/[(（](\d+\s*(?:[csgep]p|金币|银币|铜币|铂金币|银金币|白金币))[)）]/gi, (...m) => {
 								valueCp += Parser.coinValueToNumber(m[1]);
 								return "";
 							})
@@ -360,6 +385,7 @@ export class EquipmentBreakdown {
 		for (let i = 0; i < str.length; ++i) {
 			const c = str[i];
 			switch (c) {
+				case "（":
 				case "(": {
 					if (expectAt) { braceDepth--; expectAt = false; }
 
@@ -368,6 +394,7 @@ export class EquipmentBreakdown {
 
 					break;
 				}
+				case "）":
 				case ")": {
 					if (expectAt) { braceDepth--; expectAt = false; }
 
@@ -464,6 +491,7 @@ export class EquipmentBreakdown {
 		for (let i = 0; i < str.length; ++i) {
 			const c = str[i];
 			switch (c) {
+				case "（":
 				case "(": {
 					if (expectAt) { braceDepth--; expectAt = false; }
 
@@ -480,6 +508,7 @@ export class EquipmentBreakdown {
 
 					break;
 				}
+				case "）":
 				case ")": {
 					if (expectAt) { braceDepth--; expectAt = false; }
 
@@ -538,8 +567,11 @@ export class EquipmentBreakdown {
 	static _getFilterType (str) {
 		switch (str.toLowerCase().trim()) {
 			case "artisan's tools": return {equipmentType: "toolArtisan"};
+			case "工匠工具": return {equipmentType: "toolArtisan"};
 			case "gaming set": return {equipmentType: "setGaming"};
+			case "赌具": return {equipmentType: "setGaming"};
 			case "musical instrument": return {equipmentType: "instrumentMusical"};
+			case "乐器": return {equipmentType: "instrumentMusical"};
 
 			default: throw new Error(`Unhandled filter type "${str}"`);
 		}
@@ -684,8 +716,11 @@ export class BackgroundSkillToolLanguageTag {
 
 	static _TOOL_GROUP_MAPPINGS = {
 		"gaming set": "anyGamingSet",
+		"赌具": "anyGamingSet",
 		"artisan's tools": "anyArtisansTool",
+		"工匠工具": "anyArtisansTool",
 		"musical instrument": "anyMusicalInstrument",
+		"乐器": "anyMusicalInstrument",
 	};
 
 	static _doToolTag ({bg, list, cbWarning}) {
@@ -695,20 +730,25 @@ export class BackgroundSkillToolLanguageTag {
 		const entry = Renderer.stripTags(toolProf.entry.toLowerCase())
 			.replace(/\(see [^)]+\)/g, "").trim()
 			.replace(/(?:choose )?one (?:type|kind) of gaming set/g, "gaming set")
+			.replace(/(?:自选|选择)?(?:一|1)(?:种|个)赌具/g, "gaming set")
 			.replace(/(?:choose )?one (?:type|kind) of artisan's tools/g, "artisan's tools")
+			.replace(/(?:自选|选择)?(?:一|1)(?:种|个)工匠工具/g, "artisan's tools")
 			.replace(/(?:choose )?one (?:type|kind) of gaming set/g, "gaming set")
 			.replace(/(?:choose )?one (?:type|kind) of musical instrument/g, "musical instrument")
+			.replace(/(?:自选|选择)?(?:一|1)(?:种|个)乐器/g, "musical instrument")
 			.replace(/(?:choose )?one other set of artisan's tools/g, "artisan's tools")
+			.replace(/(?:自选|选择)?(?:另外|其他)的?(?:一|1)(?:种|个)工匠工具/g, "artisan's tools")
+			.replace(/(?:自选|选择)?(?:一|1)(?:种|个)其他的?工匠工具/g, "artisan's tools")
 			.replace(/s' supplies/g, "'s supplies")
 		;
 
-		const isChoice = /\bany |\bchoose |\bone type|\bchoice|\bor /g.exec(entry);
-		const isSpecial = /\bspecial/.exec(entry);
+		const isChoice = /\bany |\bchoose |\bone type|\bchoice|\bor |选择|任意|任一|一种|或/g.exec(entry);
+		const isSpecial = /\bspecial|特殊/.exec(entry);
 
 		if (!isChoice && !isSpecial) {
 			bg.toolProficiencies = [
 				entry.toLowerCase()
-					.split(/,\s?(?![^(]*\))| or | and /g)
+					.split(/,\s?(?![^(]*\))| or | and |[,，]\s?(?![^(（]*[)）])|或|和|以及/g)
 					.filter(Boolean)
 					.map(pt => pt.trim())
 					.filter(pt => pt)
@@ -724,8 +764,9 @@ export class BackgroundSkillToolLanguageTag {
 		if (isChoice) {
 			const entryClean = entry
 				.replace(/^either /gi, "");
-
+			
 			const out = {};
+			// TODO(kiwee) 这些回来在处理吧，太多了
 			switch (entryClean) {
 				case "cartographer's tools or navigator's tools":
 					out.choose = {from: ["navigator's tools", "cartographer's tools"]};
@@ -804,7 +845,8 @@ export class BackgroundSkillToolLanguageTag {
 		if (mDoubleAnd) return [{[mDoubleAnd[1].toLowerCase()]: true, [mDoubleAnd[2].toLowerCase()]: true}];
 
 		const mDoubleAndChoose = new RegExp(`^${reStrLanguage} and one other language of your choice$`, "i").exec(str)
-		|| new RegExp(`^${reStrLanguage}[与和]另一[项门]你(?:自选|选择)的语言$`, "i").exec(str);
+		|| new RegExp(`^${reStrLanguage}(?:与|和|以及)另?一[项门]你?(?:自选|选择)的语言$`, "i").exec(str)
+		|| new RegExp(`^${reStrLanguage}(?:与|和|以及)你?(?:自选|选择)的另?一[项门]语言$`, "i").exec(str);
 		if (mDoubleAndChoose) return [{[mDoubleAndChoose[1].toLowerCase()]: true, "anyStandard": true}];
 
 		const mDoubleOr = new RegExp(`^${reStrLanguage}(?: or | ?或 ?)${reStrLanguage}$`, "i").exec(str);

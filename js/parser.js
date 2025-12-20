@@ -978,6 +978,9 @@ Parser.coinAbvToFull = function (coin) {
 	return Parser._parse_aToB(Parser.COIN_ABV_TO_FULL, coin);
 };
 
+Parser.coinFullToAbv = function (coin) {
+	return Parser._parse_bToA(Parser.COIN_ABV_TO_FULL, coin);
+};
 /**
  * @param currency Object of the form `{pp: <n>, gp: <m>, ... }`.
  * @param isDisplayEmpty If "empty" values (i.e., those which are 0) should be displayed.
@@ -1205,7 +1208,7 @@ Parser.itemRarityToShort = function (rarity) {
 
 Parser._decimalSeparator = (0.1).toLocaleString().substring(1, 2);
 Parser._numberCleanRegexp = Parser._decimalSeparator === "." ? new RegExp(/[\s,]*/g, "g") : new RegExp(/[\s.]*/g, "g");
-Parser._costSplitRegexp = Parser._decimalSeparator === "." ? new RegExp(/(\d+(\.\d+)?)([csegp]p)/) : new RegExp(/(\d+(,\d+)?)([csegp]p)/);
+Parser._costSplitRegexp = Parser._decimalSeparator === "." ? new RegExp(/(\d+(\.\d+)?)([csegp]p|金币|银币|铜币|铂金币|银金币|白金币)/) : new RegExp(/(\d+(,\d+)?)([csegp]p|金币|银币|铜币|铂金币|银金币|白金币)/);
 
 /** input e.g. "25 gp", "1,000pp" */
 Parser.coinValueToNumber = function (value) {
@@ -1219,7 +1222,8 @@ Parser.coinValueToNumber = function (value) {
 		.toLowerCase();
 	const m = Parser._costSplitRegexp.exec(value);
 	if (!m) throw new Error(`Badly formatted value "${value}"`);
-	const ixCoin = Parser.COIN_ABVS.indexOf(m[3]);
+	const coinAbv = Parser.coinFullToAbv(m[3])
+	const ixCoin = Parser.COIN_ABVS.indexOf(coinAbv);
 	if (!~ixCoin) throw new Error(`Unknown coin type "${m[3]}"`);
 	return Number(m[1]) * Parser.COIN_CONVERSIONS[ixCoin];
 };
@@ -1495,12 +1499,12 @@ Parser.getNormalizedUnit = function (unit) {
 	unit = unit.toLowerCase().trim();
 
 	switch (unit) {
-		case "inch": case "in.": case "in": case Parser.UNT_INCHES: return Parser.UNT_INCHES;
-		case "foot": case "ft.": case "ft": case Parser.UNT_FEET: return Parser.UNT_FEET;
-		case "yard": case "yd.": case "yd": case Parser.UNT_YARDS: return Parser.UNT_YARDS;
-		case "mile": case "mi.": case "mi": case Parser.UNT_MILES: return Parser.UNT_MILES;
+		case "英寸": case "寸": case "inch": case "in.": case "in": case Parser.UNT_INCHES: return Parser.UNT_INCHES;
+		case "英尺": case "尺": case "foot": case "ft.": case "ft": case Parser.UNT_FEET: return Parser.UNT_FEET;
+		case "码": case "yard": case "yd.": case "yd": case Parser.UNT_YARDS: return Parser.UNT_YARDS;
+		case "英里": case "里": case "mile": case "mi.": case "mi": case Parser.UNT_MILES: return Parser.UNT_MILES;
 
-		case "pound": case "pounds": case "lbs.": case "lb.": case "lb": case Parser.UNT_LBS: return Parser.UNT_LBS;
+		case "英磅": case "磅": case "pound": case "pounds": case "lbs.": case "lb.": case "lb": case Parser.UNT_LBS: return Parser.UNT_LBS;
 		default: return unit;
 	}
 };
@@ -4559,8 +4563,51 @@ Parser.DMGTYPE_JSON_TO_FULL = {
 	"T": "雷鸣",
 };
 
-Parser.DMG_TYPES = ["强酸", "钝击", "冷冻", "火焰", "力场", "闪电", "黯蚀", "穿刺", "毒素", "心灵", "光耀", "挥砍", "雷鸣"];
+Parser.DMG_TYPES = ["强酸", "钝击", "寒冷", "火焰", "力场", "闪电", "暗蚀", "穿刺", "毒素", "心灵", "光耀", "挥砍", "雷鸣"];
+
+Parser.DMG_TYPE_TO_EN = {
+	"强酸": "acid",
+	"钝击": "bludgeoning",
+	"寒冷": "cold",
+	"火焰": "fire",
+	"力场": "force",
+	"闪电": "lightning",
+	"暗蚀": "necrotic",
+	"穿刺": "piercing",
+	"毒素": "poison",
+	"心灵": "psychic",
+	"光耀": "radiant",
+	"挥砍": "slashing",
+	"雷鸣": "thunder",
+};
+Parser.dmgTypeToEn = function (dmgType) {
+		return Parser._parse_aToB(Parser.DMG_TYPE_TO_EN, dmgType);
+};
+
 Parser.CONDITIONS = ["目盲", "魅惑", "耳聋", "力竭", "恐慌", "受擒", "失能", "隐形", "麻痹", "石化", "中毒", "倒地", "束缚", "震慑", "昏迷"];
+
+Parser.CONTITION_TO_EN = {
+	"目盲": "blinded",
+	"魅惑": "charmed",
+	"耳聋": "deafened",
+	"力竭": "exhaustion",
+	"恐慌": "frightened",
+	"受擒": "grappled",
+	"失能": "incapacitated",
+	"隐形": "invisible",
+	"麻痹": "paralyzed",
+	"石化": "petrified",
+	"中毒": "poisoned",
+	"倒地": "prone",
+	"束缚": "restrained",
+	"震慑": "stunned",
+	"昏迷": "unconscious",
+};
+
+Parser.conditionToEn = function (condition) {
+	return Parser._parse_aToB(Parser.CONTITION_TO_EN, condition);
+};
+
 Parser._SENSES_LEGACY = [
 	{"name": "盲视", "source": Parser.SRC_PHB},
 	{"name": "黑暗视觉", "source": Parser.SRC_PHB},

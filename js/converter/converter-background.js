@@ -191,6 +191,17 @@ export class ConverterBackground extends ConverterFeatureBase {
 		const entries = EntryCoalesceRawLines.mutGetCoalesced(
 			ptrI,
 			state.toConvert,
+			// {
+			// 	fnStop: (nxtLine) => {
+			// 		if (this._RE_LINE_START_ABILITY_SCORES.test(nxtLine)) return true;
+			// 		if (this._RE_LINE_START_FEAT.test(nxtLine)) return true;
+			// 		if (this._RE_LINE_START_SKILL_PROFICIENCIES.test(nxtLine)) return true;
+			// 		if (this._RE_LINE_START_TOOL_PROFICIENCIES.test(nxtLine)) return true;
+			// 		if (this._RE_LINE_START_EQUIPMENT.test(nxtLine)) return true;
+			// 		if (this._RE_LINE_START_LANGUAGE.test(nxtLine)) return true;
+			// 		return false;
+			// 	}
+			// }
 		);
 		state.ixToConvert = ptrI._;
 

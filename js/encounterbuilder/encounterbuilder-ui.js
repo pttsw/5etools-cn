@@ -396,7 +396,7 @@ export class EncounterBuilderUi extends BaseComponent {
 		absurd: "“荒谬”的遭遇按规则来说属于致命的遭遇，但在此处单独划分一类，旨在提供一种额外的工具，用于精准判断某场 “致命” 遭遇的实际致命程度。其XP的计算方式为：致命 +（致命 - 困难）",
 	};
 	static _TITLE_BUDGET_DAILY = "这样就可以粗略的计算出在角色们需要进行一次长休前，队伍可处理遭遇的校正XP值。";
-	static _TITLE_XP_TO_NEXT_LEVEL = "🙆‍♀️队伍中每个角色都能升一级的总XP";
+	static _TITLE_XP_TO_NEXT_LEVEL = "队伍中每个角色都能升一级的总XP";
 	static _TITLE_TTK = "Time to Kill: 队伍完成这次遭遇需要的预估回合数。假设每次攻击都是单目标攻击。";
 
 	static _getDifficultyKey ({partyMeta, encounterXpInfo}) {

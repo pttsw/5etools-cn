@@ -11609,7 +11609,7 @@ Renderer.item = class {
 			const isAddDex = item.dexterityMax !== undefined || ![Parser.ITM_TYP_ABV__HEAVY_ARMOR, Parser.ITM_TYP_ABV__SHIELD].includes(itemTypeAbv);
 
 			const prefix = itemTypeAbv === Parser.ITM_TYP_ABV__SHIELD ? "+" : "";
-			const suffix = isAddDex ? ` + Dex${dexterityMax ? ` (max ${dexterityMax})` : ""}` : "";
+			const suffix = isAddDex ? ` + 敏捷${dexterityMax ? ` (最大 ${dexterityMax})` : ""}` : "";
 
 			damageParts.push(`AC ${prefix}${item.ac}${suffix}`);
 		}
@@ -11941,9 +11941,9 @@ Renderer.item = class {
 		subTypeText ||= "";
 		tierText ||= "";
 
-		const ptTypeRarity = styleHint === "classic" ? typeRarityText.uppercaseFirst() : typeRarityText.toTitleCase();
-		const ptTier = styleHint === "classic" ? subTypeText.uppercaseFirst() : subTypeText.toTitleCase();
-		const ptSubtype = styleHint === "classic" ? tierText.uppercaseFirst() : tierText.toTitleCase();
+		const ptTypeRarity = styleHint === "classic" ? typeRarityText : typeRarityText;
+		const ptTier = styleHint === "classic" ? subTypeText : subTypeText;
+		const ptSubtype = styleHint === "classic" ? tierText : tierText;
 
 		return `<div class="ve-flex-col">
 			${typeRarityText || tierText ? `<div class="split ${subTypeText ? "mb-1" : ""}">
@@ -12634,10 +12634,24 @@ Renderer.item = class {
 		if (itemTypeAbv === Parser.ITM_TYP_ABV__LIGHT_ARMOR || itemTypeAbv === Parser.ITM_TYP_ABV__MEDIUM_ARMOR || itemTypeAbv === Parser.ITM_TYP_ABV__HEAVY_ARMOR) {
 			if (item.stealth) {
 				Renderer.item._initFullEntries(item);
-				const wrapped = styleHint === "classic"
-					? "穿戴者在敏捷({@skill 隐匿})检定上具有劣势。"
-					: "穿戴者在敏捷({@skill 隐匿|XPHB})检定上具有{@variantrule 劣势|XPHB}。";
-				item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type"}});
+				let needAddText = true;
+				if (item.entries) {
+					for (const e of item.entries) {
+						// 如果entry是字符串类型且其中包含 不会对敏捷造成劣势的字样，则不添加下述文本
+						if (typeof e === 'string' && /不会对敏捷.*造成劣势/.test(e)) {
+							// 满足条件则标记为不需要添加文本，并跳出循环
+							needAddText = false;
+							break;
+						}
+					}
+				}
+				if (needAddText) {
+					const wrapped = styleHint === "classic"
+						? "穿戴者在敏捷({@skill 隐匿})检定上具有劣势。"
+						: "穿戴者在敏捷({@skill 隐匿|XPHB})检定上具有{@variantrule 劣势|XPHB}。";
+					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type"}});
+					}
+
 			}
 			if (itemTypeAbv === Parser.ITM_TYP_ABV__HEAVY_ARMOR && item.strength) {
 				Renderer.item._initFullEntries(item);
@@ -14728,7 +14742,7 @@ Renderer.skill = class {
 		return `
 			${Renderer.utils.getNameTr(ent)}
 			<tr><td colspan="6" class="pb-2">
-			${ent.ability ? `<p><i>Ability: ${Parser.attAbvToFull(ent.ability)}</i></p>` : ""}
+			${ent.ability ? `<p><i>技能: ${Parser.attAbvToFull(ent.ability)}</i></p>` : ""}
 			${Renderer.get().setFirstSection(true).render({type: "entries", entries: ent.entries})}
 			</td></tr>
 			${Renderer.utils.getPageTr(ent)}
