@@ -409,7 +409,7 @@ export class EncounterBuilderUi extends BaseComponent {
 	}
 
 	static _getDifficultyHtml ({partyMeta, difficulty}) {
-		return `<span class="help-subtle" title="${this._TITLE_DIFFICULTIES[difficulty]}">${Parser.encounterDifficultyToCn(difficulty)}:</span> ${partyMeta[difficulty].toLocaleString()} XP`;
+		return `<span class="help-subtle" title="${this._TITLE_DIFFICULTIES[difficulty]}">${Parser.encounterDifficultyToCn(difficulty)}:</span> ${partyMeta[difficulty].toLocaleStringVe()} XP`;
 	}
 
 	_renderGroupAndDifficulty_getGroupInfoRhs () {
@@ -451,10 +451,10 @@ export class EncounterBuilderUi extends BaseComponent {
 				.html(`<span class="help" title="${this.constructor._TITLE_TTK}">TTK:</span> ${EncounterBuilderUiTtk.getApproxTurnsToKill({partyMeta, creatureMetas: this._comp.creatureMetas}).toFixed(2)}`);
 
 			dispBudgetDaily
-				.html(`<span class="help-subtle" title="${this.constructor._TITLE_BUDGET_DAILY}">每日XP:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
+				.html(`<span class="help-subtle" title="${this.constructor._TITLE_BUDGET_DAILY}">每日XP:</span> ${partyMeta.dailyBudget.toLocaleStringVe()} XP`);
 
 			dispExpToLevel
-				.html(`<span class="help-subtle" title="${this.constructor._TITLE_XP_TO_NEXT_LEVEL}">升级XP:</span> ${partyMeta.xpToNextLevel.toLocaleString()} XP`);
+				.html(`<span class="help-subtle" title="${this.constructor._TITLE_XP_TO_NEXT_LEVEL}">升级XP:</span> ${partyMeta.xpToNextLevel.toLocaleStringVe()} XP`);
 		})();
 
 		return ee`<div class="w-30 ve-text-right">
@@ -505,8 +505,8 @@ export class EncounterBuilderUi extends BaseComponent {
 				encounterXpInfo = EncounterBuilderXpInfo.getDefault(),
 			} = this._state.derivedGroupAndDifficulty;
 
-			dispXpRawTotal.txt(`总XP: ${encounterXpInfo.baseXp.toLocaleString()}`);
-			dispXpRawPerPlayer.txt(`(每位玩家${Math.floor(encounterXpInfo.baseXp / partyMeta.cntPlayers).toLocaleString()})`);
+			dispXpRawTotal.txt(`总XP: ${encounterXpInfo.baseXp.toLocaleStringVe()}`);
+			dispXpRawPerPlayer.txt(`(每位玩家${Math.floor(encounterXpInfo.baseXp / partyMeta.cntPlayers).toLocaleStringVe()})`);
 
 			const infoEntry = EncounterBuilderUiHelp.getHelpEntry({partyMeta, encounterXpInfo});
 
@@ -525,8 +525,8 @@ export class EncounterBuilderUi extends BaseComponent {
 				Renderer.hover.updatePredefinedHover(rdState.infoHoverId, infoEntry);
 			}
 
-			dispXpAdjustedTotal.html(`建议XP <span class="ve-small ve-muted ml-2" title="XP 乘数">(×${encounterXpInfo.playerAdjustedXpMult})</span>: <b class="ml-2">${encounterXpInfo.adjustedXp.toLocaleString()}</b>`);
-			dispXpAdjustedPerPlayer.txt(`(每位玩家${Math.floor(encounterXpInfo.adjustedXp / partyMeta.cntPlayers).toLocaleString()})`);
+			dispXpAdjustedTotal.html(`建议XP <span class="ve-small ve-muted ml-2" title="XP 乘数">(×${encounterXpInfo.playerAdjustedXpMult})</span>: <b class="ml-2">${encounterXpInfo.adjustedXp.toLocaleStringVe()}</b>`);
+			dispXpAdjustedPerPlayer.txt(`(每位玩家${Math.floor(encounterXpInfo.adjustedXp / partyMeta.cntPlayers).toLocaleStringVe()})`);
 		})();
 
 		return ee`<div class="w-50 ve-text-right">

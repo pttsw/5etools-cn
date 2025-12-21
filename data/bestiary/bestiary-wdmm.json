@@ -1555,6 +1555,16 @@
 						"with": "德里文",
 						"flags": "i"
 					},
+					"_": {
+						"ENG_name": "Innate Spellcasting",
+						"name": "天生施法",
+						"mode": "addSpells",
+						"daily": {
+							"1e": [
+								"{@spell 浮空术}（仅自身）"
+							]
+						}
+					},
 					"action": {
 						"mode": "appendArr",
 						"items": {
@@ -4556,19 +4566,43 @@
 				"name": "青足龙蛇",
 				"source": "MM"
 			},
-			"legendary": [
+			"spellcasting": [
 				{
 					"ENG_name": "Lesser Magic",
 					"name": "次级魔法",
-					"entries": [
-						"青足龙蛇施放{@spell 七彩喷射}或{@spell 睡眠}法术，无需任何材料。"
+					"type": "spellcasting",
+					"headerEntries": [
+						"符文青足龙蛇施展{@spell 七彩喷射}或{@spell 睡眠}，无需任何成分。其施法属性为魅力（法术豁免{@dc 13}）。"
+					],
+					"legendary": {
+						"1e": [
+							"{@spell 七彩喷射}",
+							"{@spell 睡眠}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "legendary",
+					"hidden": [
+						"传说"
 					]
 				},
 				{
 					"ENG_name": "Greater Magic (Costs 2 Actions)",
 					"name": "高等魔法（消耗2个动作）",
-					"entries": [
+					"type": "spellcasting",
+					"headerEntries": [
 						"青足龙蛇施放{@spell 隐形术}或{@spell 迷踪步}，无需任何成分。"
+					],
+					"legendary": {
+						"2e": [
+							"{@spell 隐形术}",
+							"{@spell 迷踪步}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "legendary",
+					"hidden": [
+						"传说"
 					]
 				}
 			],

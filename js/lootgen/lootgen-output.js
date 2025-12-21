@@ -210,9 +210,9 @@ export class LootGenOutput {
 		].sum();
 
 		if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-			return ee`<li class="italic ve-muted">总计价值${(totalValue / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")}的货币、艺术品和/或宝石，如下：</li>`;
+			return ee`<li class="italic ve-muted">总计价值${(totalValue / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}的货币、艺术品和/或宝石，如下：</li>`;
 		}
-		return ee`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} worth of coins, art objects, and/or gems, as follows:</li>`;
+		return ee`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} worth of coins, art objects, and/or gems, as follows:</li>`;
 	}
 
 	_render_getPtCoins () {
@@ -222,10 +222,10 @@ export class LootGenOutput {
 		const breakdown = [...Parser.COIN_ABVS]
 			.reverse()
 			.filter(it => this._coins[it])
-			.map(it => `${this._coins[it].toLocaleString()} ${LootGenUtils.getCoinageLabel(it)}`);
+			.map(it => `${this._coins[it].toLocaleStringVe()} ${LootGenUtils.getCoinageLabel(it)}`);
 
 		return ee`
-			<li>${(total / 100).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} in coinage:</li>
+			<li>${(total / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} in coinage:</li>
 			<ul>
 				${breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>
@@ -248,7 +248,7 @@ export class LootGenOutput {
 
 		return loot.map(lt => {
 			return ee`
-			<li>${(lt.type).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")} ${name} (×${lt.count}; 总计价值${((lt.type * lt.count)).toLocaleString()} ${LootGenUtils.getCoinageLabel("gp")}):</li>
+			<li>${(lt.type).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} ${name} (×${lt.count}; 总计价值${((lt.type * lt.count)).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}):</li>
 			<ul>
 				${Object.entries(lt.breakdown).map(([result, count]) => `<li>${LootGenRender.er(result)}${count > 1 ? `, ×${count}` : ""}</li>`).join("")}
 			</ul>

@@ -1292,6 +1292,7 @@
 				"name": "地精",
 				"source": "MPMM"
 			},
+			"lineage": null,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2806,6 +2807,19 @@
 			],
 			"speed": 30,
 			"darkvision": 60,
+			"resist": [
+				{
+					"choose": {
+						"from": [
+							"强酸",
+							"闪电",
+							"火焰",
+							"毒素",
+							"寒冷"
+						]
+					}
+				}
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "races/dragonborn.mp3"
@@ -5209,6 +5223,7 @@
 					}
 				}
 			},
+			"lineage": null,
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"_versions": [
@@ -5644,6 +5659,7 @@
 					}
 				}
 			},
+			"lineage": null,
 			"resist": [
 				"火焰"
 			],
@@ -6798,6 +6814,14 @@
 						"你可以说、读、写通用语和地精语。"
 					],
 					"type": "entries"
+				},
+				{
+					"ENG_name": "Grit",
+					"name": "坚毅",
+					"entries": [
+						"你对火焰伤害和心灵伤害具有抗性。此外，当你未穿戴护甲时，你的护甲等级等于11 + 你的敏捷调整值。"
+					],
+					"type": "entries"
 				}
 			],
 			"hasFluff": true,
@@ -7706,6 +7730,9 @@
 			"source": "PHB",
 			"page": 38,
 			"srd": true,
+			"reprintedAs": [
+				"科拉瓦|EFA"
+			],
 			"size": [
 				"M"
 			],
@@ -9627,6 +9654,9 @@
 		{
 			"ENG_name": "Khoravar",
 			"name": "科拉瓦",
+			"alias": [
+				"半精灵"
+			],
 			"source": "EFA",
 			"page": 36,
 			"edition": "one",
@@ -14096,6 +14126,17 @@
 			],
 			"speed": 30,
 			"darkvision": 60,
+			"resist": [
+				{
+					"choose": {
+						"from": [
+							"毒素",
+							"暗蚀",
+							"火焰"
+						]
+					}
+				}
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "races/tiefling.mp3"
@@ -19081,6 +19122,7 @@
 					"dex": 2
 				}
 			],
+			"resist": null,
 			"entries": [
 				{
 					"ENG_name": "Alignment",
@@ -19136,14 +19178,6 @@
 			],
 			"entries": [
 				{
-					"ENG_name": "Grit",
-					"name": "坚毅",
-					"entries": [
-						"你对火焰伤害和心灵伤害具有抗性。此外，当你未穿戴护甲时，你的护甲等级等于11 + 你的敏捷调整值。"
-					],
-					"type": "entries"
-				},
-				{
 					"ENG_name": "Grotag Tamer",
 					"name": "鬼怪驯骑师",
 					"entries": [
@@ -19169,14 +19203,6 @@
 				}
 			],
 			"entries": [
-				{
-					"ENG_name": "Grit",
-					"name": "坚毅",
-					"entries": [
-						"你对火焰伤害和心灵伤害具有抗性。此外，当你未穿戴护甲时，你的护甲等级等于11 + 你的敏捷调整值。"
-					],
-					"type": "entries"
-				},
 				{
 					"ENG_name": "Lavastep Grit",
 					"name": "熔足坚毅",
@@ -19209,14 +19235,6 @@
 			],
 			"entries": [
 				{
-					"ENG_name": "Grit",
-					"name": "坚毅",
-					"entries": [
-						"你对火焰伤害和心灵伤害具有抗性。此外，当你未穿戴护甲时，你的护甲等级等于11 + 你的敏捷调整值。"
-					],
-					"type": "entries"
-				},
-				{
 					"ENG_name": "Tuktuk Cunning",
 					"name": "图图狡诈",
 					"entries": [
@@ -19234,6 +19252,9 @@
 			"raceSource": "PHB",
 			"page": 38,
 			"srd": true,
+			"reprintedAs": [
+				"科拉瓦|EFA"
+			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -21891,6 +21912,10 @@
 			"raceName": "化兽者",
 			"raceSource": "ERLW",
 			"page": 34,
+			"reprintedAs": [
+				"化兽者|MPMM",
+				"化兽者|EFA"
+			],
 			"ability": [
 				{
 					"con": 2,
@@ -21933,6 +21958,10 @@
 			"raceName": "化兽者",
 			"raceSource": "ERLW",
 			"page": 34,
+			"reprintedAs": [
+				"化兽者|MPMM",
+				"化兽者|EFA"
+			],
 			"ability": [
 				{
 					"str": 2,
@@ -21975,6 +22004,10 @@
 			"raceName": "化兽者",
 			"raceSource": "ERLW",
 			"page": 34,
+			"reprintedAs": [
+				"化兽者|MPMM",
+				"化兽者|EFA"
+			],
 			"ability": [
 				{
 					"dex": 2,
@@ -22014,6 +22047,10 @@
 			"raceName": "化兽者",
 			"raceSource": "ERLW",
 			"page": 34,
+			"reprintedAs": [
+				"化兽者|MPMM",
+				"化兽者|EFA"
+			],
 			"ability": [
 				{
 					"wis": 2,

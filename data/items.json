@@ -537,32 +537,6 @@
 			]
 		},
 		{
-			"ENG_name": "+2 Ring of Protection",
-			"name": "+2 防护戒指",
-			"source": "TDCSR",
-			"page": 263,
-			"_copy": {
-				"ENG_name": "Ring of Protection",
-				"name": "防护戒指",
-				"source": "DMG",
-				"_mod": {
-					"entries": {
-						"mode": "replaceTxt",
-						"replace": "\\+1",
-						"with": "+2",
-						"flags": "i"
-					}
-				},
-				"_preserve": {
-					"tier": true
-				}
-			},
-			"bonusAc": "+2",
-			"bonusSavingThrow": "+2",
-			"optionalfeatures": [],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "+2 Rod of the Pact Keeper",
 			"name": "+2 契约掌控者权杖",
 			"source": "DMG",
@@ -612,48 +586,6 @@
 			],
 			"lootTables": [
 				"奥术 - 珍稀|XDMG"
-			]
-		},
-		{
-			"ENG_name": "+2 Studded Leather Armor of Acid Resistance",
-			"name": "+2 强酸抗性镶钉皮甲",
-			"source": "TDCSR",
-			"page": 271,
-			"type": "LA",
-			"resist": [
-				"强酸"
-			],
-			"tier": "主要",
-			"rarity": "unknown (magic)",
-			"reqAttune": true,
-			"weight": 13,
-			"ac": 12,
-			"bonusAc": "+2",
-			"entries": [
-				"着装该护甲期间，你的AC获得+2加值。",
-				"着装该护甲期间，你获得强酸伤害抗性。",
-				"{@note 由{@creature 斯凯兰·短顿|TDCSR}佩戴。}"
-			]
-		},
-		{
-			"ENG_name": "+2 Studded White Dragon Leather Armor of Cold Resistance",
-			"name": "+2 冷冻抗性镶钉白龙皮甲",
-			"source": "TDCSR",
-			"page": 267,
-			"type": "LA",
-			"resist": [
-				"寒冷"
-			],
-			"tier": "主要",
-			"rarity": "unknown (magic)",
-			"reqAttune": true,
-			"weight": 13,
-			"ac": 12,
-			"bonusAc": "+2",
-			"entries": [
-				"着装该护甲期间，你的AC获得+2加值。",
-				"着装该护甲期间，你获得寒冷伤害抗性。",
-				"{@note 由{@creature 维克萨利亚|TDCSR}佩戴。}"
 			]
 		},
 		{
@@ -1395,132 +1327,6 @@
 			"miscTags": [
 				"TT"
 			]
-		},
-		{
-			"ENG_name": "Agony (Awakened)",
-			"name": "苦刑（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Agony (Dormant)",
-				"name": "苦刑（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当痛苦达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"当你击中标记生物时，额外伤害增加到{@dice 1d8}。",
-													"被标记的生物在进行体质检定和体质{@quickref 优势与劣势|PHB|2|0|劣势}时具有{@quickref 豁免检定|PHB|2|1}。",
-													"当你使用痛苦攻击将一个生物的生命值降至0时，你可以立即以附赠动作再进行一次近战攻击。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Agony (Dormant)",
-			"name": "苦刑（休眠）",
-			"source": "TDCSR",
-			"page": 202,
-			"baseItem": "链枷|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": "由非善良阵营的生物",
-			"reqAttuneTags": [
-				{
-					"alignment": [
-						"N",
-						"E",
-						"C",
-						"L",
-						"A"
-					]
-				}
-			],
-			"weight": 2,
-			"weaponCategory": "军用",
-			"property": [
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d8",
-			"dmgType": "B",
-			"bonusWeapon": "+2",
-			"entries": [
-				"这种残酷武器的钩链上不断显示出干涸的血迹和腐烂物，被用于无数的酷刑和缓慢处决中。传说，在{@book 灾祸之战|TDCSR|1|灾祸之战}期间，一位食肉恶魔领主的鬣狗人后裔挥舞着这把名为\"痛苦\"的武器。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当痛苦处于休眠状态时，你使用这个魔法武器进行的攻击和伤害掷骰获得+2加值。每当你用痛苦对生物造成伤害时，那个生物就会被标记10分钟，或者直到你伤害另一个生物。当你用这个武器以这种方式击中被标记的生物时，目标会额外承受{@damage 1d6}穿刺伤害。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Agony (Exalted)",
-			"name": "苦刑（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Agony (Awakened)",
-				"name": "苦刑（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当痛苦达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+3。",
-													"当你击中标记生物时，额外伤害增加到{@dice 2d8}。",
-													"当你用此武器造成重击时，目标必须进行一次 {@dc 17} 感知 {@quickref 豁免检定|PHB|2|1|豁免检定} ，否则将在1分钟内对你 {@condition 恐慌} 。若豁免成功，目标将在24小时内免疫此效果。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Airship",
@@ -3424,144 +3230,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Armor of the Valiant Soul (Awakened)",
-			"name": "坚定者之胄（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Armor of the Valiant Soul (Dormant)",
-				"name": "坚定者之胄（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当勇者之魂护甲达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该护甲的AC加值提升至+2。",
-													"穿戴这件护甲时，你对强酸伤害具有抗性。",
-													"穿戴这件盔甲时，你对{@condition 恐慌}状态免疫。",
-													"这件护甲的{@spell 命令术}法术豁免难度等级增加到16，并且该法术可以影响多达三个生物。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"resist": [
-				"强酸"
-			],
-			"conditionImmune": [
-				"恐慌"
-			],
-			"bonusAc": "+2",
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Armor of the Valiant Soul (Dormant)",
-			"name": "坚定者之胄（休眠）",
-			"source": "TDCSR",
-			"page": 202,
-			"baseItem": "鳞甲|PHB",
-			"type": "MA",
-			"immune": [
-				"强酸"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 45,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 14,
-			"bonusAc": "+1",
-			"recharge": "长休",
-			"stealth": true,
-			"entries": [
-				"这件古董盔甲由玉石和黑龙鳞片锻造而成，曾是{@book 安卡瑞尔|TDCSR|3|马凯特}的J'mon Sa Ord所穿戴。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当勇者之魂护甲处于休眠状态时，穿戴它时你获得+1的护甲等级加成。同时，当你与这件护甲共鸣时，你可以施放{@spell 命令术}法术（豁免{@dc 14}）。一旦使用了这个特性，直到你完成一次{@quickref 休息|PHB|2|0|长休}之前都不能再次使用。"
-					]
-				}
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"命令术"
-					]
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Armor of the Valiant Soul (Exalted)",
-			"name": "坚定者之胄（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Armor of the Valiant Soul (Awakened)",
-				"name": "坚定者之胄（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当勇者之魂护甲达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该护甲的AC加值提升至+3。",
-													"穿戴这套盔甲时，你对强酸伤害免疫。",
-													"只要你保持清醒，所有在你周围15尺范围内的友方生物都对{@condition 恐慌}状态免疫。",
-													"盔甲的{@spell 命令术}法术豁免DC增加到18，并且该法术可以影响多达五个生物。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"immune": [
-				"强酸"
-			],
-			"resist": null,
-			"bonusAc": "+3",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Armor of Vulnerability (Bludgeoning)",
 			"name": "易伤护甲（钝击）",
 			"source": "DMG",
@@ -4415,21 +4083,6 @@
 					"bright": 30,
 					"dim": 60
 				}
-			]
-		},
-		{
-			"ENG_name": "Azuremite",
-			"name": "蓝铜矿",
-			"source": "TDCSR",
-			"page": 141,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown (magic)",
-			"entries": [
-				"这座庞大城市的废墟现在被称为水晶沼泽洞穴。这些洞穴中散布着{@item 蓝铜矿|TDCSR}的矿脉，这是一种由千年精神能量在元素矿床附近形成的美丽蓝色水晶。好奇的探险家们发现，当这些矿脉被开采并精炼成细粉时，{@item 蓝铜矿|TDCSR}粉末是一种强烈的精神改变剂，能引起临时的幻觉和其他精神现象。",
-				"尽管已经发现了一些通往这个隧道迷宫的小而孤立的入口，并且冒险队伍试图绘制矿区图，但洞穴如此广阔和深邃，以至于他们要么因为害怕迷路而放弃，要么被洞穴中可怕的居民攻击，从此再也没有回来。现在敢于进入洞穴的大多数人是愚蠢的寻宝者或罪犯，他们寻求开采更多的{@item 蓝铜矿|TDCSR}在黑市上出售。"
-			],
-			"miscTags": [
-				"CNS"
 			]
 		},
 		{
@@ -7669,7 +7322,7 @@
 				"F",
 				"L",
 				"T",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"range": "20/60",
 			"dmg1": "1d4",
@@ -9062,26 +8715,6 @@
 			]
 		},
 		{
-			"ENG_name": "Boots of Haste",
-			"name": "神速之靴",
-			"source": "TDCSR",
-			"page": 194,
-			"rarity": "very rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"recharge": "拂晓",
-			"entries": [
-				"当你穿着这些靴子时，你可以点击你的鞋跟来作为附赠动作对自己施展{@spell 加速术}法术。使用这些靴子施展法术时，法术结束时你不会遭受倦怠。一旦使用了这个属性，直到下一个黎明之前都不能再次使用。"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1": [
-						"加速术"
-					]
-				}
-			}
-		},
-		{
 			"ENG_name": "Boots of Levitation",
 			"name": "浮空之靴",
 			"source": "DMG",
@@ -9247,18 +8880,6 @@
 				"法器 - 非普通|XDMG"
 			],
 			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Boots of the Vigilant",
-			"name": "警觉之靴",
-			"source": "TDCSR",
-			"page": 194,
-			"rarity": "uncommon",
-			"wondrous": true,
-			"recharge": "拂晓",
-			"entries": [
-				"当你穿着这些靴子时，你可以感知即将到来的危险。在你掷先攻骰后，你可以选择掷一个{@dice d8}并将其加到你的先攻骰上。一旦使用了这个特性，直到下一个黎明它才能再次使用。"
-			]
 		},
 		{
 			"ENG_name": "Boots of the Winding Path",
@@ -10543,121 +10164,6 @@
 					]
 				}
 			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Cabal's Ruin (Awakened)",
-			"name": "鬼蜮末日（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Cabal's Ruin (Dormant)",
-				"name": "鬼蜮末日（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当卡巴尔的毁灭达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"穿着这件斗篷时，你在对抗法术和其他魔法效果的{@quickref 优势与劣势|PHB|2|0|优势}{@quickref 豁免检定|PHB|2|1}。",
-													"这件斗篷有6次充能，每天黎明时恢复{@dice 1d4 + 2}次已消耗的充能。",
-													"当你使用斗篷吸收法术时，你将获得对该法术造成的一种伤害类型的抗性（由你选择）。这种抗性将持续到你下一个回合结束。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"recharge": "拂晓",
-			"rechargeAmount": "{@dice 1d4 + 2}",
-			"charges": 6,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Cabal's Ruin (Dormant)",
-			"name": "鬼蜮末日（休眠）",
-			"source": "TDCSR",
-			"page": 203,
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"recharge": "restShort",
-			"rechargeAmount": "{@dice 1d4}",
-			"charges": 4,
-			"entries": [
-				"这件斗篷由沉重的深色布料制成，边缘装饰着金色图案，偶尔会闪烁着奥术能量的火花。它曾被著名的枪手{@creature 帕西瓦尔·德·罗洛|TDCSR|珀西瓦尔·弗雷德里克斯坦·冯·穆塞尔·克洛索夫斯基·德·罗洛三世，白石}所穿戴。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当Cabal的毁灭处于休眠状态时，斗篷有4个充能点，并且在每天黎明时恢复{@dice 1d4}个消耗的充能点。当你用攻击命中时，你可以消耗斗篷上的任意数量的充能点，每次消耗的充能点都会使攻击额外造成{@damage 1d6}点闪电伤害。如果你的攻击命中了多个目标，你可以选择一个目标承受这些额外伤害。",
-						"当您成为敌人法术的目标时，您可以使用反应将法术能量的一部分吸收到斗篷中。法术对您正常生效，但斗篷恢复的充能数量等于法术的等级。这个属性在您完成一次{@quickref 休息|PHB|2|0|短休或长休}之前不能再次使用。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Cabal's Ruin (Exalted)",
-			"name": "鬼蜮末日（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Cabal's Ruin (Awakened)",
-				"name": "鬼蜮末日（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当卡巴尔的毁灭达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这件斗篷有10点充能，并且在黎明时每天恢复{@dice 1d6 + 4}点消耗的充能。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"rechargeAmount": "{@dice 1d6 + 2}",
-			"charges": 10,
 			"hasFluffImages": true
 		},
 		{
@@ -12244,49 +11750,6 @@
 			"value": 75000
 		},
 		{
-			"ENG_name": "Cataclysm Bolts",
-			"name": "灾灭弩矢",
-			"source": "TDCSR",
-			"page": 194,
-			"type": "A",
-			"rarity": "very rare",
-			"weight": 0.075,
-			"entries": [
-				"这些钢制的{@item 弩矢|PHB|弩箭}最初是由Jaggenstrike家族在{@book 分裂战争|TDCSR|1|分裂战争}期间创造的，而制作它们的秘密至今仍被{@book 卡拉格锤堡的家族|TDCSR|2|卡拉格锤堡的家族}严格保守。灾难弩箭通常以十为一套保存，即使持有其中一支，也能感受到它充满了魔法力量的颤动。当你使用灾难弩箭进行攻击并命中时，攻击会造成正常伤害。然后掷一个{@dice d6}在下面的表格上以确定其额外效果。",
-				{
-					"type": "table",
-					"caption": "灾灭弩矢效应",
-					"colLabels": [
-						"d6",
-						"效应"
-					],
-					"colStyles": [
-						"col-2 text-center",
-						"col-10"
-					],
-					"rows": [
-						[
-							"1-2",
-							"箭矢在火焰爆炸中爆炸，对目标及周围5尺内的每个生物造成{@damage 3d8}火焰伤害。"
-						],
-						[
-							"3-4",
-							"这股寒冰箭将目标周围的空气冻结成尖锐的冰。目标和其周围5英尺内的每个生物必须成功通过一次{@dc 17}的敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将受到{@damage 1d10}点寒冷伤害，并{@condition 束缚}直到你的下一回合结束。"
-						],
-						[
-							"5",
-							"箭矢释放出一股死灵能量。目标受到{@damage 2d6}暗蚀伤害，并且必须在一次{@dc 16}力量{@quickref 豁免检定|PHB|2|1|豁免检定}中成功，否则直到你的下个回合结束时将被{@condition 震慑}。"
-						],
-						[
-							"6",
-							"箭矢碎裂释放出一阵碎片。对目标进行六次额外的远程攻击，每次攻击有{@hit 7}攻击加值，并且击中时造成{@damage 1d6}穿刺伤害。"
-						]
-					]
-				},
-				"一旦箭矢命中，附魔结束，它就变成了普通的弹药。"
-			]
-		},
-		{
 			"ENG_name": "Catapult Munition",
 			"name": "投石机弹药",
 			"source": "SCC",
@@ -12995,139 +12458,6 @@
 			"value": 200
 		},
 		{
-			"ENG_name": "Circlet of Barbed Vision (Awakened)",
-			"name": "棘影之环（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Circlet of Barbed Vision (Dormant)",
-				"name": "棘影之环（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当带刺视觉的头环达到觉醒状态时，您将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"你对毒素伤害有抗性，并且对{@condition 中毒}状态免疫。",
-													"您获得攻击检定加值的能力可以在休息之间使用两次。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"resist": [
-				"毒素"
-			],
-			"conditionImmune": [
-				"中毒"
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Circlet of Barbed Vision (Dormant)",
-			"name": "棘影之环（休眠）",
-			"source": "TDCSR",
-			"page": 203,
-			"rarity": "legendary",
-			"reqAttune": "由非善良阵营的生物",
-			"reqAttuneTags": [
-				{
-					"alignment": [
-						"N",
-						"E",
-						"C",
-						"L",
-						"A"
-					]
-				}
-			],
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ability": {
-				"cha": -2
-			},
-			"recharge": "restShort",
-			"entries": [
-				"当您戴上这个由扭曲的黑曜石制成的头环时，黑色的刺会刺入您的头部，赋予您力量，因为头环扭曲您的外观以取悦{@deity 蜘蛛女王|艾桑椎亚|TDCSR}。带刺视觉头环当前的休息地点未知，但有传言称一个被称为{@creature 寂灭幽魂乔瑞尔|TDCSR|命定终局}的幽灵刺客正在寻找这件神器。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当棘视头环处于休眠状态时，佩戴它时你在先攻检定上有{@quickref 优势与劣势|PHB|2|0|优势}，但你的Charisma（魅力）得分减少2点。如果你摘下头环，你的Charisma（魅力）得分会恢复正常，但你会因此受到{@damage 4d6}点心灵伤害。",
-						"此外，当您进行攻击检定时，您可以使用您的反应来获得+5的加值到该检定。在看到检定结果后，但在游戏主持人宣布攻击是否命中之前，您可以选择使用这个加值。您不能再次使用这个特性，直到您完成一次{@quickref 休息|PHB|2|0|短休或长休}。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Circlet of Barbed Vision (Exalted)",
-			"name": "棘影之环（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Circlet of Barbed Vision (Awakened)",
-				"name": "棘影之环（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当带刺视觉的头环达到崇高状态时，您将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"您对毒素伤害免疫。",
-													"你获得60尺{@sense 真实视觉}范围。",
-													"您获得攻击检定加值的能力可以在休息之间使用三次。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"immune": [
-				"毒素"
-			],
-			"resist": null,
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Circlet of Blasting",
 			"name": "爆裂头饰",
 			"source": "DMG",
@@ -13193,20 +12523,6 @@
 			],
 			"entries": [
 				"人类完美头环将其协调的佩戴者转变为一个具有平均身高和体重的有吸引力的人类。头环选择形态的身体特征，如年龄、性别、肤色、发色和声音。除了体型外，佩戴者的具体数值和种族特征不会改变，佩戴者穿戴或携带的物品也不会改变。取下头环会结束效果。"
-			]
-		},
-		{
-			"ENG_name": "Circlet of Wisdom",
-			"name": "感知头环",
-			"source": "TDCSR",
-			"page": 263,
-			"rarity": "unknown (magic)",
-			"wondrous": true,
-			"ability": {
-				"wis": 2
-			},
-			"entries": [
-				"{@note 由{@creature 风暴之音，凯勒特|TDCSR}佩戴，使她的感知属性增加+2。}"
 			]
 		},
 		{
@@ -13987,23 +13303,6 @@
 			"value": 300
 		},
 		{
-			"ENG_name": "Coat of the Crest",
-			"name": "尊荣外套",
-			"source": "TDCSR",
-			"page": 194,
-			"rarity": "rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"bonusAc": "+1",
-			"recharge": "拂晓",
-			"rechargeAmount": "{@dice 1d3}",
-			"charges": 3,
-			"entries": [
-				"这件精美的锦缎长袍采用长款高领设计，这种风格在克洛维斯协约国的贵族中非常流行。克洛维斯协约国是位于{@book 荒洲|TDCSR|3|荒洲}西海岸的一个国家，其时尚风格经常在塔尔'多瑞被模仿。它的闪亮内衬暗示了其魔法属性。穿上这件长袍，你的护甲等级 (AC) 获得+1加值，此长袍可穿在轻甲外。",
-				"此外，这件外套有3个充能点，每天黎明时分恢复{@dice 1d3}个已消耗的充能点。当你穿着这件外套成为攻击的目标时，你可以作为反应花费1个充能点，以获得对触发攻击的一种类型的伤害的抗性。这种抗性对触发攻击有效，并持续到你的下一回合开始。"
-			]
-		},
-		{
 			"ENG_name": "Cobbler's Tools",
 			"name": "鞋匠工具",
 			"source": "PHB",
@@ -14422,168 +13721,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Condemner (Awakened)",
-			"name": "谴罪者（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Condemner (Dormant)",
-				"name": "谴罪者（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当Condemner达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+2。",
-													"该武器造成的额外中毒素伤害增加到{@dice 1d6}。",
-													"当你用攻击命中时，你获得了一个额外的效果，可以在造成伤害时触发：",
-													{
-														"type": "list",
-														"items": [
-															"你对目标施放{@spell 定身类人}（豁免{@dc 15}）。"
-														]
-													},
-													"这个效果在你完成一次{@quickref 休息|PHB|2|0|短休或长休}之前不能再次使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+2",
-			"attachedSpells": [
-				"云雾术",
-				"定身类人",
-				"沉默术"
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Condemner (Dormant)",
-			"name": "谴罪者（休眠）",
-			"source": "TDCSR",
-			"page": 204,
-			"baseItem": "重弩|PHB",
-			"type": "R",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 18,
-			"weaponCategory": "军用",
-			"property": [
-				"A",
-				"H",
-				"LD",
-				"2H",
-				"Vst|TDCSR"
-			],
-			"range": "100/400",
-			"dmg1": "1d10",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"recharge": "restShort",
-			"entries": [
-				"这把与阴影相关的{@item 重弩|PHB}曾经是传奇刺客Todora的首选武器。尽管很少有人知道，Condemner现在归属于另一个同样臭名昭著的刺客，名叫{@book 伊斯拉图·卡尔|TDCSR|2|伊斯拉图·卡尔}。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当Condemner处于休眠状态时，你使用这把魔法武器进行攻击和伤害骰时获得+1的加值。当你使用这个武器命中攻击时，目标会额外受到{@damage 1d4}的毒素伤害。",
-						"此外，如果你使用这个武器命中攻击，你可以激活以下效果之一，而不是造成伤害：",
-						{
-							"type": "list",
-							"items": [
-								"你以目标的位置为中心施放了{@spell 云雾术}。",
-								"你以目标的位置为中心施放了{@spell 沉默术}。"
-							]
-						},
-						"当一个效果被使用后，在完成一次{@quickref 休息|PHB|2|0|短休或长休}之前，它不能再次使用。"
-					]
-				}
-			],
-			"ammoType": "弩矢|PHB",
-			"attachedSpells": [
-				"云雾术",
-				"沉默术"
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Condemner (Exalted)",
-			"name": "谴罪者（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Condemner (Awakened)",
-				"name": "谴罪者（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当Condemner达到崇高状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+3。",
-													"武器造成的额外毒素伤害增加到 {@damage 1d8}。",
-													"武器的定身术法术的豁免难度增加到17。",
-													"当你用攻击命中时，你获得了一个额外的效果，可以在造成伤害时触发：",
-													{
-														"type": "list",
-														"items": [
-															"你对目标施放{@spell 枯萎术}（豁免{@dc 17}）。"
-														]
-													}
-												]
-											},
-											"这个效果在你完成一次{@quickref 休息|PHB|2|0|短休或长休}之前不能再次使用。"
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"attachedSpells": [
-				"枯萎术",
-				"云雾术",
-				"定身类人",
-				"沉默术"
-			],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Condensed Order",
 			"name": "凝序粉",
 			"source": "CoA",
@@ -14957,39 +14094,6 @@
 			"value": 10000,
 			"entries": [
 				"一颗深红色的宝石。"
-			]
-		},
-		{
-			"ENG_name": "Corecut Dagger",
-			"name": "切髓匕首",
-			"source": "TDCSR",
-			"page": 195,
-			"baseItem": "匕首|PHB",
-			"type": "M",
-			"rarity": "very rare",
-			"reqAttune": true,
-			"curse": true,
-			"weight": 1,
-			"weaponCategory": "简易",
-			"property": [
-				"F",
-				"L",
-				"T"
-			],
-			"range": "20/60",
-			"dmg1": "1d4",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把黑暗金属制成的刀刃弯曲成一个邪恶的钩形。使用这把魔法武器进行攻击和伤害骰时，你获得+1的加值。当你使用这个武器命中攻击时，你可以花费1个生命骰来额外造成{@damage 3d6}的暗蚀伤害。",
-				{
-					"ENG_name": "Curse",
-					"name": "诅咒",
-					"type": "entries",
-					"entries": [
-						"这件武器是被诅咒的，这个事实只有在对武器施放了{@spell 鉴定术}法术或者你对它进行共鸣时才会被揭示。对匕首进行共鸣会使你被诅咒，直到你被{@spell 移除诅咒}法术或类似的魔法解除诅咒；丢弃匕首无法结束诅咒。在被诅咒期间，每当你获得魔法治疗时，你必须消耗1个生命骰来恢复生命值。如果你在任何时候用尽了所有生命骰，你就会死亡。"
-					]
-				}
 			]
 		},
 		{
@@ -16392,32 +15496,6 @@
 			]
 		},
 		{
-			"ENG_name": "Dagger of Denial",
-			"name": "闭关匕首",
-			"source": "TDCSR",
-			"page": 195,
-			"baseItem": "匕首|PHB",
-			"type": "M",
-			"rarity": "rare",
-			"reqAttune": true,
-			"weight": 1,
-			"weaponCategory": "简易",
-			"property": [
-				"F",
-				"L",
-				"T"
-			],
-			"range": "20/60",
-			"dmg1": "1d4",
-			"dmgType": "P",
-			"bonusWeapon": "+2",
-			"entries": [
-				"这把银色的短剑刀刃上有着从尖端到象牙柄和把手的精致螺旋槽。使用这把魔法武器进行攻击和伤害骰时，你获得+2的加值。",
-				"作为一个动作，你可以将刀尖插入任何锁孔并将其封闭。以这种方式封闭的锁孔直到这把匕首再次插入该锁孔之前都不能被打开（尽管封闭的门或容器仍然可以被破坏，绕过锁）。封闭一个锁孔会解除这把武器之前封闭的所有锁孔的封闭状态。"
-			],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Dagger of Guitar Solos",
 			"name": "吉他独奏之匕",
 			"source": "WDMM",
@@ -16591,7 +15669,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这副秘银镜框，透明钻石镜片的护目镜被塑能法师达诺斯·奥罗用来侦查远处或寻找{@condition 隐形}的敌人。",
@@ -16945,141 +16023,6 @@
 			"miscTags": [
 				"CNS"
 			]
-		},
-		{
-			"ENG_name": "Deathwalker's Ward (Awakened)",
-			"name": "死亡行者的披挂（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Deathwalker's Ward (Dormant)",
-				"name": "死亡行者的披挂（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当死亡行者护身符达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该护甲的AC加值提升至+2。",
-													"穿戴这件护甲时，你可以选择以下伤害类型之一获得抗性：酸性、寒冷、火焰、闪电、死灵或毒素。你可以在完成一次{@quickref 休息|PHB|2|0|短休}后更改伤害类型。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"resist": [
-				"强酸",
-				"寒冷",
-				"火焰",
-				"闪电",
-				"暗蚀",
-				"毒素"
-			],
-			"bonusWeapon": "+2",
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Deathwalker's Ward (Dormant)",
-			"name": "死亡行者的披挂（休眠）",
-			"source": "TDCSR",
-			"page": 204,
-			"baseItem": "镶钉皮甲|PHB",
-			"type": "LA",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 13,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 12,
-			"bonusAc": "+1",
-			"bonusSavingThrow": "+1",
-			"entries": [
-				"这件华丽的黑色皮甲上覆盖着复杂的卷轴图案，并配有一件饰有黑色羽毛的披风，羽毛来自{@deity 乌鸦主母|艾桑椎亚|TDCSR}。传说几个世纪以来，这位神祇的许多冠军都曾穿戴过它\u2014\u2014最近一次是{@creature 渡鸦勇士|TDCSR|机械之声的瓦克西尔丹}。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当死亡行者护符处于休眠状态时，你获得+1的AC加值，并且在穿戴护甲时，在死亡{@quickref 优势与劣势|PHB|2|0|优势}上你有{@quickref 豁免检定|PHB|2|1}。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Deathwalker's Ward (Exalted)",
-			"name": "死亡行者的披挂（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Deathwalker's Ward (Awakened)",
-				"name": "死亡行者的披挂（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当死亡行者护身符达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该护甲的AC加值提升至+3。",
-													"作为附赠动作，你长出一对巨大的黑色渡鸦翅膀，赋予你60尺的飞行速度，并持续1小时。一旦使用了这个特性，直到你完成一次{@quickref 休息|PHB|2|0|长休}之前，它不能再被使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"resist": [
-				"强酸",
-				"寒冷",
-				"火焰",
-				"闪电",
-				"暗蚀",
-				"毒素"
-			],
-			"bonusWeapon": "+3",
-			"modifySpeed": {
-				"static": {
-					"fly": 60
-				}
-			},
-			"recharge": "长休",
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Decanter of Endless Water",
@@ -21907,18 +20850,6 @@
 			"speed": 40
 		},
 		{
-			"ENG_name": "Doublet of Dramatic Demise",
-			"name": "临终上衣",
-			"source": "TDCSR",
-			"page": 195,
-			"rarity": "common",
-			"wondrous": true,
-			"entries": [
-				"这件引人注目的缎面夹克让你在临终时刻发挥最大作用。当你穿戴这件双排扣夹克生命值降至0时，你不会进入{@condition 昏迷}状态。相反，你将处于{@condition 失能}状态，你的速度变为0，但你仍然可以说话和交流。",
-				"你像往常一样进行死亡 {@quickref 豁免检定|PHB|2|1}，但如果你在 {@dice d20} 上掷出 1，你会发出大声的喘息然后立即晕倒并死亡。"
-			]
-		},
-		{
 			"ENG_name": "Dowsing Dagger",
 			"name": "探水匕首",
 			"source": "XMtS",
@@ -22917,24 +21848,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Dynamite",
-			"name": "炸药",
-			"source": "TDCSR",
-			"page": 100,
-			"type": "EXP|DMG",
-			"rarity": "none",
-			"value": 10000,
-			"range": "30",
-			"dmg1": "6d6",
-			"dmgType": "F",
-			"entries": [
-				"这捆爆炸物可以点燃并投掷至多30尺，作为一个动作。它将在你下一个回合开始时爆炸。距离它20尺内的所有生物和物体必须进行一次{@dc 12}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，失败则受到{@damage 6d6}火焰伤害，成功则伤害减半。"
-			],
-			"miscTags": [
-				"CNS"
-			]
-		},
-		{
 			"ENG_name": "Dynamite (stick)",
 			"name": "炸药(一根)",
 			"source": "DMG",
@@ -23079,36 +21992,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Earthboard",
-			"name": "大地岩板",
-			"source": "TDCSR",
-			"page": 198,
-			"rarity": "rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"weight": 40,
-			"modifySpeed": {
-				"static": {
-					"burrow": 20,
-					"walk": 60
-				}
-			},
-			"entries": [
-				"一块地石板是一块大约三英寸厚、九英尺长、两英尺宽的花岗岩板，两端光滑且逐渐变细。然而，它平凡的外表掩盖了它独特的元素力量，当生物与之调谐时，它的重量会减轻至40磅。{@book 泰拉的地球阿沙里|TDCSR|3|泰拉} 在进入{@book 峰堡山|TDCSR|3|峰堡山} 的崎岖地带时，常常可以看到他们背着这些石板。",
-				"站在地盾上时，你获得以下好处：",
-				{
-					"type": "list",
-					"items": [
-						"地盾在坚实地面（而非液体表面）上滑行，使你的速度提高到60尺。",
-						"如果你从坚实的地面上跳起，你可以进行一次长达60尺的{@quickref 跳跃|PHB|4|0|跳远}。当你结束这个{@quickref 跳跃|PHB|4|0|跳跃术}时，你可以选择猛击地面，产生冲击波。每个站在距离你20尺内的地面上的生物必须进行一次{@dc 14}力量{@quickref 豁免检定|PHB|2|1|豁免检定}，否则会陷入{@condition 倒地}状态。",
-						"你有一个20尺的挖掘速度，允许你通过土或坚硬的岩石挖掘隧道，留下一个5尺直径的隧道。作为一个动作，你可以将这个挖掘速度提高到60尺，直到你的下一个回合开始。",
-						"地板始终跟随你移动，直到你决定离开它（无需动作）。"
-					]
-				},
-				"这些好处会持续，直到你的回合结束时不再站在地盾上。"
-			]
-		},
-		{
 			"ENG_name": "Earworm",
 			"name": "耳虫",
 			"source": "ERLW",
@@ -23149,17 +22032,6 @@
 					]
 				}
 			}
-		},
-		{
-			"ENG_name": "Echo Stone",
-			"name": "回音石",
-			"source": "TDCSR",
-			"page": 195,
-			"rarity": "uncommon",
-			"wondrous": true,
-			"entries": [
-				"这块暗淡蓝色的河石触感柔软，如果掉落则几乎不发出声音。当回声石被挤压作为一个动作时，它会微弱地发光1分钟。石头在发光时记录下15尺内产生的所有声音，然后在每5分钟以相同的音量重复播放那个记录的声音。这种重复播放的循环会持续进行，直到石头再次被挤压作为一个动作，这样它就会安静下来。如果快速连续挤压石头两次作为一个动作，它将播放它最近记录的声音，而不是记录新的声音。"
-			]
 		},
 		{
 			"ENG_name": "Efreeti Bottle",
@@ -25838,130 +24710,6 @@
 			"value": 5
 		},
 		{
-			"ENG_name": "Fenthras (Awakened)",
-			"name": "芬萨拉斯（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Fenthras (Dormant)",
-				"name": "芬萨拉斯（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当芬瑟拉斯达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这把武器对攻击和伤害掷骰的加值增加到+2。此外，当你使用这把武器命中攻击时，目标会额外受到{@damage 1d4}点闪电伤害。",
-													"当你使用这个武器命中攻击时，你可以宣布这是一个荆棘射击。攻击会额外造成{@damage 3d8}点穿刺伤害，目标必须进行一次{@dc 15}力量{@quickref 豁免检定|PHB|2|1|豁免检定}，否则会被从箭矢爆发出的钢棘所{@condition 束缚}。处于{@condition 束缚}状态的目标可以在每个回合结束时重复进行{@quickref 豁免检定|PHB|2|1|豁免检定}，成功则解除效果。一旦使用了这个属性，直到你完成一次{@quickref 休息|PHB|2|0|短休或长休}之前，都不能再次使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+2",
-			"recharge": "restShort",
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Fenthras (Dormant)",
-			"name": "芬萨拉斯（休眠）",
-			"source": "TDCSR",
-			"page": 205,
-			"baseItem": "长弓|PHB",
-			"type": "R",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 2,
-			"weaponCategory": "军用",
-			"property": [
-				"A",
-				"H",
-				"2H",
-				"Vst|TDCSR"
-			],
-			"range": "150/600",
-			"dmg1": "1d8",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"recharge": "restShort",
-			"entries": [
-				"这把华丽的{@item 长弓|PHB}由精类界的长生木制成，弯曲和变化如同一个活生生的实体。据说它曾被传奇游侠{@creature 维克萨利亚|TDCSR}用来对抗巨大的邪恶。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当芬瑟拉斯处于休眠状态时，你使用这把魔法武器进行的攻击和伤害掷骰将获得+1的加值。",
-						"当你使用芬瑟拉斯进行攻击时，你可以宣布这是一个神谕射击，允许你在接下来的10分钟内使用你的正常感官体验箭矢周围的区域。一旦使用了这个属性，直到你完成一次{@quickref 休息|PHB|2|0|短休或长休}之前，都不能再次使用。",
-						"此外，当一个生物被使用这个武器的攻击杀死时，一棵六尺高的树将在接下来的一分钟内迅速从尸体上生长出来。这棵树扎根于地面，使得尸体难以移动，但不会永久性地损坏尸体或其器官。"
-					]
-				}
-			],
-			"ammoType": "箭|PHB",
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Fenthras (Exalted)",
-			"name": "芬萨拉斯（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Fenthras (Awakened)",
-				"name": "芬萨拉斯（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当芬瑟拉斯达到崇高状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+3。",
-													"使用这把弓进行的攻击造成的额外闪电伤害增加到 {@damage 1d6}。",
-													"你可以在休息之间两次宣布荆棘射击，并且{@quickref 豁免检定|PHB|2|1|豁免检定}的DC增加到17。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Feywild Shard",
 			"name": "妖精荒野碎晶",
 			"source": "TCE",
@@ -27249,73 +25997,6 @@
 					"dim": 80
 				}
 			]
-		},
-		{
-			"ENG_name": "Flamefriend Lantern",
-			"name": "火焰之友提灯",
-			"source": "TDCSR",
-			"page": 198,
-			"resist": [
-				"火焰"
-			],
-			"rarity": "rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"recharge": "拂晓",
-			"entries": [
-				"这个铁制灯笼内含有一个小型火元素精灵。要与此物品共鸣，你必须成功通过一个{@dc 10}魅力检定，以与灯笼内的精灵建立联系。",
-				{
-					"ENG_name": "Light and Flame",
-					"name": "光与火焰",
-					"type": "entries",
-					"entries": [
-						"当与灯笼共鸣时，你可以口头请求元素精灵发光（无需动作），这将使灯笼在你选择的半径内投射出明亮的光芒，最远可达60尺，并在该距离之外投射出微光。你还可以随意从灯笼中施放{@spell 燃火术}法术。感知是你的施法能力值，用于这个法术。"
-					]
-				},
-				{
-					"ENG_name": "Elemental Essence",
-					"name": "元素精华",
-					"type": "entries",
-					"entries": [
-						"灯笼中的火元素精灵可以赋予你一小部分它的力量。作为一个动作，你可以选择以下任一好处，持续1小时：",
-						{
-							"type": "list",
-							"items": [
-								"你对火焰伤害具有抗性。",
-								"每当一个生物用近战攻击击中你时，那个生物会受到等同于你的熟练加值的火焰伤害。",
-								"你可以从灯笼中施放{@spell 燃烧之手}法术（法术豁免{@dc 15}），等级为3级。一旦你施放了这个法术，直到下一次使用灯笼的这个属性之前，你不能再施放它。"
-							]
-						},
-						"一旦元素精灵以这种方式与你分享了它的力量，直到下一个黎明之前它不能再这样做。"
-					]
-				},
-				{
-					"ENG_name": "Willful Attunement",
-					"name": "任性调谐",
-					"type": "entries",
-					"entries": [
-						"你对灯笼的{@quickref 同调|DMG|1|0}持续到你选择结束它，或者直到你激怒了元素精灵（比如用水浇灭灯笼，攻击另一个非敌对的元素生物等）。你可以在{@quickref 休息|PHB|2|0|短休或长休}期间尝试重新与灯笼共鸣，并重复进行与元素精灵建立联系的检定，但在你根据DM确定向精灵道歉之前，你进行这个检定时会有{@quickref 优势与劣势|PHB|2|0|劣势}。"
-					]
-				}
-			],
-			"light": [
-				{
-					"bright": 60,
-					"dim": 120
-				}
-			],
-			"attachedSpells": {
-				"will": [
-					"燃火术"
-				],
-				"daily": {
-					"1": [
-						"燃烧之手#3"
-					]
-				},
-				"ability": "wis"
-			},
-			"hasFluff": true
 		},
 		{
 			"ENG_name": "Flames Card",
@@ -29026,22 +27707,6 @@
 			]
 		},
 		{
-			"ENG_name": "Gluebomb",
-			"name": "胶水炸弹",
-			"source": "TDCSR",
-			"page": 100,
-			"type": "EXP|DMG",
-			"rarity": "none",
-			"value": 5000,
-			"range": "30",
-			"entries": [
-				"这种独特的爆炸物可以被设定并在30尺内投掷作为动作。它在撞击时爆炸。在其20尺范围内的生物必须进行一次{@dc 12}敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则会被{@condition 束缚}1分钟。一个{@condition 束缚}的生物可以作为动作进行一次{@dc 12}力量检查，成功则逃脱。"
-			],
-			"miscTags": [
-				"CNS"
-			]
-		},
-		{
 			"ENG_name": "Gnomengarde Grenade",
 			"name": "侏儒园手雷",
 			"source": "DC",
@@ -29763,64 +28428,6 @@
 			]
 		},
 		{
-			"ENG_name": "Graz'tchar, the Decadent End",
-			"name": "格拉兹刹，颓丧终局",
-			"source": "TDCSR",
-			"page": 195,
-			"baseItem": "巨剑|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"sentient": true,
-			"weight": 6,
-			"weaponCategory": "军用",
-			"property": [
-				"H",
-				"2H"
-			],
-			"dmg1": "2d6",
-			"dmgType": "S",
-			"bonusWeapon": "+3",
-			"entries": [
-				"这把刀刃看起来是一把美丽的十字形银剑，镶嵌着闪闪发光的红宝石。使用这把魔法武器时，你对攻击和伤害骰获得+3加值，并具有以下特性。",
-				{
-					"ENG_name": "Corrosive Submission",
-					"name": "腐化屈从",
-					"type": "entries",
-					"entries": [
-						"当你使用这把剑攻击智力评分为4或更高的生物时，目标将额外受到{@damage 3d6}点强酸伤害，并必须成功进行一次{@dc 17}的魅力{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被你{@condition 魅惑}魅惑1小时。如果你在生物被这样{@condition 魅惑}魅惑时再次攻击它，额外的强酸伤害增加到{@dice 10d6}，并且{@condition 魅惑}状态结束。如果目标成功进行其{@quickref 豁免检定|PHB|2|1|豁免检定}或魅惑状态对其结束，那么在接下来的24小时内，它不能再以这种方式被{@condition 魅惑}魅惑。"
-					]
-				},
-				{
-					"ENG_name": "Hidden Nature",
-					"name": "隐藏天性",
-					"type": "entries",
-					"entries": [
-						"这把双手剑造成的强酸伤害对所有感知到它的人来说似乎像是光耀伤害。一个{@spell 真知术}法术或类似的魔法揭示了这把剑实际上是一把生锈、有坑洼的刀刃，滴着酸液。"
-					]
-				},
-				{
-					"ENG_name": "Sentience",
-					"name": "智能",
-					"type": "entries",
-					"entries": [
-						"{@deity 格拉兹刹|艾桑椎亚|TDCSR|格拉兹刹} 是一把有感知能力的中立邪恶武器，感知为14，感知为12，魅力为18。它拥有听力和{@sense 黑暗视觉}，感知范围达到120尺。",
-						"这把剑能说、读并理解{@language 通用语}语言，并能与其持有者心灵感应沟通。任何持有它的人都会听到一个悲伤国王感知的声音，召唤使用者抓住自己的命运。一个在聆听剑声时成功通过{@dc 26}感知({@skill 洞悉})检定的生物，会听到一丝恶意，这暗示了真相：这个声音是放荡恶魔王子的腐蚀诡计。"
-					]
-				},
-				{
-					"ENG_name": "Personality",
-					"name": "个性",
-					"type": "entries",
-					"entries": [
-						"{@deity 格拉兹刹|艾桑椎亚|TDCSR|格拉兹刹} 慢慢试图影响其持有者在Exandria播下混乱，说谎并散布关于伟大领袖的恶意真相，并声称{@book 塔尔多瑞议会的成员|TDCSR|2|塔尔多雷议会}是腐败的，必须被推翻。这把刀刃的声音实际上是来自他的深渊监狱的放荡恶魔王子。",
-						"如果这把剑的已适应使用者长时间违背武器的意愿，{@deity 格拉兹刹|艾桑椎亚|TDCSR|格拉兹刹}可以尝试控制使用者，使用者必须成功通过一个{@dc 17}魅力{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被剑{@condition 魅惑}24小时。当使用者以这种方式被{@condition 魅惑}时，剑可以每小时一次迫使他们执行剑选定的行动，尽管使用者会相信这是他们自愿采取的行动。如果选定的行动导致使用者认为是可信赖的朋友或盟友的人受到伤害，{@condition 魅惑}状态立即结束。如果使用者成功通过{@quickref 豁免检定|PHB|2|1|豁免检定}或{@condition 魅惑}状态结束，他们在接下来的24小时内对剑的这种特性免疫。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Greater Silver Sword",
 			"name": "高等银剑",
 			"source": "MTF",
@@ -30083,7 +28690,7 @@
 			"wondrous": true,
 			"weight": 3,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这些镀金内页和银制封面的法术书中有数本是在奥法纪制作的，但自灾祸之战结束以来，人们只找回了其中一本。这本书有着无限页数，厚3寸，宽8寸，长12寸，重3磅。",
@@ -30192,7 +28799,7 @@
 			"weaponCategory": "军用",
 			"property": [
 				"V",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "B",
@@ -32806,7 +31413,7 @@
 			"reqAttune": true,
 			"weight": 13,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"ac": 12,
 			"bonusWeapon": "+1",
@@ -33018,137 +31625,6 @@
 			"miscTags": [
 				"CNS"
 			]
-		},
-		{
-			"ENG_name": "Honor's Last Stand (Awakened)",
-			"name": "最后的荣光（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Honor's Last Stand (Dormant)",
-				"name": "最后的荣光（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当荣誉的最后立场达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"盾牌对AC的加值增加到+2。",
-													"当你手持此盾牌成功执行{@action 推撞}动作推挤生物时，那个生物会受到{@damage 2d6}点力场伤害。",
-													"当距离你5尺内的生物攻击未命中你时，你可以作为反应尝试对那个生物执行{@action 推撞}动作。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusAc": "+2",
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Honor's Last Stand (Dormant)",
-			"name": "最后的荣光（休眠）",
-			"source": "TDCSR",
-			"page": 206,
-			"baseItem": "护盾术|PHB",
-			"type": "S",
-			"conditionImmune": [
-				"倒地"
-			],
-			"rarity": "legendary",
-			"reqAttune": "由非邪恶阵营的生物",
-			"reqAttuneTags": [
-				{
-					"alignment": [
-						"N",
-						"G",
-						"C",
-						"L",
-						"A"
-					]
-				}
-			],
-			"weight": 6,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 2,
-			"bonusAc": "+1",
-			"entries": [
-				"这面巨大的银色盾牌上刻有{@deity 白金龙|艾桑椎亚|TDCSR}的纹章，永不褪色。它的金属触感总是温暖的。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当荣誉的最后立场处于休眠状态时，你持有盾牌时获得+1的AC加值。这个加值是盾牌正常AC加值之外的。同时，持有这面盾牌时，你不会被击倒{@condition 倒地}。"
-					]
-				}
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Honor's Last Stand (Exalted)",
-			"name": "最后的荣光（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Honor's Last Stand (Awakened)",
-				"name": "最后的荣光（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当荣誉的最后立场达到崇高状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"盾牌对AC的加值增加到+3。",
-													"当你手持此盾牌成功执行{@action 推撞}动作推挤生物时，你可以将其移动最多15尺远离你。",
-													"作为一个附赠动作，你可以保护一个距离你5尺以内的盟友，直到你的下一个回合开始或他们不再处于你的5尺范围内，该盟友获得+3的AC加值。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusAc": "+3",
-			"hasFluff": true,
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Hooded Lantern",
@@ -34570,31 +33046,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Inescapable Lash",
-			"name": "紧咬之鞭",
-			"source": "TDCSR",
-			"page": 195,
-			"baseItem": "鞭子|PHB",
-			"type": "M",
-			"rarity": "rare",
-			"reqAttune": true,
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"F",
-				"ER|TDCSR"
-			],
-			"dmg1": "1d4",
-			"dmgType": "S",
-			"bonusWeapon": "+1",
-			"reach": 20,
-			"hasRefs": true,
-			"entries": [
-				"这根编织绳索呈暗棕色，末端是三个展开的倒钩，并且在任何光线下都像金属一样闪闪发光。使用这把魔法武器进行攻击和伤害骰时，你获得+1的加值，其攻击范围为20尺。当你用这根鞭子击中生物或物体时，你可以尝试作为一个附赠动作来{@action 擒抱}目标。",
-				"当你使用这根鞭子使生物处于{@condition 受擒}状态时，你可以使用你的行动将生物拉向你最多20尺，或者使生物{@condition 束缚}，直到你放开鞭子。以这种方式{@condition 束缚}的生物可以通过采取行动进行一次成功的Strength（{@skill 运动}）或Dexterity（{@skill 特技}）检定来逃脱。这个检定的难度等级等于8 + 你的熟练加值 + 你的力量调整值。"
-			]
-		},
-		{
 			"ENG_name": "Infernal Amulet",
 			"name": "地狱护符",
 			"source": "CoA",
@@ -34759,7 +33210,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"grantsProficiency": true,
 			"bonusWeapon": "+1",
@@ -37478,7 +35929,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"bonusAc": "+1",
 			"recharge": "拂晓",
@@ -38290,139 +36741,6 @@
 			]
 		},
 		{
-			"ENG_name": "Kiss of the Changebringer (Awakened)",
-			"name": "万变使者之吻（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Kiss of the Changebringer (Dormant)",
-				"name": "万变使者之吻（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当变革使者之吻达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"对{@quickref 豁免检定|PHB|2|1}的加值增加到+2。",
-													"你对{@condition 束缚}状态免疫。",
-													"你可以采取行动对自己施放{@spell 闪现术}法术。这个护身符的属性在你完成一次{@quickref 休息|PHB|2|0|长休}之前不能再次使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"conditionImmune": [
-				"受擒",
-				"束缚"
-			],
-			"bonusSavingThrow": "+2",
-			"recharge": "长休",
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"闪现术"
-					]
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Kiss of the Changebringer (Dormant)",
-			"name": "万变使者之吻（休眠）",
-			"source": "TDCSR",
-			"page": 206,
-			"conditionImmune": [
-				"受擒"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"bonusSavingThrow": "+1",
-			"entries": [
-				"一条银链上镶嵌着一颗美丽闪耀的翡翠，充满了力量与未知的可能。据说这条护符曾由{@deity 万变使者|艾桑椎亚|TDCSR}从{@deity 地狱之主|艾桑椎亚|TDCSR}本人脖子上盗走，并被锁在巴佐克桑的{@book 荒洲|TDCSR|3|荒洲}金库中。后来，一支极光守望的士兵队伍在一次探索这座阴森堡垒废弃神庙的远征中将其夺回。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当变革使者之吻处于休眠状态时，佩戴它时你对{@quickref 豁免检定|PHB|2|1}有+1的加值，并且对{@condition 受擒}状态免疫。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Kiss of the Changebringer (Exalted)",
-			"name": "万变使者之吻（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Kiss of the Changebringer (Awakened)",
-				"name": "万变使者之吻（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当变革使者之吻达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"对{@quickref 豁免检定|PHB|2|1}的加值增加到+3。",
-													"你对{@condition 麻痹}和{@condition 石化}状态免疫。",
-													"当你进行攻击检定、属性检定或{@quickref 豁免检定|PHB|2|1|豁免检定}时，你可以额外掷一个{@dice d20}。你可以在进行攻击检定、属性检定或{@quickref 豁免检定|PHB|2|1|豁免检定}之后，但在结果确定之前选择这样做。你选择使用哪个{@dice 2d20|d20s}作为你的掷骰结果。这个护身符的特性在你完成一个{@quickref 休息|PHB|2|0|短休或长休}之前不能再使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"conditionImmune": [
-				"受擒",
-				"束缚",
-				"麻痹",
-				"石化"
-			],
-			"bonusSavingThrow": "+3",
-			"recharge": "restShort",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Knave's Eye Patch",
 			"name": "欺诈者眼罩",
 			"source": "WDH",
@@ -38976,7 +37294,7 @@
 			"property": [
 				"F",
 				"R",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d4",
 			"dmgType": "S",
@@ -40679,7 +38997,7 @@
 			"weight": 4,
 			"weaponCategory": "简易",
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d6",
 			"dmgType": "B",
@@ -40831,36 +39149,6 @@
 					]
 				}
 			]
-		},
-		{
-			"ENG_name": "Magician's Judge",
-			"name": "魔术师之裁",
-			"source": "TDCSR",
-			"page": 196,
-			"baseItem": "巨剑|PHB",
-			"type": "M",
-			"rarity": "rare",
-			"weight": 6,
-			"weaponCategory": "军用",
-			"property": [
-				"H",
-				"2H"
-			],
-			"dmg1": "2d6",
-			"dmgType": "S",
-			"recharge": "拂晓",
-			"entries": [
-				"这把来自{@book 奥法纪|TDCSR|1|奥法纪}的行刑者之刃，是一把魔法{@item 巨剑|PHB}，曾是用于处决使用魔法的罪犯的众多类似武器之一。尽管现在最常见的地区是现今被称为{@book 荒洲|TDCSR|3|荒洲}和{@book 伊希拉|TDCSR|3|伊希拉}的地方，但仍有少数这样的剑刃流入了塔尔多雷。",
-				"如果你使用这件武器攻击并击中生物，你可以作为攻击的一部分，从剑中对目标施放{@spell 解除魔法}法术。或者，你可以使用一个动作，从剑中对任意选择的目标施放{@spell 解除魔法}。如果你需要在使用法术的过程中进行法术施法能力检定，并且需要使用你的法术施法能力调整值，你可以使用+3的调整值或者你自己的法术施法能力调整值，以两者中较高的为准。",
-				"使用这把武器施放{@spell 解除魔法}后，直到下一次黎明前你不能再这样做。"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"解除魔法"
-					]
-				}
-			}
 		},
 		{
 			"ENG_name": "Magnifying Glass",
@@ -42543,77 +40831,6 @@
 			]
 		},
 		{
-			"ENG_name": "Mirror of Infinite Transpondence",
-			"name": "无限通镜",
-			"source": "TDCSR",
-			"page": 196,
-			"rarity": "very rare",
-			"wondrous": true,
-			"recharge": "拂晓",
-			"entries": [
-				"这些银色手镜总是成对出现。作为动作激活时，一面镜子可以与其配对的镜子建立10分钟的视觉连接，两个镜子就像同一扇打开窗户的对立面。即使两个镜子位于不同的位面，也能创建这种连接。",
-				"当找到一个无限传送镜时，由游戏主持人（GM）决定其配对的镜子在哪里以及谁拥有它。可以通过在下表中掷骰来随机确定拥有者和位置。命名的持有者在{@book 第二章|TDCSR|2}中有描述。",
-				"一旦两个镜子之间的连接从任一端被激活三次后，直到下一个黎明之前它都不能再次被激活。",
-				{
-					"type": "table",
-					"caption": "镜子位置",
-					"colLabels": [
-						"d8",
-						"位置",
-						"持有者"
-					],
-					"colStyles": [
-						"col-1 text-center",
-						"col-5",
-						"col-6"
-					],
-					"rows": [
-						[
-							"1",
-							"{@book 埃芒|TDCSR|3|团结之城埃芒}",
-							"{@book 探索者奥德萨·塔尔多瑞|TDCSR|2|探索者奥德萨·塔尔多瑞}"
-						],
-						[
-							"2",
-							"{@book 白石|TDCSR|3|白石}",
-							"无；镜子位于一个空无一人的地牢中"
-						],
-						[
-							"3",
-							"{@book 基马尔|TDCSR|3|基马尔}",
-							"{@book 赛科尔\"百万富翁\"乌托洛特|TDCSR|2|赛科尔\"百万富翁\"乌托洛特}"
-						],
-						[
-							"4",
-							"{@book 威斯特伦|TDCSR|3|威斯特伦}",
-							"{@book \"寰宇先知\"埃司奇尔·林达伦|TDCSR|2|\"寰宇先知\"埃司奇尔·林达伦}"
-						],
-						[
-							"5",
-							"{@book 辛贡|TDCSR|3|辛贡}",
-							"{@book 奥埃斯特拉，记忆之声|TDCSR|2|奥埃斯特拉，记忆之声}"
-						],
-						[
-							"6",
-							"水元素位面",
-							"{@deity 赫迪夫·勋迪|艾桑椎亚|TDCSR}，银沙之主"
-						],
-						[
-							"7",
-							"阴影位面",
-							"1个{@creature 残存者-受选之人|TDCSR}"
-						],
-						[
-							"8",
-							"不明的某处",
-							"{@book 奇迹匠师|TDCSR|2|奇迹匠师}"
-						]
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Mirror of Life Trapping",
 			"name": "摄心镜",
 			"source": "DMG",
@@ -43550,132 +41767,6 @@
 				"当你穿着这件斗篷时，你可以使用一个{@variantrule 附赠动作|XPHB}并消耗1次冲锋来激活斗篷的魔法。该魔法持续1分钟或直到你提前结束（无需动作）。",
 				"当斗篷的魔法生效时，你获得30尺的{@variantrule 飞行速度|XPHB}并且可以悬浮。此外，在你的每个回合中，当你用攻击检定命中一个生物并造成伤害时，你可以使目标额外受到{@damage 1d4}光耀伤害。如果你在斗篷魔法结束时处于空中，你会坠落。"
 			]
-		},
-		{
-			"ENG_name": "Mythcarver (Awakened)",
-			"name": "神话刻录者（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Mythcarver (Dormant)",
-				"name": "神话刻录者（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当神话雕刻者达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这把武器对攻击和伤害骰的加值增加到+2。此外，当你使用这把武器进行攻击并击中目标时，目标会额外受到{@damage 1d6}点力场伤害。",
-													"当你使用吟游诗人灵感来影响一个敌人同时手持此剑时，该敌人对其下一次{@quickref 优势与劣势|PHB|2|0|劣势}的{@quickref 豁免检定|PHB|2|1|豁免检定}具有劣势。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+2",
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Mythcarver (Dormant)",
-			"name": "神话刻录者（休眠）",
-			"source": "TDCSR",
-			"page": 207,
-			"baseItem": "长剑|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": "由吟游诗人",
-			"reqAttuneTags": [
-				{
-					"class": "吟游诗人"
-				}
-			],
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"V",
-				"Vst|TDCSR",
-				"F"
-			],
-			"dmg1": "1d8",
-			"dmgType": "S",
-			"dmg2": "1d10",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把难以置信的银色刀刃曾经属于传奇的白公爵，他是{@book 金色笑面|TDCSR|2|金色笑面}的创始成员之一，以及他之前的许多其他大师级吟游诗人。它与附近的音乐音调产生共鸣。在现代，它最出名的是作为著名吟游诗人{@creature 斯凯兰·短顿|TDCSR}的个人武器。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当神话雕刻者处于休眠状态时，你使用这把魔法武器进行的攻击和伤害骰获得+1的加值。这把长剑的附魔和轻巧构造还赋予了它灵巧属性，这允许你在用这把武器进行攻击时，使用你的力量或敏捷调整值来决定攻击和伤害骰。",
-						"此外，当你使用诗人灵感特性以盟友为目标时，直到你的回合结束，使用这把武器进行攻击时你将获得{@quickref 优势与劣势|PHB|2|0|优势}。"
-					]
-				}
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Mythcarver (Exalted)",
-			"name": "神话刻录者（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Mythcarver (Awakened)",
-				"name": "神话刻录者（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当神话雕刻者达到崇高状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+3。",
-													"作为一项行动，你让剑中的精神接管你的身体并引导你的攻击。你用剑进行4次近战攻击，然后获得1级的{@condition 力竭}。一旦使用了这个属性，直到你完成一次{@quickref 休息|PHB|2|0|长休}后才能再次使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"hasFluff": true,
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Narycrash",
@@ -45160,25 +43251,6 @@
 			"value": 5000,
 			"entries": [
 				"这些晒干的欧利苏巴树的树叶可以用来泡茶，它可以帮助身体从疲劳中恢复。如果你在长休期间饮下一剂欧利苏巴茶，那么在长休结束时，你的{@condition 力竭}等级会降低2而不是1。"
-			]
-		},
-		{
-			"ENG_name": "Oloore Root Teabag",
-			"name": "奥洛尔根茶包",
-			"source": "TDCSR",
-			"page": 85,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown",
-			"value": 10000,
-			"entries": [
-				"这种根茎通常以{@item 奥洛尔根茶包|TDCSR|以茶包形式出售}，每剂100金币。它最初是许多神祇追随者使用的仪式工具，但现在更多用于娱乐。先知们曾用它来增强占卜能力，因为它能帮助他们脱离肉体，更接近神和精魂。饮用由该根茎冲泡的茶会引起强烈的幻觉，饮用者会感觉获得了完美的精神清明。",
-				"以动作为代价饮用{@item 奥洛尔根茶包|TDCSR|奥洛尔茶}后，你必须成功通过{@dc 19}的体质{@quickref 豁免检定|PHB|2|1|豁免检定}否则将经历持续{@dice 1d4}小时的生动幻觉。在此期间，你在攻击检定和{@quickref 优势与劣势|PHB|2|0|劣势}上具有{@quickref 属性检定|PHB|2|0}。若你的{@quickref 豁免检定|PHB|2|1|豁免检定}失败值达到10或更高，幻觉将变成恐怖幻象并获得一级{@condition 力竭}。若成功通过，你将获得超自然的清晰感知，允许你在接下来的{@dice 1d4}小时内施放一次{@spell 探知术}法术。"
-			],
-			"attachedSpells": [
-				"探知术"
-			],
-			"miscTags": [
-				"CNS"
 			]
 		},
 		{
@@ -47600,39 +45672,6 @@
 			]
 		},
 		{
-			"ENG_name": "Plainscow",
-			"name": "平原牛",
-			"source": "TDCSR",
-			"page": 248,
-			"type": "MNT",
-			"rarity": "none",
-			"value": 20000,
-			"carryingCapacity": 1500,
-			"speed": 40,
-			"entries": [
-				"高原牛是一种异常坚固的驮兽，原产于{@book 分裂平原|TDCSR|3|分裂平原}，并且被塔尔多雷中心地区的人们使用了数个世纪。尽管许多野生群体仍然在平原上漫游，但家养的高原牛更为常见，被用作{@quickref 坐骑与载具|PHB|1|0|坐骑}、驮兽和家畜。高原牛对于野兽来说异常富有同情心，经常与骑手终身结成伙伴。它们站立时高达6尺，重约两吨，寿命为70年。",
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								{
-									"ENG_name": "Market Value",
-									"name": "市场价值",
-									"type": "entries",
-									"page": 248,
-									"entries": [
-										"高原牛可以在{@book 威斯特伦|TDCSR|3|威斯特伦}以200金币的价格购买。一头高原牛的携带能力为1500磅。"
-									]
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
 			"ENG_name": "Planar Key",
 			"name": "位面钥匙",
 			"source": "AitFR-THP",
@@ -47799,130 +45838,6 @@
 				"这一附赠动作一经使用，直到次日黎明之前无法再次使用。",
 				"板甲由覆盖全身，且相互连接的模铸金属板组成。一套板甲包括护手、重皮靴、一顶附面甲的头盔以及在护甲底层的厚重的布甲。其锁扣和皮带结构可以将护甲重量分配到身体各处。"
 			]
-		},
-		{
-			"ENG_name": "Plate of the Dawnmartyr (Awakened)",
-			"name": "黎明殉道者板甲（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Plate of the Dawnmartyr (Dormant)",
-				"name": "黎明殉道者板甲（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当黎明殉道者铠甲达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"铠甲对AC的加值增加到+2。",
-													"你对{@condition 恐慌}状态免疫。",
-													"你对火焰伤害具有抗性。",
-													"当你斥责攻击者时，你造成的火焰伤害增加至{@damage 2d6}。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"resist": [
-				"火焰"
-			],
-			"conditionImmune": [
-				"恐慌"
-			],
-			"bonusAc": "+2",
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Plate of the Dawnmartyr (Dormant)",
-			"name": "黎明殉道者板甲（休眠）",
-			"source": "TDCSR",
-			"page": 208,
-			"baseItem": "板甲|PHB",
-			"type": "HA",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 65,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 18,
-			"strength": "15",
-			"bonusAc": "+1",
-			"stealth": true,
-			"entries": [
-				"精美的银色卷轴纹饰和无价的切割红宝石装饰着这套黄铜与黄金打造的盔甲。传说这套盔甲是{@deity 黎明之父|艾桑椎亚|TDCSR}的大祭司杜阿娜在{@book 灾祸之战|TDCSR|1|灾祸之战}最后几天的戈尔德拉纳斯战役中殉道时所穿的。在更近的时代，它被{@creature 派克·巧足|TDCSR}穿着，她是一位传奇的牧师，崇拜{@deity 永恒之光|艾桑椎亚|TDCSR}，在与{@book 五色会|TDCSR|1|五色会}和{@deity 耳语者|艾桑椎亚|TDCSR}的战斗中活跃。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当黎明殉道者铠甲处于休眠状态时，你穿戴它时获得+1的AC加值。当一个生物在你5尺范围内用近战攻击击中你时，你可以使用你的反应斥责那个生物，对其造成{@damage 1d6}火焰伤害。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Plate of the Dawnmartyr (Exalted)",
-			"name": "黎明殉道者板甲（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Plate of the Dawnmartyr (Awakened)",
-				"name": "黎明殉道者板甲（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当黎明殉道者铠甲达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"铠甲对AC的加值增加到+3。",
-													"当你斥责攻击者时，你可以选择造成火焰伤害或光耀伤害。",
-													"当你的生命值降至0时，你可以选择让治疗火焰环绕你。你恢复1点生命值并站立起来。每个在你10尺范围内的敌人承受{@damage 2d6}火焰伤害或光耀伤害（你选择）。铠甲的这个属性直到你完成一次{@quickref 休息|PHB|2|0|长休}后才能再次使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusAc": "+3",
-			"recharge": "长休",
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Platinum",
@@ -51754,143 +49669,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Pyremaul (Awakened)",
-			"name": "焚烬之锤（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Pyremaul (Dormant)",
-				"name": "焚烬之锤（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当火锤达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"武器对攻击检定的加值增加到+2。",
-													"武器造成的额外火焰伤害增加到 {@damage 2d6}。",
-													"作为一个动作，你可以将Pyremaul猛击地面，以施放2级{@spell 燃烧之手}法术（豁免{@dc 15}）。在你完成一次{@quickref 休息|PHB|2|0|短休或长休}之前，你不能再次使用这个属性。",
-													"每当你用此武器造成重击时，目标必须成功通过一个{@dc 15}力量{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被击倒{@condition 倒地}。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeaponAttack": "+2",
-			"recharge": "restShort",
-			"attachedSpells": {
-				"rest": {
-					"1e": [
-						"燃烧之手#2"
-					]
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Pyremaul (Dormant)",
-			"name": "焚烬之锤（休眠）",
-			"source": "TDCSR",
-			"page": 208,
-			"baseItem": "巨锤|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 10,
-			"weaponCategory": "军用",
-			"property": [
-				"H",
-				"2H",
-				"Vst|TDCSR"
-			],
-			"dmg1": "2d6",
-			"dmgType": "B",
-			"bonusWeaponAttack": "+1",
-			"entries": [
-				"这把巨大的锤子由深红色的铁锻造而成，镶嵌着一颗闪耀着永恒火焰的明亮火蛋白石。据说它目前由{@book 大法官菲斯特，火巨人统治者弗卡农|TDCSR|6|火巨人}所持，位于{@book 峰堡山|TDCSR|3|峰堡山}的某处。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当火锤处于休眠状态时，你使用这件魔法武器进行攻击检定时获得+1加值。当你使用这件武器攻击命中时，目标额外受到{@damage 1d6}火焰伤害。",
-						"此外，你可以选择让这个武器在30尺半径内发出明亮的光线，并在额外的30尺内发出昏暗的光线（无需动作）。"
-					]
-				}
-			],
-			"light": [
-				{
-					"bright": 30,
-					"dim": 60
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Pyremaul (Exalted)",
-			"name": "焚烬之锤（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Pyremaul (Awakened)",
-				"name": "焚烬之锤（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当火焰之锤达到崇高状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器对攻击检定的加值增加到+3。",
-													"武器造成的额外火焰伤害增加到 {@damage 3d6}。",
-													"当你用这件武器施放{@spell 燃烧之手}时，你以3级施法者等级施放，并且豁免DC增加到17。",
-													"当你用此武器造成重击时，避免被击倒{@condition 倒地}的{@quickref 豁免检定|PHB|2|1|豁免检定}增加到17。在确定重击的额外伤害时，你还会额外投掷{@damage 3d6}点火焰伤害。",
-													"当你使用这个武器攻击并杀死一个生物时，你可以承受{@damage 10d10}点火焰伤害并焚烧该生物的尸体。这个伤害不能以任何方式减少，如果这个伤害使你的生命值降至0点，你就会死亡。被焚烧的生物及其穿着和携带的所有物品（除了魔法物品）都会被化为一堆灰烬。这个生物只能通过{@spell 完全复生术}或{@spell 祈愿术}法术才能恢复生命。在7天过后，你才能再次使用重锤的这个属性。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeaponAttack": "+3",
-			"recharge": "特殊",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Pyroconverger",
 			"name": "聚焰器",
 			"source": "GGR",
@@ -52807,19 +50585,6 @@
 			]
 		},
 		{
-			"ENG_name": "Raven's Slumber",
-			"name": "鸦憩之坠",
-			"source": "TDCSR",
-			"page": 197,
-			"rarity": "very rare",
-			"wondrous": true,
-			"entries": [
-				"这个黑色的水晶吊坠是一个通往小型口袋维度的魔法门户。你可以使用这个吊坠作为临时武器，对一个大型或更小的生物进行近战或远程武器攻击。命中时，目标必须成功进行一次{@dc 10}感知{@quickref 豁免检定|PHB|2|1|豁免检定}，否则会被困在水晶中。想要被困住的生物可以故意失败这次{@quickref 豁免检定|PHB|2|1|豁免检定}。",
-				"一次只能有一个生物被囚禁在乌鸦沉睡中。那个生物意识到时间的流逝，并且可以通过这个护身符像通过窗户一样看到外面的世界。你可以作为一个附赠动作将被囚禁的生物释放到你5尺内的未被占据的空间。",
-				"如果一个由你的职业特性赋予的同伴生物，或者你驯服的作为同伴的野兽，在距离你100尺内生命值降至0点，它将立即被吸入吊坠并稳定下来。如果吊坠中已经有生物，这个效果将失败。"
-			]
-		},
-		{
 			"ENG_name": "Reaper's Scream",
 			"name": "掠魂尖啸",
 			"source": "BGG",
@@ -53154,37 +50919,6 @@
 			],
 			"classFeatures": [
 				"仿制魔法物品|奇械师|EFA|2|EFA"
-			]
-		},
-		{
-			"ENG_name": "Residuum",
-			"name": "残渣",
-			"source": "TDCSR",
-			"page": 75,
-			"type": "TG",
-			"rarity": "unknown (magic)",
-			"weight": 1,
-			"value": 50000,
-			"entries": [
-				"山脉中的{@item 白石|TDCSR}所蕴含的大量剩余奥术能量极易接受附魔。将至少一盎司的{@item 白石|TDCSR}纳入构造的魔法物品，其创造时间仅需其他魔法物品的四分之一。一些在{@book 埃芒|TDCSR|3|团结之城埃芒}的炼金术士发现，用特定的酸溶解{@item 白石|TDCSR}可以留下纯净的残渣，当难以获得昂贵的法术成分时，这些残渣可以作为替代品。",
-				"如果一个法术有一个消耗性材料成本，施法者可以用等值的残余物来替代所需的材料。在大多数市场上，一磅纯净的残余物大约值500金币，尽管在{@book 埃芒|TDCSR|3|团结之城埃芒}或{@book 白石|TDCSR|3|白石}城本身之外，它变得极其昂贵且难以找到。",
-				"残渣也可以被加热并吹制成玻璃，形成一种闪烁的、带绿色的表面。残渣石板或球体可以用于固定的附魔工作台。愿意支付高昂费用的高阶法师\u2014\u2014轻松超过20,000金币或更多\u2014\u2014可以获得一个{@item 残渣附魔石板|TDCSR|附魔石板}，用来加快所有魔法物品的创造过程。使用这样的工作台可以让任何人制造魔法物品的时间缩短到通常时间的四分之一。"
-			],
-			"miscTags": [
-				"CNS"
-			]
-		},
-		{
-			"ENG_name": "Residuum Enchanting Slate",
-			"name": "残渣附魔石板",
-			"source": "TDCSR",
-			"page": 75,
-			"type": "T",
-			"rarity": "unknown (magic)",
-			"wondrous": true,
-			"value": 2000000,
-			"entries": [
-				"{@item 残渣|TDCSR} 也可以被加热并吹制成玻璃，形成一种闪亮的、带绿色的表面。残余物石板或球体可以用于固定的附魔桌上。愿意支付高昂费用的高阶法师\u2014\u2014容易达到20,000金币或更多\u2014\u2014可以获得一个{@item 残渣附魔石板|TDCSR|附魔石板}，用来加快所有魔法物品的创造过程。使用这样的桌子允许任何人在四分之一的通常时间内制作魔法物品。"
 			]
 		},
 		{
@@ -56737,17 +54471,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Rod of Mercurial Form",
-			"name": "流形权杖",
-			"source": "TDCSR",
-			"page": 197,
-			"rarity": "uncommon",
-			"wondrous": true,
-			"entries": [
-				"这根不起眼的钢棒上刻有代表不同武器的微小符号，以及字母组合\"T.D.\"。持有这根棒子的生物可以作为附赠动作大声说出任何简单或军用武器的名称，使棒子变成那种类型的普通武器。当以远程武器的形式存在时，这根棒子会神奇地创造出自己的弹药，这些弹药在远程攻击命中或未命中后消失。"
-			]
-		},
-		{
 			"ENG_name": "Rod of Resurrection",
 			"name": "复活权杖",
 			"source": "DMG",
@@ -57696,7 +55419,7 @@
 			"property": [
 				"T",
 				"V",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"range": "20/60",
 			"dmg1": "1d6",
@@ -61059,7 +58782,7 @@
 			"weaponCategory": "军用",
 			"property": [
 				"F",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
@@ -61687,46 +59410,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Skysail",
-			"name": "天空风帆",
-			"source": "TDCSR",
-			"page": 199,
-			"baseItem": "长棍|PHB",
-			"type": "M",
-			"rarity": "rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"weight": 4,
-			"weaponCategory": "简易",
-			"property": [
-				"V"
-			],
-			"dmg1": "1d6",
-			"dmgType": "B",
-			"dmg2": "1d8",
-			"modifySpeed": {
-				"static": {
-					"fly": 60
-				}
-			},
-			"entries": [
-				"这些类似蝙蝠的翅膀最初是由{@book 天空阿沙里|TDCSR|3|泽弗拉}用来在天空中翱翔的。它们由皮革和骨头，或布料和木材制成，并安装在一个结实的木杆上，帮助使用者在飞行中保持稳定。",
-				"当这些翅膀张开，你骑着天帆时，你可以在空中滑翔。你有一个60尺的飞行速度，但你必须在每个回合结束时至少下降10尺，并且你不能上升。",
-				"此外，当接触到天帆时，你可以采取一个动作对自己施放{@spell 飞行术}法术，持续时间为1分钟，且不需要{@status 专注}。",
-				"如果你与天空之帆失去物理接触，法术将结束。此特性一旦使用，在下一个黎明之前无法再次使用，除非天空之帆浸入强大的元素空气魔法中。（这包括在 {@book 尖顶峰|TDCSR|3|尖顶峰} 空气裂隙附近的 {@book 泽弗拉|TDCSR|3|泽弗拉} 或气元素位面上的魔法）。",
-				"当天帆不在使用时，它的翅膀可以收起，其杆子可以作为一根{@item 长棍|PHB}使用。"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"飞行术"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Skyship",
 			"name": "天空船",
 			"source": "EGW",
@@ -61741,26 +59424,6 @@
 			"capCargo": 10,
 			"travelCost": 200,
 			"shippingCost": 100
-		},
-		{
-			"ENG_name": "Skyship",
-			"name": "天空船",
-			"source": "TDCSR",
-			"page": 137,
-			"type": "AIR|DMG",
-			"rarity": "none",
-			"value": 10000000,
-			"crewMin": 6,
-			"crewMax": 10,
-			"vehSpeed": 10,
-			"capPassenger": 30,
-			"capCargo": 10,
-			"travelCost": 200,
-			"shippingCost": 100,
-			"entries": [
-				"购买一个{@item 天空船|TDCSR|天空船}需要花费100,000金币，并且需要与位于{@book 安卡瑞尔|TDCSR|3|马凯特}的阿尔斯法林联盟有个人联系。一个{@item 天空船|TDCSR|天空船}的最高速度为每小时10英里，可以携带总共10吨的货物，并且需要6到10个类人生物的船员才能达到最佳性能。大多数{@item 天空船|TDCSR}最多可以容纳30名乘客。大多数{@item 天空船|TDCSR}只在现有的空中港口之间旅行（见\"{@book 埃蒙空港|TDCSR|3|8. 埃蒙空港}\"），并且每英里收取2金币的乘客票价。包租一个{@item 天空船|TDCSR}到标准空中路线以外的目的地，如果船长有空并且愿意承担旅程，每英里需要支付15金币。沿着正常空中路线运输货物每100磅每英里需要1金币，到其他目的地则需要两倍的费用。"
-			],
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Sled",
@@ -64258,191 +61921,6 @@
 			"entries": [
 				"一颗红色、红棕色或深绿色的宝石。"
 			]
-		},
-		{
-			"ENG_name": "Spire of Conflux (Awakened)",
-			"name": "汇流尖枝（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Spire of Conflux (Dormant)",
-				"name": "汇流尖枝（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当汇流尖塔达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这根法杖有12次充能，并且在黎明时每天恢复{@dice 1d6 + 2}次已消耗的充能。",
-													"你也可以消耗充能点来从法杖施放以下法术：{@spell 元素咒唤术}（5个充能点）或{@spell 冰风暴}（4个充能点）。",
-													"当你施放一个造成钝击、寒冷、火焰、闪电或雷鸣伤害的法术，并且你在伤害骰上掷出了1，你可以重掷该骰子，并必须使用新的掷骰结果。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"rechargeAmount": "{@dice 1d6 + 2}",
-			"charges": 12,
-			"attachedSpells": {
-				"charges": {
-					"1": [
-						"燃烧之手"
-					],
-					"3": [
-						"火球术"
-					],
-					"4": [
-						"冰风暴"
-					],
-					"5": [
-						"元素咒唤术"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Spire of Conflux (Dormant)",
-			"name": "汇流尖枝（休眠）",
-			"source": "TDCSR",
-			"page": 209,
-			"srd": true,
-			"basicRules": true,
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": "由施法者",
-			"reqAttuneTags": [
-				{
-					"spellcasting": true
-				}
-			],
-			"weight": 4,
-			"weaponCategory": "简易",
-			"property": [
-				"V",
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d6",
-			"dmgType": "B",
-			"dmg2": "1d8",
-			"bonusSpellAttack": "+1",
-			"bonusSpellSaveDc": "+1",
-			"recharge": "拂晓",
-			"rechargeAmount": "{@dice 1d4 + 2}",
-			"charges": 8,
-			"staff": true,
-			"entries": [
-				"汇聚之塔是一件强大的圣物，代代相传于阿沙里领袖之间。三个世纪前，当受人尊敬的海洋之语者约兰\u2014\u2014{@book 流水阿沙里|TDCSR|2|阿沙里}的领袖\u2014\u2014被深渊恶魔吞噬后，此塔便失落于世。后来，传说中德鲁伊{@creature 风暴之音，凯勒特|TDCSR|Zephrah的Keyleth，风暴之声}重新发现了它。然而，有传闻称她正在寻找另一位英雄来执掌此塔\u2014\u2014一位能像她曾经那样，游历四方，行善积德的人。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当交汇尖塔处于休眠状态时，法杖拥有8次充能，并且每天黎明时分恢复{@dice 1d4 + 2}次消耗的充能。持有法杖时，你可以消耗1次或多次充能来施放以下法术之一，使用你的法术豁免难度等级：{@spell 燃烧之手}（1次充能）或{@spell 火球术}（3次充能）。",
-						"此外，当你持有这根法杖时，你的法术攻击检定获得+1加值，你的法术豁免难度等级增加1。"
-					]
-				}
-			],
-			"attachedSpells": {
-				"charges": {
-					"1": [
-						"燃烧之手"
-					],
-					"3": [
-						"火球术"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Spire of Conflux (Exalted)",
-			"name": "汇流尖枝（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Spire of Conflux (Awakened)",
-				"name": "汇流尖枝（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当汇流尖塔达到崇高状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这根法杖拥有20个充能点，它每天黎明时恢复{@dice 1d6 + 4}个消耗的充能点。",
-													"你也可以消耗充能点来从法杖施放以下法术：{@spell 连锁闪电}（6个充能点）或{@spell 火焰风暴}（7个充能点）",
-													"法术攻击检定的加值以及你的法术豁免DC增加至+2。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusSpellAttack": "+2",
-			"bonusSpellSaveDc": "+2",
-			"rechargeAmount": "{@dice 1d6 + 4}",
-			"charges": 20,
-			"attachedSpells": {
-				"charges": {
-					"1": [
-						"燃烧之手"
-					],
-					"3": [
-						"火球术"
-					],
-					"4": [
-						"冰风暴"
-					],
-					"5": [
-						"元素咒唤术"
-					],
-					"6": [
-						"连锁闪电"
-					],
-					"7": [
-						"火焰风暴"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Spirit Board",
@@ -67312,172 +64790,6 @@
 			]
 		},
 		{
-			"ENG_name": "Star Razor (Awakened)",
-			"name": "星之锋（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Star Razor (Dormant)",
-				"name": "星之锋（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当星辰剃刀达到觉醒状态时，你将获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+2。",
-													"当一个生物在距离你5尺范围内对你进行近战攻击并且命中时，你可以使用你的反应来从剑中创造出一束光辉，对攻击者造成{@damage 1d8}光耀伤害。",
-													"你可以作为动作从剑中施放{@spell 识破隐形}法术，并且使用剑施放的法术的豁免DC增加到15。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+2",
-			"attachedSpells": {
-				"will": [
-					"识破隐形"
-				],
-				"daily": {
-					"1e": [
-						"妖火"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Star Razor (Dormant)",
-			"name": "星之锋（休眠）",
-			"source": "TDCSR",
-			"page": 210,
-			"baseItem": "长剑|PHB",
-			"type": "M",
-			"resist": [
-				"光耀"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"V",
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d8",
-			"dmgType": "S",
-			"dmg2": "1d10",
-			"bonusWeapon": "+1",
-			"recharge": "拂晓",
-			"entries": [
-				"这把闪耀银色的{@item 长剑|PHB}厚重且有凹槽的刀片上布满蚀刻的符文，在光线下闪烁着蓝光。星刃\u2014\u2014也被称为杜埃斯'瓦尔\u2014\u2014在{@book 灾祸之战|TDCSR|1|灾祸之战}之后被认为已被摧毁或遗失，但新的传闻表明它可能被一位半兽人在{@book 荒洲|TDCSR|3|荒洲}的某个地方挥舞着。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当星辰剃刀处于休眠状态时，你可以握住这把魔法长剑，并使用附赠动作说出命令词{@i 命令语}，使剑发出苍白的蓝光，该光在20尺半径内发出明亮的光线，并在额外的20尺内发出微弱的光线。这种光芒持续存在，直到你再次使用附赠动作说出命令词，或者直到你放下或收起剑。",
-						{
-							"type": "list",
-							"items": [
-								"当这把长剑发光时，你对使用这把武器进行的攻击和伤害骰增加+1的加值，并且你对光耀伤害有抗性。",
-								"你可以从武器上以动作施放 {@spell 妖火} 法术，无需任何施法成分（豁免 {@dc 13}）。一旦使用星之剃刀施放过该法术，直到下一个黎明，这把剑将无法再施放该法术。"
-							]
-						}
-					]
-				}
-			],
-			"light": [
-				{
-					"bright": 20,
-					"dim": 40
-				}
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"妖火"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Star Razor (Exalted)",
-			"name": "星之锋（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Star Razor (Awakened)",
-				"name": "星之锋（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当星刃达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"该武器的攻击检定和伤害掷骰加值增至+3。",
-													"当你被近战攻击击中时，你可以作为反应创造一次光辉爆发，造成{@damage 1d12}点光耀伤害，并且你可以立即传送到你能看到的15尺范围内的未被占据的空间，作为同一反应的一部分。",
-													"你可以将这把剑中的{@spell 飞行术}法术作为动作施放，使用这把剑施放的法术的豁免难度增加到17。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"attachedSpells": {
-				"will": [
-					"飞行术",
-					"识破隐形"
-				],
-				"daily": {
-					"1e": [
-						"妖火"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Star rose quartz",
 			"name": "星光粉晶",
 			"source": "DMG",
@@ -67653,22 +64965,6 @@
 			"rarity": "none",
 			"weight": 0.5,
 			"value": 500
-		},
-		{
-			"ENG_name": "Stink Bomb",
-			"name": "臭气弹",
-			"source": "TDCSR",
-			"page": 100,
-			"type": "EXP|DMG",
-			"rarity": "none",
-			"value": 2500,
-			"range": "30",
-			"entries": [
-				"这种有臭味的爆炸物可以被设置并在30尺内投掷作为动作。它将在你下一个回合开始时爆炸。距离它20尺内的生物必须进行{@dc 12}体质{@quickref 豁免检定|PHB|2|1|豁免检定}，否则将被{@condition 中毒}1分钟。生物可以在每个回合结束时重复此豁免检定，成功则结束自身上的中毒效果。"
-			],
-			"miscTags": [
-				"CNS"
-			]
 		},
 		{
 			"ENG_name": "Stirring Dragon Vessel",
@@ -68233,7 +65529,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"ability": {
 				"static": {
@@ -68305,32 +65601,6 @@
 			}
 		},
 		{
-			"ENG_name": "Stormrider Boots",
-			"name": "驭风之靴",
-			"source": "TDCSR",
-			"page": 197,
-			"rarity": "rare",
-			"wondrous": true,
-			"modifySpeed": {
-				"static": {
-					"fly": 90
-				}
-			},
-			"recharge": "拂晓",
-			"entries": [
-				"这些深色皮靴看起来是普通制作，但鞋底上隐约的旋涡状风暴云图案暗示了它们魔法的效力。你可以在移动时激活这些靴子，直到你的回合结束前获得以下好处：",
-				{
-					"type": "list",
-					"items": [
-						"你拥有90尺的飞行速度。",
-						"针对你的{@action 借机攻击|PHB|借机攻击}在进行时处于{@quickref 优势与劣势|PHB|2|0|劣势}状态。",
-						"每当你移动至一个敌对生物的5尺范围内时，它必须进行一次{@dc 15}的敏捷{@quickref 豁免检定|PHB|2|1|豁免检定}，否则会受到{@damage 3d8}点闪电伤害。一个生物每回合不能以这种方式受到超过一次伤害。"
-					]
-				},
-				"一旦使用了这个属性，直到下一个黎明之前它都无法再次使用。"
-			]
-		},
-		{
 			"ENG_name": "String",
 			"name": "细绳",
 			"source": "XPHB",
@@ -68359,39 +65629,6 @@
 					"dim": 20
 				}
 			]
-		},
-		{
-			"ENG_name": "Summer's Dance",
-			"name": "夏日之舞",
-			"source": "TDCSR",
-			"page": 197,
-			"baseItem": "弯刀|PHB",
-			"type": "M",
-			"rarity": "rare",
-			"reqAttune": true,
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"F",
-				"L"
-			],
-			"dmg1": "1d6",
-			"dmgType": "S",
-			"bonusWeapon": "+1",
-			"recharge": "拂晓",
-			"rechargeAmount": 1,
-			"charges": 3,
-			"entries": [
-				"这把漂亮的金色刀刃似乎随着你的动作弯曲和伸展，像一根芦苇一样。使用这把魔法武器进行攻击和伤害判定时，你将获得+1的加值。",
-				"此外，这把弯刀有3个充能点数，并在黎明时每天恢复1个消耗的充能点数。在持有这把{@item 弯刀|PHB}时，你可以作为附赠动作消耗1个充能点数来施放{@spell 迷踪步}法术。"
-			],
-			"attachedSpells": {
-				"charges": {
-					"1": [
-						"迷踪步"
-					]
-				}
-			}
 		},
 		{
 			"ENG_name": "Sun",
@@ -68585,19 +65822,6 @@
 			]
 		},
 		{
-			"ENG_name": "Sunbeam Compass",
-			"name": "阳炎罗盘",
-			"source": "TDCSR",
-			"page": 143,
-			"type": "OTH",
-			"rarity": "unknown (magic)",
-			"wondrous": true,
-			"entries": [
-				"这是一种设备，通过在玻璃球体内的针尖上发出一束小光，始终指向太阳，允许它向各个方向旋转\u2014\u2014在探索地下领域时非常有用。",
-				"由{@book 卡拉琳·冯·埃索|TDCSR|3|卡拉琳·冯·埃索}创造。"
-			]
-		},
-		{
 			"ENG_name": "Sunforger",
 			"name": "铸阳锤",
 			"source": "GGR",
@@ -68692,57 +65916,6 @@
 			"entries": [
 				"这种甲壳状的增强物包裹着佩戴者的肩膀、脖子和胸部。一件生存覆甲相当于一套非魔法的半身板甲，并且需要同样的时间才能穿上或脱下。它不能和其他种类的护甲同时佩戴。",
 				"穿着生存覆甲的生物可以在任何环境下正常呼吸（包括真空），并且在对抗有害气体（例如由{@spell 死云术}法术、{@spell 臭云术}法术、吸入性毒药和某些龙类的吐息武器所产生的气体）的豁免检定时具有优势。"
-			]
-		},
-		{
-			"ENG_name": "Suude (Blue)",
-			"name": "粟德（蓝色）",
-			"source": "TDCSR",
-			"page": 85,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown (magic)",
-			"entries": [
-				"艾桑椎亚最臭名昭著的毒品，{@item 粟德|TDCSR}是一种由{@book 残渣|TDCSR|3|一个迷人的出口商品}制成的闪亮粉末。它最初由渴求法力的大法师们在{@book 奥法纪|TDCSR|1|奥法纪}开发，作为一种在仪式施法时增强聚焦的熏香。自{@book 灾祸之战|TDCSR|1|灾祸之战}以来，其提炼方法多次失传又被重新发现，许多不同种类的{@item 粟德|TDCSR}被追求更强大法力的奥术师们开发出来。即使少量使用，它也具有可怕的成瘾性和精神退化属性。",
-				"作为一个动作，在一个器皿中燃烧{@item 粟德|TDCSR}并吸入其烟雾后，你将受到22（{@damage 4d10}）心灵伤害，并且必须进行一次{@dc 10}的体质{@quickref 豁免检定|PHB|2|1|豁免检定}。若失败，你将陷入{@condition 中毒}状态1小时，并{@condition 昏迷}1分钟，或直到有人用一个动作将你摇醒。在此期间，世界似乎以慢动作移动，你的视觉被扭曲成万花筒般的色彩\u2014\u2014但你的专注力从未受到影响。如果在1小时内使用一剂或更多{@item 粟德|TDCSR}，每多使用一剂，体质{@quickref 豁免检定|PHB|2|1|豁免检定}的DC将增加5。若你此次豁免检定失败且差值达到10或更多，你将立即降至0点生命值。",
-				"成功时，你获得在接下来1分钟内无需消耗术法点即可使用以下一项超魔法选项的能力，如同术士一般。你能使用的超魔法类型取决于所吸食的{@item 粟德|TDCSR}类型，且一旦使用后，直至再次吸入{@item 粟德|TDCSR}前无法重复使用。",
-				"蓝色苏德允许你使用{@optfeature 孪生法术|PHB}的变形魔法选项。"
-			],
-			"miscTags": [
-				"CNS"
-			]
-		},
-		{
-			"ENG_name": "Suude (Brown)",
-			"name": "粟德（棕色）",
-			"source": "TDCSR",
-			"page": 85,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown (magic)",
-			"entries": [
-				"艾桑椎亚最臭名昭著的毒品，{@item 粟德|TDCSR}是一种由{@book 残渣|TDCSR|3|一个迷人的出口商品}制成的闪亮粉末。它最初由渴求法力的大法师们在{@book 奥法纪|TDCSR|1|奥法纪}开发，作为一种在仪式施法时增强聚焦的熏香。自{@book 灾祸之战|TDCSR|1|灾祸之战}以来，其提炼方法多次失传又被重新发现，许多不同种类的{@item 粟德|TDCSR}被追求更强大法力的奥术师们开发出来。即使少量使用，它也具有可怕的成瘾性和精神退化属性。",
-				"作为一个动作，在一个器皿中燃烧{@item 粟德|TDCSR}并吸入其烟雾后，你将受到22（{@damage 4d10}）心灵伤害，并且必须进行一次{@dc 10}的体质{@quickref 豁免检定|PHB|2|1|豁免检定}。若失败，你将陷入{@condition 中毒}状态1小时，并{@condition 昏迷}1分钟，或直到有人用一个动作将你摇醒。在此期间，世界似乎以慢动作移动，你的视觉被扭曲成万花筒般的色彩\u2014\u2014但你的专注力从未受到影响。如果在1小时内使用一剂或更多{@item 粟德|TDCSR}，每多使用一剂，体质{@quickref 豁免检定|PHB|2|1|豁免检定}的DC将增加5。若你此次豁免检定失败且差值达到10或更多，你将立即降至0点生命值。",
-				"成功时，你获得在接下来1分钟内无需消耗术法点即可使用以下一项超魔法选项的能力，如同术士一般。你能使用的超魔法类型取决于所吸食的{@item 粟德|TDCSR}类型，且一旦使用后，直至再次吸入{@item 粟德|TDCSR}前无法重复使用。",
-				"棕色苏德允许你使用{@optfeature 延效法术|PHB}的元魔法选项。"
-			],
-			"miscTags": [
-				"CNS"
-			]
-		},
-		{
-			"ENG_name": "Suude (Red)",
-			"name": "粟德（红色）",
-			"source": "TDCSR",
-			"page": 85,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown (magic)",
-			"entries": [
-				"艾桑椎亚最臭名昭著的毒品，{@item 粟德|TDCSR}是一种由{@book 残渣|TDCSR|3|一个迷人的出口商品}制成的闪亮粉末。它最初由渴求法力的大法师们在{@book 奥法纪|TDCSR|1|奥法纪}开发，作为一种在仪式施法时增强聚焦的熏香。自{@book 灾祸之战|TDCSR|1|灾祸之战}以来，其提炼方法多次失传又被重新发现，许多不同种类的{@item 粟德|TDCSR}被追求更强大法力的奥术师们开发出来。即使少量使用，它也具有可怕的成瘾性和精神退化属性。",
-				"作为一个动作，在一个器皿中燃烧{@item 粟德|TDCSR}并吸入其烟雾后，你将受到22（{@damage 4d10}）心灵伤害，并且必须进行一次{@dc 10}的体质{@quickref 豁免检定|PHB|2|1|豁免检定}。若失败，你将陷入{@condition 中毒}状态1小时，并{@condition 昏迷}1分钟，或直到有人用一个动作将你摇醒。在此期间，世界似乎以慢动作移动，你的视觉被扭曲成万花筒般的色彩\u2014\u2014但你的专注力从未受到影响。如果在1小时内使用一剂或更多{@item 粟德|TDCSR}，每多使用一剂，体质{@quickref 豁免检定|PHB|2|1|豁免检定}的DC将增加5。若你此次豁免检定失败且差值达到10或更多，你将立即降至0点生命值。",
-				"成功时，你获得在接下来1分钟内无需消耗术法点即可使用以下一项超魔法选项的能力，如同术士一般。你能使用的超魔法类型取决于所吸食的{@item 粟德|TDCSR}类型，且一旦使用后，直至再次吸入{@item 粟德|TDCSR}前无法重复使用。",
-				"红色苏德允许你使用{@optfeature 远程法术|PHB}的元魔法选项。"
-			],
-			"miscTags": [
-				"CNS"
 			]
 		},
 		{
@@ -70567,7 +67740,7 @@
 			"weight": 4,
 			"weaponCategory": "军用",
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
@@ -72029,32 +69202,6 @@
 			]
 		},
 		{
-			"ENG_name": "Tinkertop Boltblaster 1000",
-			"name": "杰作机关弩1000号",
-			"source": "TDCSR",
-			"page": 197,
-			"baseItem": "手弩|PHB",
-			"type": "R",
-			"rarity": "very rare",
-			"reqAttune": true,
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"A",
-				"L",
-				"LD"
-			],
-			"range": "30/120",
-			"dmg1": "1d6",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这个由齿轮、电线和漆木构成的奇异装置有一个带有金属握把和曲柄的手柄。它的枪托上有一个华丽的制造商标记，上面写着：'在Hupperdook制造'，Hupperdook是{@book 荒洲|TDCSR|3|荒洲}中的一个城市。使用这把魔法武器进行的攻击和伤害骰，你获得+1的加值。",
-				"当你使用此武器进行攻击检定掷出20时，你可以在解决重击后立即使用此武器进行另一次攻击。当你使用此武器进行攻击检定掷出1时，你必须通过一次 {@dc 14} 敏捷 {@quickref 豁免检定|PHB|2|1|豁免检定} 否则由于部分齿轮和电线松动而受到 {@damage 1d6} 穿刺伤害。"
-			],
-			"ammoType": "弩矢|PHB"
-		},
-		{
 			"ENG_name": "Tiny jade figurine (River Heralds)",
 			"name": "微型玉像（川流使）",
 			"source": "PSX",
@@ -72062,141 +69209,6 @@
 			"type": "$A|DMG",
 			"rarity": "none",
 			"value": 2500
-		},
-		{
-			"ENG_name": "Titanstone Knuckles (Awakened)",
-			"name": "泰坦石拳（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Titanstone Knuckles (Dormant)",
-				"name": "泰坦石拳（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当泰坦石指节达到觉醒状态时，它们获得以下特性：",
-											{
-												"type": "list",
-												"items": [
-													"你的力量值变为24。",
-													"你可以采取动作从护手对自己施放{@spell 变巨/缩小术}法术（仅限放大），持续时间为10分钟。护手的这个特性在你完成一次{@quickref 休息|PHB|2|0|长休}之前不能再次使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"ability": {
-				"static": {
-					"str": 24
-				}
-			},
-			"recharge": "长休",
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"变巨/缩小术"
-					]
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Titanstone Knuckles (Dormant)",
-			"name": "泰坦石拳（休眠）",
-			"source": "TDCSR",
-			"page": 211,
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ability": {
-				"static": {
-					"str": 22
-				}
-			},
-			"entries": [
-				"这些护手是由被击败的土元素始祖的心脏石雕刻而成，赋予穿戴者无可估量的力量。最近，它们由传奇的野蛮人{@creature 格罗格·强颚|TDCSR}所使用，他继续使用它们，在Tal'Dorei和Exandria寻找值得挑战的对手。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当泰坦石指节处于休眠状态时，你穿戴这些护手时的力量值变为22。此外，你的武器攻击对物体和结构造成双倍伤害。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Titanstone Knuckles (Exalted)",
-			"name": "泰坦石拳（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Titanstone Knuckles (Awakened)",
-				"name": "泰坦石拳（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当泰坦石指节达到崇高状态时，它们获得以下特性：",
-											{
-												"type": "list",
-												"items": [
-													"你的力量值变为26。",
-													"当你受到由护手施放的{@spell 变巨/缩小术}法术影响时，你对寒冷、火焰、闪电和雷鸣伤害具有抗性。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"resist": [
-				"寒冷",
-				"火焰",
-				"闪电",
-				"雷鸣"
-			],
-			"ability": {
-				"static": {
-					"str": 26
-				}
-			},
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Tome of Clear Thought",
@@ -75244,7 +72256,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这件皱巴巴的斗篷以在枯萎海岸以尸体为食的老鼠的皮毛拼凑而成，接缝处点缀着用魔法保存下来的膨胀昆虫尸体。",
@@ -78334,126 +75346,6 @@
 			"value": 1
 		},
 		{
-			"ENG_name": "Whisper (Awakened)",
-			"name": "低语（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Whisper (Dormant)",
-				"name": "低语（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当低语达到觉醒状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这把武器对攻击和伤害骰的加值提高到+2。此外，当你使用这把匕首命中攻击时，目标会额外受到{@damage 1d6}的心灵伤害。",
-													"抵抗来自重击的{@condition 恐慌}状态的DC增加到15。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+2",
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Whisper (Dormant)",
-			"name": "低语（休眠）",
-			"source": "TDCSR",
-			"page": 211,
-			"baseItem": "匕首|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 1,
-			"weaponCategory": "简易",
-			"property": [
-				"F",
-				"L",
-				"T",
-				"Vst|TDCSR"
-			],
-			"range": "20/60",
-			"dmg1": "1d4",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把匕首是用来自超越领域的水银金属意外锻造而成，闪烁着令人不安的无源之光。它曾经由{@creature 渡鸦勇士|TDCSR|Vax'ildan，乌鸦女族长传说中的冠军}所持用。两个乌鸦羽毛作为对其前持有者的记忆，连接在它的剑柄上。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当低语处于休眠状态时，你对使用这把魔法武器进行的攻击和伤害骰获得+1的加值。",
-						"此外，当你使用这把匕首造成重击时，目标必须成功通过一次 {@dc 13} 感知 {@quickref 豁免检定|PHB|2|1|豁免检定}，否则会对你在接下来的1分钟内陷入 {@condition 恐慌} 状态。如果目标成功通过豁免，则在24小时内免疫此效果。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Whisper (Exalted)",
-			"name": "低语（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Whisper (Awakened)",
-				"name": "低语（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当低语达到崇高状态时，你获得以下好处：",
-											{
-												"type": "list",
-												"items": [
-													"这把武器对攻击和伤害骰的加值增加到+3，它造成的额外心灵伤害增加到{@dice 1d8}。",
-													"抵抗来自重击的{@condition 恐慌}状态的DC增加到17。",
-													"当使用这把匕首进行远程攻击时，你可以选择变成影子并与刀刃融合作为攻击动作的一部分，传送到另一个位置。如果攻击命中，你将出现在目标周围5尺内你选择的未被占据的空间。如果攻击未命中，你将出现在GM确定的匕首落地的位置（通常是目标周围{@dice 1d6 × 5}尺内）。在任何情况下，你都会手持匕首出现。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Whisper Jar",
 			"name": "私语罐",
 			"source": "AI",
@@ -78726,17 +75618,6 @@
 			]
 		},
 		{
-			"ENG_name": "Whitestone",
-			"name": "白石",
-			"source": "TDCSR",
-			"page": 75,
-			"type": "TG",
-			"rarity": "unknown (magic)",
-			"entries": [
-				"在{@book 洁羽山脉|TDCSR|3|洁羽山脉}的白石中残留的大量奥术能量非常容易接受附魔。在制造过程中至少融入一盎司白石的魔法物品，其创造时间仅为其他魔法物品的四分之一。一些在{@book 埃芒|TDCSR|3|团结之城埃芒}的炼金术士发现，用特定的酸性物质溶解白石可以留下纯净的{@item 残渣|TDCSR}，当昂贵的法术成分不易获得时，它可以替代这些材料。"
-			]
-		},
-		{
 			"ENG_name": "Wildroot",
 			"name": "荒根",
 			"source": "ToA",
@@ -78817,7 +75698,7 @@
 			"weight": 2,
 			"weaponCategory": "军用",
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
@@ -79604,129 +76485,6 @@
 			]
 		},
 		{
-			"ENG_name": "Wraps of Dyamak (Awakened)",
-			"name": "迪亚马克的裹拳（觉醒）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Wraps of Dyamak (Dormant)",
-				"name": "迪亚马克的裹拳（休眠）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Awakened",
-										"name": "觉醒",
-										"type": "entries",
-										"entries": [
-											"当迪亚马克裹布达到觉醒状态时，它们获得以下属性：",
-											{
-												"type": "list",
-												"items": [
-													"你的徒手攻击的攻击和伤害骰的加值增加到+2。",
-													"你可以作为一个附赠动作从裹布中施放{@spell 迷踪步}法术，消失在一团深红色的雾气中。裹布的这个属性在你完成一次{@quickref 休息|PHB|2|0|短休或长休}之前，或者在你用徒手攻击对一个敌对生物造成重击之前，不能再被使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+2",
-			"recharge": "特殊",
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"迷踪步"
-					]
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Wraps of Dyamak (Dormant)",
-			"name": "迪亚马克的裹拳（休眠）",
-			"source": "TDCSR",
-			"page": 212,
-			"rarity": "legendary",
-			"reqAttune": "由武僧",
-			"reqAttuneTags": [
-				{
-					"class": "武僧"
-				}
-			],
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"bonusWeapon": "+1",
-			"entries": [
-				"这些被施了魔法的厚布条由古代战士僧侣迪亚马克创造并使用，它们被染成深红色，看起来像是来自未知来源的血迹。目前这些裹布的安息之地未知。",
-				{
-					"ENG_name": "Dormant",
-					"name": "休眠",
-					"type": "entries",
-					"entries": [
-						"当迪亚马克裹布处于休眠状态时，你穿戴它们进行徒手攻击时，攻击和伤害骰会获得+1的加值。",
-						"此外，当你完成一次{@quickref 休息|PHB|2|0|短休或长休}时，你获得等同于你气点总数的临时生命值。"
-					]
-				}
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Wraps of Dyamak (Exalted)",
-			"name": "迪亚马克的裹拳（升华）",
-			"source": "TDCSR",
-			"_copy": {
-				"ENG_name": "Wraps of Dyamak (Awakened)",
-				"name": "迪亚马克的裹拳（觉醒）",
-				"source": "TDCSR",
-				"_mod": {
-					"entries": [
-						{
-							"mode": "appendArr",
-							"items": {
-								"entries": [
-									{
-										"ENG_name": "Exalted",
-										"name": "升华",
-										"type": "entries",
-										"entries": [
-											"当迪亚马克裹布达到崇高状态时，它们获得以下属性：",
-											{
-												"type": "list",
-												"items": [
-													"你的徒手攻击的攻击和伤害骰的加值增加到+3。",
-													"当你用徒手攻击命中时，你可以选择将攻击变为贪婪攻击。目标额外受到{@damage 6d6}点暗蚀伤害，并且你恢复等同于造成暗蚀伤害量的生命值。裹布的这个属性在你完成一次{@quickref 休息|PHB|2|0|长休}之前，或者在你用徒手攻击对一个敌对生物造成重击之前，不能再被使用。"
-												]
-											}
-										]
-									}
-								]
-							}
-						}
-					]
-				},
-				"_preserve": {
-					"page": true,
-					"fluff": true
-				}
-			},
-			"bonusWeapon": "+3",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Wreath of the Prism (Awakened)",
 			"name": "棱镜之冠（觉醒）",
 			"source": "EGW",
@@ -79771,7 +76529,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这顶黄金荆棘环上镶嵌着数十枚宝石，代表着提亚马特的五种颜色。",
@@ -79827,41 +76585,6 @@
 				}
 			},
 			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Writing Kit",
-			"name": "写作工具",
-			"source": "TDCSR",
-			"page": 183,
-			"type": "G",
-			"rarity": "none",
-			"entries": [
-				"包括：",
-				{
-					"type": "list",
-					"items": [
-						"1个{@item 小包|PHB|小袋子}",
-						"一支羽毛笔",
-						"{@item 墨水(1盎司/瓶)|PHB|墨水}",
-						"{@item 羊皮纸(每张)|PHB|折叠的羊皮纸}",
-						"一把笔刀"
-					]
-				}
-			],
-			"packContents": [
-				"小包|PHB",
-				{
-					"special": "一支羽毛笔"
-				},
-				"墨水(1盎司/瓶)|PHB",
-				{
-					"item": "羊皮纸(每张)|PHB",
-					"quantity": 10
-				},
-				{
-					"special": "一把笔刀"
-				}
-			]
 		},
 		{
 			"ENG_name": "Wrought-Iron Tower",
@@ -80332,22 +77055,6 @@
 			]
 		},
 		{
-			"ENG_name": "Zeal",
-			"name": "狂热",
-			"source": "TDCSR",
-			"page": 85,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown",
-			"value": 15000,
-			"entries": [
-				"从恶魔的血液中提炼而成，{@item 狂热|TDCSR}最初被塔尔多雷的远古狂战士们用于在战斗前赋予他们惊人的力量和勇气。如今，它最常被罪犯打手在斗殴前使用。大多数现代战士都对{@item 狂热|TDCSR}敬而远之，不仅因为它的成瘾性，还因为它长期使用可能导致的身心退化。当正确制备时，{@item 狂热|TDCSR}是一种紫色、带有灰烬味道的凝胶，通常每剂售价150金币。",
-				"以一个动作将{@item 狂热|TDCSR}涂抹在裸露的皮肤上后，你必须进行一次{@dc 12}的体质{@quickref 豁免检定|PHB|2|1|豁免检定}。若失败，你的肌肉会僵硬导致{@condition 麻痹}持续{@dice 1d4}轮。若成功，你的武器攻击在接下来1分钟内额外造成{@damage 1d6}伤害。此效果结束后，你将获得一级{@condition 力竭}。"
-			],
-			"miscTags": [
-				"CNS"
-			]
-		},
-		{
 			"ENG_name": "Zhentarim Trinket",
 			"name": "散塔林会饰品",
 			"source": "FRHoF",
@@ -80541,44 +77248,6 @@
 				"光耀吸收刺青|TCE",
 				"雷鸣吸收刺青|TCE"
 			]
-		},
-		{
-			"ENG_name": "Agony",
-			"name": "苦刑",
-			"source": "TDCSR",
-			"page": 202,
-			"baseItem": "链枷|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": "由非善良阵营的生物",
-			"reqAttuneTags": [
-				{
-					"alignment": [
-						"N",
-						"E",
-						"C",
-						"L",
-						"A"
-					]
-				}
-			],
-			"weight": 2,
-			"weaponCategory": "军用",
-			"property": [
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d8",
-			"dmgType": "B",
-			"bonusWeapon": "+2",
-			"entries": [
-				"这种残酷武器的钩链上不断显示出干涸的血迹和腐烂物，被用于无数的酷刑和缓慢处决中。传说，在{@book 灾祸之战|TDCSR|1|灾祸之战}期间，一位食肉恶魔领主的鬣狗人后裔挥舞着这把名为\"痛苦\"的武器。"
-			],
-			"items": [
-				"苦刑（休眠）|TDCSR",
-				"苦刑（觉醒）|TDCSR",
-				"苦刑（升华）|TDCSR"
-			],
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Arcane Focus",
@@ -80792,48 +77461,6 @@
 			"lootTables": [
 				"军备 - 珍稀|XDMG"
 			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Armor of the Valiant Soul",
-			"name": "坚定者之胄",
-			"source": "TDCSR",
-			"page": 202,
-			"baseItem": "鳞甲|PHB",
-			"type": "MA",
-			"immune": [
-				"强酸"
-			],
-			"resist": [
-				"强酸"
-			],
-			"conditionImmune": [
-				"恐慌"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 45,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 14,
-			"bonusAc": "+1",
-			"stealth": true,
-			"entries": [
-				"这件古董盔甲由玉石和黑龙鳞片锻造而成，曾是{@book 安卡瑞尔|TDCSR|3|马凯特}的J'mon Sa Ord所穿戴。"
-			],
-			"items": [
-				"坚定者之胄（休眠）|TDCSR",
-				"坚定者之胄（觉醒）|TDCSR",
-				"坚定者之胄（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"命令术"
-					]
-				}
-			},
 			"hasFluffImages": true
 		},
 		{
@@ -81088,7 +77715,7 @@
 				"F",
 				"L",
 				"T",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"range": "20/60",
 			"dmg1": "1d4",
@@ -81101,29 +77728,6 @@
 				"碎镜之锋（觉醒）|EGW",
 				"碎镜之锋（升华）|EGW"
 			]
-		},
-		{
-			"ENG_name": "Cabal's Ruin",
-			"name": "鬼蜮末日",
-			"source": "TDCSR",
-			"page": 203,
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"recharge": "restShort",
-			"charges": 4,
-			"entries": [
-				"这件斗篷由沉重的深色布料制成，边缘装饰着金色图案，偶尔会闪烁着奥术能量的火花。它曾被著名的枪手{@creature 帕西瓦尔·德·罗洛|TDCSR|珀西瓦尔·弗雷德里克斯坦·冯·穆塞尔·克洛索夫斯基·德·罗洛三世，白石}所穿戴。"
-			],
-			"items": [
-				"鬼蜮末日（休眠）|TDCSR",
-				"鬼蜮末日（觉醒）|TDCSR",
-				"鬼蜮末日（升华）|TDCSR"
-			],
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Carpet of Flying",
@@ -81276,86 +77880,6 @@
 			]
 		},
 		{
-			"ENG_name": "Circlet of Barbed Vision",
-			"name": "棘影之环",
-			"source": "TDCSR",
-			"page": 203,
-			"immune": [
-				"毒素"
-			],
-			"resist": [
-				"毒素"
-			],
-			"conditionImmune": [
-				"中毒"
-			],
-			"rarity": "legendary",
-			"reqAttune": "由非善良阵营的生物",
-			"reqAttuneTags": [
-				{
-					"alignment": [
-						"N",
-						"E",
-						"C",
-						"L",
-						"A"
-					]
-				}
-			],
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"entries": [
-				"当你戴上这个扭曲的黑曜石头环时，黑色的尖刺会刺入你的头部，赋予你力量，同时头环扭曲你的外表以取悦{@deity 蜘蛛女王|艾桑椎亚|TDCSR}。目前，带刺视觉头环的休息之地未知，但有传言说一个被称为{@creature 寂灭幽魂乔瑞尔|TDCSR|命定终局}的幽灵刺客正在寻找这个神器。"
-			],
-			"items": [
-				"棘影之环（休眠）|TDCSR",
-				"棘影之环（觉醒）|TDCSR",
-				"棘影之环（升华）|TDCSR"
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Condemner",
-			"name": "谴罪者",
-			"source": "TDCSR",
-			"page": 204,
-			"baseItem": "重弩|PHB",
-			"type": "R",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 18,
-			"weaponCategory": "军用",
-			"property": [
-				"A",
-				"H",
-				"LD",
-				"2H",
-				"Vst|TDCSR"
-			],
-			"range": "100/400",
-			"dmg1": "1d10",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把与阴影相关的{@item 重弩|PHB}曾经是传奇刺客Todora的首选武器。尽管很少有人知道，Condemner现在归属于另一个同样臭名昭著的刺客，名叫{@book 伊斯拉图·卡尔|TDCSR|2|伊斯拉图·卡尔}。"
-			],
-			"items": [
-				"谴罪者（休眠）|TDCSR",
-				"谴罪者（觉醒）|TDCSR",
-				"谴罪者（升华）|TDCSR"
-			],
-			"ammoType": "弩矢|PHB",
-			"attachedSpells": [
-				"枯萎术",
-				"云雾术",
-				"定身类人",
-				"沉默术"
-			],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Crystal Ball (Legendary Version)",
 			"name": "水晶球（传说版本）",
 			"source": "DMG",
@@ -81386,7 +77910,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这副秘银镜框，透明钻石镜片的护目镜被塑能法师达诺斯·奥罗用来侦查远处或寻找{@condition 隐形}的敌人。"
@@ -81395,40 +77919,6 @@
 				"达诺斯护目镜（休眠）|EGW",
 				"达诺斯护目镜（觉醒）|EGW",
 				"达诺斯护目镜（升华）|EGW"
-			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Deathwalker's Ward",
-			"name": "死亡行者的披挂",
-			"source": "TDCSR",
-			"page": 204,
-			"baseItem": "镶钉皮甲|PHB",
-			"type": "LA",
-			"resist": [
-				"强酸",
-				"寒冷",
-				"火焰",
-				"闪电",
-				"暗蚀",
-				"毒素"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 13,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 12,
-			"bonusAc": "+1",
-			"bonusSavingThrow": "+1",
-			"entries": [
-				"这件华丽的黑色皮甲上覆盖着复杂的卷轴图案，并配有一件饰有黑色羽毛的披风，羽毛来自{@deity 乌鸦主母|艾桑椎亚|TDCSR}。传说几个世纪以来，这位神祇的许多冠军都曾穿戴过它\u2014\u2014最近一次是{@creature 渡鸦勇士|TDCSR|机械之声的瓦克西尔丹}。"
-			],
-			"items": [
-				"死亡行者的披挂（休眠）|TDCSR",
-				"死亡行者的披挂（觉醒）|TDCSR",
-				"死亡行者的披挂（升华）|TDCSR"
 			],
 			"hasFluffImages": true
 		},
@@ -82208,38 +78698,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Fenthras",
-			"name": "芬萨拉斯",
-			"source": "TDCSR",
-			"page": 205,
-			"baseItem": "长弓|PHB",
-			"type": "R",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 2,
-			"weaponCategory": "军用",
-			"property": [
-				"A",
-				"H",
-				"2H",
-				"Vst|TDCSR"
-			],
-			"range": "150/600",
-			"dmg1": "1d8",
-			"dmgType": "P",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把华丽的{@item 长弓|PHB}由精类界的长生木制成，弯曲和变化如同一个活生生的实体。据说它曾被传奇游侠{@creature 维克萨利亚|TDCSR}用来对抗巨大的邪恶。"
-			],
-			"items": [
-				"芬萨拉斯（休眠）|TDCSR",
-				"芬萨拉斯（觉醒）|TDCSR",
-				"芬萨拉斯（升华）|TDCSR"
-			],
-			"ammoType": "箭|PHB",
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Figurine of Wondrous Power",
 			"name": "异能塑像",
 			"source": "DMG",
@@ -82364,7 +78822,7 @@
 			"wondrous": true,
 			"weight": 3,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这些镀金内页和银制封面的法术书中有数本是在奥法纪制作的，但自灾祸之战结束以来，人们只找回了其中一本。这本书有着无限页数，厚3寸，宽8寸，长12寸，重3磅。"
@@ -82390,7 +78848,7 @@
 			"weaponCategory": "军用",
 			"property": [
 				"V",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "B",
@@ -82465,7 +78923,7 @@
 			"reqAttune": true,
 			"weight": 13,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"ac": 12,
 			"entries": [
@@ -82522,43 +78980,6 @@
 				"徽章|XPHB",
 				"圣物匣|XPHB"
 			]
-		},
-		{
-			"ENG_name": "Honor's Last Stand",
-			"name": "最后的荣光",
-			"source": "TDCSR",
-			"page": 206,
-			"baseItem": "护盾术|PHB",
-			"type": "S",
-			"rarity": "legendary",
-			"reqAttune": "由非邪恶阵营的生物",
-			"reqAttuneTags": [
-				{
-					"alignment": [
-						"N",
-						"G",
-						"C",
-						"L",
-						"A"
-					]
-				}
-			],
-			"weight": 6,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 2,
-			"bonusAc": "+3",
-			"entries": [
-				"这面巨大的银色盾牌上刻有{@deity 白金龙|艾桑椎亚|TDCSR}的纹章，永不褪色。它的金属触感总是温暖的。"
-			],
-			"items": [
-				"最后的荣光（休眠）|TDCSR",
-				"最后的荣光（觉醒）|TDCSR",
-				"最后的荣光（升华）|TDCSR"
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Horn of Valhalla",
@@ -82722,7 +79143,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"grantsProficiency": true,
 			"entries": [
@@ -82907,7 +79328,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"recharge": "拂晓",
 			"entries": [
@@ -82928,38 +79349,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Kiss of the Changebringer",
-			"name": "万变使者之吻",
-			"source": "TDCSR",
-			"page": 206,
-			"conditionImmune": [
-				"受擒"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"bonusSavingThrow": "+1",
-			"entries": [
-				"一条银链上镶嵌着一颗美丽闪耀的翡翠，充满了力量与未知的可能。据说这条护符曾由{@deity 万变使者|艾桑椎亚|TDCSR}从{@deity 地狱之主|艾桑椎亚|TDCSR}本人脖子上盗走，并被锁在巴佐克桑的{@book 荒洲|TDCSR|3|荒洲}金库中。后来，一支极光守望的士兵队伍在一次探索这座阴森堡垒废弃神庙的远征中将其夺回。"
-			],
-			"items": [
-				"万变使者之吻（休眠）|TDCSR",
-				"万变使者之吻（觉醒）|TDCSR",
-				"万变使者之吻（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"闪现术"
-					]
-				}
-			},
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Lash of Shadows",
 			"name": "阴影之鞭",
 			"source": "EGW",
@@ -82974,7 +79363,7 @@
 			"property": [
 				"F",
 				"R",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d4",
 			"dmgType": "S",
@@ -83005,7 +79394,7 @@
 			"weight": 4,
 			"weaponCategory": "简易",
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d6",
 			"dmgType": "B",
@@ -83239,41 +79628,6 @@
 			]
 		},
 		{
-			"ENG_name": "Mythcarver",
-			"name": "神话刻录者",
-			"source": "TDCSR",
-			"page": 207,
-			"baseItem": "长剑|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": "由吟游诗人",
-			"reqAttuneTags": [
-				{
-					"class": "吟游诗人"
-				}
-			],
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"V",
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d8",
-			"dmgType": "S",
-			"dmg2": "1d10",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把难以置信的银色刀刃曾经属于传奇的白公爵，他是{@book 金色笑面|TDCSR|2|金色笑面}的创始成员之一，以及他之前的许多其他大师级吟游诗人。它与附近的音乐音调产生共鸣。在现代，它最出名的是作为著名吟游诗人{@creature 斯凯兰·短顿|TDCSR}的个人武器。"
-			],
-			"items": [
-				"神话刻录者（休眠）|TDCSR",
-				"神话刻录者（觉醒）|TDCSR",
-				"神话刻录者（升华）|TDCSR"
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Orb of Shielding",
 			"name": "防护法球",
 			"source": "ERLW",
@@ -83344,36 +79698,6 @@
 				"防护法球（撒法拉斯黑硅石）|ERLW",
 				"防护宝珠（肖瑞安大理石）|ERLW"
 			]
-		},
-		{
-			"ENG_name": "Plate of the Dawnmartyr",
-			"name": "黎明殉道者板甲",
-			"source": "TDCSR",
-			"page": 208,
-			"baseItem": "板甲|PHB",
-			"type": "HA",
-			"resist": [
-				"火焰"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 65,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ac": 18,
-			"strength": "15",
-			"bonusAc": "+1",
-			"stealth": true,
-			"entries": [
-				"精美的银色卷轴纹饰和无价的切割红宝石装饰着这套黄铜与黄金打造的盔甲。传说这套盔甲是{@deity 黎明之父|艾桑椎亚|TDCSR}的大祭司杜阿娜在{@book 灾祸之战|TDCSR|1|灾祸之战}最后几天的戈尔德拉纳斯战役中殉道时所穿的。在更近的时代，它被{@creature 派克·巧足|TDCSR}穿着，她是一位传奇的牧师，崇拜{@deity 永恒之光|艾桑椎亚|TDCSR}，在与{@book 五色会|TDCSR|1|五色会}和{@deity 耳语者|艾桑椎亚|TDCSR}的战斗中活跃。"
-			],
-			"items": [
-				"黎明殉道者板甲（休眠）|TDCSR",
-				"黎明殉道者板甲（觉醒）|TDCSR",
-				"黎明殉道者板甲（升华）|TDCSR"
-			],
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Potion of Giant Strength",
@@ -83632,42 +79956,6 @@
 				"史前异能塑像，蓝晶石无齿翼龙|BGG",
 				"史前异能塑像，黄铁矿蛇颈龙|BGG"
 			],
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Pyremaul",
-			"name": "焚烬之锤",
-			"source": "TDCSR",
-			"page": 208,
-			"baseItem": "巨锤|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 10,
-			"weaponCategory": "军用",
-			"property": [
-				"H",
-				"2H",
-				"Vst|TDCSR"
-			],
-			"dmg1": "2d6",
-			"dmgType": "B",
-			"bonusWeaponAttack": "+1",
-			"entries": [
-				"这把巨大的锤子由深红色的铁锻造而成，镶嵌着一颗闪耀着永恒火焰的明亮火蛋白石。据说它目前由{@book 大法官菲斯特，火巨人统治者弗卡农|TDCSR|6|火巨人}所持，位于{@book 峰堡山|TDCSR|3|峰堡山}的某处。"
-			],
-			"items": [
-				"焚烬之锤（休眠）|TDCSR",
-				"焚烬之锤（觉醒）|TDCSR",
-				"焚烬之锤（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"rest": {
-					"1e": [
-						"燃烧之手#2"
-					]
-				}
-			},
 			"hasFluffImages": true
 		},
 		{
@@ -84095,7 +80383,7 @@
 			"property": [
 				"T",
 				"V",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"range": "20/60",
 			"dmg1": "1d6",
@@ -84529,7 +80817,7 @@
 			"weaponCategory": "军用",
 			"property": [
 				"F",
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
@@ -84648,110 +80936,6 @@
 			]
 		},
 		{
-			"ENG_name": "Spire of Conflux",
-			"name": "汇流尖枝",
-			"source": "TDCSR",
-			"page": 209,
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": "由施法者",
-			"reqAttuneTags": [
-				{
-					"spellcasting": true
-				}
-			],
-			"weight": 4,
-			"weaponCategory": "简易",
-			"property": [
-				"V",
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d6",
-			"dmgType": "B",
-			"dmg2": "1d8",
-			"bonusSpellAttack": "+2",
-			"bonusSpellSaveDc": "+2",
-			"recharge": "拂晓",
-			"charges": 20,
-			"staff": true,
-			"entries": [
-				"汇聚之塔是一件强大的圣物，代代相传于阿沙里领袖之间。三个世纪前，当受人尊敬的海洋之语者约兰\u2014\u2014{@book 流水阿沙里|TDCSR|2|阿沙里}的领袖\u2014\u2014被深渊恶魔吞噬后，此塔便失落于世。后来，传说中德鲁伊{@creature 风暴之音，凯勒特|TDCSR|Zephrah的Keyleth，风暴之声}重新发现了它。然而，有传闻称她正在寻找另一位英雄来执掌此塔\u2014\u2014一位能像她曾经那样，游历四方，行善积德的人。"
-			],
-			"items": [
-				"汇流尖枝（休眠）|TDCSR",
-				"汇流尖枝（觉醒）|TDCSR",
-				"汇流尖枝（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"charges": {
-					"1": [
-						"燃烧之手"
-					],
-					"3": [
-						"火球术"
-					],
-					"4": [
-						"冰风暴"
-					],
-					"5": [
-						"元素咒唤术"
-					],
-					"6": [
-						"连锁闪电"
-					],
-					"7": [
-						"火焰风暴"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"ENG_name": "Star Razor",
-			"name": "星之锋",
-			"source": "TDCSR",
-			"page": 210,
-			"baseItem": "长剑|PHB",
-			"type": "M",
-			"resist": [
-				"光耀"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 3,
-			"weaponCategory": "军用",
-			"property": [
-				"V",
-				"Vst|TDCSR"
-			],
-			"dmg1": "1d8",
-			"dmgType": "S",
-			"dmg2": "1d10",
-			"bonusWeapon": "+1",
-			"entries": [
-				"这把闪耀银色的{@item 长剑|PHB}厚重且有凹槽的刀片上布满蚀刻的符文，在光线下闪烁着蓝光。星刃\u2014\u2014也被称为杜埃斯'瓦尔\u2014\u2014在{@book 灾祸之战|TDCSR|1|灾祸之战}之后被认为已被摧毁或遗失，但新的传闻表明它可能被一位半兽人在{@book 荒洲|TDCSR|3|荒洲}的某个地方挥舞着。"
-			],
-			"items": [
-				"星之锋（休眠）|TDCSR",
-				"星之锋（觉醒）|TDCSR",
-				"星之锋（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"will": [
-					"飞行术",
-					"识破隐形"
-				],
-				"daily": {
-					"1e": [
-						"妖火"
-					]
-				}
-			},
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Stormgirdle",
 			"name": "风暴腰带",
 			"source": "EGW",
@@ -84764,7 +80948,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"ability": {
 				"static": {
@@ -84778,28 +80962,6 @@
 				"风暴腰带（休眠）|EGW",
 				"风暴腰带（觉醒）|EGW",
 				"风暴腰带（升华）|EGW"
-			]
-		},
-		{
-			"ENG_name": "Suude",
-			"name": "粟德",
-			"source": "TDCSR",
-			"page": 85,
-			"type": "IDG|TDCSR",
-			"rarity": "unknown (magic)",
-			"entries": [
-				"艾桑椎亚最臭名昭著的毒品，{@item 粟德|TDCSR}是一种由{@book 残渣|TDCSR|3|一个迷人的出口商品}制成的闪亮粉末。它最初由渴求法力的大法师们在{@book 奥法纪|TDCSR|1|奥法纪}开发，作为一种在仪式施法时增强聚焦的熏香。自{@book 灾祸之战|TDCSR|1|灾祸之战}以来，其提炼方法多次失传又被重新发现，许多不同种类的{@item 粟德|TDCSR}被追求更强大法力的奥术师们开发出来。即使少量使用，它也具有可怕的成瘾性和精神退化属性。",
-				"作为一个动作，在一个器皿中燃烧{@item 粟德|TDCSR}并吸入其烟雾后，你将受到22（{@damage 4d10}）心灵伤害，并且必须进行一次{@dc 10}的体质{@quickref 豁免检定|PHB|2|1|豁免检定}。若失败，你将陷入{@condition 中毒}状态1小时，并{@condition 昏迷}1分钟，或直到有人用一个动作将你摇醒。在此期间，世界似乎以慢动作移动，你的视觉被扭曲成万花筒般的色彩\u2014\u2014但你的专注力从未受到影响。如果在1小时内使用一剂或更多{@item 粟德|TDCSR}，每多使用一剂，体质{@quickref 豁免检定|PHB|2|1|豁免检定}的DC将增加5。若你此次豁免检定失败且差值达到10或更多，你将立即降至0点生命值。",
-				"成功时，你获得在接下来1分钟内无需消耗术法点即可使用以下一项超魔法选项的能力，如同术士一般。你能使用的超魔法类型取决于所吸食的{@item 粟德|TDCSR}类型，且一旦使用后，直至再次吸入{@item 粟德|TDCSR}前无法重复使用。",
-				"{@item 粟德（棕色）|TDCSR|棕色粟德}允许你使用{@optfeature 延效法术|PHB}超魔法选项，{@item 粟德（蓝色）|TDCSR|蓝色粟德}允许你使用{@optfeature 孪生法术|PHB}，而{@item 粟德（棕色）|TDCSR|红色粟德}则赋予{@optfeature 远程法术|PHB}。"
-			],
-			"items": [
-				"粟德（棕色）|TDCSR",
-				"粟德（蓝色）|TDCSR",
-				"粟德（红色）|TDCSR"
-			],
-			"miscTags": [
-				"CNS"
 			]
 		},
 		{
@@ -84855,7 +81017,7 @@
 			"weight": 4,
 			"weaponCategory": "军用",
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
@@ -84876,45 +81038,6 @@
 					]
 				}
 			}
-		},
-		{
-			"ENG_name": "Titanstone Knuckles",
-			"name": "泰坦石拳",
-			"source": "TDCSR",
-			"page": 211,
-			"resist": [
-				"寒冷",
-				"火焰",
-				"闪电",
-				"雷鸣"
-			],
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"ability": {
-				"static": {
-					"str": 26
-				}
-			},
-			"entries": [
-				"这些护手是由被击败的土元素始祖的心脏石雕刻而成，赋予穿戴者无可估量的力量。最近，它们由传奇的野蛮人{@creature 格罗格·强颚|TDCSR}所使用，他继续使用它们，在Tal'Dorei和Exandria寻找值得挑战的对手。"
-			],
-			"items": [
-				"泰坦石拳（休眠）|TDCSR",
-				"泰坦石拳（觉醒）|TDCSR",
-				"泰坦石拳（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"变巨/缩小术"
-					]
-				}
-			},
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "True-Ice Shards",
@@ -85021,7 +81144,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这件皱巴巴的斗篷以在枯萎海岸以尸体为食的老鼠的皮毛拼凑而成，接缝处点缀着用魔法保存下来的膨胀昆虫尸体。"
@@ -85088,37 +81211,6 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Whisper",
-			"name": "低语",
-			"source": "TDCSR",
-			"page": 211,
-			"baseItem": "匕首|PHB",
-			"type": "M",
-			"rarity": "legendary",
-			"reqAttune": true,
-			"weight": 1,
-			"weaponCategory": "简易",
-			"property": [
-				"F",
-				"L",
-				"T",
-				"Vst|TDCSR"
-			],
-			"range": "20/60",
-			"dmg1": "1d4",
-			"dmgType": "P",
-			"bonusWeapon": "+3",
-			"entries": [
-				"这把匕首是用来自超越领域的水银金属意外锻造而成，闪烁着令人不安的无源之光。它曾经由{@creature 渡鸦勇士|TDCSR|Vax'ildan，乌鸦女族长传说中的冠军}所持用。两个乌鸦羽毛作为对其前持有者的记忆，连接在它的剑柄上。"
-			],
-			"items": [
-				"低语（休眠）|TDCSR",
-				"低语（觉醒）|TDCSR",
-				"低语（升华）|TDCSR"
-			],
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Will of the Talon",
 			"name": "爪之意志",
 			"source": "EGW",
@@ -85131,7 +81223,7 @@
 			"weight": 2,
 			"weaponCategory": "军用",
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
@@ -85143,40 +81235,6 @@
 				"爪之意志（觉醒）|EGW",
 				"爪之意志（升华）|EGW"
 			]
-		},
-		{
-			"ENG_name": "Wraps of Dyamak",
-			"name": "迪亚马克的裹拳",
-			"source": "TDCSR",
-			"page": 212,
-			"rarity": "legendary",
-			"reqAttune": "由武僧",
-			"reqAttuneTags": [
-				{
-					"class": "武僧"
-				}
-			],
-			"wondrous": true,
-			"property": [
-				"Vst|TDCSR"
-			],
-			"bonusWeapon": "+3",
-			"entries": [
-				"这些被施了魔法的厚布条由古代战士僧侣迪亚马克创造并使用，它们被染成深红色，看起来像是来自未知来源的血迹。目前这些裹布的安息之地未知。"
-			],
-			"items": [
-				"迪亚马克的裹拳（休眠）|TDCSR",
-				"迪亚马克的裹拳（觉醒）|TDCSR",
-				"迪亚马克的裹拳（升华）|TDCSR"
-			],
-			"attachedSpells": {
-				"daily": {
-					"1e": [
-						"迷踪步"
-					]
-				}
-			},
-			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Wraps of Unarmed Power",
@@ -85216,7 +81274,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"property": [
-				"Vst|TDCSR"
+				"Vst|EGW"
 			],
 			"entries": [
 				"这顶黄金荆棘环上镶嵌着数十枚宝石，代表着提亚马特的五种颜色。"

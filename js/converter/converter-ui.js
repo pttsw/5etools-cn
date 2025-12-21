@@ -269,7 +269,7 @@ export class ConverterUi extends BaseComponent {
 			}
 
 			await MiscUtil.pCopyTextToClipboard(output);
-			JqueryUtil.showCopiedEffect(btn, "Copied!");
+			JqueryUtil.showCopiedEffect(btn);
 		});
 
 		/**
