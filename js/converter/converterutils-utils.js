@@ -412,6 +412,7 @@ static splitNameToChineseAndEnglish (originName) {
     }
     if (cnBracket) cnName = `${cnName}${cnBracket}`;
     if (enBracket) enName = `${enName} ${enBracket}`;
+	if (/^[a-zA-Z]\w+\.$/.test(enName)) cnName = enName + cnName; enName = "";
     return [cnName, enName];
 }
 }

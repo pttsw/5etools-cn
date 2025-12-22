@@ -6415,6 +6415,7 @@ globalThis.DataUtil = class {
 			const additionalData = {
 				_versionBase_isVersion: true,
 				_versionBase_name: parentEntity.name,
+				_versionBase_ENG_name: parentEntity.ENG_name,
 				_versionBase_source: parentEntity.source,
 				_versionBase_hash: UrlUtil.URL_TO_HASH_BUILDER[parentEntity.__prop](parentEntity),
 				_versionBase_hasToken: parentEntity.hasToken,

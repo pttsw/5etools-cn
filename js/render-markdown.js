@@ -2460,7 +2460,7 @@ class MarkdownConverter {
 					// Skip forwards until we run out of lines, or until we hit a line that isn't part of the block
 					for (; i + j < buf.length; ++j) {
 						const nxt = buf[i + j];
-						if (!nxt || !nxt.trim()) {
+						if (!nxt || typeof nxt !== "string" || !nxt.trim()) {
 							// Allow a max of one blank line before breaking into another list
 							if (blankCount++ < 1) continue;
 							else break;
@@ -2736,7 +2736,7 @@ class MarkdownConverter {
 				],
 			};
 			const ixRoot = buf.indexOf(stack[0]);
-			if (~ixRoot) throw new Error(`Could not find root in buffer!`);
+			if (ixRoot < 0) throw new Error(`Could not find root in buffer!`);
 			buf[ixRoot] = nuRoot;
 			stack.pop();
 			stack.push(nuRoot);

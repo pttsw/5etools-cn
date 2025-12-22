@@ -1,4 +1,5 @@
 import {ConverterUiUtil} from "./converter-ui-utils.js";
+import {ConverterUtils} from "./converterutils-utils.js";
 
 export class ConverterUi extends BaseComponent {
 	constructor () {
@@ -463,7 +464,16 @@ export class ConverterUi extends BaseComponent {
 	}
 
 	doCleanAndOutput (obj, append) {
-		const asCleanString = CleanUtil.getCleanJson(obj, {isFast: false});
+		const objWithName = MiscUtil.getWalker().walk(obj, {
+			object: (obj) => {
+				if (obj.ENG_name || !obj.name) return obj;
+				const [nameChinese, nameEnglish] = ConverterUtils.splitNameToChineseAndEnglish(obj.name);
+				obj.name = nameChinese;
+				obj.ENG_name = nameEnglish;
+				return obj;
+			}
+		 });
+		const asCleanString = CleanUtil.getCleanJson(objWithName, {isFast: false});
 		if (append) {
 			const strs = [asCleanString, this._outText];
 			if (this._state.appendPrependMode === ConverterUi._APPEND_PREPEND_MODE__PREPEND) strs.reverse();
