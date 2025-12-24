@@ -1012,7 +1012,7 @@
 					"name": "杀手机运",
 					"type": "entries",
 					"entries": [
-						"当你可见的一个仇敌生命值被降低到0{@variantrule 生命值|XPHB}时，你在你的下一个回合结束前进行的下一次攻击检定获得{@variantrule 优势|XPHB}。"
+						"当一名你可见的敌人{@variantrule 生命值|XPHB}降至0时，你的下次攻击检定获得{@variantrule 优势|XPHB}，持续至你的下个回合结束。"
 					]
 				},
 				{
@@ -1020,7 +1020,7 @@
 					"name": "痛心切骨",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你在{@status 浴血|XPHB}状态下进行攻击检定时，你可以对目标造成等于你的{@variantrule 熟练项|XPHB|熟练加值}的额外伤害。该额外伤害的类型与攻击的类型相同。"
+						"每回合一次，当你在{@status 浴血|XPHB}期间进行攻击检定时，你可以额外对目标造成等于{@variantrule 熟练项|XPHB|熟练加值}的伤害。额外伤害的伤害类型与该攻击的伤害类型一致。"
 					]
 				}
 			]
@@ -1058,7 +1058,7 @@
 					"name": "超健康",
 					"type": "entries",
 					"entries": [
-						"当你获得{@variantrule 临时生命值|XPHB}时，你获得的{@variantrule 临时生命值|XPHB}数值增加5。"
+						"当你获得{@variantrule 临时生命值|XPHB}时，该{@variantrule 临时生命值|XPHB}数值增加5。"
 					]
 				},
 				{
@@ -1066,7 +1066,7 @@
 					"name": "超恢复",
 					"type": "entries",
 					"entries": [
-						"当你花费一个或多个{@variantrule 生命值骰|XPHB}来恢复{@variantrule 生命值|XPHB}时，你可以改为对每个骰子使用可能的最高数值。"
+						"当你消耗一枚或更多{@variantrule 生命值骰|XPHB}来恢复{@variantrule 生命值|XPHB}时，你能够以每枚骰子可能掷出的最高值替代其骰值。"
 					]
 				}
 			]
@@ -1141,7 +1141,7 @@
 					"name": "巧妙讲演",
 					"type": "entries",
 					"entries": [
-						"你在影响{@variantrule 敌对 【态度】|XPHB|敌对}生物的属性检定上没有{@variantrule 劣势|XPHB}。"
+						"你影响{@variantrule 敌对 【态度】|XPHB|敌对}生物的属性检定不具有{@variantrule 劣势|XPHB}。"
 					]
 				},
 				{
@@ -1149,7 +1149,7 @@
 					"name": "天赐译员",
 					"type": "entries",
 					"entries": [
-						"你理解你听到或看到手语的任何语言的字面含义，并且你理解你看到的任何书面语言的字面含义。"
+						"你理解你看见或听见的任意语言手势的字面意思。你理解你看见的任意语言文字的字面意思。"
 					]
 				},
 				{
@@ -1157,7 +1157,7 @@
 					"name": "心灵沟通",
 					"type": "entries",
 					"entries": [
-						"你获得射程为120尺的心灵感应。"
+						"你获得120尺心灵感应。"
 					]
 				}
 			]
@@ -1191,7 +1191,7 @@
 					"name": "心体防护",
 					"type": "entries",
 					"entries": [
-						"当你处于{@status 浴血|XPHB}状态时，你对除力场外的所有伤害类型具有{@variantrule 抗性|XPHB}。"
+						"{@status 浴血|XPHB}期间，你对除力场伤害外的所有类型伤害具有{@variantrule 抗性|XPHB}。"
 					]
 				}
 			]
@@ -1330,10 +1330,10 @@
 				"你获得以下增益。",
 				{
 					"ENG_name": "Eternal Rest",
-					"name": "永恒安息",
+					"name": "永恒安眠",
 					"type": "entries",
 					"entries": [
-						"被你缩小到0{@variantrule 生命值|XPHB}的生物不能变成不死生物。"
+						"被你降至0{@variantrule 生命值|XPHB}的生物无法变为亡灵。"
 					]
 				},
 				{
@@ -1341,7 +1341,7 @@
 					"name": "磊落光明",
 					"type": "entries",
 					"entries": [
-						"当你进行一次造成光耀伤害的伤害掷骰时，你可以改为对每个伤害骰使用可能的最大数值。一旦你使用了这个增益，直到你完成一次{@variantrule 长休|XPHB}前，你都不能再次这样做。"
+						"当你进行一次造成光耀伤害的伤害掷骰时，你能够以每枚骰子可能掷出的最高值替代其骰值。此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				}
 			]
@@ -1417,9 +1417,9 @@
 					"name": "变形生物",
 					"type": "entries",
 					"entries": [
-						"你可以执行一个{@action 魔法|XPHB}动作来变形为{@variantrule 挑战等级|XPHB}不超过10的野兽、类人生物或怪兽。当你变形时，你获得等同于该形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形效果持续1小时，如果你没有剩余的{@variantrule 临时生命值|XPHB}，或者你执行一个{@action 魔法|XPHB}动作来恢复真实形态，则效果提前结束。",
-						"你的游戏数据被所选形态的数据卡所取代，但你保留你的生物类型；阵营；个性；智力、感知和魅力属性值；{@variantrule 生命值|XPHB}；{@variantrule 生命值骰|XPHB}；熟练项；以及交流能力。如果你拥有施法或契约魔法特性，你也保留它。在变形时，你决定你的装备是掉落在地上，还是在你处于新形态时改变大小和形状以适应新形态。",
-						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+						"你能够以{@action 魔法|XPHB}动作来变形为{@variantrule 挑战等级|XPHB}不高于10的野兽、类人或怪兽。当你变形时，你获得等于新形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形效应持续1小时，并在你不具有剩余的{@variantrule 临时生命值|XPHB}或在你执行{@action 魔法|XPHB}动作变回真实形态时提前结束。",
+						"你的游戏数据被你选择形态的数据卡所替换，但你保留你的生物类型；阵营；个性；智力、感知和魅力属性值；{@variantrule 生命值|XPHB}；{@variantrule 生命值骰|XPHB}；熟练项；交流能力。若你具有施法或契约魔法特性，你同样保留之。变形时，由你决定着装或携带的每件装备是掉落在地上或是适应你的新形态调整大小与形状（仅当你置身其中期间）。",
+						"此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				},
 				{
@@ -1427,7 +1427,7 @@
 					"name": "变化适性",
 					"type": "entries",
 					"entries": [
-						"当你变形时获得{@variantrule 临时生命值|XPHB}，将该{@variantrule 临时生命值|XPHB}的数值增加20。"
+						"当你在变形时获得{@variantrule 临时生命值|XPHB}，该{@variantrule 临时生命值|XPHB}数值提升20。"
 					]
 				}
 			]
@@ -1503,7 +1503,7 @@
 					"name": "重掷豁免",
 					"type": "entries",
 					"entries": [
-						"当你豁免检定失败时，你可以重掷该豁免检定，并且必须使用新的掷骰结果。一旦你使用此增益，直到你的下个回合开始前，你都不能再次使用。"
+						"当你的豁免检定失败时，你能够重新掷骰但必须使用新的结果。此增益一经使用，直至你的下个回合开始你都无法再次使用。"
 					]
 				}
 			]
@@ -1642,7 +1642,7 @@
 					"type": "entries",
 					"entries": [
 						"如果你的{@variantrule 生命值|XPHB}降至0但未被直接杀死，你可以改为降至1{@variantrule 生命值|XPHB|生命值}并施放{@spell 气化形体|XPHB}而不消耗法术位（无需动作）。当你以此方式施放该法术时，你只能以自身为目标，你的{@variantrule 飞行速度|XPHB}为20尺，并且在法术持续时间内每回合开始时恢复10{@variantrule 生命值|XPHB}。该法术的施法属性是由此专长提升的属性。",
-						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+						"此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				}
 			]
@@ -1686,7 +1686,7 @@
 					"name": "百毒不侵",
 					"type": "entries",
 					"entries": [
-						"你对 {@variantrule 免疫|XPHB} 和 {@condition 中毒|XPHB} 状态具有免疫。"
+						"你具有对{@variantrule 免疫|XPHB} 和 {@condition 中毒|XPHB} 状态的免疫。"
 					]
 				},
 				{
@@ -1694,7 +1694,7 @@
 					"name": "完美毒师",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你掷骰以确定生物因你的攻击、法术或特性而承受的毒素伤害时，你可以改为为每个骰子使用可能的最高数值。"
+						"每回合一次，当你掷骰以决定生物因你的攻击、法术或特性受到的毒素伤害时，你能够以每枚骰子可能掷出的最高值替代其骰值。"
 					]
 				}
 			]
@@ -1784,8 +1784,8 @@
 					"name": "舞动灵感",
 					"type": "entries",
 					"entries": [
-						"你总是准备了{@spell 奥图迷舞|XPHB}法术。你可以无需法术位施放该法术一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放该法术的能力。你也可以使用你所拥有的任何适当等级的法术位来施放该法术。",
-						"当你施放该法术时，它不需要法术成分，并且受到伤害不会打断你对其的{@status 专注|XPHB}。"
+						"你始终准备着法术{@spell 奥图迷舞|XPHB}。你可以无需法术位地施展该法术一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展该法术的能力。你也能够以你拥有的合适环阶的法术位施展该法术。",
+						"当你施展该法术时无需法术成分，且受到伤害不会打断你该法术的{@status 专注|XPHB}。（译注：本专长未写明法术的施法属性，原文如此）"
 					]
 				},
 				{
@@ -1793,7 +1793,7 @@
 					"name": "放声歌唱",
 					"type": "entries",
 					"entries": [
-						"当一个生物在对抗你的{@spell 奥图迷舞|XPHB}豁免检定失败且因此法术而具有{@condition 魅惑|XPHB}状态时，它无法施展具有语言成分的法术，并且如果它能唱歌，就会唱出令人愉悦的胡言乱语。"
+						"若一名生物因对抗你的{@spell 奥图迷舞|XPHB}豁免失败而陷入该法术造成的{@condition 魅惑|XPHB}状态，其无法施展需要言语成分的法术，且若其能够唱歌，其将哼唱无意义的悦耳小调。"
 					]
 				}
 			]
@@ -2361,15 +2361,15 @@
 					"name": "无畏",
 					"type": "entries",
 					"entries": [
-						"你对该{@condition 恐慌|XPHB}状态具有{@variantrule 免疫|XPHB}。"
+						"你具有对{@condition 恐慌|XPHB}状态的{@variantrule 免疫|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Flee, Fools!",
-					"name": "走开，愚人！",
+					"name": "逃吧，蠢货！",
 					"type": "entries",
 					"entries": [
-						"当一个带有{@condition 恐慌|XPHB}状态的生物在你60尺内开始其回合时，你可以采取一个{@variantrule 反应|XPHB}来加剧其恐惧，前提是你能看见该生物且它不在{@variantrule 掩护|XPHB|全身掩护}后面。如果你这样做，该生物必须成功通过一次感知豁免检定（DC 8加上你的魅力调整值和你的{@variantrule 熟练项|XPHB|熟练加值}），否则会花费其回合通过最快可用方式远离你。一旦你使用此增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前不能再使用。"
+						"当一名陷入{@condition 恐慌|XPHB}状态的生物在你60尺内开始其回合时，只要你可以看见该生物且其未身处{@variantrule 反应|XPHB}之后，你就能够以{@variantrule 掩护|XPHB|全身掩护}加剧其恐惧，后面。若你如此做，该生物必须成功通过一次感知豁免（DC为8加你的魅力调整值加你的{@variantrule 熟练项|XPHB|熟练加值}），否则需要消耗其回合以可用的最快方式移动远离你。此增益一经使用，直至完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				},
 				{
@@ -2377,7 +2377,7 @@
 					"name": "令人生畏",
 					"type": "entries",
 					"entries": [
-						"如果你尚未拥有，则你在{@skill 威吓|XPHB}技能上获得{@variantrule 熟练项|XPHB}。你还在{@skill 威吓|XPHB}上获得{@variantrule 专精|XPHB}。"
+						"若你不具有{@skill 威吓|XPHB}技能的{@variantrule 熟练项|XPHB}，你获得之。你还会获得{@skill 威吓|XPHB}{@variantrule 专精|XPHB}。"
 					]
 				}
 			]
@@ -2412,7 +2412,7 @@
 					"name": "如日当空",
 					"type": "entries",
 					"entries": [
-						"作为{@variantrule 附赠动作|XPHB}，你散发出一个30尺{@variantrule 光环 [效应区域]|XPHB|光环}的{@variantrule 明亮光照|XPHB}，该光照为阳光。如果{@variantrule 光环 [效应区域]|XPHB|光环}的任何区域与由法术创造的{@spell 黑暗术|XPHB}区域重叠，则该法术被驱散。该{@variantrule 光环 [效应区域]|XPHB|光环}持续到你将其解除（无需动作）、死亡或处于{@condition 失能|XPHB}状态为止。"
+						"以一个{@variantrule 附赠动作|XPHB}，你在30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内散发如同阳光的{@variantrule 明亮光照|XPHB}。若任意{@variantrule 光环 [效应区域]|XPHB|光环}区域与法术创造的{@spell 黑暗术|XPHB}区域重叠，该法术被解除。光环{@variantrule 光环 [效应区域]|XPHB|光环}持续至你解除之（无需动作）、你死亡或你陷入{@condition 失能|XPHB}。"
 					]
 				},
 				{
@@ -2420,14 +2420,14 @@
 					"name": "守御之光",
 					"type": "entries",
 					"entries": [
-						"当你的昼明术存在激活时，在你每个回合开始时，你和你在昼明术存在范围内能看见的盟友获得10点{@variantrule 临时生命值|XPHB}。"
+						"当你的如日当空激活时*（译注：原文如此，按后文看应是激活期间），每个你的回合开始时，你和如日当空区域内你可见的盟友获得10{@variantrule 临时生命值|XPHB}。"
 					]
 				}
 			]
 		},
 		{
 			"ENG_name": "Boon of the Furious Storm",
-			"name": "狂怒风暴恩惠",
+			"name": "暴风骤岚之恩惠",
 			"source": "FRHoF",
 			"page": 43,
 			"category": "EB",
@@ -2460,7 +2460,7 @@
 					"name": "暴风之眼",
 					"type": "entries",
 					"entries": [
-						"你对闪电和雷鸣伤害具有{@variantrule 抗性|XPHB}。当你处于{@status 浴血|XPHB}状态时，你对闪电和雷鸣伤害具有{@variantrule 免疫|XPHB}。"
+						"你对闪电和雷鸣伤害具有{@variantrule 抗性|XPHB}。{@status 浴血|XPHB}期间，你对闪电和雷鸣伤害具有{@variantrule 免疫|XPHB}。"
 					]
 				},
 				{
@@ -2468,7 +2468,7 @@
 					"name": "风暴之力",
 					"type": "entries",
 					"entries": [
-						"生物在对抗你的造成闪电或雷鸣伤害的法术的豁免检定中具有{@variantrule 劣势|XPHB}。"
+						"生物在对抗你造成闪电或雷鸣伤害的法术时进行的豁免检定具有{@variantrule 劣势|XPHB}。"
 					]
 				}
 			]
@@ -2558,7 +2558,7 @@
 					"name": "墓亡抗性",
 					"type": "entries",
 					"entries": [
-						"你拥有{@variantrule 抗性|XPHB}对寒冷伤害和暗蚀伤害的抗性。"
+						"你对寒冷和暗蚀伤害具有{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
@@ -2566,7 +2566,7 @@
 					"name": "生命虹吸",
 					"type": "entries",
 					"entries": [
-						"当一个距离你120尺内的仇敌生命值被降低到0{@variantrule 生命值|XPHB}时，你可以使用一个{@variantrule 反应|XPHB}来恢复50{@variantrule 生命值|XPHB}。一旦你使用了这个增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前无法再次使用。"
+						"当一名位于你120尺内的敌人{@variantrule 生命值|XPHB}降至0时，你能够以{@variantrule 反应|XPHB}恢复50{@variantrule 生命值|XPHB}。此增益一经使用，直至完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				}
 			]
@@ -3074,7 +3074,7 @@
 					"name": "戏法",
 					"type": "entries",
 					"entries": [
-						"你学会{@spell 冷冻射线|XPHB}戏法。如果你已经学会该戏法，则改为自选一个不同的法师戏法。该法术的施法属性为通过此专长提升的属性。"
+						"你习得戏法{@spell 冷冻射线|XPHB}。若你已习得该戏法，你习得另一道你选择的法师戏法。该法术的施法属性是你以此专长提升的属性。"
 					]
 				},
 				{
@@ -3082,7 +3082,7 @@
 					"name": "霜噬",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你以攻击检定命中一个生物并造成寒冷伤害时，你可以暂时削弱该生物的防御。该生物在你的下个回合结束前进行的下一次豁免检定中减去{@dice 1d4}。"
+						"每回合一次，当你以攻击检定命中一名生物并造成寒冷伤害时，你能够暂时削弱该生物的防御。在你的下个回合结束前，该生物进行的下次豁免检定减少{@dice 1d4}。"
 					]
 				}
 			]
@@ -3361,10 +3361,10 @@
 				"你获得以下增益。",
 				{
 					"ENG_name": "Dragon's Tongue",
-					"name": "龙之舌卷",
+					"name": "龙之舌",
 					"type": "entries",
 					"entries": [
-						"你懂得龙族血脉。如果你在选择此专长时已经懂得龙族血脉，你改为从玩家手册或本书第二章的语言表格中选择一种语言。"
+						"你懂得龙语。若你选取此专长时已懂得龙语，你自《玩家手册》或本书第二章的语言表中选择一门语言习得以替代龙语。"
 					]
 				},
 				{
@@ -3372,15 +3372,15 @@
 					"name": "龙之威",
 					"type": "entries",
 					"entries": [
-						"你可以执行一个{@action 魔法|XPHB}动作，向一个你30尺内能看见的生物灌输恐惧。目标必须成功通过一次感知豁免检定（DC 8加上你的感知调整值和{@variantrule 熟练项|XPHB|熟练加值}）否则获得{@condition 恐慌|XPHB}状态直到你的下个回合结束。如果目标豁免成功或效果对目标结束时，该目标在24小时内免疫此效果。"
+						"你能够以{@action 魔法|XPHB}动作将恐惧灌输给一名位于你30尺内的你可见的生物。目标必须成功通过一次感知豁免（DC 8+你的感知调整值+你的{@variantrule 熟练项|XPHB|熟练加值}）否则陷入{@condition 恐慌|XPHB}状态，持续至你的下个回合结束。若目标的此豁免成功或当其身上的此效应结束时，目标在24小时内免疫此效应。"
 					]
 				},
 				{
 					"ENG_name": "Inspired by Fear",
-					"name": "梦启者恐惧术",
+					"name": "饮惧为励",
 					"type": "entries",
 					"entries": [
-						"当你使一个生物陷入{@condition 恐慌|XPHB}状态且你是其恐惧来源时，若你未拥有{@variantrule 英雄激励|XPHB}，则可获得它。一旦你使用此增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}前无法再次使用。"
+						"当你令一名生物陷入{@condition 恐慌|XPHB}状态且恐惧源为你时，若你没有{@variantrule 英雄激励|XPHB}，你可以获得之。此增益一经使用，直至你完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}都无法再次使用。"
 					]
 				}
 			]
@@ -3756,7 +3756,7 @@
 					"name": "伤害抗性",
 					"type": "entries",
 					"entries": [
-						"当你获得此专长时，选择强酸、冷冻、火焰、闪电或毒素。你对所选伤害类型具有{@variantrule 抗性|XPHB}。"
+						"当你获得此专长时，你自强酸、寒冷、火焰、闪电或毒素中选择一种。你获得你选择的伤害类型的{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
@@ -3764,7 +3764,7 @@
 					"name": "可怖伟力",
 					"type": "entries",
 					"entries": [
-						"当你在你的回合中作为攻击或魔法动作的一部分对一个生物造成伤害时，你可以在本回合使用拜龙教龙学徒专长的龙之恐惧增益作为{@variantrule 附赠动作|XPHB}。"
+						"当你在你的回合中以攻击动作或魔法动作对一名生物造成伤害时，你能够在本回合以{@variantrule 附赠动作|XPHB}使用新晋龙巫教徒专长的龙之威增益。"
 					]
 				}
 			]
@@ -4253,7 +4253,7 @@
 					"name": "动物交谈",
 					"type": "entries",
 					"entries": [
-						"你总是准备着{@spell 动物交谈|XPHB}法术，并能用你拥有的任何法术位施放它。智力、感知或魅力是此法术的施法属性（在你选择此专长时决定）。当你以{@variantrule 仪式|XPHB}施放此法术时，其持续时间为8小时。"
+						"你始终准备着法术{@spell 动物交谈|XPHB}，且能以你拥有的任意法术位施展该法术。你施展该法术的施法属性是智力、感知或魅力（在你选取此专长时选择）。当你将该法术作为{@variantrule 仪式|XPHB}施展时，其持续时间为8小时。"
 					]
 				},
 				{
@@ -4261,7 +4261,7 @@
 					"name": "双人轮打",
 					"type": "entries",
 					"entries": [
-						"当你执行{@action 协助|XPHB}动作时，你可以作为同一动作的一部分与5尺内一个愿意的盟友交换位置。此移动不会引发{@action 借机攻击|XPHB|借机攻击}。如果该盟友处于{@condition 失能|XPHB}状态，则你不能使用此增益。"
+						"当你执行{@action 协助|XPHB}动作时，作为此动作的一部分，你能够与一名位于你5尺内的自愿盟友交换位置。此次移动不会引发{@action 借机攻击|XPHB|借机攻击}。若该盟友陷入{@condition 失能|XPHB}状态，你无法使用此增益。"
 					]
 				}
 			]
@@ -4318,15 +4318,15 @@
 					"name": "动物伙伴",
 					"type": "entries",
 					"entries": [
-						"你在对野兽使用{@action 影响|XPHB}动作时，在属性检定上具有{@variantrule 优势|XPHB}。"
+						"当你对野兽执行{@action 影响|XPHB}动作时，你的属性检定具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Two Hearts, One Mind",
-					"name": "二心一意",
+					"name": "二体一心",
 					"type": "entries",
 					"entries": [
-						"你总是准备了{@spell 野兽知觉|XPHB}法术。你可以无需法术位施放它一次，并在完成一次{@variantrule 长休|XPHB}后恢复以此方式施放它的能力。当你使用此特性无需法术位施放它时，它不需要{@status 专注|XPHB}。你也可以使用你拥有的任何适当等级的法术位来施放该法术。该法术的施法属性是由此专长提升的属性。"
+						"你始终准备着法术{@spell 野兽知觉|XPHB}。你可以无需法术位地施展该法术一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展该法术的能力。当你以此特性*（译注：原文如此，为特性Feature，理论上应当是增益Benfits）施展该法术时，该法术无需{@status 专注|XPHB}。你也能够以你拥有的合适环阶的法术位施展该法术。该法术的施法属性是你以此专长提升的属性。"
 					]
 				}
 			]
@@ -4395,7 +4395,7 @@
 					"name": "妖精轻步",
 					"type": "entries",
 					"entries": [
-						"当你在你的回合中执行{@action 撤离|XPHB}动作时，{@variantrule 困难地形|XPHB}在该回合的剩余时间内不会花费你额外的移动。"
+						"当你在你的回合内执行{@action 撤离|XPHB}动作时，本回合剩余的时间中，{@variantrule 困难地形|XPHB}不会令你消耗额外的移动力。"
 					]
 				},
 				{
@@ -4403,8 +4403,8 @@
 					"name": "惊惶打击",
 					"type": "entries",
 					"entries": [
-						"当你以一次攻击检定命中一个生物时，你可以尝试扰乱目标。目标必须成功通过一次感知豁免检定（DC 8加上由该专长提升的属性值的调整值和你{@variantrule 熟练项|XPHB|熟练加值}）否则在直到你的下一个回合结束前在豁免检定上具有{@variantrule 劣势|XPHB}。",
-						"你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。"
+						"当你以攻击检定命中一名生物时，你能够尝试令目标惊惶失措。目标必须成功通过一次感知豁免（DC为8加你以此专长提升的属性的调整值加你的{@variantrule 熟练项|XPHB|熟练加值}）否则其豁免具有{@variantrule 劣势|XPHB}持续至你的下个回合结束。",
+						"你能够使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				}
 			]
@@ -4742,9 +4742,9 @@
 					"name": "祈愿魔法",
 					"type": "entries",
 					"entries": [
-						"作为{@action 魔法|XPHB}动作，你可以从术士法术列表中施放一个你选择的{@filter 从术士法术列表中选择一个1环法术|spells|level=1|class=术士}，该法术的施法时间为一个动作。一旦你使用了这个增益，在完成一次{@variantrule 长休|XPHB}前你不能再这样做。该法术的施法属性是由此专长提升的属性。",
-						"当你达到11级时，你使用此专长施放的法术将如同使用2环法术位施放。",
-						"当你达到17级时，该法术如同使用3环法术位施放。"
+						"你能够以{@action 魔法|XPHB}动作施展一道你从术士法术列表中选择的{@filter 从术士法术列表中选择一个1环法术|spells|level=1|class=术士}，该法术的施法时间需为动作。此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。该法术的施法属性是你以此专长提升的属性。",
+						"当你到达11级时，你以此专长施展的法术如同使用二环法术位施展。",
+						"当你到达17级时，你以此专长施展的法术如同使用三环法术位施展。"
 					]
 				}
 			]
@@ -5073,7 +5073,7 @@
 					"type": "entries",
 					"entries": [
 						"当你施放一个戏法时，你可以掷一个或二个你未消耗的{@variantrule 生命值骰|XPHB}。你获得等于掷骰数值加上你的体质调整值的{@variantrule 临时生命值|XPHB}，并且你选择的30尺内的一个生物（不包括你）受到等于掷骰数值的力场伤害。那些骰子随后被消耗。",
-						"你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。"
+						"你能够使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				}
 			]
@@ -5761,7 +5761,7 @@
 					"name": "盗贼黑话",
 					"type": "entries",
 					"entries": [
-						"你知道盗贼黑话。"
+						"你懂得盗贼黑话。"
 					]
 				},
 				{
@@ -5769,7 +5769,7 @@
 					"name": "乐器训练",
 					"type": "entries",
 					"entries": [
-						"你获得一个自选{@item 乐器|XPHB}的熟练项。"
+						"你获得一项你选择{@item 乐器|XPHB}的熟练。"
 					]
 				},
 				{
@@ -5777,7 +5777,7 @@
 					"name": "分神旋律",
 					"type": "entries",
 					"entries": [
-						"当你采取{@action 协助|XPHB}动作来协助一名盟友的攻击检定时，你正在分散注意力的仇敌可以在你30尺内，而非5尺内，前提是该仇敌能够看见或听见你。"
+						"当你执行{@action 协助|XPHB}动作辅助盟友的攻击检定时，你可以分散位于你30尺内而非5尺内敌人的注意力，只要该敌人能看见或听见你。"
 					]
 				}
 			]
@@ -5813,7 +5813,7 @@
 					"name": "妙语连珠",
 					"type": "entries",
 					"entries": [
-						"当你采取{@action 协助|XPHB}动作来协助一名盟友对一名仇敌的攻击检定时，该仇敌在你下个回合开始前进行的第一次豁免检定也具有{@variantrule 劣势|XPHB}。"
+						"当你执行{@action 协助|XPHB}动作辅助盟友对敌人的攻击检定时，你的下个回合开始前该敌人进行的下次豁免检定也具有{@variantrule 劣势|XPHB}。"
 					]
 				},
 				{
@@ -5821,7 +5821,7 @@
 					"name": "意志激励",
 					"type": "entries",
 					"entries": [
-						"如果你成功通过豁免检定以结束自身的{@condition 恐慌|XPHB}或{@condition 麻痹|XPHB}状态，你可以选择你能看见的30尺内一名具有相同状态的盟友。该状态立即为该盟友结束。"
+						"若你成功通过结束你身上的{@condition 恐慌|XPHB}或{@condition 麻痹|XPHB}状态的豁免检定，你能够选择一名30尺内你可见的具有相同状态的盟友。该盟友身上的此状态立即结束。"
 					]
 				}
 			]
@@ -6825,8 +6825,8 @@
 					"name": "执旗者",
 					"type": "entries",
 					"entries": [
-						"作为{@variantrule 附赠动作|XPHB}，选择你自身60尺内能看见你的至多三个生物。每个目标可以立即使用{@variantrule 反应|XPHB}来使自己站起并结束{@condition 倒地|XPHB}状态，前提是其{@variantrule 速度|XPHB}不为0。此外，你鼓舞目标的决心，持续1分钟或直到你处于{@condition 失能|XPHB}状态。在被鼓舞期间，目标不能被附身或获得{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态；如果目标已被附身、{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}，则目标在对抗相关效果的{@variantrule 优势|XPHB}于任何新的豁免检定。",
-						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+						"以一个{@variantrule 附赠动作|XPHB}，，选择至多三名位于你60尺内能看见你的生物。每名{@variantrule 反应|XPHB}不为0的目标均能够立即以{@variantrule 速度|XPHB}起立并结束{@condition 倒地|XPHB}状态。此外，你增强目标的信念，持续1分钟或在你陷入{@condition 失能|XPHB}状态时提前结束。信念增强期间，目标无法被附身或是获得{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态；若目标已被附身、{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}，则目标对抗相关效应的任意新豁免检定具有{@variantrule 优势|XPHB}。",
+						"此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				}
 			]
@@ -6844,7 +6844,7 @@
 					"name": "激励打击",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你对一个生物造成{@variantrule 重击|XPHB}时，你可以选择30尺内一个能看见或听见你且没有{@variantrule 英雄激励|XPHB}的盟友。该盟友获得{@variantrule 英雄激励|XPHB}。"
+						"每回合一次，当你对生物造成{@variantrule 重击|XPHB}时，你能够选择一名盟友，其需位于你30尺内，能看见或听见你且不具有{@variantrule 英雄激励|XPHB}。该盟友获得{@variantrule 英雄激励|XPHB}。"
 					]
 				},
 				{
@@ -6852,7 +6852,7 @@
 					"name": "重获荣誉",
 					"type": "entries",
 					"entries": [
-						"当你可见的一个敌人对你5尺内的一名盟友造成伤害时，你在你的下一个回合结束前对该敌人进行的下一次攻击检定具有{@variantrule 优势|XPHB}。"
+						"当一名你可见的敌人对你5尺内的盟友造成伤害时，你的下个回合结束前，你对该敌人的下次攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			]
@@ -9431,7 +9431,7 @@
 		},
 		{
 			"ENG_name": "Mythal Touched",
-			"name": "密瑟拉接触",
+			"name": "迷锁触碰",
 			"source": "FRHoF",
 			"page": 40,
 			"category": "G",
@@ -9457,11 +9457,11 @@
 					"name": "迷锁守护",
 					"type": "entries",
 					"entries": [
-						"如果一次法术攻击命中你或你在对抗法术的豁免检定中失败，你可以采取一个{@variantrule 反应|XPHB}来在密瑟拉接触{@action 魔法|XPHB}表上投掷以创造一个魔法效果。如果效果需要豁免检定，DC等于8加上由该专长提升的能力调整值以及你的{@variantrule 熟练项|XPHB|熟练加值}。",
-						"你可以使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。",
+						"若法术攻击命中你或你对抗法术的豁免检定失败，你能够以{@variantrule 反应|XPHB}投掷迷锁触碰{@action 魔法|XPHB}表来创造一个魔法效应。若效应需求豁免，其DC为8加你以此专长提升的属性的调整值加你的{@variantrule 熟练项|XPHB|熟练加值}。",
+						"你能够使用此增益的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。",
 						{
 							"type": "table",
-							"caption": "密瑟拉接触魔法",
+							"caption": "迷锁触碰魔法",
 							"colStyles": [
 								"col-2 text-center",
 								"col-10"
@@ -9473,31 +9473,31 @@
 							"rows": [
 								[
 									"1-2",
-									"你和你15尺内的每个生物进行一次敏捷豁免检定，豁免失败则受到等于触发法术等级乘以{@dice 1d8}的力场伤害，豁免成功则只受到一半伤害。"
+									"你和每名位于你15尺内的生物进行一次敏捷豁免，豁免失败则受到触发法术环阶{@dice 1d8}的力场伤害，豁免成功则受半伤。"
 								],
 								[
 									"3-7",
-									"你和触发法术的施法者形成一个持续1小时的心灵感应链接。"
+									"你和触发法术的施法者建立心灵链接，持续1小时。"
 								],
 								[
 									"8-10",
-									"重力在以你为中心半径15尺、高60尺的{@variantrule 柱状 [效应区域]|XPHB|柱状}内反转，持续1分钟，依照{@spell 反转重力|XPHB}法术。"
+									"以你为中心半径15尺，高60尺{@variantrule 柱状 [效应区域]|XPHB|柱状}区域内的重力反转，持续1分钟，如同法术{@spell 反转重力|XPHB}。"
 								],
 								[
 									"11-13",
-									"你和触发法术的施法者各自进行一次体质豁免检定。豁免失败时，该生物获得{@condition 震慑|XPHB}状态直到其下一回合结束。"
+									"你和触发法术的施法者均进行一次体质豁免。豁免失败的生物陷入{@condition 震慑|XPHB}状态直至其下个回合结束。"
 								],
 								[
 									"14-17",
-									"你获得+2的AC加值，持续1分钟，如果触发的是法术攻击，可能使其失手。"
+									"你的AC获得+2加值，持续1分钟，若触发法术为法术攻击，则可能使该法术改为失手。"
 								],
 								[
 									"18-19",
-									"触发该法术的施法者10尺内任何未被其他生物穿着或携带的可燃非魔法物件会突然起火，受到{@damage 1d4}火焰伤害，并开始燃烧。"
+									"触发法术的施法者10尺内的任意非魔法易燃物品，只要其未被其他生物着装或携带，均被火焰点燃，受到{@damage 1d4}火焰伤害并开始燃烧。"
 								],
 								[
 									"20",
-									"触发的法术消散且无效果，用于施放它的动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}被浪费。如果该法术是用法术位施放的，该法术位不会被消耗。"
+									"触发法术消散且不产生效应，且用于施展该法术的动作、{@variantrule 附赠动作|XPHB}或{@variantrule 反应|XPHB}被浪费。若该法术为使用法术位施展的，则该法术位不会被消耗。"
 								]
 							]
 						}
@@ -9677,7 +9677,7 @@
 					"name": "团结就是力量",
 					"type": "entries",
 					"entries": [
-						"如果你在一个没有{@condition 失能|XPHB}状态的盟友5尺范围内，你和该盟友在力量豁免检定上具有{@variantrule 优势|XPHB}。当你处于{@condition 失能|XPHB}状态时，你不能使用此增益。"
+						"若你位于未陷入{@condition 失能|XPHB}状态的盟友的5尺内，你和该盟友的力量豁免检定具有{@variantrule 优势|XPHB}。你陷入{@condition 失能|XPHB}状态期间无法使用此增益。"
 					]
 				}
 			]
@@ -10188,7 +10188,7 @@
 					"name": "鼓励盟友",
 					"type": "entries",
 					"entries": [
-						"作为{@variantrule 附赠动作|XPHB}，你鼓舞一个你能看见的30尺内的盟友。该盟友获得等于{@dice 2d6}加上此专长提升的属性值的调整值的{@variantrule 临时生命值|XPHB}。你可以使用此{@variantrule 附赠动作|XPHB}的次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，且你在完成一次{@variantrule 长休|XPHB}后恢复所有使用次数。"
+						"以一个{@variantrule 附赠动作|XPHB}，你增强一名位于你30尺内你可见的盟友。该盟友获得等于{@dice 2d6}加你以此专长提升的属性的调整值的{@variantrule 临时生命值|XPHB}。你能够使用此{@variantrule 附赠动作|XPHB}等于你的{@variantrule 熟练项|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				},
 				{
@@ -10196,7 +10196,7 @@
 					"name": "背水一战",
 					"type": "entries",
 					"entries": [
-						"你在处于{@status 浴血|XPHB}状态时，{@variantrule 优势|XPHB}于攻击检定。"
+						"{@status 浴血|XPHB}期间你的攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			]
@@ -10234,7 +10234,7 @@
 					"type": "entries",
 					"entries": [
 						"当你掷{@variantrule 先攻|XPHB}且没有{@condition 失能|XPHB}状态时，你可以选择你30尺内能看见的、数量等于你的{@variantrule 熟练项|XPHB|熟练加值}的生物。这些生物获得{@variantrule 英雄激励|XPHB}。",
-						"一旦你使用此增益，在完成一次{@variantrule 长休|XPHB}前无法再次使用。"
+						"此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				}
 			]
@@ -12201,18 +12201,18 @@
 				"你获得以下增益。",
 				{
 					"ENG_name": "Fueled Spellfire",
-					"name": "法术火焰充能",
+					"name": "咒火燎原",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你施放的法术造成光耀伤害时，你可以消耗最多两个{@variantrule 生命值骰|XPHB}，掷骰并将掷出的全部数值添加到该法术的一个伤害掷骰上。"
+						"每回合一次，当一道你施展的法术造成光耀伤害时，你能够消耗并投掷至多两枚{@variantrule 生命值骰|XPHB}，将骰值总和加入该法术的其中一次伤害掷骰中。"
 					]
 				},
 				{
 					"ENG_name": "Searing Spellfire",
-					"name": "灼热法术火焰",
+					"name": "",
 					"type": "entries",
 					"entries": [
-						"当你进行一次造成光耀伤害的伤害掷骰时，它忽略对光耀伤害的{@variantrule 抗性|XPHB}。"
+						"当你进行一次造成光耀伤害的伤害掷骰时，该伤害无视光耀伤害{@variantrule 抗性|XPHB}。"
 					]
 				}
 			]
@@ -12246,7 +12246,7 @@
 					"name": "魔法吸收",
 					"type": "entries",
 					"entries": [
-						"每回合一次，当你受到法术或魔法效应的伤害时，你将受到的全部伤害减少{@dice 1d4}。如果你处于{@condition 失能|XPHB}状态，则无法使用此增益。"
+						"每回合一次，当你受到来自法术或魔法效应的伤害时，你令你受到的总伤害减少{@dice 1d4}。你无法在陷入{@condition 失能|XPHB}状态期间使用该增益。"
 					]
 				},
 				{
@@ -12254,7 +12254,7 @@
 					"name": "咒火之焰",
 					"type": "entries",
 					"entries": [
-						"你学会戏法{@spell 圣火术|XPHB}。智力、感知或魅力作为该法术的施法属性（选择此专长时决定）。你还可以以{@variantrule 附赠动作|XPHB}施放该戏法，次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。"
+						"你习得戏法{@spell 圣火术|XPHB}。该法术的施法属性是智力、感知或魅力（当你选取此专长时选择）。你也能够以{@variantrule 附赠动作|XPHB}施展该戏法，次数等于你的{@variantrule 熟练项|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				}
 			]
@@ -12419,7 +12419,7 @@
 					"name": "锁头",
 					"type": "entries",
 					"entries": [
-						"你的盟友对被你{@condition 受擒|XPHB}的生物进行{@variantrule 优势|XPHB}攻击检定。"
+						"你的盟友对因你陷入{@condition 受擒|XPHB}的生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
@@ -12427,7 +12427,7 @@
 					"name": "坚固锁结",
 					"type": "entries",
 					"entries": [
-						"当你使用{@item 链条|XPHB}、{@item 镣铐|XPHB}或{@item 绳索|XPHB}来束缚一个生物时，将你的{@variantrule 熟练项|XPHB|熟练加值}添加到逃脱或破坏{@item 链条|XPHB}、{@item 镣铐|XPHB}或{@item 绳索|XPHB}的DC上。"
+						"当你使用{@item 链条|XPHB}、{@item 镣铐|XPHB}或{@item 绳索|XPHB}捆缚生物时，将你的{@variantrule 熟练项|XPHB|熟练加值}加入挣脱或破坏该{@item 链条|XPHB}、{@item 镣铐|XPHB}或{@item 绳索|XPHB}的DC中。"
 					]
 				},
 				{
@@ -12435,7 +12435,7 @@
 					"name": "强硬言辞",
 					"type": "entries",
 					"entries": [
-						"一个生物的{@variantrule 敌对 【态度】|XPHB|敌对}态度不会对你的魅力（{@skill 威吓|XPHB}）检定施加{@variantrule 劣势|XPHB}来影响该生物。"
+						"你影响生物时，其{@variantrule 敌对 【态度】|XPHB|敌对}态度不会令你的魅力（{@skill 威吓|XPHB}）检定具有{@variantrule 劣势|XPHB}。"
 					]
 				}
 			]
@@ -13682,7 +13682,7 @@
 					"name": "比肩而立",
 					"type": "entries",
 					"entries": [
-						"当一个你5尺内的盟友受到会推离或拉近它的效果影响时，你可以采取一个{@variantrule 反应|XPHB}来防止该盟友被推离或拉近。要获得此增益，该盟友不能处于{@condition 失能|XPHB}状态。"
+						"当一名位于你5尺内的盟友将受到推离或拉近其的效应时，你能够以{@variantrule 反应|XPHB}防止该盟友被推离或拉近。若盟友陷入{@condition 失能|XPHB}状态，其无法获得此增益。"
 					]
 				},
 				{
@@ -13690,7 +13690,7 @@
 					"name": "警觉",
 					"type": "entries",
 					"entries": [
-						"当你执行{@action 预备|XPHB}动作时，在你下个回合开始前，下一次对你进行的攻击检定具有{@variantrule 劣势|XPHB}劣势。"
+						"当你执行{@action 预备|XPHB}动作时，在你的下个回合开始前对你进行的下次攻击检定具有{@variantrule 劣势|XPHB}。"
 					]
 				}
 			]
@@ -14110,7 +14110,7 @@
 					"name": "见缝插针",
 					"type": "entries",
 					"entries": [
-						"当你为一次{@action 借机攻击|XPHB}掷伤害骰时，你可以掷两次伤害骰子并对目标使用任一结果。"
+						"当你为{@action 借机攻击|XPHB}进行伤害掷骰时，你能够投掷两次伤害骰并对目标使用其中一个结果。"
 					]
 				},
 				{
@@ -14118,7 +14118,7 @@
 					"name": "家人至上",
 					"type": "entries",
 					"entries": [
-						"如果你在掷{@variantrule 先攻|XPHB}时拥有{@variantrule 英雄激励|XPHB}，你可以消耗它来让你自己和你的盟友在该{@variantrule 先攻|XPHB}掷骰上获得{@variantrule 优势|XPHB}。"
+						"当你投掷{@variantrule 先攻|XPHB}时，若你具有{@variantrule 英雄激励|XPHB}，你能够消耗它令你和你的盟友的此次{@variantrule 先攻|XPHB}检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			]
@@ -14154,7 +14154,7 @@
 					"name": "反击",
 					"type": "entries",
 					"entries": [
-						"当一个5尺内的生物用近战攻击命中你后，你可以立即对该生物进行一次{@action 借机攻击|XPHB}。"
+						"位于你5尺内生物以近战攻击命中你后，你可以立即对该生物发动一次{@action 借机攻击|XPHB}。"
 					]
 				},
 				{
@@ -14162,7 +14162,7 @@
 					"name": "万能佣兵",
 					"type": "entries",
 					"entries": [
-						"当你完成一次{@variantrule 长休|XPHB}时，选择一个你拥有熟练项的技能。直到你完成下一次{@variantrule 长休|XPHB}前，你在该技能上拥有{@variantrule 专精|XPHB}。"
+						"当你完成{@variantrule 长休|XPHB}时，选择一项你具有熟练的技能。你具有该技能的{@variantrule 专精|XPHB}，持续至你下次完成{@variantrule 长休|XPHB}。"
 					]
 				}
 			]
