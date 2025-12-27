@@ -14850,7 +14850,7 @@ Renderer.generic = class {
 	/* -------------------------------------------- */
 
 	// region Mirror the schema
-	static FEATURE__SKILLS_ALL = Object.keys(Parser.SKILL_TO_ATB_ABV).sort(SortUtil.ascSortLower);
+	static FEATURE__SKILLS_ALL = Object.keys(Parser.SKILL_TO_CN).sort(SortUtil.ascSortLower);
 
 	static FEATURE__TOOLS_ARTISANS = [
 		"alchemist's supplies",

@@ -496,7 +496,7 @@ Parser.SKILL_TO_ATB_ABV = {
 	"宗教": "int",
 	"驯兽": "wis",
 	"洞悉": "wis",
-	"医疗": "wis",
+	"医药": "wis",
 	"察觉": "wis",
 	"生存": "wis",
 	"欺瞒": "cha",
@@ -521,13 +521,17 @@ Parser.SKILL_TO_CN = {
 	"religion": "宗教",
 	"animal handling": "驯兽",
 	"insight": "洞悉",
-	"medicine": "医疗",
+	"medicine": "医药",
 	"perception": "察觉",
 	"survival": "生存",
 	"deception": "欺瞒",
 	"intimidation": "威吓",
 	"performance": "表演",
 	"persuasion": "游说",
+};
+
+Parser.enSkillToCn = function (skill) {
+	return Parser._parse_aToB(Parser.SKILL_TO_CN, skill);
 };
 
 Parser.cnSkillToEn = function (skill) {
