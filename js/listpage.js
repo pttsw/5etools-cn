@@ -1221,6 +1221,7 @@ class ListPage {
 	_pOnLoad_bindMiscButtons () {
 		this._bindPopoutButton();
 		this._bindLinkExportButton();
+		this._bindLinkEngSiteButton();
 		this._bindOtherButtons({
 			...(this._bindOtherButtonsOptions || {}),
 		});
@@ -1479,6 +1480,16 @@ class ListPage {
 			.tooltip("复制筛选链接 (SHIFT adds list; CTRL copies @filter tag)");
 	}
 
+	_bindLinkEngSiteButton ({btn} = {}) {
+		btn ||= this._getOrTabRightButton(`link-5et`, `globe`);
+		
+		btn.addClass("ve-btn-copy-effect")
+			.onn("click", evt => {
+				const ENG_hash = UrlUtil.autoEncodeEngHash(this._lastRender.entity);
+				this._pHandleClick_doEngSiteLink(evt, {btn, ENG_hash: ENG_hash});
+			})
+			.tooltip("跳转英文源站");
+	}
 	_bindPopoutButton () {
 		this._getOrTabRightButton(`popout`, `new-window`)
 			.tooltip(`弹出框 (按住SHIFT键弹出源数据；按住CTRL键弹出Markdown文本）`)
@@ -1940,7 +1951,7 @@ class ListPage {
 		if (EventUtil.isCtrlMetaKey(evt)) {
 			await MiscUtil.pCopyTextToClipboard(this._filterBox.getFilterTag({isAddSearchTerm: true}));
 			if (btn) JqueryUtil.showCopiedEffect(btn);
-			else JqueryUtil.doToast("Copied!");
+			else JqueryUtil.doToast("已复制！");
 			return;
 		}
 
@@ -1953,7 +1964,20 @@ class ListPage {
 
 		await MiscUtil.pCopyTextToClipboard(parts.join(HASH_PART_SEP));
 		if (btn) JqueryUtil.showCopiedEffect(btn);
-		else JqueryUtil.doToast("Copied!");
+		else JqueryUtil.doToast("已复制！");
+	}
+
+	async _pHandleClick_doEngSiteLink (evt, {btn = null, ENG_hash = ""} = {}) {
+		const url = new URL(window.location.href);
+		url.hash ||= globalThis.HASH_BLANK;
+
+		console.log(ENG_hash);
+		const engSiteUrl = `https://5e.tools${url.pathname}#${ENG_hash}`;
+
+		window.open(engSiteUrl, "_blank");
+		// await MiscUtil.pCopyTextToClipboard(engSiteUrl);
+		if (btn) JqueryUtil.showCopiedEffect(btn);
+		// else JqueryUtil.doToast("已复制！");
 	}
 
 	async _handleGenericContextMenuClick_pDoMassPopout (evt, ele, selection) {
