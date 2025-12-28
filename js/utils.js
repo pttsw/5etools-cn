@@ -995,7 +995,7 @@ globalThis.JqueryUtil = class {
 		});
 	}
 
-	static showCopiedEffect ($_ele, {text = "Copied!", isBubble = false} = {}) {
+	static showCopiedEffect ($_ele, {text = "已复制！", isBubble = false} = {}) {
 		const ele = $_ele instanceof $ ? $_ele[0] : $_ele;
 
 		const {top, left, width} = ele.getBoundingClientRect();
@@ -3443,7 +3443,7 @@ globalThis.UrlUtil = {
 	},
 
 	autoEncodeEngHash (obj) {
-		if (!obj.ENG_name) return null;
+		if (!obj || !obj.ENG_name) return null;
 		const curPage = UrlUtil.getCurrentPage();
 		const encoder = UrlUtil.URL_TO_ENG_HASH_BUILDER[curPage];
 		if (!encoder) throw new Error(`No encoder found for page ${curPage}`);
