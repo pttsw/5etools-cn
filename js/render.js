@@ -6590,7 +6590,7 @@ Renderer.feat = class {
 		if (!abilityObj.choose) {
 			return Object.keys(abilityObj)
 				.filter(k => k !== "max")
-				.map(ab => `你的 ${Parser.attAbvToFull(ab)} 增加 ${abilityObj[ab]}点，上限为${maxScore}。`)
+				.map(ab => `你的${Parser.attAbvToFull(ab)}提升 ${abilityObj[ab]}，至多提升至 ${maxScore}。`)
 				.join(" ");
 		}
 
@@ -6604,17 +6604,17 @@ Renderer.feat = class {
 			}
 
 			const ptAbils = abilityObj.choose.weighted.from.map(abv => Parser.attAbvToFull(abv)).joinConjunct(", ", " 和 ");
-			return `从 ${ptAbils}选${ptsWeight}个。`;
+			return `从 ${ptAbils}选 ${ptsWeight}个。`;
 		}
 
 		if (abilityObj.choose.from.length === 6) {
 			return abilityObj.choose.entry
 				? Renderer.get().render(abilityObj.choose.entry) // only used in "Resilient"
-				: `提升一项自选的属性值${abilityObj.choose.amount ?? 1}点，上限为${maxScore}。`;
+				: `你选择的一项属性提升 ${abilityObj.choose.amount ?? 1}，至多提升至 ${maxScore}。`;
 		}
 
 		const abbChoicesText = abilityObj.choose.from.map(it => Parser.attAbvToFull(it)).joinConjunct(", ", " 或 ");
-		return `你的 ${abbChoicesText} 增加 ${abilityObj.choose.amount ?? 1}点，上限为${maxScore}。`;
+		return `你的${abbChoicesText}提升 ${abilityObj.choose.amount ?? 1}，至多提升至 ${maxScore}。`;
 	}
 
 	static initFullEntries (feat) {
@@ -12694,44 +12694,44 @@ Renderer.item = class {
 				if (item.scfType === "arcane" && item.source !== Parser.SRC_ERLW) {
 					Renderer.item._initFullEntries(item);
 					const wrapped = styleHint === "classic"
-						? "An arcane focus is a special item\u2014an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item\u2014designed to channel the power of arcane spells. A {@class sorcerer}, {@class warlock}, or {@class wizard} can use such an item as a spellcasting focus."
-						: "An Arcane Focus takes a specific form and is bejeweled or carved to channel arcane magic. A {@class Sorcerer|XPHB}, {@class Warlock|XPHB}, or {@class Wizard|XPHB} can use such an item as a {@variantrule Spellcasting Focus|XPHB}.";
+						? "奥术法器是为引导奥术法术能量而设计的特殊物品，像是一枚法球、一块水晶、一只权杖、一根特制法杖、一根魔杖长短的木条、或是其他类似的物品。{@class 术士}、{@class 魔契师}、以及{@class 法师}可以将这样的物品当做法器使用。"
+						: "奥术法器是一种利用宝石或是雕刻来引导奥术魔法的物品，它会以下列奥术法器列表中的一种形式存在。{@class 术士|XPHB}、{@class 魔契师|XPHB}和{@class 法师|XPHB}可以使用这种物品作为{@variantrule 法器|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type.SCF"}});
 				}
 				if (item.scfType === "druid") {
 					Renderer.item._initFullEntries(item);
 					const wrapped = styleHint === "classic"
-						? "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A {@class druid} can use such an object as a spellcasting focus."
-						: "A Druidic Focus takes a specific form and is carved, tied with ribbon, or painted to channel primal magic. A {@class Druid|XPHB} or {@class Ranger|XPHB} can use such an object as a {@variantrule Spellcasting Focus|XPHB}.";
+						? "德鲁伊法器也许是一枝槲寄生或冬青、一根用紫杉木（或其他特殊木材）制成的魔杖或节杖、一根从活树上折下的树枝法杖、或是一个由圣兽的羽毛、毛皮、骨头、和牙齿组合成的图腾物件。{@class 德鲁伊}可以将此类物品用作其法器。"
+						: "德鲁伊法器是一种利用刻纹、绑带或图画来引导原初魔法的物品，它会以下列德鲁伊法器列表中的一种形式存在。{@class 德鲁伊|XPHB}和{@class 游侠|XPHB}可以使用这种物品作为{@variantrule 法器|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type.SCF"}});
 				}
 				if (item.scfType === "holy") {
 					Renderer.item._initFullEntries(item);
 					const wrapped = styleHint === "classic"
-						? "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
-						: "A Holy Symbol takes a specific form and is bejeweled or painted to channel divine magic. A {@class Cleric|XPHB} or {@class Paladin|XPHB} can use a Holy Symbol as a {@variantrule Spellcasting Focus|XPHB}.";
+						? "一枚圣徽是某个神祇或神系的象征物。它可能是一个描绘有象征着该神祇对应圣徽的护符，可能是精致雕刻（或镶嵌）在一面盾牌上的圣徽纹章，也可能是一个装有一块神圣遗物碎片的小盒。附录B中列举有多元宇宙中许多神祇，以及祂们各自最具代表性的圣徽。牧师与圣武士能将圣徽用作法器。使用这些圣徽时，施法者必须将其握在手中、戴在身上可见处、或者将其安装在盾牌上。"
+						: "圣徽是一种利用宝石或图画来引导神圣魔法的物品，它会以下列圣徽列表中的一种形式存在。{@class 牧师|XPHB}和{@class 圣武士|XPHB}可以用圣徽作为{@variantrule 法器|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type.SCF"}});
 				}
 			} else {
 				if (item.scfType === "arcane") {
 					Renderer.item._initFullEntries(item);
 					const wrapped = styleHint === "classic"
-						? "An arcane focus is a special item designed to channel the power of arcane spells. A {@class sorcerer}, {@class warlock}, or {@class wizard} can use such an item as a spellcasting focus."
-						: "An Arcane Focus takes a specific form and is bejeweled or carved to channel arcane magic. A {@class Sorcerer|XPHB}, {@class Warlock|XPHB}, or {@class Wizard|XPHB} can use such an item as a {@variantrule Spellcasting Focus|XPHB}.";
+						? "奥术法器是为引导奥术法术能量而设计的特殊物品，像是一枚法球、一块水晶、一只权杖、一根特制法杖、一根魔杖长短的木条、或是其他类似的物品。{@class 术士}、{@class 魔契师}、以及{@class 法师}可以将这样的物品当做法器使用。"
+						: "奥术法器是一种利用宝石或是雕刻来引导奥术魔法的物品，它会以下列奥术法器列表中的一种形式存在。{@class 术士|XPHB}、{@class 魔契师|XPHB}和{@class 法师|XPHB}可以使用这种物品作为{@variantrule 法器|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type.SCF"}});
 				}
 				if (item.scfType === "druid") {
 					Renderer.item._initFullEntries(item);
 					const wrapped = styleHint === "classic"
-						? "A {@class druid} can use this object as a spellcasting focus."
-						: "A Druidic Focus takes a specific form and is carved, tied with ribbon, or painted to channel primal magic. A {@class Druid|XPHB} or {@class Ranger|XPHB} can use such an object as a {@variantrule Spellcasting Focus|XPHB}.";
+						? "{@class 德鲁伊}可以将此类物品用作其法器。"
+						: "德鲁伊法器是一种利用刻纹、绑带或图画来引导原初魔法的物品，它会以下列德鲁伊法器列表中的一种形式存在。{@class 德鲁伊|XPHB}和{@class 游侠|XPHB}可以使用这种物品作为{@variantrule 法器|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type.SCF"}});
 				}
 				if (item.scfType === "holy") {
 					Renderer.item._initFullEntries(item);
 					const wrapped = styleHint === "classic"
-						? "A holy symbol is a representation of a god or pantheon. A {@class cleric} or {@class paladin} can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
-						: "A Holy Symbol takes a specific form and is bejeweled or painted to channel divine magic. A {@class Cleric|XPHB} or {@class Paladin|XPHB} can use a Holy Symbol as a {@variantrule Spellcasting Focus|XPHB}.";
+						? "一枚圣徽是某个神祇或神系的象征物。它可能是一个描绘有象征着该神祇对应圣徽的护符，可能是精致雕刻（或镶嵌）在一面盾牌上的圣徽纹章，也可能是一个装有一块神圣遗物碎片的小盒。附录B中列举有多元宇宙中许多神祇，以及祂们各自最具代表性的圣徽。{@class 牧师}与{@class 圣武士}能将圣徽用作法器。使用这些圣徽时，施法者必须将其握在手中、戴在身上可见处、或者将其安装在盾牌上。"
+						: "圣徽是一种利用宝石或图画来引导神圣魔法的物品，它会以下列圣徽列表中的一种形式存在。{@class 牧师|XPHB}和{@class 圣武士|XPHB}可以用圣徽作为{@variantrule 法器|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type.SCF"}});
 				}
 			}
@@ -13116,7 +13116,7 @@ Renderer.psionic = class {
 		return {
 			entryTypeOrder: `{@i ${Renderer.psionic.getTypeOrderString(ent)}}`,
 			entryContent: ent.entries ? {entries: ent.entries, type: "entries"} : null,
-			entryFocus: ent.focus ? `{@b {@i Psychic Focus.}} ${ent.focus}` : null,
+			entryFocus: ent.focus ? `{@b {@i 心灵集中.}} ${ent.focus}` : null,
 			entriesModes: ent.modes
 				? ent.modes
 					.flatMap(mode => Renderer.psionic._getModeEntries(mode))
@@ -13266,7 +13266,7 @@ Renderer.table = class {
 				.filter(Boolean)
 				.join(" ");
 
-		return `${baseName}${tableRaw.minlvl && tableRaw.maxlvl ? ` (Levels ${tableRaw.minlvl}\u2014${tableRaw.maxlvl})` : ""}`;
+		return `${baseName}${tableRaw.minlvl && tableRaw.maxlvl ? ` (等级 ${tableRaw.minlvl}\u2014${tableRaw.maxlvl})` : ""}`;
 	}
 
 	static getConvertedNameTableName (group, tableRaw) {
@@ -13388,8 +13388,8 @@ Renderer.vehicle = class {
 
 		static getVehicleShipRenderableEntriesMeta (ent) {
 			// Render UA ship actions at the top, to match later printed layout
-			const entriesOtherActions = (ent.other || []).filter(it => it.name === "Actions");
-			const entriesOtherOthers = (ent.other || []).filter(it => it.name !== "Actions");
+			const entriesOtherActions = (ent.other || []).filter(it => it.name === "Actions" || it.name === "动作");
+			const entriesOtherOthers = (ent.other || []).filter(it => it.name !== "Actions" && it.name !== "动作");
 
 			return {
 				entrySizeDimensions: `{@i ${Parser.sizeAbvToFull(ent.size)}载具${ent.dimensions ? ` (${ent.dimensions.join(" by ")})` : ""}}`,
@@ -13793,7 +13793,7 @@ Renderer.vehicle = class {
 	}
 
 	static _getTraitSection (renderer, veh) {
-		return veh.trait ? `<tr><td colspan="6"><h3 class="stats__sect-header-inner">Traits</h3></td></tr>
+		return veh.trait ? `<tr><td colspan="6"><h3 class="stats__sect-header-inner">特质</h3></td></tr>
 		<tr><td colspan="6" class="pt-2 pb-2">
 		${Renderer.monster.getOrderedTraits(veh, renderer).map(it => it.rendered || renderer.render(it, 2)).join("")}
 		</td></tr>` : "";
