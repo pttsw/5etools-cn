@@ -109,7 +109,7 @@ class TablesPage extends ListPage {
 			.join("\n\n");
 
 		await MiscUtil.pCopyTextToClipboard(txt);
-		JqueryUtil.doToast("Copied!");
+		JqueryUtil.doToast("已复制！");
 	}
 
 	getListItem (it, tbI, isExcluded) {

@@ -138,7 +138,7 @@
 		},
 		{
 			"ENG_name": "Berserk (Clay Golem)",
-			"name": "狂暴（粘土魔像）",
+			"name": "失心狂怒（黏土魔像）",
 			"source": "MM",
 			"entries": [
 				"每当<$short_name$>的生命值降至60点或更少时，投掷一个{@dice d6}。如果结果是6，<$short_name$>会变得狂暴。在狂暴状态下的每个回合，<$short_name$>会攻击它能看到的最近的生物。如果没有生物足够近以至于可以移动并攻击，<$short_name$>会选择攻击一个物体，优先选择比自己小的物体。一旦<$short_name$>变得狂暴，它会持续狂暴状态，直到被摧毁或恢复所有生命值。"
@@ -146,7 +146,7 @@
 		},
 		{
 			"ENG_name": "Berserk (Flesh Golem)",
-			"name": "狂暴（血肉魔像）",
+			"name": "失心狂怒（血肉魔像）",
 			"source": "MM",
 			"entries": [
 				"每当<$short_name$>以40点或更少生命值开始其回合时，掷一个{@dice d6}骰子。若结果为6，<$short_name$>进入狂暴状态。狂暴期间，<$short_name$>每回合会攻击其能看到的最近生物。如果没有生物足够近以供其移动并攻击，<$short_name$>会攻击一个物体，优先选择比其自身小的物体。一旦<$short_name$>进入狂暴状态，它会持续狂暴直到被摧毁或恢复所有生命值。",
@@ -174,7 +174,7 @@
 			"name": "连接",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 被魔法绑定到一个护身符上。只要 <$short_name$> 和它的护身符存在于同一存在平面上，护身符的佩戴者就可以通过心灵感应召唤 <$short_name$> 到其身边，并且 <$short_name$> 知道到护身符的距离和方向。如果 <$short_name$> 距离护身符的佩戴者在60尺以内，佩戴者承受的任何伤害的一半（向上取整）将转移给 <$short_name$>。"
+				"<$title_short_name$>与一个命令护符魔法性地相连。在<$title_short_name$>和其命令护符位于同一存在位面期间，命令护符的佩戴者可以心灵感应般的呼唤<$title_short_name$>来到自己的位置，并且<$title_short_name$>知晓自己与命令护符的距离及其位置。如果<$title_short_name$>位于命令护符佩戴者60尺范围内，佩戴者所承受到的任何伤害的一半（向上取整）都会转移给<$title_short_name$>。"
 			]
 		},
 		{
@@ -245,10 +245,10 @@
 		},
 		{
 			"ENG_name": "Damage Transfer (Cloaker)",
-			"name": "伤害转移（斗篷怪）",
+			"name": "伤害转嫁（蛰伏伪怪）",
 			"source": "MM",
 			"entries": [
-				"当附着在生物上时，<$short_name$> 只承受其所受伤害的一半（向下取整），而那个生物承受另一半。"
+				"当<$short_name$> 附着于一个生物时，任何对其造成的伤害减半（向下取整），而另一半伤害则由被附着的生物承受。"
 			]
 		},
 		{
@@ -368,15 +368,15 @@
 			"name": "元素消亡（气巨灵）",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>死亡，它的身体会化为一阵温暖的微风消散，只留下它穿戴或携带的装备。"
+				"<$short_name$>死亡时，它的身体将分解为温暖的微风，只留下该<$short_name$>原先着装或携带的装备。"
 			]
 		},
 		{
 			"ENG_name": "Elemental Demise (Efreeti)",
-			"name": "元素终结（伊夫里特）",
+			"name": "元素消亡（火巨灵）",
 			"source": "MM",
 			"entries": [
-				"如果<$short_name$>死亡，它的身体会在火焰和烟雾的一闪中解体，只留下<$short_name$>穿戴或携带的装备。"
+				"<$short_name$>死亡时，它的身体将分解为一团火和一缕烟，只留下该<$short_name$>原先着装或携带的装备。"
 			]
 		},
 		{
@@ -405,7 +405,7 @@
 		},
 		{
 			"ENG_name": "False Appearance (Animated Armor)",
-			"name": "虚假外观（活化盔甲）",
+			"name": "拟形（活化盔甲）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>保持静止时，它与普通的盔甲无异。"
@@ -429,7 +429,7 @@
 		},
 		{
 			"ENG_name": "False Appearance (Cloaker)",
-			"name": "虚假外观（斗篷怪）",
+			"name": "拟形（蛰伏伪怪）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>保持静止且不露出其下侧时，它与一件深色皮斗篷无法区分。"
@@ -437,7 +437,7 @@
 		},
 		{
 			"ENG_name": "False Appearance (Darkmantle)",
-			"name": "虚假外观（暗幕魔兽）",
+			"name": "拟形（暗幕魔兽）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>保持静止时，它与洞穴构造如钟乳石或石笋无法区分。"
@@ -445,15 +445,15 @@
 		},
 		{
 			"ENG_name": "False Appearance (Flying Sword)",
-			"name": "虚假外观（飞行剑）",
+			"name": "拟形（凌空剑）",
 			"source": "MM",
 			"entries": [
-				"当<$short_name$>保持静止且不处于飞行状态时，它与普通的剑无法区分。"
+				"当<$short_name$>停止飞行并静止不动时与普通的剑一模一样。"
 			]
 		},
 		{
 			"ENG_name": "False Appearance (Gargoyle)",
-			"name": "虚假外观（石像鬼）",
+			"name": "拟形（石像鬼）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>保持静止时，它与无生命的雕像无法区分。"
@@ -461,7 +461,7 @@
 		},
 		{
 			"ENG_name": "False Appearance (Gray Ooze)",
-			"name": "虚假外观（灰色软泥怪）",
+			"name": "拟形（灰泥怪）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>保持静止时，它与油质池或湿滑的岩石无法区分。"
@@ -469,10 +469,10 @@
 		},
 		{
 			"ENG_name": "False Appearance (Ice Mephit)",
-			"name": "虚假外观（冰魔）",
+			"name": "拟形（冰魔蝠）",
 			"source": "MM",
 			"entries": [
-				"当<$short_name$>保持静止时，它与普通的冰片无法区分。"
+				"当<$short_name$>静止不动时和普通的冰锥几乎一模一样。"
 			]
 		},
 		{
@@ -501,7 +501,7 @@
 		},
 		{
 			"ENG_name": "False Appearance (Rug of Smothering)",
-			"name": "虚假外观（窒息地毯）",
+			"name": "拟形（闷人毯）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>保持静止时，它与普通的地毯无法区分。"
@@ -613,7 +613,7 @@
 		},
 		{
 			"ENG_name": "Gibbering (Gibbering Mouther)",
-			"name": "胡言乱语（呓语之口）\n",
+			"name": "呓语（呓语之口）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>在看到任何生物且不被{@condition 失能}时，会语无伦次地胡言乱语。每个在<$short_name$>周围20英尺内开始其回合并能听到这些胡言的生物必须成功通过一个{@dc 10}的感知豁免检定。若失败，该生物在其下一个回合开始前不能进行反应，并投掷一个{@dice d8}来决定其在该回合中的行动。投掷结果为1至4时，该生物不采取任何行动。投掷结果为5或6时，该生物不采取任何行动或附加行动，并使用其所有移动能力沿随机确定的方向移动。投掷结果为7或8时，该生物对其攻击范围内的一个随机确定的生物发动一次近战攻击，如果无法进行此类攻击则不采取任何行动。"
@@ -645,7 +645,7 @@
 		},
 		{
 			"ENG_name": "Heated Body (Azer)",
-			"name": "炽热之躯（阿泽尔）",
+			"name": "灼热之躯（火矮人）",
 			"source": "MM",
 			"entries": [
 				"任何接触到<$short_name$>或在5英尺内用近战攻击击中它的生物都会受到4点（{@damage 1d10}）的酸蚀伤害。任何由金属或木头制成的非魔法武器，如果击中<$short_name$>，就会腐蚀。造成伤害后，该武器对伤害掷骰会有永久且累积的-1减值。如果其减值降至-5，该武器就会被摧毁。由金属或木头制成的非魔法弹药，如果击中<$short_name$>，会在造成伤害后被摧毁。"
@@ -653,7 +653,7 @@
 		},
 		{
 			"ENG_name": "Heated Body (Remorhaz)",
-			"name": "炽热之躯（百足魔兽）",
+			"name": "灼热之躯（百足魔兽）",
 			"source": "MM",
 			"entries": [
 				"当一个生物在距离<$short_name$> 5英尺范围内触摸它或用近战攻击命中它时，受到10点（{@damage 3d6}）火焰伤害。"
@@ -661,7 +661,7 @@
 		},
 		{
 			"ENG_name": "Heated Body (Salamander)",
-			"name": "炽热之躯（火蜥蜴）",
+			"name": "灼热之躯（火蜥蜴）",
 			"source": "MM",
 			"entries": [
 				"一个生物在5英尺范围内触摸<$short_name$>或用近战攻击击中它时，将受到7点（{@damage 2d6}）火焰伤害。"
@@ -669,7 +669,7 @@
 		},
 		{
 			"ENG_name": "Heated Weapons (Azer)",
-			"name": "炽热武器（阿泽尔）",
+			"name": "灼热武器（火矮人）",
 			"source": "MM",
 			"entries": [
 				"任何金属近战武器<$short_name$>攻击命中时额外造成3（{@damage 1d6}）点火焰伤害。"
@@ -677,7 +677,7 @@
 		},
 		{
 			"ENG_name": "Heated Weapons (Salamander)",
-			"name": "炽热武器（火蜥蜴）",
+			"name": "灼热武器（火蜥蜴）",
 			"source": "MM",
 			"entries": [
 				"任何金属近战武器<$short_name$>攻击命中时额外造成3（{@damage 1d6}）点火焰伤害。"
@@ -717,7 +717,7 @@
 		},
 		{
 			"ENG_name": "Hold Breath (Giant Octopus)",
-			"name": "憋气（巨型章鱼）",
+			"name": "屏息（巨章鱼）",
 			"source": "MM",
 			"entries": [
 				"离开水时，<$short_name$>可以憋气1小时。"
@@ -725,7 +725,7 @@
 		},
 		{
 			"ENG_name": "Hold Breath (Hydra)",
-			"name": "屏息（九头蛇）",
+			"name": "屏息（多头蛇）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>可以憋气1小时。"
@@ -765,7 +765,7 @@
 		},
 		{
 			"ENG_name": "Horrific Appearance (Sea Hag)",
-			"name": "可怕外观（海巫婆）",
+			"name": "恐怖形象（海鬼婆）",
 			"source": "MM",
 			"entries": [
 				"任何在<$short_name$>30英尺内开始其回合并能看到<$short_name$>真身的人形生物都必须进行一次{@dc 11}感知豁免检定。豁免失败时，该生物会陷入{@condition 恐慌}状态1分钟。一个生物可以在每个回合结束时重复进行豁免检定，如果<$short_name$>在其视线范围内，则带有劣势，成功时效果对自己终止。如果一个生物的豁免检定成功或效果对其结束，那么在接下来的24小时内，该生物对<$short_name$>的恐怖外貌免疫。",
@@ -782,7 +782,7 @@
 		},
 		{
 			"ENG_name": "Ignited Illumination (Magmin)",
-			"name": "点燃照明（火童）",
+			"name": "燃火照明（火童）",
 			"source": "MM",
 			"entries": [
 				"作为一个附赠动作，<$short_name$>可以自燃或熄灭火焰。在燃烧时，<$short_name$>在10尺半径内发出明亮的光线，并在额外的10尺内发出微光。"
@@ -790,7 +790,7 @@
 		},
 		{
 			"ENG_name": "Illumination (Azer)",
-			"name": "照明（阿泽尔）",
+			"name": "照明（火矮人）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>在10尺半径内发出明亮的光芒，并在额外的10尺内发出微光。"
@@ -921,7 +921,7 @@
 			"name": "迷宫追忆",
 			"source": "DMG",
 			"entries": [
-				"<$title_short_name$>可以完美地回忆起它走过的任何路径。"
+				"<$title_short_name$>可以完整的回忆起曾经走过的任何路径。"
 			]
 		},
 		{
@@ -961,12 +961,12 @@
 			"name": "有限魔法免疫（罗刹）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>不能被6级或更低级别的法术影响或侦测，除非它愿意。它对所有其他法术和魔法效果的豁免检定具有优势。"
+				"<$title_short_name$>可以随自己意愿的免受6环或更低环阶法术的效应影响或侦测。它在对抗其他法术和魔法效应时所作的豁免检定具有优势。"
 			]
 		},
 		{
 			"ENG_name": "Limited Telepathy (Otyugh)",
-			"name": "有限心灵感应（奥图格）",
+			"name": "有限感应（食腐兽）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>可以向任何能够理解语言的，在它120尺范围内的生物，通过魔法传递简单的信息和图像。这种心灵感应不允许接收生物进行心灵感应回应。"
@@ -1014,7 +1014,7 @@
 		},
 		{
 			"ENG_name": "Mimicry (Raven)",
-			"name": "模仿（乌鸦）",
+			"name": "拟声（渡鸦）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$> 可以模仿它听到的简单声音，例如人耳语、婴儿哭泣或动物吱吱叫。听到这些声音的生物可以通过一次成功的 {@dc 10} 感知（{@skill 洞悉}）检定来识别它们是被模仿的。"
@@ -1022,7 +1022,7 @@
 		},
 		{
 			"ENG_name": "Misty Escape (Vampire)",
-			"name": "雾气逃脱（吸血鬼）",
+			"name": "雾遁（吸血鬼）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>在其休息地之外降至0点生命值时，<$short_name$>会转变成一团雾气（如变形者特性所述），而不是进入{@condition 昏迷}状态，前提是它不在阳光或流水中。如果它不能转变，它将被摧毁。",
@@ -1031,7 +1031,7 @@
 		},
 		{
 			"ENG_name": "Mucous Cloud (Aboleth)",
-			"name": "粘液云（阿波罗斯）",
+			"name": "粘液之云（底栖魔鱼）",
 			"source": "MM",
 			"entries": [
 				"在水下时，<$short_name$> 被转化的黏液包围。触碰到 <$short_name$> 或在5英尺内用近战攻击击中它的生物必须进行一次 {@dc 14} 体质豁免检定。失败的话，该生物会患病 {@dice 1d4} 小时。患病的生物只能在水下呼吸。"
@@ -1039,12 +1039,12 @@
 		},
 		{
 			"ENG_name": "Multiple Heads (Hydra)",
-			"name": "多头（九头蛇）",
+			"name": "多头（多头蛇）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$> 有五个头。只要它有超过一个头，<$short_name$> 在对抗致盲（{@condition 目盲}）、魅惑（{@condition 魅惑}）、失聪（{@condition 耳聋}）、恐惧（{@condition 恐慌}）、昏迷（{@condition 震慑}）以及击昏（{@condition 昏迷}）效果的豁免检定上具有优势。",
 				"每当<$short_name$>在单个回合中受到25点或更多伤害时，它的一个头就会死亡。如果它的所有头都死了，<$short_name$>就会死亡。",
-				"在其回合结束时，它每失去一个头就会重新长出两个头，除非它在上一个回合之后遭受了火焰伤害。<$title_short_name$>通过这种方式重新长出的每个头都会恢复10生命值。"
+				"<$title_short_name$>在其自己回合结束时，会从其上一回合中死去脑袋处长出两颗新脑袋，除非它从上一回合开始的时间里曾遭受火焰伤害。每有一颗脑袋以该方式再生，<$title_short_name$>便回复10点生命值。"
 			]
 		},
 		{
@@ -1057,7 +1057,7 @@
 		},
 		{
 			"ENG_name": "Ooze Cube (Gelatinous Cube)",
-			"name": "软泥立方体（凝胶立方体）",
+			"name": "泥怪方块（凝胶方块）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>占据了其整个空间。其他生物可以进入这个空间，但进入的生物会受到<$short_name$>的吞噬效果，并且在豁免检定上处于不利状态。",
@@ -1084,7 +1084,7 @@
 		},
 		{
 			"ENG_name": "Petrifying Gaze (Basilisk)",
-			"name": "石化凝视（蛇发女妖）",
+			"name": "石化凝视（石化蜥蜴）",
 			"source": "MM",
 			"entries": [
 				"如果一个生物在其回合开始时位于<$short_name$>的30英尺内，且两者能够互相看见，那么<$short_name$>可以强迫该生物进行一次{@dc 12}体质豁免检定，前提是<$short_name$>没有处于{@condition 失能}状态。在豁免失败的情况下，该生物会神奇地开始变成石头并被{@condition 束缚}。它必须在下一个回合结束时重复进行豁免检定。若成功，效果结束。若失败，该生物将{@condition 石化}，直到通过更强大的复原法术或其他魔法解除。",
@@ -1166,7 +1166,7 @@
 		},
 		{
 			"ENG_name": "Reactive Heads (Hydra)",
-			"name": "反应性头部（九头蛇）",
+			"name": "多头反应（多头蛇）",
 			"source": "MM",
 			"entries": [
 				"除了一个头之外，<$short_name$>每多一个头，就会获得一个额外的反应，只能用来进行借机攻击。"
@@ -1182,7 +1182,7 @@
 		},
 		{
 			"ENG_name": "Reflective Carapace (Tarrasque)",
-			"name": "反射性甲壳（泰拉斯奎）",
+			"name": "反弹甲壳（泰拉斯奎）",
 			"source": "MM",
 			"entries": [
 				"任何时候<$short_name$>被{@spell 魔法飞弹}法术、线形法术或需要远程攻击判定的法术作为目标时，掷一个{@dice d6}。如果是1到5，<$short_name$>不受影响。如果是6，<$short_name$>不受影响，并且效果会反射回施法者，就好像它起源于<$short_name$>一样，将施法者变成目标。"
@@ -1190,10 +1190,10 @@
 		},
 		{
 			"ENG_name": "Regeneration (Oni)",
-			"name": "再生（鬼）",
+			"name": "再生（恶鬼）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>如果在其回合开始时至少有1点生命值，则在其回合开始时恢复10点生命值。"
+				"<$title_short_name$>在其自己的回合开始时恢复10点生命值，前提是它至少有1点生命值。"
 			]
 		},
 		{
@@ -1201,15 +1201,15 @@
 			"name": "再生（盾卫）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>如果在其回合开始时至少有1点生命值，则在其回合开始时恢复10点生命值。"
+				"<$title_short_name$>在其自己的回合开始时恢复10点生命值，前提是它至少有1点生命值。"
 			]
 		},
 		{
 			"ENG_name": "Regeneration (Troll)",
-			"name": "再生（食人魔）",
+			"name": "再生（巨魔）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>在它的回合开始时恢复10点生命值。如果<$short_name$>受到酸性或火焰伤害，这个特性在<$short_name$>下一个回合开始时不会起作用。如果<$short_name$>在回合开始时生命值为0且没有再生，<$title_short_name$>才会死亡。"
+				"<$title_short_name$>在它的回合开始时回复10点生命值。如果<$title_short_name$>受到强酸或者火焰伤害，则该特质在它的下一回合里无法生效。如果<$title_short_name$>以0生命值开始其自己回合且无法使用再生，则<$title_short_name$>死亡。"
 			]
 		},
 		{
@@ -1225,7 +1225,7 @@
 			"name": "再生（吸血鬼）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$>在其回合开始时，如果至少有1点生命值并且不在阳光或流水中，将恢复20点生命值。如果<$short_name$>受到光耀伤害或圣水伤害，则此特性在<$short_name$>下一个回合开始时不会生效。"
+				"<$title_short_name$>在其自己的回合开始时恢复20点生命值，前提是它至少有1点生命值且并未处于日光中或流水里。如果<$title_short_name$>受到光耀伤害或受圣水的伤害，则该<$title_short_name$>的该特质在其下一回合开始时无法生效。"
 			]
 		},
 		{
@@ -1270,7 +1270,7 @@
 		},
 		{
 			"ENG_name": "Relentless (Giant Boar)",
-			"name": "无情（巨人野猪）",
+			"name": "坚韧（巨野猪）",
 			"source": "MM",
 			"entries": [
 				"如果<$short_name$>受到的伤害小于或等于10点，并且这会将其生命值减少到0，则其生命值反而减少到1点。"
@@ -1278,7 +1278,7 @@
 		},
 		{
 			"ENG_name": "Relentless (Wereboar)",
-			"name": "无情（野猪人）",
+			"name": "坚韧（野猪人）",
 			"source": "MM",
 			"entries": [
 				"如果<$short_name$>受到的伤害小于或等于14点，并且这会将其生命值减少到0，则其生命值反而减少到1点。"
@@ -1318,7 +1318,7 @@
 		},
 		{
 			"ENG_name": "Shapechanger (Doppelganger)",
-			"name": "变形者（变形怪）",
+			"name": "变形生物（变形怪）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>可以使用其行动来变形成它见过的小型或中型类人生物，或者恢复其真实形态。除了体型之外，它在每种形态下的具体数值都相同。它穿着或携带的任何装备不会被变形。如果它死亡，它将恢复其真实形态。"
@@ -1470,7 +1470,7 @@
 		},
 		{
 			"ENG_name": "Spell Storing (Shield Guardian)",
-			"name": "法术储存（盾卫）",
+			"name": "法术存储（盾卫）",
 			"source": "MM",
 			"entries": [
 				"佩戴<$short_name$>护身符的施法者可以使<$short_name$>储存一个4级或更低级别的法术。为此，佩戴者必须对<$short_name$>施放该法术。法术没有效果，但被储存在<$short_name$>内部。当佩戴者命令这样做，或者出现施法者预先定义的情况时，<$short_name$>会以原施法者设定的任何参数施放储存的法术，无需任何材料。当法术被施放或储存新的法术时，之前储存的任何法术都会丢失。"
@@ -1654,7 +1654,7 @@
 		},
 		{
 			"ENG_name": "Tail Spike Regrowth (Manticore)",
-			"name": "尾刺再生（蝎尾狮）",
+			"name": "尾刺再生（刺尾狮）",
 			"source": "MM",
 			"entries": [
 				"<$title_short_name$>有二十四根尾刺。使用过的尾刺会在<$short_name$>完成一次长休后重新生长。"
@@ -1718,7 +1718,7 @@
 		},
 		{
 			"ENG_name": "Transparent (Gelatinous Cube)",
-			"name": "透明（凝胶立方体）",
+			"name": "透明（凝胶方块）",
 			"source": "MM",
 			"entries": [
 				"即使当<$short_name$>在明显可见的位置时，也需要成功的{@dc 15}感知（{@skill 察觉}）检定才能发现一个既没有移动也没有攻击的<$short_name$>。当一个生物在未察觉到<$short_name$>的情况下试图进入<$short_name$>的空间时，该生物会被<$short_name$>{@status 措手不及}。"
@@ -1742,10 +1742,10 @@
 		},
 		{
 			"ENG_name": "Tunneler (Purple Worm)",
-			"name": "掘地者（紫虫）",
+			"name": "掘道者（紫虫）",
 			"source": "MM",
 			"entries": [
-				"<$title_short_name$> 能够以掘洞速度的一半在坚硬的岩石中穿行，并在其身后留下一个直径10尺的隧道。"
+				"<$title_short_name$> 能够以其一半的掘穴速度掘穴通过坚硬的岩石，并在其身后留下直径10尺的地道。"
 			]
 		},
 		{
@@ -1818,7 +1818,7 @@
 		},
 		{
 			"ENG_name": "Wakeful (Ettin)",
-			"name": "警觉（双头巨人）",
+			"name": "警醒（双头巨人）",
 			"source": "MM",
 			"entries": [
 				"当<$short_name$>的一个头在睡觉时，另一个头是醒着的。"
@@ -1884,7 +1884,7 @@
 		},
 		{
 			"ENG_name": "Animate Chains (Chain Devil)",
-			"name": "使链条活化（链魔）",
+			"name": "活化魔链（链魔）",
 			"source": "MM",
 			"entries": [
 				"在<$short_name$>能看到的60尺范围内，最多四根链条会神奇地长出剃刀般锋利的倒钩，并在<$short_name$>的控制下动起来，前提是这些链条没有被穿戴或携带。",

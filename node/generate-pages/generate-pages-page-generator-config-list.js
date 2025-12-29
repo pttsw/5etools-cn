@@ -67,6 +67,7 @@ class _PageGeneratorListBestiary extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "4-2", sortIdent: "name", text: "名称"}),
 		HtmlGeneratorListButtons.getBtn({width: "4-1", sortIdent: "type", text: "类型"}),
 		HtmlGeneratorListButtons.getBtn({width: "1-7", sortIdent: "cr", text: "CR"}),
+		HtmlGeneratorListButtons.getBtn({width: "1-7", sortIdent: "translate", text: "翻译"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
 
@@ -342,14 +343,14 @@ class _PageGeneratorListLanguages extends PageGeneratorListBase {
 	_btnsList = [
 		HtmlGeneratorListButtons.getBtn({width: "6", sortIdent: "name", text: "名称"}),
 		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "type", text: "类型"}),
-		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "script", text: "Script"}),
+		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "script", text: "文字"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
 
 	_btnsSublist = [
 		HtmlGeneratorListButtons.getBtn({width: "8", sortIdent: "name", text: "名称"}),
 		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "type", text: "类型"}),
-		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "script", text: "Script"}),
+		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "script", text: "文字"}),
 	];
 }
 
