@@ -11756,8 +11756,8 @@ Renderer.item = class {
 				attunementCat = "可选同调";
 				attunement = "(可选同调)";
 			} else if (item[prop].toLowerCase().startsWith("由")) {
-				attunementCat = "需由...同调";
-				attunement = `(需由${Renderer.get().render(item[prop])}同调)`;
+				attunementCat = "需要由...同调";
+				attunement = `(需要${Renderer.get().render(item[prop])}同调)`;
 			} else {
 				attunementCat = "需同调"; // throw any weird ones in the "Yes" category (e.g. "outdoors at night")
 				attunement = `(需同调 ${Renderer.get().render(item[prop])})`;
