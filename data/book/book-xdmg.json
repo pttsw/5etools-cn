@@ -3584,52 +3584,32 @@
 											"caption": "天气",
 											"colLabels": [
 												"1d20",
-												"气温"
-											],
-											"colStyles": [
-												"col-2 text-center",
-												"col-10"
-											],
-											"rows": [
-												[
-													"1\u201314",
-													"本季正常水准"
-												],
-												[
-													"15\u201317",
-													"{@dice 1d4 × 10} 华氏度变冷"
-												],
-												[
-													"18\u201320",
-													"{@dice 1d4 × 10} 华氏度变热"
-												]
-											]
-										},
-										{
-											"type": "table",
-											"colLabels": [
-												"1d20",
+												"气温",
 												"风势",
 												"降水"
 											],
 											"colStyles": [
 												"col-2 text-center",
-												"col-2",
-												"col-8"
+												"col-4",
+												"col-3",
+												"col-3"
 											],
 											"rows": [
 												[
-													"1\u201312",
+													"1\u201314",
+													"本季正常水准",
 													"无",
 													"无"
 												],
 												[
-													"13\u201317",
+													"15\u201317",
+													"{@dice 1d4 × 10} 华氏度变冷",
 													"光线",
 													"轻度降雨或降雪"
 												],
 												[
 													"18\u201320",
+													"{@dice 1d4 × 10} 华氏度变热",
 													"强",
 													"大雨或大雪"
 												]
@@ -5354,7 +5334,7 @@
 								},
 								{
 									"ENG_name": "Proficiencies",
-									"name": "熟练项",
+									"name": "熟练",
 									"type": "entries",
 									"page": 56,
 									"id": "107",
@@ -7194,7 +7174,7 @@
 														"{@dice 2d8} 穿刺",
 														"{@itemProperty AF|XDMG|弹药} (射程 40/120；子弹), {@itemProperty RLD|XDMG|弹容} (弹容 6发)",
 														"{@itemMastery 削弱}",
-														"3磅"
+														"3 磅"
 													]
 												},
 												{
@@ -7205,7 +7185,7 @@
 														"{@dice 2d6} 穿刺",
 														"{@itemProperty AF|XDMG|弹药} (射程 50/150；子弹), {@itemProperty RLD|XDMG|弹容} (15发)",
 														"{@itemMastery 侵扰}",
-														"3磅"
+														"3 磅"
 													]
 												},
 												{
@@ -7216,7 +7196,7 @@
 														"{@dice 2d8} 穿刺",
 														"{@itemProperty AF|XDMG|弹药} (射程 30/90; 子弹), {@itemProperty RLD|XDMG|弹容} (2发), {@itemProperty 2H|XPHB|双手}",
 														"{@itemMastery 推离}",
-														"7磅"
+														"7 磅"
 													]
 												}
 											]
@@ -7253,7 +7233,7 @@
 														"{@dice 6d8} 暗蚀",
 														"{@itemProperty AF|XDMG|弹药} (射程 120/360；能量电池), {@itemProperty RLD|XDMG|弹容} (2发), {@itemProperty 2H|XPHB|双手}",
 														"{@itemMastery 削弱}",
-														"10磅"
+														"10 磅"
 													]
 												},
 												{
@@ -7264,7 +7244,7 @@
 														"{@dice 3d6} 光耀",
 														"{@itemProperty AF|XDMG|弹药} (射程 40/120; 能量电池), {@itemProperty RLD|XDMG|弹容} (弹容 50发)",
 														"{@itemMastery 侵扰}",
-														"2磅"
+														"2 磅"
 													]
 												},
 												{
@@ -7275,7 +7255,7 @@
 														"{@dice 3d8} 光耀",
 														"{@itemProperty AF|XDMG|弹药} (射程 100/300；能量电池), {@itemProperty RLD|XDMG|弹容} (弹容 30发), {@itemProperty 2H|XPHB|双手}",
 														"{@itemMastery 缓慢术}",
-														"7磅"
+														"7 磅"
 													]
 												}
 											]
@@ -7314,27 +7294,27 @@
 										[
 											"{@item 炸弹|XDMG}",
 											"100 GP",
-											"1磅"
+											"1 磅"
 										],
 										[
 											"{@item 雷管|XDMG}",
 											"\u2014",
-											"1磅"
+											"1 磅"
 										],
 										[
 											"{@item 破片榴弹|XDMG|破片手榴弹}",
 											"\u2014",
-											"1磅"
+											"1 磅"
 										],
 										[
 											"{@item 榴弹发射器|XDMG}",
 											"\u2014",
-											"7磅"
+											"7 磅"
 										],
 										[
 											"{@item 烟雾榴弹|XDMG|烟雾弹}",
 											"50 GP",
-											"2磅"
+											"2 磅"
 										],
 										[
 											"{@item 火药（桶装）|XDMG}",
@@ -7344,7 +7324,7 @@
 										[
 											"{@item 火药（角瓶装）|XDMG}",
 											"35 GP",
-											"2磅"
+											"2 磅"
 										]
 									]
 								},
@@ -25605,7 +25585,7 @@
 									"type": "table",
 									"caption": "魔法物品类别",
 									"colLabels": [
-										"类别",
+										"分类",
 										"示例"
 									],
 									"colStyles": [
@@ -26123,7 +26103,7 @@
 											"page": 218,
 											"id": "42e",
 											"entries": [
-												"如果你正要为高于1级的角色展开一场战役，那么{@book 玩家手册|XPHB}将为你提供{@table 更高等级的起始装备|XPHB|建议}有关于这些角色开卡时应当携带的魔法物品数量以及这些魔法物品稀有度的建议。以下是关于如何决定角色们具体获得了什么魔法物品的建议：",
+												"如果你正要为高于1级的角色展开一场战役，那么{@book 玩家手册|XPHB}将为你提供{@table 高等级起始装备|XPHB|建议}有关于这些角色开卡时应当携带的魔法物品数量以及这些魔法物品稀有度的建议。以下是关于如何决定角色们具体获得了什么魔法物品的建议：",
 												{
 													"type": "list",
 													"style": "list-hang-notitle",
@@ -30745,7 +30725,7 @@
 							"colLabels": [
 								"等级",
 								"特色设施",
-								"先决条件",
+								"先决",
 								"秩序"
 							],
 							"colStyles": [

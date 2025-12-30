@@ -1973,7 +1973,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"在微光光照或黑暗环境下，绑匪怪蛙可以使用附赠动作来执行躲藏动作。"
+						"处于微光光照或黑暗术时，绑匪怪蛙可以以一个附赠动作进行{@action 躲藏}动作。"
 					]
 				}
 			],
@@ -7932,23 +7932,20 @@
 							"items": [
 								{
 									"ENG_name": "1\u20132",
-									"type": "item",
+									"type": "itemSub",
 									"name": "1\u20132",
-									"style": "italic",
 									"entry": "如果该法术影响一个区域或有多个目标，则其失败且无效果。如果该法术仅以蜗牛为目标，则对蜗牛无效果并被反射回施法者，使用施法者的法术位环阶、法术豁免DC、攻击加值和施法属性。"
 								},
 								{
 									"ENG_name": "3\u20134",
-									"type": "item",
+									"type": "itemSub",
 									"name": "3\u20134",
-									"style": "italic",
 									"entry": "没有额外效果。"
 								},
 								{
 									"ENG_name": "5\u20136",
-									"type": "item",
+									"type": "itemSub",
 									"name": "5\u20136",
-									"style": "italic",
 									"entry": "蜗牛的壳将部分法术能量转化为一股破坏性的力场爆发。蜗牛30尺内的每个生物必须进行一次{@dc 15}的体质豁免检定，豁免失败则受到相当于该法术每环阶{@damage 1d6}的力场伤害，豁免成功则伤害减半。"
 								}
 							]
@@ -8575,43 +8572,37 @@
 								{
 									"ENG_name": "1. Devour Magic Ray",
 									"name": "1. 吞噬魔法射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过一次{@dc 14}的敏捷豁免检定，否则其一件魔法物品将失去所有魔法词条，并持续至高斯眼魔下一回合开始前。如果该物件是一件充能物品，它还会失去{@dice 1d4}点充能。随机选择受影响的物品，并忽略所有一次性物品如药水和卷轴。"
 								},
 								{
 									"ENG_name": "2. Enervation Ray",
 									"name": "2. 衰弱射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须进行一次{@dc 14}的体质豁免检定，豁免失败时受到18（{@damage 4d8}）点暗蚀伤害，豁免成功则伤害减半。"
 								},
 								{
 									"ENG_name": "3. Pushing Ray",
 									"name": "3. 推压射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 14}的力量豁免检定，否则将被推离高斯眼魔最多15尺且速度减半直到高斯眼魔的下个回合开始。"
 								},
 								{
 									"ENG_name": "4. Fire Ray",
 									"name": "4. 火焰射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 14}的敏捷豁免检定否则受到22（{@damage 4d10}）火焰伤害。"
 								},
 								{
 									"ENG_name": "5. Paralyzing Ray",
 									"name": "5. 麻痹射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标必须进行一次{@dc 14}的体质豁免，豁免失败者将{@condition 麻痹}1分钟。该目标可以在每个其自己回合结束时再次进行该豁免，豁免成功则终止该效应。"
 								},
 								{
 									"ENG_name": "6. Sleep Ray",
 									"name": "6. 催眠射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 14}的感知豁免检定否则陷入睡眠并保持{@condition 昏迷}状态1分钟。目标在受到伤害时或另一个生物用一个动作唤醒它时会醒来。该射线对构装体和不死生物无效果。"
 								}
 							]
@@ -8757,29 +8748,25 @@
 								{
 									"ENG_name": "1. Dazing Ray",
 									"name": "1. 眩晕射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 12}的感知豁免否则被{@condition 魅惑}直到凝视者眼魔的下个回合开始。当目标以此方式被{@condition 魅惑}时，其速度减半，且攻击检定具有劣势。"
 								},
 								{
 									"ENG_name": "2. Fear Ray",
 									"name": "2. 恐惧射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过一次{@dc 12}的感知豁免，否则陷入{@condition 恐慌}状态直到凝视者眼魔的下个回合开始。"
 								},
 								{
 									"ENG_name": "3. Frost Ray",
 									"name": "3. 冷冻射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 12}的敏捷豁免检定否则受到10（{@damage 3d6}）寒冷伤害。"
 								},
 								{
 									"ENG_name": "4. Telekinetic Ray",
 									"name": "4. 念力射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entries": [
 										"如果目标是中型或更小的生物，它必须成功通过{@dc 12}的力量豁免检定否则被移动到距离凝视者眼魔最多30尺远的地方。",
 										"如果目标是一个重量不大于10磅的物件且未被着装或携带，则凝视者眼魔可以将其向任意方向移动至多30尺。凝视者眼魔还可以用这种射线精确的控制物件，比如控制简单的工具或者打开某个容器。"
@@ -12055,57 +12042,49 @@
 								{
 									"ENG_name": "1. Acid",
 									"name": "1. 强酸",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人投掷一个{@item 强酸(小瓶装)|PHB|强酸}小瓶。{@atk rw} {@hit 4}命中，射程5/20尺，单一目标。{@h}7（{@damage 2d6}）强酸伤害。"
 								},
 								{
 									"ENG_name": "2. Alchemist's fire",
 									"name": "2. 炽火胶",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人扔出一瓶{@item 炽火胶(扁瓶装)|PHB|炽火胶}。{@atk rw} {@hit 4}命中，射程5/20尺，单一目标。{@h}在每个目标的回合开始时受到2（{@damage 1d4}）火焰伤害。一个生物可以通过使用它的动作进行{@dc 10}的敏捷检定以扑灭火焰，从而结束该伤害。"
 								},
 								{
 									"ENG_name": "3. Basket of Centipedes",
 									"name": "3.蜈蚣篮",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人朝它20尺内的一处5尺见方的空间抛出一个小篮子。一个拥有11点生命值的{@creature 蜈蚣群||虫群（蜈蚣）}（蜈蚣群）会从篮子中主动出现并投掷先攻。在每个集群的回合结束时，有{@chance 50}概率该集群会分散。"
 								},
 								{
 									"ENG_name": "4. Green Slime Pot",
 									"name": "4. 绿软泥罐",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人朝目标扔出一个装满绿软泥的陶罐，并且它会在撞击时破裂。{@atk rw} {@hit 4}命中，射程5/20尺，单一目标。{@h}目标被一片{@hazard 绿软泥}覆盖（见地下城主指南第五章）。失手：一块绿软泥覆盖住目标5尺距离内随机一块5尺见方的墙壁或者地板。"
 								},
 								{
 									"ENG_name": "5. Rot Grub Pot",
 									"name": "5. 腐蛆罐",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人朝它20尺内的一块5尺见方的空间扔出一个陶罐，并且它会在撞击时破裂。一个{@creature 食腐蛆集群|VGM}（见附录A）会从碎裂的罐中出现，并在那片空间形成威胁。"
 								},
 								{
 									"ENG_name": "6. Scorpion on a Stick",
 									"name": "6.棍上蝎",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人用一只绑在5尺长杆末端的蝎子进行近战攻击。{@atk mw} {@hit 4}命中，触及5尺，单一目标。{@h}1穿刺伤害，且目标必须进行一次{@dc 9}体质豁免检定，豁免失败受到4（{@damage 1d8}）毒素伤害，成功则受一半伤害。"
 								},
 								{
 									"ENG_name": "7. Skunk in a Cage",
 									"name": "7. 笼中臭鼬",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人在它5尺内的一处未被占据的空间内放出一只臭鼬。臭鼬的基础步行速度为20尺，AC10，1点HP，无有效攻击。它会自主进行先攻，并在它的回合使用它的动作朝5尺内的随机一个生物喷射麝香。目标必须进行{@dc 9}的体质豁免检定。如果豁免失败，目标在1分钟内会呕吐和无法采取行动。目标可以在他的每个回合结束时重复该豁免，成功则结束其效果。不需要呼吸以及免疫毒素的生物在该豁免检定上自动成功。一旦臭鼬喷射了麝香，直到它完成一次短休或长休前，它不能再这么做。"
 								},
 								{
 									"ENG_name": "8. Wasp Nest in a Bag",
 									"name": "8.袋里蜂巢",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "狗头人朝它20尺内的一处5尺见方的空间抛出一个小口袋。一个拥有11点生命值的{@creature 黄蜂群||昆虫集群（黄蜂）}（黄蜂群）会从口袋中主动出现并投掷先攻。在每个集群的回合结束时，有{@chance 50}概率该集群会分散。"
 								}
 							]
@@ -13724,43 +13703,37 @@
 								{
 									"ENG_name": "1. Aversion Ray",
 									"name": "1. 眩晕射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须进行一次{@dc 13}的魅力豁免。豁免失败时目标在攻击检定上将具有劣势，持续1分钟。目标可以在每个自己回合结束时重复豁免，成功则结束对自己的效果。"
 								},
 								{
 									"ENG_name": "2. Fear Ray",
 									"name": "2. 恐惧射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 13}的感知豁免否则陷入{@condition 恐慌}状态1分钟。目标可以在其每回合结束时重复豁免，豁免成功则结束此效应。"
 								},
 								{
 									"ENG_name": "3. Psychic Ray",
 									"name": "3. 心灵射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标必须成功通过{@dc 13}的智力豁免，否则受到27（{@damage 6d8}）点心灵伤害。"
 								},
 								{
 									"ENG_name": "4. Slowing Ray",
 									"name": "4. 缓慢射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须进行一次{@dc 13}的敏捷豁免。豁免失败时，目标的速度减半，持续1分钟。此外，该生物不能采取反应，它在自己的回合里可以采取行动或附赠行动，但不能同时进行。该生物可以在自己的每个回合结束时重复豁免，成功则结束对自己的效果。"
 								},
 								{
 									"ENG_name": "5. Stunning Ray",
 									"name": "5. 震慑射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entry": "目标生物必须成功通过{@dc 13}的体质豁免检定否则被{@condition 震慑}1分钟。目标可以在自己每个回合开始时重复豁免检定，成功则终止对自己的效应。"
 								},
 								{
 									"ENG_name": "6. Telekinetic Ray",
 									"name": "6. 念力射线",
-									"type": "item",
-									"style": "italic",
+									"type": "itemSub",
 									"entries": [
 										"如果目标是一个生物，它必须进行一次{@dc 13}的力量豁免。豁免失败时，证心者将其移动到30尺内的任何方向上，并且受射线{@condition 束缚}直到证心者的下个回合开始或者证心者{@condition 失能}。",
 										"如果目标是一个重量小于300磅的物体，且没有被佩戴或携带，则被念力移动到30尺内的任意方向上。证心者也可以用此射线很好地控制目标物体，比如操作简单的工具或打开门扉或容器。"
@@ -17108,7 +17081,7 @@
 					"ENG_name": "Watery Stealth",
 					"name": "隐于水中",
 					"entries": [
-						"在水下环境中，蛇行追迹者在为隐藏而进行的敏捷（{@skill 隐匿}）检定上有优势，并且它可以以一个附赠动作进行躲藏动作。"
+						"在水下时，蛇行追迹者在为躲藏而进行的敏捷（{@skill 隐匿}）检定上具有优势，且它能以附赠动作执行{@action 躲藏}动作。"
 					]
 				}
 			],

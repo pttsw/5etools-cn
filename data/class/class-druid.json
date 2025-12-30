@@ -1015,7 +1015,7 @@
 			],
 			"classFeatures": [
 				"德鲁伊语|德鲁伊|XPHB|1",
-				"原初誓约|德鲁伊|XPHB|1",
+				"原初职能|德鲁伊|XPHB|1",
 				"施法|德鲁伊|XPHB|1",
 				"荒野伙伴|德鲁伊|XPHB|2",
 				"荒野形态|德鲁伊|XPHB|2",
@@ -1040,7 +1040,7 @@
 					"classFeature": "子职特性|德鲁伊|XPHB|14",
 					"gainSubclassFeature": true
 				},
-				"元素神威|德鲁伊|XPHB|15",
+				"元素狂怒|德鲁伊|XPHB|15",
 				"属性值提升|德鲁伊|XPHB|16",
 				"兽形施法|德鲁伊|XPHB|18",
 				"传奇恩惠|德鲁伊|XPHB|19",
@@ -2377,7 +2377,7 @@
 		},
 		{
 			"ENG_name": "Primal Order",
-			"name": "原初誓约",
+			"name": "原初职能",
 			"source": "XPHB",
 			"page": 80,
 			"srd52": true,
@@ -2386,7 +2386,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"你让自己投身于以下一种由你自己选择的神圣职能：",
+				"你将自己投身于所选择的以下一项神圣的角色之中：",
 				{
 					"type": "entries",
 					"entries": [
@@ -2700,12 +2700,18 @@
 					"type": "entries",
 					"entries": [
 						{
-							"type": "refClassFeature",
-							"classFeature": "强力施法|德鲁伊|XPHB|7"
-						},
-						{
-							"type": "refClassFeature",
-							"classFeature": "原力蛮击|德鲁伊|XPHB|7"
+							"type": "options",
+							"count": 1,
+							"entries": [
+								{
+									"type": "refClassFeature",
+									"classFeature": "强力施法|德鲁伊|XPHB|7"
+								},
+								{
+									"type": "refClassFeature",
+									"classFeature": "原力蛮击|德鲁伊|XPHB|7"
+								}
+							]
 						}
 					]
 				}
@@ -2799,7 +2805,7 @@
 		},
 		{
 			"ENG_name": "Improved Elemental Fury",
-			"name": "元素神威",
+			"name": "元素狂怒",
 			"source": "XPHB",
 			"page": 81,
 			"srd52": true,
@@ -2907,7 +2913,7 @@
 						},
 						{
 							"ENG_name": "Longevity",
-							"name": "长寿",
+							"name": "青春永驻",
 							"type": "entries",
 							"entries": [
 								"你行使的原力魔法让你的衰老速度减缓。每经过10年的岁月，你的身体就仿佛只过了1年。"

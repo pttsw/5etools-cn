@@ -5,7 +5,7 @@ class _PageGeneratorEncountergen extends PageGeneratorTablepageBase {
 
 	_pageTitle = "遭遇";
 	_navbarTitle = "遭遇生成器";
-	_navbarDescription = "选择一组设置和等级范围，然后掷骰！";
+	_navbarDescriptionHtml = `在一个随机表上掷骰！或者，你可以试试<a href="${UrlUtil.PG_BESTIARY}#${globalThis.HASH_BLANK},encounterbuilder:true">遭遇生成器</a>。`;
 
 	_scripts = [
 		"encountergen.js",

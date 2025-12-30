@@ -1,0 +1,290 @@
+{
+	"encounterShape": [
+		{
+			"ENG_name": "Boss",
+			"name": "首领",
+			"source": "Generic",
+			"shapeTemplate": [
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Boss with Minions",
+			"name": "首领与仆从",
+			"source": "Generic",
+			"shapeTemplate": [
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"min": 0.5,
+								"max": 0.6
+							}
+						},
+						{
+							"count": {
+								"formulaMin": "玩家",
+								"formulaMax": "玩家 * 2"
+							}
+						}
+					]
+				},
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"min": 0.5,
+								"max": 0.6
+							}
+						},
+						{
+							"count": {
+								"min": 1,
+								"max": 3
+							},
+							"ratio": {
+								"exact": 0.25
+							}
+						},
+						{
+							"count": {
+								"formulaMin": "玩家",
+								"formulaMax": "玩家 * 2"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Duo",
+			"name": "杜欧",
+			"source": "Generic",
+			"shapeTemplate": [
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.5
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.5
+							}
+						}
+					]
+				},
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.6
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.4
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Horde",
+			"name": "部落",
+			"source": "Generic",
+			"shapeTemplate": [
+				{
+					"groups": [
+						{
+							"count": {
+								"min": 2,
+								"max": 4
+							},
+							"ratio": {
+								"min": 0.25,
+								"max": 0.35
+							}
+						},
+						{
+							"count": {
+								"formulaMin": "玩家 + 3",
+								"formulaMax": "玩家 * 3"
+							},
+							"ratio": {
+								"exact": 0.2
+							}
+						},
+						{
+							"count": {
+								"formulaMin": "玩家 + 3",
+								"formulaMax": "玩家 * 3"
+							}
+						}
+					]
+				},
+				{
+					"groups": [
+						{
+							"count": {
+								"formulaMin": "2",
+								"formulaMax": "玩家"
+							},
+							"ratio": {
+								"min": 0.4,
+								"max": 0.6
+							}
+						},
+						{
+							"count": {
+								"formulaMin": "玩家 + 4",
+								"formulaMax": "玩家 * 3"
+							}
+						}
+					]
+				},
+				{
+					"groups": [
+						{
+							"count": {
+								"formulaMin": "玩家 * 3",
+								"formulaMax": "玩家 * 5"
+							},
+							"ratio": {
+								"exact": 1
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Trio",
+			"name": "三重奏",
+			"source": "Generic",
+			"shapeTemplate": [
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": {
+									"num": 1,
+									"denom": 3
+								}
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": {
+									"num": 1,
+									"denom": 3
+								}
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": {
+									"num": 1,
+									"denom": 3
+								}
+							}
+						}
+					]
+				},
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.4
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.3
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.3
+							}
+						}
+					]
+				},
+				{
+					"groups": [
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.5
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.3
+							}
+						},
+						{
+							"count": {
+								"exact": 1
+							},
+							"ratio": {
+								"exact": 0.2
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -402,6 +402,90 @@
 			}
 		},
 		{
+			"ENG_name": "Drow (Levitate)",
+			"name": "卓尔（浮空术）",
+			"source": "PHB",
+			"page": 21,
+			"ref": "{@race 精灵 (卓尔)||卓尔}",
+			"apply": {
+				"_root": {
+					"size": [
+						"M"
+					],
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"drow",
+							"elf"
+						]
+					}
+				},
+				"_mod": {
+					"_": [
+						{
+							"mode": "addSenses",
+							"senses": {
+								"type": "darkvision",
+								"range": 120
+							}
+						},
+						{
+							"mode": "addSkills",
+							"skills": {
+								"perception": 1
+							}
+						}
+					],
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": "精灵语"
+					},
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"ENG_name": "Innate Spellcasting",
+								"name": "天生施法",
+								"headerEntries": [
+									"<$title_short_name$>的天赋施法能力是魅力（法术豁免{@dc <$spell_dc__cha$>}）。<$title_short_name$>天生能够施展以下法术，无需任何材料成分："
+								],
+								"will": [
+									"{@spell 舞光术}"
+								],
+								"daily": {
+									"1e": [
+										"{@spell 黑暗术}",
+										"{@spell 妖火}",
+										"{@spell 浮空术}（仅自身）"
+									]
+								},
+								"ability": "cha"
+							}
+						]
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"ENG_name": "Fey Ancestry",
+								"name": "妖精血统",
+								"entries": [
+									"<$title_short_name$> 在对抗{@condition 魅惑}的豁免检定上拥有优势，魔法不能使<$short_name$>入睡。"
+								]
+							},
+							{
+								"ENG_name": "Sunlight Sensitivity",
+								"name": "日照敏感",
+								"entries": [
+									"在日光下，<$short_name$>在攻击骰上会有劣势，以及在依赖视力的感知（{@skill 察觉}）检定上也会有劣势。"
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"ENG_name": "Duergar",
 			"name": "灰矮人",
 			"source": "MTF",
@@ -2451,6 +2535,11 @@
 					"action": [
 						{
 							"mode": "replaceTxt",
+							"replace": "(酸性|寒冷|火焰|闪电|毒药)吐息",
+							"with": "幽影吐息"
+						},
+						{
+							"mode": "replaceTxt",
 							"replace": "(酸性|寒冷|火焰|闪电|毒药)",
 							"with": "暗蚀"
 						},
@@ -2458,6 +2547,12 @@
 							"mode": "replaceTxt",
 							"replace": "(酸性|寒冷|火焰|闪电|毒药)",
 							"with": "暗蚀"
+						},
+						{
+							"mode": "replaceTxt",
+							"replace": "^(龙呼出...伤害，豁免失败则受到全额伤害，豁免成功则受到一半伤害\\.$)",
+							"with": "$1 一个类人生物因该伤害生命值降至0点时死亡，且一个不死生物{@creature 幽影}从其尸体中升起并在先攻顺序中紧接该龙之后行动。该{@creature 幽影}受龙的控制。",
+							"tagInsensitive": true
 						}
 					]
 				}

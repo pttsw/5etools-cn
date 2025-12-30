@@ -1,3 +1,5 @@
-export class EncounterBuilderConsts {
-	static TIERS = ["easy", "medium", "hard", "deadly", "absurd"];
-}
+export const ENCOUNTER_SHAPE_RANDOM_NAME = "随机";
+export const ENCOUNTER_SHAPE_RANDOM_SOURCE = VeCt.STR_GENERIC;
+
+export const ENCOUNTER_SHAPE_CUSTOM_NAME = "自定义";
+export const ENCOUNTER_SHAPE_CUSTOM_SOURCE = VeCt.STR_GENERIC;

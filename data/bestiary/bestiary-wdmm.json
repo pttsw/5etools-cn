@@ -40,6 +40,10 @@
 					}
 				}
 			},
+			"hp": {
+				"average": 140,
+				"formula": "14d8 + 28"
+			},
 			"hasToken": true
 		},
 		{
@@ -639,7 +643,7 @@
 						"with": "贝兰",
 						"flags": "i"
 					},
-					"trait": {
+					"bonus": {
 						"mode": "appendArr",
 						"items": {
 							"ENG_name": "Extra Parts",
@@ -1399,6 +1403,20 @@
 			"hasFluff": true
 		},
 		{
+			"ENG_name": "Crystal Helm Nothic",
+			"name": "水晶海姆诺斯怪",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 130,
+			"_copy": {
+				"ENG_name": "Nothic",
+				"name": "诺斯怪",
+				"source": "MM"
+			},
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Deformed Duergar",
 			"name": "变形了的灰矮人",
 			"isNpc": true,
@@ -1461,8 +1479,8 @@
 						"with": "德斯米尔",
 						"flags": "i"
 					},
-					"trait": {
-						"mode": "prependArr",
+					"bonus": {
+						"mode": "appendArr",
 						"items": [
 							{
 								"ENG_name": "Warp Reality",
@@ -1475,6 +1493,11 @@
 					}
 				}
 			},
+			"languages": [
+				"深渊语",
+				"通用语",
+				"深潜语"
+			],
 			"spellcasting": [
 				{
 					"ENG_name": "Spellcasting",
@@ -1523,6 +1546,11 @@
 					"ability": "cha"
 				}
 			],
+			"languageTags": [
+				"AB",
+				"C",
+				"DS"
+			],
 			"savingThrowForcedSpell": [
 				"体质",
 				"感知"
@@ -1543,8 +1571,8 @@
 				"source": "MM",
 				"_templates": [
 					{
-						"ENG_name": "Drow",
-						"name": "卓尔",
+						"ENG_name": "Drow (Levitate)",
+						"name": "卓尔（浮空术）",
 						"source": "PHB"
 					}
 				],
@@ -1554,16 +1582,6 @@
 						"replace": "大法师",
 						"with": "德里文",
 						"flags": "i"
-					},
-					"_": {
-						"ENG_name": "Innate Spellcasting",
-						"name": "天生施法",
-						"mode": "addSpells",
-						"daily": {
-							"1e": [
-								"{@spell 浮空术}（仅自身）"
-							]
-						}
 					},
 					"action": {
 						"mode": "appendArr",
@@ -1639,6 +1657,11 @@
 					}
 				}
 			},
+			"hp": {
+				"average": 221,
+				"formula": "13d12 + 78"
+			},
+			"tokenCredit": "Paizo",
 			"tokenCustom": true,
 			"damageTags": [
 				"F",
@@ -2785,6 +2808,28 @@
 				"CW",
 				"I"
 			],
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Hrossk",
+			"name": "赫罗斯克",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 183,
+			"_copy": {
+				"ENG_name": "Fire Giant",
+				"name": "火巨人",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "巨人",
+						"with": "赫罗斯克",
+						"flags": "i"
+					}
+				}
+			},
 			"hasToken": true
 		},
 		{
@@ -4072,29 +4117,25 @@
 										{
 											"ENG_name": "1. Paralyzing Ray",
 											"name": "1. 麻痹射线",
-											"type": "item",
-											"style": "italic",
+											"type": "itemSub",
 											"entry": "目标必须进行一次{@dc 14}的体质豁免，豁免失败者将{@condition 麻痹}1分钟。该目标可以在每个其自己回合结束时再次进行该豁免，豁免成功则终止该效应。"
 										},
 										{
 											"ENG_name": "2. Fear Ray",
 											"name": "2. 恐惧射线",
-											"type": "item",
-											"style": "italic",
+											"type": "itemSub",
 											"entry": "目标必须进行一次{@dc 14}的感知豁免，豁免失败者将陷入{@condition 恐慌}1分钟。该目标可以在每个其自己回合结束时再次进行该豁免，豁免成功则终止该效应。"
 										},
 										{
 											"ENG_name": "3. Enervation Ray",
 											"name": "3. 弱能射线",
-											"type": "item",
-											"style": "italic",
+											"type": "itemSub",
 											"entry": "目标必须进行一次{@dc 14}的体质豁免，豁免失败者将受到36（{@damage 8d8}）点暗蚀伤害，豁免成功则伤害减半。"
 										},
 										{
 											"ENG_name": "4. Telekinetic Ray",
 											"name": "4. 念力射线",
-											"type": "item",
-											"style": "italic",
+											"type": "itemSub",
 											"entry": "如果目标是一个生物，它必须成功通过一次 {@dc 14} 力量豁免检定，否则僵尸将它在任意方向上移动最多30英尺。它会被射线的念力束缚，直到僵尸的下个回合开始或僵尸无法行动为止。如果目标是一个重量不超过300磅且未被穿戴或携带的物体，它会被在任意方向上移动最多30英尺。僵尸还可以通过这条射线对物体进行精细控制，例如操纵一个简单的工具或打开一扇门或容器。"
 										}
 									]
@@ -4157,6 +4198,10 @@
 				}
 			},
 			"type": "undead",
+			"alignment": [
+				"C",
+				"E"
+			],
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
@@ -4248,6 +4293,9 @@
 							]
 						}
 					}
+				},
+				"_preserve": {
+					"legendaryGroup": true
 				}
 			},
 			"size": [
@@ -4408,6 +4456,12 @@
 						}
 					]
 				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
 			},
 			"alignment": [
 				"L",
@@ -4823,7 +4877,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"当处于微光或黑暗中时，刺客可以作为附赠动作进行隐藏。"
+						"处于微光光照或黑暗术时，刺客可以以附赠动作进行{@action 躲藏}动作。"
 					]
 				},
 				{
@@ -6165,8 +6219,8 @@
 				"source": "MM",
 				"_templates": [
 					{
-						"ENG_name": "Drow",
-						"name": "卓尔",
+						"ENG_name": "Drow (Levitate)",
+						"name": "卓尔（浮空术）",
 						"source": "PHB"
 					}
 				],
@@ -6183,7 +6237,7 @@
 							"ENG_name": "Special Equipment",
 							"name": "特殊装备",
 							"entries": [
-								"夏兰穿着一件{@i 魔斗篷}，一件卓尔制造的{@item 精灵斗篷}。如果连续暴露在阳光下1小时，它会失去魔法。"
+								"Xarann A'Daragon穿着一件{@item 魔斗篷（精灵斗篷）|OotA|魔斗篷}，一件卓尔制造的{@item 精灵斗篷}。如果连续暴露在阳光下1小时不间断，它将失去魔法效果。"
 							]
 						}
 					}
@@ -6603,6 +6657,10 @@
 					}
 				}
 			},
+			"alignment": [
+				"C",
+				"G"
+			],
 			"languages": [
 				"水族语",
 				"气族语",

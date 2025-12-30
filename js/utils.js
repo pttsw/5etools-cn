@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"2.21.0"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"2.22.0"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
 globalThis.IS_VTT = false;
@@ -617,6 +617,9 @@ globalThis.SourceUtil = class {
 	static _CLASSIC_THRESHOLD_TIMESTAMP = null;
 
 	static isClassicSource (source) {
+		if (typeof PrereleaseUtil !== "undefined" && PrereleaseUtil.hasSourceJson(source)) return PrereleaseUtil.isClassicSource(source);
+		if (typeof BrewUtil2 !== "undefined" && BrewUtil2.hasSourceJson(source)) return BrewUtil2.isClassicSource(source);
+
 		this._CLASSIC_THRESHOLD_TIMESTAMP ||= new Date(Parser.sourceJsonToDate(Parser.SRC_XPHB));
 		return new Date(Parser.sourceJsonToDate(source)) < this._CLASSIC_THRESHOLD_TIMESTAMP;
 	}
@@ -1021,15 +1024,6 @@ globalThis.JqueryUtil = class {
 		}
 
 		setTimeout(() => dispCopied.remove(), duration);
-	}
-
-	static _dropdownInit = false;
-	static bindDropdownButton (ele) {
-		if (!JqueryUtil._dropdownInit) {
-			JqueryUtil._dropdownInit = true;
-			document.addEventListener("click", () => [...document.querySelectorAll(`.open`)].filter(ele => !ele.classList.contains(`dropdown--navbar`)).forEach(ele => ele.classList.remove("open")));
-		}
-		ele.onn("click", () => setTimeout(() => ele.parente().addClass("open"), 1)); // defer to allow the above to complete
 	}
 
 	static _WRP_TOAST = null;
@@ -1709,9 +1703,9 @@ class ElementUtil {
 
 	/** @this {HTMLElementExtended} */
 	static _closeste (selector) {
-		const sibling = this.closest(selector);
-		if (!sibling) return sibling;
-		return e_({ele: sibling});
+		const ancestor = this.closest(selector);
+		if (!ancestor) return ancestor;
+		return e_({ele: ancestor});
 	}
 
 	/** @this {HTMLElementExtended} */
@@ -1925,6 +1919,7 @@ globalThis.MiscUtil = class {
 	static COLOR_HURT = "#c5ca00";
 	static COLOR_BLOODIED = "#f7a100";
 	static COLOR_DEFEATED = "#cc0000";
+	static COLOR_DEAD = "#9b1d20";
 
 	/**
 	 * @param obj
@@ -3932,6 +3927,7 @@ UrlUtil.URL_TO_HASH_BUILDER["sense"] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER["raceFeature"] = (it) => UrlUtil.encodeArrayForHash(it.name, it.raceName, it.raceSource, it.source);
 UrlUtil.URL_TO_HASH_BUILDER["citation"] = UrlUtil.URL_TO_HASH_GENERIC;
 UrlUtil.URL_TO_HASH_BUILDER["languageScript"] = UrlUtil.URL_TO_HASH_GENERIC;
+UrlUtil.URL_TO_HASH_BUILDER["encounterShape"] = UrlUtil.URL_TO_HASH_GENERIC;
 
 // Add lowercase aliases
 Object.keys(UrlUtil.URL_TO_HASH_BUILDER)
@@ -5468,8 +5464,9 @@ globalThis.DataUtil = class {
 				return new RegExp(replace, `g${flags || ""}`);
 			}
 
-			static _doReplaceStringHandler ({re, withStr}, str) {
-				// TODO(Future) may need to have this handle replaces inside _some_ tags
+			static _doReplaceStringHandler ({re, withStr, isTagInsensitive = false}, str) {
+				if (isTagInsensitive) return str.replace(re, withStr);
+
 				const split = Renderer.splitByTags(str);
 				const len = split.length;
 				for (let i = 0; i < len; ++i) {
@@ -5491,7 +5488,7 @@ globalThis.DataUtil = class {
 
 				DataUtil.generic._walker_replaceTxt = DataUtil.generic._walker_replaceTxt || MiscUtil.getWalker();
 				const re = this._getRegexFromReplaceModInfo({replace: modInfo.replace, flags: modInfo.flags});
-				const handlers = {string: this._doReplaceStringHandler.bind(null, {re: re, withStr: modInfo.with})};
+				const handlers = {string: this._doReplaceStringHandler.bind(null, {re: re, withStr: modInfo.with, isTagInsensitive: modInfo.tagInsensitive})};
 
 				ents.forEach(ent => {
 					if (ent.name) ent.name = DataUtil.generic._walker_replaceTxt.walk(ent.name, handlers);
@@ -5504,7 +5501,7 @@ globalThis.DataUtil = class {
 
 				DataUtil.generic._walker_replaceTxt = DataUtil.generic._walker_replaceTxt || MiscUtil.getWalker();
 				const re = this._getRegexFromReplaceModInfo({replace: modInfo.replace, flags: modInfo.flags});
-				const handlers = {string: this._doReplaceStringHandler.bind(null, {re: re, withStr: modInfo.with})};
+				const handlers = {string: this._doReplaceStringHandler.bind(null, {re: re, withStr: modInfo.with, isTagInsensitive: modInfo.tagInsensitive})};
 
 				const props = modInfo.props || [null, "entries", "headerEntries", "footerEntries"];
 				if (!props.length) return;
@@ -8773,6 +8770,16 @@ Array.prototype.prevWrap || Object.defineProperty(Array.prototype, "prevWrap", {
 			if (ix - 1 >= 0) return this[ix - 1];
 			else return this.at(-1);
 		} else return this[0];
+	},
+});
+
+Array.prototype.rotateRight || Object.defineProperty(Array.prototype, "rotateRight", {
+	enumerable: false,
+	writable: true,
+	value: function (n) {
+		n = n % this.length;
+		this.unshift.apply(this, this.splice(n, this.length));
+		return this;
 	},
 });
 
