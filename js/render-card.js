@@ -262,7 +262,7 @@ class RendererCard {
 
 	_renderAbilityAttackMod (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
-		textStack[0] += `<b>${entry.name}攻击调整值</b> = 你的熟练加值 + 你的${Parser.attrChooseToFull(entry.attributes)}`;
+		textStack[0] += `<b>${entry.name}攻击加值</b> = 你的熟练加值 + 你的${Parser.attrChooseToFull(entry.attributes)}`;
 		this._renderSuffix(entry, textStack, meta, options);
 	}
 

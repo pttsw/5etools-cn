@@ -1566,8 +1566,8 @@ globalThis.Renderer = function () {
 	this._renderAbilityAttackMod = function (entry, textStack, meta, options) {
 		textStack[0] += `<div class="rd__wrp-centered-ability"><b>`;
 		this._recursiveRender(entry.name, textStack, meta);
-		if (options.styleHint === "classic") textStack[0] += ` 攻击调整值</b> = 你的熟练加值 + 你的${Parser.attrChooseToFull(entry.attributes)}</div>`;
-		else textStack[0] += ` 攻击调整值</b> = ${Parser.attrChooseToFull(entry.attributes)} + 熟练加值</div>`;
+		if (options.styleHint === "classic") textStack[0] += `攻击加值</b> = 你的熟练加值 + 你的${Parser.attrChooseToFull(entry.attributes)}</div>`;
+		else textStack[0] += `攻击加值</b> = ${Parser.attrChooseToFull(entry.attributes)} + 熟练加值</div>`;
 	};
 
 	this._renderAbilityGeneric = function (entry, textStack, meta, options) {
@@ -2454,8 +2454,8 @@ globalThis.Renderer = function () {
 			type: "dice",
 			rollable: true,
 			subType: "d20",
-			displayText: displayText || "你的法术攻击调整值",
-			toRoll: `1d20 + #$prompt_number:title=输入你的法术攻击调整值$#`,
+			displayText: displayText || "你的法术攻击加值",
+			toRoll: `1d20 + #$prompt_number:title=输入你的法术攻击加值$#`,
 		};
 		return this._recursiveRender(fauxEntry, textStack, meta);
 	};

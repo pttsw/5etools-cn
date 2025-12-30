@@ -430,7 +430,7 @@ class RendererMarkdown {
 
 	_renderAbilityAttackMod (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
-		textStack[0] += `**${entry.name}攻击调整值** = 你的熟练加值 + your ${Parser.attrChooseToFull(entry.attributes)}`;
+		textStack[0] += `**${entry.name}攻击加值** = 你的熟练加值 + your ${Parser.attrChooseToFull(entry.attributes)}`;
 		this._renderSuffix(entry, textStack, meta, options);
 	}
 

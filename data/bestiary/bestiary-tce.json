@@ -32,7 +32,7 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（天生护甲）"
+					"special": "11 +法术等级 (天生护甲)"
 				}
 			],
 			"hp": {
@@ -42,7 +42,7 @@
 				"walk": 30,
 				"fly": {
 					"number": 30,
-					"condition": "（仅限眼魔衍体；悬浮）"
+					"condition": "（悬浮）（仅限类眼魔）"
 				},
 				"canHover": true
 			},
@@ -68,14 +68,14 @@
 					"ENG_name": "Regeneration (Slaad Only)",
 					"name": "再生（仅史拉蟾）",
 					"entries": [
-						"该异怪在它的每个回合开始时恢复5点生命值，前提是它至少有1点生命值。"
+						"异怪在其自己的回合开始时恢复5点生命值，前提是它至少有1点生命值。"
 					]
 				},
 				{
 					"ENG_name": "Whispering Aura (Star Spawn Only)",
 					"name": "低语灵光（仅星之子）",
 					"entries": [
-						"在每个异怪回合开始时，异怪5尺范围内的每个生物必须成功通过一次对抗你法术豁免DC的感知豁免，否则受到{@damage 2d6}心灵伤害，前提是该异怪未处于{@condition 失能}状态。"
+						"于异怪自己的每个回合开始时，所有在其5尺内的生物必须进行一次感知豁免对抗你的法术豁免DC，豁免失败则受到{@damage 2d6}心灵伤害，这个效果只在异怪不处于{@condition 失能}时适用。"
 					]
 				}
 			],
@@ -84,21 +84,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"该异怪发动的攻击次数等于此法术等级的一半（向下取整）。"
+						"异怪发动等同于法术环数一半的次数的攻击（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Eye Ray (Beholderkin Only)",
 					"name": "眼波射线（仅类眼魔）",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，范围150尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
+						"{@atk rs} 命中{@hitYourSpellAttack} ，射程 150 尺，单一生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Claws (Slaad Only)",
 					"name": "爪击（仅史拉蟾）",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，一个目标。{@h}{@damage 1d10 + 3 + summonSpellLevel} 挥砍伤害。如果目标是生物，在异怪的下个回合开始前，它无法恢复生命值。"
+						"{@atk mw}命中 {@hitYourSpellAttack} ，触及 5 尺，单一目标。{@h}{@damage 1d10 + 3 + summonSpellLevel} 挥砍伤害。如果目标是生物，其直到异怪下回合开始不能恢复生命值。"
 					]
 				},
 				{
@@ -564,7 +564,7 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（天生护甲）"
+					"special": "11 +法术等级 (天生护甲)"
 				}
 			],
 			"hp": {
@@ -879,7 +879,7 @@
 					},
 					"ac": [
 						{
-							"special": "11 + 法术等级（天生护甲）"
+							"special": "11 +法术等级 (天生护甲)"
 						}
 					],
 					"miscTags": [
@@ -1208,7 +1208,7 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（天生护甲）"
+					"special": "11 +法术等级 (天生护甲)"
 				}
 			],
 			"hp": {
@@ -2363,7 +2363,7 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（天生护甲）"
+					"special": "11 +法术等级 (天生护甲)"
 				}
 			],
 			"hp": {
@@ -2651,7 +2651,7 @@
 			],
 			"ac": [
 				{
-					"special": "11 + 法术等级（天生护甲）"
+					"special": "11 +法术等级 (天生护甲)"
 				}
 			],
 			"hp": {

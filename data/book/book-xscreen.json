@@ -262,7 +262,7 @@
 									"进行一次敏捷（{@skill 隐匿|XPHB}）检定。"
 								],
 								[
-									"{@action 影响力|XPHB}",
+									"{@action 影响|XPHB}",
 									"进行一次魅力（{@skill 欺瞒|XPHB}、{@skill 威吓|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}）或感知（{@skill 驯兽|XPHB|}）检定，以改变一个生物的态度。"
 								],
 								[
@@ -275,7 +275,7 @@
 								],
 								[
 									"{@action 搜索|XPHB}",
-									"进行一次感知（{@skill 洞悉|XPHB}、{@skill 医药|XPHB}、{@skill 察觉|XPHB}或{@skill 生存|XPHB}）检定。"
+									"进行一次感知（{@skill 洞悉|XPHB}、{@skill 医药|XPHB}、{@skill 察觉|XPHB}或{@skill 求生|XPHB}）检定。"
 								],
 								[
 									"{@action 研究|XPHB}",
@@ -397,7 +397,7 @@
 									"敏捷"
 								],
 								[
-									"{@skill 生存|XPHB}",
+									"{@skill 求生|XPHB}",
 									"感知"
 								]
 							],
@@ -409,7 +409,7 @@
 						},
 						{
 							"ENG_name": "Death Saving Throws",
-							"name": "死亡豁免",
+							"name": "死亡豁免检定",
 							"type": "entries",
 							"entries": [
 								"当你在回合开始时HP为0，掷一个{@dice 1d20}，并且在10+时成功。",
@@ -565,11 +565,11 @@
 									"4 CP"
 								],
 								[
-									"{@item 面包（条）|XPHB}",
+									"{@item 面包（一块）|XPHB}",
 									"2 CP"
 								],
 								[
-									"{@item 奶酪（角）|XPHB}",
+									"{@item 奶酪（一角）|XPHB}",
 									"1 SP"
 								],
 								[
@@ -705,9 +705,9 @@
 						},
 						{
 							"type": "table",
-							"caption": "常用难度等级",
+							"caption": "范例难度等级",
 							"colLabels": [
-								"事件难度",
+								"任务难度",
 								"DC"
 							],
 							"colStyles": [
@@ -736,7 +736,7 @@
 									"25"
 								],
 								[
-									"几乎不可能",
+									"近乎不可能",
 									"30"
 								]
 							],
@@ -862,24 +862,24 @@
 							"rows": [
 								[
 									"快速",
-									"400尺",
-									"4里",
-									"30里",
-									"{@variantrule 劣势|XPHB} 在感知（{@skill 察觉|XPHB} 或 {@skill 生存|XPHB}）和敏捷（{@skill 隐匿|XPHB}）检定上"
+									"400 尺",
+									"4 里",
+									"30 里",
+									"{@variantrule 劣势|XPHB} 在感知（{@skill 察觉|XPHB} 或 {@skill 求生|XPHB}）和敏捷（{@skill 隐匿|XPHB}）检定上"
 								],
 								[
 									"正常",
-									"300尺",
-									"3里",
-									"24里",
+									"300 尺",
+									"3 里",
+									"24 里",
 									"{@variantrule 劣势|XPHB} 在敏捷（{@skill 隐匿|XPHB}）检定上"
 								],
 								[
 									"缓慢术",
-									"200尺",
-									"2里",
-									"18里",
-									"{@variantrule 优势|XPHB} 在感知（{@skill 察觉|XPHB} 或 {@skill 生存|XPHB}）检定上"
+									"200 尺",
+									"2 里",
+									"18 里",
+									"{@variantrule 优势|XPHB} 在感知（{@skill 察觉|XPHB} 或 {@skill 求生|XPHB}）检定上"
 								]
 							],
 							"data": {
@@ -1021,11 +1021,11 @@
 							"rows": [
 								[
 									"半身掩护",
-									"AC和敏捷豁免检定+2"
+									"AC和敏捷豁免检定获得 +2 加值"
 								],
 								[
 									"四分之三掩护",
-									"AC和敏捷豁免检定+5"
+									"AC和敏捷豁免检定获得 +5 加值"
 								],
 								[
 									"全身掩护",
