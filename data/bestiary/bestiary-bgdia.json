@@ -137,7 +137,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Amrik Vanthampur",
@@ -247,7 +248,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Archduke Zariel of Avernus",
@@ -330,7 +332,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Arkhan the Cruel",
@@ -414,12 +417,12 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"阿坎的施法能力是魅力（法术豁免{@dc 17}）。他可以无需材料成分地施放以下法术："
+						"阿克汉的施法属性是魅力（法术豁免 {@dc 17}）。他可以无需材料成分地施展以下法术："
 					],
 					"daily": {
 						"3e": [
 							"{@spell 活化死尸}",
-							"{@spell 印记斩}（4级时）",
+							"{@spell 印记斩}（4环版本）",
 							"{@spell 回生术}"
 						],
 						"1e": [
@@ -435,21 +438,21 @@
 					"ENG_name": "Aura of Hate",
 					"name": "憎恨灵光",
 					"entries": [
-						"只要阿肯没有处于{@condition 失能}，他以及所有在他30尺范围内的恶魔和不死生物在用近战武器攻击命中时，每次都会额外造成4点伤害（已经计入阿肯的攻击中）。这个额外伤害的类型与武器的伤害类型相同。"
+						"只要阿克汉没有处于{@condition 失能}，他以及所有在他 30 尺范围内的邪魔和亡灵盟友在用近战武器攻击命中时，每次都会额外造成 4 点伤害（已经计入阿克汉的攻击中）。这个额外伤害的类型与武器的伤害类型相同。"
 					]
 				},
 				{
 					"ENG_name": "Hand of Vecna",
 					"name": "维克那魔掌",
 					"entries": [
-						"{@item 维克那魔掌}拥有8个充能次数，并且在黎明时分每天恢复{@dice 1d4 + 4}个已消耗的充能次数。Arkhan可以通过消耗指定的充能次数从手中施展以下法术（法术豁免{@dc 18}）：{@spell 死亡一指}（5个充能次数）、{@spell 睡眠}（1个充能次数）、{@spell 缓慢术}（2个充能次数）和{@spell 传送术}（3个充能次数）。"
+						"{@item 维克那魔掌}具有 8 充能，并在每日黎明时重获 {@dice 1d4 + 4} 已消耗的充能。阿克汉可以通过消耗对应的充能次数以魔掌施展以下法术（法术豁免{@dc 18}）：{@spell 死亡一指}（5 充能）、{@spell 睡眠}（1 充能 ）、{@spell 缓慢术}（2 充能）和{@spell 传送术}（3 充能）。"
 					]
 				},
 				{
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"Arkhan挥舞着{@item 神殿吞食者|BGDIA}并穿戴一套{@item 黑曜燧石龙板甲|BGDIA}。这套盔甲使Arkhan在进行属性检定和豁免检定以避免或结束对他自身的{@condition 受擒}状态时具有优势。"
+						"阿克汉使用{@item 神殿吞食者|BGDIA}并穿戴一套{@item 黑曜燧石龙板甲|BGDIA}。这套盔甲使阿克汉为避免或结束{@condition 受擒}所做的属性检定与豁免检定具有优势。"
 					]
 				}
 			],
@@ -465,14 +468,14 @@
 					"ENG_name": "Fane-Eater (Battleaxe)",
 					"name": "神殿吞食者（战斧）",
 					"entries": [
-						"{@atk mw} 命中{@hit 13}，触及 5 尺，单一目标。{@h}16 ({@damage 1d8 + 12}) 挥砍伤害，或者双手使用时为 17 ({@damage 1d10 + 12}) 挥砍伤害，外加 9 ({@damage 2d8}) 寒冷伤害。如果目标是一个生物，并且 Arkhan 在攻击检定中掷出了 20，生物将额外受到 9 ({@damage 2d8}) 暗蚀伤害，并且 Arkhan 恢复等于暗蚀伤害值的生命值。"
+						"{@atk mw} 命中{@hit 13}，触及 5 尺，单一目标。{@h}16 ({@damage 1d8 + 12}) 挥砍伤害，或双手 17 ({@damage 1d10 + 12}) 挥砍伤害，加上 9 ({@damage 2d8}) 寒冷伤害。如果目标是一个生物，且阿克汉在攻击检定中掷出 20，该生物额外受到 9 ({@damage 2d8}) 暗蚀伤害，并且阿克汉将恢复与该暗蚀伤害相同数值的生命值。"
 					]
 				},
 				{
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 10}，触及范围5尺或射程30/120尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害，如果使用标枪进行近战攻击，则额外造成4点穿刺伤害和9 ({@damage 2d8})点寒冷伤害。"
+						"{@atk mw,rw} 命中{@hit 10}，触及范围 5 尺，或射程 30/120 尺，单一目标。{@h}8 ({@damage 1d6 + 5}) 点穿刺伤害，如果使用标枪进行近战攻击，则额外造成 4 点穿刺伤害和 9 ({@damage 2d8})点寒冷伤害。"
 					]
 				}
 			],
@@ -607,7 +610,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"贝尔的施法能力是魅力（法术豁免{@dc 23}）。贝尔天生能够无需任何材料成分地施放以下法术："
+						"贝尔的施法属性是魅力（法术豁免{@dc 23}）。贝尔天生能够无需任何材料成分地施放以下法术："
 					],
 					"will": [
 						"{@spell 侦测魔法}",
@@ -636,28 +639,28 @@
 					"ENG_name": "Fear Aura",
 					"name": "恐惧灵光",
 					"entries": [
-						"任何对Bel怀有敌意的生物，如果在其回合开始时距离Bel 20尺以内，必须进行一次{@dc 23}感知豁免检定，除非Bel处于{@condition 失能}。除非豁免成功，否则该生物直到其下一个回合开始前都会处于{@condition 恐慌}状态。如果生物的豁免检定成功，该生物在接下来的24小时内对Bel的恐惧光环免疫。"
+						"除非贝尔{@condition 失能}，否则任何在其周边 20 尺内开始其回合的敌对生物必须进行一次 {@dc 23} 的感知豁免。豁免失败将陷入{@condition 恐慌}直至其下一回合开始。豁免成功的生物将在接下来的24小时内免疫贝尔的恐惧灵光。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"如果贝尔未能通过豁免检定，他可以选择成功。"
+						"贝尔豁免失败时，可以将其改为豁免成功。"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"Bel在对抗法术和其他魔法效果的豁免检定上有优势。"
+						"贝尔对抗法术和其他魔法效应时进行的豁免检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Magic Weapons",
 					"name": "魔法武器",
 					"entries": [
-						"贝尔的武器攻击是魔法的。"
+						"贝尔的武器攻击被视为魔法武器攻击"
 					]
 				}
 			],
@@ -666,21 +669,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"贝尔进行三次攻击：两次使用他的巨剑，一次使用他的尾巴。"
+						"贝尔进行三次攻击：两次用他的巨剑，一次用他的尾击"
 					]
 				},
 				{
 					"ENG_name": "Greatsword",
 					"name": "巨剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 16}，触及 10 尺，单一目标。{@h}23 ({@damage 4d6 + 9}) 挥砍伤害加上 21 ({@damage 6d6}) 火焰伤害。如果目标是一个易燃物体，并且没有被持有或穿戴，它将着火。"
+						"{@atk mw} 命中 {@hit 16}，触及 10 尺，单一目标。{@h}23 ({@damage 4d6 + 9}) 挥砍伤害，加上 21 ({@damage 6d6}) 火焰伤害。如果目标是可点燃物品且未被携带或是穿戴，则会被点燃。"
 					]
 				},
 				{
 					"ENG_name": "Tail",
 					"name": "尾击",
 					"entries": [
-						"{@atk mw} 命中{@hit 16}，触及10尺，单一目标。{@h}25（{@damage 3d10 + 9}）钝击伤害。如果目标是一个生物，它必须在一次{@dc 23}体质豁免检定中成功，否则直到其下一回合结束时将处于{@condition 震慑}状态。"
+						"{@atk mw} 命中 {@hit 16}，触及 10 尺，单一目标。{@h}25（{@damage 3d10 + 9}）钝击伤害。如果目标是一个生物，则目标必须通过一次 {@dc 23} 的体质豁免，否则直到其下一回合结束时将处于{@condition 震慑}。"
 					]
 				}
 			],
@@ -689,21 +692,21 @@
 					"ENG_name": "Fireball",
 					"name": "火球术",
 					"entries": [
-						"Bel 施放了 {@spell 火球术}。"
+						"贝尔施放 {@spell 火球术}。"
 					]
 				},
 				{
 					"ENG_name": "Tactical Edge (Costs 2 Actions)",
 					"name": "战法优胜（花费2个动作）",
 					"entries": [
-						"为Bel掷一个{@dice d6}。骰子掷出的数字将从下一分钟内向Bel或他选择的盟友进行的下一次攻击掷骰中减去。"
+						"为贝尔骰一个 {@dice d6}，下一分钟内，对贝尔或贝尔选定的盟友掷出的下一个攻击检定减去此骰出的数值。"
 					]
 				},
 				{
 					"ENG_name": "Summon Ice Devil (Costs 3 Actions)",
 					"name": "召唤冰魔（花费3个动作）",
 					"entries": [
-						"贝尔通过魔法召唤一个手持冰矛的冰魔（如《怪物手册》中冰魔条目所描述）。冰魔出现在距离贝尔60尺内的未被占据的空间，作为贝尔的盟友行动，并且如果它有这样的能力，可以召唤其他恶魔。冰魔将一直存在，直到贝尔死亡或他以一个动作将其解散。"
+						"贝尔用魔法召唤一个持有冰矛的冰魔（参见怪物图鉴中的冰魔条目）。这个冰魔矛兵会出现在贝尔周围60尺内未被占据的空间中，作为贝尔的盟友行动，且可以在具有相应能力的情况下召唤其他魔鬼。这个冰魔会持续到贝尔死亡或是用一个动作解除召唤。"
 					]
 				}
 			],
@@ -763,7 +766,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Bitter Breath",
@@ -789,7 +793,8 @@
 				"walk": 20
 			},
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Black Gauntlet of Bane",
@@ -851,7 +856,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"黑色护手是一个5级施法者。其施法能力是魅力（法术豁免{@dc 15}，法术攻击命中{@hit 7}）。它准备了以下牧师法术："
+						"黑手是一名 5 级施法者。其施法关键属性是魅力（法术豁免{@dc 15}，法术攻击命中 {@hit 7}）。他准备了如下牧师法术："
 					],
 					"spells": {
 						"0": {
@@ -894,14 +899,14 @@
 					"ENG_name": "Aura of Terror",
 					"name": "恐惧光环",
 					"entries": [
-						"当一个敌对生物在黑色护手5尺范围内进行攻击骰或豁免检定时，其骰点具有劣势。对{@condition 恐慌}状态免疫的生物对这一特性也免疫。"
+						"当一个敌对的生物在离黑手5英尺范围内进行攻击检定或豁免检定时，它的本次掷骰具有劣势。对{@condition 恐慌}状态免疫的生物也对这种特性免疫。"
 					]
 				},
 				{
 					"ENG_name": "Tactical Discipline",
 					"name": "战术纪律",
 					"entries": [
-						"黑色护手在战斗中进行的所有属性检定和豁免检定中具有优势。"
+						"班恩的黑手在战斗中的所有属性检定和豁免检定都具有优势。"
 					]
 				}
 			],
@@ -910,21 +915,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"黑色护手用其钉头锤进行两次攻击。"
+						"班恩的黑手进行两次硬头锤攻击"
 					]
 				},
 				{
 					"ENG_name": "Mace",
 					"name": "硬头锤",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 钝击伤害加上13 ({@damage 3d8}) 暗蚀伤害。"
+						"{@atk mw} 命中{@hit 7}，触及 5 尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 钝击伤害，加上 13 ({@damage 3d8}) 暗蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Guiding Bolt (1st-Level Spell; Requires a Spell Slot)",
 					"name": "光导箭（1环法术；需要法术位）",
 					"entries": [
-						"{@atk rs} 命中{@hit 7}，范围120英尺，一个生物。{@h}14 ({@damage 4d6}) 光耀伤害，并且在黑手套的下一个回合结束前，对目标的下一次攻击检定获得优势。如果黑手套使用2级或更高的法术位施放此法术，每高于1级的法术位伤害增加 {@damage 1d6}。"
+						"{@atk rs} 命中{@hit 7}，射程 120 英尺，单一目标。{@h}14 ({@damage 4d6}) 光耀伤害，在黑手的下一个回合结束前对目标的下一个攻击骰具有优势。如果黑手使用二环或更高的法术位来施放此法术，每比一环高一环此法术的伤害就增加 {@damage 1d6}。"
 					]
 				}
 			],
@@ -1012,21 +1017,21 @@
 					"ENG_name": "Adhesive",
 					"name": "黏着",
 					"entries": [
-						"骨螺可以使中等大小或更小的物体粘附在其上。触碰骨螺的中等大小或更小的生物会被它{@condition 受擒}（逃脱{@dc 10}）。"
+						"骸骨螺可以黏着中型或是更小物体。被骸骨螺触碰的中型或更小的生物视为被它{@condition 受擒}（逃脱 {@dc 10}）"
 					]
 				},
 				{
 					"ENG_name": "Death Scream",
 					"name": "死亡尖叫",
 					"entries": [
-						"当骨螺死亡时，它会发出一声令人毛骨悚然的尖叫，这种尖叫可以传播到120尺的范围。这种尖叫会导致骨螺周围10尺内的非魔法有机物质腐烂。每个在骨螺死亡时位于其周围10尺内的生物将受到9（{@damage 2d8}）点暗蚀伤害。"
+						"当骸骨螺死去时，他会爆发出一阵令人毛骨悚然的尖啸，尖啸可以传播到 120 尺的范围。这声尖啸会腐化骸骨蜗牛周围 10 尺内的非魔法有机物质。每个在骸骨蜗牛死亡时离它 10 尺内的生物将受到 9（{@damage 2d8}）暗蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Spider Climb",
 					"name": "蛛行术",
 					"entries": [
-						"骨螺可以攀爬困难的表面，包括在天花板上倒挂，无需进行属性检定。"
+						"骸骨螺可以在难以攀爬的表面上攀爬，包括沿着天花板移动，且无需为此进行属性检定。"
 					]
 				}
 			],
@@ -1035,7 +1040,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一生物。{@h}4 ({@damage 1d8}) 点穿刺伤害。"
+						"{@atk mw} 命中 {@hit 2}，触及 5 尺，单一目标。{@h}4 ({@damage 1d8}) 穿刺伤害。"
 					]
 				}
 			],
@@ -1055,7 +1060,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Burney the Barber",
@@ -1082,21 +1088,21 @@
 								"ENG_name": "Healer",
 								"name": "医疗师",
 								"entries": [
-									"Burney 拥有{@feat 医疗师}壮举的好处，并且精通{@item 医疗包|PHB}和{@item 草药工具|PHB}。"
+									"布妮拥有{@feat 医疗师}专长的全部增益，并且熟练使用{@item 医疗包|PHB}与{@item 草药工具|PHB}。"
 								]
 							},
 							{
 								"ENG_name": "Bahamut's Blessings",
 								"name": "巴哈姆特的赐福",
 								"entries": [
-									"Burney在为巴哈姆特服务期间收到了几项祝福：",
+									"效力于巴哈姆特的布妮获得了几项赐福：",
 									{
 										"type": "list",
 										"items": [
-											"除非Burney决定另行处理，否则一旦任何比神祇弱小的生物从她那里走了三步，他们就再也无法记得她或与她具体的互动。",
-											"Burney受到永久性{@spell 心灵屏障}法术的影响，除非她愿意，否则无法通过魔法或普通手段被探测到。作为这项祝福的交换，Burney不能直接对九层地狱的居民采取行动，尽管她当然可以寻求那些能够做到的人的帮助。",
-											"Burney总是知道流浪交易市场的位置，并且可以通过类似于{@spell 回返真言}法术的方式传送自己到那里。这就解释了为什么Burney每天早晨在完全展开的市场中出现，提供服务和讲故事。",
-											"每天一次，当Burney希望时，她可以通过一种类似于{@spell 位面转移}法术的强大祝福，瞬间传送自己到巴哈姆特的宫廷。"
+											"除非布妮愿意，否则任何比神明弱小的生物在离开她三步以后就会忘记她，不会记得与她一起具体做了些什么。",
+											"布妮身上被永久施展了{@spell 心灵屏障}的效果，除非她允许，否则无法通过魔法或普通手段发现这一点。为了换取这一赐福，布妮不能直接出手，和九狱的居民敌对。当然，她可以寻求不受限制者的帮助。",
+											"布妮一直知道流浪商城的所在地点，她自己可以通过{@spell 回返真言}传送至此。这也是为什么布妮每天早上都似乎是凭空般的出现在已经完全展开的市场中间，给客户提供服务和讲故事。",
+											"只要她愿意，布妮每天有一次瞬间将她自己通过一个类似{@spell 位面转移}的赐福，传送到巴哈姆特王廷中的机会。"
 										]
 									}
 								]
@@ -1106,7 +1112,8 @@
 				}
 			},
 			"damageTagsLegendary": [],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Chukka",
@@ -1133,7 +1140,7 @@
 					"ENG_name": "Silvered Pike",
 					"name": "镀银长矛",
 					"entries": [
-						"{@atk mw} 命中{@hit 2}，触及5尺，单一目标。{@h}5 ({@damage 1d10}) 点穿刺伤害。"
+						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一目标。{@h}5 ({@damage 1d10}) 点穿刺伤害。"
 					]
 				}
 			],
@@ -1145,7 +1152,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Clonk",
@@ -1172,7 +1180,7 @@
 					"ENG_name": "Hellfire Warhammer",
 					"name": "地狱火战锤",
 					"entries": [
-						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一目标。{@h}4 ({@damage 1d8}) 钝击伤害，或者如果用双手进行近战攻击则为 5 ({@damage 1d10 + 1}) 钝击伤害。"
+						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一目标。{@h}4 ({@damage 1d8}) 钝击伤害，或双手持用造成 5 ({@damage 1d10 + 1}) 钝击伤害。"
 					]
 				}
 			],
@@ -1187,7 +1195,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Crokek'toeck",
@@ -1291,7 +1300,7 @@
 					"ENG_name": "Secure Memory",
 					"name": "牢固记忆",
 					"entries": [
-						"克鲁科克'托伊克对冥河之水以及任何可能窃取或修改其记忆，或探测或阅读其思想的效果免疫。"
+						"克鲁科克'托伊克免疫冥河水以及任何会偷走或改变其记忆或侦测阅读其思想的效应。"
 					]
 				},
 				{
@@ -1307,14 +1316,14 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 14}，触及15尺，单一目标。{@h}44 ({@damage 10d6 + 9}) 点穿刺伤害。"
+						"{@atk mw} 命中{@hit 14}，触及 15 尺，单一目标。{@h}44 ({@damage 10d6 + 9}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Disgorge Allies {@recharge}",
 					"name": "吐出盟友{@recharge}",
 					"entries": [
-						"克鲁科克'托伊克张开嘴，吐出{@dice 1d4}只{@creature 恶猿魔||恶猿魔}，由1只{@creature 鬣狗人||鬣狗人}领导的{@dice 3d6}只{@creature 鬣狗人·耶诺古毒牙}，{@dice 6d6}只{@creature 怯魔||怯魔们}，或{@dice 1d3}只{@creature 鹫魔||鹫魔}。每个被它吐出的生物会出现在克洛克托克嘴部30英尺内的一个未被占据的空间，或下一个最近的未被占据的空间。"
+						"克鲁科克'托伊克张开它的大嘴，从中吐出 {@dice 1d4} 只{@creature 恶猿魔||恶猿魔}， 1名{@creature 鬣狗人·耶诺古毒牙}带领的 {@dice 3d6} 只 {@creature 鬣狗人||鬣狗人}，{@dice 6d6} 只{@creature 怯魔||怯魔们}，或者吐出 {@dice 1d3} 只{@creature 鹫魔||鹫魔}（这些生物的数据表见怪物图鉴）。每只被它吐出的生物出现在克鲁科克'托伊克嘴边 30 尺内，或相邻的未被占据的空间。"
 					]
 				}
 			],
@@ -1339,7 +1348,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Death's Head of Bhaal",
@@ -1394,14 +1404,14 @@
 					"ENG_name": "Aura of Murder",
 					"name": "谋杀灵光",
 					"entries": [
-						"只要死亡头颅没有处于{@condition 失能}，在其5尺范围内的敌对生物就会对穿刺伤害易感，除非它们对此类伤害具有抗性或免疫。"
+						"只要死神之首未处于{@condition 失能}，其周围 5 尺内的敌对生物就会获得对穿刺伤害的易伤，除非该生物已拥有对此类伤害的抗性或免疫。"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"死亡之头在对抗法术和其他魔法效果的豁免投骰上具有优势。"
+						"死神之首在对抗法术和其他魔法效应的豁免中具有优势。"
 					]
 				}
 			],
@@ -1410,21 +1420,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"死亡之头使用眩晕凝视，并进行两次匕首攻击。"
+						"死神之首使用震慑凝视并进行两次匕首攻击。"
 					]
 				},
 				{
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 7}，触及 5 尺或 20/60 尺，单一目标。{@h}7 ({@damage 1d4 + 5}) 点穿刺伤害。"
+						"{@atk mw,rw} 命中 {@hit 7}，触及 5 尺或射程 20/60 尺，单一目标。{@h}7 ({@damage 1d4 + 5}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Stunning Gaze",
 					"name": "震慑凝视",
 					"entries": [
-						"死亡之头瞄准它能看到的30尺范围内的一个生物。目标必须在一次{@dc 14}感知豁免检定中成功，否则直到其下一回合结束时将处于{@condition 震慑}状态。"
+						"死神之首以 30 尺内其能看见的一个生物作为目标。目标必须成功通过 {@dc 14} 的感知豁免否则被{@condition 震慑}直到其下个回合结束。"
 					]
 				}
 			],
@@ -1433,7 +1443,7 @@
 					"ENG_name": "Unstoppable (3/Day)",
 					"name": "永不止息（3/日）",
 					"entries": [
-						"死亡之头使它受到的攻击伤害减少至0。"
+						"死神之首将其从一次攻击中受到的伤害降为0。"
 					]
 				}
 			],
@@ -1468,7 +1478,8 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dryad Spirit",
@@ -1487,7 +1498,8 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Duke Thalamra Vanthampur",
@@ -1532,7 +1544,7 @@
 				"religion": "+3"
 			},
 			"senses": [
-				"黑暗视觉 120 尺（见下方恶魔视觉）"
+				"黑暗视觉 120 尺（见下方魔鬼视界）"
 			],
 			"passive": 13,
 			"languages": [
@@ -1545,14 +1557,14 @@
 					"ENG_name": "Dark Devotion",
 					"name": "黑暗忠诚",
 					"entries": [
-						"Thalamra在对抗被{@condition 魅惑}或{@condition 恐慌}的豁免检定上具有优势。"
+						"萨拉玛拉在抵抗{@condition 魅惑}或{@condition 恐慌}的豁免检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Devil's Sight",
 					"name": "魔鬼视界",
 					"entries": [
-						"Thalamra 在黑暗中，无论是魔法造成的还是非魔法的，都能正常视物，视距可达 120 尺。"
+						"萨拉玛拉在黑暗中拥有 120 尺的黑暗视觉，魔法黑暗不会阻碍萨拉玛拉的黑暗视觉。"
 					]
 				}
 			],
@@ -1561,7 +1573,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Thalamra 可以使用奥术冲击两次或进行两次徒手攻击。"
+						"萨拉玛拉使用两次魔能爆或进行两次徒手打击。"
 					]
 				},
 				{
@@ -1575,7 +1587,7 @@
 					"ENG_name": "Unarmed Strike",
 					"name": "徒手打击",
 					"entries": [
-						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}4 钝击伤害。"
+						"{@atk mw} 命中{@hit 5}，触及 5 尺，单一目标。{@h}4 钝击伤害。"
 					]
 				}
 			],
@@ -1584,7 +1596,7 @@
 					"ENG_name": "Hellish Rebuke (1st-Level Spell; 2/Day)",
 					"name": "炼狱叱喝（1环法术；2/日）",
 					"entries": [
-						"当萨拉姆拉被她能看到的60尺内的生物伤害时，伤害她的生物将被地狱火焰所吞没，必须进行一次敏捷豁免投骰（{@dc 14}），失败则受到16 ({@damage 3d10}) 火焰伤害，成功则伤害减半。"
+						"当萨拉玛拉受到来自 60 尺内可见生物的伤害时，伤害她的生物将被炼狱的烈焰包围；并且该生物必须进行一次 {@dc 14} 的敏捷豁免，豁免失败则受到 16（{@damage 3d10}）点火焰伤害，豁免成功则则受到一半伤害。"
 					]
 				}
 			],
@@ -1614,7 +1626,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Elliach",
@@ -1651,7 +1664,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 5}，触及 10 尺或 20/60 尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
+						"{@atk mw,rw} 命中{@hit 5}，触及 10 尺，或射程 20/60 尺，单一目标。{@h}4 ({@damage 1d4 + 2}) 点穿刺伤害。"
 					]
 				}
 			],
@@ -1665,7 +1678,8 @@
 				"RW",
 				"THW"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Feonor",
@@ -1698,7 +1712,8 @@
 				"E"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Fiendish Flesh Golem",
@@ -1776,7 +1791,7 @@
 					"ENG_name": "Berserk",
 					"name": "失心狂怒",
 					"entries": [
-						"每当魔像在其回合开始时拥有100点或更少的生命值时，投掷一个{@dice d6}。如果是6，魔像就会发狂。在发狂的每个回合，魔像会攻击它能看到的最近的生物。如果没有足够近的生物可以移动并攻击，魔像会攻击一个物体，优先选择比自己小的物体。一旦魔像发狂，它会持续发狂，直到被摧毁或恢复所有生命值。如果魔像的创造者在发狂魔像60尺范围内，创造者可以尝试通过坚定而有说服力的说话来安抚它。魔像必须能够听到其创造者的声音，创造者必须采取行动进行{@dc 15}魅力（{@skill 游说}）检定。如果检定成功，魔像停止发狂。如果在100点或更少的生命值时仍然受到伤害，魔像可能会再次发狂。"
+						"若魔像以 100 或更低生命值开始其自己回合时，骰一次 {@dice d6}，骰值为 6 时，魔像开始狂怒。魔像狂怒期间，其在其回合内攻击距其最近的其可见的生物。若没有生物位于其能够移动并攻击到的范围内，则魔像攻击物件，并且会优先选择比自己体型更小的物件。一旦魔像开始狂怒，狂怒持续至其被摧毁或回复所有生命值为止。若魔像的创造者位于魔像60尺内，则创造者能够以动作进行一次 {@dc 15} 的魅力（{@skill 游说}）检定以试图让魔像冷静下来，此时魔像必须能听见其创造者。检定成功则魔像不再狂怒直至其下个回合开始，若此时魔像再以100或更低生命值时受到伤害，魔像可能再次开始狂怒。"
 					]
 				},
 				{
@@ -1846,7 +1861,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Fist of Bane",
@@ -1901,7 +1917,7 @@
 					"ENG_name": "Tactical Discipline",
 					"name": "战术纪律",
 					"entries": [
-						"班恩之拳在战斗中进行的所有属性检定和豁免检定上具有优势。"
+						"班恩之拳在战斗中的所有属性检定和豁免检定都具有优势。"
 					]
 				}
 			],
@@ -1917,7 +1933,7 @@
 					"ENG_name": "Longbow",
 					"name": "长弓",
 					"entries": [
-						"{@atk rw} 命中{@hit 2}，射程150/600 尺，单一目标。{@h}4 ({@damage 1d8}) 点穿刺伤害。"
+						"{@atk rw} 命中{@hit 2}，射程 150/600 尺，单一目标。{@h}4 ({@damage 1d8}) 点穿刺伤害。"
 					]
 				}
 			],
@@ -1939,7 +1955,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Flying Dagger",
@@ -1980,7 +1997,8 @@
 			"damageTags": [
 				"P"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Gideon Lightward",
@@ -2058,7 +2076,7 @@
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"吉迪恩在每个回合开始时恢复10点生命值。如果他受到光耀伤害，这个特性在下一个回合开始时不会生效。只有当他在回合开始时生命值为0且没有再生时，吉迪恩才会被摧毁。"
+						"吉迪恩在其回合开始时恢复 10 生命值。若吉迪恩受到光耀伤害，则该特质在其下个回合开始时无法生效。吉迪恩只有以0生命值开始其回合且无法再生时，才会死亡。"
 					]
 				}
 			],
@@ -2067,7 +2085,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Gideon 用他的拳头攻击两次。"
+						"吉迪恩发动两次拳击攻击。"
 					]
 				},
 				{
@@ -2081,7 +2099,7 @@
 					"ENG_name": "Withering Gaze",
 					"name": "枯萎凝视",
 					"entries": [
-						"吉迪恩指定一个他能够看到的距离他60英尺内的生物为目标。目标必须进行一次{@dc 15}的体质豁免，豁免失败则承受22（{@damage 4d10}）点暗蚀伤害，豁免成功则伤害减半。"
+						"吉迪恩指定一个他所能看见的距离他 60 尺内的生物为目标。目标必须进行一次 {@dc 15} 的体质豁免，豁免失败将受到 22（{@damage 4d10}）点暗蚀伤害，豁免成功则伤害减半。"
 					]
 				}
 			],
@@ -2109,7 +2127,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Harkina Hunt",
@@ -2129,7 +2148,7 @@
 							"ENG_name": "Longbow",
 							"name": "长弓",
 							"entries": [
-								"{@atk rw} 命中{@hit 2}，射程150/600 尺，单一目标。{@h}4 ({@damage 1d8}) 点穿刺伤害。"
+								"{@atk rw} 命中{@hit 2}，射程 150/600 尺，单一目标。{@h}4 ({@damage 1d8}) 点穿刺伤害。"
 							]
 						}
 					}
@@ -2149,7 +2168,8 @@
 				"MW",
 				"RNG"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hellwasp",
@@ -2206,7 +2226,7 @@
 			],
 			"languages": [
 				"炼狱语",
-				"心灵感应 300 尺（仅与其他地狱黄蜂）"
+				"心灵感应 300 尺（只能与其他黄泉蜂）"
 			],
 			"cr": "5",
 			"trait": [
@@ -2214,7 +2234,7 @@
 					"ENG_name": "Magic Weapons",
 					"name": "魔法武器",
 					"entries": [
-						"地狱黄蜂的武器攻击具有魔法效果。"
+						"黄泉蜂的武器攻击视为魔法武器攻击。"
 					]
 				}
 			],
@@ -2223,14 +2243,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"地狱黄蜂进行两次攻击：一次用它的刺，一次用它的剑爪。"
+						"黄泉蜂发动两次攻击：一次使用其钉刺，一次使用其剑爪。"
 					]
 				},
 				{
 					"ENG_name": "Sting",
 					"name": "钉刺",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及距离：5尺，单一生物。{@h}8（{@damage 1d8 + 4}）点穿刺伤害加上7（{@damage 2d6}）火焰伤害，目标必须进行一次{@dc 12}体质豁免检定，否则将被{@condition 中毒}1分钟。以这种方式{@condition 中毒}时，目标也会被{@condition 麻痹}。目标可以在每个回合结束时重复豁免检定，成功则结束该效果。"
+						"{@atk mw} 命中{@hit 7}，触及 5 尺，单一生物。{@h}8（{@damage 1d8 + 4}）点穿刺伤害加上 7（{@damage 2d6}）火焰伤害，且目标必须成功通过一次 {@dc 12} 体质豁免检定，否则陷入{@condition 中毒} 1 分钟。在以该方式{@condition 中毒}期间，目标也会被{@condition 麻痹}。目标能够在其每个回合结束时再进行一次该豁免，成功则终止该效应。"
 					]
 				},
 				{
@@ -2270,7 +2290,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hellwasp Grub",
@@ -2282,7 +2303,8 @@
 				"name": "巨蜈蚣",
 				"source": "MM"
 			},
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hollyphant",
@@ -2353,7 +2375,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"霍利芬特的天生施法能力是感知（法术豁免{@dc 15}）。它天生可以施放以下法术，无需任何材料："
+						"圣飞象的天生施法属性是感知（法术豁免{@dc 15}）。圣飞象天生具有以下法术的施法能力，且不需要任何法术成分："
 					],
 					"will": [
 						"{@spell 光亮术}"
@@ -2368,8 +2390,8 @@
 							"{@spell 放逐术}",
 							"{@spell 医疗术}",
 							"{@spell 死者复活}",
-							"{@spell 形体变化} (变成一只金色皮毛的{@creature 猛犸}，拥有羽毛翅膀，飞行速度为120尺)",
-							"{@spell 传送术}（无误差可能）"
+							"{@spell 形体变化} (变成一只拥有羽毛翅膀的金毛{@creature 猛犸}并且拥有 120 尺飞行速度)",
+							"{@spell 传送术}（目标一定正确）"
 						]
 					},
 					"ability": "wis"
@@ -2380,14 +2402,14 @@
 					"ENG_name": "Aura of Invulnerability",
 					"name": "无敌光环",
 					"entries": [
-						"一个{@condition 隐形}的光环形成10英尺半径的球体环绕着圣象兽，只要它活着就持续存在。从屏障外施放的任何5环或更低环的法术都无法影响屏障内的生物或物体，即使该法术使用了更高环位的法术位。此类法术可以以屏障内的生物和物体为目标，但对它们没有任何效果。同样，屏障内的区域不受此类法术的影响。圣象兽可以使用一个动作压制此特性，直到它的{@status 专注}结束（如同{@status 专注||专注于}一个法术）。"
+						"只要圣飞象存活，其周身便会形成一个半径 10 尺的{@condition 隐形}光环。任何从光环外施放的五环或更低环阶的法术都无法影响屏障内的生物或物件，即使该法术是升环施法。此类法术可以以光环内的生物或物件为目标，但不会对其产生任何效果。同样，光环内的区域也不会受到此类法术的影响。圣飞象可以用一个动作压制此特质，直到它的{@status 专注}结束（如同正在{@status 专注||专注于}于一个法术）。"
 					]
 				},
 				{
 					"ENG_name": "Magic Weapons",
 					"name": "魔法武器",
 					"entries": [
-						"霍利芬特的武器攻击具有魔法效果。"
+						"圣飞象的武器攻击被视为魔法武器攻击。"
 					]
 				}
 			],
@@ -2396,28 +2418,28 @@
 					"ENG_name": "Tusks",
 					"name": "獠牙",
 					"entries": [
-						"{@atk mw} 命中{@hit 3}，触及5尺，单一目标。{@h}3 ({@damage 1d6}) 点穿刺伤害。"
+						"{@atk mw} 命中{@hit 3}，触及 5 尺，单一目标。{@h}3 ({@damage 1d6}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Trumpet (3/Day)",
 					"name": "号角（3/日）",
 					"entries": [
-						"霍利芬特通过它的象鼻吹气，创造出一个能被600尺范围内听到的喇叭声。喇叭还创造了一个30尺的圆锥形能量区域，具有以下效果之一，由霍利芬特选择："
+						"圣飞象用象鼻喷气，制造一个 600 尺范围内都能听到的号角声，并制造一个 30 尺锥状区域，其造成由圣飞象选择的以下效果之一："
 					]
 				},
 				{
 					"ENG_name": "Trumpet of Blasting",
 					"name": "爆破之号角",
 					"entries": [
-						"圆锥区域内的每个生物必须进行一次{@dc 14}体质豁免。豁免失败时，生物将受到17点（{@damage 5d6}）雷鸣伤害并被{@condition 耳聋}1分钟。豁免成功时，生物只受到一半的伤害并且不会被{@condition 耳聋}。圆锥区域内未被携带或穿着的非魔法物品将受到35点（{@damage 10d6}）雷鸣伤害。"
+						"每一个在锥状区域内的生物必须进行一次 {@dc 14} 的体质豁免。失败则受到 17（{@damage 5d6}）的雷鸣伤害，并被{@condition 耳聋} 1 分钟。成功则受到一半的伤害且不会{@condition 耳聋}。锥状区域内未被着装或携带的非魔法物体会受到 35（{@damage 10d6}）的雷鸣伤害。"
 					]
 				},
 				{
 					"ENG_name": "Trumpet of Sparkles",
 					"name": "闪耀之号角",
 					"entries": [
-						"圆锥区域内的生物必须进行一次体质豁免投骰（{@dc 14}），失败则受到22 ({@damage 4d8 + 4}) 光耀伤害，成功则伤害减半。邪恶生物在豁免投骰上处于劣势。区域内的善良生物不受到伤害。"
+						"每一个在锥状区域内的生物必须进行一次 {@dc 14} 的体质豁免。失败则受到 22 ({@damage 4d8 + 4})的光耀伤害。成功则受到一半伤害。邪恶生物在此豁免检定上具有劣势。范围内的善良生物不会受到伤害。"
 					]
 				}
 			],
@@ -2455,7 +2477,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Iron Consul",
@@ -2516,7 +2539,7 @@
 					"ENG_name": "Tactical Discipline",
 					"name": "战术纪律",
 					"entries": [
-						"铁领事在战斗中进行的所有属性检定和豁免投骰具有优势。"
+						"钢铁执政官在战斗中的所有属性检定和豁免检定都具有优势。"
 					]
 				}
 			],
@@ -2525,21 +2548,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"铁领事用其矛进行一次攻击，并可以使用其命令之声能力。"
+						"钢铁执政官使用矛进行一次攻击，且可以使用它的命令之声能力。"
 					]
 				},
 				{
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 5}，触及 5 尺或范围 20/60 尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害，或使用双手发动近战攻击时 7 ({@damage 1d8 + 3}) 点穿刺伤害。"
+						"{@atk mw,rw} 命中{@hit 5}，触及 5 尺或射程 20/60 尺，单一目标。{@h}6 ({@damage 1d6 + 3}) 点穿刺伤害，或双手使用近战攻击为 7 ({@damage 1d8 + 3}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Voice of Command",
 					"name": "命令之声",
 					"entries": [
-						"铁领事选择最多两个在90尺范围内且能听到其命令的盟友。每个盟友可以立即使用其反应来进行一次近战攻击。"
+						"钢铁执政官在 90 尺范围内选择两个可以听到其命令的盟友。每个盟友可以立即使用其反应进行一次近战攻击。"
 					]
 				}
 			],
@@ -2562,7 +2585,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kostchtchie",
@@ -2653,7 +2677,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"科斯特切的天赋施法能力是魅力（法术豁免{@dc 20}）。他可以天赋施放以下法术，无需任何材料成分："
+						"科斯特切天生施法属性是魅力（法术豁免{@dc 20}）。其天生具有以下法术的施法能力，且无需任何相关的材料成分："
 					],
 					"will": [
 						"{@spell 命令术}",
@@ -2677,14 +2701,14 @@
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"如果科斯特切未能通过豁免投骰，他可以选择成功。"
+						"科斯彻奇豁免失败时，可以将其改为豁免成功"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"科斯特切在对抗法术和其他魔法效果的豁免投骰上具有优势。"
+						"科斯彻奇对抗法术和其他魔法效应时进行的豁免检定具有优势。"
 					]
 				}
 			],
@@ -2693,21 +2717,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"科斯特切进行两次近战攻击，其中只能有一次是咬击。"
+						"科斯彻奇可做出两次近战攻击，其中只能使用一次啃咬攻击。"
 					]
 				},
 				{
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 18}，触及5尺，单一生物。{@h}13 ({@damage 1d6 + 10}) 点穿刺伤害。"
+						"{@atk mw} 命中{@hit 18}，触及 5 尺，单一生物。{@h}13 ({@damage 1d6 + 10}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Matalotok (Warhammer)",
 					"name": "玛塔洛托克（战锤）",
 					"entries": [
-						"{@atk mw} 命中{@hit 18}，触及10尺，单一目标。{@h}19 ({@damage 2d8 + 10}) 钝击伤害，或者当用双手使用时造成21 ({@damage 2d10 + 10}) 钝击伤害，并且武器发出一阵寒气，对30尺内的所有生物造成10 ({@damage 3d6}) 寒冷伤害。"
+						"{@atk mw} 命中{@hit 18}，触及 10 尺，单一目标。{@h}19 ({@damage 2d8 + 10}) 钝击伤害，或双手使用时造成 21 ({@damage 2d10 + 10}) 钝击伤害，并且该武器会释放出一股寒流，对距离其 30 尺内的每个生物造成 10({@damage 3d6})的寒冷伤害。"
 					]
 				}
 			],
@@ -2716,21 +2740,21 @@
 					"ENG_name": "Attack",
 					"name": "攻击",
 					"entries": [
-						"科斯特切进行一次近战武器攻击。"
+						"科斯彻奇进行一次近战武器攻击。"
 					]
 				},
 				{
 					"ENG_name": "Charge",
 					"name": "冲锋",
 					"entries": [
-						"科斯特切移动其速度范围内的距离。"
+						"科斯彻奇移动至多相当于其速度的距离。"
 					]
 				},
 				{
 					"ENG_name": "Curse (Costs 2 Actions)",
 					"name": "诅咒（花费2个动作）",
 					"entries": [
-						"科斯特切诅咒一个他能看到的60尺范围内的生物。被诅咒的生物在科斯特切下一个回合结束之前对科斯特切造成的所有伤害都易受伤害。"
+						"科斯彻奇诅咒一个其视野内 60 尺范围内的生物。被诅咒的生物获得对科斯彻奇造成的所有伤害的易伤，此效果持续至科斯彻奇的下一个回合结束。"
 					]
 				}
 			],
@@ -2776,7 +2800,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Krull",
@@ -2842,7 +2867,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"克鲁尔是一名14级的施法者。他的施法能力是感知（法术豁免{@dc 16}，法术攻击命中{@hit 8}）。他准备了以下牧师法术："
+						"克鲁尔是一名 14 级的施法者。他的施法属性是感知（法术豁免{@dc 16}，法术攻击命中{@hit 8}）。他准备了以下牧师法术："
 					],
 					"spells": {
 						"0": {
@@ -2927,14 +2952,14 @@
 					"ENG_name": "Hold Breath",
 					"name": "屏息",
 					"entries": [
-						"克鲁尔可以屏住呼吸长达1小时。"
+						"克鲁尔可以憋气1小时。"
 					]
 				},
 				{
 					"ENG_name": "Inescapable Destruction",
 					"name": "命定毁伤",
 					"entries": [
-						"克鲁尔的法术造成的暗蚀伤害无视对暗蚀伤害的抗性。"
+						"克鲁尔的法术所造成的暗蚀伤害将无视暗蚀伤害抗性。"
 					]
 				}
 			],
@@ -2943,21 +2968,21 @@
 					"ENG_name": "Claws",
 					"name": "爪击",
 					"entries": [
-						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}7 ({@damage 1d4 + 5}) 点穿刺伤害。"
+						"{@atk mw} 命中{@hit 8}，触及 5 尺，单一目标。{@h}7 ({@damage 1d4 + 5}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "+1 Maul",
 					"name": "+1 巨锤",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}13 ({@damage 2d6 + 6}) 钝击伤害加上9 ({@damage 2d8}) 暗蚀伤害。"
+						"{@atk mw} 命中{@hit 9}，触及 5 尺，单一目标。{@h}13 ({@damage 2d6 + 6}) 钝击伤害，加上 9 ({@damage 2d8}) 暗蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Shell Defense",
 					"name": "龟壳防御",
 					"entries": [
-						"Krull 缩进他的壳中。在他以附赠动作出现之前，他的 AC 获得 +4 加值，并且在力量和体质豁免检定上具有优势。在壳中时，Krull 处于{@condition 倒地}状态，他的速度为 0 并且不能增加，他在敏捷豁免检定上处于劣势，他不能进行反应，并且他唯一可以采取的动作是从壳中出现。"
+						"克鲁尔缩回他的壳。直至他出壳，他获得AC +4 并在力量和体质豁免上具有优势。当处在龟壳内，克鲁尔处于{@condition 倒地}状态，其速度为0且不能增加，他在敏捷豁免上具有劣势，且不能使用任何反应，唯一能执行的动作是使用一个附赠动作出壳。"
 					]
 				}
 			],
@@ -3005,7 +3030,8 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Lulu",
@@ -3021,14 +3047,15 @@
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
-						"replace": "霍利芬特",
+						"replace": "圣飞象",
 						"with": "露露",
 						"flags": "i"
 					}
 				}
 			},
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mad Maggie",
@@ -3045,13 +3072,14 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "鬼婆",
-						"with": "玛吉",
+						"with": "喜鹊",
 						"flags": "i"
 					}
 				}
 			},
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mahadi the Rakshasa",
@@ -3135,7 +3163,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"玛哈迪的天赋施法能力是魅力（法术豁免{@dc 18}，法术攻击命中{@hit 9}）。他可以天赋施放以下法术，无需任何材料成分："
+						"马哈迪的天生施法属性是魅力（法术豁免{@dc 18}，法术攻击命中{@hit 9}）。马哈迪天生可以施展以下法术且不需任何相应的材料成分："
 					],
 					"will": [
 						"{@spell 侦测思想}",
@@ -3173,14 +3201,14 @@
 					"ENG_name": "Limited Magic Immunity",
 					"name": "有限魔免",
 					"entries": [
-						"玛哈迪不受6级或更低级别的法术影响或侦测，除非他愿意。他对所有其他法术和魔法效果的豁免投骰具有优势。"
+						"马哈迪可以随自己意愿的免受六环或更低环阶法术的效应影响或侦测。它在对抗其他法术和魔法效应时所作的豁免检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Magic Weapons",
 					"name": "魔法武器",
 					"entries": [
-						"玛哈迪的武器攻击具有魔法效果。"
+						"马哈迪的武器攻击被视为魔法武器攻击。"
 					]
 				}
 			],
@@ -3189,21 +3217,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"玛哈迪进行四次爪击攻击。"
+						"马哈迪发动四次爪击。"
 					]
 				},
 				{
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}9 ({@damage 2d6 + 2}) 挥砍伤害，如果目标是一个生物，则会被诅咒。当目标进行短休或长休时，诅咒生效，使目标的思维充满可怕的影像和梦境。被诅咒的目标在完成短休或长休时不会获得任何好处。该诅咒持续有效，直到通过{@spell 移除诅咒}法术或类似的魔法解除。"
+						"{@atk mw} 命中{@hit 7}，触及 5 尺，单一目标。{@h}9 ({@damage 2d6 + 2}) 挥砍伤害，若目标为生物，则其被诅咒，此时目标的思绪中将充满恐怖的影像及梦境。被诅咒期间，目标无法从完成短休或长休中获益。该诅咒持续至被{@spell 移除诅咒}或其他相似法术移除。"
 					]
 				},
 				{
 					"ENG_name": "Summon Erinyes (1/Day)",
 					"name": "召唤罪魔（1/日）",
 					"entries": [
-						"马哈迪召唤了伊尔泽贝特，一个通过地狱契约与他绑定的罪魔。罪魔出现在他60尺范围内的一个未被占据的空间，作为他的盟友行动，并且不能召唤其他恶魔。罪魔会持续存在10分钟，或者直到马哈迪作为一个动作将其解散。如果罪魔死亡，马哈迪将失去这个动作选项。"
+						"马哈迪找来他炼狱契约签订的羁绊对象，罪魔伊莎贝特。召唤来的罪魔出现在召唤者身边 60 尺范围内一处未被占据空间位置，作为他的盟友行动，且不能召唤其他魔鬼。这个召唤持续10分钟，或是马哈迪用一个动作取消。如果这个罪魔死亡，则马哈迪不再能执行此动作。"
 					]
 				}
 			],
@@ -3242,7 +3270,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Master of Souls",
@@ -3298,12 +3327,12 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"灵魂主宰是一名5环法术施法者。其法术施法能力是智力（法术豁免难度{@dc 14}，法术攻击命中{@hit 6}）。它准备了以下法师法术："
+						"灵魂宗师是一名 5 级施法者。其施法属性为智力（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。它准备了如下法师法术："
 					],
 					"spells": {
 						"0": {
 							"spells": [
-								"{@spell 颤栗之触}（见下方\"动作\"）",
+								"{@spell 颤栗之触}（见下文\"动作\"）",
 								"{@spell 法师之手}",
 								"{@spell 传讯术}",
 								"{@spell 魔法伎俩}"
@@ -3323,7 +3352,7 @@
 							"spells": [
 								"{@spell 黑暗术}",
 								"{@spell 迷踪步}",
-								"{@spell 灼热射线}（详见下文的\"动作\"）"
+								"{@spell 灼热射线}（见下文\"动作\"）"
 							]
 						},
 						"3": {
@@ -3342,7 +3371,7 @@
 					"ENG_name": "Grave Magic",
 					"name": "坟墓魔法",
 					"entries": [
-						"当灵魂主宰施放一个造成伤害的法术时，它可以将法术的伤害类型改为死灵伤害。"
+						"当灵魂宗师施放一个法术并造成伤害时，他可以将该法术的伤害类型改为暗蚀。"
 					]
 				}
 			],
@@ -3351,35 +3380,35 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"灵魂主宰用其链枷攻击两次。"
+						"灵魂宗师进行两次链枷攻击。"
 					]
 				},
 				{
 					"ENG_name": "Silvered Skull Flail",
 					"name": "镀银骷髅链枷",
 					"entries": [
-						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一目标。{@h}4 ({@damage 1d8}) 钝击伤害加上 14 ({@damage 4d6}) 暗蚀伤害，并且目标在灵魂之主的下一个回合结束前，所有豁免检定具有劣势。"
+						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一目标。{@h}4 ({@damage 1d8}) 钝击伤害，加上 14 ({@damage 4d6}) 暗蚀伤害，直至灵魂宗师的下个回合结束，目标在所有豁免上都具有劣势。"
 					]
 				},
 				{
 					"ENG_name": "Chill Touch (Cantrip)",
 					"name": "颤栗之触（戏法）",
 					"entries": [
-						"{@atk rs} 命中{@hit 6}，射程120尺，单一生物。{@h}13（{@damage 2d8}）暗蚀伤害，目标直到灵魂主宰的下一回合开始前不能恢复生命值。如果目标是不死生物生物，在同样时间内对灵魂主宰的攻击掷骰处于劣势状态。"
+						"{@atk rs} 命中{@hit 6}，射程 120 尺，单一生物。{@h}13（{@damage 2d8}）暗蚀伤害，目标无法重获生命直至灵魂宗师的下个回合开始，若目标为亡灵，则其在同一时间内对灵魂宗师所发动的攻击检定都具有劣势。"
 					]
 				},
 				{
 					"ENG_name": "Ray of Sickness (1st-Level Spell; Requires a Spell Slot)",
 					"name": "致病射线（1环法术；需要法术位）",
 					"entries": [
-						"{@atk rs} 命中{@hit 6}, 范围 60 英尺, 一个生物. {@h}9 ({@damage 2d8}) 毒素伤害, 目标必须成功通过 {@dc 14} 体质豁免检定, 否则将被 {@condition 中毒} 直到灵魂之主的下一个回合结束. 如果灵魂之主使用 2 环或更高的法术位施放该法术, 每高出 1 环, 伤害将增加 {@damage 1d8}."
+						"{@atk rs} 命中{@hit 6}, 范围 60 尺, 单一生物. {@h}9 ({@damage 2d8}) 毒素伤害, 目标必须成功通过 {@dc 14} 体质豁免检定, 否则将 {@condition 中毒} 状态，直至灵魂宗师的下个回合结束。若灵魂宗师使用 2 环及以上法术位施展此法术，则每高一环伤害增加 {@damage 1d8}。"
 					]
 				},
 				{
 					"ENG_name": "Scorching Ray (2nd-Level Spell; Requires a Spell Slot)",
 					"name": "灼热射线（2环法术；需要法术位）",
 					"entries": [
-						"{@atk rs} 命中{@hit 6}，射程120尺，每个射线一个目标（如果使用2环法术位，则为3个射线；如果使用3环法术位，则为4个射线）。{@h}每个射线造成7（{@damage 2d6}）火焰伤害。"
+						"{@atk rs} 命中{@hit 6}，射程 120 尺，每条射线可指定一个目标（使用 2 环有 3 条射线，使用 3 环有 4 条射线）。{@h}每条射线 7（{@damage 2d6}）火焰伤害。"
 					]
 				}
 			],
@@ -3423,7 +3452,8 @@
 				"敏捷"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mortlock Vanthampur",
@@ -3475,7 +3505,7 @@
 					"ENG_name": "Indomitable (2/Day)",
 					"name": "不屈 (2/日)",
 					"entries": [
-						"莫特洛克可以重新掷一个失败的豁免检定。他必须使用新的掷骰结果。"
+						"摩特洛克可以重骰一次失败的豁免检定，但他必须使用新的掷骰数值。"
 					]
 				}
 			],
@@ -3484,21 +3514,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"莫特洛克用他的巨棒进行两次攻击。"
+						"摩特洛克可以使用它的巨棒进行两次攻击"
 					]
 				},
 				{
 					"ENG_name": "Greatclub",
 					"name": "巨棒",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}9（{@damage 2d4 + 4}）钝击伤害，如果莫特洛克自上回合以来受到任何伤害，则额外造成5（{@damage 2d4}）钝击伤害。"
+						"{@atk mw} 命中{@hit 6}，触及 5 尺，单一目标。{@h}9（{@damage 2d4 + 4}）钝击伤害，如果摩特洛克在他上一回合中受到任何伤害则额外增加 5（{@damage 2d4}）的钝击伤害"
 					]
 				},
 				{
 					"ENG_name": "Heavy Crossbow",
 					"name": "重弩",
 					"entries": [
-						"{@atk rw} 命中{@hit 4}，范围 100/400 尺，单一目标。{@h}7（{@damage 1d10 + 2}）穿刺伤害。"
+						"{@atk rw} 命中{@hit 4}，射程 100/400 尺，单一目标。{@h}7（{@damage 1d10 + 2}）穿刺伤害。"
 					]
 				}
 			],
@@ -3524,7 +3554,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Necromite of Myrkul",
@@ -3576,14 +3607,14 @@
 					"ENG_name": "Skull Flail",
 					"name": "骷髅链枷",
 					"entries": [
-						"{@atk mw} 命中{@hit 2}，触及 5 英尺，一个目标。{@h}4 ({@damage 1d8}) 钝击伤害。"
+						"{@atk mw} 命中{@hit 2}，触及 5 尺，单一目标。{@h}4 ({@damage 1d8}) 钝击伤害。"
 					]
 				},
 				{
 					"ENG_name": "Claws of the Grave",
 					"name": "坟墓之爪",
 					"entries": [
-						"{@atk rs} 命中{@hit 5}，射程90尺，单一目标。{@h}8（{@damage 2d4 + 3}）暗蚀伤害。"
+						"{@atk rs} 命中{@hit 5}，射程 90 尺，单一目标。{@h}8（{@damage 2d4 + 3}）暗蚀伤害。"
 					]
 				}
 			],
@@ -3602,7 +3633,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Necrotic Centipede",
@@ -3626,7 +3658,7 @@
 							"ENG_name": "Bite",
 							"name": "啃咬",
 							"entries": [
-								"{@atk mw} 命中{@hit 11}, 触及10尺, 一个目标。 {@h}40 ({@damage 6d10 + 7}) 穿刺伤害加10 ({@damage 3d6}) 暗蚀伤害。如果目标是生物，则{@condition 受擒}（逃脱 {@dc 17}）。直到擒抱结束，目标{@condition 束缚}，且蜈蚣不能咬击另一个目标。"
+								"{@atk mw} 命中{@hit 11}, 触及 10 尺, 单一目标。 {@h}40 ({@damage 6d10 + 7}) 穿刺伤害，外加 10 ({@damage 3d6}) 暗蚀伤害。如果目标是一个生物，则目标被{@condition 受擒}（逃脱 {@dc 17}），直至擒抱终止前目标被{@condition 束缚}，且蜈蚣不能再对其他目标使用啃咬攻击。"
 							]
 						}
 					}
@@ -3641,7 +3673,7 @@
 					"ENG_name": "Necrotic Body",
 					"name": "暗蚀之躯",
 					"entries": [
-						"任何生物在距离蜈蚣5尺内触摸它或用近战攻击命中它时，将受到10（{@damage 3d6}）暗蚀伤害。"
+						"在蜈蚣周边5尺范围内触碰或对其发动近战攻击命中时，该攻击生物将受 10（{@damage 3d6}）暗蚀伤害。"
 					]
 				}
 			],
@@ -3650,7 +3682,8 @@
 				"N",
 				"P"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Night Blade",
@@ -3691,7 +3724,7 @@
 				"stealth": "+6"
 			},
 			"senses": [
-				"黑暗视觉 60"
+				"黑暗视觉 60 尺"
 			],
 			"passive": 10,
 			"languages": [
@@ -3703,7 +3736,7 @@
 					"ENG_name": "Aura of Murder",
 					"name": "谋杀灵光",
 					"entries": [
-						"只要夜刃没有被{@condition 失能}，其周围5尺内的敌对生物就会对穿刺伤害产生弱点，除非它们对此种伤害具有抗性或免疫。"
+						"只要夜刃未处于{@condition 失能}状态，其周围5尺内的敌对生物就会获得对穿刺伤害的易伤，除非该生物已拥有对此类伤害的抗性或免疫。"
 					]
 				}
 			],
@@ -3735,7 +3768,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Nine-Fingers Keene",
@@ -3801,14 +3835,14 @@
 					"ENG_name": "Cunning Action",
 					"name": "灵巧动作",
 					"entries": [
-						"在战斗中，每次她的回合，九指可以使用附赠动作执行冲刺、脱离战斗或隐藏动作。"
+						"在战斗中，在其每回合内，九指可以使用附赠动作执行疾走、撤离或躲藏动作。"
 					]
 				},
 				{
 					"ENG_name": "Dagger Thrower",
 					"name": "飞刀手",
 					"entries": [
-						"九指在用匕首进行的远程攻击上造成的损害上加上其熟练加值的两倍（已计入她的攻击中）。"
+						"九指使用匕首造成的远程攻击伤害添加两倍熟练加值（已经应用在她的攻击条目中）。"
 					]
 				}
 			],
@@ -3817,14 +3851,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"九指用她的匕首进行三次攻击。"
+						"九指进行三次匕首攻击。"
 					]
 				},
 				{
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 7}，触及5尺或远程射程20/60尺，单一目标。{@h}6（{@damage 1d4 + 4}）点穿刺伤害，如果是远程攻击则额外造成6穿刺伤害。"
+						"{@atk mw,rw} 命中{@hit 7}，触及 5 尺，或射程 20/60 尺，单一目标。{@h}6（{@damage 1d4 + 4}）点穿刺伤害，如果是远程攻击则额外造成 6 点穿刺伤害。"
 					]
 				}
 			],
@@ -3833,7 +3867,7 @@
 					"ENG_name": "Uncanny Dodge",
 					"name": "直觉闪避",
 					"entries": [
-						"九指受到命中她的攻击的伤害减半。她必须能够看到攻击者。"
+						"当九指被攻击命中时，她可以使本次承受的伤害减半。她必须能看见攻击者。"
 					]
 				}
 			],
@@ -3858,7 +3892,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Peacock",
@@ -3877,7 +3912,8 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Princeps Kovik",
@@ -3900,7 +3936,8 @@
 				}
 			},
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Raggadragga",
@@ -3927,7 +3964,8 @@
 				"formula": "12d8 + 24"
 			},
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Reaper of Bhaal",
@@ -3983,7 +4021,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"收割者的天赋法术施法能力是魅力（法术豁免难度{@dc 13}）。它能够天生施放以下法术，无需任何材料："
+						"收割者的天生施法属性为魅力（法术豁免{@dc 13}）。收割者天生可施展下列法术且不需要任何相应的材料成分："
 					],
 					"daily": {
 						"1e": [
@@ -4000,7 +4038,7 @@
 					"ENG_name": "Aura of Murder",
 					"name": "谋杀灵光",
 					"entries": [
-						"只要收割者没有处于{@condition 失能}状态，它周围5尺范围内的敌对生物将对穿刺伤害易感，除非它们对此类伤害具有抗性或免疫。"
+						"只要收割者未处于{@condition 失能}状态，其周围 5 尺内的敌对生物就会获得对穿刺伤害的易伤，除非该生物已拥有对此类伤害的抗性或免疫。"
 					]
 				}
 			],
@@ -4009,21 +4047,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"收割者进行两次匕首攻击，并使用隐身术。"
+						"收割者进行两次匕首攻击，并使用隐藏自身。"
 					]
 				},
 				{
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 7}，触及 5 尺或 20/60 尺，单一目标。{@h}7 ({@damage 1d4 + 5}) 点穿刺伤害。"
+						"{@atk mw,rw} 命中 {@hit 7}，触及 5 尺或射程 20/60 尺，单一目标。{@h}7 ({@damage 1d4 + 5}) 点穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Shroud Self",
 					"name": "隐匿自身",
 					"entries": [
-						"收割者通过魔法变得{@condition 隐形}，直到其下一回合开始。如果收割者进行攻击判定、伤害判定或施放法术，这种隐形状态就会结束。"
+						"收割者依靠魔法直到其下个回合开始变为{@condition 隐形}。一旦收割者进行攻击检定，投掷伤害骰或施放法术，隐形状态就会结束。"
 					]
 				}
 			],
@@ -4062,7 +4100,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Rilsa Rael",
@@ -4127,21 +4166,21 @@
 					"ENG_name": "Cunning Action",
 					"name": "灵巧动作",
 					"entries": [
-						"在战斗中，每次她的回合，瑞尔萨可以使用附赠动作执行冲刺、脱离战斗或隐藏动作。"
+						"在战斗中，其每回合内，莉尔萨可以使用附赠动作执行疾走、撤离或躲藏动作。"
 					]
 				},
 				{
 					"ENG_name": "Focus",
 					"name": "聚焦",
 					"entries": [
-						"如果瑞尔萨用武器攻击对一个生物造成伤害，她将在下一次回合结束前对那个目标的攻击掷骰获得优势。"
+						"如果莉尔萨用武器攻击对一名生物造成了伤害，则直至她下回合结束前，她对该目标发动的攻击检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Tactical Leadership",
 					"name": "战术统御",
 					"entries": [
-						"作为附赠动作，瑞尔萨选择一个她能看到的30尺范围内的生物。如果这个生物能听到瑞尔萨的命令，直到它下一次回合结束，它不会引发借机攻击。"
+						"作为附赠动作，莉尔萨选择 30 尺内她能看见的一名生物。该生物不会引发借机攻击，直至其下回合结束，前提是该生物能听到莉尔萨的命令。"
 					]
 				}
 			],
@@ -4150,14 +4189,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"瑞尔萨进行三次武器攻击。"
+						"莉尔萨进行三次武器攻击。"
 					]
 				},
 				{
 					"ENG_name": "Shortsword",
 					"name": "短剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}7（{@damage 1d6 + 4}）点穿刺伤害。"
+						"{@atk mw} 命中{@hit 6}，触及 5 尺，单一目标。{@h}7（{@damage 1d6 + 4}）点穿刺伤害。"
 					]
 				},
 				{
@@ -4190,7 +4229,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Skeletal Rats",
@@ -4206,7 +4246,8 @@
 				"type": "undead",
 				"swarmSize": "T"
 			},
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Skull Lasher of Myrkul",
@@ -4262,7 +4303,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"颅骨鞭笞者是一名3环法术施法者。其法术施法能力是感知（法术豁免难度{@dc 13}，法术攻击命中{@hit 5}）。它准备了以下法师法术："
+						"笞颅者是一名 3 级施法者。其施法属性为感知（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。它准备了如下法师法术："
 					],
 					"spells": {
 						"0": {
@@ -4297,21 +4338,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"颅骨鞭笞者用其链枷进行两次攻击。"
+						"笞颅者进行两次链枷攻击。"
 					]
 				},
 				{
 					"ENG_name": "Iron Skull Flail",
 					"name": "铁骷髅链枷",
 					"entries": [
-						"{@atk mw} {@hit 2} 攻击命中，触及 5 尺，单一目标。{@h}4（{@damage 1d8}）钝击伤害外加 7（{@damage 2d6}）暗蚀伤害，且目标在其下一回合结束前进行的所有豁免检定均具有劣势。"
+						"{@atk mw}命中 {@hit 2} ，触及 5 尺，单一目标。{@h}4（{@damage 1d8}）钝击伤害，外加 7（{@damage 2d6}）暗蚀伤害，且目标在其下一个回合结束前进行的所有豁免检定均具有劣势。"
 					]
 				},
 				{
 					"ENG_name": "Ray of Sickness (1st-Level Spell; Requires a Spell Slot)",
 					"name": "致病射线（1环法术；需要法术位）",
 					"entries": [
-						"{@atk rs} 命中{@hit 5}，范围 60 尺，一个生物。{@h}9 ({@damage 2d8}) 毒素伤害，且目标必须通过 {@dc 13} 体质豁免检定，否则将被 {@condition 中毒} 直到骷髅撕裂者的下一个回合结束。如果骷髅撕裂者使用 2 环或更高的法术位施放该法术，每比 1 环高一级，伤害增加 {@damage 1d8}。"
+						"{@atk rs} 命中{@hit 5}，射程 60 尺，单一生物。{@h}9 ({@damage 2d8}) 毒素伤害，且目标必须通过 {@dc 13} 体质豁免检定，否则陷入 {@condition 中毒} 直到笞颅者的下个回合结束。如果笞颅者使用 2 环或更高的法术位施放该法术，则每高 1 环伤害增加 {@damage 1d8}。"
 					]
 				}
 			],
@@ -4351,7 +4392,8 @@
 				"体质"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Smiler the Defiler",
@@ -4425,7 +4467,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"微笑者的天赋法术施法能力是魅力（法术豁免难度{@dc 15}）。他能够天生施放以下法术，无需任何材料组件："
+						"笑爷天生施法的施法属性为魅力（法术豁免{@dc 15}）。笑爷天生可以施展以下法术且不需任何相应的材料成分："
 					],
 					"will": [
 						"{@spell 魅惑类人}",
@@ -4450,21 +4492,21 @@
 					"ENG_name": "Fey Step {@recharge 4}",
 					"name": "妖精步伐{@recharge 4}",
 					"entries": [
-						"作为附赠动作，微笑者可以传送至他能看到的未被占据的空间，或者传送至他的地狱战争机器的空座位上，传送距离最多30尺。"
+						"以一个附赠动作，笑爷能将自己传送到 30 尺内他可见的一处未被占据的空间，或是他未被占据的地狱战争机器座位上。"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"微笑者对法术和其他魔法效果的豁免检定具有优势。"
+						"笑爷在对抗法术和其他魔法效应的豁免中具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Equipment",
 					"name": "装备",
 					"entries": [
-						"微笑者穿着+2皮甲。他携带着七个灵魂硬币在一个袋子里，还有一把+1短剑。"
+						"笑爷穿着一套 +2 皮甲。他带有一个装了 7 枚灵魂币的袋子和一把 +1 短剑。"
 					]
 				}
 			],
@@ -4473,14 +4515,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"微笑者进行两次武器攻击。他可以用施放法术来代替其中一次攻击。"
+						"笑爷发动两次武器攻击，他也可以施展一次法术来替代其中一次攻击"
 					]
 				},
 				{
 					"ENG_name": "+1 Shortsword",
 					"name": "+1 短剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}9（{@damage 1d6 + 6}）穿刺伤害。"
+						"{@atk mw} 命中{@hit 9}，触及 5 尺，单一目标。{@h}9（{@damage 1d6 + 6}）穿刺伤害。"
 					]
 				}
 			],
@@ -4516,7 +4558,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Sylvira Savikas",
@@ -4633,7 +4676,7 @@
 					"ENG_name": "Shadow of Guilt",
 					"name": "罪恶之影",
 					"entries": [
-						"Thavius的影子是一个胖乎乎、有小翅膀的角魔。"
+						"塔维斯的影子是一个肥胖的带翅膀的长角魔鬼。"
 					]
 				}
 			],
@@ -4662,7 +4705,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Thurstwell Vanthampur",
@@ -4719,13 +4763,13 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"瑟斯威尔是一名2级施法者。他的施法能力是感知（法术豁免{@dc 13}）。他准备了以下牧师法术："
+						"瑟斯维尔作为 2 级施法者，其施法属性为感知（法术豁免{@dc 13}）。瑟斯维尔准备了以下牧师法术："
 					],
 					"spells": {
 						"0": {
 							"spells": [
 								"{@spell 神导术}",
-								"{@spell 圣火术}（详见下文的\"动作\"）",
+								"{@spell 圣火术}（见下文\"动作\"）",
 								"{@spell 奇术}"
 							]
 						},
@@ -4746,7 +4790,7 @@
 					"ENG_name": "Dark Devotion",
 					"name": "黑暗忠诚",
 					"entries": [
-						"Thurstwell 在对抗被{@condition 魅惑}或{@condition 恐慌}的豁免检定上具有优势。"
+						"瑟斯维尔为抵抗{@condition 魅惑}和{@condition 恐慌}而进行的豁免检定具有优势。"
 					]
 				}
 			],
@@ -4755,7 +4799,7 @@
 					"ENG_name": "Sacred Flame (Cantrip)",
 					"name": "圣火术（戏法）",
 					"entries": [
-						"火焰般的光辉降临在瑟斯威尔60尺内能看到的一个生物身上。目标必须成功进行一次{@dc 13}敏捷豁免检定，否则将受到4 ({@damage 1d8})点光耀伤害，不能从掩体中获得任何好处。"
+						"如同火焰般的辉光向瑟斯维尔 60 尺内能看到的一个生物倾泻而下。目标必须要成功通过一次 {@dc 13} 的敏捷豁免，豁免失败则受到 4（{@damage 1d8}）点光耀伤害。目标在此次豁免检定中无法获得掩护的增益。"
 					]
 				}
 			],
@@ -4785,7 +4829,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Torogar Steelfist",
@@ -4841,31 +4886,31 @@
 					"ENG_name": "Goring Rush",
 					"name": "猛抵冲撞",
 					"entries": [
-						"使用疾冲动作后，托罗加可以立即用他的角进行一次近战攻击。"
+						"执行疾走动作后，托罗加可以立即以他的角击进行一次近战攻击。"
 					]
 				},
 				{
 					"ENG_name": "Labyrinthine Recall",
 					"name": "迷宫追忆",
 					"entries": [
-						"托罗加能完美地回忆起他走过的任何路径。"
+						"托罗加可以完整的回忆起曾经走过的任何路径。"
 					]
 				},
 				{
 					"ENG_name": "Rage (Recharges after a Short or Long Rest)",
 					"name": "狂暴（短休或长休后充能）",
 					"entries": [
-						"作为一个附赠动作，托罗加可以进入持续1分钟的狂暴状态。如果托罗加被击{@condition 昏迷}，或者在他的回合结束时自上一个回合以来他没有攻击敌对生物或受到伤害，狂暴会提前结束。在狂暴期间，托罗加获得以下增益：",
-						"他在力量检定和力量豁免检定上具有优势。",
-						"当他用近战武器攻击命中目标时，会额外造成3点伤害。",
-						"他对钝击、穿刺和挥砍伤害具有抗性。"
+						"以一个附赠动作，托罗加可以进入持续1分钟的狂暴状态。如果托罗加在狂暴其间陷入{@condition 昏迷}，或者从他上回合结束开始到本回合结束时都未攻击任何敌对生物也未受到伤害，则狂暴提前结束。狂暴持续期间，托罗加获得以下增益：",
+						"他进行力量检定和力量豁免时具有优势。",
+						"当他发动近战武器攻击时的伤害掷骰会额外造成3点伤害。",
+						"他拥有钝击，穿刺和挥砍伤害的抗性。"
 					]
 				},
 				{
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"托罗加穿戴着{@item 燃烧怒火之护手|BGDIA}和一条{@item 火巨人力量腰带}。如果不佩戴腰带，他的力量值为21。他还携带着一枚{@item 灵魂币|BGDIA}。"
+						"托罗加穿有{@item 燃烧怒火之护手|BGDIA}和一条{@item 火巨人力量腰带}。如果不佩戴腰带，他的力量值为21。他还携带着一枚{@item 灵魂币|BGDIA}。"
 					]
 				}
 			],
@@ -4874,14 +4919,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"托罗加进行三次攻击：两次使用他的弯刀，一次使用他的角。"
+						"托罗加发动三次攻击：两次使用他的弯刀，一次使用角击。"
 					]
 				},
 				{
 					"ENG_name": "Scimitar",
 					"name": "弯刀",
 					"entries": [
-						"{@atk mw} 命中{@hit 11}，触及 5 尺，一个目标。{@h}14（{@damage 2d6 + 7}）点挥砍伤害，或狂暴时 17（{@damage 2d6 + 10}）点挥砍伤害，外加来自火焰之怒护手的 3（{@damage 1d6}）点火焰伤害。"
+						"{@atk mw} 命中{@hit 11}，触及 5 尺，单一目标。{@h}14（{@damage 2d6 + 7}）点挥砍伤害，或狂暴时 17（{@damage 2d6 + 10}）点挥砍伤害，外加来自燃烧怒火之护手的 3（{@damage 1d6}）点火焰伤害。"
 					]
 				},
 				{
@@ -4973,7 +5018,8 @@
 				"H",
 				"OTH"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Tressym",
@@ -4986,7 +5032,8 @@
 				"source": "SKT"
 			},
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Ulder Ravengard",
@@ -5048,21 +5095,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"乌尔德进行三次近战攻击，其中只有一次可以是使用他的盾牌。"
+						"乌尔德进行三次近战攻击，其中只有一次可使用盾牌进行。"
 					]
 				},
 				{
 					"ENG_name": "+1 Longsword",
 					"name": "+1 长剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，或者双手使用时9 ({@damage 1d10 + 4}) 挥砍伤害。"
+						"{@atk mw} 命中{@hit 7}，触及 5 尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，或双手使用造成 9 ({@damage 1d10 + 4}) 挥砍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Shield",
 					"name": "护盾术",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，范围 5 尺，一个生物。{@h}6 ({@damage 1d6 + 3}) 钝击伤害，并且乌尔德将目标推离他 5 尺。乌尔德随后进入目标空出的空间。如果目标被推至距离乌尔德友方生物 5 尺以内，目标将引发该生物的机会攻击。"
+						"{@atk mw} 命中{@hit 6}，范围 5 尺，单一生物。{@h}6 ({@damage 1d6 + 3}) 钝击伤害，且乌尔德将目标推离 5 尺。乌尔德随后进入目标空出的空间。若目标被推至乌尔德的盟友 5 尺内，则该盟友对其发动一次借机攻击。"
 					]
 				}
 			],
@@ -5071,7 +5118,7 @@
 					"ENG_name": "Guardian Strike",
 					"name": "守卫打击",
 					"entries": [
-						"如果乌尔德5尺范围内的敌人攻击除了乌尔德之外的目标，乌尔德可以对该敌人进行一次近战攻击。"
+						"当位于乌尔德5尺范围内的敌人的攻击命中了除乌尔德以外的目标，乌尔德可以立刻对该生物进行一次近战攻击。"
 					]
 				}
 			],
@@ -5094,7 +5141,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Undead Tree",
@@ -5117,7 +5165,8 @@
 			"resist": [
 				"暗蚀"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		}
 	]
 }

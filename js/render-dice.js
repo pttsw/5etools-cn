@@ -665,7 +665,7 @@ Renderer.dice = {
 			const userSummonSpellLevel = await InputUiUtil.pGetUserNumber({
 				min: predefinedSpellLevel ?? 0,
 				int: true,
-				title: "Enter Spell Level",
+				title: "输入法术环阶",
 				default: predefinedSpellLevel ?? 1,
 			});
 			if (userSummonSpellLevel == null) return null;
@@ -680,7 +680,7 @@ Renderer.dice = {
 			const userSummonClassLevel = await InputUiUtil.pGetUserNumber({
 				min: predefinedClassLevel ?? 0,
 				int: true,
-				title: "Enter Class Level",
+				title: "输入职业等级",
 				default: predefinedClassLevel ?? 1,
 			});
 			if (userSummonClassLevel == null) return null;
@@ -2019,8 +2019,8 @@ Renderer.dice.parsed = {
 				case Renderer.dice.tk.TYP_NUMBER: out = this._node.value; break;
 				case Renderer.dice.tk.TYP_SYMBOL: out = this._node.toString(); break;
 				case Renderer.dice.tk.PB.type: out = this.meta ? (this.meta.pb || 0) : "PB"; break;
-				case Renderer.dice.tk.SUMMON_SPELL_LEVEL.type: out = this.meta ? (this.meta.summonSpellLevel || 0) : "the spell's level"; break;
-				case Renderer.dice.tk.SUMMON_CLASS_LEVEL.type: out = this.meta ? (this.meta.summonClassLevel || 0) : "your class level"; break;
+				case Renderer.dice.tk.SUMMON_SPELL_LEVEL.type: out = this.meta ? (this.meta.summonSpellLevel || 0) : "法术环阶"; break;
+				case Renderer.dice.tk.SUMMON_CLASS_LEVEL.type: out = this.meta ? (this.meta.summonClassLevel || 0) : "你的职业等级"; break;
 				default: throw new Error(`Unimplemented!`);
 			}
 			return this._hasParens ? `(${out})` : out;

@@ -302,7 +302,7 @@ class _RenderBestiaryImplBase {
 		const ptVariants = renderedVariants ? `<tr><td colspan="6">${renderedVariants}</td></tr>` : "";
 
 		const ptFooter = `${mon.footer ? `<tr><td colspan="6" class="stats__sect-row-inner">${renderer.render({entries: mon.footer})}</td></tr>` : ""}
-		${mon.summonedBySpell ? `<tr><td colspan="6"><b>Summoned By:</b> ${renderer.render(`{@spell ${mon.summonedBySpell}}`)}</td></tr>` : ""}
+		${mon.summonedBySpell ? `<tr><td colspan="6"><b>通过...召唤:</b> ${renderer.render(`{@spell ${mon.summonedBySpell}}`)}</td></tr>` : ""}
 		${ptEnvironment ? `<tr><td colspan="6">${ptEnvironment}</td></tr>` : ""}
 		${ptTreasure ? `<tr><td colspan="6">${ptTreasure}</td></tr>` : ""}
 		<tr><td colspan="6">${ptSource}</td></tr>`.trim();

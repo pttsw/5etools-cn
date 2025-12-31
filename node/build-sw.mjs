@@ -79,17 +79,15 @@ const workboxRuntimeBuildResult = await injectManifest({
 		"*.svg", // root svg
 	],
 	manifestTransforms: [
-		(manifest) =>
-			({manifest: manifest.map(
-				entry =>
-					[
-						entry.url
-							// sanitize spaces
-							.replaceAll(" ", "%20"),
-						entry.revision,
-					],
-			)}),
-	],
+				(manifest) =>
+					({manifest: manifest.map(
+						entry => ({
+							url: encodeURI(entry.url),
+							revision: entry.revision,
+						})
+					)
+				}),
+			],
 });
 
 buildResultLog(

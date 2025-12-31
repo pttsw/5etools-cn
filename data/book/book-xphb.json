@@ -547,7 +547,7 @@
 							"page": 8,
 							"id": "012",
 							"entries": [
-								"每当你在游戏里对某个数字进行乘除法运算时，如果最终结果有小数部分，则应向下取整，即使小数部分大于等于二分之一。不过部分规则会做出例外，告诉你要向上取整。"
+								"每当你在游戏里对某个数字进行除法或乘法运算时，如果最终结果有小数部分，向下取整。即使小数部分超过了 0.5，你也要向下取整。不过部分规则会做出例外，告诉你要向上取整。"
 							]
 						},
 						{
@@ -875,7 +875,7 @@
 											"ENG_name": "Your Proficiency Bonus If Relevant",
 											"name": "如果你有熟练加值",
 											"type": "item",
-											"entry": "每个生物都有熟练加值，其进行某些{@variantrule D20 检定|XPHB}时可以加入该数值，例如该生物已熟练的技能。见本章后面的{@book 熟练项|XPHB|1|熟练项}。"
+											"entry": "每个生物都有熟练加值，其进行某些{@variantrule D20 检定|XPHB}时可以加入该数值，例如该生物已熟练的技能。见本章后面的{@book 熟练|XPHB|1|熟练}。"
 										},
 										{
 											"ENG_name": "Circumstantial Bonuses and Penalties",
@@ -970,7 +970,7 @@
 									"page": 11,
 									"id": "022",
 									"entries": [
-										"当你进行属性检定时，若DM判定某项技能或工具熟练与之有关且你具备该熟练，你就将你的熟练加值添加到这次属性检定中。举个例子，如果规则要求进行力量（{@skill 特技|XPHB}或{@skill 运动|XPHB}）检定，而你拥有{@skill 特技|XPHB}或{@skill 运动|XPHB}技能的熟练，你则可以在检定中加上你的熟练加值。见本章后面的\"{@book 熟练项|XPHB|1|熟练项} \"以了解更多关于技能和工具熟练的信息。"
+										"当你进行属性检定时，若DM判定某项技能或工具熟练与之有关且你具备该熟练，你就将你的熟练加值添加到这次属性检定中。举个例子，如果规则要求进行力量（{@skill 特技|XPHB}或{@skill 运动|XPHB}）检定，而你拥有{@skill 特技|XPHB}或{@skill 运动|XPHB}技能的熟练，你则可以在检定中加上你的熟练加值。见本章后面的\"{@book 熟练|XPHB|1|熟练} \"以了解更多关于技能和工具熟练的信息。"
 									]
 								},
 								{
@@ -1091,7 +1091,7 @@
 									"page": 12,
 									"id": "026",
 									"entries": [
-										"如果你拥有某个豁免的熟练，你则需要将熟练加值加到你的豁免检定中。见本章后面的\"{@book 熟练项|XPHB|1|熟练项}\"。"
+										"如果你拥有某个豁免的熟练，你则需要将熟练加值加到你的豁免检定中。见本章后面的\"{@book 熟练|XPHB|1|熟练}\"。"
 									]
 								},
 								{
@@ -1145,7 +1145,7 @@
 													"使用武器进行远程攻击"
 												],
 												[
-													"不同",
+													"多类",
 													"法术攻击（使用的属性由施法者的施法特性决定，详见{@book 第七章|XPHB|7}"
 												]
 											]
@@ -1160,7 +1160,7 @@
 									"page": 12,
 									"id": "02a",
 									"entries": [
-										"当你使用熟练的武器或法术进行攻击时，你将你的熟练加值添加到你的攻击检定中。有关武器熟练的更多信息，见本章后面的\"{@book 熟练项|XPHB|1|熟练项} \"。"
+										"当你使用熟练的武器或法术进行攻击时，你将你的熟练加值添加到你的攻击检定中。有关武器熟练的更多信息，见本章后面的\"{@book 熟练|XPHB|1|熟练} \"。"
 									]
 								},
 								{
@@ -1298,7 +1298,7 @@
 				},
 				{
 					"ENG_name": "Proficiency",
-					"name": "熟练项",
+					"name": "熟练",
 					"type": "section",
 					"page": 13,
 					"id": "036",
@@ -1694,7 +1694,7 @@
 							"height": 1136
 						},
 						"冒险途中，玩家角色会遇见形形色色的人物，以及一些更愿意交谈而非战斗的怪物，此时就需要进行各种形式的交涉了。这些NPC由DM扮演，而你则可能想尝试劝说一位窃贼主动认罪，亦可能想讨好一名警卫。",
-						"NPC对角色的态度分为三种：{@variantrule 友好 【态度】|XPHB|友好}、{@variantrule 冷漠 【态度】|XPHB|冷漠}、{@variantrule 敌对 【态度】|XPHB|敌对}（详见{@book 术语汇编|XPHB|10}）。友好的NPC乐于为玩家提供帮助，而敌对的NPC则会试图妨碍玩家。",
+						"NPC对角色的态度分为三种：{@variantrule 友好【态度】|XPHB|友好}、{@variantrule 冷漠【态度】|XPHB|冷漠}、{@variantrule 敌对【态度】|XPHB|敌对}（详见{@book 术语汇编|XPHB|10}）。友好的NPC乐于为玩家提供帮助，而敌对的NPC则会试图妨碍玩家。",
 						"交涉有两种途径：角色扮演和属性检定。",
 						{
 							"ENG_name": "Roleplaying",
@@ -1916,7 +1916,7 @@
 									"page": 17,
 									"id": "049",
 									"entries": [
-										"菲利普扮演的加雷斯进行了一次感知（{@skill 洞悉|XPHB}）检定，来判定他能否看出伊斯马克藏在心底的思绪。感知属性反映了角色的察觉力与直觉。DM将该次{@skill 洞悉|XPHB}检定的DC设为 15，加雷斯过了。加雷斯抓住的信息非常隐晦，DM并没有在之前的描述中把伊斯马克的恐惧描述出来。见本章前面的\"{@book 属性值|XPHB|1|六项属性}\"及\"{@book 熟练项|XPHB|1|熟练项}\"，以及{@book 术语汇编|XPHB|10|搜索[动作]}中的{@action 搜索|XPHB}动作以了解更多相关信息。"
+										"菲利普扮演的加雷斯进行了一次感知（{@skill 洞悉|XPHB}）检定，来判定他能否看出伊斯马克藏在心底的思绪。感知属性反映了角色的察觉力与直觉。DM将该次{@skill 洞悉|XPHB}检定的DC设为 15，加雷斯过了。加雷斯抓住的信息非常隐晦，DM并没有在之前的描述中把伊斯马克的恐惧描述出来。见本章前面的\"{@book 属性值|XPHB|1|六项属性}\"及\"{@book 熟练|XPHB|1|熟练}\"，以及{@book 术语汇编|XPHB|10|搜索[动作]}中的{@action 搜索|XPHB}动作以了解更多相关信息。"
 									]
 								},
 								{
@@ -2006,7 +2006,7 @@
 									"page": 18,
 									"id": "04a",
 									"entries": [
-										"加雷斯执行了{@action 影响|XPHB}动作（见术语汇编），以此尝试去影响一位NPC。影响一位已经打算帮助你的NPC并不困难（如此时的伊斯马克）。伊斯马克的{@variantrule 友好 【态度】|XPHB|友好}态度令菲利普在此次检定中具有优势，而他正靠着这份{@variantrule 优势|XPHB}化失败为成功。"
+										"加雷斯执行了{@action 影响|XPHB}动作（见术语汇编），以此尝试去影响一位NPC。影响一位已经打算帮助你的NPC并不困难（如此时的伊斯马克）。伊斯马克的{@variantrule 友好【态度】|XPHB|友好}态度令菲利普在此次检定中具有优势，而他正靠着这份{@variantrule 优势|XPHB}化失败为成功。"
 									]
 								},
 								{
@@ -4757,7 +4757,7 @@
 												"你的背景会给你对于两项技能与一项工具的熟练。把这些信息记录在你的角色卡上。",
 												"你的职业也提供了熟练。在{@book 第三章|XPHB|3}查阅你职业的描述，把有关的熟练标记在你的角色卡上。",
 												"在范例角色卡里，你可以通过在技能与豁免左侧的圆圈打钩的方式，表明你熟练于它们。",
-												"你职业描述中的特性表显示了你的熟练加值（在{@book 第一章|XPHB|1|熟练项}有所描述），这个数值对 1 级角色而言是 +2。把这个数字记录在你的角色卡上。你会在{@book 第五步|XPHB|2|第五步：丰富细节}填写关于这些熟练的其他数字。"
+												"你职业描述中的特性表显示了你的熟练加值（在{@book 第一章|XPHB|1|熟练}有所描述），这个数值对 1 级角色而言是 +2。把这个数字记录在你的角色卡上。你会在{@book 第五步|XPHB|2|第五步：丰富细节}填写关于这些熟练的其他数字。"
 											]
 										}
 									]
@@ -7572,7 +7572,7 @@
 									"entries": [
 										{
 											"ENG_name": "Category",
-											"name": "分类",
+											"name": "类别",
 											"type": "entries",
 											"page": 199,
 											"id": "4fa",
@@ -7613,7 +7613,7 @@
 													"caption": "专长列表",
 													"colLabels": [
 														"专长",
-														"分类"
+														"类别"
 													],
 													"colStyles": [
 														"col-6",
@@ -8168,7 +8168,7 @@
 							"items": [
 								{
 									"ENG_name": "Category",
-									"name": "分类",
+									"name": "类别",
 									"type": "item",
 									"entry": "任何武器都隶属于一个武器分类：简易武器或军用武器。而武器熟练通常会直接依照分类获取。例如，你也许会具有简易武器的熟练。"
 								},
@@ -8892,7 +8892,7 @@
 									"page": 214,
 									"id": "64e",
 									"entries": [
-										"当你用这把武器进行的近战攻击检定命中一个生物时，你可以用该武器对位于该生物5尺内，且同样身处你触及范围内的另一生物再进行一次近战攻击检定。命中时，第二个生物也会受到此武器的伤害，但你无法将你的属性调整值加入这次伤害中（除非该调整值为负数）。每个回合中你只能发动一次横扫的额外攻击。"
+										"当你用这把武器进行的近战攻击检定命中一个生物时，你可以用该武器对位于该生物 5 尺内，且同样身处你触及范围内的另一生物再进行一次近战攻击检定。命中时，第二个生物也会受到此武器的伤害，但你无法将你的属性调整值加入这次伤害中（除非该调整值为负数）。每个回合中你只能发动一次横扫的额外攻击。"
 									]
 								},
 								{
@@ -8912,7 +8912,7 @@
 									"page": 214,
 									"id": "650",
 									"entries": [
-										"当你发动由{@itemProperty L|XPHB|轻型}词条所提供的额外的攻击时，你可以将本次{@action 攻击|XPHB}视作攻击动作的一部分，而非使用附赠动作。而你每一回合仍然只能进行一次由轻型词条所提供的额外的攻击。"
+										"当你发动由{@itemProperty L|XPHB|轻型}词条所提供的额外的攻击时，你可以将本次攻击视作{@action 攻击|XPHB}动作的一部分，而非使用附赠动作。而你每一回合仍然只能进行一次由轻型词条所提供的额外的攻击。"
 									]
 								},
 								{
@@ -8922,7 +8922,7 @@
 									"page": 214,
 									"id": "651",
 									"entries": [
-										"当你用这把武器命中一个生物时，如果该生物的体型不超过大型，则你可以将这个生物从你身边直线推离至多10尺。"
+										"当你用这把武器命中一个生物时，如果该生物的体型不超过大型，则你可以将这个生物从你身边直线推离至多 10 尺。"
 									]
 								},
 								{
@@ -8942,7 +8942,7 @@
 									"page": 214,
 									"id": "653",
 									"entries": [
-										"当你用这把武器命中了一个生物并造成伤害时，你可以将对方的速度减少10尺，直至你的下一回合开始。如果该生物被拥有缓速词条的武器多次命中，其速度削减量也不会因此超过10尺。"
+										"当你用这把武器命中了一个生物并造成伤害时，你可以将对方的速度减少 10 尺，直至你的下一回合开始。如果该生物被拥有缓速词条的武器多次命中，其速度削减量也不会因此超过 10 尺。"
 									]
 								},
 								{
@@ -8952,7 +8952,7 @@
 									"page": 214,
 									"id": "654",
 									"entries": [
-										"当你用这把武器命中了一个生物时，你可以迫使该生物进行一次体质豁免（{@dc 8}+本次攻击所使用的调整值+你的熟练加值）。豁免检定失败时，该生物陷入{@condition 倒地|XPHB}状态。"
+										"当你用这把武器命中了一个生物时，你可以迫使该生物进行一次体质豁免（{@dc 8} + 本次攻击所使用的调整值 + 你的熟练加值）。豁免检定失败时，该生物陷入{@condition 倒地|XPHB}状态。"
 									]
 								},
 								{
@@ -8992,13 +8992,13 @@
 							"items": [
 								{
 									"ENG_name": "Category",
-									"name": "分类",
+									"name": "类别",
 									"type": "item",
 									"entry": "每件护甲都隶属于一个护甲类别：轻型、中型或重型。护甲的穿脱时长会根据其类别决定（详见表中）。"
 								}
 							]
 						},
-						"{@b 护甲等级 (AC}). 护甲列表的护甲等级一列会向你展示你穿上某类护甲时的基础AC为多少。例如，如果你身穿皮甲，你的基础AC就会变成11+你的敏捷调整值，而你穿上链甲时你的AC是16。",
+						"{@b 护甲等级 (AC})。护甲列表的护甲等级一列会向你展示你穿上某类护甲时的基础AC为多少。例如，如果你身穿皮甲，你的基础AC就会变成 11 + 你的敏捷调整值，而你穿上链甲时你的AC是 16。",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
@@ -9007,13 +9007,13 @@
 									"ENG_name": "Strength",
 									"name": "力量",
 									"type": "item",
-									"entry": "如果护甲列表中的「力量」一列为某款护甲标注出了力量属性值，那么穿戴者必须要有大于等于这一数值的力量属性，否则移速减少10尺。"
+									"entry": "如果护甲列表中的力量一列为某款护甲标注出了力量属性值，那么穿戴者必须要有等于或高于这一数值的力量属性，否则速度减少10尺。"
 								},
 								{
 									"ENG_name": "Stealth",
 									"name": "隐匿",
 									"type": "item",
-									"entry": "如果护甲列表中的「隐匿」一列为某款护甲标注出了{@variantrule 劣势|XPHB}，那么穿戴者在着装这款护甲时所进行的敏捷（{@skill 隐匿|XPHB}）检定将具有劣势。"
+									"entry": "如果护甲列表中的隐匿一列为某款护甲标注出了\"{@variantrule 劣势|XPHB}\"，那么穿戴者在着装这款护甲时所进行的敏捷（{@skill 隐匿|XPHB}）检定将具有劣势。"
 								}
 							]
 						},
@@ -9054,7 +9054,7 @@
 										"11 + 敏捷调整值",
 										"\u2014",
 										"{@variantrule 劣势|XPHB}",
-										"8磅",
+										"8 磅",
 										"5 GP"
 									]
 								},
@@ -9078,7 +9078,7 @@
 										"12 + 敏捷调整值",
 										"\u2014",
 										"\u2014",
-										"13磅",
+										"13 磅",
 										"45 GP"
 									]
 								},
@@ -9097,7 +9097,7 @@
 										"12 + 敏捷调整值（最大值 2）",
 										"\u2014",
 										"\u2014",
-										"12磅",
+										"12 磅",
 										"10 GP"
 									]
 								},
@@ -9109,7 +9109,7 @@
 										"13 + 敏捷调整值（最大值 2）",
 										"\u2014",
 										"\u2014",
-										"20磅",
+										"20 磅",
 										"50 GP"
 									]
 								},
@@ -9121,7 +9121,7 @@
 										"14 + 敏捷调整值（最大值 2）",
 										"\u2014",
 										"{@variantrule 劣势|XPHB}",
-										"45磅",
+										"45 磅",
 										"50 GP"
 									]
 								},
@@ -9133,7 +9133,7 @@
 										"14 + 敏捷调整值（最大值 2）",
 										"\u2014",
 										"\u2014",
-										"20磅",
+										"20 磅",
 										"400 GP"
 									]
 								},
@@ -9145,7 +9145,7 @@
 										"15 + 敏捷调整值（最大值 2）",
 										"\u2014",
 										"{@variantrule 劣势|XPHB}",
-										"40磅",
+										"40 磅",
 										"750 GP"
 									]
 								},
@@ -9164,7 +9164,7 @@
 										"14",
 										"\u2014",
 										"{@variantrule 劣势|XPHB}",
-										"40磅",
+										"40 磅",
 										"30 GP"
 									]
 								},
@@ -9176,7 +9176,7 @@
 										"16",
 										"力量 13",
 										"{@variantrule 劣势|XPHB}",
-										"55磅",
+										"55 磅",
 										"75 GP"
 									]
 								},
@@ -9188,7 +9188,7 @@
 										"17",
 										"力量 15",
 										"{@variantrule 劣势|XPHB}",
-										"60磅",
+										"60 磅",
 										"200 GP"
 									]
 								},
@@ -9200,7 +9200,7 @@
 										"18",
 										"力量 15",
 										"{@variantrule 劣势|XPHB}",
-										"65磅",
+										"65 磅",
 										"1,,500 GP"
 									]
 								},
@@ -9296,7 +9296,7 @@
 								"一个生物同时只能着装一套护甲并持用一面盾牌。",
 								{
 									"ENG_name": "Variant: Equipment Sizes",
-									"name": "变体:装备者体型",
+									"name": "变体：装备尺寸",
 									"type": "inset",
 									"page": 219,
 									"id": "65b",
@@ -9338,7 +9338,7 @@
 									"ENG_name": "Craft",
 									"name": "制造",
 									"type": "item",
-									"entry": "制造Craft。若工具描述包含这一条目，那么该工具可以制造的物品也会在其中列出。造物规则的细则请见本章稍后的\"{@book 制作装备|XPHB|6|制作装备}\"部分。"
+									"entry": "若工具描述包含这一条目，那么该工具可以制造的物品也会在其中列出。造物规则的细则请见本章稍后的\"{@book 制作装备|XPHB|6|制作装备}\"部分。"
 								},
 								{
 									"ENG_name": "Variants",
@@ -9379,7 +9379,7 @@
 								"工匠工具的主要用途为制造物品或辅助交易贸易。使用这些工具需要拥有对应的独立熟练。",
 								{
 									"ENG_name": "Alchemist's Supplies (50 GP)",
-									"name": "炼金工具(50 GP)",
+									"name": "炼金工具（50GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "65f",
@@ -9398,7 +9398,7 @@
 													"ENG_name": "Weight:",
 													"name": "重量：",
 													"type": "item",
-													"entry": "8磅"
+													"entry": "8 磅"
 												},
 												{
 													"ENG_name": "Utilize",
@@ -9418,7 +9418,7 @@
 								},
 								{
 									"ENG_name": "Brewer's Supplies (20 GP)",
-									"name": "酿酒工具(20 GP)",
+									"name": "酿酒工具（20GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "662",
@@ -9437,7 +9437,7 @@
 													"ENG_name": "Weight:",
 													"name": "重量：",
 													"type": "item",
-													"entry": "9磅"
+													"entry": "9 磅"
 												},
 												{
 													"ENG_name": "Utilize",
@@ -9457,7 +9457,7 @@
 								},
 								{
 									"ENG_name": "Calligrapher's Supplies (10 GP)",
-									"name": "书法工具(10 GP)",
+									"name": "书法工具（10GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "665",
@@ -9496,7 +9496,7 @@
 								},
 								{
 									"ENG_name": "Carpenter's Tools (8 GP)",
-									"name": "木匠工具(8 GP)",
+									"name": "木匠工具（8GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "668",
@@ -9535,7 +9535,7 @@
 								},
 								{
 									"ENG_name": "Cartographer's Tools (15 GP)",
-									"name": "制图工具(15 GP)",
+									"name": "制图工具（15GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "66b",
@@ -9574,7 +9574,7 @@
 								},
 								{
 									"ENG_name": "Cobbler's Tools (5 GP)",
-									"name": "鞋匠工具(5 GP)",
+									"name": "鞋匠工具（5GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "66e",
@@ -9613,7 +9613,7 @@
 								},
 								{
 									"ENG_name": "Cook's Utensils (1 GP)",
-									"name": "厨师工具(1 GP)",
+									"name": "厨师工具（1GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "671",
@@ -9632,7 +9632,7 @@
 													"ENG_name": "Weight:",
 													"name": "重量：",
 													"type": "item",
-													"entry": "8磅"
+													"entry": "8 磅"
 												},
 												{
 													"ENG_name": "Utilize",
@@ -9652,7 +9652,7 @@
 								},
 								{
 									"ENG_name": "Glassblower's Tools (30 GP)",
-									"name": "玻璃匠工具(30 GP)",
+									"name": "玻璃匠工具（30GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "674",
@@ -9691,7 +9691,7 @@
 								},
 								{
 									"ENG_name": "Jeweler's Tools (25 GP)",
-									"name": "珠宝匠工具(25 GP)",
+									"name": "珠宝匠工具（25GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "677",
@@ -9730,7 +9730,7 @@
 								},
 								{
 									"ENG_name": "Leatherworker's Tools (5 GP)",
-									"name": "皮匠工具(5 GP)",
+									"name": "皮匠工具（5GP）",
 									"type": "entries",
 									"page": 220,
 									"id": "67a",
@@ -9769,7 +9769,7 @@
 								},
 								{
 									"ENG_name": "Mason's Tools (10 GP)",
-									"name": "石匠工具(10 GP)",
+									"name": "石匠工具（10GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "67d",
@@ -9788,7 +9788,7 @@
 													"ENG_name": "Weight:",
 													"name": "重量：",
 													"type": "item",
-													"entry": "8磅"
+													"entry": "8 磅"
 												},
 												{
 													"ENG_name": "Utilize",
@@ -9808,7 +9808,7 @@
 								},
 								{
 									"ENG_name": "Painter's Supplies (10 GP)",
-									"name": "画家工具(10 GP)",
+									"name": "画家工具（10GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "680",
@@ -9847,7 +9847,7 @@
 								},
 								{
 									"ENG_name": "Potter's Tools (10 GP)",
-									"name": "陶匠工具(10 GP)",
+									"name": "陶匠工具（10GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "683",
@@ -9872,7 +9872,7 @@
 													"ENG_name": "Utilize",
 													"name": "操作",
 													"type": "item",
-													"entry": "判断一个陶瓷物件在过去24小时内盛过什么内容物（{@dc 15}）"
+													"entry": "判断一个陶瓷物件在过去 24 小时内盛过什么内容物（{@dc 15}）"
 												},
 												{
 													"ENG_name": "Craft",
@@ -9886,7 +9886,7 @@
 								},
 								{
 									"ENG_name": "Smith's Tools (20 GP)",
-									"name": "铁匠工具(20 GP)",
+									"name": "铁匠工具（20GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "686",
@@ -9905,7 +9905,7 @@
 													"ENG_name": "Weight:",
 													"name": "重量：",
 													"type": "item",
-													"entry": "8磅"
+													"entry": "8 磅"
 												},
 												{
 													"ENG_name": "Utilize",
@@ -9917,7 +9917,7 @@
 													"ENG_name": "Craft",
 													"name": "制造",
 													"type": "item",
-													"entry": "任意近战武器（除了短棒，巨棒，长棍和鞭子）、中甲（除了兽皮甲）、重甲、{@item 滚珠|XPHB}、{@item 吊桶|XPHB}、{@item 铁蒺藜|XPHB}、{@item 链条|XPHB}、{@item 撬棍|XPHB}、{@item 枪械子弹 (10)|XPHB|枪械子弹}、{@item 爪钩|XPHB}、{@item 铁壶|XPHB}、{@item 铁钉|XPHB}、{@item 投石索弹丸|XPHB|投石索弹丸}"
+													"entry": "任意近战武器（除了短棒，巨棒，长棍和鞭子）、中甲（除了兽皮甲）、重甲、{@item 滚珠|XPHB}、{@item 吊桶|XPHB}、{@item 铁蒺藜|XPHB}、{@item 链条|XPHB}、{@item 撬棍|XPHB}、{@item 枪械子弹 (10)|XPHB|枪械子弹}、{@item 爪钩|XPHB}、{@item 铁壶|XPHB}、{@item 铁钉|XPHB}、{@item 投石索子弹|XPHB|投石索弹丸}"
 												}
 											]
 										}
@@ -9925,7 +9925,7 @@
 								},
 								{
 									"ENG_name": "Tinker's Tools (50 GP)",
-									"name": "修补工具(50 GP)",
+									"name": "修补工具（50GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "689",
@@ -9964,7 +9964,7 @@
 								},
 								{
 									"ENG_name": "Weaver's Tools (1 GP)",
-									"name": "织布工具(1 GP)",
+									"name": "织布工具（1GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "68c",
@@ -10003,7 +10003,7 @@
 								},
 								{
 									"ENG_name": "Woodcarver's Tools (1 GP)",
-									"name": "木雕工具(1 GP)",
+									"name": "木雕工具（1GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "68f",
@@ -10034,7 +10034,7 @@
 													"ENG_name": "Craft",
 													"name": "制造",
 													"type": "item",
-													"entry": "{@item 短棒|XPHB}, {@item 巨棒|XPHB}, {@item 长棍|XPHB}, 远程武器（除了手枪、滑膛枪、投石索）, {@item 奥术法器|XPHB}, {@item 箭(20)|XPHB|箭矢}, {@item 弩矢（20支）|XPHB|弩失}, {@item 德鲁伊法器|XPHB}, {@item 墨水笔|XPHB}, {@item 针 (50)|XPHB|针刺}"
+													"entry": "{@item 短棒|XPHB}, {@item 巨棒|XPHB}, {@item 长棍|XPHB}, 远程武器（除了手枪、滑膛枪、投石索）, {@item 奥术法器|XPHB}, {@item 箭矢（20支）|XPHB|箭矢}, {@item 弩矢（20支）|XPHB|弩失}, {@item 德鲁伊法器|XPHB}, {@item 墨水笔|XPHB}, {@item 吹矢（50）|XPHB|针刺}"
 												}
 											]
 										}
@@ -10052,7 +10052,7 @@
 								"这些工具能够辅助冒险和其他事情。",
 								{
 									"ENG_name": "Disguise Kit (25 GP)",
-									"name": "易容工具(25 GP)",
+									"name": "易容工具（25GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "693",
@@ -10091,7 +10091,7 @@
 								},
 								{
 									"ENG_name": "Forgery Kit (15 GP)",
-									"name": "文书伪造工具(15 GP)",
+									"name": "文书伪造工具（15GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "696",
@@ -10124,7 +10124,7 @@
 								},
 								{
 									"ENG_name": "Gaming Set (Varies)",
-									"name": "赌具(价格不等)",
+									"name": "赌具（多种）",
 									"type": "entries",
 									"page": 221,
 									"id": "698",
@@ -10155,7 +10155,7 @@
 													"ENG_name": "Variants:",
 													"name": "变体：",
 													"type": "item",
-													"entry": "{@item 骰子组|XPHB|骰子} (1 SP), {@item 龙棋组|XPHB|龙棋} (1 GP), {@item 扑克牌|XPHB} (5 SP), {@item 三龙牌组|XPHB|三龙牌} (1 GP)"
+													"entry": "{@item 骰子组|XPHB|骰子}（1SP）、{@item 龙棋组|XPHB|龙棋}（1GP）、{@item 扑克牌|XPHB}（5SP）、{@item 三龙牌组|XPHB|三龙牌} （1GP）"
 												}
 											]
 										}
@@ -10163,7 +10163,7 @@
 								},
 								{
 									"ENG_name": "Herbalism Kit (5 GP)",
-									"name": "草药工具(5 GP)",
+									"name": "草药工具（5GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "69b",
@@ -10202,7 +10202,7 @@
 								},
 								{
 									"ENG_name": "Musical Instrument (Varies)",
-									"name": "乐器(价格不等)",
+									"name": "乐器（多类）",
 									"type": "entries",
 									"page": 221,
 									"id": "69e",
@@ -10221,7 +10221,7 @@
 													"ENG_name": "Weight:",
 													"name": "重量：",
 													"type": "item",
-													"entry": "不同"
+													"entry": "多类"
 												},
 												{
 													"ENG_name": "Utilize:",
@@ -10233,7 +10233,7 @@
 													"ENG_name": "Variants:",
 													"name": "变体：",
 													"type": "item",
-													"entry": "{@item 风笛|XPHB} (30 GP, 6 磅), {@item 鼓|XPHB} (6 GP, 3 磅), {@item 扬琴|XPHB} (25 GP, 磅), {@item 长笛|XPHB} (2 GP, 1 磅), horn (3 GP, 2 磅), {@item 鲁特琴|XPHB} (35 GP, 2 磅), {@item 七弦琴|XPHB} (30 GP, 2 磅), {@item 排箫|XPHB} (12 GP, 2 磅), {@item 芦笛|XPHB} (2 GP, 1 磅), {@item 提琴|XPHB} (30 GP, 1 磅)"
+													"entry": "{@item 风笛|XPHB}（30GP，6 磅）、{@item 鼓|XPHB}（6GP，3 磅）、{@item 扬琴|XPHB}（25GP，磅）、{@item 长笛|XPHB}（2GP，1 磅）、horn （3GP，2 磅）、{@item 鲁特琴|XPHB}（35GP，2 磅）、{@item 七弦琴|XPHB}（30GP，2 磅）、{@item 排箫|XPHB}（12GP，2 磅）、{@item 芦笛|XPHB}（2GP，1 磅）、{@item 提琴|XPHB}（30GP，1 磅）"
 												}
 											]
 										}
@@ -10241,7 +10241,7 @@
 								},
 								{
 									"ENG_name": "Navigator's Tools (25 GP)",
-									"name": "领航工具(25 GP)",
+									"name": "领航工具（25GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "6a1",
@@ -10276,7 +10276,7 @@
 								},
 								{
 									"ENG_name": "Poisoner's Kit (50 GP)",
-									"name": "制毒工具(50 GP)",
+									"name": "制毒工具（50GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "6a3",
@@ -10319,7 +10319,7 @@
 								},
 								{
 									"ENG_name": "Thieves' Tools (25 GP)",
-									"name": "盗贼工具(25 GP)",
+									"name": "盗贼工具（25GP）",
 									"type": "entries",
 									"page": 221,
 									"id": "6a6",
@@ -10403,8 +10403,8 @@
 								],
 								[
 									"弹药",
-									"不同",
-									"不同"
+									"多类",
+									"多类"
 								],
 								[
 									"{@item 抗毒剂|XPHB}",
@@ -10413,8 +10413,8 @@
 								],
 								[
 									"{@item 奥术法器|XPHB}",
-									"不同",
-									"不同"
+									"多类",
+									"多类"
 								],
 								[
 									"{@item 背包|XPHB}",
@@ -10503,12 +10503,12 @@
 								],
 								[
 									"{@item 箱子|XPHB}",
-									"25磅",
+									"25 磅",
 									"5 GP"
 								],
 								[
 									"{@item 攀爬工具|XPHB}",
-									"12磅",
+									"12 磅",
 									"25 GP"
 								],
 								[
@@ -10538,27 +10538,27 @@
 								],
 								[
 									"{@item 外交套组|XPHB}",
-									"39磅",
+									"39 磅",
 									"39 GP"
 								],
 								[
 									"{@item 德鲁伊法器|XPHB}",
-									"不同",
-									"不同"
+									"多类",
+									"多类"
 								],
 								[
 									"{@item 地城套组|XPHB}",
-									"55磅",
+									"55 磅",
 									"12 GP"
 								],
 								[
 									"{@item 艺人套组|XPHB}",
-									"58.5磅",
+									"58.5 磅",
 									"40 GP"
 								],
 								[
 									"{@item 探索套组|XPHB}",
-									"55磅",
+									"55 磅",
 									"10 GP"
 								],
 								[
@@ -10578,8 +10578,8 @@
 								],
 								[
 									"{@item 圣徽|XPHB}",
-									"不同",
-									"不同"
+									"多类",
+									"多类"
 								],
 								[
 									"{@item 圣水|XPHB}",
@@ -10588,7 +10588,7 @@
 								],
 								[
 									"{@item 捕猎陷阱|XPHB}",
-									"25磅",
+									"25 磅",
 									"5 GP"
 								],
 								[
@@ -10608,7 +10608,7 @@
 								],
 								[
 									"{@item 梯子|XPHB}",
-									"25磅",
+									"25 磅",
 									"1 SP"
 								],
 								[
@@ -10752,12 +10752,12 @@
 									"5 CP"
 								],
 								[
-									"法术卷轴(戏法)",
+									"法术卷轴（戏法）",
 									"\u2014",
 									"30 GP"
 								],
 								[
-									"法术卷轴（1环）",
+									"法术卷轴（一环）",
 									"\u2014",
 									"50 GP"
 								],
@@ -10778,7 +10778,7 @@
 								],
 								[
 									"{@item 帐篷|XPHB}",
-									"20磅",
+									"20 磅",
 									"2 GP"
 								],
 								[
@@ -10809,12 +10809,12 @@
 							"entries": [
 								{
 									"ENG_name": "Acid (25 GP)",
-									"name": "强酸(25 GP)",
+									"name": "强酸（25GP）",
 									"type": "entries",
 									"page": 222,
 									"id": "6aa",
 									"entries": [
-										"当你执行{@action 攻击|XPHB}动作时，你可以将你的一次攻击替换为丢出一小瓶强酸。你可以选择位于你20尺内可见的一个生物或物件作为目标。该目标必须通过一次敏捷豁免（{@dc 8}+你的敏捷调整值+你的熟练加值），否则承受{@dice 2d6}点强酸伤害。"
+										"当你执行{@action 攻击|XPHB}动作时，你可以将你的一次攻击替换为丢出一小瓶强酸。你可以选择位于你 20 尺内可见的一个生物或物件作为目标。该目标必须通过一次敏捷豁免（{@dc 8} + 你的敏捷调整值 + 你的熟练加值），否则承受{@dice 2d6}点强酸伤害。"
 									]
 								},
 								{
@@ -10824,12 +10824,12 @@
 									"page": 222,
 									"id": "6ab",
 									"entries": [
-										"当你执行{@action 攻击|XPHB}动作时，你可以将你的一次攻击替换为丢出一扁瓶炽火胶。你可以选择位于你20尺内可见的一个生物或物件作为目标。该目标必须通过一次敏捷豁免（{@dc 8}+你的敏捷调整值+你的熟练加值），否则承受{@dice 1d4}点火焰伤害并开始{@hazard 燃烧|XPHB}。"
+										"当你执行{@action 攻击|XPHB}动作时，你可以将你的一次攻击替换为丢出一扁瓶炽火胶。你可以选择位于你 20 尺内可见的一个生物或物件作为目标。该目标必须通过一次敏捷豁免（{@dc 8} + 你的敏捷调整值 + 你的熟练加值），否则承受{@dice 1d4}点火焰伤害并开始{@hazard 燃烧|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Ammunition (Varies)",
-									"name": "弹药(价格不等)",
+									"name": "弹药（多种）",
 									"type": "entries",
 									"page": 222,
 									"id": "6ac",
@@ -10856,7 +10856,7 @@
 											],
 											"rows": [
 												[
-													"{@item 箭(20)|XPHB|箭矢}",
+													"{@item 箭矢（20支）|XPHB|箭矢}",
 													"20",
 													"{@item 箭袋|XPHB}",
 													"1 磅",
@@ -10866,7 +10866,7 @@
 													"{@item 弩矢（20支）|XPHB|弩失}",
 													"20",
 													"{@item 弩矢匣|XPHB|匣子}",
-													"1.5磅",
+													"1.5 磅",
 													"1 GP"
 												],
 												[
@@ -10877,14 +10877,14 @@
 													"3 GP"
 												],
 												[
-													"{@item 投石索弹丸|XPHB|投石索弹丸}",
+													"{@item 投石索子弹|XPHB|投石索子弹}",
 													"20",
 													"{@item 小包|XPHB}",
-													"1.5磅",
+													"1.5 磅",
 													"4 CP"
 												],
 												[
-													"{@item 针 (50)|XPHB|针刺}",
+													"{@item 吹矢（50）|XPHB|针刺}",
 													"50",
 													"{@item 小包|XPHB}",
 													"1 磅",
@@ -10896,17 +10896,17 @@
 								},
 								{
 									"ENG_name": "Antitoxin (50 GP)",
-									"name": "抗毒剂(50 GP)",
+									"name": "抗毒剂（50GP）",
 									"type": "entries",
 									"page": 222,
 									"id": "6ad",
 									"entries": [
-										"作为一个附赠动作，你可以饮用一小瓶抗毒剂来在防止或终止{@condition 中毒|XPHB}状态的豁免检定中获得{@variantrule 优势|XPHB}，持续1小时。"
+										"以一个附赠动作，你可以喝下一小瓶抗毒剂来使你在避免或结束{@condition 中毒|XPHB}状态的豁免中具有{@variantrule 优势|XPHB}，持续一小时。"
 									]
 								},
 								{
 									"ENG_name": "Arcane Focus (Varies)",
-									"name": "法器(价格不等)",
+									"name": "法器（多种）",
 									"type": "entries",
 									"page": 224,
 									"id": "6ae",
@@ -10959,47 +10959,47 @@
 								},
 								{
 									"ENG_name": "Backpack (2 GP)",
-									"name": "背包(2 GP)",
+									"name": "背包（2GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6af",
 									"entries": [
-										"一个背包最多能装入30磅重1立方尺大的东西。背包也能当作鞍囊使用。"
+										"一个背包最多能装入 30 磅重 1 立方尺大的东西。背包也能当作鞍囊使用。"
 									]
 								},
 								{
 									"ENG_name": "Ball Bearings (1 GP)",
-									"name": "滚珠(1 GP)",
+									"name": "滚珠（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b0",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你能把一小包滚珠撒至地面，并覆盖你周围10尺内的一处10尺方形区域。任何生物每回合首次进入这片区域时都必须通过一次{@dc 10}的敏捷豁免，否则陷入{@condition 倒地|XPHB}状态。重新收集这些滚珠需要花费10分钟时间。"
+										"以一个{@action 操作|XPHB}动作，你能把一小包滚珠撒至地面，并覆盖你周围 10 尺内的一处 10 尺方形区域。任何生物每回合首次进入这片区域时都必须通过一次{@dc 10}的敏捷豁免，否则陷入{@condition 倒地|XPHB}状态。重新收集这些滚珠需要花费 10 分钟时间。"
 									]
 								},
 								{
 									"ENG_name": "Barrel (2 GP)",
-									"name": "木桶(2 GP)",
+									"name": "木桶（2GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b1",
 									"entries": [
-										"一个木桶能够至多装入40加仑的液体或4立方尺的干燥货物。"
+										"一个木桶能够至多装入 40 加仑的液体或 4 立方尺的干燥货物。"
 									]
 								},
 								{
 									"ENG_name": "Basket (4 SP)",
-									"name": "篮子(4 SP)",
+									"name": "篮子（4SP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b2",
 									"entries": [
-										"一个篮子能够至多装入40磅重2立方尺大的东西。"
+										"一个篮子能够至多装入 40 磅重 2 立方尺大的东西。"
 									]
 								},
 								{
 									"ENG_name": "Bedroll (1 GP)",
-									"name": "铺盖(1 GP)",
+									"name": "铺盖（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b3",
@@ -11009,17 +11009,17 @@
 								},
 								{
 									"ENG_name": "Bell (1 GP)",
-									"name": "铃铛(1 GP)",
+									"name": "铃铛（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b4",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你可以摇响一个铃铛，铃铛会发出60尺内都能够听到的声音。"
+										"以一个{@action 操作|XPHB}动作，你可以摇响一个铃铛，铃铛会发出 60 尺内都能够听到的声音。"
 									]
 								},
 								{
 									"ENG_name": "Blanket (5 SP)",
-									"name": "毯子(5 SP)",
+									"name": "毯子（5SP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b5",
@@ -11029,7 +11029,7 @@
 								},
 								{
 									"ENG_name": "Block and Tackle (1 GP)",
-									"name": "滑轮组(1 GP)",
+									"name": "滑轮组（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b6",
@@ -11039,27 +11039,27 @@
 								},
 								{
 									"ENG_name": "Book (25 GP)",
-									"name": "书籍(25 GP)",
+									"name": "书籍（25GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b7",
 									"entries": [
-										"一本书会记载虚构或非虚构的内容。如果你在某些事物上参考了一本内容准确而非虚构的书，你在相关事物上的智力（{@skill 奥秘|XPHB}、{@skill 历史|XPHB}、{@skill 自然|XPHB}或{@skill 宗教|XPHB}）检定则获得+5的加值。"
+										"一本书会记载虚构或非虚构的内容。如果你在某些事物上参考了一本内容准确而非虚构的书，你在相关事物上的智力（{@skill 奥秘|XPHB}、{@skill 历史|XPHB}、{@skill 自然|XPHB}或{@skill 宗教|XPHB}）检定则获得 +5 的加值。"
 									]
 								},
 								{
 									"ENG_name": "Bottle, Glass (2 GP)",
-									"name": "玻璃瓶(2 GP)",
+									"name": "玻璃瓶（2GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b8",
 									"entries": [
-										"一个玻璃瓶至多能装入1.5品脱的东西。"
+										"一个玻璃瓶至多能装入 1.5 品脱的东西。"
 									]
 								},
 								{
 									"ENG_name": "Bucket (5 CP)",
-									"name": "吊桶(5 CP)",
+									"name": "吊桶（5CP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6b9",
@@ -11069,87 +11069,87 @@
 								},
 								{
 									"ENG_name": "Burglar's Pack (16 GP)",
-									"name": "窃贼套组(16 GP)",
+									"name": "窃贼套组（16GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6ba",
 									"entries": [
-										"窃贼套组包含以下物品：{@item 背包|XPHB}、{@item 滚珠|XPHB}、{@item 铃铛|XPHB}、10根{@item 蜡烛|XPHB|蜡烛}、{@item 撬棍|XPHB}、{@item 附盖提灯|XPHB}、7扁瓶{@item 燃油|XPHB}、5天份的{@item 口粮|XPHB}、{@item 绳索|XPHB}、{@item 火绒盒|XPHB}和{@item 水袋|XPHB}。"
+										"窃贼套组包含以下物品：{@item 背包|XPHB}、{@item 滚珠|XPHB}、{@item 铃铛|XPHB}、10 根{@item 蜡烛|XPHB|蜡烛}、{@item 撬棍|XPHB}、{@item 附盖提灯|XPHB}、7 扁瓶{@item 燃油|XPHB}、五天份的{@item 口粮|XPHB}、{@item 绳索|XPHB}、{@item 火绒盒|XPHB}和{@item 水袋|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Caltrops (1 GP)",
-									"name": "铁蒺藜(1 GP)",
+									"name": "铁蒺藜（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6bb",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你能把一包铁蒺撒至地面并覆盖你周围5尺内的一处5尺方形区域。任何生物每回合首次进入这片区域时都必须通过一次{@dc 15}的敏捷豁免，否则受到1点穿刺伤害，并且移速降至0，直到其下一回合开始为止。重新收集这些铁蒺藜需要花费10分钟时间。"
+										"以一个{@action 操作|XPHB}动作，你能把一包铁蒺撒至地面并覆盖你周围 5 尺内的一处 5 尺方形区域。任何生物每回合首次进入这片区域时都必须通过一次{@dc 15}的敏捷豁免，否则受到 1 点穿刺伤害，并且移速降至 0，直到其下一回合开始为止。重新收集这些铁蒺藜需要花费 10 分钟时间。"
 									]
 								},
 								{
 									"ENG_name": "Candle (1 CP)",
-									"name": "蜡烛(1 CP)",
+									"name": "蜡烛（1CP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6bc",
 									"entries": [
-										"一根蜡烛可以燃烧1小时，并发出5尺范围的{@variantrule 明亮光照|XPHB}，以及额外5尺的{@variantrule 微光光照|XPHB}。"
+										"一根蜡烛可以燃烧 1 小时，并发出 5 尺范围的{@variantrule 明亮光照|XPHB}，以及额外 5 尺的{@variantrule 微光光照|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Case, Crossbow Bolt (1 GP)",
-									"name": "弩矢匣(1 GP)",
+									"name": "弩矢匣（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6bd",
 									"entries": [
-										"一个弩矢匣至多能存放20根{@item 弩矢（20支）|XPHB|弩失}。"
+										"一个弩矢匣至多能存放{@item 弩矢（20支）|XPHB|弩失}。"
 									]
 								},
 								{
 									"ENG_name": "Case, Map or Scroll (1 GP)",
-									"name": "卷轴匣/地图匣(1 GP)",
+									"name": "卷轴匣/地图匣（1GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6be",
 									"entries": [
-										"一个地图或卷轴匣至多能存放10张{@item 纸张|XPHB}或5张{@item 羊皮纸|XPHB}。"
+										"一个地图或卷轴匣至多能存放 10 张{@item 纸张|XPHB}或 5 张{@item 羊皮纸|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Chain (5 GP)",
-									"name": "链条(5 GP)",
+									"name": "链条（5GP）",
 									"type": "entries",
 									"page": 224,
 									"id": "6bf",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你能利用链条捆住一个位于你5尺内的非自愿生物，但该生物必须处于{@condition 受擒|XPHB}、{@condition 失能|XPHB}或{@condition 束缚|XPHB}状态，且你成功通过一次{@dc 13}的力量（{@skill 运动|XPHB}）检定。如果该检定成功，。如果你绑住了该生物的腿，该生物陷入束缚状态，直至挣脱。挣脱链条需要该生物使用动作来通过一次{@dc 18}的敏捷（{@skill 特技|XPHB}）检定。扯坏链条需要该生物使用动作来通过一次{@dc 20}的力量（{@skill 运动|XPHB}）检定。"
+										"以一个{@action 操作|XPHB}动作，你能利用链条捆住一个位于你 5 尺内的非自愿生物，但该生物必须处于{@condition 受擒|XPHB}、{@condition 失能|XPHB}或{@condition 束缚|XPHB}状态，且你成功通过一次{@dc 13}的力量（{@skill 运动|XPHB}）检定。如果该检定成功，。如果你绑住了该生物的腿，该生物陷入束缚状态，直至挣脱。挣脱链条需要该生物使用动作来通过一次{@dc 18}的敏捷（{@skill 特技|XPHB}）检定。扯坏链条需要该生物使用动作来通过一次{@dc 20}的力量（{@skill 运动|XPHB}）检定。"
 									]
 								},
 								{
 									"ENG_name": "Chest (5 GP)",
-									"name": "箱子(5 GP)",
+									"name": "箱子（5GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c0",
 									"entries": [
-										"一个箱子至多能装入12立方尺的东西。"
+										"一个箱子至多能装入 12 立方尺的东西。"
 									]
 								},
 								{
 									"ENG_name": "Climber's Kit (25 GP)",
-									"name": "攀爬工具(25 GP)",
+									"name": "攀爬工具（25GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c1",
 									"entries": [
-										"一套攀爬工具包含鞋子包头、手套、岩钉和系带。以一个{@action 操作|XPHB}动作，你可以使用攀爬工具锚定自己，此时你不会从锚定处摔落超过25尺，且在使用附赠动作解除锚定前无法从锚定处向外移动超过25尺。"
+										"一套攀爬工具包含鞋子包头、手套、岩钉和系带。以一个{@action 操作|XPHB}动作，你可以使用攀爬工具锚定自己，此时你不会从锚定处摔落超过 25 尺，且在使用附赠动作解除锚定前无法从锚定处向外移动超过 25 尺。"
 									]
 								},
 								{
 									"ENG_name": "Clothes, Fine (15 GP)",
-									"name": "高档服装(15 GP)",
+									"name": "高档服装（15GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c2",
@@ -11159,7 +11159,7 @@
 								},
 								{
 									"ENG_name": "Clothes, Traveler's (2 GP)",
-									"name": "旅行服装(2 GP)",
+									"name": "旅行服装（2GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c3",
@@ -11169,7 +11169,7 @@
 								},
 								{
 									"ENG_name": "Component Pouch (25 GP)",
-									"name": "材料包(25 GP)",
+									"name": "材料包（25GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c4",
@@ -11179,7 +11179,7 @@
 								},
 								{
 									"ENG_name": "Costume (5 GP)",
-									"name": "服装(5 GP)",
+									"name": "戏服（5GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c5",
@@ -11189,7 +11189,7 @@
 								},
 								{
 									"ENG_name": "Crowbar (2 GP)",
-									"name": "撬棍(2 GP)",
+									"name": "撬棍（2GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c6",
@@ -11199,17 +11199,17 @@
 								},
 								{
 									"ENG_name": "Diplomat's Pack (39 GP)",
-									"name": "外交套组(39 GP)",
+									"name": "外交套组（39GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c7",
 									"entries": [
-										"外交套组包含以下物品：{@item 箱子|XPHB}、{@item 高档服装|XPHB}、{@item 墨水|XPHB}、5支{@item 墨水笔|XPHB|墨水笔}、{@item 油灯|XPHB}、2个{@item 地图或卷轴匣|XPHB|地图或卷轴匣}、4扁瓶{@item 燃油|XPHB}、5张{@item 纸张|XPHB}、5张{@item 羊皮纸|XPHB}、{@item 香水|XPHB}和{@item 火绒盒|XPHB}。"
+										"外交套组包含以下物品：{@item 箱子|XPHB}、{@item 高档服装|XPHB}、{@item 墨水|XPHB}、5 支{@item 墨水笔|XPHB|墨水笔}、{@item 油灯|XPHB}、2 个{@item 地图或卷轴匣|XPHB|地图或卷轴匣}、4 扁瓶{@item 燃油|XPHB}、5 张{@item 纸张|XPHB}、5 张{@item 羊皮纸|XPHB}、{@item 香水|XPHB}和{@item 火绒盒|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Druidic Focus (Varies)",
-									"name": "德鲁伊法器(价格不等)",
+									"name": "德鲁伊法器（多种）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c8",
@@ -11252,57 +11252,57 @@
 								},
 								{
 									"ENG_name": "Dungeoneer's Pack (12 GP)",
-									"name": "地城套组(12 GP)",
+									"name": "地城套组（12GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6c9",
 									"entries": [
-										"地城套组包含以下物品：{@item 背包|XPHB}、{@item 铁蒺藜|XPHB}、{@item 撬棍|XPHB}、2瓶{@item 燃油|XPHB}、10天份的{@item 口粮|XPHB}、{@item 绳索|XPHB}、{@item 火绒盒|XPHB}、10支{@item 火把|XPHB|火把}和{@item 水袋|XPHB}。"
+										"地城套组包含以下物品：{@item 背包|XPHB}、{@item 铁蒺藜|XPHB}、{@item 撬棍|XPHB}、2 扁瓶{@item 燃油|XPHB}、10 天份的{@item 口粮|XPHB}、{@item 绳索|XPHB}、{@item 火绒盒|XPHB}、10 支{@item 火把|XPHB|火把}和{@item 水袋|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Entertainer's Pack (40 GP)",
-									"name": "艺人套组(40 GP)",
+									"name": "艺人套组（40GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6ca",
 									"entries": [
-										"艺人套组包含以下物品：{@item 背包|XPHB}、{@item 铺盖|XPHB}、{@item 铃铛|XPHB}、{@item 牛眼提灯|XPHB}、3件{@item 戏服|XPHB|服装}、{@item 镜子|XPHB}、8扁瓶{@item 燃油|XPHB}、9天份的{@item 口粮|XPHB}、{@item 火绒盒|XPHB}和{@item 水袋|XPHB}。"
+										"艺人套组包含以下物品：{@item 背包|XPHB}、{@item 铺盖|XPHB}、{@item 铃铛|XPHB}、{@item 牛眼提灯|XPHB}、3 件{@item 戏服|XPHB|服装}、{@item 镜子|XPHB}、8 扁瓶{@item 燃油|XPHB}、9 天份的{@item 口粮|XPHB}、{@item 火绒盒|XPHB}和{@item 水袋|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Explorer's Pack (10 GP)",
-									"name": "探索套组(10 GP)",
+									"name": "探索套组（10GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6cb",
 									"entries": [
-										"探索套组包含以下物品：{@item 背包|XPHB}、{@item 铺盖|XPHB}、2扁瓶{@item 燃油|XPHB}、10份{@item 口粮|XPHB}、{@item 绳索|XPHB}、{@item 火绒盒|XPHB}、10支{@item 火把|XPHB|火把}和{@item 水袋|XPHB}。"
+										"探索套组包含以下物品：{@item 背包|XPHB}、{@item 铺盖|XPHB}、2 扁瓶{@item 燃油|XPHB}、10 份{@item 口粮|XPHB}、{@item 绳索|XPHB}、{@item 火绒盒|XPHB}、10 支{@item 火把|XPHB|火把}和{@item 水袋|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Flask (2 CP)",
-									"name": "扁瓶(2 CP)",
+									"name": "扁瓶（2CP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6cc",
 									"entries": [
-										"一个扁瓶具有1品脱容量。"
+										"一个扁瓶具有 1 品脱容量。"
 									]
 								},
 								{
 									"ENG_name": "Grappling Hook (2 GP)",
-									"name": "爪钩(2 GP)",
+									"name": "爪钩（2GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6cd",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你能将爪钩朝着位于自身50尺内的一处栏杆、突起的边缘或是一处能够挂住的位置扔出，并进行一次{@dc 13}的敏捷（{@skill 特技|XPHB}）检定。如果检定成功，爪钩则成功钩在上面。如果爪钩上还连了{@item 绳索|XPHB}，你则可以爬上去。"
+										"以一个{@action 操作|XPHB}动作，你能将爪钩朝着位于自身 50 尺内的一处栏杆、突起的边缘或是一处能够挂住的位置扔出，并进行一次{@dc 13}的敏捷（{@skill 特技|XPHB}）检定。如果检定成功，爪钩则成功钩在上面。如果爪钩上还连了{@item 绳索|XPHB}，你则可以爬上去。"
 									]
 								},
 								{
 									"ENG_name": "Healer's Kit (5 GP)",
-									"name": "医疗包(5 GP)",
+									"name": "医疗包（5GP）",
 									"type": "entries",
 									"page": 225,
 									"id": "6ce",
@@ -11312,7 +11312,7 @@
 								},
 								{
 									"ENG_name": "Holy Symbol (Varies)",
-									"name": "圣徽(价格不等)",
+									"name": "圣徽（多种）",
 									"type": "entries",
 									"page": 226,
 									"id": "6cf",
@@ -11341,12 +11341,12 @@
 													"5 GP"
 												],
 												[
-													"{@item 纹章|XPHB}（印在织物或盾牌上）",
+													"{@item 纹章|XPHB}（挂载到织物或盾牌上）",
 													"\u2014",
 													"5 GP"
 												],
 												[
-													"{@item 圣物匣|XPHB}（持有）",
+													"{@item 圣物匣|XPHB}（手持）",
 													"2 磅",
 													"5 GP"
 												]
@@ -11356,37 +11356,37 @@
 								},
 								{
 									"ENG_name": "Holy Water (25 GP)",
-									"name": "圣水(25 GP)",
+									"name": "圣水（25GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d0",
 									"entries": [
-										"当你执行{@action 攻击|XPHB}动作时，你可以将你的一次攻击替换为丢出一扁瓶圣水。你可以选择位于你20尺内可见的一个生物作为目标。该目标必须通过一次敏捷豁免（{@dc 8}+你的敏捷调整值+你的熟练加值），并且如果这个目标是邪魔或亡灵生物，失败时承受{@dice 2d8}点光耀伤害。"
+										"当你执行{@action 攻击|XPHB}动作时，你可以将你的一次攻击替换为丢出一扁瓶圣水。你可以选择位于你 20 尺内可见的一个生物作为目标。该目标必须通过一次敏捷豁免（{@dc 8} + 你的敏捷调整值 + 你的熟练加值），并且如果这个目标是邪魔或亡灵生物，失败时承受{@dice 2d8}点光耀伤害。"
 									]
 								},
 								{
 									"ENG_name": "Hunting Trap (5 GP)",
-									"name": "捕猎陷阱(5 GP)",
+									"name": "捕猎陷阱（5GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d1",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你可以在某处设下捕猎陷阱。捕猎陷阱是一组带有锯齿的铁环，当一个生物踩到中心的压力板时，两边的锯齿会迅速合上。这组陷阱需要用沉重的链条固定至某个无法移动的物件上\u2014\u2014例如大树或刺入地面的固定钉。踩到压力板的生物必须通过一次{@dc 13}的敏捷豁免，否则受到{@dice 1d4}点穿刺伤害，并且速度降至0，直至他的下一回合开始。直到该生物挣脱陷阱前，它的移动范围会被链条的长度限制（通常为3尺）。一个生物可以使用它的动作来进行一次{@dc 13}的力量（{@skill 运动|XPHB}）检定，检定成功时能够让自己或自己触及范围内的一个其他生物脱困。每次检定失败都会导致被困生物受到1点穿刺伤害。"
+										"以一个{@action 操作|XPHB}动作，你可以在某处设下捕猎陷阱。捕猎陷阱是一组带有锯齿的铁环，当一个生物踩到中心的压力板时，两边的锯齿会迅速合上。这组陷阱需要用沉重的链条固定至某个无法移动的物件上\u2014\u2014例如大树或刺入地面的固定钉。踩到压力板的生物必须通过一次{@dc 13}的敏捷豁免，否则受到{@dice 1d4}点穿刺伤害，并且速度降至 0，直至他的下一回合开始。直到该生物挣脱陷阱前，它的移动范围会被链条的长度限制（通常为 3 尺）。一个生物可以使用它的动作来进行一次{@dc 13}的力量（{@skill 运动|XPHB}）检定，检定成功时能够让自己或自己触及范围内的一个其他生物脱困。每次检定失败都会导致被困生物受到 1 点穿刺伤害。"
 									]
 								},
 								{
 									"ENG_name": "Ink (10 GP)",
-									"name": "墨水(10 GP)",
+									"name": "墨水（10GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d2",
 									"entries": [
-										"墨水一般装在1盎司的瓶子里，足够撰写500页的内容。"
+										"墨水一般装在 1 盎司的瓶子里，足够撰写 500 页的内容。"
 									]
 								},
 								{
 									"ENG_name": "Ink Pen (2 CP)",
-									"name": "墨水笔(2 CP)",
+									"name": "墨水笔（2CP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d3",
@@ -11396,7 +11396,7 @@
 								},
 								{
 									"ENG_name": "Jug (2 CP)",
-									"name": "壶(2 CP)",
+									"name": "壶（5CP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d4",
@@ -11406,17 +11406,17 @@
 								},
 								{
 									"ENG_name": "Ladder (1 SP)",
-									"name": "梯子(1 SP)",
+									"name": "梯子（1SP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d5",
 									"entries": [
-										"一把梯子有10尺高。你只能在梯子上爬上或是爬下。"
+										"一把梯子有 10 尺高。你只能在梯子上爬上或是爬下。"
 									]
 								},
 								{
 									"ENG_name": "Lamp (5 SP)",
-									"name": "油灯(5 SP)",
+									"name": "油灯（5SP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d6",
@@ -11426,12 +11426,12 @@
 								},
 								{
 									"ENG_name": "Lantern, Bullseye (10 GP)",
-									"name": "牛眼提灯(10 GP)",
+									"name": "牛眼提灯（10GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d7",
 									"entries": [
-										"一个牛眼提灯燃烧{@item 燃油|XPHB}作为燃料来施放{@variantrule 明亮光照|XPHB}，形成一个60尺的{@variantrule 锥状 [效应区域]|XPHB|锥状}效应区域，并在额外60尺范围内提供{@variantrule 微光光照|XPHB}。"
+										"一盏牛眼提灯使用{@item 燃油|XPHB}作为燃料，点着时能够发出 60 尺{@variantrule 明亮光照|XPHB}区域的{@variantrule 锥状 [效应区域]|XPHB|锥状}以及额外 60 尺的{@variantrule 微光光照|XPHB}。"
 									]
 								},
 								{
@@ -11447,17 +11447,17 @@
 								},
 								{
 									"ENG_name": "Lantern, Hooded (5 GP)",
-									"name": "附盖提灯(5 GP)",
+									"name": "附盖提灯（5GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d8",
 									"entries": [
-										"一个附盖提灯燃烧{@item 燃油|XPHB}作为燃料，产生30尺半径的{@variantrule 明亮光照|XPHB}和额外30尺的{@variantrule 微光光照|XPHB}。作为一个附赠动作，你可以放下灯罩，将光照范围缩小为5尺半径的微光光照，或者再次提起灯罩。"
+										"一盏附盖提灯使用{@item 燃油|XPHB}作为燃料，点着时能够发出半径 30 尺的{@variantrule 明亮光照|XPHB}以及额 外30 尺的{@variantrule 微光光照|XPHB}。以一个附赠动作，你可以盖上或掀开提灯的盖子。盖上盖子时，提灯的光亮降至半径 5 尺的微光光照。"
 									]
 								},
 								{
 									"ENG_name": "Lock (10 GP)",
-									"name": "锁(10 GP)",
+									"name": "锁（10GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6d9",
@@ -11467,38 +11467,38 @@
 								},
 								{
 									"ENG_name": "Magnifying Glass (100 GP)",
-									"name": "放大镜(100 GP)",
+									"name": "放大镜（100GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6da",
 									"entries": [
-										"使用放大镜时，你为鉴定或检查精密物品所作的任何属性检定都会具有{@variantrule 优势|XPHB}。想要使用放大镜点火，需要一束如同阳光般明亮的强光用于聚焦，还需要用于点燃的火绒，随后需要大约5分钟的时间来生火。"
+										"使用放大镜时，你为鉴定或检查精密物品所作的任何属性检定都会具有{@variantrule 优势|XPHB}。想要使用放大镜点火，需要一束如同阳光般明亮的强光用于聚焦，还需要用于点燃的火绒，随后需要大约 5 分钟的时间来生火。"
 									]
 								},
 								{
 									"ENG_name": "Manacles (2 GP)",
-									"name": "镣铐(2 GP)",
+									"name": "镣铐（2GP）",
 									"type": "entries",
 									"page": 226,
 									"id": "6db",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你能利用镣铐捆住一个位于你5尺内的非自愿的小型或中型生物，但该生物必须处于{@condition 受擒|XPHB}、{@condition 失能|XPHB}或{@condition 束缚|XPHB}状态，并且你成功通过一次{@dc 13}的敏捷（{@skill 巧手|XPHB}）检定。如果该检定成功，如果你铐住了该生物，该生物进行的攻击检定会具有{@variantrule 劣势|XPHB}。如果镣铐还被锁链或钩子固定在了某处，该生物还会陷入{@condition 束缚|XPHB}状态。挣脱镣铐需要该生物使用动作来通过一次{@dc 20}的敏捷（{@skill 巧手|XPHB}）检定。扯坏镣铐需要该生物使用动作来通过一次{@dc 25}的力量（{@skill 运动|XPHB}）检定。",
+										"以一个{@action 操作|XPHB}动作，你能利用镣铐捆住一个位于你 5 尺内的非自愿的小型或中型生物，但该生物必须处于{@condition 受擒|XPHB}、{@condition 失能|XPHB}或{@condition 束缚|XPHB}状态，并且你成功通过一次{@dc 13}的敏捷（{@skill 巧手|XPHB}）检定。如果该检定成功，如果你铐住了该生物，该生物进行的攻击检定会具有{@variantrule 劣势|XPHB}。如果镣铐还被锁链或钩子固定在了某处，该生物还会陷入{@condition 束缚|XPHB}状态。挣脱镣铐需要该生物使用动作来通过一次{@dc 20}的敏捷（{@skill 巧手|XPHB}）检定。扯坏镣铐需要该生物使用动作来通过一次{@dc 25}的力量（{@skill 运动|XPHB}）检定。",
 										"每套镣铐都有对应的钥匙。如果没有对应的钥匙，一个生物还可以使用{@item 盗贼工具|XPHB}来通过一次{@dc 15}的敏捷（{@skill 巧手|XPHB}）检定解开镣铐的锁。"
 									]
 								},
 								{
 									"ENG_name": "Map (1 GP)",
-									"name": "地图(1 GP)",
+									"name": "地图（1GP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6dc",
 									"entries": [
-										"如果你在地图所绘制的地点参考了一张准确的地图，你为辨认位置所进行的感知（{@skill 求生|XPHB}）检定获得+5的加值。"
+										"如果你在地图所绘制的地点参考了一张准确的地图，你为辨认位置所进行的感知（{@skill 求生|XPHB}）检定获得 +5 的加值。"
 									]
 								},
 								{
 									"ENG_name": "Mirror (5 GP)",
-									"name": "镜子(5 GP)",
+									"name": "镜子（5GP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6dd",
@@ -11508,18 +11508,18 @@
 								},
 								{
 									"ENG_name": "Net (1 GP)",
-									"name": "网(1 GP)",
+									"name": "捕网（1GP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6de",
 									"entries": [
-										"当你执行{@action 攻击|XPHB}动作，你可以将你的一次攻击替换为丢出一张捕网。你可以选择位于你15尺内可见的一个生物作为目标。该目标必须通过一次敏捷豁免（{@dc 8}+你的敏捷调整值+你的熟练加值），否则陷入{@condition 束缚|XPHB}状态，直至挣脱。体型是巨型及以上的目标将自动通过豁免。",
-										"被束缚的目标或者位于目标5尺内的生物，可以通过一个动作来进行一次{@dc 10}的力量（{@skill 运动|XPHB}）检定来挣脱捕网。若检定成功，被束缚的生物将被解放。摧毁捕网（AC"
+										"当你执行{@action 攻击|XPHB}动作，你可以将你的一次攻击替换为丢出一张捕网。你可以选择位于你 15 尺内可见的一个生物作为目标。该目标必须通过一次敏捷豁免（{@dc 8} + 你的敏捷调整值 + 你的熟练加值），否则陷入{@condition 束缚|XPHB}状态，直至挣脱。体型是巨型及以上的目标将自动通过豁免。",
+										"被束缚的目标或者位于目标5尺内的生物，可以通过一个动作来进行一次{@dc 10}的力量（{@skill 运动|XPHB}）检定来挣脱捕网。若检定成功，被束缚的生物将被解放。摧毁捕网（AC 10；5 HP；免疫钝击、毒素和心灵伤害）也能解放被困目标并结束捕网的效果。"
 									]
 								},
 								{
 									"ENG_name": "Oil (1 SP)",
-									"name": "油(1 SP)",
+									"name": "油（1SP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6df",
@@ -11532,7 +11532,7 @@
 											"page": 227,
 											"id": "6e0",
 											"entries": [
-												"当你执行攻击动作时，你可以将你的一次{@action 攻击|XPHB}替换为丢出一扁瓶燃油。你可以选择位于你20尺内可见的一个生物或物件作为目标。该目标必须通过一次敏捷豁免（{@dc 8}+你的敏捷调整值+你的熟练加值），否则被燃油覆盖。如果目标在燃油挥发前（1分钟后）受到火焰伤害，则目标因燃烧的燃油受到额外5点火焰伤害。"
+												"当你执行攻击动作时，你可以将你的一次{@action 攻击|XPHB}替换为丢出一扁瓶燃油。你可以选择位于你 20 尺内可见的一个生物或物件作为目标。该目标必须通过一次敏捷豁免（{@dc 8} + 你的敏捷调整值 + 你的熟练加值），否则被燃油覆盖。如果目标在燃油挥发前（1 分钟后）受到火焰伤害，则目标因燃烧的燃油受到额外 5 点火焰伤害。"
 											]
 										},
 										{
@@ -11542,7 +11542,7 @@
 											"page": 227,
 											"id": "6e1",
 											"entries": [
-												"以一个{@action 操作|XPHB}动作，你可以将一扁瓶燃油泼在地面上，以覆盖一块边长5尺且保持水平的方形区域。点燃后，从点燃时算起，燃油会持续燃烧两轮并在回合结束时熄灭（或12秒）。点燃时，任何进入该区域或在该区域结束其回合的生物都会受到5点火焰伤害。同一生物每回合只受该伤害作用一次。"
+												"以一个{@action 操作|XPHB}动作，你可以将一扁瓶燃油泼在地面上，以覆盖一块边长5尺且保持水平的方形区域。点燃后，从点燃时算起，燃油会持续燃烧两轮并在回合结束时熄灭（或 12 秒）。点燃时，任何进入该区域或在该区域结束其回合的生物都会受到 5 点火焰伤害。同一生物每回合只受该伤害作用一次。"
 											]
 										},
 										{
@@ -11552,44 +11552,44 @@
 											"page": 227,
 											"id": "6e2",
 											"entries": [
-												"燃油能作为油灯和提灯的燃料使用。一旦点着，一扁瓶的燃油可以在油灯和提灯中持续燃烧6小时。持续时长并不需要是连续的，你可以熄灭点着的燃油（以一个{@action 操作|XPHB}动作），并在之后再点燃，直到总共燃烧了6小时。"
+												"燃油能作为油灯和提灯的燃料使用。一旦点着，一扁瓶的燃油可以在油灯和提灯中持续燃烧 6 小时。持续时长并不需要是连续的，你可以熄灭点着的燃油（以一个{@action 操作|XPHB}动作），并在之后再点燃，直到总共燃烧了 6 小时。"
 											]
 										}
 									]
 								},
 								{
 									"ENG_name": "Paper (2 SP)",
-									"name": "纸张(2 SP)",
+									"name": "纸张（2SP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6e3",
 									"entries": [
-										"一页纸张能够写满250个手写单词。"
+										"一页纸张能够写满 250 个手写单词。"
 									]
 								},
 								{
 									"ENG_name": "Parchment (1 SP)",
-									"name": "羊皮纸(1 SP)",
+									"name": "羊皮纸（1SP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6e4",
 									"entries": [
-										"一页羊皮纸能够写满250个手写单词。"
+										"一页羊皮纸能够写满 250 个手写单词。"
 									]
 								},
 								{
 									"ENG_name": "Perfume (5 GP)",
-									"name": "香水(5 GP)",
+									"name": "香水（5GP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6e5",
 									"entries": [
-										"香水通常装在4盎司的小瓶里。为自己拍上香水后的一小时里，你为影响对你态度{@variantrule 优势|XPHB}的类人生物所作的魅力（{@skill 游说|XPHB}）检定都具有{@variantrule 冷漠 【态度】|XPHB|冷漠}，但这个生物必须位于你的5尺内。"
+										"香水通常装在 4 盎司的小瓶里。为自己拍上香水后的一小时里，你为影响对你态度{@variantrule 优势|XPHB}的类人生物所作的魅力（{@skill 游说|XPHB}）检定都具有{@variantrule 冷漠【态度】|XPHB|冷漠}，但这个生物必须位于你的 5 尺内。"
 									]
 								},
 								{
 									"ENG_name": "Poison, Basic (100 GP)",
-									"name": "基础毒药(100 GP)",
+									"name": "基础毒药（100GP）",
 									"type": "entries",
 									"page": 227,
 									"id": "6e6",
@@ -11599,17 +11599,17 @@
 								},
 								{
 									"ENG_name": "Pole (5 CP)",
-									"name": "长杆(5 CP)",
+									"name": "长杆（5CP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6e7",
 									"entries": [
-										"一柄长杆有10尺长。你可以用它去触碰10尺外的东西。如果你必须进行力量（{@skill 运动|XPHB}）检定作为{@variantrule 跳高|XPHB|高等}或{@variantrule 跳远|XPHB}的一部分，你可以用长杆撑跳，使自己在检定中获得{@variantrule 优势|XPHB}。"
+										"一柄长杆有 10 尺长。你可以用它去触碰 10 尺外的东西。如果你必须进行力量（{@skill 运动|XPHB}）检定作为{@variantrule 跳高|XPHB|高等}或{@variantrule 跳远|XPHB}的一部分，你可以用长杆撑跳，使自己在检定中获得{@variantrule 优势|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Pot, Iron (2 GP)",
-									"name": "铁壶(2 GP)",
+									"name": "铁壶（2GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6e8",
@@ -11619,17 +11619,17 @@
 								},
 								{
 									"ENG_name": "Potion of Healing (50 GP)",
-									"name": "治疗药水(50 GP)",
+									"name": "治疗药水（50GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6e9",
 									"entries": [
-										"这瓶药水是一种魔法物品。以一个附赠动作，你可以喝掉它或将它喂给位于你5尺内的其他生物。喝掉这小瓶魔法红色液体的生物能够恢复{@dice 2d4 + 2}点生命值。"
+										"这瓶药水是一种魔法物品。以一个附赠动作，你可以喝掉它或将它喂给位于你 5 尺内的其他生物。喝掉这小瓶魔法红色液体的生物能够恢复{@dice 2d4 + 2}点生命值。"
 									]
 								},
 								{
 									"ENG_name": "Pouch (5 SP)",
-									"name": "小包(5 SP)",
+									"name": "小包（5SP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6ea",
@@ -11639,7 +11639,7 @@
 								},
 								{
 									"ENG_name": "Priest's Pack (33 GP)",
-									"name": "祭司套组(33 GP)",
+									"name": "祭司套组（33GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6eb",
@@ -11649,27 +11649,27 @@
 								},
 								{
 									"ENG_name": "Quiver (1 GP)",
-									"name": "箭袋(1 GP)",
+									"name": "箭袋（1GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6ec",
 									"entries": [
-										"一个箭袋最多可容纳20支{@item 箭(20)|XPHB|箭矢}。"
+										"一个箭袋最多可容纳{@item 箭矢（20支）|XPHB|箭矢}。"
 									]
 								},
 								{
 									"ENG_name": "Ram, Portable (4 GP)",
-									"name": "便携式攻城锤(4 GP)",
+									"name": "便携式攻城锤（4GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6ed",
 									"entries": [
-										"你可以使用便携式攻城锤撞破一扇门。当你这么做时，你在力量检定上获得+4加值。其他一名角色可以协助你使用攻城锤，并使你这次检定具有{@variantrule 优势|XPHB}。"
+										"你可以使用便携式攻城锤撞破一扇门。当你这么做时，你在力量检定上获得 +4 加值。其他一名角色可以协助你使用攻城锤，并使你这次检定具有{@variantrule 优势|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Rations (5 SP)",
-									"name": "口粮(5 SP)",
+									"name": "口粮（5SP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6ee",
@@ -11679,7 +11679,7 @@
 								},
 								{
 									"ENG_name": "Robe (1 GP)",
-									"name": "长袍(1 GP)",
+									"name": "长袍（1GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6ef",
@@ -11689,7 +11689,7 @@
 								},
 								{
 									"ENG_name": "Rope (1 GP)",
-									"name": "绳索(1 GP)",
+									"name": "绳索（1GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f0",
@@ -11700,27 +11700,27 @@
 								},
 								{
 									"ENG_name": "Sack (1 CP)",
-									"name": "麻袋(1 CP)",
+									"name": "麻袋（1CP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f1",
 									"entries": [
-										"麻袋至多能够装入30磅1立方尺的东西。"
+										"麻袋至多能够装入 30 磅 1 立方尺的东西。"
 									]
 								},
 								{
 									"ENG_name": "Scholar's Pack (40 GP)",
-									"name": "学者套组(40 GP)",
+									"name": "学者套组（40GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f2",
 									"entries": [
-										"学者套组包含以下物品：{@item 背包|XPHB}、{@item 书籍|XPHB}、{@item 墨水|XPHB}、{@item 墨水笔|XPHB}、{@item 油灯|XPHB}、10扁瓶{@item 燃油|XPHB}、10张{@item 羊皮纸|XPHB}以及{@item 火绒盒|XPHB}。"
+										"学者套组包含以下物品：{@item 背包|XPHB}、{@item 书籍|XPHB}、{@item 墨水|XPHB}、{@item 墨水笔|XPHB}、{@item 油灯|XPHB}、10 扁瓶{@item 燃油|XPHB}、10 张{@item 羊皮纸|XPHB}和{@item 火绒盒|XPHB}。"
 									]
 								},
 								{
 									"ENG_name": "Shovel (2 GP)",
-									"name": "铲子(2 GP)",
+									"name": "铲子（2GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f3",
@@ -11730,28 +11730,28 @@
 								},
 								{
 									"ENG_name": "Signal Whistle (5 CP)",
-									"name": "信号笛(5 CP)",
+									"name": "信号笛（5CP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f4",
 									"entries": [
-										"以一个{@action 操作|XPHB}动作，你可以吹响一支信号笛，并使信号笛发出600尺外都可以听见的响声。"
+										"以一个{@action 操作|XPHB}动作，你可以吹响一支信号笛，并使信号笛发出 600 尺外都可以听见的响声。"
 									]
 								},
 								{
 									"ENG_name": "Spell Scroll (Cantrip, 30 GP Level 1, 50 GP)",
-									"name": "法术卷轴（戏法，1环30GP，50GP）",
+									"name": "法术卷轴（戏法 30GP；一环 50GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f5",
 									"entries": [
 										"一个戏法{@i 法术卷轴}或一环{@i 法术卷轴}是一种记载了戏法或一环法术的魔法物品。具体是哪一种由卷轴的创造者决定。如果卷轴的法术处在你的职业",
-										"如果法术要求豁免检定或攻击检定，法术的豁免DC则为13，而攻击加值为5。当法术施展完毕，卷轴会立刻烟消云散。"
+										"如果法术要求豁免检定或攻击检定，法术的豁免DC则为 13，而攻击加值为 5。当法术施展完毕，卷轴会立刻烟消云散。"
 									]
 								},
 								{
 									"ENG_name": "Spikes, Iron (1 GP)",
-									"name": "铁钉(1 GP)",
+									"name": "铁钉（1GP）",
 									"type": "entries",
 									"page": 228,
 									"id": "6f6",
@@ -11761,7 +11761,7 @@
 								},
 								{
 									"ENG_name": "Spyglass (1,000 GP)",
-									"name": "望远镜(1,000 GP)",
+									"name": "望远镜（1,000GP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6f7",
@@ -11771,17 +11771,17 @@
 								},
 								{
 									"ENG_name": "String (1 SP)",
-									"name": "线(1 SP)",
+									"name": "细线（1SP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6f8",
 									"entries": [
-										"细线有10尺长。你能够以一个{@action 操作|XPHB}动作为它打一个结。"
+										"细线有 10 尺长。你能够以一个{@action 操作|XPHB}动作为它打一个结。"
 									]
 								},
 								{
 									"ENG_name": "Tent (2 GP)",
-									"name": "帐篷(2 GP)",
+									"name": "帐篷（2GP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6f9",
@@ -11791,32 +11791,32 @@
 								},
 								{
 									"ENG_name": "Tinderbox (5 SP)",
-									"name": "火绒盒(5 SP)",
+									"name": "火绒盒（5SP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6fa",
 									"entries": [
-										"火绒盒是一种装有打火石、火镰和火绒（通常是浸泡在燃油里的干布料）的小型容器，其中的物品可以用来点火。你可以使用附赠动作来用它点燃任何具有燃料的东西\u2014\u2014例如{@item 蜡烛|XPHB}、{@item 油灯|XPHB}、提灯或{@item 火把|XPHB}。在没有燃料的情况下生火需要1分钟时间。"
+										"火绒盒是一种装有打火石、火镰和火绒（通常是浸泡在燃油里的干布料）的小型容器，其中的物品可以用来点火。你可以使用附赠动作来用它点燃任何具有燃料的东西\u2014\u2014例如{@item 蜡烛|XPHB}、{@item 油灯|XPHB}、提灯或{@item 火把|XPHB}。在没有燃料的情况下生火需要 1 分钟时间。"
 									]
 								},
 								{
 									"ENG_name": "Torch (1 CP)",
-									"name": "火把(1 CP)",
+									"name": "火把（1CP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6fb",
 									"entries": [
-										"火把点燃后能够燃烧1小时，燃烧期间发出半径20尺的{@variantrule 明亮光照|XPHB}以及额外20尺的{@variantrule 微光光照|XPHB}。当你执行{@action 攻击|XPHB}动作时，你可以将火把当作简易近战武器，并使用火把发动攻击。命中时，目标受到1火焰伤害。"
+										"火把点燃后能够燃烧 1 小时，燃烧期间发出半径 20 尺的{@variantrule 明亮光照|XPHB}以及额外 20 尺的{@variantrule 微光光照|XPHB}。当你执行{@action 攻击|XPHB}动作时，你可以将火把当作简易近战武器，并使用火把发动攻击。命中时，目标受到 1 火焰伤害。"
 									]
 								},
 								{
 									"ENG_name": "Vial (1 GP)",
-									"name": "小瓶(1 GP)",
+									"name": "小瓶（1GP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6fc",
 									"entries": [
-										"小瓶具有4盎司容量。",
+										"小瓶具有 4 盎司容量。",
 										{
 											"type": "image",
 											"href": {
@@ -11831,12 +11831,12 @@
 								},
 								{
 									"ENG_name": "Waterskin (2 SP)",
-									"name": "水袋(2 SP)",
+									"name": "水袋（2SP）",
 									"type": "entries",
 									"page": 229,
 									"id": "6fd",
 									"entries": [
-										"水袋具有4品脱容量。如果你喝水不足，你会遭受{@hazard 脱水|XPHB}的危害。"
+										"水袋具有 4 品脱容量。如果你喝水不足，你会遭受{@hazard 脱水|XPHB}的危害（见规则详述）。"
 									]
 								}
 							]
@@ -11850,7 +11850,7 @@
 					"page": 229,
 					"id": "6fe",
 					"entries": [
-						"坐骑的主要用途为替你驮载那些可能拖累你的行李，但它们同样能够帮助你在野外快速旅行。   {@book 坐骑和其他动物表|XPHB|6|坐骑和其他动物}将为你展示每种动物的载重。详见{@book 附录 B|XPHB|9}来查阅动物数据卡。",
+						"坐骑的主要用途为替你驮载那些可能拖累你的行李，但它们同样能够帮助你在野外快速旅行。 {@book 坐骑和其他动物表|XPHB|6|坐骑和其他动物}将为你展示每种动物的载重。详见{@book 附录 B|XPHB|9}来查阅动物数据卡。",
 						{
 							"ENG_name": "Mounts and Cargo",
 							"name": "坐骑和货物",
@@ -11899,7 +11899,7 @@
 							"rows": [
 								[
 									"{@item 骆驼|XPHB}",
-									"450磅",
+									"450 磅",
 									"50 GP"
 								],
 								[
@@ -11909,22 +11909,22 @@
 								],
 								[
 									"{@item 驮用马|XPHB|驮用马}",
-									"540磅",
+									"540 磅",
 									"50 GP"
 								],
 								[
 									"{@item 乘用马|XPHB|乘用马}",
-									"480磅",
+									"480 磅",
 									"75 GP"
 								],
 								[
 									"{@item 獒犬|XPHB}",
-									"195磅",
+									"195 磅",
 									"25 GP"
 								],
 								[
 									"{@item 骡子|XPHB}",
-									"420磅",
+									"420 磅",
 									"8 GP"
 								],
 								[
@@ -11934,7 +11934,7 @@
 								],
 								[
 									"{@item 战马|XPHB}",
-									"540磅",
+									"540 磅",
 									"400 GP"
 								]
 							]
@@ -11960,7 +11960,7 @@
 									"style": "row-indent-first",
 									"row": [
 										"{@item 客车（四轮）|XPHB}",
-										"600磅",
+										"600 磅",
 										"100 GP"
 									]
 								},
@@ -11969,7 +11969,7 @@
 									"style": "row-indent-first",
 									"row": [
 										"{@item 货车（二轮）|XPHB}",
-										"200磅",
+										"200 磅",
 										"15 GP"
 									]
 								},
@@ -11986,7 +11986,7 @@
 									"type": "row",
 									"style": "row-indent-first",
 									"row": [
-										"{@item 饲料(每日)|XPHB|每日饲料费}",
+										"{@item 饲料（每日）|XPHB|每日饲料费}",
 										"10 磅",
 										"5 CP"
 									]
@@ -12003,7 +12003,7 @@
 									"style": "row-indent-first",
 									"row": [
 										"{@item 特种鞍座|XPHB|特制}",
-										"40磅",
+										"40 磅",
 										"60 GP"
 									]
 								},
@@ -12021,7 +12021,7 @@
 									"style": "row-indent-first",
 									"row": [
 										"{@item 乘用鞍座|XPHB|骑乘}",
-										"25磅",
+										"25 磅",
 										"10 GP"
 									]
 								},
@@ -12038,7 +12038,7 @@
 									"type": "row",
 									"style": "row-indent-first",
 									"row": [
-										"每日马厩费用",
+										"马厩（每日）",
 										"\u2014",
 										"5 SP"
 									]
@@ -12069,7 +12069,7 @@
 									"page": 230,
 									"id": "703",
 									"entries": [
-										"船只在强逆风中仅能以半速行驶。在风平浪静（无风）的环境中，水运船只无法通过船帆移动，而仅能依靠船桨来行驶。龙骨船和划艇仅适用于湖水与河流。当载具顺流而下时，载具的速度将获得等同于水流流速的提升（通常是时速3里）。这些载具也无法通过船桨在过强的水流中逆行，但是可以通过驮兽在陆地上拖行的方式逆流而上。划艇重100磅，可被随身携带。"
+										"船只在强逆风中仅能以半速行驶。在风平浪静（无风）的环境中，水运船只无法通过船帆移动，而仅能依靠船桨来行驶。龙骨船和划艇仅适用于湖水与河流。当载具顺流而下时，载具的速度将获得等同于水流流速的提升（通常是时速 3 里）。这些载具也无法通过船桨在过强的水流中逆行，但是可以通过驮兽在陆地上拖行的方式逆流而上。划艇重 100 磅，可被随身携带。"
 									]
 								},
 								{
@@ -12079,7 +12079,7 @@
 									"page": 230,
 									"id": "704",
 									"entries": [
-										"一切比龙骨船或划艇大的船只都需要一队熟练雇工（见本章后文的{@book 服务|XPHB|6|服务}）才能正常运转。如列表所示，一艘船所需的最少熟练雇工由船只类型决定。"
+										"一切比龙骨船或划艇大的船只都需要一队熟练雇工（见本章后文的\"{@book 服务|XPHB|6|服务}\"）才能正常运转。如列表所示，一艘船所需的最少熟练雇工由船只类型决定。"
 									]
 								},
 								{
@@ -12089,7 +12089,7 @@
 									"page": 230,
 									"id": "705",
 									"entries": [
-										"以吊床为单位，下方的列表列出了一艘船可搭乘的小型与中型乘客上限。一艘配备私人房间的船可搭乘的乘客数量为列表中的五分之一。一张吊床床位的价格通常为每日5SP，但不同船只可能也会导致价格变动。一小间私人船舱的价格通常为每日2GP。"
+										"以吊床为单位，下方的列表列出了一艘船可搭乘的小型与中型乘客上限。一艘配备私人房间的船可搭乘的乘客数量为列表中的五分之一。一张吊床床位的价格通常为每日 5 SP，但不同船只可能也会导致价格变动。一小间私人船舱的价格通常为每日 2 GP。"
 									]
 								},
 								{
@@ -12099,17 +12099,17 @@
 									"page": 230,
 									"id": "706",
 									"entries": [
-										"拥有{@variantrule 伤害阈值|XPHB}的载具会在下方的列表中写明其数值。"
+										"拥有{@variantrule 伤害阈值|XPHB}（见术语汇编）的载具会在下方的列表中写明其数值。"
 									]
 								},
 								{
 									"ENG_name": "Ship Repair",
-									"name": "船舶修理",
+									"name": "修复船只",
 									"type": "entries",
 									"page": 230,
 									"id": "707",
 									"entries": [
-										"修复损坏的船只仅可在船只停泊时进行。修复已损失的1生命值需要花费1天时间和20 GP的材料与人工费。若修复地点位于某个资源和熟练雇工充裕的地方\u2014\u2014例如城市船坞\u2014\u2014用于修复所花费的时间和金钱减半。"
+										"修复损坏的船只仅可在船只停泊时进行。修复已损失的 1 生命值需要花费 1 天时间和 20 GP 的材料与人工费。若修复地点位于某个资源和熟练雇工充裕的地方\u2014\u2014例如城市船坞\u2014\u2014用于修复所花费的时间和金钱减半。"
 									]
 								},
 								{
@@ -12244,17 +12244,17 @@
 						"本节介绍了各项服务，以及冒险者可能需要花钱的开销。",
 						{
 							"ENG_name": "Lifestyle Expenses",
-							"name": "生活开销",
+							"name": "生活开支",
 							"type": "entries",
 							"page": 230,
 							"id": "709",
 							"entries": [
-								"生活开销部分总结了生活在奇幻世界中的各类花费，包括住宿、饮食、装备维护与其他必要开销。",
+								"生活开支部分总结了生活在奇幻世界中的各类花费，包括住宿、饮食、装备维护与其他必要开支。",
 								"在每周或每月之初（由DM决定），玩家需要选择下列生活方式中的一个\u2014\u2014乞食、流浪、穷困、俭朴、舒适、富裕或奢华，并支付对应生活方式的开支。",
 								"一种生活方式不会招致必然的结果。但DM可能会根据不同的生活方式来决定他人如何看待你的角色，或是你的角色在生活中可能碰到的隐患。",
 								{
 									"ENG_name": "Wretched (Free)",
-									"name": "乞食（免费）",
+									"name": "乞食（无开支）",
 									"type": "entries",
 									"page": 230,
 									"id": "70a",
@@ -12350,7 +12350,7 @@
 											"type": "row",
 											"style": "row-indent-first",
 											"row": [
-												"{@item 麦酒（一马克杯）|XPHB}",
+												"{@item 麦酒（马克杯）|XPHB}",
 												"4 CP"
 											]
 										},
@@ -12374,7 +12374,7 @@
 											{
 												"type": "cell",
 												"width": 2,
-												"entry": "{@i 每日旅馆住宿费}"
+												"entry": "{@i 旅馆住宿（每日）}"
 											}
 										],
 										{
@@ -12389,7 +12389,7 @@
 											"type": "row",
 											"style": "row-indent-first",
 											"row": [
-												"贫穷",
+												"穷困",
 												"1 SP"
 											]
 										},
@@ -12444,7 +12444,7 @@
 											"type": "row",
 											"style": "row-indent-first",
 											"row": [
-												"贫穷",
+												"穷困",
 												"2 CP"
 											]
 										},
@@ -12536,11 +12536,11 @@
 											"每里1CP"
 										],
 										[
-											"过路费",
+											"道路或关卡费",
 											"1 CP"
 										],
 										[
-											"渡河费",
+											"船运费",
 											"每里1SP"
 										]
 									]
@@ -12600,7 +12600,7 @@
 									"basicRules2024": true,
 									"colLabels": [
 										"法术环阶",
-										"可获得",
+										"可购地点",
 										"花费"
 									],
 									"colStyles": [
@@ -12626,22 +12626,22 @@
 										],
 										[
 											"{@filter 3|spells|level=3}",
-											"仅限城镇或城市",
+											"仅城镇或城市",
 											"300 GP"
 										],
 										[
 											"{@filter 4\u20135|spells|level=4;5}",
-											"仅限城镇或城市",
+											"仅城镇或城市",
 											"2,000 GP"
 										],
 										[
 											"{@filter 6\u20138|spells|level=6;8}",
-											"仅限城市",
+											"仅城市",
 											"20,000 GP"
 										],
 										[
 											"{@filter 9|spells|level=9}",
-											"仅限城市",
+											"仅城市",
 											"100,000 GP"
 										]
 									]
@@ -12691,7 +12691,7 @@
 								},
 								{
 									"ENG_name": "No More Than Three Items",
-									"name": "不超过三个物件",
+									"name": "最多三件",
 									"type": "entries",
 									"page": 232,
 									"id": "719",
@@ -12706,7 +12706,7 @@
 									"page": 232,
 									"id": "71a",
 									"entries": [
-										"当你不再满足物品的同调条件、或同调的物品处于你100尺以外的地方至少24小时、你死亡或另一个生物同调了该物品时，你对物品的同调会立刻结束。你也可以通过进行{@variantrule 短休|XPHB}来再次集中于已同调的物品上，并自愿地解除与该物品的同调，除非该物品附有诅咒。"
+										"当你不再满足物品的同调条件、或同调的物品处于你 100 尺以外的地方至少 24 小时、你死亡或另一个生物同调了该物品时，你对物品的同调会立刻结束。你也可以通过进行{@variantrule 短休|XPHB}来再次集中于已同调的物品上，并自愿地解除与该物品的同调，除非该物品附有诅咒。"
 									]
 								}
 							]
@@ -12768,17 +12768,17 @@
 									"id": "720",
 									"entries": [
 										"本章的{@book 工具|XPHB|6|工具}部分列出了制作不同物品所需的不同工具。DM还可以为没有列在其中的物品分配某种能够制作它的工具。",
-										"你必须使用一个物品指定的工具才能制作出该物品，并且你还必须拥有对应的工具熟练项。任何协助你制作的成员也必须拥有其熟练项。"
+										"你必须使用一个物品指定的工具才能制作出该物品，并且你还必须拥有对应的工具熟练。任何协助你制作的成员也必须拥有其熟练。"
 									]
 								},
 								{
 									"ENG_name": "Raw Materials",
-									"name": "原材料",
+									"name": "原料",
 									"type": "entries",
 									"page": 233,
 									"id": "721",
 									"entries": [
-										"制作物品时，你需要拥有价值该物品正常购买价的一半（向下取整）的原料才能进行制作。例如，你需要750 GP的原料才能造出售价为1500 GP的板甲。DM能够决定适合的原料是否有机会获取。"
+										"制作物品时，你需要拥有价值该物品正常购买价的一半（向下取整）的原料才能进行制作。例如，你需要 750GP 的原料才能造出售价为 1500GP 的板甲。DM能够决定适合的原料是否有机会获取。"
 									]
 								},
 								{
@@ -12788,9 +12788,9 @@
 									"page": 233,
 									"id": "722",
 									"entries": [
-										"决定一件物品需要花费多少天（一天工作8小时）才能完成制作时，将物品的购买价格以GP为单位并除以10（将零头向上取整算作一天）。例如，你需要5天时间来制作一把售价50GP的重弩。",
-										"如果某个物品需要制作多日，那么制作天数不需要连续。",
-										"角色们可以齐心协力来缩短制作工期。将制作某件魔法物品所需的时间除以参与制作该物品的角色数量。一般来说，只有一名角色可以为你提供帮助，但DM可能也会允许更多的助手参与进来。"
+										"决定一件物品需要花费多少天（一天工作 8 小时）才能完成制作时，将物品的购买价格以GP为单位并除以 10（将零头向上取整算作一天）。例如，你需要 5 天时间来制作一把售价 50GP 的重弩。",
+										"如果某个物品需要多日制作，那么制作天数不需要连贯。",
+										"角色们可以一起努力来缩减制作所需的时间。多个角色共同参与制作时，将制作时间除以参与制作的角色数量。正常情况下，协助你进行制作的仅能有一个角色，但DM也可能允许更多的角色参与协助。"
 									]
 								}
 							]
@@ -12802,7 +12802,7 @@
 							"page": 233,
 							"id": "723",
 							"entries": [
-								"拥有草药工具熟练项的角色可以制造{@item 治疗药水|XDMG}。酿造一瓶治疗药水需要使用草药工具并花费25 GP的原料来进行一天（工作8小时）的制作。"
+								"拥有草药工具熟练项的角色可以制造{@item 治疗药水|XDMG}。酿造一瓶治疗药水需要使用草药工具并花费 25GP 的原料来进行一天（工作 8 小时）的制作。"
 							]
 						},
 						{
@@ -12820,7 +12820,7 @@
 									"page": 233,
 									"id": "725",
 									"entries": [
-										"抄录卷轴所花费的时间和金钱依据法术的环阶决定，具体如下方{@book 法术卷轴价格表|XPHB|6|法术卷轴消耗}所示。你必须工作8小时才能满足一日的抄录。如果某个卷轴需要多日抄录，那么抄录天数不需要连贯。"
+										"抄录卷轴所花费的时间和金钱依据法术的环阶决定，具体如下方{@book 法术卷轴价格表|XPHB|6|法术卷轴价格}所示。你必须工作 8 小时才能满足一日的抄录。如果某个卷轴需要多日抄录，那么抄录天数不需要连贯。"
 									]
 								},
 								{
@@ -12830,7 +12830,7 @@
 									"page": 233,
 									"id": "726",
 									"entries": [
-										"你必须拥有{@skill 奥秘|XPHB}技能或{@item 书法工具|XPHB}的熟练项才能抄录卷轴。你还必须在每日抄录的期间一直准备着对应法术。你同时必须提供法术所需要的任何材料成分；如果抄录的法术会消耗其材料成分，那么材料只有在你完成卷轴时才会被消耗。卷轴中抄录的法术使用你的法术豁免DC与法术攻击加值。"
+										"你必须拥有{@skill 奥秘|XPHB}技能或{@item 书法工具|XPHB}的熟练才能抄录卷轴。你还必须在每日抄录的期间一直准备着对应法术。你同时必须提供法术所需要的任何材料成分；如果抄录的法术会消耗其材料成分，那么材料只有在你完成卷轴时才会被消耗。卷轴中抄录的法术使用你的法术豁免DC与法术攻击加值。"
 									]
 								},
 								{
@@ -12845,7 +12845,7 @@
 								},
 								{
 									"type": "table",
-									"caption": "法术卷轴消耗",
+									"caption": "法术卷轴价格",
 									"srd52": true,
 									"basicRules2024": true,
 									"colLabels": [
@@ -12861,52 +12861,52 @@
 									"rows": [
 										[
 											"{@filter 戏法|spells|level=0}",
-											"1天",
+											"1 天",
 											"15 GP"
 										],
 										[
 											"{@filter 1|spells|level=1}",
-											"1天",
+											"1 天",
 											"25 GP"
 										],
 										[
 											"{@filter 2|spells|level=2}",
-											"3天",
+											"3 天",
 											"100 GP"
 										],
 										[
 											"{@filter 3|spells|level=3}",
-											"5天",
+											"5 天",
 											"150 GP"
 										],
 										[
 											"{@filter 4|spells|level=4}",
-											"10天",
+											"10 天",
 											"1,000 GP"
 										],
 										[
 											"{@filter 5|spells|level=5}",
-											"25天",
+											"25 天",
 											"1,,500 GP"
 										],
 										[
 											"{@filter 6|spells|level=6}",
-											"40天",
+											"40 天",
 											"10,000 GP"
 										],
 										[
 											"{@filter 7|spells|level=7}",
-											"50天",
+											"50 天",
 											"12,,500 GP"
 										],
 										[
 											"{@filter 8|spells|level=8}",
-											"60天",
+											"60 天",
 											"15,000 GP"
 										],
 										[
 											"{@filter 9|spells|level=9}",
-											"120天",
+											"120 天",
 											"50,000 GP"
 										]
 									]
@@ -12959,8 +12959,8 @@
 									"basicRules2024": true,
 									"colLabels": [
 										"职业",
-										"何时更改",
-										"法术数量"
+										"何时可更改",
+										"单次更换数量"
 									],
 									"colStyles": [
 										"col-2",
@@ -12970,47 +12970,47 @@
 									"rows": [
 										[
 											"{@class 吟游诗人|XPHB}",
-											"提升等级",
+											"升级时",
 											"一"
 										],
 										[
 											"{@class 牧师|XPHB}",
-											"完成一次长休",
-											"任何"
+											"完成一次长休时",
+											"任意"
 										],
 										[
 											"{@class 德鲁伊|XPHB}",
-											"完成一次长休",
-											"任何"
+											"完成一次长休时",
+											"任意"
 										],
 										[
 											"{@class 圣武士|XPHB}",
-											"完成一次长休",
+											"完成一次长休时",
 											"一"
 										],
 										[
 											"{@class 游侠|XPHB}",
-											"完成一次长休",
+											"完成一次长休时",
 											"一"
 										],
 										[
 											"{@class 术士|XPHB}",
-											"提升等级",
+											"升级时",
 											"一"
 										],
 										[
 											"{@class 魔契师|XPHB}",
-											"提升等级",
+											"升级时",
 											"一"
 										],
 										[
 											"{@class 法师|XPHB}",
-											"完成一次长休",
-											"任何"
+											"完成一次长休时",
+											"任意"
 										]
 									]
 								},
-								"大多数可施展法术的怪物无法更改其准备法术列表，但dm可以自行更改。"
+								"大多数可施展法术的怪物无法更改其准备法术列表，但 DM 可以自行更改。"
 							]
 						},
 						{
@@ -13050,7 +13050,7 @@
 							"page": 235,
 							"id": "72e",
 							"entries": [
-								"每项法术都属于0至九环其中一阶，且在法术描述中有所标注。法术的环阶大致指示了它的强度。零环法术，即戏法，是一种简便到几乎不经思考就可以施展的法术。每个施法职业都给出了这个职业在何时才能使用特定环阶的法术。",
+								"每项法术都属于 0 至九环其中一阶，且在法术描述中有所标注。法术的环阶大致指示了它的强度。零环法术，即戏法，是一种简便到几乎不经思考就可以施展的法术。每个施法职业都给出了这个职业在何时才能使用特定环阶的法术。",
 								{
 									"ENG_name": "Spell Slots",
 									"name": "法术位",
@@ -13065,7 +13065,7 @@
 								},
 								{
 									"ENG_name": "Casting without Slots",
-									"name": "无法术位施法",
+									"name": "无需法术位的施法",
 									"type": "entries",
 									"page": 235,
 									"id": "730",
@@ -13085,7 +13085,7 @@
 													"ENG_name": "Rituals",
 													"name": "仪式",
 													"type": "item",
-													"entry": "某些法术的施法时间条目中带有仪式标签。这些法术除了可以如常施展之外，还能够作为一道仪式来施展。一道法术的仪式版本的施法时间比其通常版本要多10分钟，但无需消耗法术位。要想将一道法术作为仪式施展，施法者必须准备了这道法术。"
+													"entry": "某些法术的施法时间条目中带有仪式标签。这些法术除了可以如常施展之外，还能够作为一道仪式来施展。一道法术的仪式版本的施法时间比其通常版本要多 10 分钟，但无需消耗法术位。要想将一道法术作为仪式施展，施法者必须准备了这道法术。"
 												},
 												{
 													"ENG_name": "Special Abilities",
@@ -13144,7 +13144,7 @@
 										],
 										[
 											"咒法",
-											"传送生物或物件"
+											"转移生物或物件"
 										],
 										[
 											"预言术",
@@ -13281,7 +13281,7 @@
 								"法术成分是施法者施展该法术时必须满足的物理条件。每项法术的描述中都会说明其施展时是否需要言语Verbal（V）、姿势Somatic（S）、材料Material（M）成分。施法者只有在满足一项法术所有的成分需求后才能施展相应的法术。",
 								{
 									"ENG_name": "Verbal (V)",
-									"name": "言语Verbal（V）",
+									"name": "言语（V）",
 									"type": "entries",
 									"page": 236,
 									"id": "73a",
@@ -13301,7 +13301,7 @@
 								},
 								{
 									"ENG_name": "Somatic (S)",
-									"name": "姿势Somatic（S）",
+									"name": "姿势（S）",
 									"type": "entries",
 									"page": 236,
 									"id": "73c",
@@ -13311,13 +13311,13 @@
 								},
 								{
 									"ENG_name": "Material (M)",
-									"name": "材料Material（M）",
+									"name": "材料（M）",
 									"type": "entries",
 									"page": 237,
 									"id": "73d",
 									"entries": [
 										"材料成分是用于法术施展的特定材料，法术成分一栏会在括号中注明具体内容。这些材料不会在施法时被消耗，除非法术特别说明。施法者必须有一只空闲的手以拿取材料成分，但拿取材料成分的手可以和摆出施法姿势的是同一只手。",
-										"施法者可以使用{@item 材料包|XPHB}（见{@book 第六章|XPHB|6|材料包(25 GP)}）或法器（只要施法者具有相应特性允许使用法器以作为替代）取代法术所指定的材料，除非该法术的材料成分有指定的价格或是会被消耗。要使用材料包，你必须用一只空闲的手从其中取出材料；而要使用法器，你必须并在施法过程中一直握持它，除非法术另有说明（详见{@book 第六章|XPHB|6}）。"
+										"施法者可以使用{@item 材料包|XPHB}（见{@book 第六章|XPHB|6|材料包（25GP）}）或法器（只要施法者具有相应特性允许使用法器以作为替代）取代法术所指定的材料，除非该法术的材料成分有指定的价格或是会被消耗。要使用材料包，你必须用一只空闲的手从其中取出材料；而要使用法器，你必须并在施法过程中一直握持它，除非法术另有说明（详见{@book 第六章|XPHB|6}）。"
 									]
 								}
 							]
@@ -13338,7 +13338,7 @@
 											"ENG_name": "Concentration",
 											"name": "专注",
 											"type": "item",
-											"entry": "需要专注的法术持续时间遵循{@status 专注|XPHB}规则。"
+											"entry": "专注法术依{@status 专注|XPHB}规则运行（详见术语汇编）。"
 										},
 										{
 											"ENG_name": "Instantaneous",
@@ -13350,7 +13350,7 @@
 											"ENG_name": "Time Span",
 											"name": "持续时间段",
 											"type": "item",
-											"entry": "持续法术会给出一个时间段，其单位是轮、分钟、小时或者其他。例如，持续时间为\"1分钟\"意味着法术会在1分钟后结束。只要你未处于{@condition 失能|XPHB}状态，你便可以随时结束一个正在持续的、由你所施展的持续法术（无需动作）。"
+											"entry": "持续法术会给出一个时间段，其单位是轮、分钟、小时或者其他。例如，持续时间为\"1 分钟\"意味着法术会在1分钟后结束。只要你未处于{@condition 失能|XPHB}状态，你便可以随时结束一个正在持续的、由你所施展的持续法术（无需动作）。"
 										}
 									]
 								}
@@ -13389,17 +13389,17 @@
 											"page": 238,
 											"id": "742",
 											"entries": [
-												"如果法术的目标是由你指定的生物，则你也可以选择自身作为目标，除非法术描述中明确说明该目标必须是{@variantrule 敌对 【态度】|XPHB|敌对}生物或必须不是你自身。"
+												"如果法术的目标是由你指定的生物，则你也可以选择自身作为目标，除非法术描述中明确说明该目标必须是{@variantrule 敌对【态度】|XPHB|敌对}生物或必须不是你自身。"
 											]
 										},
 										{
 											"ENG_name": "Areas of Effect",
-											"name": "效应范围",
+											"name": "效应区域",
 											"type": "entries",
 											"page": 238,
 											"id": "743",
 											"entries": [
-												"一些法术，如{@spell 雷鸣波|XPHB}的效应会覆盖一片名为{@variantrule 效应区域|XPHB}（详见{@book 术语汇编|XPHB|10|效应区域}）的区域。该区域会用来决定法术的目标。法术详述中会详细说明其是否拥有效应范围，通常为下述形状区域之一：{@variantrule 锥状 [效应区域]|XPHB|锥状}、{@variantrule 立方 [效应区域]|XPHB|立方}、{@variantrule 柱状 [效应区域]|XPHB|柱状}、{@variantrule 光环 [效应区域]|XPHB|光环}、{@variantrule 线状 [效应区域]|XPHB|线状}、{@variantrule 球状 [效应区域]|XPHB|球状}。",
+												"一些法术，如{@spell 雷鸣波|XPHB}的效应会覆盖一片名为{@variantrule 效应区域|XPHB}（详见{@book 术语汇编|XPHB|10|效应区域}）的区域。该区域会用来决定法术的目标。法术详述中会详细说明其是否拥有效应范围，通常为下述形状区域之一：{@variantrule 锥状 [效应区域]|XPHB|锥状}、{@variantrule 立方 [效应区域]|XPHB|立方}、{@variantrule 柱状【效应区域】|XPHB|柱状}、{@variantrule 光环【效应区域】|XPHB|光环}、{@variantrule 线状【效应区域】|XPHB|线状}、{@variantrule 球状 [效应区域]|XPHB|球状}。",
 												{
 													"type": "image",
 													"href": {
@@ -13474,7 +13474,7 @@
 								},
 								{
 									"ENG_name": "Combining Spell Effects",
-									"name": "组合法术效应",
+									"name": "法术效应混合",
 									"type": "entries",
 									"page": 238,
 									"id": "748",
@@ -14154,7 +14154,7 @@
 					"page": 344,
 					"id": "a8c",
 					"entries": [
-						"元素力量和现实的基础构件源自这些内层位面：",
+						"元素力量与现实的构建基板自这些内层位面发源：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
@@ -14276,7 +14276,7 @@
 									"中立善良"
 								],
 								[
-									"焦炎地狱",
+									"焦炎火狱",
 									"守序邪恶，中立邪恶"
 								],
 								[
@@ -14308,7 +14308,7 @@
 									"混乱邪恶，混乱中立"
 								],
 								[
-									"约瑟园",
+									"伊斯加德",
 									"混乱善良，混乱中立"
 								]
 							]
@@ -14412,21 +14412,21 @@
 								},
 								{
 									"ENG_name": "\"You",
-									"name": "\"你",
+									"name": "\"你\"",
 									"type": "item",
 									"entry": "一切游戏规则（不论是在术语汇编中的还是在其他地方的）都会经常性的说明\"你遇到了/发生了什么事\"。这里的\"你\"指的是游戏中某个特定时刻下，正在适用这条规则的生物/物件。举例来说，在{@condition 倒地|XPHB}状态中的\"你\"指的就是此刻正陷入此状态的某个生物。"
 								},
 								{
 									"ENG_name": "\"See Also",
-									"name": "\"参见",
+									"name": "\"另见\"",
 									"type": "item",
-									"entry": "有些术语条目中包含\"参见...\"的文本，其会指向术语汇编中的另一术语条目或本书中的某些章节，亦或者两者皆有。"
+									"entry": "有些术语条目中包含\"另见...\"的文本，其会指向术语汇编中的另一术语条目或本书中的某些章节，亦或者两者皆有。"
 								},
 								{
 									"ENG_name": "No Obsolete Terms",
-									"name": "无过时术语",
+									"name": "没有过时术语",
 									"type": "item",
-									"entry": "本术语汇编中仅包含现行规则的术语释义。如果你正在寻找一条来自早期版本的五版规则术语，你可以翻阅本书索引部分。"
+									"entry": "本术语汇编中仅包含现行规则的术语释义。如果你正在寻找一条来自早期版本的五版规则术语，你可以翻阅本书索引部分 。"
 								},
 								{
 									"ENG_name": "Abbreviations",
@@ -14541,7 +14541,7 @@
 								],
 								[
 									"PB",
-									"{@variantrule 熟练项|XPHB|熟练加值}"
+									"{@variantrule 熟练|XPHB|熟练加值}"
 								],
 								[
 									"PP",
@@ -14879,7 +14879,7 @@
 						},
 						{
 							"ENG_name": "Cylinder [Area of Effect]",
-							"name": "柱状 [效应区域]",
+							"name": "柱状【效应区域】",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15012,7 +15012,7 @@
 						},
 						{
 							"ENG_name": "Emanation [Area of Effect]",
-							"name": "光环 [效应区域]",
+							"name": "光环【效应区域】",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15075,7 +15075,7 @@
 						},
 						{
 							"ENG_name": "Friendly [Attitude]",
-							"name": "友好 【态度】",
+							"name": "友好【态度】",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15166,7 +15166,7 @@
 						},
 						{
 							"ENG_name": "Hostile [Attitude]",
-							"name": "敌对 【态度】",
+							"name": "敌对【态度】",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15208,7 +15208,7 @@
 						},
 						{
 							"ENG_name": "Indifferent [Attitude]",
-							"name": "冷漠 【态度】",
+							"name": "冷漠【态度】",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15257,7 +15257,7 @@
 						},
 						{
 							"ENG_name": "Line [Area of Effect]",
-							"name": "线状 [效应区域]",
+							"name": "线状【效应区域】",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15383,7 +15383,7 @@
 						},
 						{
 							"ENG_name": "Proficiency",
-							"name": "熟练项",
+							"name": "熟练",
 							"type": "statblock",
 							"tag": "variantrule",
 							"source": "XPHB"
@@ -15565,7 +15565,7 @@
 						},
 						{
 							"ENG_name": "Surprised",
-							"name": "措手不及",
+							"name": "突袭",
 							"type": "statblock",
 							"tag": "status",
 							"source": "XPHB"
@@ -15806,7 +15806,7 @@
 								},
 								{
 									"ENG_name": "Additional Consultation:",
-									"name": "额外咨询：",
+									"name": "补充咨询：",
 									"type": "item",
 									"entries": [
 										"Kyle Brink, Aaron Forsythe, Mark Heggen, Jay Jani, Chris Mooney, James Rose, Carl Sibley, Kale Stutzman"
@@ -15830,7 +15830,7 @@
 								},
 								{
 									"ENG_name": "Imaging Technicians:",
-									"name": "成像技术员：",
+									"name": "影像技术：",
 									"type": "item",
 									"entries": [
 										"Daniel Corona, Meagan Kenreck, Kevin Yee"
@@ -15838,7 +15838,7 @@
 								},
 								{
 									"ENG_name": "Prepress Specialist:",
-									"name": "印前专家：",
+									"name": "排版专员：",
 									"type": "item",
 									"entries": [
 										"Jefferson Dunlap"
@@ -15858,7 +15858,7 @@
 									"name": "基于原始游戏的创建者：",
 									"type": "item",
 									"entries": [
-										"Gary Gygax 和 Dave Arneson首创，并在过去50年间由许多人共同完善"
+										"Gary Gygax 和 Dave Arneson首创，并在过去 50 年间由许多人共同完善"
 									]
 								}
 							]
