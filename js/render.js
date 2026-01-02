@@ -2093,7 +2093,7 @@ globalThis.Renderer = function () {
 				textStack[0] += `<i>${Renderer.attackTagToFull(text, {isRoll: tag === "@atkr"})}</i>`;
 				break;
 			case "@actSave": textStack[0] += `<i>${Parser.attAbvToFull(text)} ${I18nUtil.get("common.saving_throw")}:</i>`; break;
-			case "@actSaveSuccess": textStack[0] += `<i>Success:</i>`; break;
+			case "@actSaveSuccess": textStack[0] += `<i>成功:</i>`; break;
 			case "@actSaveFail": {
 				const [ordinal] = Renderer.splitTagByPipe(text);
 				if (ordinal) textStack[0] += `<i>${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()} 失败:</i>`;

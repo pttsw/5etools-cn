@@ -606,21 +606,21 @@
 			"trait": [
 				{
 					"ENG_name": "Water Breathing (Water Only)",
-					"name": "水下呼吸（仅水中）",
+					"name": "水下呼吸（仅海洋）",
 					"entries": [
 						"该野兽只能在水下呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Flyby (Air Only)",
-					"name": "飞掠（仅空中）",
+					"name": "飞掠（仅天空）",
 					"entries": [
 						"野兽以飞行离开敌人的触及范围时不会引发对方的借机攻击。"
 					]
 				},
 				{
 					"ENG_name": "Pack Tactics (Land and Water Only)",
-					"name": "集群战术（仅陆地和水中）",
+					"name": "集群战术（仅大地与海洋）",
 					"entries": [
 						"该野兽至少有一个未处于{@condition 失能}的盟友在目标生物 5尺内时，它对该生物发动的攻击检定有优势。"
 					]
@@ -665,21 +665,21 @@
 			"_versions": [
 				{
 					"ENG_name": "Bestial Spirit (Air)",
-					"name": "野兽灵魄（空）",
+					"name": "野兽灵魄（天空）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"水下呼吸（仅水中）",
-									"集群战术（仅陆地和水中）"
+									"水下呼吸（仅海洋）",
+									"集群战术（仅大地与海洋）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "飞掠（仅空中）",
+									"rename": "飞掠（仅天空）",
 									"with": "飞掠"
 								}
 							}
@@ -698,21 +698,21 @@
 				},
 				{
 					"ENG_name": "Bestial Spirit (Land)",
-					"name": "野兽灵魄（陆）",
+					"name": "野兽灵魄（大地）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"水下呼吸（仅水中）",
-									"飞掠（仅空中）"
+									"水下呼吸（仅海洋）",
+									"飞掠（仅天空）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "集群战术（仅陆地和水中）",
+									"rename": "集群战术（仅大地与海洋）",
 									"with": "集群战术"
 								}
 							}
@@ -731,20 +731,20 @@
 				},
 				{
 					"ENG_name": "Bestial Spirit (Water)",
-					"name": "野兽灵魄（水）",
+					"name": "野兽灵魄（海洋）",
 					"source": "TCE",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"飞掠（仅空中）"
+									"飞掠（仅天空）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "集群战术（仅陆地和水中）",
+									"rename": "集群战术（仅大地与海洋）",
 									"with": "集群战术"
 								}
 							}
@@ -839,7 +839,7 @@
 				},
 				{
 					"ENG_name": "Healing Touch (1/Day)",
-					"name": "治愈之触 (1/日)",
+					"name": "治愈之触（1/日）",
 					"entries": [
 						"天族触碰另一生物。目标魔法性地恢复目标等同于 {@dice 2d8 + summonSpellLevel} 点生命值。"
 					]
@@ -1561,7 +1561,7 @@
 			"bonus": [
 				{
 					"ENG_name": "Fey Step",
-					"name": "妖精跨步",
+					"name": "妖精步伐",
 					"entries": [
 						"妖精魔法地传送到最远 30 尺的一处它可见的未被占据空间。然后根据所选妖精情绪，触发以下效果之一：",
 						{
@@ -1625,7 +1625,7 @@
 					"bonus": [
 						{
 							"ENG_name": "Fey Step",
-							"name": "妖精跨步",
+							"name": "妖精步伐",
 							"entries": [
 								"妖精魔法地传送到最远 30尺的一处它可见的未被占据空间。在使用妖精步后，妖精在它回合结束前的下一次攻击检定具有优势。"
 							]
@@ -1639,7 +1639,7 @@
 					"bonus": [
 						{
 							"ENG_name": "Fey Step",
-							"name": "妖精跨步",
+							"name": "妖精步伐",
 							"entries": [
 								"妖精魔法地传送到最远 30尺的一处它可见的未被占据空间。妖精可以立即选择它 10 尺内可见的一个生物，强迫其进行一次对抗你的法术豁免 DC 的感知豁免，若豁免失败则其将被你及妖精生物{@condition 魅惑}，持续 1 分钟或直到目标受到任何伤害。"
 							]
@@ -1653,7 +1653,7 @@
 					"bonus": [
 						{
 							"ENG_name": "Fey Step",
-							"name": "妖精跨步",
+							"name": "妖精步伐",
 							"entries": [
 								"妖精魔法地传送到最远 30尺的一处它可见的未被占据空间。妖精可以立即令魔法黑暗充斥于它 5 尺内的一个 5 尺立方区域，魔法黑暗持续直到妖精的下回合结束。"
 							]
@@ -1777,7 +1777,7 @@
 			],
 			"tokenCustom": true,
 			"traitTags": [
-				"临终苦难",
+				"焚身爆",
 				"魔鬼视界",
 				"魔法抗性"
 			],
@@ -1813,7 +1813,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "焚身爆（仅恶魔）",
-									"with": "临终苦难"
+									"with": "焚身爆"
 								}
 							},
 							{
@@ -1846,7 +1846,7 @@
 						"climb": 40
 					},
 					"traitTags": [
-						"临终苦难",
+						"焚身爆",
 						"魔法抗性"
 					],
 					"damageTags": [
@@ -1977,7 +1977,7 @@
 				}
 			],
 			"hp": {
-				"special": "1+你的智力调整值+你的奇械师等级（人工生命仆从拥有与你奇械师等级相同数量的生命骰[D4]）"
+				"special": "1 +你的智力调整值+你的奇械师等级（人工生命仆从拥有与你奇械师等级相同数量的D4 生命骰）"
 			},
 			"speed": {
 				"walk": 20,
@@ -2016,7 +2016,7 @@
 					"ENG_name": "Evasion",
 					"name": "反射闪避",
 					"entries": [
-						"如果人工生命仆从受到一个允许它进行敏捷豁免以仅受一半伤害的效果影响，则它在豁免成功时不受伤害，豁免失败时仅受一半伤害。如果它处于{@condition 失能}状态，则无法使用此特性。"
+						"当人工生命受到需要通过敏捷豁免来使伤害减半的效应时，可以作为代替，在豁免成功时不受伤害，豁免失败时只受一半伤害。人工生命无法在{@condition 失能}状态下使用这个特性。"
 					]
 				}
 			],
@@ -2026,7 +2026,7 @@
 					"ENG_name": "Force Strike",
 					"name": "力场打击",
 					"entries": [
-						"{@atk rw} {@hitYourSpellAttack} 命中，范围30尺，单个你可见的目标。{@h}{@damage 1d4 + PB} 力场伤害。"
+						"{@atk rw} ：攻击加值等于{@hitYourSpellAttack} ，射程 30 尺，单个你可见的目标。{@h}{@damage 1d4 + PB} 力场伤害。"
 					]
 				}
 			],
@@ -2035,7 +2035,7 @@
 					"ENG_name": "Channel Magic",
 					"name": "传递法术",
 					"entries": [
-						"人工生命仆从传递你施放的一个范围为接触的法术。人工生命仆从必须在你120尺范围内。"
+						"当你施展施法距离为触碰的法术时，只要人工生命距离你120尺内，它就能替你传递该法术。"
 					]
 				}
 			],
@@ -2116,7 +2116,7 @@
 					"ENG_name": "Spider Climb",
 					"name": "蛛行术",
 					"entries": [
-						"拟身怪可以攀爬困难表面，包括倒挂于天花板，而无需进行属性检定。"
+						"拟身怪可以攀爬在难以攀爬的表面上，包括倒吊在天花板上，且不需要进行属性检定。"
 					]
 				}
 			],
@@ -2125,14 +2125,14 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 3}，触及5尺，单个目标。{@h}1点穿刺伤害加2（{@damage 1d4}）强酸伤害。"
+						"{@atk mw} 命中{@hit 3}，触及 5 尺，单个目标。{@h} 1 点穿刺伤害加 2（{@damage 1d4}）强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Shape-Shift",
 					"name": "变形",
 					"entries": [
-						"拟身怪变形为一个物件或变回其真实的无定型形态。其具体数值在每种形态下都相同。它所穿着或携带的任何装备都不会被转化。如果它死亡，则会恢复其真实形态。"
+						"拟身怪变形成一个物体或者变回到它真实的、无定形的形态。它的数据面板在每种形式中都是相同的。它穿着或携带的任何设备都没有变形。如果它死了，就会恢复到它的真实形态。"
 					]
 				}
 			],
@@ -2253,7 +2253,7 @@
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"机仆在它的回合开始时回复10点生命值。如果它被降低到0点生命值，则该特质无法生效直到一个与之同调的生物耗费24小时维修神器或直到神器受到闪电伤害。"
+						"机仆在它的回合开始时回复10点生命值。如果机仆的生命值降低到0，则该特质无法生效直到一个与之同调的生物耗费24小时维修神器或直到神器受到闪电伤害。"
 					]
 				},
 				{
@@ -2267,23 +2267,23 @@
 					"ENG_name": "Unusual Nature",
 					"name": "非凡本质",
 					"entries": [
-						"机仆无须空气、菜园、饮水和睡眠术。"
+						"机仆无须空气，进食，饮水和睡眠。"
 					]
 				}
 			],
 			"action": [
 				{
 					"ENG_name": "Destructive Fist",
-					"name": "毁灭拳击",
+					"name": "毁灭铁拳",
 					"entries": [
-						"{@atk mw} 命中{@hit 17}，触及10尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。或远程武器攻击：命中{@hit 17}，范围120尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。如果目标为物件，它受到三倍伤害。"
+						"{@atk mw} 命中{@hit 17}，触及 10 尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。或远程武器攻击：命中{@hit 17}，范围120尺，单一目标。{@h}36（{@damage 4d12 + 10}）力场伤害。如果目标为物件，它受到三倍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Crushing Leap",
 					"name": "碾压跃击",
 					"entries": [
-						"如果机仆在其移动中跳跃至少25尺，它能用该动作着陆在一处由一个或多个其他生物占据的空间。该空间内的每个生物被推到机仆身边5尺内一处未被占据的空间内，并必须进行一次{@dc 25}的敏捷豁免。豁免失败者受到26（{@damage 4d12}）钝击伤害并被击{@condition 倒地}。豁免成功则伤害减半，且不会因此被击{@condition 倒地}。"
+						"如果机仆在其移动中跳跃 25 尺，它能用该动作着陆在一处由一个或多个生物占据的空间。该空间内的每个生物被推到机仆身边5尺内一处未被占据的空间内，并必须进行一次{@dc 25} 的敏捷豁免。豁免失败者受到 26 （{@damage 4d12}）钝击伤害并应击{@condition 倒地}。豁免成功则伤害减半，且不会因此{@condition 倒地}。"
 					]
 				}
 			],
@@ -2317,7 +2317,7 @@
 		},
 		{
 			"ENG_name": "Reflection",
-			"name": "幽影",
+			"name": "倒影",
 			"source": "TCE",
 			"page": 158,
 			"_copy": {
@@ -2328,7 +2328,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "幽影",
-						"with": "幽影"
+						"with": "倒影"
 					}
 				}
 			},
@@ -2374,7 +2374,7 @@
 				}
 			],
 			"hp": {
-				"special": "35 + 法术环阶每比3环高一环就增加15"
+				"special": "35 + 15 每比 3 环高的法术等级"
 			},
 			"speed": {
 				"walk": 40
@@ -2419,30 +2419,30 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"该灵魄发动攻击的次数等于该法术环阶的一半（向下取整）。"
+						"该灵魄发动等同于法术环数一半的次数的攻击（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Chilling Rend",
 					"name": "冻寒撕裂",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 寒冷伤害。"
+						"{@atk mw} {@hitYourSpellAttack} 命中，触及 5 尺，单一目标。{@h}{@damage 1d12 + 3 + summonSpellLevel} 寒冷伤害。"
 					]
 				},
 				{
 					"ENG_name": "Dreadful Scream (1/Day)",
-					"name": "恐怖之仪尖啸（1/白昼）",
+					"name": "恐惧尖叫（1/日）",
 					"entries": [
-						"该灵魄发出尖啸。其30尺内的每个生物必须成功通过对抗你法术豁免DC的感知豁免否则被{@condition 恐慌}1分钟。该{@condition 恐慌}生物可以在其每个回合结束时重复该豁免，成功则自身身上的该效应结束。"
+						"该灵魄发出尖叫。处于它 10 尺内的每个生物必须进行一次感知豁免对抗你的法术豁免DC，否则对灵魄{@condition 恐慌} 1分钟。被{@condition 恐慌}的生物可以在其自己回合结束时再进行一次该豁免，豁免成功则终止该生物身上的恐慌效应。"
 					]
 				}
 			],
 			"bonus": [
 				{
 					"ENG_name": "Shadow Stealth (Fear Only)",
-					"name": "阴影隐匿（仅限恐惧术）",
+					"name": "暗影潜藏（仅限恐惧）",
 					"entries": [
-						"当处于微光光照或黑暗中时，该灵魄进行躲藏动作。"
+						"灵魄处于微光光照或黑暗环境时，可以一个附赠动作来执行躲藏动作。"
 					]
 				}
 			],
@@ -2498,7 +2498,7 @@
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "阴影隐匿（仅限恐惧术）",
+									"rename": "暗影潜藏（仅限恐惧）",
 									"with": "幽影隐匿"
 								}
 							}
@@ -2527,7 +2527,8 @@
 					},
 					"bonus": null
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Steel Defender",
@@ -2557,7 +2558,7 @@
 				}
 			],
 			"hp": {
-				"special": "2+你的智力调整值+你奇械师等级的五倍（钢铁守卫拥有与你奇械师等级相同数量的生命骰[D8]）"
+				"special": "2 +你的智力调整值+你奇械师等级的五倍（钢铁守卫拥有与你奇械师等级相同数量的生命骰[D8]）"
 			},
 			"speed": {
 				"walk": 40
@@ -2597,7 +2598,7 @@
 					"ENG_name": "Vigilant",
 					"name": "警觉",
 					"entries": [
-						"该守卫无法被{@status 突袭}。"
+						"钢铁守卫不会被{@status 措手不及}。"
 					]
 				}
 			],
@@ -2607,14 +2608,14 @@
 					"ENG_name": "Force-Empowered Rend",
 					"name": "力场动能撕扯",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，单个你可见的目标。{@h}{@damage 1d8 + PB}点力场伤害。"
+						"{@atk mw} ：攻击加值等同于{@hitYourSpellAttack} ，触及 5 尺，单个你可见的目标。{@h}{@damage 1d8 + PB}点力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Repair (3/Day)",
-					"name": "修理（3/日）",
+					"name": "修理（ 3 次/天）",
 					"entries": [
-						"钢铁守卫体内的魔法机制恢复其自身或5尺内的一个构装体或物体{@dice 2d8 + PB}点生命值。"
+						"安装于钢铁守卫内部的魔法机械能够为钢铁守卫本身或距离其 5 尺内的构装生物或物品恢复 {@dice 2d8 + PB}的生命值。"
 					]
 				}
 			],
@@ -2623,7 +2624,7 @@
 					"ENG_name": "Deflect Attack",
 					"name": "招架攻击",
 					"entries": [
-						"钢铁守卫迫使一个它可见的、距离它5尺内的生物的攻击检定承受劣势，前提是此次攻击检定针对的是钢铁守卫以外的生物。"
+						"当距离钢铁守卫5尺内的一个可见生物对钢铁守卫以外的生物进行攻击时，钢铁守卫能迫使此次攻击承受劣势。"
 					]
 				}
 			],
@@ -2641,11 +2642,11 @@
 		},
 		{
 			"ENG_name": "Undead Spirit",
-			"name": "不死灵魄",
+			"name": "亡灵灵魄",
 			"source": "TCE",
 			"page": 114,
 			"reprintedAs": [
-				"不死灵魄|XPHB"
+				"亡灵灵魄|XPHB"
 			],
 			"summonedBySpell": "亡灵召唤术|TCE",
 			"summonedBySpellLevel": 3,
@@ -2662,13 +2663,13 @@
 				}
 			],
 			"hp": {
-				"special": "30（仅限幽灵与腐化）或20（仅限骷髅） + 法术环阶每比3环高一环增加10"
+				"special": "30 （仅限幽体或腐尸）或20 （仅限骸骨）+ 10 每比三环高的法术等级"
 			},
 			"speed": {
 				"walk": 30,
 				"fly": {
 					"number": 40,
-					"condition": "（仅限幽灵形态；悬浮）"
+					"condition": "（悬浮）（仅限幽体）"
 				},
 				"canHover": true
 			},
@@ -2700,14 +2701,14 @@
 					"ENG_name": "Incorporeal Passage (Ghostly Only)",
 					"name": "虚体通行（仅幽体）",
 					"entries": [
-						"该灵魄可以如同通过{@quickref 困难地形||3}一般穿过其他生物和物体。如果它在某个物体内部结束其回合，则会被传送到最近的未占据空间，并且每移动5尺就受到{@damage 1d10}点力场伤害。"
+						"灵魄可以虚体化并如同穿过{@quickref 困难地形||3}一样穿过其他生物和物件。如果它在自己的回合结束时仍处在物件内部，则被挪到距离最近的未被占据的位置，且每虚体移动5尺便受到 {@damage 1d10} 力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Festering Aura (Putrid Only)",
 					"name": "腐灭灵光（仅腐尸）",
 					"entries": [
-						"任何生物，除你之外，若在其回合开始时处于该灵魄5尺范围内，必须成功通过一次对抗你法术豁免DC的体质豁免，否则将陷入{@condition 中毒}状态直到其下个回合开始。"
+						"除你之外的所有生物，在亡灵5尺内开始其回合时必须进行一次体质豁免对抗你的法术豁免DC，豁免失败则在其下个回合开始前{@condition 中毒}。"
 					]
 				}
 			],
@@ -2716,28 +2717,28 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"该灵魄发动攻击的次数等于该法术环阶的一半（向下取整）。"
+						"该灵魄发动等同于法术环数一半的次数的攻击（向下取整）。"
 					]
 				},
 				{
 					"ENG_name": "Deathly Touch (Ghostly Only)",
 					"name": "致死之触（仅幽体）",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} 命中，触及5尺，一个生物。{@h}{@damage 1d8 + 3 + summonSpellLevel} 暗蚀伤害，且该生物必须成功通过一次对抗你法术豁免DC的感知豁免否则直到目标下一回合结束前对不死生物陷入{@condition 恐慌}。"
+						"{@atk mw}：命中采取{@hitYourSpellAttack}，触及 5 尺，单一生物。{@h}：{@damage 1d8 + 3 + summonSpellLevel}的暗蚀伤害，且目标生物必须进行一次感知豁免对抗你的法术豁免DC，豁免失败则对亡灵{@condition frightened}直到目标下回合结束。"
 					]
 				},
 				{
 					"ENG_name": "Grave Bolt (Skeletal Only)",
 					"name": "暗澹箭（仅骷髅）",
 					"entries": [
-						"{@atk rs} {@hitYourSpellAttack} 命中，范围150尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 暗蚀伤害。"
+						"{@atk rs}：命中采取 {@hitYourSpellAttack} ，射程 150 尺，单一目标。{@h}{@damage 2d4 + 3 + summonSpellLevel} 暗蚀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Rotting Claw (Putrid Only)",
 					"name": "腐灭爪击（仅腐尸）",
 					"entries": [
-						"{@atk mw} {@hitYourSpellAttack}命中，触及5尺，单一目标。{@h}{@damage 1d6 + 3 + summonSpellLevel} 挥砍伤害。如果目标处于{@condition 中毒}状态，它必须在对抗你的法术豁免DC的体质豁免检定中成功，否则在其下一回合结束前处于{@condition 麻痹}状态。"
+						"{@atk mw}：命中采取{@hitYourSpellAttack}，触及 5 尺，单一目标。{@h}：{@damage 1d6 + 3 + summonSpellLevel}的挥砍伤害。如果目标处于{@condition poisoned}状态，其必须进行一次体质豁免对抗你的法术豁免DC，否则{@condition paralyzed}直到目标下回合结束。"
 					]
 				}
 			],
@@ -2932,7 +2933,7 @@
 				}
 			],
 			"hp": {
-				"special": "5 加上你德鲁伊等级的五倍"
+				"special": "5+五倍你的德鲁伊等级"
 			},
 			"speed": {
 				"walk": 30,
@@ -2971,14 +2972,14 @@
 					"ENG_name": "Flame Seed",
 					"name": "火种",
 					"entries": [
-						"{@atk rw} {@hitYourSpellAttack}命中，射程60尺，你能看到的一个目标。{@h}{@damage 1d6 + PB} 火焰伤害。"
+						"{@atk rw}：攻击加值等同于{@hitYourSpellAttack}，射程 60 尺，单个你可见的目标。{@h}：{@damage 1d6 + PB}点火焰伤害。"
 					]
 				},
 				{
 					"ENG_name": "Fiery Teleportation",
 					"name": "烈焰传送",
 					"entries": [
-						"该灵体和您选择的每个愿意的生物，在它5尺范围内，可以传送至您能看到的空位，最多15尺远。然后每个在灵体离开的空间5尺范围内的生物必须进行一次敏捷豁免检定，对抗您的法术豁免DC，否则将受到{@damage 1d6 + 基础攻击加值}火焰伤害。"
+						"灵魄与每个在其周围 5 尺范围内的你选择的自愿生物传送至至多 15 尺远的数处你可见的未被占据的空间。随后每个还处于灵魄原本在的地方周围 5 尺范围内的生物必须成功通过一次对抗你法术豁免DC的敏捷豁免，否则将受到 {@damage 1d6 + PB}火焰伤害。"
 					]
 				}
 			],

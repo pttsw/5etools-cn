@@ -5407,6 +5407,8 @@ globalThis.DataUtil = class {
 				return;
 			}
 
+			delete entParent.translator;
+
 			if (DataUtil.dbg.isTrackCopied) entParent.dbg_isCopied = true;
 			// Handle recursive copy
 			if (entParent._copy) await DataUtil.generic._pMergeCopy(impl, page, entryList, entParent, options);

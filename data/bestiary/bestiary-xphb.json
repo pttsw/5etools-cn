@@ -20,7 +20,7 @@
 				}
 			],
 			"hp": {
-				"special": "40 +10×每比4环高的法术环阶"
+				"special": "40 + 每比四环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 30,
@@ -45,7 +45,7 @@
 			],
 			"languages": [
 				"深潜语",
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -53,14 +53,14 @@
 					"ENG_name": "Regeneration (Slaad Only)",
 					"name": "再生（仅史拉蟾）",
 					"entries": [
-						"若灵魄至少拥有1生命值，则其在自己回合开始时回复10生命值。"
+						"若灵魄至少拥有 1 生命值，则其在自己回合开始时回复 10 生命值。"
 					]
 				},
 				{
 					"ENG_name": "Whispering Aura (Mind Flayer Only)",
 					"name": "低语灵光（仅夺心魔）",
 					"entries": [
-						"只要灵魄未陷入{@condition 失能|XPHB}状态，其就会在自己的回合开始时释放灵能能量。{@actSave wis}：DC等于你的法术豁免DC，灵魄5尺内的每名生物（除你以外）。{@actSaveFail}：{@damage 2d6}心灵伤害"
+						"只要灵魄未陷入{@condition 失能|XPHB}状态，其就会在自己的回合开始时释放灵能能量。{@actSave wis}：DC等于你的法术豁免DC，灵魄 5 尺内的每名生物（除你以外）。{@actSaveFail}：{@damage 2d6}心灵伤害"
 					]
 				}
 			],
@@ -76,21 +76,21 @@
 					"ENG_name": "Claw (Slaad Only)",
 					"name": "爪击（仅史拉蟾）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。{@h}{@damage 1d10 + 3 + summonSpellLevel} 挥砍伤害，目标无法恢复生命值直至灵魄的下个回合开始。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害，目标无法恢复生命值直至灵魄的下个回合开始。"
 					]
 				},
 				{
 					"ENG_name": "Eye Ray (Beholderkin Only)",
 					"name": "眼波射线（仅类眼魔）",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 射程150尺。{@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害。"
+						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 射程 150 尺。{@h}{@damage 1d8 + 3 + summonSpellLevel}心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Psychic Slam (Mind Flayer Only)",
 					"name": "灵能猛击（仅夺心魔）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺. {@h}{@damage 1d8 + 3 + summonSpellLevel} 心灵伤害."
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺. {@h}{@damage 1d8 + 3 + summonSpellLevel}心灵伤害."
 					]
 				}
 			],
@@ -300,7 +300,7 @@
 			],
 			"passive": 6,
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"action": [
@@ -390,11 +390,11 @@
 			],
 			"ac": [
 				{
-					"special": "13加上你的感知调整值"
+					"special": "13 + 你的感知调整值"
 				}
 			],
 			"hp": {
-				"special": "5+你游侠等级的五倍（野兽具有等于你游侠等级的生命骰[D8]）"
+				"special": "5 + 你游侠等级的五倍（野兽具有等于你游侠等级的生命骰[D8]）"
 			},
 			"speed": {
 				"walk": 40,
@@ -411,7 +411,7 @@
 			],
 			"passive": 12,
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -419,7 +419,7 @@
 					"ENG_name": "Primal Bond",
 					"name": "原初联结",
 					"entries": [
-						"将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。"
+						"将你的熟练加值加到野兽进行的任意属性检定和豁免检定中。"
 					]
 				}
 			],
@@ -428,7 +428,7 @@
 					"ENG_name": "Beast's Strike",
 					"name": "野兽打击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺. {@h}{@damage 1d8 + 2}+你的感知调整值穿刺、挥砍或钝击伤害（于召唤时选择）。若野兽在此次攻击前立即向着该目标直线移动了至少20尺，则其额外受到{@damage 1d6}与攻击伤害类型相同的伤害，若目标体型不超过巨型，则其还会陷入{@condition 倒地|XPHB}状态。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d8 + 2} + 你的感知调整值穿刺、挥砍或钝击伤害（于召唤时选择）。若野兽在此次攻击前立即向着该目标直线移动了至少 20 尺，则其额外受到{@damage 1d6}与攻击伤害类型相同的伤害，若目标体型不超过巨型，则其还会陷入{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -457,11 +457,11 @@
 			],
 			"ac": [
 				{
-					"special": "13加上你的感知调整值"
+					"special": "13 + 你的感知调整值"
 				}
 			],
 			"hp": {
-				"special": "5+你游侠等级的五倍（野兽具有等于你游侠等级的生命骰[D8]）"
+				"special": "5 + 你游侠等级的五倍（野兽具有等于你游侠等级的生命骰[D8]）"
 			},
 			"speed": {
 				"walk": 5,
@@ -478,7 +478,7 @@
 			],
 			"passive": 12,
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -486,14 +486,14 @@
 					"ENG_name": "Amphibious",
 					"name": "水陆两栖",
 					"entries": [
-						"该生物可以在空气和水中呼吸。"
+						"野兽可以在空气和水中呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Primal Bond",
 					"name": "原初联结",
 					"entries": [
-						"将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。"
+						"将你的熟练加值加到野兽进行的任意属性检定和豁免检定中。"
 					]
 				}
 			],
@@ -502,7 +502,7 @@
 					"ENG_name": "Beast's Strike",
 					"name": "野兽打击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺{@h}{@damage 1d6 + 2}+你的感知调整值钝击或穿刺伤害（于召唤时选择），且目标陷入{@condition 受擒|XPHB}状态（逃脱DC等于你的法术豁免DC）。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺{@h}{@damage 1d6 + 2} + 你的感知调整值钝击或穿刺伤害（于召唤时选择），且目标陷入{@condition 受擒|XPHB}状态（逃脱DC等于你的法术豁免DC）。"
 					]
 				}
 			],
@@ -534,11 +534,11 @@
 			],
 			"ac": [
 				{
-					"special": "13加上你的感知调整值"
+					"special": "13 + 你的感知调整值"
 				}
 			],
 			"hp": {
-				"special": "4+你游侠等级的四倍（野兽具有等于你游侠等级的生命骰[D6]）"
+				"special": "4 + 你游侠等级的四倍（野兽具有等于你游侠等级的生命骰[D6]）"
 			},
 			"speed": {
 				"walk": 10,
@@ -555,7 +555,7 @@
 			],
 			"passive": 12,
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -570,7 +570,7 @@
 					"ENG_name": "Primal Bond",
 					"name": "原初联结",
 					"entries": [
-						"将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。"
+						"将你的熟练加值加到野兽进行的任意属性检定和豁免检定中。"
 					]
 				}
 			],
@@ -579,7 +579,7 @@
 					"ENG_name": "Beast's Strike",
 					"name": "野兽打击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。{@h}{@damage 1d4 + 3} +你的感知调整值挥砍伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d4 + 3} + 你的感知调整值挥砍伤害。"
 					]
 				}
 			],
@@ -641,27 +641,27 @@
 			],
 			"passive": 12,
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
 				{
 					"ENG_name": "Flyby (Air Only)",
-					"name": "飞掠（仅空中）",
+					"name": "飞掠（仅天空）",
 					"entries": [
 						"灵魄飞行离开敌人的触及范围时不会引发{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				},
 				{
 					"ENG_name": "Pack Tactics (Land and Water Only)",
-					"name": "集群战术（仅陆地和水中）",
+					"name": "集群战术（仅大地与海洋）",
 					"entries": [
-						"若灵魄的攻击目标生物5尺内存在有至少一名灵魄未{@condition 失能|XPHB}的盟友，则灵魄对该生物进行的攻击检定具有优势。"
+						"若灵魄的攻击目标生物 5 尺内存在有至少一名灵魄未{@condition 失能|XPHB}的盟友，则灵魄对该生物进行的攻击检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Water Breathing (Water Only)",
-					"name": "水下呼吸（仅水中）",
+					"name": "水下呼吸（仅海洋）",
 					"entries": [
 						"灵魄只能在水下呼吸。"
 					]
@@ -679,7 +679,7 @@
 					"ENG_name": "Rend",
 					"name": "撕裂",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺. {@h}{@damage 1d8 + 4 + 法术等级} 穿刺伤害."
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 5 尺。 {@h}{@damage 1d8 + 4 + 法术等级}穿刺伤害。"
 					]
 				}
 			],
@@ -702,28 +702,28 @@
 			"_versions": [
 				{
 					"ENG_name": "Bestial Spirit (Air)",
-					"name": "野兽灵魄（空）",
+					"name": "野兽灵魄（天空）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"水下呼吸（仅水中）",
-									"集群战术（仅陆地和水中）"
+									"水下呼吸（仅海洋）",
+									"集群战术（仅大地与海洋）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "飞掠（仅空中）",
+									"rename": "飞掠（仅天空）",
 									"with": "飞掠"
 								}
 							}
 						]
 					},
 					"hp": {
-						"special": "20 +5×每比2环高的法术环位"
+						"special": "20 + 每比二环高一法术环阶 5"
 					},
 					"speed": {
 						"walk": 30,
@@ -735,28 +735,28 @@
 				},
 				{
 					"ENG_name": "Bestial Spirit (Land)",
-					"name": "野兽灵魄（陆）",
+					"name": "野兽灵魄（大地）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"水下呼吸（仅水中）",
-									"飞掠（仅空中）"
+									"水下呼吸（仅海洋）",
+									"飞掠（仅天空）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "集群战术（仅陆地和水中）",
+									"rename": "集群战术（仅大地与海洋）",
 									"with": "集群战术"
 								}
 							}
 						]
 					},
 					"hp": {
-						"special": "30 +5×每比2环高的法术环位"
+						"special": "30 + 每比二环高一法术环阶 5"
 					},
 					"speed": {
 						"walk": 30,
@@ -768,27 +768,27 @@
 				},
 				{
 					"ENG_name": "Bestial Spirit (Water)",
-					"name": "野兽灵魄（水）",
+					"name": "野兽灵魄（海洋）",
 					"source": "XPHB",
 					"_mod": {
 						"trait": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"飞掠（仅空中）"
+									"飞掠（仅天空）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "集群战术（仅陆地和水中）",
+									"rename": "集群战术（仅大地与海洋）",
 									"with": "集群战术"
 								}
 							}
 						]
 					},
 					"hp": {
-						"special": "30 +5×每比2环高的法术环位"
+						"special": "30 + 每比二环高一法术环阶 5"
 					},
 					"speed": {
 						"walk": 30,
@@ -822,7 +822,7 @@
 				}
 			],
 			"hp": {
-				"special": "40 +10×每比5环高的法术环阶"
+				"special": "40 + 每比五环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 30,
@@ -847,7 +847,7 @@
 			],
 			"languages": [
 				"天界语",
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"action": [
@@ -862,19 +862,19 @@
 					"ENG_name": "Radiant Bow (Avenger Only)",
 					"name": "光耀之弓（仅复仇圣灵）",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 射程600尺. {@h}{@damage 2d6 + 2 + summonSpellLevel} 光耀伤害。"
+						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 射程 600 尺。{@h}{@damage 2d6 + 2 + summonSpellLevel} 光耀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Radiant Mace (Defender Only)",
 					"name": "光耀之锤（仅守护圣灵）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 3 + 召唤法术等级} 光耀伤害，且灵魄可选择自己或其10尺内可见的另一生物，令其获得{@dice 1d10}临时生命值。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}光耀伤害，且灵魄可选择自己或其 10 尺内可见的另一生物，令其获得{@dice 1d10}临时生命值。"
 					]
 				},
 				{
 					"ENG_name": "Healing Touch (1/Day)",
-					"name": "治愈之触 (1/日)",
+					"name": "治愈之触（1/日）",
 					"entries": [
 						"灵魄触碰另一生物。目标魔法性地恢复{@dice 2d8 + summonSpellLevel}点生命值。"
 					]
@@ -1016,7 +1016,7 @@
 					"ENG_name": "Stony Lethargy (Stone Only)",
 					"name": "石迷昏眠（仅岩石）",
 					"entries": [
-						"当一名灵魄可见的生物在其10 尺内开始其回合时，灵魄可以将其指定为魔法能量的目标。{@actSave wis}： DC等于你的法术豁免DC，目标。{@actSaveFail}：目标无法发动{@action 借机攻击|XPHB|借机攻击}且速度减半，持续至其下个回合开始。"
+						"当一名灵魄可见的生物在其 10 尺内开始其回合时，灵魄可以将其指定为魔法能量的目标。{@actSave wis}： DC等于你的法术豁免DC，目标。{@actSaveFail}：目标无法发动{@action 借机攻击|XPHB|借机攻击}且速度减半，持续至其下个回合开始。"
 					]
 				}
 			],
@@ -1032,7 +1032,7 @@
 					"ENG_name": "Slam",
 					"name": "猛击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。{@h}{@damage 1d8 + 4 + 召唤法术等级} 钝击伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 5 尺。{@h}{@damage 1d8 + 4 + summonSpellLevel}钝击伤害。"
 					]
 				}
 			],
@@ -1149,7 +1149,7 @@
 				}
 			],
 			"hp": {
-				"special": "50 +10×每比5环高的法术环阶"
+				"special": "50 + 每比五环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 30,
@@ -1181,7 +1181,7 @@
 			],
 			"languages": [
 				"龙语",
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -1205,14 +1205,14 @@
 					"ENG_name": "Rend",
 					"name": "撕裂",
 					"entries": [
-						"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及10尺。{@h}{@damage 1d6 + 4 + summonSpellLevel} 穿刺伤害。"
+						"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 10 尺。{@h}{@damage 1d6 + 4 + summonSpellLevel}穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Breath Weapon",
 					"name": "吐息武器",
 					"entries": [
-						"{@actSave dex} ：DC等于你的法术豁免DC，30尺锥状内的每个生物。{@actSaveFail}：{@damage 2d6}点伤害（伤害类型由你在施法时从灵魄的伤害抗性中选择）。{@actSaveSuccess}：半伤。"
+						"{@actSave dex} ：DC等于你的法术豁免DC，30 尺锥状内的每个生物。{@actSaveFail}：{@damage 2d6}点伤害（伤害类型由你在施法时从灵魄的伤害抗性中选择）。{@actSaveSuccess}：半伤。"
 					]
 				}
 			],
@@ -1253,7 +1253,7 @@
 				}
 			],
 			"hp": {
-				"special": "50 +10×每比4环高的法术环阶"
+				"special": "50 + 每比四环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 40,
@@ -1324,7 +1324,7 @@
 			],
 			"languages": [
 				"原初语",
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -1348,7 +1348,7 @@
 					"ENG_name": "Slam",
 					"name": "猛击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值},触及5尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击（仅土）、寒冷（仅水）、闪电（仅气）、火焰（仅火）伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 4 + summonSpellLevel}钝击（仅土）、寒冷（仅水）、闪电（仅气）、火焰（仅火）伤害。"
 					]
 				}
 			],
@@ -1385,7 +1385,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 4 + summonSpellLevel}钝击伤害。"
 								]
 							}
 						}
@@ -1421,7 +1421,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 4 + summonSpellLevel}钝击伤害。"
 								]
 							}
 						}
@@ -1500,7 +1500,7 @@
 								"ENG_name": "Slam",
 								"name": "猛击",
 								"entries": [
-									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 4 + 召唤法术等级} 钝击伤害。"
+									"{@atk m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 4 + summonSpellLevel}钝击伤害。"
 								]
 							}
 						}
@@ -1542,7 +1542,7 @@
 				}
 			],
 			"hp": {
-				"special": "30 +10×每比3环高的法术环阶"
+				"special": "30 + 每比三环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 30,
@@ -1563,7 +1563,7 @@
 			],
 			"languages": [
 				"木族语",
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"action": [
@@ -1585,9 +1585,9 @@
 			"bonus": [
 				{
 					"ENG_name": "Fey Step",
-					"name": "妖精跨步",
+					"name": "妖精步伐",
 					"entries": [
-						"灵魄魔法地传送至多30尺至一处它可见的未被占据空间。随后根据所选情绪，灵魄触发以下效果之一：",
+						"灵魄魔法地传送至多30尺至一处它可见的未被占据空间。随后根据所选情绪，灵魄触发以下效应之一：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
@@ -1605,7 +1605,7 @@
 									"name": "欢欣",
 									"type": "item",
 									"entries": [
-										"{@actSave wis} ：DC等于你的法术豁免DC，单一灵魄10尺内它可见的生物。失败{@actSaveFail}：目标受你和灵魄{@condition 魅惑|XPHB}1分钟或在目标受到任意伤害时提前结束。"
+										"{@actSave wis} ：DC等于你的法术豁免DC，单一灵魄 10 尺内它可见的生物。{@actSaveFail}：目标受你和灵魄{@condition 魅惑|XPHB} 1 分钟或在目标受到任意伤害时提前结束。"
 									]
 								},
 								{
@@ -1613,7 +1613,7 @@
 									"name": "诡诈",
 									"type": "item",
 									"entries": [
-										"灵魄令魔法黑暗充斥于它5尺内的一处10尺立方区域，持续至灵魄的下个回合结束。"
+										"灵魄令魔法黑暗充斥于它 5 尺内的一处 10 尺立方区域，持续至灵魄的下个回合结束。"
 									]
 								}
 							]
@@ -1652,9 +1652,9 @@
 					"bonus": [
 						{
 							"ENG_name": "Fey Step",
-							"name": "妖精跨步",
+							"name": "妖精步伐",
 							"entries": [
-								"该灵魄可以魔法地传送至它可见的未被占据的空间，距离最多30尺。在本回合结束前，灵魄下一次进行的攻击检定具有优势。"
+								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。灵魄在此回合结束前的下一次攻击检定具有优势。"
 							]
 						}
 					]
@@ -1666,9 +1666,9 @@
 					"bonus": [
 						{
 							"ENG_name": "Fey Step",
-							"name": "妖精跨步",
+							"name": "妖精步伐",
 							"entries": [
-								"该灵魄可以魔法地传送至它可见的未被占据的空间，距离最多30尺。{@actSave wis} DC等于你的法术豁免DC，单一灵魄10尺内它可见的生物。{@actSaveFail} 目标受你和灵魄{@condition 魅惑|XPHB}1分钟或在目标受到任意伤害时提前结束。"
+								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。{@actSave wis}：DC等于你的法术豁免DC，单一灵魄 10 尺内它可见的生物。{@actSaveFail}：目标受你和灵魄{@condition 魅惑|XPHB} 1 分钟或在目标受到任意伤害时提前结束。"
 							]
 						}
 					]
@@ -1680,9 +1680,9 @@
 					"bonus": [
 						{
 							"ENG_name": "Fey Step",
-							"name": "妖精跨步",
+							"name": "妖精步伐",
 							"entries": [
-								"该灵魄可以魔法地传送至它可见的未被占据的空间，距离最多30尺。灵魄令魔法黑暗充斥于它5尺内的一处10尺立方区域，持续至灵魄的下个回合结束。"
+								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。灵魄令魔法黑暗充斥于它 5 尺内的一处 10 尺立方区域，持续至灵魄的下个回合结束。"
 							]
 						}
 					]
@@ -1710,7 +1710,7 @@
 				}
 			],
 			"hp": {
-				"special": "50（仅恶魔）或40（仅魔鬼）或60（仅尤格罗斯魔）+ 15×每比6环高的法术环阶"
+				"special": "50（仅恶魔）或 40（仅魔鬼）或 60（仅尤格罗斯魔）+ 每比六环高一法术环阶 15"
 			},
 			"speed": {
 				"walk": 40,
@@ -1753,7 +1753,7 @@
 					"ENG_name": "Death Throes (Demon Only)",
 					"name": "焚身爆（仅恶魔）",
 					"entries": [
-						"当灵魄生命值降至0或法术结束时，灵魄爆炸。{@actSave dex}：DC等于你的法术豁免DC，源自灵魄的10尺光环区域内的每名生物。{@actSaveFail}：{@damage 2d10}+法术环阶的火焰伤害。{@actSaveSuccess}：半伤。"
+						"当灵魄生命值降至 0 或法术结束时，灵魄爆炸。{@actSave dex}：DC等于你的法术豁免DC，源自灵魄的 10 尺光环区域内的每名生物。{@actSaveFail}：{@damage 2d10} + 法术环阶的火焰伤害。{@actSaveSuccess}：半伤。"
 					]
 				},
 				{
@@ -1797,12 +1797,12 @@
 					"ENG_name": "Fiery Strike (Devil Only)",
 					"name": "狂焰袭（仅魔鬼）",
 					"entries": [
-						"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺或射程150尺。{@h}{@damage 2d6 + 3 + 召唤法术等级}火焰伤害。"
+						"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 5 尺或射程 150 尺。{@h}{@damage 2d6 + 3 + summonSpellLevel}火焰伤害。"
 					]
 				}
 			],
 			"traitTags": [
-				"临终苦难",
+				"焚身爆",
 				"魔鬼视界",
 				"魔法抗性"
 			],
@@ -1834,7 +1834,7 @@
 								"mode": "renameArr",
 								"renames": {
 									"rename": "焚身爆（仅恶魔）",
-									"with": "临终苦难"
+									"with": "焚身爆"
 								}
 							},
 							{
@@ -1860,14 +1860,14 @@
 						]
 					},
 					"hp": {
-						"special": "50 +15×每比6环高的法术环阶"
+						"special": "50 + 每比六环高一法术环阶 15"
 					},
 					"speed": {
 						"walk": 40,
 						"climb": 40
 					},
 					"traitTags": [
-						"临终苦难",
+						"焚身爆",
 						"魔法抗性"
 					],
 					"damageTags": [
@@ -1910,7 +1910,7 @@
 						]
 					},
 					"hp": {
-						"special": "40 +15×每比6环高的法术环阶"
+						"special": "40 + 每比六环高一法术环阶 15"
 					},
 					"speed": {
 						"walk": 40,
@@ -1992,7 +1992,7 @@
 				}
 			],
 			"hp": {
-				"special": "30 +10×每比4环高的法术环阶"
+				"special": "30 + 每比四环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 40,
@@ -2013,7 +2013,7 @@
 			],
 			"passive": 12,
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -2037,14 +2037,14 @@
 					"ENG_name": "Poison Jab",
 					"name": "猛毒刺",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及10尺。 {@h}{@damage 1d6 + 3 + 召唤法术等级} 穿刺伤害+ {@damage 1d4} 毒素伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 10 尺。 {@h}{@damage 1d6 + 3 + summonSpellLevel}穿刺伤害 +  {@damage 1d4}毒素伤害。"
 					]
 				},
 				{
 					"ENG_name": "Web Bolt (Spider Only)",
 					"name": "蛛网箭（仅蜘蛛）",
 					"entries": [
-						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，射程 60 尺 {@h}{@damage 1d10 + 3 + 召唤法术等级} 钝击伤害，且目标的速度降为0，直至该虫的下个回合开始。"
+						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，射程 60 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}钝击伤害，且目标的速度降为 0，直至巨虫的下个回合开始。"
 					]
 				}
 			],
@@ -2053,7 +2053,7 @@
 					"ENG_name": "Venomous Spew (Centipede Only)",
 					"name": "剧毒喷涌（仅蜈蚣）",
 					"entries": [
-						"{@actSave con} DC等于你的法术豁免DC，单一10尺内巨虫可见的生物。{@actSaveFail}：目标陷入{@condition 中毒|XPHB}状态，直至巨虫的下个回合开始。"
+						"{@actSave con} DC等于你的法术豁免DC，单一 10 尺内巨虫可见的生物。{@actSaveFail}：目标陷入{@condition 中毒|XPHB}状态，直至巨虫的下个回合开始。"
 					]
 				}
 			],
@@ -2169,17 +2169,17 @@
 			],
 			"ac": [
 				{
-					"special": "10 + 1 × 法术环阶"
+					"special": "10 + 每法术环阶 1"
 				}
 			],
 			"hp": {
-				"special": "5 + 10×法术环阶（坐骑有等于法术环阶数量的生命骰[D10]）"
+				"special": "5 + 每法术环阶 10（坐骑具有等于法术环阶数量的生命骰[D10]）"
 			},
 			"speed": {
 				"walk": 60,
 				"fly": {
 					"number": 60,
-					"condition": "（需要4环或更高环阶的法术）"
+					"condition": "（需法术为四环及以上）"
 				}
 			},
 			"str": 18,
@@ -2190,7 +2190,7 @@
 			"cha": 8,
 			"passive": 11,
 			"languages": [
-				"心灵感应1里（仅对你生效）"
+				"心灵感应 1 里（仅对你生效）"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -2198,7 +2198,7 @@
 					"ENG_name": "Life Bond",
 					"name": "生命连接",
 					"entries": [
-						"当你从一道一环或以上的法术中恢复生命值时，若你位于坐骑5尺内，则坐骑也会恢复相同数量的生命值。"
+						"当你从一道一环或以上的法术中恢复生命值时，若你位于坐骑 5 尺内，则坐骑也会恢复相同数量的生命值。"
 					]
 				}
 			],
@@ -2207,30 +2207,30 @@
 					"ENG_name": "Otherworldly Slam",
 					"name": "异界猛击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。 {@h}{@damage 1d8 + 召唤法术等级}的 光耀（天族）、心灵（妖精）、暗蚀（邪魔）伤害。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺。 {@h}{@damage 1d8 + summonSpellLevel}点光耀（天族）、心灵（妖精）、暗蚀（邪魔）伤害。"
 					]
 				}
 			],
 			"bonus": [
 				{
 					"ENG_name": "Fell Glare (Fiend Only; Recharges after a Long Rest)",
-					"name": "堕落凝视（仅限邪魔，长休充能）",
+					"name": "堕落凝视（仅邪魔，长休充能）",
 					"entries": [
-						"{@actSave wis} DC等同于你的法术豁免DC，一名距坐骑60尺内的可见生物。{@actSaveFail}：目标直到你下个回合结束为止陷入{@condition 恐慌|XPHB}状态。"
+						"{@actSave wis} DC等同于你的法术豁免DC，一名距坐骑 60 尺内的可见生物。{@actSaveFail}：目标直到你下个回合结束为止陷入{@condition 恐慌|XPHB}状态。"
 					]
 				},
 				{
 					"ENG_name": "Fey Step (Fey Only; Recharges after a Long Rest)",
-					"name": "妖精步伐（仅限妖精，长休充能）",
+					"name": "妖精步伐（仅妖精，长休充能）",
 					"entries": [
 						"坐骑连同其骑手传送至你选择的距其60尺内未占空间中。"
 					]
 				},
 				{
 					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
-					"name": "治愈之触（仅限天族，长休充能）",
+					"name": "治愈之触（仅天族，长休充能）",
 					"entries": [
-						"一名距坐骑5尺内的生物恢复{@dice 2d8 + summonSpellLevel}点生命值。"
+						"一名距坐骑 5 尺内的生物恢复{@dice 2d8 + summonSpellLevel}点生命值。"
 					]
 				}
 			],
@@ -2258,14 +2258,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"堕落凝视（仅限邪魔，长休充能）",
-									"妖精步伐（仅限妖精，长休充能）"
+									"堕落凝视（仅邪魔，长休充能）",
+									"妖精步伐（仅妖精，长休充能）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "治愈之触（仅限天族，长休充能）",
+									"rename": "治愈之触（仅天族，长休充能）",
 									"with": "治愈之触（长休后充能）"
 								}
 							}
@@ -2277,7 +2277,7 @@
 							"ENG_name": "Otherworldly Slam",
 							"name": "异界猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。{@h}{@damage 1d8 + 法术等级}的光耀伤害。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 5 尺。{@h}{@damage 1d8 + summonSpellLevel}点光耀伤害。"
 							]
 						}
 					],
@@ -2289,21 +2289,21 @@
 				},
 				{
 					"ENG_name": "Otherworldly Steed (Fey)",
-					"name": "异界坐骑（精类）",
+					"name": "异界坐骑（妖精）",
 					"source": "XPHB",
 					"_mod": {
 						"bonus": [
 							{
 								"mode": "removeArr",
 								"names": [
-									"堕落凝视（仅限邪魔，长休充能）",
-									"治愈之触（仅限天族，长休充能）"
+									"堕落凝视（仅邪魔，长休充能）",
+									"治愈之触（仅天族，长休充能）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "妖精步伐（仅限妖精，长休充能）",
+									"rename": "妖精步伐（仅妖精，长休充能）",
 									"with": "妖精步伐（长休后充能）"
 								}
 							}
@@ -2315,7 +2315,7 @@
 							"ENG_name": "Otherworldly Slam",
 							"name": "异界猛击",
 							"entries": [
-								"{@atkr m}{@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺。{@h}{@damage 1d8+召唤法术环位}心灵伤害。"
+								"{@atkr m}{@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d8 + summonSpellLevel}点心灵伤害。"
 							]
 						}
 					],
@@ -2334,14 +2334,14 @@
 							{
 								"mode": "removeArr",
 								"names": [
-									"妖精步伐（仅限妖精，长休充能）",
-									"治愈之触（仅限天族，长休充能）"
+									"妖精步伐（仅妖精，长休充能）",
+									"治愈之触（仅天族，长休充能）"
 								]
 							},
 							{
 								"mode": "renameArr",
 								"renames": {
-									"rename": "堕落凝视（仅限邪魔，长休充能）",
+									"rename": "堕落凝视（仅邪魔，长休充能）",
 									"with": "堕落凝视（长休后充能）"
 								}
 							}
@@ -2353,7 +2353,7 @@
 							"ENG_name": "Otherworldly Slam",
 							"name": "异界猛击",
 							"entries": [
-								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。{@h}{@damage 1d8 + 召唤法术等级} 暗蚀伤害。"
+								"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d8 + summonSpellLevel}点暗蚀伤害。"
 							]
 						}
 					],
@@ -2366,7 +2366,7 @@
 		},
 		{
 			"ENG_name": "Undead Spirit",
-			"name": "不死灵魄",
+			"name": "亡灵灵魄",
 			"source": "XPHB",
 			"page": 328,
 			"summonedBySpell": "亡灵召唤术|XPHB",
@@ -2384,13 +2384,13 @@
 				}
 			],
 			"hp": {
-				"special": "30（仅幽体和腐尸）或20（仅骷髅）+10×每比3环高的法术环阶"
+				"special": "30（仅幽体和腐尸）或 20（仅骸骨）+ 每比三环高一法术环阶 10"
 			},
 			"speed": {
 				"walk": 30,
 				"fly": {
 					"number": 40,
-					"condition": "（悬浮; 仅幽体）"
+					"condition": "（悬浮；仅幽体）"
 				},
 				"canHover": true
 			},
@@ -2415,7 +2415,7 @@
 				"中毒"
 			],
 			"languages": [
-				"理解你的语言"
+				"理解你说的语言"
 			],
 			"pbNote": "等于你的熟练加值",
 			"trait": [
@@ -2446,7 +2446,7 @@
 					"ENG_name": "Deathly Touch (Ghostly Only)",
 					"name": "致死之触（仅幽体）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺。{@h}{@damage 1d8 + 3 + summonSpellLevel} 暗蚀伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下哥回合结束。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d8 + 3 + summonSpellLevel}点暗蚀伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下个回合结束。"
 					]
 				},
 				{
@@ -2460,7 +2460,7 @@
 					"ENG_name": "Rotting Claw (Putrid Only)",
 					"name": "腐灭爪击（仅腐尸）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及5尺。{@h}{@damage 1d6 + 3 + summonSpellLevel} 挥砍伤害。若目标已陷入{@condition 中毒|XPHB}状态，则其还会陷入{@condition 麻痹|XPHB}状态，直至其下个回合结束。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d6 + 3 + summonSpellLevel}点挥砍伤害。若目标已陷入{@condition 中毒|XPHB}状态，则其还会陷入{@condition 麻痹|XPHB}状态，直至其下个回合结束。"
 					]
 				}
 			],
@@ -2529,7 +2529,7 @@
 						]
 					},
 					"hp": {
-						"special": "30 +10×每比3环高的法术环阶"
+						"special": "30 + 每比三环高一法术环阶 10"
 					},
 					"speed": {
 						"walk": 30,
@@ -2582,7 +2582,7 @@
 						]
 					},
 					"hp": {
-						"special": "30 +10×每比3环高的法术环阶"
+						"special": "30 + 每比三环高一法术环阶 10"
 					},
 					"speed": {
 						"walk": 30
