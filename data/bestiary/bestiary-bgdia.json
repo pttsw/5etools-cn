@@ -4171,7 +4171,7 @@
 				},
 				{
 					"ENG_name": "Focus",
-					"name": "聚焦",
+					"name": "专注",
 					"entries": [
 						"如果莉尔萨用武器攻击对一名生物造成了伤害，则直至她下回合结束前，她对该目标发动的攻击检定具有优势。"
 					]
@@ -5037,23 +5037,6 @@
 		},
 		{
 			"ENG_name": "Ulder Ravengard",
-			"name": "乌尔德·瑞文嘉德",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "BGDIA",
-			"page": 70,
-			"size": [
-				"M"
-			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"human"
-				]
-			},
-			"alignment": [
-				"N"
-			],
 			"ac": [
 				{
 					"ac": 20,
@@ -5063,85 +5046,102 @@
 					]
 				}
 			],
-			"hp": {
-				"average": 112,
-				"formula": "15d8 + 45"
-			},
-			"speed": {
-				"walk": 25
-			},
-			"str": 17,
-			"dex": 14,
-			"con": 16,
-			"int": 11,
-			"wis": 10,
-			"cha": 17,
-			"save": {
-				"con": "+6",
-				"wis": "+3"
-			},
-			"skill": {
-				"athletics": "+6",
-				"intimidation": "+6",
-				"perception": "+3"
-			},
-			"passive": 13,
-			"languages": [
-				"通用语"
-			],
-			"cr": "5",
 			"action": [
 				{
 					"ENG_name": "Multiattack",
-					"name": "多重攻击",
 					"entries": [
 						"乌尔德进行三次近战攻击，其中只有一次可使用盾牌进行。"
-					]
+					],
+					"name": "多重攻击"
 				},
 				{
 					"ENG_name": "+1 Longsword",
-					"name": "+1 长剑",
 					"entries": [
 						"{@atk mw} 命中{@hit 7}，触及 5 尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，或双手使用造成 9 ({@damage 1d10 + 4}) 挥砍伤害。"
-					]
+					],
+					"name": "+1 长剑"
 				},
 				{
 					"ENG_name": "Shield",
-					"name": "护盾术",
 					"entries": [
 						"{@atk mw} 命中{@hit 6}，范围 5 尺，单一生物。{@h}6 ({@damage 1d6 + 3}) 钝击伤害，且乌尔德将目标推离 5 尺。乌尔德随后进入目标空出的空间。若目标被推至乌尔德的盟友 5 尺内，则该盟友对其发动一次借机攻击。"
-					]
+					],
+					"name": "盾牌"
 				}
-			],
-			"reaction": [
-				{
-					"ENG_name": "Guardian Strike",
-					"name": "守卫打击",
-					"entries": [
-						"当位于乌尔德5尺范围内的敌人的攻击命中了除乌尔德以外的目标，乌尔德可以立刻对该生物进行一次近战攻击。"
-					]
-				}
-			],
-			"attachedItems": [
-				"+1 长剑|DMG"
 			],
 			"actionTags": [
 				"多重攻击"
 			],
-			"languageTags": [
-				"C"
+			"alignment": [
+				"N"
 			],
+			"attachedItems": [
+				"+1 长剑|DMG"
+			],
+			"cha": 17,
+			"con": 16,
+			"cr": "5",
 			"damageTags": [
 				"B",
 				"S"
+			],
+			"dex": 14,
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"hasToken": true,
+			"hp": {
+				"average": 112,
+				"formula": "15d8 + 45"
+			},
+			"int": 11,
+			"isNamedCreature": true,
+			"isNpc": true,
+			"languageTags": [
+				"C"
+			],
+			"languages": [
+				"通用语"
 			],
 			"miscTags": [
 				"MLW",
 				"MW"
 			],
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true,
+			"name": "乌尔德·瑞文嘉德",
+			"page": 70,
+			"passive": 13,
+			"reaction": [
+				{
+					"ENG_name": "Guardian Strike",
+					"entries": [
+						"当位于乌尔德5尺范围内的敌人的攻击命中了除乌尔德以外的目标，乌尔德可以立刻对该生物进行一次近战攻击。"
+					],
+					"name": "守卫打击"
+				}
+			],
+			"save": {
+				"con": "+6",
+				"wis": "+3"
+			},
+			"size": [
+				"M"
+			],
+			"skill": {
+				"athletics": "+6",
+				"intimidation": "+6",
+				"perception": "+3"
+			},
+			"source": "BGDIA",
+			"speed": {
+				"walk": 25
+			},
+			"str": 17,
+			"type": {
+				"tags": [
+					"human"
+				],
+				"type": "humanoid"
+			},
+			"wis": 10,
 			"translator": "不全书"
 		},
 		{

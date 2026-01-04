@@ -1542,8 +1542,8 @@
 		},
 		{
 			"ENG_name": "Winter Walker",
-			"name": "寒冬行者",
-			"shortName": "寒冬行者",
+			"name": "凛冬行者",
+			"shortName": "凛冬行者",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
@@ -1570,10 +1570,10 @@
 				}
 			],
 			"subclassFeatures": [
-				"寒冬行者|游侠|XPHB|寒冬行者|FRHoF|3|FRHoF",
-				"坚韧灵魂|游侠|XPHB|寒冬行者|FRHoF|7|FRHoF",
-				"恶寒惩戒|游侠|XPHB|寒冬行者|FRHoF|11|FRHoF",
-				"冰之恶灵|游侠|XPHB|寒冬行者|FRHoF|15|FRHoF"
+				"凛冬行者|游侠|XPHB|凛冬行者|FRHoF|3|FRHoF",
+				"凝冻之魂|游侠|XPHB|凛冬行者|FRHoF|7|FRHoF",
+				"寒心复仇|游侠|XPHB|凛冬行者|FRHoF|11|FRHoF",
+				"冰之恶灵|游侠|XPHB|凛冬行者|FRHoF|15|FRHoF"
 			],
 			"hasFluffImages": true
 		}
@@ -2491,7 +2491,7 @@
 			"level": 14,
 			"entries": [
 				"你祈唤自然精魂，魔法性地将身形遮蔽隐蔽。以一个{@variantrule 附赠动作|XPHB}，你可以让自己进入 {@condition 隐形|XPHB}状态，持续到你的下一回合结束。",
-				"你可以使用该特性的次数等同于你的感知调整值（最低为1）。你在完成一次{@variantrule 长休|XPHB}后重新获得所有的使用次数。"
+				"你可以使用这一增益的次数等同于你的感知调整值（最低一次），并在完成一次{@variantrule 长休|XPHB}后重获全部已消耗的使用次数。"
 			]
 		},
 		{
@@ -4096,11 +4096,11 @@
 		},
 		{
 			"ENG_name": "Frigid Explorer",
-			"name": "冰霜探索者",
+			"name": "冻原探索者",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
@@ -4111,80 +4111,80 @@
 					"type": "entries",
 					"page": 6,
 					"entries": [
-						"{@variantrule 伤害|XPHB}来自你的武器攻击、游侠法术和游侠特性，忽略对冷冻伤害的{@variantrule 抗性|XPHB}。"
+						"你的武器攻击、游侠法术以及游侠特性所造成的{@variantrule 伤害|XPHB}无视寒冷{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Frost Resistance",
-					"name": "冰冻抗性",
+					"name": "冰霜抵抗",
 					"type": "entries",
 					"page": 6,
 					"entries": [
-						"你对寒冷伤害具有{@variantrule 抗性|XPHB}。"
+						"你获得寒冷伤害的{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Polar Strikes",
-					"name": "北极打击",
+					"name": "极地打击",
 					"type": "entries",
 					"page": 6,
 					"entries": [
-						"当你使用武器以攻击检定命中一个生物时，你可以对目标造成额外的{@damage 1d4}冷冻伤害，该目标每回合只能受到一次此额外伤害。当你达到游侠11级时，此额外伤害增加至{@dice 1d6}。"
+						"当你用武器对生物进行一次攻击检定并命中时，你可以额外对目标造成{@damage 1d4}点寒冷伤害。每名目标每回合仅会受到一次该额外伤害。你的游侠等级达到11级时，这一额外伤害变为{@dice 1d6}。"
 					]
 				}
 			]
 		},
 		{
 			"ENG_name": "Hunter's Rime",
-			"name": "猎人雾凇",
+			"name": "冬猎霜寒",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
-				"寒冰覆盖你和你的猎物，保护你并减缓它们的速度。当你施放{@spell 猎人印记|XPHB}时，你获得等于{@dice 1d10}加上你的{@class 游侠|XPHB}等级的{@variantrule 临时生命值|XPHB}。",
-				"此外，当一个生物被你的{@spell 猎人印记|XPHB}标记时，它无法执行{@action 撤离|XPHB}动作。"
+				"冰霜会复盖你和你的猎物，保护你并让你的猎物变得迟缓。当你施展{@spell 猎人印记|XPHB}法术时，你获得等同于{@dice 1d10}+你{@class 游侠|XPHB}等级的{@variantrule 临时生命值|XPHB}。",
+				"此外，当一个生物被你的{@spell 猎人印记|XPHB}法术所标记时，其不可执行{@action 撤离|XPHB}动作。"
 			]
 		},
 		{
 			"ENG_name": "Winter Walker",
-			"name": "寒冬行者",
+			"name": "凛冬行者",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
-				"{@i 抵御极寒荒原的惊惧兽}",
-				"冬行者在诸如冰风谷等荒凉冰冻的荒野中磨练技艺。这些冷酷无情的霜覆游侠猎杀出没于极地荒原的怪物，最终自身也化作了凛冽的恐怖存在。冬行者精通冰风谷的各种现象，包括陨落耐瑟瑞尔城市的残留魔法、本地怪物如{@creature 雪怪|XMM|雪怪们}和{@creature 峭壁猫|SKT|峭壁猫}，以及来自幽暗地域入侵者日益增长的威胁。因其冷酷的实用主义、骇人魔法和对区域的掌控力，冬行者既受人敬畏又令人恐惧。十镇居民认为冬行者频繁接触邪恶实体从而获得了可怖力量。而许多雷格赫德游牧者则相信自然之灵赐予了冬行者独特的诅咒。",
+				"{@i 抵御来自冰冻荒原的恐怖}",
+				"凛冬行者在冰风谷等充斥着极寒和荒芜的地区中磨练他们的技艺.这些冷酷无情，披冰盖雪的游侠狩猎着那些盘踞在极北荒原的怪物，最终自身也成为凛冽的恐怖存在。凛冬行者深谙发生在这片土地上的种种特异现象，包括在坠落的耐瑟瑞尔都市中沉寂的魔法，{@creature 雪怪|XMM|雪怪们}和{@creature 峭壁猫|SKT|峭壁猫}等本土怪物，以及来自幽暗地域的入侵者们日渐迫近的威胁。凛冬行者冷酷的追求实效，掌握的恐怖魔法，以及对这片土地掌控，令人们又尊敬又害怕。十镇的居民们说，凛冬行者因其频繁接触邪恶存在的经历，赋予了他们令人畏惧的力量。另一种说法则是，瑞格冰川的游牧民认为，这是自然精魂赋予凛冬行者的一种独特诅咒。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "冰霜探索者|游侠|XPHB|寒冬行者|FRHoF|3|FRHoF"
+					"subclassFeature": "冻原探索者|游侠|XPHB|凛冬行者|FRHoF|3|FRHoF"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "猎人雾凇|游侠|XPHB|寒冬行者|FRHoF|3|FRHoF"
+					"subclassFeature": "冬猎霜寒|游侠|XPHB|凛冬行者|FRHoF|3|FRHoF"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "冬行者法术|游侠|XPHB|寒冬行者|FRHoF|3|FRHoF"
+					"subclassFeature": "凛冬行者魔法|游侠|XPHB|凛冬行者|FRHoF|3|FRHoF"
 				}
 			]
 		},
 		{
 			"ENG_name": "Winter Walker Spells",
-			"name": "冬行者法术",
+			"name": "凛冬行者魔法",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
-				"当你达到冬行者法术表中指定的游侠等级时，你之后始终准备着列出的法术。",
+				"在达到下方凛冬行者法术列表中列出特定等级时，你将始终准备了等级对应的法术。",
 				{
 					"type": "table",
 					"colLabels": [
@@ -4222,32 +4222,32 @@
 		},
 		{
 			"ENG_name": "Fortifying Soul",
-			"name": "坚韧灵魂",
+			"name": "凝冻之魂",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"你在严酷环境中生存的经验使你可以鼓舞你的盟友以及你自己。作为一个{@action 魔法|XPHB}动作，选择你能看见的生物数量等于你的感知调整值（至少一个）。每个被选中的生物恢复{@variantrule 生命值|XPHB}等于{@dice 1d10}加上你的游侠等级，并且在1小时内，在避免或结束{@condition 恐慌|XPHB}状态的豁免检定上具有{@variantrule 优势|XPHB}。",
-				"使用此特性后，你必须完成一次{@variantrule 长休|XPHB}才能再次使用。"
+				"你在酷烈环境中生存的经验不仅足够支撑你自己，也能帮助你的盟友。以一个{@action 魔法|XPHB}动作，你可以选择等同于你感知调整值（至少1个）数量的可见生物。所选的生物能够恢复等同于 {@dice 1d10}+你的游侠等级点的{@variantrule 生命值|XPHB}，且接下来的1小时内，其为避免或结束{@condition 恐慌|XPHB}状态所进行的豁免具有{@variantrule 优势|XPHB}。",
+				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
 			]
 		},
 		{
 			"ENG_name": "Chilling Retribution",
-			"name": "恶寒惩戒",
+			"name": "寒心复仇",
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"当一个生物以攻击检定命中你时，你可以采取一个{@variantrule 反应|XPHB}来迫使该生物进行一次对抗你法术豁免DC的感知豁免检定。豁免失败时，目标获得{@condition 震慑|XPHB}状态直到你的下一个回合结束。当目标处于{@condition 震慑|XPHB}状态时，其{@variantrule 速度|XPHB}降低至0尺。",
-				"你可以使用该特性的次数等同于你的感知调整值（最低为1）。你在完成一次{@variantrule 长休|XPHB}后重新获得所有的使用次数。"
+				"当你被一次攻击检定命中时，你可以用你的{@variantrule 反应|XPHB}迫使攻击你的该生物进行一次感知豁免（使用你的法术豁免DC），豁免失败则目标将陷入{@condition 震慑|XPHB}状态直到你的下个回合结束。且当目标因此陷入{@condition 震慑|XPHB}状态时，其{@variantrule 速度|XPHB}降至0。",
+				"你可以使用这一增益的次数等同于你的感知调整值（最低一次），并在完成一次{@variantrule 长休|XPHB}后重获全部已消耗的使用次数。"
 			]
 		},
 		{
@@ -4256,28 +4256,28 @@
 			"source": "FRHoF",
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "寒冬行者",
+			"subclassShortName": "凛冬行者",
 			"subclassSource": "FRHoF",
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"当你施放{@spell 猎人印记|XPHB}时，你可以化身为一个幽灵般的雪白形态。此形态持续到法术结束，当你处于此形态时，你获得以下好处。一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前无法再次使用，除非你消耗一个4级或更高的法术位（无需动作）。",
+				"当你施展{@spell 猎人印记|XPHB}时，你还能化身为冰雪复盖的幽灵形态。这一形态持续直至该法术结束为止。处于该形态下，你将获得以下这些增益。这一特性一经使用，直到你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它，除非你为此消耗一枚环阶4+的法术位（无需动作）。",
 				{
 					"ENG_name": "Frozen Soul",
 					"name": "寒冰之魂",
 					"type": "entries",
 					"page": 6,
 					"entries": [
-						"你对冷冻伤害具有{@variantrule 免疫|XPHB}。当你首次采用此形态以及在你每个后续回合开始时，你选择的15尺{@variantrule 光环【效应区域】|XPHB|光环}范围内的每个生物受到{@damage 2d4}冷冻伤害。"
+						"你{@variantrule 免疫|XPHB}寒冷伤害。在你化身为幽灵形态时（以及在此形态的后续每个回合开始时），以你自身为源点，15尺{@variantrule 光环【效应区域】|XPHB|光环}范围内的每名由你选择的生物都将受到{@damage 2d4}点寒冷伤害。"
 					]
 				},
 				{
 					"ENG_name": "Partially Incorporeal",
-					"name": "局部虚化",
+					"name": "有限虚体",
 					"type": "entries",
 					"page": 6,
 					"entries": [
-						"你对{@condition 受擒|XPHB}、{@condition 倒地|XPHB}和{@condition 束缚|XPHB}状态具有{@variantrule 免疫|XPHB}。你可以像通过{@variantrule 困难地形|XPHB}一样通过生物和物体，但如果你在一个生物或物体内部结束回合，你会受到{@damage 1d10}力场伤害。如果形态结束时你处于一个生物或物体内部，你将被传送到最近的未占据空间。"
+						"你{@variantrule 免疫|XPHB}于{@condition 受擒|XPHB}、{@condition 倒地|XPHB}和{@condition 束缚|XPHB}状态。你可以如同穿过{@variantrule 困难地形|XPHB}般穿过生物与物件，但如果你在一名生物或一个物件内停下，你将受到{@damage 1d10}点力场伤害。如果这一形态结束时你身处一名生物或一个物件内，你将被弹出到最近的未占据空间中。"
 					]
 				}
 			]

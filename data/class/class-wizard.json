@@ -4263,42 +4263,43 @@
 		},
 		{
 			"ENG_name": "Bladesong",
-			"name": "剑歌",
-			"source": "FRHoF",
 			"className": "法师",
 			"classSource": "XPHB",
-			"subclassShortName": "剑咏者",
-			"subclassSource": "FRHoF",
-			"level": 3,
 			"entries": [
 				"作为一个{@variantrule 附赠动作|XPHB}，你唤起一种被称为剑歌的精灵魔法，前提是你没有着装护甲或使用盾牌。",
 				"剑歌持续1分钟，并在你处于{@condition 失能|XPHB}状态、着甲或持用盾牌、或使用双手进行武器攻击时提前结束。你可以随时终止剑歌（无需动作）。",
 				"剑歌激活期间，你获得以下增益。你能够唤起剑歌的次数等于你的智力调整值（至少1次）。完成一次{@variantrule 长休|XPHB}后，你重获所有已消耗的使用次数。当你使用奥术回想时，你会恢复一次已消耗的使用次数。",
 				{
 					"ENG_name": "Agility",
-					"name": "敏捷",
-					"type": "entries",
 					"entries": [
 						"你的AC获得等同于你智力调整值的加值（最低+1），且你的{@variantrule 速度|XPHB}增加10尺。此外，你进行敏捷（{@skill 特技|XPHB}）检定时具有{@variantrule 优势|XPHB}。"
-					]
+					],
+					"name": "灵动",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Bladework",
-					"name": "剑法",
-					"type": "entries",
 					"entries": [
 						"当你使用你具有熟练的武器进行攻击时，你可以使用你的智力调整值替代力量或敏捷来进行攻击与伤害掷骰。"
-					]
+					],
+					"name": "剑法",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Focus",
-					"name": "聚焦",
-					"type": "entries",
 					"entries": [
 						"当你为维持{@status 专注|XPHB}而进行体质豁免时，你可以将你的智力调整值加到掷骰总值当中。"
-					]
+					],
+					"name": "专注",
+					"type": "entries"
 				}
-			]
+			],
+			"level": 3,
+			"name": "剑歌",
+			"source": "FRHoF",
+			"subclassShortName": "剑咏者",
+			"subclassSource": "FRHoF",
+			"translator": "机翻"
 		},
 		{
 			"ENG_name": "Training in War and Song",
@@ -4310,8 +4311,8 @@
 			"subclassSource": "FRHoF",
 			"level": 3,
 			"entries": [
-				"你获得所有不具有{@itemProperty 2H|XPHB|双手}或{@itemProperty H|XPHB|重型}属性的近战军用武器的熟练项。你可以将你拥有熟练项的近战武器作为你法师法术的{@variantrule 法器|XPHB}。",
-				"你还可以从以下技能中选择一个获得熟练项：{@skill 特技|XPHB}、{@skill 运动|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}。"
+				"你获得所有不具有{@itemProperty 2H|XPHB|双手}或{@itemProperty H|XPHB|重型}词条的近战军用武器熟练。你可以使用你具有熟练的近战武器作为你法师法术的施法{@variantrule 法器|XPHB}。",
+				"此外，你获得下列你所选择的一项技能的熟练：{@skill 特技|XPHB}、{@skill 运动|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}。"
 			]
 		},
 		{
@@ -4353,7 +4354,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"在你施展一道施法时间为一动作的法术后，你可以以一个{@variantrule 附赠动作|XPHB}，使用一把武器发动一次攻击。"
+				"在你施展了一道施法时间为动作的法术之后，你可以执行{@variantrule 附赠动作|XPHB}用武器进行一次攻击。"
 			]
 		},
 		{

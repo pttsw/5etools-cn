@@ -298,88 +298,88 @@
 		},
 		{
 			"ENG_name": "Beast of the Land",
-			"name": "大地野兽",
-			"source": "TCE",
-			"page": 61,
-			"reprintedAs": [
-				"大地野兽|XPHB"
-			],
-			"summonedByClass": "游侠|PHB",
-			"size": [
-				"M"
-			],
-			"type": "beast",
-			"alignment": [
-				"U"
-			],
 			"ac": [
 				{
 					"special": "13+PB（天生护甲）"
 				}
 			],
-			"hp": {
-				"special": "5 + 你游侠等级的五倍（野兽拥有与你游侠等级相同数量的生命骰[d8]）"
-			},
-			"speed": {
-				"walk": 40,
-				"climb": 40
-			},
-			"str": 14,
-			"dex": 14,
-			"con": 15,
-			"int": 8,
-			"wis": 14,
-			"cha": 11,
-			"senses": [
-				"黑暗视觉 60 尺"
-			],
-			"passive": 12,
-			"languages": [
-				"理解你所说的语言"
-			],
-			"pbNote": "等于你的加值",
-			"trait": [
-				{
-					"ENG_name": "Charge",
-					"name": "冲锋",
-					"entries": [
-						"当大地野兽向一个目标直线移动了至少 20 尺，然后在同一回合以挥打攻击命中目标时。目标会额外受到 {@damage 1d6} 挥砍伤害。如果目标是生物，它必须成功通过对抗你法术豁免DC的力量豁免检定否则应击{@condition 倒地}。"
-					]
-				},
-				{
-					"ENG_name": "Primal Bond",
-					"name": "原初联结",
-					"entries": [
-						"你能将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。"
-					]
-				}
-			],
 			"action": [
 				{
 					"ENG_name": "Maul",
-					"name": "巨锤",
 					"entries": [
 						"{@atk mw} {@hitYourSpellAttack} 命中，触及 5 尺，单个目标。{@h}{@damage 1d8 + 2 + PB} 挥砍伤害。"
-					]
+					],
+					"name": "挥打"
 				}
 			],
-			"traitTags": [
-				"冲锋"
+			"alignment": [
+				"U"
 			],
-			"senseTags": [
-				"D"
+			"cha": 11,
+			"con": 15,
+			"conditionInflict": [
+				"倒地"
 			],
 			"damageTags": [
 				"S"
+			],
+			"dex": 14,
+			"hasToken": true,
+			"hp": {
+				"special": "5 + 你游侠等级的五倍（野兽拥有与你游侠等级相同数量的生命骰[d8]）"
+			},
+			"int": 8,
+			"languages": [
+				"理解你所说的语言"
 			],
 			"miscTags": [
 				"MLW",
 				"MW"
 			],
-			"conditionInflict": [
-				"倒地"
+			"name": "大地野兽",
+			"page": 61,
+			"passive": 12,
+			"pbNote": "等于你的加值",
+			"reprintedAs": [
+				"大地野兽|XPHB"
 			],
-			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"size": [
+				"M"
+			],
+			"source": "TCE",
+			"speed": {
+				"climb": 40,
+				"walk": 40
+			},
+			"str": 14,
+			"summonedByClass": "游侠|PHB",
+			"trait": [
+				{
+					"ENG_name": "Charge",
+					"entries": [
+						"当大地野兽向一个目标直线移动了至少 20 尺，然后在同一回合以挥打攻击命中目标时。目标会额外受到 {@damage 1d6} 挥砍伤害。如果目标是生物，它必须成功通过对抗你法术豁免DC的力量豁免检定否则应击{@condition 倒地}。"
+					],
+					"name": "冲锋"
+				},
+				{
+					"ENG_name": "Primal Bond",
+					"entries": [
+						"你能将你的熟练加值加到野兽进行的一切属性检定和豁免检定上。"
+					],
+					"name": "原初联结"
+				}
+			],
+			"traitTags": [
+				"冲锋"
+			],
+			"type": "beast",
+			"wis": 14,
 			"translator": "不全书"
 		},
 		{
@@ -1777,7 +1777,7 @@
 			],
 			"tokenCustom": true,
 			"traitTags": [
-				"焚身爆",
+				"自爆",
 				"魔鬼视界",
 				"魔法抗性"
 			],
@@ -1846,7 +1846,7 @@
 						"climb": 40
 					},
 					"traitTags": [
-						"焚身爆",
+						"自爆",
 						"魔法抗性"
 					],
 					"damageTags": [
@@ -2598,7 +2598,7 @@
 					"ENG_name": "Vigilant",
 					"name": "警觉",
 					"entries": [
-						"钢铁守卫不会被{@status 措手不及}。"
+						"钢铁守卫不会被{@status 突袭}。"
 					]
 				}
 			],

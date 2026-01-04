@@ -541,7 +541,7 @@
 			"startingProficiencies": {
 				"weapons": [
 					"简易",
-					"具有{@filter 轻型|items|type=军用武器|property=光照}属性的军用武器"
+					"具有{@filter 轻型|items|type=军用武器|property=光亮术}属性的军用武器"
 				],
 				"weaponProficiencies": [
 					{
@@ -2219,7 +2219,7 @@
 					"type": "list",
 					"items": [
 						"{@filter 简易近战武器|items|type=简易武器;近战武器=sand}",
-						"{@filter 具有轻型属性的军用近战武器|items|type=军用武器;近战武器=sand|property=光照}"
+						"{@filter 具有轻型属性的军用近战武器|items|type=军用武器;近战武器=sand|property=光亮术}"
 					]
 				},
 				"只要你未着装任何护甲也没持用{@item 盾牌|XPHB}，且徒手或只持用武僧武器，则你获得下列增益：",
@@ -2388,7 +2388,7 @@
 			"level": 2,
 			"entries": [
 				"当你投掷{@variantrule 先攻|XPHB}时，你可以重获所有已消耗的功力。若你如此做，掷你的武艺骰，并且恢复其结果+你的武僧等级的{@variantrule 生命值|XPHB}。",
-				"使用此特性后，你必须完成一次{@variantrule 长休|XPHB}才能再次使用。"
+				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
 			]
 		},
 		{
@@ -4546,7 +4546,7 @@
 			},
 			"entries": [
 				"你对生命能量的掌握打开了通往命流奥义的大门。以一个{@action 魔法|XPHB}动作，你可以消耗5点功力，触碰一个死亡不超过24小时的生物的尸体。该生物会起死回生，并拥有相当于{@dice 4d10}+你的感知调整值的{@variantrule 生命值|XPHB}。如果该生物死前具有以下这些状态，这些状态都会在复活时被移除：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}、{@condition 麻痹|XPHB}、{@condition 中毒|XPHB}和{@condition 震慑|XPHB}。",
-				"使用此特性后，你必须完成一次{@variantrule 长休|XPHB}才能再次使用。"
+				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
 			]
 		},
 		{
@@ -4625,7 +4625,7 @@
 			"header": 2,
 			"entries": [
 				"你获得治愈己身的能力。你能够以一个{@variantrule 附赠动作|XPHB}掷你的武艺骰。你恢复相当于掷骰结果+你的感知调整值数量的{@variantrule 生命值|XPHB}（至少恢复1点{@variantrule 生命值|XPHB|生命值}）。",
-				"你可以使用该特性的次数等同于你的感知调整值（最低为1）。你在完成一次{@variantrule 长休|XPHB}后重新获得所有的使用次数。"
+				"你可以使用这一增益的次数等同于你的感知调整值（最低一次），并在完成一次{@variantrule 长休|XPHB}后重获全部已消耗的使用次数。"
 			]
 		},
 		{
@@ -4824,7 +4824,7 @@
 				},
 				{
 					"ENG_name": "Partially Incorporeal",
-					"name": "局部虚化",
+					"name": "有限虚体",
 					"type": "entries",
 					"entries": [
 						"你可以如同通过{@variantrule 困难地形|XPHB}一般通过已占据空间。如果你回合结束时仍然处于已占据空间之中，则会被排出到之前最近一个未占据空间。"

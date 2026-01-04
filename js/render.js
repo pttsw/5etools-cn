@@ -8897,10 +8897,10 @@ Renderer.deity = class {
 			displayFn: (it) => it.join(", "),
 		},
 		"plane": {
-			name: "Home Plane",
+			name: "家园位面",
 		},
 		"worshipers": {
-			name: "Typical Worshipers",
+			name: " 通常的崇拜者",
 		},
 		"symbol": {
 			name: "圣辉",

@@ -387,29 +387,23 @@
 		},
 		{
 			"ENG_name": "Breaking Objects",
-			"name": "破坏物件",
-			"source": "XPHB",
-			"page": 362,
-			"srd52": true,
 			"basicRules2024": true,
-			"ruleType": "C",
 			"entries": [
 				"各种攻击都可以伤害到物件，一部分法术也可以伤害到物件。如果一个物件过于脆弱，DM也许会允许在生物对其使用{@action 攻击|XPHB}动作或{@action 操作|XPHB}动作时，可以自动摧毁该物件。",
 				{
-					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Armor Class",
-							"name": "护甲等级",
-							"type": "entries",
 							"entries": [
 								"物件{@variantrule 护甲等级|XPHB}表提供了各种材质的AC建议。"
-							]
+							],
+							"name": "护甲等级",
+							"type": "entries"
 						}
-					]
+					],
+					"type": "entries"
 				},
 				{
-					"type": "table",
 					"caption": "物件护甲等级",
 					"colLabels": [
 						"AC",
@@ -430,11 +424,11 @@
 						],
 						[
 							"15",
-							"木"
+							"木头"
 						],
 						[
 							"17",
-							"岩石"
+							"石头"
 						],
 						[
 							"19",
@@ -448,23 +442,23 @@
 							"23",
 							"精金"
 						]
-					]
+					],
+					"type": "table"
 				},
 				{
-					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Hit Points",
-							"name": "生命值",
-							"type": "entries",
 							"entries": [
 								"物件会在其生命值降至 0 时被摧毁。物件生命值表提供了从微型到大型的，或脆弱或牢固的物品的{@variantrule 生命值|XPHB}建议。要记录一个巨型或超巨型物件的生命值，你需要将其划分为若干个大型以下的部分，并单独跟踪记录每个区块的{@variantrule 生命值|XPHB}。DM可以决定摧毁物件的哪一部分可以令这个物件整体坍塌。"
-							]
+							],
+							"name": "生命值",
+							"type": "entries"
 						}
-					]
+					],
+					"type": "entries"
 				},
 				{
-					"type": "table",
 					"caption": "物件生命值",
 					"colLabels": [
 						"体型",
@@ -497,38 +491,44 @@
 							"5 ({@dice 1d10})",
 							"27 ({@dice 5d10})"
 						]
-					]
+					],
+					"type": "table"
 				},
 				{
-					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Damage Types and Objects",
-							"name": "与伤害类型的互动",
-							"type": "entries",
 							"entries": [
 								"物件具有毒素伤害免疫与心灵伤害{@variantrule 免疫|XPHB}。DM也许会判定某些{@variantrule 伤害类型|XPHB|伤害类型}对某物件具有更好/更差的效果。举个例子，钝击伤害在击碎各种物品时非常好用，但在裁剪物品时效果就不尽人意。纸质或布质的物件可能具有火焰伤害{@variantrule 易伤|XPHB}。"
-							]
+							],
+							"name": "与伤害类型的互动",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Damage Threshold",
-							"name": "伤害阈值",
-							"type": "entries",
 							"entries": [
 								"大物件（像是城堡的墙壁之类的）通常拥有着额外的，以一项伤害阈值表现的抗伤能力。"
-							]
+							],
+							"name": "伤害阈值",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "No Ability Scores",
-							"name": "无属性值",
-							"type": "entries",
 							"entries": [
 								"只要规则没有为一个物件设定属性，物件通常是不具有属性值的。因为没有属性值，物件无法进行属性检定，且会自动失败于一切豁免检定。"
-							]
+							],
+							"name": "无属性值",
+							"type": "entries"
 						}
-					]
+					],
+					"type": "entries"
 				}
 			],
+			"name": "破坏物件",
+			"page": 362,
+			"ruleType": "C",
+			"source": "XPHB",
+			"srd52": true,
 			"translator": "不全书"
 		},
 		{
@@ -7515,7 +7515,7 @@
 				{
 					"type": "list",
 					"items": [
-						"该生物被{@status 措手不及}。",
+						"该生物被{@status 突袭}。",
 						"该生物在战斗中第一次被减少至一半或更少的生命值。",
 						"该生物无法在其自己的回合里伤害敌方人员。"
 					]
@@ -7524,7 +7524,7 @@
 				{
 					"type": "list",
 					"items": [
-						"团体里所有生物都被{@status 措手不及}。",
+						"团体里所有生物都被{@status 突袭}。",
 						"团体的领袖生命值被降至0，陷入{@condition 失能}，被俘虏或被从战斗中移除。",
 						"该团体缩小为原来一半的体型，而对方却没有人员损失。"
 					]

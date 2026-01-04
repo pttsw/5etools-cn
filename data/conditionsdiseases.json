@@ -66,36 +66,39 @@
 			"translator": "不全书"
 		},
 		{
-			"ENG_name": "Charmed",
-			"name": "魅惑",
-			"source": "PHB",
-			"page": 290,
-			"srd": true,
-			"basicRules": true,
-			"otherSources": [
-				{
-					"source": "RMR",
-					"page": 62
-				},
-				{
-					"source": "HftT",
-					"page": 48
-				}
-			],
-			"reprintedAs": [
-				"魅惑|XPHB"
-			],
-			"entries": [
-				{
-					"type": "list",
-					"items": [
-						"被魅惑生物不能攻击魅惑者，其造成伤害的能力或魔法效应也不能以魅惑者为目标。",
-						"魅惑者对被魅惑生物进行任何与社交相关的属性检定时具有优势。"
-					]
-				}
-			],
-			"hasFluffImages": true,
-			"translator": "不全书"
+			"type": "statblockInline",
+			"dataType": "condition",
+			"data": {
+				"ENG_name": "Charmed",
+				"basicRules": true,
+				"entries": [
+					{
+						"items": [
+							"被魅惑生物不能攻击魅惑者，其造成伤害的能力或魔法效应也不能以魅惑者为目标。",
+							"魅惑者对被魅惑生物进行任何与社交相关的属性检定时具有优势。"
+						],
+						"type": "list"
+					}
+				],
+				"hasFluffImages": true,
+				"name": "魅惑",
+				"otherSources": [
+					{
+						"page": 62,
+						"source": "RMR"
+					},
+					{
+						"page": 48,
+						"source": "HftT"
+					}
+				],
+				"page": 290,
+				"reprintedAs": [
+					"魅惑|XPHB"
+				],
+				"source": "PHB",
+				"srd": true
+			}
 		},
 		{
 			"ENG_name": "Charmed",
@@ -468,51 +471,51 @@
 		},
 		{
 			"ENG_name": "Incapacitated",
-			"name": "失能",
-			"source": "XPHB",
-			"page": 369,
-			"srd52": true,
 			"basicRules2024": true,
 			"entries": [
 				"失能状态期间，你将遭受以下这些效应。",
 				{
-					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Inactive",
-							"name": "无法行动",
-							"type": "entries",
 							"entries": [
 								"你无法执行任何{@variantrule 动作|XPHB|动作}、{@variantrule 附赠动作|XPHB}以及{@variantrule 反应|XPHB}。"
-							]
+							],
+							"name": "无法行动",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "No Concentration",
-							"name": "无法专注",
-							"type": "entries",
 							"entries": [
 								"你的{@status 专注|XPHB}将被打断。"
-							]
+							],
+							"name": "无法专注",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Speechless",
-							"name": "无法说话",
-							"type": "entries",
 							"entries": [
 								"你无法说话。"
-							]
+							],
+							"name": "无法说话",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Surprised",
-							"name": "措手不及",
-							"type": "entries",
 							"entries": [
 								"如果你在陷入失能状态期间投掷{@variantrule 先攻|XPHB}，你的先攻检定将具有{@variantrule 劣势|XPHB}。"
-							]
+							],
+							"name": "措手不及",
+							"type": "entries"
 						}
-					]
+					],
+					"type": "entries"
 				}
 			],
+			"name": "失能",
+			"page": 369,
+			"source": "XPHB",
+			"srd52": true,
 			"translator": "不全书"
 		},
 		{
@@ -549,43 +552,43 @@
 		},
 		{
 			"ENG_name": "Invisible",
-			"name": "隐形",
-			"source": "XPHB",
-			"page": 370,
-			"srd52": true,
 			"basicRules2024": true,
 			"entries": [
 				"隐形状态期间，你将获得以下这些效应。",
 				{
-					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Surprise",
-							"name": "突袭",
-							"type": "entries",
 							"entries": [
 								"如果你在投掷先攻时处于{@variantrule 先攻|XPHB}状态，你的先攻检定将具有{@variantrule 优势|XPHB}。"
-							]
+							],
+							"name": "出其不意",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Concealed",
-							"name": "隐蔽",
-							"type": "entries",
 							"entries": [
 								"任何需要能够看见目标的效应都不会影响到你，除非效应的源头能通过某种方式看到你。你所着装或携带的一切装备也同样会被隐蔽起来。"
-							]
+							],
+							"name": "隐蔽",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Attacks Affected",
-							"name": "攻击影响",
-							"type": "entries",
 							"entries": [
 								"以你为目标的{@action 攻击|XPHB}检定具有{@variantrule 劣势|XPHB}，而你进行的攻击检定具有{@variantrule 优势|XPHB}。如果一个生物能以某种方式看见你，那么你在面对该生物时不会获得这一增益。"
-							]
+							],
+							"name": "攻击影响",
+							"type": "entries"
 						}
-					]
+					],
+					"type": "entries"
 				}
 			],
+			"name": "隐形",
+			"page": 370,
+			"source": "XPHB",
+			"srd52": true,
 			"translator": "不全书"
 		},
 		{
@@ -1486,7 +1489,7 @@
 			"srd52": true,
 			"type": "Magical Contagion",
 			"entries": [
-				"被污染的药剂和炼金术废料可能引发下水道瘟疫，这种瘟疫在下水道和垃圾堆中滋生，有时会通过居住在这些区域的生物传播，包括欧几鱼和老鼠。任何被携带传染病的生物伤害或接触到受污染的污垢和内脏的人形生物都必须在 {@dc 11} 体质豁免掷骰中成功，否则将感染下水道瘟疫。一个生物在感染后 {@dice 1d4} 天会遭受以下影响：",
+				"污秽的药水和炼金废物可以产生下水道瘟疫：这种疫病在下水道和垃圾堆中滋生，并通过栖息在上述区域的生物传播，例如老鼠和食腐兽。任何被携带此疫病的生物伤到，或是接触了被此疫病污染的秽物或内脏的类人生物都必须成功通过一次{@dc 11} 的体质豁免，否则将被下水道瘟疫感染。染疫的生物会在感染 {@dice 1d4} 天之后开始承受以下效应：",
 				{
 					"type": "list",
 					"style": "list-hang-notitle",
@@ -1501,13 +1504,13 @@
 							"ENG_name": "Weakness",
 							"name": "虚弱",
 							"type": "item",
-							"entry": "当生物有任何疲劳等级时，它从消耗生命值骰中恢复的生命值只有正常数量的一半。"
+							"entry": "只要该生物具有任意来源的力竭等级，它在消耗生命骰恢复生命值时就只能恢复一半的生命值。"
 						},
 						{
 							"ENG_name": "Restlessness",
 							"name": "无休",
 							"type": "item",
-							"entry": "当生物有任何疲劳等级时，完成一次长休既不能恢复失去的生命值，也不能减少生物的疲劳等级。"
+							"entry": "只要该生物具有任意来源的力竭等级， 它就不会因完成长休而恢复任何生命值、亦不会因此降低力竭等级。"
 						}
 					]
 				},
@@ -1519,7 +1522,7 @@
 							"name": "抵抗疫病",
 							"type": "entries",
 							"entries": [
-								"每天黎明时，被感染的生物需要进行一次 {@dc 11} 体质豁免检定。若检定失败，该生物的疲乏加重，获得1级 {@condition 力竭|XPHB}。若检定成功，该生物的力竭等级减少1。如果该生物的力竭等级降至0，感染在该生物身上结束。"
+								"染疫的生物在每日黎明时都要进行一次{@dc 11} 的体质豁免。豁免失败则病情恶化，该生物获得1级{@condition 力竭|XPHB}。豁免成功则该生物降低1级力竭。若该生物的力竭等级降至0，则该生物康复。"
 							]
 						}
 					]
@@ -1785,24 +1788,24 @@
 		},
 		{
 			"ENG_name": "Surprised",
-			"name": "措手不及",
+			"name": "突袭",
 			"source": "PHB",
 			"page": 189,
 			"srd": true,
 			"basicRules": true,
 			"reprintedAs": [
-				"措手不及|XPHB"
+				"突袭|XPHB"
 			],
 			"entries": [
 				"一队冒险者悄悄地包围了匪徒的营地，并从树后跳出来发动攻击。一只{@creature 凝胶方块}在地城的通道滑行，而冒险者们发现时已经有同伴被其吞没。这些情况即为一方遭另一方突袭。",
-				"生物是否遭受突袭由DM作最终判定。如果遭遇双方都不执行隐匿，则双方将直接发现对方的存在而不构成突袭。否则，DM会将躲藏方的敏捷（{@skill 隐匿}）检定结果，与对方每一人的被动感知（{@skill 察觉}）值作对抗。任何没有注意到威胁的角色或怪物，都视为{@status 措手不及}。",
-				"被突袭时，你在自已的第一个回合中不能移动或执行任何动作，而且直至该回合结束前都不能执行任何反应。另外，团体中某个生物在其队友没遭突袭时，也可能独自{@status 措手不及}。"
+				"生物是否遭受突袭由DM作最终判定。如果遭遇双方都不执行隐匿，则双方将直接发现对方的存在而不构成突袭。否则，DM会将躲藏方的敏捷（{@skill 隐匿}）检定结果，与对方每一人的被动感知（{@skill 察觉}）值作对抗。任何没有注意到威胁的角色或怪物，都视为{@status 突袭}。",
+				"被突袭时，你在自已的第一个回合中不能移动或执行任何动作，而且直至该回合结束前都不能执行任何反应。另外，团体中某个生物在其队友没遭突袭时，也可能独自{@status 突袭}。"
 			],
 			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Surprised",
-			"name": "措手不及",
+			"name": "突袭",
 			"source": "XPHB",
 			"page": 376,
 			"srd52": true,

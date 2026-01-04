@@ -3152,7 +3152,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"第3级起，你一旦获得先机就会变得更加致命。你对战斗开始后还没开始过自己回合的生物发动攻击时，所进行的攻击检定具有优势。此外，当你攻击命中{@status 措手不及}的生物时，你本次攻击视为掷出了重击。"
+				"第3级起，你一旦获得先机就会变得更加致命。你对战斗开始后还没开始过自己回合的生物发动攻击时，所进行的攻击检定具有优势。此外，当你攻击命中{@status 突袭}的生物时，你本次攻击视为掷出了重击。"
 			]
 		},
 		{
@@ -3214,7 +3214,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"第17级起，你熟练掌握瞬杀的技巧。你攻击命中一个{@status 措手不及}的生物时，该生物必须进行一次体质豁免（{@dc 8}＋你的敏捷调整值＋你的熟练加值）。豁免失败时，你将对其造成双倍伤害。"
+				"第17级起，你熟练掌握瞬杀的技巧。你攻击命中一个{@status 突袭}的生物时，该生物必须进行一次体质豁免（{@dc 8}＋你的敏捷调整值＋你的熟练加值）。豁免失败时，你将对其造成双倍伤害。"
 			]
 		},
 		{
@@ -3324,7 +3324,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"第17级起，你变的更加擅长伏击和快速脱离险境。战斗的第一轮里，你可以行动两个回合：即你先以自己正常的先攻执行一个回合行动，再以先攻数值减10的数值作为另一先攻额外执行一回合的行动。你不能在{@status 措手不及}时使用该特性。"
+				"第17级起，你变的更加擅长伏击和快速脱离险境。战斗的第一轮里，你可以行动两个回合：即你先以自己正常的先攻执行一个回合行动，再以先攻数值减10的数值作为另一先攻额外执行一回合的行动。你不能在{@status 突袭}时使用该特性。"
 			]
 		},
 		{
@@ -4087,18 +4087,11 @@
 		},
 		{
 			"ENG_name": "Dread Allegiance",
-			"name": "敬怖之忠",
-			"source": "FRHoF",
 			"className": "游荡者",
 			"classSource": "XPHB",
-			"subclassShortName": "三神门徒",
-			"subclassSource": "FRHoF",
-			"level": 3,
 			"entries": [
-				"选择死亡三神中的一位：{@deity 灾祸术|费伦|FRHoF}、{@deity 巴尔|费伦|FRHoF}或{@deity 米尔寇|费伦|FRHoF}。你获得一种伤害类型的{@variantrule 抗性|XPHB}和施展某道戏法的能力，如下表所示。你施展该戏法的施法属性是智力。当你完成一次{@variantrule 长休|XPHB}时，你可以重新选择一位神明。",
+				"选择死亡三神中的一位：{@deity 班恩|费伦|FRHoF}、{@deity 巴尔|费伦|FRHoF}或{@deity 米尔寇|费伦|FRHoF}。你获得一种伤害类型的{@variantrule 抗性|XPHB}和施展某道戏法的能力，如下表所示。你施展该戏法的施法属性是智力。当你完成一次{@variantrule 长休|XPHB}时，你可以重新选择一位神明。",
 				{
-					"type": "table",
-					"page": 7,
 					"colLabels": [
 						"神",
 						"伤害抗性",
@@ -4109,9 +4102,10 @@
 						"col-4",
 						"col-4"
 					],
+					"page": 7,
 					"rows": [
 						[
-							"{@deity 灾祸术|费伦|FRHoF}",
+							"{@deity 班恩|费伦|FRHoF}",
 							"心灵",
 							"{@spell 次级幻象|XPHB}"
 						],
@@ -4125,32 +4119,40 @@
 							"暗蚀",
 							"{@spell 颤栗之触|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"level": 3,
+			"name": "敬怖之忠",
+			"source": "FRHoF",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"translator": "机翻"
 		},
 		{
 			"ENG_name": "Scion of the Three",
-			"name": "三神门徒",
-			"source": "FRHoF",
 			"className": "游荡者",
 			"classSource": "XPHB",
-			"subclassShortName": "三神门徒",
-			"subclassSource": "FRHoF",
-			"level": 3,
 			"entries": [
 				"{@i 成为恶意的恐怖代理人}",
-				"三神门徒的力量来源于一群邪恶神祇\u2014\u2014在博德之门，人们称这些神祇为\"死亡三神\"，祂们分别是：暴政之神{@deity 灾祸术|费伦|FRHoF}、谋杀之神{@deity 巴尔|费伦|FRHoF}以及死亡之神{@deity 米尔寇|费伦|FRHoF}。该子职下的游荡者中，一部分人是全心全意地侍奉这三位恐怖神明；但也有一些人是因诅咒或命运的扭曲而被迫走上这条道路的。但无论出于信仰还是诅咒，门徒的力量会让他们掌握到各类神秘的秘术礼赠、展露出用于打击和恐吓敌人的超凡才能。",
-				"三神门徒最常见于博德之门，那是死亡三神尚未成神时的凡间故乡。在{@deity 灾祸术|费伦|FRHoF}、{@deity 巴尔|费伦|FRHoF}与{@deity 米尔寇|费伦|FRHoF}的地下邪教中，三神门徒常常是教派中最有效率的刺客与间谍。而在博德之门以外，像安姆的影贼公会或深水城的珊萨娜公会这样的世俗盗贼行会，也可能雇佣三神门徒去执行那些极端暴力的契约任务。",
+				"三神门徒的力量来源于一群邪恶神祇\u2014\u2014在博德之门，人们称这些神祇为\"死亡三神\"，祂们分别是：暴政之神{@deity 班恩|费伦|FRHoF}、谋杀之神{@deity 巴尔|费伦|FRHoF}以及死亡之神{@deity 米尔寇|费伦|FRHoF}。该子职下的游荡者中，一部分人是全心全意地侍奉这三位恐怖神明；但也有一些人是因诅咒或命运的扭曲而被迫走上这条道路的。但无论出于信仰还是诅咒，门徒的力量会让他们掌握到各类神秘的秘术礼赠、展露出用于打击和恐吓敌人的超凡才能。",
+				"三神门徒最常见于博德之门，那是死亡三神尚未成神时的凡间故乡。在{@deity 班恩|费伦|FRHoF}、{@deity 巴尔|费伦|FRHoF}与{@deity 米尔寇|费伦|FRHoF}的地下邪教中，三神门徒常常是教派中最有效率的刺客与间谍。而在博德之门以外，像安姆的影贼公会或深水城的珊萨娜公会这样的世俗盗贼行会，也可能雇佣三神门徒去执行那些极端暴力的契约任务。",
 				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF"
+					"subclassFeature": "嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF",
+					"type": "refSubclassFeature"
 				},
 				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "敬怖之忠|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF"
+					"subclassFeature": "敬怖之忠|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF",
+					"type": "refSubclassFeature"
 				}
-			]
+			],
+			"level": 3,
+			"name": "三神门徒",
+			"source": "FRHoF",
+			"subclassShortName": "三神门徒",
+			"subclassSource": "FRHoF",
+			"translator": "机翻"
 		},
 		{
 			"ENG_name": "Strike Fear",
@@ -4187,7 +4189,7 @@
 			"level": 13,
 			"header": 2,
 			"entries": [
-				"你散发出与死亡三神之一相关的恶毒力量。当你使用{@subclassFeature 嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF}并传送时，你选择的在你离开的空间或你到达的空间（由你选择）10尺内的每个生物受到等同于你智力调整值的伤害；伤害类型与你通过敬怖之忠特性选择的{@variantrule 抗性|XPHB}相同。此特性造成的{@variantrule 伤害|XPHB}无视{@variantrule 抗性|XPHB}。"
+				"你散发出与死亡三神其一相关的恶性之力。每当你使用{@subclassFeature 嗜血|游荡者|XPHB|三神门徒|FRHoF|3|FRHoF}特性并传送时，你传送前的位置或传送后的目标地点（由你选择）10尺内的每个你所选生物都会承受等同于你智力调整值的伤害；伤害类型与你选择的敬怖之忠特性赋予的{@variantrule 抗性|XPHB}类型相同。该特性所造成的{@variantrule 伤害|XPHB}无视{@variantrule 抗性|XPHB}。"
 			]
 		},
 		{
