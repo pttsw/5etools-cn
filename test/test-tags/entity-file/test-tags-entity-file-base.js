@@ -111,6 +111,7 @@ export class EntityFileHandlerBase extends DataTesterBase {
 		"ability",
 		"name",
 		"resourceName",
+		"ENG_name",
 	]);
 
 	_testAdditionalSpells (file, obj) {

@@ -94,7 +94,7 @@ export class EquipmentBreakdown {
 
 		if (/^(?:Choose A or B:|选择\s?A\s?或\s?B\s?[:：])/.test(entry)) {
 			entry = entry.replace(/^Choose A or B: \(A\)\s*/, "")
-				.replace(/^选择\s?A\s?或\s?B\s?[:：]\s?[(（]A[）)]\s*/, "")
+				.replace(/^选择\s?A\s?或\s?B\s?[:：]\s?[(（]A[）)]\s*/, "");
 			const [ptA, ptB] = entry
 				.split(/(?:; or \(B\) |[;；]或[(（]B[)）])\s?/)
 				.map(pt => pt.trim()).filter(Boolean);
@@ -183,7 +183,7 @@ export class EquipmentBreakdown {
 							.replace(/^(任意一|一|一|两|三|四|五|六|七|八|九|十|\d+)[\u4e00-\u9fa5]/i, (...m) => {
 								quantity = Parser.textToNumber(
 									m[1]
-										.replace(/^任意/i, "").trim()
+										.replace(/^任意/i, "").trim(),
 								);
 								return "";
 							})
@@ -787,7 +787,7 @@ export class BackgroundSkillToolLanguageTag {
 		if (isChoice) {
 			const entryClean = entry
 				.replace(/^either /gi, "");
-			
+
 			const out = {};
 			// TODO(kiwee) 这些回来在处理吧，太多了
 			switch (entryClean) {
@@ -885,7 +885,7 @@ export class BackgroundSkillToolLanguageTag {
 
 		const mSingleOrAlternate = new RegExp(`^${reStrLanguage} or one of your choice if you already speak ${reStrLanguage}$`, "i").exec(str)
 		|| new RegExp(`^${reStrLanguage}，或如果你已经熟悉${reStrLanguage}了就自选一门语言$`, "i").exec(str);
-		
+
 		if (mSingleOrAlternate) return [{[mSingle[1].toLowerCase()]: true}, {"anyStandard": 1}];
 
 		return null;

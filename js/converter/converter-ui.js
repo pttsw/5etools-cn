@@ -471,8 +471,8 @@ export class ConverterUi extends BaseComponent {
 				obj.name = nameChinese;
 				obj.ENG_name = nameEnglish;
 				return obj;
-			}
-		 });
+			},
+		});
 		const asCleanString = CleanUtil.getCleanJson(objWithName, {isFast: false});
 		if (append) {
 			const strs = [asCleanString, this._outText];

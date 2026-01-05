@@ -1519,7 +1519,7 @@ class ListPage {
 
 	_bindLinkEngSiteButton ({btn} = {}) {
 		btn ||= this._getOrTabRightButton(`link-5et`, `globe`);
-		
+
 		btn.addClass("ve-btn-copy-effect")
 			.onn("click", evt => {
 				const ENG_hash = UrlUtil.autoEncodeEngHash(this._lastRender.entity);
@@ -2008,7 +2008,6 @@ class ListPage {
 		const url = new URL(window.location.href);
 		url.hash ||= globalThis.HASH_BLANK;
 
-		console.log(ENG_hash);
 		const engSiteUrl = `https://5e.tools${url.pathname}#${ENG_hash}`;
 
 		window.open(engSiteUrl, "_blank");

@@ -59,7 +59,7 @@ function addMonsterFeatures (mfData) {
 	// when clicking a row in the "Monster Statistics by Challenge Rating" table
 	em("#msbcr tr:not(:has(th))").map(ele =>
 		ele.onn("click", async function () {
-			if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "This will reset the calculator. 你确定吗？", textYes: "是的", textNo: "取消"})) return;
+			if (!await InputUiUtil.pGetUserBoolean({title: "重置", htmlDescription: "此操作将重置计算器。你确定吗？", textYes: "是的", textNo: "取消"})) return;
 			const [tdCr, , , tdAc, tdHp, tdAtk, tdDpr, tdSave] = this.children;
 
 			es("#expectedcr").val(tdCr.innerHTML.trim());

@@ -2585,7 +2585,7 @@ Renderer.ENTRIES_WITH_CHILDREN = [
 	{type: "table", key: "rows"},
 ];
 
-Renderer._INLINE_HEADER_TERMINATORS = new Set([".", ",", "!", "?", ";", ":", `"`,"。", "，", "！", "？", "：","”"]);
+Renderer._INLINE_HEADER_TERMINATORS = new Set([".", ",", "!", "?", ";", ":", `"`, "。", "，", "！", "？", "：", "”"]);
 
 Renderer._STYLE_TAG_ID_TO_STYLE = {
 	"small-caps": "small-caps",
@@ -11827,7 +11827,7 @@ Renderer.item = class {
 		const fullType = Renderer.item.getItemTypeName(type);
 
 		const isSub = (textTypes.some(it => it.includes("weapon") || it.includes("武器")) && (fullType.includes("weapon") || fullType.includes("武器")))
-			|| (textTypes.some(it => it.includes("armor")|| it.includes("护甲")) && (fullType.includes("armor")) || (fullType.includes("护甲")));
+			|| (textTypes.some(it => it.includes("armor") || it.includes("护甲")) && (fullType.includes("armor") || fullType.includes("护甲")));
 
 		if (!showingBase && !!item.baseItem) (isSub ? ptsEntrySubType : ptsEntryType).push(`${fullType} ({@item ${item.baseItem}})`);
 		else if (typeAbv === Parser.ITM_TYP_ABV__SHIELD) (isSub ? ptsEntrySubType : ptsEntryType).push(`护甲 ({@item 盾牌|phb})`);
@@ -12669,7 +12669,7 @@ Renderer.item = class {
 				if (item.entries) {
 					for (const e of item.entries) {
 						// 如果entry是字符串类型且其中包含 不会对敏捷造成劣势的字样，则不添加下述文本
-						if (typeof e === 'string' && /不会对敏捷.*造成劣势/.test(e)) {
+						if (typeof e === "string" && /不会对敏捷.*造成劣势/.test(e)) {
 							// 满足条件则标记为不需要添加文本，并跳出循环
 							needAddText = false;
 							break;
@@ -12681,8 +12681,7 @@ Renderer.item = class {
 						? "穿戴者在敏捷({@skill 隐匿})检定上具有劣势。"
 						: "穿戴者在敏捷({@skill 隐匿|XPHB})检定上具有{@variantrule 劣势|XPHB}。";
 					item._fullEntries.push({type: "wrapper", wrapped, data: {[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "type"}});
-					}
-
+				}
 			}
 			if (itemTypeAbv === Parser.ITM_TYP_ABV__HEAVY_ARMOR && item.strength) {
 				Renderer.item._initFullEntries(item);

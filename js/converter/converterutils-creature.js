@@ -24,7 +24,7 @@ export class AcConvert {
 		const parts = mon.ac.trim().split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
 		parts.forEach(pt => {
 			// Use two expressions to ensure parentheses are paired
-			const mAc = /^(?<acRaw>\d+)(?:\s?[(（](?<fromRaw>.*?)[)）])?$/.exec(pt) 
+			const mAc = /^(?<acRaw>\d+)(?:\s?[(（](?<fromRaw>.*?)[)）])?$/.exec(pt)
 				|| /^(?<acRaw>\d+)(?: (?<fromRaw>.*?))?$/.exec(pt)
 				|| /^(?<fromRaw>.*?)(?<acRaw>\d+)(?:\s?(?<fromRawAlt>.*?))?$/.exec(pt);
 			if (!mAc) {
@@ -60,7 +60,7 @@ export class AcConvert {
 					});
 					return from || "";
 				});
-				
+
 			// region Handle alternates of the form:
 			//   - `狼与半人形态下（天生护甲）`
 			fromClean = fromClean
@@ -223,8 +223,7 @@ export class AcConvert {
 							if (mSpell) {
 								const {spellName, acVal} = mSpell.groups;
 								const spell = `{@spell ${spellName}}`;
-								if (spellName !== "法师护甲" && spellName !== "树肤术")
-									throw new Error(`Unhandled spell! ${spellName}`);
+								if (spellName !== "法师护甲" && spellName !== "树肤术") { throw new Error(`Unhandled spell! ${spellName}`); }
 								if (acVal) {
 									nuAcTail.push({
 										ac: Number(acVal),
@@ -393,7 +392,7 @@ export class AcConvert {
 
 			case "spiked shield": case "刺盾":
 				return "{@item 盾牌|phb|刺盾}";
-			// endregion
+				// endregion
 
 			// region magic items
 			case "dwarven plate": return "{@item dwarven plate}";
@@ -410,7 +409,7 @@ export class AcConvert {
 			// endregion
 
 			default: {
-				if (/^\+\d[\u4e00-\u9fa5]/.test(fromLow)) fromLow = fromLow.slice(0,2) + " " + fromLow.slice(2);
+				if (/^\+\d[\u4e00-\u9fa5]/.test(fromLow)) fromLow = `${fromLow.slice(0, 2)} ${fromLow.slice(2)}`;
 				if (lookup[fromLow]) {
 					const itemMeta = lookup[fromLow];
 
@@ -1246,7 +1245,7 @@ SenseFilterTag.TAGS = {
 	"tremorsense": "T",
 	"震颤感知": "T",
 	"truesight": "U",
-	"真实视觉": "U"
+	"真实视觉": "U",
 };
 
 export class SpellcastingTypeTag {
@@ -1269,7 +1268,6 @@ export class SpellcastingTypeTag {
 				if (/(^|[^\u4e00-\u9fa5])天生([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("I"); isAdded = true; }
 				if (/(^|[^\u4e00-\u9fa5])形态([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("F"); isAdded = true; }
 				if (/(^|[^\u4e00-\u9fa5])共享([^\u4e00-\u9fa5]|$)/gi.exec(sc.name)) { tags.add("S"); isAdded = true; }
-
 
 				if (sc.headerEntries) {
 					const strHeader = JSON.stringify(sc.headerEntries);
@@ -2164,7 +2162,7 @@ export class SpellcastingTraitConvert {
 				return ` {@hit ${op === "-" ? "-" : ""}${num}}${suffix}`;
 			})
 			.replace(/(?<prefix>法术攻击命中)(?<op>[-+])(?<num>\d+)/g, (...m) => {
-				const {prefix,op, num} = m.at(-1);
+				const {prefix, op, num} = m.at(-1);
 				return `${prefix}{@hit ${op === "-" ? "-" : ""}${num}}`;
 			})
 		;
@@ -2175,7 +2173,7 @@ export class SpellcastingTraitConvert {
 			const m = /strength|dexterity|constitution|charisma|intelligence|wisdom/gi.exec(JSON.stringify(spellcastingEntry.headerEntries));
 			if (m) spellcastingEntry.ability = m[0].substring(0, 3).toLowerCase();
 			const cm = /力量|体质|敏捷|魅力|智力|感知/gi.exec(JSON.stringify(spellcastingEntry.headerEntries));
-			if (cm) spellcastingEntry.ability = Parser.attFullToAbv(cm[0])
+			if (cm) spellcastingEntry.ability = Parser.attFullToAbv(cm[0]);
 		}
 	}
 
@@ -2653,7 +2651,7 @@ export class TagImmResVulnConditional {
 			} else {
 				const cnNote = obj.note.trim().replace(/^[(（]/, "").replace(/^伤害/, "").trim();
 				if (
-					cnNote.startsWith("当") 
+					cnNote.startsWith("当")
 					|| cnNote.startsWith("来自")
 					|| cnNote.startsWith("如果")
 					|| cnNote.startsWith("若")
@@ -2661,10 +2659,10 @@ export class TagImmResVulnConditional {
 					|| cnNote.startsWith("除")
 					|| cnNote.endsWith("时")
 					|| /形态下?$/.test(cnNote)
-				){
+				) {
 					obj.cond = true;
 				}
-			} 
+			}
 		}
 
 		if (obj[prop]) obj[prop].forEach(it => this._handleProp_recurse(it, prop));
@@ -2681,7 +2679,6 @@ export class DragonAgeTag {
 		});
 		mon.name.replace(/(?<age>青年|成年|雏龙|太古|远古|化身)/i, (...m) => {
 			mon.dragonAge = m.last().age.toLowerCase();
-			
 		});
 	}
 }

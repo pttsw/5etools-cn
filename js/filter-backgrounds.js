@@ -19,7 +19,8 @@ class PageFilterBackgrounds extends PageFilterBase {
 
 		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores", cnHeader: "属性值"});
 		this._skillFilter = new Filter({
-			header: "Skill Proficiencies", cnHeader: "技能熟练项",
+			header: "Skill Proficiencies",
+			cnHeader: "技能熟练项",
 			displayFn: it => {
 				const [name, sourceJson] = it.split("|");
 				return `${name.toTitleCase()}${sourceJson ? ` (${Parser.sourceJsonToAbv(sourceJson)})` : ""}`;

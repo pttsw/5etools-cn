@@ -42,7 +42,6 @@ I18nUtil.get = (key, defaultFunc = (k) => k.split(".").at(-1).replaceAll("_", " 
 		}
 		return defaultFunc(key);
 	} catch (error) {
-		console.error(error);
 		return defaultFunc(key);
 	}
 };
@@ -77,7 +76,6 @@ I18nUtil.__translateElement = (element) => {
 		try {
 			element.textContent = $.i18n.prop(key);
 		} catch (error) {
-			console.error(error);
 			element.textContent = key;
 		}
 	}
@@ -93,7 +91,6 @@ I18nUtil.__translateElement = (element) => {
 				try {
 					element.setAttribute(targetAttr, $.i18n.prop(key));
 				} catch (error) {
-					console.error(error);
 					element.setAttribute(targetAttr, key);
 				}
 			}

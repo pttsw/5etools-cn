@@ -314,7 +314,7 @@ export class ConverterCreature extends ConverterBase {
 			}
 
 			// Alternate ability scores (alternating lines of abbreviation and score)
-			const tst = Object.values(Parser.ATB_ABV_TO_FULL)
+			const tst = Object.values(Parser.ATB_ABV_TO_FULL);
 			if (Parser.ABIL_ABVS.includes(meta.curLine.toLowerCase())
 				|| Object.values(Parser.ATB_ABV_TO_FULL).includes(meta.curLine.toLowerCase())) {
 				// skip forward a line and grab the ability score
@@ -2426,8 +2426,8 @@ export class ConverterCreature extends ConverterBase {
 
 							return tempSenses.push(
 								pt
-									.replace(/magical Darkness/g, `magical {@variantrule Darkness|XPHB}`).
-									replace(/魔法黑暗/g, `魔法{@variantrule 黑暗|XPHB}`)
+									.replace(/magical Darkness/g, `magical {@variantrule Darkness|XPHB}`)
+									.replace(/魔法黑暗/g, `魔法{@variantrule 黑暗|XPHB}`),
 							);
 						}
 

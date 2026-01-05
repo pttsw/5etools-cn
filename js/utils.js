@@ -16,7 +16,7 @@ globalThis.HASH_SUB_LIST_SEP = "~";
 globalThis.HASH_SUB_KV_SEP = ":";
 globalThis.HASH_BLANK = "blankhash";
 globalThis.HASH_SUB_NONE = "null";
-globalThis.URL_PROXY = "https://gh-proxy.org/",
+globalThis.URL_PROXY = "https://gh-proxy.org/";
 
 globalThis.VeCt = {
 	STR_NONE: "无",
@@ -54,7 +54,6 @@ globalThis.VeCt = {
 	SYM_UTIL_TIMEOUT: Symbol("timeout"),
 
 	LOC_HOSTNAME_CANCER: "5e.tools",
-
 
 	URL_BREW: `https://github.com/tjliqy/homebrew/`,
 	URL_ROOT_BREW: `${URL_PROXY}https://raw.githubusercontent.com/tjliqy/homebrew/cn/`, // N.b. must end with a slash
@@ -3720,7 +3719,7 @@ globalThis.UrlUtil = {
 	},
 
 	getStateKeySubclass (sc) {
-		return UrlUtil.encodeArrayForHash(["sub",  sc.shortName || sc.name || sc.ENG_shortName || sc.ENG_name, sc.source]);
+		return UrlUtil.encodeArrayForHash(["sub", sc.shortName || sc.name || sc.ENG_shortName || sc.ENG_name, sc.source]);
 	},
 
 	unpackStateKeySubclass (str) {

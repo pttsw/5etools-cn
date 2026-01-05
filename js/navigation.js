@@ -341,7 +341,7 @@ class NavBar {
 								}
 
 								let cleanName = indexMeta.name.startsWith(indexMeta.parentName)
-									? indexMeta.name.slice(indexMeta.parentName.length).replace(/^:\s+/, "")
+									? indexMeta.name.slice(indexMeta.parentName.length).replace(/^(?::\s+|：\s?)/, "")
 									: indexMeta.name;
 								this._addElement_li(
 									{

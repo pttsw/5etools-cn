@@ -29,7 +29,7 @@ function transfProperties (data, fatherKey = "") {
 	return tempObj;
 }
 languageList.forEach(lang => {
-	const tempLocale = transfSingleLayerJSON(localeData[lang])
+	const tempLocale = transfSingleLayerJSON(localeData[lang]);
 	fs.writeFileSync(`./languages/plu-${lang}.json`, JSON.stringify(tempLocale), "utf-8");
 	const tempProperties = transfProperties(localeData[lang]);
 	fs.writeFileSync(`./languages/${lang}.json`, JSON.stringify(localeData[lang]), "utf-8");

@@ -670,7 +670,6 @@ Parser.acToFull = function (ac, {renderer = null, isHideFrom = false} = {}) {
 				}
 			}
 
-
 			if (inBraces && !isNxtBraces) {
 				stack += ")";
 				inBraces = false;
@@ -1200,7 +1199,7 @@ Parser.coinValueToNumber = function (value) {
 		.toLowerCase();
 	const m = Parser._costSplitRegexp.exec(value);
 	if (!m) throw new Error(`Badly formatted value "${value}"`);
-	const coinAbv = Parser.coinFullToAbv(m[3])
+	const coinAbv = Parser.coinFullToAbv(m[3]);
 	const ixCoin = Parser.COIN_ABVS.indexOf(coinAbv);
 	if (!~ixCoin) throw new Error(`Unknown coin type "${m[3]}"`);
 	return Number(m[1]) * Parser.COIN_CONVERSIONS[ixCoin];
@@ -3502,7 +3501,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCC_ARiR] = "废墟中的审判";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MPMM] = "魔邓肯巨献：多元宇宙的怪物";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_CRCotN] = "溟渊的呼唤";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_JttRC] = "耀光城之旅";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SAiS] = "魔法船：冒险，于太空之中";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SAiS] = "魔法船：冒险于太空中";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_AAG] = "星界冒险者指南";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BAM] = "布布的星界怪兽展";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LoX] = "萨里希斯之光";
@@ -3511,7 +3510,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DSotDQ] = "龙枪：龙后之影";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_KftGV] = "黄金宝库之钥";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BGG] = "毕格比巨献：巨人之荣耀";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PaBTSO] = "凡戴尔之下：破碎方尖碑";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PAitM] = "异域风景：多元宇宙之冒险";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PAitM] = "异度风景：多元宇宙冒险";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SatO] = "印记城与外域";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ToFW] = "命运之轮的轮转";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MPP] = "莫提的位面游记";
@@ -3542,7 +3541,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NF] = "耐瑟瑞尔的陨落";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LFL] = "洛温：初光";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EFA] = "艾伯伦: 奇械锻炉";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FFotR] = "隐士的命定航旅";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "Tarot Deck";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "塔罗牌";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = "地下城主帷幕";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = "地下城主帷幕：荒野套组";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_DUNGEON_KIT] = "地下城主帷幕：地下城套组";
@@ -4566,7 +4565,7 @@ Parser.DMG_TYPE_TO_EN = {
 	"雷鸣": "thunder",
 };
 Parser.dmgTypeToEn = function (dmgType) {
-		return Parser._parse_aToB(Parser.DMG_TYPE_TO_EN, dmgType);
+	return Parser._parse_aToB(Parser.DMG_TYPE_TO_EN, dmgType);
 };
 
 Parser.CONDITIONS = ["目盲", "魅惑", "耳聋", "力竭", "恐慌", "受擒", "失能", "隐形", "麻痹", "石化", "中毒", "倒地", "束缚", "震慑", "昏迷"];
@@ -4709,7 +4708,7 @@ Parser.LANGUAGES_TO_CN = {
 	"sylvan": "木族语",
 	"undercommon": "地底通用语",
 
-	//Types
+	// Types
 	"standard": "标准",
 	"exotic": "特种",
 	"secret": "秘密",

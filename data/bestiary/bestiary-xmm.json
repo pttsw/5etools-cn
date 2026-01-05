@@ -8599,7 +8599,7 @@
 			],
 			"cr": "2",
 			"gear": [
-				"手铳|xphb",
+				"手枪|xphb",
 				"弯刀|xphb",
 				"镶钉皮甲|xphb"
 			],
@@ -8721,7 +8721,7 @@
 			"cr": "11",
 			"gear": [
 				{
-					"item": "手铳|xphb",
+					"item": "手枪|xphb",
 					"quantity": 2
 				},
 				"弯刀|xphb",
@@ -9171,7 +9171,7 @@
 				"perception": "+8"
 			},
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 18,
 			"resist": [
@@ -9684,7 +9684,7 @@
 				"cha": "+4"
 			},
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 10,
 			"resist": [
@@ -10258,7 +10258,7 @@
 					"ENG_name": "Undead Fortitude",
 					"name": "不死坚韧",
 					"entries": [
-						"若伤害使丧尸的生命值降至0{@variantrule 生命值|XPHB}，除非该伤害为光耀伤害或来自{@variantrule 重击|XPHB}，否则丧尸进行一次体质豁免（{@dc 5}加上所受伤害）。豁免成功则改为将生命值降至1{@variantrule 生命值|XPHB|生命值}。"
+						"若伤害使丧尸的生命值降至 0{@variantrule 生命值|XPHB}，除非该伤害为光耀伤害或来自{@variantrule 重击|XPHB}，否则丧尸进行一次体质豁免（{@dc 5}加上所受伤害）。豁免成功则改为将生命值降至 1 {@variantrule 生命值|XPHB|生命值}。"
 					]
 				}
 			],
@@ -10274,7 +10274,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}16（{@damage 4d6 + 2}）穿刺伤害。"
+						"{@atkr m} ：{@hit 5}，触及 5 尺。{@h}： 16（{@damage 4d6 + 2}）穿刺伤害。"
 					]
 				},
 				{
@@ -10291,7 +10291,7 @@
 									"name": "1: 麻痹射线",
 									"type": "item",
 									"entries": [
-										"{@actSave con} {@dc 14}。{@actSaveFail} 目标陷入{@condition 麻痹|XPHB}状态，并在其回合结束时重复豁免，成功则终止其身上的该效应。1分钟后，其豁免自动成功。"
+										"{@actSave con}： {@dc 14}。{@actSaveFail} ：目标陷入{@condition 麻痹|XPHB}状态，并在其回合结束时重复豁免，成功则终止其身上的该效应。1 分钟后，其豁免自动成功。"
 									]
 								},
 								{
@@ -10299,7 +10299,7 @@
 									"name": "2: 恐惧射线",
 									"type": "item",
 									"entries": [
-										"{@actSave wis} {@dc 14}。{@actSaveFail} 13（{@damage 3d8}）心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下个回合结束。"
+										"{@actSave wis} ：{@dc 14}。{@actSaveFail}： 13（{@damage 3d8}）心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态直至其下个回合结束。"
 									]
 								},
 								{
@@ -10307,7 +10307,7 @@
 									"name": "3: 汲能射线",
 									"type": "item",
 									"entries": [
-										"{@actSave con} {@dc 14}。{@actSaveFail} 10（{@damage 3d6}）暗蚀伤害，且目标陷入{@condition 中毒|XPHB}状态直至其下个回合结束。{@condition 中毒|XPHB}期间，目标无法恢复{@variantrule 生命值|XPHB}。{@actSaveSuccess} 仅半伤。"
+										"{@actSave con}： {@dc 14}。{@actSaveFail} ：10（{@damage 3d6}）暗蚀伤害，且目标陷入{@condition 中毒|XPHB}状态直至其下个回合结束。{@condition 中毒|XPHB}期间，目标无法恢复{@variantrule 生命值|XPHB}。{@actSaveSuccess} ：仅半伤。"
 									]
 								},
 								{
@@ -10315,7 +10315,7 @@
 									"name": "4: 解离射线",
 									"type": "item",
 									"entries": [
-										"{@actSave dex} {@dc 14}。{@actSaveFail} 27（{@damage 5d10}）力场伤害。若目标是一件非魔法物件或魔法力场造物，则其上一处10尺{@variantrule 立方 [效应区域]|XPHB|立方}区域内的部分被解离为尘埃。{@actSaveSuccess} 半伤。{@actSaveSuccessOrFail} 若目标为生物且因此伤害生命值降至0 {@variantrule 生命值|XPHB}，则该生物被解离为尘埃。"
+										"{@actSave dex}： {@dc 14}。{@actSaveFail}： 27（{@damage 5d10}）力场伤害。若目标是一件非魔法物件或魔法力场造物，则其上一处 10 尺{@variantrule 立方 [效应区域]|XPHB|立方}区域内的部分被解离为尘埃。{@actSaveSuccess}： 半伤。{@actSaveSuccessOrFail}： 若目标为生物且因此伤害生命值降至 0  {@variantrule 生命值|XPHB}，则该生物被解离为尘埃。"
 									]
 								}
 							]
@@ -10431,7 +10431,7 @@
 					"ENG_name": "Bloodied Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"{@status 浴血|XPHB}期间，狂战士进行的攻击检定与豁免检定具有{@variantrule 优势|XPHB}。"
+						"狂战士在{@status 浴血|XPHB}期间进行的攻击检定与豁免检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -10440,7 +10440,7 @@
 					"ENG_name": "Greataxe",
 					"name": "巨斧",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}9（{@damage 1d12 + 3}）挥砍伤害。"
+						"{@atkr m}： {@hit 5}，触及 5 尺。{@h}：9（{@damage 1d12 + 3}）挥砍伤害。"
 					]
 				}
 			],
@@ -10535,7 +10535,7 @@
 					"ENG_name": "Bloodied Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"{@status 浴血|XPHB}期间，狂战士进行的攻击检定与豁免检定具有{@variantrule 优势|XPHB}。"
+						"狂战士在{@status 浴血|XPHB}期间进行的攻击检定与豁免检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -10551,14 +10551,14 @@
 					"ENG_name": "Greataxe",
 					"name": "巨斧",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}10（{@damage 1d12 + 4}）挥砍伤害，且目标或其5尺内的另一生物受到10（{@damage 3d6}）雷鸣伤害。"
+						"{@atkr m} ：{@hit 7}，触及 5 尺。{@h}：10（{@damage 1d12 + 4}）挥砍伤害，且目标或其 5 尺内的另一生物受到 10（{@damage 3d6}）雷鸣伤害。"
 					]
 				},
 				{
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr m,r} {@hit 7}，触及5尺或射程30/120尺。{@h}18（{@damage 4d6 + 4}）穿刺伤害，且目标的{@variantrule 速度|XPHB}速度降低5尺直至狂战将的下个回合开始。"
+						"{@atkr m,r}： {@hit 7}，触及 5 尺或射程 30/120 尺。{@h}：18（{@damage 4d6 + 4}）穿刺伤害，且目标的{@variantrule 速度|XPHB}速度降低 5 尺直至狂战将的下个回合开始。"
 					]
 				}
 			],
@@ -10567,7 +10567,7 @@
 					"ENG_name": "Frenzied Rush",
 					"name": "狂怒冲杀",
 					"entries": [
-						"狂战将30尺内的每名盟友都能够以其{@variantrule 反应|XPHB}移动至多等于其自身{@variantrule 速度|XPHB}一半的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。狂战将也可以移动至多等于自身{@variantrule 速度|XPHB}一半的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。"
+						"狂战将 30 尺内的每名盟友都能够以其{@variantrule 反应|XPHB}移动至多等于其自身{@variantrule 速度|XPHB}一半的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。狂战将也可以移动至多等于自身{@variantrule 速度|XPHB}一半的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				}
 			],
@@ -10762,21 +10762,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
 					"ENG_name": "Rend",
 					"name": "撕裂",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}5（{@damage 1d6 + 2}）挥砍伤害外加2（{@damage 1d4}）强酸伤害。"
+						"{@atkr m} ：{@hit 4}，触及 5 尺。{@h}：5（{@damage 1d6 + 2}）挥砍伤害外加 2（{@damage 1d4}）强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Acid Breath {@recharge 5}",
 					"name": "强酸吐息 {@recharge 5}",
 					"entries": [
-						"{@actSave dex} {@dc 11}，15尺长、5尺宽的{@variantrule 线状【效应区域】|XPHB|线状}区域内的每名生物。{@actSaveFail} 22（{@damage 5d8}）强酸伤害。{@actSaveSuccess} 半伤。"
+						"{@actSave dex}： {@dc 11}，15 尺长、 5 尺宽的{@variantrule 线状【效应区域】|XPHB|线状}区域内的每名生物。{@actSaveFail} ：22 （{@damage 5d8}）强酸伤害。{@actSaveSuccess} ：半伤。"
 					]
 				}
 			],
@@ -10886,15 +10886,15 @@
 					"ENG_name": "Amorphous",
 					"name": "无定形",
 					"entries": [
-						"布丁可以移动穿过最窄1寸宽的空间而无需消耗额外的移动力。"
+						"布丁可以移动穿过最窄 1 寸宽的空间而无需消耗额外的移动力。"
 					]
 				},
 				{
 					"ENG_name": "Corrosive Form",
 					"name": "腐蚀形态",
 					"entries": [
-						"生物以近战攻击检定命中布丁时，其受到4（{@damage 1d8}）强酸伤害。非魔法弹药在命中布丁并造成伤害后立即被摧毁。非魔法武器在对布丁造成伤害后将积累-1的攻击检定减值。若武器的减值累计达到-5则其被摧毁。对武器施展{@spell 修复术|XPHB}法术可以移除这一减值。",
-						"黑布丁可以在1分钟内吃穿2尺厚的非魔法金属或木材。"
+						"生物以近战攻击检定命中布丁时，其受到 4 （{@damage 1d8}）强酸伤害。非魔法弹药在命中布丁并造成伤害后立即被摧毁。非魔法武器在对布丁造成伤害后将积累 -1 的攻击检定减值。若武器的减值累计达到 -5 则其被摧毁。对武器施展{@spell 修复术|XPHB}法术可以移除这一减值。",
+						"黑布丁可以在 1 分钟内吃穿 2 尺厚的非魔法金属或木材。"
 					]
 				},
 				{
@@ -10910,7 +10910,7 @@
 					"ENG_name": "Dissolving Pseudopod",
 					"name": "消化伪肢",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及10尺。{@h}17（{@damage 4d6 + 3}）强酸伤害。目标着装的非魔法护甲提供的AC将承受-1的减值。若护甲的AC因减值降至10则其被摧毁。对护甲施展{@spell 修复术|XPHB}可以移除这一减值。"
+						"{@atkr m} ：{@hit 5}，触及 10 尺。{@h}：17 （{@damage 4d6 + 3}）强酸伤害。目标着装的非魔法护甲提供的AC将承受 -1 的减值。若护甲的AC因减值降至 10 则其被摧毁。对护甲施展{@spell 修复术|XPHB}可以移除这一减值。"
 					]
 				}
 			],
@@ -11007,7 +11007,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害。"
+						"{@atkr m} 命中{@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害。"
 					]
 				}
 			],
@@ -11016,7 +11016,7 @@
 					"ENG_name": "Teleport {@recharge 4}",
 					"name": "传送 {@recharge 4}",
 					"entries": [
-						"闪现犬传送至多40尺至一处其可见的未占据空间中。"
+						"闪现犬传送至多 40 尺至一处其可见的未占据空间中。"
 					]
 				}
 			],
@@ -11134,7 +11134,7 @@
 					"ENG_name": "Astral Implosion",
 					"name": "星界内爆",
 					"entries": [
-						"若黏浆生命值降至0 {@variantrule 生命值|XPHB}，则其内爆并将其吞入体内的一切生物和物件喷进星界海。黏浆随即消失，只在原地留下一滩覆盖600尺的粘液。黏浆会在{@dice 1d20}年内于物质位面中的某个随机世界重组。"
+						"若黏浆生命值降至 0 {@variantrule 生命值|XPHB}，则其内爆并将其吞入体内的一切生物和物件喷进星界海。黏浆随即消失，只在原地留下一滩覆盖 600 尺的粘液。黏浆会在 {@dice 1d20} 年内于物质位面中的某个随机世界重组。"
 					]
 				},
 				{
@@ -11164,14 +11164,14 @@
 					"ENG_name": "Pseudopod",
 					"name": "伪足",
 					"entries": [
-						"{@atkr m} {@hit 15}，触及30尺。{@h}24（{@damage 3d10 + 8}）力场伤害。"
+						"{@atkr m}： {@hit 15}，触及 30 尺。{@h}：24 （{@damage 3d10 + 8}）力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Engulf",
 					"name": "吞没",
 					"entries": [
-						"黏浆移动至多等于其{@variantrule 速度|XPHB}的距离，并且可以移动穿过不超过巨型的生物或物件的空间。{@actSave str} {@dc 23}，在黏浆移动过程中，所处空间首次被黏浆经过的每个生物或物件。{@actSaveFail} 目标被黏浆吞没。被吞没期间，目标对黏浆体外的攻击或其他效应而言处于{@variantrule 掩护|XPHB|全身掩护}，且当黏浆移动时，被吞没目标也将一并移动。非魔法物件被吞没1分钟后被摧毁。",
+						"黏浆移动至多等于其{@variantrule 速度|XPHB}的距离，并且可以移动穿过不超过巨型的生物或物件的空间。{@actSave str} ：{@dc 23}，在黏浆移动过程中，所处空间首次被黏浆经过的每个生物或物件。{@actSaveFail} ：目标被黏浆吞没。被吞没期间，目标对黏浆体外的攻击或其他效应而言处于{@variantrule 掩护|XPHB|全身掩护}，且当黏浆移动时，被吞没目标也将一并移动。非魔法物件被吞没 1 分钟后被摧毁。",
 						"被吞没期间，生物在其回合开始时受21（{@damage 6d6}）力场伤害，且窒息，陷入{@condition 束缚|XPHB}状态，并在其回合结束时重复豁免。被吞没生物{@variantrule 生命值|XPHB}降至0时被溶解为尘埃并被喷进星界海。{@actSaveSuccess} 目标脱离并进入最近的未占据空间中"
 					]
 				},
@@ -11179,7 +11179,7 @@
 					"ENG_name": "Restraining Glob",
 					"name": "缚体黏浆",
 					"entries": [
-						"黏浆向600尺内的一名不超过大型的生物射出一团粘液。{@actSave dex} {@dc 23}，被指定的生物。{@actSaveFail} 18（{@damage 3d6 + 8}）强酸伤害。粘液令目标向黏浆直线滚动60尺，且目标陷入{@condition 束缚|XPHB}状态直至其下个回合结束，此时目标身上的粘液无害地溶解。{@actSaveSuccess} 仅半伤。"
+						"黏浆向 600 尺内的一名不超过大型的生物射出一团粘液。{@actSave dex} ：{@dc 23}，被指定的生物。{@actSaveFail} ：18（{@damage 3d6 + 8}）强酸伤害。粘液令目标向黏浆直线滚动 60 尺，且目标陷入{@condition 束缚|XPHB}状态直至其下个回合结束，此时目标身上的粘液无害地溶解。{@actSaveSuccess}： 仅半伤。"
 					]
 				}
 			],
@@ -11188,7 +11188,7 @@
 					"ENG_name": "Decay",
 					"name": "衰竭",
 					"entries": [
-						"黏浆对被其吞没的每名生物造成14（{@damage 4d6}）暗蚀伤害。黏浆直至其下个回合开始都无法再执行此动作。"
+						"黏浆对被其吞没的每名生物造成 14 （{@damage 4d6}）暗蚀伤害。黏浆直至其下个回合开始都无法再执行此动作。"
 					]
 				},
 				{
@@ -11283,7 +11283,7 @@
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"若血鹰的攻击目标生物5尺内存在有至少一名血鹰未{@condition 失能|XPHB}的盟友，则血鹰对该生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
+						"若血鹰的攻击目标生物 5 尺内存在有至少一名血鹰未{@condition 失能|XPHB}的盟友，则血鹰对该生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -11292,7 +11292,7 @@
 					"ENG_name": "Beak",
 					"name": "喙啄",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}4（{@damage 1d4 + 2}）穿刺伤害，若目标处于{@status 浴血|XPHB}浴血状态则改为6（{@damage 1d8 + 2}）穿刺伤害。"
+						"{@atkr m}： {@hit 4}，触及 5 尺。{@h}：4 （{@damage 1d4 + 2}）穿刺伤害，若目标处于{@status 浴血|XPHB}浴血状态则改为 6（{@damage 1d8 + 2}）穿刺伤害。"
 					]
 				}
 			],
@@ -11390,21 +11390,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
 					"ENG_name": "Rend",
 					"name": "撕裂",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}8（{@damage 1d10 + 3}）挥砍伤害外加3（{@damage 1d6}）闪电伤害。"
+						"{@atkr m}: {@hit 5}，触及 5 尺。{@h}：8（{@damage 1d10 + 3}）挥砍伤害外加 3（{@damage 1d6}）闪电伤害。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Breath {@recharge 5}",
 					"name": "闪电吐息{@recharge 5}",
 					"entries": [
-						"{@actSave dex} {@dc 12}，30尺长、5尺宽的{@variantrule 线状【效应区域】|XPHB|线状}区域内的每名生物。{@actSaveFail} 21（{@damage 6d6}）闪电伤害。{@actSaveSuccess} 半伤。"
+						"{@actSave dex}： {@dc 12}， 30 尺长、 5 尺宽的{@variantrule 线状【效应区域】|XPHB|线状}内的每名生物。{@actSaveFail}： 21（{@damage 6d6}）闪电伤害。{@actSaveSuccess} ：半伤。"
 					]
 				}
 			],
@@ -11705,7 +11705,7 @@
 				"insight": "+6"
 			},
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 12,
 			"resist": [
@@ -12265,7 +12265,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -13935,7 +13935,7 @@
 				"wis": "+4"
 			},
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 11,
 			"resist": [
@@ -16998,7 +16998,7 @@
 					"ENG_name": "Darkness Aura (1/Day)",
 					"name": "黑暗灵光 (1/日)",
 					"entries": [
-						"魔法{@variantrule 黑暗术|XPHB}黑暗充斥在源自暗幕魔兽的15尺{@variantrule 光环【效应区域】|XPHB|光环}区域内。此效应在暗幕魔兽维持{@status 专注|XPHB}专注期间持续，持续至多10分钟。黑暗视觉无法看透该区域，且光照无法照亮之。"
+						"魔法{@variantrule 黑暗|XPHB}黑暗充斥在源自暗幕魔兽的15尺{@variantrule 光环【效应区域】|XPHB|光环}区域内。此效应在暗幕魔兽维持{@status 专注|XPHB}专注期间持续，持续至多10分钟。黑暗视觉无法看透该区域，且光照无法照亮之。"
 					]
 				}
 			],
@@ -22599,7 +22599,7 @@
 				"religion": "+4"
 			},
 			"senses": [
-				"黑暗视觉90尺（无视魔法{@variantrule 黑暗术|XPHB}）"
+				"黑暗视觉90尺（无视魔法{@variantrule 黑暗|XPHB}）"
 			],
 			"passive": 17,
 			"languages": [
@@ -27665,7 +27665,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害。"
+						"{@atkr m} 命中{@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害。"
 					]
 				}
 			],
@@ -29228,7 +29228,7 @@
 					"ENG_name": "Hunger of Yeenoghu {@recharge 5}",
 					"name": "耶诺古之欲{@recharge 5}",
 					"entries": [
-						"鬣狗人以60尺内其可见的一点为源点，30尺{@variantrule 立方 [效应区域]|XPHB|立方}区域内咒唤魔法{@variantrule 黑暗术|XPHB}，持续1分钟或在鬣狗人的{@status 专注|XPHB}终止时提前结束。该区域为{@variantrule 困难地形|XPHB}。{@actSave dex} {@dc 14}，在某个回合中首次进入该区域或是在其中开始回合的每名生物。{@actSaveFail} 28（{@damage 8d6}）暗蚀伤害，且鬣狗人或一名由其选择且其可见的生物获得10{@variantrule 临时生命值|XPHB}。{@actSaveSuccess} 仅半伤。"
+						"鬣狗人以60尺内其可见的一点为源点，30尺{@variantrule 立方 [效应区域]|XPHB|立方}区域内咒唤魔法{@variantrule 黑暗|XPHB}，持续1分钟或在鬣狗人的{@status 专注|XPHB}终止时提前结束。该区域为{@variantrule 困难地形|XPHB}。{@actSave dex} {@dc 14}，在某个回合中首次进入该区域或是在其中开始回合的每名生物。{@actSaveFail} 28（{@damage 8d6}）暗蚀伤害，且鬣狗人或一名由其选择且其可见的生物获得10{@variantrule 临时生命值|XPHB}。{@actSaveSuccess} 仅半伤。"
 					]
 				}
 			],
@@ -30320,7 +30320,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -31165,7 +31165,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -34434,7 +34434,7 @@
 				"cha": "+8"
 			},
 			"senses": [
-				"黑暗视觉150尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉150尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 13,
 			"immune": [
@@ -35220,7 +35220,7 @@
 				"stealth": "+5"
 			},
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 11,
 			"resist": [
@@ -36197,7 +36197,7 @@
 					"ENG_name": "Living Shadow",
 					"name": "活体幽影",
 					"entries": [
-						"若幽影龙身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}，其具有对除力场、心灵、光耀外所有伤害的{@variantrule 抗性|XPHB}。"
+						"若幽影龙身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}，其具有对除力场、心灵、光耀外所有伤害的{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
@@ -36213,7 +36213,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -36236,7 +36236,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"若幽影龙身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗术|XPHB}黑暗，其执行躲藏动作。"
+						"若幽影龙身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗|XPHB}黑暗，其执行躲藏动作。"
 					]
 				}
 			],
@@ -37920,7 +37920,7 @@
 			"wis": 11,
 			"cha": 3,
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 10,
 			"resist": [
@@ -39570,7 +39570,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"若原魔身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}中，其执行躲藏动作。"
+						"若原魔身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}中，其执行躲藏动作。"
 					]
 				}
 			],
@@ -44609,7 +44609,7 @@
 					"ENG_name": "Undead Fortitude",
 					"name": "不死坚韧",
 					"entries": [
-						"若伤害使丧尸的生命值降至0{@variantrule 生命值|XPHB}，除非该伤害为光耀伤害或来自{@variantrule 重击|XPHB}，否则丧尸进行一次体质豁免（{@dc 5}加上所受伤害）。豁免成功则改为将生命值降至1{@variantrule 生命值|XPHB|生命值}。"
+						"若伤害使丧尸的生命值降至 0{@variantrule 生命值|XPHB}，除非该伤害为光耀伤害或来自{@variantrule 重击|XPHB}，否则丧尸进行一次体质豁免（{@dc 5}加上所受伤害）。豁免成功则改为将生命值降至 1 {@variantrule 生命值|XPHB|生命值}。"
 					]
 				}
 			],
@@ -46428,7 +46428,7 @@
 			],
 			"cr": "12",
 			"gear": [
-				"手铳|xphb",
+				"手枪|xphb",
 				"弯刀|xphb"
 			],
 			"action": [
@@ -46591,7 +46591,7 @@
 			],
 			"cr": "6",
 			"gear": [
-				"手铳|xphb",
+				"手枪|xphb",
 				"刺剑|xphb"
 			],
 			"action": [
@@ -49652,7 +49652,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -52615,7 +52615,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"若幽影身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗术|XPHB}黑暗，其执行躲藏动作。"
+						"若幽影身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗|XPHB}黑暗，其执行躲藏动作。"
 					]
 				}
 			],
@@ -52772,7 +52772,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"若恶魔身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗术|XPHB}黑暗中，其执行躲藏动作。"
+						"若恶魔身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗|XPHB}黑暗中，其执行躲藏动作。"
 					]
 				}
 			],
@@ -52885,7 +52885,7 @@
 					"ENG_name": "Living Shadow",
 					"name": "活体幽影",
 					"entries": [
-						"若幽影龙身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}，其具有对除力场、心灵、光耀外所有伤害的{@variantrule 抗性|XPHB}。"
+						"若幽影龙身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}，其具有对除力场、心灵、光耀外所有伤害的{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
@@ -52924,7 +52924,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"若幽影龙身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗术|XPHB}黑暗，其执行躲藏动作。"
+						"若幽影龙身处{@variantrule 微光光照|XPHB}微光光照或{@variantrule 黑暗|XPHB}黑暗，其执行躲藏动作。"
 					]
 				}
 			],
@@ -53394,7 +53394,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -55210,7 +55210,7 @@
 			"wis": 14,
 			"cha": 8,
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 12,
 			"resist": [
@@ -55671,7 +55671,7 @@
 			"gear": [
 				"手弩|xphb",
 				"短剑|xphb",
-				"thieves' tools|xphb"
+				"盗贼工具|xphb"
 			],
 			"action": [
 				{
@@ -55793,7 +55793,7 @@
 			"gear": [
 				"手弩|xphb",
 				"刺剑|xphb",
-				"thieves' tools|xphb"
+				"盗贼工具|xphb"
 			],
 			"action": [
 				{
@@ -57312,7 +57312,7 @@
 			"wis": 12,
 			"cha": 3,
 			"senses": [
-				"黑暗视觉120尺（不受魔法{@variantrule 黑暗术|XPHB}阻碍）"
+				"黑暗视觉120尺（不受魔法{@variantrule 黑暗|XPHB}阻碍）"
 			],
 			"passive": 11,
 			"resist": [
@@ -60634,7 +60634,7 @@
 					"ENG_name": "Shadow Stealth",
 					"name": "幽影隐匿",
 					"entries": [
-						"若吸血夜魇身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}中，其执行躲藏动作。"
+						"若吸血夜魇身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}中，其执行躲藏动作。"
 					]
 				}
 			],
@@ -63468,7 +63468,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"银龙发动两次撕裂攻击。"
+						"黑龙发动两次撕裂攻击。"
 					]
 				},
 				{
@@ -66600,7 +66600,7 @@
 				},
 				{
 					"ENG_name": "Poison Spray {@recharge 5}",
-					"name": "毒气喷溅{@recharge 5}",
+					"name": "毒气喷涌{@recharge 5}",
 					"entries": [
 						"{@actSave con} {@dc 14}，30尺{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内的每名生物。{@actSaveFail} 21（{@damage 6d6}）毒素伤害，且目标陷入{@condition 中毒|XPHB}状态直至蛇人的下个回合结束。{@condition 中毒|XPHB}期间，目标陷入{@condition 目盲|XPHB}状态。{@actSaveSuccess} 仅半伤。"
 					]
@@ -67394,7 +67394,7 @@
 					"ENG_name": "Undead Fortitude",
 					"name": "不死坚韧",
 					"entries": [
-						"若伤害使丧尸的生命值降至0{@variantrule 生命值|XPHB}，除非该伤害为光耀伤害或来自{@variantrule 重击|XPHB}，否则丧尸进行一次体质豁免（{@dc 5}加上所受伤害）。豁免成功则改为将生命值降至1{@variantrule 生命值|XPHB|生命值}。"
+						"若伤害使丧尸的生命值降至 0{@variantrule 生命值|XPHB}，除非该伤害为光耀伤害或来自{@variantrule 重击|XPHB}，否则丧尸进行一次体质豁免（{@dc 5}加上所受伤害）。豁免成功则改为将生命值降至 1 {@variantrule 生命值|XPHB|生命值}。"
 					]
 				}
 			],

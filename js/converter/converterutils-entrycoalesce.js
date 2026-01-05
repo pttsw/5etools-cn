@@ -83,10 +83,10 @@ export class EntryCoalesceEntryLists {
 		};
 
 		const isIntroString = ({str, entNxt}) => {
-			const en_intro =  str.trim().endsWith(":")
+			const en_intro = str.trim().endsWith(":")
 				&& /\b(choose|choice|one of the following|following benefits|options)\b/i.exec(str)
 				&& entNxt?.type === "entries";
-			const cn_intro =  /[:：]$/.test(str.trim())
+			const cn_intro = /[:：]$/.test(str.trim())
 				&& /(选择|其中的?一个|其中之一|以下增益|选项)/i.exec(str)
 				&& entNxt?.type === "entries";
 			return en_intro || cn_intro;

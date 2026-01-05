@@ -156,11 +156,11 @@ export class SpellTag extends ConverterTaggerInitializable {
 
 		this._SPELL_NAME_REGEX = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
 		this._SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")}) (spell|cantrip)`, "gi");
-		this._CN_SUFFIX_SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\s?(法术|戏法)`, "gi");
-		this._CN_PREFIX_SPELL_NAME_REGEX_SPELL = new RegExp(`(法术|戏法)\s?(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
-		this._SPELL_NAME_REGEX_AND = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\s?((?:and|和)\s?{@spell)`, "gi");
+		this._CN_SUFFIX_SPELL_NAME_REGEX_SPELL = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\s?(法术|戏法)`, "gi"); // eslint-disable-line no-useless-escape
+		this._CN_PREFIX_SPELL_NAME_REGEX_SPELL = new RegExp(`(法术|戏法)\s?(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi"); // eslint-disable-line no-useless-escape
+		this._SPELL_NAME_REGEX_AND = new RegExp(`(${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\s?((?:and|和)\s?{@spell)`, "gi"); // eslint-disable-line no-useless-escape
 		this._SPELL_NAME_REGEX_CAST = new RegExp(`(?<prefix>casts?(?: the(?: spell)?)? )(?<spell>${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
-		this._CN_SPELL_NAME_REGEX_CAST = new RegExp(`(?<prefix>施放?法术?)\s?(?<spell>${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi");
+		this._CN_SPELL_NAME_REGEX_CAST = new RegExp(`(?<prefix>施放?法术?)\s?(?<spell>${spellNamesFiltered.map(it => it.escapeRegexp()).join("|")})`, "gi"); // eslint-disable-line no-useless-escape
 		this._SPELL_NAME_REGEX_STRICT = new RegExp(`^(${Object.values(this._SPELL_NAMES).map(it => it.name.escapeRegexp()).join("|")})$`, "g");
 	}
 
@@ -1077,9 +1077,9 @@ export class ChanceTag {
 			.replace(/百分之(?<pct>[\u4e00-\u9fa5\d]+)(?<suffix>的?概率)/g, (...m) => {
 				// 处理中文概率，例如“百分之50的概率”
 				const pctM = m.at(-1).pct;
-				if (!isNaN(Number(pctM))) return`{@chance ${pctM}}${m.at(-1).suffix}`;
+				if (!isNaN(Number(pctM))) return `{@chance ${pctM}}${m.at(-1).suffix}`;
 				const pctNum = Parser.textToNumber(pctM);
-				return`{@chance ${pctNum}}${m.at(-1).suffix}`;
+				return `{@chance ${pctNum}}${m.at(-1).suffix}`;
 			})
 		;
 	}
@@ -1251,10 +1251,10 @@ export class CoreRuleTag extends ConverterTaggerInitializable {
 			.replace(/(锥[形型状]|立方|圆柱|柱[形型状]|光环|线[形型状]|球[形型状体])\b/g, (...m) => {
 				let area = m[1];
 				switch (area[0]) {
-					case "锥": area = "锥状";
-					case "圆": case "柱": area = "圆状";
-					case "线": area = "线状"; 
-					case "球": area = "球状";
+					case "锥": area = "锥状"; break;
+					case "圆": case "柱": area = "圆状"; break;
+					case "线": area = "线状"; break;
+					case "球": area = "球状"; break;
 				}
 				return `{@variantrule ${area} [效应区域]|XPHB|${area}}`;
 			})

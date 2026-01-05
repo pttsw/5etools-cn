@@ -712,7 +712,6 @@ export class ConverterItem extends ConverterBase {
 
 			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name})的` : ""}重量 "${m[1]}"不支持自动转换`);
 		});
-		
 	}
 
 	static _setQuarterstaffStats (stats, options) {
