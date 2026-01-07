@@ -110,7 +110,7 @@ class ObjectsPage extends ListPage {
 		return listItem;
 	}
 
-	_tabTitleStats = "Stats";
+	_tabTitleStats = "数据";
 
 	_renderStats_doBuildStatsTab ({ent}) {
 		const renderStack = [];

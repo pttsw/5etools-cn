@@ -3281,9 +3281,10 @@ Renderer.utils = class {
 			<th class="stats__th-name ve-text-left pb-0 ${opts.extraThClasses ? opts.extraThClasses.join(" ") : ""}" colspan="6" ${dataPart}>
 				<div class="split-v-end">
 					<div class="ve-flex-v-center">
-						<h1 class="stats__h-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${opts.prefix || ""}${name}${opts.suffix || ""}</h1>
-						<h3 class="stats__h-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${eng_name}</h3>
-
+						<div class="ve-flex-col">
+							<h1 class="stats__h-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${opts.prefix || ""}${name}${opts.suffix || ""}</h1>
+							<h3 class="stats__eh-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${eng_name}</h3>
+						</div>
 						${opts.controlRhs || ""}
 						${!globalThis.IS_VTT && ExtensionUtil.ACTIVE && opts.page ? Renderer.utils.getBtnSendToFoundryHtml() : ""}
 					</div>
@@ -5413,7 +5414,7 @@ Renderer.tag = class {
 		tagName = "actTrigger";
 		isStandalone = true;
 
-		_getStripped (tag, text) { return "Trigger:"; }
+		_getStripped (tag, text) { return "触发:"; }
 	};
 
 	static TagActResponse = class extends this._TagBaseAt {
@@ -9070,12 +9071,12 @@ Renderer.trap = class {
 			const listItems = [
 				ent.trigger ? {
 					type: "item",
-					name: "Trigger:",
+					name: "触发:",
 					entries: ent.trigger,
 				} : null,
 				ent.duration ? {
 					type: "item",
-					name: "Duration:",
+					name: "持续时间:",
 					entries: [
 						Renderer.generic.getRenderableDurationEntriesMeta(ent.duration, {styleHint}).entryDuration,
 					],
@@ -9229,7 +9230,7 @@ Renderer.traphazard = class {
 					.join(" ");
 			})
 			.filter(Boolean)
-			.joinConjunct(", ", " or ");
+			.joinConjunct("、", " 或 ");
 	}
 
 	static getRenderedTrapHazardRatingPart (rating, {styleHint} = {}) {
@@ -9239,7 +9240,7 @@ Renderer.traphazard = class {
 
 		if (rating.level?.min == null || rating.level?.max == null) return "";
 
-		const ptLevelLabel = styleHint === "classic" ? "level" : "Levels";
+		const ptLevelLabel = styleHint === "classic" ? "等级" : "等级";
 		return `${ptLevelLabel} ${rating.level.min}${rating.level.min !== rating.level.max ? `\u2013${rating.level.max}` : ""}`;
 	}
 
@@ -13260,7 +13261,7 @@ Renderer.table = class {
 				tableRaw.captionPrefix,
 				group.name,
 				tableRaw.captionSuffix,
-				/\bencounters?\b/i.test(group.name) ? "" : "遭遇",
+				/(?:\bencounters?\b|遭遇)/i.test(group.name) ? "" : "遭遇",
 			]
 				.filter(Boolean)
 				.join(" ");

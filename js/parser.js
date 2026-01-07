@@ -2840,7 +2840,7 @@ Parser.TRAP_HAZARD_TYPE_TO_FULL = {
 	"MAG": "魔法陷阱",
 	"SMPL": "简易陷阱",
 	"CMPX": "复杂陷阱",
-	"HAZ": "危害物",
+	"HAZ": "危害",
 	"WTH": "天气",
 	"ENV": "环境危害",
 	"WLD": "野外危害",
@@ -2858,12 +2858,12 @@ Parser._TIER_TO_LEVEL_RANGE = {
 };
 Parser.tierToFullLevel = function (tier, {styleHint} = {}) {
 	const range = Parser._parse_aToB(Parser._TIER_TO_LEVEL_RANGE, tier);
-	if (!range) return `Tier ${tier}`;
+	if (!range) return `阶段 ${tier}`;
 
 	styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
-	if (styleHint === "classic") return `${range.map(n => Parser.getOrdinalForm(n)).join("\u2013")} Level`;
-	return `Levels ${range.join("\u2013")}`;
+	if (styleHint === "classic") return `${range.map(n => Parser.getOrdinalForm(n)).join("\u2013")}级`;
+	return `等级 ${range.join("\u2013")}`;
 };
 
 Parser.trapInitToFull = function (init) {
