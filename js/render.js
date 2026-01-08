@@ -4656,7 +4656,7 @@ Renderer.utils = class {
 		switch (tag) {
 			case "@deity": {
 				let [name, pantheon, source, displayText, ...others] = Renderer.splitTagByPipe(text);
-				pantheon = pantheon || "forgotten realms";
+				pantheon = pantheon || "被遗忘的国度";
 				source = source || Parser.getTagSource(tag, source);
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_DEITIES]({name, pantheon, source});
 

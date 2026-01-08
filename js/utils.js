@@ -7538,7 +7538,7 @@ globalThis.DataUtil = class {
 			if (opts.isLower) uid = uid.toLowerCase();
 			let [name, pantheon, source, displayText, ...others] = uid.split("|").map(it => it.trim());
 
-			pantheon = pantheon || "forgotten realms";
+			pantheon = pantheon || "被遗忘的国度";
 			if (opts.isLower) pantheon = pantheon.toLowerCase();
 
 			source = source || Parser.getTagSource("deity", source);
@@ -7558,7 +7558,7 @@ globalThis.DataUtil = class {
 			const sourceDefault = Parser.getTagSource("deity");
 			const out = [
 				it.name,
-				(it.pantheon || "").toLowerCase() === "forgotten realms" ? "" : it.pantheon,
+				(it.pantheon || "").toLowerCase() === "被遗忘的国度" ? "" : it.pantheon,
 				(it.source || "").toLowerCase() === sourceDefault.toLowerCase() ? "" : it.source,
 				displayName || "",
 			].join("|").replace(/\|+$/, ""); // Trim trailing pipes

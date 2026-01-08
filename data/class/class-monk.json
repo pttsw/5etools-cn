@@ -541,7 +541,7 @@
 			"startingProficiencies": {
 				"weapons": [
 					"简易",
-					"具有{@filter 轻型|items|type=军用武器|property=光照}属性的军用武器"
+					"具有{@filter 轻型|items|type=军用武器|property=轻型}属性的军用武器"
 				],
 				"weaponProficiencies": [
 					{
@@ -1037,7 +1037,7 @@
 						"3": {
 							"resource": {
 								"2": [
-									"黑暗",
+									"黑暗术",
 									"黑暗视觉",
 									"行动无踪",
 									"沉默术"
@@ -1571,7 +1571,7 @@
 						"3": {
 							"resource": {
 								"1": [
-									"黑暗|xphb"
+									"黑暗术|xphb"
 								]
 							}
 						}
@@ -2219,7 +2219,7 @@
 					"type": "list",
 					"items": [
 						"{@filter 简易近战武器|items|type=简易武器;近战武器=sand}",
-						"{@filter 具有轻型属性的军用近战武器|items|type=军用武器;近战武器=sand|property=光照}"
+						"{@filter 具有轻型属性的军用近战武器|items|type=军用武器;近战武器=sand|property=轻型}"
 					]
 				},
 				"只要你未着装任何护甲也没持用{@item 盾牌|XPHB}，且徒手或只持用武僧武器，则你获得下列增益：",
@@ -3348,7 +3348,7 @@
 				"amount": 2
 			},
 			"entries": [
-				"你可复制某些特定法术的效应。你可用一个动作消耗2点气以施放{@spell 黑暗}，{@spell 黑暗视觉}，{@spell 行动无踪}或{@spell 沉默术}，且无需材料成分。此外，若你仍未习得戏法{@spell 次级幻象}，则你将获得该戏法。"
+				"你可复制某些特定法术的效应。你可用一个动作消耗2点气以施放{@spell 黑暗术}，{@spell 黑暗视觉}，{@spell 行动无踪}或{@spell 沉默术}，且无需材料成分。此外，若你仍未习得戏法{@spell 次级幻象}，则你将获得该戏法。"
 			]
 		},
 		{
@@ -4729,7 +4729,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你可以消耗1点功力以施展{@spell 黑暗术|XPHB}法术且无需任何法术成分。你可以看穿以这个特性施展的{@variantrule 黑暗术|XPHB}区域。法术持续期间，你可以在你的每个回合开始时将此法术区域移动到你60尺范围内的任意一处空间。"
+				"你可以消耗1点功力以施展{@spell 黑暗术|XPHB}法术且无需任何法术成分。你可以看穿以这个特性施展的{@variantrule 黑暗|XPHB}区域。法术持续期间，你可以在你的每个回合开始时将此法术区域移动到你60尺范围内的任意一处空间。"
 			]
 		},
 		{
@@ -4774,7 +4774,7 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}下时，你能以一个{@variantrule 附赠动作|XPHB}传送到60尺内另一处你可见的未占据的空间，目标地点需要同样位于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}下。接下来，你在当前回合结束前所做的下一次近战攻击具有{@variantrule 优势|XPHB}。"
+				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}下时，你能以一个{@variantrule 附赠动作|XPHB}传送到60尺内另一处你可见的未占据的空间，目标地点需要同样位于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}下。接下来，你在当前回合结束前所做的下一次近战攻击具有{@variantrule 优势|XPHB}。"
 			]
 		},
 		{
@@ -4793,7 +4793,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你可以利用与堕影冥界的连结来增强自己的传送能力。当你使用暗影步特性时，你可以消耗1点功力，移除开始和结束时对{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}的要求。此外，作为这个{@variantrule 附赠动作|XPHB}的一部分，你可以立即在传送之后进行一次{@variantrule 徒手打击|XPHB}。"
+				"你可以利用与堕影冥界的连结来增强自己的传送能力。当你使用暗影步特性时，你可以消耗1点功力，移除开始和结束时对{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}的要求。此外，作为这个{@variantrule 附赠动作|XPHB}的一部分，你可以立即在传送之后进行一次{@variantrule 徒手打击|XPHB}。"
 			]
 		},
 		{
@@ -4813,7 +4813,7 @@
 				"amount": 3
 			},
 			"entries": [
-				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗术|XPHB}环境下时，你能够以一个{@action 魔法|XPHB}动作消耗3点功力来让你周围环绕幽影，持续1分钟，直至你陷入{@condition 失能|XPHB}状态或在{@variantrule 明亮光照|XPHB}中结束回合。当周身环绕幽影时，你获得以下好处：",
+				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}环境下时，你能够以一个{@action 魔法|XPHB}动作消耗3点功力来让你周围环绕幽影，持续1分钟，直至你陷入{@condition 失能|XPHB}状态或在{@variantrule 明亮光照|XPHB}中结束回合。当周身环绕幽影时，你获得以下好处：",
 				{
 					"ENG_name": "Invisibility",
 					"name": "隐形术",
