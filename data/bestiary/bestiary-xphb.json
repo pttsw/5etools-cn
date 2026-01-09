@@ -1973,118 +1973,9 @@
 		},
 		{
 			"ENG_name": "Giant Insect",
-			"name": "巨虫术",
-			"source": "XPHB",
-			"page": 279,
-			"srd52": true,
-			"summonedBySpell": "巨虫术|XPHB",
-			"summonedBySpellLevel": 4,
-			"size": [
-				"L"
-			],
-			"type": "beast",
-			"alignment": [
-				"U"
-			],
-			"ac": [
-				{
-					"special": "11 + 法术环阶"
-				}
-			],
-			"hp": {
-				"special": "30 + 每比四环高一法术环阶 10"
-			},
-			"speed": {
-				"walk": 40,
-				"climb": 40,
-				"fly": {
-					"number": 40,
-					"condition": "（仅黄蜂）"
-				}
-			},
-			"str": 17,
-			"dex": 13,
-			"con": 15,
-			"int": 4,
-			"wis": 14,
-			"cha": 3,
-			"senses": [
-				"黑暗视觉 60 尺"
-			],
-			"passive": 12,
-			"languages": [
-				"理解你说的语言"
-			],
-			"pbNote": "等于你的熟练加值",
-			"trait": [
-				{
-					"ENG_name": "Spider Climb",
-					"name": "蛛行",
-					"entries": [
-						"巨虫可以在难以攀爬的表面上攀爬，包括沿着天花板移动，且无需为此进行属性检定。"
-					]
-				}
-			],
-			"action": [
-				{
-					"ENG_name": "Multiattack",
-					"name": "多重攻击",
-					"entries": [
-						"该昆虫发动等于法术环阶一半次数的攻击（向下取整）。"
-					]
-				},
-				{
-					"ENG_name": "Poison Jab",
-					"name": "猛毒刺",
-					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 10 尺。 {@h}{@damage 1d6 + 3 + summonSpellLevel}穿刺伤害 +  {@damage 1d4}毒素伤害。"
-					]
-				},
-				{
-					"ENG_name": "Web Bolt (Spider Only)",
-					"name": "蛛网箭（仅蜘蛛）",
-					"entries": [
-						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，射程 60 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}钝击伤害，且目标的速度降为 0，直至巨虫的下个回合开始。"
-					]
-				}
-			],
-			"bonus": [
-				{
-					"ENG_name": "Venomous Spew (Centipede Only)",
-					"name": "剧毒喷涌（仅蜈蚣）",
-					"entries": [
-						"{@actSave con} DC等于你的法术豁免DC，单一 10 尺内巨虫可见的生物。{@actSaveFail}：目标陷入{@condition 中毒|XPHB}状态，直至巨虫的下个回合开始。"
-					]
-				}
-			],
-			"traitTags": [
-				"蛛行"
-			],
-			"actionTags": [
-				"多重攻击"
-			],
-			"damageTags": [
-				"I",
-				"P"
-			],
-			"miscTags": [
-				"MA",
-				"RA",
-				"RCH"
-			],
-			"conditionInflict": [
-				"中毒"
-			],
-			"savingThrowForced": [
-				"体质"
-			],
-			"hasToken": true,
-			"hasFluffImages": true,
 			"_versions": [
 				{
 					"ENG_name": "Giant Insect (Centipede)",
-					"name": "巨虫（蜈蚣）",
-					"source": "XPHB",
 					"_mod": {
 						"action": [
 							{
@@ -2095,15 +1986,15 @@
 							}
 						]
 					},
+					"name": "巨虫（蜈蚣）",
+					"source": "XPHB",
 					"speed": {
-						"walk": 40,
-						"climb": 40
+						"climb": 40,
+						"walk": 40
 					}
 				},
 				{
 					"ENG_name": "Giant Insect (Spider)",
-					"name": "巨虫（蜘蛛）",
-					"source": "XPHB",
 					"_mod": {
 						"action": [
 							{
@@ -2115,16 +2006,16 @@
 							}
 						]
 					},
+					"bonus": null,
+					"name": "巨虫（蜘蛛）",
+					"source": "XPHB",
 					"speed": {
-						"walk": 40,
-						"climb": 40
-					},
-					"bonus": null
+						"climb": 40,
+						"walk": 40
+					}
 				},
 				{
 					"ENG_name": "Giant Insect (Wasp)",
-					"name": "巨虫（黄蜂）",
-					"source": "XPHB",
 					"_mod": {
 						"action": [
 							{
@@ -2135,14 +2026,123 @@
 							}
 						]
 					},
+					"bonus": null,
+					"name": "巨虫（黄蜂）",
+					"source": "XPHB",
 					"speed": {
-						"walk": 40,
 						"climb": 40,
-						"fly": 40
-					},
-					"bonus": null
+						"fly": 40,
+						"walk": 40
+					}
 				}
 			],
+			"ac": [
+				{
+					"special": "11 + 法术环阶"
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"entries": [
+						"该昆虫发动等于法术环阶一半次数的攻击（向下取整）。"
+					],
+					"name": "多重攻击"
+				},
+				{
+					"ENG_name": "Poison Jab",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}， 触及 10 尺。 {@h}{@damage 1d6 + 3 + summonSpellLevel}穿刺伤害 +  {@damage 1d4}毒素伤害。"
+					],
+					"name": "猛毒刺"
+				},
+				{
+					"ENG_name": "Web Bolt (Spider Only)",
+					"entries": [
+						"{@atkr r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，射程 60 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}钝击伤害，且目标的速度降为 0，直至巨虫的下个回合开始。"
+					],
+					"name": "蛛网箭（仅蜘蛛）"
+				}
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"alignment": [
+				"U"
+			],
+			"bonus": [
+				{
+					"ENG_name": "Venomous Spew (Centipede Only)",
+					"entries": [
+						"{@actSave con} DC等于你的法术豁免DC，单一 10 尺内巨虫可见的生物。{@actSaveFail}：目标陷入{@condition 中毒|XPHB}状态，直至巨虫的下个回合开始。"
+					],
+					"name": "剧毒喷涌（仅蜈蚣）"
+				}
+			],
+			"cha": 3,
+			"con": 15,
+			"conditionInflict": [
+				"中毒"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"dex": 13,
+			"hasFluffImages": true,
+			"hasToken": true,
+			"hp": {
+				"special": "30 + 每比四环高一法术环阶 10"
+			},
+			"int": 4,
+			"languages": [
+				"理解你说的语言"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"name": "巨虫",
+			"page": 279,
+			"passive": 12,
+			"pbNote": "等于你的熟练加值",
+			"savingThrowForced": [
+				"体质"
+			],
+			"senses": [
+				"黑暗视觉 60 尺"
+			],
+			"size": [
+				"L"
+			],
+			"source": "XPHB",
+			"speed": {
+				"climb": 40,
+				"fly": {
+					"condition": "（仅黄蜂）",
+					"number": 40
+				},
+				"walk": 40
+			},
+			"srd52": true,
+			"str": 17,
+			"summonedBySpell": "巨虫术|XPHB",
+			"summonedBySpellLevel": 4,
+			"trait": [
+				{
+					"ENG_name": "Spider Climb",
+					"entries": [
+						"巨虫可以在难以攀爬的表面上攀爬，包括沿着天花板移动，且无需为此进行属性检定。"
+					],
+					"name": "蛛行"
+				}
+			],
+			"traitTags": [
+				"蛛行"
+			],
+			"type": "beast",
+			"wis": 14,
 			"translator": "不全书"
 		},
 		{

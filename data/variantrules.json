@@ -282,9 +282,9 @@
 					"items": [
 						"{@variantrule 锥状 [效应区域]|XPHB|锥状}",
 						"{@variantrule 立方 [效应区域]|XPHB|立方}",
-						"{@variantrule 柱状【效应区域】|XPHB|柱状}",
-						"{@variantrule 光环【效应区域】|XPHB|光环}",
-						"{@variantrule 线状【效应区域】|XPHB|线状}",
+						"{@variantrule 柱状 [效应区域]|XPHB|柱状}",
+						"{@variantrule 光环 [效应区域]|XPHB|光环}",
+						"{@variantrule 线状 [效应区域]|XPHB|线状}",
 						"{@variantrule 球状 [效应区域]|XPHB|球状}"
 					]
 				},
@@ -1131,7 +1131,7 @@
 		},
 		{
 			"ENG_name": "Cylinder [Area of Effect]",
-			"name": "柱状【效应区域】",
+			"name": "柱状 [效应区域]",
 			"source": "XPHB",
 			"page": 364,
 			"srd52": true,
@@ -1310,7 +1310,7 @@
 			"basicRules2024": true,
 			"ruleType": "C",
 			"entries": [
-				"若{@variantrule 玩家角色|XPHB|玩家角色}在其回合开始时{@variantrule 生命值|XPHB}为0，其必须进行一次死亡豁免检定（又称死亡豁免Death Save）。"
+				"若{@variantrule 玩家角色|XPHB|玩家角色}在其回合开始时{@variantrule 生命值|XPHB}为 0，其必须进行一次死亡豁免检定（又称死亡豁免Death Save）。"
 			],
 			"translator": "不全书"
 		},
@@ -3371,7 +3371,7 @@
 							"{@dice 2d6} 天"
 						],
 						[
-							"小镇",
+							"城镇",
 							"{@dice 4d6}天"
 						],
 						[
@@ -5153,7 +5153,7 @@
 		},
 		{
 			"ENG_name": "Emanation [Area of Effect]",
-			"name": "光环【效应区域】",
+			"name": "光环 [效应区域]",
 			"source": "XPHB",
 			"page": 366,
 			"srd52": true,
@@ -5921,7 +5921,7 @@
 							"entries": [
 								"一个角色花费一整天放松或处于其他平静环境中可以在他们结束下一次长休时降低1点压力值。",
 								"用于压制{@condition 魅惑}和{@condition 恐慌}状态的{@spell 安定心神}法术效果也会在法术持续期间压制某人的压力值。",
-								"一个{@spell 次等复原术}法术使目标的压力值降低1点，而一个{@spell 高等复原术}法术将角色的压力值降低到0。"
+								"一个{@spell 次级复原术}法术使目标的压力值降低1点，而一个{@spell 高等复原术}法术将角色的压力值降低到0。"
 							]
 						}
 					]
@@ -6101,7 +6101,7 @@
 							"name": "结束擒抱",
 							"type": "entries",
 							"entries": [
-								"受擒生物可以用其动作进行一次力量（{@skill 运动|XPHB}）或敏捷（{@skill 特技|XPHB}）检定，对抗此次擒抱的逃脱DC，检定成功时，受擒{@variantrule 状态|XPHB|状况}将结束。若擒抱者陷入{@condition 失能|XPHB}，或是擒抱者与受擒者之间的距离超出了此次擒抱的范围，受擒{@variantrule 状态|XPHB|状况}也会提前结束。此外，擒抱者可以在任意时间释放其擒抱目标（无需动作）。"
+								"受擒生物可以用其动作进行一次力量（{@skill 运动|XPHB}）或敏捷（{@skill 特技|XPHB}）检定，对抗此次擒抱的逃脱DC，检定成功时，受擒{@variantrule 状态|XPHB|状态}将结束。若擒抱者陷入{@condition 失能|XPHB}，或是擒抱者与受擒者之间的距离超出了此次擒抱的范围，受擒{@variantrule 状态|XPHB|状态}也会提前结束。此外，擒抱者可以在任意时间释放其擒抱目标（无需动作）。"
 							]
 						}
 					]
@@ -6491,7 +6491,7 @@
 			"basicRules2024": true,
 			"ruleType": "C",
 			"entries": [
-				"如果你拥有某项{@variantrule 伤害类型|XPHB|伤害类型}或是某项{@variantrule 状态|XPHB|状况}的免疫，该类型伤害/状态以任何方式都无法影响你。"
+				"如果你拥有某项{@variantrule 伤害类型|XPHB|伤害类型}或是某项{@variantrule 状态|XPHB|状态}的免疫，该类型伤害/状态以任何方式都无法影响你。"
 			],
 			"translator": "不全书"
 		},
@@ -6986,7 +6986,7 @@
 		},
 		{
 			"ENG_name": "Line [Area of Effect]",
-			"name": "线状【效应区域】",
+			"name": "线状 [效应区域]",
 			"source": "XPHB",
 			"page": 370,
 			"srd52": true,
@@ -7347,7 +7347,7 @@
 					"name": "治愈疯狂",
 					"type": "entries",
 					"entries": [
-						"一发{@spell 安定心神}法术能够压制疯狂的效应，而{@spell 次等复原术}法术可以解除角色的一项短暂性或长期性疯狂效应。根据疯狂的来源，{@spell 移除诅咒}或{@spell 驱逐善恶||驱逐邪恶}可能也有一定效果。要解除一项永久性疯狂就必须使用{@spell 高等复原术}法术或更强大的魔法。"
+						"一发{@spell 安定心神}法术能够压制疯狂的效应，而{@spell 次级复原术}法术可以解除角色的一项短暂性或长期性疯狂效应。根据疯狂的来源，{@spell 移除诅咒}或{@spell 驱逐善恶||驱逐邪恶}可能也有一定效果。要解除一项永久性疯狂就必须使用{@spell 高等复原术}法术或更强大的魔法。"
 					]
 				}
 			]
@@ -7482,7 +7482,7 @@
 						],
 						[
 							"36-90",
-							"两瓶药水都正常生效。"
+							"两种药水均如常生效。"
 						],
 						[
 							"91-99",
@@ -10123,7 +10123,7 @@
 					"name": "天界山：受祝慷慨",
 					"type": "entries",
 					"entries": [
-						"与邪恶生物在这里所体验到的不谐相反，善良生物在这此会受惠于位面中弥漫的祝福恩泽。善良阵营的生物只要在该位面中就能获得法术{@spell 祝福术}的效应。此外，善良生物在该位面完成一次长休后可以获得一个{@spell 次等复原术}的法术效应。"
+						"与邪恶生物在这里所体验到的不谐相反，善良生物在这此会受惠于位面中弥漫的祝福恩泽。善良阵营的生物只要在该位面中就能获得法术{@spell 祝福术}的效应。此外，善良生物在该位面完成一次长休后可以获得一个{@spell 次级复原术}的法术效应。"
 					]
 				},
 				{
@@ -13702,7 +13702,7 @@
 							"name": "免疫",
 							"type": "entries",
 							"entries": [
-								"这一栏列出了{@variantrule 怪物|XPHB|怪物的}各项伤害免疫与各项{@variantrule 状态|XPHB|状况}免疫（若有）。"
+								"这一栏列出了{@variantrule 怪物|XPHB|怪物的}各项伤害免疫与各项{@variantrule 状态|XPHB|状态}免疫（若有）。"
 							]
 						},
 						{

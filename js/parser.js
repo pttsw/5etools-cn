@@ -2707,7 +2707,10 @@ Parser.spClassesToCurrentAndLegacy = function (fromClassList) {
 	const current = [];
 	const legacy = [];
 	fromClassList.forEach(cls => {
-		if ((cls.name === "Artificer" && cls.source === "UAArtificer") || (cls.name === "Artificer (Revisited)" && cls.source === "UAArtificerRevisited")) legacy.push(cls);
+		if ((cls.name === "Artificer" && cls.source === "UAArtificer") 
+			|| (cls.name === "Artificer (Revisited)" && cls.source === "UAArtificerRevisited")
+			|| (cls.name === "奇械师" && cls.source === "UAArtificer")
+			|| (cls.name === "奇械师（重置版）" && cls.source === "UAArtificerRevisited") ) legacy.push(cls);
 		else current.push(cls);
 	});
 	return [current, legacy];
@@ -3091,7 +3094,7 @@ Parser.SIZE_ABV_TO_FULL[Parser.SZ_MEDIUM] = "中型";
 Parser.SIZE_ABV_TO_FULL[Parser.SZ_LARGE] = "大型";
 Parser.SIZE_ABV_TO_FULL[Parser.SZ_HUGE] = "巨型";
 Parser.SIZE_ABV_TO_FULL[Parser.SZ_GARGANTUAN] = "超巨型";
-Parser.SIZE_ABV_TO_FULL[Parser.SZ_COLOSSAL] = "Colossal";
+Parser.SIZE_ABV_TO_FULL[Parser.SZ_COLOSSAL] = "伟岸";
 Parser.SIZE_ABV_TO_FULL[Parser.SZ_VARIES] = "不定";
 
 Parser.XP_CHART_ALT = {
@@ -3554,13 +3557,13 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PaF] = "骰子与酒杯";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HFDoMM] = "英雄盛宴：佳肴百珍牌";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_CM] = "烛堡秘辛";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH] = Parser.NRH_NAME;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_TCMC] = `${Parser.NRH_NAME}: The Candy Mountain Caper`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AVitW] = `${Parser.NRH_NAME}: A Voice in the Wilderness`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_ASS] = `${Parser.NRH_NAME}: A Sticky Situation`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_CoI] = `${Parser.NRH_NAME}: Circus of Illusions`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_TLT] = `${Parser.NRH_NAME}: The Lost Tomb`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AWoL] = `${Parser.NRH_NAME}: A Web of Lies`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AT] = `${Parser.NRH_NAME}: Adventure Together`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_TCMC] = `${Parser.NRH_NAME}: 糖果山冒险`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AVitW] = `${Parser.NRH_NAME}: 荒野呼唤`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_ASS] = `${Parser.NRH_NAME}: 棘手局面`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_CoI] = `${Parser.NRH_NAME}: 幻象马戏团`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_TLT] = `${Parser.NRH_NAME}: 失落墓穴`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AWoL] = `${Parser.NRH_NAME}: 谎言之网`;
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AT] = `${Parser.NRH_NAME}: 共同冒险`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MGELFT] = "穆克的塔莎所授万事指南";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_VD] = "维克那档案";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SjA] = "星航学院";
