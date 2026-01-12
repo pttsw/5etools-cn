@@ -197,7 +197,7 @@ class ModalFilterFeats extends ModalFilterBase {
 		});
 	}
 
-	_$getColumnHeaders () {
+	_getColumnHeaders () {
 		const btnMeta = [
 			{sort: "name", text: "名称", width: "3-5"},
 			{sort: "category", text: "分类", width: "1-5"},
@@ -205,7 +205,7 @@ class ModalFilterFeats extends ModalFilterBase {
 			{sort: "prerequisite", text: "先决条件", width: "3"},
 			{sort: "source", text: "来源", width: "1"},
 		];
-		return ModalFilterBase._$getFilterColumnHeaders(btnMeta);
+		return ModalFilterBase._getFilterColumnHeaders(btnMeta);
 	}
 
 	async _pLoadAllData () {

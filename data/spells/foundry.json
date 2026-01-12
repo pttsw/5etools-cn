@@ -4070,7 +4070,7 @@
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "@creature[食尸鬼|XMM]",
+							"uuid": "@creature[妖鬼|XMM]",
 							"level": {
 								"min": 8
 							}
@@ -17937,9 +17937,17 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"失能",
-						"倒地"
+						"失能"
 					],
+					"flags": {
+						"dnd5e": {
+							"riders": {
+								"statuses": [
+									"倒地"
+								]
+							}
+						}
+					},
 					"description": "在法术持续时间内，目标处于&Reference[倒地 apply=false]和&Reference[失能 apply=false]状态。在此期间，如果目标能够发笑，则会不受控制地大笑，并且无法自行解除倒地状态。在它的每个回合结束时以及每次受到伤害时，它需要进行一次[[/save ability=wis dc=@attributes.spell.dc]]豁免检定。若豁免检定由受到伤害触发，则目标在检定中具有优势。豁免成功时，法术终止。"
 				}
 			],

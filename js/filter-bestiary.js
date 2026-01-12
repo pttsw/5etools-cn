@@ -722,14 +722,14 @@ class ModalFilterBestiary extends ModalFilterBase {
 		});
 	}
 
-	_$getColumnHeaders () {
+	_getColumnHeaders () {
 		const btnMeta = [
 			{sort: "name", text: "名称", width: "4"},
 			{sort: "type", text: "类型", width: "4"},
 			{sort: "cr", text: "CR", width: "2"},
 			{sort: "source", text: "Source", width: "1"},
 		];
-		return ModalFilterBase._$getFilterColumnHeaders(btnMeta);
+		return ModalFilterBase._getFilterColumnHeaders(btnMeta);
 	}
 
 	async _pLoadAllData () {

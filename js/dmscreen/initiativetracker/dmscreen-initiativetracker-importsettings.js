@@ -26,16 +26,16 @@ export class InitiativeTrackerSettingsImport extends BaseComponent {
 	/* -------------------------------------------- */
 
 	pGetShowModalResults () {
-		const {$modalInner, $modalFooter, pGetResolved, doClose} = UiUtil.getShowModal({
+		const {eleModalInner, $modalFooter, pGetResolved, doClose} = UiUtil.getShowModal({
 			title: "导入设置",
 			isUncappedHeight: true,
 			hasFooter: true,
 		});
 
-		UiUtil.addModalSep($modalInner);
-		this._pGetShowModalResults_renderSection_isRolls({$modalInner});
-		UiUtil.addModalSep($modalInner);
-		this._pGetShowModalResults_renderSection_import({$modalInner});
+		UiUtil.addModalSep(eleModalInner);
+		this._pGetShowModalResults_renderSection_isRolls({eleModalInner});
+		UiUtil.addModalSep(eleModalInner);
+		this._pGetShowModalResults_renderSection_import({eleModalInner});
 
 		this._pGetShowModalResults_renderFooter({$modalFooter, doClose});
 
@@ -44,15 +44,15 @@ export class InitiativeTrackerSettingsImport extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	_pGetShowModalResults_renderSection_isRolls ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollInit", text: "掷骰生物先攻"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollHp", text: "掷骰生物生命值"});
+	_pGetShowModalResults_renderSection_isRolls ({eleModalInner}) {
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isRollInit", text: "掷骰生物先攻"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isRollHp", text: "掷骰生物生命值"});
 	}
 
-	_pGetShowModalResults_renderSection_import ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "importIsRollGroups", text: "一起为一组生物掷骰"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "importIsAddPlayers", text: "添加玩家"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "importIsAppend", text: "添加到现有追踪器状态"});
+	_pGetShowModalResults_renderSection_import ({eleModalInner}) {
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "importIsRollGroups", text: "一起为一组生物掷骰"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "importIsAddPlayers", text: "添加玩家"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "importIsAppend", text: "添加到现有追踪器状态"});
 	}
 
 	/* -------------------------------------------- */

@@ -114,20 +114,20 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	/* -------------------------------------------- */
 
 	pGetShowModalResults () {
-		const {$modalInner, $modalFooter, pGetResolved, doClose} = UiUtil.getShowModal({
+		const {eleModalInner, $modalFooter, pGetResolved, doClose} = UiUtil.getShowModal({
 			title: "设置",
 			isUncappedHeight: true,
 			hasFooter: true,
 		});
 
-		UiUtil.addModalSep($modalInner);
-		this._pGetShowModalResults_renderSection_isRolls({$modalInner});
-		UiUtil.addModalSep($modalInner);
-		this._pGetShowModalResults_renderSection_wounds({$modalInner});
-		UiUtil.addModalSep($modalInner);
-		this._pGetShowModalResults_renderSection_playerView({$modalInner});
-		UiUtil.addModalSep($modalInner);
-		this._pGetShowModalResults_renderSection_additionalCols({$modalInner});
+		UiUtil.addModalSep(eleModalInner);
+		this._pGetShowModalResults_renderSection_isRolls({eleModalInner});
+		UiUtil.addModalSep(eleModalInner);
+		this._pGetShowModalResults_renderSection_wounds({eleModalInner});
+		UiUtil.addModalSep(eleModalInner);
+		this._pGetShowModalResults_renderSection_playerView({eleModalInner});
+		UiUtil.addModalSep(eleModalInner);
+		this._pGetShowModalResults_renderSection_additionalCols({eleModalInner});
 
 		this._pGetShowModalResults_renderFooter({$modalFooter, doClose});
 
@@ -136,31 +136,31 @@ export class InitiativeTrackerSettings extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	_pGetShowModalResults_renderSection_isRolls ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollInit", text: "掷先攻骰"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollHp", text: "掷生命值骰"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollGroups", text: "一组生物一起掷骰"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRerollInitiativeEachRound", text: "每轮重新掷先攻骰"});
+	_pGetShowModalResults_renderSection_isRolls ({eleModalInner}) {
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isRollInit", text: "掷先攻骰"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isRollHp", text: "掷生命值骰"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isRollGroups", text: "一组生物一起掷骰"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isRerollInitiativeEachRound", text: "每轮重新掷先攻骰"});
 	}
 
-	_pGetShowModalResults_renderSection_wounds ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isInvertWoundDirection", text: "Track Hit Points as Damage", title: `For example, by default a creature might have "100/100" hit points when at full HP. When tracking damage, this would instead be displayed as "0/100" when the creature is at full HP.`});
+	_pGetShowModalResults_renderSection_wounds ({eleModalInner}) {
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isInvertWoundDirection", text: "Track Hit Points as Damage", title: `For example, by default a creature might have "100/100" hit points when at full HP. When tracking damage, this would instead be displayed as "0/100" when the creature is at full HP.`});
 	}
 
-	_pGetShowModalResults_renderSection_playerView ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowExactPlayerHp", text: "玩家视图：显示玩家生命值"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowExactMonsterHp", text: "玩家视图：显示怪物生命值"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitHideNewMonster", text: "玩家视图：自动隐藏新怪物"});
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "playerInitShowOrdinals", text: "玩家视图：显示序号", title: "例如，如果你添加了两个地精，一个将是地精（1），另一个将是地精（2），而不是具有相同名称的两个地精。"});
+	_pGetShowModalResults_renderSection_playerView ({eleModalInner}) {
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "playerInitShowExactPlayerHp", text: "玩家视图：显示玩家生命值"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "playerInitShowExactMonsterHp", text: "玩家视图：显示怪物生命值"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "playerInitHideNewMonster", text: "玩家视图：自动隐藏新怪物"});
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "playerInitShowOrdinals", text: "玩家视图：显示序号", title: "例如，如果你添加了两个地精，一个将是地精（1），另一个将是地精（2），而不是具有相同名称的两个地精。"});
 	}
 
-	_pGetShowModalResults_renderSection_additionalCols ({$modalInner}) {
-		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isStatsAddColumns", text: "额外列"});
-		this._pGetShowModalResults_renderSection_additionalCols_head({$modalInner});
-		this._pGetShowModalResults_renderSection_additionalCols_body({$modalInner});
+	_pGetShowModalResults_renderSection_additionalCols ({eleModalInner}) {
+		UiUtil.getAddModalRowCb2({wrp: eleModalInner, comp: this, prop: "isStatsAddColumns", text: "额外列"});
+		this._pGetShowModalResults_renderSection_additionalCols_head({eleModalInner});
+		this._pGetShowModalResults_renderSection_additionalCols_body({eleModalInner});
 	}
 
-	_pGetShowModalResults_renderSection_additionalCols_head ({$modalInner}) {
+	_pGetShowModalResults_renderSection_additionalCols_head ({eleModalInner}) {
 		const getAction = Cls => new ContextUtil.Action(
 			Cls.NAME,
 			() => {
@@ -192,7 +192,7 @@ export class InitiativeTrackerSettings extends BaseComponent {
 			<div class="ve-col-1-5">&nbsp;</div>
 			<div class="ve-col-1 ve-flex-v-center ve-flex-h-right">${$btnAddRow}</div>
 		</div>`
-			.appendTo($modalInner);
+			.appendTo(eleModalInner);
 
 		this._addHookBase("isStatsAddColumns", () => $wrpTblStatsHead.toggleVe(this._state.isStatsAddColumns))();
 	}
