@@ -3,10 +3,10 @@ import { transferLangConfig } from "../../config.js";
 const config = {
 	// lootgen-ui.js
 	"magic_item_table_": ["魔法物品表", "", "Magic Item Table "],
-	"arcana": ["奥术", "", "Arcana"],
-	"armaments": ["军备", "", "Armaments"],
-	"implements": ["法器", "", "Implements"],
-	"relics": ["遗物", "", "Relics"],
+	"arcana": ["奥秘", "", "Arcana"],
+	"armaments": ["武备", "", "Armaments"],
+	"implements": ["器具", "", "Implements"],
+	"relics": ["圣物", "", "Relics"],
 	"common": ["普通", "", "Common"],
 	"uncommon": ["非普通", "", "Uncommon"],
 	"rare": ["珍稀", "", "Rare"],
