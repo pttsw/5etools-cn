@@ -1234,7 +1234,7 @@ Parser.skillProficienciesToFull = function (skillProficiencies, {styleHint = nul
 			: unpacked.source.toLowerCase() === Parser.SRC_PHB.toLowerCase()
 				? ptSourceDefault
 				: unpacked.source;
-		return Renderer.get().render(`{@skill ${unpacked.name.toTitleCase()}|${ptSource}}`);
+		return Renderer.get().render(`{@skill ${Parser.enSkillToCn(unpacked.name).toTitleCase()}|${ptSource}}`);
 	};
 
 	return skillProficiencies

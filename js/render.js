@@ -1166,7 +1166,7 @@ globalThis.Renderer = function () {
 					if (ent.type === "item") return ent;
 
 					const out = {...ent, type: "item"};
-					if (ent.name) out.name = Renderer._INLINE_HEADER_TERMINATORS.has(ent.name[ent.name.length - 1]) ? out.name : `${out.name}.`;
+					if (ent.name) out.name = Renderer._INLINE_HEADER_TERMINATORS.has(ent.name[ent.name.length - 1]) ? out.name : `${out.name}。`;
 					return out;
 				}),
 			};
@@ -1628,7 +1628,7 @@ globalThis.Renderer = function () {
 		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 2);
 
-		const headerSpan = `<span class="rd__h rd__h--3" data-title-index="${this._headerIndex++}" ${this._getEnumeratedTitleRel(entry.name)}><span class="entry-title-inner">${entry.name}.</span><span class="entry-title-inner">${entry.ENG_name}.</span></span> `;
+		const headerSpan = `<span class="rd__h rd__h--3" data-title-index="${this._headerIndex++}" ${this._getEnumeratedTitleRel(entry.name)}><span class="entry-title-inner">${entry.name}。</span><span class="entry-title-inner">${entry.ENG_name}.</span></span> `;
 
 		textStack[0] += `<${this.wrapperTag} class="${Renderer.HEAD_2}" ${dataString}>`;
 		if (entry.entries) {
@@ -6985,7 +6985,7 @@ Renderer.class = class {
 	static getRenderedSkillProfs (skills, {styleHint = null} = {}) {
 		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
-		return `${Parser.skillProficienciesToFull(skills, {styleHint}).uppercaseFirst()}.`;
+		return `${Parser.skillProficienciesToFull(skills, {styleHint}).uppercaseFirst()}。`;
 	}
 
 	/* -------------------------------------------- */
@@ -10166,7 +10166,7 @@ Renderer.monster = class {
 		return {
 			entries: [
 				// `${legendaryNameTitle}可以执行 ${legendaryActions} 个传奇动作，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。${legendaryNameTitle}在其回合开始时重获所有传奇动作。`,
-				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}. ${legendaryNameSentence}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
+				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}。 ${legendaryNameSentence}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
 			],
 		};
 	}
@@ -10340,7 +10340,7 @@ Renderer.monster = class {
 		}
 
 		static getSpellcasterDetailsPart ({chaMod, maxSpellLevel, spellSaveDc, spellToHit, isSeeSpellsPageNote = false}) {
-			const levelString = maxSpellLevel === 0 ? `${chaMod === 1 ? "这个" : "这些"} 法术是戏法。` : `而${chaMod === 1 ? "该" : "这些"}法术的环阶也不能超过 ${Parser.spLevelToFull(maxSpellLevel)}.`;
+			const levelString = maxSpellLevel === 0 ? `${chaMod === 1 ? "这个" : "这些"} 法术是戏法。` : `而${chaMod === 1 ? "该" : "这些"}法术的环阶也不能超过 ${Parser.spLevelToFull(maxSpellLevel)}。`;
 
 			// return `This dragon can innately cast ${Parser.numberToText(chaMod)} spell${chaMod === 1 ? "" : "s"}, once per day${chaMod === 1 ? "" : " each"}, requiring no material components. ${levelString} The dragon's spell save DC is {@dc ${spellSaveDc}}, and it has {@hit ${spellToHit}} to hit with spell attacks.${isSeeSpellsPageNote ? ` See the {@filter spell page|spells|level=${[...new Array(maxSpellLevel + 1)].map((it, i) => i).join(";")}} for a list of spells the dragon is capable of casting.` : ""}`;
 			return `这条龙天生可以施展${Parser.numberToText(chaMod)}个法术，${chaMod === 1 ? "" : "每个法术"}每日一次，且不需任何材料成分。 ${levelString} 这条龙的法术豁免是 {@dc ${spellSaveDc}}，且它的法术攻击命中{@hit ${spellToHit}}。${isSeeSpellsPageNote ? `查看{@filter 法术列表页|spells|level=${[...new Array(maxSpellLevel + 1)].map((it, i) => i).join(";")}} 来查看这条龙天生能够施展的法术。` : ""}`;
