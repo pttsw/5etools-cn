@@ -168,7 +168,7 @@ class OmnisearchUi {
 
 		ee(rdState.wrpSearchFilters)`
 			<div class="ve-flex-v-center mr-2 mobile-sm__mr-0 mobile-sm__mb-2 mobile-sm__w-100 mobile-sm__ve-flex-h-right">
-				<span class="mr-2 italic relative top-1p">Include</span>
+				<span class="mr-2 italic relative top-1p">包含</span>
 				<div class="ve-btn-group ve-flex-v-center">
 					${btnCyclePartneredMode}
 					${btnToggleBrew}

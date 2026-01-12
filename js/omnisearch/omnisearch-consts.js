@@ -54,13 +54,13 @@ export const PARTNERED_CONTENT_MODES = [
 ];
 
 export const PARTNERED_CONTENT_MODE_TOOLTIP = {
-	[PARTNERED_CONTENT_MODE_NONE]: "Do Not Include Partnered Content",
-	[PARTNERED_CONTENT_MODE_LOCAL]: "Include Locally-Loaded Partnered Content",
-	[PARTNERED_CONTENT_MODE_ALL]: "Include All Partnered Content",
+	[PARTNERED_CONTENT_MODE_NONE]: "不包含合作方资源",
+	[PARTNERED_CONTENT_MODE_LOCAL]: "包含本地合作方资源",
+	[PARTNERED_CONTENT_MODE_ALL]: "包含所有合作方资源",
 };
 
 export const PARTNERED_CONTENT_MODE_TEXT = {
-	[PARTNERED_CONTENT_MODE_ALL]: "Partnered (All)",
-	[PARTNERED_CONTENT_MODE_LOCAL]: "Partnered (Local)",
-	[PARTNERED_CONTENT_MODE_NONE]: "Partnered",
+	[PARTNERED_CONTENT_MODE_ALL]: "合作方 (全部)",
+	[PARTNERED_CONTENT_MODE_LOCAL]: "合作方 (本地)",
+	[PARTNERED_CONTENT_MODE_NONE]: "合作方",
 };
