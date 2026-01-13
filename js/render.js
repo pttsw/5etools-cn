@@ -12366,7 +12366,7 @@ Renderer.item = class {
 			.sort(([kA], [kB]) => kB.includes("Remove") - kA.includes("Remove"))
 			.forEach(([inheritedProperty, val]) => {
 				switch (inheritedProperty) {
-					case "namePrefix": specificVariant.name = `${val}${specificVariant.name}`; break;
+					case "namePrefix": specificVariant.name = `${val}${specificVariant.name.length === 1 && val === "警戒" ? "之": ""}${specificVariant.name}`; break;
 					case "nameSuffix": specificVariant.name = `${specificVariant.name}${val}`; break;
 					case "entries": {
 						Renderer.item._initFullEntries(specificVariant);
@@ -13264,7 +13264,7 @@ Renderer.table = class {
 				/(?:\bencounters?\b|遭遇)/i.test(group.name) ? "" : "遭遇",
 			]
 				.filter(Boolean)
-				.join(" ");
+				.join("");
 
 		return `${baseName}${tableRaw.minlvl && tableRaw.maxlvl ? ` (等级 ${tableRaw.minlvl}\u2014${tableRaw.maxlvl})` : ""}`;
 	}
