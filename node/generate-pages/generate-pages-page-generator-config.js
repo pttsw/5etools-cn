@@ -130,10 +130,10 @@ class _PageGeneratorCrcalculator extends PageGeneratorGeneric {
 class _PageGeneratorIndex extends PageGeneratorGeneric {
 	_filename = "page/template-page-index.hbs";
 	_page = "index.html";
-	_pageDescription = "一套为了《龙与地下城 DND 5E》玩家和地下城主而存在的工具网站。";
+	_pageDescription = "《龙与地下城 DND》中文资料站";
 
 	_navbarTitleHtml = `5e<span>tools</span>`;
-	_navbarDescription = "一套为了《龙与地下城 DND 5E》玩家和地下城主而存在的工具网站。";
+	_navbarDescription = "为中文《龙与地下城 DND 5E》玩家和地下城主而生的工具资料站。";
 	_navbarPageTitleStyleAdditional = "page__title--home";
 
 	_isFontAwesome = true;

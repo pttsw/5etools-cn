@@ -80,7 +80,7 @@ class _RenderClassesSidebarImplBase {
 		const ele = e_({
 			tag: "tr",
 			html: `<td colspan="6" class="cls-side__section">
-				<h5 class="cls-side__section-head">Groups</h5>
+				<h5 class="cls-side__section-head">分组</h5>
 				<div>${cls.classGroup.map(it => it.toTitleCase()).join(", ")}</div>
 			</td>`,
 		});
@@ -120,7 +120,7 @@ class _RenderClassesSidebarImplBase {
 		const ele = e_({
 			tag: "tr",
 			html: `<td colspan="6" class="cls-side__section">
-				<h5 class="cls-side__section-head">Prerequisites</h5>
+				<h5 class="cls-side__section-head">先决条件</h5>
 				${this._getPtRequirements({renderer, requirements: cls.requirements})}
 			</td>`,
 		});
