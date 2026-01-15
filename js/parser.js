@@ -3318,6 +3318,7 @@ Parser.SRC_VEoR = "VEoR";
 Parser.SRC_XPHB = "XPHB";
 Parser.SRC_XDMG = "XDMG";
 Parser.SRC_XMM = "XMM";
+Parser.SRC_XSAC = "XSAC";
 Parser.SRC_DrDe = "DrDe";
 Parser.SRC_DrDe_DaS = "DrDe-DaS";
 Parser.SRC_DrDe_BD = "DrDe-BD";
@@ -3466,7 +3467,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SDW] = "沉睡巨龙醒转";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BGDIA] = "博德之门：坠入阿弗纳斯";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LR] = "洛卡鱼人崛起";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_AL] = "冒险者联盟";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SAC] = "智者建言手册";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SAC] = "贤者谏言合集(2014)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ERLW] = "艾伯伦：从终末战争中崛起";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EFR] = "艾伯伦：失落的圣物";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_RMBRE] = "瑞克与莫蒂：BRE";
@@ -3524,6 +3525,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_VEoR] = "维克那：毁灭前夜";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XPHB] = "玩家手册(2024)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XDMG] = "地下城城主指南(2024)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XMM] = "怪物图鉴(2025)";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_XSAC] = "贤者谏言合集(2025)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe] = "巨龙迷城";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_DaS] = "日落时分的死神";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DrDe_BD] = "面包师的捉襟见肘";
@@ -3647,7 +3649,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SDW] = "SDW";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_BGDIA] = "BGDIA";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_LR] = "LR";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_AL] = "AL";
-Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SAC] = "SAC";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SAC] = "SAC'14";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ERLW] = "ERLW";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_EFR] = "EFR";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_RMBRE] = "RMBRE";
@@ -3705,6 +3707,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_VEoR] = "VEoR";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_XPHB] = "PHB'24";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_XDMG] = "DMG'24";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_XMM] = "MM'25";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_XSAC] = "SAC'25";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe] = "DrDe";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_DaS] = "DrDe-DaS";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DrDe_BD] = "DrDe-BD";
@@ -3885,6 +3888,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_VEoR] = "2024-05-21";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_XPHB] = "2024-09-17";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_XDMG] = "2024-11-12";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_XMM] = "2025-02-18";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_XSAC] = "2025-04-30";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe] = "2025-07-08";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_DaS] = Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe];
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe_BD] = Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DrDe];
@@ -4161,7 +4165,8 @@ Parser.SOURCES_VANILLA = new Set([
 	// Parser.SRC_VGM, // "Legacy" source, removed in favor of MPMM
 	Parser.SRC_XGE,
 	// Parser.SRC_MTF, // "Legacy" source, removed in favor of MPMM
-	Parser.SRC_SAC,
+	// Parser.SRC_SAC, // "Legacy" source, removed in favor of XSAC
+	Parser.SRC_XSAC,
 	Parser.SRC_MFF,
 	Parser.SRC_SADS,
 	Parser.SRC_TCE,

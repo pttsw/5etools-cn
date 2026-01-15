@@ -91,7 +91,7 @@
 				"additionalFromBackground": true,
 				"default": [
 					"(a) {@item 鳞甲|PHB} 或 (b) {@item 皮甲|PHB}",
-					"(a) 二把{@item 短剑|PHB|短剑}或 (b) 二把{@filter 简易近战武器|items|source=phb|category=基础|type=简易武器;近战武器=sand}",
+					"(a) 二把{@item 短剑|PHB|短剑}或 (b) 二把{@filter 简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand}",
 					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}",
 					"一把{@item 长弓|PHB}和一个{@item 箭袋|PHB}（内含{@item 箭矢 (20)|PHB|20支箭}）"
 				],
@@ -1464,7 +1464,7 @@
 							"迷踪步|xphb"
 						],
 						"9": [
-							"精类召唤术|xphb"
+							"妖精召唤术|xphb"
 						],
 						"13": [
 							"任意门|xphb"
@@ -2357,7 +2357,7 @@
 			"classSource": "XPHB",
 			"level": 6,
 			"entries": [
-				"只要你未着装重甲，你的{@variantrule 速度|XPHB}提升10尺。你也获得{@variantrule 攀爬速度|XPHB}和{@variantrule 游泳速度|XPHB}（等于你的{@variantrule 速度|XPHB}）。"
+				"只要你未着装重甲，你的{@variantrule 速度|XPHB}提升 10 尺。你也获得{@variantrule 攀爬速度|XPHB}和{@variantrule 游泳速度|XPHB}（等于你的{@variantrule 速度|XPHB}）。"
 			]
 		},
 		{
@@ -2422,7 +2422,7 @@
 							"name": "临时生命值",
 							"type": "entries",
 							"entries": [
-								"以一个{@action 魔法|XPHB}动作，你能够给予自己 {@dice 1d8}+你的感知调整值（最低为1） 的{@variantrule 临时生命值|XPHB}。你能够使用此特性的次数等于你的感知调整值次（最低一次），当你完成一次{@variantrule 长休|XPHB}时，你重获全部已消耗的使用次数。"
+								"以一个{@action 魔法|XPHB}动作，你能够给予自己{@dice 1d8} + 你的感知调整值（最低为 1） 的{@variantrule 临时生命值|XPHB}。你能够使用此特性的次数等于你的感知调整值次（最少 1 次），当你完成一次{@variantrule 长休|XPHB}时，你重获全部已消耗的使用次数。"
 							]
 						},
 						{
@@ -2430,7 +2430,7 @@
 							"name": "减少力竭",
 							"type": "entries",
 							"entries": [
-								"当你完成一次{@variantrule 短休|XPHB}时，你的{@condition 力竭|XPHB}等级减少1级（若有）。"
+								"当你完成一次{@variantrule 短休|XPHB}时，你的{@condition 力竭|XPHB}等级减少 1 级（若有）。"
 							]
 						}
 					]
@@ -3037,7 +3037,7 @@
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "防御多重攻击|游侠||猎人||7"
+							"subclassFeature": "多重防御|游侠||猎人||7"
 						},
 						{
 							"type": "refSubclassFeature",
@@ -3065,7 +3065,7 @@
 		},
 		{
 			"ENG_name": "Multiattack Defense",
-			"name": "防御多重攻击",
+			"name": "多重防御",
 			"source": "PHB",
 			"page": 93,
 			"srd": true,
@@ -3418,7 +3418,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11级妖精漫游者特性}",
-				"妖精荒原的皇庭赐予你获得精类援助的祝福：你习得法术{@spell 精类召唤术|TCE}。它不计入你的已知游侠法术，且你施展它时无需材料成分。你可以免费施展这个法术一次而不需要消耗法术位，在你完成一次长休后，你重获免费施展该法术的能力。",
+				"妖精荒原的皇庭赐予你获得精类援助的祝福：你习得法术{@spell 妖精召唤术|TCE}。它不计入你的已知游侠法术，且你施展它时无需材料成分。你可以免费施展这个法术一次而不需要消耗法术位，在你完成一次长休后，你重获免费施展该法术的能力。",
 				"每当你施展此法术前，你都可以微调这一法术使其本次施展与维持无需你保持{@status 专注}。以无需专注的方式施展时，该法术的持续时间将变为一分钟。"
 			]
 		},
@@ -4232,7 +4232,7 @@
 			"header": 2,
 			"entries": [
 				"你在酷烈环境中生存的经验不仅足够支撑你自己，也能帮助你的盟友。以一个{@action 魔法|XPHB}动作，你可以选择等同于你感知调整值（至少1个）数量的可见生物。所选的生物能够恢复等同于 {@dice 1d10}+你的游侠等级点的{@variantrule 生命值|XPHB}，且接下来的1小时内，其为避免或结束{@condition 恐慌|XPHB}状态所进行的豁免具有{@variantrule 优势|XPHB}。",
-				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
+				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 			]
 		},
 		{
@@ -4331,7 +4331,7 @@
 							"type": "entries",
 							"entries": [
 								"如果野兽死亡不超过一小时，你能够以一个{@action 魔法|XPHB}动作，并消耗一个法术位使它复活。它会在一分钟后死而复生并恢复所有{@variantrule 生命值|XPHB}。",
-								"每当你完成{@variantrule 长休|XPHB}时，你都能召唤一只不同的原初野兽。这只新的野兽出现在位于你5尺内的一处未占据空间内，并由你选择其数据卡和外表。如果你已经通过此特性获得了一只原初野兽，它会在新的原初野兽出现时消失。"
+								"每当你完成{@variantrule 长休|XPHB}时，你都能召唤一只不同的原初野兽。这只新的野兽出现在位于你 5 尺内的一处未占据空间内，并由你选择其数据卡和外表。如果你已经通过此特性获得了一只原初野兽，它会在新的原初野兽出现时消失。"
 							]
 						}
 					]
@@ -4382,7 +4382,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"当你施展的法术指定了你自己作为目标，并且你的原初行侣正位于你30尺范围内时，你可以让该法术效应同时作用于你的原初行侣。"
+				"当你施展的法术指定了你自己作为目标，并且你的原初行侣正位于你 30 尺范围内时，你可以让该法术效应同时作用于你的原初行侣。"
 			]
 		},
 		{
@@ -4462,7 +4462,7 @@
 						],
 						[
 							"9th",
-							"{@spell 精类召唤术|XPHB}"
+							"{@spell 妖精召唤术|XPHB}"
 						],
 						[
 							"13th",
@@ -4527,7 +4527,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"每当你进行一次魅力检定时，你都可以在那次检定中获得等于你的感知调整值的加值（至少+1）。",
+				"每当你进行一次魅力检定时，你都可以在那次检定中获得等于你的感知调整值的加值（至少 +1）。",
 				"另外，你选择获得下列技能之一的熟练：{@skill 欺瞒|XPHB}、{@skill 表演|XPHB}或{@skill 游说|XPHB}。"
 			]
 		},
@@ -4544,7 +4544,7 @@
 			"header": 2,
 			"entries": [
 				"妖精荒原的魔法护卫着你的心灵。你在对抗或终止{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态的豁免检定上具有{@variantrule 优势|XPHB}。",
-				"此外，当你或位于你120尺内的一个你可见的生物，通过了一次对抗或终止{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态的豁免检定时，你可以用你的{@variantrule 反应|XPHB}迫使位于你120尺内的另一个你可见的不同生物，进行一次对抗你法术豁免DC的感知豁免。豁免失败，目标则陷入{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态（由你选择）1分钟。目标在其每回合结束时重复此豁免，豁免成功则结束此效应。"
+				"此外，当你或位于你 120 尺内的一个你可见的生物，通过了一次对抗或终止{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态的豁免检定时，你可以用你的{@variantrule 反应|XPHB}迫使位于你 120 尺内的另一个你可见的不同生物，进行一次对抗你法术豁免DC的感知豁免。豁免失败，目标则陷入{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态（由你选择）1 分钟。目标在其每回合结束时重复此豁免，豁免成功则结束此效应。"
 			]
 		},
 		{
@@ -4559,8 +4559,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以无需材料成分地施展{@spell 精类召唤术|XPHB}。同时，你可以免费施展这个法术一次而不需要消耗法术位，在你完成一次{@variantrule 长休|XPHB}后，你重获免费施展该法术的能力。",
-				"每当你施展此法术时，你都可以微调这一法术使其无需{@status 专注|XPHB}。以无需专注的方式施法时，该法术的持续时间将变为一分钟。"
+				"你可以无需材料成分地施展{@spell 妖精召唤术|XPHB}。同时，你可以免费施展这个法术一次而不需要消耗法术位，在你完成一次{@variantrule 长休|XPHB}后，你重获免费施展该法术的能力。",
+				"每当你开始施展此法术时，都可以修改此法术使其无需{@status 专注|XPHB}。以此法施展时，此法术的持续时间将变为 1 分钟。"
 			]
 		},
 		{
@@ -4575,8 +4575,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"你可以免费施展{@spell 迷踪步|XPHB}而不需要消耗法术位，次数等同于你的感知调整值次（至少一次），在完成一次{@variantrule 长休|XPHB}后，你重获所有的已消耗的次数。",
-				"另外，每当你施展{@spell 迷踪步|XPHB}时，你可以携带一个位于你5尺内你可见的自愿生物与你一同传送。那个生物会被传送到由你选择的，位于你的目标位置5尺内的一处未占据空间内。"
+				"你可以免费施展{@spell 迷踪步|XPHB}而不需要消耗法术位，次数等同于你的感知调整值次（最少 1 次），在完成一次{@variantrule 长休|XPHB}后，你重获所有的已消耗的次数。",
+				"另外，每当你施展{@spell 迷踪步|XPHB}时，你可以携带一个位于你 5 尺内你可见的自愿生物与你一同传送。那个生物会被传送到由你选择的，位于你的目标位置 5 尺内的一处未占据空间内。"
 			]
 		},
 		{
@@ -4596,7 +4596,7 @@
 					"name": "伏击者之跃",
 					"type": "entries",
 					"entries": [
-						"在每一场战斗的你的第一个回合的开始，你的{@variantrule 速度|XPHB}增加10尺，直到那个回合结束。"
+						"在每一场战斗的你的第一个回合的开始，你的{@variantrule 速度|XPHB}增加 10 尺，直到那个回合结束。"
 					]
 				},
 				{
@@ -4646,18 +4646,11 @@
 		},
 		{
 			"ENG_name": "Gloom Stalker Spells",
-			"name": "幽域追踪者法术",
-			"source": "XPHB",
-			"page": 126,
 			"className": "游侠",
 			"classSource": "XPHB",
-			"subclassShortName": "幽域追踪者",
-			"subclassSource": "XPHB",
-			"level": 3,
 			"entries": [
 				"当你到达幽域追猎者法术表中特定的游侠等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "幽域追踪者法术",
 					"colLabels": [
 						"游侠等级",
@@ -4669,28 +4662,36 @@
 					],
 					"rows": [
 						[
-							"3rd",
+							"3",
 							"{@spell 易容术|XPHB}"
 						],
 						[
-							"5th",
+							"5",
 							"{@spell 魔绳术|XPHB}"
 						],
 						[
-							"9th",
+							"9",
 							"{@spell 恐惧术|XPHB}"
 						],
 						[
-							"13th",
+							"13",
 							"{@spell 高等隐形术|XPHB}"
 						],
 						[
-							"17th",
+							"17",
 							"{@spell 伪装术|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"level": 3,
+			"name": "幽域追踪者法术",
+			"page": 126,
+			"source": "XPHB",
+			"subclassShortName": "幽域追踪者",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Umbral Sight",
@@ -4703,7 +4704,7 @@
 			"subclassSource": "XPHB",
 			"level": 3,
 			"entries": [
-				"你获得60尺黑暗视觉。如果你获得本特性时已拥有了{@sense 黑暗视觉|XPHB}，那个{@sense 黑暗视觉|XPHB}的范围增加60尺。",
+				"你获得 60 尺黑暗视觉。如果你获得本特性时已拥有了{@sense 黑暗视觉|XPHB}，那个{@sense 黑暗视觉|XPHB}的范围增加 60 尺。",
 				"你还擅长避开依赖{@sense 黑暗视觉|XPHB}的角色。完全身处{@variantrule 黑暗|XPHB}期间，对于任何依靠{@sense 黑暗视觉|XPHB}观察{@variantrule 黑暗|XPHB}中的你的生物而言，你具有{@condition 隐形|XPHB}状态。"
 			]
 		},
@@ -4765,7 +4766,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"当一个生物对你发动了一次攻击检定时，你能用{@variantrule 反应|XPHB}对这次检定施加{@variantrule 劣势|XPHB}。不管那次攻击命中或失手，你都能在那之后传送至你30尺范围内的一处未被占据的、你可见的空间。"
+				"当一个生物对你发动了一次攻击检定时，你能用{@variantrule 反应|XPHB}对这次检定施加{@variantrule 劣势|XPHB}。不管那次攻击命中或失手，你都能在那之后传送至你 30 尺范围内的一处未被占据的、你可见的空间。"
 			]
 		},
 		{
@@ -4828,8 +4829,8 @@
 					"entries": [
 						{
 							"ENG_name": "Colossus Slayer",
-							"name": "巨像屠夫",
 							"type": "entries",
+							"name": "巨像屠夫",
 							"entries": [
 								"你强而有力的攻击可以击倒最强壮的对手。当你用武器命中生物时，如果该敌人{@variantrule 生命值|XPHB}不满，则该武器额外对目标造成{@damage 1d8}点伤害。你每回合只能造成一次这种额外伤害。"
 							]
@@ -4866,16 +4867,16 @@
 					"entries": [
 						{
 							"ENG_name": "Escape the Horde",
-							"name": "冲出重围",
 							"type": "entries",
+							"name": "冲出重围",
 							"entries": [
 								"对你发动的{@action 借机攻击|XPHB|借机攻击}具有{@variantrule 劣势|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Multiattack Defense",
-							"name": "防御多重攻击",
 							"type": "entries",
+							"name": "多重防御",
 							"entries": [
 								"当一个生物的攻击检定命中你时，该生物在本回合内对你进行的其他攻击检定具有{@variantrule 劣势|XPHB}。"
 							]
@@ -4898,7 +4899,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"每回合一次，当你对被你的猎人印记所标记的生物造成伤害时，你可以对位于这个生物30尺范围内的一个你能看见的另一名生物，同样施加由猎人印记造成的额外伤害。"
+				"每回合一次，当你对被你的猎人印记所标记的生物造成伤害时，你可以对位于这个生物 30 尺范围内的一个你能看见的另一名生物，同样施加由猎人印记造成的额外伤害。"
 			]
 		},
 		{

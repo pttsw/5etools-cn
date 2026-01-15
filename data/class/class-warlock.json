@@ -152,10 +152,10 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
 					"(a) 一个 {@item 材料包|PHB}或 (b) 一件{@item 奥术法器|PHB}",
 					"(a) 一个{@item 学者套组|PHB}或(b) 一个{@item 地城套组|PHB}",
-					"{@item 皮甲|PHB}，任意 {@filter 简易武器|items|source=phb|category=基础|type=简易武器}，以及两把 {@item 匕首|PHB|匕首}"
+					"{@item 皮甲|PHB}，任意 {@filter 简易武器|items|source=PHB|category=基础|type=简易武器}，以及两把 {@item 匕首|PHB|匕首}"
 				],
 				"goldAlternative": "{@dice 4d4 × 10|4d4 × 10|起始金币}",
 				"defaultData": [
@@ -840,7 +840,7 @@
 			],
 			"subclassFeatures": [
 				"至高妖精|魔契师||至高妖精||1",
-				"雾遁|魔契师||至高妖精||6",
+				"雾隐遁行|魔契师||至高妖精||6",
 				"斗转星移|魔契师||至高妖精||10",
 				"幻影黑幕|魔契师||至高妖精||14"
 			]
@@ -869,7 +869,7 @@
 			},
 			"subclassFeatures": [
 				"至高妖精|魔契师|XPHB|至高妖精||3",
-				"雾遁|魔契师||至高妖精||6",
+				"雾隐遁行|魔契师||至高妖精||6",
 				"斗转星移|魔契师||至高妖精||10",
 				"幻影黑幕|魔契师||至高妖精||14"
 			]
@@ -1126,7 +1126,7 @@
 						],
 						"s2": [
 							"炽焰法球",
-							"次级复原术"
+							"次等复原术"
 						],
 						"s3": [
 							"昼明术",
@@ -1667,7 +1667,7 @@
 			],
 			"subclassFeatures": [
 				"至高妖精宗主|魔契师|XPHB|至高妖精|XPHB|3",
-				"雾遁|魔契师|XPHB|至高妖精|XPHB|6",
+				"雾隐遁行|魔契师|XPHB|至高妖精|XPHB|6",
 				"斗转星移|魔契师|XPHB|至高妖精|XPHB|10",
 				"醉心魔法|魔契师|XPHB|至高妖精|XPHB|14"
 			],
@@ -1695,7 +1695,7 @@
 							"援助术|xphb",
 							"疗伤术|xphb",
 							"光导箭|xphb",
-							"次级复原术|xphb"
+							"次等复原术|xphb"
 						],
 						"5": [
 							"昼明术|xphb",
@@ -2676,7 +2676,7 @@
 			"classSource": "XPHB",
 			"level": 17,
 			"entries": [
-				"你获得一个自选的9环魔契师法术。"
+				"你获得一个自选的 9 环魔契师法术。"
 			]
 		},
 		{
@@ -2787,7 +2787,7 @@
 		},
 		{
 			"ENG_name": "Misty Escape",
-			"name": "雾遁",
+			"name": "雾隐遁行",
 			"source": "PHB",
 			"page": 108,
 			"className": "魔契师",
@@ -3848,7 +3848,7 @@
 								],
 								[
 									"2nd",
-									"{@spell 炽焰法球}, {@spell 次级复原术}"
+									"{@spell 炽焰法球}, {@spell 次等复原术}"
 								],
 								[
 									"3rd",
@@ -4394,7 +4394,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你的宗主授予你在位面的边界之间穿行的能力。你可以无需消耗法术位地施展{@spell 迷踪步|XPHB}，次数等于你的魅力调整值（至少1次），并在完成一次{@variantrule 长休|XPHB}时重获所有已消耗的次数。",
+				"你的宗主授予你在位面的边界之间穿行的能力。你可以无需消耗法术位地施展{@spell 迷踪步|XPHB}，次数等于你的魅力调整值（最少 1 次），并在完成一次{@variantrule 长休|XPHB}时重获所有已消耗的次数。",
 				"此外，每当你施展该法术时，你都可以选择造成下列额外效应之一：",
 				{
 					"type": "entries",
@@ -4404,7 +4404,7 @@
 							"name": "复苏步伐",
 							"type": "entries",
 							"entries": [
-								"在你传送之后，你或一个你可见的位于你10尺内的生物立刻获得{@dice 1d10}{@variantrule 临时生命值|XPHB}。"
+								"在你传送之后，你或一个你可见的位于你 10 尺内的生物立刻获得{@dice 1d10}{@variantrule 临时生命值|XPHB}。"
 							]
 						},
 						{
@@ -4412,7 +4412,7 @@
 							"name": "嘲弄步伐",
 							"type": "entries",
 							"entries": [
-								"位于你传送前的空间5尺内的生物必须成功通过一次对抗你法术豁免DC的感知豁免，否则其在对除你之外的生物发动攻击检定时具有{@variantrule 劣势|XPHB}，直至你的下一回合开始。"
+								"位于你传送前的空间 5 尺内的生物必须成功通过一次对抗你法术豁免DC的感知豁免，否则其在对除你之外的生物发动攻击检定时具有{@variantrule 劣势|XPHB}，直至你的下一回合开始。"
 							]
 						}
 					]
@@ -4421,7 +4421,7 @@
 		},
 		{
 			"ENG_name": "Misty Escape",
-			"name": "雾遁",
+			"name": "雾隐遁行",
 			"source": "XPHB",
 			"page": 159,
 			"className": "魔契师",
@@ -4449,7 +4449,7 @@
 							"name": "惊惧步伐",
 							"type": "entries",
 							"entries": [
-								"位于你传送前或传送后的空间（由你选择）5尺内的生物必须进行一次对抗你法术豁免DC的感知豁免，豁免失败则受到{@damage 2d10}心灵伤害。"
+								"位于你传送前或传送后的空间（由你选择）5 尺内的生物必须进行一次对抗你法术豁免DC的感知豁免，豁免失败则受到{@damage 2d10}心灵伤害。"
 							]
 						}
 					]
@@ -4512,19 +4512,11 @@
 		},
 		{
 			"ENG_name": "Celestial Spells",
-			"name": "天界法术",
-			"source": "XPHB",
-			"page": 160,
 			"className": "魔契师",
 			"classSource": "XPHB",
-			"subclassShortName": "天界",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 1,
 			"entries": [
 				"宗主赐予的魔法使你始终准备着特定的法术。当你到达天界法术表中特定的魔契师等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "天界法术",
 					"colLabels": [
 						"魔契师等级",
@@ -4537,23 +4529,32 @@
 					"rows": [
 						[
 							"3",
-							"{@spell 援助术|XPHB}, {@spell 疗伤术|XPHB}, {@spell 光导箭|XPHB}, {@spell 次级复原术|XPHB}, {@spell 光亮术|XPHB}, {@spell 圣火术|XPHB}"
+							"{@spell 援助术|XPHB}，{@spell 疗伤术|XPHB}，{@spell 光导箭|XPHB}， {@spell 次等复原术|XPHB}，{@spell 光亮术|XPHB}，{@spell 圣火术|XPHB}"
 						],
 						[
 							"5",
-							"{@spell 昼明术|XPHB}, {@spell 回生术|XPHB}"
+							"{@spell 昼明术|XPHB}，{@spell 回生术|XPHB}"
 						],
 						[
 							"7",
-							"{@spell 信仰守卫|XPHB}, {@spell 火墙术|XPHB}"
+							"{@spell 信仰守卫|XPHB}，{@spell 火墙术|XPHB}"
 						],
 						[
 							"9",
-							"{@spell 高等复原术|XPHB}, {@spell 天界召唤术|XPHB}"
+							"{@spell 高等复原术|XPHB}，{@spell 天界召唤术|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"header": 1,
+			"level": 3,
+			"name": "天界法术",
+			"page": 160,
+			"source": "XPHB",
+			"subclassShortName": "天界",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Healing Light",
@@ -4567,8 +4568,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你获得了引导天界能量以治愈伤口的能力。它是一个有着1+你的魔契师等级枚d6骰的骰池，用以施展你的治愈能力。",
-				"以一个{@variantrule 附赠动作|XPHB}，你可以消耗骰池中的任意数量的骰子，来治疗你自己或一个你可见的位于你60尺内的生物。每次你能消耗的最大骰子数量等于你的魅力调整值（至少一枚）。投掷全部被消耗骰子，这些骰值相加的总值即为所能恢复的{@variantrule 生命值|XPHB}。当你完成一次{@variantrule 长休|XPHB}时，你的骰池将重获所有已消耗的骰子。"
+				"你获得了引导天界能量以治愈伤口的能力。它是一个有着 1 + 你的魔契师等级枚d6骰的骰池，用以施展你的治愈能力。",
+				"以一个{@variantrule 附赠动作|XPHB}，你可以消耗骰池中的任意数量的骰子，来治疗你自己或一个你可见的位于你 60 尺内的生物。每次你能消耗的最大骰子数量等于你的魅力调整值（最少 1 枚）。投掷全部被消耗骰子，这些骰值相加的总值即为所能恢复的{@variantrule 生命值|XPHB}。当你完成一次{@variantrule 长休|XPHB}时，你的骰池将重获所有已消耗的骰子。"
 			]
 		},
 		{
@@ -4598,7 +4599,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"在满足一定条件时，你都会获得一定的{@variantrule 临时生命值|XPHB}：你每当你使用秘法回流，或是完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后，。其数值等于你的魔契师等级+你的魅力调整值。此外，在你获得该{@variantrule 临时生命值|XPHB}时，你还可以选择至多五个你可见的生物。这些生物也会获得等同于你魔契师等级的一半+你的魅力调整值的{@variantrule 临时生命值|XPHB}。"
+				"每当你使用秘法回流，或是完成一次{@variantrule 临时生命值|XPHB}或{@variantrule 短休|XPHB|短}后，你都会获得一定的{@variantrule 长休|XPHB}。其数值等于你的魔契师等级 + 你的魅力调整值。此外，在你获得该{@variantrule 临时生命值|XPHB}时，你还可以选择至多五个你可见的生物。这些生物也会获得等同于你魔契师等级的一半 + 你的魅力调整值的{@variantrule 临时生命值|XPHB}。"
 			]
 		},
 		{
@@ -4613,8 +4614,8 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"当你或位于你60尺内的一名盟友将要进行一次{@variantrule 死亡豁免检定|XPHB}时，你可以释放出一道光能来拯救那名生物。那名生物恢复等于其{@variantrule 生命值|XPHB}上限一半的{@variantrule 生命值|XPHB|生命值}，且可以选择结束自身的{@condition 倒地|XPHB}状态。之后，每个由你选择的位于那名生物30尺内的生物都将受到{@dice 2d8}+你的魅力调整值的光耀伤害，并陷入{@condition 目盲|XPHB}状态直至当前回合结束。",
-				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
+				"当你或位于你 60 尺内的一名盟友将要进行一次{@variantrule 死亡豁免检定|XPHB}时，你可以释放出一道光能来拯救那名生物。那名生物恢复等于其{@variantrule 生命值|XPHB}上限一半的{@variantrule 生命值|XPHB|生命值}，且可以选择结束自身的{@condition 倒地|XPHB}状态。之后，每个由你选择的位于那名生物 30 尺内的生物都将受到{@dice 2d8} + 你的魅力调整值的光耀伤害，并陷入{@condition 目盲|XPHB}状态直至当前回合结束。",
+				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 			]
 		},
 		{
@@ -4656,26 +4657,17 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"当你将一个敌人的{@variantrule 生命值|XPHB}降至0时，你获得等于你的魅力调整值＋你的魔契师等级的{@variantrule 临时生命值|XPHB}（最低为1{@variantrule 临时生命值|XPHB|临时生命值}）。而若其他人将一个位于你10尺内的你的敌人的{@variantrule 生命值|XPHB}降至0时，你也会获得此增益。"
+				"当你将一个敌人的{@variantrule 生命值|XPHB}降至 0 时，你获得等于你的魅力调整值 + 你的魔契师等级的{@variantrule 临时生命值|XPHB}（最低为 1{@variantrule 临时生命值|XPHB|临时生命值}）。而若其他人将一个位于你 10 尺内的你的敌人的{@variantrule 生命值|XPHB}降至 0 时，你也会获得此增益。"
 			]
 		},
 		{
 			"ENG_name": "Fiend Spells",
-			"name": "邪魔法术",
-			"source": "XPHB",
-			"page": 161,
-			"srd52": true,
 			"basicRules2024": true,
 			"className": "魔契师",
 			"classSource": "XPHB",
-			"subclassShortName": "邪魔",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 2,
 			"entries": [
 				"宗主赐予的魔法使你始终准备着特定的法术。当你到达邪魔法术表中特定的魔契师等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "邪魔法术",
 					"colLabels": [
 						"魔契师等级",
@@ -4688,23 +4680,33 @@
 					"rows": [
 						[
 							"3",
-							"{@spell 燃烧之手|XPHB}, {@spell 命令术|XPHB}, {@spell 灼热射线|XPHB}, {@spell 暗示术|XPHB}"
+							"{@spell 燃烧之手|XPHB}，{@spell 命令术|XPHB}，{@spell 灼热射线|XPHB}，{@spell 暗示术|XPHB}"
 						],
 						[
 							"5",
-							"{@spell 火球术|XPHB}, {@spell 臭云术|XPHB}"
+							"{@spell 火球术|XPHB}，{@spell 臭云术|XPHB}"
 						],
 						[
 							"7",
-							"{@spell 火焰护盾|XPHB}, {@spell 火墙术|XPHB}"
+							"{@spell 火焰护盾|XPHB}，{@spell 火墙术|XPHB}"
 						],
 						[
 							"9",
-							"{@spell 指使术|XPHB}, {@spell 疫病虫群|XPHB}"
+							"{@spell 指使术|XPHB}，{@spell 疫病虫群|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"header": 2,
+			"level": 3,
+			"name": "邪魔法术",
+			"page": 161,
+			"source": "XPHB",
+			"srd52": true,
+			"subclassShortName": "邪魔",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dark One's Own Luck",
@@ -4721,7 +4723,7 @@
 			"header": 2,
 			"entries": [
 				"你可以呼唤你的宗主将命运改写为对你有利的方向。当你进行属性检定或豁免检定时，你可以使用该特性为此次掷骰增添一个{@dice 1d10}骰。你可在看到掷骰结果后，其结果生效前使用该特性。",
-				"你可以使用此特性的次数等于你的魅力调整值（至少一次），但你在一次检定中只能使用此特性一次。你在完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的次数。"
+				"你可以使用此特性的次数等于你的魅力调整值（最少 1 次），但你在一次检定中只能使用此特性一次。你在完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的次数。"
 			]
 		},
 		{
@@ -4798,25 +4800,17 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你能够在自己与他人的意识中构建一道心灵感应的链接。以一个{@variantrule 附赠动作|XPHB}，你可以选择30尺内一个你可见的生物创造这一链接。链接能使你与其能够通过心灵感应方式进行交流，但交流时，你们之间距离的里数不超过你的魅力调整值里（至少1里）。你们必须使用互相知晓的语言进行心灵交流，才能使其理解你通过心灵感应传达的话语。",
+				"你能够在自己与他人的意识中构建一道心灵感应的链接。以一个{@variantrule 附赠动作|XPHB}，你可以选择 30 尺内一个你可见的生物创造这一链接。链接能使你与其能够通过心灵感应方式进行交流，但交流时，你们之间距离的里数不超过你的魅力调整值里（至少 1 里）。你们必须使用互相知晓的语言进行心灵交流，才能使其理解你通过心灵感应传达的话语。",
 				"这道心灵连结持续等于你魔契师等级的分钟。它也会在你使用此特性形成另一道心灵连结时提前结束。"
 			]
 		},
 		{
 			"ENG_name": "Great Old One Spells",
-			"name": "旧日支配者法术",
-			"source": "XPHB",
-			"page": 163,
 			"className": "魔契师",
 			"classSource": "XPHB",
-			"subclassShortName": "旧日支配者",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 1,
 			"entries": [
 				"宗主赐予的魔法使你始终准备着特定的法术。当你到达旧日支配者法术表中特定的魔契师等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "旧日支配者法术",
 					"colLabels": [
 						"魔契师等级",
@@ -4829,23 +4823,32 @@
 					"rows": [
 						[
 							"3",
-							"{@spell 侦测思想|XPHB}, {@spell 不谐低语|XPHB}, {@spell 魅影之力|XPHB}, {@spell 塔莎狂笑术|XPHB}"
+							"{@spell 侦测思想|XPHB}，{@spell 不谐低语|XPHB}，{@spell 魅影之力|XPHB}，{@spell 塔莎狂笑术|XPHB}"
 						],
 						[
 							"5",
-							"{@spell 鹰眼术|XPHB}, {@spell 哈达之欲|XPHB}"
+							"{@spell 鹰眼术|XPHB}，{@spell 哈达之欲|XPHB}"
 						],
 						[
 							"7",
-							"{@spell 困惑术|XPHB}, {@spell 异怪召唤术|XPHB}"
+							"{@spell 困惑术|XPHB}，{@spell 异怪召唤术|XPHB}"
 						],
 						[
 							"9",
-							"{@spell 篡改记忆|XPHB}, {@spell 心灵遥控|XPHB}"
+							"{@spell 篡改记忆|XPHB}，{@spell 心灵遥控|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"header": 1,
+			"level": 3,
+			"name": "旧日支配者法术",
+			"page": 163,
+			"source": "XPHB",
+			"subclassShortName": "旧日支配者",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Psychic Spells",
@@ -4920,7 +4923,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"当你施展{@spell 异怪召唤术|XPHB}时，你可以修改此法术使其无需{@status 专注|XPHB}。以此法施展时，此法术的持续时间将变为1分钟，且召唤来的异怪拥有等于你魔契师等级+你的魅力调整值的{@variantrule 临时生命值|XPHB}。",
+				"当你施展{@spell 异怪召唤术|XPHB}时，你可以修改此法术使其无需{@status 专注|XPHB}。以此法施展时，此法术的持续时间将变为 1 分钟，且召唤来的异怪拥有等于你魔契师等级 + 你的魅力调整值的{@variantrule 临时生命值|XPHB}。",
 				"此外，该异怪在每个回合中第一次命中一个被你的{@spell 脆弱诅咒|XPHB}影响的生物时，该异怪会对目标额外造成等于此法术附加伤害的心灵伤害。"
 			]
 		}

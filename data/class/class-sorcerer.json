@@ -111,7 +111,7 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
 					"(a) 一个 {@item 材料包|PHB}或 (b) 一件{@item 奥术法器|PHB}",
 					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}",
 					"两把{@item 匕首|PHB|匕首}"
@@ -1888,7 +1888,7 @@
 						],
 						"3": [
 							"援助术",
-							"次级复原术"
+							"次等复原术"
 						],
 						"5": [
 							"解除魔法",
@@ -1955,7 +1955,7 @@
 		{
 			"ENG_name": "Lunar Sorcery",
 			"name": "月之术法",
-			"shortName": "月之术法",
+			"shortName": "月",
 			"source": "DSotDQ",
 			"className": "术士",
 			"classSource": "PHB",
@@ -1972,7 +1972,7 @@
 							"七彩喷射"
 						],
 						"3": [
-							"次级复原术",
+							"次等复原术",
 							"目盲术/耳聋术",
 							"变身术"
 						],
@@ -1995,18 +1995,18 @@
 				}
 			],
 			"subclassFeatures": [
-				"月之术法|术士||月之术法|DSotDQ|1",
-				"月之恩泽|术士||月之术法|DSotDQ|6",
-				"阴晴圆缺|术士||月之术法|DSotDQ|6",
-				"月之赋能|术士||月之术法|DSotDQ|14",
-				"月之异象|术士||月之术法|DSotDQ|18"
+				"月之术法|术士||月|DSotDQ|1",
+				"月之恩泽|术士||月|DSotDQ|6",
+				"阴晴圆缺|术士||月|DSotDQ|6",
+				"月之赋能|术士||月|DSotDQ|14",
+				"月之异象|术士||月|DSotDQ|18"
 			],
 			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Lunar Sorcery",
 			"name": "月之术法",
-			"shortName": "月之术法",
+			"shortName": "月",
 			"source": "DSotDQ",
 			"className": "术士",
 			"classSource": "XPHB",
@@ -2014,7 +2014,7 @@
 				"ENG_name": "Lunar Sorcery",
 				"name": "月之术法",
 				"source": "DSotDQ",
-				"shortName": "月之术法",
+				"shortName": "月",
 				"className": "术士",
 				"classSource": "PHB",
 				"_preserve": {
@@ -2026,18 +2026,18 @@
 				}
 			},
 			"subclassFeatures": [
-				"月之术法|术士|XPHB|月之术法|DSotDQ|3",
-				"月之恩泽|术士||月之术法|DSotDQ|6",
-				"阴晴圆缺|术士||月之术法|DSotDQ|6",
-				"月之赋能|术士||月之术法|DSotDQ|14",
-				"月之异象|术士||月之术法|DSotDQ|18"
+				"月之术法|术士|XPHB|月|DSotDQ|3",
+				"月之恩泽|术士||月|DSotDQ|6",
+				"阴晴圆缺|术士||月|DSotDQ|6",
+				"月之赋能|术士||月|DSotDQ|14",
+				"月之异象|术士||月|DSotDQ|18"
 			],
 			"fluff": {
 				"_subclassFluff": {
 					"ENG_name": "Lunar Sorcery",
 					"name": "月之术法",
 					"source": "DSotDQ",
-					"shortName": "月之术法",
+					"shortName": "月",
 					"className": "术士",
 					"classSource": "PHB"
 				}
@@ -2101,7 +2101,7 @@
 						"3": [
 							"援助术|xphb",
 							"警报术|xphb",
-							"次级复原术|xphb",
+							"次等复原术|xphb",
 							"防护善恶|xphb"
 						],
 						"5": [
@@ -2201,7 +2201,7 @@
 						"3": [
 							"疗伤术|xphb",
 							"光导箭|xphb",
-							"次级复原术|xphb",
+							"次等复原术|xphb",
 							"灼热射线|xphb"
 						],
 						"5": [
@@ -2728,7 +2728,7 @@
 				{
 					"type": "list",
 					"items": [
-						"你的术士法术豁免DC+1。",
+						"你的术士法术豁免DC +1。",
 						"你在你施展的术士法术的攻击检定上具有{@variantrule 优势|XPHB}。"
 					]
 				},
@@ -3062,7 +3062,7 @@
 				"amount": 2
 			},
 			"entries": [
-				"如果你的先天术法特性的使用次数耗尽，则你仍可以消耗2点术法点来用{@variantrule 附赠动作|XPHB}继续激活该特性。",
+				"如果你的先天术法特性的使用次数耗尽，则你仍可以消耗 2 点术法点来用{@variantrule 附赠动作|XPHB}继续激活该特性。",
 				"此外，在你的先天术法特性处于激活状态期间，你可以在你施展的每道法术上应用最多两次{@filter 超魔法选项|optionalfeatures|Feature Type=MM}。"
 			]
 		},
@@ -3205,7 +3205,7 @@
 			"page": 34,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 1,
 			"entries": [
@@ -3213,11 +3213,11 @@
 				"你或是你族系中的某人，曾暴露在你们世界月亮的集中魔力之下，使得你被灌注了月之魔法。或许你的祖先参与了一个与日蚀或月蚀有关的德鲁伊仪式，又或许一个神秘的月之碎片坠落在你的身边。无论你如何获得了魔法，你在施放术士法术时，会清晰显示出你与月亮的联系或许是你的瞳孔会发出与你们世界中的月亮同色的光芒，使得你们世界中月相的灵体显现环绕着你，又或是一些其他的效果。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "月之化身|术士||月之术法|DSotDQ|1"
+					"subclassFeature": "月之化身|术士||月|DSotDQ|1"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "月火|术士||月之术法|DSotDQ|1"
+					"subclassFeature": "月火|术士||月|DSotDQ|1"
 				}
 			]
 		},
@@ -3228,7 +3228,7 @@
 			"page": 34,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 1,
 			"header": 2,
@@ -3259,7 +3259,7 @@
 						],
 						[
 							"3rd",
-							"{@spell 次级复原术}",
+							"{@spell 次等复原术}",
 							"{@spell 目盲术/耳聋术}",
 							"{@spell 变身术}"
 						],
@@ -3293,7 +3293,7 @@
 			"page": 34,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 1,
 			"header": 2,
@@ -3309,7 +3309,7 @@
 			"page": 34,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 6,
 			"header": 2,
@@ -3356,7 +3356,7 @@
 			"page": 35,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 6,
 			"header": 2,
@@ -3377,7 +3377,7 @@
 			"page": 35,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 14,
 			"header": 2,
@@ -3423,7 +3423,7 @@
 			"page": 35,
 			"className": "术士",
 			"classSource": "PHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 18,
 			"header": 2,
@@ -4295,7 +4295,7 @@
 						],
 						[
 							"3rd",
-							"{@spell 援助术}, {@spell 次级复原术}"
+							"{@spell 援助术}, {@spell 次等复原术}"
 						],
 						[
 							"5th",
@@ -4853,7 +4853,7 @@
 			"source": "DSotDQ",
 			"className": "术士",
 			"classSource": "XPHB",
-			"subclassShortName": "月之术法",
+			"subclassShortName": "月",
 			"subclassSource": "DSotDQ",
 			"level": 3,
 			"_copy": {
@@ -4862,7 +4862,7 @@
 				"source": "DSotDQ",
 				"className": "术士",
 				"classSource": "PHB",
-				"subclassShortName": "月之术法",
+				"subclassShortName": "月",
 				"subclassSource": "DSotDQ",
 				"level": 1,
 				"_preserve": {
@@ -4895,7 +4895,7 @@
 			"source": "FRHoF",
 			"subclassShortName": "咒火",
 			"subclassSource": "FRHoF",
-			"translator": "机翻"
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Spellfire Burst",
@@ -4965,7 +4965,7 @@
 					"rows": [
 						[
 							"3",
-							"{@spell 疗伤术|XPHB}, {@spell 光导箭|XPHB}, {@spell 次级复原术|XPHB}, {@spell 灼热射线|XPHB}"
+							"{@spell 疗伤术|XPHB}, {@spell 光导箭|XPHB}, {@spell 次等复原术|XPHB}, {@spell 灼热射线|XPHB}"
 						],
 						[
 							"5",
@@ -5269,19 +5269,11 @@
 		},
 		{
 			"ENG_name": "Psionic Spells",
-			"name": "灵能法术",
-			"source": "XPHB",
-			"page": 145,
 			"className": "术士",
 			"classSource": "XPHB",
-			"subclassShortName": "畸变",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 1,
 			"entries": [
 				"当你到达灵能法术表中特定的术士等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "灵能法术",
 					"colLabels": [
 						"术士等级",
@@ -5293,24 +5285,33 @@
 					],
 					"rows": [
 						[
-							"3rd",
-							"{@spell 哈达之臂|XPHB}, {@spell 安定心神|XPHB}, {@spell 侦测思想|XPHB}, {@spell 不谐低语|XPHB}, {@spell 心灵之楔|XPHB}"
+							"3",
+							"{@spell 哈达之臂|XPHB}，{@spell 安定心神|XPHB}，{@spell 侦测思想|XPHB}，{@spell 不谐低语|XPHB}，{@spell 心灵之楔|XPHB}"
 						],
 						[
-							"5th",
-							"{@spell 哈达之欲|XPHB}, {@spell 短讯术|XPHB}"
+							"5",
+							"{@spell 哈达之欲|XPHB}，{@spell 短讯术|XPHB}"
 						],
 						[
-							"7th",
-							"{@spell 艾伐黑触手|XPHB}, {@spell 异怪召唤术|XPHB}"
+							"7",
+							"{@spell 艾伐黑触手|XPHB}，{@spell 异怪召唤术|XPHB}"
 						],
 						[
-							"9th",
-							"{@spell 拉瑞心灵联结|XPHB}, {@spell 心灵遥控|XPHB}"
+							"9",
+							"{@spell 拉瑞心灵联结|XPHB}，{@spell 心灵遥控|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"header": 1,
+			"level": 3,
+			"name": "灵能法术",
+			"page": 145,
+			"source": "XPHB",
+			"subclassShortName": "畸变",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Telepathic Speech",
@@ -5324,7 +5325,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你能够在自己与他人的意识中构建一道心灵感应的链接。以一个{@variantrule 附赠动作|XPHB}，你可以选择30尺内一个你可见的生物创造这一链接。链接能使你与其能够通过心灵感应方式进行交流，但交流时，你们之间距离的里数不超过你的魅力调整值里（至少1里）。你们必须使用互相知晓的语言进行心灵交流，才能使其理解你通过心灵感应传达的话语。",
+				"你能够在自己与他人的意识中构建一道心灵感应的链接。以一个{@variantrule 附赠动作|XPHB}，你可以选择 30 尺内一个你可见的生物创造这一链接。链接能使你与其能够通过心灵感应方式进行交流，但交流时，你们之间距离的里数不超过你的魅力调整值里（至少 1 里）。你们必须使用互相知晓的语言进行心灵交流，才能使其理解你通过心灵感应传达的话语。",
 				"心灵感应的链接持续等同于你术士等级的分钟数。这一链接在你与另一生物构建链接时提前结束。"
 			]
 		},
@@ -5370,7 +5371,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"你能够释放出潜藏在你内部扭曲的真实形态。以一个{@variantrule 附赠动作|XPHB}，你使用1点或更多的术法点以魔法性地转变形态，持续10分钟。你每消耗1术法点，你便可以从下述内容中选择一项，在转变形态期间你同时获得你选择的每项效应的增益：",
+				"你能够释放出潜藏在你内部扭曲的真实形态。以一个{@variantrule 附赠动作|XPHB}，你使用 1 点或更多的术法点以魔法性地转变形态，持续 10 分钟。你每消耗 1 术法点，你便可以从下述内容中选择一项，在转变形态期间你同时获得你选择的每项效应的增益：",
 				{
 					"type": "entries",
 					"entries": [
@@ -5395,7 +5396,7 @@
 							"name": "识破隐形",
 							"type": "entries",
 							"entries": [
-								"你能看见周围60尺内处于{@condition 隐形|XPHB}状态的生物，前提是其对你来说不处于{@variantrule 掩护|XPHB|全身掩护}。你的眼睛也会变成黑色、或是变成扭动的感官触须。"
+								"你能看见周围 60 尺内处于{@condition 隐形|XPHB}状态的生物，前提是其对你来说不处于{@variantrule 掩护|XPHB|全身掩护}。你的眼睛也会变成黑色、或是变成扭动的感官触须。"
 							]
 						},
 						{
@@ -5403,7 +5404,7 @@
 							"name": "蠕行移动",
 							"type": "entries",
 							"entries": [
-								"你的身体和你携带的装备都变得柔韧粘滑。你能够轻松穿过最窄1寸宽的狭窄空间而不用挤进去，且你可以消耗5尺移动力以脱离非魔法的束缚或{@condition 受擒|XPHB}状态。"
+								"你的身体和你携带的装备都变得柔韧粘滑。你能够轻松穿过最窄1寸宽的狭窄空间而不用挤进去，且你可以消耗 5 尺移动力以脱离非魔法的束缚或{@condition 受擒|XPHB}状态。"
 							]
 						}
 					]
@@ -5427,7 +5428,7 @@
 				"amount": 5
 			},
 			"entries": [
-				"你能够释放出扭曲空间的异常现象。以一个{@action 魔法|XPHB}动作，你传送到120尺内你可见的一个未被占据的位置，然后你消失位置30尺内的每个生物必须进行一次对抗你施法DC的力量豁免，豁免失败将受{@damage 3d10}力场伤害并被立即拉向你原本的位置，并停在最靠近的一处未被占据的空间内，豁免成功只受半伤。",
+				"你能够释放出扭曲空间的异常现象。以一个{@action 魔法|XPHB}动作，你传送到 120 尺内你可见的一个未被占据的位置，然后你消失位置 30 尺内的每个生物必须进行一次对抗你施法DC的力量豁免，豁免失败将受{@damage 3d10}力场伤害并被立即拉向你原本的位置，并停在最靠近的一处未被占据的空间内，豁免成功只受半伤。",
 				"一旦你使用此特性，在完成一次{@variantrule 长休|XPHB}前无法再次使用，除非你消耗5点术法点（无需动作）来恢复其使用次数。"
 			]
 		},
@@ -5456,19 +5457,11 @@
 		},
 		{
 			"ENG_name": "Clockwork Spells",
-			"name": "时械法术",
-			"source": "XPHB",
-			"page": 146,
 			"className": "术士",
 			"classSource": "XPHB",
-			"subclassShortName": "时械",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 1,
 			"entries": [
 				"当你到达时械法术表中特定的术士等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "时械法术",
 					"colLabels": [
 						"术士等级",
@@ -5480,26 +5473,26 @@
 					],
 					"rows": [
 						[
-							"3rd",
-							"{@spell 援助术|XPHB}, {@spell 警报术|XPHB}, {@spell 次级复原术|XPHB}, {@spell 防护善恶|XPHB}"
+							"3",
+							"{@spell 援助术|XPHB}，{@spell 警报术|XPHB}，{@spell 次等复原术|XPHB}，{@spell 防护善恶|XPHB}"
 						],
 						[
-							"5th",
-							"{@spell 解除魔法|XPHB}, {@spell 防护能量|XPHB}"
+							"5",
+							"{@spell 解除魔法|XPHB}，{@spell 防护能量|XPHB}"
 						],
 						[
-							"7th",
-							"{@spell 行动自如|XPHB}, {@spell 构装召唤术|XPHB}"
+							"7",
+							"{@spell 行动自如|XPHB}，{@spell 构装召唤术|XPHB}"
 						],
 						[
-							"9th",
-							"{@spell 高等复原术|XPHB}, {@spell 力场墙|XPHB}"
+							"9",
+							"{@spell 高等复原术|XPHB}，{@spell 力场墙|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				},
 				"此外，你可以从秩序显迹表格中选择或掷骰决定一种你在施法时显现出与秩序之联系的方式。",
 				{
-					"type": "table",
 					"caption": "秩序显迹",
 					"colLabels": [
 						"{@dice 1d6}",
@@ -5534,9 +5527,18 @@
 							"6",
 							"你和那些受到你法术影响的生物都会听到齿轮的滴答声或是钟表的响铃。"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"header": 1,
+			"level": 3,
+			"name": "时械法术",
+			"page": 146,
+			"source": "XPHB",
+			"subclassShortName": "时械",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Restore Balance",
@@ -5550,8 +5552,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你与绝对秩序之位面的联系使你能重整混沌的时刻。当你60尺内一个你可见的生物即将带着{@variantrule 优势|XPHB}或是{@variantrule 劣势|XPHB}进行一次{@dice d20}检定时，你可以用{@variantrule 反应|XPHB}使这次检定免受{@variantrule 优势|XPHB}或{@variantrule 劣势|XPHB}的影响。",
-				"你可以使用此特性的次数等同于你的魅力调整值（至少一次），并且你在完成一次{@variantrule 长休|XPHB}后会恢复所有已消耗的使用次数。"
+				"你与绝对秩序之位面的联系使你能重整混沌的时刻。当你 60 尺内一个你可见的生物即将带着{@variantrule 优势|XPHB}或是{@variantrule 劣势|XPHB}进行一次{@dice d20}检定时，你可以用{@variantrule 反应|XPHB}使这次检定免受{@variantrule 优势|XPHB}或{@variantrule 劣势|XPHB}的影响。",
+				"你能使用此特性的次数等同于你的魅力调整值（最少 1 次），你在完成一次{@variantrule 长休|XPHB}后重获所有消耗的次数。"
 			]
 		},
 		{
@@ -5572,7 +5574,7 @@
 				"amountMax": 5
 			},
 			"entries": [
-				"你可以利用世界的均衡之力为一个生物激发闪烁的秩序之盾。以一个{@action 魔法|XPHB}动作，你可以消耗1~5点术法点来创造出一个环绕你或30尺内的一个可见生物的魔法屏障。屏障具有等同于你所消耗术法点数量的d8骰。当被守护的生物受到伤害时，其可以消耗任意数量的这些d8骰，投掷它们，并使该伤害减少掷出结果合计的数值。",
+				"你可以利用世界的均衡之力为一个生物激发闪烁的秩序之盾。以一个{@action 魔法|XPHB}动作，你可以消耗 1-5 点术法点来创造出一个环绕你或 30 尺内的一个可见生物的魔法屏障。屏障具有等同于你所消耗术法点数量的d8骰。当被守护的生物受到伤害时，其可以消耗任意数量的这些d8骰，投掷它们，并使该伤害减少掷出结果合计的数值。",
 				"此屏障将一直保持存在，直到你完成一次{@variantrule 长休|XPHB}或直至你再次使用该特性。"
 			]
 		},
@@ -5593,58 +5595,59 @@
 				"amount": 5
 			},
 			"entries": [
-				"你获得了将你的意识和机械境无尽的计算达成同步的能力。以一个{@variantrule 附赠动作|XPHB}，你可以在1分钟内进入此种状态。在此期间，对你进行的攻击免受{@variantrule 优势|XPHB}的影响，且每当你进行一次{@variantrule D20 检定|XPHB}时，你可以将{@dice d20}掷出的9或以下的骰值视为10。",
-				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。你也可以消耗5点术法点（无需动作）重置此特性的使用权。"
+				"你获得了将你的意识和机械境无尽的计算达成同步的能力。以一个{@variantrule 附赠动作|XPHB}，你可以在 1 分钟内进入此种状态。在此期间，对你进行的攻击免受{@variantrule 优势|XPHB}的影响，且每当你进行一次{@variantrule D20 检定|XPHB}时，你可以将{@dice d20}掷出的 9 或以下的骰值视为 10。",
+				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。你也可以消耗 5 点术法点（无需动作）重置此特性的使用权。"
 			]
 		},
 		{
 			"ENG_name": "Clockwork Cavalcade",
-			"name": "时械矩阵",
-			"source": "XPHB",
-			"page": 147,
 			"className": "术士",
 			"classSource": "XPHB",
-			"subclassShortName": "时械",
-			"subclassSource": "XPHB",
-			"level": 18,
-			"header": 2,
 			"consumes": {
 				"ENG_name": "Sorcery Point",
-				"name": "术法点",
-				"amount": 7
+				"amount": 7,
+				"name": "术法点"
 			},
 			"entries": [
-				"你召唤出秩序的精魂以抹除周遭的混乱。以一个{@action 魔法|XPHB}动作，你在以你为源点的30尺{@variantrule 立方 [效应区域]|XPHB|立方}空间范围内召唤出一些精魂。这些精魂看起来像是魔冢或你选择的其他构装，其没有实体也无法被摧毁，并在消失前使{@variantrule 立方 [效应区域]|XPHB|立方}范围内产生以下效应。此特性一经使用，直到完成一次{@variantrule 长休|XPHB}前都不能再次使用。你也可以消耗7点术法点（无需动作）以恢复此特性的使用次数。",
+				"你召唤出秩序的精魂以抹除周遭的混乱。以一个{@action 魔法|XPHB}动作，你在以你为源点的 30 尺{@variantrule 立方 [效应区域]|XPHB|立方}空间范围内召唤出一些精魂。这些精魂看起来像是魔冢或你选择的其他构装，其没有实体也无法被摧毁，并在消失前使{@variantrule 立方 [效应区域]|XPHB|立方}范围内产生以下效应。此特性一经使用，直到完成一次{@variantrule 长休|XPHB}前都不能再次使用。你也可以消耗 7 点术法点（无需动作）以恢复此特性的使用次数。",
 				{
-					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Heal",
-							"name": "医疗术",
-							"type": "entries",
 							"entries": [
-								"精魂合计提供至多恢复100{@variantrule 生命值|XPHB}，由你随意分配给{@variantrule 立方 [效应区域]|XPHB|立方}范围内任意数量的生物。"
-							]
+								"精魂合计提供至多恢复 100 {@variantrule 生命值|XPHB}，由你随意分配给范围内任意数量的生物。"
+							],
+							"name": "治愈",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Repair",
-							"name": "修复",
-							"type": "entries",
 							"entries": [
-								"任何完全处于{@variantrule 立方 [效应区域]|XPHB|立方}内的受损物件都会被立即修复。"
-							]
+								"范围内损坏的物件将被立即修复。"
+							],
+							"name": "修复",
+							"type": "entries"
 						},
 						{
 							"ENG_name": "Dispel",
-							"name": "破法",
-							"type": "entries",
 							"entries": [
-								"你选择{@variantrule 立方 [效应区域]|XPHB|立方}范围内任意数量的生物或物件，其承受的任何六环或以下的法术结束。"
-							]
+								"你选择范围内任意数量的生物或物件，其承受的任何六环或以下的法术结束。"
+							],
+							"name": "破法",
+							"type": "entries"
 						}
-					]
+					],
+					"type": "entries"
 				}
-			]
+			],
+			"header": 2,
+			"level": 18,
+			"name": "时械矩阵",
+			"page": 147,
+			"source": "XPHB",
+			"subclassShortName": "时械",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Draconic Sorcery",
@@ -5673,21 +5676,12 @@
 		},
 		{
 			"ENG_name": "Draconic Spells",
-			"name": "龙族法术",
-			"source": "XPHB",
-			"page": 148,
-			"srd52": true,
 			"basicRules2024": true,
 			"className": "术士",
 			"classSource": "XPHB",
-			"subclassShortName": "龙族血脉",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 1,
 			"entries": [
 				"当你到达龙族法术表中特定的术士等级时，你就始终准备着表中对应的法术。",
 				{
-					"type": "table",
 					"caption": "龙族法术",
 					"colLabels": [
 						"术士等级",
@@ -5699,24 +5693,34 @@
 					],
 					"rows": [
 						[
-							"3rd",
-							"{@spell 变身术|XPHB}, {@spell 繁彩球|XPHB}, {@spell 命令术|XPHB}, {@spell 龙息术|XPHB}"
+							"3",
+							"{@spell 变身术|XPHB}，{@spell 繁彩球|XPHB}，{@spell 命令术|XPHB}，{@spell 龙息术|XPHB}"
 						],
 						[
-							"5th",
-							"{@spell 恐惧术|XPHB}, {@spell 飞行术|XPHB}"
+							"5",
+							"{@spell 恐惧术|XPHB}，{@spell 飞行术|XPHB}"
 						],
 						[
-							"7th",
-							"{@spell 秘法眼|XPHB}, {@spell 魅惑怪物|XPHB}"
+							"7",
+							"{@spell 秘法眼|XPHB}，{@spell 魅惑怪物|XPHB}"
 						],
 						[
-							"9th",
-							"{@spell 通晓传奇|XPHB}, {@spell 龙类召唤术|XPHB}"
+							"9",
+							"{@spell 通晓传奇|XPHB}，{@spell 龙类召唤术|XPHB}"
 						]
-					]
+					],
+					"type": "table"
 				}
-			]
+			],
+			"header": 1,
+			"level": 3,
+			"name": "龙族法术",
+			"page": 148,
+			"source": "XPHB",
+			"srd52": true,
+			"subclassShortName": "龙族血脉",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Draconic Resilience",
@@ -5732,8 +5736,8 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"魔法在你的体内流动，外化为龙族赠礼体现出的生理特质。你的{@variantrule 生命值|XPHB|生命值}上限提升3，此后每提升一个术士等级，都将再次提升1。",
-				"你部分皮肤覆盖着龙鳞样式的柔鳞。未着装护甲时，你的基础{@variantrule 护甲等级|XPHB}等于10+你的敏捷调整值＋你的魅力调整值。"
+				"魔法在你的体内流动，外化为龙族赠礼体现出的生理特质。你的{@variantrule 生命值|XPHB|生命值}上限提升 3，此后每提升一个术士等级，都将再次提升1。",
+				"你部分皮肤覆盖着龙鳞样式的柔鳞。未着装护甲时，你的基础{@variantrule 护甲等级|XPHB}等于 10 + 你的敏捷调整值 + 你的魅力调整值。"
 			]
 		},
 		{
@@ -5773,8 +5777,8 @@
 				"amount": 3
 			},
 			"entries": [
-				"以一个{@variantrule 附赠动作|XPHB}，你可以在背后张开一对龙翼。龙翼持续1小时，若你选择将其解散（无需动作）则会提前终止，在龙翼持续期间你获得60尺{@variantrule 飞行速度|XPHB}。",
-				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。你也可以消耗3点术法点（无需动作）重置此特性的使用权。"
+				"以一个{@variantrule 附赠动作|XPHB}，你可以在背后张开一对龙翼。龙翼持续 1 小时，若你选择将其解散（无需动作）则会提前终止，在龙翼持续期间你获得 60 尺{@variantrule 飞行速度|XPHB}。",
+				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。你也可以消耗 3 点术法点（无需动作）重置此特性的使用权。"
 			]
 		},
 		{
@@ -5792,7 +5796,7 @@
 			"header": 2,
 			"entries": [
 				"你可以无需材料成分施展{@spell 龙类召唤术|XPHB}。你可以无需法术位施展它一次，随后你在完成一次{@variantrule 长休|XPHB}后重获以此法施展它的能力。",
-				"每当你施展此法术时，你都可以微调这一法术使其无需{@status 专注|XPHB}。以无需专注的方式施法时，该法术的持续时间将变为一分钟。"
+				"每当你开始施展此法术时，都可以修改此法术使其无需{@status 专注|XPHB}。以此法施展时，此法术的持续时间将变为 1 分钟。"
 			]
 		},
 		{
@@ -5836,20 +5840,12 @@
 		},
 		{
 			"ENG_name": "Wild Magic Surge",
-			"name": "狂野魔法浪涌",
-			"source": "XPHB",
-			"page": 149,
 			"className": "术士",
 			"classSource": "XPHB",
-			"subclassShortName": "狂野魔法",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"header": 1,
 			"entries": [
-				"你施法时会释放出未经塑造的魔法浪涌。一回合一次，你每次消耗法术位施展一道术士法术后，可以立刻骰一次{@dice 1d20}。如果你骰出20，则在狂野魔法浪涌表上掷骰以确定随机魔法效应。",
+				"你施法时会释放出未经塑造的魔法浪涌。一回合一次，你每次消耗法术位施展一道术士法术后，可以立刻骰一次{@dice 1d20}。如果你骰出 20，则在狂野魔法浪涌表上掷骰以确定随机魔法效应。",
 				"若该效果是一道法术，则其因过于狂野而无法受你的超魔法影响。",
 				{
-					"type": "table",
 					"caption": "狂野魔法浪涌",
 					"colLabels": [
 						"{@dice 1d100}",
@@ -5859,30 +5855,35 @@
 						"col-1 text-center",
 						"col-11"
 					],
+					"data": {
+						"genTables": {
+							"tableInclude": true
+						}
+					},
 					"rows": [
 						[
 							"01\u201304",
-							"下1分钟内，你在每次自己回合开始时重骰本表，并在后续的掷骰中跳过本结果。"
+							"下 1 分钟内，你在每次自己回合开始时重骰本表，并在后续的掷骰中跳过本结果。"
 						],
 						[
 							"05\u201308",
-							"一名对你友善 的生物出现在位于你60尺内随机一处未占据空间中。此生物由DM控制，且会在1分钟后消失不见。投掷{@dice 1d4}以决定生物：骰值为1，出现一只二元魔冢；骰值为2，出现一只呋噜；骰值为3，出现一只单元魔冢；骰值为4，出现一头独角兽。生物数据卡见《怪物图鉴》。"
+							"一名对你友善 的生物出现在位于你 60 尺内随机一处未占据空间中。此生物由DM控制，且会在 1 分钟后消失不见。投掷{@dice 1d4}以决定生物：骰值为 1，出现一只二元魔冢；骰值为 2，出现一只呋噜；骰值为 3，出现一只单元魔冢；骰值为 4，出现一头独角兽。生物数据卡见《怪物图鉴》。"
 						],
 						[
 							"09\u201312",
-							"下1分钟内，你在每个自己的回合开始时恢复5{@variantrule 生命值|XPHB}。"
+							"下 1 分钟内，你在每个自己的回合开始时恢复 5 {@variantrule 生命值|XPHB}。"
 						],
 						[
 							"13\u201316",
-							"下1分钟内，你施展第一个需要豁免的法术时，成为该法术目标的生物进行豁免时具有{@variantrule 劣势|XPHB}。"
+							"下 1 分钟内，你施展第一个需要豁免的法术时，成为该法术目标的生物进行豁免时具有{@variantrule 劣势|XPHB}。"
 						],
 						[
 							"17\u201320",
-							"你获得一个持续1分钟（除非其描述另有说明）的效应。投掷{@dice 1d8}以决定效应：       骰值为1，你被只有你和距你5尺内的生物才能听到的空灵音乐声环绕；骰值为2，你的体型增大一级；骰值为3，你脸上长出羽毛构成的络腮胡，一旦你打了喷嚏，这些羽毛会从你的脸上炸开并消失；骰值为4，你说话时必须大声喊叫；骰值为5，距你10尺范围内，会出现飞舞的虚幻蝴蝶；骰值为6，你的前额长出第三只眼，使你在感知（{@skill 察觉|XPHB}）检定上获得{@variantrule 优势|XPHB}；骰值为7，你一说话就会吐出粉色的泡泡；    骰值为8，你的皮肤透出蓝色，持续24小时，法术{@spell 移除诅咒|XPHB}可结束此效应。"
+							"你获得一个持续 1 分钟（除非其描述另有说明）的效应。投掷{@dice 1d8}以决定效应：       骰值为 1，你被只有你和距你 5 尺内的生物才能听到的空灵音乐声环绕；骰值为 2，你的体型增大一级；骰值为 3，你脸上长出羽毛构成的络腮胡，一旦你打了喷嚏，这些羽毛会从你的脸上炸开并消失；骰值为 4，你说话时必须大声喊叫；骰值为 5，距你 10 尺范围内，会出现飞舞的虚幻蝴蝶；骰值为 6，你的前额长出第三只眼，使你在感知（{@skill 察觉|XPHB}）检定上获得{@variantrule 优势|XPHB}；骰值为 7，你一说话就会吐出粉色的泡泡；    骰值为 8，你的皮肤透出蓝色，持续 24 小时，法术{@spell 移除诅咒|XPHB}可结束此效应。"
 						],
 						[
 							"21\u201324",
-							"下1分钟内，你所有的施法时间为动作的法术施法时间变为{@variantrule 附赠动作|XPHB}。"
+							"下 1 分钟内，你所有的施法时间为动作的法术施法时间变为{@variantrule 附赠动作|XPHB}。"
 						],
 						[
 							"25\u201328",
@@ -5890,27 +5891,27 @@
 						],
 						[
 							"29\u201332",
-							"下1分钟内，你施展的下一道造成伤害的法术的伤害不进行伤害掷骰而是取所有伤害骰的最大值。"
+							"下 1 分钟内，你施展的下一道造成伤害的法术的伤害不进行伤害掷骰而是取所有伤害骰的最大值。"
 						],
 						[
 							"33\u201336",
-							"下1分钟内，你具有所有伤害类型的{@variantrule 抗性|XPHB}。"
+							"下 1 分钟内，你具有所有伤害类型的{@variantrule 抗性|XPHB}。"
 						],
 						[
 							"37\u201340",
-							"你变成一棵植物盆栽，持续至你下个回合开始时。你变成盆栽期间陷入{@condition 失能|XPHB}状态，并具有所有伤害类型的{@variantrule 易伤|XPHB}。如果你的{@variantrule 生命值|XPHB}降至0，则你的花盆形态被打碎，而你恢复原形。"
+							"你变成一棵植物盆栽，持续至你下个回合开始时。你变成盆栽期间陷入{@condition 失能|XPHB}状态，并具有所有伤害类型的{@variantrule 易伤|XPHB}。如果你的{@variantrule 生命值|XPHB}降至 0，则你的花盆形态被打碎，而你恢复原形。"
 						],
 						[
 							"41\u201344",
-							"下1分钟内，你能够在每个自己回合内以一个{@variantrule 附赠动作|XPHB}传送至多20尺。"
+							"下 1 分钟内，你能够在每个自己回合内以一个{@variantrule 附赠动作|XPHB}传送至多 20 尺。"
 						],
 						[
 							"45\u201348",
-							"你和至多3名30尺内由你选择的生物获得{@condition 隐形|XPHB}状态，持续1分钟。此隐形会在该生物发动攻击、造成伤害或施展法术后立即结束。"
+							"你和至多 3 名 30 尺内由你选择的生物获得{@condition 隐形|XPHB}状态，持续 1 分钟。此隐形会在该生物发动攻击、造成伤害或施展法术后立即结束。"
 						],
 						[
 							"49\u201352",
-							"下1分钟内，一面灵体般的盾牌悬浮在你的周围，为你的AC提供+2加值，并使你免疫{@spell 魔法飞弹|XPHB}。"
+							"下 1 分钟内，一面灵体般的盾牌悬浮在你的周围，为你的AC提供 +2 加值，并使你免疫{@spell 魔法飞弹|XPHB}。"
 						],
 						[
 							"53\u201356",
@@ -5918,56 +5919,60 @@
 						],
 						[
 							"57\u201360",
-							"施展一道随机法术，如果该法术通常需要{@status 专注|XPHB}，则该情况下无需{@status 专注|XPHB}，该法术生效至其最大持续时间结束。投掷{@dice 1d10}来决定法术：1为{@spell 困惑术|XPHB}；2为{@spell 火球术|XPHB}；3为{@spell 云雾术|XPHB}；4为{@spell 飞行术|XPHB}（施放在你60尺内的随机生物上）；5为{@spell 油腻术|XPHB}；6为{@spell 浮空术|XPHB}（施放在你自己身上）；7为{@spell 魔法飞弹|XPHB}（作为5环法术施放）；8为{@spell 镜影术|XPHB}；9为{@spell 变形术|XPHB}（施放在你自己身上），若豁免检定失败，你将变成一只山羊（见附录B）；10为{@spell 识破隐形|XPHB}。"
+							"施展一道随机法术，如果该法术通常需要{@status 专注|XPHB}，则该情况下无需{@status 专注|XPHB}，该法术生效至其最大持续时间结束。投掷{@dice 1d10}来决定法术：1 为{@spell 困惑术|XPHB}；2 为{@spell 火球术|XPHB}；3 为{@spell 云雾术|XPHB}；4 为{@spell 飞行术|XPHB}（施放在你 60 尺内的随机生物上）；5 为{@spell 油腻术|XPHB}；6 为{@spell 浮空术|XPHB}（施放在你自己身上）；7 为{@spell 魔法飞弹|XPHB}（作为 5 环法术施放）；8 为{@spell 镜影术|XPHB}；9 为{@spell 变形术|XPHB}（施放在你自己身上），若豁免检定失败，你将变成一只山羊（见附录 B）；10 为{@spell 识破隐形|XPHB}。"
 						],
 						[
 							"61\u201364",
-							"下1分钟内，你触碰的任何未被其他生物着装或携带的非魔法可燃物件都会燃起火焰，受到{@damage 1d4}火焰伤害，并开始燃烧。"
+							"下 1 分钟内，你触碰的任何未被其他生物着装或携带的非魔法可燃物件都会燃起火焰，受到{@damage 1d4}火焰伤害，并开始燃烧。"
 						],
 						[
 							"65\u201368",
-							"如果你在下1小时内死亡，则你立刻复活，如同被{@spell 转生术|XPHB}所复活一般。"
+							"如果你在下 1 小时内死亡，则你立刻复活，如同被{@spell 转生术|XPHB}所复活一般。"
 						],
 						[
 							"69\u201372",
-							"你陷入{@condition 恐慌|XPHB}状态，直至你的下一回合结束。由DM决定你的恐惧源。"
+							"你陷入{@condition 恐慌|XPHB}状态，直至你的下一回合结束。由 DM 决定你的恐惧源。"
 						],
 						[
 							"73\u201376",
-							"你传送至多60尺，至一处你可见的未占据空间。"
+							"你传送至多 60 尺，至一处你可见的未占据空间。"
 						],
 						[
 							"77\u201380",
-							"位于你60尺内的一名随机生物陷入{@condition 中毒|XPHB}状态，持续{@dice 1d4}小时。"
+							"位于你 60 尺内的一名随机生物陷入{@condition 中毒|XPHB}状态，持续{@dice 1d4}小时。"
 						],
 						[
 							"81\u201384",
-							"下1分钟内，你发出半径30尺的{@variantrule 明亮光照|XPHB}。任何在你5尺内结束其回合的生物将陷入{@condition 目盲|XPHB}状态，直至其下个回合结束。"
+							"下 1 分钟内，你发出半径 30 尺的{@variantrule 明亮光照|XPHB}。任何在你 5 尺内结束其回合的生物将陷入{@condition 目盲|XPHB}状态，直至其下个回合结束。"
 						],
 						[
 							"85\u201388",
-							"选择至多三名你可见的位于你30尺内的生物，各受到{@damage 1d10}暗蚀伤害。你恢复等于以此法造成的暗蚀伤害总和的{@variantrule 生命值|XPHB}。"
+							"选择至多三名你可见的位于你 30 尺内的生物，各受到{@damage 1d10}暗蚀伤害。你恢复等于以此法造成的暗蚀伤害总和的{@variantrule 生命值|XPHB}。"
 						],
 						[
 							"89\u201392",
-							"选择至多三名你可见且位于你30尺内的生物，各受到{@damage 4d10}闪电伤害。"
+							"选择至多三名你可见且位于你 30 尺内的生物，各受到{@damage 4d10}闪电伤害。"
 						],
 						[
 							"93\u201396",
-							"下1分钟内，你和位于你30尺内所有生物具有对穿刺伤害的{@variantrule 易伤|XPHB}。"
+							"下 1 分钟内，你和位于你 30 尺内所有生物具有对穿刺伤害的{@variantrule 易伤|XPHB}。"
 						],
 						[
 							"97\u201300",
-							"投掷{@dice 1d6}：骰值为1，你恢复{@dice 2d10}{@variantrule 生命值|XPHB}；骰值为2，你选择一名位于你300尺内的盟友恢复{@dice 2d10}{@variantrule 生命值|XPHB}；骰值为3，你恢复一个已消耗的最低环阶的法术位；骰值为4，你选择一名位于你300尺内的盟友恢复一个已消耗的最低环阶的法术位；骰值为5，你重获所有已消耗的术法点；  骰值为6，17-20一行所述的所有效应同时作用于你身上。"
+							"投掷{@dice 1d6}：骰值为 1，你恢复{@dice 2d10}{@variantrule 生命值|XPHB}；骰值为 2，你选择一名位于你 300 尺内的盟友恢复{@dice 2d10}{@variantrule 生命值|XPHB}；骰值为 3，你恢复一个已消耗的最低环阶的法术位；骰值为 4，你选择一名位于你 300 尺内的盟友恢复一个已消耗的最低环阶的法术位；骰值为 5，你重获所有已消耗的术法点；  骰值为 6，17-20 一行所述的所有效应同时作用于你身上。"
 						]
 					],
-					"data": {
-						"genTables": {
-							"tableInclude": true
-						}
-					}
+					"type": "table"
 				}
-			]
+			],
+			"header": 1,
+			"level": 3,
+			"name": "狂野魔法浪涌",
+			"page": 149,
+			"source": "XPHB",
+			"subclassShortName": "狂野魔法",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Bend Luck",
@@ -5985,7 +5990,7 @@
 				"name": "术法点"
 			},
 			"entries": [
-				"你获得用你的狂野魔法扭曲命运的能力。当一个你能看见的生物投掷{@dice d20}进行{@variantrule D20 检定|XPHB}时，你可以在掷骰完成之后立即用一个{@variantrule 反应|XPHB}并消耗1术法点来骰一次{@dice 1d4}，并将结果用作加值或减值（由你决定）加到该{@dice d20}的骰值结果中。"
+				"你获得用你的狂野魔法扭曲命运的能力。当一个你能看见的生物投掷{@dice d20}进行{@variantrule D20 检定|XPHB}时，你可以在掷骰完成之后立即用一个{@variantrule 反应|XPHB}并消耗 1 术法点来骰一次{@dice 1d4}，并将结果用作加值或减值（由你决定）加到该{@dice d20}的骰值结果中。"
 			]
 		},
 		{

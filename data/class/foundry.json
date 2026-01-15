@@ -4510,8 +4510,8 @@
 					"descriptionEntries": [
 						{
 							"ENG_name": "Martial Arts Die",
-							"name": "武艺骰",
 							"type": "entries",
+							"name": "武艺骰",
 							"entries": [
 								"你可以投掷[[lookup @scale.monk.die]]来代替你的徒手打击或武僧武器的正常伤害。这个骰子会随着你获得武僧等级而变化，如武僧特性表格中的武艺栏所示。"
 							]
@@ -5496,7 +5496,7 @@
 						"max": "1"
 					},
 					"spell": {
-						"uuid": "@spell[至圣斩|XPHB]"
+						"uuid": "{!@ 36b6389e-f5a4-11f0-8136-0242ac110004}"
 					}
 				}
 			],
@@ -6740,7 +6740,6 @@
 				{
 					"foundryId": "innateSorcery",
 					"disabled": true,
-					"transfer": true,
 					"duration": {
 						"seconds": 60
 					},
@@ -9848,7 +9847,7 @@
 		},
 		{
 			"ENG_name": "Implements of Mercy",
-			"name": "命流之器",
+			"name": "操命本事",
 			"source": "TCE",
 			"className": "武僧",
 			"classSource": "PHB",
@@ -11138,7 +11137,7 @@
 		},
 		{
 			"ENG_name": "Misty Escape",
-			"name": "雾遁",
+			"name": "雾隐遁行",
 			"source": "PHB",
 			"className": "魔契师",
 			"classSource": "PHB",
@@ -12094,7 +12093,7 @@
 		},
 		{
 			"ENG_name": "Arcane Firearm",
-			"name": "奥法火器",
+			"name": "奥术枪械",
 			"source": "TCE",
 			"className": "奇械师",
 			"classSource": "TCE",
@@ -14139,7 +14138,7 @@
 			"activities": [
 				{
 					"ENG_name": "Flare",
-					"name": "耀斑效应",
+					"name": "耀斑",
 					"type": "utility",
 					"activation": {
 						"type": "reaction",
@@ -17914,7 +17913,7 @@
 		},
 		{
 			"ENG_name": "Improved Shadow Step",
-			"name": "改进的暗影步",
+			"name": "无影步",
 			"source": "XPHB",
 			"className": "武僧",
 			"classSource": "XPHB",
@@ -17924,7 +17923,7 @@
 			"activities": [
 				{
 					"ENG_name": "Improved Shadow Step",
-					"name": "改进的暗影步",
+					"name": "无影步",
 					"type": "utility",
 					"activation": {
 						"type": "bonus"
@@ -18993,17 +18992,17 @@
 						{
 							"ENG_name": "Beast of the Land",
 							"name": "大地野兽",
-							"uuid": "@creature[大地野兽|XPHB]"
+							"uuid": "{!@ 36e33dda-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Beast of the Sea",
 							"name": "海洋野兽",
-							"uuid": "@creature[海洋野兽|XPHB]"
+							"uuid": "{!@ 36e37a52-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Beast of the Sky",
 							"name": "天空野兽",
-							"uuid": "@creature[天空野兽|XPHB]"
+							"uuid": "{!@ 36e3b242-f5a4-11f0-8136-0242ac110004}"
 						}
 					],
 					"bonuses": {
@@ -19055,17 +19054,17 @@
 						{
 							"ENG_name": "Beast of the Land",
 							"name": "大地野兽",
-							"uuid": "@creature[大地野兽|XPHB]"
+							"uuid": "{!@ 36e33dda-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Beast of the Sea",
 							"name": "海洋野兽",
-							"uuid": "@creature[海洋野兽|XPHB]"
+							"uuid": "{!@ 36e37a52-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Beast of the Sky",
 							"name": "天空野兽",
-							"uuid": "@creature[天空野兽|XPHB]"
+							"uuid": "{!@ 36e3b242-f5a4-11f0-8136-0242ac110004}"
 						}
 					],
 					"bonuses": {
@@ -19622,7 +19621,7 @@
 			"activities": [
 				{
 					"ENG_name": "Multiattack Defense",
-					"name": "防御多重攻击",
+					"name": "多重防御",
 					"type": "utility",
 					"activation": {
 						"type": "",
@@ -19644,7 +19643,7 @@
 			"effects": [
 				{
 					"ENG_name": "Multiattack Defense",
-					"name": "防御多重攻击",
+					"name": "多重防御",
 					"foundryId": "defensiveTactics",
 					"duration": {
 						"turns": 1
@@ -19978,7 +19977,7 @@
 						"type": "bonus"
 					},
 					"spell": {
-						"uuid": "@spell[法师之手|XPHB]"
+						"uuid": "{!@ 36e77670-f5a4-11f0-8136-0242ac110004}"
 					}
 				}
 			],
@@ -20428,8 +20427,8 @@
 					},
 					"roll": {
 						"ENG_name": "Psionic Energy Die",
-						"name": "灵能骰",
-						"formula": "@scale.soulknife.die"
+						"formula": "@scale.soulknife.die",
+						"name": "灵能骰"
 					},
 					"effects": [
 						{
@@ -21795,7 +21794,7 @@
 						"max": "max(1,@abilities.cha.mod)"
 					},
 					"spell": {
-						"uuid": "@spell[迷踪步|XPHB]",
+						"uuid": "{!@ 36ef8d06-f5a4-11f0-8136-0242ac110004}",
 						"level": 2,
 						"properties": [
 							"声音",
@@ -21821,7 +21820,7 @@
 		},
 		{
 			"ENG_name": "Misty Escape",
-			"name": "雾遁",
+			"name": "雾隐遁行",
 			"source": "XPHB",
 			"className": "魔契师",
 			"classSource": "XPHB",
@@ -21895,7 +21894,7 @@
 						"condition": "受到伤害后"
 					},
 					"spell": {
-						"uuid": "@spell[迷踪步|XPHB]",
+						"uuid": "{!@ 36ef8d06-f5a4-11f0-8136-0242ac110004}",
 						"level": 2,
 						"properties": [
 							"声音",
@@ -23274,17 +23273,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[野兽灵魄（天空）|XPHB]"
+							"uuid": "{!@ 36f65316-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "@creature[野兽灵魄（大地）|XPHB]"
+							"uuid": "{!@ 36f69a9c-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[野兽灵魄（海洋）|XPHB]"
+							"uuid": "{!@ 36f6d250-f5a4-11f0-8136-0242ac110004}"
 						}
 					],
 					"bonuses": {
@@ -23331,17 +23330,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "@creature[妖精灵魄（愤怒）|XPHB]"
+							"uuid": "{!@ 36f730e2-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "@creature[妖精灵魄（欢欣）|XPHB]"
+							"uuid": "{!@ 36f770fc-f5a4-11f0-8136-0242ac110004}"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "@creature[妖精灵魄（诡诈）|XPHB]"
+							"uuid": "{!@ 36f7b738-f5a4-11f0-8136-0242ac110004}"
 						}
 					],
 					"bonuses": {

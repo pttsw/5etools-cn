@@ -58,7 +58,7 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把 {@item 短剑|PHB} 或者 (b) 任意一把{@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"(a) 一把 {@item 短剑|PHB} 或者 (b) 任意一把{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
 					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}",
 					"10 {@item 飞镖|PHB|飞镖}"
 				],
@@ -1396,7 +1396,7 @@
 			"subclassFeatures": [
 				"命流宗|武僧||命流|TCE|3",
 				"生死之触|武僧||命流|TCE|6",
-				"活杀自在|武僧||命流|TCE|11",
+				"生杀予夺|武僧||命流|TCE|11",
 				"命极之手|武僧||命流|TCE|17"
 			],
 			"hasFluffImages": true
@@ -1546,7 +1546,7 @@
 			"subclassFeatures": [
 				"命流武者|武僧|XPHB|命流|XPHB|3",
 				"生死之触|武僧|XPHB|命流|XPHB|6",
-				"活杀自在|武僧|XPHB|命流|XPHB|11",
+				"生杀予夺|武僧|XPHB|命流|XPHB|11",
 				"命极之手|武僧|XPHB|命流|XPHB|17"
 			],
 			"hasFluffImages": true
@@ -1583,7 +1583,7 @@
 			"subclassFeatures": [
 				"暗影武者|武僧|XPHB|幽影|XPHB|3",
 				"暗影步|武僧|XPHB|幽影|XPHB|6",
-				"改进的暗影步|武僧|XPHB|幽影|XPHB|11",
+				"无影步|武僧|XPHB|幽影|XPHB|11",
 				"幽影斗篷|武僧|XPHB|幽影|XPHB|17"
 			],
 			"hasFluffImages": true
@@ -1646,7 +1646,7 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"你修行的武艺让你使用徒手打击和武僧武器时得心应手。武僧武器包括{@item 短剑|PHB|短剑}和所有{@filter 不含双手与重型属性的简易近战武器|items|source=phb|category=基础|type=简易武器;近战武器=sand|property=!重型;!双手}。",
+				"你修行的武艺让你使用徒手打击和武僧武器时得心应手。武僧武器包括{@item 短剑|PHB|短剑}和所有{@filter 不含双手与重型属性的简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand|property=!重型;!双手}。",
 				"未着装任何护甲也没持用{@item 盾牌|PHB}时，如果你徒手或只持用武僧武器，则你发动的攻击拥有下列增益：",
 				{
 					"type": "list",
@@ -1688,7 +1688,7 @@
 				{
 					"type": "list",
 					"items": [
-						"武器必须是{@filter 简易或军用武器|items|source=phb|category=基础|type=军用武器;简易武器|property=!重型;!特殊}。",
+						"武器必须是{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器|property=!重型;!特殊}。",
 						"你必须拥有其熟练项。",
 						"不能拥有重型或特殊词条"
 					]
@@ -2268,7 +2268,7 @@
 			"classSource": "XPHB",
 			"level": 1,
 			"entries": [
-				"若你未着装任何护甲且未持用{@item 盾牌|XPHB}，你的基础{@variantrule 护甲等级|XPHB}等于10＋你的敏捷调整值＋你的感知调整值。"
+				"若你未着装任何护甲且未持用{@item 盾牌|XPHB}，你的基础{@variantrule 护甲等级|XPHB}等于 10 + 你的敏捷调整值 + 你的感知调整值。"
 			]
 		},
 		{
@@ -2287,7 +2287,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你可以消耗1点功力，以一个{@variantrule 附赠动作|XPHB}发动两次徒手打击。"
+				"你可以消耗 1 点功力，以一个{@variantrule 附赠动作|XPHB}发动两次徒手打击。"
 			]
 		},
 		{
@@ -2302,9 +2302,9 @@
 			"level": 2,
 			"entries": [
 				"通过运转玄功和习练武艺，你便得以掌握自身非凡的内在能量。功力代表着你所能使用的这份能量。你的武僧等级决定了你拥有多少点功力，具体数据见武僧特性表中的功力一列。",
-				"你可以消耗功力来增强或启动特定的武僧特性。你一开始掌握三种特性：疾风连击，坚强防御，飞檐走壁。细节见下。",
-				"每当你消耗1点功力时，直到你完成一次{@variantrule 短休|XPHB|短}或者{@variantrule 长休|XPHB}前其将暂时不可以再被使用。在完成休息时，你将重获所有已消耗的功力。",
-				"你的某些特性会要求你的目标进行豁免以对抗该特性的效果，这些特性的豁免DC为8+你的感知调整值+你的{@variantrule 熟练|XPHB|熟练加值}。",
+				"你可以消耗功力来增强或启动特定的武僧特性。你一开始掌握三种特性：疾风连击，坚强防御，疾步如风。细节见下。",
+				"每当你消耗 1 点功力时，直到你完成一次{@variantrule 短休|XPHB|短}或者{@variantrule 长休|XPHB}前其将暂时不可以再被使用。在完成休息时，你将重获所有已消耗的功力。",
+				"你的某些特性会要求你的目标进行豁免以对抗该特性的效果，这些特性的豁免DC为 8 + 你的感知调整值 + 你的{@variantrule 熟练|XPHB|熟练加值}。",
 				{
 					"type": "entries",
 					"entries": [
@@ -2340,7 +2340,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你能以一个{@variantrule 附赠动作|XPHB}执行{@action 回避|XPHB}动作。此外，你可以消耗1点功力，以一个{@variantrule 附赠动作|XPHB}同时执行{@action 撤离|XPHB}与{@action 撤离|XPHB}动作。"
+				"你能以一个{@variantrule 附赠动作|XPHB}执行{@action 撤离|XPHB}动作。此外，你可以消耗 1 点功力，以一个{@variantrule 附赠动作|XPHB}同时执行{@action 回避|XPHB}与{@action 撤离|XPHB}动作。"
 			]
 		},
 		{
@@ -2359,7 +2359,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你能以一个{@variantrule 附赠动作|XPHB}执行{@action 疾走|XPHB}动作。此外，你可以消耗1点功力，以一个{@variantrule 附赠动作|XPHB}同时执行{@action 撤离|XPHB}与{@action 疾走|XPHB}动作，同时使你该回合内的跳跃距离翻倍。"
+				"你能以一个{@variantrule 附赠动作|XPHB}执行{@action 撤离|XPHB}动作。此外，你可以消耗 1 点功力，以一个{@variantrule 附赠动作|XPHB}同时执行{@action 疾走|XPHB}与{@action 疾走|XPHB}动作，同时使你该回合内的跳跃距离翻倍。"
 			]
 		},
 		{
@@ -2373,7 +2373,7 @@
 			"classSource": "XPHB",
 			"level": 2,
 			"entries": [
-				"若你未着装任何护甲且未持用{@item 盾牌|XPHB}，你的速度提升10尺。该加值将随着武僧职业等级的提升而增加，具体数值见武僧特性表。"
+				"若你未着装任何护甲且未持用{@item 盾牌|XPHB}，你的速度提升 10 尺。该加值将随着武僧职业等级的提升而增加，具体数值见武僧特性表。"
 			]
 		},
 		{
@@ -2387,8 +2387,8 @@
 			"classSource": "XPHB",
 			"level": 2,
 			"entries": [
-				"当你投掷{@variantrule 先攻|XPHB}时，你可以重获所有已消耗的功力。若你如此做，掷你的武艺骰，并且恢复其结果+你的武僧等级的{@variantrule 生命值|XPHB}。",
-				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
+				"当你投掷{@variantrule 先攻|XPHB}时，你可以重获所有已消耗的功力。若你如此做，掷你的武艺骰，并且恢复其结果 + 你的武僧等级的{@variantrule 生命值|XPHB}。",
+				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 			]
 		},
 		{
@@ -2406,8 +2406,8 @@
 				"name": "功力"
 			},
 			"entries": [
-				"当你被一次伤害中包含钝击，穿刺或挥砍伤害的攻击检定命中时，你可以执行{@variantrule 反应|XPHB}减少此次攻击对你造成伤害的总值，减值等于{@dice 1d10}+你的敏捷调整值+你的武僧等级。",
-				"若被拨挡攻击的伤害减少至0，则你可以消耗1点功力将此次攻击的部分伤害重新定向。如果是近战攻击，选择你周围5尺内的一个你可见的生物；如果是远程攻击，选择60尺内一个不位于{@variantrule 掩护|XPHB|全身掩护}后的你可见的生物。该生物必须成功通过一次敏捷豁免，否则受到相当于你2个武艺骰+你的敏捷调整值的伤害。其伤害类型与原先攻击的伤害类型相同。"
+				"当你被一次伤害中包含钝击，穿刺或挥砍伤害的攻击检定命中时，你可以执行{@variantrule 反应|XPHB}减少此次攻击对你造成伤害的总值，减值等于{@dice 1d10} + 你的敏捷调整值 + 你的武僧等级。",
+				"若被拨挡攻击的伤害减少至 0，则你可以消耗 1 点功力将此次攻击的部分伤害重新定向。如果是近战攻击，选择你周围 5 尺内的一个你可见的生物；如果是远程攻击，选择 60 尺内一个不位于{@variantrule 掩护|XPHB|全身掩护}后的你可见的生物。该生物必须成功通过一次敏捷豁免，否则受到相当于你 2 个武艺骰 + 你的敏捷调整值的伤害。其伤害类型与原先攻击的伤害类型相同。"
 			]
 		},
 		{
@@ -2481,7 +2481,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"每回合一次，当你使用{@variantrule 徒手打击|XPHB}或武僧武器命中一个生物后，你可以消耗1点功力尝试发动震慑拳。目标必须进行一次体质豁免，豁免失败则陷入{@condition 震慑|XPHB}状态，直至你的下个回合开始。若豁免成功，则目标的{@variantrule 速度|XPHB}减半，直至你的下个回合开始，并且下一次对该目标进行的攻击检定具有{@variantrule 优势|XPHB}。"
+				"每回合一次，当你使用{@variantrule 徒手打击|XPHB}或武僧武器命中一个生物后，你可以消耗 1 点功力尝试发动震慑拳。目标必须进行一次体质豁免，豁免失败则陷入{@condition 震慑|XPHB}状态，直至你的下个回合开始。若豁免成功，则目标的{@variantrule 速度|XPHB}减半，直至你的下个回合开始，并且下一次对该目标进行的攻击检定具有{@variantrule 优势|XPHB}。"
 			]
 		},
 		{
@@ -2577,23 +2577,23 @@
 							"name": "疾风连击",
 							"type": "entries",
 							"entries": [
-								"你消耗1点功力施展疾风连击时可以进行三次徒手打击而非两次。"
+								"你消耗 1 点功力施展疾风连击时可以进行三次徒手打击而非两次。"
 							]
 						},
 						{
 							"ENG_name": "Patient Defense",
-							"name": "坚强防御",
 							"type": "entries",
+							"name": "坚强防御",
 							"entries": [
 								"当你消耗功力使用坚强防御时，你获得相当于你两个武艺骰的{@variantrule 临时生命值|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Step of the Wind",
-							"name": "疾步如风",
 							"type": "entries",
+							"name": "疾步如风",
 							"entries": [
-								"当你消耗功力使用疾步如风时，你可以选择你周围5尺内一个体型为大型或更小的自愿生物。直至你的回合结束，该生物将一直随你移动。该生物如此移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
+								"当你消耗功力使用疾步如风时，你可以选择你周围 5 尺内一个体型为大型或更小的自愿生物。直至你的回合结束，该生物将一直随你移动。该生物如此移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
 							]
 						}
 					]
@@ -2673,7 +2673,7 @@
 			},
 			"entries": [
 				"你的身心修行已然有所成就，你获得所有豁免的熟练。",
-				"此外，当你豁免失败时，你可以消耗1点功力重掷豁免，但必须使用重掷的结果。"
+				"此外，当你豁免失败时，你可以消耗 1 点功力重掷豁免，但必须使用重掷的结果。"
 			]
 		},
 		{
@@ -2687,7 +2687,7 @@
 			"classSource": "XPHB",
 			"level": 15,
 			"entries": [
-				"若你在投掷{@variantrule 先攻|XPHB}，且选择不使用运转周天时，你的功力为3点或更少，则你的功力恢复至4点。"
+				"若你在投掷{@variantrule 先攻|XPHB}，且选择不使用运转周天时，你的功力为 3 点或更少，则你的功力恢复至 4 点。"
 			]
 		},
 		{
@@ -2734,7 +2734,7 @@
 				"amount": 3
 			},
 			"entries": [
-				"在你的回合开始时，你可以消耗3点功力提高自己抵挡伤害的能力，持续1分钟或直至你陷入{@condition 失能|XPHB}状态。持续时间内，你对力场伤害之外的所有伤害都具有{@variantrule 抗性|XPHB}。"
+				"在你的回合开始时，你可以消耗 3 点功力提高自己抵挡伤害的能力，持续 1 分钟或直至你陷入{@condition 失能|XPHB}状态。持续时间内，你对力场伤害之外的所有伤害都具有{@variantrule 抗性|XPHB}。"
 			]
 		},
 		{
@@ -2762,7 +2762,7 @@
 			"classSource": "XPHB",
 			"level": 20,
 			"entries": [
-				"你行满功成，身心性命皆已突破超然境界。你的敏捷和感知各提升4。现在你这些属性的上限为25。"
+				"你行满功成，身心性命皆已突破超然境界。你的敏捷和感知各提升 4。现在你这些属性的上限为 25。"
 			]
 		}
 	],
@@ -3685,7 +3685,7 @@
 				"命流宗的人通常穿着简单的长袍，戴着厚厚的头巾，常常用面具遮住自己的脸，把自己表现成一名无貌的生死判官。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "命流之器|武僧||命流|TCE|3"
+					"subclassFeature": "操命本事|武僧||命流|TCE|3"
 				},
 				{
 					"type": "refSubclassFeature",
@@ -3740,7 +3740,7 @@
 		},
 		{
 			"ENG_name": "Implements of Mercy",
-			"name": "命流之器",
+			"name": "操命本事",
 			"source": "TCE",
 			"page": 49,
 			"className": "武僧",
@@ -3813,7 +3813,7 @@
 		},
 		{
 			"ENG_name": "Flurry of Healing and Harm",
-			"name": "活杀自在",
+			"name": "生杀予夺",
 			"source": "TCE",
 			"page": 49,
 			"className": "武僧",
@@ -4063,7 +4063,7 @@
 					"name": "剑圣武器",
 					"type": "entries",
 					"entries": [
-						"选择两种武器类型作为你的剑圣武器：一种近战武器和一种远程武器。这两种武器可以是任何不带有重型和特殊属性的{@filter 不具有重型和特殊属性的简易或军用武器|items|source=phb|type=简易武器;军用武器|property=!重型;!特殊|category=基础|miscellaneous=}。长弓是个特例，它同样也可被选为剑圣武器。如果你还未拥有所选武器的熟练项，你获得之。而所选的武器类型对你来说可以视为武僧武器。这一宗派的许多职业特性只有当你使用剑圣武器时才能生效。当你的武僧职业等级分别达到第6级、第11级、和第17级时，你可以遵从上述标准，选择另一种武器（近战或远程武器均可）作为你的剑圣武器。"
+						"选择两种武器类型作为你的剑圣武器：一种近战武器和一种远程武器。这两种武器可以是任何不带有重型和特殊属性的{@filter 不具有重型和特殊属性的简易或军用武器|items|source=PHB|type=简易武器;军用武器|property=!重型;!特殊|category=基础|miscellaneous=}。长弓是个特例，它同样也可被选为剑圣武器。如果你还未拥有所选武器的熟练项，你获得之。而所选的武器类型对你来说可以视为武僧武器。这一宗派的许多职业特性只有当你使用剑圣武器时才能生效。当你的武僧职业等级分别达到第6级、第11级、和第17级时，你可以遵从上述标准，选择另一种武器（近战或远程武器均可）作为你的剑圣武器。"
 					]
 				},
 				{
@@ -4353,7 +4353,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"当你处于元素同调特性激活期间，你获得相当于你{@variantrule 飞行速度|XPHB}的{@variantrule 游泳速度|XPHB}与{@variantrule 速度|XPHB}。"
+				"当你处于元素同调特性激活期间，你获得相当于你{@variantrule 速度|XPHB}的{@variantrule 飞行速度|XPHB}与{@variantrule 游泳速度|XPHB}。"
 			]
 		},
 		{
@@ -4418,7 +4418,7 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "命流之器|武僧|XPHB|命流|XPHB|3"
+					"subclassFeature": "操命本事|武僧|XPHB|命流|XPHB|3"
 				}
 			]
 		},
@@ -4438,7 +4438,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"每回合一次，当你用{@variantrule 徒手打击|XPHB}命中一个生物并造成伤害时，你可以消耗1点功力来额外造成等于一枚你的武艺骰+你的感知调整值的暗蚀伤害。"
+				"每回合一次，当你用{@variantrule 徒手打击|XPHB}命中一个生物并造成伤害时，你可以消耗 1 点功力来额外造成等于一枚你的武艺骰 + 你的感知调整值的暗蚀伤害。"
 			]
 		},
 		{
@@ -4457,12 +4457,12 @@
 				"name": "功力"
 			},
 			"entries": [
-				"以一个{@action 魔法|XPHB}动作，你能消耗1点功力来接触一个生物，恢复目标等于一枚你的武艺骰+你的感知调整值的{@variantrule 生命值|XPHB}。当你使用疾风连击时，你能将其中一次徒手打击改为使用此特性治疗一个生物，且不需要为治疗额外消耗功力。"
+				"以一个{@action 魔法|XPHB}动作，你能消耗 1 点功力来接触一个生物，恢复目标等于一枚你的武艺骰 + 你的感知调整值的{@variantrule 生命值|XPHB}。当你使用疾风连击时，你能将其中一次徒手打击改为使用此特性治疗一个生物，且不需要为治疗额外消耗功力。"
 			]
 		},
 		{
 			"ENG_name": "Implements of Mercy",
-			"name": "命流之器",
+			"name": "操命本事",
 			"source": "XPHB",
 			"page": 104,
 			"className": "武僧",
@@ -4472,7 +4472,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你获得{@skill 洞悉|XPHB}和{@skill 医药|XPHB}技能的熟练项，以及{@item 草药工具|XPHB}的熟练项。"
+				"你获得{@skill 洞悉|XPHB}和{@skill 医药|XPHB}的熟练，并且获得{@item 草药工具|XPHB}的熟练。"
 			]
 		},
 		{
@@ -4493,18 +4493,18 @@
 					"entries": [
 						{
 							"ENG_name": "Hand of Harm",
-							"name": "夺命之手",
 							"type": "entries",
+							"name": "夺命之手",
 							"entries": [
 								"当你对一个生物使用夺命之手时，你可以使该生物陷入{@condition 中毒|XPHB}状态，直至你的下个回合结束。"
 							]
 						},
 						{
 							"ENG_name": "Hand of Healing",
-							"name": "予命之手",
 							"type": "entries",
+							"name": "予命之手",
 							"entries": [
-								"当你使用予命之手时，你还可以结束该生物所受的一项状态，该状态可以是以下状态之一：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}、{@condition 麻痹|XPHB}、{@condition 中毒|XPHB}或{@condition 震慑|XPHB}。"
+								"当你使用予命之手时，你还可以结束你治疗的生物身上的以下状态之一：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}、{@condition 麻痹|XPHB}、{@condition 中毒|XPHB}或{@condition 震慑|XPHB}。"
 							]
 						}
 					]
@@ -4513,7 +4513,7 @@
 		},
 		{
 			"ENG_name": "Flurry of Healing and Harm",
-			"name": "活杀自在",
+			"name": "生杀予夺",
 			"source": "XPHB",
 			"page": 104,
 			"className": "武僧",
@@ -4523,8 +4523,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"当你使用疾风连击时，每一次徒手打击都可以替换为使用你的予命之手，且都不需要为治疗额外消耗功力。",
-				"此外，当你在疾风连击中发动{@variantrule 徒手打击|XPHB}并造成伤害时，你可以无需消耗功力就使用一次夺命之手。不过你仍然只能在每回合中使用一次夺命之手。",
+				"当你使用疾风连击时，你可以将每一次徒手打击都替换为使用予命之手，且均无需为予命之手消耗功力。",
+				"此外，当你以疾风连击发动{@variantrule 徒手打击|XPHB}并造成伤害时，你可以为那次打击使用夺命之手且无需为夺命之手消耗功力。但你每回合仍然只能使用一次夺命之手。",
 				"你能使用此增益的次数等于你的感知调整值（最少一次）。你在完成一次{@variantrule 长休|XPHB}后重获所有已消耗的次数。"
 			]
 		},
@@ -4545,8 +4545,8 @@
 				"amount": 5
 			},
 			"entries": [
-				"你对生命能量的掌握打开了通往命流奥义的大门。以一个{@action 魔法|XPHB}动作，你可以消耗5点功力，触碰一个死亡不超过24小时的生物的尸体。该生物会起死回生，并拥有相当于{@dice 4d10}+你的感知调整值的{@variantrule 生命值|XPHB}。如果该生物死前具有以下这些状态，这些状态都会在复活时被移除：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}、{@condition 麻痹|XPHB}、{@condition 中毒|XPHB}和{@condition 震慑|XPHB}。",
-				"此特性一经使用，直至你完成一次{@variantrule 长休|XPHB}前你都无法再次使用它。"
+				"你对生命能量的掌握打开了通往命流奥义的大门。以一个{@action 魔法|XPHB}动作，你可以消耗 5 点功力并触碰一名死亡不超过 24 小时的生物的尸体。该生物会起死回生，以等于{@dice 4d10} + 你的感知调整值的{@variantrule 生命值|XPHB}复活。如果该生物死前具有任意以下状态，该生物复活时这些状态被移除：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}、{@condition 麻痹|XPHB}、{@condition 中毒|XPHB}和{@condition 震慑|XPHB}。",
+				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
 			]
 		},
 		{
@@ -4576,7 +4576,7 @@
 					"name": "推离",
 					"type": "entries",
 					"entries": [
-						"目标必须成功通过一次力量豁免，否则被你推离15尺。"
+						"目标必须成功通过一次力量豁免，否则被你推离 15 尺。"
 					]
 				},
 				{
@@ -4642,7 +4642,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"当你使用一个{@variantrule 附赠动作|XPHB}而非飞檐走壁时，你可以在该{@variantrule 附赠动作|XPHB}后立即使用飞檐走壁。"
+				"当你使用一个{@variantrule 附赠动作|XPHB}而非疾步如风时，你可以在该{@variantrule 附赠动作|XPHB}后立即使用疾步如风。"
 			]
 		},
 		{
@@ -4664,7 +4664,7 @@
 				"amount": 4
 			},
 			"entries": [
-				"你获得了将内劲击入他人体内的能力。当你以{@variantrule 徒手打击|XPHB}命中一个生物时，可以消耗4点功力打入暗劲，其持续相当于你武僧等级的天数。在你使用你的动作将之结束前，暗劲是无害的。此外，当你在自己的回合执行{@action 攻击|XPHB}动作时，你可以将其中一次攻击替换为这个动作使暗劲结束。若你如此做，你和目标必须处于同一个存在位面。当你结束暗劲时，目标必须进行一次体质豁免，失败则受到{@damage 10d12}力场伤害，成功则只受到一半伤害。",
+				"你获得了将内劲击入他人体内的能力。当你以{@variantrule 徒手打击|XPHB}命中一个生物时，可以消耗 4 点功力打入暗劲，其持续相当于你武僧等级的天数。在你使用你的动作将之结束前，暗劲是无害的。此外，当你在自己的回合执行{@action 攻击|XPHB}动作时，你可以将其中一次攻击替换为这个动作使暗劲结束。若你如此做，你和目标必须处于同一个存在位面。当你结束暗劲时，目标必须进行一次体质豁免，失败则受到{@damage 10d12}力场伤害，成功则只受到一半伤害。",
 				"在同一时间你只能用这个特性使一个生物处于此效应中。你可以结束某人身上的暗劲而不造成伤害（不需要动作）。"
 			]
 		},
@@ -4729,7 +4729,7 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你可以消耗1点功力以施展{@spell 黑暗术|XPHB}法术且无需任何法术成分。你可以看穿以这个特性施展的{@variantrule 黑暗|XPHB}区域。法术持续期间，你可以在你的每个回合开始时将此法术区域移动到你60尺范围内的任意一处空间。"
+				"你可以消耗 1 点功力以施展{@spell 黑暗术|XPHB}法术且无需任何法术成分。你可以看穿以这个特性施展的{@variantrule 黑暗|XPHB}区域。法术持续期间，你可以在你的每个回合开始时将此法术区域移动到你 60 尺范围内的任意一处空间。"
 			]
 		},
 		{
@@ -4744,7 +4744,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"你获得60尺{@sense 黑暗视觉|XPHB}。如果你已经有{@sense 黑暗视觉|XPHB}，则其范围提升60尺。"
+				"你获得 60 尺{@sense 黑暗视觉|XPHB}。如果你已经有{@sense 黑暗视觉|XPHB}，则其范围提升 60 尺。"
 			]
 		},
 		{
@@ -4759,7 +4759,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"你知晓{@spell 次级幻象|XPHB}法术。其施法属性为感知。"
+				"你知晓戏法{@spell 次级幻象|XPHB}。其施法属性为感知。"
 			]
 		},
 		{
@@ -4774,12 +4774,12 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}下时，你能以一个{@variantrule 附赠动作|XPHB}传送到60尺内另一处你可见的未占据的空间，目标地点需要同样位于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}下。接下来，你在当前回合结束前所做的下一次近战攻击具有{@variantrule 优势|XPHB}。"
+				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}下时，你能以一个{@variantrule 附赠动作|XPHB}传送到 60 尺内另一处你可见的未占据的空间，目标地点需要同样位于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}下。接下来，你在当前回合结束前所做的下一次近战攻击具有{@variantrule 优势|XPHB}。"
 			]
 		},
 		{
 			"ENG_name": "Improved Shadow Step",
-			"name": "改进的暗影步",
+			"name": "无影步",
 			"source": "XPHB",
 			"page": 105,
 			"className": "武僧",
@@ -4793,52 +4793,53 @@
 				"name": "功力"
 			},
 			"entries": [
-				"你可以利用与堕影冥界的连结来增强自己的传送能力。当你使用暗影步特性时，你可以消耗1点功力，移除开始和结束时对{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}的要求。此外，作为这个{@variantrule 附赠动作|XPHB}的一部分，你可以立即在传送之后进行一次{@variantrule 徒手打击|XPHB}。"
+				"你可以利用与堕影冥界的连结来增强自己的传送能力。当你使用暗影步特性时，你可以消耗 1 点功力，移除开始和结束时对{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}的要求。此外，作为这个{@variantrule 附赠动作|XPHB}的一部分，你可以立即在传送之后进行一次{@variantrule 徒手打击|XPHB}。"
 			]
 		},
 		{
 			"ENG_name": "Cloak of Shadows",
-			"name": "幽影斗篷",
-			"source": "XPHB",
-			"page": 105,
 			"className": "武僧",
 			"classSource": "XPHB",
-			"subclassShortName": "幽影",
-			"subclassSource": "XPHB",
-			"level": 17,
-			"header": 2,
 			"consumes": {
 				"ENG_name": "Focus Point",
-				"name": "功力",
-				"amount": 3
+				"amount": 3,
+				"name": "功力"
 			},
 			"entries": [
-				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}环境下时，你能够以一个{@action 魔法|XPHB}动作消耗3点功力来让你周围环绕幽影，持续1分钟，直至你陷入{@condition 失能|XPHB}状态或在{@variantrule 明亮光照|XPHB}中结束回合。当周身环绕幽影时，你获得以下好处：",
+				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}环境下时，你能够以一个{@action 魔法|XPHB}动作消耗3点功力来让你周围环绕幽影，持续 1 分钟，直至你陷入{@condition 失能|XPHB}状态或在{@variantrule 明亮光照|XPHB}中结束回合。当周身环绕幽影时，你获得以下好处：",
 				{
 					"ENG_name": "Invisibility",
-					"name": "隐形术",
-					"type": "entries",
 					"entries": [
-						"你处于{@condition 隐形|XPHB}状态。"
-					]
+						"你获得{@condition 隐形|XPHB}状态。"
+					],
+					"name": "隐形",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Partially Incorporeal",
-					"name": "有限虚体",
-					"type": "entries",
 					"entries": [
 						"你可以如同通过{@variantrule 困难地形|XPHB}一般通过已占据空间。如果你回合结束时仍然处于已占据空间之中，则会被排出到之前最近一个未占据空间。"
-					]
+					],
+					"name": "局部虚化",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Shadow Flurry",
-					"name": "幽影连击",
-					"type": "entries",
 					"entries": [
 						"你使用疾风连击时不再需要消耗功力。"
-					]
+					],
+					"name": "幽影连击",
+					"type": "entries"
 				}
-			]
+			],
+			"header": 2,
+			"level": 17,
+			"name": "幽影斗篷",
+			"page": 105,
+			"source": "XPHB",
+			"subclassShortName": "幽影",
+			"subclassSource": "XPHB",
+			"translator": "不全书"
 		}
 	]
 }

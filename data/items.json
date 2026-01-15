@@ -192,6 +192,7 @@
 			"name": "+1 调律者之鼓",
 			"source": "TCE",
 			"page": 134,
+			"baseItem": "鼓|PHB",
 			"type": "INS",
 			"rarity": "uncommon",
 			"reqAttune": "由吟游诗人",
@@ -540,6 +541,7 @@
 			"name": "+2 调律者之鼓",
 			"source": "TCE",
 			"page": 134,
+			"baseItem": "鼓|PHB",
 			"type": "INS",
 			"rarity": "rare",
 			"reqAttune": "由吟游诗人",
@@ -891,6 +893,7 @@
 			"name": "+3 调律者之鼓",
 			"source": "TCE",
 			"page": 134,
+			"baseItem": "鼓|PHB",
 			"type": "INS",
 			"rarity": "very rare",
 			"reqAttune": "由吟游诗人",
@@ -2538,7 +2541,7 @@
 						],
 						[
 							"71-95",
-							"你处于{@condition 麻痹}状态，持续1分钟，或者直到这个效果被{@spell 次级复原术}法术或类似的魔法结束。"
+							"你处于{@condition 麻痹}状态，持续1分钟，或者直到这个效果被{@spell 次等复原术}法术或类似的魔法结束。"
 						],
 						[
 							"96-00",
@@ -3979,7 +3982,7 @@
 									"name": "黑暗视觉",
 									"type": "item",
 									"entries": [
-										"你获得60尺{@sense 黑暗视觉|XPHB}。如果你已经有{@sense 黑暗视觉|XPHB}，则其范围提升60尺。"
+										"你获得 60 尺{@sense 黑暗视觉|XPHB}。如果你已经有{@sense 黑暗视觉|XPHB}，则其范围提升 60 尺。"
 									]
 								},
 								{
@@ -4733,7 +4736,7 @@
 					"rows": [
 						[
 							"1",
-							"{@creature 鼬鼠}"
+							"{@creature 鼬}"
 						],
 						[
 							"2",
@@ -4799,7 +4802,7 @@
 					"rows": [
 						[
 							"1",
-							"{@creature 鼬鼠|XMM}"
+							"{@creature 鼬|XMM}"
 						],
 						[
 							"2",
@@ -5000,7 +5003,7 @@
 					"rows": [
 						[
 							"1",
-							"{@creature 豺狗}"
+							"{@creature 胡狼}"
 						],
 						[
 							"2",
@@ -5065,7 +5068,7 @@
 					"rows": [
 						[
 							"1",
-							"{@creature 豺狗|XMM}"
+							"{@creature 胡狼|XMM}"
 						],
 						[
 							"2",
@@ -6251,6 +6254,7 @@
 			"ability": {
 				"con": 2
 			},
+			"grantsLanguage": true,
 			"entries": [
 				"穿戴此腰带期间，你获得以下增益：",
 				{
@@ -6292,6 +6296,7 @@
 			"ability": {
 				"con": 2
 			},
+			"grantsLanguage": true,
 			"entries": [
 				"穿戴此腰带期间，你获得以下增益：",
 				{
@@ -7479,6 +7484,7 @@
 			"range": "20/60",
 			"dmg1": "1d4",
 			"dmgType": "P",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"萨瑞兹顿的武器，这把匕首是一块锯齿状的石头，其刀刃上刻着无始无终的迷宫图案。",
@@ -9682,7 +9688,7 @@
 							"name": "抹除不均",
 							"type": "item",
 							"entries": [
-								"以一个附赠动作，你可以消耗2发充能用护甲施放{@spell 次级复原术}。"
+								"以一个附赠动作，你可以消耗2发充能用护甲施放{@spell 次等复原术}。"
 							]
 						}
 					]
@@ -9693,7 +9699,7 @@
 			"attachedSpells": {
 				"charges": {
 					"2": [
-						"次级复原术"
+						"次等复原术"
 					]
 				}
 			},
@@ -11466,12 +11472,12 @@
 		},
 		{
 			"ENG_name": "Carpet of Flying, 3 ft. × 5 ft.",
-			"name": "飞天魔毯，3尺x5尺",
+			"name": "飞毯（3尺×5尺）",
 			"source": "DMG",
 			"page": 157,
 			"srd": true,
 			"reprintedAs": [
-				"飞天魔毯，3尺x5尺|XDMG"
+				"飞毯（3尺×5尺）|XDMG"
 			],
 			"tier": "主要",
 			"rarity": "very rare",
@@ -11483,7 +11489,7 @@
 		},
 		{
 			"ENG_name": "Carpet of Flying, 3 ft. × 5 ft.",
-			"name": "飞天魔毯，3尺x5尺",
+			"name": "飞毯（3尺×5尺）",
 			"source": "XDMG",
 			"page": 242,
 			"srd52": true,
@@ -14711,7 +14717,7 @@
 			"containerCapacity": {
 				"item": [
 					{
-						"弩失|xphb": 20
+						"弩矢|xphb": 20
 					}
 				]
 			},
@@ -15571,7 +15577,7 @@
 						],
 						[
 							"6",
-							"{@spell 精类召唤术|XPHB}"
+							"{@spell 妖精召唤术|XPHB}"
 						]
 					]
 				}
@@ -15582,7 +15588,7 @@
 				"构装召唤术|xphb",
 				"龙类召唤术|xphb",
 				"元素召唤术|xphb",
-				"精类召唤术|xphb"
+				"妖精召唤术|xphb"
 			],
 			"lootTables": [
 				"奥秘 - 珍稀|XDMG"
@@ -16302,7 +16308,7 @@
 				"在幽暗地域中失落了数个世纪，黎明使者看起来像是一个镀金的长剑柄。握着剑柄时，你可以使用附赠动作让一把纯净光辉的刀刃从剑柄中弹出，或者让刀刃消失。当刀刃存在时，这把魔法长剑具有灵巧属性。如果你熟练使用{@item 短剑|PHB|短剑}或{@item 长剑|PHB|长剑}，你对黎明使者也熟练。",
 				"你在使用太阳剑发动的攻击检定和伤害掷骰获得+2加值，但它造成光耀伤害而非挥砍伤害。被这把剑命中的亡灵将额外受{@damage 1d8}点光耀伤害。",
 				"太阳剑闪耀的剑刃会散发出15尺明亮光照和额外15尺微光光照\u2014\u2014其为日光。剑刃展开期间，你可以用一个动作使明亮与微光光照半径各扩大或缩小5尺。光照范围上限为明亮和微光区域各扩大30尺，下限为各缩小10尺。",
-				"握着这把武器时，你可以使用一个动作用剑刃触摸一个生物，对其施放{@spell 次级复原术}法术。一旦使用，这个能力直到下一个黎明之前不能再使用。",
+				"握着这把武器时，你可以使用一个动作用剑刃触摸一个生物，对其施放{@spell 次等复原术}法术。一旦使用，这个能力直到下一个黎明之前不能再使用。",
 				{
 					"ENG_name": "Sentience",
 					"name": "智能",
@@ -16331,7 +16337,7 @@
 			"attachedSpells": {
 				"daily": {
 					"1e": [
-						"次级复原术"
+						"次等复原术"
 					]
 				}
 			},
@@ -17502,8 +17508,8 @@
 				},
 				{
 					"ENG_name": "Map",
-					"name": "地图",
 					"type": "entries",
+					"name": "地图",
 					"entries": [
 						"在你抽到这张卡后的一年以内的任何时间，你可以在心中指名你熟悉的一件物品、一个人的名字或是描述它。你立刻知晓其位置，以及你们之间的距离，即便它在不同的存在位面。如果你指名一个人，你知晓它是否或者以及它的状态。如果你指名一个物件，你知道它是否损坏。如果你指名一件具有充能的魔法物品，你知道它还剩下多少充能。"
 					]
@@ -17590,8 +17596,8 @@
 				},
 				{
 					"ENG_name": "Shield",
-					"name": "盾牌",
 					"type": "entries",
+					"name": "盾牌",
 					"entries": [
 						"一套{@filter 珍稀及以上稀有度的魔法护甲套装|items|source=|type=light armor;heavy armor;medium armor|rarity=rare;very rare;legendary;artifact|category=}（由DM选择）出现在你的手上。如果你没有任何护甲熟练，当你未穿戴护甲时你的基础AC变为12+你的敏捷调整值。"
 					]
@@ -18061,24 +18067,24 @@
 				},
 				{
 					"ENG_name": "Sun",
-					"name": "太阳",
 					"type": "entries",
+					"name": "太阳",
 					"entries": [
 						"你获得50,000经验值，且一件奇物（由DM随机决定）出现在你手中。"
 					]
 				},
 				{
 					"ENG_name": "Moon",
-					"name": "月亮",
 					"type": "entries",
+					"name": "月亮",
 					"entries": [
 						"你获得施放{@spell 祈愿术}法术{@dice 1d3}次的能力。"
 					]
 				},
 				{
 					"ENG_name": "Star",
-					"name": "星辰",
 					"type": "entries",
+					"name": "星辰",
 					"entries": [
 						"你的一项属性提升2。由此被提升的属性可以超过20但不能超过24。"
 					]
@@ -18101,24 +18107,24 @@
 				},
 				{
 					"ENG_name": "Throne",
-					"name": "王座",
 					"type": "entries",
+					"name": "王座",
 					"entries": [
 						"你获得{@skill 游说}技能的熟练项，并在进行该技能检定时加上双倍的熟练加值。此外，你获得世界上某个地方的一座小型城堡的所有权。然而这座城堡被怪物所占据，你必须清理其中的怪物以获得城堡的控制权。"
 					]
 				},
 				{
 					"ENG_name": "Key",
-					"name": "钥匙",
 					"type": "entries",
+					"name": "钥匙",
 					"entries": [
 						"一把你拥有熟练项且稀有度为珍稀或更高的魔法武器出现在你手中。由DM选择该武器。"
 					]
 				},
 				{
 					"ENG_name": "Knight",
-					"name": "骑士",
 					"type": "entries",
+					"name": "骑士",
 					"entries": [
 						"一名4级战士出现在你身边30尺内由你指定的位置并为你服务。战士和你种族相同，并相信命运安排与他或她与你相遇且至死效忠于你。你控制这名角色。"
 					]
@@ -18141,24 +18147,24 @@
 				},
 				{
 					"ENG_name": "The Void",
-					"name": "虚空",
 					"type": "entries",
+					"name": "虚空",
 					"entries": [
 						"这张黑色的卡片将带来灾难。你的灵魂从躯体抽离，并囚禁在某个DM指定地点的某个物件里。一名或多名强大的存在守护着这个地点。灵魂被囚禁期间，你的躯体处于{@condition 失能}状态。{@spell 祈愿术}无法唤回你的灵魂，但可以揭示囚禁它的物件所在的方位。抽到此卡后你不再抽取其他卡片。"
 					]
 				},
 				{
 					"ENG_name": "Flames",
-					"name": "喷火",
 					"type": "entries",
+					"name": "喷火",
 					"entries": [
 						"一名强大的魔鬼成为你的敌人。该魔鬼试图摧毁你的意志和你的生活，品尝你的痛苦并最终杀了你。这份敌意将持续到它和你中的一方死去为止。"
 					]
 				},
 				{
 					"ENG_name": "Skull",
-					"name": "骷髅",
 					"type": "entries",
+					"name": "骷髅",
 					"entries": [
 						"你召唤一个{@creature 死亡化身|DMG}\u2014\u2014一个身穿破烂黑袍，手持幽灵镰刀，幽魂般的类人生物骷髅。它将在你周围10尺内一处DM指定的位置出现并对你发动攻击，同时警告其他人你必须要独自面对这场战斗。化身在将你杀死或自身生命值降至0后消失。如果有人试图在这场战斗中帮你，则该人物将因此召唤出自己的{@creature 死亡化身|DMG}。被{@creature 死亡化身|DMG}杀死的生物无法被复活。"
 					]
@@ -18181,24 +18187,24 @@
 				},
 				{
 					"ENG_name": "Ruin",
-					"name": "废墟",
 					"type": "entries",
+					"name": "废墟",
 					"entries": [
 						"你持有或拥有的所有财富形式，除魔法物品外，都将失去。可动产将直接消失；在最低限度修改现实的前提下，你拥有的所有生意、建筑物和土地也将失去。任何证明你应拥有因这张卡而失去的财产的文件也将消失。"
 					]
 				},
 				{
 					"ENG_name": "Euryale",
-					"name": "尤瑞艾莉",
 					"type": "entries",
+					"name": "尤瑞艾莉",
 					"entries": [
 						"这张卡片上与{@creature 美杜莎}相似的画像诅咒了你。受到此诅咒的影响，你的豁免承受-2减值。只有某个神灵或{@card 命运|万象无常牌}卡牌的魔法可以终止这种诅咒。"
 					]
 				},
 				{
 					"ENG_name": "Rogue",
-					"name": "游荡者",
 					"type": "entries",
+					"name": "游荡者",
 					"entries": [
 						"由DM选择一名非玩家角色对你变得敌对。这名新敌人的身份不为人知，直到该NPC或其他人揭穿真相。只有{@spell 祈愿术}法术或神圣干预才能结束该NPC对你的敌意。"
 					]
@@ -18221,8 +18227,8 @@
 				},
 				{
 					"ENG_name": "Jester",
-					"name": "小丑",
 					"type": "entries",
+					"name": "小丑",
 					"entries": [
 						"你获得10,000经验值，或者你在声明的抽卡数量外再抽取两张卡牌。"
 					]
@@ -18419,24 +18425,24 @@
 				},
 				{
 					"ENG_name": "Euryale",
-					"name": "尤瑞艾莉",
 					"type": "entries",
+					"name": "尤瑞艾莉",
 					"entries": [
 						"卡片上与美杜莎相似的画像诅咒了你。诅咒持续期间，你的豁免检定具有-2减值。只有神明或命运卡牌的魔法可以终止该诅咒。"
 					]
 				},
 				{
 					"ENG_name": "Fates",
-					"name": "命运",
 					"type": "entries",
+					"name": "命运",
 					"entries": [
 						"现实本身的存在被拆散而又重新编就，并以此让你得以避免或抹除某件已经发生的事件，如同它从未发生一般。你可以在抽到此卡时或直至自己死前的任何时间使用此牌的效果。"
 					]
 				},
 				{
 					"ENG_name": "Flames",
-					"name": "喷火",
 					"type": "entries",
+					"name": "喷火",
 					"entries": [
 						"一名强大的魔鬼将成为你的敌人。它会试图摧毁你，折磨你，让你品尝痛苦的滋味，然后杀掉你。这份敌意将持续至它和你中的一方死去。"
 					]
@@ -18468,88 +18474,88 @@
 				},
 				{
 					"ENG_name": "Jester",
-					"name": "小丑",
 					"type": "entries",
+					"name": "小丑",
 					"entries": [
 						"你的{@variantrule 优势|XPHB}具有{@variantrule D20 检定|XPHB|D20 检定}，持续72小时，或者你可以在声明的抽卡数量外再抽取两张卡牌"
 					]
 				},
 				{
 					"ENG_name": "Key",
-					"name": "钥匙",
 					"type": "entries",
+					"name": "钥匙",
 					"entries": [
 						"一把由DM选择的，稀有度为珍稀及以上的且你具有熟练的魔法武器出现在你的手中。"
 					]
 				},
 				{
 					"ENG_name": "Knight",
-					"name": "骑士",
 					"type": "entries",
+					"name": "骑士",
 					"entries": [
 						"你获得一名{@creature 骑士|XMM}侍从，其将魔法性地出现在位于你30尺内由你选择的未占据空间。这名骑士和你阵营相同，相信你们之间被命运相系并向你效忠至死。与你的DM一同为该NPC取名并撰写背景。DM可以根据需要使用其他的数据卡代表骑士。"
 					]
 				},
 				{
 					"ENG_name": "Moon",
-					"name": "月亮",
 					"type": "entries",
+					"name": "月亮",
 					"entries": [
 						"你获得{@dice 1d3}次施展{@spell 祈愿术|XPHB}的能力。"
 					]
 				},
 				{
 					"ENG_name": "Puzzle",
-					"name": "谜题",
 					"type": "entries",
+					"name": "谜题",
 					"entries": [
 						"你的智力或感知永久降低{@dice 1d4 + 1}（至多降低至1）。你可以在声明的抽卡数量外再抽取一张卡牌。"
 					]
 				},
 				{
 					"ENG_name": "Rogue",
-					"name": "游荡者",
 					"type": "entries",
+					"name": "游荡者",
 					"entries": [
 						"一名由DM选择的NPC与你的态度变为{@variantrule 敌对【态度】|XPHB|敌对}。你不知道这名NPC的身份，直至他自己或其他人揭露真相。只有法术{@spell 祈愿术|XPHB}或神圣干预才能终止该NPC对你的敌对。"
 					]
 				},
 				{
 					"ENG_name": "Ruin",
-					"name": "废墟",
 					"type": "entries",
+					"name": "废墟",
 					"entries": [
 						"你失去除魔法物品外你持有或拥有的一切形式的财产。可动产将直接消失；在最低限度修改现实的前提下，你还将失去你拥有的所有生意、建筑和土地。若你拥有据点（见{@book 城主指南|XDMG|7}），它将被你无法控制的灾难摧毁。任何证明你应该拥有因此卡而丢失的财产的文件也将消失。"
 					]
 				},
 				{
 					"ENG_name": "Sage",
-					"name": "智者",
 					"type": "entries",
+					"name": "智者",
 					"entries": [
 						"抽到此卡后一年内的任何时间，你可以在冥想中提出一个问题并在心中获得诚实的回答。"
 					]
 				},
 				{
 					"ENG_name": "Skull",
-					"name": "骷髅",
 					"type": "entries",
+					"name": "骷髅",
 					"entries": [
 						"一名{@creature 死亡化身|XDMG}出现在距你最近的未占据空间中。死亡化身是一名包裹破烂黑袍、手持幽灵镰刀的幽魂骷髅，它的攻击仅以你为目标。当其{@variantrule 生命值|XPHB}降至0或你死亡时，化身消失。若你的盟友对死亡化身造成伤害，那名盟友将召唤出另一名死亡化身。新的化身出现在距那名盟友最近的未占据空间中，且它的攻击仅以那名盟友为目标。你和你的盟友每人只能因一次抽卡召唤出一名化身。被死亡化身杀死的生物无法复活。"
 					]
 				},
 				{
 					"ENG_name": "Star",
-					"name": "星辰",
 					"type": "entries",
+					"name": "星辰",
 					"entries": [
 						"你令你的一项属性值提升2，至多提升至24。"
 					]
 				},
 				{
 					"ENG_name": "Sun",
-					"name": "太阳",
 					"type": "entries",
+					"name": "太阳",
 					"entries": [
 						"一件由DM选择的魔法物品出现在你手中。此外，你将在每日黎明时获得10点{@variantrule 临时生命值|XPHB}直至你死亡。"
 					]
@@ -18564,16 +18570,16 @@
 				},
 				{
 					"ENG_name": "Throne",
-					"name": "王座",
 					"type": "entries",
+					"name": "王座",
 					"entries": [
 						"你在{@skill 历史|XPHB}、{@skill 洞悉|XPHB}、{@skill 威吓|XPHB}或{@skill 游说|XPHB}中选择一项获得其熟练和{@variantrule 专精|XPHB}。此外，你获得世界上某个地方的一座小城堡的合法所有权。然而这座城堡被一只或更多怪物所占据，你必须清理其中的怪物来获得城堡的宣称。"
 					]
 				},
 				{
 					"ENG_name": "Void",
-					"name": "虚空",
 					"type": "entries",
+					"name": "虚空",
 					"entries": [
 						"你的灵魂从躯体抽离，并被囚禁在某个DM指定地点里的一个物件中。一名或更多强大存在守护着这个地点。灵魂被囚禁期间，你的躯体处于静止状态，不再衰老也不需要食物、空气或水。{@spell 祈愿术|XPHB}无法将你的灵魂唤回躯体，但可以揭示囚禁你灵魂的物件所在的方位。抽到此牌后你不再抽取其他卡牌。"
 					]
@@ -19244,8 +19250,8 @@
 				},
 				{
 					"ENG_name": "Euryale",
-					"name": "尤瑞艾莉",
 					"type": "entries",
+					"name": "尤瑞艾莉",
 					"entries": [
 						"这张牌的蛇发女妖般的面孔诅咒了你。在冒险期间，你在豁免检定上受到-1的惩罚。"
 					]
@@ -19260,8 +19266,8 @@
 				},
 				{
 					"ENG_name": "Flames",
-					"name": "喷火",
 					"type": "entries",
+					"name": "喷火",
 					"entries": [
 						"苦修之院的大师成为你的敌人。骨魔渴望你的毁灭，在试图杀死你之前品味你的痛苦。如果大师已经被击败，你将获得加勒特·莱维斯图森（{@creature 加雷特·莱维斯图森|LLK|加雷特·莱维斯图森的}）的赞助者的敌意\u2014\u2014一个同样强大的魔鬼。"
 					]
@@ -19292,72 +19298,72 @@
 				},
 				{
 					"ENG_name": "Jester",
-					"name": "小丑",
 					"type": "entries",
+					"name": "小丑",
 					"entries": [
 						"在冒险期间，你可以选择一项技能并获得其熟练度，或者你可以在你声明的抽取之外再抽取两张额外的牌。"
 					]
 				},
 				{
 					"ENG_name": "Key",
-					"name": "钥匙",
 					"type": "entries",
+					"name": "钥匙",
 					"entries": [
 						"一把你熟练的普通或不常见的魔法武器，或者一个包含你可以施放的法术等级的{@item 法术卷轴}，出现在你的手中。DM选择武器或法术，你在这个冒险期间拥有它。"
 					]
 				},
 				{
 					"ENG_name": "Knight",
-					"name": "骑士",
 					"type": "entries",
+					"name": "骑士",
 					"entries": [
 						"你获得了任何一个目前不在队伍中的NPC的服务，这些NPC位于\"{@book 雇员|PHB|5|服务}\"部分，NPC会出现在你选择的30尺范围内的某个位置。NPC将忠诚地为你服务，直到冒险结束，他们相信是命运将他们吸引到你身边。你控制这个角色。"
 					]
 				},
 				{
 					"ENG_name": "Moon",
-					"name": "月亮",
 					"type": "entries",
+					"name": "月亮",
 					"entries": [
 						"你获得了施放任何5级或更低级别的法术的能力，并且在冒险期间可以使用该能力{@dice 1d3}次。"
 					]
 				},
 				{
 					"ENG_name": "Rogue",
-					"name": "游荡者",
 					"type": "entries",
+					"name": "游荡者",
 					"entries": [
 						"DM选择的一个NPC会秘密地对你产生敌意。你的新敌人的身份直到NPC或其他人揭露它之前都是未知的。任何在6级或更高等级对NPC施放的魅惑法术都可以结束NPC对你的敌意。"
 					]
 				},
 				{
 					"ENG_name": "Ruin",
-					"name": "废墟",
 					"type": "entries",
+					"name": "废墟",
 					"entries": [
 						"你携带或拥有的所有形式的财富，除了魔法物品外，都已丧失。这些财富可以在冒险中较晚到达的地点中被找回，它们可能位于苦恼之身修道院的宝库（区域M10）或Kwalish的实验室在Daoine Gloine（区域O7）中。"
 					]
 				},
 				{
 					"ENG_name": "Skull",
-					"name": "骷髅",
 					"type": "entries",
+					"name": "骷髅",
 					"entries": [
 						"你召唤了一个死亡的化身\u2014\u2014一个机械骷髅（使用骸骨纳迦的具体数值），穿着破烂的黑色长袍。它出现在DM选择的离你10尺以内的空间，并攻击你，警告所有其他人你必须独自赢得战斗。化身一直战斗，直到你死亡或其生命值降至0，之后它就会消失。如果有人试图帮助你，帮助者将召唤自己的死亡化身。被死亡化身杀死的生物无法被复活。"
 					]
 				},
 				{
 					"ENG_name": "Star",
-					"name": "星辰",
 					"type": "entries",
+					"name": "星辰",
 					"entries": [
 						"在冒险期间，将你的一个能力值提高1。该数值可以超过20，但不能超过24。"
 					]
 				},
 				{
 					"ENG_name": "Sun",
-					"name": "太阳",
 					"type": "entries",
+					"name": "太阳",
 					"entries": [
 						"在这次冒险期间，你获得了你选择的技能熟练度。此外，一个普通或罕见的奇妙物品出现在你的手中。由DM选择这个物品，你将在这次冒险期间拥有它。"
 					]
@@ -19372,8 +19378,8 @@
 				},
 				{
 					"ENG_name": "Throne",
-					"name": "王座",
 					"type": "entries",
+					"name": "王座",
 					"entries": [
 						"你获得了{@skill 游说}技能的熟练度，并且在这次冒险期间，你在使用这项技能进行的检定时，你的熟练加值翻倍。此外，苦恼之躯修道院的罐中大脑之后将你视为修道院的合法主人。你必须击败或以其他方式清除大宗师及其仆人，才能宣称修道院为你所有。"
 					]
@@ -19388,8 +19394,8 @@
 				},
 				{
 					"ENG_name": "The Void",
-					"name": "虚空",
 					"type": "entries",
+					"name": "虚空",
 					"entries": [
 						"这张黑色卡片预示着灾难。你的灵魂被从你的身体中抽出，并被囚禁在机械之中，这发生在\"苦恼之躯修道院\"（区域M8）的控制室或者Daoine Gloine的Kwalish实验室（区域O7），以冒险中后来发生的那个为准。当你的灵魂以这种方式被困时，你的身体处于{@condition 失能}状态。{@spell 预言术}、{@spell 异界探知}或者4级或更高等级的类似法术可以揭示囚禁你灵魂的机械的位置。你不再抽取更多的卡片。"
 					]
@@ -22055,7 +22061,7 @@
 			"wondrous": true,
 			"entries": [
 				"这种粉末装在一个小容器中，看起来像是非常细的沙子。它看起来像是{@item 无踪粉}，而{@spell 鉴定术}也会显示它是这样的。其分量足够使用一次。",
-				"当你用一个动作将一把粉尘撒向空中时，你和每个30尺内需要呼吸的生物必须成功通过一次{@dc 15}的体质豁免否则因不停打喷嚏而无法呼吸。受此影响的生物将陷入{@condition 失能}并窒息。只要受影响的生物依然清醒，它就能在每次自己的回合结束时再次进行该豁免，一旦豁免成功，其自己身上的效应也将随之终止。{@spell 次级复原术}法术也能终止该生物身上的效应。"
+				"当你用一个动作将一把粉尘撒向空中时，你和每个30尺内需要呼吸的生物必须成功通过一次{@dc 15}的体质豁免否则因不停打喷嚏而无法呼吸。受此影响的生物将陷入{@condition 失能}并窒息。只要受影响的生物依然清醒，它就能在每次自己的回合结束时再次进行该豁免，一旦豁免成功，其自己身上的效应也将随之终止。{@spell 次等复原术}法术也能终止该生物身上的效应。"
 			],
 			"lootTables": [
 				"魔法物品表B"
@@ -22074,7 +22080,7 @@
 			"entries": [
 				"这种粉末通常被装在小盒子里，其分量足够使用一次。这种粉末看起来像是{@item 无踪粉|XDMG}，对其施展{@spell 鉴定术|XPHB}也会给出这样的结果。",
 				"你可以用{@action 操作|XPHB}动作把这种粉末洒向空中，迫使你和你周围30尺{@variantrule 光环 [效应区域]|XPHB|光环}内的生物进行一次{@dc 15}的体质豁免，构装、元素、泥怪、植物和亡灵在豁免中自动成功。",
-				"豁免失败者将不停打喷嚏，陷入{@condition 失能|XPHB}并窒息。受影响的生物能在每次自己的回合结束时再次进行该豁免。一旦豁免成功，其自己身上的效应也将随之终止。法术{@spell 次级复原术|XPHB}也可以终止一名生物身上的该效应。"
+				"豁免失败者将不停打喷嚏，陷入{@condition 失能|XPHB}并窒息。受影响的生物能在每次自己的回合结束时再次进行该豁免。一旦豁免成功，其自己身上的效应也将随之终止。法术{@spell 次等复原术|XPHB}也可以终止一名生物身上的该效应。"
 			],
 			"lootTables": [
 				"奥秘 - 非普通|XDMG",
@@ -22361,6 +22367,7 @@
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"wondrous": true,
+			"grantsLanguage": true,
 			"recharge": "拂晓",
 			"rechargeAmount": "{@dice 1d4}",
 			"charges": 4,
@@ -24085,7 +24092,7 @@
 							"name": "施法",
 							"type": "item",
 							"entries": [
-								"持握盾牌时，你可以用一个动作来施展以下法术之一：{@spell 次级复原术}、{@spell 生物定位术}、{@spell 木遁术}。一旦你使用盾牌施展了某个法术，该盾牌在下个黎明之前不能再施展该法术。"
+								"持握盾牌时，你可以用一个动作来施展以下法术之一：{@spell 次等复原术}、{@spell 生物定位术}、{@spell 木遁术}。一旦你使用盾牌施展了某个法术，该盾牌在下个黎明之前不能再施展该法术。"
 							]
 						}
 					]
@@ -24094,7 +24101,7 @@
 			"attachedSpells": {
 				"daily": {
 					"1e": [
-						"次级复原术",
+						"次等复原术",
 						"生物定位术",
 						"木遁术"
 					]
@@ -24757,7 +24764,7 @@
 			"rarity": "none",
 			"poison": true,
 			"entries": [
-				"一个生物接触到此毒药时必须成功通过一次{@dc 14}体质豁免检定，否则将陷入{@condition 中毒}状态1小时，并且在以这种方式{@condition 中毒}期间陷入{@condition 目盲}状态。一道{@spell 次级复原术}法术或类似魔法可以终止该效果。"
+				"一个生物接触到此毒药时必须成功通过一次{@dc 14}体质豁免检定，否则将陷入{@condition 中毒}状态1小时，并且在以这种方式{@condition 中毒}期间陷入{@condition 目盲}状态。一道{@spell 次等复原术}法术或类似魔法可以终止该效果。"
 			],
 			"poisonTypes": [
 				"接触"
@@ -29311,6 +29318,7 @@
 			"dmg1": "1d8",
 			"dmgType": "B",
 			"dmg2": "1d10",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"这柄属于托罗格的战锤由一整块黑曜石打造而成，因其中涌动的魔法能量而嗡鸣着，上面刻着在痛苦中尖叫的脸的图案。",
@@ -30119,6 +30127,7 @@
 			"name": "金穗琴",
 			"source": "BGG",
 			"page": 112,
+			"type": "INS",
 			"rarity": "legendary",
 			"reqAttune": true,
 			"wondrous": true,
@@ -31355,7 +31364,7 @@
 						],
 						[
 							"芳瑞卡",
-							"{@spell 次级复原术}"
+							"{@spell 次等复原术}"
 						],
 						[
 							"斐纳克",
@@ -32107,7 +32116,7 @@
 				},
 				{
 					"ENG_name": "Sunlight",
-					"name": "阳光",
+					"name": "耀阳",
 					"type": "entries",
 					"entries": [
 						"以一个行动，你可以亮出圣徽并花费5点充能，使圣徽放出充满半径30 尺范围内的明亮光照，另外附加30 尺半径的微光光照。该光线为阳光，持续10 分钟，或者你自行结束这一效果（不需要花费任何动作）。"
@@ -32283,6 +32292,8 @@
 			"ENG_name": "Horn of Beckoning Death",
 			"name": "唤死号角",
 			"source": "HAT-LMI",
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"rarity": "legendary",
 			"reqAttune": "由术士",
 			"reqAttuneTags": [
@@ -32307,6 +32318,8 @@
 			"reprintedAs": [
 				"音爆号角|XDMG"
 			],
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"tier": "主要",
 			"rarity": "rare",
 			"wondrous": true,
@@ -32330,6 +32343,8 @@
 			"page": 270,
 			"srd52": true,
 			"basicRules2024": true,
+			"baseItem": "号角|xphb",
+			"type": "INS|XPHB",
 			"rarity": "rare",
 			"wondrous": true,
 			"entries": [
@@ -32350,6 +32365,8 @@
 			"name": "静报号角",
 			"source": "XDMG",
 			"page": 270,
+			"baseItem": "号角|xphb",
+			"type": "INS|XPHB",
 			"rarity": "common",
 			"wondrous": true,
 			"recharge": "拂晓",
@@ -32371,6 +32388,8 @@
 			"reprintedAs": [
 				"静报号角|XDMG"
 			],
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"tier": "次要",
 			"rarity": "common",
 			"wondrous": true,
@@ -32392,6 +32411,8 @@
 				"name": "瓦尔哈拉号角，黄铜",
 				"source": "DMG"
 			},
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"entries": [
 				"你可以使用动作吹响这号角。作为响应，来自深渊的战士灵魂将在你周围60尺内出现。这些灵魂看起来像牛头人，并使用{@creature 狂战士}的具体数值。它们在1小时后返回深渊，或者当它们的生命值降至0点。一旦你使用了号角，直到7天后才能再次使用。",
 				"这个号角召唤{@dice 3d4 + 3}名{@creature 狂战士||狂战士们}。使用这个号角，你必须精通所有简易武器。",
@@ -32407,6 +32428,8 @@
 			"reprintedAs": [
 				"瓦尔哈拉号角，黄铜|XDMG"
 			],
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"tier": "主要",
 			"rarity": "rare",
 			"wondrous": true,
@@ -32427,6 +32450,8 @@
 			"page": 270,
 			"srd52": true,
 			"basicRules2024": true,
+			"baseItem": "号角|xphb",
+			"type": "INS|XPHB",
 			"rarity": "rare",
 			"wondrous": true,
 			"entries": [
@@ -32449,6 +32474,8 @@
 			"reprintedAs": [
 				"瓦尔哈拉号角，青铜|XDMG"
 			],
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"tier": "主要",
 			"rarity": "very rare",
 			"wondrous": true,
@@ -32469,6 +32496,8 @@
 			"page": 270,
 			"srd52": true,
 			"basicRules2024": true,
+			"baseItem": "号角|xphb",
+			"type": "INS|XPHB",
 			"rarity": "very rare",
 			"wondrous": true,
 			"entries": [
@@ -32491,6 +32520,8 @@
 			"reprintedAs": [
 				"瓦尔哈拉号角，黑铁|XDMG"
 			],
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"tier": "主要",
 			"rarity": "legendary",
 			"wondrous": true,
@@ -32511,6 +32542,8 @@
 			"page": 270,
 			"srd52": true,
 			"basicRules2024": true,
+			"baseItem": "号角|xphb",
+			"type": "INS|XPHB",
 			"rarity": "legendary",
 			"wondrous": true,
 			"entries": [
@@ -32533,6 +32566,8 @@
 			"reprintedAs": [
 				"瓦尔哈拉号角，白银|XDMG"
 			],
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"tier": "主要",
 			"rarity": "rare",
 			"wondrous": true,
@@ -32553,6 +32588,8 @@
 			"page": 270,
 			"srd52": true,
 			"basicRules2024": true,
+			"baseItem": "号角|xphb",
+			"type": "INS|XPHB",
 			"rarity": "rare",
 			"wondrous": true,
 			"entries": [
@@ -33483,6 +33520,8 @@
 			"name": "伊格薇尔伏号角",
 			"source": "DitLCoT",
 			"page": 14,
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"rarity": "rare",
 			"reqAttune": true,
 			"wondrous": true,
@@ -33871,8 +33910,8 @@
 							"items": [
 								{
 									"ENG_name": "Shield",
-									"name": "盾牌",
 									"type": "item",
+									"name": "盾牌",
 									"entry": "这个盾牌现在是一个需要调谐的稀有魔法物品。它的魔法使你的AC获得+1的加值，并且在每次长休息后第一次受到伤害将你的生命值降至0时，你将被减少到1点生命值。你必须持有这个盾牌才能获得这些好处。"
 								},
 								{
@@ -34240,6 +34279,7 @@
 			"reprintedAs": [
 				"吟游诗人乐器，科里里拉琴|XDMG"
 			],
+			"baseItem": "里拉琴|PHB",
 			"type": "INS",
 			"tier": "主要",
 			"rarity": "rare",
@@ -34281,6 +34321,8 @@
 			"name": "吟游诗人乐器，科里里拉琴",
 			"source": "XDMG",
 			"page": 272,
+			"baseItem": "里拉琴|xphb",
+			"type": "INS|XPHB",
 			"rarity": "rare",
 			"reqAttune": "由吟游诗人",
 			"reqAttuneTags": [
@@ -34319,6 +34361,7 @@
 			"reprintedAs": [
 				"吟游诗人乐器，安眠鲁特琴|XDMG"
 			],
+			"baseItem": "鲁特琴|PHB",
 			"type": "INS",
 			"tier": "主要",
 			"rarity": "uncommon",
@@ -34360,6 +34403,8 @@
 			"name": "吟游诗人乐器，安眠鲁特琴",
 			"source": "XDMG",
 			"page": 272,
+			"baseItem": "鲁特琴|xphb",
+			"type": "INS|XPHB",
 			"rarity": "uncommon",
 			"reqAttune": "由吟游诗人",
 			"reqAttuneTags": [
@@ -34440,6 +34485,7 @@
 			"name": "吟游诗人乐器，佛克路坎三弦琴",
 			"source": "XDMG",
 			"page": 272,
+			"type": "INS|XPHB",
 			"rarity": "uncommon",
 			"reqAttune": "由吟游诗人",
 			"reqAttuneTags": [
@@ -34520,6 +34566,7 @@
 			"name": "吟游诗人乐器，麦克-弗瑞米西特琴",
 			"source": "XDMG",
 			"page": 272,
+			"type": "INS|XPHB",
 			"rarity": "uncommon",
 			"reqAttune": "由吟游诗人",
 			"reqAttuneTags": [
@@ -37595,7 +37642,7 @@
 			"wondrous": true,
 			"weight": 2,
 			"entries": [
-				"这盏带罩提灯点燃期间，1品脱油可以供提灯燃烧6小时，提供半径30尺的明亮光照和额外30尺的微光光照。处于提灯明亮光照范围内的{@condition Invisible}生物和物件将被其显形。你可以用一个{@action 动作}降下灯罩，让提灯仅在5尺内提供微光光照。"
+				"这盏{@item 附盖提灯|PHB}点燃期间，1品脱油可以供提灯燃烧6小时，提供半径30尺的明亮光照和额外30尺的微光光照。处于提灯明亮光照范围内的{@condition 隐形}生物和物件将被其显形。你可以用一个动作降下灯罩，让提灯仅在5尺内提供微光光照。"
 			],
 			"light": [
 				{
@@ -37891,6 +37938,7 @@
 			],
 			"dmg1": "1d4",
 			"dmgType": "S",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"这条由蛇皮做成的鞭子曾被泽希尔触碰过，末端有五个活化的蛇头。",
@@ -39257,6 +39305,7 @@
 			"name": "镶嵌珠母和锆石的特制木质鲁特琴",
 			"source": "PSX",
 			"page": 24,
+			"baseItem": "鲁特琴|PHB",
 			"type": "$A|DMG",
 			"rarity": "none",
 			"value": 75000,
@@ -39331,6 +39380,7 @@
 			"name": "建筑里拉琴",
 			"source": "TCE",
 			"page": 131,
+			"baseItem": "里拉琴|PHB",
 			"type": "INS",
 			"rarity": "rare",
 			"reqAttune": "由吟游诗人",
@@ -39607,6 +39657,7 @@
 			],
 			"dmg1": "1d6",
 			"dmgType": "B",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"这把硬头锤有用黑铁打造的锤柄以及刻着恶魔般面容的红宝石锤头。它携带着阿斯蒙蒂斯的恩惠，是与九层地狱中最为强大的仆人相称的武器。",
@@ -42792,7 +42843,7 @@
 						[
 							"7-12",
 							"疗愈",
-							"{@spell 疗伤术}（2环）或 {@spell 次级复原术}"
+							"{@spell 疗伤术}（2环）或 {@spell 次等复原术}"
 						],
 						[
 							"13-16",
@@ -42823,7 +42874,7 @@
 					"印记斩",
 					"疗伤术",
 					"高等复原术",
-					"次级复原术",
+					"次等复原术",
 					"异界誓盟",
 					"御风而行"
 				]
@@ -44501,8 +44552,8 @@
 							"items": [
 								{
 									"ENG_name": "Shield",
-									"name": "盾牌",
 									"type": "item",
+									"name": "盾牌",
 									"entry": "这个盾牌现在是稀有的魔法物品，需要调谐。当你持有它时，你对所有远程武器攻击造成的伤害具有抗性。"
 								},
 								{
@@ -51007,7 +51058,7 @@
 				"item": [
 					{
 						"箭|xphb": 60,
-						"弩失|xphb": 60
+						"弩矢|xphb": 60
 					},
 					{
 						"标枪|xphb": 18
@@ -51022,7 +51073,7 @@
 				"weightless": true
 			},
 			"entries": [
-				"这个箭袋有三个大小不一的隔层，每个隔层都连接着一个异次元空间。无论其中存放着多少东西，箭袋的总重量都永远都不会超过2磅。最小的隔层可以容纳至多60支{@item 箭|XPHB|箭矢}、{@item 弩失|XPHB|弩失}或类似的物件；中等大小的隔层可以容纳至多18支{@item 标枪|XPHB|标枪}或类似的物件；最大的隔层可以容纳至多6件长条型的物件，例如弓、{@item 长棍|XPHB|长棍的}、{@item 矛|XPHB|三叉枪}等。",
+				"这个箭袋有三个大小不一的隔层，每个隔层都连接着一个异次元空间。无论其中存放着多少东西，箭袋的总重量都永远都不会超过2磅。最小的隔层可以容纳至多60支{@item 箭|XPHB|箭矢}、{@item 弩矢|XPHB|弩矢}或类似的物件；中等大小的隔层可以容纳至多18支{@item 标枪|XPHB|标枪}或类似的物件；最大的隔层可以容纳至多6件长条型的物件，例如弓、{@item 长棍|XPHB|长棍的}、{@item 矛|XPHB|三叉枪}等。",
 				"你可以如同从普通的箭袋或剑鞘中抽出物品一般抽出艾罗娜箭袋中的物品。"
 			],
 			"hasFluffImages": true,
@@ -52173,6 +52224,7 @@
 			],
 			"rarity": "legendary",
 			"reqAttune": true,
+			"grantsLanguage": true,
 			"modifySpeed": {
 				"equal": {
 					"fly": "走"
@@ -52216,8 +52268,8 @@
 							"items": [
 								{
 									"ENG_name": "Air",
-									"name": "空气",
 									"type": "item",
+									"name": "空气",
 									"entries": [
 										"你懂气族语，你对闪电伤害具有{@variantrule 抗性|XPHB}，你获得等于你的{@variantrule 飞行速度|XPHB}的{@variantrule 速度|XPHB}并且可以悬浮。"
 									]
@@ -52269,6 +52321,7 @@
 			],
 			"rarity": "legendary",
 			"reqAttune": true,
+			"grantsLanguage": true,
 			"recharge": "拂晓",
 			"rechargeAmount": "{@dice 1d4 + 1}",
 			"charges": 5,
@@ -52307,8 +52360,8 @@
 							"items": [
 								{
 									"ENG_name": "Earth",
-									"name": "土",
 									"type": "item",
+									"name": "土",
 									"entries": [
 										"你懂土族语，你对强酸伤害具有{@variantrule 抗性|XPHB}。你无视因碎石、岩石或泥土造成的{@variantrule 困难地形|XPHB}。此外，你可以在固态土地或岩石内部穿行，如同它们是{@variantrule 困难地形|XPHB}一般，且不会影响你所穿过的物质。如果你在固态土地或岩石中结束你的回合，你会被推回你先前所处的最近的未占据空间。"
 									]
@@ -52360,6 +52413,7 @@
 			],
 			"rarity": "legendary",
 			"reqAttune": true,
+			"grantsLanguage": true,
 			"recharge": "拂晓",
 			"rechargeAmount": "{@dice 1d4 + 1}",
 			"charges": 5,
@@ -52398,8 +52452,8 @@
 							"items": [
 								{
 									"ENG_name": "Fire",
-									"name": "火焰",
 									"type": "item",
+									"name": "火焰",
 									"entries": [
 										"你懂火族语，你对火焰伤害具有{@variantrule 免疫|XPHB}。"
 									]
@@ -52447,6 +52501,7 @@
 			"type": "RG|XDMG",
 			"rarity": "legendary",
 			"reqAttune": true,
+			"grantsLanguage": true,
 			"recharge": "拂晓",
 			"rechargeAmount": "{@dice 1d4 + 1}",
 			"charges": 5,
@@ -52485,8 +52540,8 @@
 							"items": [
 								{
 									"ENG_name": "Water",
-									"name": "水",
 									"type": "item",
+									"name": "水",
 									"entries": [
 										"你懂水族语，你获得60尺{@variantrule 游泳速度|XPHB}并且可以在水下呼吸。"
 									]
@@ -55934,7 +55989,7 @@
 			"wondrous": true,
 			"focus": true,
 			"entries": [
-				"这个直径1寸、被魔能符文蚀刻的红宝石可以被附着于一把{@filter 简易或军用武器|items|source=phb|category=基础|type=军用武器;简易武器}上，以将那把武器作为你施展法术的法器使用。想使这一能力得以运作，你必须将红宝石保持按压在武器上至少十分钟。附着后，除非你以一个动作将其分离或武器被摧毁，否则这颗红宝石将无法被从武器上移除，即使是连{@spell 反魔法场}也无法使其掉落。当然，与红宝石解除同调后，它也会从武器上掉下来。"
+				"这个直径1寸、被魔能符文蚀刻的红宝石可以被附着于一把{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}上，以将那把武器作为你施展法术的法器使用。想使这一能力得以运作，你必须将红宝石保持按压在武器上至少十分钟。附着后，除非你以一个动作将其分离或武器被摧毁，否则这颗红宝石将无法被从武器上移除，即使是连{@spell 反魔法场}也无法使其掉落。当然，与红宝石解除同调后，它也会从武器上掉下来。"
 			],
 			"translator": "不全书"
 		},
@@ -55999,7 +56054,7 @@
 					"name": "反应",
 					"type": "entries",
 					"entries": [
-						"作为对不利效果的反应，你可以施放{@spell 次级复原术}（消耗3个充能）或{@spell 高等复原术}（消耗12个充能）。",
+						"作为对不利效果的反应，你可以施放{@spell 次等复原术}（消耗3个充能）或{@spell 高等复原术}（消耗12个充能）。",
 						"此外，如果你是法术的唯一目标，你可以使用反应尝试使用魔杖吸收法术并取消其效果。你掷{@dice 1d20 + 2}，如果结果比法术等级+10高，法术就被吸收进魔杖。魔杖恢复等于它吸收的法术等级的充能次数。如果吸收的充能超过最大66次充能，它将过载，对你造成每充能{@damage 1d6}点暗蚀伤害，并消耗所有充能。"
 					]
 				},
@@ -56015,7 +56070,7 @@
 			"attachedSpells": {
 				"charges": {
 					"3": [
-						"次级复原术"
+						"次等复原术"
 					],
 					"12": [
 						"高等复原术"
@@ -56194,6 +56249,7 @@
 			"dmg1": "1d6",
 			"dmgType": "P",
 			"dmg2": "1d8",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"这把矛以一头远古金龙的白骨制成，雕刻着兽人对格乌什的赞美诗。",
@@ -57881,8 +57937,8 @@
 			"type": "SC|XPHB",
 			"rarity": "legendary",
 			"entries": [
-				"当你以{@action 魔法|XPHB}动作阅读此卷轴时，一个{@creature 巨像|XMM}会显现在你1里内的地面或水里的未占据空间中。",
-				"{@creature 巨像|XMM}对其他所有生物态度{@variantrule 敌对【态度】|XPHB|敌对}，并将在{@variantrule 生命值|XPHB}降至0时消失。若{@creature 巨像|XMM}被召唤到不足以容纳它的空间中，则召唤失败且卷轴被浪费。"
+				"当你以{@action 魔法|XPHB}动作阅读此卷轴时，一个{@creature 巨神兵|XMM}会显现在你1里内的地面或水里的未占据空间中。",
+				"{@creature 巨神兵|XMM}对其他所有生物态度{@variantrule 敌对【态度】|XPHB|敌对}，并将在{@variantrule 生命值|XPHB}降至0时消失。若{@creature 巨神兵|XMM}被召唤到不足以容纳它的空间中，则召唤失败且卷轴被浪费。"
 			],
 			"miscTags": [
 				"CNS"
@@ -59611,6 +59667,7 @@
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"modifySpeed": {
 				"equal": {
@@ -60154,6 +60211,7 @@
 			"name": "塞壬之歌里拉琴",
 			"source": "MOT",
 			"page": 198,
+			"baseItem": "里拉琴|PHB",
 			"type": "INS",
 			"rarity": "rare",
 			"reqAttune": true,
@@ -63875,7 +63933,7 @@
 			"charges": 10,
 			"staff": true,
 			"entries": [
-				"这把法杖有10发充能。持握法杖期间，你可以用一个动作并消耗1发或更多充能以施展以下法术之一（使用你自身的法术豁免DC和施法属性调整值）：{@spell 疗伤术}（每环1发充能，至多4环）、{@spell 次级复原术}（2充能）或{@spell 群体疗伤术}（5充能）。",
+				"这把法杖有10发充能。持握法杖期间，你可以用一个动作并消耗1发或更多充能以施展以下法术之一（使用你自身的法术豁免DC和施法属性调整值）：{@spell 疗伤术}（每环1发充能，至多4环）、{@spell 次等复原术}（2充能）或{@spell 群体疗伤术}（5充能）。",
 				"该法杖每天黎明时恢复{@dice 1d6 + 4}发已消耗的充能。如果你消耗了最后一发充能，骰一次{@dice d20}。如果骰值为1，法杖将在一阵闪光中消失，永远失去。"
 			],
 			"attachedSpells": {
@@ -63884,7 +63942,7 @@
 						"疗伤术"
 					],
 					"2": [
-						"次级复原术"
+						"次等复原术"
 					],
 					"5": [
 						"群体疗伤术"
@@ -63950,7 +64008,7 @@
 							"每法术等级1次充能（4环法术最多4次充能）"
 						],
 						[
-							"{@spell 次级复原术|XPHB}",
+							"{@spell 次等复原术|XPHB}",
 							"2"
 						],
 						[
@@ -63974,7 +64032,7 @@
 				],
 				"charges": {
 					"2": [
-						"次级复原术|xphb"
+						"次等复原术|xphb"
 					],
 					"5": [
 						"群体疗伤术|xphb"
@@ -65392,7 +65450,8 @@
 			"lootTables": [
 				"圣物 - 珍稀|XDMG"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Staff of Thunder and Lightning",
@@ -65466,75 +65525,76 @@
 		},
 		{
 			"ENG_name": "Staff of Thunder and Lightning",
-			"name": "雷霆法杖",
-			"source": "XDMG",
-			"page": 311,
-			"srd52": true,
 			"basicRules2024": true,
-			"type": "M|XPHB",
-			"rarity": "very rare",
-			"reqAttune": true,
-			"weight": 4,
-			"weaponCategory": "简易",
-			"property": [
-				"V|XPHB"
-			],
-			"mastery": [
-				"失衡|XPHB"
-			],
-			"dmg1": "1d6",
-			"dmgType": "B",
-			"dmg2": "1d8",
 			"bonusWeapon": "+2",
-			"staff": true,
+			"dmg1": "1d6",
+			"dmg2": "1d8",
+			"dmgType": "B",
 			"entries": [
 				"这根法杖可被用作一根魔法长棍（用这根长棍发动的攻击检定和伤害掷骰获得+2加值）。它具有以下额外词条。其中的某项词条一经使用，直至次日黎明前你都无法再次使用。",
 				{
 					"ENG_name": "Lightning",
-					"name": "闪电",
-					"type": "entries",
 					"entries": [
 						"当你用法杖发动近战攻击并命中时，你可以对目标造成额外{@damage 2d6}点闪电伤害（无需动作）。"
-					]
+					],
+					"name": "电闪",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Thunder",
-					"name": "雷鸣",
-					"type": "entries",
 					"entries": [
 						"当你用法杖发动近战攻击并命中时，你可以让法杖爆发出距你300尺内都能听见的雷霆巨响（无需动作）。被你击中的目标必须通过一次{@dc 17}的体质豁免，否则陷入{@condition 震慑|XPHB}状态，持续至你的下个回合结束。"
-					]
+					],
+					"name": "雷鸣",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Thunder and Lightning",
-					"name": "雷霆闪电",
-					"type": "entries",
 					"entries": [
 						"当你用法杖发动近战攻击并命中时，你可以立刻执行{@variantrule 附赠动作|XPHB}来同时使用电闪和雷鸣词条（见上文）。这样做只会消耗雷霆词条的使用次数，而不会消耗电闪或雷鸣的使用次数。"
-					]
+					],
+					"name": "雷霆",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Lightning Strike",
-					"name": "闪电打击",
-					"type": "entries",
 					"entries": [
 						"你可以执行{@action 魔法|XPHB}动作，让法杖从尖端射出一道覆盖宽5尺，长120尺线状区域的{@variantrule 线状 [效应区域]|XPHB|线状}闪电束。所有在该{@variantrule 线状 [效应区域]|XPHB|线状}区域内的生物都需要进行{@dc 17}的敏捷豁免，豁免失败则其受到{@damage 9d6}闪电伤害，豁免成功则伤害减半。"
-					]
+					],
+					"name": "闪电打击",
+					"type": "entries"
 				},
 				{
 					"ENG_name": "Thunderclap",
-					"name": "鸣雷破",
-					"type": "entries",
 					"entries": [
 						"你可以执行{@action 魔法|XPHB}动作，让法杖制造一记在你600尺内都能听见的惊雷声响。以你为源点60尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内的所有生物都需要进行{@dc 17}的体质豁免。豁免失败则其受到{@damage 2d6}雷鸣伤害并陷入{@condition 耳聋|XPHB}状态，持续1分钟；豁免成功则仅受半伤。"
-					]
+					],
+					"name": "惊雷",
+					"type": "entries"
 				}
 			],
+			"hasFluffImages": true,
 			"lootTables": [
 				"奥秘 - 极珍稀|XDMG",
 				"圣物 - 极珍稀|XDMG"
 			],
-			"hasFluffImages": true
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"name": "雷霆法杖",
+			"page": 311,
+			"property": [
+				"V|XPHB"
+			],
+			"rarity": "very rare",
+			"reqAttune": true,
+			"source": "XDMG",
+			"srd52": true,
+			"staff": true,
+			"type": "M|XPHB",
+			"weaponCategory": "简易",
+			"weight": 4,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Staff of Withering",
@@ -66131,7 +66191,7 @@
 		},
 		{
 			"ENG_name": "Stone of Good Luck",
-			"name": "幸运石",
+			"name": "吉运之石",
 			"alias": [
 				"幸运石"
 			],
@@ -66139,7 +66199,7 @@
 			"page": 205,
 			"srd": true,
 			"reprintedAs": [
-				"幸运石|XDMG"
+				"吉运之石|XDMG"
 			],
 			"tier": "主要",
 			"rarity": "uncommon",
@@ -66157,7 +66217,7 @@
 		},
 		{
 			"ENG_name": "Stone of Good Luck",
-			"name": "幸运石",
+			"name": "吉运之石",
 			"alias": [
 				"幸运石"
 			],
@@ -66176,7 +66236,8 @@
 			"lootTables": [
 				"器具 - 非普通|XDMG"
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Stone of Ill Luck",
@@ -66191,7 +66252,7 @@
 			"bonusSavingThrow": "-2",
 			"bonusAbilityCheck": "-2",
 			"entries": [
-				"这块打磨过的玛瑙对任何试图鉴定它的人来说都看似一个{@item 幸运石}，并且当你携带它时，它会赋予该物品的属性。",
+				"这块打磨过的玛瑙对任何试图鉴定它的人来说都看似一个{@item 吉运之石}，并且当你携带它时，它会赋予该物品的属性。",
 				{
 					"ENG_name": "Curse",
 					"name": "诅咒",
@@ -66604,7 +66665,7 @@
 				},
 				{
 					"ENG_name": "Sunlight",
-					"name": "阳光",
+					"name": "耀阳",
 					"type": "entries",
 					"entries": [
 						"阳炎剑闪耀的剑刃会散发出15尺的{@variantrule 明亮光照|XPHB}和额外15尺{@variantrule 微光光照|XPHB}。这一光照视为日光。剑刃展开期间，你能够以一个{@action 魔法|XPHB}动作使{@variantrule 明亮光照|XPHB}与{@variantrule 微光光照|XPHB}半径各扩大或缩小5尺。光照范围上限为明亮和微光区域各30尺，下限为各10尺。"
@@ -67454,6 +67515,7 @@
 					"cha": 20
 				}
 			},
+			"grantsLanguage": true,
 			"entries": [
 				"此长剑在天使扎瑞尔堕落之前属于她，该剑由天界钢制成，它发出微弱的光芒和嗡嗡的声音。由这件武器选择谁能与之同调，谁不能。它渴望持有者能体现出勇敢和英雄主义。",
 				{
@@ -67822,8 +67884,8 @@
 				"这枚护符是良善的象征。触碰护符的亡灵或邪魔生物将受到{@damage 8d6}光耀伤害，每当该生物持握或携带此护符结束其回合时，将再次受到此伤害。",
 				{
 					"ENG_name": "Holy Symbol",
-					"name": "圣徽",
 					"type": "entries",
+					"name": "圣徽",
 					"entries": [
 						"你可以将护符当作圣徽使用。着装或持握护符期间，你进行的法术攻击检定获得+2加值。"
 					]
@@ -67939,8 +68001,8 @@
 				"这枚护符是至恶的象征。触碰护符的非亡灵非邪魔生物将受到{@damage 8d6}暗蚀伤害，每当该生物持握或携带此护符结束其回合时，将再次受到此伤害。",
 				{
 					"ENG_name": "Holy Symbol",
-					"name": "圣徽",
 					"type": "entries",
+					"name": "圣徽",
 					"entries": [
 						"你可以将护符当作圣徽使用。着装或持握护符期间，你进行的法术攻击检定获得+2加值。"
 					]
@@ -68627,6 +68689,7 @@
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"承载着班恩之力，这把精金钉头锤有着足一英尺长的尖刺，柄端还有一片锯齿状的刀刃。",
@@ -69124,7 +69187,7 @@
 						[
 							"55",
 							"作为附赠动作，你可以选择一个在你10尺范围内的生物，并知道一个关于它的秘闻，由DM决定。",
-							"{@spell 移除诅咒}、{@spell 次级复原术}和{@spell 高等复原术}法术对你无效。"
+							"{@spell 移除诅咒}、{@spell 次等复原术}和{@spell 高等复原术}法术对你无效。"
 						],
 						[
 							"56",
@@ -69733,7 +69796,7 @@
 					"name": "雷霆霹雳",
 					"type": "entries",
 					"entries": [
-						"以一个{@action Magic|XPHB}动作，你可以使用这把武器击打一处坚硬表面，制造出在300尺内都能听见的雷鸣般巨响。并且，你制造出一个30尺{@variantrule Cone [Area of Effect]|XPHB|Cone}的雷霆能量区域。{@variantrule Cone [Area of Effect]|XPHB|Cone}区域内的每个生物都必须成功通过一次{@dc 15}的力量豁免，豁免失败则其陷入{@condition Prone|XPHB}状态。{@condition Prone|XPHB}区域内未被穿着或携带的非魔法物件会受到{@damage 3d8}雷鸣伤害。"
+						"以一个{@action 魔法|XPHB}动作，你可以使用这把武器击打一处坚硬表面，制造出在300尺内都能听见的雷鸣般巨响。并且，你制造出一个30尺{@variantrule 锥状 [效应区域]|XPHB|锥状}的雷霆能量区域。{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内的每个生物都必须成功通过一次{@dc 15}的力量豁免，豁免失败则其陷入{@condition 倒地|XPHB}状态。{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内未被穿着或携带的非魔法物件会受到{@damage 3d8}雷鸣伤害。"
 					]
 				},
 				{
@@ -75332,6 +75395,8 @@
 			"name": "勇气战争号角",
 			"source": "BGG",
 			"page": 117,
+			"baseItem": "号角|PHB",
+			"type": "INS",
 			"rarity": "rare",
 			"wondrous": true,
 			"bonusAc": "+1",
@@ -76631,6 +76696,7 @@
 			],
 			"dmg1": "1d8",
 			"dmgType": "P",
+			"grantsLanguage": true,
 			"bonusWeapon": "+1",
 			"entries": [
 				"黑、蓝、绿、红和白色的宝石被雕刻成了龙首之形，装点在这华丽的黄金战镐上，标志着这把武器引导着提亚马特之力。",
@@ -77387,7 +77453,7 @@
 							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item 短棒|XPHB}, {@item 巨棒|XPHB}, {@item 长棍|XPHB}, 远程武器（除了 {@item 手枪|XPHB}, {@item 滑膛枪|XPHB}, 和{@item 投石索|XPHB}）, {@item 奥术法器|XPHB}, {@item 箭矢 (20)|XPHB|箭矢}, {@item 弩矢（20支）|XPHB|弩失}, {@item 德鲁伊法器|XPHB}, {@item 墨水笔|XPHB}, {@item 吹矢（50）|XPHB|针刺}"
+								"{@item 短棒|XPHB}, {@item 巨棒|XPHB}, {@item 长棍|XPHB}, 远程武器（除了 {@item 手枪|XPHB}, {@item 滑膛枪|XPHB}, 和{@item 投石索|XPHB}）, {@item 奥术法器|XPHB}, {@item 箭矢 (20)|XPHB|箭矢}, {@item 弩矢（20支）|XPHB|弩矢}, {@item 德鲁伊法器|XPHB}, {@item 墨水笔|XPHB}, {@item 吹矢（50）|XPHB|针刺}"
 							]
 						}
 					]
@@ -78679,7 +78745,7 @@
 			"rarity": "very rare",
 			"wondrous": true,
 			"items": [
-				"飞天魔毯，3尺x5尺",
+				"飞毯（3尺×5尺）",
 				"飞天魔毯，4尺x6尺",
 				"飞天魔毯，5尺x7尺",
 				"飞天魔毯，6尺x9尺"
@@ -78718,7 +78784,7 @@
 					"rows": [
 						[
 							"01-20",
-							"{@item 飞天魔毯，3尺x5尺|XDMG}",
+							"{@item 飞毯（3尺×5尺）|XDMG}",
 							"200 磅",
 							"80尺"
 						],
@@ -78744,7 +78810,7 @@
 				}
 			],
 			"items": [
-				"飞天魔毯，3尺x5尺|XDMG",
+				"飞毯（3尺×5尺）|XDMG",
 				"飞天魔毯，4尺x6尺|XDMG",
 				"飞天魔毯，5尺x7尺|XDMG",
 				"飞天魔毯，6尺x9尺|XDMG"
@@ -81602,7 +81668,7 @@
 						],
 						[
 							"31-45",
-							"{@item 召唤泰坦卷轴（巨像）|XDMG|巨像}"
+							"{@item 召唤泰坦卷轴（巨像）|XDMG|巨神兵}"
 						],
 						[
 							"46-60",

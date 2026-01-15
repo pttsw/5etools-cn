@@ -58,7 +58,7 @@
 			"actionEntries": [
 				{
 					"ENG_name": "Bolt",
-					"name": "弩失",
+					"name": "弩矢",
 					"type": "actions",
 					"entries": [
 						{
@@ -103,7 +103,8 @@
 					]
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Boilerdrak",
@@ -353,7 +354,7 @@
 			"actionEntries": [
 				{
 					"ENG_name": "Activate Cannon (Requires You to be within 60 Feet of the Cannon)",
-					"name": "启动火炮（需要你在火炮60尺内）",
+					"name": "激活火炮（需位于火炮60尺范围内）",
 					"type": "entries",
 					"entries": [
 						"作为{@variantrule 附赠动作|XPHB}，你命令魔能炮台使用下方的投火机、力场弩炮或防御者选项；你可以在该选项之前或之后命令魔能炮台移动最多15尺：",
@@ -364,7 +365,7 @@
 							"items": [
 								{
 									"ENG_name": "Flamethrower",
-									"name": "投火机",
+									"name": "烈焰喷射",
 									"type": "item",
 									"entries": [
 										"该火炮向15尺的{@variantrule 锥状 [效应区域]|XPHB|锥状}区域喷射火焰。该区域内的每个生物需进行对抗{@dcYourSpellSave}的敏捷豁免检定，豁免失败则受到{@damage 2d8}火焰伤害，豁免成功则受到一半伤害。{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内未被穿着或携带的可燃物件开始燃烧。"
@@ -440,7 +441,7 @@
 			"actionEntries": [
 				{
 					"ENG_name": "Flamethrower",
-					"name": "投火机",
+					"name": "烈焰喷射",
 					"type": "entries",
 					"entries": [
 						"炮台向着你指定方向的15尺锥形范围内发射火焰。该区域内的每个生物必须进行一次敏捷豁免，对抗你的法术豁免DC。如果豁免失败将受到{@damage 2d8}火焰伤害，成功时只受一半伤害。火焰会点燃该区域内任何未被穿戴或携带的易燃物。"
@@ -632,7 +633,7 @@
 			"actionEntries": [
 				{
 					"ENG_name": "Flamethrower",
-					"name": "投火机",
+					"name": "烈焰喷射",
 					"type": "entries",
 					"entries": [
 						"{@actSave dex}：{@dc 15}，60尺长、5尺宽的{@variantrule 线状 [效应区域]|XPHB|线状}区域内的所有生物。{@actSaveFail}：14（{@damage 4d6}）火焰伤害，且该生物开始燃烧。 {@actSaveSuccess}：半伤。"
@@ -973,7 +974,7 @@
 		},
 		{
 			"ENG_name": "Keg Launcher",
-			"name": "桶发射器",
+			"name": "毒桶抛掷器",
 			"source": "XDMG",
 			"page": 96,
 			"size": [
@@ -1160,7 +1161,7 @@
 			"actionEntries": [
 				{
 					"ENG_name": "Ram (Requires Position)",
-					"name": "角撞（需要定位）",
+					"name": "攻城槌（需要校准）",
 					"type": "entries",
 					"entries": [
 						"{@atkr m}：{@hit 8}，触及5尺。{@h}：16（{@damage 3d10}）钝击伤害。"
