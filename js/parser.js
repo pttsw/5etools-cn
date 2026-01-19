@@ -1599,7 +1599,7 @@ Parser.spRangeToFull._renderPoint = function (range) {
 	}
 };
 Parser.spRangeToFull._renderArea = function ({range, styleHint, isDisplaySelfArea = false}) {
-	if (styleHint !== "classic" && !isDisplaySelfArea) return "Self";
+	if (styleHint !== "classic" && !isDisplaySelfArea) return "自身";
 	const size = range.distance;
 	return `自身 (${size.amount}-${Parser.getSingletonUnit(size.type)}${Parser.spRangeToFull._getAreaStyleString(range)}${range.type === Parser.RNG_CYLINDER ? `${size.amountSecondary != null && size.typeSecondary != null ? `, ${size.amountSecondary}-${Parser.getSingletonUnit(size.typeSecondary)}-高` : ""} 圆柱体` : ""})`;
 };

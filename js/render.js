@@ -12482,7 +12482,7 @@ Renderer.item = class {
 			Renderer.item._initFullEntries(specificVariant);
 			specificVariant._fullEntries.unshift({
 				type: "wrapper",
-				wrapped: `{@note The {@item ${baseItem.name}|${baseItem.source}|base item} can be found in ${Parser.sourceJsonToFull(baseItem.source)}${baseItem.page ? `, page ${baseItem.page}` : ""}.}`,
+				wrapped: `{@note 此武器的{@item ${baseItem.name}|${baseItem.source}|基础版本}请查阅《${Parser.sourceJsonToFull(baseItem.source)}》${baseItem.page ? `第${baseItem.page}页` : ""}。}`,
 				data: {
 					[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "note",
 				},

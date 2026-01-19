@@ -240,7 +240,7 @@ export class GetBrewUi {
 			<button class="ve-col-1-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">分类</button>
 			<button class="ve-col-1-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="modified">修改时间</button>
 			${btnSortAddedPublished}
-			<button class="sort ve-btn ve-btn-default ve-btn-xs ve-grow" disabled>来源</button>
+			<button class="sort ve-col-1 ve-btn ve-btn-default ve-btn-xs ve-grow" disabled>来源</button>
 		</div>`;
 
 		ee(wrp)`
