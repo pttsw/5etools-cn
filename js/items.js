@@ -371,7 +371,7 @@ class ItemsPage extends ListPage {
 							e_({
 								tag: "span",
 								clazz: `ve-col-1-4 ve-text-center ${item.rarity ? `itm__rarity-${item.rarity}` : ""}`,
-								title: Parser.RARITIES_TO_CN[item.rarity || ""] || (item.rarity || "").toTitleCase(),
+								title: Parser.rarityToCN(item.rarity) || (item.rarity || "").toTitleCase(),
 								text: Parser.itemRarityToShort(item.rarity) || "",
 							}),
 							e_({
@@ -395,7 +395,7 @@ class ItemsPage extends ListPage {
 					...ListItem.getCommonValues(item),
 					type,
 					rarity: item.rarity,
-					CN_rarity: Parser.RARITIES_TO_CN[item.rarity] || item.rarity,
+					CN_rarity: Parser.rarityToCN(item.rarity) || item.rarity,
 					attunement: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT,
 					weight: Parser.weightValueToNumber(item.weight),
 					ENG_name: item.ENG_name,
@@ -415,7 +415,7 @@ class ItemsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	_tabTitleStats = "Item";
+	_tabTitleStats = "物品";
 
 	_renderStats_doBuildStatsTab ({ent}) {
 		this._pgContent.empty().appends(RenderItems.getRenderedItem(ent));

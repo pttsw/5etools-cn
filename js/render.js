@@ -11738,8 +11738,8 @@ Renderer.item = class {
 		const entrySubtype = (item._entrySubType || "")[fnTransform]();
 
 		const typeRarity = [
-			item._entryType === "other" ? "" : entryType,
-			(item.rarity && Renderer.item.doRenderRarity(item.rarity) ? (item.rarity)[fnTransform]() : ""),
+			item._entryType === "other" || item._entryType === "其他" ? "" : entryType,
+			Parser.rarityToCN(item.rarity ?? "") ?? (item.rarity && Renderer.item.doRenderRarity(item.rarity) ? (item.rarity)[fnTransform]() : ""),
 		]
 			.filter(Boolean)
 			.join(", ");

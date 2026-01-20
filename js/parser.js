@@ -2495,7 +2495,7 @@ Parser.RARITIES_TO_CN = {
 };
 
 Parser.rarityToCN = function (rarity) {
-	return Parser._parse_aToB(Parser.RARITIES_TO_CN, rarity) || rarity;
+	return Parser._parse_aToB(Parser.RARITIES_TO_CN, rarity.toLowerCase()) || rarity;
 };
 Parser.CAT_ID_CREATURE = 1;
 Parser.CAT_ID_SPELL = 2;
