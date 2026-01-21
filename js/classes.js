@@ -1516,7 +1516,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		this.filterBox.on(FILTER_BOX_EVNT_VALCHANGE, () => hkUpdateBtnFeatureVariants());
 		hkUpdateBtnFeatureVariants();
 
-		const $btnToggleFluff = ComponentUiUtil.$getBtnBool(this, "isShowFluff", {text: "简介"}).title("切换职业信息");
+		const $btnToggleFluff = ComponentUiUtil.$getBtnBool(this, "isShowFluff", {text: "简介"}).title("切换职业描述");
 
 		$$`<div class="ve-flex-v-center m-1 ve-btn-group mr-3 no-shrink">${$btnToggleFeatures}${$btnToggleFeatureVariants}${$btnToggleFluff}</div>`.appendTo($wrp);
 		// endregion
@@ -2340,7 +2340,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 	}
 
 	static _render_$getTrNoContent () {
-		return $(`<tr class="cls-main__msg-no-content"><td colspan="6">切换任一按钮来查看职业和子职信息</td></tr>`);
+		return $(`<tr class="cls-main__msg-no-content"><td colspan="6">切换任一按钮来查看职业和子职描述</td></tr>`);
 	}
 
 	_getDefaultState () { return MiscUtil.copyFast(ClassesPage._DEFAULT_STATE); }
@@ -2734,7 +2734,7 @@ ClassesPage.ClassBookView = class extends BookModeViewBase {
 			.onn("click", () => {
 				this._parent.set("isHideFeatures", !this._parent.get("isHideFeatures"));
 			});
-		const btnToggleInfo = ee`<span class="cls-bkmv__btn-tab">信息</span>`
+		const btnToggleInfo = ee`<span class="cls-bkmv__btn-tab">描述</span>`
 			.onn("click", () => {
 				this._parent.set("isShowFluff", !this._parent.get("isShowFluff"));
 			});

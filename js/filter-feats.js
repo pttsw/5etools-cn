@@ -49,6 +49,8 @@ class PageFilterFeats extends PageFilterBase {
 					case "Special": return "特殊";
 					case "Feature": return "特性";
 					case "Species": return "种族";
+					case "ExclusiveFeatCategory": return "同类专长中唯一"
+					case "FeatCategory": return "同类专长"
 					default: return tag;
 				}
 			},

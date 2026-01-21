@@ -96,7 +96,7 @@ export class LegendaryGroupBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "描述", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "巢穴动作", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "区域效应", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "神话遭遇", hasBorder: true}),

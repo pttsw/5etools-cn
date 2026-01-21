@@ -119,7 +119,7 @@ class LanguagesPage extends ListPage {
 	_renderStats_getTabMetasAdditional ({ent}) {
 		return [
 			new Renderer.utils.TabButton({
-				label: "Fonts",
+				label: "字体",
 				fnPopulate: () => {
 					this._pgContent.empty().appends(Renderer.utils.getBorderTr());
 					this._pgContent.appends(Renderer.utils.getNameTr(ent));
@@ -190,11 +190,11 @@ class LanguagesPage extends ListPage {
 
 					ee`<div class="ve-flex-col w-100">
 						${styleFont}
-						${selFont ? ee`<label class="ve-flex-v-center mb-2"><div class="mr-2">Font:</div>${selFont}</div>` : ""}
+						${selFont ? ee`<label class="ve-flex-v-center mb-2"><div class="mr-2">字体:</div>${selFont}</div>` : ""}
 						${iptSample}
 						${ptOutput}
 						<hr class="hr-4">
-						<h5 class="mb-2 mt-0">Downloads</h5>
+						<h5 class="mb-2 mt-0">下载</h5>
 						<ul class="pl-5 mb-0">
 							${allFonts.map(f => `<li><a href="${f}" target="_blank">${f.split("/").last()}</a></li>`).join("")}
 						</ul>

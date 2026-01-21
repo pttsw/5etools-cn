@@ -21,11 +21,11 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 		if (typeof lvlMeta === "number") {
 			return new FilterItem({
 				item: `${lvlMeta} 级`,
-				nest: `(No Class)`,
+				nest: `(任意职业)`,
 			});
 		}
 
-		const className = lvlMeta.class ? lvlMeta.class.name : `(No Class)`;
+		const className = lvlMeta.class ? lvlMeta.class.name : `(任意职业)`;
 		return new FilterItem({
 			item: `${lvlMeta.class ? className : ""}${lvlMeta.subclass ? ` (${lvlMeta.subclass.name})` : ""} ${lvlMeta.level} 级`,
 			nest: className,
@@ -150,7 +150,7 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 									}
 								})
 								.join(" ");
-							return `Any ${ptChoose}`;
+							return `任意 ${ptChoose}`;
 						});
 				});
 			ent._fPrereqLevel = ent.prerequisite.filter(it => it.level).map(PageFilterOptionalFeatures.getLevelFilterItem.bind(PageFilterOptionalFeatures));

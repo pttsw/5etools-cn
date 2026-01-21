@@ -158,7 +158,7 @@ export class PageFilterBase {
 		if (this.isReprinted(ent)) ent._fMisc.push("重印");
 
 		if (ent.tokenCustom) ent._fMisc.push("有自定义/非官方Token");
-		if (ent.tokenCredit) ent._fMisc.push("有Token作者");
+		if (ent.tokenCredit) ent._fMisc.push("有Token画师");
 	}
 	// endregion
 }

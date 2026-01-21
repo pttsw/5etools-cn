@@ -1972,8 +1972,8 @@ Parser._getFullImmRes_getRenderedArray = (values, {isPlainText = false, isTitleC
 
 			if (!isSimpleCur || !isSimpleNxt) return `${rendCur}; `;
 			if (!isGroup || i !== arr.length - 2 || arr.length < 2) return `${rendCur}, `;
-			if (arr.length === 2) return `${rendCur} and `;
-			return `${rendCur}, and `;
+			if (arr.length === 2) return `${rendCur} 和 `;
+			return `${rendCur}, 和 `;
 		})
 		.join("");
 };
@@ -4531,10 +4531,10 @@ Parser.getPropDisplayName = function (prop, {suffix = ""} = {}) {
 	if (Parser.PROP_TO_DISPLAY_NAME[prop]) return `${Parser.PROP_TO_DISPLAY_NAME[prop]}${suffix}`;
 
 	const mFluff = /Fluff$/.exec(prop);
-	if (mFluff) return Parser.getPropDisplayName(prop.slice(0, -mFluff[0].length), {suffix: " Fluff"});
+	if (mFluff) return Parser.getPropDisplayName(prop.slice(0, -mFluff[0].length), {suffix: "描述"});
 
 	const mFoundry = /^foundry(?<prop>[A-Z].*)$/.exec(prop);
-	if (mFoundry) return Parser.getPropDisplayName(mFoundry.groups.prop.lowercaseFirst(), {suffix: " Foundry Data"});
+	if (mFoundry) return Parser.getPropDisplayName(mFoundry.groups.prop.lowercaseFirst(), {suffix: " Foundry 数据"});
 
 	return `${prop.split(/([A-Z][a-z]+)/g).filter(Boolean).join(" ").uppercaseFirst()}${suffix}`;
 };

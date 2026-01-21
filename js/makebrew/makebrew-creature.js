@@ -447,7 +447,7 @@ export class CreatureBuilder extends BuilderBase {
 
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "描述", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "物种", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "核心", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "防御", hasBorder: true}),

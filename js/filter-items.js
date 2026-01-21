@@ -10,8 +10,8 @@ class PageFilterEquipment extends PageFilterBase {
 		"重置",
 		"潜在劣势",
 		"需要力量",
-		"Emits Light, Bright",
-		"Emits Light, Dim",
+		"发光：明亮",
+		"发光：微弱",
 	];
 
 	static _RE_FOUNDRY_ATTR = /(?:[-+*/]\s*)?@[a-z0-9.]+/gi;
@@ -79,7 +79,7 @@ class PageFilterEquipment extends PageFilterBase {
 			labelDisplayFn: it => !it ? "None" : Parser.getDisplayCurrency(CurrencyUtil.doSimplifyCoins({cp: it})),
 		});
 		this._weightFilter = new RangeFilter({header: "Weight", cnHeader: "重量", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
-		this._focusFilter = new Filter({header: "Spellcasting Focus", cnHeader: "法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
+		this._focusFilter = new Filter({header: "Spellcasting Focus", cnHeader: "法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES], displayFn: it => Parser.CLASSES_TO_CN[it] ?? it});
 		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", cnHeader: "武器伤害类型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a.item), Parser.dmgTypeToFull(b.item))});
 		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", cnHeader: "武器伤害骰", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
 		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader: "护甲类型", displayFn: it => it === 0 ? "None" : it});
@@ -142,8 +142,8 @@ class PageFilterEquipment extends PageFilterBase {
 		if (item.miscTags) item._fMisc.push(...item.miscTags.map(Parser.itemMiscTagToFull));
 		if (item.stealth) item._fMisc.push("潜在劣势");
 		if (item.strength != null) item._fMisc.push("需要力量");
-		if (item.light?.some(l => l.bright)) item._fMisc.push("Emits Light, Bright");
-		if (item.light?.some(l => l.dim)) item._fMisc.push("Emits Light, Dim");
+		if (item.light?.some(l => l.bright)) item._fMisc.push("发光：明亮");
+		if (item.light?.some(l => l.dim)) item._fMisc.push("发光：微弱");
 
 		const itemTypeAbv = item.type ? DataUtil.itemType.unpackUid(item.type).abbreviation : null;
 		if (item.focus || item.name === "Thieves' Tools" || itemTypeAbv === Parser.ITM_TYP_ABV__INSTRUMENT || itemTypeAbv === Parser.ITM_TYP_ABV__SPELLCASTING_FOCUS || itemTypeAbv === Parser.ITM_TYP_ABV__ARTISAN_TOOL) {

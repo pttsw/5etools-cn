@@ -9,7 +9,7 @@ class PageFilterLanguages extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
-			items: ["Has Fonts", "传奇", "有图片", "有简介"],
+			items: ["有字体", "传奇", "有图片", "有简介"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});
@@ -18,7 +18,7 @@ class PageFilterLanguages extends PageFilterBase {
 	static mutateForFilters (it) {
 		this._mutateForFilters_commonSources(it);
 		this._mutateForFilters_commonMisc(it);
-		if (it.fonts || it._fonts) it._fMisc.push("Has Fonts");
+		if (it.fonts || it._fonts) it._fMisc.push("有字体");
 	}
 
 	addToFilters (it, isExcluded) {

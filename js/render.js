@@ -4071,7 +4071,7 @@ Renderer.utils = class {
 
 			const ptTypes = v.map(featCategory => Parser.featCategoryToFull(featCategory))
 				.joinConjunct(", ", " 或 ");
-			return `不能获得另一个 ${ptTypes} 专长`;
+			return `不具有其他 ${ptTypes} 专长`;
 		}
 
 		static _getHtml_optionalfeature ({v, isListMode, keyOptions, isTextOnly, styleHint}) {
@@ -4348,7 +4348,7 @@ Renderer.utils = class {
 		static _getHtml_campaign ({v, isListMode}) {
 			return isListMode
 				? v.join("/")
-				: `${v.joinConjunct(", ", " 或 ")} 战役}`;
+				: `${v.joinConjunct(", ", " 或 ")} 战役`;
 		}
 
 		static _getHtml_culture ({v, isListMode}) {

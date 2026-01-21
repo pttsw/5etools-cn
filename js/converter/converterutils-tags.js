@@ -43,6 +43,7 @@ export class TaggerUtils {
 		"侦测毒性与疾病": "侦测毒性和疾病",
 		"人类定身术": "定身类人",
 		"水中呼吸": "水下呼吸",
+		"魅惑人类": "魅惑类人"
 	};
 
 	static findSpell ({name, source}) {

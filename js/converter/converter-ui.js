@@ -293,7 +293,7 @@ export class ConverterUi extends BaseComponent {
 				if (
 					isAppend
 					&& !this._state.hasAppended
-					&& !await InputUiUtil.pGetUserBoolean({title: "Are you Sure?", htmlDescription: "You're about to overwrite multiple entries. 你确定吗？", textYes: "是的", textNo: "取消"})
+					&& !await InputUiUtil.pGetUserBoolean({title: "确定要这么做吗？", htmlDescription: "此操作可能会覆盖多个条目，你确定要这么做吗？", textYes: "是的", textNo: "取消"})
 				) return;
 
 				const chunks = (this._state.inputSeparator

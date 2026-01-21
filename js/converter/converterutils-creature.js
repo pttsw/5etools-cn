@@ -2120,7 +2120,10 @@ export class SpellcastingTraitConvert {
 			str = str.substring(0, ixAsterisk);
 		}
 
-		const ixParenOpen = str.indexOf(" (") || str.indexOf("（");
+		let ixParenOpen = str.indexOf(" (");
+		if (ixParenOpen === -1) {
+			ixParenOpen = str.indexOf("（")
+		}
 		if (~ixParenOpen) {
 			ptsSuffix.unshift(str.substring(ixParenOpen).trim());
 			str = str.substring(0, ixParenOpen);

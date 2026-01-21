@@ -58,7 +58,7 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 			const rdState = new this._RenderState();
 			const {eleModalInner} = UiUtil.getShowModal({
 				isHeight100: true,
-				title: isReadOnly ? `View Document Contents` : `Manage Document Contents`,
+				title: isReadOnly ? `查看文件内容` : `管理文件内容`,
 				isUncappedHeight: true,
 				isWidth100: true,
 				eleTitleSplit: isReadOnly
@@ -181,9 +181,9 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 		rdState = rdState || new this.constructor._RenderState();
 
 		const iptTabMetas = [
-			new TabUiUtil.TabMeta({name: "Entities", hasBorder: true}),
-			new TabUiUtil.TabMeta({name: "Metadata", hasBorder: true}),
-			new TabUiUtil.TabMeta({name: "Sources", hasBorder: true}),
+			new TabUiUtil.TabMeta({name: "条目", hasBorder: true}),
+			new TabUiUtil.TabMeta({name: "源数据", hasBorder: true}),
+			new TabUiUtil.TabMeta({name: "来源", hasBorder: true}),
 		];
 
 		const tabMetas = this._renderTabs(iptTabMetas, {eleParent: wrp});
@@ -198,9 +198,9 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 	}
 
 	_pRender_tabEntities ({tabMeta, rdState}) {
-		const btnFilter = ee`<button class="ve-btn ve-btn-default">Filter</button>`;
+		const btnFilter = ee`<button class="ve-btn ve-btn-default">筛选</button>`;
 
-		const btnToggleSummaryHidden = ee`<button class="ve-btn ve-btn-default" title="Toggle Filter Summary Display"><span class="glyphicon glyphicon-resize-small"></span></button>`;
+		const btnToggleSummaryHidden = ee`<button class="ve-btn ve-btn-default" title="切换筛选摘要显示"><span class="glyphicon glyphicon-resize-small"></span></button>`;
 
 		const btnReset = ee`<button class="ve-btn ve-btn-default">重置</button>`;
 
@@ -208,13 +208,13 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 
 		const cbAll = this._isReadOnly ? null : ee`<input type="checkbox">`;
 		const wrpRows = ee`<div class="list ve-flex-col w-100 max-h-unset"></div>`;
-		const iptSearch = ee`<input type="search" class="search manbrew__search form-control w-100 lst__search lst__search--no-border-h" placeholder="Search entries...">`;
+		const iptSearch = ee`<input type="search" class="search manbrew__search form-control w-100 lst__search lst__search--no-border-h" placeholder="搜索条目...">`;
 		const disp = ee`<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>`;
 		const wrpBtnsSort = ee`<div class="filtertools manbrew__filtertools input-group input-group--bottom ve-flex no-shrink">
 			${this._isReadOnly ? "" : ee`<label class="ve-btn ve-btn-default ve-btn-xs ve-col-1 pr-0 ve-flex-vh-center">${cbAll}</label>`}
 			<button class="${this._isReadOnly ? `ve-col-6` : `ve-col-5`} sort ve-btn ve-btn-default ve-btn-xs" data-sort="name">名称</button>
 			<button class="ve-col-1 sort ve-btn ve-btn-default ve-btn-xs" data-sort="source">来源</button>
-			<button class="ve-col-5 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">Category</button>
+			<button class="ve-col-5 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">分类</button>
 		</div>`;
 
 		ee(tabMeta.wrpTab)`
@@ -334,8 +334,8 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 
 		if (!infoTuples.length) {
 			ee(tabMeta.wrpTab)`
-				<h4>Metadata</h4>
-				<p><i>No metadata found.</i></p>
+				<h4>源数据</h4>
+				<p><i>未发现源数据。</i></p>
 			`;
 			return;
 		}
@@ -393,11 +393,11 @@ export class ManageEditableBrewContentsUi extends BaseComponent {
 	_pRender_tabSources ({tabMeta, rdState}) {
 		const cbAll = this._isReadOnly ? null : ee`<input type="checkbox">`;
 		const wrpRows = ee`<div class="list ve-flex-col w-100 max-h-unset"></div>`;
-		const iptSearch = ee`<input type="search" class="search manbrew__search form-control w-100 mt-1" placeholder="Search source...">`;
+		const iptSearch = ee`<input type="search" class="search manbrew__search form-control w-100 mt-1" placeholder="搜索来源...">`;
 		const wrpBtnsSort = ee`<div class="filtertools manbrew__filtertools input-group input-group--bottom ve-flex no-shrink">
 			${this._isReadOnly ? "" : ee`<label class="ve-btn ve-btn-default ve-btn-xs ve-col-1 pr-0 ve-flex-vh-center">${cbAll}</label>`}
 			<button class="${this._isReadOnly ? `ve-col-6` : `ve-col-5`} sort ve-btn ve-btn-default ve-btn-xs" data-sort="name">名称</button>
-			<button class="ve-col-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="abbreviation">Abbreviation</button>
+			<button class="ve-col-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="abbreviation">缩写</button>
 			<button class="ve-col-4 sort ve-btn ve-btn-default ve-btn-xs" data-sort="json">JSON</button>
 		</div>`;
 

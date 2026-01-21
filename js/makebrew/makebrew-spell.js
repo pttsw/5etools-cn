@@ -176,8 +176,8 @@ export class SpellBuilder extends BuilderBase {
 		this._resetTabs({tabGroup: "input"});
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "信息", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "详细信息", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "描述", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "详细描述", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "来源", hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "其他", hasBorder: true}),
 			],
@@ -1265,7 +1265,7 @@ export class SpellBuilder extends BuilderBase {
 		const tabs = this._renderTabs(
 			[
 				new TabUiUtil.TabMeta({name: "法术"}),
-				new TabUiUtil.TabMeta({name: "信息"}),
+				new TabUiUtil.TabMeta({name: "描述"}),
 				new TabUiUtil.TabMeta({name: "图片"}),
 				new TabUiUtil.TabMeta({name: "数据"}),
 				new TabUiUtil.TabMeta({name: "Markdown"}),
