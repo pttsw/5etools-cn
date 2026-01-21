@@ -1791,6 +1791,7 @@ Parser.SPELL_AREA_TYPE_TO_FULL = {
 	"L": "线状",
 	"H": "半球",
 	"W": "墙壁",
+	"E": "光环",
 };
 Parser.spAreaTypeToFull = function (type) {
 	return Parser._parse_aToB(Parser.SPELL_AREA_TYPE_TO_FULL, type);

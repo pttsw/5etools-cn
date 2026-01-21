@@ -462,7 +462,7 @@ class PageFilterSpells extends PageFilterBase {
 		this._areaTypeFilter = new Filter({
 			cnHeader: "区域类型",
 			header: "Area Style",
-			items: ["ST", "MT", "R", "N", "C", "Y", "H", "L", "S", "Q", "W"],
+			items: ["ST", "MT", "R", "N", "C", "Y", "H", "E", "L", "S", "Q", "W"],
 			displayFn: Parser.spAreaTypeToFull,
 			itemSortFn: null,
 		});
@@ -529,6 +529,7 @@ class PageFilterSpells extends PageFilterBase {
 
 		s._fAreaTags = [...(s.areaTags || [])];
 		if (s.range.type === "line" && !s._fAreaTags.includes("L")) s._fAreaTags.push("L");
+		if (s.range.type === "emanation" && !s._fAreaTags.includes("E")) s._fAreaTags.push("E");
 
 		s._fAffectsCreatureType = s.affectsCreatureType || [...Parser.MON_TYPES];
 	}
@@ -655,12 +656,12 @@ class ModalFilterSpells extends ModalFilterBase {
 	_getColumnHeaders () {
 		const btnMeta = [
 			{sort: "name", text: "名称", width: "3"},
-			{sort: "level", text: "Level", width: "1-5"},
-			{sort: "time", text: "Time", width: "2"},
-			{sort: "school", text: "School", width: "1"},
-			{sort: "concentration", text: "C.", title: "Concentration", width: "0-5"},
-			{sort: "range", text: "Range", width: "2"},
-			{sort: "source", text: "Source", width: "1"},
+			{sort: "level", text: "环阶", width: "1-5"},
+			{sort: "time", text: "时间", width: "2"},
+			{sort: "school", text: "学派", width: "1"},
+			{sort: "concentration", text: "C.", title: "专注", width: "0-5"},
+			{sort: "range", text: "范围", width: "2"},
+			{sort: "source", text: "来源", width: "1"},
 		];
 		return ModalFilterBase._getFilterColumnHeaders(btnMeta);
 	}

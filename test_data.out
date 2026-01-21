@@ -1,5 +1,5 @@
 
-> 5etools@2.23.0 test:data
+> 5etools@2.24.0 test:data
 > node test/test-all.js
 
 ##### BraceCheck passed! #####
@@ -9,6 +9,7 @@
 ##### TableDiceTest passed! #####
 ##### AdventureBookTagCheck passed! #####
 ##### AreaCheck passed! #####
+##### EntriesCheck passed! #####
 ##### EscapeCharacterCheck passed! #####
 ##### DuplicateEntityCheck passed! #####
 ##### RefTagCheck passed! #####
@@ -81,15 +82,11 @@ Missing link: {@class Druid} in file ./data/book/book-ps-d.json (evaluates to "c
 Missing link: {@class Fighter} in file ./data/book/book-ps-d.json (evaluates to "classes.html#fighter_phb")
 Missing link: {@class Ranger} in file ./data/book/book-ps-d.json (evaluates to "classes.html#ranger_phb")
 Missing link: (as "statblock" entry) {"ENG_name":"Light","name":"轻型","type":"statblock","tag":"spell","source":"PHB","page":55,"collapsed":true} in file ./data/book/book-rmr.json (evaluates to "spells.html#%e8%bd%bb%e5%9e%8b_phb")
+Missing link: {@subclassFeature 巨龙先祖|术士|PHB|龙语|PHB|1|PHB} in file ./data/book/book-sac.json (evaluates to "classes.html#%e5%b7%a8%e9%be%99%e5%85%88%e7%a5%96_%e6%9c%af%e5%a3%ab_phb_%e9%be%99%e8%af%ad_phb_1_phb")
 Missing link: {@spell magic missile} in file ./data/book/book-sac.json (evaluates to "spells.html#magic%20missile_phb")
-Missing link: {@action Attack} in file ./data/book/book-sac.json (evaluates to "actions.html#attack_phb")
 Missing link: {@status surprised} in file ./data/book/book-sac.json (evaluates to "conditionsdiseases.html#surprised_phb")
-Missing link: {@status surprised} in file ./data/book/book-sac.json (evaluates to "conditionsdiseases.html#surprised_phb")
-Missing link: {@spell wish} in file ./data/book/book-sac.json (evaluates to "spells.html#wish_phb")
-Missing link: {@table Wild Magic Surge|PHB} in file ./data/book/book-sac.json (evaluates to "tables.html#wild%20magic%20surge_phb")
-Missing link: {@table Wild Magic Surge|PHB} in file ./data/book/book-sac.json (evaluates to "tables.html#wild%20magic%20surge_phb")
-Missing link: {@condition frightened} in file ./data/book/book-sac.json (evaluates to "conditionsdiseases.html#frightened_phb")
-Missing link: {@condition invisible} in file ./data/book/book-sac.json (evaluates to "conditionsdiseases.html#invisible_phb")
+Missing link: {@subclassFeature 元素亲和|术士|PHB|龙语|PHB|6|PHB} in file ./data/book/book-sac.json (evaluates to "classes.html#%e5%85%83%e7%b4%a0%e4%ba%b2%e5%92%8c_%e6%9c%af%e5%a3%ab_phb_%e9%be%99%e8%af%ad_phb_6_phb")
+Missing link: {@subclassFeature 预兆|法师|PHB|预言术|PHB|2|PHB} in file ./data/book/book-sac.json (evaluates to "classes.html#%e9%a2%84%e5%85%86_%e6%b3%95%e5%b8%88_phb_%e9%a2%84%e8%a8%80%e6%9c%af_phb_2_phb")
 Missing link: (as "statblock" entry) {"ENG_name":"Sigil Undersigil Encounters","name":"底层印记城遭遇","type":"statblock","source":"SatO","tag":"table"} in file ./data/book/book-sato.json (evaluates to "tables.html#%e5%ba%95%e5%b1%82%e5%8d%b0%e8%ae%b0%e5%9f%8e%e9%81%ad%e9%81%87_sato")
 Missing link: {@table 天气; 风|DMG|风势} in file ./data/book/book-screenwildernesskit.json (evaluates to "tables.html#%e5%a4%a9%e6%b0%94%3b%20%e9%a3%8e_dmg")
 Missing link: {@skill Nature} in file ./data/book/book-tce.json (evaluates to "skill#nature_phb")
@@ -125,29 +122,16 @@ Missing link: {@skill Stealth} in file ./data/book/book-tce.json (evaluates to "
 Missing link: {@skill History} in file ./data/book/book-tce.json (evaluates to "skill#history_phb")
 Missing link: {@skill Perception} in file ./data/book/book-tce.json (evaluates to "skill#perception_phb")
 Missing link: {@table 阵营与个性; 简要性格特征表|XPHB|简要性格特征表} in file ./data/book/book-xdmg.json (evaluates to "tables.html#%e9%98%b5%e8%90%a5%e4%b8%8e%e4%b8%aa%e6%80%a7%3b%20%e7%ae%80%e8%a6%81%e6%80%a7%e6%a0%bc%e7%89%b9%e5%be%81%e8%a1%a8_xphb")
-Missing link: {@spell 次级复原术|XPHB} in file ./data/book/book-xdmg.json (evaluates to "spells.html#%e6%ac%a1%e7%ba%a7%e5%a4%8d%e5%8e%9f%e6%9c%af_xphb")
-Missing link: {@spell 次级复原术|XPHB} in file ./data/book/book-xdmg.json (evaluates to "spells.html#%e6%ac%a1%e7%ba%a7%e5%a4%8d%e5%8e%9f%e6%9c%af_xphb")
 Missing link: {@table 钱币; 钱币价值|XPHB|相对值} in file ./data/book/book-xdmg.json (evaluates to "tables.html#%e9%92%b1%e5%b8%81%3b%20%e9%92%b1%e5%b8%81%e4%bb%b7%e5%80%bc_xphb")
 Missing link: {@table Random Magic Items - Arcana|XDMG|Arcana} in file ./data/book/book-xmm.json (evaluates to "tables.html#random%20magic%20items%20-%20arcana_xdmg")
 Missing link: {@table Random Magic Items - Armaments|XDMG|Armaments} in file ./data/book/book-xmm.json (evaluates to "tables.html#random%20magic%20items%20-%20armaments_xdmg")
 Missing link: {@table Random Magic Items - Implements|XDMG|Implements} in file ./data/book/book-xmm.json (evaluates to "tables.html#random%20magic%20items%20-%20implements_xdmg")
 Missing link: {@table Random Magic Items - Relics|XDMG|Relics} in file ./data/book/book-xmm.json (evaluates to "tables.html#random%20magic%20items%20-%20relics_xdmg")
-Missing link: {@creature 吸血鬼暗影尊主|XMM} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
-Missing link: {@creature 吸血鬼暗影尊主|XMM} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
-Missing link: (as "statblock" entry) {"ENG_name":"Vampire Umbral Lord","name":"吸血鬼暗影尊主","type":"statblock","tag":"creature","source":"XMM","style":"narrow"} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
-Missing link: {@creature 吸血鬼暗影尊主|XMM} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
-Missing link: {@creature 吸血鬼暗影尊主|XMM} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
-Missing link: {@creature 吸血鬼暗影尊主|XMM} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
-Missing link: {@creature 吸血鬼暗影尊主|XMM} in file ./data/book/book-xmm.json (evaluates to "bestiary.html#%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm")
 Missing link: {@race 半身人语|XPHB} in file ./data/book/book-xphb.json (evaluates to "races.html#%e5%8d%8a%e8%ba%ab%e4%ba%ba%e8%af%ad_xphb")
 Missing link: {@item 一副扑克牌|XPHB} in file ./data/book/book-xphb.json (evaluates to "items.html#%e4%b8%80%e5%89%af%e6%89%91%e5%85%8b%e7%89%8c_xphb")
-Missing link: {@spell 次级复原术|XPHB} in file ./data/book/book-xphb.json (evaluates to "spells.html#%e6%ac%a1%e7%ba%a7%e5%a4%8d%e5%8e%9f%e6%9c%af_xphb")
 Missing link: {@spell 精类召唤术|XPHB} in file ./data/book/book-xphb.json (evaluates to "spells.html#%e7%b2%be%e7%b1%bb%e5%8f%ac%e5%94%a4%e6%9c%af_xphb")
 Missing link: {@subclassFeature 元素亲和|术士|XPHB|龙语|XPHB|6|XPHB} in file ./data/book/book-xsac.json (evaluates to "classes.html#%e5%85%83%e7%b4%a0%e4%ba%b2%e5%92%8c_%e6%9c%af%e5%a3%ab_xphb_%e9%be%99%e8%af%ad_xphb_6_xphb")
 Missing link: {@subclassFeature 元素亲和|术士|XPHB|龙语|XPHB|6|XPHB} in file ./data/book/book-xsac.json (evaluates to "classes.html#%e5%85%83%e7%b4%a0%e4%ba%b2%e5%92%8c_%e6%9c%af%e5%a3%ab_xphb_%e9%be%99%e8%af%ad_xphb_6_xphb")
-Missing link: {@spell 次级复原术|XPHB} in file ./data/class/class-cleric.json (evaluates to "spells.html#%e6%ac%a1%e7%ba%a7%e5%a4%8d%e5%8e%9f%e6%9c%af_xphb")
-Missing link: {@spell 次级复原术|XPHB} in file ./data/class/class-sorcerer.json (evaluates to "spells.html#%e6%ac%a1%e7%ba%a7%e5%a4%8d%e5%8e%9f%e6%9c%af_xphb")
-Missing link: {@spell 次级复原术|XPHB} in file ./data/class/class-warlock.json (evaluates to "spells.html#%e6%ac%a1%e7%ba%a7%e5%a4%8d%e5%8e%9f%e6%9c%af_xphb")
 Missing link: {@table 技能列表; 技能|XPHB|技能} in file ./data/feats.json (evaluates to "tables.html#%e6%8a%80%e8%83%bd%e5%88%97%e8%a1%a8%3b%20%e6%8a%80%e8%83%bd_xphb")
 Missing link: {@recipe 包|PaF} in file ./data/fluff-recipes.json (evaluates to "recipes.html#%e5%8c%85_paf")
 Missing link: {@card 护盾|万事万象无常牌|BMT} in file ./data/items.json (evaluates to "card#%e6%8a%a4%e7%9b%be_%e4%b8%87%e4%ba%8b%e4%b8%87%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_bmt")
@@ -208,8 +192,6 @@ Unknown mode "extra amount".
 
 Error messages for HasFluffCheck:
 
-Extra monsterFluff fluff found!
-	"%e5%90%b8%e8%a1%80%e9%ac%bc%e6%9a%97%e5%bd%b1%e5%b0%8a%e4%b8%bb_xmm"  hasFluff | hasFluffImages
 race hash "%e7%b2%be%e7%81%b5%20(%e6%b5%b7%e6%b4%8b)_mtf"                        not found in corresponding "raceFluff" fluff!
 race hash "%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab%e7%84%b0)_eepc"              not found in corresponding "raceFluff" fluff!
 race hash "%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab%e7%84%b0)_mpmm"              not found in corresponding "raceFluff" fluff!
@@ -246,5 +228,5 @@ Missing link: races.html#%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab)_mpmm in file 
 ---
 
 
-	Run duration: 1:04.687 (m:ss.mmm)
+	Run duration: 1:09.940 (m:ss.mmm)
 Tests failed!

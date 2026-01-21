@@ -4082,7 +4082,7 @@
 					"ENG_name": "Artisan's Expertise",
 					"name": "专精工匠",
 					"entries": [
-						"你可以选择两种{@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}（工匠工具）并拥有其熟练度。在使用这些选择的熟练度进行任何属性检定时，你的熟练加值会翻倍。此外，每当你进行与任何建筑构造（包括建筑物、运河和渡槽等公共工程，以及支撑吉拉普大部分建筑的庞大齿轮工程）起源相关的智力（{@skill 历史}）检定时，你会被视为具有{@skill 历史}技能熟练度，并将你的熟练加值翻倍加入到检定中，而不是通常的熟练加值。"
+						"你可以选择两种{@filter 工匠工具|items|source=PHB|miscellaneous=平凡的|type=工匠工具}（工匠工具）并拥有其熟练度。在使用这些选择的熟练度进行任何属性检定时，你的熟练加值会翻倍。此外，每当你进行与任何建筑构造（包括建筑物、运河和渡槽等公共工程，以及支撑吉拉普大部分建筑的庞大齿轮工程）起源相关的智力（{@skill 历史}）检定时，你会被视为具有{@skill 历史}技能熟练度，并将你的熟练加值翻倍加入到检定中，而不是通常的熟练加值。"
 					],
 					"type": "entries"
 				},
@@ -8600,7 +8600,7 @@
 			"weaponProficiencies": [
 				{
 					"choose": {
-						"fromFilter": "type=军用武器|miscellaneous=寻常",
+						"fromFilter": "type=军用武器|miscellaneous=平凡的",
 						"count": 2
 					}
 				}
@@ -10733,7 +10733,7 @@
 					"ENG_name": "Cunning Artisan",
 					"name": "能工巧匠",
 					"entries": [
-						"作为一次短休的一部分，你可以从杀死的小型或更大的野兽、构装体、龙、怪兽或植物生物身上收获骨头和兽皮来制作以下一件物品：一面{@item 盾牌|PHB}，一根{@item 短棒|PHB}，一支{@item 标枪|PHB}，或者{@dice 1d4}支{@item 飞镖|PHB|飞镖}或{@item 吹箭|PHB|吹箭}。想要使用这个特质，你需要一把刀刃，例如一把{@item 匕首|PHB}，或者合适的{@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}，例如{@item 皮匠工具|PHB}。"
+						"作为一次短休的一部分，你可以从杀死的小型或更大的野兽、构装体、龙、怪兽或植物生物身上收获骨头和兽皮来制作以下一件物品：一面{@item 盾牌|PHB}，一根{@item 短棒|PHB}，一支{@item 标枪|PHB}，或者{@dice 1d4}支{@item 飞镖|PHB|飞镖}或{@item 吹箭|PHB|吹箭}。想要使用这个特质，你需要一把刀刃，例如一把{@item 匕首|PHB}，或者合适的{@filter 工匠工具|items|source=PHB|miscellaneous=平凡的|type=工匠工具}，例如{@item 皮匠工具|PHB}。"
 					],
 					"type": "entries"
 				},
@@ -15602,14 +15602,14 @@
 				},
 				{
 					"ENG_name": "Constructed Resilience",
-					"name": "构装体耐力",
+					"name": "构装生物耐力",
 					"type": "entries",
 					"entries": [
 						"你被设计为拥有非凡的强韧，这表现在以下几个方面：",
 						{
 							"type": "list",
 							"items": [
-								"你在对抗{@condition 中毒}的豁免投骰中具有优势，并且你对毒素伤害具有抗性。",
+								"你进行对抗{@condition 中毒}的豁免时具有优势，并且拥有毒素伤害的抗性。",
 								"你不需要吃、喝和呼吸。",
 								"你对疾病免疫。",
 								"你不需要睡眠，魔法也无法让你陷入睡眠。"
@@ -17545,7 +17545,7 @@
 		},
 		{
 			"ENG_name": "Sea",
-			"name": "海",
+			"name": "海洋",
 			"source": "MTF",
 			"raceName": "精灵",
 			"raceSource": "PHB",
@@ -18086,7 +18086,7 @@
 		},
 		{
 			"ENG_name": "Fire",
-			"name": "火",
+			"name": "火焰",
 			"source": "EEPC",
 			"raceName": "元素裔",
 			"raceSource": "EEPC",
@@ -20950,7 +20950,7 @@
 					"name": "工匠直觉",
 					"type": "entries",
 					"entries": [
-						"当你进行{@skill 奥秘}鉴定或者使用{@filter 工匠工具|items|source=PHB|miscellaneous=寻常|type=工匠工具}进行属性检定时，你能掷一个{@dice d4}，并把结果加到检定结果上。"
+						"当你进行{@skill 奥秘}鉴定或者使用{@filter 工匠工具|items|source=PHB|miscellaneous=平凡的|type=工匠工具}进行属性检定时，你能掷一个{@dice d4}，并把结果加到检定结果上。"
 					]
 				},
 				{
@@ -21090,7 +21090,7 @@
 					"name": "直觉行动",
 					"type": "entries",
 					"entries": [
-						"当你进行敏捷（{@skill 特技}）检定或任何操作或维护{@filter 陆地载具|items|source=phb;dmg|miscellaneous=寻常|type=载具(陆地)}的属性检定时，你可以投掷一枚{@dice d4}并将骰出的数值添加到该属性检定上。"
+						"当你进行敏捷（{@skill 特技}）检定或任何操作或维护{@filter 陆地载具|items|source=phb;dmg|miscellaneous=平凡的|type=载具 (陆运)}的属性检定时，你可以投掷一枚{@dice d4}并将骰出的数值添加到该属性检定上。"
 					]
 				},
 				{

@@ -1308,7 +1308,7 @@
 					"ENG_name": "Greatsword",
 					"name": "巨剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10 ({@damage 2d6 + 3}) 挥砍伤害"
+						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}10（{@damage 2d6 + 3}）点挥砍伤害。"
 					]
 				},
 				{
@@ -2442,7 +2442,7 @@
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及 10 尺，一个目标。{@h}20（{@damage 3d10 + 4}）钝击伤害，并且目标{@condition 受擒}（逃脱 {@dc 15}）。螃蟹有两只钳子，每只钳子只能擒抱一个目标"
+						"{@atk mw} 命中{@hit 7}，触及 10 尺，单一目标。{@h}20（{@damage 3d10 + 4}）钝击伤害，并且目标{@condition 受擒}（逃脱 {@dc 15}）。螃蟹有两只钳子，每只钳子只能擒抱单一目标"
 					]
 				}
 			],
@@ -3987,7 +3987,7 @@
 					"ENG_name": "Slam",
 					"name": "猛击",
 					"entries": [
-						"{@atk mw} 命中{@hit 12}，触及15尺，单一目标。{@h}15 ({@damage 3d6 + 5}) 钝击伤害加上35 ({@damage 10d6}) 火焰伤害"
+						"{@atk mw} {@hit 12} 命中，触及范围15尺，单一目标。{@h}15（{@damage 3d6 + 5}）钝击伤害加35（{@damage 10d6}）火焰伤害，"
 					]
 				}
 			],
@@ -4230,7 +4230,7 @@
 					"ENG_name": "Club",
 					"name": "短棒",
 					"entries": [
-						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}5（{@damage 1d4 + 1}）钝击伤害"
+						"{@atk mw} {@hit 5} 命中，触及范围5尺，单一目标。{@h}5（{@damage 1d4 + 1}）钝击伤害。"
 					]
 				},
 				{
@@ -6370,14 +6370,14 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 17}，触及5英尺，一个目标。{@h}23（{@damage 3d8 + 10}）穿刺伤害。如果目标是大型或更小的生物被Slarkrethel{@condition 受擒}，那个生物被吞下，抓握结束。被吞下时，生物{@condition 目盲}且{@condition 束缚}，对Slarkrethel外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在Slarkrethel的每个回合开始时受到42（{@damage 12d6}）酸伤害。如果Slarkrethel在单一回合内被其内部的生物造成50点或更多伤害，Slarkrethel必须在该回合结束时进行一次{@dc 25}体质豁免检定，否则将吐出所有被吞下的生物，它们在Slarkrethel10英尺内的某个空间内{@condition 倒地}。如果Slarkrethel死亡，被吞下的生物不再被它{@condition 束缚}，可以使用15英尺的移动力从尸体中逃脱，以{@condition 倒地}状态离开。"
+						"{@atk mw} 命中{@hit 17}，触及5英尺，单一目标。{@h}23（{@damage 3d8 + 10}）穿刺伤害。如果目标是大型或更小的生物被Slarkrethel{@condition 受擒}，那个生物被吞下，抓握结束。被吞下时，生物{@condition 目盲}且{@condition 束缚}，对Slarkrethel外部的攻击和其他效果有{@quickref 掩护||3||全身掩护}，并且在Slarkrethel的每个回合开始时受到42（{@damage 12d6}）酸伤害。如果Slarkrethel在单一回合内被其内部的生物造成50点或更多伤害，Slarkrethel必须在该回合结束时进行一次{@dc 25}体质豁免检定，否则将吐出所有被吞下的生物，它们在Slarkrethel10英尺内的某个空间内{@condition 倒地}。如果Slarkrethel死亡，被吞下的生物不再被它{@condition 束缚}，可以使用15英尺的移动力从尸体中逃脱，以{@condition 倒地}状态离开。"
 					]
 				},
 				{
 					"ENG_name": "Tentacle",
 					"name": "触须",
 					"entries": [
-						"{@atk mw} 命中{@hit 17}，范围30英尺，一个目标。{@h}20 ({@damage 3d6 + 10})钝击伤害，并且目标{@condition 受擒}（逃脱{@dc 18}）。直到这次擒抱结束，目标{@condition 束缚}。斯莱克瑞索尔有十条触须，每一条都可以擒抱一个目标。"
+						"{@atk mw} 命中{@hit 17}，范围30英尺，单一目标。{@h}20 ({@damage 3d6 + 10})钝击伤害，并且目标{@condition 受擒}（逃脱{@dc 18}）。直到这次擒抱结束，目标{@condition 束缚}。斯莱克瑞索尔有十条触须，每一条都可以擒抱单一目标。"
 					]
 				},
 				{
@@ -6971,7 +6971,7 @@
 					"ENG_name": "Tail",
 					"name": "尾击",
 					"entries": [
-						"命中{@hit 7}，触及10尺，一个目标。{@h}18（{@damage 4d6 + 4}）钝击伤害。通过DC14的力量豁免检定，否则被击倒{@condition 倒地}。"
+						"命中{@hit 7}，触及10尺，单一目标。{@h}18（{@damage 4d6 + 4}）钝击伤害。通过DC14的力量豁免检定，否则被击倒{@condition 倒地}。"
 					]
 				}
 			],

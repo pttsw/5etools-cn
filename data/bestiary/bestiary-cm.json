@@ -7,6 +7,9 @@
 				"MOT"
 			]
 		},
+		"internalCopies": [
+			"monster"
+		],
 		"otherSources": {
 			"monster": {
 				"MM": "CM",
@@ -825,7 +828,7 @@
 					"ENG_name": "Etherealness",
 					"name": "以太化",
 					"entries": [
-						"幽魂可以在物质位面和以太位面之间转换。身处以太边境时，物质位面中也可以看到它，反之亦然。幽魂身处其中某一位面时，无法影响另一位面之物或被另一位面之物影响。"
+						"幽魂可以在物质位面和以太位面之间转换。身处边界以太时，物质位面中也可以看到它，反之亦然。幽魂身处其中某一位面时，无法影响另一位面之物或被另一位面之物影响。"
 					]
 				},
 				{
@@ -1025,7 +1028,7 @@
 					"ENG_name": "Horn",
 					"name": "号角",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及 5 英尺，一个目标。{@h}32（{@damage 8d6 + 4}）点暗蚀伤害。如果目标是人形生物，则必须进行一次 {@dc 13} 感知豁免，豁免失败则被转化为由化身控制的狼。该转化持续 1 小时，或直到目标的生命值降至 0 或死亡。目标游戏数据将替换为狼的数据，但保留其生命值。目标在其狼形态的限制下，无法说话、施法或进行任何需要手部或言语的动作。目标的装备融入新的形态，且无法激活、使用、持握或从其装备中获益。"
+						"{@atk mw} 命中{@hit 7}，触及 5 英尺，单一目标。{@h}32（{@damage 8d6 + 4}）点暗蚀伤害。如果目标是人形生物，则必须进行一次 {@dc 13} 感知豁免，豁免失败则被转化为由化身控制的狼。该转化持续 1 小时，或直到目标的生命值降至 0 或死亡。目标游戏数据将替换为狼的数据，但保留其生命值。目标在其狼形态的限制下，无法说话、施法或进行任何需要手部或言语的动作。目标的装备融入新的形态，且无法激活、使用、持握或从其装备中获益。"
 					]
 				}
 			],
@@ -1064,6 +1067,11 @@
 				"name": "龙龟",
 				"source": "MM",
 				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "龙龟",
+						"with": "龟"
+					},
 					"trait": {
 						"mode": "removeArr",
 						"names": "水陆两栖"
@@ -1092,8 +1100,7 @@
 				"DR",
 				"T"
 			],
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"ENG_name": "Faerl",
@@ -2275,7 +2282,7 @@
 					"ENG_name": "Unusual Nature",
 					"name": "非凡本质",
 					"entries": [
-						"小精灵不需要空气、食物、饮料或睡眠。"
+						"小精灵不需要空气、食物、饮水或睡眠。"
 					]
 				}
 			],
@@ -3413,6 +3420,29 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Ogruhl",
+			"name": "奥格鲁尔",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "CM",
+			"page": 205,
+			"_copy": {
+				"ENG_name": "Dragon Tortoise",
+				"name": "龙龟",
+				"source": "CM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "龙龟",
+						"with": "奥格鲁尔",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
 			"ENG_name": "Parasite-infested Behir",
 			"name": "寄生体感染的青足龙蛇",
 			"source": "CM",
@@ -4163,7 +4193,7 @@
 					"ENG_name": "Unusual Nature",
 					"name": "非凡本质",
 					"entries": [
-						"斯凯特威小精灵不需要空气、食物、饮料或睡眠。"
+						"斯凯特威小精灵不需要空气、食物、饮水或睡眠。"
 					]
 				}
 			],

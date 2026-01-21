@@ -1256,9 +1256,9 @@ export class CreatureBuilder extends BuilderBase {
 				);
 				const {eleModalInner, doClose} = UiUtil.getShowModal({
 					title: "搜索物品",
-					cbClose: () => searchWidget.$wrpSearch.detach(), // guarantee survival of rendered element
+					cbClose: () => searchWidget.getWrpSearch().detach(), // guarantee survival of rendered element
 				});
-				eleModalInner.appends(searchWidget.$wrpSearch[0]);
+				eleModalInner.appends(searchWidget.getWrpSearch());
 				searchWidget.doFocus();
 			});
 
@@ -2480,7 +2480,7 @@ export class CreatureBuilder extends BuilderBase {
 					"hidden",
 					{
 						values: Object.keys(_SPELL_PROP_LOOKUP),
-						fnGet$ElePill: v => _SPELL_PROP_LOOKUP[v],
+						fnGetElePill: v => _SPELL_PROP_LOOKUP[v],
 						fnGetTextContextAction: v => _SPELL_PROP_LOOKUP[v],
 					},
 				);
@@ -2790,7 +2790,7 @@ export class CreatureBuilder extends BuilderBase {
 							const {eleModalInner, doClose} = UiUtil.getShowModal({
 								title: "Select a Trait",
 								cbClose: (isDataEntered) => {
-									searchWidget.$wrpSearch.detach();
+									searchWidget.getWrpSearch().detach();
 									if (!isDataEntered) return resolve(null);
 									const trait = MiscUtil.copyFast(this._jsonCreatureTraits[traitIndex]);
 									trait.entries = DataUtil.generic.variableResolver.resolve({obj: trait.entries, ent: this._state});
@@ -2798,7 +2798,7 @@ export class CreatureBuilder extends BuilderBase {
 									resolve(trait);
 								},
 							});
-							eleModalInner.appends(searchWidget.$wrpSearch[0]);
+							eleModalInner.appends(searchWidget.getWrpSearch());
 							searchWidget.doFocus();
 						});
 					},
@@ -2846,8 +2846,8 @@ export class CreatureBuilder extends BuilderBase {
 								const iptMeleeDamDiceCount = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`;
 								const iptMeleeDamDiceNum = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="6">`;
 								const iptMeleeDamBonus = ee`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`;
-								const iptMeleeDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="近战伤害类型" autocomplete="off">`;
-								$(iptMeleeDamType).typeahead({source: Parser.DMG_TYPES});
+								const iptMeleeDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="近战伤害类型" autocomplete="off">`
+									.typeahead(Parser.DMG_TYPES);
 								const stageMelee = ee`<div class="ve-flex-col"><hr class="hr-3">
 								<div class="bold mb-2">近战</div>
 								<div class="ve-flex-v-center mb-2"><span class="mr-2 no-shrink">近战范围 (尺)</span>${iptMeleeRange}</div>
@@ -2859,8 +2859,8 @@ export class CreatureBuilder extends BuilderBase {
 								const iptRangedDamDiceCount = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`;
 								const iptRangedDamDiceNum = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="6">`;
 								const iptRangedDamBonus = ee`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`;
-								const iptRangedDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="远程伤害类型">`;
-								$(iptRangedDamType).typeahead({source: Parser.DMG_TYPES});
+								const iptRangedDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="远程伤害类型">`
+									.typeahead(Parser.DMG_TYPES);
 								const stageRanged = ee`<div class="ve-flex-col"><hr class="hr-3">
 								<div class="bold mb-2">远程</div>
 								<div class="ve-flex-v-center mb-2">
@@ -2873,8 +2873,8 @@ export class CreatureBuilder extends BuilderBase {
 								const iptVersatileDamDiceCount = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`;
 								const iptVersatileDamDiceNum = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="8">`;
 								const iptVersatileDamBonus = ee`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`;
-								const iptVersatileDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="两用伤害类型">`;
-								$(iptVersatileDamType).typeahead({source: Parser.DMG_TYPES});
+								const iptVersatileDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="两用伤害类型">`
+									.typeahead(Parser.DMG_TYPES);
 								const stageVersatile = ee`<div class="ve-flex-col"><hr class="hr-3">
 								<div class="bold mb-2">灵巧伤害</div>
 								<div class="ve-flex-v-center mb-2">${iptVersatileDamDiceCount}<span class="mr-2">d</span>${iptVersatileDamDiceNum}${iptVersatileDamBonus}${iptVersatileDamType}</div>
@@ -2883,8 +2883,8 @@ export class CreatureBuilder extends BuilderBase {
 								const iptBonusDamDiceCount = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Number of Dice" min="1" value="1">`;
 								const iptBonusDamDiceNum = ee`<input class="form-control form-control--minimal input-xs mr-2 mkbru_mon__ipt-attack-dice" placeholder="Dice Type" value="6">`;
 								const iptBonusDamBonus = ee`<input class="form-control form-control--minimal input-xs mr-2" placeholder="+X (额外伤害)">`;
-								const iptBonusDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="额外伤害类型">`;
-								$(iptBonusDamType).typeahead({source: Parser.DMG_TYPES});
+								const iptBonusDamType = ee`<input class="form-control form-control--minimal input-xs" placeholder="额外伤害类型">`
+									.typeahead(Parser.DMG_TYPES);
 								const stageBonusDamage = ee`<div class="ve-flex-col"><hr class="hr-3">
 								<div class="bold mb-2">额外伤害</div>
 								<div class="ve-flex-v-center mb-2">${iptBonusDamDiceCount}<span class="mr-2">d</span>${iptBonusDamDiceNum}${iptBonusDamBonus}${iptBonusDamType}</div>
@@ -3077,7 +3077,7 @@ export class CreatureBuilder extends BuilderBase {
 								const {eleModalInner, doClose} = UiUtil.getShowModal({
 									title: "Select an Action",
 									cbClose: (isDataEntered) => {
-										searchWidget.$wrpSearch.detach();
+										searchWidget.getWrpSearch().detach();
 										if (!isDataEntered) return resolve(null);
 										const action = MiscUtil.copyFast(this._jsonCreatureActions[actionIndex]);
 										const isFinesse = action.entriesFinesse && this._state.dex > this._state.str;
@@ -3089,7 +3089,7 @@ export class CreatureBuilder extends BuilderBase {
 										resolve(action);
 									},
 								});
-								eleModalInner.appends(searchWidget.$wrpSearch[0]);
+								eleModalInner.appends(searchWidget.getWrpSearch());
 								searchWidget.doFocus();
 							});
 						},

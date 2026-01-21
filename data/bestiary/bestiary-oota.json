@@ -772,7 +772,7 @@
 					"ENG_name": "+2 Warhammer",
 					"name": "+2 战锤",
 					"entries": [
-						"{@atk mw} {@hit 8} 进行攻击，射程 5 英尺，一个目标。{@h}10 ({@damage 1d8 + 6}) 点钝击伤害，如果用双手挥动则为 11 ({@damage 1d10 + 6}) 点钝击伤害。当霍加尔体型增大时，伤害分别增加到 15 ({@damage 2d8 + 6}) 点或 17 ({@damage 2d10 + 6}) 点钝击伤害。"
+						"{@atk mw} {@hit 8} 进行攻击，射程 5 英尺，单一目标。{@h}10 ({@damage 1d8 + 6}) 点钝击伤害，如果用双手挥动则为 11 ({@damage 1d10 + 6}) 点钝击伤害。当霍加尔体型增大时，伤害分别增加到 15 ({@damage 2d8 + 6}) 点或 17 ({@damage 2d10 + 6}) 点钝击伤害。"
 					]
 				},
 				{
@@ -1595,7 +1595,7 @@
 								"ENG_name": "Alchemist's Fire",
 								"name": "炽火胶",
 								"entries": [
-									"{@atk rw} 命中{@hit 4}，射程 20 英尺，一个目标。 {@h}2 ({@damage 1d4}) 点火焰伤害在目标的每个回合开始时。生物可以使用其动作进行一次成功的 {@dc 10} 敏捷检定来扑灭火焰，从而结束此伤害。"
+									"{@atk rw} 命中{@hit 4}，射程 20 英尺，单一目标。 {@h}2 ({@damage 1d4}) 点火焰伤害在目标的每个回合开始时。生物可以使用其动作进行一次成功的 {@dc 10} 敏捷检定来扑灭火焰，从而结束此伤害。"
 								]
 							}
 						]
@@ -2198,6 +2198,105 @@
 			"hasToken": true
 		},
 		{
+			"ENG_name": "Female Steeder",
+			"name": "雌性骑蛛",
+			"source": "OotA",
+			"page": 238,
+			"reprintedAs": [
+				"雌性骑蛛|MTF"
+			],
+			"size": [
+				"L"
+			],
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"天生护甲"
+					]
+				}
+			],
+			"hp": {
+				"average": 30,
+				"formula": "4d10 + 8"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 15,
+			"dex": 16,
+			"con": 14,
+			"int": 2,
+			"wis": 10,
+			"cha": 3,
+			"skill": {
+				"stealth": "+7"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 10,
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
+					"entries": [
+						"骑乘狼蛛可以在困难表面上攀爬，包括倒立在天花板上，且不需要进行属性检定。"
+					]
+				},
+				{
+					"ENG_name": "Leap",
+					"name": "跳跃",
+					"entries": [
+						"雌性斯提德可以在其回合中消耗所有移动力来跳跃至多90尺高或远，前提是其速度至少为30尺。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atk mw} {@hit 5}命中，触及5尺，一个生物。{@h}7（{@damage 1d8 + 3}）穿刺伤害，且目标必须进行一次{@dc 12}体质豁免检定，豁免失败则受到9（{@damage 2d8}）强酸伤害，豁免成功则伤害减半。"
+					]
+				},
+				{
+					"ENG_name": "Sticky Leg (Recharges when the Steeder Has No Creatures Grappled)",
+					"name": "粘性长腿（当斯提德没有擒抱生物时充能）",
+					"entries": [
+						"{@atk mw} {@hit 5} 命中，触及范围5尺，一个中等或更小的生物。{@h}目标被黏在雌性潜行蛛的腿上并处于{@condition 受擒}状态直到其逃脱（逃脱{@dc 12}）。"
+					]
+				}
+			],
+			"traitTags": [
+				"蛛行术"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"damageTags": [
+				"A",
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
 			"ENG_name": "Fiendish Giant Spider",
 			"name": "恶魔化巨人蜘蛛",
 			"source": "OotA",
@@ -2694,7 +2793,7 @@
 					"ENG_name": "+1 Flail",
 					"name": "+1 链枷",
 					"entries": [
-						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7 ({@damage 1d8 + 3}) 钝击伤害"
+						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7（{@damage 1d8 + 3}）点钝击伤害。"
 					]
 				}
 			],
@@ -3346,7 +3445,7 @@
 							"ENG_name": "Special Equipment",
 							"name": "特殊装备",
 							"entries": [
-								"卡莱莎拥有一顶{@item 易容帽}，她在卓尔族的陪伴下使用它，以显现为女性卓尔族。"
+								"卡莱莎·德拉加拥有一顶{@item 易容帽}，她在与卓尔同行时用它伪装成女性卓尔，并且穿着一件{@item 魔斗篷（精灵斗篷）|OotA|魔斗篷}。"
 							]
 						}
 					}
@@ -3354,6 +3453,11 @@
 			},
 			"alignment": [
 				"N"
+			],
+			"languages": [
+				"通用语",
+				"精灵语",
+				"地底通用语"
 			],
 			"spellcasting": [
 				{
@@ -3387,16 +3491,9 @@
 			"source": "OotA",
 			"page": 134,
 			"_copy": {
-				"ENG_name": "Assassin",
-				"name": "刺客",
-				"source": "MM",
-				"_templates": [
-					{
-						"ENG_name": "Drow (Levitate)",
-						"name": "卓尔（浮空术）",
-						"source": "PHB"
-					}
-				],
+				"ENG_name": "Drow Assassin",
+				"name": "黑暗精灵刺客",
+				"source": "OotA",
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
@@ -3723,6 +3820,105 @@
 			"hasToken": true
 		},
 		{
+			"ENG_name": "Male Steeder",
+			"name": "雄性骑蛛",
+			"source": "OotA",
+			"page": 231,
+			"reprintedAs": [
+				"雄性骑蛛|MTF"
+			],
+			"size": [
+				"M"
+			],
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"天生护甲"
+					]
+				}
+			],
+			"hp": {
+				"average": 13,
+				"formula": "2d8 + 4"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 15,
+			"dex": 12,
+			"con": 14,
+			"int": 2,
+			"wis": 10,
+			"cha": 3,
+			"skill": {
+				"stealth": "+5"
+			},
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"passive": 10,
+			"cr": "1/4",
+			"trait": [
+				{
+					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
+					"entries": [
+						"骑乘狼蛛可以在困难表面上攀爬，包括倒立在天花板上，且不需要进行属性检定。"
+					]
+				},
+				{
+					"ENG_name": "Leap",
+					"name": "跳跃",
+					"entries": [
+						"该蛛形生物可以在其回合消耗所有移动力来跳跃至多60尺高或远，前提是其速度至少为30尺。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atk mw} {@hit 4} 命中，触及5尺，一个生物。{@h}7（{@damage 1d8 + 2}）穿刺伤害，且目标必须进行一次{@dc 12}体质豁免检定，豁免失败时受到4（{@damage 1d8}）强酸伤害，豁免成功则伤害减半。"
+					]
+				},
+				{
+					"ENG_name": "Sticky Leg (Recharges when the Steeder Has No Creatures Grappled)",
+					"name": "粘性长腿（当斯提德没有擒抱生物时充能）",
+					"entries": [
+						"{@atk mw} {@hit 4} 命中，触及范围5尺，一个小型或微型生物。{@h}目标被黏在潜行蛛的腿上并处于{@condition 受擒}状态直到其逃脱（逃脱{@dc 12}）。"
+					]
+				}
+			],
+			"traitTags": [
+				"蛛行术"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"damageTags": [
+				"A",
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
 			"ENG_name": "Mev Flintknapper",
 			"name": "梅夫·弗林特纳普",
 			"isNpc": true,
@@ -3978,6 +4174,10 @@
 					}
 				}
 			},
+			"alignment": [
+				"N",
+				"E"
+			],
 			"spellcastingTags": [
 				"I"
 			],

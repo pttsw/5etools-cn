@@ -1057,7 +1057,17 @@ const PROPORDER_NAME = [
 	"page",
 	"legacy",
 
-	"tables",
+	new ArrayKey("tables", {
+		order: [
+			"option",
+
+			"page",
+
+			"diceExpression",
+			"table",
+		],
+		fnSort: SortUtil.ascSortEncounter,
+	}),
 ];
 const PROPORDER_CONDITION = [
 	"name",
@@ -2313,6 +2323,8 @@ const PROPORDER_ENCOUNTER = [
 
 			"captionPrefix",
 			"captionSuffix",
+
+			"page",
 
 			"minlvl",
 			"maxlvl",

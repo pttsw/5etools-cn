@@ -11,7 +11,7 @@ class _UtilListPage {
 
 			const page = UrlUtil.getCurrentPage();
 			Renderer.hover.getShowWindow(
-				Renderer.hover.$getHoverContent_stats(page, entity),
+				Renderer.hover.getHoverContent_stats(page, entity),
 				Renderer.hover.getWindowPositionExact(
 					elePos.x + posOffset,
 					elePos.y + posOffset,
@@ -1454,7 +1454,7 @@ class ListPage {
 	_doPreviewExpand ({listItem, dispExpandedOuter, btnToggleExpand, dispExpandedInner}) {
 		dispExpandedOuter.classList.remove("ve-hidden");
 		btnToggleExpand.innerHTML = `[\u2212]`;
-		Renderer.hover.$getHoverContent_stats(UrlUtil.getCurrentPage(), this._dataList[listItem.ix]).appendTo(dispExpandedInner);
+		Renderer.hover.getHoverContent_stats(UrlUtil.getCurrentPage(), this._dataList[listItem.ix]).appendTo(dispExpandedInner);
 	}
 
 	_doPreviewCollapse ({dispExpandedOuter, btnToggleExpand, dispExpandedInner}) {
@@ -1552,9 +1552,9 @@ class ListPage {
 	_bindPopoutButton_doShowStatblock (evt) {
 		if (!evt.shiftKey) return Renderer.hover.doPopoutCurPage(evt, this._lastRender.entity);
 
-		const $content = Renderer.hover.$getHoverContent_statsCode(this._lastRender.entity);
+		const content = Renderer.hover.getHoverContent_statsCode(this._lastRender.entity);
 		Renderer.hover.getShowWindow(
-			$content,
+			content,
 			Renderer.hover.getWindowPositionFromEvent(evt),
 			{
 				title: `${this._lastRender.entity.name} \u2014 Source Data`,
@@ -1577,10 +1577,10 @@ class ListPage {
 				},
 			],
 		});
-		const $content = Renderer.hover.$getHoverContent_miscCode(name, mdText);
+		const content = Renderer.hover.getHoverContent_miscCode(name, mdText);
 
 		Renderer.hover.getShowWindow(
-			$content,
+			content,
 			Renderer.hover.getWindowPositionFromEvent(evt),
 			{
 				title: name,
