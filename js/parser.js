@@ -1874,8 +1874,8 @@ Parser.monTypeToFullObj = function (type) {
 
 	const tagMetas = Parser.monTypeToFullObj._getTagMetas(type.tags);
 	if (tagMetas.length) {
-		out.tags.push(...tagMetas.map(({ filterTag }) => filterTag));
-		const ptTags = ` (${tagMetas.map(({ displayTag }) => displayTag).join(", ")})`;
+		out.tags.push(...tagMetas.flatMap(({filterTags}) => filterTags));
+		const ptTags = ` (${tagMetas.map(({displayTag}) => displayTag).join(", ")})`;
 		out.asText += ptTags;
 		out.asTextShort += ptTags;
 	}
@@ -1889,8 +1889,8 @@ Parser.monTypeToFullObj = function (type) {
 
 		const tagMetas = Parser.monTypeToFullObj._getTagMetas(type.sidekickTags);
 		if (tagMetas.length) {
-			out.tagsSidekick.push(...tagMetas.map(({ filterTag }) => filterTag));
-			if (!type.sidekickHidden) out.asTextSidekick += ` (${tagMetas.map(({ displayTag }) => displayTag).join(", ")})`;
+			out.tagsSidekick.push(...tagMetas.flatMap(({filterTags}) => filterTags));
+			if (!type.sidekickHidden) out.asTextSidekick += ` (${tagMetas.map(({displayTag}) => displayTag).join(", ")})`;
 		}
 	}
 	// endregion
@@ -1903,15 +1903,30 @@ Parser.monTypeToFullObj._getTagMetas = (tags) => {
 		? tags.map(tag => {
 			if (typeof tag === "string") { // handles e.g. "Fiend (Devil)"
 				return {
-					filterTag: tag.toLowerCase(),
-					displayTag: Parser.MON_TAG_TO_CN[tag.toLowerCase()] || tag.toTitleCase(),
-				};
-			} else { // handles e.g. "Humanoid (Chondathan Human)"
-				return {
-					filterTag: tag.tag.toLowerCase(),
-					displayTag: `${Parser.MON_TAG_PREFIX_TO_CN[tag.prefix.toLowerCase()] || tag.prefix}${Parser.MON_TAG_TO_CN[tag.tag.toLowerCase()] || tag.tag}`.toTitleCase(),
+					filterTags: [tag.toLowerCase()],
+					displayTag: tag.toTitleCase(),
 				};
 			}
+
+			// handles e.g. drow -> "Humanoid (Elf)"
+			if (tag.prefixHidden) {
+				return {
+					filterTags: [
+						tag.tag.toLowerCase(),
+						`${tag.prefix}${tag.tag}`.toLowerCase(),
+					],
+					displayTag: tag.tag.toTitleCase(),
+				};
+			}
+
+			// handles e.g. "Humanoid (Chondathan Human)"
+			return {
+				filterTags: [
+					tag.tag.toLowerCase(),
+					`${tag.prefix}${tag.tag}`.toLowerCase(),
+				],
+				displayTag: `${tag.prefix}${tag.tag}`.toTitleCase(),
+			};
 		})
 		: [];
 };

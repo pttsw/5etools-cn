@@ -132,7 +132,8 @@
 						"tags": [
 							{
 								"tag": "侏儒",
-								"prefix": "深"
+								"prefix": "深",
+								"prefixHidden": true
 							}
 						]
 					},
@@ -332,8 +333,11 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"卓尔",
-							"精灵"
+							{
+								"tag": "精灵",
+								"prefix": "卓尔",
+								"prefixHidden": true
+							}
 						]
 					}
 				},
@@ -418,8 +422,11 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"卓尔",
-							"精灵"
+							{
+								"tag": "精灵",
+								"prefix": "卓尔",
+								"prefixHidden": true
+							}
 						]
 					}
 				},
@@ -507,7 +514,8 @@
 						"tags": [
 							{
 								"tag": "矮人",
-								"prefix": "灰矮人"
+								"prefix": "灰矮人",
+								"prefixHidden": true
 							}
 						]
 					},
@@ -1337,7 +1345,8 @@
 						"tags": [
 							{
 								"tag": "精灵",
-								"prefix": "高等"
+								"prefix": "高等",
+								"prefixHidden": true
 							}
 						]
 					}
@@ -1394,7 +1403,8 @@
 							"tags": [
 								{
 									"tag": "矮人",
-									"prefix": "丘陵"
+									"prefix": "丘陵",
+									"prefixHidden": true
 								}
 							]
 						}
@@ -2570,6 +2580,58 @@
 			}
 		},
 		{
+			"ENG_name": "Lightfoot Halfling",
+			"name": "轻足半身人",
+			"source": "PHB",
+			"page": 35,
+			"ref": "{@race 半身人 (轻足)||轻足半身人}",
+			"apply": {
+				"_root": {
+					"size": [
+						"S"
+					],
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							{
+								"tag": "半身人",
+								"prefix": "轻足",
+								"prefixHidden": true
+							}
+						]
+					},
+					"speed": {
+						"walk": 25
+					}
+				},
+				"_mod": {
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": "半身人"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"ENG_name": "Halfling Nimbleness",
+								"name": "半身人灵巧",
+								"entries": [
+									"<$title_short_name$>可以穿过一个中等大小或更大的生物所占据的空间。"
+								]
+							},
+							{
+								"ENG_name": "Brave",
+								"name": "勇气",
+								"entries": [
+									"<$title_short_name$>在对抗{@condition 恐慌}状态的豁免检定上有优势。"
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"ENG_name": "Lizardfolk",
 			"name": "蜥蜴人",
 			"source": "DMG",
@@ -2657,6 +2719,9 @@
 		{
 			"ENG_name": "Mountain Dwarf",
 			"name": "山地矮人",
+			"alias": [
+				"盾矮人"
+			],
 			"source": "PHB",
 			"page": 18,
 			"ref": "{@race 矮人 (山地)||山地矮人}",
@@ -2670,7 +2735,8 @@
 						"tags": [
 							{
 								"tag": "矮人",
-								"prefix": "山地"
+								"prefix": "山地",
+								"prefixHidden": true
 							}
 						]
 					},
@@ -2887,7 +2953,8 @@
 						"tags": [
 							{
 								"tag": "侏儒",
-								"prefix": "岩石"
+								"prefix": "岩石",
+								"prefixHidden": true
 							}
 						]
 					},
@@ -2939,7 +3006,8 @@
 							"tags": [
 								{
 									"tag": "矮人",
-									"prefix": "盾"
+									"prefix": "盾",
+									"prefixHidden": true
 								}
 							]
 						}
@@ -2999,6 +3067,9 @@
 		{
 			"ENG_name": "Stout Halfling",
 			"name": "敦实半身人",
+			"alias": [
+				"强心半身人"
+			],
 			"source": "PHB",
 			"page": 35,
 			"ref": "{@race 半身人 (敦实)||敦实半身人}",
@@ -3012,7 +3083,8 @@
 						"tags": [
 							{
 								"tag": "半身人",
-								"prefix": "敦实"
+								"prefix": "敦实",
+								"prefixHidden": true
 							}
 						]
 					},
@@ -3044,6 +3116,35 @@
 							}
 						]
 					}
+				}
+			}
+		},
+		{
+			"ENG_name": "Strongheart Halfling",
+			"name": "强心半身人",
+			"source": "PHB",
+			"_copy": {
+				"ENG_name": "Stout Halfling",
+				"name": "敦实半身人",
+				"source": "PHB",
+				"_mod": {
+					"_": {
+						"mode": "setProp",
+						"prop": "apply._root.type",
+						"value": {
+							"type": "humanoid",
+							"tags": [
+								{
+									"tag": "半身人",
+									"prefix": "强心",
+									"prefixHidden": true
+								}
+							]
+						}
+					}
+				},
+				"_preserve": {
+					"page": true
 				}
 			}
 		},
@@ -3249,7 +3350,8 @@
 						"tags": [
 							{
 								"tag": "精灵",
-								"prefix": "木"
+								"prefix": "木",
+								"prefixHidden": true
 							}
 						]
 					},
