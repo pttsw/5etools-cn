@@ -10739,7 +10739,7 @@ Renderer.monster = class {
 			.filter(Boolean)
 			.join("; ");
 
-		return `${crBase || "None"}${ptParens ? ` (${ptParens})` : ""}`;
+		return `${crBase || "无"}${ptParens ? ` (${ptParens})` : ""}`;
 	}
 
 	/* -------------------------------------------- */

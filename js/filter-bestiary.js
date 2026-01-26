@@ -107,7 +107,7 @@ class PageFilterBestiary extends PageFilterBase {
 			displayFn: Parser.monTypeToPlural,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._tagFilter = new Filter({header: "Tag", cnHeader: "副类型", displayFn: it => Parser.MON_TAG_TO_CN[it] || StrUtil.toTitleCase(it)});
+		this._tagFilter = new Filter({header: "Tag", cnHeader: "副类型", displayFn: it => StrUtil.toTitleCase(it)});
 		this._sidekickTypeFilter = new Filter({
 			header: "Sidekick Type",
 			cnHeader: "协力者类型",
@@ -134,21 +134,21 @@ class PageFilterBestiary extends PageFilterBase {
 			header: "Damage Inflicted by Traits/Actions",
 			cnHeader: "通过特性/动作造成伤害",
 			displayFn: this.constructor._getDamageTagDisplayText,
-			displayFnMini: tag => `Deals ${this.constructor._getDamageTagDisplayText(tag)} (Trait/Action)`,
+			displayFnMini: tag => `${this.constructor._getDamageTagDisplayText(tag)}造伤（特性/动作）`,
 			items: Object.keys(Parser.DMGTYPE_JSON_TO_FULL),
 		});
 		this._damageTypeFilterLegendary = new Filter({
 			header: "Damage Inflicted by Lair Actions/Regional Effects",
 			cnHeader: "通过巢穴动作/区域效应造成伤害",
 			displayFn: this.constructor._getDamageTagDisplayText,
-			displayFnMini: tag => `Deals ${this.constructor._getDamageTagDisplayText(tag)} (Lair/Regional)`,
+			displayFnMini: tag => `${this.constructor._getDamageTagDisplayText(tag)}造伤（巢穴/区域）`,
 			items: Object.keys(Parser.DMGTYPE_JSON_TO_FULL),
 		});
 		this._damageTypeFilterSpells = new Filter({
 			header: "Damage Inflicted by Spells",
 			cnHeader: "通过法术造成伤害",
 			displayFn: this.constructor._getDamageTagDisplayText,
-			displayFnMini: tag => `Deals ${this.constructor._getDamageTagDisplayText(tag)} (Spell)`,
+			displayFnMini: tag => `${this.constructor._getDamageTagDisplayText(tag)}造伤（法术）`,
 			items: Object.keys(Parser.DMGTYPE_JSON_TO_FULL),
 		});
 		this._damageTypeFilter = new MultiFilter({header: "Damage Inflicted", cnHeader: "造成伤害", filters: [this._damageTypeFilterBase, this._damageTypeFilterLegendary, this._damageTypeFilterSpells]});
@@ -156,14 +156,14 @@ class PageFilterBestiary extends PageFilterBase {
 			header: "Conditions Inflicted by Traits/Actions",
 			cnHeader: "通过特性/动作造成状态",
 			displayFn: this.constructor._getConditionDisplayText,
-			displayFnMini: uid => `Inflicts ${this.constructor._getConditionDisplayText(uid)} (Trait/Action)`,
+			displayFnMini: uid => `${this.constructor._getConditionDisplayText(uid)}状态（特性/动作）`,
 			items: [...Parser.CONDITIONS],
 		});
 		this._conditionsInflictedFilterLegendary = new Filter({
 			header: "Conditions Inflicted by Lair Actions/Regional Effects",
 			cnHeader: "通过巢穴动作/区域效应造成状态",
 			displayFn: this.constructor._getConditionDisplayText,
-			displayFnMini: uid => `Inflicts ${this.constructor._getConditionDisplayText(uid)} (Lair/Regional)`,
+			displayFnMini: uid => `${this.constructor._getConditionDisplayText(uid)}状态（巢穴/区域）`,
 			items: [...Parser.CONDITIONS],
 		});
 		this._conditionsInflictedFilterSpells = new Filter({

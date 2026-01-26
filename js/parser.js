@@ -1863,7 +1863,7 @@ Parser.monTypeToFullObj = function (type) {
 	}
 
 	if (type.swarmSize) {
-		out.tags.push("swarm");
+		out.tags.push("集群");
 		out.asText = `${out.types.map(typ => Parser.monTypeToPlural(typ).toTitleCase()).joinConjunct(", ", " 或 ")}的${Parser.sizeAbvToFull(type.swarmSize)}集群`;
 		out.asTextShort = out.asText;
 		out.swarmSize = type.swarmSize;
@@ -4543,7 +4543,7 @@ Parser.getPropDisplayName = function (prop, {suffix = ""} = {}) {
 Parser.DMGTYPE_JSON_TO_FULL = {
 	"A": "强酸",
 	"B": "钝击",
-	"C": "冷冻",
+	"C": "寒冷",
 	"F": "火焰",
 	"O": "力场",
 	"L": "闪电",
