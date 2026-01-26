@@ -736,12 +736,12 @@
 						{
 							"ENG_name": "Skeleton (bones)",
 							"name": "骷髅（骨架）",
-							"uuid": "{!@ b97530ec-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[骷髅|XMM]"
 						},
 						{
 							"ENG_name": "Zombie (corpse)",
 							"name": "丧尸（尸体）",
-							"uuid": "{!@ b9753aba-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[丧尸|XMM]"
 						}
 					]
 				}
@@ -767,19 +767,19 @@
 							"ENG_name": "Huge Object (costs 3)",
 							"name": "巨型物体（消耗 3）",
 							"count": "floor(@attributes.spell.mod / 3)",
-							"uuid": "{!@ b9754424-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[活化物件(巨型)|XPHB]"
 						},
 						{
 							"ENG_name": "Large Object (costs 2)",
 							"name": "大型物体（消耗 2）",
 							"count": "floor(@attributes.spell.mod / 2)",
-							"uuid": "{!@ b9755040-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[活化物体(大型)|XPHB]"
 						},
 						{
 							"ENG_name": "Medium Object",
 							"name": "中型物体",
 							"count": "@attributes.spell.mod",
-							"uuid": "{!@ b9755b26-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[活化物件（中型或更小）|XPHB]"
 						}
 					],
 					"match": {
@@ -4066,25 +4066,25 @@
 					"profiles": [
 						{
 							"count": "@item.level - 3",
-							"uuid": "{!@ b97b1eee-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[食尸鬼|XMM]"
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "{!@ b97b3622-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[妖鬼|XMM]",
 							"level": {
 								"min": 8
 							}
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "{!@ b97b4fb8-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[尸妖|XMM]",
 							"level": {
 								"min": 8
 							}
 						},
 						{
 							"count": "2",
-							"uuid": "{!@ b97b60fc-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[木乃伊|XMM]",
 							"level": {
 								"min": 9
 							}
@@ -7041,19 +7041,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b980a210-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "{!@ b980b3b8-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[异界坐骑（妖精）|XPHB]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "{!@ b980c31c-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
 							"level": {
 								"max": 3
 							}
@@ -7081,19 +7081,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b980a210-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "{!@ b980b3b8-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[异界坐骑（妖精）|XPHB]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "{!@ b980c31c-fa03-11f0-a05d-0242ac110004}",
+							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
 							"level": {
 								"min": 4
 							}
@@ -7185,7 +7185,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b9753aba-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[丧尸|XMM]"
 						}
 					]
 				}
@@ -8250,13 +8250,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b982f0c4-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[巨虫（蜈蚣）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b983035c-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[巨虫（蜘蛛）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b983146e-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[巨虫（黄蜂）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16008,7 +16008,7 @@
 						{
 							"ENG_name": "Reaper Spirit",
 							"name": "收割者灵魄",
-							"uuid": "{!@ b994b106-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[收割者灵魄|bmt]"
 						}
 					]
 				}
@@ -16507,17 +16507,17 @@
 						{
 							"ENG_name": "Beholderkin",
 							"name": "类眼魔",
-							"uuid": "{!@ b9960d26-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[异怪灵魄（类眼魔）|TCE]"
 						},
 						{
 							"ENG_name": "Slaad",
 							"name": "史拉蟾语",
-							"uuid": "{!@ b996383c-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|TCE]"
 						},
 						{
 							"ENG_name": "Star Spawn",
 							"name": "星之子",
-							"uuid": "{!@ b9965c86-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[异怪灵魄（星之子）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -16547,13 +16547,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b9968314-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[异怪灵魄（类眼魔）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b9969246-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b996a132-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[异怪灵魄（星之子）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16582,17 +16582,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "{!@ b996b758-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[野兽灵魄（天空）|TCE]"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "{!@ b996d56c-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[野兽灵魄（大地）|TCE]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "{!@ b996f4ac-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[野兽灵魄（海洋）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -16621,13 +16621,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b9971a18-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[野兽灵魄（天空）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b9972e22-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[野兽灵魄（大地）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b997427c-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[野兽灵魄（海洋）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16655,12 +16655,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "{!@ b9975a0a-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|TCE]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "{!@ b99780b6-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[天界灵魄（守护圣灵）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -16692,12 +16692,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "{!@ b997a834-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|XPHB]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "{!@ b997ba90-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[天界灵魄（守护圣灵）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16725,17 +16725,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "{!@ b997d2e6-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[构装灵魄（粘土）|TCE]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "{!@ b997f2b2-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[构装灵魄（金属）|TCE]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "{!@ b9981846-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[构装灵魄（岩石）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -16767,17 +16767,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "{!@ b99840d2-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[构装灵魄（粘土）|XPHB]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "{!@ b9985360-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[构装灵魄（金属）|XPHB]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "{!@ b998658a-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[构装灵魄（岩石）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16806,17 +16806,17 @@
 						{
 							"ENG_name": "Chromatic",
 							"name": "多彩",
-							"uuid": "{!@ b9987ec6-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[龙类灵魄（繁彩）|FTD]"
 						},
 						{
 							"ENG_name": "Gem",
 							"name": "宝石",
-							"uuid": "{!@ b998a48c-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[龙类灵魄（宝石）|FTD]"
 						},
 						{
 							"ENG_name": "Metallic",
 							"name": "金属",
-							"uuid": "{!@ b998c822-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[龙类灵魄（金属）|FTD]"
 						}
 					]
 				}
@@ -16836,7 +16836,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b998fc70-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[龙类灵魄|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16865,22 +16865,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "{!@ b9991a70-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（气）|TCE]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "{!@ b99937da-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（土）|TCE]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "{!@ b9995684-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（火）|TCE]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "{!@ b9997632-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（水）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -16911,22 +16911,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "{!@ b9999914-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（气）|XPHB]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "{!@ b999ac2e-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（土）|XPHB]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "{!@ b999c2ae-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（火）|XPHB]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "{!@ b999de06-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[元素灵魄（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16954,17 +16954,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "{!@ b999f846-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[妖精灵魄（愤怒）|TCE]"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "{!@ b99a1970-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[妖精灵魄（欢欣）|TCE]"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "{!@ b99a38b0-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[妖精灵魄（诡诈）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -16994,13 +16994,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b99a5e8a-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[妖精灵魄（愤怒）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b99a6e34-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[妖精灵魄（欢欣）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b99a7e74-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[妖精灵魄（诡诈）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -17029,17 +17029,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "{!@ b99a9576-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[邪魔灵魄（恶魔）|TCE]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "{!@ b99ab74a-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|TCE]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "{!@ b99ad7a2-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -17072,17 +17072,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "{!@ b99afe44-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[邪魔灵魄（恶魔）|XPHB]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "{!@ b99b11fe-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|XPHB]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "{!@ b99b24d2-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -17112,17 +17112,17 @@
 						{
 							"ENG_name": "Fury",
 							"name": "狂怒",
-							"uuid": "{!@ b99b3e90-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[暗影灵魄（暴怒）|TCE]"
 						},
 						{
 							"ENG_name": "Despair",
 							"name": "绝望",
-							"uuid": "{!@ b99b68ca-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[暗影灵魄（绝望）|TCE]"
 						},
 						{
 							"ENG_name": "Fear",
 							"name": "恐惧术",
-							"uuid": "{!@ b99b89cc-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[暗影灵魄（恐惧）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -17150,17 +17150,17 @@
 						{
 							"ENG_name": "Ghostly",
 							"name": "幽体",
-							"uuid": "{!@ b99bab5a-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[亡灵灵魄（幽体）|TCE]"
 						},
 						{
 							"ENG_name": "Putrid",
 							"name": "腐尸",
-							"uuid": "{!@ b99bcba8-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[亡灵灵魄（腐尸）|TCE]"
 						},
 						{
 							"ENG_name": "Skeletal",
 							"name": "骷髅",
-							"uuid": "{!@ b99bedc2-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[亡灵灵魄（骷髅）|TCE]"
 						}
 					],
 					"bonuses": {
@@ -17190,13 +17190,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "{!@ b99c25ee-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[亡灵灵魄（幽体）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b99c3ffc-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[亡灵灵魄（腐尸）|XPHB]"
 						},
 						{
-							"uuid": "{!@ b99c5f96-fa03-11f0-a05d-0242ac110004}"
+							"uuid": "@creature[亡灵灵魄（骷髅）|XPHB]"
 						}
 					],
 					"bonuses": {

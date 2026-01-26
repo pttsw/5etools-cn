@@ -133,7 +133,7 @@ class _PageGeneratorIndex extends PageGeneratorGeneric {
 	_pageDescription = "《龙与地下城 DND》中文资料站";
 
 	_navbarTitleHtml = `5e<span>tools</span>`;
-	_navbarDescription = "为中文《龙与地下城 DND 5E》玩家和地下城主而生的工具资料站。";
+	_navbarDescription = "为中文《龙与地下城》（DND 5E/5R）玩家和地下城主而生的工具资料站。";
 	_navbarPageTitleStyleAdditional = "page__title--home";
 
 	_isFontAwesome = true;
