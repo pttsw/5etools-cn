@@ -5141,4 +5141,10 @@ Parser.ENCONTER_DIFFICULTY_TO_CN = {
 Parser.encounterDifficultyToCn = function (type) {
 	return Parser._parse_aToB(Parser.ENCONTER_DIFFICULTY_TO_CN, type.toLowerCase());
 };
+
+Parser.getDisplayNameWithEN = function (ent) {
+	const engName = ent.ENG_name?.match(/^[^([{]*/)?.[0]?.trim() || undefined;
+	const curDisplayName = (ent.name && engName) ? `${ent.name} ${engName}`.trim() : ent.name;
+	return ent._displayName || curDisplayName;
+};
 // endregion

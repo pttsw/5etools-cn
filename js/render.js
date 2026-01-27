@@ -977,10 +977,7 @@ globalThis.Renderer = function () {
 	};
 
 	this._renderEntriesSubtypes = function (entry, textStack, meta, options, incDepth) {
-		// 截取ENG_name中左括号或者左大括号前的内容
-		const engName = entry.ENG_name?.match(/^[^([{]*/)?.[0]?.trim() || undefined;
-		const curDisplayName = (entry.name && engName) ? `${entry.name} ${engName}`.trim() : entry.name
-		const displayName = entry._displayName || curDisplayName;
+		const displayName = Parser.getDisplayNameWithEN(entry);
 
 		const isInlineTitle = meta.depth >= 2;
 
@@ -2106,7 +2103,7 @@ globalThis.Renderer = function () {
 			}
 			case "@actSaveFailBy": {
 				const [amount] = Renderer.splitTagByPipe(text);
-				textStack[0] += `<i>Failure by ${amount} or More:</i>`;
+				textStack[0] += `<i>失败差值 ${amount} 或更多:</i>`;
 				break;
 			}
 			case "@actSaveSuccessOrFail": textStack[0] += `<i>失败或成功:</i>`; break;
@@ -7114,9 +7111,7 @@ Renderer.class = class {
 
 	static getDisplayNamedClassFeatureEntry (ent, styleHint) {
 		if (styleHint === "classic" || !ent.level || !ent.name) return ent;
-		const engName = ent.ENG_name?.match(/^[^([{]*/)?.[0]?.trim() || undefined;
-		const curDisplayName = (ent.name && engName) ? `${ent.name} ${engName}`.trim() : ent.name;
-		return {_displayName: `等级 ${ent.level}: ${ent._displayName || curDisplayName}`, ...ent};
+		return {_displayName: `等级 ${ent.level}: ${Parser.getDisplayNameWithEN(ent)}`, ...ent};
 	}
 
 	static getDisplayNamedSubclassFeatureEntry (ent, {styleHint = null, isEditionMismatch = false} = {}) {
@@ -7133,9 +7128,7 @@ Renderer.class = class {
 			.map(ent => {
 				if (ent.type !== "entries" || !ent.name) return ent;
 				if (!ent.level) return ent;
-				const engName = ent.ENG_name?.match(/^[^([{]*/)?.[0]?.trim() || undefined;
-				const curDisplayName = (ent.name && engName) ? `${ent.name} ${engName}`.trim() : ent.name;
-				return {_displayName: `等级 ${ent.level}: ${ent._displayName || curDisplayName}`, ...ent};
+				return {_displayName: `等级 ${ent.level}: ${Parser.getDisplayNameWithEN(ent)}`, ...ent};
 			});
 		return cpy;
 	}

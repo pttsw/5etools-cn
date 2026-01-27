@@ -104,6 +104,7 @@ class _PageGeneratorConverter extends PageGeneratorGeneric {
 
 	_scriptsRenderAdditional = [
 		"render-markdown.js",
+		"render-bbcode.js",
 	];
 
 	_scriptsModules = [

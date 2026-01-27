@@ -361,7 +361,7 @@ class RendererMarkdown {
 
 	_renderVariant (entry, textStack, meta, options) {
 		textStack[0] += "\n";
-		if (entry.name != null) textStack[0] += `> ##### Variant: ${Renderer.stripTags(entry.name)}\n>\n`;
+		if (entry.name != null) textStack[0] += `> ##### 变体: ${Renderer.stripTags(entry.name)}\n>\n`;
 		if (entry.entries) {
 			const len = entry.entries.length;
 			for (let i = 0; i < len; ++i) {
@@ -489,7 +489,7 @@ class RendererMarkdown {
 		textStack[0] += `*${Parser.attackTypeToFull(entry.attackType)}:* `;
 		const len = entry.attackEntries.length;
 		for (let i = 0; i < len; ++i) this._recursiveRender(entry.attackEntries[i], textStack, meta);
-		textStack[0] += ` *Hit:* `;
+		textStack[0] += ` *命中:* `;
 		const len2 = entry.hitEntries.length;
 		for (let i = 0; i < len2; ++i) this._recursiveRender(entry.hitEntries[i], textStack, meta);
 		this._renderSuffix(entry, textStack, meta, options);
@@ -544,7 +544,7 @@ class RendererMarkdown {
 
 		if (!fnGetRenderCompact) {
 			this._renderPrefix(entry, textStack, meta, options);
-			textStack[0] += `**Cannot render "${entry.type}"\u2014unknown type "${entry.dataType}"!**\n`;
+			textStack[0] += `**无法转换"${entry.type}"\u2014未知类型"${entry.dataType}"!**\n`;
 			this._renderSuffix(entry, textStack, meta, options);
 			return;
 		}
@@ -711,25 +711,25 @@ class RendererMarkdown {
 			case "@atkr":
 				textStack[0] += `*${Renderer.attackTagToFull(text, {isRoll: tag === "@atkr"})}* `;
 				break;
-			case "@actSave": textStack[0] += `*${Parser.attAbvToFull(text)} Saving Throw:*`; break;
-			case "@actSaveSuccess": textStack[0] += `*Success:*`; break;
+			case "@actSave": textStack[0] += `*${Parser.attAbvToFull(text)}豁免:*`; break;
+			case "@actSaveSuccess": textStack[0] += `*成功:*`; break;
 			case "@actSaveFail": {
 				const [ordinal] = Renderer.splitTagByPipe(text);
-				if (ordinal) textStack[0] += `*${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()} Failure:*`;
-				else textStack[0] += `*Failure:*`;
+				if (ordinal) textStack[0] += `*${Parser.numberToText(ordinal, {isOrdinalForm: true}).toTitleCase()}失败:*`;
+				else textStack[0] += `*失败:*`;
 				break;
 			}
 			case "@actSaveFailBy": {
 				const [amount] = Renderer.splitTagByPipe(text);
-				textStack[0] += `*Failure by ${amount} or More:*`;
+				textStack[0] += `*失败差值 ${amount} 或更多:*`;
 				break;
 			}
-			case "@actSaveSuccessOrFail": textStack[0] += `*Failure or Success:*`; break;
-			case "@actTrigger": textStack[0] += `*Trigger:*`; break;
-			case "@actResponse": textStack[0] += `*Response${text.includes("d") ? "\u2014" : ":"}*`; break;
-			case "@h": textStack[0] += `*Hit:* `; break;
-			case "@m": textStack[0] += `*Miss:* `; break;
-			case "@hom": textStack[0] += `*Hit or Miss:* `; break;
+			case "@actSaveSuccessOrFail": textStack[0] += `*失败或成功:*`; break;
+			case "@actTrigger": textStack[0] += `*触发:*`; break;
+			case "@actResponse": textStack[0] += `*响应:"}*`; break;
+			case "@h": textStack[0] += `*命中:* `; break;
+			case "@m": textStack[0] += `*未命中:* `; break;
+			case "@hom": textStack[0] += `*命中或未命中:* `; break;
 
 			// DCs /////////////////////////////////////////////////////////////////////////////////////////////
 			case "@dc": {
@@ -841,7 +841,7 @@ RendererMarkdown.utils = class {
 	static compact = class {
 		// TODO(Future) nicely pad widths (render as table?)
 		static getRenderedAbilityScores (ent, {prefix = ""} = "") {
-			return `${prefix}|${Parser.ABIL_ABVS.map(it => `${it.toUpperCase()}|`).join("")}
+			return `${prefix}|${Parser.ABIL_ABVS.map(it => `${Parser.attAbvToFull(it)}|`).join("")}
 ${prefix}|:---:|:---:|:---:|:---:|:---:|:---:|
 ${prefix}|${Parser.ABIL_ABVS.map(ab => ent[ab] == null ? `\u2014|` : `${ent[ab]} (${Parser.getAbilityModifier(ent[ab])})|`).join("")}`;
 		}
@@ -963,7 +963,12 @@ class _RenderCompactMarkdownBestiaryImplBase {
 
 	/* ----- */
 
-	_getCommonMdParts_name ({mon}) { return `>## ${mon._displayName || mon.name}`; }
+	_getCommonMdParts_name ({mon}) { 
+		if (mon.ENG_name) {
+			return `>## ${mon._displayName || mon.name}\n>### ${mon.ENG_name}`
+		}
+		return `>## ${mon._displayName || mon.name}`;
+	}
 
 	_getCommonMdParts_sizeTypeAlignment ({mon, renderer, opts}) {
 		const monTypes = Parser.monTypeToFullObj(mon.type);
@@ -974,7 +979,7 @@ class _RenderCompactMarkdownBestiaryImplBase {
 		RendererMarkdown.get().isSkipStylingItemLinks = true;
 		const acPart = mon.ac == null ? "\u2014" : Parser.acToFull(mon.ac, {renderer});
 		RendererMarkdown.get().isSkipStylingItemLinks = false;
-		return `>- **Armor Class** ${acPart}`;
+		return `>- **护甲等级** ${acPart}`;
 	}
 
 	_getCommonMdParts_hpResource ({mon, renderer, opts}) {
@@ -983,12 +988,12 @@ class _RenderCompactMarkdownBestiaryImplBase {
 				.map(res => `\n>- **${res.name}** ${Renderer.monster.getRenderedResource(res, true)}`)
 				.join("")
 			: "";
-		return `>- **Hit Points** ${mon.hp == null ? "\u2014" : Renderer.monster.getRenderedHp(mon.hp, {isPlainText: true})}${resourcePart}`;
+		return `>- **生命值** ${mon.hp == null ? "\u2014" : Renderer.monster.getRenderedHp(mon.hp, {isPlainText: true})}${resourcePart}`;
 	}
 
 	_getCommonMdParts_speedInitiative ({mon, renderer, opts}) {
-		const initiativePart = this._style === "classic" ? "" : `\n>- **Initiative** ${Renderer.monster.getInitiativePart(mon, {isPlainText: true})}`;
-		return `>- **Speed** ${Parser.getSpeedString(mon)}${initiativePart}`;
+		const initiativePart = this._style === "classic" ? "" : `\n>- **先攻** ${Renderer.monster.getInitiativePart(mon, {isPlainText: true})}`;
+		return `>- **速度** ${Parser.getSpeedString(mon)}${initiativePart}`;
 	}
 
 	_getCommonMdParts_abilityScores ({mon, renderer, opts}) {
@@ -996,41 +1001,41 @@ class _RenderCompactMarkdownBestiaryImplBase {
 	}
 
 	_getCommonMdParts_save ({mon, renderer, opts}) {
-		return mon.save ? `\n>- **Saving Throws** ${Object.keys(mon.save).sort(SortUtil.ascSortAtts).map(it => RendererMarkdown.monster.getSave(it, mon.save[it])).join(", ")}` : "";
+		return mon.save ? `\n>- **豁免** ${Object.keys(mon.save).sort(SortUtil.ascSortAtts).map(it => RendererMarkdown.monster.getSave(it, mon.save[it])).join(", ")}` : "";
 	}
 
 	_getCommonMdParts_skill ({mon, renderer, opts}) {
-		return mon.skill ? `\n>- **Skills** ${RendererMarkdown.monster.getSkillsString(mon)}` : "";
+		return mon.skill ? `\n>- **技能** ${RendererMarkdown.monster.getSkillsString(mon)}` : "";
 	}
 
 	_getCommonMdParts_tool ({mon, renderer, opts}) {
-		return mon.tool ? `\n>- **Tools** ${RendererMarkdown.monster.getToolsString(mon)}` : "";
+		return mon.tool ? `\n>- **工具** ${RendererMarkdown.monster.getToolsString(mon)}` : "";
 	}
 
 	_getCommonMdParts_damVuln ({mon, renderer, opts}) {
-		return mon.vulnerable ? `\n>- **Damage Vulnerabilities** ${Parser.getFullImmRes(mon.vulnerable, {isPlainText: true, isTitleCase: this._style !== "classic"})}` : "";
+		return mon.vulnerable ? `\n>- **易伤** ${Parser.getFullImmRes(mon.vulnerable, {isPlainText: true, isTitleCase: this._style !== "classic"})}` : "";
 	}
 
 	_getCommonMdParts_damRes ({mon, renderer, opts}) {
-		return mon.resist ? `\n>- **Damage Resistances** ${Parser.getFullImmRes(mon.resist, {isPlainText: true, isTitleCase: this._style !== "classic"})}` : "";
+		return mon.resist ? `\n>- **抗性** ${Parser.getFullImmRes(mon.resist, {isPlainText: true, isTitleCase: this._style !== "classic"})}` : "";
 	}
 
 	_getCommonMdParts_sense ({mon, renderer, opts}) {
-		const ptLblPassive = this._style !== "classic" ? "Passive Perception" : "passive Perception";
-		return !opts.isHideSenses ? `\n>- **Senses** ${mon.senses ? `${Renderer.utils.getRenderedSenses(mon.senses, {isPlainText: true, isTitleCase: this._style !== "classic"})}, ` : ""}${ptLblPassive} ${mon.passive || "\u2014"}` : "";
+		const ptLblPassive = "被动察觉";
+		return !opts.isHideSenses ? `\n>- **感官** ${mon.senses ? `${Renderer.utils.getRenderedSenses(mon.senses, {isPlainText: true, isTitleCase: this._style !== "classic"})}, ` : ""}${ptLblPassive} ${mon.passive || "\u2014"}` : "";
 	}
 
 	_getCommonMdParts_language ({mon, renderer, opts}) {
-		return !opts.isHideLanguages ? `\n>- **Languages** ${Renderer.monster.getRenderedLanguages(mon.languages, {styleHint: this._style})}` : "";
+		return !opts.isHideLanguages ? `\n>- **语言** ${Renderer.monster.getRenderedLanguages(mon.languages, {styleHint: this._style})}` : "";
 	}
 
 	_getCommonMdParts_cr ({mon, renderer, opts}) {
-		return `>- **Challenge** ${Renderer.monster.getChallengeRatingPart(mon, {styleHint: this._style, isPlainText: true})}`;
+		return `>- **CR** ${Renderer.monster.getChallengeRatingPart(mon, {styleHint: this._style, isPlainText: true})}`;
 	}
 
 	_getCommonMdParts_pb ({mon, renderer, opts}) {
 		const pbPart = Renderer.monster.getPbPart(mon, {isPlainText: true});
-		return pbPart ? `>- **Proficiency Bonus** ${pbPart}` : "";
+		return pbPart ? `>- **熟练加值** ${pbPart}` : "";
 	}
 
 	_getCommonMdParts_breakable ({mon, renderer, opts}) {
@@ -1051,15 +1056,15 @@ class _RenderCompactMarkdownBestiaryImplBase {
 			? `\n${RendererMarkdown.monster._getRenderedSection({prop: "trait", entries: entsTrait, depth: 1, meta, prefix: ">"})}`
 			: "";
 
-		const actionsPart = RendererMarkdown.monster.getRenderedSection({arr: entsAction, ent: mon, prop: "action", title: "Actions", meta, prefix: ">"});
-		const bonusActionsPart = RendererMarkdown.monster.getRenderedSection({arr: entsBonusAction, ent: mon, prop: "bonus", title: "Bonus Actions", meta, prefix: ">"});
-		const reactionsPart = RendererMarkdown.monster.getRenderedSection({arr: entsReaction, ent: mon, prop: "reaction", title: "Reactions", meta, prefix: ">"});
+		const actionsPart = RendererMarkdown.monster.getRenderedSection({arr: entsAction, ent: mon, prop: "action", title: "动作", meta, prefix: ">"});
+		const bonusActionsPart = RendererMarkdown.monster.getRenderedSection({arr: entsBonusAction, ent: mon, prop: "bonus", title: "附赠动作", meta, prefix: ">"});
+		const reactionsPart = RendererMarkdown.monster.getRenderedSection({arr: entsReaction, ent: mon, prop: "reaction", title: "反应", meta, prefix: ">"});
 
 		const legendaryActionsPart = entsLegendaryAction?.length
-			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Legendary Actions", prop: "legendary", prefix: ">"})}>${Renderer.monster.getLegendaryActionIntro(mon, {renderer: RendererMarkdown.get(), styleHint: this._style})}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(entsLegendaryAction, 1, meta)}`
+			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "传奇动作", prop: "legendary", prefix: ">"})}>${Renderer.monster.getLegendaryActionIntro(mon, {renderer: RendererMarkdown.get(), styleHint: this._style})}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(entsLegendaryAction, 1, meta)}`
 			: "";
 		const mythicActionsPart = entsMythicAction?.length
-			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Mythic Actions", prop: "mythic", prefix: ">"})}>${Renderer.monster.getSectionIntro(mon, {renderer: RendererMarkdown.get(), prop: "mythic"})}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(entsMythicAction, 1, meta)}`
+			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "神话动作", prop: "mythic", prefix: ">"})}>${Renderer.monster.getSectionIntro(mon, {renderer: RendererMarkdown.get(), prop: "mythic"})}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(entsMythicAction, 1, meta)}`
 			: "";
 
 		const legendaryGroup = DataUtil.monster.getLegendaryGroup(mon);
@@ -1093,11 +1098,11 @@ class _RenderCompactMarkdownBestiaryImplClassic extends _RenderCompactMarkdownBe
 
 	/* ----- */
 	_getMdParts_damageImmunities ({mon, renderer, opts}) {
-		return mon.immune ? `\n>- **Damage Immunities** ${Parser.getFullImmRes(mon.immune, {isPlainText: true})}` : "";
+		return mon.immune ? `\n>- **伤害免疫** ${Parser.getFullImmRes(mon.immune, {isPlainText: true})}` : "";
 	}
 
 	_getMdParts_ConditionImmunities ({mon, renderer, opts}) {
-		return mon.conditionImmune ? `\n>- **Condition Immunities** ${Parser.getFullCondImm(mon.conditionImmune, {isPlainText: true})}` : "";
+		return mon.conditionImmune ? `\n>- **状态免疫** ${Parser.getFullCondImm(mon.conditionImmune, {isPlainText: true})}` : "";
 	}
 
 	/* -------------------------------------------- */
@@ -1178,13 +1183,13 @@ class _RenderCompactMarkdownBestiaryImplOne extends _RenderCompactMarkdownBestia
 	_getMdParts_immunities ({mon, renderer, opts}) {
 		const pt = Renderer.monster.getImmunitiesCombinedPart(mon, {isPlainText: true});
 		if (!pt) return "";
-		return `\n>- **Immunities** ${pt}`;
+		return `\n>- **免疫** ${pt}`;
 	}
 
 	_getMdParts_gear ({mon, renderer, opts}) {
 		const pt = Renderer.monster.getGearPart(mon, {renderer});
 		if (!pt) return "";
-		return `\n>- **Gear** ${pt}`;
+		return `\n>- **装备** ${pt}`;
 	}
 
 	/* -------------------------------------------- */
@@ -1262,7 +1267,7 @@ RendererMarkdown.monster = class {
 
 	static getSkillsString (mon) {
 		function doSortMapJoinSkillKeys (obj, keys, joinWithOr) {
-			const toJoin = keys.sort(SortUtil.ascSort).map(s => `${s.toTitleCase()} ${obj[s]}`);
+			const toJoin = keys.sort(SortUtil.ascSort).map(s => `${Parser.enSkillToCn(s)} ${obj[s]}`);
 			return joinWithOr ? toJoin.joinConjunct(", ", " or ") : toJoin.join(", ");
 		}
 
@@ -1428,13 +1433,13 @@ RendererMarkdown.spell = class {
 
 		const subStack = [""];
 
-		subStack[0] += `#### ${sp._displayName || sp.name}
+		subStack[0] += `#### ${Parser.getDisplayNameWithEN(sp)}
 *${Parser.spLevelSchoolMetaToFull(sp.level, sp.school, sp.meta, sp.subschools)}*
 ___
-- **Casting Time:** ${Parser.spTimeListToFull(sp.time, sp.meta)}
-- **Range:** ${Parser.spRangeToFull(sp.range)}
-- **Components:** ${Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})}
-- **Duration:** ${Parser.spDurationToFull(sp.duration, {isPlainText: true, styleHint})}
+- **施法时间:** ${Parser.spTimeListToFull(sp.time, sp.meta)}
+- **施法距离:** ${Parser.spRangeToFull(sp.range)}
+- **法术成分:** ${Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})}
+- **持续时间:** ${Parser.spDurationToFull(sp.duration, {isPlainText: true, styleHint})}
 ---\n`;
 
 		const cacheDepth = meta.depth;
@@ -1448,7 +1453,7 @@ ___
 		const fromClassList = Renderer.spell.getCombinedClasses(sp, "fromClassList");
 		if (fromClassList.length) {
 			const [current] = Parser.spClassesToCurrentAndLegacy(fromClassList);
-			subStack[0] = `${subStack[0].trimEnd()}\n\n**Classes:** ${Parser.spMainClassesToFull(current, {isTextOnly: true})}`;
+			subStack[0] = `${subStack[0].trimEnd()}\n\n**职业:** ${Parser.spMainClassesToFull(current, {isTextOnly: true})}`;
 		}
 
 		const spellRender = subStack.join("").trim();
@@ -1472,7 +1477,7 @@ RendererMarkdown.item = class {
 
 		const ptSubtitle = [typeRarityTierValueWeight, ptDamage, ptProperties, ptMastery].filter(Boolean).join("\n\n");
 
-		subStack[0] += `#### ${item._displayName || item.name}${ptSubtitle ? `\n\n${ptSubtitle}` : ""}\n\n${ptSubtitle ? `---\n\n` : ""}`;
+		subStack[0] += `#### ${Parser.getDisplayNameWithEN(item)}${ptSubtitle ? `\n\n${ptSubtitle}` : ""}\n\n${ptSubtitle ? `---\n\n` : ""}`;
 
 		if (Renderer.item.hasEntries(item)) {
 			const cacheDepth = meta.depth;
@@ -1534,7 +1539,7 @@ RendererMarkdown.legendaryGroup = class {
 
 		const subStack = [""];
 
-		subStack[0] += `## ${lg._displayName || lg.name}`;
+		subStack[0] += `## ${Parser.getDisplayNameWithEN(lg)}`;
 		RendererMarkdown.get().recursiveRender(subEntry, subStack, meta, {suffix: "\n"});
 
 		const lgRender = subStack.join("").trim();
@@ -2213,7 +2218,7 @@ RendererMarkdown.facility = class {
 RendererMarkdown.generic = class {
 	static getCompactRenderedString (ent, opts = {}) {
 		const subStack = [""];
-		subStack[0] += `## ${ent._displayName || ent.name}\n\n`;
+		subStack[0] += `## ${Parser.getDisplayNameWithEN(ent)}\n\n`;
 		ent.entries.forEach(entry => {
 			RendererMarkdown.generic.getRenderedSubEntry(entry, opts, {subStack});
 			subStack[0] += "\n\n";

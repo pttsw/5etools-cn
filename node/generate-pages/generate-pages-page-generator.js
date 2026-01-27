@@ -191,6 +191,7 @@ export class PageGeneratorListBase extends PageGeneratorGeneric {
 
 			scriptsRenderAdditional: [
 				"render-markdown.js",
+				"render-bbcode.js",
 				...(this._isHasRenderer ? [`render-${this._scriptIdentList}.js`] : []),
 				...data.scriptsRenderAdditional || [],
 			],
@@ -275,6 +276,7 @@ export class PageGeneratorTablepageBase extends PageGeneratorGeneric {
 
 	_scriptsRenderAdditional = [
 		"render-markdown.js",
+		"render-bbcode.js",
 	];
 
 	_scriptsUtilsAdditional = [
@@ -300,6 +302,7 @@ export class PageGeneratorManagerBase extends PageGeneratorGeneric {
 
 	_scriptsRenderAdditional = [
 		"render-markdown.js",
+		"render-bbcode.js",
 	];
 
 	_scriptsUtilsAdditional = [

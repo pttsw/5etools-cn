@@ -1259,6 +1259,7 @@ class ListPage {
 		this._bindPopoutButton();
 		this._bindLinkExportButton();
 		this._bindLinkEngSiteButton();
+		this._bindBBCodeExportButton();
 		this._bindOtherButtons({
 			...(this._bindOtherButtonsOptions || {}),
 		});
@@ -1527,6 +1528,12 @@ class ListPage {
 			})
 			.tooltip("跳转英文源站");
 	}
+	_bindBBCodeExportButton ({btn} = {}) {
+		btn ||= this._getOrTabRightButton(`link-bbcode`, `transfer`);
+		btn.addClass("ve-btn-copy-effect")
+			.onn("click", evt => this._bindPopoutButton_doShowBBCode(evt))
+			.tooltip("弹出BBCode文本（果园拟像术）");
+	}
 	_bindPopoutButton () {
 		this._getOrTabRightButton(`popout`, `new-window`)
 			.tooltip(`弹出框 (按住SHIFT键弹出源数据；按住CTRL键弹出Markdown文本）`)
@@ -1578,6 +1585,33 @@ class ListPage {
 			],
 		});
 		const content = Renderer.hover.getHoverContent_miscCode(name, mdText);
+
+		Renderer.hover.getShowWindow(
+			content,
+			Renderer.hover.getWindowPositionFromEvent(evt),
+			{
+				title: name,
+				isPermanent: true,
+				isBookContent: true,
+			},
+		);
+	}
+
+	_bindPopoutButton_doShowBBCode (evt) {
+		const propData = this._propEntryData || this._lastRender.entity.__prop;
+
+		const name = `${this._lastRender.entity._displayName || this._lastRender.entity.name} \u2014 BBCode`;
+		const mdText = RendererMarkdown.get().render({
+			entries: [
+				{
+					type: "statblockInline",
+					dataType: propData,
+					data: this._lastRender.entity,
+				},
+			],
+		});
+		const bbText = RendererBBCode.get().renderBBCode(mdText);
+		const content = Renderer.hover.getHoverContent_miscCode(name, bbText);
 
 		Renderer.hover.getShowWindow(
 			content,
