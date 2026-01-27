@@ -62,7 +62,7 @@ class _RenderClassesSidebarImplBase {
 
 		return ee`<tr><th colspan="6" class="ve-text-left">
 			<div class="split-v-center pr-1" ${dataPartSendToFoundry}>
-				<div class="cls-side__name">${cls.name}</div>
+				<div class="cls-side__name">${cls.name} ${cls.ENG_name}</div>
 				<div class="ve-flex-v-center">${btnSendToFoundry}${btnToggleSidebar}</div>
 			</div>
 		</th></tr>`;
