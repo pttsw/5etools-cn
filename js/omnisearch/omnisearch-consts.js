@@ -24,8 +24,8 @@ export class OmnisearchConsts {
 		propOmnisearch: "isShowLegacy",
 		fnAddHookOmnisearch: "addHookLegacy",
 		fnDoToggleOmnisearch: "doToggleLegacy",
-		title: "包括传奇资源",
-		text: "传奇",
+		title: "包括过期资源",
+		text: "过期",
 	};
 	static BTN_META_SRD_ONLY = {
 		propOmnisearch: "isSrdOnly",

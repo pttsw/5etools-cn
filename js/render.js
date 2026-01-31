@@ -1931,8 +1931,8 @@ globalThis.Renderer = function () {
 		textStack[0] += `
 			<div class="ve-flex-col h-100">
 				<div class="ve-flex no-shrink pt-1">
-					<button class="ve-btn ve-btn-default ve-btn-xs mb-1 mr-2" onclick="Renderer.events.handleClick_copyCode(event, this)">Copy Code</button>
-					<button class="ve-btn ve-btn-default ve-btn-xs mb-1 ${isWrapped ? "active" : ""}" onclick="Renderer.events.handleClick_toggleCodeWrap(event, this)">Word Wrap</button>
+					<button class="ve-btn ve-btn-default ve-btn-xs mb-1 mr-2" onclick="Renderer.events.handleClick_copyCode(event, this)">复制代码</button>
+					<button class="ve-btn ve-btn-default ve-btn-xs mb-1 ${isWrapped ? "active" : ""}" onclick="Renderer.events.handleClick_toggleCodeWrap(event, this)">自动换行</button>
 				</div>
 				<pre class="h-100 w-100 mb-1 ${isWrapped ? "rd__pre-wrap" : ""}">${entry.preformatted}</pre>
 			</div>
