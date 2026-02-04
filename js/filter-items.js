@@ -417,7 +417,7 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.ability) item._fMisc.push("属性值修正");
 		if (item.modifySpeed) item._fMisc.push("速度修正");
 		if (item.charges) item._fMisc.push("充能");
-		if (item.sentient) item._fMisc.push("有认知的");
+		if (item.sentient) item._fMisc.push("智能");
 		if (item.grantsProficiency) item._fMisc.push("提供熟练项");
 		if (item.grantsLanguage) item._fMisc.push("提供语言");
 		if (item.critThreshold) item._fMisc.push("额外范围");
