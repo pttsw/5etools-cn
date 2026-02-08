@@ -163,11 +163,10 @@ class ItemsSublistManager extends SublistManager {
 				.off("click")
 				.onn("click", async () => {
 					const values = ["(Default)", ...[...availConversions].sort(SortUtil.ascSortLower)];
-					const defaultSel = values.indexOf(this._sublistCurrencyConversion);
 					const userSel = await InputUiUtil.pGetUserEnum({
 						values,
 						isResolveItem: true,
-						default: ~defaultSel ? defaultSel : 0,
+						default: this._sublistCurrencyConversion,
 						title: "Select Currency Conversion Table",
 						fnDisplay: it => it === null ? values[0] : it,
 					});
@@ -183,11 +182,10 @@ class ItemsSublistManager extends SublistManager {
 			.txt(this._getTotalValueText({value}) || "\u2014")
 			.off("click")
 			.onn("click", async () => {
-				const defaultSel = this.constructor._TOTAL_VALUE_MODES.indexOf(this._sublistCurrencyDisplayMode);
 				const userSel = await InputUiUtil.pGetUserEnum({
 					values: this.constructor._TOTAL_VALUE_MODES,
 					isResolveItem: true,
-					default: ~defaultSel ? defaultSel : 0,
+					default: this.constructor._TOTAL_VALUE_MODES.indexOf(this._sublistCurrencyDisplayMode),
 					title: "Select Display Mode",
 					fnDisplay: it => it === null ? this.constructor._TOTAL_VALUE_MODES[0] : it,
 				});

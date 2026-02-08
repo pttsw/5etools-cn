@@ -39,7 +39,6 @@ class _PageGeneratorDmscreen extends PageGeneratorGeneric {
 
 	_scriptsLibAdditional = [
 		"peerjs.js",
-		"jquery.panzoom.js",
 		"lzma.js",
 	];
 

@@ -7,10 +7,12 @@ export class SourceFilterItem extends FilterItem {
 	/**
 	 * @param options
 	 * @param [options.isOtherSource] If this is not the primary source of the entity.
+	 * @param [options.isReferenceSource] If this is a source in which the entity is referenced.
 	 */
 	constructor (options) {
 		super(options);
 		this.isOtherSource = options.isOtherSource;
+		this.isReferenceSource = options.isReferenceSource;
 		this._sortName = null;
 		this.itemFull = Parser.sourceJsonToFull(this.item);
 	}
@@ -212,15 +214,15 @@ export class SourceFilter extends Filter {
 		const btnOnlyPrimary = e_({
 			tag: "button",
 			clazz: `ve-btn ve-btn-default w-100 ${opts.isMulti ? "ve-btn-xxs" : "ve-btn-xs"}`,
-			html: I18nUtil.get("common.filter.include_references"),
-			title: I18nUtil.get("common.filter.include_references_tooltip"),
-			click: () => this._meta.isIncludeOtherSources = !this._meta.isIncludeOtherSources,
+			html: `包含引用`,
+			title: `将实体视为属于它们出现的每个引用（如：加粗/斜体文本），而不仅仅只属于它们的主要来源`,
+			click: () => this._meta.isIncludeReferenceSources = !this._meta.isIncludeReferenceSources,
 		});
 		const hkIsIncludeOtherSources = () => {
-			btnOnlyPrimary.toggleClass("active", !!this._meta.isIncludeOtherSources);
+			btnOnlyPrimary.toggleClass("active", !!this._meta.isIncludeReferenceSources);
 		};
 		hkIsIncludeOtherSources();
-		this._addHook("meta", "isIncludeOtherSources", hkIsIncludeOtherSources);
+		this._addHook("meta", "isIncludeReferenceSources", hkIsIncludeOtherSources);
 
 		e_({
 			tag: "div",
@@ -345,12 +347,18 @@ export class SourceFilter extends Filter {
 
 		if (!ent.otherSources && isSkipBaseSource) return ent.source;
 
+		// Avoid `otherSources`/`referenceSources` from e.g. homebrews which are not loaded, and so lack their metadata
 		const otherSourcesFilt = (ent.otherSources || [])
-			// Avoid `otherSources` from e.g. homebrews which are not loaded, and so lack their metadata
 			.filter(src => this._getCompleteFilterSources_isIncludedSource(src.source));
-		if (!otherSourcesFilt.length && isSkipBaseSource) return ent.source;
+		const referenceSourcesFilt = (ent.referenceSources || [])
+			.filter(src => this._getCompleteFilterSources_isIncludedSource(src));
 
-		const out = [ent.source].concat(otherSourcesFilt.map(src => new SourceFilterItem({item: src.source, isIgnoreRed: true, isOtherSource: true})));
+		if (!otherSourcesFilt.length && !referenceSourcesFilt.length && isSkipBaseSource) return ent.source;
+
+		const out = [ent.source]
+			.concat(otherSourcesFilt.map(src => new SourceFilterItem({item: src.source, isIgnoreRed: true, isOtherSource: true})))
+			.concat(referenceSourcesFilt.map(src => new SourceFilterItem({item: src, isIgnoreRed: true, isReferenceSource: true})))
+		;
 
 		// Base sources should already be filtered
 		if (!isSkipBaseSource && this._getCompleteFilterSources_isIncludedSource(ent._baseSource)) out.push(ent._baseSource);
@@ -560,7 +568,7 @@ export class SourceFilter extends Filter {
 
 	_toDisplay_getMappedEntryVal (entryVal) {
 		entryVal = super._toDisplay_getMappedEntryVal(entryVal);
-		if (!this._meta.isIncludeOtherSources) entryVal = entryVal.filter(it => !it.isOtherSource);
+		if (!this._meta.isIncludeReferenceSources) entryVal = entryVal.filter(it => !it.isReferenceSource);
 		return entryVal;
 	}
 
@@ -640,7 +648,7 @@ SourceFilter._PILL_DISPLAY_MODE__AS_NAMES = 0;
 SourceFilter._PILL_DISPLAY_MODE__AS_ABVS = 1;
 SourceFilter._PILL_DISPLAY_MODE__AS_BOTH = 2;
 SourceFilter._DEFAULT_META = {
-	isIncludeOtherSources: false,
+	isIncludeReferenceSources: false,
 };
 SourceFilter._DEFAULT_UI_META = {
 	pillDisplayMode: SourceFilter._PILL_DISPLAY_MODE__AS_NAMES,

@@ -199,16 +199,17 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 	/* ----- */
 
 	_pPopulateRow_btns ({comp, entity, wrpRhs}) {
-		const btnVisible = InitiativeTrackerUi.getBtnPlayerVisible(
-			comp._state.isPlayerVisible,
-			() => comp._state.isPlayerVisible = btnVisible.hasClass("ve-btn-primary")
+		const btnVisible = InitiativeTrackerUi.getBtnPlayerVisible({
+			isVisible: comp._state.isPlayerVisible,
+			fnOnClick: () => comp._state.isPlayerVisible = btnVisible.hasClass("ve-btn-primary")
 				? IS_PLAYER_VISIBLE_ALL
 				: IS_PLAYER_VISIBLE_NONE,
-			false,
-		)
+			additionalClasses: [
+				"dm-init__row-btn",
+				"dm-init__btn_eye",
+			],
+		})
 			.tooltip(I18nUtil.get("page.dmscreen.shown_in_player_view"))
-			.addClass("dm-init__row-btn")
-			.addClass("dm-init__btn_eye")
 			.appendTo(wrpRhs);
 
 		ee`<button class="ve-btn ve-btn-danger ve-btn-xs dm-init__row-btn dm-init-lockable" title="${I18nUtil.get("common.button.delete")} (${I18nUtil.get("page.dmscreen.shift_to_delete_similar")})" tabindex="-1"><span class="glyphicon glyphicon-trash"></span></button>`

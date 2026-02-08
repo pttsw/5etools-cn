@@ -76,6 +76,8 @@ function MixinProxyBase (Cls) {
 			});
 		}
 
+		_isDisableEqualsSimpleArrayEmpty = false;
+
 		_isEqualSimple (a, b) {
 			if (Object.is(a, b)) return true;
 
@@ -84,7 +86,10 @@ function MixinProxyBase (Cls) {
 			const isArrayA = Array.isArray(a);
 			const isArrayB = Array.isArray(b);
 			if (isArrayA !== isArrayB) return false;
-			if (isArrayA) return a.length === 0 && b.length === 0;
+			if (isArrayA) {
+				if (this._isDisableEqualsSimpleArrayEmpty) return false;
+				return a.length === 0 && b.length === 0;
+			}
 
 			return false;
 		}
@@ -2889,8 +2894,12 @@ class InputUiUtil {
 		if (opts.isAllowNull) ee`<option value="-1"></option>`.txt(opts.fnDisplay ? opts.fnDisplay(null, -1) : "(None)").appendTo(selEnum);
 
 		opts.values.forEach((v, i) => ee`<option value="${i}"></option>`.txt(opts.fnDisplay ? opts.fnDisplay(v, i) : v).appendTo(selEnum));
-		if (opts.default != null) selEnum.val(opts.default);
-		else selEnum[0].selectedIndex = 0;
+		if (opts.default != null) {
+			if (opts.isResolveItem) {
+				const ix = opts.values.indexOf(opts.default);
+				selEnum.val(`${~ix ? ix : 0}`);
+			} else selEnum.val(`${opts.default}`);
+		} else selEnum.selectedIndex = 0;
 
 		const {eleModalInner, doClose, pGetResolved, doAutoResize: doAutoResizeModal} = await InputUiUtil._pGetShowModal({
 			title: opts.title || "Select an Option",
@@ -4024,7 +4033,12 @@ function MixinBaseComponent (Cls) {
 
 		_triggerCollectionUpdate (prop) {
 			if (!this._state[prop]) return;
-			this._state[prop] = [...this._state[prop]];
+			try {
+				this._isDisableEqualsSimpleArrayEmpty = true;
+				this._state[prop] = [...this._state[prop]];
+			} finally {
+				this._isDisableEqualsSimpleArrayEmpty = false;
+			}
 		}
 
 		static _toCollection (array) {

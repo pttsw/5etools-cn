@@ -995,6 +995,41 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Cat Skeleton",
+			"name": "猫骷髅",
+			"source": "CoS",
+			"page": 109,
+			"_copy": {
+				"ENG_name": "Cat",
+				"name": "猫",
+				"source": "MM",
+				"_templates": [
+					{
+						"ENG_name": "Skeleton",
+						"name": "骷髅",
+						"source": "DMG"
+					}
+				],
+				"_mod": {
+					"_": [
+						{
+							"mode": "setProp",
+							"prop": "易伤",
+							"value": null
+						},
+						{
+							"mode": "setProp",
+							"prop": "语言",
+							"value": null
+						}
+					]
+				}
+			},
+			"tokenCredit": "BoneTea",
+			"tokenCustom": true,
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Clovin Belview",
 			"name": "克洛文·贝尔维",
 			"isNpc": true,
@@ -1960,7 +1995,7 @@
 								"ENG_name": "Fey Ancestry",
 								"name": "妖精血统",
 								"entries": [
-									"卡西米尔在对抗{@condition 魅惑}的豁免检定中具有优势，魔法无法使他入睡。"
+									"卡西米尔在对抗{@condition 魅惑}的豁免检定中具有优势，且魔法无法使他陷入睡眠。"
 								]
 							},
 							{
@@ -2234,6 +2269,7 @@
 				"感知"
 			],
 			"hasToken": true,
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{
@@ -2284,6 +2320,7 @@
 				"E"
 			],
 			"hasToken": true,
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{
@@ -4875,10 +4912,8 @@
 			"name": "枯树怪",
 			"source": "CoS",
 			"page": 230,
-			"otherSources": [
-				{
-					"source": "WBtW"
-				}
+			"referenceSources": [
+				"WBtW"
 			],
 			"reprintedAs": [
 				"枯树怪|XMM"

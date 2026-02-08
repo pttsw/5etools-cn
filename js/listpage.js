@@ -1944,8 +1944,8 @@ class ListPage {
 			),
 			null,
 			new ContextUtil.Action(
-				"导出为图片（按住SHIFT复制图片）",
-				evt => this._pHandleClick_exportAsImage({evt, isFast: evt.shiftKey, eleCopyEffect: btnOptions}),
+				"导出为图片（按住SHIFT复制图片；按住SHIFT+ALT复制为日间主题）",
+				evt => this._pHandleClick_exportAsImage({evt, isFast: evt.shiftKey, isForceDayTheme: evt.altKey, eleCopyEffect: btnOptions}),
 			),
 			null,
 			new ContextUtil.Action(
@@ -2304,9 +2304,32 @@ class ListPage {
 		}
 	}
 
+	async _pHandleClick_exportAsImage_pGetBlob ({ele, optsDomToImage, isForceDayTheme, clazzAdditional}) {
+		return this._pHandleClick_exportAsImage_pGetExport({ele, optsDomToImage, isForceDayTheme, clazzAdditional, fn: "toBlob"});
+	}
+
+	async _pHandleClick_exportAsImage_pGetPngDataUrl ({ele, optsDomToImage, isForceDayTheme, clazzAdditional}) {
+		return this._pHandleClick_exportAsImage_pGetExport({ele, optsDomToImage, isForceDayTheme, clazzAdditional, fn: "toPng"});
+	}
+
+	async _pHandleClick_exportAsImage_pGetExport ({ele, optsDomToImage, isForceDayTheme, clazzAdditional, fn}) {
+		const {StyleSwitcher} = await import("./styleswitch.js");
+
+		let result;
+		try {
+			if (clazzAdditional) ele.addClass(clazzAdditional);
+			if (isForceDayTheme) globalThis.styleSwitcher.setTemporaryTheme(StyleSwitcher.STYLE_THEME_DAY);
+			result = await domtoimage[fn](ele, optsDomToImage);
+		} finally {
+			if (isForceDayTheme) globalThis.styleSwitcher.setTemporaryTheme(null);
+			if (clazzAdditional) ele.removeClass(clazzAdditional);
+		}
+		return result;
+	}
+
 	// FIXME(Future)
 	//  - `table > caption` causes issues: https://github.com/1904labs/dom-to-image-more/issues/209
-	async _pHandleClick_exportAsImage ({evt, isFast, eleCopyEffect}) {
+	async _pHandleClick_exportAsImage ({evt, isFast, isForceDayTheme, eleCopyEffect}) {
 		if (typeof domtoimage === "undefined") await import("../lib/dom-to-image-more.min.js");
 
 		const ent = this._dataList[Hist.lastLoadedId];
@@ -2324,13 +2347,12 @@ class ListPage {
 		if (isFast) {
 			this._pHandleClick_exportAsImage_mutOptions({ele: this._pgContent, optsDomToImage});
 
-			let blob;
-			try {
-				this._pgContent.addClass("lst__is-exporting-image");
-				blob = await domtoimage.toBlob(this._pgContent, optsDomToImage);
-			} finally {
-				this._pgContent.removeClass("lst__is-exporting-image");
-			}
+			const blob = await this._pHandleClick_exportAsImage_pGetBlob({
+				ele: this._pgContent,
+				optsDomToImage,
+				isForceDayTheme,
+				clazzAdditional: "lst__is-exporting-image",
+			});
 
 			const isCopy = await MiscUtil.pCopyBlobToClipboard(blob);
 			if (isCopy) JqueryUtil.showCopiedEffect(eleCopyEffect);
@@ -2344,22 +2366,32 @@ class ListPage {
 		const cpy = e_({outer: html})
 			.addClass("lst__is-exporting-image");
 
-		const btnCpy = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="SHIFT to Copy and Close">复制</button>`
+		const btnCpy = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="按住SHIFT复制并关闭；按住ALT复制为日间主题">复制</button>`
 			.onn("click", async evt => {
 				this._pHandleClick_exportAsImage_mutOptions({ele: cpy, optsDomToImage});
 
-				const blob = await domtoimage.toBlob(cpy, optsDomToImage);
+				const blob = await this._pHandleClick_exportAsImage_pGetBlob({
+					ele: cpy,
+					optsDomToImage,
+					isForceDayTheme: evt.altKey,
+				});
+
 				const isCopy = await MiscUtil.pCopyBlobToClipboard(blob);
 				if (isCopy) JqueryUtil.showCopiedEffect(btnCpy);
 
 				if (isCopy && evt.shiftKey) hoverWindow.doClose();
 			});
 
-		const btnSave = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="SHIFT to Save and Close">保存</button>`
+		const btnSave = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="按住SHIFT保存并关闭; 按住ALT保存为日间主题">保存</button>`
 			.onn("click", async evt => {
 				this._pHandleClick_exportAsImage_mutOptions({ele: cpy, optsDomToImage});
 
-				const dataUrl = await domtoimage.toPng(cpy, optsDomToImage);
+				const dataUrl = await this._pHandleClick_exportAsImage_pGetPngDataUrl({
+					ele: cpy,
+					optsDomToImage,
+					isForceDayTheme: evt.altKey,
+				});
+
 				DataUtil.userDownloadDataUrl(`${ent.name}.png`, dataUrl);
 
 				if (evt.shiftKey) hoverWindow.doClose();

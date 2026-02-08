@@ -320,6 +320,7 @@ class _RenderBestiaryImplBase {
 			srd52: mon.srd52,
 			sourceSub: mon.sourceSub,
 			otherSources: mon.otherSources,
+			referenceSources: mon.referenceSources,
 			additionalSources: mon.additionalSources,
 			externalSources: mon.externalSources,
 			reprintedAs: mon.reprintedAs,

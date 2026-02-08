@@ -2,13 +2,297 @@
 	"data": [
 		{
 			"type": "section",
-			"name": "Introduction",
+			"name": "Foreword",
 			"page": 5,
 			"id": "000",
 			"entries": [
-				"Something evil is trapping the souls of the dead and draining life from all who have been raised from death by magic. This worldwide \"death curse\" not only prevents the raising of the dead but also causes creatures that were previously raised from the dead to wither and die. The source of this death curse lies in a trap-riddled tomb hidden beneath a lost city in the depths of a vast jungle.",
-				"{@i Tomb of Annihilation} is a Dungeons & Dragons adventure that takes place on the peninsula of Chult in the Forgotten Realms. Chult is a tropical wilderness composed mostly of jungles, plateaus, impassable mountains, and belching volcanoes. You can substitute a different jungle setting, changing location names as needed. Alternative D&D settings include the Amedio Jungle of Oerth, the Savage Coast of Mystara, the jungles of Xen'drik on Eberron, or a comparable setting on your home campaign world.",
-				"This adventure is designed to begin with a party of four to six 1st-level characters, who should advance to 11th level or higher by the adventure's conclusion.",
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"skipItalics": true,
+							"entries": [
+								"{@i Tomb of Annihilation} is a story about death and the lengths individuals go to avoid it. As is true with many D&D adventures, it's bound to be funny, not so much in the words and pictures, but in the experience of playing it. Every bad player decision, unfortunate die roll, plan gone awry, silly voice, dorky monster, and ill-timed character death has the potential to make us laugh. Like clowns in a rodeo, adventurers will often do hilarious things to survive and succeed.",
+								"This adventure is much more than a deadly dungeon. To make it fun, we turned to Pendleton Ward, creator of the D&D-inspired animated series {@link Adventure Time|https://www.imdb.com/title/tt1305826}. Pen is a master storyteller who knows how to craft a meaningful narrative around humorous characters and trappings, and he understands that D&D players can create their own hilarity when given fun toys to play with. With Pen's help, we've tried to craft a tale filled with classic D&D tropes and odd twists that will make you and your players laugh, even as things are looking grim for the heroes. If the dancing monkey fruit doesn't do it for you, maybe the catapulting goblin village or the zombie-spewing undead tyrannosaurus will. There's also the tomb itself, which will hopefully illicit chuckles and screams of laughter with its murderous ingenuity.",
+								"To our playtesters, I offer my heartfelt gratitude. You helped make {@i Tomb of Annihilation} a more fun experience for everyone. Your feedback\u2014as brutal as any trap found herein\u2014was tremendously valuable. Rest assured, your characters didn't die for nothing."
+							],
+							"by": "Chris Perkins, May 2017"
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Dramatis Personae",
+					"entries": [
+						"The main members of the adventure's cast of characters are listed here in alphabetical order for easy reference.",
+						{
+							"type": "table",
+							"caption": "",
+							"colLabels": [
+								"Major NPC",
+								"Name Pronunciation",
+								"Description"
+							],
+							"colStyles": [
+								"col-3",
+								"col-3",
+								"col-6"
+							],
+							"rows": [
+								[
+									"{@creature Acererak|ToA}",
+									"ah-SAIR-ak",
+									"Archlich and evil creator of the Soulmonger"
+								],
+								[
+									"{@creature Artus Cimber|ToA}",
+									"AR-tus SIM-ber",
+									"Human explorer wearing the Ring of Winter"
+								],
+								[
+									"{@creature Asharra|ToA}",
+									"ah-SHAR-ah",
+									"Aarakocra elder at Kir Sabal"
+								],
+								[
+									"{@creature Azaka Stormfang|ToA}",
+									"ah-ZAH-kah",
+									"Weretiger guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Bag of Nails|ToA}",
+									"\u2014",
+									"Unhinged tabaxi hunter in Omu"
+								],
+								[
+									"{@creature Dragonbait|ToA}",
+									"\u2014",
+									"Saurial paladin aiding Artus Cimber"
+								],
+								[
+									"{@creature Drufi|ToA}",
+									"DROO-fee",
+									"Frost giant searching for the Ring of Winter"
+								],
+								[
+									"{@creature Ekene-Afa|ToA}",
+									"eh-KEE-nee AH-fah",
+									"Merchant prince in Port Nyanzaru (sells weapons, shields, canoes, rain catchers, and traveling gear)"
+								],
+								[
+									"{@creature Eku|ToA}",
+									"EE-koo",
+									"Disguised couatl guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Elok Jaharwon|ToA}",
+									"EE-lok jah-HAR-wahn",
+									"Wereboar pirate captain of the Dragonfang"
+								],
+								[
+									"{@creature Faroul|ToA}",
+									"fah-ROOL",
+									"Human guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Fenthaza|ToA}",
+									"fen-THAH-zah",
+									"Yuan-ti nightmare speaker in Omu"
+								],
+								[
+									"{@creature Flask of Wine|ToA}",
+									"\u2014",
+									"Tabaxi guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Gondolo|ToA}",
+									"GON-doh-loh",
+									"Halfling guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Grabstab|ToA}",
+									"\u2014",
+									"Queen of the Biting Ant goblin tribe and ruler of Yellyark"
+								],
+								[
+									"{@creature Grandfather Zitembe|ToA}",
+									"zeh-TEM-bay",
+									"Priest at the Temple of Savras in Port Nyanzaru"
+								],
+								[
+									"{@creature Hew Hackinstone|ToA}",
+									"\u2014",
+									"Shield dwarf guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Ifan Talro'a|ToA}",
+									"EE-fawn tal-ROH-ah",
+									"Merchant prince in Port Nyanzaru (sells beasts)"
+								],
+								[
+									"{@creature Jessamine|ToA}",
+									"JESS-ah-meen",
+									"Merchant prince in Port Nyanzaru (sells plants, poisons, and assassinations)"
+								],
+								[
+									"{@creature Jobal|ToA}",
+									"joh-BAWL",
+									"Merchant prince in Port Nyanzaru (hired out guides and mercenaries)"
+								],
+								[
+									"{@creature Kupalué|ToA}",
+									"koo-pah-LOO-ay",
+									"Qawasha's vegepygmy companion"
+								],
+								[
+									"{@creature Kwayothé|ToA}",
+									"kway-OH-thay",
+									"Merchant prince in Port Nyanzaru (sells fruit, wine, oil, perfume, tej, and insect repellent)"
+								],
+								[
+									"{@creature Laskilar|ToA}",
+									"LASS-kill-ar",
+									"Human pirate captain of the Stirge"
+								],
+								[
+									"{@creature Liara Portyr|ToA}",
+									"lee-AR-ah por-TEER",
+									"Commander of Fort Beluarian"
+								],
+								[
+									"{@creature Musharib|ToA}",
+									"moo-shah-REEB",
+									"Albino dwarf guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Mwaxanaré|ToA}",
+									"muh-WOX-eh-nah-ray",
+									"Chultan princess living in Kir Sabal"
+								],
+								[
+									"{@creature Na|ToA}",
+									"NAH",
+									"Chultan prince and Mwaxanaré's baby brother"
+								],
+								[
+									"{@creature Nanny Pu'pu|ToA}",
+									"POO-poo",
+									"Green hag living in the village of Mbala"
+								],
+								[
+									"{@creature Niles Breakbone|ToA}",
+									"\u2014",
+									"Commander of Camp Vengeance and Order of the Gauntlet member"
+								],
+								[
+									"{@creature Ortimay Swift and Dark|ToA|Ortimay}",
+									"OR-teh-may",
+									"Gnome captain of the Brazen Pegasus"
+								],
+								[
+									"{@creature Orvex Ocrammas|ToA}",
+									"OR-vex oh-KRAW-mus",
+									"Scribe working for the Red Wizards"
+								],
+								[
+									"{@creature Qawasha|ToA}",
+									"kah-WASH-ah",
+									"Chultan druid guide in Fort Beluarian"
+								],
+								[
+									"{@creature Ras Nsi|ToA}",
+									"RAZ nuh-SEE",
+									"Yuan-ti necromancer and warlord"
+								],
+								[
+									"{@creature River Mist|ToA}",
+									"\u2014",
+									"Tabaxi guide in Port Nyanzaru"
+								],
+								[
+									"{@area Saja N'baza|18d|x}",
+									"SAWJ-ah nuh-BAH-zah",
+									"Guardian naga of Orolunga"
+								],
+								[
+									"{@creature Salida|ToA}",
+									"sah-LEE-dah",
+									"Yuan-ti guide in Port Nyanzaru"
+								],
+								[
+									"{@creature Shago|ToA}",
+									"SHAW-go",
+									"Human gladiator and guide in Fort Beluarian"
+								],
+								[
+									"{@creature Syndra Silvane|ToA}",
+									"SIN-draw sil-VAIN",
+									"Human archmage stricken by the death curse"
+								],
+								[
+									"{@creature Valindra Shadowmantle|ToA}",
+									"vah-LIN-draw",
+									"Elf lich working for Szass Tam of Thay"
+								],
+								[
+									"{@creature Volothamp \"Volo\" Geddarm|ToA}",
+									"VOH-loh-thamp geh-DARM",
+									"Famous human explorer on a book tour"
+								],
+								[
+									"{@creature Wakanga O'tamu|ToA}",
+									"wah-KANG-gah oh-TAH-moo",
+									"Merchant prince in Port Nyanzaru (sells magic and lore)"
+								],
+								[
+									"{@creature Withers|ToA}",
+									"\u2014",
+									"Spellcasting wight working for Acererak"
+								],
+								[
+									"{@creature Xandala|ToA}",
+									"zon-DAH-lah",
+									"Half-elf sorcerer seeking the Ring of Winter"
+								],
+								[
+									"{@creature Yorb|ToA}",
+									"\u2014",
+									"Grung chief in Omu"
+								],
+								[
+									"{@creature Zalkoré|ToA}",
+									"zawl-KOR-ay",
+									"Medusa queen of Nangalore"
+								],
+								[
+									"{@creature Zaroum Al-Saryak|ToA}",
+									"zah-ROOM al-SAR-yak",
+									"Human pirate captain of the Emerald Eye"
+								],
+								[
+									"{@creature Zhanthi|ToA}",
+									"JOHN-thee",
+									"Merchant prince in Port Nyanzaru (sells gems, jewelry, cloth, and armor)"
+								],
+								[
+									"{@creature Zindar|ToA}",
+									"ZIN-dar",
+									"Half-gold dragon harbormaster of Port Nyanzaru"
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Introduction",
+					"entries": [
+						"Something evil is trapping the souls of the dead and draining life from all who have been raised from death by magic. This worldwide \"death curse\" not only prevents the raising of the dead but also causes creatures that were previously raised from the dead to wither and die. The source of this death curse lies in a trap-riddled tomb hidden beneath a lost city in the depths of a vast jungle.",
+						"{@i Tomb of Annihilation} is a Dungeons & Dragons adventure that takes place on the peninsula of Chult in the Forgotten Realms. Chult is a tropical wilderness composed mostly of jungles, plateaus, impassable mountains, and belching volcanoes. You can substitute a different jungle setting, changing location names as needed. Alternative D&D settings include the Amedio Jungle of Oerth, the Savage Coast of Mystara, the jungles of Xen'drik on Eberron, or a comparable setting on your home campaign world.",
+						"This adventure is designed to begin with a party of four to six 1st-level characters, who should advance to 11th level or higher by the adventure's conclusion."
+					]
+				},
 				{
 					"type": "section",
 					"name": "Story Overview",

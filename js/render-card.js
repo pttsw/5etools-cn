@@ -442,11 +442,12 @@ RendererCard.utils = class {
 	static getPageText (it) {
 		const sourceSub = Renderer.utils.getSourceSubText(it);
 		const baseText = Renderer.utils.isDisplayPage(it.page) ? `text | <b>来源:</b> <i>${Parser.sourceJsonToAbv(it.source)}${sourceSub}</i>, ${it.page}页` : "";
-		const addSourceText = this._getPageText_getAltSourceText(it, "additionalSources", "Additional information from");
+		const addSourceText = this._getPageText_getAltSourceText(it, "additionalSources", "补充来源于");
 		const otherSourceText = this._getPageText_getAltSourceText(it, "otherSources", "同时来源于");
-		const externalSourceText = this._getPageText_getAltSourceText(it, "externalSources", "External sources:");
+		const referenceSourceText = this._getPageText_getAltSourceText(it, "referenceSources", "被引用于");
+		const externalSourceText = this._getPageText_getAltSourceText(it, "externalSources", "外部来源于：");
 
-		return `${[baseText, addSourceText, otherSourceText, externalSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText || externalSourceText) ? "." : ""}\n`;
+		return `${[baseText, addSourceText, otherSourceText, referenceSourceText, externalSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText || referenceSourceText || externalSourceText) ? "." : ""}\n`;
 	}
 
 	static _getPageText_getAltSourceText (it, prop, introText) {

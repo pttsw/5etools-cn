@@ -3343,13 +3343,17 @@ Renderer.utils = class {
 		return html ? `<b>来源:</b> ${html}` : "";
 	}
 
-	static _getAltSourceHtmlOrText (it, prop, introText, isText) {
-		if (!it[prop] || !it[prop].length) return "";
+	static _getAltSourceHtmlOrText ({ent, prop, introText, isStringList = false, isText = false}) {
+		if (!ent[prop]?.length) return "";
 
-		return `${introText} ${it[prop].map(as => {
-			if (as.entry) return (isText ? Renderer.stripTags : Renderer.get().render)(as.entry);
-			return `${isText ? "" : `<i class="help-subtle" title="${Parser.sourceJsonToFull(as.source).qq()}">`}${Parser.sourceJsonToAbv(as.source)}${isText ? "" : `</i>`}${Renderer.utils.isDisplayPage(as.page) ? `, ${as.page}页` : ""}`;
-		}).join("; ")}`;
+		return `${introText} ${ent[prop]
+			.map(as => {
+				if (!isStringList && as.entry) return (isText ? Renderer.stripTags : Renderer.get().render)(as.entry);
+
+				const source = isStringList ? as : as.source;
+				return `${isText ? "" : `<i class="help-subtle" title="${Parser.sourceJsonToFull(source).qq()}">`}${Parser.sourceJsonToAbv(source)}${isText ? "" : `</i>`}${!isStringList && Renderer.utils.isDisplayPage(as.page) ? `, ${as.page}页` : ""}`;
+			})
+			.join("; ")}`;
 	}
 
 	static getReprintedAsHtml (it) { return Renderer.utils._getReprintedAsHtmlOrText(it); }
@@ -3383,27 +3387,28 @@ Renderer.utils = class {
 	static getSourceAndPageHtml (it) { return this._getSourceAndPageHtmlOrText(it); }
 	static getSourceAndPageText (it) { return this._getSourceAndPageHtmlOrText(it, {isText: true}); }
 
-	static _getSourceAndPageHtmlOrText (it, {isText} = {}) {
-		const sourceSub = Renderer.utils.getSourceSubText(it);
-		const baseText = `${isText ? `` : `<i title="${Parser.sourceJsonToFull(it.source)}${sourceSub}">`}${Parser.sourceJsonToAbv(it.source)}${sourceSub}${isText ? "" : `</i>`}${Renderer.utils.isDisplayPage(it.page) ? `, ${it.page}页` : ""}`;
-		const reprintedAsText = Renderer.utils._getReprintedAsHtmlOrText(it, {isText});
-		const addSourceText = Renderer.utils._getAltSourceHtmlOrText(it, "additionalSources", "额外来源于", isText);
-		const otherSourceText = Renderer.utils._getAltSourceHtmlOrText(it, "otherSources", "同时来源于", isText);
-		const externalSourceText = Renderer.utils._getAltSourceHtmlOrText(it, "externalSources", "外部来源于:", isText);
+	static _getSourceAndPageHtmlOrText (ent, {isText} = {}) {
+		const sourceSub = Renderer.utils.getSourceSubText(ent);
+		const baseText = `${isText ? `` : `<i title="${Parser.sourceJsonToFull(ent.source)}${sourceSub}">`}${Parser.sourceJsonToAbv(ent.source)}${sourceSub}${isText ? "" : `</i>`}${Renderer.utils.isDisplayPage(ent.page) ? `, ${ent.page}页` : ""}`;
+		const reprintedAsText = Renderer.utils._getReprintedAsHtmlOrText(ent, {isText});
+		const addSourceText = Renderer.utils._getAltSourceHtmlOrText({ent, prop: "additionalSources", introText: "补充来源于", isText});
+		const otherSourceText = Renderer.utils._getAltSourceHtmlOrText({ent, prop: "otherSources", introText: "同时来源于", isText});
+		const referenceSourceText = Renderer.utils._getAltSourceHtmlOrText({ent, prop: "referenceSources", introText: "被引用于", isStringList: true, isText});
+		const externalSourceText = Renderer.utils._getAltSourceHtmlOrText({ent, prop: "externalSources", introText: "外部来源于:", isText});
 
-		const srdText = it.srd52
-			? `${isText ? "" : `the <span title="Systems Reference Document (5.2)">`}SRD 5.2.1${isText ? "" : `</span>`}${typeof it.srd === "string" ? ` (as &quot;${it.srd}&quot;)` : ""}`
-			: it.srd
-				? `${isText ? "" : `the <span title="Systems Reference Document (5.1)">`}SRD 5.1${isText ? "" : `</span>`}${typeof it.srd === "string" ? ` (as &quot;${it.srd}&quot;)` : ""}`
+		const srdText = ent.srd52
+			? `${isText ? "" : `the <span title="Systems Reference Document (5.2)">`}SRD 5.2.1${isText ? "" : `</span>`}${typeof ent.srd === "string" ? ` (as &quot;${ent.srd}&quot;)` : ""}`
+			: ent.srd
+				? `${isText ? "" : `the <span title="Systems Reference Document (5.1)">`}SRD 5.1${isText ? "" : `</span>`}${typeof ent.srd === "string" ? ` (as &quot;${ent.srd}&quot;)` : ""}`
 				: "";
-		const basicRulesText = it.basicRules2024
-			? `基础规则 (2024)${typeof it.basicRules2024 === "string" ? ` (as &quot;${it.basicRules2024}&quot;)` : ""}`
-			: it.basicRules
-				? `基础规则 (2014)${typeof it.basicRules === "string" ? ` (as &quot;${it.basicRules}&quot;)` : ""}`
+		const basicRulesText = ent.basicRules2024
+			? `基础规则 (2024)${typeof ent.basicRules2024 === "string" ? ` (作为 &quot;${ent.basicRules2024}&quot;)` : ""}`
+			: ent.basicRules
+				? `基础规则 (2014)${typeof ent.basicRules === "string" ? ` (作为 &quot;${ent.basicRules}&quot;)` : ""}`
 				: "";
 		const srdAndBasicRulesText = (srdText || basicRulesText) ? `可用于 ${[srdText, basicRulesText].filter(it => it).join(" 和 ")}` : "";
 
-		return `${[baseText, addSourceText, reprintedAsText, otherSourceText, srdAndBasicRulesText, externalSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText || srdAndBasicRulesText || externalSourceText) ? "." : ""}`;
+		return `${[baseText, addSourceText, reprintedAsText, otherSourceText, referenceSourceText, srdAndBasicRulesText, externalSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText || referenceSourceText || srdAndBasicRulesText || externalSourceText) ? "." : ""}`;
 	}
 
 	static async _pHandleNameClick (ele) {
@@ -9695,6 +9700,7 @@ class _RenderCompactBestiaryImplBase {
 			renderer,
 			title: "传奇动作",
 			key: "legendary",
+			ptHeader: Renderer.monster.getLegendaryActionIntro(mon, {styleHint: this._style}),
 			depth: 2,
 			styleHint: this._style,
 			isHangingList: true,
@@ -10529,6 +10535,7 @@ Renderer.monster = class {
 			renderer,
 			title,
 			key,
+			ptHeader = null,
 			depth,
 			styleHint,
 			isHangingList = false,
@@ -10551,12 +10558,11 @@ Renderer.monster = class {
 			entriesArr,
 		});
 
-		const ptHeader = ent[key] ? Renderer.monster.getSectionIntro(ent, {prop: key}) : "";
+		ptHeader ||= Renderer.monster.getSectionIntro(ent, {prop: key});
 		const isNonStatblock = key === "lairActions" || key === "regionalEffects";
 
 		return `<tr><td colspan="6"><h3 class="stats__sect-header-inner ${isNonStatblock ? "stats__sect-header-inner--non-statblock" : ""}">${title}${ent[noteKey] ? ` (<span class="ve-small">${ent[noteKey]}</span>)` : ""}</h3></td></tr>
 		<tr><td colspan="6" class="pt-2 pb-2">
-		${key === "legendary" && Renderer.monster.hasLegendaryActions(ent) ? Renderer.monster.getLegendaryActionIntro(ent, {styleHint}) : ""}
 		${ptHeader ? `<p>${ptHeader}</p>` : ""}
 		${content}
 		</td></tr>`;
@@ -10772,9 +10778,9 @@ Renderer.monster = class {
 				unpacked.name = unpacked.name.toTitleCase();
 				const uidTitle = DataUtil.proxy.getUid("item", unpacked, {isMaintainCase: true});
 
-				if (quantity === 1) return renderer.render(`{@item ${uidTitle}}`);
+				if (quantity === 1) return renderer.render(`{@item ${uidTitle}${ref.displayName ? `|${ref.displayName}` : ""}}`);
 				// 中文不需要负数
-				// const displayName = unpacked.name.toPlural();
+				// const displayName = ref.displayName || unpacked.name.toPlural();
 				return renderer.render(`${Parser.numberToText(quantity)} {@item ${uidTitle}}`);
 			})
 			.join(", ");

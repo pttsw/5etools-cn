@@ -71,6 +71,7 @@ const PROPORDER_META = [
 	"internalCopies",
 
 	"otherSources",
+	"referenceSources",
 
 	"spellSchools",
 	"spellDistanceUnits",
@@ -113,6 +114,7 @@ const PROPORDER_MONSTER = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"isReprinted",
 	"reprintedAs",
 
@@ -398,6 +400,7 @@ const PROPORDER_SPELL = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_SPELL__COPY_MOD}),
@@ -485,6 +488,7 @@ const PROPORDER_ACTION = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"fromVariant",
@@ -564,6 +568,7 @@ const PROPORDER_BACKGROUND = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"edition",
@@ -646,6 +651,7 @@ const PROPORDER_CLASS = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"isReprinted",
 	"reprintedAs",
 
@@ -747,6 +753,7 @@ const PROPORDER_SUBCLASS = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"isReprinted",
 	"reprintedAs",
 
@@ -850,6 +857,7 @@ const PROPORDER_CLASS_FEATURE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 
 	"className",
 	"classSource",
@@ -898,6 +906,7 @@ const PROPORDER_SUBCLASS_FEATURE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 
 	"className",
 	"classSource",
@@ -1029,6 +1038,7 @@ const PROPORDER_LANGUAGE = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"type",
@@ -1082,6 +1092,7 @@ const PROPORDER_CONDITION = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"color",
@@ -1106,6 +1117,7 @@ const PROPORDER_DISEASE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"type",
@@ -1132,6 +1144,7 @@ const PROPORDER_STATUS = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"color",
@@ -1155,6 +1168,7 @@ const PROPORDER_CULT = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"type",
@@ -1177,6 +1191,7 @@ const PROPORDER_BOON = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"type",
@@ -1203,6 +1218,7 @@ const PROPORDER_DEITY = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 
 	new ObjectKey("_copy", {
 		order: [
@@ -1260,6 +1276,7 @@ const PROPORDER_FEAT = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_FEAT__COPY_MOD}),
@@ -1336,6 +1353,7 @@ const PROPORDER_VEHICLE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"vehicleType",
@@ -1413,6 +1431,7 @@ const PROPORDER_VEHICLE_UPGRADE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 
 	"upgradeType",
 
@@ -1446,6 +1465,7 @@ const PROPORDER_ITEM = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_ITEM__COPY_MOD}),
@@ -1791,6 +1811,7 @@ const PROPORDER_OBJECT = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"size",
@@ -1846,6 +1867,7 @@ const PROPORDER_OPTIONALFEATURE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_OPTIONALFEATURE__COPY_MOD}),
@@ -1920,6 +1942,7 @@ const PROPORDER_REWARD = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"type",
@@ -1949,6 +1972,7 @@ const PROPORDER_VARIANTRULE = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"ruleType",
@@ -1966,6 +1990,7 @@ const PROPORDER_RACE_SUBRACE = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"edition",
@@ -2090,6 +2115,7 @@ const PROPORDER_TABLE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 
 	"type",
 
@@ -2127,6 +2153,7 @@ const PROPORDER_TRAP = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"trapHazType",
@@ -2168,6 +2195,7 @@ const PROPORDER_HAZARD = [
 	"basicRules2024",
 	"additionalSources",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"trapHazType",
@@ -2189,6 +2217,7 @@ const PROPORDER_RECIPE = [
 	"page",
 
 	"otherSources",
+	"referenceSources",
 
 	"type",
 	"dishTypes",
@@ -2221,6 +2250,7 @@ const PROPORDER_CHAROPTION = [
 	"page",
 
 	"otherSources",
+	"referenceSources",
 
 	"prerequisite",
 
@@ -2244,6 +2274,7 @@ const PROPORDER_SKILL = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"ability",
@@ -2261,6 +2292,7 @@ const PROPORDER_SENSE = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"entries",
@@ -2276,6 +2308,7 @@ const PROPORDER_DECK = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_DECK__COPY_MOD}),
 
@@ -2304,6 +2337,7 @@ const PROPORDER_CARD = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 
 	"suit",
 	"value",
@@ -2374,6 +2408,7 @@ const PROPORDER_FACILITY = [
 	"basicRules",
 	"basicRules2024",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"facilityType",
@@ -2406,6 +2441,7 @@ const PROPORDER_ENCOUNTER_SHAPE = [
 	"source",
 	"page",
 	"otherSources",
+	"referenceSources",
 	"reprintedAs",
 
 	"shapeTemplate",

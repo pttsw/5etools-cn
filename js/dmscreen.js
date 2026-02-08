@@ -31,6 +31,7 @@ import {
 } from "./dmscreen/dmscreen-panels.js";
 
 import {OmnisearchBacking} from "./omnisearch/omnisearch-backing.js";
+import {Panzoom} from "./utils-ui/utils-ui-panzoom.js";
 
 const UP = "UP";
 const RIGHT = "RIGHT";
@@ -1619,12 +1620,13 @@ class Panel {
 			title: title,
 			tabCanRename: true,
 		});
-		$img.panzoom({
-			$reset: $iptReset,
-			$zoomRange: $iptRange,
-			minScale: 0.1,
-			maxScale: 8,
-			duration: 100,
+		Panzoom.mutBindPanzoom({
+			img: e_({ele: $img[0]}),
+			btnReset: e_({ele: $iptReset[0]}),
+			iptRange: e_({ele: $iptRange[0]}),
+			scaleMin: 0.1,
+			scaleMax: 8,
+			scaleStep: 0.1,
 		});
 	}
 

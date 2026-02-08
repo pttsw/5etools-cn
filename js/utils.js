@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"2.24.1"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"2.24.2"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
 globalThis.IS_VTT = false;
@@ -5345,6 +5345,7 @@ globalThis.DataUtil = class {
 		static _MERGE_REQUIRES_PRESERVE_BASE = {
 			page: true,
 			otherSources: true,
+			referenceSources: true,
 			srd: true,
 			srd52: true,
 			basicRules: true,
@@ -6434,7 +6435,7 @@ globalThis.DataUtil = class {
 			delete cpyParentEntity.hasFluff;
 			delete cpyParentEntity.hasFluffImages;
 
-			["additionalSources", "otherSources"]
+			["additionalSources", "otherSources", "referenceSources"]
 				.forEach(prop => {
 					if (cpyParentEntity[prop]?.length) cpyParentEntity[prop] = cpyParentEntity[prop].filter(srcMeta => srcMeta.source !== version.source);
 					if (!cpyParentEntity[prop]?.length) delete cpyParentEntity[prop];

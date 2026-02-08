@@ -19821,17 +19821,67 @@
 			"source": "PHB",
 			"activities": [
 				{
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"attack": {
+						"type": {
+							"value": "远程",
+							"classification": "法术"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 12,
+								"types": [
+									"闪电"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"effects": [
+						{
+							"foundryId": "witchBolt"
+						}
+					]
+				},
+				{
+					"ENG_name": "Action Damage",
+					"name": "动作伤害",
 					"type": "damage",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "inst",
+						"concentration": false,
+						"override": true
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": false
+						},
+						"spellSlot": false
+					},
 					"damage": {
 						"parts": [
 							{
-								"custom": {
-									"enabled": true,
-									"formula": "1d12"
-								},
+								"number": 1,
+								"denomination": 12,
 								"types": [
 									"闪电"
-								]
+								],
+								"scaling": {
+									"number": 1
+								}
 							}
 						]
 					}
@@ -19884,6 +19934,17 @@
 					"type": "damage",
 					"activation": {
 						"type": "bonus"
+					},
+					"duration": {
+						"units": "inst",
+						"concentration": false,
+						"override": true
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": false
+						},
+						"spellSlot": false
 					},
 					"damage": {
 						"parts": [

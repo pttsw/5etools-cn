@@ -29,15 +29,15 @@ class _RenderableCollectionStatsCols extends RenderableCollectionGenericRows {
 
 		const cbIsEditable = ComponentUiUtil.getCbBool(comp, "isEditable");
 
-		const btnVisible = InitiativeTrackerUi.getBtnPlayerVisible(
-			comp._state.isPlayerVisible,
-			() => comp._state.isPlayerVisible = btnVisible.hasClass("ve-btn-primary--half")
+		const btnVisible = InitiativeTrackerUi.getBtnPlayerVisible({
+			isVisible: comp._state.isPlayerVisible,
+			fnOnClick: () => comp._state.isPlayerVisible = btnVisible.hasClass("ve-btn-primary--half")
 				? IS_PLAYER_VISIBLE_PLAYER_UNITS_ONLY
 				: btnVisible.hasClass("ve-btn-primary")
 					? IS_PLAYER_VISIBLE_ALL
 					: IS_PLAYER_VISIBLE_NONE,
-			true,
-		);
+			isTriState: true,
+		});
 
 		const btnDelete = this._utils.getBtnDelete({entity});
 

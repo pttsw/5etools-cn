@@ -571,17 +571,43 @@ export class BuilderBase extends ProxyBase {
 
 		const getState = () => {
 			const rawUrl = iptUrl.val().trim();
-			return rawUrl ? {type: "image", href: {type: "external", url: rawUrl}} : null;
+			if (!rawUrl) return null;
+
+			const rawTitle = iptTitle.val().trim();
+			const rawCredit = iptCredit.val().trim();
+			const rawAltText = iptAltText.val().trim();
+
+			return {
+				type: "image",
+				href: {
+					type: "external",
+					url: rawUrl,
+				},
+				...rawTitle ? {title: rawTitle} : {},
+				...rawCredit ? {credit: rawCredit} : {},
+				...rawAltText ? {altText: rawAltText} : {},
+			};
 		};
 
 		const iptUrl = ee`<input class="form-control form-control--minimal input-xs mr-2">`
 			.onn("change", () => doUpdateState());
+		const iptTitle = ee`<input class="form-control form-control--minimal input-xs mr-2">`
+			.onn("change", () => doUpdateState());
+		const iptCredit = ee`<input class="form-control form-control--minimal input-xs mr-2">`
+			.onn("change", () => doUpdateState());
+		const iptAltText = ee`<input class="form-control form-control--minimal input-xs mr-2">`
+			.onn("change", () => doUpdateState());
+
 		if (image) {
 			const href = ((image || {}).href || {});
 			if (href.url) iptUrl.val(href.url);
 			else if (href.path) {
 				iptUrl.val(`${window.location.origin.replace(/\/+$/, "")}/img/${href.path}`);
 			}
+
+			if (image.title) iptTitle.val(image.title);
+			if (image.credit) iptCredit.val(image.credit);
+			if (image.altText) iptAltText.val(image.altText);
 		}
 
 		const btnPreview = ee`<button class="ve-btn ve-btn-xs ve-btn-default mr-2" title="Preview Image"><span class="glyphicon glyphicon-fullscreen"></span></button>`
@@ -612,7 +638,30 @@ export class BuilderBase extends ProxyBase {
 			wrpRowsOuter: options.wrpRowsOuter,
 		});
 
-		out.ele = ee`<div class="ve-flex-v-center py-1 mkbru__wrp-rows--removable">${iptUrl}${btnPreview}${btnRemove}${dragOrder}</div>`;
+		out.ele = ee`<div class="ve-flex-v-center py-1 mkbru__wrp-rows--removable">
+			<div class="ve-flex-col mr-2 w-100">
+				<label class="ve-flex-v-center mb-2">
+					<span class="w-60p no-shrink mr-2 ve-text-right bold">URL</span>
+					${iptUrl}${btnPreview}
+				</label>
+				<label class="ve-flex-v-center mb-2">
+					<span class="w-60p no-shrink mr-2 ve-text-right">Title</span>
+					${iptTitle}
+				</label>
+				<label class="ve-flex-v-center mb-2">
+					<span class="w-60p no-shrink mr-2 ve-text-right">Credit</span>
+					${iptCredit}
+				</label>
+				<label class="ve-flex-v-center">
+					<span class="w-60p no-shrink mr-2 ve-text-right">Alt Text</span>
+					${iptAltText}
+				</label>
+			</div>
+			
+			<div class="ve-flex-v-center">
+				${btnRemove}${dragOrder}
+			</div>
+		</div>`;
 		out.getState = getState;
 		imageRows.push(out);
 

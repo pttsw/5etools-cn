@@ -578,6 +578,8 @@ export class StatGenUiCompAsi extends BaseComponent {
 			const {name, source} = DataUtil.proxy.unpackUid("feat", uid, "feat", {isLower: true});
 			const feat = this._parent.feats.find(it => (it.name.toLowerCase() === name || it.ENG_name.toLowerCase() === name) && it.source.toLowerCase() === source);
 
+			if (!feat) throw new Error(`Failed to find feat with UID "${uid}"! Does it exist, and if so, is it blocklisted?`); // Should never occur
+
 			const {isFormComplete, out} = this._getFormData_doAddFeatMeta({
 				namespace,
 				outFeats,

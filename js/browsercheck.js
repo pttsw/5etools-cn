@@ -23,3 +23,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	document.body.appendChild(eleOverlay);
 });
+
+window.addEventListener("load", () => {
+	if (!navigator.userAgent.includes("FoundryVirtualTabletop")) return;
+
+	JqueryUtil.initEnhancements();
+
+	const btnGoBack = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">Go Back</button>`
+		.onn("click", () => {
+			history.back();
+		});
+
+	JqueryUtil.doToast({
+		content: ee`<div>It looks like you're using the Foundry app! Some module features may be unavailable or fail to function. Consider using a <a href="https://foundryvtt.com/article/installation/#dedicated">dedicated/headless server</a> instead, and connecting with your browser. Alternatively, ${btnGoBack}.</div>`
+			.onn("click", evt => {
+				evt.stopPropagation();
+			}),
+		type: "warning",
+		isAutoHide: false,
+	});
+});
