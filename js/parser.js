@@ -2072,6 +2072,15 @@ Parser.monMiscTagToFull = function (tag) {
 	return Parser._parse_aToB(Parser.MON_MISC_TAG_TO_FULL, tag);
 };
 
+Parser.WEAPON_CATEGORY_TO_FULL = {
+	"martial": "军用",
+	"simple": "简易",
+};
+
+Parser.weaponCategoryToFull = function (category) {
+	return Parser._parse_aToB(Parser.WEAPON_CATEGORY_TO_FULL, category);
+};
+
 Parser.MON_GROUP_TAG_TO_FULL = {
 	"Angels": "天使",
 	"Animated Objects": "活化物件",

@@ -11826,8 +11826,8 @@ Renderer.item = class {
 		}
 		if (item.weaponCategory) {
 			ptsEntryType.push(`武器${item.baseItem ? ` ({@item ${styleHint === "classic" ? item.baseItem : item.baseItem.toTitleCase()}})` : ""}`);
-			ptsEntrySubType.push(`${item.weaponCategory}武器`);
-			textTypes.push(`${item.weaponCategory}武器`);
+			ptsEntrySubType.push(`${Parser.weaponCategoryToFull(item.weaponCategory)}武器`);
+			textTypes.push(`${Parser.weaponCategoryToFull(item.weaponCategory)}武器`);
 			showingBase = true;
 		}
 		if (item.staff && (itemTypeAbv !== Parser.ITM_TYP_ABV__MELEE_WEAPON && itemTypeAltAbv !== Parser.ITM_TYP_ABV__MELEE_WEAPON)) { // DMG p140: "Unless a staff's description says otherwise, a staff can be used as a quarterstaff."
@@ -13224,7 +13224,7 @@ Renderer.variantrule = class {
 	static getCompactRenderedString (rule) {
 		const cpy = MiscUtil.copyFast(rule);
 		delete cpy.name;
-		if (cpy.entries && cpy.ruleType) cpy.entries.unshift(`{@i ${Parser.ruleTypeToFull(cpy.ruleType)} Rule}`);
+		if (cpy.entries && cpy.ruleType) cpy.entries.unshift(`{@i ${Parser.ruleTypeToFull(cpy.ruleType)}规则}`);
 		return `
 			${Renderer.utils.getExcludedTr({entity: rule, dataProp: "variantrule", page: UrlUtil.PG_VARIANTRULES})}
 			${Renderer.utils.getNameTr(rule, {page: UrlUtil.PG_VARIANTRULES})}
