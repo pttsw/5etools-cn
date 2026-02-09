@@ -142,13 +142,13 @@ class SpellPageBookView extends ListPageBookView {
 		};
 
 		const selSortMode = ee`<select class="form-control input-sm">
-			<option value="0">Spell Level</option>
-			<option value="1">Alphabetical</option>
+			<option value="0">法术环阶</option>
+			<option value="1">字母排序</option>
 		</select>`
 			.onn("change", () => onChangeSortMode());
 
 		selSortMode.val(`${this._bookViewLastOrder ?? 0}`);
-		ee`<div class="ve-flex-vh-center ml-3"><div class="mr-2 no-wrap">Sort order:</div>${selSortMode}</div>`.appendTo(wrpPrint);
+		ee`<div class="ve-flex-vh-center ml-3"><div class="mr-2 no-wrap">排序顺序：</div>${selSortMode}</div>`.appendTo(wrpPrint);
 
 		return out;
 	}
@@ -240,39 +240,39 @@ class SpellsPage extends ListPageMultiSource {
 			},
 
 			tableViewOptions: {
-				title: "Spells",
+				title: "法术",
 				colTransforms: {
 					name: UtilsTableview.COL_TRANSFORM_NAME,
 					source: UtilsTableview.COL_TRANSFORM_SOURCE,
 					page: UtilsTableview.COL_TRANSFORM_PAGE,
-					level: {name: "Level", transform: (it) => Parser.spLevelToFull(it)},
-					time: {name: "Casting Time", transform: (it) => PageFilterSpells.getTblTimeStr(it[0])},
-					duration: {name: "Duration", transform: (it) => Parser.spDurationToFull(it)},
+					level: {name: "环阶", transform: (it) => Parser.spLevelToFull(it)},
+					time: {name: "施法时间", transform: (it) => PageFilterSpells.getTblTimeStr(it[0])},
+					duration: {name: "持续时间", transform: (it) => Parser.spDurationToFull(it)},
 					_school: {
-						name: "School",
+						name: "学派",
 						transform: (sp) => {
 							const ptMeta = Parser.spMetaToArr(sp.meta);
 							return `<span class="sp__school-${sp.school}" ${Parser.spSchoolAbvToStyle(sp.school)}>${Parser.spSchoolAndSubschoolsAbvsToFull(sp.school, sp.subschools)}</span>${ptMeta.length ? ` (${ptMeta.join(", ")})` : ""}`;
 						},
 					},
-					range: {name: "Range", transform: (it) => Parser.spRangeToFull(it)},
-					_components: {name: "Components", transform: (sp) => Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})},
+					range: {name: "范围", transform: (it) => Parser.spRangeToFull(it)},
+					_components: {name: "成分", transform: (sp) => Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})},
 					_classes: {
-						name: "Classes",
+						name: "职业",
 						transform: (sp) => {
 							const [current] = Parser.spClassesToCurrentAndLegacy(Renderer.spell.getCombinedClasses(sp, "fromClassList"));
 							return Parser.spMainClassesToFull(current, {isIncludeSource: true});
 						},
 					},
 					_classesVariant: {
-						name: "Optional/Variant Classes",
+						name: "可选/变体 职业",
 						transform: (sp) => {
 							const [current] = Parser.spVariantClassesToCurrentAndLegacy(Renderer.spell.getCombinedClasses(sp, "fromClassListVariant"));
 							return Parser.spMainClassesToFull(current, {isIncludeSource: true});
 						},
 					},
 					_subclasses: {
-						name: "Subclasses",
+						name: "子职",
 						transform: (sp, additionalData) => {
 							const fromSubclass = Renderer.spell.getCombinedClasses(sp, "fromSubclass");
 							if (!fromSubclass.length) return "";
@@ -280,8 +280,8 @@ class SpellsPage extends ListPageMultiSource {
 							return current;
 						},
 					},
-					entries: {name: "Text", transform: (it) => Renderer.get().render({type: "entries", entries: it}, 1), flex: 3},
-					entriesHigherLevel: {name: "At Higher Levels", transform: (it) => Renderer.get().render({type: "entries", entries: (it || [])}, 1), flex: 2},
+					entries: {name: "文本", transform: (it) => Renderer.get().render({type: "entries", entries: it}, 1), flex: 3},
+					entriesHigherLevel: {name: "升环施法", transform: (it) => Renderer.get().render({type: "entries", entries: (it || [])}, 1), flex: 2},
 				},
 			},
 
