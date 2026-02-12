@@ -4,6 +4,11 @@
 @use "../vars/vars-night";
 
 @layer vetools {
+	body {
+		background-image: url(/color.bg.png);
+		background-repeat: repeat;
+	}
+
 	#legal-notice {
 		@include vars.mix-shadow-1;
 
@@ -809,22 +814,24 @@
 
 	/* Night Mode */
 	.ve-night-mode {
-		body {
-			color: vars-night.$rgb-font--night;
-		}
+	body {
+		color: vars-night.$rgb-font--night;
+		background-image: url(/color.bg.png);
+		background-repeat: repeat;
+	}
 
-		.bg-solid {
-			background: vars-night.$rgb-bg--night;
-		}
+	.bg-solid {
+		background: vars-night.$rgb-bg--night;
+	}
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: vars-night.$rgb-font--night;
-		}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: vars-night.$rgb-font--night;
+	}
 
 		pre {
 			color: vars-night.$rgb-font--night;

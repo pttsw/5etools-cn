@@ -31,17 +31,17 @@ export class StyleSwitcher {
 	static _WIDE_ID = "style-switch__wide";
 
 	static _STYLE_THEME_TO_DISPLAY_NAME = {
-		[this._STYLE_THEME_AUTOMATIC]: "Browser Default",
-		[this.STYLE_THEME_DAY]: "Day Mode",
-		[this._STYLE_THEME_NIGHT]: "Night Mode",
-		[this._STYLE_THEME_NIGHT_ALT]: "Night Mode (Classic)",
-		[this._STYLE_THEME_NIGHT_CLEAN]: "Night Mode (Clean)",
+		[this._STYLE_THEME_AUTOMATIC]: "浏览器默认",
+		[this.STYLE_THEME_DAY]: "日间模式",
+		[this._STYLE_THEME_NIGHT]: "夜间模式",
+		[this._STYLE_THEME_NIGHT_ALT]: "夜间模式（经典）",
+		[this._STYLE_THEME_NIGHT_CLEAN]: "夜间模式（简洁）",
 	};
 
 	static _STYLE_ROLLBOX_TO_DISPLAY_NAME = {
-		[this._STYLE_ROLLBOX_DEFAULT]: "Default",
-		[this._STYLE_ROLLBOX_RIGHT]: "Right",
-		[this._STYLE_ROLLBOX_LEFT]: "Left",
+		[this._STYLE_ROLLBOX_DEFAULT]: "默认",
+		[this._STYLE_ROLLBOX_RIGHT]: "右侧",
+		[this._STYLE_ROLLBOX_LEFT]: "左侧",
 	};
 
 	static _CLASSES_THEME = [

@@ -33,8 +33,8 @@ const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 		new (
 			class extends ConfigSettingExternal {
 				_configId = "styleRollbox";
-				_name = "Dice Roller Position";
-				_help = "The position of the dice roller.";
+				_name = "掷骰器位置";
+				_help = "掷骰器出现在页面的哪个位置。";
 				_isRowLabel = true;
 
 				_getEleExternal () { return StyleSwitcher.getSelRollboxPosition(); }
