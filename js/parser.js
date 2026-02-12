@@ -499,6 +499,31 @@ Parser.skillToAbilityAbv = function (skill) {
 	return Parser._parse_aToB(Parser.SKILL_TO_ATB_ABV, skill);
 };
 
+Parser.EN_SKILL_TO_ATB_ABV = {
+	"athletics": "str",
+	"acrobatics": "dex",
+	"sleight of hand": "dex",
+	"stealth": "dex",
+	"arcana": "int",
+	"history": "int",
+	"investigation": "int",
+	"nature": "int",
+	"religion": "int",
+	"animal handling": "wis",
+	"insight": "wis",
+	"medicine": "wis",
+	"perception": "wis",
+	"survival": "wis",
+	"deception": "cha",
+	"intimidation": "cha",
+	"performance": "cha",
+	"persuasion": "cha",
+}
+
+Parser.enSkillToAbilityAbv = function (skill) {
+	return Parser._parse_aToB(Parser.EN_SKILL_TO_ATB_ABV, skill);
+};
+
 Parser.SKILL_TO_CN = {
 	"athletics": "运动",
 	"acrobatics": "特技",
@@ -5156,4 +5181,14 @@ Parser.getDisplayNameWithEN = function (ent) {
 	const curDisplayName = (ent.name && engName) ? `${ent.name} ${engName}`.trim() : ent.name;
 	return ent._displayName || curDisplayName;
 };
+
+Parser.BASTION_SPACE_TO_CN = {
+	"cramped": "狭窄",
+	"roomy": "宽敞",
+	"vast": "庞大",
+}
+
+Parser.bastionSpaceToCN = function (type) {
+	return Parser._parse_aToB(Parser.BASTION_SPACE_TO_CN, type.toLowerCase());
+}
 // endregion

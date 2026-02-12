@@ -4329,9 +4329,9 @@ Renderer.utils = class {
 					if (!this._SCF_TYPE_TO_NAME[scf]) return scf;
 					return `{@item ${this._SCF_TYPE_TO_NAME[scf]}${styleHint === "classic" ? "" : "|XPHB"}}`;
 				})
-				.joinConjunct(", ", " 或 ");
+				.joinConjunct(", ", "或");
 
-			const ent = `可以使用${ptScf}作为${ptScfSuffix}`;
+			const ent = `可以使用${ptScf}${ptScfSuffix}`;
 
 			return (isTextOnly ? Renderer.stripTags : Renderer.get().render.bind(Renderer.get()))(ent);
 		}
@@ -9785,19 +9785,19 @@ class _RenderCompactBestiaryImplClassic extends _RenderCompactBestiaryImplBase {
 	/* ----- */
 
 	_getHtmlParts_savingThrows ({mon}) {
-		return mon.save ? `<p><b>Saving Throws</b> ${Renderer.monster.getSavesPart(mon)}</p>` : "";
+		return mon.save ? `<p><b>豁免</b> ${Renderer.monster.getSavesPart(mon)}</p>` : "";
 	}
 
 	_getHtmlParts_initiative ({mon, renderer}) {
-		return mon.initiative ? `<p><b>Initiative</b> ${Renderer.monster.getInitiativePart(mon, {renderer})}</p>` : "";
+		return mon.initiative ? `<p><b>先攻</b> ${Renderer.monster.getInitiativePart(mon, {renderer})}</p>` : "";
 	}
 
 	_getHtmlParts_damageImmunities ({mon}) {
-		return mon.immune ? `<p><b>Damage Imm.</b> ${Parser.getFullImmRes(mon.immune)}</p>` : "";
+		return mon.immune ? `<p><b>伤害免疫</b> ${Parser.getFullImmRes(mon.immune)}</p>` : "";
 	}
 
 	_getHtmlParts_conditionImmunities ({mon}) {
-		return mon.conditionImmune ? `<p><b>Condition Imm.</b> ${Parser.getFullCondImm(mon.conditionImmune)}</p>` : "";
+		return mon.conditionImmune ? `<p><b>状态免疫</b> ${Parser.getFullCondImm(mon.conditionImmune)}</p>` : "";
 	}
 
 	/* ----- */
@@ -14638,7 +14638,7 @@ Renderer.deck = class {
 Renderer.facility = class {
 	static _getFacilityRenderableEntriesMeta_space ({ent}) {
 		if (!ent.space) return null;
-		return ent.space.map(spc => Renderer.facility._getSpaceEntry(spc, {isIncludeCostTime: ent.facilityType === "basic"})).joinConjunct(", ", " or ");
+		return ent.space.map(spc => Renderer.facility._getSpaceEntry(spc, {isIncludeCostTime: ent.facilityType === "basic"})).joinConjunct(", ", " 或 ");
 	}
 
 	static _getFacilityRenderableEntriesMeta_hirelings ({ent}) {
@@ -14646,7 +14646,7 @@ Renderer.facility = class {
 
 		const out = ent.hirelings
 			.map(hire => {
-				const ptSpace = hire.space ? ` {@style (${hire.space.toTitleCase()})|muted}` : "";
+				const ptSpace = hire.space ? ` {@style (${Parser.bastionSpaceToCN(hire.space)})|muted}` : "";
 
 				if (hire.exact != null) return `${hire.exact}${ptSpace}`;
 				if (hire.min != null && hire.max != null) return `${hire.min}\u2013${hire.max}${ptSpace}`;
@@ -14655,7 +14655,7 @@ Renderer.facility = class {
 				return null;
 			})
 			.filter(Boolean)
-			.joinConjunct(", ", " or ");
+			.joinConjunct(", ", " 或 ");
 
 		if (out) return out;
 		return null;
@@ -14726,14 +14726,14 @@ Renderer.facility = class {
 		const sq = Renderer.facility._SPACE_TO_SQUARES[spc];
 
 		const ptAdditional = [
-			sq ? `{@tip ${sq} sq|${sq} squares}` : null,
+			sq ? `{@tip ${sq} sq|${sq} 平方}` : null,
 			Renderer.facility._getSpaceEntry_getPriceTimeEntry({spc, isIncludeCostTime}),
 		]
 			.filter(Boolean)
 			.join("; ");
 		const ptSuffix = ptAdditional ? ` {@style [${ptAdditional}]|muted;small}` : "";
 
-		return [spc.toTitleCase(), ptSuffix].filter(Boolean).join(" ");
+		return [Parser.bastionSpaceToCN(spc), ptSuffix].filter(Boolean).join(" ");
 	}
 
 	static _getSpaceEntry_getPriceTimeEntry ({spc, isIncludeCostTime}) {
