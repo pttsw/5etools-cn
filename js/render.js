@@ -6970,7 +6970,7 @@ Renderer.class = class {
 			.segregate(it => ["simple", "martial"].includes(it));
 
 		const ptsSimpleMartial = profsSimpleMartial
-			.map((w, i, arr) => Renderer.get().render(`{@filter ${styleHint === "classic" ? w : w.toTitleCase()}${styleHint === "classic" || i === arr.length - 1 ? " weapons" : ""}|items|type=${w} weapon}`));
+			.map((w, i, arr) => Renderer.get().render(`{@filter ${Parser.weaponCategoryToFull(w)}${styleHint === "classic" || i === arr.length - 1 ? "武器" : ""}|items|type=${Parser.weaponCategoryToFull(w)}武器}`));
 
 		const ptsOther = profsOther
 			.map(w => {
