@@ -167,8 +167,8 @@ class NavBar {
 		this._addElement_divider({keyPath: [NavBar._CAT_UTILITIES]});
 		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "changelog.html", aText: "更新日志"});
 		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: NavBar._getCurrentWikiHelpPage(), aText: "页面帮助", isExternal: true, isExternalMark: true});
-		this._addElement_divider({keyPath: [NavBar._CAT_UTILITIES]});
-		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "privacy-policy.html", aText: "隐私政策"});
+		// this._addElement_divider({keyPath: [NavBar._CAT_UTILITIES]});
+		// this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "privacy-policy.html", aText: "隐私政策"});
 
 		this._addElement_dropdown({category: NavBar._CAT_SETTINGS});
 		this._addElement_button(
