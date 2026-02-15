@@ -1981,10 +1981,10 @@ class SearchWidget {
 	}
 
 	async __pDoSearch () {
-		const searchInput = this._iptSearch.val().trim();
+		const searchTerm = this._iptSearch.val().trim();
 
 		const index = this._indexes[this._cat];
-		const results = await globalThis.OmnisearchBacking.pGetFilteredResults(index.search(searchInput, this.__getSearchOptions()));
+		const results = await globalThis.OmnisearchBacking.pGetFilteredResults(index.search(searchTerm, this.__getSearchOptions()), {searchTerm});
 
 		const {toProcess, resultCount} = (() => {
 			if (results.length) {
@@ -2002,7 +2002,7 @@ class SearchWidget {
 				}
 			} else {
 				// If the user has entered a search and we found nothing, return no results
-				if (searchInput.trim()) {
+				if (searchTerm.trim()) {
 					return {
 						toProcess: [],
 						resultCount: 0,
@@ -2057,7 +2057,7 @@ class SearchWidget {
 				}
 			}
 		} else {
-			if (!searchInput.trim()) this.__showMsgInputRequired();
+			if (!searchTerm.trim()) this.__showMsgInputRequired();
 			else this.__showMsgNoResults();
 		}
 	}
@@ -6301,8 +6301,6 @@ class ComponentUiUtil {
 
 		if (fnOnDrop) {
 			wrp.onn("drop", evt => {
-				evt = evt.originalEvent;
-
 				fnOnDrop({
 					evt,
 					addValue,

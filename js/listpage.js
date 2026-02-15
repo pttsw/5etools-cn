@@ -1272,7 +1272,7 @@ class ListPage {
 			});
 		this._renderListFeelingLucky({btnReset});
 		this._renderListShowHide({
-			eleWrpList: e_(document.getElementById("listcontainer")),
+			wrpList: e_(document.getElementById("listcontainer")),
 			wrpContent: e_(document.getElementById("contentwrapper")),
 			btnReset,
 		});
@@ -1474,7 +1474,7 @@ class ListPage {
 			<tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
 	}
 
-	_renderListShowHide ({wrpContent, eleWrpList, btnReset}) {
+	_renderListShowHide ({wrpContent, wrpList, btnReset}) {
 		const btnHideSearch = ee`<button class="ve-btn ve-btn-default" title="Hide Search Bar and Entry List">隐藏</button>`;
 		btnReset.beforee(btnHideSearch);
 
@@ -1482,12 +1482,12 @@ class ListPage {
 		const wrpBtnShowSearch = ee`<div class="ve-col-12 mb-1 ve-hidden">${btnShowSearch}</div>`.prependTo(wrpContent);
 
 		btnHideSearch.onn("click", () => {
-			eleWrpList.hideVe();
+			wrpList.hideVe();
 			wrpBtnShowSearch.showVe();
 			btnHideSearch.hideVe();
 		});
 		btnShowSearch.onn("click", () => {
-			eleWrpList.showVe();
+			wrpList.showVe();
 			wrpBtnShowSearch.hideVe();
 			btnHideSearch.showVe();
 		});

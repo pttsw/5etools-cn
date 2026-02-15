@@ -3247,16 +3247,17 @@ Renderer.utils = class {
 	 * @param [opts] Options object.
 	 * @param [opts.prefix] Prefix to display before the name.
 	 * @param [opts.suffix] Suffix to display after the name.
-	 * @param [opts.controlRhs] Additional control(s) to display after the name.
+	 * @param [opts.htmlControlRhs] Additional control(s) to display after the name.
 	 * @param [opts.extraThClasses] Additional TH classes to include.
 	 * @param [opts.isInlinedToken] If this entity has a token displayed inline.
 	 * @param [opts.page] The hover page for this entity.
-	 * @param [opts.asJquery] If the element should be returned as a jQuery object.
 	 * @param [opts.extensionData] Additional data to pass to listening extensions when the send button is clicked.
 	 * @param [opts.isEmbeddedEntity] True if this is an embedded entity, i.e. one from a `"dataX"` entry.
 	 */
 	static getNameTr (ent, opts) {
 		opts = opts || {};
+
+		if (opts.htmlControlRhs && typeof opts.htmlControlRhs !== "string") throw new Error(`Non-string passed as "htmlControlRhs"!`);
 
 		const name = ent._displayName || ent.name;
 		const eng_name = ent.ENG_name;
@@ -3278,7 +3279,7 @@ Renderer.utils = class {
 			|| Renderer.utils._getNameTr_getPtPrereleaseBrewSourceLink({ent: ent, brewUtil: BrewUtil2});
 
 		// Add data-page/source/hash attributes for external script use (e.g. Rivet)
-		const $ele = $$`<tr>
+		return `<tr>
 			<th class="stats__th-name ve-text-left pb-0 ${opts.extraThClasses ? opts.extraThClasses.join(" ") : ""}" colspan="6" ${dataPart}>
 				<div class="split-v-end">
 					<div class="ve-flex-v-center">
@@ -3286,7 +3287,7 @@ Renderer.utils = class {
 							<h1 class="stats__h-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${opts.prefix || ""}${name}${opts.suffix || ""}</h1>
 							<h3 class="stats__eh-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${eng_name}</h3>
 						</div>
-						${opts.controlRhs || ""}
+						${opts.htmlControlRhs || ""}
 						${!globalThis.IS_VTT && ExtensionUtil.ACTIVE && opts.page ? Renderer.utils.getBtnSendToFoundryHtml() : ""}
 					</div>
 					<div class="stats__wrp-h-source ${opts.isInlinedToken ? `stats__wrp-h-source--token` : ""} ve-flex-v-baseline">
@@ -3303,9 +3304,6 @@ Renderer.utils = class {
 				</div>
 			</th>
 		</tr>`;
-
-		if (opts.asJquery) return $ele;
-		else return $ele[0].outerHTML;
 	}
 
 	static _getNameTr_getPtPrereleaseBrewSourceLink ({ent, brewUtil}) {
@@ -3489,37 +3487,33 @@ Renderer.utils = class {
 	static _tabs = {};
 	static _curTab = null;
 	static _tabsPreferredLabel = null;
-	static bindTabButtons ({tabButtons, tabLabelReference, $wrpTabs, wrpTabs, $pgContent, pgContent}) {
-		if ($wrpTabs && wrpTabs) throw new Error(`Only one of "$wrpTabs" and "wrpTabs" may be provided!`);
-		if ($pgContent && pgContent) throw new Error(`Only one of "$pgContent" and "pgContent" may be provided!`);
-
-		if (wrpTabs) $wrpTabs = $(wrpTabs);
-		if (pgContent) $pgContent = $(pgContent);
-
+	static bindTabButtons ({tabButtons, tabLabelReference, wrpTabs, pgContent}) {
 		Renderer.utils._tabs = {};
 		Renderer.utils._curTab = null;
 
-		$wrpTabs.find(`.stat-tab-gen`).remove();
+		wrpTabs.findAll(`.stat-tab-gen`).forEach(ele => ele.remove());
 
 		tabButtons.forEach((tb, i) => {
 			tb.ix = i;
 
-			tb.$t = $(`<button class="ui-tab__btn-tab-head ve-btn ve-btn-default stat-tab-gen pt-2p px-4p pb-0">${tb.label}</button>`)
-				.click(() => tb.fnActivateTab({isUserInput: true}));
+			if (tb.btnTab) tb.btnTab.remove();
+
+			tb.btnTab = ee`<button class="ui-tab__btn-tab-head ve-btn ve-btn-default stat-tab-gen pt-2p px-4p pb-0">${tb.label}</button>`
+				.onn("click", () => tb.fnActivateTab({isUserInput: true}));
 
 			tb.fnActivateTab = ({isUserInput = false} = {}) => {
 				const curTab = Renderer.utils._curTab;
 				const tabs = Renderer.utils._tabs;
 
 				if (!curTab || curTab.label !== tb.label) {
-					if (curTab) curTab.$t.removeClass(`ui-tab__btn-tab-head--active`);
+					if (curTab) curTab.btnTab.removeClass(`ui-tab__btn-tab-head--active`);
 					Renderer.utils._curTab = tb;
-					tb.$t.addClass(`ui-tab__btn-tab-head--active`);
-					if (curTab) tabs[curTab.label].$content = $pgContent.children().detach();
+					tb.btnTab.addClass(`ui-tab__btn-tab-head--active`);
+					if (curTab) tabs[curTab.label].elesContent = pgContent.childrene().map(ele => ele.detach());
 
 					tabs[tb.label] = tb;
-					if (!tabs[tb.label].$content && tb.fnPopulate) tb.fnPopulate();
-					else $pgContent.append(tabs[tb.label].$content);
+					if (!tabs[tb.label].elesContent?.length && tb.fnPopulate) tb.fnPopulate();
+					else if (tabs[tb.label].elesContent?.length) tabs[tb.label].elesContent.forEach(ele => pgContent.appends(ele));
 					if (tb.fnChange) tb.fnChange();
 				}
 
@@ -3529,7 +3523,7 @@ Renderer.utils = class {
 		});
 
 		// Avoid displaying a tab button for single tabs
-		if (tabButtons.length !== 1) tabButtons.slice().reverse().forEach(tb => $wrpTabs.prepend(tb.$t));
+		if (tabButtons.length !== 1) tabButtons.slice().reverse().forEach(tb => wrpTabs.prepends(tb.btnTab));
 
 		// If there was no previous selection, select the first tab
 		if (!Renderer.utils._tabsPreferredLabel) return tabButtons[0].fnActivateTab();
@@ -3711,32 +3705,37 @@ Renderer.utils = class {
 	}
 	/**
 	 * @param isImageTab True if this is the "Images" tab, false otherwise
-	 * @param $content The statblock wrapper
 	 * @param content The statblock wrapper
 	 * @param entity Entity to build tab for (e.g. a monster; an item)
 	 * @param pFnGetFluff Function which gets the entity's fluff.
-	 * @param $headerControls
 	 * @param wrpHeaderControls
 	 * @param page
 	 */
-	static async pBuildFluffTab ({isImageTab, $content, wrpContent, entity, $headerControls, wrpHeaderControls, pFnGetFluff, page} = {}) {
-		if ($content && wrpContent) throw new Error(`Only one of "$content" and "wrpContent" may be specified!`);
-		if ($headerControls && wrpHeaderControls) throw new Error(`Only one of "$headerControls" and "wrpHeaderControls" may be specified!`);
+	static async pBuildFluffTab ({isImageTab, wrpContent, entity, wrpHeaderControls, pFnGetFluff, page} = {}) {
+		wrpContent.appends(Renderer.utils.getBorderTr());
 
-		if (wrpContent) $content = $(wrpContent);
-		if (wrpHeaderControls) $headerControls = $(wrpHeaderControls);
+		if (wrpHeaderControls) {
+			const attrReplace = `data-p-build-fluff-tab-replace="true"`;
+			const eleNameTr = e_({
+				outer: Renderer.utils.getNameTr(entity, {htmlControlRhs: `<div ${attrReplace}></div>`, page}),
+			});
+			eleNameTr.find(`[${attrReplace}]`).replaceWith(wrpHeaderControls);
+			wrpContent.appends(eleNameTr);
+		} else {
+			wrpContent.appends(Renderer.utils.getNameTr(entity, {page}));
+		}
 
-		$content.append(Renderer.utils.getBorderTr());
-		$content.append(Renderer.utils.getNameTr(entity, {controlRhs: $headerControls, asJquery: true, page}));
-		const $td = $(`<td colspan="6" class="pb-3"></td>`);
-		$$`<tr>${$td}</tr>`.appendTo($content);
-		$content.append(Renderer.utils.getBorderTr());
+		const eleTd = ee`<td colspan="6" class="pb-3"></td>`;
+		ee`<tr>${eleTd}</tr>`.appendTo(wrpContent);
+		wrpContent.appends(Renderer.utils.getBorderTr());
 
 		const fluff = MiscUtil.copyFast((await pFnGetFluff(entity)) || {});
 		fluff.entries = fluff.entries || [Renderer.utils.HTML_NO_INFO];
 		fluff.images = fluff.images || [Renderer.utils.HTML_NO_IMAGES];
 
-		$td.fastSetHtml(Renderer.utils.getFluffTabContent({entity, fluff, isImageTab}));
+		Renderer.get().withMinimizeLayoutShift(() => {
+			eleTd.html(Renderer.utils.getFluffTabContent({entity, fluff, isImageTab}));
+		});
 	}
 
 	static HTML_NO_INFO = `<i data-i18n='common.tabs.no_info'></i>`;
@@ -10180,11 +10179,11 @@ Renderer.monster = class {
 			};
 		}
 
-		const legendaryNameSentence = Renderer.monster.getShortName(mon, {isSentenceCase: true, isUseDisplayName});
+		const legendaryNameOther = Renderer.monster.getShortName(mon, {isUseDisplayName});
 		return {
 			entries: [
 				// `${legendaryNameTitle}可以执行 ${legendaryActions} 个传奇动作，从以下选项中选择。 每次只能使用一个传奇动作选项，并且只能在另一个生物的回合结束时使用。${legendaryNameTitle}在其回合开始时重获所有传奇动作。`,
-				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}。 ${legendaryNameSentence}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
+				`{@note 传奇动作次数: ${legendaryActions}${legendaryActionsLair !== legendaryActions ? ` (巢穴内${legendaryActionsLair})` : ""}。 ${legendaryNameOther}可以在另一生物的回合后立即消耗一次传奇动作来执行以下一道动作。 ${legendaryNameTitle} 在${proPossessive}回合开始时回复所有已消耗的传奇动作次数。`,
 			],
 		};
 	}
@@ -15966,12 +15965,16 @@ Renderer.hover = class {
 
 			win.document.close();
 
-			win._wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
+			win._wrpHoverContent = e_({ele: win.document}).find(`.hoverbox--popout`);
+
+			window.addEventListener("beforeunload", () => win.close());
 		}
 
 		let $cpyContent;
 		if (opts.$pFnGetPopoutContent) {
 			$cpyContent = await opts.$pFnGetPopoutContent();
+		} else if (opts.pFnGetPopoutContent) {
+			$cpyContent = $(await opts.pFnGetPopoutContent());
 		} else {
 			$cpyContent = $content.clone(true, true);
 		}
@@ -15996,6 +15999,7 @@ Renderer.hover = class {
 	 * @param [opts.width] An initial width for the window.
 	 * @param [opts.height] An initial height fot the window.
 	 * @param [opts.$pFnGetPopoutContent] A function which loads content for this window when it is popped out.
+	 * @param [opts.pFnGetPopoutContent] A jquery-free version of the function which loads content for this window when it is popped out.
 	 * @param [opts.fnGetPopoutSize] A function which gets a `{width: ..., height: ...}` object with dimensions for a
 	 * popout window.
 	 * @param [opts.isPopout] If the window should be immediately popped out.
@@ -16011,6 +16015,7 @@ Renderer.hover = class {
 		opts = opts || {};
 		const {isHideBottomBorder, isResizeOnlyWidth} = opts;
 
+		if (opts.$pFnGetPopoutContent && opts.pFnGetPopoutContent) throw new Error(`Only one of "$pFnGetPopoutContent" and "pFnGetPopoutContent" may be provided!`);
 		if (isHideBottomBorder && !isResizeOnlyWidth) throw new Error(`"isHideBottomBorder" option requires "isResizeOnlyWidth"!`);
 
 		Renderer.hover._doInit();
@@ -16247,7 +16252,9 @@ Renderer.hover = class {
 
 		hoverWindow.eventChannel = eventChannel;
 
-		if (opts.isPopout) Renderer.hover._getShowWindow_pDoPopout({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content});
+		if (opts.isPopout) {
+			hoverWindow.pPoppingOut = Renderer.hover._getShowWindow_pDoPopout({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content});
+		}
 
 		return hoverWindow;
 	}

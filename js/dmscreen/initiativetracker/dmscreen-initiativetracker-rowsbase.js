@@ -318,36 +318,36 @@ export class InitiativeTrackerRowDataViewBase {
 	getRenderedView () {
 		const rdState = new this.constructor._RenderState();
 
-		const $ele = $$`<div class="dm-init__wrp-header-outer">
+		const ele = ee`<div class="dm-init__wrp-header-outer">
 				<div class="dm-init__wrp-header pr-1">
 					<div class="dm-init__row-lhs dm-init__header">
 						<div class="w-100">${this._TextHeaderLhs}</div>
 					</div>
 
-					${this._render_$getWrpHeaderStatsCols({rdState})}
+					${this._render_getWrpHeaderStatsCols({rdState})}
 
-					${this._render_$getWrpHeaderRhs({rdState})}
+					${this._render_getWrpHeaderRhs({rdState})}
 				</div>
 
 				${this._render_getWrpRows({rdState})}
 		</div>`;
 
 		return {
-			$ele,
+			ele,
 			cbDoCleanup: () => rdState.fnsCleanup.forEach(fn => fn()),
 		};
 	}
 
-	_render_$getWrpHeaderStatsCols ({rdState}) {
-		const $wrpHeaderStatsCols = $(`<div class="dm-init__row-mid"></div>`);
+	_render_getWrpHeaderStatsCols ({rdState}) {
+		const wrpHeaderStatsCols = ee`<div class="dm-init__row-mid"></div>`;
 		const hkHeaderStatsCols = () => {
-			$wrpHeaderStatsCols.empty();
+			wrpHeaderStatsCols.empty();
 
 			if (!this._comp._state.isStatsAddColumns) return;
 
 			this._comp._state.statsCols.forEach(data => {
 				const meta = InitiativeTrackerStatColumnFactory.fromStateData({data});
-				$wrpHeaderStatsCols.append(meta.$getRenderedHeader());
+				wrpHeaderStatsCols.appends(meta.getEleRenderedHeader());
 			});
 		};
 		this._comp._addHookBase("isStatsAddColumns", hkHeaderStatsCols);
@@ -358,14 +358,14 @@ export class InitiativeTrackerRowDataViewBase {
 			() => this._comp._removeHookBase("statsCols", hkHeaderStatsCols),
 		);
 
-		return $wrpHeaderStatsCols;
+		return wrpHeaderStatsCols;
 	}
 
 	/**
 	 * @abstract
-	 * @return {jQuery}
+	 * @return {HTMLElementExtended}
 	 */
-	_render_$getWrpHeaderRhs ({rdState}) {
+	_render_getWrpHeaderRhs ({rdState}) {
 		throw new Error("Unimplemented!");
 	}
 

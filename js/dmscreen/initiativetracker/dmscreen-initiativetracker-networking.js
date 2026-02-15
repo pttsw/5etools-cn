@@ -75,9 +75,9 @@ export class InitiativeTrackerNetworking {
 	/**
 	 * @param opts
 	 * @param opts.doUpdateExternalStates
-	 * @param [opts.$btnStartServer]
-	 * @param [opts.$btnGetToken]
-	 * @param [opts.$btnGetLink]
+	 * @param [opts.btnStartServer]
+	 * @param [opts.btnGetToken]
+	 * @param [opts.btnGetLink]
 	 * @param [opts.fnDispServerStoppedState]
 	 * @param [opts.fnDispServerRunningState]
 	 */
@@ -93,11 +93,11 @@ export class InitiativeTrackerNetworking {
 		}
 
 		try {
-			if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", true);
+			if (opts.btnStartServer) opts.btnStartServer.prop("disabled", true);
 			this._p2pMetaV1.serverPeer = new PeerVeServer();
 			await this._p2pMetaV1.serverPeer.pInit();
-			if (opts.$btnGetToken) opts.$btnGetToken.prop("disabled", false);
-			if (opts.$btnGetLink) opts.$btnGetLink.prop("disabled", false);
+			if (opts.btnGetToken) opts.btnGetToken.prop("disabled", false);
+			if (opts.btnGetLink) opts.btnGetLink.prop("disabled", false);
 
 			this._p2pMetaV1.serverPeer.on("connection", connection => {
 				const pConnected = new Promise(resolve => {
@@ -115,7 +115,7 @@ export class InitiativeTrackerNetworking {
 					});
 			});
 
-			$(window).on("beforeunload", evt => {
+			window.addEventListener("beforeunload", evt => {
 				const message = `The connection will be closed`;
 				(evt || window.event).message = message;
 				return message;
@@ -129,7 +129,7 @@ export class InitiativeTrackerNetworking {
 			};
 		} catch (e) {
 			if (opts.fnDispServerStoppedState) opts.fnDispServerStoppedState();
-			if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", false);
+			if (opts.btnStartServer) opts.btnStartServer.prop("disabled", false);
 			this._p2pMetaV1.serverPeer = null;
 			JqueryUtil.doToast({content: `Failed to start server! ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
 			setTimeout(() => { throw e; });
@@ -147,7 +147,11 @@ export class InitiativeTrackerNetworking {
 			isUncappedHeight: true,
 			isHeight100: true,
 			cbClose: () => {
-				if (this._p2pMetaV1.rows.length) this._p2pMetaV1.rows.forEach(row => row.$row.detach());
+				if (this._p2pMetaV1.rows.length) {
+					this._p2pMetaV1.rows
+						.filter(row => !row.isStub)
+						.forEach(row => row.eleRow.detach());
+				}
 				if (this._p2pMetaV1.serverPeer) this._p2pMetaV1.serverPeer.offTemp("connection");
 			},
 		});
@@ -155,45 +159,45 @@ export class InitiativeTrackerNetworking {
 		const wrpHelp = UiUtil.getAddModalRow(eleModalInner, "div");
 
 		const fnDispServerStoppedState = () => {
-			$btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> 启动服务端`).prop("disabled", false);
-			$btnGetToken.prop("disabled", true);
-			$btnGetLink.prop("disabled", true);
+			btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> 启动服务端`).prop("disabled", false);
+			btnGetToken.prop("disabled", true);
+			btnGetLink.prop("disabled", true);
 		};
 
 		const fnDispServerRunningState = () => {
-			$btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> 服务端运行中`).prop("disabled", true);
-			$btnGetToken.prop("disabled", false);
-			$btnGetLink.prop("disabled", false);
+			btnStartServer.html(`<span class="glyphicon glyphicon-play"></span> 服务端运行中`).prop("disabled", true);
+			btnGetToken.prop("disabled", false);
+			btnGetLink.prop("disabled", false);
 		};
 
-		const $btnStartServer = $(`<button class="ve-btn ve-btn-default mr-2"></button>`)
-			.click(async () => {
-				const {isRunning} = await this.startServerV1({doUpdateExternalStates, $btnStartServer, $btnGetToken, $btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
+		const btnStartServer = ee`<button class="ve-btn ve-btn-default mr-2"></button>`
+			.onn("click", async () => {
+				const {isRunning} = await this.startServerV1({doUpdateExternalStates, btnStartServer, btnGetToken, btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
 				if (!isRunning) return;
 
 				this._p2pMetaV1.serverPeer.onTemp("connection", showConnected);
 				showConnected();
 			});
 
-		const $btnGetToken = $(`<button class="ve-btn ve-btn-default" disabled><span class="glyphicon glyphicon-copy"></span> 复制 Token</button>`).appendTo(wrpHelp)
-			.click(async () => {
+		const btnGetToken = ee`<button class="ve-btn ve-btn-default" disabled><span class="glyphicon glyphicon-copy"></span> 复制 Token</button>`.appendTo(wrpHelp)
+			.onn("click", async () => {
 				await MiscUtil.pCopyTextToClipboard(this._p2pMetaV1.serverPeer.token);
-				JqueryUtil.showCopiedEffect($btnGetToken);
+				JqueryUtil.showCopiedEffect(btnGetToken);
 			});
 
-		const $btnGetLink = $(`<button class="ve-btn ve-btn-default mr-2" disabled><span class="glyphicon glyphicon-link"></span> 复制链接</button>`).appendTo(wrpHelp)
-			.click(async () => {
+		const btnGetLink = ee`<button class="ve-btn ve-btn-default mr-2" disabled><span class="glyphicon glyphicon-link"></span> 复制链接</button>`.appendTo(wrpHelp)
+			.onn("click", async () => {
 				const cleanOrigin = window.location.origin.replace(/\/+$/, "");
 				const cleanPathname = window.location.pathname.split("/").slice(0, -1).join("/");
 				const url = `${cleanOrigin}${cleanPathname}/inittrackerplayerview.html#v1:${this._p2pMetaV1.serverPeer.token}`;
 				await MiscUtil.pCopyTextToClipboard(url);
-				JqueryUtil.showCopiedEffect($btnGetLink);
+				JqueryUtil.showCopiedEffect(btnGetLink);
 			});
 
 		if (this._p2pMetaV1.serverPeer) fnDispServerRunningState();
 		else fnDispServerStoppedState();
 
-		$$`<div class="row w-100">
+		ee`<div class="row w-100">
 			<div class="ve-col-12">
 				<p>
 				先攻追踪器玩家视图是一个P2P系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
@@ -203,7 +207,7 @@ export class InitiativeTrackerNetworking {
 					<li>等待他们连接！</li>
 				</ol>
 				</p>
-				<p>${$btnStartServer}${$btnGetLink}${$btnGetToken}</p>
+				<p>${btnStartServer}${btnGetLink}${btnGetToken}</p>
 				<p><i>请注意！这是一个实验性功能。你的使用体验可能会有所不同。</i></p>
 			</div>
 		</div>`.appendTo(wrpHelp);
@@ -244,7 +248,9 @@ export class InitiativeTrackerNetworking {
 	};
 
 	async _playerWindowV0_pGetServerTokens ({rowMetas}) {
-		const targetRows = rowMetas.filter(it => !it.isDeleted).filter(it => !it.isActive);
+		const targetRows = rowMetas
+			.filter(it => !it.isDeleted)
+			.filter(it => !it.isActive);
 		if (targetRows.every(it => it.isActive)) {
 			return JqueryUtil.doToast({
 				content: "No rows require Server Token generation!",
@@ -253,23 +259,28 @@ export class InitiativeTrackerNetworking {
 		}
 
 		let anyInvalidNames = false;
-		targetRows.forEach(row => {
-			row.$iptName.removeClass("error-background");
-			if (!row.$iptName.val().trim()) {
-				anyInvalidNames = true;
-				row.$iptName.addClass("error-background");
-			}
-		});
+		targetRows
+			.filter(row => !row.isStub)
+			.forEach(row => {
+				row.iptName.removeClass("error-background");
+				if (!row.iptName.val().trim()) {
+					anyInvalidNames = true;
+					row.iptName.addClass("error-background");
+				}
+			});
 		if (anyInvalidNames) return;
 
-		const names = targetRows.map(row => {
-			row.isActive = true;
+		const names = targetRows
+			.map(row => {
+				row.isActive = true;
 
-			row.$iptName.attr("disabled", true);
-			row.$btnGenServerToken.attr("disabled", true);
+				if (row.isStub) return "";
 
-			return row.$iptName.val();
-		});
+				row.iptName.attr("disabled", true);
+				row.btnGenServerToken.attr("disabled", true);
+
+				return row.iptName.val();
+			});
 
 		if (this._p2pMetaV0.serverInfo) {
 			await this._p2pMetaV0.serverInfo;
@@ -284,12 +295,12 @@ export class InitiativeTrackerNetworking {
 			return targetRows.map((row, i) => {
 				row.name = serverInfo[i].name;
 				row.serverInfo = serverInfo[i];
-				row.$iptTokenServer.val(serverInfo[i].textifiedSdp).attr("disabled", false);
+				if (!row.isStub) row.iptTokenServer.val(serverInfo[i].textifiedSdp).attr("disabled", false);
 
 				serverInfo[i].rowMeta = row;
 
-				row.$iptTokenClient.attr("disabled", false);
-				row.$btnAcceptClientToken.attr("disabled", false);
+				if (!row.isStub) row.iptTokenClient.attr("disabled", false);
+				if (!row.isStub) row.btnAcceptClientToken.attr("disabled", false);
 
 				return serverInfo[i].textifiedSdp;
 			});
@@ -300,12 +311,12 @@ export class InitiativeTrackerNetworking {
 				targetRows.forEach((row, i) => {
 					row.name = this._p2pMetaV0.serverInfo[i].name;
 					row.serverInfo = this._p2pMetaV0.serverInfo[i];
-					row.$iptTokenServer.val(this._p2pMetaV0.serverInfo[i].textifiedSdp).attr("disabled", false);
+					if (!row.isStub) row.iptTokenServer.val(this._p2pMetaV0.serverInfo[i].textifiedSdp).attr("disabled", false);
 
 					this._p2pMetaV0.serverInfo[i].rowMeta = row;
 
-					row.$iptTokenClient.attr("disabled", false);
-					row.$btnAcceptClientToken.attr("disabled", false);
+					if (!row.isStub) row.iptTokenClient.attr("disabled", false);
+					if (!row.isStub) row.btnAcceptClientToken.attr("disabled", false);
 				});
 			})();
 
@@ -315,26 +326,29 @@ export class InitiativeTrackerNetworking {
 	}
 
 	handleClick_playerWindowV0 ({doUpdateExternalStates}) {
-		const {eleModalInner, $modalInner} = UiUtil.getShowModal({
+		const {eleModalInner} = UiUtil.getShowModal({
 			title: "配置玩家视图",
 			isUncappedHeight: true,
 			isHeight100: true,
 			cbClose: () => {
-				if (this._p2pMetaV0.rows.length) this._p2pMetaV0.rows.forEach(row => row.$row.detach());
+				if (!this._p2pMetaV0.rows.length) return;
+				this._p2pMetaV0.rows
+					.filter(row => !row.isStub)
+					.forEach(row => row.eleRow.detach());
 			},
 		});
 
 		const wrpHelp = UiUtil.getAddModalRow(eleModalInner, "div");
-		const $btnAltAddPlayer = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">添加玩家</button>`).click(() => $btnAddClient.click());
-		const $btnAltGenAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">生成全部</button>`).click(() => $btnGenServerTokens.click());
-		const $btnAltCopyAll = $(`<button class="ve-btn ve-btn-primary ve-btn-text-insert">复制服务端Tokens</button>`).click(() => $btnCopyServers.click());
-		$$`<div class="ve-flex w-100">
+		const btnAltAddPlayer = ee`<button class="ve-btn ve-btn-primary ve-btn-text-insert">添加玩家</button>`.onn("click", () => btnAddClient.trigger("click"));
+		const btnAltGenAll = ee`<button class="ve-btn ve-btn-primary ve-btn-text-insert">生成全部</button>`.onn("click", () => btnGenServerTokens.trigger("click"));
+		const btnAltCopyAll = ee`<button class="ve-btn ve-btn-primary ve-btn-text-insert">复制服务端Tokens</button>`.onn("click", () => btnCopyServers.trigger("click"));
+		ee`<div class="ve-flex w-100">
 			<div class="ve-col-12">
 				<p>
 				先攻追踪器玩家视图是一个P2P（即无服务器）系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
 				<ol>
-						<li>添加所需数量的玩家("${$btnAltAddPlayer}")，并输入玩家姓名（最好唯一）。</li>
-						<li>点击"${$btnAltGenAll},"来为每个玩家生成"服务端token"。 你可以点击"${$btnAltCopyAll}" 来将他们一起复制，或者点击"服务端Token"的值来一个一个复制。将这些Token发给你的玩家。每个玩家需要将他们的Token粘贴到<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>并按照其中的说明进行操作。</li>
+						<li>添加所需数量的玩家("${btnAltAddPlayer}")，并输入玩家姓名（最好唯一）。</li>
+						<li>点击"${btnAltGenAll},"来为每个玩家生成"服务端token"。 你可以点击"${btnAltCopyAll}" 来将他们一起复制，或者点击"服务端Token"的值来一个一个复制。将这些Token发给你的玩家。每个玩家需要将他们的Token粘贴到<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>并按照其中的说明进行操作。</li>
 						<li>
 							获得每位玩家的"客户端token"，然后对于每个Token:
 							<ol type="a">
@@ -352,41 +366,43 @@ export class InitiativeTrackerNetworking {
 
 		const wrpTop = UiUtil.getAddModalRow(eleModalInner, "div");
 
-		const $btnAddClient = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add Client">${I18nUtil.get("page.dmscreen.add_player")}</button>`).click(() => addClientRow());
+		const btnAddClient = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="Add Client">${I18nUtil.get("page.dmscreen.add_player")}</button>`.onn("click", () => addClientRow());
 
-		const $btnCopyServers = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="复制所有未使用的服务器token">复制服务端Tokens</button>`)
-			.click(async () => {
-				const targetRows = this._p2pMetaV0.rows.filter(it => !it.isDeleted && !it.$iptTokenClient.attr("disabled"));
+		const btnCopyServers = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="复制所有未使用的服务器token">复制服务端Tokens</button>`
+			.onn("click", async () => {
+				const targetRows = this._p2pMetaV0.rows
+					.filter(row => !row.isStub)
+					.filter(it => !it.isDeleted && !it.iptTokenClient.attr("disabled"));
 				if (!targetRows.length) {
 					JqueryUtil.doToast({
 						content: `No free server tokens to copy. Generate some!`,
 						type: "warning",
 					});
 				} else {
-					await MiscUtil.pCopyTextToClipboard(targetRows.map(it => it.$iptTokenServer.val()).join("\n\n"));
-					JqueryUtil.showCopiedEffect($btnGenServerTokens);
+					await MiscUtil.pCopyTextToClipboard(targetRows.map(it => it.iptTokenServer.val()).join("\n\n"));
+					JqueryUtil.showCopiedEffect(btnGenServerTokens);
 				}
 			});
 
-		const $btnAcceptClients = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="可以粘贴包含客户端token的文本">批量接受客户端</button>`)
-			.click(() => {
-				const {$modalInner, doClose} = UiUtil.getShowModal({title: "批量接受客户端"});
+		const btnAcceptClients = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="可以粘贴包含客户端token的文本">批量接受客户端</button>`
+			.onn("click", () => {
+				const {eleModalInner, doClose} = UiUtil.getShowModal({title: "批量接受客户端"});
 
-				const $iptText = $(`<textarea class="form-control dm-init-pl__textarea block mb-2"></textarea>`)
-					.keydown(() => $iptText.removeClass("error-background"));
+				const iptText = ee`<textarea class="form-control dm-init-pl__textarea block mb-2"></textarea>`
+					.onn("keydown", () => iptText.removeClass("error-background"));
 
-				const $btnAccept = $(`<button class="ve-btn ve-btn-xs ve-btn-primary block ve-text-center" title="Add Client">批量接受客户端</button>`)
-					.click(async () => {
-						$iptText.removeClass("error-background");
-						const txt = $iptText.val();
+				const btnAccept = ee`<button class="ve-btn ve-btn-xs ve-btn-primary block ve-text-center" title="Add Client">批量接受客户端</button>`
+					.onn("click", async () => {
+						iptText.removeClass("error-background");
+						const txt = iptText.val();
 						if (!txt.trim() || !PeerUtilV0.containsAnyTokens(txt)) {
-							$iptText.addClass("error-background");
+							iptText.addClass("error-background");
 						} else {
 							const connected = await PeerUtilV0.pConnectClientsToServers(this._p2pMetaV0.serverInfo, txt);
 							this._board.doBindAlertOnNavigation();
 							connected.forEach(serverInfo => {
-								serverInfo.rowMeta.$iptTokenClient.val(serverInfo._tempTokenToDisplay || "").attr("disabled", true);
-								serverInfo.rowMeta.$btnAcceptClientToken.attr("disabled", true);
+								serverInfo.rowMeta.iptTokenClient.val(serverInfo._tempTokenToDisplay || "").attr("disabled", true);
+								serverInfo.rowMeta.btnAcceptClientToken.attr("disabled", true);
 								delete serverInfo._tempTokenToDisplay;
 							});
 							doClose();
@@ -394,27 +410,27 @@ export class InitiativeTrackerNetworking {
 						}
 					});
 
-				$$`<div>
+				ee`<div>
 					<p>Paste text containing one or more client tokens, and click "Accept Multiple Clients"</p>
-					${$iptText}
-					<div class="ve-flex-vh-center">${$btnAccept}</div>
-				</div>`.appendTo($modalInner);
+					${iptText}
+					<div class="ve-flex-vh-center">${btnAccept}</div>
+				</div>`.appendTo(eleModalInner);
 			});
 
-		$$`
+		ee`
 			<div class="ve-flex w-100">
 				<div class="ve-col-12">
 					<div class="ve-flex-inline-v-center mr-2">
 						<span class="mr-1">添加一个玩家(客户端):</span>
-						${$btnAddClient}
+						${btnAddClient}
 					</div>
 					<div class="ve-flex-inline-v-center mr-2">
 						<span class="mr-1">复制所有未使用的服务器token:</span>
-						${$btnCopyServers}
+						${btnCopyServers}
 					</div>
 					<div class="ve-flex-inline-v-center mr-2">
 						<span class="mr-1">批量接受客户端:</span>
-						${$btnAcceptClients}
+						${btnAcceptClients}
 					</div>
 				</div>
 			</div>
@@ -422,31 +438,31 @@ export class InitiativeTrackerNetworking {
 
 		UiUtil.addModalSep(eleModalInner);
 
-		const $btnGenServerTokens = $(`<button class="ve-btn ve-btn-primary ve-btn-xs">生成所有</button>`)
-			.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: this._p2pMetaV0.rows}));
+		const btnGenServerTokens = ee`<button class="ve-btn ve-btn-primary ve-btn-xs">生成所有</button>`
+			.onn("click", () => this._playerWindowV0_pGetServerTokens({rowMetas: this._p2pMetaV0.rows}));
 
-		$$`<div class="ve-flex w-100">
+		ee`<div class="ve-flex w-100">
 			<div class="ve-col-2 bold">玩家名字</div>
 			<div class="ve-col-3-5 bold">服务端Token</div>
-			<div class="ve-col-1 ve-text-center">${$btnGenServerTokens}</div>
+			<div class="ve-col-1 ve-text-center">${btnGenServerTokens}</div>
 			<div class="ve-col-3-5 bold">客户端Token</div>
 		</div>`
 			.appendTo(UiUtil.getAddModalRow(eleModalInner, "div"));
 
-		const _get$rowTemplate = (
-			$iptName,
-			$iptTokenServer,
-			$btnGenServerToken,
-			$iptTokenClient,
-			$btnAcceptClientToken,
-			$btnDeleteClient,
-		) => $$`<div class="w-100 mb-2 ve-flex">
-			<div class="ve-col-2 pr-1">${$iptName}</div>
-			<div class="ve-col-3-5 px-1">${$iptTokenServer}</div>
-			<div class="ve-col-1 px-1 ve-flex-vh-center">${$btnGenServerToken}</div>
-			<div class="ve-col-3-5 px-1">${$iptTokenClient}</div>
-			<div class="ve-col-1-5 px-1 ve-flex-vh-center">${$btnAcceptClientToken}</div>
-			<div class="ve-col-0-5 pl-1 ve-flex-vh-center">${$btnDeleteClient}</div>
+		const _getEleRowTemplate = (
+			iptName,
+			iptTokenServer,
+			btnGenServerToken,
+			iptTokenClient,
+			btnAcceptClientToken,
+			btnDeleteClient,
+		) => ee`<div class="w-100 mb-2 ve-flex">
+			<div class="ve-col-2 pr-1">${iptName}</div>
+			<div class="ve-col-3-5 px-1">${iptTokenServer}</div>
+			<div class="ve-col-1 px-1 ve-flex-vh-center">${btnGenServerToken}</div>
+			<div class="ve-col-3-5 px-1">${iptTokenClient}</div>
+			<div class="ve-col-1-5 px-1 ve-flex-vh-center">${btnAcceptClientToken}</div>
+			<div class="ve-col-0-5 pl-1 ve-flex-vh-center">${btnDeleteClient}</div>
 		</div>`;
 
 		const clientRowMetas = [];
@@ -454,36 +470,36 @@ export class InitiativeTrackerNetworking {
 			const rowMeta = {id: CryptUtil.uid()};
 			clientRowMetas.push(rowMeta);
 
-			const $iptName = $(`<input class="form-control input-sm">`)
-				.keydown(evt => {
-					$iptName.removeClass("error-background");
-					if (evt.key === "Enter") $btnGenServerToken.click();
+			const iptName = ee`<input class="form-control input-sm">`
+				.onn("keydown", evt => {
+					iptName.removeClass("error-background");
+					if (evt.key === "Enter") btnGenServerToken.trigger("click");
 				});
 
-			const $iptTokenServer = $(`<input class="form-control input-sm copyable code" readonly disabled>`)
-				.click(async () => {
-					await MiscUtil.pCopyTextToClipboard($iptTokenServer.val());
-					JqueryUtil.showCopiedEffect($iptTokenServer);
+			const iptTokenServer = ee`<input class="form-control input-sm copyable code" readonly disabled>`
+				.onn("click", async () => {
+					await MiscUtil.pCopyTextToClipboard(iptTokenServer.val());
+					JqueryUtil.showCopiedEffect(iptTokenServer);
 				}).disableSpellcheck();
 
-			const $btnGenServerToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="生成服务端Token">生成</button>`)
-				.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]}));
+			const btnGenServerToken = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="生成服务端Token">生成</button>`
+				.onn("click", () => this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]}));
 
-			const $iptTokenClient = $(`<input class="form-control input-sm code" disabled>`)
-				.keydown(evt => {
-					$iptTokenClient.removeClass("error-background");
-					if (evt.key === "Enter") $btnAcceptClientToken.click();
+			const iptTokenClient = ee`<input class="form-control input-sm code" disabled>`
+				.onn("keydown", evt => {
+					iptTokenClient.removeClass("error-background");
+					if (evt.key === "Enter") btnAcceptClientToken.trigger("click");
 				}).disableSpellcheck();
 
-			const $btnAcceptClientToken = $(`<button class="ve-btn ve-btn-xs ve-btn-primary" title="接受客户端Token" disabled>接受客户端</button>`)
-				.click(async () => {
-					const token = $iptTokenClient.val();
+			const btnAcceptClientToken = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="接受客户端Token" disabled>接受客户端</button>`
+				.onn("click", async () => {
+					const token = iptTokenClient.val();
 					if (PeerUtilV0.isValidToken(token)) {
 						try {
 							await PeerUtilV0.pConnectClientsToServers([rowMeta.serverInfo], token);
 							this._board.doBindAlertOnNavigation();
-							$iptTokenClient.prop("disabled", true);
-							$btnAcceptClientToken.prop("disabled", true);
+							iptTokenClient.prop("disabled", true);
+							btnAcceptClientToken.prop("disabled", true);
 							doUpdateExternalStates();
 						} catch (e) {
 							JqueryUtil.doToast({
@@ -492,12 +508,12 @@ export class InitiativeTrackerNetworking {
 							});
 							setTimeout(() => { throw e; });
 						}
-					} else $iptTokenClient.addClass("error-background");
+					} else iptTokenClient.addClass("error-background");
 				});
 
-			const $btnDeleteClient = $(`<button class="ve-btn ve-btn-xs ve-btn-danger"><span class="glyphicon glyphicon-trash"></span></button>`)
-				.click(() => {
-					rowMeta.$row.remove();
+			const btnDeleteClient = ee`<button class="ve-btn ve-btn-xs ve-btn-danger"><span class="glyphicon glyphicon-trash"></span></button>`
+				.onn("click", () => {
+					rowMeta.eleRow.remove();
 					rowMeta.isDeleted = true;
 					if (rowMeta.serverInfo) {
 						rowMeta.serverInfo.server.close();
@@ -509,42 +525,43 @@ export class InitiativeTrackerNetworking {
 					if (!clientRowMetas.length) addClientRow();
 				});
 
-			rowMeta.$row = _get$rowTemplate(
-				$iptName,
-				$iptTokenServer,
-				$btnGenServerToken,
-				$iptTokenClient,
-				$btnAcceptClientToken,
-				$btnDeleteClient,
-			).appendTo($wrpRowsInner);
+			rowMeta.eleRow = _getEleRowTemplate(
+				iptName,
+				iptTokenServer,
+				btnGenServerToken,
+				iptTokenClient,
+				btnAcceptClientToken,
+				btnDeleteClient,
+			).appendTo(wrpRowsInner);
 
-			rowMeta.$iptName = $iptName;
-			rowMeta.$iptTokenServer = $iptTokenServer;
-			rowMeta.$btnGenServerToken = $btnGenServerToken;
-			rowMeta.$iptTokenClient = $iptTokenClient;
-			rowMeta.$btnAcceptClientToken = $btnAcceptClientToken;
+			rowMeta.iptName = iptName;
+			rowMeta.iptTokenServer = iptTokenServer;
+			rowMeta.btnGenServerToken = btnGenServerToken;
+			rowMeta.iptTokenClient = iptTokenClient;
+			rowMeta.btnAcceptClientToken = btnAcceptClientToken;
 			this._p2pMetaV0.rows.push(rowMeta);
 
 			return rowMeta;
 		};
 
 		const wrpRows = UiUtil.getAddModalRow(eleModalInner, "div");
-		const $wrpRowsInner = $(`<div class="w-100"></div>`).appendTo(wrpRows);
+		const wrpRowsInner = ee`<div class="w-100"></div>`.appendTo(wrpRows);
 
-		if (this._p2pMetaV0.rows.length) this._p2pMetaV0.rows.forEach(row => row.$row.appendTo($wrpRowsInner));
-		else addClientRow();
+		if (!this._p2pMetaV0.rows.length) {
+			addClientRow();
+			return;
+		}
+
+		this._p2pMetaV0.rows
+			.filter(row => !row.isStub)
+			.forEach(row => row.eleRow.appendTo(wrpRowsInner));
 	}
 
 	async pHandleDoConnectLocalV0 ({clientView}) {
-		// generate a stub/fake row meta
 		const rowMeta = {
 			id: CryptUtil.uid(),
-			$row: $(),
-			$iptName: $(`<input value="local">`),
-			$iptTokenServer: $(),
-			$btnGenServerToken: $(),
-			$iptTokenClient: $(),
-			$btnAcceptClientToken: $(),
+			iptName: ee`<input value="local">`,
+			isStub: true,
 		};
 
 		this._p2pMetaV0.rows.push(rowMeta);

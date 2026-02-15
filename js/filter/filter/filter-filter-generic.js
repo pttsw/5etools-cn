@@ -923,14 +923,14 @@ export class Filter extends FilterBase {
 	}
 
 	_doRenderPills_doRenderWrpGroup_getDivider (group) {
-		const eleHr = this._doRenderPills_doRenderWrpGroup_getDividerHr(group);
+		const hr = this._doRenderPills_doRenderWrpGroup_getDividerHr(group);
 		const elesHeader = this._doRenderPills_doRenderWrpGroup_getDividerHeaders(group);
 
 		return e_({
 			tag: "div",
 			clazz: "ve-flex-col w-100",
 			children: [
-				eleHr,
+				hr,
 				...elesHeader,
 			]
 				.filter(Boolean),

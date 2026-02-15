@@ -10,7 +10,7 @@ export class RenderRaces {
 		return ee`
 		${Renderer.utils.getBorderTr()}
 		${Renderer.utils.getExcludedTr({entity: ent, dataProp: "race"})}
-		${Renderer.utils.getNameTr(ent, {controlRhs: ent.soundClip ? RenderRaces._getPronunciationButton(ent) : "", page: UrlUtil.PG_RACES})}
+		${Renderer.utils.getNameTr(ent, {htmlControlRhs: ent.soundClip ? RenderRaces._getBtnPronounceHtml(ent) : "", page: UrlUtil.PG_RACES})}
 
 		<tr><td colspan="6" class="pt-0">
 			${entriesMeta.entryAttributes ? renderer.render(entriesMeta.entryAttributes) : ""}
@@ -27,7 +27,7 @@ export class RenderRaces {
 		${Renderer.utils.getBorderTr()}`;
 	}
 
-	static _getPronunciationButton (race) {
+	static _getBtnPronounceHtml (race) {
 		return `<button class="ve-btn ve-btn-xs ve-btn-default stats__btn-name-pronounce lst-is-exporting-image__hidden no-print ml-2 mb-2 ve-self-flex-end">
 			<span class="glyphicon glyphicon-volume-up stats__icn-pronounce-name"></span>
 			<audio class="ve-hidden" preload="none" data-name="aud-pronounce">

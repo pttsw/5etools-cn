@@ -278,7 +278,7 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 		const renderedStartingEquipment = Renderer.class.getHtmlPtStartingEquipment(cls, {renderer, styleHint: this._style});
 		if (!renderedStartingEquipment) return null;
 
-		const eleDisp = e_({
+		const disp = e_({
 			tag: "div",
 			html: renderedStartingEquipment,
 		});
@@ -286,7 +286,7 @@ class _RenderClassesSidebarImplClassic extends _RenderClassesSidebarImplBase {
 		const ele = ee`<tr>
 			<td class="cls-side__section" colspan="6">
 				<h5 class="cls-side__section-head">起始装备</h5>
-				<div>${eleDisp}</div>
+				<div>${disp}</div>
 			</td>
 		</tr>`;
 

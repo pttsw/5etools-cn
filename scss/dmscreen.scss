@@ -79,11 +79,11 @@
 	}
 
 	.dm-screen-panel[empty="true"] .panel-control-bar {
-		display: none;
+		display: none !important;
 	}
 
 	.panel-control-bar.move-expand-active {
-		display: none;
+		display: none !important;
 	}
 
 	.panel-control-bar:hover {
@@ -234,7 +234,7 @@
 
 	.panel-mode-move {
 		.panel-content-wrapper {
-			overflow-y: hidden;
+			overflow-y: hidden !important;
 		}
 	}
 
@@ -269,7 +269,6 @@
 	}
 
 	.panel-control-move {
-		display: none;
 		position: absolute;
 		user-select: none;
 		z-index: 55;

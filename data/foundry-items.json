@@ -26053,5 +26053,26 @@
 			],
 			"migrationVersion": 3
 		}
+	],
+	"baseitem": [
+		{
+			"name": "Alchemist's Supplies",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "check",
+					"activation": {
+						"type": "action"
+					},
+					"check": {
+						"ability": "int",
+						"dc": {
+							"formula": "15"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		}
 	]
 }

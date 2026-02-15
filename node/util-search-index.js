@@ -74,7 +74,7 @@ export class UtilSearchIndex {
 
 		for (const indexMeta of toIndexSingle) {
 			const filePath = `./data/${indexMeta.file}`;
-			const data = ut.readJson(filePath);
+			const data = await DataUtil.loadJSON(filePath);
 
 			if (indexMeta.postLoad) indexMeta.postLoad(data);
 
@@ -139,6 +139,7 @@ export class UtilSearchIndex {
 		const out = await BrewUtil2.pGetSearchIndex({
 			isDecompress: false,
 			isIncludeExtendedSourceInfo: true,
+			isSkipNonPartnered: true,
 		});
 
 		ut.unpatchLoadJson();

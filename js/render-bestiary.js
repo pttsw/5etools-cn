@@ -55,7 +55,7 @@ class _RenderBestiaryImplBase {
 		return !opts.isSkipTokenRender && Renderer.monster.hasToken(mon);
 	}
 
-	_getBtnPronounce ({mon}) {
+	_getBtnPronounceHtml ({mon}) {
 		return `<button class="ve-btn ve-btn-xs ve-btn-default stats__btn-name-pronounce lst-is-exporting-image__hidden no-print ml-2 mb-2 ve-self-flex-end">
 			<span class="glyphicon glyphicon-volume-up stats__icn-pronounce-name"></span>
 			<audio class="ve-hidden" preload="none" data-name="aud-pronounce">
@@ -177,7 +177,7 @@ class _RenderBestiaryImplBase {
 		return Renderer.utils.getNameTr(
 			mon,
 			{
-				controlRhs: mon.soundClip ? this._getBtnPronounce({mon}) : "",
+				htmlControlRhs: mon.soundClip ? this._getBtnPronounceHtml({mon}) : "",
 				isInlinedToken,
 				page: UrlUtil.PG_BESTIARY,
 				extensionData: {

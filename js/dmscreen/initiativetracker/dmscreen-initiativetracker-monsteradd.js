@@ -41,7 +41,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 	async pGetShowModalResults () {
 		const rdState = new this.constructor._RenderState();
 
-		const {$modalInner, $modalFooter, doClose, pGetResolved} = UiUtil.getShowModal({
+		const {eleModalInner, eleModalFooter, doClose, pGetResolved} = UiUtil.getShowModal({
 			title: `自定义生物 \u2014 ${this._mon.name}`,
 			isHeaderBorder: true,
 			hasFooter: true,
@@ -49,26 +49,26 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 		});
 		rdState.cbDoClose = doClose;
 
-		const $iptCustomName = ComponentUiUtil.$getIptStr(this, "customName");
+		const iptCustomName = ComponentUiUtil.getIptStr(this, "customName");
 
-		$$($modalInner)`
+		ee(eleModalInner)`
 			<div class="ve-flex-col py-2 w-100 h-100 ve-overflow-y-auto">
 				<label class="split-v-center mb-2">
 					<span class="w-200p ve-text-right no-shrink mr-2 bold">自定义名字:</span>
-					${$iptCustomName}
+					${iptCustomName}
 				</label>
-				${this._render_$getRowScaler()}
+				${this._render_getEleRowScaler()}
 			</div>
 		`;
 
-		$$($modalFooter)`
-			${this._render_$getFooter({rdState})}
+		ee(eleModalFooter)`
+			${this._render_getEleFooter({rdState})}
 		`;
 
 		return pGetResolved();
 	}
 
-	_render_$getRowScaler () {
+	_render_getEleRowScaler () {
 		const isShowCrScaler = Parser.crToNumber(this._mon.cr) !== VeCt.CR_UNKNOWN;
 		const isShowSpellLevelScaler = !isShowCrScaler && this._mon.summonedBySpellLevel != null;
 		const isShowClassLevelScaler = !isShowSpellLevelScaler && (this._mon.summonedByClass != null || this._mon.summonedScaleByPlayerLevel);
@@ -77,14 +77,14 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 
 		if (isShowSpellLevelScaler) {
 			const sel = Renderer.monster.getSelSummonSpellLevel(this._mon)
-				.on("change", async () => {
+				.onn("change", async () => {
 					const val = Number(sel.val());
 					this._state.scaledSummonSpellLevel = !~val ? null : val;
 					if (this._state.scaledSummonSpellLevel == null) return delete this._state.displayName;
 					this._state.displayName = (await ScaleSpellSummonedCreature.scale(this._mon, this._state.scaledSummonSpellLevel))._displayName;
 				});
 
-			return $$`<label class="split-v-center mb-2">
+			return ee`<label class="split-v-center mb-2">
 				<span class="w-200p ve-text-right no-shrink mr-2 bold">法术环阶:</span>
 				${sel}
 			</label>`;
@@ -99,7 +99,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 					this._state.displayName = (await ScaleClassSummonedCreature.scale(this._mon, this._state.scaledSummonClassLevel))._displayName;
 				});
 
-			return $$`<label class="split-v-center mb-2">
+			return ee`<label class="split-v-center mb-2">
 				<span class="w-200p ve-text-right no-shrink mr-2 bold">${this._mon.summonedByClass != null ? "职业等级" : "等级"}:</span>
 				${sel}
 			</label>`;
@@ -124,7 +124,7 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 				this._state.displayName = (await ScaleCreature.scale(this._mon, this._state.scaledCr))._displayName;
 			});
 
-		return $$`<label class="split-v-center mb-2">
+		return ee`<label class="split-v-center mb-2">
 			<span class="w-200p ve-text-right no-shrink mr-2 bold">CR:</span>
 			<span class="ve-flex-v-center mr-auto">
 				${btnScaleCr}
@@ -133,17 +133,17 @@ class _InitiativeTrackerMonsterAddCustomizer extends BaseComponent {
 		</label>`;
 	}
 
-	_render_$getFooter ({rdState}) {
-		const $btnSave = $(`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">保存</button>`)
-			.click(() => {
+	_render_getEleFooter ({rdState}) {
+		const btnSave = ee`<button class="ve-btn ve-btn-primary ve-btn-sm w-100">保存</button>`
+			.onn("click", () => {
 				rdState.cbDoClose(
 					true,
 					MiscUtil.copyFast(this.__state),
 				);
 			});
 
-		return $$`<div class="w-100 py-3 no-shrink">
-			${$btnSave}
+		return ee`<div class="w-100 py-3 no-shrink">
+			${btnSave}
 		</div>`;
 	}
 
@@ -190,17 +190,17 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	_$getCbCntToAdd ({cnt}) {
-		const $cb = $(`<input type="radio" class="ui-search__ipt-search-sub-ipt">`);
-		$cb.on("change", () => {
+	_getCbCntToAdd ({cnt}) {
+		const cb = ee`<input type="radio" class="ui-search__ipt-search-sub-ipt">`;
+		cb.onn("change", () => {
 			this._state.cntToAdd = cnt;
 		});
-		this._addHookBase("cntToAdd", () => $cb.prop("checked", this._state.cntToAdd === cnt))();
-		return $cb;
+		this._addHookBase("cntToAdd", () => cb.prop("checked", this._state.cntToAdd === cnt))();
+		return cb;
 	}
 
-	_$getIptCntToAddCustom () {
-		const $iptCntToAddCustom = ComponentUiUtil.$getIptInt(
+	_getIptCntToAddCustom () {
+		const iptCntToAddCustom = ComponentUiUtil.getIptInt(
 			this,
 			"cntToAddCustom",
 			1,
@@ -212,14 +212,14 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 
 		this._addHookBase("cntToAdd", () => {
 			if (this._state.cntToAdd !== -1) return;
-			$iptCntToAddCustom.select();
+			iptCntToAddCustom.selecte();
 		})();
 
-		$iptCntToAddCustom.click(() => {
+		iptCntToAddCustom.onn("click", () => {
 			this._state.cntToAdd = -1;
 		});
 
-		return $iptCntToAddCustom;
+		return iptCntToAddCustom;
 	}
 
 	/**
@@ -238,20 +238,20 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 
 		const iptSearch = ee`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="搜索...">`;
 
-		$$`<div class="split no-shrink">
+		ee`<div class="split no-shrink">
 			${iptSearch}
 
 			<div class="ui-search__ipt-search-sub-wrp ve-flex-v-center pr-0">
 				<div class="mr-1">添加</div>
-				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 1})} 1</label>
-				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 2})} 2</label>
-				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 3})} 3</label>
-				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 5})} 5</label>
-				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: 8})} 8</label>
-				<label class="ui-search__ipt-search-sub-lbl">${this._$getCbCntToAdd({cnt: -1})} ${this._$getIptCntToAddCustom()}</label>
+				<label class="ui-search__ipt-search-sub-lbl">${this._getCbCntToAdd({cnt: 1})} 1</label>
+				<label class="ui-search__ipt-search-sub-lbl">${this._getCbCntToAdd({cnt: 2})} 2</label>
+				<label class="ui-search__ipt-search-sub-lbl">${this._getCbCntToAdd({cnt: 3})} 3</label>
+				<label class="ui-search__ipt-search-sub-lbl">${this._getCbCntToAdd({cnt: 5})} 5</label>
+				<label class="ui-search__ipt-search-sub-lbl">${this._getCbCntToAdd({cnt: 8})} 8</label>
+				<label class="ui-search__ipt-search-sub-lbl">${this._getCbCntToAdd({cnt: -1})} ${this._getIptCntToAddCustom()}</label>
 			</div>
 
-			<label class="ui-search__ipt-search-sub-wrp ve-flex-vh-center">${ComponentUiUtil.$getCbBool(this, "isRollHp").addClass("mr-1")} <span>随机 HP</span></label>
+			<label class="ui-search__ipt-search-sub-wrp ve-flex-vh-center">${ComponentUiUtil.getCbBool(this, "isRollHp").addClass("mr-1")} <span>随机 HP</span></label>
 		</div>`.appendTo(eleModalInner);
 
 		const wrpResults = ee`<div class="ui-search__wrp-results"></div>`.appendTo(eleModalInner);
@@ -284,6 +284,9 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 					bool: "AND",
 					expand: true,
 				}),
+				{
+					searchTerm,
+				},
 			);
 			const resultCount = results.length ? results.length : index.documentStore.length;
 			const toProcess = results.length ? results : Object.values(index.documentStore.docs).slice(0, 75).map(it => ({doc: it}));

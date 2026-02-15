@@ -537,23 +537,19 @@
 			"ENG_name": "Chain Mail",
 			"name": "链甲",
 			"source": "PHB",
-			"page": 145,
+			"page": 154,
 			"srd": true,
 			"basicRules": true,
-			"referenceSources": [
-				"CoS",
-				"SCC-ARiR",
-				"CRCotN",
-				"DSotDQ",
-				"PaBTSO",
-				"VEoR",
-				"QftIS"
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 79
+				}
 			],
 			"reprintedAs": [
 				"链甲|XPHB"
 			],
-			"edition": "classic",
-			"type": "HA",
+			"type": "AT",
 			"rarity": "none",
 			"weight": 55,
 			"value": 7500,
@@ -569,29 +565,65 @@
 			"ENG_name": "Chain Mail",
 			"name": "链甲",
 			"source": "XPHB",
-			"page": 219,
+			"page": 220,
 			"srd52": true,
 			"basicRules2024": true,
-			"edition": "one",
-			"type": "HA|XPHB",
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
 			"rarity": "none",
-			"weight": 55,
-			"value": 7500,
-			"ac": 16,
-			"strength": "13",
-			"armor": true,
-			"stealth": true,
-			"hasFluffImages": true
+			"weight": 9,
+			"value": 2000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "Ability:",
+							"type": "item",
+							"entries": [
+								"Intelligence"
+							]
+						},
+						{
+							"name": "Utilize:",
+							"type": "item",
+							"entries": [
+								"Detect poisoned drink ({@dc 15}), or identify alcohol ({@dc 10})"
+							]
+						},
+						{
+							"name": "Craft:",
+							"type": "item",
+							"entries": [
+								"{@item Antitoxin|XPHB}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Chain Shirt",
 			"name": "链甲衫",
 			"source": "PHB",
-			"page": 144,
+			"page": 154,
 			"srd": true,
 			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 79
+				}
+			],
 			"referenceSources": [
-				"TftYP-TSC"
+				"BGDIA",
+				"IMR",
+				"CM",
+				"KftGV",
+				"ToFW"
 			],
 			"reprintedAs": [
 				"链甲衫|XPHB"
@@ -610,6 +642,464 @@
 		{
 			"ENG_name": "Chain Shirt",
 			"name": "链甲衫",
+			"source": "XPHB",
+			"page": 219,
+			"srd52": true,
+			"basicRules2024": true,
+			"edition": "one",
+			"type": "MA|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 1000,
+			"additionalEntries": [
+				"Calligraphy treats writing as a delicate, beautiful art. Calligraphers produce text that is pleasing to the eye, using a style that is difficult to forge. Their supplies also give them some ability to examine scripts and determine if they are legitimate, since a calligrapher's training involves long hours of studying writing and attempting to replicate its style and design.",
+				{
+					"type": "entries",
+					"name": "Components",
+					"entries": [
+						"Calligrapher's supplies include ink, a dozen sheets of parchment, and three quills."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Arcana",
+					"entries": [
+						"Although calligraphy is of little help in deciphering the content of magical writings, proficiency with these supplies can aid in identifying who wrote a script of a magical nature."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "History",
+					"entries": [
+						"This tool proficiency can augment the benefit of successful checks made to analyze or investigate ancient writings, scrolls, or other texts, including runes etched in stone or messages in frescoes or other displays."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Decipher Treasure Map",
+					"entries": [
+						"This tool proficiency grants you expertise in examining maps. You can make an Intelligence check to determine a map's age, whether a map includes any hidden messages, or similar facts."
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Calligrapher's Supplies",
+					"colLabels": [
+						"Activity",
+						"DC"
+					],
+					"colStyles": [
+						"col-6",
+						"col-6"
+					],
+					"rows": [
+						[
+							"Identify writer of nonmagical script",
+							"10"
+						],
+						[
+							"Determine writer's state of mind",
+							"15"
+						],
+						[
+							"Spot forged text",
+							"15"
+						],
+						[
+							"Forge a signature",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Calligrapher's Supplies",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 1000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "Ability:",
+							"type": "item",
+							"entries": [
+								"Dexterity"
+							]
+						},
+						{
+							"name": "Utilize:",
+							"type": "item",
+							"entries": [
+								"Write text with impressive flourishes that guard against forgery ({@dc 15})"
+							]
+						},
+						{
+							"name": "Craft:",
+							"type": "item",
+							"entries": [
+								"{@item Ink|XPHB}, {@item Spell Scroll|XDMG}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Carpenter's Tools",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 80
+				}
+			],
+			"reprintedAs": [
+				"Carpenter's Tools|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 6,
+			"value": 800,
+			"additionalEntries": [
+				"Skill at carpentry enables a character to construct wooden structures. A carpenter can build a house, a shack, a wooden cabinet, or similar items.",
+				{
+					"type": "entries",
+					"name": "Components",
+					"entries": [
+						"Carpenter's tools include a saw, a hammer, nails, a hatchet, a square, a ruler, an adze, a plane, and a chisel."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "History",
+					"entries": [
+						"This tool proficiency aids you in identifying the use and the origin of wooden buildings and other large wooden objects."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Investigation",
+					"entries": [
+						"You gain additional insight when inspecting areas within wooden structures, because you know tricks of construction that can conceal areas from discovery."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Perception",
+					"entries": [
+						"You can spot irregularities in wooden walls or floors, making it easier to find trap doors and secret passages."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Stealth",
+					"entries": [
+						"You can quickly assess the weak spots in a wooden floor, making it easier to avoid the places that creak and groan when they're stepped on."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fortify",
+					"entries": [
+						"With 1 minute of work and raw materials, you can make a door or window harder to force open. Increase the DC needed to open it by 5."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Temporary Shelter",
+					"entries": [
+						"As part of a long rest, you can construct a lean-to or a similar shelter to keep your group dry and in the shade for the duration of the rest. Because it was fashioned quickly from whatever wood was available, the shelter collapses {@dice 1d3} days after being assembled."
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Carpenter's Tools",
+					"colLabels": [
+						"Activity",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Build a simple wooden structure",
+							"10"
+						],
+						[
+							"Design a complex wooden structure",
+							"15"
+						],
+						[
+							"Find a weak point in a wooden wall",
+							"15"
+						],
+						[
+							"Pry apart a door",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Carpenter's Tools",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 6,
+			"value": 800,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "Ability:",
+							"type": "item",
+							"entries": [
+								"Strength"
+							]
+						},
+						{
+							"name": "Utilize:",
+							"type": "item",
+							"entries": [
+								"Seal or pry open a door or container ({@dc 20})"
+							]
+						},
+						{
+							"name": "Craft:",
+							"type": "item",
+							"entries": [
+								"{@item Club|XPHB}, {@item Greatclub|XPHB}, {@item Quarterstaff|XPHB}, {@item Barrel|XPHB}, {@item Chest|XPHB}, {@item Ladder|XPHB}, {@item Pole|XPHB}, {@item Portable Ram|XPHB}, {@item Torch|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cartographer's Tools",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 80
+				}
+			],
+			"referenceSources": [
+				"ToA",
+				"PaBTSO"
+			],
+			"reprintedAs": [
+				"Cartographer's Tools|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 6,
+			"value": 1500,
+			"additionalEntries": [
+				"Using cartographer's tools, you can create accurate maps to make travel easier for yourself and those who come after you. These maps can range from large-scale depictions of mountain ranges to diagrams that show the layout of a dungeon level.",
+				{
+					"type": "entries",
+					"name": "Components",
+					"entries": [
+						"Cartographer's tools consist of a quill, ink, parchment, a pair of compasses, calipers, and a ruler."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Arcana, History, Religion",
+					"entries": [
+						"You can use your knowledge of maps and locations to unearth more detailed information when you use these skills. For instance, you might spot hidden messages in a map, identify when the map was made to determine if geographical features have changed since then, and so forth."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Nature",
+					"entries": [
+						"Your familiarity with physical geography makes it easier for you to answer questions or solve issues relating to the terrain around you."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Survival",
+					"entries": [
+						"Your understanding of geography makes it easier to find paths to civilization, to predict areas where villages or towns might be found, and to avoid becoming lost. You have studied so many maps that common patterns, such as how trade routes evolve and where settlements arise in relation to geographic locations, are familiar to you."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Craft a Map",
+					"entries": [
+						"While traveling, you can draw a map as you go in addition to engaging in other activity."
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Cartographer's Tools",
+					"colLabels": [
+						"Activity",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Determine a map's age and origin",
+							"10"
+						],
+						[
+							"Estimate direction and distance to a landmark",
+							"15"
+						],
+						[
+							"Discern that a map is fake",
+							"15"
+						],
+						[
+							"Fill in a missing part of a map",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Cartographer's Tools",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 6,
+			"value": 1500,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "Ability:",
+							"type": "item",
+							"entries": [
+								"Wisdom"
+							]
+						},
+						{
+							"name": "Utilize:",
+							"type": "item",
+							"entries": [
+								"Draft a map of a small area ({@dc 15})"
+							]
+						},
+						{
+							"name": "Craft:",
+							"type": "item",
+							"entries": [
+								"{@item Map|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Chain Mail",
+			"source": "PHB",
+			"page": 145,
+			"srd": true,
+			"basicRules": true,
+			"referenceSources": [
+				"CoS",
+				"SCC-ARiR",
+				"CRCotN",
+				"DSotDQ",
+				"PaBTSO",
+				"VEoR",
+				"QftIS"
+			],
+			"reprintedAs": [
+				"Chain Mail|XPHB"
+			],
+			"edition": "classic",
+			"type": "HA",
+			"rarity": "none",
+			"weight": 55,
+			"value": 7500,
+			"ac": 16,
+			"strength": "13",
+			"armor": true,
+			"stealth": true,
+			"entries": [
+				"Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets."
+			]
+		},
+		{
+			"name": "Chain Mail",
+			"source": "XPHB",
+			"page": 219,
+			"srd52": true,
+			"basicRules2024": true,
+			"edition": "one",
+			"type": "HA|XPHB",
+			"rarity": "none",
+			"weight": 55,
+			"value": 7500,
+			"ac": 16,
+			"strength": "13",
+			"armor": true,
+			"stealth": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Chain Shirt",
+			"source": "PHB",
+			"page": 144,
+			"srd": true,
+			"basicRules": true,
+			"referenceSources": [
+				"TftYP-TSC"
+			],
+			"reprintedAs": [
+				"Chain Shirt|XPHB"
+			],
+			"edition": "classic",
+			"type": "MA",
+			"rarity": "none",
+			"weight": 20,
+			"value": 5000,
+			"ac": 13,
+			"armor": true,
+			"entries": [
+				"Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers."
+			]
+		},
+		{
+			"name": "Chain Shirt",
 			"source": "XPHB",
 			"page": 219,
 			"srd52": true,
@@ -668,7 +1158,7 @@
 			"ENG_name": "Club",
 			"name": "短棒",
 			"source": "XPHB",
-			"page": 215,
+			"page": 220,
 			"srd52": true,
 			"basicRules2024": true,
 			"edition": "one",
@@ -683,11 +1173,39 @@
 			"mastery": [
 				"缓速|XPHB"
 			],
-			"dmg1": "1d4",
-			"dmgType": "B",
-			"club": true,
-			"weapon": true,
-			"hasFluffImages": true
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 8,
+			"value": 100,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "Ability:",
+							"type": "item",
+							"entries": [
+								"Wisdom"
+							]
+						},
+						{
+							"name": "Utilize:",
+							"type": "item",
+							"entries": [
+								"Improve food's flavor ({@dc 10}), or detect spoiled or poisoned food ({@dc 15})"
+							]
+						},
+						{
+							"name": "Craft:",
+							"type": "item",
+							"entries": [
+								"{@item Rations|XPHB}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Crossbow Bolt",
@@ -2569,11 +3087,13 @@
 			"page": 221,
 			"srd52": true,
 			"basicRules2024": true,
-			"edition": "one",
-			"type": "INS|XPHB",
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
 			"rarity": "none",
-			"weight": 2,
-			"value": 3000,
+			"weight": 8,
+			"value": 1000,
 			"entries": [
 				{
 					"type": "list",
@@ -3191,19 +3711,45 @@
 			"ENG_name": "Plate Armor",
 			"name": "板甲",
 			"source": "XPHB",
-			"page": 219,
+			"page": 221,
 			"srd52": true,
 			"basicRules2024": true,
-			"edition": "one",
-			"type": "HA|XPHB",
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
 			"rarity": "none",
-			"weight": 65,
-			"value": 150000,
-			"ac": 18,
-			"strength": "15",
-			"armor": true,
-			"stealth": true,
-			"hasFluffImages": true
+			"weight": 3,
+			"value": 1000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"name": "Ability:",
+							"type": "item",
+							"entries": [
+								"Intelligence"
+							]
+						},
+						{
+							"name": "Utilize:",
+							"type": "item",
+							"entries": [
+								"Discern what a ceramic object held in the past 24 hours ({@dc 15})"
+							]
+						},
+						{
+							"name": "Craft:",
+							"type": "item",
+							"entries": [
+								"{@item Jug|XPHB}, {@item Lamp|XPHB}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Quarterstaff",
@@ -4326,7 +4872,7 @@
 			"ENG_name": "Studded Leather Armor",
 			"name": "镶钉皮甲",
 			"source": "XPHB",
-			"page": 219,
+			"page": 221,
 			"srd52": true,
 			"basicRules2024": true,
 			"referenceSources": [
@@ -4362,6 +4908,8 @@
 			"page": 124,
 			"type": "INS",
 			"rarity": "none",
+			"weight": 10,
+			"value": 5000,
 			"entries": [
 				"也被称为哨管whistlecane，其结构简单容易制作，是一种用簧管切削成的管风乐器。事实上，老练的吟游诗人经常会将这种乐器送给孩子，进而让其父母感到高兴又或是懊恼。"
 			]

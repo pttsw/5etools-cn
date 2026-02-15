@@ -364,7 +364,9 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 	}
 
 	async pDoShiftActiveRow ({direction}) {
-		const {isRoundStart, rows} = this._pDoShiftActiveRow_doInitialShift({direction});
+		const initialShiftInfo = this._pDoShiftActiveRow_doInitialShift({direction});
+		if (!initialShiftInfo) return;
+		const {isRoundStart, rows} = initialShiftInfo;
 
 		if (direction !== InitiativeTrackerConst.DIR_FORWARDS || !isRoundStart || !this._comp._state.isRerollInitiativeEachRound) return this._comp._state[this._prop] = rows;
 
@@ -413,8 +415,8 @@ export class InitiativeTrackerRowDataViewActive extends InitiativeTrackerRowData
 	_TextHeaderLhs = I18nUtil.get("page.dmscreen.creature_status");
 	_ClsRenderableCollectionRowData = _RenderableCollectionRowDataActive;
 
-	_render_$getWrpHeaderRhs ({rdState}) {
-		return $$`<div class="dm-init__row-rhs">
+	_render_getWrpHeaderRhs ({rdState}) {
+		return ee`<div class="dm-init__row-rhs">
 			<div class="dm-init__header dm-init__header--input dm-init__header--input-wide" title="${I18nUtil.get("common.hit_points")}">HP</div>
 			<div class="dm-init__header dm-init__header--input" title="${I18nUtil.get("page.dmscreen.initiative_score")}">#</div>
 			<div class="dm-init__spc-header-buttons"></div>
@@ -463,9 +465,9 @@ export class InitiativeTrackerRowDataViewActive extends InitiativeTrackerRowData
 				if (!renderedsActive.length) return;
 
 				// First scroll the last active row into view to scroll down as far as necessary...
-				renderedsActive.last()?.$wrpRow?.[0]?.scrollIntoView({block: "nearest", inline: "nearest"});
+				renderedsActive.last()?.wrpRow?.scrollIntoView({block: "nearest", inline: "nearest"});
 				// ...then scroll the first active row into view, as this is the one we prioritize
-				renderedsActive[0]?.$wrpRow?.[0]?.scrollIntoView({block: "nearest", inline: "nearest"});
+				renderedsActive[0]?.wrpRow?.scrollIntoView({block: "nearest", inline: "nearest"});
 				// endregion
 			} finally {
 				this._compRowsLock.unlock();

@@ -1329,7 +1329,7 @@ export class BrewUtil2Base {
 	/**
 	 * Get data in a format similar to the main search index
 	 */
-	async pGetSearchIndex ({id = 0, isDecompress = true, isIncludeExtendedSourceInfo = false} = {}) {
+	async pGetSearchIndex ({id = 0, isDecompress = true, isIncludeExtendedSourceInfo = false, isSkipNonPartnered = false} = {}) {
 		const indexer = new Omnidexer(id);
 
 		const brew = await this.pGetBrewProcessed();
@@ -1342,11 +1342,11 @@ export class BrewUtil2Base {
 
 				if (arbiter.pFnPreProcBrew) {
 					const toProc = await arbiter.pFnPreProcBrew.bind(arbiter)(brew);
-					await indexer.pAddToIndex(arbiter, toProc, {isIncludeExtendedSourceInfo});
+					await indexer.pAddToIndex(arbiter, toProc, {isIncludeExtendedSourceInfo, isSkipNonPartnered});
 					return;
 				}
 
-				await indexer.pAddToIndex(arbiter, brew, {isIncludeExtendedSourceInfo});
+				await indexer.pAddToIndex(arbiter, brew, {isIncludeExtendedSourceInfo, isSkipNonPartnered});
 			});
 
 		const index = indexer.getIndex();

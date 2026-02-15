@@ -140,8 +140,8 @@ class _InitiativeTrackerStatColumnBase {
 		if (obj !== undefined) Object.assign(state.entity, obj);
 	}
 
-	$getRenderedHeader () {
-		return $(`<div class="dm-init__stat_head" ${this.constructor.NAME ? `title="${this.constructor.NAME}"` : ""}>${this._abbreviation}</div>`);
+	getEleRenderedHeader () {
+		return ee`<div class="dm-init__stat_head" ${this.constructor.NAME ? `title="${this.constructor.NAME}"` : ""}>${this._abbreviation}</div>`;
 	}
 
 	getRendered ({comp, mon, networking = null}) {
@@ -358,8 +358,8 @@ class InitiativeTrackerStatColumn_LegendaryActions extends _InitiativeTrackerSta
 		return {current: state.entity.max};
 	}
 
-	$getRenderedHeader () {
-		return super.$getRenderedHeader()
+	getEleRenderedHeader () {
+		return super.getEleRenderedHeader()
 			.addClass("w-48p");
 	}
 

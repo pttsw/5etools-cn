@@ -345,7 +345,7 @@ export class SourceFilter extends Filter {
 	static getCompleteFilterSources (ent, {isIncludeBaseSource = false} = {}) {
 		const isSkipBaseSource = !isIncludeBaseSource || !ent._baseSource;
 
-		if (!ent.otherSources && isSkipBaseSource) return ent.source;
+		if (!ent.otherSources && !ent.referenceSources && isSkipBaseSource) return ent.source;
 
 		// Avoid `otherSources`/`referenceSources` from e.g. homebrews which are not loaded, and so lack their metadata
 		const otherSourcesFilt = (ent.otherSources || [])
