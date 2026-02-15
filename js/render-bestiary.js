@@ -559,7 +559,7 @@ class _RenderBestiaryImplClassic extends _RenderBestiaryImplBase {
 		</tr>
 
 		<tr>${opts.selSummonSpellLevel ? ee`<td colspan="6"><strong class="mr-2">法术环阶</strong> ${opts.selSummonSpellLevel}</td>` : ""}</tr>
-		<tr>${opts.selSummonClassLevel ? ee`<td colspan="6"><strong class="mr-2">${opts.classLevelScalerClass ? "Class Level" : "Level"}</strong> ${opts.selSummonClassLevel}</td>` : ""}</tr>
+		<tr>${opts.selSummonClassLevel ? ee`<td colspan="6"><strong class="mr-2">${opts.classLevelScalerClass ? "职业等级" : "等级"}</strong> ${opts.selSummonClassLevel}</td>` : ""}</tr>
 
 		${htmlPtTraits}
 		${htmlPtActions}
@@ -752,7 +752,7 @@ class _RenderBestiaryImplOne extends _RenderBestiaryImplBase {
 		</tr>
 
 		<tr>${opts.selSummonSpellLevel ? ee`<td colspan="6"><strong class="mr-2">法术环阶</strong> ${opts.selSummonSpellLevel}</td>` : ""}</tr>
-		<tr>${opts.selSummonClassLevel ? ee`<td colspan="6"><strong class="mr-2">${opts.classLevelScalerClass ? "Class Level" : "Level"}</strong> ${opts.selSummonClassLevel}</td>` : ""}</tr>
+		<tr>${opts.selSummonClassLevel ? ee`<td colspan="6"><strong class="mr-2">${opts.classLevelScalerClass ? "职业等级" : "等级"}</strong> ${opts.selSummonClassLevel}</td>` : ""}</tr>
 
 		${htmlPtTraits}
 		${htmlPtActions}

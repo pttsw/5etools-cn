@@ -9556,7 +9556,7 @@ class _RenderCompactBestiaryImplBase {
 		const labelHp = this._style !== "classic" ? "HP" : I18nUtil.get("common.hit_points");
 		const titleHp = this._style !== "classic" ? `title="${I18nUtil.get("common.hit_points")}"` : "";
 
-		const labelCr = isShowSpellLevelScaler ? I18nUtil.get("common.spell_level") : isShowClassLevelScaler ? (classLevelScalerClass ? "Class Level" : "Level") : (this._style !== "classic" ? "CR" : I18nUtil.get("common.challenge"));
+		const labelCr = isShowSpellLevelScaler ? I18nUtil.get("common.spell_level") : isShowClassLevelScaler ? (classLevelScalerClass ? "职业等级" : "等级") : (this._style !== "classic" ? "CR" : I18nUtil.get("common.challenge"));
 		const titleCr = isShowSpellLevelScaler ? "" : isShowClassLevelScaler ? "" : (this._style !== "classic" ? `title="${I18nUtil.get("common.challenge_rating")}"` : "");
 
 		const ptInitiative = this._style !== "classic" ? Renderer.monster.getInitiativePart(mon) : "";
