@@ -994,7 +994,7 @@
 					"name": "星界之火",
 					"type": "entries",
 					"entries": [
-						"你习得下列一项你选择的戏法：{@spell 舞光术}、{@spell 光亮术}、或{@spell 圣火术}。智力、感知或魅力是你施展该戏法的施法属性（选择此种族的时候决定）。"
+						"你习得下列一项你选择的戏法：{@spell 舞光术}、{@spell 光亮术}、或{@spell 圣火术}。你施展该戏法的施法属性为智力、感知、或魅力（选择此种族时决定）。"
 					]
 				},
 				{
@@ -1034,8 +1034,8 @@
 					"name": "星界出神",
 					"type": "entries",
 					"entries": [
-						"你不需要睡眠，魔法亦无法使你陷入睡眠。你可以花费4小时进行出神般的冥想来完成一次长休，且整个冥想过程中你都能保持清醒。",
-						"当你完成这次出神时，你获得一个自选技能的熟练项，与一件自选武器或自选工具的熟练项（从{@book 玩家手册|PHB}中选择它们）。你通过抽取共享的精灵记忆及星光位面的实体经历，神秘地获得了这些熟练，这个好处会一直持续到你完成下一次长休。"
+						"你不需要睡眠，魔法效应亦无法使你陷入睡眠。你能花费4小时进行出神般的冥想来完成一次长休，且整个冥想过程中你都能保持清醒。",
+						"当你完成出神时，你获得一个自选技能的熟练项，与一件自选武器或自选工具的熟练项（从{@book 玩家手册|PHB}中选择它们）。你通过抽取共享的精灵记忆及星界位面的实体经历，神秘地获得了这些熟练，这个好处会一直持续到你完成下一次长休。"
 					]
 				}
 			],
@@ -5877,7 +5877,7 @@
 					"name": "星界火花",
 					"type": "entries",
 					"entries": [
-						"你与星光位面的心灵联系让你能神秘地获取一丝神力火花，并可以通过你的武器引导之。当你使用{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}命中一个目标时，你可以使目标受到额外力场伤害，数值等同于你的熟练加值。",
+						"你与星界位面的精神连接让你拥有一簇神力火花的神秘权能，并通过你的武器来引导之。当你使用{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器}命中一个目标时，你能对目标额外造成等同于你熟练加值的力场伤害。",
 						"你能使用此特质的次数等同于你的熟练加值，但每回合中只能使用一次。当你完成一次长休后，你重获全部已消耗的使用次数。"
 					]
 				},
@@ -5894,7 +5894,7 @@
 					"name": "河马体格",
 					"type": "entries",
 					"entries": [
-						"你在进行基于力量的属性检定与力量豁免检定时具有优势。此外，当决定你的载重和你能推、拉、抬的重量时，你的体型视为比当前大一级。"
+						"你在进行基于力量的属性检定与力量豁免时具有优势。此外，当决定你的载货量和推、拉、抬的重量时，你的体型视为比当前大一级。"
 					]
 				}
 			],
@@ -8809,107 +8809,6 @@
 			"translator": "不全书"
 		},
 		{
-			"ENG_name": "Human (Amonkhet)",
-			"name": "人类 (阿芒凯)",
-			"source": "PSA",
-			"page": 14,
-			"size": [
-				"M"
-			],
-			"speed": 30,
-			"ability": [
-				{
-					"choose": {
-						"from": [
-							"str",
-							"dex",
-							"con",
-							"int",
-							"wis",
-							"cha"
-						],
-						"count": 2
-					}
-				}
-			],
-			"age": {
-				"mature": 20,
-				"max": 100
-			},
-			"feats": [
-				{
-					"any": 1
-				}
-			],
-			"skillProficiencies": [
-				{
-					"any": 1
-				}
-			],
-			"languageProficiencies": [
-				{
-					"common": true,
-					"anyStandard": 1
-				}
-			],
-			"soundClip": {
-				"type": "internal",
-				"path": "races/human.mp3"
-			},
-			"entries": [
-				{
-					"ENG_name": "Age",
-					"name": "年龄",
-					"type": "entries",
-					"entries": [
-						"人类在十几岁末成年。大多数人类新手在他们30岁之前已经完成了试炼，并找到了光荣或不光荣的死亡。理论上，维齐尔可以为他们所信仰的神灵服务更长时间，寿命可达一个世纪。"
-					]
-				},
-				{
-					"ENG_name": "Alignment",
-					"name": "阵营",
-					"type": "entries",
-					"entries": [
-						"人类没有特定的倾向性。最好和最坏的都可以在他们当中找到。"
-					]
-				},
-				{
-					"ENG_name": "Size",
-					"name": "体型",
-					"type": "entries",
-					"entries": [
-						"人类身高差距很大，有的刚好5尺高，而有的甚至高过6尺。不论你有多高，你的体型皆为中型。"
-					]
-				},
-				{
-					"ENG_name": "Skills",
-					"name": "技能",
-					"entries": [
-						"你自选一个技能并获得其熟练。"
-					],
-					"type": "entries"
-				},
-				{
-					"ENG_name": "Feat",
-					"name": "专长",
-					"entries": [
-						"你获得一个自选的{@5etools 专长|feats.html}。"
-					],
-					"type": "entries"
-				},
-				{
-					"ENG_name": "Languages",
-					"name": "语言",
-					"entries": [
-						"你能说、读、写通用语和一种你选择的额外语言。"
-					],
-					"type": "entries"
-				}
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
 			"ENG_name": "Human (Innistrad)",
 			"name": "人类 (依尼翠)",
 			"source": "PSI",
@@ -10830,7 +10729,7 @@
 					"name": "年龄",
 					"type": "entries",
 					"entries": [
-						"洛克塔人族在10岁时成熟成年，但已知可以活到80岁。"
+						"洛卡鱼人10岁就能成年，但已知能活到80岁。"
 					]
 				},
 				{
@@ -10838,14 +10737,14 @@
 					"name": "阵营",
 					"type": "entries",
 					"entries": [
-						"大多数洛克塔哈族人是真正的中立或者在他们的阵营中有一些中立的方面。他们倾向于善良，来自一个对受压迫者有同情心的文化。"
+						"大部分洛卡鱼人是真正的中立，或在其阵营中具有中立倾向。由于来自一种普遍会对弱者施以同情的文化，他们倾向于善良。"
 					]
 				},
 				{
 					"ENG_name": "Natural Armor",
 					"name": "天生护甲",
 					"entries": [
-						"你的皮肤坚韧且有鳞片。当你不穿戴盔甲时，你的AC是12加上你的敏捷调整值。如果穿戴的盔甲会让你的AC降低，你可以使用你的天然盔甲来确定你的AC。在使用天然盔甲时，盾牌的效果正常适用。"
+						"你具有坚硬且长鳞片的皮肤。当你没有穿着护甲时，你的AC为12+你的敏捷调整值。如果你着装护甲的AC更低，你也能使用你的天生护甲作为你的AC。使用盾牌不会影响你从此特性获益。"
 					],
 					"type": "entries"
 				},
@@ -10853,7 +10752,7 @@
 					"ENG_name": "Observant & Athletic",
 					"name": "敏锐&矫健",
 					"entries": [
-						"你在{@skill 运动}（运动）和{@skill 察觉}（感知）技能上具有熟练。"
+						"你具有{@skill 运动}（运动）与{@skill 察觉}（感知）的熟练项。"
 					],
 					"type": "entries"
 				},
@@ -10861,7 +10760,7 @@
 					"ENG_name": "Leviathan Will",
 					"name": "利维坦意志",
 					"entries": [
-						"你在对抗被{@condition 魅惑}、{@condition 恐慌}、{@condition 麻痹}、{@condition 中毒}、{@condition 震慑}或被睡眠状态影响的豁免检定中具有优势。"
+						"你在对抗使你{@condition 魅惑}、{@condition 恐慌}、{@condition 麻痹}、{@condition 中毒}、{@condition 震慑}，或是使你入眠的豁免检定中具有优势。"
 					],
 					"type": "entries"
 				},
@@ -10869,7 +10768,7 @@
 					"ENG_name": "Limited Amphibiousness",
 					"name": "有限两栖",
 					"entries": [
-						"你可以呼吸空气和水，但每4小时至少需要潜入水下一次，以避免窒息。"
+						"你可以在空气和水中呼吸，但你需要至少每四个小时把自己浸入水中一次来避免陷入窒息。"
 					],
 					"type": "entries"
 				},
@@ -10878,14 +10777,14 @@
 					"name": "体型",
 					"type": "entries",
 					"entries": [
-						"洛克塔人族的身高介于5到6尺之间，平均体重约为150磅。你的体型是中等。"
+						"洛卡鱼人直立时介于5尺与6尺之间，平均150磅。你的体型为中型。"
 					]
 				},
 				{
 					"ENG_name": "Language",
 					"name": "语言",
 					"entries": [
-						"你能够说、读、写水族语和通用语。"
+						"你能读、说和写水族语和通用语。"
 					],
 					"type": "entries"
 				}
@@ -14654,7 +14553,7 @@
 					"ENG_name": "Languages",
 					"name": "语言",
 					"entries": [
-						"你能够说、读、写水族语和通用语。"
+						"你能读、说和写水族语和通用语。"
 					],
 					"type": "entries"
 				}
@@ -15977,6 +15876,60 @@
 	],
 	"subrace": [
 		{
+			"ENG_name": "Amonkhet",
+			"name": "阿蒙凯特",
+			"source": "PSA",
+			"page": 14,
+			"_copy": {
+				"ENG_name": "Variant",
+				"name": "变体",
+				"source": "PHB",
+				"raceName": "人类",
+				"raceSource": "PHB",
+				"_mod": {
+					"entries": [
+						{
+							"mode": "appendArr",
+							"items": [
+								{
+									"ENG_name": "Age",
+									"name": "年龄",
+									"type": "entries",
+									"entries": [
+										"人类在十几岁末成年。大多数人类新手在他们30岁之前已经完成了试炼，并找到了光荣或不光荣的死亡。理论上，维齐尔可以为他们所信仰的神灵服务更长时间，寿命可达一个世纪。"
+									],
+									"data": {
+										"overwrite": "年龄"
+									}
+								},
+								{
+									"ENG_name": "Languages",
+									"name": "语言",
+									"entries": [
+										"你能说、读、写通用语和一种你选择的额外语言。"
+									],
+									"type": "entries",
+									"data": {
+										"overwrite": "语言"
+									}
+								},
+								{
+									"ENG_name": "Alignment",
+									"name": "阵营",
+									"type": "entries",
+									"entries": [
+										"人类没有特定的倾向性。最好和最坏的都可以在他们当中找到。"
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Fallen",
 			"name": "堕落",
 			"source": "VGM",
@@ -16182,7 +16135,7 @@
 								"color": "黑",
 								"damageType": "强酸",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"强酸"
@@ -16193,7 +16146,7 @@
 								"color": "蓝",
 								"damageType": "闪电",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"闪电"
@@ -16204,7 +16157,7 @@
 								"color": "黄铜",
 								"damageType": "火焰",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"火焰"
@@ -16215,7 +16168,7 @@
 								"color": "青铜",
 								"damageType": "闪电",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"闪电"
@@ -16226,7 +16179,7 @@
 								"color": "赤铜",
 								"damageType": "强酸",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"强酸"
@@ -16237,7 +16190,7 @@
 								"color": "金",
 								"damageType": "火焰",
 								"area": "15尺锥形区域",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"火焰"
@@ -16248,7 +16201,7 @@
 								"color": "绿",
 								"damageType": "毒素",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							},
 							"resist": [
 								"毒素"
@@ -16259,7 +16212,7 @@
 								"color": "红",
 								"damageType": "火焰",
 								"area": "15尺锥形区域",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							},
 							"resist": [
 								"火焰"
@@ -16270,7 +16223,7 @@
 								"color": "银",
 								"damageType": "寒冷",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							},
 							"resist": [
 								"寒冷"
@@ -16281,7 +16234,7 @@
 								"color": "白",
 								"damageType": "寒冷",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							},
 							"resist": [
 								"寒冷"
@@ -16445,7 +16398,7 @@
 								"color": "黑",
 								"damageType": "强酸",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16453,7 +16406,7 @@
 								"color": "蓝",
 								"damageType": "闪电",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16461,7 +16414,7 @@
 								"color": "黄铜",
 								"damageType": "火焰",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16469,7 +16422,7 @@
 								"color": "青铜",
 								"damageType": "闪电",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16477,7 +16430,7 @@
 								"color": "赤铜",
 								"damageType": "强酸",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16485,7 +16438,7 @@
 								"color": "金",
 								"damageType": "火焰",
 								"area": "15尺锥形区域",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16493,7 +16446,7 @@
 								"color": "绿",
 								"damageType": "毒素",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							}
 						},
 						{
@@ -16501,7 +16454,7 @@
 								"color": "红",
 								"damageType": "火焰",
 								"area": "15尺锥形区域",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16509,7 +16462,7 @@
 								"color": "银",
 								"damageType": "寒冷",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							}
 						},
 						{
@@ -16517,7 +16470,7 @@
 								"color": "白",
 								"damageType": "寒冷",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							}
 						}
 					]
@@ -16678,7 +16631,7 @@
 								"color": "黑",
 								"damageType": "强酸",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16686,7 +16639,7 @@
 								"color": "蓝",
 								"damageType": "闪电",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16694,7 +16647,7 @@
 								"color": "黄铜",
 								"damageType": "火焰",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16702,7 +16655,7 @@
 								"color": "青铜",
 								"damageType": "闪电",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16710,7 +16663,7 @@
 								"color": "赤铜",
 								"damageType": "强酸",
 								"area": "5尺宽，30尺长的线",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16718,7 +16671,7 @@
 								"color": "金",
 								"damageType": "火焰",
 								"area": "15尺锥形区域",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16726,7 +16679,7 @@
 								"color": "绿",
 								"damageType": "毒素",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							}
 						},
 						{
@@ -16734,7 +16687,7 @@
 								"color": "红",
 								"damageType": "火焰",
 								"area": "15尺锥形区域",
-								"savingThrow": "敏捷"
+								"savingThrow": "Dexterity"
 							}
 						},
 						{
@@ -16742,7 +16695,7 @@
 								"color": "银",
 								"damageType": "寒冷",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							}
 						},
 						{
@@ -16750,7 +16703,7 @@
 								"color": "白",
 								"damageType": "寒冷",
 								"area": "15尺锥形区域",
-								"savingThrow": "体质"
+								"savingThrow": "Constitution"
 							}
 						}
 					]

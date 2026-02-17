@@ -6,6 +6,153 @@
 	},
 	"baseitem": [
 		{
+			"ENG_name": "Alchemist's Supplies",
+			"name": "炼金工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 79
+				}
+			],
+			"referenceSources": [
+				"TTP",
+				"WDMM",
+				"OoW",
+				"IMR",
+				"SCC-ARiR",
+				"JttRC",
+				"KftGV",
+				"PaBTSO"
+			],
+			"reprintedAs": [
+				"炼金工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 8,
+			"value": 5000,
+			"additionalEntries": [
+				"炼金工具可以用来制作有用的化合物，如强酸或炽火胶。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"炼金工具包括两只玻璃烧杯、一个铁架台、一根玻璃搅拌棒、一个小研钵和药杵，以及一袋常用炼金术材料，包括盐、铁粉、纯净水。"
+					]
+				},
+				{
+					"ENG_name": "Arcana",
+					"type": "entries",
+					"name": "奥秘",
+					"entries": [
+						"炼金工具熟练项可以让你在进行鉴定药水或类似物质的{@skill 奥秘}检定中获得更多信息。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"当你调查一个区域的线索时，如果该区域曾使用过任何化合物或其他物质，炼金工具熟练项将使你对此具有额外的洞察力。"
+					]
+				},
+				{
+					"ENG_name": "Alchemical Crafting",
+					"type": "entries",
+					"name": "道具制作",
+					"entries": [
+						"你可以使用这套工具熟练制作炼金道具。角色可以花钱收集原材料，每磅材料花费50金币。DM可以允许角色使用指定技能进行检定时具有优势。作为长休的一部分，你可以使用炼金工具制作一份剂量的{@item 强酸 (小瓶)|PHB|强酸}、{@item 炽火胶 (扁瓶)|PHB|炽火胶}、{@item 抗毒剂 (小瓶)|PHB|抗毒剂}、{@item 燃油 (扁瓶)|PHB|燃油}、{@item 香水 (小瓶)|PHB|香水}或者{@item 肥皂|PHB}。从你所携带的原材料总价值中减去所制作物品价值的一半。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "炼金工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"制造一股浓烟",
+							"10"
+						],
+						[
+							"鉴定一瓶毒药",
+							"10"
+						],
+						[
+							"鉴定一种物质",
+							"15"
+						],
+						[
+							"点火",
+							"15"
+						],
+						[
+							"中和强酸",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Alchemist's Supplies",
+			"name": "炼金工具",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TFV"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 8,
+			"value": 5000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"智力"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"辨析一种物质（{@dc 15}），或生起一场火（{@dc 15}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 强酸|XPHB}, {@item 炽火胶|XPHB}, {@item 材料包|XPHB}, {@item 燃油|XPHB}, {@item 纸张|XPHB}, {@item 香水|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Antimatter Rifle",
 			"name": "反物质步枪",
 			"source": "DMG",
@@ -534,8 +681,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"ENG_name": "Chain Mail",
-			"name": "链甲",
+			"ENG_name": "Brewer's Supplies",
+			"name": "酿酒工具",
 			"source": "PHB",
 			"page": 154,
 			"srd": true,
@@ -547,23 +694,85 @@
 				}
 			],
 			"reprintedAs": [
-				"链甲|XPHB"
+				"酿酒工具|XPHB"
 			],
 			"type": "AT",
 			"rarity": "none",
-			"weight": 55,
-			"value": 7500,
-			"ac": 16,
-			"strength": "13",
-			"armor": true,
-			"stealth": true,
-			"entries": [
-				"该护甲由互相锁接的金属环编成。链甲还包括在甲胄下面穿戴的一层织物衬里，用以阻止擦伤并减缓挥击的冲击。此护甲同时还附有护手。"
+			"weight": 9,
+			"value": 2000,
+			"additionalEntries": [
+				"酿造是生产啤酒的艺术。啤酒不仅是一种酒精饮料，而且酿造过程还能净化水。制作啤酒需要几周的发酵时间，但只需几个小时的工作。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"酿酒工具包括一个大型玻璃罐、一定量的啤酒花、一个虹吸管和几英尺长的软管。"
+					]
+				},
+				{
+					"ENG_name": "History",
+					"name": "历史",
+					"type": "entries",
+					"entries": [
+						"拥有酿酒工具熟练项的角色，在进行涉及酒精作为重要元素的事件相关的智力（{@skill 历史}）检定时，可以获得额外的洞察力。"
+					]
+				},
+				{
+					"ENG_name": "Medicine",
+					"type": "entries",
+					"name": "医药",
+					"entries": [
+						"该工具熟练项使你在治疗酒精中毒患者或使用酒精缓解苦痛时获得额外洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Persuasion",
+					"type": "entries",
+					"name": "游说",
+					"entries": [
+						"一杯烈酒能帮助软化最坚硬的心。你使用酿酒工具的熟练项可以协助你向某人劝酒，给他们恰到好处的酒精来缓和情绪。"
+					]
+				},
+				{
+					"ENG_name": "Potable Water",
+					"type": "entries",
+					"name": "饮用水",
+					"entries": [
+						"你的酿酒知识使你能够净化原本不可饮用的水。作为长休的一部分，你可以净化最多6加仑的水，或作为短休的一部分净化1加仑。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "酿酒工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"侦查饮料中的毒素或杂质",
+							"10"
+						],
+						[
+							"识别酒精",
+							"15"
+						],
+						[
+							"忽略酒精的效应",
+							"20"
+						]
+					]
+				}
 			]
 		},
 		{
-			"ENG_name": "Chain Mail",
-			"name": "链甲",
+			"ENG_name": "Brewer's Supplies",
+			"name": "酿酒工具",
 			"source": "XPHB",
 			"page": 220,
 			"srd52": true,
@@ -581,24 +790,27 @@
 					"style": "list-hang-notitle",
 					"items": [
 						{
-							"name": "Ability:",
+							"ENG_name": "Ability:",
+							"name": "属性：",
 							"type": "item",
 							"entries": [
-								"Intelligence"
+								"智力"
 							]
 						},
 						{
-							"name": "Utilize:",
+							"ENG_name": "Utilize:",
+							"name": "操作：",
 							"type": "item",
 							"entries": [
-								"Detect poisoned drink ({@dc 15}), or identify alcohol ({@dc 10})"
+								"检测饮品是否下毒（{@dc 15}），或辨识酒精（{@dc 10}）"
 							]
 						},
 						{
-							"name": "Craft:",
+							"ENG_name": "Craft:",
+							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item Antitoxin|XPHB}"
+								"{@item 抗毒剂|XPHB}"
 							]
 						}
 					]
@@ -606,8 +818,8 @@
 			]
 		},
 		{
-			"ENG_name": "Chain Shirt",
-			"name": "链甲衫",
+			"ENG_name": "Calligrapher's Supplies",
+			"name": "书法工具",
 			"source": "PHB",
 			"page": 154,
 			"srd": true,
@@ -626,66 +838,51 @@
 				"ToFW"
 			],
 			"reprintedAs": [
-				"链甲衫|XPHB"
+				"书法工具|XPHB"
 			],
-			"edition": "classic",
-			"type": "MA",
-			"rarity": "none",
-			"weight": 20,
-			"value": 5000,
-			"ac": 13,
-			"armor": true,
-			"entries": [
-				"该护甲由互相锁接的金属环组成，通常着装于布衣或皮衣的夹层之间。这种护甲为着装者的上半身提供了适中的保护，且锁环间相互碰撞的声音也可以被外层衣服减弱。"
-			]
-		},
-		{
-			"ENG_name": "Chain Shirt",
-			"name": "链甲衫",
-			"source": "XPHB",
-			"page": 219,
-			"srd52": true,
-			"basicRules2024": true,
-			"edition": "one",
-			"type": "MA|XPHB",
+			"type": "AT",
 			"rarity": "none",
 			"weight": 5,
 			"value": 1000,
 			"additionalEntries": [
-				"Calligraphy treats writing as a delicate, beautiful art. Calligraphers produce text that is pleasing to the eye, using a style that is difficult to forge. Their supplies also give them some ability to examine scripts and determine if they are legitimate, since a calligrapher's training involves long hours of studying writing and attempting to replicate its style and design.",
+				"书法将书写视为一种精致而美丽的艺术。书法家创作出赏心悦目的文字，使用的风格难以伪造。他们的工具还赋予其一定能力来检查文字并判断其真伪，因为书法家的训练包括长时间研究书写并尝试复制其风格与设计。",
 				{
+					"ENG_name": "Components",
+					"name": "成分",
 					"type": "entries",
-					"name": "Components",
 					"entries": [
-						"Calligrapher's supplies include ink, a dozen sheets of parchment, and three quills."
+						"书法工具包括墨水、十二张羊皮纸和三支羽毛笔。"
 					]
 				},
 				{
+					"ENG_name": "Arcana",
 					"type": "entries",
-					"name": "Arcana",
+					"name": "奥秘",
 					"entries": [
-						"Although calligraphy is of little help in deciphering the content of magical writings, proficiency with these supplies can aid in identifying who wrote a script of a magical nature."
+						"尽管书法对于解读魔法文字的内容帮助不大，但掌握这些工具的熟练项可以协助识别谁书写了具有魔法性质的文字。"
 					]
 				},
 				{
+					"ENG_name": "History",
+					"name": "历史",
 					"type": "entries",
-					"name": "History",
 					"entries": [
-						"This tool proficiency can augment the benefit of successful checks made to analyze or investigate ancient writings, scrolls, or other texts, including runes etched in stone or messages in frescoes or other displays."
+						"该工具熟练项可以增大分析或调查远古文字、卷轴或其他文本（包括刻在岩石上的符文或壁画及其他展示中的信息）时成功检定的增益。"
 					]
 				},
 				{
+					"ENG_name": "Decipher Treasure Map",
 					"type": "entries",
-					"name": "Decipher Treasure Map",
+					"name": "解读藏宝图",
 					"entries": [
-						"This tool proficiency grants you expertise in examining maps. You can make an Intelligence check to determine a map's age, whether a map includes any hidden messages, or similar facts."
+						"该工具熟练项授予你检查地图的专精。你可以进行一次智力检定来确定地图的年龄、地图是否包含任何隐藏信息或类似事实。"
 					]
 				},
 				{
 					"type": "table",
-					"caption": "Calligrapher's Supplies",
+					"caption": "书法工具",
 					"colLabels": [
-						"Activity",
+						"用途",
 						"DC"
 					],
 					"colStyles": [
@@ -694,19 +891,19 @@
 					],
 					"rows": [
 						[
-							"Identify writer of nonmagical script",
+							"确定非魔法手稿的作者",
 							"10"
 						],
 						[
-							"Determine writer's state of mind",
+							"理解作者的心态",
 							"15"
 						],
 						[
-							"Spot forged text",
+							"发现伪造文本",
 							"15"
 						],
 						[
-							"Forge a signature",
+							"伪造签名",
 							"20"
 						]
 					]
@@ -714,7 +911,8 @@
 			]
 		},
 		{
-			"name": "Calligrapher's Supplies",
+			"ENG_name": "Calligrapher's Supplies",
+			"name": "书法工具",
 			"source": "XPHB",
 			"page": 220,
 			"srd52": true,
@@ -729,24 +927,27 @@
 					"style": "list-hang-notitle",
 					"items": [
 						{
-							"name": "Ability:",
+							"ENG_name": "Ability:",
+							"name": "属性：",
 							"type": "item",
 							"entries": [
-								"Dexterity"
+								"敏捷"
 							]
 						},
 						{
-							"name": "Utilize:",
+							"ENG_name": "Utilize:",
+							"name": "操作：",
 							"type": "item",
 							"entries": [
-								"Write text with impressive flourishes that guard against forgery ({@dc 15})"
+								"以华丽的字迹撰写文字防止造假（{@dc 15}）"
 							]
 						},
 						{
-							"name": "Craft:",
+							"ENG_name": "Craft:",
+							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item Ink|XPHB}, {@item Spell Scroll|XDMG}"
+								"{@item 墨水|XPHB}, {@item 法术卷轴|XDMG}"
 							]
 						}
 					]
@@ -754,7 +955,8 @@
 			]
 		},
 		{
-			"name": "Carpenter's Tools",
+			"ENG_name": "Carpenter's Tools",
+			"name": "木匠工具",
 			"source": "PHB",
 			"page": 154,
 			"srd": true,
@@ -766,68 +968,75 @@
 				}
 			],
 			"reprintedAs": [
-				"Carpenter's Tools|XPHB"
+				"木匠工具|XPHB"
 			],
 			"type": "AT",
 			"rarity": "none",
 			"weight": 6,
 			"value": 800,
 			"additionalEntries": [
-				"Skill at carpentry enables a character to construct wooden structures. A carpenter can build a house, a shack, a wooden cabinet, or similar items.",
+				"木匠技能使角色能够建造木制建筑。木匠可以建造房屋、棚屋、木柜或类似物品。",
 				{
+					"ENG_name": "Components",
+					"name": "成分",
 					"type": "entries",
-					"name": "Components",
 					"entries": [
-						"Carpenter's tools include a saw, a hammer, nails, a hatchet, a square, a ruler, an adze, a plane, and a chisel."
+						"木匠工具包括一把锯、一把锤子、钉子、一把短柄斧、一把角尺、一把直尺、一把扁斧、一把刨子和一把凿子。"
 					]
 				},
 				{
+					"ENG_name": "History",
+					"name": "历史",
 					"type": "entries",
-					"name": "History",
 					"entries": [
-						"This tool proficiency aids you in identifying the use and the origin of wooden buildings and other large wooden objects."
+						"该工具熟练项有助于你识别木质建筑物和其他大型木质物件的用途与起源。"
 					]
 				},
 				{
+					"ENG_name": "Investigation",
 					"type": "entries",
-					"name": "Investigation",
+					"name": "调查",
 					"entries": [
-						"You gain additional insight when inspecting areas within wooden structures, because you know tricks of construction that can conceal areas from discovery."
+						"你在检查木质建筑内的区域时会获得额外的洞悉，因为你知晓可以隐藏区域不被发现的建筑技巧。"
 					]
 				},
 				{
+					"ENG_name": "Perception",
 					"type": "entries",
-					"name": "Perception",
+					"name": "察觉",
 					"entries": [
-						"You can spot irregularities in wooden walls or floors, making it easier to find trap doors and secret passages."
+						"你可以发现木墙或地板上的不规则之处，这使得寻找陷阱门和秘密通道变得更加容易。"
 					]
 				},
 				{
+					"ENG_name": "Stealth",
 					"type": "entries",
-					"name": "Stealth",
+					"name": "隐匿",
 					"entries": [
-						"You can quickly assess the weak spots in a wooden floor, making it easier to avoid the places that creak and groan when they're stepped on."
+						"你可以快速评估木质地板的薄弱点，从而更容易避开那些踩踏时会吱呀作响的位置。"
 					]
 				},
 				{
+					"ENG_name": "Fortify",
 					"type": "entries",
-					"name": "Fortify",
+					"name": "加固",
 					"entries": [
-						"With 1 minute of work and raw materials, you can make a door or window harder to force open. Increase the DC needed to open it by 5."
+						"通过1分钟的工作和原材料，你可以使门或窗户更难被强行打开。将打开它的DC提高5。"
 					]
 				},
 				{
+					"ENG_name": "Temporary Shelter",
 					"type": "entries",
-					"name": "Temporary Shelter",
+					"name": "临时住所",
 					"entries": [
-						"As part of a long rest, you can construct a lean-to or a similar shelter to keep your group dry and in the shade for the duration of the rest. Because it was fashioned quickly from whatever wood was available, the shelter collapses {@dice 1d3} days after being assembled."
+						"作为长休的一部分，你可以搭建一个斜顶棚屋或类似的遮蔽物，以保持你的团队在休息期间保持干燥和阴凉。由于它是用任何可用的木材快速制作的，遮蔽物在组装后会在{@dice 1d3}天内倒塌。"
 					]
 				},
 				{
 					"type": "table",
-					"caption": "Carpenter's Tools",
+					"caption": "木匠工具",
 					"colLabels": [
-						"Activity",
+						"用途",
 						"DC"
 					],
 					"colStyles": [
@@ -836,19 +1045,19 @@
 					],
 					"rows": [
 						[
-							"Build a simple wooden structure",
+							"建造一个简单的木制结构",
 							"10"
 						],
 						[
-							"Design a complex wooden structure",
+							"设计复杂的木结构",
 							"15"
 						],
 						[
-							"Find a weak point in a wooden wall",
+							"在木墙上找到一个弱点",
 							"15"
 						],
 						[
-							"Pry apart a door",
+							"撬开一扇门",
 							"20"
 						]
 					]
@@ -856,7 +1065,8 @@
 			]
 		},
 		{
-			"name": "Carpenter's Tools",
+			"ENG_name": "Carpenter's Tools",
+			"name": "木匠工具",
 			"source": "XPHB",
 			"page": 220,
 			"srd52": true,
@@ -871,24 +1081,27 @@
 					"style": "list-hang-notitle",
 					"items": [
 						{
-							"name": "Ability:",
+							"ENG_name": "Ability:",
+							"name": "属性：",
 							"type": "item",
 							"entries": [
-								"Strength"
+								"力量"
 							]
 						},
 						{
-							"name": "Utilize:",
+							"ENG_name": "Utilize:",
+							"name": "操作：",
 							"type": "item",
 							"entries": [
-								"Seal or pry open a door or container ({@dc 20})"
+								"封死或撬开一扇门或一个容器（{@dc 20}）"
 							]
 						},
 						{
-							"name": "Craft:",
+							"ENG_name": "Craft:",
+							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item Club|XPHB}, {@item Greatclub|XPHB}, {@item Quarterstaff|XPHB}, {@item Barrel|XPHB}, {@item Chest|XPHB}, {@item Ladder|XPHB}, {@item Pole|XPHB}, {@item Portable Ram|XPHB}, {@item Torch|XPHB}"
+								"{@item 短棒|XPHB}, {@item 巨棒|XPHB}, {@item 长棍|XPHB}, {@item 木桶|XPHB}, {@item 箱子|XPHB}, {@item 梯子|XPHB}, {@item 长杆|XPHB}, {@item 便携式攻城锤|XPHB}, {@item 火把|XPHB}"
 							]
 						}
 					]
@@ -896,7 +1109,8 @@
 			]
 		},
 		{
-			"name": "Cartographer's Tools",
+			"ENG_name": "Cartographer's Tools",
+			"name": "制图工具",
 			"source": "PHB",
 			"page": 154,
 			"srd": true,
@@ -912,54 +1126,59 @@
 				"PaBTSO"
 			],
 			"reprintedAs": [
-				"Cartographer's Tools|XPHB"
+				"制图工具|XPHB"
 			],
 			"type": "AT",
 			"rarity": "none",
 			"weight": 6,
 			"value": 1500,
 			"additionalEntries": [
-				"Using cartographer's tools, you can create accurate maps to make travel easier for yourself and those who come after you. These maps can range from large-scale depictions of mountain ranges to diagrams that show the layout of a dungeon level.",
+				"使用制图工具，你可以创建精确的地图，使你自己和后来者的旅行更加容易。这些地图的范围可以从大型的山脉描绘到展示地牢层级布局的图表。",
 				{
+					"ENG_name": "Components",
+					"name": "成分",
 					"type": "entries",
-					"name": "Components",
 					"entries": [
-						"Cartographer's tools consist of a quill, ink, parchment, a pair of compasses, calipers, and a ruler."
+						"制图工具包含一支羽毛笔、墨水、羊皮纸、一对圆规、卡钳和一把直尺。"
 					]
 				},
 				{
+					"ENG_name": "Arcana, History, Religion",
 					"type": "entries",
-					"name": "Arcana, History, Religion",
+					"name": "奥秘、历史、宗教",
 					"entries": [
-						"You can use your knowledge of maps and locations to unearth more detailed information when you use these skills. For instance, you might spot hidden messages in a map, identify when the map was made to determine if geographical features have changed since then, and so forth."
+						"你可以利用对地图和地点的知识，在使用这些技能时发掘更详细的信息。例如，你可能会发现地图中隐藏的信息，通过鉴定地图制作时间来判断地理特征是否已发生变化，等等。"
 					]
 				},
 				{
+					"ENG_name": "Nature",
 					"type": "entries",
-					"name": "Nature",
+					"name": "自然",
 					"entries": [
-						"Your familiarity with physical geography makes it easier for you to answer questions or solve issues relating to the terrain around you."
+						"你对自然地理的熟悉程度使你更容易回答与你周围地形相关的问题或解决相关问题。"
 					]
 				},
 				{
+					"ENG_name": "Survival",
 					"type": "entries",
-					"name": "Survival",
+					"name": "求生",
 					"entries": [
-						"Your understanding of geography makes it easier to find paths to civilization, to predict areas where villages or towns might be found, and to avoid becoming lost. You have studied so many maps that common patterns, such as how trade routes evolve and where settlements arise in relation to geographic locations, are familiar to you."
+						"你对地理的了解使你更容易找到通往文明的道路，预测可能找到村庄或城镇的区域，并避免迷失方向。你已经研究了如此多的地图，以至于常见的模式，如贸易路线如何演变以及定居点如何与地理位置相关联，对你来说都是熟悉的。"
 					]
 				},
 				{
+					"ENG_name": "Craft a Map",
 					"type": "entries",
-					"name": "Craft a Map",
+					"name": "绘制地图",
 					"entries": [
-						"While traveling, you can draw a map as you go in addition to engaging in other activity."
+						"旅行时，你可以边走边绘制地图，同时进行其他活动。"
 					]
 				},
 				{
 					"type": "table",
-					"caption": "Cartographer's Tools",
+					"caption": "制图工具",
 					"colLabels": [
-						"Activity",
+						"用途",
 						"DC"
 					],
 					"colStyles": [
@@ -968,19 +1187,19 @@
 					],
 					"rows": [
 						[
-							"Determine a map's age and origin",
+							"确定地图的年份和来源",
 							"10"
 						],
 						[
-							"Estimate direction and distance to a landmark",
+							"估计地标的方向和距离",
 							"15"
 						],
 						[
-							"Discern that a map is fake",
+							"辨识地图是否伪造",
 							"15"
 						],
 						[
-							"Fill in a missing part of a map",
+							"填补地图上缺失的部分",
 							"20"
 						]
 					]
@@ -988,7 +1207,8 @@
 			]
 		},
 		{
-			"name": "Cartographer's Tools",
+			"ENG_name": "Cartographer's Tools",
+			"name": "制图工具",
 			"source": "XPHB",
 			"page": 220,
 			"srd52": true,
@@ -1003,24 +1223,27 @@
 					"style": "list-hang-notitle",
 					"items": [
 						{
-							"name": "Ability:",
+							"ENG_name": "Ability:",
+							"name": "属性：",
 							"type": "item",
 							"entries": [
-								"Wisdom"
+								"感知"
 							]
 						},
 						{
-							"name": "Utilize:",
+							"ENG_name": "Utilize:",
+							"name": "操作：",
 							"type": "item",
 							"entries": [
-								"Draft a map of a small area ({@dc 15})"
+								"为一小片区域绘制地图（{@dc 15}）"
 							]
 						},
 						{
-							"name": "Craft:",
+							"ENG_name": "Craft:",
+							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item Map|XPHB}"
+								"{@item 地图|XPHB}"
 							]
 						}
 					]
@@ -1028,7 +1251,8 @@
 			]
 		},
 		{
-			"name": "Chain Mail",
+			"ENG_name": "Chain Mail",
+			"name": "链甲",
 			"source": "PHB",
 			"page": 145,
 			"srd": true,
@@ -1043,7 +1267,7 @@
 				"QftIS"
 			],
 			"reprintedAs": [
-				"Chain Mail|XPHB"
+				"链甲|XPHB"
 			],
 			"edition": "classic",
 			"type": "HA",
@@ -1055,11 +1279,12 @@
 			"armor": true,
 			"stealth": true,
 			"entries": [
-				"Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets."
+				"该护甲由互相锁接的金属环编成。链甲还包括在甲胄下面穿戴的一层织物衬里，用以阻止擦伤并减缓挥击的冲击。此护甲同时还附有护手。"
 			]
 		},
 		{
-			"name": "Chain Mail",
+			"ENG_name": "Chain Mail",
+			"name": "链甲",
 			"source": "XPHB",
 			"page": 219,
 			"srd52": true,
@@ -1076,7 +1301,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Chain Shirt",
+			"ENG_name": "Chain Shirt",
+			"name": "链甲衫",
 			"source": "PHB",
 			"page": 144,
 			"srd": true,
@@ -1085,7 +1311,7 @@
 				"TftYP-TSC"
 			],
 			"reprintedAs": [
-				"Chain Shirt|XPHB"
+				"链甲衫|XPHB"
 			],
 			"edition": "classic",
 			"type": "MA",
@@ -1095,11 +1321,12 @@
 			"ac": 13,
 			"armor": true,
 			"entries": [
-				"Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers."
+				"该护甲由互相锁接的金属环组成，通常着装于布衣或皮衣的夹层之间。这种护甲为着装者的上半身提供了适中的保护，且锁环间相互碰撞的声音也可以被外层衣服减弱。"
 			]
 		},
 		{
-			"name": "Chain Shirt",
+			"ENG_name": "Chain Shirt",
+			"name": "链甲衫",
 			"source": "XPHB",
 			"page": 219,
 			"srd52": true,
@@ -1158,7 +1385,7 @@
 			"ENG_name": "Club",
 			"name": "短棒",
 			"source": "XPHB",
-			"page": 220,
+			"page": 215,
 			"srd52": true,
 			"basicRules2024": true,
 			"edition": "one",
@@ -1173,6 +1400,249 @@
 			"mastery": [
 				"缓速|XPHB"
 			],
+			"dmg1": "1d4",
+			"dmgType": "B",
+			"club": true,
+			"weapon": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Cobbler's Tools",
+			"name": "鞋匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 80
+				}
+			],
+			"reprintedAs": [
+				"鞋匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 5,
+			"value": 500,
+			"additionalEntries": [
+				"虽然鞋匠的技艺对冒险者来说可能显得过于卑微，但一双好靴子能让角色穿越崎岖荒野和致命地下城。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"鞋匠工具包含一把锤子、一把锥子、一把刀刃、一个鞋撑、一把切割器、备用皮革和线。"
+					]
+				},
+				{
+					"ENG_name": "Arcana, History",
+					"type": "entries",
+					"name": "奥秘、历史",
+					"entries": [
+						"你对鞋子的知识可以帮助你识别魔法靴子的魔法属性或此类物品的历史。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"鞋履蕴含着惊人的秘密。通过检查鞋子的磨损和积累的泥土，你可以得知某人最近去过哪里。你修理鞋子的经验使你更容易鉴定出伤害可能来自何处。"
+					]
+				},
+				{
+					"ENG_name": "Maintain Shoes",
+					"type": "entries",
+					"name": "修鞋",
+					"entries": [
+						"作为长休的一部分，你可以修补同伴的鞋子。在接下来的24小时内，最多六名你指定的穿着你修过的鞋子的生物可以每天旅行10小时而无需进行豁免检定来避免{@condition 力竭}。"
+					]
+				},
+				{
+					"ENG_name": "Craft Hidden Compartment",
+					"type": "entries",
+					"name": "秘密夹层",
+					"entries": [
+						"经过8小时的工作，你可以在鞋子上添加一个秘密夹层。该夹层可容纳一个最长3英寸、宽深各1英寸的物件。你需使用工具熟练项进行一次智力检定，以确定发现该夹层所需的智力（{@skill 调查}）检定DC。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "鞋匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"确定鞋子的年份和来源",
+							"10"
+						],
+						[
+							"找出鞋后跟的秘密夹层",
+							"15"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Cobbler's Tools",
+			"name": "鞋匠工具",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 500,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"敏捷"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"改造足具来为穿戴者的下一次敏捷（{@skill 特技|XPHB}）检定提供{@variantrule 优势|XPHB}（{@dc 10}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 攀爬工具|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Cook's Utensils",
+			"name": "厨师工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 80
+				}
+			],
+			"reprintedAs": [
+				"厨师工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 8,
+			"value": 100,
+			"additionalEntries": [
+				"冒险生活是艰苦的。有厨师同行，你的餐食会比典型的硬饼干和干果要好得多。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"厨师工具包括一个金属锅、刀具、叉子、一把搅拌勺和一只长柄勺。"
+					]
+				},
+				{
+					"ENG_name": "History",
+					"name": "历史",
+					"type": "entries",
+					"entries": [
+						"你对烹饪技术的知识使你能够评估一个文化饮食习惯中涉及的社会模式。"
+					]
+				},
+				{
+					"ENG_name": "Medicine",
+					"type": "entries",
+					"name": "医药",
+					"entries": [
+						"在施用治疗时，你可以将苦涩或酸味的药物转化为令人愉悦的调和剂。"
+					]
+				},
+				{
+					"ENG_name": "Survival",
+					"type": "entries",
+					"name": "求生",
+					"entries": [
+						"在搜寻食物时，你可以利用其他人无法将其转化为有营养餐食的食材来凑合。"
+					]
+				},
+				{
+					"ENG_name": "Prepare Meals",
+					"type": "entries",
+					"name": "准备饭菜",
+					"entries": [
+						"作为短休的一部分，你可以准备一顿美餐，帮助同伴恢复体力。你和最多五个你选择的生物在短休期间每消耗一个生命骰额外恢复1点生命值，前提是你能使用厨师工具和充足的食物。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "厨师工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"稍微改善伙食",
+							"10"
+						],
+						[
+							"复制一顿餐食",
+							"10"
+						],
+						[
+							"发现食物中的毒素或杂质",
+							"15"
+						],
+						[
+							"制作一顿美食大餐",
+							"15"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Cook's Utensils",
+			"name": "厨师工具",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
 			"type": "AT|XPHB",
 			"rarity": "none",
 			"weight": 8,
@@ -1183,24 +1653,27 @@
 					"style": "list-hang-notitle",
 					"items": [
 						{
-							"name": "Ability:",
+							"ENG_name": "Ability:",
+							"name": "属性：",
 							"type": "item",
 							"entries": [
-								"Wisdom"
+								"感知"
 							]
 						},
 						{
-							"name": "Utilize:",
+							"ENG_name": "Utilize:",
+							"name": "操作：",
 							"type": "item",
 							"entries": [
-								"Improve food's flavor ({@dc 10}), or detect spoiled or poisoned food ({@dc 15})"
+								"改善食物风味（{@dc 10}），检查食物是否腐坏或有毒（{@dc 15}）"
 							]
 						},
 						{
-							"name": "Craft:",
+							"ENG_name": "Craft:",
+							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item Rations|XPHB}"
+								"{@item 口粮|XPHB}"
 							]
 						}
 					]
@@ -1782,6 +2255,128 @@
 			"polearm": true,
 			"weapon": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Glassblower's Tools",
+			"name": "玻璃匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 82
+				}
+			],
+			"reprintedAs": [
+				"玻璃匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 5,
+			"value": 3000,
+			"additionalEntries": [
+				"熟练于玻璃匠工具的人不仅拥有塑造玻璃的能力，还具备用于生产玻璃制品的专业方法知识。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"这些工具包括一个吹管、一个小的玻璃工作台、块状物和镊子。你需要一个热源来加工玻璃。"
+					]
+				},
+				{
+					"ENG_name": "Arcana, History",
+					"type": "entries",
+					"name": "奥秘、历史",
+					"entries": [
+						"你对玻璃制造技术的知识在你检查玻璃物件时有所帮助，例如药水瓶或在库藏宝藏中找到的玻璃物品。举例来说，你可以研究玻璃药水瓶如何被其内容物改变，以协助确定药水的效应。（药水可能会留下残留物、使玻璃变形或染色。）"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"当你研究一个区域时，如果线索包括破碎的玻璃或玻璃制品，你的知识可以帮助你。"
+					]
+				},
+				{
+					"ENG_name": "Identify Weakness",
+					"type": "entries",
+					"name": "发现弱点",
+					"entries": [
+						"通过1分钟的研究，你可以发现玻璃物件的弱点。攻击弱点对该物件造成的任何伤害翻倍。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "玻璃匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"鉴定玻璃来源",
+							"10"
+						],
+						[
+							"确定玻璃物体曾经装过什么",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Glassblower's Tools",
+			"name": "玻璃匠工具",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 3000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"智力"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"判断一个玻璃物件在过去24小时内盛过什么内容物（{@dc 15}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 玻璃瓶|XPHB}, {@item 放大镜|XPHB}, {@item 望远镜|XPHB}, {@item 小瓶|XPHB}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Glaur",
@@ -2502,6 +3097,135 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Jeweler's Tools",
+			"name": "珠宝匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 82
+				}
+			],
+			"referenceSources": [
+				"IMR",
+				"PaBTSO"
+			],
+			"reprintedAs": [
+				"珠宝匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 2,
+			"value": 2500,
+			"additionalEntries": [
+				"珠宝匠工具的训练包括美化宝石所需的基本技巧。它还能让你在识别宝石方面获得专业知识。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"珠宝匠工具包括一把小锯和锤子、锉刀、钳子和镊子。"
+					]
+				},
+				{
+					"ENG_name": "Arcana",
+					"type": "entries",
+					"name": "奥秘",
+					"entries": [
+						"珠宝匠工具的熟练项赋予你关于宝石公认的神秘用途的知识。当你进行与宝石或镶嵌宝石的物品相关的{@skill 奥秘}检定时，这种洞察力会派上用场。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"当你检查珠宝物品时，珠宝匠工具的熟练项可协助你从中找出可能存在的线索。"
+					]
+				},
+				{
+					"ENG_name": "Identify Gems",
+					"type": "entries",
+					"name": "鉴定宝石",
+					"entries": [
+						"你可以一眼就识别出宝石并确定它们的价值。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "珠宝匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"改变宝石的外观",
+							"15"
+						],
+						[
+							"确定宝石的历史",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Jeweler's Tools",
+			"name": "珠宝匠工具",
+			"source": "XPHB",
+			"page": 220,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TFV"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 2,
+			"value": 2500,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"智力"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"判断珠宝价值（{@dc 15}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 奥术法器|XPHB}, {@item 圣徽|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Lance",
 			"name": "骑枪",
 			"source": "PHB",
@@ -2721,6 +3445,132 @@
 			"ac": 11,
 			"armor": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Leatherworker's Tools",
+			"name": "皮匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 82
+				}
+			],
+			"referenceSources": [
+				"RtG",
+				"KftGV"
+			],
+			"reprintedAs": [
+				"皮匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 5,
+			"value": 500,
+			"additionalEntries": [
+				"皮匠工具的知识延伸至关于动物毛皮及其属性的逸闻。同时也包含对皮甲及类似商品的知识。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"皮匠工具包括一把刀刃、一个小型木槌、一个修边器、一个打孔器、线和皮革碎片。"
+					]
+				},
+				{
+					"ENG_name": "Arcana",
+					"type": "entries",
+					"name": "奥秘",
+					"entries": [
+						"你在处理皮革方面的专精使你在检查由皮革制成的魔法物品（如靴子和某些斗篷）时获得额外的洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"当你研究皮革制品或与之相关的线索时，你能凭借对皮革的知识发现他人会忽略的细节，从而获得额外的洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Identify Hides",
+					"type": "entries",
+					"name": "皮革鉴定",
+					"entries": [
+						"当你观察一张皮或皮革制品时，你可以确定皮革的来源以及用于处理它的任何特殊技术。例如，你可以分辨出使用矮人方法制作的皮革和使用半身人方法制作的皮革之间的区别。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "皮匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"改变皮革制品的外观",
+							"10"
+						],
+						[
+							"鉴定一件皮革制品的历史",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Leatherworker's Tools",
+			"name": "皮匠工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 500,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"敏捷"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"对一个皮制品进行图案设计 ({@dc 10})"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 投石索|XPHB}, {@item 鞭子|XPHB}, {@item 兽皮甲|XPHB}, {@item 皮甲|XPHB}, {@item 镶钉皮甲|XPHB}, {@item 背包|XPHB}, {@item 弩矢匣|XPHB}, {@item 地图或卷轴匣|XPHB}, {@item 羊皮纸|XPHB}, {@item 小包|XPHB}, {@item 箭袋|XPHB}, {@item 水袋|XPHB}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Light Crossbow",
@@ -3087,13 +3937,11 @@
 			"page": 221,
 			"srd52": true,
 			"basicRules2024": true,
-			"referenceSources": [
-				"DrDe-TDoN"
-			],
-			"type": "AT|XPHB",
+			"edition": "one",
+			"type": "INS|XPHB",
 			"rarity": "none",
-			"weight": 8,
-			"value": 1000,
+			"weight": 2,
+			"value": 3000,
 			"entries": [
 				{
 					"type": "list",
@@ -3164,6 +4012,147 @@
 			"mace": true,
 			"weapon": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Mason's Tools",
+			"name": "石匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 83
+				}
+			],
+			"referenceSources": [
+				"GoS",
+				"IMR",
+				"RtG",
+				"SCC-ARiR",
+				"CRCotN",
+				"PaBTSO"
+			],
+			"reprintedAs": [
+				"石匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 8,
+			"value": 1000,
+			"additionalEntries": [
+				"石匠工具允许你制作石质结构，包括由砖块制成的墙壁和建筑。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"石匠工具包括一把泥刀、一把锤子、一把凿子、几把刷子和一个角尺。"
+					]
+				},
+				{
+					"ENG_name": "History",
+					"name": "历史",
+					"type": "entries",
+					"entries": [
+						"你的专精有助于识别石质建筑的建造日期和用途，并对可能建造它的人有所洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"你在检查岩石建筑内的区域时会获得额外的洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Perception",
+					"type": "entries",
+					"name": "察觉",
+					"entries": [
+						"你可以发现石墙或地板上的不规则性，这使得发现陷阱门和秘密通道变得更容易。"
+					]
+				},
+				{
+					"ENG_name": "Demolition",
+					"type": "entries",
+					"name": "拆迁",
+					"entries": [
+						"你对石匠工艺的知识使你能够发现砖墙的薄弱点。你用武器攻击对这类建筑造成双倍伤害。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "石匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"在石墙上凿一个小洞",
+							"10"
+						],
+						[
+							"在石墙上找到一个弱点",
+							"15"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Mason's Tools",
+			"name": "石匠工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 8,
+			"value": 1000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"力量"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"在石头上凿出一个符号标志或一个洞（{@dc 10}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 滑轮组|XPHB}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Maul",
@@ -3519,6 +4508,134 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Painter's Supplies",
+			"name": "画家工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 83
+				}
+			],
+			"referenceSources": [
+				"SCC-HfMT"
+			],
+			"reprintedAs": [
+				"画家工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 5,
+			"value": 1000,
+			"additionalEntries": [
+				"画家工具的熟练项代表你绘画和绘图的能力。你还获得了对艺术史的理解，这可以协助你检查艺术品。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"画家工具包括一个画架、画布、颜料、画笔、炭条和一个调色板。"
+					]
+				},
+				{
+					"ENG_name": "Arcana, History, Religion",
+					"type": "entries",
+					"name": "奥秘、历史、宗教",
+					"entries": [
+						"你的专业知识可以帮助你揭示与艺术作品相关的任何类型的传说，例如一幅画的魔法属性或在地下城中发现的奇怪壁画的起源。"
+					]
+				},
+				{
+					"ENG_name": "Investigation, Perception",
+					"type": "entries",
+					"name": "调查、察觉",
+					"entries": [
+						"当你检查一幅画或类似的视觉艺术作品时，你对创作背后的实践知识可以给你提供额外的洞察。"
+					]
+				},
+				{
+					"ENG_name": "Painting and Drawing",
+					"type": "entries",
+					"name": "作画",
+					"entries": [
+						"作为短休或长休的一部分，你可以创作一件简单的艺术作品。尽管你的作品可能缺乏精确度，但你可以捕捉到一个图像或场景，或者快速复制你看到的一件艺术品。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "画家工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"绘制一幅准确的肖像",
+							"10"
+						],
+						[
+							"创作一幅含有隐藏信息的画作",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Painter's Supplies",
+			"name": "画家工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 1000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"感知"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"画出你所见过的某个事物的可辨图像（{@dc 10}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 德鲁伊法器|XPHB}, {@item 圣徽|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Pan Flute",
 			"name": "排箫",
 			"source": "PHB",
@@ -3711,6 +4828,106 @@
 			"ENG_name": "Plate Armor",
 			"name": "板甲",
 			"source": "XPHB",
+			"page": 219,
+			"srd52": true,
+			"basicRules2024": true,
+			"edition": "one",
+			"type": "HA|XPHB",
+			"rarity": "none",
+			"weight": 65,
+			"value": 150000,
+			"ac": 18,
+			"strength": "15",
+			"armor": true,
+			"stealth": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Potter's Tools",
+			"name": "陶匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 84
+				}
+			],
+			"reprintedAs": [
+				"陶匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 3,
+			"value": 1000,
+			"additionalEntries": [
+				"陶匠工具用于制作各种陶瓷物品，最常见的是罐子和类似容器。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"陶匠工具包括陶针、肋骨刮刀、刮片、刀刃和卡尺。"
+					]
+				},
+				{
+					"ENG_name": "History",
+					"name": "历史",
+					"type": "entries",
+					"entries": [
+						"你的专业知识可以帮助你鉴定陶瓷物品，包括它们的制造时间和可能的产地或文化起源。"
+					]
+				},
+				{
+					"ENG_name": "Investigation, Perception",
+					"type": "entries",
+					"name": "调查、察觉",
+					"entries": [
+						"你在检查陶瓷制品时获得额外洞悉，能通过发现细微的不规则之处来发现他人会忽略的线索。"
+					]
+				},
+				{
+					"ENG_name": "Reconstruction",
+					"type": "entries",
+					"name": "再生",
+					"entries": [
+						"通过检查陶器碎片，你可以确定一个物体的原始完整形态及其可能的用途。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "陶匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"确定容器曾经装过什么",
+							"10"
+						],
+						[
+							"制作一个可用的罐子",
+							"15"
+						],
+						[
+							"在陶瓷物件上找到一个弱点",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Potter's Tools",
+			"name": "陶匠工具",
+			"source": "XPHB",
 			"page": 221,
 			"srd52": true,
 			"basicRules2024": true,
@@ -3727,24 +4944,27 @@
 					"style": "list-hang-notitle",
 					"items": [
 						{
-							"name": "Ability:",
+							"ENG_name": "Ability:",
+							"name": "属性：",
 							"type": "item",
 							"entries": [
-								"Intelligence"
+								"智力"
 							]
 						},
 						{
-							"name": "Utilize:",
+							"ENG_name": "Utilize:",
+							"name": "操作：",
 							"type": "item",
 							"entries": [
-								"Discern what a ceramic object held in the past 24 hours ({@dc 15})"
+								"判断一个陶瓷物件在过去 24 小时内盛过什么内容物（{@dc 15}）"
 							]
 						},
 						{
-							"name": "Craft:",
+							"ENG_name": "Craft:",
+							"name": "制造：",
 							"type": "item",
 							"entries": [
-								"{@item Jug|XPHB}, {@item Lamp|XPHB}"
+								"{@item 壶|XPHB}, {@item 油灯|XPHB}"
 							]
 						}
 					]
@@ -4640,6 +5860,141 @@
 			]
 		},
 		{
+			"ENG_name": "Smith's Tools",
+			"name": "铁匠工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 84
+				}
+			],
+			"referenceSources": [
+				"ToA",
+				"TTP",
+				"WDH",
+				"BGDIA",
+				"IDRotF",
+				"CM",
+				"KftGV"
+			],
+			"reprintedAs": [
+				"铁匠工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 8,
+			"value": 2000,
+			"additionalEntries": [
+				"铁匠工具允许你加工金属，将其加热以改变形状、修补损伤或将原始锭材加工成有用的物品。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"铁匠工具包括锤子、钳子、木炭、碎布和一块磨刀石。"
+					]
+				},
+				{
+					"ENG_name": "Arcana and History",
+					"type": "entries",
+					"name": "奥秘、历史",
+					"entries": [
+						"你的专精使你在检视金属物件（例如武器）时获得额外洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"当调查涉及护甲、武器或其他金属制品时，你能发现他人可能忽略的线索并进行推断。"
+					]
+				},
+				{
+					"ENG_name": "Repair",
+					"type": "entries",
+					"name": "修复",
+					"entries": [
+						"在拥有工具和足以使金属变软的明火的情况下，你每小时的工作可以为一个受损的金属物件恢复10点生命值。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "铁匠工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"磨利一把钝刀",
+							"10"
+						],
+						[
+							"修复一套护甲",
+							"15"
+						],
+						[
+							"破坏一个非魔法金属物品",
+							"15"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Smith's Tools",
+			"name": "铁匠工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 8,
+			"value": 2000,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"力量"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"撬开一扇门或容器（{@dc 20}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"任意近战武器（除了{@item 短棒|XPHB}，{@item 巨棒|XPHB}，{@item 长棍|XPHB}和{@item 鞭子|XPHB}）、中甲（除了{@item 兽皮甲|XPHB|躲藏}）、重甲、{@item 滚珠|XPHB}、{@item 吊桶|XPHB}、{@item 铁蒺藜|XPHB}、{@item 链条|XPHB}、{@item 撬棍|XPHB}、{@item 枪械子弹 (10)|XPHB|枪械子弹}、{@item 爪钩|XPHB}、{@item 铁壶|XPHB}、{@item 铁钉(组)|XPHB}、{@item 投石索子弹(20)|XPHB|投石索子弹}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Songhorn",
 			"name": "歌唱号角",
 			"source": "SCAG",
@@ -4872,7 +6227,7 @@
 			"ENG_name": "Studded Leather Armor",
 			"name": "镶钉皮甲",
 			"source": "XPHB",
-			"page": 221,
+			"page": 219,
 			"srd52": true,
 			"basicRules2024": true,
 			"referenceSources": [
@@ -4908,10 +6263,141 @@
 			"page": 124,
 			"type": "INS",
 			"rarity": "none",
+			"entries": [
+				"也被称为哨管whistlecane，其结构简单容易制作，是一种用簧管切削成的管风乐器。事实上，老练的吟游诗人经常会将这种乐器送给孩子，进而让其父母感到高兴又或是懊恼。"
+			]
+		},
+		{
+			"ENG_name": "Tinker's Tools",
+			"name": "修补工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 84
+				}
+			],
+			"referenceSources": [
+				"BGDIA",
+				"KftGV",
+				"PaBTSO",
+				"VEoR",
+				"QftIS"
+			],
+			"reprintedAs": [
+				"修补工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 10,
+			"value": 5000,
+			"additionalEntries": [
+				"一套修补工具的设计旨在让你能够修复许多日常物品。虽然你无法用修补工具制造太多东西，但你可以缝补撕裂的衣服、磨利磨损的剑刃，以及修补破烂的链条甲。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"修补工具包括各种手工具、线、针、磨刀石、碎布和皮革，以及一小罐胶水。"
+					]
+				},
+				{
+					"ENG_name": "History",
+					"name": "历史",
+					"type": "entries",
+					"entries": [
+						"你可以确定物件的年份和来源，即使你只有原物件的几个碎片。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"当你检查一个受损物件时，你会获得它是如何受损以及受损时间长短的知识。"
+					]
+				},
+				{
+					"ENG_name": "Repair",
+					"type": "entries",
+					"name": "修复",
+					"entries": [
+						"你可以每小时为一个受损物件修复10点生命值。对于任何物件，你需要能够获取修复它所需的原材料。对于金属物件，你需要能够获取足够使金属变软的明火。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "修补工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"临时修复一个损坏的装置",
+							"10"
+						],
+						[
+							"以一半时间修补一件物品",
+							"15"
+						],
+						[
+							"利用废料制造临时物品",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Tinker's Tools",
+			"name": "修补工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"type": "AT|XPHB",
+			"rarity": "none",
 			"weight": 10,
 			"value": 5000,
 			"entries": [
-				"也被称为哨管whistlecane，其结构简单容易制作，是一种用簧管切削成的管风乐器。事实上，老练的吟游诗人经常会将这种乐器送给孩子，进而让其父母感到高兴又或是懊恼。"
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"敏捷"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"用废料组装出一个微型物品，这个物品会在一分钟后散架。（{@dc 20}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 滑膛枪|XPHB}, {@item 手枪|XPHB}, {@item 铃铛|XPHB}, {@item 牛眼提灯|XPHB}, {@item 扁瓶|XPHB}, {@item 附盖提灯|XPHB}, {@item 捕猎陷阱|XPHB}, {@item 锁|XPHB}, {@item 镣铐|XPHB}, {@item 镜子|XPHB}, {@item 铲子|XPHB}, {@item 信号笛|XPHB}, {@item 火绒盒|XPHB}"
+							]
+						}
+					]
+				}
 			]
 		},
 		{
@@ -5190,6 +6676,143 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Weaver's Tools",
+			"name": "织布工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 85
+				}
+			],
+			"reprintedAs": [
+				"织布工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 5,
+			"value": 100,
+			"additionalEntries": [
+				"织布工具允许你制作布料并将其裁剪成衣物。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"织布工具包括线、针和碎布。你知道如何操作织布机，但此类装备过于大型不便传送。"
+					]
+				},
+				{
+					"ENG_name": "Arcana, History",
+					"type": "entries",
+					"name": "奥秘、历史",
+					"entries": [
+						"你的专精使你在检查布料物件（包括斗篷和长袍）时获得额外洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Investigation",
+					"type": "entries",
+					"name": "调查",
+					"entries": [
+						"运用你对制作布制物件的知识，在检查挂毯、室内装饰、衣物和其他编织物品时，你能发现他人会忽略的线索并做出推断。"
+					]
+				},
+				{
+					"ENG_name": "Repair",
+					"type": "entries",
+					"name": "修复",
+					"entries": [
+						"作为短休的一部分，你可以修复一件受损的布料物件。"
+					]
+				},
+				{
+					"ENG_name": "Craft Clothing",
+					"type": "entries",
+					"name": "制衣",
+					"entries": [
+						"假设你有足够的布料和线，你可以为生物制作一套服装，作为长休的一部分。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "织布工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"改造布料",
+							"10"
+						],
+						[
+							"修补一块布料上的破洞",
+							"10"
+						],
+						[
+							"定制一套服装",
+							"15"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Weaver's Tools",
+			"name": "织布工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 100,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"敏捷"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"修补衣服上的破口（{@dc 10}），或是缝制一个微型图案（{@dc 10}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 布甲|XPHB}, {@item 篮子|XPHB}, {@item 铺盖|XPHB}, {@item 毯子|XPHB}, {@item 高档服装|XPHB}, {@item 捕网|XPHB}, {@item 法袍|XPHB}, {@item 绳索|XPHB}, {@item 麻袋|XPHB}, {@item 细线|XPHB}, {@item 帐篷|XPHB}, {@item 旅行服装|XPHB}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Whip",
 			"name": "鞭子",
 			"source": "PHB",
@@ -5237,6 +6860,139 @@
 			"dmgType": "S",
 			"weapon": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Woodcarver's Tools",
+			"name": "木雕工具",
+			"source": "PHB",
+			"page": 154,
+			"srd": true,
+			"basicRules": true,
+			"additionalSources": [
+				{
+					"source": "XGE",
+					"page": 85
+				}
+			],
+			"reprintedAs": [
+				"木雕工具|XPHB"
+			],
+			"type": "AT",
+			"rarity": "none",
+			"weight": 5,
+			"value": 100,
+			"additionalEntries": [
+				"木雕工具允许你从木材中制作复杂的物品，例如木制令牌或箭矢。",
+				{
+					"ENG_name": "Components",
+					"name": "成分",
+					"type": "entries",
+					"entries": [
+						"木雕工具包含一把刀刃、一把弧口凿和一把小型锯。"
+					]
+				},
+				{
+					"ENG_name": "Arcana, History",
+					"type": "entries",
+					"name": "奥秘、历史",
+					"entries": [
+						"你的专精使你在检查木制物件（如小雕像或箭矢）时获得额外的洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Nature",
+					"type": "entries",
+					"name": "自然",
+					"entries": [
+						"你对木质物件的知识使你在检查树木时获得一些额外的洞悉。"
+					]
+				},
+				{
+					"ENG_name": "Repair",
+					"type": "entries",
+					"name": "修复",
+					"entries": [
+						"作为短休的一部分，你可以修复一件受损的木制物件。"
+					]
+				},
+				{
+					"ENG_name": "Craft Arrows",
+					"type": "entries",
+					"name": "制箭",
+					"entries": [
+						"作为短休的一部分，你可以制造至多五支箭矢。作为长休的一部分，你可以制造至多二十支。你必须手头有足够的木来生产它们。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "木雕工具",
+					"colLabels": [
+						"用途",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"制造一个小型木制雕像",
+							"10"
+						],
+						[
+							"在木头上雕刻复杂的图案",
+							"15"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Woodcarver's Tools",
+			"name": "木雕工具",
+			"source": "XPHB",
+			"page": 221,
+			"srd52": true,
+			"basicRules2024": true,
+			"referenceSources": [
+				"DrDe-TDoN"
+			],
+			"type": "AT|XPHB",
+			"rarity": "none",
+			"weight": 5,
+			"value": 100,
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability:",
+							"name": "属性：",
+							"type": "item",
+							"entries": [
+								"敏捷"
+							]
+						},
+						{
+							"ENG_name": "Utilize:",
+							"name": "操作：",
+							"type": "item",
+							"entries": [
+								"在木头上雕刻图案（{@dc 10}）"
+							]
+						},
+						{
+							"ENG_name": "Craft:",
+							"name": "制造：",
+							"type": "item",
+							"entries": [
+								"{@item 短棒|XPHB}, {@item 巨棒|XPHB}, {@item 长棍|XPHB}, 远程武器（除了 {@item 手枪|XPHB}, {@item 滑膛枪|XPHB}, 和{@item 投石索|XPHB}）, {@item 奥术法器|XPHB}, {@item 箭矢 (20)|XPHB|箭矢}, {@item 弩矢（20支）|XPHB|弩矢}, {@item 德鲁伊法器|XPHB}, {@item 墨水笔|XPHB}, {@item 吹矢（50）|XPHB|针刺}"
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Wooden Staff",

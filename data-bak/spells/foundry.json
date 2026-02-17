@@ -4825,17 +4825,15 @@
 			"activities": [
 				{
 					"name": "Cast",
-					"type": "utility",
-					"activation": {
-						"type": "action"
-					}
+					"type": "utility"
 				},
 				{
 					"name": "Exhale",
 					"type": "save",
 					"img": "systems/dnd5e/icons/svg/statuses/concentrating.svg",
 					"activation": {
-						"type": "action"
+						"type": "action",
+						"override": true
 					},
 					"target": {
 						"template": {

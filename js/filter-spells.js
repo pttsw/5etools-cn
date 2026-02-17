@@ -128,8 +128,8 @@ class PageFilterSpells extends PageFilterBase {
 		return SortUtil.ascSortLower(a, b);
 	}
 
-	static getFilterAbilitySave (ability) { return `${ability.uppercaseFirst()}豁免`; }
-	static getFilterAbilityCheck (ability) { return `${ability.uppercaseFirst()} 检定`; }
+	static getFilterAbilitySave (ability) { return `${Parser.attFullToCn(ability)}豁免`; }
+	static getFilterAbilityCheck (ability) { return `${ability}检定`; }
 
 	static _mutMetaFilterObj (s) {
 		this._mutateForFilters_commonMisc(s);
@@ -404,12 +404,12 @@ class PageFilterSpells extends PageFilterBase {
 		this._saveFilter = new Filter({
 			cnHeader: "豁免",
 			header: "Saving Throw",
-			items: ["力量", "敏捷", "体质", "智力", "感知", "魅力"],
+			items: ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"],
 			displayFn: PageFilterSpells.getFilterAbilitySave,
 			itemSortFn: null,
 		});
 		this._checkFilter = new Filter({
-			cnHeader: "能力鉴定",
+			cnHeader: "属性检定",
 			header: "Ability Check",
 			items: ["力量", "敏捷", "体质", "智力", "感知", "魅力"],
 			displayFn: PageFilterSpells.getFilterAbilityCheck,

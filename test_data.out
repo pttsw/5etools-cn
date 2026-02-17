@@ -1,5 +1,5 @@
 
-> 5etools@2.24.2 test:data
+> 5etools@2.24.3 test:data
 > node test/test-all.js
 
 ##### BraceCheck passed! #####
@@ -8,6 +8,7 @@
 ##### StandaloneTagTest passed! #####
 ##### TableDiceTest passed! #####
 ##### AdventureBookTagCheck passed! #####
+##### AreaCheck passed! #####
 ##### EntriesCheck passed! #####
 ##### EscapeCharacterCheck passed! #####
 ##### DuplicateEntityCheck passed! #####
@@ -64,6 +65,7 @@ Missing link: {@race 元素裔 (火)|MPMM|元素裔, 火} in file ./data/book/bo
 Missing link: (as "statblock" entry) {"ENG_name":"Neutral Planar Encounters","name":"中立位面遭遇","type":"statblock","source":"MPP","tag":"table","page":63} in file ./data/book/book-mpp.json (evaluates to "tables.html#%e4%b8%ad%e7%ab%8b%e4%bd%8d%e9%9d%a2%e9%81%ad%e9%81%87_mpp")
 Missing link: {@race 精灵 (海)|MTF} in file ./data/book/book-mtf.json (evaluates to "races.html#%e7%b2%be%e7%81%b5%20(%e6%b5%b7)_mtf")
 Missing link: {@recipe 包|PaF} in file ./data/book/book-paf.json (evaluates to "recipes.html#%e5%8c%85_paf")
+Missing link: {@race 人类 (阿芒凯)|PSA} in file ./data/book/book-ps-a.json (evaluates to "races.html#%e4%ba%ba%e7%b1%bb%20(%e9%98%bf%e8%8a%92%e5%87%af)_psa")
 Missing link: {@class Barbarian} in file ./data/book/book-ps-d.json (evaluates to "classes.html#barbarian_phb")
 Missing link: {@class Fighter} in file ./data/book/book-ps-d.json (evaluates to "classes.html#fighter_phb")
 Missing link: {@class Bard} in file ./data/book/book-ps-d.json (evaluates to "classes.html#bard_phb")
@@ -124,6 +126,10 @@ Missing link: {@subclassFeature 元素亲和|术士|XPHB|龙语|XPHB|6|XPHB} in 
 Missing link: {@subclassFeature 元素亲和|术士|XPHB|龙语|XPHB|6|XPHB} in file ./data/book/book-xsac.json (evaluates to "classes.html#%e5%85%83%e7%b4%a0%e4%ba%b2%e5%92%8c_%e6%9c%af%e5%a3%ab_xphb_%e9%be%99%e8%af%ad_xphb_6_xphb")
 Missing link: {@table 技能列表; 技能|XPHB|技能} in file ./data/feats.json (evaluates to "tables.html#%e6%8a%80%e8%83%bd%e5%88%97%e8%a1%a8%3b%20%e6%8a%80%e8%83%bd_xphb")
 Missing link: {@recipe 包|PaF} in file ./data/fluff-recipes.json (evaluates to "recipes.html#%e5%8c%85_paf")
+Missing link: {@item 强酸 (小瓶)|PHB|强酸} in file ./data/items-base.json (evaluates to "items.html#%e5%bc%ba%e9%85%b8%20(%e5%b0%8f%e7%93%b6)_phb")
+Missing link: {@item 炽火胶 (扁瓶)|PHB|炽火胶} in file ./data/items-base.json (evaluates to "items.html#%e7%82%bd%e7%81%ab%e8%83%b6%20(%e6%89%81%e7%93%b6)_phb")
+Missing link: {@item 燃油 (扁瓶)|PHB|燃油} in file ./data/items-base.json (evaluates to "items.html#%e7%87%83%e6%b2%b9%20(%e6%89%81%e7%93%b6)_phb")
+Missing link: {@item 香水 (小瓶)|PHB|香水} in file ./data/items-base.json (evaluates to "items.html#%e9%a6%99%e6%b0%b4%20(%e5%b0%8f%e7%93%b6)_phb")
 Missing link: {@card 护盾|万事万象无常牌|BMT} in file ./data/items.json (evaluates to "card#%e6%8a%a4%e7%9b%be_%e4%b8%87%e4%ba%8b%e4%b8%87%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_bmt")
 Missing link: {@creature griffon||Bronze Griffon} in file ./data/items.json (evaluates to "bestiary.html#griffon_mm")
 Missing link: {@creature giant fly|dmg|Ebony Fly} in file ./data/items.json (evaluates to "bestiary.html#giant%20fly_dmg")
@@ -184,10 +190,12 @@ Error messages for HasFluffCheck:
 race hash "%e7%b2%be%e7%81%b5%20(%e6%b5%b7%e6%b4%8b)_mtf"                        not found in corresponding "raceFluff" fluff!
 race hash "%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab%e7%84%b0)_eepc"              not found in corresponding "raceFluff" fluff!
 race hash "%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab%e7%84%b0)_mpmm"              not found in corresponding "raceFluff" fluff!
+race hash "%e4%ba%ba%e7%b1%bb%20(%e9%98%bf%e8%92%99%e5%87%af%e7%89%b9)_psa"      not found in corresponding "raceFluff" fluff!
 Extra raceFluff fluff found!
 	"%e7%b2%be%e7%81%b5%20(%e6%b5%b7)_mtf"                                 hasFluff
 	"%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab)_eepc"                       hasFluff | hasFluffImages
 	"%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab)_mpmm"                       hasFluff | hasFluffImages
+	"%e4%ba%ba%e7%b1%bb%20(%e9%98%bf%e8%8a%92%e5%87%af)_psa"               hasFluff | hasFluffImages
 subclass hash "%e9%ad%94%e5%a5%91%e5%b8%88_phb,state:sub_%e5%a4%a9%e7%95%8c_xge=b1"  not found in corresponding "subclassFluff" fluff!
 subclass hash "%e9%ad%94%e5%a5%91%e5%b8%88_phb,state:sub_%e5%92%92%e5%89%91_xge=b1"  not found in corresponding "subclassFluff" fluff!
 subclass hash "%e9%ad%94%e5%a5%91%e5%b8%88_phb,state:sub_%e6%b7%b1%e6%b5%b7%e6%84%8f%e5%bf%97_tce=b1" not found in corresponding "subclassFluff" fluff!
@@ -217,5 +225,5 @@ Missing link: races.html#%e5%85%83%e7%b4%a0%e8%a3%94%20(%e7%81%ab)_mpmm in file 
 ---
 
 
-	Run duration: 1:11.991 (m:ss.mmm)
+	Run duration: 1:11.780 (m:ss.mmm)
 Tests failed!

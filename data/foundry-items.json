@@ -330,27 +330,6 @@
 			"translator": "不全书"
 		},
 		{
-			"ENG_name": "Alchemist's Supplies",
-			"name": "炼金工具",
-			"source": "XPHB",
-			"activities": [
-				{
-					"type": "check",
-					"activation": {
-						"type": "action"
-					},
-					"check": {
-						"ability": "int",
-						"dc": {
-							"formula": "15"
-						}
-					}
-				}
-			],
-			"migrationVersion": 3,
-			"translator": "不全书"
-		},
-		{
 			"ENG_name": "Amulet of Health",
 			"name": "健康护符",
 			"source": "XDMG",
@@ -690,7 +669,7 @@
 						"seconds": 86400
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					]
 				}
 			],
@@ -1353,7 +1332,7 @@
 					"name": "绊倒",
 					"foundryId": "ballBearings",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -1848,7 +1827,7 @@
 					"name": "神光",
 					"foundryId": "bookOfExaltedDee",
 					"statuses": [
-						"标记"
+						"marked"
 					],
 					"description": "这轮光环散发出10尺半径的明亮光照和额外10尺的微光。你可以用一个附赠动作来解除或显现光环。当光环存在时，你在魅力（说服）检定上具有优势。此外，位于光环明亮光照范围内的邪魔和不死生物对你进行攻击检定时具有劣势。"
 				}
@@ -2456,7 +2435,7 @@
 					"disabled": true,
 					"transfer": true,
 					"statuses": [
-						"飞行"
+						"flying"
 					],
 					"changes": [
 						{
@@ -2494,7 +2473,7 @@
 					"disabled": true,
 					"transfer": true,
 					"statuses": [
-						"飞行"
+						"flying"
 					],
 					"changes": [
 						{
@@ -2928,7 +2907,7 @@
 					"disabled": true,
 					"transfer": true,
 					"statuses": [
-						"变形"
+						"transformed"
 					],
 					"description": "这个气泡使你能在水下正常呼吸。气泡会一直伴随你，直到瓶盖被取下或你不再处于水下。"
 				}
@@ -3388,7 +3367,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					],
 					"description": "如果你拉下兜帽（无需动作）或不再穿着斗篷，效果将提前结束。"
 				}
@@ -3457,7 +3436,7 @@
 					"name": "飞行速度",
 					"foundryId": "cloakOfTheBat",
 					"statuses": [
-						"飞行"
+						"flying"
 					]
 				},
 				{
@@ -4157,7 +4136,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"description": "该生物获得&Reference[中毒 apply=false]状态，持续1分钟。"
 				},
@@ -4909,7 +4888,7 @@
 					"name": "隐形",
 					"foundryId": "dustOfDisappeara",
 					"statuses": [
-						"隐形"
+						"invisible"
 					],
 					"descriptionEntries": [
 						"{@i 来源：{@item 无踪粉|XDMG}}",
@@ -5083,8 +5062,8 @@
 					"name": "失能与窒息（打喷嚏）",
 					"foundryId": "dustOfSneezingAn",
 					"statuses": [
-						"失能",
-						"窒息"
+						"incapacitated",
+						"suffocation"
 					],
 					"descriptionEntries": [
 						"{@i 来源：{@item 喷嚏粉|XDMG}}",
@@ -5611,8 +5590,8 @@
 						"seconds": 28800
 					},
 					"statuses": [
-						"中毒",
-						"昏迷"
+						"poisoned",
+						"unconscious"
 					]
 				}
 			],
@@ -6715,7 +6694,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					]
 				}
 			],
@@ -8200,7 +8179,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"耳聋"
+						"deafened"
 					]
 				}
 			],
@@ -10877,7 +10856,7 @@
 					"name": "被铁链束缚",
 					"foundryId": "ironBandsOfBilar",
 					"statuses": [
-						"束缚"
+						"restrained"
 					]
 				}
 			],
@@ -11230,7 +11209,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					]
 				},
 				{
@@ -11241,7 +11220,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"昏迷"
+						"unconscious"
 					]
 				}
 			],
@@ -11363,7 +11342,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"description": "豁免成功时，该生物获得&Reference[Frightened apply=false]状态直到你的下个回合结束。"
 				}
@@ -11480,7 +11459,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				}
 			],
@@ -11543,8 +11522,8 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"目盲",
-						"中毒"
+						"blinded",
+						"poisoned"
 					]
 				}
 			],
@@ -12627,7 +12606,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"以太"
+						"ethereal"
 					]
 				}
 			],
@@ -12884,8 +12863,8 @@
 						"seconds": 86400
 					},
 					"statuses": [
-						"中毒",
-						"昏迷"
+						"poisoned",
+						"unconscious"
 					]
 				}
 			],
@@ -13085,7 +13064,7 @@
 					"name": "魅惑",
 					"foundryId": "orbOfDragonkind",
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				}
 			],
@@ -13181,7 +13160,7 @@
 					"ENG_name": "Poisoned and Reduce Max",
 					"name": "中毒与生命值上限降低",
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"changes": [
 						{
@@ -13386,7 +13365,7 @@
 						"seconds": 600
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				}
 			],
@@ -13451,7 +13430,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				}
 			],
@@ -14376,7 +14355,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					]
 				}
 			],
@@ -14480,7 +14459,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -14621,7 +14600,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					]
 				}
 			],
@@ -14964,7 +14943,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					]
 				}
 			],
@@ -16123,7 +16102,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				},
 				{
@@ -16302,7 +16281,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				},
 				{
@@ -16488,7 +16467,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				},
 				{
@@ -16694,7 +16673,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				}
 			],
@@ -17483,7 +17462,7 @@
 					"name": "震慑",
 					"foundryId": "robeOfScintillat",
 					"statuses": [
-						"震慑"
+						"stunned"
 					]
 				}
 			],
@@ -18246,7 +18225,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				},
 				{
@@ -18257,7 +18236,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"麻痹"
+						"paralyzed"
 					]
 				}
 			],
@@ -18382,7 +18361,7 @@
 						"seconds": 28800
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				}
 			],
@@ -18674,7 +18653,7 @@
 					"name": "束缚",
 					"foundryId": "ropeOfEntangleme",
 					"statuses": [
-						"束缚"
+						"restrained"
 					]
 				}
 			],
@@ -19013,7 +18992,7 @@
 					"name": "被击倒",
 					"foundryId": "shieldOfTheCaval",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -21466,7 +21445,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"震慑"
+						"stunned"
 					]
 				},
 				{
@@ -21477,7 +21456,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"耳聋"
+						"deafened"
 					]
 				}
 			],
@@ -22267,7 +22246,7 @@
 					"name": "被触手擒握",
 					"foundryId": "tentacleRod",
 					"statuses": [
-						"束缚"
+						"restrained"
 					]
 				}
 			],
@@ -22506,7 +22485,7 @@
 					"name": "倒地",
 					"foundryId": "thunderousGreatc",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -22878,7 +22857,7 @@
 					"name": "中毒",
 					"foundryId": "torpor",
 					"statuses": [
-						"中毒"
+						"poisoned"
 					]
 				}
 			],
@@ -22989,7 +22968,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					]
 				}
 			],
@@ -23853,7 +23832,7 @@
 					"name": "麻痹",
 					"foundryId": "wandOfParalysis",
 					"statuses": [
-						"麻痹"
+						"paralyzed"
 					]
 				}
 			],
@@ -24459,7 +24438,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					]
 				}
 			],
@@ -24755,7 +24734,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"震慑"
+						"stunned"
 					],
 					"description": "目标获得&Reference[震慑 apply=false]状态，持续1分钟。目标在其每回合结束时重复进行豁免检定，成功则终止该效果。"
 				}
@@ -25319,7 +25298,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"description": "目标获得&Reference[Restrained apply=false]状态，持续1分钟。被箭矢束缚的生物可以用一个动作进行一次[[/check ability=str skill=ath dc=20 format=long]]来尝试挣脱束缚，检定成功则结束对其自身的效果。"
 				}
@@ -25513,7 +25492,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"震慑"
+						"stunned"
 					],
 					"description": "目标获得&Reference[震慑 apply=false]状态，持续到你的下个回合结束。"
 				},
@@ -25821,7 +25800,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "生物在其每回合结束时重复进行[[/save ability=con dc=15]]{豁免检定}，成功则终止其身上的该效果。"
 				}
@@ -25925,7 +25904,7 @@
 					"name": "死敌",
 					"foundryId": "oathbow1",
 					"statuses": [
-						"标记"
+						"marked"
 					],
 					"description": "当你使用此武器对宿敌进行远程攻击检定时，该检定具有优势。此外，你的目标无法从半掩护或四分之三掩护中获益，且你不会因远距离攻击而承受劣势。若攻击命中，宿敌将额外受到3d6点穿刺伤害。只要宿敌存活，你在使用其他所有武器进行攻击检定时均具有劣势。"
 				}
@@ -26056,7 +26035,8 @@
 	],
 	"baseitem": [
 		{
-			"name": "Alchemist's Supplies",
+			"ENG_name": "Alchemist's Supplies",
+			"name": "炼金工具",
 			"source": "XPHB",
 			"activities": [
 				{

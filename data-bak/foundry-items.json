@@ -306,25 +306,6 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Alchemist's Supplies",
-			"source": "XPHB",
-			"activities": [
-				{
-					"type": "check",
-					"activation": {
-						"type": "action"
-					},
-					"check": {
-						"ability": "int",
-						"dc": {
-							"formula": "15"
-						}
-					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
 			"name": "Amulet of Health",
 			"source": "XDMG",
 			"effects": [
@@ -24767,6 +24748,27 @@
 						],
 						"dc": {
 							"formula": "10"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		}
+	],
+	"baseitem": [
+		{
+			"name": "Alchemist's Supplies",
+			"source": "XPHB",
+			"activities": [
+				{
+					"type": "check",
+					"activation": {
+						"type": "action"
+					},
+					"check": {
+						"ability": "int",
+						"dc": {
+							"formula": "15"
 						}
 					}
 				}

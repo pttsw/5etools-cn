@@ -296,6 +296,10 @@ Parser.attFullToAbv = function (full) {
 	return Parser._parse_bToA(Parser.ATB_ABV_TO_FULL, full);
 };
 
+Parser.attFullToCn = function (full) {
+	return Parser._parse_aToB(Parser.ATB_FULL_TO_CN, full);
+};
+
 Parser.sizeAbvToFull = function (abv) {
 	return Parser._parse_aToB(Parser.SIZE_ABV_TO_FULL, abv);
 };
@@ -3091,6 +3095,15 @@ Parser.ATB_ABV_TO_FULL = {
 	"wis": "感知",
 	"cha": "魅力",
 };
+
+Parser.ATB_FULL_TO_CN = {
+	"strength": "力量",
+	"dexterity":"敏捷",
+	"constitution": "体质",
+	"intelligence": "智力",
+	"wisdom": "感知",
+	"charisma": "魅力",
+}
 
 Parser.TP_ABERRATION = "aberration";
 Parser.TP_BEAST = "beast";

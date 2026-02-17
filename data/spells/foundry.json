@@ -552,7 +552,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -572,7 +572,7 @@
 						"seconds": 86400
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "目标在法术持续时间内处于&Reference[charmed apply=false]状态。若你或你的盟友对目标造成伤害，则法术终止。"
 				}
@@ -601,7 +601,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -870,7 +870,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -909,7 +909,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -944,7 +944,7 @@
 						"seconds": 864000
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"descriptionEntries": [
 						"该生物具有&Reference[恐惧 apply=false]状态。处于恐惧状态的生物必须在它的回合中用其移动力以最安全的路线尽可能远离目标。",
@@ -966,7 +966,7 @@
 						"seconds": 864000
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"descriptionEntries": [
 						"该生物拥有&Reference[Charmed apply=false]状态。受魅惑的生物必须在自己的回合内使用其移动力，以最安全的路线尽可能靠近目标。如果该生物距离目标5英尺以内，则不能主动远离。如果目标伤害了受魅惑的生物，则该生物可以进行一次感知豁免来终止此效果，如下所述。",
@@ -1228,7 +1228,7 @@
 							"formula": "5"
 						},
 						"types": [
-							"临时生命值"
+							"temphp"
 						]
 					}
 				}
@@ -1251,7 +1251,7 @@
 					"healing": {
 						"bonus": "5",
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"formula": "5 * @item.level"
@@ -1332,7 +1332,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1379,7 +1379,7 @@
 					"name": "假死状态",
 					"foundryId": "astralProjection",
 					"statuses": [
-						"昏迷"
+						"unconscious"
 					],
 					"description": "每个目标的身体会进入假死状态；它拥有&Reference[昏迷（不应用状态）]的状态，不需要食物或空气，也不会衰老。"
 				}
@@ -1547,7 +1547,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1629,7 +1629,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1648,7 +1648,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"description": "目标在法术持续时间内被传送至一个无害的半位面。身处其中时，目标处于&Reference[失能状态 apply=false]。法术结束时，目标会重新出现在它离开的空间，如果该空间已被占据，则会出现在最近的未被占据空间。"
 				}
@@ -1677,7 +1677,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1696,7 +1696,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"description": "目标在该处时获得&Reference[失能 apply=false]状态。法术结束时，目标会重新出现在它离开的空间，若该空间被占据则出现在最近的未被占据空间。若目标是异怪、天界生物、元素生物、精类或邪魔，且法术持续1分钟，则目标不会返回，而是被传送到与其生物类型相关的随机位面（由DM选择）。"
 				}
@@ -1814,7 +1814,7 @@
 							"int"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1857,7 +1857,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -1876,7 +1876,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1900,7 +1900,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1936,7 +1936,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -1955,7 +1955,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -1979,7 +1979,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -2003,7 +2003,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -2027,7 +2027,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -2050,7 +2050,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -2074,7 +2074,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -2098,7 +2098,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"description": "目标对你进行攻击检定时有劣势。"
 				},
@@ -2110,7 +2110,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"description": "如果通过攻击检定或法术对目标造成伤害，则该目标额外受到[[/damage 1d8 type=necrotic]]点伤害。"
 				}
@@ -2162,7 +2162,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -2205,7 +2205,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -2376,7 +2376,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -2395,7 +2395,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "目标获得目盲状态直至法术结束。在其每回合结束时，该目盲的目标需进行一次[[/save ability=con]]豁免检定，成功则法术对其终止。"
 				}
@@ -2424,7 +2424,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -2446,7 +2446,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "在每个回合结束时，目标需重复进行[[/save ability=con]]豁免检定，若成功则法术终止。"
 				},
@@ -2458,7 +2458,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"耳聋"
+						"deafened"
 					],
 					"description": "在每个回合结束时，目标需重复进行[[/save ability=con]]豁免检定，若成功则法术终止。"
 				}
@@ -2496,7 +2496,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"以太"
+						"ethereal"
 					]
 				}
 			],
@@ -2570,7 +2570,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -2596,7 +2596,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -2665,7 +2665,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -2684,7 +2684,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "目标获得&Reference[魅惑apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友好。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
@@ -2713,7 +2713,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -2733,7 +2733,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "目标获得&Reference[魅惑apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友好。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
@@ -2913,7 +2913,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -2957,7 +2957,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -2983,7 +2983,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -3070,7 +3070,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -3089,7 +3089,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "你可以使用一个附赠动作指定一个与你水平的方向。每个&Reference[魅惑 apply=false]目标必须在其下一回合尽可能多地朝该方向移动，并选择最安全的路线。以此方式移动后，目标需重复进行[[/save ability=wis]]豁免检定，成功则法术对其终止。"
 				}
@@ -3118,7 +3118,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -3217,7 +3217,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -3304,7 +3304,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -3435,7 +3435,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -3476,7 +3476,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -3533,7 +3533,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -3568,7 +3568,7 @@
 							"int"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "15"
 						}
 					}
@@ -3604,7 +3604,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -3638,7 +3638,7 @@
 						"seconds": 604800
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"descriptionEntries": [
 						{
@@ -3659,7 +3659,7 @@
 						"seconds": 604800
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"descriptionEntries": [
 						{
@@ -3680,7 +3680,7 @@
 						"seconds": 604800
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"descriptionEntries": [
 						{
@@ -3701,7 +3701,7 @@
 						"seconds": 604800
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"descriptionEntries": [
 						{
@@ -3722,7 +3722,7 @@
 						"seconds": 604800
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"descriptionEntries": [
 						{
@@ -3743,7 +3743,7 @@
 						"seconds": 604800
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"descriptionEntries": [
 						{
@@ -3847,7 +3847,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -3959,7 +3959,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -4012,7 +4012,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -4150,7 +4150,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -4170,7 +4170,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "目标在其每回合移动前必须用其动作对你心灵选择的非自身生物进行一次近战攻击。若你未选择任何生物或目标触及范围内没有生物，目标可以正常行动。目标在其每回合结束时重复进行[[/save ability=wis]]豁免，成功后法术对其终止。"
 				}
@@ -4381,7 +4381,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -4449,7 +4449,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -4498,7 +4498,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -4514,7 +4514,7 @@
 					"name": "倒地",
 					"foundryId": "destructiveWave",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -4635,7 +4635,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -4713,7 +4713,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -4763,7 +4763,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -4937,7 +4937,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -4962,7 +4962,7 @@
 					"name": "死亡",
 					"foundryId": "divineWord",
 					"statuses": [
-						"死亡"
+						"dead"
 					]
 				},
 				{
@@ -4973,9 +4973,9 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"目盲",
-						"耳聋",
-						"震慑"
+						"blinded",
+						"deafened",
+						"stunned"
 					]
 				},
 				{
@@ -5016,7 +5016,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -5035,7 +5035,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "每当被&Reference[魅惑 apply=false]的目标受到伤害时，它需重新进行[[/save ability=wis]]豁免检定，成功则解除自身法术。"
 				}
@@ -5064,7 +5064,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -5083,7 +5083,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "每当目标受到伤害时，它将重复进行[[/save ability=wis]]豁免检定，若成功则终止其身上的该法术效果。"
 				}
@@ -5109,7 +5109,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -5128,7 +5128,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "每当被&Reference[魅惑 apply=false]的目标受到伤害时，它需重新进行[[/save ability=wis]]豁免检定，成功则解除自身法术。"
 				}
@@ -5144,10 +5144,7 @@
 				{
 					"ENG_name": "Cast",
 					"name": "施放",
-					"type": "utility",
-					"activation": {
-						"type": "action"
-					}
+					"type": "utility"
 				},
 				{
 					"ENG_name": "Exhale",
@@ -5193,7 +5190,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -5269,7 +5266,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -5288,7 +5285,7 @@
 						"seconds": 28800
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"changes": [
 						{
@@ -5370,7 +5367,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -5409,7 +5406,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -5451,7 +5448,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -5467,7 +5464,7 @@
 					"name": "被碎石掩埋",
 					"foundryId": "earthquake",
 					"statuses": [
-						"倒地"
+						"prone"
 					],
 					"description": "豁免失败时，该生物受到12d6点钝击伤害，获得&Reference[倒地 apply=false]状态，并被埋在碎石中，需要通过一个[[/check ability=力量 skill=运动 dc=20]]检定（需消耗一个动作）才能逃脱。"
 				}
@@ -6329,7 +6326,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6429,7 +6426,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6480,7 +6477,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"descriptionEntries": [
 						"目标获得&Reference[束缚 apply=false]状态，直到法术结束。",
@@ -6509,7 +6506,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6529,7 +6526,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"description": "一只被束缚的生物可以执行一个动作来进行一次[[/check ability=str skill=ath]]检定，对抗你的法术豁免DC。若成功，该生物便从这些缠绕的植物中挣脱，不再被它们束缚。"
 				}
@@ -6555,7 +6552,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6615,7 +6612,7 @@
 						"seconds": 28800
 					},
 					"statuses": [
-						"以太"
+						"ethereal"
 					]
 				}
 			],
@@ -6649,7 +6646,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6668,7 +6665,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"description": "一个处于&Reference[束缚 apply=false]状态的生物可以执行一个动作进行[[/check ability=str skill=ath dc=@attributes.spell.dc]]检定对抗你的法术豁免DC，成功则结束自身该状态。"
 				}
@@ -6696,7 +6693,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6727,7 +6724,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6752,7 +6749,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"昏迷"
+						"unconscious"
 					],
 					"description": "目标处于&Reference[昏迷 apply=false]状态。若受到任何伤害，或其他生物用一个动作将其摇醒，则目标会醒来。"
 				},
@@ -6764,7 +6761,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"description": "目标获得&Reference[Frightened apply=false]状态。在其每回合中，恐惧的目标必须执行&Reference[疾冲]动作并通过最安全最短的可用路线远离你。如果目标移动至距你至少60英尺远且无法看到你的位置，此效果结束。"
 				},
@@ -6776,7 +6773,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"description": "目标获得&Reference[中毒 apply=false]状态。"
 				}
@@ -6802,7 +6799,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6843,7 +6840,7 @@
 						"denomination": 4,
 						"bonus": "4",
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"mode": "whole",
@@ -6873,7 +6870,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -6891,7 +6888,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"description": "一个&Reference[frightened apply=false]状态的生物会采取&Reference[dash]动作并在其每个回合通过最安全的路线远离你，除非无处可去。如果该生物在其回合结束时处于无法看到你的位置，它将进行一次[[/save ability=wis]]豁免检定。若检定成功，则法术对该生物的效应结束。"
 				}
@@ -7173,7 +7170,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -7290,7 +7287,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -7425,7 +7422,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -7477,7 +7474,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -7503,7 +7500,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -7525,7 +7522,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"description": "一个&Reference[Restrained apply=false]目标在其每个回合结束时再进行一次[[/save ability=con format=long]]。如果它成功抵抗该法术三次，则法术终止。如果三次抵抗均失败，则目标被石化并在法术持续时间内获得&Reference[Petrified]状态。"
 				},
@@ -7837,7 +7834,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -7896,7 +7893,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "该生物获得&Reference[目盲 apply=false]状态，直至你的下一回合结束。"
 				}
@@ -7977,7 +7974,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -7996,7 +7993,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "如果 &Reference[Charmed apply=false] 目标受到伤害，或者你进行了攻击检定、造成伤害或迫使任何人进行豁免检定，法术将提前结束。当法术结束时，目标会知道它曾被你所魅惑。"
 				}
@@ -8031,7 +8028,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"变形"
+						"transformed"
 					],
 					"changes": [
 						{
@@ -8218,7 +8215,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -8237,7 +8234,7 @@
 						"seconds": 2592000
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "当目标处于&Reference[魅惑 apply=false]状态时，若其行为直接违背你的命令，则会受到[[/damage 5d10 type=psychic]]点心灵伤害。该伤害每天最多生效一次。"
 				}
@@ -8356,7 +8353,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -8399,7 +8396,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -8433,7 +8430,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					]
 				}
 			],
@@ -8522,7 +8519,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -8941,7 +8938,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"标记"
+						"marked"
 					],
 					"description": "在下一个你的回合结束前，针对目标的下一次攻击检定具有优势。"
 				}
@@ -8967,7 +8964,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -9019,7 +9016,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -9054,7 +9051,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -9156,7 +9153,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"changes": [
 						{
@@ -9245,7 +9242,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -9435,7 +9432,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"enabled": true,
@@ -9579,7 +9576,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -9599,7 +9596,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -9618,7 +9615,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -9637,7 +9634,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -9656,7 +9653,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -9675,7 +9672,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"诅咒"
+						"cursed"
 					],
 					"changes": [
 						{
@@ -9711,7 +9708,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -9730,7 +9727,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"麻痹"
+						"paralyzed"
 					],
 					"description": "在目标每个回合结束时，它将重复进行[[/save ability=wis]]豁免，成功后便在该目标身上结束该法术。"
 				}
@@ -9759,7 +9756,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -9778,7 +9775,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"麻痹"
+						"paralyzed"
 					],
 					"description": "在目标每个回合结束时，它将重复进行[[/save ability=wis]]豁免，成功后便在该目标身上结束该法术。"
 				}
@@ -9833,7 +9830,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -9892,7 +9889,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "攻击者获得&Reference[目盲 apply=false]状态直到其下一回合结束。"
 				}
@@ -9983,7 +9980,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -10059,7 +10056,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"标记"
+						"marked"
 					],
 					"description": "法术终止前，每当施法者以攻击检定命中目标时，对其额外造成[[/damage 1d6 力场]]伤害。"
 				}
@@ -10085,7 +10082,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -10104,8 +10101,8 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑",
-						"失能"
+						"charmed",
+						"incapacitated"
 					],
 					"changes": [
 						{
@@ -10207,7 +10204,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -10259,7 +10256,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -10285,7 +10282,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -10319,7 +10316,7 @@
 					"name": "锁链",
 					"foundryId": "imprisonment1",
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"description": "牢牢固定在地面的锁链将目标束缚在原地。目标处于&Reference[束缚 apply=false]状态，且无法以任何方式移动。"
 				},
@@ -10340,7 +10337,7 @@
 					"name": "沉睡",
 					"foundryId": "imprisonment4",
 					"statuses": [
-						"昏迷"
+						"unconscious"
 					],
 					"description": "目标处于&Reference[昏迷 apply=false]状态且无法被唤醒。"
 				}
@@ -10380,7 +10377,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -10417,7 +10414,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					],
 					"description": "该法术在目标进行攻击检定、造成伤害或施放法术之后立即提前结束。"
 				}
@@ -10463,7 +10460,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -10482,9 +10479,9 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲",
-						"耳聋",
-						"沉默"
+						"blinded",
+						"deafened",
+						"silenced"
 					],
 					"description": "在此区域内，生物处于&Reference[目盲 apply=false]和&Reference[耳聋 apply=false]状态，并且无法施展带有言语成分的法术。"
 				}
@@ -10574,7 +10571,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -10626,7 +10623,7 @@
 					},
 					"save": {
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -10763,7 +10760,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -10821,7 +10818,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -10848,7 +10845,7 @@
 					"disabled": true,
 					"transfer": true,
 					"statuses": [
-						"沉默"
+						"silenced"
 					],
 					"description": "当你的灵魂寄居于容器中时，你可以感知周围环境，如同身处容器所在空间。你无法移动或采取&Reference[reaction]{反应}。"
 				},
@@ -10857,7 +10854,7 @@
 					"name": "被困的灵魂",
 					"foundryId": "magicJar1",
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"changes": [
 						{
@@ -11160,7 +11157,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -11210,7 +11207,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -11229,7 +11226,7 @@
 						"seconds": 86400
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "目标在法术持续时间内获得&Reference[魅惑 apply=false]状态，直到你或你的盟友对该目标造成伤害。每个被魅惑的目标都会尽其所能地执行该建议。"
 				}
@@ -11504,7 +11501,7 @@
 							"int"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -11566,7 +11563,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -11617,7 +11614,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -11741,7 +11738,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -11760,8 +11757,8 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑",
-						"失能"
+						"charmed",
+						"incapacitated"
 					],
 					"description": "当目标以这种方式处于&Reference[魅惑 apply=false]状态时，它还会同时陷入&Reference[失能 apply=false]状态且无法感知周围环境（但能听到你的声音）。如果目标受到任何伤害或成为另一个法术的目标，该法术即告终止，且不会修改目标的记忆。"
 				}
@@ -11928,7 +11925,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -12025,7 +12022,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -12039,7 +12036,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"description": "在结冰水面游泳的生物将被困于冰中，并获得&Reference[Restrained apply=false]状态。被困生物可以用一个动作进行[[/check ability=str skill=ath]]检定对抗你的法术豁免DC来挣脱。"
 				}
@@ -12065,7 +12062,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -12107,7 +12104,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -12129,7 +12126,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "当目标处于&Reference[Charmed apply=false]状态时，它会滑稽地跳舞，必须用全部移动力在原地跳舞，并且在敏捷豁免和攻击检定上具有劣势，而其他生物对其攻击检定时具有优势。在它的每个回合，目标可以用一个动作镇定自己并重复进行[[/save ability=wis]]豁免，成功则终止其自身的该法术效果。"
 				},
@@ -12242,7 +12239,7 @@
 							"int"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -12293,7 +12290,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -12343,7 +12340,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -12445,7 +12442,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -12542,7 +12539,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -12675,7 +12672,7 @@
 					"name": "震慑",
 					"foundryId": "powerWordStun",
 					"statuses": [
-						"震慑"
+						"stunned"
 					],
 					"description": "目标受到&Reference[震慑 apply=false]时，在其每回合结束时需进行一次[[/save ability=con]]体质豁免，成功则终止该状态。"
 				},
@@ -12796,7 +12793,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -12833,7 +12830,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -12862,7 +12859,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -12873,7 +12870,7 @@
 					"name": "石化（靛）",
 					"foundryId": "prismaticSpray",
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"descriptionEntries": [
 						"目标获得&Reference[Restrained apply=false]状态，并在其每回合结束时进行一次[[/save ability=con format=long]]豁免。若成功豁免三次，该状态结束。若失败三次，则目标会获得&Reference[Petrified]状态，直到被类似{@spell 高等复原术|XPHB}法术的效果解除。成功与豁免不必连续；需分别记录，直到目标累计三次同类结果。"
@@ -12887,7 +12884,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "目标获得&Reference[目盲 apply=false]状态，并在你的下一个回合开始时进行一次[[/save ability=感知 format=long]]豁免检定。若检定成功，该状态结束。若检定失败，该状态结束，且该生物会被传送至另一个存在位面（由DM选择）。"
 				}
@@ -12968,7 +12965,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -13017,7 +13014,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -13039,7 +13036,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "目标获得&Reference[失明 apply=false]状态，持续1分钟。"
 				},
@@ -13048,7 +13045,7 @@
 					"name": "束缚（靛）",
 					"foundryId": "prismaticWall1",
 					"statuses": [
-						"束缚"
+						"restrained"
 					],
 					"descriptionEntries": [
 						"目标获得&Reference[Restrained apply=false]状态并在每回合结束时进行[[/save ability=con dc=@attributes.spell.dc]] format=long]]检定。若成功通过三次检定，该状态结束。若失败三次，则会获得&Reference[Petrified]状态，直到被类似{@spell 高等复原术|XPHB}法术的效果解除。"
@@ -13062,7 +13059,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "目标获得&Reference[目盲 apply=false]状态，并在你的下回合开始时进行一次[[/save ability=感知 dc=@attributes.spell.dc format=long]]检定。若检定成功，该状态结束；若检定失败，该状态结束且该生物将被传送到另一个存在位面（由DM选择）。"
 				}
@@ -13153,7 +13150,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -13188,7 +13185,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -13645,7 +13642,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -14345,7 +14342,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -14417,7 +14414,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc - 5 + 2"
 						}
 					}
@@ -14437,7 +14434,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc - 5 + 4"
 						}
 					}
@@ -14457,7 +14454,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc - 5 + 10"
 						}
 					}
@@ -14477,7 +14474,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc - 0 + 2"
 						}
 					}
@@ -14497,7 +14494,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc - 0 + 4"
 						}
 					}
@@ -14517,7 +14514,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc - 0 + 10"
 						}
 					}
@@ -14537,7 +14534,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc + 5 + 2"
 						}
 					}
@@ -14557,7 +14554,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc + 5 + 4"
 						}
 					}
@@ -14577,7 +14574,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "@attributes.spell.dc + 5 + 10"
 						}
 					}
@@ -14637,7 +14634,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -14745,7 +14742,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -14781,7 +14778,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -14841,8 +14838,8 @@
 					"name": "隔离",
 					"foundryId": "sequester",
 					"statuses": [
-						"隐形",
-						"昏迷"
+						"invisible",
+						"unconscious"
 					],
 					"description": "若目标为生物，则其进入假死状态；它获得&Reference[Unconscious apply=false]状态，不会衰老，也不需要食物、水或空气。若目标受到任何伤害，该法术也会终止。"
 				}
@@ -15384,7 +15381,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"标记"
+						"marked"
 					],
 					"changes": [
 						{
@@ -15477,8 +15474,8 @@
 						"seconds": 600
 					},
 					"statuses": [
-						"耳聋",
-						"沉默"
+						"deafened",
+						"silenced"
 					],
 					"changes": [
 						{
@@ -15520,7 +15517,7 @@
 							"背包"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -15563,7 +15560,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -15582,7 +15579,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"description": "目标获得&Reference[incapacitated apply=false]状态，直到其下个回合结束，此时它必须再次进行豁免检定。若目标第二次检定失败，则其在法术持续时间内获得&Reference[unconscious]状态。若目标受到伤害，或其周围5英尺内有生物花费一个动作将其摇醒，则法术对该目标提前终止。"
 				}
@@ -15608,7 +15605,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -15634,7 +15631,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -15766,7 +15763,7 @@
 					"name": "稳定",
 					"foundryId": "spareTheDying",
 					"statuses": [
-						"伤势稳定"
+						"stable"
 					]
 				}
 			],
@@ -15954,7 +15951,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -16098,7 +16095,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -16187,7 +16184,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -16206,7 +16203,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"description": "以这种方式&Reference[中毒 apply=false]时，该生物无法执行动作或附加动作。"
 				}
@@ -16292,7 +16289,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -16372,7 +16369,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -16452,7 +16449,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"耳聋"
+						"deafened"
 					]
 				}
 			],
@@ -16477,7 +16474,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -16496,7 +16493,7 @@
 						"seconds": 28800
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					],
 					"description": "受魅惑的目标会尽其所能执行建议的行动。建议的活动可以持续整个法术持续时间，但如果建议的活动可以在更短时间内完成，则目标在完成后法术即告结束。"
 				}
@@ -17254,7 +17251,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17291,7 +17288,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17310,7 +17307,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "目标获得&Reference[目盲 apply=false]状态，持续至你的下一回合开始。"
 				}
@@ -17348,7 +17345,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17367,7 +17364,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "受此法术&Reference[Blinded apply=false]影响的生物在其每回合结束时需再进行一次[[/save ability=con format=long]]（体质豁免），成功则终止该效果。"
 				}
@@ -17501,7 +17498,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -17534,7 +17531,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17572,7 +17569,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17606,7 +17603,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17644,7 +17641,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17682,7 +17679,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17710,7 +17707,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"description": "当处于恐惧状态时，如果可能，目标必须在每个回合移动至少30英尺远离该符文。"
 				},
@@ -17722,7 +17719,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					]
 				},
 				{
@@ -17733,7 +17730,7 @@
 						"seconds": 600
 					},
 					"statuses": [
-						"昏迷"
+						"unconscious"
 					],
 					"description": "一名生物如果受到伤害，或其他人采取动作将其摇醒，则它会醒来。"
 				},
@@ -17745,7 +17742,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"震慑"
+						"stunned"
 					]
 				}
 			],
@@ -17782,7 +17779,7 @@
 							"int"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17926,7 +17923,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -17945,13 +17942,13 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"失能"
+						"incapacitated"
 					],
 					"flags": {
 						"dnd5e": {
 							"riders": {
 								"statuses": [
-									"倒地"
+									"prone"
 								]
 							}
 						}
@@ -18125,7 +18122,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -18141,7 +18138,7 @@
 					"name": "倒地",
 					"foundryId": "thunderousSmite",
 					"statuses": [
-						"倒地"
+						"prone"
 					],
 					"description": "由于被推动10尺距离，目标处于&Reference[倒地 apply=false]状态。"
 				}
@@ -18210,7 +18207,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -18250,7 +18247,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -18313,7 +18310,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -18592,7 +18589,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -18645,7 +18642,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -18721,7 +18718,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -18779,7 +18776,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -18880,7 +18877,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -18925,7 +18922,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -19017,7 +19014,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -19061,7 +19058,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -19104,7 +19101,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -19205,7 +19202,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -19250,7 +19247,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -19293,7 +19290,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -19499,7 +19496,7 @@
 							"dex"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -19537,7 +19534,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -19583,7 +19580,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -19597,7 +19594,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"description": "一个 &Reference[Frightened apply=false] 目标在其每个回合结束时进行一次[[/save ability=wis format=long]] (感知豁免)。如果豁免失败，它将受到[[/damage 5d10 type=psychic]] (5d10点心灵伤害)。如果豁免成功，法术对该目标结束。"
 				}
@@ -19636,7 +19633,7 @@
 						"seconds": 28800
 					},
 					"statuses": [
-						"变形"
+						"transformed"
 					],
 					"changes": [
 						{
@@ -19720,7 +19717,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -19765,7 +19762,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -20042,7 +20039,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -20061,7 +20058,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					],
 					"description": "目标获得&Reference[frightened apply=false]状态直至法术结束。在每个回合结束时，恐惧中的目标需重复进行[[/save ability=wis]]豁免检定，成功则自身法术效果终止。"
 				}
@@ -20123,7 +20120,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -20149,7 +20146,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [

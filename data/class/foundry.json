@@ -3343,7 +3343,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -3420,7 +3420,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -3439,8 +3439,8 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌",
-						"失能"
+						"frightened",
+						"incapacitated"
 					],
 					"description": "在那段持续时间内，它会试图在自己的回合内尽可能远离你。如果该生物受到任何伤害、你处于失能状态或你死亡，则此效果提前结束。"
 				}
@@ -3506,7 +3506,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -3525,8 +3525,8 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌",
-						"失能"
+						"frightened",
+						"incapacitated"
 					]
 				}
 			],
@@ -3653,7 +3653,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"enabled": true,
@@ -4681,7 +4681,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"躲避"
+						"dodging"
 					]
 				},
 				{
@@ -5004,7 +5004,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"震慑"
+						"stunned"
 					]
 				},
 				{
@@ -5649,7 +5649,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -5668,7 +5668,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				}
 			],
@@ -5915,7 +5915,7 @@
 						"number": 1,
 						"denomination": 8,
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -5995,7 +5995,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					]
 				}
 			],
@@ -6206,7 +6206,7 @@
 					"name": "躲藏",
 					"foundryId": "cunningAction",
 					"statuses": [
-						"躲藏"
+						"hiding"
 					]
 				}
 			],
@@ -6345,7 +6345,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"中毒"
+						"poisoned"
 					],
 					"description": "豁免失败时，目标获得「中毒」状态，持续1分钟。"
 				}
@@ -6399,7 +6399,7 @@
 					"name": "诡诈打击：摔绊",
 					"foundryId": "tripCost1d6",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -6584,7 +6584,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"昏迷"
+						"unconscious"
 					],
 					"description": "目标陷入昏迷状态1分钟或直到受到任何伤害。昏迷的目标会在其每回合结束时重复进行豁免检定，成功则终止该效果。"
 				}
@@ -6640,7 +6640,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"目盲"
+						"blinded"
 					],
 					"description": "目标获得目盲状态，直到其下个回合结束"
 				}
@@ -11906,7 +11906,7 @@
 									"formula": "@classes.artificer.levels"
 								},
 								"types": [
-									"临时生命值"
+									"temphp"
 								]
 							}
 						]
@@ -12321,7 +12321,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "自定义",
+							"calculation": "custom",
 							"formula": "8 + @abilities.str.mod + @prof"
 						}
 					},
@@ -12366,7 +12366,7 @@
 						"rounds": 1
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				}
 			],
@@ -12630,7 +12630,7 @@
 					"name": "兽力威能：角羊",
 					"foundryId": "powerOfTheWilds",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -12661,7 +12661,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"enabled": true,
@@ -12692,7 +12692,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"enabled": true,
@@ -13483,7 +13483,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -13534,7 +13534,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				},
 				{
@@ -13545,7 +13545,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"魅惑"
+						"charmed"
 					]
 				}
 			],
@@ -13591,7 +13591,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"enabled": true,
@@ -13718,7 +13718,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -13751,7 +13751,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -14111,7 +14111,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -14196,7 +14196,7 @@
 						"denomination": 6,
 						"bonus": "@abilities.wis.mod",
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"mode": "whole"
@@ -14712,7 +14712,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -14997,7 +14997,7 @@
 					"name": "自然守御：荒漠",
 					"foundryId": "naturesSanctuary",
 					"statuses": [
-						"半掩护"
+						"coverHalf"
 					],
 					"changes": [
 						{
@@ -15012,7 +15012,7 @@
 					"name": "自然守御：极地",
 					"foundryId": "naturesSanctuar1",
 					"statuses": [
-						"半掩护"
+						"coverHalf"
 					],
 					"changes": [
 						{
@@ -15027,7 +15027,7 @@
 					"name": "自然守御：温带",
 					"foundryId": "naturesSanctuar2",
 					"statuses": [
-						"半掩护"
+						"coverHalf"
 					],
 					"changes": [
 						{
@@ -15042,7 +15042,7 @@
 					"name": "自然守御：热带",
 					"foundryId": "naturesSanctuar3",
 					"statuses": [
-						"半掩护"
+						"coverHalf"
 					],
 					"changes": [
 						{
@@ -15345,7 +15345,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -15396,7 +15396,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -15478,7 +15478,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -15586,7 +15586,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -15655,7 +15655,7 @@
 							"con"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -16743,7 +16743,7 @@
 				{
 					"foundryId": "telekineticThrus",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -16860,7 +16860,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"半掩护"
+						"coverHalf"
 					]
 				}
 			],
@@ -17539,7 +17539,7 @@
 					"name": "生死之触：夺命之手",
 					"foundryId": "physiciansTouch",
 					"statuses": [
-						"中毒"
+						"poisoned"
 					]
 				}
 			],
@@ -17698,7 +17698,7 @@
 					"name": "倾倒",
 					"foundryId": "openHandTechniq1",
 					"statuses": [
-						"倒地"
+						"prone"
 					]
 				}
 			],
@@ -18011,7 +18011,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					]
 				}
 			],
@@ -18064,7 +18064,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -18081,7 +18081,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"束缚"
+						"restrained"
 					]
 				}
 			],
@@ -18477,7 +18477,7 @@
 						"number": 2,
 						"denomination": 8,
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -18899,7 +18899,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -18957,7 +18957,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"恐慌"
+						"frightened"
 					]
 				}
 			],
@@ -19224,7 +19224,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -19521,7 +19521,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -20024,7 +20024,7 @@
 							"int"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -20622,7 +20622,7 @@
 						"seconds": 3600
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					],
 					"description": "你获得「隐形」状态，持续1小时或直至你主动解除此效果（无需动作）。此隐形效果会提前结束，若你对一个生物造成伤害或迫使其进行豁免检定。"
 				}
@@ -20732,7 +20732,7 @@
 						"seconds": 60
 					},
 					"statuses": [
-						"震慑"
+						"stunned"
 					],
 					"description": "目标获得震慑状态，持续1分钟。被震慑的目标在其每个回合结束时重复进行豁免检定，成功则终止该效果。"
 				}
@@ -21063,7 +21063,7 @@
 							"str"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -21730,7 +21730,7 @@
 						"number": 1,
 						"denomination": 10,
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -21763,7 +21763,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -21884,7 +21884,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -21916,7 +21916,7 @@
 						"turns": 1
 					},
 					"statuses": [
-						"隐形"
+						"invisible"
 					]
 				}
 			],
@@ -21954,7 +21954,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				}
@@ -22092,7 +22092,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -22117,7 +22117,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -22190,7 +22190,7 @@
 				{
 					"foundryId": "searingVengeance",
 					"statuses": [
-						"目盲"
+						"blinded"
 					]
 				}
 			],
@@ -22223,7 +22223,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"scaling": {
 							"number": 1
@@ -22496,7 +22496,7 @@
 							"cha"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					}
 				},
@@ -22605,7 +22605,7 @@
 							"wis"
 						],
 						"dc": {
-							"calculation": "施法"
+							"calculation": "spellcasting"
 						}
 					},
 					"effects": [
@@ -22729,7 +22729,7 @@
 					},
 					"healing": {
 						"types": [
-							"临时生命值"
+							"temphp"
 						],
 						"custom": {
 							"enabled": true,

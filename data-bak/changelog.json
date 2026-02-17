@@ -3153,5 +3153,10 @@
 		"ver": "2.24.2",
 		"date": "2026-02-08",
 		"txt": "- Added ALT-click to list page \"Export as Image\" buttons to force exporting in \"Day Mode\" theme\n- Split entity \"Also found in...\" information into \"Also found int...\" and \"Referenced in...\" to differentiate between an entity being defined (i.e., the entire statblock is present) versus referenced (i.e., a bold creature name in the text). This allows the \"Include References\" filter option to remain useful, while providing better information about where an entity was published.\n- Added \"Referenced in...\" information for items and spells\n- Reworked DM Screen \"Paste image URL\" embed to improve panning behaviour, and allow holding middle-mouse to zoom _[and to remove jQuery!]_\n- Fixed DM Screen Initiative Tracker layout shift when toggling player visibility of a row\n- (Brew) Added title/credit/alt-text inputs to Homebrew Builder fluff images\n- (Brew) Added support for `displayName` in monster gear\n- (Foundry) Added user-agent-based notification when browsing to a page using the Foundry standalone app, warning against using the app, and providing a \"Back\" button to return to Foundry\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "2.24.3",
+		"date": "2026-02-15",
+		"txt": "- Added lazy-loading to list page \"Images\" tabs\n- Tweaked sort order of Omnisearch results, such that searching an exact adventure/book source abbreviation shows that adventure/book higher in the rankings\n- Improved initial load performance of Omnisearch _[by about 20% on my machine]_\n- Fixed non-partnered content appearing in default Omnisearch index\n- Fixed crash when up-arrow-ing in Dice Roller input\n- Fixed filter \"Include References\" sources failing to populate\n- Fixed DM Screen Initiative Tracker crash when changing round on an empty tracker\n- (Brew) Moved artisan's tools to `\"baseitem\"`, such that they may benefit from `\"magicvariant\"`s\n- (Fixed typos/added tags)"
 	}
 ]
