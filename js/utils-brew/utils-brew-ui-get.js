@@ -89,7 +89,7 @@ export class GetBrewUi {
 			this._miscFilter = new Filter({
 				header: "Miscellaneous",
 				cnHeader: "杂项",
-				items: ["Partnered", "范例"],
+				items: ["合作方", "范例"],
 				deselFn: it => it === "范例",
 			});
 		}
@@ -98,7 +98,7 @@ export class GetBrewUi {
 			brewInfo._fMisc = [];
 			if (brewInfo._brewAuthor && brewInfo._brewAuthor.toLowerCase().startsWith("sample -")) brewInfo._fMisc.push("范例");
 			if (brewInfo.sources?.some(ab => ab.startsWith(Parser.SRC_UA_ONE_PREFIX))) brewInfo._fMisc.push("One D&D");
-			if (brewInfo._brewIsPartnered) brewInfo._fMisc.push("Partnered");
+			if (brewInfo._brewIsPartnered) brewInfo._fMisc.push("合作方");
 		}
 
 		addToFilters (it, isExcluded) {
