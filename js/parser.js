@@ -4805,7 +4805,7 @@ Parser.TOOLS_TO_CN = {
 	"cook's utensils": "厨师工具",
 	"disguise kit": "易容工具",
 	"forgery kit": "文书伪造工具",
-	"gaming set": "赌博工具",
+	"gaming set": "赌具",
 	"glassblower's tools": "玻璃匠工具",
 	"herbalism kit": "草药工具",
 	"jeweler's tools": "珠宝匠工具",

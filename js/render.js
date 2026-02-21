@@ -15114,13 +15114,13 @@ Renderer.generic = class {
 
 		switch (keyAny) {
 			case "anySkill": return {
-				name: mappedCount === 1 ? `Any Skill` : `Any ${mappedCount} Skills`,
+				name: mappedCount === 1 ? `任意一个技能` : `任意${mappedCount}个技能`,
 				from: this.FEATURE__SKILLS_ALL
 					.map(it => ({name: it, prop: "skillProficiencies"})),
 				count: mappedCount,
 			};
 			case "anyTool": return {
-				name: mappedCount === 1 ? `Any Tool` : `Any ${mappedCount} Tools`,
+				name: mappedCount === 1 ? `任意一个工具` : `任意${mappedCount}个工具`,
 				from: this.FEATURE__TOOLS_ALL
 					// "anyTool" should map to "any specific tool", not "any group of tools"
 					.filter(it => !this._FEATURE__TOOL_GROUPS.has(it))
@@ -15128,25 +15128,25 @@ Renderer.generic = class {
 				count: mappedCount,
 			};
 			case "anyArtisansTool": return {
-				name: mappedCount === 1 ? `Any Artisan's Tool` : `Any ${mappedCount} Artisan's Tools`,
+				name: mappedCount === 1 ? `任意一个工匠工具` : `任意${mappedCount}个工匠工具`,
 				from: this.FEATURE__TOOLS_ARTISANS
 					.map(it => ({name: it, prop: "toolProficiencies"})),
 				count: mappedCount,
 			};
 			case "anyMusicalInstrument": return {
-				name: mappedCount === 1 ? `Any Musical Instrument` : `Any ${mappedCount} Musical Instruments`,
+				name: mappedCount === 1 ? `任意一个乐器` : `任意${mappedCount}个乐器`,
 				from: this.FEATURE__TOOLS_MUSICAL_INSTRUMENTS
 					.map(it => ({name: it, prop: "toolProficiencies"})),
 				count: mappedCount,
 			};
 			case "anyGamingSet": return {
-				name: mappedCount === 1 ? `Any Gaming Set` : `Any ${mappedCount} Gaming Sets`,
+				name: mappedCount === 1 ? `任意一个赌具` : `任意${mappedCount}个赌具`,
 				from: this.FEATURE__TOOLS_GAMING_SETS
 					.map(it => ({name: it, prop: "toolProficiencies"})),
 				count: mappedCount,
 			};
 			case "anyLanguage": return {
-				name: mappedCount === 1 ? `Any Language` : `Any ${mappedCount} Languages`,
+				name: mappedCount === 1 ? `任意一个语言` : `任意${mappedCount}个语言`,
 				...(
 					mappedAnyObjects?.[keyAny]
 					|| {
@@ -15157,7 +15157,7 @@ Renderer.generic = class {
 				count: mappedCount,
 			};
 			case "anyStandardLanguage": return {
-				name: mappedCount === 1 ? `Any Standard Language` : `Any ${mappedCount} Standard Languages`,
+				name: mappedCount === 1 ? `任意一个标准语言` : `任意${mappedCount}个标准语言`,
 				...(
 					mappedAnyObjects?.[keyAny]
 					|| {
@@ -15167,7 +15167,7 @@ Renderer.generic = class {
 				count: mappedCount,
 			};
 			case "anyExoticLanguage": return {
-				name: mappedCount === 1 ? `Any Exotic Language` : `Any ${mappedCount} Exotic Languages`,
+				name: mappedCount === 1 ? `任意一个特种语言` : `任意${mappedCount}个特种语言`,
 				...(
 					mappedAnyObjects?.[keyAny]
 					|| {
@@ -15177,7 +15177,7 @@ Renderer.generic = class {
 				count: mappedCount,
 			};
 			case "anyRareLanguage": return {
-				name: mappedCount === 1 ? `Any Rare Language` : `Any ${mappedCount} Rare Languages`,
+				name: mappedCount === 1 ? `任意一个稀有语言` : `任意${mappedCount}个稀有语言`,
 				...(
 					mappedAnyObjects?.[keyAny]
 					|| {
@@ -15187,7 +15187,7 @@ Renderer.generic = class {
 				count: mappedCount,
 			};
 			case "anySavingThrow": return {
-				name: mappedCount === 1 ? `Any Saving Throw` : `Any ${mappedCount} Saving Throws`,
+				name: mappedCount === 1 ? `任意一个豁免检定` : `任意${mappedCount}个豁免检定`,
 				from: this.FEATURE__SAVING_THROWS_ALL
 					.map(it => ({name: it, prop: "savingThrowProficiencies"})),
 				count: mappedCount,
