@@ -7354,7 +7354,7 @@
 					"name": "轻型",
 					"type": "entries",
 					"entries": [
-						"当你在自己回合中执行{@action 攻击|XPHB}动作，并用一把轻型武器发动一次攻击后，你可以在同一回合中用{@variantrule 附赠动作|XPHB}发动一次额外的攻击。这次额外的攻击你必须使用另一把轻型武器发动，并且这次攻击的伤害无法加入你的属性调整值（除非该调整值为负数）。例如，若你在你的回合中执行了{@action 攻击|XPHB}动作，一只手手持{@item 匕首|XPHB}，另一只手手持{@item 短剑|XPHB}，而这两把武器均有轻型词条，则你可以使用你的动作和{@variantrule 附赠动作|XPHB}，来用这两把武器各发动一次攻击。但你不能将力量或敏捷调整值加入{@variantrule 附赠动作|XPHB}攻击武器的造成的伤害中（除非该调整值为负数）。"
+						"当你在自己回合中执行{@action 攻击|XPHB}动作，并用一把轻型武器发动一次攻击后，你可以在同一回合中用{@variantrule 附赠动作|XPHB}发动一次额外的攻击。这次额外的攻击你必须使用另一把轻型武器发动，并且这次攻击的伤害无法加入你的属性调整值（除非该调整值为负数）。例如，若你在你的回合中执行了{@action 攻击|XPHB}动作，一只手手持{@item 短剑|XPHB}，另一只手手持{@item 匕首|XPHB}，而这两把武器均有轻型词条，则你可以使用你的动作和{@variantrule 附赠动作|XPHB}，来用这两把武器各发动一次攻击。但你不能将力量或敏捷调整值加入{@variantrule 附赠动作|XPHB}攻击武器的造成的伤害中（除非该调整值为负数）。"
 					]
 				}
 			]
@@ -8490,7 +8490,7 @@
 			"name": "抗性药水",
 			"source": "XDMG",
 			"entriesTemplate": [
-				"当你喝下这瓶药水时，你对{@variantrule 抗性|XPHB}获得对{getFullImmRes item.resist}伤害的抗性，持续1小时。"
+				"当你喝下这瓶药水时，你获得对{{getFullImmRes item.resist}}伤害的{@variantrule 抗性|XPHB}，持续1小时。"
 			]
 		},
 		{
@@ -8506,7 +8506,7 @@
 			"name": "抗性戒指",
 			"source": "XDMG",
 			"entriesTemplate": [
-				"当你佩戴这枚戒指时，你对{getFullImmRes item.resist}伤害拥有{@variantrule 抗性|XPHB}抗性。这枚戒指镶嵌着{item.detail1}。"
+				"当你佩戴这枚戒指时，你对{{getFullImmRes item.resist}}伤害拥有{@variantrule 抗性|XPHB}。这枚戒指镶嵌着{{item.detail1}}。"
 			]
 		},
 		{
@@ -8514,7 +8514,7 @@
 			"name": "守护卷轴",
 			"source": "XDMG",
 			"entriesTemplate": [
-				"使用一个 {@action 魔法|XPHB} 动作来阅读卷轴，会在你身边产生一个5英尺的 {@variantrule 光环 [效应区域]|XPHB|光环}。在接下来5分钟内，{item.detail2} 不能进入或影响区域内的任何事物。然而，如果你移动到某个位置使得 {item.detail1} 会进入该区域，效果就会结束。",
+				"使用一个 {@action 魔法|XPHB} 动作来阅读卷轴，会在你身边产生一个5英尺的 {@variantrule 光环 [效应区域]|XPHB|光环}。在接下来5分钟内，{{item.detail2}} 不能进入或影响区域内的任何事物。然而，如果你移动到某个位置使得 {{item.detail1}} 会进入该区域，效果就会结束。",
 				"作为{@action 魔法|XPHB}动作，在{@variantrule 光环 [效应区域]|XPHB|光环}5英尺内的生物可以尝试克服它，这迫使该生物进行一次{@dc 15}魅力豁免检定。成功通过检定后，该生物不再受到{@variantrule 光环 [效应区域]|XPHB|光环}的影响。"
 			]
 		}

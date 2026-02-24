@@ -9088,7 +9088,7 @@
 						"recharge": "restShort",
 						"count": "floor((<$level$> + 1) / 8) + 4",
 						"number": 1,
-						"faces": "8 + (符号(向上取整((<等级$> - 2) / 8) - 1) * 2)"
+						"faces": "8 + (sign(ceil((<$level$> - 2) / 8) - 1) * 2)"
 					}
 				]
 			},
@@ -16070,7 +16070,7 @@
 						"recharge": "restShort",
 						"count": "floor((<$level$> + 1) / 8) + 4",
 						"number": 1,
-						"faces": "8 + (符号(向上取整((<等级$> - 2) / 8) - 1) * 2)"
+						"faces": "8 + (sign(ceil((<$level$> - 2) / 8) - 1) * 2)"
 					}
 				]
 			},

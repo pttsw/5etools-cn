@@ -254,7 +254,6 @@ class ModalFilterFeats extends ModalFilterBase {
 				ability: feat._slAbility,
 				prerequisite: feat._slPrereq,
 				ENG_name: feat.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(feat),
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,

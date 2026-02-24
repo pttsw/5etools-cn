@@ -1377,7 +1377,7 @@
 				}
 			],
 			"entries": [
-				"你利用施法的时间引导一块昂贵宝石中的魔法回路，然后触碰目标。该目标必须是一个{@filter 野兽|bestiary|type=beast|intelligence=[0;3]|miscellaneous=!swarm}或{@filter 植物|bestiary|type=plant|intelligence=[0;3]|miscellaneous=!swarm}，且必须是一个智力小于等于3的生物或是一个并非生物的自然植物。目标的智力会变为 10，且学会说一门你所掌握的语言。如果目标是一株自然植物，则它变为一个植物生物，并且获得使用枝、根、藤、蔓或类似部位移动的能力，和类似于人类的感官。DM 为启蒙植物决定属性数据，例子可参考《{@book 怪物图鉴|XMM}》中的{@creature 启蒙树木|XMM}Awakened Shrub与{@creature 启蒙灌木|XMM}。",
+				"你利用施法的时间引导一块昂贵宝石中的魔法回路，然后触碰目标。该目标必须是一个{@filter 野兽|bestiary|type=beast|intelligence=[0;3]|miscellaneous=!swarm}或{@filter 植物|bestiary|type=plant|intelligence=[0;3]|miscellaneous=!swarm}，且必须是一个智力小于等于3的生物或是一个并非生物的自然植物。目标的智力会变为 10，且学会说一门你所掌握的语言。如果目标是一株自然植物，则它变为一个植物生物，并且获得使用枝、根、藤、蔓或类似部位移动的能力，和类似于人类的感官。DM 为启蒙植物决定属性数据，例子可参考《{@book 怪物图鉴|XMM}》中的{@creature 启蒙灌木|XMM}Awakened Shrub与{@creature 启蒙树木|XMM}。",
 				"被启蒙的目标在 30 日内处于{@condition 魅惑|XPHB}状态，或是直到你或你的盟友做出任何伤害它的举动。魅惑终止后，启蒙生物自行决定对你的态度。"
 			],
 			"conditionInflict": [
@@ -1653,7 +1653,7 @@
 				}
 			],
 			"entries": [
-				"选择施法距离内任意数量的生物，并使其在法术持续时间内进行的感知豁免和{@variantrule 优势|XPHB}具有{@variantrule 死亡豁免检定|XPHB|死亡豁免检定}。此外，其获得的所有治疗的{@variantrule 生命值|XPHB}恢复量都取最大值。"
+				"选择施法距离内任意数量的生物，并使其在法术持续时间内进行的感知豁免和{@variantrule 死亡豁免检定|XPHB|死亡豁免检定}具有{@variantrule 优势|XPHB}。此外，其获得的所有治疗的{@variantrule 生命值|XPHB}恢复量都取最大值。"
 			],
 			"miscTags": [
 				"ADV",
@@ -1868,7 +1868,7 @@
 			],
 			"entries": [
 				"你在施法距离内指定一处你能看见且未被占据的空间，并在该处创造出一只闪烁着魔法性微光的大型手掌。这只手会在持续时间内维持存在，并听从你的命令进行移动，模仿你自己手掌的各类动作。",
-				"这只手是一个物件，其AC为20，{@variantrule 生命值|XPHB}等于你的{@variantrule 生命值|XPHB|生命值}上限。如果它的{@variantrule 生命值|XPHB}降至0则法术将提前终止。这只手不会占据其所处的空间。",
+				"这只手是一个物件，其AC为20，{@variantrule 生命值|XPHB}等于你的{@variantrule 生命值|XPHB}上限。如果它的{@variantrule 生命值|XPHB|生命值}降至0则法术将提前终止。这只手不会占据其所处的空间。",
 				"施展此法术时，你可以令巨手移动至多60尺并造成下列效应之一。你也可以在自己随后的回合里以一个{@variantrule 附赠动作|XPHB}再造成下列效应之一：",
 				{
 					"type": "list",
@@ -2536,7 +2536,7 @@
 					"type": "list",
 					"items": [
 						"直到法术结束，该生物{@variantrule 免疫|XPHB}{@condition 魅惑|XPHB}和{@condition 恐慌|XPHB}状态。如果该生物已经陷入{@condition 魅惑|XPHB}和{@condition 恐慌|XPHB}状态，则这些状态在持续时间内被压制。",
-						"该生物对你选择的之前{@variantrule 冷漠【态度】|XPHB|冷漠}的生物态度变为{@variantrule 敌对【态度】|XPHB|敌对}。该冷漠态度持续到目标受到伤害或者看到自己的盟友受到伤害。当法术结束时，该生物恢复到原本的态度。"
+						"该生物对你选择的之前{@variantrule 敌对【态度】|XPHB|敌对}的生物态度变为{@variantrule 冷漠【态度】|XPHB|冷漠}。该冷漠态度持续到目标受到伤害或者看到自己的盟友受到伤害。当法术结束时，该生物恢复到原本的态度。"
 					]
 				}
 			],
@@ -9021,7 +9021,7 @@
 				}
 			],
 			"entries": [
-				"你触碰一名自愿生物，并授予其预见近未来事件的有限能力。法术持续时间内，该目标进行的所有{@variantrule 优势|XPHB}均具有{@variantrule D20 检定|XPHB|D20 检定}，而其他生物对其进行攻击检定时具有{@variantrule 劣势|XPHB}。此法术的效应会在你再次施展此法术时提前终止。"
+				"你触碰一名自愿生物，并授予其预见近未来事件的有限能力。法术持续时间内，该目标进行的所有{@variantrule D20 检定|XPHB|D20 检定}均具有{@variantrule 优势|XPHB}，而其他生物对其进行攻击检定时具有{@variantrule 劣势|XPHB}。此法术的效应会在你再次施展此法术时提前终止。"
 			],
 			"miscTags": [
 				"ADV"
@@ -9124,7 +9124,7 @@
 				}
 			],
 			"entries": [
-				"你触碰一个自愿生物。在法术持续时间内，目标的移动不受{@variantrule 困难地形|XPHB}影响，且任何法术或其他魔法效应都不能降低目标的{@variantrule 速度|XPHB}，或者使目标陷入{@condition 麻痹|XPHB}或{@condition 束缚|XPHB}状态。目标还会获得等同于其{@variantrule 游泳速度|XPHB}的{@variantrule 速度|XPHB}。",
+				"你触碰一个自愿生物。在法术持续时间内，目标的移动不受{@variantrule 困难地形|XPHB}影响，且任何法术或其他魔法效应都不能降低目标的{@variantrule 速度|XPHB}，或者使目标陷入{@condition 麻痹|XPHB}或{@condition 束缚|XPHB}状态。目标还会获得等同于其{@variantrule 速度|XPHB}的{@variantrule 游泳速度|XPHB}。",
 				"此外，该目标还可以花费 5 尺移动力直接从非魔法的束缚物中挣脱（诸如镣铐或其他生物对其施加的{@condition 受擒|XPHB}状态）。"
 			],
 			"entriesHigherLevel": [
@@ -11933,7 +11933,7 @@
 				}
 			],
 			"entries": [
-				"你指定施法距离内一点，并以该点为中心使半径 20 尺{@variantrule 球状 [效应区域]|XPHB|球状}区域内堆满成群的噬人蝗虫。虫群使整个{@variantrule 球状 [效应区域]|XPHB|球状}区域成为{@variantrule 轻度遮蔽|XPHB}并处于{@variantrule 困难地形|XPHB}，在法术终止前都会持续存在。",
+				"你指定施法距离内一点，并以该点为中心使半径 20 尺{@variantrule 球状 [效应区域]|XPHB|球状}区域内堆满成群的噬人蝗虫。虫群使整个{@variantrule 球状 [效应区域]|XPHB|球状}区域成为{@variantrule 困难地形|XPHB}并处于{@variantrule 轻度遮蔽|XPHB}，在法术终止前都会持续存在。",
 				"虫群显现时，区域内的每个生物都必须进行一次体质豁免，豁免失败则受到{@damage 4d10}穿刺伤害，成功则受到半数伤害。生物在一个回合内第一次进入该区域内，或者在区域内结束其回合时，也必须进行该豁免。一名生物每回合仅需进行一次该豁免。"
 			],
 			"entriesHigherLevel": [
@@ -14285,7 +14285,7 @@
 				}
 			],
 			"entries": [
-				"指定施法距离内一点，一束淡淡的银光照耀在以该点为中心半径 5 尺、高 40 尺的{@variantrule 柱状 [效应区域]|XPHB|柱状}区域内。直至法术终止前，{@variantrule 微光光照|XPHB}区域内处于{@variantrule 柱状 [效应区域]|XPHB|柱状}。在施展该法术的后续回合内，你能够以一个{@action 魔法|XPHB}动作将{@variantrule 柱状 [效应区域]|XPHB|柱状}区域移动至多 60 尺。",
+				"指定施法距离内一点，一束淡淡的银光照耀在以该点为中心半径 5 尺、高 40 尺的{@variantrule 柱状 [效应区域]|XPHB|柱状}区域内。直至法术终止前，{@variantrule 柱状 [效应区域]|XPHB|柱状}区域内处于{@variantrule 微光光照|XPHB}。在施展该法术的后续回合内，你能够以一个{@action 魔法|XPHB}动作将{@variantrule 柱状 [效应区域]|XPHB|柱状}区域移动至多 60 尺。",
 				"当{@variantrule 柱状 [效应区域]|XPHB|柱状}区域出现时，每个区域内的生物进行一次体质豁免检定，豁免失败则受到{@damage 2d10}的光耀伤害，且若该生物已变形（例如受法术{@spell 变形术|XPHB}影响），其变回真实形态，且无法在离开{@variantrule 柱状 [效应区域]|XPHB|柱状}区域前变形。豁免成功则仅承受前述伤害的一半。在法术区域进入生物空间、生物进入法术区域或在其内结束回合时，目标生物也需要进行该体质豁免检定。一名生物每回合仅需进行一次该豁免检定。"
 			],
 			"entriesHigherLevel": [
@@ -16565,7 +16565,7 @@
 			],
 			"entries": [
 				"你向施法距离内的一名生物射出一道让人衰弱的能量射线。目标必须进行一次体质豁免。豁免成功，则目标直到你的下个回合开始在下一次攻击掷骰上具有{@variantrule 劣势|XPHB}。",
-				"豁免失败，目标在持续时间内在使用力量属性的{@variantrule 劣势|XPHB}上具有{@variantrule D20 检定|XPHB|D20 检定}。同样的，在此期间，其所有的伤害掷骰获得{@dice 1d8}的减值。目标在每个其回合结束时可以重复豁免，豁免成功则法术终止。"
+				"豁免失败，目标在持续时间内在使用力量属性的{@variantrule D20 检定|XPHB|D20 检定}上具有{@variantrule 劣势|XPHB}。同样的，在此期间，其所有的伤害掷骰获得{@dice 1d8}的减值。目标在每个其回合结束时可以重复豁免，豁免成功则法术终止。"
 			],
 			"savingThrow": [
 				"constitution"
@@ -16975,7 +16975,7 @@
 				"你触碰一名已死，但死亡时间不超过 100 年，并非死于年老，且死亡时并非亡灵的生物，使其回生。",
 				"生物以{@variantrule 生命值|XPHB}全满的状态重生。该法术同样会中和在该生物死亡时仍在生效的毒素。该法术能治愈所有致命伤，恢复所有失去的身体部位。",
 				"死而复生是一个痛苦的体验。目标进行{@variantrule D20 检定|XPHB|D20 检定}时具有 -4 减值。目标每完成一次{@variantrule 长休|XPHB}，其减值就减少 1，直至减值变为 0。",
-				"使用该法术复活一名已死去 365 日或更久的生物会使你耗费大量精力。在你完成一次{@variantrule 长休|XPHB}前，你将无法再施展任何法术，且此时你进行的一切{@variantrule 劣势|XPHB}具有{@variantrule D20 检定|XPHB|D20 检定}。"
+				"使用该法术复活一名已死去 365 日或更久的生物会使你耗费大量精力。在你完成一次{@variantrule 长休|XPHB}前，你将无法再施展任何法术，且此时你进行的一切{@variantrule D20 检定|XPHB|D20 检定}具有{@variantrule 劣势|XPHB}。"
 			],
 			"affectsCreatureType": [
 				"异怪",
@@ -17706,7 +17706,7 @@
 			],
 			"entries": [
 				"在法术持续时间内，你变形为另一个生物。你还可以使用{@action 魔法|XPHB}动作来变形为另一个符合条件的形态。新形态生物的{@variantrule 挑战等级|XPHB}必须不高于你的等级或{@variantrule 挑战等级|XPHB}。你必须在之前见过该类生物至少一次，并且该生物不能是构装或亡灵生物。",
-				"当你施展此法术时，你获得数值等于你变形的首个形态{@variantrule 临时生命值|XPHB}的{@variantrule 生命值|XPHB}。这些{@variantrule 临时生命值|XPHB}会在法术结束时消失（如果还有剩余的话）。",
+				"当你施展此法术时，你获得数值等于你变形的首个形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。这些{@variantrule 临时生命值|XPHB}会在法术结束时消失（如果还有剩余的话）。",
 				"你的游戏资料卡替换为所选择形态的资料卡，但你保留你的生物类型、阵营、人格，智力、感知与魅力属性值、{@variantrule 生命值|XPHB}、{@variantrule 生命值骰|XPHB}、熟练以及交流的能力。如果你具有施法特性，你同样保留它。",
 				"进行变形的途中，你可以决定你的装备是落到地上，还是改变其尺寸和形状来适应你的新形态。"
 			],
@@ -18712,7 +18712,7 @@
 				}
 			],
 			"entries": [
-				"你触碰一个自愿的生物，并使其在法术终止前能够在垂直表面上下或横向移动，其甚至可以在天花板上倒挂着移动而不需要用到双手。另外，目标获得等同于其{@variantrule 攀爬速度|XPHB}的{@variantrule 速度|XPHB}。"
+				"你触碰一个自愿的生物，并使其在法术终止前能够在垂直表面上下或横向移动，其甚至可以在天花板上倒挂着移动而不需要用到双手。另外，目标获得等同于其{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。"
 			],
 			"entriesHigherLevel": [
 				{
@@ -18823,7 +18823,7 @@
 			],
 			"entries": [
 				"在法术持续时间内，保护性的灵体环绕在你的周围 15 尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内飞舞。如果你属于善良或中立阵营，则它们飘渺的身形看起来像是天使或妖精（由你选择）。如果你属于邪恶阵营，则它们将形如邪魔。",
-				"施展此法术时，你可以指定特定生物让其不受该法术影响。除此之外的生物在{@variantrule 速度|XPHB}区域内将受法术影响致速度被减半。当{@variantrule 光环 [效应区域]|XPHB|光环}进入一个生物的空间、一个生物进入{@variantrule 光环 [效应区域]|XPHB|光环}或在{@variantrule 光环 [效应区域]|XPHB|光环}内结束回合时，其必须进行一次感知豁免。豁免失败将受到{@damage 3d8}点光耀伤害（如果你属于善良或中立）或{@damage 3d8}点暗蚀伤害（如果你属于邪恶），豁免成功则受到半数伤害。一名生物一回合仅需进行一次该豁免。"
+				"施展此法术时，你可以指定特定生物让其不受该法术影响。除此之外的生物在{@variantrule 光环 [效应区域]|XPHB|光环}区域内将受法术影响致速度被减半。当{@variantrule 光环 [效应区域]|XPHB|光环}进入一个生物的空间、一个生物进入{@variantrule 光环 [效应区域]|XPHB|光环}或在{@variantrule 速度|XPHB}内结束回合时，其必须进行一次感知豁免。豁免失败将受到{@damage 3d8}点光耀伤害（如果你属于善良或中立）或{@damage 3d8}点暗蚀伤害（如果你属于邪恶），豁免成功则受到半数伤害。一名生物一回合仅需进行一次该豁免。"
 			],
 			"entriesHigherLevel": [
 				{
