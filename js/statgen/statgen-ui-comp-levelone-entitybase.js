@@ -84,7 +84,7 @@ export class StatGenUiRenderLevelOneEntityBase {
 			this._parent,
 			this._propIsPreview,
 			{
-				html: `<button class="ve-btn ve-btn-xs ve-btn-default" title="Toggle ${this._title} Preview"><span class="glyphicon glyphicon-eye-open"></span></button>`,
+				html: `<button class="ve-btn ve-btn-xs ve-btn-default" title="预览 ${this._title}"><span class="glyphicon glyphicon-eye-open"></span></button>`,
 			},
 		);
 		const hkBtnPreviewEntity = () => btnPreview.toggleVe(this._parent._state[this._propIxEntity] != null && ~this._parent._state[this._propIxEntity]);

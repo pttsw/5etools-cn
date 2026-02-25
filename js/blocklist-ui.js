@@ -428,7 +428,7 @@ class BlocklistUi {
 			</div>
 
 			<div class="ve-flex-vh-center mr-3 mobile-md__mr-0 mobile-md__mb-2">
-				<div class="mr-2">&apos;14 Sources</div>
+				<div class="mr-2">&apos;14资源</div>
 				<div class="ve-flex-v-center ve-btn-group">
 					${btnExcludeClassicSources}
 					${btnIncludeClassicSources}
