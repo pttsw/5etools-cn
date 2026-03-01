@@ -2968,7 +2968,7 @@
 			"source": "WDMM",
 			"page": 165,
 			"size": [
-				"M"
+				"L"
 			],
 			"type": "construct",
 			"alignment": [
@@ -2998,6 +2998,20 @@
 				"毒素",
 				"心灵"
 			],
+			"trait": [
+				{
+					"name": "Spider Climb",
+					"entries": [
+						"The iron spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+					]
+				},
+				{
+					"name": "Antimagic Susceptibility",
+					"entries": [
+						"The iron spider is {@condition incapacitated} while in the area of an {@spell antimagic field}. If targeted by {@spell dispel magic}, the iron spider must succeed on a Constitution saving throw against the caster's spell save DC or fall {@condition unconscious} for 1 minute."
+					]
+				}
+			],
 			"action": [
 				{
 					"ENG_name": "Web Cable",
@@ -3008,10 +3022,15 @@
 				}
 			],
 			"tokenCustom": true,
+			"traitTags": [
+				"Antimagic Susceptibility",
+				"Spider Climb"
+			],
 			"senseTags": [
 				"B"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"ENG_name": "Junior Drow Priestess of Lolth",
@@ -3041,6 +3060,10 @@
 				"N",
 				"E"
 			],
+			"languages": [
+				"Elvish",
+				"Undercommon"
+			],
 			"traitTags": [
 				"妖精血统",
 				"日照敏感"
@@ -3050,7 +3073,7 @@
 			],
 			"languageTags": [
 				"E",
-				"X"
+				"U"
 			],
 			"spellcastingTags": [
 				"CC",
@@ -3799,6 +3822,10 @@
 					]
 				}
 			],
+			"hp": {
+				"average": 24,
+				"formula": "3d8"
+			},
 			"senses": [
 				"黑暗视觉 60 尺"
 			],
@@ -5288,7 +5315,7 @@
 						"with": "雕像",
 						"flags": "i"
 					},
-					"trait": {
+					"bonus": {
 						"mode": "appendArr",
 						"items": {
 							"ENG_name": "Magic Theft",
@@ -5449,14 +5476,17 @@
 				"N",
 				"E"
 			],
+			"languages": [
+				"Common",
+				"Dwarvish"
+			],
 			"tokenCustom": true,
 			"senseTags": [
 				"D"
 			],
 			"languageTags": [
 				"C",
-				"D",
-				"X"
+				"D"
 			],
 			"damageTags": [
 				"B",

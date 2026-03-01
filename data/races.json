@@ -5717,7 +5717,8 @@
 					}
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Genasi",
@@ -14081,6 +14082,71 @@
 			},
 			"additionalSpells": [
 				{
+					"name": "Abyssal",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"thaumaturgy|xphb#c",
+							"poison spray|xphb#c"
+						]
+					},
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"ray of sickness|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"hold person|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Chthonic",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"thaumaturgy|xphb#c",
+							"chill touch|xphb#c"
+						]
+					},
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"false life|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"ray of enfeeblement|xphb"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Infernal",
 					"ability": {
 						"choose": [
 							"int",
@@ -14092,6 +14158,22 @@
 						"1": [
 							"奇术|xphb#c"
 						]
+					},
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"hellish rebuke|xphb"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"darkness|xphb"
+								]
+							}
+						}
 					}
 				}
 			],

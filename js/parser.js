@@ -2585,8 +2585,8 @@ Parser.CAT_ID_VEHICLE = 31;
 Parser.CAT_ID_PACT_BOON = 32;
 Parser.CAT_ID_ELEMENTAL_DISCIPLINE = 33;
 Parser.CAT_ID_ARTIFICER_INFUSION = 34;
-Parser.CAT_ID_SHIP_UPGRADE = 35;
-Parser.CAT_ID_INFERNAL_WAR_MACHINE_UPGRADE = 36;
+Parser.CAT_ID_VEHICLE_UPGRADE_SHIP = 35;
+Parser.CAT_ID_VEHICLE_UPGRADE_INFERNAL_WAR_MACHINE = 36;
 Parser.CAT_ID_ONOMANCY_RESONANT = 37;
 Parser.CAT_ID_RUNE_KNIGHT_RUNE = 37;
 Parser.CAT_ID_ALCHEMICAL_FORMULA = 38;
@@ -2607,6 +2607,7 @@ Parser.CAT_ID_DECK = 52;
 Parser.CAT_ID_CARD = 53;
 Parser.CAT_ID_ITEM_MASTERY = 54;
 Parser.CAT_ID_FACILITY = 55;
+Parser.CAT_ID_VEHICLE_UPGRADE_OTHER = 56;
 
 Parser.CAT_ID_GROUPS = {
 	"optionalfeature": [
@@ -2626,8 +2627,9 @@ Parser.CAT_ID_GROUPS = {
 		Parser.CAT_ID_MANEUVER,
 	],
 	"vehicleUpgrade": [
-		Parser.CAT_ID_SHIP_UPGRADE,
-		Parser.CAT_ID_INFERNAL_WAR_MACHINE_UPGRADE,
+		Parser.CAT_ID_VEHICLE_UPGRADE_SHIP,
+		Parser.CAT_ID_VEHICLE_UPGRADE_INFERNAL_WAR_MACHINE,
+		Parser.CAT_ID_VEHICLE_UPGRADE_OTHER,
 	],
 };
 
@@ -2666,8 +2668,9 @@ Parser.CAT_ID_TO_FULL[Parser.CAT_ID_VEHICLE] = "载具";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_PACT_BOON] = "契约恩赐";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_ELEMENTAL_DISCIPLINE] = "四象法门";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_ARTIFICER_INFUSION] = "注法";
-Parser.CAT_ID_TO_FULL[Parser.CAT_ID_SHIP_UPGRADE] = "船只升级";
-Parser.CAT_ID_TO_FULL[Parser.CAT_ID_INFERNAL_WAR_MACHINE_UPGRADE] = "炼狱战争机器升级";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_VEHICLE_UPGRADE_SHIP] = "船只升级";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_VEHICLE_UPGRADE_INFERNAL_WAR_MACHINE] = "炼狱战争机器升级";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_VEHICLE_UPGRADE_OTHER] = "载具升级";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_ONOMANCY_RESONANT] = "真名言灵";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_RUNE_KNIGHT_RUNE] = "符文骑士符文";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_ALCHEMICAL_FORMULA] = "炼金师公式";
@@ -2726,8 +2729,9 @@ Parser.CAT_ID_TO_PROP[Parser.CAT_ID_MANEUVER_BATTLE_MASTER] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_PACT_BOON] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ELEMENTAL_DISCIPLINE] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ARTIFICER_INFUSION] = "optionalfeature";
-Parser.CAT_ID_TO_PROP[Parser.CAT_ID_SHIP_UPGRADE] = "vehicleUpgrade";
-Parser.CAT_ID_TO_PROP[Parser.CAT_ID_INFERNAL_WAR_MACHINE_UPGRADE] = "vehicleUpgrade";
+Parser.CAT_ID_TO_PROP[Parser.CAT_ID_VEHICLE_UPGRADE_SHIP] = "vehicleUpgrade";
+Parser.CAT_ID_TO_PROP[Parser.CAT_ID_VEHICLE_UPGRADE_INFERNAL_WAR_MACHINE] = "vehicleUpgrade";
+Parser.CAT_ID_TO_PROP[Parser.CAT_ID_VEHICLE_UPGRADE_OTHER] = "vehicleUpgrade";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ONOMANCY_RESONANT] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_RUNE_KNIGHT_RUNE] = "optionalfeature";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_ALCHEMICAL_FORMULA] = "optionalfeature";
@@ -4690,22 +4694,22 @@ Parser.NUMBERS_TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "s
 Parser.NUMBERS_TEENS = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
 // region Metric conversion
-Parser.metric = {
+Parser.metric = class {
 	// See MPMB's breakdown: https://old.reddit.com/r/dndnext/comments/6gkuec
-	MILES_TO_KILOMETRES: 1.6,
-	FEET_TO_METRES: 0.3, // 5 ft = 1.5 m
-	YARDS_TO_METRES: 0.9, // (as above)
-	POUNDS_TO_KILOGRAMS: 0.5, // 2 lb = 1 kg
+	static MILES_TO_KILOMETRES = 1.6;
+	static FEET_TO_METRES = 0.3; // 5 ft = 1.5 m
+	static YARDS_TO_METRES = 0.9; // (as above)
+	static POUNDS_TO_KILOGRAMS = 0.5; // 2 lb = 1 kg
 	// Other additions
-	INCHES_TO_CENTIMETERS: 2.5, // 1 in = 2.5 cm
-	CUBIC_FEET_TO_LITRES: 28, // 1 ft³ = 28 L
+	static INCHES_TO_CENTIMETERS = 2.5; // 1 in = 2.5 cm
+	static CUBIC_FEET_TO_LITRES = 28; // 1 ft³ = 28 L
 
 	/**
 	 * @param {number} originalValue
 	 * @param {string} originalUnit
 	 * @param {?boolean} toFixed
 	 */
-	getMetricNumber ({originalValue, originalUnit, toFixed = null}) {
+	static getMetricNumber ({originalValue, originalUnit, toFixed = null}) {
 		if (originalValue == null || isNaN(originalValue)) return originalValue;
 
 		originalValue = Number(originalValue);
@@ -4723,14 +4727,14 @@ Parser.metric = {
 		}
 		if (toFixed != null) return NumberUtil.toFixedNumber(out, toFixed);
 		return out;
-	},
+	}
 
 	/**
 	 * @param {number} originalValue
 	 * @param {boolean} isShortForm
 	 * @param {isPlural} isShortForm
 	 */
-	getMetricUnit ({originalUnit, isShortForm = false, isPlural = true}) {
+	static getMetricUnit ({originalUnit, isShortForm = false, isPlural = true}) {
 		switch (Parser.getNormalizedUnit(originalUnit)) {
 			case Parser.UNT_INCHES: return isShortForm ? "cm" : `centimeter`[isPlural ? "toPlural" : "toString"]();
 			case Parser.UNT_FEET: return isShortForm ? "m" : `meter`[isPlural ? "toPlural" : "toString"]();
@@ -4740,7 +4744,7 @@ Parser.metric = {
 			case Parser.UNT_CUBIC_FEET: return isShortForm ? "L" : `liter`[isPlural ? "toPlural" : "toString"]();
 			default: return originalUnit;
 		}
-	},
+	}
 };
 // endregion
 // region Map grids

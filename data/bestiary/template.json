@@ -3093,6 +3093,10 @@
 					}
 				},
 				"_mod": {
+					"resist": {
+						"mode": "appendIfNotExistsArr",
+						"items": "poison"
+					},
 					"languages": {
 						"mode": "appendIfNotExistsArr",
 						"items": "半身人"
@@ -3112,6 +3116,12 @@
 								"name": "勇气",
 								"entries": [
 									"<$title_short_name$>在对抗{@condition 恐慌}状态的豁免检定上有优势。"
+								]
+							},
+							{
+								"name": "Stout Resilience",
+								"entries": [
+									"<$title_short_name$> has advantage on saving throws against poison."
 								]
 							}
 						]

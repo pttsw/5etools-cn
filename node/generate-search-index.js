@@ -29,25 +29,23 @@ const getJsonString = (data) => {
 async function pMain () {
 	const t = Timer.start();
 
-
+	console.log("##### Creating primary index... #####");
+	const index = await utS.UtilSearchIndex.pGetIndex();
+	fs.writeFileSync("search/index.json", getJsonString(index), "utf8");
+	console.log("##### Creating secondary indexes... #####");
+	const indexAdditionalItems = await utS.UtilSearchIndex.pGetIndexAdditional(Parser.CAT_ID_ITEM);
+	fs.writeFileSync("search/index-item.json", getJsonString(indexAdditionalItems), "utf8");
+	console.log("##### Creating alternate index: Spells... #####");
+	const indexAltSpells = await utS.UtilSearchIndex.pGetIndexAlternate("spell");
+	fs.writeFileSync("search/index-alt-spell.json", getJsonString(indexAltSpells), "utf8");
+	console.log("##### Creating Foundry index... #####");
+	const indexFoundry = await utS.UtilSearchIndex.pGetIndexFoundry();
+	fs.writeFileSync("search/index-foundry.json", getJsonString(indexFoundry), "utf8");
 
 	if (params.partnered) {
 		console.log("##### Creating partnered content index... #####");
 		const indexPartnered = await utS.UtilSearchIndex.pGetIndexPartnered();
 		fs.writeFileSync("search/index-partnered.json", getJsonString(indexPartnered), "utf8");
-	}else {
-		console.log("##### Creating primary index... #####");
-		const index = await utS.UtilSearchIndex.pGetIndex();
-		fs.writeFileSync("search/index.json", getJsonString(index), "utf8");
-		console.log("##### Creating secondary index: Items... #####");
-		const indexItems = await utS.UtilSearchIndex.pGetIndexAdditionalItem();
-		fs.writeFileSync("search/index-item.json", getJsonString(indexItems), "utf8");
-		console.log("##### Creating alternate index: Spells... #####");
-		const indexAltSpells = await utS.UtilSearchIndex.pGetIndexAlternate("spell");
-		fs.writeFileSync("search/index-alt-spell.json", getJsonString(indexAltSpells), "utf8");
-		console.log("##### Creating Foundry index... #####");
-		const indexFoundry = await utS.UtilSearchIndex.pGetIndexFoundry();
-		fs.writeFileSync("search/index-foundry.json", getJsonString(indexFoundry), "utf8");
 	}
 
 	console.log(`Created indexes in ${Timer.stop(t)}`);
