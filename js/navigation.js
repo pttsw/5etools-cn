@@ -74,7 +74,7 @@ class NavBar {
 		this._addElement_dropdown({keyPath: [NavBar._CAT_RULES], category: NavBar._CAT_BOOKS, isSide: true, page: "books.html"});
 		this._addElement_li({keyPath: [NavBar._CAT_RULES, NavBar._CAT_BOOKS], page: "books.html", aText: "查看所有/自制内容"});
 		this._addElement_divider({keyPath: [NavBar._CAT_RULES]});
-		this._addElement_li({keyPath: [NavBar._CAT_RULES], page: "quickreference.html", aText: "快速参考(2014)"});
+		this._addElement_li({keyPath: [NavBar._CAT_RULES], page: "quickreference.html", aText: "快速参考(5e/2014)"});
 
 		this._addElement_dropdown({category: NavBar._CAT_PLAYER});
 		this._addElement_li({keyPath: [NavBar._CAT_PLAYER], page: "classes.html", aText: "职业"});
@@ -98,7 +98,7 @@ class NavBar {
 		this._addElement_li({keyPath: [NavBar._CAT_DUNGEON_MASTER], page: "objects.html", aText: "物件"});
 		this._addElement_li({keyPath: [NavBar._CAT_DUNGEON_MASTER], page: "trapshazards.html", aText: "陷阱 & 危害"});
 		this._addElement_divider({keyPath: [NavBar._CAT_DUNGEON_MASTER]});
-		this._addElement_li({keyPath: [NavBar._CAT_DUNGEON_MASTER], page: "crcalculator.html", aText: "CR 计算器 (2014)"});
+		this._addElement_li({keyPath: [NavBar._CAT_DUNGEON_MASTER], page: "crcalculator.html", aText: "CR 计算器 (5e/2014)"});
 		this._addElement_li({keyPath: [NavBar._CAT_DUNGEON_MASTER], page: "encountergen.html", aText: "遭遇生成器"});
 		this._addElement_li({keyPath: [NavBar._CAT_DUNGEON_MASTER], page: "lootgen.html", aText: "战利品生成器"});
 		this._addElement_divider({keyPath: [NavBar._CAT_DUNGEON_MASTER]});

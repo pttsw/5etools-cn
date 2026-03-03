@@ -166,12 +166,12 @@ export class SourceFilter extends Filter {
 			),
 			null,
 			new ContextUtil.Action(
-				`选择 2014 资源`,
+				`选择 5e/2014 资源`,
 				() => this._doSetPinsClassic(),
 				{title: `Select sources published from 2014 to 2024.`},
 			),
 			new ContextUtil.Action(
-				`选择 2024 资源`,
+				`选择 5.5e/2024 资源`,
 				() => this._doSetPinsOne(),
 				{title: `Select sources published from 2024 onwards.`},
 			),

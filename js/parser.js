@@ -2651,7 +2651,7 @@ Parser.CAT_ID_TO_FULL[Parser.CAT_ID_DEITY] = "神祇";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_OBJECT] = "物件";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_TRAP] = "陷阱";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_HAZARD] = "危险";
-Parser.CAT_ID_TO_FULL[Parser.CAT_ID_QUICKREF] = "快速参考";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_QUICKREF] = "快速参考 (5e/2014)";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CULT] = "异教";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_BOON] = "恩惠";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_DISEASE] = "疾病";
@@ -3090,6 +3090,29 @@ Parser.SP_SCHOOL_ABV_TO_SHORT[Parser.SKL_ABV_NEC] = "死灵";
 Parser.SP_SCHOOL_ABV_TO_SHORT[Parser.SKL_ABV_TRA] = "变化";
 Parser.SP_SCHOOL_ABV_TO_SHORT[Parser.SKL_ABV_CON] = "咒法";
 Parser.SP_SCHOOL_ABV_TO_SHORT[Parser.SKL_ABV_PSI] = "灵能";
+
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS = {};
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_ABJ] = "sp__school--a";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_CON] = "sp__school--c";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_DIV] = "sp__school--d";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_ENC] = "sp__school--e";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_EVO] = "sp__school--v";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_ILL] = "sp__school--i";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_NEC] = "sp__school--n";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_PSI] = "sp__school--p";
+Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[Parser.SKL_ABV_TRA] = "sp__school--t";
+
+Parser.spSchoolAbvToStyleClass = function (school) {
+	return Parser.SP_SCHOOL_ABV_TO_CSS_CLASS[school] || "";
+};
+
+Parser.PSI_ABV_TYPE_TO_CSS_CLASS = {};
+Parser.PSI_ABV_TYPE_TO_CSS_CLASS[Parser.PSI_ABV_TYPE_TALENT] = "psi__type--t";
+Parser.PSI_ABV_TYPE_TO_CSS_CLASS[Parser.PSI_ABV_TYPE_DISCIPLINE] = "psi__type--d";
+
+Parser.psiTypeAbvToStyleClass = function (type) {
+	return Parser.PSI_ABV_TYPE_TO_CSS_CLASS[type] || "";
+};
 
 Parser.ATB_ABV_TO_FULL = {
 	"str": "力量",
@@ -3534,7 +3557,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SDW] = "沉睡巨龙醒转";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BGDIA] = "博德之门：坠入阿弗纳斯";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LR] = "洛卡鱼人崛起";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_AL] = "冒险者联盟";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SAC] = "贤者谏言合集(2014)";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SAC] = "贤者谏言合集 (5e/2014)";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ERLW] = "艾伯伦：从终末战争中崛起";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EFR] = "艾伯伦：失落的圣物";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_RMBRE] = "瑞克与莫蒂：BRE";

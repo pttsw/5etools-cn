@@ -115,7 +115,7 @@ class _PageGeneratorCrcalculator extends PageGeneratorGeneric {
 	_filename = "page/template-page-crcalculator.hbs";
 	_page = "crcalculator.html";
 
-	_pageTitle = "CR 计算器 (2014)";
+	_pageTitle = "CR 计算器 (5e/2014)";
 	_navbarDescription = "轻松地构筑自定义生物。";
 
 	_stylesheets = [

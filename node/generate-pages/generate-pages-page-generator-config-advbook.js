@@ -23,8 +23,8 @@ class _PageGeneratorBook extends PageGeneratorAdventureBookBase {
 class _PageGeneratorQuickref extends PageGeneratorAdventureBookBase {
 	_page = UrlUtil.PG_QUICKREF;
 
-	_pageTitle = "快速参照(2014)";
-	_navbarTitle = "快速参照(2014)";
+	_pageTitle = "快速参照(5e/2014)";
+	_navbarTitle = "快速参照(5e/2014)";
 	_navbarDescription = I18nUtil.get("page.book.page_subtitle");
 	_scriptIdentAdvBook = "quickreference";
 	_advBookPlaceholder = `Trans rights are human rights.`;

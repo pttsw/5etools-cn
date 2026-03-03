@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"2.25.0"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"2.25.1"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
 globalThis.IS_VTT = false;
@@ -1008,6 +1008,14 @@ globalThis.JqueryUtil = class {
 		});
 	}
 
+	static _COPY_BUBBLE_CLASS_NAMES = [
+		"clp__disp-copied--bubble-variant-1",
+		"clp__disp-copied--bubble-variant-2",
+		"clp__disp-copied--bubble-variant-3",
+		"clp__disp-copied--bubble-variant-4",
+		"clp__disp-copied--bubble-variant-5",
+	];
+
 	static showCopiedEffect (ele, {text = "已复制！", isBubble = false} = {}) {
 		// eslint-disable-next-line vet-jquery/jquery
 		ele = (globalThis.jQuery && ele instanceof globalThis.jQuery)
@@ -1031,7 +1039,7 @@ globalThis.JqueryUtil = class {
 		if (isBubble) {
 			dispCopied
 				.addClass(`clp__disp-copied--bubble`)
-				.addClass(`clp__disp-copied--bubble-variant-${RollerUtil.randomise(5)}`);
+				.addClass(RollerUtil.rollOnArray(this._COPY_BUBBLE_CLASS_NAMES));
 		} else {
 			dispCopied.addClass(`clp__disp-copied--basic`);
 		}
@@ -4171,7 +4179,7 @@ UrlUtil.PG_TO_NAME[UrlUtil.PG_DEITIES] = "神祇";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CULTS_BOONS] = "异教 & 超自然赠礼";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_OBJECTS] = "物件";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_TRAPS_HAZARDS] = "陷阱 & 危害";
-UrlUtil.PG_TO_NAME[UrlUtil.PG_QUICKREF] = "快速参考(2014)";
+UrlUtil.PG_TO_NAME[UrlUtil.PG_QUICKREF] = "快速参考 (5e/2014)";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_MANAGE_BREW] = "管理自制内容";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_MANAGE_PRERELEASE] = "管理预发布内容";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_MAKE_BREW] = "自制内容编辑器";

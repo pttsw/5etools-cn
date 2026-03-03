@@ -1512,7 +1512,7 @@ class ListPage {
 	}
 
 	_bindLinkExportButton ({btn} = {}) {
-		btn ||= this._getOrTabRightButton(`link-export`, `magnet`);
+		btn ||= this._getOrTabRightButton(`link-export`, `glyphicon-magnet`);
 		btn.addClass("ve-btn-copy-effect")
 			.onn("click", evt => this._pHandleClick_doCopyFilterLink(evt, {btn, isAllowNonExtension: true}))
 			.tooltip("复制筛选链接 (SHIFT adds list; CTRL copies @filter tag)");
@@ -1535,7 +1535,7 @@ class ListPage {
 			.tooltip("弹出BBCode文本（果园拟像术）");
 	}
 	_bindPopoutButton () {
-		this._getOrTabRightButton(`popout`, `new-window`)
+		this._getOrTabRightButton(`popout`, `glyphicon-new-window`)
 			.tooltip(`弹出框 (按住SHIFT键弹出源数据；按住CTRL键弹出Markdown文本）`)
 			.onn(
 				"click",
@@ -1875,7 +1875,7 @@ class ListPage {
 		);
 	}
 
-	_getOrTabRightButton (ident, icon, {title} = {}) {
+	_getOrTabRightButton (ident, iconClassName, {title} = {}) {
 		if (this._btnsTabs[ident]) return this._btnsTabs[ident];
 
 		this._btnsTabs[ident] = e_({
@@ -1884,7 +1884,7 @@ class ListPage {
 			children: [
 				e_({
 					tag: "span",
-					clazz: `glyphicon glyphicon-${icon}`,
+					clazz: `glyphicon ${iconClassName}`,
 				}),
 			],
 			title,
@@ -1897,19 +1897,19 @@ class ListPage {
 	}
 
 	_bindPinButton () {
-		this._getOrTabRightButton(`pin`, `pushpin`)
+		this._getOrTabRightButton(`pin`, `glyphicon-pushpin`)
 			.onn("click", () => this._sublistManager.pHandleClick_btnPin({entity: this._lastRender.entity}))
 			.tooltip("钉选(开/关) (快捷键：p/P)");
 	}
 
 	_bindAddButton () {
-		this._getOrTabRightButton(`sublist-add`, `plus`)
+		this._getOrTabRightButton(`sublist-add`, `glyphicon-plus`)
 			.tooltip(this._sublistManager.getTitleBtnAdd())
 			.onn("click", evt => this._sublistManager.pHandleClick_btnAdd({entity: this._lastRender.entity, isMultiple: !!evt.shiftKey}));
 	}
 
 	_bindSubtractButton () {
-		this._getOrTabRightButton(`sublist-subtract`, `minus`)
+		this._getOrTabRightButton(`sublist-subtract`, `glyphicon-minus`)
 			.tooltip(this._sublistManager.getTitleBtnSubtract())
 			.onn("click", evt => this._sublistManager.pHandleClick_btnSubtract({entity: this._lastRender.entity, isMultiple: !!evt.shiftKey}));
 	}
@@ -1925,7 +1925,7 @@ class ListPage {
 	_bindOtherButtons (opts) {
 		opts = opts || {};
 
-		const btnOptions = this._getOrTabRightButton(`sublist-other`, `option-vertical`, {title: "其他选项"});
+		const btnOptions = this._getOrTabRightButton(`sublist-other`, `glyphicon-option-vertical`, {title: "其他选项"});
 
 		const contextOptions = [
 			new ContextUtil.Action(
