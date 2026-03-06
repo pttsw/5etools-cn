@@ -631,6 +631,28 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Azal",
+			"name": "阿扎尔",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 202,
+			"_copy": {
+				"ENG_name": "Githzerai Zerth",
+				"name": "吉斯泽莱泽锡修士",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "吉斯泽莱人",
+						"with": "阿扎尔",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Berlain Shadowdusk",
 			"name": "博兰·暮影",
 			"isNpc": true,
@@ -651,8 +673,8 @@
 					"bonus": {
 						"mode": "appendArr",
 						"items": {
-							"ENG_name": "Extra Parts",
-							"name": "额外部件",
+							"ENG_name": "Fused Form",
+							"name": "融合形态",
 							"entries": [
 								"作为附赠动作，贝兰可以利用她的额外嘴巴和手臂施展她已经准备的任何戏法。"
 							]
@@ -2020,94 +2042,6 @@
 			"hasToken": true
 		},
 		{
-			"ENG_name": "Giant Mutated Drow",
-			"name": "巨大变异卓尔",
-			"source": "WDMM",
-			"page": 143,
-			"_copy": {
-				"ENG_name": "Cloud Giant",
-				"name": "云巨人",
-				"source": "MM",
-				"_mod": {
-					"*": {
-						"mode": "replaceTxt",
-						"replace": "巨人",
-						"with": "卓尔",
-						"flags": "i"
-					},
-					"trait": {
-						"mode": "appendArr",
-						"items": [
-							{
-								"ENG_name": "Fey Ancestry",
-								"name": "妖精血统",
-								"entries": [
-									"卓尔在对抗魅惑的豁免检定上具有优势，魔法不能使卓尔入睡。"
-								]
-							},
-							{
-								"ENG_name": "Sunlight Sensitivity",
-								"name": "日照敏感",
-								"entries": [
-									"在日光照射下，卓尔的攻击检定具有劣势，其依赖视觉的感知（{@skill 察觉}）检定也具有劣势。"
-								]
-							}
-						]
-					}
-				}
-			},
-			"type": "giant",
-			"alignment": [
-				"N",
-				"E"
-			],
-			"senses": [
-				"黑暗视觉 120 尺"
-			],
-			"languages": [
-				"精灵语",
-				"地底通用语"
-			],
-			"spellcasting": [
-				{
-					"ENG_name": "Innate Spellcasting",
-					"name": "天生施法",
-					"type": "spellcasting",
-					"headerEntries": [
-						"卓尔的先天施法能力基于魅力（法术豁免 {@dc 15}）。卓尔可以无需材料成分先天施放以下法术："
-					],
-					"will": [
-						"{@spell 舞光术}"
-					],
-					"daily": {
-						"1e": [
-							"{@spell 黑暗术}",
-							"{@spell 妖火}"
-						]
-					},
-					"ability": "cha"
-				}
-			],
-			"tokenCustom": true,
-			"traitTags": [
-				"妖精血统",
-				"敏锐感官",
-				"日照敏感"
-			],
-			"senseTags": [
-				"SD"
-			],
-			"languageTags": [
-				"C",
-				"E",
-				"GI"
-			],
-			"savingThrowForcedSpell": [
-				"敏捷"
-			],
-			"hasToken": true
-		},
-		{
 			"ENG_name": "Glyster",
 			"name": "格利斯特",
 			"isNpc": true,
@@ -3000,15 +2934,17 @@
 			],
 			"trait": [
 				{
-					"name": "Spider Climb",
+					"ENG_name": "Spider Climb",
+					"name": "蛛行术",
 					"entries": [
-						"The iron spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+						"铁蜘蛛可以攀爬困难的表面，包括倒挂在天花板上，而无需进行属性检定。"
 					]
 				},
 				{
-					"name": "Antimagic Susceptibility",
+					"ENG_name": "Antimagic Susceptibility",
+					"name": "魔力依赖",
 					"entries": [
-						"The iron spider is {@condition incapacitated} while in the area of an {@spell antimagic field}. If targeted by {@spell dispel magic}, the iron spider must succeed on a Constitution saving throw against the caster's spell save DC or fall {@condition unconscious} for 1 minute."
+						"铁蜘蛛在{@spell 反魔法场}区域内处于{@condition 失能}状态。如果成为{@spell 解除魔法}的目标，铁蜘蛛必须进行一次对抗施法者法术豁免DC的体质豁免检定，否则会陷入{@condition 昏迷}状态1分钟。"
 					]
 				}
 			],
@@ -3023,8 +2959,8 @@
 			],
 			"tokenCustom": true,
 			"traitTags": [
-				"Antimagic Susceptibility",
-				"Spider Climb"
+				"魔力依赖",
+				"蛛行术"
 			],
 			"senseTags": [
 				"B"
@@ -3061,8 +2997,8 @@
 				"E"
 			],
 			"languages": [
-				"Elvish",
-				"Undercommon"
+				"精灵语",
+				"地底通用语"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -3082,8 +3018,8 @@
 			"hasToken": true
 		},
 		{
-			"ENG_name": "Kavil",
-			"name": "卡维尔",
+			"ENG_name": "Kavil Mereshanter",
+			"name": "卡维尔·梅雷尚特",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "WDMM",
@@ -4125,6 +4061,94 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Mutated Drow",
+			"name": "变异卓尔",
+			"source": "WDMM",
+			"page": 143,
+			"_copy": {
+				"ENG_name": "Cloud Giant",
+				"name": "云巨人",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "巨人",
+						"with": "卓尔",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"ENG_name": "Fey Ancestry",
+								"name": "妖精血统",
+								"entries": [
+									"卓尔在对抗魅惑的豁免检定上具有优势，魔法不能使卓尔入睡。"
+								]
+							},
+							{
+								"ENG_name": "Sunlight Sensitivity",
+								"name": "日照敏感",
+								"entries": [
+									"在日光照射下，卓尔的攻击检定具有劣势，其依赖视觉的感知（{@skill 察觉}）检定也具有劣势。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"type": "giant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"senses": [
+				"黑暗视觉 120 尺"
+			],
+			"languages": [
+				"精灵语",
+				"地底通用语"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Innate Spellcasting",
+					"name": "天生施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"卓尔的先天施法能力基于魅力（法术豁免 {@dc 15}）。卓尔可以无需材料成分先天施放以下法术："
+					],
+					"will": [
+						"{@spell 舞光术}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell 黑暗术}",
+							"{@spell 妖火}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"妖精血统",
+				"敏锐感官",
+				"日照敏感"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"C",
+				"E",
+				"GI"
+			],
+			"savingThrowForcedSpell": [
+				"敏捷"
+			],
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Nerozar the Defeated",
 			"name": "被击败的尼罗扎尔",
 			"isNpc": true,
@@ -4629,6 +4653,28 @@
 			"action": null,
 			"tokenCustom": true,
 			"languageTags": [],
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Rishindar",
+			"name": "瑞辛达",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 202,
+			"_copy": {
+				"ENG_name": "Githzerai Zerth",
+				"name": "吉斯泽莱泽锡修士",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "吉斯泽莱人",
+						"with": "瑞辛达",
+						"flags": "i"
+					}
+				}
+			},
 			"hasToken": true
 		},
 		{
@@ -5321,7 +5367,7 @@
 							"ENG_name": "Magic Theft",
 							"name": "魔法盗窃",
 							"entries": [
-								"作为一个附加动作，魔像可以指定一个它在30英尺范围内能看到的生物。目标必须成功通过一次{@dc 17}魅力豁免检定，否则其携带的所有魔法物品将被传送到{@adventure 区域31|WDMM|15|31. 余烬大厅}的坑底。"
+								"魔像以30尺内它能看见的一个生物为目标。目标必须成功通过{@dc 17}的魅力豁免检定，否则它附身的所有魔法物品都会被传送到{@adventure 区域31|WDMM|15|31. 余烬大厅}的坑陷底部。"
 							]
 						}
 					}
@@ -5477,8 +5523,8 @@
 				"E"
 			],
 			"languages": [
-				"Common",
-				"Dwarvish"
+				"通用语",
+				"矮人语"
 			],
 			"tokenCustom": true,
 			"senseTags": [
@@ -6006,6 +6052,28 @@
 			"hasToken": true
 		},
 		{
+			"ENG_name": "Vond",
+			"name": "冯德",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 202,
+			"_copy": {
+				"ENG_name": "Githzerai Zerth",
+				"name": "吉斯泽莱泽锡修士",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "吉斯泽莱人",
+						"with": "冯德",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Werebat",
 			"name": "蝙蝠人",
 			"group": [
@@ -6331,6 +6399,38 @@
 						"replace": "巨人",
 						"with": "Xorta",
 						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Yrlakka",
+			"name": "伊尔拉卡",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 202,
+			"_copy": {
+				"ENG_name": "Githzerai Zerth",
+				"name": "吉斯泽莱泽锡修士",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "吉斯泽莱人",
+						"with": "伊尔拉卡",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Special Equipment",
+							"name": "特殊装备",
+							"entries": [
+								"Yrlakka在右脚踝上绑着一根绳子，上面挂着一个小水晶瓶，里面装有{@item 火焰抗性药水||抗火药水}，他的腰带上挂着一根{@item 搜魔魔杖}。"
+							]
+						}
 					}
 				}
 			},
@@ -6752,12 +6852,19 @@
 				"name": "卓尔家族指挥",
 				"source": "MTF",
 				"_mod": {
-					"*": {
-						"mode": "replaceTxt",
-						"replace": "卓尔",
-						"with": "兹瑞斯",
-						"flags": "i"
-					}
+					"*": [
+						{
+							"mode": "replaceTxt",
+							"replace": "卓尔",
+							"with": "兹瑞斯",
+							"flags": "i"
+						},
+						{
+							"mode": "replaceTxt",
+							"replace": "他的",
+							"with": "她的"
+						}
+					]
 				}
 			},
 			"ac": [

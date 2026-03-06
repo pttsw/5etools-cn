@@ -54,7 +54,7 @@
 					"name": "异种魔法",
 					"type": "entries",
 					"entries": [
-						"你从术士法术列表中选择一个戏法。此外，从该法术列表中选择一个1环法术。你总是准备着该法术。你可以无需法术位施放该法术一次，并且当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时恢复以此方式施放该法术的能力。你也可以使用你拥有的任何法术位来施放该法术。体质是该法术的施法属性。"
+						"你从{@filter 从术士法术列表中选择的戏法|spells|level=0|class=术士}。此外，从该法术列表中选择一个一环法术。你总是准备着该法术。你可以无需法术位施放该法术一次，并在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后恢复以此方式施放该法术的能力。你也可以使用你拥有的任何法术位来施放该法术。体质是你施放该法术的施法属性。"
 					]
 				},
 				{
@@ -752,7 +752,7 @@
 					"name": "跳跃",
 					"type": "entries",
 					"entries": [
-						"你只需移动 5 尺距离便能进行一次助跑跳远或一次助跑{@variantrule 跳高|XPHB}。"
+						"你可以在仅移动5尺后进行{@variantrule 跳远|XPHB|长}或{@variantrule 跳高|XPHB}。"
 					]
 				}
 			],
@@ -4639,7 +4639,7 @@
 				{
 					"proficiency": [
 						{
-							"weapon": "军用"
+							"weapon": "martial"
 						}
 					]
 				}
@@ -10256,7 +10256,7 @@
 				{
 					"proficiency": [
 						{
-							"weaponGroup": "军用"
+							"weaponGroup": "martial"
 						}
 					]
 				}
@@ -12528,7 +12528,7 @@
 				{
 					"proficiency": [
 						{
-							"weaponGroup": "军用"
+							"weaponGroup": "martial"
 						}
 					]
 				},

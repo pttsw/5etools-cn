@@ -3576,7 +3576,7 @@ globalThis.UrlUtil = class {
 		return encoder(obj);
 	}
 
-	autoEncodeEngHash (obj) {
+	static autoEncodeEngHash (obj) {
 		if (!obj || !obj.ENG_name) return null;
 		const curPage = UrlUtil.getCurrentPage();
 		const encoder = UrlUtil.URL_TO_ENG_HASH_BUILDER[curPage];

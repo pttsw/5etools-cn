@@ -15980,7 +15980,6 @@ Renderer.hover = class {
 				<div class="hwin hoverbox--popout hwin--popout"></div>
 				<script type="text/javascript" defer src="js/parser.js"></script>
 				<script type="text/javascript" defer src="js/utils.js"></script>
-				<script type="text/javascript" defer src="lib/jquery.i18n.properties.min.js"></script>
 				<script type="text/javascript" defer src="js/locale.js"></script>
 				</body></html>
 			`);

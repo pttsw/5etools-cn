@@ -5673,7 +5673,7 @@
 								"name": "烈焰之触",
 								"type": "entries",
 								"entries": [
-									"你知晓戏法{@spell 燃火术}。从3级开始，你可以使用该特质施展{@spell 燃烧之手}法术。从5级开始，你也可以使用该特质施展{@spell 火焰刀}法术，且无需材料成分。一旦你使用了该特质施展了{@spell 燃烧之手}或{@spell 火焰刀}，直到完成一次长休前，你不能再次使用该特质施展那个法术。你也能用你拥有的相应法术环阶的法术位来施展这些法术。",
+									"你知晓{@spell 燃火术|XPHB}戏法。从3级开始，你可以用此特质施放{@spell 燃烧之手|XPHB}法术。从5级开始，你还可以用此特质无需材料成分施放{@spell 火焰刀|XPHB}法术。一旦你用此特质施放过{@spell 燃烧之手|XPHB}或{@spell 火焰刀|XPHB}，在完成一次长休前无法再次用此特质施放该法术。你也可以使用任何对应等级的法术位来施放这些法术。",
 									"当你使用此特质施展法术时，智力，感知或魅力是你的施法属性（当你选择该种族时进行决定）。"
 								]
 							}
@@ -5691,14 +5691,14 @@
 						"3": {
 							"daily": {
 								"1": [
-									"燃烧之手"
+									"燃烧之手|xphb"
 								]
 							}
 						},
 						"5": {
 							"daily": {
 								"1": [
-									"火焰刀"
+									"火焰刀|xphb"
 								]
 							}
 						}
@@ -5712,7 +5712,7 @@
 					},
 					"known": {
 						"1": [
-							"燃火术#c"
+							"燃火术|xphb#c"
 						]
 					}
 				}
@@ -14083,7 +14083,8 @@
 			},
 			"additionalSpells": [
 				{
-					"name": "Abyssal",
+					"ENG_name": "Abyssal",
+					"name": "深渊语",
 					"ability": {
 						"choose": [
 							"int",
@@ -14093,29 +14094,30 @@
 					},
 					"known": {
 						"1": [
-							"thaumaturgy|xphb#c",
-							"poison spray|xphb#c"
+							"奇术|xphb#c",
+							"毒气喷涌|xphb#c"
 						]
 					},
 					"innate": {
 						"3": {
 							"daily": {
 								"1": [
-									"ray of sickness|xphb"
+									"致病射线|xphb"
 								]
 							}
 						},
 						"5": {
 							"daily": {
 								"1": [
-									"hold person|xphb"
+									"定身类人|xphb"
 								]
 							}
 						}
 					}
 				},
 				{
-					"name": "Chthonic",
+					"ENG_name": "Chthonic",
+					"name": "幽冥",
 					"ability": {
 						"choose": [
 							"int",
@@ -14125,29 +14127,30 @@
 					},
 					"known": {
 						"1": [
-							"thaumaturgy|xphb#c",
-							"chill touch|xphb#c"
+							"奇术|xphb#c",
+							"颤栗之触|xphb#c"
 						]
 					},
 					"innate": {
 						"3": {
 							"daily": {
 								"1": [
-									"false life|xphb"
+									"虚假生命|xphb"
 								]
 							}
 						},
 						"5": {
 							"daily": {
 								"1": [
-									"ray of enfeeblement|xphb"
+									"衰弱射线|xphb"
 								]
 							}
 						}
 					}
 				},
 				{
-					"name": "Infernal",
+					"ENG_name": "Infernal",
+					"name": "炼狱语",
 					"ability": {
 						"choose": [
 							"int",
@@ -14157,21 +14160,22 @@
 					},
 					"known": {
 						"1": [
-							"奇术|xphb#c"
+							"奇术|xphb#c",
+							"火焰箭|xphb#c"
 						]
 					},
 					"innate": {
 						"3": {
 							"daily": {
 								"1": [
-									"hellish rebuke|xphb"
+									"炼狱叱喝|xphb"
 								]
 							}
 						},
 						"5": {
 							"daily": {
 								"1": [
-									"darkness|xphb"
+									"黑暗术|xphb"
 								]
 							}
 						}

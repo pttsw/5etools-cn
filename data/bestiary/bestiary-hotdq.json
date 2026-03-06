@@ -64,7 +64,7 @@
 				"毒素"
 			],
 			"languages": [
-				"懂龙语但是不会说"
+				"懂龙语但不会说话"
 			],
 			"cr": "1/2",
 			"trait": [
@@ -72,14 +72,14 @@
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"如果至少有一个幼龙的盟友在生物的5尺范围内，并且该盟友没有处于{@condition 失能}，幼龙在对生物的攻击骰上具有优势。"
+						"龙兽至少有一个未处于{@condition 失能}的盟友在目标生物5尺内时，它对该生物发动的攻击检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Surprise Attack",
 					"name": "突袭攻击",
 					"entries": [
-						"如果龙兽在战斗的第一轮中突袭一个生物并命中它，目标将从该攻击中额外受到7点（{@damage 2d6}）伤害。"
+						"龙兽突袭一个生物，并在战斗开始第一轮中发动攻击命中该生物时，该目标将在该次攻击中额外受7（{@damage 2d6}）的同类伤害。"
 					]
 				}
 			],
@@ -88,7 +88,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4 ({@damage 1d6 + 1}) 点穿刺伤害。"
+						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d6 + 1}）的穿刺伤害。"
 					]
 				}
 			],
@@ -109,7 +109,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Azbara Jos",
@@ -183,7 +184,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"阿兹巴拉是一个6级施法者，使用智力作为他的施法能力（法术豁免{@dc 13}，{@hit 5}命中法术攻击）。阿兹巴拉从法师法术列表中准备了以下法术："
+						"阿兹巴拉作为6级施法者，其施法关键属性为智力（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。阿兹巴拉准备了下列法师法术："
 					],
 					"spells": {
 						"0": {
@@ -228,21 +229,21 @@
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"阿兹巴拉有两个{@item 法术卷轴(1环)||卷轴}的{@spell 法师护甲}。"
+						"阿兹巴拉身上带着两份{@spell 法师护甲}mage armor{@item 法术卷轴(1环)||卷轴}。"
 					]
 				},
 				{
 					"ENG_name": "Potent Cantrips",
 					"name": "强力戏法",
 					"entries": [
-						"当阿兹巴拉施放咒法系的戏法并且未命中，或者目标成功通过其豁免检定时，目标仍然承受戏法一半的伤害，但不会受到其他效果。"
+						"阿兹巴拉施展一道塑能戏法时，若法术未命中，或是其目标成功通过了法术的豁免，则该目标仍然承受该戏法半数的伤害，但不受该戏法其他效应影响。"
 					]
 				},
 				{
 					"ENG_name": "Sculpt Spells",
 					"name": "法术塑形",
 					"entries": [
-						"当阿兹巴拉施放影响他能看见的其他生物的咒法法术时，他可以选择等于1加法术等级数量的生物在对抗法术的豁免检定上成功。如果这些生物通常会从法术中受到一半伤害，那么他们将不会受到任何伤害。"
+						"阿兹巴拉施展一道塑能法术时，若该法术影响到他能看见的其他生物，则他指定一定数量的受术目标（数量等于1＋法术环阶）令其直接成功通过该法术的豁免检定。若该生物对该法术豁免成功可伤害减半，则该生物此时不受任何伤害。"
 					]
 				}
 			],
@@ -251,7 +252,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 5}，触及范围 5 尺或远程 20/60 尺，单一目标。{@h}5 ({@damage 1d4 + 3}) 点穿刺伤害。"
+						"{@atk mw,rw}命中{@hit 5}，触及5尺或射程20/60尺，单一目标。{@h}5（{@damage 1d4 + 3}）的穿刺伤害。"
 					]
 				}
 			],
@@ -289,7 +290,8 @@
 				"敏捷"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Blagothkus",
@@ -362,7 +364,7 @@
 					"name": "天生施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Blagothkus 能够天生施放以下法术（法术豁免 {@dc 15}），无需任何材料："
+						"布拉戈提库斯天生可以施展以下法术（法术豁免{@dc 15}）而无需相关的材料成分："
 					],
 					"daily": {
 						"3e": [
@@ -376,7 +378,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"布莱戈斯库斯是一个5级施法者，使用智力作为他的施法能力（法术豁免{@dc 15}，{@hit 7}命中法术攻击）。布莱戈斯库斯从法师法术列表中准备了以下法术："
+						"布拉戈提库斯作为5级施法者，其施法关键属性为智力（法术豁免{@dc 15}，法术攻击命中{@hit 7}）。布拉戈提库斯准备了下列法师法术："
 					],
 					"spells": {
 						"0": {
@@ -419,7 +421,7 @@
 					"ENG_name": "Keen Smell",
 					"name": "敏锐嗅觉",
 					"entries": [
-						"Blagothkus 在依赖嗅觉的感知（{@skill 察觉}）检定上具有优势。"
+						"布拉戈提库斯依赖嗅觉进行感知（{@skill 察觉}）检定时具有优势。"
 					]
 				}
 			],
@@ -428,14 +430,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"布拉戈斯库斯用他的晨星攻击两次。"
+						"布拉戈提库斯发动两次钉头锤攻击。"
 					]
 				},
 				{
 					"ENG_name": "Morningstar",
 					"name": "钉头锤",
 					"entries": [
-						"{@atk mw} 命中{@hit 10}，触及范围10尺，单一目标。{@h}21（{@damage 3d8 + 8}）点穿刺伤害。"
+						"{@atk mw} 命中{@hit 10}，触及10尺，单一目标。{@h}21（{@damage 3d8 + 8}）的穿刺伤害。"
 					]
 				}
 			],
@@ -476,7 +478,8 @@
 				"力量"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Captain Othelstan",
@@ -548,14 +551,14 @@
 					"ENG_name": "Action Surge (Recharges on a Short or Long Rest)",
 					"name": "动作如潮（短休或长休后充能）",
 					"entries": [
-						"在他的回合，奥瑟斯坦可以进行一个额外的行动。"
+						"奥瑟斯坦在其自己回合可额外执行一个动作。"
 					]
 				},
 				{
 					"ENG_name": "Tiamat's Blessing of Retribution",
 					"name": "复仇之提亚马特祝福",
 					"entries": [
-						"当Othelstan受到的伤害使其生命值降至0点时，他立即恢复20点生命值。如果他在自己的下一个回合结束时生命值或更少，他将死亡。"
+						"奥瑟斯坦受到将其生命值降至0的伤害时，将立即回复20点生命值。此后若他在自己的下一回合结束时生命值为20或更低数值，则他死亡。"
 					]
 				}
 			],
@@ -564,21 +567,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"奥瑟斯坦可以用他的连枷或长矛进行两次攻击，或者用他的长矛进行两次远程攻击。"
+						"奥瑟斯坦以其链枷或矛发动两次攻击，或是用他的矛发动两次远程攻击。"
 					]
 				},
 				{
 					"ENG_name": "Flail",
 					"name": "链枷",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}8（{@damage 1d8 + 4}）钝击伤害。"
+						"{@atk mw}命中{@hit 7}，触及5尺，单一目标。{@h}8（{@damage 1d8 + 4}）的钝击伤害。"
 					]
 				},
 				{
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 7}，触及范围 5 尺或远程 20/60 尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害。"
+						"{@atk mw,rw}命中{@hit 7}，触及5尺或射程20/60尺，单一目标。{@h}7（{@damage 1d6 + 4}）的穿刺伤害。"
 					]
 				}
 			],
@@ -605,7 +608,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dragonclaw",
@@ -674,21 +678,21 @@
 					"ENG_name": "Dragon Fanatic",
 					"name": "巨龙狂热",
 					"entries": [
-						"龙爪在对抗被{@condition 魅惑}或{@condition 恐慌}的豁免投骰上具有优势。当龙爪能看到一条龙或对其友好的更高级别的龙之教团成员时，龙爪忽略被{@condition 魅惑}或{@condition 恐慌}的效果。"
+						"龙爪为抵抗{@condition 魅惑}或{@condition 恐慌}状态而作的豁免检定具有优势。若龙爪可看到某个友方的龙类或高阶龙巫教徒，则该龙爪直接无视受{@condition 魅惑}或受{@condition 恐慌}的效应。"
 					]
 				},
 				{
 					"ENG_name": "Fanatic Advantage",
 					"name": "狂热优势",
 					"entries": [
-						"每回合一次，如果龙爪在攻击掷骰时具有优势并命中，它将额外造成7点（{@damage 2d6}）伤害。"
+						"龙爪每回合有一次机会，在进行一次带优势的武器攻击并命中时，令该攻击额外多造成7（{@damage 2d6}）的伤害。"
 					]
 				},
 				{
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"如果龙爪的至少一个盟友在生物5尺范围内，并且盟友不是{@condition 失能}，龙爪在对生物的攻击检定上有优势。"
+						"龙爪至少有一个未处于{@condition 失能}的盟友在目标生物5尺内时，他对该生物发动的攻击检定具有优势。"
 					]
 				}
 			],
@@ -697,7 +701,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"龙爪用其弯刀攻击两次。"
+						"龙爪以其弯刀发动两次攻击。"
 					]
 				},
 				{
@@ -954,7 +958,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"德拉莫雷尔是一个7环法术施法者，使用智力作为他的施法能力（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。德拉莫雷尔从法师法术列表中准备了以下法术："
+						"德拉莫瑞作为7级施法者，其施法关键属性为智力（法术豁免{@dc 13}，法术攻击命中{@hit 5}）德拉莫瑞准备了下列法师法术："
 					],
 					"spells": {
 						"0": {
@@ -989,21 +993,21 @@
 					"ENG_name": "Fey Ancestry",
 					"name": "妖精血统",
 					"entries": [
-						"Dralmorrer 在对抗被 {@condition 魅惑} 的豁免投骰上具有优势，魔法无法使他入睡。"
+						"德拉莫瑞为抵抗{@condition 魅惑}而作的豁免检定具有优势，并且不会因魔法效应而陷入睡眠。"
 					]
 				},
 				{
 					"ENG_name": "War Magic",
 					"name": "战争魔法",
 					"entries": [
-						"当Dralmorrer使用他的行动来施放一个戏法时，他还可以额外采取一个附赠动作来进行一次武器攻击。"
+						"德拉莫瑞以其动作施展一道戏法时，他还可以执行一个附赠动作来发动一次武器攻击。"
 					]
 				},
 				{
 					"ENG_name": "Weapon Bond",
 					"name": "武器联结",
 					"entries": [
-						"只要他的长剑在同一个平面上，德拉莫雷可以用附赠动作将其传送到他的手中。"
+						"只要其长剑跟自己同处一个位面，德拉莫瑞就可以执行一个附赠动作来将其传送到自己手上。"
 					]
 				}
 			],
@@ -1012,7 +1016,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"德拉莫雷尔进行两次攻击，使用他的长剑或匕首。"
+						"德拉莫瑞发动两次攻击，每次攻击都可以是长剑攻击或匕首攻击。"
 					]
 				},
 				{
@@ -1026,7 +1030,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 6}，触及范围5尺或远程20/60尺，单一目标。{@h}6（{@damage 1d4 + 4}）点穿刺伤害。"
+						"{@atk mw,rw}命中{@hit 6}，触及5尺或射程20/60尺，单一目标。{@h}6（{@damage 1d4 + 4}）的穿刺伤害。"
 					]
 				}
 			],
@@ -1074,7 +1078,8 @@
 				"体质"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Four-Armed Troll",
@@ -1179,7 +1184,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"弗鲁拉姆是一个5级施法者，使用感知作为她的施法能力（法术豁免{@dc 14}，{@hit 6}命中法术攻击）。弗鲁拉姆从牧师法术列表中准备了以下法术："
+						"弗鲁兰作为5级施法者，其施法关键属性为感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。弗鲁兰准备了下列牧师法术："
 					],
 					"spells": {
 						"0": {
@@ -1222,14 +1227,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"弗鲁拉姆用她的长戟进行两次攻击。"
+						"弗鲁兰以其长戟发动两次攻击。"
 					]
 				},
 				{
 					"ENG_name": "Halberd",
 					"name": "长戟",
 					"entries": [
-						"{@atk mw} 命中{@hit 5}，触及10英尺，单一目标。{@h}7 ({@damage 1d10 + 2}) 挥砍伤害。"
+						"{@atk mw}命中{@hit 5}，触及10尺，单一目标。{@h}7（{@damage 1d10 + 2}）的钝击伤害。"
 					]
 				}
 			],
@@ -1266,7 +1271,8 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Golden Stag",
@@ -1344,7 +1350,7 @@
 				"闪电"
 			],
 			"languages": [
-				"懂龙语但是不会说"
+				"懂龙语但不会说话"
 			],
 			"cr": "2",
 			"action": [
@@ -1352,7 +1358,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"龙兽发动两次攻击，一次用它的啃咬和一次用它的扫尾。"
+						"龙兽发动两次攻击，一次啃咬攻击和一次尾击。"
 					]
 				},
 				{
@@ -1468,7 +1474,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"贾姆娜是一个4环法术施法者，使用智力作为她的施法能力（法术豁免{@dc 12}，法术攻击命中{@hit 4}）。贾姆娜从法师法术列表中准备了以下法术。"
+						"贾姆娜作为4级施法者，其施法关键属性为智力（法术豁免{@dc 12}，法术攻击命中{@hit 4}）贾姆娜准备了下列法师法术："
 					],
 					"spells": {
 						"0": {
@@ -1497,14 +1503,14 @@
 					"ENG_name": "Cunning Action",
 					"name": "灵巧动作",
 					"entries": [
-						"贾姆娜可以消耗一个附赠动作来执行{@action 疾走}、{@action 撤离}或{@action 躲藏}动作。"
+						"贾姆娜在其自己回合内可用一个附赠动作执行{@action 疾走}Dash，{@action 撤离}Disengage或{@action 躲藏}Hide动作。"
 					]
 				},
 				{
 					"ENG_name": "Gnome Cunning",
 					"name": "侏儒狡黠",
 					"entries": [
-						"Jamna 在对抗魔法的感知、感知和魅力豁免投骰上具有优势。"
+						"贾姆娜为抵抗魔法而进行的智力、感知和魅力豁免具有优势。"
 					]
 				}
 			],
@@ -1513,14 +1519,14 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"Jamna用她的双短剑攻击两次。"
+						"贾姆娜发动两次短剑攻击。"
 					]
 				},
 				{
 					"ENG_name": "Shortsword",
 					"name": "短剑",
 					"entries": [
-						"{@atk mw} {@hit 5} 攻击命中，范围5英尺，单一目标。 {@h}6 ({@damage 1d6 + 3}) 点穿刺伤害，或如果目标为中型或更大体型，则为9 ({@damage 1d6 + 3}) 加 ({@damage 1d6}) 点穿刺伤害。"
+						"{@atk mw}命中{@hit 5}，触及5尺，单一目标。{@h}6（{@damage 1d6 + 3}）的穿刺伤害，或当目标为中型或更大体型时9（{@damage 1d6 + 3}外加{@damage 1d6}）的穿刺伤害。"
 					]
 				}
 			],
@@ -1556,7 +1562,8 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Langdedrosa Cyanwrath",
@@ -1632,14 +1639,14 @@
 					"ENG_name": "Action Surge (Recharges on a Short or Long Rest)",
 					"name": "动作如潮（短休或长休后充能）",
 					"entries": [
-						"在他的回合，兰格德罗萨可以进行一次额外的动作。"
+						"兰德卓萨在其自己回合可额外执行一个动作。"
 					]
 				},
 				{
 					"ENG_name": "Improved Critical",
 					"name": "精通重击",
 					"entries": [
-						"Langdedrosa 的武器攻击在掷骰结果为 19 或 20 时会打出重击。"
+						"兰德卓萨的武器攻击其攻击检定骰出19或20时都视为重击。"
 					]
 				}
 			],
@@ -1648,7 +1655,7 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"兰格德罗萨攻击两次，使用他的大剑或长矛。"
+						"兰德卓萨发动两次攻击，两次都可以是巨剑或矛攻击。"
 					]
 				},
 				{
@@ -1662,14 +1669,14 @@
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 6}，触及范围5尺或远程20/60尺，单一目标。{@h}7（{@damage 1d6 + 4}）点穿刺伤害。"
+						"{@atk mw,rw} 命中{@hit 6}，触及5尺或射程20/60尺，单一目标。{@h}7（{@damage 1d6 + 4}）的穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Breath {@recharge 5}",
 					"name": "闪电吐息{@recharge 5}",
 					"entries": [
-						"兰格德罗萨在一条30尺长、5尺宽的线上呼吸闪电。线上的每个生物都必须进行一次{@dc 13}敏捷豁免，失败则受到22（{@damage 4d10}）闪电伤害，成功则伤害减半。"
+						"兰德卓萨呼出闪电并覆盖30尺长、5尺宽的线状区域。该区域内的每个生物都必须进行一次{@dc 13}的敏捷豁免，豁免失败者受到22（{@damage 4d10}）的闪电伤害，豁免成功则伤害减半。"
 					]
 				}
 			],
@@ -1705,7 +1712,8 @@
 				"敏捷"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Leosin Erlanthar",
@@ -1901,7 +1909,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Pharblex 是一名 6 级施法者，使用感知作为他的施法能力（法术豁免 {@dc 13}，法术攻击命中需要 {@hit 5}）。Pharblex 准备了以下来自德鲁伊法术列表的法术："
+						"法布列斯作为6级施法者，其施法关键属性为感知（法术豁免{@dc 13}，法术攻击命中{@hit 5}）。法布列斯准备了下列德鲁伊法术："
 					],
 					"spells": {
 						"0": {
@@ -1944,14 +1952,14 @@
 					"ENG_name": "Amphibious",
 					"name": "水陆两栖",
 					"entries": [
-						"法布莱克斯可以呼吸空气和水。"
+						"法布列斯在水里和空气中都可呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Poison Strike (3/Day)",
 					"name": "毒素打击（3/日）",
 					"entries": [
-						"每次轮到Pharblex进行攻击时，当他用近战攻击命中目标，他可以消耗这个特性的使用次数，额外造成9点（{@damage 2d8}）毒素伤害。"
+						"法布列斯每回合有一次机会，在以近战攻击命中时使用一次该特质造成额外9（{@damage 2d8}）的毒素伤害。"
 					]
 				},
 				{
@@ -1974,21 +1982,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"法布莱克斯进行两次攻击。一次用咬击，一次用长矛。"
+						"法布列斯发动两次攻击，一次啃咬和一次矛攻击。"
 					]
 				},
 				{
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} {@hit 5}命中，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）穿刺伤害。"
+						"{@atk mw}命中{@hit 5}，触及5尺，单一目标。{@h}4（{@damage 1d4 + 2}）的穿刺伤害。"
 					]
 				},
 				{
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atk mw,rw} {@hit 5} 命中。距离5尺或远程20/60尺，单一目标。{@h}5 ({@damage 1d6 + 2})穿刺伤害。"
+						"{@atk mw,rw}命中{@hit 5}，触及5尺或射程20/60尺，单一目标。{@h}5（{@damage 1d6 + 2}）的穿刺伤害。"
 					]
 				}
 			],
@@ -2139,7 +2147,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Rath 是一名 11 级施法者，使用智力作为他的施法能力（法术豁免 {@dc 15}，法术攻击命中需要 {@hit 7}）。Rath 准备了以下来自法师法术列表的法术："
+						"拉斯作为11级施法者，其施法关键属性为智力（法术豁免{@dc 15}，法术攻击命中{@hit 7}）。拉斯准备了下列的法师法术："
 					],
 					"spells": {
 						"0": {
@@ -2204,7 +2212,7 @@
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"Rath拥有一根{@item 火焰法杖}，以及{@spell 任意门}、{@spell 羽落术}和{@spell 火球术}的卷轴。"
+						"拉斯带着一把{@item 火焰法杖}staff of fire，以及{@spell 任意门}dimension door、{@spell 羽落术}feather fall和{@spell 火球术}fireball的卷轴。"
 					]
 				}
 			],
@@ -2213,7 +2221,7 @@
 					"ENG_name": "Quarterstaff",
 					"name": "长棍",
 					"entries": [
-						"{@atk mw} 命中{@hit 4}，触及范围5尺，单一目标。{@h}4（{@damage 1d8}）钝击伤害。"
+						"{@atk mw}命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d8}）的钝击伤害。"
 					]
 				}
 			],
@@ -2222,7 +2230,7 @@
 					"ENG_name": "Illusory Self (Recharges on a Short or Long Rest)",
 					"name": "幻影化形（短休或长休后充能）",
 					"entries": [
-						"当一个拉特能看到的生物对他进行攻击骰时，他可以在攻击者和他之间插入一个幻象副本。攻击自动错过拉特，然后幻象消散。"
+						"一个拉斯能看到的生物对他发动一次攻击检定时，拉斯可以在攻击者与自己之间布置一个幻影分身。攻击者对拉斯的攻击直接判为未命中，幻影分身也随即消散。"
 					]
 				}
 			],
@@ -2263,7 +2271,8 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Rezmir",
@@ -2348,42 +2357,42 @@
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"Rezmir拥有{@item 黑龙面具|HotDQ}、{@item 哈兹瑞恩|HotDQ}以及一个{@item 利爪徽章|HotDQ}。"
+						"瑞兹米尔带着{@item 黑龙面具|HotDQ}Black Dragon Mask，{@item 哈兹瑞恩|HotDQ}Hazirawn以及一个{@item 利爪徽章|HotDQ}insignia of claws。"
 					]
 				},
 				{
 					"ENG_name": "Amphibious",
 					"name": "水陆两栖",
 					"entries": [
-						"Rezmir能够呼吸空气和水。"
+						"瑞兹米尔在水里和空气中都能呼吸。"
 					]
 				},
 				{
 					"ENG_name": "Dark Advantage",
 					"name": "黑暗优势",
 					"entries": [
-						"每回合一次，当雷兹米尔用武器攻击命中且攻击检定具有优势时，她可以造成额外的10点（{@damage 3d6}）伤害。"
+						"瑞兹米尔每回合有一次机会，可以在一次武器攻击命中时造成额外10（{@damage 3d6}）的伤害，前提是瑞兹米尔本次攻击检定必须带优势。"
 					]
 				},
 				{
 					"ENG_name": "Draconic Majesty",
 					"name": "龙形威严",
 					"entries": [
-						"穿着不穿戴盔甲并戴上黑龙面具时，雷兹米尔将她的魅力加值加到她的护甲等级上（已包含）。"
+						"未着装护甲而着装黑龙面具 时，瑞兹米尔将其魅力加值加入其AC（已写明）。"
 					]
 				},
 				{
 					"ENG_name": "Immolation",
 					"name": "焚烧术",
 					"entries": [
-						"当Rezmir的生命值降至0点时，她的身体会分解成一堆灰烬。"
+						"瑞兹米尔生命值降至0时，其身躯将分解为一团灰烬。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (1/Day)",
 					"name": "传奇抗性（1/日）",
 					"entries": [
-						"如果雷兹米尔在佩戴黑龙面具时失败豁免检定，她可以选择成功。"
+						"瑞兹米尔着装了黑龙面具 且豁免失败时，她可将其结果改为豁免成功。"
 					]
 				}
 			],
@@ -2392,26 +2401,26 @@
 					"ENG_name": "Greatsword (Hazirawn)",
 					"name": "巨剑（哈兹瑞恩）",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及范围 5 尺，单一目标。{@h}13 ({@damage 2d6 + 6}) 挥砍伤害加上 7 ({@damage 2d6}) 暗蚀伤害。如果目标是一个生物，它在接下来的1分钟内不能恢复生命值。目标可以在它每个回合结束时进行一次 {@dc 15} 体质豁免，成功则提前结束这个效果。"
+						"{@atk mw} 命中{@hit 9}，触及5尺，单一目标。{@h}13（{@damage 2d6 + 6}）的挥砍伤害伤害，外加7（{@damage 2d6}）的暗蚀伤害。若目标为一生物，则该生物在随后1分钟内无法恢复生命值。该目标可在其每个自己回合结束时进行一次{@dc 15}的体质豁免，豁免成功则终止该效应。"
 					]
 				},
 				{
 					"ENG_name": "Caustic Bolt",
 					"name": "酸蚀矢",
 					"entries": [
-						"{@atk rs} 命中{@hit 8}，射程90尺，单一目标。{@h}18 ({@damage 4d8}) 强酸伤害。"
+						"{@atk rs}命中{@hit 8}，射程90尺，单一目标。{@h}18（{@damage 4d8}）的强酸伤害。"
 					]
 				},
 				{
 					"ENG_name": "Acid Breath {@recharge 5}",
 					"name": "强酸吐息 {@recharge 5}",
 					"entries": [
-						"雷兹米尔在一条30尺长、5尺宽的线上呼吸酸液。线上的每个生物都必须进行一次{@dc 14}敏捷豁免，失败则受到22（{@damage 5d8}）强酸伤害，成功则伤害减半。"
+						"瑞兹米尔呼出强酸并覆盖一处30尺长、5尺宽的线状区域。该区域内的每个生物都必须进行一次{@dc 14}的敏捷豁免，豁免失败者将受到22（{@damage 5d8}）的强酸伤害，豁免成功则伤害减半。"
 					]
 				}
 			],
 			"legendaryHeader": [
-				"如果她佩戴着黑龙面具，雷兹米尔可以在她的每个回合之间进行最多两次传奇行动，可以一次性采取所有行动，也可以在整个回合中分散进行。传奇行动只能在回合的开始或结束时采取。"
+				"若瑞兹米尔着装了黑龙面具，她将可以在其自己每回合之间执行2传奇动作，它们可同时花费或在当轮里分开使用。每个传奇动作项只能在一个回合开始或结束时执行。瑞兹米尔拥有下列传奇动作项，其中某些项目执行时需要花费多于1传奇动作。"
 			],
 			"legendaryActions": 2,
 			"legendary": [
@@ -2419,21 +2428,21 @@
 					"ENG_name": "Darkness (Costs 2 Actions)",
 					"name": "黑暗术（消耗 2动作）",
 					"entries": [
-						"从Rezmir能看到的60尺范围内的某点开始，一个15尺半径的魔法黑暗区域扩散开来，并能绕过角落。只要Rezmir保持{@status 专注}，黑暗就会持续存在，最长可达1分钟。具有黑暗视觉的生物无法穿透这片黑暗，没有任何自然光能照亮它。如果这个区域与由2级或更低级别的法术创造的光区域重叠，创造光的法术将被解除。"
+						"一片半径15尺的魔法黑暗从瑞兹米尔周边60尺范围内她能看到的一点扩散开来并充满其所在区域的所有角落。黑暗区域在瑞兹米尔维持其{@status 专注}时持续存在，且至多持续1分钟。拥有黑暗视觉的生物无法看透这片黑暗，自然光照也无法照亮它。若黑暗区域与任何2环或更高环阶法术创造的光照区域重叠，则该创造光照的法术被反制。"
 					]
 				},
 				{
 					"ENG_name": "Melee Attack",
 					"name": "近战攻击",
 					"entries": [
-						"Rezmir 进行一次近战攻击。"
+						"瑞兹米尔发动一次近战攻击。"
 					]
 				},
 				{
 					"ENG_name": "Hide",
 					"name": "躲藏",
 					"entries": [
-						"瑞兹米尔进行{@action 躲藏}动作。"
+						"瑞兹米尔执行{@action 躲藏}Hide动作。"
 					]
 				}
 			],
@@ -2579,7 +2588,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"塔利斯是一个9级施法者，使用感知作为她的施法能力（法术豁免{@dc 14}，{@hit 6}命中法术攻击）。塔利斯从牧师法术列表中准备了以下法术："
+						"塔利斯作为9级施法者，其施法关键属性为感知（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。塔利斯准备了下列牧师法术："
 					],
 					"spells": {
 						"0": {
@@ -2636,21 +2645,21 @@
 					"ENG_name": "Special Equipment",
 					"name": "特殊装备",
 					"entries": [
-						"塔利斯有一件{@item +1 鳞甲}和一个{@item 凛冬魔杖|HotDQ}。"
+						"塔利斯带着一件 {@item +1 鳞甲}scale mail和{@item 凛冬魔杖|HotDQ}wand of winter。"
 					]
 				},
 				{
 					"ENG_name": "Fey Ancestry",
 					"name": "妖精血统",
 					"entries": [
-						"Talis在对抗被{@condition 魅惑}的豁免检定上具有优势，魔法也无法让她入睡。"
+						"塔利斯为抵抗{@condition 魅惑}而作的豁免检定具有优势，并且不会因魔法效应而陷入睡眠。"
 					]
 				},
 				{
 					"ENG_name": "Winter Strike (3/Day)",
 					"name": "凛冬打击（3/日）",
 					"entries": [
-						"每回合一次，当塔利斯用近战攻击命中时，她可以消耗这个特性的使用次数，额外造成9（{@damage 2d8}）点寒冷伤害。"
+						"塔利斯每回合有一次机会，在以近战攻击命中时使用一次该特质造成额外9（{@damage 2d8}）的寒冷伤害。"
 					]
 				}
 			],
@@ -2659,7 +2668,7 @@
 					"ENG_name": "Spear",
 					"name": "矛",
 					"entries": [
-						"{@atk mw,rw} 命中{@hit 5}，触及范围 5 尺或远程 20/60 尺，单一目标。{@h}6 ({@damage 1d6 + 2}) 点穿刺伤害。"
+						"{@atk mw,rw}命中{@hit 5}，触及5尺或射程20/60尺，单一目标。{@h}6（{@damage 1d6 + 2}）的穿刺伤害。"
 					]
 				}
 			],
@@ -2706,7 +2715,8 @@
 				"感知"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Trepsin",
