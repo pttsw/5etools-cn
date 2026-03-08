@@ -861,7 +861,7 @@ class SideMenu {
 				<label class="split-v-center mb-2"><span>保留当前宽度/高度</span> ${cbKeepWidthHeight}</label>
 				<hr class="hr-1">
 				<div>确定要重置帷幕吗？</div>
-			</div>`
+			</div>`;
 
 			if (!await InputUiUtil.pGetUserBoolean({title: "重置", eleDescription, textYes: "是的", textNo: "取消"})) return;
 
