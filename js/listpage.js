@@ -1519,7 +1519,7 @@ class ListPage {
 	}
 
 	_bindLinkEngSiteButton ({btn} = {}) {
-		btn ||= this._getOrTabRightButton(`link-5et`, `globe`);
+		btn ||= this._getOrTabRightButton(`link-5et`, `glyphicon-globe`);
 
 		btn.addClass("ve-btn-copy-effect")
 			.onn("click", evt => {
@@ -1529,7 +1529,7 @@ class ListPage {
 			.tooltip("跳转英文源站");
 	}
 	_bindBBCodeExportButton ({btn} = {}) {
-		btn ||= this._getOrTabRightButton(`link-bbcode`, `transfer`);
+		btn ||= this._getOrTabRightButton(`link-bbcode`, `glyphicon-transfer`);
 		btn.addClass("ve-btn-copy-effect")
 			.onn("click", evt => this._bindPopoutButton_doShowBBCode(evt))
 			.tooltip("弹出BBCode文本（果园拟像术）");
