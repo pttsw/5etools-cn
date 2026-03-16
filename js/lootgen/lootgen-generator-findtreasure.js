@@ -34,33 +34,33 @@ class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
 
 		const cbIsHoard = ComponentUiUtil.getCbBool(this, "ft_isHoard");
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._ft_pDoHandleClickRollLoot());
 
 		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._outputManager.doClearOutput());
 
-		ee`<div class="ve-flex-col py-2 px-3">
-			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("common.challenge_rating")}</div>
+		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
+			<label class="ve-split-v-center ve-mb-2">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("common.challenge_rating")}</div>
 				${selChallenge}
 			</label>
 
-			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.is_treasure_hoard")}</div>
+			<label class="ve-split-v-center ve-mb-2">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.is_treasure_hoard")}</div>
 				${cbIsHoard}
 			</label>
 
 			${this._render_getStgHoardAdditional()}
 
-			<div class="ve-flex-v-center mb-2 mt-2">
+			<div class="ve-flex-v-center ve-mb-2 ve-mt-2">
 				${btnRoll}
 				${btnClear}
 			</div>
 
-			<hr class="hr-3">
+			<hr class="ve-hr-3">
 
-			<div class="ve-small italic">${this._getHtmlBasedOn()}</div>
+			<div class="ve-small ve-italic">${this._getHtmlBasedOn()}</div>
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 
@@ -189,9 +189,9 @@ export class LootGenGeneratorFindTreasure24 extends LootGenGeneratorFindTreasure
 			},
 		);
 
-		const stg = ee`<div class="ve-flex-col w-100">
-			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.character_level")}</div>
+		const stg = ee`<div class="ve-flex-col ve-w-100">
+			<label class="ve-split-v-center ve-mb-2">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.character_level")}</div>
 				${selCharacterLevel}
 			</label>
 		</div>`;

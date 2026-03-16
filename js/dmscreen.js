@@ -574,7 +574,7 @@ class Board {
 			DataUtil.userDownload(`dm-screen`, toLoad, {fileType: "dm-screen"});
 		};
 
-		const btnDownload = ee`<button class="ve-btn ve-btn-sm ve-btn-primary mr-2">Download Save</button>`
+		const btnDownload = ee`<button class="ve-btn ve-btn-sm ve-btn-primary ve-mr-2">Download Save</button>`
 			.onn("click", () => handleClickDownload());
 
 		const handleClickPurge = async () => {
@@ -586,23 +586,23 @@ class Board {
 		const btnPurge = ee`<button class="ve-btn ve-btn-sm ve-btn-danger">Purge and Continue</button>`
 			.onn("click", () => handleClickPurge());
 
-		const txtDownload = ee`<b class="clickable">download a backup of your save</b>`
+		const txtDownload = ee`<b class="ve-clickable">download a backup of your save</b>`
 			.onn("click", () => handleClickDownload());
-		const txtPurge = ee`<span class="clickable text-danger">purge the save</span>`
+		const txtPurge = ee`<span class="ve-clickable text-danger">purge the save</span>`
 			.onn("click", () => handleClickPurge());
 
 		ee(eleModalInner)`
-			<div class="py-2 w-100 h-100">
-				<div class="mb-2">
+			<div class="ve-py-2 ve-w-100 ve-h-100">
+				<div class="ve-mb-2">
 					<b>Failed to load saved DM Screen.</b> ${VeCt.STR_SEE_CONSOLE}
 				</div>
 
-				<div class="mb-2">
+				<div class="ve-mb-2">
 					Please ${txtDownload}, then ${txtPurge} if you wish to continue.
 				</div>
 
-				<div class="mb-4">
-					If you suspect this is the <span class="help" title="Spoiler: it always is">result of a bug</span>, or need help recovering lost data, drop past our <a href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">Discord</a>.
+				<div class="ve-mb-4">
+					If you suspect this is the <span class="ve-help" title="Spoiler: it always is">result of a bug</span>, or need help recovering lost data, drop past our <a href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">Discord</a>.
 				</div>
 
 				<div class="ve-flex-h-right ve-flex-v-center">
@@ -780,15 +780,15 @@ class SideMenu {
 	}
 
 	render () {
-		const renderDivider = () => this.eleMnu.appends(`<hr class="w-100 hr-2 sidemenu__row__divider">`);
+		const renderDivider = () => this.eleMnu.appends(`<hr class="ve-w-100 ve-hr-2 sidemenu__row__divider">`);
 
-		const wrpResizeW = ee`<div class="w-100 mb-2 split-v-center"><div class="sidemenu__row__label">宽</div></div>`.appendTo(this.eleMnu);
-		const iptWidth = ee`<input class="form-control" type="number" value="${this.board.width}">`.appendTo(wrpResizeW);
+		const wrpResizeW = ee`<div class="ve-w-100 ve-mb-2 ve-split-v-center"><div class="sidemenu__row__label">宽</div></div>`.appendTo(this.eleMnu);
+		const iptWidth = ee`<input class="ve-form-control" type="number" value="${this.board.width}">`.appendTo(wrpResizeW);
 		this.iptWidth = iptWidth;
-		const wrpResizeH = ee`<div class="w-100 mb-2 split-v-center"><div class="sidemenu__row__label">高</div></div>`.appendTo(this.eleMnu);
-		const iptHeight = ee`<input class="form-control" type="number" value="${this.board.height}">`.appendTo(wrpResizeH);
+		const wrpResizeH = ee`<div class="ve-w-100 ve-mb-2 ve-split-v-center"><div class="sidemenu__row__label">高</div></div>`.appendTo(this.eleMnu);
+		const iptHeight = ee`<input class="ve-form-control" type="number" value="${this.board.height}">`.appendTo(wrpResizeH);
 		this.iptHeight = iptHeight;
-		const wrpSetDim = ee`<div class="w-100 split-v-center"></div>`.appendTo(this.eleMnu);
+		const wrpSetDim = ee`<div class="ve-w-100 ve-split-v-center"></div>`.appendTo(this.eleMnu);
 		const btnSetDim = ee`<button class="ve-btn ve-btn-primary" style="width: 100%;">设置尺寸</div>`.appendTo(wrpSetDim);
 		btnSetDim.onn("click", async () => {
 			const w = Number(iptWidth.val());
@@ -802,7 +802,7 @@ class SideMenu {
 		});
 		renderDivider();
 
-		const wrpFullscreen = ee`<div class="w-100 ve-flex-vh-center-around"></div>`.appendTo(this.eleMnu);
+		const wrpFullscreen = ee`<div class="ve-w-100 ve-flex-vh-center-around"></div>`.appendTo(this.eleMnu);
 		const btnFullscreen = ee`<button class="ve-btn ve-btn-primary">切换全屏</button>`.appendTo(wrpFullscreen);
 		this.board.btnFullscreen = btnFullscreen;
 		btnFullscreen.onn("click", () => this.board.doToggleFullscreen());
@@ -822,8 +822,8 @@ class SideMenu {
 		});
 		renderDivider();
 
-		const wrpSaveLoad = ee`<div class="w-100"></div>`.appendTo(this.eleMnu);
-		const wrpSaveLoadFile = ee`<div class="w-100 mb-2 ve-flex-vh-center-around"></div>`.appendTo(wrpSaveLoad);
+		const wrpSaveLoad = ee`<div class="ve-w-100"></div>`.appendTo(this.eleMnu);
+		const wrpSaveLoadFile = ee`<div class="ve-w-100 ve-mb-2 ve-flex-vh-center-around"></div>`.appendTo(wrpSaveLoad);
 		const btnSaveFile = ee`<button class="ve-btn ve-btn-primary">保存到文件</button>`.appendTo(wrpSaveLoadFile);
 		btnSaveFile.onn("click", () => {
 			DataUtil.userDownload(`dm-screen`, this.board.getSaveableState(), {fileType: "dm-screen"});
@@ -838,7 +838,7 @@ class SideMenu {
 			this.board.doReset();
 			await this.board.pDoLoadStateFrom(jsons[0]);
 		});
-		const wrpSaveLoadUrl = ee`<div class="w-100 ve-flex-vh-center-around"></div>`.appendTo(wrpSaveLoad);
+		const wrpSaveLoadUrl = ee`<div class="ve-w-100 ve-flex-vh-center-around"></div>`.appendTo(wrpSaveLoad);
 		const btnSaveLink = ee`<button class="ve-btn ve-btn-primary">保存为URL</button>`.appendTo(wrpSaveLoadUrl);
 		btnSaveLink.onn("click", async () => {
 			const encoded = `${window.location.href.split("#")[0]}#${encodeURIComponent(JSON.stringify(this.board.getSaveableState()))}`;
@@ -847,19 +847,19 @@ class SideMenu {
 		});
 		renderDivider();
 
-		const wrpCbConfirm = ee`<div class="w-100 split-v-center"><label class="sidemenu__row__label sidemenu__row__label--cb-label"><span>关闭时保存</span></label></div>`.appendTo(this.eleMnu);
+		const wrpCbConfirm = ee`<div class="ve-w-100 ve-split-v-center"><label class="sidemenu__row__label sidemenu__row__label--cb-label"><span>关闭时保存</span></label></div>`.appendTo(this.eleMnu);
 		this.board.cbConfirmTabClose = ee`<input type="checkbox" class="sidemenu__row__label__cb">`.appendTo(wrpCbConfirm.find(`label`));
 		renderDivider();
 
-		const wrpReset = ee`<div class="w-100 split-v-center"></div>`.appendTo(this.eleMnu);
+		const wrpReset = ee`<div class="ve-w-100 ve-split-v-center"></div>`.appendTo(this.eleMnu);
 		const btnReset = ee`<button class="ve-btn ve-btn-danger" style="width: 100%;">重置帷幕</button>`.appendTo(wrpReset);
 		btnReset.onn("click", async () => {
 			const comp = BaseComponent.fromObject({isRetainWidthHeight: true});
 			const cbKeepWidthHeight = ComponentUiUtil.getCbBool(comp, "isRetainWidthHeight");
 
-			const eleDescription = ee`<div class="w-320p">
-				<label class="split-v-center mb-2"><span>保留当前宽度/高度</span> ${cbKeepWidthHeight}</label>
-				<hr class="hr-1">
+			const eleDescription = ee`<div class="ve-w-320p">
+				<label class="ve-split-v-center ve-mb-2"><span>保留当前宽度/高度</span> ${cbKeepWidthHeight}</label>
+				<hr class="ve-hr-1">
 				<div>确定要重置帷幕吗？</div>
 			</div>`;
 
@@ -881,7 +881,7 @@ class SideMenu {
 		this.board.exiledPanels.forEach(p => p.getContentWrapper().detach());
 		this.wrpHistory.childrene().forEach(ele => ele.remove());
 		if (this.board.exiledPanels.length) {
-			const wrpHistHeader = ee`<div class="w-100 mb-2 split-v-center"><span style="font-variant: small-caps;">近期删除</span></div>`.appendTo(this.wrpHistory);
+			const wrpHistHeader = ee`<div class="ve-w-100 ve-mb-2 ve-split-v-center"><span style="font-variant: ve-small-caps;">近期删除</span></div>`.appendTo(this.wrpHistory);
 			const btnHistClear = ee`<button class="ve-btn ve-btn-danger">Clear</button>`.appendTo(wrpHistHeader);
 			btnHistClear.onn("click", () => {
 				this.board.exiledPanels.forEach(p => p.destroy());
@@ -1081,7 +1081,7 @@ class Panel {
 	}
 
 	static _getEleLoading (message = "Loading") {
-		return ee`<div class="panel-content-wrapper-inner"><div class="ui-search__message loading-spinner"><i>${message}...</i></div></div>`;
+		return ee`<div class="panel-content-wrapper-inner"><div class="ve-ui-search__message loading-spinner"><i>${message}...</i></div></div>`;
 	}
 
 	static isNonExilableType (type) {
@@ -1121,7 +1121,7 @@ class Panel {
 			const fn = Renderer.hover.getFnRenderCompact(page);
 
 			const eleContentInner = ee`<div class="panel-content-wrapper-inner"></div>`;
-			const eleContentStats = ee`<table class="w-100 stats"></table>`.appendTo(eleContentInner);
+			const eleContentStats = ee`<table class="ve-w-100 ve-stats"></table>`.appendTo(eleContentInner);
 			eleContentStats.appends(fn(it));
 
 			const fnBind = Renderer.hover.getFnBindListenersCompact(page);
@@ -1345,7 +1345,7 @@ class Panel {
 		).then(it => {
 			ScaleCreature.scale(it, targetCr).then(initialRender => {
 				const eleContentInner = ee`<div class="panel-content-wrapper-inner"></div>`;
-				const eleContentStats = ee`<table class="w-100 stats"></table>`.appendTo(eleContentInner);
+				const eleContentStats = ee`<table class="ve-w-100 ve-stats"></table>`.appendTo(eleContentInner);
 				eleContentStats.appends(Renderer.monster.getCompactRenderedString(initialRender, {isShowScalers: true, isScaledCr: true}));
 
 				this._stats_bindCrScaleClickHandler(it, meta, eleContentInner, eleContentStats);
@@ -1376,7 +1376,7 @@ class Panel {
 		).then(it => {
 			ScaleSpellSummonedCreature.scale(it, summonSpellLevel).then(scaledMon => {
 				const eleContentInner = ee`<div class="panel-content-wrapper-inner"></div>`;
-				const eleContentStats = ee`<table class="w-100 stats"></table>`.appendTo(eleContentInner);
+				const eleContentStats = ee`<table class="ve-w-100 ve-stats"></table>`.appendTo(eleContentInner);
 				eleContentStats.appends(Renderer.monster.getCompactRenderedString(scaledMon, {isShowScalers: true, isScaledSpellSummon: true}));
 
 				this._stats_doUpdateSummonScaleDropdowns(scaledMon, eleContentStats);
@@ -1409,7 +1409,7 @@ class Panel {
 		).then(it => {
 			ScaleClassSummonedCreature.scale(it, summonClassLevel).then(scaledMon => {
 				const eleContentInner = ee`<div class="panel-content-wrapper-inner"></div>`;
-				const eleContentStats = ee`<table class="w-100 stats"></table>`.appendTo(eleContentInner);
+				const eleContentStats = ee`<table class="ve-w-100 ve-stats"></table>`.appendTo(eleContentInner);
 				eleContentStats.appends(Renderer.monster.getCompactRenderedString(scaledMon, {isShowScalers: true, isScaledClassSummon: true}));
 
 				this._stats_doUpdateSummonScaleDropdowns(scaledMon, eleContentStats);
@@ -1442,7 +1442,7 @@ class Panel {
 				ix: ix,
 				type: PANEL_TYP_RULES,
 				contentMeta: meta,
-				eleContent: ee`<div class="panel-content-wrapper-inner"><table class="w-100 stats">${it}</table></div>`,
+				eleContent: ee`<div class="panel-content-wrapper-inner"><table class="ve-w-100 ve-stats">${it}</table></div>`,
 				title: title || rule.name || "",
 				tabCanRename: true,
 				tabRenamed: !!title,
@@ -1600,7 +1600,7 @@ class Panel {
 		this.setEleContentTab({
 			panelType: PANEL_TYP_ERROR,
 			contentMeta: state,
-			eleContent: ee`<div class="panel-content-wrapper-inner"></div>`.appends(`<div class="w-100 h-100 ve-flex-vh-center text-danger"><div>${state.message}</div></div>`),
+			eleContent: ee`<div class="panel-content-wrapper-inner"></div>`.appends(`<div class="ve-w-100 ve-h-100 ve-flex-vh-center text-danger"><div>${state.message}</div></div>`),
 			title: title,
 			tabCanRename: true,
 		});
@@ -1974,7 +1974,7 @@ class Panel {
 		};
 
 		const doInitialRender = () => {
-			const pnl = ee`<div data-panelId="${this.id}" class="dm-screen-panel min-w-0 min-h-0" empty="true"></div>`;
+			const pnl = ee`<div data-panelId="${this.id}" class="dm-screen-panel ve-min-w-0 ve-min-h-0" empty="true"></div>`;
 			this.pnl = pnl;
 			const ctrlBar = ee`<div class="panel-control-bar"></div>`.appendTo(pnl);
 			this.pnlTitle = ee`<div class="panel-control-bar panel-control-title"></div>`.appendTo(pnl).onn("click", () => this.pnlTitle.toggleClass("panel-control-title--bumped"));
@@ -2121,7 +2121,7 @@ class Panel {
 			this.pnlWrpContent.appends(this.btnAdd);
 		} else {
 			this.btnAdd.detach(); // preserve the "add panel" controls so we can re-attach them later if the panel empties
-			this.pnlWrpContent.findAll(`.ui-search__message.loading-spinner`).forEach(ele => ele.remove()); // clean up any temp "loading" panels
+			this.pnlWrpContent.findAll(`.ve-ui-search__message.loading-spinner`).forEach(ele => ele.remove()); // clean up any temp "loading" panels
 			this.pnlWrpContent.childrene().forEach(ele => ele.addClass("dms__tab_hidden"));
 			eleContent.removeClass("dms__tab_hidden");
 			if (!this.pnlWrpContent.contains(eleContent)) this.pnlWrpContent.appends(eleContent);
@@ -2570,7 +2570,7 @@ class AddMenu {
 	async pRender () {
 		if (this._eleMenuInner) return;
 
-		this._eleMenuInner = ee`<div class="ve-flex-col w-100 h-100">`;
+		this._eleMenuInner = ee`<div class="ve-flex-col ve-w-100 ve-h-100">`;
 		const tabBar = ee`<div class="panel-addmenu-bar"></div>`.appendTo(this._eleMenuInner);
 		this.tabView = ee`<div class="panel-addmenu-view"></div>`.appendTo(this._eleMenuInner);
 
@@ -2639,10 +2639,10 @@ class AddMenuVideoTab extends AddMenuTab {
 
 	async pRender () {
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
+			const eleTab = ee`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
 
-			const wrpYT = ee`<div class="ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlYT = ee`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_youtube_url")}">`
+			const wrpYT = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
+			const iptUrlYT = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_youtube_url")}">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") btnAddYT.trigger("click");
 				})
@@ -2681,8 +2681,8 @@ class AddMenuVideoTab extends AddMenuTab {
 				iptUrlYT.val("");
 			});
 
-			const wrpTwitch = ee`<div class="ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlTwitch = ee`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_twitch_url")}">`
+			const wrpTwitch = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
+			const iptUrlTwitch = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_twitch_url")}">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") btnAddTwitch.trigger("click");
 				})
@@ -2724,8 +2724,8 @@ class AddMenuVideoTab extends AddMenuTab {
 				}
 			});
 
-			const wrpGeneric = ee`<div class="ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlGeneric = ee`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_any_url")}">`
+			const wrpGeneric = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
+			const iptUrlGeneric = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_any_url")}">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") iptUrlGeneric.trigger("click");
 				})
@@ -2757,10 +2757,10 @@ class AddMenuImageTab extends AddMenuTab {
 
 	async pRender () {
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
+			const eleTab = ee`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
 
 			// region Imgur
-			const wrpImgur = ee`<div class="ui-modal__row"></div>`.appendTo(eleTab);
+			const wrpImgur = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
 			ee`<span>Imgur (匿名上传) <i class="ve-muted">(允许上传<a href="https://help.imgur.com/hc/en-us/articles/26511665959579-What-files-can-I-upload-Is-there-a-size-limit" target="_blank" rel="noopener noreferrer">imgur支持的格式</a>)</i></span>`.appendTo(wrpImgur);
 			const iptFile = ee`<input type="file" class="hidden">`
 				.onn("change", (evt) => {
@@ -2818,8 +2818,8 @@ class AddMenuImageTab extends AddMenuTab {
 			// endregion
 
 			// region URL
-			const wrpUtl = ee`<div class="ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrl = ee`<input class="form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_image_url")}">`
+			const wrpUtl = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
+			const iptUrl = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_image_url")}">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") btnAddUrl.trigger("click");
 				})
@@ -2839,13 +2839,13 @@ class AddMenuImageTab extends AddMenuTab {
 			});
 			// endregion
 
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
 			// region Adventure dynamic viewer
 			const btnSelectAdventure = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
 				.onn("click", () => DmMapper.pHandleMenuButtonClick(this.menu));
 
-			ee`<div class="ui-modal__row">
+			ee`<div class="ve-ui-modal__row">
 				<div>冒险/书籍动态地图查看器</div>
 				${btnSelectAdventure}
 			</div>`.appendTo(eleTab);
@@ -2864,15 +2864,15 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 	async pRender () {
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ui-search__wrp-output underline-tabs ve-overflow-y-auto pr-1" id="${this.tabId}"></div>`;
+			const eleTab = ee`<div class="ve-ui-search__wrp-output underline-tabs ve-overflow-y-auto ve-pr-1" id="${this.tabId}"></div>`;
 
-			const wrpRoller = ee`<div class="ui-modal__row"><span>掷骰器<i class="ve-muted">(将现有的掷骰器固定在面板上)</i></span></div>`.appendTo(eleTab);
+			const wrpRoller = ee`<div class="ve-ui-modal__row"><span>掷骰器<i class="ve-muted">(将现有的掷骰器固定在面板上)</i></span></div>`.appendTo(eleTab);
 			const btnRoller = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">固定</button>`.appendTo(wrpRoller);
 			btnRoller.onn("click", () => {
 				Renderer.dice.bindDmScreenPanel(this.menu.pnl);
 				this.menu.doClose();
 			});
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
 			const btnTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
 				.onn("click", async () => {
@@ -2881,7 +2881,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 					this.menu.doClose();
 				});
 
-			ee`<div class="ui-modal__row">
+			ee`<div class="ve-ui-modal__row">
 			<span>${I18nUtil.get("page.dmscreen.initiative_tracker")}</span>
 			${btnTracker}
 			</div>`.appendTo(eleTab);
@@ -2893,7 +2893,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 					this.menu.doClose();
 				});
 
-			ee`<div class="ui-modal__row">
+			ee`<div class="ve-ui-modal__row">
 			<span>先攻追踪器生物视图</span>
 			${btnTrackerCreatureViewer}
 			</div>`.appendTo(eleTab);
@@ -2905,7 +2905,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 					this.menu.doClose();
 				});
 
-			ee`<div class="ui-modal__row">
+			ee`<div class="ve-ui-modal__row">
 			<span>先攻追踪器玩家视图 (标准)</span>
 			${btnPlayerTrackerV1}
 			</div>`.appendTo(eleTab);
@@ -2917,12 +2917,12 @@ class AddMenuSpecialTab extends AddMenuTab {
 					this.menu.doClose();
 				});
 
-			ee`<div class="ui-modal__row">
+			ee`<div class="ve-ui-modal__row">
 			<span>先攻追踪器玩家视图 (手动/旧版)</span>
 			${btnPlayerTrackerV0}
 			</div>`.appendTo(eleTab);
 
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
 			const btnSublist = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
 				.onn("click", async evt => {
@@ -2930,28 +2930,28 @@ class AddMenuSpecialTab extends AddMenuTab {
 					this.menu.doClose();
 				});
 
-			ee`<div class="ui-modal__row">
+			ee`<div class="ve-ui-modal__row">
 			<span title="Including, but not limited to, a Bestiary Encounter.">固定列表项</span>
 			${btnSublist}
 			</div>`.appendTo(eleTab);
 
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
 			const btnSwitchToEmbedTag = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">内嵌</button>`
 				.onn("click", async () => {
 					await this.menu.pSetActiveTab(this.menu.getTab({label: "内嵌"}));
 				});
 
-			const wrpText = ee`<div class="ui-modal__row"><span>基础文本框 <i class="ve-muted">(若要使用富文本，请在${btnSwitchToEmbedTag}页中插入一个Google Doc或类似的编辑器)</i></span></div>`.appendTo(eleTab);
+			const wrpText = ee`<div class="ve-ui-modal__row"><span>基础文本框 <i class="ve-muted">(若要使用富文本，请在${btnSwitchToEmbedTag}页中插入一个Google Doc或类似的编辑器)</i></span></div>`.appendTo(eleTab);
 			const btnText = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpText);
 			btnText.onn("click", async () => {
 				const pcm = new PanelContentManager_NoteBox({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
-			const wrpUnitConverter = ee`<div class="ui-modal__row"><span>单位换算器</span></div>`.appendTo(eleTab);
+			const wrpUnitConverter = ee`<div class="ve-ui-modal__row"><span>单位换算器</span></div>`.appendTo(eleTab);
 			const btnUnitConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpUnitConverter);
 			btnUnitConverter.onn("click", async () => {
 				const pcm = new PanelContentManager_UnitConverter({board: this._board, panel: this.menu.pnl});
@@ -2959,7 +2959,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 				this.menu.doClose();
 			});
 
-			const wrpMoneyConverter = ee`<div class="ui-modal__row"><span>汇率换算器</span></div>`.appendTo(eleTab);
+			const wrpMoneyConverter = ee`<div class="ve-ui-modal__row"><span>汇率换算器</span></div>`.appendTo(eleTab);
 			const btnMoneyConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpMoneyConverter);
 			btnMoneyConverter.onn("click", async () => {
 				const pcm = new PanelContentManager_MoneyConverter({board: this._board, panel: this.menu.pnl});
@@ -2967,7 +2967,7 @@ class AddMenuSpecialTab extends AddMenuTab {
 				this.menu.doClose();
 			});
 
-			const wrpCounter = ee`<div class="ui-modal__row"><span>计数器</span></div>`.appendTo(eleTab);
+			const wrpCounter = ee`<div class="ve-ui-modal__row"><span>计数器</span></div>`.appendTo(eleTab);
 			const btnCounter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpCounter);
 			btnCounter.onn("click", async () => {
 				const pcm = new PanelContentManager_Counter({board: this._board, panel: this.menu.pnl});
@@ -2975,9 +2975,9 @@ class AddMenuSpecialTab extends AddMenuTab {
 				this.menu.doClose();
 			});
 
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
-			const wrpTimeTracker = ee`<div class="ui-modal__row"><span>游戏内时钟/日历</span></div>`.appendTo(eleTab);
+			const wrpTimeTracker = ee`<div class="ve-ui-modal__row"><span>游戏内时钟/日历</span></div>`.appendTo(eleTab);
 			const btnTimeTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpTimeTracker);
 			btnTimeTracker.onn("click", async () => {
 				const pcm = new PanelContentManager_TimeTracker({board: this._board, panel: this.menu.pnl});
@@ -2985,9 +2985,9 @@ class AddMenuSpecialTab extends AddMenuTab {
 				this.menu.doClose();
 			});
 
-			ee`<hr class="hr-2">`.appendTo(eleTab);
+			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
 
-			const wrpBlank = ee`<div class="ui-modal__row"><span class="help" title="不喜欢有加号按钮的可以用这个">空白占位框</span></div>`.appendTo(eleTab);
+			const wrpBlank = ee`<div class="ve-ui-modal__row"><span class="ve-help" title="不喜欢有加号按钮的可以用这个">空白占位框</span></div>`.appendTo(eleTab);
 			ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
 				.onn("click", () => {
 					this.menu.pnl.doPopulate_Blank();
@@ -3068,20 +3068,20 @@ class AddMenuSearchTab extends AddMenuTab {
 	_getRow (r) {
 		switch (this.subType) {
 			case "content": return ee`
-				<div class="ui-search__row" tabindex="0">
+				<div class="ve-ui-search__row" tabindex="0">
 					<span><span class="ve-muted">${r.doc.cf}</span> ${r.doc.cn}</span>
 					<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 				</div>
 			`;
 			case "rule": return ee`
-				<div class="ui-search__row" tabindex="0">
+				<div class="ve-ui-search__row" tabindex="0">
 					<span>${r.doc.h}</span>
 					<span><i>${r.doc.n}, ${r.doc.s}</i></span>
 				</div>
 			`;
 			case "adventure":
 			case "book": return ee`
-				<div class="ui-search__row" tabindex="0">
+				<div class="ve-ui-search__row" tabindex="0">
 					<span>${r.doc.c}</span>
 					<span><i>${r.doc.n}${r.doc.o ? `, ${r.doc.o}` : ""}</i></span>
 				</div>
@@ -3216,9 +3216,9 @@ class AddMenuSearchTab extends AddMenuTab {
 				if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 					const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
 					if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-						this.wrpResults.appends(`<div class="ui-search__row ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
+						this.wrpResults.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
 					} else {
-						this.wrpResults.appends(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+						this.wrpResults.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 					}
 				}
 			} else {
@@ -3228,11 +3228,11 @@ class AddMenuSearchTab extends AddMenuTab {
 		};
 
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ui-search__wrp-output" id="${this.tabId}"></div>`;
-			const wrpCtrls = ee`<div class="ui-search__wrp-controls ui-search__wrp-controls--in-tabs"></div>`.appendTo(eleTab);
+			const eleTab = ee`<div class="ve-ui-search__wrp-output" id="${this.tabId}"></div>`;
+			const wrpCtrls = ee`<div class="ve-ui-search__wrp-controls ve-ui-search__wrp-controls--in-tabs"></div>`.appendTo(eleTab);
 
 			const selCat = ee`
-				<select class="form-control ui-search__sel-category">
+				<select class="ve-form-control ve-ui-search__sel-category">
 					<option value="ALL">${this._getAllTitle()}</option>
 				</select>
 			`.appendTo(wrpCtrls).toggleVe(Object.keys(this.indexes).length !== 1);
@@ -3244,8 +3244,8 @@ class AddMenuSearchTab extends AddMenuTab {
 				await this._pDoSearch();
 			});
 
-			const iptSearch = ee`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="搜索...">`.appendTo(wrpCtrls);
-			const wrpResults = ee`<div class="ui-search__wrp-results"></div>`.appendTo(eleTab);
+			const iptSearch = ee`<input class="ve-ui-search__ipt-search search ve-form-control" autocomplete="off" placeholder="搜索...">`.appendTo(wrpCtrls);
+			const wrpResults = ee`<div class="ve-ui-search__wrp-results"></div>`.appendTo(eleTab);
 
 			SearchWidget.bindAutoSearch(iptSearch, {
 				flags,
@@ -3407,19 +3407,19 @@ class AdventureOrBookView {
 		this._titlePrev = ee`<div class="dm-book__controls-title ve-overflow-ellipsis ve-text-right"></div>`;
 		this._titleNext = ee`<div class="dm-book__controls-title ve-overflow-ellipsis"></div>`;
 
-		const btnPrev = ee`<button class="ve-btn ve-btn-xs ve-btn-default mr-2" title="Previous Chapter"><span class="glyphicon glyphicon-chevron-left"></span></button>`
+		const btnPrev = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-mr-2" title="Previous Chapter"><span class="glyphicon glyphicon-chevron-left"></span></button>`
 			.onn("click", () => this._handleButtonClick(-1));
 		const btnNext = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Next Chapter"><span class="glyphicon glyphicon-chevron-right"></span></button>`
 			.onn("click", () => this._handleButtonClick(1));
 
-		this._wrpContent = ee`<div class="h-100"></div>`;
-		this._wrpContentOuter = ee`<div class="h-100 dm-book__wrp-content">
-			<table class="w-100 stats stats--book stats--book-hover"><tr><td colspan="6" class="pb-3">${this._wrpContent}</td></tr></table>
+		this._wrpContent = ee`<div class="ve-h-100"></div>`;
+		this._wrpContentOuter = ee`<div class="ve-h-100 dm-book__wrp-content">
+			<table class="ve-w-100 ve-stats ve-stats--book ve-stats--book-hover"><tr><td colspan="6" class="ve-pb-3">${this._wrpContent}</td></tr></table>
 		</div>`;
 
-		const wrp = ee`<div class="ve-flex-col h-100">
+		const wrp = ee`<div class="ve-flex-col ve-h-100">
 		${this._wrpContentOuter}
-		<div class="ve-flex no-shrink dm-book__wrp-controls">${this._titlePrev}${btnPrev}${btnNext}${this._titleNext}</div>
+		<div class="ve-flex ve-no-shrink dm-book__wrp-controls">${this._titlePrev}${btnPrev}${btnNext}${this._titleNext}</div>
 		</div>`;
 
 		// assumes the data has already been loaded/cached

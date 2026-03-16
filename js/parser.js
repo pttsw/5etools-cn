@@ -794,14 +794,14 @@ Parser.sourceJsonToDate = function (source) {
 
 Parser.sourceJsonToSourceClassname = function (source, {sourceJson = null} = {}) {
 	sourceJson ||= Parser.sourceJsonToJson(source);
-	return `source__${sourceJson.replace(/[^A-Za-z0-9-_]/g, "_")}`;
+	return `ve-source__${sourceJson.replace(/[^A-Za-z0-9-_]/g, "_")}`;
 };
 
 Parser.sourceJsonToMarkerHtml = function (source, {isList = false, isStatsName = false, isAddBrackets = false, additionalStyles = ""} = {}) {
 	source = Parser._getSourceStringFromSource(source);
 	// TODO(Future) consider enabling this
-	// if (SourceUtil.isPartneredSourceWotc(source)) return `<span class="help-subtle ve-source-marker ${isList ? `ve-source-marker--list` : ""} ${isStatsName ? `ve-source-marker--stats-name` : ""} ve-source-marker--partnered ${additionalStyles}" title="D&amp;D Partnered Source">${isList ? "" : "["}✦${isList ? "" : "]"}</span>`;
-	if (SourceUtil.isLegacySourceWotc(source)) return `<span class="help-subtle ve-source-marker ${isList ? `ve-source-marker--list` : ""} ${isStatsName ? `ve-source-marker--stats-name` : ""} ve-source-marker--legacy ${additionalStyles}" title="过期资源">${isAddBrackets ? "[" : ""}ʟ${isAddBrackets ? "]" : ""}</span>`;
+	// if (SourceUtil.isPartneredSourceWotc(source)) return `<span class="ve-help-subtle ve-source-marker ${isList ? `ve-source-marker--list` : ""} ${isStatsName ? `ve-source-marker--stats-name` : ""} ve-source-marker--partnered ${additionalStyles}" title="D&amp;D Partnered Source">${isList ? "" : "["}✦${isList ? "" : "]"}</span>`;
+	if (SourceUtil.isLegacySourceWotc(source)) return `<span class="ve-help-subtle ve-source-marker ${isList ? `ve-source-marker--list` : ""} ${isStatsName ? `ve-source-marker--stats-name` : ""} ve-source-marker--legacy ${additionalStyles}" title="过期资源">${isAddBrackets ? "[" : ""}ʟ${isAddBrackets ? "]" : ""}</span>`;
 	return "";
 };
 
@@ -869,7 +869,7 @@ Parser._moneyToFull = function (it, prop, propMult, opts = {isShortForm: false, 
 	if (it[prop] == null && it[propMult] == null) return "";
 	if (it[prop] != null) {
 		const {coin, mult} = Parser.getCurrencyAndMultiplier(it[prop], it.currencyConversion);
-		return `${(it[prop] * mult).toLocaleStringVe()}${opts.isSmallUnits ? `<span class="small ml-1">${coin}</span>` : ` ${coin}`}`;
+		return `${(it[prop] * mult).toLocaleStringVe()}${opts.isSmallUnits ? `<span class="small ve-ml-1">${coin}</span>` : ` ${coin}`}`;
 	} else if (it[propMult] != null) return opts.isShortForm ? `×${it[propMult]}` : `基础加值 ×${it[propMult]}`;
 	return "";
 };
@@ -1555,7 +1555,7 @@ Parser.spRangeTypeToIcon = function (range) {
 
 Parser.spRangeToShortHtml = function (range) {
 	switch (range.type) {
-		case Parser.RNG_SPECIAL: return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} help-subtle" title="Special"></span>`;
+		case Parser.RNG_SPECIAL: return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} ve-help-subtle" title="Special"></span>`;
 		case Parser.RNG_POINT: return Parser.spRangeToShortHtml._renderPoint(range);
 		case Parser.RNG_LINE:
 		case Parser.RNG_CUBE:
@@ -1576,7 +1576,7 @@ Parser.spRangeToShortHtml._renderPoint = function (range) {
 		case Parser.RNG_UNLIMITED:
 		case Parser.RNG_UNLIMITED_SAME_PLANE:
 		case Parser.RNG_SPECIAL:
-		case Parser.RNG_TOUCH: return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(dist.type)} help-subtle" title="${Parser.spRangeTypeToFull(dist.type)}"></span>`;
+		case Parser.RNG_TOUCH: return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(dist.type)} ve-help-subtle" title="${Parser.spRangeTypeToFull(dist.type)}"></span>`;
 		case Parser.UNT_INCHES:
 		case Parser.UNT_FEET:
 		case Parser.UNT_YARDS:
@@ -1587,10 +1587,10 @@ Parser.spRangeToShortHtml._renderPoint = function (range) {
 };
 Parser.spRangeToShortHtml._renderArea = function (range) {
 	const size = range.distance;
-	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(Parser.RNG_SELF)} help-subtle" title="Self"></span> ${size.amount}<span class="ve-small">-${Parser.getSingletonUnit(size.type, true)}</span> ${Parser.spRangeToShortHtml._getAreaStyleString(range)}`;
+	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(Parser.RNG_SELF)} ve-help-subtle" title="Self"></span> ${size.amount}<span class="ve-small">-${Parser.getSingletonUnit(size.type, true)}</span> ${Parser.spRangeToShortHtml._getAreaStyleString(range)}`;
 };
 Parser.spRangeToShortHtml._getAreaStyleString = function (range) {
-	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} help-subtle" title="${Parser.spRangeTypeToFull(range.type)}"></span>`;
+	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} ve-help-subtle" title="${Parser.spRangeTypeToFull(range.type)}"></span>`;
 };
 
 Parser.spRangeToFull = function (range, {styleHint, isDisplaySelfArea = false} = {}) {
@@ -1796,7 +1796,7 @@ Parser._spSubclassItem = function ({fromSubclass, isTextOnly = false, isIncludeS
 	const ptClass = `<span title="Source: ${Parser.sourceJsonToFull(c.source)}${c.definedInSource ? ` From a class spell list defined in: ${Parser.sourceJsonToFull(c.definedInSource)}` : ""}">${Renderer.get().render(`{@class ${c.name}|${c.source}}`)}</span>`;
 	const ptSource = isIncludeSource ? ` (${Parser.sourceJsonToAbv(sc.source)})` : "";
 
-	return `<span class="italic" title="Source: ${Parser.sourceJsonToFull(fromSubclass.subclass.source)}">${Renderer.get().render(`{@class ${c.name}|${c.source}|${text}|${sc.shortName}|${sc.source}}`)}</span>${isIncludeSource ? ptSource : ""} ${ptClass}`;
+	return `<span class="ve-italic" title="Source: ${Parser.sourceJsonToFull(fromSubclass.subclass.source)}">${Renderer.get().render(`{@class ${c.name}|${c.source}|${text}|${sc.shortName}|${sc.source}}`)}</span>${isIncludeSource ? ptSource : ""} ${ptClass}`;
 };
 
 Parser.SPELL_ATTACK_TYPE_TO_FULL = {};
@@ -2527,8 +2527,8 @@ Parser.weightToFull = function (lbs, isSmallUnit) {
 	const tons = Math.floor(lbs / 2000);
 	lbs = lbs - (2000 * tons);
 	return [
-		tons ? `${tons}${isSmallUnit ? `<span class="ve-small ml-1">` : " "}吨${tons === 1 ? "" : "s"}${isSmallUnit ? `</span>` : ""}` : null,
-		lbs ? `${lbs}${isSmallUnit ? `<span class="ve-small ml-1">` : " "}磅${isSmallUnit ? `</span>` : ""}` : null,
+		tons ? `${tons}${isSmallUnit ? `<span class="ve-small ve-ml-1">` : " "}吨${tons === 1 ? "" : "s"}${isSmallUnit ? `</span>` : ""}` : null,
+		lbs ? `${lbs}${isSmallUnit ? `<span class="ve-small ve-ml-1">` : " "}磅${isSmallUnit ? `</span>` : ""}` : null,
 	].filter(Boolean).join(", ");
 };
 
@@ -3466,12 +3466,6 @@ Parser.SRC_ScoEE = "ScoEE";
 Parser.SRC_HBTD = "HBTD";
 Parser.SRC_BQGT = "BQGT";
 
-Parser.SRC_AL_PREFIX = "AL";
-
-Parser.SRC_ALCoS = `${Parser.SRC_AL_PREFIX}CurseOfStrahd`;
-Parser.SRC_ALEE = `${Parser.SRC_AL_PREFIX}ElementalEvil`;
-Parser.SRC_ALRoD = `${Parser.SRC_AL_PREFIX}RageOfDemons`;
-
 Parser.SRC_PS_PREFIX = "PS";
 
 Parser.SRC_PSA = `${Parser.SRC_PS_PREFIX}A`;
@@ -3672,9 +3666,6 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_UtHftLH] = "小独与追寻失落之角";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ScoEE] = "元素邪恶后裔";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HBTD] = "拒止亡者";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BQGT] = "Borderlands Quest: Goblin Trouble";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALCoS] = `${Parser.AL_PREFIX}施特拉德的诅咒`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALEE] = `${Parser.AL_PREFIX}邪恶元素`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALRoD] = `${Parser.AL_PREFIX}恶魔狂怒`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PSA] = `${Parser.PS_PREFIX}阿芒凯`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PSI] = `${Parser.PS_PREFIX}依尼翠`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_PSK] = `${Parser.PS_PREFIX}卡拉德许`;
@@ -3854,9 +3845,6 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_UtHftLH] = "UHftLH";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ScoEE] = "ScoEE";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HBTD] = "HBTD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_BQGT] = "BQGT";
-Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALCoS] = "ALCoS";
-Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALEE] = "ALEE";
-Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALRoD] = "ALRoD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_PSA] = "PSA";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_PSI] = "PSI";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_PSK] = "PSK";
@@ -4035,9 +4023,6 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_UtHftLH] = "2024-09-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ScoEE] = "2024-10-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HBTD] = "2025-02-07";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_BQGT] = "2025-06-04";
-Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALCoS] = "2016-03-15";
-Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALEE] = "2015-04-07";
-Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALRoD] = "2015-09-15";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_PSA] = "2017-07-06";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_PSI] = "2016-07-12";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_PSK] = "2017-02-16";

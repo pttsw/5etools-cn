@@ -39,8 +39,6 @@ class _PageGeneratorListBackgrounds extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "5", sortIdent: "ability", text: "属性值"}),
 		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "skills", text: "技能"}),
 	];
-
-	_isPrinterView = true;
 }
 
 class _PageGeneratorListBestiary extends PageGeneratorListBase {
@@ -102,7 +100,6 @@ class _PageGeneratorListBestiary extends PageGeneratorListBase {
 		};
 	}
 
-	_isPrinterView = true;
 	_isTableView = true;
 }
 
@@ -239,8 +236,6 @@ class _PageGeneratorListFeats extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "ability", text: "属性值"}),
 		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "prerequisite", text: "先决条件"}),
 	];
-
-	_isPrinterView = true;
 }
 
 class _PageGeneratorListItems extends PageGeneratorListBase {
@@ -260,8 +255,8 @@ class _PageGeneratorListItems extends PageGeneratorListBase {
 		"utils-tableview.js",
 	];
 
-	_styleListContainerAdditional = "ve-flex-6 itm__wrp-lists";
-	_styleContentWrapperAdditional = "ve-flex-4 itm__wrp-stats";
+	_styleListContainerAdditional = "ve-flex-6 ve-itm__wrp-lists";
+	_styleContentWrapperAdditional = "ve-flex-4 ve-itm__wrp-stats";
 
 	_btnsSublist = [
 		HtmlGeneratorListButtons.getBtn({width: "6", sortIdent: "name", text: "名称"}),
@@ -292,7 +287,6 @@ class _PageGeneratorListItems extends PageGeneratorListBase {
 		};
 	}
 
-	_isPrinterView = true;
 	_isTableView = true;
 }
 
@@ -381,8 +375,6 @@ class _PageGeneratorListOptionalFeatures extends PageGeneratorListBase {
 
 	_isModule = true;
 
-	_isPrinterView = true;
-
 	_stylesheets = [
 		"optionalfeatures",
 	];
@@ -429,7 +421,6 @@ class _PageGeneratorListPsionics extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "3", sortIdent: "order", text: "Order"}),
 	];
 
-	_isPrinterView = true;
 	_isTableView = true;
 }
 
@@ -453,8 +444,6 @@ class _PageGeneratorListRaces extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "5", sortIdent: "ability", text: "属性值"}),
 		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "size", text: "体型"}),
 	];
-
-	_isPrinterView = true;
 }
 
 class _PageGeneratorListRecipes extends PageGeneratorListBase {
@@ -539,7 +528,6 @@ class _PageGeneratorListSpells extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "3-2", sortIdent: "range", text: "范围"}),
 	];
 
-	_isPrinterView = true;
 	_isTableView = true;
 
 	_registerPartials () {
@@ -568,7 +556,8 @@ class _PageGeneratorListTables extends PageGeneratorListBase {
 	_styleContentWrapperAdditional = "ve-flex-6";
 
 	_btnsList = [
-		HtmlGeneratorListButtons.getBtn({width: "10", sortIdent: "sortName", text: "名称"}),
+		HtmlGeneratorListButtons.getBtnPreviewToggle({width: "0-5"}),
+		HtmlGeneratorListButtons.getBtn({width: "9-5", sortIdent: "sortName", text: "名称"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
 
@@ -641,7 +630,6 @@ class _PageGeneratorListBastions extends PageGeneratorListBase {
 		HtmlGeneratorListButtons.getBtn({width: "5", sortIdent: "prerequisite", text: "先决条件"}),
 	];
 
-	_isPrinterView = true;
 	_isTableView = true;
 }
 

@@ -20,7 +20,7 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div id="croutput">等待计算结束...</div>
-				<button class="ve-btn ve-btn-sm ve-btn-danger crc__reset mt-3" id="crcalc_reset" type="button">重置</button>
+				<button class="ve-btn ve-btn-sm ve-btn-danger crc__reset ve-mt-3" id="crcalc_reset" type="button">重置</button>
 				<h4>说明</h4>
 				<ol>
 					<li>输入该生物的预期CR。</li>
@@ -34,14 +34,14 @@
 				</p>
 				<hr>
 				<div class="crc__row">
-					<label for="expectedcr" class="ui-tip__parent" style="font-size: 1em;">
+					<label for="expectedcr" class="ve-ui-tip__parent" style="font-size: 1em;">
 						预期 CR:
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							要进行CR计算，首先你必须决定这个怪物最终的CR是多少。
 						</span>
 					</label>
 					<span class="ve-flex-v-center">
-						<input type="text" id="expectedcr" value="0" size="2" class="form-control form-control--minimal input-xs">
+						<input type="text" id="expectedcr" value="0" size="2" class="ve-form-control form-control--minimal ve-input-xs">
 					</span>
 				</div>
 			</div>
@@ -67,23 +67,23 @@
 				<h4>防御属性</h4>
 
 				<div class="crc__row">
-					<label for="hp" class="ui-tip__parent">
+					<label for="hp" class="ve-ui-tip__parent">
 						生命值:
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							生物的生命值会决定其根据AC调整前的防御性CR。
 						</span>
 					</label>
-					<input type="number" id="hp" placeholder="Average HP" value="1" min="0" max="850" class="form-control form-control--minimal input-xs">
+					<input type="number" id="hp" placeholder="Average HP" value="1" min="0" max="850" class="ve-form-control form-control--minimal ve-input-xs">
 				</div>
 
 				<div class="crc__row">
-					<label for="ac" class="ui-tip__parent">
+					<label for="ac" class="ve-ui-tip__parent">
 						护甲等级:
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							生物的AC会调整其防御性CR。
 						</span>
 					</label>
-					<input type="number" id="ac" placeholder="AC" value="13" min="1" max="40" class="form-control form-control--minimal input-xs">
+					<input type="number" id="ac" placeholder="AC" value="13" min="1" max="40" class="ve-form-control form-control--minimal ve-input-xs">
 				</div>
 			</div>
 
@@ -91,29 +91,29 @@
 				<h4>攻击属性</h4>
 
 				<div class="crc__row">
-					<label for="dpr" class="ui-tip__parent">
+					<label for="dpr" class="ve-ui-tip__parent">
 						每轮平均伤害(DPR):
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							生物的每轮平均伤害(DPR)决定了它的攻击性CR，且其攻击性CR会再根据其攻击加值或豁免DC进行调整。DPR是以它在三轮内最大伤害输>出的平均值决定（掷骰取平均值，忽视暴击和命中准确）。区域效应将被视为它命中了两个生物，且目标被视作在任何豁免检定中失败。
 						</span>
 					</label>
-					<input type="number" id="dpr" placeholder="Average DPR" value="1" min="0" max="320" class="form-control form-control--minimal input-xs">
+					<input type="number" id="dpr" placeholder="Average DPR" value="1" min="0" max="320" class="ve-form-control form-control--minimal ve-input-xs">
 				</div>
 
 				<div class="crc__row">
-					<label for="attackbonus" class="ui-tip__parent">
+					<label for="attackbonus" class="ve-ui-tip__parent">
 						攻击加值/豁免DC:
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							生物的攻击加值或豁免DC会调整其攻击性CR。
 						</span>
 					</label>
-					<input type="number" id="attackbonus" placeholder="Attack Bonus" value="3" min="-5" max="19" class="form-control form-control--minimal input-xs">
+					<input type="number" id="attackbonus" placeholder="Attack Bonus" value="3" min="-5" max="19" class="ve-form-control form-control--minimal ve-input-xs">
 				</div>
 
 				<div class="crc__row">
-					<label for="saveinstead" class="ui-tip__parent">
+					<label for="saveinstead" class="ve-ui-tip__parent">
 						使用豁免？
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							若一个生物的伤害输出比起攻击更依赖涉及豁免的能力，则它的豁免DC将被用于调整它的攻击性CR，而非使用它的攻击加值。
 						</span>
 					</label>
@@ -126,14 +126,14 @@
 			<div class="col-sm-6">
 
 				<div class="crc__row">
-					<label for="size" class="ui-tip__parent">
+					<label for="size" class="ve-ui-tip__parent">
 						体型:
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							生物的体型将决定它每颗生命骰的大小。
 						</span>
 					</label>
 					<span class="ve-flex-v-center">
-						<select id="size" class="form-control input-xs">
+						<select id="size" class="ve-form-control ve-input-xs">
 							<option value="Tiny">微型</option>
 							<option value="Small">小型</option>
 							<option value="Medium" selected>中型</option>
@@ -145,26 +145,26 @@
 				</div>
 
 				<div class="crc__row">
-					<label for="hd" class="ui-tip__parent">
+					<label for="hd" class="ve-ui-tip__parent">
 						生命骰：
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							玩家角色不同，NPC所得到的生命骰数量完全是任意决定的。随你喜好调整这个数量。
 						</span>
 					</label>
 					<div class="ve-flex-v-center">
-						<input type="number" id="hd" value="1" min="1" max="999" class="form-control form-control--minimal input-xs">
+						<input type="number" id="hd" value="1" min="1" max="999" class="ve-form-control form-control--minimal ve-input-xs">
 						<span id="hdval">d8</span>
 					</div>
 				</div>
 
 				<div class="crc__row">
-					<label for="con" class="ui-tip__parent">
+					<label for="con" class="ve-ui-tip__parent">
 						体质值:
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							生物的HP会因为它每一颗拥有的生命骰得到其体质调整值的加值。
 						</span>
 					</label>
-					<input type="number" id="con" value="10" min="1" max="30" class="form-control form-control--minimal input-xs">
+					<input type="number" id="con" value="10" min="1" max="30" class="ve-form-control form-control--minimal ve-input-xs">
 				</div>
 
 			</div>
@@ -172,24 +172,24 @@
 			<div class="col-sm-6">
 
 				<div class="crc__row">
-					<label for="vulnerabilities" class="ui-tip__parent">
+					<label for="vulnerabilities" class="ve-ui-tip__parent">
 						易伤：
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							若生物具有某个常见伤害类型的易伤（特别是钝击、穿刺、挥砍伤害），则它的有效生命值将被视为原本的一半。
 						</span>
 					</label>
-					<input type="checkbox" id="vulnerabilities" class="form-control form-control--minimal input-xs">
+					<input type="checkbox" id="vulnerabilities" class="ve-form-control form-control--minimal ve-input-xs">
 				</div>
 
 				<div class="crc__row">
-					<label for="resistances" class="ui-tip__parent">
+					<label for="resistances" class="ve-ui-tip__parent">
 						抗性/免疫：
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							怪物的HP会根据它对于常见伤害类型（其中最主要为非魔法的钝击、穿刺、和挥砍伤害）而乘上倍率。
 						</span>
 					</label>
 					<span class="ve-flex-v-center">
-						<select id="resistances" class="form-control input-xs">
+						<select id="resistances" class="ve-form-control ve-input-xs">
 							<option value="0" selected>无</option>
 							<option value="res">抗性</option>
 							<option value="imm">免疫</option>
@@ -198,9 +198,9 @@
 				</div>
 
 				<div class="crc__row">
-					<label for="flying" class="ui-tip__parent">
+					<label for="flying" class="ve-ui-tip__parent">
 						飞行且可以在远距离造成伤害(限定CR 0~9)：
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							若怪物可以飞行且能在远距离造成伤害，则它的有效AC将增加2点。但这个加成只会发生在其预期挑战等级为10或更低。
 						</span>
 					</label>
@@ -208,14 +208,14 @@
 				</div>
 
 				<div class="crc__row">
-					<label for="saveprofs" class="ui-tip__parent">
+					<label for="saveprofs" class="ve-ui-tip__parent">
 						豁免熟练：
-						<span class="explanation ui-tip__child">
+						<span class="explanation ve-ui-tip__child">
 							若生物具有3或4个豁免熟练项，则它的有效AC增加2点。若有5或6个豁免熟练项，则有效AC增加4点。
 						</span>
 					</label>
 					<span class="ve-flex-v-center">
-						<select id="saveprofs" class="form-control input-xs">
+						<select id="saveprofs" class="ve-form-control ve-input-xs">
 							<option value="0" selected>0-2</option>
 							<option value="2">3-4</option>
 							<option value="4">5-6</option>

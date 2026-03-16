@@ -110,9 +110,9 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 			},
 		);
 
-		const stgDefault = ee`<div class="ve-flex-col w-100">
-			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.character_level")}</div>
+		const stgDefault = ee`<div class="ve-flex-col ve-w-100">
+			<label class="ve-split-v-center ve-mb-2">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.character_level")}</div>
 				${selCharLevel}
 			</label>
 		</div>`;
@@ -128,16 +128,16 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 			},
 		);
 
-		const stgExactLevel = ee`<div class="ve-flex-col w-100">
-			<div class="ve-flex-col mb-2">
-				<div class="mb-2">${I18nUtil.get("page.lootgen.character_level")}</div>
+		const stgExactLevel = ee`<div class="ve-flex-col ve-w-100">
+			<div class="ve-flex-col ve-mb-2">
+				<div class="ve-mb-2">${I18nUtil.get("page.lootgen.character_level")}</div>
 				${sliderLevel}
 			</div>
 		</div>`;
 		// endregion
 
 		// region Buttons
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._pl_pDoHandleClickRollLoot());
 
 		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
@@ -151,28 +151,28 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 		this._addHookBase("pl_isExactLevel", hkIsExactLevel);
 		hkIsExactLevel();
 
-		ee`<div class="ve-flex-col py-2 px-3">
+		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
 			<p>
 				基于${LootGenRender.er(`{@book 珊娜萨的万事指南|XGE|2|奖励魔法物品}`)}第135-136页的表格和规则为小队生成一组魔法物品。
 			</p>
 			<p><i>如果选择了&quot;精确等级&quot;选项，输出中的物品数量将依据游戏阶段完成的比例来计算。</i></p>
 
-			<hr class="hr-3">
+			<hr class="ve-hr-3">
 
 			${stgDefault}
 			${stgExactLevel}
 
-			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">包含之前阶段的物品</div>
+			<label class="ve-split-v-center ve-mb-2">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">包含之前阶段的物品</div>
 				${cbIsCumulative}
 			</label>
 
-			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">精确等级</div>
+			<label class="ve-split-v-center ve-mb-3">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">精确等级</div>
 				${cbIsExactLevel}
 			</label>
 
-			<div class="ve-flex-v-center mb-2">
+			<div class="ve-flex-v-center ve-mb-2">
 				${btnRoll}
 				${btnClear}
 			</div>

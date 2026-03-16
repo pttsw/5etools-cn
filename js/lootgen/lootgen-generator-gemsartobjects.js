@@ -17,38 +17,38 @@ export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 				btnRoll.click();
 			});
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._goa_pDoHandleClickRollLoot());
 
 		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._outputManager.doClearOutput());
 
-		ee`<div class="ve-flex-col py-2 px-3">
-			<h4 class="mt-1 mb-3">${I18nUtil.get("page.lootgen.gems_art_objects_generator")}</h4>
+		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
+			<h4 class="ve-mt-1 ve-mb-3">${I18nUtil.get("page.lootgen.gems_art_objects_generator")}</h4>
 
-			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.include_gems")}</div>
+			<label class="ve-split-v-center ve-mb-3">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.include_gems")}</div>
 				${cbIsUseGems}
 			</label>
 
-			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.include_art_objects")}</div>
+			<label class="ve-split-v-center ve-mb-3">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.include_art_objects")}</div>
 				${cbIsUseArtObjects}
 			</label>
 
-			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.target_gold_amount")}</div>
+			<label class="ve-split-v-center ve-mb-3">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.target_gold_amount")}</div>
 				${iptTargetGoldAmount}
 			</label>
 
-			<div class="ve-flex-v-center mb-2">
+			<div class="ve-flex-v-center ve-mb-2">
 				${btnRoll}
 				${btnClear}
 			</div>
 
-			<hr class="hr-3">
+			<hr class="ve-hr-3">
 
-			<div class="ve-small italic">${LootGenRender.er(`此自定义生成器随机生成宝石/艺术品，直到达到目标金额。`)}</div>
+			<div class="ve-small ve-italic">${LootGenRender.er(`此自定义生成器随机生成宝石/艺术品，直到达到目标金额。`)}</div>
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 

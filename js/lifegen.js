@@ -1,6 +1,6 @@
 "use strict";
 
-const RNG = RollerUtil.randomise;
+const RNG = RollerUtil.randomise.bind(RollerUtil);
 
 // usage: _testRng(() => GenUtil.getFromTable(PARENTS_TIEFLING, RNG(8)))
 function _testRng (rollFn) {
@@ -588,7 +588,7 @@ function onJsonLoad (lifeData, nameData) {
 	selRace.appends(`<option value="Random" selected>随机</option>`);
 	selRace.appends(`<option value="Other">其他</option>`);
 	RACES_SELECTABLE.forEach(r => selRace.appends(`<option value="${r}">${r}</option>`));
-	RACES_UNSELECTABLE.forEach(r => selRace.appends(`<option class="italic" value="${r}">${r}</option>`));
+	RACES_UNSELECTABLE.forEach(r => selRace.appends(`<option class="ve-italic" value="${r}">${r}</option>`));
 	selCha.appends(`<option value="Random">随机</option>`);
 	for (let i = -5; i <= 5; ++i) {
 		selCha.appends(`<option value="${i}" ${i === 0 ? "selected" : ""}>${i >= 0 ? "+" : ""}${i}</option>`);
@@ -600,12 +600,12 @@ function onJsonLoad (lifeData, nameData) {
 
 	[
 		{val: "", text: "随机", style: "font-style: normal;"},
-		{val: "1", text: "20岁或更小", class: "italic"},
-		{val: "21", text: "21&mdash;30岁", class: "italic"},
-		{val: "60", text: "31&mdash;40岁", class: "italic"},
-		{val: "70", text: "41&mdash;50岁", class: "italic"},
-		{val: "90", text: "51&mdash;60岁", class: "italic"},
-		{val: "100", text: "61岁或更老", class: "italic"},
+		{val: "1", text: "20岁或更小", class: "ve-italic"},
+		{val: "21", text: "21&mdash;30岁", class: "ve-italic"},
+		{val: "60", text: "31&mdash;40岁", class: "ve-italic"},
+		{val: "70", text: "41&mdash;50岁", class: "ve-italic"},
+		{val: "90", text: "51&mdash;60岁", class: "ve-italic"},
+		{val: "100", text: "61岁或更老", class: "ve-italic"},
 	].forEach(age => selAge.appends(`<option value="${age.val}" ${age.style ? `style="${age.style}"` : ""} ${age.class ? `class="${age.class}"` : ""}>${age.text}</option>`));
 
 	nameTables = {};
@@ -804,8 +804,8 @@ function sectFamily () {
 	let famIndex = 1;
 	const btnSuppFam = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-btn-supp-fam no-print"></button>`.onn("click", async () => {
 		const supDetails = await getPersonDetails();
-		const wrpRes = ee`<div class="life__output-wrp-border p-3 my-2"></div>`;
-		wrpRes.appends(`<h5 class="mt-0">随机家庭成员${famIndex++}</h5>`);
+		const wrpRes = ee`<div class="life__output-wrp-border ve-p-3 ve-my-2"></div>`;
+		wrpRes.appends(`<h5 class="ve-mt-0">随机家庭成员${famIndex++}</h5>`);
 		wrpRes.appends(ee`<div>${joinParaList(supDetails)}</div>`);
 		btnSuppFam.css({marginBottom: "5px"});
 		btnSuppFam.after(wrpRes);
@@ -856,8 +856,8 @@ function sectLifeEvents () {
 			if (!evt.nextRoll) return;
 
 			if (evt.nextRoll.title) {
-				ee`<div class="life__output-wrp-border p-3 my-2">
-					<h5 class="mt-0">${evt.nextRoll.title}</h5>
+				ee`<div class="life__output-wrp-border ve-p-3 ve-my-2">
+					<h5 class="ve-mt-0">${evt.nextRoll.title}</h5>
 					${joinParaList(evt.nextRoll.result)}
 				</div>`.appendTo(dispNextRoll);
 			} else {
@@ -881,8 +881,8 @@ function sectLifeEvents () {
 			.onn("click", () => doRollAndDisplay({isScrollIntoView: true}));
 
 		const wrpEvent = ee`<div class="ve-flex-col">
-			<div class="ve-flex-v-center mb-1 mt-2">
-				<h5 class="my-0 mr-2">人生大事 ${i + 1}</h5>
+			<div class="ve-flex-v-center ve-mb-1 ve-mt-2">
+				<h5 class="ve-my-0 ve-mr-2">人生大事 ${i + 1}</h5>
 				${btnReroll}
 			</div>
 			${dispResult}
@@ -915,7 +915,7 @@ window.addEventListener("load", async () => {
 	]);
 	onJsonLoad(lifeData, nameData);
 
-	const selAge = es(`#age`).onn("change", () => selAge.toggleClass("italic", !!selAge.val()));
+	const selAge = es(`#age`).onn("change", () => selAge.toggleClass("ve-italic", !!selAge.val()));
 
 	es(`#xge_link`).replaceWith(e_({outer: (Renderer.get().render(`{@book 《珊娜萨的万事指南》|XGE|1|This Is Your Life}`))}));
 

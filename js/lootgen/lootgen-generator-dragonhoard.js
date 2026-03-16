@@ -23,31 +23,31 @@ export class LootGenGeneratorDragonHoard extends LootGenGeneratorBase {
 
 		const cbIsPreferRandomMagicItems = ComponentUiUtil.getCbBool(this, "dh_isPreferRandomMagicItems");
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
+		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
 			.onn("click", () => this._dh_pDoHandleClickRollLoot());
 
 		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
 			.onn("click", () => this._outputManager.doClearOutput());
 
-		ee`<div class="ve-flex-col py-2 px-3">
-			<label class="split-v-center mb-2">
-				<div class="mr-2 w-66 no-shrink">${I18nUtil.get("page.lootgen.dragon_age")}</div>
+		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
+			<label class="ve-split-v-center ve-mb-2">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.dragon_age")}</div>
 				${selDragonAge}
 			</label>
 
-			<label class="split-v-center mb-3">
-				<div class="mr-2 w-66 no-shrink" title="If selected, random magic items (of a matching rarity and tier) will be preferred over rolling on the standard ${Parser.sourceJsonToAbv(Parser.SRC_DMG).qq()} &quot;Magic Items Table [A-I]&quot; when generating magic items.">${I18nUtil.get("page.lootgen.prefer_random_magic_items")}</div>
+			<label class="ve-split-v-center ve-mb-3">
+				<div class="ve-mr-2 ve-w-66 ve-no-shrink" title="If selected, random magic items (of a matching rarity and tier) will be preferred over rolling on the standard ${Parser.sourceJsonToAbv(Parser.SRC_DMG).qq()} &quot;Magic Items Table [A-I]&quot; when generating magic items.">${I18nUtil.get("page.lootgen.prefer_random_magic_items")}</div>
 				${cbIsPreferRandomMagicItems}
 			</label>
 
-			<div class="ve-flex-v-center mb-2">
+			<div class="ve-flex-v-center ve-mb-2">
 				${btnRoll}
 				${btnClear}
 			</div>
 
-			<hr class="hr-3">
+			<hr class="ve-hr-3">
 
-			<div class="ve-small italic">${LootGenRender.er(`基于{@book 费资本的巨龙宝库|FTD|4|创建宝藏}第72页的表格和规则。`)}
+			<div class="ve-small ve-italic">${LootGenRender.er(`基于{@book 费资本的巨龙宝库|FTD|4|创建宝藏}第72页的表格和规则。`)}
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 

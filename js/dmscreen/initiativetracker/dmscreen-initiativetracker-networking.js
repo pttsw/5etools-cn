@@ -170,7 +170,7 @@ export class InitiativeTrackerNetworking {
 			btnGetLink.prop("disabled", false);
 		};
 
-		const btnStartServer = ee`<button class="ve-btn ve-btn-default mr-2"></button>`
+		const btnStartServer = ee`<button class="ve-btn ve-btn-default ve-mr-2"></button>`
 			.onn("click", async () => {
 				const {isRunning} = await this.startServerV1({doUpdateExternalStates, btnStartServer, btnGetToken, btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
 				if (!isRunning) return;
@@ -185,7 +185,7 @@ export class InitiativeTrackerNetworking {
 				JqueryUtil.showCopiedEffect(btnGetToken);
 			});
 
-		const btnGetLink = ee`<button class="ve-btn ve-btn-default mr-2" disabled><span class="glyphicon glyphicon-link"></span> 复制链接</button>`.appendTo(wrpHelp)
+		const btnGetLink = ee`<button class="ve-btn ve-btn-default ve-mr-2" disabled><span class="glyphicon glyphicon-link"></span> 复制链接</button>`.appendTo(wrpHelp)
 			.onn("click", async () => {
 				const cleanOrigin = window.location.origin.replace(/\/+$/, "");
 				const cleanPathname = window.location.pathname.split("/").slice(0, -1).join("/");
@@ -197,7 +197,7 @@ export class InitiativeTrackerNetworking {
 		if (this._p2pMetaV1.serverPeer) fnDispServerRunningState();
 		else fnDispServerStoppedState();
 
-		ee`<div class="row w-100">
+		ee`<div class="row ve-w-100">
 			<div class="ve-col-12">
 				<p>
 				先攻追踪器玩家视图是一个P2P系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
@@ -217,9 +217,9 @@ export class InitiativeTrackerNetworking {
 		const wrpConnected = UiUtil.getAddModalRow(eleModalInner, "div").addClass("flx-col");
 
 		const showConnected = () => {
-			if (!this._p2pMetaV1.serverPeer) return wrpConnected.html(`<div class="w-100 ve-flex-vh-center"><i>客户端未连接。</i></div>`);
+			if (!this._p2pMetaV1.serverPeer) return wrpConnected.html(`<div class="ve-w-100 ve-flex-vh-center"><i>客户端未连接。</i></div>`);
 
-			let stack = `<div class="w-100"><h5>已连接的客户端：</h5><ul>`;
+			let stack = `<div class="ve-w-100"><h5>已连接的客户端：</h5><ul>`;
 			this._p2pMetaV1.serverPeer.getActiveConnections()
 				.map(it => it.label || "(Unknown)")
 				.sort(SortUtil.ascSortLower)
@@ -342,7 +342,7 @@ export class InitiativeTrackerNetworking {
 		const btnAltAddPlayer = ee`<button class="ve-btn ve-btn-primary ve-btn-text-insert">添加玩家</button>`.onn("click", () => btnAddClient.trigger("click"));
 		const btnAltGenAll = ee`<button class="ve-btn ve-btn-primary ve-btn-text-insert">生成全部</button>`.onn("click", () => btnGenServerTokens.trigger("click"));
 		const btnAltCopyAll = ee`<button class="ve-btn ve-btn-primary ve-btn-text-insert">复制服务端Tokens</button>`.onn("click", () => btnCopyServers.trigger("click"));
-		ee`<div class="ve-flex w-100">
+		ee`<div class="ve-flex ve-w-100">
 			<div class="ve-col-12">
 				<p>
 				先攻追踪器玩家视图是一个P2P（即无服务器）系统，允许玩家连接到DM的先攻追踪器。玩家应该使用<a href="inittrackerplayerview.html">先攻追踪器玩家视图</a>页面连接到DM的实例。作为DM，使用方法如下：
@@ -388,10 +388,10 @@ export class InitiativeTrackerNetworking {
 			.onn("click", () => {
 				const {eleModalInner, doClose} = UiUtil.getShowModal({title: "批量接受客户端"});
 
-				const iptText = ee`<textarea class="form-control dm-init-pl__textarea block mb-2"></textarea>`
+				const iptText = ee`<textarea class="ve-form-control dm-init-pl__textarea ve-block ve-mb-2"></textarea>`
 					.onn("keydown", () => iptText.removeClass("error-background"));
 
-				const btnAccept = ee`<button class="ve-btn ve-btn-xs ve-btn-primary block ve-text-center" title="Add Client">批量接受客户端</button>`
+				const btnAccept = ee`<button class="ve-btn ve-btn-xs ve-btn-primary ve-block ve-text-center" title="Add Client">批量接受客户端</button>`
 					.onn("click", async () => {
 						iptText.removeClass("error-background");
 						const txt = iptText.val();
@@ -418,18 +418,18 @@ export class InitiativeTrackerNetworking {
 			});
 
 		ee`
-			<div class="ve-flex w-100">
+			<div class="ve-flex ve-w-100">
 				<div class="ve-col-12">
-					<div class="ve-flex-inline-v-center mr-2">
-						<span class="mr-1">添加一个玩家(客户端):</span>
+					<div class="ve-flex-inline-v-center ve-mr-2">
+						<span class="ve-mr-1">添加一个玩家(客户端):</span>
 						${btnAddClient}
 					</div>
-					<div class="ve-flex-inline-v-center mr-2">
-						<span class="mr-1">复制所有未使用的服务器token:</span>
+					<div class="ve-flex-inline-v-center ve-mr-2">
+						<span class="ve-mr-1">复制所有未使用的服务器token:</span>
 						${btnCopyServers}
 					</div>
-					<div class="ve-flex-inline-v-center mr-2">
-						<span class="mr-1">批量接受客户端:</span>
+					<div class="ve-flex-inline-v-center ve-mr-2">
+						<span class="ve-mr-1">批量接受客户端:</span>
 						${btnAcceptClients}
 					</div>
 				</div>
@@ -441,11 +441,11 @@ export class InitiativeTrackerNetworking {
 		const btnGenServerTokens = ee`<button class="ve-btn ve-btn-primary ve-btn-xs">生成所有</button>`
 			.onn("click", () => this._playerWindowV0_pGetServerTokens({rowMetas: this._p2pMetaV0.rows}));
 
-		ee`<div class="ve-flex w-100">
-			<div class="ve-col-2 bold">玩家名字</div>
-			<div class="ve-col-3-5 bold">服务端Token</div>
+		ee`<div class="ve-flex ve-w-100">
+			<div class="ve-col-2 ve-bold">玩家名字</div>
+			<div class="ve-col-3-5 ve-bold">服务端Token</div>
 			<div class="ve-col-1 ve-text-center">${btnGenServerTokens}</div>
-			<div class="ve-col-3-5 bold">客户端Token</div>
+			<div class="ve-col-3-5 ve-bold">客户端Token</div>
 		</div>`
 			.appendTo(UiUtil.getAddModalRow(eleModalInner, "div"));
 
@@ -456,13 +456,13 @@ export class InitiativeTrackerNetworking {
 			iptTokenClient,
 			btnAcceptClientToken,
 			btnDeleteClient,
-		) => ee`<div class="w-100 mb-2 ve-flex">
-			<div class="ve-col-2 pr-1">${iptName}</div>
-			<div class="ve-col-3-5 px-1">${iptTokenServer}</div>
-			<div class="ve-col-1 px-1 ve-flex-vh-center">${btnGenServerToken}</div>
-			<div class="ve-col-3-5 px-1">${iptTokenClient}</div>
-			<div class="ve-col-1-5 px-1 ve-flex-vh-center">${btnAcceptClientToken}</div>
-			<div class="ve-col-0-5 pl-1 ve-flex-vh-center">${btnDeleteClient}</div>
+		) => ee`<div class="ve-w-100 ve-mb-2 ve-flex">
+			<div class="ve-col-2 ve-pr-1">${iptName}</div>
+			<div class="ve-col-3-5 ve-px-1">${iptTokenServer}</div>
+			<div class="ve-col-1 ve-px-1 ve-flex-vh-center">${btnGenServerToken}</div>
+			<div class="ve-col-3-5 ve-px-1">${iptTokenClient}</div>
+			<div class="ve-col-1-5 ve-px-1 ve-flex-vh-center">${btnAcceptClientToken}</div>
+			<div class="ve-col-0-5 ve-pl-1 ve-flex-vh-center">${btnDeleteClient}</div>
 		</div>`;
 
 		const clientRowMetas = [];
@@ -470,13 +470,13 @@ export class InitiativeTrackerNetworking {
 			const rowMeta = {id: CryptUtil.uid()};
 			clientRowMetas.push(rowMeta);
 
-			const iptName = ee`<input class="form-control input-sm">`
+			const iptName = ee`<input class="ve-form-control ve-input-sm">`
 				.onn("keydown", evt => {
 					iptName.removeClass("error-background");
 					if (evt.key === "Enter") btnGenServerToken.trigger("click");
 				});
 
-			const iptTokenServer = ee`<input class="form-control input-sm copyable code" readonly disabled>`
+			const iptTokenServer = ee`<input class="ve-form-control ve-input-sm ve-copyable ve-code" readonly disabled>`
 				.onn("click", async () => {
 					await MiscUtil.pCopyTextToClipboard(iptTokenServer.val());
 					JqueryUtil.showCopiedEffect(iptTokenServer);
@@ -485,7 +485,7 @@ export class InitiativeTrackerNetworking {
 			const btnGenServerToken = ee`<button class="ve-btn ve-btn-xs ve-btn-primary" title="生成服务端Token">生成</button>`
 				.onn("click", () => this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]}));
 
-			const iptTokenClient = ee`<input class="form-control input-sm code" disabled>`
+			const iptTokenClient = ee`<input class="ve-form-control ve-input-sm ve-code" disabled>`
 				.onn("keydown", evt => {
 					iptTokenClient.removeClass("error-background");
 					if (evt.key === "Enter") btnAcceptClientToken.trigger("click");
@@ -545,7 +545,7 @@ export class InitiativeTrackerNetworking {
 		};
 
 		const wrpRows = UiUtil.getAddModalRow(eleModalInner, "div");
-		const wrpRowsInner = ee`<div class="w-100"></div>`.appendTo(wrpRows);
+		const wrpRowsInner = ee`<div class="ve-w-100"></div>`.appendTo(wrpRows);
 
 		if (!this._p2pMetaV0.rows.length) {
 			addClientRow();
