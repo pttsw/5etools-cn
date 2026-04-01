@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> "head" }}
+
+<body>
+
+{{> "overlayNoise" }}
+
+{{> "adLhsScrollingPage" }}
+{{> "adRhsScrollingPage" }}
+
+<div class="viewport-wrapper ve-flex-col">
+	{{> "adLeaderboard" }}
+
+	{{> "navbar" }}
+
+	<main class="container ve-py-2">
+		<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px;">
+			<div>感谢 <a href="https://www.trpgcard.com/demo/dnd" target="_blank" rel="noopener noreferrer">TRPG Card</a>提供的SDK。</div>
+		</div>
+
+		<iframe
+			title="车卡工具"
+			src="https://www.trpgcard.com/demo/dnd"
+			allow="clipboard-read; clipboard-write"
+			referrerpolicy="strict-origin-when-cross-origin"
+			style="display: block; width: 100%; height: calc(100vh - 124px); border: 0; border-radius: 6px; background: #fff;"
+		></iframe>
+	</main>
+</div>
+
+{{> "adFooter" }}
+
+{{> "scripts" }}
+
+</body>
+</html>

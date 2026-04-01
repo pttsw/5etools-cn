@@ -85,6 +85,7 @@ class NavBar {
 		this._addElement_li({keyPath: [NavBar._CAT_PLAYER], page: "optionalfeatures.html", aText: "职业能力选项"});
 		this._addElement_divider({keyPath: [NavBar._CAT_PLAYER]});
 		this._addElement_li({keyPath: [NavBar._CAT_PLAYER], page: "statgen.html", aText: "属性生成器"});
+		this._addElement_li({keyPath: [NavBar._CAT_PLAYER], page: "trpgcard.html", aText: "5.5e车卡工具（实验）"});
 		this._addElement_divider({keyPath: [NavBar._CAT_PLAYER]});
 		this._addElement_li({keyPath: [NavBar._CAT_PLAYER], page: "lifegen.html", aText: "这是你的人生"});
 		this._addElement_li({keyPath: [NavBar._CAT_PLAYER], page: "names.html", aText: "命名"});

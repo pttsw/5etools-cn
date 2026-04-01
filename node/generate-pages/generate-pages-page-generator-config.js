@@ -368,6 +368,15 @@ class _PageGeneratorSearch extends PageGeneratorGeneric {
 	];
 }
 
+class _PageGeneratorTrpgcard extends PageGeneratorGeneric {
+	_filename = "page/template-page-trpgcard.hbs";
+	_page = "trpgcard.html";
+
+	_pageTitle = "车卡工具";
+	_pageDescription = "内嵌 TRPG Card 的 DND 车卡工具页面。";
+	_navbarDescription = "内嵌的 TRPG 车卡工具。";
+}
+
 class _PageGeneratorStatgen extends PageGeneratorGeneric {
 	_filename = "page/template-page-statgen.hbs";
 	_page = "statgen.html";
@@ -417,5 +426,6 @@ export const PAGE_GENERATORS = 	[
 	new _PageGeneratorPrivacyPolicy(),
 	new _PageGeneratorRenderdemo(),
 	new _PageGeneratorSearch(),
+	new _PageGeneratorTrpgcard(),
 	new _PageGeneratorStatgen(),
 ];
