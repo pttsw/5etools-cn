@@ -3283,11 +3283,15 @@ Renderer.utils = class {
 			<th class="ve-stats__th-name ve-text-left ve-pb-0 ${opts.extraThClasses ? opts.extraThClasses.join(" ") : ""}" colspan="6" ${dataPart}>
 				<div class="ve-split-v-end">
 					<div class="ve-flex-v-center">
-						<h1 class="stats__h-name copyable m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${opts.prefix || ""}${name}${opts.suffix || ""}</h1>
-						${opts.htmlControlRhs || ""}
+						<div class="ve-flex-col">
+							<h1 class="ve-stats__h-name ve-copyable ve-m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${opts.prefix || ""}${name}${opts.suffix || ""}</h1>
+							<h3 class="ve-stats__eh-name ve-copyable ve-m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${eng_name}</h3>
+						</div>						${opts.htmlControlRhs || ""}
 						${!globalThis.IS_VTT && ExtensionUtil.ACTIVE && opts.page ? Renderer.utils.getBtnSendToFoundryHtml() : ""}
 					</div>
 					<div class="stats__wrp-h-source ${opts.isInlinedToken ? `stats__wrp-h-source--token` : ""} ve-flex-v-baseline">
+						${!ent.translator || ent.translator === "机翻" ? `<span style="color:red; font-size:bold">⚠️机翻</span>` : ""}
+					
 						${tagPartSourceStart} class="help-subtle stats__h-source-abbreviation ${ent.source ? `${Parser.sourceJsonToSourceClassname(ent.source)}" title="${Parser.sourceJsonToFull(ent.source)}${Renderer.utils.getSourceSubText(ent)}` : ""}">${ent.source ? Parser.sourceJsonToAbv(ent.source) : ""}${tagPartSourceEnd}
 
 						${ent.source ? Parser.sourceJsonToMarkerHtml(ent.source, {isStatsName: true}) : ""}
@@ -3308,7 +3312,7 @@ Renderer.utils = class {
 	}
 
 	static getBtnSendToFoundryHtml ({isMb = true} = {}) {
-		return `<button title="Send to Foundry (SHIFT for Temporary Import)" class="no-print ve-btn ve-btn-xs ve-btn-default stats__btn-stats-name mx-2 ${isMb ? "mb-2" : ""} ve-self-flex-end lst-is-exporting-image__hidden" onclick="ExtensionUtil.pDoSendStats(event, this)" draggable="true" ondragstart="ExtensionUtil.doDragStart(event, this)"><span class="glyphicon glyphicon-send"></span></button>`;
+		return `<button title="发送到Foundry (按住SHIFT以临时导入)" class="no-print ve-btn ve-btn-xs ve-btn-default stats__btn-stats-name mx-2 ${isMb ? "mb-2" : ""} ve-self-flex-end lst-is-exporting-image__hidden" onclick="ExtensionUtil.pDoSendStats(event, this)" draggable="true" ondragstart="ExtensionUtil.doDragStart(event, this)"><span class="glyphicon glyphicon-send"></span></button>`;
 	}
 
 	static isDisplayPage (page) { return page != null && ((!isNaN(page) && page > 0) || isNaN(page)); }
@@ -3344,7 +3348,7 @@ Renderer.utils = class {
 				if (!isStringList && as.entry) return (isText ? Renderer.stripTags : Renderer.get().render)(as.entry);
 
 				const source = isStringList ? as : as.source;
-				return `${isText ? "" : `<i class="help-subtle" title="${Parser.sourceJsonToFull(source).qq()}">`}${Parser.sourceJsonToAbv(source)}${isText ? "" : `</i>`}${!isStringList && Renderer.utils.isDisplayPage(as.page) ? `, page ${as.page}` : ""}`;
+				return `${isText ? "" : `<i class="help-subtle" title="${Parser.sourceJsonToFull(source).qq()}">`}${Parser.sourceJsonToAbv(source)}${isText ? "" : `</i>`}${!isStringList && Renderer.utils.isDisplayPage(as.page) ? `, ${as.page}页` : ""}`;
 			})
 			.join("; ")}`;
 	}
@@ -7088,9 +7092,9 @@ Renderer.class = class {
 
 	static _getHtmlPtStartingEquipment_default ({equip, renderer}) {
 		return [
-			equip.additionalFromBackground ? "<p>You start with the following items, plus anything provided by your background.</p>" : "",
+			equip.additionalFromBackground ? "<p>你起始携带下列物品，以及任何你背景所提供的东西。</p>" : "",
 			equip.default && equip.default.length ? `<ul class="pl-4"><li>${equip.default.map(it => renderer.render(it)).join("</li><li>")}</ul>` : "",
-			equip.goldAlternative != null ? `<p>Alternatively, you may start with ${renderer.render(equip.goldAlternative)} gp to buy your own equipment.</p>` : "",
+			equip.goldAlternative != null ? `<p>或者，你可以选择起始拥有 ${renderer.render(equip.goldAlternative)} gp 以自行购买装备。</p>` : "",
 		]
 			.filter(Boolean)
 			.join("");
@@ -7492,13 +7496,13 @@ class _RenderCompactSpellsImplBase extends _RenderCompactImplBase {
 		const fromClassList = Renderer.spell.getCombinedClasses(ent, "fromClassList");
 		if (fromClassList.length) {
 			const [current] = Parser.spClassesToCurrentAndLegacy(fromClassList);
-			stack.push(`<div><span class="bold">Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
+			stack.push(`<div><span class="bold">职业: </span>${Parser.spMainClassesToFull(current)}</div>`);
 		}
 
 		const fromClassListVariant = Renderer.spell.getCombinedClasses(ent, "fromClassListVariant");
 		if (fromClassListVariant.length) {
 			const [current, legacy] = Parser.spVariantClassesToCurrentAndLegacy(fromClassListVariant);
-			stack.push(`<div><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">Optional/Variant Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
+			stack.push(`<div><span class="bold" title="&quot;Optional&quot; spells may be added to a campaign by the DM. &quot;Variant&quot; spells are generally available, but may be made available to a class by the DM.">可选/变体职业: </span>${Parser.spMainClassesToFull(current)}</div>`);
 		}
 
 		return stack.join("");
@@ -8444,7 +8448,7 @@ Renderer.race = class {
 					<div class="race__disp-result-weight ve-mr-1"></div>
 					<div class="small">lb.</div>
 				</div>
-				<button class="ve-btn ve-btn-default ve-btn-xs my-1 race__btn-roll-height-weight">Roll</button>
+				<button class="ve-btn ve-btn-default ve-btn-xs my-1 race__btn-roll-height-weight">掷骰</button>
 			</div>`);
 		}
 
@@ -10969,7 +10973,7 @@ Renderer.monster = class {
 				const colClass = i % 5 === 0
 					? "stats-tbl-ability-scores__lbl-abv"
 					: i % 5 === 4 ? "stats-tbl-ability-scores__lbl-spacer" : "stats-tbl-ability-scores__lbl-score";
-				return `<td class="${colClass}"><div class="ve-muted ve-text-center small-caps no-wrap">${i % 5 === 2 ? "mod" : i % 5 === 3 ? "save" : ""}</div></td>`;
+				return `<td class="${colClass}"><div class="ve-muted ve-text-center small-caps no-wrap">${i % 5 === 2 ? "调整" : i % 5 === 3 ? "豁免" : ""}</div></td>`;
 			},
 		)
 			.join("");
@@ -10991,7 +10995,7 @@ Renderer.monster = class {
 					: renderer.render(`{@savingThrow ${abv} ${mon.save[abv]}}`);
 
 				return [
-					`<td class="stats-tbl-ability-scores__lbl-abv ${styleClassNameScore} stats__disp-as-score--label"><div class="bold small-caps ve-text-right">${abv.toTitleCase()}</div></td>`,
+					`<td class="stats-tbl-ability-scores__lbl-abv ${styleClassNameScore} stats__disp-as-score--label"><div class="bold small-caps ve-text-right">${Parser.attAbvToFull(abv) || abv.toTitleCase()}</div></td>`,
 					`<td class="stats-tbl-ability-scores__lbl-score ${styleClassNameScore}"><div class="ve-text-center">${ptScore}</div></td>`,
 					`<td class="stats-tbl-ability-scores__lbl-score ${styleClassNameBonus}"><div class="ve-text-center">${ptBonus}</div></td>`,
 					`<td class="stats-tbl-ability-scores__lbl-score ${styleClassNameBonus}"><div class="ve-text-center">${ptSave}</div></td>`,
@@ -11935,7 +11939,7 @@ Renderer.item = class {
 		}
 
 		if (!isCompact && item.lootTables) {
-			renderStack.push(`<div><span class="bold">Found On: </span>${item.lootTables.sort(SortUtil.ascSortLower).map(tbl => renderer.render(`{@table ${tbl}}`)).join(", ")}</div>`);
+			renderStack.push(`<div><span class="bold">位于: </span>${item.lootTables.sort(SortUtil.ascSortLower).map(tbl => renderer.render(`{@table ${tbl}}`)).join(", ")}</div>`);
 		}
 
 		return renderStack.join("").trim();
@@ -13537,7 +13541,7 @@ Renderer.vehicle = class {
 		static getControlSection_ (renderer, control) {
 			if (!control) return "";
 			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">Control: ${control.name}</h3></td></tr>
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">操纵: ${control.name}</h3></td></tr>
 				<tr><td colspan="6" class="stats__sect-row-inner">
 				${Renderer.vehicle.ship.getSectionHpPart_(renderer, control)}
 				<div class="ve-rd__b--1">${renderer.render({entries: control.entries})}</div>
@@ -13559,7 +13563,7 @@ Renderer.vehicle = class {
 			if (!move) return "";
 
 			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">${move.isControl ? `Control and ` : ""}Movement: ${move.name}</h3></td></tr>
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">${move.isControl ? `操纵和` : ""}移动: ${move.name}</h3></td></tr>
 				<tr><td colspan="6" class="stats__sect-row-inner">
 				${Renderer.vehicle.ship.getSectionHpPart_(renderer, move)}
 				${(move.locomotion || []).map(entry => Renderer.vehicle.ship._getMovementSection_getLocomotionSection({renderer, entry})).join("")}
@@ -13570,7 +13574,7 @@ Renderer.vehicle = class {
 
 		static getWeaponSection_ (renderer, weap) {
 			return `
-				<tr><td colspan="6"><h3 class="stats__sect-header-inner">Weapons: ${weap.name}${weap.count ? ` (${weap.count})` : ""}</h3></td></tr>
+				<tr><td colspan="6"><h3 class="stats__sect-header-inner">武器: ${weap.name}${weap.count ? ` (${weap.count})` : ""}</h3></td></tr>
 				<tr><td colspan="6" class="stats__sect-row-inner">
 				${Renderer.vehicle.ship.getSectionHpPart_(renderer, weap, !!weap.count)}
 				${renderer.render({entries: weap.entries})}
@@ -13849,7 +13853,7 @@ Renderer.vehicle = class {
 	}
 
 	static _getTraitSection (renderer, veh) {
-		return veh.trait ? `<tr><td colspan="6"><h3 class="stats__sect-header-inner">Traits</h3></td></tr>
+		return veh.trait ? `<tr><td colspan="6"><h3 class="stats__sect-header-inner">特质</h3></td></tr>
 		<tr><td colspan="6" class="pt-2 pb-2">
 		${Renderer.monster.getOrderedTraits(veh, renderer).map(it => it.rendered || renderer.render(it, 2)).join("")}
 		</td></tr>` : "";
@@ -13869,10 +13873,10 @@ Renderer.vehicle = class {
 			${Renderer.vehicle.ship.getCrewCargoPaceSection_(ent, {entriesMetaShip})}
 			${Renderer.vehicle._getAbilitySection(ent)}
 			${Renderer.vehicle._getResImmVulnSection(ent, {entriesMeta})}
-			${ent.action ? Renderer.vehicle.ship.getSectionTitle_("Actions") : ""}
+			${ent.action ? Renderer.vehicle.ship.getSectionTitle_("动作") : ""}
 			${ent.action ? `<tr><td colspan="6" class="stats__sect-row-inner">${Renderer.vehicle.ship.getActionPart_(renderer, ent)}</td></tr>` : ""}
 			${(entriesMetaShip.entriesOtherActions || []).map(Renderer.vehicle.ship.getOtherSection_.bind(this, renderer)).join("")}
-			${ent.hull ? `${Renderer.vehicle.ship.getSectionTitle_("Hull")}
+			${ent.hull ? `${Renderer.vehicle.ship.getSectionTitle_(船体)}
 			<tr><td colspan="6" class="stats__sect-row-inner">
 			${Renderer.vehicle.ship.getSectionHpPart_(renderer, ent.hull)}
 			</td></tr>` : ""}
@@ -14826,7 +14830,7 @@ Renderer.skill = class {
 		return `
 			${Renderer.utils.getNameTr(ent)}
 			<tr><td colspan="6" class="pb-2">
-			${ent.ability ? `<p><i>Ability: ${Parser.attAbvToFull(ent.ability)}</i></p>` : ""}
+			${ent.ability ? `<p><i>技能: ${Parser.attAbvToFull(ent.ability)}</i></p>` : ""}
 			${Renderer.get().setFirstSection(true).render({type: "entries", entries: ent.entries})}
 			</td></tr>
 			${Renderer.utils.getPageTr(ent)}

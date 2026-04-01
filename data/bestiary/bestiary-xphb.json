@@ -1233,6 +1233,70 @@
 			],
 			"hasToken": true,
 			"hasFluffImages": true,
+			"_versions": [
+				{
+					"_abstract": {
+						"ENG_name": "Draconic Spirit ({{resist}})",
+						"name": "龙类灵魄（{{resist}}）",
+						"source": "XPHB",
+						"_mod": {
+							"trait": [
+								{
+									"mode": "replaceArr",
+									"replace": "分享抗性",
+									"items": {
+										"ENG_name": "Shared Resistances",
+										"name": "分享抗性",
+										"entries": [
+											"你对{{resist}}伤害具有抗性直到法术结束。"
+										]
+									}
+								}
+							],
+							"action": [
+								{
+									"mode": "replaceArr",
+									"replace": "吐息武器",
+									"items": {
+										"ENG_name": "Breath Weapon",
+										"name": "吐息武器",
+										"entries": [
+											"{@actSave dex} DC等于你的法术豁免DC，30英尺锥状范围内的每个生物。{@actSaveFail} {@damage 2d6} {{resist}}伤害。{@actSaveSuccess} 伤害减半。"
+										]
+									}
+								}
+							]
+						}
+					},
+					"_implementations": [
+						{
+							"_variables": {
+								"resist": "强酸"
+							}
+						},
+						{
+							"_variables": {
+								"resist": "寒冷"
+							}
+						},
+						{
+							"_variables": {
+								"resist": "火焰"
+							}
+						},
+						{
+							"_variables": {
+								"resist": "闪电"
+							}
+						},
+						{
+							"_variables": {
+								"resist": "毒素"
+							}
+						}
+					]
+				}
+			],
 			"translator": "不全书"
 		},
 		{

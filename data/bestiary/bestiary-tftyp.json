@@ -3735,9 +3735,10 @@
 					"trait": {
 						"mode": "appendArr",
 						"items": {
-							"name": "Special Equipment",
+							"ENG_name": "Special Equipment",
+							"name": "特殊装备",
 							"entries": [
-								"Lahnis wears a {@item ring of protection}."
+								"拉尼斯佩戴着一枚{@item 防护戒指}。"
 							]
 						}
 					}
@@ -3747,12 +3748,12 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item ring of protection}"
+						"{@item 防护戒指}"
 					]
 				},
 				{
 					"ac": 16,
-					"condition": "with {@spell mage armor}",
+					"condition": "{@spell 法师护甲}时",
 					"braces": true
 				}
 			],
@@ -6046,7 +6047,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"斯纳拉是一名6级施法者。她的施法能力是智力（法术豁免{@dc 14}，法术攻击命中+6）。她准备了以下法师法术："
+						"斯娜拉是一个6级施法者。她的施法属性是智力（法术豁免{@dc 14}，法术攻击{@hit 6}命中）。她准备了以下法师法术："
 					],
 					"spells": {
 						"0": {

@@ -3002,8 +3002,8 @@
 						],
 						[
 							"5",
-							"每只钳爪发动如下近战攻击：+8，触及5尺。{@i 命中：}：7（{@damage 2d6}）钝击伤害。",
-							"每只钳爪发动如下近战攻击：+8，触及5尺。{@i 命中：}：目标陷入{@condition 受擒|XPHB}状态（逃脱{@dc 15}）。"
+							"每个伸出的爪子进行以下近战攻击：{@hit 8}命中，触及范围5尺。{@i 命中：}7（{@damage 2d6}）钝击伤害。",
+							"每个伸出的爪子进行以下近战攻击：{@hit 8}命中，触及5尺。{@i 命中：}目标获得{@condition 受擒|XPHB}状态（逃脱{@dc 15}）。"
 						],
 						[
 							"6",
@@ -5926,7 +5926,7 @@
 		},
 		{
 			"ENG_name": "Battle Standard of Infernal Power",
-			"name": "地狱之力的战斗旗帜",
+			"name": "地狱之力战旗",
 			"source": "BGDIA",
 			"page": 223,
 			"rarity": "very rare",
@@ -20843,11 +20843,11 @@
 						],
 						[
 							"5\u20136",
-							"这个十二面体投射{@spell 冷冻射线}（命中加5），目标是它60英尺范围内随机一个没有对攻击有{@quickref 掩护||3||全身掩护}的生物。"
+							"命运的十二面体施放{@spell 冷冻射线}（{@hit 5}命中），随机攻击60尺内一个没有{@quickref 掩护||3||全身掩护}的生物。"
 						],
 						[
 							"7\u20138",
-							"十二面体对下一个触摸它的生物施放了{@spell 电爪}（命中加值+5）。"
+							"命运的十二面体对下一个触碰它的生物施放{@spell 电爪}（{@hit 5}命中）。"
 						],
 						[
 							"9\u201310",
@@ -25615,7 +25615,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Ebony Fly",
@@ -25676,7 +25677,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Golden Lions",
@@ -25742,7 +25744,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Ivory Goats",
@@ -25834,7 +25837,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Marble Elephant",
@@ -25892,7 +25896,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Obsidian Steed",
@@ -26018,7 +26023,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Figurine of Wondrous Power, Serpentine Owl",
@@ -32368,10 +32374,16 @@
 			"baseItem": "号角|PHB",
 			"type": "INS",
 			"rarity": "legendary",
-			"reqAttune": "由术士",
+			"reqAttune": "由术士、魔契师或法师",
 			"reqAttuneTags": [
 				{
 					"class": "术士"
+				},
+				{
+					"class": "魔契师"
+				},
+				{
+					"class": "法师"
 				}
 			],
 			"wondrous": true,
@@ -34895,7 +34907,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Absorption",
@@ -34941,7 +34954,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Agility",
@@ -34991,7 +35005,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Awareness",
@@ -35037,7 +35052,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Fortitude",
@@ -35083,7 +35099,8 @@
 			],
 			"lootTables": [
 				"魔法物品表I"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Greater Absorption",
@@ -35150,7 +35167,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Insight",
@@ -35199,7 +35217,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Intellect",
@@ -35266,7 +35285,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Leadership",
@@ -35316,7 +35336,8 @@
 			],
 			"lootTables": [
 				"魔法物品表I"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Mastery",
@@ -35377,7 +35398,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Protection",
@@ -35421,7 +35443,8 @@
 			],
 			"lootTables": [
 				"魔法物品表I"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Regeneration",
@@ -35486,7 +35509,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Reserve",
@@ -35551,7 +35575,8 @@
 			],
 			"lootTables": [
 				"魔法物品表H"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Strength",
@@ -35615,7 +35640,8 @@
 			],
 			"lootTables": [
 				"魔法物品表G"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone, Sustenance",
@@ -43405,7 +43431,7 @@
 			"rechargeAmount": "{@dice 1d6}",
 			"charges": 6,
 			"entries": [
-				"这把硬头锤有6充能并在每日黎明时恢复{@dice 1d6}已消耗的充能。当你持握这把硬头锤时，你可以消耗它的1充能来施放{@spell 天界召唤术|XPHB}（法术攻击命中+9）。"
+				"这把硬头锤有6次充能，并在每天拂晓时恢复{@dice 1d6}次已消耗的充能。当你持握这把硬头锤时，可以消耗1次充能来施放{@spell 天界召唤术|XPHB}（法术攻击{@hit 9}命中）。"
 			],
 			"attachedSpells": {
 				"charges": {
@@ -76391,7 +76417,7 @@
 			"charges": 7,
 			"entries": [
 				"这根魔杖看起来和摸起来都像是一根冰柱。你必须与之同调才能使用它。",
-				"魔杖有 7 发充能，用来作为施展其内法术的能量。你在持握该魔杖时，可以用你的动作从魔杖施展下列法术之一： {@spell 冷冻射线} ray of frost（无充能，或 1 充能以5级角色的身份来施展它：远程法术攻击命中+5）、 {@spell 雪雨暴} sleet storm（3 充能：法术豁免 {@dc 15}）或是 {@spell 冰风暴} ice storm（4 充能：法术豁免 {@dc 15}）。所有这些法术都无需任何法术成分。每日黎明时分魔杖将回复 {@dice 1d6 + 1} 的充能，若你耗尽魔杖的最后一发充能，骰一次 {@dice d20}。骰值为 20 时，魔杖融化并永久损坏。"
+				"该魔杖有7次充能，用于为其中的法术提供燃料。手持魔杖时，你可以使用一个动作从魔杖中施放以下法术之一，即使你无法施展法术：{@spell 冷冻射线}（无充能消耗，或消耗1次充能以5环施放；{@hit 5}以进行远程法术攻击命中）、{@spell 雪雨暴}（消耗3次充能；法术豁免{@dc 15}）或{@spell 冰风暴}（消耗4次充能；法术豁免{@dc 15}）。无需任何成分。魔杖每天拂晓时恢复{@dice 1d6 + 1}次已消耗的充能。如果你消耗了魔杖的最后一次充能，掷一次{@dice d20}。若结果为20，魔杖将融化消失，永远被摧毁。"
 			],
 			"attachedSpells": {
 				"will": [
@@ -80987,7 +81013,8 @@
 				"异能塑像，玛瑙狗狗|XDMG",
 				"异能塑像，蛇纹石鸮|XDMG",
 				"异能塑像，白银渡鸦|XDMG"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Flensing Claws",
@@ -81533,7 +81560,8 @@
 				"艾恩石, 储法",
 				"艾恩石, 力量",
 				"艾恩石, 维生"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Ioun Stone",

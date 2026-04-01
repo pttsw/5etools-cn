@@ -1,6 +1,55 @@
 {
 	"object": [
 		{
+			"ENG_name": "Animated Ghaunadaur Statue",
+			"name": "活化关纳德雕塑",
+			"isNpc": true,
+			"source": "WDMM",
+			"page": 250,
+			"size": [
+				"L"
+			],
+			"objectType": "U",
+			"ac": 17,
+			"hp": 50,
+			"speed": 0,
+			"str": 14,
+			"dex": 10,
+			"int": 3,
+			"wis": 3,
+			"cha": 1,
+			"senses": [
+				"盲视 10 尺（此半径之外为盲区）"
+			],
+			"immune": [
+				"强酸",
+				"毒素",
+				"心灵"
+			],
+			"actionEntries": [
+				{
+					"ENG_name": "Claw",
+					"name": "爪击",
+					"type": "actions",
+					"entries": [
+						{
+							"type": "attack",
+							"attackType": "MW",
+							"attackEntries": [
+								"{@hit +10} 命中，触及5尺，单一目标。"
+							],
+							"hitEntries": [
+								"22（{@damage 2d6 + 5}）挥砍伤害。"
+							]
+						}
+					]
+				}
+			],
+			"tokenCredit": "Elderbrain_com",
+			"tokenCustom": true,
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Automatic Ballista",
 			"name": "自动弩炮",
 			"source": "HBTD",

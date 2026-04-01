@@ -1948,8 +1948,8 @@
 			"page": 236,
 			"referenceSources": [
 				"DC",
-				"SDW",
-				"IMR"
+				"IMR",
+				"SDW"
 			],
 			"size": [
 				"H"
@@ -2259,8 +2259,8 @@
 			"page": 237,
 			"referenceSources": [
 				"DC",
-				"SDW",
-				"IMR"
+				"IMR",
+				"SDW"
 			],
 			"size": [
 				"M"
@@ -3504,8 +3504,38 @@
 						"replace": "the evoker",
 						"with": "Lahnis",
 						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Special Equipment",
+							"entries": [
+								"Lahnis wears a {@item ring of protection}."
+							]
+						}
 					}
 				}
+			},
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item ring of protection}"
+					]
+				},
+				{
+					"ac": 16,
+					"condition": "with {@spell mage armor}",
+					"braces": true
+				}
+			],
+			"save": {
+				"str": "+0",
+				"dex": "+3",
+				"con": "+2",
+				"int": "+8",
+				"wis": "+6",
+				"cha": "+1"
 			},
 			"hasToken": true,
 			"hasFluffImages": true
@@ -4952,6 +4982,7 @@
 				}
 			],
 			"referenceSources": [
+				"GoS",
 				"LR"
 			],
 			"size": [
@@ -5581,7 +5612,7 @@
 					"name": "Spellcasting",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Snarla is a 6th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 14}, +6 to hit with spell attacks). She has the following wizard spells prepared:"
+						"Snarla is a 6th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). She has the following wizard spells prepared:"
 					],
 					"spells": {
 						"0": {

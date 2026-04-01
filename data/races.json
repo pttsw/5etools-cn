@@ -7699,7 +7699,8 @@
 						"你能说、读、写格朗语。"
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Hadozee",
@@ -8069,6 +8070,7 @@
 			"name": "半身人",
 			"source": "XPHB",
 			"page": 193,
+			"srd52": true,
 			"basicRules2024": true,
 			"edition": "one",
 			"creatureTypes": [
@@ -10810,7 +10812,12 @@
 			"darkvision": 120,
 			"skillProficiencies": [
 				{
-					"performance": true
+					"choose": {
+						"from": [
+							"欺瞒",
+							"表演"
+						]
+					}
 				}
 			],
 			"sizeEntry": {
@@ -10843,7 +10850,7 @@
 					"name": "愉悦模仿者",
 					"type": "entries",
 					"entries": [
-						"你拥有{@skill 表演|XPHB}技能的熟练项。"
+						"你熟练于{@skill 欺瞒|XPHB}或{@skill 表演|XPHB}技能。"
 					]
 				},
 				{
@@ -10851,7 +10858,7 @@
 					"name": "不可预知移动",
 					"type": "entries",
 					"entries": [
-						"当你掷{@variantrule 先攻|XPHB}且该掷骰没有{@variantrule 劣势|XPHB}时，你可以将{@action 疾走|XPHB}动作作为{@variantrule 反应|XPHB}来执行。"
+						"当你掷{@variantrule 先攻|XPHB}时，你可以立即移动至多一半你的{@variantrule 速度|XPHB}，前提是你在{@variantrule 先攻|XPHB}掷骰上没有{@variantrule 劣势|XPHB}。"
 					]
 				}
 			],
