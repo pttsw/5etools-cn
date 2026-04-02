@@ -6,20 +6,17 @@ import {RenderBestiary} from "../render-bestiary.js";
 export class LegendaryGroupBuilder extends BuilderBase {
 	constructor () {
 		super({
-			titleSidebarLoadExisting: "复制已存在的传奇组",
-			titleSidebarDownloadJson: "下载传奇组为JSON",
 			prop: "legendaryGroup",
-			titleSelectDefaultSource: "(与传奇组相同)",
 		});
 
 		this._renderOutputDebounced = MiscUtil.debounce(() => this._renderOutput(), 50);
 	}
 
-	async pHandleSidebarLoadExistingClick () {
+	async pHandleClickLoadExisting () {
 		const result = await SearchWidget.pGetUserLegendaryGroupSearch();
 		if (result) {
 			const legGroup = MiscUtil.copy(await DataLoader.pCacheAndGet(result.page, result.source, result.hash));
-			return this.pHandleSidebarLoadExistingData(legGroup);
+			return this.pHandleLoadExistingData(legGroup);
 		}
 	}
 
@@ -28,7 +25,7 @@ export class LegendaryGroupBuilder extends BuilderBase {
 	 * @param [opts]
 	 * @param [opts.meta]
 	 */
-	async pHandleSidebarLoadExistingData (legGroup, opts) {
+	async pHandleLoadExistingData (legGroup, opts) {
 		opts = opts || {};
 
 		legGroup.source = this._ui.source;
@@ -111,7 +108,7 @@ export class LegendaryGroupBuilder extends BuilderBase {
 		tabs.forEach(it => it.wrpTab.appendTo(wrp));
 
 		// INFO
-		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false, callback: () => this.pRenderSideMenu()}, "name").appendTo(infoTab.wrpTab);
+		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false, callback: () => this.pRenderEntityList()}, "name").appendTo(infoTab.wrpTab);
 		this._selSource = this.getSourceInput(cb).appendTo(infoTab.wrpTab);
 
 		// LAIR ACTIONS

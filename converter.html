@@ -62,14 +62,6 @@
 <div class="overlay-noise no-print"></div>
 
 <div class="viewport-wrapper">
-	<div class="sidemenu__toggle">
-		<div class="sidemenu__hotzone"></div>
-		<div class="sidemenu__burger"></div>
-		<div class="sidemenu__burger"></div>
-		<div class="sidemenu__burger"></div>
-		<div class="sidemenu"></div>
-	</div>
-
 	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner cancer__wrp-interactive"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
 	<header class="hidden-xs hidden-sm page__header">
@@ -86,37 +78,41 @@
 	<div class="view-col-wrapper">
 
 		<div class="view-col">
-			<h3 class="conv__head">输入</h3>
+			<h3 class="conv__head">Input</h3>
 			<pre id="converter_input" class="inputArea ace_editor"></pre>
 			<div class="ve-split-v-center">
 				<div id="wrp-footer-lhs" class="ve-flex-v-center"></div>
 				<div class="ve-flex-v-center ve-btn-group">
-					<button id="parsestatblock" class="ve-btn ve-btn-sm ve-btn-default">转换</button>
-					<button id="parsestatblockadd" class="ve-btn ve-btn-sm ve-btn-default">转换并新增</button>
+					<button id="parsestatblock" class="ve-btn ve-btn-sm ve-btn-default">Parse</button>
+					<button id="parsestatblockadd" class="ve-btn ve-btn-sm ve-btn-default">Parse and Add</button>
 				</div>
 			</div>
+
+			<div class="ve-flex-v-stretch ve-mobile-md__flex-col ve-mobile-md__flex-ai-start" id="wrp-settings"></div>
 		</div>
 
 		<div class="view-col">
-			<h3 class="conv__head">输出</h3>
+			<h3 class="conv__head">Output</h3>
 
 			<pre id="converter_output" class="outputArea ace_editor"></pre>
 
 			<div class="ve-split-v-center conv__out_control__wrp">
-				<button id="editable" class="ve-btn ve-btn-sm ve-btn-default">启用编辑</button>
+				<button id="editable" class="ve-btn ve-btn-sm ve-btn-default">Enable Editing</button>
 				<div class="ve-flex-v-center">
-					<button id="preview" class="ve-btn ve-btn-sm ve-btn-default ve-mr-2">预览</button>
-					<button id="save_local" class="ve-btn ve-btn-sm ve-btn-default hidden ve-mr-2">保存到自制内容</button>
+					<button id="preview" class="ve-btn ve-btn-sm ve-btn-default ve-mr-2">Preview</button>
+					<button id="save_local" class="ve-btn ve-btn-sm ve-btn-default hidden ve-mr-2">Save to Homebrew</button>
 
 					<div class="ve-btn-group ve-flex-vh-center">
-						<button id="btn-output-copy" class="ve-btn ve-btn-sm ve-btn-default">复制</button>
-						<button id="btn-output-download" class="ve-btn ve-btn-sm ve-btn-default">下载</button>
+						<button id="btn-output-copy" class="ve-btn ve-btn-sm ve-btn-default">Copy</button>
+						<button id="btn-output-download" class="ve-btn ve-btn-sm ve-btn-default">Download</button>
 					</div>
 				</div>
-			</div>
 
-			<div class="ve-code ve-mt-2 ve-p-2 ve-flex-col ve-hidden conv__disp-message conv__disp-message--warning" id="lastWarnings"></div>
-			<div class="ve-code ve-mt-2 ve-p-2 ve-flex-col ve-hidden conv__disp-message conv__disp-message--error" id="lastError"></div>
+				<pre id="ipt-converter-output" class="ve-h-100 ve-mb-0 ace_editor"></pre>
+
+				<div class="ve-code ve-mt-2 ve-p-2 ve-flex-col ve-hidden conv__disp-message conv__disp-message--warning" id="disp-warnings"></div>
+				<div class="ve-code ve-mt-2 ve-p-2 ve-flex-col ve-hidden conv__disp-message conv__disp-message--error" id="disp-errors"></div>
+			</div>
 		</div>
 	</div>
 </div>
