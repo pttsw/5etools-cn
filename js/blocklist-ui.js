@@ -267,7 +267,7 @@ class BlocklistUi {
 				this._list.reset();
 			});
 
-		const wrpFilterTools = ee`<div class="input-group input-group--bottom ve-flex ve-no-shrink">
+		const wrpFilterTools = ee`<div class="ve-input-group ve-input-group--bottom ve-flex ve-no-shrink">
 			<button class="ve-col-4 sort ve-btn ve-btn-default ve-btn-xs ve-grow" data-sort="source">来源</button>
 			<button class="ve-col-2 sort ve-btn ve-btn-default ve-btn-xs" data-sort="category">分类</button>
 			<button class="ve-col-5 sort ve-btn ve-btn-default ve-btn-xs" data-sort="name">名称</button>
@@ -285,7 +285,7 @@ class BlocklistUi {
 			<div class="ve-muted ${this._isCompactUi ? "ve-mb-2" : "ve-mb-3"}"><i>星号(*)标记的行块表示匹配所有内容。</i></div>
 
 			<div class="ve-flex-col ve-min-h-0">
-				<div class="ve-flex-v-stretch input-group input-group--top ve-no-shrink">
+				<div class="ve-flex-v-stretch ve-input-group ve-input-group--top ve-no-shrink">
 					<div class="ve-w-100 ve-relative">
 						${iptSearch}
 						<div class="ve-lst__wrp-search-glass ve-no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>

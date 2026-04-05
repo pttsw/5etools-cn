@@ -1,15 +1,6 @@
 "use strict";
 
 class PageFilterBackgrounds extends PageFilterBase {
-	// TODO(Future) expand/move to `Renderer.generic`
-	static _getToolDisplayText (tool) {
-		if (tool === "anyTool") return "任意工具";
-		if (tool === "anyArtisansTool") return "任意工匠工具";
-		if (tool === "anyMusicalInstrument") return "任意乐器";
-		if (tool === "anyGamingSet") return "任意赌博工具";
-		return Parser.TOOLS_TO_CN[tool] || tool.toTitleCase();
-	}
-
 	static _TRAIT_DISPLAY_VALUES = {
 		"Armor Proficiency": "Armor Training",
 	};
@@ -17,15 +8,8 @@ class PageFilterBackgrounds extends PageFilterBase {
 	constructor () {
 		super();
 
-		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores", cnHeader: "属性值"});
-		this._skillFilter = new Filter({
-			header: "Skill Proficiencies",
-			cnHeader: "技能熟练项",
-			displayFn: it => {
-				const [name, sourceJson] = it.split("|");
-				return `${name.toTitleCase()}${sourceJson ? ` (${Parser.sourceJsonToAbv(sourceJson)})` : ""}`;
-			},
-		});
+		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores"});
+		this._skillFilter = FilterCommon.getSkillProficienciesFilter();
 		this._prereqFilter = new Filter({
 			header: "Prerequisite",
 			cnHeader: "先决条件",
@@ -46,7 +30,7 @@ class PageFilterBackgrounds extends PageFilterBase {
 			},
 			items: [...FilterCommon.PREREQ_FILTER_ITEMS],
 		});
-		this._toolFilter = new Filter({header: "工具熟练项", displayFn: PageFilterBackgrounds._getToolDisplayText.bind(PageFilterBackgrounds)});
+		this._toolFilter = FilterCommon.getToolProficienciesFilter();
 		this._languageFilter = FilterCommon.getLanguageProficienciesFilter();
 		this._otherBenefitsFilter = new Filter({
 			header: "Other Benefits",

@@ -61,20 +61,71 @@ export class ConverterFeat extends ConverterFeatureBase {
 		return statsOut;
 	}
 
+	/* -------------------------------------------- */
+
 	static _doParseText_stepName (state) {
 		[state.entity.name, state.entity.ENG_name] = ConverterUtils.splitNameToChineseAndEnglish(this._getAsTitle("name", state.curLine, state.options.titleCaseFields, state.options.isTitleCase));
 	}
 
+	/* -------------------------------------------- */
+
+	static _getCategoryMeta ({str}) {
+		const mFeatCategory = new RegExp(`^${this._RE_FEAT_TYPE.source}(?: Feat|专长)?`).exec(str);
+		if (mFeatCategory) {
+			return {
+				category: Parser.featCategoryFromFull(mFeatCategory.groups.category),
+				remaining: str.slice(mFeatCategory[0].length).trim(),
+			};
+		}
+
+		const mFeatCategoryUnknown = /(?<ptCategory>.*) Feat (?=\(Prerequisite\b)/i.exec(str);
+		if (mFeatCategoryUnknown) {
+			const categoryRaw = mFeatCategoryUnknown.groups.ptCategory.trim();
+			return {
+				category: categoryRaw,
+				categoryWarning: `Unknown feat category "${categoryRaw}"`,
+				remaining: str.slice(mFeatCategoryUnknown[0].length).trim(),
+			};
+		}
+
+		return null;
+	}
+
+	/* -------------------------------------------- */
+
+	static _getCategoryMeta ({str}) {
+		const mFeatCategory = new RegExp(`^${this._RE_FEAT_TYPE.source}(?: Feat)?`).exec(str);
+		if (mFeatCategory) {
+			return {
+				category: Parser.featCategoryFromFull(mFeatCategory.groups.category),
+				remaining: str.slice(mFeatCategory[0].length).trim(),
+			};
+		}
+
+		const mFeatCategoryUnknown = /(?<ptCategory>.*) Feat (?=\(Prerequisite\b)/i.exec(str);
+		if (mFeatCategoryUnknown) {
+			const categoryRaw = mFeatCategoryUnknown.groups.ptCategory.trim();
+			return {
+				category: categoryRaw,
+				categoryWarning: `Unknown feat category "${categoryRaw}"`,
+				remaining: str.slice(mFeatCategoryUnknown[0].length).trim(),
+			};
+		}
+
+		return null;
+	}
+
 	static _doParseText_stepCategory (state, options) {
-		const mFeatCategory = new RegExp(`^${this._RE_FEAT_TYPE.source}(?: Feat|专长)?`).exec(state.curLine);
-		if (!mFeatCategory) {
+		const categoryMeta = this._getCategoryMeta({str: state.curLine});
+		if (!categoryMeta) {
 			state.ixToConvert--;
 			return;
 		}
 
-		state.entity.category = Parser.featCategoryFromFull(mFeatCategory.groups.category);
+		state.entity.category = categoryMeta.category;
+		if (categoryMeta.categoryWarning) options.cbWarning(`(${state.entity.name}) Category requires manual conversion`);
 
-		let remaining = state.curLine.slice(mFeatCategory[0].length).trim();
+		let remaining = categoryMeta.remaining;
 		if (!remaining) return;
 
 		remaining = remaining.replace(/^[(（](.*)[)）]$/, "$1");
@@ -95,6 +146,8 @@ export class ConverterFeat extends ConverterFeatureBase {
 			});
 	}
 
+	/* -------------------------------------------- */
+
 	static _doParseText_stepPrerequisites (state, options) {
 		if (!/^(?:prerequisite|先决条件)[:：]/i.test(state.curLine)) {
 			state.ixToConvert--;
@@ -111,6 +164,8 @@ export class ConverterFeat extends ConverterFeatureBase {
 				],
 			});
 	}
+
+	/* -------------------------------------------- */
 
 	static _doParseText_stepEntries (state, options) {
 		const ptrI = {_: state.ixToConvert};

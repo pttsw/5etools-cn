@@ -2449,6 +2449,7 @@ Parser.CHAR_OPTIONAL_FEATURE_TYPE_TO_FULL = {
 	"DG": "黑暗赠礼",
 	"RF:B": "替换特性，背景",
 	"CS": "角色秘密", // Specific to IDRotF (rules on page 14)
+	"PTH": "道途",
 };
 
 Parser.charCreationOptionTypeToFull = function (type) {
