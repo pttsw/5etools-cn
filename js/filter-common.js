@@ -167,6 +167,7 @@ class FilterCommon {
 	static getSkillProficienciesFilter () {
 		return new Filter({
 			header: "Skill Proficiencies",
+			cnHeader: "技能熟练项",
 			displayFn: this._getNameSourceFilterDisplay.bind(this),
 		});
 	}
@@ -194,17 +195,19 @@ class FilterCommon {
 	/* -------------------------------------------- */
 
 	static _TOOL_TO_DISPLAY = {
-		"anyTool": "Any Tool",
-		"anyArtisansTool": "Any Artisan's Tool",
-		"anyMusicalInstrument": "Any Musical Instrument",
-		"anyGamingSet": "Any Gaming Set",
+		"anyTool": "任意工具",
+		"anyArtisansTool": "任意工匠工具",
+		"anyMusicalInstrument": "任意乐器",
+		"anyGamingSet": "任意赌博工具",
 	};
 
 	static getToolProficienciesFilter () {
 		return new Filter({
 			header: "Tool Proficiencies",
+			cnHeader: "工具熟练项",
 			displayFn: it => {
 				if (this._TOOL_TO_DISPLAY[it]) return this._TOOL_TO_DISPLAY[it];
+				if (Parser.TOOLS_TO_CN[it]) return Parser.TOOLS_TO_CN[it];
 				return this._getNameSourceFilterDisplay(it);
 			},
 		});
