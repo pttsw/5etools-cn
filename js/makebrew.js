@@ -153,8 +153,8 @@ class PageUi {
 				const val = this._selBuilderMode.val();
 				if (val === "none") {
 					InputUiUtil.pGetUserBoolean({
-						title: "Homebrew Builder Support",
-						htmlDescription: `<p>The Homebrew Builder only supports a limited set of entity types. For everything else, you will need to <a href="https://github.com/TheGiddyLimit/homebrew/blob/master/README.md" rel="noopener noreferrer">manually</a> create or convert content.</p>`,
+						title: "自制内容编辑器支持",
+						htmlDescription: `<p>自制内容编辑器仅支持有限的类型. 其他类型请<a href="https://github.com/TheGiddyLimit/homebrew/blob/master/README.md" rel="noopener noreferrer">手动创建或转换内容</a>.</p>`,
 						isAlert: true,
 					}).then(null);
 					this._selBuilderMode.val(this._settings.activeBuilder);
@@ -185,7 +185,7 @@ class PageUi {
 		if (this._settings.activeSource) this._selSource.val(this._settings.activeSource);
 		else this._selSource.selectedIndex = 0;
 
-		const btnSourceEdit = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="Edit Selected Source"><span class="glyphicon glyphicon-pencil"></span></button>`
+		const btnSourceEdit = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="编辑当前来源"><span class="glyphicon glyphicon-pencil"></span></button>`
 			.onn("click", () => {
 				const curSourceJson = this._settings.activeSource;
 				const curSource = BrewUtil2.sourceJsonToSource(curSourceJson);
@@ -204,7 +204,7 @@ class PageUi {
 			<div class="ve-vr-3 ve-h-21p ve-mr-2 ve-mobile-md__hidden"></div>
 				
 			<div class="ve-flex-v-center">
-				<div class="ve-mr-2 ve-flex-v-center">Source</div>
+				<div class="ve-mr-2 ve-flex-v-center">来源</div>
 				<div class="ve-flex-v-stretch ve-input-group ve-btn-group ve-mr-2">
 					${this._selSource}
 					${btnSourceEdit}
@@ -216,11 +216,11 @@ class PageUi {
 	}
 
 	_initHeader_existing ({wrpSettings}) {
-		const btnEditExisting = ee`<button class="ve-btn ve-btn-xs ve-btn-default">Edit Existing</button>`
+		const btnEditExisting = ee`<button class="ve-btn ve-btn-xs ve-btn-default">编辑已存在内容</button>`
 			.onn("click", () => this._builders[this._settings.activeBuilder].pHandleClickEditExisting())
 			.appendTo(wrpSettings);
 
-		const btnLoadExisting = ee`<button class="ve-btn ve-btn-xs ve-btn-default">Copy Existing</button>`
+		const btnLoadExisting = ee`<button class="ve-btn ve-btn-xs ve-btn-default">复制已存在内容</button>`
 			.onn("click", () => this._builders[this._settings.activeBuilder].pHandleClickLoadExisting())
 			.appendTo(wrpSettings);
 
@@ -246,7 +246,7 @@ class PageUi {
 			.onn("click", () => RendererMarkdown.pShowSettingsModal());
 
 		ee`<div class="ve-flex-v-center ve-ml-auto ve-mobile-md__ml-0">
-				<div class="ve-mr-2">Download</div>
+				<div class="ve-mr-2">下载</div>
 				${btnDownloadJson}
 				<div class="ve-flex-v-center ve-btn-group">${btnMarkdownDownload}${btnMarkdownSettings}</div>
 			</div>`

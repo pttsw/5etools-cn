@@ -468,7 +468,7 @@ export class SpellBuilder extends BuilderBase {
 		const wrp = ee`<div class="ve-flex-col mkbru__wrp-rows mkbru__wrp-rows--removable">
 			<div class="ve-flex-v-center ve-mb-2">${iptNum}${selUnit}</div>
 			<div class="ve-flex-v-center ve-mb-2">
-				<span class="ve-mr-2 mkbru__sub-name--33">Condition</span>${iptCond}
+				<span class="ve-mr-2 mkbru__sub-name--33">触发条件</span>${iptCond}
 			</div>
 			${wrpBtnRemove}
 		</div>`;

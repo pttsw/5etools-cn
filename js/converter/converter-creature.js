@@ -622,7 +622,7 @@ export class ConverterCreature extends ConverterBase {
 
 				if (
 					!stats.gear
-					&& curTrait.name === "Gear"
+					&& (curTrait.name === "装备" || curTrait.name === "Gear")
 					&& curTrait.entries.length === 1
 					&& typeof curTrait.entries[0] === "string"
 					// Ignore attacks named "Gear"

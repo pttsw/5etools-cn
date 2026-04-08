@@ -213,7 +213,7 @@ export class BuilderUi {
 
 		const initialState = MiscUtil.get(state, ...path);
 		const sel = ee`<select class="ve-form-control ve-input-xs form-control--minimal">`;
-		if (options.nullable) sel.appends(`<option value="-1">(None)</option>`);
+		if (options.nullable) sel.appends(`<option value="-1">(无)</option>`);
 		options.vals.forEach((v, i) => sel.appends(`<option value="${i}">${(options.fnDisplay ? options.fnDisplay(v) : v).qq()}</option>`));
 		const ixInitial = options.vals.indexOf(initialState || null);
 		sel.val(`${ixInitial}`)

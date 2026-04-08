@@ -450,7 +450,7 @@ export class LootGenUi extends BaseComponent {
 			),
 			null,
 			new ContextUtil.Action(
-				"Settings",
+				"设置",
 				async () => {
 					await this._opts_pDoOpenSettings();
 				},
@@ -469,7 +469,7 @@ export class LootGenUi extends BaseComponent {
 	}
 
 	async _opts_pDoOpenSettings () {
-		const {eleModalInner} = await UiUtil.pGetShowModal({title: "Settings"});
+		const {eleModalInner} = await UiUtil.pGetShowModal({title: "设置"});
 
 		const rowsCurrency = Parser.COIN_ABVS
 			.map(it => {

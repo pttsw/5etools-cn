@@ -1004,7 +1004,7 @@ class ListPageSettingsManager extends ListPageStateManager {
 					const {eleModalInner} = UiUtil.getShowModal({
 						isIndestructible: true,
 						isHeaderBorder: true,
-						title: "Settings",
+						title: "设置",
 						cbClose: () => {
 							this._pPersistState()
 								.then(() => Hist.hashChange());

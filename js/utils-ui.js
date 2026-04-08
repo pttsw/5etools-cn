@@ -2944,7 +2944,7 @@ class InputUiUtil {
 				}
 			});
 
-		if (opts.isAllowNull) ee`<option value="-1"></option>`.txt(opts.fnDisplay ? opts.fnDisplay(null, -1) : "(None)").appendTo(selEnum);
+		if (opts.isAllowNull) ee`<option value="-1"></option>`.txt(opts.fnDisplay ? opts.fnDisplay(null, -1) : "(无)").appendTo(selEnum);
 
 		opts.values.forEach((v, i) => ee`<option value="${i}"></option>`.txt(opts.fnDisplay ? opts.fnDisplay(v, i) : v).appendTo(selEnum));
 		if (opts.default != null) {

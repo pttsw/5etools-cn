@@ -1622,7 +1622,7 @@ export class CreatureBuilder extends BuilderBase {
 				cb();
 			};
 
-			const btnProf = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Is Proficient">Prof.</button>`
+			const btnProf = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Is Proficient">熟练</button>`
 				.onn("click", () => {
 					if (this._meta.profSave[prop]) {
 						delete this._meta.profSave[prop];
@@ -1708,11 +1708,11 @@ export class CreatureBuilder extends BuilderBase {
 				}
 			};
 
-			const btnProf = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Is Proficient">Prof.</button>`
+			const btnProf = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Is Proficient">熟练</button>`
 				.onn("click", () => _handleButtonPress());
 			if (this._meta.profSkill[prop] === 1) btnProf.addClass("ve-active");
 
-			const btnExpert = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-ml-2" title="Has Expertise">Expert.</button>`
+			const btnExpert = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-ml-2" title="Has Expertise">专精</button>`
 				.onn("click", () => _handleButtonPress(true));
 			if (this._meta.profSkill[prop] === 2) btnExpert.addClass("ve-active");
 
@@ -1757,7 +1757,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__getPassivePerceptionInput (cb) {
-		const [row, rowInner] = BuilderUi.getLabelledRowTuple("Passive Perception");
+		const [row, rowInner] = BuilderUi.getLabelledRowTuple("被动察觉");
 
 		const getAutoPassivePerception = () => {
 			if (!this._meta.autoCalc.passivePerception) return null;
@@ -1797,7 +1797,7 @@ export class CreatureBuilder extends BuilderBase {
 			})
 			.val(this._state.passive || 0);
 
-		const btnAuto = ee`<button class="ve-btn ve-btn-default ve-btn-xs ${this._meta.autoCalc.passivePerception ? "ve-active" : ""}" title="Auto-Calculate Passive Perception"><span class="glyphicon glyphicon-refresh"></span></button>`
+		const btnAuto = ee`<button class="ve-btn ve-btn-default ve-btn-xs ${this._meta.autoCalc.passivePerception ? "ve-active" : ""}" title="自动计算被动察觉"><span class="glyphicon glyphicon-refresh"></span></button>`
 			.onn("click", () => {
 				if (this._meta.autoCalc.passivePerception) {
 					delete this._meta.autoCalc.passivePerception;
@@ -3345,7 +3345,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__getGearInput (cb) {
-		const [row, rowInner] = BuilderUi.getLabelledRowTuple("Gear", {isMarked: true});
+		const [row, rowInner] = BuilderUi.getLabelledRowTuple("装备", {isMarked: true});
 
 		const doUpdateState = () => {
 			const raw = rowMetas.map(row => row.getValue()).filter(Boolean);
@@ -3363,7 +3363,7 @@ export class CreatureBuilder extends BuilderBase {
 		this._state.gear?.forEach(gear => CreatureBuilder.__getGearInput__getGearRow(doUpdateState, rowMetas, gear).wrp.appendTo(wrpRows));
 
 		const wrpBtnAdd = ee`<div></div>`.appendTo(rowInner);
-		ee`<button class="ve-btn ve-btn-xs ve-btn-default">Add Gear</button>`
+		ee`<button class="ve-btn ve-btn-xs ve-btn-default">新增装备</button>`
 			.appendTo(wrpBtnAdd)
 			.onn("click", () => {
 				CreatureBuilder.__getGearInput__getGearRow(doUpdateState, rowMetas).wrp.appendTo(wrpRows);
@@ -3407,9 +3407,9 @@ export class CreatureBuilder extends BuilderBase {
 			});
 
 		const wrp = ee`<div class="ve-flex-col mkbru__wrp-rows">
-			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">Item ID</span>${iptUid}</div>
-			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">Quantity</span>${iptQuantity}</div>
-			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">Display Name</span>${iptDisplayName}</div>
+			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">物品ID</span>${iptUid}</div>
+			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">数量</span>${iptQuantity}</div>
+			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">名称</span>${iptDisplayName}</div>
 			<div class="ve-text-right">${btnRemove}</div>
 		</div>`;
 
@@ -3423,7 +3423,7 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__getAttachedItemInput (cb) {
-		const [row, rowInner] = BuilderUi.getLabelledRowTuple("Attached Items", {isMarked: true});
+		const [row, rowInner] = BuilderUi.getLabelledRowTuple("附加物品", {isMarked: true});
 
 		const doUpdateState = () => {
 			const raw = rowMetas.map(row => row.getValue()).filter(Boolean);
@@ -3445,7 +3445,7 @@ export class CreatureBuilder extends BuilderBase {
 		};
 		doRefresh();
 
-		const btnAdd = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-mr-2">Add Attached Item</button>`
+		const btnAdd = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-mr-2">新增附加物品</button>`
 			.onn("click", () => {
 				CreatureBuilder.__getAttachedItemInput__getAttachedItemRow(doUpdateState, rowMetas).wrp.appendTo(wrpRows);
 				doUpdateState();
@@ -3460,9 +3460,9 @@ export class CreatureBuilder extends BuilderBase {
 	}
 
 	__getAttachedItemInputGenerated (cb, fnsDoRefresh) {
-		const [row, rowInner] = BuilderUi.getLabelledRowTuple("Generated", {isMarked: true});
+		const [row, rowInner] = BuilderUi.getLabelledRowTuple("生成的", {isMarked: true});
 
-		const btnAdd = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Generate additional attached items based on the creatures's current actions">Generate Additional Attached Items</button>`
+		const btnAdd = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="根据生物当前动作生成附加物品">生成附加物品</button>`
 			.onn("click", async () => {
 				AttachedItemTag.tryRun(this._state, {styleHint: this._meta.styleHint, isAddOnly: true});
 				cb();
@@ -3484,7 +3484,7 @@ export class CreatureBuilder extends BuilderBase {
 			return compRow._state.uid;
 		};
 
-		const iptUid = ComponentUiUtil.getIptStr(compRow, "uid", {placeholder: "Item UID"});
+		const iptUid = ComponentUiUtil.getIptStr(compRow, "uid", {placeholder: "物品UID"});
 
 		compRow._addHookAll("state", () => {
 			doUpdateState();
@@ -3499,7 +3499,7 @@ export class CreatureBuilder extends BuilderBase {
 			});
 
 		const wrp = ee`<div class="ve-flex-col mkbru__wrp-rows">
-			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">Item ID</span>${iptUid}</div>
+			<div class="ve-flex-v-center ve-mb-2"><span class="ve-mr-2 mkbru__sub-name--33">物品ID</span>${iptUid}</div>
 			<div class="ve-text-right">${btnRemove}</div>
 		</div>`;
 

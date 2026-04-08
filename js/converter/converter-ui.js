@@ -23,18 +23,18 @@ class _ConverterUiSettings extends BaseComponent {
 					_APPEND_PREPEND_MODE__APPEND,
 					_APPEND_PREPEND_MODE__PREPEND,
 				],
-				fnDisplay: val => val.toTitleCase(),
+				fnDisplay: val => val === _APPEND_PREPEND_MODE__APPEND ? "追加" : "预加",
 			},
 		);
 
 		ee`<div class="ve-flex-col ve-mt-3">
 			<label class="ve-split-v-center ve-w-100 ve-mb-2" title="A separator used to mark the end of one to-be-converted entity (creature, spell, etc.) so that multiple entities can be converted in one run. If left blank, the entire input text will be parsed as one entity.">
-				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">Input Separator</span>
+				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">输入分隔符</span>
 				${iptInputSeparator}
 			</label>
 			
 			<label class="ve-split-v-center ve-w-100" title="Sets output order when using the &quot;Parse and Add&quot; button, or parsing multiple blocks of text using a separator.">
-				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">&quot;Parse and Add&quot; Behaviour</span>
+				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">&quot;转换并添加&quot; 行为</span>
 				${selAppendPrependMode}
 			</label>
 			
@@ -468,7 +468,7 @@ export class ConverterUi extends BaseComponent {
 			.attr("disabled", false)
 			.onn("click", () => {
 				const {eleModalInner} = UiUtil.getShowModal({
-					title: "Settings",
+					title: "设置",
 					isHeaderBorder: true,
 					isUncappedHeight: true,
 				});

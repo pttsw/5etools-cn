@@ -45,7 +45,7 @@ globalThis.VeCt = {
 	DUR_INLINE_NOTIFY: 500,
 
 	PG_NONE: "NO_PAGE",
-	STR_GENERIC: "Generic",
+	STR_GENERIC: "无来源",
 
 	SYM_UI_SKIP: Symbol("uiSkip"),
 

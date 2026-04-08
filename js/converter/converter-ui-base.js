@@ -132,7 +132,7 @@ export class ConverterUiBase extends BaseComponent {
 			});
 		};
 
-		const selSource = ee`<select class="ve-form-control ve-input-xs ve-br-0 ve-w-120p"><option value="">(None)</option></select>`
+		const selSource = ee`<select class="ve-form-control ve-input-xs ve-br-0 ve-w-120p"><option value="">(无)</option></select>`
 			.onn("change", () => this._state.source = selSource.val());
 
 		const optDivider = e_({tag: "option", val: "5e_divider", txt: `\u2014`, attrs: {disabled: true}}).appendTo(selSource);
@@ -176,7 +176,7 @@ export class ConverterUiBase extends BaseComponent {
 			}
 		})();
 
-		const btnSourceEdit = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="Edit Selected Source"><span class="glyphicon glyphicon-pencil"></span></button>`
+		const btnSourceEdit = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="编辑当前来源"><span class="glyphicon glyphicon-pencil"></span></button>`
 			.onn("click", () => {
 				const curSourceJson = this._state.source;
 				if (!curSourceJson) {
@@ -196,7 +196,7 @@ export class ConverterUiBase extends BaseComponent {
 				wrpSourceOverlay.appendTo(modalMeta.eleModalInner);
 			});
 
-		const btnSourceAdd = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="新增来源 Source"><span class="glyphicon glyphicon-plus"></span></button>`
+		const btnSourceAdd = ee`<button class="ve-btn ve-btn-default ve-btn-xs" title="新增来源"><span class="glyphicon glyphicon-plus"></span></button>`
 			.onn("click", () => {
 				rebuildStageSource({mode: "add"});
 				modalMeta = UiUtil.getShowModal({
@@ -211,7 +211,7 @@ export class ConverterUiBase extends BaseComponent {
 			<div class="ve-vr-3 ve-mr-2 ve-mobile-md__hidden"></div>
 			
 			<div class="ve-flex-v-stretch">
-				<div class="ve-mr-2 ve-flex-v-center">Source</div>
+				<div class="ve-mr-2 ve-flex-v-center">来源</div>
 				<div class="ve-flex-v-stretch ve-input-group ve-btn-group ve-mr-2">
 					${selSource}
 					${btnSourceEdit}
@@ -242,7 +242,7 @@ export class ConverterUiBase extends BaseComponent {
 		ee`<div class="ve-flex-v-center ve-mobile-md__mb-2">
 			<div class="ve-vr-3 ve-mobile-md__hidden"></div>
 
-			<div class="ve-mr-2 ve-help" title="Note that a line of the form &quot;PAGE=&lt;page number&gt;&quot; in the Input will set the page in the Output, ignoring any value set here. This is especially useful when parsing multiple inputs delimited by a separator.">Page</div>
+			<div class="ve-mr-2 ve-help" title="Note that a line of the form &quot;PAGE=&lt;page number&gt;&quot; in the Input will set the page in the Output, ignoring any value set here. This is especially useful when parsing multiple inputs delimited by a separator.">页码</div>
 			<div class="ve-btn-group ve-input-group ve-flex-v-stretch">
 				${getBtnIncrementDecrement(-1)}
 				${iptPage}
@@ -260,17 +260,17 @@ export class ConverterUiBase extends BaseComponent {
 			});
 		})();
 
-		const selMode = ComponentUiUtil.getSelEnum(this, "mode", {values: this._modes, html: `<select class="ve-form-control ve-input-xs ve-min-w-140p"></select>`, fnDisplay: it => `Parse as ${ConverterUiBase._getDisplayMode(it)}`})
+		const selMode = ComponentUiUtil.getSelEnum(this, "mode", {values: this._modes, html: `<select class="ve-form-control ve-input-xs ve-min-w-140p"></select>`, fnDisplay: it => `转换为${ConverterUiBase._getDisplayMode(it)}`})
 			.appendTo(wrpModesSamples);
 	}
 
 	_renderSettings_samples ({wrpModesSamples}) {
 		const btnsSamples = this._modes.map(mode => {
-			return ee`<button class="ve-btn ve-btn-xs ve-btn-default">Sample ${ConverterUiBase._getDisplayMode(mode)}</button>`
+			return ee`<button class="ve-btn ve-btn-xs ve-btn-default">范例${ConverterUiBase._getDisplayMode(mode)}</button>`
 				.onn("click", () => {
 					const sample = this._getSample(mode);
 					if (!sample) {
-						JqueryUtil.doToast({type: "warning", content: `No ${ConverterUiBase._getDisplayMode(mode)} sample available!`});
+						JqueryUtil.doToast({type: "warning", content: `没有 ${ConverterUiBase._getDisplayMode(mode)} 范例!`});
 						return;
 					}
 					this._ui.inText = sample;
@@ -319,7 +319,7 @@ export class ConverterUiBase extends BaseComponent {
 
 		ee`<div class="ve-flex-col">
 			<label class="ve-split-v-center ve-w-100" title="Should the entity's name be converted to title-case? Useful when pasting a name which is all-caps.">
-				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">Title-Case Name</span>
+				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">标题首字母大写</span>
 				${cbTitleCase}
 			</label>
 			
@@ -343,7 +343,7 @@ export class ConverterUiBase extends BaseComponent {
 
 		ee`<div class="ve-flex-col">
 			<label class="ve-split-v-center ve-w-100" title="Which game version the input text is intended to be used with.">
-				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">Version</span>
+				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">版本</span>
 				${selStyleHint}
 			</label>
 			
