@@ -67,7 +67,7 @@
 <div class="viewport-wrapper">
 	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner cancer__wrp-interactive"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
-	<header class="hidden-xs hidden-sm page__header">
+	<header class="ve-mobile-sm__hidden page__header">
 		<div class="container ve-flex-v-baseline">
 			<h1 class="page__title ve-no-wrap ve-my-0" id="page__title">食谱</h1>
 			<p class="page__subtitle ve-no-wrap ve-my-0" id="page__subtitle">用左侧的名称搜索，点击选项名称以在右侧显示。</p>
@@ -125,10 +125,14 @@
 
 				<div class="ve-split-v-center ve-mt-2 no-print">
 					<div class="ve-small ve-muted ve-italic ve-mr-2" title="我们非常乐于收到您的纠错，请查看首页的反馈链接。">请注意，过敏原等信息可能不完整或不准确。</div>
-					<div class="ve-flex-v-center ve-btn-group" id="btngroup-manager">
-						<button type="button" class="ve-btn ve-btn-xs ve-btn-primary" name="manage-content">管理自制内容</button>
-						<button type="button" class="ve-btn ve-btn-xs ve-btn-primary" name="manage-prerelease" data-i18n-title="page.manageprelease.manage_prerelease_content"><span class="glyphicon glyphicon-wrench"></span></button>
-						<button type="button" class="ve-btn ve-btn-xs ve-btn-info" name="manage-brew" title="管理自制内容"><span class="glyphicon glyphicon-glass"></span></button>
+
+					<div class="ve-flex-v-center">
+						<button type="button" class="ve-btn ve-btn-default ve-btn-xs ve-mr-2" id="btn-book">打印视图</button>
+						<div class="ve-flex-v-center ve-btn-group" id="btngroup-manager">
+							<button type="button" class="ve-btn ve-btn-xs ve-btn-primary" name="manage-content">管理自制内容</button>
+							<button type="button" class="ve-btn ve-btn-xs ve-btn-primary" name="manage-prerelease" data-i18n-title="page.manageprelease.manage_prerelease_content"><span class="glyphicon glyphicon-wrench"></span></button>
+							<button type="button" class="ve-btn ve-btn-xs ve-btn-info" name="manage-brew" title="管理自制内容"><span class="glyphicon glyphicon-glass"></span></button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -156,13 +160,12 @@
 <script type="text/javascript" defer src="js/render-dice.js"></script>
 <script type="text/javascript" defer src="js/render-markdown.js"></script>
 <script type="text/javascript" defer src="js/render-bbcode.js"></script>
-<script type="text/javascript" defer src="js/render-recipes.js"></script>
 <script type="module" src="js/shim-esmodules.js"></script>
 <script type="text/javascript" defer src="js/hist.js"></script>
 <script type="text/javascript" defer src="js/listpage.js"></script>
 <script type="text/javascript" defer src="js/filter-common.js"></script>
 <script type="text/javascript" defer src="js/filter-recipes.js"></script>
-<script type="text/javascript" defer src="js/recipes.js"></script>
+<script type="module" src="js/recipes.js"></script>
 <script type="text/javascript" defer src="js/list2.js"></script>
 <script type="text/javascript" defer src="lib/marked.js"></script>
 <script type="text/javascript" defer src="lib/elasticlunr.js"></script>

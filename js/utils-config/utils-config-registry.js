@@ -53,6 +53,20 @@ const settingsGroupStyleSwitcher = new ConfigSettingsGroup({
 	],
 });
 
+const settingsGroupUi = new ConfigSettingsGroup({
+	groupId: "ui",
+	name: "UI",
+	configSettings: [
+		new ConfigSettingBoolean({
+			configId: "isNotifyUpdates",
+			name: `Show Notification on Update`,
+			help: `If a notification should be shown when a background content update completes, prompting the user to reload and/or view the changelog.`,
+			isRowLabel: true,
+			default: true,
+		}),
+	],
+});
+
 const _MARKDOWN_TAG_RENDER_MODES = {
 	"convertMarkdown": "转换为Markdown",
 	"ignore": "保持原样",
@@ -95,5 +109,6 @@ const settingsGroupMarkdown = new ConfigSettingsGroup({
 
 export const SETTINGS_GROUPS = [
 	settingsGroupStyleSwitcher,
+	settingsGroupUi,
 	settingsGroupMarkdown,
 ];

@@ -433,9 +433,10 @@ class _PageGeneratorListRaces extends PageGeneratorListBase {
 	_isModule = true;
 
 	_btnsList = [
-		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "name", text: "名称"}),
-		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "ability", text: "属性值"}),
-		HtmlGeneratorListButtons.getBtn({width: "2", sortIdent: "size", text: "体型"}),
+		HtmlGeneratorListButtons.getBtnPreviewToggle({width: "0-4"}),
+		HtmlGeneratorListButtons.getBtn({width: "4-4", sortIdent: "name", text: "名称"}),
+		HtmlGeneratorListButtons.getBtn({width: "3-6", sortIdent: "ability", text: "属性值"}),
+		HtmlGeneratorListButtons.getBtn({width: "1-6", sortIdent: "size", text: "体型"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
 
@@ -450,6 +451,9 @@ class _PageGeneratorListRecipes extends PageGeneratorListBase {
 	_page = UrlUtil.PG_RECIPES;
 	_pageTitle = "食谱";
 	_scriptIdentList = "recipes";
+	_isHasRenderer = false;
+
+	_isModule = true;
 
 	_stylesheets = [
 		"recipes",
@@ -487,6 +491,36 @@ class _PageGeneratorListRecipes extends PageGeneratorListBase {
 			identPartialListContentwrapper: "listContentwrapperRecipes",
 		};
 	}
+}
+
+class _PageGeneratorListHomeCrafts extends PageGeneratorListBase {
+	_page = UrlUtil.PG_HOMECRAFTS;
+	_pageTitle = "Home Crafts";
+	_scriptIdentList = "homecrafts";
+	_isHasRenderer = false;
+
+	_isModule = true;
+
+	_stylesheets = [
+		"homecrafts",
+	];
+
+	_isStyleBook = true;
+
+	_styleListContainerAdditional = "ve-flex-4";
+	_styleContentWrapperAdditional = "ve-flex-7";
+	_stylePageContentAdditional = "homecrafts__tbl-homecrafts";
+
+	_btnsList = [
+		HtmlGeneratorListButtons.getBtn({width: "6", sortIdent: "name", text: "Name"}),
+		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "category", text: "Category"}),
+		HtmlGeneratorListButtons.getBtnSource(),
+	];
+
+	_btnsSublist = [
+		HtmlGeneratorListButtons.getBtn({width: "9", sortIdent: "name", text: "Name"}),
+		HtmlGeneratorListButtons.getBtn({width: "3", sortIdent: "category", text: "Category"}),
+	];
 }
 
 class _PageGeneratorListSpells extends PageGeneratorListBase {
@@ -667,6 +701,7 @@ export const PAGE_GENERATORS_LISTPAGE = [
 	new _PageGeneratorListPsionics(),
 	new _PageGeneratorListRaces(),
 	new _PageGeneratorListRecipes(),
+	new _PageGeneratorListHomeCrafts(),
 	new _PageGeneratorListSpells(),
 	new _PageGeneratorListTables(),
 	new _PageGeneratorListVariantRules(),

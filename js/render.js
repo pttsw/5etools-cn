@@ -4077,7 +4077,7 @@ Renderer.utils = class {
 				const ptTypes = v
 					.map(featCategoryMeta => {
 						if (typeof featCategoryMeta === "string") return Parser.featCategoryToFull(featCategoryMeta);
-						return `${featCategoryMeta.count}× ${Parser.featCategoryToFull(featCategoryMeta)}`;
+						return `${featCategoryMeta.count}× ${Parser.featCategoryToFull(featCategoryMeta.category)}`;
 					})
 					.join("/");
 				return `任意 ${ptTypes}`;
@@ -4843,6 +4843,7 @@ Renderer.utils = class {
 			case "@language": out.page = UrlUtil.PG_LANGUAGES; break;
 			case "@charoption": out.page = UrlUtil.PG_CHAR_CREATION_OPTIONS; break;
 			case "@recipe": out.page = UrlUtil.PG_RECIPES; break;
+			case "@crochet": out.page = UrlUtil.PG_HOMECRAFTS; break;
 			case "@deck": out.page = UrlUtil.PG_DECKS; break;
 			case "@facility": out.page = UrlUtil.PG_BASTIONS; break;
 
@@ -4946,6 +4947,7 @@ Renderer.utils = class {
 			// TODO(Future) revise/expand
 			case "@creatureFluff": { out.isFauxPage = true; out.page = "monsterFluff"; break; }
 			case "@raceFluff": { out.isFauxPage = true; out.page = "raceFluff"; break; }
+			case "@crochetFluff": { out.isFauxPage = true; out.page = "crochetPatternFluff"; break; }
 
 			default: throw new Error(`Unhandled tag "${tag}"`);
 		}
@@ -5851,6 +5853,18 @@ Renderer.tag = class {
 		page = UrlUtil.PG_RECIPES;
 	};
 
+	static TagCrochet = class extends this._TagPipedDisplayTextThird {
+		tagName = "crochet";
+		defaultSource = Parser.SRC_CaBoMP;
+		page = UrlUtil.PG_HOMECRAFTS;
+	};
+
+	static TagCrochetFluff = class extends this._TagPipedDisplayTextThird {
+		tagName = "crochetFluff";
+		defaultSource = Parser.SRC_CaBoMP;
+		page = "crochetFluff";
+	};
+
 	static TagReward = class extends this._TagPipedDisplayTextThird {
 		tagName = "reward";
 		defaultSource = Parser.SRC_DMG;
@@ -6152,6 +6166,8 @@ Renderer.tag = class {
 		new this.TagRace(),
 		new this.TagRaceFluff(),
 		new this.TagRecipe(),
+		new this.TagCrochet(),
+		new this.TagCrochetFluff(),
 		new this.TagReward(),
 		new this.TagVehicle(),
 		new this.TagVehupgrade(),
@@ -6194,6 +6210,12 @@ Renderer.tag = class {
 	static _ = this._init();
 
 	/* ----------------------------------------- */
+
+	static getTagInfo (tag, {isRequired = false} = {}) {
+		const out = this.TAG_LOOKUP[tag];
+		if (isRequired && !out) throw new Error(`No tag info found for tag "${tag}"!`);
+		return out;
+	}
 
 	static getPage (tag) {
 		const tagInfo = this.TAG_LOOKUP[tag];
@@ -6779,7 +6801,7 @@ class _RenderCompactClassesImplBase extends _RenderCompactImplBase {
 	_getCommonHtmlParts_entries ({ent, renderer}) {
 		const cpyEntries = MiscUtil.copyFast(ent.classFeatures || [])
 			.flat()
-			.map(ent => Renderer.class.getDisplayNamedClassFeatureEntry(ent, this._style));
+			.map(ent => Renderer.class.getDisplayNamedClassFeatureEntry(ent, {styleHint: this._style}));
 
 		const fauxEnt = {
 			type: "section",
@@ -9617,7 +9639,7 @@ class _RenderCompactBestiaryImplBase {
 
 		if (isShowCrScaler) {
 			return `<td colspan="2">
-				${Renderer.monster.getChallengeRatingPart(mon, {style: this._style})}
+				${Renderer.monster.getChallengeRatingPart(mon, {styleHint: this._style})}
 				${opts.isShowScalers && !opts.isScaledCr && Parser.isValidCr(mon.cr ? (mon.cr.cr || mon.cr) : null) ? `
 				<button title="基于CR调整数据（实验功能）" class="mon__btn-scale-cr ve-btn ve-btn-xs ve-btn-default no-print">
 					<span class="glyphicon glyphicon-signal"></span>
@@ -14355,26 +14377,30 @@ Renderer.recipe = class {
 		const ptTime = Renderer.recipe.getTimeHtml(ent, {entriesMeta});
 		const {ptMakes, ptServes} = Renderer.recipe.getMakesServesHtml(ent, {entriesMeta});
 
-		return `<div class="ve-flex ve-w-100 ve-rd-recipes__wrp-recipe">
+		return `<div class="ve-flex ve-w-100 ve-rd-plaintext__wrp-root">
 			<div class="ve-flex-1 ve-flex-col ve-br-1p ve-pr-2">
 				${ptTime || ""}
 
 				${ptMakes || ""}
 				${ptServes || ""}
 
-				<div class="ve-rd-recipes__wrp-ingredients ${ptMakes || ptServes ? "ve-mt-1" : ""}">${Renderer.get().render(entriesMeta.entryIngredients, 0)}</div>
+				<div class="ve-rd-plaintext__wrp-sidebar ${ptMakes || ptServes ? "ve-mt-1" : ""}">${Renderer.get().render(entriesMeta.entryIngredients, 0)}</div>
 
-				${entriesMeta.entryEquipment ? `<div class="ve-rd-recipes__wrp-ingredients ve-mt-4"><div class="ve-flex-vh-center ve-bold ve-mb-1 ve-small-caps">Equipment</div><div>${Renderer.get().render(entriesMeta.entryEquipment)}</div></div>` : ""}
+				${entriesMeta.entryEquipment ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-flex-vh-center ve-bold ve-mb-1 ve-small-caps">Equipment</div><div>${Renderer.get().render(entriesMeta.entryEquipment)}</div></div>` : ""}
 
 				${entriesMeta.entryCooksNotes ? `<div class="ve-w-100 ve-flex-col ve-mt-4"><div class="ve-flex-vh-center ve-bold ve-mb-1 ve-small-caps">Cook's Notes</div><div class="ve-italic">${Renderer.get().render(entriesMeta.entryCooksNotes)}</div></div>` : ""}
 			</div>
 
-			<div class="ve-pl-2 ve-flex-2 ve-rd-recipes__wrp-instructions ve-overflow-x-auto">
+			<div class="ve-pl-2 ve-flex-2 ve-rd-plaintext__wrp-primary ve-overflow-x-auto">
 				${Renderer.get().setFirstSection(true).render(entriesMeta.entryInstructions, 2)}
 			</div>
 		</div>`;
 	}
 
+	/**
+	 * @param ent
+	 * @param {?object} entriesMeta
+	 */
 	static getMakesServesHtml (ent, {entriesMeta = null} = {}) {
 		entriesMeta ||= Renderer.recipe.getRecipeRenderableEntriesMeta(ent);
 		const ptMakes = entriesMeta.entryMakes ? `<div class="ve-mb-2">${Renderer.get().render(entriesMeta.entryMakes)}</div>` : null;
@@ -14382,6 +14408,10 @@ Renderer.recipe = class {
 		return {ptMakes, ptServes};
 	}
 
+	/**
+	 * @param ent
+	 * @param {?object} entriesMeta
+	 */
 	static getTimeHtml (ent, {entriesMeta = null} = {}) {
 		entriesMeta ||= Renderer.recipe.getRecipeRenderableEntriesMeta(ent);
 		if (!entriesMeta.entryMetasTime) return "";
@@ -14403,9 +14433,9 @@ Renderer.recipe = class {
 		});
 	}
 
-	static populateFullIngredients (r) {
-		r._fullIngredients = Renderer.applyAllProperties(MiscUtil.copyFast(r.ingredients));
-		if (r.equipment) r._fullEquipment = Renderer.applyAllProperties(MiscUtil.copyFast(r.equipment));
+	static populateFullIngredients (ent) {
+		ent._fullIngredients = Renderer.applyAllProperties(MiscUtil.copyFast(ent.ingredients));
+		if (ent.equipment) ent._fullEquipment = Renderer.applyAllProperties(MiscUtil.copyFast(ent.equipment));
 	}
 
 	static _RE_AMOUNT = /(?<tagAmount>{=amount\d+(?:\/[^}]+)?})/g;
@@ -14632,6 +14662,125 @@ Renderer.recipe = class {
 		const {_scaleFactor} = Renderer.recipe.getUnpackedCustomHashId(customHashId);
 		if (_scaleFactor == null) return ent;
 		return Renderer.recipe.getScaledRecipe(ent, _scaleFactor);
+	}
+};
+
+Renderer.crochetPattern = class {
+	static _getCrochetPatternRenderableEntriesMeta_entriesMeasurements ({ent}) {
+		return [
+			...(ent.size || [])
+				.flatMap(szInfo => {
+					return [
+						szInfo.name ? `{@style ${szInfo.name}|small-caps}` : null,
+						szInfo.width ? `{@b Width:} ${szInfo.width.entry}` : null,
+						szInfo.height ? `{@b Height:} ${szInfo.height.entry}` : null,
+					]
+						.filter(Boolean);
+				}),
+			ent.sizeNote,
+		]
+			.filter(Boolean);
+	}
+
+	static _getCrochetPatternRenderableEntriesMeta_getHookEntry ({hookSize}) {
+		const dispUs = Parser.crochetHookMmToUs(hookSize);
+		const ptMm = `${hookSize} mm crochet hook`;
+		if (!dispUs) return ptMm;
+		return `US ${dispUs} / ${ptMm}`;
+	}
+
+	static _getCrochetPatternRenderableEntriesMeta_entriesHooks ({ent}) {
+		return ent.hooks
+			.flatMap(hookInfo => {
+				if (typeof hookInfo === "number") {
+					return this._getCrochetPatternRenderableEntriesMeta_getHookEntry({hookSize: hookInfo});
+				}
+
+				return [
+					`{@style ${hookInfo.name}|small-caps}`,
+					...hookInfo.hooks
+						.map(hookSize => this._getCrochetPatternRenderableEntriesMeta_getHookEntry({hookSize})),
+				]
+					.filter(Boolean);
+			});
+	}
+
+	static getCrochetPatternRenderableEntriesMeta (ent) {
+		return {
+			entrySkillLevel: Parser.crochetPatternSkilLevelToFull(ent.level),
+			entryDesignedBy: ent.designers ? ent.designers.joinConjunct(", ", " and ") : null,
+			entriesMeasurements: this._getCrochetPatternRenderableEntriesMeta_entriesMeasurements({ent}),
+			entriesHooks: this._getCrochetPatternRenderableEntriesMeta_entriesHooks({ent}),
+		};
+	}
+
+	/* -------------------------------------------- */
+
+	static getCompactRenderedString (ent) {
+		const renderer = Renderer.get();
+		const {entrySkillLevel, entryDesignedBy, entriesMeasurements, entriesHooks} = Renderer.crochetPattern.getCrochetPatternRenderableEntriesMeta(ent);
+
+		return `${Renderer.utils.getExcludedTr({entity: ent, dataProp: "crochetPattern", page: UrlUtil.PG_HOMECRAFTS})}
+		${Renderer.utils.getNameTr(ent, {page: UrlUtil.PG_HOMECRAFTS})}
+		
+		<tr><td colspan="6">
+			<i>Skill Level: ${renderer.render(entrySkillLevel)}.${entryDesignedBy ? ` Designed by ${renderer.render(entryDesignedBy)}.` : ""}</i></td>
+		</td></tr>
+		
+		<tr><td colspan="6">
+		<div class="ve-flex ve-w-100 ve-rd-plaintext__wrp-root">
+			<div class="ve-flex-1 ve-flex-col ve-br-1p ve-pr-2">
+				${entriesMeasurements?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Finished Measurements</div><div>${entriesMeasurements.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}</div></div>` : ""}
+				
+				${ent.yarn?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Yarn</div><div>${renderer.render({entries: ent.yarn})}</div></div>` : ""}
+				
+				${entriesHooks?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Hooks</div><div>${renderer.render({entries: entriesHooks})}</div></div>` : ""}
+				
+				${ent.notions?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Notions</div><div>${renderer.render({entries: ent.notions})}</div></div>` : ""}
+				
+				${ent.gauge?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Gauge</div><div>${renderer.render({entries: ent.gauge})}</div></div>` : ""}
+				
+				${ent.stitches?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Special Stitches</div><div>${renderer.render({entries: ent.stitches})}</div></div>` : ""}
+				
+				${ent.abbreviations?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Special Abbreviations</div><div>${renderer.render({entries: ent.abbreviations})}</div></div>` : ""}
+				
+				${ent.notes?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Notes</div><div>${renderer.render({entries: ent.notes})}</div></div>` : ""}
+				
+				${ent.finishing?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Finishing</div><div>${renderer.render({entries: ent.finishing})}</div></div>` : ""}
+			</div>
+
+			<div class="ve-pl-2 ve-flex-2 ve-rd-plaintext__wrp-primary ve-overflow-x-auto">
+				${renderer.setFirstSection(true).render({entries: ent.instructions})}
+			</div>
+		</div>
+		</td></tr>`;
+	}
+
+	/* -------------------------------------------- */
+
+	static pGetFluff (ent) {
+		return Renderer.utils.pGetFluff({
+			entity: ent,
+			fluffProp: "crochetPatternFluff",
+		});
+	}
+};
+
+Renderer.homecraft = class {
+	static getCompactRenderedString (ent) {
+		switch (ent.__prop) {
+			case "crochetPattern": return Renderer.crochetPattern.getCompactRenderedString(ent);
+			default: throw new Error(`Unhandled prop "${ent.__prop}"`);
+		}
+	}
+
+	/* -------------------------------------------- */
+
+	static pGetFluff (ent) {
+		switch (ent.__prop) {
+			case "crochetPattern": return Renderer.crochetPattern.pGetFluff(ent);
+			default: throw new Error(`Unhandled prop "${ent.__prop}"`);
+		}
 	}
 };
 
@@ -15623,7 +15772,7 @@ Renderer.hover = class {
 				isPermanent: meta.isPermanent,
 				pageUrl: isFauxPage ? null : `${Renderer.get().baseUrl}${page}#${hash}`,
 				cbClose: () => meta.isHovered = meta.isPermanent = meta.isLoading = meta.isFluff = false,
-				isBookContent: page === UrlUtil.PG_RECIPES,
+				isBookContent: Renderer.hover.isBookContentStyledPage(page),
 				compactReferenceData,
 				sourceData: toRender,
 			},
@@ -16787,6 +16936,7 @@ Renderer.hover = class {
 			case UrlUtil.PG_LANGUAGES: return Renderer.language.getCompactRenderedString.bind(Renderer.language);
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return Renderer.charoption.getCompactRenderedString.bind(Renderer.charoption);
 			case UrlUtil.PG_RECIPES: return Renderer.recipe.getCompactRenderedString.bind(Renderer.recipe);
+			case UrlUtil.PG_HOMECRAFTS: return Renderer.homecraft.getCompactRenderedString.bind(Renderer.homecraft);
 			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES: return Renderer.hover.getGenericCompactRenderedString.bind(Renderer.hover);
 			case UrlUtil.PG_CREATURE_FEATURES: return Renderer.hover.getGenericCompactRenderedString.bind(Renderer.hover);
 			case UrlUtil.PG_DECKS: return Renderer.deck.getCompactRenderedString.bind(Renderer.deck);
@@ -16836,7 +16986,7 @@ Renderer.hover = class {
 	 */
 	static getHoverContent_stats (page, toRender, opts, renderFnOpts) {
 		opts = opts || {};
-		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
+		if (Renderer.hover.isBookContentStyledPage(page)) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
 
 		const name = toRender._displayName || toRender.name;
 		const fnRender = opts.fnRender || Renderer.hover.getFnRenderCompact(page, {isStatic: opts.isStatic});
@@ -16865,7 +17015,7 @@ Renderer.hover = class {
 	 */
 	static getHoverContent_fluff (page, toRender, opts, renderFnOpts) {
 		opts = opts || {};
-		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
+		if (Renderer.hover.isBookContentStyledPage(page)) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
 
 		if (!toRender) {
 			return ee`<table class="ve-w-100 ve-stats ${opts.isBookContent ? `ve-stats--book` : ""}"><tr><td colspan="6" class="ve-p-2 ve-text-center">${Renderer.utils.HTML_NO_INFO}</td></tr></table>`;
@@ -16972,7 +17122,7 @@ Renderer.hover = class {
 				pageUrl: `#${UrlUtil.autoEncodeHash(entity)}`,
 				title: entity._displayName || entity.name,
 				isPermanent: true,
-				isBookContent: page === UrlUtil.PG_RECIPES,
+				isBookContent: Renderer.hover.isBookContentStyledPage(page),
 				sourceData: entity,
 			},
 		);
@@ -16992,6 +17142,10 @@ Renderer.hover = class {
 				title: entity._displayName || entity.name,
 			},
 		);
+	}
+
+	static isBookContentStyledPage (page) {
+		return [UrlUtil.PG_RECIPES, UrlUtil.PG_HOMECRAFTS].includes(page);
 	}
 };
 
@@ -17079,9 +17233,7 @@ Renderer._stripTags_textRender = function ({str, ptrAccum, allowlistTags = null,
 			continue;
 		}
 
-		const tagInfo = Renderer.tag.TAG_LOOKUP[tag];
-		if (!tagInfo) throw new Error(`Unhandled tag: "${tag}"`);
-		const stripped = tagInfo.getStripped(tag, text);
+		const stripped = Renderer.tag.getTagInfo(tag, {isRequired: true}).getStripped(tag, text);
 
 		Renderer._stripTags_textRender({str: stripped, ptrAccum, allowlistTags, blocklistTags});
 	}
