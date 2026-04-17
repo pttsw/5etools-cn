@@ -3303,7 +3303,7 @@ Renderer.utils = class {
 						</div>						${opts.htmlControlRhs || ""}
 						${!globalThis.IS_VTT && ExtensionUtil.ACTIVE && opts.page ? Renderer.utils.getBtnSendToFoundryHtml() : ""}
 					</div>
-					<div class="stats__wrp-h-source ${opts.isInlinedToken ? `stats__wrp-h-source--token` : ""} ve-flex-v-baseline">
+					<div class="stats__wrp-h-source ${opts.isInlinedToken ? `ve-stats__wrp-h-source--token` : ""} ve-flex-v-baseline">
 						${!ent.translator || ent.translator === "机翻" ? `<span style="color:red; font-size:bold">⚠️机翻</span>` : ""}
 					
 						${tagPartSourceStart} class="help-subtle stats__h-source-abbreviation ${ent.source ? `${Parser.sourceJsonToSourceClassname(ent.source)}" title="${Parser.sourceJsonToFull(ent.source)}${Renderer.utils.getSourceSubText(ent)}` : ""}">${ent.source ? Parser.sourceJsonToAbv(ent.source) : ""}${tagPartSourceEnd}
@@ -14672,8 +14672,8 @@ Renderer.crochetPattern = class {
 				.flatMap(szInfo => {
 					return [
 						szInfo.name ? `{@style ${szInfo.name}|small-caps}` : null,
-						szInfo.width ? `{@b Width:} ${szInfo.width.entry}` : null,
-						szInfo.height ? `{@b Height:} ${szInfo.height.entry}` : null,
+						szInfo.width ? `{@b 宽:} ${szInfo.width.entry}` : null,
+						szInfo.height ? `{@b 高:} ${szInfo.height.entry}` : null,
 					]
 						.filter(Boolean);
 				}),
@@ -14684,7 +14684,7 @@ Renderer.crochetPattern = class {
 
 	static _getCrochetPatternRenderableEntriesMeta_getHookEntry ({hookSize}) {
 		const dispUs = Parser.crochetHookMmToUs(hookSize);
-		const ptMm = `${hookSize} mm crochet hook`;
+		const ptMm = `${hookSize} mm 钩针`;
 		if (!dispUs) return ptMm;
 		return `US ${dispUs} / ${ptMm}`;
 	}
@@ -14730,13 +14730,13 @@ Renderer.crochetPattern = class {
 		<tr><td colspan="6">
 		<div class="ve-flex ve-w-100 ve-rd-plaintext__wrp-root">
 			<div class="ve-flex-1 ve-flex-col ve-br-1p ve-pr-2">
-				${entriesMeasurements?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Finished Measurements</div><div>${entriesMeasurements.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}</div></div>` : ""}
+				${entriesMeasurements?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">成品尺寸</div><div>${entriesMeasurements.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}</div></div>` : ""}
 				
-				${ent.yarn?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Yarn</div><div>${renderer.render({entries: ent.yarn})}</div></div>` : ""}
+				${ent.yarn?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">线材</div><div>${renderer.render({entries: ent.yarn})}</div></div>` : ""}
 				
-				${entriesHooks?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Hooks</div><div>${renderer.render({entries: entriesHooks})}</div></div>` : ""}
+				${entriesHooks?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">钩针</div><div>${renderer.render({entries: entriesHooks})}</div></div>` : ""}
 				
-				${ent.notions?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Notions</div><div>${renderer.render({entries: ent.notions})}</div></div>` : ""}
+				${ent.notions?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">配件</div><div>${renderer.render({entries: ent.notions})}</div></div>` : ""}
 				
 				${ent.gauge?.length ? `<div class="ve-rd-plaintext__wrp-sidebar ve-mt-4"><div class="ve-bold ve-mb-1 ve-small-caps">Gauge</div><div>${renderer.render({entries: ent.gauge})}</div></div>` : ""}
 				

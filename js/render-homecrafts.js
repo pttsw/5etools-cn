@@ -45,7 +45,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_skillLevelDesignedBy ({ent, renderer, entriesMeta}) {
 		const {entrySkillLevel, entryDesignedBy} = entriesMeta;
 		return `<tr><td colspan="6" class="ve-pb-3 ve-pt-0">
-			<i>Skill Level: ${renderer.render(entrySkillLevel)}.${entryDesignedBy ? ` Designed by ${renderer.render(entryDesignedBy)}.` : ""}</i>
+			<i>技能水平: ${renderer.render(entrySkillLevel)}.${entryDesignedBy ? ` 设计师 ${renderer.render(entryDesignedBy)}.` : ""}</i>
 		</td></tr>`;
 	}
 
@@ -77,7 +77,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 		if (!entriesMeasurements?.length) return "";
 
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Finished Measurements</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">成品尺寸</h5>
 			${entriesMeasurements.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -87,7 +87,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_yarn ({ent, renderer}) {
 		if (!ent.yarn?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Yarn</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">线材</h5>
 			${ent.yarn.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -98,7 +98,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 		const {entriesHooks} = entriesMeta;
 
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Hooks</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">钩针</h5>
 			${entriesHooks.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -108,7 +108,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_notions ({ent, renderer}) {
 		if (!ent.notions?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Notions</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">配件</h5>
 			${ent.notions.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -118,7 +118,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_gauge ({ent, renderer}) {
 		if (!ent.gauge?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Gauge</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">针距</h5>
 			${ent.gauge.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -128,7 +128,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_stitches ({ent, renderer}) {
 		if (!ent.stitches?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Special Stitches</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">特殊针法</h5>
 			${ent.stitches.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -138,7 +138,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_abbreviations ({ent, renderer}) {
 		if (!ent.abbreviations?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Special Abbreviations</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">特殊缩写</h5>
 			${ent.abbreviations.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -148,7 +148,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_notes ({ent, renderer}) {
 		if (!ent.notes?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Notes</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">备注</h5>
 			${ent.notes.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}
@@ -158,7 +158,7 @@ class _RenderCrochetPatternsImplBase extends RenderPageImplBase {
 	_getCommonHtmlParts_finishing ({ent, renderer}) {
 		if (!ent.finishing?.length) return "";
 		return `<div class="ve-pb-4 ve-pt-0">
-			<h5 class="ve-bold ve-small-caps ve-my-0">Finishing</h5>
+			<h5 class="ve-bold ve-small-caps ve-my-0">收尾</h5>
 			${ent.finishing.map(ent => `<div class="ve-mt-1">${renderer.render(ent)}</div>`).join("")}
 		</div>`;
 	}

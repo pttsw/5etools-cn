@@ -14,11 +14,13 @@ class PageFilterHomeCrafts extends PageFilterBase {
 
 		this._categoryFilter = new Filter({
 			header: "Category",
-			items: ["amigurumi", "wearable", "household item"],
+			cnHeader: "分类",
+			items: ["钩针玩偶", "可穿戴", "家居物品"],
 			displayFn: it => it.toTitleCase(),
 		});
 		this._skillLevelFilter = new Filter({
 			header: "Skill Level",
+			cnHeader: "技能水平",
 			items: [...PageFilterHomeCrafts._SKILL_LEVELS],
 			displayFn: it => Parser.crochetPatternSkilLevelToFull(it),
 			itemSortFn: PageFilterHomeCrafts._ascSortSkillLevelFilter.bind(PageFilterHomeCrafts),
@@ -27,11 +29,13 @@ class PageFilterHomeCrafts extends PageFilterBase {
 		this._sizeFilterHeight = new RangeFilter({header: "Height", min: 1, max: 10, suffix: " in."});
 		this._sizesFilter = new MultiFilter({
 			header: "Sizes",
+			cnHeader: "尺寸",
 			filters: [this._sizeFilterWidth, this._sizeFilterHeight],
 			isAddDropdownToggle: true,
 		});
 		this._hookFilter = new Filter({
 			header: "Hook",
+			cnHeader: "钩针型号",
 			displayFn: sizeMm => {
 				const asMm = `${sizeMm.toFixed(2)} mm`;
 
@@ -43,10 +47,12 @@ class PageFilterHomeCrafts extends PageFilterBase {
 		});
 		this._designerFilter = new Filter({
 			header: "Designer",
+			cnHeader: "设计师",
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Has Images", "Has Info"],
+			cnHeader: "其他信息",
+			items: ["有图片", "有信息"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});

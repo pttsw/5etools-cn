@@ -120,7 +120,7 @@ class NavBar {
 		this._addElement_li({keyPath: [NavBar._CAT_REFERENCES], page: "vehicles.html", aText: "载具"});
 		this._addElement_divider({keyPath: [NavBar._CAT_REFERENCES]});
 		this._addElement_li({keyPath: [NavBar._CAT_REFERENCES], page: "recipes.html", aText: "食谱"});
-		this._addElement_li({keyPath: [NavBar._CAT_REFERENCES], page: "homecrafts.html", aText: "Home Crafts"});
+		this._addElement_li({keyPath: [NavBar._CAT_REFERENCES], page: "homecrafts.html", aText: "手工艺品"});
 
 		this._addElement_dropdown({category: NavBar._CAT_UTILITIES});
 		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "search.html", aText: "搜索"});

@@ -3322,9 +3322,9 @@ Parser.vehicleTypeToFull = function (vehicleType) {
 };
 
 Parser.CROCHET_PATTERN_SKILL_LEVEL_TO_FULL = {
-	"B": "Beginner",
-	"I": "Intermediate",
-	"A": "Advanced",
+	"B": "初级",
+	"I": "中级",
+	"A": "高级",
 };
 
 Parser.crochetPatternSkilLevelToFull = function (lvl) {
@@ -3741,7 +3741,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MCV3MC] = `${Parser.MCVX_PREFIX}卷三：M
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MCV4EC] = `${Parser.MCVX_PREFIX}卷四：艾卓生物`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MisMV1] = `${Parser.MisMVX_PREFIX}卷一`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_AATM] = `${Parser.AA_PREFIX}葬仪社`;
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_CaBoMP] = "Crochet: A Book of Many Patterns";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_CaBoMP] = "钩针编织：百变图案集";
 
 Parser.SOURCE_JSON_TO_ABV = {};
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_PHB] = "PHB'14";

@@ -543,7 +543,7 @@ globalThis.SourceUtil = class {
 		{group: "homebrew", displayName: "Homebrew"},
 		{group: "screen", displayName: "帷幕"},
 		{group: "recipe", displayName: "食谱"},
-		{group: "homecraft", displayName: "Home Crafts"},
+		{group: "homecraft", displayName: "手工艺品"},
 		{group: "other", displayName: "杂项"},
 	];
 
@@ -4212,7 +4212,7 @@ UrlUtil.PG_TO_NAME[UrlUtil.PG_TEXT_CONVERTER] = "文本转换器";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CHANGELOG] = "更新日志";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CHAR_CREATION_OPTIONS] = "其他角色创建选项";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_RECIPES] = "食谱";
-UrlUtil.PG_TO_NAME[UrlUtil.PG_HOMECRAFTS] = "Home Crafts";
+UrlUtil.PG_TO_NAME[UrlUtil.PG_HOMECRAFTS] = "手工艺品";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CREATURE_FEATURES] = "生物特性";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_VEHICLE_FEATURES] = "载具特性";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_OBJECT_FEATURES] = "物件特性";

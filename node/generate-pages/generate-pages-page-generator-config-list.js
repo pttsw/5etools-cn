@@ -495,7 +495,7 @@ class _PageGeneratorListRecipes extends PageGeneratorListBase {
 
 class _PageGeneratorListHomeCrafts extends PageGeneratorListBase {
 	_page = UrlUtil.PG_HOMECRAFTS;
-	_pageTitle = "Home Crafts";
+	_pageTitle = "手工艺品";
 	_scriptIdentList = "homecrafts";
 	_isHasRenderer = false;
 
@@ -512,14 +512,14 @@ class _PageGeneratorListHomeCrafts extends PageGeneratorListBase {
 	_stylePageContentAdditional = "homecrafts__tbl-homecrafts";
 
 	_btnsList = [
-		HtmlGeneratorListButtons.getBtn({width: "6", sortIdent: "name", text: "Name"}),
-		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "category", text: "Category"}),
+		HtmlGeneratorListButtons.getBtn({width: "6", sortIdent: "name", text: "名称"}),
+		HtmlGeneratorListButtons.getBtn({width: "4", sortIdent: "category", text: "分类"}),
 		HtmlGeneratorListButtons.getBtnSource(),
 	];
 
 	_btnsSublist = [
-		HtmlGeneratorListButtons.getBtn({width: "9", sortIdent: "name", text: "Name"}),
-		HtmlGeneratorListButtons.getBtn({width: "3", sortIdent: "category", text: "Category"}),
+		HtmlGeneratorListButtons.getBtn({width: "9", sortIdent: "name", text: "名称"}),
+		HtmlGeneratorListButtons.getBtn({width: "3", sortIdent: "category", text: "分类"}),
 	];
 }
 
