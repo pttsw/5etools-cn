@@ -59,7 +59,7 @@ globalThis.VeCt = {
 	URL_ROOT_BREW: `https://homebrew.kiwee.top/`, // N.b. must end with a slash
 	URL_ROOT_BREW_IMG: `${URL_PROXY}https://raw.githubusercontent.com/tjliqy/homebrew-img/main/`, // N.b. must end with a slash
 	URL_PRERELEASE: `https://github.com/tjliqy/unearthed-arcana`,
-	URL_ROOT_PRERELEASE: `${URL_PROXY}https://raw.githubusercontent.com/tjliqy/unearthed-arcana/cn/`, // As above
+	URL_ROOT_PRERELEASE: `https://ua.kiwee.top/`, // As above
 
 	STR_NO_ATTUNEMENT: "无需同调",
 
