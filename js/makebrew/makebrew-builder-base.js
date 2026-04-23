@@ -600,7 +600,7 @@ export class BuilderBase extends ProxyBase {
 			const href = ((image || {}).href || {});
 			if (href.url) iptUrl.val(href.url);
 			else if (href.path) {
-				iptUrl.val(`${window.location.origin.replace(/\/+$/, "")}/img/${href.path}`);
+				iptUrl.val(Renderer.get().getMediaUrl("img", href.path));
 			}
 
 			if (image.title) iptTitle.val(image.title);
