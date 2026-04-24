@@ -44,7 +44,8 @@ export async function onRequest (context) {
 	}
 
 	const outHeaders = new Headers(res.headers);
-	outHeaders.set("Cache-Control", "public, max-age=31536000, immutable");
+	if (res.ok) outHeaders.set("Cache-Control", "public, max-age=31536000, immutable");
+	else outHeaders.set("Cache-Control", "no-store");
 
 	return new Response(res.body, {
 		status: res.status,

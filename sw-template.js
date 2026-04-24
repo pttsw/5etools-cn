@@ -327,12 +327,12 @@ class RevisionCacheFirst extends Strategy {
  * __WB_RUNTIME_MANIFEST is injected as [route, revision] array, mapped into [url, revision], and constructed as map
  */
 const runtimeManifest = new Map(self.__WB_RUNTIME_MANIFEST.map(
-	([
-		route,
+	({
+		url,
 		revision,
-	]) =>
+	}) =>
 		[
-			`${self.location.origin}/${route}`,
+			`${self.location.origin}/${url}`,
 			revision,
 		],
 ));
