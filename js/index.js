@@ -16,8 +16,8 @@ class IndexPage {
 
 		es(`#wrp-donate`)
 			.html(`<a><img src="${Renderer.get().getMediaUrl("img", "alipay.jpg")}" alt="支付宝二维码" style="height: 250px;"><img src="${Renderer.get().getMediaUrl("img", "wechat.png")}" alt="微信二维码" style="height: 250px;"></a>`);
-		es(`#wrp-patreon`)
-			.html(`<a href="https://www.patreon.com/bePatron?u=22018559" rel="noopener noreferrer"><img src="${Renderer.get().getMediaUrl("img", "patreon.webp")}" alt="Become a Patron" style="width: 217px; height: 51px"></a>`);
+		// es(`#wrp-patreon`)
+		// 	.html(`<a href="https://www.patreon.com/bePatron?u=22018559" rel="noopener noreferrer"><img src="${Renderer.get().getMediaUrl("img", "patreon.webp")}" alt="Become a Patron" style="width: 217px; height: 51px"></a>`);
 
 		em(`[data-link-type="better20"]`)
 			.forEach(lnk => lnk.attr("href", `${lnk.attr("href")}?v=${VERSION_NUMBER}_${Date.now()}`));
