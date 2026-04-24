@@ -7,7 +7,7 @@ export async function onRequest (context) {
 		? rawPath.join("/")
 		: rawPath || "";
 
-	const upstreamUrl = `https://5e.tools/img/${path}${url.search}`;
+	const upstreamUrl = `https://82.157.116.166/img/${path}${url.search}`;
 	const headers = new Headers(req.headers);
 	headers.delete("host");
 
