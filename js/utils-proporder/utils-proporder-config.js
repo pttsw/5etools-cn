@@ -2277,7 +2277,7 @@ const PROPORDER_CROCHET_PATTERN = [
 
 	"designers",
 	"level",
-	"type",
+	"patternType",
 	"size",
 	"sizeNote",
 	"yarn",

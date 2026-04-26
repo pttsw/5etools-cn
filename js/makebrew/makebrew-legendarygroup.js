@@ -28,11 +28,12 @@ export class LegendaryGroupBuilder extends BuilderBase {
 	async pHandleLoadExistingData (legGroup, opts) {
 		opts = opts || {};
 
+		legGroup.name = `${legGroup.name} (Copy)`;
 		legGroup.source = this._ui.source;
 
 		delete legGroup.uniqueId;
 
-		const meta = {...(opts.meta || {}), ...this._getInitialMetaState({nameOriginal: legGroup.name})};
+		const meta = {...(opts.meta || {}), ...this._getInitialMetaState({nameOriginal: legGroup.name, isModified: true})};
 
 		this.setStateFromLoaded({s: legGroup, m: meta});
 
@@ -65,8 +66,8 @@ export class LegendaryGroupBuilder extends BuilderBase {
 	doHandleSourcesAdd () { /* No-op */ }
 
 	_renderInputImpl () {
-		this.doCreateProxies();
-		this.renderInputControls();
+		this._doCreateProxies();
+		this._doBindHeaderElements();
 		this._renderInputMain();
 	}
 
@@ -91,12 +92,13 @@ export class LegendaryGroupBuilder extends BuilderBase {
 		// initialise tabs
 		this._resetTabs({tabGroup: "input"});
 
+		const tabOptsShared = {hasBorder: true, hasBackground: true};
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "描述", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "巢穴动作", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "区域效应", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "神话遭遇", hasBorder: true}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "描述"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "巢穴动作"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "区域效应"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "神话遭遇"}),
 			],
 			{
 				tabGroup: "input",
@@ -108,7 +110,7 @@ export class LegendaryGroupBuilder extends BuilderBase {
 		tabs.forEach(it => it.wrpTab.appendTo(wrp));
 
 		// INFO
-		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false, callback: () => this.pRenderEntityList()}, "name").appendTo(infoTab.wrpTab);
+		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false}, "name").appendTo(infoTab.wrpTab);
 		this._selSource = this.getSourceInput(cb).appendTo(infoTab.wrpTab);
 
 		// LAIR ACTIONS

@@ -62,6 +62,7 @@ export class SpellBuilder extends BuilderBase {
 	async pHandleLoadExistingData (spell, opts) {
 		opts = opts || {};
 
+		spell.name = `${spell.name} (Copy)`;
 		spell.source = this._ui.source;
 
 		delete spell.srd;
@@ -71,7 +72,7 @@ export class SpellBuilder extends BuilderBase {
 		delete spell.uniqueId;
 		delete spell.reprintedAs;
 
-		const meta = {...(opts.meta || {}), ...this._getInitialMetaState({nameOriginal: spell.name})};
+		const meta = {...(opts.meta || {}), ...this._getInitialMetaState({nameOriginal: spell.name, isModified: true})};
 
 		this.setStateFromLoaded({s: spell, m: meta});
 
@@ -143,8 +144,8 @@ export class SpellBuilder extends BuilderBase {
 	}
 
 	_renderInputImpl () {
-		this.doCreateProxies();
-		this.renderInputControls();
+		this._doCreateProxies();
+		this._doBindHeaderElements();
 		this._renderInputMain();
 	}
 
@@ -168,12 +169,14 @@ export class SpellBuilder extends BuilderBase {
 
 		// initialise tabs
 		this._resetTabs({tabGroup: "input"});
+
+		const tabOptsShared = {hasBorder: true, hasBackground: true};
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "描述", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "详细描述", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "来源", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "其他", hasBorder: true}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "描述"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "详细描述"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "来源"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "其他"}),
 			],
 			{
 				tabGroup: "input",
@@ -185,7 +188,7 @@ export class SpellBuilder extends BuilderBase {
 		tabs.forEach(it => it.wrpTab.appendTo(wrp));
 
 		// INFO
-		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false, callback: () => this.pRenderEntityList()}, "name").appendTo(infoTab.wrpTab);
+		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false}, "name").appendTo(infoTab.wrpTab);
 		this._selSource = this.getSourceInput(cb).appendTo(infoTab.wrpTab);
 		this.__getOtherSourcesInput(cb).appendTo(infoTab.wrpTab);
 		BuilderUi.getStateIptString("页码", cb, this._state, {}, "page").appendTo(infoTab.wrpTab);

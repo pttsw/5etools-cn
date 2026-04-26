@@ -9,9 +9,27 @@ class PageFilterHomeCrafts extends PageFilterBase {
 		return SortUtil.ascSort(~aSort ? aSort : Number.MAX_SAFE_INTEGER, ~bSort ? bSort : Number.MAX_SAFE_INTEGER);
 	}
 
+	/* ----- */
+
+	static _PROP_TO_ABV = {
+		"crochetPattern": "CP",
+	};
+
+	static getTypeAbbreviation (prop) {
+		if (!this._PROP_TO_ABV[prop]) throw new Error(`Unhandled home crafts property "${prop}"!`);
+		return this._PROP_TO_ABV[prop];
+	}
+
+	/* ----- */
+
 	constructor () {
 		super();
 
+		this._typeFilter = new Filter({
+			header: "Type",
+			items: ["crochetPattern"],
+			displayFn: it => Parser.getPropDisplayName(it),
+		});
 		this._categoryFilter = new Filter({
 			header: "Category",
 			cnHeader: "分类",
@@ -74,6 +92,7 @@ class PageFilterHomeCrafts extends PageFilterBase {
 		if (isExcluded) return;
 
 		this._sourceFilter.addItem(ent._fSources);
+		this._typeFilter.addItem(ent.__prop);
 		this._categoryFilter.addItem(ent.patternType);
 		this._skillLevelFilter.addItem(ent.level);
 		this._sizeFilterWidth.addItem(ent._fWidth);
@@ -86,6 +105,7 @@ class PageFilterHomeCrafts extends PageFilterBase {
 	async _pPopulateBoxOptions (opts) {
 		opts.filters = [
 			this._sourceFilter,
+			this._typeFilter,
 			this._categoryFilter,
 			this._skillLevelFilter,
 			this._sizesFilter,
@@ -99,6 +119,7 @@ class PageFilterHomeCrafts extends PageFilterBase {
 		return this._filterBox.toDisplay(
 			values,
 			ent._fSources,
+			ent.__prop,
 			ent.patternType,
 			ent.level,
 			[

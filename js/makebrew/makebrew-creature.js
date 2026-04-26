@@ -316,6 +316,7 @@ export class CreatureBuilder extends BuilderBase {
 			if (fluff) creature.fluff = MiscUtil.copy(fluff);
 		}
 
+		creature.name = `${creature.name} (Copy)`;
 		creature.source = this._ui.source;
 
 		if (creature.soundClip && creature.soundClip.type === "internal") {
@@ -340,7 +341,7 @@ export class CreatureBuilder extends BuilderBase {
 		// Semi-gracefully handle e.g. ERLW's Steel Defender
 		if (creature.passive != null && typeof creature.passive === "string") delete creature.passive;
 
-		const meta = {...(opts.meta || {}), ...this._getInitialMetaState({nameOriginal: creature.name})};
+		const meta = {...(opts.meta || {}), ...this._getInitialMetaState({nameOriginal: creature.name, isModified: true})};
 
 		if (ScaleCreature.isCrInScaleRange(creature) && !opts.isForce) {
 			const crDefault = creature.cr.cr || creature.cr;
@@ -650,8 +651,8 @@ export class CreatureBuilder extends BuilderBase {
 
 	_renderInputImpl () {
 		this._validateMeta();
-		this.doCreateProxies();
-		this.renderInputControls();
+		this._doCreateProxies();
+		this._doBindHeaderElements();
 		this._renderInputMain();
 	}
 
@@ -703,15 +704,16 @@ export class CreatureBuilder extends BuilderBase {
 		// initialise tabs
 		this._resetTabs({tabGroup: "input"});
 
+		const tabOptsShared = {hasBorder: true, hasBackground: true};
 		const tabs = this._renderTabs(
 			[
-				new TabUiUtil.TabMeta({name: "描述", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "物种", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "核心", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "防御", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "属性", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "装备", hasBorder: true}),
-				new TabUiUtil.TabMeta({name: "其他", hasBorder: true}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "描述"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "物种"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "核心"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "防御"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "属性"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "装备"}),
+				new TabUiUtil.TabMeta({...tabOptsShared, name: "其他"}),
 			],
 			{
 				tabGroup: "input",
@@ -723,7 +725,7 @@ export class CreatureBuilder extends BuilderBase {
 		tabs.forEach(it => it.wrpTab.appendTo(wrp));
 
 		// INFO
-		BuilderUi.getStateIptString("名称", cb, this._state, {nullable: false, callback: () => this.pRenderEntityList()}, "name").appendTo(infoTab.wrpTab);
+		BuilderUi.getStateIptString("名称", cb, this._state, {nullable: false}, "name").appendTo(infoTab.wrpTab);
 		this.__getShortNameInput(cb).appendTo(infoTab.wrpTab);
 		this._selSource = this.getSourceInput(cb).appendTo(infoTab.wrpTab);
 		BuilderUi.getStateIptString("页码", cb, this._state, {}, "page").appendTo(infoTab.wrpTab);

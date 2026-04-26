@@ -196,6 +196,7 @@ class ModalFilterFeats extends ModalFilterBase {
 			...opts,
 			modalTitle: I18nUtil.get("common.feat", _ => `Feat${opts.isRadio ? "" : "s"}`),
 			pageFilter: new PageFilterFeats(),
+			previewButtonHandler: new ListUiPreviewButtonHandlerStatsFluff({page: UrlUtil.PG_FEATS}),
 		});
 	}
 
@@ -261,7 +262,7 @@ class ModalFilterFeats extends ModalFilterBase {
 			},
 		);
 
-		ListUiUtil.bindPreviewButton(UrlUtil.PG_FEATS, this._allData, listItem, btnShowHidePreview);
+		this._previewButtonHandler.bindPreviewButton({entity: feat, listItem, btnShowHidePreview});
 
 		return listItem;
 	}
