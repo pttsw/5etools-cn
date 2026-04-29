@@ -44,7 +44,7 @@ class _ConfigSettingBase {
 	}
 
 	_renderLabel (rdState) {
-		const ptReload = this._isReloadRequired ? `<span class="ve-ml-2 text-danger ve-small" title="Requires Refresh">‡</span>` : "";
+		const ptReload = this._isReloadRequired ? `<span class="ve-ml-2 text-danger ve-small" title="需要刷新">‡</span>` : "";
 		return `<div class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">${this._name}${ptReload}</div>`;
 	}
 

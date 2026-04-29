@@ -1428,8 +1428,8 @@ globalThis.Renderer = function () {
 			if (entry.will && !hidden.has("will")) tempList.items.push({type: "itemSpell", name: `随意:`, entry: this._renderSpellcasting_getRenderableList(entry.will).join(", ")});
 
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "recharge", fnGetDurationText: num => `{@recharge ${num}|m}`, isSkipPrefix: true});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "legendary", fnGetDurationText: num => ` legendary action${num === 1 ? "" : "s"}`});
-			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "charges", fnGetDurationText: num => ` charge${num === 1 ? "" : "s"}`});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "legendary", fnGetDurationText: num => ` 传奇动作`});
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "charges", fnGetDurationText: num => ` 充能`});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "rest", durationText: "/休息"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "restLong", durationText: "/长休"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/日"});
@@ -4126,7 +4126,7 @@ Renderer.utils = class {
 			const ptNames = v.map(it => isTextOnly ? Renderer.stripTags(it) : Renderer.get().render(it)).joinConjunct(", ", " 或 ");
 
 			if (styleHint === "classic") return ptNames;
-			return `${ptNames} 特性${v.length === 1 ? "" : "s"}`;
+			return `${ptNames} 特性`;
 		}
 
 		static _getHtml_item ({v, isListMode}) {
@@ -8292,7 +8292,7 @@ Renderer.optionalfeature = class {
 	static getCostEntry (ent) {
 		if (!ent.consumes?.name) return null;
 
-		const ptPrefix = "Cost: ";
+		const ptPrefix = "花费: ";
 		const tksUnit = ent.consumes.name
 			.split(" ")
 			.map(it => it.trim())

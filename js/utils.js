@@ -409,6 +409,7 @@ globalThis.StrUtil = class {
 	}
 
 	static toPlural (str) {
+		return str.toString();
 		let plural;
 		if (this._IRREGULAR_PLURAL_WORDS[str.toLowerCase()]) plural = this._IRREGULAR_PLURAL_WORDS[str.toLowerCase()];
 		else if (/(s|x|z|ch|sh)$/i.test(str)) plural = `${str}es`;
