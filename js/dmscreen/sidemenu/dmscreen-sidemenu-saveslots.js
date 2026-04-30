@@ -79,7 +79,7 @@ export class RenderableCollectionSaveSlotStatesSidebar extends RenderableCollect
 				doToggleEditable();
 			});
 
-		const hkName = () => wrpRow.tooltip(`Load Save Slot ${comp._state.n ? `"${comp._state.n}"` : comp._state.ns ? `"${comp._state.ns}"` : `${entity.id}`}`);
+		const hkName = () => wrpRow.tooltip(`加载存档面板${comp._state.n ? `"${comp._state.n}"` : comp._state.ns ? `"${comp._state.ns}"` : `${entity.id}`}`);
 		comp._addHookBase("n", hkName);
 		comp._addHookBase("ns", hkName);
 		hkName();
@@ -150,7 +150,7 @@ export class RenderableCollectionSaveSlotStatesManager extends RenderableCollect
 		const iptName = ComponentUiUtil.getIptStr(comp, "n")
 			.tooltip("A longer name, show in tooltips and lists.");
 
-		const btnSetActive = ee`<button class="ve-btn ve-btn-default ve-btn-xs">Activate</button>`
+		const btnSetActive = ee`<button class="ve-btn ve-btn-default ve-btn-xs">激活</button>`
 			.onn("click", async () => {
 				this._fnDoCloseModal();
 				await this._board.pHandleClick_setActiveSaveSlot(entity.id);

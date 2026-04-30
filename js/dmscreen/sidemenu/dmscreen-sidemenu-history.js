@@ -48,7 +48,7 @@ export class DmScreenSidemenuHistory extends BaseComponent {
 	/* -------------------------------------------- */
 
 	render () {
-		const btnHistClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">Clear</button>`
+		const btnHistClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">清空</button>`
 			.onn("click", () => {
 				this._board.exiledPanels.forEach(p => p.destroy());
 				this._board.exiledPanels = [];
@@ -59,7 +59,7 @@ export class DmScreenSidemenuHistory extends BaseComponent {
 
 		ee(this._wrpHistory)`
 			<div class="ve-w-100 ve-mb-2 ve-split-v-center">
-				<span class="ve-small-caps">Recently Removed</span>
+				<span class="ve-small-caps">近期删除</span>
 				${btnHistClear}
 			</div>
 			<hr class="ve-hr-2">
@@ -70,7 +70,7 @@ export class DmScreenSidemenuHistory extends BaseComponent {
 	/* -------------------------------------------- */
 
 	getBtnToggle () {
-		const btnToggle = ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="Toggle History"><span class="fas fa-clock-rotate-left"></span></button>`
+		const btnToggle = ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="变更历史"><span class="fas fa-clock-rotate-left"></span></button>`
 			.onn("click", () => this._state.isVisible = !this._state.isVisible);
 
 		this._addHookBase("isVisible", () => btnToggle.toggleClass("ve-active", this._state.isVisible))();

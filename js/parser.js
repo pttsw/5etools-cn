@@ -2690,7 +2690,7 @@ Parser.CAT_ID_TO_FULL[Parser.CAT_ID_PAGE] = "页面";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_LEGENDARY_GROUP] = "传奇组";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CHAR_CREATION_OPTIONS] = "角色创建选项";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_RECIPE] = "食谱";
-Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CROCHET_PATTERN] = "Crochet Pattern";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CROCHET_PATTERN] = "手工艺品";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_STATUS] = "状态";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_DECK] = "牌组";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CARD] = "卡牌";
@@ -4617,7 +4617,7 @@ Parser.PROP_TO_DISPLAY_NAME = {
 	"makebrewCreatureTrait": "自制内容生成器生物特质",
 	"charoption": "其他角色创建选项",
 	"encounterShape": "Encounter Shape",
-	"crochetPattern": "Crochet Pattern",
+	"crochetPattern": "手工艺品",
 	
 	"bonus": "附赠动作",
 	"legendary": "传奇动作",

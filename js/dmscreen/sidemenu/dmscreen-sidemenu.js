@@ -115,7 +115,7 @@ export class DmScreenSideMenu extends BaseComponent {
 	/* ----- */
 
 	_render_getBtnNewSaveSlot () {
-		return ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="New Save Slot"><span class="glyphicon glyphicon-plus"></span></button>`
+		return ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="新建存档面板"><span class="glyphicon glyphicon-plus"></span></button>`
 			.onn("click", async () => {
 				await this._board.pHandleClick_doNewSaveSlot();
 			});
@@ -132,7 +132,7 @@ export class DmScreenSideMenu extends BaseComponent {
 
 		const menuMass = ContextUtil.getMenu([
 			new ContextUtil.Action(
-				"Delete",
+				"删除",
 				async () => {
 					const saveSlotIdActive = this._state.saveSlotStates
 						.filter(rowState => rowState.entity.isActive)[0]?.id;
@@ -140,9 +140,9 @@ export class DmScreenSideMenu extends BaseComponent {
 
 					const selectedSaveSlotIds = selectClickHandler.getSelectedIds()
 						.filter(id => id !== saveSlotIdActive);
-					if (!selectedSaveSlotIds.length) return JqueryUtil.doToast({content: `Please select some (non-active) save slots first!`, type: "warning"});
+					if (!selectedSaveSlotIds.length) return JqueryUtil.doToast({content: `请先选中非激活的存档面板！`, type: "warning"});
 
-					if (!await InputUiUtil.pGetUserBoolean({title: "Delete Save Slots", htmlDescription: `This will delete ${selectedSaveSlotIds.length} save slot${selectedSaveSlotIds.length === 1 ? "" : "s"}. Are you sure?`, textYes: "Yes", textNo: "Cancel"})) return;
+					if (!await InputUiUtil.pGetUserBoolean({title: "删除存档面板", htmlDescription: `此操作将删除 ${selectedSaveSlotIds.length} 个存档面板。你确定要这么做吗？`, textYes: "确定", textNo: "取消"})) return;
 
 					const toDelete = new Set(selectedSaveSlotIds);
 
@@ -156,7 +156,7 @@ export class DmScreenSideMenu extends BaseComponent {
 
 		const menuRowOptions = ContextUtil.getMenu([
 			new ContextUtil.Action(
-				"Duplicate",
+				"拷贝",
 				async () => {
 					await this._board.pHandleClick_doDuplicateSaveSlot(menuRowOptions.userData.entityId);
 				},
@@ -176,13 +176,13 @@ export class DmScreenSideMenu extends BaseComponent {
 			renderableCollection.render();
 		})();
 
-		return ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="View/Manage Save Slots"><span class="glyphicon glyphicon-folder-open"></span></button>`
+		return ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="查看/管理存档面板"><span class="glyphicon glyphicon-folder-open"></span></button>`
 			.onn("click", async () => {
 				isModalActive = true;
 				renderableCollection.render();
 
 				const {eleModalInner, doClose} = UiUtil.getShowModal({
-					title: "View/Manage Save Slots",
+					title: "查看/管理存档面板",
 					isHeight100: true,
 					isUncappedHeight: true,
 					isHeaderBorder: true,
@@ -195,7 +195,7 @@ export class DmScreenSideMenu extends BaseComponent {
 				renderableCollection.setFnCloseModal(doClose);
 				eleModalInner.addClass("ve-py-2");
 
-				const btnMass = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">Mass...</button>`
+				const btnMass = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">批处理...</button>`
 					.onn("click", async evt => {
 						await ContextUtil.pOpenMenu(evt, menuMass);
 					});
@@ -215,8 +215,8 @@ export class DmScreenSideMenu extends BaseComponent {
 							${cbMulti}
 						</label>
 						<button class="ve-btn ve-btn-default ve-btn-xs ve-col-1" disabled>&nbsp;</button>
-						<button class="ve-btn ve-btn-default ve-btn-xs ve-col-1" title="Label. A short name, shown in the sidebar." disabled>Lbl.</button>
-						<button class="ve-btn ve-btn-default ve-btn-xs ve-col-7" title="A longer name, show in tooltips and lists." disabled>Name</button>
+						<button class="ve-btn ve-btn-default ve-btn-xs ve-col-1" title="标识符。展示在侧边栏的缩写。" disabled>标识</button>
+						<button class="ve-btn ve-btn-default ve-btn-xs ve-col-7" title="更长的名字，展示在工具栏和列表中。" disabled>名称</button>
 						<button class="ve-btn ve-btn-default ve-btn-xs ve-grow" disabled>&nbsp;</button>
 					</div>
 					
@@ -238,14 +238,14 @@ export class DmScreenSideMenu extends BaseComponent {
 	/* -------------------------------------------- */
 
 	_render_getBtnSaveToFile () {
-		return ee`<button class="ve-btn ve-btn-primary ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="Save State to File"><span class="glyphicon glyphicon-download"></span></button>`
+		return ee`<button class="ve-btn ve-btn-primary ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="导出到文件"><span class="glyphicon glyphicon-download"></span></button>`
 			.onn("click", () => {
 				DataUtil.userDownload(`dm-screen`, this._board.getSaveableState(), {fileType: "dm-screen"});
 			});
 	}
 
 	_render_getBtnLoadFromFile () {
-		return ee`<button class="ve-btn ve-btn-primary ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="Load State from File (SHIFT to Add to Existing State)"><span class="glyphicon glyphicon-upload"></span></button>`
+		return ee`<button class="ve-btn ve-btn-primary ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="从文件导入 (按住SHIFT导入到当前帷幕)"><span class="glyphicon glyphicon-upload"></span></button>`
 			.onn("click", async evt => {
 				const isCombine = !!evt.shiftKey;
 
@@ -259,7 +259,7 @@ export class DmScreenSideMenu extends BaseComponent {
 	}
 
 	_render_getBtnSaveToUrl () {
-		const btnSaveLink = ee`<button class="ve-btn ve-btn-primary ve-bc-0 ve-br-0 ve-bl-0 ve-mb-1" title="Save State to URL"><span class="glyphicon glyphicon-magnet"></span></button>`
+		const btnSaveLink = ee`<button class="ve-btn ve-btn-primary ve-bc-0 ve-br-0 ve-bl-0 ve-mb-1" title="导出为URL"><span class="glyphicon glyphicon-magnet"></span></button>`
 			.onn("click", async () => {
 				const encoded = `${window.location.href.split("#")[0]}#${encodeURIComponent(JSON.stringify(this._board.getSaveableState()))}`;
 				await MiscUtil.pCopyTextToClipboard(encoded);
@@ -271,7 +271,7 @@ export class DmScreenSideMenu extends BaseComponent {
 	/* ----- */
 
 	_render_getBtnReset () {
-		return ee`<button class="ve-btn ve-btn-danger ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="Reset Save Slot (SHIFT to Reset All)"><span class="glyphicon glyphicon-refresh"></span></button>`
+		return ee`<button class="ve-btn ve-btn-danger ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="重置存档面板(按住SHIFT重置所有)"><span class="glyphicon glyphicon-refresh"></span></button>`
 			.onn("click", async evt => {
 				const isAll = !!evt.shiftKey;
 
@@ -298,7 +298,7 @@ export class DmScreenSideMenu extends BaseComponent {
 	/* ----- */
 
 	_render_getBtnToggleLock () {
-		const btnLockPanels = ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="Toggle Panel Lock"><span class="glyphicon glyphicon-lock"></span></button>`
+		const btnLockPanels = ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="锁定面板"><span class="glyphicon glyphicon-lock"></span></button>`
 			.onn("click", () => this._board.doToggleLocked());
 		this._addHookBase("isLocked", () => btnLockPanels.toggleClass("ve-active", this._state.isLocked))();
 
@@ -306,7 +306,7 @@ export class DmScreenSideMenu extends BaseComponent {
 	}
 
 	_render_getBtnToggleFullscreen () {
-		const btnFullscreen = ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="Toggle Fullscreen"><span class="glyphicon glyphicon-fullscreen"></span></button>`
+		const btnFullscreen = ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-br-0 ve-bl-0 ve-mb-4" title="切换全屏"><span class="glyphicon glyphicon-fullscreen"></span></button>`
 			.onn("click", () => this._board.doToggleFullscreen());
 		this._addHookBase("isFullscreen", () => btnFullscreen.toggleClass("ve-active", this._state.isFullscreen))();
 
@@ -316,10 +316,10 @@ export class DmScreenSideMenu extends BaseComponent {
 	/* ----- */
 
 	_render_getBtnSettings () {
-		return ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="Settings"><span class="glyphicon glyphicon-cog"></span></button>`
+		return ee`<button class="ve-btn ve-btn-default ve-bc-0 ve-bb-0 ve-br-0 ve-bl-0" title="设置"><span class="glyphicon glyphicon-cog"></span></button>`
 			.onn("click", () => {
 				const {eleModalInner, eleModalFooter, doClose} = UiUtil.getShowModal({
-					title: "Settings",
+					title: "设置",
 					isUncappedWidth: true,
 					isUncappedHeight: true,
 					headerType: 3,
@@ -329,7 +329,7 @@ export class DmScreenSideMenu extends BaseComponent {
 				});
 				eleModalInner.addClass("ve-py-2");
 
-				const btnClose = ee`<button class="ve-btn ve-btn-default ve-btn-sm ve-ml-auto">Close</button>`
+				const btnClose = ee`<button class="ve-btn ve-btn-default ve-btn-sm ve-ml-auto">关闭</button>`
 					.onn("click", () => doClose());
 
 				ee`<div class="ve-py-1 ve-w-100 ve-flex-v-center">
@@ -340,7 +340,7 @@ export class DmScreenSideMenu extends BaseComponent {
 				const iptWidth = ee`<input class="ve-form-control form-control--minimal ve-input-xs ve-text-center ve-mr-1" type="number" value="${this._board.width}" title="Width">`;
 				const iptHeight = ee`<input class="ve-form-control form-control--minimal ve-input-xs ve-text-center ve-mr-1" type="number" value="${this._board.height}" title="Height">`;
 
-				const btnSetDim = ee`<button class="ve-btn ve-btn-default ve-ml-auto ve-btn-xs">Set Dimensions</div>`
+				const btnSetDim = ee`<button class="ve-btn ve-btn-default ve-ml-auto ve-btn-xs">设置槽位</div>`
 					.onn("click", async () => {
 						const w = Number(iptWidth.val());
 						const h = Number(iptHeight.val());
@@ -353,13 +353,13 @@ export class DmScreenSideMenu extends BaseComponent {
 					});
 
 				ee`<div class="ve-py-1 ve-w-100 ve-split-v-center">
-					<div class="ve-w-66 ve-no-shrink ve-flex-v-center">Dimensions</div>
+					<div class="ve-w-66 ve-no-shrink ve-flex-v-center">槽位</div>
 					<div class="ve-flex-v-center">
 						${iptWidth}
-						<div title="Width">w.</div>
+						<div title="Width">宽</div>
 						<div class="ve-mx-1 ve-muted">×</div>
 						${iptHeight}
-						<div title="Height">h.</div>
+						<div title="Height">高</div>
 					</div>
 				</div>`
 					.appendTo(eleModalInner);
@@ -374,7 +374,7 @@ export class DmScreenSideMenu extends BaseComponent {
 
 				this._board.cbConfirmTabClose = ee`<input type="checkbox">`;
 				ee`<label class="ve-py-1 ve-w-100 ve-split-v-center">
-					<span class="ve-w-66 ve-no-shrink ve-flex-v-center">Confirm on Panel Tab Close</span>
+					<span class="ve-w-66 ve-no-shrink ve-flex-v-center">关闭帷幕时是否需要确认</span>
 					${this._board.cbConfirmTabClose}
 				</label>`
 					.appendTo(eleModalInner);
