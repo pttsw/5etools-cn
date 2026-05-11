@@ -201,9 +201,10 @@ class PageFilterSpells extends PageFilterBase {
 
 	static getNormalisedTime (time) {
 		const firstTime = time[0];
+		const enUnit = Parser.spTimeUnitToEn(firstTime.unit);
 		let multiplier = 1;
 		let offset = 0;
-		switch (firstTime.unit) {
+		switch (enUnit) {
 			case Parser.SP_TM_B_ACTION: offset = 1; break;
 			case Parser.SP_TM_REACTION: offset = 2; break;
 			case Parser.SP_TM_ROUND: multiplier = 6; break;
@@ -385,8 +386,8 @@ class PageFilterSpells extends PageFilterBase {
 		this._damageFilter = new Filter({
 			cnHeader: "伤害类型",
 			header: "Damage Type",
-			items: MiscUtil.copy(Parser.DMG_TYPES),
-			displayFn: StrUtil.uppercaseFirst,
+			items: MiscUtil.copy(Parser.DMG_TYPES.map(t => Parser.dmgTypeToEn(t))),
+			displayFn: Parser.dmgTypeToCn,
 		});
 		this._conditionFilter = new Filter({
 			cnHeader: "造成状态",

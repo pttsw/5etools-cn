@@ -3037,6 +3037,9 @@ Parser.SP_TIME_TO_FULL = {
 Parser.spTimeUnitToFull = function (timeUnit) {
 	return Parser._parse_aToB(Parser.SP_TIME_TO_FULL, timeUnit);
 };
+Parser.spTimeUnitToEn = function (timeUnit) {
+	return Parser._parse_bToA(Parser.SP_TIME_TO_FULL, timeUnit);
+}
 
 Parser.SP_TIME_TO_SHORT = {
 	[Parser.SP_TM_ROUND]: "Rnd.",
@@ -4720,6 +4723,10 @@ Parser.DMG_TYPE_TO_EN = {
 Parser.dmgTypeToEn = function (dmgType) {
 	return Parser._parse_aToB(Parser.DMG_TYPE_TO_EN, dmgType);
 };
+
+Parser.dmgTypeToCn = function(dmgType) {
+	return Parser._parse_bToA(Parser.DMG_TYPE_TO_EN, dmgType);
+}
 
 Parser.CONDITIONS = ["目盲", "魅惑", "耳聋", "力竭", "恐慌", "受擒", "失能", "隐形", "麻痹", "石化", "中毒", "倒地", "束缚", "震慑", "昏迷"];
 
