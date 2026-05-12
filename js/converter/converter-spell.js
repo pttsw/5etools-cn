@@ -453,7 +453,7 @@ export class ConverterSpell extends ConverterBase {
 			case "反应":
 				return "reaction";
 			case "附赠动作":
-				return "bonus action";
+				return "bonus";
 
 			default:
 				options.cbWarning(`单位部分"${unit}"无法自动转换`);

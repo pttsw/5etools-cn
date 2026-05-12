@@ -3042,9 +3042,9 @@ Parser.spTimeUnitToEn = function (timeUnit) {
 }
 
 Parser.SP_TIME_TO_SHORT = {
-	[Parser.SP_TM_ROUND]: "Rnd.",
-	[Parser.SP_TM_MINS]: "Min.",
-	[Parser.SP_TM_HRS]: "Hr.",
+	[Parser.SP_TM_ROUND]: "轮",
+	[Parser.SP_TM_MINS]: "分钟",
+	[Parser.SP_TM_HRS]: "小时",
 };
 Parser.spTimeUnitToShort = function (timeUnit) {
 	return Parser._parse_aToB(Parser.SP_TIME_TO_SHORT, timeUnit);

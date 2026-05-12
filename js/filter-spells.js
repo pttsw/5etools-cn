@@ -298,7 +298,7 @@ class PageFilterSpells extends PageFilterBase {
 
 	static getTblTimeStr (time) {
 		return (time.number === 1 && Parser.SP_TIME_SINGLETONS.includes(time.unit))
-			? `${time.unit.uppercaseFirst()}`
+			? `${Parser.spTimeUnitToFull(time.unit)}`
 			: `${time.number ? `${time.number} ` : ""}${Parser.spTimeUnitToShort(time.unit).uppercaseFirst()}`;
 	}
 

@@ -11869,7 +11869,7 @@ Renderer.item = class {
 				attunementCategory: "需要由...同调",
 				attunement: styleHint === "classic"
 					? `(需要${Renderer.get().render(item[prop])}同调)`
-					: `(Requires Attunement ${Renderer.get().render(item[prop].toTitleCase())})`,
+					: `(需要${Renderer.get().render(item[prop].toTitleCase())}同调)`,
 			};
 		}
 
@@ -11877,7 +11877,7 @@ Renderer.item = class {
 			attunementCategory: "需同调", // throw any weird ones in the "Yes" category (e.g. "outdoors at night")
 			attunement: styleHint === "classic"
 				? `(需同调 ${Renderer.get().render(item[prop])})`
-				: `(Requires Attunement ${Renderer.get().render(item[prop].toTitleCase())})`,
+				: `(需同调 ${Renderer.get().render(item[prop].toTitleCase())})`,
 		};
 	}
 
