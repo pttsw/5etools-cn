@@ -1,18 +1,20 @@
 # Contributing
 
+English | <a href="CONTRIBUTING.zh-CN.md">中文</a>
+
 ## Homebrew
 
-Homebrew contributions (conversions, original content) should be made against the [homebrew repository](https://github.com/TheGiddyLimit/homebrew/). See the guidance there for more information.
+Homebrew contributions (conversions, original content) should be made against the [homebrew repository](https://github.com/tjliqy/homebrew/). See the guidance there for more information.
 
 ## Typo Fixes/Etc.
 
-Small fixes and tweaks, especially typos, should be reported via the "typos etc." channel in our [Discord](https://discord.gg/5etools). If you do not use Discord, opening an issue on GitHub is acceptable.
+Small fixes and tweaks, especially typos, should be reported in our [QQ Group 910127185](https://qm.qq.com/cgi-bin/qm/qr?k=zo7jw88cLsqp2hAkK3ssn_kEbtvy8vu4&jump_from=webapi&authKey=yyG97ItP+M1BGl171cFJ+vzAmHZGRMdvKompSckZjpj8gYcCUV/3efeHvaD3850/). If you do not use QQ, opening an issue on GitHub is acceptable.
 
 ## Feature Requests and New Features
 
-All feature requests should be done via the `/featurerequest` bot command in our [Discord](https://discord.gg/5etools).
+All feature requests should also be reported in our [QQ Group 910127185](https://qm.qq.com/cgi-bin/qm/qr?k=zo7jw88cLsqp2hAkK3ssn_kEbtvy8vu4&jump_from=webapi&authKey=yyG97ItP+M1BGl171cFJ+vzAmHZGRMdvKompSckZjpj8gYcCUV/3efeHvaD3850/). If you do not use QQ, opening an issue on GitHub is acceptable.
 
-Should you wish to directly contribute code towards a new feature, preferably get in touch via [Discord](https://discord.gg/5etools) first. If the feature is deemed acceptable, and significant/distinct enough that it makes sense for a third party to undertake the work, then a pull request can be opened on GitHub.
+Should you wish to directly contribute code towards a new feature, preferably get in touch via [QQ Group 910127185](https://qm.qq.com/cgi-bin/qm/qr?k=zo7jw88cLsqp2hAkK3ssn_kEbtvy8vu4&jump_from=webapi&authKey=yyG97ItP+M1BGl171cFJ+vzAmHZGRMdvKompSckZjpj8gYcCUV/3efeHvaD3850/) first. If the feature is deemed acceptable, and significant/distinct enough that it makes sense for a third party to undertake the work, then a pull request can be opened on GitHub.
 
 In general, the following should be noted:
 
@@ -21,7 +23,7 @@ In general, the following should be noted:
 
 ## Bug Reports
 
-Bugs should be reported via the `/bugreport` bot command in our [Discord](https://discord.gg/5etools).
+Bugs should also be reported in our [QQ Group 910127185](https://qm.qq.com/cgi-bin/qm/qr?k=zo7jw88cLsqp2hAkK3ssn_kEbtvy8vu4&jump_from=webapi&authKey=yyG97ItP+M1BGl171cFJ+vzAmHZGRMdvKompSckZjpj8gYcCUV/3efeHvaD3850/). If you do not use QQ, opening an issue on GitHub is acceptable.
 
 ---
 
