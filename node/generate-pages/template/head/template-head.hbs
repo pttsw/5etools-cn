@@ -4,11 +4,20 @@
 	<!--5ETOOLS_ADCODE-->
 	<meta charset="utf-8">
 	<meta name="description" content="{{pageDescription}}">
+{{#if pageKeywords}}	<meta name="keywords" content="{{pageKeywords}}">
+{{/if}}
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="mobile-web-app-capable" content="yes">
 
 	<title>{{#if pageTitle}}{{pageTitle}} - 5etools{{else}}龙与地下城中文资料站 - 5etools{{/if}}</title>
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="5etools">
+	<meta property="og:title" content="{{#if pageTitle}}{{pageTitle}} - 5etools{{else}}龙与地下城中文资料站 - 5etools{{/if}}">
+	<meta property="og:description" content="{{pageDescription}}">
+	<meta property="og:url" content="https://5e.kiwee.top/{{page}}">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 {{#if isFontAwesome}}	<link rel="stylesheet" href="css/fontawesome.css">

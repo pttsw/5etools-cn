@@ -4,6 +4,8 @@ import {HtmlGeneratorListButtons} from "./generate-pages-html-generator.js";
 class _PageGeneratorListActions extends PageGeneratorListBase {
 	_page = UrlUtil.PG_ACTIONS;
 	_pageTitle = "动作";
+	_pageDescription = "DND 5e 动作列表，包含攻击、施法、冲刺、躲避等所有标准动作和特殊动作的详细说明。";
+	_pageKeywords = "DND,5e,动作,攻击,施法,冲刺,躲避,龙与地下城";
 	_scriptIdentList = "actions";
 
 	_btnsList = [
@@ -22,6 +24,8 @@ class _PageGeneratorListActions extends PageGeneratorListBase {
 class _PageGeneratorListBackgrounds extends PageGeneratorListBase {
 	_page = UrlUtil.PG_BACKGROUNDS;
 	_pageTitle = "背景故事";
+	_pageDescription = "DND 5e 背景故事列表，包含侍僧、罪犯、民间英雄、贵族等所有官方背景及其属性加成和技能熟练。";
+	_pageKeywords = "DND,5e,背景故事,侍僧,罪犯,民间英雄,贵族,龙与地下城";
 	_scriptIdentList = "backgrounds";
 	_isHasRenderer = false;
 
@@ -44,6 +48,8 @@ class _PageGeneratorListBackgrounds extends PageGeneratorListBase {
 class _PageGeneratorListBestiary extends PageGeneratorListBase {
 	_page = UrlUtil.PG_BESTIARY;
 	_pageTitle = "怪物图鉴";
+	_pageDescription = "DND 5e 怪物图鉴，包含数千种怪物的详细数据、属性、技能和特殊能力，支持CR筛选和多数据源。";
+	_pageKeywords = "DND,5e,怪物图鉴,怪物,CR,挑战等级,龙与地下城";
 
 	_stylesheets = [
 		"bestiary",
@@ -106,6 +112,8 @@ class _PageGeneratorListBestiary extends PageGeneratorListBase {
 class _PageGeneratorListCharCreationOptions extends PageGeneratorListBase {
 	_page = UrlUtil.PG_CHAR_CREATION_OPTIONS;
 	_pageTitle = "其他角色创建选项";
+	_pageDescription = "DND 5e 其他角色创建选项，包含宿命、恩赐、起源等额外角色创建规则和选项。";
+	_pageKeywords = "DND,5e,角色创建,宿命,恩赐,起源,龙与地下城";
 	_scriptIdentList = "charcreationoptions";
 
 	_btnsList = [
@@ -123,6 +131,8 @@ class _PageGeneratorListCharCreationOptions extends PageGeneratorListBase {
 class _PageGeneratorListConditionsDiseases extends PageGeneratorListBase {
 	_page = UrlUtil.PG_CONDITIONS_DISEASES;
 	_pageTitle = "状态 & 疾病";
+	_pageDescription = "DND 5e 状态与疾病列表，包含目盲、魅惑、恐惧、中毒等所有状态效果和疾病的详细规则说明。";
+	_pageKeywords = "DND,5e,状态,疾病,目盲,魅惑,恐惧,中毒,龙与地下城";
 	_scriptIdentList = "conditionsdiseases";
 	_isHasRenderer = false;
 
@@ -144,6 +154,8 @@ class _PageGeneratorListConditionsDiseases extends PageGeneratorListBase {
 class _PageGeneratorListCultsBoons extends PageGeneratorListBase {
 	_page = UrlUtil.PG_CULTS_BOONS;
 	_pageTitle = "异教 & 超自然赠礼";
+	_pageDescription = "DND 5e 异教与超自然赠礼列表，包含各种邪教组织和它们赐予追随者的超自然能力。";
+	_pageKeywords = "DND,5e,异教,超自然赠礼,邪教,龙与地下城";
 	_scriptIdentList = "cultsboons";
 
 	_btnsList = [
@@ -163,6 +175,8 @@ class _PageGeneratorListCultsBoons extends PageGeneratorListBase {
 class _PageGeneratorListDecks extends PageGeneratorListBase {
 	_page = UrlUtil.PG_DECKS;
 	_pageTitle = "牌组";
+	_pageDescription = "DND 5e 牌组列表，包含塔罗牌、占卜牌等各类魔法牌组的详细效果和使用规则。";
+	_pageKeywords = "DND,5e,牌组,塔罗牌,占卜牌,龙与地下城";
 
 	_isFontAwesome = true;
 
@@ -189,6 +203,8 @@ class _PageGeneratorListDecks extends PageGeneratorListBase {
 class _PageGeneratorListDeities extends PageGeneratorListBase {
 	_page = UrlUtil.PG_DEITIES;
 	_pageTitle = "神祇";
+	_pageDescription = "DND 5e 神祇列表，包含各个神系的神祇信息，包括领域、阵营和神职等详细资料。";
+	_pageKeywords = "DND,5e,神祇,神系,领域,阵营,龙与地下城";
 	_scriptIdentList = "deities";
 
 	_styleListContainerAdditional = "ve-flex-6";
@@ -213,6 +229,8 @@ class _PageGeneratorListDeities extends PageGeneratorListBase {
 class _PageGeneratorListFeats extends PageGeneratorListBase {
 	_page = UrlUtil.PG_FEATS;
 	_pageTitle = "专长";
+	_pageDescription = "DND 5e 专长列表，包含所有官方专长的详细效果、先决条件和属性加成说明。";
+	_pageKeywords = "DND,5e,专长,先决条件,属性加成,龙与地下城";
 	_scriptIdentList = "feats";
 	_isHasRenderer = false;
 
@@ -241,6 +259,8 @@ class _PageGeneratorListFeats extends PageGeneratorListBase {
 class _PageGeneratorListItems extends PageGeneratorListBase {
 	_page = UrlUtil.PG_ITEMS;
 	_pageTitle = "物品";
+	_pageDescription = "DND 5e 物品列表，包含武器、护甲、冒险装备、魔法物品等所有物品的详细属性和价格。";
+	_pageKeywords = "DND,5e,物品,武器,护甲,魔法物品,装备,龙与地下城";
 
 	_stylesheets = [
 		"items",
@@ -293,6 +313,8 @@ class _PageGeneratorListItems extends PageGeneratorListBase {
 class _PageGeneratorListTrapsHazards extends PageGeneratorListBase {
 	_page = UrlUtil.PG_TRAPS_HAZARDS;
 	_pageTitle = "陷阱 & 危害";
+	_pageDescription = "DND 5e 陷阱与危害列表，包含各种陷阱、环境危害和毒药的详细数据和触发条件。";
+	_pageKeywords = "DND,5e,陷阱,危害,毒药,环境危害,龙与地下城";
 	_scriptIdentList = "trapshazards";
 
 	_btnsList = [
@@ -310,6 +332,8 @@ class _PageGeneratorListTrapsHazards extends PageGeneratorListBase {
 class _PageGeneratorListRewards extends PageGeneratorListBase {
 	_page = UrlUtil.PG_REWARDS;
 	_pageTitle = "其他奖励";
+	_pageDescription = "DND 5e 其他奖励列表，包含 supernatural gifts、blessings 等各种超自然奖励和祝福。";
+	_pageKeywords = "DND,5e,奖励,祝福,超自然赠礼,龙与地下城";
 	_scriptIdentList = "rewards";
 
 	_btnsList = [
@@ -328,6 +352,8 @@ class _PageGeneratorListRewards extends PageGeneratorListBase {
 class _PageGeneratorListLanguages extends PageGeneratorListBase {
 	_page = UrlUtil.PG_LANGUAGES;
 	_pageTitle = "语言";
+	_pageDescription = "DND 5e 语言列表，包含通用语、龙语、精灵语等所有语言的分类和文字系统说明。";
+	_pageKeywords = "DND,5e,语言,通用语,龙语,精灵语,龙与地下城";
 	_scriptIdentList = "languages";
 
 	_stylesheets = [
@@ -351,6 +377,8 @@ class _PageGeneratorListLanguages extends PageGeneratorListBase {
 class _PageGeneratorListObjects extends PageGeneratorListBase {
 	_page = UrlUtil.PG_OBJECTS;
 	_pageTitle = "物件";
+	_pageDescription = "DND 5e 物件列表，包含各种可破坏物件的属性、生命值和伤害阈值等数据。";
+	_pageKeywords = "DND,5e,物件,可破坏物件,生命值,龙与地下城";
 	_scriptIdentList = "objects";
 
 	_btnsList = [
@@ -370,6 +398,8 @@ class _PageGeneratorListObjects extends PageGeneratorListBase {
 class _PageGeneratorListOptionalFeatures extends PageGeneratorListBase {
 	_page = UrlUtil.PG_OPT_FEATURES;
 	_pageTitle = "职业能力选项";
+	_pageDescription = "DND 5e 职业能力选项列表，包含各职业的可选特性和额外能力选项。";
+	_pageKeywords = "DND,5e,职业能力,可选特性,额外能力,龙与地下城";
 	_scriptIdentList = "optionalfeatures";
 	_isHasRenderer = false;
 
@@ -398,6 +428,8 @@ class _PageGeneratorListOptionalFeatures extends PageGeneratorListBase {
 class _PageGeneratorListPsionics extends PageGeneratorListBase {
 	_page = UrlUtil.PG_PSIONICS;
 	_pageTitle = "灵能";
+	_pageDescription = "DND 5e 灵能列表，包含灵能天赋、灵能 discipline 和灵能点数等灵能系统规则。";
+	_pageKeywords = "DND,5e,灵能,灵能天赋,灵能点数,龙与地下城";
 	_scriptIdentList = "psionics";
 
 	_scriptsUtilsAdditional = [
@@ -423,6 +455,8 @@ class _PageGeneratorListPsionics extends PageGeneratorListBase {
 class _PageGeneratorListRaces extends PageGeneratorListBase {
 	_page = UrlUtil.PG_RACES;
 	_pageTitle = "种族";
+	_pageDescription = "DND 5e 种族列表，包含人类、精灵、矮人、龙裔等所有种族的属性加成、特性和子种族。";
+	_pageKeywords = "DND,5e,种族,人类,精灵,矮人,龙裔,龙与地下城";
 	_scriptIdentList = "races";
 	_isHasRenderer = false;
 
@@ -446,6 +480,8 @@ class _PageGeneratorListRaces extends PageGeneratorListBase {
 class _PageGeneratorListRecipes extends PageGeneratorListBase {
 	_page = UrlUtil.PG_RECIPES;
 	_pageTitle = "食谱";
+	_pageDescription = "DND 5e 食谱列表，包含各种烹饪食谱和饮品配方的详细材料和效果说明。";
+	_pageKeywords = "DND,5e,食谱,烹饪,饮品,配方,龙与地下城";
 	_scriptIdentList = "recipes";
 	_isHasRenderer = false;
 
@@ -492,6 +528,8 @@ class _PageGeneratorListRecipes extends PageGeneratorListBase {
 class _PageGeneratorListHomeCrafts extends PageGeneratorListBase {
 	_page = UrlUtil.PG_HOMECRAFTS;
 	_pageTitle = "手工艺品";
+	_pageDescription = "DND 5e 手工艺品列表，包含各种手工制作的物品、工具和艺术品的详细信息。";
+	_pageKeywords = "DND,5e,手工艺品,手工制作,艺术品,龙与地下城";
 	_scriptIdentList = "homecrafts";
 	_isHasRenderer = false;
 
@@ -524,6 +562,8 @@ class _PageGeneratorListHomeCrafts extends PageGeneratorListBase {
 class _PageGeneratorListSpells extends PageGeneratorListBase {
 	_page = UrlUtil.PG_SPELLS;
 	_pageTitle = "法术";
+	_pageDescription = "DND 5e 法术列表，包含所有环位法术的详细效果、施法时间、成分和范围说明。";
+	_pageKeywords = "DND,5e,法术,环位,施法,魔法,龙与地下城";
 	_scriptIdentList = "spells";
 	_isHasRenderer = false;
 
@@ -582,6 +622,8 @@ class _PageGeneratorListSpells extends PageGeneratorListBase {
 class _PageGeneratorListTables extends PageGeneratorListBase {
 	_page = UrlUtil.PG_TABLES;
 	_pageTitle = "表格";
+	_pageDescription = "DND 5e 表格列表，包含随机遭遇表、战利品表、名称生成表等各种实用表格。";
+	_pageKeywords = "DND,5e,表格,随机遭遇,战利品,名称生成,龙与地下城";
 	_scriptIdentList = "tables";
 
 	_styleListContainerAdditional = "ve-flex-4";
@@ -602,6 +644,8 @@ class _PageGeneratorListVariantRules extends PageGeneratorListBase {
 	_page = UrlUtil.PG_VARIANTRULES;
 	_pageTitle = "术语汇编";
 	_navbarTitle = "术语汇编";
+	_pageDescription = "DND 5e 术语汇编，包含游戏规则术语、状态效果和特殊规则的详细解释。";
+	_pageKeywords = "DND,5e,术语,规则,状态效果,龙与地下城";
 	_scriptIdentList = "variantrules";
 
 	_btnsList = [
@@ -619,6 +663,8 @@ class _PageGeneratorListVariantRules extends PageGeneratorListBase {
 class _PageGeneratorListVehicles extends PageGeneratorListBase {
 	_page = UrlUtil.PG_VEHICLES;
 	_pageTitle = "载具";
+	_pageDescription = "DND 5e 载具列表，包含船只、车辆、飞行器等各种载具的属性和战斗规则。";
+	_pageKeywords = "DND,5e,载具,船只,车辆,飞行器,龙与地下城";
 	_scriptIdentList = "vehicles";
 
 	_btnsList = [
@@ -638,6 +684,8 @@ class _PageGeneratorListVehicles extends PageGeneratorListBase {
 class _PageGeneratorListBastions extends PageGeneratorListBase {
 	_page = UrlUtil.PG_BASTIONS;
 	_pageTitle = "据点";
+	_pageDescription = "DND 5e 据点列表，包含各种据点设施、升级选项和管理规则的详细说明。";
+	_pageKeywords = "DND,5e,据点,设施,升级,管理,龙与地下城";
 	_scriptIdentList = "bastions";
 	_isHasRenderer = false;
 
@@ -670,6 +718,8 @@ class _PageGeneratorListClasses extends PageGeneratorListBase {
 
 	_page = UrlUtil.PG_CLASSES;
 	_pageTitle = "职业";
+	_pageDescription = "DND 5e 职业列表，包含战士、法师、牧师、游侠等所有职业的详细特性和子职业选项。";
+	_pageKeywords = "DND,5e,职业,战士,法师,牧师,游侠,子职业,龙与地下城";
 	_scriptIdentList = "classes";
 	_isHasRenderer = false;
 

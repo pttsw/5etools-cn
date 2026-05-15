@@ -8,6 +8,7 @@ export class PageGeneratorBase {
 
 	_pageTitle;
 	_pageDescription;
+	_pageKeywords;
 	_navbarTitle;
 	_navbarTitleHtml;
 	_navbarDescription;
@@ -53,8 +54,10 @@ export class PageGeneratorBase {
 	 */
 	_getData () {
 		return {
+			page: this._page,
 			pageTitle: this._pageTitle,
 			pageDescription: this._pageDescription,
+			pageKeywords: this._pageKeywords,
 			navbarTitle: this._navbarTitle ?? this._pageTitle,
 			navbarTitleHtml: this._navbarTitleHtml,
 			navbarDescription: this._navbarDescription,
