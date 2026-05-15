@@ -3,6 +3,7 @@
  */
 
 import fs from "fs";
+import "./locale/i18n.js";
 import "../js/parser.js";
 import "../js/utils.js";
 import "../js/utils-dataloader.js";
