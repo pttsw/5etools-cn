@@ -12,13 +12,13 @@ import "../js/render.js";
 import "../js/render-dice.js";
 import * as ut from "./util.js";
 
-const BASE_SITE_URL = process.env.VET_BASE_SITE_URL || "https://5e.tools/";
+const BASE_SITE_URL = `${(process.env.VET_BASE_SITE_URL || "https://5e.kiwee.top").replace(/\/+$/, "")}/`;
 const LOG_EVERY = 1000; // Certain stakeholders prefer less logspam
 const isSkipUaEtc = !!process.env.VET_SEO_IS_SKIP_UA_ETC;
 const isOnlyVanilla = !!process.env.VET_SEO_IS_ONLY_VANILLA;
 
-const templateHeadInner = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-head-inner.hbs");
-const templateBody = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-body.hbs");
+const templateHeadInner = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-head-inner.hbs", "utf-8");
+const templateBody = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-body.hbs", "utf-8");
 
 const lastMod = (() => {
 	const date = new Date();
@@ -35,20 +35,160 @@ const baseSitemapData = (() => {
 		if (str.includes("${")) return;
 		out[str] = true;
 	});
+	delete out["index.html"];
 
 	return out;
 })();
 
-const getTemplate = ({page, name, source, hash, img, description, isFluff}) => `<!DOCTYPE html><head>
-${templateHeadInner}
-<meta property="og:title" content="${name}">
-<meta property="og:url" content="${BASE_SITE_URL}${page}.html#${hash}">
-${img ? `<meta property="og:image" content="${BASE_SITE_URL}${img.qq()}">` : ""}
-${description ? `<meta  name="og:description" content="${description.qq()}">` : ""}
-<script>globalThis._SEO_PAGE="${page}";globalThis._SEO_SOURCE="${source}";globalThis._SEO_HASH="${hash}";globalThis._SEO_FLUFF=${isFluff}</script>
+const _getMetaDescription = (description) => {
+	if (!description) return "";
+	return Renderer.stripTags(description)
+		.replace(/\s+/g, " ")
+		.trim()
+		.slice(0, 160);
+};
+
+const _getCleanPart = (part) => {
+	if (!part) return null;
+
+	const clean = Renderer.stripTags(`${part}`)
+		.replace(/\s+/g, " ")
+		.trim()
+		.replace(/^[,;:，；：\s]+|[,;:，；：\s]+$/g, "");
+
+	return clean || null;
+};
+
+const _joinDescriptionParts = (...parts) => _getMetaDescription(parts.map(_getCleanPart).filter(Boolean).join("；"));
+
+const _getFallbackDescription = ({fluff, entries}) => getGenericDescription({fluff, entries});
+
+const _getDescriptionSpells = ({entity: ent}) => _joinDescriptionParts(
+	Parser.spLevelSchoolMetaToFull(ent.level, ent.school, ent.meta, ent.subschools),
+	`施法时间 ${Parser.spTimeListToFull(ent.time)}`,
+	`距离 ${Parser.spRangeToFull(ent.range)}`,
+	`持续时间 ${Parser.spDurationToFull(ent.duration, {isPlainText: true})}`,
+);
+
+const _getDescriptionBestiary = ({entity: ent, fallbackDescription}) => {
+	const typeText = Parser.monTypeToFullObj(ent.type).asText;
+	const sizeText = Renderer.utils.getRenderedSize(ent.size);
+	const alignmentText = ent.alignment?.length ? Parser.alignmentListToFull(ent.alignment) : null;
+	const crText = ent.cr == null
+		? null
+		: typeof ent.cr === "string"
+			? ent.cr
+			: ent.cr.cr || ent.cr.special || ent.cr.xp || null;
+	const speedText = ent.speed != null ? Parser.getSpeedString(ent, {isLongForm: true}) : null;
+
+	return _joinDescriptionParts(
+		[sizeText, typeText, alignmentText].filter(Boolean).join(" "),
+		crText ? `挑战等级 ${crText}` : null,
+		speedText ? `速度 ${speedText}` : null,
+		fallbackDescription,
+	);
+};
+
+const _getDescriptionItems = ({entity: ent, fallbackDescription}) => {
+	const {typeRarityHtml, subTypeHtml, tierHtml} = Renderer.item.getTypeRarityAndAttunementHtmlParts(ent);
+	const typeRarityText = Renderer.stripTags(
+		Renderer.item.getTypeRarityAndAttunementHtml(
+			{typeRarityHtml, subTypeHtml, tierHtml},
+		),
+	);
+	const valueWeightText = [Parser.itemValueToFullMultiCurrency(ent), Parser.itemWeightToFull(ent)]
+		.map(_getCleanPart)
+		.filter(Boolean)
+		.join("，");
+
+	return _joinDescriptionParts(
+		typeRarityText,
+		valueWeightText,
+		fallbackDescription,
+	);
+};
+
+const _getDescriptionBackgrounds = ({entity: ent, fallbackDescription}) => {
+	const skillText = ent._skillDisplay
+		|| Renderer.generic.getSkillSummary({skillProfs: ent.skillProficiencies || [], isShort: true}).summary;
+
+	return _joinDescriptionParts(
+		"角色背景",
+		skillText ? `技能 ${skillText}` : null,
+		fallbackDescription,
+	);
+};
+
+const _getDescriptionConditionsDiseases = ({entity: ent, fallbackDescription}) => _joinDescriptionParts(
+	ent.type || Parser.getPropDisplayName(ent.__prop),
+	fallbackDescription,
+);
+
+const _getDescriptionFeats = ({entity: ent, fallbackDescription}) => {
+	const categoryText = ent.category ? Parser.featCategoryToFull(ent.category) : null;
+	const prerequisiteText = Renderer.utils.prerequisite.getHtml(ent.prerequisite, {isListMode: false});
+
+	return _joinDescriptionParts(
+		categoryText ? `${categoryText}${["FS:P", "FS:R"].includes(ent.category) ? "" : "专长"}` : "专长",
+		prerequisiteText ? `先决条件 ${prerequisiteText}` : null,
+		fallbackDescription,
+	);
+};
+
+const _getDescriptionRaces = ({entity: ent, fallbackDescription}) => {
+	const sizeText = ent.size ? Renderer.utils.getRenderedSize(ent.size) : null;
+	const speedText = ent.speed != null ? Parser.getSpeedString(ent, {isLongForm: true}) : null;
+
+	return _joinDescriptionParts(
+		"角色种族",
+		sizeText ? `体型 ${sizeText}` : null,
+		speedText ? `速度 ${speedText}` : null,
+		fallbackDescription,
+	);
+};
+
+const _DESCRIPTION_GETTERS = {
+	spells: _getDescriptionSpells,
+	bestiary: _getDescriptionBestiary,
+	items: _getDescriptionItems,
+	backgrounds: _getDescriptionBackgrounds,
+	conditionsdiseases: _getDescriptionConditionsDiseases,
+	feats: _getDescriptionFeats,
+	races: _getDescriptionRaces,
+};
+
+const _getTemplateHeadInner = ({titleFull, metaDescription, canonicalUrl, img}) => {
+	const ogImageMeta = img ? `<meta property="og:image" content="${new URL(img, BASE_SITE_URL).href}">` : "";
+	const twitterCard = img ? "summary_large_image" : "summary";
+
+	return templateHeadInner
+		.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${metaDescription.qq()}">`)
+		.replace(/<title>[\s\S]*?<\/title>/, `<title>${titleFull}</title>`)
+		.replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonicalUrl}">`)
+		.replace("<meta property=\"og:type\" content=\"website\">", "<meta property=\"og:type\" content=\"article\">")
+		.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${titleFull}">`)
+		.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${metaDescription.qq()}">`)
+		.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonicalUrl}">`)
+		.replace(/<meta name="twitter:card" content="[^"]*">/, `<meta name="twitter:card" content="${twitterCard}">`)
+		.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${titleFull}">`)
+		.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${metaDescription.qq()}">`)
+		.replace("<link rel=\"stylesheet\" href=\"/css/bootstrap.css\">", `${ogImageMeta}\n<link rel="stylesheet" href="/css/bootstrap.css">`);
+};
+
+const getTemplate = ({page, name, source, hash, img, description, isFluff, path}) => {
+	const metaDescription = _getMetaDescription(description);
+	const canonicalUrl = `${BASE_SITE_URL}${path}`;
+	const listUrl = `${BASE_SITE_URL}${page}.html`;
+	const titleFull = `${name.qq()} - 5etools`;
+	const templateHead = _getTemplateHeadInner({titleFull, metaDescription, canonicalUrl, img});
+
+	return `<!DOCTYPE html><head>
+${templateHead}
+<script>globalThis._SEO_PAGE="${page}";globalThis._SEO_SOURCE="${source}";globalThis._SEO_HASH="${hash}";globalThis._SEO_FLUFF=${isFluff};globalThis._SEO_CANONICAL_URL="${canonicalUrl}";globalThis._SEO_LIST_URL="${listUrl}"</script>
 </head>
 ${templateBody}
 </html>`;
+};
 
 const filterSkipUaEtc = (ent) => !isSkipUaEtc || !SourceUtil.isNonstandardSourceWotc(SourceUtil.getEntitySource(ent));
 
@@ -73,6 +213,13 @@ const getGenericDescription = ({fluff, entries}) => {
 	return Renderer.stripTags(strPrime);
 };
 
+const _getEntityDescription = ({page, entity, fluff, entries}) => {
+	const fallbackDescription = _getFallbackDescription({fluff, entries});
+	const fnGetDescription = _DESCRIPTION_GETTERS[page];
+	if (!fnGetDescription) return fallbackDescription;
+	return fnGetDescription({entity, fluff, entries, fallbackDescription}) || fallbackDescription;
+};
+
 const toGenerate = [
 	{
 		page: "spells",
@@ -83,8 +230,7 @@ const toGenerate = [
 			return entities.pSerialAwaitMap(async ent => ({
 				entity: ent,
 				fluff: await Renderer.spell.pGetFluff(ent),
-				// Avoid fluff for description, as generally not useful
-				description: getGenericDescription({entries: ent.entries}),
+				description: _getEntityDescription({page: "spells", entity: ent, entries: ent.entries}),
 			}));
 		},
 		isFluff: 1,
@@ -97,14 +243,14 @@ const toGenerate = [
 				.filter(filterOnlyVanilla);
 			return entities.pSerialAwaitMap(async ent => {
 				const fluff = await Renderer.monster.pGetFluff(ent);
-				return {
-					entity: ent,
-					fluff,
-					img: Renderer.monster.hasToken(ent) ? Renderer.monster.getTokenUrl(ent) : null,
-					description: getGenericDescription({fluff, entries: ent.entries}),
-				};
-			});
-		},
+					return {
+						entity: ent,
+						fluff,
+						img: Renderer.monster.hasToken(ent) ? Renderer.monster.getTokenUrl(ent) : null,
+						description: _getEntityDescription({page: "bestiary", entity: ent, fluff, entries: ent.entries}),
+					};
+				});
+			},
 		isFluff: 1,
 	},
 	{
@@ -113,12 +259,88 @@ const toGenerate = [
 			const entities = (await Renderer.item.pBuildList()).filter(it => !it._isItemGroup)
 				.filter(filterSkipUaEtc)
 				.filter(filterOnlyVanilla);
-			return entities.pSerialAwaitMap(async ent => ({
-				entity: ent,
-				fluff: await Renderer.item.pGetFluff(ent),
-				// Avoid fluff for description, as generally not useful
-				description: getGenericDescription({entries: ent._fullEntries || ent.entries}),
-			}));
+			return entities.pSerialAwaitMap(async ent => {
+				const fluff = await Renderer.item.pGetFluff(ent);
+				return {
+					entity: ent,
+					fluff,
+					description: _getEntityDescription({page: "items", entity: ent, fluff, entries: ent._fullEntries || ent.entries}),
+				};
+			});
+		},
+		isFluff: 1,
+	},
+	{
+		page: "backgrounds",
+		pGetEntityMetas: async () => {
+			const entities = ((await DataUtil.background.loadJSON()).background || [])
+				.filter(filterSkipUaEtc)
+				.filter(filterOnlyVanilla);
+			return entities.pSerialAwaitMap(async ent => {
+				const fluff = await Renderer.background.pGetFluff(ent);
+				return {
+					entity: ent,
+					fluff,
+					description: _getEntityDescription({page: "backgrounds", entity: ent, fluff, entries: ent.entries}),
+				};
+			});
+		},
+		isFluff: 1,
+	},
+	{
+		page: "conditionsdiseases",
+		pGetEntityMetas: async () => {
+			const data = await DataUtil.loadJSON("data/conditionsdiseases.json");
+			const entities = [
+				...(data.condition || []).map(ent => ({...ent, __prop: "condition"})),
+				...(data.disease || []).map(ent => ({...ent, __prop: "disease"})),
+				...(data.status || []).map(ent => ({...ent, __prop: "status"})),
+			]
+				.filter(filterSkipUaEtc)
+				.filter(filterOnlyVanilla);
+
+			return entities.pSerialAwaitMap(async ent => {
+				const fluff = await Renderer.conditionDisease.pGetFluff(ent);
+				return {
+					entity: ent,
+					fluff,
+					description: _getEntityDescription({page: "conditionsdiseases", entity: ent, fluff, entries: ent.entries}),
+				};
+			});
+		},
+		isFluff: 1,
+	},
+	{
+		page: "feats",
+		pGetEntityMetas: async () => {
+			const entities = ((await DataUtil.feat.loadJSON()).feat || [])
+				.filter(filterSkipUaEtc)
+				.filter(filterOnlyVanilla);
+			return entities.pSerialAwaitMap(async ent => {
+				Renderer.feat.initFullEntries(ent);
+				return {
+					entity: ent,
+					fluff: await Renderer.feat.pGetFluff(ent),
+					description: _getEntityDescription({page: "feats", entity: ent, entries: ent._fullEntries || ent.entries}),
+				};
+			});
+		},
+		isFluff: 1,
+	},
+	{
+		page: "races",
+		pGetEntityMetas: async () => {
+			const entities = ((await DataUtil.race.loadJSON({isAddBaseRaces: true})).race || [])
+				.filter(filterSkipUaEtc)
+				.filter(filterOnlyVanilla);
+			return entities.pSerialAwaitMap(async ent => {
+				const fluff = await Renderer.race.pGetFluff(ent);
+				return {
+					entity: ent,
+					fluff,
+					description: _getEntityDescription({page: "races", entity: ent, fluff, entries: ent.entries}),
+				};
+			});
 		},
 		isFluff: 1,
 	},
@@ -168,6 +390,7 @@ async function main () {
 					description,
 					textStyle: meta.style,
 					isFluff: meta.isFluff,
+					path,
 				});
 
 				siteMapData[path] = true;

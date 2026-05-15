@@ -1,6 +1,10 @@
 import {RenderBestiary} from "./render-bestiary.js";
+import {RenderBackgrounds} from "./render-backgrounds.js";
+import {RenderConditionDiseases} from "./render-conditionsdiseases.js";
+import {RenderFeats} from "./render-feats.js";
 import {RenderSpells} from "./render-spells.js";
 import {RenderItems} from "./render-items.js";
+import {RenderRaces} from "./render-races.js";
 
 const onLoadSeo = async () => {
 	const fullPage = `${globalThis._SEO_PAGE}.html`;
@@ -11,7 +15,7 @@ const onLoadSeo = async () => {
 
 	ee`<div class="ve-col-12 ve-flex-vh-center ve-my-2 ve-pt-3 no-print">
 		<button class="ve-btn ve-btn-primary">
-			<a href="/${globalThis._SEO_PAGE}.html" style="font-size: 1.7em; color: white;">View All</a>
+			<a href="/${globalThis._SEO_PAGE}.html" style="font-size: 1.7em; color: white;">查看全部</a>
 		</button>
 	</div>`.appendTo(es(`#link-page`));
 
@@ -28,13 +32,21 @@ const onLoadSeo = async () => {
 		});
 
 	switch (globalThis._SEO_PAGE) {
+		case "backgrounds": eleContent.appends(RenderBackgrounds.getRenderedBackground(it, {isSkipExcludesRender: true})); break;
 		case "spells": eleContent.appends(RenderSpells.getRenderedSpell(it, {isSkipExcludesRender: true})); break;
 		case "bestiary": {
 			Renderer.utils.bindPronounceButtons();
 			eleContent.appends(RenderBestiary.getRenderedCreature(it, {isSkipTokenRender: true, isSkipExcludesRender: true}));
 			break;
 		}
+		case "conditionsdiseases": eleContent.appends(RenderConditionDiseases.getRenderedConditionDisease(it, {isSkipExcludesRender: true})); break;
+		case "feats": eleContent.appends(RenderFeats.getRenderedFeat(it, {isSkipExcludesRender: true})); break;
 		case "items": eleContent.appends(RenderItems.getRenderedItem(it, {isSkipExcludesRender: true})); break;
+		case "races": {
+			Renderer.utils.bindPronounceButtons();
+			eleContent.appends(RenderRaces.getRenderedRace(it, {isSkipExcludesRender: true}));
+			break;
+		}
 
 		// TODO expand this as required
 		// case "races": {

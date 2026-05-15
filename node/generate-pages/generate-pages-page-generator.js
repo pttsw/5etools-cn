@@ -53,11 +53,15 @@ export class PageGeneratorBase {
 	 * @return {object}
 	 */
 	_getData () {
+		const canonicalPath = this._page === "index.html" ? "" : this._page;
+		const canonicalUrl = `https://5e.kiwee.top/${canonicalPath}`;
+
 		return {
 			page: this._page,
 			pageTitle: this._pageTitle,
 			pageDescription: this._pageDescription,
 			pageKeywords: this._pageKeywords,
+			canonicalUrl,
 			navbarTitle: this._navbarTitle ?? this._pageTitle,
 			navbarTitleHtml: this._navbarTitleHtml,
 			navbarDescription: this._navbarDescription,
@@ -95,9 +99,12 @@ export class PageGeneratorRedirectBase extends PageGeneratorBase {
 	_redirectMessage;
 
 	_getData () {
+		const redirectCanonicalUrl = `https://5e.kiwee.top/${this._redirectHref}`;
+
 		return {
 			...super._getData(),
 
+			canonicalUrl: redirectCanonicalUrl,
 			redirectHref: this._redirectHref,
 			redirectMessage: this._redirectMessage,
 		};
