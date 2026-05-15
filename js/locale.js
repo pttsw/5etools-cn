@@ -87,7 +87,7 @@ function syncDocumentLanguage (language) {
 }
 
 function getLanguageFileUrl (language) {
-	return new URL(`languages/${PROPERTY_FILE_PREFIX}${language}${PROPERTY_FILE_SUFFIX}`, document.baseURI).toString();
+	return new URL(`/languages/${PROPERTY_FILE_PREFIX}${language}${PROPERTY_FILE_SUFFIX}`, document.baseURI).toString();
 }
 
 function getKeyCandidates (key) {

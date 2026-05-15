@@ -2,16 +2,36 @@ import {RenderBestiary} from "./render-bestiary.js";
 import {RenderBackgrounds} from "./render-backgrounds.js";
 import {RenderConditionDiseases} from "./render-conditionsdiseases.js";
 import {RenderFeats} from "./render-feats.js";
-import {RenderSpells} from "./render-spells.js";
+import {RenderSpells, RenderSpellsSettings} from "./render-spells.js";
 import {RenderItems} from "./render-items.js";
 import {RenderRaces} from "./render-races.js";
 
+const _pGetRenderOpts = async () => {
+	switch (globalThis._SEO_PAGE) {
+		case "spells": {
+			const subclassLookup = await DataUtil.class.pGetSubclassLookup();
+			return {
+				subclassLookup,
+				settings: SettingsUtil.getDefaultSettings(RenderSpellsSettings.SETTINGS),
+				isSkipExcludesRender: true,
+			};
+		}
+
+		default: return {isSkipExcludesRender: true};
+	}
+};
+
 const onLoadSeo = async () => {
+	await I18nUtil.loadProperties(I18nUtil.LANGUAGES_INDEX);
+
 	const fullPage = `${globalThis._SEO_PAGE}.html`;
-	const it = await DataLoader.pCacheAndGet(fullPage, globalThis._SEO_SOURCE, globalThis._SEO_HASH);
+	const [it, renderOpts] = await Promise.all([
+		DataLoader.pCacheAndGet(fullPage, globalThis._SEO_SOURCE, globalThis._SEO_HASH),
+		_pGetRenderOpts(),
+	]);
 
 	document.title = `${it.name} - 5etools`;
-	es(`.page__title`).txt(`${globalThis._SEO_PAGE.toTitleCase()}: ${it.name}`);
+	es(`.page__title`).txt(`${UrlUtil.PG_TO_NAME[fullPage] || globalThis._SEO_PAGE.toTitleCase()}: ${it.name}`);
 
 	ee`<div class="ve-col-12 ve-flex-vh-center ve-my-2 ve-pt-3 no-print">
 		<button class="ve-btn ve-btn-primary">
@@ -32,19 +52,19 @@ const onLoadSeo = async () => {
 		});
 
 	switch (globalThis._SEO_PAGE) {
-		case "backgrounds": eleContent.appends(RenderBackgrounds.getRenderedBackground(it, {isSkipExcludesRender: true})); break;
-		case "spells": eleContent.appends(RenderSpells.getRenderedSpell(it, {isSkipExcludesRender: true})); break;
+		case "backgrounds": eleContent.appends(RenderBackgrounds.getRenderedBackground(it, renderOpts)); break;
+		case "spells": eleContent.appends(RenderSpells.getRenderedSpell(it, renderOpts)); break;
 		case "bestiary": {
 			Renderer.utils.bindPronounceButtons();
-			eleContent.appends(RenderBestiary.getRenderedCreature(it, {isSkipTokenRender: true, isSkipExcludesRender: true}));
+			eleContent.appends(RenderBestiary.getRenderedCreature(it, {...renderOpts, isSkipTokenRender: true}));
 			break;
 		}
-		case "conditionsdiseases": eleContent.appends(RenderConditionDiseases.getRenderedConditionDisease(it, {isSkipExcludesRender: true})); break;
-		case "feats": eleContent.appends(RenderFeats.getRenderedFeat(it, {isSkipExcludesRender: true})); break;
-		case "items": eleContent.appends(RenderItems.getRenderedItem(it, {isSkipExcludesRender: true})); break;
+		case "conditionsdiseases": eleContent.appends(RenderConditionDiseases.getRenderedConditionDisease(it, renderOpts)); break;
+		case "feats": eleContent.appends(RenderFeats.getRenderedFeat(it, renderOpts)); break;
+		case "items": eleContent.appends(RenderItems.getRenderedItem(it, renderOpts)); break;
 		case "races": {
 			Renderer.utils.bindPronounceButtons();
-			eleContent.appends(RenderRaces.getRenderedRace(it, {isSkipExcludesRender: true}));
+			eleContent.appends(RenderRaces.getRenderedRace(it, renderOpts));
 			break;
 		}
 
