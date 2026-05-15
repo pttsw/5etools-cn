@@ -1,0 +1,70 @@
+# 通用规则
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+Disallow: /node/
+Disallow: /test/
+Disallow: /data/
+Disallow: /data-bak/
+Disallow: /js/
+Disallow: /css/
+Disallow: /scss/
+Disallow: /lib/
+Disallow: /fonts/
+Disallow: /edge-functions/
+Disallow: /languages/
+Disallow: /homebrew/
+Disallow: /prerelease/
+Disallow: /search/
+Disallow: /characters/
+Disallow: /audio/
+
+# 百度蜘蛛
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+Disallow: /node/
+Disallow: /test/
+Disallow: /data/
+Disallow: /data-bak/
+
+User-agent: Baiduspider-image
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+
+# Google 爬虫
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+Disallow: /node/
+Disallow: /test/
+Disallow: /data/
+Disallow: /data-bak/
+
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+
+# 必应爬虫
+User-agent: bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+Disallow: /node/
+Disallow: /test/
+Disallow: /data/
+Disallow: /data-bak/
+
+# 站点地图地址
+Sitemap: https://5e.kiwee.top/sitemap.xml
