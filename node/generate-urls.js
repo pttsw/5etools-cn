@@ -1,6 +1,10 @@
-const fs = require("fs");
-const path = require("path");
-const { execSync } = require("child_process");
+import fs from "fs";
+import path from "path";
+import http from "http";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const MAX_LINES = 10;
 const OUTPUT_DIR = path.join(__dirname, "..", "urls");
@@ -74,15 +78,27 @@ if (!shouldRegenerate()) {
 const todayFile = path.join(OUTPUT_DIR, `urls-${today}.txt`);
 if (fs.existsSync(todayFile)) {
 	console.log(`\n正在提交当日 URL 到百度...`);
-	try {
-		const result = execSync(
-			`curl -s -H 'Content-Type:text/plain' --data-binary @${todayFile} "http://data.zz.baidu.com/urls?site=https://5e.kiwee.top&token=m7Qx5vYCOiSOoCAV"`,
-			{ encoding: "utf-8" }
-		);
-		console.log(`百度推送结果: ${result}`);
-	} catch (e) {
-		console.error(`百度推送失败: ${e.message}`);
-	}
+	const body = fs.readFileSync(todayFile, "utf-8");
+	const req = http.request(
+		{
+			hostname: "data.zz.baidu.com",
+			path: "/urls?site=https://5e.kiwee.top&token=m7Qx5vYCOiSOoCAV",
+			method: "POST",
+			headers: {
+				"Content-Type": "text/plain",
+				"Content-Length": Buffer.byteLength(body),
+				"User-Agent": "curl/7.12.1",
+			},
+		},
+		res => {
+			let data = "";
+			res.on("data", chunk => (data += chunk));
+			res.on("end", () => console.log(`百度推送结果: ${data}`));
+		}
+	);
+	req.on("error", e => console.error(`百度推送失败: ${e.message}`));
+	req.write(body);
+	req.end();
 } else {
 	console.log(`当日文件 urls-${today}.txt 不存在，跳过百度推送`);
 }
