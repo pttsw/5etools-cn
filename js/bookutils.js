@@ -702,7 +702,7 @@ export class BookUtil {
 		this._doPopulateContents({wrpContents});
 
 		BookUtil.dispBook.empty().html(`<tr><th class="ve-tbl-border" colspan="6"></th></tr>
-			<tr><td colspan="6" class="initial-message initial-message--med book-loading-message">Please select ${Parser.getArticle(BookUtil.contentType)} ${BookUtil.contentType} to view!</td></tr><tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
+			<tr><td colspan="6" class="initial-message initial-message--med book-loading-message">请先选择${Parser.getArticle(BookUtil.contentType)} ${Parser.getPropDisplayName(BookUtil.contentType)}</td></tr><tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
 
 		this._removeLoadingOverlay();
 	}
@@ -712,7 +712,7 @@ export class BookUtil {
 
 		wrpContents.empty();
 		BookUtil.dispBook.empty().html(`<tr><th class="ve-tbl-border" colspan="6"></th></tr>
-			<tr><td colspan="6" class="initial-message initial-message--med book-loading-message">Loading failed\u2014could not find ${Parser.getArticle(BookUtil.contentType)} ${BookUtil.contentType} with ID "${bookId}". You may need to add it as homebrew first.</td></tr><tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
+			<tr><td colspan="6" class="initial-message initial-message--med book-loading-message">加载失败\u2014无法找到ID为"${bookId}"的${Parser.getArticle(BookUtil.contentType)} ${Parser.getPropDisplayName(BookUtil.contentType)}，可能你需要先从<a link="/managebrew.html">Homebrew</a>中获取。</td></tr><tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
 
 		this._removeLoadingOverlay();
 
