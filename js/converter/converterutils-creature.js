@@ -2468,7 +2468,7 @@ export class SpeedConvert {
 
 		this._splitSpeed(line).map(it => it.trim()).forEach(s => {
 			// For e.g. shapechanger speeds, store them behind a "condition" on the previous speed
-			if (prevSpeed && /^\((\w+?\s+)?(\d+)\s*(?:ft|尺)\.?( .*)?\)$/i.test(s)) {
+			if (prevSpeed && /^\((\w+?\s+)?(\d+)\s*(?:ft|尺)[\.。]?( .*)?\)$/i.test(s)) {
 				if (typeof out[prevSpeed] === "number") out[prevSpeed] = {number: out[prevSpeed], condition: s};
 				else out[prevSpeed].condition = s;
 				prevSpeed = null;
@@ -2517,7 +2517,7 @@ export class SpeedConvert {
 			}
 
 			const mBasic = /^(?<mode>\w+?\s+)?(?<feet>\d+)\s*(?:ft|尺)\.?(?<condition> .*)?$/i.exec(s)
-				|| /^(?<mode>[\u4e00-\u9fa5]+)\s?(?<feet>\d+)\s?英?尺(?<condition>.*)?$/i.exec(s);
+				|| /^(?<mode>[\u4e00-\u9fa5]+)\s?(?<feet>\d+)\s?英?尺[\.。]?(?<condition>.*)?$/i.exec(s);
 			if (!mBasic) return setByHand();
 
 			let {mode, feet, condition} = mBasic.groups;

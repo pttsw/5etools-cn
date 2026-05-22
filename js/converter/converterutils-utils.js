@@ -369,11 +369,18 @@ export class ConverterUtils {
 				cnBracket = m[0].trim();
 				return "";
 			})
-			.trim()
-	;
+			.trim();
+
+		let trailingTag = "";
+		const trimmedName2 = trimmedName
+			.replace(/\{@[^}]+}$/, (...m) => {
+				trailingTag = m[0];
+				return "";
+			})
+			.trim();
 
 		const pattern = /^([a-zA-Z0-9\s]+)\s*([\u4e00-\u9fa5]+)$|^([\u4e00-\u9fa5]+)\s*([a-zA-Z0-9\s]+)$|^([\u4e00-\u9fa5]+)$|^([a-zA-Z0-9\s]+)$/;
-		const match = trimmedName.match(pattern);
+		const match = trimmedName2.match(pattern);
 
 		if (match) {
 			// 英文在前中文在后的情况
@@ -395,9 +402,9 @@ export class ConverterUtils {
 
 		// 如果没有匹配到，使用原始逻辑作为 fallback
 		if (!cnName && !enName) {
-			let names = trimmedName.split(/[|｜]/);
+			let names = trimmedName2.split(/[|｜]/);
 			if (names.length !== 2) {
-				names = trimmedName.split(/\s+/);
+				names = trimmedName2.split(/\s+/);
 			}
 			names.forEach(n => {
 				if (/[\u4e00-\u9fa5]/.test(n)) {
@@ -407,8 +414,8 @@ export class ConverterUtils {
 				}
 			});
 		}
-		if (cnBracket) cnName = `${cnName}${cnBracket}`;
-		if (enBracket) enName = `${enName} ${enBracket}`;
+		if (cnBracket) cnName = `${cnName}${cnBracket}${trailingTag}`;
+		if (enBracket) enName = `${enName} ${enBracket}${trailingTag}`;
 		if (/^[a-zA-Z]\w+\.$/.test(enName)) cnName = enName + cnName; enName = "";
 		return [cnName, enName];
 	}

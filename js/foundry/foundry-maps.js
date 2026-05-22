@@ -4,8 +4,8 @@ class _MapNamer {
 		this._ixsHeaderMaps = {};
 	}
 
-	static _RE_PT_VERSION_TYPES = /(Player|Unlabeled)/;
-	static _RE_VERSION_MAP_NAMES = new RegExp(`^\\(?${this._RE_PT_VERSION_TYPES.source} Version\\)?$`, "i");
+	static _RE_PT_VERSION_TYPES = /(Player|Unlabeled|玩家|未标注)/;
+	static _RE_VERSION_MAP_NAMES = new RegExp(`^\\(?${this._RE_PT_VERSION_TYPES.source}\s?(?:Version|版本?)\\)?$`, "i");
 	static _RE_ADD_VERSION_SUFFIX = new RegExp(`${this._RE_PT_VERSION_TYPES.source}$`, "i");
 
 	getMapName ({entry, parentEntry}) {
@@ -22,10 +22,11 @@ class _MapNamer {
 		if (!isVersionNameBase) return nameBase;
 
 		const cleanParentTitle = Renderer.stripTags(parentEntry.title)
-			.replace(/\s*\(DM'?s? Version\)$/i, "");
+			.replace(/\s*\(DM'?s? Version\)$/i, "")
+			.replace(/\s*[(（]DM版本?[)）]$/i,"");
 
 		// If there's no base name, assume this is a "Player Version"
-		if (!nameBase) return `${cleanParentTitle} (Player Version)`;
+		if (!nameBase) return `${cleanParentTitle} (玩家版)`;
 
 		// We have a "version" name base; clean it
 		const nameBaseClean = nameBase
@@ -33,7 +34,7 @@ class _MapNamer {
 			.replace(/\)$/, "")
 			.trim()
 			// Ensure trailing "Version" for "Player Version" to match legacy map namer; follow the same pattern for other version types
-			.replace(this.constructor._RE_ADD_VERSION_SUFFIX, "$1 Version");
+			.replace(this.constructor._RE_ADD_VERSION_SUFFIX, "$1 版");
 		return `${cleanParentTitle} (${nameBaseClean})`;
 	}
 

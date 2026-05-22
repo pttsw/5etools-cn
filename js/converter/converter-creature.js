@@ -2236,7 +2236,7 @@ export class ConverterCreature extends ConverterBase {
 	static _setCleanHp (stats, line) {
 		const rawHp = ConverterUtils.getStatblockLineHeaderText({reStartStr: this._RE_START_HIT_POINTS, line});
 		// split HP into average and formula
-		const m = /^(\d+)\s*\((.*?)\)$/.exec(rawHp.trim());
+		const m = /^(\d+)\s*[\(（](.*?)[\)）]$/.exec(rawHp.trim());
 		if (!m) stats.hp = {special: rawHp}; // for e.g. Avatar of Death
 		else if (!Renderer.dice.lang.getTree3(m[2])) stats.hp = {special: rawHp}; // for e.g. "x (see notes)"
 		else {
