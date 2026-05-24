@@ -380,7 +380,7 @@ export class BookUtil {
 		const href = ~this.curRender.chapter
 			? this._getHrefShowAll(bookId)
 			: `#${UrlUtil.encodeForHash(bookId)}`;
-		const btnEntireBook = ee`<a href="${href}" class="ve-btn ve-btn-xs ve-btn-default no-print ${~this.curRender.chapter ? "" : "ve-active"}" title="Warning: Slow">查看完整${this.contentType.uppercaseFirst()}</a>`;
+		const btnEntireBook = ee`<a href="${href}" class="ve-btn ve-btn-xs ve-btn-default no-print ${~this.curRender.chapter ? "" : "ve-active"}" title="Warning: Slow">查看完整${Parser.getPropDisplayName(BookUtil.contentType)}</a>`;
 
 		if (this._isNarrow == null) {
 			const saved = StorageUtil.syncGetForPage("narrowMode");
@@ -712,7 +712,7 @@ export class BookUtil {
 
 		wrpContents.empty();
 		BookUtil.dispBook.empty().html(`<tr><th class="ve-tbl-border" colspan="6"></th></tr>
-			<tr><td colspan="6" class="initial-message initial-message--med book-loading-message">加载失败\u2014无法找到ID为"${bookId}"的${Parser.getArticle(BookUtil.contentType)} ${Parser.getPropDisplayName(BookUtil.contentType)}，可能你需要先从<a link="/managebrew.html">Homebrew</a>中获取。</td></tr><tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
+			<tr><td colspan="6" class="initial-message initial-message--med book-loading-message">加载失败\u2014无法找到ID为"${bookId}"的${Parser.getArticle(BookUtil.contentType)} ${Parser.getPropDisplayName(BookUtil.contentType)}，可能你需要先从<a href="/managebrew.html" target="_blank">Homebrew</a>中获取。</td></tr><tr><th class="ve-tbl-border" colspan="6"></th></tr>`);
 
 		this._removeLoadingOverlay();
 
@@ -968,7 +968,7 @@ export class BookUtil {
 					<span class="name">${book.name}</span>
 				</a>
 				<div class="ve-flex-v-center">
-					<a href="${this._getHrefShowAll(book.id)}" class="bk__contents_show_all ve-px-2 ve-py-1p ve-flex-v-center ve-lst__wrp-cells ve-lst__row-inner" title="查看完整${BookUtil.contentType.uppercaseFirst()} (Warning: Slow)">
+					<a href="${this._getHrefShowAll(book.id)}" class="bk__contents_show_all ve-px-2 ve-py-1p ve-flex-v-center ve-lst__wrp-cells ve-lst__row-inner" title="查看完整${Parser.getPropDisplayName(BookUtil.contentType)} (Warning: Slow)">
 						<span class="glyphicon glyphicon glyphicon-book" style="top: 0;"></span>
 					</a>
 					${BookUtil.curRender.btnToggleExpandAll}

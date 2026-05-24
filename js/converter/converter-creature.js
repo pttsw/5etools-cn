@@ -914,8 +914,8 @@ export class ConverterCreature extends ConverterBase {
 
 	static _handleAbilityScores_cn_inline ({stats, meta, options}) {
 		let match_count = 0;
-		// 转换类似：力量13（+1）敏捷14（+2）体质16（+3）
-		const regex = /(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力)(?<score>\d+)[(（](?<save>[-+]\d+)[)）]/g;
+		// 转换类似：力量13（+1）敏捷14（+2）体质16（+3）"力量 18 (+4)"
+		const regex = /(?<abil>str|dex|con|int|wis|cha|力量|敏捷|体质|智力|感知|魅力) ?(?<score>\d+) ?[(（](?<save>[-+]\d+)[)）]/g;
 		let i = meta.ixToConvert;
 		for (; i < meta.toConvert.length; ++i) {
 			const l = meta.toConvert[i].trim();
