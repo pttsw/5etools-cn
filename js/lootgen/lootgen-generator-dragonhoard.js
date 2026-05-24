@@ -1,6 +1,5 @@
 import {LootGenGeneratorBase} from "./lootgen-generator-base.js";
 import {LootGenOutputDragonMundaneItems} from "./lootgen-output.js";
-import {LootGenRender} from "./lootgen-render.js";
 
 export class LootGenGeneratorDragonHoard extends LootGenGeneratorBase {
 	static _DRAGON_AGES = [
@@ -47,7 +46,7 @@ export class LootGenGeneratorDragonHoard extends LootGenGeneratorBase {
 
 			<hr class="ve-hr-3">
 
-			<div class="ve-small ve-italic">${LootGenRender.er(`基于{@book 费资本的巨龙宝库|FTD|4|创建宝藏}第72页的表格和规则。`)}
+			<div class="ve-small ve-italic">${this._rendererWrapped.er(`基于{@book 费资本的巨龙宝库|FTD|4|创建宝藏}第72页的表格和规则。`)}
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 
@@ -77,6 +76,7 @@ export class LootGenGeneratorDragonHoard extends LootGenGeneratorBase {
 			artObjects,
 			dragonMundaneItems,
 			magicItemsByTable,
+			rendererWrapped: this._rendererWrapped,
 		});
 		this._outputManager.doAddOutput({lootOutput});
 	}

@@ -7,6 +7,9 @@ import {EncounterBuilderRulesClassic} from "./encounterbuilder/rules/encounterbu
 import {EncounterBuilderRulesOne} from "./encounterbuilder/rules/encounterbuilder-rules-one.js";
 import {EncounterBuilderRulesMcdmFleeMortals} from "./encounterbuilder/rules/encounterbuilder-rules-mcdmfleemortals.js";
 import {EncounterBuilderShapesLookup} from "./encounterbuilder/encounterbuilder-shapeslookup.js";
+import {WrappedRenderer} from "./render-wrapped.js";
+import {EncounterBuilderPartyCustom} from "./encounterbuilder/party/encounterbuilder-party-custom.js";
+import {EncounterBuilderPartyCustomAdvanced} from "./encounterbuilder/party/encounterbuilder-party-custom-advanced.js";
 
 class _BestiaryConsts {
 	static PROF_MODE_BONUS = "bonus";
@@ -314,12 +317,6 @@ class BestiaryPageBookView extends ListPageBookView {
 }
 
 class BestiaryPage extends ListPageMultiSource {
-	static async _prereleaseBrewDataSource ({brewUtil}) {
-		const brew = await brewUtil.pGetBrewProcessed();
-		DataUtil.monster.populateMetaReference(brew);
-		return brew;
-	}
-
 	static _tableView_getEntryPropTransform ({mon, fnGet}) {
 		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, Renderer.get());
 		const allEntries = fnGet(mon, {fnGetSpellTraits});
@@ -341,8 +338,17 @@ class BestiaryPage extends ListPageMultiSource {
 			},
 
 			dataProps: ["monster"],
-			prereleaseDataSource: () => BestiaryPage._prereleaseBrewDataSource({brewUtil: PrereleaseUtil}),
-			brewDataSource: () => BestiaryPage._prereleaseBrewDataSource({brewUtil: BrewUtil2}),
+
+			prereleaseDataSource: async () => {
+				const data = await PrereleaseUtil.pGetBrewProcessed();
+				await DataUtil.monster.pUpdatePreloadLegendaryGroupsPrerelease();
+				return data;
+			},
+			brewDataSource: async () => {
+				const data = await BrewUtil2.pGetBrewProcessed();
+				await DataUtil.monster.pUpdatePreloadLegendaryGroupsBrew();
+				return data;
+			},
 
 			pFnGetFluff,
 
@@ -580,7 +586,7 @@ class BestiaryPage extends ListPageMultiSource {
 
 	async _pOnLoad_pPreDataLoad () {
 		this._encounterBuilder.initUi();
-		await DataUtil.monster.pPreloadLegendaryGroups();
+		await DataUtil.monster.pPreloadLegendaryGroupsSite();
 		this._bindProfDiceHandlers();
 	}
 
@@ -956,13 +962,25 @@ const bestiaryPage = new BestiaryPage();
 window.bestiaryPage = bestiaryPage;
 const sublistManager = new BestiarySublistManager();
 
+const rendererWrapped = new WrappedRenderer();
+
+const partyBaseArgs = {rendererWrapped};
+const partyCompCustom = new EncounterBuilderPartyCustom({...partyBaseArgs});
+const partyCompCustomAdvanced = new EncounterBuilderPartyCustomAdvanced({...partyBaseArgs});
+const partyComps = [
+	partyCompCustom,
+	partyCompCustomAdvanced,
+];
+
 const encounterBuilderCache = new EncounterBuilderCacheBestiaryPage({bestiaryPage});
 const encounterShapesLookup = new EncounterBuilderShapesLookup();
-const encounterBuilderComp = new EncounterBuilderComponentBestiary({cache: encounterBuilderCache});
-const rulesBaseArgs = {comp: encounterBuilderComp, cache: encounterBuilderCache, encounterShapesLookup};
+const encounterBuilderComp = new EncounterBuilderComponentBestiary({cache: encounterBuilderCache, partyComps});
+
+const rulesBaseArgs = {comp: encounterBuilderComp, cache: encounterBuilderCache, encounterShapesLookup, rendererWrapped};
 const rulesClassic = new EncounterBuilderRulesClassic({...rulesBaseArgs});
 const rulesOne = new EncounterBuilderRulesOne({...rulesBaseArgs});
 const rulesMcdmFleeMortals = new EncounterBuilderRulesMcdmFleeMortals({...rulesBaseArgs});
+
 const encounterBuilder = new EncounterBuilderUiBestiary({
 	cache: encounterBuilderCache,
 	comp: encounterBuilderComp,
@@ -971,7 +989,9 @@ const encounterBuilder = new EncounterBuilderUiBestiary({
 		rulesClassic,
 		rulesMcdmFleeMortals,
 	],
+	partyComps,
 	encounterShapesLookup,
+	rendererWrapped,
 	bestiaryPage,
 	sublistManager,
 });
@@ -979,6 +999,7 @@ const sublistPlugin = new EncounterBuilderSublistPlugin({
 	sublistManager,
 	encounterBuilder,
 	encounterBuilderComp,
+	partyComps,
 });
 sublistManager.addPlugin(sublistPlugin);
 

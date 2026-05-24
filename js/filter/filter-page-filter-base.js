@@ -159,6 +159,9 @@ export class PageFilterBase {
 
 		if (ent.tokenCustom) ent._fMisc.push("有自定义/非官方Token");
 		if (ent.tokenCredit) ent._fMisc.push("有Token画师");
+
+		if (DataUtil.proxy.hasVersions(ent.__prop, ent)) ent._fMisc.push("有变体");
+		if (ent._versionBase_isVersion) ent._fMisc.push("是变体");
 	}
 	// endregion
 }

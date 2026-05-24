@@ -1464,6 +1464,8 @@ export class DamageTypeTag extends _PrimaryLegendarySpellsTaggerBase {
 	static _BLOCKLIST_NAMES = new Set([
 		"vampire weaknesses",
 		"吸血鬼弱点",
+		"sunlight hypersensitivity",
+		"日照超敏"
 	]);
 
 	static _init () {

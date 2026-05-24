@@ -1,5 +1,4 @@
 import {LootGenGeneratorBase} from "./lootgen-generator-base.js";
-import {LootGenRender} from "./lootgen-render.js";
 
 /** @abstract */
 class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
@@ -85,6 +84,7 @@ class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
 			type: `${I18nUtil.get("page.lootgen.individual_treasure")}: ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
 			name: `{@b ${I18nUtil.get("page.lootgen.individual_treasure")}} for ${I18nUtil.get("common.challenge_rating")} {@b ${this.constructor._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
+			rendererWrapped: this._rendererWrapped,
 		});
 		this._outputManager.doAddOutput({lootOutput});
 	}
@@ -130,6 +130,7 @@ class LootGenGeneratorFindTreasureBase extends LootGenGeneratorBase {
 			gems,
 			artObjects,
 			magicItemsByTable,
+			rendererWrapped: this._rendererWrapped,
 		});
 		this._outputManager.doAddOutput({lootOutput});
 	}
@@ -146,7 +147,7 @@ export class LootGenGeneratorFindTreasure extends LootGenGeneratorFindTreasureBa
 	identifier = "findTreasure";
 	_source = Parser.SRC_DMG;
 	_getHtmlBasedOn () {
-		return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|宝藏表}第133-149页的表格和规则。`);
+		return this._rendererWrapped.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|宝藏表}第133-149页的表格和规则。`);
 	}
 
 	_render_getStgHoardAdditional () { return null; }
@@ -176,7 +177,7 @@ export class LootGenGeneratorFindTreasure24 extends LootGenGeneratorFindTreasure
 	_source = Parser.SRC_XDMG;
 
 	_getHtmlBasedOn () {
-		return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG}第120页（“{@book 冒险奖励|XDMG|3|冒险奖励}”）和第218页（“{@book 随机魔法物品稀有度|XDMG|6|随机魔法物品稀有度}”）的表格和规则。`);
+		return this._rendererWrapped.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG}第120页（“{@book 冒险奖励|XDMG|3|冒险奖励}”）和第218页（“{@book 随机魔法物品稀有度|XDMG|6|随机魔法物品稀有度}”）的表格和规则。`);
 	}
 
 	_render_getStgHoardAdditional () {

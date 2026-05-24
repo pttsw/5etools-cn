@@ -1247,13 +1247,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1261,10 +1276,21 @@
 							"units": "ft",
 							"type": "line"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"acid"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1285,13 +1311,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1299,10 +1340,21 @@
 							"units": "ft",
 							"type": "line"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"lightning"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1323,13 +1375,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1337,10 +1404,21 @@
 							"units": "ft",
 							"type": "line"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"poison"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1361,13 +1439,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1375,10 +1468,21 @@
 							"units": "ft",
 							"type": "line"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"fire"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1399,13 +1503,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1413,10 +1532,21 @@
 							"units": "ft",
 							"type": "line"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"cold"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1437,13 +1567,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1451,10 +1596,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"fire"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1475,13 +1631,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1489,10 +1660,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"lightning"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1513,13 +1695,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1527,10 +1724,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"acid"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1551,13 +1759,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1565,10 +1788,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"fire"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1589,13 +1823,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1603,10 +1852,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"cold"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1627,13 +1887,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1641,10 +1916,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"force"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1665,13 +1951,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1679,10 +1980,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"radiant"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1703,13 +2015,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1717,10 +2044,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"psychic"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1741,13 +2079,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1755,10 +2108,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"thunder"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"
@@ -1779,13 +2143,28 @@
 			"raceSource": "FTD",
 			"system": {
 				"range.units": "self",
-				"duration.units": "instantaneous"
+				"duration.units": "instantaneous",
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"type": "save",
 					"activation": {
-						"type": "special"
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
 					},
 					"target": {
 						"template": {
@@ -1793,10 +2172,21 @@
 							"units": "ft",
 							"type": "cone"
 						}
-					}
-				},
-				{
-					"type": "save",
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(floor((@details.level+1)/6)+1)d10"
+								},
+								"types": [
+									"necrotic"
+								]
+							}
+						]
+					},
 					"save": {
 						"ability": [
 							"dex"

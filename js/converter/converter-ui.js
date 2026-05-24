@@ -32,12 +32,12 @@ class _ConverterUiSettings extends BaseComponent {
 				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">输入分隔符</span>
 				${iptInputSeparator}
 			</label>
-			
+
 			<label class="ve-split-v-center ve-w-100" title="Sets output order when using the &quot;Parse and Add&quot; button, or parsing multiple blocks of text using a separator.">
 				<span class="ve-w-66 ve-no-shrink ve-mr-2 ve-flex-v-center">&quot;转换并添加&quot; 行为</span>
 				${selAppendPrependMode}
 			</label>
-			
+
 			<hr class="ve-hr-3">
 		</div>`
 			.appendTo(eleParent);
@@ -69,6 +69,10 @@ export class ConverterUi extends BaseComponent {
 
 	set converters (converters) { this._converters = converters; }
 	get activeConverter () { return this._converters[this._state.converter]; }
+
+	getInputSeparator () { return this._state.inputSeparator; }
+	addHookInputSeparator (hk) { return this._addHookBase("inputSeparator", hk); }
+	removeHookInputSeparator (hk) { return this._removeHookBase("inputSeparator", hk); }
 
 	getBaseSaveableState () {
 		return {
@@ -482,9 +486,11 @@ export class ConverterUi extends BaseComponent {
 
 		const wrpSettings = es(`#wrp-settings`);
 
+		let fnsCleanupLast = null;
 		this._addHookBase("converter", () => {
 			wrpSettings.empty();
-			this.activeConverter.renderSettings({compParent: this, wrpSettings});
+			if (fnsCleanupLast) fnsCleanupLast.forEach(fn => fn());
+			({fnsCleanupLast} = this.activeConverter.renderSettings({compParent: this, wrpSettings}));
 
 			this._editorIn.setOptions({
 				mode: ConverterUiUtil.getAceMode(this.activeConverter?.mode),
@@ -523,7 +529,7 @@ export class ConverterUi extends BaseComponent {
 	static _DEFAULT_STATE = {
 		hasAppended: false,
 		appendPrependMode: _APPEND_PREPEND_MODE__APPEND,
-		converter: "Creature",
+		converter: "monster",
 		sourceJson: "",
 		inputSeparator: "===",
 		outputEnableEditing: false,

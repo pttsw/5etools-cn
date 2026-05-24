@@ -1,7 +1,6 @@
 import {LootGenGeneratorBase} from "./lootgen-generator-base.js";
 import {LootGenOutputGemsArtObjects} from "./lootgen-output.js";
 import {LootGenUtils} from "./lootgen-utils.js";
-import {LootGenRender} from "./lootgen-render.js";
 
 export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 	identifier = "gemsArtObjects";
@@ -48,7 +47,7 @@ export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 
 			<hr class="ve-hr-3">
 
-			<div class="ve-small ve-italic">${LootGenRender.er(`此自定义生成器随机生成宝石/艺术品，直到达到目标金额。`)}</div>
+			<div class="ve-small ve-italic">${this._rendererWrapped.er(`此自定义生成器随机生成宝石/艺术品，直到达到目标金额。`)}</div>
 		</div>`.appendTo(tabMeta.wrpTab);
 	}
 
@@ -111,6 +110,7 @@ export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 			name: `${I18nUtil.get("page.lootgen.gems_art_objects")}: ${I18nUtil.get("page.lootgen.roughly")} ${this._state.gao_targetGoldAmount.toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}`,
 			gems,
 			artObjects,
+			rendererWrapped: this._rendererWrapped,
 		});
 		this._outputManager.doAddOutput({lootOutput});
 	}

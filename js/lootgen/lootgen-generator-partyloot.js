@@ -1,7 +1,6 @@
 import {LootGenGeneratorBase} from "./lootgen-generator-base.js";
 import {LootGenMagicItem} from "./lootgen-magicitem.js";
 import {LootGenOutputMagicItems} from "./lootgen-output.js";
-import {LootGenRender} from "./lootgen-render.js";
 
 export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 	static _PARTY_LOOT_LEVEL_RANGES = {
@@ -153,7 +152,7 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 
 		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
 			<p>
-				基于${LootGenRender.er(`{@book 珊娜萨的万事指南|XGE|2|奖励魔法物品}`)}第135-136页的表格和规则为小队生成一组魔法物品。
+				基于${this._rendererWrapped.er(`{@book 珊娜萨的万事指南|XGE|2|奖励魔法物品}`)}第135-136页的表格和规则为小队生成一组魔法物品。
 			</p>
 			<p><i>如果选择了&quot;精确等级&quot;选项，输出中的物品数量将依据游戏阶段完成的比例来计算。</i></p>
 
@@ -194,6 +193,7 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 						lootGenMagicItems: breakdown,
 						spells: this._dataManager.getDataSpellsFiltered(),
 						magicItemTable: tableMeta,
+						rendererWrapped: this._rendererWrapped,
 					});
 					breakdown.push(lootItem);
 				}
@@ -215,6 +215,7 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 			type: `Party Loot: Level ${ptLevel}`,
 			name: I18nUtil.LANGUAGES_INDEX === "zh_CN" ? `队伍{@b 等级 ${ptLevel}}的魔法物品` : `Magic items for a {@b Level ${ptLevel}} Party`,
 			magicItemsByTable,
+			rendererWrapped: this._rendererWrapped,
 		});
 		this._outputManager.doAddOutput({lootOutput});
 	}

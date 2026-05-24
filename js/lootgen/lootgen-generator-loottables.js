@@ -6,7 +6,6 @@ import {
 } from "./lootgen-const.js";
 import {LootGenMagicItem} from "./lootgen-magicitem.js";
 import {LootGenOutputMagicItems} from "./lootgen-output.js";
-import {LootGenRender} from "./lootgen-render.js";
 
 export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 	identifier = "lootTables";
@@ -74,7 +73,7 @@ export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 			if (tableMeta == null) return;
 
 			dispHelp.html(this._lt_getRenderedHelp({tableMeta}));
-			dispTable.html(LootGenRender.er(tableMeta.tableEntry));
+			dispTable.html(this._rendererWrapped.er(tableMeta.tableEntry));
 		};
 		this._addHookBase("lt_ixTable", hkTable);
 		hkTable();
@@ -109,9 +108,9 @@ export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 
 	_lt_getRenderedHelp ({tableMeta}) {
 		switch (tableMeta.metaType) {
-			case LOOT_TABLES_TYPE__DMG_MAGIC_ITEMS: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|宝藏表}第133-149页的表格和规则。`);
-			case LOOT_TABLES_TYPE__XGE_FAUX: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XGE)} (零散的选择物品)|XGE|2|零散的选择物品}第135-136页的表格和规则自动生成。`);
-			case LOOT_TABLES_TYPE__XDMG_THEMES: return LootGenRender.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG|6|随机魔法物品}第326-331页的表格和规则。`);
+			case LOOT_TABLES_TYPE__DMG_MAGIC_ITEMS: return this._rendererWrapped.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|7|宝藏表}第133-149页的表格和规则。`);
+			case LOOT_TABLES_TYPE__XGE_FAUX: return this._rendererWrapped.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XGE)} (零散的选择物品)|XGE|2|零散的选择物品}第135-136页的表格和规则自动生成。`);
+			case LOOT_TABLES_TYPE__XDMG_THEMES: return this._rendererWrapped.er(`基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG|6|随机魔法物品}第326-331页的表格和规则。`);
 			default: throw new Error(`Unhandled table meta-type "${tableMeta.metaType}"`);
 		}
 	}
@@ -124,6 +123,7 @@ export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 			type: `Treasure Table Roll: ${this._lt_pDoHandleClickRollLoot_getTypePart({tableMeta})}`,
 			name: this._lt_pDoHandleClickRollLoot_getNamePart({tableMeta}),
 			magicItemsByTable: await this._lt_pDoHandleClickRollLoot_pGetMagicItemMetas({tableMeta, isTest}),
+			rendererWrapped: this._rendererWrapped,
 		});
 		this._outputManager.doAddOutput({lootOutput});
 	}
@@ -157,6 +157,7 @@ export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 						lootGenMagicItems: breakdown,
 						spells: this._dataManager.getDataSpellsFiltered(),
 						magicItemTable: tableMeta.table,
+						rendererWrapped: this._rendererWrapped,
 						rowRoll,
 					});
 					breakdown.push(lootItem);
@@ -167,6 +168,7 @@ export class LootGenGeneratorLootTables extends LootGenGeneratorBase {
 				lootGenMagicItems: breakdown,
 				spells: this._dataManager.getDataSpellsFiltered(),
 				magicItemTable: tableMeta.table,
+				rendererWrapped: this._rendererWrapped,
 			});
 			breakdown.push(lootItem);
 		}

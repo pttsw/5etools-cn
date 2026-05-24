@@ -15,7 +15,7 @@
 						{
 							"key": "system.attributes.prof",
 							"mode": "OVERRIDE",
-							"value": "@srd5e.userchar.pb"
+							"value": "@prof"
 						},
 						{
 							"key": "system.attributes.hp.max",
@@ -25,12 +25,12 @@
 						{
 							"key": "system.bonuses.abilities.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.bonuses.abilities.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -53,7 +53,7 @@
 						{
 							"key": "system.attributes.prof",
 							"mode": "OVERRIDE",
-							"value": "@srd5e.userchar.pb"
+							"value": "@prof"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -68,12 +68,12 @@
 						{
 							"key": "system.bonuses.abilities.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.bonuses.abilities.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -96,7 +96,7 @@
 						{
 							"key": "system.attributes.prof",
 							"mode": "OVERRIDE",
-							"value": "@srd5e.userchar.pb"
+							"value": "@prof"
 						},
 						{
 							"key": "system.attributes.hp.max",
@@ -106,12 +106,12 @@
 						{
 							"key": "system.bonuses.abilities.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.bonuses.abilities.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -134,7 +134,7 @@
 						{
 							"key": "system.attributes.prof",
 							"mode": "OVERRIDE",
-							"value": "@srd5e.userchar.pb"
+							"value": "@prof"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -149,12 +149,12 @@
 						{
 							"key": "system.bonuses.abilities.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.bonuses.abilities.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -177,7 +177,7 @@
 						{
 							"key": "system.attributes.prof",
 							"mode": "OVERRIDE",
-							"value": "@srd5e.userchar.pb"
+							"value": "@prof"
 						},
 						{
 							"key": "system.attributes.hp.max",
@@ -187,12 +187,12 @@
 						{
 							"key": "system.bonuses.abilities.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.bonuses.abilities.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -214,7 +214,7 @@
 						{
 							"key": "system.attributes.prof",
 							"mode": "OVERRIDE",
-							"value": "@srd5e.userchar.pb"
+							"value": "@prof"
 						},
 						{
 							"key": "system.attributes.ac.formula",
@@ -229,12 +229,12 @@
 						{
 							"key": "system.bonuses.abilities.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.bonuses.abilities.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -262,12 +262,12 @@
 						{
 							"key": "system.abilities.dex.bonuses.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.abilities.wis.bonuses.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.attributes.movement.fly",
@@ -299,17 +299,53 @@
 						{
 							"key": "system.abilities.dex.bonuses.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.skills.prc.bonuses.check",
 							"mode": "ADD",
-							"value": "+(2 * @srd5e.userchar.pb)"
+							"value": "+(2 * @prof)"
 						},
 						{
 							"key": "system.skills.ste.bonuses.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "Steel Defender",
+			"source": "EFA",
+			"prototypeToken": {
+				"actorLink": true
+			},
+			"effects": [
+				{
+					"name": "Artificer's Leadership",
+					"disabled": true,
+					"changes": [
+						{
+							"key": "system.attributes.hp.max",
+							"mode": "ADD",
+							"value": "+ (5 * @srd5e.userchar.classes.artificer.levels)"
+						},
+						{
+							"key": "system.attributes.ac.formula",
+							"mode": "ADD",
+							"value": "+ @srd5e.userchar.abilities.int.mod"
+						},
+						{
+							"key": "system.bonuses.abilities.save",
+							"mode": "ADD",
+							"value": "+ @prof"
+						},
+						{
+							"key": "system.bonuses.abilities.check",
+							"mode": "ADD",
+							"value": "+ @prof"
 						}
 					]
 				}
@@ -337,22 +373,22 @@
 						{
 							"key": "system.abilities.dex.bonuses.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.abilities.con.bonuses.save",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.skills.ath.bonuses.check",
 							"mode": "ADD",
-							"value": "+ @srd5e.userchar.pb"
+							"value": "+ @prof"
 						},
 						{
 							"key": "system.skills.prc.bonuses.check",
 							"mode": "ADD",
-							"value": "+(2 * @srd5e.userchar.pb)"
+							"value": "+(2 * @prof)"
 						}
 					]
 				}
