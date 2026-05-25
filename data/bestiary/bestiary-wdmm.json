@@ -186,8 +186,8 @@
 			],
 			"trait": [
 				{
-					"ENG_name": "Wielder Domination",
-					"name": "支配持有者",
+					"ENG_name": "Charm",
+					"name": "魅惑",
 					"entries": [
 						"生物可以通过成功的擒抱检定从空中抓住法杖，并且擒抱法杖不会降低生物的速度。任何成功擒抱法杖的生物必须进行一次{@dc 12}魅力豁免检定，否则将被法杖{@condition 魅惑}，直到法杖不再在其手中。当生物被{@condition 魅惑}时，法杖可以向它发出命令，生物将尽力遵从。生物每次受到伤害时都可以重复豁免检定，成功则结束该效果。成功抵抗法杖控制的生物在24小时内不会被它{@condition 魅惑}。",
 						"一个不被这根法杖{@condition 魅惑}的生物可以使用动作尝试将其在膝盖上或对一个硬表面折断，成功进行一个{@dc 17}力量（{@skill 运动}）检定即可做到。以这种方式折断法杖会将其摧毁。"
@@ -203,8 +203,8 @@
 					]
 				},
 				{
-					"ENG_name": "Staff",
-					"name": "法杖",
+					"ENG_name": "Melee Attack",
+					"name": "近战攻击",
 					"entries": [
 						"{@atk mw} 命中{@hit 5}，触及5尺，单一目标。{@h}7 ({@damage 2d6}) 钝击伤害加上1点寒冷伤害。"
 					]
@@ -229,6 +229,49 @@
 			"savingThrowForced": [
 				"魅力"
 			],
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Animated Statue",
+			"name": "活化雕像",
+			"source": "WDMM",
+			"page": 125,
+			"_copy": {
+				"ENG_name": "Archmage",
+				"name": "大法师",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "大法师",
+						"with": "雕像",
+						"flags": "i"
+					},
+					"_": {
+						"mode": "replaceSpells",
+						"spells": {
+							"4": [
+								{
+									"replace": "{@spell 放逐术}",
+									"with": "{@spell 冰风暴}"
+								}
+							],
+							"7": [
+								{
+									"replace": "{@spell 传送术}",
+									"with": "{@spell 死亡一指}"
+								}
+							]
+						}
+					}
+				}
+			},
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"tokenCredit": "Onefold, Ltd.",
+			"tokenCustom": true,
 			"hasToken": true
 		},
 		{
@@ -522,6 +565,59 @@
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Armored Troglodyte",
+			"name": "披甲穴蜥人",
+			"source": "WDMM",
+			"page": 150,
+			"_copy": {
+				"ENG_name": "Troglodyte",
+				"name": "穴蜥人",
+				"source": "MM",
+				"_mod": {
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "多重攻击",
+							"items": {
+								"ENG_name": "Multiattack",
+								"name": "多重攻击",
+								"entries": [
+									"穴蜥人要么用它的长剑进行两次攻击，要么进行三次攻击：一次用它的啃咬，两次用它的爪击。"
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "爪击",
+							"items": {
+								"ENG_name": "Longsword",
+								"name": "长剑",
+								"entries": [
+									"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点挥砍伤害，或者如果用双手使用则为7 ({@damage 1d10 + 2}) 点挥砍伤害。"
+								]
+							}
+						}
+					]
+				}
+			},
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item 胸甲|PHB}"
+					]
+				}
+			],
+			"languages": [
+				"懂地底通用语但不能说"
+			],
+			"languageTags": [
+				"CS",
+				"U"
+			],
+			"hasToken": true
 		},
 		{
 			"ENG_name": "Ashtyrranthor",
@@ -2034,6 +2130,58 @@
 			"hasToken": true
 		},
 		{
+			"ENG_name": "Giant Gelatinous Cube",
+			"name": "巨型凝胶方块",
+			"source": "WDMM",
+			"page": 241,
+			"_copy": {
+				"ENG_name": "Gelatinous Cube",
+				"name": "凝胶方块",
+				"source": "MM",
+				"_mod": {
+					"trait": [
+						{
+							"mode": "replaceArr",
+							"replace": "泥怪方块",
+							"items": {
+								"ENG_name": "Ooze Cube",
+								"name": "泥怪方块",
+								"entries": [
+									"方块占据其所在空间位置的整个区域。其他生物可以进入该空间，但如此做的生物会承受胶质方块的吞没能力，而其豁免具有劣势。",
+									"在方块体内的生物可以被他人看到，但仍处于{@quickref 掩护||3||全身掩护}状态。",
+									"方块周边5尺范围内的一个生物可以用一个动作将方块内的生物或物件拖出。此时该生物还必须成功通过一次{@dc 12}的力量检定，且该生物必须承受10（{@damage 3d6}）点强酸伤害。",
+									"该方块一次最多可以容纳九个大型生物或三十六个中型或更小的生物在其内部。"
+								]
+							}
+						},
+						{
+							"mode": "appendArr",
+							"items": [
+								{
+									"ENG_name": "Enlarged",
+									"name": "变巨",
+									"entries": [
+										"该方块进行力量检定和力量豁免检定时具有优势。当方块收缩回正常体型时，任何它无法再容纳的生物将被排出到其周围未被占据的空间中。"
+									]
+								}
+							]
+						}
+					],
+					"action": {
+						"mode": "prependArr",
+						"items": {
+							"ENG_name": "Multiattack",
+							"name": "多重攻击",
+							"entries": [
+								"方块进行四次伪足攻击。"
+							]
+						}
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Glyster",
 			"name": "格利斯特",
 			"isNpc": true,
@@ -2172,59 +2320,6 @@
 				"体质",
 				"敏捷",
 				"感知"
-			],
-			"hasToken": true
-		},
-		{
-			"ENG_name": "Gorzil's Gang Troglodyte",
-			"name": "戈尔齐尔的帮派穴蜥人",
-			"source": "WDMM",
-			"page": 150,
-			"_copy": {
-				"ENG_name": "Troglodyte",
-				"name": "穴蜥人",
-				"source": "MM",
-				"_mod": {
-					"action": [
-						{
-							"mode": "replaceArr",
-							"replace": "多重攻击",
-							"items": {
-								"ENG_name": "Multiattack",
-								"name": "多重攻击",
-								"entries": [
-									"这个穴蜥人进行三次攻击：一次用其撕咬，两次用其长剑。"
-								]
-							}
-						},
-						{
-							"mode": "replaceArr",
-							"replace": "爪击",
-							"items": {
-								"ENG_name": "Longsword",
-								"name": "长剑",
-								"entries": [
-									"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}6 ({@damage 1d8 + 2}) 点挥砍伤害，或者如果用双手使用则为7 ({@damage 1d10 + 2}) 点挥砍伤害。"
-								]
-							}
-						}
-					]
-				}
-			},
-			"ac": [
-				{
-					"ac": 14,
-					"from": [
-						"{@item 胸甲|PHB}"
-					]
-				}
-			],
-			"languages": [
-				"懂地底通用语但不能说"
-			],
-			"languageTags": [
-				"CS",
-				"U"
 			],
 			"hasToken": true
 		},
@@ -2634,6 +2729,48 @@
 			"languageTags": [
 				"C"
 			],
+			"hasToken": true
+		},
+		{
+			"ENG_name": "Hammer-Handed Golem",
+			"name": "锤手魔像",
+			"source": "WDMM",
+			"page": 259,
+			"_copy": {
+				"ENG_name": "Stone Golem",
+				"name": "石魔像",
+				"source": "MM",
+				"_mod": {
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "多重攻击",
+							"items": [
+								{
+									"ENG_name": "Multiattack",
+									"name": "多重攻击",
+									"entries": [
+										"魔像进行两次巨锤攻击。"
+									]
+								}
+							]
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "猛击",
+							"items": [
+								{
+									"ENG_name": "Mallet",
+									"name": "槌子",
+									"entries": [
+										"{@atk mw} {@hit 10} 命中，触及范围 5 尺，单一目标。{@h}19（{@damage 3d8 + 6}）钝击伤害，且目标必须成功通过 {@dc 17} 的体质豁免检定，否则陷入 {@condition 震慑} 状态直到其下一回合结束。"
+									]
+								}
+							]
+						}
+					]
+				}
+			},
 			"hasToken": true
 		},
 		{
@@ -4987,7 +5124,7 @@
 					"ENG_name": "Shadow Blade",
 					"name": "影之刃",
 					"entries": [
-						"{@atk mw} 命中{@hit 8}，触及 5 尺，单一目标。{@h}7 ({@damage 1d6 + 4}) 点穿刺伤害加上 10 ({@damage 3d6}) 暗蚀伤害。除非目标免疫暗蚀伤害，否则每次被此攻击击中，目标的力量值减少 {@dice 1d4}。如果力量值减少到 0，目标死亡。该减少直到目标完成一次短休或长休才会结束。如果一个非邪恶的人形生物因这次攻击死亡，一个阴影生物（见《怪物手册》）将在尸体上 {@dice 1d4} 小时后升起。"
+						"{@atk mw} {@hit 8}命中，触及范围5尺，单一目标。{@h}7（{@damage 1d6 + 4}）穿刺伤害外加10（{@damage 3d6}）暗蚀伤害。除非目标对暗蚀伤害免疫，否则每次被此攻击命中时，其力量值减少{@dice 1d4}。若力量值降至0，则目标死亡。此减少效果持续至目标完成一次短休或长休。若一个非邪恶的类人生物因此攻击死亡，则一个{@creature 幽影}（见怪物图鉴）将于{@dice 1d4}小时后从其尸体上站起。"
 					]
 				}
 			],
@@ -5852,7 +5989,8 @@
 				"E"
 			],
 			"legendaryGroup": {
-				"name": "Shadow Dragon (Bronze Dragon)",
+				"ENG_name": "Shadow Dragon (Bronze Dragon)",
+				"name": "幽影龙（青铜龙）",
 				"source": "MM"
 			},
 			"traitTags": [

@@ -323,7 +323,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -664,7 +664,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -1034,7 +1034,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -1313,7 +1313,7 @@
 						"value": "10"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -1731,7 +1731,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -2975,6 +2975,89 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Card Sharp's Deck",
+			"name": "老千牌组",
+			"source": "BMT",
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "拂晓",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"spell": {
+						"challenge": {
+							"override": true,
+							"save": 15
+						},
+						"level": 3,
+						"uuid": "@spell[卡牌喷射|bmt]",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质"
+						],
+						"spellbook": true
+					}
+				},
+				{
+					"ENG_name": "Deadly Deal",
+					"name": "致命发牌",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "any"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "120"
+					},
+					"attack": {
+						"type": {
+							"value": "远程",
+							"classification": "法术"
+						},
+						"ability": "dex"
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"types": [
+									"力场"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Carrion Crawler Mucus",
 			"name": "食腐虫粘液",
 			"source": "XDMG",
@@ -3004,7 +3087,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -3493,6 +3576,125 @@
 						}
 					],
 					"description": "你可以在水下呼吸，并且拥有60尺的游泳速度。"
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Crown of the Wrath Bringer",
+			"name": "降怒王冠",
+			"source": "BGG",
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "日",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"spell": {
+						"challenge": {
+							"override": true,
+							"save": 15
+						},
+						"level": 3,
+						"uuid": "@spell[恐惧术|phb]",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质",
+							"专注"
+						],
+						"spellbook": true
+					}
+				},
+				{
+					"ENG_name": "Hit Die Damage (Smallest)",
+					"name": "生命骰伤害（最小）",
+					"type": "damage",
+					"activation": {
+						"type": "special",
+						"condition": "当你佩戴此皇冠时，对一个生物进行攻击检定并命中"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最小"
+							}
+						]
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@attributes.hd.smallest"
+								},
+								"types": [
+									"心灵"
+								]
+							}
+						]
+					},
+					"visibility": {
+						"requireMagic": true
+					}
+				},
+				{
+					"ENG_name": "Hit Die Damage (Largest)",
+					"name": "生命骰伤害（最大）",
+					"type": "damage",
+					"activation": {
+						"type": "special",
+						"condition": "当你佩戴此皇冠时，对一个生物进行攻击检定并命中"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最大"
+							}
+						]
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@attributes.hd.largest"
+								},
+								"types": [
+									"心灵"
+								]
+							}
+						]
+					},
+					"visibility": {
+						"requireMagic": true
+					}
 				}
 			],
 			"migrationVersion": 3,
@@ -5016,7 +5218,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -5136,7 +5338,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -5194,7 +5396,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -5585,7 +5787,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6584,7 +6786,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6647,7 +6849,7 @@
 						"value": "60"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6689,7 +6891,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6977,7 +7179,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -7062,7 +7264,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -7117,7 +7319,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -7843,7 +8045,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -8119,7 +8321,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -10904,7 +11106,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -11024,7 +11226,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -11202,7 +11404,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -11455,7 +11657,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -11518,7 +11720,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -12016,7 +12218,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -12048,7 +12250,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -12440,6 +12642,104 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Nimbus Coronet",
+			"name": "雨云宝冠",
+			"source": "BGG",
+			"activities": [
+				{
+					"ENG_name": "Cloudlike Form",
+					"name": "云状形态",
+					"type": "utility",
+					"img": "icons/magic/air/fog-gas-smoke-dense-white.webp",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "拂晓",
+								"type": "recoverAll"
+							}
+						],
+						"max": "1"
+					},
+					"effects": [
+						{
+							"foundryId": "nimbusCoronet"
+						}
+					]
+				},
+				{
+					"ENG_name": "Teleport",
+					"name": "传送术",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "space"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "15"
+					},
+					"visibility": {
+						"requireMagic": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Nimbus Coronet Cloud Form",
+					"name": "雨云宝冠云雾形态",
+					"foundryId": "nimbusCoronet",
+					"duration": {
+						"value": 1,
+						"units": "分钟",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"value": "slashing",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "piercing",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "bludgeoning",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.attributes.movement.fly",
+							"value": 60,
+							"mode": "OVERRIDE"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Nolzur's Marvelous Pigments",
 			"name": "诺泽尔的惊奇颜料",
 			"source": "XDMG",
@@ -12523,7 +12823,7 @@
 						"value": "20"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -12859,7 +13159,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -12911,7 +13211,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13165,7 +13465,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13426,7 +13726,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13516,7 +13816,7 @@
 						"value": "30"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13970,7 +14270,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -15571,7 +15871,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -15998,7 +16298,7 @@
 						"units": "ft"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -16177,7 +16477,7 @@
 						"units": "ft"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -16351,7 +16651,7 @@
 						"units": "ft"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -16537,7 +16837,7 @@
 						"units": "ft"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -16877,7 +17177,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -16932,7 +17232,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -16944,35 +17244,37 @@
 					}
 				},
 				{
-					"name": "Dancing Lights",
+					"ENG_name": "Dancing Lights",
+					"name": "舞光术",
 					"type": "cast",
 					"activation": {
 						"type": "action"
 					},
 					"spell": {
 						"properties": [
-							"vocal",
-							"somatic",
-							"material"
+							"声音",
+							"姿势",
+							"材质"
 						],
 						"spellbook": true,
-						"uuid": "@spell[dancing lights|xphb]"
+						"uuid": "@spell[舞光术|xphb]"
 					}
 				},
 				{
-					"name": "Light",
+					"ENG_name": "Light",
+					"name": "轻型",
 					"type": "cast",
 					"activation": {
 						"type": "action"
 					},
 					"spell": {
 						"properties": [
-							"vocal",
-							"somatic",
-							"material"
+							"声音",
+							"姿势",
+							"材质"
 						],
 						"spellbook": true,
-						"uuid": "@spell[light|xphb]"
+						"uuid": "@spell[轻型|xphb]"
 					}
 				}
 			],
@@ -17241,7 +17543,7 @@
 						"type": "action"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17312,7 +17614,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17392,7 +17694,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17416,7 +17718,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17467,7 +17769,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -18389,7 +18691,7 @@
 						"value": "120"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -18612,7 +18914,7 @@
 						"value": "20"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -18946,7 +19248,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -20134,7 +20436,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -20847,7 +21149,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21258,7 +21560,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21418,7 +21720,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21473,7 +21775,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21847,7 +22149,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -22374,7 +22676,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -22416,7 +22718,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -22888,7 +23190,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -22996,7 +23298,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -23863,7 +24165,7 @@
 						"value": "60"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -24372,7 +24674,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -24970,7 +25272,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -25020,7 +25322,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -25979,7 +26281,7 @@
 						"type": ""
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -26017,7 +26319,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [

@@ -3498,28 +3498,31 @@
 	],
 	"legendaryGroupTemplate": [
 		{
-			"name": "Shadow Dragon",
+			"ENG_name": "Shadow Dragon",
+			"name": "幽影龙",
 			"source": "FTD",
 			"page": 142,
-			"ref": "{@legendaryGroup Shadow Dragon|FTD}",
+			"ref": "{@legendaryGroup 幽影龙|FTD}",
 			"apply": {
 				"_mod": {
 					"lairActions": {
 						"mode": "appendArr",
 						"items": [
 							{
+								"ENG_name": "Additional Lair Action",
+								"name": "额外巢穴动作",
 								"type": "entries",
-								"name": "Additional Lair Action",
 								"entries": [
-									"Shadow dragons have access to the lair actions usable by untransformed dragons of the same kind. The effects of these actions might be cosmetically altered, seeming darker, gloomier, and more subdued. They might also deal necrotic damage instead of other damage types. At your discretion, a legendary (adult or ancient) shadow dragon can use the following additional lair action while in its lair:",
+									"幽影龙可以使用转化前同种龙类所拥有的巢穴动作。这些动作的效果在画面效果上会有所不同，一般会更为黑暗、阴郁和沉闷。它们可能造成暗蚀伤害而非原有类型。取决于您的意愿，一条传奇（成年或远古）幽影龙可以在其巢穴内使用以下一种或多种巢穴动作：",
 									{
 										"type": "list",
 										"style": "list-hang-notitle",
 										"items": [
 											{
+												"ENG_name": "Banish Light",
+												"name": "放逐光芒",
 												"type": "item",
-												"name": "Banish Light",
-												"entry": "Any nonmagical source of illumination within a 60-foot-radius sphere centered on the dragon is snuffed out, and any spell that creates light within that same area is dispelled."
+												"entry": "以龙为中心的60尺半径球状区域内的所有非魔法光源全部被熄灭，所有创造光亮的法术全部被解除。"
 											}
 										]
 									}
@@ -3530,25 +3533,28 @@
 					"regionalEffects": {
 						"mode": "appendArr",
 						"items": [
-							"When a shadow dragon establishes a lair on the Material Plane, the region around the lair takes on some of the characteristics of the Shadowfell, creating one or more of the following effects:",
+							"当一条幽影龙在主物质位面建立巢穴时，巢穴周围的区域会呈现出堕影冥界的某些特征，产生以下一项或多项效应：",
 							{
 								"type": "list",
 								"style": "list-hang-notitle",
 								"items": [
 									{
+										"ENG_name": "Brooding Despair",
+										"name": "幽怨绝望",
 										"type": "item",
-										"name": "Brooding Despair",
-										"entry": "Creatures within 1 mile of the dragon's lair that have an Intelligence score of 5 or higher feel forlorn and hopeless."
+										"entry": "在龙巢穴周边1英里范围内，智力值在5或以上的生物会一直感到孤独和绝望。"
 									},
 									{
+										"ENG_name": "Dying Light",
+										"name": "消逝之光",
 										"type": "item",
-										"name": "Dying Light",
-										"entry": "Light is diminished within 6 miles of the dragon's lair, {@quickref Vision and Light|PHB|2||lightly obscuring} the land in gloomy shadows."
+										"entry": "在龙巢穴周边6英里范围内的光源都会减弱，{@quickref 视野与光照|PHB|2||轻微遮蔽}笼罩土地的阴暗幽影将会造成轻度遮蔽。"
 									},
 									{
+										"ENG_name": "Gloomy Portals",
+										"name": "阴暗门户",
 										"type": "item",
-										"name": "Gloomy Portals",
-										"entry": "Some caves, caverns, pits, and other places of deep gloom within 1 mile of the dragon's lair form portals to the Shadowfell, allowing creatures from that plane to dwell nearby."
+										"entry": "在龙巢穴周边1英里范围内，一些洞穴、洞窟、坑洞以及其他阴暗之所将会形成通往堕影冥界的传送门，允许来自那个世界的生物于周边定居。"
 									}
 								]
 							}

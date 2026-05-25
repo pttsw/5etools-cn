@@ -2033,6 +2033,59 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Nature's Veil",
+			"name": "自然面纱",
+			"source": "TCE",
+			"className": "游侠",
+			"classSource": "PHB",
+			"level": 10,
+			"system": {
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "naturesVeil"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "naturesVeil",
+					"statuses": [
+						"invisible"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Favored Enemy improvement",
 			"name": "增加宿敌",
 			"source": "PHB",
@@ -2777,7 +2830,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -3339,7 +3392,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -4986,7 +5039,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -5659,7 +5712,7 @@
 						"value": "60"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6336,7 +6389,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6393,7 +6446,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6522,7 +6575,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6575,7 +6628,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -6631,7 +6684,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -7414,6 +7467,53 @@
 					}
 				]
 			},
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Steel Defender",
+			"name": "钢铁守卫",
+			"source": "EFA",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "战地匠师",
+			"subclassSource": "EFA",
+			"level": 3,
+			"activities": [
+				{
+					"type": "summon",
+					"activation": {
+						"type": "action",
+						"condition": "每当你完成一次长休"
+					},
+					"target": {
+						"affects": {
+							"type": "space",
+							"special": "无人占据"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "5"
+					},
+					"profiles": [
+						{
+							"ENG_name": "Steel Defender",
+							"name": "钢铁守卫",
+							"uuid": "@creature[钢铁守卫|EFA]"
+						}
+					],
+					"bonuses": {
+						"ac": "@abilities.int.mod",
+						"hd": "@classes.artificer.levels",
+						"hp": "@classes.artificer.levels * (@summon.attributes.hd.denomination * 0.5 + 1)",
+						"attackDamage": "@abilities.int.mod"
+					},
+					"match": {
+						"attacks": true,
+						"proficiency": true
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -10539,6 +10639,75 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Writhing Tide",
+			"name": "翻腾浪涌",
+			"source": "TCE",
+			"className": "游侠",
+			"classSource": "PHB",
+			"subclassShortName": "集群守卫",
+			"subclassSource": "TCE",
+			"level": 7,
+			"system": {
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": "bonus",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "writhingTide"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "writhingTide",
+					"duration": {
+						"seconds": 60
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.fly",
+							"mode": "OVERRIDE",
+							"value": 10,
+							"priority": 20
+						},
+						{
+							"key": "system.attributes.movement.hover",
+							"value": "yes",
+							"priority": 20,
+							"mode": "CUSTOM"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Umbral Sight",
 			"name": "阴影视野",
 			"source": "XGE",
@@ -12187,18 +12356,6 @@
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Steel Defender",
-			"name": "钢铁守卫",
-			"source": "TCE",
-			"className": "奇械师",
-			"classSource": "TCE",
-			"subclassShortName": "战地匠师",
-			"subclassSource": "TCE",
-			"level": 3,
-			"system": {},
-			"migrationVersion": 3
-		},
-		{
 			"ENG_name": "Tool Proficiency",
 			"name": "工具熟练",
 			"source": "TCE",
@@ -12362,7 +12519,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -12781,7 +12938,7 @@
 						"value": "30"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13524,7 +13681,7 @@
 						"units": "ft"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13759,7 +13916,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -13792,7 +13949,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -14144,7 +14301,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半",
+						"onSave": "half",
 						"parts": [
 							{
 								"number": 2,
@@ -14748,7 +14905,7 @@
 						"units": "ft"
 					},
 					"damage": {
-						"onSave": "一半",
+						"onSave": "half",
 						"parts": [
 							{
 								"custom": {
@@ -16997,7 +17154,7 @@
 						"value": "15"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17165,7 +17322,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17701,7 +17858,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17727,7 +17884,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -17856,7 +18013,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -18122,7 +18279,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -18961,7 +19118,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -19286,7 +19443,7 @@
 						"value": "120"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -19583,7 +19740,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -20086,7 +20243,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -20734,7 +20891,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -20777,7 +20934,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21127,7 +21284,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21832,7 +21989,7 @@
 						"value": "5"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -21953,7 +22110,7 @@
 								]
 							}
 						],
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -22023,7 +22180,7 @@
 						}
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [
@@ -22674,7 +22831,7 @@
 						"value": "30"
 					},
 					"damage": {
-						"onSave": "一半"
+						"onSave": "half"
 					},
 					"save": {
 						"ability": [

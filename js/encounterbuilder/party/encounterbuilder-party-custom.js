@@ -47,15 +47,15 @@ export class EncounterBuilderPartyCustom extends EncounterBuilderPartyBase {
 	}
 
 	render ({stgGroup}) {
-		const btnAddPlayers = ee`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Players</button>`
+		const btnAddPlayers = ee`<button class="ve-btn ve-btn-primary ve-btn-xs"><span class="glyphicon glyphicon-plus"></span> 新增玩家</button>`
 			.onn("click", () => this._doAddPlayer());
 
 		const wrpRows = ee`<div class="ve-flex-col ve-w-100"></div>`;
 
 		const stg = ee`<div class="ve-flex-col">
 			<div class="ve-flex">
-				<div class="ve-w-80p">Players:</div>
-				<div class="ve-w-80p">Level:</div>
+				<div class="ve-w-80p">玩家:</div>
+				<div class="ve-w-80p">等级:</div>
 			</div>
 
 			${wrpRows}
