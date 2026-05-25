@@ -3,6 +3,7 @@
  */
 
 import fs from "fs";
+import {execFileSync} from "child_process";
 import "./locale/i18n.js";
 import "../js/parser.js";
 import "../js/utils.js";
@@ -20,7 +21,7 @@ const isOnlyVanilla = !!process.env.VET_SEO_IS_ONLY_VANILLA;
 const templateHeadInner = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-head-inner.hbs", "utf-8");
 const templateBody = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-body.hbs", "utf-8");
 
-const lastMod = (() => {
+const lastModFallback = (() => {
 	const date = new Date();
 	return `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, "0")}-${`${date.getDate()}`.padStart(2, "0")}`;
 })();
@@ -42,6 +43,76 @@ const baseSitemapData = (() => {
 
 	return out;
 })();
+
+const _PATH_LAST_MOD_CACHE = new Map();
+const _JSON_CACHE = new Map();
+
+const _formatDate = (date) => `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, "0")}-${`${date.getDate()}`.padStart(2, "0")}`;
+
+const _readJson = (filePath) => {
+	if (_JSON_CACHE.has(filePath)) return _JSON_CACHE.get(filePath);
+	const json = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+	_JSON_CACHE.set(filePath, json);
+	return json;
+};
+
+const _getLastModFromFs = (paths) => {
+	const existingPaths = [...new Set(paths)].filter(path => fs.existsSync(path));
+	if (!existingPaths.length) return lastModFallback;
+
+	const latestMtime = existingPaths
+		.map(path => fs.statSync(path).mtime)
+		.sort((a, b) => b.getTime() - a.getTime())[0];
+
+	return _formatDate(latestMtime);
+};
+
+const _getLastMod = (...paths) => {
+	const cleanPaths = [...new Set(paths.flat().filter(Boolean))];
+	if (!cleanPaths.length) return lastModFallback;
+
+	const cacheKey = cleanPaths.join("::");
+	if (_PATH_LAST_MOD_CACHE.has(cacheKey)) return _PATH_LAST_MOD_CACHE.get(cacheKey);
+
+	let out = null;
+	try {
+		const gitDatesRaw = execFileSync("git", ["log", "--format=%ct", "--", ...cleanPaths], {
+			cwd: process.cwd(),
+			encoding: "utf-8",
+			stdio: ["ignore", "pipe", "ignore"],
+		}).trim();
+
+		if (gitDatesRaw) {
+			const latestUnixTs = gitDatesRaw
+				.split("\n")
+				.map(it => Number(it.trim()))
+				.filter(it => !Number.isNaN(it))
+				.sort((a, b) => b - a)[0];
+
+			if (latestUnixTs != null) out = _formatDate(new Date(latestUnixTs * 1000));
+		}
+	} catch (e) { /* noop */ }
+
+	if (!out) out = _getLastModFromFs(cleanPaths);
+
+	_PATH_LAST_MOD_CACHE.set(cacheKey, out);
+	return out;
+};
+
+const _getMultiSourceSourceFiles = ({dir, source}) => {
+	const index = _readJson(`data/${dir}/index.json`);
+	const fluffIndexPath = `data/${dir}/fluff-index.json`;
+	const out = [];
+
+	if (index[source]) out.push(`data/${dir}/${index[source]}`);
+
+	if (fs.existsSync(fluffIndexPath)) {
+		const fluffIndex = _readJson(fluffIndexPath);
+		if (fluffIndex[source]) out.push(`data/${dir}/${fluffIndex[source]}`);
+	}
+
+	return out;
+};
 
 const _getMetaDescription = (description) => {
 	if (!description) return "";
@@ -292,6 +363,7 @@ const toGenerate = [
 				entity: ent,
 				fluff: await Renderer.spell.pGetFluff(ent),
 				description: _getEntityDescription({page: "spells", entity: ent, entries: ent.entries}),
+				sourceFiles: _getMultiSourceSourceFiles({dir: "spells", source: ent.source}),
 			}));
 		},
 		isFluff: 1,
@@ -309,6 +381,7 @@ const toGenerate = [
 						fluff,
 						img: Renderer.monster.hasToken(ent) ? Renderer.monster.getTokenUrl(ent) : null,
 						description: _getEntityDescription({page: "bestiary", entity: ent, fluff, entries: ent.entries}),
+						sourceFiles: _getMultiSourceSourceFiles({dir: "bestiary", source: ent.source}),
 					};
 				});
 			},
@@ -326,6 +399,7 @@ const toGenerate = [
 					entity: ent,
 					fluff,
 					description: _getEntityDescription({page: "items", entity: ent, fluff, entries: ent._fullEntries || ent.entries}),
+					sourceFiles: ["data/items.json", "data/items-base.json", "data/magicvariants.json", "data/fluff-items.json"],
 				};
 			});
 		},
@@ -343,6 +417,7 @@ const toGenerate = [
 					entity: ent,
 					fluff,
 					description: _getEntityDescription({page: "backgrounds", entity: ent, fluff, entries: ent.entries}),
+					sourceFiles: ["data/backgrounds.json", "data/fluff-backgrounds.json"],
 				};
 			});
 		},
@@ -366,6 +441,7 @@ const toGenerate = [
 					entity: ent,
 					fluff,
 					description: _getEntityDescription({page: "conditionsdiseases", entity: ent, fluff, entries: ent.entries}),
+					sourceFiles: ["data/conditionsdiseases.json", "data/fluff-conditionsdiseases.json"],
 				};
 			});
 		},
@@ -383,6 +459,7 @@ const toGenerate = [
 					entity: ent,
 					fluff: await Renderer.feat.pGetFluff(ent),
 					description: _getEntityDescription({page: "feats", entity: ent, entries: ent._fullEntries || ent.entries}),
+					sourceFiles: ["data/feats.json", "data/fluff-feats.json"],
 				};
 			});
 		},
@@ -400,6 +477,7 @@ const toGenerate = [
 					entity: ent,
 					fluff,
 					description: _getEntityDescription({page: "races", entity: ent, fluff, entries: ent.entries}),
+					sourceFiles: ["data/races.json", "data/fluff-races.json"],
 				};
 			});
 		},
@@ -425,7 +503,7 @@ async function main () {
 
 		const entityMetas = await meta.pGetEntityMetas();
 		const builder = UrlUtil.URL_TO_HASH_BUILDER[`${meta.page}.html`];
-		entityMetas.forEach(({entity, fluff, img, description}) => {
+		entityMetas.forEach(({entity, fluff, img, description, sourceFiles}) => {
 			let offset = 0;
 			let html;
 			let path;
@@ -454,7 +532,9 @@ async function main () {
 					path,
 				});
 
-				siteMapData[path] = true;
+				siteMapData[path] = {
+					lastMod: _getLastMod(sourceFiles),
+				};
 				break;
 			}
 
@@ -474,7 +554,7 @@ async function main () {
 
 	sitemap += `<url>
 	<loc>${BASE_SITE_URL}</loc>
-	<lastmod>${lastMod}</lastmod>
+	<lastmod>${_getLastMod("index.html")}</lastmod>
 	<changefreq>monthly</changefreq>
 </url>\n`;
 	sitemapLinkCount++;
@@ -482,7 +562,7 @@ async function main () {
 	Object.keys(baseSitemapData).forEach(url => {
 		sitemap += `<url>
 	<loc>${BASE_SITE_URL}${url}</loc>
-	<lastmod>${lastMod}</lastmod>
+	<lastmod>${_getLastMod(url)}</lastmod>
 	<changefreq>monthly</changefreq>
 </url>\n`;
 		sitemapLinkCount++;
@@ -491,7 +571,7 @@ async function main () {
 	Object.keys(siteMapData).forEach(url => {
 		sitemap += `<url>
 	<loc>${BASE_SITE_URL}${url}</loc>
-	<lastmod>${lastMod}</lastmod>
+	<lastmod>${siteMapData[url].lastMod}</lastmod>
 	<changefreq>weekly</changefreq>
 </url>\n`;
 		sitemapLinkCount++;
