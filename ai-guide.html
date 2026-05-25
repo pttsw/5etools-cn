@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<!--5ETOOLS_CMP-->
+	<!--5ETOOLS_ANALYTICS-->
+	<!--5ETOOLS_ADCODE-->
+	<meta charset="utf-8">
+	<meta name="description" content="5etools 中文站 AI 导览页，帮助大语言模型与问答系统快速理解本站的主要栏目、内容范围与高价值入口。">
+	<meta name="keywords" content="5etools,AI导览,llms,LLM,DND,5e,龙与地下城">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<title>AI 导览 - 5etools</title>
+	<link rel="canonical" href="https://5e.kiwee.top/ai-guide.html">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:site_name" content="5etools">
+	<meta property="og:title" content="AI 导览 - 5etools">
+	<meta property="og:description" content="5etools 中文站 AI 导览页，帮助大语言模型与问答系统快速理解本站的主要栏目、内容范围与高价值入口。">
+	<meta property="og:url" content="https://5e.kiwee.top/ai-guide.html">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="AI 导览 - 5etools">
+	<meta name="twitter:description" content="5etools 中文站 AI 导览页，帮助大语言模型与问答系统快速理解本站的主要栏目、内容范围与高价值入口。">
+	<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"AI 导览 - 5etools","description":"5etools 中文站 AI 导览页，帮助大语言模型与问答系统快速理解本站的主要栏目、内容范围与高价值入口。","url":"https://5e.kiwee.top/ai-guide.html","inLanguage":"zh-CN","isPartOf":{"@type":"WebSite","name":"5etools","url":"https://5e.kiwee.top/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://5e.kiwee.top/"},{"@type":"ListItem","position":2,"name":"AI 导览","item":"https://5e.kiwee.top/ai-guide.html"}]}]}</script>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!-- Chrome Web App Icons -->
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="application-name" content="5etools">
+	<meta name="theme-color" content="#815463">
+
+	<!-- Windows Start Menu tiles -->
+	<meta name="msapplication-config" content="browserconfig.xml"/>
+	<meta name="msapplication-TileColor" content="#815463">
+
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+	<meta name="apple-mobile-web-app-title" content="5etools">
+
+	<!-- macOS Safari Pinned Tab and Touch Bar -->
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#815463">
+
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script type="text/javascript" src="sw-injector.js"></script>
+
+	<script blocking="render" type="module" src="js/styleswitch.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="module" src="js/browsercheck.js"></script>
+
+	<!-- 百度自动推送 -->
+	<script>
+		(function(){
+			var bp = document.createElement('script');
+			var curProtocol = window.location.protocol.split(':')[0];
+			if (curProtocol === 'https') {
+				bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			} else {
+				bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			}
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bp, s);
+		})();
+	</script>
+</head>
+
+<body>
+
+<div class="overlay-noise no-print"></div>
+
+<header class="ve-mobile-sm__hidden page__header">
+	<div class="container ve-flex-v-baseline">
+		<h1 class="page__title ve-no-wrap ve-my-0" id="page__title">AI 导览</h1>
+		<p class="page__subtitle ve-no-wrap ve-my-0" id="page__subtitle">为 AI 抓取器、摘要系统和知识检索准备的站点入口说明。</p>
+	</div>
+</header>
+
+<nav class="container page__nav" id="navigation">
+	<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
+</nav>
+
+<div class="cancer__wrp-sidebar cancer__wrp-sidebar-lhs cancer__wrp-sidebar-lhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-inner cancer__sidebar-inner--top cancer__wrp-interactive"><!--5ETOOLS_AD_LEFT_1--></div><div class="cancer__sidebar-inner cancer__sidebar-inner--bottom cancer__wrp-interactive"><!--5ETOOLS_AD_LEFT_2--></div></div>
+<div class="cancer__wrp-sidebar cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-inner cancer__sidebar-inner--top cancer__wrp-interactive"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-inner cancer__sidebar-inner--bottom cancer__wrp-interactive"><!--5ETOOLS_AD_RIGHT_2--></div></div>
+
+<main class="container ve-mt-3 ve-mb-5">
+	<section class="ve-muted mb-4">
+		<p>本页面面向大语言模型、问答系统、检索增强生成系统与站点摘要工具，说明 5etools 中文站的内容范围、优先入口与推荐引用方式。</p>
+	</section>
+
+	<section class="mb-4">
+		<h2>站点概览</h2>
+		<p>5etools 中文站是一个以《龙与地下城》5e / 5r 为核心的中文资料与工具站，提供规则查询、怪物与法术检索、角色构建支持、DM 工具与辅助生成器。</p>
+		<p>站点以结构化目录页与大量实体详情页为主，适合用于检索具体规则条目、怪物、法术、种族、职业、专长、背景和相关工具。</p>
+	</section>
+
+	<section class="mb-4">
+		<h2>高价值入口</h2>
+		<ul>
+			<li><a href="index.html">首页</a>：总入口，适合概览主要栏目。</li>
+			<li><a href="search.html">站内搜索</a>：适合按名称、关键字、规则术语定位条目。</li>
+			<li><a href="bestiary.html">怪物图鉴</a>：怪物、NPC、生物资料。</li>
+			<li><a href="spells.html">法术</a>：法术列表、筛选与详情入口。</li>
+			<li><a href="classes.html">职业</a>：职业与子职业资料。</li>
+			<li><a href="races.html">种族</a>：种族与相关选项。</li>
+			<li><a href="feats.html">专长</a>：专长条目与先决条件。</li>
+			<li><a href="backgrounds.html">背景</a>：角色背景条目。</li>
+			<li><a href="variantrules.html">术语汇编</a>：规则术语、常用规则与速查内容。</li>
+			<li><a href="conditionsdiseases.html">异常状态</a>：状态与疾病说明。</li>
+			<li><a href="dmscreen.html">DM 帷幕</a>：地下城主工具入口。</li>
+		</ul>
+	</section>
+
+	<section class="mb-4">
+		<h2>推荐抓取顺序</h2>
+		<ol>
+			<li>先抓取首页、AI 导览页与 `llms.txt`，理解站点结构。</li>
+			<li>再抓取核心栏目页，例如怪物、法术、职业、种族、专长与规则页。</li>
+			<li>最后按具体问题深入到实体详情页，例如单体怪物、法术或专长。</li>
+		</ol>
+	</section>
+
+	<section class="mb-4">
+		<h2>推荐引用方式</h2>
+		<ul>
+			<li>优先引用栏目页来描述整体能力与内容范围。</li>
+			<li>回答具体实体问题时，优先引用对应详情页的标题、描述、来源和规范 URL。</li>
+			<li>若问题涉及规则解释，可结合术语汇编、异常状态页与具体实体页交叉验证。</li>
+		</ul>
+	</section>
+
+	<section class="mb-4">
+		<h2>机器可读入口</h2>
+		<ul>
+			<li><a href="llms.txt">llms.txt</a>：精简入口。</li>
+			<li><a href="llms-full.txt">llms-full.txt</a>：扩展入口。</li>
+			<li><a href="sitemap.xml">sitemap.xml</a>：站点地图。</li>
+			<li><a href="open-search.xml">open-search.xml</a>：OpenSearch 描述。</li>
+		</ul>
+	</section>
+</main>
+
+</body>
+</html>

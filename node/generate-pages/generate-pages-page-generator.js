@@ -17,6 +17,10 @@ export class PageGeneratorBase {
 	_isFontAwesome = false;
 	_stylesheets;
 
+	static _SITE_URL = "https://5e.kiwee.top/";
+	static _SITE_NAME = "5etools";
+	static _SITE_ALT_NAME = "龙与地下城中文资料站 - 5etools";
+
 	init () {
 		this._registerPartials();
 		return this;
@@ -54,7 +58,7 @@ export class PageGeneratorBase {
 	 */
 	_getData () {
 		const canonicalPath = this._page === "index.html" ? "" : this._page;
-		const canonicalUrl = `https://5e.kiwee.top/${canonicalPath}`;
+		const canonicalUrl = `${this.constructor._SITE_URL}${canonicalPath}`;
 
 		return {
 			page: this._page,
@@ -69,7 +73,90 @@ export class PageGeneratorBase {
 			navbarPageTitleStyleAdditional: this._navbarPageTitleStyleAdditional,
 			isFontAwesome: this._isFontAwesome,
 			stylesheets: this._stylesheets,
+			jsonLd: this._getJsonLd({canonicalUrl}),
 		};
+	}
+
+	_getSchemaType () { return "WebPage"; }
+
+	_getPageTitleFull () {
+		return this._pageTitle
+			? `${this._pageTitle} - ${this.constructor._SITE_NAME}`
+			: this.constructor._SITE_ALT_NAME;
+	}
+
+	_getBreadcrumbItems ({canonicalUrl}) {
+		const out = [{
+			"@type": "ListItem",
+			position: 1,
+			name: "首页",
+			item: this.constructor._SITE_URL,
+		}];
+
+		if (canonicalUrl !== this.constructor._SITE_URL) {
+			out.push({
+				"@type": "ListItem",
+				position: 2,
+				name: this._pageTitle || this.constructor._SITE_NAME,
+				item: canonicalUrl,
+			});
+		}
+
+		return out;
+	}
+
+	_getJsonLdEntity ({canonicalUrl}) {
+		return {
+			"@type": this._getSchemaType(),
+			name: this._getPageTitleFull(),
+			description: this._pageDescription,
+			url: canonicalUrl,
+			inLanguage: "zh-CN",
+			isPartOf: {
+				"@type": "WebSite",
+				name: this.constructor._SITE_NAME,
+				url: this.constructor._SITE_URL,
+			},
+		};
+	}
+
+	_getJsonLd ({canonicalUrl}) {
+		const pageEntity = this._getJsonLdEntity({canonicalUrl});
+
+		const graph = [
+			pageEntity,
+			{
+				"@type": "BreadcrumbList",
+				itemListElement: this._getBreadcrumbItems({canonicalUrl}),
+			},
+		];
+
+		if (this._page === "index.html") {
+			graph.unshift(
+				{
+					"@type": "Organization",
+					name: this.constructor._SITE_NAME,
+					url: this.constructor._SITE_URL,
+				},
+				{
+					"@type": "WebSite",
+					name: this.constructor._SITE_NAME,
+					alternateName: "龙与地下城中文资料站",
+					url: this.constructor._SITE_URL,
+					inLanguage: "zh-CN",
+					potentialAction: {
+						"@type": "SearchAction",
+						target: `${this.constructor._SITE_URL}search.html?{searchTerms}`,
+						"query-input": "required name=searchTerms",
+					},
+				},
+			);
+		}
+
+		return `<script type="application/ld+json">${JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": graph,
+		}).replace(/<\/script/gi, "<\\/script")}</script>`;
 	}
 
 	generatePage () {
@@ -153,6 +240,8 @@ export class PageGeneratorListBase extends PageGeneratorGeneric {
 	_stylePageContentAdditional;
 	_isTableView = false;
 
+	_getSchemaType () { return "CollectionPage"; }
+
 	_registerPartials () {
 		super._registerPartials();
 
@@ -234,6 +323,8 @@ export class PageGeneratorAdventureBookBase extends PageGeneratorGeneric {
 		"render-map.js",
 	];
 
+	_getSchemaType () { return "Article"; }
+
 	_getData () {
 		const data = super._getData();
 		return {
@@ -256,6 +347,8 @@ export class PageGeneratorAdventuresBooksBase extends PageGeneratorGeneric {
 	_scriptIdentAdvsBooks;
 	_searchName;
 	_btnsList;
+
+	_getSchemaType () { return "CollectionPage"; }
 
 	_getData () {
 		const data = super._getData();
@@ -316,10 +409,14 @@ export class PageGeneratorManagerBase extends PageGeneratorGeneric {
 	_scriptsUtilsAdditional = [
 		"utils-list.js",
 	];
+
+	_getSchemaType () { return "CollectionPage"; }
 }
 
 export class PageGeneratorSeoIndexBase extends PageGeneratorGeneric {
 	_filename = "seo/template-seo-index.hbs";
+
+	_getSchemaType () { return "CollectionPage"; }
 
 	_registerPartials () {
 		super._registerPartials();

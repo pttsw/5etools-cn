@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+{{> "head" }}
+
+<body>
+
+{{> "overlayNoise" }}
+
+{{> "navbar" }}
+
+{{> "adLhsScrollingPage" }}
+{{> "adRhsScrollingPage" }}
+
+<main class="container ve-mt-3 ve-mb-5">
+	<section class="ve-muted mb-4">
+		<p>本页面面向大语言模型、问答系统、检索增强生成系统与站点摘要工具，说明 5etools 中文站的内容范围、优先入口与推荐引用方式。</p>
+	</section>
+
+	<section class="mb-4">
+		<h2>站点概览</h2>
+		<p>5etools 中文站是一个以《龙与地下城》5e / 5r 为核心的中文资料与工具站，提供规则查询、怪物与法术检索、角色构建支持、DM 工具与辅助生成器。</p>
+		<p>站点以结构化目录页与大量实体详情页为主，适合用于检索具体规则条目、怪物、法术、种族、职业、专长、背景和相关工具。</p>
+	</section>
+
+	<section class="mb-4">
+		<h2>高价值入口</h2>
+		<ul>
+			<li><a href="index.html">首页</a>：总入口，适合概览主要栏目。</li>
+			<li><a href="search.html">站内搜索</a>：适合按名称、关键字、规则术语定位条目。</li>
+			<li><a href="bestiary.html">怪物图鉴</a>：怪物、NPC、生物资料。</li>
+			<li><a href="spells.html">法术</a>：法术列表、筛选与详情入口。</li>
+			<li><a href="classes.html">职业</a>：职业与子职业资料。</li>
+			<li><a href="races.html">种族</a>：种族与相关选项。</li>
+			<li><a href="feats.html">专长</a>：专长条目与先决条件。</li>
+			<li><a href="backgrounds.html">背景</a>：角色背景条目。</li>
+			<li><a href="variantrules.html">术语汇编</a>：规则术语、常用规则与速查内容。</li>
+			<li><a href="conditionsdiseases.html">异常状态</a>：状态与疾病说明。</li>
+			<li><a href="dmscreen.html">DM 帷幕</a>：地下城主工具入口。</li>
+		</ul>
+	</section>
+
+	<section class="mb-4">
+		<h2>推荐抓取顺序</h2>
+		<ol>
+			<li>先抓取首页、AI 导览页与 `llms.txt`，理解站点结构。</li>
+			<li>再抓取核心栏目页，例如怪物、法术、职业、种族、专长与规则页。</li>
+			<li>最后按具体问题深入到实体详情页，例如单体怪物、法术或专长。</li>
+		</ol>
+	</section>
+
+	<section class="mb-4">
+		<h2>推荐引用方式</h2>
+		<ul>
+			<li>优先引用栏目页来描述整体能力与内容范围。</li>
+			<li>回答具体实体问题时，优先引用对应详情页的标题、描述、来源和规范 URL。</li>
+			<li>若问题涉及规则解释，可结合术语汇编、异常状态页与具体实体页交叉验证。</li>
+		</ul>
+	</section>
+
+	<section class="mb-4">
+		<h2>机器可读入口</h2>
+		<ul>
+			<li><a href="llms.txt">llms.txt</a>：精简入口。</li>
+			<li><a href="llms-full.txt">llms-full.txt</a>：扩展入口。</li>
+			<li><a href="sitemap.xml">sitemap.xml</a>：站点地图。</li>
+			<li><a href="open-search.xml">open-search.xml</a>：OpenSearch 描述。</li>
+		</ul>
+	</section>
+</main>
+
+</body>
+</html>

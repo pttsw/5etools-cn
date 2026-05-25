@@ -72,6 +72,16 @@ class _PageGeneratorBlocklist extends PageGeneratorGeneric {
 	];
 }
 
+class _PageGeneratorAiGuide extends PageGeneratorGeneric {
+	_filename = "page/template-page-ai-guide.hbs";
+	_page = "ai-guide.html";
+
+	_pageTitle = "AI 导览";
+	_pageDescription = "5etools 中文站 AI 导览页，帮助大语言模型与问答系统快速理解本站的主要栏目、内容范围与高价值入口。";
+	_pageKeywords = "5etools,AI导览,llms,LLM,DND,5e,龙与地下城";
+	_navbarDescription = "为 AI 抓取器、摘要系统和知识检索准备的站点入口说明。";
+}
+
 class _PageGeneratorChangelog extends PageGeneratorGeneric {
 	_filename = "page/template-page-changelog.hbs";
 	_page = "changelog.html";
@@ -434,6 +444,7 @@ export const PAGE_GENERATORS = 	[
 	new _PageGeneratorMaps(),
 	new _PageGeneratorDmscreen(),
 	new _PageGeneratorBlocklist(),
+	new _PageGeneratorAiGuide(),
 	new _PageGeneratorChangelog(),
 	new _PageGeneratorConverter(),
 	new _PageGeneratorCrcalculator(),

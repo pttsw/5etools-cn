@@ -36,6 +36,9 @@ const baseSitemapData = (() => {
 		out[str] = true;
 	});
 	delete out["index.html"];
+	out["ai-guide.html"] = true;
+	out["llms.txt"] = true;
+	out["llms-full.txt"] = true;
 
 	return out;
 })();
@@ -157,7 +160,7 @@ const _DESCRIPTION_GETTERS = {
 	races: _getDescriptionRaces,
 };
 
-const _getTemplateHeadInner = ({titleFull, metaDescription, canonicalUrl, img}) => {
+const _getTemplateHeadInner = ({titleFull, metaDescription, canonicalUrl, img, jsonLd}) => {
 	const ogImageMeta = img ? `<meta property="og:image" content="${new URL(img, BASE_SITE_URL).href}">` : "";
 	const twitterCard = img ? "summary_large_image" : "summary";
 
@@ -172,7 +175,64 @@ const _getTemplateHeadInner = ({titleFull, metaDescription, canonicalUrl, img}) 
 		.replace(/<meta name="twitter:card" content="[^"]*">/, `<meta name="twitter:card" content="${twitterCard}">`)
 		.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${titleFull}">`)
 		.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${metaDescription.qq()}">`)
+		.replace("{{{jsonLd}}}", jsonLd)
 		.replace("<link rel=\"stylesheet\" href=\"/css/bootstrap.css\">", `${ogImageMeta}\n<link rel="stylesheet" href="/css/bootstrap.css">`);
+};
+
+const _getJsonLd = ({page, name, canonicalUrl, metaDescription, img, listUrl}) => {
+	const imageUrl = img ? new URL(img, BASE_SITE_URL).href : null;
+
+	const graph = [
+		{
+			"@type": "Article",
+			headline: name,
+			name: `${name} - 5etools`,
+			description: metaDescription,
+			url: canonicalUrl,
+			inLanguage: "zh-CN",
+			isPartOf: {
+				"@type": "WebSite",
+				name: "5etools",
+				url: BASE_SITE_URL,
+			},
+			mainEntity: {
+				"@type": "DefinedTerm",
+				name,
+				description: metaDescription,
+				url: canonicalUrl,
+				inDefinedTermSet: listUrl,
+			},
+			...(imageUrl ? {image: imageUrl} : {}),
+		},
+		{
+			"@type": "BreadcrumbList",
+			itemListElement: [
+				{
+					"@type": "ListItem",
+					position: 1,
+					name: "首页",
+					item: BASE_SITE_URL,
+				},
+				{
+					"@type": "ListItem",
+					position: 2,
+					name: UrlUtil.PG_TO_NAME[`${page}.html`] || page.toTitleCase(),
+					item: listUrl,
+				},
+				{
+					"@type": "ListItem",
+					position: 3,
+					name,
+					item: canonicalUrl,
+				},
+			],
+		},
+	];
+
+	return `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@graph": graph,
+	}).replace(/<\/script/gi, "<\\/script")}</script>`;
 };
 
 const getTemplate = ({page, name, source, hash, img, description, isFluff, path}) => {
@@ -180,7 +240,8 @@ const getTemplate = ({page, name, source, hash, img, description, isFluff, path}
 	const canonicalUrl = `${BASE_SITE_URL}${path}`;
 	const listUrl = `${BASE_SITE_URL}${page}.html`;
 	const titleFull = `${name.qq()} - 5etools`;
-	const templateHead = _getTemplateHeadInner({titleFull, metaDescription, canonicalUrl, img});
+	const jsonLd = _getJsonLd({page, name, canonicalUrl, metaDescription, img, listUrl});
+	const templateHead = _getTemplateHeadInner({titleFull, metaDescription, canonicalUrl, img, jsonLd});
 
 	return `<!DOCTYPE html><head>
 ${templateHead}
