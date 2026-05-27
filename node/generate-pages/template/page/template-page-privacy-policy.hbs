@@ -32,13 +32,13 @@
 			<h3>四、第三方服务</h3>
 			<p>本站使用以下第三方服务：</p>
 			<ul>
-				<li><strong>访问统计</strong>：本站使用 <a href="https://finicounter.eu.org" target="_blank">Finicounter</a> 统计页面访问量。该服务可能会收集您的 IP 地址、浏览器类型等基本访问信息，具体请参阅其隐私政策。</li>
+				<li><strong>访问统计</strong>：本站使用 <a href="https://finicounter.eu.org" target="_blank">Finicounter</a>{{#if baiduTongjiId}} 和 <a href="https://tongji.baidu.com" target="_blank">百度统计</a>{{/if}} 统计页面访问量。{{#if baiduTongjiId}}这些服务{{else}}该服务{{/if}}可能会收集您的 IP 地址、浏览器类型{{#if baiduTongjiId}}、访问来源{{/if}}等基本访问信息，具体请参阅{{#if baiduTongjiId}}其各自的隐私政策{{else}}其隐私政策{{/if}}。</li>
 				<li><strong>搜索引擎推送</strong>：本站使用百度站长工具自动推送功能，将页面 URL 提交给百度搜索引擎以改善收录。该过程不涉及个人信息收集。</li>
 				<li><strong>广告投放</strong>：本站页面可能包含由第三方广告平台（如 NitroAds、Google AdSense）投放的广告。这些广告平台可能会使用 Cookie 或类似技术来提供和优化广告服务。广告的 Cookie 使用受各广告平台自身的隐私政策约束。</li>
 			</ul>
 
 			<h3>五、Cookie 使用</h3>
-			<p>本站自身不使用 Cookie。但上述第三方广告服务可能会在您的浏览器中设置 Cookie，用于广告投放和效果统计。您可以通过浏览器设置管理或拒绝这些 Cookie。</p>
+			<p>本站自身不使用 Cookie。但上述第三方服务（包括访问统计和广告服务）可能会在您的浏览器中设置 Cookie，用于{{#if baiduTongjiId}}流量分析、{{/if}}广告投放和效果统计。您可以通过浏览器设置管理或拒绝这些 Cookie。</p>
 
 			<h3>六、离线缓存</h3>
 			<p>本站使用 Service Worker 技术提供离线缓存功能，以提升加载速度和离线访问体验。缓存内容仅存储在您的设备上，不涉及数据传输。</p>

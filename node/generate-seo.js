@@ -17,6 +17,7 @@ const BASE_SITE_URL = `${(process.env.VET_BASE_SITE_URL || "https://5e.kiwee.top
 const LOG_EVERY = 1000; // Certain stakeholders prefer less logspam
 const isSkipUaEtc = !!process.env.VET_SEO_IS_SKIP_UA_ETC;
 const isOnlyVanilla = !!process.env.VET_SEO_IS_ONLY_VANILLA;
+const BAIDU_TONGJI_ID = process.env.BAIDU_TONGJI_ID || null;
 
 const templateHeadInner = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-head-inner.hbs", "utf-8");
 const templateBody = fs.readFileSync("node/generate-pages/template/seo/template-seo-index-body.hbs", "utf-8");
@@ -236,6 +237,8 @@ const _getTemplateHeadInner = ({titleFull, metaDescription, canonicalUrl, img, j
 	const twitterCard = img ? "summary_large_image" : "summary";
 
 	return templateHeadInner
+		.replace(/\{\{#if baiduTongjiId\}\}([\s\S]*?)\{\{\/if\}\}/g, BAIDU_TONGJI_ID ? "$1" : "")
+		.replace(/\{\{baiduTongjiId\}\}/g, BAIDU_TONGJI_ID || "")
 		.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${metaDescription.qq()}">`)
 		.replace(/<title>[\s\S]*?<\/title>/, `<title>${titleFull}</title>`)
 		.replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonicalUrl}">`)

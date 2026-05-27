@@ -20,6 +20,7 @@ export class PageGeneratorBase {
 	static _SITE_URL = "https://5e.kiwee.top/";
 	static _SITE_NAME = "5etools";
 	static _SITE_ALT_NAME = "龙与地下城中文资料站 - 5etools";
+	static _BAIDU_TONGJI_ID = process.env.BAIDU_TONGJI_ID || null;
 
 	init () {
 		this._registerPartials();
@@ -76,6 +77,7 @@ export class PageGeneratorBase {
 			isFontAwesome: this._isFontAwesome,
 			stylesheets: this._stylesheets,
 			jsonLd: this._getJsonLd({canonicalUrl}),
+			baiduTongjiId: this.constructor._BAIDU_TONGJI_ID,
 		};
 	}
 
