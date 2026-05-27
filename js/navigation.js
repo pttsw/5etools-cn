@@ -168,7 +168,7 @@ class NavBar {
 		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "https://wiki.tercept.net/en/betteR20", aText: "Roll20 脚本小帮手", isExternal: true, isExternalMark: true});
 		this._addElement_divider({keyPath: [NavBar._CAT_UTILITIES]});
 		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "changelog.html", aText: "更新日志"});
-		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: NavBar._getCurrentWikiHelpPage(), aText: "页面帮助", isExternal: true, isExternalMark: true});
+		this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "index.html#donate", aText: "支持本站"});
 		// this._addElement_divider({keyPath: [NavBar._CAT_UTILITIES]});
 		// this._addElement_li({keyPath: [NavBar._CAT_UTILITIES], page: "privacy-policy.html", aText: "隐私政策"});
 
@@ -261,7 +261,7 @@ class NavBar {
 			},
 		);
 
-		this._addElement_li({page: "https://wiki.tercept.net/en/5eTools", aText: "Help", isExternal: true});
+		this._addElement_li({page: "index.html#donate", aText: "支持本站"});
 	}
 
 	/**
