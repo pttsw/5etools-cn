@@ -45,6 +45,8 @@ export class PageGeneratorBase {
 
 		this._registerPartial({ident: "scripts", filename: "scripts/template-scripts.hbs"});
 
+		this._registerPartial({ident: "footer", filename: "misc/template-footer.hbs"});
+
 		this._registerPartial({ident: "blank", filename: "misc/template-blank.hbs"});
 		this._registerPartial({ident: "btngroupManager", filename: "misc/template-btngroup-manager.hbs"});
 		this._registerPartial({ident: "overlayNoise", filename: "misc/template-overlay-noise.hbs"});

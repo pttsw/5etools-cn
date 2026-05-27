@@ -347,7 +347,7 @@ class _PageGeneratorPrivacyPolicy extends PageGeneratorGeneric {
 	_filename = "page/template-page-privacy-policy.hbs";
 	_page = "privacy-policy.html";
 
-	_pageTitle = "Privacy Policy";
+	_pageTitle = "隐私政策";
 	_navbarDescription = `Just click "Accept."`;
 
 	_scripts = [
