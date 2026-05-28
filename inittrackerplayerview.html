@@ -95,18 +95,20 @@
 <div class="viewport-wrapper">
 	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner cancer__wrp-interactive"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
-	<header class="ve-mobile-sm__hidden page__header">
-		<div class="container ve-flex-v-baseline">
-			<h1 class="page__title ve-no-wrap ve-my-0" id="page__title">先攻追踪器玩家视图</h1>
-			<p class="page__subtitle ve-no-wrap ve-my-0" id="page__subtitle">按F切换全屏，祝你好运！</p>
-		</div>
-	</header>
+	<div class="ve-flex-col" data-cancer-id="cancer-header">
+		<header class="ve-mobile-sm__hidden page__header">
+			<div class="container ve-flex-v-baseline">
+				<h1 class="page__title ve-no-wrap ve-my-0" id="page__title">先攻追踪器玩家视图</h1>
+				<p class="page__subtitle ve-no-wrap ve-my-0" id="page__subtitle">按F切换全屏，祝你好运！</p>
+			</div>
+		</header>
 
-	<nav class="container page__nav" id="navigation">
-		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
-	</nav>
+		<nav class="container page__nav" id="navigation">
+			<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
+		</nav>
+	</div>
 
-	<main class="container ve-h-100 ve-min-h-0 ve-pb-0" id="page-content">
+	<main class="container ve-h-100 ve-min-h-0 ve-pb-0" id="page-content" data-cancer-id="cancer-wrapper">
 		<div class="flex-vh-center initial-message initial-message--med">加载中...</div>
 	</main>
 </div>
@@ -139,7 +141,7 @@
 <script type="module" src="js/shim-esmodules.js"></script>
 <script type="text/javascript" defer src="js/hist.js"></script>
 <script type="module" src="js/inittrackerplayerview.js"></script>
-<script type="text/javascript" defer src="js/list2.js"></script>
+<script type="module" defer src="js/list2.js"></script>
 <script type="text/javascript" defer src="lib/marked.js"></script>
 <script type="text/javascript" defer src="lib/elasticlunr.js"></script>
 <script async src="https://finicounter.eu.org/finicounter.js"></script>
