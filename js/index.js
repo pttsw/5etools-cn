@@ -10,6 +10,8 @@ class IndexPage {
 	}
 
 	static _pOnLoad_initElements () {
+		const AFDIAN_URL = "";
+
 		es(`#current_year`).txt((new Date()).getFullYear());
 
 		es(`#version_number`).txt(VERSION_NUMBER).attr("href", `https://github.com/5etools-mirror-3/5etools-src/releases/latest`);
@@ -24,7 +26,7 @@ class IndexPage {
 							<span class="home__donation-tag">CDN/带宽</span>
 							<span class="home__donation-tag">站点维护与更新</span>
 						</div>
-						<p class="home__donation-note">捐赠完全自愿，不影响任何功能使用。如果二维码失效，欢迎通过下方渠道联系站长。</p>
+						<p class="home__donation-note">捐赠完全自愿，不影响任何功能使用。希望在支持者名单中留名、留言或保留更清晰的支持记录，建议使用爱发电；若希望低调匿名支持，可直接使用微信或支付宝二维码。</p>
 					</div>
 					<div class="home__donation-grid">
 						<section class="home__donation-card">
@@ -32,7 +34,7 @@ class IndexPage {
 								<div class="fab fa-alipay home__donation-icon" aria-hidden="true"></div>
 								<div>
 									<h4 class="home__donation-title">支付宝</h4>
-									<p class="home__donation-subtitle">适合直接扫码捐助</p>
+									<p class="home__donation-subtitle">适合匿名、直接扫码支持</p>
 								</div>
 							</div>
 							<div class="home__donation-qr-wrap">
@@ -45,13 +47,28 @@ class IndexPage {
 								<div class="fab fa-weixin home__donation-icon" aria-hidden="true"></div>
 								<div>
 									<h4 class="home__donation-title">微信支付</h4>
-									<p class="home__donation-subtitle">适合移动端快速支持</p>
+									<p class="home__donation-subtitle">适合匿名、移动端快速支持</p>
 								</div>
 							</div>
 							<div class="home__donation-qr-wrap">
 								<img class="home__donation-qr" src="${Renderer.get().getMediaUrl("img", "wechat.png")}" alt="微信支付捐赠二维码" loading="lazy">
 							</div>
 							<p class="home__donation-caption">微信扫码即可完成支持，也可以先保存二维码再进入微信识别。</p>
+						</section>
+						<section class="home__donation-card home__donation-card--link">
+							<div class="home__donation-card-head">
+								<div class="fal fa-heart home__donation-icon" aria-hidden="true"></div>
+								<div>
+									<h4 class="home__donation-title">爱发电</h4>
+									<p class="home__donation-subtitle">适合希望留名、留言或长期支持的朋友</p>
+								</div>
+							</div>
+							<p class="home__donation-caption">如果你希望通过创作者平台支持本站，并在后续支持者名单中更方便地留名，建议使用爱发电。</p>
+							<div class="home__donation-link-wrap">
+								${AFDIAN_URL
+									? `<a class="ve-btn ve-btn-default home__donation-link-btn" href="${AFDIAN_URL}" target="_blank" rel="noopener noreferrer">前往爱发电支持</a>`
+									: `<span class="home__donation-link-placeholder">待配置爱发电主页链接</span>`}
+							</div>
 						</section>
 					</div>
 					<div class="home__donation-support">

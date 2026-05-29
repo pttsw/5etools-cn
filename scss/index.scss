@@ -153,7 +153,7 @@
 
 	.home__donation-grid {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 16px;
 	}
 
@@ -161,6 +161,10 @@
 		display: flex;
 		flex-direction: column;
 		padding: 18px;
+	}
+
+	.home__donation-card--link {
+		justify-content: space-between;
 	}
 
 	.home__donation-card-head {
@@ -217,6 +221,28 @@
 		font-size: 13px;
 		line-height: 1.55;
 		color: #534b43;
+	}
+
+	.home__donation-link-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 120px;
+		margin-top: 14px;
+		padding: 14px;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.55);
+	}
+
+	.home__donation-link-btn {
+		min-width: 180px;
+	}
+
+	.home__donation-link-placeholder {
+		font-size: 13px;
+		line-height: 1.5;
+		color: #7d7468;
+		text-align: center;
 	}
 
 	.home__donation-support {
@@ -389,7 +415,7 @@
 		}
 
 		.home__donation-grid {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
 		.home__donation-support {
@@ -448,6 +474,10 @@
 	}
 
 	@media screen and (width <= 507px) {
+		.home__donation-grid {
+			grid-template-columns: 1fr;
+		}
+
 		.home__support-banner {
 			padding: 10px;
 		}
@@ -517,7 +547,8 @@
 
 	.ve-night-mode .home__donation-note,
 	.ve-night-mode .home__donation-subtitle,
-	.ve-night-mode .home__donation-caption {
+	.ve-night-mode .home__donation-caption,
+	.ve-night-mode .home__donation-link-placeholder {
 		color: #c8bca9;
 	}
 
@@ -529,5 +560,9 @@
 
 	.ve-night-mode .home__donation-qr-wrap {
 		background: rgba(255, 255, 255, 0.06);
+	}
+
+	.ve-night-mode .home__donation-link-wrap {
+		background: rgba(255, 255, 255, 0.04);
 	}
 }
