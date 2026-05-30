@@ -2,6 +2,22 @@ export async function onRequest (context) {
 	const req = context.request;
 	const url = new URL(req.url);
 
+	const getCorsHeaders = () => ({
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
+		"Access-Control-Allow-Headers": "Content-Type",
+	});
+
+	if (req.method === "OPTIONS") {
+		return new Response(null, {
+			status: 204,
+			headers: {
+				...getCorsHeaders(),
+				"Cache-Control": "no-store",
+			},
+		});
+	}
+
 	const rawPath = context.params.default;
 	const path = Array.isArray(rawPath)
 		? rawPath.join("/")
@@ -39,6 +55,7 @@ export async function onRequest (context) {
 			headers: {
 				"Content-Type": "text/plain; charset=utf-8",
 				"Cache-Control": "no-store",
+				...getCorsHeaders(),
 			},
 		});
 	}
@@ -46,6 +63,7 @@ export async function onRequest (context) {
 	const outHeaders = new Headers(res.headers);
 	if (res.ok) outHeaders.set("Cache-Control", "public, max-age=31536000, immutable");
 	else outHeaders.set("Cache-Control", "no-store");
+	Object.entries(getCorsHeaders()).forEach(([key, value]) => outHeaders.set(key, value));
 
 	return new Response(res.body, {
 		status: res.status,
