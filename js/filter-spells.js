@@ -108,6 +108,15 @@ class PageFilterSpells extends PageFilterBase {
 	static INCHES_PER_FOOT = 12;
 	static FEET_PER_YARD = 3;
 	static FEET_PER_MILE = 5280;
+	static _DUR_INSTANT = "instant";
+	static _DUR_1_ROUND = "1_round";
+	static _DUR_1_MINUTE = "1_minute";
+	static _DUR_10_MINUTES = "10_minutes";
+	static _DUR_1_HOUR = "1_hour";
+	static _DUR_8_HOURS = "8_hours";
+	static _DUR_24_HOURS = "24_hours";
+	static _DUR_PERMANENT = "permanent";
+	static _DUR_SPECIAL = "special";
 
 	// region static
 	static sortSpells (a, b, o) {
@@ -163,38 +172,53 @@ class PageFilterSpells extends PageFilterBase {
 	static getFilterDuration (spell) {
 		const fDur = spell.duration[0] || {type: "special"};
 		switch (fDur.type) {
-			case "instant": return I18nUtil.get("page.spells.instant");
+			case "instant": return this._DUR_INSTANT;
 			case "timed": {
-				if (!fDur.duration) return I18nUtil.get("page.spells.special");
+				if (!fDur.duration) return this._DUR_SPECIAL;
 				switch (fDur.duration.type) {
 					case "turn":
-					case "round": return `1 ${I18nUtil.get("common.round")}`;
+					case "round": return this._DUR_1_ROUND;
 
 					case "minute": {
 						const amt = fDur.duration.amount || 0;
-						if (amt <= 1) return `1 ${I18nUtil.get("common.minute")}`;
-						if (amt <= 10) return `10 ${I18nUtil.get("common.minutes")}`;
-						if (amt <= 60) return `1 ${I18nUtil.get("common.hour")}`;
-						if (amt <= 8 * 60) return `8 ${I18nUtil.get("common.hours")}`;
-						return `24+ ${I18nUtil.get("common.hours")}`;
+						if (amt <= 1) return this._DUR_1_MINUTE;
+						if (amt <= 10) return this._DUR_10_MINUTES;
+						if (amt <= 60) return this._DUR_1_HOUR;
+						if (amt <= 8 * 60) return this._DUR_8_HOURS;
+						return this._DUR_24_HOURS;
 					}
 
 					case "hour": {
 						const amt = fDur.duration.amount || 0;
-						if (amt <= 1) return `1 ${I18nUtil.get("common.hour")}`;
-						if (amt <= 8) return `8 ${I18nUtil.get("common.hours")}`;
-						return `24+ ${I18nUtil.get("common.hours")}`;
+						if (amt <= 1) return this._DUR_1_HOUR;
+						if (amt <= 8) return this._DUR_8_HOURS;
+						return this._DUR_24_HOURS;
 					}
 
 					case "day":
 					case "week":
 					case "month":
-					case "year": return `24+ ${I18nUtil.get("common.hours")}`;
-					default: return I18nUtil.get("page.spells.special");
+					case "year": return this._DUR_24_HOURS;
+					default: return this._DUR_SPECIAL;
 				}
 			}
-			case "permanent": return I18nUtil.get("page.spells.permanent");
+			case "permanent": return this._DUR_PERMANENT;
 			case "special":
+			default: return this._DUR_SPECIAL;
+		}
+	}
+
+	static getFilterDurationDisplay (dur) {
+		switch (dur) {
+			case this._DUR_INSTANT: return I18nUtil.get("page.spells.instant");
+			case this._DUR_1_ROUND: return `1 ${I18nUtil.get("common.round")}`;
+			case this._DUR_1_MINUTE: return `1 ${I18nUtil.get("common.minute")}`;
+			case this._DUR_10_MINUTES: return `10 ${I18nUtil.get("common.minutes")}`;
+			case this._DUR_1_HOUR: return `1 ${I18nUtil.get("common.hour")}`;
+			case this._DUR_8_HOURS: return `8 ${I18nUtil.get("common.hours")}`;
+			case this._DUR_24_HOURS: return `24+ ${I18nUtil.get("common.hours")}`;
+			case this._DUR_PERMANENT: return I18nUtil.get("page.spells.permanent");
+			case this._DUR_SPECIAL:
 			default: return I18nUtil.get("page.spells.special");
 		}
 	}
@@ -437,16 +461,17 @@ class PageFilterSpells extends PageFilterBase {
 			isLabelled: true,
 			labelSortFn: null,
 			labels: [
-				I18nUtil.get("page.spells.instant"),
-				`1 ${I18nUtil.get("common.round")}`,
-				`1 ${I18nUtil.get("common.minute")}`,
-				`10 ${I18nUtil.get("common.minutes")}`,
-				`1 ${I18nUtil.get("common.hour")}`,
-				`8 ${I18nUtil.get("common.hours")}`,
-				`24+ ${I18nUtil.get("common.hours")}`,
-				I18nUtil.get("page.spells.permanent"),
-				I18nUtil.get("page.spells.special"),
+				PageFilterSpells._DUR_INSTANT,
+				PageFilterSpells._DUR_1_ROUND,
+				PageFilterSpells._DUR_1_MINUTE,
+				PageFilterSpells._DUR_10_MINUTES,
+				PageFilterSpells._DUR_1_HOUR,
+				PageFilterSpells._DUR_8_HOURS,
+				PageFilterSpells._DUR_24_HOURS,
+				PageFilterSpells._DUR_PERMANENT,
+				PageFilterSpells._DUR_SPECIAL,
 			],
+			labelDisplayFn: PageFilterSpells.getFilterDurationDisplay.bind(PageFilterSpells),
 		});
 		this._rangeFilter = new Filter({
 			cnHeader: "范围",
