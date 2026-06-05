@@ -417,13 +417,16 @@ class SpellsPage extends ListPageMultiSource {
 			{header: this._pageFilter._affectsCreatureTypeFilter.header, filter: this._pageFilter._affectsCreatureTypeFilter, value: sample._fAffectsCreatureType},
 		];
 
+		const results = tuples.map(({header, filter, value}) => ({
+			header,
+			isActive: !!filterValues?.[header]?._isActive,
+			result: filter.toDisplay(filterValues, value),
+		}));
+
 		return {
 			sampleName: sample.name,
-			results: tuples.map(({header, filter, value}) => ({
-				header,
-				isActive: !!filterValues?.[header]?._isActive,
-				result: filter.toDisplay(filterValues, value),
-			})),
+			results,
+			failing: results.filter(it => it.result === false),
 		};
 	}
 
@@ -488,6 +491,7 @@ class SpellsPage extends ListPageMultiSource {
 		if (!meta.items || meta.visible) return;
 
 		console.warn("[spells:list-debug]", meta);
+		console.warn("[spells:list-debug:json]", signature);
 	}
 
 	async _pGetTableViewAdditionalData () {

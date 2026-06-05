@@ -81,31 +81,23 @@ export class RangeFilter extends FilterBase {
 		const toLoad = filterState[this.header];
 		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 
-		// region Ensure to-be-loaded state is populated with sensible data
-		const tgt = (toLoad.state || {});
-
-		if (tgt.max == null) tgt.max = this._max;
-		else if (this._max > tgt.max) {
-			if (tgt.max === tgt.curMax) tgt.curMax = this._max; // If it's set to "max", respect this
-			tgt.max = this._max;
-		}
-
-		if (tgt.curMax == null) tgt.curMax = tgt.max;
-		else if (tgt.curMax > tgt.max) tgt.curMax = tgt.max;
-
-		if (tgt.min == null) tgt.min = this._min;
-		else if (this._min < tgt.min) {
-			if (tgt.min === tgt.curMin) tgt.curMin = this._min; // If it's set to "min", respect this
-			tgt.min = this._min;
-		}
+		// Treat persisted `min`/`max` as untrusted. These are implementation bounds, not user intent, and stale values
+		// can make the filter appear inactive while still filtering results.
+		const tgt = {...(toLoad.state || {})};
+		tgt.min = this._min;
+		tgt.max = this._max;
 
 		if (tgt.curMin == null) tgt.curMin = tgt.min;
-		else if (tgt.curMin < tgt.min) tgt.curMin = tgt.min;
-		// endregion
+		else tgt.curMin = Math.max(tgt.min, tgt.curMin);
+
+		if (tgt.curMax == null) tgt.curMax = tgt.max;
+		else tgt.curMax = Math.min(tgt.max, tgt.curMax);
+
+		if (tgt.curMin > tgt.curMax) [tgt.curMin, tgt.curMax] = [tgt.curMax, tgt.curMin];
 
 		this.setBaseStateFromLoaded(toLoad);
 
-		Object.assign(this._state, toLoad.state);
+		Object.assign(this._state, tgt);
 	}
 
 	trimState_ () {
