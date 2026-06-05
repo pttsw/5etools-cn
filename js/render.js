@@ -717,8 +717,10 @@ globalThis.Renderer = function () {
 			// N.b. this width/height should be reflected in the renderer image CSS
 			// Clamp the max width at 100%, as per the renderer styling
 			entry.maxWidth ? `max-width: min(100%, ${entry.maxWidth}${entry.maxWidthUnits || "px"})` : "",
+			// Allow specific images to opt out of the global 60vh max-height.
+			entry.isNoMaxHeight ? "max-height: none" : "",
 			// Clamp the max height at 60vh, as per the renderer styling
-			entry.maxHeight ? `max-height: min(60vh, ${entry.maxHeight}${entry.maxHeightUnits || "px"})` : "",
+			!entry.isNoMaxHeight && entry.maxHeight ? `max-height: min(60vh, ${entry.maxHeight}${entry.maxHeightUnits || "px"})` : "",
 		].filter(Boolean).join("; ");
 		return styles ? `style="${styles}"` : "";
 	};
