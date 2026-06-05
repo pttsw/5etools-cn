@@ -362,6 +362,71 @@ class SpellsPage extends ListPageMultiSource {
 		};
 	}
 
+	_getDebugFilterBoxMeta () {
+		const filterBox = this._pageFilter?.filterBox;
+		if (!filterBox) return null;
+
+		return {
+			meta: {...filterBox._meta},
+			combineAs: {...filterBox._combineAs},
+		};
+	}
+
+	_getDebugPerFilterResults (filterValues) {
+		const filterBox = this._pageFilter?.filterBox;
+		const sample = this._dataList?.[0];
+		if (!filterBox || !sample) return null;
+
+		const tuples = [
+			{
+				header: this._pageFilter._sourceFilter.header,
+				filter: this._pageFilter._sourceFilter,
+				value: sample._fSources,
+			},
+			{
+				header: this._pageFilter._levelFilter.header,
+				filter: this._pageFilter._levelFilter,
+				value: sample.level,
+			},
+			{
+				header: this._pageFilter._classAndSubclassFilter.header,
+				filter: this._pageFilter._classAndSubclassFilter,
+				value: [
+					this._pageFilter._classAndSubclassFilter.isVariantSplit ? sample._fClasses : sample._fClassesAndVariantClasses,
+					sample._fSubclasses,
+					this._pageFilter._classAndSubclassFilter.isVariantSplit ? sample._fVariantClasses : null,
+				],
+			},
+			{header: this._pageFilter._raceFilter.header, filter: this._pageFilter._raceFilter, value: sample._fRaces},
+			{header: this._pageFilter._backgroundFilter.header, filter: this._pageFilter._backgroundFilter, value: sample._fBackgrounds},
+			{header: this._pageFilter._featFilter.header, filter: this._pageFilter._featFilter, value: sample._fFeats},
+			{header: this._pageFilter._optionalfeaturesFilter.header, filter: this._pageFilter._optionalfeaturesFilter, value: sample._fOptionalfeatures},
+			{header: this._pageFilter._miscFilter.header, filter: this._pageFilter._miscFilter, value: sample._fMisc},
+			{header: this._pageFilter._groupFilter.header, filter: this._pageFilter._groupFilter, value: sample._fGroups},
+			{header: this._pageFilter._schoolFilter.header, filter: this._pageFilter._schoolFilter, value: sample.school},
+			{header: this._pageFilter._subSchoolFilter.header, filter: this._pageFilter._subSchoolFilter, value: sample.subschools},
+			{header: this._pageFilter._damageFilter.header, filter: this._pageFilter._damageFilter, value: sample.damageInflict},
+			{header: this._pageFilter._conditionFilter.header, filter: this._pageFilter._conditionFilter, value: sample.conditionInflict},
+			{header: this._pageFilter._spellAttackFilter.header, filter: this._pageFilter._spellAttackFilter, value: sample.spellAttack},
+			{header: this._pageFilter._saveFilter.header, filter: this._pageFilter._saveFilter, value: sample.savingThrow},
+			{header: this._pageFilter._checkFilter.header, filter: this._pageFilter._checkFilter, value: sample.abilityCheck},
+			{header: this._pageFilter._timeFilter.header, filter: this._pageFilter._timeFilter, value: sample._fTimeType},
+			{header: this._pageFilter._durationFilter.header, filter: this._pageFilter._durationFilter, value: sample._fDurationType},
+			{header: this._pageFilter._rangeFilter.header, filter: this._pageFilter._rangeFilter, value: sample._fRangeType},
+			{header: this._pageFilter._areaTypeFilter.header, filter: this._pageFilter._areaTypeFilter, value: sample._fAreaTags},
+			{header: this._pageFilter._affectsCreatureTypeFilter.header, filter: this._pageFilter._affectsCreatureTypeFilter, value: sample._fAffectsCreatureType},
+		];
+
+		return {
+			sampleName: sample.name,
+			results: tuples.map(({header, filter, value}) => ({
+				header,
+				isActive: !!filterValues?.[header]?._isActive,
+				result: filter.toDisplay(filterValues, value),
+			})),
+		};
+	}
+
 	_getDebugActiveFilters (filterValues) {
 		if (!filterValues) return [];
 
@@ -411,7 +476,9 @@ class SpellsPage extends ListPageMultiSource {
 			subhashes: this._getDebugSubhashes(),
 			serviceWorker: this._getDebugServiceWorkerMeta(),
 			exclusions: this._getDebugExclusionMeta(),
+			filterBox: this._getDebugFilterBoxMeta(),
 			activeFilters: this._getDebugActiveFilters(filterValues),
+			perFilterResults: this._getDebugPerFilterResults(filterValues),
 		};
 
 		const signature = JSON.stringify(meta);
