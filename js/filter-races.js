@@ -128,7 +128,7 @@ class PageFilterRaces extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			cnHeader: "杂项",
-			items: ["基础种族", "关键种族", "Lineage", "修改副本", "重置", "传奇", "有图片", "有简介"],
+			items: ["基础种族", "关键种族", "Lineage", "修改副本", "重印", "传奇", "有图片", "有简介"],
 			isMiscFilter: true,
 			deselFn: PageFilterBase.defaultMiscellaneousDeselFn.bind(PageFilterBase),
 		});

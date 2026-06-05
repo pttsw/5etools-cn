@@ -362,7 +362,7 @@ class PageFilterSpells extends PageFilterBase {
 		this._miscFilter = new Filter({
 			header: "Components & Miscellaneous",
 			cnHeader: "构材＆杂项",
-			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "传奇", "重置", "有图片", "有Token"],
+			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "传奇", "重印", "有图片", "有Token"],
 			itemSortFn: PageFilterSpells.sortMetaFilter,
 			isMiscFilter: true,
 			displayFn: it => Parser.spMiscTagToFull(it),

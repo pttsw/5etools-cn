@@ -367,7 +367,7 @@ class SpellsPage extends ListPageMultiSource {
 					.map(([k]) => k);
 
 				const excludeKeys = entries
-					.filter(([, v]) => v === -1)
+					.filter(([, v]) => v === 2)
 					.map(([k]) => k);
 
 				return {
@@ -376,6 +376,7 @@ class SpellsPage extends ListPageMultiSource {
 					includeCount: includeKeys.length,
 					excludeCount: excludeKeys.length,
 					sampleTruthy: truthyKeys.slice(0, 10),
+					sampleExclude: excludeKeys.slice(0, 10),
 				};
 			});
 	}

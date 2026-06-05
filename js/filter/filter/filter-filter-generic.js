@@ -86,7 +86,7 @@ export class Filter extends FilterBase {
 		this._umbrellaExcludes = Filter._getAsFilterItems(opts.umbrellaExcludes);
 		this._isSortByDisplayItems = !!opts.isSortByDisplayItems;
 		this._pFnOnChange = opts.pFnOnChange;
-		this._isReprintedFilter = !!opts.isMiscFilter && this._items.some(it => it.item === "重置");
+		this._isReprintedFilter = !!opts.isMiscFilter && this._items.some(it => it.item === "重印" || it.item === "Reprinted");
 		this._isSrdFilter = !!opts.isMiscFilter && this._items.some(it => it.item === MISC_FILTER_VALUE__SRD_5_1 || it.item === MISC_FILTER_VALUE__SRD_5_2);
 		this._isBasicRulesFilter = !!opts.isMiscFilter && this._items.some(it => it.item === MISC_FILTER_VALUE__BASIC_RULES_2014 || it.item === MISC_FILTER_VALUE__BASIC_RULES_2024);
 
@@ -122,13 +122,23 @@ export class Filter extends FilterBase {
 		};
 	}
 
+	_getMigratedLoadedState (state) {
+		if (!this._isReprintedFilter || !state) return state;
+		if (state["重置"] == null || state["重印"] != null) return state;
+
+		const out = {...state};
+		out["重印"] = out["重置"];
+		delete out["重置"];
+		return out;
+	}
+
 	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
 		if (!filterState?.[this.header]) return;
 
 		const toLoad = filterState[this.header];
 		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 		this.setBaseStateFromLoaded(toLoad);
-		Object.assign(this._state, toLoad.state);
+		Object.assign(this._state, this._getMigratedLoadedState(toLoad.state));
 		Object.assign(this._nestsHidden, toLoad.nestsHidden);
 	}
 
@@ -438,7 +448,7 @@ export class Filter extends FilterBase {
 
 		const stateNxt = {};
 		Object.keys(this._state).forEach(k => stateNxt[k] = PILL_STATE__IGNORE);
-		Object.assign(stateNxt, values[this.header]);
+		Object.assign(stateNxt, this._getMigratedLoadedState(values[this.header]));
 
 		this._proxyAssignSimple("state", stateNxt);
 	}

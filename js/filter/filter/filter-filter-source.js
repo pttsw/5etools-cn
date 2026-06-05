@@ -317,7 +317,10 @@ export class SourceFilter extends Filter {
 
 		// also disable "Reprinted" otherwise some Deities are missing
 		const reprintedFilter = this._filterBox.filters.find(it => it.isReprintedFilter);
-		if (reprintedFilter) reprintedFilter.setValue("重置", PILL_STATE__IGNORE);
+		if (reprintedFilter) {
+			reprintedFilter.setValue("重印", PILL_STATE__IGNORE);
+			reprintedFilter.setValue("Reprinted", PILL_STATE__IGNORE);
+		}
 	}
 
 	_doSetPinsBasicRules () {
@@ -339,7 +342,10 @@ export class SourceFilter extends Filter {
 
 		// also disable "Reprinted" otherwise some Deities are missing
 		const reprintedFilter = this._filterBox.filters.find(it => it.isReprintedFilter);
-		if (reprintedFilter) reprintedFilter.setValue("Reprinted", PILL_STATE__IGNORE);
+		if (reprintedFilter) {
+			reprintedFilter.setValue("重印", PILL_STATE__IGNORE);
+			reprintedFilter.setValue("Reprinted", PILL_STATE__IGNORE);
+		}
 	}
 
 	static getCompleteFilterSources (ent, {isIncludeBaseSource = false} = {}) {
