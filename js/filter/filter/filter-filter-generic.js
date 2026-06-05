@@ -124,12 +124,20 @@ export class Filter extends FilterBase {
 
 	_getMigratedLoadedState (state) {
 		if (!this._isReprintedFilter || !state) return state;
-		if (state["重置"] == null || state["重印"] != null) return state;
+		if (state["重置"] == null) return state;
 
 		const out = {...state};
-		out["重印"] = out["重置"];
 		delete out["重置"];
 		return out;
+	}
+
+	_getSanitizedLoadedState (state) {
+		if (!state) return state;
+
+		return Object.fromEntries(
+			Object.entries(state)
+				.filter(([k]) => this.__itemsSet.has(k)),
+		);
 	}
 
 	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
@@ -138,7 +146,7 @@ export class Filter extends FilterBase {
 		const toLoad = filterState[this.header];
 		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 		this.setBaseStateFromLoaded(toLoad);
-		Object.assign(this._state, this._getMigratedLoadedState(toLoad.state));
+		Object.assign(this._state, this._getSanitizedLoadedState(this._getMigratedLoadedState(toLoad.state)));
 		Object.assign(this._nestsHidden, toLoad.nestsHidden);
 	}
 
@@ -448,7 +456,7 @@ export class Filter extends FilterBase {
 
 		const stateNxt = {};
 		Object.keys(this._state).forEach(k => stateNxt[k] = PILL_STATE__IGNORE);
-		Object.assign(stateNxt, this._getMigratedLoadedState(values[this.header]));
+		Object.assign(stateNxt, this._getSanitizedLoadedState(this._getMigratedLoadedState(values[this.header])));
 
 		this._proxyAssignSimple("state", stateNxt);
 	}
