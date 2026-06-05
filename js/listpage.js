@@ -1534,6 +1534,7 @@ class ListPage {
 			.onn("click", evt => this._bindPopoutButton_doShowBBCode(evt))
 			.tooltip("弹出BBCode文本（果园拟像术）");
 	}
+
 	_bindPopoutButton () {
 		this._getOrTabRightButton(`popout`, `glyphicon-new-window`)
 			.tooltip(`弹出框 (按住SHIFT键弹出源数据；按住CTRL键弹出Markdown文本）`)
@@ -2163,13 +2164,6 @@ class ListPage {
 		});
 
 		const tabMetasAdditional = this._renderStats_getTabMetasAdditional({ent});
-
-		// var go_eng = document.getElementById("btn-go-english");
-		// go_eng.addEventListener("click", () => {
-		// 	var path = window.location.pathname;
-		// 	var hash = ent['ENG_name']+'_'+ent['source'];
-		//   	window.open("https://5e.tools/"+path+"#"+hash, "_blank");
-		// })
 
 		Renderer.utils.bindTabButtons({
 			tabButtons: [tabMetaStats, ...tabMetasAdditional].filter(it => it.isVisible),

@@ -295,12 +295,99 @@ class SpellsPage extends ListPageMultiSource {
 		this._lastFilterValues = null;
 		this._subclassLookup = {};
 		this._bookViewLastOrder = null;
+		this._debugLastLogSignature = null;
+	}
+
+	_getDebugSourceStateSummary (filterValues) {
+		const sourceState = filterValues?.Source;
+		if (!sourceState) return null;
+
+		let cntInclude = 0;
+		let cntExclude = 0;
+		let cntNeutral = 0;
+
+		Object.entries(sourceState)
+			.forEach(([k, v]) => {
+				if (k.startsWith("_")) return;
+				if (v === 1) cntInclude++;
+				else if (v === -1) cntExclude++;
+				else cntNeutral++;
+			});
+
+		return {
+			isActive: !!sourceState._isActive,
+			include: cntInclude,
+			exclude: cntExclude,
+			neutral: cntNeutral,
+		};
+	}
+
+	_getDebugSourceStateRaw (filterValues) {
+		const sourceState = filterValues?.Source;
+		if (!sourceState) return null;
+
+		return Object.fromEntries(
+			Object.entries(sourceState)
+				.filter(([k]) => !k.startsWith("_")),
+		);
+	}
+
+	_getDebugSearchInputValue () {
+		return document.getElementById("lst__search")?.value ?? null;
+	}
+
+	_getDebugSubhashes () {
+		const [, ...subs] = Hist.getHashParts();
+		return subs;
+	}
+
+	_getDebugServiceWorkerMeta () {
+		return {
+			isSupported: !!navigator.serviceWorker,
+			hasController: !!navigator.serviceWorker?.controller,
+			controllerScript: navigator.serviceWorker?.controller?.scriptURL || null,
+		};
+	}
+
+	_debugLogListState ({reason, filterValues = null, isForce = false} = {}) {
+		if (!this._list) return;
+
+		filterValues ||= this._pageFilter?.filterBox?.getValues?.() || null;
+
+		const meta = {
+			reason,
+			items: this._list.items.length,
+			visible: this._list.visibleItems.length,
+			searchTerm: this._list._searchTerm || "",
+			searchInputValue: this._getDebugSearchInputValue(),
+			source: this._getDebugSourceStateSummary(filterValues),
+			sourceRaw: this._getDebugSourceStateRaw(filterValues),
+			hash: window.location.hash || "",
+			subhashes: this._getDebugSubhashes(),
+			serviceWorker: this._getDebugServiceWorkerMeta(),
+		};
+
+		const signature = JSON.stringify(meta);
+		if (!isForce && signature === this._debugLastLogSignature) return;
+		this._debugLastLogSignature = signature;
+
+		if (!meta.items || meta.visible) return;
+
+		console.warn("[spells:list-debug]", meta);
 	}
 
 	async _pGetTableViewAdditionalData () {
 		return {
 			subclassLookup: await DataUtil.class.pGetSubclassLookup(),
 		};
+	}
+
+	handleFilterChange () {
+		super.handleFilterChange();
+		this._debugLogListState({
+			reason: "filter-change",
+			filterValues: this._pageFilter?.filterBox?.getValues?.() || null,
+		});
 	}
 
 	get _bindOtherButtonsOptions () {
@@ -411,6 +498,11 @@ class SpellsPage extends ListPageMultiSource {
 	async _pOnLoad_pPreDataAdd () {
 		Renderer.spell.populatePrereleaseLookup(await PrereleaseUtil.pGetBrewProcessed());
 		Renderer.spell.populateBrewLookup(await BrewUtil2.pGetBrewProcessed());
+	}
+
+	async _pOnLoad_pPostLoad () {
+		this._debugLogListState({reason: "post-load", isForce: true});
+		this._list.on("updated", () => this._debugLogListState({reason: "list-updated"}));
 	}
 
 	async _pPreloadSublistSources (json) {
