@@ -349,6 +349,19 @@ class SpellsPage extends ListPageMultiSource {
 		};
 	}
 
+	_getDebugExclusionMeta () {
+		if (!this._list) return null;
+
+		const cntExcluded = this._list.items.filter(it => it.data?.isExcluded).length;
+
+		return {
+			cntExcluded,
+			cntIncluded: this._list.items.length - cntExcluded,
+			isAllExcluded: cntExcluded === this._list.items.length && this._list.items.length > 0,
+			blocklistSize: ExcludeUtil.getList()?.length ?? null,
+		};
+	}
+
 	_getDebugActiveFilters (filterValues) {
 		if (!filterValues) return [];
 
@@ -397,6 +410,7 @@ class SpellsPage extends ListPageMultiSource {
 			hash: window.location.hash || "",
 			subhashes: this._getDebugSubhashes(),
 			serviceWorker: this._getDebugServiceWorkerMeta(),
+			exclusions: this._getDebugExclusionMeta(),
 			activeFilters: this._getDebugActiveFilters(filterValues),
 		};
 
