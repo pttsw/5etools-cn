@@ -1075,9 +1075,10 @@ export class ConverterCreature extends ConverterBase {
 					return null;
 				}
 
-				const mUses = /^(?:Legendary Action Uses|传奇动作次数)[:：]\s*(?<cnt>\d+)(\s*[(（](?:(?<cntLair>\d+) in Lair|在巢穴中则为\s*(?<cntLair>\d+))[)）])?/gi.exec(ent.entries[0]);
+				const mUses = /^(?:Legendary Action Uses|传奇动作次数)[:：]\s*(?<cnt>\d+)(\s*[(（](?:(?<cntLairEn>\d+) in Lair|在巢穴中则为\s*(?<cntLairCn>\d+))[)）])?/gi.exec(ent.entries[0]);
 				if (!hasName && mUses) {
-					const {cnt, cntLair} = mUses.groups;
+					const {cnt, cntLairEn, cntLairCn} = mUses.groups;
+					const cntLair = cntLairEn || cntLairCn;
 
 					const asNum = Number(cnt);
 					const asNumLair = cntLair ? Number(cntLair) : null;
@@ -2507,7 +2508,7 @@ export class ConverterCreature extends ConverterBase {
 
 		const rePtOneXpIntro = /(?<=[(（])\s*/.source;
 		const rePtOneXpAmount = /(?<amount>[0-9,]+)/.source;
-		const rePtOneXpAmountLair = /(?: or (?<amountLair>[0-9,]+) in lair|在巢穴中则为\s*(?<amountLair>[0-9,]+))?/.source;
+		const rePtOneXpAmountLair = /(?: or (?<amountLairEn>[0-9,]+) in lair|在巢穴中则为\s*(?<amountLairCn>[0-9,]+))?/.source;
 		const rePtOneXpOutro = /\s*(?:[;；]\s*)?/.source;
 
 		const reXpOnePre = new RegExp(`${rePtOneXpIntro}XP ?${rePtOneXpAmount}(?:[,，；])?\\s*${rePtOneXpAmountLair}${rePtOneXpOutro}`, "i");
@@ -2520,7 +2521,8 @@ export class ConverterCreature extends ConverterBase {
 			.forEach(re => {
 				line = line
 					.replace(re, (...m) => {
-						const {amount, amountLair} = m.at(-1);
+						const {amount, amountLairEn, amountLairCn} = m.at(-1);
+						const amountLair = amountLairEn || amountLairCn;
 						const amountRaw = amount.replace(/,/g, "");
 						const amountLairRaw = amountLair ? amountLair.replace(/,/g, "") : null;
 
