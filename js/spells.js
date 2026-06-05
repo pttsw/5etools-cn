@@ -349,6 +349,37 @@ class SpellsPage extends ListPageMultiSource {
 		};
 	}
 
+	_getDebugActiveFilters (filterValues) {
+		if (!filterValues) return [];
+
+		return Object.entries(filterValues)
+			.filter(([, val]) => val?._isActive)
+			.map(([header, val]) => {
+				const entries = Object.entries(val)
+					.filter(([k]) => !k.startsWith("_"));
+
+				const truthyKeys = entries
+					.filter(([, v]) => !!v)
+					.map(([k]) => k);
+
+				const includeKeys = entries
+					.filter(([, v]) => v === 1)
+					.map(([k]) => k);
+
+				const excludeKeys = entries
+					.filter(([, v]) => v === -1)
+					.map(([k]) => k);
+
+				return {
+					header,
+					truthyCount: truthyKeys.length,
+					includeCount: includeKeys.length,
+					excludeCount: excludeKeys.length,
+					sampleTruthy: truthyKeys.slice(0, 10),
+				};
+			});
+	}
+
 	_debugLogListState ({reason, filterValues = null, isForce = false} = {}) {
 		if (!this._list) return;
 
@@ -365,6 +396,7 @@ class SpellsPage extends ListPageMultiSource {
 			hash: window.location.hash || "",
 			subhashes: this._getDebugSubhashes(),
 			serviceWorker: this._getDebugServiceWorkerMeta(),
+			activeFilters: this._getDebugActiveFilters(filterValues),
 		};
 
 		const signature = JSON.stringify(meta);
