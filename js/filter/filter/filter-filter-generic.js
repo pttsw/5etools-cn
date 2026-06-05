@@ -122,12 +122,30 @@ export class Filter extends FilterBase {
 		};
 	}
 
-	_getMigratedLoadedState (state) {
-		if (!this._isReprintedFilter || !state) return state;
-		if (state["重置"] == null) return state;
+	_getMigratedLoadedState (state, {isUserSavedState = false} = {}) {
+		if (!state) return state;
 
 		const out = {...state};
-		delete out["重置"];
+
+		if (this._isReprintedFilter) {
+			// Legacy typo compatibility: drop the old key rather than preserving its state, as older broken versions
+			// could persist a bad "exclude reprinted" state which empties pages like Spells.
+			delete out["重置"];
+
+			// One-time repair for already-migrated bad states: if the user's saved state only excludes "重印",
+			// treat it as corrupted legacy state and clear it.
+			if (isUserSavedState) {
+				const activeEntries = Object.entries(out).filter(([, v]) => !!v);
+				if (
+					activeEntries.length === 1
+					&& (activeEntries[0][0] === "重印" || activeEntries[0][0] === "Reprinted")
+					&& activeEntries[0][1] === PILL_STATE__NO
+				) {
+					delete out[activeEntries[0][0]];
+				}
+			}
+		}
+
 		return out;
 	}
 
@@ -146,7 +164,7 @@ export class Filter extends FilterBase {
 		const toLoad = filterState[this.header];
 		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 		this.setBaseStateFromLoaded(toLoad);
-		Object.assign(this._state, this._getSanitizedLoadedState(this._getMigratedLoadedState(toLoad.state)));
+		Object.assign(this._state, this._getSanitizedLoadedState(this._getMigratedLoadedState(toLoad.state, {isUserSavedState})));
 		Object.assign(this._nestsHidden, toLoad.nestsHidden);
 	}
 
