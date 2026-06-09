@@ -1897,7 +1897,7 @@ Parser.monTypeToFullObj = function (type) {
 
 	if (type.swarmSize) {
 		out.tags.push("集群");
-		out.asText = `${out.types.map(typ => Parser.monTypeToPlural(typ).toTitleCase()).joinConjunct(", ", " 或 ")}的${Parser.sizeAbvToFull(type.swarmSize)}集群`;
+		out.asText = `${Parser.sizeAbvToFull(type.swarmSize)}${out.types.map(typ => Parser.monTypeToPlural(typ).toTitleCase()).joinConjunct(", ", " 或 ")}集群`;
 		out.asTextShort = out.asText;
 		out.swarmSize = type.swarmSize;
 	} else {

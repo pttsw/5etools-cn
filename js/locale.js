@@ -36,8 +36,16 @@ let activeLoadToken = 0;
 let observer = null;
 
 const translationCache = new Map();
+const preloadedTranslations = globalThis.__I18N_PRELOADED_TRANSLATIONS || null;
 
 I18nUtil.LANGUAGES_INDEX = getPreferredLanguageCode();
+
+const initialTranslations = preloadedTranslations?.[I18nUtil.LANGUAGES_INDEX];
+if (initialTranslations) {
+	activeTranslations = initialTranslations;
+	propertiesLoaded = true;
+	translationCache.set(I18nUtil.LANGUAGES_INDEX, Promise.resolve(initialTranslations));
+}
 
 function normalizeLanguageCode (language) {
 	if (!language) return DEFAULT_LANGUAGE;
@@ -201,6 +209,12 @@ function parseProperties (text) {
 async function pLoadTranslations (language) {
 	const normalizedLanguage = normalizeLanguageCode(language);
 	if (translationCache.has(normalizedLanguage)) return translationCache.get(normalizedLanguage);
+	if (preloadedTranslations?.[normalizedLanguage]) {
+		const translations = preloadedTranslations[normalizedLanguage];
+		const pTranslations = Promise.resolve(translations);
+		translationCache.set(normalizedLanguage, pTranslations);
+		return pTranslations;
+	}
 
 	const pLoad = fetch(getLanguageFileUrl(normalizedLanguage), {cache: "no-store"})
 		.then(async response => {

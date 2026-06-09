@@ -35,3 +35,18 @@ languageList.forEach(lang => {
 	fs.writeFileSync(`./languages/${lang}.json`, JSON.stringify(localeData[lang]), "utf-8");
 	fs.writeFileSync(`./languages/5e_${lang}.properties`, tempProperties, "utf-8");
 });
+
+const preloadedLocales = Object.fromEntries(
+	languageList.map(lang => [lang, transfSingleLayerJSON(localeData[lang])]),
+);
+
+const localeDataScript = [
+	"\"use strict\";",
+	"",
+	"globalThis.__I18N_PRELOADED_TRANSLATIONS = Object.freeze(",
+	`\t${JSON.stringify(preloadedLocales, null, "\t").replaceAll("\n", "\n\t")}`,
+	");",
+	"",
+].join("\n");
+
+fs.writeFileSync("./js/locale-data.js", localeDataScript, "utf-8");

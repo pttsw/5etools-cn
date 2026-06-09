@@ -80,13 +80,15 @@
 	<script type="text/javascript" src="sw-injector.js"></script>
 
 	<script blocking="render" type="module" src="js/styleswitch.js"></script>
-{{#if redirectHref}}
+	<script type="text/javascript" src="js/locale-data.js"></script>
+	<script type="text/javascript" src="js/locale.js"></script>
+	{{#if redirectHref}}
 
-	<meta http-equiv="refresh" content="0; URL={{redirectHref}}"/>
-{{else}}
+		<meta http-equiv="refresh" content="0; URL={{redirectHref}}"/>
+	{{else}}
 	<script type="text/javascript" src="js/navigation.js"></script>
 	<script type="module" src="js/browsercheck.js"></script>
-{{/if}}
+	{{/if}}
 
 	<!-- 百度自动推送 -->
 	<script>
