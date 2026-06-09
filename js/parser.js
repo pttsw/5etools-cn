@@ -2396,6 +2396,7 @@ Parser.prereqPatronToShort = function (patron) {
 
 Parser.FEAT_CATEGORY_TO_FULL = {
 	"D": "龙纹",
+	"DG": "Dark Gift",
 	"G": "通用",
 	"O": "起源",
 	"FS": "战斗风格",
@@ -3492,6 +3493,8 @@ Parser.SRC_NF = "NF";
 Parser.SRC_LFL = "LFL";
 Parser.SRC_EFA = "EFA";
 Parser.SRC_FFotR = "FFotR";
+Parser.SRC_RHW = "RHW";
+
 Parser.SRC_TD = "TD";
 Parser.SRC_SCREEN = "Screen";
 Parser.SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
@@ -3695,6 +3698,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NF] = "耐瑟瑞尔的陨落";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LFL] = "洛温：初光";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_EFA] = "艾伯伦: 奇械锻炉";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_FFotR] = "隐士的命定航旅";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_RHW] = "鸦阁魔域：魔障深藏";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TD] = "塔罗牌";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = "地下城主帷幕";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN_WILDERNESS_KIT] = "地下城主帷幕：荒野套组";
@@ -3876,6 +3880,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_NF] = "NF";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_LFL] = "LFL";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_EFA] = "EFA";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_FFotR] = "FFotR";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_RHW] = "RHW";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_TD] = "TD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN] = "Scr'14";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN_WILDERNESS_KIT] = "ScrWild";
@@ -4056,6 +4061,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_NF] = "2025-11-11";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_LFL] = "2025-11-18";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_EFA] = "2025-12-09";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_FFotR] = "2025-12-09";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_RHW] = "2026-06-16";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_TD] = "2022-05-24";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
@@ -4454,6 +4460,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_LFL,
 	Parser.SRC_EFA,
 	Parser.SRC_CaBoMP,
+	Parser.SRC_RHW,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;

@@ -2353,6 +2353,7 @@ const PROPORDER_CHAROPTION = [
 
 	"otherSources",
 	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	"reprintedAs",
 
 	"prerequisite",
 

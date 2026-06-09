@@ -4293,6 +4293,12 @@ Renderer.utils = class {
 						case "weaponGroup": {
 							return isListMode ? `熟练于${prof}武器` : `${prof.toTitleCase()}武器熟练项`;
 						}
+						case "skill": {
+							if (prof === true) return isListMode ? `Skill Proficiency` : `Proficiency in a skill`;
+							return isListMode
+								? prof.map(skill => skill.toTitleCase()).join("+")
+								: `Proficiency in the ${prof.map(skill => Renderer.get().render(`{@skill ${skill.toTitleCase()}}`)).joinConjunct(", ", " and ")} skill${prof.length === 1 ? "" : "s"}`;
+						}
 						default: throw new Error(`Unhandled proficiency type: "${profType}"`);
 					}
 				});

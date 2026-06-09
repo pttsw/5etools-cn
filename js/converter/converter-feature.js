@@ -4,7 +4,7 @@ import {AlignmentUtil} from "./converterutils-utils-alignment.js";
 import {ConverterUtils} from "./converterutils-utils.js";
 
 export class ConverterFeatureBase extends ConverterBase {
-	static _RE_FEAT_TYPE = /\b(?<category>General|Origin|Fighting Style|Epic Boon|Dragonmark|通用|起源|战斗风格|传奇恩惠|龙纹)\b/;
+	static _RE_FEAT_TYPE = new RegExp(`\\b(?<category>${Object.values(Parser.FEAT_CATEGORY_TO_FULL).join("|")})\\b`);
 
 	/* -------------------------------------------- */
 

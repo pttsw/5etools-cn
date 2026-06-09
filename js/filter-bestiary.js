@@ -525,7 +525,7 @@ class PageFilterBestiary extends PageFilterBase {
 		}
 
 		for (const trait of (mon.trait || [])) {
-			if (!trait.name.toLowerCase().startsWith("special equipment")) continue;
+			if (!trait.name?.toLowerCase().startsWith("special equipment")) continue;
 			walker.walk(
 				trait.entries,
 				{
