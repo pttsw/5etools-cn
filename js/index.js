@@ -78,7 +78,7 @@ class IndexPage {
 						</div>
 						<div class="home__donation-actions">
 							<a class="ve-btn ve-btn-default" href="https://qm.qq.com/cgi-bin/qm/qr?k=zo7jw88cLsqp2hAkK3ssn_kEbtvy8vu4&jump_from=webapi&authKey=yyG97ItP+M1BGl171cFJ+vzAmHZGRMdvKompSckZjpj8gYcCUV/3efeHvaD3850/" target="_blank" rel="noopener noreferrer">反馈问题</a>
-							<a class="ve-btn ve-btn-default" href="https://github.com/tjliqy/5etools-mirror-2.github.io/tree/cn2.0" target="_blank" rel="noopener noreferrer">查看开源代码</a>
+							<a class="ve-btn ve-btn-default" href="https://github.com/tjliqy/5etools-cn/tree/cn2.0" target="_blank" rel="noopener noreferrer">查看开源代码</a>
 						</div>
 					</div>
 				</div>

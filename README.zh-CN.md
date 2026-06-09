@@ -5,9 +5,9 @@
 <h1 align="center">5e.kiwee.top</h1>
 
 <p align="center">
-  <a href="https://github.com/5etools-mirror-2/5etools-mirror-2.github.io/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-  <a href="https://github.com/5etools-mirror-2/5etools-mirror-2.github.io/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/data_license-CC--BY--NC--SA%204.0-orange.svg" alt="CC BY-NC-SA 4.0"></a>
-  <a href="https://github.com/5etools-mirror-2/5etools-mirror-2.github.io"><img src="https://img.shields.io/github/stars/tjliqy/5etools-mirror-2.github.io?style=social" alt="GitHub Stars"></a>
+  <a href="https://github.com/tjliqy/5etools-cn/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://github.com/tjliqy/5etools-cn/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/data_license-CC--BY--NC--SA%204.0-orange.svg" alt="CC BY-NC-SA 4.0"></a>
+  <a href="https://github.com/tjliqy/5etools-cn"><img src="https://img.shields.io/github/stars/tjliqy/5etools-cn?style=social" alt="GitHub Stars"></a>
 </p>
 
 <p align="center">
