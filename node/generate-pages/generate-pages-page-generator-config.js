@@ -60,6 +60,8 @@ class _PageGeneratorDmscreen extends PageGeneratorGeneric {
 class _PageGeneratorBlocklist extends PageGeneratorGeneric {
 	_filename = "page/template-page-blocklist.hbs";
 	_page = "blocklist.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "内容黑名单";
 	_pageDescription = "DND 5e 内容黑名单管理工具，用于屏蔽不需要的数据源和内容。";
@@ -75,6 +77,8 @@ class _PageGeneratorBlocklist extends PageGeneratorGeneric {
 class _PageGeneratorAiGuide extends PageGeneratorGeneric {
 	_filename = "page/template-page-ai-guide.hbs";
 	_page = "ai-guide.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "AI 导览";
 	_pageDescription = "5etools 中文站 AI 导览页，帮助大语言模型与问答系统快速理解本站的主要栏目、内容范围与高价值入口。";
@@ -171,6 +175,8 @@ class _PageGeneratorIndex extends PageGeneratorGeneric {
 class _PageGeneratorInittrackerplayerview extends PageGeneratorGeneric {
 	_filename = "page/template-page-inittrackerplayerview.hbs";
 	_page = "inittrackerplayerview.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "先攻追踪器玩家视图";
 	_pageDescription = "DND 5e 先攻追踪器玩家视图，用于战斗中追踪先攻顺序和回合。";
@@ -198,6 +204,8 @@ class _PageGeneratorInittrackerplayerview extends PageGeneratorGeneric {
 class _PageGeneratorLangdemo extends PageGeneratorGeneric {
 	_filename = "page/template-page-langdemo.hbs";
 	_page = "langdemo.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "RoLang Demo";
 	_navbarDescription = "Edit the input and context, and hit Run";
@@ -271,6 +279,8 @@ class _PageGeneratorLootgen extends PageGeneratorGeneric {
 class _PageGeneratorMakebrew extends PageGeneratorGeneric {
 	_filename = "page/template-page-makebrew.hbs";
 	_page = "makebrew.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = I18nUtil.get("page.makebrew.title");
 	_navbarDescription = I18nUtil.get("page.makebrew.subtitle");
@@ -295,6 +305,8 @@ class _PageGeneratorMakebrew extends PageGeneratorGeneric {
 class _PageGeneratorMakecards extends PageGeneratorGeneric {
 	_filename = "page/template-page-makecards.hbs";
 	_page = "makecards.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "RPG Cards JSON Builder";
 	_navbarDescription = "Build and export card JSON data.";
@@ -358,6 +370,8 @@ class _PageGeneratorPrivacyPolicy extends PageGeneratorGeneric {
 class _PageGeneratorRenderdemo extends PageGeneratorGeneric {
 	_filename = "page/template-page-renderdemo.hbs";
 	_page = "renderdemo.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "Renderer Demo";
 	_navbarDescription = "Edit the JSON on the left, and see the results on the right.";
@@ -383,6 +397,8 @@ class _PageGeneratorRenderdemo extends PageGeneratorGeneric {
 class _PageGeneratorSearch extends PageGeneratorGeneric {
 	_filename = "page/template-page-search.hbs";
 	_page = "search.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "搜索";
 	_pageDescription = "DND 5e 站内搜索工具，快速查找法术、怪物、物品和规则。";

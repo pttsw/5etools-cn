@@ -3,6 +3,8 @@ import {PageGeneratorManagerBase} from "./generate-pages-page-generator.js";
 
 class _PageGeneratorManagebrew extends PageGeneratorManagerBase {
 	_page = "managebrew.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = "管理自制内容";
 	_navbarDescription = "查看、新增、删除自制内容。";
@@ -15,6 +17,8 @@ class _PageGeneratorManagebrew extends PageGeneratorManagerBase {
 
 class _PageGeneratorManageprerelease extends PageGeneratorManagerBase {
 	_page = "manageprerelease.html";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_pageTitle = I18nUtil.get("page.manageprelease.manage_prerelease_content");
 	_navbarDescription = I18nUtil.get("page.manageprelease.manage_prerelease_content_subtitle");

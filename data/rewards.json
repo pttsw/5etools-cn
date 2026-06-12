@@ -166,6 +166,28 @@
 			]
 		},
 		{
+			"ENG_name": "Blasphemous Charm",
+			"name": "亵渎魅惑",
+			"source": "RHW",
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"哈达之欲|XPHB"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你可以使用此魅惑作为一个{@action 魔法|XPHB}动作来施放{@spell 哈达之欲|XPHB}，且无需材料成分。当你拥有此魅惑时，你无法再次获得它。"
+			]
+		},
+		{
 			"ENG_name": "Blessing of Bloody Might",
 			"name": "血腥伟力祝福",
 			"source": "BMT",
@@ -1403,6 +1425,28 @@
 			]
 		},
 		{
+			"ENG_name": "Charm of Electromancy",
+			"name": "电魔法魅惑",
+			"source": "RHW",
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"3": [
+									"心灵遥控|XPHB"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"此魅惑有3次充能。你可以消耗此魅惑的1次充能来施放{@spell 心灵遥控|XPHB}法术。一旦其所有充能被耗尽，此魅惑将从你身上消失。"
+			]
+		},
+		{
 			"ENG_name": "Charm of Euryale",
 			"name": "尤瑞艾莉护咒",
 			"source": "BMT",
@@ -1411,6 +1455,36 @@
 			"entries": [
 				"作为动作，你可以从你的双眼中在一处30尺锥状空间内释放一道石化的魔法波。每个处于该区域内的生物必须进行一次{@dc 15}的体质豁免检定。豁免失败则生物进入{@condition 石化}状态一小时。豁免成功则部分石化并进入{@condition 束缚}状态。一个{@condition 束缚}的生物可在其的每回合结束时重复进行豁免，成功则结束自身的该效应。",
 				"一旦你使用该护咒之后，该护咒从你身上消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Exorcism",
+			"name": "驱魔魅咒",
+			"source": "RHW",
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"驱逐善恶|XPHB",
+									"移除诅咒|XPHB"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你可以使用该护符作为一个{@action 魔法|XPHB}动作来施放{@spell 驱逐善恶|XPHB}或{@spell 移除诅咒|XPHB}，且无需材料成分。该护符持续7天或直到你使用它。智力、感知或魅力是你使用该护符法术时的施法属性（每次获得此护符时选择）。"
 			]
 		},
 		{
@@ -1567,6 +1641,36 @@
 			],
 			"entries": [
 				"这个护咒允许你以一个动作施放{@spell 闪电束}法术（豁免{@dc 15}），且无需任何法术成分。一旦使用，这个护咒就会消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of Malediction",
+			"name": "恶咒魅惑",
+			"source": "RHW",
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"脆弱诅咒|xphb#3",
+									"降咒|XPHB"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你可以将灾祸魅惑作为一个魔法动作使用，以施放{@spell 脆弱诅咒|XPHB}（3环版本）或{@spell 降咒|XPHB}，且无需材料成分。该魅惑持续7天或直到你使用它。智力、感知或魅力是此魅惑法术的施法属性（每次获得此魅惑时选择）。"
 			]
 		},
 		{
@@ -1736,6 +1840,36 @@
 			"type": "Charm",
 			"entries": [
 				"这个护咒有九发充能。你可以使用一个动作从护咒中消耗一发充能来获得 30 点临时生命值。在接下来的一个小时里，你的眼睛变成了完全黑暗的空洞，你不能被{@condition 魅惑}或{@condition 恐慌}。一旦所有充能都用完了，这个护符就会从你身上消失。"
+			]
+		},
+		{
+			"ENG_name": "Charm of the Black Rose",
+			"name": "漆黑玫瑰魅惑",
+			"source": "RHW",
+			"type": "Charm",
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"limited": {
+								"1": [
+									"不谐低语|xphb#5"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你可以消耗此魅惑来获得以下效应之一：",
+				{
+					"type": "list",
+					"items": [
+						"你在24小时内为影响{@creature 西斯提库斯的索思爵士|RHW|索思爵士的}态度而进行的属性检定上具有{@variantrule 优势|XPHB}。",
+						"你施放{@spell 不谐低语|XPHB}（5环版本，法术豁免{@dc 17}）。"
+					]
+				},
+				"一旦你使用了任一效应，魅惑便会消失。"
 			]
 		},
 		{
@@ -2085,7 +2219,7 @@
 			],
 			"type": "Charm",
 			"entries": [
-				"One sword in your possession becomes a {@item 屠龙者} or {@item 巨人屠杀者} (DM's choice) for the next 9 days. The charm then vanishes from you and the weapon returns to normal."
+				"你持有的这把剑将在接下来的9天内变为一把{@item 屠龙者}或{@item 巨人屠杀者}（由DM选择）。随后，该魔法效果将从你身上消失，武器也将恢复原状。"
 			]
 		},
 		{
@@ -3354,7 +3488,7 @@
 							"type": "entries",
 							"page": 194,
 							"entries": [
-								"角色被诅咒感染{@creature 凶咒狼人|VRGR}的狼化症（见{@book 第五章|VRGR|5}）。"
+								"该角色被诅咒为{@creature 凶咒狼人|VRGR} {@variantrule 玩家角色|MM|兽化}（参见{@book 第五章|VRGR|5}）。"
 							]
 						},
 						{

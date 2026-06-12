@@ -1,6 +1,64 @@
 {
 	"feat": [
 		{
+			"ENG_name": "Aberrant Anatomy",
+			"name": "异变内构",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"expertise": [
+				{
+					"perception": true
+				}
+			],
+			"senses": [
+				{
+					"blindsight": 15
+				}
+			],
+			"entries": [
+				"你曾接触遥远国度的异界恐怖，这使得你的身体向超自然的结构扭曲。你获得以下特性。",
+				{
+					"ENG_name": "Breathless",
+					"name": "无呼无息",
+					"type": "entries",
+					"entries": [
+						"你可以屏息一小时。"
+					]
+				},
+				{
+					"ENG_name": "Extrasensory Perception",
+					"name": "超感知觉",
+					"type": "entries",
+					"entries": [
+						"若你不具有{@skill 察觉|XPHB}技能的熟练，你获得之。你还会获得该技能的{@variantrule 专精|XPHB}。",
+						"此外，你具有15尺{@sense 盲视|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Warping Flesh",
+					"name": "血肉扭曲",
+					"type": "entries",
+					"entries": [
+						"在你进行一次{@variantrule D20 检定|XPHB}检定且{@dice d20}掷出1后，你感染的异常力量立即爆发，扭曲你对血肉的控制，你立即进行一次体质豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则陷入{@condition 震慑|XPHB}状态，持续至你的下个回合结束。"
+					]
+				}
+			],
+			"hasFluffImages": true,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Aberrant Dragonmark",
 			"name": "异种龙纹",
 			"source": "EFA",
@@ -65,7 +123,8 @@
 						"当你施放此专长的1环法术时，你可以消耗一个你的{@variantrule 生命值骰|XPHB}并掷骰。如果你掷出偶数，你获得等于掷骰数值的{@variantrule 临时生命值|XPHB}。如果你掷出奇数，你30尺内的一个生物（不包括你）受到等于掷骰数值的力场伤害。如果射程内没有其他生物，你受到该伤害。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Aberrant Dragonmark",
@@ -730,7 +789,7 @@
 				}
 			],
 			"traitTags": [
-				"Speed"
+				"速度"
 			],
 			"entries": [
 				"你获得以下增益。",
@@ -758,7 +817,8 @@
 						"你可以在仅移动5尺后进行{@variantrule 跳远|XPHB|长}或{@variantrule 跳高|XPHB}。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Baleful Scion",
@@ -2204,7 +2264,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Boon of Skill",
@@ -2308,7 +2369,7 @@
 				}
 			],
 			"traitTags": [
-				"Speed"
+				"速度"
 			],
 			"entries": [
 				"你获得以下增益。",
@@ -2942,7 +3003,8 @@
 						"当你使用此增益施放{@spell 妖火|XPHB}而不消耗法术位时，受到伤害不会打断你对该法术的{@status 专注|XPHB}。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Cloying Mists",
@@ -4102,6 +4164,58 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Echoing Soul",
+			"name": "灵魂回荡",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"skillProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"entries": [
+				"你能感受到来自过去或是另一个生命的回响。你获得以下特性。",
+				{
+					"ENG_name": "Channeled Prowess",
+					"name": "通灵能力",
+					"type": "entries",
+					"entries": [
+						"你获得两项你选择技能的熟练。",
+						"此外，选择一项你具有熟练的技能。你获得该技能的{@variantrule 专精|XPHB}。每当你完成{@variantrule 长休|XPHB}时，你可以改变你在本增益的选择。"
+					]
+				},
+				{
+					"ENG_name": "Inherent Tongues",
+					"name": "原初之舌",
+					"type": "entries",
+					"entries": [
+						"你知晓一门你从《玩家手册》的语言表中选择的额外语言。"
+					]
+				},
+				{
+					"ENG_name": "Intrusive Echoes",
+					"name": "恼人回音",
+					"type": "entries",
+					"entries": [
+						"在你进行一次{@variantrule D20 检定|XPHB}且{@dice d20}掷出1后，你灵魂中另一世的记忆和感受涌上心头，几乎将你吞噬，你立即进行一次体质豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则陷入{@condition 失能|XPHB}状态，持续至你的下个回合结束。{@condition 失能|XPHB}期间，你的{@variantrule 速度|XPHB}减半。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Eldritch Adept",
 			"name": "魔能导师",
 			"source": "TCE",
@@ -4769,6 +4883,73 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Gathered Whispers",
+			"name": "汇灵低语",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"传讯术|xphb#c"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"卜筮术|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"只有你能听见的精魂低语困扰着你。你获得以下特性。",
+				{
+					"ENG_name": "Spirit Whispers",
+					"name": "灵魂低语",
+					"type": "entries",
+					"entries": [
+						"你习得戏法{@spell 传讯术|XPHB}，你能无需材料成分地施展该法术。此外，你始终准备着法术{@spell 卜筮术|XPHB}。你可以无需法术位且无需法术成分地施展该法术，你必须完成{@variantrule 长休|XPHB}才能再次以此法施展之。你也能够以你拥有的任意环阶的法术位施展该法术。",
+						"你该增益的施法属性是智力、感知或魅力。（在你选取该专长时选择）"
+					]
+				},
+				{
+					"ENG_name": "Unearthly Scream",
+					"name": "怪谲尖嚎",
+					"type": "entries",
+					"entries": [
+						"当你被一次攻击检定命中时，你能以{@variantrule 反应|XPHB}引导对你作祟的精魂发出保护你的异界尖嚎。你能将你的{@variantrule 熟练|XPHB|熟练加值}加入对抗该次攻击的AC中，这可能使之改为失手。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，你在完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Voices from Beyond",
+					"name": "悠远之声",
+					"type": "entries",
+					"entries": [
+						"在你进行一次{@variantrule D20 检定|XPHB}且{@dice d20}掷出1后，你耳畔萦绕的声音变得异常刺耳，你立即进行一次感知豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则陷入{@condition 耳聋|XPHB}状态，持续至你的下个回合结束。{@condition 耳聋|XPHB}期间，你的属性和攻击检定具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Genie Magic",
 			"name": "巨灵魔法",
 			"source": "FRHoF",
@@ -5140,7 +5321,8 @@
 						"你能够使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Detection",
@@ -5189,7 +5371,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Finding",
@@ -5238,7 +5421,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Handling",
@@ -5294,7 +5478,8 @@
 						"作为一个{@action 魔法|XPHB}动作，你对你30尺内能看见的一只野兽或怪兽施加命令。目标必须成功通过一次感知豁免检定（DC 8加上你的感知调整值和{@variantrule 熟练|XPHB|熟练加值}）否则获得{@condition 恐慌|XPHB}状态直到你的下个回合开始。你可以使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，且你在完成一次{@variantrule 长休|XPHB}后恢复所有已消耗的使用次数。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Healing",
@@ -5342,7 +5527,8 @@
 						"你现在可以使用你的{@feat 医疗龙纹|EFA}专长的治愈之触增益来施放{@spell 疗伤术|XPHB}而不消耗法术位，次数等于你的{@variantrule 熟练|XPHB|熟练加值}，并且当你完成一次{@variantrule 长休|XPHB}时恢复所有已消耗的使用次数。此外，当你施放{@spell 疗伤术|XPHB}并掷骰决定恢复的{@variantrule 生命值|XPHB}数值时，你可以将掷骰结果中的任何1或2视为3。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Hospitality",
@@ -5390,7 +5576,8 @@
 						"当你施放{@spell 净化饮食|XPHB}时，你可以修改该法术使其不产生正常效果，而是让你选择的30尺内的每个生物得到恢复。每个受影响的生物的{@condition 力竭|XPHB}等级缩小1级，并且该生物获得等于你的{@variantrule 熟练|XPHB|熟练加值}加上你的智力、感知或魅力调整值（在你选择此专长时决定）的{@variantrule 临时生命值|XPHB}。一旦你使用此增益修改了该法术，直到你完成一次{@variantrule 长休|XPHB}前不能再这样做。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Making",
@@ -5439,7 +5626,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Passage",
@@ -5488,7 +5676,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Scribing",
@@ -5536,7 +5725,8 @@
 						"当你施放{@spell 通晓语言|XPHB}时，你可以修改该法术以包含你30尺内能看见的至多三个自愿生物。每个选民生物在持续时间内也获得该法术的增益。此外，在法术持续时间内，你和选民生物可以在彼此1英里范围内通过心灵感应相互交流。一旦你使用此增益修改了该法术，直到你完成一次{@variantrule 长休|XPHB}前，你无法再次这样做。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Sentinel",
@@ -5584,7 +5774,8 @@
 						"当你使用你的{@feat 守护龙纹|EFA}专长的警醒护卫增益时，你还可以作为该同一{@variantrule 反应|XPHB}的一部分用武器或{@variantrule 徒手打击|XPHB}进行一次攻击。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Shadow",
@@ -5633,7 +5824,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Storm",
@@ -5682,7 +5874,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Greater Mark of Warding",
@@ -5730,7 +5923,8 @@
 						"当一个生物对你或你30尺内能看见的生物进行攻击检定时，你可以采取一个{@variantrule 反应|XPHB}来使该掷骰获得{@variantrule 劣势|XPHB}。你可以使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，且你在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Guile of the Cloud Giant",
@@ -6560,7 +6754,7 @@
 				{
 					"level": 4,
 					"feat": [
-						"索兰尼亚扈从|DSotDQ"
+						"索拉尼亚侍从|DSotDQ"
 					]
 				}
 			],
@@ -6612,7 +6806,7 @@
 				{
 					"level": 4,
 					"feat": [
-						"索兰尼亚扈从|DSotDQ"
+						"索拉尼亚侍从|DSotDQ"
 					]
 				}
 			],
@@ -6664,7 +6858,7 @@
 				{
 					"level": 4,
 					"feat": [
-						"索兰尼亚扈从|DSotDQ"
+						"索拉尼亚侍从|DSotDQ"
 					]
 				}
 			],
@@ -6778,7 +6972,8 @@
 						"若你身处日光下，你能以{@variantrule 附赠动作|XPHB}消耗一枚{@variantrule 生命值骰|XPHB}，掷骰并恢复等于掷骰结果的{@variantrule 生命值|XPHB}。此增益一经使用，直至完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}你都无法再次使用。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Lightly Armored",
@@ -6880,6 +7075,90 @@
 					]
 				}
 			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Living Shadow",
+			"name": "活体幽影",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"法师之手|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"因你投出的阴影被活化了，它无处不在，甚至在某些时候会按照自己的意志行动。你获得以下特性。",
+				{
+					"ENG_name": "Grasping Shadow",
+					"name": "攫取之影",
+					"type": "entries",
+					"entries": [
+						"你习得法术{@spell 法师之手|XPHB}，你能无需成分地施展该法术。你该法术的施法属性是智力、感知或魅力。（在你选取该专长时选择）"
+					]
+				},
+				{
+					"ENG_name": "Lengthened Strike",
+					"name": "延伸打击",
+					"type": "entries",
+					"entries": [
+						"当你作为攻击或魔法动作的一部分，在你的回合进行近战攻击检定时，你的影子会伸长来协助你，你能提升你该次攻击的触及范围10尺。你能使用此特性的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，你在完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Ominous Will",
+					"name": "不祥意志",
+					"type": "entries",
+					"entries": [
+						"在你进行一次{@variantrule D20 检定|XPHB}且{@dice d20}掷出1后，你的影子试图表现其自己的意志，你立即进行一次感知豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则陷入{@condition 失能|XPHB}状态，持续至你的下个回合开始。下个回合开始时，你必须投掷阴影意志表来决定你该回合的行动。",
+						{
+							"type": "table",
+							"caption": "阴影意志",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"1d8",
+								"行为"
+							],
+							"rows": [
+								[
+									"1",
+									"你不执行动作或{@variantrule 附赠动作|XPHB}，使用你全部移动力来移动。投掷{@dice 1d4}决定方向：1，北；2，东；3，南；4，西。"
+								],
+								[
+									"2-6",
+									"你不移动或执行{@variantrule 附赠动作|XPHB}，且你对触及范围内一名随机生物执行{@action 攻击|XPHB}来发动一次近战攻击。若触及范围内没有，你不执行动作。"
+								],
+								[
+									"7-8",
+									"你陷入{@condition 倒地|XPHB}状态并结束你的回合。"
+								]
+							]
+						}
+					]
+				}
+			],
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{
@@ -7710,7 +7989,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Finding",
@@ -7838,7 +8118,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Handling",
@@ -7967,7 +8248,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Healing",
@@ -8095,7 +8377,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Hospitality",
@@ -8224,7 +8507,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Making",
@@ -8349,7 +8633,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Passage",
@@ -8368,7 +8653,7 @@
 				}
 			],
 			"traitTags": [
-				"Speed"
+				"速度"
 			],
 			"additionalSpells": [
 				{
@@ -8480,7 +8765,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Scribing",
@@ -8613,7 +8899,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Sentinel",
@@ -8741,7 +9028,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Shadow",
@@ -8866,7 +9154,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Storm",
@@ -9002,7 +9291,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mark of Warding",
@@ -9132,7 +9422,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Martial Adept",
@@ -9305,6 +9596,47 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Mist Walker",
+			"name": "迷雾行者",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"entries": [
+				"你知道怎么摆脱迷雾的束缚，但这种自由有着代价：若你停留某处过久，迷雾便会上门汲命。你获得以下特性。",
+				{
+					"ENG_name": "Domain Traveler",
+					"name": "领域旅者",
+					"type": "entries",
+					"entries": [
+						"当你进入迷雾意图到达某个特定领域时，你视为持有绑定该领域的迷雾护符Mist talisman。为使用该特性，你需知晓那个你选择为目的地领域的名称，但你无需曾到访该领域。该特性无法令你绕过因黑暗领主意志而封闭的领域边界。"
+					]
+				},
+				{
+					"ENG_name": "Mist Walk",
+					"name": "迷雾行走",
+					"type": "entries",
+					"entries": [
+						"当你受到伤害或当你为避免或结束{@condition 受擒|XPHB}或{@condition 束缚|XPHB}状态进行的豁免失败时，你能够以{@variantrule 反应|XPHB}传送至多15尺至一处你可见的未占据空间。你能使用此特性的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，你在完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Poisoned Roots",
+					"name": "已被毒害的根源",
+					"type": "entries",
+					"entries": [
+						"当你完成{@variantrule 长休|XPHB}时，你半径10里的世界变为吸取你生命的虹吸器。每当你在该区域完成{@variantrule 短休|XPHB}时，你进行一次体质豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则你不会因此次休息获得增益。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Mobile",
 			"name": "灵活移动",
 			"source": "PHB",
@@ -9313,7 +9645,7 @@
 				"飙速跑者|XPHB"
 			],
 			"traitTags": [
-				"Speed"
+				"速度"
 			],
 			"entries": [
 				"你十分灵敏而快速。你获得下列增益：",
@@ -9435,7 +9767,8 @@
 						"当你的坐骑受某效应影响而需要进行敏捷豁免来减半伤害时，如果豁免成功则可以不承受伤害，豁免失败则伤害减半。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Mounted Combatant",
@@ -10161,7 +10494,8 @@
 						"你拥有一个额外的法术位来施放由你的龙纹专长所授予的法术。该法术位的等级为你等级的一半（向上取整），最高为5环。当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}时，你恢复已消耗的法术位。你只能使用此法术位来施放因你的龙纹专长或此专长的龙纹预备增益而预备的法术。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Prodigy",
@@ -10630,7 +10964,8 @@
 						"双刃弯刀在你持握时具有{@itemProperty F|PHB|灵巧}属性。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Righteous Heritor",
@@ -11268,6 +11603,99 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Second Skin",
+			"name": "第二形态",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"变身术|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你有着不为人知的另一面：野兽、恐怖复仇者或是行走的夜魇。你获得以下特性。",
+				{
+					"ENG_name": "Alternate Form",
+					"name": "后备形貌",
+					"type": "entries",
+					"entries": [
+						"你始终准备着法术{@spell 变身术|XPHB}。你可以无需法术位且无需法术成分地施展该法术，你必须完成{@variantrule 长休|XPHB}才能再次以此法施展之。你也能够以你拥有的合适环阶的法术位施展该法术。你该法术的施法属性是智力、感知或魅力。（在你选取该专长时选择）",
+						"当你以该特性无需法术位的施展{@spell 变身术|XPHB}时，该法术无需{@status 专注|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Involuntary Change",
+					"name": "被迫改变",
+					"type": "entries",
+					"entries": [
+						"某些情况会令你被迫触发你的变形。选取该专长时，投掷改变催化表以决定触发你变形的因素。",
+						"在你经历催化后，在你的下个回合开始时，你进行一次魅力豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则你立即使用后备形貌来无需法术位地施展{@spell 变身术|XPHB}。若你已经消耗了该特性的使用权，则你改为陷入{@condition 震慑|XPHB}状态持续至你的下个回合开始。",
+						{
+							"type": "table",
+							"caption": "变化因素",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"1d6",
+								"因素"
+							],
+							"rows": [
+								[
+									"1",
+									"看见特定的月相"
+								],
+								[
+									"2",
+									"闻到特定种类花的香气"
+								],
+								[
+									"3",
+									"听见神庙的钟声"
+								],
+								[
+									"4",
+									"听到某个特定的旋律"
+								],
+								[
+									"5",
+									"用裸露的皮肤触碰纯银"
+								],
+								[
+									"6",
+									"看见与某个特定人物相似的人"
+								]
+							]
+						}
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Sentinel",
 			"name": "哨兵",
 			"source": "PHB",
@@ -11519,7 +11947,18 @@
 						"当你被一个你用{@spell 脆弱诅咒|XPHB}诅咒的生物用攻击检定命中时，该生物受到等同于你{@variantrule 熟练|XPHB|熟练加值}的心灵伤害。一个生物每回合只会受到此伤害一次。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Sharp Eye",
+			"name": "锐眼",
+			"source": "RHW",
+			"category": "O",
+			"entries": [
+				"当你执行搜索或研究动作时，你能令你作为该动作一部分的任意属性检定具有{@variantrule 优势|XPHB}。你能使用此特性的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。若该次属性检定失败，你不会消耗本特性的使用次数。"
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Sharpshooter",
@@ -11539,7 +11978,8 @@
 						"你用拥有熟练项的远程武器发动攻击前，可以选择使该次攻击的攻击检定承受 -5减值。若本次攻击中，则其伤害掷骰获得 +10加值。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Sharpshooter",
@@ -11799,7 +12239,8 @@
 			],
 			"entries": [
 				"你可以从下列选项中选择任意三个{@table 技能|PHB}或{@filter 工具|items|type=工具;工匠工具;乐器;游戏套装;载具（陆地）;载具（水上）}来获得熟练项。"
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Skilled",
@@ -12074,7 +12515,7 @@
 				}
 			],
 			"traitTags": [
-				"Speed"
+				"速度"
 			],
 			"entries": [
 				"你获得以下增益。",
@@ -12208,7 +12649,8 @@
 						"你习得一个需要进行攻击检定的戏法。从{@filter 吟游诗人|spells|level=0|class=吟游诗人|spell attack=m;r;o}、{@filter 牧师|spells|level=0|class=牧师|spell attack=m;r;o}、{@filter 德鲁伊|spells|level=0|class=德鲁伊|spell attack=m;r;o}、{@filter 术士|spells|level=0|class=术士|spell attack=m;r;o}、{@filter 魔契师|spells|level=0|class=魔契师|spell attack=m;r;o}、{@filter 法师|spells|level=0|class=法师|spell attack=m;r;o}中选择其一，并从其相应的法术列表里选择该戏法。你施展该戏法的施法属性取决于你选择的职业：吟游诗人、术士、魔契师用魅力；牧师、德鲁伊用感知；法师用智力。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Spell Sniper",
@@ -12389,7 +12831,7 @@
 				}
 			],
 			"traitTags": [
-				"Speed"
+				"速度"
 			],
 			"skillProficiencies": [
 				{
@@ -12789,7 +13231,8 @@
 						]
 					}
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Strixhaven Initiate",
@@ -13305,6 +13748,33 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Survivor",
+			"name": "生还者",
+			"source": "RHW",
+			"category": "O",
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Hypervigilance",
+					"name": "杯弓蛇影",
+					"type": "entries",
+					"entries": [
+						"每当你进行{@variantrule 先攻|XPHB}时，若{@dice d20}骰值不超过9，你能够重新投掷D20。你必须使用新的结果。"
+					]
+				},
+				{
+					"ENG_name": "Steel Yourself",
+					"name": "我心如铁",
+					"type": "entries",
+					"entries": [
+						"当你为避免或结束{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态进行的豁免失败时，你能够以{@variantrule 反应|XPHB}在结果中加入加值，这可能令检定改为成功。加值等于你的{@variantrule 熟练|XPHB|熟练加值}。",
+						"该{@variantrule 反应|XPHB}一经使用，直至完成{@variantrule 长休|XPHB}你都无法再如此做。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Svirfneblin Magic",
 			"name": "斯涅布力魔法",
 			"source": "MTF",
@@ -13352,6 +13822,80 @@
 			"entries": [
 				"你继承了你祖先的天生施法能力。这项能力允许你随意对自己施放{@spell 回避侦测}，而不需要材料成分。你也可以每日一次施展下列每项法术：{@spell 目盲术/耳聋术}、{@spell 朦胧术}和{@spell 易容术}。当你完成一次长休息后，你会重新获得施展这些法术的能力。",
 				"你的施法属性为智力，并且你以它们的最低环级来施放它们。"
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Symbiotic Being",
+			"name": "共生存在",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"奥秘",
+							"欺瞒",
+							"历史",
+							"威吓",
+							"洞悉",
+							"调查",
+							"自然",
+							"宗教",
+							"察觉",
+							"游说"
+						]
+					}
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"entries": [
+				"有第二个存在寄宿在你的体内，它为你提供知识和援助，但也在推进自己的计划。你获得以下特性。",
+				{
+					"ENG_name": "Entwined Existence",
+					"name": "交织存在",
+					"type": "entries",
+					"entries": [
+						"共生体无法被指定为目标。若你死亡，你的共生体也会死亡。若你重获生命，你的共生体也复活。"
+					]
+				},
+				{
+					"ENG_name": "Second Mind",
+					"name": "第二心智",
+					"type": "entries",
+					"entries": [
+						"你获得以下技能之一的熟练：{@skill 奥秘|XPHB}、{@skill 欺瞒|XPHB}、{@skill 历史|XPHB}、{@skill 威吓|XPHB}、{@skill 洞悉|XPHB}、{@skill 调查|XPHB}、{@skill 自然|XPHB}、{@skill 宗教|XPHB}、{@skill 察觉|XPHB}或{@skill 游说|XPHB}。你还会知晓一门你从《玩家手册》的语言表中选择的额外语言。"
+					]
+				},
+				{
+					"ENG_name": "Sustained Symbiosis",
+					"name": "恒久共生",
+					"type": "entries",
+					"entries": [
+						"当你的豁免检定失败时，你能以{@variantrule 反应|XPHB}消耗一枚你的生命骰。投掷该生命骰并将骰值加入豁免检定中，这可能使之改为成功。",
+						"你可以使用此增益的次数等同于你的{@variantrule 熟练|XPHB|熟练加值}；在完成{@variantrule 长休|XPHB}后，你重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Symbiotic Agenda",
+					"name": "共生目标",
+					"type": "entries",
+					"entries": [
+						"当你在你进行一次{@variantrule D20 检定|XPHB}且{@dice d20}掷出1后，你的共生体将试图控制你，你立即进行一次魅力豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则你陷入{@condition 魅惑|XPHB}状态，持续{@dice 1d12}小时。{@condition 魅惑|XPHB}期间，你必须尝试服从共生体的命令并推进其计划，具体由DM决定。每当你受到伤害时，你可以重复豁免，成功则提前终止该效应。",
+						"当你违背共生体的计划时，DM也可决定你需要进行此豁免。"
+					]
+				}
 			],
 			"translator": "不全书"
 		},
@@ -13660,6 +14204,55 @@
 			"category": "O",
 			"entries": [
 				"当一名位于你60尺内可见的盟友消耗{@variantrule 英雄激励|XPHB}时，若你没有英雄激励，则你获得{@variantrule 英雄激励|XPHB}。你可使用此增益的次数等同于等于你的{@variantrule 熟练|XPHB|熟练加值}，在完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后你重获所有已消耗的使用次数。"
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Touch of Death",
+			"name": "往生咒",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"颤栗之触|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"死亡之力蕴你体内，稍有挑衅便会爆发。你获得以下特性。",
+				{
+					"ENG_name": "Death Touch",
+					"name": "死亡之触",
+					"type": "entries",
+					"entries": [
+						"你习得法术{@spell 颤栗之触|XPHB}，你能无需法术成分地施展该法术。你以该法术造成的暗蚀伤害无视{@spell 抵抗术|XPHB}。你该法术的施法属性是智力、感知或魅力。（在你选取该专长时选择）"
+					]
+				},
+				{
+					"ENG_name": "Pull of the Grave",
+					"name": "坟冢之引",
+					"type": "entries",
+					"entries": [
+						"你的{@variantrule 死亡豁免检定|XPHB|死亡豁免检定}具有{@variantrule 劣势|XPHB}。"
+					]
+				}
 			],
 			"translator": "不全书"
 		},
@@ -14063,6 +14656,70 @@
 					]
 				}
 			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Watchers",
+			"name": "守望",
+			"source": "RHW",
+			"category": "DG",
+			"prerequisite": [
+				{
+					"campaign": [
+						"鸦阁魔域"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									"野兽感官|xphb",
+									"动物交谈|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"某个非自然存在始终监视着你，它化作乱窜的害兽或是其他诡异生物出现。你获得以下特性。",
+				{
+					"ENG_name": "Borrowed Eyes",
+					"name": "借目",
+					"type": "entries",
+					"entries": [
+						"你始终准备着法术{@spell 野兽感官|XPHB}和{@spell 动物交谈|XPHB}。你可以无需法术位地施展每道法术，你必须完成{@variantrule 长休|XPHB}才能再次以此法施展之。你也能够以你拥有的合适环阶的法术位施展这些法术。"
+					]
+				},
+				{
+					"ENG_name": "Heightened Suspicion",
+					"name": "疑神疑鬼",
+					"type": "entries",
+					"entries": [
+						"每当你执行{@action 搜索|XPHB}时，你能投掷{@dice 1d4}并将骰值加入你作为该动作的一部分进行的任意属性检定中。"
+					]
+				},
+				{
+					"ENG_name": "Incessant Watchers",
+					"name": "无终监视",
+					"type": "entries",
+					"entries": [
+						"你对抗法术{@spell 探知术|XPHB}时进行的豁免具有{@variantrule 劣势|XPHB}。",
+						"此外，当你在你进行一次{@variantrule D20 检定|XPHB}且{@dice d20}掷出1后，妄想的威胁几乎要让你崩溃，你立即进行一次感知豁免（DC为13加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则你的{@variantrule D20 检定|XPHB|D20 检定}具有{@variantrule 劣势|XPHB}，持续1分钟。你能在每个你的回合结束时重复豁免，成功则提前终止该效应。"
+					]
+				}
+			],
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{

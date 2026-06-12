@@ -10690,7 +10690,7 @@
 							"ENG_name": "Equipment:",
 							"name": "装备：",
 							"type": "item",
-							"entry": "选择 A 或 B：(A) {@item 矛|XPHB}、{@item 轻弩|XPHB}、20 {@item 弩矢|XPHB|弩矢}、{@item 赌具|XPHB}（同上所选）、{@item 附盖提灯|XPHB}、{@item 镣铐|XPHB}、{@item 箭袋|XPHB}（译注：原文如此）、{@item 旅行服装|XPHB}、12 GP；或 (B) 50 GP"
+							"entry": "选择 A 或 B：(A) {@item 矛|XPHB}、{@item 轻弩|XPHB}、20 {@item 弩矢|XPHB|弩箭}、{@item 赌具|XPHB}（同上所选）、{@item 附盖提灯|XPHB}、{@item 镣铐|XPHB}、{@item 箭袋|XPHB}（译注：原文如此）、{@item 旅行服装|XPHB}、12 GP；或 (B) 50 GP"
 						}
 					]
 				}
@@ -11302,6 +11302,145 @@
 		{
 			"ENG_name": "Haunted One",
 			"name": "噩梦缠身",
+			"source": "RHW",
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"生还者|rhw": true
+				},
+				{
+					"anyFromCategory": {
+						"category": [
+							"DG"
+						]
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"arcana": true,
+					"survival": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						{
+							"equipmentType": "setGaming",
+							"displayName": "赌具（同上所选）"
+						},
+						"撬棍|xphb",
+						{
+							"item": "圣水|xphb",
+							"displayName": "圣水（1扁瓶）"
+						},
+						"镜子|xphb",
+						{
+							"item": "燃油|xphb",
+							"displayName": "燃油（2瓶）"
+						},
+						"信号笛|xphb",
+						"火绒盒|xphb",
+						"旅行服装|xphb",
+						{
+							"item": "火把|xphb",
+							"displayName": "火把",
+							"quantity": 5
+						},
+						"水袋|xphb",
+						{
+							"value": 1400
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 生还者|RHW}或一个你选择的{@filter 自选黑暗赠礼专长|feats|category=DG}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 奥秘|XPHB}和{@skill 求生|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "自选一套{@item 赌具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 赌具|XPHB}（同上），{@item 撬棍|XPHB}，{@item 圣水|XPHB}（1个{@item 扁瓶|XPHB}），{@item 镜子|XPHB}，{@item 燃油|XPHB}（2个扁瓶），{@item 信号笛|XPHB}，{@item 火绒盒|XPHB}，{@item 旅行服装|XPHB}，5支火把，{@item 水袋|XPHB}，以及14GP；或(B) 50GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Haunted One",
+			"name": "噩梦缠身",
 			"source": "VRGR",
 			"page": 34,
 			"otherSources": [
@@ -11311,7 +11450,7 @@
 				}
 			],
 			"reprintedAs": [
-				"Haunted One|RHW"
+				"噩梦缠身|RHW"
 			],
 			"skillProficiencies": [
 				{
@@ -11434,7 +11573,7 @@
 								],
 								[
 									"6",
-									"你曾被诅咒变成人狼，杀害了无辜的人们，现在诅咒已经解除，但死者们依然在找你作祟。"
+									"你曾被{@variantrule 玩家角色|MM|兽化}诅咒，并在后文被治愈。如今，你被自己曾屠杀的无辜者所困扰。"
 								],
 								[
 									"7",
@@ -14917,10 +15056,135 @@
 		{
 			"ENG_name": "Investigator",
 			"name": "调查员",
+			"source": "RHW",
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"int",
+								"wis",
+								"cha"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"锐眼|rhw": true
+				},
+				{
+					"anyFromCategory": {
+						"category": [
+							"DG"
+						]
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"investigation": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"易容工具|xphb",
+						"镣铐|xphb",
+						"铲子|xphb",
+						"旅行服装|xphb",
+						{
+							"displayName": "小瓶",
+							"item": "小瓶|xphb",
+							"quantity": 3
+						},
+						{
+							"value": 1600
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "智力，感知，魅力"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "{@feat 锐眼|RHW}或一个你选择的{@filter 自选黑暗赠礼专长|feats|category=DG}"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB}和{@skill 调查|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "{@item 易容工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 易容工具|XPHB}、{@item 镣铐|XPHB}、{@item 铲子|XPHB}、{@item 旅行服装|XPHB}、3个小瓶和16GP；或（B）50GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Investigator",
+			"name": "调查员",
 			"source": "VRGR",
 			"page": 35,
 			"reprintedAs": [
-				"Investigator|RHW"
+				"调查员|RHW"
 			],
 			"skillProficiencies": [
 				{
@@ -17242,6 +17506,132 @@
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Mist Wanderer",
+			"name": "迷雾漫游者",
+			"source": "RHW",
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"dex",
+								"con",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"anyFromCategory": {
+						"category": [
+							"DG"
+						]
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"survival": true,
+					"stealth": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyArtisansTool": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						{
+							"equipmentType": "toolArtisan",
+							"displayName": "工匠工具（同上）"
+						},
+						"油灯|xphb",
+						{
+							"item": "燃油|xphb",
+							"displayName": "燃油（5扁瓶）"
+						},
+						"小包|xphb",
+						"绳索|xphb",
+						"火绒盒|xphb",
+						"旅行服装|xphb",
+						{
+							"value": 3000
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "敏捷，体质，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "一个你选择的{@filter 自选黑暗赠礼专长|feats|category=DG}（推荐{@feat 迷雾行者|RHW}）"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 求生|XPHB}和{@skill 隐匿|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "选择一种{@item 工匠工具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：（A）{@item 工匠工具|XPHB}（同上），{@item 油灯|XPHB}，{@item 燃油|XPHB}（5个扁瓶），{@item 小包|XPHB}，{@item 绳索|XPHB}，{@item 火绒盒|XPHB}，{@item 旅行服装|XPHB}，以及30GP；或（B）50GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Moonwell Pilgrim",
@@ -20650,7 +21040,7 @@
 							"ENG_name": "Equipment:",
 							"name": "装备：",
 							"type": "item",
-							"entry": "一瓶黑色墨水，一支{@item 墨水笔|PHB}，五张纸，一副{@item 赌具|PHB}（与你所选熟练项一致），一枚{@item 玺戒|PHB}，一套{@item 高档服装|PHB}，以及一个装有18 gp的{@item 小包|PHB}"
+							"entry": "一瓶黑色墨水，一支{@item 赌具|PHB}，五卷纸，一套{@item 墨水笔|PHB}（与你所选熟练项一致），一个{@item 玺戒|PHB}，一套{@item 高档服装|PHB}，以及一个装着18gp的{@item 小包|PHB}。"
 						},
 						{
 							"ENG_name": "Tool Proficiencies:",
@@ -20678,7 +21068,7 @@
 					"name": "建议人物特征",
 					"type": "entries",
 					"entries": [
-						"你的角色对生命的看法因其崭新的宿命而改变。受宠者个性特点表格向你建议了你的角色可能会采用的特质以及来自{@item 万象无常牌}中可能促使该特质的卡牌。",
+						"在你的命运突然奇迹般地变成好运气之前，你曾过着艰难的生活。或许是一位慈悲的神明正好给了你最想要的东西。或许你偶然发现了一副{@item 万象无常牌}并抽出了一张强大的，具有正面效果的牌。又或许你从一位你不知道的远房亲戚那里继承了一笔小小财富。",
 						{
 							"type": "table",
 							"colStyles": [
@@ -24916,6 +25306,142 @@
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Spirit Medium",
+			"name": "灵媒",
+			"source": "RHW",
+			"edition": "one",
+			"ability": [
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								2,
+								1
+							]
+						}
+					}
+				},
+				{
+					"choose": {
+						"weighted": {
+							"from": [
+								"con",
+								"int",
+								"wis"
+							],
+							"weights": [
+								1,
+								1,
+								1
+							]
+						}
+					}
+				}
+			],
+			"feats": [
+				{
+					"anyFromCategory": {
+						"category": [
+							"DG"
+						]
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"insight": true,
+					"religion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"anyGamingSet": 1
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"匕首|xphb",
+						{
+							"equipmentType": "setGaming",
+							"displayName": "赌具（同上所选）"
+						},
+						"篮子|xphb",
+						"铃铛|xphb",
+						{
+							"displayName": "蜡烛",
+							"item": "蜡烛|xphb",
+							"quantity": 8
+						},
+						"墨水|xphb",
+						{
+							"item": "墨水|xphb",
+							"displayName": "墨水笔"
+						},
+						{
+							"item": "纸张|xphb",
+							"displayName": "纸张（5张）"
+						},
+						"火绒盒|xphb",
+						"旅行服装|xphb",
+						{
+							"value": 3200
+						}
+					],
+					"b": [
+						{
+							"value": 5000
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Ability Scores:",
+							"name": "属性值：",
+							"type": "item",
+							"entry": "体质，智力，感知"
+						},
+						{
+							"ENG_name": "Feat:",
+							"name": "专长：",
+							"type": "item",
+							"entry": "一个你选择的{@filter 自选黑暗赠礼专长|feats|category=DG}（推荐{@feat 汇灵低语|RHW}）"
+						},
+						{
+							"ENG_name": "Skill Proficiencies:",
+							"name": "技能熟练项：",
+							"type": "item",
+							"entry": "{@skill 洞悉|XPHB} 和 {@skill 宗教|XPHB}"
+						},
+						{
+							"ENG_name": "Tool Proficiencies:",
+							"name": "工具熟练",
+							"type": "item",
+							"entry": "自选一套{@item 赌具|XPHB}"
+						},
+						{
+							"ENG_name": "Equipment:",
+							"name": "装备：",
+							"type": "item",
+							"entry": "选择A或B：(A) {@item 匕首|XPHB}、{@item 赌具|XPHB}（同上）、{@item 篮子|XPHB}、{@item 铃铛|XPHB}、8支蜡烛、{@item 墨水|XPHB}、{@item 墨水|XPHB}笔、{@item 纸张|XPHB}（5张）、{@item 火绒盒|XPHB}、{@item 旅行服装|XPHB}，以及32 GP；或 (B) 50 GP"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Urban Bounty Hunter",

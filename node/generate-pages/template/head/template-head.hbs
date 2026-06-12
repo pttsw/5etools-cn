@@ -19,7 +19,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="mobile-web-app-capable" content="yes">
+{{#if isNoIndex}}	<meta name="robots" content="noindex,follow">
+{{else}}
 {{#if redirectHref}}	<meta name="robots" content="noindex,follow">
+{{/if}}
 {{/if}}
 
 	<title>{{#if pageTitle}}{{pageTitle}} - 5etools{{else}}龙与地下城中文资料站 - 5etools{{/if}}</title>

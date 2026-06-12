@@ -7942,7 +7942,7 @@
 			"rarity": "none",
 			"poison": true,
 			"entries": [
-				"当你与这本书产生共鸣时，你可以作为一个动作从它施放{@condition 失能}（进行一次{@dc 12}的豁免检定）。在你施放该condition之后，掷一个{@spell 移除诅咒}。如果掷出的结果为1-5，你无法在次日黎明之前再次使用这个特性。",
+				"这种毒素是从一只死亡或处于{@condition 失能}状态的兽化人，在其动物或混种形态下采集的鲜血中提炼而成。一个生物若受此毒素影响，必须成功通过一次{@dc 12}的体质豁免检定，否则将被诅咒感染{@variantrule 玩家角色|MM|兽化}（参见怪物图鉴）。该诅咒将持续存在，直到被{@spell 移除诅咒}法术或类似的魔法所移除。",
 				"狼人病的类型取决于用于制造毒药的狼人。要随机确定狼人病的类型，请掷一个{@dice d6}：",
 				{
 					"type": "table",
@@ -19517,7 +19517,7 @@
 					"name": "钱币",
 					"type": "entries",
 					"entries": [
-						"Five pieces of jewelry, each worth 100 gp, or ten gemstones, each worth 50 gp, appear at your feet."
+						"五件价值100GP的珠宝，或十颗价值50GP的宝石，出现在你的脚下。"
 					]
 				},
 				{
@@ -19525,7 +19525,7 @@
 					"name": "王冠",
 					"type": "entries",
 					"entries": [
-						"You learn the {@spell 交友术} cantrip. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). If you already know this cantrip, the card has no effect."
+						"你学会了戏法{@spell 交友术}。你可以选择使用你的智力、感知或魅力作为施法属性。如果你已经习得了这些戏法，这张卡就没有效果了。"
 					]
 				},
 				{
@@ -19533,7 +19533,7 @@
 					"name": "拂晓",
 					"type": "entries",
 					"entries": [
-						"This card invigorates you. For the next 8 hours, you can add your proficiency bonus to your initiative rolls."
+						"这张卡牌能让你精神振奋。在接下来的8个小时里，你可以将你的熟练加值加到你的主动检定上。"
 					]
 				},
 				{
@@ -19541,7 +19541,7 @@
 					"name": "天",
 					"type": "entries",
 					"entries": [
-						"You gain a +1 bonus to saving throws. This benefit lasts until you finish a long rest."
+						"你的豁免检定获得+1加值。此增益持续至你完成一次长休。"
 					]
 				},
 				{
@@ -19549,7 +19549,7 @@
 					"name": "命运",
 					"type": "entries",
 					"entries": [
-						"This card protects you against an untimely demise. The first time after drawing this card that you would drop to 0 hit points from taking damage, you instead drop to 1 hit point."
+						"这张卡牌能保护你免于过早死亡。在你抽到这张卡牌后，若你的生命值首次因受到伤害而降至0时，你将不会立即死亡，而是降至1点生命值。"
 					]
 				},
 				{
@@ -19557,7 +19557,7 @@
 					"name": "黄昏",
 					"type": "entries",
 					"entries": [
-						"This card supernaturally saps your energy. You have disadvantage on initiative rolls. This effect lasts until you finish a long rest, but it can be ended early by a {@spell 移除诅咒} spell or similar magic."
+						"这张卡牌会以超自然的方式消耗你的精力，使你在主动检定上处于劣势。此效果会持续到你完成长休为止，但可以通过使用法术{@spell 移除诅咒}或类似的法术提前结束。"
 					]
 				},
 				{
@@ -19565,7 +19565,7 @@
 					"name": "结束",
 					"type": "entries",
 					"entries": [
-						"This card is an omen of death. You take {@damage 2d10} necrotic damage, and your hit point maximum is reduced by an amount equal to the damage taken. This effect can't reduce your hit point maximum below 10 hit points. This reduction lasts until you finish a long rest, but it can be ended early by a {@spell 移除诅咒} spell or similar magic."
+						"这张牌预示着死亡。你受到{@damage 2d10}点暗蚀伤害，并且你的最大生命值将减少与所受伤害相等的数值。此效果不会使你的最大生命值降至10点以下。此减益效果将持续至你完成一次长休，但可以通过法术{@spell 移除诅咒}或类似的法术提前结束。"
 					]
 				},
 				{
@@ -22297,6 +22297,81 @@
 					]
 				}
 			}
+		},
+		{
+			"ENG_name": "Ebonbane",
+			"name": "乌黯祸主",
+			"source": "RHW",
+			"baseItem": "长剑|xphb",
+			"type": "M|XPHB",
+			"rarity": "artifact",
+			"reqAttune": true,
+			"sentient": true,
+			"weight": 3,
+			"weaponCategory": "martial",
+			"property": [
+				"V|XPHB"
+			],
+			"mastery": [
+				"削弱|XPHB"
+			],
+			"dmg1": "1d8",
+			"dmgType": "S",
+			"dmg2": "1d10",
+			"bonusWeapon": "+3",
+			"entries": [
+				"被称为暗影之地的恐惧领域的黑暗领主是乌黯祸主，一把有感知的剑。{@creature 乌黯祸主|RHW}在影裔庄园中使用其怪物数据卡。",
+				{
+					"ENG_name": "Bound to the Shadowlands",
+					"name": "与暗影之地连接",
+					"type": "entries",
+					"entries": [
+						"当你进入暗影之地之外的空间时，你的{@variantrule 同调|XPHB}立即结束，乌黯祸主则传送至影裔庄园的某处。"
+					]
+				},
+				{
+					"ENG_name": "Insatiable Rage",
+					"name": "永不满足的狂暴",
+					"type": "entries",
+					"entries": [
+						"此剑渴求毁灭。如果此剑在3天内没有杀死一个天族或类人生物，你将在下一个拂晓进行DC 17的魅力豁免检定。若豁免成功，你受到{@damage 8d8}点力场伤害。若豁免失败，你将被此剑支配，如同受到{@spell 支配怪物|XPHB}法术的影响，并且此剑会要求你献上一个天族或类人生物的血。当此剑的要求被满足时，该法术效应结束。"
+					]
+				},
+				{
+					"ENG_name": "Magic Weapon",
+					"name": "魔化武器",
+					"type": "entries",
+					"entries": [
+						"你使用这把魔法武器进行攻击检定和伤害掷骰时获得+3加值。当你用它命中一个天族或类人生物时，该攻击还会造成{@damage 3d6}点暗蚀伤害。",
+						"当你持握此武器时，对抗法术和其他魔法效应的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Sentience",
+					"name": "智能",
+					"type": "entries",
+					"entries": [
+						"乌黯祸主是一把具有智能的混乱邪恶武器，智力为17，感知为14，魅力为19。它拥有听觉和120尺范围内的{@sense 真实视觉|XPHB}。这把武器会说通用语，并能与其持有者进行心灵感应交流。当你与其同调时，乌黯祸主还能理解你所知晓的所有语言。"
+					]
+				},
+				{
+					"ENG_name": "Personality",
+					"name": "个性",
+					"type": "entries",
+					"entries": [
+						"乌黯祸主被创造出来是为了杀死圣武士凯特莉·影裔，它至今仍对善良的骑士们怀有燃烧的憎恨。乌黯祸主乐于看到善良被击败、希望被征服。这把剑会与任何协助其达成目标的持用者建立牵绊，但始终视持用者为仆从。"
+					]
+				},
+				{
+					"ENG_name": "Destroying Ebonbane",
+					"name": "摧毁乌黯祸主",
+					"type": "entries",
+					"entries": [
+						"摧毁乌黯祸主的唯一方法是使用四把钥匙锻造一件武器，并用它将乌黯祸主的{@variantrule 生命值|XPHB}降至0（参见乌黯祸主数据卡）。"
+					]
+				}
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Efreeti Bottle",
@@ -30143,10 +30218,36 @@
 		{
 			"ENG_name": "Harkon's Bite",
 			"name": "哈肯之咬",
+			"source": "RHW",
+			"rarity": "uncommon",
+			"reqAttune": "由类人生物",
+			"reqAttuneTags": [
+				{
+					"creatureType": "类人"
+				}
+			],
+			"wondrous": true,
+			"curse": true,
+			"bonusSavingThrow": "+1",
+			"entries": [
+				"一颗恐狼的牙齿悬挂在这条简易的绳项链上。当你佩戴这条项链时，你在属性检定和豁免检定中获得+1加值。",
+				{
+					"ENG_name": "Curse",
+					"name": "诅咒",
+					"type": "entries",
+					"entries": [
+						"这条项链被诅咒了。与项链同调会诅咒你；这个诅咒在{@creature 哈肯·卢卡斯|RHW}死亡前无法被移除。只要你仍然被诅咒，在满月之夜，你就会变成一只受DM控制的、为哈肯·卢卡斯服务的{@creature 狼人|XMM}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Harkon's Bite",
+			"name": "哈肯之咬",
 			"source": "VRGR",
 			"page": 137,
 			"reprintedAs": [
-				"Harkon's Bite|RHW"
+				"哈肯之咬|RHW"
 			],
 			"rarity": "uncommon",
 			"reqAttune": true,
@@ -32425,7 +32526,7 @@
 			"rarity": "rare",
 			"wondrous": true,
 			"entries": [
-				"这个小小的银色鱼钩上附有一根金色小羽毛。为使其产生效果，你必须将它系在鱼线的末端并沉入足够大的水域中（至少10立方尺）。每当你不间断地将其沉入水中1小时，骰一次{@dice d6}。骰值为6时，一条6寸长的魔法鱼耷拉在鱼钩尾部。被变出的鱼的颜色和效应由下表的掷骰决定。一旦该鱼钩变出了鱼，直到第二天黎明时，它都不能再如此做。",
+				"这个小小的银色鱼钩上附有一根金色小羽毛。为使其产生效果，你必须将它系在鱼线的末端并沉入足够大的水域中（至少10尺立方）。每当你不间断地将其沉入水中1小时，骰一次{@dice d6}。骰值为6时，一条6寸长的魔法鱼耷拉在鱼钩尾部。被变出的鱼的颜色和效应由下表的掷骰决定。一旦该鱼钩变出了鱼，直到第二天黎明时，它都不能再如此做。",
 				{
 					"type": "table",
 					"caption": "渔夫的喜悦之钩",
@@ -36495,7 +36596,7 @@
 				"PaBTSO"
 			],
 			"reprintedAs": [
-				"玉石|XDMG"
+				"翡翠|XDMG"
 			],
 			"type": "$G|DMG",
 			"rarity": "none",
@@ -37989,80 +38090,15 @@
 			"translator": "不全书"
 		},
 		{
-			"ENG_name": "Lantern of Tracking",
-			"name": "追踪提灯",
+			"ENG_name": "Lantern of Tracking (Aberrations)",
+			"name": "追踪提灯（异怪）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
 				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
-				"每个追踪提灯都被设计成用来发现某种生物的踪迹，具体类型由下表的掷骰决定。追踪的生物类型一旦被确定便不能再更改。当提灯距符合其类型的生物300尺以内时，它的火焰将变为亮绿色。不过，该提灯并不能精确定位那些生物的位置。",
-				{
-					"type": "table",
-					"caption": "追踪提灯",
-					"colLabels": [
-						"1d10",
-						"生物类型"
-					],
-					"colStyles": [
-						"col-2 text-center",
-						"col-10"
-					],
-					"rows": [
-						[
-							"1",
-							"异怪"
-						],
-						[
-							"2",
-							"天族"
-						],
-						[
-							"3",
-							"构装"
-						],
-						[
-							"4",
-							"龙"
-						],
-						[
-							"5",
-							"元素"
-						],
-						[
-							"6",
-							"妖精"
-						],
-						[
-							"7",
-							"邪魔"
-						],
-						[
-							"8",
-							"巨人"
-						],
-						[
-							"9",
-							"怪兽"
-						],
-						[
-							"10",
-							"亡灵"
-						]
-					]
-				}
-			]
-		},
-		{
-			"name": "Lantern of Tracking (Constructs)",
-			"source": "IDRotF",
-			"page": 314,
-			"rarity": "common",
-			"wondrous": true,
-			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Constructs type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"当明灯在异怪类型生物300尺范围内时，其火焰会变成亮绿色。但明灯无法精确定位该生物的确切位置。"
 			],
 			"light": [
 				{
@@ -38072,14 +38108,15 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Dragons)",
+			"ENG_name": "Lantern of Tracking (Celestials)",
+			"name": "追踪提灯（天族）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Dragons type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当明灯处于天族类型生物300尺范围内时，其火焰会变为亮绿色。然而，明灯无法精确定位该生物的确切位置。"
 			],
 			"light": [
 				{
@@ -38089,14 +38126,15 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Elementals)",
+			"ENG_name": "Lantern of Tracking (Constructs)",
+			"name": "追踪提灯（构装）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Elementals type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当明灯在构装类型生物300尺范围内时，其火焰会变成亮绿色。然而，明灯不会精确指示该生物的具体位置。"
 			],
 			"light": [
 				{
@@ -38106,14 +38144,15 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Fey)",
+			"ENG_name": "Lantern of Tracking (Dragons)",
+			"name": "追踪提灯（龙）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Fey type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当此明灯位于龙类生物300尺范围内时，其火焰会变为亮绿色。然而，此灯无法精确定位该生物的具体位置。"
 			],
 			"light": [
 				{
@@ -38123,14 +38162,15 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Fiends)",
+			"ENG_name": "Lantern of Tracking (Elementals)",
+			"name": "追踪提灯（元素生物）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Fiends type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当此提灯在元素生物类型的生物300尺范围内时，其火焰会变为亮绿色。然而，提灯不会指明该生物的确切位置。"
 			],
 			"light": [
 				{
@@ -38140,14 +38180,15 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Giants)",
+			"ENG_name": "Lantern of Tracking (Fey)",
+			"name": "追踪提灯（妖精）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Giants type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当此提灯在妖精类型生物300尺范围内时，其火焰会变为亮绿色。然而，提灯无法精确定位该生物的确切位置。"
 			],
 			"light": [
 				{
@@ -38157,14 +38198,15 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Monstrosities)",
+			"ENG_name": "Lantern of Tracking (Fiends)",
+			"name": "追踪提灯（邪魔）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Monstrosities type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当此明灯在邪魔类型生物300尺范围内时，其火焰会变为亮绿色。然而，此明灯无法精确定位该生物的确切位置。"
 			],
 			"light": [
 				{
@@ -38174,22 +38216,58 @@
 			]
 		},
 		{
-			"name": "Lantern of Tracking (Undead)",
+			"ENG_name": "Lantern of Tracking (Giants)",
+			"name": "追踪提灯（巨人）",
 			"source": "IDRotF",
 			"page": 314,
 			"rarity": "common",
 			"wondrous": true,
 			"entries": [
-				"This hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet.",
-				"While the lantern is within 300 feet of the Undead type, its flame turns bright green. The lantern doesn't pinpoint the creature's exact location, however."
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当明灯在巨人类型生物300尺范围内时，其火焰会变成亮绿色。然而，明灯无法精确定位该生物的确切位置。"
 			],
 			"light": [
 				{
 					"bright": 30,
 					"dim": 60
 				}
+			]
+		},
+		{
+			"ENG_name": "Lantern of Tracking (Monstrosities)",
+			"name": "追踪提灯（怪兽）",
+			"source": "IDRotF",
+			"page": 314,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当明灯在怪兽类型生物300尺范围内时，其火焰会变为亮绿色。然而，明灯无法精确定位该生物的确切位置。"
 			],
-			"translator": "不全书"
+			"light": [
+				{
+					"bright": 30,
+					"dim": 60
+				}
+			]
+		},
+		{
+			"ENG_name": "Lantern of Tracking (Undead)",
+			"name": "追踪提灯（亡灵）",
+			"source": "IDRotF",
+			"page": 314,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"当明灯在亡灵类型300尺范围内时，其火焰会变成亮绿色。然而，明灯无法精确定位该生物的确切位置。"
+			],
+			"light": [
+				{
+					"bright": 30,
+					"dim": 60
+				}
+			]
 		},
 		{
 			"ENG_name": "Lapis Lazuli",
@@ -46561,7 +46639,7 @@
 		},
 		{
 			"ENG_name": "Piercer",
-			"name": "穿刺者",
+			"name": "石锥怪",
 			"source": "AI",
 			"page": 121,
 			"referenceSources": [
@@ -54231,7 +54309,7 @@
 			"resist": [
 				"毒素"
 			],
-			"detail1": "紫晶",
+			"detail1": "紫水晶",
 			"tier": "主要",
 			"rarity": "rare",
 			"reqAttune": true,
@@ -54252,7 +54330,7 @@
 			"resist": [
 				"毒素"
 			],
-			"detail1": "紫晶",
+			"detail1": "紫水晶",
 			"rarity": "rare",
 			"hasRefs": true,
 			"entries": [
@@ -56250,7 +56328,15 @@
 					"name": "警觉",
 					"type": "entries",
 					"entries": [
-						"持握这根权杖期间，你的感知（{@skill 察觉|XPHB}）检定和{@variantrule 先攻|XPHB}检定具有{@variantrule 优势|XPHB}。当持握这根权杖时，你可以从中施展以下法术：",
+						"当你持握此权杖时，你在感知（{@skill 察觉|XPHB}）检定和{@variantrule 先攻|XPHB}掷骰上具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Spells",
+					"name": "法术",
+					"type": "entries",
+					"entries": [
+						"当你持握此权杖时，你可以通过它施放以下法术：",
 						{
 							"type": "list",
 							"items": [
@@ -74671,7 +74757,7 @@
 			"wondrous": true,
 			"entries": [
 				"这管乳白色的液体散发着浓烈的酒精气味。被发现时，管中装有{@dice 1d6 + 1}盎司的万溶剂。",
-				"你能够以一个{@action 操作|XPHB}动作将管中1盎司或更多的液体倒在触及内的某表面上。每盎司万溶剂将立刻溶解它接触到的至多1立方尺的粘合剂（包括至尊胶sovereign glue）。"
+				"你能够以一个{@action 操作|XPHB}动作将管中1盎司或更多的液体倒在触及内的某表面上。每盎司万溶剂将立刻溶解它接触到的至多1尺立方的粘合剂（包括至尊胶sovereign glue）。"
 			],
 			"lootTables": [
 				"奥秘 - 传说|XDMG",
@@ -80388,7 +80474,7 @@
 						[
 							"21-55",
 							"{@item 飞天魔毯，4尺x6尺|XDMG}",
-							"400磅",
+							"400 磅",
 							"60尺"
 						],
 						[
@@ -80400,7 +80486,7 @@
 						[
 							"81-00",
 							"{@item 飞天魔毯，6尺x9尺|XDMG}",
-							"800磅",
+							"800 磅",
 							"30尺"
 						]
 					]
@@ -82037,6 +82123,91 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Lantern of Tracking",
+			"name": "追踪提灯",
+			"source": "IDRotF",
+			"page": 314,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"这个附有灯罩的提灯在点燃后每6小时消耗1品脱的灯油。它提供30尺的明亮光照以及其外30尺的微光光照。",
+				"每个追踪提灯都被设计成用来发现某种生物的踪迹，具体类型由下表的掷骰决定。追踪的生物类型一旦被确定便不能再更改。当提灯距符合其类型的生物300尺以内时，它的火焰将变为亮绿色。不过，该提灯并不能精确定位那些生物的位置。",
+				{
+					"type": "table",
+					"caption": "追踪提灯",
+					"colLabels": [
+						"1d10",
+						"生物类型"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"{@item 追踪提灯（异怪）|IDRotF}"
+						],
+						[
+							"2",
+							"{@item 追踪提灯（天族）|IDRotF}"
+						],
+						[
+							"3",
+							"{@item 追踪提灯（构装）|IDRotF}"
+						],
+						[
+							"4",
+							"{@item 追踪提灯（龙）|IDRotF}"
+						],
+						[
+							"5",
+							"{@item 追踪提灯（元素生物）|IDRotF}"
+						],
+						[
+							"6",
+							"{@item 追踪提灯（妖精）|IDRotF}"
+						],
+						[
+							"7",
+							"{@item 追踪提灯（邪魔）|IDRotF}"
+						],
+						[
+							"8",
+							"{@item 追踪提灯（巨人）|IDRotF}"
+						],
+						[
+							"9",
+							"{@item 追踪提灯（怪兽）|IDRotF}"
+						],
+						[
+							"10",
+							"{@item 追踪提灯（亡灵）|IDRotF}"
+						]
+					]
+				}
+			],
+			"items": [
+				"追踪提灯（异怪）|IDRotF",
+				"追踪提灯（天族）|IDRotF",
+				"追踪提灯（构装）|IDRotF",
+				"追踪提灯（龙）|IDRotF",
+				"追踪提灯（元素生物）|IDRotF",
+				"追踪提灯（妖精）|IDRotF",
+				"追踪提灯（邪魔）|IDRotF",
+				"追踪提灯（巨人）|IDRotF",
+				"追踪提灯（怪兽）|IDRotF",
+				"追踪提灯（亡灵）|IDRotF"
+			],
+			"itemsHidden": true,
+			"light": [
+				{
+					"bright": 30,
+					"dim": 60
+				}
+			]
+		},
+		{
 			"ENG_name": "Lash of Shadows",
 			"name": "阴影之鞭",
 			"source": "EGW",
@@ -82921,7 +83092,7 @@
 						[
 							"8",
 							"{@item 心灵抗性戒指||心灵}",
-							"玉石"
+							"翡翠"
 						],
 						[
 							"9",
@@ -83015,7 +83186,7 @@
 						[
 							"8",
 							"{@item 心灵抗性戒指|XDMG|心灵}",
-							"玉石"
+							"翡翠"
 						],
 						[
 							"9",

@@ -2318,7 +2318,7 @@
 			"classSource": "PHB",
 			"page": 19,
 			"reprintedAs": [
-				"Grave|Cleric|XPHB|RHW"
+				"坟墓|牧师|XPHB|RHW"
 			],
 			"edition": "classic",
 			"additionalSpells": [
@@ -2371,7 +2371,7 @@
 			"className": "牧师",
 			"classSource": "XPHB",
 			"reprintedAs": [
-				"Grave|Cleric|XPHB|RHW"
+				"坟墓|牧师|XPHB|RHW"
 			],
 			"_copy": {
 				"ENG_name": "Grave Domain",
@@ -2875,41 +2875,42 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Grave Domain",
-			"shortName": "Grave",
+			"ENG_name": "Grave Domain",
+			"name": "坟墓领域",
+			"shortName": "坟墓",
 			"source": "RHW",
-			"className": "Cleric",
+			"className": "牧师",
 			"classSource": "XPHB",
 			"edition": "one",
 			"additionalSpells": [
 				{
 					"prepared": {
 						"3": [
-							"detect evil and good|xphb",
-							"false life|xphb",
-							"gentle repose|xphb",
-							"ray of enfeeblement|xphb",
-							"spare the dying|xphb"
+							"侦测善恶|XPHB",
+							"虚假生命|XPHB",
+							"遗体防腐|XPHB",
+							"衰弱射线|XPHB",
+							"维生术|XPHB"
 						],
 						"5": [
-							"revivify|xphb",
-							"vampiric touch|xphb"
+							"回生术|XPHB",
+							"吸血鬼之触|XPHB"
 						],
 						"7": [
-							"blight|xphb",
-							"death ward|xphb"
+							"枯萎术|XPHB",
+							"防死结界|XPHB"
 						],
 						"9": [
-							"dispel evil and good|xphb",
-							"raise dead|xphb"
+							"驱逐善恶|XPHB",
+							"死者复活|XPHB"
 						]
 					}
 				}
 			],
 			"subclassFeatures": [
-				"Grave Domain|Cleric|XPHB|Grave|RHW|3|RHW",
-				"Sentinel at Death's Door|Cleric|XPHB|Grave|RHW|6|RHW",
-				"Divine Reaper|Cleric|XPHB|Grave|RHW|17|RHW"
+				"坟墓领域|牧师|XPHB|坟墓|RHW|3|RHW",
+				"死之门的哨卫|牧师|XPHB|坟墓|RHW|6|RHW",
+				"司命神使|牧师|XPHB|坟墓|RHW|17|RHW"
 			],
 			"hasFluffImages": true
 		}
@@ -7841,6 +7842,170 @@
 					"page": true
 				}
 			}
+		},
+		{
+			"ENG_name": "Circle of Mortality",
+			"name": "生死轮回",
+			"source": "RHW",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"你能够操弄生与死的天平，这赋予你以下增益。",
+				{
+					"ENG_name": "Pull of Death",
+					"name": "死亡之引",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你对一个生命值未满的生物通过施展了一道法术或以一次攻击检定命中造成伤害时，该生物额外受到{@damage 1d4}暗蚀伤害。当你到达牧师等级11级时，此额外伤害增加至{@dice 1d6}。"
+					]
+				},
+				{
+					"ENG_name": "Return to Life",
+					"name": "重归生命",
+					"type": "entries",
+					"entries": [
+						"你可以使用附赠动作施展{@spell 维生术|XPHB}。",
+						"此外，当你用法术或引导神力投掷一枚或多枚骰子用于恢复生命值为0的生物的生命时，你不用为治疗投掷这些骰子；改为使用每个骰子的最大值。例如，你用法术为生命值为0的生物恢复{@dice 2d4}生命值时，改为恢复8点。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Grave Domain",
+			"name": "坟墓领域",
+			"source": "RHW",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"{@i 安息亡者，显化神力}",
+				"坟墓领域注重生与死的边界。对从这一领域获取神力的牧师来说，死亡是多元宇宙中自然且不可避免的一环。这些牧师致力于摧毁亡灵，并超度亡魂踏入往生。",
+				"这一领域的魔法同样让牧师能够暂时将死亡拒之门外。但这不过是暂缓死亡的到来，绝非彻底的拒绝\u2014\u2014因为坟墓，终将收取它的贡赋。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "坟墓领域法术|牧师|XPHB|坟墓|RHW|3|RHW"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "生死轮回|牧师|XPHB|坟墓|RHW|3|RHW"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "往墓之途|牧师|XPHB|坟墓|RHW|3|RHW"
+				}
+			]
+		},
+		{
+			"ENG_name": "Grave Domain Spells",
+			"name": "坟墓领域法术",
+			"source": "RHW",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"你与此神圣领域的链接使你始终准备着特定的法术。当你到达坟墓领域法术表中特定的牧师等级时，你就始终准备着表中对应的法术。",
+				{
+					"type": "table",
+					"caption": "坟墓领域法术",
+					"colLabels": [
+						"牧师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 侦测善恶|XPHB}, {@spell 虚假生命|XPHB}, {@spell 遗体防腐|XPHB}, {@spell 衰弱射线|XPHB}, {@spell 维生术|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 回生术|XPHB}, {@spell 吸血鬼之触|XPHB}"
+						],
+						[
+							"7",
+							"{@spell 枯萎术|XPHB}, {@spell 防死结界|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 驱逐善恶|XPHB}, {@spell 死者复活|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Path to the Grave",
+			"name": "往墓之途",
+			"source": "RHW",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 3,
+			"consumes": {
+				"ENG_name": "Channel Divinity",
+				"name": "引导神力",
+				"amount": 1
+			},
+			"entries": [
+				"作为附赠动作，你展示你的圣徽并消耗一次引导神力的使用次数，诅咒你30尺范围内你可见的一个生物。诅咒持续至你的下一回合开始。在被诅咒期间，该生物的攻击检定与豁免检定均具有{@variantrule 劣势|XPHB}。",
+				"当你或一个你能看见的盟友以攻击检定命中该被诅咒的目标时，你可以提前中止诅咒（无需动作）并使本次攻击额外造成等同于你牧师等级的暗蚀或光耀伤害（由你选择）。"
+			]
+		},
+		{
+			"ENG_name": "Sentinel at Death's Door",
+			"name": "死之门的哨卫",
+			"source": "RHW",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"当你或你60尺范围内你可见的一个{@status 浴血|XPHB}生物被一次攻击检定命中时，你可以执行一个反应并减半该攻击的伤害（向下取整）。如果触发的攻击为一次重击，一切重击触发的效应都被取消。",
+				"你可以使用此特性的次数等同于你的感知调整值次（至少1次），在你完成一次长休后你重获全部已被消耗的使用次数。"
+			]
+		},
+		{
+			"ENG_name": "Divine Reaper",
+			"name": "司命神使",
+			"source": "RHW",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"你与此领域的深度联系，使你成为死亡的神圣宣告者，这赋予你以下增益：",
+				{
+					"ENG_name": "Enhanced Necromancy",
+					"name": "增强死灵术",
+					"type": "entries",
+					"entries": [
+						"当你施展一道以单一生物为目标的五环或更低的死灵学派法术，或者当你施展来自{@book 坟墓领域法术表格|RHW|1|坟墓领域法术}中的法术时，你可以消耗一次引导神力的使用次数，在施法距离内指定第二个生物为目标。如果该法术需要有标明价值或被消耗的材料成分，你必须为每个目标提供材料成分。"
+					]
+				},
+				{
+					"ENG_name": "Keeper of Souls",
+					"type": "entries",
+					"name": "引魂明灯",
+					"entries": [
+						"当一个敌人在你60尺内死亡时，你或你60尺范围内你可见的一个生物恢复等同于你牧师等级两倍的生命值。你不能在{@condition 失能|XPHB}状态下使用此特性。一旦你使用了此特性，直到你完成一次短休或长休或直到你消耗一个6环及以上的法术位（无需动作）来恢复你的使用次数，你都不能再次使用它。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Arcana Domain",

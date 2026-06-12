@@ -12,6 +12,7 @@ import "../js/utils-config.js";
 import "../js/render.js";
 import "../js/render-dice.js";
 import * as ut from "./util.js";
+import {PAGE_GENERATORS} from "./generate-pages/generate-pages-page-generator-config.js";
 
 const BASE_SITE_URL = `${(process.env.VET_BASE_SITE_URL || "https://5e.kiwee.top").replace(/\/+$/, "")}/`;
 const LOG_EVERY = 1000; // Certain stakeholders prefer less logspam
@@ -30,17 +31,15 @@ const lastModFallback = (() => {
 const baseSitemapData = (() => {
 	const out = {};
 
-	// Scrape all the links from navigation.js -- avoid any unofficial HTML files which might exist
-	const navText = fs.readFileSync("./js/navigation.js", "utf-8");
-	navText.replace(/(?:"([^"]+\.html)"|'([^']+)\.html'|`([^`]+)\.html`)/gi, (...m) => {
-		const str = m[1] || m[2] || m[3];
-		if (str.includes("${")) return;
-		out[str] = true;
-	});
-	delete out["index.html"];
-	out["ai-guide.html"] = true;
-	out["llms.txt"] = true;
-	out["llms-full.txt"] = true;
+	PAGE_GENERATORS
+		.map(it => it.getPage())
+		.filter(Boolean)
+		.filter(it => it !== "index.html")
+		.filter(page => {
+			const generator = PAGE_GENERATORS.find(it => it.getPage() === page);
+			return generator && !generator.isExcludedFromSitemap();
+		})
+		.forEach(page => out[page] = true);
 
 	return out;
 })();

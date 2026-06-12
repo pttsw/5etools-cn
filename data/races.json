@@ -62,7 +62,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Aarakocra",
@@ -904,7 +905,8 @@
 						"天生武器"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Astral Elf",
@@ -1203,7 +1205,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Aven",
@@ -1289,7 +1292,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Boggart",
@@ -1427,7 +1431,8 @@
 					"type": "entries"
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Bugbear",
@@ -1641,7 +1646,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Bullywug",
@@ -1715,7 +1721,8 @@
 						"你可以说、读、写啵灵蛙语。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Centaur",
@@ -1850,7 +1857,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Centaur",
@@ -2049,7 +2057,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Changeling",
@@ -2160,7 +2169,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Changeling",
@@ -2463,8 +2473,13 @@
 		{
 			"ENG_name": "Dhampir",
 			"name": "半血裔",
-			"source": "ABH",
-			"page": 7,
+			"source": "RHW",
+			"otherSources": [
+				{
+					"source": "ABH",
+					"page": 7
+				}
+			],
 			"size": [
 				"S",
 				"M"
@@ -2475,7 +2490,7 @@
 			},
 			"darkvision": 60,
 			"traitTags": [
-				"Natural Weapon"
+				"天生武器"
 			],
 			"resist": [
 				"暗蚀"
@@ -2502,12 +2517,12 @@
 					"name": "蛛行术",
 					"type": "entries",
 					"entries": [
-						"你拥有等于你{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。当你达到角色等级3时，你可以在垂直表面和天花板上移动，同时保持双手空闲。"
+						"你拥有等于你{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。当你到达3级后，你可以沿垂直表面上与天花板下移动（包括上下左右），且不需要为此借助你的双手。"
 					]
 				},
 				{
 					"ENG_name": "Trace of Undeath",
-					"name": "亡灵之痕",
+					"name": "不死之痕",
 					"type": "entries",
 					"entries": [
 						"你具有对暗蚀伤害的{@variantrule 抗性|XPHB}。"
@@ -2518,8 +2533,8 @@
 					"name": "吸血啃咬",
 					"type": "entries",
 					"entries": [
-						"当你使用你的{@variantrule 徒手打击|XPHB}并造成伤害时，你可以选择用你的尖牙进行啃咬。你造成等于{@dice 1d4}加上你的体质调整值的穿刺伤害，而不是{@variantrule 徒手打击|XPHB}的正常伤害。",
-						"此外，当你对一个不是构装体或不死生物的生物造成此伤害时，你可以通过以下方式之一强化自身：",
+						"当你使用{@variantrule 徒手打击|XPHB}造成伤害时，你可以选择使用你的獠牙啃咬敌人，你对目标造成{@damage 1d4}+体质调整值的穿刺伤害，而非{@variantrule 徒手打击|XPHB}原本的伤害。",
+						"当你使用此攻击并命中一个并非构装或亡灵生物的生物时，你可以选择以下方式之一来增幅你自己：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
@@ -2529,7 +2544,7 @@
 									"name": "汲取",
 									"type": "item",
 									"entries": [
-										"你恢复等于所造成穿刺伤害的{@variantrule 生命值|XPHB}。"
+										"你恢复等于此穿刺伤害的{@variantrule 生命值|XPHB}。"
 									]
 								},
 								{
@@ -2537,17 +2552,18 @@
 									"name": "强化",
 									"type": "item",
 									"entries": [
-										"你在接下来一分钟内进行的下一次属性检定或攻击检定获得加值；该加值等于造成的穿刺伤害。"
+										"在接下来的一分钟内，你进行的下一次属性检定或攻击检定获得加值，加值等于此穿刺伤害。"
 									]
 								}
 							]
 						},
-						"你可以使用此特性的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，并在完成一次{@variantrule 长休|XPHB}后恢复所有已使用的次数。"
+						"你能够以此啃咬增幅你自己的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，在你完成{@variantrule 长休|XPHB}时你将重获全部已消耗的增幅次数。"
 					]
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dhampir",
@@ -2555,7 +2571,7 @@
 			"source": "VRGR",
 			"page": 16,
 			"reprintedAs": [
-				"半血裔|ABH"
+				"半血裔|RHW"
 			],
 			"lineage": "VRGR",
 			"size": [
@@ -2631,7 +2647,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dragonborn",
@@ -3275,7 +3292,8 @@
 						}
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dragonborn (Gem)",
@@ -3471,7 +3489,8 @@
 						}
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dragonborn (Metallic)",
@@ -3684,7 +3703,8 @@
 						}
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Duergar",
@@ -3918,7 +3938,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dwarf",
@@ -4103,7 +4124,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Eladrin",
@@ -4219,7 +4241,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Elf",
@@ -4460,7 +4483,8 @@
 						}
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Elf",
@@ -5106,7 +5130,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Elf (Zendikar)",
@@ -5201,7 +5226,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Faerie",
@@ -5289,7 +5315,8 @@
 					},
 					"darkvision": 120
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Fairy",
@@ -5450,7 +5477,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Firbolg",
@@ -5650,7 +5678,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Flamekin",
@@ -5722,7 +5751,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Genasi",
@@ -5808,7 +5838,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Genasi",
@@ -5961,7 +5992,8 @@
 					"type": "entries"
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Githyanki",
@@ -6050,7 +6082,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Githzerai",
@@ -6126,7 +6159,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Gnoll",
@@ -6177,7 +6211,8 @@
 						"当你在你的回合用一次近战攻击将一个生物的生命值降至0时，你可以使用一个附赠动作移动至多你速度的一半并进行一次啃咬攻击。"
 					]
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Gnome",
@@ -6534,7 +6569,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin",
@@ -6590,7 +6626,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin",
@@ -6640,7 +6677,8 @@
 				"type": "internal",
 				"path": "races/goblin.opus"
 			},
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin",
@@ -6699,7 +6737,8 @@
 				"type": "internal",
 				"path": "races/goblin.opus"
 			},
-			"hasFluff": true
+			"hasFluff": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin",
@@ -6766,7 +6805,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin",
@@ -6856,7 +6896,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin",
@@ -6956,7 +6997,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goblin (Dankwood)",
@@ -7074,7 +7116,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goliath",
@@ -7198,7 +7241,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Goliath",
@@ -7575,7 +7619,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Grung",
@@ -7705,7 +7750,8 @@
 					]
 				}
 			],
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hadozee",
@@ -7757,7 +7803,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Half-Elf",
@@ -8194,7 +8241,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Harengon",
@@ -8264,10 +8312,106 @@
 		{
 			"ENG_name": "Hexblood",
 			"name": "巫咒之子",
+			"source": "RHW",
+			"edition": "one",
+			"creatureTypes": [
+				"妖精"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									"易容术|xphb",
+									"脆弱诅咒|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型（约 4-7 尺高）或小型（约 2-4 尺高），在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你拥有 60 尺{@sense 黑暗视觉|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Eerie Token",
+					"name": "神秘信物",
+					"type": "entries",
+					"entries": [
+						"你能以{@variantrule 附赠动作|XPHB}无害地剪下一缕头发，拔下一片指甲或其他方式，来创造一件魔法信物。信物存在期间，你获得以下增益：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Distant Message",
+									"name": "远程传信",
+									"type": "item",
+									"entries": [
+										"只要你位于信物的10里内，你能以魔法动作向携带或持握该信物的生物传递一条不超过二十五个单词的心灵感应信息。"
+									]
+								},
+								{
+									"ENG_name": "Remote Viewing",
+									"name": "遥远视野",
+									"type": "item",
+									"entries": [
+										"若你位于信物的10里内，你能以{@action 魔法|XPHB}动作将感官延伸至信物处，持续1分钟，或在你解除该状况（无需动作）或陷入失能状态时提前结束。此状况下，你能如同身处信物所在位置一样看和听。此状况结束时，信物被无害地摧毁。",
+										"除非信物被提前摧毁，否则其存在持续至你完成{@variantrule 长休|XPHB}。一旦你以此特性创造一件信物，直至你完成{@variantrule 长休|XPHB}都无法再如此做。"
+									]
+								},
+								{
+									"ENG_name": "Hex Magic",
+									"name": "巫咒魔法",
+									"type": "item",
+									"entries": [
+										"你始终准备着法术{@spell 易容术|XPHB}和{@spell 脆弱诅咒|XPHB}。你可以无需法术位地施展每道法术各一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展这些法术的能力。你也能够以你拥有的合适环阶的法术位施展这些法术。你的这些法术的施法属性是感知、智力或魅力（在你选取该种族时选择）。"
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Hexblood",
+			"name": "巫咒之子",
 			"source": "VRGR",
 			"page": 18,
 			"reprintedAs": [
-				"Hexblood|RHW"
+				"巫咒之子|RHW"
 			],
 			"lineage": "VRGR",
 			"creatureTypes": [
@@ -8381,7 +8525,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hobgoblin",
@@ -8431,7 +8576,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hobgoblin",
@@ -8477,7 +8623,8 @@
 				"type": "internal",
 				"path": "races/hobgoblin.opus"
 			},
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hobgoblin",
@@ -8568,7 +8715,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Hobgoblin",
@@ -8682,7 +8830,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Human",
@@ -8879,7 +9028,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Human (Ixalan)",
@@ -8955,7 +9105,8 @@
 				"path": "races/human.opus"
 			},
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Human (Kaladesh)",
@@ -9020,7 +9171,8 @@
 				"path": "races/human.opus"
 			},
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Human (Zendikar)",
@@ -9061,7 +9213,8 @@
 				"path": "races/human.opus"
 			},
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kalashtar",
@@ -9125,7 +9278,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kalashtar",
@@ -9233,7 +9387,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kender",
@@ -9286,7 +9441,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kenku",
@@ -9341,7 +9497,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kenku",
@@ -9399,7 +9556,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kenku",
@@ -9509,7 +9667,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Khenra",
@@ -9594,7 +9753,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Khoravar",
@@ -9689,7 +9849,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kithkin",
@@ -9777,7 +9938,8 @@
 					},
 					"darkvision": 120
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kobold",
@@ -9842,7 +10004,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kobold",
@@ -10005,7 +10168,8 @@
 					},
 					"skillProficiencies": null
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kobold",
@@ -10107,7 +10271,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kor",
@@ -10210,7 +10375,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Kuo-Toa",
@@ -10288,7 +10454,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Leonin",
@@ -10463,7 +10630,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Lizardfolk",
@@ -10552,7 +10720,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Lizardfolk",
@@ -10696,7 +10865,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Locathah",
@@ -10994,7 +11164,83 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Lupin",
+			"name": "人狼裔",
+			"source": "RHW",
+			"edition": "one",
+			"creatureTypes": [
+				"类人"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"traitTags": [
+				"天生武器"
+			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"察觉",
+							"隐匿",
+							"求生"
+						]
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型（约 4-7 尺高）或小型（约 2-4 尺高），在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Darkvision",
+					"name": "黑暗视觉",
+					"type": "entries",
+					"entries": [
+						"你拥有 60 尺{@sense 黑暗视觉|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Feral Pounce",
+					"name": "野性扑击",
+					"type": "entries",
+					"entries": [
+						"你的{@variantrule 徒手打击|XPHB}造成挥砍伤害，而非钝击伤害。此外，当你在自己回合内作为{@action 攻击|XPHB}动作的一部分使用徒手打击命中一个生物时，你可以同时使用{@variantrule 伤害|XPHB}选项与推撞选项。你每回合只能使用一次该增益。"
+					]
+				},
+				{
+					"ENG_name": "Howl",
+					"name": "尖啸",
+					"type": "entries",
+					"entries": [
+						"你可以使用{@variantrule 附赠动作|XPHB}发出一声阴森骇人的嚎叫。你周围15尺内由你选择的所有生物都必须进行一次感知豁免（DC=8+你的体质调整值+你的{@variantrule 熟练|XPHB|熟练加值}），豁免失败的生物在攻击检定和豁免检定中具有{@variantrule 劣势|XPHB}，直至你的下一回合开始。",
+						"你能使用该特质的次数等于你的{@variantrule 熟练|XPHB|熟练加值}。完成{@variantrule 长休|XPHB}时，你重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Werewolf Instincts",
+					"name": "狼人本能",
+					"type": "entries",
+					"entries": [
+						"你具有{@skill 察觉|XPHB}、{@skill 隐匿|XPHB}或{@skill 求生|XPHB}技能的熟练。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Merfolk",
@@ -11039,7 +11285,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Merfolk",
@@ -11133,7 +11380,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Minotaur",
@@ -11259,7 +11507,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Minotaur",
@@ -11362,7 +11611,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Minotaur (Amonkhet)",
@@ -11468,7 +11718,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Naga",
@@ -11579,7 +11830,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Orc",
@@ -11638,7 +11890,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Orc",
@@ -11854,7 +12107,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Orc",
@@ -11913,7 +12167,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Orc",
@@ -12034,7 +12289,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Orc",
@@ -12197,7 +12453,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Owlin",
@@ -12254,7 +12511,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Plasmoid",
@@ -12313,7 +12571,7 @@
 					"name": "屏息",
 					"type": "entries",
 					"entries": [
-						"你可以屏住呼吸达1小时。"
+						"你可以屏息一小时。"
 					]
 				},
 				{
@@ -12335,7 +12593,84 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Reborn",
+			"name": "重生者",
+			"source": "RHW",
+			"edition": "one",
+			"creatureTypes": [
+				"类人"
+			],
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"skillProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"resist": [
+				{
+					"choose": {
+						"from": [
+							"寒冷",
+							"暗蚀",
+							"毒素"
+						]
+					}
+				}
+			],
+			"sizeEntry": {
+				"ENG_name": "Size:",
+				"name": "体型：",
+				"type": "item",
+				"entries": [
+					"中型（约 4-7 尺高）或小型（约 2-4 尺高），在选择此种族时决定"
+				]
+			},
+			"entries": [
+				{
+					"ENG_name": "Escaped Death",
+					"name": "死里逃生",
+					"type": "entries",
+					"entries": [
+						"你进行的{@variantrule 死亡豁免检定|XPHB|死亡豁免检定}具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Everlasting",
+					"name": "永固不朽",
+					"type": "entries",
+					"entries": [
+						"你不会因脱水、饥饿或窒息获得力竭等级。你无需睡眠，魔法也无法使你陷入睡眠。你可以保持非活动的静止状态来仅用4小时完成{@variantrule 长休|XPHB}，且在这期间保持意识清醒。"
+					]
+				},
+				{
+					"ENG_name": "Knowledge from a Past Life",
+					"name": "往昔学识",
+					"type": "entries",
+					"entries": [
+						"你自选一个技能并获得其熟练。",
+						"此外，你能暂时窥探过去来助你应付现在。当你属性检定失败时，你能投掷{@dice 1d6}并将骰值加入{@dice d20}中，这可能使该次失败改为成功。你可以如此做的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时，你重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Strange Endurance",
+					"name": "奇异耐性",
+					"type": "entries",
+					"entries": [
+						"你对以下一种你选择的伤害类型具有{@variantrule 抗性|XPHB}：寒冷、暗蚀或毒素。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Reborn",
@@ -12343,7 +12678,7 @@
 			"source": "VRGR",
 			"page": 20,
 			"reprintedAs": [
-				"Reborn|RHW"
+				"重生者|RHW"
 			],
 			"lineage": "VRGR",
 			"size": [
@@ -12402,7 +12737,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Rimekin",
@@ -12700,7 +13036,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Sea Elf",
@@ -12807,7 +13144,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Shadar-Kai",
@@ -12903,7 +13241,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Shifter",
@@ -13096,7 +13435,8 @@
 						]
 					}
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Shifter",
@@ -13187,7 +13527,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Shifter",
@@ -13355,7 +13696,8 @@
 						}
 					}
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Simic Hybrid",
@@ -13502,7 +13844,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Siren",
@@ -13579,7 +13922,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Skeleton",
@@ -13660,7 +14004,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Tabaxi",
@@ -13741,7 +14086,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Tabaxi",
@@ -13859,7 +14205,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Thri-kreen",
@@ -13944,7 +14291,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Tiefling",
@@ -14669,7 +15017,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Triton",
@@ -14817,7 +15166,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Triton",
@@ -14971,7 +15321,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Troglodyte",
@@ -15054,7 +15405,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Vampire",
@@ -15149,7 +15501,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Vedalken",
@@ -15266,7 +15619,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Vedalken",
@@ -15344,7 +15698,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Verdan",
@@ -15444,7 +15799,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Warforged",
@@ -15528,7 +15884,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Warforged",
@@ -15677,7 +16034,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Yuan-Ti",
@@ -15769,7 +16127,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Yuan-ti Pureblood",
@@ -15902,7 +16261,8 @@
 				}
 			],
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Zombie",
@@ -15981,7 +16341,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"translator": "不全书"
 		}
 	],
 	"subrace": [

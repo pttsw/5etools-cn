@@ -421,6 +421,39 @@
 			]
 		},
 		{
+			"ENG_name": "Ankhtepot",
+			"name": "安卡霍特普",
+			"source": "RHW",
+			"regionalEffects": [
+				"哈拉吉尔因安卡霍特普的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Blistering Sun",
+							"name": "灼热太阳",
+							"type": "item",
+							"entry": "哈拉吉尔任何户外的{@variantrule 明亮光照|XPHB}区域都是{@hazard 极度高温|XDMG}区域（参见{@book 城主指南|XDMG}）。"
+						},
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当身处其领域时，安卡霍特普可以随意关闭或开放通往哈拉吉尔的边界。当边界关闭时，旋转沙尘会充满环绕哈拉吉尔的迷雾。一个生物若在一回合内首次进入迷雾或在其内开始其回合，将受到{@damage 2d6}挥砍伤害。"
+						},
+						{
+							"ENG_name": "Control Undead",
+							"name": "控制亡灵",
+							"type": "item",
+							"entry": "哈拉吉尔地区CR 5或更低的亡灵处于{@condition 魅惑|XPHB}状态并服从安卡霍特普的命令。"
+						}
+					]
+				},
+				"如果安卡霍特普死亡，这些效应立即结束。"
+			]
+		},
+		{
 			"ENG_name": "Annis Hag",
 			"name": "妖鬼婆",
 			"source": "VGM",
@@ -705,6 +738,39 @@
 					]
 				},
 				"如果Aurnozci死亡，这些效果将在{@dice 1d10}天内逐渐消失。"
+			]
+		},
+		{
+			"ENG_name": "Azalin Rex",
+			"name": "阿扎林·雷克斯",
+			"source": "RHW",
+			"regionalEffects": [
+				"达肯因阿扎林的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当阿扎林身处其领域时，他可以随意关闭或开放通往达肯的边界。当边界关闭时，亡灵恐怖存在会充斥在达肯周围的迷雾中。每当一个生物进入迷雾，一个{@variantrule 敌对【态度】|XPHB|敌对} {@creature 丧尸肉团|RHW}会出现在该生物30尺内一个随机的未占据空间。"
+						},
+						{
+							"ENG_name": "Lord of the Dead",
+							"name": "死亡骑士",
+							"type": "item",
+							"entry": "当阿扎林身处其领域内时，他可以施放{@spell 鹰眼术|XPHB}，无需法术成分，并使用与其施法动作相同的施法属性。当阿扎林以此方式施放该法术时，他可以将传感器放置在达肯境内任何智力为6或更低的亡灵身上，即使该亡灵距离阿扎林超过1英里。此外，阿扎林可以通过他放置了传感器的亡灵说话。"
+						},
+						{
+							"ENG_name": "No Secrets",
+							"name": "没有秘密",
+							"type": "item",
+							"entry": "每当达肯境内的一个生物使用5环或更高法术位施放法术时，阿扎林就会知晓该生物的名称和位置。{@spell 回避侦测|XPHB} 法术可以阻挡此效应。"
+						}
+					]
+				},
+				"如果阿扎林死亡，这些效应立即结束。"
 			]
 		},
 		{
@@ -1896,6 +1962,39 @@
 			]
 		},
 		{
+			"ENG_name": "Chakuna",
+			"name": "查库娜",
+			"source": "RHW",
+			"regionalEffects": [
+				"沃拉昆因查库娜的存在而发生异变，产生以下效应。",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "身处其领域时，查库娜可以随意关闭或开放通往沃拉昆的边界。当边界关闭时，幽影野兽会在环绕沃拉昆的迷雾中潜伏或翱翔。一个生物若在其回合中首次进入迷雾，或在其回合开始时身处其中，将受到{@damage 1d10}点穿刺伤害。"
+						},
+						{
+							"ENG_name": "Heightened Senses",
+							"name": "增强感官",
+							"type": "item",
+							"entry": "野兽和怪兽在感知检定上具有{@variantrule 优势|XPHB}。"
+						},
+						{
+							"ENG_name": "Whispering Shadows",
+							"name": "低语幽影",
+							"type": "item",
+							"entry": "类人生物在进行{@action 躲藏|XPHB}动作时，从任何属性检定中减去{@dice 1d8}。"
+						}
+					]
+				},
+				"如果查库娜死亡，这些效应立即结束。"
+			]
+		},
+		{
 			"ENG_name": "Copper Dragon",
 			"name": "赤铜龙",
 			"source": "MM",
@@ -2142,6 +2241,39 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Cthulhu",
+			"name": "克苏鲁",
+			"source": "RHW",
+			"regionalEffects": [
+				"印斯茅斯因克苏鲁的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Choking Depths",
+							"name": "窒息深渊",
+							"type": "item",
+							"entry": "生物在该领域内只能{@hazard 窒息|XPHB|屏住呼吸}30秒。"
+						},
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当在其领域内时，克苏鲁可以随意关闭或开放印斯茅斯的边界。当边界关闭时，那些进入环绕印斯茅斯的迷雾的人将在墨黑的雾中于海上迷失{@dice 3d4}天，然后才会再次抵达印斯茅斯。"
+						},
+						{
+							"ENG_name": "Something in the Air",
+							"name": "空气中的异样",
+							"type": "item",
+							"entry": "除克苏鲁及其盟友外的生物，在避免或结束{@condition 恐慌|XPHB}状态的豁免检定上具有{@variantrule 劣势|XPHB}。"
+						}
+					]
+				},
+				"如果克苏鲁死亡，这些效应立即结束。"
 			]
 		},
 		{
@@ -2742,6 +2874,39 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Ebonbane",
+			"name": "乌黯祸主",
+			"source": "RHW",
+			"regionalEffects": [
+				"暗影之地因{@i 乌黯祸主}的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "在其领域内，乌黯祸主可以随意关闭或开放暗影之地的边界。当边界关闭时，魔法旋转刀刃会飞过环绕暗影之地的迷雾。一个生物若在一回合内首次进入迷雾或在其内开始回合，则必须成功通过一次{@dc 15}的敏捷豁免检定，否则受到{@damage 3d10}的力场伤害。一个生物每回合仅需进行此豁免一次。"
+						},
+						{
+							"ENG_name": "Haunted Woods",
+							"name": "闹鬼森林",
+							"type": "item",
+							"entry": "乌黯祸主巢穴1英里范围内的森林被强大的幻术所笼罩。每当一个非乌黯祸主或其剑漠盟友的生物在该区域内完成一次短休或长休时，它必须成功通过一次{@dc 15}的智力豁免检定，否则就会在森林中迷失，总是发现自己回到了开始时的位置，直到它完成一次短休或长休。"
+						},
+						{
+							"ENG_name": "Turning Weapons",
+							"name": "转化武器",
+							"type": "item",
+							"entry": "在巢穴中时，乌黯祸主可以通过完成一个24小时的仪式，将巢穴1英里内的非魔法{@item 巨剑|XPHB|巨剑}和{@item 长剑|XPHB|长剑}转化为{@creature 活化凌空剑|XMM|活化凌空剑}。"
+						}
+					]
+				},
+				"如果{@i 乌黯祸主}被摧毁，这些效应立即结束。"
 			]
 		},
 		{
@@ -4066,6 +4231,72 @@
 			]
 		},
 		{
+			"ENG_name": "Harkon Lukas",
+			"name": "哈肯·卢卡斯",
+			"source": "RHW",
+			"regionalEffects": [
+				"卡塔卡斯因哈肯的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Beast Spies",
+							"name": "野兽间谍",
+							"type": "item",
+							"entry": "从拂晓到黄昏，领域内的微型野兽会魔法般地获得理解通用语的能力，并能与其他野兽和怪兽进行心灵感应交流。"
+						},
+						{
+							"ENG_name": "Children of the Night",
+							"name": "夜之子",
+							"type": "item",
+							"entry": "哈肯·卢卡斯对其领域内的动物施加影响。从黄昏到黎明，哈肯1英里范围内的中型或更小的野兽获得{@condition 魅惑|XPHB}状态。如果哈肯愿意，这些动物会对哈肯及其盟友以外的生物变为{@variantrule 敌对【态度】|XPHB|敌对}。"
+						},
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当身处其领域时，哈肯可以随意关闭或开放通往卡塔卡斯的边界。当边界关闭时，一种奇异旋律会充满环绕卡塔卡斯的迷雾。一个生物若在其回合中首次进入迷雾，或在其回合开始时身处其中，则必须成功通过一次{@dc 15}的感知豁免检定，否则它将陷入{@condition 昏迷|XPHB}状态{@dice 1d6}小时，随后在卡塔卡斯的和声镇附近醒来。一个生物每回合仅需进行此豁免一次。"
+						}
+					]
+				},
+				"如果哈肯死亡，这些效应立即结束。"
+			]
+		},
+		{
+			"ENG_name": "Hazlik",
+			"name": "哈兹里克",
+			"source": "RHW",
+			"regionalEffects": [
+				"哈兹兰因哈兹里克的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当哈兹里克身处其领域时，他可以随意关闭或开放通往哈兹兰的边界。当边界关闭时，环绕哈兹兰的迷雾中充满了怪异的魔法实验。一个生物若在其回合内首次进入迷雾，或在其回合开始时身处其中，则必须成功通过一次{@dc 15}的敏捷豁免检定，否则受到5（{@dice 1d10}）点力场伤害，并获得{@condition 束缚|XPHB}状态，此状态持续到其下一个回合开始。一个生物每回合仅需进行一次此豁免检定。"
+						},
+						{
+							"ENG_name": "Frayed Magic",
+							"name": "磨损魔法",
+							"type": "item",
+							"entry": "每当一个生物（不包括哈兹里克及其盟友）使用一个5环或更高环位的法术位施放法术时，它需在{@book 玩家手册|XPHB}中的{@table 狂野魔法浪涌|XPHB|狂野魔法浪涌表格}表格上投掷以产生一个魔法效应。"
+						},
+						{
+							"ENG_name": "Magic Nightmares",
+							"name": "魔法梦魇",
+							"type": "item",
+							"entry": "当身处其巢穴时，维尼菲库斯·哈兹里克可以施放{@spell 鹰眼术|XPHB}，无需法术成分，并使用与其施法动作相同的施法属性。当以此方式施放该法术时，其范围为整个哈兹兰，哈兹里克可以通过传感器看见但听不见，且传感器只能出现在哈兹里克之眼上。"
+						}
+					]
+				},
+				"如果哈兹里克死亡，这些效应立即结束。如果哈兹里克获得新的身体（见其黑暗领主恢复特质），效应将恢复。"
+			]
+		},
+		{
 			"ENG_name": "Hierophant Medusa",
 			"name": "美杜莎法皇",
 			"source": "BMT",
@@ -4202,6 +4433,45 @@
 					]
 				},
 				"如果伊米克斯被摧毁或被驱逐回他的家园位面，区域效果将在接下来的{@dice 1d10}天内逐渐消失。"
+			]
+		},
+		{
+			"ENG_name": "Ivana Boritsi and Ivan Boritsi",
+			"name": "伊凡娜·鲍里茨和伊凡·鲍里茨",
+			"source": "RHW",
+			"regionalEffects": [
+				"博卡因伊凡娜和伊凡的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当身处其领域时，伊凡娜或伊凡可以随意关闭或开放通往博卡的边界。当边界关闭时，环绕博卡的迷雾中会充满荆棘藤蔓（伊凡娜）或带刺铁丝网（伊凡）。迷雾变为{@variantrule 困难地形|XPHB}，且每当一个生物进入或在迷雾中移动时，它每移动5尺就会受到{@damage 2d4}点穿刺伤害。一旦伊凡娜或伊凡关闭或开放了边界，两位黑暗领主都无法再次这样做，直到下一个黎明。"
+						},
+						{
+							"ENG_name": "Ivana's Whispers (Ivana Only)",
+							"name": "伊凡娜的低语（仅限伊凡娜）",
+							"type": "item",
+							"entry": "伊凡娜可以在拂晓时将一个25字或更短的信息编码进博卡的花朵中。直到下一个拂晓，当一个生物第一次闻到一朵花时，它会在脑海中听到这条信息，并理解信息的含义。"
+						},
+						{
+							"ENG_name": "Mystery Letters (Ivan Only)",
+							"name": "神秘信件（仅限伊凡）",
+							"type": "item",
+							"entry": "每当伊凡写一封信并寄给博卡境内一个他知道名字且曾见过的生物时，这封信会在下一个拂晓出现在该生物附近。信件会出现在一个未被观察但显而易见的地方，例如床头柜或装备之中。"
+						},
+						{
+							"ENG_name": "Spies",
+							"name": "间谍们",
+							"type": "item",
+							"entry": "在博卡时，伊凡娜和伊凡可以施放{@spell 鹰眼术|XPHB}，无需材料成分并使用智力作为施法属性。要施放该法术，施法范围内必须有一株大型或更大的植物（伊凡娜）或一个微型玩偶或相似的玩具（伊凡），作为法术传感器的出现点。"
+						}
+					]
+				},
+				"如果博卡的一位黑暗领主死亡，该黑暗领主的效应立即结束。如果该黑暗领主获得了一具新的身体，这些效应将恢复（参见{@creature 伊凡娜·鲍里茨|RHW|伊凡娜的}和{@creature 伊凡·迪利斯尼亚|RHW|伊凡的}的黑暗领主恢复特质）。"
 			]
 		},
 		{
@@ -4713,6 +4983,39 @@
 						"腐烂的根与藤蔓在巫妖可见的120英尺范围内的某个地面点为中心，魔法般地爆发在20英尺半径的区域内。巫妖不受这些根与藤蔓的影响。对于所有其他生物，该区域变为{@quickref 困难地形||3}，区域内的每个生物必须成功通过{@dc 19}的力量豁免，否则将被根蔓{@condition 束缚}。作为一个动作，生物可以尝试解脱自己或在其触及范围内另一个生物的束缚，通过成功的{@dc 19}力量（{@skill 运动}）检定来实现。当巫妖再次使用这个巢穴动作或巫妖死亡时，根与藤蔓会枯萎消失。"
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Lord Soth of Sithicus",
+			"name": "西斯提库斯的索思爵士",
+			"source": "RHW",
+			"regionalEffects": [
+				"西斯提库斯因索思爵士的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当索思爵士身处其领域时，他可以关闭或开放西斯提库斯的边界。当边界关闭时，紫色火焰会充满环绕西斯提库斯的迷雾。一个生物若在一回合中首次进入迷雾或在其内开始其回合，将受到5（{@dice 1d10}）火焰伤害外加5（{@dice 1d10}）暗蚀伤害。"
+						},
+						{
+							"ENG_name": "Fearless Soldiers",
+							"name": "无畏士兵",
+							"type": "item",
+							"entry": "索思爵士的亡灵盟友免疫{@condition 恐慌|XPHB}状态。"
+						},
+						{
+							"ENG_name": "Guilt of Sithicus",
+							"name": "西斯提库斯的内疚",
+							"type": "item",
+							"entry": "在西斯提库斯，很少有人能安然入睡。每当一个非索思爵士及其盟友的生物在该领域内完成一次长休时，该生物必须成功通过一次{@dc 10}的体质豁免检定，否则获得1级{@condition 力竭|XPHB}。"
+						}
+					]
+				},
+				"如果索思爵士死亡，这些效应立即结束。"
 			]
 		},
 		{
@@ -5230,6 +5533,39 @@
 					]
 				},
 				"如果摩科斯死亡，这些区域效果会立即结束。"
+			]
+		},
+		{
+			"ENG_name": "Mother Lorinda",
+			"name": "主母洛琳达",
+			"source": "RHW",
+			"regionalEffects": [
+				"坦帕斯特因洛琳达的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当主母洛琳达身处其领域时，她可以随意关闭或开启通往坦帕斯特的边界。当边界关闭时，猛烈的暴风雨会充满环绕坦帕斯特的迷雾。一个生物若在其回合中首次进入迷雾，或在其回合开始时身处其中，则必须成功通过一次{@dc 15}的力量豁免检定，否则受到{@damage 2d8}点闪电伤害并被径直击退至多30尺朝向坦帕斯特。一个生物每回合仅需进行此豁免一次。"
+						},
+						{
+							"ENG_name": "Mother's Watchers",
+							"name": "母亲守望者",
+							"type": "item",
+							"entry": "已向母亲献祭眼睛的生物可以执行一个{@action 魔法|XPHB}动作并向她祈祷。当他们这样做时，洛琳达可以如同使用自己的感官一样，通过该生物的感官进行感知，直到该生物的下一个回合结束。当通过一个生物的感官进行感知时，洛琳达会获得该生物拥有的任何特殊感官的增益。"
+						},
+						{
+							"ENG_name": "Sun and Storms",
+							"name": "风与光之主",
+							"type": "item",
+							"entry": "在坦帕斯特时，洛琳达可以施放{@spell 操控天气|XPHB}，无需材料成分，并使用与施法相同的施法属性。以此方式施放该法术时，洛琳达可以控制自身5英里范围内的天气，无论她身处室内还是室外。"
+						}
+					]
+				},
+				"如果洛琳达死亡，这些效应立即结束。"
 			]
 		},
 		{
@@ -5907,6 +6243,39 @@
 					]
 				},
 				"如果里弗林死亡，植物和动物群将恢复到正常水平，它的河流将在{@dice 1d10}天内干涸。所有其他效果立即停止。"
+			]
+		},
+		{
+			"ENG_name": "Saidra d'Honaire",
+			"name": "赛德拉·德奥内尔",
+			"source": "RHW",
+			"regionalEffects": [
+				"德蒙利尔因赛德拉的存在而发生了异变，产生了以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当赛德拉身处其领域时，她可以随意关闭或开放通往德蒙利尔的边界。当边界关闭时，被称为夏托夫的乡村会出现在环绕德蒙利尔的迷雾中。身处迷雾中的生物会在迷宫般的树篱和雾堤中迷失，最终在{@dice 2d6}小时后重新出现在露西恩港的郊外。"
+						},
+						{
+							"ENG_name": "Empowered Actors",
+							"name": "赋能演员",
+							"type": "item",
+							"entry": "类人生物在佩戴面具时，为魅力（{@skill 欺瞒|XPHB}或{@skill 表演|XPHB}）检定添加{@dice 1d8}。"
+						},
+						{
+							"ENG_name": "Invitation",
+							"name": "请君入瓮",
+							"type": "item",
+							"entry": "拂晓时分，赛德拉可以选择一个她知道名字或以前见过的生物。一个简易面具和一张邀请其参加下一场盛大化装舞会的请柬会出现在该生物面前。信件和面具会出现在一个未被注意但显而易见的地方，例如床头柜或装备之中。"
+						}
+					]
+				},
+				"如果{@creature 赛德拉·德奥内尔|RHW|赛德拉}死亡，这些效应立即结束。如果赛德拉获得了一个新的身体（见她的黑暗领主恢复特质），这些效应会恢复。"
 			]
 		},
 		{
@@ -6642,6 +7011,37 @@
 			]
 		},
 		{
+			"ENG_name": "Star Spawn Emissary",
+			"name": "星之子使者",
+			"source": "RHW",
+			"regionalEffects": [
+				"星之子使者巢穴所在的区域因其存在而扭曲，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Cosmic Transformation",
+							"name": "宇宙变形",
+							"type": "item",
+							"entries": [
+								"当巢穴中的一个生物变形为其真实形态时，以该化兽者为中心10尺光环范围内的生物受到10（{@dice 3d6}）点力场伤害。"
+							]
+						},
+						{
+							"ENG_name": "Terrifying Topography",
+							"name": "恐怖地形",
+							"type": "item",
+							"entries": [
+								"巢穴内的地形被转化为一种血肉的扭曲仿制品，带有令人不安的特征，例如粗大的血管、耷拉的舌头和脉动的孔洞。在巢穴1英里范围内，由使节选择的生物，在该区域内进行豁免检定时具有劣势，以避免或结束恐慌状态。"
+							]
+						}
+					]
+				},
+				"如果星之子使者死亡或将其巢穴移至他处，这些效应立即结束。"
+			]
+		},
+		{
 			"ENG_name": "Storm Giant Quintessent",
 			"name": "风暴巨人升华者",
 			"source": "MPMM",
@@ -6760,6 +7160,39 @@
 						"施特拉德指定一个投下影子的中型或更小体型生物为目标。该目标的影子必须对施特拉德可见且位于他30尺范围内。如果目标未能通过{@dc 17}的魅力豁免检定，其影子便脱离它，变成一个听从施特拉德命令的{@creature 幽影}，在先攻顺位20行动。对目标施放{@spell 高等复原术}法术或{@spell 移除诅咒}法术会恢复其自然的影子，但前提是其不死生物影子已被摧毁。"
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Strahd von Zarovich",
+			"name": "施特拉德·冯·扎洛维奇",
+			"source": "RHW",
+			"regionalEffects": [
+				"巴洛维亚因施特拉德的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当施特拉德身处其领域内时，他可以随意关闭或开放通往巴洛维亚的边界。当边界关闭时，有毒的迷雾会弥漫在巴洛维亚周围的迷雾中。一个生物若在一回合内首次进入迷雾或在其中开始其回合，则必须成功通过一次{@dc 20}的体质豁免检定，否则获得1级{@condition 力竭|XPHB}状态。一个生物每回合只进行此豁免一次。"
+						},
+						{
+							"ENG_name": "Dreadful Darkness",
+							"name": "恐怖黑暗",
+							"type": "item",
+							"entry": "当处于{@variantrule 黑暗|XPHB}区域时，除施特拉德及其指定的生物外，其他生物在结束或避免{@condition 恐慌|XPHB}状态的豁免检定上具有{@variantrule 劣势|XPHB}。"
+						},
+						{
+							"ENG_name": "Jealous Heart",
+							"name": "嫉妒之心",
+							"type": "item",
+							"entry": "当一个角色获得{@variantrule 英雄激励|XPHB}但已经拥有时，该角色无法将其给予队伍中的其他角色。"
+						}
+					]
+				},
+				"如果施特拉德死亡，这些效应立即结束。"
 			]
 		},
 		{
@@ -7205,6 +7638,33 @@
 			]
 		},
 		{
+			"ENG_name": "Viktra Mordenheim",
+			"name": "维克特拉·莫登海姆",
+			"source": "RHW",
+			"regionalEffects": [
+				"拉莫迪亚因维克特拉的在场而被改变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Air of Obsession",
+							"name": "执迷之息",
+							"type": "item",
+							"entry": "当一个生物在维持{@status 专注|XPHB}时未能通过体质豁免检定，该生物受到3（{@dice 1d6}）点心灵伤害。"
+						},
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当维克特拉·莫登海姆身处其领域时，她可以关闭或开放通往拉莫迪亚的边界。当边界关闭时，闪电风暴会席卷拉莫迪亚周围的迷雾。一个生物若在一回合内首次进入迷雾或在其内开始回合，则需进行一次{@dc 15}的敏捷豁免检定，豁免失败则受到{@damage 4d6}点闪电伤害，豁免成功则只受一半伤害。一个生物每回合只需进行一次此豁免检定。"
+						}
+					]
+				},
+				"如果维克特拉死亡，这些效应立即结束。"
+			]
+		},
+		{
 			"ENG_name": "Villain",
 			"name": "反派",
 			"source": "BMT",
@@ -7256,6 +7716,39 @@
 					]
 				},
 				"如果反派角色死亡，这些效果将在{@dice 1d10}天内逐渐消失。"
+			]
+		},
+		{
+			"ENG_name": "Vladeska Drakov",
+			"name": "弗拉德斯卡·德拉科夫",
+			"source": "RHW",
+			"regionalEffects": [
+				"法尔科夫尼亚因德拉科夫的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Authoritarian Regime",
+							"name": "专制政权",
+							"type": "item",
+							"entry": "德拉科夫的盟友在感知豁免检定上具有{@variantrule 优势|XPHB}。"
+						},
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "德拉科夫无法关闭或开放她领域的边界。法尔科夫尼亚的边界通常是关闭的，但他们在每个月的朔月之夜开始开放一周。"
+						},
+						{
+							"ENG_name": "Endless War",
+							"name": "无尽的战争",
+							"type": "item",
+							"entry": "每当一个非德拉科夫或其盟友的生物在该领域内完成一次长休时，掷一次{@dice 1d20}。若结果为1，该生物不会因完成该次休息而移除任何{@condition 力竭|XPHB}等级，并且该生物获得1级力竭。"
+						}
+					]
+				},
+				"如果德拉科夫死亡，这些效应立即结束。"
 			]
 		},
 		{
@@ -7391,6 +7884,39 @@
 					]
 				},
 				"如果龙死亡或将巢穴移至其他地方，这些效果立即结束。"
+			]
+		},
+		{
+			"ENG_name": "Wilfred Godefroy",
+			"name": "威尔弗雷德·戈弗雷",
+			"source": "RHW",
+			"regionalEffects": [
+				"莫登特因戈弗雷领主的存在而发生异变，产生以下效应：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Closing the Borders",
+							"name": "关闭边界",
+							"type": "item",
+							"entry": "当身处其领域时，戈弗雷勋爵可以关闭或开放通往莫登特的边界。当边界关闭时，亡者的呻吟与低语会充满环绕莫登特的迷雾。身处迷雾中的生物将获得{@condition 耳聋|XPHB}状态。"
+						},
+						{
+							"ENG_name": "Ears Everywhere",
+							"name": "无处不在的耳朵",
+							"type": "item",
+							"entry": "当身处其领域内时，戈弗雷勋爵可以施放{@spell 短讯术|XPHB}，无需材料成分并使用魅力作为施法属性。以此方式施放该法术时，戈弗雷勋爵除了通常的目标外，还可以以莫登特境内的任何亡灵生物为目标。"
+						},
+						{
+							"ENG_name": "Spectral Serfs",
+							"name": "灵体农奴",
+							"type": "item",
+							"entry": "一个在莫登特死亡的类人生物，除非被复活，否则将在7天后作为受戈弗雷勋爵控制的{@creature 恶灵|XMM}复生。"
+						}
+					]
+				},
+				"如果威尔弗雷德死亡，这些效应立即结束。"
 			]
 		},
 		{

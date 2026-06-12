@@ -1557,7 +1557,7 @@
 			"classSource": "PHB",
 			"page": 30,
 			"reprintedAs": [
-				"Undead|Warlock|XPHB|RHW"
+				"亡灵|魔契师|XPHB|RHW"
 			],
 			"edition": "classic",
 			"additionalSpells": [
@@ -1602,7 +1602,7 @@
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"reprintedAs": [
-				"Undead|Warlock|XPHB|RHW"
+				"亡灵|魔契师|XPHB|RHW"
 			],
 			"_copy": {
 				"ENG_name": "The Undead",
@@ -1826,41 +1826,42 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Undead Patron",
-			"shortName": "Undead",
+			"ENG_name": "Undead Patron",
+			"name": "死灵宗主",
+			"shortName": "亡灵",
 			"source": "RHW",
-			"className": "Warlock",
+			"className": "魔契师",
 			"classSource": "XPHB",
 			"edition": "one",
 			"additionalSpells": [
 				{
 					"prepared": {
 						"3": [
-							"bane|xphb",
-							"blindness/deafness|xphb",
-							"phantasmal force|xphb",
-							"ray of sickness|xphb"
+							"灾祸术|xphb",
+							"目盲术/耳聋术|xphb",
+							"魅影之力|xphb",
+							"致病射线|xphb"
 						],
 						"5": [
-							"speak with dead|xphb",
-							"summon undead|xphb"
+							"死者交谈|xphb",
+							"亡灵召唤术|xphb"
 						],
 						"7": [
-							"greater invisibility|xphb",
-							"phantasmal killer|xphb"
+							"高等隐形术|xphb",
+							"魅影杀手|xphb"
 						],
 						"9": [
-							"antilife shell|xphb",
-							"cloudkill|xphb"
+							"防活物护罩|xphb",
+							"死云术|xphb"
 						]
 					}
 				}
 			],
 			"subclassFeatures": [
-				"Undead Patron|Warlock|XPHB|Undead|RHW|3|RHW",
-				"Grave Touched|Warlock|XPHB|Undead|RHW|6|RHW",
-				"Necrotic Husk|Warlock|XPHB|Undead|RHW|10|RHW",
-				"Superior Dread|Warlock|XPHB|Undead|RHW|14|RHW"
+				"死灵宗主|魔契师|XPHB|亡灵|RHW|3|RHW",
+				"坟冢之触|魔契师|XPHB|亡灵|RHW|6|RHW",
+				"死疽躯壳|魔契师|XPHB|亡灵|RHW|10|RHW",
+				"超凡战栗|魔契师|XPHB|亡灵|RHW|14|RHW"
 			],
 			"hasFluffImages": true
 		}
@@ -4229,6 +4230,217 @@
 					"page": true
 				}
 			}
+		},
+		{
+			"ENG_name": "Undead Patron",
+			"name": "死灵宗主",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"{@i 悍不畏死以获取亵渎法力}",
+				"你与某种蔑视生死轮回的存在缔结了契约，那或许是强大的巫妖、古老的吸血鬼，亦或是其他某种不死实体。这些古老宗主也曾是凡人，它们亲身蹚过了野心之路，更是摸透了跨越死亡大门的捷径。如今，它们迫不及待地想要将这些亵渎的知识与秘辛，赐予那些甘愿在生者之中代行其意志的信徒。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "战栗形态|魔契师|XPHB|亡灵|RHW|3|RHW"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "死灵法术|魔契师|XPHB|亡灵|RHW|3|RHW"
+				}
+			]
+		},
+		{
+			"ENG_name": "Form of Dread",
+			"name": "战栗形态",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"你可以使用附赠动作变身为你宗主那骇人伟力的化身。你获得以下增益，持续1分钟；当你陷入{@condition 失能|XPHB}状态，或你主动结束该形态时（无需动作），该效应提前结束。你可以进行变身的次数等于你的魅力调整值（至少一次）。完成一次长休后，你恢复所有已消耗的使用次数。",
+				{
+					"ENG_name": "Facsimile of Life",
+					"name": "生命摹写",
+					"type": "entries",
+					"entries": [
+						"你获得等于{@dice 1d10}加上你的魔契师等级的{@variantrule 临时生命值|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Fearless Form",
+					"name": "无畏之姿",
+					"type": "entries",
+					"entries": [
+						"你免疫{@condition 恐慌|XPHB}状态。若你在变身时正陷入恐慌，则该状态对你立即终止。"
+					]
+				},
+				{
+					"ENG_name": "Frightful Avatar",
+					"name": "恐惧化身",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你以攻击检定命中一个生物时，你可以迫使其进行一次对抗你法术豁免DC的感知豁免。若豁免失败，则目标陷入{@condition 恐慌|XPHB}状态，直至你的下一回合结束。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Undead Spells",
+			"name": "死灵法术",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"宗主赐予的魔法使你始终准备着特定的法术。当你到达死灵法术表中特定的魔契师等级时，你就始终准备着表中对应的法术。",
+				{
+					"type": "table",
+					"caption": "死灵法术",
+					"colLabels": [
+						"魔契师等级",
+						"法术"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"3",
+							"{@spell 灾祸术|XPHB}, {@spell 目盲术/耳聋术|XPHB}, {@spell 魅影之力|XPHB}, {@spell 致病射线|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 死者交谈|XPHB}, {@spell 亡灵召唤术|XPHB}"
+						],
+						[
+							"7",
+							"{@spell 高等隐形术|XPHB}, {@spell 魅影杀手|XPHB}"
+						],
+						[
+							"9",
+							"{@spell 防活物护罩|XPHB}, {@spell 死云术|XPHB}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Grave Touched",
+			"name": "坟冢之触",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"宗主的伟力深刻侵染了你的肉体与魔法，赋予你以下增益。",
+				{
+					"ENG_name": "Arcane Necrosis",
+					"name": "坏疽秘法",
+					"type": "entries",
+					"entries": [
+						"源自你的攻击、魔契师法术以及魔契师特性的暗蚀伤害，无视暗蚀伤害抗性。每回合一次，当你施展一道造成伤害的法术时，你可以将该法术的伤害类型改为暗蚀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Dreaded Necrosis",
+					"name": "战栗死气",
+					"type": "entries",
+					"entries": [
+						"使用你的战栗形态特性期间，当你以攻击检定命中一个生物并造成暗蚀伤害时，你可以在决定目标受到的暗蚀伤害时额外掷一枚伤害骰。你每回合只能使用一次此增益。"
+					]
+				},
+				{
+					"ENG_name": "Undead Endurance",
+					"name": "不死坚韧",
+					"type": "entries",
+					"entries": [
+						"你不会因{@hazard 脱水|XPHB}、{@hazard 饥饿|XPHB}或{@hazard 窒息|XPHB}而获得{@condition 力竭|XPHB}等级。此外，你无需睡眠，魔法也无法使你陷入睡眠。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Necrotic Husk",
+			"name": "死疽躯壳",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 10,
+			"header": 2,
+			"entries": [
+				"你与不死者的连接彻底浸透了你的身躯。你获得以下增益。",
+				{
+					"ENG_name": "Necrotic Resilience",
+					"name": "暗蚀抗性",
+					"type": "entries",
+					"entries": [
+						"你具有暗蚀伤害抗性。使用你的战栗形态特性期间，你具有对暗蚀伤害的免疫。"
+					]
+				},
+				{
+					"ENG_name": "Unholy Resuscitation",
+					"name": "邪秽复苏",
+					"type": "entries",
+					"entries": [
+						"若你的生命值降至0且没有立即死亡，则你可以令你的躯体爆发出一阵死亡能量。源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内每个由你选择的生物都必须进行一次对抗你法术豁免DC的体质豁免。若豁免失败，则受到{@dice 2d10}+你魅力调整值的暗蚀伤害；若豁免成功，则伤害减半。随后，你的生命值变为你魔契师等级的两倍，同时你获得一级{@condition 力竭|XPHB}。",
+						"该增益一经使用，则直至你完成一次短休或长休前，都无法再次使用。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Superior Dread",
+			"name": "超凡战栗",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"你的战栗形态获得强化，并在你使用期间赋予你以下增益。",
+				{
+					"ENG_name": "Dread Resistance",
+					"name": "战栗抗性",
+					"type": "entries",
+					"entries": [
+						"你具有钝击、穿刺和挥砍伤害抗性。"
+					]
+				},
+				{
+					"ENG_name": "Ghostly Flight",
+					"name": "幽魂飞行",
+					"type": "entries",
+					"entries": [
+						"你具有等于你速度的飞行速度，并且可以悬浮。你可以如同穿过{@variantrule 困难地形|XPHB}一般移动穿过生物或物件；但若你在你的回合结束时仍处于生物或物件内部，你受到{@damage 1d10}力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Profane Casting",
+					"name": "亵渎施法",
+					"type": "entries",
+					"entries": [
+						"每当你施展一道咒法学派或死灵学派的魔契师法术时，你可以免除该法术的言语、姿势以及材料成分，除非该材料成分已标明价值或会被消耗。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "The Undying",

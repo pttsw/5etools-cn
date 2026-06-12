@@ -40,6 +40,43 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Ancient Altar",
+			"name": "远古祭坛",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 9,
+			"space": [
+				"cramped"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"增强"
+			],
+			"entries": [
+				"远古祭坛是一个庄严的密阁，你可以在此向神秘力量献上祭品。",
+				{
+					"ENG_name": "Empower: Purge Haunted Facility",
+					"name": "增强：净化闹鬼设施",
+					"type": "entries",
+					"entries": [
+						"你委托你的雇员主持一场持续7天的仪式，在此期间你必须留在据点内。仪式结束时，你必须献上一份有价值的祭品，可以是金钱（1000 GP）或鲜血（至少一个大型生物或四个中型生物的新鲜尸体，且不能是构装体或不死生物）。如果你进行血祭，则在{@book 据点闹鬼表格|RHW|3|据点闹鬼}上掷骰。仪式完成后，祭品将被销毁。选择此据点或与此据点相连的据点中的一个闹鬼特色设施；该设施将不再闹鬼。"
+					]
+				},
+				{
+					"ENG_name": "Blasphemous Charm",
+					"name": "亵渎魅惑",
+					"type": "entries",
+					"entries": [
+						"在你的远古祭坛中完成一次长休后，你将获得一个持续7天或直到你使用它为止的魔法{@reward 亵渎魅惑|RHW|魅惑}。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Arcane Study",
 			"name": "奥术研究室",
 			"source": "XDMG",
@@ -337,6 +374,103 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Cabinet of Curiosities",
+			"name": "奇物陈列柜",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 9,
+			"space": [
+				"cramped"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"贸易"
+			],
+			"entries": [
+				"奇物陈列柜是一个小型沙龙、衣帽间或前厅，你可以在此存放和编目奇特物件和迷人奇物。",
+				{
+					"ENG_name": "Trade: Acquire Curios",
+					"name": "贸易：获取奇物",
+					"type": "entries",
+					"entries": [
+						"当你向此设施下达贸易指令时，你需向该设施的雇员提供一定数量的金币，并委托他们从非常规渠道购买奇特物件。雇员需要28天才能带着一件或多件魔法物品返回据点。你的投资决定了这些物品的稀有度，而魔法物品的数量则取决于雇员返回时你据点中闹鬼特色设施的数量，具体如奇物投资和已收集的奇物表格所示。",
+						{
+							"type": "table",
+							"caption": "奇物投资",
+							"colLabels": [
+								"投资",
+								"物品稀有度"
+							],
+							"colStyles": [
+								"col-6",
+								"col-6"
+							],
+							"rows": [
+								[
+									"150 GP",
+									"{@filter 通用语|items|rarity=common}"
+								],
+								[
+									"600 GP",
+									"{@filter 非普通|items|rarity=uncommon}"
+								],
+								[
+									"6,000 GP",
+									"{@filter 珍稀|items|rarity=rare}"
+								],
+								[
+									"60,000 GP",
+									"{@filter 极珍稀|items|rarity=very rare}"
+								]
+							]
+						},
+						{
+							"type": "table",
+							"caption": "已收集的奇物",
+							"colLabels": [
+								"闹鬼设施",
+								"魔法物品获取",
+								"诅咒物品几率（1d100）"
+							],
+							"colStyles": [
+								"col-4 text-center",
+								"col-4 text-center",
+								"col-4 text-center"
+							],
+							"rows": [
+								[
+									"0",
+									"1",
+									"\u2014"
+								],
+								[
+									"1\u20132",
+									"{@dice 1d2|1\u20132}（抛一枚硬币）",
+									"{@chance 10|01\u201310|10% 诅咒几率}"
+								],
+								[
+									"3\u20135",
+									"{@dice 1d3}",
+									"{@chance 20|01\u201320|20% 诅咒几率}"
+								],
+								[
+									"6",
+									"{@dice 1d4}",
+									"{@chance 25|01\u201325|25% 诅咒几率}"
+								]
+							]
+						},
+						"要确定你的雇员带回了多少魔法物品，请先统计你据点中的闹鬼特色设施数量，然后在已收集的奇物表格的魔法物品获取列掷出对应的骰子。DM在诅咒物品几率（{@dice 1d100}）列掷骰，以确定其中一件魔法物品是否带有诅咒。DM选择哪件物品被诅咒，并确定诅咒的性质。",
+						"对于每件获取的魔法物品，在{@book 城主指南|XDMG}中\"{@book 随机魔法物品|XDMG|9}\"章节的对应稀有度表格上掷骰，以确定该物品是什么。（随机选择宝藏主题。）"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Construct Forge",
 			"name": "构装锻造",
 			"source": "EFA",
@@ -497,7 +631,7 @@
 					"name": "扩建设施",
 					"type": "entries",
 					"entries": [
-						"你可以花费2000 GP将你的龙巫教档案馆扩建成庞大设施。如果你这样做，这样做后，你会获得两本在{@book 第八章|XDMG|10}的{@book 城主指南|XDMG}档案馆设施中列出的两本参考书。"
+						"你可以花费2000 GP将你的龙巫教档案馆扩建成一个庞大的设施。如果你这样做，你将获得两本参考书，可从{@book 城主指南|XDMG}中{@book 第八章|XDMG|7}的档案馆条目所列出的书籍中选择。"
 					]
 				}
 			],
@@ -1053,6 +1187,80 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Infirmary",
+			"name": "医务室",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 9,
+			"prerequisite": [
+				{
+					"proficiency": [
+						{
+							"skill": [
+								"medicine"
+							]
+						}
+					]
+				}
+			],
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 2
+				}
+			],
+			"orders": [
+				"制造"
+			],
+			"entries": [
+				"医务室为受伤或生病的据点居住者提供紧急治疗和持续护理。",
+				{
+					"ENG_name": "Craft Options",
+					"name": "制造选项",
+					"type": "entries",
+					"entries": [
+						"当你向该设施下达制造命令时，从以下选项中选择一项：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Craft:",
+									"name": "制造：",
+									"type": "item",
+									"entry": "抗毒剂。你委托设施的雇员制造两小瓶{@item 抗毒剂|XPHB}。这项工作需要7天且不花费金钱。你可以在制造过程中花费50GP来强化其中一瓶抗毒剂，或花费100GP来强化两瓶。一瓶强化抗毒剂可以终止饮用它的生物的{@condition 中毒|XPHB}状态。一瓶强化抗毒剂在28天后会失去此强化效果。"
+								},
+								{
+									"ENG_name": "Craft:",
+									"name": "制造：",
+									"type": "item",
+									"entry": "强化治疗药水。你委托此设施的雇员来提升最多两个{@item 治疗药水|XDMG|治疗药水}的潜能。你必须提供待强化的药水，且此过程需要14天来完成。一瓶治疗药水会变为{@item 高等治疗药水|XDMG|治疗药水（高等）}。当你达到13级时，你可以提供最多两瓶高等治疗药水，每瓶会变为{@item 强效治疗药水|XDMG|治疗药水（强效）}。"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Triage",
+					"name": "伤患鉴别法",
+					"type": "entries",
+					"entries": [
+						"当你的据点被攻击，并且你掷骰以确定有多少据点守卫迷失时，你可以重掷等同于该设施雇员数量的骰子。你必须使用新的掷骰结果。"
+					]
+				},
+				{
+					"ENG_name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"type": "entries",
+					"entries": [
+						"你可以花费2000 GP将你的医务室扩建成一个庞大的设施。如果你这样做，医务室将获得两名雇员，并且你一次可以强化的抗毒剂或治疗药水的数量增加到四份。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Inquisitive Agency",
 			"name": "调查团",
 			"source": "EFA",
@@ -1236,6 +1444,89 @@
 			],
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Lightning Generator",
+			"name": "闪电发生器",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 13,
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"增强"
+			],
+			"entries": [
+				"闪电发生器可以将大气电力转化为多种实用功能。",
+				{
+					"ENG_name": "Charm of Electromancy",
+					"name": "电魔法魅惑",
+					"type": "entries",
+					"entries": [
+						"在你的闪电发生器中完成一次长休后，你将受到{@damage 8d6}点闪电伤害，并获得一个持续7天的魔法{@reward 电魔法魅惑|RHW|魅惑}（关于{@book 护咒|XDMG|2|护咒}的规则，请参阅{@book 城主指南|XDMG}）。"
+					]
+				},
+				{
+					"ENG_name": "Revivification",
+					"name": "回春",
+					"type": "entries",
+					"entries": [
+						"当你在该设施内施放法术{@spell 死者复活|XPHB}和{@spell 复生术|XPHB}时，该法术材料成分的花费减少1000金币（最低为0）。"
+					]
+				},
+				{
+					"ENG_name": "Empower: Lightning Life",
+					"name": "增强：闪电生命",
+					"type": "entries",
+					"entries": [
+						"设施的雇员引导发生器的能量来施放{@spell 活化物件|XPHB}，以据点中你选择的一个大型或巨型物件为目标。该法术的持续时间为7天且不需要{@status 专注|XPHB}。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Liminal Space",
+			"name": "阈限空间",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 17,
+			"space": [
+				"vast"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"招募"
+			],
+			"entries": [
+				"你的据点与一个深不可测的半位面相连，其中充满了庞大、空旷的空间和奇怪的生物。这个特色设施不占用你据点的空间；相反，这个设施的入口会出现在你据点其他基础和特色设施的盥洗室、夹层空间和幽影中。负责此设施的雇员会保护据点的居民，免受从半位面溜出的游荡实体的侵扰。此设施始终被视为闹鬼。",
+				{
+					"ENG_name": "Dark Bargains",
+					"name": "黑暗交易",
+					"type": "entries",
+					"entries": [
+						"你可以进入此设施并在其中漫游7天，与那里的奇异实体商议和交易。如果你在此期间离开据点，你将无法获得增益。在第七天结束时，你获得一个你选择的{@filter 黑暗赠礼|feats|category=DG}专长。你一次只能拥有一个来自此增益的专长；如果你在已拥有一个来自此增益的专长时使用此设施，在七天结束时获得的专长将替换之前通过使用此设施获得的任何专长。"
+					]
+				},
+				{
+					"ENG_name": "Recruit: Stranger",
+					"name": "招募：陌生人",
+					"type": "entries",
+					"entries": [
+						"当你向此设施下达招募指令时，你指示设施的雇员举行一个仪式，并向来自半位面的某个实体请愿以寻求援助。此仪式耗时7天，花费1000金币。在仪式结束时，投掷任意一颗骰子。若结果为奇数，被召唤的实体拒绝你的请求并杀死雇员，且此设施在你的下一个据点回合前无法使用，届时雇员将被免费替换；若结果为偶数，被召唤的实体同意你的请求，并在你的阈限空间内定居。",
+						"当实体驻留在你的阈限空间时，它被视为据点防御者。如果你的据点遭到攻击，你阈限空间内的每个实体都会使你在确定有多少据点防御者于攻击中迷失时所掷的骰子数量减少1。你可以选择不将该实体视为据点防御者，在这种情况下，你不能召唤它来保卫据点；相反，该实体会根据其本性行动，使用{@creature 不可名状之恐怖|RHW}数据卡。你最多可以同时拥有三个实体在你的阈限空间中。从你的据点防御者名册中扣除任何你失去的实体。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Lords' Alliance Noble Residence",
@@ -2011,6 +2302,45 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Rookery",
+			"name": "诱陷者",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 5,
+			"space": [
+				"cramped"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"制造"
+			],
+			"entries": [
+				"数量等同于你角色等级的乌鸦栖息在诱陷者中。每当一个生物进入该设施，这些鸟儿便会不可思议地追踪它的移动，它们珠子般的眼睛背后是深不可测的智力。",
+				{
+					"ENG_name": "Craft: Mist Talisman",
+					"name": "制造：迷雾护符",
+					"type": "entries",
+					"entries": [
+						"当你向此设施下达制造指令时，可以委托雇员派遣乌鸦前往你曾到访过或从曾身处该领域的生物处听闻过的某个恐惧领域，联系各方人士。这项工作需要21天，在此期间该设施内无法进行任何其他活动。",
+						"在此期间结束时，该雇员会制作一个与所选恐惧领域相连的{@book 迷雾护符|RHW|0|迷雾护符}。"
+					]
+				},
+				{
+					"ENG_name": "Messenger Ravens",
+					"name": "信使乌鸦",
+					"type": "entries",
+					"entries": [
+						"每当你完成一次在据点内的长休，你可以派遣一只渡鸦，携带一封25字或更少的书面信息，送给你曾见过或由见过它的人向你描述过的生物。收到此信息后，收件人可以用类似的方式回复，将其回应附在渡鸦身上。无论收件人是否回复，7天后渡鸦都会返回鸦巢。",
+						"你可以通过渡鸦以这种方式跨越任何距离发送信息，但收信者必须与你的据点处于同一个存在平面，或处于一个通过鸦阁魔域的迷雾与你的半位面相连的半位面中。信使渡鸦会无视任何魔法大区或其他阻碍力量（包括迷雾和恐惧领域的封闭边界）来传递信息。如果渡鸦无法传递你的信息，它会在7天后带着你原始的信息返回你的诱陷者。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Sacristy",
 			"name": "圣器室",
 			"source": "XDMG",
@@ -2282,6 +2612,51 @@
 			]
 		},
 		{
+			"ENG_name": "Spirit Vault",
+			"name": "精魄宝库",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 13,
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"研究"
+			],
+			"entries": [
+				"精魄宝库被魔法保护，用以囚禁和驱散恶意的精魂及其他超然力量。闹鬼肖像、诅咒圣物及其他诡异奇物排列在这座黑暗宝库的架子上。此设施始终被视为闹鬼。",
+				{
+					"ENG_name": "Esoteric Knowledge",
+					"name": "秘传学识",
+					"type": "entries",
+					"entries": [
+						"在你的精魄宝库中进行一次长休后，你将获得以下魔法护咒之一：",
+						{
+							"type": "list",
+							"items": [
+								"{@reward 驱魔魅咒|RHW}",
+								"{@reward 恶咒魅惑|RHW}"
+							]
+						},
+						"魅惑持续7天或直到你使用它。智力、感知或魅力是魅惑法术的施法属性（每次获得此魅惑时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Research: Ask the Occult",
+					"name": "研究：询问神秘学",
+					"type": "entries",
+					"entries": [
+						"当你向此设施下达研究指令时，你或你的雇员会研究各种圣物，并审问你精魄宝库内被囚禁的实体。这项工作需要7天时间。结束时，掷{@dice 1d6}。若结果为1，则这项工作会造成精神损耗；若由你进行研究，你将受到{@damage 6d6}点心灵伤害；若由雇员进行研究，该雇员会立即死亡，并且此设施在你的下一个据点回合前无法再次使用。否则，你或你的雇员将获得信息，如同你成功施放了{@spell 异界探知|XPHB}法术。雇员会在你下次与其交谈时分享他们学到的任何信息。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Stable",
 			"name": "马厩",
 			"source": "XDMG",
@@ -2369,6 +2744,44 @@
 					]
 				}
 			]
+		},
+		{
+			"ENG_name": "Séance Parlor",
+			"name": "降神会客厅",
+			"source": "RHW",
+			"facilityType": "special",
+			"level": 5,
+			"space": [
+				"cramped"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"研究"
+			],
+			"entries": [
+				"在降神会客厅中，生者世界与死者世界之间的面纱变得稀薄。",
+				{
+					"ENG_name": "Research: Fortune Telling",
+					"name": "研究：占卜",
+					"type": "entries",
+					"entries": [
+						"当你向此设施下达研究指令时，你委托其雇员通过掷骨占卜、解读茶叶、进行塔罗卡牌占卜或使用其他方式来为你占卜命运。在你的命运被解读后，你获得{@variantrule 英雄激励|XPHB}。在完成一次长休前，你无法再次获得此增益。"
+					]
+				},
+				{
+					"ENG_name": "Speak with Dead",
+					"name": "死者交谈",
+					"type": "entries",
+					"entries": [
+						"在你的降神会客厅完成一次长休后，你可以立即施放{@spell 死者交谈|XPHB}法术，而无需消耗法术位或提供材料成分。当你以此方式施放该法术时，只要你知道其名称并拥有一件其遗骸的碎片（例如灰烬或骨头）或一件对该生物生前至关重要的物件（例如一枚胸针或招牌武器），你就可以以任何已故的生物为目标。目标通过降神会客厅中的一件媒介（例如一颗水晶球或通灵板）说话。"
+					]
+				}
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Teleportation Circle",

@@ -70,7 +70,7 @@
 					"(a) 一把{@item 刺剑|PHB}或 (b) 一把{@item 短剑|PHB}",
 					"（a）一把{@item 短弓|PHB}和一个{@item 箭袋|PHB}（含{@item 箭矢 (20)|PHB|20支箭}）或（b）一把{@item 短剑|PHB}",
 					"（a）一个{@item 窃贼套组|PHB}，（b）一个{@item 地城套组|PHB}或（c）一个{@item 探索套组|PHB}",
-					"{@item 皮甲|PHB}, 两把{@item 匕首|PHB}，以及{@item 盗贼工具|PHB}"
+					"{@item 匕首|PHB|匕首}, 两把{@item 皮甲|PHB}，以及{@item 盗贼工具|PHB}"
 				],
 				"goldAlternative": "{@dice 4d4 × 10|4d4 × 10|起始金币}",
 				"defaultData": [
@@ -1526,7 +1526,7 @@
 			"classSource": "PHB",
 			"page": 62,
 			"reprintedAs": [
-				"Phantom|Rogue|XPHB|RHW"
+				"鬼魅|游荡者|XPHB|RHW"
 			],
 			"edition": "classic",
 			"subclassFeatures": [
@@ -1545,7 +1545,7 @@
 			"className": "游荡者",
 			"classSource": "XPHB",
 			"reprintedAs": [
-				"Phantom|Rogue|XPHB|RHW"
+				"鬼魅|游荡者|XPHB|RHW"
 			],
 			"_copy": {
 				"ENG_name": "Phantom",
@@ -2127,10 +2127,11 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Phantom",
-			"shortName": "Phantom",
+			"ENG_name": "Phantom",
+			"name": "鬼魅",
+			"shortName": "鬼魅",
 			"source": "RHW",
-			"className": "Rogue",
+			"className": "游荡者",
 			"classSource": "XPHB",
 			"edition": "one",
 			"additionalSpells": [
@@ -2139,7 +2140,7 @@
 						"9": {
 							"rest": {
 								"1": [
-									"speak with dead|xphb"
+									"死者交谈|xphb"
 								]
 							}
 						}
@@ -2148,11 +2149,11 @@
 				}
 			],
 			"subclassFeatures": [
-				"Phantom|Rogue|XPHB|Phantom|RHW|3|RHW",
-				"Tokens of the Departed|Rogue|XPHB|Phantom|RHW|9|RHW",
-				"Voice of Death|Rogue|XPHB|Phantom|RHW|9|RHW",
-				"Ghost Walk|Rogue|XPHB|Phantom|RHW|13|RHW",
-				"Death's Friend|Rogue|XPHB|Phantom|RHW|17|RHW"
+				"鬼魅|游荡者|XPHB|鬼魅|RHW|3|RHW",
+				"逝者遗物|游荡者|XPHB|鬼魅|RHW|9|RHW",
+				"死亡之声|游荡者|XPHB|鬼魅|RHW|9|RHW",
+				"幽灵漫步|游荡者|XPHB|鬼魅|RHW|13|RHW",
+				"死亡之友|游荡者|XPHB|鬼魅|RHW|17|RHW"
 			],
 			"hasFluffImages": true
 		}
@@ -4270,6 +4271,195 @@
 					"page": 7,
 					"entries": [
 						"当你投掷{@classFeature 偷袭|游荡者|XPHB|1|XPHB}伤害时，你可以将伤害骰投出的1和2都视为3。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Phantom",
+			"name": "鬼魅",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"{@i 拥抱死亡，驾驭幽冥之力}",
+				"有些游荡者能够穿行于生与死之间的帷幕，引导敌人步入坟墓，并如幽灵般悄无声息地游走于世间。在这样的追寻中，游荡者或许会发现自己与死亡本身建立起一种神秘的联系。他们会逐渐浸淫于负能量之中，使自己的攻击浸染致命的死亡之力，并从已逝的灵魂那里窃取知识。各大盗贼公会极为器重这类游荡者，将其视作最高效的情报搜集者与间谍。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "墓穴惊嚎|游荡者|XPHB|鬼魅|RHW|3|RHW"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "亡者余声|游荡者|XPHB|鬼魅|RHW|3|RHW"
+				}
+			]
+		},
+		{
+			"ENG_name": "Wails from the Grave",
+			"name": "墓穴惊嚎",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"当你在自己回合内对一个生物造成偷袭伤害后，你可以立即选择第一个生物30尺范围内你可见的第二个生物作为目标。掷出一半数量的偷袭骰（基于你的游荡者等级；向上取整），亡者的哀嚎将在第二个生物周围回荡，该生物受到等同于掷骰结果总和的暗蚀伤害。",
+				"你可以使用此特性的次数等同于你的敏捷调整值（至少1次），当你完成一次长休后你重获所有已消耗的使用次数。"
+			]
+		},
+		{
+			"ENG_name": "Whispers of the Dead",
+			"name": "亡者余声",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 3,
+			"entries": [
+				"每当你完成一次短休或长休时，你可以选择一项你不具有熟练的技能或工具，某种幽灵般的存在会与你分享其生前学识，使你获得该熟练。当你再次使用该增益选择一项不同的熟练时，你会失去原来选择的那项熟练。"
+			]
+		},
+		{
+			"ENG_name": "Tokens of the Departed",
+			"name": "逝者遗物",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"死者的精魂被你吸纳，其过往生命的回响化为承载着共鸣之力的怪异古玩。",
+				"你获得两件灵魂饰品；每个灵魂饰品都是一件微型的物件（由DM决定饰品的具体形态，或者你可以在{@book 玩家手册|XPHB}中的{@item 饰品|XPHB|饰品表}来掷骰生成）。如果你距离某件你的灵魂饰品超过30尺，该饰品会立即传送到你的身上某处出现。",
+				{
+					"ENG_name": "Using Soul Trinkets",
+					"name": "使用灵魂饰品",
+					"type": "entries",
+					"entries": [
+						"你能以下列方式使用魂器：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"ENG_name": "Death's Knell",
+									"name": "死亡丧钟",
+									"type": "item",
+									"entry": "当你在自己回合里造成偷袭伤害时，你可以摧毁一件灵魂饰品，并立即使用墓冢哀嚎，且不消耗该特性的使用次数。"
+								},
+								{
+									"ENG_name": "Life Essence",
+									"name": "生命精华",
+									"type": "item",
+									"entry": "只要你还具有至少一件灵魂饰品，你进行的死亡豁免和体质豁免就具有{@variantrule 优势|XPHB}。"
+								},
+								{
+									"ENG_name": "Spirit Query",
+									"name": "灵魂问询",
+									"type": "item",
+									"entry": "你可以执行{@action 魔法|XPHB}动作来摧毁一件灵魂饰品，并立即施展法术{@spell 卜筮术|XPHB}，无需任何法术成分，并以体质作为其施法属性。如果你知道该饰品与哪个生物相关联，你可以向该生物的灵魂提出一个问题来替代施展该法术。在此情况下，该灵魂会出现在你面前，并用其生前掌握的一种语言尽可能简明扼要地回答你的问题。"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Gaining Additional Soul Trinkets",
+					"name": "获得额外的灵魂饰品",
+					"type": "entries",
+					"entries": [
+						"当你30尺内你可见的一个生物死亡时，你可以用反应去攫取该生物离体灵魂的碎片，以获得一个新的灵魂饰品。新的饰品会出现在你身上的某处。",
+						"你同时最多只能持有两个灵魂饰品。如果你在达到上限时试图获得一件灵魂饰品，则你现有的一件灵魂饰品会立即被摧毁，并由新饰品取代。你的灵魂饰品持有上限会在你的游荡者等级达到13级时（变为三个）与17级时（变为四个）提升。",
+						"每当你完成长休时，若你拥有的灵魂饰品不足两件，你将获得灵魂饰品，直到拥有两件为止。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Voice of Death",
+			"name": "死亡之声",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 9,
+			"header": 2,
+			"entries": [
+				"你可以无需法术位地施展一次{@spell 死者交谈|XPHB}，无需任何法术成分，并以敏捷作为其施法属性。当你完成一次短休或长休后你重获以此方式施展该法术的能力。",
+				"当你施展该法术时，你可以选择逝者遗物特性中的一件灵魂饰品作为目标，而非一具尸体。从而使与该饰品相关联生物的灵魂来回答你的提问。"
+			]
+		},
+		{
+			"ENG_name": "Ghost Walk",
+			"name": "幽灵漫步",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 13,
+			"header": 2,
+			"entries": [
+				"作为一个附赠动作，你化为某种幽魂形态，并获得以下增益，持续10分钟，或直到你主动结束它们（无需动作）。一旦你使用了这一特性，直到完成一次长休前你都无法再次使用它，你也可以销毁你的一件来自逝者遗物特性的灵魂饰品来重获这一能力的使用权（无需动作）。",
+				{
+					"ENG_name": "Flight",
+					"name": "飞行",
+					"type": "entries",
+					"entries": [
+						"你获得10尺飞行速度，并能悬浮。"
+					]
+				},
+				{
+					"ENG_name": "Hazy Form",
+					"name": "朦胧形态",
+					"type": "entries",
+					"entries": [
+						"对你进行的攻击检定具有{@variantrule 劣势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Incorporeal Movement",
+					"name": "虚体移动",
+					"type": "entries",
+					"entries": [
+						"你可以移动穿过其他生物或物件，如同穿过{@variantrule 困难地形|XPHB}一般。如果你的回合结束时处于某个生物或物件内，则会受到{@damage 1d10}力场伤害。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Death's Friend",
+			"name": "死亡之友",
+			"source": "RHW",
+			"className": "游荡者",
+			"classSource": "XPHB",
+			"subclassShortName": "鬼魅",
+			"subclassSource": "RHW",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"你与死亡的联系变得如此紧密，以至于你获得以下增益。",
+				{
+					"ENG_name": "Death's Lament",
+					"name": "悼亡挽歌",
+					"type": "entries",
+					"entries": [
+						"当你使用墓冢哀嚎时，你可以让第一和第二个目标生物同时受到该特性的暗蚀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Draw of Death",
+					"name": "死者归引",
+					"type": "entries",
+					"entries": [
+						"当你投掷先攻时，若你的逝者遗物特性没有剩余的灵魂饰品，则你获得一件灵魂饰品。"
 					]
 				}
 			]

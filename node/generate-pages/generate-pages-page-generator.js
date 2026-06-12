@@ -16,6 +16,8 @@ export class PageGeneratorBase {
 	_navbarPageTitleStyleAdditional;
 	_isFontAwesome = false;
 	_stylesheets;
+	_isNoIndex = false;
+	_isExcludedFromSitemap = false;
 
 	static _SITE_URL = "https://5e.kiwee.top/";
 	static _SITE_NAME = "5etools";
@@ -54,6 +56,8 @@ export class PageGeneratorBase {
 	}
 
 	getPage () { return this._page; }
+	isNoIndex () { return this._isNoIndex; }
+	isExcludedFromSitemap () { return this._isExcludedFromSitemap; }
 
 	/**
 	 * @abstract
@@ -76,6 +80,7 @@ export class PageGeneratorBase {
 			navbarPageTitleStyleAdditional: this._navbarPageTitleStyleAdditional,
 			isFontAwesome: this._isFontAwesome,
 			stylesheets: this._stylesheets,
+			isNoIndex: this._isNoIndex,
 			jsonLd: this._getJsonLd({canonicalUrl}),
 			baiduTongjiId: this.constructor._BAIDU_TONGJI_ID,
 		};
@@ -185,6 +190,8 @@ export class PageGeneratorBase {
 
 export class PageGeneratorRedirectBase extends PageGeneratorBase {
 	_filename = "page/template-page-redirect.hbs";
+	_isNoIndex = true;
+	_isExcludedFromSitemap = true;
 
 	_redirectHref;
 	_redirectMessage;
