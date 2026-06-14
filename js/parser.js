@@ -1559,7 +1559,7 @@ Parser.spRangeTypeToIcon = function (range) {
 
 Parser.spRangeToShortHtml = function (range) {
 	switch (range.type) {
-		case Parser.RNG_SPECIAL: return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} ve-help-subtle" title="Special"></span>`;
+		case Parser.RNG_SPECIAL: return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} ve-help-subtle" title="特殊"></span>`;
 		case Parser.RNG_POINT: return Parser.spRangeToShortHtml._renderPoint(range);
 		case Parser.RNG_LINE:
 		case Parser.RNG_CUBE:
@@ -2396,7 +2396,7 @@ Parser.prereqPatronToShort = function (patron) {
 
 Parser.FEAT_CATEGORY_TO_FULL = {
 	"D": "龙纹",
-	"DG": "Dark Gift",
+	"DG": "黑暗赠礼",
 	"G": "通用",
 	"O": "起源",
 	"FS": "战斗风格",

@@ -45,6 +45,27 @@ class PageFilterBestiary extends PageFilterBase {
 	static _getAbilitySaveDisplayText (abl) { return `${abl.uppercaseFirst()}豁免`; }
 	// endregion
 
+	/* -------------------------------------------- */
+
+	// (Exposed for Plutonium use)
+	_getMiscFilterDeselFn () {
+		return (it) => ["冒险NPC", "重印"].includes(it);
+	}
+
+	_getMiscFilter () {
+		return new Filter({
+			header: "Miscellaneous",
+			cnHeader: "杂项",
+			items: ["常见", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "附赠动作", "巢穴动作", "传奇", "神话", "冒险NPC", "施法者", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "区域效应", "反应", "重印", "集群", "有变体", "修改过的副本", "由替换Token", "有简介", "有图片", "有Token", "有充能", "传奇", "物品提供AC", "天生护甲提供AC", "无甲防御提供AC", "由法术召唤", "由职业召唤", "低威胁", "有装备", "有物品"],
+			displayFn: (it) => Parser.monMiscTagToFull(it).uppercaseFirst(),
+			deselFn: this._getMiscFilterDeselFn(),
+			itemSortFn: PageFilterBestiary.ascSortMiscFilter,
+			isMiscFilter: true,
+		});
+	}
+
+	/* -------------------------------------------- */
+
 	constructor (opts) {
 		super(opts);
 
@@ -246,15 +267,7 @@ class PageFilterBestiary extends PageFilterBase {
 				// "Frightful Presence", "Multiattack", "Parry", "Swallow", "Teleport", "Tentacles",
 			],
 		});
-		this._miscFilter = new Filter({
-			header: "Miscellaneous",
-			cnHeader: "杂项",
-			items: ["常见", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "附赠动作", "巢穴动作", "传奇", "神话", "冒险NPC", "施法者", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "区域效应", "反应", "重印", "集群", "有变体", "修改过的副本", "由替换Token", "有简介", "有图片", "有Token", "有充能", "传奇", "物品提供AC", "天生护甲提供AC", "无甲防御提供AC", "由法术召唤", "由职业召唤", "低威胁", "有装备", "有物品"],
-			displayFn: (it) => Parser.monMiscTagToFull(it).uppercaseFirst(),
-			deselFn: (it) => ["冒险NPC", "重印"].includes(it),
-			itemSortFn: PageFilterBestiary.ascSortMiscFilter,
-			isMiscFilter: true,
-		});
+		this._miscFilter = this._getMiscFilter();
 		this._spellcastingTypeFilter = new Filter({
 			header: "Spellcasting Type",
 			cnHeader: "施法类型",

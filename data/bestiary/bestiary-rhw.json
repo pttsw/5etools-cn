@@ -3655,7 +3655,7 @@
 									"name": "3：心灵耀斑",
 									"type": "item",
 									"entries": [
-										"{@actSave int} {@dc 18}. {@actSaveFail} 13 ({@damage 2d12}) Psychic damage, and the target can't take the Magic action until the end of its next turn."
+										"{@actSave int} {@dc 18}. {@actSaveFail} 13 ({@damage 2d12}) Psychic damage, and the target can't take the {@action Magic|XPHB} action until the end of its next turn."
 									]
 								},
 								{
@@ -7214,6 +7214,7 @@
 			"ENG_name": "Reanimated Companion",
 			"name": "再起伴兵",
 			"source": "RHW",
+			"summonedByClass": "Artificer|EFA",
 			"size": [
 				"M"
 			],
@@ -7263,7 +7264,7 @@
 					"ENG_name": "Death Burst",
 					"name": "自爆",
 					"entries": [
-						"The companion explodes when it dies. {@actSave dex} DC equals your spell save DC, each creature in a 10-foot Emanation originating from the companion. {@actSaveFail} {@damage 2d4} Necrotic damage. {@actSaveSuccess} Half damage."
+						"The companion explodes when it dies. {@actSave dex} DC equals {@dcYourSpellSave}, each creature in a 10-foot Emanation originating from the companion. {@actSaveFail} {@damage 2d4} Necrotic damage. {@actSaveSuccess} Half damage."
 					]
 				},
 				{
