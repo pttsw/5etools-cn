@@ -2412,6 +2412,7 @@ const PROPORDER_DECK = [
 	"basicRules2024",
 	"otherSources",
 	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	"reprintedAs",
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_DECK__COPY_MOD}),
 
@@ -2441,6 +2442,7 @@ const PROPORDER_CARD = [
 	"basicRules2024",
 	"otherSources",
 	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	"reprintedAs",
 
 	"suit",
 	"value",
