@@ -1,4 +1,4 @@
-import {EncounterPartyPlayerMeta} from "../encounterbuilder-models.js";
+import {EncounterPartyPlayerMeta} from "../encounterbuilder-models-other.js";
 import {EncounterBuilderRandomizerTemplated} from "../randomizer/encounterbuilder-randomizer-templated.js";
 import {BUDGET_MODE_CR, BUDGET_MODE_XP} from "../consts/encounterbuilder-consts.js";
 import {EncounterbuilderAdjusterTemplated} from "../adjuster/encounterbuilder-adjuster-slots.js";
@@ -200,8 +200,8 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 	 * @abstract
 	 * @param {number} ratioSpent
 	 * @param {EncounterPartyMetaBase} partyMeta
-	 * @param {number} cntMin
-	 * @param {number} cntMax
+	 * @param {?number} cntMin
+	 * @param {?number} cntMax
 	 * @return string
 	 */
 	getDisplayGroupBudgetSpent (
@@ -240,11 +240,11 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 			encounterShapeHash: shapeHash,
 		});
 
-		const randomCreatureMetas = await randomizer.pGetRandomEncounter({
-			creatureMetasLocked: this._comp.creatureMetas.filter(creatureMeta => creatureMeta.getIsLocked()),
+		const randomCreatureGroups = await randomizer.pGetRandomEncounter({
+			creatureGroupsLocked: this._comp.creatureGroups.filter(creatureGroup => creatureGroup.getIsLocked()),
 		});
 
-		if (randomCreatureMetas != null) this._comp.creatureMetas = randomCreatureMetas;
+		if (randomCreatureGroups != null) this._comp.creatureGroups = randomCreatureGroups;
 	}
 
 	async _pDoAdjustEncounter ({tier}) {
@@ -260,11 +260,11 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 			budgetMode: this._budgetMode,
 		});
 
-		const adjustedCreatureMetas = await adjuster.pGetAdjustedEncounter({
-			creatureMetas: this._comp.creatureMetas,
+		const adjustedCreatureGroups = await adjuster.pGetAdjustedEncounter({
+			creatureGroups: this._comp.creatureGroups,
 		});
 
-		if (adjustedCreatureMetas != null) this._comp.creatureMetas = adjustedCreatureMetas;
+		if (adjustedCreatureGroups != null) this._comp.creatureGroups = adjustedCreatureGroups;
 	}
 
 	/* -------------------------------------------- */
@@ -333,6 +333,27 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 		</div>`;
 	}
 
+	_getRenderedWrpRandomAndAdjust_getBtnSendToFoundry () {
+		if (globalThis.IS_VTT || !ExtensionUtil.ACTIVE) return null;
+
+		return ee`<button title="Send to Foundry" class="no-print ve-btn ve-btn-md ve-btn-default ve-ml-2"><span class="glyphicon glyphicon-send"></span></button>`
+			.onn("click", async () => {
+				const encounterActorName = await InputUiUtil.pGetUserString({title: "Encounter Actor Name", isSkippable: true});
+
+				await ExtensionUtil.pDoSend({
+					type: "5etools.encounterbuilder.encounter",
+					data: {
+						encounterActorName,
+						creatureMetasSerial: this._comp.creatureGroups
+							.map(({entity}) => ({
+								creature: entity.creature,
+								count: entity.count,
+							})),
+					},
+				});
+			});
+	}
+
 	_getRenderedWrpRandomAndAdjust_getAdjustMeta ({tiers}) {
 		const getButtonText = tier => `调整至${Parser.encounterDifficultyToCn(tier)}难度`;
 		const getButtonTitle = tier => `调整当前遭遇至${Parser.encounterDifficultyToCn(tier)}难度`;
@@ -386,11 +407,14 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 				});
 			});
 
+		const btnSendToFoundry = this._getRenderedWrpRandomAndAdjust_getBtnSendToFoundry();
+
 		return ee`<div class="ve-flex-v-center ve-relative ve-no-shrink">
 			<div class="ve-btn-group ve-flex-v-center">
 				${btn}
 				${btnMenu}
 			</div>
+			${btnSendToFoundry}
 		</div>`;
 	}
 
@@ -403,7 +427,7 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 		);
 
 		const onHookPulseDeriverPartyMeta = ({partyMeta}) => {
-			const encounterXpInfo = partyMeta.getEncounterSpendInfo(this._comp.creatureMetas);
+			const encounterXpInfo = partyMeta.getEncounterSpendInfo(this._comp.creatureGroups);
 
 			const tier = partyMeta.getEncounterTier(encounterXpInfo);
 
@@ -450,7 +474,7 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 	static _TITLE_TTK = "Time to Kill: The estimated number of rounds the party will require to defeat the encounter. This assumes single-target damage only.";
 
 	_getTtkProvider ({partyMeta, styleHint}) {
-		const sharedOpts = {partyMeta, creatureMetas: this._comp.creatureMetas};
+		const sharedOpts = {partyMeta, creatureGroups: this._comp.creatureGroups};
 
 		switch (styleHint) {
 			case SITE_STYLE__CLASSIC: return new EncounterBuilderTtkClassic(sharedOpts);

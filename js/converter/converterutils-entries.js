@@ -27,6 +27,7 @@ export class TagJsons {
 		await CoreRuleTag.pInit();
 		await FeatTag.pInit();
 		await AdventureBookTag.pInit();
+		await CreatureTag.pInit();
 	}
 
 	/**
@@ -87,7 +88,7 @@ export class TagJsons {
 	 * @param {boolean} isOptimistic
 	 * @param {"classic" | null} styleHint
 	 */
-	static mutTagObjectStrictCapsWords (json, {keySet = null, styleHint = null} = {}) {
+	static mutTagObjectStrictCapsWords (json, {keySet = null, isOptimistic = false, styleHint = null} = {}) {
 		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
 
 		Object.keys(json)
@@ -108,6 +109,7 @@ export class TagJsons {
 							obj = TrapTag.tryRunStrictCapsWords(obj, {styleHint});
 							obj = HazardTag.tryRunStrictCapsWords(obj, {styleHint});
 							obj = CoreRuleTag.tryRun(obj, {styleHint});
+							obj = CreatureTag.tryRunStrictCapsWords(obj, {styleHint});
 
 							return obj;
 						},
@@ -997,7 +999,7 @@ export class HazardTag extends ConverterTaggerInitializable {
 	}
 }
 
-export class CreatureTag {
+export class CreatureTag extends ConverterTaggerInitializable {
 	/**
 	 * Dynamically create a walker which can be re-used.
 	 */
@@ -1045,6 +1047,99 @@ export class CreatureTag {
 				},
 			);
 		};
+	}
+
+	/* -------------------------------------------- */
+
+	static _WALKER = MiscUtil.getWalker({
+		keyBlocklist: new Set([
+			...WALKER_CONVERTER_KEY_BLOCKLIST,
+		]),
+	});
+
+	static _LOOKUP_CLASSIC = null;
+	static _LOOKUP_CLASSIC_PLURAL = null;
+
+	static _LOOKUP_ONE = null;
+	static _LOOKUP_ONE_PLURAL = null;
+
+	static _RE_CLASSIC = null;
+	static _RE_CLASSIC_PLURAL = null;
+	static _RE_ONE = null;
+	static _RE_ONE_PLURAL = null;
+
+	static async _pInit () {
+		const creatures = await DataLoader.pCacheAndGetAllSite(UrlUtil.PG_BESTIARY);
+
+		this._LOOKUP_CLASSIC = {};
+		this._LOOKUP_CLASSIC_PLURAL = {};
+		this._LOOKUP_ONE = {};
+		this._LOOKUP_ONE_PLURAL = {};
+
+		creatures
+			.forEach(
+				function (mon) {
+					const {lookup, lookupPlural} = this[Number(SourceUtil.isClassicSource(SourceUtil.getEntitySource(mon)))];
+
+					lookup[mon.name.toLowerCase()] = mon.source;
+					lookupPlural[mon.name.toPlural().toLowerCase()] = `${mon.name}|${mon.source}`;
+				},
+				[
+					{lookup: this._LOOKUP_ONE, lookupPlural: this._LOOKUP_ONE_PLURAL},
+					{lookup: this._LOOKUP_CLASSIC, lookupPlural: this._LOOKUP_CLASSIC_PLURAL},
+				],
+			);
+
+		// (Note `_CLASSIC` versions not initialized, as unused)
+		this._RE_ONE = new RegExp(`^(${Object.keys(this._LOOKUP_ONE).map(it => it.escapeRegexp()).join("|")})$`, "gi");
+		this._RE_ONE_PLURAL = new RegExp(`^(${Object.keys(this._LOOKUP_ONE_PLURAL).map(it => it.escapeRegexp()).join("|")})$`, "gi");
+	}
+
+	/* -------------------------------------------- */
+
+	/**
+	 * @param ent
+	 * @param {"classic" | "one" | null} styleHint
+	 */
+	static _tryRun (ent, {styleHint = null} = {}) {
+		styleHint ||= VetoolsConfig.get("styleSwitcher", "style");
+
+		// No-op
+		return ent;
+	}
+
+	/* -------------------------------------------- */
+
+	static _tryRunStrictCapsWords (ent) {
+		return WALKER_CONVERTER.walk(
+			ent,
+			{
+				string: (str) => {
+					const ptrStack = {_: ""};
+					TaggerUtils.walkerStringHandlerStrictCapsWords(
+						["@creature"],
+						ptrStack,
+						str,
+						{
+							fnTag: (strMod) => this._fnTagStrict({strMod}),
+						},
+					);
+					return ptrStack._;
+				},
+			},
+		);
+	}
+
+	static _fnTagStrict ({strMod}) {
+		return strMod
+			.replace(this._RE_ONE, (...m) => {
+				const source = this._LOOKUP_ONE[m[1].toLowerCase()];
+				return `{@creature ${m[1]}|${source}}`;
+			})
+			.replace(this._RE_ONE_PLURAL, (...m) => {
+				const uid = this._LOOKUP_ONE_PLURAL[m[1].toLowerCase()];
+				return `{@creature ${uid}|${m[1]}}`;
+			});
 	}
 }
 

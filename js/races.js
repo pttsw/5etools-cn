@@ -47,6 +47,7 @@ class RacesSublistManager extends SublistManager {
 				hash,
 				page: race.page,
 				ability: race._slAbility,
+				size: sizeText,
 				ENG_name: race.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(race),
 			},

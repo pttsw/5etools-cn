@@ -1482,26 +1482,31 @@ globalThis.Renderer = function () {
 	this._renderSpellcasting_getEntries_procPerDuration = function ({entry, hidden, tempList, prop, durationText, fnGetDurationText, isSkipPrefix}) {
 		if (!entry[prop] || hidden.has(prop)) return;
 
-		for (let lvl = 9; lvl > 0; lvl--) {
-			const perDur = entry[prop];
-			if (perDur[lvl]) {
-				tempList.items.push({
-					type: "itemSpell",
-					name: `${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
-					entry: this._renderSpellcasting_getRenderableList(perDur[lvl]).join(", "),
-				});
-			}
+		Object.entries(entry[prop])
+			.filter(([k]) => VeCt.SPELL_USES_KEYS.has(k) || VeCt.SPELL_USES_KEYS_EACH.has(k))
+			.sort(([kA], [kB]) => SortUtil.ascSortSpellRechargeKeys(kA, kB))
+			.reverse()
+			.forEach(([k, per]) => {
+				const isEach = VeCt.SPELL_USES_KEYS_EACH.has(k);
 
-			const lvlEach = `${lvl}e`;
-			if (perDur[lvlEach]) {
-				const isHideEach = !perDur[lvl] && perDur[lvlEach].length === 1;
+				const lvl = isEach ? Number(k.slice(0, -1)) : Number(k);
+
+				if (VeCt.SPELL_USES_KEYS_EACH.has(k)) {
+					const isHideEach = !per && per.length === 1;
+					tempList.items.push({
+						type: "itemSpell",
+						name: `${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}${isHideEach ? "" : ` each`}:`,
+						entry: this._renderSpellcasting_getRenderableList(per).join(", "),
+					});
+					return;
+				}
+
 				tempList.items.push({
 					type: "itemSpell",
-					name: `${isHideEach ? "" : `每项`}${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
+					name: `${isHideEach ? "" : `每项`}${isSkipPrefix ? "" : k}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
 					entry: this._renderSpellcasting_getRenderableList(perDur[lvlEach]).join(", "),
 				});
-			}
-		}
+			});
 	};
 
 	this._renderSpellcasting_getRenderableList = function (spellList) {
@@ -11143,9 +11148,13 @@ Renderer.monster = class {
 			.map(entry => {
 				const isLegendaryMythic = ["legendary", "mythic"].includes(displayAsProp);
 
-				// For legendary/mythic, assume list-item format
-				if (isLegendaryMythic) {
-					if (!entry.headerEntries?.length) return null;
+				// For legendary/mythic, assume list-item format if we have header entries plus
+				//   hidden matching spell list
+				if (
+					isLegendaryMythic
+					&& !!entry.headerEntries?.length
+					&& entry.hidden?.includes(displayAsProp)
+				) {
 					return {type: "item", name: entry.name, entries: entry.headerEntries};
 				}
 
@@ -11213,27 +11222,73 @@ Renderer.monster = class {
 		return [...actionsAttack, ...actionsOther];
 	}
 
+	/* -------------------------------------------- */
+
+	static _SKILL_KEYS_CUSTOM_HANDLING = new Set(["other", "special"]);
+
+	static _getSkillsString_getSortedMappedJoinedSkillKeys ({renderer, obj, keys, isJoinWithOr}) {
+		if (!keys.length) return "";
+
+		const toJoin = keys
+			.sort(SortUtil.ascSortLower)
+			.map(kSkill => {
+				const {name, source, isAllowRedirect} = DataUtil.proxy.unpackUid("skill", kSkill, "skill");
+				const cnName = Parser.enSkillToCn(name).toTitleCase();
+				const ptUidOut = isAllowRedirect
+					? cnName
+					: `${cnName}|${source}`;
+				return `<span>${renderer.render(`{@skill ${ptUidOut}}`)} ${Renderer.get().render(`{@skillCheck ${name.replace(/ /g, "_")} ${obj[kSkill]}}`)}</span>`;
+			});
+
+		return isJoinWithOr
+			? toJoin.joinConjunct(", ", " or ")
+			: toJoin.join(", ");
+	}
+
 	static getSkillsString (renderer, mon) {
 		if (!mon.skill) return "";
 
-		function doSortMapJoinSkillKeys (obj, keys, joinWithOr) {
-			const toJoin = keys.sort(SortUtil.ascSort).map(s => `<span data-mon-skill="${s.toTitleCase()}|${obj[s]}">${renderer.render(`{@skill ${Parser.SKILL_TO_CN[s] || s.toTitleCase()}}`)} ${Renderer.get().render(`{@skillCheck ${s.replace(/ /g, "_")} ${obj[s]}}`)}</span>`);
-			return joinWithOr ? toJoin.joinConjunct(", ", " 或 ") : toJoin.join(", ");
+		const [keysCustomHandling, keysStandard] = Object.keys(mon.skill)
+			.segregate(k => this._SKILL_KEYS_CUSTOM_HANDLING.has(k));
+
+		const skillHtmlBase = this._getSkillsString_getSortedMappedJoinedSkillKeys({
+			renderer,
+			obj: mon.skill,
+			keys: keysStandard,
+		});
+
+		if (!keysCustomHandling.length) return skillHtmlBase;
+
+		const out = [skillHtmlBase];
+
+		if (mon.skill.other) {
+			out.push(
+				mon.skill.other
+					.map(it => {
+						if (it.oneOf) {
+							const skillsHtmlOther = this._getSkillsString_getSortedMappedJoinedSkillKeys({
+								renderer,
+								obj: it.oneOf,
+								keys: Object.keys(it.oneOf),
+								isJoinWithOr: true,
+							});
+							return `plus one of the following: ${skillsHtmlOther}`;
+						}
+						throw new Error(`Unhandled monster "other" skill properties!`);
+					}),
+			);
 		}
 
-		const skills = doSortMapJoinSkillKeys(mon.skill, Object.keys(mon.skill).filter(k => k !== "other" && k !== "special"));
-		if (mon.skill.other || mon.skill.special) {
-			const others = mon.skill.other && mon.skill.other.map(it => {
-				if (it.oneOf) {
-					return `plus one of the following: ${doSortMapJoinSkillKeys(it.oneOf, Object.keys(it.oneOf), true)}`;
-				}
-				throw new Error(`Unhandled monster "other" skill properties!`);
-			});
-			const special = mon.skill.special && Renderer.get().render(mon.skill.special);
-			return [skills, others, special].filter(Boolean).join(", ");
+		if (mon.skill.special) {
+			out.push(renderer.render(mon.skill.special));
 		}
-		return skills;
+
+		return out
+			.filter(Boolean)
+			.join(", ");
 	}
+
+	/* -------------------------------------------- */
 
 	static _TOOL_PROF_TO_SOURCE__CLASSIC = {
 		"vehicles": false,
@@ -11552,40 +11607,142 @@ Renderer.monster = class {
 	}
 
 	static hover = class {
+		static _TemporaryMouseoverBinderBase = class {
+			doBinding ({mon, ele}) {
+				ele = e_({ele});
+				const lock = new VeLock({name: "Temporary Mouseover"});
+
+				let hoverMeta = null;
+
+				const pFnMouseoverInitial = async () => {
+					if (hoverMeta) return;
+
+					try {
+						await lock.pLock();
+
+						if (hoverMeta) return;
+
+						hoverMeta = await this._pGetBindTriggerHoverMetas({mon, ele});
+
+						ele.off("mouseover", pFnMouseoverInitial);
+					} finally {
+						lock.unlock();
+					}
+				};
+
+				ele.onn("mouseover", pFnMouseoverInitial);
+
+				return {
+					pFnCleanup: async () => {
+						try {
+							await lock.pLock();
+							if (!hoverMeta) return;
+							Renderer.hover.deletePredefinedHover(hoverMeta.id);
+						} finally {
+							lock.unlock();
+						}
+					},
+				};
+			}
+
+			/* -------------------------------------------- */
+
+			/**
+			 * @param mon
+			 * @param {?string} titleImageType
+			 */
+			_getMakePredefinedHoverNoImage ({mon, titleImageType = null}) {
+				return Renderer.monster.hover.getMakePredefinedFluffImageHoverNoImage({
+					name: mon?.name,
+					titleImageType,
+				});
+			}
+
+			_pGetBindTriggerHoverMeta ({ele, hoverMeta}) {
+				ele
+					.onn("mouseover", evt => hoverMeta.mouseOver(evt, ele))
+					.onn("mousemove", evt => hoverMeta.mouseMove(evt, ele))
+					.onn("mouseleave", evt => hoverMeta.mouseLeave(evt, ele))
+					.trigger("mouseover");
+				return hoverMeta;
+			}
+
+			/**
+			 * @param mon
+			 * @param ele
+			 * @returns {Promise<_PredefinedHoverMeta>}
+			 * @abstract
+			 */
+			async _pGetBindTriggerHoverMetas ({mon, ele}) { throw new Error("Unimplemented!"); }
+		};
+
+		static _TemporaryMouseoverBinderToken = class extends this._TemporaryMouseoverBinderBase {
+			async _pGetBindTriggerHoverMetas ({mon, ele}) {
+				if (Renderer.monster.hasToken(mon)) {
+					return this._pGetBindTriggerHoverMeta({
+						mon,
+						ele,
+						hoverMeta: Renderer.hover.getMakePredefinedHover(
+							{
+								type: "image",
+								href: {
+									type: "external",
+									url: Renderer.monster.getTokenUrl(mon),
+								},
+								data: {
+									hoverTitle: `Token \u2014 ${mon.name}`,
+								},
+							},
+							{isBookContent: true},
+						),
+					});
+				}
+
+				return this._pGetBindTriggerHoverMeta({
+					mon,
+					ele,
+					hoverMeta: this._getMakePredefinedHoverNoImage({mon, titleImageType: "Token"}),
+				});
+			}
+		};
+
+		static _TemporaryMouseoverBinderFluffImage = class extends this._TemporaryMouseoverBinderBase {
+			async _pGetBindTriggerHoverMetas ({mon, ele}) {
+				const fluff = mon ? await Renderer.monster.pGetFluff(mon) : null;
+
+				if (fluff?.images?.length) {
+					return this._pGetBindTriggerHoverMeta({
+						mon,
+						ele,
+						hoverMeta: Renderer.monster.hover.getMakePredefinedFluffImageHoverHasImage({
+							imageHref: fluff.images[0].href,
+							name: mon.name,
+						}),
+					});
+				}
+
+				return this._pGetBindTriggerHoverMeta({
+					mon,
+					ele,
+					hoverMeta: this._getMakePredefinedHoverNoImage({mon}),
+				});
+			}
+		};
+
+		/* -------------------------------------------- */
+
+		static bindTokenMouseover ({mon, ele}) {
+			return new this._TemporaryMouseoverBinderToken().doBinding({mon, ele});
+		}
+
 		static bindFluffImageMouseover ({mon, ele}) {
-			e_({ele})
-				.onn("mouseover", evt => this._pOnFluffImageMouseover({evt, mon, ele}));
+			return new this._TemporaryMouseoverBinderFluffImage().doBinding({mon, ele});
 		}
 
-		static async _pOnFluffImageMouseover ({evt, mon, ele}) {
-			// We'll rebuild the mouseover handler with whatever we load
-			ele.off("mouseover");
+		/* -------------------------------------------- */
 
-			const fluff = mon ? await Renderer.monster.pGetFluff(mon) : null;
-
-			if (fluff?.images?.length) return this._pOnFluffImageMouseover_hasImage({mon, ele, fluff});
-			return this._pOnFluffImageMouseover_noImage({mon, ele});
-		}
-
-		static _pOnFluffImageMouseover_noImage ({mon, ele}) {
-			const hoverMeta = this.getMakePredefinedFluffImageHoverNoImage({name: mon?.name});
-			ele
-				.onn("mouseover", evt => hoverMeta.mouseOver(evt, ele))
-				.onn("mousemove", evt => hoverMeta.mouseMove(evt, ele))
-				.onn("mouseleave", evt => hoverMeta.mouseLeave(evt, ele))
-				.trigger("mouseover");
-		}
-
-		static _pOnFluffImageMouseover_hasImage ({mon, ele, fluff}) {
-			const hoverMeta = this.getMakePredefinedFluffImageHoverHasImage({imageHref: fluff.images[0].href, name: mon.name});
-			ele
-				.onn("mouseover", evt => hoverMeta.mouseOver(evt, ele))
-				.onn("mousemove", evt => hoverMeta.mouseMove(evt, ele))
-				.onn("mouseleave", evt => hoverMeta.mouseLeave(evt, ele))
-				.trigger("mouseover");
-		}
-
-		static getMakePredefinedFluffImageHoverNoImage ({name}) {
+		static getMakePredefinedFluffImageHoverNoImage ({name, titleImageType = null}) {
+			titleImageType ||= "Image";
 			return Renderer.hover.getMakePredefinedHover(
 				{
 					type: "entries",
@@ -11593,20 +11750,21 @@ Renderer.monster = class {
 						Renderer.utils.HTML_NO_IMAGES,
 					],
 					data: {
-						hoverTitle: name ? `Image \u2014 ${name}` : "Image",
+						hoverTitle: name ? `${titleImageType} \u2014 ${name}` : titleImageType,
 					},
 				},
 				{isBookContent: true},
 			);
 		}
 
-		static getMakePredefinedFluffImageHoverHasImage ({imageHref, name}) {
+		static getMakePredefinedFluffImageHoverHasImage ({imageHref, name, titleImageType = null}) {
+			titleImageType ||= "Image";
 			return Renderer.hover.getMakePredefinedHover(
 				{
 					type: "image",
 					href: imageHref,
 					data: {
-						hoverTitle: name ? `Image \u2014 ${name}` : "Image",
+						hoverTitle: name ? `${titleImageType} \u2014 ${name}` : titleImageType,
 					},
 				},
 				{isBookContent: true},
@@ -16790,6 +16948,18 @@ Renderer.hover = class {
 		Renderer.hover._getShowWindow_setZIndex({eleHov, hoverWindow}, nxtZIndex);
 	}
 
+	static _PredefinedHoverMeta = class {
+		id;
+		html;
+		mouseOver;
+		mouseMove;
+		mouseLeave;
+		touchStart;
+		show;
+
+		constructor (opts) { Object.assign(this, opts); }
+	};
+
 	/**
 	 * @param entry
 	 * @param [opts]
@@ -16803,7 +16973,7 @@ Renderer.hover = class {
 
 		const id = opts.id ?? Renderer.hover._getNextId();
 		Renderer.hover._entryCache[id] = entry;
-		return {
+		return new this._PredefinedHoverMeta({
 			id,
 			html: `onmouseover="Renderer.hover.handlePredefinedMouseOver(event, this, ${id}, ${JSON.stringify(opts).escapeQuotes()})" onmousemove="Renderer.hover.handlePredefinedMouseMove(event, this)" onmouseleave="Renderer.hover.handlePredefinedMouseLeave(event, this)" ${Renderer.hover.getPreventTouchString()}`,
 			mouseOver: (evt, ele) => Renderer.hover.handlePredefinedMouseOver(evt, ele, id, opts),
@@ -16811,11 +16981,15 @@ Renderer.hover = class {
 			mouseLeave: (evt, ele) => Renderer.hover.handlePredefinedMouseLeave(evt, ele),
 			touchStart: (evt, ele) => Renderer.hover.handleTouchStart(evt, ele),
 			show: () => Renderer.hover.doPredefinedShow(id, opts),
-		};
+		});
 	}
 
 	static updatePredefinedHover (id, entry) {
 		Renderer.hover._entryCache[id] = entry;
+	}
+
+	static deletePredefinedHover (id) {
+		delete Renderer.hover._entryCache[id];
 	}
 
 	static getInlineHover (entry, opts) {

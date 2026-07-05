@@ -402,54 +402,21 @@ class BlocklistUi {
 			});
 		// endregion
 
+		const getWrpExcludeInclude = ({name, btnExclude, btnInclude}) => ee`<div class="ve-flex-v-center ve-mobile-md__w-100 ve-mr-2 ve-mobile-md__mr-0 ve-mobile-md__mb-2 ve-p-2 ve-b-1p ve-bc-5p">
+				<div class="ve-mr-2">${name}</div>
+				<div class="ve-flex-v-center ve-btn-group ve-mobile-md__ml-auto">
+					${btnExclude}
+					${btnInclude}
+				</div>
+			</div>`;
+
 		ee(this._wrpControls.empty())`<div class="${this._isCompactUi ? "ve-mb-2" : "ve-mb-5"} ve-flex-v-center ve-mobile-md__flex-col ve-mobile-md__flex-ai-start">
-			<div class="ve-flex-vh-center ve-mr-4 ve-mobile-md__mr-0 ve-mobile-md__mb-2">
-				<div class="ve-mr-2">UA等资源</div>
-				<div class="ve-flex-v-center ve-btn-group">
-					${btnExcludeAllUa}
-					${btnIncludeAllUa}
-				</div>
-			</div>
-
-			<div class="ve-flex-vh-center ve-mr-3 ve-mobile-md__mr-0 ve-mobile-md__mb-2">
-				<div class="ve-mr-2">喜剧资源</div>
-				<div class="ve-flex-v-center ve-btn-group">
-					${btnExcludeAllComedySources}
-					${btnIncludeAllComedySources}
-				</div>
-			</div>
-
-			<div class="ve-flex-vh-center ve-mr-3 ve-mobile-md__mr-0 ve-mobile-md__mb-2">
-				<div class="ve-mr-2">非-<i>被遗忘的国度</i></div>
-				<div class="ve-flex-v-center ve-btn-group">
-					${btnExcludeAllNonForgottenRealmsSources}
-					${btnIncludeAllNonForgottenRealmsSources}
-				</div>
-			</div>
-
-			<div class="ve-flex-vh-center ve-mr-3 ve-mobile-md__mr-0 ve-mobile-md__mb-2">
-				<div class="ve-mr-2">5e (&apos;14)资源</div>
-				<div class="ve-flex-v-center ve-btn-group">
-					${btnExcludeClassicSources}
-					${btnIncludeClassicSources}
-				</div>
-			</div>
-
-			<div class="ve-flex-vh-center ve-mr-3 ve-mobile-md__mr-0 ve-mobile-md__mb-2">
-				<div class="ve-mr-2">5.5e (&apos;24)资源</div>
-				<div class="ve-flex-v-center ve-btn-group">
-					${btnExcludeModernSources}
-					${btnIncludeModernSources}
-				</div>
-			</div>
-
-			<div class="ve-flex-vh-center ve-mr-3 ve-mobile-md__mr-0 ve-mobile-md__mb-2">
-				<div class="ve-mr-2">所有来源</div>
-				<div class="ve-flex-v-center ve-btn-group">
-					${btnExcludeAllSources}
-					${btnIncludeAllSources}
-				</div>
-			</div>
+			${getWrpExcludeInclude({name: "UA等资源", btnExclude: btnExcludeAllUa, btnInclude: btnIncludeAllUa})}
+			${getWrpExcludeInclude({name: `喜剧资源`, btnExclude: btnExcludeAllComedySources, btnInclude: btnIncludeAllComedySources})}
+			${getWrpExcludeInclude({name: `非-<i>被遗忘的国度`, btnExclude: btnExcludeAllNonForgottenRealmsSources, btnInclude: btnIncludeAllNonForgottenRealmsSources})}
+			${getWrpExcludeInclude({name: `5e (&apos;14) 资源`, btnExclude: btnExcludeClassicSources, btnInclude: btnIncludeClassicSources})}
+			${getWrpExcludeInclude({name: `5.5e (&apos;24) 资源`, btnExclude: btnExcludeModernSources, btnInclude: btnIncludeModernSources})}
+			${getWrpExcludeInclude({name: `所有资源`, btnExclude: btnExcludeAllSources, btnInclude: btnIncludeAllSources})}
 		</div>
 
 		<div class="ve-flex-v-end ${this._isCompactUi ? "ve-mb-2" : "ve-mb-5"} ve-mobile-sm__flex-col ve-mobile-sm__flex-ai-start">
