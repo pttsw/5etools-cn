@@ -1,6 +1,6 @@
 import {FilterItem} from "../filter-item.js";
 import {Filter} from "./filter-filter-generic.js";
-import {MISC_FILTER_VALUE__BASIC_RULES_2014, MISC_FILTER_VALUE__BASIC_RULES_2024, MISC_FILTER_VALUE__SRD_5_1, MISC_FILTER_VALUE__SRD_5_2, PILL_STATE__IGNORE, PILL_STATE__YES, SOURCE_HEADER} from "../filter-constants.js";
+import {MISC_FILTER_VALUE__BASIC_RULES_2014, MISC_FILTER_VALUE__BASIC_RULES_2024, MISC_FILTER_VALUE__SRD_5_1, MISC_FILTER_VALUE__SRD_5_2, PILL_STATE__IGNORE, PILL_STATE__NO, PILL_STATE__YES, SOURCE_HEADER} from "../filter-constants.js";
 import {PageFilterBase} from "../filter-page-filter-base.js";
 
 export class SourceFilterItem extends FilterItem {
@@ -91,6 +91,8 @@ export class SourceFilter extends Filter {
 		this._proxyAssignSimple("state", nxtState, true);
 	}
 
+	static _TITLE_CONTEXT_SOURCE_SET = `SHIFT to add to existing selection; CTRL to exclude others.`;
+
 	_getHeaderControls_addExtraStateBtns (opts, wrpStateBtnsOuter) {
 		const btnSupplements = e_({
 			tag: "button",
@@ -146,54 +148,61 @@ export class SourceFilter extends Filter {
 		const menu = ContextUtil.getMenu([
 			new ContextUtil.Action(
 				"选择所有标准资源",
-				() => this._doSetPinsStandard(),
+				(evt) => this._doSetPinsStandard({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			new ContextUtil.Action(
 				"选择所有合作资源",
-				() => this._doSetPinsPartnered(),
+				(evt) => this._doSetPinsPartnered({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			new ContextUtil.Action(
 				"选择所有非标准资源",
-				() => this._doSetPinsNonStandard(),
+				(evt) => this._doSetPinsNonStandard({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			new ContextUtil.Action(
 				"选择所有预发布资源",
-				() => this._doSetPinsPrerelease(),
+				(evt) => this._doSetPinsPrerelease({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			new ContextUtil.Action(
 				"选择所有自制资源",
-				() => this._doSetPinsHomebrew(),
+				(evt) => this._doSetPinsHomebrew({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			null,
 			new ContextUtil.Action(
 				`选择 5e/2014 资源`,
-				() => this._doSetPinsClassic(),
-				{title: `Select sources published from 2014 to 2024.`},
+				(evt) => this._doSetPinsClassic({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: `Select sources published from 2014 to 2024. ${this.constructor._TITLE_CONTEXT_SOURCE_SET}`},
 			),
 			new ContextUtil.Action(
 				`选择 5.5e/2024 资源`,
-				() => this._doSetPinsOne(),
-				{title: `Select sources published from 2024 onwards.`},
+				(evt) => this._doSetPinsOne({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: `Select sources published from 2024 onwards. ${this.constructor._TITLE_CONTEXT_SOURCE_SET}`},
 			),
 			null,
 			new ContextUtil.Action(
 				`选择“寻常”资源`,
-				() => this._doSetPinsVanilla(),
-				{title: `Select a baseline set of sources suitable for any campaign.`},
+				(evt) => this._doSetPinsVanilla({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: `Select a baseline set of sources suitable for any campaign. ${this.constructor._TITLE_CONTEXT_SOURCE_SET}`},
 			),
 			new ContextUtil.Action(
 				"选择所有非UA资源",
-				() => this._doSetPinsNonUa(),
+				(evt) => this._doSetPinsNonUa({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			null,
 			new ContextUtil.Action(
 				"选择SRD资源",
-				() => this._doSetPinsSrd(),
-				{title: `Select System Reference Document Sources.`},
+				(evt) => this._doSetPinsSrd({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: `Select System Reference Document Sources. ${this.constructor._TITLE_CONTEXT_SOURCE_SET}`},
 			),
 			new ContextUtil.Action(
 				"选择基础规则资源",
-				() => this._doSetPinsBasicRules(),
+				(evt) => this._doSetPinsBasicRules({isAdditive: evt.shiftKey, isExclusive: EventUtil.isCtrlMetaKey(evt)}),
+				{title: this.constructor._TITLE_CONTEXT_SOURCE_SET},
 			),
 			null,
 			new ContextUtil.Action(
@@ -238,24 +247,31 @@ export class SourceFilter extends Filter {
 		}).prependTo(wrpStateBtnsOuter);
 	}
 
-	_doSetPinsStandard () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_STANDARD ? PILL_STATE__YES : PILL_STATE__IGNORE);
+	_doSetPins_getKeyStateDefault ({k, isAdditive, isExclusive}) {
+		if (isAdditive) return this._state[k];
+		if (isExclusive) return PILL_STATE__NO;
+		return PILL_STATE__IGNORE;
 	}
 
-	_doSetPinsPartnered ({isAdditive = false} = {}) {
+	_doSetPinsStandard ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state)
+			.forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_STANDARD ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
+	}
+
+	_doSetPinsPartnered ({isAdditive = false, isExclusive = false} = {}) {
 		this._proxyAssignSimple(
 			"state",
 			Object.keys(this._state)
-				.mergeMap(k => ({[k]: SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_PARTNERED ? PILL_STATE__YES : isAdditive ? this._state[k] : PILL_STATE__IGNORE})),
+				.mergeMap(k => ({[k]: SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_PARTNERED ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive})})),
 		);
 	}
 
-	_doSetPinsNonStandard () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_NON_STANDARD ? PILL_STATE__YES : PILL_STATE__IGNORE);
+	_doSetPinsNonStandard ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_NON_STANDARD ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 	}
 
-	_doSetPinsPrerelease () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_PRERELEASE ? PILL_STATE__YES : PILL_STATE__IGNORE);
+	_doSetPinsPrerelease ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_PRERELEASE ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 	}
 
 	_doSetPinsSupplements ({isIncludeUnofficial = false, isAdditive = false} = {}) {
@@ -274,34 +290,34 @@ export class SourceFilter extends Filter {
 		);
 	}
 
-	_doSetPinsHomebrew ({isAdditive = false} = {}) {
+	_doSetPinsHomebrew ({isAdditive = false, isExclusive = false} = {}) {
 		this._proxyAssignSimple(
 			"state",
 			Object.keys(this._state)
-				.mergeMap(k => ({[k]: SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_HOMEBREW ? PILL_STATE__YES : isAdditive ? this._state[k] : PILL_STATE__IGNORE})),
+				.mergeMap(k => ({[k]: SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_HOMEBREW ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive})})),
 		);
 	}
 
-	_doSetPinsClassic () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.isClassicSource(k) ? PILL_STATE__YES : PILL_STATE__IGNORE);
+	_doSetPinsClassic ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.isClassicSource(k) ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 	}
 
-	_doSetPinsOne () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.isClassicSource(k) ? PILL_STATE__IGNORE : PILL_STATE__YES);
+	_doSetPinsOne ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state).forEach(k => this._state[k] = !SourceUtil.isClassicSource(k) ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 	}
 
-	_doSetPinsVanilla () {
-		Object.keys(this._state).forEach(k => this._state[k] = Parser.SOURCES_VANILLA.has(k) ? PILL_STATE__YES : PILL_STATE__IGNORE);
+	_doSetPinsVanilla ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state).forEach(k => this._state[k] = Parser.SOURCES_VANILLA.has(k) ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 	}
 
-	_doSetPinsNonUa () {
-		Object.keys(this._state).forEach(k => this._state[k] = !SourceUtil.isPrereleaseSource(k) ? PILL_STATE__YES : PILL_STATE__IGNORE);
+	_doSetPinsNonUa ({isAdditive = false, isExclusive = false} = {}) {
+		Object.keys(this._state).forEach(k => this._state[k] = !SourceUtil.isPrereleaseSource(k) ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 	}
 
-	_doSetPinsSrd () {
+	_doSetPinsSrd ({isAdditive = false, isExclusive = false} = {}) {
 		SourceFilter._SRD_SOURCES = SourceFilter._SRD_SOURCES || new Set([Parser.SRC_PHB, Parser.SRC_MM, Parser.SRC_DMG, Parser.SRC_XPHB, Parser.SRC_XDMG, Parser.SRC_XMM]);
 
-		Object.keys(this._state).forEach(k => this._state[k] = SourceFilter._SRD_SOURCES.has(k) ? PILL_STATE__YES : PILL_STATE__IGNORE);
+		Object.keys(this._state).forEach(k => this._state[k] = SourceFilter._SRD_SOURCES.has(k) ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 
 		const srdFilter = this._filterBox.filters.find(it => it.isSrdFilter);
 		if (srdFilter) {
@@ -323,10 +339,10 @@ export class SourceFilter extends Filter {
 		}
 	}
 
-	_doSetPinsBasicRules () {
+	_doSetPinsBasicRules ({isAdditive = false, isExclusive = false} = {}) {
 		SourceFilter._BASIC_RULES_SOURCES = SourceFilter._BASIC_RULES_SOURCES || new Set([Parser.SRC_PHB, Parser.SRC_MM, Parser.SRC_DMG, Parser.SRC_XPHB, Parser.SRC_XDMG, Parser.SRC_XMM]);
 
-		Object.keys(this._state).forEach(k => this._state[k] = SourceFilter._BASIC_RULES_SOURCES.has(k) ? PILL_STATE__YES : PILL_STATE__IGNORE);
+		Object.keys(this._state).forEach(k => this._state[k] = SourceFilter._BASIC_RULES_SOURCES.has(k) ? PILL_STATE__YES : this._doSetPins_getKeyStateDefault({k, isAdditive, isExclusive}));
 
 		const basicRulesFilter = this._filterBox.filters.find(it => it.isBasicRulesFilter);
 		if (basicRulesFilter) {
