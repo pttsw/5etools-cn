@@ -86,11 +86,11 @@
 			],
 			"startingProficiencies": {
 				"weapons": [
-					"{@item 匕首|PHB|匕首}",
-					"{@item 飞镖|PHB|飞镖}",
-					"{@item 投石索|PHB|投石索}",
-					"{@item 长棍|PHB|长棍}",
-					"{@item 轻弩|PHB|轻弩}"
+					"{@item 匕首|phb|匕首}",
+					"{@item 飞镖|phb|飞镖}",
+					"{@item 投石索|phb|投石索}",
+					"{@item 长棍|phb|长棍}",
+					"{@item 轻弩|phb|轻弩}"
 				],
 				"skills": [
 					{
@@ -111,17 +111,17 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
-					"(a) 一个 {@item 材料包|PHB}或 (b) 一件{@item 奥术法器|PHB}",
-					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}",
-					"两把{@item 匕首|PHB|匕首}"
+					"(a) 一把{@item 轻弩|phb}和{@item 弩矢(20)|phb|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"(a) 一个 {@item 材料包|phb}或 (b) 一件{@item 奥术法器|phb}",
+					"(a) 一个{@item 地城套组|phb}或(b) 一个{@item 探索套组|phb}",
+					"两把{@item 匕首|phb|匕首}"
 				],
 				"goldAlternative": "{@dice 3d4 × 10|3d4 × 10|起始金币}",
 				"defaultData": [
 					{
 						"a": [
-							"轻弩|PHB",
-							"弩矢(20)|PHB"
+							"轻弩|phb",
+							"弩矢(20)|phb"
 						],
 						"b": [
 							{
@@ -131,7 +131,7 @@
 					},
 					{
 						"a": [
-							"材料包|PHB"
+							"材料包|phb"
 						],
 						"b": [
 							{
@@ -141,16 +141,16 @@
 					},
 					{
 						"a": [
-							"地城套组|PHB"
+							"地城套组|phb"
 						],
 						"b": [
-							"探索套组|PHB"
+							"探索套组|phb"
 						]
 					},
 					{
 						"_": [
 							{
-								"item": "匕首|PHB",
+								"item": "匕首|phb",
 								"quantity": 2
 							}
 						]
@@ -1807,7 +1807,7 @@
 				{
 					"known": {
 						"1": [
-							"心灵之楔|TCE#c",
+							"心灵之楔|tce#c",
 							"哈达之臂",
 							"不谐低语"
 						],
@@ -2379,7 +2379,7 @@
 					"name": "法器",
 					"type": "entries",
 					"entries": [
-						"你可以使用{@item 奥术法器|PHB}，作为你施展术士法术时的法器。"
+						"你可以使用{@item 奥术法器|phb}，作为你施展术士法术时的法器。"
 					]
 				}
 			]
@@ -2569,7 +2569,7 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3级术士{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 3级术士{@variantrule 可选职业特性|tce|可选特性}}",
 				"当你选择超魔法选项时，你能够选择以下额外的超魔法选项。",
 				{
 					"type": "options",
@@ -2616,7 +2616,7 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4级术士 {@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 4级术士 {@variantrule 可选职业特性|tce|可选特性}}",
 				"每当你通过提升术士等级获得属性值提升时，你可以进行以下一种行为，代表着你内在的法力流向了新的途径：",
 				{
 					"type": "list",
@@ -2641,7 +2641,7 @@
 				"name": "术法点"
 			},
 			"entries": [
-				"{@i 5级术士{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 5级术士{@variantrule 可选职业特性|tce|可选特性}}",
 				"你能够挖掘内在的魔力源泉，从失败中召唤成功。当你进行一次属性检定并失败时，你可以使用1术法点重投检定的{@dice d20}。你必须使用重投后的结果。此举可能导致该次检定转为成功。"
 			]
 		},
@@ -3621,7 +3621,7 @@
 						],
 						[
 							"绿",
-							"{@filter 毒素|spells|damage type=毒药|class=术士}"
+							"{@filter 毒素|spells|damage type=毒素|class=术士}"
 						],
 						[
 							"红",
@@ -4192,7 +4192,7 @@
 					"rows": [
 						[
 							"1st",
-							"{@spell 哈达之臂}, {@spell 不谐低语}, {@spell 心灵之楔|TCE}"
+							"{@spell 哈达之臂}, {@spell 不谐低语}, {@spell 心灵之楔|tce}"
 						],
 						[
 							"3rd",
@@ -5214,18 +5214,18 @@
 				"你获得以下增益。",
 				{
 					"ENG_name": "Eyes of the Dark",
-					"type": "entries",
 					"name": "幽暗之瞳",
+					"type": "entries",
 					"entries": [
 						"你具有120尺{@sense 黑暗视觉|XPHB}与10尺{@sense 盲视|XPHB}。此外，若你施展的一道法术创造了一片{@variantrule 黑暗|XPHB}区域，则你能够正常看透那道法术的黑暗。"
 					]
 				},
 				{
 					"ENG_name": "Strength of the Grave",
-					"type": "entries",
 					"name": "终焉之力",
+					"type": "entries",
 					"entries": [
-						"若你的生命值将要降至0且不会立即死亡，则你可以进行一次魅力豁免（{@dc 5}加上该次所受伤害）。若豁免成功，则你的生命值转而变为等同于你的魅力调整值加上你的术士等级的数值。你成功于该豁免之后，直至你完成一次长休为止不可再次使用此增益。"
+						"若你的{@variantrule 生命值|XPHB}将要降至0且不会立即死亡，则你可以进行一次魅力豁免（{@dc 5}加上该次所受伤害）。若豁免成功，则你的{@variantrule 生命值|XPHB}转而变为等同于你的魅力调整值加上你的术士等级的数值。你成功于该豁免之后，直至你完成一次{@variantrule 长休|XPHB}为止不可再次使用此增益。"
 					]
 				}
 			]
@@ -5306,7 +5306,7 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"你能够驱使一头嗥叫着的幽影生物追猎你的敌人。你可以消耗3点术法点，在无需准备该法术、无需材料成分、且不消耗法术位的情况下以一个附赠动作施展{@spell 野兽召唤术|XPHB}。被召唤出的生物呈现为由阴影构成的野兽。此外，任何位于该召唤生物5尺内的敌人在对抗你施展的法术时进行的豁免检定均具有{@variantrule 劣势|XPHB}。",
+				"你能够驱使一头嗥叫着的幽影生物追猎你的敌人。你可以消耗3点术法点，在无需准备该法术、无需材料成分、且不消耗法术位的情况下以一个{@variantrule 附赠动作|XPHB}施展{@spell 野兽召唤术|XPHB}。被召唤出的生物呈现为由阴影构成的野兽。此外，任何位于该召唤生物5尺内的敌人在对抗你施展的法术时进行的豁免检定均具有{@variantrule 劣势|XPHB}。",
 				"每当你施展该法术时，你都可以修改此法术使其无需{@status 专注|XPHB}。若你如此做，则此法术的持续时间将变为1分钟，且若你再次施展此法术，则法术将提前终止。"
 			]
 		},
@@ -5321,7 +5321,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"当你处于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}环境期间，你可以用一个附赠动作传送至多120尺至另一处你可见的未占据空间。以此法传送至的目标空间必须同样处于微光光照或黑暗中。"
+				"当你处于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}环境期间，你可以用一个{@variantrule 附赠动作|XPHB}传送至多120尺至另一处你可见的未占据空间。以此法传送至的目标空间必须同样处于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}中。"
 			]
 		},
 		{
@@ -5340,7 +5340,7 @@
 				"amount": 6
 			},
 			"entries": [
-				"你使用先天术法时，可以同时化作幽影之躯，以此在先天术法持续期间，或直到你主动结束此形态（无需动作）为止，获得下述增益。此特性一经使用，直到你完成一次长休或使用6点术法点重置此特性的使用权为止不能再次使用。",
+				"你使用先天术法时，可以同时化作幽影之躯，以此在先天术法持续期间，或直到你主动结束此形态（无需动作）为止，获得下述增益。此特性一经使用，直到你完成一次{@variantrule 长休|XPHB}或使用6点术法点重置此特性的使用权为止不能再次使用。",
 				{
 					"ENG_name": "Incorporeal Movement",
 					"name": "虚体移动",
@@ -5354,7 +5354,7 @@
 					"name": "幽影坚韧",
 					"type": "entries",
 					"entries": [
-						"你具有除力场、光耀外所有伤害类型的抗性。"
+						"你对所有伤害具有{@variantrule 抗性|XPHB}，除了力场且光耀伤害。"
 					]
 				}
 			]
@@ -5845,27 +5845,27 @@
 					"entries": [
 						{
 							"ENG_name": "Heal",
+							"name": "治愈",
+							"type": "entries",
 							"entries": [
 								"精魂合计提供至多恢复 100 {@variantrule 生命值|XPHB}，由你随意分配给范围内任意数量的生物。"
-							],
-							"name": "治愈",
-							"type": "entries"
+							]
 						},
 						{
 							"ENG_name": "Repair",
+							"name": "修复",
+							"type": "entries",
 							"entries": [
 								"范围内损坏的物件将被立即修复。"
-							],
-							"name": "修复",
-							"type": "entries"
+							]
 						},
 						{
 							"ENG_name": "Dispel",
+							"name": "破法",
+							"type": "entries",
 							"entries": [
 								"你选择范围内任意数量的生物或物件，其承受的任何六环或以下的法术结束。"
-							],
-							"name": "破法",
-							"type": "entries"
+							]
 						}
 					],
 					"type": "entries"

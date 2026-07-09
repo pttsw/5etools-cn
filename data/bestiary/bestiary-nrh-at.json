@@ -48,86 +48,86 @@
 											{
 												"ENG_name": "1. Happiness Ray",
 												"name": "1. 快乐射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须成功通过一次{@dc 14}感知豁免，否则将因大笑而{@condition 倒地}，并处于{@condition 失能}状态，无法站起，持续1分钟或直到Emo对该生物造成伤害。目标可以在其每个回合结束时重复进行豁免，成功则结束该效果。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "2. Sadness Ray",
 												"name": "2. 悲伤射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须成功通过一次 {@dc 15} 的智力豁免。如果豁免失败，目标会被悲伤所笼罩并受到 {@damage 3d6} 点心灵伤害，且在下一个回合结束前无法使用反应。在它的下一个回合中，它只能使用一个动作或一个附赠动作，不能同时使用两者。如果豁免成功，目标受到一半的伤害且不受其他效果影响。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "3. Anger Ray",
 												"name": "3. 愤怒射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须成功通过一次感知豁免检定，难度为{@dc 14}，否则将被迫与Emo决斗1分钟。目标在对Emo以外的生物进行攻击检定时处于劣势，并且每次尝试远离Emo超过30尺时，都必须进行一次感知豁免检定。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "4. Anxiety Ray",
 												"name": "4. 焦虑射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须在一次{@dc 15}智力豁免检定中成功，否则在1分钟内失去区分友敌的能力，将所有它能看到的生物视为敌人。每次目标受到伤害时，它可以重复豁免检定，成功则结束自身的这种效果。",
 													"每当受影响的生物用攻击、法术或其他能力瞄准另一个生物时，它必须从它能看到的范围内使用攻击、法术或其他能力的生物中随机选择目标。如果敌人从受影响的生物那里引发借机攻击，如果生物能够做到，它必须进行那次攻击。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "5. Fear Ray",
 												"name": "5. 恐惧射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须在一次{@dc 14}感知豁免检定中成功，否则将被{@condition 恐慌}1分钟。",
 													"目标可以在每个回合结束时重复豁免检定，成功则结束自身的效果。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "6. Desolation Ray",
 												"name": "6. 荒芜射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须在一次智力豁免检定上成功，难度等级为{@dc 14}。如果豁免成功，目标受到{@damage 5d10}点心灵伤害，法术结束。如果豁免失败，目标受到{@damage 5d10}点心灵伤害，并在1分钟内认为自己被限制在一个虚幻的石牢中。目标无法看到或听到牢房之外的任何事物，并且处于{@condition 束缚}状态。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "7. Jealousy Ray",
 												"name": "7. 嫉妒射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须在一次{@dc 14}感知豁免检定中成功，否则将被{@condition 魅惑}1分钟。当目标以这种方式被{@condition 魅惑}时，它必须在每个回合行动前使用其动作对Emo选择的生物进行近战攻击。目标可以在每个回合结束时重复豁免检定，成功则结束此效果。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "8. Disgusting Ray",
 												"name": "8. 令人作呕射线",
+												"type": "item",
 												"entries": [
 													"目标生物必须通过一次对抗毒素的智力豁免检定，难度为{@dc 15}。如果豁免失败，目标将被黄色、令人作呕的气体包围，并在其下一回合花费动作呕吐和摇晃。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "9. Surprise Ray",
 												"name": "9. 惊喜射线",
+												"type": "item",
 												"entries": [
 													"被指定的生物必须成功进行一次",
 													"{@dc 15} 敏捷豁免检定失败将被{@condition 目盲}，持续到其下一回合结束。"
-												],
-												"type": "item"
+												]
 											},
 											{
 												"ENG_name": "10. Trust Ray",
 												"name": "10. 信任射线",
+												"type": "item",
 												"entries": [
 													"被指定的生物必须成功进行一次",
 													"{@dc 16} 进行一次感知豁免检定，否则在1小时内或直到Emo伤害该生物前被Emo所{@condition 魅惑}。"
-												],
-												"type": "item"
+												]
 											}
 										]
 									}
@@ -165,7 +165,13 @@
 		},
 		{
 			"ENG_name": "Mr. Greystone",
-			"name": "Mr. Greystone",
+			"name": "格雷斯通先生",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "NRH-AT",
@@ -173,12 +179,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -260,8 +260,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"短棒|PHB",
-				"手弩|PHB"
+				"短棒|phb",
+				"手弩|phb"
 			],
 			"traitTags": [
 				"残暴"

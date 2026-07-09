@@ -42,12 +42,12 @@
 		{
 			"ENG_name": "Android",
 			"name": "安卓",
+			"type": "construct",
 			"source": "QftIS",
 			"page": 194,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -372,12 +372,12 @@
 		{
 			"ENG_name": "Barkburr",
 			"name": "树皮嗡嗡",
+			"type": "plant",
 			"source": "QftIS",
 			"page": 195,
 			"size": [
 				"S"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -489,12 +489,12 @@
 		{
 			"ENG_name": "Champion of Gorm",
 			"name": "戈尔姆的冠军",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 203,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"L",
 				"G"
@@ -504,7 +504,7 @@
 				{
 					"ac": 19,
 					"from": [
-						"{@item 板条甲|PHB}",
+						"{@item 板条甲|phb}",
 						"{@item 盾牌|PHB}"
 					]
 				}
@@ -578,7 +578,7 @@
 				}
 			],
 			"attachedItems": [
-				"手斧|PHB"
+				"手斧|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -604,12 +604,12 @@
 		{
 			"ENG_name": "Champion of Madarua",
 			"name": "玛达鲁亚的冠军",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 220,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"G"
@@ -684,7 +684,7 @@
 				}
 			],
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击",
@@ -707,12 +707,12 @@
 		{
 			"ENG_name": "Champion of Usamigaras",
 			"name": "乌萨米加拉斯的冠军",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 206,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"N"
@@ -872,12 +872,12 @@
 		{
 			"ENG_name": "Combat Robot",
 			"name": "战斗机器人",
+			"type": "construct",
 			"source": "QftIS",
 			"page": 214,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -1035,12 +1035,12 @@
 		{
 			"ENG_name": "Derro Apprentice",
 			"name": "德罗学徒",
+			"type": "aberration",
 			"source": "QftIS",
 			"page": 196,
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1171,12 +1171,12 @@
 		{
 			"ENG_name": "Derro Raider",
 			"name": "德罗掠夺者",
+			"type": "aberration",
 			"source": "QftIS",
 			"page": 196,
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1275,6 +1275,12 @@
 		{
 			"ENG_name": "Derwyth",
 			"name": "德维丝",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "QftIS",
@@ -1282,12 +1288,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -1382,7 +1382,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"senseTags": [
 				"D"
@@ -1419,6 +1419,12 @@
 		{
 			"ENG_name": "Drelnza",
 			"name": "德伦扎",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"吸血鬼"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "QftIS",
@@ -1426,12 +1432,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"吸血鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -1609,12 +1609,12 @@
 		{
 			"ENG_name": "Froghemoth Elder",
 			"name": "巨蛙长老",
+			"type": "monstrosity",
 			"source": "QftIS",
 			"page": 198,
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -1774,17 +1774,17 @@
 		{
 			"ENG_name": "Gibberling",
 			"name": "呱呱精",
-			"source": "QftIS",
-			"page": 202,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"恶魔"
 				]
 			},
+			"source": "QftIS",
+			"page": 202,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -1880,12 +1880,12 @@
 		{
 			"ENG_name": "Guardian of Gorm",
 			"name": "贡姆守护者",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 203,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"L",
 				"G"
@@ -1948,7 +1948,7 @@
 				}
 			],
 			"attachedItems": [
-				"手斧|PHB"
+				"手斧|phb"
 			],
 			"languageTags": [
 				"C"
@@ -1971,12 +1971,12 @@
 		{
 			"ENG_name": "Horrid Plant",
 			"name": "恐怖植物",
+			"type": "plant",
 			"source": "QftIS",
 			"page": 204,
 			"size": [
 				"L"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -2277,12 +2277,12 @@
 		{
 			"ENG_name": "Leprechaun",
 			"name": "矮妖精",
+			"type": "fey",
 			"source": "QftIS",
 			"page": 205,
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"N"
 			],
@@ -2445,12 +2445,12 @@
 		{
 			"ENG_name": "Mage of Usamigaras",
 			"name": "乌萨米格拉斯的法师",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 206,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"N"
@@ -2538,12 +2538,12 @@
 		{
 			"ENG_name": "Maschin-i-Bozorg",
 			"name": "马斯金-伊-博鲁兹",
+			"type": "construct",
 			"source": "QftIS",
 			"page": 207,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -2666,12 +2666,12 @@
 		{
 			"ENG_name": "Memory Web",
 			"name": "记忆之网",
+			"type": "aberration",
 			"source": "QftIS",
 			"page": 208,
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -2775,6 +2775,7 @@
 		{
 			"ENG_name": "Nafas",
 			"name": "纳法斯",
+			"type": "elemental",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "QftIS",
@@ -2782,7 +2783,6 @@
 			"size": [
 				"L"
 			],
-			"type": "elemental",
 			"alignment": [
 				"C",
 				"G"
@@ -3024,6 +3024,7 @@
 		{
 			"ENG_name": "Nafik",
 			"name": "纳菲克",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "QftIS",
@@ -3031,7 +3032,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -3263,12 +3263,12 @@
 		{
 			"ENG_name": "Pech",
 			"name": "岩精",
+			"type": "elemental",
 			"source": "QftIS",
 			"page": 213,
 			"size": [
 				"S"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N",
 				"G"
@@ -3307,7 +3307,7 @@
 			},
 			"senses": [
 				"黑暗视觉 120 尺",
-				"颤动感知 120 尺"
+				"震颤感知 120 尺"
 			],
 			"passive": 14,
 			"conditionImmune": [
@@ -3598,13 +3598,6 @@
 		{
 			"ENG_name": "Sion",
 			"name": "赛恩",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "QftIS",
-			"page": 216,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3612,6 +3605,13 @@
 					"术士"
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "QftIS",
+			"page": 216,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -3815,15 +3815,15 @@
 		{
 			"ENG_name": "Swarm of Gibberlings",
 			"name": "呓语怪群",
+			"type": {
+				"type": "fiend",
+				"swarmSize": "S"
+			},
 			"source": "QftIS",
 			"page": 202,
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"swarmSize": "S"
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -3926,13 +3926,6 @@
 		{
 			"ENG_name": "The Gardener",
 			"name": "耕耘者",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "QftIS",
-			"page": 200,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "fey",
 				"tags": [
@@ -3940,6 +3933,13 @@
 					"德鲁伊"
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "QftIS",
+			"page": 200,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"G"
@@ -4146,12 +4146,12 @@
 		{
 			"ENG_name": "Tower Hand",
 			"name": "塔楼守卫",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 217,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4226,7 +4226,7 @@
 				}
 			],
 			"attachedItems": [
-				"飞镖|PHB"
+				"飞镖|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4249,12 +4249,12 @@
 		{
 			"ENG_name": "Tower Sage",
 			"name": "塔楼贤者",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 217,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4401,12 +4401,12 @@
 		{
 			"ENG_name": "Vegepygmy Moldmaker",
 			"name": "蔬菜皮格米模具制造者",
+			"type": "plant",
 			"source": "QftIS",
 			"page": 218,
 			"size": [
 				"S"
 			],
-			"type": "plant",
 			"alignment": [
 				"N"
 			],
@@ -4526,12 +4526,12 @@
 		{
 			"ENG_name": "Vegepygmy Scavenger",
 			"name": "蔬菜皮格米食腐者",
+			"type": "plant",
 			"source": "QftIS",
 			"page": 218,
 			"size": [
 				"S"
 			],
-			"type": "plant",
 			"alignment": [
 				"N"
 			],
@@ -4616,7 +4616,7 @@
 				}
 			],
 			"attachedItems": [
-				"投石索|PHB"
+				"投石索|phb"
 			],
 			"traitTags": [
 				"伪装",
@@ -4643,12 +4643,12 @@
 		{
 			"ENG_name": "Vegepygmy Thorny Hunter",
 			"name": "棘皮猎手蔬菜侏儒",
+			"type": "plant",
 			"source": "QftIS",
 			"page": 219,
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -4772,12 +4772,12 @@
 		{
 			"ENG_name": "Warrior of Madarua",
 			"name": "玛达鲁阿的战士",
+			"type": "humanoid",
 			"source": "QftIS",
 			"page": 220,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"G"
@@ -4832,7 +4832,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"actionTags": [
 				"格挡"
@@ -4856,12 +4856,12 @@
 		{
 			"ENG_name": "Wolf-in-Sheep's-Clothing",
 			"name": "披着羊皮的狼",
+			"type": "plant",
 			"source": "QftIS",
 			"page": 221,
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -4965,12 +4965,12 @@
 		{
 			"ENG_name": "Worker Robot",
 			"name": "工人机器人",
+			"type": "construct",
 			"source": "QftIS",
 			"page": 215,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -5078,6 +5078,7 @@
 		{
 			"ENG_name": "Zargon the Returner",
 			"name": "回归者 扎尔贡",
+			"type": "aberration",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "QftIS",
@@ -5085,7 +5086,6 @@
 			"size": [
 				"H"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"

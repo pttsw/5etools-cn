@@ -16,6 +16,7 @@
 		{
 			"ENG_name": "Brain in a Jar",
 			"name": "缸中之脑",
+			"type": "undead",
 			"source": "LLK",
 			"page": 38,
 			"referenceSources": [
@@ -24,7 +25,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"A"
 			],
@@ -160,12 +160,12 @@
 		{
 			"ENG_name": "Clockwork Kraken",
 			"name": "发条克拉肯",
+			"type": "construct",
 			"source": "LLK",
 			"page": 38,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -394,6 +394,9 @@
 		{
 			"ENG_name": "Garret Levistusson",
 			"name": "加雷特·莱维斯图森",
+			"type": {
+				"type": "humanoid"
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "LLK",
@@ -401,9 +404,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -512,7 +512,7 @@
 				}
 			],
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"traitTags": [
 				"偷袭"
@@ -616,6 +616,7 @@
 		{
 			"ENG_name": "Gloine Nathair-Nathair",
 			"name": "格洛因·纳瑟-纳瑟",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "LLK",
@@ -636,7 +637,6 @@
 					}
 				}
 			},
-			"type": "undead",
 			"immune": [
 				"毒素",
 				"暗蚀"
@@ -650,7 +650,7 @@
 					"ENG_name": "Petrifying Gaze",
 					"name": "石化凝视",
 					"entries": [
-						"当一个能够看到美杜莎眼睛的生物在其30尺范围内开始其回合时，如果美杜莎没有被{@condition 失能}并且能看到该生物，美杜莎可以强迫它进行一次{@dc 14}体质豁免。如果豁免失败超过5点，该生物将立即被{@condition 石化}。否则，未能通过豁免的生物开始变成玻璃，并被{@condition 束缚}。被{@condition 束缚}的生物必须在其下一个回合结束时重复进行豁免，如果失败则变成{@condition 石化}，如果成功则结束效果。石化状态将持续，直到生物通过{@spell 高等复原术}法术或其他魔法被解除。",
+						"当一个能看见美杜莎眼睛的生物在其30尺内开始其回合时，如果美杜莎没有处于{@condition 失能}状态且能看见该生物，美杜莎可以强迫其进行一次{@dc 14}的体质豁免。如果豁免失败且差值达到5或更多，该生物将立即被{@condition 石化}。否则，豁免失败的生物会开始变为玻璃并被{@condition 束缚}。该{@condition 束缚}的生物必须在其下一回合结束时重复进行豁免，失败则变为{@condition 石化}，成功则结束该效应。石化状态将持续到该生物被{@spell 高等复原术}法术或其他魔法所解救。",
 						"未遭受{@status 突袭}的生物可以避开美杜莎的目光，以免除在其回合开始时进行的豁免。此时，该生物视为不能看见该美杜莎，直至其下一回合开始时再选择是否避开美杜莎的目光。该生物在任何时候看向美杜莎时，都必须立即进行该豁免。",
 						"如果美杜莎在明亮光照下于其身边30尺内看到自己的镜中倒影，则美杜莎将成为自己诅咒的目标被自己的凝视影响。"
 					]
@@ -669,6 +669,9 @@
 		{
 			"ENG_name": "Mary Greymalkin",
 			"name": "玛丽·格蕾麦金",
+			"type": {
+				"type": "humanoid"
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "LLK",
@@ -676,9 +679,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"N"
 			],
@@ -717,7 +717,7 @@
 			"passive": 12,
 			"languages": [
 				"深渊语",
-				"天族",
+				"天界语",
 				"通用语",
 				"精灵语",
 				"炼狱语",
@@ -789,7 +789,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"traitTags": [
 				"妖精血统"
@@ -911,12 +911,12 @@
 		{
 			"ENG_name": "Ooze-Folk",
 			"name": "软泥族",
+			"type": "ooze",
 			"source": "LLK",
 			"page": 46,
 			"size": [
 				"M"
 			],
-			"type": "ooze",
 			"alignment": [
 				"U"
 			],

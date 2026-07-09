@@ -52,15 +52,15 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@item 巨斧|PHB} 或 (b) 任意{@filter 军用近战武器|items|source=PHB|category=基础|type=军用武器;近战武器=sand}",
-					"(a) 两把{@item 手斧|PHB|手斧}或 (b) 任意一把 {@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
-					"一个 {@item 探索套组|PHB}和四支 {@item 标枪|PHB|标枪}"
+					"(a) 一把{@item 巨斧|phb} 或 (b) 任意{@filter 军用近战武器|items|source=phb|category=基础|type=军用武器;近战武器=sand}",
+					"(a) 两把{@item 手斧|phb|手斧}或 (b) 任意一把 {@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"一个 {@item 探索套组|phb}和四支 {@item 标枪|phb|标枪}"
 				],
 				"goldAlternative": "{@dice 2d4 × 10|2d4 × 10|起始金币}",
 				"defaultData": [
 					{
 						"a": [
-							"巨斧|PHB"
+							"巨斧|phb"
 						],
 						"b": [
 							{
@@ -71,7 +71,7 @@
 					{
 						"a": [
 							{
-								"item": "手斧|PHB",
+								"item": "手斧|phb",
 								"quantity": 2
 							}
 						],
@@ -83,9 +83,9 @@
 					},
 					{
 						"_": [
-							"探索套组|PHB",
+							"探索套组|phb",
 							{
-								"item": "标枪|PHB",
+								"item": "标枪|phb",
 								"quantity": 4
 							}
 						]
@@ -1251,7 +1251,7 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3级野蛮人{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 3级野蛮人{@variantrule 可选职业特性|tce|可选特性}}",
 				"当你的野蛮人职业等级达到3级和10级时，你可以从野蛮人1级所提供的技能熟练项列表中选择一个技能，获得该技能的熟练。"
 			]
 		},
@@ -1345,7 +1345,7 @@
 			"level": 7,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 7级野蛮人 {@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 7级野蛮人 {@variantrule 可选职业特性|tce|可选特性}}",
 				"作为你进入狂暴状态的附赠动作的一部分，你可以至多移动一段等同于你速度的一半的距离。"
 			]
 		},
@@ -3615,27 +3615,27 @@
 				"你从下列选项中自选一项能力获得。当你完成一次{@variantrule 长休|XPHB}时，你可以改变你的选择。",
 				{
 					"ENG_name": "Owl",
+					"name": "枭",
+					"type": "entries",
 					"entries": [
 						"你具有 60 尺黑暗视觉。如果你已经具有{@sense 黑暗视觉|XPHB}，你的{@sense 黑暗视觉|XPHB}范围增加 60 尺。 "
-					],
-					"name": "枭",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Panther",
+					"name": "豹",
+					"type": "entries",
 					"entries": [
 						"你具有等于你{@variantrule 速度|XPHB}的{@variantrule 攀爬速度|XPHB}。 "
-					],
-					"name": "豹",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Salmon",
+					"name": "鲑",
+					"type": "entries",
 					"entries": [
 						"你具有等于你{@variantrule 速度|XPHB}的{@variantrule 游泳速度|XPHB}。"
-					],
-					"name": "鲑",
-					"type": "entries"
+					]
 				}
 			],
 			"header": 2,
@@ -3670,27 +3670,27 @@
 				"每当你激活狂暴时，你从下列选项中选择一项。",
 				{
 					"ENG_name": "Falcon",
+					"name": "猎鹰",
+					"type": "entries",
 					"entries": [
 						"狂暴激活期间，只要你没有着装任何护甲，你就具有等于你{@variantrule 速度|XPHB}的{@variantrule 飞行速度|XPHB}。"
-					],
-					"name": "猎鹰",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Lion",
+					"name": "雄狮",
+					"type": "entries",
 					"entries": [
 						"狂暴激活期间，任何位于你 5 尺内的敌人不以你（或另一个选择该项能力的野蛮人）为目标的攻击检定具有{@variantrule 劣势|XPHB}。 "
-					],
-					"name": "雄狮",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Ram",
+					"name": "角羊",
+					"type": "entries",
 					"entries": [
 						"狂暴激活期间，当你的近战攻击命中一名体型不超过大型的生物时，你可以令其陷入{@condition 倒地|XPHB}状态。"
-					],
-					"name": "角羊",
-					"type": "entries"
+					]
 				}
 			],
 			"header": 2,
@@ -3898,27 +3898,27 @@
 				"处于圣斗士姿态期间，你获得以下增益。",
 				{
 					"ENG_name": "Flight",
+					"name": "飞翔",
+					"type": "entries",
 					"entries": [
 						"你具有等于你{@variantrule 速度|XPHB}的{@variantrule 飞行速度|XPHB}，并且可以悬浮。"
-					],
-					"name": "飞翔",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Resistance",
+					"name": "抗性",
+					"type": "entries",
 					"entries": [
 						"你具有对暗蚀、心灵和光耀伤害的{@variantrule 抗性|XPHB}。"
-					],
-					"name": "抗性",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Revivification",
+					"name": "回春",
+					"type": "entries",
 					"entries": [
 						"当位于你30尺内的一名生物的{@variantrule 生命值|XPHB}将要降至0时，你能够以{@variantrule 反应|XPHB}消耗一次狂暴使用次数，令目标的{@variantrule 生命值|XPHB}变为等于你野蛮人等级的值。"
-					],
-					"name": "回春",
-					"type": "entries"
+					]
 				}
 			],
 			"header": 2,

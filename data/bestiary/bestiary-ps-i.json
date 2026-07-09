@@ -81,12 +81,12 @@
 		{
 			"ENG_name": "Creepy Doll",
 			"name": "恐怖娃娃",
+			"type": "construct",
 			"source": "PSI",
 			"page": 25,
 			"size": [
 				"T"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"E"
@@ -358,12 +358,12 @@
 		{
 			"ENG_name": "Geist",
 			"name": "游魂",
+			"type": "undead",
 			"source": "PSI",
 			"page": 19,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"A"
 			],
@@ -967,12 +967,12 @@
 		{
 			"ENG_name": "Vampire Neonate",
 			"name": "吸血鬼新生儿",
+			"type": "undead",
 			"source": "PSI",
 			"page": 17,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -1150,6 +1150,12 @@
 				{
 					"ENG_name": "Elder Vampire: All Abilities",
 					"name": "远古吸血鬼：所有能力",
+					"type": {
+						"type": "undead",
+						"tags": [
+							"变形生物"
+						]
+					},
 					"source": "PSI",
 					"_mod": {
 						"trait": {
@@ -1184,12 +1190,6 @@
 								]
 							}
 						}
-					},
-					"type": {
-						"type": "undead",
-						"tags": [
-							"变形生物"
-						]
 					},
 					"speed": {
 						"walk": 30,
@@ -1345,6 +1345,12 @@
 				{
 					"ENG_name": "Elder Vampire: Shapechanger",
 					"name": "长老吸血鬼：变形者",
+					"type": {
+						"type": "undead",
+						"tags": [
+							"变形生物"
+						]
+					},
 					"source": "PSI",
 					"_mod": {
 						"trait": {
@@ -1359,12 +1365,6 @@
 								]
 							}
 						}
-					},
-					"type": {
-						"type": "undead",
-						"tags": [
-							"变形生物"
-						]
 					},
 					"variant": null
 				},
@@ -1485,11 +1485,6 @@
 		{
 			"ENG_name": "Werewolf (Krallenhorde)",
 			"name": "狼人（克拉伦部落）",
-			"source": "PSI",
-			"page": 15,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1497,6 +1492,11 @@
 					"变形生物"
 				]
 			},
+			"source": "PSI",
+			"page": 15,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -1638,7 +1638,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"敏锐感官",
@@ -1724,6 +1724,7 @@
 		{
 			"ENG_name": "Zombie Cat",
 			"name": "僵尸猫",
+			"type": "undead",
 			"source": "PSI",
 			"page": 17,
 			"_copy": {
@@ -1731,7 +1732,6 @@
 				"name": "猫",
 				"source": "MM"
 			},
-			"type": "undead",
 			"trait": [
 				{
 					"ENG_name": "Undead Fortitude",
@@ -1751,6 +1751,7 @@
 		{
 			"ENG_name": "Zombie Rat",
 			"name": "僵尸鼠",
+			"type": "undead",
 			"source": "PSI",
 			"page": 17,
 			"_copy": {
@@ -1758,7 +1759,6 @@
 				"name": "老鼠",
 				"source": "MM"
 			},
-			"type": "undead",
 			"trait": [
 				{
 					"ENG_name": "Undead Fortitude",
@@ -1778,6 +1778,7 @@
 		{
 			"ENG_name": "Zombie Snake",
 			"name": "僵尸蛇",
+			"type": "undead",
 			"source": "PSI",
 			"page": 17,
 			"_copy": {
@@ -1785,7 +1786,6 @@
 				"name": "毒蛇",
 				"source": "MM"
 			},
-			"type": "undead",
 			"trait": [
 				{
 					"ENG_name": "Undead Fortitude",

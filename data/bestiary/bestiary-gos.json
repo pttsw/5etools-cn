@@ -20,6 +20,7 @@
 		{
 			"ENG_name": "Amphisbaena",
 			"name": "双头蛇",
+			"type": "monstrosity",
 			"source": "GoS",
 			"page": 230,
 			"referenceSources": [
@@ -29,7 +30,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -146,17 +146,17 @@
 		{
 			"ENG_name": "Bullywug Croaker",
 			"name": "啵灵蛙鸣唱者",
-			"source": "GoS",
-			"page": 232,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"啵灵蛙"
 				]
 			},
+			"source": "GoS",
+			"page": 232,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -165,8 +165,8 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 兽皮甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 兽皮甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -257,7 +257,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"水陆两栖",
@@ -285,6 +285,12 @@
 		{
 			"ENG_name": "Bullywug Royal",
 			"name": "啵灵蛙王族",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"啵灵蛙"
+				]
+			},
 			"source": "GoS",
 			"page": 232,
 			"referenceSources": [
@@ -293,12 +299,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"啵灵蛙"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -307,8 +307,8 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 兽皮甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 兽皮甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -498,6 +498,7 @@
 		{
 			"ENG_name": "Drowned Ascetic",
 			"name": "溺亡者修行僧",
+			"type": "undead",
 			"source": "GoS",
 			"page": 233,
 			"referenceSources": [
@@ -506,7 +507,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -621,6 +621,7 @@
 		{
 			"ENG_name": "Drowned Assassin",
 			"name": "溺亡者刺客",
+			"type": "undead",
 			"source": "GoS",
 			"page": 234,
 			"referenceSources": [
@@ -629,7 +630,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -638,7 +638,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -731,8 +731,8 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB",
-				"手弩|PHB"
+				"匕首|phb",
+				"手弩|phb"
 			],
 			"traitTags": [
 				"不死坚韧"
@@ -771,6 +771,7 @@
 		{
 			"ENG_name": "Drowned Blade",
 			"name": "溺亡者之刃",
+			"type": "undead",
 			"source": "GoS",
 			"page": 235,
 			"referenceSources": [
@@ -779,7 +780,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -788,7 +788,7 @@
 				{
 					"ac": 10,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -888,6 +888,7 @@
 		{
 			"ENG_name": "Drowned Master",
 			"name": "溺亡者领主",
+			"type": "undead",
 			"source": "GoS",
 			"page": 235,
 			"referenceSources": [
@@ -896,7 +897,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -997,7 +997,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB"
+				"巨剑|phb"
 			],
 			"traitTags": [
 				"不死坚韧"
@@ -1064,12 +1064,12 @@
 		{
 			"ENG_name": "Giant Coral Snake",
 			"name": "巨珊瑚蛇",
+			"type": "beast",
 			"source": "GoS",
 			"page": 236,
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -1103,7 +1103,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} {@hit 5} 攻击命中，触及 5 英尺，单一目标。{@h}8 ({@damage 2d4 + 3}) 点穿刺伤害，且目标必须成功通过一次 {@dc 12} 体质豁免否则将 {@condition 震慑} 直到其下一回合结束。若豁免失败，目标开始产生幻觉并受到 {@table 短暂性疯狂|DMG} 效果影响（随机决定或由 DM 决定；详见{@book 城主指南|DMG|8|疯狂} 第 8 章）。该效果持续 10 分钟。"
+						"{@atk mw} {@hit 5} 攻击命中，触及 5 英尺，单一目标。{@h}8 ({@damage 2d4 + 3}) 点穿刺伤害，且目标必须成功通过一次 {@dc 12} 体质豁免否则将 {@condition 震慑} 直到其下一回合结束。若豁免失败，目标开始产生幻觉并受到 {@table 短暂性疯狂|DMG} 效果影响（随机决定或由 DM 决定；详见{@book 城主指南|dmg|8|疯狂} 第 8 章）。该效果持续 10 分钟。"
 					]
 				}
 			],
@@ -1128,12 +1128,12 @@
 		{
 			"ENG_name": "Giant Sea Eel",
 			"name": "巨海鳗",
+			"type": "beast",
 			"source": "GoS",
 			"page": 237,
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -1255,12 +1255,12 @@
 		{
 			"ENG_name": "Harpy Matriarch",
 			"name": "鸟妖女族长",
+			"type": "monstrosity",
 			"source": "GoS",
 			"page": 237,
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -1388,17 +1388,17 @@
 		{
 			"ENG_name": "Juvenile Kraken",
 			"name": "幼体克拉肯",
-			"source": "GoS",
-			"page": 238,
-			"size": [
-				"H"
-			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
 					"泰坦"
 				]
 			},
+			"source": "GoS",
+			"page": 238,
+			"size": [
+				"H"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -1456,7 +1456,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"天族",
+				"天界语",
 				"炼狱语",
 				"原初语",
 				"心灵感应 60 尺，但不会说。"
@@ -1587,17 +1587,17 @@
 		{
 			"ENG_name": "Koalinth",
 			"name": "海地精",
-			"source": "GoS",
-			"page": 239,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"类地精"
 				]
 			},
+			"source": "GoS",
+			"page": 239,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -1606,7 +1606,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 鳞甲|PHB}"
+						"{@item 鳞甲|phb}"
 					]
 				}
 			],
@@ -1666,7 +1666,7 @@
 				}
 			],
 			"attachedItems": [
-				"三叉戟|PHB"
+				"三叉戟|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -1694,17 +1694,17 @@
 		{
 			"ENG_name": "Koalinth Sergeant",
 			"name": "海地精军士",
-			"source": "GoS",
-			"page": 239,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"类地精"
 				]
 			},
+			"source": "GoS",
+			"page": 239,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -1713,7 +1713,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 鳞甲|PHB}"
+						"{@item 鳞甲|phb}"
 					]
 				}
 			],
@@ -1797,7 +1797,7 @@
 				}
 			],
 			"attachedItems": [
-				"三叉戟|PHB"
+				"三叉戟|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -1886,7 +1886,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"senseTags": [
 				"D"
@@ -1904,6 +1904,12 @@
 		{
 			"ENG_name": "Kysh",
 			"name": "基什",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"梭螺鱼人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -1911,12 +1917,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"梭螺鱼人"
-				]
-			},
 			"alignment": [
 				"L",
 				"G"
@@ -2000,7 +2000,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -2033,12 +2033,12 @@
 		{
 			"ENG_name": "Living Iron Statue",
 			"name": "活化钢铁像",
+			"type": "construct",
 			"source": "GoS",
 			"page": 241,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -2156,17 +2156,17 @@
 		{
 			"ENG_name": "Lizardfolk Commoner",
 			"name": "蜥蜴人平民",
-			"source": "GoS",
-			"page": 241,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"蜥蜴人"
 				]
 			},
+			"source": "GoS",
+			"page": 241,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2239,6 +2239,12 @@
 		{
 			"ENG_name": "Lizardfolk Render",
 			"name": "蜥蜴人撕裂者",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"蜥蜴人"
+				]
+			},
 			"source": "GoS",
 			"page": 241,
 			"referenceSources": [
@@ -2248,12 +2254,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"蜥蜴人"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -2365,17 +2365,17 @@
 		{
 			"ENG_name": "Lizardfolk Scaleshield",
 			"name": "蜥蜴人鳞盾",
-			"source": "GoS",
-			"page": 242,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"蜥蜴人"
 				]
 			},
+			"source": "GoS",
+			"page": 242,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2383,8 +2383,8 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 鳞甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 鳞甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -2461,7 +2461,7 @@
 				}
 			],
 			"attachedItems": [
-				"钉头锤|PHB"
+				"钉头锤|phb"
 			],
 			"traitTags": [
 				"屏息"
@@ -2485,6 +2485,12 @@
 		{
 			"ENG_name": "Lizardfolk Subchief",
 			"name": "蜥蜴人副首领",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"蜥蜴人"
+				]
+			},
 			"source": "GoS",
 			"page": 242,
 			"referenceSources": [
@@ -2493,12 +2499,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"蜥蜴人"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -2647,6 +2647,12 @@
 		{
 			"ENG_name": "Locathah",
 			"name": "洛卡鱼人",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"洛卡鱼人"
+				]
+			},
 			"source": "GoS",
 			"page": 243,
 			"referenceSources": [
@@ -2655,12 +2661,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"洛卡鱼人"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -2732,7 +2732,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -2757,17 +2757,17 @@
 		{
 			"ENG_name": "Locathah Hunter",
 			"name": "洛卡鱼人猎手",
-			"source": "GoS",
-			"page": 243,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"洛卡鱼人"
 				]
 			},
+			"source": "GoS",
+			"page": 243,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2847,7 +2847,7 @@
 				}
 			],
 			"attachedItems": [
-				"短棒|PHB"
+				"短棒|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -2878,6 +2878,12 @@
 		{
 			"ENG_name": "Master Refrum",
 			"name": "大师瑞弗拉姆",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -2895,12 +2901,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"G"
@@ -2911,6 +2911,7 @@
 		{
 			"ENG_name": "Maw of Sekolah",
 			"name": "瑟寇拉之喉",
+			"type": "monstrosity",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -2918,7 +2919,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -2958,7 +2958,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"鲨华鱼人",
+				"鲨华语",
 				"心灵感应 100 尺"
 			],
 			"cr": "7",
@@ -3056,17 +3056,17 @@
 		{
 			"ENG_name": "Merfolk Salvager",
 			"name": "人鱼打捞者",
-			"source": "GoS",
-			"page": 244,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人鱼"
 				]
 			},
+			"source": "GoS",
+			"page": 244,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -3160,6 +3160,12 @@
 		{
 			"ENG_name": "Merfolk Scout",
 			"name": "人鱼侦察兵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人鱼"
+				]
+			},
 			"source": "GoS",
 			"page": 216,
 			"_copy": {
@@ -3179,12 +3185,6 @@
 						"names": "长弓"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人鱼"
-				]
 			},
 			"alignment": [
 				"C",
@@ -3207,12 +3207,12 @@
 		{
 			"ENG_name": "Minotaur Living Crystal Statue",
 			"name": "活化牛头人水晶像",
+			"type": "construct",
 			"source": "GoS",
 			"page": 245,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -3302,7 +3302,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB"
+				"巨斧|phb"
 			],
 			"traitTags": [
 				"不变形态"
@@ -3330,12 +3330,12 @@
 		{
 			"ENG_name": "Monstrous Peryton",
 			"name": "庞巨鹿鹰兽",
+			"type": "monstrosity",
 			"source": "GoS",
 			"page": 245,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -3488,6 +3488,7 @@
 		{
 			"ENG_name": "Mr. Dory",
 			"name": "多利先生",
+			"type": "aberration",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -3495,7 +3496,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -3504,8 +3504,8 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}",
-						"{@item 盾牌|PHB}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -3612,7 +3612,7 @@
 				}
 			],
 			"attachedItems": [
-				"刺剑|PHB"
+				"刺剑|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -3662,6 +3662,12 @@
 		{
 			"ENG_name": "Oceanus",
 			"name": "俄申努斯",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -3669,12 +3675,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -3683,7 +3683,7 @@
 				{
 					"ac": 12,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -3751,8 +3751,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"轻弩|PHB",
-				"三叉戟|PHB"
+				"轻弩|phb",
+				"三叉戟|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -3817,17 +3817,17 @@
 		{
 			"ENG_name": "Pirate Bosun",
 			"name": "海盗水手长",
-			"source": "GoS",
-			"page": 247,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"任意种族"
 				]
 			},
+			"source": "GoS",
+			"page": 247,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -3835,7 +3835,7 @@
 				{
 					"ac": 12,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -3894,7 +3894,7 @@
 				}
 			],
 			"attachedItems": [
-				"轻锤|PHB"
+				"轻锤|phb"
 			],
 			"languageTags": [
 				"C",
@@ -3919,6 +3919,12 @@
 		{
 			"ENG_name": "Pirate Captain",
 			"name": "海盗船长",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"任意种族"
+				]
+			},
 			"source": "GoS",
 			"page": 247,
 			"reprintedAs": [
@@ -3927,12 +3933,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"任意种族"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3940,7 +3940,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -4015,8 +4015,8 @@
 				}
 			],
 			"attachedItems": [
-				"手弩|PHB",
-				"长剑|PHB"
+				"手弩|phb",
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4041,17 +4041,17 @@
 		{
 			"ENG_name": "Pirate Deck Wizard",
 			"name": "海盗甲板法师",
-			"source": "GoS",
-			"page": 248,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"任意种族"
 				]
 			},
+			"source": "GoS",
+			"page": 248,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -4142,7 +4142,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"languageTags": [
 				"C",
@@ -4172,17 +4172,17 @@
 		{
 			"ENG_name": "Pirate First Mate",
 			"name": "海盗大副",
-			"source": "GoS",
-			"page": 248,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"任意种族"
 				]
 			},
+			"source": "GoS",
+			"page": 248,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -4190,7 +4190,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 链甲|PHB}"
+						"{@item 链甲|phb}"
 					]
 				}
 			],
@@ -4242,7 +4242,7 @@
 				}
 			],
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4267,17 +4267,17 @@
 		{
 			"ENG_name": "Rip Tide Priest",
 			"name": "裂潮祭司",
-			"source": "GoS",
-			"page": 248,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "GoS",
+			"page": 248,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -4286,7 +4286,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 链甲衫|PHB}"
+						"{@item 链甲衫|phb}"
 					]
 				}
 			],
@@ -4368,7 +4368,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"languageTags": [
 				"AQ",
@@ -4400,6 +4400,12 @@
 		{
 			"ENG_name": "Sahuagin Blademaster",
 			"name": "鲨华大剑师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"鲨华鱼人"
+				]
+			},
 			"source": "GoS",
 			"page": 249,
 			"referenceSources": [
@@ -4409,12 +4415,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"鲨华鱼人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4423,8 +4423,8 @@
 				{
 					"ac": 20,
 					"from": [
-						"{@item 板甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 板甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -4455,7 +4455,7 @@
 			],
 			"passive": 10,
 			"languages": [
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "6",
 			"trait": [
@@ -4533,17 +4533,17 @@
 		{
 			"ENG_name": "Sahuagin Champion",
 			"name": "鲨华勇士",
-			"source": "GoS",
-			"page": 249,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"鲨华鱼人"
 				]
 			},
+			"source": "GoS",
+			"page": 249,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -4578,7 +4578,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "3",
 			"trait": [
@@ -4635,7 +4635,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"senseTags": [
 				"SD"
@@ -4662,17 +4662,17 @@
 		{
 			"ENG_name": "Sahuagin Coral Smasher",
 			"name": "鲨华珊瑚粉碎者",
-			"source": "GoS",
-			"page": 249,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"鲨华鱼人"
 				]
 			},
+			"source": "GoS",
+			"page": 249,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -4707,7 +4707,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "1",
 			"trait": [
@@ -4771,7 +4771,7 @@
 				}
 			],
 			"attachedItems": [
-				"战锤|PHB"
+				"战锤|phb"
 			],
 			"traitTags": [
 				"攻城怪物"
@@ -4800,6 +4800,12 @@
 		{
 			"ENG_name": "Sahuagin Deep Diver",
 			"name": "鲨华深潜者",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"鲨华鱼人"
+				]
+			},
 			"source": "GoS",
 			"page": 250,
 			"referenceSources": [
@@ -4808,12 +4814,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"鲨华鱼人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4853,7 +4853,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "4",
 			"trait": [
@@ -4931,7 +4931,7 @@
 				}
 			],
 			"attachedItems": [
-				"长柄刀|PHB"
+				"长柄刀|phb"
 			],
 			"senseTags": [
 				"SD"
@@ -4964,6 +4964,10 @@
 		{
 			"ENG_name": "Sahuagin Hatchling Swarm",
 			"name": "鲨华鱼人幼体集群",
+			"type": {
+				"type": "beast",
+				"swarmSize": "T"
+			},
 			"source": "GoS",
 			"page": 250,
 			"referenceSources": [
@@ -4972,10 +4976,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "beast",
-				"swarmSize": "T"
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -5075,6 +5075,12 @@
 		{
 			"ENG_name": "Sahuagin High Priestess",
 			"name": "鲨华高阶女祭司",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"鲨华鱼人"
+				]
+			},
 			"source": "GoS",
 			"page": 251,
 			"referenceSources": [
@@ -5083,12 +5089,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"鲨华鱼人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -5127,7 +5127,7 @@
 			],
 			"passive": 16,
 			"languages": [
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -5268,17 +5268,17 @@
 		{
 			"ENG_name": "Sahuagin Wave Shaper",
 			"name": "鲨华塑涛者",
-			"source": "GoS",
-			"page": 251,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"鲨华鱼人"
 				]
 			},
+			"source": "GoS",
+			"page": 251,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -5318,7 +5318,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -5425,6 +5425,12 @@
 		{
 			"ENG_name": "Sanbalet",
 			"name": "桑巴莱特",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -5432,12 +5438,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -5513,7 +5513,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C"
@@ -5604,12 +5604,12 @@
 		{
 			"ENG_name": "Shell Shark",
 			"name": "壳中鲨",
+			"type": "monstrosity",
 			"source": "GoS",
 			"page": 252,
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -5708,12 +5708,12 @@
 		{
 			"ENG_name": "Skeletal Alchemist",
 			"name": "骸骨炼金术士",
+			"type": "undead",
 			"source": "GoS",
 			"page": 253,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -5815,6 +5815,7 @@
 		{
 			"ENG_name": "Skeletal Juggernaut",
 			"name": "骸骨巨像",
+			"type": "undead",
 			"source": "GoS",
 			"page": 253,
 			"referenceSources": [
@@ -5823,7 +5824,6 @@
 			"size": [
 				"L"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -5927,6 +5927,10 @@
 		{
 			"ENG_name": "Skeletal Swarm",
 			"name": "骸骨集群",
+			"type": {
+				"type": "undead",
+				"swarmSize": "M"
+			},
 			"source": "GoS",
 			"page": 254,
 			"referenceSources": [
@@ -5936,10 +5940,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "undead",
-				"swarmSize": "M"
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -6031,12 +6031,12 @@
 		{
 			"ENG_name": "Skum",
 			"name": "鱼魔怪",
+			"type": "aberration",
 			"source": "GoS",
 			"page": 254,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -6133,7 +6133,7 @@
 				}
 			],
 			"attachedItems": [
-				"三叉戟|PHB"
+				"三叉戟|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -6165,6 +6165,7 @@
 		{
 			"ENG_name": "Thousand Teeth",
 			"name": "千齿",
+			"type": "monstrosity",
 			"shortName": true,
 			"isNpc": true,
 			"isNamedCreature": true,
@@ -6173,7 +6174,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -6300,12 +6300,12 @@
 		{
 			"ENG_name": "Vampiric Jade Statue",
 			"name": "吸血玉雕",
+			"type": "construct",
 			"source": "GoS",
 			"page": 256,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -6443,6 +6443,7 @@
 		{
 			"ENG_name": "Yalaga Maladwyn",
 			"name": "雅拉加·马拉德温",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "GoS",
@@ -6468,7 +6469,6 @@
 					}
 				}
 			},
-			"type": "undead",
 			"tokenCustom": true,
 			"traitTags": [
 				"日照敏感"

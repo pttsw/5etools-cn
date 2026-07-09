@@ -69,10 +69,10 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}和一面{@item 盾牌|PHB} ，或 (b) 两把{@filter 军用武器|items|source=PHB|category=基础|type=军用武器}",
-					"(a) 五把{@item 标枪|PHB|标枪}或 (b) 任意{@filter 简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand}",
-					"(a) 一个{@item 祭司套组|PHB}或 (b) 一个{@item 探索套组|PHB}",
-					"{@item 链甲|PHB} 和一个 {@item 圣徽|PHB}"
+					"(a) 一把{@filter 军用武器|items|source=phb|category=基础|type=军用武器}和一面{@item 盾牌|phb} ，或 (b) 两把{@filter 军用武器|items|source=phb|category=基础|type=军用武器}",
+					"(a) 五把{@item 标枪|phb|标枪}或 (b) 任意{@filter 简易近战武器|items|source=phb|category=基础|type=简易武器;近战武器=sand}",
+					"(a) 一个{@item 祭司套组|phb}或 (b) 一个{@item 探索套组|phb}",
+					"{@item 链甲|phb} 和一个 {@item 圣徽|phb}"
 				],
 				"goldAlternative": "{@dice 5d4 × 10|5d4 × 10|起始金币}",
 				"defaultData": [
@@ -81,7 +81,7 @@
 							{
 								"equipmentType": "weaponMartial"
 							},
-							"盾牌|PHB"
+							"盾牌|phb"
 						],
 						"b": [
 							{
@@ -93,7 +93,7 @@
 					{
 						"a": [
 							{
-								"item": "标枪|PHB",
+								"item": "标枪|phb",
 								"quantity": 5
 							}
 						],
@@ -105,15 +105,15 @@
 					},
 					{
 						"a": [
-							"祭司套组|PHB"
+							"祭司套组|phb"
 						],
 						"b": [
-							"探索套组|PHB"
+							"探索套组|phb"
 						]
 					},
 					{
 						"_": [
-							"链甲|PHB",
+							"链甲|phb",
 							{
 								"equipmentType": "focusSpellcastingHoly"
 							}
@@ -1025,7 +1025,7 @@
 				"破誓者|圣武士||破誓者|DMG|3",
 				"憎恨灵光|圣武士||破誓者|DMG|7",
 				"超然抗性|圣武士||破誓者|DMG|15",
-				"恐惧之王|圣武士||破誓者|DMG|20"
+				"魔王|圣武士||破誓者|DMG|20"
 			]
 		},
 		{
@@ -1798,7 +1798,7 @@
 					"name": "法器",
 					"type": "entries",
 					"entries": [
-						"你可用{@item 圣徽|PHB}作为施展你圣武士法术的法器。"
+						"你可用{@item 圣徽|phb}作为施展你圣武士法术的法器。"
 					]
 				}
 			]
@@ -1832,7 +1832,7 @@
 				"name": "引导神力"
 			},
 			"entries": [
-				"{@i 3级圣武士{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 3级圣武士{@variantrule 可选职业特性|tce|可选特性}}",
 				"你可以消耗一次引导神力的次数为法术魔力充能。以一个附赠动作，触碰你的圣徽进行祈祷并恢复一枚法术位，其环阶不超过你熟练加值的一半（向上取整）。你能使用这一特性一次，当你在此职业上达到更高等级后你可以使用更多次：7级后两次；15级三次。在你完成一次长休后，你恢复所有已消耗的使用次数。"
 			]
 		},
@@ -1914,7 +1914,7 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4级圣武士{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 4级圣武士{@variantrule 可选职业特性|tce|可选特性}}",
 				"每当你通过提升圣武士等级获得属性值提升时，你可以用另一个圣武士能够选择的战斗风格替换你当前的{@filter 战斗风格|optionalfeatures|feature type=FS:P}。这一变化代表着你在战斗训练上重心的转移。"
 			]
 		},
@@ -2681,7 +2681,7 @@
 		},
 		{
 			"ENG_name": "Dread Lord",
-			"name": "恐惧之王",
+			"name": "魔王",
 			"source": "DMG",
 			"page": 97,
 			"className": "圣武士",
@@ -5187,27 +5187,27 @@
 				"以一个{@variantrule 附赠动作|XPHB}，你可以用原力盈满你的守护灵光，灵光获得下列的增益。持续 1 分钟 Alexander或直到你将之提前结束（无需动作）。此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。你也可以消耗一个五环法术位（无需动作）重置此特性的使用权。",
 				{
 					"ENG_name": "Diminish Defiance",
+					"name": "瓦解反抗",
+					"type": "entries",
 					"entries": [
 						"位于你灵光范围内的敌人在对抗你法术或引导神力的豁免上具有{@variantrule 劣势|XPHB}。"
-					],
-					"name": "瓦解反抗",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Regeneration",
+					"name": "复生",
+					"type": "entries",
 					"entries": [
 						"你在每个自己的回合开始时，恢复 10 点{@variantrule 生命值|XPHB}。"
-					],
-					"name": "复生",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Swift Spells",
+					"name": "迅捷法术",
+					"type": "entries",
 					"entries": [
 						"每当你施展一道施法时间为动作的法术时，你可以将其改为一个{@variantrule 附赠动作|XPHB}施展。"
-					],
-					"name": "迅捷法术",
-					"type": "entries"
+					]
 				}
 			],
 			"header": 2,

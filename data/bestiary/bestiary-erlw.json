@@ -17,13 +17,13 @@
 		{
 			"ENG_name": "Belashyrra",
 			"name": "贝拉希拉",
+			"type": "aberration",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 286,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -92,42 +92,42 @@
 					"ENG_name": "Alien Mind",
 					"name": "异界心灵",
 					"entries": [
-						"如果一个生物试图读取贝拉希拉的思想或对其造成心灵伤害，则该生物必须成功通过{@dc 22}的智力豁免检定，否则将被{@condition 震慑}1分钟。每当被{@condition 震慑}的生物结束自己的回合时，他都能重试豁免检定，成功则本效果对其自身的影响终止。"
+						"如果一个生物试图读取贝拉希拉的思想或对其造成心灵伤害，则该生物通过{@dc 22}的智力豁免检定，否则将被{@condition 震慑} 1 分钟。每当被{@condition 震慑}的生物结束自己的回合时，他都能重试豁免检定，成功则本效果对其自身的影响终止。"
 					]
 				},
 				{
 					"ENG_name": "Eye Thief",
-					"name": "窃取眼睛",
+					"name": "盗目者",
 					"entries": [
-						"贝拉希拉能通过120英尺范围内所有生物的眼睛进行观察。它可以通过120英尺范围内任何生物的眼睛发射它的眼波射线，就好像它正身处那个生物的位置一般。"
+						"贝拉希拉能通过 120 尺范围内其他生物的眼睛进行观察。它可以使用 120 尺范围内其他生物的眼睛发射它的眼波射线，就好像它正身处那个生物的位置一般。"
 					]
 				},
 				{
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"当贝拉希拉在某次豁免检定中失败时，它可以令其改为成功。"
+						"贝拉希拉豁免失败时，可以将其改为豁免成功。"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"贝拉希拉在进行法术和其他魔法效果触发的豁免检定中具有优势。"
+						"贝拉希拉对抗法术和其他魔法效应时进行的豁免检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"贝拉希拉在回合开始时恢复20点生命值（HP）。如果它受到光耀伤害，则该特性在其下个回合开始时失效。贝拉希拉只有在以0点生命值（HP）开始其回合并且无法再生时才会死亡。"
+						"贝拉希拉在回合开始时恢复 20 点生命值。如果贝拉希拉受到光耀伤害，则该特性在其下个回合开始时失效。只有当贝拉希拉以 0 点生命值开始其回合并且无法应用再生能力时才会死亡。"
 					]
 				},
 				{
 					"ENG_name": "Teleport",
 					"name": "传送术",
 					"entries": [
-						"以一个附赠动作，贝拉希拉可以传送到30英尺范围内任意一个它能看到且未被占据的空间。"
+						"以一个附赠动作，贝拉希拉可以传送到 30 尺范围内任意一个它能看到且未被占据的空间。"
 					]
 				}
 			],
@@ -136,21 +136,21 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"贝拉希拉能进行两次爪击攻击，并使用一次眼波射线。"
+						"贝拉希拉能使用两次爪击，和一次眼波射线。"
 					]
 				},
 				{
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atk mw} 命中{@hit 14}，触及5尺，单一目标。{@h}17（{@damage 3d6 + 7}）点挥砍伤害。"
+						"{@atk mw} 命中{@hit 14}，触及 5 尺，单一目标。{@h}17（{@damage 3d6 + 7}）点挥砍伤害。"
 					]
 				},
 				{
 					"ENG_name": "Eye Ray",
 					"name": "眼波射线",
 					"entries": [
-						"贝拉希拉射出一道下列魔法眼波射线中的一种，目标为它120英尺范围内能看见的一个生物：",
+						"贝拉希拉射出一道魔法眼波射线，其类型自下表中自由选择。射线的目标必须是一个距离他 120 尺范围内，且能被它看到的生物：",
 						{
 							"type": "list",
 							"style": "list-hang-notitle",
@@ -159,25 +159,25 @@
 									"ENG_name": "1. Psyche-Reconstruction Ray",
 									"name": "1. 塑灵射线",
 									"type": "itemSub",
-									"entry": "目标必须进行一次{@dc 22}的感知豁免，豁免失败则受到49（{@damage 9d10}）点心灵伤害，豁免成功则只受一半伤害。如果该伤害将一个生物的生命值减少至0，则其立即死亡并转变为一只处于贝拉希拉控制下的观察者眼魔，并在先攻顺位中贝拉希拉之后立即行动。除了{@spell 祈愿术}法术之外，目标将无法以任何方式恢复到本来的形态。"
+									"entry": "目标必须进行一次{@dc 22}的感知豁免检定，豁免失败的生物受到49（{@damage 9d10}）点心灵伤害，而豁免成功的生物受到一半的伤害。如果该伤害将一个生物的生命值减少至 0，则其立即死亡并转变为一只处于贝拉希拉的控制下的观察者眼魔，其先攻顺位调整至贝拉希拉之后立即行动。除了{@spell 祈愿术}之外，目标将无法以任何方式恢复到本来的形态。"
 								},
 								{
 									"ENG_name": "2. Domination Ray",
 									"name": "2. 支配射线",
 									"type": "itemSub",
-									"entry": "目标必须成功通过一次{@dc 22}的感知豁免检定，否则将被贝拉希拉{@condition 魅惑}，持续1分钟或直到目标受到伤害。贝拉希拉可以通过心灵传讯向被{@condition 魅惑}的生物发出指令（不需要任何动作），其会尽全力服从。"
+									"entry": "目标进行一次{@dc 22}的感知豁免检定，豁免失败的生物将被贝拉希拉{@condition 魅惑}，持续 1 分钟或是持续至目标受到伤害。贝拉希拉可以通过心灵感应向被{@condition 魅惑}的生物发出指令（不需要任何动作），其会尽全力服从。"
 								},
 								{
 									"ENG_name": "3. Mind-Weakening Ray",
 									"name": "3. 摧心射线",
 									"type": "itemSub",
-									"entry": "目标必须成功通过一次{@dc 22}的智力豁免检定，否则受到36（{@damage 8d8}）点心灵伤害，并且在1分钟内无法施放法术或是激活魔法物品。目标可以在自己每个回合结束时重试豁免检定，成功则本效果对其自身的影响终止。"
+									"entry": "目标必须通过一次{@dc 22}的智力豁免检定，否则受到 36（{@damage 8d8}）点心灵伤害，并且在 1 分钟内无法施放法术或是激活魔法物品。每当受影响的生物结束自己的回合时，他都能重试豁免检定，成功则本效果对其自身的影响终止。"
 								},
 								{
 									"ENG_name": "4. Blinding Ray",
 									"name": "4. 目盲射线",
 									"type": "itemSub",
-									"entry": "目标及其10英尺范围内的所有生物必须成功通过一次{@dc 22}的体质豁免检定，否则将受到19（{@damage 3d12}）光耀伤害并被{@condition 目盲}1分钟。在此目盲状态结束之前，贝拉希拉可以通过{@condition 目盲}生物的眼睛进行观察。{@condition 目盲}的生物可以在自己每个回合结束时重试豁免检定，成功则本效果对其自身的影响终止。"
+									"entry": "目标及其 10 尺范围内的所有生物必须通过一次{@dc 22}的体质豁免检定，否则将受到19（{@damage 3d12}）光耀伤害并{@condition 目盲} 1 分钟。在此目盲状态结束之前，贝利希拉可以用过{@condition 目盲}生物的眼睛进行观察。每当{@condition 目盲}的生物结束自己的回合时，他都能重试豁免检定，成功则本效果对其自身的影响终止。"
 								}
 							]
 						}
@@ -189,21 +189,21 @@
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"贝拉希拉进行一次爪抓攻击。"
+						"贝拉希拉进行一次爪击攻击。"
 					]
 				},
 				{
 					"ENG_name": "Implant Fear (Costs 2 Actions)",
 					"name": "植入恐惧（消耗2个动作）",
 					"entries": [
-						"贝拉希拉指定一个在它60英尺范围，且能被它看到的生物。目标必须通过一次{@dc 22}的感知豁免，失败则将受到22（{@damage 4d10}）点心灵伤害，并立即使用其反应（如果可以使用）以最快速度远离贝拉希拉。"
+						"贝拉希拉指定一个在它 60 尺范围，且能被它看到的生物。目标必须通过一次{@dc 22}的感知豁免，失败则将受到 22（{@damage 4d10}）点心灵伤害，并立即使用其反应（如果可以使用）以最快速度远离贝拉希拉。"
 					]
 				},
 				{
 					"ENG_name": "Rend Reality (Costs 3 Actions)",
 					"name": "撕裂现实（消耗3个动作）",
 					"entries": [
-						"贝拉希拉撕裂了身周区域与现实世界的联系。所有位于贝拉希拉身周10英尺范围内的生物必须通过一次{@dc 22}的体质豁免，否则受到19（{@damage 3d12}）点力场伤害并获得1级{@condition 力竭}。"
+						"贝拉希拉撕裂了身周区域与现实世界的联系。所有位于贝拉希拉身周 10 尺范围内的生物必须通过一次{@dc 22}的体质豁免，否则受到 19（{@damage 3d12}）点力场伤害并获得 1 级{@condition 力竭}。"
 					]
 				}
 			],
@@ -256,11 +256,18 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Bone Knight",
 			"name": "骸骨骑士",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"任意种族"
+				]
+			},
 			"source": "ERLW",
 			"page": 316,
 			"referenceSources": [
@@ -269,12 +276,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"任意种族"
-				]
-			},
 			"alignment": [
 				"L",
 				"NX",
@@ -286,7 +287,7 @@
 				{
 					"ac": 20,
 					"from": [
-						"骸骨铠甲"
+						"骸骨甲胄"
 					]
 				}
 			],
@@ -327,7 +328,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"骑士是一个8级的施法者。它的施法能力是魅力(法术豁免{@dc 14}，法术攻击命中{@hit 6})。它准备了以下圣武士法术："
+						"骑士是一个 8 级的施法者。它的施法能力是魅力（法术豁免{@dc 14}，法术攻击命中{@hit 6}）。它准备了以下圣武士法术："
 					],
 					"spells": {
 						"1": {
@@ -358,14 +359,14 @@
 					"ENG_name": "Commander of Bones",
 					"name": "骸骨指挥官",
 					"entries": [
-						"作为一个附赠动作，骑士可以指定一个它能看到的30英尺范围内的骷髅或丧尸。目标必须进行一次{@dc 14}感知豁免检定。检定失败，目标必须服从骑士的命令，直到骑士死亡或者使用附赠动作解除控制。通过这种方式，骑士可以同时命令最多12个亡灵。"
+						"作为一个附赠动作，骑士可以指定一个它能看到的 30 尺范围内的骷髅或丧尸。目标必须进行一次{@dc 14}感知豁免检定。检定失败，目标必须服从骑士的命令，直到骑士死亡或者使用附赠动作解除控制。通过这种方式，骑士可以同时命令最多 12 个亡灵。"
 					]
 				},
 				{
 					"ENG_name": "Master of the Pallid Banner",
 					"name": "苍白旗帜之主",
 					"entries": [
-						"在骑士60尺范围内，骑士的任何亡灵盟友在对抗任何驱散亡灵的效果时具有豁免优势。"
+						"在骑士 60 尺内的所有亡灵盟友在对抗驱散亡灵的效果时具有豁免优势。"
 					]
 				}
 			],
@@ -388,13 +389,13 @@
 					"ENG_name": "Longbow",
 					"name": "长弓",
 					"entries": [
-						"{@atk rw} 命中{@hit 4}，射程150/600尺，单一目标。{@h}5（{@damage 1d8 + 1}）穿刺伤害。"
+						"{@atk rw} 命中{@hit 4}，射程 150/600 尺，单一目标。{@h}5（{@damage 1d8 + 1}）穿刺伤害。"
 					]
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB",
-				"长弓|PHB"
+				"巨剑|phb",
+				"长弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -435,6 +436,13 @@
 		{
 			"ENG_name": "Changeling",
 			"name": "幻身灵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"幻身灵",
+					"变形生物"
+				]
+			},
 			"source": "ERLW",
 			"page": 317,
 			"referenceSources": [
@@ -443,13 +451,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"幻身灵",
-					"变形生物"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -457,7 +458,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -495,7 +496,7 @@
 					"ENG_name": "Change Appearance",
 					"name": "改变外貌",
 					"entries": [
-						"幻身灵可以用它的动作变形成一个它所见过中型类人，或者变回它的真实形态。除了体型之外，它保留其具体数值。它携带或着装的任何装备不会跟着变形。在死亡时，它也会回复其真实形态。"
+						"幻身灵可以用它的动作变形成它所见过的人形，或者变回它的真实形态。除了体型之外，它保留其游戏数据。它携带或着装的任何装备不会跟着变形。在死亡时，它也会回复其真实形态。"
 					]
 				}
 			],
@@ -518,12 +519,12 @@
 					"ENG_name": "Unsettling Visage (Recharges after a Short or Long Rest)",
 					"name": "诡异面容（短休或长休后充能）",
 					"entries": [
-						"幻身灵30英尺内的每个生物必须成功通过{@dc 13}的感知豁免否则将受到1分钟的{@condition 恐慌}。一个生物可以在每次其自身回合结束时重复豁免，成功则结束对自己的效果。"
+						"幻身灵30 尺内的每个生物必须在{@dc 13}感知豁免中成功，否则将受到 1 分钟的{@condition 恐慌}。一个生物可以在每次其自身回合结束时重复豁免，成功则结束对自己的效果。"
 					]
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -557,6 +558,7 @@
 		{
 			"ENG_name": "Clawfoot",
 			"name": "足爪龙(迅猛龙)",
+			"type": "beast",
 			"group": [
 				"恐龙"
 			],
@@ -565,7 +567,6 @@
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -596,14 +597,14 @@
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"如果足爪龙有至少一个盟友在目标生物5尺距离内且该盟友未处于{@condition 失能}状态，则该足爪龙对该生物发动的攻击检定具有优势。"
+						"如果足爪龙有至少一个盟友在目标生物 5 尺距离内且未处于{@condition 失能}状态，则该足爪龙对该生物发动的攻击检定具有优势。"
 					]
 				},
 				{
 					"ENG_name": "Pounce",
 					"name": "猛扑",
 					"entries": [
-						"如果足爪龙向目标生物直线移动至少20尺然后在同一回合内以爪抓攻击命中目标，则该目标必须成功通过一次{@dc 11}的力量豁免，否则将应击{@condition 倒地}。如果目标处于{@condition 倒地}状态，则足爪龙可以用一个附赠动作对其发动一次啃咬攻击。"
+						"如果足爪龙向目标生物直线移动至少 20 尺然后在同一回合内以爪抓攻击命中目标，则该目标必须成功通过一次{@dc 11}的力量豁免，否则将应击{@condition 倒地}。如果目标处于{@condition 倒地}状态，则足爪龙可以用一个附赠动作对其发动一次啃咬攻击。"
 					]
 				}
 			],
@@ -659,7 +660,8 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Corrin Delmaco",
@@ -709,12 +711,12 @@
 		{
 			"ENG_name": "Dolgaunt",
 			"name": "嶙峋异变怪",
+			"type": "aberration",
 			"source": "ERLW",
 			"page": 290,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -762,14 +764,14 @@
 					"ENG_name": "Evasion",
 					"name": "反射闪避",
 					"entries": [
-						"如果嶙峋异变怪成为某个允许其进行敏捷豁免以仅受一半伤害的效应的目标时，其豁免成功则不受任何伤害，而豁免失败时则只受一半伤害。如果它{@condition 失能}，它不能使用该特性。"
+						"当嶙峋异变怪受到一个允许其进行敏捷豁免来只承受一半伤害的效应影响时，其豁免成功时不受伤害，豁免失败时只承受一半伤害。其无法在{@condition 失能}期间使用此特质。"
 					]
 				},
 				{
 					"ENG_name": "Unarmored Defense",
 					"name": "无甲防御",
 					"entries": [
-						"当嶙峋异变怪不穿盔甲也不使用盾牌时，其AC包括其感知调整值。"
+						"当嶙峋异变怪不穿盔甲也不使用盾牌时，其AC加上感知调整值。"
 					]
 				}
 			],
@@ -778,28 +780,28 @@
 					"ENG_name": "Multiattack",
 					"name": "多重攻击",
 					"entries": [
-						"嶙峋异变怪进行了两次触须攻击和两次徒手打击。至多两次触须攻击可以替换为活力吸取。"
+						"嶙峋异变怪进行了两次触须攻击和两次徒手打击。嶙峋异变怪可以将至多两次触须攻击替换为活力吸取。"
 					]
 				},
 				{
 					"ENG_name": "Tentacle",
 					"name": "触须",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及15英尺，单一目标。{@h}7（{@damage 1d6 + 4}）钝击伤害。如果目标是大型或更小的生物，则该目标会被{@condition 受擒}（逃脱{@dc 12}）。在这场擒抱结束之前，嶙峋异变怪不能用相同的触须攻击另一个目标。嶙峋异变怪有两条触须。"
+						"{@atk mw} 命中{@hit 6}，触及 15 尺，单一目标。{@h}7（{@damage 1d6 + 4}）钝击伤害。如果目标是大型或更小的生物，则该目标会被{@condition 受擒}（逃脱{@dc 12}）。在这场擒抱结束之前，嶙峋异变怪不能用相同的触须攻击另一个目标。嶙峋异变怪有两条触须。"
 					]
 				},
 				{
 					"ENG_name": "Unarmed Strike",
 					"name": "徒手打击",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及5英尺，单一目标。{@h}6（{@damage 1d4 + 4}）钝击伤害。"
+						"{@atk mw} 命中{@hit 6}，触及 5 尺，单一目标。{@h}6（{@damage 1d4 + 4}）钝击伤害。"
 					]
 				},
 				{
 					"ENG_name": "Vitality Drain",
 					"name": "活力吸取",
 					"entries": [
-						"一个被嶙峋异变怪触须{@condition 受擒}的生物必须进行一次{@dc 11}的体质豁免检定。若豁免失败，目标受到9（{@damage 2d8}）暗蚀伤害，而嶙峋异变怪恢复的生命值等于所受到暗蚀伤害的一半。"
+						"一个被嶙峋异变怪触须{@condition 受擒}的生物必须进行一次{@dc 11}的体质豁免检定。若豁免失败，目标受到 9（{@damage 2d8}）暗蚀伤害，而嶙峋异变怪恢复的生命值等于所受到暗蚀伤害的一半。"
 					]
 				}
 			],
@@ -830,17 +832,18 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Dolgrim",
 			"name": "狰狞异变怪",
+			"type": "aberration",
 			"source": "ERLW",
 			"page": 291,
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -850,7 +853,7 @@
 					"ac": 15,
 					"from": [
 						"天生护甲",
-						"{@item 盾牌|PHB}"
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -916,9 +919,9 @@
 				}
 			],
 			"attachedItems": [
-				"手弩|PHB",
-				"钉头锤|PHB",
-				"矛|PHB"
+				"手弩|phb",
+				"钉头锤|phb",
+				"矛|phb"
 			],
 			"senseTags": [
 				"D"
@@ -947,12 +950,12 @@
 		{
 			"ENG_name": "Dusk Hag",
 			"name": "暮鬼婆",
+			"type": "fey",
 			"source": "ERLW",
 			"page": 292,
 			"size": [
 				"M"
 			],
-			"type": "fey",
 			"alignment": [
 				"N",
 				"E"
@@ -1116,13 +1119,13 @@
 		{
 			"ENG_name": "Dyrrn",
 			"name": "迪恩",
+			"type": "aberration",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 288,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1333,6 +1336,7 @@
 		{
 			"ENG_name": "Expeditious Messenger",
 			"name": "迅速信使",
+			"type": "construct",
 			"group": [
 				"人工生命体"
 			],
@@ -1341,7 +1345,6 @@
 			"size": [
 				"T"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -1425,6 +1428,7 @@
 		{
 			"ENG_name": "Fastieth",
 			"name": "快龙(雷利诺龙)",
+			"type": "beast",
 			"group": [
 				"恐龙"
 			],
@@ -1433,7 +1437,6 @@
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -1510,6 +1513,7 @@
 		{
 			"ENG_name": "Hashalaq Quori",
 			"name": "窃梦梦灵",
+			"type": "aberration",
 			"group": [
 				"梦灵"
 			],
@@ -1518,7 +1522,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -1567,7 +1570,7 @@
 			],
 			"languages": [
 				"通用语",
-				"梦灵"
+				"梦灵语"
 			],
 			"cr": "9",
 			"spellcasting": [
@@ -1677,17 +1680,17 @@
 		{
 			"ENG_name": "Inspired",
 			"name": "梦启者",
-			"source": "ERLW",
-			"page": 294,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "ERLW",
+			"page": 294,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -1732,7 +1735,7 @@
 			],
 			"languages": [
 				"通用语",
-				"梦灵"
+				"梦灵语"
 			],
 			"cr": "2",
 			"spellcasting": [
@@ -1950,6 +1953,7 @@
 		{
 			"ENG_name": "Iron Defender",
 			"name": "白铁守卫",
+			"type": "construct",
 			"group": [
 				"人工生命体"
 			],
@@ -1958,7 +1962,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -2055,6 +2058,7 @@
 		{
 			"ENG_name": "Kalaraq Quori",
 			"name": "百目梦灵",
+			"type": "aberration",
 			"alias": [
 				"缚眼者"
 			],
@@ -2066,7 +2070,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -2286,6 +2289,12 @@
 		{
 			"ENG_name": "Kalashtar",
 			"name": "离梦人",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"离梦人"
+				]
+			},
 			"source": "ERLW",
 			"page": 317,
 			"referenceSources": [
@@ -2294,12 +2303,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"离梦人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -2359,7 +2362,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C",
@@ -2385,6 +2388,7 @@
 		{
 			"ENG_name": "Karrnathi Undead Soldier",
 			"name": "坎纳斯亡灵士兵",
+			"type": "undead",
 			"source": "ERLW",
 			"page": 295,
 			"referenceSources": [
@@ -2393,7 +2397,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -2402,7 +2405,7 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item 半身板甲|PHB}"
+						"{@item 半身板甲|phb}"
 					]
 				}
 			],
@@ -2489,8 +2492,8 @@
 				}
 			],
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"集群战术",
@@ -2523,6 +2526,7 @@
 		{
 			"ENG_name": "Lady Illmarrow",
 			"name": "罪髓女士",
+			"type": "undead",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 296,
@@ -2532,7 +2536,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -2738,7 +2741,7 @@
 					"ENG_name": "Paralyzing Claw",
 					"name": "麻痹之爪",
 					"entries": [
-						"{@atk mw} 命中{@hit 10}，触及5尺，单一生物。{@h}13（{@damage 3d6 + 3}）挥砍伤害外加10（{@damage 3d6}）冷冻伤害，且目标必须成功通过{@dc 20}的体质豁免否则被{@condition 麻痹}1分钟。目标可以在其每回合结束时重复该豁免检定，成功则在自己身上结束该效果。"
+						"{@atk mw} 命中{@hit 10}，触及5尺，单一生物。{@h}13（{@damage 3d6 + 3}）挥砍伤害外加10（{@damage 3d6}）寒冷伤害，且目标必须成功通过{@dc 20}的体质豁免否则被{@condition 麻痹}1分钟。目标可以在其每回合结束时重复该豁免检定，成功则在自己身上结束该效果。"
 					]
 				},
 				{
@@ -2847,12 +2850,12 @@
 		{
 			"ENG_name": "Living Burning Hands",
 			"name": "活化燃烧之手",
+			"type": "construct",
 			"source": "ERLW",
 			"page": 298,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -2962,12 +2965,12 @@
 		{
 			"ENG_name": "Living Cloudkill",
 			"name": "活化死云术",
+			"type": "construct",
 			"source": "ERLW",
 			"page": 299,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -3088,12 +3091,12 @@
 		{
 			"ENG_name": "Living Lightning Bolt",
 			"name": "活化闪电束",
+			"type": "construct",
 			"source": "ERLW",
 			"page": 299,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -3213,6 +3216,12 @@
 		{
 			"ENG_name": "Magewright",
 			"name": "魔匠师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"任意种族"
+				]
+			},
 			"source": "ERLW",
 			"page": 318,
 			"referenceSources": [
@@ -3221,12 +3230,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"任意种族"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3282,7 +3285,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C",
@@ -3307,13 +3310,13 @@
 		{
 			"ENG_name": "Mordakhesh",
 			"name": "摩达克什",
+			"type": "fiend",
 			"isNamedCreature": true,
 			"source": "ERLW",
 			"page": 301,
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"L",
 				"E"
@@ -3322,7 +3325,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|PHB}"
+						"{@item 板甲|phb}"
 					]
 				}
 			],
@@ -3463,7 +3466,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB"
+				"巨剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -3509,12 +3512,12 @@
 		{
 			"ENG_name": "Radiant Idol",
 			"name": "光辉偶像",
+			"type": "celestial",
 			"source": "ERLW",
 			"page": 308,
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"E"
@@ -3642,7 +3645,7 @@
 				}
 			],
 			"attachedItems": [
-				"链枷|PHB"
+				"链枷|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -3693,6 +3696,7 @@
 		{
 			"ENG_name": "Rak Tulkhesh",
 			"name": "拉克·塔尔赫什",
+			"type": "fiend",
 			"shortName": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
@@ -3703,7 +3707,6 @@
 			"size": [
 				"H"
 			],
-			"type": "fiend",
 			"alignment": [
 				"N",
 				"E"
@@ -3949,6 +3952,12 @@
 		{
 			"ENG_name": "Shifter",
 			"name": "化兽者",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"化兽者"
+				]
+			},
 			"source": "ERLW",
 			"page": 319,
 			"referenceSources": [
@@ -3957,12 +3966,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"化兽者"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3970,7 +3973,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -4027,7 +4030,7 @@
 				}
 			],
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -4049,6 +4052,7 @@
 		{
 			"ENG_name": "Sul Khatesh",
 			"name": "苏·卡特什",
+			"type": "fiend",
 			"shortName": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
@@ -4059,7 +4063,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"L",
 				"E"
@@ -4309,6 +4312,12 @@
 		{
 			"ENG_name": "Tarkanan Assassin",
 			"name": "塔卡南刺客",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"任意种族"
+				]
+			},
 			"source": "ERLW",
 			"page": 320,
 			"referenceSources": [
@@ -4317,12 +4326,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"任意种族"
-				]
-			},
 			"alignment": [
 				"L",
 				"NX",
@@ -4334,7 +4337,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -4426,7 +4429,7 @@
 				}
 			],
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -4470,6 +4473,12 @@
 		{
 			"ENG_name": "The Lord of Blades",
 			"name": "刀锋统主",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"战俑"
+				]
+			},
 			"shortName": true,
 			"isNamedCreature": true,
 			"source": "ERLW",
@@ -4477,12 +4486,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"战俑"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4737,6 +4740,7 @@
 		{
 			"ENG_name": "Tsucora Quori",
 			"name": "螯爪梦灵",
+			"type": "aberration",
 			"group": [
 				"梦灵"
 			],
@@ -4745,7 +4749,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -4792,7 +4795,7 @@
 			],
 			"languages": [
 				"通用语",
-				"梦灵"
+				"梦灵语"
 			],
 			"cr": "7",
 			"spellcasting": [
@@ -4898,12 +4901,12 @@
 		{
 			"ENG_name": "Undying Councilor",
 			"name": "不朽议员",
+			"type": "undead",
 			"source": "ERLW",
 			"page": 311,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"G"
@@ -5154,12 +5157,12 @@
 		{
 			"ENG_name": "Undying Soldier",
 			"name": "不朽战士",
+			"type": "undead",
 			"source": "ERLW",
 			"page": 311,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"G"
@@ -5168,8 +5171,8 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item 胸甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 胸甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -5256,7 +5259,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"照明",
@@ -5290,12 +5293,12 @@
 		{
 			"ENG_name": "Valenar Hawk",
 			"name": "维伦那猎鹰",
+			"type": "fey",
 			"source": "ERLW",
 			"page": 312,
 			"size": [
 				"T"
 			],
-			"type": "fey",
 			"alignment": [
 				"N"
 			],
@@ -5373,12 +5376,12 @@
 		{
 			"ENG_name": "Valenar Hound",
 			"name": "维伦那猎犬",
+			"type": "fey",
 			"source": "ERLW",
 			"page": 312,
 			"size": [
 				"M"
 			],
-			"type": "fey",
 			"alignment": [
 				"N"
 			],
@@ -5466,12 +5469,12 @@
 		{
 			"ENG_name": "Valenar Steed",
 			"name": "维伦那骏马",
+			"type": "fey",
 			"source": "ERLW",
 			"page": 313,
 			"size": [
 				"L"
 			],
-			"type": "fey",
 			"alignment": [
 				"N"
 			],
@@ -5538,12 +5541,12 @@
 		{
 			"ENG_name": "Warforged Colossus",
 			"name": "巨像战俑",
+			"type": "construct",
 			"source": "ERLW",
 			"page": 314,
 			"size": [
 				"G"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -5721,6 +5724,12 @@
 		{
 			"ENG_name": "Warforged Soldier",
 			"name": "战俑士兵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"战俑"
+				]
+			},
 			"source": "ERLW",
 			"page": 320,
 			"referenceSources": [
@@ -5729,12 +5738,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"战俑"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -5743,7 +5746,7 @@
 					"ac": 16,
 					"from": [
 						"天生护甲",
-						"{@item 盾牌|PHB}"
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -5818,7 +5821,7 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -5843,6 +5846,7 @@
 		{
 			"ENG_name": "Warforged Titan",
 			"name": "泰坦战俑",
+			"type": "construct",
 			"source": "ERLW",
 			"page": 315,
 			"referenceSources": [
@@ -5851,7 +5855,6 @@
 			"size": [
 				"H"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -5978,12 +5981,12 @@
 		{
 			"ENG_name": "Zakya Rakshasa",
 			"name": "扎吉亚罗刹",
+			"type": "fiend",
 			"source": "ERLW",
 			"page": 309,
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"L",
 				"E"
@@ -5992,8 +5995,8 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 鳞甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 鳞甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -6110,8 +6113,8 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB",
-				"长剑|PHB"
+				"标枪|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔法武器"

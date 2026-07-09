@@ -26,7 +26,7 @@
 			"startingProficiencies": {
 				"weapons": [
 					"简易",
-					"{@item 短剑|PHB|短剑}"
+					"{@item 短剑|phb|短剑}"
 				],
 				"tools": [
 					"选择一种{@item 工匠工具|PHB}或一种{@item 乐器|PHB}"
@@ -58,15 +58,15 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把 {@item 短剑|PHB} 或者 (b) 任意一把{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
-					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}",
-					"10 {@item 飞镖|PHB|飞镖}"
+					"(a) 一把 {@item 短剑|phb} 或者 (b) 任意一把{@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"(a) 一个{@item 地城套组|phb}或(b) 一个{@item 探索套组|phb}",
+					"10 {@item 飞镖|phb|飞镖}"
 				],
 				"goldAlternative": "{@dice 5d4|5d4|起始金币}",
 				"defaultData": [
 					{
 						"a": [
-							"短剑|PHB"
+							"短剑|phb"
 						],
 						"b": [
 							{
@@ -76,16 +76,16 @@
 					},
 					{
 						"a": [
-							"地城套组|PHB"
+							"地城套组|phb"
 						],
 						"b": [
-							"探索套组|PHB"
+							"探索套组|phb"
 						]
 					},
 					{
 						"_": [
 							{
-								"item": "飞镖|PHB",
+								"item": "飞镖|phb",
 								"quantity": 10
 							}
 						]
@@ -100,7 +100,7 @@
 				"proficienciesGained": {
 					"weapons": [
 						"简易",
-						"{@item 短剑|PHB|短剑}"
+						"{@item 短剑|phb|短剑}"
 					]
 				}
 			},
@@ -1656,8 +1656,8 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"你修行的武艺让你使用徒手打击和武僧武器时得心应手。武僧武器包括{@item 短剑|PHB|短剑}和所有{@filter 不含双手与重型属性的简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand|property=!重型;!双手}。",
-				"未着装任何护甲也没持用{@item 盾牌|PHB}时，如果你徒手或只持用武僧武器，则你发动的攻击拥有下列增益：",
+				"你修行的武艺让你使用徒手打击和武僧武器时得心应手。武僧武器包括{@item 短剑|phb|短剑}和所有{@filter 不含双手与重型属性的简易近战武器|items|source=phb|category=基础|type=简易武器;近战武器=sand|property=!重型;!双手}。",
+				"未着装任何护甲也没持用{@item 盾牌|phb}时，如果你徒手或只持用武僧武器，则你发动的攻击拥有下列增益：",
 				{
 					"type": "list",
 					"items": [
@@ -1692,13 +1692,13 @@
 			"level": 2,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 2级武僧{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 2级武僧{@variantrule 可选职业特性|tce|可选特性}}",
 				"你训练自己使用各种武器作为武僧武器，而不仅仅是简易近战武器和短剑。每当你完成短休或长休时，可以碰触一件武器，将气集中在它之中，然后该武器就视为武僧武器，直到你再次使用这个能力。",
 				"所选武器必须符合以下标准：",
 				{
 					"type": "list",
 					"items": [
-						"武器必须是{@filter 简易或军用武器|items|source=PHB|category=基础|type=军用武器;简易武器|property=!重型;!特殊}。",
+						"武器必须是{@filter 简易或军用武器|items|source=phb|category=基础|type=军用武器;简易武器|property=!重型;!特殊}。",
 						"你必须拥有其熟练项。",
 						"不能拥有重型或特殊词条"
 					]
@@ -1739,8 +1739,8 @@
 				"某些特性需要目标进行豁免检定来抵抗你特性造成的效应。其豁免DC如下：",
 				{
 					"ENG_name": "Ki",
-					"type": "abilityDc",
 					"name": "Ki",
+					"type": "abilityDc",
 					"attributes": [
 						"wis"
 					]
@@ -1838,7 +1838,7 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3级武僧{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 3级武僧{@variantrule 可选职业特性|tce|可选特性}}",
 				"如果你在你的回合中执行动作时花费了1点或更多的气，则你可以在回合结束前用一个附赠动作以徒手打击或武僧武器进行一次攻击。"
 			]
 		},
@@ -1884,7 +1884,7 @@
 				"amount": 2
 			},
 			"entries": [
-				"{@i 4级武僧{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 4级武僧{@variantrule 可选职业特性|tce|可选特性}}",
 				"以一个动作，你能消耗2点气并且投掷一粒武艺骰，你恢复等同于掷骰结果加上你的熟练加值的生命值。"
 			]
 		},
@@ -1924,7 +1924,7 @@
 			"level": 5,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 5级武僧{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 5级武僧{@variantrule 可选职业特性|tce|可选特性}}",
 				"当你攻击检定未命中时，你可以花费1到3点气来使该次攻击检定获得加值，每点气的消耗能获得+2加值，这可能会使原本的未命中改为命中"
 			]
 		},
@@ -2579,8 +2579,8 @@
 				"你的疾风连击，坚强防御和飞檐走壁获得以下增益：",
 				{
 					"ENG_name": "",
-					"type": "entries",
 					"name": "",
+					"type": "entries",
 					"entries": [
 						{
 							"ENG_name": "Flurry of Blows",
@@ -2592,16 +2592,16 @@
 						},
 						{
 							"ENG_name": "Patient Defense",
-							"type": "entries",
 							"name": "坚强防御",
+							"type": "entries",
 							"entries": [
 								"当你消耗功力使用坚强防御时，你获得相当于你两个武艺骰的{@variantrule 临时生命值|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Step of the Wind",
-							"type": "entries",
 							"name": "疾步如风",
+							"type": "entries",
 							"entries": [
 								"当你消耗功力使用疾步如风时，你可以选择你周围 5 尺内一个体型为大型或更小的自愿生物。直至你的回合结束，该生物将一直随你移动。该生物如此移动不会引发{@action 借机攻击|XPHB|借机攻击}。"
 							]
@@ -3548,6 +3548,7 @@
 		{
 			"ENG_name": "Forms of Your Astral Self",
 			"name": "你的星我形态",
+			"type": "inset",
 			"source": "TCE",
 			"page": 50,
 			"className": "武僧",
@@ -3556,7 +3557,6 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"header": 1,
-			"type": "inset",
 			"entries": [
 				"星我是武僧精神与灵魂的半透明化身。因此，星我的形态会展现出武僧的背景、理想、牵绊和缺点，而且星我并不一定看起来像武僧一样。例如，一个瘦长的人的星我可能会让人联想到牛头人这代表着武僧内心所感受到的力量；同样，一个兽人武僧可能会表现出丝般嫩滑的手臂和精致的面容这代表着兽人内心深处的温柔。每一个星我都是独一无二的，而这一宗派的武僧们更为人所知的是他们的星我外表，而非他们自己的外表。",
 				"当你选择这一宗派时，仔细考虑一下能定义你武僧特质的怪癖。他们是否对某种东西充满迷恋？驱使你的动力是正义还是私欲？所有这些特质都可以在你的星我形态上有所体现"
@@ -3895,7 +3895,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"当你3级选择此宗派时，若你还没有{@skill 表演}技能的熟练，则你获得之。你的武术技巧将战斗与舞者的精确及小丑的滑稽混合在一起。此外，若你还没有{@item 酿酒工具|PHB}的熟练，则你同时获得之。"
+				"当你3级选择此宗派时，若你还没有{@skill 表演}技能的熟练，则你获得之。你的武术技巧将战斗与舞者的精确及小丑的滑稽混合在一起。此外，若你还没有{@item 酿酒工具|phb}的熟练，则你同时获得之。"
 			]
 		},
 		{
@@ -4073,7 +4073,7 @@
 					"name": "剑圣武器",
 					"type": "entries",
 					"entries": [
-						"选择两种武器类型作为你的剑圣武器：一种近战武器和一种远程武器。这两种武器可以是任何不带有重型和特殊属性的{@filter 不具有重型和特殊属性的简易或军用武器|items|source=PHB|type=简易武器;军用武器|property=!重型;!特殊|category=基础|miscellaneous=}。长弓是个特例，它同样也可被选为剑圣武器。如果你还未拥有所选武器的熟练项，你获得之。而所选的武器类型对你来说可以视为武僧武器。这一宗派的许多职业特性只有当你使用剑圣武器时才能生效。当你的武僧职业等级分别达到第6级、第11级、和第17级时，你可以遵从上述标准，选择另一种武器（近战或远程武器均可）作为你的剑圣武器。"
+						"选择两种武器类型作为你的剑圣武器：一种近战武器和一种远程武器。这两种武器可以是任何不带有重型和特殊属性的{@filter 不具有重型和特殊属性的简易或军用武器|items|source=phb|type=简易武器;军用武器|property=!重型;!特殊|category=基础|miscellaneous=}。长弓是个特例，它同样也可被选为剑圣武器。如果你还未拥有所选武器的熟练项，你获得之。而所选的武器类型对你来说可以视为武僧武器。这一宗派的许多职业特性只有当你使用剑圣武器时才能生效。当你的武僧职业等级分别达到第6级、第11级、和第17级时，你可以遵从上述标准，选择另一种武器（近战或远程武器均可）作为你的剑圣武器。"
 					]
 				},
 				{
@@ -4094,7 +4094,7 @@
 					"name": "书画之道",
 					"type": "entries",
 					"entries": [
-						"你在{@item 书法工具|PHB}或{@item 画家工具|PHB}中选择其一，获得其熟练项。"
+						"你在{@item 书法工具|phb}或{@item 画家工具|phb}中选择其一，获得其熟练项。"
 					]
 				}
 			]
@@ -4503,16 +4503,16 @@
 					"entries": [
 						{
 							"ENG_name": "Hand of Harm",
-							"type": "entries",
 							"name": "夺命之手",
+							"type": "entries",
 							"entries": [
 								"当你对一个生物使用夺命之手时，你可以使该生物陷入{@condition 中毒|XPHB}状态，直至你的下个回合结束。"
 							]
 						},
 						{
 							"ENG_name": "Hand of Healing",
-							"type": "entries",
 							"name": "予命之手",
+							"type": "entries",
 							"entries": [
 								"当你使用予命之手时，你还可以结束你治疗的生物身上的以下状态之一：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}、{@condition 麻痹|XPHB}、{@condition 中毒|XPHB}或{@condition 震慑|XPHB}。"
 							]
@@ -4819,27 +4819,27 @@
 				"当你完全身处{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}环境下时，你能够以一个{@action 魔法|XPHB}动作消耗3点功力来让你周围环绕幽影，持续 1 分钟，直至你陷入{@condition 失能|XPHB}状态或在{@variantrule 明亮光照|XPHB}中结束回合。当周身环绕幽影时，你获得以下好处：",
 				{
 					"ENG_name": "Invisibility",
+					"name": "隐形",
+					"type": "entries",
 					"entries": [
 						"你获得{@condition 隐形|XPHB}状态。"
-					],
-					"name": "隐形",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Partially Incorporeal",
+					"name": "局部虚化",
+					"type": "entries",
 					"entries": [
 						"你可以如同通过{@variantrule 困难地形|XPHB}一般通过已占据空间。如果你回合结束时仍然处于已占据空间之中，则会被排出到之前最近一个未占据空间。"
-					],
-					"name": "局部虚化",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Shadow Flurry",
+					"name": "幽影连击",
+					"type": "entries",
 					"entries": [
 						"你使用疾风连击时不再需要消耗功力。"
-					],
-					"name": "幽影连击",
-					"type": "entries"
+					]
 				}
 			],
 			"header": 2,

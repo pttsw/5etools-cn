@@ -25,17 +25,17 @@
 		{
 			"ENG_name": "Abyssal Chicken",
 			"name": "深渊鸡",
-			"source": "BGDIA",
-			"page": 97,
-			"size": [
-				"T"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"恶魔"
 				]
 			},
+			"source": "BGDIA",
+			"page": 97,
+			"size": [
+				"T"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -142,6 +142,12 @@
 		{
 			"ENG_name": "Amrik Vanthampur",
 			"name": "阿姆利克·范萨姆普尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -149,12 +155,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -163,7 +163,7 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item 皮甲|PHB}",
+						"{@item 皮甲|phb}",
 						"魅力调整值"
 					]
 				}
@@ -226,7 +226,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -337,6 +337,12 @@
 		{
 			"ENG_name": "Arkhan the Cruel",
 			"name": "残酷者阿克汉",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"龙裔"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -344,12 +350,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"龙裔"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -359,7 +359,7 @@
 					"ac": 23,
 					"from": [
 						"{@item 黑曜燧石龙板甲|BGDIA}",
-						"{@item 盾牌|PHB}"
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -480,7 +480,7 @@
 			],
 			"attachedItems": [
 				"神殿吞食者|BGDIA",
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"senseTags": [
 				"D"
@@ -524,6 +524,12 @@
 		{
 			"ENG_name": "Bel",
 			"name": "贝尔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -531,12 +537,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -645,7 +645,7 @@
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"贝尔豁免失败时，可以将其改为豁免成功。"
+						"当贝尔豁免失败时，他可以选择将其改为豁免成功。"
 					]
 				},
 				{
@@ -710,7 +710,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB"
+				"巨剑|phb"
 			],
 			"traitTags": [
 				"传奇抗性",
@@ -798,17 +798,17 @@
 		{
 			"ENG_name": "Black Gauntlet of Bane",
 			"name": "班恩之黑手",
-			"source": "BGDIA",
-			"page": 235,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 235,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -817,7 +817,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 链甲|PHB}"
+						"{@item 链甲|phb}"
 					]
 				}
 			],
@@ -933,7 +933,7 @@
 				}
 			],
 			"attachedItems": [
-				"硬头锤|PHB"
+				"硬头锤|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -976,12 +976,12 @@
 		{
 			"ENG_name": "Bone Whelk",
 			"name": "骸骨螺",
+			"type": "monstrosity",
 			"source": "BGDIA",
 			"page": 119,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -1088,7 +1088,7 @@
 								"ENG_name": "Healer",
 								"name": "医疗师",
 								"entries": [
-									"布妮拥有{@feat 医疗师}专长的全部增益，并且熟练使用{@item 医疗包|PHB}与{@item 草药工具|PHB}。"
+									"布妮拥有{@feat 医疗师}专长的全部增益，并且熟练使用{@item 医疗包|phb}与{@item 草药工具|phb}。"
 								]
 							},
 							{
@@ -1145,7 +1145,7 @@
 				}
 			],
 			"attachedItems": [
-				"镀银长矛|PHB"
+				"镀银长矛|phb"
 			],
 			"miscTags": [
 				"MLW",
@@ -1201,6 +1201,12 @@
 		{
 			"ENG_name": "Crokek'toeck",
 			"name": "克鲁科克'托伊克",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -1208,12 +1214,6 @@
 			"size": [
 				"G"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -1353,17 +1353,17 @@
 		{
 			"ENG_name": "Death's Head of Bhaal",
 			"name": "巴尔的死神之首",
-			"source": "BGDIA",
-			"page": 233,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 233,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -1447,7 +1447,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -1503,6 +1503,12 @@
 		{
 			"ENG_name": "Duke Thalamra Vanthampur",
 			"name": "萨拉玛拉·范萨姆普尔公爵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -1510,12 +1516,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -1631,6 +1631,12 @@
 		{
 			"ENG_name": "Elliach",
 			"name": "艾拉赫",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -1648,12 +1654,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -1668,7 +1668,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"miscTags": [
 				"MLW",
@@ -1683,6 +1683,12 @@
 		{
 			"ENG_name": "Feonor",
 			"name": "菲奥诺",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -1700,12 +1706,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -1717,12 +1717,12 @@
 		{
 			"ENG_name": "Fiendish Flesh Golem",
 			"name": "邪魔血肉魔像",
+			"type": "construct",
 			"source": "BGDIA",
 			"page": 236,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -1866,17 +1866,17 @@
 		{
 			"ENG_name": "Fist of Bane",
 			"name": "班恩之拳",
-			"source": "BGDIA",
-			"page": 232,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 232,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -1885,8 +1885,8 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 链甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 链甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -1937,8 +1937,8 @@
 				}
 			],
 			"attachedItems": [
-				"长弓|PHB",
-				"硬头锤|PHB"
+				"长弓|phb",
+				"硬头锤|phb"
 			],
 			"languageTags": [
 				"C"
@@ -2002,6 +2002,7 @@
 		{
 			"ENG_name": "Gideon Lightward",
 			"name": "吉迪恩·莱特沃德",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -2009,7 +2010,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -2132,6 +2132,12 @@
 		{
 			"ENG_name": "Harkina Hunt",
 			"name": "哈金娜·亨特",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -2153,12 +2159,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"damageTags": [
 				"B",
 				"P"
@@ -2173,12 +2173,12 @@
 		{
 			"ENG_name": "Hellwasp",
 			"name": "黄泉蜂",
+			"type": "fiend",
 			"source": "BGDIA",
 			"page": 236,
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"L",
 				"E"
@@ -2308,12 +2308,12 @@
 		{
 			"ENG_name": "Hollyphant",
 			"name": "圣飞象",
+			"type": "celestial",
 			"source": "BGDIA",
 			"page": 237,
 			"size": [
 				"S"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"G"
@@ -2482,17 +2482,17 @@
 		{
 			"ENG_name": "Iron Consul",
 			"name": "钢铁领事",
-			"source": "BGDIA",
-			"page": 232,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 232,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -2501,7 +2501,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 链甲|PHB}"
+						"{@item 链甲|phb}"
 					]
 				}
 			],
@@ -2566,7 +2566,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -2589,7 +2589,13 @@
 		},
 		{
 			"ENG_name": "Kostchtchie",
-			"name": "斯彻奇",
+			"name": "科斯彻奇",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -2597,12 +2603,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -2700,7 +2700,7 @@
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"科斯彻奇豁免失败时，可以将其改为豁免成功"
+						"当科斯彻奇豁免失败时，他可以选择将其改为豁免成功。"
 					]
 				},
 				{
@@ -2804,6 +2804,12 @@
 		{
 			"ENG_name": "Krull",
 			"name": "克鲁尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"龟人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -2811,12 +2817,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"龟人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -2985,7 +2985,7 @@
 				}
 			],
 			"attachedItems": [
-				"+1 巨锤|DMG"
+				"+1 巨锤|dmg"
 			],
 			"traitTags": [
 				"屏息"
@@ -3081,6 +3081,7 @@
 		{
 			"ENG_name": "Mahadi the Rakshasa",
 			"name": "罗刹马哈迪",
+			"type": "fiend",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -3088,7 +3089,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"L",
 				"E"
@@ -3273,17 +3273,17 @@
 		{
 			"ENG_name": "Master of Souls",
 			"name": "驭魂者",
-			"source": "BGDIA",
-			"page": 234,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 234,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -3455,6 +3455,12 @@
 		{
 			"ENG_name": "Mortlock Vanthampur",
 			"name": "摩特洛克·范萨姆普尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -3462,12 +3468,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -3530,8 +3530,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨棒|PHB",
-				"重弩|PHB"
+				"巨棒|phb",
+				"重弩|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3557,17 +3557,17 @@
 		{
 			"ENG_name": "Necromite of Myrkul",
 			"name": "米尔寇之尸从",
-			"source": "BGDIA",
-			"page": 234,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 234,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -3685,17 +3685,17 @@
 		{
 			"ENG_name": "Night Blade",
 			"name": "夜刃",
-			"source": "BGDIA",
-			"page": 233,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 233,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -3747,7 +3747,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"senseTags": [
 				"D"
@@ -3771,6 +3771,12 @@
 		{
 			"ENG_name": "Nine-Fingers Keene",
 			"name": "九指基恩",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -3778,12 +3784,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -3791,7 +3791,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -3869,7 +3869,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3966,17 +3966,17 @@
 		{
 			"ENG_name": "Reaper of Bhaal",
 			"name": "巴尔的收割者",
-			"source": "BGDIA",
-			"page": 233,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 233,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -4062,7 +4062,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"senseTags": [
 				"D"
@@ -4102,6 +4102,12 @@
 		{
 			"ENG_name": "Rilsa Rael",
 			"name": "瑞尔萨·雷尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -4109,12 +4115,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -4122,7 +4122,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -4204,8 +4204,8 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB",
-				"短剑|PHB"
+				"匕首|phb",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4230,6 +4230,10 @@
 		{
 			"ENG_name": "Skeletal Rats",
 			"name": "骷髅鼠",
+			"type": {
+				"type": "undead",
+				"swarmSize": "T"
+			},
 			"source": "BGDIA",
 			"page": 23,
 			"_copy": {
@@ -4237,27 +4241,23 @@
 				"name": "鼠群",
 				"source": "MM"
 			},
-			"type": {
-				"type": "undead",
-				"swarmSize": "T"
-			},
 			"hasToken": true,
 			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Skull Lasher of Myrkul",
 			"name": "米尔寇之笞颅者",
-			"source": "BGDIA",
-			"page": 234,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "BGDIA",
+			"page": 234,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -4393,6 +4393,12 @@
 		{
 			"ENG_name": "Smiler the Defiler",
 			"name": "污化者笑爷",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"精灵"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -4400,12 +4406,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -4522,7 +4522,7 @@
 				}
 			],
 			"attachedItems": [
-				"+1 短剑|DMG"
+				"+1 短剑|dmg"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -4620,6 +4620,12 @@
 		{
 			"ENG_name": "Thavius Kreeg",
 			"name": "塔维斯·克雷格",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -4627,12 +4633,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4685,7 +4685,7 @@
 				}
 			],
 			"attachedItems": [
-				"硬头锤|PHB"
+				"硬头锤|phb"
 			],
 			"languageTags": [
 				"AB",
@@ -4706,6 +4706,12 @@
 		{
 			"ENG_name": "Thurstwell Vanthampur",
 			"name": "瑟斯维尔·范萨姆普尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -4713,12 +4719,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4830,6 +4830,7 @@
 		{
 			"ENG_name": "Torogar Steelfist",
 			"name": "托罗加·钢拳",
+			"type": "monstrosity",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -4837,7 +4838,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"L",
 				"E"
@@ -4933,7 +4933,7 @@
 				}
 			],
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"senseTags": [
 				"D"
@@ -4960,6 +4960,7 @@
 		{
 			"ENG_name": "Traxigor",
 			"name": "特拉克西哥",
+			"type": "beast",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "BGDIA",
@@ -4991,7 +4992,6 @@
 			"size": [
 				"T"
 			],
-			"type": "beast",
 			"alignment": [
 				"C",
 				"G"
@@ -5036,6 +5036,13 @@
 		},
 		{
 			"ENG_name": "Ulder Ravengard",
+			"name": "乌尔德·瑞文嘉德",
+			"type": {
+				"tags": [
+					"人类"
+				],
+				"type": "humanoid"
+			},
 			"ac": [
 				{
 					"ac": 20,
@@ -5105,7 +5112,6 @@
 				"MLW",
 				"MW"
 			],
-			"name": "乌尔德·瑞文嘉德",
 			"page": 70,
 			"passive": 13,
 			"reaction": [
@@ -5134,18 +5140,13 @@
 				"walk": 25
 			},
 			"str": 17,
-			"type": {
-				"tags": [
-					"人类"
-				],
-				"type": "humanoid"
-			},
 			"wis": 10,
 			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Undead Tree",
 			"name": "不死树",
+			"type": "undead",
 			"source": "BGDIA",
 			"page": 109,
 			"_copy": {
@@ -5160,7 +5161,6 @@
 					}
 				}
 			},
-			"type": "undead",
 			"resist": [
 				"暗蚀"
 			],

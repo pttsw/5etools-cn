@@ -89,6 +89,7 @@
 		{
 			"ENG_name": "Auril (First Form)",
 			"name": "欧吕尔（第一形态）",
+			"type": "monstrosity",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -96,7 +97,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -314,6 +314,7 @@
 		{
 			"ENG_name": "Auril (Second Form)",
 			"name": "欧吕尔（第二形态）",
+			"type": "elemental",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -321,7 +322,6 @@
 			"size": [
 				"L"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N",
 				"E"
@@ -527,6 +527,7 @@
 		{
 			"ENG_name": "Auril (Third Form)",
 			"name": "欧吕尔（第三形态）",
+			"type": "elemental",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -534,7 +535,6 @@
 			"size": [
 				"S"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N",
 				"E"
@@ -728,6 +728,12 @@
 		{
 			"ENG_name": "Avarice",
 			"name": "阿瓦芮丝",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"提夫林"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -735,12 +741,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"提夫林"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -782,7 +782,7 @@
 				"龙语",
 				"炼狱语",
 				"兽人语",
-				"雪怪"
+				"雪怪语"
 			],
 			"cr": "7",
 			"spellcasting": [
@@ -930,12 +930,12 @@
 		{
 			"ENG_name": "Awakened White Moose",
 			"name": "启蒙的白驼鹿",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 82,
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"N",
 				"E"
@@ -1106,6 +1106,12 @@
 		{
 			"ENG_name": "Bjornhild Solvigsdottir",
 			"name": "比约希尔德·索威斯多蒂",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -1113,12 +1119,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -1152,7 +1152,7 @@
 			"passive": 10,
 			"languages": [
 				"通用语",
-				"雪怪"
+				"雪怪语"
 			],
 			"cr": "5",
 			"trait": [
@@ -1188,8 +1188,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB",
-				"矛|PHB"
+				"巨斧|phb",
+				"矛|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -1217,12 +1217,12 @@
 		{
 			"ENG_name": "Chardalyn Berserker",
 			"name": "查达林狂战士",
+			"type": "fiend",
 			"source": "IDRotF",
 			"page": 280,
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"C",
 				"E"
@@ -1329,12 +1329,12 @@
 		{
 			"ENG_name": "Chardalyn Dragon",
 			"name": "查达林魔晶龙",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 281,
 			"size": [
 				"H"
 			],
-			"type": "construct",
 			"alignment": [
 				"C",
 				"E"
@@ -1691,12 +1691,12 @@
 		{
 			"ENG_name": "Coldlight Walker",
 			"name": "寒光行者",
+			"type": "undead",
 			"source": "IDRotF",
 			"page": 284,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -1819,12 +1819,12 @@
 		{
 			"ENG_name": "Demos Magen",
 			"name": "战魔卫",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 300,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -1911,8 +1911,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB",
-				"轻弩|PHB"
+				"巨剑|phb",
+				"轻弩|phb"
 			],
 			"traitTags": [
 				"魔法抗性",
@@ -2049,6 +2049,7 @@
 		{
 			"ENG_name": "Dzaan's Simulacrum",
 			"name": "德赞的拟像",
+			"type": "construct",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -2056,7 +2057,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"E"
@@ -2235,12 +2235,12 @@
 		{
 			"ENG_name": "Fox",
 			"name": "狐狸",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 288,
 			"size": [
 				"T"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -2309,17 +2309,17 @@
 		{
 			"ENG_name": "Frost Druid",
 			"name": "霜地德鲁伊",
-			"source": "IDRotF",
-			"page": 288,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "IDRotF",
+			"page": 288,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -2468,7 +2468,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨锤|PHB"
+				"巨锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -2517,12 +2517,12 @@
 		{
 			"ENG_name": "Frost Giant Skeleton",
 			"name": "霜巨人骷髅",
+			"type": "undead",
 			"source": "IDRotF",
 			"page": 288,
 			"size": [
 				"H"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -2600,7 +2600,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB"
+				"巨斧|phb"
 			],
 			"traitTags": [
 				"非凡本质"
@@ -2638,12 +2638,12 @@
 		{
 			"ENG_name": "Galvan Magen",
 			"name": "电魔卫",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 301,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -2757,12 +2757,12 @@
 		{
 			"ENG_name": "Giant Walrus",
 			"name": "巨海象",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 312,
 			"size": [
 				"H"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -2844,17 +2844,17 @@
 		{
 			"ENG_name": "Gnoll Vampire",
 			"name": "鬣狗人吸血鬼",
-			"source": "IDRotF",
-			"page": 290,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "undead",
 				"tags": [
 					"变形生物"
 				]
 			},
+			"source": "IDRotF",
+			"page": 290,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -2902,7 +2902,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"鬣狗人"
+				"鬣狗语"
 			],
 			"cr": "8",
 			"trait": [
@@ -3061,12 +3061,12 @@
 		{
 			"ENG_name": "Gnome Ceremorph",
 			"name": "侏儒蜕败者",
+			"type": "aberration",
 			"source": "IDRotF",
 			"page": 303,
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"A"
 			],
@@ -3176,7 +3176,7 @@
 				}
 			],
 			"attachedItems": [
-				"激光手枪|DMG"
+				"激光手枪|dmg"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -3230,12 +3230,12 @@
 		{
 			"ENG_name": "Gnome Squidling",
 			"name": "侏儒灵吸虫",
+			"type": "aberration",
 			"source": "IDRotF",
 			"page": 303,
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"U"
 			],
@@ -3358,17 +3358,17 @@
 		{
 			"ENG_name": "Goliath Warrior",
 			"name": "歌利亚战士",
-			"source": "IDRotF",
-			"page": 292,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"歌利亚"
 				]
 			},
+			"source": "IDRotF",
+			"page": 292,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -3456,8 +3456,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB",
-				"标枪|PHB"
+				"巨斧|phb",
+				"标枪|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3484,11 +3484,6 @@
 		{
 			"ENG_name": "Goliath Werebear",
 			"name": "歌利亚熊人",
-			"source": "IDRotF",
-			"page": 293,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3496,6 +3491,11 @@
 					"变形生物"
 				]
 			},
+			"source": "IDRotF",
+			"page": 293,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"G"
@@ -3627,7 +3627,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB"
+				"巨斧|phb"
 			],
 			"traitTags": [
 				"敏锐感官",
@@ -3661,6 +3661,12 @@
 		{
 			"ENG_name": "Grandolpha Muzgardt",
 			"name": "格兰多法·穆兹加德",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -3668,12 +3674,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -3798,6 +3798,12 @@
 		{
 			"ENG_name": "Gunvald Halraggson",
 			"name": "贡瓦尔·哈拉格森",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -3805,12 +3811,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -3894,8 +3894,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"战斧|PHB",
-				"标枪|PHB"
+				"战斧|phb",
+				"标枪|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3926,12 +3926,12 @@
 		{
 			"ENG_name": "Hare",
 			"name": "野兔",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 294,
 			"size": [
 				"T"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -4014,6 +4014,12 @@
 		{
 			"ENG_name": "Hengar Aesnvaard",
 			"name": "亨格尔·艾斯恩瓦德",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -4041,12 +4047,6 @@
 					]
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -4065,12 +4065,12 @@
 		{
 			"ENG_name": "Hypnos Magen",
 			"name": "眠魔卫",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 301,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -4202,12 +4202,12 @@
 		{
 			"ENG_name": "Ice Troll",
 			"name": "冰巨魔",
+			"type": "giant",
 			"source": "IDRotF",
 			"page": 295,
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -4324,17 +4324,17 @@
 		{
 			"ENG_name": "Icewind Kobold",
 			"name": "冰风谷狗头人",
-			"source": "IDRotF",
-			"page": 296,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"狗头人"
 				]
 			},
+			"source": "IDRotF",
+			"page": 296,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"A"
 			],
@@ -4411,8 +4411,8 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB",
-				"标枪|PHB"
+				"匕首|phb",
+				"标枪|phb"
 			],
 			"traitTags": [
 				"集群战术",
@@ -4442,12 +4442,12 @@
 		{
 			"ENG_name": "Icewind Kobold Zombie",
 			"name": "冰风谷狗头人丧尸",
+			"type": "undead",
 			"source": "IDRotF",
 			"page": 297,
 			"size": [
 				"S"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -4517,7 +4517,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"traitTags": [
 				"不死坚韧",
@@ -4545,6 +4545,12 @@
 		{
 			"ENG_name": "Isarr Kronenstrom",
 			"name": "伊萨尔·克罗纳斯特伦",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -4552,12 +4558,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -4646,8 +4646,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"重弩|PHB",
-				"镰刀|PHB"
+				"重弩|phb",
+				"镰刀|phb"
 			],
 			"traitTags": [
 				"敏锐感官"
@@ -4677,6 +4677,12 @@
 		{
 			"ENG_name": "Jarund Elkhardt",
 			"name": "贾伦·埃克哈特",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -4684,12 +4690,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -4771,8 +4771,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"标枪|PHB",
-				"战锤|PHB"
+				"标枪|phb",
+				"战锤|phb"
 			],
 			"traitTags": [
 				"残暴"
@@ -4854,6 +4854,7 @@
 		{
 			"ENG_name": "Kingsport",
 			"name": "金斯波特",
+			"type": "beast",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -4861,7 +4862,6 @@
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -4971,12 +4971,12 @@
 		{
 			"ENG_name": "Knucklehead Trout",
 			"name": "硬头鳟",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 295,
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -5049,12 +5049,12 @@
 		{
 			"ENG_name": "Kobold Vampire Spawn",
 			"name": "狗头人初生吸血鬼",
+			"type": "undead",
 			"source": "IDRotF",
 			"page": 297,
 			"size": [
 				"S"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -5203,12 +5203,12 @@
 		{
 			"ENG_name": "Living Bigby's Hand",
 			"name": "活化毕格比之手",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 298,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -5322,12 +5322,12 @@
 		{
 			"ENG_name": "Living Blade of Disaster",
 			"name": "活化灾祸之刃",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 299,
 			"size": [
 				"S"
 			],
-			"type": "construct",
 			"alignment": [
 				"C",
 				"E"
@@ -5445,12 +5445,12 @@
 		{
 			"ENG_name": "Living Demiplane",
 			"name": "活化半位面",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 299,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -5577,6 +5577,12 @@
 		{
 			"ENG_name": "Mjenir",
 			"name": "米捷尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -5604,12 +5610,6 @@
 					]
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -5621,12 +5621,12 @@
 		{
 			"ENG_name": "Mountain Goat",
 			"name": "高山山羊",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 304,
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -5698,6 +5698,7 @@
 		{
 			"ENG_name": "Nass Lantomir's Ghost",
 			"name": "纳斯·兰托米尔的幽魂",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -5705,7 +5706,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -5898,6 +5898,12 @@
 		{
 			"ENG_name": "Prisoner 237",
 			"name": "囚犯 237",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -5905,12 +5911,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -6225,12 +6225,12 @@
 		{
 			"ENG_name": "Seal",
 			"name": "海豹",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 308,
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -6303,6 +6303,7 @@
 		{
 			"ENG_name": "Sephek Kaltro",
 			"name": "塞菲克·卡特罗",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -6310,7 +6311,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -6426,12 +6426,12 @@
 		{
 			"ENG_name": "Snow Golem",
 			"name": "雪魔像",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 308,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -6578,6 +6578,12 @@
 		{
 			"ENG_name": "Spellix Romwod",
 			"name": "Spellix Romwod",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"侏儒"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -6585,12 +6591,6 @@
 			"size": [
 				"S"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"侏儒"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -6724,12 +6724,12 @@
 		{
 			"ENG_name": "Sperm Whale",
 			"name": "抹香鲸",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 309,
 			"size": [
 				"G"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -6836,17 +6836,17 @@
 		{
 			"ENG_name": "Spitting Mimic",
 			"name": "喷吐拟身怪",
-			"source": "IDRotF",
-			"page": 302,
-			"size": [
-				"L"
-			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
 					"变形生物"
 				]
 			},
+			"source": "IDRotF",
+			"page": 302,
+			"size": [
+				"L"
+			],
 			"alignment": [
 				"N"
 			],
@@ -7012,12 +7012,12 @@
 		{
 			"ENG_name": "Tomb Tapper",
 			"name": "踏墓人",
+			"type": "construct",
 			"source": "IDRotF",
 			"page": 310,
 			"size": [
 				"H"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -7159,6 +7159,7 @@
 		{
 			"ENG_name": "Tribal Warrior Spore Servant",
 			"name": "部落战士孢子仆从",
+			"type": "plant",
 			"source": "IDRotF",
 			"page": 52,
 			"_copy": {
@@ -7176,7 +7177,6 @@
 					]
 				}
 			},
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -7212,6 +7212,12 @@
 		{
 			"ENG_name": "Vellynne Harpell",
 			"name": "瓦琳·哈贝尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -7219,12 +7225,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -7387,12 +7387,12 @@
 		{
 			"ENG_name": "Verbeeg Longstrider",
 			"name": "半巨人远行者",
+			"type": "giant",
 			"source": "IDRotF",
 			"page": 311,
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"N"
 			],
@@ -7487,8 +7487,8 @@
 				}
 			],
 			"attachedItems": [
-				"投石索|PHB",
-				"矛|PHB"
+				"投石索|phb",
+				"矛|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -7526,12 +7526,12 @@
 		{
 			"ENG_name": "Verbeeg Marauder",
 			"name": "半巨人掠夺者",
+			"type": "giant",
 			"source": "IDRotF",
 			"page": 311,
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"N",
 				"E"
@@ -7599,7 +7599,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -7624,12 +7624,12 @@
 		{
 			"ENG_name": "Walrus",
 			"name": "海象",
+			"type": "beast",
 			"source": "IDRotF",
 			"page": 312,
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -7687,6 +7687,12 @@
 		{
 			"ENG_name": "Xardorok Sunblight",
 			"name": "扎多洛克·荒日",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IDRotF",
@@ -7694,12 +7700,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -7876,12 +7876,12 @@
 		{
 			"ENG_name": "Yeti Tyke",
 			"name": "雪怪幼崽",
+			"type": "monstrosity",
 			"source": "IDRotF",
 			"page": 313,
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"

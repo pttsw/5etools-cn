@@ -90,25 +90,25 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) {@item 鳞甲|PHB} 或 (b) {@item 皮甲|PHB}",
-					"(a) 二把{@item 短剑|PHB|短剑}或 (b) 二把{@filter 简易近战武器|items|source=PHB|category=基础|type=简易武器;近战武器=sand}",
-					"(a) 一个{@item 地城套组|PHB}或(b) 一个{@item 探索套组|PHB}",
-					"一把{@item 长弓|PHB}和一个{@item 箭袋|PHB}（内含{@item 箭矢 (20)|PHB|20支箭}）"
+					"(a) {@item 鳞甲|phb} 或 (b) {@item 皮甲|phb}",
+					"(a) 二把{@item 短剑|phb|短剑}或 (b) 二把{@filter 简易近战武器|items|source=phb|category=基础|type=简易武器;近战武器=sand}",
+					"(a) 一个{@item 地城套组|phb}或(b) 一个{@item 探索套组|phb}",
+					"一把{@item 长弓|phb}和一个{@item 箭袋|phb}（内含{@item 箭矢 (20)|phb|20支箭}）"
 				],
 				"goldAlternative": "{@dice 5d4 × 10|5d4 × 10|起始金币}",
 				"defaultData": [
 					{
 						"a": [
-							"鳞甲|PHB"
+							"鳞甲|phb"
 						],
 						"b": [
-							"皮甲|PHB"
+							"皮甲|phb"
 						]
 					},
 					{
 						"a": [
 							{
-								"item": "短剑|PHB",
+								"item": "短剑|phb",
 								"quantity": 2
 							}
 						],
@@ -121,16 +121,16 @@
 					},
 					{
 						"a": [
-							"地城套组|PHB"
+							"地城套组|phb"
 						],
 						"b": [
-							"探索套组|PHB"
+							"探索套组|phb"
 						]
 					},
 					{
 						"_": [
-							"长弓|PHB",
-							"箭矢 (20)|PHB"
+							"长弓|phb",
+							"箭矢 (20)|phb"
 						]
 					}
 				]
@@ -1582,7 +1582,7 @@
 				"凛冬行者|游侠|XPHB|凛冬行者|FRHoF|3|FRHoF",
 				"凝冻之魂|游侠|XPHB|凛冬行者|FRHoF|7|FRHoF",
 				"寒心复仇|游侠|XPHB|凛冬行者|FRHoF|11|FRHoF",
-				"冰之恶灵|游侠|XPHB|凛冬行者|FRHoF|15|FRHoF"
+				"冰结恶灵|游侠|XPHB|凛冬行者|FRHoF|15|FRHoF"
 			],
 			"hasFluffImages": true
 		},
@@ -1617,7 +1617,7 @@
 			],
 			"subclassFeatures": [
 				"幽邃戍卫|游侠|XPHB|幽邃戍卫|RHW|3|RHW",
-				"凝冻之魂|游侠|XPHB|幽邃戍卫|RHW|7|RHW",
+				"渴血予力|游侠|XPHB|幽邃戍卫|RHW|7|RHW",
 				"枯朽残虐|游侠|XPHB|幽邃戍卫|RHW|11|RHW",
 				"古源蛮力|游侠|XPHB|幽邃戍卫|RHW|15|RHW"
 			],
@@ -1635,7 +1635,7 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 1级游侠{@variantrule 可选职业特性|TCE|可选特性}，替代自然探索者特性}",
+				"{@i 1级游侠{@variantrule 可选职业特性|tce|可选特性}，替代自然探索者特性}",
 				"你是一个无与伦比的探险家和求生专家。你在1级时获得对应的特性，然后在第6级和第10级时再各获得对应的特性。",
 				{
 					"ENG_name": "Canny",
@@ -1659,7 +1659,7 @@
 			"level": 1,
 			"entries": [
 				"第1级起，你针对一种特定类型敌人的研究令你有着充足的经验用以追踪、狩猎乃至与之交流。",
-				"从下列种类中选择其一作为宿敌： {@filter 异怪|bestiary|type=aberration}, {@filter 野兽|bestiary|type=beast}、{@filter 天族|bestiary|type=celestial}, {@filter 构装|bestiary|type=construct}、{@filter 龙|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 妖精|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪兽|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}、{@filter 亡灵|bestiary|type=undead}。或者作为另一种方案，你也可以选择两个{@filter 类人|bestiary|type=humanoid}种族（例如{@creature 鬣狗人||鬣狗人}和{@creature 兽人||兽人}）作为宿敌。",
+				"从下列种类中选择其一作为宿敌： {@filter 异怪|bestiary|type=aberration}, {@filter 野兽|bestiary|type=beast}、{@filter 天族|bestiary|type=celestial}, {@filter 构装|bestiary|type=construct}、{@filter 龙|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 妖精|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪兽|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}、{@filter 亡灵|bestiary|type=undead}。或者作为另一种方案，你也可以选择两个{@filter 类人生物|bestiary|type=humanoid}种族（例如{@creature 鬣狗人||鬣狗人}和{@creature 兽人||兽人}）作为宿敌。",
 				"追踪宿敌时，你的感知（{@skill 求生}）检定，以及回想关于宿敌信息时进行的智力检定具有优势。",
 				"获得该特性时，如果你选择的宿敌具有语言能力，则你还可以学会宿敌所知晓的一门语言。",
 				"第6和第14级时，你将分别获得一个额外的宿敌以及相关语言。另外，随着等级的提升，你所选择的宿敌应该与你在冒险中所遭遇怪物的种类层次相符。"
@@ -1675,7 +1675,7 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 1级游侠{@variantrule 可选职业特性|TCE|可选特性}，替代宿敌特性并与屠灭众敌特性同时生效}",
+				"{@i 1级游侠{@variantrule 可选职业特性|tce|可选特性}，替代宿敌特性并与屠灭众敌特性同时生效}",
 				"当你以一次攻击掷骰命中一个生物时，你可以呼唤你与自然的神秘羁连以将目标标记为你的夙敌，持续一分钟或直到你失去{@status 专注}(如同你在{@status 专注||专注于}一道法术)。",
 				"你在你的回合内第一次命中你的夙敌并对其造成伤害，包括你标记它的时候，你可以造成额外的{@damage 1d4}点伤害。",
 				"你可以使用同等于你的熟练加值次该特性来标记你的夙敌，你在完成一次长休后恢复所有已使用的次数。",
@@ -1821,8 +1821,8 @@
 			"level": 2,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 2级游侠{@variantrule 可选职业特性|TCE|可选特性}}",
-				"你可以使用{@item 德鲁伊法器|PHB}作为你的游侠法术的施法法器。德鲁伊法器可能是一小枝槲寄生或冬青、由紫杉或其他特殊木材制成的魔杖或权杖、从活树上完整取下的法杖，或是包含神圣动物的羽毛、皮毛、骨头和牙齿的物品。"
+				"{@i 2级游侠{@variantrule 可选职业特性|tce|可选特性}}",
+				"你可以使用{@item 德鲁伊法器|phb}作为你的游侠法术的施法法器。德鲁伊法器可能是一小枝槲寄生或冬青、由紫杉或其他特殊木材制成的魔杖或权杖、从活树上完整取下的法杖，或是包含神圣动物的羽毛、皮毛、骨头和牙齿的物品。"
 			]
 		},
 		{
@@ -1835,7 +1835,7 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3级游侠{@variantrule 可选职业特性|TCE|可选特性}，替代原初意识特性}",
+				"{@i 3级游侠{@variantrule 可选职业特性|tce|可选特性}，替代原初意识特性}",
 				"你可以通过与自然的共鸣而集中你的意识:若你尚未习得下方表格种的法术，那么你在抵达对应等级时学会下方原始意识法术表格中的法术。这些法术不占用你的游侠已知法术。",
 				{
 					"type": "table",
@@ -1924,7 +1924,7 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4级游侠{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 4级游侠{@variantrule 可选职业特性|tce|可选特性}}",
 				"当你的游侠职业等级抵达能让你获得属性值提升职业特性时，你能用一个游侠可用的战斗风格替换原有的一个战斗风格。这种变化代表着你改变了武术训练和练习的重点。"
 			]
 		},
@@ -2076,7 +2076,7 @@
 			"level": 10,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 10级游侠{@variantrule 可选职业特性|TCE|可选特性}，替代蔽于平野特性}",
+				"{@i 10级游侠{@variantrule 可选职业特性|tce|可选特性}，替代蔽于平野特性}",
 				"你可以暂时地使用自然的力量将你的身形遮蔽。以一个附赠动作，你可以魔法地使自己与正携带、着装的任何装备变得{@condition 隐形}，直到你的下个回合开始。",
 				"你可以使用此能力的次数等同于你的熟练加值。当你完成一次长休后，你重获全部已消耗的使用次数。"
 			]
@@ -3464,7 +3464,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11级妖精漫游者特性}",
-				"妖精荒原的皇庭赐予你获得精类援助的祝福：你习得法术{@spell 妖精召唤术|TCE}。它不计入你的已知游侠法术，且你施展它时无需材料成分。你可以免费施展这个法术一次而不需要消耗法术位，在你完成一次长休后，你重获免费施展该法术的能力。",
+				"妖精荒原的皇庭赐予你获得精类援助的祝福：你习得法术{@spell 妖精召唤术|tce}。它不计入你的已知游侠法术，且你施展它时无需材料成分。你可以免费施展这个法术一次而不需要消耗法术位，在你完成一次长休后，你重获免费施展该法术的能力。",
 				"每当你施展此法术前，你都可以微调这一法术使其本次施展与维持无需你保持{@status 专注}。以无需专注的方式施展时，该法术的持续时间将变为一分钟。"
 			]
 		},
@@ -4304,7 +4304,7 @@
 		},
 		{
 			"ENG_name": "Frozen Haunt",
-			"name": "冰之恶灵",
+			"name": "冰结恶灵",
 			"source": "FRHoF",
 			"page": 22,
 			"className": "游侠",
@@ -4354,10 +4354,6 @@
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "荒野之怒|游侠|XPHB|幽邃戍卫|RHW|3|RHW"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "渴血予力|游侠|XPHB|幽邃戍卫|RHW|3|RHW"
 				}
 			]
 		},
@@ -4409,20 +4405,6 @@
 			]
 		},
 		{
-			"ENG_name": "Hungering Might",
-			"name": "渴血予力",
-			"source": "RHW",
-			"className": "游侠",
-			"classSource": "XPHB",
-			"subclassShortName": "幽邃戍卫",
-			"subclassSource": "RHW",
-			"level": 3,
-			"entries": [
-				"你的体质豁免检定获得等同于你感知调整值的加值（至少为+1）。",
-				"此外，每回合一次，当你处于荒野之怒变身下并以攻击检定命中一个生物时，若你在命中目标时处于{@status 浴血|XPHB}，则你恢复等于{@dice 1d10}+你感知调整值的生命值。"
-			]
-		},
-		{
 			"ENG_name": "Wrath of the Wild",
 			"name": "荒野之怒",
 			"source": "RHW",
@@ -4432,7 +4414,7 @@
 			"subclassSource": "RHW",
 			"level": 3,
 			"entries": [
-				"你汲取这片土地上古老而奇诡的恐怖力量，令你的身体上长出不自然之物，例如滴血的鹿角或腐臭的獠牙，或者令你身后的阴影被拉长并扭曲着缠绕全身。你可以执行附赠动作消耗一次宿敌特性的使用次数来变身为骇人形态。该形态持续1分钟，或直至你陷入{@condition 失能|XPHB}状态、死亡，亦或是主动结束变身（无需动作）。变身期间，你获得以下增益：",
+				"你从这片大地上奇异而远古的惊惧兽身上汲取法力，导致你身上长出非自然的增生，例如血淋淋的鹿角或腐尸般的尖牙，或者让你的幽影伸长或在你周围扭曲。以一个{@variantrule 附赠动作|XPHB}，你可以消耗一次青睐{@variantrule 敌人|XPHB}的使用次数，变形为一个可怖形态，获得以下增益，持续1分钟，或直到你陷入{@condition 失能|XPHB}状态、死亡、或结束变形（无需动作）。",
 				{
 					"ENG_name": "Ancient Armor",
 					"name": "远古护甲",
@@ -4460,8 +4442,8 @@
 			]
 		},
 		{
-			"ENG_name": "Fortifying Soul",
-			"name": "凝冻之魂",
+			"ENG_name": "Hungering Might",
+			"name": "渴血予力",
 			"source": "RHW",
 			"className": "游侠",
 			"classSource": "XPHB",
@@ -4469,8 +4451,8 @@
 			"subclassSource": "RHW",
 			"level": 7,
 			"entries": [
-				"你在酷烈环境中生存的经验不仅足够支撑你自己，也能帮助你的盟友。以一个{@action 魔法|XPHB}动作，你可以选择等同于你感知调整值（至少1个）数量的可见生物。所选的生物能够恢复等同于 {@dice 1d10}+你的游侠等级点的{@variantrule 生命值|XPHB}，且接下来的1小时内，其为避免或结束{@condition 恐慌|XPHB}状态所进行的豁免具有{@variantrule 优势|XPHB}。",
-				"此特性一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
+				"你的体质豁免检定获得等同于你感知调整值的加值（至少为+1）。",
+				"此外，每回合一次，当你处于荒野之怒变身下并以攻击检定命中一个生物时，若你在命中目标时处于{@status 浴血|XPHB}，则你恢复等于{@dice 1d10}+你感知调整值的生命值。"
 			]
 		},
 		{
@@ -4490,7 +4472,7 @@
 					"name": "威吓灵光",
 					"type": "entries",
 					"entries": [
-						"当一个生物在对抗你悚然灵光的豁免检定中失败时，直至你的下一回合开始，其还会无法恢复生命值，也无法执行反应。"
+						"当一个生物在对抗你悚然灵光的豁免检定中失败时，直至你的下一回合开始，其还会无法恢复{@variantrule 生命值|XPHB}，也无法执行{@variantrule 反应|XPHB|反应}。"
 					]
 				},
 				{
@@ -4528,7 +4510,7 @@
 					"name": "不息狂怒",
 					"type": "entries",
 					"entries": [
-						"当你处于荒野之怒变身下，且生命值被降至0但未被立即杀死时，你可以使狂野之力喷薄而出。你的生命值改为变成等同于你游侠等级两倍的数值。该特性一经使用，则直至你完成一次长休前，都无法再次使用。你也可以消耗一枚四环或更高环阶的法术位来恢复该特性的使用次数（无需动作）。"
+						"当你处于荒野之怒变身下，且{@variantrule 生命值|XPHB}被降至0但未被立即杀死时，你可以使狂野之力喷薄而出。你的{@variantrule 生命值|XPHB}改为变成等同于你游侠等级两倍的数值。该特性一经使用，则直至你完成一次{@variantrule 长休|XPHB}前，都无法再次使用。你也可以消耗一枚四环或更高环阶的法术位来恢复该特性的使用次数（无需动作）。"
 					]
 				},
 				{
@@ -4536,7 +4518,7 @@
 					"name": "永不安眠",
 					"type": "entries",
 					"entries": [
-						"你免疫{@condition 力竭|XPHB}状态。"
+						"你对{@condition 力竭|XPHB}状态具有{@variantrule 免疫|XPHB}。"
 					]
 				}
 			]
@@ -5088,8 +5070,8 @@
 					"entries": [
 						{
 							"ENG_name": "Colossus Slayer",
-							"type": "entries",
 							"name": "巨像屠夫",
+							"type": "entries",
 							"entries": [
 								"你强而有力的攻击可以击倒最强壮的对手。当你用武器命中生物时，如果该敌人{@variantrule 生命值|XPHB}不满，则该武器额外对目标造成{@damage 1d8}点伤害。你每回合只能造成一次这种额外伤害。"
 							]
@@ -5126,16 +5108,16 @@
 					"entries": [
 						{
 							"ENG_name": "Escape the Horde",
-							"type": "entries",
 							"name": "冲出重围",
+							"type": "entries",
 							"entries": [
 								"对你发动的{@action 借机攻击|XPHB|借机攻击}具有{@variantrule 劣势|XPHB}。"
 							]
 						},
 						{
 							"ENG_name": "Multiattack Defense",
-							"type": "entries",
 							"name": "多重防御",
+							"type": "entries",
 							"entries": [
 								"当一个生物的攻击检定命中你时，该生物在本回合内对你进行的其他攻击检定具有{@variantrule 劣势|XPHB}。"
 							]

@@ -17,6 +17,13 @@
 		{
 			"ENG_name": "Anchorite of Talos",
 			"name": "塔洛斯隐士",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"半兽人",
+					"变形生物"
+				]
+			},
 			"source": "DIP",
 			"page": 51,
 			"referenceSources": [
@@ -26,13 +33,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"半兽人",
-					"变形生物"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -41,7 +41,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -154,6 +154,12 @@
 		{
 			"ENG_name": "Don-Jon Raskin",
 			"name": "东容·拉斯坎",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DIP",
@@ -161,12 +167,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -240,8 +240,8 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB",
-				"投石索|PHB"
+				"匕首|phb",
+				"投石索|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -269,6 +269,12 @@
 		{
 			"ENG_name": "Falcon the Hunter",
 			"name": "猎人战隼",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DIP",
@@ -276,12 +282,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -290,7 +290,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -361,8 +361,8 @@
 				}
 			],
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -388,6 +388,7 @@
 		{
 			"ENG_name": "Gorthok the Thunder Boar",
 			"name": "雷霆野猪戈索克",
+			"type": "monstrosity",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DIP",
@@ -395,7 +396,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -507,17 +507,17 @@
 		{
 			"ENG_name": "Rock Gnome Recluse",
 			"name": "岩石侏儒隐士",
-			"source": "DIP",
-			"page": 62,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"侏儒"
 				]
 			},
+			"source": "DIP",
+			"page": 62,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"C",
 				"N"
@@ -636,6 +636,7 @@
 		{
 			"ENG_name": "Skeletal Riding Horse",
 			"name": "骷髅乘用马",
+			"type": "undead",
 			"source": "DIP",
 			"page": 21,
 			"_copy": {
@@ -643,7 +644,6 @@
 				"name": "乘用马",
 				"source": "MM"
 			},
-			"type": "undead",
 			"hasToken": true,
 			"hasFluffImages": true,
 			"translator": "不全书"

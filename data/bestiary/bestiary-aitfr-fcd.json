@@ -10,17 +10,17 @@
 		{
 			"ENG_name": "Mercenary Envoy",
 			"name": "雇佣兵使者",
+			"type": "humanoid",
 			"source": "AitFR-FCD",
 			"page": 10,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"ac": [
 				{
 					"ac": 15,
 					"from": [
-						"{@item 链甲衫|PHB}"
+						"{@item 链甲衫|phb}"
 					]
 				}
 			],
@@ -92,8 +92,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"重弩|PHB",
-				"长剑|PHB"
+				"重弩|phb",
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -117,6 +117,12 @@
 		{
 			"ENG_name": "Tyreus, Illusionist",
 			"name": "泰瑞斯，幻术师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "AitFR-FCD",
@@ -124,12 +130,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -190,7 +190,7 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"Tyreus 是一名16级施法者。他的施法能力是智力（法术豁免难度{@dc 18}，法术攻击命中骰{@hit 10}）。他准备了以下法师法术。"
+						"泰瑞斯 是一名16级施法者。他的施法属性是智力（法术豁免{@dc 18}，法术攻击命中{@hit 10}）。他准备了以下法师法术。"
 					],
 					"spells": {
 						"0": {
@@ -265,7 +265,7 @@
 						}
 					},
 					"footerEntries": [
-						"*（1级或更高级别的幻象法术）"
+						"*（1级或更高级别的幻术系法术）"
 					],
 					"ability": "int"
 				}
@@ -275,7 +275,7 @@
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"如果泰瑞斯未能通过豁免检定，他可以选择成功。"
+						"当泰瑞斯豁免失败时，他可以选择将其改为豁免成功。"
 					]
 				},
 				{
@@ -335,7 +335,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"传奇抗性"

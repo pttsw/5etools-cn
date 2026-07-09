@@ -28,6 +28,7 @@
 		{
 			"ENG_name": "\"The Demogorgon\"",
 			"name": "\"狄摩高根\"",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -35,7 +36,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"N"
@@ -156,8 +156,8 @@
 				}
 			],
 			"attachedItems": [
-				"战斧|PHB",
-				"钉头锤|PHB"
+				"战斧|phb",
+				"钉头锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -197,6 +197,12 @@
 		{
 			"ENG_name": "Andras",
 			"name": "安德拉斯",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -248,19 +254,13 @@
 					]
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
 			],
 			"languages": [
 				"通用语",
-				"巨猫头鹰"
+				"巨猫头鹰语"
 			],
 			"tokenCustom": true,
 			"traitTags": [
@@ -307,6 +307,12 @@
 		{
 			"ENG_name": "Barbatos",
 			"name": "巴尔巴托斯",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -314,12 +320,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -328,7 +328,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -435,7 +435,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"轻弩|PHB"
+				"轻弩|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -479,6 +479,7 @@
 		{
 			"ENG_name": "Brain in Iron",
 			"name": "铁制大脑",
+			"type": "construct",
 			"source": "IMR",
 			"page": 48,
 			"_copy": {
@@ -496,7 +497,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -600,7 +600,7 @@
 					"ENG_name": "Petrifying Gaze",
 					"name": "石化凝视",
 					"entries": [
-						"当一个能够看到美杜莎眼睛的生物在其30尺范围内开始其回合时，如果美杜莎没有被{@condition 失能}并且能看到该生物，美杜莎可以迫使它进行一次{@dc 14}体质豁免检定。如果豁免失败超过5点，生物将立即被{@condition 石化}。否则，未能通过豁免检定的生物开始变成金属、木头或瓷器（美杜莎的选择），并且处于{@condition 束缚}状态。处于{@condition 束缚}状态的生物必须在其下一回合结束时重复进行豁免检定，失败则被{@condition 石化}，成功则结束效果。石化状态将持续，直到生物通过{@spell 高等复原术}法术或其他魔法被解除。",
+						"当一个能看见美杜莎眼睛的生物在其30尺内开始其回合时，如果美杜莎未处于{@condition 失能}状态且能看见该生物，美杜莎可以强迫其进行一次{@dc 14}的体质豁免。若豁免失败且差值达到或超过5点，该生物将立即被{@condition 石化}。否则，豁免失败的生物将开始转变为金属、木头或瓷器（由美杜莎选择）并被{@condition 束缚}。该{@condition 束缚}的生物必须在其下一回合结束时重复进行豁免检定，失败则被{@condition 石化}，成功则结束该效应。石化状态将持续到该生物被{@spell 高等复原术}法术或其他魔法释放为止。",
 						"未遭受{@status 突袭}的生物可以避开美杜莎的目光，以免除在其回合开始时进行的豁免。此时，该生物视为不能看见该美杜莎，直至其下一回合开始时再选择是否避开美杜莎的目光。该生物在任何时候看向美杜莎时，都必须立即进行该豁免。",
 						"如果美杜莎在明亮光照下于其身边30尺内看到自己的镜中倒影，则美杜莎将成为自己诅咒的目标被自己的凝视影响。"
 					]
@@ -658,6 +658,12 @@
 		{
 			"ENG_name": "Lynx Creatlach",
 			"name": "Lynx Creatlach",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"提夫林"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -665,12 +671,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"提夫林"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -679,7 +679,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -795,7 +795,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"traitTags": [
 				"伤害吸收",
@@ -827,6 +827,12 @@
 		{
 			"ENG_name": "Moghadam",
 			"name": "莫加达姆",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -834,12 +840,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -848,7 +848,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 胸甲|PHB}"
+						"{@item 胸甲|phb}"
 					]
 				}
 			],
@@ -1035,12 +1035,12 @@
 		{
 			"ENG_name": "Neo-Otyugh",
 			"name": "新奥图格",
+			"type": "aberration",
 			"source": "IMR",
 			"page": 75,
 			"size": [
 				"H"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N"
 			],
@@ -1076,7 +1076,7 @@
 				"中毒"
 			],
 			"languages": [
-				"食腐兽"
+				"食腐兽语"
 			],
 			"cr": "7",
 			"spellcasting": [
@@ -1242,6 +1242,12 @@
 		{
 			"ENG_name": "Sir Ursas",
 			"name": "Sir Ursas",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -1249,12 +1255,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -1263,8 +1263,8 @@
 				{
 					"ac": 20,
 					"from": [
-						"{@item 板甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 板甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -1363,7 +1363,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"残暴"
@@ -1399,6 +1399,7 @@
 		{
 			"ENG_name": "Skeletal Giant Owl",
 			"name": "骷髅巨人猫头鹰",
+			"type": "undead",
 			"source": "IMR",
 			"page": 33,
 			"_copy": {
@@ -1406,7 +1407,6 @@
 				"name": "巨猫头鹰",
 				"source": "MM"
 			},
-			"type": "undead",
 			"immune": [
 				"毒素"
 			],
@@ -1423,6 +1423,7 @@
 		{
 			"ENG_name": "Skeletal Owlbear",
 			"name": "骷髅枭熊",
+			"type": "undead",
 			"source": "IMR",
 			"page": 36,
 			"_copy": {
@@ -1430,7 +1431,6 @@
 				"name": "枭熊",
 				"source": "MM"
 			},
-			"type": "undead",
 			"immune": [
 				"毒素"
 			],
@@ -1447,6 +1447,7 @@
 		{
 			"ENG_name": "Skeletal Polar Bear",
 			"name": "骷髅北极熊",
+			"type": "undead",
 			"source": "IMR",
 			"page": 34,
 			"_copy": {
@@ -1454,7 +1455,6 @@
 				"name": "白熊",
 				"source": "MM"
 			},
-			"type": "undead",
 			"immune": [
 				"毒素"
 			],
@@ -1471,6 +1471,7 @@
 		{
 			"ENG_name": "Skeletal Two-Headed Owlbear",
 			"name": "骷髅双头枭熊",
+			"type": "undead",
 			"source": "IMR",
 			"page": 36,
 			"_copy": {
@@ -1478,7 +1479,6 @@
 				"name": "双头枭熊",
 				"source": "IMR"
 			},
-			"type": "undead",
 			"immune": [
 				"毒素"
 			],
@@ -1581,6 +1581,12 @@
 		{
 			"ENG_name": "Thessalar",
 			"name": "塞萨尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "IMR",
@@ -1588,12 +1594,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -1602,7 +1602,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 胸甲|PHB}"
+						"{@item 胸甲|phb}"
 					]
 				}
 			],
@@ -1731,7 +1731,7 @@
 					"ENG_name": "Greater Restoration (1/Day)",
 					"name": "高等复原术（每日一次）",
 					"entries": [
-						"如果塞萨拉有{@item 炼金工具|PHB|炼金术材料}，他可以施放{@spell 高等复原术}。"
+						"如果塞萨拉有{@item 炼金工具|phb|炼金术材料}，他可以施放{@spell 高等复原术}。"
 					]
 				}
 			],
@@ -1745,7 +1745,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C",
@@ -1822,12 +1822,12 @@
 		{
 			"ENG_name": "Thessalheart Construct",
 			"name": "塞萨尔之心构装生物",
+			"type": "construct",
 			"source": "IMR",
 			"page": 86,
 			"size": [
 				"T"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -1912,17 +1912,17 @@
 		{
 			"ENG_name": "Thessalkraken",
 			"name": "塞萨拉克拉肯",
-			"source": "IMR",
-			"page": 87,
-			"size": [
-				"G"
-			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
 					"泰坦"
 				]
 			},
+			"source": "IMR",
+			"page": 87,
+			"size": [
+				"G"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -1979,7 +1979,7 @@
 			],
 			"languages": [
 				"懂深渊语",
-				"天族",
+				"天界语",
 				"炼狱语",
 				"并且是原始语言，但不能说话",
 				"心灵感应 120 尺"
@@ -2154,12 +2154,12 @@
 		{
 			"ENG_name": "Two-Headed Crocodile",
 			"name": "双头鳄鱼",
+			"type": "beast",
 			"source": "IMR",
 			"page": 89,
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -2252,12 +2252,12 @@
 		{
 			"ENG_name": "Two-Headed Owlbear",
 			"name": "双头枭熊",
+			"type": "monstrosity",
 			"source": "IMR",
 			"page": 90,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],

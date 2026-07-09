@@ -19,6 +19,7 @@
 		{
 			"ENG_name": "Acererak",
 			"name": "阿瑟瑞克",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -26,7 +27,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -203,7 +203,7 @@
 					"ENG_name": "Legendary Resistance (3/Day)",
 					"name": "传奇抗性 (3/日)",
 					"entries": [
-						"若阿瑟瑞克在一次豁免检定中失败，他可以将其改为成功。"
+						"当阿瑟瑞克豁免失败时，他可以选择将其改为豁免成功。"
 					]
 				},
 				{
@@ -350,17 +350,17 @@
 		{
 			"ENG_name": "Albino Dwarf Spirit Warrior",
 			"name": "白矮人精魂武者",
-			"source": "ToA",
-			"page": 210,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"矮人"
 				]
 			},
+			"source": "ToA",
+			"page": 210,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -368,7 +368,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -441,7 +441,7 @@
 				}
 			],
 			"attachedItems": [
-				"手斧|PHB"
+				"手斧|phb"
 			],
 			"senseTags": [
 				"D"
@@ -470,17 +470,17 @@
 		{
 			"ENG_name": "Albino Dwarf Warrior",
 			"name": "白矮人武者",
-			"source": "ToA",
-			"page": 210,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"矮人"
 				]
 			},
+			"source": "ToA",
+			"page": 210,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -488,7 +488,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -541,7 +541,7 @@
 				}
 			],
 			"attachedItems": [
-				"手斧|PHB"
+				"手斧|phb"
 			],
 			"senseTags": [
 				"D"
@@ -567,12 +567,12 @@
 		{
 			"ENG_name": "Aldani (Lobsterfolk)",
 			"name": "阿拉尼（龙虾人）",
+			"type": "monstrosity",
 			"source": "ToA",
 			"page": 210,
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"L",
 				"N"
@@ -665,6 +665,7 @@
 		{
 			"ENG_name": "Almiraj",
 			"name": "独角兔",
+			"type": "beast",
 			"source": "ToA",
 			"page": 211,
 			"referenceSources": [
@@ -673,7 +674,6 @@
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -748,12 +748,12 @@
 		{
 			"ENG_name": "Ankylosaurus Zombie",
 			"name": "甲龙丧尸",
+			"type": "undead",
 			"source": "ToA",
 			"page": 240,
 			"size": [
 				"H"
 			],
-			"type": "undead",
 			"alignment": [
 				"U"
 			],
@@ -833,6 +833,12 @@
 		{
 			"ENG_name": "Artus Cimber",
 			"name": "阿图斯·辛贝尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -840,12 +846,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -854,7 +854,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -956,7 +956,7 @@
 			],
 			"attachedItems": [
 				"书签|ToA",
-				"长弓|PHB"
+				"长弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -985,6 +985,12 @@
 		{
 			"ENG_name": "Asharra",
 			"name": "阿莎尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"鸟羽人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -992,12 +998,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"鸟羽人"
-				]
-			},
 			"alignment": [
 				"L",
 				"N"
@@ -1115,7 +1115,7 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"languageTags": [
 				"AU",
@@ -1154,6 +1154,7 @@
 		{
 			"ENG_name": "Assassin Vine",
 			"name": "刺客藤",
+			"type": "plant",
 			"source": "ToA",
 			"page": 213,
 			"referenceSources": [
@@ -1163,7 +1164,6 @@
 			"size": [
 				"L"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -1258,17 +1258,17 @@
 		{
 			"ENG_name": "Atropal",
 			"name": "萎缩者",
-			"source": "ToA",
-			"page": 214,
-			"size": [
-				"H"
-			],
 			"type": {
 				"type": "undead",
 				"tags": [
 					"泰坦"
 				]
 			},
+			"source": "ToA",
+			"page": 214,
+			"size": [
+				"H"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -1465,6 +1465,12 @@
 		{
 			"ENG_name": "Bag of Nails",
 			"name": "钉包",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"斑猫人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -1472,12 +1478,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"斑猫人"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -1486,7 +1486,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -1588,8 +1588,8 @@
 				}
 			],
 			"attachedItems": [
-				"长弓|PHB",
-				"短剑|PHB"
+				"长弓|phb",
+				"短剑|phb"
 			],
 			"traitTags": [
 				"偷袭"
@@ -1661,6 +1661,12 @@
 		{
 			"ENG_name": "Bosco Daggerhand",
 			"name": "博斯科·匕手",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -1688,12 +1694,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -1705,6 +1705,7 @@
 		{
 			"ENG_name": "Chwinga",
 			"name": "怯蕴阿灵",
+			"type": "elemental",
 			"source": "ToA",
 			"page": 216,
 			"referenceSources": [
@@ -1713,7 +1714,6 @@
 			"size": [
 				"T"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -1783,7 +1783,7 @@
 					"ENG_name": "Magical Gift (1/Day)",
 					"name": "魔法赠礼（1/日）",
 					"entries": [
-						"怯蕴阿灵选择5尺内一个它能看见的类人生物为目标。目标获得一项由DM选择的{@filter 超自然护咒|大功告成|type=魅惑}。查阅《城主指南》的{@book 第七章|DMG|7|其他奖励}获得更多关于超自然护咒的信息。"
+						"怯蕴阿灵选择5尺内一个它能看见的类人生物为目标。目标获得一项由DM选择的{@filter 超自然护咒|rewards|type=魅惑}。查阅《城主指南》的{@book 第七章|DMG|7|其他奖励}获得更多关于超自然护咒的信息。"
 					]
 				},
 				{
@@ -1811,12 +1811,12 @@
 		{
 			"ENG_name": "Clay Gladiator",
 			"name": "粘土角斗士",
+			"type": "construct",
 			"source": "ToA",
 			"page": 100,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -1825,7 +1825,7 @@
 					"ac": 17,
 					"from": [
 						"天生护甲",
-						"{@item 盾牌|PHB}"
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -1918,7 +1918,7 @@
 				}
 			],
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"残暴"
@@ -1948,6 +1948,12 @@
 		{
 			"ENG_name": "Dragonbait",
 			"name": "龙饵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"类蜴人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -1955,12 +1961,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"类蜴人"
-				]
-			},
 			"alignment": [
 				"L",
 				"G"
@@ -1969,8 +1969,8 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item 胸甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 胸甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -2097,6 +2097,7 @@
 		{
 			"ENG_name": "Eblis",
 			"name": "魔王鹤",
+			"type": "monstrosity",
 			"source": "ToA",
 			"page": 219,
 			"referenceSources": [
@@ -2105,7 +2106,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -2197,6 +2197,12 @@
 		{
 			"ENG_name": "Ekene-Afa",
 			"name": "艾珂内-阿法",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -2213,12 +2219,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"L",
@@ -2283,6 +2283,12 @@
 		{
 			"ENG_name": "Faroul",
 			"name": "法鲁尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -2299,12 +2305,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"N",
@@ -2365,12 +2365,12 @@
 		{
 			"ENG_name": "Flying Monkey",
 			"name": "飞猴",
+			"type": "beast",
 			"source": "ToA",
 			"page": 220,
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -2437,12 +2437,12 @@
 		{
 			"ENG_name": "Giant Four-Armed Gargoyle",
 			"name": "四臂巨石像鬼",
+			"type": "elemental",
 			"source": "ToA",
 			"page": 221,
 			"size": [
 				"L"
 			],
-			"type": "elemental",
 			"alignment": [
 				"C",
 				"E"
@@ -2561,6 +2561,7 @@
 		{
 			"ENG_name": "Giant Snapping Turtle",
 			"name": "巨鳄龟",
+			"type": "beast",
 			"source": "ToA",
 			"page": 222,
 			"referenceSources": [
@@ -2569,7 +2570,6 @@
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -2651,12 +2651,12 @@
 		{
 			"ENG_name": "Girallon Zombie",
 			"name": "四臂猿怪丧尸",
+			"type": "undead",
 			"source": "ToA",
 			"page": 240,
 			"size": [
 				"L"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -2826,6 +2826,12 @@
 		{
 			"ENG_name": "Grandfather Zitembe",
 			"name": "泽腾贝爷爷",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -2843,12 +2849,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"G"
@@ -2860,6 +2860,12 @@
 		{
 			"ENG_name": "Hew Hackinstone",
 			"name": "休·哈金斯顿",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -2867,12 +2873,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -2881,7 +2881,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -2938,7 +2938,7 @@
 				}
 			],
 			"attachedItems": [
-				"战斧|PHB"
+				"战斧|phb"
 			],
 			"traitTags": [
 				"鲁莽"
@@ -2965,6 +2965,12 @@
 		{
 			"ENG_name": "Ifan Talro'a",
 			"name": "伊方·塔若阿",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -2982,12 +2988,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -2999,6 +2999,7 @@
 		{
 			"ENG_name": "Jaculi",
 			"name": "幻色蛇",
+			"type": "beast",
 			"source": "ToA",
 			"page": 225,
 			"referenceSources": [
@@ -3007,7 +3008,6 @@
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -3095,6 +3095,12 @@
 		{
 			"ENG_name": "Jessamine",
 			"name": "婕萨敏",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3112,12 +3118,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -3132,6 +3132,12 @@
 		{
 			"ENG_name": "Jobal",
 			"name": "乔巴",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3149,12 +3155,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -3166,6 +3166,7 @@
 		{
 			"ENG_name": "Kamadan",
 			"name": "六岐蛇豹",
+			"type": "monstrosity",
 			"source": "ToA",
 			"page": 225,
 			"referenceSources": [
@@ -3174,7 +3175,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -3291,6 +3291,7 @@
 		{
 			"ENG_name": "King of Feathers",
 			"name": "翎羽之王",
+			"type": "monstrosity",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3298,7 +3299,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -3441,6 +3441,12 @@
 		{
 			"ENG_name": "Kwayothé",
 			"name": "克薇欧泽",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3458,12 +3464,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -3475,6 +3475,12 @@
 		{
 			"ENG_name": "Laskilar",
 			"name": "拉斯基拉尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3502,12 +3508,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -3519,6 +3519,12 @@
 		{
 			"ENG_name": "Liara Portyr",
 			"name": "莉尔阿·波提尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3530,12 +3536,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -3544,8 +3544,8 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}",
-						"{@item 盾牌|PHB}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -3619,8 +3619,8 @@
 				}
 			],
 			"attachedItems": [
-				"战斧|PHB",
-				"重弩|PHB"
+				"战斧|phb",
+				"重弩|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3649,12 +3649,12 @@
 		{
 			"ENG_name": "Mantrap",
 			"name": "捕人草",
+			"type": "plant",
 			"source": "ToA",
 			"page": 227,
 			"size": [
 				"L"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -3787,6 +3787,12 @@
 		{
 			"ENG_name": "Mwaxanaré",
 			"name": "姆瓦克丝娜瑞",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3794,12 +3800,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"L",
 				"N"
@@ -3871,7 +3871,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"AU",
@@ -3904,6 +3904,12 @@
 		{
 			"ENG_name": "Na",
 			"name": "Na",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -3911,12 +3917,6 @@
 			"size": [
 				"S"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -4005,6 +4005,12 @@
 		{
 			"ENG_name": "Niles Breakbone",
 			"name": "奈尔斯·断骨",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -4021,12 +4027,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"L",
@@ -4080,6 +4080,12 @@
 		{
 			"ENG_name": "Orvex Ocrammas",
 			"name": "奥尔威克斯·欧夸玛斯",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -4097,18 +4103,12 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
 			"languages": [
 				"通用语",
-				"格龙蛙人"
+				"格龙蛙人语"
 			],
 			"languageTags": [
 				"C",
@@ -4121,12 +4121,12 @@
 		{
 			"ENG_name": "Pterafolk",
 			"name": "翼手兽",
+			"type": "monstrosity",
 			"source": "ToA",
 			"page": 229,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -4202,7 +4202,7 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4231,6 +4231,12 @@
 		{
 			"ENG_name": "Qawasha",
 			"name": "卡瓦沙",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -4248,12 +4254,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -4265,6 +4265,13 @@
 		{
 			"ENG_name": "Ras Nsi",
 			"name": "拉兹·纳斯",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"变形生物",
+					"蛇人"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -4275,13 +4282,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"变形生物",
-					"蛇人"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -4471,7 +4471,7 @@
 				}
 			],
 			"attachedItems": [
-				"焰舌长剑|DMG"
+				"焰舌长剑|dmg"
 			],
 			"traitTags": [
 				"魔法抗性",
@@ -4652,6 +4652,12 @@
 		{
 			"ENG_name": "Shago",
 			"name": "鲨狗",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -4668,12 +4674,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"C",
@@ -4734,7 +4734,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"蛛行术"
@@ -4753,12 +4753,12 @@
 		{
 			"ENG_name": "Spiked Tomb Guardian",
 			"name": "尖刺陵墓守卫",
+			"type": "construct",
 			"source": "ToA",
 			"page": 154,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -4904,12 +4904,12 @@
 		{
 			"ENG_name": "Stone Juggernaut",
 			"name": "岩石战车",
+			"type": "construct",
 			"source": "ToA",
 			"page": 231,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -5033,12 +5033,12 @@
 		{
 			"ENG_name": "Su-monster",
 			"name": "苏怪",
+			"type": "monstrosity",
 			"source": "ToA",
 			"page": 232,
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -5121,6 +5121,12 @@
 		{
 			"ENG_name": "Syndra Silvane",
 			"name": "辛德拉·席尔瓦因",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -5137,12 +5143,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"L",
@@ -5167,17 +5167,17 @@
 		{
 			"ENG_name": "Tabaxi Hunter",
 			"name": "斑猫猎人",
-			"source": "ToA",
-			"page": 232,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"斑猫人"
 				]
 			},
+			"source": "ToA",
+			"page": 232,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -5186,7 +5186,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -5258,8 +5258,8 @@
 				}
 			],
 			"attachedItems": [
-				"短弓|PHB",
-				"短剑|PHB"
+				"短弓|phb",
+				"短剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -5288,17 +5288,17 @@
 		{
 			"ENG_name": "Tabaxi Minstrel",
 			"name": "斑猫诗人",
-			"source": "ToA",
-			"page": 233,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"斑猫人"
 				]
 			},
+			"source": "ToA",
+			"page": 233,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -5374,7 +5374,7 @@
 				}
 			],
 			"attachedItems": [
-				"飞镖|PHB"
+				"飞镖|phb"
 			],
 			"senseTags": [
 				"D"
@@ -5461,12 +5461,12 @@
 		{
 			"ENG_name": "Tomb Dwarf",
 			"name": "陵墓矮人",
+			"type": "undead",
 			"source": "ToA",
 			"page": 135,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -5475,7 +5475,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -5520,7 +5520,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "3",
 			"trait": [
@@ -5563,8 +5563,8 @@
 				}
 			],
 			"attachedItems": [
-				"战斧|PHB",
-				"轻弩|PHB"
+				"战斧|phb",
+				"轻弩|phb"
 			],
 			"traitTags": [
 				"日照敏感"
@@ -5601,12 +5601,12 @@
 		{
 			"ENG_name": "Tomb Guardian",
 			"name": "陵墓守卫",
+			"type": "construct",
 			"source": "ToA",
 			"page": 127,
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -5744,12 +5744,12 @@
 		{
 			"ENG_name": "Tri-flower Frond",
 			"name": "三花株",
+			"type": "plant",
 			"source": "ToA",
 			"page": 234,
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -5841,12 +5841,12 @@
 		{
 			"ENG_name": "Tyrannosaurus Zombie",
 			"name": "暴龙丧尸",
+			"type": "undead",
 			"source": "ToA",
 			"page": 241,
 			"size": [
 				"H"
 			],
-			"type": "undead",
 			"alignment": [
 				"U"
 			],
@@ -5950,6 +5950,7 @@
 		{
 			"ENG_name": "Valindra Shadowmantle",
 			"name": "瓦琳朵拉·暗影斗篷",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -5960,7 +5961,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -6257,6 +6257,12 @@
 		{
 			"ENG_name": "Volothamp \"Volo\" Geddarm",
 			"name": "瓦罗赞普\"瓦罗\"格达姆",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -6268,12 +6274,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"C",
 				"G"
@@ -6356,7 +6356,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C",
@@ -6382,6 +6382,12 @@
 		{
 			"ENG_name": "Wakanga O'tamu",
 			"name": "瓦康嘎·欧塔姆",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -6398,12 +6404,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"L",
@@ -6456,6 +6456,7 @@
 		{
 			"ENG_name": "Withers",
 			"name": "威瑟斯",
+			"type": "undead",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -6463,7 +6464,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -6472,7 +6472,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 镶钉皮甲|PHB|镶钉皮甲}"
+						"{@item 镶钉皮甲|phb|镶钉皮甲}"
 					]
 				}
 			],
@@ -6619,7 +6619,7 @@
 				}
 			],
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"traitTags": [
 				"日照敏感"
@@ -6668,6 +6668,12 @@
 		{
 			"ENG_name": "Xandala",
 			"name": "藏妲拉",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"半精灵"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -6675,12 +6681,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"半精灵"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -6802,7 +6802,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"languageTags": [
 				"C",
@@ -6842,12 +6842,12 @@
 		{
 			"ENG_name": "Yellow Musk Creeper",
 			"name": "黄迷香爬藤",
+			"type": "plant",
 			"source": "ToA",
 			"page": 237,
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -6938,12 +6938,12 @@
 		{
 			"ENG_name": "Yellow Musk Zombie",
 			"name": "黄迷香丧尸",
+			"type": "undead",
 			"source": "ToA",
 			"page": 237,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"U"
 			],
@@ -7113,6 +7113,12 @@
 		{
 			"ENG_name": "Zaroum Al-Saryak",
 			"name": "扎如姆·艾萨亚克",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -7129,12 +7135,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"L",
@@ -7160,6 +7160,12 @@
 		{
 			"ENG_name": "Zhanthi",
 			"name": "绛则",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -7177,12 +7183,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -7194,6 +7194,12 @@
 		{
 			"ENG_name": "Zindar",
 			"name": "金达尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"半龙"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "ToA",
@@ -7201,12 +7207,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"半龙"
-				]
-			},
 			"alignment": [
 				"L",
 				"G"
@@ -7368,7 +7368,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"senseTags": [
 				"B",
@@ -7415,12 +7415,12 @@
 		{
 			"ENG_name": "Zorbo",
 			"name": "佐博怪",
+			"type": "monstrosity",
 			"source": "ToA",
 			"page": 241,
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],

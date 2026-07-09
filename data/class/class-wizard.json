@@ -75,11 +75,11 @@
 			"spellsKnownProgressionFixedAllowLowerLevel": true,
 			"startingProficiencies": {
 				"weapons": [
-					"{@item 匕首|PHB|匕首}",
-					"{@item 飞镖|PHB|飞镖}",
-					"{@item 投石索|PHB|投石索}",
-					"{@item 长棍|PHB|长棍}",
-					"{@item 轻弩|PHB|轻弩}"
+					"{@item 匕首|phb|匕首}",
+					"{@item 飞镖|phb|飞镖}",
+					"{@item 投石索|phb|投石索}",
+					"{@item 长棍|phb|长棍}",
+					"{@item 轻弩|phb|轻弩}"
 				],
 				"skills": [
 					{
@@ -100,24 +100,24 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一根{@item 长棍|PHB}或 (b) 一把{@item 匕首|PHB}",
-					"(a) 一个 {@item 材料包|PHB}或 (b) 一件{@item 奥术法器|PHB}",
-					"(a) 一个{@item 学者套组|PHB}或(b)一个{@item 探索套组|PHB}",
-					"一本{@item 法术书|PHB}"
+					"(a) 一根{@item 长棍|phb}或 (b) 一把{@item 匕首|phb}",
+					"(a) 一个 {@item 材料包|phb}或 (b) 一件{@item 奥术法器|phb}",
+					"(a) 一个{@item 学者套组|phb}或(b)一个{@item 探索套组|phb}",
+					"一本{@item 法术书|phb}"
 				],
 				"goldAlternative": "{@dice 4d4 × 10|4d4 × 10|起始金币}",
 				"defaultData": [
 					{
 						"a": [
-							"长棍|PHB"
+							"长棍|phb"
 						],
 						"b": [
-							"匕首|PHB"
+							"匕首|phb"
 						]
 					},
 					{
 						"a": [
-							"材料包|PHB"
+							"材料包|phb"
 						],
 						"b": [
 							{
@@ -127,15 +127,15 @@
 					},
 					{
 						"a": [
-							"学者套组|PHB"
+							"学者套组|phb"
 						],
 						"b": [
-							"探索套组|PHB"
+							"探索套组|phb"
 						]
 					},
 					{
 						"_": [
-							"法术书|PHB"
+							"法术书|phb"
 						]
 					}
 				]
@@ -2110,7 +2110,7 @@
 					"name": "法器",
 					"type": "entries",
 					"entries": [
-						"你可以使用{@item 奥术法器|PHB}来作为施展法师法术的法器。"
+						"你可以使用{@item 奥术法器|phb}来作为施展法师法术的法器。"
 					]
 				},
 				{
@@ -2208,7 +2208,7 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3级法师{@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 3级法师{@variantrule 可选职业特性|tce|可选特性}}",
 				"你在法术书中写下了一套奥法公式，并能借此在心中推演出一个戏法。每当你完成一次长休，你可以查阅法术书中所记的公式，以将你的一个已知法师戏法替换为另一个来自法师法术列表的戏法。"
 			]
 		},
@@ -3810,6 +3810,7 @@
 		{
 			"ENG_name": "Bladesinger Styles",
 			"name": "剑咏者风格",
+			"type": "inset",
 			"source": "TCE",
 			"page": 76,
 			"otherSources": [
@@ -3824,7 +3825,6 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"header": 1,
-			"type": "inset",
 			"entries": [
 				"剑咏者一开始是作为一个剑术和魔法相结合的艺术，一把剑，更具体来说长剑是剑咏者的基础。然而经过一代又一代的学习与发展，各种各样的基于近战武器发展出的剑歌风格出现了。这些不同风格的知识在各种不同的小学校中由导师一代一代传承给学徒们。即使最新创造出的风格也有着上百年的历史，但是由于精灵们拥有着漫长的生命，最初的创造者仍可以亲自传承他们所创造的风格。大部分剑咏者的学校坐落在永聚岛或者埃弗拉斯卡。曾经有一所学校坐落在密斯卓诺，但是由于城市的毁灭，那些幸存下来的学徒们已经走失分散在世界各地。",
 				"剑歌的风格种类基于武器运用的类型以及分别对应的动物类型来分别。这些特定的风格类型通过偏爱法术类型的运用，导师技艺的风格和特殊武器的运用来用特定的动物类型进行命名。剑咏者学徒们通常会得到一个他们所选择导师风格的动物纹身。一些剑咏者会学习多种剑歌风格，并获得许多的纹身，通过他们皮肤上的纹身警告那些不怀好意的人，他们拥有着致命的技艺。",
@@ -4286,27 +4286,27 @@
 				"剑歌激活期间，你获得以下增益。你能够唤起剑歌的次数等于你的智力调整值（至少1次）。完成一次{@variantrule 长休|XPHB}后，你重获所有已消耗的使用次数。当你使用奥术回想时，你会恢复一次已消耗的使用次数。",
 				{
 					"ENG_name": "Agility",
+					"name": "灵动",
+					"type": "entries",
 					"entries": [
 						"你的AC获得等同于你智力调整值的加值（最低+1），且你的{@variantrule 速度|XPHB}增加10尺。此外，你进行敏捷（{@skill 特技|XPHB}）检定时具有{@variantrule 优势|XPHB}。"
-					],
-					"name": "灵动",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Bladework",
+					"name": "剑法",
+					"type": "entries",
 					"entries": [
 						"当你使用你具有熟练的武器进行攻击时，你可以使用你的智力调整值替代力量或敏捷来进行攻击与伤害掷骰。"
-					],
-					"name": "剑法",
-					"type": "entries"
+					]
 				},
 				{
 					"ENG_name": "Focus",
+					"name": "专注",
+					"type": "entries",
 					"entries": [
 						"当你为维持{@status 专注|XPHB}而进行体质豁免时，你可以将你的智力调整值加到掷骰总值当中。"
-					],
-					"name": "专注",
-					"type": "entries"
+					]
 				}
 			],
 			"level": 3,
@@ -4813,27 +4813,27 @@
 					"entries": [
 						{
 							"ENG_name": "Darkvision",
+							"name": "黑暗视觉",
+							"type": "entries",
 							"entries": [
 								"你具有 120 尺{@sense 黑暗视觉|XPHB}。"
-							],
-							"name": "黑暗视觉",
-							"type": "entries"
+							]
 						},
 						{
 							"ENG_name": "Greater Comprehension",
+							"name": "高等通晓",
+							"type": "entries",
 							"entries": [
 								"你可以读懂任何语言。"
-							],
-							"name": "高等通晓",
-							"type": "entries"
+							]
 						},
 						{
 							"ENG_name": "See Invisibility",
+							"name": "识破隐形",
+							"type": "entries",
 							"entries": [
 								"你能不消耗法术位地施展法术{@spell 识破隐形|XPHB} 。"
-							],
-							"name": "识破隐形",
-							"type": "entries"
+							]
 						}
 					],
 					"type": "entries"

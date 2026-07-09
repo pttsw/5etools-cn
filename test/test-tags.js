@@ -443,6 +443,7 @@ class AreaCheck extends DataTesterBase {
 			.forEach(([prop, val]) => {
 				if (propsValid.has(prop)) {
 					if (prop === "data") return this._handleArray_areaSupported({file, obj: val, corpusPath: prop});
+					if (!Array.isArray(val)) throw new TypeError(`Expected "${prop}" to be an array in ${file}, got ${typeof val}`);
 					return val
 						.forEach((subVal, i) => this._handleArray_areaSupported({file, obj: subVal.data, corpusPath: `${prop}[${i}]`}));
 				}

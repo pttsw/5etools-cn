@@ -736,12 +736,12 @@
 						{
 							"ENG_name": "Skeleton (bones)",
 							"name": "骷髅（骨架）",
-							"uuid": "@creature[骷髅|XMM]"
+							"uuid": "@creature[骷髅|xmm]"
 						},
 						{
 							"ENG_name": "Zombie (corpse)",
 							"name": "丧尸（尸体）",
-							"uuid": "@creature[丧尸|XMM]"
+							"uuid": "@creature[丧尸|xmm]"
 						}
 					]
 				}
@@ -767,19 +767,19 @@
 							"ENG_name": "Huge Object (costs 3)",
 							"name": "巨型物体（消耗 3）",
 							"count": "floor(@attributes.spell.mod / 3)",
-							"uuid": "@creature[活化物件(巨型)|XPHB]"
+							"uuid": "@creature[活化物件(巨型)|xphb]"
 						},
 						{
 							"ENG_name": "Large Object (costs 2)",
 							"name": "大型物体（消耗 2）",
 							"count": "floor(@attributes.spell.mod / 2)",
-							"uuid": "@creature[活化物体(大型)|XPHB]"
+							"uuid": "@creature[活化物体(大型)|xphb]"
 						},
 						{
 							"ENG_name": "Medium Object",
 							"name": "中型物体",
 							"count": "@attributes.spell.mod",
-							"uuid": "@creature[活化物件（中型或更小）|XPHB]"
+							"uuid": "@creature[活化物件（中型或更小）|xphb]"
 						}
 					],
 					"match": {
@@ -3790,8 +3790,8 @@
 				{
 					"ENG_name": "Contingency Spell",
 					"name": "触发法术",
-					"foundryId": "contingency",
 					"type": "enchantment",
+					"foundryId": "contingency",
 					"duration": {
 						"seconds": 864000
 					},
@@ -4066,25 +4066,25 @@
 					"profiles": [
 						{
 							"count": "@item.level - 3",
-							"uuid": "@creature[食尸鬼|XMM]"
+							"uuid": "@creature[食尸鬼|xmm]"
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "@creature[妖鬼|XMM]",
+							"uuid": "@creature[妖鬼|xmm]",
 							"level": {
 								"min": 8
 							}
 						},
 						{
 							"count": "@item.level - 6",
-							"uuid": "@creature[尸妖|XMM]",
+							"uuid": "@creature[尸妖|xmm]",
 							"level": {
 								"min": 8
 							}
 						},
 						{
 							"count": "2",
-							"uuid": "@creature[木乃伊|XMM]",
+							"uuid": "@creature[木乃伊|xmm]",
 							"level": {
 								"min": 9
 							}
@@ -4782,7 +4782,7 @@
 						}
 					},
 					"range": {
-						"units": "触碰"
+						"units": "touch"
 					}
 				},
 				{
@@ -5538,8 +5538,8 @@
 				{
 					"ENG_name": "Elemental Acid +1",
 					"name": "元素强酸 +1",
-					"foundryId": "elementalWeapon",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5579,8 +5579,8 @@
 				{
 					"ENG_name": "Elemental Cold +1",
 					"name": "元素冷冻 +1",
-					"foundryId": "elementalWeapon1",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon1",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5620,8 +5620,8 @@
 				{
 					"ENG_name": "Elemental Fire +1",
 					"name": "元素火焰 +1",
-					"foundryId": "elementalWeapon2",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon2",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5661,8 +5661,8 @@
 				{
 					"ENG_name": "Elemental Lightning +1",
 					"name": "元素闪电 +1",
-					"foundryId": "elementalWeapon3",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon3",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5702,8 +5702,8 @@
 				{
 					"ENG_name": "Elemental Thunder +1",
 					"name": "元素雷鸣 +1",
-					"foundryId": "elementalWeapon4",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon4",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5743,8 +5743,8 @@
 				{
 					"ENG_name": "Elemental Acid +2",
 					"name": "元素强酸 +2",
-					"foundryId": "elementalWeapon5",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon5",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5784,8 +5784,8 @@
 				{
 					"ENG_name": "Elemental Cold +2",
 					"name": "元素冷冻 +2",
-					"foundryId": "elementalWeapon6",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon6",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5825,8 +5825,8 @@
 				{
 					"ENG_name": "Elemental Fire +2",
 					"name": "元素火焰 +2",
-					"foundryId": "elementalWeapon7",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon7",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5866,8 +5866,8 @@
 				{
 					"ENG_name": "Elemental Lightning +2",
 					"name": "元素闪电 +2",
-					"foundryId": "elementalWeapon8",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon8",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5907,8 +5907,8 @@
 				{
 					"ENG_name": "Elemental Thunder +2",
 					"name": "元素雷鸣 +2",
-					"foundryId": "elementalWeapon9",
 					"type": "enchantment",
+					"foundryId": "elementalWeapon9",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5948,8 +5948,8 @@
 				{
 					"ENG_name": "Elemental Acid +3",
 					"name": "元素强酸 +3",
-					"foundryId": "elementalWeapo10",
 					"type": "enchantment",
+					"foundryId": "elementalWeapo10",
 					"duration": {
 						"seconds": 3600
 					},
@@ -5988,8 +5988,8 @@
 				{
 					"ENG_name": "Elemental Cold +3",
 					"name": "元素冷冻 +3",
-					"foundryId": "elementalWeapo11",
 					"type": "enchantment",
+					"foundryId": "elementalWeapo11",
 					"duration": {
 						"seconds": 3600
 					},
@@ -6028,8 +6028,8 @@
 				{
 					"ENG_name": "Elemental Fire +3",
 					"name": "元素火焰 +3",
-					"foundryId": "elementalWeapo12",
 					"type": "enchantment",
+					"foundryId": "elementalWeapo12",
 					"duration": {
 						"seconds": 3600
 					},
@@ -6068,8 +6068,8 @@
 				{
 					"ENG_name": "Elemental Lightning +3",
 					"name": "元素闪电 +3",
-					"foundryId": "elementalWeapo13",
 					"type": "enchantment",
+					"foundryId": "elementalWeapo13",
 					"duration": {
 						"seconds": 3600
 					},
@@ -6108,8 +6108,8 @@
 				{
 					"ENG_name": "Elemental Thunder +3",
 					"name": "元素雷鸣 +3",
-					"foundryId": "elementalWeapo14",
 					"type": "enchantment",
+					"foundryId": "elementalWeapo14",
 					"duration": {
 						"seconds": 3600
 					},
@@ -7019,7 +7019,7 @@
 						"mode": "cr"
 					},
 					"creatureTypes": [
-						"天界语",
+						"天族",
 						"妖精",
 						"邪魔"
 					]
@@ -7042,19 +7042,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
+							"uuid": "@creature[异界坐骑（天界生物）|xphb]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（妖精）|XPHB]",
+							"uuid": "@creature[异界坐骑（妖精）|xphb]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
+							"uuid": "@creature[异界坐骑（邪魔）|xphb]",
 							"level": {
 								"max": 3
 							}
@@ -7082,19 +7082,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
+							"uuid": "@creature[异界坐骑（天界生物）|xphb]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（妖精）|XPHB]",
+							"uuid": "@creature[异界坐骑（妖精）|xphb]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
+							"uuid": "@creature[异界坐骑（邪魔）|xphb]",
 							"level": {
 								"min": 4
 							}
@@ -7186,7 +7186,7 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[丧尸|XMM]"
+							"uuid": "@creature[丧尸|xmm]"
 						}
 					]
 				}
@@ -7249,7 +7249,7 @@
 							"value": "fire"
 						}
 					],
-					"description": "每当5尺内的生物以近战攻击检定命中你时，攻击者将受到[[/damage 2d8 type=cold]]点冷冻伤害。"
+					"description": "每当5尺内的生物以近战攻击检定命中你时，攻击者将受到[[/damage 2d8 type=cold]]点寒冷伤害。"
 				}
 			],
 			"migrationVersion": 3,
@@ -7336,7 +7336,7 @@
 						}
 					},
 					"range": {
-						"units": "触碰"
+						"units": "touch"
 					},
 					"attack": {
 						"type": {
@@ -8254,13 +8254,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[巨虫（蜈蚣）|XPHB]"
+							"uuid": "@creature[巨虫（蜈蚣）|xphb]"
 						},
 						{
-							"uuid": "@creature[巨虫（蜘蛛）|XPHB]"
+							"uuid": "@creature[巨虫（蜘蛛）|xphb]"
 						},
 						{
-							"uuid": "@creature[巨虫（黄蜂）|XPHB]"
+							"uuid": "@creature[巨虫（黄蜂）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -11019,8 +11019,8 @@
 				{
 					"ENG_name": "Magic Weapon +1",
 					"name": "魔法武器 +1",
-					"foundryId": "magicWeapon",
 					"type": "enchantment",
+					"foundryId": "magicWeapon",
 					"duration": {
 						"seconds": 3600
 					},
@@ -11056,8 +11056,8 @@
 				{
 					"ENG_name": "Magic Weapon +2",
 					"name": "魔法武器 +2",
-					"foundryId": "magicWeapon1",
 					"type": "enchantment",
+					"foundryId": "magicWeapon1",
 					"duration": {
 						"seconds": 3600
 					},
@@ -11093,8 +11093,8 @@
 				{
 					"ENG_name": "Magic Weapon +3",
 					"name": "魔法武器 +3",
-					"foundryId": "magicWeapon2",
 					"type": "enchantment",
+					"foundryId": "magicWeapon2",
 					"duration": {
 						"seconds": 3600
 					},
@@ -13886,7 +13886,7 @@
 		},
 		{
 			"ENG_name": "Resistance",
-			"name": "抗性",
+			"name": "抵抗术",
 			"source": "XPHB",
 			"activities": [
 				{
@@ -14867,7 +14867,7 @@
 							"types": [
 								"异怪",
 								"野兽",
-								"天界语",
+								"天族",
 								"龙",
 								"元素生物",
 								"妖精",
@@ -14918,7 +14918,7 @@
 							"types": [
 								"异怪",
 								"野兽",
-								"天界语",
+								"天族",
 								"龙",
 								"元素生物",
 								"妖精",
@@ -15077,8 +15077,8 @@
 				{
 					"ENG_name": "Shillelagh (1d8)",
 					"name": "橡棍术（1d8）",
-					"foundryId": "shillelagh",
 					"type": "enchantment",
+					"foundryId": "shillelagh",
 					"duration": {
 						"seconds": 60
 					},
@@ -15143,8 +15143,8 @@
 				{
 					"ENG_name": "Shillelagh (1d10)",
 					"name": "橡棍术（1d10）",
-					"foundryId": "shillelagh1",
 					"type": "enchantment",
+					"foundryId": "shillelagh1",
 					"duration": {
 						"seconds": 60
 					},
@@ -15209,8 +15209,8 @@
 				{
 					"ENG_name": "Shillelagh (1d12)",
 					"name": "橡棍术（1d12）",
-					"foundryId": "shillelagh2",
 					"type": "enchantment",
+					"foundryId": "shillelagh2",
 					"duration": {
 						"seconds": 60
 					},
@@ -15275,8 +15275,8 @@
 				{
 					"ENG_name": "Shillelagh (2d6)",
 					"name": "橡棍术（2d6）",
-					"foundryId": "shillelagh3",
 					"type": "enchantment",
+					"foundryId": "shillelagh3",
 					"duration": {
 						"seconds": 60
 					},
@@ -15546,7 +15546,7 @@
 		},
 		{
 			"ENG_name": "Sleep",
-			"name": "睡眠",
+			"name": "睡眠术",
 			"source": "XPHB",
 			"system": {
 				"target.affects.type": null
@@ -16518,17 +16518,17 @@
 						{
 							"ENG_name": "Beholderkin",
 							"name": "类眼魔",
-							"uuid": "@creature[异怪灵魄（类眼魔）|TCE]"
+							"uuid": "@creature[异怪灵魄（类眼魔）|tce]"
 						},
 						{
 							"ENG_name": "Slaad",
 							"name": "史拉蟾语",
-							"uuid": "@creature[异怪灵魄（史拉蟾）|TCE]"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|tce]"
 						},
 						{
 							"ENG_name": "Star Spawn",
 							"name": "星之子",
-							"uuid": "@creature[异怪灵魄（星之子）|TCE]"
+							"uuid": "@creature[异怪灵魄（星之子）|tce]"
 						}
 					],
 					"bonuses": {
@@ -16558,13 +16558,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异怪灵魄（类眼魔）|XPHB]"
+							"uuid": "@creature[异怪灵魄（类眼魔）|xphb]"
 						},
 						{
-							"uuid": "@creature[异怪灵魄（史拉蟾）|XPHB]"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|xphb]"
 						},
 						{
-							"uuid": "@creature[异怪灵魄（星之子）|XPHB]"
+							"uuid": "@creature[异怪灵魄（星之子）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -16593,17 +16593,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[野兽灵魄（天空）|TCE]"
+							"uuid": "@creature[野兽灵魄（天空）|tce]"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "@creature[野兽灵魄（大地）|TCE]"
+							"uuid": "@creature[野兽灵魄（大地）|tce]"
 						},
 						{
 							"ENG_name": "Water",
-							"name": "水",
-							"uuid": "@creature[野兽灵魄（海洋）|TCE]"
+							"name": "饮水",
+							"uuid": "@creature[野兽灵魄（海洋）|tce]"
 						}
 					],
 					"bonuses": {
@@ -16632,13 +16632,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[野兽灵魄（天空）|XPHB]"
+							"uuid": "@creature[野兽灵魄（天空）|xphb]"
 						},
 						{
-							"uuid": "@creature[野兽灵魄（大地）|XPHB]"
+							"uuid": "@creature[野兽灵魄（大地）|xphb]"
 						},
 						{
-							"uuid": "@creature[野兽灵魄（海洋）|XPHB]"
+							"uuid": "@creature[野兽灵魄（海洋）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -16666,12 +16666,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@creature[天界灵魄（复仇圣灵）|TCE]"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|tce]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@creature[天界灵魄（守护圣灵）|TCE]"
+							"uuid": "@creature[天界灵魄（守护圣灵）|tce]"
 						}
 					],
 					"bonuses": {
@@ -16703,12 +16703,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@creature[天界灵魄（复仇圣灵）|XPHB]"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|xphb]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@creature[天界灵魄（守护圣灵）|XPHB]"
+							"uuid": "@creature[天界灵魄（守护圣灵）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -16736,17 +16736,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构装灵魄（粘土）|TCE]"
+							"uuid": "@creature[构装灵魄（粘土）|tce]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@creature[构装灵魄（金属）|TCE]"
+							"uuid": "@creature[构装灵魄（金属）|tce]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@creature[构装灵魄（岩石）|TCE]"
+							"uuid": "@creature[构装灵魄（岩石）|tce]"
 						}
 					],
 					"bonuses": {
@@ -16778,17 +16778,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构装灵魄（粘土）|XPHB]"
+							"uuid": "@creature[构装灵魄（粘土）|xphb]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@creature[构装灵魄（金属）|XPHB]"
+							"uuid": "@creature[构装灵魄（金属）|xphb]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@creature[构装灵魄（岩石）|XPHB]"
+							"uuid": "@creature[构装灵魄（岩石）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -16847,19 +16847,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[龙类灵魄（强酸）|XPHB]"
+							"uuid": "@creature[龙类灵魄（强酸）|xphb]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（寒冷）|XPHB]"
+							"uuid": "@creature[龙类灵魄（寒冷）|xphb]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（火焰）|XPHB]"
+							"uuid": "@creature[龙类灵魄（火焰）|xphb]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（闪电）|XPHB]"
+							"uuid": "@creature[龙类灵魄（闪电）|xphb]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（毒素）|XPHB]"
+							"uuid": "@creature[龙类灵魄（毒素）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -16888,22 +16888,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[元素灵魄（气）|TCE]"
+							"uuid": "@creature[元素灵魄（气）|tce]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素灵魄（土）|TCE]"
+							"uuid": "@creature[元素灵魄（土）|tce]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@creature[元素灵魄（火）|TCE]"
+							"uuid": "@creature[元素灵魄（火）|tce]"
 						},
 						{
 							"ENG_name": "Water",
-							"name": "水",
-							"uuid": "@creature[元素灵魄（水）|TCE]"
+							"name": "饮水",
+							"uuid": "@creature[元素灵魄（水）|tce]"
 						}
 					],
 					"bonuses": {
@@ -16934,22 +16934,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[元素灵魄（气）|XPHB]"
+							"uuid": "@creature[元素灵魄（气）|xphb]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素灵魄（土）|XPHB]"
+							"uuid": "@creature[元素灵魄（土）|xphb]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@creature[元素灵魄（火）|XPHB]"
+							"uuid": "@creature[元素灵魄（火）|xphb]"
 						},
 						{
 							"ENG_name": "Water",
-							"name": "水",
-							"uuid": "@creature[元素灵魄（水）|XPHB]"
+							"name": "饮水",
+							"uuid": "@creature[元素灵魄（水）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -16977,17 +16977,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "@creature[妖精灵魄（愤怒）|TCE]"
+							"uuid": "@creature[妖精灵魄（愤怒）|tce]"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "@creature[妖精灵魄（欢欣）|TCE]"
+							"uuid": "@creature[妖精灵魄（欢欣）|tce]"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "@creature[妖精灵魄（诡诈）|TCE]"
+							"uuid": "@creature[妖精灵魄（诡诈）|tce]"
 						}
 					],
 					"bonuses": {
@@ -17017,13 +17017,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[妖精灵魄（愤怒）|XPHB]"
+							"uuid": "@creature[妖精灵魄（愤怒）|xphb]"
 						},
 						{
-							"uuid": "@creature[妖精灵魄（欢欣）|XPHB]"
+							"uuid": "@creature[妖精灵魄（欢欣）|xphb]"
 						},
 						{
-							"uuid": "@creature[妖精灵魄（诡诈）|XPHB]"
+							"uuid": "@creature[妖精灵魄（诡诈）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -17052,17 +17052,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[邪魔灵魄（恶魔）|TCE]"
+							"uuid": "@creature[邪魔灵魄（恶魔）|tce]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@creature[邪魔灵魄（魔鬼）|TCE]"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|tce]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|TCE]"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|tce]"
 						}
 					],
 					"bonuses": {
@@ -17095,17 +17095,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[邪魔灵魄（恶魔）|XPHB]"
+							"uuid": "@creature[邪魔灵魄（恶魔）|xphb]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@creature[邪魔灵魄（魔鬼）|XPHB]"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|xphb]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|XPHB]"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -17135,17 +17135,17 @@
 						{
 							"ENG_name": "Fury",
 							"name": "狂怒",
-							"uuid": "@creature[暗影灵魄（暴怒）|TCE]"
+							"uuid": "@creature[暗影灵魄（暴怒）|tce]"
 						},
 						{
 							"ENG_name": "Despair",
 							"name": "绝望",
-							"uuid": "@creature[暗影灵魄（绝望）|TCE]"
+							"uuid": "@creature[暗影灵魄（绝望）|tce]"
 						},
 						{
 							"ENG_name": "Fear",
 							"name": "恐惧术",
-							"uuid": "@creature[暗影灵魄（恐惧）|TCE]"
+							"uuid": "@creature[暗影灵魄（恐惧）|tce]"
 						}
 					],
 					"bonuses": {
@@ -17173,17 +17173,17 @@
 						{
 							"ENG_name": "Ghostly",
 							"name": "幽体",
-							"uuid": "@creature[亡灵灵魄（幽体）|TCE]"
+							"uuid": "@creature[亡灵灵魄（幽体）|tce]"
 						},
 						{
 							"ENG_name": "Putrid",
 							"name": "腐尸",
-							"uuid": "@creature[亡灵灵魄（腐尸）|TCE]"
+							"uuid": "@creature[亡灵灵魄（腐尸）|tce]"
 						},
 						{
 							"ENG_name": "Skeletal",
 							"name": "骷髅",
-							"uuid": "@creature[亡灵灵魄（骷髅）|TCE]"
+							"uuid": "@creature[亡灵灵魄（骷髅）|tce]"
 						}
 					],
 					"bonuses": {
@@ -17213,13 +17213,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[亡灵灵魄（幽体）|XPHB]"
+							"uuid": "@creature[亡灵灵魄（幽体）|xphb]"
 						},
 						{
-							"uuid": "@creature[亡灵灵魄（腐尸）|XPHB]"
+							"uuid": "@creature[亡灵灵魄（腐尸）|xphb]"
 						},
 						{
-							"uuid": "@creature[亡灵灵魄（骷髅）|XPHB]"
+							"uuid": "@creature[亡灵灵魄（骷髅）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -17432,8 +17432,8 @@
 				{
 					"ENG_name": "Endless Ammunition",
 					"name": "无限弹药",
-					"foundryId": "swiftQuiver",
 					"type": "enchantment",
+					"foundryId": "swiftQuiver",
 					"duration": {
 						"seconds": 60
 					},
@@ -17632,7 +17632,7 @@
 				},
 				{
 					"ENG_name": "Sleep",
-					"name": "睡眠",
+					"name": "睡眠术",
 					"type": "save",
 					"activation": {
 						"type": ""
@@ -17910,7 +17910,7 @@
 						}
 					},
 					"range": {
-						"units": "触碰"
+						"units": "touch"
 					},
 					"roll": {
 						"visible": true
@@ -18465,8 +18465,8 @@
 				{
 					"ENG_name": "Spellcasting Attack",
 					"name": "法术攻击",
-					"foundryId": "trueStrike",
 					"type": "attack",
+					"foundryId": "trueStrike",
 					"img": "systems/dnd5e/icons/svg/damage/bludgeoning.svg",
 					"activation": {
 						"type": "action"
@@ -18485,8 +18485,8 @@
 				{
 					"ENG_name": "Spellcasting Attack",
 					"name": "法术攻击",
-					"foundryId": "trueStrike1",
 					"type": "attack",
+					"foundryId": "trueStrike1",
 					"img": "systems/dnd5e/icons/svg/damage/piercing.svg",
 					"activation": {
 						"type": "action"
@@ -18541,8 +18541,8 @@
 				{
 					"ENG_name": "Ranged Weapon",
 					"name": "远程武器",
-					"foundryId": "trueStrike1",
 					"type": "enchantment",
+					"foundryId": "trueStrike1",
 					"duration": {
 						"turns": 1
 					},

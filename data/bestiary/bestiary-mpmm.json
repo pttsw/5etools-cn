@@ -12,6 +12,9 @@
 		{
 			"ENG_name": "Abjurer Wizard",
 			"name": "防护法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 260,
 			"otherSources": [
@@ -23,9 +26,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -170,6 +170,7 @@
 		{
 			"ENG_name": "Adult Kruthik",
 			"name": "地刺虫成体",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 169,
 			"otherSources": [
@@ -181,7 +182,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -217,7 +217,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"地刺虫"
+				"地刺虫语"
 			],
 			"cr": "2",
 			"trait": [
@@ -296,6 +296,7 @@
 		{
 			"ENG_name": "Adult Oblex",
 			"name": "蚀心软泥成体",
+			"type": "ooze",
 			"source": "MPMM",
 			"page": 198,
 			"otherSources": [
@@ -307,7 +308,6 @@
 			"size": [
 				"M"
 			],
-			"type": "ooze",
 			"alignment": [
 				"L",
 				"E"
@@ -493,6 +493,7 @@
 		{
 			"ENG_name": "Air Elemental Myrmidon",
 			"name": "气元素侍从",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 122,
 			"otherSources": [
@@ -504,7 +505,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -594,7 +594,7 @@
 				"path": "bestiary/air-elemental-myrmidon.opus"
 			},
 			"attachedItems": [
-				"链枷|PHB"
+				"链枷|phb"
 			],
 			"senseTags": [
 				"D"
@@ -626,6 +626,13 @@
 		{
 			"ENG_name": "Alhoon",
 			"name": "慑心魔",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"夺心魔",
+					"法师"
+				]
+			},
 			"source": "MPMM",
 			"page": 43,
 			"otherSources": [
@@ -640,13 +647,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"夺心魔",
-					"法师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -857,6 +857,12 @@
 		{
 			"ENG_name": "Alkilith",
 			"name": "懒惰魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 44,
 			"otherSources": [
@@ -868,12 +874,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -1050,6 +1050,7 @@
 		{
 			"ENG_name": "Allip",
 			"name": "怨魂",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 45,
 			"otherSources": [
@@ -1061,7 +1062,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -1132,7 +1132,7 @@
 				"束缚"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "5",
 			"trait": [
@@ -1212,6 +1212,12 @@
 		{
 			"ENG_name": "Amnizu",
 			"name": "安祖魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 46,
 			"otherSources": [
@@ -1226,12 +1232,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -1458,6 +1458,7 @@
 		{
 			"ENG_name": "Angry Sorrowsworn",
 			"name": "愤怒之哀恸魔",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 222,
 			"otherSources": [
@@ -1469,7 +1470,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -1582,6 +1582,7 @@
 		{
 			"ENG_name": "Annis Hag",
 			"name": "妖鬼婆",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 47,
 			"otherSources": [
@@ -1593,7 +1594,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"E"
@@ -1731,6 +1731,9 @@
 		{
 			"ENG_name": "Apprentice Wizard",
 			"name": "学徒法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 259,
 			"otherSources": [
@@ -1745,9 +1748,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -1843,6 +1843,12 @@
 		{
 			"ENG_name": "Archdruid",
 			"name": "大德鲁伊",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"德鲁伊"
+				]
+			},
 			"source": "MPMM",
 			"page": 48,
 			"otherSources": [
@@ -1854,12 +1860,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"德鲁伊"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -2009,6 +2009,7 @@
 		{
 			"ENG_name": "Archer",
 			"name": "弓箭手",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 49,
 			"otherSources": [
@@ -2020,7 +2021,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -2095,8 +2095,8 @@
 				"path": "bestiary/archer.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"短剑|PHB"
+				"长弓|phb",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -2121,6 +2121,12 @@
 		{
 			"ENG_name": "Armanite",
 			"name": "铁骑魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 50,
 			"otherSources": [
@@ -2132,12 +2138,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -2274,6 +2274,12 @@
 		{
 			"ENG_name": "Astral Dreadnought",
 			"name": "星界巨舰兽",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"泰坦"
+				]
+			},
 			"source": "MPMM",
 			"page": 51,
 			"otherSources": [
@@ -2288,12 +2294,6 @@
 			"size": [
 				"G"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"泰坦"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -2484,6 +2484,12 @@
 		{
 			"ENG_name": "Aurochs",
 			"name": "原牛",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"牛"
+				]
+			},
 			"source": "MPMM",
 			"page": 71,
 			"otherSources": [
@@ -2495,12 +2501,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"牛"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -2564,6 +2564,12 @@
 		{
 			"ENG_name": "Autumn Eladrin",
 			"name": "秋之雅灵",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 115,
 			"otherSources": [
@@ -2575,12 +2581,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -2715,8 +2715,8 @@
 				"path": "bestiary/autumn-eladrin.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -2765,6 +2765,12 @@
 		{
 			"ENG_name": "Babau",
 			"name": "巴布魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 52,
 			"otherSources": [
@@ -2776,12 +2782,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -2929,6 +2929,12 @@
 		{
 			"ENG_name": "Bael",
 			"name": "巴艾尔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 54,
@@ -2941,12 +2947,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -3183,6 +3183,7 @@
 		{
 			"ENG_name": "Balhannoth",
 			"name": "潜猎兽",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 55,
 			"otherSources": [
@@ -3198,7 +3199,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -3353,6 +3353,7 @@
 		{
 			"ENG_name": "Banderhobb",
 			"name": "绑匪怪蛙",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 56,
 			"otherSources": [
@@ -3364,7 +3365,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -3503,6 +3503,12 @@
 		{
 			"ENG_name": "Baphomet",
 			"name": "巴弗灭",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 58,
@@ -3518,12 +3524,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -3743,6 +3743,7 @@
 		{
 			"ENG_name": "Bard",
 			"name": "吟游诗人",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 59,
 			"otherSources": [
@@ -3757,7 +3758,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3765,7 +3765,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 链甲衫|PHB}"
+						"{@item 链甲衫|phb}"
 					]
 				}
 			],
@@ -3867,8 +3867,8 @@
 				"path": "bestiary/bard.opus"
 			},
 			"attachedItems": [
-				"短弓|PHB",
-				"短剑|PHB"
+				"短弓|phb",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3909,6 +3909,7 @@
 		{
 			"ENG_name": "Barghest",
 			"name": "犬魔",
+			"type": "fiend",
 			"source": "MPMM",
 			"page": 60,
 			"otherSources": [
@@ -3920,7 +3921,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"N",
 				"E"
@@ -4117,6 +4117,7 @@
 		{
 			"ENG_name": "Berbalang",
 			"name": "分身魔",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 61,
 			"otherSources": [
@@ -4128,7 +4129,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -4266,6 +4266,7 @@
 		{
 			"ENG_name": "Bheur Hag",
 			"name": "冬灵鬼婆",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 62,
 			"otherSources": [
@@ -4277,7 +4278,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"E"
@@ -4398,7 +4398,7 @@
 					"ENG_name": "Frost Shard",
 					"name": "寒霜碎晶",
 					"entries": [
-						"{@atk rs} 命中{@hit 6}，范围60尺，单一目标。{@h}30（{@damage 6d8 + 3}）冷冻伤害，且目标的速度在鬼婆的下个回合开始前减少10尺。"
+						"{@atk rs} 命中{@hit 6}，范围60尺，单一目标。{@h}30（{@damage 6d8 + 3}）寒冷伤害，且目标的速度在鬼婆的下个回合开始前减少10尺。"
 					]
 				},
 				{
@@ -4463,6 +4463,12 @@
 		{
 			"ENG_name": "Black Abishai",
 			"name": "亚比莎黑龙魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 38,
 			"otherSources": [
@@ -4477,12 +4483,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4624,7 +4624,7 @@
 				"path": "bestiary/black-abishai.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -4657,6 +4657,12 @@
 		{
 			"ENG_name": "Blackguard",
 			"name": "黑暗卫士",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"圣武士"
+				]
+			},
 			"source": "MPMM",
 			"page": 63,
 			"otherSources": [
@@ -4668,12 +4674,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"圣武士"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -4795,8 +4795,8 @@
 				"path": "bestiary/blackguard.opus"
 			},
 			"attachedItems": [
-				"长柄刀|PHB",
-				"短弓|PHB"
+				"长柄刀|phb",
+				"短弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4842,6 +4842,13 @@
 		{
 			"ENG_name": "Blue Abishai",
 			"name": "亚比莎蓝龙魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼",
+					"法师"
+				]
+			},
 			"source": "MPMM",
 			"page": 39,
 			"otherSources": [
@@ -4857,13 +4864,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼",
-					"法师"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -5048,6 +5048,7 @@
 		{
 			"ENG_name": "Bodak",
 			"name": "波达尸",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 64,
 			"otherSources": [
@@ -5062,7 +5063,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -5121,7 +5121,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "6",
 			"trait": [
@@ -5214,6 +5214,7 @@
 		{
 			"ENG_name": "Boggle",
 			"name": "捣蛋鬼",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 65,
 			"otherSources": [
@@ -5225,7 +5226,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"N"
@@ -5377,6 +5377,7 @@
 		{
 			"ENG_name": "Boneclaw",
 			"name": "骨爪",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 66,
 			"otherSources": [
@@ -5388,7 +5389,6 @@
 			"size": [
 				"L"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -5544,6 +5544,12 @@
 		{
 			"ENG_name": "Brontosaurus",
 			"name": "雷龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 95,
 			"otherSources": [
@@ -5555,12 +5561,6 @@
 			"size": [
 				"G"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -5633,6 +5633,12 @@
 		{
 			"ENG_name": "Bulezau",
 			"name": "布雷祖魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 67,
 			"otherSources": [
@@ -5644,12 +5650,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -5766,6 +5766,7 @@
 		{
 			"ENG_name": "Cadaver Collector",
 			"name": "掮尸者",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 68,
 			"otherSources": [
@@ -5781,7 +5782,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"E"
@@ -5929,6 +5929,12 @@
 		{
 			"ENG_name": "Canoloth",
 			"name": "卡诺罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 69,
 			"otherSources": [
@@ -5940,12 +5946,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -6103,6 +6103,7 @@
 		{
 			"ENG_name": "Catoblepas",
 			"name": "卡托布莱帕斯",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 70,
 			"otherSources": [
@@ -6114,7 +6115,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -6204,6 +6204,7 @@
 		{
 			"ENG_name": "Cave Fisher",
 			"name": "穴钓蟹",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 73,
 			"otherSources": [
@@ -6215,7 +6216,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -6330,6 +6330,7 @@
 		{
 			"ENG_name": "Champion",
 			"name": "勇士",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 74,
 			"otherSources": [
@@ -6341,7 +6342,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -6430,8 +6430,8 @@
 				"path": "bestiary/champion.opus"
 			},
 			"attachedItems": [
-				"巨剑|PHB",
-				"短弓|PHB"
+				"巨剑|phb",
+				"短弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -6457,6 +6457,7 @@
 		{
 			"ENG_name": "Chitine",
 			"name": "半蛛人",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 75,
 			"otherSources": [
@@ -6468,7 +6469,6 @@
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -6562,7 +6562,7 @@
 				"path": "bestiary/chitine.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -6595,6 +6595,7 @@
 		{
 			"ENG_name": "Choker",
 			"name": "锁喉怪",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 76,
 			"otherSources": [
@@ -6606,7 +6607,6 @@
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -6723,6 +6723,12 @@
 		{
 			"ENG_name": "Choldrith",
 			"name": "半蛛神眷",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"牧师"
+				]
+			},
 			"source": "MPMM",
 			"page": 77,
 			"otherSources": [
@@ -6734,12 +6740,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"牧师"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -6873,7 +6873,7 @@
 				"path": "bestiary/choldrith.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -6919,6 +6919,7 @@
 		{
 			"ENG_name": "Clockwork Bronze Scout",
 			"name": "发条青铜监视者",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 79,
 			"otherSources": [
@@ -6934,7 +6935,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -7054,6 +7054,7 @@
 		{
 			"ENG_name": "Clockwork Iron Cobra",
 			"name": "发条钢铁眼镜蛇",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 79,
 			"otherSources": [
@@ -7065,7 +7066,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -7202,6 +7202,7 @@
 		{
 			"ENG_name": "Clockwork Oaken Bolter",
 			"name": "发条橡木投射机",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 80,
 			"otherSources": [
@@ -7217,7 +7218,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -7362,6 +7362,7 @@
 		{
 			"ENG_name": "Clockwork Stone Defender",
 			"name": "发条岩石守卫者",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 80,
 			"otherSources": [
@@ -7377,7 +7378,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -7491,6 +7491,7 @@
 		{
 			"ENG_name": "Cloud Giant Smiling One",
 			"name": "云巨人欢笑者",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 81,
 			"otherSources": [
@@ -7502,7 +7503,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"N"
@@ -7670,6 +7670,9 @@
 		{
 			"ENG_name": "Conjurer Wizard",
 			"name": "咒法法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 260,
 			"otherSources": [
@@ -7681,9 +7684,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -7818,6 +7818,7 @@
 		{
 			"ENG_name": "Corpse Flower",
 			"name": "尸魔花",
+			"type": "plant",
 			"source": "MPMM",
 			"page": 82,
 			"otherSources": [
@@ -7829,7 +7830,6 @@
 			"size": [
 				"L"
 			],
-			"type": "plant",
 			"alignment": [
 				"C",
 				"E"
@@ -7964,6 +7964,7 @@
 		{
 			"ENG_name": "Cranium Rat",
 			"name": "颅鼠",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 83,
 			"otherSources": [
@@ -7975,7 +7976,6 @@
 			"size": [
 				"T"
 			],
-			"type": "aberration",
 			"alignment": [
 				"U"
 			],
@@ -8058,6 +8058,7 @@
 		{
 			"ENG_name": "Darkling",
 			"name": "暗灵",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 84,
 			"otherSources": [
@@ -8069,7 +8070,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"N"
@@ -8148,7 +8148,7 @@
 				"path": "bestiary/darkling.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"光照敏感"
@@ -8185,6 +8185,7 @@
 		{
 			"ENG_name": "Darkling Elder",
 			"name": "暗灵长者",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 84,
 			"otherSources": [
@@ -8196,7 +8197,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"N"
@@ -8295,7 +8295,7 @@
 				"path": "bestiary/darkling-elder.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"senseTags": [
 				"B",
@@ -8331,6 +8331,12 @@
 		{
 			"ENG_name": "Death Kiss",
 			"name": "死吻眼魔",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"眼魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 85,
 			"otherSources": [
@@ -8342,12 +8348,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"眼魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -8473,6 +8473,12 @@
 		{
 			"ENG_name": "Deathlock",
 			"name": "败契者",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 86,
 			"otherSources": [
@@ -8488,12 +8494,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -8547,7 +8547,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "4",
 			"spellcasting": [
@@ -8662,6 +8662,12 @@
 		{
 			"ENG_name": "Deathlock Mastermind",
 			"name": "败契者首脑",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 87,
 			"otherSources": [
@@ -8676,12 +8682,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -8736,7 +8736,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "8",
 			"spellcasting": [
@@ -8861,6 +8861,12 @@
 		{
 			"ENG_name": "Deathlock Wight",
 			"name": "败契者尸妖",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 87,
 			"otherSources": [
@@ -8872,12 +8878,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -8930,7 +8930,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "3",
 			"spellcasting": [
@@ -9040,6 +9040,12 @@
 		{
 			"ENG_name": "Deep Rothé",
 			"name": "深地洛斯兽",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"牛"
+				]
+			},
 			"source": "MPMM",
 			"page": 71,
 			"otherSources": [
@@ -9051,12 +9057,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"牛"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -9143,6 +9143,7 @@
 		{
 			"ENG_name": "Deep Scion",
 			"name": "深渊子嗣",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 88,
 			"otherSources": [
@@ -9154,7 +9155,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -9263,7 +9263,7 @@
 				"path": "bestiary/deep-scion.opus"
 			},
 			"attachedItems": [
-				"战斧|PHB"
+				"战斧|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -9301,6 +9301,12 @@
 		{
 			"ENG_name": "Deinonychus",
 			"name": "恐爪龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 95,
 			"otherSources": [
@@ -9312,12 +9318,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -9413,6 +9413,12 @@
 		{
 			"ENG_name": "Demogorgon",
 			"name": "狄摩高根",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 90,
@@ -9425,12 +9431,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -9687,6 +9687,7 @@
 		{
 			"ENG_name": "Derro",
 			"name": "迪洛矮人",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 91,
 			"otherSources": [
@@ -9701,7 +9702,6 @@
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -9781,7 +9781,7 @@
 				"path": "bestiary/derro.opus"
 			},
 			"attachedItems": [
-				"轻弩|PHB"
+				"轻弩|phb"
 			],
 			"traitTags": [
 				"魔法抗性",
@@ -9813,6 +9813,12 @@
 		{
 			"ENG_name": "Derro Savant",
 			"name": "迪洛矮人学者",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"术士"
+				]
+			},
 			"source": "MPMM",
 			"page": 92,
 			"otherSources": [
@@ -9824,12 +9830,6 @@
 			"size": [
 				"S"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"术士"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -9932,7 +9932,7 @@
 				"path": "bestiary/derro-savant.opus"
 			},
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"traitTags": [
 				"魔法抗性",
@@ -9970,6 +9970,7 @@
 		{
 			"ENG_name": "Devourer",
 			"name": "囚魂魔",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 93,
 			"otherSources": [
@@ -9981,7 +9982,6 @@
 			"size": [
 				"L"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -10108,6 +10108,12 @@
 		{
 			"ENG_name": "Dhergoloth",
 			"name": "德格罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 94,
 			"otherSources": [
@@ -10119,12 +10125,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -10290,6 +10290,12 @@
 		{
 			"ENG_name": "Dimetrodon",
 			"name": "异齿龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 95,
 			"otherSources": [
@@ -10301,12 +10307,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -10367,6 +10367,7 @@
 		{
 			"ENG_name": "Dire Troll",
 			"name": "恐怖巨魔",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 246,
 			"otherSources": [
@@ -10378,7 +10379,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -10517,6 +10517,9 @@
 		{
 			"ENG_name": "Diviner Wizard",
 			"name": "预言法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 261,
 			"otherSources": [
@@ -10528,9 +10531,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -10675,6 +10675,7 @@
 		{
 			"ENG_name": "Dolphin",
 			"name": "海豚",
+			"type": "beast",
 			"source": "MPMM",
 			"page": 97,
 			"otherSources": [
@@ -10686,7 +10687,6 @@
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -10765,12 +10765,12 @@
 		{
 			"ENG_name": "Dolphin Delighter",
 			"name": "快乐海豚",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 97,
 			"size": [
 				"M"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"G"
@@ -10891,6 +10891,12 @@
 		{
 			"ENG_name": "Draegloth",
 			"name": "卓格罗斯",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 98,
 			"otherSources": [
@@ -10902,12 +10908,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -11056,6 +11056,16 @@
 		{
 			"ENG_name": "Drow Arachnomancer",
 			"name": "卓尔蜘蛛法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "精灵",
+						"prefix": "卓尔",
+						"prefixHidden": true
+					}
+				]
+			},
 			"source": "MPMM",
 			"page": 99,
 			"otherSources": [
@@ -11067,16 +11077,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					{
-						"tag": "精灵",
-						"prefix": "卓尔",
-						"prefixHidden": true
-					}
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -11287,17 +11287,6 @@
 		{
 			"ENG_name": "Drow Favored Consort",
 			"name": "卓尔受宠侍父",
-			"source": "MPMM",
-			"page": 100,
-			"otherSources": [
-				{
-					"source": "MTF",
-					"page": 183
-				}
-			],
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -11309,6 +11298,17 @@
 					"法师"
 				]
 			},
+			"source": "MPMM",
+			"page": 100,
+			"otherSources": [
+				{
+					"source": "MTF",
+					"page": 183
+				}
+			],
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -11434,7 +11434,7 @@
 				"path": "bestiary/drow-favored-consort.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -11480,6 +11480,16 @@
 		{
 			"ENG_name": "Drow House Captain",
 			"name": "卓尔家族指挥",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "精灵",
+						"prefix": "卓尔",
+						"prefixHidden": true
+					}
+				]
+			},
 			"source": "MPMM",
 			"page": 101,
 			"otherSources": [
@@ -11491,16 +11501,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					{
-						"tag": "精灵",
-						"prefix": "卓尔",
-						"prefixHidden": true
-					}
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -11598,7 +11598,7 @@
 				},
 				{
 					"ENG_name": "Whip",
-					"name": "鞭子",
+					"name": "鞭击",
 					"entries": [
 						"{@atk mw} 命中{@hit 8}，触及10尺，单一目标。{@h}6（{@damage 1d4 + 4}）挥砍伤害。"
 					]
@@ -11637,9 +11637,9 @@
 				"path": "bestiary/drow-house-captain.opus"
 			},
 			"attachedItems": [
-				"手弩|PHB",
-				"弯刀|PHB",
-				"鞭子|PHB"
+				"手弩|phb",
+				"弯刀|phb",
+				"鞭子|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -11689,17 +11689,6 @@
 		{
 			"ENG_name": "Drow Inquisitor",
 			"name": "卓尔审判官",
-			"source": "MPMM",
-			"page": 102,
-			"otherSources": [
-				{
-					"source": "MTF",
-					"page": 184
-				}
-			],
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -11711,6 +11700,17 @@
 					}
 				]
 			},
+			"source": "MPMM",
+			"page": 102,
+			"otherSources": [
+				{
+					"source": "MTF",
+					"page": 184
+				}
+			],
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -11905,17 +11905,6 @@
 		{
 			"ENG_name": "Drow Matron Mother",
 			"name": "卓尔主母",
-			"source": "MPMM",
-			"page": 104,
-			"otherSources": [
-				{
-					"source": "MTF",
-					"page": 186
-				}
-			],
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -11927,6 +11916,17 @@
 					}
 				]
 			},
+			"source": "MPMM",
+			"page": 104,
+			"otherSources": [
+				{
+					"source": "MTF",
+					"page": 186
+				}
+			],
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -12185,6 +12185,16 @@
 		{
 			"ENG_name": "Drow Shadowblade",
 			"name": "卓尔幽影刃",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "精灵",
+						"prefix": "卓尔",
+						"prefixHidden": true
+					}
+				]
+			},
 			"source": "MPMM",
 			"page": 105,
 			"otherSources": [
@@ -12196,16 +12206,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					{
-						"tag": "精灵",
-						"prefix": "卓尔",
-						"prefixHidden": true
-					}
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -12348,7 +12348,7 @@
 				"path": "bestiary/drow-shadowblade.opus"
 			},
 			"attachedItems": [
-				"手弩|PHB"
+				"手弩|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -12396,6 +12396,12 @@
 		{
 			"ENG_name": "Duergar Despot",
 			"name": "灰矮人霸主",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 107,
 			"otherSources": [
@@ -12407,12 +12413,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -12584,6 +12584,12 @@
 		{
 			"ENG_name": "Duergar Hammerer",
 			"name": "灰矮人凿岩者",
+			"type": {
+				"type": "construct",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 112,
 			"otherSources": [
@@ -12595,12 +12601,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "construct",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -12720,6 +12720,12 @@
 		{
 			"ENG_name": "Duergar Kavalrachni",
 			"name": "灰矮人凯沃拉骑兵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 107,
 			"otherSources": [
@@ -12731,12 +12737,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -12836,8 +12836,8 @@
 				"path": "bestiary/duergar-kavalrachni.opus"
 			},
 			"attachedItems": [
-				"重弩|PHB",
-				"战镐|PHB"
+				"重弩|phb",
+				"战镐|phb"
 			],
 			"traitTags": [
 				"日照敏感"
@@ -12871,6 +12871,12 @@
 		{
 			"ENG_name": "Duergar Mind Master",
 			"name": "灰矮人心灵大师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 108,
 			"otherSources": [
@@ -12882,12 +12888,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -13030,6 +13030,12 @@
 		{
 			"ENG_name": "Duergar Screamer",
 			"name": "灰矮人尖啸者",
+			"type": {
+				"type": "construct",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 111,
 			"otherSources": [
@@ -13041,12 +13047,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "construct",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -13160,6 +13160,12 @@
 		{
 			"ENG_name": "Duergar Soulblade",
 			"name": "灰矮人魂刃使",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 109,
 			"otherSources": [
@@ -13171,12 +13177,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -13285,6 +13285,12 @@
 		{
 			"ENG_name": "Duergar Stone Guard",
 			"name": "灰矮人岩石守卫",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 110,
 			"otherSources": [
@@ -13296,12 +13302,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -13410,8 +13410,8 @@
 				"path": "bestiary/duergar-stone-guard.opus"
 			},
 			"attachedItems": [
-				"标枪|PHB",
-				"短剑|PHB"
+				"标枪|phb",
+				"短剑|phb"
 			],
 			"traitTags": [
 				"日照敏感"
@@ -13445,6 +13445,12 @@
 		{
 			"ENG_name": "Duergar Warlord",
 			"name": "灰矮人督军",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 111,
 			"otherSources": [
@@ -13456,12 +13462,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -13579,7 +13579,7 @@
 				"path": "bestiary/duergar-warlord.opus"
 			},
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"traitTags": [
 				"日照敏感"
@@ -13615,6 +13615,12 @@
 		{
 			"ENG_name": "Duergar Xarrorn",
 			"name": "灰矮人萨隆长枪兵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"矮人"
+				]
+			},
 			"source": "MPMM",
 			"page": 111,
 			"otherSources": [
@@ -13626,12 +13632,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"矮人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -13757,6 +13757,12 @@
 		{
 			"ENG_name": "Dybbuk",
 			"name": "恶灵魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 113,
 			"otherSources": [
@@ -13771,12 +13777,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -13961,6 +13961,7 @@
 		{
 			"ENG_name": "Earth Elemental Myrmidon",
 			"name": "土元素侍从",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 122,
 			"otherSources": [
@@ -13972,7 +13973,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -14055,7 +14055,7 @@
 				"path": "bestiary/earth-elemental-myrmidon.opus"
 			},
 			"attachedItems": [
-				"巨锤|PHB"
+				"巨锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -14087,6 +14087,7 @@
 		{
 			"ENG_name": "Eidolon",
 			"name": "圣灵幻影",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 114,
 			"otherSources": [
@@ -14098,7 +14099,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"A"
 			],
@@ -14165,7 +14165,7 @@
 				"束缚"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "12",
 			"trait": [
@@ -14250,6 +14250,12 @@
 		{
 			"ENG_name": "Elder Brain",
 			"name": "主脑",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"夺心魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 120,
 			"otherSources": [
@@ -14265,12 +14271,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"夺心魔"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -14501,6 +14501,7 @@
 		{
 			"ENG_name": "Elder Oblex",
 			"name": "古代蚀心软泥",
+			"type": "ooze",
 			"source": "MPMM",
 			"page": 199,
 			"otherSources": [
@@ -14512,7 +14513,6 @@
 			"size": [
 				"H"
 			],
-			"type": "ooze",
 			"alignment": [
 				"L",
 				"E"
@@ -14702,6 +14702,7 @@
 		{
 			"ENG_name": "Elder Tempest",
 			"name": "古岚",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 121,
 			"otherSources": [
@@ -14713,7 +14714,6 @@
 			"size": [
 				"G"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -14903,6 +14903,9 @@
 		{
 			"ENG_name": "Enchanter Wizard",
 			"name": "惑控法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 261,
 			"otherSources": [
@@ -14914,9 +14917,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -15042,6 +15042,9 @@
 		{
 			"ENG_name": "Evoker Wizard",
 			"name": "塑能法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 262,
 			"otherSources": [
@@ -15053,9 +15056,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -15188,6 +15188,7 @@
 		{
 			"ENG_name": "Female Steeder",
 			"name": "雌性骑蛛",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 231,
 			"otherSources": [
@@ -15199,7 +15200,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -15296,6 +15296,7 @@
 		{
 			"ENG_name": "Fire Elemental Myrmidon",
 			"name": "火元素侍从",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 123,
 			"otherSources": [
@@ -15310,7 +15311,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -15410,7 +15410,7 @@
 				"path": "bestiary/fire-elemental-myrmidon.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"照明"
@@ -15441,6 +15441,7 @@
 		{
 			"ENG_name": "Fire Giant Dreadnought",
 			"name": "火巨人无畏者",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 124,
 			"otherSources": [
@@ -15452,7 +15453,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"L",
 				"E"
@@ -15463,7 +15463,7 @@
 					"ac": 21,
 					"from": [
 						"{@item 板甲|PHB|板甲}",
-						"{@item 盾牌|PHB|双持盾牌}"
+						"{@item 盾牌|phb|双持盾牌}"
 					]
 				}
 			],
@@ -15572,6 +15572,7 @@
 		{
 			"ENG_name": "Firenewt Warlock of Imix",
 			"name": "熔螈·伊米希魔契师",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 125,
 			"otherSources": [
@@ -15583,7 +15584,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N",
 				"E"
@@ -15688,7 +15688,7 @@
 				"幽暗地域"
 			],
 			"attachedItems": [
-				"钉头锤|PHB"
+				"钉头锤|phb"
 			],
 			"traitTags": [
 				"水陆两栖",
@@ -15724,6 +15724,7 @@
 		{
 			"ENG_name": "Firenewt Warrior",
 			"name": "火蝾螈武者",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 125,
 			"otherSources": [
@@ -15735,7 +15736,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -15813,7 +15813,7 @@
 				"path": "bestiary/firenewt-warrior.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -15843,6 +15843,7 @@
 		{
 			"ENG_name": "Flail Snail",
 			"name": "链枷蜗牛",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 126,
 			"otherSources": [
@@ -15854,7 +15855,6 @@
 			"size": [
 				"L"
 			],
-			"type": "elemental",
 			"alignment": [
 				"U"
 			],
@@ -15972,6 +15972,12 @@
 		{
 			"ENG_name": "Flind",
 			"name": "弗林德鬣狗人",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"鬣狗人"
+				]
+			},
 			"source": "MPMM",
 			"page": 127,
 			"otherSources": [
@@ -15983,12 +15989,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"鬣狗人"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -16028,7 +16028,7 @@
 			],
 			"passive": 15,
 			"languages": [
-				"鬣狗人",
+				"鬣狗语",
 				"深渊语"
 			],
 			"cr": "9",
@@ -16089,7 +16089,7 @@
 				"path": "bestiary/flind.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB"
+				"长弓|phb"
 			],
 			"senseTags": [
 				"D"
@@ -16127,6 +16127,12 @@
 		{
 			"ENG_name": "Fraz-Urb'luu",
 			"name": "弗拉兹厄鲁",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 129,
@@ -16139,12 +16145,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -16383,6 +16383,7 @@
 		{
 			"ENG_name": "Froghemoth",
 			"name": "沼喉怪",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 130,
 			"otherSources": [
@@ -16398,7 +16399,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -16532,6 +16532,7 @@
 		{
 			"ENG_name": "Frost Giant Everlasting One",
 			"name": "霜巨人永恒者",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 131,
 			"otherSources": [
@@ -16543,7 +16544,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -16654,7 +16654,7 @@
 				"path": "bestiary/frost-giant-everlasting-one.opus"
 			},
 			"attachedItems": [
-				"巨斧|PHB"
+				"巨斧|phb"
 			],
 			"traitTags": [
 				"再生"
@@ -16685,6 +16685,7 @@
 		{
 			"ENG_name": "Frost Salamander",
 			"name": "冰霜萨拉曼达",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 132,
 			"otherSources": [
@@ -16696,7 +16697,6 @@
 			"size": [
 				"H"
 			],
-			"type": "elemental",
 			"alignment": [
 				"U"
 			],
@@ -16821,6 +16821,12 @@
 		{
 			"ENG_name": "Gauth",
 			"name": "高斯眼魔",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"眼魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 133,
 			"otherSources": [
@@ -16832,12 +16838,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"眼魔"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -16926,50 +16926,50 @@
 								{
 									"ENG_name": "1: Devour Magic Ray",
 									"name": "1: 吞噬魔法射线",
+									"type": "item",
 									"entries": [
 										"目标必须成功通过{@dc 14}的敏捷豁免否则身上的一件魔法物品将失去其所有魔法属性，并持续至高斯眼魔下一回合开始前。如果该物件是一件充能物品，其将失去{@dice 1d4}的充能次数。随机选择受影响的物品，并忽略所有一次性物品如药水和卷轴。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "2: Enervation Ray",
 									"name": "2: 衰弱射线",
+									"type": "item",
 									"entries": [
 										"目标必须进行一次{@dc 14}的体质豁免，豁免失败则受到18（{@damage 4d8}）暗蚀伤害，豁免成功则只受到一半伤害。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "3: Fire Ray",
 									"name": "3: 火焰射线",
+									"type": "item",
 									"entries": [
 										"目标必须成功通过{@dc 14}的敏捷豁免否则受到22（{@damage 4d10}）火焰伤害。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "4: Paralyzing Ray",
 									"name": "4: 麻痹射线",
+									"type": "item",
 									"entries": [
 										"目标必须成功通过一个{@dc 14}的体质豁免否则被{@condition 麻痹}1分钟。目标在其每个回合结束时可以重复进行此豁免，豁免成功则终止其所承受的此效应。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "5: Pushing Ray",
 									"name": "5: 推压射线",
+									"type": "item",
 									"entries": [
 										"目标必须成功通过{@dc 14}的力量豁免否则被推离高斯眼魔最多15尺并且其速度减半直到高斯眼魔的下个回合开始。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "6: Sleep Ray",
 									"name": "6: 催眠射线",
+									"type": "item",
 									"entries": [
 										"目标必须成功通过一次{@dc 14}的感知豁免检定否则将陷入睡眠并保持{@condition 昏迷}状态1分钟。如果目标受到伤害，或者另一个生物用一个动作将其唤醒，目标就会醒来。该射线对构装生物和亡灵无效。"
-									],
-									"type": "item"
+									]
 								}
 							]
 						}
@@ -17021,6 +17021,12 @@
 		{
 			"ENG_name": "Gazer",
 			"name": "凝视者眼魔",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"眼魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 134,
 			"otherSources": [
@@ -17035,12 +17041,6 @@
 			"size": [
 				"T"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"眼魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -17111,34 +17111,34 @@
 								{
 									"ENG_name": "1: Dazing Ray",
 									"name": "1：眩晕射线",
+									"type": "item",
 									"entries": [
 										"目标生物必须成功通过{@dc 12}的感知豁免否则被{@condition 魅惑}直到凝视者眼魔的下个回合开始。当目标以此方式被{@condition 魅惑}时，其速度减半，且攻击检定具有劣势。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "2: Fear Ray",
 									"name": "2: 恐惧射线",
+									"type": "item",
 									"entries": [
 										"目标生物必须成功通过一次{@dc 12}的感知豁免，否则陷入{@condition 恐慌}状态直到凝视者眼魔的下个回合开始。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "3: Frost Ray",
 									"name": "3: 冷冻射线",
+									"type": "item",
 									"entries": [
-										"目标必须成功通过{@dc 12}的敏捷豁免否则受到10（{@damage 3d6}）点冷冻伤害。"
-									],
-									"type": "item"
+										"目标必须成功通过{@dc 12}的敏捷豁免否则受到10（{@damage 3d6}）点寒冷伤害。"
+									]
 								},
 								{
 									"ENG_name": "4: Telekinetic Ray",
 									"name": "4：念力射线",
+									"type": "item",
 									"entries": [
 										"如果目标是一个中型或更小的生物，它必须成功通过{@dc 12}的力量豁免否则被移动到距离凝视者眼魔30尺外。如果目标是一个没有被佩戴或携带的微型物体，凝视者眼魔将其移动到30尺内的任何方向上。凝视者眼魔也可以用此射线很好地控制目标物体，比如操作简单的工具或打开门或容器。"
-									],
-									"type": "item"
+									]
 								}
 							]
 						}
@@ -17212,6 +17212,12 @@
 		{
 			"ENG_name": "Geryon",
 			"name": "格殷永",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 136,
@@ -17224,12 +17230,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -17506,6 +17506,7 @@
 		{
 			"ENG_name": "Giant Strider",
 			"name": "阔步鸟",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 137,
 			"otherSources": [
@@ -17517,7 +17518,6 @@
 			"size": [
 				"L"
 			],
-			"type": "elemental",
 			"alignment": [
 				"U"
 			],
@@ -17602,6 +17602,7 @@
 		{
 			"ENG_name": "Giff",
 			"name": "诘弗人",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 138,
 			"otherSources": [
@@ -17616,7 +17617,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -17707,9 +17707,9 @@
 				"path": "bestiary/giff.opus"
 			},
 			"attachedItems": [
-				"长剑|PHB",
-				"滑膛枪|DMG",
-				"手枪|DMG"
+				"长剑|phb",
+				"滑膛枪|dmg",
+				"手枪|dmg"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -17742,6 +17742,7 @@
 		{
 			"ENG_name": "Girallon",
 			"name": "四臂猿怪",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 139,
 			"otherSources": [
@@ -17753,7 +17754,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -17843,6 +17843,13 @@
 		{
 			"ENG_name": "Githyanki Gish",
 			"name": "吉斯洋基吉什精锐",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"吉斯人",
+					"法师"
+				]
+			},
 			"source": "MPMM",
 			"page": 140,
 			"otherSources": [
@@ -17857,13 +17864,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"吉斯人",
-					"法师"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -17900,7 +17900,7 @@
 			},
 			"passive": 16,
 			"languages": [
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "10",
 			"spellcasting": [
@@ -17974,7 +17974,7 @@
 				"path": "bestiary/githyanki-gish.opus"
 			},
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -18013,6 +18013,12 @@
 		{
 			"ENG_name": "Githyanki Kith'rak",
 			"name": "吉斯洋基凯斯拉克中队长",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPMM",
 			"page": 140,
 			"otherSources": [
@@ -18024,12 +18030,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -18065,7 +18065,7 @@
 			},
 			"passive": 16,
 			"languages": [
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "12",
 			"spellcasting": [
@@ -18144,7 +18144,7 @@
 				"path": "bestiary/githyanki-kith_rak.opus"
 			},
 			"attachedItems": [
-				"巨剑|PHB"
+				"巨剑|phb"
 			],
 			"actionTags": [
 				"多重攻击",
@@ -18177,6 +18177,12 @@
 		{
 			"ENG_name": "Githyanki Supreme Commander",
 			"name": "吉斯洋基至高指挥官",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPMM",
 			"page": 141,
 			"otherSources": [
@@ -18188,12 +18194,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -18229,7 +18229,7 @@
 			},
 			"passive": 18,
 			"languages": [
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "14",
 			"spellcasting": [
@@ -18367,6 +18367,12 @@
 		{
 			"ENG_name": "Githzerai Anarch",
 			"name": "吉斯泽莱造物师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPMM",
 			"page": 142,
 			"otherSources": [
@@ -18378,12 +18384,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -18426,7 +18426,7 @@
 			},
 			"passive": 20,
 			"languages": [
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": {
 				"cr": "16",
@@ -18554,6 +18554,12 @@
 		{
 			"ENG_name": "Githzerai Enlightened",
 			"name": "吉斯泽莱开悟者",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPMM",
 			"page": 143,
 			"otherSources": [
@@ -18565,12 +18571,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -18608,7 +18608,7 @@
 			},
 			"passive": 18,
 			"languages": [
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "10",
 			"spellcasting": [
@@ -18714,6 +18714,7 @@
 		{
 			"ENG_name": "Gnoll Flesh Gnawer",
 			"name": "鬣狗人食腐者",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 144,
 			"otherSources": [
@@ -18725,7 +18726,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -18760,7 +18760,7 @@
 			],
 			"passive": 10,
 			"languages": [
-				"鬣狗人"
+				"鬣狗语"
 			],
 			"cr": "1",
 			"action": [
@@ -18813,7 +18813,7 @@
 				"path": "bestiary/gnoll-flesh-gnawer.opus"
 			},
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -18838,6 +18838,7 @@
 		{
 			"ENG_name": "Gnoll Hunter",
 			"name": "鬣狗人猎手",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 144,
 			"otherSources": [
@@ -18849,7 +18850,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -18885,7 +18885,7 @@
 			],
 			"passive": 13,
 			"languages": [
-				"鬣狗人"
+				"鬣狗语"
 			],
 			"cr": "1/2",
 			"action": [
@@ -18938,8 +18938,8 @@
 				"path": "bestiary/gnoll-hunter.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"矛|PHB"
+				"长弓|phb",
+				"矛|phb"
 			],
 			"senseTags": [
 				"D"
@@ -18966,6 +18966,7 @@
 		{
 			"ENG_name": "Gnoll Witherling",
 			"name": "鬣狗人凋零者",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 145,
 			"otherSources": [
@@ -18977,7 +18978,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -19107,6 +19107,7 @@
 		{
 			"ENG_name": "Gray Render",
 			"name": "灰袋兽",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 146,
 			"otherSources": [
@@ -19121,7 +19122,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"N"
@@ -19228,6 +19228,12 @@
 		{
 			"ENG_name": "Graz'zt",
 			"name": "格拉兹特",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 148,
@@ -19243,12 +19249,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -19473,6 +19473,12 @@
 		{
 			"ENG_name": "Green Abishai",
 			"name": "亚比莎绿龙魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 40,
 			"otherSources": [
@@ -19488,12 +19494,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -19677,6 +19677,7 @@
 		{
 			"ENG_name": "Grung",
 			"name": "格龙蛙人",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 149,
 			"otherSources": [
@@ -19688,7 +19689,6 @@
 			"size": [
 				"S"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -19726,7 +19726,7 @@
 				"中毒"
 			],
 			"languages": [
-				"格龙蛙人"
+				"格龙蛙人语"
 			],
 			"cr": "1/4",
 			"trait": [
@@ -19834,7 +19834,7 @@
 				"path": "bestiary/grung.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -19983,6 +19983,7 @@
 		{
 			"ENG_name": "Grung Elite Warrior",
 			"name": "格龙蛙人精英战士",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 150,
 			"otherSources": [
@@ -19994,7 +19995,6 @@
 			"size": [
 				"S"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -20032,7 +20032,7 @@
 				"中毒"
 			],
 			"languages": [
-				"格龙蛙人"
+				"格龙蛙人语"
 			],
 			"cr": "2",
 			"trait": [
@@ -20154,8 +20154,8 @@
 				"path": "bestiary/grung-elite-warrior.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB",
-				"短弓|PHB"
+				"匕首|phb",
+				"短弓|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -20307,6 +20307,7 @@
 		{
 			"ENG_name": "Grung Wildling",
 			"name": "格龙蛙人蛮荒祭司",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 150,
 			"otherSources": [
@@ -20318,7 +20319,6 @@
 			"size": [
 				"S"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -20361,7 +20361,7 @@
 				"中毒"
 			],
 			"languages": [
-				"格龙蛙人"
+				"格龙蛙人语"
 			],
 			"cr": "1",
 			"spellcasting": [
@@ -20500,8 +20500,8 @@
 				"path": "bestiary/grung-wildling.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB",
-				"短弓|PHB"
+				"匕首|phb",
+				"短弓|phb"
 			],
 			"traitTags": [
 				"水陆两栖"
@@ -20657,6 +20657,7 @@
 		{
 			"ENG_name": "Guard Drake",
 			"name": "守卫龙兽",
+			"type": "dragon",
 			"source": "MPMM",
 			"page": 151,
 			"otherSources": [
@@ -20668,7 +20669,6 @@
 			"size": [
 				"M"
 			],
-			"type": "dragon",
 			"alignment": [
 				"U"
 			],
@@ -20906,6 +20906,12 @@
 		{
 			"ENG_name": "Hadrosaurus",
 			"name": "鸭嘴龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 96,
 			"otherSources": [
@@ -20917,12 +20923,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -20981,6 +20981,7 @@
 		{
 			"ENG_name": "Hellfire Engine",
 			"name": "地狱火机车",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 152,
 			"otherSources": [
@@ -20992,7 +20993,6 @@
 			"size": [
 				"H"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"E"
@@ -21170,6 +21170,12 @@
 		{
 			"ENG_name": "Hobgoblin Devastator",
 			"name": "大地精破坏者",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"类地精"
+				]
+			},
 			"source": "MPMM",
 			"page": 153,
 			"otherSources": [
@@ -21181,12 +21187,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"类地精"
-				]
-			},
 			"alignment": [
 				"L",
 				"N"
@@ -21292,7 +21292,7 @@
 				"path": "bestiary/hobgoblin-devastator.opus"
 			},
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"senseTags": [
 				"D"
@@ -21333,6 +21333,12 @@
 		{
 			"ENG_name": "Hobgoblin Iron Shadow",
 			"name": "大地精铁影",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"类地精"
+				]
+			},
 			"source": "MPMM",
 			"page": 154,
 			"otherSources": [
@@ -21344,12 +21350,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"类地精"
-				]
-			},
 			"alignment": [
 				"L",
 				"N"
@@ -21463,7 +21463,7 @@
 				"path": "bestiary/hobgoblin-iron-shadow.opus"
 			},
 			"attachedItems": [
-				"飞镖|PHB"
+				"飞镖|phb"
 			],
 			"senseTags": [
 				"D"
@@ -21498,6 +21498,7 @@
 		{
 			"ENG_name": "Howler",
 			"name": "嚎兽",
+			"type": "fiend",
 			"source": "MPMM",
 			"page": 155,
 			"otherSources": [
@@ -21509,7 +21510,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"C",
 				"E"
@@ -21640,6 +21640,7 @@
 		{
 			"ENG_name": "Hungry Sorrowsworn",
 			"name": "饥饿之哀恸魔",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 223,
 			"otherSources": [
@@ -21651,7 +21652,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -21766,6 +21766,12 @@
 		{
 			"ENG_name": "Hutijin",
 			"name": "胡提金",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 157,
@@ -21778,12 +21784,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -21925,7 +21925,7 @@
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atk mw} 命中{@hit 15}，触及10尺，单一目标。{@h}17（{@damage 2d8 + 8}）冷冻伤害。"
+						"{@atk mw} 命中{@hit 15}，触及10尺，单一目标。{@h}17（{@damage 2d8 + 8}）寒冷伤害。"
 					]
 				},
 				{
@@ -21987,7 +21987,7 @@
 				"path": "bestiary/hutijin.opus"
 			},
 			"attachedItems": [
-				"硬头锤|PHB"
+				"硬头锤|phb"
 			],
 			"traitTags": [
 				"传奇抗性",
@@ -22053,6 +22053,12 @@
 		{
 			"ENG_name": "Hydroloth",
 			"name": "水生罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 158,
 			"otherSources": [
@@ -22064,12 +22070,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -22205,7 +22205,7 @@
 					"ENG_name": "Claw",
 					"name": "爪击",
 					"entries": [
-						"{@atk mw} 命中{@hit 9}，触及 5 尺，单一目标。{@h}14（{@damage 2d8 + 5}）力场伤害外加 9（{@damage 2d10}）心灵伤害。"
+						"{@atk mw} {@hit 9} 命中，触及 5 尺，一个目标。{@h}14 ({@damage 2d8 + 5}) 力场伤害外加 9 ({@damage 2d10}) 心灵伤害。"
 					]
 				},
 				{
@@ -22277,6 +22277,9 @@
 		{
 			"ENG_name": "Illusionist Wizard",
 			"name": "幻术法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 263,
 			"otherSources": [
@@ -22288,9 +22291,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -22415,6 +22415,12 @@
 		{
 			"ENG_name": "Juiblex",
 			"name": "朱庇莱克斯",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 160,
@@ -22427,12 +22433,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -22675,6 +22675,7 @@
 		{
 			"ENG_name": "Ki-rin",
 			"name": "麒麟",
+			"type": "celestial",
 			"source": "MPMM",
 			"page": 162,
 			"otherSources": [
@@ -22686,7 +22687,6 @@
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"G"
@@ -22891,6 +22891,7 @@
 		{
 			"ENG_name": "Kobold Dragonshield",
 			"name": "狗头人龙盾护卫",
+			"type": "dragon",
 			"source": "MPMM",
 			"page": 163,
 			"otherSources": [
@@ -22902,7 +22903,6 @@
 			"size": [
 				"S"
 			],
-			"type": "dragon",
 			"alignment": [
 				"A"
 			],
@@ -23002,7 +23002,7 @@
 				"path": "bestiary/kobold-dragonshield.opus"
 			},
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"集群战术",
@@ -23034,6 +23034,7 @@
 		{
 			"ENG_name": "Kobold Inventor",
 			"name": "狗头人发明家",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 164,
 			"otherSources": [
@@ -23045,7 +23046,6 @@
 			"size": [
 				"S"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -23117,66 +23117,66 @@
 								{
 									"ENG_name": "1: Acid",
 									"name": "1: 强酸",
+									"type": "item",
 									"entries": [
-										"狗头人投掷出一瓶{@item 强酸(小瓶装)|PHB|强酸瓶}。{@atk rw} 命中{@hit 4}，范围5/20尺，单一目标。{@h}7（{@damage 2d6}）强酸伤害。"
-									],
-									"type": "item"
+										"狗头人投掷出一瓶{@item 强酸 (小瓶)|PHB|强酸瓶}。{@atk rw} 命中{@hit 4}，范围5/20尺，单一目标。{@h}7（{@damage 2d6}）强酸伤害。"
+									]
 								},
 								{
 									"ENG_name": "2: Alchemist's Fire",
 									"name": "2：炽火胶",
+									"type": "item",
 									"entries": [
-										"狗头人丢出一瓶{@item 炽火胶(扁瓶装)|PHB|扁瓶炽火胶}。{@atk rw} 命中{@hit 4}，范围5/20尺，单一目标。{@h}目标每回合开始时2（{@damage 1d4}）火焰伤害。被命中生物可以使用一个动作进行一次{@dc 10}的敏捷检定以扑灭火焰来结束此伤害效应。"
-									],
-									"type": "item"
+										"狗头人丢出一瓶{@item 炽火胶 (扁瓶)|PHB|扁瓶炽火胶}。{@atk rw} 命中{@hit 4}，范围5/20尺，单一目标。{@h}目标每回合开始时2（{@damage 1d4}）火焰伤害。被命中生物可以使用一个动作进行一次{@dc 10}的敏捷检定以扑灭火焰来结束此伤害效应。"
+									]
 								},
 								{
 									"ENG_name": "3: Basket of Centipedes",
 									"name": "3: 蜈蚣篮子",
+									"type": "item",
 									"entries": [
 										"狗头人将一个小篮子丢到距其20尺内一个5尺立方的空间中。一个拥有11点生命值的{@creature 蜈蚣群||虫群（蜈蚣）}从篮子中出现并投掷先攻。在集群的每个回合结束时，都有{@chance 50}的概率使集群消散。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "4: Green Slime Pot",
 									"name": "4: 绿软泥罐",
+									"type": "item",
 									"entries": [
 										"狗头人将一个装满绿软泥的陶罐向其目标丢去，它会在撞击时破裂。{@atk rw}命中{@hit 4}，范围5/20尺，单一目标。{@h}5（{@damage 1d10}）强酸伤害，且目标被包复在软泥之中直到一个生物用一个动作将软泥刮除或洗刷掉。被包复在软泥之中的目标在其每回合开始时受到5（{@damage 1d10}）强酸伤害。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "5: Rot Grub Pot",
 									"name": "5：食腐蛆罐",
+									"type": "item",
 									"entries": [
 										"狗头人将一个陶罐丢到距其20尺内一个5尺立方的空间中，它会在撞击时破裂。一个{@creature 食腐蛆集群|MPMM}（在此书中）从破碎的陶罐中出现，并在该方格中作为危害物持续存在。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "6: Scorpion on a Stick",
 									"name": "6：棍上蝎",
+									"type": "item",
 									"entries": [
 										"狗头人用系在一根5尺杆上的{@creature 蝎子}发动一次近战攻击。{@atk mw} {@hit 4}+4，触及5尺，单一目标。{@h}1点穿刺伤害，且目标必须成功通过一次{@dc 9}的体质豁免，否则受到4（{@damage 1d8}）点毒素伤害，豁免成功则伤害减半。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "7: Skunk in a Cage",
 									"name": "7：笼中臭鼬",
+									"type": "item",
 									"entries": [
 										"狗头人在距其5尺内的一个未被占据的空间中释放一只臭鼬。臭鼬具有20尺移动速度，AC 10，1点生命值，且不能进行有效攻击。它掷先攻，并且在其回合用其动作朝距其5尺内的一个随机生物喷射麝香。目标必须成功通过一次{@dc 9}的体质豁免，否则会呕吐并陷入{@condition 失能}，持续1分钟。目标可以在其每个回合结束时重复该豁免，成功则结束此效应。不需要呼吸以及免疫毒素的生物在此豁免检定上自动成功。臭鼬一旦喷射了麝香，它在完成一次短休或长休前不能再次喷射。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "8: Wasp Nest in a Bag",
 									"name": "8：包中黄蜂窝",
+									"type": "item",
 									"entries": [
 										"狗头人将一个小包丢到距其20尺内一个5尺立方的空间中。一个拥有11点生命值的{@creature 黄蜂群||昆虫集群（黄蜂）}从包中出现并投掷先攻。在集群的每个回合结束时，都有{@chance 50}的概率使集群消散。"
-									],
-									"type": "item"
+									]
 								}
 							]
 						}
@@ -23195,8 +23195,8 @@
 				"path": "bestiary/kobold-inventor.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB",
-				"投石索|PHB"
+				"匕首|phb",
+				"投石索|phb"
 			],
 			"traitTags": [
 				"集群战术",
@@ -23236,6 +23236,7 @@
 		{
 			"ENG_name": "Kobold Scale Sorcerer",
 			"name": "狗头人鳞术士",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 165,
 			"otherSources": [
@@ -23247,7 +23248,6 @@
 			"size": [
 				"S"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -23359,7 +23359,7 @@
 				"path": "bestiary/kobold-scale-sorcerer.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"traitTags": [
 				"集群战术",
@@ -23401,6 +23401,7 @@
 		{
 			"ENG_name": "Korred",
 			"name": "考芮精",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 166,
 			"otherSources": [
@@ -23412,7 +23413,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"N"
@@ -23447,7 +23447,7 @@
 			},
 			"senses": [
 				"黑暗视觉 120 尺",
-				"颤动感知 120 尺"
+				"震颤感知 120 尺"
 			],
 			"passive": 15,
 			"resist": [
@@ -23541,7 +23541,7 @@
 				"path": "bestiary/korred.opus"
 			},
 			"attachedItems": [
-				"巨棒|PHB"
+				"巨棒|phb"
 			],
 			"traitTags": [
 				"伪装"
@@ -23594,6 +23594,7 @@
 		{
 			"ENG_name": "Kraken Priest",
 			"name": "克拉肯祭司",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 167,
 			"otherSources": [
@@ -23605,7 +23606,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -23757,6 +23757,7 @@
 		{
 			"ENG_name": "Kruthik Hive Lord",
 			"name": "地刺虫巢穴领主",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 169,
 			"otherSources": [
@@ -23768,7 +23769,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -23804,7 +23804,7 @@
 			],
 			"passive": 18,
 			"languages": [
-				"地刺虫"
+				"地刺虫语"
 			],
 			"cr": "5",
 			"trait": [
@@ -23896,6 +23896,7 @@
 		{
 			"ENG_name": "Leucrotta",
 			"name": "血糜兽",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 170,
 			"otherSources": [
@@ -23907,7 +23908,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -23944,7 +23944,7 @@
 			"passive": 15,
 			"languages": [
 				"深渊语",
-				"鬣狗人"
+				"鬣狗语"
 			],
 			"cr": "3",
 			"trait": [
@@ -24036,6 +24036,7 @@
 		{
 			"ENG_name": "Leviathan",
 			"name": "利维坦",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 171,
 			"otherSources": [
@@ -24047,7 +24048,6 @@
 			"size": [
 				"G"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -24219,6 +24219,7 @@
 		{
 			"ENG_name": "Lonely Sorrowsworn",
 			"name": "孤独之哀恸魔",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 223,
 			"otherSources": [
@@ -24233,7 +24234,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -24360,6 +24360,7 @@
 		{
 			"ENG_name": "Lost Sorrowsworn",
 			"name": "迷失之哀恸魔",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 224,
 			"otherSources": [
@@ -24375,7 +24376,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -24497,6 +24497,7 @@
 		{
 			"ENG_name": "Male Steeder",
 			"name": "雄性骑蛛",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 231,
 			"otherSources": [
@@ -24508,7 +24509,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -24604,6 +24604,7 @@
 		{
 			"ENG_name": "Martial Arts Adept",
 			"name": "武术高手",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 172,
 			"otherSources": [
@@ -24615,7 +24616,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -24717,7 +24717,7 @@
 				"path": "bestiary/martial-arts-adept.opus"
 			},
 			"attachedItems": [
-				"飞镖|PHB"
+				"飞镖|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -24749,6 +24749,12 @@
 		{
 			"ENG_name": "Marut",
 			"name": "猎杀者",
+			"type": {
+				"type": "construct",
+				"tags": [
+					"制裁者"
+				]
+			},
 			"source": "MPMM",
 			"page": 173,
 			"otherSources": [
@@ -24763,12 +24769,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "construct",
-				"tags": [
-					"制裁者"
-				]
-			},
 			"alignment": [
 				"L",
 				"N"
@@ -24956,6 +24956,7 @@
 		{
 			"ENG_name": "Master Thief",
 			"name": "盗贼大师",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 174,
 			"otherSources": [
@@ -24967,7 +24968,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -25066,8 +25066,8 @@
 				"path": "bestiary/master-thief.opus"
 			},
 			"attachedItems": [
-				"短弓|PHB",
-				"短剑|PHB"
+				"短弓|phb",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -25094,6 +25094,12 @@
 		{
 			"ENG_name": "Maurezhi",
 			"name": "食尸魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 175,
 			"otherSources": [
@@ -25105,12 +25111,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -25261,6 +25261,12 @@
 		{
 			"ENG_name": "Maw Demon",
 			"name": "巨口魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 176,
 			"otherSources": [
@@ -25275,12 +25281,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -25379,6 +25379,7 @@
 		{
 			"ENG_name": "Meazel",
 			"name": "米泽尔",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 177,
 			"otherSources": [
@@ -25390,7 +25391,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -25472,7 +25472,7 @@
 				"path": "bestiary/meazel.opus"
 			},
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"senseTags": [
 				"SD"
@@ -25499,6 +25499,7 @@
 		{
 			"ENG_name": "Meenlock",
 			"name": "凌弱怪",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 178,
 			"otherSources": [
@@ -25510,7 +25511,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"N",
 				"E"
@@ -25626,6 +25626,12 @@
 		{
 			"ENG_name": "Merregon",
 			"name": "军团魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 179,
 			"otherSources": [
@@ -25640,12 +25646,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -25754,8 +25754,8 @@
 				"path": "bestiary/merregon.opus"
 			},
 			"attachedItems": [
-				"长戟|PHB",
-				"重弩|PHB"
+				"长戟|phb",
+				"重弩|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -25790,6 +25790,12 @@
 		{
 			"ENG_name": "Merrenoloth",
 			"name": "引渡罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 180,
 			"otherSources": [
@@ -25801,12 +25807,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -26001,6 +26001,7 @@
 		{
 			"ENG_name": "Mindwitness",
 			"name": "证心者",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 181,
 			"otherSources": [
@@ -26012,7 +26013,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"N"
@@ -26107,51 +26107,51 @@
 								{
 									"ENG_name": "1: Aversion Ray",
 									"name": "1：厌恶射线",
+									"type": "item",
 									"entries": [
 										"目标生物必须进行一次{@dc 13}的魅力豁免。豁免失败时目标在攻击检定上将具有劣势，持续1分钟。目标可以在每个自己回合结束时重复豁免，成功则结束对自己的效果。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "2: Fear Ray",
 									"name": "2: 恐惧射线",
+									"type": "item",
 									"entries": [
 										"目标生物必须成功通过{@dc 13}的感知豁免否则陷入{@condition 恐慌}状态1分钟。目标可以在其每回合结束时重复豁免，豁免成功则结束此效应。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "3: Psychic Ray",
 									"name": "3: 心灵射线",
+									"type": "item",
 									"entries": [
 										"目标必须成功通过{@dc 13}的智力豁免，否则受到27（{@damage 6d8}）点心灵伤害。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "4: Slowing Ray",
 									"name": "4: 缓慢射线",
+									"type": "item",
 									"entries": [
 										"目标生物必须进行一次{@dc 13}的敏捷豁免。豁免失败时，目标的速度减半，持续1分钟。此外，该生物不能采取反应，它在自己的回合里可以采取行动或附赠行动，但不能同时进行。该生物可以在自己的每个回合结束时重复豁免，成功则结束对自己的效果。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "5: Stunning Ray",
 									"name": "5: 震慑射线",
+									"type": "item",
 									"entries": [
 										"目标生物必须成功通过{@dc 13}的体质豁免否则被{@condition 震慑}1分钟。该生物可以在自己的每个回合结束时重复豁免，成功则结束对自己的效果。"
-									],
-									"type": "item"
+									]
 								},
 								{
 									"ENG_name": "6: Telekinetic Ray",
 									"name": "6: 念力射线",
+									"type": "item",
 									"entries": [
 										"如果目标是一个生物，它必须进行一次{@dc 13}的力量豁免。豁免失败时，证心者将其移动到30尺内的任何方向上，并且受射线{@condition 束缚}直到证心者的下个回合开始或者证心者{@condition 失能}。",
 										"如果目标是一个重量小于300磅的物体，且没有被佩戴或携带，则被念力移动到30尺内的任意方向上。证心者也可以用此射线很好地控制目标物体，比如操作简单的工具或打开门扉或容器。"
-									],
-									"type": "item"
+									]
 								}
 							]
 						}
@@ -26206,6 +26206,12 @@
 		{
 			"ENG_name": "Moloch",
 			"name": "摩洛克",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 183,
@@ -26218,12 +26224,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -26465,6 +26465,12 @@
 		{
 			"ENG_name": "Molydeus",
 			"name": "狼蛇魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 184,
 			"otherSources": [
@@ -26476,12 +26482,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -26717,6 +26717,7 @@
 		{
 			"ENG_name": "Morkoth",
 			"name": "莫克鱼怪",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 186,
 			"otherSources": [
@@ -26728,7 +26729,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -26918,6 +26918,12 @@
 		{
 			"ENG_name": "Mouth of Grolantor",
 			"name": "葛洛兰托之口",
+			"type": {
+				"type": "giant",
+				"tags": [
+					"山丘巨人"
+				]
+			},
 			"source": "MPMM",
 			"page": 187,
 			"otherSources": [
@@ -26929,12 +26935,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "giant",
-				"tags": [
-					"山丘巨人"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -27054,6 +27054,12 @@
 		{
 			"ENG_name": "Nabassu",
 			"name": "掠魂魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 188,
 			"otherSources": [
@@ -27065,12 +27071,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -27228,6 +27228,12 @@
 		{
 			"ENG_name": "Nagpa",
 			"name": "那加帕",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"法师"
+				]
+			},
 			"source": "MPMM",
 			"page": 189,
 			"otherSources": [
@@ -27239,12 +27245,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"法师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -27424,6 +27424,12 @@
 		{
 			"ENG_name": "Narzugon",
 			"name": "魇骑魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 190,
 			"otherSources": [
@@ -27438,12 +27444,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -27605,6 +27605,9 @@
 		{
 			"ENG_name": "Necromancer Wizard",
 			"name": "死灵法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 264,
 			"otherSources": [
@@ -27619,9 +27622,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -27764,6 +27764,7 @@
 		{
 			"ENG_name": "Neogi",
 			"name": "纽吉怪",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 192,
 			"otherSources": [
@@ -27778,7 +27779,6 @@
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -27913,6 +27913,7 @@
 		{
 			"ENG_name": "Neogi Hatchling",
 			"name": "纽吉怪幼体",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 191,
 			"otherSources": [
@@ -27927,7 +27928,6 @@
 			"size": [
 				"T"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -28014,6 +28014,12 @@
 		{
 			"ENG_name": "Neogi Master",
 			"name": "纽吉怪尊主",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 192,
 			"otherSources": [
@@ -28028,12 +28034,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -28231,6 +28231,7 @@
 		{
 			"ENG_name": "Neothelid",
 			"name": "夺心巨虫",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 193,
 			"otherSources": [
@@ -28242,7 +28243,6 @@
 			"size": [
 				"G"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -28392,6 +28392,7 @@
 		{
 			"ENG_name": "Nightwalker",
 			"name": "伏行夜影",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 194,
 			"otherSources": [
@@ -28403,7 +28404,6 @@
 			"size": [
 				"H"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -28552,6 +28552,12 @@
 		{
 			"ENG_name": "Nilbog",
 			"name": "林布哥",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"类地精"
+				]
+			},
 			"source": "MPMM",
 			"page": 195,
 			"otherSources": [
@@ -28563,12 +28569,6 @@
 			"size": [
 				"S"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"类地精"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -28714,6 +28714,12 @@
 		{
 			"ENG_name": "Nupperibo",
 			"name": "臃肿魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 196,
 			"otherSources": [
@@ -28728,12 +28734,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -28838,6 +28838,7 @@
 		{
 			"ENG_name": "Oblex Spawn",
 			"name": "蚀心软泥幼体",
+			"type": "ooze",
 			"source": "MPMM",
 			"page": 197,
 			"otherSources": [
@@ -28849,7 +28850,6 @@
 			"size": [
 				"T"
 			],
-			"type": "ooze",
 			"alignment": [
 				"L",
 				"E"
@@ -28945,6 +28945,7 @@
 		{
 			"ENG_name": "Ogre Battering Ram",
 			"name": "食人魔攻城锤",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 200,
 			"otherSources": [
@@ -28956,7 +28957,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -28966,7 +28966,7 @@
 				{
 					"ac": 11,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -29061,6 +29061,7 @@
 		{
 			"ENG_name": "Ogre Bolt Launcher",
 			"name": "食人魔弩炮手",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 200,
 			"otherSources": [
@@ -29072,7 +29073,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -29082,7 +29082,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -29154,6 +29154,7 @@
 		{
 			"ENG_name": "Ogre Chain Brute",
 			"name": "食人魔链斗士",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 201,
 			"otherSources": [
@@ -29165,7 +29166,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -29175,7 +29175,7 @@
 				{
 					"ac": 11,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -29261,6 +29261,7 @@
 		{
 			"ENG_name": "Ogre Howdah",
 			"name": "食人魔轿舆",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 201,
 			"otherSources": [
@@ -29272,7 +29273,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -29282,7 +29282,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 胸甲|PHB}, {@item 盾牌|PHB}"
+						"{@item 胸甲|phb}, {@item 盾牌|phb}"
 					]
 				}
 			],
@@ -29336,7 +29336,7 @@
 				"path": "bestiary/ogre-howdah.opus"
 			},
 			"attachedItems": [
-				"硬头锤|PHB"
+				"硬头锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -29359,6 +29359,12 @@
 		{
 			"ENG_name": "Oinoloth",
 			"name": "欧诺罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 202,
 			"otherSources": [
@@ -29370,12 +29376,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -29579,6 +29579,12 @@
 		{
 			"ENG_name": "Orcus",
 			"name": "奥喀斯",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 204,
@@ -29591,12 +29597,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -29714,7 +29714,7 @@
 							"{@spell 律令死亡}"
 						]
 					},
-					"chargesItem": "奥喀斯之杖|DMG",
+					"chargesItem": "奥喀斯之杖|dmg",
 					"displayAs": "action"
 				}
 			],
@@ -29811,7 +29811,7 @@
 				"source": "MPMM"
 			},
 			"attachedItems": [
-				"奥喀斯之杖|DMG"
+				"奥喀斯之杖|dmg"
 			],
 			"traitTags": [
 				"传奇抗性",
@@ -29857,6 +29857,12 @@
 		{
 			"ENG_name": "Orthon",
 			"name": "追猎魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 205,
 			"otherSources": [
@@ -29871,12 +29877,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -29886,7 +29886,7 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item 半身板甲|PHB|半身板甲}"
+						"{@item 半身板甲|phb|半身板甲}"
 					]
 				}
 			],
@@ -30084,6 +30084,12 @@
 		{
 			"ENG_name": "Ox",
 			"name": "公牛",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"牛"
+				]
+			},
 			"source": "MPMM",
 			"page": 72,
 			"otherSources": [
@@ -30095,12 +30101,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"牛"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -30163,6 +30163,7 @@
 		{
 			"ENG_name": "Phoenix",
 			"name": "菲涅克斯",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 206,
 			"otherSources": [
@@ -30177,7 +30178,6 @@
 			"size": [
 				"G"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -30364,6 +30364,12 @@
 		{
 			"ENG_name": "Quetzalcoatlus",
 			"name": "风神翼龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 96,
 			"otherSources": [
@@ -30375,12 +30381,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -30454,6 +30454,7 @@
 		{
 			"ENG_name": "Quickling",
 			"name": "快可灵",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 207,
 			"otherSources": [
@@ -30465,7 +30466,6 @@
 			"size": [
 				"T"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"E"
@@ -30542,7 +30542,7 @@
 				"path": "bestiary/quickling.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"senseTags": [
 				"D"
@@ -30570,6 +30570,12 @@
 		{
 			"ENG_name": "Red Abishai",
 			"name": "亚比莎红龙魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 40,
 			"otherSources": [
@@ -30585,12 +30591,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -30764,6 +30764,7 @@
 		{
 			"ENG_name": "Redcap",
 			"name": "红帽子",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 208,
 			"otherSources": [
@@ -30775,7 +30776,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"E"
@@ -30894,6 +30894,7 @@
 		{
 			"ENG_name": "Retriever",
 			"name": "猎魔蛛",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 209,
 			"otherSources": [
@@ -30905,7 +30906,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"E"
@@ -31089,6 +31089,7 @@
 		{
 			"ENG_name": "Rot Troll",
 			"name": "腐朽巨魔",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 247,
 			"otherSources": [
@@ -31100,7 +31101,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -31208,6 +31208,12 @@
 		{
 			"ENG_name": "Rutterkin",
 			"name": "畸魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 210,
 			"otherSources": [
@@ -31219,12 +31225,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -31319,6 +31319,7 @@
 		{
 			"ENG_name": "Sacred Statue",
 			"name": "圣灵塑像",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 114,
 			"otherSources": [
@@ -31330,7 +31331,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				{
 					"special": "如同圣灵幻影的阵营"
@@ -31479,6 +31479,7 @@
 		{
 			"ENG_name": "Sea Spawn",
 			"name": "海嗣",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 211,
 			"otherSources": [
@@ -31490,7 +31491,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -31630,6 +31630,12 @@
 		{
 			"ENG_name": "Shadar-kai Gloom Weaver",
 			"name": "影灵幽暗编织者",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 213,
 			"otherSources": [
@@ -31641,12 +31647,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -31807,6 +31807,12 @@
 		{
 			"ENG_name": "Shadar-kai Shadow Dancer",
 			"name": "影灵影舞者",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 213,
 			"otherSources": [
@@ -31818,12 +31824,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -31981,6 +31981,12 @@
 		{
 			"ENG_name": "Shadar-kai Soul Monger",
 			"name": "影灵灵魂贩子",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 214,
 			"otherSources": [
@@ -31992,12 +31998,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -32181,6 +32181,7 @@
 		{
 			"ENG_name": "Shadow Mastiff",
 			"name": "阴影獒犬",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 215,
 			"otherSources": [
@@ -32192,7 +32193,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -32299,6 +32299,7 @@
 		{
 			"ENG_name": "Shadow Mastiff Alpha",
 			"name": "阴影獒犬首领",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 215,
 			"otherSources": [
@@ -32310,7 +32311,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -32425,6 +32425,12 @@
 		{
 			"ENG_name": "Shoosuva",
 			"name": "驱逐魔犬(苏苏瓦魔犬)",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 216,
 			"otherSources": [
@@ -32439,12 +32445,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -32495,7 +32495,7 @@
 			],
 			"languages": [
 				"深渊语",
-				"鬣狗人",
+				"鬣狗语",
 				"心灵感应 120 尺"
 			],
 			"cr": "8",
@@ -32573,6 +32573,12 @@
 		{
 			"ENG_name": "Sibriex",
 			"name": "巨颅魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 217,
 			"otherSources": [
@@ -32584,12 +32590,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -32926,6 +32926,7 @@
 		{
 			"ENG_name": "Skulk",
 			"name": "潜伏者",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 219,
 			"otherSources": [
@@ -32937,7 +32938,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"N"
@@ -33066,6 +33066,12 @@
 		{
 			"ENG_name": "Skull Lord",
 			"name": "骸骨之主",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"术士"
+				]
+			},
 			"source": "MPMM",
 			"page": 220,
 			"otherSources": [
@@ -33080,12 +33086,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "undead",
-				"tags": [
-					"术士"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -33305,6 +33305,7 @@
 		{
 			"ENG_name": "Slithering Tracker",
 			"name": "蠕行追迹者",
+			"type": "ooze",
 			"source": "MPMM",
 			"page": 221,
 			"otherSources": [
@@ -33316,7 +33317,6 @@
 			"size": [
 				"M"
 			],
-			"type": "ooze",
 			"alignment": [
 				"C",
 				"E"
@@ -33466,6 +33466,7 @@
 		{
 			"ENG_name": "Spawn of Kyuss",
 			"name": "凯沃斯幼虫",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 225,
 			"otherSources": [
@@ -33480,7 +33481,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -33607,6 +33607,7 @@
 		{
 			"ENG_name": "Spirit Troll",
 			"name": "灵体巨魔",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 247,
 			"otherSources": [
@@ -33618,7 +33619,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -33763,6 +33763,12 @@
 		{
 			"ENG_name": "Spring Eladrin",
 			"name": "春之雅灵",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 116,
 			"otherSources": [
@@ -33774,12 +33780,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -33902,8 +33902,8 @@
 				"path": "bestiary/spring-eladrin.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -33953,6 +33953,7 @@
 		{
 			"ENG_name": "Star Spawn Grue",
 			"name": "星之子战栗者",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 227,
 			"otherSources": [
@@ -33967,7 +33968,6 @@
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -34048,6 +34048,7 @@
 		{
 			"ENG_name": "Star Spawn Hulk",
 			"name": "星之子巨怪",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 227,
 			"otherSources": [
@@ -34062,7 +34063,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -34188,6 +34188,7 @@
 		{
 			"ENG_name": "Star Spawn Larva Mage",
 			"name": "星之子蠕虫法师",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 228,
 			"otherSources": [
@@ -34202,7 +34203,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -34411,6 +34411,7 @@
 		{
 			"ENG_name": "Star Spawn Mangler",
 			"name": "星之子切裂者",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 229,
 			"otherSources": [
@@ -34425,7 +34426,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -34549,6 +34549,7 @@
 		{
 			"ENG_name": "Star Spawn Seer",
 			"name": "星之子先知",
+			"type": "aberration",
 			"source": "MPMM",
 			"page": 230,
 			"otherSources": [
@@ -34563,7 +34564,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -34721,6 +34721,7 @@
 		{
 			"ENG_name": "Steel Predator",
 			"name": "钢铁掠夺者",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 232,
 			"otherSources": [
@@ -34732,7 +34733,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -34918,6 +34918,12 @@
 		{
 			"ENG_name": "Stegosaurus",
 			"name": "剑龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 96,
 			"otherSources": [
@@ -34932,12 +34938,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -34995,6 +34995,12 @@
 		{
 			"ENG_name": "Stench Kow",
 			"name": "恶臭野牛",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"牛"
+				]
+			},
 			"source": "MPMM",
 			"page": 72,
 			"otherSources": [
@@ -35009,12 +35015,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"牛"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -35091,6 +35091,7 @@
 		{
 			"ENG_name": "Stone Cursed",
 			"name": "岩石诅咒者",
+			"type": "construct",
 			"source": "MPMM",
 			"page": 233,
 			"otherSources": [
@@ -35102,7 +35103,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"E"
@@ -35144,7 +35144,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "1",
 			"trait": [
@@ -35215,6 +35215,7 @@
 		{
 			"ENG_name": "Stone Giant Dreamwalker",
 			"name": "石巨人梦行者",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 234,
 			"otherSources": [
@@ -35226,7 +35227,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"N"
@@ -35324,7 +35324,7 @@
 				"path": "bestiary/stone-giant-dreamwalker.opus"
 			},
 			"attachedItems": [
-				"巨棒|PHB"
+				"巨棒|phb"
 			],
 			"senseTags": [
 				"D"
@@ -35362,6 +35362,7 @@
 		{
 			"ENG_name": "Storm Giant Quintessent",
 			"name": "风暴巨人升华者",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 235,
 			"otherSources": [
@@ -35373,7 +35374,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"G"
@@ -35553,6 +35553,12 @@
 		{
 			"ENG_name": "Summer Eladrin",
 			"name": "夏之雅灵",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 116,
 			"otherSources": [
@@ -35564,12 +35570,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -35679,8 +35679,8 @@
 				"path": "bestiary/summer-eladrin.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -35721,6 +35721,10 @@
 		{
 			"ENG_name": "Swarm of Cranium Rats",
 			"name": "颅鼠集群",
+			"type": {
+				"type": "aberration",
+				"swarmSize": "T"
+			},
 			"source": "MPMM",
 			"page": 83,
 			"otherSources": [
@@ -35732,10 +35736,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"swarmSize": "T"
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -35876,6 +35876,10 @@
 		{
 			"ENG_name": "Swarm of Rot Grubs",
 			"name": "食腐蛆集群",
+			"type": {
+				"type": "beast",
+				"swarmSize": "T"
+			},
 			"source": "MPMM",
 			"page": 237,
 			"otherSources": [
@@ -35890,10 +35894,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "beast",
-				"swarmSize": "T"
-			},
 			"alignment": [
 				"U"
 			],
@@ -35984,6 +35984,7 @@
 		{
 			"ENG_name": "Swashbuckler",
 			"name": "剑客",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 238,
 			"otherSources": [
@@ -35995,7 +35996,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -36081,8 +36081,8 @@
 				"path": "bestiary/swashbuckler.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB",
-				"刺剑|PHB"
+				"匕首|phb",
+				"刺剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -36107,6 +36107,7 @@
 		{
 			"ENG_name": "Sword Wraith Commander",
 			"name": "剑魂指挥官",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 239,
 			"otherSources": [
@@ -36121,7 +36122,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -36178,7 +36178,7 @@
 				"昏迷"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "8",
 			"trait": [
@@ -36209,7 +36209,7 @@
 					"ENG_name": "Longsword",
 					"name": "长剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}8（{@damage 1d8 + 4}）挥砍伤害，或双手使用时9（{@damage 1d10 + 4}）挥砍伤害。"
+						"{@atk mw} 命中{@hit 7}，触及5尺，单一目标。{@h}8 ({@damage 1d8 + 4}) 挥砍伤害，或者双手使用时9 ({@damage 1d10 + 4}) 挥砍伤害。"
 					]
 				},
 				{
@@ -36245,8 +36245,8 @@
 				"path": "bestiary/sword-wraith-commander.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"驱散抗性",
@@ -36278,6 +36278,7 @@
 		{
 			"ENG_name": "Sword Wraith Warrior",
 			"name": "剑魂武者",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 239,
 			"otherSources": [
@@ -36292,7 +36293,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -36346,7 +36346,7 @@
 				"昏迷"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "3",
 			"trait": [
@@ -36392,8 +36392,8 @@
 				"path": "bestiary/sword-wraith-warrior.opus"
 			},
 			"attachedItems": [
-				"战斧|PHB",
-				"长弓|PHB"
+				"战斧|phb",
+				"长弓|phb"
 			],
 			"traitTags": [
 				"非凡本质"
@@ -36421,6 +36421,12 @@
 		{
 			"ENG_name": "Tanarukk",
 			"name": "塔那罗克",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 240,
 			"otherSources": [
@@ -36432,12 +36438,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -36542,7 +36542,7 @@
 				"path": "bestiary/tanarukk.opus"
 			},
 			"attachedItems": [
-				"巨剑|PHB"
+				"巨剑|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -36573,6 +36573,7 @@
 		{
 			"ENG_name": "Thorny Vegepygmy",
 			"name": "荆棘孢子兽",
+			"type": "plant",
 			"source": "MPMM",
 			"page": 253,
 			"otherSources": [
@@ -36584,7 +36585,6 @@
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"N"
 			],
@@ -36683,6 +36683,12 @@
 		{
 			"ENG_name": "Titivilus",
 			"name": "提提维鲁斯",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 242,
@@ -36695,12 +36701,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -36946,6 +36946,7 @@
 		{
 			"ENG_name": "Tlincalli",
 			"name": "特琳卡利蝎人",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 242,
 			"otherSources": [
@@ -36957,7 +36958,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N"
 			],
@@ -36993,7 +36993,7 @@
 			],
 			"passive": 14,
 			"languages": [
-				"特琳卡利蝎人"
+				"特琳卡利蝎人语"
 			],
 			"cr": "5",
 			"action": [
@@ -37034,7 +37034,7 @@
 				"path": "bestiary/tlincalli.opus"
 			},
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -37071,6 +37071,7 @@
 		{
 			"ENG_name": "Tortle",
 			"name": "龟人",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 244,
 			"otherSources": [
@@ -37082,7 +37083,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -37164,8 +37164,8 @@
 				"path": "bestiary/tortle.opus"
 			},
 			"attachedItems": [
-				"轻弩|PHB",
-				"矛|PHB"
+				"轻弩|phb",
+				"矛|phb"
 			],
 			"traitTags": [
 				"屏息"
@@ -37192,6 +37192,7 @@
 		{
 			"ENG_name": "Tortle Druid",
 			"name": "龟人德鲁伊",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 244,
 			"otherSources": [
@@ -37203,7 +37204,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -37345,6 +37345,9 @@
 		{
 			"ENG_name": "Transmuter Wizard",
 			"name": "变化法师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 265,
 			"otherSources": [
@@ -37356,9 +37359,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -37450,7 +37450,7 @@
 								},
 								{
 									"ENG_name": "Resistance",
-									"name": "抵抗术",
+									"name": "抗性",
 									"type": "item",
 									"entry": "变化师获得对强酸、寒冷、火焰、闪电或雷鸣伤害之一的抗性（每当变化师选择该增益时自选一种伤害类型）。"
 								},
@@ -37526,6 +37526,7 @@
 		{
 			"ENG_name": "Trapper",
 			"name": "诱陷者",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 245,
 			"otherSources": [
@@ -37537,7 +37538,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -37631,6 +37631,12 @@
 		{
 			"ENG_name": "Ulitharid",
 			"name": "噬魂怪",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"夺心魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 249,
 			"otherSources": [
@@ -37642,12 +37648,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"夺心魔"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -37657,7 +37657,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 胸甲|PHB}"
+						"{@item 胸甲|phb}"
 					]
 				}
 			],
@@ -37832,6 +37832,7 @@
 		{
 			"ENG_name": "Vampiric Mist",
 			"name": "吸血鬼迷雾",
+			"type": "undead",
 			"source": "MPMM",
 			"page": 250,
 			"otherSources": [
@@ -37847,7 +37848,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -38001,6 +38001,7 @@
 		{
 			"ENG_name": "Vargouille",
 			"name": "飞头蛮",
+			"type": "fiend",
 			"source": "MPMM",
 			"page": 251,
 			"otherSources": [
@@ -38015,7 +38016,6 @@
 			"size": [
 				"T"
 			],
-			"type": "fiend",
 			"alignment": [
 				"C",
 				"E"
@@ -38122,6 +38122,7 @@
 		{
 			"ENG_name": "Vegepygmy",
 			"name": "孢子人",
+			"type": "plant",
 			"source": "MPMM",
 			"page": 252,
 			"otherSources": [
@@ -38133,7 +38134,6 @@
 			"size": [
 				"S"
 			],
-			"type": "plant",
 			"alignment": [
 				"N"
 			],
@@ -38216,7 +38216,7 @@
 				"path": "bestiary/vegepygmy.opus"
 			},
 			"attachedItems": [
-				"投石索|PHB"
+				"投石索|phb"
 			],
 			"traitTags": [
 				"伪装",
@@ -38243,6 +38243,7 @@
 		{
 			"ENG_name": "Vegepygmy Chief",
 			"name": "孢子人领主",
+			"type": "plant",
 			"source": "MPMM",
 			"page": 253,
 			"otherSources": [
@@ -38254,7 +38255,6 @@
 			"size": [
 				"S"
 			],
-			"type": "plant",
 			"alignment": [
 				"N"
 			],
@@ -38351,7 +38351,7 @@
 				"path": "bestiary/vegepygmy-chief.opus"
 			},
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"traitTags": [
 				"伪装",
@@ -38391,6 +38391,12 @@
 		{
 			"ENG_name": "Velociraptor",
 			"name": "伶盗龙",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
 			"source": "MPMM",
 			"page": 96,
 			"otherSources": [
@@ -38402,12 +38408,6 @@
 			"size": [
 				"T"
 			],
-			"type": {
-				"type": "beast",
-				"tags": [
-					"恐龙"
-				]
-			},
 			"alignment": [
 				"U"
 			],
@@ -38496,6 +38496,7 @@
 		{
 			"ENG_name": "Venom Troll",
 			"name": "毒液巨魔",
+			"type": "giant",
 			"source": "MPMM",
 			"page": 248,
 			"otherSources": [
@@ -38507,7 +38508,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -38640,6 +38640,12 @@
 		{
 			"ENG_name": "War Priest",
 			"name": "战争祭司",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"牧师"
+				]
+			},
 			"source": "MPMM",
 			"page": 254,
 			"otherSources": [
@@ -38651,12 +38657,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"牧师"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -38664,7 +38664,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|PHB|板甲}"
+						"{@item 板甲|phb|板甲}"
 					]
 				}
 			],
@@ -38764,7 +38764,7 @@
 				"path": "bestiary/war-priest.opus"
 			},
 			"attachedItems": [
-				"巨锤|PHB"
+				"巨锤|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -38810,6 +38810,9 @@
 		{
 			"ENG_name": "Warlock of the Archfey",
 			"name": "至高妖精魔契师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 255,
 			"otherSources": [
@@ -38821,9 +38824,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -38938,7 +38938,7 @@
 				"path": "bestiary/warlock-of-the-archfey.opus"
 			},
 			"attachedItems": [
-				"刺剑|PHB"
+				"刺剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -38980,6 +38980,9 @@
 		{
 			"ENG_name": "Warlock of the Fiend",
 			"name": "邪魔宗主魔契师",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 255,
 			"otherSources": [
@@ -38991,9 +38994,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -39114,7 +39114,7 @@
 				"path": "bestiary/warlock-of-the-fiend.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"senseTags": [
 				"D"
@@ -39159,6 +39159,7 @@
 		{
 			"ENG_name": "Warlock of the Great Old One",
 			"name": "旧日支配者魔契师",
+			"type": "humanoid",
 			"source": "MPMM",
 			"page": 256,
 			"otherSources": [
@@ -39173,7 +39174,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -39290,7 +39290,7 @@
 				"path": "bestiary/warlock-of-the-great-old-one.opus"
 			},
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"senseTags": [
 				"D"
@@ -39337,6 +39337,9 @@
 		{
 			"ENG_name": "Warlord",
 			"name": "督军",
+			"type": {
+				"type": "humanoid"
+			},
 			"source": "MPMM",
 			"page": 257,
 			"otherSources": [
@@ -39348,9 +39351,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid"
-			},
 			"alignment": [
 				"A"
 			],
@@ -39358,7 +39358,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|PHB|板甲}"
+						"{@item 板甲|phb|板甲}"
 					]
 				}
 			],
@@ -39461,8 +39461,8 @@
 				"path": "bestiary/warlord.opus"
 			},
 			"attachedItems": [
-				"巨剑|PHB",
-				"短弓|PHB"
+				"巨剑|phb",
+				"短弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -39493,6 +39493,12 @@
 		{
 			"ENG_name": "Wastrilith",
 			"name": "水鳗魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 258,
 			"otherSources": [
@@ -39504,12 +39510,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -39682,6 +39682,7 @@
 		{
 			"ENG_name": "Water Elemental Myrmidon",
 			"name": "水元素侍从",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 123,
 			"otherSources": [
@@ -39693,7 +39694,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -39778,7 +39778,7 @@
 				"path": "bestiary/water-elemental-myrmidon.opus"
 			},
 			"attachedItems": [
-				"三叉戟|PHB"
+				"三叉戟|phb"
 			],
 			"senseTags": [
 				"D"
@@ -39806,6 +39806,12 @@
 		{
 			"ENG_name": "White Abishai",
 			"name": "亚比莎白龙魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"source": "MPMM",
 			"page": 41,
 			"otherSources": [
@@ -39820,12 +39826,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -39921,7 +39921,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}5（{@damage 1d4 + 3}）穿刺伤害加3（{@damage 1d6}）冷冻伤害。"
+						"{@atk mw} 命中{@hit 6}，触及5尺，单一目标。{@h}5（{@damage 1d4 + 3}）穿刺伤害加3（{@damage 1d6}）寒冷伤害。"
 					]
 				},
 				{
@@ -39956,7 +39956,7 @@
 				"path": "bestiary/white-abishai.opus"
 			},
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -39991,6 +39991,12 @@
 		{
 			"ENG_name": "Winter Eladrin",
 			"name": "冬之雅灵",
+			"type": {
+				"type": "fey",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "MPMM",
 			"page": 117,
 			"otherSources": [
@@ -40005,12 +40011,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fey",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -40096,14 +40096,14 @@
 					"ENG_name": "Longsword",
 					"name": "长剑",
 					"entries": [
-						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d8}）挥砍伤害，或若用双手则为5（{@damage 1d10}）挥砍伤害，外加13（{@damage 3d8}）冷冻伤害。"
+						"{@atk mw} 命中{@hit 4}，触及5尺，单一目标。{@h}4（{@damage 1d8}）挥砍伤害，或若用双手则为5（{@damage 1d10}）挥砍伤害，外加13（{@damage 3d8}）寒冷伤害。"
 					]
 				},
 				{
 					"ENG_name": "Longbow",
 					"name": "长弓",
 					"entries": [
-						"{@atk rw} 命中{@hit 7}，范围150/600尺，单一目标。{@h}7（{@damage 1d8 + 3}）穿刺伤害加13（{@damage 3d8}）冷冻伤害。"
+						"{@atk rw} 命中{@hit 7}，范围150/600尺，单一目标。{@h}7（{@damage 1d8 + 3}）穿刺伤害加13（{@damage 3d8}）寒冷伤害。"
 					]
 				}
 			],
@@ -40134,8 +40134,8 @@
 				"path": "bestiary/winter-eladrin.opus"
 			},
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -40187,6 +40187,7 @@
 		{
 			"ENG_name": "Wood Woad",
 			"name": "菘蓝树人",
+			"type": "plant",
 			"source": "MPMM",
 			"page": 266,
 			"otherSources": [
@@ -40198,7 +40199,6 @@
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"L",
 				"N"
@@ -40298,7 +40298,7 @@
 				"path": "bestiary/wood-woad.opus"
 			},
 			"attachedItems": [
-				"短棒|PHB"
+				"短棒|phb"
 			],
 			"traitTags": [
 				"伪装",
@@ -40328,6 +40328,7 @@
 		{
 			"ENG_name": "Wretched Sorrowsworn",
 			"name": "悲惨之哀恸魔",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 224,
 			"otherSources": [
@@ -40339,7 +40340,6 @@
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -40427,6 +40427,7 @@
 		{
 			"ENG_name": "Xvart",
 			"name": "法特怪",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 267,
 			"otherSources": [
@@ -40438,7 +40439,6 @@
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -40519,8 +40519,8 @@
 				"path": "bestiary/xvart.opus"
 			},
 			"attachedItems": [
-				"短剑|PHB",
-				"投石索|PHB"
+				"短剑|phb",
+				"投石索|phb"
 			],
 			"senseTags": [
 				"D"
@@ -40544,6 +40544,7 @@
 		{
 			"ENG_name": "Xvart Warlock of Raxivort",
 			"name": "法特怪莱兹爱渥魔契师",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 267,
 			"otherSources": [
@@ -40555,7 +40556,6 @@
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -40670,7 +40670,7 @@
 				"path": "bestiary/xvart-warlock-of-raxivort.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"senseTags": [
 				"D"
@@ -40707,6 +40707,12 @@
 		{
 			"ENG_name": "Yagnoloth",
 			"name": "督裁罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPMM",
 			"page": 268,
 			"otherSources": [
@@ -40718,12 +40724,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -40930,6 +40930,12 @@
 		{
 			"ENG_name": "Yeenoghu",
 			"name": "耶诺古",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 270,
@@ -40942,12 +40948,6 @@
 			"size": [
 				"H"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -41149,7 +41149,7 @@
 				"source": "MPMM"
 			},
 			"attachedItems": [
-				"链枷|PHB"
+				"链枷|phb"
 			],
 			"traitTags": [
 				"传奇抗性",
@@ -41210,6 +41210,7 @@
 		{
 			"ENG_name": "Yeth Hound",
 			"name": "夜嘶猎犬",
+			"type": "fey",
 			"source": "MPMM",
 			"page": 271,
 			"otherSources": [
@@ -41224,7 +41225,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fey",
 			"alignment": [
 				"N",
 				"E"
@@ -41353,6 +41353,7 @@
 		{
 			"ENG_name": "Young Kruthik",
 			"name": "青年地刺虫",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 168,
 			"otherSources": [
@@ -41364,7 +41365,6 @@
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -41400,7 +41400,7 @@
 			],
 			"passive": 14,
 			"languages": [
-				"地刺虫"
+				"地刺虫语"
 			],
 			"cr": "1/8",
 			"trait": [
@@ -41461,6 +41461,7 @@
 		{
 			"ENG_name": "Yuan-ti Anathema",
 			"name": "咒恨蛇人",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 272,
 			"otherSources": [
@@ -41472,7 +41473,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -41676,6 +41676,7 @@
 		{
 			"ENG_name": "Yuan-ti Broodguard",
 			"name": "卫雏蛇人",
+			"type": "monstrosity",
 			"source": "MPMM",
 			"page": 273,
 			"otherSources": [
@@ -41687,7 +41688,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -41809,6 +41809,12 @@
 		{
 			"ENG_name": "Yuan-ti Mind Whisperer",
 			"name": "原体·心灵呢喃者",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 274,
 			"otherSources": [
@@ -41820,12 +41826,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -41975,7 +41975,7 @@
 				"path": "bestiary/yuan-ti-mind-whisperer.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -42018,6 +42018,12 @@
 		{
 			"ENG_name": "Yuan-ti Nightmare Speaker",
 			"name": "蛇人梦魇语者",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 275,
 			"otherSources": [
@@ -42029,12 +42035,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -42185,7 +42185,7 @@
 				"path": "bestiary/yuan-ti-nightmare-speaker.opus"
 			},
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -42238,6 +42238,12 @@
 		{
 			"ENG_name": "Yuan-ti Pit Master",
 			"name": "原体·坑主",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"魔契师"
+				]
+			},
 			"source": "MPMM",
 			"page": 276,
 			"otherSources": [
@@ -42249,12 +42255,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"魔契师"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -42443,6 +42443,7 @@
 		{
 			"ENG_name": "Zaratan",
 			"name": "扎拉坦",
+			"type": "elemental",
 			"source": "MPMM",
 			"page": 278,
 			"otherSources": [
@@ -42454,7 +42455,6 @@
 			"size": [
 				"G"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -42670,6 +42670,12 @@
 		{
 			"ENG_name": "Zariel",
 			"name": "扎瑞尔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"魔鬼"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 280,
@@ -42682,12 +42688,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"魔鬼"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -42765,7 +42765,7 @@
 						"扎瑞尔施展以下法术中的一个，且不需要材料成分，以魅力为施法关键属性（法术豁免{@dc 26}）："
 					],
 					"will": [
-						"{@spell 变身术}（改变外貌时可变为中型）",
+						"{@spell 变身术}（可在改变外貌时变为中等体型）",
 						"{@spell 侦测善恶}",
 						"{@spell 火球术}",
 						"{@spell 隐形术}（仅自身）",
@@ -42872,8 +42872,8 @@
 				"source": "MPMM"
 			},
 			"attachedItems": [
-				"链枷|PHB",
-				"长剑|PHB"
+				"链枷|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"魔鬼视界",
@@ -42947,6 +42947,12 @@
 		{
 			"ENG_name": "Zuggtmoy",
 			"name": "祖格莫伊",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPMM",
 			"page": 281,
@@ -42959,12 +42965,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"恶魔"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"

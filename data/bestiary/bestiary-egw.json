@@ -19,12 +19,12 @@
 		{
 			"ENG_name": "Aeorian Absorber",
 			"name": "艾欧瑞安汲能兽",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 283,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -163,12 +163,12 @@
 		{
 			"ENG_name": "Aeorian Nullifier",
 			"name": "艾欧瑞安灭法者",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 283,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -348,12 +348,12 @@
 		{
 			"ENG_name": "Aeorian Reverser",
 			"name": "艾欧瑞安逆转怪",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 284,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -484,7 +484,7 @@
 			"cha": 10,
 			"languages": [
 				"通用语",
-				"雪怪"
+				"雪怪语"
 			],
 			"languageTags": [
 				"C",
@@ -511,7 +511,7 @@
 			"cha": 10,
 			"languages": [
 				"通用语",
-				"雪怪"
+				"雪怪语"
 			],
 			"languageTags": [
 				"C",
@@ -603,17 +603,17 @@
 		{
 			"ENG_name": "Blood Hunter",
 			"name": "血猎手",
-			"source": "EGW",
-			"page": 284,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"任意种族"
 				]
 			},
+			"source": "EGW",
+			"page": 284,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -719,8 +719,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB",
-				"重弩|PHB"
+				"巨剑|phb",
+				"重弩|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -763,6 +763,12 @@
 		{
 			"ENG_name": "Bol'bara",
 			"name": "博尔巴拉",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"类地精"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "EGW",
@@ -773,12 +779,6 @@
 			"size": [
 				"S"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"类地精"
-				]
-			},
 			"alignment": [
 				{
 					"alignment": [
@@ -906,7 +906,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"senseTags": [
 				"D"
@@ -944,6 +944,7 @@
 		{
 			"ENG_name": "Bristled Moorbounder",
 			"name": "刚鬃野跃兽",
+			"type": "beast",
 			"source": "EGW",
 			"page": 295,
 			"otherSources": [
@@ -958,7 +959,6 @@
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -1046,12 +1046,12 @@
 		{
 			"ENG_name": "Core Spawn Crawler",
 			"name": "核生伏行者",
+			"type": "aberration",
 			"source": "EGW",
 			"page": 286,
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1164,12 +1164,12 @@
 		{
 			"ENG_name": "Core Spawn Emissary",
 			"name": "核生使者",
+			"type": "aberration",
 			"source": "EGW",
 			"page": 286,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1300,12 +1300,12 @@
 		{
 			"ENG_name": "Core Spawn Seer",
 			"name": "核生先知",
+			"type": "aberration",
 			"source": "EGW",
 			"page": 286,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1444,12 +1444,12 @@
 		{
 			"ENG_name": "Core Spawn Worm",
 			"name": "核生蠕虫",
+			"type": "aberration",
 			"source": "EGW",
 			"page": 287,
 			"size": [
 				"G"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1645,12 +1645,12 @@
 		{
 			"ENG_name": "Frost Giant Zombie",
 			"name": "霜巨人僵尸",
+			"type": "undead",
 			"source": "EGW",
 			"page": 288,
 			"size": [
 				"H"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -1736,12 +1736,12 @@
 					"ENG_name": "Freezing Stare",
 					"name": "冰冷凝视",
 					"entries": [
-						"僵尸瞄准一个它在60尺内可以看到的生物。目标必须成功通过{@dc 17}的体质豁免，否则将受到35（{@damage 10d6}）冷冻伤害，并{@condition 麻痹}直到该生物的下回合结束。"
+						"僵尸瞄准一个它在60尺内可以看到的生物。目标必须成功通过{@dc 17}的体质豁免，否则将受到35（{@damage 10d6}）寒冷伤害，并{@condition 麻痹}直到该生物的下回合结束。"
 					]
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB"
+				"巨斧|phb"
 			],
 			"traitTags": [
 				"不死坚韧"
@@ -1780,12 +1780,12 @@
 		{
 			"ENG_name": "Frost Worm",
 			"name": "霜虫",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 289,
 			"size": [
 				"G"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -1839,7 +1839,7 @@
 					"ENG_name": "Death Burst",
 					"name": "自爆",
 					"entries": [
-						"当霜虫死亡时，它会爆发出一股极寒的能量。在60英尺范围内的每一个生物必须进行一次{@dc 20}敏捷豁免，豁免失败受到28（{@damage 8d6}）冷冻伤害，成功则只受到一半的伤害。蠕虫体内的生物在此次豁免中自动失败。"
+						"当霜虫死亡时，它会爆发出一股极寒的能量。在60英尺范围内的每一个生物必须进行一次{@dc 20}敏捷豁免，豁免失败受到28（{@damage 8d6}）寒冷伤害，成功则只受到一半的伤害。蠕虫体内的生物在此次豁免中自动失败。"
 					]
 				},
 				{
@@ -1862,7 +1862,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} {@hit 15} 命中，触及10尺，单一目标。{@h}22（{@damage 3d8 + 9}）穿刺伤害加上10（{@damage 3d6}）冷冻伤害。如果目标是一个大型或更小的生物，则目标必须成功通过一次{@dc 20}的敏捷豁免否则被霜虫吞下。被吞下的生物陷入{@condition 目盲}并且{@condition 束缚}，对来自霜虫体外的攻击和其他效应具有{@quickref 掩护||3||全身掩护}，并且在霜虫的每个回合开始时受到10（{@damage 3d6}）强酸伤害和10（{@damage 3d6}）冷冻伤害。",
+						"{@atk mw} {@hit 15} 命中，触及10尺，单一目标。{@h}22（{@damage 3d8 + 9}）穿刺伤害加上10（{@damage 3d6}）寒冷伤害。如果目标是一个大型或更小的生物，则目标必须成功通过一次{@dc 20}的敏捷豁免否则被霜虫吞下。被吞下的生物陷入{@condition 目盲}并且{@condition 束缚}，对来自霜虫体外的攻击和其他效应具有{@quickref 掩护||3||全身掩护}，并且在霜虫的每个回合开始时受到10（{@damage 3d6}）强酸伤害和10（{@damage 3d6}）寒冷伤害。",
 						"如果蠕虫在一回合内受到来自它体内的一个生物的30点或更多伤害，蠕虫必须在该回合结束时通过一次{@dc 20}的体质豁免，否则将吐出其体内的所有被吞咽的生物，这些生物出现在蠕虫周围10尺的空间内并陷入{@condition 倒地}。"
 					]
 				},
@@ -1913,12 +1913,12 @@
 		{
 			"ENG_name": "Gearkeeper Construct",
 			"name": "齿轮守护者",
+			"type": "construct",
 			"source": "EGW",
 			"page": 290,
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -2064,6 +2064,7 @@
 		{
 			"ENG_name": "Gloomstalker",
 			"name": "幽暗潜猎兽",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 291,
 			"otherSources": [
@@ -2078,7 +2079,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -2215,12 +2215,12 @@
 		{
 			"ENG_name": "Guardian Wolf",
 			"name": "守护狼",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 272,
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -2323,6 +2323,7 @@
 		{
 			"ENG_name": "Horizonback Tortoise",
 			"name": "天际巨龟",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 292,
 			"otherSources": [
@@ -2338,7 +2339,6 @@
 			"size": [
 				"G"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -2468,7 +2468,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "狂信者",
-						"with": "Hulil",
+						"with": "胡利尔",
 						"flags": "i"
 					}
 				}
@@ -2486,12 +2486,12 @@
 		{
 			"ENG_name": "Husk Zombie",
 			"name": "空骸丧尸",
+			"type": "undead",
 			"source": "EGW",
 			"page": 293,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"N",
 				"E"
@@ -2682,6 +2682,12 @@
 		{
 			"ENG_name": "Kobold Underling",
 			"name": "狗头人手下",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"狗头人"
+				]
+			},
 			"source": "EGW",
 			"page": 221,
 			"referenceSources": [
@@ -2690,12 +2696,6 @@
 			"size": [
 				"S"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"狗头人"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -2765,8 +2765,8 @@
 				}
 			],
 			"attachedItems": [
-				"手弩|PHB",
-				"短剑|PHB"
+				"手弩|phb",
+				"短剑|phb"
 			],
 			"traitTags": [
 				"集群战术",
@@ -2799,12 +2799,12 @@
 		{
 			"ENG_name": "Merrow Shallowpriest",
 			"name": "迈罗人鱼浅海祭司",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 294,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"C",
 				"E"
@@ -2949,6 +2949,7 @@
 		{
 			"ENG_name": "Moorbounder",
 			"name": "野跃兽",
+			"type": "beast",
 			"source": "EGW",
 			"page": 295,
 			"otherSources": [
@@ -2963,7 +2964,6 @@
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -3098,17 +3098,17 @@
 		{
 			"ENG_name": "Nergaliid",
 			"name": "邪蟾魔",
-			"source": "EGW",
-			"page": 296,
-			"size": [
-				"L"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"魔鬼"
 				]
 			},
+			"source": "EGW",
+			"page": 296,
+			"size": [
+				"L"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -3434,7 +3434,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "邪教徒",
-						"with": "Raegrin",
+						"with": "瑞格林",
 						"flags": "i"
 					}
 				}
@@ -3448,6 +3448,12 @@
 		{
 			"ENG_name": "Sahuagin Warlock of Uk'otoa",
 			"name": "鲨华鱼人乌克托阿魔契师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"鲨华鱼人"
+				]
+			},
 			"source": "EGW",
 			"page": 297,
 			"referenceSources": [
@@ -3456,12 +3462,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"鲨华鱼人"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -3498,7 +3498,7 @@
 			"passive": 9,
 			"languages": [
 				"通用语",
-				"鲨华鱼人"
+				"鲨华语"
 			],
 			"cr": "3",
 			"spellcasting": [
@@ -3585,7 +3585,7 @@
 					"name": "惩戒之杖",
 					"type": "variant",
 					"entries": [
-						"鲨华鱼人乌克托阿魔契师在利维坦领主眼中拥有非凡的潜力，除了乌克托阿典型的祝福\u2014\u2014幽冥之剑之外，他们还被授予{@item 惩戒之杖|EGW}。一个鲨华鱼人乌克托阿魔契师握着这根权杖，会获得如下反应：",
+						"鲨华鱼人乌克托阿魔契师在利维坦领主眼中拥有非凡的潜力，除了乌克托阿典型的祝福\u2014\u2014幽冥之剑之外，他们还被授予{@item 惩戒之杖|egw}。一个鲨华鱼人乌克托阿魔契师握着这根权杖，会获得如下反应：",
 						{
 							"ENG_name": "Retribution (3/Day)",
 							"name": "惩戒（3/日）",
@@ -3658,7 +3658,7 @@
 								"ENG_name": "Special Equipment",
 								"name": "特殊装备",
 								"entries": [
-									"魔契师携带一把{@item 惩戒之杖|EGW}。"
+									"魔契师携带一把{@item 惩戒之杖|egw}。"
 								]
 							}
 						},
@@ -3681,6 +3681,7 @@
 		{
 			"ENG_name": "Sea Fury",
 			"name": "海妖婆",
+			"type": "fey",
 			"group": [
 				"鬼婆"
 			],
@@ -3689,7 +3690,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fey",
 			"alignment": [
 				"C",
 				"E"
@@ -3901,12 +3901,12 @@
 		{
 			"ENG_name": "Shadowghast",
 			"name": "影妖鬼",
+			"type": "undead",
 			"source": "EGW",
 			"page": 299,
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"C",
 				"E"
@@ -4013,6 +4013,7 @@
 		{
 			"ENG_name": "Sharkbody Abomination",
 			"name": "鲨身憎恶体",
+			"type": "aberration",
 			"source": "EGW",
 			"page": 215,
 			"referenceSources": [
@@ -4040,7 +4041,6 @@
 					}
 				}
 			},
-			"type": "aberration",
 			"speed": {
 				"walk": 20,
 				"swim": 40
@@ -4051,6 +4051,12 @@
 		{
 			"ENG_name": "Sken Zabriss",
 			"name": "Sken Zabriss",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"歌利亚"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "EGW",
@@ -4061,12 +4067,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"歌利亚"
-				]
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -4135,7 +4135,7 @@
 				}
 			],
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"languageTags": [
 				"C",
@@ -4224,6 +4224,10 @@
 		{
 			"ENG_name": "Swarm of Undead Snakes",
 			"name": "亡灵斯芬克斯之谜集群",
+			"type": {
+				"type": "undead",
+				"swarmSize": "T"
+			},
 			"source": "EGW",
 			"page": 247,
 			"referenceSources": [
@@ -4240,10 +4244,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "undead",
-				"swarmSize": "T"
-			},
 			"immune": [
 				"毒素"
 			],
@@ -4252,12 +4252,12 @@
 		{
 			"ENG_name": "Swavain Basilisk",
 			"name": "石化海蛇",
+			"type": "monstrosity",
 			"source": "EGW",
 			"page": 300,
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -4403,12 +4403,12 @@
 		{
 			"ENG_name": "Udaak",
 			"name": "猿魔兽",
+			"type": "fiend",
 			"source": "EGW",
 			"page": 301,
 			"size": [
 				"G"
 			],
-			"type": "fiend",
 			"alignment": [
 				"N",
 				"E"
@@ -4548,6 +4548,7 @@
 		{
 			"ENG_name": "Vox Seeker",
 			"name": "觅音师",
+			"type": "construct",
 			"source": "EGW",
 			"page": 270,
 			"referenceSources": [
@@ -4556,7 +4557,6 @@
 			"size": [
 				"T"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -4645,6 +4645,12 @@
 		{
 			"ENG_name": "Yinra Emberwind",
 			"name": "伊拉·烬风",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "EGW",
@@ -4655,12 +4661,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
-			},
 			"alignment": [
 				"N",
 				"G"
@@ -4734,8 +4734,8 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"长弓|PHB",
-				"短剑|PHB"
+				"长弓|phb",
+				"短剑|phb"
 			],
 			"traitTags": [
 				"妖精血统",

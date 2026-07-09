@@ -74,11 +74,11 @@
 		{
 			"ENG_name": "Corrupted Rat",
 			"name": "腐化鼠",
+			"type": "monstrosity",
 			"source": "WttHC",
 			"size": [
 				"T"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -157,12 +157,12 @@
 		{
 			"ENG_name": "Cultist of Demogorgon",
 			"name": "狄摩高根邪教徒",
+			"type": "humanoid",
 			"source": "WttHC",
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"E"
@@ -200,7 +200,7 @@
 					"ENG_name": "Ritual Sickle",
 					"name": "仪典小镰刀",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}{@damage 1d4 + 2}点挥砍伤害外加1点暗蚀伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}{@damage 1d4 + 2}挥砍伤害外加1点暗蚀伤害。"
 					]
 				}
 			],
@@ -222,13 +222,13 @@
 		{
 			"ENG_name": "Dardew",
 			"name": "达德",
+			"type": "fiend",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "WttHC",
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"C",
 				"N"
@@ -290,7 +290,7 @@
 					"ENG_name": "Fiery Claw",
 					"name": "炽热爪击",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}8（{@damage 1d8 + 4}）点挥砍伤害外加7（{@damage 2d6}）点火焰伤害。"
+						"{@atkr m}： {@hit 7}，触及 5 尺。{@h}： 8（ {@damage 1d8 + 4} ）挥砍伤害，外加 7（ {@damage 2d6} ）火焰伤害。"
 					]
 				},
 				{
@@ -344,16 +344,16 @@
 		{
 			"ENG_name": "Demobat",
 			"name": "恶魔蝠",
-			"source": "WttHC",
-			"size": [
-				"T"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"恶魔"
 				]
 			},
+			"source": "WttHC",
+			"size": [
+				"T"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -395,7 +395,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 5}（若目标被恶魔蝠{@condition 受擒|XPHB}则具有{@variantrule 优势|XPHB}），触及5尺。{@h}10（{@damage 2d6 + 3}）点穿刺伤害。"
+						"{@atkr m} {@hit 5}（若目标正被一只恶魔蝠{@condition 受擒|XPHB}，则攻击具有{@variantrule 优势|XPHB}），触及5尺。{@h}10（{@damage 2d6 + 3}）穿刺伤害。"
 					]
 				},
 				{
@@ -430,16 +430,16 @@
 		{
 			"ENG_name": "Demodog",
 			"name": "恶魔犬",
-			"source": "WttHC",
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"恶魔"
 				]
 			},
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -519,16 +519,16 @@
 		{
 			"ENG_name": "Demodragon",
 			"name": "恶魔龙",
-			"source": "WttHC",
-			"size": [
-				"H"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"恶魔"
 				]
 			},
+			"source": "WttHC",
+			"size": [
+				"H"
+			],
 			"ac": [
 				16
 			],
@@ -599,7 +599,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及10尺。{@h}11（{@damage 2d6 + 4}）点穿刺伤害加4（{@damage 1d8}）点强酸伤害。"
+						"{@atkr m} {@hit 7}，触及10尺。{@h}11（{@damage 2d6 + 4}）穿刺伤害外加4（{@damage 1d8}）强酸伤害。"
 					]
 				},
 				{
@@ -639,16 +639,16 @@
 		{
 			"ENG_name": "Demogorgon Spawn",
 			"name": "狄摩高根衍体",
-			"source": "WttHC",
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"恶魔"
 				]
 			},
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -779,18 +779,18 @@
 		{
 			"ENG_name": "Flizzlebin",
 			"name": "弗利兹宾",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "WttHC",
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"侏儒"
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -896,11 +896,11 @@
 		{
 			"ENG_name": "Giant Corrupted Rat",
 			"name": "腐化巨鼠",
+			"type": "monstrosity",
 			"source": "WttHC",
 			"size": [
 				"S"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -1043,16 +1043,16 @@
 		{
 			"ENG_name": "Imp Trickster",
 			"name": "小魔鬼诡术师",
-			"source": "WttHC",
-			"size": [
-				"T"
-			],
 			"type": {
 				"type": "fiend",
 				"tags": [
 					"魔鬼"
 				]
 			},
+			"source": "WttHC",
+			"size": [
+				"T"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -1155,18 +1155,18 @@
 		{
 			"ENG_name": "Korex",
 			"name": "科雷克斯",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "WttHC",
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"精灵"
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"E"
@@ -1315,18 +1315,18 @@
 		{
 			"ENG_name": "Rilly June",
 			"name": "瑞莉·琼",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "WttHC",
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"半身人"
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WttHC",
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1455,14 +1455,14 @@
 		{
 			"ENG_name": "Swarm of Corrupted Rats",
 			"name": "腐化鼠群",
-			"source": "WttHC",
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "monstrosity",
 				"swarmSize": "T"
 			},
+			"source": "WttHC",
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"U"
 			],
@@ -1552,11 +1552,11 @@
 		{
 			"ENG_name": "Vine Blight Tangler",
 			"name": "枯藤缠绕怪",
+			"type": "plant",
 			"source": "WttHC",
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"N",
 				"E"

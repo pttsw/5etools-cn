@@ -18,17 +18,17 @@
 		{
 			"ENG_name": "Aarakocra Simulacrum",
 			"name": "鸟羽人的拟像",
-			"source": "SKT",
-			"page": 188,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"鸟羽人"
 				]
 			},
+			"source": "SKT",
+			"page": 188,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"G"
@@ -56,7 +56,7 @@
 			"passive": 15,
 			"languages": [
 				"气族语",
-				"鸟羽人"
+				"鸟羽人语"
 			],
 			"cr": "1/8",
 			"trait": [
@@ -99,7 +99,7 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"languageTags": [
 				"AU",
@@ -121,6 +121,7 @@
 		{
 			"ENG_name": "Alastrah",
 			"name": "艾拉丝特拉",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -130,7 +131,6 @@
 				"name": "平民",
 				"source": "MM"
 			},
-			"type": "giant",
 			"alignment": [
 				"N"
 			],
@@ -148,7 +148,7 @@
 				}
 			],
 			"attachedItems": [
-				"短棒|PHB"
+				"短棒|phb"
 			],
 			"languageTags": [
 				"GI"
@@ -162,13 +162,6 @@
 		{
 			"ENG_name": "Augrek Brighthelm",
 			"name": "奥格瑞克·明盔",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 247,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -178,6 +171,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 247,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -186,8 +186,8 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 链甲衫|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 链甲衫|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -255,8 +255,8 @@
 				}
 			],
 			"attachedItems": [
-				"重弩|PHB",
-				"战锤|PHB"
+				"重弩|phb",
+				"战锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -343,7 +343,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|PHB}"
+						"{@item 板甲|phb}"
 					]
 				}
 			],
@@ -375,13 +375,6 @@
 		{
 			"ENG_name": "Beldora",
 			"name": "贝尔朵拉",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 249,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -391,6 +384,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 249,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -463,8 +463,8 @@
 				}
 			],
 			"attachedItems": [
-				"手弩|PHB",
-				"短剑|PHB"
+				"手弩|phb",
+				"短剑|phb"
 			],
 			"languageTags": [
 				"C",
@@ -505,6 +505,7 @@
 		{
 			"ENG_name": "Chief Guh",
 			"name": "冈酋长",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -512,7 +513,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"E"
@@ -579,7 +579,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨棒|PHB"
+				"巨棒|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -691,7 +691,7 @@
 					"ENG_name": "Golden Pin",
 					"name": "金质发簪",
 					"entries": [
-						"{@atk mw}命中{@hit 6}，触及5尺，单一目标。{@hit 6}9（{@damage 2d4 + 4}）点穿刺伤害。"
+						"{@atk mw}命中{@h}，触及5尺，单一目标。{@hit 6}9（{@damage 2d4 + 4}）点穿刺伤害。"
 					]
 				}
 			],
@@ -773,6 +773,7 @@
 		{
 			"ENG_name": "Clockwork Mule",
 			"name": "发条骡子",
+			"type": "construct",
 			"source": "SKT",
 			"page": 162,
 			"_copy": {
@@ -792,7 +793,6 @@
 					}
 				}
 			},
-			"type": "construct",
 			"immune": [
 				"毒素",
 				"心灵"
@@ -824,7 +824,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 鳞甲|PHB}"
+						"{@item 鳞甲|phb}"
 					]
 				}
 			],
@@ -1044,7 +1044,7 @@
 			],
 			"cr": "11",
 			"attachedItems": [
-				"矛|PHB"
+				"矛|phb"
 			],
 			"languageTags": [
 				"AU",
@@ -1090,6 +1090,7 @@
 		{
 			"ENG_name": "Crag Cat",
 			"name": "峭壁猫",
+			"type": "monstrosity",
 			"source": "SKT",
 			"page": 240,
 			"referenceSources": [
@@ -1098,7 +1099,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -1235,13 +1235,6 @@
 		{
 			"ENG_name": "Darathra Shendrel",
 			"name": "达拉斯拉·珊德瑞尔",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 253,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1251,6 +1244,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 253,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -1259,7 +1259,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 胸甲|PHB}"
+						"{@item 胸甲|phb}"
 					]
 				}
 			],
@@ -1330,8 +1330,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB",
-				"重弩|PHB"
+				"巨剑|phb",
+				"重弩|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -1357,13 +1357,6 @@
 		{
 			"ENG_name": "Darz Helgar",
 			"name": "达兹·赫尔加",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 253,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1373,6 +1366,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 253,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1437,8 +1437,8 @@
 				}
 			],
 			"attachedItems": [
-				"短剑|PHB",
-				"投石索|PHB"
+				"短剑|phb",
+				"投石索|phb"
 			],
 			"traitTags": [
 				"偷袭"
@@ -1580,6 +1580,7 @@
 		{
 			"ENG_name": "Duke Zalto",
 			"name": "扎尔图公爵",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -1587,7 +1588,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"L",
 				"E"
@@ -1596,7 +1596,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|PHB}"
+						"{@item 板甲|phb}"
 					]
 				}
 			],
@@ -1682,7 +1682,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨锤|PHB"
+				"巨锤|phb"
 			],
 			"traitTags": [
 				"攻城怪物"
@@ -1718,13 +1718,6 @@
 		{
 			"ENG_name": "Duvessa Shane",
 			"name": "德维莎·尚恩",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 248,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1734,6 +1727,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 248,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -1783,7 +1783,7 @@
 					"ENG_name": "Dagger",
 					"name": "匕首",
 					"entries": [
-						"{@atk mw,rw}命中{@hit 2}，触及 5 尺或射程20/60 尺，单一目标。{@hit 2}2（{@damage 1d4}）点穿刺伤害。德维莎只带着1 把匕首。"
+						"{@atk mw,rw}命中{@h 2}，触及 5 尺或射程{@hit 2}0/60 尺，单一目标。{@hit 2}2（{@damage 1d4}）点穿刺伤害。德维莎只带着1 把匕首。"
 					]
 				}
 			],
@@ -1797,7 +1797,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"actionTags": [
 				"格挡"
@@ -2032,13 +2032,6 @@
 		{
 			"ENG_name": "Ghelryn Foehammer",
 			"name": "盖瑞恩·敌锤",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 255,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2048,6 +2041,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 255,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -2056,8 +2056,8 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 胸甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 胸甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -2133,7 +2133,7 @@
 				}
 			],
 			"attachedItems": [
-				"战斧|PHB"
+				"战斧|phb"
 			],
 			"senseTags": [
 				"D"
@@ -2180,6 +2180,12 @@
 		{
 			"ENG_name": "Great Chief Halric Bonesnapper",
 			"name": "大酋长哈利克·骨鸣",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -2196,12 +2202,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"C",
@@ -2225,7 +2225,7 @@
 				}
 			],
 			"attachedItems": [
-				"+1 巨斧|DMG"
+				"+1 巨斧|dmg"
 			],
 			"languageTags": [
 				"C",
@@ -2240,6 +2240,7 @@
 		{
 			"ENG_name": "Harshnag",
 			"name": "哈什纳格",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -2247,7 +2248,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"G"
@@ -2399,12 +2399,12 @@
 		{
 			"ENG_name": "Hulking Crab",
 			"name": "庞巨蟹",
+			"type": "beast",
 			"source": "SKT",
 			"page": 240,
 			"size": [
 				"H"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -2496,6 +2496,12 @@
 		{
 			"ENG_name": "Hydia Moonmusk",
 			"name": "希狄亚·月麝",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -2512,12 +2518,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"C",
@@ -2551,7 +2551,7 @@
 							"ENG_name": "Icy Web {@recharge 5}",
 							"name": "冰网 {@recharge 5}",
 							"entries": [
-								"{@atk rw}命中{@hit 5}，射程 30/60尺，单一生物。{@h}该生物被蛛网{@condition 束缚}，并在其回合开始时受到1点冷冻伤害。受{@condition 束缚}生物可以用一个动作进行一次{@dc 12}的力量检定，并在成功时以此挣脱蛛网。攻击并摧毁蛛网也可以结束该效应（这些蛛网拥有AC10，5 点生命值，对火焰伤害易伤，并且免疫毒素和心灵伤害）。"
+								"{@atk rw}命中{@hit 5}，射程 30/60尺，单一生物。{@h}该生物被蛛网{@condition 束缚}，并在其回合开始时受到1点寒冷伤害。受{@condition 束缚}生物可以用一个动作进行一次{@dc 12}的力量检定，并在成功时以此挣脱蛛网。攻击并摧毁蛛网也可以结束该效应（这些蛛网拥有AC10，5 点生命值，对火焰伤害易伤，并且免疫毒素和心灵伤害）。"
 							]
 						}
 					}
@@ -2584,7 +2584,7 @@
 							"ENG_name": "Cold Aura",
 							"name": "冷冻光环",
 							"entries": [
-								"任何在蜘蛛 5 尺范围内开始其回合的生物将受到 5（{@damage 2d4}）点冷冻伤害。"
+								"任何在蜘蛛 5 尺范围内开始其回合的生物将受到 5（{@damage 2d4}）点寒冷伤害。"
 							]
 						}
 					},
@@ -2595,7 +2595,7 @@
 							"ENG_name": "Icy Web {@recharge 5}",
 							"name": "冰网 {@recharge 5}",
 							"entries": [
-								"{@atk rw}命中{@hit 5}，射程 30/60尺，单一生物。{@h}该生物被蛛网{@condition 束缚}，并在其回合开始时受到 2（{@damage 1d4}）点冷冻伤害。受{@condition 束缚}生物可以用一个动作进行一次{@dc 12}的力量检定，并在成功时以此挣脱蛛网。攻击并摧毁蛛网也可以结束该效应（这些蛛网拥有AC10，5 点生命值，对火焰伤害易伤，并且免疫毒素和心灵伤害）。"
+								"{@atk rw}命中{@hit 5}，射程 30/60尺，单一生物。{@h}该生物被蛛网{@condition 束缚}，并在其回合开始时受到 2（{@damage 1d4}）点寒冷伤害。受{@condition 束缚}生物可以用一个动作进行一次{@dc 12}的力量检定，并在成功时以此挣脱蛛网。攻击并摧毁蛛网也可以结束该效应（这些蛛网拥有AC10，5 点生命值，对火焰伤害易伤，并且免疫毒素和心灵伤害）。"
 							]
 						}
 					}
@@ -2698,6 +2698,7 @@
 		{
 			"ENG_name": "Iymrith",
 			"name": "埃姆瑞斯",
+			"type": "dragon",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -2705,7 +2706,6 @@
 			"size": [
 				"G"
 			],
-			"type": "dragon",
 			"alignment": [
 				"L",
 				"E"
@@ -2941,6 +2941,7 @@
 		{
 			"ENG_name": "Jarl Storvald",
 			"name": "斯托瓦尔德首领",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -2948,7 +2949,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"N",
 				"E"
@@ -2990,7 +2990,7 @@
 			"languages": [
 				"通用语",
 				"巨人语",
-				"巨猫头鹰"
+				"巨猫头鹰语"
 			],
 			"cr": "8",
 			"spellcasting": [
@@ -3045,7 +3045,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨斧|PHB"
+				"巨斧|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3163,6 +3163,7 @@
 		{
 			"ENG_name": "Kaaltar",
 			"name": "卡欧塔",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3172,7 +3173,6 @@
 				"name": "平民",
 				"source": "MM"
 			},
-			"type": "giant",
 			"alignment": [
 				"N"
 			],
@@ -3190,7 +3190,7 @@
 				}
 			],
 			"attachedItems": [
-				"短棒|PHB"
+				"短棒|phb"
 			],
 			"languageTags": [
 				"GI"
@@ -3204,6 +3204,12 @@
 		{
 			"ENG_name": "Kella Darkhope",
 			"name": "凯拉·黑望",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3221,12 +3227,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -3237,6 +3237,12 @@
 		{
 			"ENG_name": "Khaspere Drylund",
 			"name": "卡斯比尔·德莱伦德",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3253,12 +3259,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"N",
@@ -3283,6 +3283,7 @@
 		{
 			"ENG_name": "King Hekaton",
 			"name": "赫卡顿王",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3290,7 +3291,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"C",
 				"G"
@@ -3299,7 +3299,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 鳞甲|PHB}"
+						"{@item 鳞甲|phb}"
 					]
 				}
 			],
@@ -3455,6 +3455,7 @@
 		{
 			"ENG_name": "Klauth",
 			"name": "克劳斯",
+			"type": "dragon",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3462,7 +3463,6 @@
 			"size": [
 				"G"
 			],
-			"type": "dragon",
 			"alignment": [
 				"C",
 				"E"
@@ -3773,8 +3773,8 @@
 				{
 					"ac": 20,
 					"from": [
-						"{@item 板甲|PHB}",
-						"{@item 盾牌|PHB}"
+						"{@item 板甲|phb}",
+						"{@item 盾牌|phb}"
 					]
 				}
 			],
@@ -3795,6 +3795,7 @@
 		{
 			"ENG_name": "Lifferlas",
 			"name": "利佛拉斯",
+			"type": "plant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3802,7 +3803,6 @@
 			"size": [
 				"H"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -3896,6 +3896,7 @@
 		{
 			"ENG_name": "Maegera the Dawn Titan",
 			"name": "黎明泰坦梅格拉",
+			"type": "elemental",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -3903,7 +3904,6 @@
 			"size": [
 				"G"
 			],
-			"type": "elemental",
 			"alignment": [
 				"C",
 				"N"
@@ -4087,13 +4087,6 @@
 		{
 			"ENG_name": "Markham Southwell",
 			"name": "马尔科姆·索斯维尔",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 248,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4103,6 +4096,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 248,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -4111,7 +4111,7 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item 板条甲|PHB}"
+						"{@item 板条甲|phb}"
 					]
 				}
 			],
@@ -4172,8 +4172,8 @@
 				}
 			],
 			"attachedItems": [
-				"重弩|PHB",
-				"长剑|PHB"
+				"重弩|phb",
+				"长剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4198,13 +4198,6 @@
 		{
 			"ENG_name": "Miros Xelbrin",
 			"name": "米洛斯·泽布林",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 251,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4214,6 +4207,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 251,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"G"
@@ -4278,8 +4278,8 @@
 				}
 			],
 			"attachedItems": [
-				"短棒|PHB",
-				"重弩|PHB"
+				"短棒|phb",
+				"重弩|phb"
 			],
 			"languageTags": [
 				"C"
@@ -4427,13 +4427,6 @@
 		{
 			"ENG_name": "Narth Tezrin",
 			"name": "纳斯·特兹林",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 254,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4443,6 +4436,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 254,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -4510,8 +4510,8 @@
 				}
 			],
 			"attachedItems": [
-				"手弩|PHB",
-				"短剑|PHB"
+				"手弩|phb",
+				"短剑|phb"
 			],
 			"languageTags": [
 				"C",
@@ -4533,13 +4533,6 @@
 		{
 			"ENG_name": "Naxene Drathkala",
 			"name": "娜可塞纳·德莱斯卡拉",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 252,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4549,6 +4542,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 252,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"G"
@@ -4739,6 +4739,12 @@
 		{
 			"ENG_name": "Noori",
 			"name": "努里",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -4755,12 +4761,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"C",
@@ -4850,13 +4850,6 @@
 		{
 			"ENG_name": "Oren Yogilvy",
 			"name": "欧伦·尤吉维",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 252,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4866,6 +4859,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 252,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -4942,7 +4942,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C",
@@ -5043,6 +5043,12 @@
 		{
 			"ENG_name": "Orok",
 			"name": "奥洛克",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -5063,12 +5069,6 @@
 						"names": "日照敏感"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"C",
@@ -5091,13 +5091,6 @@
 		{
 			"ENG_name": "Othovir",
 			"name": "奥托维尔",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 255,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5107,6 +5100,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 255,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"N"
@@ -5196,7 +5196,7 @@
 				}
 			],
 			"attachedItems": [
-				"刺剑|PHB"
+				"刺剑|phb"
 			],
 			"actionTags": [
 				"格挡"
@@ -5258,6 +5258,12 @@
 		{
 			"ENG_name": "Pow Ming",
 			"name": "鲍明",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -5284,12 +5290,6 @@
 						}
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
 			},
 			"alignment": [
 				"N"
@@ -5420,7 +5420,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -5438,12 +5438,12 @@
 		{
 			"ENG_name": "Purple Wormling",
 			"name": "紫虫幼虫",
+			"type": "monstrosity",
 			"source": "SKT",
 			"page": 242,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -5569,6 +5569,12 @@
 		{
 			"ENG_name": "Sea Elf",
 			"name": "海精灵",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"精灵"
+				]
+			},
 			"source": "SKT",
 			"page": 70,
 			"_copy": {
@@ -5593,12 +5599,6 @@
 						}
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"精灵"
-				]
 			},
 			"alignment": [
 				"C",
@@ -5706,13 +5706,6 @@
 		{
 			"ENG_name": "Shalvus Martholio",
 			"name": "沙尔乌斯·马托里奥",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 250,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5722,6 +5715,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 250,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -5729,7 +5729,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -5795,8 +5795,8 @@
 				}
 			],
 			"attachedItems": [
-				"手弩|PHB",
-				"长棍|PHB"
+				"手弩|phb",
+				"长棍|phb"
 			],
 			"traitTags": [
 				"偷袭"
@@ -5822,6 +5822,16 @@
 		{
 			"ENG_name": "Sharda",
 			"name": "沙尔达",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "人类",
+						"prefix": "伊路斯坎人",
+						"prefixHidden": true
+					}
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -5852,16 +5862,6 @@
 					]
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					{
-						"tag": "人类",
-						"prefix": "伊路斯坎人",
-						"prefixHidden": true
-					}
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -5870,7 +5870,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 胸甲|PHB}"
+						"{@item 胸甲|phb}"
 					]
 				}
 			],
@@ -5968,7 +5968,7 @@
 				}
 			],
 			"attachedItems": [
-				"战锤|PHB"
+				"战锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -6018,7 +6018,7 @@
 				}
 			],
 			"attachedItems": [
-				"战锤|PHB"
+				"战锤|phb"
 			],
 			"senseTags": [
 				"D"
@@ -6040,13 +6040,6 @@
 		{
 			"ENG_name": "Sir Baric Nylef",
 			"name": "巴瑞克·奈勒弗爵士",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 249,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6056,6 +6049,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 249,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -6064,7 +6064,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|PHB}"
+						"{@item 板甲|phb}"
 					]
 				}
 			],
@@ -6127,8 +6127,8 @@
 				}
 			],
 			"attachedItems": [
-				"重弩|PHB",
-				"巨锤|PHB"
+				"重弩|phb",
+				"巨锤|phb"
 			],
 			"languageTags": [
 				"C"
@@ -6150,13 +6150,6 @@
 		{
 			"ENG_name": "Sirac of Suzail",
 			"name": "苏萨尔的希莱克",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 247,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6166,6 +6159,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 247,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"G"
@@ -6174,7 +6174,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -6239,8 +6239,8 @@
 				}
 			],
 			"attachedItems": [
-				"飞镖|PHB",
-				"短剑|PHB"
+				"飞镖|phb",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"格挡"
@@ -6265,6 +6265,12 @@
 		{
 			"ENG_name": "Slarkrethel",
 			"name": "斯拉克雷特",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"泰坦"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -6272,12 +6278,6 @@
 			"size": [
 				"G"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"泰坦"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -6333,7 +6333,7 @@
 			],
 			"languages": [
 				"懂深渊语",
-				"天族",
+				"天界语",
 				"炼狱语",
 				"并且是原始语言，但不能说话",
 				"心灵感应 120 尺"
@@ -6561,7 +6561,7 @@
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
-						"replace": "巨人",
+						"replace": "巨人语",
 						"with": "魔像"
 					}
 				}
@@ -6607,6 +6607,16 @@
 		{
 			"ENG_name": "Tau",
 			"name": "陶",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "人类",
+						"prefix": "受国人",
+						"prefixHidden": true
+					}
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -6637,16 +6647,6 @@
 					]
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					{
-						"tag": "人类",
-						"prefix": "受国人",
-						"prefixHidden": true
-					}
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -6655,7 +6655,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item 胸甲|PHB}"
+						"{@item 胸甲|phb}"
 					]
 				}
 			],
@@ -6678,6 +6678,7 @@
 		{
 			"ENG_name": "Thane Kayalithica",
 			"name": "卡娅里斯卡族长",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -6685,7 +6686,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"N",
 				"E"
@@ -6812,7 +6812,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨棒|PHB"
+				"巨棒|phb"
 			],
 			"traitTags": [
 				"伪装"
@@ -6933,6 +6933,12 @@
 		{
 			"ENG_name": "Tholtz Daggerdark",
 			"name": "托尔茨·达格达克",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -6949,12 +6955,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"C",
 				"E"
@@ -6964,12 +6964,12 @@
 		{
 			"ENG_name": "Thunderbeast Skeleton",
 			"name": "雷兽骷髅",
+			"type": "undead",
 			"source": "SKT",
 			"page": 99,
 			"size": [
 				"H"
 			],
-			"type": "undead",
 			"alignment": [
 				"U"
 			],
@@ -7044,6 +7044,7 @@
 		{
 			"ENG_name": "Tressym",
 			"name": "翼猫",
+			"type": "monstrosity",
 			"source": "SKT",
 			"page": 242,
 			"referenceSources": [
@@ -7052,7 +7053,6 @@
 			"size": [
 				"T"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"A"
 			],
@@ -7168,7 +7168,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item 鳞甲|PHB}"
+						"{@item 鳞甲|phb}"
 					]
 				}
 			],
@@ -7242,6 +7242,15 @@
 		{
 			"ENG_name": "Urgala Meltimer",
 			"name": "乌尔加拉·梅尔泰莫",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "人类",
+						"prefix": "图拉米人"
+					}
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -7252,15 +7261,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					{
-						"tag": "人类",
-						"prefix": "图拉米人"
-					}
-				]
-			},
 			"alignment": [
 				"L",
 				"G"
@@ -7269,7 +7269,7 @@
 				{
 					"ac": 12,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -7338,8 +7338,8 @@
 				}
 			],
 			"attachedItems": [
-				"钉头锤|PHB",
-				"短弓|PHB"
+				"钉头锤|phb",
+				"短弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -7364,6 +7364,12 @@
 		{
 			"ENG_name": "Uthgardt Barbarian Leader",
 			"name": "乌斯伽野蛮人领袖",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"source": "SKT",
 			"page": 86,
 			"_copy": {
@@ -7388,12 +7394,6 @@
 					}
 				}
 			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"C",
 				"N"
@@ -7402,7 +7402,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -7430,17 +7430,17 @@
 		{
 			"ENG_name": "Uthgardt Shaman",
 			"name": "乌斯伽萨满",
-			"source": "SKT",
-			"page": 243,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "SKT",
+			"page": 243,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -7448,7 +7448,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -7522,8 +7522,8 @@
 				}
 			],
 			"attachedItems": [
-				"短弓|PHB",
-				"矛|PHB"
+				"短弓|phb",
+				"矛|phb"
 			],
 			"languageTags": [
 				"C",
@@ -7737,7 +7737,7 @@
 		},
 		{
 			"ENG_name": "Vaal",
-			"name": "Vaal",
+			"name": "瓦尔",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -7750,7 +7750,7 @@
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "巨人",
-						"with": "Vaal",
+						"with": "瓦尔",
 						"flags": "i"
 					}
 				}
@@ -7918,6 +7918,12 @@
 		{
 			"ENG_name": "Xolkin Alassandar",
 			"name": "索金·阿拉桑达尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"半精灵"
+				]
+			},
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -7934,12 +7940,6 @@
 						"flags": "i"
 					}
 				}
-			},
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"半精灵"
-				]
 			},
 			"alignment": [
 				"L",
@@ -7970,12 +7970,12 @@
 		{
 			"ENG_name": "Yakfolk Priest",
 			"name": "牦牛人祭司",
+			"type": "monstrosity",
 			"source": "SKT",
 			"page": 245,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -7984,7 +7984,7 @@
 				{
 					"ac": 12,
 					"from": [
-						"{@item 兽皮甲|PHB}"
+						"{@item 兽皮甲|phb}"
 					]
 				}
 			],
@@ -8098,7 +8098,7 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB"
+				"长棍|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -8144,12 +8144,12 @@
 		{
 			"ENG_name": "Yakfolk Warrior",
 			"name": "牦牛人武者",
+			"type": "monstrosity",
 			"source": "SKT",
 			"page": 244,
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"E"
@@ -8158,7 +8158,7 @@
 				{
 					"ac": 11,
 					"from": [
-						"{@item 皮甲|PHB}"
+						"{@item 皮甲|phb}"
 					]
 				}
 			],
@@ -8219,8 +8219,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB",
-				"长弓|PHB"
+				"巨剑|phb",
+				"长弓|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -8281,6 +8281,7 @@
 		{
 			"ENG_name": "Zaltember",
 			"name": "扎尔特姆贝尔",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -8288,7 +8289,6 @@
 			"size": [
 				"L"
 			],
-			"type": "giant",
 			"alignment": [
 				"L",
 				"E"
@@ -8297,7 +8297,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 链甲衫|PHB}"
+						"{@item 链甲衫|phb}"
 					]
 				}
 			],
@@ -8340,8 +8340,8 @@
 				}
 			],
 			"attachedItems": [
-				"战斧|PHB",
-				"标枪|PHB"
+				"战斧|phb",
+				"标枪|phb"
 			],
 			"languageTags": [
 				"C",
@@ -8362,6 +8362,7 @@
 		{
 			"ENG_name": "Zephyros",
 			"name": "泽菲罗斯",
+			"type": "giant",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "SKT",
@@ -8369,7 +8370,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"N",
 				"G"
@@ -8569,13 +8569,6 @@
 		{
 			"ENG_name": "Zi Liang",
 			"name": "梓梁",
-			"isNpc": true,
-			"isNamedCreature": true,
-			"source": "SKT",
-			"page": 251,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8585,6 +8578,13 @@
 					}
 				]
 			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "SKT",
+			"page": 251,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"C",
 				"G"
@@ -8660,8 +8660,8 @@
 				}
 			],
 			"attachedItems": [
-				"长棍|PHB",
-				"投石索|PHB"
+				"长棍|phb",
+				"投石索|phb"
 			],
 			"actionTags": [
 				"多重攻击"

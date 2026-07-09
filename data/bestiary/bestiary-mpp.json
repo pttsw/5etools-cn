@@ -3,6 +3,7 @@
 		{
 			"ENG_name": "Adult Time Dragon",
 			"name": "成年时光龙",
+			"type": "dragon",
 			"source": "MPP",
 			"page": 50,
 			"referenceSources": [
@@ -11,7 +12,6 @@
 			"size": [
 				"H"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -164,6 +164,7 @@
 		{
 			"ENG_name": "Ancient Time Dragon",
 			"name": "远古时光龙",
+			"type": "dragon",
 			"source": "MPP",
 			"page": 48,
 			"referenceSources": [
@@ -173,7 +174,6 @@
 			"size": [
 				"G"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -340,6 +340,7 @@
 		{
 			"ENG_name": "Athar Null",
 			"name": "神明非神会·抹消密使",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 53,
 			"referenceSources": [
@@ -350,7 +351,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -456,12 +456,12 @@
 		{
 			"ENG_name": "Aurumach Rilmani",
 			"name": "黄金卿",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 43,
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N"
 			],
@@ -627,6 +627,7 @@
 		{
 			"ENG_name": "Avoral Guardinal",
 			"name": "鹏羽天",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 32,
 			"referenceSources": [
@@ -635,7 +636,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N",
 				"G"
@@ -682,7 +682,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"天族",
+				"天界语",
 				"通用语"
 			],
 			"cr": "9",
@@ -777,6 +777,12 @@
 		{
 			"ENG_name": "Baernaloth",
 			"name": "贝纳罗斯魔",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"source": "MPP",
 			"page": 20,
 			"referenceSources": [
@@ -786,12 +792,6 @@
 			"size": [
 				"L"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -1026,6 +1026,7 @@
 		{
 			"ENG_name": "Bariaur Wanderer",
 			"name": "人羊漂泊者",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 21,
 			"referenceSources": [
@@ -1035,7 +1036,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"C",
 				"G"
@@ -1077,7 +1077,7 @@
 			],
 			"passive": 14,
 			"languages": [
-				"天族",
+				"天界语",
 				"通用语"
 			],
 			"cr": "3",
@@ -1153,7 +1153,7 @@
 				}
 			],
 			"attachedItems": [
-				"短弓|PHB"
+				"短弓|phb"
 			],
 			"senseTags": [
 				"D"
@@ -1192,6 +1192,7 @@
 		{
 			"ENG_name": "Bleak Cabal Void Soother",
 			"name": "无望党·虚无医师",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 54,
 			"referenceSources": [
@@ -1202,7 +1203,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -1296,7 +1296,7 @@
 				}
 			],
 			"attachedItems": [
-				"硬头锤|PHB"
+				"硬头锤|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -1327,6 +1327,7 @@
 		{
 			"ENG_name": "Cranium Rat Squeaker",
 			"name": "吱语颅鼠",
+			"type": "aberration",
 			"source": "MPP",
 			"page": 22,
 			"referenceSources": [
@@ -1336,7 +1337,6 @@
 			"size": [
 				"T"
 			],
-			"type": "aberration",
 			"alignment": [
 				"U"
 			],
@@ -1419,6 +1419,10 @@
 		{
 			"ENG_name": "Cranium Rat Squeaker Swarm",
 			"name": "吱语颅鼠集群",
+			"type": {
+				"type": "aberration",
+				"swarmSize": "T"
+			},
 			"source": "MPP",
 			"page": 22,
 			"referenceSources": [
@@ -1428,10 +1432,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"swarmSize": "T"
-			},
 			"alignment": [
 				"N"
 			],
@@ -1574,6 +1574,7 @@
 		{
 			"ENG_name": "Cuprilach Rilmani",
 			"name": "紫铜卿",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 44,
 			"referenceSources": [
@@ -1583,7 +1584,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N"
 			],
@@ -1729,6 +1729,7 @@
 		{
 			"ENG_name": "Dabus",
 			"name": "监护者",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 23,
 			"referenceSources": [
@@ -1738,7 +1739,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"N"
@@ -1850,6 +1850,7 @@
 		{
 			"ENG_name": "Darkweaver",
 			"name": "暗织蛛",
+			"type": "aberration",
 			"source": "MPP",
 			"page": 25,
 			"referenceSources": [
@@ -1859,7 +1860,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -1914,7 +1914,7 @@
 			"trait": [
 				{
 					"ENG_name": "Shadowy Form",
-					"name": "幽影形态",
+					"name": "幽影化身",
 					"entries": [
 						"当暗织蛛处于微光或黑暗环境中时，除非它陷入{@condition 失能}，否则对其发动的攻击检定具有劣势。"
 					]
@@ -2006,6 +2006,7 @@
 		{
 			"ENG_name": "Decaton Modron",
 			"name": "十次魔冢",
+			"type": "construct",
 			"source": "MPP",
 			"page": 36,
 			"referenceSources": [
@@ -2015,7 +2016,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -2066,7 +2066,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"魔冢",
+				"魔冢语",
 				"心灵感应 120 尺"
 			],
 			"cr": "8",
@@ -2176,6 +2176,7 @@
 		{
 			"ENG_name": "Doomguard Doom Lord",
 			"name": "末日守卫·末日领主",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 54,
 			"referenceSources": [
@@ -2185,7 +2186,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -2295,6 +2295,7 @@
 		{
 			"ENG_name": "Doomguard Rot Blade",
 			"name": "末日守卫·衰亡之刃",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 56,
 			"referenceSources": [
@@ -2305,7 +2306,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -2398,6 +2398,7 @@
 		{
 			"ENG_name": "Eater of Knowledge",
 			"name": "知识噬者",
+			"type": "aberration",
 			"source": "MPP",
 			"page": 29,
 			"referenceSources": [
@@ -2407,7 +2408,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -2565,6 +2565,7 @@
 		{
 			"ENG_name": "Equinal Guardinal",
 			"name": "马首天",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 33,
 			"referenceSources": [
@@ -2574,7 +2575,6 @@
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N",
 				"G"
@@ -2619,7 +2619,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"天族",
+				"天界语",
 				"通用语"
 			],
 			"cr": "6",
@@ -2693,6 +2693,7 @@
 		{
 			"ENG_name": "Farastu Demodand",
 			"name": "法拉斯特魔",
+			"type": "fiend",
 			"source": "MPP",
 			"page": 26,
 			"referenceSources": [
@@ -2702,7 +2703,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"N",
 				"E"
@@ -2872,6 +2872,7 @@
 		{
 			"ENG_name": "Fated Shaker",
 			"name": "定命盟·缴债税官",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 56,
 			"referenceSources": [
@@ -2881,7 +2882,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3034,6 +3034,7 @@
 		{
 			"ENG_name": "Ferrumach Rilmani",
 			"name": "黑铁卿",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 44,
 			"referenceSources": [
@@ -3042,7 +3043,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N"
 			],
@@ -3189,6 +3189,7 @@
 		{
 			"ENG_name": "Fraternity of Order Law Bender",
 			"name": "秩序厅·曲法律师",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 57,
 			"referenceSources": [
@@ -3198,7 +3199,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3323,6 +3323,12 @@
 		{
 			"ENG_name": "Githzerai Futurist",
 			"name": "吉斯泽莱预视者",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPP",
 			"page": 30,
 			"referenceSources": [
@@ -3332,12 +3338,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3379,7 +3379,7 @@
 			"passive": 17,
 			"languages": [
 				"通用语",
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "9",
 			"spellcasting": [
@@ -3484,6 +3484,12 @@
 		{
 			"ENG_name": "Githzerai Traveler",
 			"name": "吉斯泽莱旅行者",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPP",
 			"page": 31,
 			"referenceSources": [
@@ -3492,12 +3498,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3535,7 +3535,7 @@
 			"passive": 15,
 			"languages": [
 				"通用语",
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "3",
 			"spellcasting": [
@@ -3653,6 +3653,12 @@
 		{
 			"ENG_name": "Githzerai Uniter",
 			"name": "吉斯泽莱统念者",
+			"type": {
+				"type": "aberration",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "MPP",
 			"page": 31,
 			"referenceSources": [
@@ -3662,12 +3668,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3705,7 +3705,7 @@
 			"passive": 16,
 			"languages": [
 				"通用语",
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "7",
 			"spellcasting": [
@@ -3802,6 +3802,7 @@
 		{
 			"ENG_name": "Hands of Havoc Fire Starter",
 			"name": "祸乱之手·纵火狂徒",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 58,
 			"referenceSources": [
@@ -3812,7 +3813,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3898,6 +3898,7 @@
 		{
 			"ENG_name": "Harmonium Captain",
 			"name": "和谐营·军士队长",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 58,
 			"referenceSources": [
@@ -3908,7 +3909,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4011,6 +4011,7 @@
 		{
 			"ENG_name": "Harmonium Peacekeeper",
 			"name": "和谐营·和平卫士",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 59,
 			"referenceSources": [
@@ -4021,7 +4022,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4094,6 +4094,7 @@
 		{
 			"ENG_name": "Heralds of Dust Remnant",
 			"name": "灰烬先驱·驻世余烬",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 59,
 			"referenceSources": [
@@ -4105,7 +4106,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4223,6 +4223,7 @@
 		{
 			"ENG_name": "Hexton Modron",
 			"name": "六次魔冢",
+			"type": "construct",
 			"source": "MPP",
 			"page": 37,
 			"referenceSources": [
@@ -4231,7 +4232,6 @@
 			"size": [
 				"H"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -4427,6 +4427,7 @@
 		{
 			"ENG_name": "Hound Archon",
 			"name": "獒首神使",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 16,
 			"referenceSources": [
@@ -4435,7 +4436,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"G"
@@ -4591,6 +4591,7 @@
 		{
 			"ENG_name": "Kelubar Demodand",
 			"name": "克努巴尔魔",
+			"type": "fiend",
 			"source": "MPP",
 			"page": 27,
 			"referenceSources": [
@@ -4599,7 +4600,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"N",
 				"E"
@@ -4782,6 +4782,12 @@
 		{
 			"ENG_name": "Kolyarut",
 			"name": "协约者",
+			"type": {
+				"type": "construct",
+				"tags": [
+					"制裁者"
+				]
+			},
 			"source": "MPP",
 			"page": 34,
 			"referenceSources": [
@@ -4791,12 +4797,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "construct",
-				"tags": [
-					"制裁者"
-				]
-			},
 			"alignment": [
 				"L",
 				"N"
@@ -4993,6 +4993,7 @@
 		{
 			"ENG_name": "Lantern Archon",
 			"name": "圣光神使",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 17,
 			"referenceSources": [
@@ -5002,7 +5003,6 @@
 			"size": [
 				"S"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"G"
@@ -5177,6 +5177,7 @@
 		{
 			"ENG_name": "Maelephant",
 			"name": "魔象人",
+			"type": "fiend",
 			"source": "MPP",
 			"page": 35,
 			"referenceSources": [
@@ -5186,7 +5187,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"L",
 				"E"
@@ -5280,7 +5280,7 @@
 				}
 			],
 			"attachedItems": [
-				"长柄刀|PHB"
+				"长柄刀|phb"
 			],
 			"traitTags": [
 				"魔法抗性"
@@ -5319,6 +5319,7 @@
 		{
 			"ENG_name": "Mercykiller Bloodhound",
 			"name": "屠悯会·嗜血猎手",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 60,
 			"referenceSources": [
@@ -5329,7 +5330,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -5422,6 +5422,7 @@
 		{
 			"ENG_name": "Mind's Eye Matter Smith",
 			"name": "心灵之眼·造物魔匠",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 60,
 			"referenceSources": [
@@ -5432,7 +5433,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -5567,6 +5567,7 @@
 		{
 			"ENG_name": "Musteval Guardinal",
 			"name": "鼠首天",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 33,
 			"referenceSources": [
@@ -5576,7 +5577,6 @@
 			"size": [
 				"S"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N",
 				"G"
@@ -5614,7 +5614,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"天族",
+				"天界语",
 				"通用语"
 			],
 			"cr": "2",
@@ -5692,6 +5692,7 @@
 		{
 			"ENG_name": "Nonaton Modron",
 			"name": "九次魔冢",
+			"type": "construct",
 			"source": "MPP",
 			"page": 38,
 			"referenceSources": [
@@ -5701,7 +5702,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -5749,7 +5749,7 @@
 			],
 			"passive": 21,
 			"languages": [
-				"魔冢",
+				"魔冢语",
 				"心灵感应 120 尺"
 			],
 			"cr": "10",
@@ -5858,6 +5858,7 @@
 		{
 			"ENG_name": "Octon Modron",
 			"name": "八次魔冢",
+			"type": "construct",
 			"source": "MPP",
 			"page": 40,
 			"referenceSources": [
@@ -5866,7 +5867,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -5917,7 +5917,7 @@
 				"心灵"
 			],
 			"languages": [
-				"魔冢",
+				"魔冢语",
 				"心灵感应 120 尺"
 			],
 			"cr": "11",
@@ -6027,14 +6027,6 @@
 		{
 			"ENG_name": "Planar Incarnate",
 			"name": "位面显化",
-			"source": "MPP",
-			"page": 41,
-			"referenceSources": [
-				"ToFW"
-			],
-			"size": [
-				"G"
-			],
 			"type": {
 				"type": {
 					"choose": [
@@ -6043,6 +6035,14 @@
 					]
 				}
 			},
+			"source": "MPP",
+			"page": 41,
+			"referenceSources": [
+				"ToFW"
+			],
+			"size": [
+				"G"
+			],
 			"alignment": [
 				"A"
 			],
@@ -6223,6 +6223,7 @@
 		{
 			"ENG_name": "Razorvine Blight",
 			"name": "枯刃藤怪",
+			"type": "plant",
 			"source": "MPP",
 			"page": 42,
 			"referenceSources": [
@@ -6231,7 +6232,6 @@
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"N",
 				"E"
@@ -6341,6 +6341,7 @@
 		{
 			"ENG_name": "Septon Modron",
 			"name": "七次魔冢",
+			"type": "construct",
 			"source": "MPP",
 			"page": 40,
 			"referenceSources": [
@@ -6350,7 +6351,6 @@
 			"size": [
 				"L"
 			],
-			"type": "construct",
 			"alignment": [
 				"L",
 				"N"
@@ -6516,6 +6516,7 @@
 		{
 			"ENG_name": "Shator Demodand",
 			"name": "煞托魔",
+			"type": "fiend",
 			"source": "MPP",
 			"page": 28,
 			"referenceSources": [
@@ -6524,7 +6525,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"N",
 				"E"
@@ -6734,6 +6734,12 @@
 		{
 			"ENG_name": "Shemeshka",
 			"name": "舍米莎卡",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"尤格罗斯魔"
+				]
+			},
 			"isNamedCreature": true,
 			"source": "MPP",
 			"page": 46,
@@ -6744,12 +6750,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "fiend",
-				"tags": [
-					"尤格罗斯魔"
-				]
-			},
 			"alignment": [
 				"N",
 				"E"
@@ -6981,6 +6981,7 @@
 		{
 			"ENG_name": "Society of Sensation Muse",
 			"name": "感觉团·缪斯乐师",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 61,
 			"referenceSources": [
@@ -6991,7 +6992,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -7116,6 +7116,7 @@
 		{
 			"ENG_name": "Sunfly",
 			"name": "日光萤",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 47,
 			"referenceSources": [
@@ -7125,7 +7126,6 @@
 			"size": [
 				"T"
 			],
-			"type": "celestial",
 			"alignment": [
 				"C",
 				"G"
@@ -7211,15 +7211,15 @@
 		{
 			"ENG_name": "Swarm of Sunflies",
 			"name": "日光萤集群",
+			"type": {
+				"type": "celestial",
+				"swarmSize": "T"
+			},
 			"source": "MPP",
 			"page": 47,
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "celestial",
-				"swarmSize": "T"
-			},
 			"alignment": [
 				"C",
 				"G"
@@ -7324,6 +7324,7 @@
 		{
 			"ENG_name": "Time Dragon Wyrmling",
 			"name": "时光龙雏龙",
+			"type": "dragon",
 			"source": "MPP",
 			"page": 51,
 			"referenceSources": [
@@ -7332,7 +7333,6 @@
 			"size": [
 				"M"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -7437,6 +7437,7 @@
 		{
 			"ENG_name": "Transcendent Order Conduit",
 			"name": "超然社·无念宗师",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 62,
 			"referenceSources": [
@@ -7446,7 +7447,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -7587,6 +7587,7 @@
 		{
 			"ENG_name": "Transcendent Order Instinct",
 			"name": "超然社·直感拳师",
+			"type": "humanoid",
 			"source": "MPP",
 			"page": 62,
 			"referenceSources": [
@@ -7596,7 +7597,6 @@
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -7692,6 +7692,7 @@
 		{
 			"ENG_name": "Vargouille Reflection",
 			"name": "诡脸飞首",
+			"type": "fiend",
 			"source": "MPP",
 			"page": 52,
 			"referenceSources": [
@@ -7701,7 +7702,6 @@
 			"size": [
 				"T"
 			],
-			"type": "fiend",
 			"alignment": [
 				"C",
 				"E"
@@ -7813,6 +7813,7 @@
 		{
 			"ENG_name": "Warden Archon",
 			"name": "卫戍神使",
+			"type": "celestial",
 			"source": "MPP",
 			"page": 18,
 			"referenceSources": [
@@ -7822,7 +7823,6 @@
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"G"
@@ -7984,12 +7984,12 @@
 		{
 			"ENG_name": "Young Time Dragon",
 			"name": "青年时光龙",
+			"type": "dragon",
 			"source": "MPP",
 			"page": 51,
 			"size": [
 				"L"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],

@@ -16,6 +16,7 @@
 		{
 			"ENG_name": "Aberrant Spirit",
 			"name": "异怪灵魄",
+			"type": "aberration",
 			"source": "TCE",
 			"page": 109,
 			"reprintedAs": [
@@ -26,7 +27,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"U"
 			],
@@ -298,6 +298,8 @@
 		},
 		{
 			"ENG_name": "Beast of the Land",
+			"name": "大地野兽",
+			"type": "beast",
 			"ac": [
 				{
 					"special": "13+PB（天生护甲）"
@@ -336,7 +338,6 @@
 				"MLW",
 				"MW"
 			],
-			"name": "大地野兽",
 			"page": 61,
 			"passive": 12,
 			"pbNote": "等于你的加值",
@@ -378,13 +379,13 @@
 			"traitTags": [
 				"冲锋"
 			],
-			"type": "beast",
 			"wis": 14,
 			"translator": "不全书"
 		},
 		{
 			"ENG_name": "Beast of the Sea",
 			"name": "海洋野兽",
+			"type": "beast",
 			"source": "TCE",
 			"page": 61,
 			"reprintedAs": [
@@ -394,7 +395,6 @@
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -471,6 +471,7 @@
 		{
 			"ENG_name": "Beast of the Sky",
 			"name": "天空野兽",
+			"type": "beast",
 			"source": "TCE",
 			"page": 61,
 			"reprintedAs": [
@@ -480,7 +481,6 @@
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"N"
 			],
@@ -552,6 +552,7 @@
 		{
 			"ENG_name": "Bestial Spirit",
 			"name": "野兽灵魄",
+			"type": "beast",
 			"source": "TCE",
 			"page": 109,
 			"reprintedAs": [
@@ -562,7 +563,6 @@
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -582,11 +582,11 @@
 				},
 				"fly": {
 					"number": 60,
-					"condition": "（仅气）"
+					"condition": "（仅空中）"
 				},
 				"swim": {
 					"number": 30,
-					"condition": "（仅水）"
+					"condition": "（仅水中）"
 				}
 			},
 			"str": 18,
@@ -767,6 +767,7 @@
 		{
 			"ENG_name": "Celestial Spirit",
 			"name": "天界灵魄",
+			"type": "celestial",
 			"source": "TCE",
 			"page": 110,
 			"reprintedAs": [
@@ -777,7 +778,6 @@
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"U"
 			],
@@ -811,7 +811,7 @@
 				"恐慌"
 			],
 			"languages": [
-				"天族",
+				"天界语",
 				"理解你所说的语言"
 			],
 			"action": [
@@ -926,6 +926,7 @@
 		{
 			"ENG_name": "Construct Spirit",
 			"name": "构装灵魄",
+			"type": "construct",
 			"source": "TCE",
 			"page": 111,
 			"reprintedAs": [
@@ -936,7 +937,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -1104,6 +1104,7 @@
 		{
 			"ENG_name": "Dancing Item",
 			"name": "舞空物品",
+			"type": "construct",
 			"source": "TCE",
 			"page": 29,
 			"summonedByClass": "吟游诗人|PHB",
@@ -1111,7 +1112,6 @@
 				"L"
 			],
 			"sizeNote": "或更小",
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -1200,6 +1200,7 @@
 		{
 			"ENG_name": "Elemental Spirit",
 			"name": "元素灵魄",
+			"type": "elemental",
 			"source": "TCE",
 			"page": 111,
 			"reprintedAs": [
@@ -1210,7 +1211,6 @@
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"U"
 			],
@@ -1234,7 +1234,7 @@
 				},
 				"swim": {
 					"number": 40,
-					"condition": "（仅水）"
+					"condition": "（仅水中）"
 				},
 				"canHover": true
 			},
@@ -1502,6 +1502,7 @@
 		{
 			"ENG_name": "Fey Spirit",
 			"name": "妖精灵魄",
+			"type": "fey",
 			"source": "TCE",
 			"page": 112,
 			"reprintedAs": [
@@ -1512,7 +1513,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"U"
 			],
@@ -1595,7 +1595,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"短剑|PHB"
+				"短剑|phb"
 			],
 			"senseTags": [
 				"D"
@@ -1668,6 +1668,7 @@
 		{
 			"ENG_name": "Fiendish Spirit",
 			"name": "邪魔灵魄",
+			"type": "fiend",
 			"source": "TCE",
 			"page": 112,
 			"reprintedAs": [
@@ -1678,7 +1679,6 @@
 			"size": [
 				"L"
 			],
-			"type": "fiend",
 			"alignment": [
 				"U"
 			],
@@ -1956,6 +1956,7 @@
 		{
 			"ENG_name": "Homunculus Servant",
 			"name": "人工生命仆从",
+			"type": "construct",
 			"source": "TCE",
 			"page": 22,
 			"otherSources": [
@@ -1971,7 +1972,6 @@
 			"size": [
 				"T"
 			],
-			"type": "construct",
 			"ac": [
 				{
 					"ac": 13,
@@ -2059,17 +2059,17 @@
 		{
 			"ENG_name": "Juvenile Mimic",
 			"name": "幼体拟身怪",
-			"source": "TCE",
-			"page": 167,
-			"size": [
-				"T"
-			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
 					"变形生物"
 				]
 			},
+			"source": "TCE",
+			"page": 167,
+			"size": [
+				"T"
+			],
 			"alignment": [
 				"U"
 			],
@@ -2165,12 +2165,12 @@
 		{
 			"ENG_name": "Mighty Servant of Leuk-o",
 			"name": "琉克欧的非凡机仆",
+			"type": "construct",
 			"source": "TCE",
 			"page": 131,
 			"size": [
 				"H"
 			],
-			"type": "construct",
 			"alignment": [
 				"U"
 			],
@@ -2324,6 +2324,7 @@
 		{
 			"ENG_name": "Reflection",
 			"name": "倒影",
+			"type": "fey",
 			"source": "TCE",
 			"page": 158,
 			"_copy": {
@@ -2338,7 +2339,6 @@
 					}
 				}
 			},
-			"type": "fey",
 			"resist": [
 				"强酸",
 				"寒冷",
@@ -2364,6 +2364,7 @@
 		{
 			"ENG_name": "Shadow Spirit",
 			"name": "暗影灵魄",
+			"type": "monstrosity",
 			"source": "TCE",
 			"page": 114,
 			"summonedBySpell": "暗影衍体召唤术|TCE",
@@ -2371,7 +2372,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -2539,6 +2539,7 @@
 		{
 			"ENG_name": "Steel Defender",
 			"name": "钢铁守卫",
+			"type": "construct",
 			"source": "TCE",
 			"page": 19,
 			"otherSources": [
@@ -2554,7 +2555,6 @@
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"ac": [
 				{
 					"ac": 15,
@@ -2649,6 +2649,7 @@
 		{
 			"ENG_name": "Undead Spirit",
 			"name": "亡灵灵魄",
+			"type": "undead",
 			"source": "TCE",
 			"page": 114,
 			"reprintedAs": [
@@ -2659,7 +2660,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"U"
 			],
@@ -2921,13 +2921,13 @@
 		{
 			"ENG_name": "Wildfire Spirit",
 			"name": "野火精魂",
+			"type": "elemental",
 			"source": "TCE",
 			"page": 40,
 			"summonedByClass": "德鲁伊|PHB",
 			"size": [
 				"S"
 			],
-			"type": "elemental",
 			"alignment": [
 				"U"
 			],

@@ -152,17 +152,17 @@
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
-					"(a) 一把{@item 轻弩|PHB}和{@item 弩矢(20)|PHB|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=PHB|category=基础|type=简易武器}",
-					"(a) 一个 {@item 材料包|PHB}或 (b) 一件{@item 奥术法器|PHB}",
-					"(a) 一个{@item 学者套组|PHB}或(b) 一个{@item 地城套组|PHB}",
-					"{@item 皮甲|PHB}，任意 {@filter 简易武器|items|source=PHB|category=基础|type=简易武器}，以及两把 {@item 匕首|PHB|匕首}"
+					"(a) 一把{@item 轻弩|phb}和{@item 弩矢(20)|phb|20支弩箭}或 (b) 任何{@filter 简易武器|items|source=phb|category=基础|type=简易武器}",
+					"(a) 一个 {@item 材料包|phb}或 (b) 一件{@item 奥术法器|phb}",
+					"(a) 一个{@item 学者套组|phb}或(b) 一个{@item 地城套组|phb}",
+					"{@item 皮甲|phb}，任意 {@filter 简易武器|items|source=phb|category=基础|type=简易武器}，以及两把 {@item 匕首|phb|匕首}"
 				],
 				"goldAlternative": "{@dice 4d4 × 10|4d4 × 10|起始金币}",
 				"defaultData": [
 					{
 						"a": [
-							"轻弩|PHB",
-							"弩矢(20)|PHB"
+							"轻弩|phb",
+							"弩矢(20)|phb"
 						],
 						"b": [
 							{
@@ -172,7 +172,7 @@
 					},
 					{
 						"a": [
-							"材料包|PHB"
+							"材料包|phb"
 						],
 						"b": [
 							{
@@ -182,20 +182,20 @@
 					},
 					{
 						"a": [
-							"学者套组|PHB"
+							"学者套组|phb"
 						],
 						"b": [
-							"地城套组|PHB"
+							"地城套组|phb"
 						]
 					},
 					{
 						"_": [
-							"皮甲|PHB",
+							"皮甲|phb",
 							{
 								"equipmentType": "weaponSimple"
 							},
 							{
-								"item": "匕首|PHB",
+								"item": "匕首|phb",
 								"quantity": 2
 							}
 						]
@@ -1305,7 +1305,7 @@
 						],
 						"s4": [
 							"操控水体",
-							"元素召唤术|TCE"
+							"元素召唤术|tce"
 						],
 						"s5": [
 							"毕格比之手",
@@ -1947,7 +1947,7 @@
 					"name": "法器",
 					"type": "entries",
 					"entries": [
-						"你可以使用{@item 奥术法器|PHB}（详见第5章）作为你施展魔契师法术的法器。"
+						"你可以使用{@item 奥术法器|phb}（详见第5章）作为你施展魔契师法术的法器。"
 					]
 				}
 			]
@@ -2027,7 +2027,7 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4级魔契师 {@variantrule 可选职业特性|TCE|可选特性}}",
+				"{@i 4级魔契师 {@variantrule 可选职业特性|tce|可选特性}}",
 				"每当你的邪术师达到了可以获得属性值提升的等级，你可以做以下的一件事来代表你在奥秘研究当中重点的转变。",
 				{
 					"type": "list",
@@ -3310,7 +3310,7 @@
 								],
 								[
 									"4th",
-									"{@spell 操控水体}, {@spell 元素召唤术|TCE}（仅水元素）"
+									"{@spell 操控水体}, {@spell 元素召唤术|tce}（仅水元素）"
 								],
 								[
 									"5th",
@@ -4264,7 +4264,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"你可以使用附赠动作变身为你宗主那骇人伟力的化身。你获得以下增益，持续1分钟；当你陷入{@condition 失能|XPHB}状态，或你主动结束该形态时（无需动作），该效应提前结束。你可以进行变身的次数等于你的魅力调整值（至少一次）。完成一次长休后，你恢复所有已消耗的使用次数。",
+				"作为{@variantrule 附赠动作|XPHB}，你化身为雇主恐怖的法力化身，获得下方增益持续1分钟，直到你处于{@condition 失能|XPHB}状态，或你结束该形态（无需动作）。你可转化的次数等同于你的魅力调整值（至少一次），且完成一次{@variantrule 长休|XPHB}后恢复所有使用次数。",
 				{
 					"ENG_name": "Facsimile of Life",
 					"name": "生命摹写",
@@ -4352,7 +4352,7 @@
 					"name": "坏疽秘法",
 					"type": "entries",
 					"entries": [
-						"源自你的攻击、魔契师法术以及魔契师特性的暗蚀伤害，无视暗蚀伤害抗性。每回合一次，当你施展一道造成伤害的法术时，你可以将该法术的伤害类型改为暗蚀伤害。"
+						"源自你的攻击、魔契师法术以及魔契师特性的暗蚀伤害，无视暗蚀伤害{@variantrule 抗性|XPHB}。每回合一次，当你施展一道造成伤害的法术时，你可以将该法术的伤害类型改为暗蚀伤害。"
 					]
 				},
 				{
@@ -4390,7 +4390,7 @@
 					"name": "暗蚀抗性",
 					"type": "entries",
 					"entries": [
-						"你具有暗蚀伤害抗性。使用你的战栗形态特性期间，你具有对暗蚀伤害的免疫。"
+						"你具有暗蚀伤害{@variantrule 抗性|XPHB}。使用你的战栗形态特性期间，你具有对暗蚀伤害的{@variantrule 免疫|XPHB}。"
 					]
 				},
 				{
@@ -4399,7 +4399,7 @@
 					"type": "entries",
 					"entries": [
 						"若你的生命值降至0且没有立即死亡，则你可以令你的躯体爆发出一阵死亡能量。源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内每个由你选择的生物都必须进行一次对抗你法术豁免DC的体质豁免。若豁免失败，则受到{@dice 2d10}+你魅力调整值的暗蚀伤害；若豁免成功，则伤害减半。随后，你的生命值变为你魔契师等级的两倍，同时你获得一级{@condition 力竭|XPHB}。",
-						"该增益一经使用，则直至你完成一次短休或长休前，都无法再次使用。"
+						"一旦你使用了这个增益，在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}之前无法再次使用。"
 					]
 				}
 			]
@@ -4421,7 +4421,7 @@
 					"name": "战栗抗性",
 					"type": "entries",
 					"entries": [
-						"你具有钝击、穿刺和挥砍伤害抗性。"
+						"你具有钝击，穿刺和挥砍伤害的{@variantrule 抗性|XPHB}。"
 					]
 				},
 				{
@@ -4429,7 +4429,7 @@
 					"name": "幽魂飞行",
 					"type": "entries",
 					"entries": [
-						"你具有等于你速度的飞行速度，并且可以悬浮。你可以如同穿过{@variantrule 困难地形|XPHB}一般移动穿过生物或物件；但若你在你的回合结束时仍处于生物或物件内部，你受到{@damage 1d10}力场伤害。"
+						"你具有等于你{@variantrule 速度|XPHB}的{@variantrule 飞行速度|XPHB}，并且可以悬浮。你可以如同穿过{@variantrule 困难地形|XPHB}一般移动穿过生物或物件；但若你在你的回合结束时仍处于生物或物件内部，你受到{@damage 1d10}力场伤害。"
 					]
 				},
 				{

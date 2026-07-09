@@ -3,6 +3,7 @@
 		{
 			"ENG_name": "Aartuk Elder",
 			"name": "阿尔图克蔬菜人长者",
+			"type": "plant",
 			"source": "BAM",
 			"page": 8,
 			"referenceSources": [
@@ -11,7 +12,6 @@
 			"size": [
 				"L"
 			],
-			"type": "plant",
 			"alignment": [
 				"L",
 				"E"
@@ -143,6 +143,7 @@
 		{
 			"ENG_name": "Aartuk Starhorror",
 			"name": "阿尔图克蔬菜人怖星者",
+			"type": "plant",
 			"source": "BAM",
 			"page": 9,
 			"referenceSources": [
@@ -151,7 +152,6 @@
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"L",
 				"E"
@@ -289,6 +289,7 @@
 		{
 			"ENG_name": "Aartuk Weedling",
 			"name": "阿尔图克蔬菜人剪灭人",
+			"type": "plant",
 			"source": "BAM",
 			"page": 9,
 			"referenceSources": [
@@ -297,7 +298,6 @@
 			"size": [
 				"M"
 			],
-			"type": "plant",
 			"alignment": [
 				"L",
 				"E"
@@ -404,6 +404,7 @@
 		{
 			"ENG_name": "Adult Lunar Dragon",
 			"name": "成年月亮龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 34,
 			"referenceSources": [
@@ -413,7 +414,6 @@
 			"size": [
 				"H"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N",
 				"E"
@@ -588,12 +588,12 @@
 		{
 			"ENG_name": "Adult Solar Dragon",
 			"name": "成年太阳龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 52,
 			"size": [
 				"H"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -778,12 +778,12 @@
 		{
 			"ENG_name": "Ancient Lunar Dragon",
 			"name": "远古月亮龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 32,
 			"size": [
 				"G"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N",
 				"E"
@@ -866,7 +866,7 @@
 					"ENG_name": "Bite",
 					"name": "啃咬",
 					"entries": [
-						"{@atk mw} 命中{@hit 14}，触及15尺，单一目标。{@h}15（{@damage 2d6 + 8}）穿刺伤害外加7（{@damage 2d6}）冷冻伤害。"
+						"{@atk mw} 命中{@hit 14}，触及15尺，单一目标。{@h}15（{@damage 2d6 + 8}）穿刺伤害外加7（{@damage 2d6}）寒冷伤害。"
 					]
 				},
 				{
@@ -969,12 +969,12 @@
 		{
 			"ENG_name": "Ancient Solar Dragon",
 			"name": "远古太阳龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 50,
 			"size": [
 				"G"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -1158,6 +1158,12 @@
 		{
 			"ENG_name": "Astral Elf Aristocrat",
 			"name": "星界精灵贵族",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
 			"source": "BAM",
 			"page": 11,
 			"referenceSources": [
@@ -1166,12 +1172,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"法师"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -1300,7 +1300,7 @@
 				}
 			],
 			"attachedItems": [
-				"弯刀|PHB"
+				"弯刀|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -1344,6 +1344,7 @@
 		{
 			"ENG_name": "Astral Elf Commander",
 			"name": "星界精灵指挥官",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 12,
 			"referenceSources": [
@@ -1352,7 +1353,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -1456,8 +1456,8 @@
 				}
 			],
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -1495,6 +1495,7 @@
 		{
 			"ENG_name": "Astral Elf Honor Guard",
 			"name": "星界精灵荣耀守卫",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 12,
 			"referenceSources": [
@@ -1503,7 +1504,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -1587,7 +1587,7 @@
 				}
 			],
 			"attachedItems": [
-				"长剑|PHB"
+				"长剑|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -1619,6 +1619,12 @@
 		{
 			"ENG_name": "Astral Elf Star Priest",
 			"name": "星界精灵星辰祭司",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"牧师"
+				]
+			},
 			"source": "BAM",
 			"page": 13,
 			"referenceSources": [
@@ -1627,12 +1633,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"牧师"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -1640,7 +1640,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item 链甲衫|PHB}"
+						"{@item 链甲衫|phb}"
 					]
 				}
 			],
@@ -1748,7 +1748,7 @@
 				}
 			],
 			"attachedItems": [
-				"钉头锤|PHB"
+				"钉头锤|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -1792,6 +1792,7 @@
 		{
 			"ENG_name": "Astral Elf Warrior",
 			"name": "星界精灵战士",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 13,
 			"referenceSources": [
@@ -1800,7 +1801,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -1883,8 +1883,8 @@
 				}
 			],
 			"attachedItems": [
-				"长弓|PHB",
-				"长剑|PHB"
+				"长弓|phb",
+				"长剑|phb"
 			],
 			"traitTags": [
 				"妖精血统",
@@ -1919,6 +1919,7 @@
 		{
 			"ENG_name": "Autognome",
 			"name": "自动侏儒",
+			"type": "construct",
 			"source": "BAM",
 			"page": 13,
 			"referenceSources": [
@@ -1927,7 +1928,6 @@
 			"size": [
 				"S"
 			],
-			"type": "construct",
 			"alignment": [
 				"A"
 			],
@@ -2085,6 +2085,7 @@
 		{
 			"ENG_name": "B'rohg",
 			"name": "毕罗格四臂巨人",
+			"type": "giant",
 			"source": "BAM",
 			"page": 16,
 			"referenceSources": [
@@ -2093,7 +2094,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"A"
 			],
@@ -2178,6 +2178,7 @@
 		{
 			"ENG_name": "Braxat",
 			"name": "巴夏特角兽巨人",
+			"type": "giant",
 			"source": "BAM",
 			"page": 15,
 			"referenceSources": [
@@ -2186,7 +2187,6 @@
 			"size": [
 				"H"
 			],
-			"type": "giant",
 			"alignment": [
 				"N"
 			],
@@ -2290,7 +2290,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨棒|PHB"
+				"巨棒|phb"
 			],
 			"senseTags": [
 				"D"
@@ -2332,6 +2332,7 @@
 		{
 			"ENG_name": "Brown Scavver",
 			"name": "棕色独眼䲟",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 49,
 			"referenceSources": [
@@ -2340,7 +2341,6 @@
 			"size": [
 				"L"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -2422,12 +2422,12 @@
 		{
 			"ENG_name": "Chwinga Astronaut",
 			"name": "怯蕴阿灵航天士",
+			"type": "elemental",
 			"source": "BAM",
 			"page": 17,
 			"size": [
 				"T"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N"
 			],
@@ -2499,7 +2499,7 @@
 					"ENG_name": "Magical Gift (1/Day)",
 					"name": "魔法赠礼（1/日）",
 					"entries": [
-						"怯蕴阿灵选择自身5尺内一个它能看见的类人生物为目标。目标获得一项由DM选择的{@filter 超自然护咒|大功告成|type=魅惑}。查阅{@book 第七章|DMG|7|其他奖励}获得更多关于超自然护咒的信息。"
+						"怯蕴阿灵选择自身5尺内一个它能看见的类人生物为目标。目标获得一项由DM选择的{@filter 超自然护咒|rewards|type=魅惑}。查阅{@book 第七章|DMG|7|其他奖励}获得更多关于超自然护咒的信息。"
 					]
 				},
 				{
@@ -2526,6 +2526,7 @@
 		{
 			"ENG_name": "Cosmic Horror",
 			"name": "宇宙恐怪",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 18,
 			"referenceSources": [
@@ -2534,7 +2535,6 @@
 			"size": [
 				"G"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -2694,6 +2694,7 @@
 		{
 			"ENG_name": "Dohwar",
 			"name": "多瓦尔企鹅人",
+			"type": "fey",
 			"source": "BAM",
 			"page": 19,
 			"referenceSources": [
@@ -2702,7 +2703,6 @@
 			"size": [
 				"S"
 			],
-			"type": "fey",
 			"alignment": [
 				"A"
 			],
@@ -2797,6 +2797,7 @@
 		{
 			"ENG_name": "Esthetic",
 			"name": "美学舰兽",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 20,
 			"referenceSources": [
@@ -2805,7 +2806,6 @@
 			"size": [
 				"G"
 			],
-			"type": "aberration",
 			"alignment": [
 				"U"
 			],
@@ -2933,6 +2933,7 @@
 		{
 			"ENG_name": "Eye Monger",
 			"name": "大眼游星",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 21,
 			"referenceSources": [
@@ -2941,7 +2942,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -3050,6 +3050,7 @@
 		{
 			"ENG_name": "Feyr",
 			"name": "惊怖魔",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 22,
 			"referenceSources": [
@@ -3058,7 +3059,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"E"
@@ -3185,6 +3185,7 @@
 		{
 			"ENG_name": "Gaj",
 			"name": "劫心六足甲",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 23,
 			"referenceSources": [
@@ -3193,7 +3194,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N",
 				"E"
@@ -3294,12 +3294,12 @@
 		{
 			"ENG_name": "Giant Space Hamster",
 			"name": "巨型太空仓鼠",
+			"type": "beast",
 			"source": "BAM",
 			"page": 56,
 			"size": [
 				"L"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -3345,6 +3345,7 @@
 		{
 			"ENG_name": "Giff Shipmate",
 			"name": "诘弗河马人船员",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 24,
 			"referenceSources": [
@@ -3354,7 +3355,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3427,8 +3427,8 @@
 				}
 			],
 			"attachedItems": [
-				"长剑|PHB",
-				"滑膛枪|DMG"
+				"长剑|phb",
+				"滑膛枪|dmg"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3456,6 +3456,7 @@
 		{
 			"ENG_name": "Giff Shock Trooper",
 			"name": "诘弗河马人突击兵",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 25,
 			"referenceSources": [
@@ -3464,7 +3465,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3559,8 +3559,8 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB",
-				"滑膛枪|DMG"
+				"巨剑|phb",
+				"滑膛枪|dmg"
 			],
 			"traitTags": [
 				"攻城怪物"
@@ -3597,12 +3597,12 @@
 		{
 			"ENG_name": "Giff Warlord",
 			"name": "诘弗河马人军阀",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 25,
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -3707,7 +3707,7 @@
 				}
 			],
 			"attachedItems": [
-				"钉头锤|PHB"
+				"钉头锤|phb"
 			],
 			"traitTags": [
 				"传奇抗性"
@@ -3733,6 +3733,12 @@
 		{
 			"ENG_name": "Githyanki Buccaneer",
 			"name": "吉斯洋基人海盗",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"吉斯人"
+				]
+			},
 			"source": "BAM",
 			"page": 27,
 			"referenceSources": [
@@ -3741,12 +3747,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -3785,7 +3785,7 @@
 			"passive": 13,
 			"languages": [
 				"通用语",
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "3",
 			"spellcasting": [
@@ -3843,7 +3843,7 @@
 				}
 			],
 			"attachedItems": [
-				"巨剑|PHB"
+				"巨剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -3878,11 +3878,6 @@
 		{
 			"ENG_name": "Githyanki Star Seer",
 			"name": "吉斯洋基人星辰先知",
-			"source": "BAM",
-			"page": 27,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3890,6 +3885,11 @@
 					"魔契师"
 				]
 			},
+			"source": "BAM",
+			"page": 27,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"A"
 			],
@@ -3929,7 +3929,7 @@
 			],
 			"languages": [
 				"通用语",
-				"吉斯人"
+				"吉斯语"
 			],
 			"cr": "7",
 			"spellcasting": [
@@ -4018,6 +4018,13 @@
 		{
 			"ENG_name": "Githyanki Xenomancer",
 			"name": "吉斯洋基人异构师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"德鲁伊",
+					"吉斯人"
+				]
+			},
 			"source": "BAM",
 			"page": 27,
 			"referenceSources": [
@@ -4026,13 +4033,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"德鲁伊",
-					"吉斯人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -4164,6 +4164,7 @@
 		{
 			"ENG_name": "Gray Scavver",
 			"name": "灰色独眼䲟",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 49,
 			"referenceSources": [
@@ -4172,7 +4173,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -4240,6 +4240,7 @@
 		{
 			"ENG_name": "Hadozee Explorer",
 			"name": "哈多兹鼯猴人探索者",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 28,
 			"referenceSources": [
@@ -4248,7 +4249,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4341,8 +4341,8 @@
 				}
 			],
 			"attachedItems": [
-				"滑膛枪|DMG",
-				"短剑|PHB"
+				"滑膛枪|dmg",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4365,6 +4365,7 @@
 		{
 			"ENG_name": "Hadozee Shipmate",
 			"name": "哈多兹鼯猴人船员",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 29,
 			"referenceSources": [
@@ -4373,7 +4374,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4436,7 +4436,7 @@
 				}
 			],
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"C"
@@ -4457,6 +4457,7 @@
 		{
 			"ENG_name": "Hadozee Warrior",
 			"name": "哈多兹鼯猴人战士",
+			"type": "humanoid",
 			"source": "BAM",
 			"page": 29,
 			"referenceSources": [
@@ -4465,7 +4466,6 @@
 			"size": [
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"A"
 			],
@@ -4555,8 +4555,8 @@
 				}
 			],
 			"attachedItems": [
-				"轻弩|PHB",
-				"短剑|PHB"
+				"轻弩|phb",
+				"短剑|phb"
 			],
 			"actionTags": [
 				"多重攻击"
@@ -4580,12 +4580,12 @@
 		{
 			"ENG_name": "Jammer Leech",
 			"name": "星舰水蛭",
+			"type": "plant",
 			"source": "BAM",
 			"page": 30,
 			"size": [
 				"T"
 			],
-			"type": "plant",
 			"alignment": [
 				"U"
 			],
@@ -4692,6 +4692,7 @@
 		{
 			"ENG_name": "Kindori",
 			"name": "鲸驮骊",
+			"type": "celestial",
 			"source": "BAM",
 			"page": 31,
 			"referenceSources": [
@@ -4700,7 +4701,6 @@
 			"size": [
 				"G"
 			],
-			"type": "celestial",
 			"alignment": [
 				"U"
 			],
@@ -4788,12 +4788,12 @@
 		{
 			"ENG_name": "Lunar Dragon Wyrmling",
 			"name": "月亮龙雏龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 35,
 			"size": [
 				"M"
 			],
-			"type": "dragon",
 			"alignment": [
 				"L",
 				"E"
@@ -4914,6 +4914,7 @@
 		{
 			"ENG_name": "Megapede",
 			"name": "超极巨蜈蚣",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 36,
 			"referenceSources": [
@@ -4922,7 +4923,6 @@
 			"size": [
 				"G"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -5022,6 +5022,7 @@
 		{
 			"ENG_name": "Mercane",
 			"name": "星海商族",
+			"type": "celestial",
 			"source": "BAM",
 			"page": 37,
 			"referenceSources": [
@@ -5030,7 +5031,6 @@
 			"size": [
 				"L"
 			],
-			"type": "celestial",
 			"alignment": [
 				"L",
 				"N"
@@ -5161,12 +5161,12 @@
 		{
 			"ENG_name": "Murder Comet",
 			"name": "杀戮彗星",
+			"type": "elemental",
 			"source": "BAM",
 			"page": 38,
 			"size": [
 				"M"
 			],
-			"type": "elemental",
 			"alignment": [
 				"N",
 				"E"
@@ -5310,6 +5310,7 @@
 		{
 			"ENG_name": "Neh-thalggu",
 			"name": "纳-萨古",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 39,
 			"referenceSources": [
@@ -5318,7 +5319,6 @@
 			"size": [
 				"L"
 			],
-			"type": "aberration",
 			"alignment": [
 				"C",
 				"N"
@@ -5486,15 +5486,15 @@
 		{
 			"ENG_name": "Neogi Hatchling Swarm",
 			"name": "纽吉怪幼体集群",
+			"type": {
+				"type": "aberration",
+				"swarmSize": "T"
+			},
 			"source": "BAM",
 			"page": 40,
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "aberration",
-				"swarmSize": "T"
-			},
 			"alignment": [
 				"L",
 				"E"
@@ -5586,6 +5586,7 @@
 		{
 			"ENG_name": "Neogi Pirate",
 			"name": "纽吉怪海盗",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 41,
 			"referenceSources": [
@@ -5594,7 +5595,6 @@
 			"size": [
 				"S"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -5709,17 +5709,17 @@
 		{
 			"ENG_name": "Neogi Void Hunter",
 			"name": "纽吉怪虚空猎手",
-			"source": "BAM",
-			"page": 41,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "aberration",
 				"tags": [
 					"魔契师"
 				]
 			},
+			"source": "BAM",
+			"page": 41,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -5896,6 +5896,7 @@
 		{
 			"ENG_name": "Night Scavver",
 			"name": "夜色独眼䲟",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 49,
 			"referenceSources": [
@@ -5904,7 +5905,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -5977,12 +5977,12 @@
 		{
 			"ENG_name": "Plasmoid Boss",
 			"name": "流浆体头目",
+			"type": "ooze",
 			"source": "BAM",
 			"page": 42,
 			"size": [
 				"L"
 			],
-			"type": "ooze",
 			"alignment": [
 				"A"
 			],
@@ -6091,6 +6091,7 @@
 		{
 			"ENG_name": "Plasmoid Explorer",
 			"name": "流浆体探索者",
+			"type": "ooze",
 			"source": "BAM",
 			"page": 43,
 			"referenceSources": [
@@ -6099,7 +6100,6 @@
 			"size": [
 				"M"
 			],
-			"type": "ooze",
 			"alignment": [
 				"A"
 			],
@@ -6175,7 +6175,7 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"traitTags": [
 				"无定形",
@@ -6207,12 +6207,12 @@
 		{
 			"ENG_name": "Plasmoid Warrior",
 			"name": "流浆体战士",
+			"type": "ooze",
 			"source": "BAM",
 			"page": 43,
 			"size": [
 				"M"
 			],
-			"type": "ooze",
 			"alignment": [
 				"A"
 			],
@@ -6301,8 +6301,8 @@
 				}
 			],
 			"attachedItems": [
-				"手枪|DMG",
-				"矛|PHB"
+				"手枪|dmg",
+				"矛|phb"
 			],
 			"traitTags": [
 				"无定形",
@@ -6334,6 +6334,7 @@
 		{
 			"ENG_name": "Psurlon",
 			"name": "灵蠕妖",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 44,
 			"referenceSources": [
@@ -6342,7 +6343,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -6479,12 +6479,12 @@
 		{
 			"ENG_name": "Psurlon Leader",
 			"name": "灵蠕妖领袖",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 45,
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -6649,6 +6649,7 @@
 		{
 			"ENG_name": "Psurlon Ringer",
 			"name": "灵蠕妖假替者",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 45,
 			"referenceSources": [
@@ -6657,7 +6658,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"L",
 				"E"
@@ -6743,7 +6743,7 @@
 			],
 			"tokenCustom": true,
 			"attachedItems": [
-				"匕首|PHB"
+				"匕首|phb"
 			],
 			"languageTags": [
 				"DS",
@@ -6774,6 +6774,7 @@
 		{
 			"ENG_name": "Reigar",
 			"name": "雷加尔人",
+			"type": "celestial",
 			"source": "BAM",
 			"page": 47,
 			"referenceSources": [
@@ -6782,7 +6783,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"C",
 				"N"
@@ -6911,7 +6911,7 @@
 				}
 			],
 			"attachedItems": [
-				"三叉戟|PHB"
+				"三叉戟|phb"
 			],
 			"traitTags": [
 				"屏息"
@@ -6954,12 +6954,12 @@
 		{
 			"ENG_name": "Solar Dragon Wyrmling",
 			"name": "太阳龙雏龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 53,
 			"size": [
 				"M"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -7095,6 +7095,7 @@
 		{
 			"ENG_name": "Space Clown",
 			"name": "太空小丑",
+			"type": "fiend",
 			"source": "BAM",
 			"page": 54,
 			"referenceSources": [
@@ -7103,7 +7104,6 @@
 			"size": [
 				"M"
 			],
-			"type": "fiend",
 			"alignment": [
 				"C",
 				"E"
@@ -7235,12 +7235,12 @@
 		{
 			"ENG_name": "Space Eel",
 			"name": "太空鳗鱼",
+			"type": "beast",
 			"source": "BAM",
 			"page": 55,
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -7327,6 +7327,7 @@
 		{
 			"ENG_name": "Space Guppy",
 			"name": "太空孔雀鱼",
+			"type": "beast",
 			"source": "BAM",
 			"page": 55,
 			"referenceSources": [
@@ -7335,7 +7336,6 @@
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -7406,12 +7406,12 @@
 		{
 			"ENG_name": "Space Hamster",
 			"name": "太空仓鼠",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 56,
 			"size": [
 				"T"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"N",
 				"G"
@@ -7489,12 +7489,12 @@
 		{
 			"ENG_name": "Space Mollymawk",
 			"name": "太空信天翁",
+			"type": "beast",
 			"source": "BAM",
 			"page": 57,
 			"size": [
 				"S"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -7563,12 +7563,12 @@
 		{
 			"ENG_name": "Space Swine",
 			"name": "太空猪",
+			"type": "beast",
 			"source": "BAM",
 			"page": 57,
 			"size": [
 				"M"
 			],
-			"type": "beast",
 			"alignment": [
 				"U"
 			],
@@ -7618,6 +7618,12 @@
 		{
 			"ENG_name": "Ssurran Defiler",
 			"name": "沙蜥人污染者",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"蜥蜴人"
+				]
+			},
 			"source": "BAM",
 			"page": 58,
 			"referenceSources": [
@@ -7626,12 +7632,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"蜥蜴人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -7768,6 +7768,12 @@
 		{
 			"ENG_name": "Ssurran Poisoner",
 			"name": "沙蜥人投毒者",
+			"type": {
+				"type": "monstrosity",
+				"tags": [
+					"蜥蜴人"
+				]
+			},
 			"source": "BAM",
 			"page": 58,
 			"referenceSources": [
@@ -7776,12 +7782,6 @@
 			"size": [
 				"M"
 			],
-			"type": {
-				"type": "monstrosity",
-				"tags": [
-					"蜥蜴人"
-				]
-			},
 			"alignment": [
 				"A"
 			],
@@ -7858,7 +7858,7 @@
 				}
 			],
 			"attachedItems": [
-				"标枪|PHB"
+				"标枪|phb"
 			],
 			"traitTags": [
 				"屏息"
@@ -7891,6 +7891,7 @@
 		{
 			"ENG_name": "Starlight Apparition",
 			"name": "星光幽体",
+			"type": "celestial",
 			"source": "BAM",
 			"page": 59,
 			"referenceSources": [
@@ -7899,7 +7900,6 @@
 			"size": [
 				"M"
 			],
-			"type": "celestial",
 			"alignment": [
 				"N",
 				"G"
@@ -7961,7 +7961,7 @@
 				"束缚"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "5",
 			"trait": [
@@ -8044,6 +8044,7 @@
 		{
 			"ENG_name": "Thri-kreen Gladiator",
 			"name": "螳螂人角斗士",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 60,
 			"referenceSources": [
@@ -8052,7 +8053,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"A"
 			],
@@ -8096,7 +8096,7 @@
 			],
 			"languages": [
 				"心灵感应 60 尺",
-				"螳螂人"
+				"螳螂语"
 			],
 			"cr": "7",
 			"action": [
@@ -8165,6 +8165,7 @@
 		{
 			"ENG_name": "Thri-kreen Hunter",
 			"name": "螳螂人猎手",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 61,
 			"referenceSources": [
@@ -8173,7 +8174,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"A"
 			],
@@ -8209,7 +8209,7 @@
 			"passive": 14,
 			"languages": [
 				"心灵感应 60 尺",
-				"螳螂人"
+				"螳螂语"
 			],
 			"cr": "2",
 			"action": [
@@ -8285,6 +8285,7 @@
 		{
 			"ENG_name": "Thri-kreen Mystic",
 			"name": "螳螂人秘术师",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 61,
 			"referenceSources": [
@@ -8293,7 +8294,6 @@
 			"size": [
 				"M"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"A"
 			],
@@ -8329,7 +8329,7 @@
 			"passive": 16,
 			"languages": [
 				"心灵感应 60 尺",
-				"螳螂人"
+				"螳螂语"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -8430,6 +8430,7 @@
 		{
 			"ENG_name": "Vampirate",
 			"name": "吸血骇盗",
+			"type": "undead",
 			"source": "BAM",
 			"page": 62,
 			"referenceSources": [
@@ -8438,7 +8439,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -8483,7 +8483,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "2",
 			"trait": [
@@ -8526,7 +8526,7 @@
 				}
 			],
 			"attachedItems": [
-				"轻弩|PHB"
+				"轻弩|phb"
 			],
 			"traitTags": [
 				"蛛行术",
@@ -8556,6 +8556,7 @@
 		{
 			"ENG_name": "Vampirate Captain",
 			"name": "吸血骇盗船长",
+			"type": "undead",
 			"source": "BAM",
 			"page": 63,
 			"referenceSources": [
@@ -8564,7 +8565,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -8614,7 +8614,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "6",
 			"trait": [
@@ -8673,7 +8673,7 @@
 				}
 			],
 			"attachedItems": [
-				"重弩|PHB"
+				"重弩|phb"
 			],
 			"traitTags": [
 				"蛛行术",
@@ -8702,6 +8702,7 @@
 		{
 			"ENG_name": "Vampirate Mage",
 			"name": "吸血骇盗魔法师",
+			"type": "undead",
 			"source": "BAM",
 			"page": 63,
 			"referenceSources": [
@@ -8710,7 +8711,6 @@
 			"size": [
 				"M"
 			],
-			"type": "undead",
 			"alignment": [
 				"L",
 				"E"
@@ -8759,7 +8759,7 @@
 				"中毒"
 			],
 			"languages": [
-				"它生前所知的语言"
+				"它生前知晓的语言"
 			],
 			"cr": "5",
 			"spellcasting": [
@@ -8872,6 +8872,7 @@
 		{
 			"ENG_name": "Void Scavver",
 			"name": "虚空独眼印鱼",
+			"type": "monstrosity",
 			"source": "BAM",
 			"page": 49,
 			"referenceSources": [
@@ -8880,7 +8881,6 @@
 			"size": [
 				"H"
 			],
-			"type": "monstrosity",
 			"alignment": [
 				"U"
 			],
@@ -8978,12 +8978,12 @@
 		{
 			"ENG_name": "Young Lunar Dragon",
 			"name": "青年月亮龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 35,
 			"size": [
 				"L"
 			],
-			"type": "dragon",
 			"alignment": [
 				"L",
 				"E"
@@ -9120,6 +9120,7 @@
 		{
 			"ENG_name": "Young Solar Dragon",
 			"name": "青年太阳龙",
+			"type": "dragon",
 			"source": "BAM",
 			"page": 53,
 			"referenceSources": [
@@ -9128,7 +9129,6 @@
 			"size": [
 				"L"
 			],
-			"type": "dragon",
 			"alignment": [
 				"N"
 			],
@@ -9265,6 +9265,7 @@
 		{
 			"ENG_name": "Zodar",
 			"name": "佐达尔人",
+			"type": "aberration",
 			"source": "BAM",
 			"page": 64,
 			"referenceSources": [
@@ -9273,7 +9274,6 @@
 			"size": [
 				"M"
 			],
-			"type": "aberration",
 			"alignment": [
 				"N"
 			],

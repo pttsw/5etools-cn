@@ -1711,10 +1711,10 @@
 					{
 						"ENG_name": "Unarmed Strike (Monk)",
 						"name": "徒手打击（武僧）",
+						"type": "M",
 						"source": "PHB",
 						"page": 76,
 						"srd": true,
-						"type": "M",
 						"rarity": "none",
 						"weaponCategory": "simple",
 						"entries": [
@@ -1734,8 +1734,8 @@
 							{
 								"ENG_name": "Monk Attack",
 								"name": "武僧攻击",
-								"foundryId": "martialArts",
 								"type": "attack",
+								"foundryId": "martialArts",
 								"activation": {
 									"type": "action",
 									"value": 1
@@ -4540,8 +4540,8 @@
 				{
 					"ENG_name": "Dexterous Attacks & Martial Arts Damage",
 					"name": "敏捷攻击与武艺伤害",
-					"foundryId": "martialArts",
 					"type": "enchantment",
+					"foundryId": "martialArts",
 					"disabled": true,
 					"transfer": true,
 					"changes": [
@@ -4569,8 +4569,8 @@
 					"descriptionEntries": [
 						{
 							"ENG_name": "Martial Arts Die",
-							"type": "entries",
 							"name": "武艺骰",
+							"type": "entries",
 							"entries": [
 								"你可以投掷[[lookup @scale.monk.die]]来代替你的徒手打击或武僧武器的正常伤害。这个骰子会随着你获得武僧等级而变化，如武僧特性表格中的武艺栏所示。"
 							]
@@ -5565,7 +5565,7 @@
 						"max": "1"
 					},
 					"spell": {
-						"uuid": "@spell[至圣斩|XPHB]"
+						"uuid": "@spell[至圣斩|xphb]"
 					}
 				}
 			],
@@ -6253,7 +6253,7 @@
 				},
 				{
 					"ENG_name": "Hide",
-					"name": "躲藏",
+					"name": "兽皮甲",
 					"type": "utility",
 					"activation": {
 						"type": "bonus"
@@ -7234,8 +7234,8 @@
 				{
 					"ENG_name": "Mastered",
 					"name": "精通",
-					"foundryId": "spellMastery",
 					"type": "enchantment",
+					"foundryId": "spellMastery",
 					"disabled": true,
 					"transfer": true,
 					"changes": [
@@ -7343,8 +7343,8 @@
 				{
 					"ENG_name": "Signature",
 					"name": "招牌",
-					"foundryId": "signatureSpells",
 					"type": "enchantment",
+					"foundryId": "signatureSpells",
 					"disabled": true,
 					"transfer": true,
 					"changes": [
@@ -10066,9 +10066,9 @@
 					{
 						"ENG_name": "Radiant Sun Bolt",
 						"name": "耀阳箭",
+						"type": "R",
 						"source": "XGE",
 						"page": 35,
-						"type": "R",
 						"rarity": "none",
 						"weaponCategory": "simple",
 						"range": "30",
@@ -10083,8 +10083,8 @@
 							{
 								"ENG_name": "Monk Attack",
 								"name": "武僧攻击",
-								"foundryId": "martialArts",
 								"type": "attack",
+								"foundryId": "martialArts",
 								"activation": {
 									"type": "action",
 									"value": 1
@@ -12146,10 +12146,10 @@
 					{
 						"ENG_name": "Lightning Launcher",
 						"name": "闪电发射器",
+						"type": "R",
 						"source": "TCE",
 						"page": 15,
 						"srd": true,
-						"type": "R",
 						"rarity": "none",
 						"weaponCategory": "simple",
 						"range": "90/300",
@@ -12204,10 +12204,10 @@
 					{
 						"ENG_name": "Thunder Gauntlets",
 						"name": "雷霆战拳",
+						"type": "M",
 						"source": "TCE",
 						"page": 15,
 						"srd": true,
-						"type": "M",
 						"rarity": "none",
 						"weaponCategory": "simple",
 						"dmg1": "1d8",
@@ -17090,8 +17090,8 @@
 				{
 					"ENG_name": "Elemental Strike",
 					"name": "元素注拳",
-					"foundryId": "elementalAttunem",
 					"type": "attack",
+					"foundryId": "elementalAttunem",
 					"activation": {
 						"type": "action"
 					},
@@ -17135,8 +17135,8 @@
 				{
 					"ENG_name": "Elemental Save",
 					"name": "元素豁免",
-					"foundryId": "elementalAttune1",
 					"type": "save",
+					"foundryId": "elementalAttune1",
 					"activation": {
 						"type": "",
 						"condition": "当你造成元素打击伤害时"
@@ -17223,8 +17223,8 @@
 				{
 					"ENG_name": "Active Attunement",
 					"name": "主动同调",
-					"foundryId": "elementalAttunem",
 					"type": "enchantment",
+					"foundryId": "elementalAttunem",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -19219,17 +19219,17 @@
 						{
 							"ENG_name": "Beast of the Land",
 							"name": "大地野兽",
-							"uuid": "@creature[大地野兽|XPHB]"
+							"uuid": "@creature[大地野兽|xphb]"
 						},
 						{
 							"ENG_name": "Beast of the Sea",
 							"name": "海洋野兽",
-							"uuid": "@creature[海洋野兽|XPHB]"
+							"uuid": "@creature[海洋野兽|xphb]"
 						},
 						{
 							"ENG_name": "Beast of the Sky",
 							"name": "天空野兽",
-							"uuid": "@creature[天空野兽|XPHB]"
+							"uuid": "@creature[天空野兽|xphb]"
 						}
 					],
 					"bonuses": {
@@ -19281,17 +19281,17 @@
 						{
 							"ENG_name": "Beast of the Land",
 							"name": "大地野兽",
-							"uuid": "@creature[大地野兽|XPHB]"
+							"uuid": "@creature[大地野兽|xphb]"
 						},
 						{
 							"ENG_name": "Beast of the Sea",
 							"name": "海洋野兽",
-							"uuid": "@creature[海洋野兽|XPHB]"
+							"uuid": "@creature[海洋野兽|xphb]"
 						},
 						{
 							"ENG_name": "Beast of the Sky",
 							"name": "天空野兽",
-							"uuid": "@creature[天空野兽|XPHB]"
+							"uuid": "@creature[天空野兽|xphb]"
 						}
 					],
 					"bonuses": {
@@ -20204,7 +20204,7 @@
 						"type": "bonus"
 					},
 					"spell": {
-						"uuid": "@spell[法师之手|XPHB]"
+						"uuid": "@spell[法师之手|xphb]"
 					}
 				}
 			],
@@ -20654,8 +20654,8 @@
 					},
 					"roll": {
 						"ENG_name": "Psionic Energy Die",
-						"formula": "@scale.soulknife.die",
-						"name": "灵能骰"
+						"name": "灵能骰",
+						"formula": "@scale.soulknife.die"
 					},
 					"effects": [
 						{
@@ -22028,7 +22028,7 @@
 						"max": "max(1,@abilities.cha.mod)"
 					},
 					"spell": {
-						"uuid": "@spell[迷踪步|XPHB]",
+						"uuid": "@spell[迷踪步|xphb]",
 						"level": 2,
 						"properties": [
 							"声音",
@@ -22128,7 +22128,7 @@
 						"condition": "受到伤害后"
 					},
 					"spell": {
-						"uuid": "@spell[迷踪步|XPHB]",
+						"uuid": "@spell[迷踪步|xphb]",
 						"level": 2,
 						"properties": [
 							"声音",
@@ -23507,17 +23507,17 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[野兽灵魄（天空）|XPHB]"
+							"uuid": "@creature[野兽灵魄（天空）|xphb]"
 						},
 						{
 							"ENG_name": "Land",
 							"name": "大地",
-							"uuid": "@creature[野兽灵魄（大地）|XPHB]"
+							"uuid": "@creature[野兽灵魄（大地）|xphb]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "水",
-							"uuid": "@creature[野兽灵魄（海洋）|XPHB]"
+							"uuid": "@creature[野兽灵魄（海洋）|xphb]"
 						}
 					],
 					"bonuses": {
@@ -23564,17 +23564,17 @@
 						{
 							"ENG_name": "Fuming",
 							"name": "愤怒",
-							"uuid": "@creature[妖精灵魄（愤怒）|XPHB]"
+							"uuid": "@creature[妖精灵魄（愤怒）|xphb]"
 						},
 						{
 							"ENG_name": "Mirthful",
 							"name": "欢欣",
-							"uuid": "@creature[妖精灵魄（欢欣）|XPHB]"
+							"uuid": "@creature[妖精灵魄（欢欣）|xphb]"
 						},
 						{
 							"ENG_name": "Tricksy",
 							"name": "诡诈",
-							"uuid": "@creature[妖精灵魄（诡诈）|XPHB]"
+							"uuid": "@creature[妖精灵魄（诡诈）|xphb]"
 						}
 					],
 					"bonuses": {

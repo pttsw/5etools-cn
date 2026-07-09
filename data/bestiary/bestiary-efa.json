@@ -11,17 +11,17 @@
 		{
 			"ENG_name": "Boromar Smuggler",
 			"name": "波洛马走私犯",
-			"source": "EFA",
-			"page": 57,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"半身人"
 				]
 			},
+			"source": "EFA",
+			"page": 57,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -113,17 +113,17 @@
 		{
 			"ENG_name": "Boromar Underboss",
 			"name": "波洛马副头目",
-			"source": "EFA",
-			"page": 57,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"半身人"
 				]
 			},
+			"source": "EFA",
+			"page": 57,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"L",
 				"E"
@@ -191,7 +191,7 @@
 					"ENG_name": "Poisoned Blade",
 					"name": "中毒刃之魔契",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}13（{@damage 2d8 + 4}）挥砍伤害加7（{@damage 2d6}）毒素伤害，且目标获得{@condition 中毒|xphb}状态直到黑帮头目的下个回合开始。如果目标已经{@condition 中毒|xphb}，则改为额外受到7（{@damage 2d6}）毒素伤害。"
+						"{@atkr m} {@hit 7}，触及5尺。{@h}13（{@damage 2d8 + 4}）挥砍伤害加7（{@damage 2d6}）毒素伤害，且目标获得{@condition 中毒|XPHB}状态直到黑帮头目的下个回合开始。如果目标已经{@condition 中毒|XPHB}，则改为额外受到7（{@damage 2d6}）毒素伤害。"
 					]
 				},
 				{
@@ -238,6 +238,12 @@
 		{
 			"ENG_name": "Cannith Artificer",
 			"name": "卡尼斯奇械师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"人类"
+				]
+			},
 			"source": "EFA",
 			"page": 80,
 			"referenceSources": [
@@ -247,12 +253,6 @@
 				"S",
 				"M"
 			],
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"人类"
-				]
-			},
 			"alignment": [
 				"N"
 			],
@@ -300,14 +300,14 @@
 						"奇械师使用其修补工具作为奥术法器并以其智力作为施法属性（法术豁免{@dc 14}）施展以下法术之一："
 					],
 					"will": [
-						"{@spell 燃烧之手|xphb}（3环版本）",
-						"{@spell 修复术|xphb}",
-						"{@spell 雷鸣波|xphb}（3环版本）"
+						"{@spell 燃烧之手|XPHB}（3环版本）",
+						"{@spell 修复术|XPHB}",
+						"{@spell 雷鸣波|XPHB}（3环版本）"
 					],
 					"daily": {
 						"1e": [
-							"{@spell 疗伤术|xphb}",
-							"{@spell 隐形术|xphb}"
+							"{@spell 疗伤术|XPHB}",
+							"{@spell 隐形术|XPHB}"
 						]
 					},
 					"ability": "int",
@@ -326,7 +326,7 @@
 					"ENG_name": "Battering Mace",
 					"name": "破城硬头锤",
 					"entries": [
-						"{@atkr m} {@hit 6}，触及5尺。{@h}14（{@damage 3d6 + 4}）钝击伤害，且如果目标是大型或更小的生物，它获得{@condition 倒地|xphb}状态。"
+						"{@atkr m} {@hit 6}，触及5尺。{@h}14（{@damage 3d6 + 4}）钝击伤害，且如果目标是大型或更小的生物，它获得{@condition 倒地|XPHB}状态。"
 					]
 				},
 				{
@@ -377,17 +377,17 @@
 		{
 			"ENG_name": "Daask Bruiser",
 			"name": "达斯克打手",
-			"source": "EFA",
-			"page": 58,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"鬣狗人"
 				]
 			},
+			"source": "EFA",
+			"page": 58,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -427,7 +427,7 @@
 			"passive": 15,
 			"languages": [
 				"通用语",
-				"鬣狗人"
+				"鬣狗语"
 			],
 			"cr": "9",
 			"trait": [
@@ -435,7 +435,7 @@
 					"ENG_name": "Blood Frenzy",
 					"name": "血腥狂怒",
 					"entries": [
-						"打手对任何未拥有所有{@variantrule 优势|xphb}的生物进行攻击检定时具有{@variantrule 生命值|xphb}。"
+						"打手对任何未拥有所有{@variantrule 生命值|XPHB}的生物进行攻击检定时具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -458,7 +458,7 @@
 					"ENG_name": "Glare",
 					"name": "怒视",
 					"entries": [
-						"{@actSave wis} {@dc 14}，打手30尺内能看见的一个生物。{@actSaveFail} 目标获得{@condition 恐慌|xphb}状态直到打手的下个回合开始。"
+						"{@actSave wis} {@dc 14}，打手30尺内能看见的一个生物。{@actSaveFail} 目标获得{@condition 恐慌|XPHB}状态直到打手的下个回合开始。"
 					]
 				}
 			],
@@ -500,17 +500,17 @@
 		{
 			"ENG_name": "Daask Raider",
 			"name": "达斯克掠夺者",
-			"source": "EFA",
-			"page": 58,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"鬣狗人"
 				]
 			},
+			"source": "EFA",
+			"page": 58,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -544,7 +544,7 @@
 			"passive": 12,
 			"languages": [
 				"通用语",
-				"鬣狗人"
+				"鬣狗语"
 			],
 			"cr": "1",
 			"trait": [
@@ -552,7 +552,7 @@
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"该掠夺者在对抗一个生物的攻击检定上具有{@variantrule 优势|xphb}，如果至少有一个该掠夺者的盟友在生物5尺内且该盟友没有{@condition 失能|xphb}状态。"
+						"该掠夺者在对抗一个生物的攻击检定上具有{@variantrule 优势|XPHB}，如果至少有一个该掠夺者的盟友在生物5尺内且该盟友没有{@condition 失能|XPHB}状态。"
 					]
 				}
 			],
@@ -597,13 +597,13 @@
 		{
 			"ENG_name": "Dreaming Dark Infiltrator",
 			"name": "梦魇黑暗渗透者",
+			"type": "humanoid",
 			"source": "EFA",
 			"page": 59,
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"L",
 				"E"
@@ -659,10 +659,10 @@
 					],
 					"daily": {
 						"1": [
-							"{@spell 突触静止|xphb}"
+							"{@spell 突触静止|XPHB}"
 						],
 						"3": [
-							"{@spell 侦测思想|xphb}"
+							"{@spell 侦测思想|XPHB}"
 						]
 					},
 					"ability": "int",
@@ -690,7 +690,7 @@
 					"ENG_name": "Mind Curse",
 					"name": "心灵诅咒",
 					"entries": [
-						"{@actSave wis} {@dc 15}，本回合被渗透者的心灵之刃攻击命中的一名生物。{@actSaveFail} 目标受到14（{@damage 4d6}）心灵伤害并被诅咒。以此方式被诅咒时，它对渗透者的攻击检定具有{@variantrule 劣势|xphb}，且当它与渗透者处于同一存在位面时，渗透者始终知晓其位置。被诅咒的生物在完成一次{@variantrule 短休|xphb|短}或{@variantrule 长休|xphb}后重复该豁免，成功则自身终止该效应。{@actSaveSuccess} 仅伤害减半。"
+						"{@actSave wis} {@dc 15}，本回合被渗透者的心灵之刃攻击命中的一名生物。{@actSaveFail} 目标受到14（{@damage 4d6}）心灵伤害并被诅咒。以此方式被诅咒时，它对渗透者的攻击检定具有{@variantrule 劣势|XPHB}，且当它与渗透者处于同一存在位面时，渗透者始终知晓其位置。被诅咒的生物在完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}后重复该豁免，成功则自身终止该效应。{@actSaveSuccess} 仅伤害减半。"
 					]
 				}
 			],
@@ -733,13 +733,13 @@
 		{
 			"ENG_name": "Dreaming Dark Mindkiller",
 			"name": "暗梦噬魂怪",
+			"type": "humanoid",
 			"source": "EFA",
 			"page": 60,
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"L",
 				"E"
@@ -794,11 +794,11 @@
 					"name": "杀戮傀儡（1/天）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"噬魂怪施放{@spell 支配类人|xphb}，无需法术成分并使用智力作为施法属性（法术豁免{@dc 17}）。"
+						"噬魂怪施放{@spell 支配类人|XPHB}，无需法术成分并使用智力作为施法属性（法术豁免{@dc 17}）。"
 					],
 					"daily": {
 						"1": [
-							"{@spell 支配类人|xphb}"
+							"{@spell 支配类人|XPHB}"
 						]
 					},
 					"ability": "int",
@@ -820,14 +820,14 @@
 					"ENG_name": "Nightmare Whisper",
 					"name": "梦魇低语",
 					"entries": [
-						"{@atkr m,r} {@hit 9}，触及5尺或射程30尺{@h}27（{@damage 5d8 + 5}）心灵伤害，且目标获得{@condition 恐慌|xphb}状态直到噬魂怪的下个回合开始。如果目标已经处于{@condition 恐慌|xphb}状态，则改为额外受到10（{@damage 3d6}）心灵伤害。"
+						"{@atkr m,r} {@hit 9}，触及5尺或射程30尺{@h}27（{@damage 5d8 + 5}）心灵伤害，且目标获得{@condition 恐慌|XPHB}状态直到噬魂怪的下个回合开始。如果目标已经处于{@condition 恐慌|XPHB}状态，则改为额外受到10（{@damage 3d6}）心灵伤害。"
 					]
 				},
 				{
 					"ENG_name": "Primal Fear (1/Day)",
 					"name": "原始恐惧术（1/天）",
 					"entries": [
-						"{@actSave wis} {@dc 17}，每个在噬魂怪可见的120尺内一点为中心的30尺半径{@variantrule 球状 [效应区域]|xphb|球状}内的生物。{@actSaveFail} 35（{@damage 10d6}）心灵伤害，且目标获得{@condition 恐慌|xphb}状态直到心灵杀手的下一个回合开始。当以这种方式{@condition 恐慌|xphb}时，目标在其每个回合只能执行以下一项：移动、执行一个动作、或执行一个{@variantrule 附赠动作|xphb}。{@actSaveSuccess} 仅伤害减半。"
+						"{@actSave wis} {@dc 17}，每个在噬魂怪可见的120尺内一点为中心的30尺半径{@variantrule 球状 [效应区域]|XPHB|球状}内的生物。{@actSaveFail} 35（{@damage 10d6}）心灵伤害，且目标获得{@condition 恐慌|XPHB}状态直到心灵杀手的下一个回合开始。当以这种方式{@condition 恐慌|XPHB}时，目标在其每个回合只能执行以下一项：移动、执行一个动作、或执行一个{@variantrule 附赠动作|XPHB}。{@actSaveSuccess} 仅伤害减半。"
 					]
 				}
 			],
@@ -871,13 +871,13 @@
 		{
 			"ENG_name": "Emerald Claw Commander",
 			"name": "祖母绿爪指挥官",
+			"type": "humanoid",
 			"source": "EFA",
 			"page": 90,
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"L",
 				"E"
@@ -930,7 +930,7 @@
 					"ENG_name": "Aura of Authority",
 					"name": "威权灵光",
 					"entries": [
-						"当处于一个源自指挥官的30尺{@variantrule 光环 [效应区域]|xphb|光环}内时，指挥官及其盟友在攻击检定和豁免检定上具有{@variantrule 优势|xphb}，前提是指挥官没有{@condition 失能|xphb}状态。"
+						"当处于一个源自指挥官的30尺{@variantrule 光环 [效应区域]|XPHB|光环}内时，指挥官及其盟友在攻击检定和豁免检定上具有{@variantrule 优势|XPHB}，前提是指挥官没有{@condition 失能|XPHB}状态。"
 					]
 				}
 			],
@@ -946,14 +946,14 @@
 					"ENG_name": "Flail",
 					"name": "链枷",
 					"entries": [
-						"{@atkr m} {@hit 6}，触及5尺。{@h}8（{@damage 1d8 + 4}）钝击伤害\u2014\u2014如果指挥官处于浴血状态则额外造成7（{@damage 2d6}）暗蚀伤害\u2014\u2014且目标在其下一次攻击检定中具有{@variantrule 劣势|xphb}，直到指挥官的下个回合开始。"
+						"{@atkr m} {@hit 6}，触及5尺。{@h}8（{@damage 1d8 + 4}）钝击伤害\u2014\u2014如果指挥官处于浴血状态，则额外造成7（{@damage 2d6}）暗蚀伤害\u2014\u2014并且目标在其下一次攻击检定上具有{@variantrule 劣势|XPHB}，此效果持续到指挥官的下个回合开始前。"
 					]
 				},
 				{
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr m,r} {@hit 6}，触及5尺或射程30/120尺。{@h}7（{@damage 1d6 + 4}）穿刺伤害\u2014\u2014如果指挥官处于{@status 浴血|xphb}状态，则额外造成7（{@damage 2d6}）暗蚀伤害。"
+						"{@atkr m,r} {@hit 6}，触及5尺或射程30/120尺。{@h}7（{@damage 1d6 + 4}）穿刺伤害\u2014\u2014如果指挥官处于{@status 浴血|XPHB}状态，则额外造成7（{@damage 2d6}）暗蚀伤害。"
 					]
 				}
 			],
@@ -982,13 +982,13 @@
 		{
 			"ENG_name": "Emerald Claw Knight",
 			"name": "祖母绿爪骑士",
+			"type": "humanoid",
 			"source": "EFA",
 			"page": 90,
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"L",
 				"E"
@@ -1043,14 +1043,14 @@
 					"ENG_name": "Flail",
 					"name": "链枷",
 					"entries": [
-						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）钝击伤害\u2014\u2014如果骑士处于浴血状态则额外造成4（{@damage 1d8}）暗蚀伤害\u2014\u2014且目标在其下一次攻击检定中具有{@variantrule 劣势|xphb}，直到骑士的下个回合开始前。"
+						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）钝击伤害\u2014\u2014如果骑士处于浴血状态则额外造成4（{@damage 1d8}）暗蚀伤害\u2014\u2014且目标在其下一次攻击检定中具有{@variantrule 劣势|XPHB}，直到骑士的下个回合开始前。"
 					]
 				},
 				{
 					"ENG_name": "Javelin",
 					"name": "标枪",
 					"entries": [
-						"{@atkr m,r} {@hit 5}，触及5尺或射程30/120尺，{@h}6（{@damage 1d6 + 3}）穿刺伤害\u2014\u2014如果骑士处于{@status 浴血|xphb}状态，则额外造成4（{@damage 1d8}）暗蚀伤害。"
+						"{@atkr m,r} {@hit 5}，触及5尺或射程30/120尺，{@h}6（{@damage 1d6 + 3}）穿刺伤害\u2014\u2014如果骑士处于{@status 浴血|XPHB}状态，则额外造成4（{@damage 1d8}）暗蚀伤害。"
 					]
 				}
 			],
@@ -1079,17 +1079,17 @@
 		{
 			"ENG_name": "Ghallanda Troubleshooter",
 			"name": "伽兰达排难员",
-			"source": "EFA",
-			"page": 80,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"半身人"
 				]
 			},
+			"source": "EFA",
+			"page": 80,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1146,8 +1146,8 @@
 					],
 					"daily": {
 						"1e": [
-							"{@spell 睡眠术|xphb}",
-							"{@spell 隐形仆役|xphb}"
+							"{@spell 睡眠术|XPHB}",
+							"{@spell 隐形仆役|XPHB}"
 						]
 					},
 					"ability": "cha",
@@ -1175,7 +1175,7 @@
 					"ENG_name": "Poisoned Dagger",
 					"name": "中毒匕首",
 					"entries": [
-						"{@atkr m,r} {@hit 5}，触及5尺或射程20/60尺，{@h}5（{@damage 1d4 + 3}）穿刺伤害，且目标获得{@condition 中毒|xphb}状态直到排难员的下个回合开始。"
+						"{@atkr m,r} {@hit 5}，触及5尺或射程20/60尺，{@h}5（{@damage 1d4 + 3}）穿刺伤害，且目标获得{@condition 中毒|XPHB}状态直到排难员的下个回合开始。"
 					]
 				}
 			],
@@ -1184,7 +1184,7 @@
 					"ENG_name": "Nimble Escape",
 					"name": "迅捷逃逸",
 					"entries": [
-						"伽兰达排难员执行{@action 撤离|xphb}或{@action 躲藏|xphb}动作。"
+						"伽兰达排难员执行{@action 撤离|XPHB}或{@action 躲藏|XPHB}动作。"
 					]
 				}
 			],
@@ -1224,6 +1224,7 @@
 		{
 			"ENG_name": "Homunculus Servant",
 			"name": "人工生命仆从",
+			"type": "construct",
 			"source": "EFA",
 			"page": 21,
 			"summonedBySpell": "人工生命仆从|EFA",
@@ -1231,7 +1232,6 @@
 			"size": [
 				"T"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -1272,7 +1272,7 @@
 					"ENG_name": "Evasion",
 					"name": "反射闪避",
 					"entries": [
-						"如果人工生命体受到一个允许它进行敏捷豁免检定以仅承受一半伤害的效果，那么当豁免成功时，人工生命体改为不受伤害，豁免失败时仅承受一半伤害。如果它处于{@condition 失能|xphb}状态，则无法使用此特质。"
+						"如果人工生命体受到一个允许它进行敏捷豁免检定以仅承受一半伤害的效果，那么当豁免成功时，人工生命体改为不受伤害，豁免失败时仅承受一半伤害。如果它处于{@condition 失能|XPHB}状态，则无法使用此特质。"
 					]
 				},
 				{
@@ -1316,17 +1316,17 @@
 		{
 			"ENG_name": "Jorasco Medic",
 			"name": "乔拉斯克医疗兵",
-			"source": "EFA",
-			"page": 81,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"半身人"
 				]
 			},
+			"source": "EFA",
+			"page": 81,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1374,12 +1374,12 @@
 					"name": "医疗龙纹（2/天）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"医疗兵施放{@spell 疗伤术|xphb}或{@spell 次等复原术|xphb}，使用感知作为施法属性。"
+						"医疗兵施放{@spell 疗伤术|XPHB}或{@spell 次等复原术|XPHB}，使用感知作为施法属性。"
 					],
 					"daily": {
 						"2": [
-							"{@spell 疗伤术|xphb}",
-							"{@spell 次等复原术|xphb}"
+							"{@spell 疗伤术|XPHB}",
+							"{@spell 次等复原术|XPHB}"
 						]
 					},
 					"ability": "wis",
@@ -1394,7 +1394,7 @@
 					"ENG_name": "Lucky",
 					"name": "幸运",
 					"entries": [
-						"当医疗兵在{@variantrule D20 检定|xphb}的{@dice d20}骰子上掷出1时，它可以重掷该骰子，且必须使用新的掷骰结果。"
+						"当医疗兵在{@variantrule D20 检定|XPHB}的{@dice d20}骰子上掷出1时，它可以重掷该骰子，且必须使用新的掷骰结果。"
 					]
 				}
 			],
@@ -1410,7 +1410,7 @@
 					"ENG_name": "Radiant Burst",
 					"name": "圣光惩灭",
 					"entries": [
-						"{@atkr m,r} {@hit 5}，触及5尺或射程30尺{@h}7（{@damage 2d6}）光耀伤害，且该生物获得{@condition 目盲|xphb}状态直到医疗兵的下个回合开始。"
+						"{@atkr m,r} {@hit 5}，触及5尺或射程30尺{@h}7（{@damage 2d6}）光耀伤害，且该生物获得{@condition 目盲|XPHB}状态直到医疗兵的下个回合开始。"
 					]
 				}
 			],
@@ -1441,17 +1441,17 @@
 		{
 			"ENG_name": "Kundarak Warden",
 			"name": "昆达拉克卫士",
-			"source": "EFA",
-			"page": 81,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"矮人"
 				]
 			},
+			"source": "EFA",
+			"page": 81,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1496,13 +1496,13 @@
 						"卫士施放下列法术之一，无需材质成分并使用智力作为施法属性（法术豁免{@dc 14}）："
 					],
 					"will": [
-						"{@spell 警报术|xphb}",
-						"{@spell 秘法锁|xphb}",
-						"{@spell 法师护甲|xphb}（已计入AC）"
+						"{@spell 警报术|XPHB}",
+						"{@spell 秘法锁|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）"
 					],
 					"daily": {
 						"1": [
-							"{@spell 解除魔法|xphb}"
+							"{@spell 解除魔法|XPHB}"
 						]
 					},
 					"ability": "int",
@@ -1513,12 +1513,12 @@
 					"name": "护身魔法（3/日）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"卫士根据法术的触发施放{@spell 法术反制|xphb}或{@spell 护盾术|xphb}，使用与施法相同的施法属性。"
+						"卫士根据法术的触发施放{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}，使用与施法相同的施法属性。"
 					],
 					"daily": {
 						"3": [
-							"{@spell 法术反制|xphb}",
-							"{@spell 护盾术|xphb}"
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
 						]
 					},
 					"ability": "int",
@@ -1533,7 +1533,7 @@
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"卫士在对抗法术和其他魔法效应的豁免检定中具有{@variantrule 优势|xphb}。"
+						"卫士在对抗法术和其他魔法效应的豁免检定中具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -1549,14 +1549,14 @@
 					"ENG_name": "Arcane Whip",
 					"name": "奥术鞭子",
 					"entries": [
-						"{@atkr m} {@hit 6}，触及10尺。{@h}13（{@damage 3d6 + 3}）力场伤害，且如果目标是中型或更小的生物，它获得{@condition 倒地|xphb}状态。如果目标已有{@condition 倒地|xphb}状态，该攻击造成额外7（{@damage 2d6}）力场伤害。"
+						"{@atkr m} {@hit 6}，触及10尺。{@h}13（{@damage 3d6 + 3}）力场伤害，且如果目标是中型或更小的生物，它获得{@condition 倒地|XPHB}状态。如果目标已有{@condition 倒地|XPHB}状态，该攻击造成额外7（{@damage 2d6}）力场伤害。"
 					]
 				},
 				{
 					"ENG_name": "Shackling Glyph {@recharge}",
 					"name": "束缚刻文{@recharge}",
 					"entries": [
-						"{@actSave str} {@dc 14}，卫士60尺内能看见的一个生物。{@actSaveFail} 该生物获得{@condition 受擒|xphb}状态（逃脱{@dc 14}）。当{@condition 受擒|xphb}时，该生物获得{@condition 束缚|xphb}状态。"
+						"{@actSave str} {@dc 14}，卫士60尺内能看见的一个生物。{@actSaveFail} 该生物获得{@condition 受擒|XPHB}状态（逃脱{@dc 14}）。当{@condition 受擒|XPHB}时，该生物获得{@condition 束缚|XPHB}状态。"
 					]
 				}
 			],
@@ -1602,18 +1602,18 @@
 		{
 			"ENG_name": "Lyrandar Scion",
 			"name": "林兰德后裔",
-			"source": "EFA",
-			"page": 82,
-			"size": [
-				"S",
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"科拉瓦"
 				]
 			},
+			"source": "EFA",
+			"page": 82,
+			"size": [
+				"S",
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1666,9 +1666,9 @@
 						"该后裔使用以下法术之一，使用魅力作为施法属性（法术豁免{@dc 14}）："
 					],
 					"will": [
-						"{@spell 四象法门|xphb}",
-						"{@spell 造风术|xphb}",
-						"{@spell 雷鸣波|xphb}"
+						"{@spell 四象法门|XPHB}",
+						"{@spell 造风术|XPHB}",
+						"{@spell 雷鸣波|XPHB}"
 					],
 					"ability": "cha",
 					"displayAs": "action"
@@ -1678,11 +1678,11 @@
 					"name": "跳跃术（2/天）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"该后裔施放{@spell 跳跃术|xphb}，无需法术成分并使用与施法相同的施法属性。"
+						"该后裔施放{@spell 跳跃术|XPHB}，无需法术成分并使用与施法相同的施法属性。"
 					],
 					"daily": {
 						"2": [
-							"{@spell 跳跃术|xphb}"
+							"{@spell 跳跃术|XPHB}"
 						]
 					},
 					"ability": "cha",
@@ -1696,11 +1696,11 @@
 					"name": "羽落术（2/天）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"该后裔在触发该法术时使用与施法相同的施法属性施放{@spell 羽落术|xphb}。"
+						"该后裔在触发该法术时使用与施法相同的施法属性施放{@spell 羽落术|XPHB}。"
 					],
 					"daily": {
 						"2": [
-							"{@spell 羽落术|xphb}"
+							"{@spell 羽落术|XPHB}"
 						]
 					},
 					"ability": "cha",
@@ -1722,7 +1722,7 @@
 					"ENG_name": "Thunderbolt",
 					"name": "雷霆轰击",
 					"entries": [
-						"{@atkr m,r} {@hit 6}，触及5尺或射程30尺{@h}11（{@damage 2d6 + 4}）闪电伤害加9（{@damage 2d8}）雷鸣伤害。重击{@h}该生物还会获得{@condition 耳聋|xphb}状态1分钟。"
+						"{@atkr m,r} {@hit 6}，触及5尺或射程30尺{@h}11（{@damage 2d6 + 4}）闪电伤害加9（{@damage 2d8}）雷鸣伤害。重击{@h}该生物还会获得{@condition 耳聋|XPHB}状态1分钟。"
 					]
 				}
 			],
@@ -1764,18 +1764,18 @@
 		{
 			"ENG_name": "Medani Inquisitive",
 			"name": "梅丹尼调查员",
-			"source": "EFA",
-			"page": 82,
-			"size": [
-				"S",
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"科拉瓦"
 				]
 			},
+			"source": "EFA",
+			"page": 82,
+			"size": [
+				"S",
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1827,8 +1827,8 @@
 					],
 					"daily": {
 						"1e": [
-							"{@spell 侦测思想|xphb}",
-							"{@spell 识破隐形|xphb}"
+							"{@spell 侦测思想|XPHB}",
+							"{@spell 识破隐形|XPHB}"
 						]
 					},
 					"ability": "wis",
@@ -1847,14 +1847,14 @@
 					"ENG_name": "Crooked Staff",
 					"name": "弯曲法杖",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）钝击伤害。如果目标是中型或更小的生物，它获得{@condition 倒地|xphb}状态。如果目标已经有{@condition 倒地|xphb}状态，该攻击造成额外7（{@damage 2d6}）光耀伤害。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}6（{@damage 1d8 + 2}）钝击伤害。如果目标是中型或更小的生物，它获得{@condition 倒地|XPHB}状态。如果目标已经有{@condition 倒地|XPHB}状态，该攻击造成额外7（{@damage 2d6}）光耀伤害。"
 					]
 				},
 				{
 					"ENG_name": "Inquisitive Eye",
 					"name": "调查员之眼",
 					"entries": [
-						"{@actSave wis} {@dc 13}，调查员60尺内能看见的一个生物。{@actSaveFail} 10（{@damage 3d6}）心灵伤害，并且目标被标记。调查员对已标记目标的攻击检定具有{@variantrule 优势|xphb}。被标记时，目标无法对调查员隐藏，如果目标具有{@condition 隐形|xphb}状态，该状态对调查员不提供增益。标记在1分钟后或调查员再次使用此动作时消失。{@actSaveSuccess} 仅伤害减半。"
+						"{@actSave wis} {@dc 13}，调查员60尺内能看见的一个生物。{@actSaveFail} 10（{@damage 3d6}）心灵伤害，并且目标被标记。调查员对已标记目标的攻击检定具有{@variantrule 优势|XPHB}。被标记时，目标无法对调查员隐藏，如果目标具有{@condition 隐形|XPHB}状态，该状态对调查员不提供增益。标记在1分钟后或调查员再次使用此动作时消失。{@actSaveSuccess} 仅伤害减半。"
 					]
 				}
 			],
@@ -1905,18 +1905,18 @@
 		{
 			"ENG_name": "Orien Enforcer",
 			"name": "欧瑞恩斗殴犯",
-			"source": "EFA",
-			"page": 83,
-			"size": [
-				"S",
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "EFA",
+			"page": 83,
+			"size": [
+				"S",
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -1965,11 +1965,11 @@
 					"name": "迷踪步（2/日）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"斗殴犯施放{@spell 迷踪步|xphb}，使用智力作为施法属性。"
+						"斗殴犯施放{@spell 迷踪步|XPHB}，使用智力作为施法属性。"
 					],
 					"daily": {
 						"2": [
-							"{@spell 迷踪步|xphb}"
+							"{@spell 迷踪步|XPHB}"
 						]
 					},
 					"ability": "int",
@@ -1998,7 +1998,7 @@
 					"ENG_name": "Lightning Cage {@recharge 5}",
 					"name": "闪电牢笼 {@recharge 5}",
 					"entries": [
-						"{@actSave con} {@dc 13}，在斗殴犯60尺内能看见的一点为中心半径20尺的{@variantrule 球状 [效应区域]|xphb|球状}内的每个生物。{@actSaveFail} 13（{@damage 3d8}）闪电伤害，且该生物直到斗殴犯的下个回合结束前不能使用反应。{@actSaveSuccess} 仅伤害减半。"
+						"{@actSave con} {@dc 13}，在斗殴犯60尺内能看见的一点为中心半径20尺的{@variantrule 球状 [效应区域]|XPHB|球状}内的每个生物。{@actSaveFail} 13（{@damage 3d8}）闪电伤害，且该生物直到斗殴犯的下个回合结束前不能使用反应。{@actSaveSuccess} 仅伤害减半。"
 					]
 				}
 			],
@@ -2007,7 +2007,7 @@
 					"ENG_name": "Temporal Disruption (1/Day)",
 					"name": "时间瓦解（1/天）",
 					"entries": [
-						"{@actTrigger} 斗殴犯受到来自一次近战攻击的伤害。{@actResponse} 斗殴犯传送至多30尺至一个它能看见的未占据空间。斗殴犯离开空间10尺内的每个生物必须成功通过{@dc 13}的体质豁免检定，否则其{@variantrule 速度|xphb}减半直到斗殴犯的下个回合开始。"
+						"{@actTrigger} 斗殴犯受到来自一次近战攻击的伤害。{@actResponse} 斗殴犯传送至多30尺至一个它能看见的未占据空间。斗殴犯离开空间10尺内的每个生物必须成功通过{@dc 13}的体质豁免检定，否则其{@variantrule 速度|XPHB}减半直到斗殴犯的下个回合开始。"
 					]
 				}
 			],
@@ -2043,18 +2043,18 @@
 		{
 			"ENG_name": "Sentinel Marshal",
 			"name": "哨兵执法官",
-			"source": "EFA",
-			"page": 83,
-			"size": [
-				"S",
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "EFA",
+			"page": 83,
+			"size": [
+				"S",
+				"M"
+			],
 			"alignment": [
 				"L",
 				"N"
@@ -2103,11 +2103,11 @@
 					"name": "护盾术（3/白昼）",
 					"type": "spellcasting",
 					"headerEntries": [
-						"执法官使用感知作为施法属性，以响应法术的触发来施放{@spell 护盾术|xphb}。"
+						"执法官使用感知作为施法属性，以响应法术的触发来施放{@spell 护盾术|XPHB}。"
 					],
 					"daily": {
 						"3": [
-							"{@spell 护盾术|xphb}"
+							"{@spell 护盾术|XPHB}"
 						]
 					},
 					"ability": "wis",
@@ -2129,7 +2129,7 @@
 					"ENG_name": "Longsword",
 					"name": "长剑",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}13（{@damage 2d8 + 4}）挥砍伤害，且目标在执法官的下个回合开始前进行的下一次攻击检定具有{@variantrule 劣势|xphb}。"
+						"{@atkr m} {@hit 7}，触及5尺。{@h}13（{@damage 2d8 + 4}）挥砍伤害，且目标在执法官的下个回合开始前进行的下一次攻击检定具有{@variantrule 劣势|XPHB}。"
 					]
 				},
 				{
@@ -2167,17 +2167,17 @@
 		{
 			"ENG_name": "Shadow-Marked Agent",
 			"name": "幽影标记特工",
-			"source": "EFA",
-			"page": 84,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"精灵"
 				]
 			},
+			"source": "EFA",
+			"page": 84,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2232,12 +2232,12 @@
 						"该特工施放下列法术之一，无需任何材质成分并使用魅力作为施法属性（{@dc 14}）："
 					],
 					"will": [
-						"{@spell 易容术|xphb}",
-						"{@spell 次级幻象|xphb}"
+						"{@spell 易容术|XPHB}",
+						"{@spell 次级幻象|XPHB}"
 					],
 					"daily": {
 						"1": [
-							"{@spell 行动无踪|xphb}"
+							"{@spell 行动无踪|XPHB}"
 						]
 					},
 					"ability": "cha",
@@ -2256,7 +2256,7 @@
 					"ENG_name": "Shadow Knife",
 					"name": "幽影刀刃",
 					"entries": [
-						"{@atkr m,r} {@hit 8}，触及5尺或射程20/60尺，{@h}10（{@damage 2d4 + 5}）穿刺伤害加14（{@damage 4d6}）暗蚀伤害，且目标的{@variantrule 速度|xphb}减少10尺直到其下一回合结束。"
+						"{@atkr m,r} {@hit 8}，触及5尺或射程20/60尺，{@h}10（{@damage 2d4 + 5}）穿刺伤害加14（{@damage 4d6}）暗蚀伤害，且目标的{@variantrule 速度|XPHB}减少10尺直到其下一回合结束。"
 					]
 				}
 			],
@@ -2265,7 +2265,7 @@
 					"ENG_name": "Shadow Cloak",
 					"name": "幽影斗篷",
 					"entries": [
-						"该特工获得{@condition 隐形|xphb}状态直到其下个回合开始。此隐形术会提前结束，在特工进行攻击检定后立即结束。"
+						"该特工获得{@condition 隐形|XPHB}状态直到其下个回合开始。此隐形术会提前结束，在特工进行攻击检定后立即结束。"
 					]
 				}
 			],
@@ -2301,17 +2301,17 @@
 		{
 			"ENG_name": "Sivis Scribe",
 			"name": "西维斯的书记员",
-			"source": "EFA",
-			"page": 84,
-			"size": [
-				"S"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"侏儒"
 				]
 			},
+			"source": "EFA",
+			"page": 84,
+			"size": [
+				"S"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2356,9 +2356,9 @@
 						"书记员施放下列法术之一，无需材质成分并使用智力作为施法属性（{@dc 13}）："
 					],
 					"will": [
-						"{@spell 通晓语言|xphb}",
-						"{@spell 法师护甲|xphb}（已计入AC）",
-						"{@spell 传讯术|xphb}"
+						"{@spell 通晓语言|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 传讯术|XPHB}"
 					],
 					"footerEntries": [
 						"1/天：短讯术"
@@ -2372,7 +2372,7 @@
 					"ENG_name": "Words of Reason",
 					"name": "理性之言",
 					"entries": [
-						"在书记员周围10尺{@variantrule 光环 [效应区域]|xphb|光环}范围内的盟友在避免或结束{@condition 魅惑|xphb}或{@condition 恐慌|xphb}状态的豁免检定上具有{@variantrule 优势|xphb}。如果书记员处于{@condition 失能|xphb}状态，此特质不生效。"
+						"在书记员周围10尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的盟友在避免或结束{@condition 魅惑|XPHB}或{@condition 恐慌|XPHB}状态的豁免检定上具有{@variantrule 优势|XPHB}。如果书记员处于{@condition 失能|XPHB}状态，此特质不生效。"
 					]
 				}
 			],
@@ -2397,7 +2397,7 @@
 					"ENG_name": "Word of Stasis {@recharge 5}",
 					"name": "凝滞真言{@recharge 5}",
 					"entries": [
-						"{@actSave con} {@dc 13}，书记员60尺内能看见的一点为中心半径20尺的{@variantrule 球状 [效应区域]|xphb|球状}内的每个生物。{@actSaveFail} 目标获得{@condition 失能|xphb}状态直到书记员的下个回合开始。当目标处于{@condition 失能|xphb}状态时，其{@variantrule 速度|xphb}为0且不能增加。"
+						"{@actSave con} {@dc 13}，书记员60尺内能看见的一点为中心半径20尺的{@variantrule 球状 [效应区域]|XPHB|球状}内的每个生物。{@actSaveFail} 目标获得{@condition 失能|XPHB}状态直到书记员的下个回合开始。当目标处于{@condition 失能|XPHB}状态时，其{@variantrule 速度|XPHB}为0且不能增加。"
 					]
 				}
 			],
@@ -2435,13 +2435,13 @@
 		{
 			"ENG_name": "Steel Defender",
 			"name": "钢铁守卫",
+			"type": "construct",
 			"source": "EFA",
 			"page": 19,
 			"summonedByClass": "奇械师|EFA",
 			"size": [
 				"M"
 			],
-			"type": "construct",
 			"alignment": [
 				"N"
 			],
@@ -2483,7 +2483,7 @@
 					"ENG_name": "Steel Bond",
 					"name": "钢铁连结",
 					"entries": [
-						"将你的{@variantrule 熟练|xphb|熟练加值}添加到防御者进行的任何属性检定或豁免检定中。"
+						"将你的{@variantrule 熟练|XPHB|熟练加值}添加到防御者进行的任何属性检定或豁免检定中。"
 					]
 				}
 			],
@@ -2499,7 +2499,7 @@
 					"ENG_name": "Repair (3/Day)",
 					"name": "修理（ 3 次/天）",
 					"entries": [
-						"该防御者，或一个它在自身5尺内能看见的构装体或物件，恢复等于{@dice 2d8}加上你的智力调整值的{@variantrule 生命值|xphb}。"
+						"该防御者，或一个它在自身5尺内能看见的构装体或物件，恢复等于{@dice 2d8}加上你的智力调整值的{@variantrule 生命值|XPHB}。"
 					]
 				}
 			],
@@ -2508,7 +2508,7 @@
 					"ENG_name": "Deflect Attack",
 					"name": "招架攻击",
 					"entries": [
-						"{@actTrigger} 防御者能看见的5尺内的一个生物对防御者以外的生物进行一次攻击检定。{@actResponse} 触发生物进行该攻击检定时具有{@variantrule 劣势|xphb}。"
+						"{@actTrigger} 防御者能看见的5尺内的一个生物对防御者以外的生物进行一次攻击检定。{@actResponse} 触发生物进行该攻击检定时具有{@variantrule 劣势|XPHB}。"
 					]
 				}
 			],
@@ -2523,13 +2523,13 @@
 		{
 			"ENG_name": "Tarkanan Marauder",
 			"name": "塔卡南掠夺者",
+			"type": "humanoid",
 			"source": "EFA",
 			"page": 73,
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"E"
@@ -2582,11 +2582,11 @@
 						"掠夺者施放下列法术之一，无需材质成分并使用体质作为施法属性（法术豁免{@dc 17}）："
 					],
 					"will": [
-						"{@spell 传讯术|xphb}"
+						"{@spell 传讯术|XPHB}"
 					],
 					"daily": {
 						"1": [
-							"{@spell 解离术|xphb}"
+							"{@spell 解离术|XPHB}"
 						]
 					},
 					"ability": "con",
@@ -2598,7 +2598,7 @@
 					"ENG_name": "Evasion",
 					"name": "反射闪避",
 					"entries": [
-						"如果掠夺者受到一个允许它进行敏捷豁免检定以仅受一半伤害的效果影响，那么当它在豁免检定中成功时，它不受任何伤害，而失败时仅受一半伤害。如果它处于{@condition 失能|xphb}状态，则无法使用此特质。"
+						"如果掠夺者受到一个允许它进行敏捷豁免检定以仅受一半伤害的效果影响，那么当它在豁免检定中成功时，它不受任何伤害，而失败时仅受一半伤害。如果它处于{@condition 失能|XPHB}状态，则无法使用此特质。"
 					]
 				}
 			],
@@ -2614,7 +2614,7 @@
 					"ENG_name": "Aberrant Strike",
 					"name": "畸变打击",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}13（{@damage 3d6 + 3}）穿刺伤害，如果掠夺者在攻击检定上具有{@variantrule 优势|xphb}，则额外造成21（{@damage 6d6}）力场伤害。"
+						"{@atkr m} {@hit 7}，触及5尺。{@h}13（{@damage 3d6 + 3}）穿刺伤害，如果掠夺者在攻击检定上具有{@variantrule 优势|XPHB}，则额外造成21（{@damage 6d6}）力场伤害。"
 					]
 				}
 			],
@@ -2623,7 +2623,7 @@
 					"ENG_name": "Tear Through Space",
 					"name": "撕裂空间",
 					"entries": [
-						"掠夺者传送至其30尺内能看见的一个空间，出现在一道炫目的闪光中。{@actSave con} {@dc 17}，每个在掠夺者出现时5尺{@variantrule 光环 [效应区域]|xphb|光环}内的生物。{@actSaveFail} 目标获得{@condition 目盲|xphb}状态直到掠夺者的下一个回合结束。"
+						"掠夺者传送至其30尺内能看见的一个空间，出现在一道炫目的闪光中。{@actSave con} {@dc 17}，每个在掠夺者出现时5尺{@variantrule 光环 [效应区域]|XPHB|光环}内的生物。{@actSaveFail} 目标获得{@condition 目盲|XPHB}状态直到掠夺者的下一个回合结束。"
 					]
 				}
 			],
@@ -2663,13 +2663,13 @@
 		{
 			"ENG_name": "Tarkanan Ruffian",
 			"name": "塔卡南暴徒",
+			"type": "humanoid",
 			"source": "EFA",
 			"page": 73,
 			"size": [
 				"S",
 				"M"
 			],
-			"type": "humanoid",
 			"alignment": [
 				"C",
 				"E"
@@ -2717,11 +2717,11 @@
 						"该恶棍施放下列法术之一，无需材质成分并使用体质作为施法属性（法术豁免{@dc 12}，法术攻击命中{@hit 4}）："
 					],
 					"will": [
-						"{@spell 奇术|xphb}"
+						"{@spell 奇术|XPHB}"
 					],
 					"daily": {
 						"1": [
-							"{@spell 巫术箭|xphb}"
+							"{@spell 巫术箭|XPHB}"
 						]
 					},
 					"ability": "con",
@@ -2733,7 +2733,7 @@
 					"ENG_name": "Aberrant Surge",
 					"name": "异种浪涌",
 					"entries": [
-						"当暴徒施放{@spell 巫术箭|xphb}时，掷{@dice 1d8}。若结果为偶数，暴徒获得等于所掷数值的{@variantrule 临时生命值|xphb}。若结果为奇数，暴徒选择其30尺内的一个生物受到等于所掷数值的力场伤害；如果射程内没有其他生物，则其自身受到该伤害。"
+						"当暴徒施放{@spell 巫术箭|XPHB}时，掷{@dice 1d8}。若结果为偶数，暴徒获得等于所掷数值的{@variantrule 临时生命值|XPHB}。若结果为奇数，暴徒选择其30尺内的一个生物受到等于所掷数值的力场伤害；如果射程内没有其他生物，则其自身受到该伤害。"
 					]
 				}
 			],
@@ -2772,12 +2772,6 @@
 		{
 			"ENG_name": "Tharashk Hunter",
 			"name": "萨拉释克猎人",
-			"source": "EFA",
-			"page": 85,
-			"size": [
-				"S",
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2785,6 +2779,12 @@
 					"兽人"
 				]
 			},
+			"source": "EFA",
+			"page": 85,
+			"size": [
+				"S",
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2839,14 +2839,14 @@
 					"ENG_name": "Shortsword",
 					"name": "短剑",
 					"entries": [
-						"{@atkr m} {@hit 7}，触及5尺。{@h}11（{@damage 2d6 + 4}）穿刺伤害，且目标在其下一回合结束前在攻击检定和属性检定上具有{@variantrule 劣势|xphb}。"
+						"{@atkr m} {@hit 7}，触及5尺。{@h}11（{@damage 2d6 + 4}）穿刺伤害，且目标在其下一回合结束前在攻击检定和属性检定上具有{@variantrule 劣势|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Longbow",
 					"name": "长弓",
 					"entries": [
-						"{@atkr r} {@hit 7}，射程150/600尺。{@h}17（{@damage 3d8 + 4}）穿刺伤害，且目标的{@variantrule 速度|xphb}缩小10尺直到其下一回合结束。"
+						"{@atkr r} {@hit 7}，射程150/600尺。{@h}17（{@damage 3d8 + 4}）穿刺伤害，且目标的{@variantrule 速度|XPHB}缩小10尺直到其下一回合结束。"
 					]
 				}
 			],
@@ -2855,7 +2855,7 @@
 					"ENG_name": "Mark of Tharashk",
 					"name": "萨拉释克标记",
 					"entries": [
-						"猎人魔法性地标记一个它150尺内能看见的生物。该标记持续1小时，直到目标死亡，或猎人再次使用此{@variantrule 附赠动作|xphb}。当目标以此方式被标记时，猎人对该目标的攻击检定具有{@variantrule 优势|xphb}，且目标对猎人的{@condition 隐形|xphb}状态不提供任何增益。"
+						"猎人魔法性地标记一个它150尺内能看见的生物。该标记持续1小时，直到目标死亡，或猎人再次使用此{@variantrule 附赠动作|XPHB}。当目标以此方式被标记时，猎人对该目标的攻击检定具有{@variantrule 优势|XPHB}，且目标对猎人的{@condition 隐形|XPHB}状态不提供任何增益。"
 					]
 				}
 			],
@@ -2898,17 +2898,17 @@
 		{
 			"ENG_name": "Umbragen Shadow Walker",
 			"name": "幽影行者",
-			"source": "EFA",
-			"page": 99,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"精灵"
 				]
 			},
+			"source": "EFA",
+			"page": 99,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -2959,9 +2959,9 @@
 						"阴影行者施放下列法术之一，无需材质成分并使用魅力作为施法属性（法术豁免{@dc 17}）："
 					],
 					"will": [
-						"{@spell 舞光术|xphb}",
-						"{@spell 黑暗术|xphb}",
-						"{@spell 次级幻象|xphb}"
+						"{@spell 舞光术|XPHB}",
+						"{@spell 黑暗术|XPHB}",
+						"{@spell 次级幻象|XPHB}"
 					],
 					"ability": "cha",
 					"displayAs": "action"
@@ -2979,7 +2979,7 @@
 					"ENG_name": "Sunlight Sensitivity",
 					"name": "日照敏感",
 					"entries": [
-						"在阳光下，阴影行者进行属性检定和攻击检定时具有{@variantrule 劣势|xphb}。"
+						"在阳光下，阴影行者进行属性检定和攻击检定时具有{@variantrule 劣势|XPHB}。"
 					]
 				}
 			],
@@ -3002,7 +3002,7 @@
 					"ENG_name": "Shadow Cowl",
 					"name": "幽影兜帽",
 					"entries": [
-						"{@actSave wis} {@dc 17}，阴影行者120尺内能看见的一个生物。{@actSaveFail} 14（{@damage 4d6}）暗蚀伤害，且目标获得{@condition 目盲|xphb}状态直到阴影行者的下个回合开始。"
+						"{@actSave wis} {@dc 17}，影行者120尺内一个它能看见的生物。{@actSaveFail} 14（{@damage 4d6}）暗蚀伤害，并且目标获得{@condition 目盲|XPHB}状态直到影行者的下个回合开始。"
 					]
 				}
 			],
@@ -3042,18 +3042,18 @@
 		{
 			"ENG_name": "Vadalis Heir",
 			"name": "瓦塔利斯继承人",
-			"source": "EFA",
-			"page": 85,
-			"size": [
-				"S",
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"人类"
 				]
 			},
+			"source": "EFA",
+			"page": 85,
+			"size": [
+				"S",
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -3102,17 +3102,17 @@
 						"继承人施放下列法术之一，使用感知作为施法属性（法术豁免{@dc 13}）："
 					],
 					"will": [
-						"{@spell 德鲁伊伎俩|xphb}",
-						"{@spell 光亮术|xphb}",
-						"{@spell 动物交谈|xphb}"
+						"{@spell 德鲁伊伎俩|XPHB}",
+						"{@spell 光亮术|XPHB}",
+						"{@spell 动物交谈|XPHB}"
 					],
 					"daily": {
 						"1": [
-							"{@spell 冰风暴|xphb}"
+							"{@spell 冰风暴|XPHB}"
 						],
 						"3e": [
-							"{@spell 化兽为友|xphb}",
-							"{@spell 动物信使|xphb}"
+							"{@spell 化兽为友|XPHB}",
+							"{@spell 动物信使|XPHB}"
 						]
 					},
 					"ability": "wis",
@@ -3124,7 +3124,7 @@
 					"ENG_name": "Pack Tactics",
 					"name": "集群战术",
 					"entries": [
-						"继承人在对一个生物的攻击检定中具有{@variantrule 优势|xphb}，如果至少有一个继承人的盟友在该生物5尺内且该盟友没有{@condition 失能|xphb}状态。"
+						"继承人在对一个生物的攻击检定中具有{@variantrule 优势|XPHB}，如果至少有一个继承人的盟友在该生物5尺内且该盟友没有{@condition 失能|XPHB}状态。"
 					]
 				}
 			],
@@ -3147,7 +3147,7 @@
 					"ENG_name": "Lunar Wisp",
 					"name": "月之鬼火",
 					"entries": [
-						"{@atkr r} {@hit 5}，射程60尺。{@h}9（{@damage 2d8}）光耀伤害，并且目标在10尺半径内发出{@variantrule 微光光照|xphb}，并且在继承人的下一个回合结束前不能从{@condition 隐形|xphb}状态中获益。"
+						"{@atkr r} {@hit 5}，射程60尺。{@h}9（{@damage 2d8}）光耀伤害，并且目标在10尺半径内发出{@variantrule 微光光照|XPHB}，并且在继承人的下一个回合结束前不能从{@condition 隐形|XPHB}状态中获益。"
 					]
 				}
 			],
@@ -3156,7 +3156,7 @@
 					"ENG_name": "Spur Beast",
 					"name": "激励野兽",
 					"entries": [
-						"继承人目标为30尺内它能看见的一个野兽。目标可以采取一个{@variantrule 反应|xphb}来移动至多一半的{@variantrule 速度|xphb}并进行一次近战攻击。"
+						"继承人目标为30尺内它能看见的一个野兽。目标可以采取一个{@variantrule 反应|XPHB}来移动至多一半的{@variantrule 速度|XPHB}并进行一次近战攻击。"
 					]
 				}
 			],
@@ -3203,17 +3203,17 @@
 		{
 			"ENG_name": "Vulkoori Stingblade",
 			"name": "瓦库利刺刀",
-			"source": "EFA",
-			"page": 98,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"精灵"
 				]
 			},
+			"source": "EFA",
+			"page": 98,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N"
 			],
@@ -3312,17 +3312,17 @@
 		{
 			"ENG_name": "Vulkoori Venom Priest",
 			"name": "瓦库利剧毒祭司",
-			"source": "EFA",
-			"page": 98,
-			"size": [
-				"M"
-			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
 					"精灵"
 				]
 			},
+			"source": "EFA",
+			"page": 98,
+			"size": [
+				"M"
+			],
 			"alignment": [
 				"N",
 				"E"
@@ -3379,15 +3379,15 @@
 						"祭司施放下列法术之一，使用感知作为施法属性（法术豁免{@dc 13}，法术攻击{@hit 5}命中）："
 					],
 					"will": [
-						"{@spell 舞光术|xphb}",
-						"{@spell 致病射线|xphb}",
-						"{@spell 奇术|xphb}"
+						"{@spell 舞光术|XPHB}",
+						"{@spell 致病射线|XPHB}",
+						"{@spell 奇术|XPHB}"
 					],
 					"daily": {
 						"1e": [
-							"{@spell 疗伤术|xphb}",
-							"{@spell 定身类人|xphb}",
-							"{@spell 防护毒素|xphb}"
+							"{@spell 疗伤术|XPHB}",
+							"{@spell 定身类人|XPHB}",
+							"{@spell 防护毒素|XPHB}"
 						]
 					},
 					"ability": "wis",
@@ -3408,7 +3408,7 @@
 					"ENG_name": "Venom Staff",
 					"name": "剧毒法杖",
 					"entries": [
-						"{@atkr m} {@hit 4}，触及5尺。{@h}9（{@damage 2d6 + 2}）钝击伤害，且目标获得{@condition 中毒|xphb}状态直到祭司的下个回合结束。"
+						"{@atkr m} {@hit 4}，触及5尺。{@h}9（{@damage 2d6 + 2}）钝击伤害，且目标获得{@condition 中毒|XPHB}状态直到祭司的下个回合结束。"
 					]
 				}
 			],
@@ -3417,7 +3417,7 @@
 					"ENG_name": "Intensify Poison",
 					"name": "强化毒素",
 					"entries": [
-						"每个在祭司30尺{@variantrule 光环 [效应区域]|xphb|光环}内具有{@condition 中毒|xphb}状态的生物受到3（{@damage 1d6}）毒素伤害。"
+						"每个在祭司30尺{@variantrule 光环 [效应区域]|XPHB|光环}内具有{@condition 中毒|XPHB}状态的生物受到3（{@damage 1d6}）毒素伤害。"
 					]
 				}
 			],
