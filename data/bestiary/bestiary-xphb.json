@@ -53,7 +53,7 @@
 					"ENG_name": "Regeneration (Slaad Only)",
 					"name": "再生（仅史拉蟾）",
 					"entries": [
-						"若灵魄至少拥有 1 生命值，则其在自己回合开始时回复 10 生命值。"
+						"若灵魄至少拥有 1 {@variantrule 生命值|XPHB}，则其在自己回合开始时回复 10 {@variantrule 生命值|XPHB|生命值}。"
 					]
 				},
 				{
@@ -76,7 +76,7 @@
 					"ENG_name": "Claw (Slaad Only)",
 					"name": "爪击（仅史拉蟾）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害，目标无法恢复生命值直至灵魄的下个回合开始。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}, 触及 5 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}挥砍伤害，目标无法恢复{@variantrule 生命值|XPHB}直至灵魄的下个回合开始。"
 					]
 				},
 				{
@@ -163,6 +163,55 @@
 					"hasToken": true
 				},
 				{
+					"ENG_name": "Aberrant Spirit (Mind Flayer)",
+					"name": "异怪灵魄（夺心魔）",
+					"source": "XPHB",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"再生（仅史拉蟾）"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "低语灵光（仅夺心魔）",
+									"with": "低语灵光"
+								}
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"眼波射线（仅类眼魔）",
+									"爪击（仅史拉蟾）"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "灵能猛击（仅夺心魔）",
+									"with": "灵能猛击"
+								}
+							}
+						]
+					},
+					"speed": {
+						"walk": 30
+					},
+					"traitTags": null,
+					"damageTags": [
+						"Y"
+					],
+					"miscTags": [
+						"RA"
+					],
+					"hasToken": true
+				},
+				{
 					"ENG_name": "Aberrant Spirit (Slaad)",
 					"name": "异怪灵魄（史拉蟾）",
 					"source": "XPHB",
@@ -195,57 +244,6 @@
 								"renames": {
 									"rename": "爪击（仅史拉蟾）",
 									"with": "爪击"
-								}
-							}
-						]
-					},
-					"speed": {
-						"walk": 30
-					},
-					"traitTags": [
-						"再生"
-					],
-					"damageTags": [
-						"Y"
-					],
-					"miscTags": [
-						"RA"
-					],
-					"hasToken": true
-				},
-				{
-					"ENG_name": "Aberrant Spirit (Star Spawn)",
-					"name": "异怪灵魄（星之子）",
-					"source": "XPHB",
-					"_mod": {
-						"trait": [
-							{
-								"mode": "removeArr",
-								"names": [
-									"再生（仅史拉蟾）"
-								]
-							},
-							{
-								"mode": "renameArr",
-								"renames": {
-									"rename": "低语灵光（仅夺心魔）",
-									"with": "低语灵光"
-								}
-							}
-						],
-						"action": [
-							{
-								"mode": "removeArr",
-								"names": [
-									"眼波射线（仅类眼魔）",
-									"爪击（仅史拉蟾）"
-								]
-							},
-							{
-								"mode": "renameArr",
-								"renames": {
-									"rename": "灵能猛击（仅夺心魔）",
-									"with": "灵能猛击"
 								}
 							}
 						]
@@ -666,7 +664,7 @@
 					"ENG_name": "Pack Tactics (Land and Water Only)",
 					"name": "集群战术（仅大地与海洋）",
 					"entries": [
-						"若灵魄的攻击目标生物 5 尺内存在有至少一名灵魄未{@condition 失能|XPHB}的盟友，则灵魄对该生物进行的攻击检定具有优势。"
+						"若灵魄的攻击目标生物 5 尺内存在有至少一名灵魄未{@condition 失能|XPHB}的盟友，则灵魄对该生物进行的攻击检定具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
@@ -742,7 +740,8 @@
 					},
 					"traitTags": [
 						"飞掠"
-					]
+					],
+					"hasToken": true
 				},
 				{
 					"ENG_name": "Bestial Spirit (Land)",
@@ -776,7 +775,8 @@
 					"foundryTokenScale": 1.3,
 					"traitTags": [
 						"集群战术"
-					]
+					],
+					"hasToken": true
 				},
 				{
 					"ENG_name": "Bestial Spirit (Water)",
@@ -809,7 +809,8 @@
 					"traitTags": [
 						"集群战术",
 						"水下呼吸"
-					]
+					],
+					"hasToken": true
 				}
 			],
 			"translator": "不全书"
@@ -881,14 +882,14 @@
 					"ENG_name": "Radiant Mace (Defender Only)",
 					"name": "光耀之锤（仅守护圣灵）",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}光耀伤害，且灵魄可选择自己或其 10 尺内可见的另一生物，令其获得{@dice 1d10}临时生命值。"
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及 5 尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}光耀伤害，且灵魄可选择自己或其 10 尺内可见的另一生物，令其获得{@dice 1d10}{@variantrule 临时生命值|XPHB}。"
 					]
 				},
 				{
 					"ENG_name": "Healing Touch (1/Day)",
 					"name": "治愈之触（1/日）",
 					"entries": [
-						"灵魄触碰另一生物。目标魔法性地恢复{@dice 2d8 + summonSpellLevel}点生命值。"
+						"灵魄触碰另一生物。目标魔法性地恢复{@dice 2d8 + summonSpellLevel}点{@variantrule 生命值|XPHB}。"
 					]
 				}
 			],
@@ -1033,7 +1034,7 @@
 					"ENG_name": "Stony Lethargy (Stone Only)",
 					"name": "石迷昏眠（仅岩石）",
 					"entries": [
-						"当一名灵魄可见的生物在其 10 尺内开始其回合时，灵魄可以将其指定为魔法能量的目标。{@actSave wis}： DC等于你的法术豁免DC，目标。{@actSaveFail}：目标无法发动{@action 借机攻击|XPHB|借机攻击}且速度减半，持续至其下个回合开始。"
+						"当一个生物在灵魄10尺内开始其回合时，如果灵魄能看见它，灵魄可以用魔法能量瞄准该生物。{@actSave wis} DC等于你的法术豁免DC，目标。{@actSaveFail} 直到其下个回合开始前，目标不能进行{@action 借机攻击|XPHB|借机攻击}，并且其{@variantrule 速度|XPHB}减半。"
 					]
 				}
 			],
@@ -1058,7 +1059,7 @@
 					"ENG_name": "Berserk Lashing (Clay Only)",
 					"name": "狂怒乱击（仅粘土）",
 					"entries": [
-						"{@actTrigger}生物对灵魄造成伤害。{@actResponse}：灵魄对该生物发动一次猛击攻击（若条件允许），或灵魄向那名生物移动至多等于其速度一半的距离且不会引发{@action 借机攻击|XPHB|借机攻击}。"
+						"{@actTrigger} 灵魄受到来自一个生物的伤害。{@actResponse} 如果可能，灵魄对该生物进行一次猛击攻击，否则灵魄向该生物移动至多一半的{@variantrule 速度|XPHB}，且不会引发{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				}
 			],
@@ -1212,7 +1213,7 @@
 					"ENG_name": "Shared Resistances",
 					"name": "分享抗性",
 					"entries": [
-						"当你召唤此灵魄时，选择一项其具有的伤害抗性。直至法术结束前，你也会获得所选伤害的抗性。"
+						"当你召唤此灵魄时，选择一项其具有的伤害{@variantrule 抗性|XPHB}。直至法术结束前，你也会获得所选伤害的抗性。"
 					]
 				}
 			],
@@ -1235,7 +1236,7 @@
 					"ENG_name": "Breath Weapon",
 					"name": "吐息武器",
 					"entries": [
-						"{@actSave dex} ：DC等于你的法术豁免DC，30 尺锥状内的每个生物。{@actSaveFail}：{@damage 2d6}点伤害（伤害类型由你在施法时从灵魄的伤害抗性中选择）。{@actSaveSuccess}：半伤。"
+						"{@actSave dex} ：DC等于你的法术豁免DC，30 尺{@variantrule 锥状 [效应区域]|XPHB|锥状}内的每个生物。{@actSaveFail}：{@damage 2d6}点伤害（伤害类型由你在施法时从灵魄的伤害{@variantrule 抗性|XPHB}中选择）。{@actSaveSuccess}：半伤。"
 					]
 				}
 			],
@@ -1270,7 +1271,7 @@
 										"ENG_name": "Shared Resistances",
 										"name": "分享抗性",
 										"entries": [
-											"你对{{resist}}伤害具有抗性直到法术结束。"
+											"你对{{resist}}伤害具有{@variantrule 抗性|XPHB}直到法术结束。"
 										]
 									}
 								}
@@ -1283,7 +1284,7 @@
 										"ENG_name": "Breath Weapon",
 										"name": "吐息武器",
 										"entries": [
-											"{@actSave dex} DC等于你的法术豁免DC，30英尺锥状范围内的每个生物。{@actSaveFail} {@damage 2d6} {{resist}}伤害。{@actSaveSuccess} 伤害减半。"
+											"{@actSave dex} DC等于你的法术豁免DC，30英尺{@variantrule 锥状 [效应区域]|XPHB|锥状}范围内的每个生物。{@actSaveFail} {@damage 2d6} {{resist}}伤害。{@actSaveSuccess} 伤害减半。"
 										]
 									}
 								}
@@ -1419,7 +1420,7 @@
 					"ENG_name": "Amorphous Form (Air, Fire, and Water Only)",
 					"name": "不定形态（仅气、火、水）",
 					"entries": [
-						"灵魄可以移动穿过最窄1寸宽的空间而不会将其视为困难地形。"
+						"灵魄可以移动穿过最窄1寸宽的空间而不会将其视为{@variantrule 困难地形|XPHB}。"
 					]
 				}
 			],
@@ -1693,7 +1694,7 @@
 									"name": "愤怒",
 									"type": "item",
 									"entries": [
-										"灵魄在此回合结束前的下一次攻击检定具有优势。"
+										"灵魄在此回合结束前的下一次攻击检定具有{@variantrule 优势|XPHB}。"
 									]
 								},
 								{
@@ -1709,7 +1710,7 @@
 									"name": "诡诈",
 									"type": "item",
 									"entries": [
-										"灵魄令魔法黑暗充斥于它 5 尺内的一处 10 尺立方区域，持续至灵魄的下个回合结束。"
+										"灵魄令魔法黑暗充斥于它 5 尺内的一处 10 尺{@variantrule 立方 [效应区域]|XPHB|立方}区域，持续至灵魄的下个回合结束。"
 									]
 								}
 							]
@@ -1751,7 +1752,7 @@
 							"ENG_name": "Fey Step",
 							"name": "妖精步伐",
 							"entries": [
-								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。灵魄在此回合结束前的下一次攻击检定具有优势。"
+								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。灵魄在此回合结束前的下一次攻击检定具有{@variantrule 优势|XPHB}。"
 							]
 						}
 					]
@@ -1779,7 +1780,7 @@
 							"ENG_name": "Fey Step",
 							"name": "妖精步伐",
 							"entries": [
-								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。灵魄令魔法黑暗充斥于它 5 尺内的一处 10 尺立方区域，持续至灵魄的下个回合结束。"
+								"灵魄魔法地传送至多 30 尺至一处它可见的未被占据空间。灵魄令魔法黑暗充斥于它 5 尺内的一处 10 尺{@variantrule 立方 [效应区域]|XPHB|立方}区域，持续至灵魄的下个回合结束。"
 							]
 						}
 					]
@@ -1850,21 +1851,21 @@
 					"ENG_name": "Death Throes (Demon Only)",
 					"name": "焚身爆（仅恶魔）",
 					"entries": [
-						"当灵魄生命值降至 0 或法术结束时，灵魄爆炸。{@actSave dex}：DC等于你的法术豁免DC，源自灵魄的 10 尺光环区域内的每名生物。{@actSaveFail}：{@damage 2d10} + 法术环阶的火焰伤害。{@actSaveSuccess}：半伤。"
+						"当灵魄{@variantrule 生命值|XPHB}降至 0 或法术结束时，灵魄爆炸。{@actSave dex}：DC等于你的法术豁免DC，源自灵魄的 10 尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内的每名生物。{@actSaveFail}：{@damage 2d10} + 法术环阶的火焰伤害。{@actSaveSuccess}：半伤。"
 					]
 				},
 				{
 					"ENG_name": "Devil's Sight (Devil Only)",
 					"name": "魔鬼视界（仅魔鬼）",
 					"entries": [
-						"魔法黑暗不会阻碍灵魄的黑暗视觉。"
+						"魔法{@variantrule 黑暗|XPHB}不会阻碍灵魄的黑暗视觉。"
 					]
 				},
 				{
 					"ENG_name": "Magic Resistance",
 					"name": "魔法抗性",
 					"entries": [
-						"灵魄对抗法术和其他魔法效应时进行的豁免检定具有优势。"
+						"灵魄对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
 					]
 				}
 			],
@@ -2301,7 +2302,7 @@
 					"ENG_name": "Life Bond",
 					"name": "生命连接",
 					"entries": [
-						"当你从一道一环或以上的法术中恢复生命值时，若你位于坐骑 5 尺内，则坐骑也会恢复相同数量的生命值。"
+						"当你从一道一环或以上的法术中恢复{@variantrule 生命值|XPHB}时，若你位于坐骑 5 尺内，则坐骑也会恢复相同数量的{@variantrule 生命值|XPHB}。"
 					]
 				}
 			],
@@ -2333,7 +2334,7 @@
 					"ENG_name": "Healing Touch (Celestial Only; Recharges after a Long Rest)",
 					"name": "治愈之触（仅天族，长休充能）",
 					"entries": [
-						"一名距坐骑 5 尺内的生物恢复{@dice 2d8 + summonSpellLevel}点生命值。"
+						"一名距坐骑 5 尺内的生物恢复{@dice 2d8 + summonSpellLevel}点{@variantrule 生命值|XPHB}。"
 					]
 				}
 			],
@@ -2527,14 +2528,14 @@
 					"ENG_name": "Festering Aura (Putrid Only)",
 					"name": "腐灭灵光（仅腐尸）",
 					"entries": [
-						"{@actSave con}：DC等于你的法术豁免DC，源自灵魄的5尺光环区域内开始其回合的每名生物（除你以外）。{@actSaveFail}：该生物陷入{@condition 中毒|XPHB}状态，直至其下个回合开始。"
+						"{@actSave con}：DC等于你的法术豁免DC，源自灵魄的5尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内开始其回合的每名生物（除你以外）。{@actSaveFail}：该生物陷入{@condition 中毒|XPHB}状态，直至其下个回合开始。"
 					]
 				},
 				{
 					"ENG_name": "Incorporeal Passage (Ghostly Only)",
 					"name": "虚体通行（仅幽体）",
 					"entries": [
-						"灵魄可以移动穿过其他生物或物件，如同穿过困难地形一般。在其回合结束时，若灵魄还处于物件内，则其被挪到距离最近的未占据空间，且每因此移动5尺便受到{@damage 1d10}力场伤害。"
+						"灵魄可以移动穿过其他生物或物件，如同穿过{@variantrule 困难地形|XPHB}一般。如果它结束其回合时还处于物件内，其将被移入最近的未占据空间中并受到每被移5尺{@damage 1d10}力场伤害。"
 					]
 				}
 			],
@@ -2650,7 +2651,8 @@
 					],
 					"conditionInflict": [
 						"恐慌"
-					]
+					],
+					"hasToken": true
 				},
 				{
 					"ENG_name": "Undead Spirit (Putrid)",
@@ -2701,7 +2703,8 @@
 					"conditionInflict": [
 						"麻痹",
 						"中毒"
-					]
+					],
+					"hasToken": true
 				},
 				{
 					"ENG_name": "Undead Spirit (Skeletal)",

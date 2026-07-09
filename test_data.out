@@ -1,5 +1,5 @@
 
-> 5etools@2.30.1 test:data
+> 5etools@2.32.1 test:data
 > node test/test-all.js
 
 ##### FilterCheck passed! #####
@@ -35,17 +35,9 @@
 ##### EntityFileHandlerFoundrySpells passed! #####
 Error messages for LinkCheck:
 
-Missing link: {@table Consider the Ideal Climax; 冒险高潮||冒险高潮表} in file ./data/adventure/adventure-cm.json (evaluates to "tables.html#consider%20the%20ideal%20climax%3b%20%e5%86%92%e9%99%a9%e9%ab%98%e6%bd%ae_dmg")
 Missing link: {@spell bless} in file ./data/adventure/adventure-dip.json (evaluates to "spells.html#bless_phb")
 Missing link: {@table 火巨人行囊内容; 火巨人行囊物品|BGG|火巨人行囊} in file ./data/adventure/adventure-gotsf.json (evaluates to "tables.html#%e7%81%ab%e5%b7%a8%e4%ba%ba%e8%a1%8c%e5%9b%8a%e5%86%85%e5%ae%b9%3b%20%e7%81%ab%e5%b7%a8%e4%ba%ba%e8%a1%8c%e5%9b%8a%e7%89%a9%e5%93%81_bgg")
 Missing link: {@creature Reghed Warrior|IDRotF|Warriors} in file ./data/adventure/adventure-idrotf.json (evaluates to "bestiary.html#reghed%20warrior_idrotf")
-Missing link: {@item The Codicil of White|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "items.html#the%20codicil%20of%20white_idrotf")
-Missing link: {@creature Vellynne Harpell|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "bestiary.html#vellynne%20harpell_idrotf")
-Missing link: {@spell frost fingers|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "spells.html#frost%20fingers_idrotf")
-Missing link: {@spell Frost Fingers|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "spells.html#frost%20fingers_idrotf")
-Missing link: {@creature Nass Lantomir's ghost|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "bestiary.html#nass%20lantomir's%20ghost_idrotf")
-Missing link: {@spell create magen|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "spells.html#create%20magen_idrotf")
-Missing link: {@spell Create Magen|IDRotF} in file ./data/adventure/adventure-idrotf.json (evaluates to "spells.html#create%20magen_idrotf")
 Missing link: {@creature gaj|BAM} in file ./data/adventure/adventure-lox.json (evaluates to "bestiary.html#gaj_bam")
 Missing link: {@condition Poisoned} in file ./data/adventure/adventure-tftyp-dit.json (evaluates to "conditionsdiseases.html#poisoned_phb")
 Missing link: {@table 贮藏|ToA} in file ./data/adventure/adventure-toa.json (evaluates to "tables.html#%e8%b4%ae%e8%97%8f_toa")
@@ -120,6 +112,8 @@ Missing link: {@table 魔法物品根据稀有度的定价; 魔法物品稀有�
 
 Error messages for BraceCheck:
 
+Mismatched braces in ./data/adventure/adventure-idrotf.json: "讲台上的书是{@item 苍白法典|IDRotF}（见{@adventure 附录D|IDRotF|22}）。没有守卫或生物在看守它。如果她还在队伍中，{@creature 瓦琳·哈贝尔|IDRotF}渴望得到这本书，哪怕只是为了在她的法术书中加入{@spell 冰冷一指|IDRotF}法术（见{@adventure 附录D|IDRotF|22|{@spell 冰冷一指|IDRotF}|IDRotF}}）。如果它存在于宿主的身体里，{@creature 纳斯·兰托米尔的幽魂|IDRotF}会在宿主拿起或抓住这本书时得到安息。"
+Mismatched braces in ./data/adventure/adventure-idrotf.json: "魔卫是由法师法术（详见{@spell 创造魔卫|IDRotF}法术，位于{@adventure 附录D|IDRotF|22|{@spell 创造魔卫|IDRotF}|IDRotF}}）或其他奥术手段创造的魔法类人存在。"
 Mismatched braces in ./data/adventure/adventure-oow.json: "传送门的当前目的地在"传送门"表格中注明。您可以选择您喜欢的遭遇，或者掷骰子查看角色们最终到达何处，对于已经访问过的地点需要重新掷骰。对于前三个目的地，掷一个{@dice d6}以防止角色们到达{@i 独行侠}。对于后续的目的地，掷一个{@dice d8}。或者，您可以在角色们从其他三个地点返回后，随时允许他们到达总部飞船（见下面的"{@adventure 在{@i 独行者号}上|OoW|4|登上独行侠号}"）。|OoW|4|On Board The Maverick}" below) any time after they've returned from three other destinations."
 Mismatched braces in ./data/adventure/adventure-sdw.json: "承载着克劳吉利亚玛塔宝藏的高台高20英尺。高台边缘的南北两侧各自矗立着两座雕像（见下方的"{@adventure 雕像|SDW|3|雕像. 此区域的四座雕像描绘了以下形象（见"{@adventure 巢穴特征|SDW|3|巢穴特征}"侧栏）：|SDW|3|Lair Features}" sidebar):}"）。成功通过 {@dc 12} 智力（{@skill 调查}）检定的角色会注意到在两对雕像之间的高台地面上有三个直径5英尺的浅凹痕。{@spell 侦测魔法} 法术揭示这些凹痕散发出防护魔法的灵光。"
 Mismatched braces in ./data/adventure/adventure-sdw.json: "如果多芙·鹰手（位于 {@area 区域C8|070|x}）、风暴·银手（位于 {@area 区域C8|070|x}）和莱拉·银手（位于 {@area 区域C4|06b|x}）的雕像被放置在她们的姐妹雕像旁边的凹槽中（见下方 "{@adventure 雕像|SDW|3|雕像. 此区域中的四座雕像描绘了以下人物（见 "{@adventure 巢穴特征|SDW|3|巢穴特征}" 侧边栏）：|SDW|3|Lair Features}" sidebar):}"），墙壁将被摧毁。如果高原上的任何一座雕像被移走，墙壁会重新形成。如果将这三座雕像以外的任何雕像放入凹槽中，该雕像将以猛烈力量爆炸。雕像周围 10 英尺范围内的每个生物必须进行一次 {@dc 15} 敏捷豁免，豁免失败则受到 33（{@dice 6d10}）点钝击伤害，豁免成功则伤害减半。"
@@ -189,5 +183,5 @@ Missing link: 喷火|万象无常牌|XDMG in file ./data/decks.json (evaluates t
 ---
 
 
-	Run duration: 1:15.289 (m:ss.mmm)
+	Run duration: 1:11.157 (m:ss.mmm)
 Tests failed!

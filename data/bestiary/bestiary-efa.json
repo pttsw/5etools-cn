@@ -1822,8 +1822,10 @@
 					"name": "施法",
 					"type": "spellcasting",
 					"headerEntries": [
-						"调查员施放下列法术之一，无需材质成分并使用感知作为施法属性（法术豁免{@dc 13}）：",
-						"随意：神导术"
+						"调查员施放下列法术之一，无需材质成分并使用感知作为施法属性（法术豁免{@dc 13}）："
+					],
+					"will": [
+						"{@spell 神导术|XPHB}"
 					],
 					"daily": {
 						"1e": [
@@ -2360,9 +2362,11 @@
 						"{@spell 法师护甲|XPHB}（已计入AC）",
 						"{@spell 传讯术|XPHB}"
 					],
-					"footerEntries": [
-						"1/天：短讯术"
-					],
+					"daily": {
+						"1e": [
+							"{@spell 短讯术|XPHB}"
+						]
+					},
 					"ability": "int",
 					"displayAs": "action"
 				}
