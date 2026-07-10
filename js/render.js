@@ -1495,7 +1495,7 @@ globalThis.Renderer = function () {
 					const isHideEach = !per && per.length === 1;
 					tempList.items.push({
 						type: "itemSpell",
-						name: `${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}${isHideEach ? "" : ` each`}:`,
+						name: `${isHideEach ? "" : `每项`}${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
 						entry: this._renderSpellcasting_getRenderableList(per).join(", "),
 					});
 					return;
@@ -1503,8 +1503,8 @@ globalThis.Renderer = function () {
 
 				tempList.items.push({
 					type: "itemSpell",
-					name: `${isHideEach ? "" : `每项`}${isSkipPrefix ? "" : k}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
-					entry: this._renderSpellcasting_getRenderableList(perDur[lvlEach]).join(", "),
+					name: `${isSkipPrefix ? "" : k}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
+					entry: this._renderSpellcasting_getRenderableList(per).join(", "),
 				});
 			});
 	};
