@@ -228,7 +228,7 @@ export class LootGenOutput {
 			.map(it => `${this._coins[it].toLocaleStringVe()} ${LootGenUtils.getCoinageLabel(it)}`);
 
 		return ee`
-			<li>${(total / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} in coinage:</li>
+			<li>总计价值${(total / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}:</li>
 			<ul>
 				${breakdown.map(it => `<li>${it}</li>`).join("")}
 			</ul>

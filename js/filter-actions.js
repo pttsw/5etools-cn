@@ -11,7 +11,20 @@ class PageFilterActions extends PageFilterBase {
 		this._timeFilter = new Filter({
 			header: "Type",
 			cnHeader: "类型",
-			displayFn: StrUtil.uppercaseFirst,
+			displayFn: (time)=> {
+				switch (time) {
+					case "action":
+						return "动作";
+					case "bonus":
+						return "附赠动作";
+					case "minute":
+						return "分钟";
+					case "reaction":
+						return "反应";
+					default:
+						return StrUtil.uppercaseFirst(time)
+				}
+			},
 			itemSortFn: SortUtil.ascSortLower,
 		});
 		this._miscFilter = new Filter({

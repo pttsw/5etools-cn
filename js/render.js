@@ -2902,7 +2902,7 @@ Renderer.getRollableEntryDice._getPtRoll = (toPack) => {
 };
 
 Renderer.getEntryDiceTitle = function (subType) {
-	return `Click to roll. ${subType === "damage" ? "SHIFT to roll a critical hit, CTRL to half damage (rounding down)." : subType === "d20" ? "SHIFT to roll with advantage, CTRL to roll with disadvantage." : "SHIFT/CTRL to roll twice."}`;
+	return `点击以掷骰 ${subType === "damage" ? "按住SHIFT掷骰重击，按住CTRL掷骰半伤（向下取整）。" : subType === "d20" ? "按住SHIFT以优势掷骰，按住CTRL以劣势掷骰" : "按住SHIFT/CTRL掷骰两次。"}`;
 };
 
 Renderer.legacyDiceToString = function (array) {
@@ -4589,8 +4589,8 @@ Renderer.utils = class {
 						fauxEntry.successThresh = 7 - asNum;
 						fauxEntry.successMax = 6;
 						fauxEntry.displayText = `${asNum}${asNum < 6 ? `\u20136` : ""}`;
-						fauxEntry.chanceSuccessText = "Recharged!";
-						fauxEntry.chanceFailureText = "Did not recharge";
+						fauxEntry.chanceSuccessText = "已充能！";
+						fauxEntry.chanceFailureText = "未能充能";
 						fauxEntry.isColorSuccessFail = true;
 						return fauxEntry;
 					}
@@ -5574,7 +5574,7 @@ Renderer.tag = class {
 					if (isNaN(asNum)) {
 						throw new Error(`Could not parse "${rollText}" as a number!`);
 					}
-					return `(Recharge ${asNum}${asNum < 6 ? `\u20136` : ""})`;
+					return `(充能 ${asNum}${asNum < 6 ? `\u20136` : ""})`;
 				}
 				case "@chance": {
 					return displayText || `${rollText} percent`;
