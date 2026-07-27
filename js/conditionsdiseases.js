@@ -19,26 +19,25 @@ class ConditionsDiseasesSublistManager extends SublistManager {
 	pGetSublistItem (it, hash) {
 		const cellsText = [it.type || PageFilterConditionsDiseases.getDisplayProp(it.__prop), it.name];
 
-		const ele = ee`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
+		const ele = veT`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="ve-lst__row-border ve-lst__row-inner">
 				${this.constructor._getRowCellsHtml({values: cellsText})}
 			</a>
 		</div>`
-			.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
-			.onn("click", evt => this._listSub.doSelect(listItem, evt));
+			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
+			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			hash,
 			ele,
 			it.name,
 			{
-				hash,
-				ENG_name: it.ENG_name,
+				...ListItem.getCommonValues(it),
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
-				page: it.page,
 				type: it.type || it.__prop,
 			},
 			{
+				hash,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -95,14 +94,13 @@ class ConditionsDiseasesPage extends ListPage {
 			eleLi,
 			it.name,
 			{
-				hash,
 				source,
-				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
-				page: it.page,
+				...ListItem.getCommonValues(it),
 				type: it.type || it.__prop,
 			},
 			{
+				hash,
 				isExcluded,
 			},
 		);
@@ -114,7 +112,7 @@ class ConditionsDiseasesPage extends ListPage {
 	}
 
 	_renderStats_doBuildStatsTab ({ent}) {
-		this._pgContent.empty().appends(RenderConditionDiseases.getRenderedConditionDisease(ent));
+		this._pgContent.vee.empty().vee.appends(RenderConditionDiseases.getRenderedConditionDisease(ent));
 	}
 }
 

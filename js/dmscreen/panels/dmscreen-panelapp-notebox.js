@@ -100,8 +100,8 @@ export class NoteBox extends DmScreenPanelAppBase {
 	}
 
 	_getPanelElement (board, state) {
-		this._iptText = ee`<textarea class="panel-content-textarea" placeholder="支持文本内掷骰和内容标签(将光标置于标签内，按下 CTRL+q 组合键激活嵌入的功能及内容。):\n • 文本内掷骰,  [[1d20+2]]\n • 内容标签 (和渲染器Demo中的一样), {@creature 地精}, {@spell 火球术}\n • 链接标签, {@link https://5e.kiwee.top}">${state.x || ""}</textarea>`
-			.onn("keydown", async evt => {
+		this._iptText = veT`<textarea class="panel-content-textarea" placeholder="支持文本内掷骰和内容标签(将光标置于标签内，按下 CTRL+q 组合键激活嵌入的功能及内容。):\n • 文本内掷骰,  [[1d20+2]]\n • 内容标签 (和渲染器Demo中的一样), {@creature 地精}, {@spell 火球术}\n • 链接标签, {@link https://5e.kiwee.top}">${state.x || ""}</textarea>`
+			.vee.onn("keydown", async evt => {
 				const key = EventUtil.getKeyIgnoreCapsLock(evt);
 
 				const isCtrlQ = (EventUtil.isCtrlMetaKey(evt)) && key === "q";
@@ -118,6 +118,6 @@ export class NoteBox extends DmScreenPanelAppBase {
 	}
 
 	getState () {
-		return {x: this._iptText?.val()};
+		return {x: this._iptText?.vee.val()};
 	}
 }

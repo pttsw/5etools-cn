@@ -15,7 +15,7 @@ class VariantClassFilter extends Filter {
 	set parent (multiFilterClasses) { this._parent = multiFilterClasses; }
 
 	handleVariantSplit (isVariantSplit) {
-		this.__wrpFilter.toggleVe(isVariantSplit);
+		this.__wrpFilter.vee.toggle(isVariantSplit);
 	}
 }
 
@@ -48,7 +48,7 @@ class MultiFilterClasses extends MultiFilter {
 			this,
 			"isVariantSplit",
 			{
-				ele: e_({tag: "button", clazz: "ve-btn ve-btn-default ve-btn-xs", text: I18nUtil.get("common.filter.include_variants")}),
+				ele: veE({tag: "button", clazz: "ve-btn ve-btn-default ve-btn-xs", txt: I18nUtil.get("common.filter.include_variants")}),
 				isInverted: true,
 				stateName: "meta",
 				stateProp: "_meta",
@@ -56,13 +56,13 @@ class MultiFilterClasses extends MultiFilter {
 			},
 		);
 
-		e_({
+		veE({
 			tag: "div",
 			clazz: `ve-btn-group ve-w-100 ve-flex-v-center ve-mobile-sm__m-1 ve-mobile-sm__mb-2`,
 			children: [
 				btnToggleVariantSplit,
 			],
-		}).prependTo(wrpStateBtnsOuter);
+		}).vee.prependTo(wrpStateBtnsOuter);
 	}
 
 	getDefaultMeta () {
@@ -743,7 +743,6 @@ class ModalFilterSpells extends ModalFilterBase {
 			eleRow,
 			spell.name,
 			{
-				hash,
 				source,
 				sourceJson: spell.source,
 				...ListItem.getCommonValues(spell),
@@ -758,6 +757,7 @@ class ModalFilterSpells extends ModalFilterBase {
 				ENG_hash,
 			},
 			{
+				hash,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

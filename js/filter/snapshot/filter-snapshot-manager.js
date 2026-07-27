@@ -206,8 +206,8 @@ export class FilterSnapshotManager extends BaseComponent {
 			),
 		]);
 
-		return ee`<button class="ve-btn ve-btn-default ve-btn-xs">${I18nUtil.get("common.filter.manage_defaults")}</button>`
-			.onn("click", evt => ContextUtil.pOpenMenu(evt, menu));
+		return veT`<button class="ve-btn ve-btn-default ve-btn-xs">${I18nUtil.get("common.filter.manage_defaults")}</button>`
+			.vee.onn("click", evt => ContextUtil.pOpenMenu(evt, menu));
 	}
 
 	/**

@@ -275,7 +275,6 @@ class ModalFilterOptionalFeatures extends ModalFilterBase {
 			eleRow,
 			optfeat.name,
 			{
-				hash,
 				source,
 				sourceJson: optfeat.source,
 				...ListItem.getCommonValues(optfeat),
@@ -286,6 +285,7 @@ class ModalFilterOptionalFeatures extends ModalFilterBase {
 				ENG_hash: UrlUtil.autoEncodeEngHash(optfeat),
 			},
 			{
+				hash,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

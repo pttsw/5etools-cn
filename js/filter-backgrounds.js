@@ -224,7 +224,6 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 			eleRow,
 			bg.name,
 			{
-				hash,
 				source,
 				sourceJson: bg.source,
 				...ListItem.getCommonValues(bg),
@@ -234,6 +233,7 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 				ENG_hash: UrlUtil.autoEncodeEngHash(bg),
 			},
 			{
+				hash,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

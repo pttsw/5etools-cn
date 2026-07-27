@@ -309,7 +309,6 @@ class ModalFilterRaces extends ModalFilterBase {
 			eleRow,
 			race.name,
 			{
-				hash,
 				source,
 				sourceJson: race.source,
 				...ListItem.getCommonValues(race),
@@ -321,6 +320,7 @@ class ModalFilterRaces extends ModalFilterBase {
 				ENG_hash: UrlUtil.autoEncodeEngHash(race),
 			},
 			{
+				hash,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

@@ -1,23 +1,6 @@
-import {
-	PANEL_TYP_EMPTY,
-	PANEL_TYP_STATS,
-	PANEL_TYP_ROLLBOX,
-	PANEL_TYP_RULES,
-	PANEL_TYP_CREATURE_SCALED_CR,
-	PANEL_TYP_CREATURE_SCALED_SPELL_SUMMON,
-	PANEL_TYP_CREATURE_SCALED_CLASS_SUMMON,
-	PANEL_TYP_TUBE,
-	PANEL_TYP_TWITCH,
-	PANEL_TYP_TWITCH_CHAT,
-	PANEL_TYP_ADVENTURES,
-	PANEL_TYP_BOOKS,
-	PANEL_TYP_IMAGE,
-	PANEL_TYP_GENERIC_EMBED,
-	PANEL_TYP_ERROR,
-	PANEL_TYP_BLANK,
-} from "./dmscreen/dmscreen-consts.js";
-import {DmMapper} from "./dmscreen/dmscreen-mapper.js";
-import {TimerTrackerMoonSpriteLoader} from "./dmscreen/dmscreen-timetracker.js";
+import {PANEL_TYP_EMPTY} from "./dmscreen/dmscreen-consts.js";
+import {DmMapper} from "./dmscreen/panels/dmscreen-panelapp-mapper.js";
+import {TimerTrackerMoonSpriteLoader} from "./dmscreen/panels/dmscreen-panelapp-timetracker.js";
 import {
 	PanelContentManager_Counter,
 	PanelContentManager_InitiativeTracker,
@@ -27,22 +10,24 @@ import {
 	PanelContentManager_MoneyConverter,
 	PanelContentManager_NoteBox, PanelContentManager_TimeTracker,
 	PanelContentManager_UnitConverter,
-	PanelContentManagerFactory,
-} from "./dmscreen/dmscreen-panels.js";
-
+	PanelContentManager_GenericEmbed,
+	PanelContentManager_Twitch,
+	PanelContentManager_TwitchChat,
+	PanelContentManager_YouTube,
+} from "./dmscreen/panels/dmscreen-panels.js";
 import {OmnisearchBacking} from "./omnisearch/omnisearch-backing.js";
-import {Panzoom} from "./utils-ui/utils-ui-panzoom.js";
-import {DmScreenJoystickMenu} from "./dmscreen/dmscreen-joystickmenu.js";
 import {DmScreenSideMenu} from "./dmscreen/sidemenu/dmscreen-sidemenu.js";
 import {DmScreenMigrator} from "./dmscreen/dmscreen-migrator.js";
-
-const TITLE_LOADING = "Loading...";
+import {DmScreenSettings} from "./dmscreen/dmscreen-settings.js";
+import {DmScreenElementCache} from "./dmscreen/dmscreen-elementcache.js";
+import {Panel} from "./dmscreen/dmscreen-panel.js";
+import {adventureLoader, bookLoader} from "./dmscreen/dmscreen-corpusloader.js";
 
 class Board {
 	constructor () {
 		this.panels = {};
 		this.exiledPanels = [];
-		this.eleScreen = es(`.dm-screen`);
+		this.eleScreen = veEs(`.dm-screen`);
 		this.width = this.getInitialWidth();
 		this.height = this.getInitialHeight();
 		this.sideMenu = new DmScreenSideMenu({board: this});
@@ -50,6 +35,8 @@ class Board {
 		this.isFullscreen = false;
 		this.isLocked = false;
 		this.isAlertOnNav = false;
+		this._compSettings = new DmScreenSettings();
+		this._cacheElements = new DmScreenElementCache();
 
 		this._idSaveSlotActive = "1";
 		this._saveSlotStates = {[this._idSaveSlotActive]: {}};
@@ -61,18 +48,16 @@ class Board {
 		this.availAdventures = {};
 		this.availBooks = {};
 
-		this.cbConfirmTabClose = null;
-
 		this._pDoSaveStateDebounced = MiscUtil.debounce(() => StorageUtil.pSet(VeCt.STORAGE_DMSCREEN, this.getSaveableState()), VeCt.DUR_DEBOUNCE_SAVE);
 	}
 
 	getInitialWidth () {
-		const scW = this.eleScreen.outerWidthe();
+		const scW = this.eleScreen.vee.outerWidth();
 		return Math.floor(scW / 360);
 	}
 
 	getInitialHeight () {
-		const scH = this.eleScreen.outerHeighte();
+		const scH = this.eleScreen.vee.outerHeight();
 		return Math.floor(scH / 280);
 	}
 
@@ -92,9 +77,7 @@ class Board {
 		return this.height;
 	}
 
-	getConfirmTabClose () {
-		return this.cbConfirmTabClose == null ? false : this.cbConfirmTabClose.prop("checked");
-	}
+	getCompSettings () { return this._compSettings; }
 
 	setDimensions (width, height) {
 		const oldWidth = this.width;
@@ -106,7 +89,7 @@ class Board {
 			if (width < oldWidth || height < oldHeight) this.doCullPanels(oldWidth, oldHeight);
 		}
 		this.doCheckFillSpaces();
-		this.eleScreen.trigger("panelResize");
+		this.eleScreen.vee.trigger("panelResize");
 	}
 
 	doCullPanels (oldWidth, oldHeight) {
@@ -132,12 +115,12 @@ class Board {
 
 	doAdjustEleScreenCss () {
 		// assumes 7px grid spacing
-		this.eleScreen.toggleClass("ve-mt-3p", !this.isFullscreen);
+		this.eleScreen.vee.toggleClass("ve-mt-3p", !this.isFullscreen);
 	}
 
 	getPanelDimensions () {
-		const w = this.eleScreen.outerWidthe();
-		const h = this.eleScreen.outerHeighte();
+		const w = this.eleScreen.vee.outerWidth();
+		const h = this.eleScreen.vee.outerHeight();
 		return {
 			pxWidth: w / this.width,
 			pxHeight: h / this.height,
@@ -145,16 +128,16 @@ class Board {
 	}
 
 	doShowLoading () {
-		ee`<div class="dm-screen-loading"><span class="initial-message initial-message--large">加载中...</span></div>`.css({
+		veT`<div class="dm-screen-loading"><span class="initial-message initial-message--large">加载中...</span></div>`.vee.css({
 			gridColumnStart: 1,
 			gridColumnEnd: String(this.width + 1),
 			gridRowStart: 1,
 			gridRowEnd: String(this.height + 1),
-		}).appendTo(this.eleScreen);
+		}).vee.appendTo(this.eleScreen);
 	}
 
 	doHideLoading () {
-		this.eleScreen.find(`.dm-screen-loading`).remove();
+		this.eleScreen.vee.find(`.dm-screen-loading`).remove();
 	}
 
 	/**
@@ -163,13 +146,13 @@ class Board {
 	doToggleFullscreen ({val = null} = {}) {
 		this.isFullscreen = val ?? !this.isFullscreen;
 
-		e_(document.body).toggleClass("is-fullscreen", this.isFullscreen);
+		veE(document.body).vee.toggleClass("is-fullscreen", this.isFullscreen);
 		this.doAdjustEleScreenCss();
 		this.sideMenu.setIsFullscreen(this.isFullscreen);
 
 		this.doSaveStateDebounced();
 
-		this.eleScreen.trigger("panelResize");
+		this.eleScreen.vee.trigger("panelResize");
 	}
 
 	/**
@@ -182,7 +165,7 @@ class Board {
 			this.setAllControlBarsVisible(false);
 		}
 
-		e_(document.body).toggleClass(`dm-screen-locked`, this.isLocked);
+		veE(document.body).vee.toggleClass(`dm-screen-locked`, this.isLocked);
 		this.sideMenu.setIsLocked(!!this.isLocked);
 
 		this.doSaveStateDebounced();
@@ -202,7 +185,7 @@ class Board {
 
 		await Promise.all([
 			TimerTrackerMoonSpriteLoader.pInit(),
-			this.pLoadIndex(),
+			this._pInitSearchAndMenu(),
 			adventureLoader.pInit(),
 			bookLoader.pInit(),
 		]);
@@ -213,16 +196,37 @@ class Board {
 		}
 		this.doCheckFillSpaces({isSkipSave: true});
 		this.initGlobalHandlers();
+
+		this._compSettings._addHookBase("isHistoryEnabled", () => {
+			if (this._compSettings.getIsHistoryEnabled()) return;
+
+			const cntDestroyed = this.exiledPanels.map(panel => panel.destroy()).length;
+			this.exiledPanels = [];
+			if (cntDestroyed) this.sideMenu.doUpdateHistory();
+		});
+
+		this._compSettings._addHookBase("historySize", () => {
+			const toDestroy = this.exiledPanels.splice(this._compSettings.getHistorySize());
+			toDestroy.forEach(panel => panel.destroy());
+			if (toDestroy.length) this.sideMenu.doUpdateHistory();
+		});
+
+		this._compSettings._addHookAll("state", () => this.doSaveStateDebounced());
+
+		this._cacheElements.init();
+
+		this.doHideLoading();
+
 		await this._pLoadTempData();
 
-		e_(document.body)
-			.onn("keydown", evt => {
+		veE(document.body)
+			.vee.onn("keydown", evt => {
 				if (evt.key !== "Escape" || !this.isFullscreen) return;
 				evt.stopPropagation();
 				evt.preventDefault();
 				this.doToggleFullscreen();
 			})
-			.onn("mousemove", evt => {
+			.vee.onn("mousemove", evt => {
 				this.setHoveringPanel(null);
 
 				const x = EventUtil.getClientX(evt);
@@ -278,7 +282,7 @@ class Board {
 		});
 	}
 
-	async pLoadIndex () {
+	async _pInitSearchAndMenu () {
 		await SearchUiUtil.pDoGlobalInit();
 
 		// region rules
@@ -352,8 +356,6 @@ class Board {
 		await this.menu.pRender();
 
 		this.sideMenu.render();
-
-		this.doHideLoading();
 	}
 
 	async _pDoBuildAdventureOrBookIndex (
@@ -449,36 +451,54 @@ class Board {
 		if (isVis && this.hoveringPanel) this.hoveringPanel.addHoverClass();
 	}
 
-	exilePanel (id) {
-		const panelK = Object.keys(this.panels).find(k => this.panels[k].id === id);
-		if (!panelK) return;
+	/* -------------------------------------------- */
 
-		const toExile = this.panels[panelK];
-		if (toExile.getEmpty()) {
-			this.destroyPanel(id);
-		} else {
-			delete this.panels[panelK];
-			this.exiledPanels.unshift(toExile);
-			const toDestroy = this.exiledPanels.splice(10);
-			toDestroy.forEach(p => p.destroy());
-			this.sideMenu.doUpdateHistory();
+	_exilePanel_doExile (panel) {
+		if (panel.getEmpty()) {
+			panel.destroy();
+			return;
 		}
+
+		if (!this._compSettings.getIsHistoryEnabled()) {
+			panel.destroy();
+			return;
+		}
+
+		panel.doDetachExileElements();
+		this.untrackPanel(panel.id, {isSkipSave: true});
+
+		this.exiledPanels.unshift(panel);
+		this.exiledPanels.splice(this._compSettings.getHistorySize())
+			.forEach(p => p.destroy());
+		this.sideMenu.doUpdateHistory();
+	}
+
+	exilePanel (panelId) {
+		if (!this.panels[panelId]) return;
+		this._exilePanel_doExile(this.panels[panelId]);
 		this.doSaveStateDebounced();
 	}
+
+	/* ----- */
 
 	recallPanel (panel) {
 		const ix = this.exiledPanels.findIndex(p => p.id === panel.id);
 		if (~ix) this.exiledPanels.splice(ix, 1);
+		panel.doReattachExileElements();
 		this.panels[panel.id] = panel;
 		this.fireBoardEvent({type: "panelIdSetActive", payload: {type: panel.type}});
 		this.doSaveStateDebounced();
 	}
 
-	destroyPanel (id) {
-		const panelK = Object.keys(this.panels).find(k => this.panels[k].id === id);
-		if (panelK) delete this.panels[panelK];
-		this.doSaveStateDebounced();
+	/* ----- */
+
+	untrackPanel (panelId, {isSkipSave = false} = {}) {
+		if (!this.panels[panelId]) return;
+		delete this.panels[panelId];
+		if (!isSkipSave) this.doSaveStateDebounced();
 	}
+
+	/* -------------------------------------------- */
 
 	doCheckFillSpaces ({isSkipSave = false} = {}) {
 		const panelsToRender = [];
@@ -601,18 +621,22 @@ class Board {
 			...this._getSaveSlotState(),
 		};
 
-		return {
+		const out = {
 			mv: DmScreenMigrator.CURRENT_MIGRATION_VERSION,
 
 			w: this.width,
 			h: this.height,
-			ctc: this.getConfirmTabClose(),
 			fs: this.isFullscreen,
 			lk: this.isLocked,
 
 			sla: this._idSaveSlotActive,
 			sls,
 		};
+
+		const compSettingsState = this._compSettings.getSerializedState();
+		if (Object.keys(compSettingsState).some(k => k in out)) throw new Error(`Key conflict found when merging saveable state! This is a bug.`);
+
+		return Object.assign(out, compSettingsState);
 	}
 
 	doSaveStateDebounced () {
@@ -718,14 +742,26 @@ class Board {
 		if (state == null) return;
 
 		const {width, height} = this._pDoLoadStateFrom_getStretchedWidthHeight({state, isCombined});
+		const idSaveSlotActiveNxt = state.sla ?? "1";
+		const isPreserveEmbedsOnSaveSlotChange = this._compSettings.getIsPreserveEmbedsOnSaveSlotChange()
+			&& this._idSaveSlotActive !== idSaveSlotActiveNxt;
+
+		if (isPreserveEmbedsOnSaveSlotChange) {
+			this._cacheElements.doCacheElementsForSaveSlot({
+				idSaveSlot: this._idSaveSlotActive,
+				cacheableElementsInfos: Object.values(this.panels)
+					.map(p => p.getCacheableElementsInfo())
+					.flat(),
+			});
+		}
 
 		this.doReset({width, height});
 
-		if (this.cbConfirmTabClose) this.cbConfirmTabClose.prop("checked", !!state.ctc);
+		this._compSettings.setStateFromSerialized(state);
 		if ((state.fs !== !!this.isFullscreen)) this.doToggleFullscreen({val: !!state.fs});
 		if ((state.lk !== !!this.isLocked)) this.doToggleLocked({val: !!state.lk});
 
-		this._idSaveSlotActive = state.sla ?? "1";
+		this._idSaveSlotActive = idSaveSlotActiveNxt;
 		this._saveSlotStates = state.sls ?? {[this._idSaveSlotActive]: {}};
 
 		const saveSlotStateActive = state.sls?.[state.sla] || {};
@@ -757,6 +793,15 @@ class Board {
 
 			this.panels[panel.id] = panel;
 			this.fireBoardEvent({type: "panelIdSetActive", payload: {type: panel.type}});
+		}
+
+		if (isPreserveEmbedsOnSaveSlotChange) {
+			this._cacheElements.doRestoreElementsForSaveSlot({
+				idSaveSlot: this._idSaveSlotActive,
+				cacheableElementsInfos: Object.values(this.panels)
+					.map(p => p.getCacheableElementsInfo())
+					.flat(),
+			});
 		}
 
 		this.doCheckFillSpaces();
@@ -804,8 +849,8 @@ class Board {
 			DataUtil.userDownload(`dm-screen`, toLoad, {fileType: "dm-screen"});
 		};
 
-		const btnDownload = ee`<button class="ve-btn ve-btn-sm ve-btn-primary ve-mr-2">Download Save</button>`
-			.onn("click", () => handleClickDownload());
+		const btnDownload = veT`<button class="ve-btn ve-btn-sm ve-btn-primary ve-mr-2">Download Save</button>`
+			.vee.onn("click", () => handleClickDownload());
 
 		const handleClickPurge = async () => {
 			if (!await InputUiUtil.pGetUserBoolean({title: "Purge", htmlDescription: "你确定吗？", textYes: "是的", textNo: "取消"})) return;
@@ -813,15 +858,15 @@ class Board {
 			doClose(true);
 		};
 
-		const btnPurge = ee`<button class="ve-btn ve-btn-sm ve-btn-danger">Purge and Continue</button>`
-			.onn("click", () => handleClickPurge());
+		const btnPurge = veT`<button class="ve-btn ve-btn-sm ve-btn-danger">Purge and Continue</button>`
+			.vee.onn("click", () => handleClickPurge());
 
-		const txtDownload = ee`<b class="ve-clickable">download a backup of your save</b>`
-			.onn("click", () => handleClickDownload());
-		const txtPurge = ee`<span class="ve-clickable text-danger">purge the save</span>`
-			.onn("click", () => handleClickPurge());
+		const txtDownload = veT`<b class="ve-clickable">download a backup of your save</b>`
+			.vee.onn("click", () => handleClickDownload());
+		const txtPurge = veT`<span class="ve-clickable text-danger">purge the save</span>`
+			.vee.onn("click", () => handleClickPurge());
 
-		ee(eleModalInner)`
+		veT(eleModalInner)`
 			<div class="ve-py-2 ve-w-100 ve-h-100">
 				<div class="ve-mb-2">
 					<b>Failed to load saved DM Screen.</b> ${VeCt.STR_SEE_CONSOLE}
@@ -881,13 +926,13 @@ class Board {
 
 	setHoveringButton (panel) {
 		this.resetHoveringButton(panel);
-		panel.btnAddInner.addClass("faux-hover");
+		panel.btnAddInner.vee.addClass("faux-hover");
 	}
 
 	resetHoveringButton (panel) {
 		Object.values(this.panels).forEach(p => {
 			if (panel && panel.id === p.id) return;
-			p.btnAddInner.removeClass("faux-hover");
+			p.btnAddInner.vee.removeClass("faux-hover");
 		});
 	}
 
@@ -1661,7 +1706,7 @@ class Panel {
 		});
 	}
 
-	doPopulate_GenericEmbed (url, title = I18nUtil.get("page.dmscreen.embed")) {
+	doPopulate_GenericEmbed (url, title = "Embed") {
 		const meta = {u: url};
 		this.setEleContentTab({
 			panelType: PANEL_TYP_GENERIC_EMBED,
@@ -2087,11 +2132,11 @@ class Panel {
 				})
 				.appendTo(pnl);
 
-			const ctrlMove = ee`<div class="panel-control-icon glyphicon glyphicon-move" title="${I18nUtil.get("common.button.move")}"></div>`.appendTo(ctrlBar);
+			const ctrlMove = ee`<div class="panel-control-icon glyphicon glyphicon-move" title="Move"></div>`.appendTo(ctrlBar);
 			ctrlMove.onn("click", () => {
 				this.setMoveModeActive(!this.getIsMoveModeActive());
 			});
-			const ctrlEmpty = ee`<div class="panel-control-icon glyphicon glyphicon-remove" title="${I18nUtil.get("common.button.close")}"></div>`.appendTo(ctrlBar);
+			const ctrlEmpty = ee`<div class="panel-control-icon glyphicon glyphicon-remove" title="Close"></div>`.appendTo(ctrlBar);
 			ctrlEmpty.onn("click", () => {
 				this.getReplacementPanel();
 			});
@@ -2643,13 +2688,13 @@ class AddMenu {
 	}
 
 	async pSetActiveTab (tab) {
-		e_(document.activeElement).blure();
+		veE(document.activeElement).vee.blur();
 
-		this._eleMenuInner.findAll(`.panel-addmenu-tab-head`).forEach(ele => ele.attr(`active`, false));
-		if (this.activeTab) this.activeTab.getEleTab().detach();
+		this._eleMenuInner.vee.findAll(`.panel-addmenu-tab-head`).forEach(ele => ele.vee.attr(`active`, false));
+		if (this.activeTab) this.activeTab.getEleTab().vee.detach();
 		this.activeTab = tab;
-		this.tabView.appends(tab.getEleTab());
-		tab.eleHead.attr(`active`, true);
+		this.tabView.vee.appends(tab.getEleTab());
+		tab.eleHead.vee.attr(`active`, true);
 
 		if (tab.pDoTransitionActive) await tab.pDoTransitionActive();
 	}
@@ -2670,17 +2715,17 @@ class AddMenu {
 	async pRender () {
 		if (this._eleMenuInner) return;
 
-		this._eleMenuInner = ee`<div class="ve-flex-col ve-w-100 ve-h-100">`;
-		const tabBar = ee`<div class="panel-addmenu-bar"></div>`.appendTo(this._eleMenuInner);
-		this.tabView = ee`<div class="panel-addmenu-view"></div>`.appendTo(this._eleMenuInner);
+		this._eleMenuInner = veT`<div class="ve-flex-col ve-w-100 ve-h-100">`;
+		const tabBar = veT`<div class="panel-addmenu-bar"></div>`.vee.appendTo(this._eleMenuInner);
+		this.tabView = veT`<div class="panel-addmenu-view"></div>`.vee.appendTo(this._eleMenuInner);
 
 		await this.tabs.pMap(t => t.pRender());
 
 		this.tabs
 			.forEach(t => {
-				t.eleHead = ee`<button class="ve-btn ve-btn-default panel-addmenu-tab-head">${t.label}</button>`.appendTo(tabBar);
-				ee`<div class="panel-addmenu-tab-body"></div>`.appendTo(tabBar);
-				t.eleHead.onn("click", () => this.pSetActiveTab(t));
+				t.eleHead = veT`<button class="ve-btn ve-btn-default panel-addmenu-tab-head">${t.label}</button>`.vee.appendTo(tabBar);
+				veT`<div class="panel-addmenu-tab-body"></div>`.vee.appendTo(tabBar);
+				t.eleHead.vee.onn("click", () => this.pSetActiveTab(t));
 			});
 	}
 
@@ -2695,7 +2740,7 @@ class AddMenu {
 	doOpen () {
 		const {eleModalInner, doClose} = UiUtil.getShowModal({
 			cbClose: () => {
-				this._eleMenuInner.detach();
+				this._eleMenuInner.vee.detach();
 
 				// undo entering "tabbed mode" if we close without adding a tab
 				if (this.pnl.isTabs && this.pnl.tabDatas.filter(it => !it.isDeleted).length === 1) {
@@ -2705,7 +2750,7 @@ class AddMenu {
 			zIndex: VeCt.Z_INDEX_BENEATH_HOVER,
 		});
 		this._doClose = doClose;
-		eleModalInner.appends(this._eleMenuInner);
+		eleModalInner.vee.appends(this._eleMenuInner);
 	}
 }
 
@@ -2733,21 +2778,18 @@ class AddMenuVideoTab extends AddMenuTab {
 		this.tabId = "embed";
 	}
 
-	async pRender () {
-		if (!this.eleTab) {
-			const eleTab = ee`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
+	pRender () {
+		if (this.eleTab) return;
 
-			const wrpYT = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlYT = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_youtube_url")}">`
-				.onn("keydown", (e) => {
-					if (e.key === "Enter") btnAddYT.trigger("click");
-				})
-				.appendTo(wrpYT);
-			const btnAddYT = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`.appendTo(wrpYT);
-			btnAddYT.onn("click", () => {
+		const iptUrlYT = veT`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_youtube_url")}">`
+			.vee.onn("keydown", evt => {
+				if (evt.key === "Enter") btnAddYT.vee.trigger("click");
+			});
+		const btnAddYT = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`
+			.vee.onn("click", async () => {
 				let url;
 				try {
-					url = new URL(iptUrlYT.val().trim());
+					url = new URL(iptUrlYT.vee.val().trim());
 				} catch (e) {
 					setTimeout(() => { throw e; });
 					JqueryUtil.doToast({
@@ -2765,26 +2807,28 @@ class AddMenuVideoTab extends AddMenuTab {
 					return;
 				}
 
+				const pcm = new PanelContentManager_YouTube({board: this._board, panel: this.menu.pnl});
 				if (url.searchParams.get("list")) {
 					// FIXME embedding playlists *should* be possible; what gives?
-					// this.menu.pnl.doPopulate_YouTube(`https://www.youtube.com/embed/${url.searchParams.get("v")}?list=${url.searchParams.get("list")}`);
-					this.menu.pnl.doPopulate_YouTube(`https://www.youtube.com/embed/${url.searchParams.get("v")}`);
+					// await pcm.pDoPopulate({state: {u: `https://www.youtube.com/embed/${url.searchParams.get("v")}?list=${url.searchParams.get("list")}`}});
+					await pcm.pDoPopulate({state: {u: `https://www.youtube.com/embed/${url.searchParams.get("v")}`}});
 				} else {
-					this.menu.pnl.doPopulate_YouTube(`https://www.youtube.com/embed/${url.searchParams.get("v")}`);
+					await pcm.pDoPopulate({state: {u: `https://www.youtube.com/embed/${url.searchParams.get("v")}`}});
 				}
 
+				iptUrlYT.vee.val("");
 				this.menu.doClose();
 				iptUrlYT.val("");
 			});
 
 			const wrpTwitch = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlTwitch = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_twitch_url")}">`
+			const iptUrlTwitch = ee`<input class="ve-form-control" placeholder="Paste Twitch URL">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") btnAddTwitch.trigger("click");
 				})
 				.appendTo(wrpTwitch);
-			const btnAddTwitch = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`.appendTo(wrpTwitch);
-			const btnAddTwitchChat = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">内嵌聊天</button>`.appendTo(wrpTwitch);
+			const btnAddTwitch = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`.appendTo(wrpTwitch);
+			const btnAddTwitchChat = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed Chat</button>`.appendTo(wrpTwitch);
 			const getTwitchM = (url) => {
 				return /https?:\/\/(www\.)?twitch\.tv\/(.*?)(\?.*$|$)/.exec(url);
 			};
@@ -2801,18 +2845,22 @@ class AddMenuVideoTab extends AddMenuTab {
 						content: `Please enter a URL of the form: "https://www.twitch.tv/XXXXXX"`,
 						type: "danger",
 					});
+					return;
 				}
+
+				const pcm = new PanelContentManager_Twitch({board: this._board, panel: this.menu.pnl});
+				await pcm.pDoPopulate({state: {u: `http://player.twitch.tv/?channel=${mTwitchUrl.groups.channel}`}});
+
+				iptUrlTwitch.vee.val("");
+				this.menu.doClose();
 			});
 
-			btnAddTwitchChat.onn("click", () => {
-				let url = iptUrlTwitch.val().trim();
-				const m = getTwitchM(url);
-				if (url && m) {
-					url = `https://www.twitch.tv/embed/${m[2]}/chat`;
-					this.menu.pnl.doPopulate_TwitchChat(url);
-					this.menu.doClose();
-					iptUrlTwitch.val("");
-				} else {
+		const btnAddTwitchChat = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed Chat</button>`
+			.vee.onn("click", async () => {
+				const url = iptUrlTwitch.vee.val().trim();
+
+				const mTwitchUrl = getTwitchUrlRegexMatch(url);
+				if (!url || !mTwitchUrl) {
 					JqueryUtil.doToast({
 						content: `Please enter a URL of the form: "https://www.twitch.tv/XXXXXX"`,
 						type: "danger",
@@ -2821,12 +2869,12 @@ class AddMenuVideoTab extends AddMenuTab {
 			});
 
 			const wrpGeneric = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlGeneric = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_any_url")}">`
+			const iptUrlGeneric = ee`<input class="ve-form-control" placeholder="Paste any URL">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") iptUrlGeneric.trigger("click");
 				})
 				.appendTo(wrpGeneric);
-			const btnAddGeneric = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`.appendTo(wrpGeneric);
+			const btnAddGeneric = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`.appendTo(wrpGeneric);
 			btnAddGeneric.onn("click", () => {
 				let url = iptUrlGeneric.val().trim();
 				if (url) {
@@ -2837,11 +2885,21 @@ class AddMenuVideoTab extends AddMenuTab {
 						content: `Please enter a URL!`,
 						type: "danger",
 					});
+					return;
 				}
+
+				const pcm = new PanelContentManager_GenericEmbed({board: this._board, panel: this.menu.pnl});
+				await pcm.pDoPopulate({state: {u: url}});
+
+				iptUrlGeneric.vee.val("");
+				this.menu.doClose();
 			});
 
-			this.eleTab = eleTab;
-		}
+		this.eleTab = veT`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}">
+			<div class="ve-ui-modal__row">${iptUrlYT}${btnAddYT}</div>
+			<div class="ve-ui-modal__row">${iptUrlTwitch}${btnAddTwitch}${btnAddTwitchChat}</div>
+			<div class="ve-ui-modal__row">${iptUrlGeneric}${btnAddGeneric}</div>
+		</div>`;
 	}
 }
 
@@ -2853,11 +2911,11 @@ class AddMenuImageTab extends AddMenuTab {
 
 	async pRender () {
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
+			const eleTab = veT`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
 
 			// region Imgur
 			const wrpImgur = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			ee`<span>Imgur (匿名上传) <i class="ve-muted">(允许上传<a href="https://help.imgur.com/hc/en-us/articles/26511665959579-What-files-can-I-upload-Is-there-a-size-limit" target="_blank" rel="noopener noreferrer">imgur支持的格式</a>)</i></span>`.appendTo(wrpImgur);
+			ee`<span>Imgur (Anonymous Upload) <i class="ve-muted">(accepts <a href="https://help.imgur.com/hc/en-us/articles/26511665959579-What-files-can-I-upload-Is-there-a-size-limit" target="_blank" rel="noopener noreferrer">imgur-friendly formats</a>)</i></span>`.appendTo(wrpImgur);
 			const iptFile = ee`<input type="file" class="hidden">`
 				.onn("change", (evt) => {
 					const input = evt.target;
@@ -2906,7 +2964,7 @@ class AddMenuImageTab extends AddMenuTab {
 					this.menu.doClose();
 				})
 				.appendTo(eleTab);
-			const btnAdd = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">上传</button>`
+			const btnAdd = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Upload</button>`
 				.appendTo(wrpImgur)
 				.onn("click", () => {
 					iptFile.trigger("click");
@@ -2915,16 +2973,17 @@ class AddMenuImageTab extends AddMenuTab {
 
 			// region URL
 			const wrpUtl = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrl = ee`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_image_url")}">`
+			const iptUrl = ee`<input class="ve-form-control" placeholder="Paste image URL">`
 				.onn("keydown", (e) => {
 					if (e.key === "Enter") btnAddUrl.trigger("click");
 				})
 				.appendTo(wrpUtl);
-			const btnAddUrl = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpUtl);
+			const btnAddUrl = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpUtl);
 			btnAddUrl.onn("click", () => {
 				let url = iptUrl.val().trim();
 				if (url) {
 					this.menu.pnl.doPopulate_Image(url);
+					iptUrl.vee.val("");
 					this.menu.doClose();
 				} else {
 					JqueryUtil.doToast({
@@ -2935,16 +2994,16 @@ class AddMenuImageTab extends AddMenuTab {
 			});
 			// endregion
 
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
 			// region Adventure dynamic viewer
-			const btnSelectAdventure = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
-				.onn("click", () => DmMapper.pHandleMenuButtonClick(this.menu));
+			const btnSelectAdventure = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+				.vee.onn("click", () => DmMapper.pHandleMenuButtonClick(this.menu));
 
-			ee`<div class="ve-ui-modal__row">
+			veT`<div class="ve-ui-modal__row">
 				<div>冒险/书籍动态地图查看器</div>
 				${btnSelectAdventure}
-			</div>`.appendTo(eleTab);
+			</div>`.vee.appendTo(eleTab);
 			// endregion
 
 			this.eleTab = eleTab;
@@ -2960,17 +3019,17 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 	async pRender () {
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ve-ui-search__wrp-output underline-tabs ve-overflow-y-auto ve-pr-1" id="${this.tabId}"></div>`;
+			const eleTab = veT`<div class="ve-ui-search__wrp-output underline-tabs ve-overflow-y-auto ve-pr-1" id="${this.tabId}"></div>`;
 
-			const wrpRoller = ee`<div class="ve-ui-modal__row"><span>掷骰器<i class="ve-muted">(将现有的掷骰器固定在面板上)</i></span></div>`.appendTo(eleTab);
-			const btnRoller = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">固定</button>`.appendTo(wrpRoller);
+			const wrpRoller = ee`<div class="ve-ui-modal__row"><span>Dice Roller <i class="ve-muted">(pins the existing dice roller to a panel)</i></span></div>`.appendTo(eleTab);
+			const btnRoller = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Pin</button>`.appendTo(wrpRoller);
 			btnRoller.onn("click", () => {
 				Renderer.dice.bindDmScreenPanel(this.menu.pnl);
 				this.menu.doClose();
 			});
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const btnTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+			const btnTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
 				.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTracker({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
@@ -2978,11 +3037,11 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			ee`<div class="ve-ui-modal__row">
-			<span>${I18nUtil.get("page.dmscreen.initiative_tracker")}</span>
+			<span>Initiative Tracker</span>
 			${btnTracker}
-			</div>`.appendTo(eleTab);
+			</div>`.vee.appendTo(eleTab);
 
-			const btnTrackerCreatureViewer = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+			const btnTrackerCreatureViewer = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
 				.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerCreatureViewer({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
@@ -2990,11 +3049,11 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			ee`<div class="ve-ui-modal__row">
-			<span>先攻追踪器生物视图</span>
+			<span>Initiative Tracker Creature Viewer</span>
 			${btnTrackerCreatureViewer}
-			</div>`.appendTo(eleTab);
+			</div>`.vee.appendTo(eleTab);
 
-			const btnPlayerTrackerV1 = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+			const btnPlayerTrackerV1 = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
 				.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV1({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
@@ -3002,11 +3061,11 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			ee`<div class="ve-ui-modal__row">
-			<span>先攻追踪器玩家视图 (标准)</span>
+			<span>Initiative Tracker Player View (Standard)</span>
 			${btnPlayerTrackerV1}
-			</div>`.appendTo(eleTab);
+			</div>`.vee.appendTo(eleTab);
 
-			const btnPlayerTrackerV0 = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+			const btnPlayerTrackerV0 = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
 				.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV0({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
@@ -3014,82 +3073,82 @@ class AddMenuSpecialTab extends AddMenuTab {
 				});
 
 			ee`<div class="ve-ui-modal__row">
-			<span>先攻追踪器玩家视图 (手动/旧版)</span>
+			<span>Initiative Tracker Player View (Manual/Legacy)</span>
 			${btnPlayerTrackerV0}
-			</div>`.appendTo(eleTab);
+			</div>`.vee.appendTo(eleTab);
 
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const btnSublist = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+			const btnSublist = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
 				.onn("click", async evt => {
 					await this.menu.pnl.pDoMassPopulate_Entities(evt);
 					this.menu.doClose();
 				});
 
 			ee`<div class="ve-ui-modal__row">
-			<span title="Including, but not limited to, a Bestiary Encounter.">固定列表项</span>
+			<span title="Including, but not limited to, a Bestiary Encounter.">Pinned List Entries</span>
 			${btnSublist}
-			</div>`.appendTo(eleTab);
+			</div>`.vee.appendTo(eleTab);
 
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const btnSwitchToEmbedTag = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">内嵌</button>`
+			const btnSwitchToEmbedTag = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">embed</button>`
 				.onn("click", async () => {
-					await this.menu.pSetActiveTab(this.menu.getTab({label: "内嵌"}));
+					await this.menu.pSetActiveTab(this.menu.getTab({label: "Embed"}));
 				});
 
-			const wrpText = ee`<div class="ve-ui-modal__row"><span>基础文本框 <i class="ve-muted">(若要使用富文本，请在${btnSwitchToEmbedTag}页中插入一个Google Doc或类似的编辑器)</i></span></div>`.appendTo(eleTab);
-			const btnText = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpText);
+			const wrpText = ee`<div class="ve-ui-modal__row"><span>Basic Text Box <i class="ve-muted">(for a feature-rich editor, ${btnSwitchToEmbedTag} a Google Doc or similar)</i></span></div>`.appendTo(eleTab);
+			const btnText = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpText);
 			btnText.onn("click", async () => {
 				const pcm = new PanelContentManager_NoteBox({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const wrpUnitConverter = ee`<div class="ve-ui-modal__row"><span>单位换算器</span></div>`.appendTo(eleTab);
-			const btnUnitConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpUnitConverter);
+			const wrpUnitConverter = ee`<div class="ve-ui-modal__row"><span>Unit Converter</span></div>`.appendTo(eleTab);
+			const btnUnitConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpUnitConverter);
 			btnUnitConverter.onn("click", async () => {
 				const pcm = new PanelContentManager_UnitConverter({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 
-			const wrpMoneyConverter = ee`<div class="ve-ui-modal__row"><span>汇率换算器</span></div>`.appendTo(eleTab);
-			const btnMoneyConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpMoneyConverter);
+			const wrpMoneyConverter = ee`<div class="ve-ui-modal__row"><span>Coin Converter</span></div>`.appendTo(eleTab);
+			const btnMoneyConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpMoneyConverter);
 			btnMoneyConverter.onn("click", async () => {
 				const pcm = new PanelContentManager_MoneyConverter({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 
-			const wrpCounter = ee`<div class="ve-ui-modal__row"><span>计数器</span></div>`.appendTo(eleTab);
-			const btnCounter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpCounter);
+			const wrpCounter = ee`<div class="ve-ui-modal__row"><span>Counter</span></div>`.appendTo(eleTab);
+			const btnCounter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpCounter);
 			btnCounter.onn("click", async () => {
 				const pcm = new PanelContentManager_Counter({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const wrpTimeTracker = ee`<div class="ve-ui-modal__row"><span>游戏内时钟/日历</span></div>`.appendTo(eleTab);
-			const btnTimeTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`.appendTo(wrpTimeTracker);
+			const wrpTimeTracker = ee`<div class="ve-ui-modal__row"><span>In-Game Clock/Calendar</span></div>`.appendTo(eleTab);
+			const btnTimeTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpTimeTracker);
 			btnTimeTracker.onn("click", async () => {
 				const pcm = new PanelContentManager_TimeTracker({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 
-			ee`<hr class="ve-hr-2">`.appendTo(eleTab);
+			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const wrpBlank = ee`<div class="ve-ui-modal__row"><span class="ve-help" title="不喜欢有加号按钮的可以用这个">空白占位框</span></div>`.appendTo(eleTab);
-			ee`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("common.button.add")}</button>`
+			const wrpBlank = ee`<div class="ve-ui-modal__row"><span class="ve-help" title="For those who don't like plus signs.">Blank Space</span></div>`.appendTo(eleTab);
+			ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
 				.onn("click", () => {
 					this.menu.pnl.doPopulate_Blank();
 					this.menu.doClose();
 				})
-				.appendTo(wrpBlank);
+				.vee.appendTo(wrpBlank);
 
 			this.eleTab = eleTab;
 		}
@@ -3164,20 +3223,20 @@ class AddMenuSearchTab extends AddMenuTab {
 
 	_getRow (r) {
 		switch (this.subType) {
-			case "content": return ee`
+			case "content": return veT`
 				<div class="ve-ui-search__row" tabindex="0">
 					<span><span class="ve-muted">${r.doc.cf}</span> ${r.doc.cn}</span>
 					<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 				</div>
 			`;
-			case "rule": return ee`
+			case "rule": return veT`
 				<div class="ve-ui-search__row" tabindex="0">
 					<span>${r.doc.h}</span>
 					<span><i>${r.doc.n}, ${r.doc.s}</i></span>
 				</div>
 			`;
 			case "adventure":
-			case "book": return ee`
+			case "book": return veT`
 				<div class="ve-ui-search__row" tabindex="0">
 					<span>${r.doc.c}</span>
 					<span><i>${r.doc.n}${r.doc.o ? `, ${r.doc.o}` : ""}</i></span>
@@ -3218,22 +3277,22 @@ class AddMenuSearchTab extends AddMenuTab {
 
 		this.showMsgIpt = () => {
 			flags.isWait = true;
-			this.wrpResults.empty().appends(SearchWidget.getSearchEnter());
+			this.wrpResults.vee.empty().vee.appends(SearchWidget.getSearchEnter());
 		};
 
 		const showMsgDots = () => {
-			this.wrpResults.empty().appends(SearchWidget.getSearchLoading());
+			this.wrpResults.vee.empty().vee.appends(SearchWidget.getSearchLoading());
 		};
 
 		const showNoResults = () => {
 			flags.isWait = true;
-			this.wrpResults.empty().appends(SearchWidget.getSearchEnter());
+			this.wrpResults.vee.empty().vee.appends(SearchWidget.getSearchEnter());
 		};
 
 		this._ptrRows = {_: []};
 
 		this._pDoSearch = async () => {
-			const searchTerm = this.iptSearch.val().trim();
+			const searchTerm = this.iptSearch.vee.val().trim();
 
 			const searchOptions = this._getSearchOptions();
 			const index = this.indexes[this.cat];
@@ -3265,7 +3324,7 @@ class AddMenuSearchTab extends AddMenuTab {
 			const resultCount = results.length ? results.length : index.documentStore.length;
 			const toProcess = results.length ? results : Object.values(index.documentStore.docs).slice(0, UiUtil.SEARCH_RESULTS_CAP).map(it => ({doc: it}));
 
-			this.wrpResults.empty();
+			this.wrpResults.vee.empty();
 			this._ptrRows._ = [];
 
 			if (toProcess.length) {
@@ -3305,18 +3364,14 @@ class AddMenuSearchTab extends AddMenuTab {
 				const res = toProcess.slice(0, UiUtil.SEARCH_RESULTS_CAP);
 
 				res.forEach(r => {
-					const row = this._getRow(r).appendTo(this.wrpResults);
-					SearchWidget.bindRowHandlers({result: r, row, ptrRows: this._ptrRows, fnHandleClick: handleClick, iptSearch: this.iptSearch});
+					const row = this._getRow(r).vee.appendTo(this.wrpResults);
+					SearchWidget.bindRowHandlers({result: r, row, ptrRows: this._ptrRows, pFnHandleClick: handleClick, iptSearch: this.iptSearch});
 					this._ptrRows._.push(row);
 				});
 
 				if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 					const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
-					if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-						this.wrpResults.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff}条结果被隐藏，请调整搜索条件。</div>`);
-					} else {
-						this.wrpResults.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
-					}
+					this.wrpResults.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 				}
 			} else {
 				if (!searchTerm.trim()) this.showMsgIpt();
@@ -3325,23 +3380,23 @@ class AddMenuSearchTab extends AddMenuTab {
 		};
 
 		if (!this.eleTab) {
-			const eleTab = ee`<div class="ve-ui-search__wrp-output" id="${this.tabId}"></div>`;
-			const wrpCtrls = ee`<div class="ve-ui-search__wrp-controls ve-ui-search__wrp-controls--in-tabs"></div>`.appendTo(eleTab);
+			const eleTab = veT`<div class="ve-ui-search__wrp-output" id="${this.tabId}"></div>`;
+			const wrpCtrls = veT`<div class="ve-ui-search__wrp-controls ve-ui-search__wrp-controls--in-tabs"></div>`.vee.appendTo(eleTab);
 
-			const selCat = ee`
+			const selCat = veT`
 				<select class="ve-form-control ve-ui-search__sel-category">
 					<option value="ALL">${this._getAllTitle()}</option>
 				</select>
-			`.appendTo(wrpCtrls).toggleVe(Object.keys(this.indexes).length !== 1);
+			`.vee.appendTo(wrpCtrls).vee.toggle(Object.keys(this.indexes).length !== 1);
 			Object.keys(this.indexes).sort().filter(it => it !== "ALL").forEach(it => {
-				selCat.appends(`<option value="${it}">${this._getCatOptionText(it)}</option>`);
+				selCat.vee.appends(`<option value="${it}">${this._getCatOptionText(it)}</option>`);
 			});
-			selCat.onn("change", async () => {
-				this.cat = selCat.val();
+			selCat.vee.onn("change", async () => {
+				this.cat = selCat.vee.val();
 				await this._pDoSearch();
 			});
 
-			const iptSearch = ee`<input class="ve-ui-search__ipt-search search ve-form-control" autocomplete="off" placeholder="搜索...">`.appendTo(wrpCtrls);
+			const iptSearch = ee`<input class="ve-ui-search__ipt-search search ve-form-control" autocomplete="off" placeholder="Search...">`.appendTo(wrpCtrls);
 			const wrpResults = ee`<div class="ve-ui-search__wrp-results"></div>`.appendTo(eleTab);
 
 			SearchWidget.bindAutoSearch(iptSearch, {
@@ -3361,218 +3416,8 @@ class AddMenuSearchTab extends AddMenuTab {
 	}
 
 	async pDoTransitionActive () {
-		this.iptSearch.val("").focuse();
+		this.iptSearch.vee.val("").vee.focus();
 		if (this._pDoSearch) await this._pDoSearch();
-	}
-}
-
-class RuleLoader {
-	static async pFill (book) {
-		const eeEle = RuleLoader.cache;
-		if (eeEle[book]) return eeEle[book];
-
-		const data = await DataUtil.loadJSON(`data/generated/${book}.json`);
-		Object.keys(data.data).forEach(b => {
-			const ref = data.data[b];
-			if (!eeEle[b]) eeEle[b] = {};
-			ref.forEach((c, i) => {
-				if (!eeEle[b][i]) eeEle[b][i] = {};
-				c.entries.forEach(s => {
-					eeEle[b][i][s.name] = s;
-				});
-			});
-		});
-	}
-
-	static getFromCache (book, chapter, header) {
-		return RuleLoader.cache[book][chapter][header];
-	}
-}
-RuleLoader.cache = {};
-
-class AdventureOrBookLoader {
-	constructor (type) {
-		this._type = type;
-		this._cache = {};
-		this._pLoadings = {};
-		this._availableOfficial = new Set();
-
-		this._indexOfficial = null;
-	}
-
-	async pInit () {
-		const indexPath = this._getIndexPath();
-		this._indexOfficial = await DataUtil.loadJSON(indexPath);
-		this._indexOfficial[this._type].forEach(meta => this._availableOfficial.add(meta.id.toLowerCase()));
-	}
-
-	_getIndexPath () {
-		switch (this._type) {
-			case "adventure": return `${Renderer.get().baseUrl}data/adventures.json`;
-			case "book": return `${Renderer.get().baseUrl}data/books.json`;
-			default: throw new Error(`Unknown loader type "${this._type}"`);
-		}
-	}
-
-	_getJsonPath (bookOrAdventure) {
-		switch (this._type) {
-			case "adventure": return `${Renderer.get().baseUrl}data/adventure/adventure-${bookOrAdventure.toLowerCase()}.json`;
-			case "book": return `${Renderer.get().baseUrl}data/book/book-${bookOrAdventure.toLowerCase()}.json`;
-			default: throw new Error(`Unknown loader type "${this._type}"`);
-		}
-	}
-
-	async _pGetPrereleaseData ({advBookId, prop}) {
-		return this._pGetPrereleaseBrewData({advBookId, prop, brewUtil: PrereleaseUtil});
-	}
-
-	async _pGetBrewData ({advBookId, prop}) {
-		return this._pGetPrereleaseBrewData({advBookId, prop, brewUtil: BrewUtil2});
-	}
-
-	async _pGetPrereleaseBrewData ({advBookId, prop, brewUtil}) {
-		const searchFor = advBookId.toLowerCase();
-		const brew = await brewUtil.pGetBrewProcessed();
-		switch (this._type) {
-			case "adventure":
-			case "book": {
-				return (brew[prop] || []).find(it => it.id.toLowerCase() === searchFor);
-			}
-			default: throw new Error(`Unknown loader type "${this._type}"`);
-		}
-	}
-
-	async pFill (advBookId) {
-		if (!this._pLoadings[advBookId]) {
-			this._pLoadings[advBookId] = (async () => {
-				this._cache[advBookId] = {};
-
-				let head, body;
-				if (this._availableOfficial.has(advBookId.toLowerCase())) {
-					head = this._indexOfficial[this._type].find(it => it.id.toLowerCase() === advBookId.toLowerCase());
-					body = await DataUtil.loadJSON(this._getJsonPath(advBookId));
-				} else {
-					head = await this._pGetBrewData({advBookId, prop: this._type});
-					body = await this._pGetBrewData({advBookId, prop: `${this._type}Data`});
-				}
-				if (!head || !body) return;
-
-				this._cache[advBookId] = {head, chapters: {}};
-				body.data.forEach((chap, i) => this._cache[advBookId].chapters[i] = chap);
-			})();
-		}
-		await this._pLoadings[advBookId];
-	}
-
-	getFromCache (adventure, chapter, {isAllowMissing = false} = {}) {
-		const outHead = this._cache?.[adventure]?.head;
-		const outBody = this._cache?.[adventure]?.chapters?.[chapter];
-		if (outHead && outBody) return {chapter: outBody, head: outHead};
-		if (isAllowMissing) return null;
-		return {chapter: MiscUtil.copy(AdventureOrBookLoader._NOT_FOUND), head: {source: VeCt.STR_GENERIC, id: VeCt.STR_GENERIC}};
-	}
-}
-AdventureOrBookLoader._NOT_FOUND = {
-	type: "section",
-	name: "(Missing Content)",
-	entries: [
-		"The content you attempted to load could not be found. Is it homebrew, and not currently loaded?",
-	],
-};
-
-class AdventureLoader extends AdventureOrBookLoader { constructor () { super("adventure"); } }
-class BookLoader extends AdventureOrBookLoader { constructor () { super("book"); } }
-
-const adventureLoader = new AdventureLoader();
-const bookLoader = new BookLoader();
-
-class AdventureOrBookView {
-	constructor (prop, panel, loader, tabIx, contentMeta) {
-		this._prop = prop;
-		this._panel = panel;
-		this._loader = loader;
-		this._tabIx = tabIx;
-		this._contentMeta = contentMeta;
-
-		this._wrpContent = null;
-		this._wrpContentOuter = null;
-		this._titlePrev = null;
-		this._titleNext = null;
-	}
-
-	getEle () {
-		this._titlePrev = ee`<div class="dm-book__controls-title ve-overflow-ellipsis ve-text-right"></div>`;
-		this._titleNext = ee`<div class="dm-book__controls-title ve-overflow-ellipsis"></div>`;
-
-		const btnPrev = ee`<button class="ve-btn ve-btn-xs ve-btn-default ve-mr-2" title="Previous Chapter"><span class="glyphicon glyphicon-chevron-left"></span></button>`
-			.onn("click", () => this._handleButtonClick(-1));
-		const btnNext = ee`<button class="ve-btn ve-btn-xs ve-btn-default" title="Next Chapter"><span class="glyphicon glyphicon-chevron-right"></span></button>`
-			.onn("click", () => this._handleButtonClick(1));
-
-		this._wrpContent = ee`<div class="ve-h-100"></div>`;
-		this._wrpContentOuter = ee`<div class="ve-h-100 dm-book__wrp-content">
-			<table class="ve-w-100 ve-stats ve-stats--book ve-stats--book-hover"><tr><td colspan="6" class="ve-pb-3">${this._wrpContent}</td></tr></table>
-		</div>`;
-
-		const wrp = ee`<div class="ve-flex-col ve-h-100">
-		${this._wrpContentOuter}
-		<div class="ve-flex ve-no-shrink dm-book__wrp-controls">${this._titlePrev}${btnPrev}${btnNext}${this._titleNext}</div>
-		</div>`;
-
-		// assumes the data has already been loaded/cached
-		this._render();
-
-		return wrp;
-	}
-
-	_handleButtonClick (direction) {
-		this._contentMeta.c += direction;
-		const hasRenderedData = this._render({isSkipMissingData: true});
-		if (!hasRenderedData) this._contentMeta.c -= direction;
-		else {
-			this._wrpContentOuter.scrollTope(0);
-			this._panel.board.doSaveStateDebounced();
-		}
-	}
-
-	_getData (chapter, {isAllowMissing = false} = {}) {
-		return this._loader.getFromCache(this._contentMeta[this._prop], chapter, {isAllowMissing});
-	}
-
-	static _PROP_TO_URL = {
-		"a": UrlUtil.PG_ADVENTURE,
-		"b": UrlUtil.PG_BOOK,
-	};
-
-	_render ({isSkipMissingData = false} = {}) {
-		const hasData = !!this._getData(this._contentMeta.c, {isAllowMissing: true});
-		if (!hasData && isSkipMissingData) return false;
-
-		const {head, chapter} = this._getData(this._contentMeta.c);
-
-		this._panel.setTabTitle(this._tabIx, chapter.name);
-		const stack = [];
-		const page = this.constructor._PROP_TO_URL[this._prop];
-		Renderer
-			.get()
-			.setFirstSection(true)
-			.recursiveRender(
-				chapter,
-				stack,
-				{
-					adventureBookPage: page,
-					adventureBookSource: head.source,
-					adventureBookHash: UrlUtil.URL_TO_HASH_BUILDER[page]({id: this._contentMeta[this._prop]}),
-				},
-			);
-		this._wrpContent.empty().html(stack);
-
-		const dataPrev = this._getData(this._contentMeta.c - 1, {isAllowMissing: true});
-		const dataNext = this._getData(this._contentMeta.c + 1, {isAllowMissing: true});
-		this._titlePrev.txt(dataPrev?.name || "").tooltip(dataPrev?.name || "");
-		this._titleNext.txt(dataNext?.name || "").tooltip(dataNext?.name || "");
-
-		return hasData;
 	}
 }
 
@@ -3583,7 +3428,7 @@ window.addEventListener("load", () => {
 	window.DM_SCREEN.pInitialise()
 		.catch(err => {
 			JqueryUtil.doToast({content: `Failed to load with error "${err.message}". ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
-			es(`.dm-screen-loading .initial-message`)?.txt("Failed!");
+			veEs(`.dm-screen-loading .initial-message`)?.vee.txt("Failed!");
 			setTimeout(() => { throw err; });
 		});
 });

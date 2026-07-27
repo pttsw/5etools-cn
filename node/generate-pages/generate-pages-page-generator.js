@@ -1,5 +1,6 @@
 import Handlebars from "handlebars";
 import fs from "fs";
+import {HtmlGeneratorListButtons} from "./generate-pages-html-generator.js";
 
 /** @abstract */
 export class PageGeneratorBase {
@@ -241,6 +242,7 @@ export class PageGeneratorListBase extends PageGeneratorGeneric {
 	_scriptIdentList;
 	_scriptsPrePageAdditional;
 	_isHasRenderer = true; // TODO(Future) only used in the Classes page -- refactor class rendering to own file
+	_isHasFilter = true;
 	_isModule = false;
 	_isMultisource = false;
 	_btnsList;
@@ -250,6 +252,7 @@ export class PageGeneratorListBase extends PageGeneratorGeneric {
 	_styleContentWrapperAdditional;
 	_stylePageContentAdditional;
 	_isTableView = false;
+	_isHideManager = false;
 
 	_getSchemaType () { return "CollectionPage"; }
 
@@ -281,8 +284,14 @@ export class PageGeneratorListBase extends PageGeneratorGeneric {
 			scripts: [
 				"listpage.js",
 				...(this._isMultisource ? ["multisource.js"] : []),
-				"filter-common.js",
-				`filter-${this._scriptIdentList}.js`,
+				...(
+					this._isHasFilter
+						? [
+							"filter-common.js",
+							`filter-${this._scriptIdentList}.js`,
+						]
+						: []
+				),
 				...(this._scriptsPrePageAdditional || []),
 				...(this._isModule ? [] : [`${this._scriptIdentList}.js`]),
 				...data.scripts || [],
@@ -316,6 +325,8 @@ export class PageGeneratorListBase extends PageGeneratorGeneric {
 			identPartialListContentwrapper: "listContentwrapper",
 			identPartialListSublistContainer: "listSublistContainer",
 			isTableView: this._isTableView,
+			isHideManager: this._isHideManager,
+			isHasFilter: this._isHasFilter,
 		};
 	}
 }
@@ -379,21 +390,27 @@ export class PageGeneratorAdventuresBooksBase extends PageGeneratorGeneric {
 	}
 }
 
-export class PageGeneratorTablepageBase extends PageGeneratorGeneric {
-	_filename = "tablepage/template-tablepage.hbs";
-
+export class PageGeneratorTablepageBase extends PageGeneratorListBase {
 	_stylesheets = [
 		"list-page--grouped",
 	];
 
-	_scriptsRenderAdditional = [
-		"render-markdown.js",
-		"render-bbcode.js",
+	_btnsSublist = [
+		HtmlGeneratorListButtons.getBtn({width: "12", sortIdent: "name", text: "Name"}),
 	];
 
-	_scriptsUtilsAdditional = [
-		"utils-list.js",
-	];
+	_isHasFilter = false;
+	_isStyleBook = true;
+	_isHideManager = true;
+	_stylePageContentAdditional = "ve-stats--book-large";
+	_styleListContainerAdditional = "ve-flex-3";
+	_styleContentWrapperAdditional = "ve-flex-7";
+
+	_registerPartials () {
+		super._registerPartials();
+
+		this._registerPartial({ident: "listListcontainerTablepage", filename: "list/template-list-listcontainer--tablepage.hbs"});
+	}
 
 	_getData () {
 		const data = super._getData();
@@ -402,9 +419,9 @@ export class PageGeneratorTablepageBase extends PageGeneratorGeneric {
 
 			scripts: [
 				"listpage.js",
-				"tablepage.js",
-				...data.scripts || [],
 			],
+
+			identPartialListListcontainer: "listListcontainerTablepage",
 		};
 	}
 }

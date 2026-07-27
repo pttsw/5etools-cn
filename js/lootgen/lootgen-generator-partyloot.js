@@ -109,7 +109,7 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 			},
 		);
 
-		const stgDefault = ee`<div class="ve-flex-col ve-w-100">
+		const stgDefault = veT`<div class="ve-flex-col ve-w-100">
 			<label class="ve-split-v-center ve-mb-2">
 				<div class="ve-mr-2 ve-w-66 ve-no-shrink">${I18nUtil.get("page.lootgen.character_level")}</div>
 				${selCharLevel}
@@ -127,7 +127,7 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 			},
 		);
 
-		const stgExactLevel = ee`<div class="ve-flex-col ve-w-100">
+		const stgExactLevel = veT`<div class="ve-flex-col ve-w-100">
 			<div class="ve-flex-col ve-mb-2">
 				<div class="ve-mb-2">${I18nUtil.get("page.lootgen.character_level")}</div>
 				${sliderLevel}
@@ -136,21 +136,21 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 		// endregion
 
 		// region Buttons
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
-			.onn("click", () => this._pl_pDoHandleClickRollLoot());
+		const btnRoll = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
+			.vee.onn("click", () => this._pl_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
-			.onn("click", () => this._outputManager.doClearOutput());
+		const btnClear = veT`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
+			.vee.onn("click", () => this._outputManager.doClearOutput());
 		// endregion
 
 		const hkIsExactLevel = () => {
-			stgDefault.toggleVe(!this._state.pl_isExactLevel);
-			stgExactLevel.toggleVe(this._state.pl_isExactLevel);
+			stgDefault.vee.toggle(!this._state.pl_isExactLevel);
+			stgExactLevel.vee.toggle(this._state.pl_isExactLevel);
 		};
 		this._addHookBase("pl_isExactLevel", hkIsExactLevel);
 		hkIsExactLevel();
 
-		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
+		veT`<div class="ve-flex-col ve-py-2 ve-px-3">
 			<p>
 				基于${this._rendererWrapped.er(`{@book 珊娜萨的万事指南|XGE|2|奖励魔法物品}`)}第135-136页的表格和规则为小队生成一组魔法物品。
 			</p>
@@ -175,7 +175,7 @@ export class LootGenGeneratorPartyLoot extends LootGenGeneratorBase {
 				${btnRoll}
 				${btnClear}
 			</div>
-		</div>`.appendTo(tabMeta.wrpTab);
+		</div>`.vee.appendTo(tabMeta.wrpTab);
 	}
 
 	async _pl_pDoHandleClickRollLoot () {

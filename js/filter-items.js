@@ -656,7 +656,6 @@ class ModalFilterItems extends ModalFilterBase {
 			eleRow,
 			item.name,
 			{
-				hash,
 				source,
 				sourceJson: item.source,
 				...ListItem.getCommonValues(item),
@@ -665,6 +664,7 @@ class ModalFilterItems extends ModalFilterBase {
 				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
 			{
+				hash,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

@@ -10,19 +10,19 @@ export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 		const cbIsUseArtObjects = ComponentUiUtil.getCbBool(this, "gao_isUseArtObjects");
 
 		const iptTargetGoldAmount = ComponentUiUtil.getIptInt(this, "gao_targetGoldAmount", 0, {min: 0})
-			.onn("keydown", evt => {
+			.vee.onn("keydown", evt => {
 				if (evt.key !== "Enter") return;
 				iptTargetGoldAmount.change();
 				btnRoll.click();
 			});
 
-		const btnRoll = ee`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
-			.onn("click", () => this._goa_pDoHandleClickRollLoot());
+		const btnRoll = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">${I18nUtil.get("page.lootgen.roll_loot")}</button>`
+			.vee.onn("click", () => this._goa_pDoHandleClickRollLoot());
 
-		const btnClear = ee`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
-			.onn("click", () => this._outputManager.doClearOutput());
+		const btnClear = veT`<button class="ve-btn ve-btn-danger ve-btn-xs">${I18nUtil.get("page.lootgen.clear_output")}</button>`
+			.vee.onn("click", () => this._outputManager.doClearOutput());
 
-		ee`<div class="ve-flex-col ve-py-2 ve-px-3">
+		veT`<div class="ve-flex-col ve-py-2 ve-px-3">
 			<h4 class="ve-mt-1 ve-mb-3">${I18nUtil.get("page.lootgen.gems_art_objects_generator")}</h4>
 
 			<label class="ve-split-v-center ve-mb-3">
@@ -48,7 +48,7 @@ export class LootGenGeneratorGemsArtObjects extends LootGenGeneratorBase {
 			<hr class="ve-hr-3">
 
 			<div class="ve-small ve-italic">${this._rendererWrapped.er(`此自定义生成器随机生成宝石/艺术品，直到达到目标金额。`)}</div>
-		</div>`.appendTo(tabMeta.wrpTab);
+		</div>`.vee.appendTo(tabMeta.wrpTab);
 	}
 
 	async _goa_pDoHandleClickRollLoot () {

@@ -8,8 +8,9 @@ class _PageGeneratorEncountergen extends PageGeneratorTablepageBase {
 	_pageKeywords = "DND,5e,遭遇生成器,随机遭遇,怪物组合,龙与地下城";
 	_navbarTitle = "遭遇生成器";
 	_navbarDescriptionHtml = `在一个随机表上掷骰！或者，你可以试试<a href="${UrlUtil.PG_BESTIARY}#${globalThis.HASH_BLANK},encounterbuilder:true">遭遇生成器</a>。`;
+	_scriptIdentList = "encounters";
 
-	_scripts = [
+	_scriptsModules = [
 		"encountergen.js",
 	];
 }
@@ -21,8 +22,9 @@ class _PageGeneratorNames extends PageGeneratorTablepageBase {
 	_pageDescription = "DND 5e 名称生成器，根据种族和性别随机生成角色名称，支持多种族命名规则。";
 	_pageKeywords = "DND,5e,名称生成器,角色名称,种族名称,龙与地下城";
 	_navbarDescription = "选择一个种族和类别，然后掷骰！";
+	_scriptIdentList = "names";
 
-	_scripts = [
+	_scriptsModules = [
 		"names.js",
 	];
 }

@@ -32,14 +32,14 @@ export class LootGenOutput {
 
 	_getEleTitleSplit () {
 		const btnRivet = !globalThis.IS_VTT && ExtensionUtil.ACTIVE
-			? ee`<button title="发送到Foundry (按住SHIFT以临时导入)" class="no-print ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-send"></span></button>`
-				.onn("click", evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
+			? veT`<button title="发送到Foundry (按住SHIFT以临时导入)" class="no-print ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-send"></span></button>`
+				.vee.onn("click", evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
 			: null;
 
-		const btnDownload = ee`<button title="下载JSON" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-download glyphicon--top-2p"></span></button>`
-			.onn("click", () => this._pDoSaveAsJson());
+		const btnDownload = veT`<button title="下载JSON" class="ve-btn ve-btn-xs ve-btn-default"><span class="glyphicon glyphicon-download glyphicon--top-2p"></span></button>`
+			.vee.onn("click", () => this._pDoSaveAsJson());
 
-		return ee`<div class="ve-btn-group">
+		return veT`<div class="ve-btn-group">
 			${btnRivet}
 			${btnDownload}
 		</div>`;
@@ -48,7 +48,7 @@ export class LootGenOutput {
 	render (eleParent) {
 		const eleTitleSplit = this._getEleTitleSplit();
 
-		const dispTitle = ee`<h4 class="ve-mt-1 ve-mb-2 ve-split-v-center ve-draggable">
+		const dispTitle = veT`<h4 class="ve-mt-1 ve-mb-2 ve-split-v-center ve-draggable">
 			<div>${this._rendererWrapped.er(this._name)}</div>
 			${eleTitleSplit}
 		</h4>`;
@@ -64,16 +64,16 @@ export class LootGenOutput {
 			.filter(Boolean)
 			.flat();
 
-		this._wrp = ee`<div class="ve-flex-col ve-lootg__wrp-output ve-py-3 ve-px-2 ve-my-2 ve-mr-1">
+		this._wrp = veT`<div class="ve-flex-col ve-lootg__wrp-output ve-py-3 ve-px-2 ve-my-2 ve-mr-1">
 			${dispTitle}
-			${elesParts.length ? ee`<ul>${elesParts}</ul>` : null}
+			${elesParts.length ? veT`<ul>${elesParts}</ul>` : null}
 			${!elesParts.length ? `<div class="ve-muted ve-help-subtle ve-italic" title="${TOOLTIP_NOTHING.qq()}">(No loot!)</div>` : null}
 		</div>`
-			.prependTo(eleParent);
+			.vee.prependTo(eleParent);
 
 		(globalThis.IS_VTT ? this._wrp : dispTitle)
-			.attr("draggable", true)
-			.onn("dragstart", evt => {
+			.vee.attr("draggable", true)
+			.vee.onn("dragstart", evt => {
 				const meta = {
 					type: VeCt.DRAG_TYPE_LOOT,
 					data: dropData,
@@ -213,9 +213,9 @@ export class LootGenOutput {
 		].sum();
 
 		if (I18nUtil.LANGUAGES_INDEX === "zh_CN") {
-			return ee`<li class="ve-italic ve-muted">总计价值${(totalValue / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}的货币、艺术品和/或宝石，如下：</li>`;
+			return veT`<li class="ve-italic ve-muted">总计价值${(totalValue / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}的货币、艺术品和/或宝石，如下：</li>`;
 		}
-		return ee`<li class="ve-italic ve-muted">A total of ${(totalValue / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} worth of coins, art objects, and/or gems, as follows:</li>`;
+		return veT`<li class="ve-italic ve-muted">A total of ${(totalValue / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} worth of coins, art objects, and/or gems, as follows:</li>`;
 	}
 
 	_render_getPtCoins () {
@@ -227,7 +227,7 @@ export class LootGenOutput {
 			.filter(it => this._coins[it])
 			.map(it => `${this._coins[it].toLocaleStringVe()} ${LootGenUtils.getCoinageLabel(it)}`);
 
-		return ee`
+		return veT`
 			<li>总计价值${(total / 100).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}:</li>
 			<ul>
 				${breakdown.map(it => `<li>${it}</li>`).join("")}
@@ -238,7 +238,7 @@ export class LootGenOutput {
 	_render_getPtDragonMundaneItems () {
 		if (!this._dragonMundaneItems) return null;
 
-		return ee`
+		return veT`
 			<li>${this._dragonMundaneItems.count} ${I18nUtil.LANGUAGES_INDEX === "zh_CN" ? "个普通物品" : `mundane item${this._dragonMundaneItems.count !== 1 ? "s" : ""}`}:</li>
 			<ul>
 				${this._dragonMundaneItems.breakdown.map(it => `<li>${it}</li>`).join("")}
@@ -251,7 +251,7 @@ export class LootGenOutput {
 
 		return loot.map(lt => {
 			const typeNum = isNaN(lt.type);
-			return ee`
+			return veT`
 			<li>${(lt.type).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")} ${name} (×${lt.count}; 总计价值${((lt.type * lt.count)).toLocaleStringVe()} ${LootGenUtils.getCoinageLabel("gp")}):</li>
 			<ul>
 				${Object.entries(lt.breakdown).map(([result, count]) => `<li>${this._rendererWrapped.er(result)}${count > 1 ? `, ×${count}` : ""}</li>`).join("")}
@@ -281,7 +281,7 @@ export class LootGenOutput {
 					const ulsByRarity = Object.entries(byRarity)
 						.sort(([rarityA], [rarityB]) => SortUtil.ascSortItemRarity(rarityB, rarityA))
 						.map(([rarity, lootItems]) => {
-							return ee`
+							return veT`
 								<li>${rarity.toTitleCase()} items (×${lootItems.length}):</li>
 								<ul>${lootItems.map(it => it.getRender())}</ul>
 							`;
@@ -290,7 +290,7 @@ export class LootGenOutput {
 
 					if (!ulsByRarity.length) return null;
 
-					return ee`
+					return veT`
 						<li>${magicItems.tier.toTitleCase()} items:</li>
 						<ul>
 							${ulsByRarity}
@@ -298,7 +298,7 @@ export class LootGenOutput {
 					`;
 				}
 
-				return ee`
+				return veT`
 					<li>${I18nUtil.get("page.lootgen.magic_items")}${magicItems.tag ? ` (${this._rendererWrapped.er(magicItems.tag)})` : ""}${(magicItems.count || 0) > 1 ? ` (×${magicItems.count})` : ""}</li>
 					<ul>${magicItems.breakdown.map(it => it.getRender())}</ul>
 				`;

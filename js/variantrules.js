@@ -19,26 +19,26 @@ class VariantRulesSublistManager extends SublistManager {
 	pGetSublistItem (it, hash) {
 		const cellsText = [it.name, it.ruleType ? Parser.ruleTypeToFull(it.ruleType) : "\u2014"];
 
-		const ele = ee`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
+		const ele = veT`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="ve-lst__row-border ve-lst__row-inner">
 				${this.constructor._getRowCellsHtml({values: cellsText})}
 			</a>
 		</div>`
-			.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
-			.onn("click", evt => this._listSub.doSelect(listItem, evt));
+			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
+			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			hash,
 			ele,
 			it.name,
 			{
-				hash,
-				page: it.page,
+				...ListItem.getCommonValues(it),
 				ruleType: it.ruleType || "",
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
+				hash,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -90,15 +90,15 @@ class VariantRulesPage extends ListPage {
 			eleLi,
 			rule.name,
 			{
-				hash,
 				source,
-				page: rule.page,
+				...ListItem.getCommonValues(rule),
 				search: searchStack.join(","),
 				ruleType: rule.ruleType || "",
 				ENG_name: rule.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(rule),
 			},
 			{
+				hash,
 				isExcluded,
 			},
 		);
@@ -110,7 +110,7 @@ class VariantRulesPage extends ListPage {
 	}
 
 	_renderStats_doBuildStatsTab ({ent}) {
-		this._pgContent.empty().appends(RenderVariantRules.getRenderedVariantRule(ent));
+		this._pgContent.vee.empty().vee.appends(RenderVariantRules.getRenderedVariantRule(ent));
 	}
 
 	async _pDoLoadSubHash ({sub, lockToken}) {
@@ -119,7 +119,7 @@ class VariantRulesPage extends ListPage {
 		if (!sub.length) return;
 
 		const ixHeader = UrlUtil.unpackSubHash(sub[0], true)?.header;
-		const eleTitle = es(`.ve-rd__h[data-title-index="${ixHeader}"]`);
+		const eleTitle = veEs(`.ve-rd__h[data-title-index="${ixHeader}"]`);
 		if (eleTitle) eleTitle.scrollIntoView();
 	}
 }

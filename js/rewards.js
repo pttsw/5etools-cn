@@ -19,26 +19,26 @@ class RewardsSublistManager extends SublistManager {
 	pGetSublistItem (reward, hash) {
 		const cellsText = [reward.type, reward.name];
 
-		const ele = ee`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
+		const ele = veT`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="ve-lst__row-border ve-lst__row-inner">
 				${this.constructor._getRowCellsHtml({values: cellsText})}
 			</a>
 		</div>`
-			.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
-			.onn("click", evt => this._listSub.doSelect(listItem, evt));
+			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
+			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			hash,
 			ele,
 			reward.name,
 			{
-				hash,
-				page: reward.page,
+				...ListItem.getCommonValues(reward),
 				type: reward.type,
 				ENG_name: reward.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(reward),
 			},
 			{
+				hash,
 				entity: reward,
 				mdRow: [...cellsText],
 			},
@@ -94,14 +94,14 @@ class RewardsPage extends ListPage {
 			eleLi,
 			reward.name,
 			{
-				hash,
 				source,
-				page: reward.page,
+				...ListItem.getCommonValues(reward),
 				type: reward.type,
 				ENG_name: reward.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(reward),
 			},
 			{
+				hash,
 				isExcluded,
 			},
 		);
@@ -113,7 +113,7 @@ class RewardsPage extends ListPage {
 	}
 
 	_renderStats_doBuildStatsTab ({ent}) {
-		this._pgContent.empty().appends(RenderRewards.getRenderedReward(ent));
+		this._pgContent.vee.empty().vee.appends(RenderRewards.getRenderedReward(ent));
 	}
 }
 

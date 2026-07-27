@@ -44,21 +44,20 @@ class OptionalFeaturesSublistManager extends SublistManager {
 			level,
 		];
 
-		const ele = ee`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
+		const ele = veT`<div class="ve-lst__row ve-lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="ve-lst__row-border ve-lst__row-inner">
 				${this.constructor._getRowCellsHtml({values: cellsText})}
 			</a>
 		</div>`
-			.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
-			.onn("click", evt => this._listSub.doSelect(listItem, evt));
+			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
+			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			hash,
 			ele,
 			it.name,
 			{
-				hash,
-				page: it.page,
+				...ListItem.getCommonValues(it),
 				type: it._lFeatureType,
 				prerequisite,
 				level,
@@ -66,6 +65,7 @@ class OptionalFeaturesSublistManager extends SublistManager {
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
+				hash,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -130,9 +130,8 @@ class OptionalFeaturesPage extends ListPage {
 			eleLi,
 			it.name,
 			{
-				hash,
 				source,
-				page: it.page,
+				...ListItem.getCommonValues(it),
 				prerequisite,
 				level,
 				type: it._lFeatureType,
@@ -140,6 +139,7 @@ class OptionalFeaturesPage extends ListPage {
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
+				hash,
 				isExcluded,
 			},
 		);
@@ -151,33 +151,33 @@ class OptionalFeaturesPage extends ListPage {
 	}
 
 	_renderStats_doBuildStatsTab ({ent}) {
-		this._wrpTabs.parente().find(`[data-name="opt-feature-type"]`)?.remove();
+		this._wrpTabs.vee.parent().vee.find(`[data-name="opt-feature-type"]`)?.remove();
 
 		Promise.any([
 			Renderer.utils.pHasFluffText(ent, "optionalfeatureFluff"),
 			Renderer.utils.pHasFluffImages(ent, "optionalfeatureFluff"),
 		])
 			.then(hasAnyFluff => {
-				const wrpOptFeatType = ee`<div data-name="opt-feature-type" class="ve-italic ve-inline-block"></div>`;
+				const wrpOptFeatType = veT`<div data-name="opt-feature-type" class="ve-italic ve-inline-block"></div>`;
 
-				if (hasAnyFluff) wrpOptFeatType.addClass("ve-mb-1").insertBeforee(this._wrpTabs);
-				else wrpOptFeatType.addClass("ve-pl-7p").prependTo(this._wrpTabs);
+				if (hasAnyFluff) wrpOptFeatType.vee.addClass("ve-mb-1").vee.insertBefore(this._wrpTabs);
+				else wrpOptFeatType.vee.addClass("ve-pl-7p").vee.prependTo(this._wrpTabs);
 
 				const commonPrefix = ent.featureType.length > 1 ? MiscUtil.findCommonPrefix(ent.featureType.map(fs => Parser.optFeatureTypeToFull(fs)), {isRespectWordBoundaries: true}) : "";
-				if (commonPrefix) wrpOptFeatType.appends(`<span>${commonPrefix.trim()} </span>`);
+				if (commonPrefix) wrpOptFeatType.vee.appends(`<span>${commonPrefix.trim()} </span>`);
 
 				ent.featureType.forEach((ft, i) => {
-					if (i > 0) wrpOptFeatType.appends(`<span>/</span>`);
-					ee`<span class="ve-roller">${Parser.optFeatureTypeToFull(ft).substring(commonPrefix.length)}</span>`
-						.onn("click", () => {
+					if (i > 0) wrpOptFeatType.vee.appends(`<span>/</span>`);
+					veT`<span class="ve-roller">${Parser.optFeatureTypeToFull(ft).substring(commonPrefix.length)}</span>`
+						.vee.onn("click", () => {
 							this._filterBox.setFromValues({"Feature Type": {[ft]: 1}});
 							this.handleFilterChange();
 						})
-						.appendTo(wrpOptFeatType);
+						.vee.appendTo(wrpOptFeatType);
 				});
 			});
 
-		this._pgContent.empty().appends(RenderOptionalFeatures.getRenderedOptionalFeature(ent));
+		this._pgContent.vee.empty().vee.appends(RenderOptionalFeatures.getRenderedOptionalFeature(ent));
 	}
 }
 
