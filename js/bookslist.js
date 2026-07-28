@@ -179,9 +179,7 @@ export class AdventuresBooksList {
 
 			const listItemValues = {
 				source: Parser.sourceJsonToAbv(it.source),
-				...ListItem.getCommonValues(it),
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
+				...ListItem.getCommonValues(it, {isCorpus: true}),
 				storyline: it.storyline || "",
 			};
 
