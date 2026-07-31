@@ -61,23 +61,7 @@ class PageFilterEquipment extends PageFilterBase {
 			itemSortFn: null,
 			...(filterOpts?.["Category"] || {}),
 		});
-		this._costFilter = new RangeFilter({
-			header: "Cost",
-			cnHeader: "价值",
-			isLabelled: true,
-			isAllowGreater: true,
-			labelSortFn: null,
-			labels: [
-				0,
-				...[...new Array(9)].map((_, i) => i + 1),
-				...[...new Array(9)].map((_, i) => 10 * (i + 1)),
-				...[...new Array(99)].map((_, i) => 100 * (i + 1)),
-				...[...new Array(9)].map((_, i) => 10_000 * (i + 1)),
-				...[...new Array(9)].map((_, i) => 100_000 * (i + 1)),
-				...[...new Array(10)].map((_, i) => 1_000_000 * (i + 1)),
-			],
-			labelDisplayFn: it => !it ? "None" : Parser.getDisplayCurrency(CurrencyUtil.doSimplifyCoins({cp: it})),
-		});
+		this._costFilter = FilterCommon.getCostFilter();
 		this._weightFilter = new RangeFilter({header: "Weight", cnHeader: "重量", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
 		this._focusFilter = new Filter({header: "Spellcasting Focus", cnHeader: "法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES], displayFn: it => Parser.CLASSES_TO_CN[it] ?? it});
 		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", cnHeader: "武器伤害类型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a.item), Parser.dmgTypeToFull(b.item))});
@@ -170,7 +154,7 @@ class PageFilterEquipment extends PageFilterBase {
 			}
 		}
 
-		item._fValue = Math.round(item.value || 0);
+		FilterCommon.mutateForFilters_cost(item, {prop: "value"});
 
 		item._fDamageDice = [];
 		if (item.dmg1) item._fDamageDice.push(item.dmg1);
@@ -242,7 +226,7 @@ class PageFilterEquipment extends PageFilterBase {
 			it._textTypes,
 			it._fProperties,
 			it._category,
-			it._fValue,
+			it._fCost,
 			it.weight,
 			it._fFocus,
 			it.dmgType,
@@ -552,7 +536,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fProperties,
 			it._fAttunement,
 			it._category,
-			it._fValue,
+			it._fCost,
 			it.weight,
 			it._fFocus,
 			it.dmgType,

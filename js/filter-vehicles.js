@@ -15,7 +15,7 @@ class PageFilterVehicles extends PageFilterBase {
 			header: "Upgrade Type",
 			cnHeader: "升级类型",
 			items: [],
-			displayFn: Parser.vehicleTypeToFull,
+			displayFn: Parser.vehicleUpgradeTypeToFull,
 			isSortByDisplayItems: true,
 		});
 		this._typeFilter = new MultiFilter({
@@ -23,6 +23,7 @@ class PageFilterVehicles extends PageFilterBase {
 			cnHeader: "类型",
 			filters: [this._vehicleTypeFilter, this._upgradeTypeFilter],
 		});
+		this._costFilter = FilterCommon.getCostFilter();
 		this._terrainFilter = new Filter({header: "Terrain", cnHeader: "地形", items: ["land", "sea", "air"], displayFn: StrUtil.uppercaseFirst});
 		this._speedFilter = new RangeFilter({header: "Speed", cnHeader: "速度"});
 		this._acFilter = new RangeFilter({header: "Armor Class", cnHeader: "护甲等级"});
@@ -72,6 +73,8 @@ class PageFilterVehicles extends PageFilterBase {
 
 		ent._fCreatureCapacity = (ent.capCrew || 0) + (ent.capPassenger || 0) + (ent.capCreature || 0);
 
+		FilterCommon.mutateForFilters_cost(ent);
+
 		this._mutateForFilters_commonMisc(ent);
 		if (Renderer.vehicle.hasToken(ent)) ent._fMisc.push("有Token");
 	}
@@ -82,8 +85,9 @@ class PageFilterVehicles extends PageFilterBase {
 		this._sourceFilter.addItem(it._fSources);
 		this._vehicleTypeFilter.addItem(it.vehicleType);
 		this._upgradeTypeFilter.addItem(it.upgradeType);
-		this._speedFilter.addItem(it._fSpeed);
 		this._terrainFilter.addItem(it.terrain);
+		this._costFilter.addItem(it._fCost);
+		this._speedFilter.addItem(it._fSpeed);
 		this._acFilter.addItem(it._fAc);
 		this._hpFilter.addItem(it._fHp);
 		this._creatureCapacityFilter.addItem(it._fCreatureCapacity);
@@ -95,6 +99,7 @@ class PageFilterVehicles extends PageFilterBase {
 			this._sourceFilter,
 			this._typeFilter,
 			this._terrainFilter,
+			this._costFilter,
 			this._speedFilter,
 			this._acFilter,
 			this._hpFilter,
@@ -112,6 +117,7 @@ class PageFilterVehicles extends PageFilterBase {
 				it.upgradeType,
 			],
 			it.terrain,
+			it._fCost,
 			it._fSpeed,
 			it._fAc,
 			it._fHp,

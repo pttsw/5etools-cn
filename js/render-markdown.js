@@ -2155,8 +2155,11 @@ RendererMarkdown.vehicle = class {
 
 RendererMarkdown.vehicleUpgrade = class {
 	static getCompactRenderedString (ent, opts = {}) {
+		const entriesMeta = Renderer.vehicleUpgrade.getVehicleUpgradeRenderableEntriesMeta(ent);
+
 		const entries = [
-			RendererMarkdown.vehicleUpgrade.getUpgradeSummary(ent),
+			entriesMeta.entrySummary,
+			entriesMeta.entryCost,
 			{entries: ent.entries},
 		]
 			.filter(Boolean);
@@ -2169,17 +2172,6 @@ RendererMarkdown.vehicleUpgrade = class {
 		return RendererMarkdown.utils.withMetaDepth(1, opts, () => {
 			return RendererMarkdown.generic.getCompactRenderedString(entFull, opts);
 		});
-	}
-
-	static getUpgradeSummary (ent) {
-		const out = [
-			ent.upgradeType ? ent.upgradeType.map(t => Parser.vehicleTypeToFull(t)) : null,
-			ent.prerequisite ? Renderer.utils.prerequisite.getHtml(ent.prerequisite, {isTextOnly: true}) : null,
-		]
-			.filter(Boolean)
-			.join(", ");
-
-		return out ? `{@i ${out}}` : null;
 	}
 };
 
@@ -2342,7 +2334,7 @@ RendererMarkdown.generic = class {
 	}
 
 	static getRenderedPrerequisite (ent) {
-		const out = Renderer.utils.prerequisite.getHtml(ent.prerequisite, {isTextOnly: true, isSkipPrefix: true});
+		const out = Renderer.utils.prerequisite.getText(ent.prerequisite, {isSkipPrefix: true});
 		return out ? `先决条件: ${out}` : "";
 	}
 };

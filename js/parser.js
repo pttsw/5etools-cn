@@ -2365,15 +2365,6 @@ Parser.psiOrderToFull = (order) => {
 	return order === undefined ? Parser.PSI_ORDER_NONE : order;
 };
 
-Parser.prereqSpellToFull = function (spell, { isTextOnly = false } = {}) {
-	if (spell) {
-		const [text, suffix] = spell.split("#");
-		if (!suffix) return isTextOnly ? spell : Renderer.get().render(`{@spell ${spell}}`);
-		else if (suffix === "c") return (isTextOnly ? Renderer.stripTags : Renderer.get().render.bind(Renderer.get()))(`{@spell ${text}} 戏法`);
-		else if (suffix === "x") return (isTextOnly ? Renderer.stripTags : Renderer.get().render.bind(Renderer.get()))("{@spell hex} 法术 或 能施加诅咒的契术师能力");
-	} else return VeCt.STR_NONE;
-};
-
 Parser.prereqPactToFull = function (pact) {
 	if (pact === "Chain") return "锁链魔契";
 	if (pact === "Tome") return "书卷魔契";
@@ -3306,6 +3297,13 @@ Parser.VEHICLE_TYPE_TO_FULL = {
 	"INFWAR": "地狱战争机器",
 	"CREATURE": "生物",
 	"OBJECT": "物件",
+};
+
+Parser.vehicleTypeToFull = function (vehicleType) {
+	return Parser._parse_aToB(Parser.VEHICLE_TYPE_TO_FULL, vehicleType);
+};
+
+Parser.VEHICLE_UPGRADE_TYPE_TO_FULL = {
 	"SHP:H": "船只升级, 船壳",
 	"SHP:M": "船只升级, 操纵",
 	"SHP:W": "船只升级, 武器",
@@ -3316,8 +3314,11 @@ Parser.VEHICLE_TYPE_TO_FULL = {
 	"IWM:G": "地狱战争机器升级, 装置",
 };
 
-Parser.vehicleTypeToFull = function (vehicleType) {
-	return Parser._parse_aToB(Parser.VEHICLE_TYPE_TO_FULL, vehicleType);
+Parser.vehicleUpgradeTypeToFull = function (type) {
+	if (Parser.VEHICLE_UPGRADE_TYPE_TO_FULL[type]) return Parser.VEHICLE_UPGRADE_TYPE_TO_FULL[type];
+	if (PrereleaseUtil.getMetaLookup("vehicleUpgradeTypes")?.[type]) return PrereleaseUtil.getMetaLookup("vehicleUpgradeTypes")[type];
+	if (BrewUtil2.getMetaLookup("vehicleUpgradeTypes")?.[type]) return BrewUtil2.getMetaLookup("vehicleUpgradeTypes")[type];
+	return type;
 };
 
 Parser.CROCHET_PATTERN_SKILL_LEVEL_TO_FULL = {
