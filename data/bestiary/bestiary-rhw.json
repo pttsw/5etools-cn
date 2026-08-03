@@ -66,7 +66,7 @@
 					"ENG_name": "Flyby",
 					"name": "飞掠",
 					"entries": [
-						"死亡之颅飞离敌人的触及范围时不会引发借机攻击。"
+						"死亡之颅飞离敌人的触及范围时不会引发{@action 借机攻击|XPHB}。"
 					]
 				}
 			],
@@ -100,6 +100,7 @@
 			"conditionInflict": [
 				"恐慌"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -188,7 +189,7 @@
 					"will": [
 						"{@spell 解除魔法|XPHB}",
 						"{@spell 预言术|XPHB}",
-						"{@spell 法师之手|XPHB}（手隐形）",
+						"{@spell 法师之手|XPHB}（手{@condition 隐形|XPHB}）",
 						"{@spell 律令震慑|XPHB}"
 					],
 					"daily": {
@@ -315,6 +316,7 @@
 			"savingThrowForcedSpell": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -552,6 +554,7 @@
 				"敏捷",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -690,6 +693,7 @@
 			"savingThrowForced": [
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -778,6 +782,7 @@
 			"miscTags": [
 				"MA"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -861,7 +866,7 @@
 					"ENG_name": "Unraveling Flesh (1/Day)",
 					"name": "解离血肉（1/天）",
 					"entries": [
-						"{@actSave wis} {@dc 11}，每个在30尺内能看见无骨者的生物。{@actSaveFail} 目标获得{@condition 恐慌|XPHB}状态。{@actSaveSuccessOrFail} 无骨者移动至多其{@variantrule 速度|XPHB}距离，且不会引发借机攻击。"
+						"{@actSave wis} {@dc 11}，每个在30尺内能看见无骨者的生物。{@actSaveFail} 目标获得{@condition 恐慌|XPHB}状态。{@actSaveSuccessOrFail} 无骨者移动至多其{@variantrule 速度|XPHB}距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				}
 			],
@@ -889,6 +894,7 @@
 			"savingThrowForced": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1047,6 +1053,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1133,6 +1140,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1233,6 +1241,7 @@
 			"savingThrowForced": [
 				"魅力"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1362,7 +1371,7 @@
 					"ENG_name": "Prowl (Panther or Hybrid Form Only)",
 					"name": "潜步（仅限黑豹或混合形态）",
 					"entries": [
-						"查库娜移动至多等同于其{@variantrule 速度|XPHB}的距离且不会引发借机攻击。在此次移动结束时，她可以执行躲藏动作。"
+						"查库娜移动至多等同于其{@variantrule 速度|XPHB}的距离且不会引发{@action 借机攻击|XPHB|借机攻击}。在此次移动结束时，她可以执行{@action 躲藏|XPHB}动作。"
 					]
 				},
 				{
@@ -1385,7 +1394,7 @@
 					"ENG_name": "Strike from Shadows",
 					"name": "幽影打击",
 					"entries": [
-						"查库纳进行一次倒刺矛攻击。如果查库纳具有躲藏动作的{@condition 隐形|XPHB}状态，此攻击不会结束该状态。查库纳在她的下一回合开始前不能再次使用此动作。"
+						"查库纳进行一次倒刺矛攻击。如果查库纳具有{@action 躲藏|XPHB}动作的{@condition 隐形|XPHB}状态，此攻击不会结束该状态。查库纳在她的下一回合开始前不能再次使用此动作。"
 					]
 				},
 				{
@@ -1428,6 +1437,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1667,6 +1677,7 @@
 				"智力",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"translator": "不全书"
@@ -1722,7 +1733,7 @@
 					"ENG_name": "Flyby",
 					"name": "飞掠",
 					"entries": [
-						"死亡之颅飞离敌人的触及范围时不会引发借机攻击。"
+						"死亡之颅飞离敌人的触及范围时不会引发{@action 借机攻击|XPHB}。"
 					]
 				}
 			],
@@ -1750,6 +1761,7 @@
 			"miscTags": [
 				"MA"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1871,6 +1883,7 @@
 			"savingThrowForced": [
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2010,6 +2023,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2141,7 +2155,7 @@
 					"ENG_name": "Worthy Wielder",
 					"name": "称职的持有者",
 					"entries": [
-						"{@actSave cha} {@dc 17}, one willing Humanoid within 5 feet. {@actSaveFail} 36 ({@damage 8d8}) Force damage. If this damage reduces the target to 0 {@variantrule 生命值|XPHB}, Ebonbane devourers its soul. A creature whose soul has been devoured by Ebonbane can be restored to life only by a {@spell 祈愿术|XPHB} spell. {@actSaveSuccess} The target attunes to Ebonbane and can wield the sword."
+						"{@actSave cha} {@dc 17}，5尺内一个自愿的类人生物。{@actSaveFail} 36（{@damage 8d8}）点力场伤害。如果此伤害将目标的{@variantrule 生命值|XPHB}降至0，乌黯祸主将吞噬其灵魂。被乌黯祸主吞噬了灵魂的生物只能通过{@spell 祈愿术|XPHB}法术复活。{@actSaveSuccess} 目标与乌黯祸主建立同调，并能挥舞此剑。"
 					]
 				}
 			],
@@ -2206,6 +2220,7 @@
 				"魅力",
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2375,6 +2390,7 @@
 				"力量",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2521,7 +2537,7 @@
 					"ENG_name": "Inspiring Rally",
 					"name": "鼓舞人心的重整旗鼓",
 					"entries": [
-						"艾丝选择60尺内至多六名盟友。每个能听到她的目标可以消耗一个{@variantrule 反应|XPHB}来移动至多其{@variantrule 速度|XPHB}的距离，且不会引发借机攻击。"
+						"艾丝选择60尺内至多六名盟友。每个能听到她的目标可以消耗一个{@variantrule 反应|XPHB}来移动至多其{@variantrule 速度|XPHB}的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				}
 			],
@@ -2555,6 +2571,7 @@
 				"魅力",
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2697,6 +2714,7 @@
 				"体质",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2863,6 +2881,7 @@
 			"savingThrowForcedSpell": [
 				"魅力"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3039,6 +3058,7 @@
 				"魅力",
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3129,6 +3149,7 @@
 			"miscTags": [
 				"MA"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3247,6 +3268,7 @@
 			"savingThrowForced": [
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3356,7 +3378,7 @@
 					"ENG_name": "Regeneration",
 					"name": "再生",
 					"entries": [
-						"哈肯在每个其回合开始时，若其至少有1点{@variantrule 生命值|XPHB|生命值}，则恢复10点{@variantrule 生命值|XPHB}。如果哈肯受到光耀伤害，此特性在其下个回合开始时不会生效。"
+						"哈肯在每回合开始时，若他至少有1点{@variantrule 生命值|XPHB|生命值}，则获得10点{@variantrule 生命值|XPHB}。如果哈肯受到光耀伤害，此特性在他下个回合开始时不会生效。"
 					]
 				}
 			],
@@ -3459,6 +3481,7 @@
 				"体质",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3740,6 +3763,7 @@
 				"敏捷",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3810,7 +3834,7 @@
 						"{@spell 侦测魔法|XPHB}",
 						"{@spell 侦测思想|XPHB}",
 						"{@spell 解除魔法|XPHB}",
-						"{@spell 法师之手|XPHB}（手是隐形的）",
+						"{@spell 法师之手|XPHB}（手是{@condition 隐形|XPHB}的）",
 						"{@spell 短讯术|XPHB}"
 					],
 					"daily": {
@@ -3842,7 +3866,7 @@
 					"ENG_name": "Inquisitor's Command {@recharge 5}",
 					"name": "审判官命令 {@recharge 5}",
 					"entries": [
-						"{@actSave wis} {@dc 16}，审判官选择其60尺内能看见的每个生物。{@actSaveFail} 目标获得{@condition 魅惑|XPHB}状态，持续至审判官的下个回合开始。在{@condition 魅惑|XPHB}目标的回合，审判官可以心灵感应控制目标的移动，并使其执行攻击动作（审判官选择目标）、疾走动作或不执行任何动作。"
+						"{@actSave wis} {@dc 16}，审判官选择其60尺内能看见的每个生物。{@actSaveFail} 目标获得{@condition 魅惑|XPHB}状态，持续至审判官的下个回合开始。在{@condition 魅惑|XPHB}目标的回合，审判官可以心灵感应控制目标的移动，并使其执行{@action 攻击|XPHB}动作（审判官选择目标）、{@action 疾走|XPHB}动作或不执行任何动作。"
 					]
 				},
 				{
@@ -3897,6 +3921,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3968,7 +3993,7 @@
 						"{@spell 侦测魔法|XPHB}",
 						"{@spell 侦测思想|XPHB}",
 						"{@spell 解除魔法|XPHB}",
-						"{@spell 法师之手|XPHB}（手是隐形的）",
+						"{@spell 法师之手|XPHB}（手是{@condition 隐形|XPHB}的）",
 						"{@spell 短讯术|XPHB}"
 					],
 					"daily": {
@@ -4043,6 +4068,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4114,7 +4140,7 @@
 						"{@spell 侦测魔法|XPHB}",
 						"{@spell 解除魔法|XPHB}",
 						"{@spell 法师护甲|XPHB}（已计入AC）",
-						"{@spell 法师之手|XPHB}（手是隐形的）",
+						"{@spell 法师之手|XPHB}（手是{@condition 隐形|XPHB}的）",
 						"{@spell 短讯术|XPHB}"
 					],
 					"daily": {
@@ -4192,6 +4218,7 @@
 				"敏捷",
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"translator": "不全书"
@@ -4335,6 +4362,7 @@
 			"savingThrowForced": [
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4521,6 +4549,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4605,7 +4634,7 @@
 									"name": "易受圣徽影响",
 									"type": "item",
 									"entries": [
-										"当僵尸穿戴或接触圣徽时，它失去对{@condition 恐慌|XPHB}状态的{@variantrule 免疫|XPHB}，并且自动在避免或结束{@condition 恐慌|XPHB}状态的豁免检定中失败。"
+										"当僵尸穿戴或接触{@item 圣徽|XPHB}时，它失去对{@condition 恐慌|XPHB}状态的{@variantrule 免疫|XPHB}，并且自动在避免或结束{@condition 恐慌|XPHB}状态的豁免检定中失败。"
 									]
 								}
 							]
@@ -4641,7 +4670,7 @@
 					"ENG_name": "Hungering Stride (Requires Consume Energy)",
 					"name": "饥渴步伐（需要吸收精气）",
 					"entries": [
-						"僵尸采取疾走动作。"
+						"僵尸采取{@action 疾走|XPHB}动作。"
 					]
 				},
 				{
@@ -4677,6 +4706,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4782,6 +4812,7 @@
 				"RA",
 				"RNG"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4959,6 +4990,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5166,6 +5198,7 @@
 				"魅力",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5295,7 +5328,7 @@
 					"ENG_name": "Mauling Charge",
 					"name": "猛击冲锋",
 					"entries": [
-						"凶咒狼人移动至多其{@variantrule 速度|XPHB}的一半距离且不引发借机攻击，并发动一次太刀或撕裂攻击。"
+						"凶咒狼人移动至多其{@variantrule 速度|XPHB}的一半距离且不引发{@action 借机攻击|XPHB|借机攻击}，并发动一次太刀或撕裂攻击。"
 					]
 				},
 				{
@@ -5343,6 +5376,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5532,6 +5566,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5709,6 +5744,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5864,6 +5900,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6020,6 +6057,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6186,6 +6224,7 @@
 				"敏捷",
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6259,7 +6298,7 @@
 						"{@spell 魅惑类人|XPHB}",
 						"{@spell 舞光术|XPHB}",
 						"{@spell 易容术|XPHB}（持续24小时）",
-						"{@spell 隐形术|XPHB}（仅限自身，且洛琳达妈妈在隐形时不会留下任何踪迹）",
+						"{@spell 隐形术|XPHB}（仅限自身，且洛琳达妈妈在{@condition 隐形|XPHB}时不会留下任何踪迹）",
 						"{@spell 次级幻象|XPHB}",
 						"{@spell 致病射线|XPHB}（三环版本）"
 					],
@@ -6411,6 +6450,7 @@
 				"体质",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6565,6 +6605,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6628,7 +6669,7 @@
 					"ENG_name": "Flyby",
 					"name": "飞掠",
 					"entries": [
-						"夜影魇卫飞离敌人的触及范围时不会引发借机攻击。"
+						"夜影魇卫飞离敌人的触及范围时不会引发{@action 借机攻击|XPHB}。"
 					]
 				}
 			],
@@ -6709,6 +6750,7 @@
 			"savingThrowForced": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6769,7 +6811,7 @@
 					"ENG_name": "Flyby",
 					"name": "飞掠",
 					"entries": [
-						"死亡之颅飞离敌人的触及范围时不会引发借机攻击。"
+						"死亡之颅飞离敌人的触及范围时不会引发{@action 借机攻击|XPHB}。"
 					]
 				}
 			],
@@ -6807,6 +6849,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6971,6 +7014,7 @@
 				"力量",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7061,7 +7105,7 @@
 					"type": "spellcasting",
 					"headerEntries": [
 						"拉米亚使用与施法相同的施法属性来施展{@spell 易容术|XPHB}。该法术持续到拉米亚的生命值降至80{@variantrule 生命值|XPHB}或更低，或她使用了复仇之火动作为止。用于辨别她真实外观的智力（{@skill 调查|XPHB}）检定需承受{@variantrule 劣势|XPHB}。",
-						"当伪装结束时，以拉米亚为中心30尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物都会受到以下效果影响。感知{@variantrule 豁免检定|XPHB}：{@dc 17}（若目标是构装体或不死生物则自动成功）。失败：目标陷入恐慌状态1分钟。恐慌期间，目标进行豁免检定具有{@variantrule 劣势|XPHB}。"
+						"当伪装结束时，以拉米亚为中心30尺{@variantrule 光环 [效应区域]|XPHB|光环}范围内的每个生物都会受到以下效果影响。感知{@variantrule 豁免检定|XPHB}：{@dc 17}（若目标是构装体或不死生物则自动成功）。失败：目标陷入{@condition 恐慌|XPHB}状态1分钟。{@condition 恐慌|XPHB}期间，目标进行豁免检定具有{@variantrule 劣势|XPHB}。"
 					],
 					"will": [
 						"{@spell 易容术|XPHB}"
@@ -7207,6 +7251,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7264,14 +7309,14 @@
 					"ENG_name": "Death Burst",
 					"name": "自爆",
 					"entries": [
-						"伴兵死亡时会爆炸。{@actSave dex} DC等于{@dcYourSpellSave}，每个位于以伴兵为源点的10尺光环内的生物。{@actSaveFail} 受到{@damage 2d4}暗蚀伤害。{@actSaveSuccess} 伤害减半。"
+						"伴兵死亡时会爆炸。{@actSave dex} DC等于{@dcYourSpellSave}，每个位于以伴兵为源点的10尺{@variantrule 光环 [效应区域]|XPHB|光环}内的生物。{@actSaveFail} 受到{@damage 2d4}暗蚀伤害。{@actSaveSuccess} 伤害减半。"
 					]
 				},
 				{
 					"ENG_name": "Lightning Absorption",
 					"name": "闪电吸收",
 					"entries": [
-						"每当伴兵受到闪电伤害时，它恢复等同于该闪电伤害数值的生命值。"
+						"每当伴阳受到闪电伤害时，它会恢复等同于该闪电伤害{@variantrule 生命值|XPHB}的数值。"
 					]
 				}
 			],
@@ -7280,7 +7325,7 @@
 					"ENG_name": "Dreadful Swipe",
 					"name": "恐怖挥击",
 					"entries": [
-						"{@atkr m} {@hitYourSpellAttack}，触及5尺。{@h}{@dice 1d4}加上你的智力调整值的暗蚀伤害，并且目标在其下一回合开始前不能进行借机攻击。"
+						"{@atkr m} {@hitYourSpellAttack}，触及5尺。{@h}{@dice 1d4}加上你的智力调整值的暗蚀伤害，并且目标在其下一回合开始前不能进行{@action 借机攻击|XPHB|借机攻击}。"
 					]
 				}
 			],
@@ -7299,7 +7344,8 @@
 			],
 			"savingThrowForced": [
 				"敏捷"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"ENG_name": "Relentless Juggernaut",
@@ -7448,6 +7494,7 @@
 				"敏捷",
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7593,6 +7640,7 @@
 			"savingThrowForced": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7714,6 +7762,7 @@
 			"savingThrowForced": [
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7851,6 +7900,7 @@
 				"魅力",
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8097,6 +8147,7 @@
 			"savingThrowForcedSpell": [
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8248,6 +8299,7 @@
 			"savingThrowForced": [
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8334,7 +8386,7 @@
 					"ENG_name": "Shield Bash",
 					"name": "盾击",
 					"entries": [
-						"{@actSave str} {@dc 13}，骷髅5尺内一个它能看见的生物。{@actSaveFail} 10（{@damage 2d6 + 3}）钝击伤害。如果目标是中型或更小的生物，它将陷入{@condition 倒地|XPHB}状态。"
+						"{@actSave str} {@dc 13}，施特拉德骷髅5尺内一个它能看见的生物。{@actSaveFail} 10（{@damage 2d6 + 3}）钝击伤害。如果目标是中型或更小的生物，它将陷入{@condition 倒地|XPHB}状态。"
 					]
 				}
 			],
@@ -8372,6 +8424,7 @@
 			"savingThrowForced": [
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8479,7 +8532,7 @@
 					"name": "魅惑",
 					"type": "spellcasting",
 					"headerEntries": [
-						"施特拉德施展{@spell 魅惑类人|XPHB}，无需法术成分，并使用与施法相同的施法属性。当以此方式施展该法术时，其持续时间为24小时，且被魅惑的目标会自愿接受施特拉德的啃咬，该伤害不会终止法术。当法术结束时，目标不会意识到自己被施特拉德魅惑过。"
+						"施特拉德施展{@spell 魅惑类人|XPHB}，无需法术成分，并使用与施法相同的施法属性。当以此方式施展该法术时，其持续时间为24小时，且被{@condition 魅惑|XPHB}的目标会自愿接受施特拉德的啃咬，该伤害不会终止法术。当法术结束时，目标不会意识到自己被施特拉德{@condition 魅惑|XPHB}过。"
 					],
 					"will": [
 						"{@spell 魅惑类人|XPHB}"
@@ -8684,6 +8737,7 @@
 				"力量",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8768,7 +8822,7 @@
 					"ENG_name": "Proboscis",
 					"name": "刺喙",
 					"entries": [
-						"{@atkr m} {@hit 5}, reach 5 ft. {@h}5 ({@damage 1d4 + 3}) Piercing damage plus 7 ({@damage 2d6}) Necrotic damage. The target's {@variantrule 生命值|XPHB|生命值} maximum decreases by an amount equal to the Necrotic damage taken, and the strigoi regains {@variantrule 生命值|XPHB} equal to that amount. A creature reduced to 0 {@variantrule 生命值|XPHB} by this attack dies, leaving behind nothing except its skin and equipment."
+						"{@atkr m} {@hit 5}，触及5尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害外加7（{@damage 2d6}）暗蚀伤害。目标的{@variantrule 生命值|XPHB|生命值}上限减少等同于所受暗蚀伤害的数值，并且蚊蝠怪恢复等同于该数值的{@variantrule 生命值|XPHB}。一个生物若因此攻击{@variantrule 生命值|XPHB}降至0，则会死亡，只留下其皮肤和装备。"
 					]
 				}
 			],
@@ -8815,6 +8869,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8921,6 +8976,7 @@
 			"miscTags": [
 				"MA"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9019,6 +9075,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9119,6 +9176,7 @@
 			"conditionInflict": [
 				"中毒"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9210,6 +9268,7 @@
 			"conditionInflict": [
 				"中毒"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9310,7 +9369,7 @@
 					"ENG_name": "Warp Mind",
 					"name": "扭曲心智",
 					"entries": [
-						"{@actTrigger} 一个恐怖存在120尺内它能看见的生物进行研习动作或进行一次体质豁免检定以维持{@status 专注|XPHB}。{@actResponse d}{@actSave wis} {@dc 15}，触发此能力的生物。{@actSaveFail} 7（{@damage 2d6}）心灵伤害，并且目标获得{@condition 震慑|XPHB}状态直到其下一回合结束。"
+						"{@actTrigger} 恐怖生物120尺内一个它能看见的生物，必须进行{@action 研究|XPHB}动作或进行一次体质豁免检定以维持{@status 专注|XPHB}。{@actResponse d}{@actSave wis} {@dc 15}，触发此能力的生物。{@actSaveFail} 7 ({@damage 2d6})心灵伤害，且目标获得{@condition 震慑|XPHB}状态，持续到其下一回合结束。"
 					]
 				}
 			],
@@ -9341,6 +9400,7 @@
 			"savingThrowForced": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9497,6 +9557,7 @@
 				"智力",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9628,7 +9689,7 @@
 					"ENG_name": "Bloodthirsty Slash",
 					"name": "嗜血挥砍",
 					"entries": [
-						"{@actTrigger} 诺斯费拉图40尺内一个它能看见的{@status 浴血|XPHB}生物受到伤害。{@actResponse} 诺斯费拉图移动至多等同于其{@variantrule 速度|XPHB}的距离且不引发借机攻击，并对触发此动作的生物发动一次爪击攻击。"
+						"{@actTrigger} 诺斯费拉图40尺内一个它能看见的{@status 浴血|XPHB}生物受到伤害。{@actResponse} 诺斯费拉图移动至多等同于其{@variantrule 速度|XPHB}的距离且不引发{@action 借机攻击|XPHB|借机攻击}，并对触发此动作的生物发动一次爪击攻击。"
 					]
 				}
 			],
@@ -9666,6 +9727,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9896,6 +9958,7 @@
 				"体质",
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10082,6 +10145,7 @@
 				"敏捷",
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10212,6 +10276,7 @@
 				"MA",
 				"RA"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10344,6 +10409,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10541,6 +10607,7 @@
 				"魅力",
 				"敏捷"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10717,6 +10784,7 @@
 			"savingThrowForcedSpell": [
 				"感知"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10848,6 +10916,7 @@
 				"体质",
 				"力量"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10971,6 +11040,7 @@
 			"savingThrowForced": [
 				"体质"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

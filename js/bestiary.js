@@ -499,10 +499,10 @@ class BestiaryPage extends ListPageMultiSource {
 					click: evt => this._handleBestiaryLinkClick(evt),
 					children: [
 						this._encounterBuilder.getButtons(mI),
-						e_({tag: "span", clazz: `best-ecgen__name ve-bold ve-col-4-2 ve-pl-0 ve-pr-1`, text: mon.name}),
-						e_({tag: "span", clazz: `ve-col-4-1 ve-px-1`, text: type}),
-						e_({tag: "span", clazz: `ve-col-1-7 ve-px-1 ve-text-center`, text: cr}),
-						e_({
+						veE({tag: "span", clazz: `best-ecgen__name ve-bold ve-col-4-2 ve-pl-0 ve-pr-1`, txt: mon.name}),
+						veE({tag: "span", clazz: `ve-col-4-1 ve-px-1`, txt: type}),
+						veE({tag: "span", clazz: `ve-col-1-7 ve-px-1 ve-text-center`, txt: cr}),
+						veE({
 							tag: "span",
 							clazz: `ve-col-2 ve-text-center ${Parser.sourceJsonToSourceClassname(mon.source)} ve-pl-1 ve-pr-0`,
 							title: `${Parser.sourceJsonToFull(mon.source)}${Renderer.utils.getSourceSubText(mon)}`,
@@ -802,8 +802,8 @@ class BestiaryPage extends ListPageMultiSource {
 	) {
 		Renderer.get().setFirstSection(true);
 
-		const btnScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : ee`<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr ve-btn ve-btn-xs ve-btn-default ve-popwindow__hidden no-print ve-lst-is-exporting-image__hidden"><span class="glyphicon glyphicon-signal"></span></button>`
-			.onn("click", (evt) => {
+		const btnScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : veT`<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr ve-btn ve-btn-xs ve-btn-default ve-popwindow__hidden no-print ve-lst-is-exporting-image__hidden"><span class="glyphicon glyphicon-signal"></span></button>`
+			.vee.onn("click", (evt) => {
 				evt.stopPropagation();
 				const win = (evt.view || {}).window;
 				const mon = this._dataList[Hist.lastLoadedId];

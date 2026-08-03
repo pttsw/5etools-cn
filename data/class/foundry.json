@@ -8223,26 +8223,26 @@
 			"level": 1,
 			"activities": [
 				{
-					"ENG_name": "Bonus Healing",
-					"name": "额外治疗",
-					"transfer": true,
-					"changes": [
-						{
-							"key": "system.bonuses.heal.damage",
-							"mode": "ADD",
-							"value": "+ @item.level + 2"
+					"type": "heal",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true,
+							"max": "9"
 						}
 					},
 					"target": {
 						"affects": {
 							"count": "1",
 							"type": "creature",
-							"special": "Creature you cast a healing spell on"
+							"special": "你施放治疗法术的目标生物"
 						}
 					},
 					"healing": {
 						"types": [
-							"healing"
+							"治疗"
 						],
 						"custom": {
 							"enabled": true,

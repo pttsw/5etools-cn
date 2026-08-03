@@ -1531,18 +1531,18 @@ class ListPage {
 	_bindLinkEngSiteButton ({btn} = {}) {
 		btn ||= this._getOrTabRightButton(`link-5et`, `glyphicon-globe`);
 
-		btn.addClass("ve-btn-copy-effect")
-			.onn("click", evt => {
+		btn.vee.addClass("ve-btn-copy-effect")
+			.vee.onn("click", evt => {
 				const ENG_hash = UrlUtil.autoEncodeEngHash(this._lastRender.entity);
 				this._pHandleClick_doEngSiteLink(evt, {btn, ENG_hash: ENG_hash});
 			})
-			.tooltip("跳转英文源站");
+			.vee.tooltip("跳转英文源站");
 	}
 	_bindBBCodeExportButton ({btn} = {}) {
 		btn ||= this._getOrTabRightButton(`link-bbcode`, `glyphicon-transfer`);
-		btn.addClass("ve-btn-copy-effect")
-			.onn("click", evt => this._bindPopoutButton_doShowBBCode(evt))
-			.tooltip("弹出BBCode文本（果园拟像术）");
+		btn.vee.addClass("ve-btn-copy-effect")
+			.vee.onn("click", evt => this._bindPopoutButton_doShowBBCode(evt))
+			.vee.tooltip("弹出BBCode文本（果园拟像术）");
 	}
 
 	_bindPopoutButton () {
