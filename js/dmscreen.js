@@ -1177,11 +1177,11 @@ class AddMenuVideoTab extends AddMenuTab {
 	pRender () {
 		if (this.eleTab) return;
 
-		const iptUrlYT = veT`<input class="ve-form-control" placeholder="${I18nUtil.get("page.dmscreen.paste_youtube_url")}">`
+		const iptUrlYT = veT`<input class="ve-form-control" placeholder="Paste YouTube URL">`
 			.vee.onn("keydown", evt => {
 				if (evt.key === "Enter") btnAddYT.vee.trigger("click");
 			});
-		const btnAddYT = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">${I18nUtil.get("page.dmscreen.embed")}</button>`
+		const btnAddYT = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`
 			.vee.onn("click", async () => {
 				let url;
 				try {
@@ -1214,29 +1214,21 @@ class AddMenuVideoTab extends AddMenuTab {
 
 				iptUrlYT.vee.val("");
 				this.menu.doClose();
-				iptUrlYT.val("");
 			});
 
-			const wrpTwitch = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlTwitch = ee`<input class="ve-form-control" placeholder="Paste Twitch URL">`
-				.onn("keydown", (e) => {
-					if (e.key === "Enter") btnAddTwitch.trigger("click");
-				})
-				.appendTo(wrpTwitch);
-			const btnAddTwitch = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`.appendTo(wrpTwitch);
-			const btnAddTwitchChat = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed Chat</button>`.appendTo(wrpTwitch);
-			const getTwitchM = (url) => {
-				return /https?:\/\/(www\.)?twitch\.tv\/(.*?)(\?.*$|$)/.exec(url);
-			};
-			btnAddTwitch.onn("click", () => {
-				let url = iptUrlTwitch.val().trim();
-				const m = getTwitchM(url);
-				if (url && m) {
-					url = `http://player.twitch.tv/?channel=${m[2]}`;
-					this.menu.pnl.doPopulate_Twitch(url);
-					this.menu.doClose();
-					iptUrlTwitch.val("");
-				} else {
+		const getTwitchUrlRegexMatch = (url) => {
+			return /https?:\/\/(?:www\.)?twitch\.tv\/(?<channel>.*?)(?:\?.*$|$)/.exec(url);
+		};
+		const iptUrlTwitch = veT`<input class="ve-form-control" placeholder="Paste Twitch URL">`
+			.vee.onn("keydown", evt => {
+				if (evt.key === "Enter") btnAddTwitch.vee.trigger("click");
+			});
+		const btnAddTwitch = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`
+			.vee.onn("click", async () => {
+				const url = iptUrlTwitch.vee.val().trim();
+
+				const mTwitchUrl = getTwitchUrlRegexMatch(url);
+				if (!url || !mTwitchUrl) {
 					JqueryUtil.doToast({
 						content: `Please enter a URL of the form: "https://www.twitch.tv/XXXXXX"`,
 						type: "danger",
@@ -1261,22 +1253,25 @@ class AddMenuVideoTab extends AddMenuTab {
 						content: `Please enter a URL of the form: "https://www.twitch.tv/XXXXXX"`,
 						type: "danger",
 					});
+					return;
 				}
+
+				const pcm = new PanelContentManager_TwitchChat({board: this._board, panel: this.menu.pnl});
+				await pcm.pDoPopulate({state: {u: `https://www.twitch.tv/embed/${mTwitchUrl.groups.channel}/chat`}});
+
+				iptUrlTwitch.vee.val("");
+				this.menu.doClose();
 			});
 
-			const wrpGeneric = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrlGeneric = ee`<input class="ve-form-control" placeholder="Paste any URL">`
-				.onn("keydown", (e) => {
-					if (e.key === "Enter") iptUrlGeneric.trigger("click");
-				})
-				.appendTo(wrpGeneric);
-			const btnAddGeneric = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`.appendTo(wrpGeneric);
-			btnAddGeneric.onn("click", () => {
-				let url = iptUrlGeneric.val().trim();
-				if (url) {
-					this.menu.pnl.doPopulate_GenericEmbed(url);
-					this.menu.doClose();
-				} else {
+		const iptUrlGeneric = veT`<input class="ve-form-control" placeholder="Paste any URL">`
+			.vee.onn("keydown", evt => {
+				if (evt.key === "Enter") iptUrlGeneric.vee.trigger("click");
+			});
+		const btnAddGeneric = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Embed</button>`
+			.vee.onn("click", async () => {
+				const url = iptUrlGeneric.vee.val().trim();
+
+				if (!url) {
 					JqueryUtil.doToast({
 						content: `Please enter a URL!`,
 						type: "danger",
@@ -1310,10 +1305,10 @@ class AddMenuImageTab extends AddMenuTab {
 			const eleTab = veT`<div class="ve-ui-search__wrp-output underline-tabs" id="${this.tabId}"></div>`;
 
 			// region Imgur
-			const wrpImgur = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			ee`<span>Imgur (Anonymous Upload) <i class="ve-muted">(accepts <a href="https://help.imgur.com/hc/en-us/articles/26511665959579-What-files-can-I-upload-Is-there-a-size-limit" target="_blank" rel="noopener noreferrer">imgur-friendly formats</a>)</i></span>`.appendTo(wrpImgur);
-			const iptFile = ee`<input type="file" class="hidden">`
-				.onn("change", (evt) => {
+			const wrpImgur = veT`<div class="ve-ui-modal__row"></div>`.vee.appendTo(eleTab);
+			veT`<span>Imgur (Anonymous Upload) <i class="ve-muted">(accepts <a href="https://help.imgur.com/hc/en-us/articles/26511665959579-What-files-can-I-upload-Is-there-a-size-limit" target="_blank" rel="noopener noreferrer">imgur-friendly formats</a>)</i></span>`.vee.appendTo(wrpImgur);
+			const iptFile = veT`<input type="file" class="hidden">`
+				.vee.onn("change", (evt) => {
 					const input = evt.target;
 					const reader = new FileReader();
 					reader.onload = async () => {
@@ -1359,23 +1354,23 @@ class AddMenuImageTab extends AddMenuTab {
 					const ix = this.menu.pnl.doPopulate_Loading("Uploading"); // will be null if not in tabbed mode
 					this.menu.doClose();
 				})
-				.appendTo(eleTab);
-			const btnAdd = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Upload</button>`
-				.appendTo(wrpImgur)
-				.onn("click", () => {
+				.vee.appendTo(eleTab);
+			const btnAdd = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Upload</button>`
+				.vee.appendTo(wrpImgur)
+				.vee.onn("click", () => {
 					iptFile.trigger("click");
 				});
 			// endregion
 
 			// region URL
-			const wrpUtl = ee`<div class="ve-ui-modal__row"></div>`.appendTo(eleTab);
-			const iptUrl = ee`<input class="ve-form-control" placeholder="Paste image URL">`
-				.onn("keydown", (e) => {
+			const wrpUtl = veT`<div class="ve-ui-modal__row"></div>`.vee.appendTo(eleTab);
+			const iptUrl = veT`<input class="ve-form-control" placeholder="Paste image URL">`
+				.vee.onn("keydown", (e) => {
 					if (e.key === "Enter") btnAddUrl.trigger("click");
 				})
-				.appendTo(wrpUtl);
-			const btnAddUrl = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpUtl);
-			btnAddUrl.onn("click", () => {
+				.vee.appendTo(wrpUtl);
+			const btnAddUrl = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.vee.appendTo(wrpUtl);
+			btnAddUrl.vee.onn("click", () => {
 				let url = iptUrl.val().trim();
 				if (url) {
 					this.menu.pnl.doPopulate_Image(url);
@@ -1417,110 +1412,110 @@ class AddMenuSpecialTab extends AddMenuTab {
 		if (!this.eleTab) {
 			const eleTab = veT`<div class="ve-ui-search__wrp-output underline-tabs ve-overflow-y-auto ve-pr-1" id="${this.tabId}"></div>`;
 
-			const wrpRoller = ee`<div class="ve-ui-modal__row"><span>Dice Roller <i class="ve-muted">(pins the existing dice roller to a panel)</i></span></div>`.appendTo(eleTab);
-			const btnRoller = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Pin</button>`.appendTo(wrpRoller);
-			btnRoller.onn("click", () => {
+			const wrpRoller = veT`<div class="ve-ui-modal__row"><span>Dice Roller <i class="ve-muted">(pins the existing dice roller to a panel)</i></span></div>`.vee.appendTo(eleTab);
+			const btnRoller = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Pin</button>`.vee.appendTo(wrpRoller);
+			btnRoller.vee.onn("click", () => {
 				Renderer.dice.bindDmScreenPanel(this.menu.pnl);
 				this.menu.doClose();
 			});
 			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const btnTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
-				.onn("click", async () => {
+			const btnTracker = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
+				.vee.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTracker({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
 					this.menu.doClose();
 				});
 
-			ee`<div class="ve-ui-modal__row">
+			veT`<div class="ve-ui-modal__row">
 			<span>Initiative Tracker</span>
 			${btnTracker}
 			</div>`.vee.appendTo(eleTab);
 
-			const btnTrackerCreatureViewer = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
-				.onn("click", async () => {
+			const btnTrackerCreatureViewer = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
+				.vee.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerCreatureViewer({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
 					this.menu.doClose();
 				});
 
-			ee`<div class="ve-ui-modal__row">
+			veT`<div class="ve-ui-modal__row">
 			<span>Initiative Tracker Creature Viewer</span>
 			${btnTrackerCreatureViewer}
 			</div>`.vee.appendTo(eleTab);
 
-			const btnPlayerTrackerV1 = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
-				.onn("click", async () => {
+			const btnPlayerTrackerV1 = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
+				.vee.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV1({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
 					this.menu.doClose();
 				});
 
-			ee`<div class="ve-ui-modal__row">
+			veT`<div class="ve-ui-modal__row">
 			<span>Initiative Tracker Player View (Standard)</span>
 			${btnPlayerTrackerV1}
 			</div>`.vee.appendTo(eleTab);
 
-			const btnPlayerTrackerV0 = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
-				.onn("click", async () => {
+			const btnPlayerTrackerV0 = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
+				.vee.onn("click", async () => {
 					const pcm = new PanelContentManager_InitiativeTrackerPlayerViewV0({board: this._board, panel: this.menu.pnl});
 					await pcm.pDoPopulate();
 					this.menu.doClose();
 				});
 
-			ee`<div class="ve-ui-modal__row">
+			veT`<div class="ve-ui-modal__row">
 			<span>Initiative Tracker Player View (Manual/Legacy)</span>
 			${btnPlayerTrackerV0}
 			</div>`.vee.appendTo(eleTab);
 
 			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const btnSublist = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
-				.onn("click", async evt => {
+			const btnSublist = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
+				.vee.onn("click", async evt => {
 					await this.menu.pnl.pDoMassPopulate_Entities(evt);
 					this.menu.doClose();
 				});
 
-			ee`<div class="ve-ui-modal__row">
+			veT`<div class="ve-ui-modal__row">
 			<span title="Including, but not limited to, a Bestiary Encounter.">Pinned List Entries</span>
 			${btnSublist}
 			</div>`.vee.appendTo(eleTab);
 
 			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const btnSwitchToEmbedTag = ee`<button class="ve-btn ve-btn-default ve-btn-xxs">embed</button>`
-				.onn("click", async () => {
+			const btnSwitchToEmbedTag = veT`<button class="ve-btn ve-btn-default ve-btn-xxs">embed</button>`
+				.vee.onn("click", async () => {
 					await this.menu.pSetActiveTab(this.menu.getTab({label: "Embed"}));
 				});
 
-			const wrpText = ee`<div class="ve-ui-modal__row"><span>Basic Text Box <i class="ve-muted">(for a feature-rich editor, ${btnSwitchToEmbedTag} a Google Doc or similar)</i></span></div>`.appendTo(eleTab);
-			const btnText = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpText);
-			btnText.onn("click", async () => {
+			const wrpText = veT`<div class="ve-ui-modal__row"><span>Basic Text Box <i class="ve-muted">(for a feature-rich editor, ${btnSwitchToEmbedTag} a Google Doc or similar)</i></span></div>`.vee.appendTo(eleTab);
+			const btnText = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.vee.appendTo(wrpText);
+			btnText.vee.onn("click", async () => {
 				const pcm = new PanelContentManager_NoteBox({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const wrpUnitConverter = ee`<div class="ve-ui-modal__row"><span>Unit Converter</span></div>`.appendTo(eleTab);
-			const btnUnitConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpUnitConverter);
-			btnUnitConverter.onn("click", async () => {
+			const wrpUnitConverter = veT`<div class="ve-ui-modal__row"><span>Unit Converter</span></div>`.vee.appendTo(eleTab);
+			const btnUnitConverter = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.vee.appendTo(wrpUnitConverter);
+			btnUnitConverter.vee.onn("click", async () => {
 				const pcm = new PanelContentManager_UnitConverter({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 
-			const wrpMoneyConverter = ee`<div class="ve-ui-modal__row"><span>Coin Converter</span></div>`.appendTo(eleTab);
-			const btnMoneyConverter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpMoneyConverter);
-			btnMoneyConverter.onn("click", async () => {
+			const wrpMoneyConverter = veT`<div class="ve-ui-modal__row"><span>Coin Converter</span></div>`.vee.appendTo(eleTab);
+			const btnMoneyConverter = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.vee.appendTo(wrpMoneyConverter);
+			btnMoneyConverter.vee.onn("click", async () => {
 				const pcm = new PanelContentManager_MoneyConverter({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
 			});
 
-			const wrpCounter = ee`<div class="ve-ui-modal__row"><span>Counter</span></div>`.appendTo(eleTab);
-			const btnCounter = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpCounter);
-			btnCounter.onn("click", async () => {
+			const wrpCounter = veT`<div class="ve-ui-modal__row"><span>Counter</span></div>`.vee.appendTo(eleTab);
+			const btnCounter = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.vee.appendTo(wrpCounter);
+			btnCounter.vee.onn("click", async () => {
 				const pcm = new PanelContentManager_Counter({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
@@ -1528,9 +1523,9 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const wrpTimeTracker = ee`<div class="ve-ui-modal__row"><span>In-Game Clock/Calendar</span></div>`.appendTo(eleTab);
-			const btnTimeTracker = ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.appendTo(wrpTimeTracker);
-			btnTimeTracker.onn("click", async () => {
+			const wrpTimeTracker = veT`<div class="ve-ui-modal__row"><span>In-Game Clock/Calendar</span></div>`.vee.appendTo(eleTab);
+			const btnTimeTracker = veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`.vee.appendTo(wrpTimeTracker);
+			btnTimeTracker.vee.onn("click", async () => {
 				const pcm = new PanelContentManager_TimeTracker({board: this._board, panel: this.menu.pnl});
 				await pcm.pDoPopulate();
 				this.menu.doClose();
@@ -1538,9 +1533,9 @@ class AddMenuSpecialTab extends AddMenuTab {
 
 			veT`<hr class="ve-hr-2">`.vee.appendTo(eleTab);
 
-			const wrpBlank = ee`<div class="ve-ui-modal__row"><span class="ve-help" title="For those who don't like plus signs.">Blank Space</span></div>`.appendTo(eleTab);
-			ee`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
-				.onn("click", () => {
+			const wrpBlank = veT`<div class="ve-ui-modal__row"><span class="ve-help" title="For those who don't like plus signs.">Blank Space</span></div>`.vee.appendTo(eleTab);
+			veT`<button class="ve-btn ve-btn-primary ve-btn-sm">Add</button>`
+				.vee.onn("click", () => {
 					this.menu.pnl.doPopulate_Blank();
 					this.menu.doClose();
 				})
@@ -1767,7 +1762,7 @@ class AddMenuSearchTab extends AddMenuTab {
 
 				if (resultCount > UiUtil.SEARCH_RESULTS_CAP) {
 					const diff = resultCount - UiUtil.SEARCH_RESULTS_CAP;
-					this.wrpResults.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
+					this.wrpResults.vee.appends(`<div class="ve-ui-search__row ve-ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 				}
 			} else {
 				if (!searchTerm.trim()) this.showMsgIpt();
@@ -1792,8 +1787,8 @@ class AddMenuSearchTab extends AddMenuTab {
 				await this._pDoSearch();
 			});
 
-			const iptSearch = ee`<input class="ve-ui-search__ipt-search search ve-form-control" autocomplete="off" placeholder="Search...">`.appendTo(wrpCtrls);
-			const wrpResults = ee`<div class="ve-ui-search__wrp-results"></div>`.appendTo(eleTab);
+			const iptSearch = veT`<input class="ve-ui-search__ipt-search search ve-form-control" autocomplete="off" placeholder="Search...">`.vee.appendTo(wrpCtrls);
+			const wrpResults = veT`<div class="ve-ui-search__wrp-results"></div>`.vee.appendTo(eleTab);
 
 			SearchWidget.bindAutoSearch(iptSearch, {
 				flags,
