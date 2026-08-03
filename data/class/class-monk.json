@@ -53,6 +53,21 @@
 							"count": 2
 						}
 					}
+				],
+				"weapons": [
+					"simple",
+					"{@item shortsword|phb|shortswords}"
+				],
+				"tools": [
+					"any one type of {@item artisan's tools|PHB} or any one {@item musical instrument|PHB} of your choice"
+				],
+				"toolProficiencies": [
+					{
+						"anyArtisansTool": 1
+					},
+					{
+						"anyMusicalInstrument": 1
+					}
 				]
 			},
 			"startingEquipment": {
@@ -539,6 +554,21 @@
 				}
 			],
 			"startingProficiencies": {
+				"skills": [
+					{
+						"choose": {
+							"from": [
+								"acrobatics",
+								"athletics",
+								"history",
+								"insight",
+								"religion",
+								"stealth"
+							],
+							"count": 2
+						}
+					}
+				],
 				"weapons": [
 					"简易",
 					"具有{@filter 轻型|items|type=军用武器|property=轻型}属性的军用武器"
@@ -560,21 +590,6 @@
 					},
 					{
 						"anyMusicalInstrument": 1
-					}
-				],
-				"skills": [
-					{
-						"choose": {
-							"from": [
-								"acrobatics",
-								"athletics",
-								"history",
-								"insight",
-								"religion",
-								"stealth"
-							],
-							"count": 2
-						}
 					}
 				]
 			},
