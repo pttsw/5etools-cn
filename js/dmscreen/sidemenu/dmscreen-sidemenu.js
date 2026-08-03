@@ -204,7 +204,7 @@ export class DmScreenSideMenu extends BaseComponent {
 						await ContextUtil.pOpenMenu(evt, menuMass);
 					});
 
-				const btnAddSlot = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2"><span class="glyphicon glyphicon-plus"></span> New Save Slot</button>`
+				const btnAddSlot = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2"><span class="glyphicon glyphicon-plus"></span> 新建存档面板</button>`
 					.vee.onn("click", async () => {
 						await this._board.pHandleClick_doNewSaveSlot();
 					});
@@ -291,12 +291,12 @@ export class DmScreenSideMenu extends BaseComponent {
 				const cbKeepWidthHeight = ComponentUiUtil.getCbBool(comp, "isRetainWidthHeight");
 
 				const eleDescription = veT`<div class="ve-w-320p">
-					<label class="ve-split-v-center ve-mb-2"><span>Keep Current Width/Height</span> ${cbKeepWidthHeight}</label>
+					<label class="ve-split-v-center ve-mb-2"><span>保留当前宽/高</span> ${cbKeepWidthHeight}</label>
 					<hr class="ve-hr-1">
-					<div>Are you sure?</div>
+					<div>你确定吗?</div>
 				</div>`;
 
-				if (!await InputUiUtil.pGetUserBoolean({title: isAll ? "Reset All" : "Reset Save Slot", eleDescription, textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: isAll ? "Reset All" : "重置存档槽位", eleDescription, textYes: "确定", textNo: "取消"})) return;
 
 				if (!isAll) {
 					this._board.doReset({isRetainWidthHeight: comp._state.isRetainWidthHeight});
