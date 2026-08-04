@@ -17,7 +17,7 @@ class IndexPage {
 		veEs(`#version_number`).vee.txt(VERSION_NUMBER).vee.attr("href", `https://github.com/5etools-mirror-3/5etools-src/releases/latest`);
 
 		veEs(`#wrp-donate`)
-			.html(`
+			.vee.html(`
 				<div class="home__donation">
 					<div class="home__donation-block">
 						<p class="home__donation-lead">本站无广告、无付费墙，所有内容都可以免费使用。如果你愿意帮忙分担一部分服务器、CDN 和持续维护成本，欢迎自愿支持本站运营。</p>
