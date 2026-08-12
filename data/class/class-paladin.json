@@ -40,16 +40,6 @@
 				}
 			],
 			"startingProficiencies": {
-				"armor": [
-					"light",
-					"medium",
-					"heavy",
-					"shield"
-				],
-				"weapons": [
-					"简易",
-					"军用"
-				],
 				"skills": [
 					{
 						"choose": {
@@ -66,8 +56,8 @@
 					}
 				],
 				"weapons": [
-					"simple",
-					"martial"
+					"简易",
+					"军用"
 				],
 				"armor": [
 					"light",
@@ -146,17 +136,20 @@
 				},
 				"proficienciesGained": {
 					"weapons": [
-						"simple",
-						"martial"
+						"简易",
+						"军用"
 					],
 					"armor": [
 						"light",
 						"medium",
 						"shield"
 					],
-					"weapons": [
-						"简易",
-						"军用"
+					"armorProficiencies": [
+						{
+							"light": true,
+							"medium": true,
+							"shield": true
+						}
 					]
 				}
 			},
@@ -438,16 +431,6 @@
 				}
 			],
 			"startingProficiencies": {
-				"armor": [
-					"light",
-					"medium",
-					"heavy",
-					"shield"
-				],
-				"weapons": [
-					"简易",
-					"军用"
-				],
 				"skills": [
 					{
 						"choose": {
@@ -464,8 +447,8 @@
 					}
 				],
 				"weapons": [
-					"simple",
-					"martial"
+					"简易",
+					"军用"
 				],
 				"armor": [
 					"light",
@@ -524,15 +507,19 @@
 			"multiclassing": {
 				"proficienciesGained": {
 					"weapons": [
-						"martial"
+						"军用"
 					],
 					"armor": [
 						"light",
 						"medium",
 						"shield"
 					],
-					"weapons": [
-						"军用"
+					"armorProficiencies": [
+						{
+							"light": true,
+							"medium": true,
+							"shield": true
+						}
 					]
 				}
 			},
@@ -1068,7 +1055,7 @@
 				"破誓者|圣武士||破誓者|DMG|3",
 				"憎恨灵光|圣武士||破誓者|DMG|7",
 				"超然抗性|圣武士||破誓者|DMG|15",
-				"魔王|圣武士||破誓者|DMG|20"
+				"恐惧之王|圣武士||破誓者|DMG|20"
 			]
 		},
 		{
@@ -2724,7 +2711,7 @@
 		},
 		{
 			"ENG_name": "Dread Lord",
-			"name": "魔王",
+			"name": "恐惧之王",
 			"source": "DMG",
 			"page": 97,
 			"className": "圣武士",

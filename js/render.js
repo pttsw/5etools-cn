@@ -3393,7 +3393,7 @@ Renderer.utils = class {
 					<div class="ve-flex-v-center">
 						<div class="ve-flex-col">
 							<h1 class="ve-stats__h-name ve-copyable ve-m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${opts.prefix || ""}${name}${opts.suffix || ""}</h1>
-							<h3 class="ve-stats__eh-name ve-copyable ve-m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${eng_name}</h3>
+							${eng_name ? `<h3 class="ve-stats__eh-name ve-copyable ve-m-0" onmousedown="event.preventDefault()" onclick="Renderer.utils._pHandleNameClick(this)">${eng_name}</h3>`: ""}
 						</div>						${opts.htmlControlRhs || ""}
 						${!globalThis.IS_VTT && ExtensionUtil.ACTIVE && opts.page ? Renderer.utils.getBtnSendToFoundryHtml() : ""}
 					</div>

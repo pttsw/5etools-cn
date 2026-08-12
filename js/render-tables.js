@@ -4,7 +4,7 @@ class RenderTables {
 	static _getPartTableFrom (it) {
 		if (it.chapter) {
 			return `<tr><td colspan="6">
-				${Renderer.get().render(`{@note ${it.__prop === "table" ? `This table` : "These tables"} can be found in ${Parser.sourceJsonToFull(it.source)}${Parser.bookOrdinalToAbv(it.chapter.ordinal, {isPreNoSuff: true})}, {@book ${it.chapter.name}|${it.source}|${it.chapter.index}|${it.chapter.name}}.}`)}
+				${Renderer.get().render(`{@note ${it.__prop === "table" ? `此表格` : "这些表格"} 原文位于 ${Parser.sourceJsonToFull(it.source)}${Parser.bookOrdinalToAbv(it.chapter.ordinal, {isPreNoSuff: true})}, {@book ${it.chapter.name}|${it.source}|${it.chapter.index}|${it.chapter.name}}.}`)}
 			</td></tr>`;
 		}
 
