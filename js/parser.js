@@ -5288,12 +5288,14 @@ Parser.recipeCategoryToCn = function (type) {
 Parser.ENCONTER_DIFFICULTY_TO_CN = {
 	"easy": "简单",
 	"medium": "中等",
+	"standard": "标准",
 	"hard": "困难",
 	"deadly": "致命",
 	"absurd": "荒谬",
 	"low": "低",
 	"moderate": "中等",
 	"high": "高",
+	"extreme": "极端"
 };
 Parser.encounterDifficultyToCn = function (type) {
 	return Parser._parse_aToB(Parser.ENCONTER_DIFFICULTY_TO_CN, type.toLowerCase());

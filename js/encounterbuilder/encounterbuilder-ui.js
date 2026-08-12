@@ -119,7 +119,7 @@ export class EncounterBuilderUi extends BaseComponent {
 			rendererWrapped,
 			ClsRenderableCollectionViewerCreatures = null,
 
-			headerTextSettings = "Settings",
+			headerTextSettings = "设置",
 		},
 	) {
 		if (!rendererWrapped) throw new Error(`Missing required "rendererWrapped" option!`);
@@ -264,7 +264,7 @@ export class EncounterBuilderUi extends BaseComponent {
 
 		veT(stgSettings)`
 			<h4 class="ve-my-2">${this._headerTextSettings}</h4>
-			<label class="ve-flex-v-center ve-mb-2"><b class="ve-mr-2">Rules:</b> ${selRulesId}</label>
+			<label class="ve-flex-v-center ve-mb-2"><b class="ve-mr-2">规则</b> ${selRulesId}</label>
 			${stgSettingsRules}
 		`;
 
@@ -335,7 +335,7 @@ export class EncounterBuilderUi extends BaseComponent {
 		const stgGroupSummary = veT`<div class="ve-flex-col ve-w-40"></div>`;
 
 		veT(stgGroup)`
-			<h4 class="ve-my-2">Group Info</h4>
+			<h4 class="ve-my-2">小队信息</h4>
 			<label class="ve-flex-v-center ve-mb-2"><b class="ve-mr-2">模式:</b> ${selPartyId}</label>
 			<hr class="ve-hr-2 ve-mt-0">
 			<div class="ve-flex">

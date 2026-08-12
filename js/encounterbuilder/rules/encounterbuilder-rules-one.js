@@ -16,7 +16,7 @@ class _TierHtmlProviderOne extends TierHtmlProviderBase {
 
 export class EncounterBuilderRulesOne extends EncounterBuilderRulesBase {
 	rulesId = "one";
-	displayName = "Modern (5.5e/2024)";
+	displayName = "现代 (5.5e/2024)";
 	_tierHtmlProvider = new _TierHtmlProviderOne();
 
 	_budgetMode = BUDGET_MODE_XP;
@@ -39,7 +39,7 @@ export class EncounterBuilderRulesOne extends EncounterBuilderRulesBase {
 
 	_render_settingsRules ({stgSettingsRules}) {
 		const wrpSettingsRules = veT`<div class="ve-flex-col">
-			<div class="ve-flex ve-mb-2">${this._rendererWrapped.er(`{@note Based on the encounter building rules on page 114 of the {@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG|3|Combat Encounter Difficulty}}`)}</div>
+			<div class="ve-flex ve-mb-2">${this._rendererWrapped.er(`{@note 基于{@book ${Parser.sourceJsonToFull(Parser.SRC_XDMG)}|XDMG|3|战斗遭遇难度}}第114页的“遭遇构筑”规则`)}</div>
 		</div>`
 			.vee.appendTo(stgSettingsRules);
 
@@ -167,7 +167,7 @@ export class EncounterBuilderRulesOne extends EncounterBuilderRulesBase {
 			const tier = partyMeta.getEncounterTier(encounterSpendInfo);
 
 			dispDifficulty
-				.vee.html(`Difficulty: <span class="ve-help-subtle">${Parser.encounterDifficultyToCn(tier)}</span>`)
+				.vee.html(`难度: <span class="ve-help-subtle">${Parser.encounterDifficultyToCn(tier)}</span>`)
 				.vee.tooltip(new _TierHtmlProviderOne().getTierTitle({tier}));
 		})();
 
@@ -185,10 +185,10 @@ export class EncounterBuilderRulesOne extends EncounterBuilderRulesBase {
 
 			const encounterSpendInfo = partyMeta.getEncounterSpendInfo(this._comp.creatureGroups);
 
-			dispXpRawTotal.vee.txt(`Total XP: ${encounterSpendInfo.baseSpend?.toLocaleStringVe() || "?"}`);
+			dispXpRawTotal.vee.txt(`合计XP: ${encounterSpendInfo.baseSpend?.toLocaleStringVe() || "?"}`);
 			dispXpRawPerPlayer.vee.txt(
 				partyMeta?.cntPlayers
-					? `(${Math.floor(encounterSpendInfo.baseSpend / partyMeta?.cntPlayers)?.toLocaleStringVe()} per player)`
+					? `(每位玩家${Math.floor(encounterSpendInfo.baseSpend / partyMeta?.cntPlayers)?.toLocaleStringVe()})`
 					: "",
 			);
 		})();

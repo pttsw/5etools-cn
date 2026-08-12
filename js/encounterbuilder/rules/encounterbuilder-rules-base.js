@@ -452,10 +452,10 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	static _TITLE_XP_TO_NEXT_LEVEL = "The total XP required to allow each member of the party to level up to their next level.";
+	static _TITLE_XP_TO_NEXT_LEVEL = "小队内每位成员升级到下一等级所需的合计XP。";
 
 	_getRenderedExpToLevel ({partyMeta}) {
-		return `<span class="ve-help-subtle" title="${this.constructor._TITLE_XP_TO_NEXT_LEVEL}">XP to Next Level:</span> ${partyMeta?.xpToNextLevel ? partyMeta?.xpToNextLevel.toLocaleStringVe() : "?"} XP`;
+		return `<span class="ve-help-subtle" title="${this.constructor._TITLE_XP_TO_NEXT_LEVEL}">升级所需XP:</span> ${partyMeta?.xpToNextLevel ? partyMeta?.xpToNextLevel.toLocaleStringVe() : "?"} XP`;
 	}
 
 	/* -------------------------------------------- */
@@ -471,7 +471,7 @@ export class EncounterBuilderRulesBase extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	static _TITLE_TTK = "Time to Kill: The estimated number of rounds the party will require to defeat the encounter. This assumes single-target damage only.";
+	static _TITLE_TTK = "击杀时间（Time to Kill）:小队完成此遭遇的预估轮数（假设都是单目标伤害的情况）";
 
 	_getTtkProvider ({partyMeta, styleHint}) {
 		const sharedOpts = {partyMeta, creatureGroups: this._comp.creatureGroups};

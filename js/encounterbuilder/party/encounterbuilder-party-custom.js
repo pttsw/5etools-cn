@@ -6,7 +6,7 @@ export class EncounterBuilderPartyCustom extends EncounterBuilderPartyBase {
 	static PARTY_ID = "custom";
 
 	partyId = this.constructor.PARTY_ID;
-	displayName = "Basic";
+	displayName = "基础";
 
 	/* -------------------------------------------- */
 

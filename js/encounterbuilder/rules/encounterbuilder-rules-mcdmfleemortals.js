@@ -134,7 +134,7 @@ export class EncounterBuilderRulesMcdmFleeMortals extends EncounterBuilderRulesB
 			${dispTtk}
 			<hr class="ve-hr-2">
 			${dispPointsEncounter}
-			<div class="ve-muted"><span class="ve-help-subtle" title="Daily encounter points budget. To give the characters a good but survivable challenge, fill each adventuring day with encounters that total 6 to 8 points over the course of the day.">Daily Budget:</span> 6-8</div>
+			<div class="ve-muted"><span class="ve-help-subtle" title="Daily encounter points budget. To give the characters a good but survivable challenge, fill each adventuring day with encounters that total 6 to 8 points over the course of the day.">每日XP:</span> 6-8</div>
 			<div class="ve-my-2">
 			${dispExpEncounter}
 			${dispExpToLevel}
@@ -185,7 +185,7 @@ export class EncounterBuilderRulesMcdmFleeMortals extends EncounterBuilderRulesB
 			const tier = partyMeta.getEncounterTier(encounterSpendInfo);
 
 			dispDifficulty
-				.vee.html(`Difficulty: <span class="ve-help-subtle">${Parser.encounterDifficultyToCn(tier)}</span>`)
+				.vee.html(`难度: <span class="ve-help-subtle">${Parser.encounterDifficultyToCn(tier)}</span>`)
 				.vee.tooltip(new _TierHtmlProviderMcdmFleeMortals().getTierTitle({tier}));
 		})();
 
@@ -203,10 +203,10 @@ export class EncounterBuilderRulesMcdmFleeMortals extends EncounterBuilderRulesB
 
 			const encounterSpendInfo = partyMeta.getEncounterSpendInfo(this._comp.creatureGroups);
 
-			dispCrTotal.vee.txt(`Total CR: ${encounterSpendInfo.baseSpend == null ? "?" : Parser.numberToVulgar(encounterSpendInfo.baseSpend)}`);
+			dispCrTotal.vee.txt(`合计CR: ${encounterSpendInfo.baseSpend == null ? "?" : Parser.numberToVulgar(encounterSpendInfo.baseSpend)}`);
 			dispCrPerPlayer.vee.txt(
 				partyMeta?.cntPlayers
-					? `(${Parser.numberToVulgar(encounterSpendInfo.baseSpend / partyMeta?.cntPlayers)} per player)`
+					? `每位玩家(${Parser.numberToVulgar(encounterSpendInfo.baseSpend / partyMeta?.cntPlayers)})`
 					: "",
 			);
 		})();

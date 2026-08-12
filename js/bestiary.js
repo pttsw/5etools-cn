@@ -129,7 +129,7 @@ class BestiarySublistManager extends SublistManager {
 		Renderer.monster.hover.bindTokenMouseover({mon, ele: hovToken});
 
 		// TODO(Future) run `pFnCleanup` before list item is destroyed
-		const hovImage = ee`<span class="ve-col-1-2 best-ecgen__visible ve-help ve-help--hover">Image</span>`;
+		const hovImage = veT`<span class="ve-col-1-2 best-ecgen__visible ve-help ve-help--hover">图片</span>`;
 		Renderer.monster.hover.bindFluffImageMouseover({mon, ele: hovImage});
 
 		const ptCr = (() => {
@@ -603,18 +603,18 @@ class BestiaryPage extends ListPageMultiSource {
 
 		this._encounterBuilder.render();
 
-		const btnSaveToUrl = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">Save to URL</button>`
+		const btnSaveToUrl = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2">保存到URL</button>`
 			.vee.onn("click", () => this._sublistManager.pHandleClick_download({isUrl: true, eleCopyEffect: btnSaveToUrl}));
-		const btnSaveToFile = veT`<button class="ve-btn ve-btn-default ve-btn-xs">Save to File</button>`
+		const btnSaveToFile = veT`<button class="ve-btn ve-btn-default ve-btn-xs">保存到文件</button>`
 			.vee.onn("click", () => this._sublistManager.pHandleClick_download());
-		const btnLoadFromFile = veT`<button class="ve-btn ve-btn-default ve-btn-xs">Load from File</button>`
+		const btnLoadFromFile = veT`<button class="ve-btn ve-btn-default ve-btn-xs">从文件加载</button>`
 			.vee.onn("click", evt => this._sublistManager.pHandleClick_upload({isAdditive: evt.shiftKey}));
-		const btnCopyAsText = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2" title="SHIFT for Multi-Line Format">Copy as Text</button>`
+		const btnCopyAsText = veT`<button class="ve-btn ve-btn-default ve-btn-xs ve-mr-2" title="SHIFT for Multi-Line Format">复制为文本</button>`
 			.vee.onn("click", (evt) => this._encounterBuilder.handleClickCopyAsText(evt));
-		const btnReset = veT`<button class="ve-btn ve-btn-danger ve-btn-xs" title="SHIFT to Reset Players">Reset</button>`
+		const btnReset = veT`<button class="ve-btn ve-btn-danger ve-btn-xs" title="SHIFT to Reset Players">重置</button>`
 			.vee.onn("click", (evt) => this._sublistManager.pHandleClick_new(evt));
 
-		const btnBackToStatblocks = veT`<button class="ve-btn ve-btn-success ve-btn-xs">Back to Stat Blocks</button>`
+		const btnBackToStatblocks = veT`<button class="ve-btn ve-btn-success ve-btn-xs">回到数据卡</button>`
 			.vee.onn("click", (evt) => this._encounterBuilder.handleClickBackToStatblocks(evt));
 
 		veT`<div class="ve-flex-col ve-w-100">

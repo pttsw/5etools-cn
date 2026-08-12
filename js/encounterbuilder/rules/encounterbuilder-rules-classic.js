@@ -99,7 +99,7 @@ class _EncounterBuilderUiHelp {
 
 export class EncounterBuilderRulesClassic extends EncounterBuilderRulesBase {
 	rulesId = "classic";
-	displayName = "Classic (5e/2014)";
+	displayName = "经典 (5e/2014)";
 	_tierHtmlProvider = new _TierHtmlProviderClassic();
 
 	_budgetMode = BUDGET_MODE_XP;
@@ -122,7 +122,7 @@ export class EncounterBuilderRulesClassic extends EncounterBuilderRulesBase {
 
 	_render_settingsRules ({stgSettingsRules}) {
 		const wrpSettingsRules = veT`<div class="ve-flex-col">
-			<div class="ve-flex ve-mb-2">${this._rendererWrapped.er(`{@note Based on the encounter building rules on page 81 of the {@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|3|Creating a Combat Encounter}}`)}</div>
+			<div class="ve-flex ve-mb-2">${this._rendererWrapped.er(`{@note 基于{@book ${Parser.sourceJsonToFull(Parser.SRC_DMG)}|DMG|3|创建战斗遭遇}}第81页的“遭遇构筑”规则`)}</div>
 		</div>`
 			.vee.appendTo(stgSettingsRules);
 
@@ -143,7 +143,7 @@ export class EncounterBuilderRulesClassic extends EncounterBuilderRulesBase {
 
 	/* -------------------------------------------- */
 
-	static _TITLE_BUDGET_DAILY = "This provides a rough estimate of the adjusted XP value for encounters the party can handle before the characters will need to take a long rest.";
+	static _TITLE_BUDGET_DAILY = "粗略预估小队成员进行一次长休前能够完成的遭遇XP";
 
 	_render_groupSummary ({stgGroupSummary}) {
 		const {
@@ -199,7 +199,7 @@ export class EncounterBuilderRulesClassic extends EncounterBuilderRulesBase {
 				.vee.html(this._getTtkHtml({partyMeta}));
 
 			dispBudgetDaily
-				.vee.html(`<span class="ve-help-subtle" title="${this.constructor._TITLE_BUDGET_DAILY}">Daily Budget:</span> ${partyMeta?.getDailyBudget() ? partyMeta.getDailyBudget().toLocaleStringVe() : `?`} XP`);
+				.vee.html(`<span class="ve-help-subtle" title="${this.constructor._TITLE_BUDGET_DAILY}">每日XP:</span> ${partyMeta?.getDailyBudget() ? partyMeta.getDailyBudget().toLocaleStringVe() : `?`} XP`);
 
 			dispExpToLevel.vee.html(this._getRenderedExpToLevel({partyMeta}));
 		})();
@@ -283,10 +283,10 @@ export class EncounterBuilderRulesClassic extends EncounterBuilderRulesBase {
 
 			const encounterSpendInfo = partyMeta.getEncounterSpendInfo(this._comp.creatureGroups);
 
-			dispXpRawTotal.vee.txt(`Total XP: ${encounterSpendInfo.baseSpend?.toLocaleStringVe() || "?"}`);
+			dispXpRawTotal.vee.txt(`合计XP: ${encounterSpendInfo.baseSpend?.toLocaleStringVe() || "?"}`);
 			dispXpRawPerPlayer.vee.txt(
 				partyMeta?.cntPlayers
-					? `(${Math.floor(encounterSpendInfo.baseSpend / partyMeta?.cntPlayers)?.toLocaleStringVe()} per player)`
+					? `每位玩家 (${Math.floor(encounterSpendInfo.baseSpend / partyMeta?.cntPlayers)?.toLocaleStringVe()})`
 					: "",
 			);
 
@@ -311,7 +311,7 @@ export class EncounterBuilderRulesClassic extends EncounterBuilderRulesBase {
 
 			dispXpAdjustedPerPlayer.vee.txt(
 				partyMeta?.cntPlayers
-					? `(${Math.floor(encounterSpendInfo.adjustedSpend / partyMeta.cntPlayers).toLocaleStringVe()} per player)`
+					? `(每位玩家${Math.floor(encounterSpendInfo.adjustedSpend / partyMeta.cntPlayers).toLocaleStringVe()})`
 					: "",
 			);
 		})();

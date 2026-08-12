@@ -36,8 +36,8 @@ export class EncounterbuilderUiThermometer extends BaseComponent {
 
 					const tierName = this._tierHtmlProvider.getTierName({tier});
 					const ptTitle = [
-						tierName ? `${tierName} Difficulty Encounter.` : tierName,
-						isActionableTier ? `Click to adjust encounter to this difficulty. CTRL+click to generate an encounter of this difficulty.` : "",
+						tierName ? `${tierName}难度遭遇。` : tierName,
+						isActionableTier ? `左键点击以调整此遭遇为此难度等级。CTRL+左键点击以生成此难度等级的遭遇` : "",
 						this._tierHtmlProvider.getTierTitle({tier}),
 					]
 						.filter(Boolean)
