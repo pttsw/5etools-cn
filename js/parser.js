@@ -4769,13 +4769,13 @@ Parser.conditionToEn = function (condition) {
 Parser._SENSES_LEGACY = [
 	{"name": "盲视", "source": Parser.SRC_PHB},
 	{"name": "黑暗视觉", "source": Parser.SRC_PHB},
-	{"name": "颤动感知", "source": Parser.SRC_MM},
+	{"name": "震颤感知", "source": Parser.SRC_MM},
 	{"name": "真实视觉", "source": Parser.SRC_PHB},
 ];
 Parser._SENSES_MODERN = [
 	{"name": "盲视", "source": Parser.SRC_XPHB},
 	{"name": "黑暗视觉", "source": Parser.SRC_XPHB},
-	{"name": "颤动感知", "source": Parser.SRC_XPHB},
+	{"name": "震颤感知", "source": Parser.SRC_XPHB},
 	{"name": "真实视觉", "source": Parser.SRC_XPHB},
 ];
 Parser.getSenses = function ({styleHint = null} = {}) {
