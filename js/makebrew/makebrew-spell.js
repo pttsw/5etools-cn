@@ -188,7 +188,8 @@ export class SpellBuilder extends BuilderBase {
 		tabs.forEach(it => it.wrpTab.vee.appendTo(wrp));
 
 		// INFO
-		BuilderUi.getStateIptString("名字", cb, this._state, {nullable: false}, "name").vee.appendTo(infoTab.wrpTab);
+		BuilderUi.getStateIptString("中文名", cb, this._state, {nullable: false}, "name").vee.appendTo(infoTab.wrpTab);
+		BuilderUi.getStateIptString("英文名", cb, this._state, {nullable: true}, "ENG_name").vee.appendTo(infoTab.wrpTab);
 		this._selSource = this.getSourceInput(cb).vee.appendTo(infoTab.wrpTab);
 		this.__getOtherSourcesInput(cb).vee.appendTo(infoTab.wrpTab);
 		BuilderUi.getStateIptString("页码", cb, this._state, {}, "page").vee.appendTo(infoTab.wrpTab);

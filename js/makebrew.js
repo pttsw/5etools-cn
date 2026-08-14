@@ -237,13 +237,13 @@ class PageUi extends ProxyBase {
 	}
 
 	_initHeader_new ({wrpSettingsBtm}) {
-		const btnNew = veT`<button class="ve-btn ve-btn-xs ve-btn-default" title="SHIFT to reset additional state (such as whether or not certain attributes are auto-calculated)">New</button>`
+		const btnNew = veT`<button class="ve-btn ve-btn-xs ve-btn-default" title="SHIFT to reset additional state (such as whether or not certain attributes are auto-calculated)">新增</button>`
 			.vee.onn("click", async (evt) => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Builder", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "此操作将重置编辑器", htmlDescription: "你确定吗？", textYes: "确定", textNo: "取消"})) return;
 				this._getActiveBuilderInstance().reset({isResetAllMeta: !!evt.shiftKey});
 			});
 
-		const bntNewFromCopy = veT`<button class="ve-btn ve-btn-xs ve-btn-default">New from Copy...</button>`
+		const bntNewFromCopy = veT`<button class="ve-btn ve-btn-xs ve-btn-default">从现有内容来新增</button>`
 			.vee.onn("click", () => this._getActiveBuilderInstance().pHandleClickLoadExisting())
 			.vee.appendTo(wrpSettingsBtm);
 
@@ -283,7 +283,7 @@ class PageUi extends ProxyBase {
 	}
 
 	_initHeader_save ({wrpSettingsBtm}) {
-		const btnHeaderSave = veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-mr-2 mkbru__cnt-save">Save</button>`
+		const btnHeaderSave = veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-mr-2 mkbru__cnt-save">保存</button>`
 			.vee.onn("click", () => this._getActiveBuilderInstance().pDoHandleClickSaveBrew());
 
 		const dispHeaderName = veT`<div class="ve-muted ve-italic"></div>`;

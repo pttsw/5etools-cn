@@ -528,10 +528,10 @@ export class BuilderBase extends ProxyBase {
 				&& !await BrewUtil2.pIsEditableSourceJson(source)
 			) {
 				const isMove = await InputUiUtil.pGetUserBoolean({
-					title: "Move to Editable Homebrew Document",
-					htmlDescription: `<div>Saving "${this._state.name}" with source "${this._state.source}" will move all homebrew from that source to the editable homebrew document.<br>Moving homebrew to the editable document will prevent it from being automatically updated in future.<br>Do you wish to proceed?<br><i class="ve-muted">Giving "${this._state.name}" an editable source will avoid this issue.</i></div>`,
-					textYes: "Yes",
-					textNo: "Cancel",
+					title: "此操作会将自制内容转为可编辑状态",
+					htmlDescription: `<div>将"${this._state.name}"的来源保存为"${this._state.source}",会导致此自制内容的所有内容转为可编辑状态<br>可编辑状态的内容将不会自动更新<br>你确定要这么做吗？<br><i class="ve-muted">将 "${this._state.name}" 的来源设置为其他可编辑的来源，则不会引发此问题。</i></div>`,
+					textYes: "确定",
+					textNo: "取消",
 				});
 				if (!isMove) return;
 
@@ -784,6 +784,7 @@ export class BuilderBase extends ProxyBase {
 	_getInitialState () {
 		return {
 			uniqueId: CryptUtil.uid(),
+			translator: "玩家自制",
 		};
 	}
 
