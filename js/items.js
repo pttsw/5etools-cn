@@ -121,6 +121,7 @@ class ItemsSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: item.page,
 				count,
 				elesCount: [],
 				fnsUpdate: [({sublistItem}) => compCount._state.count = sublistItem.data.count],
@@ -346,6 +347,7 @@ class ItemsPage extends ListPage {
 				},
 				{
 					hash,
+					page: item.page,
 					isExcluded,
 				},
 			);
@@ -401,6 +403,7 @@ class ItemsPage extends ListPage {
 				{
 					hash,
 					ENG_hash,
+					page: item.page,
 				},
 			);
 

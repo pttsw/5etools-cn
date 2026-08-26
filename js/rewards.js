@@ -39,6 +39,7 @@ class RewardsSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: reward.page,
 				entity: reward,
 				mdRow: [...cellsText],
 			},
@@ -102,6 +103,7 @@ class RewardsPage extends ListPage {
 			},
 			{
 				hash,
+				page: reward.page,
 				isExcluded,
 			},
 		);

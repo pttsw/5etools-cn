@@ -445,7 +445,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -741,7 +741,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -4248,7 +4248,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -6952,8 +6952,154 @@
 							]
 						}
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"The majestic giant elk is rare to the point that its appearance is often taken as a foreshadowing of an important event, such as the birth of a king. Legends tell of gods that take the form of giant elk when visiting the Material Plane. Many cultures therefore believe that to hunt these creatures is to invite divine wrath."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"A giant fire beetle is a nocturnal creature that takes its name from a pair of glowing glands that give off light. Miners and adventurers prize these creatures, for a giant fire beetle's glands continue to shed light for {@dice 1d6} days after the beetle dies. Giant fire beetles are most commonly found underground and in dark forests."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"A giant lizard can be ridden or used as a draft animal. Lizardfolk also keep them as pets, and subterranean giant lizards are used as mounts and pack animals by drow, duergar, and other Underdark dwellers.",
+								{
+									"type": "inset",
+									"name": "Variant: Giant Lizard Traits",
+									"entries": [
+										"Some giant lizards have one or both of the following traits.",
+										{
+											"type": "entries",
+											"name": "Hold Breath",
+											"entries": [
+												"The lizard can hold its breath for 15 minutes. (A lizard that has this trait also has a swimming speed of 30 feet.)"
+											]
+										},
+										{
+											"name": "Spider Climb",
+											"type": "entries",
+											"entries": [
+												"The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"Giant owls often befriend fey and other sylvan creatures and are guardians of their woodland realms."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"Like their smaller kin, giant sea horses are shy, colorful fish with elongated bodies and curled tails. Aquatic elves train them as mounts."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"A giant shark is 30 feet long and normally found in deep oceans. Utterly fearless, it preys on anything that crosses its path, including whales and ships."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"To snare its prey, a giant spider spins elaborate webs or shoots sticky strands of webbing from its abdomen. Giant spiders are most commonly found underground, making their lairs on ceilings or in dark, web-filled crevices. Such lairs are often festooned with web cocoons holding past victims."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"A giant vulture has advanced intelligence and a malevolent bent. Unlike its smaller kin, it will attack a wounded creature to hasten its end. Giant vultures have been known to haunt a thirsty, starving creature for days to enjoy its suffering."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"Smaller than a giant spider, a giant wolf spider hunts prey across open ground or hides in a burrow or crevice, or in a hidden cavity beneath debris."
+							]
+						}
+					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Giant Eagle",
+			"source": "MM",
+			"_copy": {
+				"name": "Giant Creatures",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"A giant eagle is a noble creature that speaks its own language and understands speech in the Common tongue. A mated pair of giant eagles typically has up to four eggs or young in their nest (treat the young as normal eagles)."
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -7750,6 +7896,44 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
+						"path": "bestiary/MM/Gnoll.webp"
+					},
+					"width": 906,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"name": "Gnoll Fang of Yeenoghu",
+			"source": "MM",
+			"_copy": {
+				"name": "Gnolls",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"Gnolls celebrate their victories by performing demonic rituals and making blood offerings to Yeenoghu.",
+											"Sometimes the demon lord rewards his worshipers by allowing one of them to be possessed by a demonic spirit. Marked as Yeenoghu's favorite, the lucky recipient becomes a fang of Yeenoghu, the chosen of the Gnoll Lord. In much the same way Yeenoghu created the first gnolls, a hyena that feasts on a fang's slain foe undergoes a horrible transformation, becoming a full-grown adult gnoll. Depending on the number of hyenas in a region, a fang of Yeenoghu can lead to a startling increase in the gnoll population. Finding and killing the fang is the only way to keep that population in check."
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
 						"path": "bestiary/MM/Gnoll Fang of Yeenoghu.webp"
 					},
 					"width": 944,
@@ -7806,7 +7990,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -13557,7 +13741,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -13703,7 +13887,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -16768,7 +16952,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -16978,7 +17162,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",

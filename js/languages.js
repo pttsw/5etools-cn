@@ -49,6 +49,7 @@ class LanguagesSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -108,6 +109,7 @@ class LanguagesPage extends ListPage {
 			},
 			{
 				hash,
+				page: it.page,
 				isExcluded,
 			},
 		);

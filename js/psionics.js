@@ -55,6 +55,7 @@ class PsionicsSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -140,6 +141,7 @@ class PsionicsPage extends ListPage {
 			},
 			{
 				hash,
+				page: p.page,
 				isExcluded,
 			},
 		);

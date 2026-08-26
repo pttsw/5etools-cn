@@ -286,6 +286,7 @@ class ModalFilterOptionalFeatures extends ModalFilterBase {
 			},
 			{
 				hash,
+				page: optfeat.page,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

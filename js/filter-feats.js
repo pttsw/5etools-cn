@@ -125,6 +125,7 @@ class PageFilterFeats extends PageFilterBase {
 		if (feat.repeatable != null) feat._fMisc.push(I18nUtil.get(feat.repeatable ? "page.feats.repeatable" : "page.feats.not_repeatable"));
 
 		feat._slAbility = ability.asTextShort || VeCt.STR_NONE;
+		feat._srtAbility = ability.asSortableString;
 		feat._slPrereq = prereqText;
 
 		FilterCommon.mutateForFilters_damageVulnResImmunePlayer(feat);
@@ -257,6 +258,8 @@ class ModalFilterFeats extends ModalFilterBase {
 			},
 			{
 				hash,
+				page: feat.page,
+				ability: feat._srtAbility,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

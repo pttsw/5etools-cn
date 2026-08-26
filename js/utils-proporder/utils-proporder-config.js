@@ -20,6 +20,7 @@ const getFoundryGeneric = ({propsMatchAdditional = [], isFeature = false} = {}) 
 		}),
 
 		"type",
+		"identifier",
 		"system",
 		PROPORDER_FOUNDRY_ACTIVITIES,
 		PROPORDER_FOUNDRY_EFFECTS,
@@ -523,6 +524,27 @@ const PROPORDER_ACTION = [
 
 	"seeAlsoAction",
 ];
+const _PROPORDER_CORPUS_CONTENTS = new ArrayKey(
+	"contents",
+	{
+		fnGetOrder: () => [
+			"name",
+			"ordinal",
+			new ArrayKey(
+				"headers",
+				{
+					order: [
+						"header",
+						"source",
+						"index",
+						"depth",
+						"statblock",
+					],
+				},
+			),
+		],
+	},
+);
 const PROPORDER_ADVENTURE = [
 	"name",
 	"alias",
@@ -534,6 +556,7 @@ const PROPORDER_ADVENTURE = [
 	"group",
 
 	"cover",
+	"coverCredit",
 	"coverUrl",
 	"published",
 	"publishedOrder",
@@ -545,7 +568,7 @@ const PROPORDER_ADVENTURE = [
 	"alAveragePlayerLevel",
 	"alLength",
 
-	"contents",
+	_PROPORDER_CORPUS_CONTENTS,
 ];
 const PROPORDER_ADVENTURE_DATA = [
 	"name",
@@ -566,11 +589,12 @@ const PROPORDER_BOOK = [
 	"group",
 
 	"cover",
+	"coverCredit",
 	"coverUrl",
 	"published",
 	"author",
 
-	"contents",
+	_PROPORDER_CORPUS_CONTENTS,
 ];
 const PROPORDER_BOOK_DATA = [
 	"name",
@@ -1041,6 +1065,7 @@ const PROPORDER_FOUNDRY_CLASS_FEATURE = [
 	"classSource",
 	"level",
 
+	"identifier",
 	"system",
 	PROPORDER_FOUNDRY_ACTIVITIES,
 	PROPORDER_FOUNDRY_EFFECTS,
@@ -1079,6 +1104,7 @@ const PROPORDER_FOUNDRY_SUBCLASS_FEATURE = [
 	"subclassSource",
 	"level",
 
+	"identifier",
 	"system",
 	PROPORDER_FOUNDRY_ACTIVITIES,
 	PROPORDER_FOUNDRY_EFFECTS,
@@ -2420,6 +2446,26 @@ const PROPORDER_SENSE = [
 
 	"entries",
 ];
+const PROPORDER_DECK_SPREAD_POSITION = [
+	"name",
+
+	"suits",
+
+	"entries",
+
+	"outcomes",
+];
+const PROPORDER_DECK_SPREAD = [
+	"name",
+
+	"source",
+	"page",
+
+	"entries",
+
+	new ArrayKey("positions", {fnGetOrder: () => PROPORDER_DECK_SPREAD_POSITION}),
+	"outcomes",
+];
 const PROPORDER_DECK = [
 	"name",
 	"alias",
@@ -2440,6 +2486,8 @@ const PROPORDER_DECK = [
 	"back",
 
 	"entries",
+
+	new ArrayKey("spreads", {fnGetOrder: () => PROPORDER_DECK_SPREAD}),
 
 	"hasCardArt",
 ];

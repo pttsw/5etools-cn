@@ -649,6 +649,7 @@ class ModalFilterItems extends ModalFilterBase {
 			},
 			{
 				hash,
+				page: item.page,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

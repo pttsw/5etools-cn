@@ -40,6 +40,7 @@ class ObjectsSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -106,6 +107,7 @@ class ObjectsPage extends ListPage {
 			},
 			{
 				hash,
+				page: obj.page,
 				isExcluded,
 			},
 		);

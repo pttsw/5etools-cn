@@ -157,7 +157,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -290,7 +290,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -850,7 +850,7 @@
 						"这种魁梧的四足恐龙体型庞大，足以使绝大部分捕食者望而远之。它致命的尾巴能驱赶甚至杀死这些较小的威胁。"
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1136,7 +1136,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1236,7 +1236,11 @@
 			"ENG_name": "Darkling",
 			"name": "暗灵",
 			"source": "VGM",
-			"entries": [
+			"_copy": {
+				"name": "Darklings",
+				"source": "VGM"
+			},
+			"images": [
 				{
 					"type": "entries",
 					"entries": [
@@ -1272,7 +1276,15 @@
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Darkling Elder",
+			"source": "VGM",
+			"_copy": {
+				"name": "Darklings",
+				"source": "VGM"
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1325,17 +1337,6 @@
 						}
 					]
 				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/VGM/Darkling.webp"
-					},
-					"width": 350,
-					"height": 659
-				}
 			]
 		},
 		{
@@ -1378,7 +1379,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1794,6 +1795,46 @@
 			"ENG_name": "Firenewt Warlock of Imix",
 			"name": "熔螈·伊米希魔契师",
 			"source": "VGM",
+			"_copy": {
+				"name": "Firenewts",
+				"source": "VGM"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/VGM/Firenewt.webp"
+					},
+					"credit": "Richard Whitters",
+					"width": 700,
+					"height": 865
+				}
+			]
+		},
+		{
+			"name": "Firenewt Warrior",
+			"source": "VGM",
+			"_copy": {
+				"name": "Firenewts",
+				"source": "VGM"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/VGM/Firenewt.webp"
+					},
+					"credit": "Richard Whitters",
+					"width": 700,
+					"height": 865
+				}
+			]
+		},
+		{
+			"name": "Firenewts",
+			"source": "VGM",
 			"entries": [
 				{
 					"type": "entries",
@@ -1993,7 +2034,7 @@
 						"不像其他类人生物的领袖那样可能潜伏在他们的仆从身后，一只弗林德鬣狗人在战斗中身先士卒。它的链枷在被它击中的人身上造成剧痛、麻痹和迷惑。"
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -2239,6 +2280,26 @@
 			"ENG_name": "Giant Strider",
 			"name": "阔步鸟",
 			"source": "VGM",
+			"_copy": {
+				"name": "Firenewts",
+				"source": "VGM"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/VGM/Giant Strider.webp"
+					},
+					"credit": "Richard Whitters",
+					"width": 700,
+					"height": 639
+				}
+			]
+		},
+		{
+			"name": "Giants",
+			"source": "VGM",
 			"entries": [
 				{
 					"type": "entries",
@@ -2268,7 +2329,7 @@
 									]
 								},
 								{
-									"type": "quote",
+									"name": "Vaprak's Blessing",
 									"entries": [
 										"对它们而言这总是一场至死方休的战斗，所以对汝而言也是一样。"
 									],
@@ -2285,18 +2346,45 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
+				},
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/VGM/Giant Strider.webp"
-					},
-					"credit": "Richard Whitters",
-					"width": 700,
-					"height": 639
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"To forestall the inevitable, some storm giants approaching the end of their natural life spans seek an escape from death. They plumb the depths of their powerful connection to the elements and disperse themselves into nature, literally transforming into semiconscious storms. The blizzard that rages unendingly around a mountain peak, the vortex that swirls around a remote island, or the thunderstorm that howls ceaselessly up and down a rugged coastline could, in fact, be the undying form of a storm giant clinging to existence.",
+								{
+									"name": "Elemental Weapons",
+									"entries": [
+										"A storm giant quintessent sheds its armor and weapons, but gains the power to form makeshift weapons out of thin air. When the giant has no further use of them, or when the giant dies, its elemental weapons disappear."
+									],
+									"type": "entries"
+								},
+								{
+									"name": "Forsaken Form",
+									"entries": [
+										"A storm giant quintessent can revert to its true giant form on a whim. The change is temporary but can be maintained long enough for the giant to communicate with a mortal, carry out a short task, or defend its home against aggressors."
+									],
+									"type": "entries"
+								}
+							]
+						},
+						{
+							"type": "quote",
+							"entries": [
+								"Zhents claim the Black Road the safest path across the desert of Anauroch, but there's a stretch that passes near the sand-swallowed ruins of a once-great arch\u2013a portal built by giants, some say. a sandstorm rages all around it, and in the storm some have seen a face: a giant scowling visage."
+							],
+							"by": "Elminster"
+						},
+						{
+							"type": "entries",
+							"name": "A Quintessent's Lair",
+							"entries": [
+								"A storm giant quintessent has no need for castles or dungeon lairs. Its lair is usually a secluded region or prominent geographic feature, such as a mountain peak, a great waterfall, a remote island, a fog-shrouded loch, a beautiful coral reef, or a windswept desert bluff. As befits the environment, the storm in which the giant lives could be a blizzard, a typhoon, a thunderstorm, or a sandstorm."
+							]
+						}
+					]
 				}
 			]
 		},
@@ -2473,13 +2561,58 @@
 			"source": "VGM",
 			"entries": [
 				{
+					"type": "quote",
+					"entries": [
+						"When gnolls are weakened, they seek out isolated settlements, maim and disable its inhabitants, and feed upon them as they rest and regain strength."
+					],
+					"by": "Elminster"
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"A flind is an exceptionally strong and vicious gnoll that commands and directs the war band it is a part of. It wields a flail imbued with powerful magic by Yeenoghu himself.",
+						"A war band can have only one flind, and that creature sets a war band's path. Because of its special connection to Yeenoghu, a flind uses god-given omens and demonic insight to guide the gnolls toward weak prey ripe for slaughter.",
+						"Unlike other humanoid leaders that might skulk behind their minions, a flind leads the charge in battle. Its flail causes wracking pain, paralysis, and disorientation in those struck by it."
+					]
+				},
+				{
+					"type": "quote",
+					"entries": [
+						"When gnolls are weakened, they seek out isolated settlements, maim and disable its inhabitants, and feed upon them as they rest and regain strength."
+					],
+					"by": "Elminster"
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"If any group of gnolls could be said to be more feral than the others, that distinction would go to the flesh gnawers. These gnolls eschew the use of ranged weapons in favor of short blades that they wield with speed and efficiency. In the thick of a fight, they are capable of dashing across the field, slashing and snarling as they run down stragglers and finish off wounded foes."
+					]
+				},
+				{
+					"type": "quote",
+					"entries": [
+						"When gnolls are weakened, they seek out isolated settlements, maim and disable its inhabitants, and feed upon them as they rest and regain strength."
+					],
+					"by": "Elminster"
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"Hunters are the stealthiest gnolls in a war band, and they put their talents to use on the battlefield in a number of ways. In the vanguard of a war band, hunters creep around, picking off isolated opposition while clearing the way for the rest of the force to run roughshod over the enemy's territory.",
+						"Hunters are particularly skilled with the longbow, and they fire arrows with viciously barbed heads. Even when a hunter doesn't kill its target with its first shot, the arrow strike brings so much pain that the victim is hobbled in its attempt to run away. When a hunter on the prowl finds prey and isn't concerned about remaining stealthy, it sounds a horn crafted from bone that produces a keening wail similar to a banshee's yell."
+					]
+				},
+				{
 					"type": "entries",
 					"entries": [
 						{
 							"type": "entries",
 							"entries": [
+								"Sometimes gnolls turn against each other, perhaps to determine who rules a war band or because of extreme starvation. Even under ordinary circumstances, gnolls that are deprived of victims for too long can't control their hunger and violent urges. Eventually, they fight among themselves.",
+								"The survivors devour the flesh of their slain comrades but preserve the bones. Then, by invoking rituals to Yeenoghu, they bring the remains back to a semblance of life in the form of a gnoll witherling.",
+								"Witherlings act much as gnolls do in life, traveling with their comrades and trying to kill anything in their path. They don't eat and aren't motivated by hunger, leaving more flesh for the rest of the war band. Gnoll witherlings are incapable of wielding any weapon more sophisticated than a simple club.",
 								{
-									"type": "entries",
+									"name": "Undead Nature",
 									"entries": [
 										"格龙蛙人是一个生活在雨林和热带森林中好斗的蛙型类人生物，它们有很强的领地意识且总觉得自己优于其他生物。",
 										{
@@ -2590,13 +2723,30 @@
 												"一只格龙蛙人如果在一天内没有在水中浸泡至少1小时，那么它在该天结束时就会处于一级{@condition 力竭}状态。该格龙蛙人只能通过魔法或在水中浸泡至少1小时来恢复这种{@condition 力竭}状态。"
 											]
 										}
-									]
+									],
+									"type": "entries"
 								}
 							]
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Green Guard Drake",
+			"source": "VGM",
+			"_copy": {
+				"name": "Guard Drake",
+				"source": "VGM"
+			}
+		},
+		{
+			"name": "Grung",
+			"source": "VGM",
+			"_copy": {
+				"name": "Grungs",
+				"source": "VGM"
+			},
 			"images": [
 				{
 					"type": "image",
@@ -2614,7 +2764,11 @@
 			"ENG_name": "Grung Elite Warrior",
 			"name": "格龙蛙人精英战士",
 			"source": "VGM",
-			"entries": [
+			"_copy": {
+				"name": "Grungs",
+				"source": "VGM"
+			},
+			"images": [
 				{
 					"type": "entries",
 					"entries": [
@@ -2739,7 +2893,15 @@
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Grung Wildling",
+			"source": "VGM",
+			"_copy": {
+				"name": "Grungs",
+				"source": "VGM"
+			},
 			"images": [
 				{
 					"type": "image",
@@ -2881,18 +3043,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/VGM/Grung.webp"
-					},
-					"credit": "Shawn Wood",
-					"width": 700,
-					"height": 341
 				}
 			]
 		},
@@ -3045,7 +3195,50 @@
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Hobgoblin Devastator",
+			"source": "VGM",
+			"_copy": {
+				"name": "Hobgoblins",
+				"source": "VGM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"In hobgoblin society, the Academy of Devastation identifies hobgoblins with a talent for magic and puts them through a grueling training regimen that endows them with the ability to call down fireballs and other destructive magic on the host's behalf. A hobgoblin devastator on the battlefield is simultaneously a boon to all its allies and a threat to every foe around it.",
+											{
+												"name": "Into the Fray",
+												"entries": [
+													"While other cultures treat their wizards as cloistered academics, hobgoblins expect their spellcasters to fight. Devastators learn the basics of weapon use, and they measure their deeds by the enemies defeated though their magic.",
+													"Devastators have the respect of other members of the host, and they receive obedience and deference from many quarters. Their ability to lay waste to entire formations with a single use of magic allows them to gain far more glory in battle than a single warrior.",
+													"Other cultures might view the use of such abilities as a short cut to glory, but to hobgoblins a gift for magic is as valued and useful as a strong sword arm or brilliance in tactics. They are all boons from Maglubiyet that must be cultivated and unleashed upon the enemy.",
+													"The Academy of Devastation believes that an academic approach to magic is a sign of weakness and inefficiency. A warrior doesn't need to know about metallurgy to wield a blade, so why should a wizard care about where magic comes from? Devastators love to prove their superiority in battle by seeking out enemy spellcasters and destroying them."
+												],
+												"type": "entries"
+											},
+											{
+												"name": "Only Results Matter",
+												"entries": [
+													"Devastators study a simplified form of evocation magic. Their training lacks the theory and context that other folk study, making them skilled in battle but relatively illiterate on the finer points of how and why their magic works."
+												],
+												"type": "entries"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -3396,11 +3589,11 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/VGM/Ki-rin.webp"
+						"path": "bestiary/VGM/Kobold Scale Sorcerer.webp"
 					},
-					"credit": "Daniel Ljunggren",
+					"credit": "Scott Murphy",
 					"width": 700,
-					"height": 914
+					"height": 716
 				}
 			]
 		},
@@ -3510,18 +3703,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/VGM/Kobold Scale Sorcerer.webp"
-					},
-					"credit": "Scott Murphy",
-					"width": 700,
-					"height": 716
 				}
 			]
 		},
@@ -3859,7 +4040,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -6184,8 +6365,190 @@
 							]
 						}
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"Yuan-ti malisons who become priestly devotees of a particular god-be it Sseth, Dendar the Night Serpent, or Merrshaulk-often rise through the ranks to become spiritual leaders among the serpent folk. These priests perform sacrificial rites to appease their vile gods."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Yuan-ti Broodguard",
+									"entries": [
+										"Broodguards are humanoids transformed by yuan-ti into simple-minded, scaly creatures that do their masters' bidding. The transformation process warps not only a subject's body but also its mind, making it instinctively obey any yuan-ti and filling it with a seething rage that rises at the sight of non-reptilian creatures.",
+										"Although broodguards have low intelligence, they are able to perform simple yet important tasks in the community, such as guarding eggs or patrolling for intruders. The yuan-ti refer to broodguards as \"histachii,\" which means \"egg-watchers.\"",
+										{
+											"name": "Human No More",
+											"entries": [
+												"Most broodguards are made from human prisoners forced to consume a magical brew that renders them helpless and unable to fight off the inevitable. A human transformed into a broodguard loses all semblance of who it once was, and even its human origin is barely discernible. A broodguard is hairless and emaciated, with yellow-green, scaly skin. It has beady, bloodshot eyes and a forked tongue, and smells faintly of rotting meat. Broodguards can speak but rarely do so, preferring to use snake-like hisses and guttural noises."
+											],
+											"type": "entries"
+										}
+									]
+								},
+								{
+									"type": "inset",
+									"name": "Making a Broodguard",
+									"entries": [
+										"Yuan-ti create broodguards from captured humanoids. Each subject is fed a special potion that immediately renders it {@condition incapacitated} and transforms it into a broodguard over the next {@dice 1d6 + 6} days. A subject forced to imbibe the brew can make a {@dc 15} Constitution saving throw; on a success, it takes 14 ({@damage 4d6}) poison damage and isn't otherwise affected.",
+										"A spell such as lesser restoration or remove curse can end the transformation process at any time before it runs its course. After the process is complete, only a {@spell wish} spell can reverse the effect."
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"Yuan-ti malisons who become priestly devotees of a particular god-be it Sseth, Dendar the Night Serpent, or Merrshaulk-often rise through the ranks to become spiritual leaders among the serpent folk. These priests perform sacrificial rites to appease their vile gods."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Yuan-ti Mind Whisperer",
+									"entries": [
+										"Mind whisperers are malison spellcasters that enter into a pact with the serpent god Sseth, the Sibilant Death. They use their abilities to convert others to their faith, increase their personal power, and befuddle the minds of their enemies.",
+										"A mind whisperer is elusive, manipulative, unpredictable, and willing to cheat or kill comrades and rivals alike if doing so benefits it. The worshipers of Sseth have their hands in many schemes, often plying the middle ground between two factions, and thus spend a lot of energy making sure neither of their allies learn of their conflicting connections. Even among yuan-ti, mind whisperers are known for being self-important, sneaky, and prone to flee at the first sign of trouble.",
+										"This malison is the type that has a human body and a snake head."
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"Yuan-ti malisons who become priestly devotees of a particular god-be it Sseth, Dendar the Night Serpent, or Merrshaulk-often rise through the ranks to become spiritual leaders among the serpent folk. These priests perform sacrificial rites to appease their vile gods."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Yuan-ti Nightmare Speaker",
+									"entries": [
+										"Nightmare speakers are female yuan-ti malison priests that make a pact with the Dendar the Night Serpent to feed their deity the fears and nightmares of their victims in exchange for power in the mortal world. The priestesses receive nightmarish visions from Dendar, which they interpret as prophecies, and then use their magic and influence to make these visions come true.",
+										"The cruelest of all yuan-ti, nightmare speakers revel in torturing prisoners and slaves, leaving them in a constant state of fear and dread. They prefer to terrify rather than kill their opponents. They manipulate humanoid communities for the purpose of acquiring more victims, and enjoy the company of undead.",
+										"This malison is the type that has a human head and upper body with a serpentine lower body instead of legs."
+									]
+								},
+								{
+									"type": "quote",
+									"entries": [
+										"I'm the explorer who likes to travel on roads and spend my evenings in cozy inns, not hacking through jungles or trudging across deserts through blinding sand to learn the secrets of the serpent folk. I've met a few purebloods and broodguards in my day, but if I had met a yuan-ti pit master, I'm quite sure I'd not be here to tell the tale!"
+									],
+									"by": "Volo"
+								},
+								{
+									"type": "quote",
+									"entries": [
+										"Ye almost certainly would not."
+									],
+									"by": "Elminster"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"Yuan-ti malisons who become priestly devotees of a particular god-be it Sseth, Dendar the Night Serpent, or Merrshaulk-often rise through the ranks to become spiritual leaders among the serpent folk. These priests perform sacrificial rites to appease their vile gods."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Yuan-ti Pit Master",
+									"entries": [
+										"Pit masters are yuan-ti malison priests that have made a pact with the god Merrshaulk and seek to rouse him from his slumber by sacrificing humanoids to him. They are the most traditionalist in attitude among yuan-ti and believe that they are best equipped to achieve the goals of their people.",
+										"Pit masters are deeply involved in the race's long-term plan to take over humanoid governments, as well as in the ongoing effort to protect their cities from discovery or attacks by hostiles. They oppose reckless behavior and argue for a slow, cautious approach in all matters.",
+										"This malison is the type that has a human head and body and snakes for arms."
+									]
+								}
+							]
+						}
+					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Yuan-ti Anathema",
+			"source": "VGM",
+			"_copy": {
+				"name": "Yuan-ti",
+				"source": "VGM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											{
+												"type": "entries",
+												"entries": [
+													"Yuan-ti malisons who become priestly devotees of a particular god-be it Sseth, Dendar the Night Serpent, or Merrshaulk-often rise through the ranks to become spiritual leaders among the serpent folk. These priests perform sacrificial rites to appease their vile gods."
+												]
+											},
+											{
+												"type": "entries",
+												"name": "Yuan-ti Anathema",
+												"entries": [
+													"A yuan-ti abomination's quest for godhood might lead it to perform a ritual that, if successful, transforms it into an even greater form: a yuan-ti anathema. This ritual demands the sacrifice of hundreds of snakes and requires the abomination to bathe in the blood of its enemies. The transformation is quick yet painful.",
+													"Not all yuan-ti are eager to see one of their own become an anathema, since anathemas brutally subjugate their lessers for their own evil ends.",
+													{
+														"name": "Not Quite Divine",
+														"entries": [
+															"An anathema considers itself a demigod on the path to greater divinity. It demands obeisance from weaker yuan-ti and uses every resource at its disposal to launch small-scale wars against its neighbors. Each conquest brings new slaves and sacrifices, as well as glory and riches, that the anathema thinks it needs to achieve true divinity.",
+															"An anathema's most loyal yuan-ti followers see it as the pinnacle of the serpentine form, an unbelievable improvement on the nearly perfect abomination. Its devoted human followers think of it as \"divine flesh in a mortal body,\" and cultists serving an anathema tend to be more bloodthirsty and self-sacrificing in its presence."
+														],
+														"type": "entries"
+													},
+													{
+														"name": "Immortal",
+														"entries": [
+															"Anathemas don't age, allowing them to pursue their goals until the end of days. Truly powerful ones can grow to rule multiple yuan-ti cities and bring entire regions, including humanoid realms, under yuan-ti control."
+														],
+														"type": "entries"
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",

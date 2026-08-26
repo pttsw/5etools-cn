@@ -3632,7 +3632,7 @@
 								"一些休整期和加盟业活动会调整特许经营的月成本。关于如何确定特许经营的基础月成本，请参阅本章前面的\"{@book 特许经营发展|AI|1|特许经营发展}\"部分；关于该活动如何修改基础成本的更多信息，请参阅下面的\"{@book 营运加盟业|AI|1|营运加盟业}\"部分。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@variantrule 休整期和经营活动：勘探领域|AI|勘探领域|休整期和经营活动：勘探领域}",
 										"{@variantrule 休整期和经营活动：特许经营重组|AI|特许经营重组|休整期和经营活动：特许经营重组}",
@@ -3645,6 +3645,66 @@
 										"{@variantrule 休整期和经营活动：闲谈|AI|闲谈|休整期和经营活动：闲谈}",
 										"{@variantrule 休整期和经营活动：团建|AI|团队建设|休整期和经营活动：团建}"
 									]
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Explore Territory",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Franchise Restructuring",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Headquarters Modification",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Marketeering",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Philanthropic Enterprise",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Running a Franchise",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Scrutineering",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Shady Business Practice",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Schmoozing",
+									"tag": "variantrule",
+									"source": "AI"
+								},
+								{
+									"type": "statblock",
+									"name": "Downtime and Franchise Activity: Team Building",
+									"tag": "variantrule",
+									"source": "AI"
 								}
 							],
 							"id": "0aa"
@@ -3687,7 +3747,7 @@
 						"谁知道呢？ 一个令人难以置信的傻瓜也可能对你有利！",
 						{
 							"type": "list",
-							"columns": 2,
+							"columns": 3,
 							"items": [
 								"{@background 名人冒险家的后裔|AI}",
 								"{@background 失败商人|AI}",
@@ -3695,6 +3755,36 @@
 								"{@background 起诉人|AI}",
 								"{@background 竞争对手实习生|AI}"
 							]
+						},
+						{
+							"type": "statblock",
+							"name": "Celebrity Adventurer's Scion",
+							"tag": "background",
+							"source": "AI"
+						},
+						{
+							"type": "statblock",
+							"name": "Failed Merchant",
+							"tag": "background",
+							"source": "AI"
+						},
+						{
+							"type": "statblock",
+							"name": "Gambler",
+							"tag": "background",
+							"source": "AI"
+						},
+						{
+							"type": "statblock",
+							"name": "Plaintiff",
+							"tag": "background",
+							"source": "AI"
+						},
+						{
+							"type": "statblock",
+							"name": "Rival Intern",
+							"tag": "background",
+							"source": "AI"
 						}
 					],
 					"id": "0dd"
@@ -6755,7 +6845,7 @@
 						},
 						{
 							"type": "list",
-							"columns": 2,
+							"columns": 3,
 							"items": [
 								"{@spell 扭曲价值|AI}",
 								"{@spell 快速交友|AI}",
@@ -7374,7 +7464,7 @@
 				"这一附录中详细介绍了一些在本次冒险中扮演角色的生物，它们也能在艾奎兹玄有限责任公司战役中继续发挥作用。",
 				{
 					"type": "list",
-					"columns": 2,
+					"columns": 3,
 					"items": [
 						"{@creature 混沌四足怪|AI}",
 						"{@creature 发条龙|AI}",
@@ -7913,11 +8003,25 @@
 				"在《被遗忘的国度》战役中，加盟商可能会获得本节中两种独特载具的使用权\u2014\u2014或者发现自己正遭受它们的攻击。这两种载具均由总部制造并对外出租，有时甚至价格合理。",
 				{
 					"type": "list",
-					"columns": 2,
+					"columns": 3,
 					"items": [
 						"{@vehicle 战斗气球|AI}",
 						"{@vehicle 机械眼魔|AI}"
 					]
+				},
+				{
+					"type": "statblock",
+					"name": "Battle Balloon",
+					"tag": "vehicle",
+					"source": "AI",
+					"style": "narrow"
+				},
+				{
+					"type": "statblock",
+					"name": "Mechanical Beholder",
+					"tag": "vehicle",
+					"source": "AI",
+					"style": "narrow"
 				}
 			],
 			"id": "1ae"
@@ -7941,6 +8045,48 @@
 						"{@item 旅行表盘|AI}",
 						"{@item 星轮|AI}"
 					]
+				},
+				{
+					"type": "statblock",
+					"name": "Orrery of the Wanderer",
+					"tag": "item",
+					"source": "AI"
+				},
+				{
+					"type": "statblock",
+					"name": "Chronolometer",
+					"tag": "item",
+					"source": "AI"
+				},
+				{
+					"type": "statblock",
+					"name": "Dimensional Loop",
+					"tag": "item",
+					"source": "AI"
+				},
+				{
+					"type": "statblock",
+					"name": "Far Gear",
+					"tag": "item",
+					"source": "AI"
+				},
+				{
+					"type": "statblock",
+					"name": "Rotor of Return",
+					"tag": "item",
+					"source": "AI"
+				},
+				{
+					"type": "statblock",
+					"name": "Timepiece of Travel",
+					"tag": "item",
+					"source": "AI"
+				},
+				{
+					"type": "statblock",
+					"name": "Wheel of Stars",
+					"tag": "item",
+					"source": "AI"
 				}
 			],
 			"id": "1af"

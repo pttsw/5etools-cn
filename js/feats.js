@@ -56,6 +56,8 @@ class FeatsSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: it.page,
+				ability: it._srtAbility,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -123,6 +125,8 @@ class FeatsPage extends ListPage {
 			},
 			{
 				hash,
+				page: feat.page,
+				ability: feat._srtAbility,
 				isExcluded,
 			},
 		);

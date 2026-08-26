@@ -161,7 +161,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -238,7 +238,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -288,7 +288,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -338,7 +338,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -388,7 +388,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -438,7 +438,7 @@
 						}
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -545,7 +545,7 @@
 						"棕色独眼印鱼喜欢把猎物囫囵吞下。这种生物的胃里充满了有毒气体，能杀死所有被吞下后尚且存活的生物。"
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -787,8 +787,42 @@
 					"entries": [
 						"诘弗河马人船员，它们组成了大多数诘弗人船只上的船员主体，是纪律严明的水手。"
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"A giff shock trooper is trained to mount assaults on enemy strongholds. Each one is adept at softening up the enemy from a distance with firearms before charging into melee to mop up the foes that remain standing."
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"A high-ranking giff who takes up the life of an independent mercenary might amass enough power and influence to become a warlord.",
+						"A giff warlord usually commands a small fleet of spelljamming ships and operates out of a heavily defended stronghold. Anyone who shares the warlord's ideology\u2014whatever it might be\u2014is eligible to join the ranks of the warlord's army, which is mainly made up of mages who helm the ships of the fleet and provide magical firepower, sellswords of various species, and guns for hire in the form of giff shock troopers."
+					]
 				}
 			]
+		},
+		{
+			"name": "Giff Shipmate",
+			"source": "BAM",
+			"_copy": {
+				"name": "Giff",
+				"source": "BAM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									"Giff shipmates, who make up the bulk of the crew on most giff vessels, are disciplined sailors."
+								]
+							}
+						]
+					}
+				}
+			}
 		},
 		{
 			"ENG_name": "Giff Shock Trooper",
@@ -851,8 +885,43 @@
 					"entries": [
 						"吉斯洋基人海盗们在星界中寻找财富，然后将搜刮来的财富带回星界深渊的隐藏堡垒中。它们中的许多人是失去了为巫妖女王维拉基斯服务的意志的战士；它们更喜欢按照自己的准则生活，或者陶醉于自己那肆无忌惮的自由。"
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"Githyanki star seers believe that the stars are the eyes of the multiverse. They use their magic to contact ancient stellar entities such as Acamar, Caiphon, and Hadar, hoping to learn their secrets, then record these secrets in journals. They scour Wildspace in search of new entities as well, hoping to be the first to contact them.",
+						"Some of the secrets learned are so cryptic that they require years of research to decipher, but time is of little concern to a star seer, who resides mainly on the Astral Plane."
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"A githyanki xenomancer travels to the farthest reaches of Wildspace and the Astral Sea, even visiting worlds of the Material Plane from time to time, to study and catalog creatures it has never encountered before. Friendly contact with sapient creatures can bring the xenomancer's diplomatic skills to the forefront, while hostile contact becomes a test of the xenomancer's survival skills.",
+						"Sometimes a xenomancer's research requires that a specimen be captured and imprisoned (to study its behavior) or killed and dissected (to study or harvest its insides). Many xenomancers prefer to do this work in their laboratories on the Astral Plane."
+					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Githyanki Buccaneer",
+			"source": "BAM",
+			"_copy": {
+				"name": "Githyanki",
+				"source": "BAM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									"Githyanki buccaneers ply the Astral Plane for riches, which they haul back to their hidden fortresses in the Deep Astral. Many of them are warriors who lost the will to serve the Lich-Queen Vlaakith; they prefer to live by their own code or revel in their unbridled freedom."
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -954,7 +1023,7 @@
 						"哈多兹鼯猴人探索者在荒宇系中寻找财富和冒险。它们经常在魔法船上担任领航员。对它们来说，星界是一个值得进一步探索、大部分尚未绘制的广阔空间。"
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1226,6 +1295,20 @@
 					"entries": [
 						"纽吉怪能活大约一个世纪。当一个个体因年龄增长而日益虚弱时，群体中的其他纽吉怪会制服它并给它注入一种特殊的毒药。这种毒素把年老的纽吉怪转变成一团臃肿的肉块。年轻的纽吉怪在它上面产卵，当幼体出壳时，它们会吃掉年迈的纽吉怪并相互吞食，直到只剩下几个最强壮的新生儿。有时候，这些新生儿会为一个邪恶的目标而联合起来，形成一个跳跃前行的集群。"
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"Neogi pirates are adult neogi that serve as crew members aboard nightspiders (see the {@i Astral Adventurer's Guide}) and other neogi-controlled vessels.",
+						"Neogi society makes no distinction between individuals, aside from the ability that a given creature has to control others, and they don't comprehend the emotional aspects of existence that humans and similar beings experience. To a neogi, hatred is as foreign a sensation as love, and showing loyalty in the absence of authority is foolishness.",
+						"Neogi pirates (and adult neogi in general) mark themselves and those they capture through the use of dyes, transformational magic, and other markings intended to signify rank, achievements, and the identity of the individual's leader. By these signs, neogi can identify each other's place in the hierarchy\u2014and they must defer to those of higher station or risk harsh punishment."
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"A neogi void hunter is bigger than a typical adult neogi and often fills the role of captain aboard a nightspider (see the {@i Astral Adventurer's Guide}). The void hunter pledges fealty to one or more stellar entities in exchange for a taste of their immense power. These entities\u2014known by such names as Acamar, Caiphon, Gibbeth, and Hadar\u2014resemble stars and embody the essence of evil."
+					]
 				}
 			]
 		},
@@ -1294,7 +1377,7 @@
 						"有时，由于某种生体异常，一个流浆体在成年（20岁左右）后会产生体积膨胀。流浆体利用其增大的体型和力量对更弱小的生物发号施令，从而可以轻易地篡取权力，聚拢起一帮忠诚的下属、佞臣和潜在的篡夺者。流浆体头目可能会是一个公会的主人，一个犯罪企业的领导者，一个流浆体社区的大王，或是一艘魔法船的船长。无论它们为自己争取到什么样的角色，除了已有的力量和体型之外，流浆体头目还需要不可小觑的魅力和智慧，才能长久地保有权力。"
 					]
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1669,8 +1752,35 @@
 					"entries": [
 						"沙蜥人污染者可以使周遭植物变得荒芜，同时从身处这些地方的其他生物身上汲取生命能量。"
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"Ssurran poisoners coat their weapons with toxin and hurl bombs that release poisonous gas."
+					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Ssurran Defiler",
+			"source": "BAM",
+			"_copy": {
+				"name": "Ssurran",
+				"source": "BAM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									"Ssurran defilers can lay waste to the plant life around them and draw vital energy at the same time from other creatures that are caught in the area."
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -1745,8 +1855,41 @@
 					"entries": [
 						"螳螂人角斗士喜欢在战斗中检验自己的能力，并经常用敌人的鲜血涂抹自己的甲壳。"
 					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"Thri-kreen hunters are skilled foragers and stalkers. A thri-kreen hunter encountered in Wildspace might be on the trail of a fugitive or leading a gang of pirates."
+					]
+				},
+				{
+					"type": "entries",
+					"entries": [
+						"Thri-kreen mystics use psionics to navigate difficult terrain in Wildspace, turn invisible, and drain life from their prey. They often serve as spelljammers aboard thri-kreen ships."
+					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Thri-kreen Gladiator",
+			"source": "BAM",
+			"_copy": {
+				"name": "Thri-kreen",
+				"source": "BAM",
+				"_mod": {
+					"entries": {
+						"mode": "setProp",
+						"value": [
+							{
+								"type": "entries",
+								"entries": [
+									"Thri-kreen gladiators relish opportunities to test their mettle in combat and often paint their carapaces with the blood of their enemies."
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",

@@ -66,6 +66,7 @@ class OptionalFeaturesSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -140,6 +141,7 @@ class OptionalFeaturesPage extends ListPage {
 			},
 			{
 				hash,
+				page: it.page,
 				isExcluded,
 			},
 		);

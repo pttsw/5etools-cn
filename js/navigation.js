@@ -13,6 +13,14 @@ class NavBar {
 	static _CAT_SETTINGS = "设置";
 	static _CAT_CACHE = "缓存数据";
 
+	static _CACHE_SIZE_MB = 1024 ** 2;
+	static _CACHE_SIZE_GB = 1024 ** 3;
+	static _CACHE_SIZE_ADVENTURES_BYTES = 50 * this._CACHE_SIZE_MB;
+	static _CACHE_SIZE_BOOK_IMAGES_BYTES = this._CACHE_SIZE_GB;
+	static _CACHE_SIZE_ADVENTURE_IMAGES_BYTES = 2 * this._CACHE_SIZE_GB;
+	static _CACHE_SIZE_ALL_IMAGES_BYTES = 4 * this._CACHE_SIZE_GB;
+	static _CACHE_SIZE_ALL_BYTES = 5 * this._CACHE_SIZE_GB;
+
 	static _navbar = null;
 
 	static _tree = {};
@@ -214,40 +222,40 @@ class NavBar {
 		this._addElement_button(
 			{
 				keyPath: [NavBar._CAT_SETTINGS, NavBar._CAT_CACHE],
-				html: "缓存冒险文本 <small>(50MB+)</small>",
-				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /data\/adventure/}),
+				html: `缓存冒险文本 <small>(${Parser.bytesToHumanReadable(this._CACHE_SIZE_ADVENTURES_BYTES, {fixedDigits: 0})}+)</small>`,
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /data\/adventure/, estimatedSizeBytes: this._CACHE_SIZE_ADVENTURES_BYTES}),
 				title: "缓存冒险文本用于离线使用。",
 			},
 		);
 		this._addElement_button(
 			{
 				keyPath: [NavBar._CAT_SETTINGS, NavBar._CAT_CACHE],
-				html: "缓存书籍图片 <small>(1GB+)</small>",
-				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /img\/book/, isRequireImages: true}),
+				html: `缓存书籍图片 <small>(${Parser.bytesToHumanReadable(this._CACHE_SIZE_BOOK_IMAGES_BYTES, {fixedDigits: 0})}+)</small>`,
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /img\/book/, isRequireImages: true, estimatedSizeBytes: this._CACHE_SIZE_BOOK_IMAGES_BYTES}),
 				title: "缓存书籍图片用于离线使用。注意，书籍文本会自动缓存。",
 			},
 		);
 		this._addElement_button(
 			{
 				keyPath: [NavBar._CAT_SETTINGS, NavBar._CAT_CACHE],
-				html: "缓存冒险文本和图片 <small>(2GB+)</small>",
-				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /(?:data|img)\/adventure/, isRequireImages: true}),
+				html: `缓存冒险文本和图片 <small>(${Parser.bytesToHumanReadable(this._CACHE_SIZE_ADVENTURE_IMAGES_BYTES, {fixedDigits: 0})}+)</small>`,
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /(?:data|img)\/adventure/, isRequireImages: true, estimatedSizeBytes: this._CACHE_SIZE_ADVENTURE_IMAGES_BYTES}),
 				title: "缓存冒险文本和图片用于离线使用。",
 			},
 		);
 		this._addElement_button(
 			{
 				keyPath: [NavBar._CAT_SETTINGS, NavBar._CAT_CACHE],
-				html: "缓存所有图片 <small>(4GB+)</small>",
-				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /img/, isRequireImages: true}),
+				html: `缓存所有图片 <small>(${Parser.bytesToHumanReadable(this._CACHE_SIZE_ALL_IMAGES_BYTES, {fixedDigits: 0})}+)</small>`,
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /img/, isRequireImages: true, estimatedSizeBytes: this._CACHE_SIZE_ALL_IMAGES_BYTES}),
 				title: "缓存所有图片用于离线使用。",
 			},
 		);
 		this._addElement_button(
 			{
 				keyPath: [NavBar._CAT_SETTINGS, NavBar._CAT_CACHE],
-				html: "缓存所有数据 <small>(5GB+)</small>",
-				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /./, isRequireImages: true}),
+				html: `缓存所有数据 <small>(${Parser.bytesToHumanReadable(this._CACHE_SIZE_ALL_BYTES, {fixedDigits: 0})}+)</small>`,
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, {route: /./, isRequireImages: true, estimatedSizeBytes: this._CACHE_SIZE_ALL_BYTES}),
 				title: "缓存所有数据用于离线使用。",
 			},
 		);
@@ -919,7 +927,41 @@ NavBar.InteractionManager = class {
 		}
 	}
 
-	static async _pOnClick_button_preloadOffline (evt, {route, isRequireImages = false}) {
+	/**
+	 * Note that storage estimates are only estimates -- prefer attempting a preload
+	 *   if not explicitly blocked from doing so.
+	 */
+	static async _pOnClick_button_preloadOffline_pGetIsStorageSpaceAvailable ({estimatedSizeBytes}) {
+		if (!navigator.storage) return true;
+		if (!estimatedSizeBytes) return true;
+
+		try {
+			const isPersistent = await navigator.storage.persist?.();
+			if (isPersistent === false) {
+				JqueryUtil.doToast({
+					type: "warning",
+					content: "Non-persistent storage space detected. Your browser may automatically remove preloaded data if storage space runs low.",
+				});
+			}
+
+			const {quota, usage} = await navigator.storage.estimate?.() || {};
+			if (quota == null || usage == null) return true;
+
+			const availableBytes = Math.max(0, quota - usage);
+			if (availableBytes >= estimatedSizeBytes) return true;
+
+			return InputUiUtil.pGetUserBoolean({
+				title: "Insufficient Storage Space",
+				htmlDescription: `This preload requires a minimum of ${Parser.bytesToHumanReadable(estimatedSizeBytes)} of storage space, but your browser reports an estimate of ${Parser.bytesToHumanReadable(availableBytes)} available. Continue anyway?`,
+				textYes: "Continue",
+				textNo: "Cancel",
+			});
+		} catch {
+			return true;
+		}
+	}
+
+	static async _pOnClick_button_preloadOffline (evt, {route, isRequireImages = false, estimatedSizeBytes}) {
 		evt.preventDefault();
 
 		if (globalThis.swCacheRoutes === undefined) {
@@ -934,6 +976,8 @@ NavBar.InteractionManager = class {
 			});
 			return;
 		}
+
+		if (!await this._pOnClick_button_preloadOffline_pGetIsStorageSpaceAvailable({estimatedSizeBytes})) return;
 
 		globalThis.swCacheRoutes(route);
 	}

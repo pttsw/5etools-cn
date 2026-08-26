@@ -938,6 +938,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			},
 			{
 				hash,
+				page: cls.page,
 				lnk,
 				hashCurr: hash,
 				entity: cls,
@@ -1233,7 +1234,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			});
 		};
 
-		veT`<table class="ve-cls-tbl shadow-big ve-w-100 ve-mb-2">
+		veT`<table class="ve-cls-tbl ve-shadow-big ve-w-100 ve-mb-2">
 			<tbody>
 			<tr><th class="ve-tbl-border" colspan="999"></th></tr>
 			<tr><th class="ve-text-left ve-cls-tbl__disp-name" colspan="999">${cls.name}</th></tr>
@@ -1883,6 +1884,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				ENG_hash: UrlUtil.autoEncodeEngHash(sc),
 			},
 			{
+				page: sc.page,
 				isExcluded,
 				entity: sc,
 			},

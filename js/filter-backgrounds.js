@@ -234,6 +234,7 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 			},
 			{
 				hash,
+				page: bg.page,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

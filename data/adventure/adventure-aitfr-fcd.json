@@ -1274,10 +1274,58 @@
 				"这些具体数值描述了在这个冒险中出现的一些关键NPC。",
 				{
 					"type": "list",
-					"columns": 2,
+					"columns": 3,
 					"items": [
 						"{@creature 雇佣兵使者|AitFR-FCD}",
 						"{@creature 泰瑞斯，幻术师|AitFR-FCD}"
+					]
+				},
+				{
+					"type": "section",
+					"name": "Mercenary Envoy",
+					"entries": [
+						{
+							"type": "statblock",
+							"name": "Mercenary Envoy",
+							"prop": "monsterFluff",
+							"source": "AitFR-FCD",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"type": "statblock",
+							"name": "Mercenary Envoy",
+							"tag": "creature",
+							"source": "AitFR-FCD",
+							"style": "narrow"
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Tyreus, Illusionist",
+					"entries": [
+						{
+							"type": "statblock",
+							"name": "Tyreus, Illusionist",
+							"prop": "monsterFluff",
+							"source": "AitFR-FCD",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"type": "statblock",
+							"name": "Tyreus, Illusionist",
+							"tag": "creature",
+							"source": "AitFR-FCD",
+							"style": "narrow"
+						}
 					]
 				}
 			],
@@ -1292,11 +1340,23 @@
 				"这些法师法术的效果在这次冒险中出现。法术\"mighty fortress\"最初出现在《珊娜萨的万事指南》中。",
 				{
 					"type": "list",
-					"columns": 2,
+					"columns": 3,
 					"items": [
 						"{@spell 链接符文|AitFR-AVT}",
 						"{@spell 坚固堡垒|XGE}"
 					]
+				},
+				{
+					"type": "statblock",
+					"name": "Linked Glyphs",
+					"tag": "spell",
+					"source": "AitFR-AVT"
+				},
+				{
+					"type": "statblock",
+					"name": "Mighty Fortress",
+					"tag": "spell",
+					"source": "XGE"
 				}
 			],
 			"id": "051"
@@ -1343,6 +1403,24 @@
 							"expectsLightBackground": true
 						}
 					]
+				},
+				{
+					"type": "statblock",
+					"name": "Stone of Creation",
+					"tag": "item",
+					"source": "AitFR-AVT"
+				},
+				{
+					"type": "statblock",
+					"name": "Chip of Creation",
+					"tag": "item",
+					"source": "AitFR-AVT"
+				},
+				{
+					"type": "statblock",
+					"name": "Keystone of Creation",
+					"tag": "item",
+					"source": "AitFR-AVT"
 				}
 			],
 			"id": "052"

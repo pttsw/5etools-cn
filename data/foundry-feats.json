@@ -1347,13 +1347,19 @@
 			},
 			"activities": [
 				{
-					"type": "utility",
+					"name": "Mage Hand (Grasping Shadow)",
+					"type": "cast",
 					"activation": {
-						"type": "none",
-						"value": 0
+						"type": "action"
 					},
-					"roll": {
-						"formula": "1d20"
+					"spell": {
+						"uuid": "@spell[mage hand|xphb]",
+						"properties": [
+							"vocal",
+							"somatic",
+							"material"
+						],
+						"spellbook": true
 					}
 				}
 			],

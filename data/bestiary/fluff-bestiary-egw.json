@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
 	"monsterFluff": [
 		{
 			"ENG_name": "Aeorian Absorber",
@@ -128,7 +133,28 @@
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Aeorian Nullifier",
+			"source": "EGW",
+			"_copy": {
+				"name": "Aeorian Hunters",
+				"source": "EGW",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"Nullifiers are the bane of all magic users, with their physical forms and innate powers shaped specifically to resist and cancel magical effects. Against other foes, a nullifier is no less fearsome for the grotesque mouths filled with razor-sharp teeth that cover its torso\u2014and which set up a cacophony of gnashing that can drive other creatures mad."
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -320,7 +346,28 @@
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Core Spawn Crawler",
+			"source": "EGW",
+			"_copy": {
+				"name": "Core Spawn",
+				"source": "EGW",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"The smallest and most numerous of the core spawn, these eyeless creatures scurry through the subterranean darkness with the help of their four irregular, gangly arms and hooked prehensile tails. Core spawn crawlers rarely travel alone, and a group of these agile predators is known as a vein of crawlers. Their clattering taloned limbs warn of their presence as they scuttle through the shadow-haunted depths of the earth."
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -666,6 +713,26 @@
 			"ENG_name": "Moorbounder",
 			"name": "野跃兽",
 			"source": "EGW",
+			"_copy": {
+				"name": "Moorbounders",
+				"source": "EGW"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/EGW/Moorbounder.webp"
+					},
+					"credit": "Marcela Medeiros",
+					"width": 1000,
+					"height": 743
+				}
+			]
+		},
+		{
+			"name": "Moorbounders",
+			"source": "EGW",
 			"entries": [
 				{
 					"type": "section",
@@ -680,18 +747,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/EGW/Moorbounder.webp"
-					},
-					"credit": "Marcela Medeiros",
-					"width": 1000,
-					"height": 743
 				}
 			]
 		},

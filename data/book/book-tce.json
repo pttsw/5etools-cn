@@ -313,6 +313,12 @@
 							]
 						},
 						{
+							"type": "statblock",
+							"name": "Artificer",
+							"tag": "class",
+							"source": "TCE"
+						},
+						{
 							"type": "gallery",
 							"images": [
 								{
@@ -382,6 +388,42 @@
 									"credit": "Irina Nordsol"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Alchemist",
+							"shortName": "Alchemist",
+							"className": "Artificer",
+							"classSource": "TCE"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Armorer",
+							"shortName": "Armorer",
+							"className": "Artificer",
+							"classSource": "TCE"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Artillerist",
+							"shortName": "Artillerist",
+							"className": "Artificer",
+							"classSource": "TCE"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Battle Smith",
+							"shortName": "Battle Smith",
+							"className": "Artificer",
+							"classSource": "TCE"
 						}
 					]
 				},
@@ -416,7 +458,7 @@
 								"在第3级时，野蛮人获得原初道途特性，该特性为你提供一个子职业选择。在进行该选择时，以下选项可供你选择：野兽道途和狂野魔法道途。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 野蛮人|phb|野兽道途|野兽|TCE}",
 										"{@class 野蛮人|phb|狂野魔法道途|狂野魔法|TCE}"
@@ -450,6 +492,24 @@
 									"credit": "Shawn Wood"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Path of the Beast",
+							"shortName": "Beast",
+							"className": "Barbarian",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Path of Wild Magic",
+							"shortName": "Wild Magic",
+							"className": "Barbarian",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -509,7 +569,7 @@
 								"第3级时，吟游诗人获得吟游诗人学院特性，该特性为你提供一个子职业选择。进行该选择时，以下选项可供选择：造物学院和雄辩学院。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 吟游诗人|phb|创造学院|造物术|TCE}",
 										"{@class 吟游诗人|phb|雄辩学院|雄辩|TCE}"
@@ -543,6 +603,24 @@
 									"credit": "Andrew Mar"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "College of Creation",
+							"shortName": "Creation",
+							"className": "Bard",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "College of Eloquence",
+							"shortName": "Eloquence",
+							"className": "Bard",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -658,6 +736,33 @@
 									"credit": "Shawn Wood"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Order Domain",
+							"shortName": "Order",
+							"className": "Cleric",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Peace Domain",
+							"shortName": "Peace",
+							"className": "Cleric",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Twilight Domain",
+							"shortName": "Twilight",
+							"className": "Cleric",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -773,6 +878,33 @@
 									"credit": "Shawn Wood"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Circle of Spores",
+							"shortName": "Spores",
+							"className": "Druid",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Circle of Stars",
+							"shortName": "Stars",
+							"className": "Druid",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Circle of Wildfire",
+							"shortName": "Wildfire",
+							"className": "Druid",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -803,7 +935,7 @@
 										"当你在选择战斗风格时，下列风格会加入你的可选列表中。",
 										{
 											"type": "list",
-											"columns": 2,
+											"columns": 3,
 											"items": [
 												"{@optfeature 盲斗|TCE}",
 												"{@optfeature 拦截|TCE}",
@@ -811,6 +943,36 @@
 												"{@optfeature 投掷武器战斗|TCE}",
 												"{@optfeature 徒手战斗|TCE}"
 											]
+										},
+										{
+											"type": "statblock",
+											"name": "Blind Fighting",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Interception",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Superior Technique",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Thrown Weapon Fighting",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Unarmed Fighting",
+											"tag": "optfeature",
+											"source": "TCE"
 										}
 									]
 								},
@@ -827,7 +989,7 @@
 								"如果你能够使用战技，以下战技将加入可选列表。使用战技的能力可以通过战斗大师武术范型、{@optfeature 卓越技巧|TCE}战斗风格或{@feat 战技专家}专长来获得。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@optfeature 伏击|TCE}",
 										"{@optfeature 换位诈术|TCE}",
@@ -837,6 +999,48 @@
 										"{@optfeature 快手投掷|TCE}",
 										"{@optfeature 战术预估|TCE}"
 									]
+								},
+								{
+									"type": "statblock",
+									"name": "Ambush",
+									"tag": "optfeature",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Bait and Switch",
+									"tag": "optfeature",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Brace",
+									"tag": "optfeature",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Commanding Presence",
+									"tag": "optfeature",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Grappling Strike",
+									"tag": "optfeature",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Quick Toss",
+									"tag": "optfeature",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Tactical Assessment",
+									"tag": "optfeature",
+									"source": "TCE"
 								}
 							]
 						},
@@ -850,7 +1054,7 @@
 								"在3级时，战士获得武艺原型特性，该特性为你提供一个子职业选择。在进行选择时，以下选项可供你选择：灵能武士和符文骑士。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 战士|phb|灵能武士|灵能武士|TCE}",
 										"{@class 战士|phb|符文骑士|符文骑士|TCE}"
@@ -1361,7 +1565,7 @@
 								"在3级时，武僧获得修行宗派特性，该特性提供一个子职业选择。进行选择时，以下选项可供选择：慈悲宗或星我宗。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 武僧|phb|命流宗|命流|TCE}",
 										"{@class 武僧|phb|星我宗|星我|TCE}"
@@ -1406,6 +1610,24 @@
 									"credit": "Shawn Wood"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Way of Mercy",
+							"shortName": "Mercy",
+							"className": "Monk",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Way of the Astral Self",
+							"shortName": "Astral Self",
+							"className": "Monk",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -1462,6 +1684,24 @@
 												"{@optfeature 盲斗|TCE}",
 												"{@optfeature 拦截|TCE}"
 											]
+										},
+										{
+											"type": "statblock",
+											"name": "Blessed Warrior",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Blind Fighting",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Interception",
+											"tag": "optfeature",
+											"source": "TCE"
 										}
 									]
 								},
@@ -1479,7 +1719,7 @@
 								"在3级时，圣武士获得神圣誓言特性，该特性为你提供一个子职业选择。在进行该选择时，以下选项可供你选择：荣耀之誓和守望之誓。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 圣武士|phb|荣耀之誓|荣耀|TCE}",
 										"{@class 圣武士|phb|守望之誓|守望|TCE}"
@@ -1524,6 +1764,24 @@
 									"credit": "Anna Veltkamp"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Oath of Glory",
+							"shortName": "Glory",
+							"className": "Paladin",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Oath of the Watchers",
+							"shortName": "Watchers",
+							"className": "Paladin",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -1585,6 +1843,24 @@
 												"{@optfeature 德鲁伊教战士|TCE}",
 												"{@optfeature 投掷武器战斗|TCE}"
 											]
+										},
+										{
+											"type": "statblock",
+											"name": "Blind Fighting",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Druidic Warrior",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Thrown Weapon Fighting",
+											"tag": "optfeature",
+											"source": "TCE"
 										}
 									]
 								},
@@ -1604,7 +1880,7 @@
 								"3级时，游侠获得游侠范型特性，该特性让你选择一个副职。在做出选择时，以下选项可供你选择：精类漫游者和集群牧者。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 游侠|phb|妖精漫游者|妖精漫游者|TCE}",
 										"{@class 游侠|phb|集群守卫|集群守卫|TCE}"
@@ -1691,7 +1967,7 @@
 								"在3级时，游荡者获得游荡者范型特性，这为你提供一个子职业选择。在进行该选择时，以下选项可供你选择：幻影和魂刃者。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 游荡者|phb|鬼魅|鬼魅|TCE}",
 										"{@class 游荡者|phb|魂刃|魂刃|TCE}"
@@ -1736,6 +2012,24 @@
 									"credit": "Nikki Dawes"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Phantom",
+							"shortName": "Phantom",
+							"className": "Rogue",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Soulknife",
+							"shortName": "Soulknife",
+							"className": "Rogue",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -1797,7 +2091,7 @@
 								"在1级时，术士获得术法起源特性，该特性为你提供一个子职业选择。在进行该选择时，以下选项可供你选择：异怪之心与机关之魂。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 术士|phb|畸变心智|畸变心智|TCE}",
 										"{@class 术士|phb|时械之魂|时械之魂|TCE}"
@@ -1842,6 +2136,24 @@
 									"credit": "Kieran Yanner"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Aberrant Mind",
+							"shortName": "Aberrant Mind",
+							"className": "Sorcerer",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Clockwork Soul",
+							"shortName": "Clockwork Soul",
+							"className": "Sorcerer",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -1919,6 +2231,54 @@
 												"{@optfeature 符令责斥|TCE}",
 												"{@optfeature 永恒奴役|TCE}"
 											]
+										},
+										{
+											"type": "statblock",
+											"name": "Bond of the Talisman",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Eldritch Mind",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Far Scribe",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Gift of the Protectors",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Investment of the Chain Master",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Protection of the Talisman",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Rebuke of the Talisman",
+											"tag": "optfeature",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Undying Servitude",
+											"tag": "optfeature",
+											"source": "TCE"
 										}
 									]
 								}
@@ -1934,7 +2294,7 @@
 								"在第1级时，魔契师获得异界宗主特性，该特性为你提供一个子职业选择。在进行该选择时，以下选项可供你选择：深渊者和巨灵。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 魔契师|phb|深海意志宗主|深海意志|TCE}",
 										"{@class 魔契师|phb|巨灵宗主|巨灵|TCE}"
@@ -1979,6 +2339,24 @@
 									"credit": "Zuzanna Wužyk"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "The Fathomless",
+							"shortName": "Fathomless",
+							"className": "Warlock",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "The Genie",
+							"shortName": "Genie",
+							"className": "Warlock",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -2036,7 +2414,7 @@
 								"在2级时，法师获得奥术传承特性，该特性让你选择一个子职业。当你进行选择时，以下选项可供选择：剑咏和文书之序。",
 								{
 									"type": "list",
-									"columns": 2,
+									"columns": 3,
 									"items": [
 										"{@class 法师|phb|剑咏者|剑咏者|TCE}",
 										"{@class 法师|phb|书士会|书士|TCE}"
@@ -2070,6 +2448,24 @@
 									"credit": "Mark Behm"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Bladesinging",
+							"shortName": "Bladesinging",
+							"className": "Wizard",
+							"classSource": "PHB"
+						},
+						{
+							"type": "statblock",
+							"prop": "subclass",
+							"source": "TCE",
+							"name": "Order of Scribes",
+							"shortName": "Scribes",
+							"className": "Wizard",
+							"classSource": "PHB"
 						}
 					]
 				},
@@ -2128,6 +2524,96 @@
 									"credit": "Zoltan Boros"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"name": "Artificer Initiate",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Chef",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Crusher",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Eldritch Adept",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Fey Touched",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Fighting Initiate",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Gunner",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Metamagic Adept",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Piercer",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Poisoner",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Shadow Touched",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Skill Expert",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Slasher",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Telekinetic",
+							"tag": "feat",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Telepathic",
+							"tag": "feat",
+							"source": "TCE"
 						}
 					]
 				}
@@ -5159,6 +5645,294 @@
 										"{@item 蕴法刺青|TCE}",
 										"{@item 达夫纳之牙|TCE}"
 									]
+								},
+								{
+									"type": "statblock",
+									"name": "Absorbing Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Alchemical Compendium",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "+1 All-Purpose Tool",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "+1 Amulet of the Devout",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "+1 Arcane Grimoire",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Astral Shard",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Astromancy Archive",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Atlas of Endless Horizons",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Baba Yaga's Mortar and Pestle",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Baba Yaga's Pestle",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Barrier Tattoo (Small)",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Bell Branch",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Blood Fury Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "+1 Bloodwell Vial",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Cauldron of Rebirth",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Coiling Grasp Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Crook of Rao",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Crystalline Chronicle",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Demonomicon of Iggwilv",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Devotee's Censer",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Duplicitous Manuscript",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Eldritch Claw Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Elemental Essence Shard",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Far Realm Shard",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Feywild Shard",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Fulminating Treatise",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Ghost Step Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Guardian Emblem",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Heart Weaver's Primer",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Illuminator's Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Libram of Souls and Flesh",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Lifewell Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Luba's Tarokka of Souls",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Lyre of Building",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Masquerade Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Mighty Servant of Leuk-O",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "+1 Moon Sickle",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Nature's Mantle",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Outer Essence Shard",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Planecaller's Codex",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Prosthetic Limb",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Protective Verses",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Reveler's Concertina",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "+1 Rhythm-Maker's Drum",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Shadowfell Brand Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Shadowfell Shard",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Spellwrought Tattoo",
+									"tag": "item",
+									"source": "TCE"
+								},
+								{
+									"type": "statblock",
+									"name": "Teeth of Dahlver-Nar",
+									"tag": "item",
+									"source": "TCE"
 								}
 							]
 						}
@@ -5523,6 +6297,24 @@
 									"credit": "April Prime"
 								}
 							]
+						},
+						{
+							"type": "statblock",
+							"name": "Expert Sidekick",
+							"tag": "class",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Spellcaster Sidekick",
+							"tag": "class",
+							"source": "TCE"
+						},
+						{
+							"type": "statblock",
+							"name": "Warrior Sidekick",
+							"tag": "class",
+							"source": "TCE"
 						}
 					]
 				},
@@ -6952,6 +7744,30 @@
 												"{@hazard 死灵风暴|TCE}",
 												"{@hazard 索列姆的咆哮|TCE}"
 											]
+										},
+										{
+											"type": "statblock",
+											"name": "Flaywind",
+											"tag": "hazard",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Flame Storm",
+											"tag": "hazard",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Necrotic Tempest",
+											"tag": "hazard",
+											"source": "TCE"
+										},
+										{
+											"type": "statblock",
+											"name": "Thrym's Howl",
+											"tag": "hazard",
+											"source": "TCE"
 										}
 									]
 								},

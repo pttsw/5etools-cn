@@ -18,6 +18,7 @@ class PageFilterDecks extends PageFilterBase {
 		this._mutateForFilters_commonSources(ent);
 		this._mutateForFilters_commonMisc(ent);
 		if (ent.hasCardArt) ent._fMisc.push("有卡图");
+		if (ent.spreads) ent._fMisc.push("Has Spreads");
 	}
 
 	addToFilters (ent, isExcluded) {

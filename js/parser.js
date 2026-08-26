@@ -1849,6 +1849,7 @@ Parser.SP_MISC_TAG_TO_FULL = {
 	"RO": "骰点效应",
 	"LGTS": "制造阳光",
 	"LGT": "制造光亮",
+	"UA": "使用动作",
 	"UBA": "使用附赠动作",
 	"PS": "位面传送",
 	"OBS": "遮蔽视野",
@@ -1857,6 +1858,7 @@ Parser.SP_MISC_TAG_TO_FULL = {
 	"OBJ": "影响物品",
 	"ADV": "提供优势",
 	"PIR": "重复施法使效用永久",
+	"BO": "点燃物品",
 };
 Parser.spMiscTagToFull = function (type) {
 	return Parser._parse_aToB(Parser.SP_MISC_TAG_TO_FULL, type);
@@ -4602,6 +4604,7 @@ Parser.PROP_TO_TAG = {
 };
 Parser._RE_PROP_RAW_PREFIX = /^raw_/;
 Parser.getPropTag = function (prop) {
+	if (!prop) return prop;
 	prop = prop.replace(Parser._RE_PROP_RAW_PREFIX, "");
 	if (Parser.PROP_TO_TAG[prop]) return Parser.PROP_TO_TAG[prop];
 	if (prop?.endsWith("Fluff")) return null;

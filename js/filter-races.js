@@ -149,6 +149,7 @@ class PageFilterRaces extends PageFilterBase {
 			r.additionalSpells ? "施法" : null,
 			r.armorProficiencies ? "护甲熟练项" : null,
 			r.weaponProficiencies ? "武器熟练项" : null,
+			r.languageProficiencies ? "语言熟练项" : null,
 		].filter(it => it);
 		r._fTraits.push(...(r.traitTags || []));
 		r._fLangs = PageFilterRaces.getLanguageProficiencyTags(r.languageProficiencies);
@@ -158,8 +159,11 @@ class PageFilterRaces extends PageFilterBase {
 		if (r._isBaseRace || !r._isSubRace) r._fMisc.push("关键种族");
 		if (r.lineage) r._fMisc.push("血缘");
 
-		const ability = r.ability ? Renderer.getAbilityData(r.ability, {isOnlyShort: true, isCurrentLineage: r.lineage === "VRGR"}) : {asTextShort: "无"};
+		const ability = r.ability
+			? Renderer.getAbilityData(r.ability, {isOnlyShort: true, isCurrentLineage: r.lineage === "VRGR"})
+			: new Renderer._AbilityData({asTextShort: "无"});
 		r._slAbility = ability.asText || ability.asTextShort || VeCt.STR_NONE;
+		r._srtAbility = ability.asSortableString;
 
 		if (r.age?.mature != null && r.age?.max != null) r._fAge = [r.age.mature, r.age.max];
 		else if (r.age?.mature != null) r._fAge = r.age.mature;
@@ -321,6 +325,8 @@ class ModalFilterRaces extends ModalFilterBase {
 			},
 			{
 				hash,
+				page: race.page,
+				ability: race._srtAbility,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},

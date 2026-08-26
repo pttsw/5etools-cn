@@ -14,58 +14,60 @@
  * entryRenderer.renderEntries(topLevelEntry, textStack);
  *
  * // render the final product by joining together all the collected strings
- * $("#myElement").html(toDisplay.join(""));
+ * veEs("#myElement").vee.html(toDisplay.join(""));
  */
-globalThis.Renderer = function () {
-	this.wrapperTag = "div";
-	this.baseUrl = "";
-	this.baseMediaUrls = {};
+globalThis.Renderer = class {
+	constructor () {
+		this.wrapperTag = "div";
+		this.baseUrl = "";
+		this.baseMediaUrls = {};
 
-	if (globalThis.RENDERER_BASE_URL) {
-		this.baseUrl = globalThis.RENDERER_BASE_URL;
+		if (globalThis.RENDERER_BASE_URL) {
+			this.baseUrl = globalThis.RENDERER_BASE_URL;
+		}
+
+		if (globalThis.DEPLOYED_IMG_ROOT) {
+			this.baseMediaUrls["img"] = globalThis.DEPLOYED_IMG_ROOT;
+		}
+
+		this._lazyImages = false;
+		this._lazyImages_opts = {};
+		this._isMinimizeLayoutShift = false;
+		this._subVariant = false;
+		this._firstSection = true;
+		this._isAddHandlers = true;
+		this._headerIndex = 1;
+		this._tagExportDict = null;
+		this._roll20Ids = null;
+		this._trackTitles = {enabled: false, titles: {}};
+		this._enumerateTitlesRel = {enabled: false, titles: {}};
+		this._isHeaderIndexIncludeTableCaptions = false;
+		this._isHeaderIndexIncludeImageTitles = false;
+		this._isRenderHeaderIndex = true;
+		this._plugins = {};
+		this._fnPostProcess = null;
+		this._extraSourceClasses = null;
+		this._depthTracker = null;
+		this._depthTrackerAdditionalProps = [];
+		this._depthTrackerAdditionalPropsInherited = [];
+		this._lastDepthTrackerInheritedProps = {};
+		this._isInternalLinksDisabled = false;
+		this._isPartPageExpandCollapseDisabled = false;
+		this._fnsGetStyleClasses = {};
 	}
-
-	if (globalThis.DEPLOYED_IMG_ROOT) {
-		this.baseMediaUrls["img"] = globalThis.DEPLOYED_IMG_ROOT;
-	}
-
-	this._lazyImages = false;
-	this._lazyImages_opts = {};
-	this._isMinimizeLayoutShift = false;
-	this._subVariant = false;
-	this._firstSection = true;
-	this._isAddHandlers = true;
-	this._headerIndex = 1;
-	this._tagExportDict = null;
-	this._roll20Ids = null;
-	this._trackTitles = {enabled: false, titles: {}};
-	this._enumerateTitlesRel = {enabled: false, titles: {}};
-	this._isHeaderIndexIncludeTableCaptions = false;
-	this._isHeaderIndexIncludeImageTitles = false;
-	this._isRenderHeaderIndex = true;
-	this._plugins = {};
-	this._fnPostProcess = null;
-	this._extraSourceClasses = null;
-	this._depthTracker = null;
-	this._depthTrackerAdditionalProps = [];
-	this._depthTrackerAdditionalPropsInherited = [];
-	this._lastDepthTrackerInheritedProps = {};
-	this._isInternalLinksDisabled = false;
-	this._isPartPageExpandCollapseDisabled = false;
-	this._fnsGetStyleClasses = {};
 
 	/**
 	 * Enables/disables lazy-load image rendering.
 	 * @param bool true to enable, false to disable.
 	 */
-	this.setLazyImages = function (bool) {
+	setLazyImages (bool) {
 		// hard-disable lazy loading if the Intersection API is unavailable (e.g. under iOS 12)
 		if (typeof IntersectionObserver === "undefined") this._lazyImages = false;
 		else this._lazyImages = !!bool;
 		return this;
-	};
+	}
 
-	this.withLazyImages = function (fn, {isAllowCanvas = false} = {}) {
+	withLazyImages (fn, {isAllowCanvas = false} = {}) {
 		const valOriginal = this._lazyImages;
 		const optsOriginal = this._lazyImages_opts;
 		try {
@@ -78,14 +80,14 @@ globalThis.Renderer = function () {
 			this.setLazyImages(valOriginal);
 			this._lazyImages_opts = optsOriginal;
 		}
-	};
+	}
 
-	this.setMinimizeLayoutShift = function (bool) {
+	setMinimizeLayoutShift (bool) {
 		this._isMinimizeLayoutShift = !!bool;
 		return this;
-	};
+	}
 
-	this.withMinimizeLayoutShift = function (fn) {
+	withMinimizeLayoutShift (fn) {
 		const valOriginal = this._isMinimizeLayoutShift;
 		try {
 			this.setMinimizeLayoutShift(true);
@@ -93,74 +95,74 @@ globalThis.Renderer = function () {
 		} finally {
 			this.setMinimizeLayoutShift(valOriginal);
 		}
-	};
+	}
 
 	/**
 	 * Set the tag used to group rendered elements
 	 * @param tag to use
 	 */
-	this.setWrapperTag = function (tag) { this.wrapperTag = tag; return this; };
+	setWrapperTag (tag) { this.wrapperTag = tag; return this; }
 
 	/**
 	 * Set the base url for rendered links.
 	 * Usage: `renderer.setBaseUrl("https://www.example.com/")` (note the "http" prefix and "/" suffix)
 	 * @param url to use
 	 */
-	this.setBaseUrl = function (url) { this.baseUrl = url; return this; };
+	setBaseUrl (url) { this.baseUrl = url; return this; }
 
-	this.setBaseMediaUrl = function (mediaDir, url) { this.baseMediaUrls[mediaDir] = url; return this; };
+	setBaseMediaUrl (mediaDir, url) { this.baseMediaUrls[mediaDir] = url; return this; }
 
-	this.getMediaUrl = function (mediaDir, path) {
+	getMediaUrl (mediaDir, path) {
 		if (Renderer.get().baseMediaUrls[mediaDir]) return `${Renderer.get().baseMediaUrls[mediaDir]}${path}`;
 		return `${Renderer.get().baseUrl}${mediaDir}/${path}`;
-	};
+	}
 
 	/**
 	 * Other sections should be prefixed with a vertical divider
 	 * @param bool
 	 */
-	this.setFirstSection = function (bool) { this._firstSection = bool; return this; };
+	setFirstSection (bool) { this._firstSection = bool; return this; }
 
 	/**
 	 * Disable adding JS event handlers on elements.
 	 * @param bool
 	 */
-	this.setAddHandlers = function (bool) { this._isAddHandlers = bool; return this; };
+	setAddHandlers (bool) { this._isAddHandlers = bool; return this; }
 
 	/**
 	 * Add a post-processing function which acts on the final rendered strings from a root call.
 	 * @param fn
 	 */
-	this.setFnPostProcess = function (fn) { this._fnPostProcess = fn; return this; };
+	setFnPostProcess (fn) { this._fnPostProcess = fn; return this; }
 
 	/**
 	 * Specify a list of extra classes to be added to those rendered on entries with sources.
 	 * @param arr
 	 */
-	this.setExtraSourceClasses = function (arr) { this._extraSourceClasses = arr; return this; };
+	setExtraSourceClasses (arr) { this._extraSourceClasses = arr; return this; }
 
 	// region Header index
 	/**
 	 * Headers are ID'd using the attribute `data-title-index` using an incrementing int. This resets it to 1.
 	 */
-	this.resetHeaderIndex = function () {
+	resetHeaderIndex () {
 		this._headerIndex = 1;
 		this._trackTitles.titles = {};
 		this._enumerateTitlesRel.titles = {};
 		return this;
-	};
+	}
 
-	this.getHeaderIndex = function () { return this._headerIndex; };
+	getHeaderIndex () { return this._headerIndex; }
 
-	this._getRenderedTitleIndexAttribute = function () {
+	_getRenderedTitleIndexAttribute () {
 		return this._isRenderHeaderIndex ? `data-title-index="${this._headerIndex++}"` : "";
-	};
+	}
 
-	this.setRenderHeaderIndex = function (bool) { this._isRenderHeaderIndex = !!bool; return this; };
-	this.setHeaderIndexTableCaptions = function (bool) { this._isHeaderIndexIncludeTableCaptions = bool; return this; };
-	this.setHeaderIndexImageTitles = function (bool) { this._isHeaderIndexIncludeImageTitles = bool; return this; };
+	setRenderHeaderIndex (bool) { this._isRenderHeaderIndex = !!bool; return this; }
+	setHeaderIndexTableCaptions (bool) { this._isHeaderIndexIncludeTableCaptions = bool; return this; }
+	setHeaderIndexImageTitles (bool) { this._isHeaderIndexIncludeImageTitles = bool; return this; }
 
-	this.withSetRenderHeaderIndex = function (flagVal, fn) {
+	withSetRenderHeaderIndex (flagVal, fn) {
 		const valOriginal = this._isRenderHeaderIndex;
 		try {
 			this.setRenderHeaderIndex(flagVal);
@@ -168,7 +170,7 @@ globalThis.Renderer = function () {
 		} finally {
 			this.setRenderHeaderIndex(valOriginal);
 		}
-	};
+	}
 	// endregion
 
 	/**
@@ -182,37 +184,37 @@ globalThis.Renderer = function () {
 	 *			}
 	 * 			These results intentionally match those used for hover windows, so can use the same cache/loading paths
 	 */
-	this.doExportTags = function (toObj) {
+	doExportTags (toObj) {
 		this._tagExportDict = toObj;
 		return this;
-	};
+	}
 
 	/**
 	 * Reset/disable tag export
 	 */
-	this.resetExportTags = function () {
+	resetExportTags () {
 		this._tagExportDict = null;
 		return this;
-	};
+	}
 
-	this.setRoll20Ids = function (roll20Ids) {
+	setRoll20Ids (roll20Ids) {
 		this._roll20Ids = roll20Ids;
 		return this;
-	};
+	}
 
-	this.resetRoll20Ids = function () {
+	resetRoll20Ids () {
 		this._roll20Ids = null;
 		return this;
-	};
+	}
 
 	/** Used by Foundry config. */
-	this.setInternalLinksDisabled = function (val) { this._isInternalLinksDisabled = !!val; return this; };
-	this.isInternalLinksDisabled = function () { return !!this._isInternalLinksDisabled; };
+	setInternalLinksDisabled (val) { this._isInternalLinksDisabled = !!val; return this; }
+	isInternalLinksDisabled () { return !!this._isInternalLinksDisabled; }
 
-	this.setPartPageExpandCollapseDisabled = function (val) { this._isPartPageExpandCollapseDisabled = !!val; return this; };
+	setPartPageExpandCollapseDisabled (val) { this._isPartPageExpandCollapseDisabled = !!val; return this; }
 
 	/** Bind function which apply extra CSS classes to entry/list renders.  */
-	this.setFnGetStyleClasses = function (identifier, fn) {
+	setFnGetStyleClasses (identifier, fn) {
 		if (fn == null) {
 			delete this._fnsGetStyleClasses[identifier];
 			return this;
@@ -220,35 +222,35 @@ globalThis.Renderer = function () {
 
 		this._fnsGetStyleClasses[identifier] = fn;
 		return this;
-	};
+	}
 
 	/**
 	 * If enabled, titles with the same name will be given numerical identifiers.
 	 * This identifier is stored in `data-title-relative-index`
 	 */
-	this.setEnumerateTitlesRel = function (bool) {
+	setEnumerateTitlesRel (bool) {
 		this._enumerateTitlesRel.enabled = bool;
 		return this;
-	};
+	}
 
-	this._getEnumeratedTitleRel = function (name) {
+	_getEnumeratedTitleRel (name) {
 		if (this._enumerateTitlesRel.enabled && name) {
 			const clean = name.toLowerCase();
 			this._enumerateTitlesRel.titles[clean] = this._enumerateTitlesRel.titles[clean] || 0;
 			return `data-title-relative-index="${this._enumerateTitlesRel.titles[clean]++}"`;
 		} else return "";
-	};
+	}
 
-	this.setTrackTitles = function (bool) {
+	setTrackTitles (bool) {
 		this._trackTitles.enabled = bool;
 		return this;
-	};
+	}
 
-	this.getTrackedTitles = function () {
+	getTrackedTitles () {
 		return MiscUtil.copyFast(this._trackTitles.titles);
-	};
+	}
 
-	this.getTrackedTitlesInverted = function ({isStripTags = false} = {}) {
+	getTrackedTitlesInverted ({isStripTags = false} = {}) {
 		// `this._trackTitles.titles` is a map of `{[data-title-index]: "<name>"}`
 		// Invert it such that we have a map of `{"<name>": ["data-title-index-0", ..., "data-title-index-n"]}`
 		const trackedTitlesInverse = {};
@@ -258,16 +260,16 @@ globalThis.Renderer = function () {
 			(trackedTitlesInverse[titleName] = trackedTitlesInverse[titleName] || []).push(titleIx);
 		});
 		return trackedTitlesInverse;
-	};
+	}
 
-	this._handleTrackTitles = function (name, {isTable = false, isImage = false} = {}) {
+	_handleTrackTitles (name, {isTable = false, isImage = false} = {}) {
 		if (!this._trackTitles.enabled) return;
 		if (isTable && !this._isHeaderIndexIncludeTableCaptions) return;
 		if (isImage && !this._isHeaderIndexIncludeImageTitles) return;
 		this._trackTitles.titles[this._headerIndex] = name;
-	};
+	}
 
-	this._handleTrackDepth = function (entry, depth) {
+	_handleTrackDepth (entry, depth) {
 		if (!entry.name || !this._depthTracker) return;
 
 		this._lastDepthTrackerInheritedProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
@@ -293,7 +295,7 @@ globalThis.Renderer = function () {
 			alias: entry.alias,
 			entry,
 		});
-	};
+	}
 
 	/**
 	 * Specify an array where the renderer will record rendered header depths.
@@ -303,14 +305,14 @@ globalThis.Renderer = function () {
 	 * @param additionalPropsInherited As per additionalProps, but if a parent entry has the prop, it should be passed
 	 * to its children.
 	 */
-	this.setDepthTracker = function (arr, {additionalProps, additionalPropsInherited} = {}) {
+	setDepthTracker (arr, {additionalProps, additionalPropsInherited} = {}) {
 		this._depthTracker = arr;
 		this._depthTrackerAdditionalProps = additionalProps || [];
 		this._depthTrackerAdditionalPropsInherited = additionalPropsInherited || [];
 		return this;
-	};
+	}
 
-	this.withDepthTracker = function (arr, fn, {additionalProps, additionalPropsInherited} = {}) {
+	withDepthTracker (arr, fn, {additionalProps, additionalPropsInherited} = {}) {
 		const depthTrackerPrev = this._depthTracker;
 		const depthTrackerAdditionalPropsPrev = this._depthTrackerAdditionalProps;
 		const depthTrackerAdditionalPropsInheritedPrev = this._depthTrackerAdditionalPropsInherited;
@@ -335,35 +337,35 @@ globalThis.Renderer = function () {
 			);
 		}
 		return out;
-	};
+	}
 
 	/* -------------------------------------------- */
 
 	// region Plugins
-	this.addPlugin = function (pluginType, fnPlugin) {
+	addPlugin (pluginType, fnPlugin) {
 		MiscUtil.getOrSet(this._plugins, pluginType, []).push(fnPlugin);
-	};
+	}
 
-	this.removePlugin = function (pluginType, fnPlugin) {
+	removePlugin (pluginType, fnPlugin) {
 		if (!fnPlugin) return;
 		const ix = (MiscUtil.get(this._plugins, pluginType) || []).indexOf(fnPlugin);
 		if (~ix) this._plugins[pluginType].splice(ix, 1);
-	};
+	}
 
-	this.removePlugins = function (pluginType) {
+	removePlugins (pluginType) {
 		MiscUtil.delete(this._plugins, pluginType);
-	};
+	}
 
-	this._getPlugins = function (pluginType) { return this._plugins[pluginType] ||= []; };
+	_getPlugins (pluginType) { return this._plugins[pluginType] ||= []; }
 
-	this._applyPlugins_useFirst = function (pluginType, commonArgs, pluginArgs) {
+	_applyPlugins_useFirst (pluginType, commonArgs, pluginArgs) {
 		for (const plugin of this._getPlugins(pluginType)) {
 			const out = plugin(commonArgs, pluginArgs);
 			if (out) return out;
 		}
-	};
+	}
 
-	this._applyPlugins_useAll = function (pluginType, commonArgs, pluginArgs) {
+	_applyPlugins_useAll (pluginType, commonArgs, pluginArgs) {
 		const plugins = this._getPlugins(pluginType);
 		if (!plugins?.length) return null;
 
@@ -372,29 +374,29 @@ globalThis.Renderer = function () {
 			input = plugin(commonArgs, pluginArgs) ?? input;
 		}
 		return input;
-	};
+	}
 
-	this._applyPlugins_getAll = function (pluginType, commonArgs, pluginArgs) {
+	_applyPlugins_getAll (pluginType, commonArgs, pluginArgs) {
 		const plugins = this._getPlugins(pluginType);
 		if (!plugins?.length) return [];
 
 		return plugins
 			.map(plugin => plugin(commonArgs, pluginArgs))
 			.filter(Boolean);
-	};
+	}
 
 	/** Run a function with the given plugin active. */
-	this.withPlugin = function ({pluginTypes, fnPlugin, fn}) {
+	withPlugin ({pluginTypes, fnPlugin, fn}) {
 		for (const pt of pluginTypes) this.addPlugin(pt, fnPlugin);
 		try {
 			return fn(this);
 		} finally {
 			for (const pt of pluginTypes) this.removePlugin(pt, fnPlugin);
 		}
-	};
+	}
 
 	/** Run an async function with the given plugin active. */
-	this.pWithPlugin = async function ({pluginTypes, fnPlugin, pFn}) {
+	async pWithPlugin ({pluginTypes, fnPlugin, pFn}) {
 		for (const pt of pluginTypes) this.addPlugin(pt, fnPlugin);
 		try {
 			const out = await pFn(this);
@@ -402,10 +404,10 @@ globalThis.Renderer = function () {
 		} finally {
 			for (const pt of pluginTypes) this.removePlugin(pt, fnPlugin);
 		}
-	};
+	}
 	// endregion
 
-	this.getLineBreak = function () { return "<br>"; };
+	getLineBreak () { return "<br>"; }
 
 	/**
 	 * Recursively walk down a tree of "entry" JSON items, adding to a stack of strings to be finally rendered to the
@@ -420,7 +422,7 @@ globalThis.Renderer = function () {
 	 * @param [options.prefix] String to prefix rendered lines with.
 	 * @param [options.suffix] String to suffix rendered lines with.
 	 */
-	this.recursiveRender = function (entry, textStack, meta, options) {
+	recursiveRender (entry, textStack, meta, options) {
 		if (entry instanceof Array) {
 			entry.forEach(nxt => this.recursiveRender(nxt, textStack, meta, options));
 			setTimeout(() => { throw new Error(`Array passed to renderer! The renderer only guarantees support for primitives and basic objects.`); });
@@ -442,7 +444,7 @@ globalThis.Renderer = function () {
 		textStack.reverse();
 
 		return this;
-	};
+	}
 
 	/**
 	 * Inner rendering code. Uses string concatenation instead of an array stack, for ~2x the speed.
@@ -454,7 +456,7 @@ globalThis.Renderer = function () {
 	 *          .suffix The (optional) suffix to be added to the textStack after whatever is added by the current call
 	 * @private
 	 */
-	this._recursiveRender = function (entry, textStack, meta, options) {
+	_recursiveRender (entry, textStack, meta, options) {
 		if (entry == null) return; // Avoid dying on nully entries
 		if (!textStack) throw new Error("Missing stack!");
 		if (!meta) throw new Error("Missing metadata!");
@@ -462,7 +464,10 @@ globalThis.Renderer = function () {
 		options = options || {};
 
 		// For wrapped entries, simply recurse
-		if (entry.type === "wrapper") return this._recursiveRender(entry.wrapped, textStack, meta, options);
+		if (entry.type === "wrapper") {
+			if (entry.wrappeds) return entry.wrappeds.forEach(wrapped => this._recursiveRender(wrapped, textStack, meta, options));
+			return this._recursiveRender(entry.wrapped, textStack, meta, options);
+		}
 
 		if (entry.type === "section") meta.depth = -1;
 
@@ -547,43 +552,43 @@ globalThis.Renderer = function () {
 			this._renderPrimitive(entry, textStack, meta, options);
 			this._renderSuffix(entry, textStack, meta, options);
 		}
-	};
+	}
 
-	this._RE_TEXT_ALIGN = /\btext-(?:center|right|left)\b/g;
-	this._RE_COL_D = /\bcol-\d\d?(?:-\d\d?)?\b/g;
+	_RE_TEXT_ALIGN = /\btext-(?:center|right|left)\b/g;
+	_RE_COL_D = /\bcol-\d\d?(?:-\d\d?)?\b/g;
 
-	this._getMutatedStyleString = function (str) {
+	_getMutatedStyleString (str) {
 		if (!str) return str;
 		return str
 			.replace(this._RE_TEXT_ALIGN, "ve-$&")
 			.replace(this._RE_COL_D, "ve-$&")
 		;
-	};
+	}
 
-	this._adjustDepth = function (meta, dDepth) {
+	_adjustDepth (meta, dDepth) {
 		const cachedDepth = meta.depth;
 		meta.depth += dDepth;
 		meta.depth = Math.min(Math.max(-1, meta.depth), 2); // cap depth between -1 and 2 for general use
 		return cachedDepth;
-	};
+	}
 
-	this._renderPrefix = function (entry, textStack, meta, options) {
+	_renderPrefix (entry, textStack, meta, options) {
 		if (meta._didRenderPrefix) return;
 		if (options.prefix != null) {
 			textStack[0] += options.prefix;
 			meta._didRenderPrefix = true;
 		}
-	};
+	}
 
-	this._renderSuffix = function (entry, textStack, meta, options) {
+	_renderSuffix (entry, textStack, meta, options) {
 		if (meta._didRenderSuffix) return;
 		if (options.suffix != null) {
 			textStack[0] += options.suffix;
 			meta._didRenderSuffix = true;
 		}
-	};
+	}
 
-	this._renderImage = function (entry, textStack, meta, options) {
+	_renderImage (entry, textStack, meta, options) {
 		if (entry.title) this._handleTrackTitles(entry.title, {isImage: true});
 
 		if (entry.imageType === "map" || entry.imageType === "mapPlayer") textStack[0] += `<div class="ve-rd__wrp-map">`;
@@ -631,9 +636,9 @@ globalThis.Renderer = function () {
 
 		textStack[0] += `</div>`;
 		if (entry.imageType === "map" || entry.imageType === "mapPlayer") textStack[0] += `</div>`;
-	};
+	}
 
-	this._renderImage_getImg = function (
+	_renderImage_getImg (
 		{
 			entry,
 			meta,
@@ -677,18 +682,18 @@ globalThis.Renderer = function () {
 		const cappedHeight = Math.round(entry.height / (entry.width / cappedWidth));
 
 		return `<canvas class="${this._renderImage_getImageClasses(entry, meta)} ve-rd__cvs-image" ${ptAttributesShared} width="${cappedWidth}" height="${cappedHeight}"></canvas>`;
-	};
+	}
 
-	this._renderImage_getTitleCreditTooltipText = function (entry) {
+	_renderImage_getTitleCreditTooltipText (entry) {
 		if (!entry.title && !entry.credit) return null;
 		return Renderer.stripTags(
 			[entry.title, entry.credit ? `绘画作者: ${entry.credit}` : null]
 				.filter(Boolean)
 				.join(". "),
 		).qq();
-	};
+	}
 
-	this._renderImage_geLabels = function (entry) {
+	_renderImage_geLabels (entry) {
 		if (
 			!entry.labelMapRegions
 			|| !globalThis.BookUtil?.curRender?.headerMap
@@ -726,9 +731,9 @@ globalThis.Renderer = function () {
 				</a>`;
 			})
 			.join("");
-	};
+	}
 
-	this._renderImage_getStylePart = function (entry) {
+	_renderImage_getStylePart (entry) {
 		const styles = [
 			// N.b. this width/height should be reflected in the renderer image CSS
 			// Clamp the max width at 100%, as per the renderer styling
@@ -739,13 +744,13 @@ globalThis.Renderer = function () {
 			!entry.isNoMaxHeight && entry.maxHeight ? `max-height: min(60vh, ${entry.maxHeight}${entry.maxHeightUnits || "px"})` : "",
 		].filter(Boolean).join("; ");
 		return styles ? `style="${styles}"` : "";
-	};
+	}
 
-	this._renderImage_getMapRegionData = function (entry) {
+	_renderImage_getMapRegionData (entry) {
 		return JSON.stringify(this.getMapRegionData(entry)).escapeQuotes();
-	};
+	}
 
-	this.getMapRegionData = function (entry) {
+	getMapRegionData (entry) {
 		return {
 			regions: entry.mapRegions,
 			width: entry.width,
@@ -761,14 +766,14 @@ globalThis.Renderer = function () {
 					? {expectsDarkBackground: true}
 					: {},
 		};
-	};
+	}
 
-	this._renderImage_isComicStyling = function (entry) {
+	_renderImage_isComicStyling (entry) {
 		if (!entry.style) return false;
 		return ["comic-speaker-left", "comic-speaker-right"].includes(entry.style);
-	};
+	}
 
-	this._renderImage_getWrapperClasses = function (entry) {
+	_renderImage_getWrapperClasses (entry) {
 		const out = ["ve-rd__wrp-image", "relative"];
 		if (entry.expectsLightBackground) out.push("ve-rd__wrp-image--bg", "ve-rd__wrp-image--bg-light");
 		else if (entry.expectsDarkBackground) out.push("ve-rd__wrp-image--bg", "ve-rd__wrp-image--bg-dark");
@@ -779,9 +784,9 @@ globalThis.Renderer = function () {
 			}
 		}
 		return out.join(" ");
-	};
+	}
 
-	this._renderImage_getImageClasses = function (entry) {
+	_renderImage_getImageClasses (entry) {
 		const out = ["ve-rd__image"];
 		if (entry.style) {
 			switch (entry.style) {
@@ -789,35 +794,35 @@ globalThis.Renderer = function () {
 			}
 		}
 		return out.join(" ");
-	};
+	}
 
-	this._renderImage_getUrl = function (entry) {
+	_renderImage_getUrl (entry) {
 		let url = Renderer.utils.getEntryMediaUrl(entry, "href", "img");
 		url = this._applyPlugins_useAll("image_urlPostProcess", null, {input: url}) ?? url;
 		return url;
-	};
+	}
 
-	this._renderImage_getUrlThumbnail = function (entry) {
+	_renderImage_getUrlThumbnail (entry) {
 		let url = Renderer.utils.getEntryMediaUrl(entry, "hrefThumbnail", "img");
 		url = this._applyPlugins_useAll("image_urlThumbnailPostProcess", null, {input: url}) ?? url;
 		return url;
-	};
+	}
 
-	this._renderList_getListCssClasses = function (entry, textStack, meta, options) {
+	_renderList_getListCssClasses (entry, textStack, meta, options) {
 		const out = [`ve-rd__list`];
 		if (entry.style || entry.columns) {
 			if (entry.style) out.push(...entry.style.split(" ").map(it => `ve-rd__${it}`));
 			if (entry.columns) out.push(`ve-columns-${entry.columns}`);
 		}
 		return out.join(" ");
-	};
+	}
 
-	this._renderTableGroup = function (entry, textStack, meta, options) {
+	_renderTableGroup (entry, textStack, meta, options) {
 		const len = entry.tables.length;
 		for (let i = 0; i < len; ++i) this._recursiveRender(entry.tables[i], textStack, meta);
-	};
+	}
 
-	this._renderTable = function (entry, textStack, meta, options) {
+	_renderTable (entry, textStack, meta, options) {
 		// TODO add handling for rowLabel property
 		if (entry.intro) {
 			const len = entry.intro.length;
@@ -957,9 +962,9 @@ globalThis.Renderer = function () {
 				this._recursiveRender(entry.outro[i], textStack, meta, {prefix: "<p>", suffix: "</p>"});
 			}
 		}
-	};
+	}
 
-	this._renderTable_getCellDataStr = function (ent) {
+	_renderTable_getCellDataStr (ent) {
 		function convertZeros (num) {
 			if (num === 0) return 100;
 			return num;
@@ -970,31 +975,31 @@ globalThis.Renderer = function () {
 		}
 
 		return "";
-	};
+	}
 
-	this._renderTable_getTableThClassText = function (entry, i, entCell) {
+	_renderTable_getTableThClassText (entry, i, entCell) {
 		const ptFromCol = entry.colStyles?.[i] ? this._getMutatedStyleString(entry.colStyles[i]) : "";
 		const ptFromCell = entCell?.style ? entCell.style.split(" ").map(it => `ve-rd__${it}`).join(" ") : "";
 		return `class="ve-rd__th ${ptFromCol} ${ptFromCell}"`;
-	};
+	}
 
-	this._renderTable_makeTableTdClassText = function (entry, i) {
+	_renderTable_makeTableTdClassText (entry, i) {
 		if (entry.rowStyles != null) return i >= entry.rowStyles.length ? "" : `class="${this._getMutatedStyleString(entry.rowStyles[i])}"`;
 		else return this._renderTable_getTableThClassText(entry, i);
-	};
+	}
 
-	this._renderEntries = function (entry, textStack, meta, options) {
+	_renderEntries (entry, textStack, meta, options) {
 		this._renderEntriesSubtypes(entry, textStack, meta, options, true);
-	};
+	}
 
-	this._getPagePart = function (entry, isInset) {
+	_getPagePart (entry, isInset) {
 		const isDisplaySource = !!entry.source;
 		const isDisplayPage = Renderer.utils.isDisplayPage(entry.page);
 		if (!isDisplaySource && !isDisplayPage) return "";
 		return ` <span class="ve-rd__title-link ${isInset ? `ve-rd__title-link--inset` : ""}">${isDisplaySource ? `<span class="ve-help-subtle" title="${Parser.sourceJsonToFull(entry.source)}">${Parser.sourceJsonToAbv(entry.source)}</span> ` : ""}${isDisplayPage ? `<span title="Page ${entry.page}">p${entry.page}</span>` : ""}</span>`;
-	};
+	}
 
-	this._renderEntriesSubtypes = function (entry, textStack, meta, options, incDepth) {
+	_renderEntriesSubtypes (entry, textStack, meta, options, incDepth) {
 		const displayName = Parser.getDisplayNameWithEN(entry);
 
 		const isInlineTitle = meta.depth >= 2;
@@ -1022,9 +1027,9 @@ globalThis.Renderer = function () {
 		}
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderEntriesSubtypes_block = function ({entry, textStack, meta, options, incDepth, displayName}) {
+	_renderEntriesSubtypes_block ({entry, textStack, meta, options, incDepth, displayName}) {
 		const pagePart = !this._isPartPageExpandCollapseDisabled
 			? this._getPagePart(entry)
 			: "";
@@ -1072,9 +1077,9 @@ globalThis.Renderer = function () {
 			meta.depth = cacheDepth;
 		}
 		textStack[0] += `</${this.wrapperTag}>`;
-	};
+	}
 
-	this._renderEntriesSubtypes_inline = function ({entry, textStack, meta, options, displayName}) {
+	_renderEntriesSubtypes_inline ({entry, textStack, meta, options, displayName}) {
 		const styleString = this._renderEntriesSubtypes_getStyleString({entry, meta, isInlineTitle: true, isNamed: !!displayName});
 
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
@@ -1106,9 +1111,9 @@ globalThis.Renderer = function () {
 			this._recursiveRender({type: "inlineBlock", entries: [{type: "wrappedHtml", html: headerSpan}]}, textStack, meta, {prefix: "<p>", suffix: "</p>"});
 		}
 		textStack[0] += `</${this.wrapperTag}>`;
-	};
+	}
 
-	this._renderEntriesSubtypes_getDataString = function (entry, {isCollapsibleChild = false} = {}) {
+	_renderEntriesSubtypes_getDataString (entry, {isCollapsibleChild = false} = {}) {
 		const displayName = entry._displayName || entry.name;
 		let dataString = "";
 		if (displayName) dataString += ` data-roll-name-ancestor="${Renderer.stripTags(displayName).qq()}"`;
@@ -1121,9 +1126,9 @@ globalThis.Renderer = function () {
 			}
 		}
 		return dataString;
-	};
+	}
 
-	this._renderEntriesSubtypes_getHeaderSpan = function ({
+	_renderEntriesSubtypes_getHeaderSpan ({
 		entry,
 		textStack,
 		meta,
@@ -1145,9 +1150,9 @@ globalThis.Renderer = function () {
 		const ptText = `${pluginDataNamePrefix.join("")}${this.render({type: "inline", entries: [displayName]})}${isAddPeriod ? "." : ""}`;
 
 		return `<${headerTag} class="ve-rd__h ${headerClass}" ${this._getRenderedTitleIndexAttribute()} ${this._getEnumeratedTitleRel(entry.name)}> <span class="entry-title-inner ${!pagePart && entry.source ? `ve-help-subtle` : ""}"${!pagePart && entry.source ? ` title="Source: ${Parser.sourceJsonToFull(entry.source)}${entry.page ? `, p${entry.page}` : ""}"` : ""}>${ptText}</span>${partPageExpandCollapse}</${headerTag}> `;
-	};
+	}
 
-	this._renderEntriesSubtypes_renderPreReqText = function (entry, textStack, meta) {
+	_renderEntriesSubtypes_renderPreReqText (entry, textStack, meta) {
 		if (!entry.prerequisite) return;
 
 		/** @deprecated */
@@ -1159,9 +1164,9 @@ globalThis.Renderer = function () {
 		}
 
 		textStack[0] += `<p><i>${Renderer.utils.prerequisite.getHtml(entry.prerequisite, {styleHint: meta.styleHint})}</i></p>`;
-	};
+	}
 
-	this._renderEntriesSubtypes_getStyleString = function ({entry, meta, isNamed = false, isInlineTitle = false}) {
+	_renderEntriesSubtypes_getStyleString ({entry, meta, isNamed = false, isInlineTitle = false}) {
 		const styleClasses = ["ve-rd__b"];
 		styleClasses.push(this._getStyleClass(entry.type || "entries", entry));
 		if (isNamed) styleClasses.push("ve-rd__b--named");
@@ -1172,9 +1177,9 @@ globalThis.Renderer = function () {
 			styleClasses.push(meta.depth === -1 ? Renderer.HEAD_NEG_1 : meta.depth === 0 ? Renderer.HEAD_0 : Renderer.HEAD_1);
 		}
 		return styleClasses.length > 0 ? `class="${styleClasses.join(" ")}"` : "";
-	};
+	}
 
-	this._renderOptions = function (entry, textStack, meta, options) {
+	_renderOptions (entry, textStack, meta, options) {
 		if (!entry.entries) return;
 		entry.entries = entry.entries.sort((a, b) => a.name && b.name ? SortUtil.ascSort(a.name, b.name) : a.name ? -1 : b.name ? 1 : 0);
 
@@ -1193,9 +1198,9 @@ globalThis.Renderer = function () {
 			};
 			this._renderList(fauxEntry, textStack, meta, options);
 		} else this._renderEntriesSubtypes(entry, textStack, meta, options, false);
-	};
+	}
 
-	this._renderList = function (entry, textStack, meta, options) {
+	_renderList (entry, textStack, meta, options) {
 		if (!entry.items) return;
 
 		const start = (entry.start ?? 1) + (entry.name ? -1 : 0);
@@ -1219,19 +1224,19 @@ globalThis.Renderer = function () {
 			if (item.type !== "list") textStack[0] += "</li>";
 		}
 		textStack[0] += `</${tag}>`;
-	};
+	}
 
-	this._getPtExpandCollapse = function () {
+	_getPtExpandCollapse () {
 		return `<span class="ve-rd__h-toggle ve-ml-2 ve-clickable ve-no-select no-print ve-lst-is-exporting-image__hidden" data-rd-h-toggle-button="true" title="折叠/展开（按住SHIFT切换所有）">[\u2212]</span>`;
-	};
+	}
 
-	this._getPtExpandCollapseSpecial = function () {
+	_getPtExpandCollapseSpecial () {
 		return `<span class="ve-rd__h-toggle ve-ml-2 ve-clickable ve-no-select no-print ve-lst-is-exporting-image__hidden" data-rd-h-special-toggle-button="true" title="折叠/展开（按住SHIFT切换所有）">[\u2212]</span>`;
-	};
+	}
 
 	/* -------------------------------------------- */
 
-	this._renderInset_getCssClasses = function (entry, textStack, meta, options) {
+	_renderInset_getCssClasses (entry, textStack, meta, options) {
 		const out = ["ve-rd__b-special", "ve-rd__b-inset"];
 		if (entry.type === "insetReadaloud") out.push("ve-rd__b-inset--readaloud");
 		if (entry.style) {
@@ -1248,9 +1253,9 @@ globalThis.Renderer = function () {
 			);
 		}
 		return out.join(" ");
-	};
+	}
 
-	this._renderInset = function (entry, textStack, meta, options) {
+	_renderInset (entry, textStack, meta, options) {
 		const displayName = entry.name?.trim();
 
 		const dataString = this._renderEntriesSubtypes_getDataString(entry, {isCollapsibleChild: !displayName});
@@ -1298,9 +1303,9 @@ globalThis.Renderer = function () {
 		textStack[0] += `</${this.wrapperTag}>`;
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderInsetReadaloud = function (entry, textStack, meta, options) {
+	_renderInsetReadaloud (entry, textStack, meta, options) {
 		const displayName = entry.name?.trim();
 
 		const dataString = this._renderEntriesSubtypes_getDataString(entry, {isCollapsibleChild: !displayName});
@@ -1346,9 +1351,9 @@ globalThis.Renderer = function () {
 		textStack[0] += `</${this.wrapperTag}>`;
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderVariant = function (entry, textStack, meta, options) {
+	_renderVariant (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 
 		if (entry.name != null && Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP[entry.type]) this._handleTrackTitles(entry.name);
@@ -1389,9 +1394,9 @@ globalThis.Renderer = function () {
 		textStack[0] += `</${this.wrapperTag}>`;
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderVariantInner = function (entry, textStack, meta, options) {
+	_renderVariantInner (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 
 		if (entry.name != null && Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP[entry.type]) this._handleTrackTitles(entry.name);
@@ -1411,9 +1416,9 @@ globalThis.Renderer = function () {
 		textStack[0] += `</${this.wrapperTag}>`;
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderVariantSub = function (entry, textStack, meta, options) {
+	_renderVariantSub (entry, textStack, meta, options) {
 		// pretend this is an inline-header'd entry, but set a flag so we know not to add bold
 		this._subVariant = true;
 		const fauxEntry = entry;
@@ -1423,11 +1428,11 @@ globalThis.Renderer = function () {
 		this._recursiveRender(fauxEntry, textStack, meta, {prefix: "<p>", suffix: "</p>"});
 		meta.depth = cacheDepth;
 		this._subVariant = false;
-	};
+	}
 
 	/* -------------------------------------------- */
 
-	this._SPELLCASTING_PROPS = [
+	_SPELLCASTING_PROPS = [
 		"constant",
 		"will",
 		"recharge",
@@ -1442,7 +1447,7 @@ globalThis.Renderer = function () {
 		"legendary",
 	];
 
-	this._renderSpellcasting_getEntries = function (entry) {
+	_renderSpellcasting_getEntries (entry) {
 		const hidden = new Set(entry.hidden || []);
 		const toRender = [{type: "entries", name: entry.name, entries: entry.headerEntries ? MiscUtil.copyFast(entry.headerEntries) : []}];
 
@@ -1493,9 +1498,9 @@ globalThis.Renderer = function () {
 
 		if (entry.footerEntries) toRender.push({type: "entries", entries: entry.footerEntries});
 		return toRender;
-	};
+	}
 
-	this._renderSpellcasting_getEntries_procPerDuration = function ({entry, hidden, tempList, prop, durationText, fnGetDurationText, isSkipPrefix}) {
+	_renderSpellcasting_getEntries_procPerDuration ({entry, hidden, tempList, prop, durationText, fnGetDurationText, isSkipPrefix}) {
 		if (!entry[prop] || hidden.has(prop)) return;
 
 		Object.entries(entry[prop])
@@ -1523,21 +1528,21 @@ globalThis.Renderer = function () {
 					entry: this._renderSpellcasting_getRenderableList(per).join(", "),
 				});
 			});
-	};
+	}
 
-	this._renderSpellcasting_getRenderableList = function (spellList) {
+	_renderSpellcasting_getRenderableList (spellList) {
 		return spellList.filter(it => !it.hidden).map(it => it.entry || it);
-	};
+	}
 
-	this._renderSpellcasting = function (entry, textStack, meta, options) {
+	_renderSpellcasting (entry, textStack, meta, options) {
 		const toRender = this._renderSpellcasting_getEntries(entry);
 		if (!toRender?.[0].entries?.length) return;
 		this._recursiveRender({type: "entries", entries: toRender}, textStack, meta);
-	};
+	}
 
 	/* -------------------------------------------- */
 
-	this._renderQuote = function (entry, textStack, meta, options) {
+	_renderQuote (entry, textStack, meta, options) {
 		textStack[0] += `<div class="${this._renderList_getQuoteCssClasses(entry, textStack, meta, options)}">`;
 
 		const len = entry.entries.length;
@@ -1563,75 +1568,75 @@ globalThis.Renderer = function () {
 		}
 
 		textStack[0] += `</div>`;
-	};
+	}
 
-	this._renderList_getQuoteCssClasses = function (entry, textStack, meta, options) {
+	_renderList_getQuoteCssClasses (entry, textStack, meta, options) {
 		const out = [`ve-rd__quote`];
 		if (entry.style) {
 			if (entry.style) out.push(...entry.style.split(" ").map(it => `ve-rd__${it}`));
 		}
 		return out.join(" ");
-	};
+	}
 
-	this._renderQuote_getBy = function (entry) {
+	_renderQuote_getBy (entry) {
 		if (!entry.by?.length) return null;
 		return entry.by instanceof Array ? entry.by : [entry.by];
-	};
+	}
 
-	this._renderOptfeature = function (entry, textStack, meta, options) {
+	_renderOptfeature (entry, textStack, meta, options) {
 		this._renderEntriesSubtypes(entry, textStack, meta, options, true);
-	};
+	}
 
-	this._renderPatron = function (entry, textStack, meta, options) {
+	_renderPatron (entry, textStack, meta, options) {
 		this._renderEntriesSubtypes(entry, textStack, meta, options, false);
-	};
+	}
 
-	this._renderAbilityDc = function (entry, textStack, meta, options) {
+	_renderAbilityDc (entry, textStack, meta, options) {
 		textStack[0] += `<div class="ve-rd__wrp-centered-ability"><b>`;
 		this._recursiveRender(entry.name, textStack, meta);
 		if (options.styleHint === "classic") textStack[0] += ` 豁免DC</b> = 8 + 你的熟练加值 + 你的${Parser.attrChooseToFull(entry.attributes)}</div>`;
 		else textStack[0] += ` 豁免DC</b> = 8 + ${Parser.attrChooseToFull(entry.attributes)} + 熟练加值</div>`;
-	};
+	}
 
-	this._renderAbilityAttackMod = function (entry, textStack, meta, options) {
+	_renderAbilityAttackMod (entry, textStack, meta, options) {
 		textStack[0] += `<div class="ve-rd__wrp-centered-ability"><b>`;
 		this._recursiveRender(entry.name, textStack, meta);
 		if (options.styleHint === "classic") textStack[0] += `攻击加值</b> = 你的熟练加值 + 你的${Parser.attrChooseToFull(entry.attributes)}</div>`;
 		else textStack[0] += `攻击加值</b> = ${Parser.attrChooseToFull(entry.attributes)} + 熟练加值</div>`;
-	};
+	}
 
-	this._renderAbilityGeneric = function (entry, textStack, meta, options) {
+	_renderAbilityGeneric (entry, textStack, meta, options) {
 		textStack[0] += `<div class="ve-rd__wrp-centered-ability">`;
 		if (entry.name) this._recursiveRender(entry.name, textStack, meta, {prefix: "<b>", suffix: "</b> = "});
 		if (entry.text) this._recursiveRender(entry.text, textStack, meta);
 		textStack[0] += `${entry.attributes ? ` ${Parser.attrChooseToFull(entry.attributes)}` : ""}</div>`;
-	};
+	}
 
-	this._renderInline = function (entry, textStack, meta, options) {
+	_renderInline (entry, textStack, meta, options) {
 		if (entry.entries) {
 			const len = entry.entries.length;
 			for (let i = 0; i < len; ++i) this._recursiveRender(entry.entries[i], textStack, meta);
 		}
-	};
+	}
 
-	this._renderInlineBlock = function (entry, textStack, meta, options) {
+	_renderInlineBlock (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		if (entry.entries) {
 			const len = entry.entries.length;
 			for (let i = 0; i < len; ++i) this._recursiveRender(entry.entries[i], textStack, meta);
 		}
 		this._renderSuffix(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderBonus = function (entry, textStack, meta, options) {
+	_renderBonus (entry, textStack, meta, options) {
 		textStack[0] += (entry.value < 0 ? "" : "+") + entry.value;
-	};
+	}
 
-	this._renderBonusSpeed = function (entry, textStack, meta, options) {
+	_renderBonusSpeed (entry, textStack, meta, options) {
 		textStack[0] += entry.value === 0 ? "\u2014" : `${entry.value < 0 ? "" : "+"}${entry.value} ft.`;
-	};
+	}
 
-	this._renderDice = function (entry, textStack, meta, options) {
+	_renderDice (entry, textStack, meta, options) {
 		const pluginResults = this._applyPlugins_getAll("dice", {textStack, meta, options}, {input: entry});
 
 		for (const res of pluginResults) {
@@ -1649,9 +1654,9 @@ globalThis.Renderer = function () {
 		}
 
 		textStack[0] += toDisplay;
-	};
+	}
 
-	this._renderActions = function (entry, textStack, meta, options) {
+	_renderActions (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 
 		if (entry.name != null && Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP[entry.type]) this._handleTrackTitles(entry.name);
@@ -1673,9 +1678,9 @@ globalThis.Renderer = function () {
 		textStack[0] += `</${this.wrapperTag}>`;
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderAttack = function (entry, textStack, meta, options) {
+	_renderAttack (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		textStack[0] += `<i>${Parser.attackTypeToFull(entry.attackType)}:</i> `;
 		const len = entry.attackEntries.length;
@@ -1684,15 +1689,15 @@ globalThis.Renderer = function () {
 		const len2 = entry.hitEntries.length;
 		for (let i = 0; i < len2; ++i) this._recursiveRender(entry.hitEntries[i], textStack, meta);
 		this._renderSuffix(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderIngredient = function (entry, textStack, meta, options) {
+	_renderIngredient (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		this._recursiveRender(entry.entry, textStack, meta);
 		this._renderSuffix(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderItemSubtypes = function (entry, textStack, meta, options) {
+	_renderItemSubtypes (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		textStack[0] += `<p class="ve-rd__p-list-item" ${entry.name ? `data-roll-name-ancestor="${Renderer.stripTags(entry.name).qq()}"` : ""}>`;
 		if (entry.name) {
@@ -1705,21 +1710,21 @@ globalThis.Renderer = function () {
 		}
 		textStack[0] += "</p>";
 		this._renderSuffix(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderItemSubtypes_isAddPeriod = function (entry) {
+	_renderItemSubtypes_isAddPeriod (entry) {
 		return entry.name && entry.nameDot !== false && !Renderer._INLINE_HEADER_TERMINATORS.has(entry.name[entry.name.length - 1]);
-	};
+	}
 
-	this._renderItem = function (entry, textStack, meta, options) {
+	_renderItem (entry, textStack, meta, options) {
 		this._renderItemSubtypes(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderItemSub = function (entry, textStack, meta, options) {
+	_renderItemSub (entry, textStack, meta, options) {
 		this._renderItemSubtypes(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderItemSpell = function (entry, textStack, meta, options) {
+	_renderItemSpell (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 
 		const tempStack = [""];
@@ -1727,9 +1732,9 @@ globalThis.Renderer = function () {
 
 		this._recursiveRender(entry.entry, textStack, meta, {prefix: `<p>${tempStack.join("")} `, suffix: "</p>"});
 		this._renderSuffix(entry, textStack, meta, options);
-	};
+	}
 
-	this._renderDataHeader = function (
+	_renderDataHeader (
 		textStack,
 		name,
 		style,
@@ -1740,6 +1745,7 @@ globalThis.Renderer = function () {
 			isFixedHeightInitialCenterContent = false,
 			slotSize = null,
 			slotSizeSource = null,
+			scrollHash = null,
 			htmlNameExpanded = null,
 			htmlNameCollapsed = null,
 		} = {},
@@ -1754,17 +1760,18 @@ globalThis.Renderer = function () {
 				isFixedHeightInitialCenterContent,
 				slotSize,
 				slotSizeSource,
+				scrollHash,
 				htmlNameExpanded,
 				htmlNameCollapsed,
 			},
 		);
-	};
+	}
 
-	this._renderDataFooter = function (textStack) {
+	_renderDataFooter (textStack) {
 		textStack[0] += Renderer.utils.embed.getFooter();
-	};
+	}
 
-	this._InlineStatblockStrategy = function (
+	_InlineStatblockStrategy = function (
 		{
 			pFnPreProcess,
 		},
@@ -1772,7 +1779,7 @@ globalThis.Renderer = function () {
 		this.pFnPreProcess = pFnPreProcess;
 	};
 
-	this._INLINE_STATBLOCK_STRATEGIES = {
+	_INLINE_STATBLOCK_STRATEGIES = {
 		"item": new this._InlineStatblockStrategy({
 			pFnPreProcess: async (ent) => {
 				await Renderer.item.pPopulatePropertyAndTypeReference();
@@ -1782,7 +1789,7 @@ globalThis.Renderer = function () {
 		}),
 	};
 
-	this._renderStatblockInline = function (entry, textStack, meta, options) {
+	_renderStatblockInline (entry, textStack, meta, options) {
 		const fnGetRenderCompact = Renderer.hover.getFnRenderCompact(entry.dataType);
 
 		const headerName = entry.displayName || entry.data?.name;
@@ -1855,9 +1862,9 @@ globalThis.Renderer = function () {
 
 		textStack[0] += `<tr><td colspan="6"><style data-rd-cache-id="${id}" data-rd-cache="inlineStatblock" onload="Renderer._cache.pRunFromEle(this)"></style></td></tr>`;
 		this._renderDataFooter(textStack);
-	};
+	}
 
-	this._renderStatblock = function (entry, textStack, meta, options) {
+	_renderStatblock (entry, textStack, meta, options) {
 		const page = entry.prop || Renderer.tag.getPage(entry.tag);
 		const source = Parser.getTagSource(entry.tag, entry.source);
 		const hash = entry.hash || (UrlUtil.URL_TO_HASH_BUILDER[page] ? UrlUtil.URL_TO_HASH_BUILDER[page]({...entry, source}) : null);
@@ -1906,6 +1913,7 @@ globalThis.Renderer = function () {
 				isFixedHeightInitialCenterContent: isFixedHeightInitial,
 				slotSize,
 				slotSizeSource: source,
+				scrollHash: isFluff ? null : hash,
 			},
 		);
 		const ptRdAttribs = [
@@ -1930,9 +1938,9 @@ globalThis.Renderer = function () {
 			</td>
 		</tr>`;
 		this._renderDataFooter(textStack);
-	};
+	}
 
-	this._renderGallery = function (entry, textStack, meta, options) {
+	_renderGallery (entry, textStack, meta, options) {
 		if (entry.name) textStack[0] += `<h5 class="ve-rd__gallery-name">${entry.name}</h5>`;
 		textStack[0] += `<div class="ve-rd__wrp-gallery">`;
 		const len = entry.images.length;
@@ -1949,9 +1957,9 @@ globalThis.Renderer = function () {
 			this._recursiveRender(img, textStack, meta, options);
 		}
 		textStack[0] += `</div>`;
-	};
+	}
 
-	this._renderFlowchart = function (entry, textStack, meta, options) {
+	_renderFlowchart (entry, textStack, meta, options) {
 		textStack[0] += `<div class="ve-rd__wrp-flowchart">`;
 		const len = entry.blocks.length;
 		for (let i = 0; i < len; ++i) {
@@ -1961,9 +1969,9 @@ globalThis.Renderer = function () {
 			}
 		}
 		textStack[0] += `</div>`;
-	};
+	}
 
-	this._renderFlowBlock = function (entry, textStack, meta, options) {
+	_renderFlowBlock (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 		textStack[0] += `<${this.wrapperTag} class="ve-rd__b-special ve-rd__b-flow ve-text-center" ${dataString}>`;
 
@@ -1986,9 +1994,9 @@ globalThis.Renderer = function () {
 		textStack[0] += `</${this.wrapperTag}>`;
 
 		this._lastDepthTrackerInheritedProps = cachedLastDepthTrackerProps;
-	};
+	}
 
-	this._renderHomebrew = function (entry, textStack, meta, options) {
+	_renderHomebrew (entry, textStack, meta, options) {
 		textStack[0] += `<div class="ve-rd-homebrew__b"><div class="ve-rd-homebrew__wrp-notice"><span class="ve-rd-homebrew__disp-notice"></span>`;
 
 		if (entry.oldEntries) {
@@ -2016,9 +2024,9 @@ globalThis.Renderer = function () {
 		}
 
 		textStack[0] += `</div>`;
-	};
+	}
 
-	this._renderCode = function (entry, textStack, meta, options) {
+	_renderCode (entry, textStack, meta, options) {
 		const isWrapped = !!StorageUtil.syncGet("rendererCodeWrap");
 		textStack[0] += `
 			<div class="ve-flex-col h-100">
@@ -2029,13 +2037,13 @@ globalThis.Renderer = function () {
 				<pre class="ve-h-100 ve-w-100 ve-mb-1 ${isWrapped ? "ve-rd__pre-wrap" : ""}">${entry.preformatted}</pre>
 			</div>
 		`;
-	};
+	}
 
-	this._renderHr = function (entry, textStack, meta, options) {
+	_renderHr (entry, textStack, meta, options) {
 		textStack[0] += `<hr class="ve-rd__hr">`;
-	};
+	}
 
-	this._getStyleClass = function (entryType, entry) {
+	_getStyleClass (entryType, entry) {
 		const outList = [];
 
 		const pluginResults = this._applyPlugins_getAll(`${entryType}_styleClass_fromSource`, null, {input: {entryType, entry}});
@@ -2055,9 +2063,9 @@ globalThis.Renderer = function () {
 		}
 		if (entry.style) outList.push(this._getMutatedStyleString(entry.style));
 		return outList.join(" ");
-	};
+	}
 
-	this._renderString = function (entry, textStack, meta, options) {
+	_renderString (entry, textStack, meta, options) {
 		const str = this._applyPlugins_useAll("string_preprocess", {textStack, meta, options}, {input: entry}) ?? entry;
 
 		const tagSplit = Renderer.splitByTags(str);
@@ -2074,16 +2082,16 @@ globalThis.Renderer = function () {
 			const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
 			this._renderString_renderTag(textStack, meta, options, tag, text);
 		}
-	};
+	}
 
-	this._renderString_renderBasic = function (textStack, meta, options, str) {
+	_renderString_renderBasic (textStack, meta, options, str) {
 		const fromPlugins = this._applyPlugins_useFirst("string_basic", {textStack, meta, options}, {input: str});
 		if (fromPlugins) return void (textStack[0] += fromPlugins);
 
 		textStack[0] += str;
-	};
+	}
 
-	this._renderString_renderTag = function (textStack, meta, options, tag, text) {
+	_renderString_renderTag (textStack, meta, options, tag, text) {
 		// region Plugins
 		// Tag-specific
 		const fromPluginsSpecific = this._applyPlugins_useFirst(`string_${tag}`, {textStack, meta, options}, {input: {tag, text}});
@@ -2546,15 +2554,15 @@ globalThis.Renderer = function () {
 				break;
 			}
 		}
-	};
+	}
 
-	this._renderString_renderTag_getBrewColorPart = function (color) {
+	_renderString_renderTag_getBrewColorPart (color) {
 		if (!color) return "";
 		const scrubbedColor = BrewUtilShared.getValidColor(color, {isExtended: true});
 		return scrubbedColor.startsWith("--") ? `var(${scrubbedColor})` : `#${scrubbedColor}`;
-	};
+	}
 
-	this._renderString_renderTag_hitYourSpellAttack = function (textStack, meta, options, tag, text) {
+	_renderString_renderTag_hitYourSpellAttack (textStack, meta, options, tag, text) {
 		const [displayText] = Renderer.splitTagByPipe(text);
 
 		const fauxEntry = {
@@ -2565,20 +2573,20 @@ globalThis.Renderer = function () {
 			toRoll: `1d20 + #$prompt_number:title=输入你的法术攻击加值$#`,
 		};
 		return this._recursiveRender(fauxEntry, textStack, meta);
-	};
+	}
 
-	this._renderString_getLoaderTagMeta = function (text, {isDefaultUrl = false} = {}) {
+	_renderString_getLoaderTagMeta (text, {isDefaultUrl = false} = {}) {
 		const [name, file, mode = "homebrew"] = Renderer.splitTagByPipe(text);
 
 		if (!isDefaultUrl) return {name, path: file, mode};
 
 		const path = /^.*?:\/\//.test(file) ? file : `${VeCt.URL_ROOT_BREW}${file}`;
 		return {name, path, mode};
-	};
+	}
 
-	this._renderPrimitive = function (entry, textStack, meta, options) { textStack[0] += entry; };
+	_renderPrimitive (entry, textStack, meta, options) { textStack[0] += entry; }
 
-	this._renderLink = function (entry, textStack, meta, options) {
+	_renderLink (entry, textStack, meta, options) {
 		let href = this._renderLink_getHref(entry);
 
 		// overwrite href if there's an available Roll20 handout/character
@@ -2601,9 +2609,9 @@ globalThis.Renderer = function () {
 		} else {
 			textStack[0] += `<a href="${href.qq()}" ${entry.href.type === "internal" ? "" : `target="_blank" rel="noopener noreferrer"`} ${isDisableEvents ? "" : this._renderLink_getHoverString(entry)} ${additionalAttributes.join(" ")}>${this.render(entry.text)}</a>`;
 		}
-	};
+	}
 
-	this._renderLink_getHref = function (entry) {
+	_renderLink_getHref (entry) {
 		if (entry.href.type === "internal") {
 			// baseURL is blank by default
 			const ptBase = `${this.baseUrl}${entry.href.path}`;
@@ -2621,9 +2629,9 @@ globalThis.Renderer = function () {
 			return entry.href.url;
 		}
 		return "";
-	};
+	}
 
-	this._renderLink_getHoverString = function (entry) {
+	_renderLink_getHoverString (entry) {
 		if (!entry.href.hover || !this._isAddHandlers) return "";
 
 		let procHash = entry.href.hover.hash
@@ -2654,7 +2662,7 @@ globalThis.Renderer = function () {
 			isFauxPage: entry.href.hover.isFauxPage,
 			isAllowRedirect: entry.href.hover.isAllowRedirect,
 		});
-	};
+	}
 
 	/**
 	 * Helper function to render an entity using this renderer
@@ -2662,11 +2670,11 @@ globalThis.Renderer = function () {
 	 * @param depth
 	 * @returns {string}
 	 */
-	this.render = function (entry, depth = 0) {
+	render (entry, depth = 0) {
 		const tempStack = [];
 		this.recursiveRender(entry, tempStack, {depth});
 		return tempStack.join("");
-	};
+	}
 };
 
 // Unless otherwise specified, these use `"name"` as their name title prop
@@ -2689,6 +2697,7 @@ Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP = Renderer.ENTRIES_WITH_ENUMERATE
 
 Renderer.ENTRIES_WITH_CHILDREN = [
 	...Renderer.ENTRIES_WITH_ENUMERATED_TITLES,
+	{type: "wrapper", key: "wrappeds"},
 	{type: "list", key: "items"},
 	{type: "table", key: "rows"},
 ];
@@ -2705,8 +2714,8 @@ Renderer._STYLE_TAG_ID_TO_STYLE = {
 };
 
 Renderer.get = () => {
-	if (!Renderer.defaultRenderer) Renderer.defaultRenderer = new Renderer();
-	return Renderer.defaultRenderer;
+	if (!Renderer._defaultRenderer) Renderer._defaultRenderer = new Renderer();
+	return Renderer._defaultRenderer;
 };
 
 /**
@@ -3064,6 +3073,7 @@ Renderer.getAbilityData = function (abArr, {isOnlyShort, isCurrentLineage = fals
 		asTextShort: `${outerStack.map((it, i) => `(${Parser.ALPHABET[i].toLowerCase()}) ${it.asTextShort}`).join(" ")}`,
 		asCollection: [...new Set(outerStack.map(it => it.asCollection).flat())],
 		areNegative: [...new Set(outerStack.map(it => it.areNegative).flat())],
+		asSortableString: outerStack[0].asSortableString,
 	});
 };
 
@@ -3073,6 +3083,8 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 	const areNegative = [];
 	const toConvertToText = [];
 	const toConvertToShortText = [];
+	let cntIncreases = 0;
+	const allAbs = {};
 
 	if (abObj != null) {
 		handleAllAbilities(abObj);
@@ -3083,6 +3095,7 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 			asTextShort: toConvertToShortText.join("; "),
 			asCollection: asCollection,
 			areNegative: areNegative,
+			asSortableString: `${`${cntIncreases}`.padStart(3, "0")} ${Object.keys(allAbs).length} ${Parser.ABIL_ABVS.filter(it => allAbs[it]).join("/")}`,
 		});
 	}
 
@@ -3105,6 +3118,10 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 		mainAbs.push(Parser.attAbvToFull(abv));
 		asCollection.push(abv);
 		if (abObj[abv] < 0) areNegative.push(abv);
+		else {
+			cntIncreases += abObj[abv];
+			allAbs[abv] = true;
+		}
 	}
 
 	function handleAbilitiesChooseWeighted () {
@@ -3118,6 +3135,9 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 
 		const weightsIncrease = w.weights.filter(it => it >= 0).sort(SortUtil.ascSort).reverse();
 		const weightsReduce = w.weights.filter(it => it < 0).sort(SortUtil.ascSort).reverse();
+
+		cntIncreases += weightsIncrease.sum();
+		w.from.forEach(abv => allAbs[abv] = true);
 
 		const areIncreaseShort = [];
 		const areIncrease = isAny && isAllEqual && w.weights.length > 1 && w.weights[0] >= 0
@@ -3168,6 +3188,9 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 
 		const amount = UiUtil.intToBonus(ch.amount ?? 1, {isPretty: true});
 
+		cntIncreases += amount * (ch.count || 1);
+		ch.from.forEach(abv => allAbs[abv] = true);
+
 		if (allAbilities) {
 			ptsLong.push("任意");
 			ptsShort.push("任意");
@@ -3213,11 +3236,12 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 	}
 };
 
-Renderer._AbilityData = function ({asText, asTextShort, asCollection, areNegative} = {}) {
+Renderer._AbilityData = function ({asText, asTextShort, asCollection, areNegative, asSortableString} = {}) {
 	this.asText = asText || "";
 	this.asTextShort = asTextShort || "";
 	this.asCollection = asCollection || [];
 	this.areNegative = areNegative || [];
+	this.asSortableString = asSortableString || "000 0";
 };
 
 /**
@@ -3502,7 +3526,7 @@ Renderer.utils = class {
 		const externalSourceText = Renderer.utils._getAltSourceHtmlOrText({ent, prop: "externalSources", introText: "外部来源于:", isText});
 
 		const srdText = ent.srd52
-			? `${isText ? "" : `the <span title="Systems Reference Document (5.2)">`}SRD 5.2.1${isText ? "" : `</span>`}${typeof ent.srd === "string" ? ` (as &quot;${ent.srd}&quot;)` : ""}`
+			? `${isText ? "" : `the <span title="Systems Reference Document (5.2)">`}SRD 5.2.1${isText ? "" : `</span>`}${typeof ent.srd52 === "string" ? ` (as &quot;${ent.srd52}&quot;)` : ""}`
 			: ent.srd
 				? `${isText ? "" : `the <span title="Systems Reference Document (5.1)">`}SRD 5.1${isText ? "" : `</span>`}${typeof ent.srd === "string" ? ` (as &quot;${ent.srd}&quot;)` : ""}`
 				: "";
@@ -3544,21 +3568,17 @@ Renderer.utils = class {
 		}
 
 		static getSlotSize ({slotSize = null, prop = null, source} = {}) {
-			if (slotSize) {
-				return this._SLOT_SIZE_TO_CLASS_NAME[slotSize]
-					? slotSize
-					: "medium";
-			}
+			if (slotSize) return slotSize;
 
 			switch (prop) {
 				case "itemMastery":
 				case "sense":
 				case "skill":
 				case "status":
-					return "extraSmall";
+					return "120";
 
 				case "action":
-				case "classFeature":
+				case "charoption":
 				case "condition":
 				case "cult":
 				case "disease":
@@ -3567,45 +3587,41 @@ Renderer.utils = class {
 				case "item":
 				case "reward":
 				case "optionalfeature":
-				case "subclassFeature":
-				case "vehupgrade":
-					return "small";
+				case "vehicleUpgrade":
+					return "200";
 
+				case "classFeature":
 				case "facility":
-					return "large";
+				case "object":
+				case "race":
+				case "spell":
+				case "subclassFeature":
+					return "360";
 
 				case "class":
 				case "subclass":
 				case "crochet":
-					return "extraLarge";
+					return "1000";
 
 				case "background":
-					if (source && SourceUtil.isClassicSource(source)) return "large";
-					return "extraSmall";
+					if (source && SourceUtil.isClassicSource(source)) return "800";
+					return "200";
 
 				case "variantrule":
-					if (source && SourceUtil.isClassicSource(source)) return "medium";
-					return "small";
+					if (source && SourceUtil.isClassicSource(source)) return "600";
+					return "360";
 
 				default:
-					if (prop?.endsWith("Fluff")) return "small";
+					if (prop?.endsWith("Fluff")) return "360";
 
-					return "medium";
+					return "600";
 			}
 		}
 
 		static _SLOT_SIZE_CLASS_PREFIX = "ve-rd__wrp-embedded-data--slot-size--";
 
-		static _SLOT_SIZE_TO_CLASS_NAME = {
-			"extraSmall": "ve-rd__wrp-embedded-data--slot-size--extra-small",
-			"small": "ve-rd__wrp-embedded-data--slot-size--small",
-			"medium": "ve-rd__wrp-embedded-data--slot-size--medium",
-			"large": "ve-rd__wrp-embedded-data--slot-size--large",
-			"extraLarge": "ve-rd__wrp-embedded-data--slot-size--extra-large",
-		};
-
 		static getSlotSizeClass ({slotSize = null, prop = null, source} = {}) {
-			return this._SLOT_SIZE_TO_CLASS_NAME[this.getSlotSize({slotSize, prop, source})];
+			return `${this._SLOT_SIZE_CLASS_PREFIX}${this.getSlotSize({slotSize, prop, source})}`;
 		}
 
 		static removeSlotSizeClasses (ele) {
@@ -3632,6 +3648,7 @@ Renderer.utils = class {
 		 * @param {?boolean} [isFixedHeightInitialCenterContent]
 		 * @param {?string} [slotSize]
 		 * @param {?string} [slotSizeSource]
+		 * @param {?string} [scrollHash]
 		 * @param {?string} [htmlNameCollapsed]
 		 * @param {?string} [htmlNameExpanded]
 		 */
@@ -3646,6 +3663,7 @@ Renderer.utils = class {
 				isFixedHeightInitialCenterContent = false,
 				slotSize = null,
 				slotSizeSource = null,
+				scrollHash = null,
 
 				htmlNameCollapsed = null,
 				htmlNameExpanded = null,
@@ -3658,6 +3676,7 @@ Renderer.utils = class {
 			return `<div
 				class="ve-rd__b-special ve-rd__wrp-embedded-data ${style ? `ve-rd__wrp-embedded-data--${style}` : ""} ${isStats ? `ve-rd__wrp-embedded-data--stats` : ""} ${isFixedHeightInitial ? `ve-rd__wrp-embedded-data--fixed-height-initial ${this.getSlotSizeClass({slotSize, source: slotSizeSource})}` : ""}"
 				data-rd-rendered-data="true"
+				${scrollHash ? `data-statblock-hash="${scrollHash.qq()}"` : ""}
 			>
 				<div
 					class="ve-rd__data-embed-header ve-bold ve-py-1p ve-px-4p ve-no-select ve-bb-1p-trans"
@@ -3675,7 +3694,7 @@ Renderer.utils = class {
 				</div>
 
 				<div class="ve-rd__wrp-embedded-data-table ${!isStatic && isCollapsed ? `ve-hidden` : ""} ${isFixedHeightInitial ? `ve-overflow-y-auto ${isFixedHeightInitialCenterContent ? "ve-flex-vh-center" : ""}` : ""}" data-rd-rendered-data-embed-content="true">
-					<table>
+					<table class="ve-w-100">
 						<tbody data-rd-rendered-data-embed-render-target="true">`;
 		}
 
@@ -6817,17 +6836,19 @@ Renderer.events = class {
 		});
 
 		const fnRender = Renderer.hover.getFnRenderCompact(page);
+		const isFluff = !!toRender.__prop?.endsWith("Fluff");
 		const nxt = veE({
 			outer: Renderer.utils.embed.getHeader(
 				headerName,
 				style,
 				{
-					isStats: !toRender.__prop?.endsWith("Fluff"),
+					isStats: !isFluff,
 					htmlNameCollapsed,
 					htmlNameExpanded,
 					isFixedHeightInitial,
 					slotSize,
 					slotSizeSource: source,
+					scrollHash: isFluff ? null : hash,
 				},
 			)
 				+ fnRender(toRender, {...(entryData?.renderCompact || {}), isEmbeddedEntity: true})
@@ -8979,14 +9000,16 @@ Renderer.race = class {
 					];
 				}
 
-				race.entries = race.entries || [];
-				race.entries.push({
-					type: "entries",
-					name: "语言",
-					entries: ["你能读、写、说通用语和另一种DM允许的语言。"],
-				});
+				if (!race.languageProficiencies) {
+					race.entries ||= [];
+					race.entries.push({
+						type: "entries",
+						name: "语言",
+						entries: ["你能读、写、说通用语和另一种DM允许的语言。"],
+					});
 
-				race.languageProficiencies = race.languageProficiencies || [{"common": true, "anyStandard": 1}];
+					race.languageProficiencies ||= [{"common": true, "anyStandard": 1}];
+				}
 			}
 
 			if (race.subraces && !race.subraces.length) delete race.subraces;
@@ -9491,7 +9514,7 @@ Renderer.object = class {
 	/* -------------------------------------------- */
 
 	static getCompactRenderedString (obj, opts) {
-		return Renderer.object.getRenderedString(obj, opts);
+		return Renderer.object.getRenderedString(obj, {...opts, isCompact: true});
 	}
 
 	static getRenderedString (ent, opts) {

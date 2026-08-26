@@ -44,6 +44,7 @@ class VehiclesSublistManager extends SublistManager {
 			},
 			{
 				hash,
+				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
@@ -114,6 +115,7 @@ class VehiclesPage extends ListPage {
 			},
 			{
 				hash,
+				page: it.page,
 				isExcluded,
 			},
 		);
