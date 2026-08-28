@@ -1414,358 +1414,70 @@
 								"{@creature 纯血原体蛇人}",
 								"{@creature 丧尸}"
 							]
-						}
-					],
-					"id": "046"
-				},
-				{
-					"ENG_name": "Shadow Dragon Template",
-					"name": "幽影龙模板",
-					"type": "entries",
-					"page": 84,
-					"entries": [
-						"只有真正的龙才能转变成为影龙，并且只有在暗影界出生或在那里待上数年才能做到。龙巫妖不能转变为影龙，因为它变成不死生物时失去了它的龙族本质。",
-						"当一条龙变成影龙时，它保留了自己的具体数值，除非如下所述。影龙可能保留或失去其全部或部分巢穴行动，也可能继承新的巢穴行动，这取决于DM的判断。",
+						},
 						{
+							"ENG_name": "Aarakocra",
+							"name": "鸟羽人",
 							"type": "section",
-							"name": "Stirge",
 							"entries": [
 								{
-									"ENG_name": "Damage Resistances",
-									"name": "伤害抗性",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"该龙对暗蚀伤害有抗性。"
-									],
-									"id": "04c"
-								},
-								{
-									"ENG_name": "Skill Proficiency: Stealth",
-									"name": "技能熟练度：潜行",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"龙的敏捷（{@skill 隐匿}）检定的熟练加值翻倍。"
-									],
-									"id": "04d"
-								},
-								{
-									"ENG_name": "Living Shadow",
-									"name": "活体幽影",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"当处于{@quickref 视野与光照||2||微光光照}或黑暗时，该龙对非力场、心灵或光耀伤害具有抗性。"
-									],
-									"id": "04e"
-								},
-								{
-									"ENG_name": "Shadow Stealth",
-									"name": "幽影隐匿",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"当处于{@quickref 视野与光照||2||微光光照}或黑暗时，该龙可以以一个附赠动作执行{@action 躲藏}动作。"
-									],
-									"id": "04f"
-								},
-								{
-									"ENG_name": "Sunlight Sensitivity",
-									"name": "日照敏感",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"身处阳光下时，龙进行的攻击检定，以及依赖视觉进行的感知（{@skill 察觉}）检定具有劣势。"
-									],
-									"id": "050"
-								},
-								{
-									"ENG_name": "New Action: Bite",
-									"name": "新动作：咬击",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"如果龙的撕咬攻击造成酸液、寒冷、火焰、闪电或毒素伤害，将该伤害类型改为死灵伤害。"
-									],
-									"id": "051"
-								},
-								{
-									"ENG_name": "New Action: Shadow Breath",
-									"name": "新动作：影息",
-									"type": "entries",
-									"page": 85,
-									"entries": [
-										"龙所具有的任何伤害性吐息武器造成的是暗蚀伤害，而不是其原始伤害类型。一个类人生物如果因此伤害降至0生命值，则死亡，并且一个不死影从其尸体上升起，在龙之后的行动顺序中立即行动。这个影受龙的控制。"
-									],
-									"id": "052"
-								}
-							],
-							"id": "04b"
-						}
-					],
-					"id": "04a"
-				},
-				{
-					"ENG_name": "Half-Dragon Template",
-					"name": "半龙模板",
-					"type": "entries",
-					"page": 180,
-					"entries": [
-						"野兽、人型生物、巨人或怪物可以变成半龙。当一个生物变成半龙时，它保留了自己的所有具体数值，除非如下所述。",
-						{
-							"type": "section",
-							"name": "Tarrasque",
-							"entries": [
-								{
-									"ENG_name": "Challenge",
-									"name": "挑战等级",
-									"type": "entries",
-									"page": 180,
-									"entries": [
-										"为了避免重新计算生物的挑战等级，请仅将模板应用于下文中吐息武器表中提到的可选先决条件的生物。否则，请使用《地下城主指南》中的指南，在应用模板后重新计算等级。"
-									],
-									"id": "055"
-								},
-								{
-									"ENG_name": "Senses",
-									"name": "感官",
-									"type": "entries",
-									"page": 180,
-									"entries": [
-										"半龙获得半径为10尺的{@sense 盲视}和半径为60尺的{@sense 黑暗视觉}。"
-									],
-									"id": "056"
-								},
-								{
-									"ENG_name": "Resistances",
-									"name": "抗性",
-									"type": "entries",
-									"page": 180,
-									"entries": [
-										"半龙根据其颜色获得对某种伤害类型的抗性。",
-										{
-											"type": "table",
-											"colLabels": [
-												"颜色",
-												"伤害抗性"
-											],
-											"colStyles": [
-												"col-6 text-center",
-												"col-6 text-center"
-											],
-											"rows": [
-												[
-													"黑色或铜色",
-													"强酸"
-												],
-												[
-													"蓝色或青铜色",
-													"闪电"
-												],
-												[
-													"青铜、金色或红色",
-													"火焰"
-												],
-												[
-													"绿",
-													"毒素"
-												],
-												[
-													"银色或白色",
-													"寒冷"
-												]
-											]
+									"ENG_name": "Aarakocra",
+									"name": "鸟羽人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
 										}
 									}
 								},
 								{
-									"ENG_name": "Languages",
-									"name": "语言",
-									"type": "entries",
-									"page": 180,
-									"entries": [
-										"半龙除了它已知的其他语言外，还会说龙语。"
-									],
-									"id": "058"
-								},
-								{
-									"ENG_name": "New Action: Breath Weapon",
-									"name": "新动作：吐息武器",
-									"type": "entries",
-									"page": 180,
-									"entries": [
-										"半龙拥有其龙族血统的吐息武器。半龙的体型决定了这个动作的运作方式。",
-										{
-											"type": "table",
-											"colLabels": [
-												"体型",
-												"吐息武器",
-												"可选先决条件"
-											],
-											"colStyles": [
-												"col-4",
-												"col-4",
-												"col-4"
-											],
-											"rows": [
-												[
-													"大型或更小",
-													"作为一个幼龙",
-													"挑战等级 2 或更高"
-												],
-												[
-													"巨型",
-													"作为一只幼龙",
-													"挑战等级7或更高"
-												],
-												[
-													"超巨型",
-													"作为成年龙",
-													"挑战等级 8 或更高"
-												]
-											]
-										}
-									}
-								},
-								{
+									"ENG_name": "Aarakocra",
+									"name": "鸟羽人",
 									"type": "statblock",
-									"name": "Yeti",
 									"tag": "creature",
 									"style": "narrow"
-								},
-								{
-									"type": "statblock",
-									"name": "Abominable Yeti",
-									"tag": "creature",
-									"style": "narrow"
-								}
-							],
-							"id": "054"
-						}
-					],
-					"id": "053"
-				},
-				{
-					"ENG_name": "Spore Servant Template",
-					"name": "孢子仆从模板",
-					"type": "entries",
-					"page": 230,
-					"entries": [
-						"孢子仆从是任何大型或更小型的生物，通过蕈人君主的活化孢子复活。从未以血肉之躯存在过的生物（例如构装生物、元素生物、软泥怪、植物或不死生物）不能变成孢子仆从。成为孢子仆从的生物将发生以下特性变化或新增。",
-						{
-							"type": "section",
-							"name": "Yuan-ti",
-							"entries": [
-								{
-									"ENG_name": "Retained Characteristics",
-									"name": "保留特性",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"这个仆从保留其护甲等级、生命值、生命骰、力量、敏捷、体质、弱点、抗性以及免疫。"
-									],
-									"id": "05c"
-								},
-								{
-									"ENG_name": "Lost Characteristics",
-									"name": "失去特性",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"该仆从失去了其原有的豁免检定和技能加值、特殊感知和特殊特征。它失去了除了多重攻击或近战武器攻击（造成钝击、穿刺或挥砍伤害）之外的任何动作。如果它有一个动作或近战武器攻击，造成其他类型的伤害，它将失去造成该类型伤害的能力，除非伤害来自装备，例如魔法物品。"
-									],
-									"id": "05d"
-								},
-								{
-									"ENG_name": "Type",
-									"name": "类型",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"该仆从的类型是植物，并且它失去了任何标签。"
-									],
-									"id": "05e"
-								},
-								{
-									"ENG_name": "Alignment",
-									"name": "阵营",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"该仆从是无阵营的。"
-									],
-									"id": "05f"
-								},
-								{
-									"ENG_name": "Speed",
-									"name": "速度",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"将仆从的所有速度减少10尺，最少为5尺。"
-									],
-									"id": "060"
-								},
-								{
-									"ENG_name": "Ability Scores",
-									"name": "属性值",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"该仆从的能力值变化如下：智力2（-4），感知6（-2），魅力1（-5）。"
-									],
-									"id": "061"
-								},
-								{
-									"ENG_name": "Senses",
-									"name": "感官",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"该仆从具有半径30尺的{@sense 盲视}，并且在这个范围之外是盲的。"
-									],
-									"id": "062"
-								},
-								{
-									"ENG_name": "Condition Immunities",
-									"name": "状态免疫",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"仆从不能处于{@condition 目盲}、{@condition 魅惑}、{@condition 恐慌}或{@condition 麻痹}condition。"
-									],
-									"id": "063"
-								},
-								{
-									"ENG_name": "Languages",
-									"name": "语言",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"该仆从失去了所有已知语言，但它会响应使用共鸣孢子下达命令的菌类生物。该仆从将最高优先级给予最强大菌类生物的命令。"
-									],
-									"id": "064"
-								},
-								{
-									"ENG_name": "Attacks",
-									"name": "攻击",
-									"type": "entries",
-									"page": 230,
-									"entries": [
-										"如果仆从没有其他造成伤害的手段，它可以使用拳头或肢体进行徒手攻击。击中时，徒手攻击造成的钝击伤害等于{@dice 1d4}加上仆从的力量调整值，或者，如果仆从体型较大，则为{@dice 2d4}加上其力量调整值。"
-									],
-									"id": "065"
 								}
 							]
 						},
 						{
+							"ENG_name": "Aboleth",
+							"name": "底栖魔鱼",
 							"type": "section",
-							"name": "Zombies",
 							"entries": [
 								{
+									"ENG_name": "Aboleth",
+									"name": "底栖魔鱼",
 									"type": "statblock",
-									"name": "Zombie",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Aboleth",
+									"name": "底栖魔鱼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Angels",
+							"name": "天使",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Angels",
+									"name": "天使",
+									"type": "statblock",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"data": {
@@ -1775,20 +1487,5632 @@
 									}
 								},
 								{
+									"ENG_name": "Deva",
+									"name": "天神使徒",
 									"type": "statblock",
-									"name": "Zombie",
 									"tag": "creature",
 									"style": "narrow"
 								},
 								{
+									"ENG_name": "Planetar",
+									"name": "异界神侍",
 									"type": "statblock",
-									"name": "Ogre Zombie",
 									"tag": "creature",
 									"style": "narrow"
 								},
 								{
+									"ENG_name": "Solar",
+									"name": "炽天神侍",
 									"type": "statblock",
-									"name": "Beholder Zombie",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Animated Objects",
+							"name": "被活化的物件",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Animated Objects",
+									"name": "被活化的物件",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Animated Armor",
+									"name": "活化盔甲",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Flying Sword",
+									"name": "凌空剑",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Rug of Smothering",
+									"name": "闷人毯",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Ankheg",
+							"name": "掘地虫",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Ankheg",
+									"name": "掘地虫",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ankheg",
+									"name": "掘地虫",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Azer",
+							"name": "火矮人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Azer",
+									"name": "火矮人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Azer",
+									"name": "火矮人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Banshee",
+							"name": "报丧妖",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Banshee",
+									"name": "报丧妖",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Banshee",
+									"name": "报丧妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Basilisk",
+							"name": "石化蜥蜴",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Basilisk",
+									"name": "石化蜥蜴",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Basilisk",
+									"name": "石化蜥蜴",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Behir",
+							"name": "青足龙蛇",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Behir",
+									"name": "青足龙蛇",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Behir",
+									"name": "青足龙蛇",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Beholders",
+							"name": "眼魔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Beholder",
+									"name": "眼魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Beholder",
+									"name": "眼魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Death Tyrant",
+									"name": "亡眼暴君",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Spectator",
+									"name": "观察者眼魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Blights",
+							"name": "枯萎怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Blights",
+									"name": "枯萎怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Needle Blight",
+									"name": "枯针怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Twig Blight",
+									"name": "枯枝怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Vine Blight",
+									"name": "枯藤怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Bugbears",
+							"name": "熊地精",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Bugbear",
+									"name": "熊地精",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Bugbear",
+									"name": "熊地精",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Bugbear Chief",
+									"name": "熊地精酋长",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Bulette",
+							"name": "鲨蜥",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Bulette",
+									"name": "鲨蜥",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Bulette",
+									"name": "鲨蜥",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Bullywug",
+							"name": "啵灵蛙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Bullywug",
+									"name": "啵灵蛙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Bullywug",
+									"name": "啵灵蛙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Cambion",
+							"name": "坎比翁",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Cambion",
+									"name": "坎比翁",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Cambion",
+									"name": "坎比翁",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Carrion Crawler",
+							"name": "食腐虫",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Carrion Crawler",
+									"name": "食腐虫",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Carrion Crawler",
+									"name": "食腐虫",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Cave Bear",
+							"name": "穴居熊",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Cave Bear",
+									"name": "穴居熊",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Centaur",
+							"name": "人马",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Centaur",
+									"name": "人马",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Centaur",
+									"name": "人马",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Chimera",
+							"name": "奇美拉",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Chimera",
+									"name": "奇美拉",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Chimera",
+									"name": "奇美拉",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Chuul",
+							"name": "甲伏怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Chuul",
+									"name": "甲伏怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Chuul",
+									"name": "甲伏怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Cloaker",
+							"name": "斗篷怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Cloaker",
+									"name": "斗篷怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Cloaker",
+									"name": "斗篷怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Cockatrice",
+							"name": "蛇鸡",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Cockatrice",
+									"name": "蛇鸡",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Cockatrice",
+									"name": "蛇鸡",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Couatl",
+							"name": "羽蛇",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Couatl",
+									"name": "羽蛇",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Couatl",
+									"name": "羽蛇",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Crawling Claw",
+							"name": "蠕行之爪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Crawling Claw",
+									"name": "蠕行之爪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Crawling Claw",
+									"name": "蠕行之爪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Cyclops",
+							"name": "独眼巨人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Cyclops",
+									"name": "独眼巨人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Cyclops",
+									"name": "独眼巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Darkmantle",
+							"name": "暗幕魔兽",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Darkmantle",
+									"name": "暗幕魔兽",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Darkmantle",
+									"name": "暗幕魔兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Death Knight",
+							"name": "死亡骑士",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Death Knight",
+									"name": "死亡骑士",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Death Knight",
+									"name": "死亡骑士",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Deep Gnome (Svirfneblin)",
+							"name": "地底侏儒（斯涅布力）",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Deep Gnome (Svirfneblin)",
+									"name": "地底侏儒（斯涅布力）",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Deep Gnome (Svirfneblin)",
+									"name": "地底侏儒（斯涅布力）",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Demilich",
+							"name": "半巫妖",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Demilich",
+									"name": "半巫妖",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Demilich",
+									"name": "半巫妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Demons",
+							"name": "恶魔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Demons",
+									"name": "恶魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Balor",
+									"name": "巴洛炎魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Barlgura",
+									"name": "恶猿魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Chasme",
+									"name": "喀嘶魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Dretch",
+									"name": "怯魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Glabrezu",
+									"name": "迷诱魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Goristro",
+									"name": "巨牛魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Hezrou",
+									"name": "狂蟾魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Manes",
+									"name": "原魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Marilith",
+									"name": "六臂蛇魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Nalfeshnee",
+									"name": "判魂魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Quasit",
+									"name": "小恶魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Shadow Demon",
+									"name": "幽影恶魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Vrock",
+									"name": "鹫魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Yochlol",
+									"name": "蜡融妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Devils",
+							"name": "魔鬼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Devils",
+									"name": "魔鬼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Barbed Devil",
+									"name": "猬魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Bearded Devil",
+									"name": "须魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Bone Devil",
+									"name": "骨魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Chain Devil",
+									"name": "链魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Erinyes",
+									"name": "罪魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Horned Devil",
+									"name": "角魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ice Devil",
+									"name": "冰魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Imp",
+									"name": "小魔鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Lemure",
+									"name": "劣魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Pit Fiend",
+									"name": "深狱炼魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Spined Devil",
+									"name": "棘魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Dinosaurs",
+							"name": "恐龙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Dinosaurs",
+									"name": "恐龙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Allosaurus",
+									"name": "异特龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ankylosaurus",
+									"name": "甲龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Plesiosaurus",
+									"name": "蛇颈龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Pteranodon",
+									"name": "翼龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Triceratops",
+									"name": "三角龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Tyrannosaurus Rex",
+									"name": "霸王龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Displacer Beast",
+							"name": "移位兽",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Displacer Beast",
+									"name": "移位兽",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Displacer Beast",
+									"name": "移位兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Doppelganger",
+							"name": "变形怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Doppelganger",
+									"name": "变形怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Doppelganger",
+									"name": "变形怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Dracolich",
+							"name": "龙巫妖",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Adult Blue Dracolich",
+									"name": "成年蓝龙巫妖",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Adult Blue Dracolich",
+									"name": "成年蓝龙巫妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Shadow Dragon Template",
+							"name": "幽影龙模板",
+							"type": "entries",
+							"page": 84,
+							"entries": [
+								"只有真正的龙才能转变成为影龙，并且只有在暗影界出生或在那里待上数年才能做到。龙巫妖不能转变为影龙，因为它变成不死生物时失去了它的龙族本质。",
+								"当一条龙变成影龙时，它保留了自己的具体数值，除非如下所述。影龙可能保留或失去其全部或部分巢穴行动，也可能继承新的巢穴行动，这取决于DM的判断。",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"ENG_name": "Damage Resistances",
+											"name": "伤害抗性",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"该龙对暗蚀伤害有抗性。"
+											],
+											"id": "04c"
+										},
+										{
+											"ENG_name": "Skill Proficiency: Stealth",
+											"name": "技能熟练度：潜行",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"龙的敏捷（{@skill 隐匿}）检定的熟练加值翻倍。"
+											],
+											"id": "04d"
+										},
+										{
+											"ENG_name": "Living Shadow",
+											"name": "活体幽影",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"当处于{@quickref 视野与光照||2||微光光照}或黑暗时，该龙对非力场、心灵或光耀伤害具有抗性。"
+											],
+											"id": "04e"
+										},
+										{
+											"ENG_name": "Shadow Stealth",
+											"name": "幽影隐匿",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"当处于{@quickref 视野与光照||2||微光光照}或黑暗时，该龙可以以一个附赠动作执行{@action 躲藏}动作。"
+											],
+											"id": "04f"
+										},
+										{
+											"ENG_name": "Sunlight Sensitivity",
+											"name": "日照敏感",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"身处阳光下时，龙进行的攻击检定，以及依赖视觉进行的感知（{@skill 察觉}）检定具有劣势。"
+											],
+											"id": "050"
+										},
+										{
+											"ENG_name": "New Action: Bite",
+											"name": "新动作：咬击",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"如果龙的撕咬攻击造成酸液、寒冷、火焰、闪电或毒素伤害，将该伤害类型改为死灵伤害。"
+											],
+											"id": "051"
+										},
+										{
+											"ENG_name": "New Action: Shadow Breath",
+											"name": "新动作：影息",
+											"type": "entries",
+											"page": 85,
+											"entries": [
+												"龙所具有的任何伤害性吐息武器造成的是暗蚀伤害，而不是其原始伤害类型。一个类人生物如果因此伤害降至0生命值，则死亡，并且一个不死影从其尸体上升起，在龙之后的行动顺序中立即行动。这个影受龙的控制。"
+											],
+											"id": "052"
+										}
+									],
+									"id": "04b"
+								}
+							],
+							"id": "04a"
+						},
+						{
+							"ENG_name": "Dragon Turtle",
+							"name": "龙龟",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Dragon Turtle",
+									"name": "龙龟",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Dragon Turtle",
+									"name": "龙龟",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Dragon, Shadow",
+							"name": "龙，幽影",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Young Red Shadow Dragon",
+									"name": "青年幽影红龙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Young Red Shadow Dragon",
+									"name": "青年幽影红龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Dragons",
+							"name": "龙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Dragons",
+									"name": "龙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ancient Black Dragon",
+									"name": "远古黑龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Black Dragon",
+									"name": "成年黑龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Black Dragon",
+									"name": "青年黑龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Black Dragon Wyrmling",
+									"name": "黑龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Blue Dragon",
+									"name": "远古蓝龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Blue Dragon",
+									"name": "成年蓝龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Blue Dragon",
+									"name": "青年蓝龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Blue Dragon Wyrmling",
+									"name": "蓝龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Green Dragon",
+									"name": "远古绿龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Green Dragon",
+									"name": "成年绿龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Green Dragon",
+									"name": "青年绿龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Green Dragon Wyrmling",
+									"name": "绿龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Red Dragon",
+									"name": "远古红龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Red Dragon",
+									"name": "成年红龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Red Dragon",
+									"name": "青年红龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Red Dragon Wyrmling",
+									"name": "红龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient White Dragon",
+									"name": "远古白龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult White Dragon",
+									"name": "成年白龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young White Dragon",
+									"name": "青年白龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "White Dragon Wyrmling",
+									"name": "白龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Brass Dragon",
+									"name": "远古黄铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Brass Dragon",
+									"name": "成年黄铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Brass Dragon",
+									"name": "青年黄铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Brass Dragon Wyrmling",
+									"name": "黄铜龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Bronze Dragon",
+									"name": "远古青铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Bronze Dragon",
+									"name": "成年青铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Bronze Dragon",
+									"name": "青年青铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Bronze Dragon Wyrmling",
+									"name": "青铜龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Copper Dragon",
+									"name": "远古赤铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Copper Dragon",
+									"name": "成年赤铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Copper Dragon",
+									"name": "青年赤铜龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Copper Dragon Wyrmling",
+									"name": "赤铜龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Gold Dragon",
+									"name": "远古金龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Gold Dragon",
+									"name": "成年金龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Gold Dragon",
+									"name": "青年金龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gold Dragon Wyrmling",
+									"name": "金龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ancient Silver Dragon",
+									"name": "远古银龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Adult Silver Dragon",
+									"name": "成年银龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Silver Dragon",
+									"name": "青年银龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Silver Dragon Wyrmling",
+									"name": "银龙雏龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Drider",
+							"name": "蛛化卓尔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Drider",
+									"name": "蛛化卓尔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Drider",
+									"name": "蛛化卓尔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Dryad",
+							"name": "树精",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Dryad",
+									"name": "树精",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Dryad",
+									"name": "树精",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Duergar",
+							"name": "灰矮人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Duergar",
+									"name": "灰矮人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Duergar",
+									"name": "灰矮人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Elementals",
+							"name": "元素",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Elementals",
+									"name": "元素",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Air Elemental",
+									"name": "气元素",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Earth Elemental",
+									"name": "土元素",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Fire Elemental",
+									"name": "火元素",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Water Elemental",
+									"name": "水元素",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Elves: Drow",
+							"name": "精灵：卓尔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Drow",
+									"name": "卓尔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Drow",
+									"name": "卓尔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Drow Elite Warrior",
+									"name": "卓尔精英武者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Drow Mage",
+									"name": "卓尔魔法师",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Drow Priestess of Lolth",
+									"name": "卓尔罗丝女祭司",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Empyrean",
+							"name": "至高天",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Empyrean",
+									"name": "至高天",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Empyrean",
+									"name": "至高天",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Ettercap",
+							"name": "伊特怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Ettercap",
+									"name": "伊特怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ettercap",
+									"name": "伊特怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Ettin",
+							"name": "双头巨人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Ettin",
+									"name": "双头巨人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ettin",
+									"name": "双头巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Faerie Dragon",
+							"name": "妖精龙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Faerie Dragon",
+									"name": "妖精龙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Faerie Dragon (Red)",
+									"name": "妖精龙(红)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Faerie Dragon (Orange)",
+									"name": "妖精龙(橙)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Faerie Dragon (Yellow)",
+									"name": "妖精龙(黄)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Faerie Dragon (Green)",
+									"name": "妖精龙(绿)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Faerie Dragon (Blue)",
+									"name": "妖精龙(蓝)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Faerie Dragon (Indigo)",
+									"name": "妖精龙(靛)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Faerie Dragon (Violet)",
+									"name": "妖精龙(紫)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Flameskull",
+							"name": "燃焰之颅",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Flameskull",
+									"name": "燃焰之颅",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Flameskull",
+									"name": "燃焰之颅",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Flumph",
+							"name": "呋噜",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Flumph",
+									"name": "呋噜",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Flumph",
+									"name": "呋噜",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Fomorian",
+							"name": "废陋巨人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Fomorian",
+									"name": "废陋巨人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Fomorian",
+									"name": "废陋巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Fungi",
+							"name": "真菌",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Fungi",
+									"name": "真菌",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Gas Spore",
+									"name": "毒气孢子",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Shrieker",
+									"name": "尖叫菌",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Violet Fungus",
+									"name": "紫腐菌",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Galeb Duhr",
+							"name": "石人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Galeb Duhr",
+									"name": "石人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Galeb Duhr",
+									"name": "石人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Gargoyle",
+							"name": "石像鬼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Gargoyle",
+									"name": "石像鬼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Gargoyle",
+									"name": "石像鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Genies",
+							"name": "巨灵",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Genies",
+									"name": "巨灵",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Dao",
+									"name": "土巨灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Djinni",
+									"name": "气巨灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Efreeti",
+									"name": "火巨灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Marid",
+									"name": "水巨灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Ghost",
+							"name": "幽魂",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Ghost",
+									"name": "幽魂",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ghost",
+									"name": "幽魂",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Ghouls",
+							"name": "食尸鬼们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Ghoul",
+									"name": "食尸鬼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ghoul",
+									"name": "食尸鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ghast",
+									"name": "妖鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Giants",
+							"name": "巨人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Giants",
+									"name": "巨人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Cloud Giant",
+									"name": "云巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Fire Giant",
+									"name": "火巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Frost Giant",
+									"name": "霜巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Hill Giant",
+									"name": "山丘巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Stone Giant",
+									"name": "石巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Storm Giant",
+									"name": "风暴巨人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Gibbering Mouther",
+							"name": "呓语之口",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Gibbering Mouther",
+									"name": "呓语之口",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Gibbering Mouther",
+									"name": "呓语之口",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Gith",
+							"name": "吉斯人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Gith",
+									"name": "吉斯人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Githyanki Warrior",
+									"name": "吉斯洋基武者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Githyanki Knight",
+									"name": "吉斯洋基骑士",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Githzerai Monk",
+									"name": "吉斯泽莱武僧",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Githzerai Zerth",
+									"name": "吉斯泽莱泽锡修士",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Gnolls",
+							"name": "鬣狗人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Gnolls",
+									"name": "鬣狗人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Gnoll",
+									"name": "鬣狗人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gnoll Pack Lord",
+									"name": "鬣狗人头领",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gnoll Fang of Yeenoghu",
+									"name": "鬣狗人·耶诺古毒牙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Goblins",
+							"name": "地精",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Goblin",
+									"name": "地精",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Goblin",
+									"name": "地精",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Goblin Boss",
+									"name": "地精头目",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Golems",
+							"name": "魔像",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Golems",
+									"name": "魔像",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Clay Golem",
+									"name": "粘土魔像",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Flesh Golem",
+									"name": "血肉魔像",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Iron Golem",
+									"name": "铁魔像",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Stone Golem",
+									"name": "石魔像",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Gorgon",
+							"name": "石化铁牛",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Gorgon",
+									"name": "石化铁牛",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Gorgon",
+									"name": "石化铁牛",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Grell",
+							"name": "触须怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Grell",
+									"name": "触须怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Grell",
+									"name": "触须怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Gricks",
+							"name": "穴居攫怪们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Grick",
+									"name": "穴居攫怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Grick",
+									"name": "穴居攫怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Grick Alpha",
+									"name": "阿尔法穴居攫怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Griffon",
+							"name": "狮鹫",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Griffon",
+									"name": "狮鹫",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Griffon",
+									"name": "狮鹫",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Grimlock",
+							"name": "幽邃盲族",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Grimlock",
+									"name": "幽邃盲族",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Grimlock",
+									"name": "幽邃盲族",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Hags",
+							"name": "鬼婆",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Hags",
+									"name": "鬼婆",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Green Hag",
+									"name": "绿鬼婆",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Night Hag",
+									"name": "夜鬼婆",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Sea Hag",
+									"name": "海鬼婆",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Half-Dragon",
+							"name": "半龙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Half-Red Dragon Veteran",
+									"name": "半红龙老兵",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Half-Red Dragon Veteran",
+									"name": "半红龙老兵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Half-Dragon Template",
+							"name": "半龙模板",
+							"type": "entries",
+							"page": 180,
+							"entries": [
+								"野兽、人型生物、巨人或怪物可以变成半龙。当一个生物变成半龙时，它保留了自己的所有具体数值，除非如下所述。",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"ENG_name": "Challenge",
+											"name": "挑战等级",
+											"type": "entries",
+											"page": 180,
+											"entries": [
+												"为了避免重新计算生物的挑战等级，请仅将模板应用于下文中吐息武器表中提到的可选先决条件的生物。否则，请使用《地下城主指南》中的指南，在应用模板后重新计算等级。"
+											],
+											"id": "055"
+										},
+										{
+											"ENG_name": "Senses",
+											"name": "感官",
+											"type": "entries",
+											"page": 180,
+											"entries": [
+												"半龙获得半径为10尺的{@sense 盲视}和半径为60尺的{@sense 黑暗视觉}。"
+											],
+											"id": "056"
+										},
+										{
+											"ENG_name": "Resistances",
+											"name": "抗性",
+											"type": "entries",
+											"page": 180,
+											"entries": [
+												"半龙根据其颜色获得对某种伤害类型的抗性。",
+												{
+													"type": "table",
+													"colLabels": [
+														"颜色",
+														"伤害抗性"
+													],
+													"colStyles": [
+														"col-6 text-center",
+														"col-6 text-center"
+													],
+													"rows": [
+														[
+															"黑色或铜色",
+															"强酸"
+														],
+														[
+															"蓝色或青铜色",
+															"闪电"
+														],
+														[
+															"青铜、金色或红色",
+															"火焰"
+														],
+														[
+															"绿",
+															"毒素"
+														],
+														[
+															"银色或白色",
+															"寒冷"
+														]
+													]
+												}
+											],
+											"id": "057"
+										},
+										{
+											"ENG_name": "Languages",
+											"name": "语言",
+											"type": "entries",
+											"page": 180,
+											"entries": [
+												"半龙除了它已知的其他语言外，还会说龙语。"
+											],
+											"id": "058"
+										},
+										{
+											"ENG_name": "New Action: Breath Weapon",
+											"name": "新动作：吐息武器",
+											"type": "entries",
+											"page": 180,
+											"entries": [
+												"半龙拥有其龙族血统的吐息武器。半龙的体型决定了这个动作的运作方式。",
+												{
+													"type": "table",
+													"colLabels": [
+														"体型",
+														"吐息武器",
+														"可选先决条件"
+													],
+													"colStyles": [
+														"col-4",
+														"col-4",
+														"col-4"
+													],
+													"rows": [
+														[
+															"大型或更小",
+															"作为一个幼龙",
+															"挑战等级 2 或更高"
+														],
+														[
+															"巨型",
+															"作为一只幼龙",
+															"挑战等级7或更高"
+														],
+														[
+															"超巨型",
+															"作为成年龙",
+															"挑战等级 8 或更高"
+														]
+													]
+												}
+											],
+											"id": "059"
+										}
+									],
+									"id": "054"
+								}
+							],
+							"id": "053"
+						},
+						{
+							"ENG_name": "Harpy",
+							"name": "鸟妖",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Harpy",
+									"name": "鸟妖",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Harpy",
+									"name": "鸟妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Hell Hound",
+							"name": "地狱猎犬",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Hell Hound",
+									"name": "地狱猎犬",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Hell Hound",
+									"name": "地狱猎犬",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Helmed Horror",
+							"name": "恐怖铠甲",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Helmed Horror",
+									"name": "恐怖铠甲",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Helmed Horror",
+									"name": "恐怖铠甲",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Hippogriff",
+							"name": "骏鹰",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Hippogriff",
+									"name": "骏鹰",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Hippogriff",
+									"name": "骏鹰",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Hobgoblins",
+							"name": "大地精",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Hobgoblin",
+									"name": "大地精",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Hobgoblin",
+									"name": "大地精",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Hobgoblin Captain",
+									"name": "大地精长官",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Hobgoblin Warlord",
+									"name": "大地精军阀",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Homunculus",
+							"name": "人工生命体",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Homunculus",
+									"name": "人工生命体",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Homunculus",
+									"name": "人工生命体",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Hook Horror",
+							"name": "恐爪怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Hook Horror",
+									"name": "恐爪怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Hook Horror",
+									"name": "恐爪怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Hydra",
+							"name": "多头蛇",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Hydra",
+									"name": "多头蛇",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Hydra",
+									"name": "多头蛇",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Intellect Devourer",
+							"name": "噬脑怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Intellect Devourer",
+									"name": "噬脑怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Intellect Devourer",
+									"name": "噬脑怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Invisible Stalker",
+							"name": "隐形追猎者",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Invisible Stalker",
+									"name": "隐形追猎者",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Invisible Stalker",
+									"name": "隐形追猎者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Jackalwere",
+							"name": "化形胡狼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Jackalwere",
+									"name": "化形胡狼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Jackalwere",
+									"name": "化形胡狼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Kenku",
+							"name": "天狗",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Kenku",
+									"name": "天狗",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Kenku",
+									"name": "天狗",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Kobolds",
+							"name": "狗头人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Kobold",
+									"name": "狗头人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Kobold",
+									"name": "狗头人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Winged Kobold",
+									"name": "带翼狗头人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Kraken",
+							"name": "克拉肯",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Kraken",
+									"name": "克拉肯",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Kraken",
+									"name": "克拉肯",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Kuo-toa",
+							"name": "寇涛",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Kuo-toa",
+									"name": "寇涛",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Kuo-toa",
+									"name": "寇涛",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Kuo-toa Archpriest",
+									"name": "寇涛大祭司",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Kuo-toa Monitor",
+									"name": "寇涛监察者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Kuo-toa Whip",
+									"name": "寇涛驱策者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Lamia",
+							"name": "拉迷亚",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Lamia",
+									"name": "拉迷亚",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Lamia",
+									"name": "拉迷亚",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Lich",
+							"name": "巫妖",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Lich",
+									"name": "巫妖",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Lich",
+									"name": "巫妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Lizardfolk",
+							"name": "蜥蜴人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Lizardfolk",
+									"name": "蜥蜴人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Lizardfolk",
+									"name": "蜥蜴人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Lizardfolk Shaman",
+									"name": "蜥蜴人萨满",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Lizard King",
+									"name": "蜥蜴之王",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Lizard Queen",
+									"name": "蜥蜴女王",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Lycanthropes",
+							"name": "兽化人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Lycanthropes",
+									"name": "兽化人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Werebear",
+									"name": "熊人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Wereboar",
+									"name": "野猪人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Wererat",
+									"name": "鼠人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Weretiger",
+									"name": "虎人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Werewolf",
+									"name": "狼人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Magmin",
+							"name": "火童",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Magmin",
+									"name": "火童",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Magmin",
+									"name": "火童",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Manticore",
+							"name": "刺尾狮",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Manticore",
+									"name": "刺尾狮",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Manticore",
+									"name": "刺尾狮",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Medusa",
+							"name": "美杜莎",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Medusa",
+									"name": "美杜莎",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Medusa",
+									"name": "美杜莎",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Mephits",
+							"name": "魔蝠",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Mephits",
+									"name": "魔蝠",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Dust Mephit",
+									"name": "尘魔蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ice Mephit",
+									"name": "冰魔蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Magma Mephit",
+									"name": "熔岩魔蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Mud Mephit",
+									"name": "泥魔蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Smoke Mephit",
+									"name": "烟魔蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Steam Mephit",
+									"name": "蒸汽魔蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Merfolk",
+							"name": "人鱼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Merfolk",
+									"name": "人鱼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Merfolk",
+									"name": "人鱼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Merrow",
+							"name": "迈罗人鱼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Merrow",
+									"name": "迈罗人鱼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Merrow",
+									"name": "迈罗人鱼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Mimic",
+							"name": "拟身怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Mimic",
+									"name": "拟身怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Mimic",
+									"name": "拟身怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Mind Flayer",
+							"name": "夺心魔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Mind Flayer",
+									"name": "夺心魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Mind Flayer",
+									"name": "夺心魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Mind Flayer Arcanist",
+									"name": "夺心魔奥术师",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Minotaur",
+							"name": "牛头人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Minotaur",
+									"name": "牛头人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Minotaur",
+									"name": "牛头人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Modrons",
+							"name": "魔冢",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Modrons",
+									"name": "魔冢",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Monodrone",
+									"name": "单元冢",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Duodrone",
+									"name": "二元冢",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Tridrone",
+									"name": "三元冢",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Quadrone",
+									"name": "四元冢",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Pentadrone",
+									"name": "五元冢",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Mummies",
+							"name": "木乃伊们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Mummy",
+									"name": "木乃伊",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Mummy",
+									"name": "木乃伊",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Mummy Lord",
+									"name": "木乃伊领主",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Myconids",
+							"name": "蕈人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Myconid",
+									"name": "蕈人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Myconid Sprout",
+									"name": "蕈人幼体",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Myconid Adult",
+									"name": "蕈人成体",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Myconid Sovereign",
+									"name": "蕈人王",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Quaggoth Spore Servant",
+									"name": "幽邃熊怪孢子奴仆",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Nagas",
+							"name": "纳迦",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Nagas",
+									"name": "纳迦",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Bone Naga (Guardian)",
+									"name": "骸骨纳迦（巡守）",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Bone Naga (Spirit)",
+									"name": "骸骨纳迦(精魂)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Guardian Naga",
+									"name": "守秘纳迦",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Spirit Naga",
+									"name": "阴魂纳迦",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Nightmare",
+							"name": "梦魇",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Nightmare",
+									"name": "梦魇",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Nightmare",
+									"name": "梦魇",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Nothic",
+							"name": "诺斯怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Nothic",
+									"name": "诺斯怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Nothic",
+									"name": "诺斯怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Ogres",
+							"name": "食人魔们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Ogre",
+									"name": "食人魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Ogre",
+									"name": "食人魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Half-Ogre (Ogrillon)",
+									"name": "半食人魔 (半兽食人魔)",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Oni",
+							"name": "恶鬼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Oni",
+									"name": "恶鬼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Oni",
+									"name": "恶鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Oozes",
+							"name": "泥怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Oozes",
+									"name": "泥怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Black Pudding",
+									"name": "黑布丁",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gelatinous Cube",
+									"name": "凝胶方块",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gray Ooze",
+									"name": "灰泥怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ochre Jelly",
+									"name": "赭果冻",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Orcs",
+							"name": "兽人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Orc",
+									"name": "兽人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Orc",
+									"name": "兽人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Orc War Chief",
+									"name": "兽人军官",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Orc Eye of Gruumsh",
+									"name": "格乌什之眼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Orog",
+									"name": "魔兽人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Otyugh",
+							"name": "食腐兽",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Otyugh",
+									"name": "食腐兽",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Otyugh",
+									"name": "食腐兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Owlbear",
+							"name": "枭熊",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Owlbear",
+									"name": "枭熊",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Owlbear",
+									"name": "枭熊",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Pegasus",
+							"name": "天马",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Pegasus",
+									"name": "天马",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Pegasus",
+									"name": "天马",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Peryton",
+							"name": "鹿鹰",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Peryton",
+									"name": "鹿鹰",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Peryton",
+									"name": "鹿鹰",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Piercer",
+							"name": "石锥怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Piercer",
+									"name": "石锥怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Piercer",
+									"name": "石锥怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Pixie",
+							"name": "皮克精",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Pixie",
+									"name": "皮克精",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Pixie",
+									"name": "皮克精",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Pseudodragon",
+							"name": "伪龙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Pseudodragon",
+									"name": "伪龙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Pseudodragon",
+									"name": "伪龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Purple Worm",
+							"name": "紫虫",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Purple Worm",
+									"name": "紫虫",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Purple Worm",
+									"name": "紫虫",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Quaggoth",
+							"name": "幽邃熊怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Quaggoth",
+									"name": "幽邃熊怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Spore Servant Template",
+									"name": "孢子仆从模板",
+									"type": "entries",
+									"page": 230,
+									"entries": [
+										"孢子仆从是任何大型或更小型的生物，通过蕈人君主的活化孢子复活。从未以血肉之躯存在过的生物（例如构装生物、元素生物、软泥怪、植物或不死生物）不能变成孢子仆从。成为孢子仆从的生物将发生以下特性变化或新增。",
+										{
+											"type": "entries",
+											"entries": [
+												{
+													"ENG_name": "Retained Characteristics",
+													"name": "保留特性",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"这个仆从保留其护甲等级、生命值、生命骰、力量、敏捷、体质、弱点、抗性以及免疫。"
+													],
+													"id": "05c"
+												},
+												{
+													"ENG_name": "Lost Characteristics",
+													"name": "失去特性",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"该仆从失去了其原有的豁免检定和技能加值、特殊感知和特殊特征。它失去了除了多重攻击或近战武器攻击（造成钝击、穿刺或挥砍伤害）之外的任何动作。如果它有一个动作或近战武器攻击，造成其他类型的伤害，它将失去造成该类型伤害的能力，除非伤害来自装备，例如魔法物品。"
+													],
+													"id": "05d"
+												},
+												{
+													"ENG_name": "Type",
+													"name": "种类",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"该仆从的类型是植物，并且它失去了任何标签。"
+													],
+													"id": "05e"
+												},
+												{
+													"ENG_name": "Alignment",
+													"name": "阵营",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"该仆从是无阵营的。"
+													],
+													"id": "05f"
+												},
+												{
+													"ENG_name": "Speed",
+													"name": "速度",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"将仆从的所有速度减少10尺，最少为5尺。"
+													],
+													"id": "060"
+												},
+												{
+													"ENG_name": "Ability Scores",
+													"name": "属性值",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"该仆从的能力值变化如下：智力2（-4），感知6（-2），魅力1（-5）。"
+													],
+													"id": "061"
+												},
+												{
+													"ENG_name": "Senses",
+													"name": "感官",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"该仆从具有半径30尺的{@sense 盲视}，并且在这个范围之外是盲的。"
+													],
+													"id": "062"
+												},
+												{
+													"ENG_name": "Condition Immunities",
+													"name": "状态免疫",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"仆从不能处于{@condition 目盲}、{@condition 魅惑}、{@condition 恐慌}或{@condition 麻痹}condition。"
+													],
+													"id": "063"
+												},
+												{
+													"ENG_name": "Languages",
+													"name": "语言",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"该仆从失去了所有已知语言，但它会响应使用共鸣孢子下达命令的菌类生物。该仆从将最高优先级给予最强大菌类生物的命令。"
+													],
+													"id": "064"
+												},
+												{
+													"ENG_name": "Attacks",
+													"name": "攻击",
+													"type": "entries",
+													"page": 230,
+													"entries": [
+														"如果仆从没有其他造成伤害的手段，它可以使用拳头或肢体进行徒手攻击。击中时，徒手攻击造成的钝击伤害等于{@dice 1d4}加上仆从的力量调整值，或者，如果仆从体型较大，则为{@dice 2d4}加上其力量调整值。"
+													],
+													"id": "065"
+												}
+											],
+											"id": "05b"
+										}
+									],
+									"id": "05a"
+								},
+								{
+									"ENG_name": "Quaggoth",
+									"name": "幽邃熊怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Quaggoth Thonot",
+									"name": "幽邃熊怪·索诺祭司",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Rakshasa",
+							"name": "罗刹",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Rakshasa",
+									"name": "罗刹",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Rakshasa",
+									"name": "罗刹",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Remorhazes",
+							"name": "百足魔兽们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Remorhaz",
+									"name": "百足魔兽",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Remorhaz",
+									"name": "百足魔兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Young Remorhaz",
+									"name": "青年百足魔兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Revenant",
+							"name": "还魂鬼",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Revenant",
+									"name": "还魂鬼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Revenant",
+									"name": "还魂鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Roc",
+							"name": "鹏鸟",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Roc",
+									"name": "鹏鸟",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Roc",
+									"name": "鹏鸟",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Roper",
+							"name": "石绳怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Roper",
+									"name": "石绳怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Roper",
+									"name": "石绳怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Rust Monster",
+							"name": "锈蚀怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Rust Monster",
+									"name": "锈蚀怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Rust Monster",
+									"name": "锈蚀怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Sahuagin",
+							"name": "鲨华鱼人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Sahuagin",
+									"name": "鲨华鱼人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Sahuagin",
+									"name": "鲨华鱼人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Sahuagin Priestess",
+									"name": "鲨华女祭司",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Sahuagin Baron",
+									"name": "鲨华男爵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Salamanders",
+							"name": "火蜥蜴们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Salamander",
+									"name": "火蜥蜴",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Fire Snake",
+									"name": "火蛇",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Salamander",
+									"name": "火蜥蜴",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Satyr",
+							"name": "半羊人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Satyr",
+									"name": "半羊人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Satyr",
+									"name": "半羊人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Scarecrow",
+							"name": "稻草人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Scarecrow",
+									"name": "稻草人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Scarecrow",
+									"name": "稻草人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Shadow",
+							"name": "幽影",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Shadow",
+									"name": "幽影",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Shadow",
+									"name": "幽影",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Shambling Mound",
+							"name": "蔓生怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Shambling Mound",
+									"name": "蔓生怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Shambling Mound",
+									"name": "蔓生怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Shield Guardian",
+							"name": "构装盾卫",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Shield Guardian",
+									"name": "构装盾卫",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Shield Guardian",
+									"name": "构装盾卫",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Skeletons",
+							"name": "骷髅们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Skeleton",
+									"name": "骷髅",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Skeleton",
+									"name": "骷髅",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Minotaur Skeleton",
+									"name": "骷髅牛头人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Warhorse Skeleton",
+									"name": "骷髅战马",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Slaadi",
+							"name": "史拉蟾",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Slaadi",
+									"name": "史拉蟾",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Slaad Tadpole",
+									"name": "史拉蟾蝌蚪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Red Slaad",
+									"name": "史拉红蟾",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Blue Slaad",
+									"name": "史拉蓝蟾",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Green Slaad",
+									"name": "史拉绿蟾",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gray Slaad",
+									"name": "史拉灰蟾",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Death Slaad",
+									"name": "史拉亡蟾",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Specter",
+							"name": "恶灵",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Specter",
+									"name": "恶灵",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Specter",
+									"name": "恶灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Poltergeist",
+									"name": "骚灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Sphinxes",
+							"name": "斯芬克斯们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Sphinxes",
+									"name": "斯芬克斯们",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Androsphinx",
+									"name": "男面斯芬克斯",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Gynosphinx",
+									"name": "女面斯芬克斯",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Sprite",
+							"name": "小仙灵",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Sprite",
+									"name": "小仙灵",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Sprite",
+									"name": "小仙灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Stirge",
+							"name": "蚊蝠",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Stirge",
+									"name": "蚊蝠",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Stirge",
+									"name": "蚊蝠",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Succubus/Incubus",
+							"name": "魅魔/梦魔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Succubus/Incubus",
+									"name": "魅魔/梦魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Succubus",
+									"name": "魅魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Incubus",
+									"name": "梦魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Swarms",
+							"name": "集群",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Generic Swarm",
+									"name": "普通群集",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Swarm of Beetles",
+									"name": "甲虫群",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Swarm of Centipedes",
+									"name": "蜈蚣群",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Swarm of Spiders",
+									"name": "蜘蛛群",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Swarm of Wasps",
+									"name": "黄蜂群",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Tarrasque",
+							"name": "泰拉斯奎",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Tarrasque",
+									"name": "泰拉斯奎",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Tarrasque",
+									"name": "泰拉斯奎",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Thri-kreen",
+							"name": "螳螂人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Thri-kreen",
+									"name": "螳螂人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Thri-kreen",
+									"name": "螳螂人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Treant",
+							"name": "树人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Treant",
+									"name": "树人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Treant",
+									"name": "树人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Troglodyte",
+							"name": "穴蜥人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Troglodyte",
+									"name": "穴蜥人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Troglodyte",
+									"name": "穴蜥人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Troll",
+							"name": "巨魔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Troll",
+									"name": "巨魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Troll",
+									"name": "巨魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Umber Hulk",
+							"name": "掘土巨怪",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Umber Hulk",
+									"name": "掘土巨怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Umber Hulk",
+									"name": "掘土巨怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Unicorn",
+							"name": "独角兽",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Unicorn",
+									"name": "独角兽",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Unicorn",
+									"name": "独角兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Vampires",
+							"name": "吸血鬼们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Vampire",
+									"name": "吸血鬼",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Vampire Spawn",
+									"name": "初生吸血鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Vampire",
+									"name": "吸血鬼",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Vampire Spellcaster",
+									"name": "吸血鬼施法者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Vampire Warrior",
+									"name": "吸血鬼武者",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Water Weird",
+							"name": "水诡",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Water Weird",
+									"name": "水诡",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Water Weird",
+									"name": "水诡",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Wight",
+							"name": "尸妖",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Wight",
+									"name": "尸妖",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Wight",
+									"name": "尸妖",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Will-o'-Wisp",
+							"name": "鬼火",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Will-o'-Wisp",
+									"name": "鬼火",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Will-o'-Wisp",
+									"name": "鬼火",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Wraith",
+							"name": "邪灵",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Wraith",
+									"name": "邪灵",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Wraith",
+									"name": "邪灵",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Wyvern",
+							"name": "飞龙",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Wyvern",
+									"name": "飞龙",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Wyvern",
+									"name": "飞龙",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Xorn",
+							"name": "石鼎兽",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Xorn",
+									"name": "石鼎兽",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"tag": "creature",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Xorn",
+									"name": "石鼎兽",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Yetis",
+							"name": "雪怪们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Yeti",
+									"name": "雪怪",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Yeti",
+									"name": "雪怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Abominable Yeti",
+									"name": "巨恶雪怪",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Yuan-ti",
+							"name": "蛇人",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Yuan-ti",
+									"name": "蛇人",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Yuan-ti Abomination",
+									"name": "憎恶蛇人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Yuan-ti Malison (Type 1)",
+									"name": "恶咒蛇人（1 型）",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Yuan-ti Malison (Type 2)",
+									"name": "恶咒蛇人（2 型）",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Yuan-ti Malison (Type 3)",
+									"name": "恶咒蛇人（3 型）",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Yuan-ti Pureblood",
+									"name": "纯血原体蛇人",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Yugoloths",
+							"name": "尤格罗斯魔",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Yugoloths",
+									"name": "尤格罗斯魔",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Arcanaloth",
+									"name": "奥法罗斯魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Mezzoloth",
+									"name": "毒虫罗斯魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Nycaloth",
+									"name": "征伐罗斯魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ultroloth",
+									"name": "超等罗斯魔",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								}
+							]
+						},
+						{
+							"ENG_name": "Zombies",
+							"name": "丧尸们",
+							"type": "section",
+							"entries": [
+								{
+									"ENG_name": "Zombie",
+									"name": "丧尸",
+									"type": "statblock",
+									"prop": "monsterFluff",
+									"source": "MM",
+									"data": {
+										"renderCompact": {
+											"isSkipRootName": true
+										}
+									}
+								},
+								{
+									"ENG_name": "Zombie",
+									"name": "丧尸",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Ogre Zombie",
+									"name": "食人魔僵尸",
+									"type": "statblock",
+									"tag": "creature",
+									"style": "narrow"
+								},
+								{
+									"ENG_name": "Beholder Zombie",
+									"name": "眼魔丧尸",
+									"type": "statblock",
 									"tag": "creature",
 									"style": "narrow"
 								}
@@ -1934,572 +7258,667 @@
 					"id": "047"
 				},
 				{
+					"ENG_name": "Ape",
+					"name": "猿",
 					"type": "statblock",
-					"name": "Ape",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Awakened Shrub",
+					"name": "启蒙灌木",
 					"type": "statblock",
-					"name": "Awakened Shrub",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Awakened Tree",
+					"name": "启蒙树木",
 					"type": "statblock",
-					"name": "Awakened Tree",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Axe Beak",
+					"name": "斧嘴鸟",
 					"type": "statblock",
-					"name": "Axe Beak",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Baboon",
+					"name": "狒狒",
 					"type": "statblock",
-					"name": "Baboon",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Badger",
+					"name": "獾",
 					"type": "statblock",
-					"name": "Badger",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Bat",
+					"name": "蝙蝠",
 					"type": "statblock",
-					"name": "Bat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Black Bear",
+					"name": "黑熊",
 					"type": "statblock",
-					"name": "Black Bear",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Blink Dog",
+					"name": "闪现犬",
 					"type": "statblock",
-					"name": "Blink Dog",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Blood Hawk",
+					"name": "血鹰",
 					"type": "statblock",
-					"name": "Blood Hawk",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Boar",
+					"name": "野猪",
 					"type": "statblock",
-					"name": "Boar",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Brown Bear",
+					"name": "棕熊",
 					"type": "statblock",
-					"name": "Brown Bear",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Camel",
+					"name": "骆驼",
 					"type": "statblock",
-					"name": "Camel",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Cat",
+					"name": "猫",
 					"type": "statblock",
-					"name": "Cat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Constrictor Snake",
+					"name": "蟒蛇",
 					"type": "statblock",
-					"name": "Constrictor Snake",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Crab",
+					"name": "蟹",
 					"type": "statblock",
-					"name": "Crab",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Crocodile",
+					"name": "鳄鱼",
 					"type": "statblock",
-					"name": "Crocodile",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Death Dog",
+					"name": "亡命恶犬",
 					"type": "statblock",
-					"name": "Death Dog",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Deer",
+					"name": "鹿",
 					"type": "statblock",
-					"name": "Deer",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Dire Wolf",
+					"name": "恐狼",
 					"type": "statblock",
-					"name": "Dire Wolf",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Draft Horse",
+					"name": "驮用马",
 					"type": "statblock",
-					"name": "Draft Horse",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Eagle",
+					"name": "鹰",
 					"type": "statblock",
-					"name": "Eagle",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Elephant",
+					"name": "大象",
 					"type": "statblock",
-					"name": "Elephant",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Elk",
+					"name": "赤鹿",
 					"type": "statblock",
-					"name": "Elk",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Flying Snake",
+					"name": "飞蛇",
 					"type": "statblock",
-					"name": "Flying Snake",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Frog",
+					"name": "青蛙",
 					"type": "statblock",
-					"name": "Frog",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Ape",
+					"name": "巨猿",
 					"type": "statblock",
-					"name": "Giant Ape",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Badger",
+					"name": "巨獾",
 					"type": "statblock",
-					"name": "Giant Badger",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Bat",
+					"name": "巨蝙蝠",
 					"type": "statblock",
-					"name": "Giant Bat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Boar",
+					"name": "巨野猪",
 					"type": "statblock",
-					"name": "Giant Boar",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Centipede",
+					"name": "巨蜈蚣",
 					"type": "statblock",
-					"name": "Giant Centipede",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Constrictor Snake",
+					"name": "巨蟒蛇",
 					"type": "statblock",
-					"name": "Giant Constrictor Snake",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Crab",
+					"name": "巨蟹",
 					"type": "statblock",
-					"name": "Giant Crab",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Crocodile",
+					"name": "巨鳄",
 					"type": "statblock",
-					"name": "Giant Crocodile",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Eagle",
+					"name": "巨鹰",
 					"type": "statblock",
-					"name": "Giant Eagle",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Elk",
+					"name": "巨赤鹿",
 					"type": "statblock",
-					"name": "Giant Elk",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Fire Beetle",
+					"name": "巨火甲虫",
 					"type": "statblock",
-					"name": "Giant Fire Beetle",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Frog",
+					"name": "巨蛙",
 					"type": "statblock",
-					"name": "Giant Frog",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Goat",
+					"name": "巨山羊",
 					"type": "statblock",
-					"name": "Giant Goat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Hyena",
+					"name": "巨鬣狗",
 					"type": "statblock",
-					"name": "Giant Hyena",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Lizard",
+					"name": "巨蜥",
 					"type": "statblock",
-					"name": "Giant Lizard",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Octopus",
+					"name": "巨章鱼",
 					"type": "statblock",
-					"name": "Giant Octopus",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Owl",
+					"name": "巨猫头鹰",
 					"type": "statblock",
-					"name": "Giant Owl",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Poisonous Snake",
+					"name": "巨毒蛇",
 					"type": "statblock",
-					"name": "Giant Poisonous Snake",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Rat",
+					"name": "巨鼠",
 					"type": "statblock",
-					"name": "Giant Rat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Scorpion",
+					"name": "巨蝎",
 					"type": "statblock",
-					"name": "Giant Scorpion",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Sea Horse",
+					"name": "巨海马",
 					"type": "statblock",
-					"name": "Giant Sea Horse",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Shark",
+					"name": "巨鲨",
 					"type": "statblock",
-					"name": "Giant Shark",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Spider",
+					"name": "巨蜘蛛",
 					"type": "statblock",
-					"name": "Giant Spider",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Toad",
+					"name": "巨蟾",
 					"type": "statblock",
-					"name": "Giant Toad",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Vulture",
+					"name": "巨秃鹫",
 					"type": "statblock",
-					"name": "Giant Vulture",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Wasp",
+					"name": "巨黄蜂",
 					"type": "statblock",
-					"name": "Giant Wasp",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Weasel",
+					"name": "巨鼬",
 					"type": "statblock",
-					"name": "Giant Weasel",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Giant Wolf Spider",
+					"name": "巨狼蛛",
 					"type": "statblock",
-					"name": "Giant Wolf Spider",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Goat",
+					"name": "山羊",
 					"type": "statblock",
-					"name": "Goat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Hawk",
+					"name": "隼",
 					"type": "statblock",
-					"name": "Hawk",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Hunter Shark",
+					"name": "寻猎鲨",
 					"type": "statblock",
-					"name": "Hunter Shark",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Hyena",
+					"name": "鬣狗",
 					"type": "statblock",
-					"name": "Hyena",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Jackal",
+					"name": "胡狼",
 					"type": "statblock",
-					"name": "Jackal",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Killer Whale",
+					"name": "虎鲸",
 					"type": "statblock",
-					"name": "Killer Whale",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Lion",
+					"name": "狮子",
 					"type": "statblock",
-					"name": "Lion",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Lizard",
+					"name": "蜥蜴",
 					"type": "statblock",
-					"name": "Lizard",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Mammoth",
+					"name": "猛犸",
 					"type": "statblock",
-					"name": "Mammoth",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Mastiff",
+					"name": "獒犬",
 					"type": "statblock",
-					"name": "Mastiff",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Mule",
+					"name": "骡子",
 					"type": "statblock",
-					"name": "Mule",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Octopus",
+					"name": "章鱼",
 					"type": "statblock",
-					"name": "Octopus",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Owl",
+					"name": "猫头鹰",
 					"type": "statblock",
-					"name": "Owl",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Panther",
+					"name": "豹",
 					"type": "statblock",
-					"name": "Panther",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Phase Spider",
+					"name": "相位蜘蛛",
 					"type": "statblock",
-					"name": "Phase Spider",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Poisonous Snake",
+					"name": "毒蛇",
 					"type": "statblock",
-					"name": "Poisonous Snake",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Polar Bear",
+					"name": "白熊",
 					"type": "statblock",
-					"name": "Polar Bear",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Pony",
+					"name": "矮种马",
 					"type": "statblock",
-					"name": "Pony",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Quipper",
+					"name": "食人鱼",
 					"type": "statblock",
-					"name": "Quipper",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Rat",
+					"name": "老鼠",
 					"type": "statblock",
-					"name": "Rat",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Raven",
+					"name": "渡鸦",
 					"type": "statblock",
-					"name": "Raven",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Reef Shark",
+					"name": "礁鲨",
 					"type": "statblock",
-					"name": "Reef Shark",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Rhinoceros",
+					"name": "犀牛",
 					"type": "statblock",
-					"name": "Rhinoceros",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Riding Horse",
+					"name": "乘用马",
 					"type": "statblock",
-					"name": "Riding Horse",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Saber-Toothed Tiger",
+					"name": "剑齿虎",
 					"type": "statblock",
-					"name": "Saber-Toothed Tiger",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Scorpion",
+					"name": "蝎子",
 					"type": "statblock",
-					"name": "Scorpion",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Sea Horse",
+					"name": "海马",
 					"type": "statblock",
-					"name": "Sea Horse",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Spider",
+					"name": "蜘蛛",
 					"type": "statblock",
-					"name": "Spider",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Swarm of Bats",
+					"name": "蝙蝠群",
 					"type": "statblock",
-					"name": "Swarm of Bats",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Swarm of Insects",
+					"name": "昆虫集群",
 					"type": "statblock",
-					"name": "Swarm of Insects",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Swarm of Poisonous Snakes",
+					"name": "毒蛇群",
 					"type": "statblock",
-					"name": "Swarm of Poisonous Snakes",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Swarm of Quippers",
+					"name": "食人鱼群",
 					"type": "statblock",
-					"name": "Swarm of Quippers",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Swarm of Rats",
+					"name": "鼠群",
 					"type": "statblock",
-					"name": "Swarm of Rats",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Swarm of Ravens",
+					"name": "渡鸦群",
 					"type": "statblock",
-					"name": "Swarm of Ravens",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Tiger",
+					"name": "老虎",
 					"type": "statblock",
-					"name": "Tiger",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Vulture",
+					"name": "秃鹫",
 					"type": "statblock",
-					"name": "Vulture",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Warhorse",
+					"name": "战马",
 					"type": "statblock",
-					"name": "Warhorse",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Weasel",
+					"name": "鼬",
 					"type": "statblock",
-					"name": "Weasel",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Winter Wolf",
+					"name": "冬狼",
 					"type": "statblock",
-					"name": "Winter Wolf",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Wolf",
+					"name": "狼",
 					"type": "statblock",
-					"name": "Wolf",
 					"tag": "creature",
 					"style": "narrow"
 				},
 				{
+					"ENG_name": "Worg",
+					"name": "座狼",
 					"type": "statblock",
-					"name": "Worg",
 					"tag": "creature",
 					"style": "narrow"
 				}
@@ -2600,12 +8019,14 @@
 							]
 						},
 						{
+							"ENG_name": "Acolyte",
+							"name": "侍僧",
 							"type": "section",
-							"name": "Acolyte",
 							"entries": [
 								{
+									"ENG_name": "Acolyte",
+									"name": "侍僧",
 									"type": "statblock",
-									"name": "Acolyte",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2617,20 +8038,23 @@
 									}
 								},
 								{
+									"ENG_name": "Acolyte",
+									"name": "侍僧",
 									"type": "statblock",
-									"name": "Acolyte",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Archmage",
+							"name": "大法师",
 							"type": "section",
-							"name": "Archmage",
 							"entries": [
 								{
+									"ENG_name": "Archmage",
+									"name": "大法师",
 									"type": "statblock",
-									"name": "Archmage",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2642,20 +8066,23 @@
 									}
 								},
 								{
+									"ENG_name": "Archmage",
+									"name": "大法师",
 									"type": "statblock",
-									"name": "Archmage",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Assassin",
+							"name": "刺客",
 							"type": "section",
-							"name": "Assassin",
 							"entries": [
 								{
+									"ENG_name": "Assassin",
+									"name": "刺客",
 									"type": "statblock",
-									"name": "Assassin",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2667,20 +8094,23 @@
 									}
 								},
 								{
+									"ENG_name": "Assassin",
+									"name": "刺客",
 									"type": "statblock",
-									"name": "Assassin",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Bandit",
+							"name": "匪徒",
 							"type": "section",
-							"name": "Bandit",
 							"entries": [
 								{
+									"ENG_name": "Bandit",
+									"name": "匪徒",
 									"type": "statblock",
-									"name": "Bandit",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2692,20 +8122,23 @@
 									}
 								},
 								{
+									"ENG_name": "Bandit",
+									"name": "匪徒",
 									"type": "statblock",
-									"name": "Bandit",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Bandit Captain",
+							"name": "匪帮队长",
 							"type": "section",
-							"name": "Bandit Captain",
 							"entries": [
 								{
+									"ENG_name": "Bandit Captain",
+									"name": "匪帮队长",
 									"type": "statblock",
-									"name": "Bandit Captain",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2717,20 +8150,23 @@
 									}
 								},
 								{
+									"ENG_name": "Bandit Captain",
+									"name": "匪帮队长",
 									"type": "statblock",
-									"name": "Bandit Captain",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Berserker",
+							"name": "狂战士",
 							"type": "section",
-							"name": "Berserker",
 							"entries": [
 								{
+									"ENG_name": "Berserker",
+									"name": "狂战士",
 									"type": "statblock",
-									"name": "Berserker",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2742,20 +8178,23 @@
 									}
 								},
 								{
+									"ENG_name": "Berserker",
+									"name": "狂战士",
 									"type": "statblock",
-									"name": "Berserker",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Commoner",
+							"name": "平民",
 							"type": "section",
-							"name": "Commoner",
 							"entries": [
 								{
+									"ENG_name": "Commoner",
+									"name": "平民",
 									"type": "statblock",
-									"name": "Commoner",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2767,20 +8206,23 @@
 									}
 								},
 								{
+									"ENG_name": "Commoner",
+									"name": "平民",
 									"type": "statblock",
-									"name": "Commoner",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Cult Fanatic",
+							"name": "邪教狂信者",
 							"type": "section",
-							"name": "Cult Fanatic",
 							"entries": [
 								{
+									"ENG_name": "Cult Fanatic",
+									"name": "邪教狂信者",
 									"type": "statblock",
-									"name": "Cult Fanatic",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2792,20 +8234,23 @@
 									}
 								},
 								{
+									"ENG_name": "Cult Fanatic",
+									"name": "邪教狂信者",
 									"type": "statblock",
-									"name": "Cult Fanatic",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Cultist",
+							"name": "邪教徒",
 							"type": "section",
-							"name": "Cultist",
 							"entries": [
 								{
+									"ENG_name": "Cultist",
+									"name": "邪教徒",
 									"type": "statblock",
-									"name": "Cultist",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2817,20 +8262,23 @@
 									}
 								},
 								{
+									"ENG_name": "Cultist",
+									"name": "邪教徒",
 									"type": "statblock",
-									"name": "Cultist",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Druid",
+							"name": "德鲁伊",
 							"type": "section",
-							"name": "Druid",
 							"entries": [
 								{
+									"ENG_name": "Druid",
+									"name": "德鲁伊",
 									"type": "statblock",
-									"name": "Druid",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2842,20 +8290,23 @@
 									}
 								},
 								{
+									"ENG_name": "Druid",
+									"name": "德鲁伊",
 									"type": "statblock",
-									"name": "Druid",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Gladiator",
+							"name": "角斗士",
 							"type": "section",
-							"name": "Gladiator",
 							"entries": [
 								{
+									"ENG_name": "Gladiator",
+									"name": "角斗士",
 									"type": "statblock",
-									"name": "Gladiator",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2867,20 +8318,23 @@
 									}
 								},
 								{
+									"ENG_name": "Gladiator",
+									"name": "角斗士",
 									"type": "statblock",
-									"name": "Gladiator",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Guard",
+							"name": "警卫",
 							"type": "section",
-							"name": "Guard",
 							"entries": [
 								{
+									"ENG_name": "Guard",
+									"name": "警卫",
 									"type": "statblock",
-									"name": "Guard",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2892,20 +8346,23 @@
 									}
 								},
 								{
+									"ENG_name": "Guard",
+									"name": "警卫",
 									"type": "statblock",
-									"name": "Guard",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Knight",
+							"name": "骑士",
 							"type": "section",
-							"name": "Knight",
 							"entries": [
 								{
+									"ENG_name": "Knight",
+									"name": "骑士",
 									"type": "statblock",
-									"name": "Knight",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2917,20 +8374,23 @@
 									}
 								},
 								{
+									"ENG_name": "Knight",
+									"name": "骑士",
 									"type": "statblock",
-									"name": "Knight",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Mage",
+							"name": "魔法师",
 							"type": "section",
-							"name": "Mage",
 							"entries": [
 								{
+									"ENG_name": "Mage",
+									"name": "魔法师",
 									"type": "statblock",
-									"name": "Mage",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2942,20 +8402,23 @@
 									}
 								},
 								{
+									"ENG_name": "Mage",
+									"name": "魔法师",
 									"type": "statblock",
-									"name": "Mage",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Noble",
+							"name": "贵族",
 							"type": "section",
-							"name": "Noble",
 							"entries": [
 								{
+									"ENG_name": "Noble",
+									"name": "贵族",
 									"type": "statblock",
-									"name": "Noble",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2967,20 +8430,23 @@
 									}
 								},
 								{
+									"ENG_name": "Noble",
+									"name": "贵族",
 									"type": "statblock",
-									"name": "Noble",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Priest",
+							"name": "祭司",
 							"type": "section",
-							"name": "Priest",
 							"entries": [
 								{
+									"ENG_name": "Priest",
+									"name": "祭司",
 									"type": "statblock",
-									"name": "Priest",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -2992,20 +8458,23 @@
 									}
 								},
 								{
+									"ENG_name": "Priest",
+									"name": "祭司",
 									"type": "statblock",
-									"name": "Priest",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Scout",
+							"name": "斥候",
 							"type": "section",
-							"name": "Scout",
 							"entries": [
 								{
+									"ENG_name": "Scout",
+									"name": "斥候",
 									"type": "statblock",
-									"name": "Scout",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -3017,20 +8486,23 @@
 									}
 								},
 								{
+									"ENG_name": "Scout",
+									"name": "斥候",
 									"type": "statblock",
-									"name": "Scout",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Spy",
+							"name": "间谍",
 							"type": "section",
-							"name": "Spy",
 							"entries": [
 								{
+									"ENG_name": "Spy",
+									"name": "间谍",
 									"type": "statblock",
-									"name": "Spy",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -3042,20 +8514,23 @@
 									}
 								},
 								{
+									"ENG_name": "Spy",
+									"name": "间谍",
 									"type": "statblock",
-									"name": "Spy",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Thug",
+							"name": "暴徒",
 							"type": "section",
-							"name": "Thug",
 							"entries": [
 								{
+									"ENG_name": "Thug",
+									"name": "暴徒",
 									"type": "statblock",
-									"name": "Thug",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -3067,20 +8542,23 @@
 									}
 								},
 								{
+									"ENG_name": "Thug",
+									"name": "暴徒",
 									"type": "statblock",
-									"name": "Thug",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Tribal Warrior",
+							"name": "部族武者",
 							"type": "section",
-							"name": "Tribal Warrior",
 							"entries": [
 								{
+									"ENG_name": "Tribal Warrior",
+									"name": "部族武者",
 									"type": "statblock",
-									"name": "Tribal Warrior",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -3092,20 +8570,23 @@
 									}
 								},
 								{
+									"ENG_name": "Tribal Warrior",
+									"name": "部族武者",
 									"type": "statblock",
-									"name": "Tribal Warrior",
 									"tag": "creature",
 									"style": "narrow"
 								}
 							]
 						},
 						{
+							"ENG_name": "Veteran",
+							"name": "老兵",
 							"type": "section",
-							"name": "Veteran",
 							"entries": [
 								{
+									"ENG_name": "Veteran",
+									"name": "老兵",
 									"type": "statblock",
-									"name": "Veteran",
 									"prop": "monsterFluff",
 									"source": "MM",
 									"slotSize": "120",
@@ -3117,8 +8598,9 @@
 									}
 								},
 								{
+									"ENG_name": "Veteran",
+									"name": "老兵",
 									"type": "statblock",
-									"name": "Veteran",
 									"tag": "creature",
 									"style": "narrow"
 								}

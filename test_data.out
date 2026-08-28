@@ -1,5 +1,5 @@
 
-> 5etools@2.33.3 test:data
+> 5etools@2.34.0 test:data
 > node test/test-all.js
 
 ##### FilterCheck passed! #####
@@ -9,10 +9,12 @@
 ##### AdventureBookTagCheck passed! #####
 ##### AreaCheck passed! #####
 ##### EntriesCheck passed! #####
+##### EscapeCharacterCheck passed! #####
 ##### DuplicateEntityCheck passed! #####
 ##### RefTagCheck passed! #####
 ##### TestCopyCheck passed! #####
 ##### EntityFileHandlerAction passed! #####
+##### EntityFileHandlerAdventureBook passed! #####
 ##### EntityFileHandlerBackground passed! #####
 ##### EntityFileHandlerClass passed! #####
 ##### EntityFileHandlerConditionDisease passed! #####
@@ -164,8 +166,12 @@ Missing link: 地狱火战锤|BGDIA in file ./data/bestiary/bestiary-bgdia.json 
 Error messages for EntityFileHandlerDeck:
 
 Missing link: 喷火|万象无常牌|XDMG in file ./data/decks.json (evaluates to "card#%e5%96%b7%e7%81%ab_%e4%b8%87%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_xdmg") in "cards"
+Spread "魔域天机|CoS" in file ./data/decks.json had an outcome for card "战士|塔罗卡牌组|cos", which is not in the deck!
+Spread "魔域天机|CoS" in file ./data/decks.json position "施特拉德典籍" had no outcome for card "武者|塔罗卡牌组|cos"!
+Spread "魔域天机|CoS" in file ./data/decks.json position "渡鸦圣徽" had no outcome for card "武者|塔罗卡牌组|cos"!
+Spread "魔域天机|CoS" in file ./data/decks.json position "日耀之剑" had no outcome for card "武者|塔罗卡牌组|cos"!
 ---
 
 
-	Run duration: 1:29.736 (m:ss.mmm)
+	Run duration: 1:12.321 (m:ss.mmm)
 Tests failed!

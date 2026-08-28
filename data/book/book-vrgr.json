@@ -823,7 +823,13 @@
 					"page": 16,
 					"id": "02f",
 					"entries": [
-						"参见{@race 半血裔|VRGR}条目。",
+						{
+							"ENG_name": "Dhampir",
+							"name": "半血裔",
+							"type": "statblock",
+							"tag": "race",
+							"source": "VRGR"
+						},
 						{
 							"ENG_name": "Dhampirs in the Domains of Dread",
 							"name": "恐惧诸领域中的半血裔",
@@ -887,7 +893,13 @@
 					"page": 18,
 					"id": "041",
 					"entries": [
-						"参见{@race 巫咒之子|VRGR}条目。",
+						{
+							"ENG_name": "Hexblood",
+							"name": "巫咒之子",
+							"type": "statblock",
+							"tag": "race",
+							"source": "VRGR"
+						},
 						{
 							"ENG_name": "Hexbloods in the Domains of Dread",
 							"name": "恐惧诸领域的巫咒之子",
@@ -951,7 +963,13 @@
 					"page": 20,
 					"id": "053",
 					"entries": [
-						"参见{@race 重生者|VRGR}条目。",
+						{
+							"ENG_name": "Reborn",
+							"name": "重生者",
+							"type": "statblock",
+							"tag": "race",
+							"source": "VRGR"
+						},
 						{
 							"ENG_name": "Reborn in the Domains of Dread",
 							"name": "恐惧诸领域的复生者",
@@ -1074,50 +1092,58 @@
 									]
 								},
 								{
+									"ENG_name": "Echoing Soul",
+									"name": "灵魂回荡",
 									"type": "statblock",
-									"name": "Echoing Soul",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Gathered Whispers",
+									"name": "汇灵低语",
 									"type": "statblock",
-									"name": "Gathered Whispers",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Living Shadow",
+									"name": "活体幽影",
 									"type": "statblock",
-									"name": "Living Shadow",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Mist Walker",
+									"name": "迷雾行者",
 									"type": "statblock",
-									"name": "Mist Walker",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Second Skin",
+									"name": "第二形态",
 									"type": "statblock",
-									"name": "Second Skin",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Symbiotic Being",
+									"name": "共生存在",
 									"type": "statblock",
-									"name": "Symbiotic Being",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Touch of Death",
+									"name": "往生咒",
 									"type": "statblock",
-									"name": "Touch of Death",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Watchers",
+									"name": "守望",
 									"type": "statblock",
-									"name": "Watchers",
 									"tag": "charoption",
 									"source": "VRGR"
 								}
@@ -1156,21 +1182,23 @@
 							"credit": "Dawn Carlos"
 						},
 						{
+							"ENG_name": "College of Spirits",
+							"name": "精魂学院",
 							"type": "statblock",
 							"prop": "subclass",
 							"source": "VRGR",
-							"name": "College of Spirits",
-							"shortName": "Spirits",
-							"className": "Bard",
+							"shortName": "精魂",
+							"className": "吟游诗人",
 							"classSource": "PHB"
 						},
 						{
+							"ENG_name": "The Undead",
+							"name": "死灵宗主",
 							"type": "statblock",
 							"prop": "subclass",
 							"source": "VRGR",
-							"name": "The Undead",
-							"shortName": "Undead",
-							"className": "Warlock",
+							"shortName": "亡灵",
+							"className": "魔契师",
 							"classSource": "PHB"
 						}
 					]
@@ -1214,32 +1242,37 @@
 									]
 								},
 								{
+									"ENG_name": "Inheritor",
+									"name": "继承人",
 									"type": "statblock",
-									"name": "Inheritor",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Mist Wanderer",
+									"name": "迷雾漫游者",
 									"type": "statblock",
-									"name": "Mist Wanderer",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Spirit Medium",
+									"name": "灵媒",
 									"type": "statblock",
-									"name": "Spirit Medium",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Trauma Survivor",
+									"name": "创伤生还者",
 									"type": "statblock",
-									"name": "Trauma Survivor",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
 								{
+									"ENG_name": "Traveler",
+									"name": "旅行者",
 									"type": "statblock",
-									"name": "Traveler",
 									"tag": "charoption",
 									"source": "VRGR"
 								},
@@ -17435,7 +17468,8 @@
 													"items": [
 														"{@i 河舞者}在角色们迫切需要逃离某个领域时出现，但迷雾会让他们航向更危险的下一站。",
 														"{@i 河舞者}驶进了港口，但其上只有雪鬃船长一人。拉丽萨需要一伙船员，但她并不会提及她的上一批手下在她使用亡灵舞时被杀。"
-													]
+													],
+													"columns": 3
 												}
 											]
 										}
@@ -18446,7 +18480,13 @@
 					"page": 195,
 					"id": "472",
 					"entries": [
-						"参见{@variantrule 恐惧与压力|VRGR}条目。"
+						{
+							"ENG_name": "Fear and Stress",
+							"name": "恐惧与压力",
+							"type": "statblock",
+							"tag": "variantrule",
+							"source": "VRGR"
+						}
 					]
 				},
 				{
@@ -18456,7 +18496,13 @@
 					"page": 196,
 					"id": "478",
 					"entries": [
-						"参见{@variantrule 灵异陷阱|VRGR}条目。"
+						{
+							"ENG_name": "Haunted Traps",
+							"name": "灵异陷阱",
+							"type": "statblock",
+							"tag": "variantrule",
+							"source": "VRGR"
+						}
 					]
 				},
 				{
@@ -18466,7 +18512,13 @@
 					"page": 198,
 					"id": "480",
 					"entries": [
-						"参见{@variantrule 生还者|VRGR}条目。"
+						{
+							"ENG_name": "Survivors",
+							"name": "生还者",
+							"type": "statblock",
+							"tag": "variantrule",
+							"source": "VRGR"
+						}
 					]
 				},
 				{

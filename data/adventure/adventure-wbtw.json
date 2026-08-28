@@ -1155,7 +1155,7 @@
 									"IGG-rick"
 								],
 								[
-									"伊格薇尔伏",
+									"{@creature 巫后 伊格薇尔伏|WBtW|伊格薇尔伏}",
 									"IGG-wilv"
 								],
 								[
@@ -1576,7 +1576,8 @@
 												"{@creature 巴弗洛娜·枯秸|WBtW} 的小偷是她的洛灵之一\u2014\u2014一个自己的缩小版。使用《{@adventure 附录C|WBtW|8}》中的{@creature 快可灵|VGM}状态块来代表这个类似蟾蜍的生物。",
 												"{@creature 斯卡芭莎·夜影|WBtW}的小偷是Sowpig，一个小型{@creature 食尸鬼}，拥有17点（{@dice 5d6}）生命值。她看起来像一个戴着猪面具、拿着超大棒棒糖的小女孩。",
 												"{@creature 恩德琳·月冢|WBtW} 的小偷是Gleam的{@creature 分离的影子|WBtW}，Gleam是一位穿着新月面具的高精灵杂技演员。（Gleam本人已经从嘉年华中消失了。角色们将在{@adventure 第四章|WBtW|4}中遇到她。）Gleam的{@creature 分离的影子|WBtW}使用{@creature 幽影}的统计数据块，除了它是精类而不是不死生物。如果生物的力量因影子的力量吸取攻击而减少到0，则不会死亡，而是会陷入{@condition 昏迷}状态。生物在完成短休或长休后恢复意识，其力量值的减少也会消失。"
-											]
+											],
+											"columns": 3
 										},
 										"每个盗贼都有以下额外的行动选项，它用这些选项来实现其目标：",
 										{
@@ -18346,7 +18347,8 @@
 									"items": [
 										"{@creature 凯雷克|WBtW} 在宝座大厅（{@area 区域P31|3d6|x}）中举行朝会，他由一个名叫{@creature 战爵|WBtW}的戴盔剑士保护。",
 										"{@creature 扎伽什|WBtW}，一个希望取代{@creature 凯雷克|WBtW}成为联盟领袖的奥喀斯人类牧师，通常在 {@area 区域P30|3d0|x} 遇到。"
-									]
+									],
+									"columns": 3
 								},
 								"邪恶联盟的其他两名成员可以在Prismeer的其他地方找到：",
 								{
@@ -18354,7 +18356,8 @@
 									"items": [
 										"{@creature 扎拉克|WBtW}，一名刺客，被派往Thither去刺杀一只名叫Lamorna的独角兽并获取她的角（见{@adventure 第三章|WBtW|3}中的\"{@area Wayward Pool|218|x}\"）。",
 										"{@creature 丝绮拉|WBtW}，这位与巴巴亚加秘密结盟的魔契师，已经隐居在Motherhorn，在那里她采用了艺名Charmay（见{@adventure 第四章|WBtW|4}中的{@area 区域M12|31c|x}）。"
-									]
+									],
+									"columns": 3
 								},
 								{
 									"ENG_name": "Where Shall We Three Meet Again?",
@@ -18382,7 +18385,8 @@
 										"{@creature 梅西恩|WBtW}，一个人类牧师，在舞厅（{@area 区域P22|3b3|x}）中与Zybilna一同被冻结。{@creature 梅西恩|WBtW}在大锅的视界内，因此她目睹了沙漏女巫会的背叛。",
 										"{@creature 林格伦|WBtW}，一个人类法师，在{@area 区域P23|3bc|x}施放{@spell 寒冰锥}法术时被冻结。",
 										"{@creature 强心|WBtW} 刚刚被冻结，就在{@creature 战爵|WBtW} 将他从齐比尔纳的书房墙壁上炸穿时（{@area 区域P47|400|x}）。他现在悬浮在风暴庭院（{@area 区域P13|392|x}）的空中。"
-									]
+									],
+									"columns": 3
 								},
 								"在Prismeer的其他地方发现了Valor's Call的另外两名成员：",
 								{
@@ -18390,7 +18394,8 @@
 									"items": [
 										"{@creature 艾克霍恩|WBtW}，一个矮人战士，从时间静止中被释放，以便{@creature 斯卡芭莎·夜影|WBtW}可以审问他。角色们在Thither遇到了{@creature 艾克霍恩|WBtW}（见{@area 区域L13|271|x}，在{@adventure 第三章|WBtW|3}）。",
 										"{@creature 莫利维尔|WBtW}，一个人类盗贼，在时间冻结效果发生时并不在宫殿里。角色们在Yon遇到了{@creature 莫利维尔|WBtW}（见{@adventure 第四章|WBtW|4}中的\"{@area 布里甘诺克矿井|2c1|x}\"）。"
-									]
+									],
+									"columns": 3
 								},
 								"有关这些英雄的更多信息，请见{@area 附录 B|494|x}。"
 							]
@@ -25224,148 +25229,173 @@
 					]
 				},
 				{
+					"ENG_name": "Bobbing Lily Pad",
+					"name": "摇曳荷叶",
 					"type": "statblock",
-					"name": "Bobbing Lily Pad",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Broom of Flying",
+					"name": "飞天扫帚",
 					"type": "statblock",
-					"name": "Broom of Flying",
 					"tag": "item"
 				},
 				{
+					"ENG_name": "Chromatic Rose",
+					"name": "色彩玫瑰",
 					"type": "statblock",
-					"name": "Chromatic Rose",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Cloak of Many Fashions",
+					"name": "万众时尚斗篷",
 					"type": "statblock",
-					"name": "Cloak of Many Fashions",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Dread Helm",
+					"name": "恐怖头盔",
 					"type": "statblock",
-					"name": "Dread Helm",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Dust of Corrosion",
+					"name": "锈蚀之尘",
 					"type": "statblock",
-					"name": "Dust of Corrosion",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Eldritch Staff",
+					"name": "魔能法杖",
 					"type": "statblock",
-					"name": "Eldritch Staff",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Flame Tongue",
+					"name": "焰舌",
 					"type": "statblock",
-					"name": "Flame Tongue",
 					"tag": "item"
 				},
 				{
+					"ENG_name": "Frost Brand",
+					"name": "霜铭",
 					"type": "statblock",
-					"name": "Frost Brand",
 					"tag": "item"
 				},
 				{
+					"ENG_name": "Iggwilv's Cauldron",
+					"name": "伊格薇尔伏的坩埚",
 					"type": "statblock",
-					"name": "Iggwilv's Cauldron",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Instrument of Scribing",
+					"name": "撰写乐器",
 					"type": "statblock",
-					"name": "Instrument of Scribing",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Orb of Direction",
+					"name": "方向法球",
 					"type": "statblock",
-					"name": "Orb of Direction",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Ornithopter of Flying",
+					"name": "飞行扑翼机",
 					"type": "statblock",
-					"name": "Ornithopter of Flying",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Pipe of Smoke Monsters",
+					"name": "怪物烟斗",
 					"type": "statblock",
-					"name": "Pipe of Smoke Monsters",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Pixie Dust",
+					"name": "皮克精之尘",
 					"type": "statblock",
-					"name": "Pixie Dust",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Pole of Collapsing",
+					"name": "压缩之杆",
 					"type": "statblock",
-					"name": "Pole of Collapsing",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Potion of Advantage",
+					"name": "优势药水",
 					"type": "statblock",
-					"name": "Potion of Advantage",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Scissors of Shadow Snipping",
+					"name": "裁影之剪",
 					"type": "statblock",
-					"name": "Scissors of Shadow Snipping",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Snicker-Snack",
+					"name": "咔吱咔嚓",
 					"type": "statblock",
-					"name": "Snicker-Snack",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Steel",
+					"name": "锻钢",
 					"type": "statblock",
-					"name": "Steel",
 					"tag": "item",
 					"source": "WBtW"
 				},
 				{
+					"ENG_name": "Talking Doll",
+					"name": "说话玩偶",
 					"type": "statblock",
-					"name": "Talking Doll",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Wand of Polymorph",
+					"name": "变形魔杖",
 					"type": "statblock",
-					"name": "Wand of Polymorph",
 					"tag": "item"
 				},
 				{
+					"ENG_name": "Wand of Scowls",
+					"name": "愁苦魔杖",
 					"type": "statblock",
-					"name": "Wand of Scowls",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Wand of Smiles",
+					"name": "欢笑魔杖",
 					"type": "statblock",
-					"name": "Wand of Smiles",
 					"tag": "item",
 					"source": "XGE"
 				},
 				{
+					"ENG_name": "Woodcutter's Axe",
+					"name": "伐木者之斧",
 					"type": "statblock",
-					"name": "Woodcutter's Axe",
 					"tag": "item",
 					"source": "WBtW"
 				}
@@ -26633,12 +26663,14 @@
 					]
 				},
 				{
+					"ENG_name": "Boggle",
+					"name": "捣蛋鬼",
 					"type": "section",
-					"name": "Boggle",
 					"entries": [
 						{
+							"ENG_name": "Boggle",
+							"name": "捣蛋鬼",
 							"type": "statblock",
-							"name": "Boggle",
 							"prop": "monsterFluff",
 							"source": "VGM",
 							"data": {
@@ -26648,8 +26680,9 @@
 							}
 						},
 						{
+							"ENG_name": "Boggle",
+							"name": "捣蛋鬼",
 							"type": "statblock",
-							"name": "Boggle",
 							"tag": "creature",
 							"source": "VGM",
 							"style": "narrow"
@@ -26657,12 +26690,14 @@
 					]
 				},
 				{
+					"ENG_name": "Brigganock",
+					"name": "布嘎矿精",
 					"type": "section",
-					"name": "Brigganock",
 					"entries": [
 						{
+							"ENG_name": "Brigganock",
+							"name": "布嘎矿精",
 							"type": "statblock",
-							"name": "Brigganock",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26672,8 +26707,9 @@
 							}
 						},
 						{
+							"ENG_name": "Brigganock",
+							"name": "布嘎矿精",
 							"type": "statblock",
-							"name": "Brigganock",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26681,12 +26717,14 @@
 					]
 				},
 				{
+					"ENG_name": "Bullywug Knight",
+					"name": "啵灵蛙骑士",
 					"type": "section",
-					"name": "Bullywug Knight",
 					"entries": [
 						{
+							"ENG_name": "Bullywug Knight",
+							"name": "啵灵蛙骑士",
 							"type": "statblock",
-							"name": "Bullywug Knight",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26696,8 +26734,9 @@
 							}
 						},
 						{
+							"ENG_name": "Bullywug Knight",
+							"name": "啵灵蛙骑士",
 							"type": "statblock",
-							"name": "Bullywug Knight",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26705,12 +26744,14 @@
 					]
 				},
 				{
+					"ENG_name": "Bullywug Royal",
+					"name": "啵灵蛙王族",
 					"type": "section",
-					"name": "Bullywug Royal",
 					"entries": [
 						{
+							"ENG_name": "Bullywug Royal",
+							"name": "啵灵蛙王族",
 							"type": "statblock",
-							"name": "Bullywug Royal",
 							"prop": "monsterFluff",
 							"source": "GoS",
 							"data": {
@@ -26720,8 +26761,9 @@
 							}
 						},
 						{
+							"ENG_name": "Bullywug Royal",
+							"name": "啵灵蛙王族",
 							"type": "statblock",
-							"name": "Bullywug Royal",
 							"tag": "creature",
 							"source": "GoS",
 							"style": "narrow"
@@ -26729,12 +26771,14 @@
 					]
 				},
 				{
+					"ENG_name": "Bullywug",
+					"name": "啵灵蛙",
 					"type": "section",
-					"name": "Bullywug",
 					"entries": [
 						{
+							"ENG_name": "Bullywug",
+							"name": "啵灵蛙",
 							"type": "statblock",
-							"name": "Bullywug",
 							"prop": "monsterFluff",
 							"source": "MM",
 							"tag": "creature",
@@ -26745,20 +26789,23 @@
 							}
 						},
 						{
+							"ENG_name": "Bullywug",
+							"name": "啵灵蛙",
 							"type": "statblock",
-							"name": "Bullywug",
 							"tag": "creature",
 							"style": "narrow"
 						}
 					]
 				},
 				{
+					"ENG_name": "Campestri",
+					"name": "坎佩斯特里",
 					"type": "section",
-					"name": "Campestri",
 					"entries": [
 						{
+							"ENG_name": "Campestri",
+							"name": "坎佩斯特里",
 							"type": "statblock",
-							"name": "Campestri",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26768,8 +26815,9 @@
 							}
 						},
 						{
+							"ENG_name": "Campestri",
+							"name": "坎佩斯特里",
 							"type": "statblock",
-							"name": "Campestri",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26777,12 +26825,14 @@
 					]
 				},
 				{
+					"ENG_name": "Swarm of Campestris",
+					"name": "荟乐菇集群",
 					"type": "section",
-					"name": "Swarm of Campestris",
 					"entries": [
 						{
+							"ENG_name": "Swarm of Campestris",
+							"name": "荟乐菇集群",
 							"type": "statblock",
-							"name": "Swarm of Campestris",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26792,8 +26842,9 @@
 							}
 						},
 						{
+							"ENG_name": "Swarm of Campestris",
+							"name": "荟乐菇集群",
 							"type": "statblock",
-							"name": "Swarm of Campestris",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26801,12 +26852,14 @@
 					]
 				},
 				{
+					"ENG_name": "Darkling Elder",
+					"name": "暗灵长者",
 					"type": "section",
-					"name": "Darkling Elder",
 					"entries": [
 						{
+							"ENG_name": "Darkling Elder",
+							"name": "暗灵长者",
 							"type": "statblock",
-							"name": "Darkling Elder",
 							"prop": "monsterFluff",
 							"source": "VGM",
 							"data": {
@@ -26816,8 +26869,9 @@
 							}
 						},
 						{
+							"ENG_name": "Darkling Elder",
+							"name": "暗灵长者",
 							"type": "statblock",
-							"name": "Darkling Elder",
 							"tag": "creature",
 							"source": "VGM",
 							"style": "narrow"
@@ -26825,12 +26879,14 @@
 					]
 				},
 				{
+					"ENG_name": "Darkling",
+					"name": "暗灵",
 					"type": "section",
-					"name": "Darkling",
 					"entries": [
 						{
+							"ENG_name": "Darkling",
+							"name": "暗灵",
 							"type": "statblock",
-							"name": "Darkling",
 							"prop": "monsterFluff",
 							"source": "VGM",
 							"data": {
@@ -26840,8 +26896,9 @@
 							}
 						},
 						{
+							"ENG_name": "Darkling",
+							"name": "暗灵",
 							"type": "statblock",
-							"name": "Darkling",
 							"tag": "creature",
 							"source": "VGM",
 							"style": "narrow"
@@ -26849,12 +26906,14 @@
 					]
 				},
 				{
+					"ENG_name": "Galeb Duhr",
+					"name": "石人",
 					"type": "section",
-					"name": "Galeb Duhr",
 					"entries": [
 						{
+							"ENG_name": "Galeb Duhr",
+							"name": "石人",
 							"type": "statblock",
-							"name": "Galeb Duhr",
 							"prop": "monsterFluff",
 							"source": "MM",
 							"tag": "creature",
@@ -26865,20 +26924,23 @@
 							}
 						},
 						{
+							"ENG_name": "Galeb Duhr",
+							"name": "石人",
 							"type": "statblock",
-							"name": "Galeb Duhr",
 							"tag": "creature",
 							"style": "narrow"
 						}
 					]
 				},
 				{
+					"ENG_name": "Giant Dragonfly",
+					"name": "巨蜻蜓",
 					"type": "section",
-					"name": "Giant Dragonfly",
 					"entries": [
 						{
+							"ENG_name": "Giant Dragonfly",
+							"name": "巨蜻蜓",
 							"type": "statblock",
-							"name": "Giant Dragonfly",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26888,8 +26950,9 @@
 							}
 						},
 						{
+							"ENG_name": "Giant Dragonfly",
+							"name": "巨蜻蜓",
 							"type": "statblock",
-							"name": "Giant Dragonfly",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26897,12 +26960,14 @@
 					]
 				},
 				{
+					"ENG_name": "Giant Snail",
+					"name": "巨蜗牛",
 					"type": "section",
-					"name": "Giant Snail",
 					"entries": [
 						{
+							"ENG_name": "Giant Snail",
+							"name": "巨蜗牛",
 							"type": "statblock",
-							"name": "Giant Snail",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26912,8 +26977,9 @@
 							}
 						},
 						{
+							"ENG_name": "Giant Snail",
+							"name": "巨蜗牛",
 							"type": "statblock",
-							"name": "Giant Snail",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26921,24 +26987,28 @@
 					]
 				},
 				{
+					"ENG_name": "Giant Toad",
+					"name": "巨蟾",
 					"type": "section",
-					"name": "Giant Toad",
 					"entries": [
 						{
+							"ENG_name": "Giant Toad",
+							"name": "巨蟾",
 							"type": "statblock",
-							"name": "Giant Toad",
 							"tag": "creature",
 							"style": "narrow"
 						}
 					]
 				},
 				{
+					"ENG_name": "Harengon Brigand",
+					"name": "兔人强盗",
 					"type": "section",
-					"name": "Harengon Brigand",
 					"entries": [
 						{
+							"ENG_name": "Harengon Brigand",
+							"name": "兔人强盗",
 							"type": "statblock",
-							"name": "Harengon Brigand",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26948,8 +27018,9 @@
 							}
 						},
 						{
+							"ENG_name": "Harengon Brigand",
+							"name": "兔人强盗",
 							"type": "statblock",
-							"name": "Harengon Brigand",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26957,12 +27028,14 @@
 					]
 				},
 				{
+					"ENG_name": "Harengon Sniper",
+					"name": "兔人狙击手",
 					"type": "section",
-					"name": "Harengon Sniper",
 					"entries": [
 						{
+							"ENG_name": "Harengon Sniper",
+							"name": "兔人狙击手",
 							"type": "statblock",
-							"name": "Harengon Sniper",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26972,8 +27045,9 @@
 							}
 						},
 						{
+							"ENG_name": "Harengon Sniper",
+							"name": "兔人狙击手",
 							"type": "statblock",
-							"name": "Harengon Sniper",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -26981,12 +27055,14 @@
 					]
 				},
 				{
+					"ENG_name": "Jabberwock",
+					"name": "炸脖龙",
 					"type": "section",
-					"name": "Jabberwock",
 					"entries": [
 						{
+							"ENG_name": "Jabberwock",
+							"name": "炸脖龙",
 							"type": "statblock",
-							"name": "Jabberwock",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -26996,8 +27072,9 @@
 							}
 						},
 						{
+							"ENG_name": "Jabberwock",
+							"name": "炸脖龙",
 							"type": "statblock",
-							"name": "Jabberwock",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"
@@ -27005,60 +27082,14 @@
 					]
 				},
 				{
+					"ENG_name": "Korred",
+					"name": "考芮精",
 					"type": "section",
-					"name": "Korred",
 					"entries": [
 						{
+							"ENG_name": "Korred",
+							"name": "考芮精",
 							"type": "statblock",
-							"name": "Korred",
-							"prop": "monsterFluff",
-							"source": "VGM",
-							"data": {
-								"renderCompact": {
-									"isSkipRootName": true
-								}
-							}
-						},
-						{
-							"type": "statblock",
-							"name": "Korred",
-							"tag": "creature",
-							"source": "VGM",
-							"style": "narrow"
-						}
-					]
-				},
-				{
-					"type": "section",
-					"name": "Living Doll",
-					"entries": [
-						{
-							"type": "statblock",
-							"name": "Living Doll",
-							"prop": "monsterFluff",
-							"source": "WBtW",
-							"data": {
-								"renderCompact": {
-									"isSkipRootName": true
-								}
-							}
-						},
-						{
-							"type": "statblock",
-							"name": "Living Doll",
-							"tag": "creature",
-							"source": "WBtW",
-							"style": "narrow"
-						}
-					]
-				},
-				{
-					"type": "section",
-					"name": "Quickling",
-					"entries": [
-						{
-							"type": "statblock",
-							"name": "Quickling",
 							"prop": "monsterFluff",
 							"source": "VGM",
 							"data": {
@@ -27068,8 +27099,9 @@
 							}
 						},
 						{
+							"ENG_name": "Korred",
+							"name": "考芮精",
 							"type": "statblock",
-							"name": "Quickling",
 							"tag": "creature",
 							"source": "VGM",
 							"style": "narrow"
@@ -27077,36 +27109,14 @@
 					]
 				},
 				{
+					"ENG_name": "Living Doll",
+					"name": "活化玩偶",
 					"type": "section",
-					"name": "Redcap",
 					"entries": [
 						{
+							"ENG_name": "Living Doll",
+							"name": "活化玩偶",
 							"type": "statblock",
-							"name": "Redcap",
-							"prop": "monsterFluff",
-							"source": "VGM",
-							"data": {
-								"renderCompact": {
-									"isSkipRootName": true
-								}
-							}
-						},
-						{
-							"type": "statblock",
-							"name": "Redcap",
-							"tag": "creature",
-							"source": "VGM",
-							"style": "narrow"
-						}
-					]
-				},
-				{
-					"type": "section",
-					"name": "Selenelion Twin",
-					"entries": [
-						{
-							"type": "statblock",
-							"name": "Selenelion Twin",
 							"prop": "monsterFluff",
 							"source": "WBtW",
 							"data": {
@@ -27116,8 +27126,90 @@
 							}
 						},
 						{
+							"ENG_name": "Living Doll",
+							"name": "活化玩偶",
 							"type": "statblock",
-							"name": "Selenelion Twin",
+							"tag": "creature",
+							"source": "WBtW",
+							"style": "narrow"
+						}
+					]
+				},
+				{
+					"ENG_name": "Quickling",
+					"name": "快可灵",
+					"type": "section",
+					"entries": [
+						{
+							"ENG_name": "Quickling",
+							"name": "快可灵",
+							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "VGM",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"ENG_name": "Quickling",
+							"name": "快可灵",
+							"type": "statblock",
+							"tag": "creature",
+							"source": "VGM",
+							"style": "narrow"
+						}
+					]
+				},
+				{
+					"ENG_name": "Redcap",
+					"name": "红帽子",
+					"type": "section",
+					"entries": [
+						{
+							"ENG_name": "Redcap",
+							"name": "红帽子",
+							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "VGM",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"ENG_name": "Redcap",
+							"name": "红帽子",
+							"type": "statblock",
+							"tag": "creature",
+							"source": "VGM",
+							"style": "narrow"
+						}
+					]
+				},
+				{
+					"ENG_name": "Selenelion Twin",
+					"name": "凌月双子",
+					"type": "section",
+					"entries": [
+						{
+							"ENG_name": "Selenelion Twin",
+							"name": "凌月双子",
+							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "WBtW",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"ENG_name": "Selenelion Twin",
+							"name": "凌月双子",
+							"type": "statblock",
 							"tag": "creature",
 							"source": "WBtW",
 							"style": "narrow"

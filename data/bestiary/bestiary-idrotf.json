@@ -3796,6 +3796,51 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Gromin'gorn",
+			"name": "格罗明戈恩",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "IDRotF",
+			"page": 140,
+			"_copy": {
+				"ENG_name": "Frost Giant",
+				"name": "霜巨人",
+				"source": "MM",
+				"_mod": {
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "多重攻击",
+							"items": {
+								"ENG_name": "Multiattack",
+								"name": "多重攻击",
+								"entries": [
+									"格罗明戈恩进行两次铁砧链攻击。"
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "巨斧",
+							"items": {
+								"ENG_name": "Anvil Chain",
+								"name": "铁砧链",
+								"entries": [
+									"{@atk mw} {@hit 9} 命中，触及10尺，单一目标。{@h}25 ({@damage 3d12 + 6}) 钝击伤害。"
+								]
+							}
+						}
+					]
+				}
+			},
+			"tokenCredit": "Adam Barker",
+			"tokenCustom": true,
+			"damageTags": [
+				"B"
+			],
+			"hasToken": true
+		},
+		{
 			"ENG_name": "Gunvald Halraggson",
 			"name": "贡瓦尔·哈拉格森",
 			"type": {
@@ -6392,7 +6437,7 @@
 					"ENG_name": "Ice Dagger",
 					"name": "冰匕首",
 					"entries": [
-						"{@atk rw} 命中{@hit 5}，触及5尺或射程20/60尺，单一目标。{@h}5（{@damage 1d4 + 3}）穿刺伤害加5（{@damage 2d4}）寒冷伤害。"
+						"{@atk mw,rw} {@hit 5} 命中，触及5尺或射程20/60尺，单一目标。{@h}5 ({@damage 1d4 + 3}) 穿刺伤害外加5 ({@damage 2d4}) 寒冷伤害。"
 					]
 				}
 			],

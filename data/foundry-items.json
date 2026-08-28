@@ -5459,6 +5459,70 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Ebonbane",
+			"name": "乌黯祸主",
+			"source": "RHW",
+			"activities": [
+				{
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 3,
+								"denomination": 6,
+								"types": [
+									"暗蚀"
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "拂晓时"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"number": 8,
+								"denomination": 8,
+								"types": [
+									"力场"
+								]
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"cha"
+						],
+						"dc": {
+							"formula": "17"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Efreeti Bottle",
 			"name": "火巨灵囚瓶",
 			"source": "XDMG",
@@ -7538,6 +7602,71 @@
 			],
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Harkon's Bite",
+			"name": "哈肯之咬",
+			"source": "RHW",
+			"activities": [
+				{
+					"type": "utility",
+					"activation": {
+						"type": ""
+					},
+					"effects": [
+						{
+							"foundryId": "harkonsBite"
+						}
+					]
+				},
+				{
+					"type": "transform",
+					"activation": {
+						"type": "special"
+					},
+					"profiles": [
+						{
+							"uuid": "@creature[狼人|xmm]"
+						}
+					],
+					"transform": {
+						"customize": true
+					},
+					"settings": {
+						"effects": [
+							"起源",
+							"其他起源",
+							"背景",
+							"职业",
+							"专长",
+							"装备",
+							"法术"
+						],
+						"transformTokens": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "harkonsBite",
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.bonuses.abilities.check",
+							"value": 1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.bonuses.abilities.save",
+							"value": 1,
+							"mode": "ADD"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Hat of Disguise",

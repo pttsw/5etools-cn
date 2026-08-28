@@ -3951,6 +3951,144 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Eerie Token",
+			"name": "神秘信物",
+			"source": "RHW",
+			"raceName": "巫咒之子",
+			"raceSource": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Distant Message",
+					"name": "远程传信",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/trait-languages.svg",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1",
+							"special": "持有魔法信物"
+						}
+					},
+					"range": {
+						"units": "mi",
+						"value": "10"
+					},
+					"visibility": {
+						"requireMagic": true
+					}
+				},
+				{
+					"ENG_name": "Remote Viewing",
+					"name": "遥远视野",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "object",
+							"count": "1",
+							"special": "魔法信物"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "10"
+					},
+					"visibility": {
+						"requireMagic": true
+					},
+					"effects": [
+						{
+							"foundryId": "eerieToken"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Token Created",
+					"name": "信物已创建",
+					"type": "enchantment",
+					"foundryId": "eerieToken",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "name",
+							"value": "{} (Created)",
+							"mode": "OVERRIDE"
+						},
+						{
+							"key": "activities[enchant].name",
+							"value": "Destroy Token",
+							"mode": "OVERRIDE"
+						},
+						{
+							"key": "activities[enchant].activation.type",
+							"value": "longRest",
+							"mode": "OVERRIDE"
+						},
+						{
+							"key": "activities[enchant].consumption.targets",
+							"value": null,
+							"mode": "OVERRIDE"
+						}
+					]
+				},
+				{
+					"ENG_name": "Remote Viewing (Incapacitated)",
+					"foundryId": "eerieToken",
+					"name": "遥远视野（失能）",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 60,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"incapacitated"
+					],
+					"showIcon": 2
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Escaped Death",
+			"name": "死里逃生",
+			"source": "RHW",
+			"raceName": "重生者",
+			"raceSource": "RHW",
+			"effects": [
+				{
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.death.roll.mode",
+							"value": 1,
+							"mode": "ADD"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Gnomish Cunning",
 			"name": "侏儒狡黠",
 			"source": "XPHB",
@@ -4175,6 +4313,115 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Howl",
+			"name": "尖啸",
+			"source": "RHW",
+			"raceName": "人狼裔",
+			"raceSource": "RHW",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"stationary": true,
+							"units": "ft",
+							"type": "radius",
+							"size": "15"
+						},
+						"affects": {
+							"choice": true,
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"calculation": "con"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "howl"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Attack and Save Disadvantage",
+					"foundryId": "howl",
+					"name": "攻击与豁免劣势",
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					],
+					"descriptionEntries": [
+						"",
+						"尖啸",
+						"",
+						"{@i 攻击掷骰的劣势未被自动化。}"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Integrated Protection",
 			"name": "集成防护",
 			"source": "ERLW",
@@ -4192,6 +4439,46 @@
 							"value": "+ 1"
 						}
 					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Knowledge from a Past Life",
+			"name": "往昔学识",
+			"source": "RHW",
+			"raceName": "重生者",
+			"raceSource": "RHW",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"ENG_name": "Past Aids Present",
+					"name": "往昔助益今朝",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "你在一次属性检定中失败"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "D20 Bonus",
+						"name": "D20加值",
+						"formula": "1d6"
+					}
 				}
 			],
 			"migrationVersion": 3
@@ -4303,7 +4590,7 @@
 			"ENG_name": "Natural Armor",
 			"name": "天生护甲",
 			"source": "DMG",
-			"raceName": "穴蜥人",
+			"raceName": "穴蜥人语",
 			"raceSource": "DMG",
 			"effects": [
 				{

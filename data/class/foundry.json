@@ -1433,10 +1433,11 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "College of Spirits",
-			"shortName": "Spirits",
+			"ENG_name": "College of Spirits",
+			"name": "精魂学院",
+			"shortName": "精魂",
 			"source": "RHW",
-			"className": "Bard",
+			"className": "吟游诗人",
 			"classSource": "XPHB",
 			"identifier": "college-spirits",
 			"migrationVersion": 3
@@ -4817,12 +4818,13 @@
 			],
 			"effects": [
 				{
+					"ENG_name": "Disengaged",
+					"name": "撤离",
 					"foundryId": "stepOfTheWind",
-					"name": "Disengaged",
 					"duration": {
 						"value": 1,
-						"units": "turns",
-						"expiry": "turnStart"
+						"units": "回合",
+						"expiry": "回合开始"
 					}
 				}
 			],
@@ -7607,6 +7609,203 @@
 					}
 				]
 			},
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Reanimated Companion",
+			"name": "再起伴兵",
+			"source": "RHW",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "掘坟人",
+			"subclassSource": "RHW",
+			"level": 3,
+			"activities": [
+				{
+					"ENG_name": "Create Companion",
+					"name": "创造同伴",
+					"type": "summon",
+					"foundryId": "reanimatedCompan",
+					"activation": {
+						"type": "action",
+						"condition": "使用一种你拥有熟练项的工匠工具"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "space",
+							"count": "1",
+							"special": "无人占据"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "5"
+					},
+					"visibility": {
+						"requireMagic": true,
+						"identifier": "artificer"
+					},
+					"profiles": [
+						{
+							"uuid": "@creature[再起伴兵|RHW]"
+						}
+					],
+					"bonuses": {
+						"ac": "@abilities.int.mod",
+						"hd": "@classes.artificer.levels",
+						"hp": "5 * @classes.artificer.levels",
+						"attackDamage": "@abilities.int.mod"
+					},
+					"match": {
+						"attacks": true,
+						"disposition": true,
+						"proficiency": true,
+						"saves": true,
+						"ability": "int"
+					},
+					"effects": [
+						{
+							"foundryId": "reanimatedCompan",
+							"level": {
+								"min": 9
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Create with Spell Slot",
+					"name": "以法术位创造",
+					"type": "forward",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true
+						},
+						"targets": [
+							{
+								"type": "spellSlots",
+								"value": "1",
+								"target": "1",
+								"scaling": {
+									"mode": "level"
+								}
+							}
+						]
+					},
+					"visibility": {
+						"requireMagic": true,
+						"identifier": "artificer"
+					},
+					"activity": {
+						"foundryId": "reanimatedCompan"
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Death Burst Improvement",
+					"foundryId": "reanimatedCompan",
+					"name": "自爆强化",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "flags.world.dbDice",
+							"value": 4,
+							"mode": "UPGRADE"
+						}
+					],
+					"descriptionEntries": [
+						"{@subclassFeature 强化苏生|奇械师|EFA|掘坟人|RHW|9}"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Refined Reanimation",
+			"name": "精纯苏生",
+			"source": "RHW",
+			"className": "奇械师",
+			"classSource": "EFA",
+			"subclassShortName": "掘坟人",
+			"subclassSource": "RHW",
+			"level": 15,
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr"
+							}
+						],
+						"max": "1"
+					},
+					"spell": {
+						"uuid": "@spell[死者复活|xphb]",
+						"properties": [
+							"材质"
+						],
+						"spellbook": true,
+						"level": 5
+					}
+				},
+				{
+					"ENG_name": "Life Transfer",
+					"name": "性命流转",
+					"type": "heal",
+					"activation": {
+						"type": "reaction",
+						"condition": "你或你的同伴受到伤害"
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true
+						}
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"range": {
+						"units": "任何"
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"bonus": "@scaling"
+					}
+				}
+			],
 			"migrationVersion": 3
 		},
 		{
@@ -13542,6 +13741,192 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Channeler",
+			"name": "通灵师",
+			"source": "RHW",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "精魂",
+			"subclassSource": "RHW",
+			"level": 3,
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"spell": {
+						"uuid": "@spell[神导术|xphb]",
+						"spellbook": true
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Spirits from Beyond",
+			"name": "彼岸之魂",
+			"source": "RHW",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "精魂",
+			"subclassSource": "RHW",
+			"level": 3,
+			"activities": [
+				{
+					"ENG_name": "Passive Channeling",
+					"name": "被动引导",
+					"type": "utility",
+					"activation": {
+						"type": ""
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Bardic Inspiration",
+						"name": "吟游诗人激励",
+						"formula": "1@scale.bard.inspiration.die"
+					}
+				},
+				{
+					"ENG_name": "Controlled Channeling",
+					"name": "可控通灵",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Bardic Inspiration",
+										"name": "吟游诗人激励"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Highest Number",
+						"name": "最高数值",
+						"formula": "@scale.bard.inspiration.faces"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Empowered Channeling",
+			"name": "超能通灵",
+			"source": "RHW",
+			"className": "吟游诗人",
+			"classSource": "XPHB",
+			"subclassShortName": "精魂",
+			"subclassSource": "RHW",
+			"level": 6,
+			"activities": [
+				{
+					"ENG_name": "Power from Beyond",
+					"name": "彼界之力",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/scale-value.svg",
+					"activation": {
+						"type": "special",
+						"condition": "每回合一次"
+					},
+					"target": {
+						"affects": {
+							"type": "any"
+						}
+					},
+					"range": {
+						"units": "专长"
+					},
+					"roll": {
+						"ENG_name": "Roll Bonus",
+						"name": "掷骰加值",
+						"formula": "1d6"
+					}
+				},
+				{
+					"ENG_name": "Modify Spell",
+					"name": "法术修正",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/statuses/cover-half.svg",
+					"activation": {
+						"type": "special",
+						"condition": "当你施放灵体卫士时"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "10"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "ally"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "15"
+					},
+					"visibility": {
+						"requireMagic": true
+					},
+					"effects": [
+						{
+							"foundryId": "empoweredChannel"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Half Cover (Spirit Guardians)",
+					"foundryId": "empoweredChannel",
+					"name": "半身掩护（灵体卫士）",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 600,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"coverHalf"
+					],
+					"descriptionEntries": [
+						"{@subclassFeature 超能通灵|吟游诗人|XPHB|精魂|RHW|6}"
+					],
+					"showIcon": 2
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Bardic Damage",
 			"name": "诗人痛击",
 			"source": "XPHB",
@@ -13622,12 +14007,13 @@
 					},
 					"target": {
 						"affects": {
-							"type": "self"
+							"count": "1",
+							"type": "ally"
 						}
 					},
-					"roll": {
-						"name": "Highest Number",
-						"formula": "@scale.bard.inspiration.faces"
+					"range": {
+						"value": "30",
+						"units": "ft"
 					}
 				}
 			],
@@ -13647,189 +14033,9 @@
 					"ENG_name": "Initiative Bonus",
 					"name": "先攻加值",
 					"type": "utility",
-					"img": "systems/dnd5e/icons/svg/scale-value.svg",
 					"activation": {
 						"type": "",
 						"condition": "在掷先攻且未失能时。"
-					},
-					"target": {
-						"affects": {
-							"type": "any"
-						}
-					},
-					"range": {
-						"units": "spec"
-					},
-					"roll": {
-						"name": "Roll Bonus",
-						"formula": "1d6"
-					}
-				},
-				{
-					"name": "Modify Spell",
-					"type": "utility",
-					"img": "systems/dnd5e/icons/svg/statuses/cover-half.svg",
-					"activation": {
-						"type": "special",
-						"condition": "when you cast Spirit Guardians"
-					},
-					"duration": {
-						"units": "minute",
-						"value": "10"
-					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "itemUses",
-								"value": "1"
-							}
-						]
-					},
-					"target": {
-						"affects": {
-							"type": "ally"
-						}
-					},
-					"range": {
-						"units": "ft",
-						"value": "15"
-					},
-					"visibility": {
-						"requireMagic": true
-					},
-					"effects": [
-						{
-							"foundryId": "empoweredChannel"
-						}
-					]
-				}
-			],
-			"effects": [
-				{
-					"foundryId": "empoweredChannel",
-					"name": "Half Cover (Spirit Guardians)",
-					"disabled": true,
-					"transfer": true,
-					"duration": {
-						"value": 600,
-						"units": "seconds",
-						"expiry": "turnStart"
-					},
-					"statuses": [
-						"coverHalf"
-					],
-					"descriptionEntries": [
-						"{@subclassFeature Empowered Channeling|Bard|XPHB|Spirits|RHW|6}"
-					],
-					"showIcon": 2
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Bardic Damage",
-			"source": "XPHB",
-			"className": "Bard",
-			"classSource": "XPHB",
-			"subclassShortName": "Dance",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"activities": [
-				{
-					"name": "Unarmed Strike",
-					"type": "attack",
-					"activation": {
-						"type": "action"
-					},
-					"target": {
-						"affects": {
-							"count": "1",
-							"type": "creature"
-						}
-					},
-					"attack": {
-						"type": {
-							"value": "melee",
-							"classification": "unarmed"
-						},
-						"ability": "dex"
-					},
-					"damage": {
-						"includeBase": true,
-						"parts": [
-							{
-								"custom": {
-									"enabled": true,
-									"formula": "@scale.bard.inspiration + @mod"
-								},
-								"types": [
-									"bludgeoning"
-								]
-							}
-						]
-					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Inspiring Movement",
-			"source": "XPHB",
-			"className": "Bard",
-			"classSource": "XPHB",
-			"subclassShortName": "Dance",
-			"subclassSource": "XPHB",
-			"level": 6,
-			"activities": [
-				{
-					"name": "Move",
-					"type": "utility",
-					"activation": {
-						"type": "reaction",
-						"value": 1,
-						"condition": "When an enemy you can see ends it turns within 5 feet of you"
-					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "itemUses",
-								"value": "1",
-								"target": {
-									"prop": "classFeature",
-									"uid": "Bardic Inspiration|Bard|XPHB|1"
-								}
-							}
-						]
-					},
-					"target": {
-						"affects": {
-							"count": "1",
-							"type": "ally"
-						}
-					},
-					"range": {
-						"value": "30",
-						"units": "ft"
-					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Tandem Footwork",
-			"source": "XPHB",
-			"className": "Bard",
-			"classSource": "XPHB",
-			"subclassShortName": "Dance",
-			"subclassSource": "XPHB",
-			"level": 6,
-			"activities": [
-				{
-					"name": "Initiative Bonus",
-					"type": "utility",
-					"activation": {
-						"type": "",
-						"condition": "When rolling initiative and not Incapacitated."
 					},
 					"consumption": {
 						"targets": [
@@ -14364,35 +14570,35 @@
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Disciple of Life",
-			"name": "生命门徒",
-			"source": "XPHB",
+			"ENG_name": "Circle of Mortality",
+			"name": "生死轮回",
+			"source": "RHW",
 			"className": "牧师",
 			"classSource": "XPHB",
-			"subclassShortName": "生命",
-			"subclassSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
 			"level": 3,
 			"activities": [
 				{
-					"name": "Pull of Death",
+					"ENG_name": "Pull of Death",
+					"name": "死亡之引",
 					"type": "damage",
 					"activation": {
 						"type": "special",
-						"condition": "damaging a target missing any Hit Points"
+						"condition": "对一个生命值不满的目标造成伤害"
 					},
 					"target": {
 						"affects": {
 							"type": "creature",
-							"special": "你施放治疗法术的目标生物"
+							"count": "1"
 						}
 					},
-					"healing": {
-						"types": [
-							"治疗"
-						],
-						"custom": {
-							"enabled": true,
-							"formula": "@scaling + 2"
+					"range": {
+						"units": "任何"
+					},
+					"damage": {
+						"critical": {
+							"allow": true
 						},
 						"parts": [
 							{
@@ -14401,20 +14607,21 @@
 									"formula": "@scale.circle-of-mortality.death-die"
 								},
 								"types": [
-									"necrotic"
+									"暗蚀"
 								]
 							}
 						]
 					}
 				},
 				{
-					"name": "Return to Life",
+					"ENG_name": "Return to Life",
+					"name": "重归生命",
 					"type": "cast",
 					"activation": {
 						"type": "bonus"
 					},
 					"spell": {
-						"uuid": "@spell[spare the dying|xphb]",
+						"uuid": "@spell[维生术|xphb]",
 						"spellbook": true
 					}
 				}
@@ -14422,7 +14629,7 @@
 			"advancement": [
 				{
 					"type": "ScaleValue",
-					"title": "Pull of Death Die",
+					"title": "死亡之引骰",
 					"configuration": {
 						"identifier": "death-die",
 						"type": "dice",
@@ -14442,24 +14649,25 @@
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Preserve Life",
-			"name": "维持生命",
-			"source": "XPHB",
+			"ENG_name": "Path to the Grave",
+			"name": "往墓之途",
+			"source": "RHW",
 			"className": "牧师",
 			"classSource": "XPHB",
-			"subclassShortName": "生命",
-			"subclassSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
 			"level": 3,
 			"activities": [
 				{
-					"name": "Curse",
+					"ENG_name": "Curse",
+					"name": "诅咒",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/statuses/cursed.svg",
 					"activation": {
 						"type": "bonus"
 					},
 					"duration": {
-						"units": "round",
+						"units": "轮",
 						"value": "1"
 					},
 					"consumption": {
@@ -14479,24 +14687,37 @@
 					"target": {
 						"affects": {
 							"type": "creature",
-							"choice": true,
-							"special": "重伤的生物"
-						}
-					},
-					"healing": {
-						"types": [
-							"治疗"
-						],
-						"custom": {
-							"enabled": true,
-							"formula": "5 * @classes.cleric.levels"
-						},
-						"scaling": {
-							"mode": "whole"
+							"count": "1",
+							"special": "可见"
 						}
 					},
 					"range": {
-						"units": "any"
+						"units": "ft",
+						"value": "30"
+					},
+					"effects": [
+						{
+							"foundryId": "pathToTheGrave"
+						}
+					]
+				},
+				{
+					"ENG_name": "End Curse Early",
+					"name": "提前结束诅咒",
+					"type": "damage",
+					"activation": {
+						"type": "",
+						"condition": "你或一名盟友击中受诅咒的目标"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1",
+							"special": "被诅咒的生物"
+						}
+					},
+					"range": {
+						"units": "任何"
 					},
 					"damage": {
 						"parts": [
@@ -14506,8 +14727,8 @@
 									"formula": "@classes.cleric.levels"
 								},
 								"types": [
-									"necrotic",
-									"radiant"
+									"暗蚀",
+									"光耀"
 								]
 							}
 						]
@@ -14516,12 +14737,13 @@
 			],
 			"effects": [
 				{
+					"ENG_name": "Cursed (Path to the Grave)",
 					"foundryId": "pathToTheGrave",
-					"name": "Cursed (Path to the Grave)",
+					"name": "诅咒（往墓之途）",
 					"duration": {
 						"value": 1,
-						"units": "rounds",
-						"expiry": "turnStart"
+						"units": "回合",
+						"expiry": "回合开始"
 					},
 					"statuses": [
 						"cursed"
@@ -14564,8 +14786,8 @@
 						}
 					],
 					"descriptionEntries": [
-						"{@subclassFeature Path to the Grave|Cleric|XPHB|Grave|RHW|3}",
-						"{@i Disadvantage on attack rolls is not automated.}"
+						"{@subclassFeature 往墓之途|牧师|XPHB|坟墓|RHW|3}",
+						"{@i 攻击掷骰的劣势未被自动化。}"
 					],
 					"showIcon": 2
 				}
@@ -14573,13 +14795,13 @@
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Blessed Healer",
-			"name": "神佑医者",
-			"source": "XPHB",
+			"ENG_name": "Sentinel at Death's Door",
+			"name": "死之门的哨卫",
+			"source": "RHW",
 			"className": "牧师",
 			"classSource": "XPHB",
-			"subclassShortName": "生命",
-			"subclassSource": "XPHB",
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
 			"level": 6,
 			"system": {
 				"uses.max": "max(@abilities.wis.mod, 1)"
@@ -14589,7 +14811,7 @@
 					"type": "utility",
 					"activation": {
 						"type": "reaction",
-						"condition": "you or a Bloodied target within range is hit with an attack"
+						"condition": "你或范围内一个浴血目标被一次攻击命中"
 					},
 					"consumption": {
 						"targets": [
@@ -14605,34 +14827,27 @@
 							"count": "1"
 						}
 					},
-					"healing": {
-						"types": [
-							"治疗"
-						],
-						"custom": {
-							"enabled": true,
-							"formula": "@scaling * 2"
-						},
-						"scaling": {
-							"number": 1
-						}
+					"range": {
+						"units": "ft",
+						"value": "60"
 					}
 				}
 			],
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Radiance of the Dawn",
-			"name": "黎明曙光",
-			"source": "XPHB",
+			"ENG_name": "Divine Reaper",
+			"name": "司命神使",
+			"source": "RHW",
 			"className": "牧师",
 			"classSource": "XPHB",
-			"subclassShortName": "光明",
-			"subclassSource": "XPHB",
-			"level": 3,
+			"subclassShortName": "坟墓",
+			"subclassSource": "RHW",
+			"level": 17,
 			"activities": [
 				{
-					"name": "Enhanced Necromancy",
+					"ENG_name": "Enhanced Necromancy",
+					"name": "增强死灵术",
 					"type": "utility",
 					"activation": {
 						"type": "special"
@@ -14657,24 +14872,23 @@
 							"count": "1"
 						}
 					},
-					"damage": {
-						"onSave": "half",
-						"parts": [
-							{
-								"number": 2,
-								"denomination": 10,
-								"bonus": "@classes.cleric.levels",
-								"types": [
-									"光耀"
-								]
-							}
-						]
+					"range": {
+						"units": "任何"
+					}
+				},
+				{
+					"ENG_name": "Keeper of Souls",
+					"name": "引魂明灯",
+					"type": "heal",
+					"activation": {
+						"type": "special",
+						"condition": "一个敌人死于范围内"
 					},
 					"target": {
 						"affects": {
 							"type": "creature",
 							"count": "1",
-							"special": "visible"
+							"special": "可见"
 						}
 					},
 					"range": {
@@ -14683,7 +14897,7 @@
 					},
 					"healing": {
 						"types": [
-							"healing"
+							"治疗"
 						],
 						"custom": {
 							"enabled": true,
@@ -14693,38 +14907,14 @@
 							"number": 1
 						}
 					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"ENG_name": "Warding Flare",
-			"name": "守御闪光",
-			"source": "XPHB",
-			"className": "牧师",
-			"classSource": "XPHB",
-			"subclassShortName": "光明",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"system": {
-				"uses.max": "(max(1,@abilities.wis.mod))",
-				"uses.recovery": [
-					{
-						"period": "lr",
-						"type": "recoverAll"
-					}
-				]
-			},
-			"activities": [
+				},
 				{
-					"ENG_name": "Flare",
-					"name": "耀斑",
+					"ENG_name": "Restore Keeper of Souls",
+					"name": "复原引魂明灯",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/facilities/change.svg",
 					"activation": {
-						"type": "reaction",
-						"value": 1,
-						"condition": "当你看到30英尺内的一个生物进行攻击检定"
+						"type": ""
 					},
 					"consumption": {
 						"scaling": {
@@ -14756,12 +14946,12 @@
 			"migrationVersion": 3
 		},
 		{
-			"ENG_name": "Improved Warding Flare",
-			"name": "精通守御之光",
+			"ENG_name": "Disciple of Life",
+			"name": "生命门徒",
 			"source": "XPHB",
 			"className": "牧师",
 			"classSource": "XPHB",
-			"subclassShortName": "光明",
+			"subclassShortName": "生命",
 			"subclassSource": "XPHB",
 			"level": 3,
 			"activities": [
@@ -14780,12 +14970,12 @@
 						"affects": {
 							"count": "1",
 							"type": "creature",
-							"special": "触发攻击的目标"
+							"special": "你施放治疗法术的目标生物"
 						}
 					},
 					"healing": {
 						"types": [
-							"healing"
+							"治疗"
 						],
 						"custom": {
 							"enabled": true,
@@ -14793,6 +14983,260 @@
 						},
 						"scaling": {
 							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Preserve Life",
+			"name": "维持生命",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "生命",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"activities": [
+				{
+					"type": "heal",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Channel Divinity",
+										"name": "引导神力"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "30",
+							"units": "ft"
+						},
+						"affects": {
+							"type": "creature",
+							"choice": true,
+							"special": "重伤的生物"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "5 * @classes.cleric.levels"
+						},
+						"scaling": {
+							"mode": "whole"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Blessed Healer",
+			"name": "神佑医者",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "生命",
+			"subclassSource": "XPHB",
+			"level": 6,
+			"activities": [
+				{
+					"type": "heal",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true,
+							"max": "9"
+						}
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@scaling * 2"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Radiance of the Dawn",
+			"name": "黎明曙光",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "光明",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"activities": [
+				{
+					"type": "save",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Channel Divinity",
+										"name": "引导神力"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "30",
+							"units": "ft"
+						},
+						"affects": {
+							"type": "creature",
+							"choice": true
+						}
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 10,
+								"bonus": "@classes.cleric.levels",
+								"types": [
+									"光耀"
+								]
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Warding Flare",
+			"name": "守御闪光",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "光明",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"system": {
+				"uses.max": "(max(1,@abilities.wis.mod))",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"ENG_name": "Flare",
+					"name": "耀斑",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"value": 1,
+						"condition": "当你看到30英尺内的一个生物进行攻击检定"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "30",
+							"units": "ft"
+						},
+						"affects": {
+							"count": "1",
+							"type": "creature"
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Improved Warding Flare",
+			"name": "精通守御之光",
+			"source": "XPHB",
+			"className": "牧师",
+			"classSource": "XPHB",
+			"subclassShortName": "光明",
+			"subclassSource": "XPHB",
+			"level": 6,
+			"activities": [
+				{
+					"type": "heal",
+					"activation": {
+						"type": ""
+					},
+					"target": {
+						"affects": {
+							"count": "1",
+							"type": "creature",
+							"special": "触发攻击的目标"
+						}
+					},
+					"healing": {
+						"number": 2,
+						"denomination": 6,
+						"bonus": "@abilities.wis.mod",
+						"types": [
+							"temphp"
+						],
+						"scaling": {
+							"mode": "whole"
 						}
 					}
 				}
@@ -16426,15 +16870,15 @@
 			],
 			"effects": [
 				{
-					"ENG_name": "Dragon Form",
-					"name": "龙之形",
-					"foundryId": "dragon",
+					"ENG_name": "Dragon Form (Twinkling)",
+					"foundryId": "dragon1",
+					"name": "龙之形（闪烁）",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
 						"value": 600,
-						"units": "seconds",
-						"expiry": "turnStart"
+						"units": "秒",
+						"expiry": "回合开始"
 					},
 					"changes": [
 						{
@@ -16463,17 +16907,18 @@
 							"mode": "OVERRIDE"
 						}
 					],
-					"description": "A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain Concentration, you can treat a roll of 9 or lower on the d20 as a 10. You have a Fly Speed of 20 feet and can hover."
+					"description": "一个智慧龙星座显现在你身上。当你进行一次智力或感知检定，或进行一次体质豁免检定以维持专注时，你可以将二十面骰掷出的9点或更低的结果视为10点。你获得20尺的飞行速度并且可以悬浮。"
 				},
 				{
+					"ENG_name": "Dragon Form",
+					"name": "龙之形",
 					"foundryId": "dragon",
-					"name": "Dragon Form",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
 						"value": 600,
-						"units": "seconds",
-						"expiry": "turnStart"
+						"units": "秒",
+						"expiry": "回合开始"
 					},
 					"changes": [
 						{
@@ -17294,7 +17739,7 @@
 						"type": "bonus"
 					},
 					"duration": {
-						"units": "turn",
+						"units": "回合",
 						"value": "1"
 					},
 					"consumption": {
@@ -17333,7 +17778,7 @@
 						"type": "bonus"
 					},
 					"duration": {
-						"units": "turn",
+						"units": "回合",
 						"value": "1"
 					},
 					"consumption": {
@@ -17367,8 +17812,8 @@
 					"transfer": true,
 					"duration": {
 						"value": 1,
-						"units": "turns",
-						"expiry": "turnStart"
+						"units": "回合",
+						"expiry": "回合开始"
 					},
 					"changes": [
 						{
@@ -17423,10 +17868,11 @@
 			],
 			"effects": [
 				{
+					"ENG_name": "Prone",
+					"name": "倒地",
 					"foundryId": "telekineticThrus",
-					"name": "Prone",
 					"duration": {
-						"units": "seconds"
+						"units": "秒"
 					},
 					"statuses": [
 						"prone"
@@ -18550,6 +18996,50 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Darkness",
+			"name": "黑暗术",
+			"source": "XPHB",
+			"className": "武僧",
+			"classSource": "XPHB",
+			"subclassShortName": "幽影",
+			"subclassSource": "XPHB",
+			"level": 3,
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Focus Point",
+										"name": "功力"
+									}
+								}
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[黑暗术|xphb]",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质"
+						],
+						"spellbook": true,
+						"ability": "wis",
+						"level": 2
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Darkvision",
 			"name": "黑暗视觉",
 			"source": "XPHB",
@@ -19666,6 +20156,404 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Wrath of the Wild",
+			"name": "荒野之怒",
+			"source": "RHW",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "幽邃戍卫",
+			"subclassSource": "RHW",
+			"level": 3,
+			"activities": [
+				{
+					"ENG_name": "Unnerving Aura",
+					"name": "恐吓灵光",
+					"type": "save",
+					"foundryId": "wrathOfTheWild",
+					"activation": {
+						"type": "turnStart",
+						"condition": "并且当你首次变形时"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "radius",
+							"size": "10"
+						},
+						"affects": {
+							"choice": true,
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"visibility": {
+						"identifier": "ranger"
+					},
+					"effects": [
+						{
+							"foundryId": "wrathOfTheWild",
+							"level": {
+								"max": 10
+							}
+						},
+						{
+							"foundryId": "wrathOfTheWild1",
+							"level": {
+								"min": 11
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Transform Self",
+					"name": "变形自身",
+					"type": "enchant",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Favored Enemy",
+										"name": "宿敌"
+									}
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"enchant": {
+						"self": true
+					},
+					"effects": [
+						{
+							"foundryId": "wrathOfTheWild2",
+							"riders": {
+								"activity": [
+									{
+										"foundryId": "wrathOfTheWild"
+									},
+									{
+										"foundryId": "wrathOfTheWild1"
+									}
+								],
+								"effect": [
+									{
+										"foundryId": "wrathOfTheWild3"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Hungering Might",
+					"name": "渴血予力",
+					"type": "heal",
+					"foundryId": "wrathOfTheWild1",
+					"activation": {
+						"type": "special",
+						"condition": "当你变形时，每回合一次，当你以攻击检定命中一个生物时"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "(1d10+@abilities.wis.mod)*@statuses.bloodied"
+						},
+						"scaling": {
+							"number": 1
+						}
+					},
+					"visibility": {
+						"level": {
+							"min": 7
+						},
+						"identifier": "ranger"
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Ancient Armor",
+					"name": "远古护甲",
+					"foundryId": "wrathOfTheWild3",
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.ac.bonus",
+							"value": "@scale.wrath-of-the-wild.ac",
+							"mode": "ADD"
+						}
+					]
+				},
+				{
+					"ENG_name": "Frightened",
+					"name": "恐慌",
+					"foundryId": "wrathOfTheWild",
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"frightened"
+					],
+					"showIcon": 2
+				},
+				{
+					"ENG_name": "Ghastly Form",
+					"name": "可怖形态",
+					"type": "enchantment",
+					"foundryId": "wrathOfTheWild2",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 60,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "activities[enchant].name",
+							"value": "End Transformation",
+							"mode": "OVERRIDE"
+						},
+						{
+							"key": "activities[enchant].consumption.targets",
+							"value": [],
+							"mode": "OVERRIDE"
+						},
+						{
+							"key": "activities[enchant].activation.type",
+							"value": "",
+							"mode": "OVERRIDE"
+						},
+						{
+							"key": "name",
+							"value": "{} (Active)",
+							"mode": "OVERRIDE"
+						}
+					]
+				},
+				{
+					"ENG_name": "Frightened (Menacing Aura)",
+					"foundryId": "wrathOfTheWild1",
+					"name": "恐慌（威慑灵光）",
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"frightened"
+					],
+					"descriptionEntries": [
+						"{@b 威慑灵光。} 当一个生物对抗你的恐吓灵光的豁免检定失败时，它也无法恢复生命值或使用反应，直到你的下一回合开始。"
+					],
+					"showIcon": 2
+				}
+			],
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"title": "远古护甲",
+					"configuration": {
+						"identifier": "ac",
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 1
+							},
+							"11": {
+								"value": 2
+							}
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Hungering Might",
+			"name": "渴血予力",
+			"source": "RHW",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "幽邃戍卫",
+			"subclassSource": "RHW",
+			"level": 7,
+			"effects": [
+				{
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.abilities.con.bonuses.save",
+							"value": "max(1, @abilities.wis.mod)",
+							"mode": "ADD"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Ancient Might",
+			"name": "古源蛮力",
+			"source": "RHW",
+			"className": "游侠",
+			"classSource": "XPHB",
+			"subclassShortName": "幽邃戍卫",
+			"subclassSource": "RHW",
+			"level": 15,
+			"activities": [
+				{
+					"ENG_name": "Persistent Wrath",
+					"name": "不息狂怒",
+					"type": "heal",
+					"activation": {
+						"type": "special",
+						"condition": "在变形状态下生命值降至0但未被直接杀死"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "2 * @classes.ranger.levels - @attributes.hp.value"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				},
+				{
+					"ENG_name": "Restore Use",
+					"name": "恢复使用",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/facilities/change.svg",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true,
+							"max": "6"
+						},
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-1"
+							},
+							{
+								"type": "spellSlots",
+								"value": "1",
+								"target": "4",
+								"scaling": {
+									"mode": "level"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Ominous Strikes",
+					"name": "死兆强袭",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.bonuses.mwak.damage",
+							"value": "@abilities.wis.mod",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.bonuses.rwak.damage",
+							"value": "@abilities.wis.mod",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.bonuses.msak.damage",
+							"value": "@abilities.wis.mod",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.bonuses.rsak.damage",
+							"value": "@abilities.wis.mod",
+							"mode": "ADD"
+						}
+					],
+					"descriptionEntries": [
+						"{@b 死兆强袭。} 当你以一次攻击检定命中一个处于&Reference[Frightened apply=false]状态的生物时，该攻击造成等同于你感知调整值的额外伤害。"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Primal Companion",
 			"name": "原初伴侣",
 			"source": "XPHB",
@@ -19676,26 +20564,20 @@
 			"level": 3,
 			"activities": [
 				{
-					"foundryId": "wrathOfTheWild",
-					"name": "Unnerving Aura",
-					"type": "save",
+					"type": "summon",
 					"activation": {
 						"type": "action",
 						"condition": "每当你完成一次长休"
 					},
 					"target": {
-						"template": {
-							"units": "ft",
-							"type": "radius",
-							"size": "10"
-						},
 						"affects": {
 							"type": "space",
 							"special": "无人占据"
 						}
 					},
-					"damage": {
-						"onSave": "none"
+					"range": {
+						"units": "ft",
+						"value": "5"
 					},
 					"profiles": [
 						{
@@ -19713,7 +20595,17 @@
 							"name": "天空野兽",
 							"uuid": "@creature[天空野兽|xphb]"
 						}
-					]
+					],
+					"bonuses": {
+						"ac": "@abilities.wis.mod",
+						"hd": "@classes.ranger.levels",
+						"hp": "@classes.ranger.levels * (@summon.attributes.hd.denomination * 0.5 + 1)",
+						"attackDamage": "@abilities.wis.mod"
+					},
+					"match": {
+						"attacks": true,
+						"proficiency": true
+					}
 				},
 				{
 					"ENG_name": "Command",
@@ -19733,13 +20625,9 @@
 					"consumption": {
 						"targets": [
 							{
-								"type": "itemUses",
+								"type": "spellSlots",
 								"value": "1",
-								"target": {
-									"consumes": {
-										"name": "Favored Enemy"
-									}
-								}
+								"target": "1"
 							}
 						]
 					},
@@ -19749,8 +20637,9 @@
 							"special": "无人占据"
 						}
 					},
-					"enchant": {
-						"self": true
+					"range": {
+						"units": "ft",
+						"value": "5"
 					},
 					"profiles": [
 						{
@@ -19790,396 +20679,6 @@
 			"className": "游侠",
 			"classSource": "XPHB",
 			"subclassShortName": "驯兽师",
-			"subclassSource": "XPHB",
-			"level": 11,
-			"activities": [
-				{
-					"foundryId": "wrathOfTheWild1",
-					"name": "Hungering Might",
-					"type": "heal",
-					"activation": {
-						"type": "special",
-						"condition": "once per turn when you hit a creature with an attack roll while transformed"
-					},
-					"target": {
-						"affects": {
-							"type": "self"
-						}
-					},
-					"healing": {
-						"types": [
-							"healing"
-						],
-						"custom": {
-							"enabled": true,
-							"formula": "(1d10+@abilities.wis.mod)*@statuses.bloodied"
-						},
-						"scaling": {
-							"number": 1
-						}
-					},
-					"visibility": {
-						"level": {
-							"min": 7
-						},
-						"identifier": "ranger"
-					}
-				}
-			],
-			"effects": [
-				{
-					"foundryId": "wrathOfTheWild3",
-					"name": "Ancient Armor",
-					"transfer": true,
-					"duration": {
-						"units": "seconds"
-					},
-					"changes": [
-						{
-							"key": "system.attributes.ac.bonus",
-							"value": "@scale.wrath-of-the-wild.ac",
-							"mode": "ADD"
-						}
-					]
-				},
-				{
-					"foundryId": "wrathOfTheWild",
-					"name": "Frightened",
-					"duration": {
-						"value": 1,
-						"units": "rounds",
-						"expiry": "turnStart"
-					},
-					"statuses": [
-						"frightened"
-					],
-					"showIcon": 2
-				},
-				{
-					"foundryId": "wrathOfTheWild2",
-					"name": "Ghastly Form",
-					"type": "enchantment",
-					"disabled": true,
-					"transfer": true,
-					"duration": {
-						"value": 60,
-						"units": "seconds",
-						"expiry": "turnStart"
-					},
-					"changes": [
-						{
-							"key": "activities[enchant].name",
-							"value": "End Transformation",
-							"mode": "OVERRIDE"
-						},
-						{
-							"key": "activities[enchant].consumption.targets",
-							"value": [],
-							"mode": "OVERRIDE"
-						},
-						{
-							"key": "activities[enchant].activation.type",
-							"value": "",
-							"mode": "OVERRIDE"
-						},
-						{
-							"key": "name",
-							"value": "{} (Active)",
-							"mode": "OVERRIDE"
-						}
-					]
-				},
-				{
-					"foundryId": "wrathOfTheWild1",
-					"name": "Frightened (Menacing Aura)",
-					"duration": {
-						"value": 1,
-						"units": "rounds",
-						"expiry": "turnStart"
-					},
-					"statuses": [
-						"frightened"
-					],
-					"descriptionEntries": [
-						"{@b Menacing Aura.} When a creature fails its saving throw against your Unnerving Aura, it also can't regain Hit Points or take Reactions until the start of your next turn."
-					],
-					"showIcon": 2
-				}
-			],
-			"advancement": [
-				{
-					"type": "ScaleValue",
-					"title": "Ancient Armor",
-					"configuration": {
-						"identifier": "ac",
-						"type": "number",
-						"scale": {
-							"3": {
-								"value": 1
-							},
-							"11": {
-								"value": 2
-							}
-						}
-					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Hungering Might",
-			"source": "RHW",
-			"className": "Ranger",
-			"classSource": "XPHB",
-			"subclassShortName": "Hollow Warden",
-			"subclassSource": "RHW",
-			"level": 7,
-			"effects": [
-				{
-					"transfer": true,
-					"duration": {
-						"units": "seconds"
-					},
-					"changes": [
-						{
-							"key": "system.abilities.con.bonuses.save",
-							"value": "max(1, @abilities.wis.mod)",
-							"mode": "ADD"
-						}
-					]
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Ancient Might",
-			"source": "RHW",
-			"className": "Ranger",
-			"classSource": "XPHB",
-			"subclassShortName": "Hollow Warden",
-			"subclassSource": "RHW",
-			"level": 15,
-			"activities": [
-				{
-					"name": "Persistent Wrath",
-					"type": "heal",
-					"activation": {
-						"type": "special",
-						"condition": "reduced to 0 HP but not killed outright while transformed"
-					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "itemUses",
-								"value": "1"
-							}
-						]
-					},
-					"target": {
-						"affects": {
-							"type": "self"
-						}
-					},
-					"healing": {
-						"types": [
-							"healing"
-						],
-						"custom": {
-							"enabled": true,
-							"formula": "2 * @classes.ranger.levels - @attributes.hp.value"
-						},
-						"scaling": {
-							"number": 1
-						}
-					}
-				},
-				{
-					"name": "Restore Use",
-					"type": "utility",
-					"img": "systems/dnd5e/icons/svg/facilities/change.svg",
-					"activation": {
-						"type": ""
-					},
-					"consumption": {
-						"scaling": {
-							"allowed": true,
-							"max": "6"
-						},
-						"targets": [
-							{
-								"type": "itemUses",
-								"value": "-1"
-							},
-							{
-								"type": "spellSlots",
-								"value": "1",
-								"target": "4",
-								"scaling": {
-									"mode": "level"
-								}
-							}
-						]
-					},
-					"target": {
-						"affects": {
-							"type": "self"
-						}
-					}
-				}
-			],
-			"effects": [
-				{
-					"name": "Ominous Strikes",
-					"disabled": true,
-					"transfer": true,
-					"duration": {
-						"units": "seconds"
-					},
-					"changes": [
-						{
-							"key": "system.bonuses.mwak.damage",
-							"value": "@abilities.wis.mod",
-							"mode": "ADD"
-						},
-						{
-							"key": "system.bonuses.rwak.damage",
-							"value": "@abilities.wis.mod",
-							"mode": "ADD"
-						},
-						{
-							"key": "system.bonuses.msak.damage",
-							"value": "@abilities.wis.mod",
-							"mode": "ADD"
-						},
-						{
-							"key": "system.bonuses.rsak.damage",
-							"value": "@abilities.wis.mod",
-							"mode": "ADD"
-						}
-					],
-					"descriptionEntries": [
-						"{@b Ominous Strikes.} When you hit a creature that has the &Reference[Frightened apply=false] condition with an attack roll, that attack deals extra damage equal to your Wisdom modifier."
-					]
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Primal Companion",
-			"source": "XPHB",
-			"className": "Ranger",
-			"classSource": "XPHB",
-			"subclassShortName": "Beast Master",
-			"subclassSource": "XPHB",
-			"level": 3,
-			"activities": [
-				{
-					"type": "summon",
-					"activation": {
-						"type": "action",
-						"condition": "Whenever you finish a Long Rest"
-					},
-					"target": {
-						"affects": {
-							"type": "space",
-							"special": "Unoccupied"
-						}
-					},
-					"range": {
-						"units": "ft",
-						"value": "5"
-					},
-					"profiles": [
-						{
-							"name": "Beast of the Land",
-							"uuid": "@creature[beast of the land|xphb]"
-						},
-						{
-							"name": "Beast of the Sea",
-							"uuid": "@creature[beast of the sea|xphb]"
-						},
-						{
-							"name": "Beast of the Sky",
-							"uuid": "@creature[beast of the sky|xphb]"
-						}
-					],
-					"bonuses": {
-						"ac": "@abilities.wis.mod",
-						"hd": "@classes.ranger.levels",
-						"hp": "@classes.ranger.levels * (@summon.attributes.hd.denomination * 0.5 + 1)",
-						"attackDamage": "@abilities.wis.mod"
-					},
-					"match": {
-						"attacks": true,
-						"proficiency": true
-					}
-				},
-				{
-					"name": "Command",
-					"type": "utility",
-					"activation": {
-						"type": "bonus"
-					}
-				},
-				{
-					"name": "Summon with Spell Slot",
-					"type": "summon",
-					"activation": {
-						"type": "action"
-					},
-					"consumption": {
-						"targets": [
-							{
-								"type": "spellSlots",
-								"value": "1",
-								"target": "1"
-							}
-						]
-					},
-					"target": {
-						"affects": {
-							"type": "space",
-							"special": "Unoccupied"
-						}
-					},
-					"range": {
-						"units": "ft",
-						"value": "5"
-					},
-					"profiles": [
-						{
-							"name": "Beast of the Land",
-							"uuid": "@creature[beast of the land|xphb]"
-						},
-						{
-							"name": "Beast of the Sea",
-							"uuid": "@creature[beast of the sea|xphb]"
-						},
-						{
-							"name": "Beast of the Sky",
-							"uuid": "@creature[beast of the sky|xphb]"
-						}
-					],
-					"bonuses": {
-						"ac": "@abilities.wis.mod",
-						"hd": "@classes.ranger.levels",
-						"hp": "@classes.ranger.levels * (@summon.attributes.hd.denomination * 0.5 + 1)",
-						"attackDamage": "@abilities.wis.mod"
-					},
-					"match": {
-						"attacks": true,
-						"proficiency": true
-					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Bestial Fury",
-			"source": "XPHB",
-			"className": "Ranger",
-			"classSource": "XPHB",
-			"subclassShortName": "Beast Master",
 			"subclassSource": "XPHB",
 			"level": 11,
 			"activities": [
@@ -21006,8 +21505,9 @@
 					]
 				},
 				{
+					"ENG_name": "Hunter's Defense: Radiant",
+					"name": "防守战术：光耀",
 					"foundryId": "superiorHunter10",
-					"name": "Hunter's Defense: Radiant",
 					"duration": {
 						"turns": 1
 					},
@@ -21020,8 +21520,9 @@
 					]
 				},
 				{
+					"ENG_name": "Hunter's Defense: Slashing",
+					"name": "防守战术：挥砍",
 					"foundryId": "superiorHunter11",
-					"name": "Hunter's Defense: Slashing",
 					"duration": {
 						"turns": 1
 					},
@@ -21034,8 +21535,9 @@
 					]
 				},
 				{
+					"ENG_name": "Hunter's Defense: Thunder",
+					"name": "防守战术：雷鸣",
 					"foundryId": "superiorHunter12",
-					"name": "Hunter's Defense: Thunder",
 					"duration": {
 						"turns": 1
 					},
@@ -21051,11 +21553,12 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Wails from the Grave",
+			"ENG_name": "Wails from the Grave",
+			"name": "墓穴惊嚎",
 			"source": "RHW",
-			"className": "Rogue",
+			"className": "游荡者",
 			"classSource": "XPHB",
-			"subclassShortName": "Phantom",
+			"subclassShortName": "鬼魅",
 			"subclassSource": "RHW",
 			"level": 3,
 			"system": {
@@ -21066,7 +21569,7 @@
 					"type": "damage",
 					"activation": {
 						"type": "special",
-						"condition": "you deal Sneak Attack damage on your turn"
+						"condition": "你在你的回合造成偷袭伤害"
 					},
 					"consumption": {
 						"targets": [
@@ -21080,7 +21583,7 @@
 						"affects": {
 							"type": "creature",
 							"count": "1",
-							"special": "visible"
+							"special": "可见"
 						}
 					},
 					"range": {
@@ -21095,7 +21598,7 @@
 									"formula": "(ceil(@scale.rogue.sneak-attack.number / 2))d@scale.rogue.sneak-attack.faces"
 								},
 								"types": [
-									"necrotic"
+									"暗蚀"
 								]
 							}
 						]
@@ -21105,21 +21608,23 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Tokens of the Departed",
+			"ENG_name": "Tokens of the Departed",
+			"name": "逝者遗物",
 			"source": "RHW",
-			"className": "Rogue",
+			"className": "游荡者",
 			"classSource": "XPHB",
-			"subclassShortName": "Phantom",
+			"subclassShortName": "鬼魅",
 			"subclassSource": "RHW",
 			"level": 9,
 			"identifier": "tokens-departed",
 			"activities": [
 				{
-					"name": "Claim Departed Spirit",
+					"ENG_name": "Claim Departed Spirit",
+					"name": "认领逝者精魄",
 					"type": "utility",
 					"activation": {
 						"type": "reaction",
-						"condition": "when a visible target in range dies"
+						"condition": "当范围内一个可见的目标死亡时"
 					},
 					"consumption": {
 						"targets": [
@@ -21128,7 +21633,8 @@
 								"value": "-1",
 								"target": {
 									"consumes": {
-										"name": "Soul Trinket"
+										"ENG_name": "Soul Trinket",
+										"name": "灵魂饰品"
 									}
 								}
 							}
@@ -21138,7 +21644,7 @@
 						"affects": {
 							"type": "creature",
 							"count": "1",
-							"special": "visible"
+							"special": "可见"
 						}
 					},
 					"range": {
@@ -21150,7 +21656,7 @@
 			"advancement": [
 				{
 					"type": "ScaleValue",
-					"title": "Maximum Trinkets",
+					"title": "最大饰品数量",
 					"configuration": {
 						"identifier": "max",
 						"type": "number",
@@ -21171,11 +21677,12 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Voice of Death",
+			"ENG_name": "Voice of Death",
+			"name": "死亡之声",
 			"source": "RHW",
-			"className": "Rogue",
+			"className": "游荡者",
 			"classSource": "XPHB",
-			"subclassShortName": "Phantom",
+			"subclassShortName": "鬼魅",
 			"subclassSource": "RHW",
 			"level": 9,
 			"activities": [
@@ -21195,15 +21702,15 @@
 						"affects": {
 							"type": "object",
 							"count": "1",
-							"special": "a corpse or a soul trinket"
+							"special": "一具尸体或一个灵魂饰品"
 						}
 					},
 					"spell": {
-						"uuid": "@spell[speak with dead|xphb]",
+						"uuid": "@spell[死者交谈|xphb]",
 						"properties": [
-							"vocal",
-							"somatic",
-							"material"
+							"声音",
+							"姿势",
+							"材质"
 						],
 						"spellbook": true,
 						"ability": "dex",
@@ -21214,16 +21721,18 @@
 			"migrationVersion": 3
 		},
 		{
-			"name": "Ghost Walk",
+			"ENG_name": "Ghost Walk",
+			"name": "幽灵漫步",
 			"source": "RHW",
-			"className": "Rogue",
+			"className": "游荡者",
 			"classSource": "XPHB",
-			"subclassShortName": "Phantom",
+			"subclassShortName": "鬼魅",
 			"subclassSource": "RHW",
 			"level": 13,
 			"activities": [
 				{
-					"name": "Restore Use",
+					"ENG_name": "Restore Use",
+					"name": "恢复使用",
 					"type": "utility",
 					"img": "icons/commodities/treasure/stone-cracked-lightning-blue.webp",
 					"activation": {
@@ -21236,7 +21745,8 @@
 								"value": "1",
 								"target": {
 									"consumes": {
-										"name": "Soul Trinket"
+										"ENG_name": "Soul Trinket",
+										"name": "灵魂饰品"
 									}
 								}
 							},
@@ -21253,11 +21763,15 @@
 					}
 				},
 				{
-					"ENG_name": "Hunter's Defense: Radiant",
-					"name": "防守战术：光耀",
-					"foundryId": "superiorHunter10",
+					"ENG_name": "Assume Spectral Form",
+					"name": "进入幽灵形态",
+					"type": "utility",
+					"img": "icons/magic/death/skull-energy-light-white.webp",
+					"activation": {
+						"type": "bonus"
+					},
 					"duration": {
-						"units": "minute",
+						"units": "分钟",
 						"value": "10"
 					},
 					"consumption": {
@@ -21272,14 +21786,6 @@
 						"affects": {
 							"type": "self"
 						}
-					]
-				},
-				{
-					"ENG_name": "Hunter's Defense: Slashing",
-					"name": "防守战术：挥砍",
-					"foundryId": "superiorHunter11",
-					"duration": {
-						"turns": 1
 					},
 					"effects": [
 						{
@@ -21290,13 +21796,13 @@
 			],
 			"effects": [
 				{
-					"ENG_name": "Hunter's Defense: Thunder",
-					"name": "防守战术：雷鸣",
-					"foundryId": "superiorHunter12",
+					"foundryId": "ghostWalk",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"value": 600,
-						"units": "seconds",
-						"expiry": "turnStart"
+						"units": "秒",
+						"expiry": "回合开始"
 					},
 					"statuses": [
 						"transformed"
@@ -21314,8 +21820,8 @@
 						}
 					],
 					"descriptionEntries": [
-						"{@subclassFeature Ghost Walk|Rogue|XPHB|Phantom|RHW|13}",
-						"{@i Hazy Form and Incorporeal Movement is not automated.}"
+						"{@subclassFeature 幽灵漫步|游荡者|XPHB|鬼魅|RHW|13}",
+						"{@i 朦胧形态和虚体移动未自动化。}"
 					],
 					"showIcon": 2
 				}
@@ -22008,13 +22514,20 @@
 						"condition": "当你用心灵之刃造成偷袭伤害时"
 					},
 					"consumption": {
-						"scaling": {
-							"allowed": true
-						}
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1"
 					},
 					"target": {
 						"affects": {
-							"type": "self"
+							"count": "1",
+							"type": "creature"
 						}
 					},
 					"damage": {
@@ -22022,12 +22535,17 @@
 					},
 					"save": {
 						"ability": [
-							"cha"
+							"wis"
 						],
 						"dc": {
-							"formula": "5 + @scaling"
+							"calculation": "dex"
 						}
-					}
+					},
+					"effects": [
+						{
+							"foundryId": "rendMind"
+						}
+					]
 				},
 				{
 					"ENG_name": "Rend Mind",
@@ -22051,41 +22569,36 @@
 					},
 					"target": {
 						"affects": {
-							"type": "self"
+							"count": "1",
+							"type": "creature"
 						}
 					},
-					"healing": {
-						"types": [
-							"healing"
+					"damage": {
+						"onSave": "half"
+					},
+					"save": {
+						"ability": [
+							"wis"
 						],
-						"custom": {
-							"enabled": true,
-							"formula": "@abilities.cha.mod + @classes.sorcerer.levels - @attributes.hp.value"
-						},
-						"scaling": {
-							"number": 1
+						"dc": {
+							"calculation": "dex"
 						}
-					}
+					},
+					"effects": [
+						{
+							"foundryId": "rendMind"
+						}
+					]
 				}
 			],
 			"effects": [
 				{
-					"name": "Eyes of the Dark",
-					"transfer": true,
+					"foundryId": "rendMind",
 					"duration": {
-						"units": "seconds"
+						"seconds": 60
 					},
-					"changes": [
-						{
-							"key": "system.attributes.senses.ranges.darkvision",
-							"value": 120,
-							"mode": "UPGRADE"
-						},
-						{
-							"key": "system.attributes.senses.ranges.blindsight",
-							"value": 10,
-							"mode": "UPGRADE"
-						}
+					"statuses": [
+						"stunned"
 					],
 					"description": "目标获得震慑状态，持续1分钟。被震慑的目标在其每个回合结束时重复进行豁免检定，成功则终止该效果。"
 				}
@@ -22114,13 +22627,6 @@
 						"associated": [
 							"静默疗法"
 						]
-					},
-					"spell": {
-						"uuid": "@spell[summon beast|xphb]",
-						"properties": [
-							"material"
-						],
-						"level": 2
 					}
 				},
 				{
@@ -22135,39 +22641,15 @@
 						"associated": [
 							"盗贼"
 						],
-						"level": 2
+						"ability": "dex"
 					}
-				}
-			],
-			"migrationVersion": 3
-		},
-		{
-			"name": "Shadow Walk",
-			"source": "RHW",
-			"className": "Sorcerer",
-			"classSource": "XPHB",
-			"subclassShortName": "Shadow",
-			"subclassSource": "RHW",
-			"level": 14,
-			"activities": [
+				},
 				{
 					"ENG_name": "Use an Object",
 					"name": "使用物件",
 					"type": "utility",
 					"activation": {
-						"type": "bonus",
-						"condition": "while in Dim Light or Darkness"
-					},
-					"target": {
-						"affects": {
-							"type": "space",
-							"count": "1",
-							"special": "unoccupied, visible, and also in Dim Light or Darkness"
-						}
-					},
-					"range": {
-						"units": "ft",
-						"value": "120"
+						"type": "bonus"
 					}
 				}
 			],
@@ -22187,10 +22669,316 @@
 					"ENG_name": "Attunement Bonus",
 					"name": "同调加值",
 					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.attunement.max",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"description": "使用魔法物品特性让你可以同时与至多四个魔法物品调谐。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Power of Shadow",
+			"name": "幽影之威",
+			"source": "RHW",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "幽影",
+			"subclassSource": "RHW",
+			"level": 3,
+			"activities": [
+				{
+					"ENG_name": "Strength of the Grave",
+					"name": "终焉之力",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "若你将降至0生命值但不会立即死亡"
+					},
+					"consumption": {
+						"scaling": {
+							"allowed": true
+						}
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "half"
+					},
+					"save": {
+						"ability": [
+							"cha"
+						],
+						"dc": {
+							"formula": "5 + @scaling"
+						}
+					}
+				},
+				{
+					"ENG_name": "Heal on Success",
+					"name": "成功时医疗术",
+					"type": "heal",
+					"activation": {
+						"type": "special",
+						"condition": "在此豁免成功后"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@abilities.cha.mod + @classes.sorcerer.levels - @attributes.hp.value"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Eyes of the Dark",
+					"name": "幽暗之瞳",
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.senses.ranges.darkvision",
+							"value": 120,
+							"mode": "UPGRADE"
+						},
+						{
+							"key": "system.attributes.senses.ranges.blindsight",
+							"value": 10,
+							"mode": "UPGRADE"
+						}
+					],
+					"descriptionEntries": [
+						"{@subclassFeature 幽影之威|术士|XPHB|幽影|RHW|3}"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Beasts of Ill Omen",
+			"name": "凶兆之兽",
+			"source": "RHW",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "幽影",
+			"subclassSource": "RHW",
+			"level": 6,
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "3",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[野兽召唤术|xphb]",
+						"properties": [
+							"材质"
+						],
+						"level": 2
+					}
+				},
+				{
+					"ENG_name": "Modified Summon",
+					"name": "改良召唤",
+					"type": "cast",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "3",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[野兽召唤术|xphb]",
+						"properties": [
+							"材质",
+							"专注"
+						],
+						"level": 2
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Shadow Walk",
+			"name": "幽影漫步",
+			"source": "RHW",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "幽影",
+			"subclassSource": "RHW",
+			"level": 14,
+			"activities": [
+				{
+					"ENG_name": "Teleport",
+					"name": "传送术",
+					"type": "utility",
+					"activation": {
+						"type": "bonus",
+						"condition": "处于微光光照或黑暗时"
+					},
+					"target": {
+						"affects": {
+							"type": "space",
+							"count": "1",
+							"special": "无人占据、可见、并且处于微光光照或黑暗术之中"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "120"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Umbral Form",
+			"name": "影灵形态",
+			"source": "RHW",
+			"className": "术士",
+			"classSource": "XPHB",
+			"subclassShortName": "幽影",
+			"subclassSource": "RHW",
+			"level": 18,
+			"activities": [
+				{
+					"ENG_name": "Innate Sorcery with Umbral Form",
+					"name": "先天术法：影灵形态",
+					"type": "utility",
+					"img": "icons/magic/control/silhouette-hold-change-blue.webp",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"consumes": {
+										"ENG_name": "Innate Sorcery",
+										"name": "先天术法"
+									}
+								}
+							},
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				},
+				{
+					"ENG_name": "Restore Use",
+					"name": "恢复使用",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/facilities/change.svg",
+					"activation": {
+						"type": ""
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "6",
+								"target": {
+									"consumes": {
+										"ENG_name": "Sorcery Point",
+										"name": "术法点"
+									}
+								}
+							},
+							{
+								"type": "itemUses",
+								"value": "-1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Innate Sorcery (Umbral Form)",
+					"name": "先天术法（影灵形态）",
+					"disabled": true,
+					"transfer": true,
 					"duration": {
 						"value": 60,
-						"units": "seconds",
-						"expiry": "turnStart"
+						"units": "秒",
+						"expiry": "回合开始"
 					},
 					"statuses": [
 						"transformed"
@@ -22257,7 +23045,11 @@
 							"mode": "ADD"
 						}
 					],
-					"description": "使用魔法物品特性让你可以同时与至多四个魔法物品调谐。"
+					"descriptionEntries": [
+						"{@classFeature 先天术法|术士|XPHB|1}",
+						"{@subclassFeature 影灵形态|术士|XPHB|幽影|RHW|18}"
+					],
+					"showIcon": 2
 				}
 			],
 			"migrationVersion": 3
@@ -23145,6 +23937,303 @@
 						"ENG_name": "Bonus/Penalty",
 						"name": "加值/减值",
 						"formula": "1d4"
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Form of Dread",
+			"name": "战栗形态",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 3,
+			"system": {
+				"uses.max": "max(@abilities.cha.mod, 1)"
+			},
+			"activities": [
+				{
+					"ENG_name": "Assume Avatar",
+					"name": "化身降临",
+					"type": "heal",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"healing": {
+						"types": [
+							"temphp"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"number": 1,
+						"denomination": 10,
+						"bonus": "@classes.warlock.levels"
+					},
+					"visibility": {
+						"identifier": "warlock"
+					},
+					"effects": [
+						{
+							"foundryId": "formOfDread",
+							"level": {
+								"max": 9
+							}
+						},
+						{
+							"foundryId": "formOfDread1",
+							"level": {
+								"min": 10
+							}
+						}
+					]
+				},
+				{
+					"ENG_name": "Frightful Avatar",
+					"name": "恐惧化身",
+					"type": "save",
+					"descriptionEntries": [
+						"变形期间每回合一次"
+					],
+					"activation": {
+						"type": "special",
+						"condition": "当你变形时以攻击检定命中一个生物"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "任何"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "formOfDread2"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Frightened",
+					"name": "恐慌",
+					"foundryId": "formOfDread2",
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"frightened"
+					],
+					"description": "豁免失败时，目标陷入恐慌状态，直到你的下一个回合结束。",
+					"showIcon": 2
+				},
+				{
+					"foundryId": "formOfDread",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 60,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "system.traits.ci.value",
+							"value": "frightened",
+							"mode": "ADD"
+						}
+					],
+					"descriptionEntries": [
+						"{@subclassFeature 战栗形态|魔契师|XPHB|亡灵|RHW|3}"
+					]
+				},
+				{
+					"ENG_name": "Form of Dread (Necrotic Husk)",
+					"foundryId": "formOfDread1",
+					"name": "战栗形态（死疽躯壳）",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 60,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "system.traits.ci.value",
+							"value": "frightened",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.di.value",
+							"value": "necrotic",
+							"mode": "ADD"
+						}
+					],
+					"descriptionEntries": [
+						"{@subclassFeature 战栗形态|魔契师|XPHB|亡灵|RHW|3}",
+						"{@b 暗蚀抗性。} 当你使用战栗形态时，你对暗蚀伤害具有免疫。"
+					]
+				},
+				{
+					"ENG_name": "Form of Superior Dread",
+					"name": "超凡战栗形态",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 60,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "system.traits.ci.value",
+							"value": "frightened",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.di.value",
+							"value": "necrotic",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "bludgeoning",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "piercing",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "slashing",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.attributes.movement.fly",
+							"value": "@attributes.movement.speed",
+							"mode": "UPGRADE"
+						},
+						{
+							"key": "system.attributes.movement.hover",
+							"value": true,
+							"mode": "OVERRIDE"
+						}
+					],
+					"descriptionEntries": [
+						"{@subclassFeature 战栗形态|魔契师|XPHB|亡灵|RHW|3}",
+						"{@b 暗蚀抗性。} 当你使用战栗形态时，你对暗蚀伤害具有免疫。",
+						"{@subclassFeature 超凡战栗|魔契师|XPHB|亡灵|RHW|14}"
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Necrotic Husk",
+			"name": "死疽躯壳",
+			"source": "RHW",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "亡灵",
+			"subclassSource": "RHW",
+			"level": 10,
+			"activities": [
+				{
+					"ENG_name": "Unholy Resuscitation",
+					"name": "邪秽复苏",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "你生命值降至0点但不会立即死亡"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "-1",
+								"target": "属性.力竭"
+							},
+							{
+								"type": "attribute",
+								"value": "@attributes.hp.value - 2 * @classes.warlock.levels",
+								"target": "attributes.hp.value"
+							},
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"stationary": true,
+							"units": "ft",
+							"type": "radius",
+							"size": "30"
+						},
+						"affects": {
+							"choice": true,
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 10,
+								"bonus": "@abilities.cha.mod",
+								"types": [
+									"暗蚀"
+								]
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
 					}
 				}
 			],

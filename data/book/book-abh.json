@@ -28,7 +28,7 @@
 				},
 				{
 					"ENG_name": "Using This Supplement",
-					"name": "使用这本补充资料",
+					"name": "使用此扩展包",
 					"type": "entries",
 					"id": "002",
 					"entries": [
@@ -118,6 +118,27 @@
 								"黑夜的街道上充斥着各种类型的人：误入歧途者、浑然不觉者、堕落者。然后还有醉醺醺的粗人、厌世的情侣和疲惫不堪的生还者。我喜欢把他们每个人都想象成一种独特的佳酿。"
 							],
 							"by": "阿斯代伦，暗夜品酒师"
+						},
+						{
+							"ENG_name": "Carouser",
+							"name": "狂欢客",
+							"type": "statblock",
+							"tag": "background",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Vampire Devotee",
+							"name": "血徒",
+							"type": "statblock",
+							"tag": "background",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Vampire Survivor",
+							"name": "吸血鬼幸存者",
+							"type": "statblock",
+							"tag": "background",
+							"source": "ABH"
 						}
 					]
 				},
@@ -260,6 +281,27 @@
 								"我说，亲爱的们，为什么不能两者兼得呢？"
 							],
 							"by": "多才多艺的阿斯代伦"
+						},
+						{
+							"ENG_name": "Tireless Reveler",
+							"name": "无休狂宴",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Vampire Hunter",
+							"name": "血族猎人",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Vampire's Plaything",
+							"name": "血族玩物",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
 						}
 					]
 				},
@@ -292,6 +334,76 @@
 								"培养这些令人愉悦的才能，让你的敌人跪地求饶\u2014\u2014或是让你的情人神魂颠倒。"
 							],
 							"by": "阿斯代伦，关系导师"
+						},
+						{
+							"ENG_name": "Bloodlust",
+							"name": "嗜血",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Bomber",
+							"name": "爆破手",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Cloying Mists",
+							"name": "黏滞迷雾",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Delicious Pain",
+							"name": "沉溺痛苦",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Light Bringer",
+							"name": "光照使者",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Love Bites",
+							"name": "吻痕",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Putrefy",
+							"name": "残尸败蜕",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Rebuke",
+							"name": "咎罪责难",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Treacherous Allure",
+							"name": "祸国叛心",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
+						},
+						{
+							"ENG_name": "Vampire Touched",
+							"name": "吸血鬼触碰",
+							"type": "statblock",
+							"tag": "feat",
+							"source": "ABH"
 						}
 					]
 				},
@@ -323,20 +435,23 @@
 							"height": 1045
 						},
 						{
+							"ENG_name": "Boon of Blazing Dawn",
+							"name": "炽耀黎明之恩惠",
 							"type": "statblock",
-							"name": "Boon of Blazing Dawn",
 							"tag": "feat",
 							"source": "ABH"
 						},
 						{
+							"ENG_name": "Boon of Looming Shadows",
+							"name": "厄影迫现之恩惠",
 							"type": "statblock",
-							"name": "Boon of Looming Shadows",
 							"tag": "feat",
 							"source": "ABH"
 						},
 						{
+							"ENG_name": "Boon of Misty Escape",
+							"name": "雾影遁形之恩惠",
 							"type": "statblock",
-							"name": "Boon of Misty Escape",
 							"tag": "feat",
 							"source": "ABH"
 						}
@@ -416,9 +531,33 @@
 							"ENG_name": "Fiendish Icon",
 							"name": "恶魔图腾",
 							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "ABH",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"ENG_name": "Fiendish Icon",
+							"name": "恶魔图腾",
+							"type": "statblock",
 							"tag": "creature",
 							"source": "ABH",
 							"style": "narrow"
+						},
+						{
+							"ENG_name": "Harvester Devil",
+							"name": "收割者魔鬼",
+							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "ABH",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
 						},
 						{
 							"ENG_name": "Harvester Devil",
@@ -432,6 +571,18 @@
 							"ENG_name": "Speaker Devil",
 							"name": "魔鬼代言人",
 							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "ABH",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"ENG_name": "Speaker Devil",
+							"name": "魔鬼代言人",
+							"type": "statblock",
 							"tag": "creature",
 							"source": "ABH",
 							"style": "narrow"
@@ -440,9 +591,33 @@
 							"ENG_name": "Vampire Infernalist",
 							"name": "吸血鬼狱炎魔使",
 							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "ABH",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
+						},
+						{
+							"ENG_name": "Vampire Infernalist",
+							"name": "吸血鬼狱炎魔使",
+							"type": "statblock",
 							"tag": "creature",
 							"source": "ABH",
 							"style": "narrow"
+						},
+						{
+							"ENG_name": "Vampire Warden",
+							"name": "吸血鬼看守",
+							"type": "statblock",
+							"prop": "monsterFluff",
+							"source": "ABH",
+							"data": {
+								"renderCompact": {
+									"isSkipRootName": true
+								}
+							}
 						},
 						{
 							"ENG_name": "Vampire Warden",
