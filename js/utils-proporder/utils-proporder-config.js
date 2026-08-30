@@ -2463,6 +2463,9 @@ const PROPORDER_DECK_SPREAD = [
 
 	"entries",
 
+	"seeAlsoAdventureHeader",
+	"seeAlsoBookHeader",
+
 	new ArrayKey("positions", {fnGetOrder: () => PROPORDER_DECK_SPREAD_POSITION}),
 	"outcomes",
 ];

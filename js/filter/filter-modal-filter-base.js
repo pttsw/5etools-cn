@@ -292,6 +292,7 @@ export class ModalFilterBase {
 		const {eleModalInner, doClose} = await UiUtil.pGetShowModal({
 			isHeight100: true,
 			isWidth100: true,
+			isUncappedWidth: globalThis.styleSwitcher?.getIsWideMode(),
 			title: `${I18nUtil.get("common.filter.filter_search_for")} ${this._modalTitle}`,
 			cbClose: (isDataEntered) => {
 				if (this._filterCache) this._filterCache.wrpModalInner.vee.detach();

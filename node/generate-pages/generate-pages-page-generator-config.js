@@ -175,13 +175,14 @@ class _PageGeneratorIndex extends PageGeneratorGeneric {
 class _PageGeneratorInittrackerplayerview extends PageGeneratorGeneric {
 	_filename = "page/template-page-inittrackerplayerview.hbs";
 	_page = "inittrackerplayerview.html";
+
 	_isNoIndex = true;
 	_isExcludedFromSitemap = true;
 
 	_pageTitle = "先攻追踪器玩家视图";
 	_pageDescription = "DND 5e 先攻追踪器玩家视图，用于战斗中追踪先攻顺序和回合。";
 	_pageKeywords = "DND,5e,先攻追踪器,战斗,回合,龙与地下城";
-	_navbarDescription = "按F切换全屏，祝你好运！";
+	_navbarDescription = "按<kbd>f</kbd>切换全屏，祝你好运！";
 
 	_stylesheets = [
 		"inittrackerplayerview",

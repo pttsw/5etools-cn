@@ -27,11 +27,9 @@ class _PageGeneratorBook extends PageGeneratorAdventureBookBase {
 class _PageGeneratorQuickref extends PageGeneratorAdventureBookBase {
 	_page = UrlUtil.PG_QUICKREF;
 
-	_pageTitle = "快速参照(5e/2014)";
-	_pageDescription = "DND 5e 快速参照表，包含常用规则、状态效果和行动选项的速查内容。";
-	_pageKeywords = "DND,5e,快速参照,规则速查,状态效果,龙与地下城";
-	_navbarTitle = "快速参照(5e/2014)";
-	_navbarDescription = I18nUtil.get("page.book.page_subtitle");
+	_pageTitle = "快速参照 (5e/2014)";
+	_navbarTitle = "快速参照 (5e/2014)";
+	_navbarDescriptionHtml = "Browse content. Press <kbd>f</kbd> to find, and <kbd>g</kbd> to go to page.";
 	_scriptIdentAdvBook = "quickreference";
 	_advBookPlaceholder = `Trans rights are human rights.`;
 }
