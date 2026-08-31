@@ -84,7 +84,7 @@ export class DeckSpreads {
 		</div>`;
 
 		const entries = [
-			`{@b Drawn:} {@card ${DataUtil.deck.getUidCard(card, {isMaintainCase: true})}}`,
+			`{@b 抽到的牌:} {@card ${DataUtil.deck.getUidCard(card, {isMaintainCase: true})}}`,
 			...(position.entries || []),
 			...this._getOutcomeEntries({card, outcomeMeta}),
 		];

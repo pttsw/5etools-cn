@@ -175,7 +175,7 @@ class DecksPage extends ListPage {
 			btnSpread.vee.prop("disabled", true);
 
 			const {eleModalInner} = UiUtil.getShowModal({
-				title: `Spread \u2014 ${ent.name}`,
+				title: `牌阵 \u2014 ${ent.name}`,
 				isUncappedHeight: true,
 				isHeight100: true,
 				isMaxWidth640p: true,
@@ -214,7 +214,7 @@ class DecksPage extends ListPage {
 				}
 			};
 
-			const btnRedraw = veT`<button class="ve-btn ve-btn-primary ve-btn-sm ve-no-shrink">Draw</button>`
+			const btnRedraw = veT`<button class="ve-btn ve-btn-primary ve-btn-sm ve-no-shrink">抽卡</button>`
 				.vee.onn("click", () => pDoRender().then(null));
 
 			comp._addHookBase("ixSpread", () => pDoRender().then(null));
@@ -242,10 +242,10 @@ class DecksPage extends ListPage {
 		const wrpControls = veT`<div class="ve-flex ve-mt-auto" data-name="deck-wrp-controls"></div>`
 			.vee.prependTo(this._wrpTabs);
 
-		const btnDraw = veT`<button class="ve-btn ve-btn-xs ve-btn-primary ve-bb-0 ve-bbr-0 ve-bbl-0" title="Draw a Card (SHIFT to Skip Replacement; CTRL to Skip Animation)"><i class="fas fa-fw fa-cards"></i></button>`
+		const btnDraw = veT`<button class="ve-btn ve-btn-xs ve-btn-primary ve-bb-0 ve-bbr-0 ve-bbl-0" title="抽卡！(按住SHIFT跳过重置; 按住CTRL跳过动画)"><i class="fas fa-fw fa-cards"></i></button>`
 			.vee.onn("click", async evt => {
 				const cards = this._compCardState.getUndrawnCards(ent);
-				if (!cards.length) return JqueryUtil.doToast({content: "All cards have already been drawn!", type: "warning"});
+				if (!cards.length) return JqueryUtil.doToast({content: "所有卡都被抽光了！", type: "warning"});
 
 				const card = RollerUtil.rollOnArray(cards);
 				if (!card._isReplacement || evt.shiftKey) await this._compCardState.pDrawCard(ent, card);
@@ -271,19 +271,19 @@ class DecksPage extends ListPage {
 				}
 			});
 
-		const btnReset = veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="Reset Deck"><i class="fas fa-fw fa-rotate-left"></i></button>`
+		const btnReset = veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="重置牌组"><i class="fas fa-fw fa-rotate-left"></i></button>`
 			.vee.onn("click", async () => {
 				await this._compCardState.pResetDeck(ent);
-				JqueryUtil.doToast("Reset deck!");
+				JqueryUtil.doToast("牌组已重置！");
 			});
 
 		// region List vs Grid view
-		const btnViewList = this._compSettings ? veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="Card List View"><i class="fas fa-fw fa-list"></i></button>`
+		const btnViewList = this._compSettings ? veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="卡牌列表视图"><i class="fas fa-fw fa-list"></i></button>`
 			.vee.onn("click", () => {
 				this._compSettings.pSet("cardLayout", "list").then(null);
 			}) : null;
 
-		const btnViewGrid = this._compSettings ? veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="Card Grid View"><i class="fas fa-fw fa-grid-2"></i></button>`
+		const btnViewGrid = this._compSettings ? veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="卡牌网格视图"><i class="fas fa-fw fa-grid-2"></i></button>`
 			.vee.onn("click", () => {
 				this._compSettings.pSet("cardLayout", "grid").then(null);
 			}) : null;
@@ -299,7 +299,7 @@ class DecksPage extends ListPage {
 
 		// region Spreads
 		const btnSpread = ent.spreads?.length
-			? veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="Read a Spread"><i class="fas fa-fw fa-layer-group"></i></button>`
+			? veT`<button class="ve-btn ve-btn-xs ve-btn-default ve-bb-0 ve-bbr-0 ve-bbl-0" title="解读牌阵"><i class="fas fa-fw fa-layer-group"></i></button>`
 				.vee.onn("click", () => this._handleClick_pDoOpenSpread(ent, btnSpread).then(null))
 			: null;
 		// endregion
