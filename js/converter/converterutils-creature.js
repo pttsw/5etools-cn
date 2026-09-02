@@ -4,7 +4,7 @@ import {ConverterConst} from "./converterutils-const.js";
 import {ItemTag, SpellTag} from "./converterutils-entries.js";
 import {VetoolsConfig} from "../utils-config/utils-config-config.js";
 import {SITE_STYLE__CLASSIC} from "../consts.js";
-import { ConverterUtils } from "./converterutils-utils.js";
+import {ConverterUtils} from "./converterutils-utils.js";
 
 export class AcConvert {
 	static _ITEM_LOOKUP = null;
@@ -2406,7 +2406,7 @@ export class SpeedConvert {
 	static _SPEED_TYPES_CN = new Set(Parser.SPEED_MODES_CN);
 
 	static _splitSpeed (str) {
-		// const cSplitter = str.includes(";") ? ";" : ",";
+		// let cSplitter = ConverterUtils.isHasCharOutwithParens(str, ";") ? ";" : ",";
 		const splitWithSemi = str.includes(";") || str.includes("；");
 		let ret = [];
 		let stack = "";
@@ -2458,6 +2458,20 @@ export class SpeedConvert {
 		if (typeof mon.speed !== "string") return;
 
 		let line = mon.speed.trim().replace(/(?:^speed|移动速度|速度)[：:.]?\s*/i, "");
+
+		line = line
+			// E.g. "Battle Familiar" :: AU
+			.replace(
+				/(?<speed>\bfly\s+\d+\s*ft\.?)\s+hover;\s*(?<condition>[^,;]+?\bonly)\b/gi,
+				(...m) => `${m.at(-1).speed} (hover; ${m.at(-1).condition})`,
+			);
+
+		line = line
+			// E.g. "Battle Familiar" :: AU
+			.replace(
+				/(?<speed>\bfly\s+\d+\s*ft\.?)\s+hover;\s*(?<condition>[^,;]+?\bonly)\b/gi,
+				(...m) => `${m.at(-1).speed} (hover; ${m.at(-1).condition})`,
+			);
 
 		const out = {};
 		let byHand = false;

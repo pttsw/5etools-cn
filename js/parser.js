@@ -4226,6 +4226,7 @@ Parser.SOURCES_ADVENTURES = new Set([
 	Parser.SRC_HotB,
 	Parser.SRC_WttHC,
 	Parser.SRC_FFotR,
+	Parser.SRC_AUD,
 	Parser.SRC_AWM,
 ]);
 Parser.SOURCES_CORE_SUPPLEMENTS = new Set(Object.keys(Parser.SOURCE_JSON_TO_FULL).filter(it => !Parser.SOURCES_ADVENTURES.has(it)));

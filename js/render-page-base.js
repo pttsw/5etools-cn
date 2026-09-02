@@ -75,6 +75,6 @@ export class RenderPageImplBase {
 	) {
 		if (!ent[prop]) return "";
 
-		return `<div>${renderer.render(`{@note See also: ${ent[prop].map(uid => `{@${tag} ${uid.split("|").map((pt, i) => !i ? pt.toTitleCase() : pt).join("|")}}`).join(", ")}.}`)}</div>`;
+		return `<div>${renderer.render(`{@note 另请参见：${ent[prop].map(uid => `{@${tag} ${uid.split("|").map((pt, i) => !i ? pt.toTitleCase() : pt).join("|")}}`).join(", ")}。}`)}</div>`;
 	}
 }

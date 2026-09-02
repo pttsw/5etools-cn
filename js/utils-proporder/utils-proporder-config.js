@@ -3,12 +3,31 @@ import {PROPS_FOUNDRY_DATA_INLINE} from "../foundry/foundry-consts.js";
 import {getFnRootPropListSort} from "./utils-proporder-sort.js";
 import {PROPORDER_ENTRY_DATA_OBJECT, PROPORDER_FOUNDRY_ACTIVITIES, PROPORDER_FOUNDRY_EFFECTS} from "./utils-proporder-config-shared.js";
 
+const getGenericMetadataPropOrder = ({
+	propsPostNameAdditional = ["alias"],
+	propsPostSourceAdditional = [],
+} = {}) => [
+	"name",
+	...propsPostNameAdditional,
+
+	"source",
+	...propsPostSourceAdditional,
+	"page",
+
+	"srd",
+	"srd52",
+	"basicRules",
+	"basicRules2024",
+	"additionalSources",
+	"otherSources",
+	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	"isReprinted",
+	"reprintedAs",
+];
+
 const getFoundryGeneric = ({propsMatchAdditional = [], isFeature = false} = {}) => {
 	const proporder = [
-		"name",
-		"source",
-
-		...propsMatchAdditional,
+		...getGenericMetadataPropOrder({propsPostSourceAdditional: propsMatchAdditional}),
 
 		ObjectKey.getCopyKey({
 			identKeys: [
@@ -120,27 +139,17 @@ const PROPORDER_TEST = [
 const PROPORDER_FOUNDRY_GENERIC = getFoundryGeneric();
 const PROPORDER_FOUNDRY_GENERIC_FEATURE = getFoundryGeneric({isFeature: true});
 const PROPORDER_MONSTER = [
-	"name",
-	"shortName",
-	"alias",
-	"group",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: [
+			"shortName",
+			"alias",
+			"group",
 
-	"isNpc",
-	"isNamedCreature",
-
-	"source",
-	"sourceSub",
-	"page",
-
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"isReprinted",
-	"reprintedAs",
+			"isNpc",
+			"isNamedCreature",
+		],
+		propsPostSourceAdditional: ["sourceSub"],
+	}),
 
 	"summonedBySpell",
 	"summonedBySpellLevel",
@@ -309,11 +318,7 @@ const PROPORDER_MONSTER__COPY_MOD = [
 		}),
 ];
 const PROPORDER_MONSTER_TEMPLATE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	"ref",
 
@@ -342,22 +347,17 @@ const PROPORDER_MONSTER_TEMPLATE__COPY_MOD = [
 	...PROPORDER_MONSTER_TEMPLATE,
 ];
 const PROPORDER_MAKE_BREW_CREATURE_TRAIT = [
-	"name",
-	"source",
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"entries",
 ];
 const PROPORDER_MAKE_BREW_CREATURE_ACTION = [
-	"name",
-	"source",
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"entries",
 ];
 const PROPORDER_FOUNDRY_MONSTER = [
-	"name",
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"system",
 	"prototypeToken",
@@ -370,11 +370,7 @@ const PROPORDER_FOUNDRY_MONSTER = [
 ];
 const PROPORDER_FOUNDRY_MONSTER_SUB_ENTITY = getFoundryGeneric({propsMatchAdditional: ["monsterName", "monsterSource"]});
 const PROPORDER_GENERIC_FLUFF = [
-	"name",
-
-	"preserveName",
-
-	"source",
+	...getGenericMetadataPropOrder({propsPostNameAdditional: ["alias", "preserveName"]}),
 
 	"_copy",
 
@@ -382,8 +378,7 @@ const PROPORDER_GENERIC_FLUFF = [
 	"images",
 ];
 const PROPORDER_ROLL20_SPELL = [
-	"name",
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	new ObjectKey("data", {
 		order: [
@@ -414,19 +409,7 @@ const PROPORDER_ROLL20_SPELL = [
 	"shapedData",
 ];
 const PROPORDER_SPELL = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_SPELL__COPY_MOD}),
 
@@ -491,9 +474,7 @@ const PROPORDER_SPELL__COPY_MOD = [
 	...PROPORDER_SPELL,
 ];
 const PROPORDER_SPELL_LIST = [
-	"name",
-
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"spellListType",
 
@@ -503,18 +484,7 @@ const PROPORDER_SPELL_LIST = [
 	"spells",
 ];
 const PROPORDER_ACTION = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"fromVariant",
 
@@ -539,6 +509,8 @@ const _PROPORDER_CORPUS_CONTENTS = new ArrayKey(
 						"index",
 						"depth",
 						"statblock",
+						"tag",
+						"uid",
 					],
 				},
 			),
@@ -546,12 +518,10 @@ const _PROPORDER_CORPUS_CONTENTS = new ArrayKey(
 	},
 );
 const PROPORDER_ADVENTURE = [
-	"name",
-	"alias",
-
-	"id",
-	"source",
-	"parentSource",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["alias", "id"],
+		propsPostSourceAdditional: ["parentSource"],
+	}),
 
 	"group",
 
@@ -571,20 +541,15 @@ const PROPORDER_ADVENTURE = [
 	_PROPORDER_CORPUS_CONTENTS,
 ];
 const PROPORDER_ADVENTURE_DATA = [
-	"name",
-
-	"id",
-	"source",
+	...getGenericMetadataPropOrder({propsPostNameAdditional: ["alias", "id"]}),
 
 	"data",
 ];
 const PROPORDER_BOOK = [
-	"name",
-	"alias",
-
-	"id",
-	"source",
-	"parentSource",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["alias", "id"],
+		propsPostSourceAdditional: ["parentSource"],
+	}),
 
 	"group",
 
@@ -597,27 +562,12 @@ const PROPORDER_BOOK = [
 	_PROPORDER_CORPUS_CONTENTS,
 ];
 const PROPORDER_BOOK_DATA = [
-	"name",
-
-	"id",
-	"source",
+	...getGenericMetadataPropOrder({propsPostNameAdditional: ["alias", "id"]}),
 
 	"data",
 ];
 const PROPORDER_BACKGROUND = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"edition",
 
@@ -669,13 +619,7 @@ const PROPORDER_FOUNDRY_BACKGROUND_FEATURE = getFoundryGeneric({
 	isFeature: true,
 });
 const PROPORDER_LEGENDARY_GROUP = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-
-	"additionalSources",
+	...getGenericMetadataPropOrder(),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_LEGENDARY_GROUP__COPY_MOD}),
 
@@ -705,10 +649,7 @@ const PROPORDER_LEGENDARY_GROUP__COPY_MOD = [
 	...PROPORDER_LEGENDARY_GROUP,
 ];
 const PROPORDER_LEGENDARY_GROUP_TEMPLATE = [
-	"name",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	"ref",
 
@@ -741,19 +682,7 @@ const _PROPORDER_CLASS_PROFICIENCIES = [
 	"armorProficiencies",
 ];
 const PROPORDER_CLASS = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"isReprinted",
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"edition",
 
@@ -824,9 +753,7 @@ const PROPORDER_CLASS__COPY_MOD = [
 	...PROPORDER_CLASS,
 ];
 const PROPORDER_FOUNDRY_CLASS = [
-	"name",
-
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"system",
 	PROPORDER_FOUNDRY_ACTIVITIES,
@@ -847,22 +774,10 @@ const PROPORDER_FOUNDRY_CLASS = [
 	"migrationVersion",
 ];
 const PROPORDER_SUBCLASS = [
-	"name",
-	"shortName",
-	"alias",
-	"source",
-	"className",
-	"classSource",
-
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"isReprinted",
-	"reprintedAs",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["shortName", "alias"],
+		propsPostSourceAdditional: ["className", "classSource"],
+	}),
 
 	"edition",
 
@@ -916,11 +831,10 @@ const PROPORDER_SUBCLASS__COPY_MOD = [
 	...PROPORDER_SUBCLASS,
 ];
 const PROPORDER_SUBCLASS_FLUFF = [
-	"name",
-	"shortName",
-	"source",
-	"className",
-	"classSource",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["alias", "shortName"],
+		propsPostSourceAdditional: ["className", "classSource"],
+	}),
 
 	"_copy",
 
@@ -928,11 +842,10 @@ const PROPORDER_SUBCLASS_FLUFF = [
 	"images",
 ];
 const PROPORDER_FOUNDRY_SUBCLASS = [
-	"name",
-	"shortName",
-	"source",
-	"className",
-	"classSource",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["alias", "shortName"],
+		propsPostSourceAdditional: ["className", "classSource"],
+	}),
 
 	"identifier",
 	"system",
@@ -954,17 +867,7 @@ const PROPORDER_FOUNDRY_SUBCLASS = [
 	"migrationVersion",
 ];
 const PROPORDER_CLASS_FEATURE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder(),
 
 	"className",
 	"classSource",
@@ -1003,17 +906,7 @@ const PROPORDER_CLASS_FEATURE__COPY_MOD = [
 	...PROPORDER_CLASS_FEATURE,
 ];
 const PROPORDER_SUBCLASS_FEATURE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder(),
 
 	"className",
 	"classSource",
@@ -1058,12 +951,9 @@ const PROPORDER_SUBCLASS_FEATURE__COPY_MOD = [
 	...PROPORDER_SUBCLASS_FEATURE,
 ];
 const PROPORDER_FOUNDRY_CLASS_FEATURE = [
-	"name",
-	"source",
-
-	"className",
-	"classSource",
-	"level",
+	...getGenericMetadataPropOrder({
+		propsPostSourceAdditional: ["className", "classSource", "level"],
+	}),
 
 	"identifier",
 	"system",
@@ -1095,14 +985,15 @@ const PROPORDER_FOUNDRY_CLASS_FEATURE = [
 	"migrationVersion",
 ];
 const PROPORDER_FOUNDRY_SUBCLASS_FEATURE = [
-	"name",
-	"source",
-
-	"className",
-	"classSource",
-	"subclassShortName",
-	"subclassSource",
-	"level",
+	...getGenericMetadataPropOrder({
+		propsPostSourceAdditional: [
+			"className",
+			"classSource",
+			"subclassShortName",
+			"subclassSource",
+			"level",
+		],
+	}),
 
 	"identifier",
 	"system",
@@ -1134,21 +1025,7 @@ const PROPORDER_FOUNDRY_SUBCLASS_FEATURE = [
 	"migrationVersion",
 ];
 const PROPORDER_LANGUAGE = [
-	"name",
-	"alias",
-
-	"dialects",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder({propsPostNameAdditional: ["alias", "dialects"]}),
 
 	"type",
 	"typicalSpeakers",
@@ -1165,17 +1042,13 @@ const PROPORDER_LANGUAGE = [
 	"fluff",
 ];
 const PROPORDER_LANGUAGE_SCRIPT = [
-	"name",
-
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"fonts",
 ];
 const PROPORDER_NAME = [
-	"name",
+	...getGenericMetadataPropOrder(),
 
-	"source",
-	"page",
 	"legacy",
 
 	new ArrayKey("tables", {
@@ -1191,18 +1064,7 @@ const PROPORDER_NAME = [
 	}),
 ];
 const PROPORDER_CONDITION = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"color",
 
@@ -1216,18 +1078,7 @@ const PROPORDER_CONDITION = [
 	...PROPS_FOUNDRY_DATA_INLINE,
 ];
 const PROPORDER_DISEASE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"type",
 
@@ -1243,18 +1094,7 @@ const PROPORDER_DISEASE = [
 	...PROPS_FOUNDRY_DATA_INLINE,
 ];
 const PROPORDER_STATUS = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"color",
 
@@ -1266,19 +1106,7 @@ const PROPORDER_STATUS = [
 	"fluff",
 ];
 const PROPORDER_CULT = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"type",
 
@@ -1289,19 +1117,7 @@ const PROPORDER_CULT = [
 	"entries",
 ];
 const PROPORDER_BOON = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"type",
 
@@ -1314,20 +1130,9 @@ const PROPORDER_BOON = [
 	"entries",
 ];
 const PROPORDER_DEITY = [
-	"name",
-	"alias",
-	"reprintAlias",
-	"altNames",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["alias", "reprintAlias", "altNames"],
+	}),
 
 	new ObjectKey("_copy", {
 		order: [
@@ -1374,19 +1179,7 @@ const PROPORDER_DEITY__COPY_MOD = [
 	...PROPORDER_DEITY,
 ];
 const PROPORDER_FEAT = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_FEAT__COPY_MOD}),
 
@@ -1452,18 +1245,7 @@ const PROPORDER_FEAT__COPY_MOD = [
 	...PROPORDER_FEAT,
 ];
 const PROPORDER_VEHICLE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"vehicleType",
 
@@ -1530,17 +1312,7 @@ const PROPORDER_VEHICLE = [
 	...PROPS_FOUNDRY_DATA_INLINE,
 ];
 const PROPORDER_VEHICLE_UPGRADE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder(),
 
 	"upgradeType",
 
@@ -1549,8 +1321,7 @@ const PROPORDER_VEHICLE_UPGRADE = [
 	"entries",
 ];
 const PROPORDER_RACE_FLUFF = [
-	"name",
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"uncommon",
 	"monstrous",
@@ -1561,23 +1332,15 @@ const PROPORDER_RACE_FLUFF = [
 	"images",
 ];
 const PROPORDER_ITEM = [
-	"name",
-	"alias",
-	"group",
-	"namePrefix",
-	"nameSuffix",
-	"nameRemove",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: [
+			"alias",
+			"group",
+			"namePrefix",
+			"nameSuffix",
+			"nameRemove",
+		],
+	}),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_ITEM__COPY_MOD}),
 
@@ -1778,11 +1541,7 @@ const PROPORDER_ITEM__COPY_MOD = [
 	...PROPORDER_ITEM,
 ];
 const PROPORDER_MAGICVARIANT = [
-	"name",
-	"alias",
-	"group",
-	"source",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder({propsPostNameAdditional: ["alias", "group"]}),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_MAGICVARIANT__COPY_MOD}),
 
@@ -1814,30 +1573,18 @@ const PROPORDER_MAGICVARIANT__COPY_MOD = [
 	...PROPORDER_MAGICVARIANT,
 ];
 const PROPORDER_ITEM_MASTERY = [
-	"name",
-	"source",
-
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: [],
+	}),
 
 	"prerequisite",
 
 	"entries",
 ];
 const PROPORDER_ITEM_PROPERTY = [
-	"name",
-	"abbreviation",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"reprintedAs",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["abbreviation"],
+	}),
 
 	ObjectKey.getCopyKey({
 		identKeys: [
@@ -1861,16 +1608,9 @@ const PROPORDER_REDUCED_ITEM_PROPERTY = [
 	...PROPORDER_ITEM_PROPERTY,
 ];
 const PROPORDER_ITEM_TYPE = [
-	"name",
-	"abbreviation",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"reprintedAs",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["abbreviation"],
+	}),
 
 	ObjectKey.getCopyKey({
 		identKeys: [
@@ -1894,37 +1634,21 @@ const PROPORDER_REDUCED_ITEM_TYPE = [
 	...PROPORDER_ITEM_TYPE,
 ];
 const PROPORDER_ITEM_TYPE_ADDITIONAL_ENTRIES = [
-	"name",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	"appliesTo",
 
 	"entries",
 ];
 const PROPORDER_ITEM_ENTRY = [
-	"name",
-
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"entriesTemplate",
 ];
 const PROPORDER_OBJECT = [
-	"name",
-	"alias",
-
-	"isNpc",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder({
+		propsPostNameAdditional: ["alias", "isNpc"],
+	}),
 
 	"size",
 	"objectType",
@@ -1969,18 +1693,7 @@ const PROPORDER_OBJECT = [
 	...PROPS_FOUNDRY_DATA_INLINE,
 ];
 const PROPORDER_OPTIONALFEATURE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_OPTIONALFEATURE__COPY_MOD}),
 
@@ -2029,11 +1742,7 @@ const PROPORDER_OPTIONALFEATURE__COPY_MOD = [
 	...PROPORDER_OPTIONALFEATURE,
 ];
 const PROPORDER_PSIONIC = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	"type",
 	"order",
@@ -2044,18 +1753,7 @@ const PROPORDER_PSIONIC = [
 	"modes",
 ];
 const PROPORDER_REWARD = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"type",
 
@@ -2065,6 +1763,8 @@ const PROPORDER_REWARD = [
 
 	"entries",
 
+	"seeAlsoFacility",
+
 	"hasFluff",
 	"hasFluffImages",
 
@@ -2073,19 +1773,7 @@ const PROPORDER_REWARD = [
 	...PROPS_FOUNDRY_DATA_INLINE,
 ];
 const PROPORDER_VARIANTRULE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"ruleType",
 
@@ -2095,16 +1783,6 @@ const PROPORDER_VARIANTRULE = [
 	...PROPS_FOUNDRY_DATA_INLINE,
 ];
 const PROPORDER_RACE_SUBRACE = [
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
-
 	"edition",
 
 	ObjectKey.getCopyKey({
@@ -2186,10 +1864,7 @@ const PROPORDER_RACE_SUBRACE = [
 	}),
 ];
 const PROPORDER_RACE = [
-	"name",
-	"alias",
-
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	...PROPORDER_RACE_SUBRACE,
 ];
@@ -2199,13 +1874,7 @@ const PROPORDER_RACE__COPY_MOD = [
 	...PROPORDER_RACE,
 ];
 const PROPORDER_SUBRACE = [
-	"name",
-	"alias",
-
-	"source",
-
-	"raceName",
-	"raceSource",
+	...getGenericMetadataPropOrder({propsPostSourceAdditional: ["raceName", "raceSource"]}),
 
 	...PROPORDER_RACE_SUBRACE,
 ];
@@ -2217,17 +1886,7 @@ const PROPORDER_FOUNDRY_RACE_FEATURE = getFoundryGeneric({
 	isFeature: true,
 });
 const PROPORDER_TABLE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder(),
 
 	"type",
 
@@ -2255,18 +1914,7 @@ const PROPORDER_TABLE = [
 	"parentEntity",
 ];
 const PROPORDER_TRAP = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"trapHazType",
 
@@ -2296,19 +1944,7 @@ const PROPORDER_TRAP = [
 	"fluff",
 ];
 const PROPORDER_HAZARD = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"additionalSources",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"trapHazType",
 
@@ -2322,14 +1958,7 @@ const PROPORDER_HAZARD = [
 	"fluff",
 ];
 const PROPORDER_RECIPE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder(),
 
 	"type",
 	"dishTypes",
@@ -2355,14 +1984,7 @@ const PROPORDER_RECIPE = [
 	"fluff",
 ];
 const PROPORDER_CROCHET_PATTERN = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
+	...getGenericMetadataPropOrder(),
 
 	"designers",
 	"level",
@@ -2391,15 +2013,7 @@ const PROPORDER_CROCHET_PATTERN = [
 	"fluff",
 ];
 const PROPORDER_CHAROPTION = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"prerequisite",
 
@@ -2413,36 +2027,14 @@ const PROPORDER_CHAROPTION = [
 	"fluff",
 ];
 const PROPORDER_SKILL = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"ability",
 
 	"entries",
 ];
 const PROPORDER_SENSE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"entries",
 ];
@@ -2456,10 +2048,7 @@ const PROPORDER_DECK_SPREAD_POSITION = [
 	"outcomes",
 ];
 const PROPORDER_DECK_SPREAD = [
-	"name",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	"entries",
 
@@ -2470,18 +2059,7 @@ const PROPORDER_DECK_SPREAD = [
 	"outcomes",
 ];
 const PROPORDER_DECK = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	ObjectKey.getCopyKey({fnGetModOrder: () => PROPORDER_DECK__COPY_MOD}),
 
@@ -2501,19 +2079,9 @@ const PROPORDER_DECK__COPY_MOD = [
 	...PROPORDER_DECK,
 ];
 const PROPORDER_CARD = [
-	"name",
-	"alias",
-
-	"source",
-	"set",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder({
+		propsPostSourceAdditional: ["set"],
+	}),
 
 	"suit",
 	"value",
@@ -2526,10 +2094,7 @@ const PROPORDER_CARD = [
 ];
 
 const PROPORDER_ENCOUNTER = [
-	"name",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	new ArrayKey("tables", {
 		order: [
@@ -2554,18 +2119,13 @@ const PROPORDER_ENCOUNTER = [
 ];
 
 const PROPORDER_CITATION = [
-	"name",
-
-	"source",
-	"page",
+	...getGenericMetadataPropOrder(),
 
 	"entries",
 ];
 
 const PROPORDER_FOUNDRY_MAP = [
-	"name",
-
-	"source",
+	...getGenericMetadataPropOrder(),
 
 	"lights",
 	"walls",
@@ -2574,18 +2134,7 @@ const PROPORDER_FOUNDRY_MAP = [
 ];
 
 const PROPORDER_FACILITY = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"srd",
-	"srd52",
-	"basicRules",
-	"basicRules2024",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"facilityType",
 
@@ -2611,14 +2160,7 @@ const PROPORDER_CONVERTER_SAMPLE = [
 ];
 
 const PROPORDER_ENCOUNTER_SHAPE = [
-	"name",
-	"alias",
-
-	"source",
-	"page",
-	"otherSources",
-	new ArrayKey("referenceSources", {fnSort: SortUtil.ascSortLower}),
-	"reprintedAs",
+	...getGenericMetadataPropOrder(),
 
 	"shapeTemplate",
 ];

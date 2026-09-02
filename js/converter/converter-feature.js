@@ -152,7 +152,7 @@ export class ConverterFeatureBase extends ConverterBase {
 
 			if (/^(?:spellcasting|施法能力|施法)$/i.test(pt)) return pre.spellcasting2020 = true;
 			if (/^(?:pact magic feature|契约魔法|契约魔法特性)$/i.test(pt)) return pre.spellcasting2020 = true;
-			if (/^(?:Spellcasting or Pact Magic Feature|施法或契约魔法特性)$/i.test(pt)) return pre.spellcasting2020 = true;
+			if (/^(?:Spellcasting (?:Feature )?or Pact Magic Feature|施法(?:特性)或契约魔法特性)$/i.test(pt)) return pre.spellcasting2020 = true;
 
 			if (/^(?:spellcasting feature|施法特性)$/i.test(pt)) return pre.spellcastingFeature = true;
 			if (/^(?:spellcasting feature from a class that prepares spells|需要准备法术的施法职业特性)$/i.test(pt)) return pre.spellcastingPrepared = true;
@@ -318,7 +318,9 @@ export class ConverterFeatureBase extends ConverterBase {
 			this._PREREQUISITE_TRIE = new Trie();
 			[
 				"Spellcasting or Pact Magic Feature",
+				"Spellcasting Feature or Pact Magic Feature",
 				"施法或契约魔法特性",
+				"施法特性或契约魔法特性",
 			]
 				.forEach(str => this._PREREQUISITE_TRIE.add(str));
 		}

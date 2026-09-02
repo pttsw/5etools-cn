@@ -15429,6 +15429,55 @@
 			"migrationVersion": 3
 		},
 		{
+			"name": "Radiance",
+			"source": "CM",
+			"identifier": "radiance",
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "dawn",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"range": {
+						"units": "touch"
+					},
+					"spell": {
+						"level": 2,
+						"uuid": "@spell[enhance ability]",
+						"properties": [
+							"vocal",
+							"somatic",
+							"material"
+						],
+						"spellbook": true
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"name": "Ring of Animal Influence",
 			"source": "XDMG",
 			"activities": [
@@ -18392,6 +18441,38 @@
 						"dc": {
 							"formula": "11"
 						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"name": "Serpent's Fang",
+			"source": "CM",
+			"activities": [
+				{
+					"type": "attack",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"attack": {
+						"type": {
+							"value": "melee",
+							"classification": "weapon"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 10,
+								"types": [
+									"poison"
+								]
+							}
+						]
 					}
 				}
 			],

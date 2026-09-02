@@ -8719,16 +8719,76 @@
 			"category": "G",
 			"prerequisite": [
 				{
-					"level": 4
+					"level": 4,
+					"feat": [
+						"magic initiate|xphb"
+					]
 				}
 			],
 			"ability": [
 				{
 					"choose": {
 						"from": [
-							"str",
-							"dex"
+							"int",
+							"wis",
+							"cha"
 						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"name": "Cleric Spells",
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									{
+										"choose": "level=1|class=Cleric"
+									},
+									{
+										"choose": "level=2|class=Cleric"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Druid Spells",
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									{
+										"choose": "level=1|class=Druid"
+									},
+									{
+										"choose": "level=2|class=Druid"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Wizard Spells",
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									{
+										"choose": "level=1|class=Wizard"
+									},
+									{
+										"choose": "level=2|class=Wizard"
+									}
+								]
+							}
+						}
 					}
 				}
 			],
@@ -14081,7 +14141,10 @@
 			"category": "G",
 			"prerequisite": [
 				{
-					"level": 4
+					"level": 4,
+					"feat": [
+						"familiar friend|au"
+					]
 				}
 			],
 			"ability": [
@@ -14089,7 +14152,11 @@
 					"choose": {
 						"from": [
 							"str",
-							"dex"
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
 						]
 					}
 				}

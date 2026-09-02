@@ -7,6 +7,9 @@ class _PageGeneratorListActions extends PageGeneratorListBase {
 	_pageDescription = "DND 5e 动作列表，包含攻击、施法、冲刺、躲避等所有标准动作和特殊动作的详细说明。";
 	_pageKeywords = "DND,5e,动作,攻击,施法,冲刺,躲避,龙与地下城";
 	_scriptIdentList = "actions";
+	_isHasRenderer = false;
+
+	_isModule = true;
 
 	_btnsList = [
 		HtmlGeneratorListButtons.getBtnPreviewToggle(),
@@ -337,6 +340,9 @@ class _PageGeneratorListRewards extends PageGeneratorListBase {
 	_pageDescription = "DND 5e 其他奖励列表，包含 supernatural gifts、blessings 等各种超自然奖励和祝福。";
 	_pageKeywords = "DND,5e,奖励,祝福,超自然赠礼,龙与地下城";
 	_scriptIdentList = "rewards";
+	_isHasRenderer = false;
+
+	_isModule = true;
 
 	_btnsList = [
 		HtmlGeneratorListButtons.getBtnPreviewToggle(),
