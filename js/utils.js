@@ -5272,7 +5272,7 @@ globalThis.DataUtil = class {
 	/* -------------------------------------------- */
 
 	static getCleanFilename (filename) {
-		return filename.replace(/[^-_a-zA-Z0-9]/g, "_");
+		return filename.replace(/[^\p{Script=Han}_a-zA-Z0-9-]/gu, "_");
 	}
 
 	static getCsv (headers, rows) {

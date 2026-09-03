@@ -41,7 +41,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"{@item 板甲|phb}"
+						"{@item 板甲|phb|板甲}"
 					]
 				}
 			],
@@ -101,13 +101,6 @@
 					"entries": [
 						"阿莫戈可以使用一个附赠动作恢复20点生命值。"
 					]
-				},
-				{
-					"ENG_name": "Extra Damage",
-					"name": "额外伤害",
-					"entries": [
-						"如果阿莫戈的生命值超过其生命值上限的一半，他每次命中都会额外造成7（{@damage 2d6}）点挥砍伤害。"
-					]
 				}
 			],
 			"action": [
@@ -122,7 +115,7 @@
 					"ENG_name": "Greataxe",
 					"name": "巨斧",
 					"entries": [
-						"{@atk mw} {@hit 9} 命中，触及5尺，单一目标。{@h}11（{@damage 1d12 + 5}）挥砍伤害。"
+						"{@atk mw} {@hit 9} 命中，触及 5 尺，一个目标。{@h}11（{@damage 1d12 + 5}）挥砍伤害，如果阿莫戈的生命值超过一半，则额外造成 7（{@damage 2d6}）挥砍伤害。"
 					]
 				},
 				{
@@ -2537,13 +2530,6 @@
 					"entries": [
 						"当Hrabbaz的生命值降至0点但并未直接死亡时，他的生命值反而会降至1点。"
 					]
-				},
-				{
-					"ENG_name": "Extra Damage",
-					"name": "额外伤害",
-					"entries": [
-						"只要赫拉巴兹的生命值超过一半，他在所有攻击中都会额外造成3点（{@damage 1d6}）伤害。"
-					]
 				}
 			],
 			"action": [
@@ -2558,7 +2544,7 @@
 					"ENG_name": "Morningstar",
 					"name": "钉头锤",
 					"entries": [
-						"{@atk mw} 命中{@hit 8}，触及5尺，单一目标。{@h}9（{@damage 1d8 + 5}）点穿刺伤害。"
+						"{@atk mw} {@hit 8} 命中，触及 5 尺，一个目标。{@h}9（{@damage 1d8 + 5}）穿刺伤害，如果哈巴兹的生命值超过一半，则额外造成 3（{@damage 1d6}）穿刺伤害。"
 					]
 				}
 			],
@@ -5430,6 +5416,7 @@
 				}
 			},
 			"hasToken": true,
+			"hasFluff": true,
 			"hasFluffImages": true,
 			"translator": "不全书"
 		},
@@ -8983,9 +8970,9 @@
 						"mode": "appendArr",
 						"items": {
 							"resist": [
-								"force"
+								"力场"
 							],
-							"preNote": "While attuned to the ring of force resistance:"
+							"preNote": "当与力场抗性戒指调谐时："
 						}
 					},
 					"trait": {

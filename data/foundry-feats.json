@@ -1,6 +1,84 @@
 {
 	"feat": [
 		{
+			"ENG_name": "Aberrant Anatomy",
+			"name": "异变内构",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Warping Flesh",
+					"name": "血肉扭曲",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在D20检定中掷出1点后立即"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "aberrantAnatomy"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Extrasensory Perception",
+					"name": "超感知觉",
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.senses.ranges.blindsight",
+							"value": 15,
+							"mode": "UPGRADE"
+						}
+					],
+					"description": "你拥有15尺范围的&Reference[黑暗视觉]。"
+				},
+				{
+					"ENG_name": "Warping Flesh (Stunned)",
+					"name": "血肉扭曲（震慑）",
+					"foundryId": "aberrantAnatomy",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"stunned"
+					],
+					"description": "直到你的下个回合结束前，你处于&Reference[stunned apply=false]状态。",
+					"showIcon": 2
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Actor",
 			"name": "演员",
 			"source": "XPHB",
@@ -1002,6 +1080,95 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Echoing Soul",
+			"name": "灵魂回荡",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Intrusive Echos",
+					"name": "侵扰回响",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在D20检定中掷出1点后立即"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "echoingSoul"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Intrusive Echoes (Incapacitated)",
+					"name": "侵扰回响（失能）",
+					"foundryId": "echoingSoul",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"incapacitated"
+					],
+					"changes": [
+						{
+							"key": "system.attributes.movement.walk",
+							"value": 0.5,
+							"mode": "MULTIPLY"
+						},
+						{
+							"key": "system.attributes.movement.fly",
+							"value": 0.5,
+							"mode": "MULTIPLY"
+						},
+						{
+							"key": "system.attributes.movement.swim",
+							"value": 0.5,
+							"mode": "MULTIPLY"
+						},
+						{
+							"key": "system.attributes.movement.climb",
+							"value": 0.5,
+							"mode": "MULTIPLY"
+						},
+						{
+							"key": "system.attributes.movement.burrow",
+							"value": 0.5,
+							"mode": "MULTIPLY"
+						}
+					],
+					"description": "你获得&Reference[失能 apply=false]状态，直至你的下一个回合结束。当你以此方式处于失能状态时，你的速度减半。",
+					"showIcon": 2
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Elven Accuracy",
 			"name": "精灵之准",
 			"source": "XGE",
@@ -1015,6 +1182,190 @@
 							"value": true
 						}
 					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Gathered Whispers",
+			"name": "汇灵低语",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Message (Spirit Whispers)",
+					"name": "传讯术（灵语低语）",
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"spell": {
+						"uuid": "{!@ $.feat[name=Gathered-Whispers;source=RHW].activities[name=Message--Spirit-Whispers].spell.uuid.0}|{!@ $.feat[name=Gathered-Whispers;source=RHW].activities[name=Message--Spirit-Whispers].spell.uuid.1}",
+						"properties": [
+							"材质"
+						],
+						"spellbook": true
+					}
+				},
+				{
+					"ENG_name": "Augury (Spirit Whispers)",
+					"name": "卜筮术（灵语）",
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "1"
+					},
+					"spell": {
+						"uuid": "{!@ $.feat[name=Gathered-Whispers;source=RHW].activities[name=Augury--Spirit-Whispers].spell.uuid.0}|{!@ $.feat[name=Gathered-Whispers;source=RHW].activities[name=Augury--Spirit-Whispers].spell.uuid.1}",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质",
+							"仪式"
+						],
+						"spellbook": true,
+						"level": 2
+					}
+				},
+				{
+					"ENG_name": "Unearthly Scream",
+					"name": "怪谲尖嚎",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "当你被一次攻击掷骰命中时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "@prof"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Modified AC",
+						"name": "调整后护甲等级",
+						"formula": "@attributes.ac.value + @prof"
+					}
+				},
+				{
+					"ENG_name": "Voices from Beyond",
+					"name": "悠远之声",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在D20检定中掷出1点后立即"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "gatheredWhispers"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Voices from Beyond (Deafened)",
+					"name": "悠远之声（耳聋）",
+					"foundryId": "gatheredWhispers",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"deafened"
+					],
+					"changes": [
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.dex.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.con.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.int.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.wis.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.cha.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					],
+					"descriptionEntries": [
+						"当你处于耳聋状态时，你在属性检定和攻击掷骰上具有劣势。",
+						"{@i 攻击掷骰的劣势未被自动化。}"
+					],
+					"showIcon": 2
 				}
 			],
 			"migrationVersion": 3,
@@ -1333,6 +1684,116 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Living Shadow",
+			"name": "活体幽影",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Mage Hand (Grasping Shadow)",
+					"name": "法师之手（攫影）",
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"spell": {
+						"uuid": "{!@ $.feat[name=Living-Shadow;source=RHW].activities[name=Mage-Hand--Grasping-Shadow].spell.uuid.0}|{!@ $.feat[name=Living-Shadow;source=RHW].activities[name=Mage-Hand--Grasping-Shadow].spell.uuid.1}",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质"
+						],
+						"spellbook": true
+					}
+				},
+				{
+					"ENG_name": "Lengthened Strike",
+					"name": "延伸打击",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "当你作为攻击或魔法动作的一部分进行近战攻击时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "@prof"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				},
+				{
+					"ENG_name": "Ominous Will",
+					"name": "不祥意志",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在D20检定中掷出1点后立即"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "livingShadow"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Ominous Will (Incapacitated)",
+					"name": "不祥意志（失能）",
+					"foundryId": "livingShadow",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"incapacitated"
+					],
+					"description": "豁免失败时，你将处于失能状态，直到你的下个回合开始。届时，你必须掷骰幽影意志表来决定你在该回合的行动。",
+					"showIcon": 2
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Lucky",
 			"name": "幸运",
 			"source": "PHB",
@@ -1465,6 +1926,102 @@
 							"value": 1
 						}
 					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Mist Walker",
+			"name": "迷雾行者",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Domain Traveler",
+					"name": "领域旅者",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "当你意图抵达某个领域而进入迷雾时"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"special": "包括自身"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "30"
+					},
+					"roll": {
+						"ENG_name": "Hours of Travel",
+						"name": "旅行小时数",
+						"visible": true,
+						"formula": "1d6"
+					}
+				},
+				{
+					"ENG_name": "Mist Walk",
+					"name": "迷雾行走",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "受到伤害或未能通过豁免检定以避开或结束擒抱或束缚状态"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "@prof"
+					},
+					"target": {
+						"affects": {
+							"type": "space",
+							"count": "1",
+							"special": "无人占据"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "15"
+					}
+				},
+				{
+					"ENG_name": "Poisoned Roots",
+					"name": "已被毒害的根源",
+					"type": "save",
+					"activation": {
+						"type": "shortRest",
+						"condition": "在你进行长休的地点10英里范围内"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					}
 				}
 			],
 			"migrationVersion": 3,
@@ -1842,6 +2399,104 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Second Skin",
+			"name": "第二形态",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Alter Self (Second Skin)",
+					"name": "变身术（第二形态）",
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						],
+						"max": "1"
+					},
+					"spell": {
+						"uuid": "{!@ $.feat[name=Second-Skin;source=RHW].activities[name=Alter-Self--Second-Skin].spell.uuid.0}|{!@ $.feat[name=Second-Skin;source=RHW].activities[name=Alter-Self--Second-Skin].spell.uuid.1}",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质",
+							"专注"
+						],
+						"spellbook": true,
+						"level": 2
+					}
+				},
+				{
+					"ENG_name": "Involuntary Change",
+					"name": "被迫改变",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在经历催化剂后的回合开始时"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"叉"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "secondSkin"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Involuntary Change (Stunned)",
+					"name": "被迫改变（震慑）",
+					"foundryId": "secondSkin",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 1,
+						"units": "回合",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"stunned"
+					],
+					"description": "若你已消耗该特性的使用次数，则你改为陷入&Reference[震慑 apply=false]状态，直到你的下一回合开始。",
+					"showIcon": 2
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Sentinel",
 			"name": "哨兵",
 			"source": "XPHB",
@@ -1859,6 +2514,40 @@
 							"value": 0
 						}
 					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Sharp Eye",
+			"name": "锐眼",
+			"source": "RHW",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"ENG_name": "Expend Use on Success",
+					"name": "成功时消耗使用次数",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "当你对特定动作拥有优势并成功时"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
 				}
 			],
 			"migrationVersion": 3,
@@ -2003,6 +2692,182 @@
 							"value": "+ 5"
 						}
 					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Survivor",
+			"name": "生还者",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Steel Yourself",
+					"name": "我心如铁",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "你在避免或结束魅惑或恐慌状态的豁免检定中失败。"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Save Bonus",
+						"name": "豁免加值",
+						"formula": "@prof"
+					}
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Symbiotic Being",
+			"name": "共生存在",
+			"source": "RHW",
+			"system": {
+				"uses.max": "@prof"
+			},
+			"activities": [
+				{
+					"ENG_name": "Sustained Symbiosis (Smallest HD)",
+					"name": "持续共生（最小生命骰）",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/dice/d4.svg",
+					"activation": {
+						"type": "reaction",
+						"condition": "你豁免检定失败"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最小"
+							},
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Save Bonus",
+						"name": "豁免加值",
+						"formula": "@consumed.hd"
+					}
+				},
+				{
+					"ENG_name": "Sustained Symbiosis (Largest HD)",
+					"name": "持续共生（最大生命骰）",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/dice/d12.svg",
+					"activation": {
+						"type": "reaction",
+						"condition": "你豁免检定失败"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"value": "1",
+								"target": "最大"
+							},
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Save Bonus",
+						"name": "豁免加值",
+						"formula": "@consumed.hd"
+					}
+				},
+				{
+					"ENG_name": "Symbiotic Agenda",
+					"name": "共生目标",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在D20检定中掷出1点后立即"
+					},
+					"duration": {
+						"units": "专长",
+						"value": "1",
+						"special": "1d12小时"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"叉"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "symbioticBeing"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Symbiotic Agenda (Charmed)",
+					"name": "共生目标（被魅惑）",
+					"foundryId": "symbioticBeing",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 43200,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"statuses": [
+						"charmed"
+					],
+					"description": "你获得魅惑状态，持续1d12小时。在被魅惑期间，你必须尝试遵循共生体的命令并推进其目标，具体由DM决定。每当你受到伤害时，你可以重复此豁免检定，成功则结束该效果。",
+					"showIcon": 2
 				}
 			],
 			"migrationVersion": 3,
@@ -2218,6 +3083,49 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Touch of Death",
+			"name": "往生咒",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Chill Touch (Death Touch)",
+					"name": "死亡之触 (Death Touch)",
+					"type": "cast",
+					"activation": {
+						"type": "action"
+					},
+					"spell": {
+						"uuid": "{!@ $.feat[name=Touch-of-Death;source=RHW].activities[name=Chill-Touch--Death-Touch].spell.uuid.0}|{!@ $.feat[name=Touch-of-Death;source=RHW].activities[name=Chill-Touch--Death-Touch].spell.uuid.1}",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质"
+						],
+						"spellbook": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Pull of the Grave",
+					"name": "坟冢之引",
+					"transfer": true,
+					"duration": {
+						"units": "秒"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.death.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Tough",
 			"name": "健壮",
 			"source": "PHB",
@@ -2391,6 +3299,158 @@
 							"mode": "ADD",
 							"value": 1
 						}
+					]
+				}
+			],
+			"migrationVersion": 3,
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Watchers",
+			"name": "守望",
+			"source": "RHW",
+			"activities": [
+				{
+					"ENG_name": "Heightened Suspicion",
+					"name": "疑神疑鬼",
+					"type": "utility",
+					"img": "systems/dnd5e/icons/svg/dice/d4.svg",
+					"activation": {
+						"type": "special",
+						"condition": "每当你采取搜索行动时"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"ENG_name": "Search Bonus",
+						"name": "搜索加值",
+						"formula": "1d4"
+					}
+				},
+				{
+					"ENG_name": "Incessant Watchers",
+					"name": "无终监视",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "在D20检定中掷出1点后立即"
+					},
+					"duration": {
+						"units": "分钟",
+						"value": "1"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"damage": {
+						"onSave": "half"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"formula": "13 + @prof"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "watchers"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Paranoia",
+					"name": "被害妄想",
+					"foundryId": "watchers",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 60,
+						"units": "秒",
+						"expiry": "回合开始"
+					},
+					"changes": [
+						{
+							"key": "system.abilities.str.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.dex.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.con.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.con.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.int.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.wis.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.cha.check.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.attributes.death.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.attributes.concentration.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					],
+					"descriptionEntries": [
+						"{@i 攻击掷骰的劣势未被自动化。}"
 					]
 				}
 			],

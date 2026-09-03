@@ -2027,6 +2027,64 @@
 			"migrationVersion": 3
 		},
 		{
+			"ENG_name": "Primal Awareness",
+			"name": "原始意识",
+			"source": "TCE",
+			"className": "游侠",
+			"classSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"additionalSpells": [
+					{
+						"ENG_name": "Primeval Awareness",
+						"name": "原初意识"
+					},
+					{
+						"ENG_name": "Primal Awareness",
+						"name": "原始意识",
+						"prepared": {
+							"3": {
+								"daily": {
+									"1": [
+										"动物交谈"
+									]
+								}
+							},
+							"5": {
+								"daily": {
+									"1": [
+										"野兽感官"
+									]
+								}
+							},
+							"9": {
+								"daily": {
+									"1": [
+										"植物交谈"
+									]
+								}
+							},
+							"13": {
+								"daily": {
+									"1": [
+										"生物定位术"
+									]
+								}
+							},
+							"17": {
+								"daily": {
+									"1": [
+										"问道自然"
+									]
+								}
+							}
+						}
+					}
+				]
+			},
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Favored Enemy and Natural Explorer improvements",
 			"name": "增加宿敌及偏好环境",
 			"source": "PHB",
@@ -2974,7 +3032,7 @@
 								"type": "itemUses",
 								"value": "-@scale.barbarian.rages",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "狂暴|野蛮人|XPHB|1"
 								}
 							}
@@ -3133,7 +3191,7 @@
 								"type": "itemUses",
 								"value": "-1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							},
@@ -3764,7 +3822,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "神圣干预|牧师|XPHB|10"
 								}
 							}
@@ -3913,7 +3971,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -4059,7 +4117,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							},
@@ -4091,7 +4149,7 @@
 								"type": "itemUses",
 								"value": "-1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							},
@@ -4195,7 +4253,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								},
 								"scaling": {
@@ -4237,7 +4295,7 @@
 								"type": "itemUses",
 								"value": "-1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -4351,7 +4409,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "回气|战士|XPHB|1"
 								}
 							}
@@ -5861,7 +5919,7 @@
 								"type": "itemUses",
 								"value": "5 * @scaling",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "圣疗|圣武士|XPHB|1"
 								}
 							}
@@ -7066,7 +7124,7 @@
 								"type": "itemUses",
 								"value": "-1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "先天术法|术士|XPHB|1"
 								}
 							}
@@ -7211,7 +7269,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "秘法回流|魔契师|XPHB|2"
 								}
 							},
@@ -7714,8 +7772,8 @@
 			"effects": [
 				{
 					"ENG_name": "Death Burst Improvement",
-					"foundryId": "reanimatedCompan",
 					"name": "自爆强化",
+					"foundryId": "reanimatedCompan",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -12818,7 +12876,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "狂暴|野蛮人|XPHB|1"
 								}
 							},
@@ -13547,7 +13605,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "狂暴|野蛮人|XPHB|1"
 								}
 							},
@@ -13632,7 +13690,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "狂暴|野蛮人|XPHB|1"
 								}
 							}
@@ -13906,8 +13964,8 @@
 			"effects": [
 				{
 					"ENG_name": "Half Cover (Spirit Guardians)",
-					"foundryId": "empoweredChannel",
 					"name": "半身掩护（灵体卫士）",
+					"foundryId": "empoweredChannel",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -13999,7 +14057,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14043,7 +14101,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14118,7 +14176,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14171,7 +14229,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14232,7 +14290,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14478,7 +14536,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14525,7 +14583,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "吟游诗人激励|吟游诗人|XPHB|1"
 								}
 							}
@@ -14738,8 +14796,8 @@
 			"effects": [
 				{
 					"ENG_name": "Cursed (Path to the Grave)",
-					"foundryId": "pathToTheGrave",
 					"name": "诅咒（往墓之途）",
+					"foundryId": "pathToTheGrave",
 					"duration": {
 						"value": 1,
 						"units": "回合",
@@ -15713,7 +15771,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -15983,7 +16041,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -16121,7 +16179,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -16349,7 +16407,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -16482,7 +16540,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -16585,7 +16643,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -16653,7 +16711,7 @@
 								"type": "itemUses",
 								"value": "2",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -16871,8 +16929,8 @@
 			"effects": [
 				{
 					"ENG_name": "Dragon Form (Twinkling)",
-					"foundryId": "dragon1",
 					"name": "龙之形（闪烁）",
+					"foundryId": "dragon1",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -16987,7 +17045,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "职业特性",
+									"prop": "classFeature",
 									"uid": "荒野形态|德鲁伊|XPHB|2"
 								}
 							}
@@ -17265,7 +17323,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "卓越战技|战士|XPHB|战斗大师|XPHB|3"
 								}
 							},
@@ -17526,7 +17584,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|战士|XPHB|灵能武士|XPHB|3"
 								}
 							}
@@ -17605,7 +17663,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|战士|XPHB|灵能武士|XPHB|3"
 								}
 							}
@@ -17701,7 +17759,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|战士|XPHB|灵能武士|XPHB|3"
 								}
 							}
@@ -17787,7 +17845,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|战士|XPHB|灵能武士|XPHB|3"
 								}
 							}
@@ -17905,7 +17963,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|战士|XPHB|灵能武士|XPHB|3"
 								}
 							}
@@ -17974,7 +18032,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|战士|XPHB|灵能武士|XPHB|3"
 								}
 							},
@@ -20374,8 +20432,8 @@
 				},
 				{
 					"ENG_name": "Frightened (Menacing Aura)",
-					"foundryId": "wrathOfTheWild1",
 					"name": "恐慌（威慑灵光）",
+					"foundryId": "wrathOfTheWild1",
 					"duration": {
 						"value": 1,
 						"units": "回合",
@@ -22146,7 +22204,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|游荡者|XPHB|魂刃|XPHB|3"
 								}
 							}
@@ -22270,7 +22328,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|游荡者|XPHB|魂刃|XPHB|3"
 								}
 							}
@@ -22336,7 +22394,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|游荡者|XPHB|魂刃|XPHB|3"
 								}
 							}
@@ -22374,7 +22432,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|游荡者|XPHB|魂刃|XPHB|3"
 								}
 							}
@@ -22461,7 +22519,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|游荡者|XPHB|魂刃|XPHB|3"
 								}
 							}
@@ -22561,7 +22619,7 @@
 								"type": "itemUses",
 								"value": "3",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "灵能力量|游荡者|XPHB|魂刃|XPHB|3"
 								}
 							}
@@ -24084,8 +24142,8 @@
 				},
 				{
 					"ENG_name": "Form of Dread (Necrotic Husk)",
-					"foundryId": "formOfDread1",
 					"name": "战栗形态（死疽躯壳）",
+					"foundryId": "formOfDread1",
 					"disabled": true,
 					"transfer": true,
 					"duration": {
@@ -25455,7 +25513,7 @@
 								"type": "itemUses",
 								"value": "1",
 								"target": {
-									"prop": "子职业特性",
+									"prop": "subclassFeature",
 									"uid": "奥术守御|法师|XPHB|防护师|XPHB|3"
 								},
 								"scaling": {
