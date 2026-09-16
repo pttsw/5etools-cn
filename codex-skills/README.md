@@ -2,11 +2,13 @@
 
 这个目录放的是我给当前仓库准备的本地 Codex skill 和测试素材。
 
-当前主要 skill：
+当前 skill：
 - `homebrew-conversion-audit`
+- `5etools-json-translate`：按单个 `data-bak` JSON 的 Git diff 增量更新对应的 `data` 中文 JSON，并执行构建与数据测试。
 
 对应路径：
 - [homebrew-conversion-audit/SKILL.md](/data/5etools-mirror-2.github.io/codex-skills/homebrew-conversion-audit/SKILL.md:1)
+- [5etools-json-translate/SKILL.md](/data/5etools-mirror-2.github.io/codex-skills/5etools-json-translate/SKILL.md:1)
 
 ## 这是什么
 
