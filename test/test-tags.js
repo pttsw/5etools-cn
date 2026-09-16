@@ -60,12 +60,19 @@ const WALKER = MiscUtil.getWalker({
 	isNoModification: true,
 });
 
+function addTagStringPrimitiveHandler (parsedJsonChecker, handler) {
+	parsedJsonChecker.addPrimitiveHandler("string", (str, meta) => {
+		if (meta.lastKey === "ENG_name") return;
+		return handler(str, meta);
+	});
+}
+
 class LinkCheck extends DataTesterBase {
 	static _RE_TAG_BLOCKLIST = new Set(["quickref"]);
 	static _RE = RegExp(`{@(${Renderer.tag.TAGS.filter(it => it.defaultSource).map(it => it.tagName).filter(tag => !LinkCheck._RE_TAG_BLOCKLIST.has(tag)).join("|")}) ([^}]*?)}`, "g");
 
 	registerParsedPrimitiveHandlers (parsedJsonChecker) {
-		parsedJsonChecker.addPrimitiveHandler("string", this._checkString.bind(this));
+		addTagStringPrimitiveHandler(parsedJsonChecker, this._checkString.bind(this));
 		parsedJsonChecker.addPrimitiveHandler("object", this._checkObject.bind(this));
 	}
 
@@ -146,7 +153,7 @@ class LinkCheck extends DataTesterBase {
 
 class FilterCheck extends DataTesterBase {
 	registerParsedPrimitiveHandlers (parsedJsonChecker) {
-		parsedJsonChecker.addPrimitiveHandler("string", this._checkString.bind(this));
+		addTagStringPrimitiveHandler(parsedJsonChecker, this._checkString.bind(this));
 	}
 
 	_checkString (str, {filePath}) {
@@ -196,7 +203,7 @@ class FilterCheck extends DataTesterBase {
 
 class ScaleDiceCheck extends DataTesterBase {
 	registerParsedPrimitiveHandlers (parsedJsonChecker) {
-		parsedJsonChecker.addPrimitiveHandler("string", this._checkString.bind(this));
+		addTagStringPrimitiveHandler(parsedJsonChecker, this._checkString.bind(this));
 	}
 
 	_checkString (str, {filePath}) {
@@ -215,7 +222,7 @@ class ScaleDiceCheck extends DataTesterBase {
 					return;
 				}
 				if (range.size < 2) this._addMessage(`Invalid scaling dice in file ${filePath}: range "${spl[1]}" has too few entries! Should be 2 or more.\n`);
-				if (spl[3] && spl[3] !== "psi") this._addMessage(`Unknown mode "${spl[4]}".\n`);
+				if (spl[3] && spl[3].toLowerCase() !== "psi") this._addMessage(`Unknown mode "${spl[3]}".\n`);
 			}
 			return m0;
 		});
@@ -226,7 +233,7 @@ class StripTagTest extends DataTesterBase {
 	_seenErrors = new Set();
 
 	registerParsedPrimitiveHandlers (parsedJsonChecker) {
-		parsedJsonChecker.addPrimitiveHandler("string", this._checkString.bind(this));
+		addTagStringPrimitiveHandler(parsedJsonChecker, this._checkString.bind(this));
 	}
 
 	_checkString (str, {filePath}) {
@@ -243,7 +250,7 @@ class StripTagTest extends DataTesterBase {
 
 class StandaloneTagTest extends DataTesterBase {
 	registerParsedPrimitiveHandlers (parsedJsonChecker) {
-		parsedJsonChecker.addPrimitiveHandler("string", this._checkString.bind(this));
+		addTagStringPrimitiveHandler(parsedJsonChecker, this._checkString.bind(this));
 	}
 
 	_checkString (str, {filePath}) {
@@ -821,7 +828,7 @@ class AdventureBookTagCheck extends DataTesterBase {
 	}
 
 	registerParsedPrimitiveHandlers (parsedJsonChecker) {
-		parsedJsonChecker.addPrimitiveHandler("string", this._checkString.bind(this));
+		addTagStringPrimitiveHandler(parsedJsonChecker, this._checkString.bind(this));
 	}
 
 	static _ALLOWED_SUB_TAGS = new Set([
