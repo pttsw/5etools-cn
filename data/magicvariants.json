@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"magicvariant"
+		]
+	},
 	"magicvariant": [
 		{
 			"ENG_name": "+1 Ammunition",
@@ -1070,6 +1075,37 @@
 			}
 		},
 		{
+			"ENG_name": "All-Seeing Blade of the Guardian",
+			"name": "全视卫护之刃",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Resistant Blade of the Guardian",
+				"name": "抗性卫护之刃",
+				"source": "AU",
+				"_mod": {
+					"inherits.entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "All-Seeing",
+							"name": "全视",
+							"type": "entries",
+							"entries": [
+								"DM决定让武器最后再进化一次，成为一件传说物品，并获得全视词条。DM认为这代表这名圣武士充满戒备的守护堪称典范。"
+							]
+						}
+					},
+					"inherits.namePrefix": {
+						"mode": "setProp",
+						"value": "全视卫护"
+					},
+					"inherits.rarity": {
+						"mode": "setProp",
+						"value": "传说"
+					}
+				}
+			}
+		},
+		{
 			"ENG_name": "Ammunition of Slaying",
 			"name": "屠杀弹药",
 			"type": "GV|XDMG",
@@ -1210,6 +1246,82 @@
 					}
 				}
 			}
+		},
+		{
+			"ENG_name": "Aquatic Wave-Swept Weapon",
+			"name": "水栖逐浪武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"ENG_name": "Greatsword",
+					"name": "巨剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Longsword",
+					"name": "长剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Rapier",
+					"name": "刺剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Scimitar",
+					"name": "弯刀",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Shortsword",
+					"name": "短剑",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "水栖逐浪",
+				"source": "AU",
+				"page": 129,
+				"rarity": "rare",
+				"reqAttune": true,
+				"property": [
+					"Evo|AU"
+				],
+				"bonusWeapon": "+2",
+				"modifySpeed": {
+					"static": {
+						"swim": 30
+					}
+				},
+				"entries": [
+					"这件武器上布满海洋主题的图案，剑身上的波浪蚀刻和皮革护手上绣着的海怪风图案均在体现这一主题。",
+					{
+						"ENG_name": "Barnacled",
+						"name": "藤壶",
+						"type": "entries",
+						"entries": [
+							"这把武器的剑格和剑身蚀刻的平坦侧面附着藤壶。",
+							"你用此魔法武器进行的攻击检定和伤害掷骰获得+1加值。持握此武器期间，你能以{@action 魔法|XPHB}动作触碰至多一加仑的液体并为之注入盐分，例如，你可以将淡水转化为盐水。"
+						]
+					},
+					{
+						"ENG_name": "Aquatic",
+						"name": "水栖",
+						"type": "entries",
+						"entries": [
+							"这把武器刃面的波浪蚀刻散发着光芒，发出半径5尺的{@variantrule 明亮光照|XPHB}以及额外5尺的{@variantrule 微光光照|XPHB}。",
+							"你用此魔法武器进行攻击检定和伤害掷骰的加值提升至+2。持握此武器期间，你可以在水下呼吸，且你具有30尺{@variantrule 游泳速度|XPHB}。"
+						]
+					}
+				],
+				"light": [
+					{
+						"bright": 5,
+						"dim": 10
+					}
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Armblade",
@@ -2270,6 +2382,92 @@
 			}
 		},
 		{
+			"ENG_name": "Ascendant Wave-Swept Weapon",
+			"name": "腾跃逐浪武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"ENG_name": "Greatsword",
+					"name": "巨剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Longsword",
+					"name": "长剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Rapier",
+					"name": "刺剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Scimitar",
+					"name": "弯刀",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Shortsword",
+					"name": "短剑",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "腾跃逐浪",
+				"source": "AU",
+				"page": 129,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"property": [
+					"Evo|AU"
+				],
+				"bonusWeapon": "+3",
+				"modifySpeed": {
+					"static": {
+						"fly": 30,
+						"swim": 30
+					}
+				},
+				"entries": [
+					"这件武器上布满海洋主题的图案，剑身上的波浪蚀刻和皮革护手上绣着的海怪风图案均在体现这一主题。",
+					{
+						"ENG_name": "Barnacled",
+						"name": "藤壶",
+						"type": "entries",
+						"entries": [
+							"这把武器的剑格和剑身蚀刻的平坦侧面附着藤壶。",
+							"你用此魔法武器进行的攻击检定和伤害掷骰获得+1加值。持握此武器期间，你能以{@action 魔法|XPHB}动作触碰至多一加仑的液体并为之注入盐分，例如，你可以将淡水转化为盐水。"
+						]
+					},
+					{
+						"ENG_name": "Aquatic",
+						"name": "水栖",
+						"type": "entries",
+						"entries": [
+							"这把武器刃面的波浪蚀刻散发着光芒，发出半径5尺的{@variantrule 明亮光照|XPHB}以及额外5尺的{@variantrule 微光光照|XPHB}。",
+							"你用此魔法武器进行攻击检定和伤害掷骰的加值提升至+2。持握此武器期间，你可以在水下呼吸，且你具有30尺{@variantrule 游泳速度|XPHB}。"
+						]
+					},
+					{
+						"ENG_name": "Ascendant",
+						"name": "腾跃",
+						"type": "entries",
+						"entries": [
+							"这把武器护手雕饰的海怪图案镶嵌着各色宝石碎片。",
+							"你用此魔法武器进行攻击检定和伤害掷骰的加值提升至+3。持握此武器期间，你具有30尺{@variantrule 飞行速度|XPHB}；当你使用该{@variantrule 飞行速度|XPHB}时，咸味的海风托举你在空中穿梭。"
+						]
+					}
+				],
+				"light": [
+					{
+						"bright": 5,
+						"dim": 10
+					}
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Barding",
 			"name": "具装",
 			"type": "GV|DMG",
@@ -2296,6 +2494,62 @@
 					"具装是一种用以保护动物的头、颈、胸、身的护甲。\"护甲表\"中的任何护甲都可加工成具装，其价格为同款类人生物护甲的四倍，重量则为两倍。"
 				]
 			}
+		},
+		{
+			"ENG_name": "Barnacled Wave-Swept Weapon",
+			"name": "藤壶逐浪武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"ENG_name": "Greatsword",
+					"name": "巨剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Longsword",
+					"name": "长剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Rapier",
+					"name": "刺剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Scimitar",
+					"name": "弯刀",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Shortsword",
+					"name": "短剑",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "藤壶逐浪",
+				"source": "AU",
+				"page": 129,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"property": [
+					"Evo|AU"
+				],
+				"bonusWeapon": "+1",
+				"entries": [
+					"这件武器上布满海洋主题的图案，剑身上的波浪蚀刻和皮革护手上绣着的海怪风图案均在体现这一主题。",
+					{
+						"ENG_name": "Barnacled",
+						"name": "藤壶",
+						"type": "entries",
+						"entries": [
+							"这把武器的剑格和剑身蚀刻的平坦侧面附着藤壶。",
+							"你用此魔法武器进行的攻击检定和伤害掷骰获得+1加值。持握此武器期间，你能以{@action 魔法|XPHB}动作触碰至多一加仑的液体并为之注入盐分，例如，你可以将淡水转化为盐水。"
+						]
+					}
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Berserker Axe",
@@ -2957,6 +3211,29 @@
 							"这个物品具有腐蚀性。详见\"{@adventure 地狱物品腐化|CoA|16|地狱物品腐化}\"部分。"
 						]
 					}
+				]
+			}
+		},
+		{
+			"ENG_name": "Dispelling Ammunition",
+			"name": "解魔弹药",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"namePrefix": "解魔",
+				"source": "AU",
+				"page": 118,
+				"rarity": "uncommon",
+				"entries": [
+					"当目标受到这枚魔法弹药造成的伤害时，目标身上任何持续生效的三环或更低环阶的法术都会结束。一旦该弹药对目标造成伤害，其便不再具有魔法。"
 				]
 			}
 		},
@@ -4464,6 +4741,29 @@
 			}
 		},
 		{
+			"ENG_name": "Goading Ammunition",
+			"name": "挑衅弹药",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "A|XPHB"
+				},
+				{
+					"type": "AF|XDMG"
+				}
+			],
+			"ammo": true,
+			"inherits": {
+				"namePrefix": "挑衅",
+				"source": "AU",
+				"page": 119,
+				"rarity": "uncommon",
+				"entries": [
+					"如果这枚魔法弹药命中一个生物并造成伤害，则目标需进行一次{@dc 13}的魅力豁免。若豁免失败，则目标在其下一回合开始前无法执行{@variantrule 反应|XPHB}，只能气急败坏地咆哮和暴怒。弹药一旦命中目标，便不再具有魔法。"
+				]
+			}
+		},
+		{
 			"ENG_name": "Hammer of Thunderbolts",
 			"name": "雷神之锤",
 			"type": "GV|XDMG",
@@ -4928,6 +5228,28 @@
 				"entries": [
 					"穿戴这件护甲时，你有{=bonusAc}的护甲等级加值，它微微发光。",
 					"如果你在穿戴这套盔甲时死亡，它会被摧毁，并且在你周围30英尺内的每一个天界生物、妖精和恶魔都必须通过一次{@dc 15}魅力豁免检定，否则将被放逐回其存在的本源位面，除非它们已经在那里。"
+				]
+			}
+		},
+		{
+			"ENG_name": "Life-Sapping Blade",
+			"name": "汲命之刃",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "martial",
+					"property": "F|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "汲命",
+				"source": "AUD",
+				"rarity": "rare",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"这种细长的黑色铁刃深受赛尔刺客和间谍的欢迎。",
+					"你使用这把魔法武器进行的攻击检定和伤害掷骰获得+1加值。当你使用该武器进行攻击检定命中时，目标受到额外{@damage 2d4}暗蚀伤害，且直至其下一回合结束前都无法恢复{@variantrule 生命值|XPHB}。如果一个生物因使用该武器的攻击而降至0{@variantrule 生命值|XPHB}，该生物立即死亡，且只能通过{@spell 复生术|XPHB}或{@spell 完全复生术|XPHB}法术复活。"
 				]
 			}
 		},
@@ -5568,7 +5890,7 @@
 						],
 						"colLabels": [
 							"1d100",
-							"属性"
+							"词条"
 						],
 						"rows": [
 							[
@@ -6159,6 +6481,62 @@
 			}
 		},
 		{
+			"ENG_name": "Regal Breastplate of the Tyrant",
+			"name": "君威暴君胸甲",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Armor of Psychic Resistance",
+				"name": "心灵抗性护甲",
+				"source": "XDMG",
+				"_mod": {
+					"inherits.basicRules2024": "remove",
+					"inherits.entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Regal",
+							"name": "君威",
+							"type": "entries",
+							"entries": [
+								"当角色们前往一处古战场时，DM决定让护甲进化成为一件极珍稀物品并获得君威词条。角色们的探索过程中，他们会发现一些与护甲图案吻合的徽记。"
+							]
+						}
+					},
+					"inherits.namePrefix": {
+						"mode": "setProp",
+						"value": "君威暴君"
+					},
+					"inherits.nameSuffix": {
+						"mode": "setProp",
+						"value": ""
+					},
+					"inherits.page": {
+						"mode": "setProp",
+						"value": 132
+					},
+					"inherits.property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"inherits.rarity": {
+						"mode": "setProp",
+						"value": "极珍稀"
+					},
+					"inherits.source": {
+						"mode": "setProp",
+						"value": "AU"
+					},
+					"inherits.srd52": "remove"
+				}
+			},
+			"requires": [
+				{
+					"ENG_name": "Breastplate",
+					"name": "胸甲",
+					"source": "XPHB"
+				}
+			]
+		},
+		{
 			"ENG_name": "Repeating Shot",
 			"name": "连射武器",
 			"type": "GV|XDMG",
@@ -6186,6 +6564,41 @@
 				"classFeatures": [
 					"仿制魔法物品|奇械师|efa|2|efa"
 				]
+			}
+		},
+		{
+			"ENG_name": "Resistant Blade of the Guardian",
+			"name": "抗性卫护之刃",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Studious Blade of the Guardian",
+				"name": "博识卫护之刃",
+				"source": "AU",
+				"_mod": {
+					"inherits.entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Resistant",
+							"name": "抗性",
+							"type": "entries",
+							"entries": [
+								"当这名圣武士挺身保护她的同伴，对抗炼狱众敌之时，DM决定让武器再次进化，成为极珍稀物品并获得抗性词条。DM选择赋予火焰伤害{@variantrule 抗性|XPHB}，因为这恰好契合主题。"
+							]
+						}
+					},
+					"inherits.namePrefix": {
+						"mode": "setProp",
+						"value": "抗性卫护"
+					},
+					"inherits.rarity": {
+						"mode": "setProp",
+						"value": "极珍稀"
+					},
+					"inherits.resist": {
+						"mode": "appendIfNotExistsArr",
+						"items": "火焰"
+					}
+				}
 			}
 		},
 		{
@@ -6506,6 +6919,99 @@
 			}
 		},
 		{
+			"ENG_name": "Sniper's Bracelet",
+			"name": "狙击者手镯",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"ENG_name": "Heavy Crossbow",
+					"name": "重弩",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Light Crossbow",
+					"name": "轻弩",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Longbow",
+					"name": "长弓",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Musket",
+					"name": "滑膛枪",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Pistol",
+					"name": "手枪",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Shortbow",
+					"name": "短弓",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "狙击者手镯",
+				"source": "AUD",
+				"rarity": "common",
+				"reqAttune": true,
+				"entries": [
+					"触碰该武器期间，你可以执行{@action 魔法|XPHB}动作，将其变形成一只手镯，或变回其武器形态。处于手镯形态时，其无法被用于攻击。",
+					"当该武器处于武器形态且缺少弹药时，它会自行生成弹药：当你用它进行远程攻击检定时，自动创造一枚魔法弹药。该弹药在命中或失手目标后的一瞬消失。"
+				]
+			}
+		},
+		{
+			"ENG_name": "Spell-Fueling Armor",
+			"name": "燃法护甲",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				},
+				{
+					"type": "HA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "燃法",
+				"source": "AUD",
+				"rarity": "very rare",
+				"reqAttune": "由施法者",
+				"reqAttuneTags": [
+					{
+						"spellcasting": true
+					}
+				],
+				"entries": [
+					"刻有奥术符文的沟槽在这件护甲上纵横交错，其深受会施法的赛尔骑士青睐。",
+					{
+						"ENG_name": "Potent Spellcasting",
+						"name": "强力施法",
+						"type": "entries",
+						"entries": [
+							"穿着此护甲期间，当你为法术掷伤害时，你可以将伤害骰上的每个1视为2。"
+						]
+					},
+					{
+						"ENG_name": "Resurgent Power",
+						"name": "复苏之力",
+						"type": "entries",
+						"entries": [
+							"穿着此护甲期间，当你完成一次{@variantrule 短休|XPHB}时，你可以选择恢复一定数量的已消耗法术位。这些法术位的环阶总和必须等于或小于3。例如，你可以恢复一个三环法术位或三个一环法术位。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+						]
+					}
+				]
+			}
+		},
+		{
 			"ENG_name": "Starshot Crossbow",
 			"name": "射星弩",
 			"type": "GV|DMG",
@@ -6590,6 +7096,64 @@
 			}
 		},
 		{
+			"ENG_name": "Studious Blade of the Guardian",
+			"name": "博识卫护之刃",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Weapon of Warning",
+				"name": "警戒武器",
+				"source": "XDMG",
+				"_mod": {
+					"inherits.classFeatures": "remove",
+					"inherits.entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Studious",
+							"name": "博识",
+							"type": "entries",
+							"entries": [
+								"DM决定让武器进化为珍稀物品，并赋予其博识词条，因为这名圣武士提升了调查技能以便更好地应对潜在危险。"
+							]
+						}
+					},
+					"inherits.lootTables": "remove",
+					"inherits.namePrefix": {
+						"mode": "setProp",
+						"value": "博识卫护"
+					},
+					"inherits.nameSuffix": {
+						"mode": "setProp",
+						"value": ""
+					},
+					"inherits.page": {
+						"mode": "setProp",
+						"value": 132
+					},
+					"inherits.property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"inherits.rarity": {
+						"mode": "setProp",
+						"value": "珍稀"
+					},
+					"inherits.source": {
+						"mode": "setProp",
+						"value": "AU"
+					},
+					"inherits.srd52": "remove"
+				}
+			},
+			"requires": [
+				{
+					"ENG_name": "Greatsword",
+					"name": "巨剑",
+					"source": "XPHB"
+				}
+			],
+			"hasFluffImages": false
+		},
+		{
 			"ENG_name": "Stygian Spear",
 			"name": "冥河之矛",
 			"type": "GV|DMG",
@@ -6627,6 +7191,37 @@
 						]
 					}
 				]
+			}
+		},
+		{
+			"ENG_name": "Subjugating Breastplate of the Tyrant",
+			"name": "支配暴君胸甲",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Regal Breastplate of the Tyrant",
+				"name": "君威暴君胸甲",
+				"source": "AU",
+				"_mod": {
+					"inherits.entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Subjugating",
+							"name": "支配",
+							"type": "entries",
+							"entries": [
+								"角色们的调查将他们引向一座古老的城堡。在那里，他们遭遇了一名古老残忍的暴君，他身披战袍，其上的纹样与护甲相符。角色们依靠战士的英勇表现击败了这名暴君。DM决定让护甲进化至传说并获得支配词条。"
+							]
+						}
+					},
+					"inherits.namePrefix": {
+						"mode": "setProp",
+						"value": "支配暴君"
+					},
+					"inherits.rarity": {
+						"mode": "setProp",
+						"value": "传说"
+					}
+				}
 			}
 		},
 		{
@@ -7124,6 +7719,195 @@
 				]
 			},
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Thayan Sword",
+			"name": "赛尔之剑",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"ENG_name": "Greatsword",
+					"name": "巨剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Longsword",
+					"name": "长剑",
+					"source": "XPHB"
+				},
+				{
+					"ENG_name": "Scimitar",
+					"name": "弯刀",
+					"source": "XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "赛尔",
+				"source": "AUD",
+				"rarity": "rare",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"recharge": "拂晓",
+				"rechargeAmount": "{@dice 1d4}",
+				"charges": 4,
+				"entries": [
+					"赛尔之剑常在优秀的赛尔骑士完成训练时被授予他们。",
+					"你以此魔法武器进行的攻击检定和伤害掷骰获得+1加值。",
+					{
+						"ENG_name": "Knight of the Arcane",
+						"name": "奥法骑士",
+						"type": "entries",
+						"entries": [
+							"该剑具有4充能，并在每日黎明时恢复{@dice 1d4}充能。持握该剑期间，你可以消耗1充能施展以下法术之一（豁免{@dc 15}）：",
+							{
+								"type": "list",
+								"items": [
+									"{@spell 炽焰斩|XPHB}",
+									"{@spell 雷鸣斩|XPHB}",
+									"{@spell 激愤斩|XPHB}"
+								]
+							}
+						]
+					},
+					{
+						"ENG_name": "Resurgent Warrior",
+						"name": "复苏战士",
+						"type": "entries",
+						"entries": [
+							"当你持握该剑且{@variantrule 生命值|XPHB}降至0但未立即死亡时，你可以改为降至1点{@variantrule 生命值|XPHB|生命值}。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+						]
+					}
+				],
+				"attachedSpells": {
+					"charges": {
+						"1": [
+							"炽焰斩|xphb",
+							"雷鸣斩|xphb",
+							"激愤斩|xphb"
+						]
+					}
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Tramontane Armor",
+			"name": "越山护甲",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"type": "LA|XPHB"
+				},
+				{
+					"type": "MA|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "越山",
+				"source": "AU",
+				"page": 124,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"bonusAc": "+1",
+				"entries": [
+					"着装此护甲期间，你的{@variantrule 护甲等级|XPHB}获得{=bonusAc}加值。护甲被施加了魔法，使其看起来像是一件学者或祭司的长袍。",
+					{
+						"ENG_name": "Mountain Walker",
+						"name": "山地行者",
+						"type": "entries",
+						"entries": [
+							"着装此护甲期间，由厚雪、冰层、碎石或灌木丛构成的{@variantrule 困难地形|XPHB}不会消耗你额外的移动力。"
+						]
+					},
+					{
+						"ENG_name": "Grasping Tendrils",
+						"name": "擒抱触须",
+						"type": "entries",
+						"entries": [
+							"你可以执行{@action 魔法|XPHB}动作激活该护甲，使其袖口和衣摆的边缘延伸出丝带般的触须。",
+							"当该护甲处于激活期间，你可以使用{@variantrule 附赠动作|XPHB}迫使源自你的20尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内你选择的每个生物进行一次{@dc 15}的力量豁免。若豁免失败，则该生物陷入{@condition 受擒|XPHB}状态（挣脱{@dc 15}），并被向你直线拉近至多20尺。",
+							"护甲会保持激活1分钟，或者直至你执行另一个{@action 魔法|XPHB}动作将其停用。一旦你激活了护甲，则直至下一黎明前，都无法再次激活。"
+						]
+					}
+				]
+			}
+		},
+		{
+			"ENG_name": "Trick Weapon",
+			"name": "诡计武器",
+			"type": "GV|XDMG",
+			"requires": [
+				{
+					"weaponCategory": "simple",
+					"type": "M|XPHB"
+				},
+				{
+					"weaponCategory": "martial",
+					"type": "M|XPHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "诡计",
+				"source": "AUD",
+				"rarity": "common",
+				"entries": [
+					"触碰该武器期间，你可以执行{@action 魔法|XPHB}动作，将其变形成一件寻常物品，或变回其武器形态。变形为寻常物品期间，其无法被用于攻击。",
+					"不同的诡计武器会变形为不同的物品。由DM选择该寻常物品，或通过掷骰下表随机决定。",
+					{
+						"type": "table",
+						"colStyles": [
+							"col-2 text-center",
+							"col-10"
+						],
+						"colLabels": [
+							"{@dice 1d10}",
+							"该武器变形为......"
+						],
+						"rows": [
+							[
+								"1",
+								"手镯"
+							],
+							[
+								"2",
+								"梳子"
+							],
+							[
+								"3",
+								"拐杖"
+							],
+							[
+								"4",
+								"假币"
+							],
+							[
+								"5",
+								"发簪"
+							],
+							[
+								"6",
+								"响铃"
+							],
+							[
+								"7",
+								"吊坠项链"
+							],
+							[
+								"8",
+								"纸牌"
+							],
+							[
+								"9",
+								"羽毛笔"
+							],
+							[
+								"10",
+								"勺子"
+							]
+						]
+					}
+				]
+			}
 		},
 		{
 			"ENG_name": "Vicious +1 Weapon",

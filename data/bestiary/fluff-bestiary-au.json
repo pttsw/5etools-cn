@@ -1,0 +1,930 @@
+{
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
+	"monsterFluff": [
+		{
+			"ENG_name": "Abjurer Archmage",
+			"name": "防护大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"防护大法师能够创造强大的魔法结界。他们的魔法可以隔离危险的敌人，甚至擅长瓦解其他大法师的法术。尽管专注于防护魔法，防护大法师依然是可怕的进攻型战斗者。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Abjurer Archmage.webp"
+					},
+					"width": 561,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Archmages",
+			"name": "大法师",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"尽管所有大法师都掌握了不可思议的魔法力量，但有些人会专精于特定的魔法学派，在该领域将自身能力推向更高的境界。这些大法师的法术书中装满了其偏好学派的法术，并发展出独特的魔法技艺。"
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"庞大而专精的魔法造诣本身并非终点。真正重要的，是如何运用自己的力量。"
+							],
+							"by": "艾拉斯卓"
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Archmages.webp"
+					},
+					"title": "来自各魔法学派的大法师：1.咒法大法师 2.防护大法师 3.死灵大法师 4.幻术大法师 5.预言大法师 6.惑控大法师 7.变化大法师 8.塑能大法师",
+					"credit": "Anna Podedworna",
+					"width": 1700,
+					"height": 1059
+				}
+			]
+		},
+		{
+			"ENG_name": "Baelnorn",
+			"name": "Baelnorn",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"{@creature Baelnorn|AU|Baelnorns}是宝藏与学识的不死守卫者。每一名Baelnorn都曾是一个活人，为保存自身存在而经历了非邪恶的过程\u2014\u2014其中涉及神祇的祝福或古老的仪式。许多Baelnorn生前是精灵。事实上，远古精灵正是最早发现成为Baelnorn之秘诀的族群。",
+						"{@creature Baelnorn|AU|Baelnorns}通常致力于守护宝库、城堡或废墟。在被遗忘的国度，精灵Baelnorn守护着迷斯卓诺的遗址\u2014\u2014那座废弃的古城曾是一座魔法都会。许多Baelnorn喜欢研习早已失传于在世学者的古代传说。由于只有最坚定不移者才能承受转变为Baelnorn的过程，Baelnorn往往为他们获得的永生而自豪。",
+						"与巫妖不同，Baelnorn几乎从不使用灵魂罐，不过某些与圣地相关的Baelnorn可能会将其灵魂安置于一件圣物之中。许多Baelnorn会创造魔法克隆体，一旦躯体被毁，其灵魂便可栖居其中。",
+						"新近转生的Baelnorn外貌与生前几乎无异，只是双眼泛着白光。他们常常继续扮演守护者、贤者或教师的旧日角色。Baelnorn的毛发与血肉会在漫长岁月中逐渐消逝；最古老者形同身披轻纱华服的庄严骷髅。",
+						"{@creature Baelnorn|AU|Baelnorns}会花费多年研读奥术典籍以顺利完成向不死生命的转变，即使转变之时并非法师者，通常也会在漫长存在中的大部分时间里钻研魔法学识。因此，Baelnorn能够施展强大的法术。"
+					]
+				},
+				{
+					"type": "section",
+					"entries": [
+						{
+							"ENG_name": "Baelnorn Lairs",
+							"name": "Baelnorn巢穴",
+							"type": "entries",
+							"entries": [
+								"大多数Baelnorn守护着具有历史或精神意义的场所，即使活人中早已无人记得这些地方。少数Baelnorn转而守护重大的秘密、神器或举足轻重的家族血脉，通常就在这类古老遗址之中。Baelnorn守护的场所可能是一片超自然树丛、一个早已亡国之国的废墟都城，或是一座收藏着亘古魔法学识的图书馆。",
+								"Baelnorn会将其存在延展至所栖息的地区，产生以下效应：",
+								{
+									"type": "list",
+									"items": [
+										{
+											"ENG_name": "Projection",
+											"name": "投影",
+											"type": "item",
+											"entries": [
+												"身处巢穴期间，Baelnorn可以施展{@spell 投影术|XPHB}，无需法术成分并使用智力作为施法属性（法术豁免{@dc 19}）。该法术的射程仅限于Baelnorn的巢穴。"
+											]
+										},
+										{
+											"ENG_name": "Travel Ward",
+											"name": "限制传送",
+											"type": "item",
+											"entries": [
+												"生物无法使用传送或位面旅行进入或离开巢穴。"
+											]
+										}
+									],
+									"style": "list-hang-notitle"
+								},
+								"若Baelnorn被摧毁或将巢穴移至别处，这些效应立即终止。"
+							]
+						}
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"大多数Baelnorn体现了专注治学与舍身为社会谋福的理想。如果你遇上一位，我想他们会很乐意与你畅谈个十场八场。永远的存在，也可能是一种孤独。"
+							],
+							"by": "艾拉斯卓"
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Baelnorn.webp"
+					},
+					"credit": "Michele Giorgi",
+					"width": 850,
+					"height": 1019
+				}
+			]
+		},
+		{
+			"ENG_name": "Conjurer Archmage",
+			"name": "咒法大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"物理距离对咒法大法师而言不成问题。这些大法师能在一眨眼间将自己与他人传送跨越国境与位面边界。他们能凭空创造魔法效应，或将其从其他存在位面中取出。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Conjurer Archmage.webp"
+					},
+					"width": 539,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Darkenbeast",
+			"name": "暗影兽",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"{@creature 暗影兽|AU|暗影兽}是由邪恶施法者用普通动物改造而成的凶残野兽猎手。无论暗影兽原本形态为何，创造它们的魔法都会将其扭曲为长有利齿与皮革质双翼的恐怖造物。大多数暗影兽的骨骼发光，透过皮肤熠熠生辉；它们在夜空中翱翔时，宛如诡异的飞行骷髅。暗影兽忠于其创造者，而创造者可以戏剧性地抽回用于转化它的魔法，这一过程对暗影兽是致命的。",
+						"{@creature 暗影兽|AU|暗影兽}可能保留着转化前动物残留的特征。掷骰或从暗影兽起源表中选择一个结果，作为这些外观特征的灵感。",
+						{
+							"type": "table",
+							"colLabels": [
+								"1d6",
+								"暗影兽曾经是一只......"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"眼镜蛇，因此它颈部膨起、皮肤生鳞。"
+								],
+								[
+									"2",
+									"狐狸，使它长出微红的皮毛与狐狸般的样貌。"
+								],
+								[
+									"3",
+									"{@creature 豹|XMM}，因此它爪子锐利、尖啸刺耳。"
+								],
+								[
+									"4",
+									"兔子，使它耳朵修长、性情易惊。"
+								],
+								[
+									"5",
+									"乌龟，使它口鼻钝圆、背甲如壳。"
+								],
+								[
+									"6",
+									"{@creature 狼|XMM}，因此它会发出诡异的嚎叫。"
+								]
+							],
+							"caption": "暗影兽起源"
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Darkenbeast.webp"
+					},
+					"credit": "Brian Valeza",
+					"width": 850,
+					"height": 1500
+				}
+			]
+		},
+		{
+			"ENG_name": "Diviner Archmage",
+			"name": "预言大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"预言大法师窥探远方之地，并审视未来。这些大法师往往能预判他人的行动，在事件发生前的数秒便做出反应。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Diviner Archmage.webp"
+					},
+					"width": 641,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Enchanter Archmage",
+			"name": "惑控大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"惑控大法师乐于塑造心智。这些大法师会摆弄记忆，并以或隐晦或公然的方式强迫他人听从其号令。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Enchanter Archmage.webp"
+					},
+					"width": 1000,
+					"height": 957
+				}
+			]
+		},
+		{
+			"ENG_name": "Evoker Archmage",
+			"name": "塑能大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"塑能大法师以精准如手术的方式驾驭无拘无束的毁灭魔法。他们能在爆发性的轰击中开辟安全区域，在消灭敌人的同时保护自己与盟友。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Evoker Archmage.webp"
+					},
+					"width": 645,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Groundling Grunt",
+			"name": "掘地兽步卒",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Groundlings",
+				"name": "掘地兽",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"掘地兽步卒被创造出来充当蛮力部队，它们喜欢用爪子撕裂血肉。若没有强有力的领袖控制，它们很可能悄悄溜走去大搞破坏，或在战斗中途停下来享用猎物。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Groundling Grunt.webp"
+					},
+					"width": 1000,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Groundling Slayer",
+			"name": "掘地兽杀戮者",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Groundlings",
+				"name": "掘地兽",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"学会隐忍与自制的掘地兽会成为高效的杀手。这些掘地兽杀戮者常被委以潜行或刺杀的单独任务，或被指派去管束桀骜不驯的同族。杀戮者通常会等到战斗结束后，再吞食被它们杀死的敌人。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Groundling Slayer.webp"
+					},
+					"width": 877,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Groundling Stalker",
+			"name": "掘地兽追猎者",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Groundlings",
+				"name": "掘地兽",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"掘地兽追猎者喜欢用弩从远处伏击、射杀敌人。追猎者很少能长久保持出其不意的优势，因为它们出击时会因嗜血的兴奋而咆哮出声。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Groundling Stalker.webp"
+					},
+					"width": 840,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Groundlings",
+			"name": "掘地兽",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"掘地兽是毛茸茸、臭烘烘的恶霸，也是贪得无厌的食肉动物。它们的爪子不仅用来将受害者开膛破肚，还用来挖掘陷阱、在建筑下方掘隧道，以及掏出供其伏击猎物的藏身之处。",
+						"掘地兽是被创造出来的，而非天生的。它们大多是凶猛穴居动物的魔法变异体。掘地兽常为其创造者充当突击部队或刺客，不过无领袖约束的掘地兽有时也会走上杀手或佣兵之路。"
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"掘地兽是邪恶魔法的受害者。邪恶的残暴永无止境，因此我们必须继续与之抗争。"
+							],
+							"by": "艾拉斯卓"
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Groundlings.webp"
+					},
+					"title": "从左至右：{@creature 掘地兽杀戮者|AU}、{@creature 掘地兽步卒|AU}、{@creature 掘地兽追猎者|AU}",
+					"credit": "Brian Valeza",
+					"width": 1700,
+					"height": 1243
+				}
+			]
+		},
+		{
+			"ENG_name": "Illusionist Archmage",
+			"name": "幻术大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"幻术大法师已掌握幻术魔法中可触可感的要素。他们能创造栩栩如生、宛如真实的复杂效应，并修饰幻术伪装、物品与地形中最细微的细节。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Illusionist Archmage.webp"
+					},
+					"width": 485,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Living Cone of Cold",
+			"name": "活体寒冰锥",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Living Spells",
+				"name": "活化法术",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"伴随着凛冽寒风的阵阵吹袭，活体寒冰锥会寻找热源\u2014\u2014例如活物\u2014\u2014并将其冻成冰块。"
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"ENG_name": "Living Spells",
+			"name": "活化法术",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"在灾难性的战役或毁灭性实验中释放的魔法能量，可能使法术效应活化为活化法术。这些生物的魔法能量经久不散，且带有与其起源法术\u2014\u2014通常是咒法系或塑能系法术\u2014\u2014相似的特征。活化法术通常在其诞生之地徘徊，以环境中的魔法能量为生，并攻击遭遇的生物。"
+					]
+				},
+				{
+					"type": "section",
+					"entries": [
+						{
+							"ENG_name": "Creating Living Spells",
+							"name": "创造活化法术",
+							"type": "entries",
+							"entries": [
+								"活化法术种类繁多；此处的统计数据块只是三个例子。若要用其他法术制造活化法术，请从法师法术列表中选择一道1\u20135环、能造成伤害的咒法系或塑能系法术。然后查阅活化法术定制表，依据所选法术的环阶决定定制哪个统计数据块。",
+								{
+									"type": "table",
+									"caption": "活化法术定制",
+									"colLabels": [
+										"法术环阶",
+										"使用数据"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1\u20132",
+											"{@creature 活体雷鸣波|AU}"
+										],
+										[
+											"3\u20134",
+											"{@creature 活体浓酸球|AU}"
+										],
+										[
+											"5",
+											"{@creature 活体寒冰锥|AU}"
+										]
+									]
+								},
+								"现在对统计数据块做以下修改：",
+								{
+									"type": "list",
+									"items": [
+										{
+											"ENG_name": "Damage Immunity",
+											"name": "伤害免疫",
+											"type": "item",
+											"entry": "将活化法术的伤害{@variantrule 免疫|XPHB}替换为对所选法术所造成的一种（或多种）伤害类型的{@variantrule 免疫|XPHB}。"
+										},
+										{
+											"ENG_name": "Magical Strike",
+											"name": "魔法打击",
+											"type": "item",
+											"entry": "将\"魔法打击\"造成的伤害类型改为所选法术造成的伤害类型之一。"
+										},
+										{
+											"ENG_name": "Spell Mimicry",
+											"name": "法术模拟",
+											"type": "item",
+											"entry": "将\"法术模拟\"的效应替换为所选法术的效应。若该法术需要豁免检定，使用\"法术模拟\"的法术豁免DC。若该法术涉及攻击检定，使用活化法术\"魔法打击\"的攻击加值。"
+										}
+									],
+									"style": "list-hang-notitle"
+								},
+								"例如，若你将{@spell 火球术|XPHB}（一道3环法术）转化为活化法术，请定制{@creature 活体浓酸球|AU}的统计数据块。活体火球术具有火焰伤害（而非强酸伤害）的{@variantrule 免疫|XPHB}，其\"魔法打击\"造成火焰伤害，并以\"法术模拟\"复现{@i 火球术}。"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Living Thunderwave",
+			"name": "活体雷鸣波",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Living Spells",
+				"name": "活化法术",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"活体雷鸣波咆哮着隆隆作响，如同一团反常的风暴云般雷霆轰鸣。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Living Thunderwave.webp"
+					},
+					"title": "{@creature 活体雷鸣波|AU}",
+					"credit": "Hendry Iwanaga",
+					"width": 1700,
+					"height": 1005
+				}
+			]
+		},
+		{
+			"ENG_name": "Living Vitriolic Sphere",
+			"name": "活体浓酸球",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Living Spells",
+				"name": "活化法术",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"活体浓酸球是一团翻腾不止、烟雾弥漫的瘴气。它滴落的酸液在其下方的地面上留下疤痕。"
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"ENG_name": "Necromancer Archmage",
+			"name": "死灵大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"死灵大法师运用暗蚀魔法从敌人身上抽取生命，并强化不死生物。许多死灵大法师对驱使死者复活并送上战场毫无心理负担。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Necromancer Archmage.webp"
+					},
+					"width": 1000,
+					"height": 759
+				}
+			]
+		},
+		{
+			"ENG_name": "Spellguard",
+			"name": "法术卫队",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"{@creature 法术卫队|AU|法术卫队}是专精于抵御魔法攻击的职业保镖。{@creature 法术卫队|AU|法术卫队}在威严的铠甲之外辅以魔法防护，以保护自己和被保护者。他们最常受雇于猜忌同侪的施法者，但法术卫队也可能守护任何惧怕魔法强敌之人。{@item 抗法盾|XDMG}正是以这一传统命名的，因为那件物品的力量复现了法术卫队的防护。"
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"银月城的法术卫队拥有我永远的忠诚与感激。我以性命相托。"
+							],
+							"by": "艾拉斯卓"
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Spellguard.webp"
+					},
+					"credit": "Brian Valeza",
+					"width": 850,
+					"height": 1072
+				}
+			]
+		},
+		{
+			"ENG_name": "Taisus",
+			"name": "Taisus",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"最有天赋的凡人法师有时能窥破现实，一瞥纯粹而无拘无束的魔法。要直接触及这股能量，需要多年的潜心研究与危险的仪式。任何成功的法师都会接入一种秘藏力量，它会剥离法师的肉身，将其凡人心智与原生魔法融合，形成一种准实体存在，称为Taisus，亦即飞升法师。",
+						"Taisus起初仍保留其前身凡人法师的性格与价值观，但其心智最终会变得疏离异质，形成一种在凡人看来冷酷无情的长期视角。大多数Taisus试图从魔法力量汇聚之地\u2014\u2014例如位面传送门或精粹池\u2014\u2014汲取能量，用以制造怪异的魔法物品、重塑魔法的本质，或引导他人重演他们的恐怖飞升。Taisus的最终目标对凡人心智而言深不可测。"
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Taisus.webp"
+					},
+					"credit": "Michele Giorgi",
+					"width": 850,
+					"height": 1059
+				}
+			]
+		},
+		{
+			"ENG_name": "Transmuter Archmage",
+			"name": "变化大法师",
+			"source": "AU",
+			"_copy": {
+				"ENG_name": "Archmages",
+				"name": "大法师",
+				"source": "AU",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"变化大法师会改变自身或周遭环境。这些大法师随心所欲地摆布参战者。"
+								]
+							}
+						]
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Transmuter Archmage.webp"
+					},
+					"width": 615,
+					"height": 1000
+				}
+			]
+		},
+		{
+			"ENG_name": "Venger",
+			"name": "温戈尔",
+			"source": "AU",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"{@i 邪恶的腐化之力}",
+						"作为一位不朽的法师与邪魔，{@creature 温戈尔|AU}对{@book 提亚马特|XDMG|8|提亚马特}怀有不共戴天的仇恨，他试图通过聚集阿谀之徒与收罗失传已久的魔法神器来统治诸国。尽管蝙蝠般的双翼令他能够飞行，{@creature 温戈尔|AU}更愿意骑乘他信赖的飞行坐骑\u2014\u2014一头潜伏在以太位面、待命而出的{@creature 梦魇|XMM}。{@creature 温戈尔|AU}派遣其顾问{@creature 幽影恶魔|XMM}去勘察远方之地，再依据幽影恶魔的报告编织环环相扣的计划。",
+						"{@creature 温戈尔|AU}曾是一位心地善良的人类，在其父亲隐晦难测的教导下研习法术。随着时间推移，{@creature 温戈尔|AU}变得不耐烦，开始通过与恶魔缔结小型契约来提升自己的魔法造诣。他最终遇到了崇拜被缚的灭世者{@book 萨瑞兹顿|XDMG|8|萨瑞兹顿}的恶魔们\u2014\u2014这些恶魔相信那位存在强大到足以创造整个位面。{@creature 温戈尔|AU}渴望与这一存在缔结契约，相信这样做会赋予他巨大的力量。",
+						"在这些崇拜萨瑞兹顿的恶魔的帮助下，{@creature 温戈尔|AU}打开了一扇通往囚禁萨瑞兹顿之半位面的短暂窗口。恶魔们未曾提及：凡注视被缚的灭世者的灵魂都必遭劫难。当{@creature 温戈尔|AU}凝视这一存在\u2014\u2014一种融合了恶魔与异怪影响的、不可知晓亦不可名状的混合体\u2014\u2014时，温戈尔的形体扭曲了，残存的最后一丝善良从他身上剥落。恶魔们收集了这份善良本质，将它锁入一座保险库，并偷偷运往物质位面一个遥远的角落。{@creature 温戈尔|AU}从这场遭遇中走出时，已成为自身残酷而扭曲的版本，如今蒙受不朽与魔法伟力的加持，他立誓解救被缚的灭世者。",
+						"起初，{@creature 温戈尔|AU}还认真地履行这一誓言。但随着时间推移，他渐渐开始厌弃誓言，转而专注于自己对力量的追逐。如今他已不再希望萨瑞兹顿获释，因为他知道自己的背弃可能使他成为萨瑞兹顿怒火的目标。",
+						"在放弃解救萨瑞兹顿的图谋后，{@creature 温戈尔|AU}试图使用数枚{@item 龙珠|XDMG|龙类纽带宝珠}来控制提亚马特。这场徒劳的图谋为温戈尔招来了提亚马特终生的敌意。如今{@creature 温戈尔|AU}无休止地密谋摧毁或征服提亚马特，此外还有种种邪恶图谋。掷骰或从温戈尔的阴谋表中选择一个结果，以启发温戈尔的下一次夺权行动。",
+						{
+							"type": "table",
+							"colLabels": [
+								"1d6",
+								"温戈尔密谋......"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"将他可能的反对者囚禁于一座由自己创造的巨型迷宫，即黑暗迷宫之中。"
+								],
+								[
+									"2",
+									"召唤名为{@creature 恶魔龙|WttHC}的双头深渊巨龙（使用{@creature 成年黑龙|XMM}的统计数据块），并将其释放到某个国家肆虐。"
+								],
+								[
+									"3",
+									"招募英雄帮他挫败邪恶联盟\u2014\u2014一个由他昔日的手下、法师凯雷克率领的恶棍集团。"
+								],
+								[
+									"4",
+									"把自己伪装成睿智的法师或高洁的圣武士，诱骗无辜者将强大的神器交给他。"
+								],
+								[
+									"5",
+									"集齐六件强大的魔法物品，并在名为白骨大厅的场所动用它们的魔力，以获得足以将提亚马特彻底毁灭的力量。"
+								],
+								[
+									"6",
+									"找到名为业火之匣的神器，并使其远离其他恶棍；{@creature 温戈尔|AU}害怕它可能释放萨瑞兹顿。"
+								]
+							],
+							"caption": "温戈尔的阴谋"
+						}
+					]
+				},
+				{
+					"type": "section",
+					"entries": [
+						{
+							"ENG_name": "Venger's Lairs",
+							"name": "温戈尔的巢穴",
+							"type": "entries",
+							"entries": [
+								"{@creature 温戈尔|AU}到访的每个世界中都有他数座巢穴。每一座都是高踞于险峻悬崖之上或自崖侧伸出的城堡，但没有两座是相同的。",
+								"温戈尔的存在会污秽其巢穴所在的地区，产生以下效应：",
+								{
+									"type": "list",
+									"items": [
+										{
+											"ENG_name": "Desolate Terrain",
+											"name": "荒芜地形",
+											"type": "item",
+											"entries": [
+												"巢穴1英里内的植物枯萎死亡，形成一片泥土龟裂的不毛荒原。"
+											]
+										},
+										{
+											"ENG_name": "Tormented Rest",
+											"name": "折磨之眠",
+											"type": "item",
+											"entries": [
+												"深渊的低语侵扰访客的梦境。每当{@creature 温戈尔|AU}及其盟友以外的生物在巢穴1英里内完成一次{@variantrule 长休|XPHB}，其必须成功通过{@dc 15}的体质豁免，否则获得1级{@condition 力竭|XPHB}。"
+											]
+										}
+									],
+									"style": "list-hang-notitle"
+								},
+								"若温戈尔死亡或将其巢穴移往别处，这些效应立即终止。"
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/AU/Venger.webp"
+					},
+					"credit": "Swatches Studio",
+					"width": 850,
+					"height": 1242
+				}
+			]
+		}
+	]
+}

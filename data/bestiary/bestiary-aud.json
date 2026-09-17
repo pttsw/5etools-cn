@@ -1,0 +1,1096 @@
+{
+	"_meta": {
+		"referenceSources": {
+			"monster": {
+				"XMM": "AUD",
+				"AU": "AUD"
+			}
+		}
+	},
+	"monster": [
+		{
+			"ENG_name": "Abveku",
+			"name": "阿布维库",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
+			"source": "AUD",
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 209,
+				"formula": "22d8 + 110"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 16,
+			"dex": 22,
+			"con": 20,
+			"int": 17,
+			"wis": 18,
+			"cha": 15,
+			"save": {
+				"str": "+8",
+				"dex": "+11",
+				"int": "+8",
+				"wis": "+9"
+			},
+			"skill": {
+				"acrobatics": "+11",
+				"perception": "+9",
+				"stealth": "+16"
+			},
+			"passive": 19,
+			"resist": [
+				"寒冷",
+				"火焰",
+				"闪电"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"languages": [
+				"深渊语; 心灵感应 120 尺"
+			],
+			"cr": "14",
+			"trait": [
+				{
+					"ENG_name": "Demonic Restoration",
+					"name": "恶魔复苏",
+					"entries": [
+						"如果阿布维库在无底深渊之外死亡，其躯体将消解为腐液，并立即获得一具新的躯体，带着全部{@variantrule 生命值|XPHB}在无底深渊的某处复活。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"阿布维库对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"阿布维库发动四次镰爪攻击，并在催眠之舞可用时使用之。"
+					]
+				},
+				{
+					"ENG_name": "Scything Claw",
+					"name": "镰爪",
+					"entries": [
+						"{@atkr m} {@hit 11}，触及10尺。{@h}19（{@damage 3d8 + 6}）挥砍伤害。"
+					]
+				},
+				{
+					"ENG_name": "Mesmerizing Dance {@recharge 5}",
+					"name": "催眠之舞 {@recharge 5}",
+					"entries": [
+						"{@actSave wis} {@dc 18}，以阿布维库为中心的20尺{@variantrule 光环 [效应区域]|XPHB|光环}内的每名生物。{@actSaveFail}目标陷入{@condition 麻痹|XPHB}状态，并在其每个回合结束时重复豁免，成功则终止其身上的该效应。1分钟后，其豁免自动成功。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Shadow Stealth",
+					"name": "幽影隐匿",
+					"entries": [
+						"处于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}中时，阿布维库执行{@action 躲藏|XPHB}动作。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Parry",
+					"name": "格挡",
+					"entries": [
+						"{@actTrigger} 阿布维库被一次近战攻击检定命中。{@actResponse} 阿布维库的AC对抗该次攻击时提高5，可能令该次攻击改为失手。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 无底深渊"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击",
+				"格挡"
+			],
+			"languageTags": [
+				"AB",
+				"TP"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"麻痹"
+			],
+			"savingThrowForced": [
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Arisen Sarrukh",
+			"name": "复生萨鲁克",
+			"type": "undead",
+			"source": "AUD",
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				18
+			],
+			"hp": {
+				"average": 273,
+				"formula": "26d8 + 156"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 23,
+			"dex": 17,
+			"con": 22,
+			"int": 18,
+			"wis": 17,
+			"cha": 18,
+			"skill": {
+				"perception": "+9",
+				"stealth": "+12"
+			},
+			"passive": 19,
+			"immune": [
+				"火焰",
+				"暗蚀",
+				"毒素"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"中毒"
+			],
+			"languages": [
+				"通用语",
+				"龙语; 心灵感应 120 尺"
+			],
+			"cr": "18",
+			"gear": [
+				"三叉戟|xphb"
+			],
+			"trait": [
+				{
+					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
+					"entries": [
+						"萨鲁克豁免失败时，可以将其改为豁免成功。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"萨鲁克对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"萨鲁克发动三次攻击，以任意组合使用三叉戟或暗蚀唾液。"
+					]
+				},
+				{
+					"ENG_name": "Trident",
+					"name": "三叉戟",
+					"entries": [
+						"{@atkr m} {@hit 12}，触及10尺。{@h}33（{@damage 6d8 + 6}）穿刺伤害。"
+					]
+				},
+				{
+					"ENG_name": "Necrotic Spit",
+					"name": "暗蚀唾液",
+					"entries": [
+						"{@atkr r} {@hit 12}，射程90尺。{@h}11（{@damage 2d10}）毒素伤害外加22（{@damage 4d10}）暗蚀伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Venomous Teleport {@recharge 5}",
+					"name": "毒性传送 {@recharge 5}",
+					"entries": [
+						"萨鲁克传送至多120尺至一处其可见的已占据空间，且位于萨鲁克离开或到达的空间（由萨鲁克选择）10尺内的每名生物受以下效应影响。{@actSave con} {@dc 20}。{@actSaveFail}22（{@damage 4d10}）毒素伤害。{@actSaveSuccess}半伤。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Shape Control",
+					"name": "变形控制",
+					"entries": [
+						"{@actTrigger} 萨鲁克可见的一名生物进行变形。{@actResponse} 萨鲁克从该变形生物可用的选项中选择其变成的形态，或阻止该生物变形。"
+					]
+				}
+			],
+			"environment": [
+				"幽暗地域"
+			],
+			"treasure": [
+				"圣物"
+			],
+			"traitTags": [
+				"传奇抗性",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"TP"
+			],
+			"damageTags": [
+				"I",
+				"N",
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"MA",
+				"MLW",
+				"RA",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Rendelith",
+			"name": "伦德利斯",
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"恶魔"
+				]
+			},
+			"source": "AUD",
+			"size": [
+				"L"
+			],
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				20
+			],
+			"hp": {
+				"average": 294,
+				"formula": "31d10 + 124"
+			},
+			"speed": {
+				"walk": 50
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 25,
+			"dex": 12,
+			"con": 19,
+			"int": 20,
+			"wis": 17,
+			"cha": 18,
+			"passive": 19,
+			"resist": [
+				"寒冷",
+				"火焰",
+				"闪电"
+			],
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"languages": [
+				"深渊语; 心灵感应 120 尺"
+			],
+			"cr": "18",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"伦德利斯施展以下一道法术，无需材料成分并使用智力作为施法属性（法术豁免{@dc 19}）："
+					],
+					"will": [
+						"{@spell 地动术|XPHB}",
+						"{@spell 穿墙术|XPHB}",
+						"{@spell 粉碎音波|XPHB}（六环版本）",
+						"{@spell 石墙术|XPHB}"
+					],
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Demonic Restoration",
+					"name": "恶魔复苏",
+					"entries": [
+						"如果伦德利斯在无底深渊之外死亡，其躯体将碎裂为砾石，并立即获得一具新的躯体，带着全部{@variantrule 生命值|XPHB}在无底深渊的某处复活。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"伦德利斯对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Siege Monster",
+					"name": "攻城怪物",
+					"entries": [
+						"伦德利斯对物件和建筑物造成双倍伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"伦德利斯发动两次石锤攻击，并使用施法施展{@spell 粉碎音波|XPHB}（六环版本）。"
+					]
+				},
+				{
+					"ENG_name": "Stone Hammer",
+					"name": "石锤",
+					"entries": [
+						"{@atkr m,r} {@hit 13}，触及10尺或射程120尺。{@h}21（{@damage 4d6 + 7}）钝击伤害。若目标为体型不超过大型的生物，其陷入{@condition 倒地|XPHB}状态。若目标已陷入{@condition 倒地|XPHB}状态，则改为受到额外7（{@damage 2d6}）钝击伤害。{@hom}石锤在被用于一次远程攻击后立即魔法性地回到伦德利斯手中。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Quick Fortifications {@recharge 5}",
+					"name": "快速筑垒 {@recharge 5}",
+					"entries": [
+						"伦德利斯使用施法施展{@spell 地动术|XPHB}或{@spell 石墙术|XPHB}。"
+					]
+				}
+			],
+			"environment": [
+				"位面, 无底深渊"
+			],
+			"treasure": [
+				"武备"
+			],
+			"traitTags": [
+				"魔法抗性",
+				"攻城怪物"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AB",
+				"TP"
+			],
+			"damageTags": [
+				"B"
+			],
+			"damageTagsSpell": [
+				"T"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"倒地"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Sarrukh Tyrant",
+			"name": "萨鲁克暴君",
+			"type": "monstrosity",
+			"source": "AUD",
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				19
+			],
+			"hp": {
+				"average": 256,
+				"formula": "27d8 + 135"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 22,
+			"dex": 15,
+			"con": 20,
+			"int": 23,
+			"wis": 19,
+			"cha": 18,
+			"skill": {
+				"arcana": "+12",
+				"perception": "+10"
+			},
+			"passive": 20,
+			"immune": [
+				"火焰"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌"
+			],
+			"languages": [
+				"通用语",
+				"龙语; 心灵感应 120 尺"
+			],
+			"cr": "17",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"萨鲁克施展以下一道法术，无需材料成分并使用智力作为施法属性（法术豁免{@dc 20}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 隐形术|XPHB}",
+						"{@spell 变形术|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 火球术|XPHB}（五环版本）",
+							"{@spell 探知术|XPHB}",
+							"{@spell 传送术|XPHB}",
+							"{@spell 力场墙|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Legendary Resistance (3/Day)",
+					"name": "传奇抗性 (3/日)",
+					"entries": [
+						"萨鲁克豁免失败时，可以将其改为豁免成功。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"萨鲁克对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"萨鲁克发动两次攻击，以任意组合使用啃咬或可畏长柄刀。"
+					]
+				},
+				{
+					"ENG_name": "Bite",
+					"name": "啃咬",
+					"entries": [
+						"{@atkr m} {@hit 12}，触及5尺。{@h}13（{@damage 2d6 + 6}）穿刺伤害外加13（{@damage 3d8}）毒素伤害。"
+					]
+				},
+				{
+					"ENG_name": "Fearsome Fauchard",
+					"name": "可畏长柄刀",
+					"entries": [
+						"{@atkr m,r} {@hit 12}，触及5尺或射程20/60尺。{@h}17（{@damage 2d10 + 6}）穿刺伤害。若目标为生物，其陷入{@condition 恐慌|XPHB}状态。若目标已陷入{@condition 恐慌|XPHB}状态，则其受到额外10（{@damage 3d6}）心灵伤害。{@hom}长柄刀在被用于一次远程攻击后立即魔法性地回到萨鲁克手中。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Shape Control",
+					"name": "变形控制",
+					"entries": [
+						"{@actTrigger} 萨鲁克可见的一名生物进行变形。{@actResponse} 萨鲁克从该变形生物可用的选项中选择其变成的形态，或阻止该生物变形。"
+					]
+				}
+			],
+			"legendary": [
+				{
+					"ENG_name": "Fearsome Glance",
+					"name": "可畏凝视",
+					"entries": [
+						"{@actSave wis} {@dc 20}，30尺内萨鲁克可见的一名生物。{@actSaveFail}18（{@damage 4d8}）心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态。{@actSaveSuccess}仅半伤。"
+					]
+				},
+				{
+					"ENG_name": "Slither",
+					"name": "蠕行",
+					"entries": [
+						"萨鲁克移动至多等于其{@variantrule 速度|XPHB}一半的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}，并发动一次啃咬攻击。"
+					]
+				},
+				{
+					"ENG_name": "Twisted Transformation",
+					"name": "扭曲变形",
+					"entries": [
+						"萨鲁克使用施法施展{@spell 变形术|XPHB}，若目标豁免失败，则目标还陷入{@condition 震慑|XPHB}状态直至其下个回合结束。萨鲁克直至其下个回合开始都无法再执行此动作。"
+					]
+				}
+			],
+			"environment": [
+				"幽暗地域"
+			],
+			"treasure": [
+				"圣物"
+			],
+			"traitTags": [
+				"传奇抗性",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"TP"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"F",
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"恐慌",
+				"震慑"
+			],
+			"conditionInflictSpell": [
+				"隐形"
+			],
+			"savingThrowForced": [
+				"感知"
+			],
+			"savingThrowForcedSpell": [
+				"敏捷",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Szass Tam",
+			"name": "萨扎斯·坦",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"法师"
+				]
+			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "AUD",
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				20
+			],
+			"hp": {
+				"average": 397,
+				"formula": "53d8 + 159"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 30
+			},
+			"initiative": {
+				"proficiency": 2
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 16,
+			"int": 23,
+			"wis": 18,
+			"cha": 19,
+			"skill": {
+				"arcana": "+20",
+				"insight": "+11",
+				"investigation": "+13",
+				"perception": "+11"
+			},
+			"passive": 21,
+			"resist": [
+				"寒冷",
+				"闪电"
+			],
+			"immune": [
+				"暗蚀",
+				"毒素"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"麻痹",
+				"中毒"
+			],
+			"languages": [
+				"所有"
+			],
+			"cr": {
+				"cr": "23",
+				"xpLair": 62000
+			},
+			"gear": [
+				"材料包|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"萨扎斯·坦施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 21}，法术攻击命中{@hit 13}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 侦测思想|XPHB}",
+						"{@spell 死亡一指|XPHB}",
+						"{@spell 火球术|XPHB}（八环版本）",
+						"{@spell 闪电束|XPHB}（八环版本）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 活化死尸|XPHB}",
+							"{@spell 任意门|XPHB}",
+							"{@spell 位面转移|XPHB}"
+						],
+						"1e": [
+							"{@spell 律令死亡|XPHB}",
+							"{@spell 投影术|XPHB}",
+							"{@spell 探知术|XPHB}",
+							"{@spell 短讯术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic",
+					"name": "护身魔法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"萨扎斯·坦施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}以回应法术的触发条件，使用与施法动作相同的施法属性。"
+					],
+					"will": [
+						"{@spell 法术反制|XPHB}",
+						"{@spell 护盾术|XPHB}"
+					],
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"will"
+					]
+				},
+				{
+					"ENG_name": "Withering Magic",
+					"name": "凋萎魔法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"萨扎斯·坦施展{@spell 枯萎术|XPHB}或{@spell 解除魔法|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"legendary": {
+						"1": [
+							"{@spell 枯萎术|XPHB}",
+							"{@spell 解除魔法|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "legendary",
+					"hidden": [
+						"legendary"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Legendary Resistance (4/Day, or 5/Day in Lair)",
+					"name": "传奇抗性（4/日，或巢穴内5/日）",
+					"entries": [
+						"萨扎斯·坦豁免失败时，可以将其改为豁免成功。"
+					]
+				},
+				{
+					"ENG_name": "Spirit Jar",
+					"name": "命匣",
+					"entries": [
+						"若被消灭且其命匣尚存，萨扎斯·坦会在{@dice 1d10}天后重新成形，带着全部{@variantrule 生命值|XPHB}复活。新的躯体出现在萨扎斯·坦巢穴内的一处未占据空间中。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"萨扎斯·坦发动三次攻击，以任意组合使用麻痹之触或摄魂射线。他可以将其中两次攻击替换为一次施法以施展{@spell 死亡一指|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Paralyzing Touch",
+					"name": "麻痹之触",
+					"entries": [
+						"{@atkr m} {@hit 13}，触及5尺。{@h}16（{@damage 3d6 + 6}）寒冷伤害，且目标陷入{@condition 麻痹|XPHB}状态直至萨扎斯·坦的下个回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Soul-Draining Ray",
+					"name": "摄魂射线",
+					"entries": [
+						"{@atkr r} {@hit 13}，射程120尺。{@h}25（{@damage 3d12 + 6}）暗蚀伤害，且目标直至其下个回合结束，其攻击检定和豁免检定具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			],
+			"legendaryActionsLair": 4,
+			"legendary": [
+				{
+					"ENG_name": "Deathly Teleport",
+					"name": "蚀命传送",
+					"entries": [
+						"萨扎斯·坦传送至多60尺至一处其可见的未占据空间，且位于其离开的空间10尺内的每名生物受到13（{@damage 3d8}）暗蚀伤害。"
+					]
+				},
+				{
+					"ENG_name": "Disrupt Life",
+					"name": "扰乱生命",
+					"entries": [
+						"{@actSave con} {@dc 21}，以萨扎斯·坦为中心的20尺{@variantrule 光环 [效应区域]|XPHB|光环}内的每名非不死生物。{@actSaveFail}14（{@damage 4d6}）暗蚀伤害，且该生物的{@variantrule 生命值|XPHB|生命值}上限减少等于其所受伤害的数值。{@actSaveSuccess}仅半伤。{@actSaveSuccessOrFail}萨扎斯·坦直至其下个回合开始都无法再执行此动作。"
+					]
+				}
+			],
+			"legendaryGroup": {
+				"ENG_name": "Szass Tam",
+				"name": "萨扎斯·坦",
+				"source": "AUD"
+			},
+			"traitTags": [
+				"传奇抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"C",
+				"N"
+			],
+			"damageTagsLegendary": [
+				"N"
+			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"N",
+				"O",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"HPR",
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"麻痹"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Xelnene Thrul",
+			"name": "泽尔内妮·斯鲁尔",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "AUD",
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 208,
+				"formula": "32d8 + 64"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 18,
+			"con": 15,
+			"int": 21,
+			"wis": 16,
+			"cha": 19,
+			"skill": {
+				"arcana": "+17",
+				"history": "+11",
+				"perception": "+9",
+				"persuasion": "+10"
+			},
+			"passive": 19,
+			"languages": [
+				"天界语",
+				"通用语",
+				"龙语",
+				"炼狱语"
+			],
+			"cr": "17",
+			"gear": [
+				"法球|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"斯鲁尔施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 19}）："
+					],
+					"will": [
+						"{@spell 变身术|XPHB}",
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 火球术|XPHB}（五环版本）",
+						"{@spell 迷幻手稿|XPHB}",
+						"{@spell 闪电束|XPHB}（五环版本）",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 半位面|XPHB}",
+							"{@spell 篡改记忆|XPHB}",
+							"{@spell 探知术|XPHB}",
+							"{@spell 短讯术|XPHB}",
+							"{@spell 传送术|XPHB}"
+						],
+						"1e": [
+							"{@spell 连锁闪电|XPHB}",
+							"{@spell 阳炎爆|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"斯鲁尔施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}以回应法术的触发条件，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Evocation Sculptor",
+					"name": "塑能塑形",
+					"entries": [
+						"当斯鲁尔施展一道产生效应区域的法术时，她可以选择自己与其可见的至多五名其他生物，将法术的能量绕着他们塑形。被选择的生物对抗该法术的豁免检定自动成功，且若其在豁免成功时通常只受一半伤害，则其不受任何伤害。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"斯鲁尔对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"斯鲁尔发动四次奥能爆发攻击。她可以将其中两次攻击替换为一次施法以施展{@spell 火球术|XPHB}（五环版本）或{@spell 闪电束|XPHB}（五环版本）。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 11}，触及5尺或射程120尺。{@h}32（{@damage 5d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C",
+				"CE",
+				"DR",
+				"I"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"L",
+				"O",
+				"P",
+				"R",
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflictSpell": [
+				"目盲",
+				"魅惑",
+				"失能"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

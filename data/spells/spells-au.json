@@ -1,0 +1,1847 @@
+{
+	"spell": [
+		{
+			"ENG_name": "Aura of Evasion",
+			"name": "闪避灵光",
+			"source": "AU",
+			"page": 35,
+			"level": 7,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "emanation",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"在法术持续时间内，源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内萦绕着迅捷灵光。你和你的盟友在位于该光环内期间进行敏捷豁免时具有{@variantrule 优势|XPHB}。当一名受影响的生物受到一个允许其进行敏捷豁免来只承受一半伤害的效应影响时，其在豁免成功时不受伤害，豁免失败时只承受一半伤害。陷入{@condition 失能|XPHB}状态的生物无法从该灵光中获得任何增益。"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"ADV"
+			],
+			"areaTags": [
+				"E"
+			]
+		},
+		{
+			"ENG_name": "Battle Familiar",
+			"name": "战斗魔宠",
+			"source": "AU",
+			"page": 35,
+			"level": 2,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一枚价值25+GP的钻石",
+					"cost": 2500
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"你咒唤出一只充满魔法力量的魔宠。该魔宠出现在施法距离内一处未占据的空间。其外貌类似你选择的一种动物，但其生物类型为天族、妖精或邪魔（由你选择），并且使用{@creature 战斗魔宠|AU}的数据卡。当你施展此法术时，选择蛮勇、掠空或潜猎形态。该选择将决定数据卡中的特定细节。",
+				{
+					"ENG_name": "Combat",
+					"name": "战斗",
+					"type": "entries",
+					"entries": [
+						"该魔宠是你与你盟友的盟友。其拥有自己的{@variantrule 先攻|XPHB}，并在自己的回合内行动。"
+					]
+				},
+				{
+					"ENG_name": "Disappearance of the Familiar",
+					"name": "魔宠消失",
+					"type": "entries",
+					"entries": [
+						"战斗魔宠在法术结束时、其{@variantrule 生命值|XPHB}降至0时，或你死亡时消失。当它消失时，其所穿着或携带的任何物品都会留在其原本所在的空间。如果你再次施展此法术，你可以决定是召唤那只已消失的魔宠，还是召唤一个不同的魔宠。"
+					]
+				},
+				{
+					"ENG_name": "One Familiar at a Time",
+					"name": "数量限制",
+					"type": "entries",
+					"entries": [
+						"你在同一时间不能拥有超过一只魔宠。如果你已经拥有一个通过此法术召唤的魔宠，则旧的魔宠会被新的取代。",
+						"若你在施放此法术时已通过{@spell Find Familiar|XPHB}法术拥有一个魔宠，你将强化现有的魔宠而非召唤一个新的。在法术持续时间内，你的魔宠除了正常执行其他动作外还能进行攻击，且其游戏数据将被替换为战斗魔宠的属性块，但保留其生物类型、阵营、{@variantrule Hit Points|XPHB}、{@variantrule Hit Point Dice|XPHB}以及由{@spell Find Familiar|XPHB}法术赋予的任何特性。你的魔宠获得等同于战斗魔宠{@variantrule Hit Points|XPHB}的{@variantrule Temporary Hit Points|XPHB}。若魔宠的{@variantrule Temporary Hit Points|XPHB}耗尽，则战斗魔宠提前结束；若战斗魔宠结束时仍有剩余，这些{@variantrule Temporary Hit Points|XPHB}将消失。当战斗魔宠结束时，你的魔宠将恢复至先前的形态。"
+					]
+				}
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"该生物的数据使用新的法术环阶。"
+					]
+				}
+			],
+			"miscTags": [
+				"SMN",
+				"THP"
+			]
+		},
+		{
+			"ENG_name": "Catnap",
+			"name": "假寐术",
+			"source": "AU",
+			"page": 37,
+			"level": 3,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "一撮沙子"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					}
+				}
+			],
+			"entries": [
+				"你做出一个安抚手势，你指定至多三个你能看见的、在施法距离内且自愿的生物，在法术持续时间内陷入{@condition Unconscious|XPHB}状态。若目标受到伤害，或有其他生物用一个动作将其摇醒，则法术在该目标身上提前结束。如果一个目标因本法术而陷入{@condition Unconscious|XPHB}状态并持续了完整的法术持续时间，则该目标将获得完成一次{@variantrule Short Rest|XPHB}的好处，并且在它完成一次{@variantrule Long Rest|XPHB}之前，不能再受本法术影响。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比三环高一环，你就可以额外指定一名自愿生物作为目标。"
+					]
+				}
+			],
+			"conditionInflict": [
+				"昏迷"
+			],
+			"miscTags": [
+				"SCT",
+				"SGT"
+			],
+			"areaTags": [
+				"MT"
+			]
+		},
+		{
+			"ENG_name": "Detonate",
+			"name": "爆破术",
+			"source": "AU",
+			"page": 38,
+			"level": 9,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 500
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一枚火种"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你在施法距离内一名你可见的生物体内制造一颗魔法性的爆裂之种。目标进行一次体质豁免，豁免失败则受{@damage 10d10}火焰伤害，豁免成功则伤害减半。",
+				"随后目标处将发生一次爆炸。位于源自目标的60尺{@variantrule 光环 [效应区域]|XPHB|光环}内的所有生物（不包含目标）都进行一次敏捷豁免（若该法术已将目标{@variantrule 生命值|XPHB}降为0则具有{@variantrule 劣势|XPHB}）。豁免失败者受到{@damage 10d10}火焰伤害，豁免成功则伤害减半。",
+				"该{@variantrule 光环 [效应区域]|XPHB|光环}内未被携带或着装的非魔法物件也要承受该伤害，且可燃物件将开始{@hazard 燃烧|XPHB}。"
+			],
+			"damageInflict": [
+				"fire"
+			],
+			"savingThrow": [
+				"constitution",
+				"dexterity"
+			],
+			"miscTags": [
+				"BO",
+				"OBJ",
+				"SGT"
+			],
+			"areaTags": [
+				"E",
+				"ST"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Disruptive Tune",
+			"name": "扰神曲",
+			"source": "AU",
+			"page": 38,
+			"level": 2,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"一段扰人旋律短暂地充满一个以你选择范围内一点为中心、半径20尺的{@variantrule Sphere [Area of Effect]|XPHB|球状}区域。该{@variantrule Sphere [Area of Effect]|XPHB|球状}区域内的每个生物进行一次体质豁免。豁免失败的目标将失去{@status Concentration|XPHB}，并且在法术持续时间内，其维持{@status Concentration|XPHB}的体质豁免具有{@variantrule Disadvantage|XPHB}。"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"areaTags": [
+				"S"
+			]
+		},
+		{
+			"ENG_name": "Distorted Distance",
+			"name": "距离失真",
+			"source": "AU",
+			"page": 38,
+			"level": 4,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你在射程内一点创造出一个幻象空间膨胀，形成一个半径60尺的{@variantrule Sphere [Area of Effect]|XPHB|Sphere}。对于你能在该{@variantrule Sphere [Area of Effect]|XPHB|Sphere}内看见的每个生物，你可以为其选择以下一种效果：",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"ENG_name": "Dizzying Elongation",
+							"name": "天旋地转",
+							"type": "item",
+							"entries": [
+								"该生物进行一次智力豁免。若豁免失败，则其受到{@damage 2d10}心灵伤害，且{@variantrule 球状 [效应区域]|XPHB|球状}区域对其而言视为{@variantrule 困难地形|XPHB}，持续至其回合结束。"
+							]
+						},
+						{
+							"ENG_name": "Shortened Space",
+							"name": "缩地成寸",
+							"type": "item",
+							"entries": [
+								"该生物的{@variantrule 速度|XPHB}增加20尺，持续至其下一回合结束。",
+								"直至此法术终止，每当一名生物进入{@variantrule 球状 [效应区域]|XPHB|球状}区域或在其内结束回合，你都可以选择使其受到这些效应之一。一名生物每回合只能受到一次此法术的影响。"
+							]
+						}
+					]
+				}
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"savingThrow": [
+				"intelligence"
+			],
+			"miscTags": [
+				"DFT",
+				"SGT"
+			],
+			"areaTags": [
+				"S"
+			]
+		},
+		{
+			"ENG_name": "Dueling Ground",
+			"name": "决斗场地",
+			"source": "AU",
+			"page": 38,
+			"level": 2,
+			"school": "A",
+			"time": [
+				{
+					"number": 10,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一块价值100+GP的丝绸旗帜",
+					"cost": 10000
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"你创造出一个由发光符文法阵所框定的魔法决斗场地，其为以你所触碰的地面上一点为中心的15尺{@variantrule 球状 [效应区域]|XPHB|球状}区域。",
+				"作为创建决斗场地的一部分，你指定两个位于{@variantrule Sphere [Area of Effect]|XPHB|Sphere}内的自愿生物作为目标。如果除目标之外的生物进入{@variantrule Sphere [Area of Effect]|XPHB|Sphere}，该法术提前结束。",
+				"若一名目标在身处决斗场地期间{@variantrule 生命值|XPHB}降至0，则目标{@variantrule 伤势稳定|XPHB}且传送至距其最近的、位于决斗场地外的未占据空间。若一名目标在身处决斗场地期间受到某种不造成伤害却能够立即将其杀死的效应影响，则目标不会死亡，转而会具有0{@variantrule 生命值|XPHB}并陷入{@condition 昏迷|XPHB}状态、{@variantrule 伤势稳定|XPHB}，且传送至距其最近的、位于决斗场地外的未占据空间。",
+				"当只有一名目标位于决斗场地中时，与{@variantrule 球状 [效应区域]|XPHB|球状}区域周围地面上相对应的符文会短暂地在那名目标的头顶闪烁，如同一顶冠冕。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比二环高一环，你就可以额外指定一名自愿生物作为目标。"
+					]
+				}
+			],
+			"conditionInflict": [
+				"昏迷"
+			],
+			"miscTags": [
+				"SCT",
+				"TP"
+			],
+			"areaTags": [
+				"S"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Enervation",
+			"name": "汲能术",
+			"source": "AU",
+			"page": 38,
+			"level": 5,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"一条漆黑如墨的触须从你身上延伸，汲取施法距离内你可见的一个生物的生命。",
+				"目标进行一次敏捷豁免。豁免失败则目标受{@damage 6d8}暗蚀伤害。你在此后每个你的回合中都可以再用{@variantrule 附赠动作|XPHB}对目标自动造成{@damage 2d8}暗蚀伤害。法术会在目标超出法术的施法距离或对你具有{@variantrule 掩护|XPHB|全身掩护}时结束。",
+				"若豁免成功，则目标仅受初始伤害的一半，且法术结束。",
+				"每当该法术对目标造成伤害时，你都可以恢复等于其造成的暗蚀伤害一半的{@variantrule 生命值|XPHB}。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比五环高一环，初始伤害便增加{@dice 1d8}。"
+					]
+				}
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"dexterity"
+			],
+			"miscTags": [
+				"HL",
+				"SGT",
+				"UBA"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Entrancing Mirrors",
+			"name": "迷魂魔镜",
+			"source": "AU",
+			"page": 39,
+			"level": 8,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一枚镜子碎片"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你创造大量幻影魔镜，用其迷惑至多三名施法距离内由你选择的你可见的生物。",
+				"每个目标进行一次智力豁免。豁免失败时，目标受到{@damage 7d6}心灵伤害并获得{@condition Stunned|XPHB}状态。当目标处于{@condition Stunned|XPHB}状态时，其{@variantrule Speed|XPHB}减半。豁免成功时，目标仅受到一半伤害。",
+				"被{@condition 震慑|XPHB}的目标可在其每个回合结束时重复此智力豁免，成功则结束此法术对其的影响。"
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"conditionInflict": [
+				"震慑"
+			],
+			"savingThrow": [
+				"intelligence"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"MT"
+			]
+		},
+		{
+			"ENG_name": "Festering Blast",
+			"name": "溃烂爆发",
+			"source": "AU",
+			"page": 39,
+			"level": 4,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "line",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"一道60尺长、10尺宽的{@variantrule Line [Area of Effect]|XPHB|线状}瘴气从你体内向你选择的方向爆发。{@variantrule Line [Area of Effect]|XPHB|线状}区域内的每个生物必须进行一次体质豁免。豁免失败的目标受到{@damage 4d10}暗蚀伤害，并在法术持续时间内获得{@condition Poisoned|XPHB}状态。",
+				"被此法术{@condition Poisoned|XPHB}的生物在其每回合开始时受到{@damage 2d10}毒素伤害。在其每回合结束时，{@condition Poisoned|XPHB}的目标重复豁免检定，成功则自身身上的法术结束。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比四环高一环，初始伤害便增加{@dice 1d10}。"
+					]
+				}
+			],
+			"damageInflict": [
+				"necrotic",
+				"poison"
+			],
+			"conditionInflict": [
+				"中毒"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"areaTags": [
+				"L"
+			]
+		},
+		{
+			"ENG_name": "Fractured Awareness",
+			"name": "破碎神识",
+			"source": "AU",
+			"page": 40,
+			"level": 7,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你令一名生物接收到关于多种可能未来的相互矛盾之幻象。选择施法距离内你可见的一名生物。目标进行一次智力豁免。豁免失败者受{@damage 12d10}心灵伤害且在法术持续时间内进行的{@variantrule D20检定|XPHB|D20检定}具有{@variantrule 劣势|XPHB}。豁免成功则仅受半伤且法术结束。",
+				"受影响的目标可以在其每个回合结束时重复此豁免，豁免成功则该法术结束。"
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"savingThrow": [
+				"intelligence"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Grave Ground",
+			"name": "埋骨墓地",
+			"source": "AU",
+			"page": 40,
+			"level": 5,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一捧坟土"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"无数骸骨之手从施法距离内地面的某个区域破土而出。该区域由至多四个10尺方格组成。你可以自行安排各方格的组合方式。每个方格必须至少与一个其他的方格相连。该区域对你的敌人而言是{@variantrule 困难地形|XPHB}。",
+				"当骸骨之手出现时，区域内的每个敌人都进行一次力量豁免。豁免失败者受{@damage 6d6}暗蚀伤害，且目标在其所有伤害掷骰中受{@dice 1d6}减值，直至其下一回合结束。当敌人进入区域或在该区域内结束回合时，同样需要进行此豁免。一个生物每回合只进行一次该豁免。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比五环高一环，法术的伤害便增加{@dice 1d6}。"
+					]
+				}
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"strength"
+			],
+			"miscTags": [
+				"DFT"
+			],
+			"areaTags": [
+				"Q"
+			]
+		},
+		{
+			"ENG_name": "Hindsight",
+			"name": "回望术",
+			"source": "AU",
+			"page": 40,
+			"level": 9,
+			"school": "D",
+			"time": [
+				{
+					"number": 10,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 500
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一个价值500+GP的微型沙漏，作为此法术的耗材",
+					"cost": 50000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你透过时间织缕，向着过去凝望。你看到施法距离内过去10年间发生的所有事件的景象，这些画面以大约每秒1天的速度飞速流转。在法术持续时间内，你可以自由地对这些景象进行慢放、暂停、倒带或是快进。"
+			]
+		},
+		{
+			"ENG_name": "Illusory Dragon",
+			"name": "幻影巨龙",
+			"source": "AU",
+			"page": 40,
+			"level": 8,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你汇聚、编织从堕影冥界收集的阴影物质，随后在施法距离内一处你可见的未占据空间创造出一条巨型阴影龙。该幻象会占据所在空间并持续到法术结束，就好像是一个真实生物。幻象是由阴影物质所创造的，故而具有可触碰的实体，但{@variantrule 免疫|XPHB}所有伤害和状态。",
+				"当幻象出现时，任何能看见它的敌人需进行一次感知豁免。豁免失败时，该生物会掉落手中持有的所有物品，并在法术持续时间内陷入{@condition Frightened|XPHB}状态。如果一个以此方式陷入{@condition Frightened|XPHB}状态的生物，在其回合结束时所在位置无法看到该幻象，则该生物需重复此豁免检定，成功则结束自身该状态。",
+				"以一个{@variantrule 附赠动作|XPHB}，你可以将幻象移动最多60尺。在其移动过程中的任意时刻，你可以让暗影巨龙在60尺的{@variantrule 锥状 [区域效果]|XPHB|Cone}内呼出一股能量冲击。{@variantrule 锥状 [区域效果]|XPHB|Cone}内的每个生物需进行一次智力豁免，豁免失败则受到{@damage 6d6}点强酸、寒冷、火焰、闪电、暗蚀或毒素伤害（在你创造巨龙时选择），豁免成功则只受一半伤害。",
+				"一个生物可以花费一个{@action Study|XPHB}动作来检视巨龙，并通过一次对抗你法术豁免DC的智力（{@skill Investigation|XPHB}）检定成功来判定它是一个幻象。如果一个生物识破了这个幻象，该生物可以看穿这个影像，并且在为结束由它造成的{@condition Frightened|XPHB}状态以及抵抗其吐息而进行的豁免检定上具有{@variantrule Advantage|XPHB}。"
+			],
+			"damageImmune": [
+				"强酸",
+				"钝击",
+				"寒冷",
+				"火焰",
+				"力场",
+				"闪电",
+				"暗蚀",
+				"穿刺",
+				"毒素",
+				"心灵",
+				"光耀",
+				"挥砍",
+				"雷鸣"
+			],
+			"damageInflict": [
+				"acid",
+				"cold",
+				"fire",
+				"lightning",
+				"necrotic",
+				"poison"
+			],
+			"conditionInflict": [
+				"恐慌"
+			],
+			"savingThrow": [
+				"intelligence",
+				"wisdom"
+			],
+			"abilityCheck": [
+				"智力"
+			],
+			"miscTags": [
+				"ADV",
+				"SGT",
+				"UBA"
+			],
+			"areaTags": [
+				"N"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Inflict Doubt",
+			"name": "赋予怀疑",
+			"source": "AU",
+			"page": 40,
+			"level": 3,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你向施法距离内你可见的一名生物植入自我怀疑。目标必须进行一次感知豁免，豁免失败则其在法术持续时间内进行的{@variantrule D20检定|XPHB|D20检定}具有{@variantrule 劣势|XPHB}。目标可以在其每个回合结束时重复此豁免，豁免成功则结束此法术对其的影响。"
+			],
+			"savingThrow": [
+				"wisdom"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Invulnerability",
+			"name": "无敌术",
+			"source": "AU",
+			"page": 41,
+			"level": 9,
+			"school": "A",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "一块价值500+GP的精金，作为该法术的耗材",
+					"cost": 50000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你{@variantrule 免疫|XPHB}所有伤害，直至法术结束。"
+			],
+			"damageImmune": [
+				"强酸",
+				"钝击",
+				"寒冷",
+				"火焰",
+				"力场",
+				"闪电",
+				"暗蚀",
+				"穿刺",
+				"毒素",
+				"心灵",
+				"光耀",
+				"挥砍",
+				"雷鸣"
+			]
+		},
+		{
+			"ENG_name": "Iron Body",
+			"name": "钢铁之躯",
+			"source": "AU",
+			"page": 41,
+			"level": 8,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "价值250+GP的钻石尘，作为该法术的耗材",
+					"cost": 25000,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你触碰一个自愿的生物，将其转变为活体金属。直到法术结束，目标的{@condition Exhaustion|XPHB}等级无法提升；目标对钝击、火焰、穿刺和挥砍伤害具有{@variantrule Resistance|XPHB}；并且对毒素伤害以及{@condition Paralyzed|XPHB}、{@condition Petrified|XPHB}和{@condition Poisoned|XPHB}状态具有{@variantrule Immunity|XPHB}。如果你施放此法术时目标正处于{@condition Paralyzed|XPHB}、{@condition Petrified|XPHB}或{@condition Poisoned|XPHB}状态，这些状态将立即结束。"
+			],
+			"damageResist": [
+				"钝击",
+				"火焰",
+				"穿刺",
+				"挥砍"
+			],
+			"damageImmune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"麻痹",
+				"石化",
+				"中毒"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Lightning Ring",
+			"name": "闪电之环",
+			"source": "AU",
+			"page": 41,
+			"level": 8,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "emanation",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一块毛皮和一个玻璃指环"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"一圈噼啪作响的电流形成一个以你为源点的10尺{@variantrule Emanation [Area of Effect]|XPHB|Emanation}。每当该{@variantrule Emanation [Area of Effect]|XPHB|Emanation}进入一个生物的空间，以及每当一个生物进入该{@variantrule Emanation [Area of Effect]|XPHB|Emanation}或在其内结束其回合时，你可以迫使该生物进行一次体质豁免。豁免失败时，该生物受到{@damage 3d6}闪电伤害加上{@damage 3d6}雷鸣伤害，并且获得{@condition Deafened|XPHB}状态，持续1分钟。豁免成功时，该生物仅受到一半伤害。",
+				"当法术处于激活状态时，你可以以一个{@action Magic|XPHB}动作，从你自身向你选择的方向发射一道60尺长、5尺宽的{@variantrule Line [Area of Effect]|XPHB|Line}。位于该{@variantrule Line [Area of Effect]|XPHB|Line}中的每个生物需进行一次敏捷豁免，豁免失败则受到{@damage 6d6}闪电伤害，豁免成功则只受到一半伤害。"
+			],
+			"damageInflict": [
+				"lightning",
+				"thunder"
+			],
+			"conditionInflict": [
+				"耳聋"
+			],
+			"savingThrow": [
+				"constitution",
+				"dexterity"
+			],
+			"miscTags": [
+				"UA"
+			],
+			"areaTags": [
+				"E",
+				"L"
+			]
+		},
+		{
+			"ENG_name": "Moment of Prescience",
+			"name": "刹时预知",
+			"source": "AU",
+			"page": 42,
+			"level": 8,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "在你失败于一次D20检定或一名生物以一次攻击检定命中你时执行"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你强大的第六感总能在恰当的时机指引你。你将你失败的{@variantrule D20检定|XPHB}改为掷出20，或将触发该法术的攻击检定改为掷出1。"
+			]
+		},
+		{
+			"ENG_name": "Mordenkainen's Lucubration",
+			"name": "魔邓肯冥思术",
+			"source": "AU",
+			"page": 42,
+			"level": 5,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你恢复至多两枚已消耗的二环或更低环阶的法术位。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你能够恢复的法术位的最高环阶提升至三环（以六至七环法术位施展）或四环（以八环或更高环阶法术位施展）。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Negative Energy Flood",
+			"name": "负能量洪流",
+			"source": "AU",
+			"page": 42,
+			"level": 5,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"m": "一块碎骨和一片黑丝绸"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你向施法距离内一个你可见生物发射出数道丝带状的负能量。若目标不是亡灵，则其进行一次体质豁免，豁免失败则受到{@damage 3d10 + 25}暗蚀伤害，豁免成功则伤害减半。被该法术杀死的类人生物将在你的下一回合开始时转化为一只在24小时内受你的语言指令控制的{@creature 丧尸|XMM}。24小时之后，它将依自己的本性行动。",
+				"若目标为亡灵，则其获得{@dice 3d10}{@variantrule 临时生命值|XPHB}。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比五环高一环，法术的伤害便增加{@dice 1d10}。"
+					]
+				}
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"miscTags": [
+				"SGT",
+				"SMN",
+				"THP"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Power Word Pain",
+			"name": "律令痛苦",
+			"source": "AU",
+			"page": 42,
+			"level": 7,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"你吐露一句充满力量的真言，引发剧痛浪潮侵袭施法距离内一个你可见生物。如果目标的{@variantrule 生命值|XPHB}为100点或更少，其将受{@damage 6d8}力场伤害，并在法术持续时间内陷入{@condition 魅惑|XPHB}状态。否则，目标将仅受到此{@damage 6d8}力场伤害。",
+				"当目标处于{@condition Charmed|XPHB}状态时，其{@variantrule Speed|XPHB}不能超过10尺，并且在除体质豁免外的所有{@variantrule D20 Test|XPHB|D20 Tests}上具有{@variantrule Disadvantage|XPHB}。此外，当目标试图施放一个法术时，它必须首先成功通过一次体质豁免，否则该法术消散且不产生任何效果，并且用于施放该法术的动作、{@variantrule Bonus Action|XPHB}或{@variantrule Reaction|XPHB}将被浪费。如果该法术是用法术位施放的，则该法术位不会被消耗。",
+				"受{@condition 魅惑|XPHB}的生物在其每个回合结束时进行一次体质豁免，成功则结束此法术对其的影响。"
+			],
+			"damageInflict": [
+				"force"
+			],
+			"conditionInflict": [
+				"魅惑"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Reweave Fate",
+			"name": "改写命运",
+			"source": "AU",
+			"page": 42,
+			"level": 7,
+			"school": "D",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "在60尺范围内你可见的一名生物失败于一次D20检定时执行"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你解开命运的一根丝线，以促成不同的结果。在{@variantrule D20 检定|XPHB}中失败的生物可以带着{@variantrule 优势|XPHB}重掷该检定，并且必须使用新的掷骰结果。如果该{@variantrule D20 检定|XPHB}成功，该生物会因其被强化的命运而获得{@dice 6d10}点{@variantrule 临时生命值|XPHB}。"
+			],
+			"miscTags": [
+				"ADV",
+				"SGT",
+				"THP"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Spirit Lantern",
+			"name": "魂灵提灯",
+			"source": "AU",
+			"page": 43,
+			"level": 5,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一盏黑色提灯"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					}
+				}
+			],
+			"entries": [
+				"你召唤出一盏漂浮的、幽灵般的黑色提灯，它悬浮在你上方，并在60尺半径内散发出{@variantrule Dim Light|XPHB}。当一个敌人在此{@variantrule Dim Light|XPHB}内死亡时，该生物的一缕灵魂碎片会飞入提灯。提灯可以容纳的灵魂碎片数量等同于你的施法关键属性调整值，这些碎片在法术结束时消散。",
+				"你可以使用{@variantrule 附赠动作|XPHB}消耗一枚灵魂碎片创造以下一道效应。",
+				{
+					"ENG_name": "Drain Life",
+					"name": "汲取生命",
+					"type": "entries",
+					"entries": [
+						"该灵魂碎片射向60尺内由你选择的一名你可见的生物。目标进行一次体质豁免，豁免失败则受到等于{@damage 4d8}加你的施法属性调整值的暗蚀伤害，豁免成功则伤害减半。"
+					]
+				},
+				{
+					"ENG_name": "Repair Undead",
+					"name": "修复亡灵",
+					"type": "entries",
+					"entries": [
+						"该灵魂碎片飞入60尺内你选择的一名你可见的亡灵生物体内。该生物恢复等于{@dice 4d8}加你的施法属性调整值的{@variantrule 生命值|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Ward Ally",
+					"name": "护佑盟友",
+					"type": "entries",
+					"entries": [
+						"该灵魂碎片围绕60尺内你选择的一名你可见的生物飞舞。其他生物对该生物进行的攻击检定具有{@variantrule 劣势|XPHB}，直至你的下一回合开始。"
+					]
+				}
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"miscTags": [
+				"HL",
+				"LGT",
+				"SGT",
+				"UBA"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Summon Dinosaur",
+			"name": "恐龙召唤术",
+			"source": "AU",
+			"page": 43,
+			"level": 6,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "价值600+GP的抛光鳞片",
+					"cost": 60000
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你唤来一只原始恐龙的灵魄。其使用{@creature 恐龙灵魄|AU}的数据，并会在施法距离内一处你可见的未占据空间中显现。当你施展法术时，从甲龙、{@creature 三角龙|XMM}和霸王龙中选择一种。该生物会显化为你所选的恐龙，其数据中的部分特性也受此影响。该生物会在{@variantrule 生命值|XPHB}降为0或是法术结束时消失。",
+				"该生物是你和你盟友的盟友。它在战斗中使用你的{@variantrule 先攻|XPHB}，并在你回合结束后立即行动。它遵从于你的口头指令（无需任何动作）。如果你不发令，它将执行{@action 回避|XPHB}动作并用移动力远离危险。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"该生物的数据使用新的法术环阶。"
+					]
+				}
+			],
+			"miscTags": [
+				"SGT",
+				"SMN"
+			]
+		},
+		{
+			"ENG_name": "Summon Plant",
+			"name": "植物召唤术",
+			"source": "AU",
+			"page": 44,
+			"level": 5,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "价值500+GP的草药",
+					"cost": 50000
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你唤来一株活化植物的灵魄。其使用{@creature 植物灵魄|AU}的数据，并会在施法距离内一处你可见的未占据空间中显现。当你施展法术时，从真菌、巨树或藤蔓中选择一种。该生物会显化为你所选的植物，其数据中的部分特性也受此影响。该生物会在{@variantrule 生命值|XPHB}降为0或是法术结束时消失。",
+				"该生物是你和你盟友的盟友。它在战斗中使用你的{@variantrule 先攻|XPHB}，并在你回合结束后立即行动。它遵从于你的口头指令（无需任何动作）。如果你不发令，它将执行{@action 回避|XPHB}动作并用移动力远离危险。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"该生物的数据使用新的法术环阶。"
+					]
+				}
+			],
+			"miscTags": [
+				"SGT",
+				"SMN"
+			]
+		},
+		{
+			"ENG_name": "Transfix",
+			"name": "沉鱼落雁",
+			"source": "AU",
+			"page": 44,
+			"level": 7,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你的容颜在持续时间内变得超凡脱俗且倾倒众生。60尺范围内一名由你选择的你可见生物必须成功进行一次魅力豁免，豁免失败则在法术持续时间内陷入{@condition 魅惑|XPHB}状态。",
+				"当目标处于{@condition Charmed|XPHB}状态时，它同时获得{@condition Incapacitated|XPHB}状态。如果目标距离你超过5尺，它会在其回合内沿着最直接的路线向你移动，试图进入你5尺范围内。如果该{@condition Charmed|XPHB}生物在其回合结束时位于你5尺范围内，它将受到{@damage 4d8}心灵伤害。",
+				"目标不会在向你移动期间躲避{@action 借机攻击|XPHB|借机攻击}，但其在即将进入伤害性地形（例如岩浆或陷坑）时可重复此豁免，豁免成功则结束此法术对其的影响。",
+				"直到法术结束之前，你都可以在后续的回合中使用{@action 魔法|XPHB}动作再指定另一名生物，但你不能指定已成功通过该次法术豁免的生物。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "Using a Higher-Level Spell Slot",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"你使用的法术位每比七环高一环，法术的伤害便增加{@dice 1d8}。"
+					]
+				}
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"conditionInflict": [
+				"魅惑",
+				"失能"
+			],
+			"savingThrow": [
+				"charisma"
+			],
+			"miscTags": [
+				"SGT",
+				"UA"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Uncertain Footing",
+			"name": "步履维艰",
+			"source": "AU",
+			"page": 44,
+			"level": 2,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一块扭曲的透镜"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你创造出诸如岩石或地刺般的障碍物幻象，尝试干扰至多三名施法距离内你可见的生物，影响其移动能力。每名目标进行一次智力豁免。若豁免失败，则目标的{@variantrule 速度|XPHB}减半，且无法执行{@action 疾走|XPHB}动作。一名被妨碍的目标在其每个回合结束时重复此豁免，若豁免成功，则其身上的此法术终止。"
+			],
+			"savingThrow": [
+				"intelligence"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"MT"
+			]
+		},
+		{
+			"ENG_name": "Vision of Elapsing Eons",
+			"name": "瞥见亘古一瞬",
+			"source": "AU",
+			"page": 45,
+			"level": 9,
+			"school": "I",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"你欺骗施法距离内一名你可见的生物，使其误以为自己正在目睹自身及周围一切的分崩离析，如同亿万年光阴在转瞬间流逝。目标必须进行一次智力豁免，豁免失败则受到{@damage 10d12}心灵伤害，并在法术持续时间内陷入{@condition 麻痹|XPHB}状态。",
+				"被{@condition 麻痹|XPHB}期间，目标可在其每个回合结束时重复此豁免。豁免失败则其获得一层{@condition 力竭|XPHB}。豁免成功则法术结束。若目标5尺内的其他生物用一个动作将其从幻境中摇醒，此法术也会提前结束。"
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"conditionInflict": [
+				"力竭",
+				"麻痹"
+			],
+			"savingThrow": [
+				"intelligence"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			]
+		},
+		{
+			"ENG_name": "Wail of the Banshee",
+			"name": "女妖之嚎",
+			"source": "AU",
+			"page": 45,
+			"level": 9,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你发出一声可怕的尖啸，足以杀死听到它的生物。选择射程内至多十个生物。每个生命值不超过50{@variantrule Hit Points|XPHB}的目标会直接死亡。生命值超过50{@variantrule Hit Points|XPHB}的目标需进行一次体质豁免。豁免失败的目标受到{@damage 12d10}点心灵伤害，并获得持续1小时的{@condition Deafened|XPHB}状态。豁免成功的目标仅受到一半伤害。无法听到你的目标不受此法术影响。"
+			],
+			"damageInflict": [
+				"psychic"
+			],
+			"conditionInflict": [
+				"耳聋"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"areaTags": [
+				"MT"
+			]
+		},
+		{
+			"ENG_name": "Waves of Exhaustion",
+			"name": "力竭波",
+			"source": "AU",
+			"page": 45,
+			"level": 5,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "cone",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "一块肉干"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"你在身体周围唤起一圈闪烁的灰色光晕。在法术持续时间内，你可以使用一个{@action Magic|XPHB}动作，向一个60尺的{@variantrule Cone [Area of Effect]|XPHB|Cone}区域发射一道灰色光波。该区域内的生物必须成功通过一次体质豁免，否则获得1级{@condition Exhaustion|XPHB}。此法术无法使生物的{@condition Exhaustion|XPHB}等级超过4级。",
+				"该法术造成的{@condition 力竭|XPHB}等级会在法术结束时被移除。"
+			],
+			"conditionInflict": [
+				"力竭"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"miscTags": [
+				"UA"
+			],
+			"areaTags": [
+				"N"
+			]
+		},
+		{
+			"ENG_name": "Wither and Bloom",
+			"name": "靡叶生华",
+			"source": "AU",
+			"page": 45,
+			"level": 2,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "弯折成环形的枯萎藤蔓"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"你在以施法距离内一点为中心的10尺半径{@variantrule 球状 [效应区域]|XPHB|球状}区域里唤起死气与生机。该区域里每个由你选择的生物都进行一次体质豁免，豁免失败则受到{@damage 3d6}暗蚀伤害，豁免成功则伤害减半。区域里并非生物的非魔法植物都会枯萎，例如树木与灌木。",
+				"此外，区域里一个你所选的生物能使用并投掷一枚其未使用的{@variantrule 生命值骰|XPHB}，恢复等于投掷结果加上你的施法属性调整值的{@variantrule 生命值|XPHB}。该生命骰随即被消耗。"
+			],
+			"entriesHigherLevel": [
+				{
+					"ENG_name": "At Higher Levels",
+					"name": "升环施法",
+					"type": "entries",
+					"entries": [
+						"使用2环以上法术位施展该法术时，每比2环高一环，伤害就增加{@dice 1d6}，并且可以投掷并消耗的{@variantrule 生命值骰|XPHB}数量增加一个。无论投掷并消耗了多少个{@variantrule 生命值骰|XPHB}，你只将你的施法关键属性调整值加到该法术恢复的{@variantrule 生命值|XPHB}上一次。"
+					]
+				}
+			],
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"miscTags": [
+				"HL"
+			],
+			"areaTags": [
+				"S"
+			]
+		},
+		{
+			"ENG_name": "Zone of Amicability",
+			"name": "友善之域",
+			"source": "AU",
+			"page": 45,
+			"level": 4,
+			"school": "E",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "emanation",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10
+					}
+				}
+			],
+			"entries": [
+				"你放射出一道魔法性的友善之域，在法术持续时间内覆盖源自你的60尺{@variantrule 光环 [效应区域]|XPHB|光环}区域。每当你进行一次用于影响一名区域内生物的属性检定时，你都可以将{@dice d20}中掷出的9或更低的结果视为10。"
+			],
+			"areaTags": [
+				"E"
+			]
+		}
+	]
+}

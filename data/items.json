@@ -1133,8 +1133,8 @@
 						{
 							"type": "list",
 							"items": [
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"一个{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -1324,9 +1324,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -1506,23 +1506,23 @@
 									"ENG_name": "Piety 10+",
 									"name": "虔信值 10+",
 									"type": "item",
-									"entry": "锤子获得1个随机的{@table 神器词条; 次要增益词条|dmg|次要增益}属性。"
+									"entry": "锤子获得1个随机的{@table 神器词条; 次要增益词条|dmg|次要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 25+",
 									"name": "虔信值 25+",
 									"type": "item",
-									"entry": "这把神锤拥有1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "这把神锤拥有1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 50+",
 									"name": "虔信值 50+",
 									"type": "item",
-									"entry": "这把神锤拥有1项额外的随机的{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "这把神锤拥有1项额外的随机的{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								}
 							]
 						},
-						"如果你不是普罗烽斯的崇拜者，锤子获得2个随机的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。",
+						"如果你不是普罗烽斯的崇拜者，锤子获得2个随机的{@table 神器词条; 次要减益词条|dmg|次要减益}词条。",
 						"关于随机属性详见城主指南第七章\"神器\"。"
 					]
 				},
@@ -2553,8 +2553,8 @@
 						{
 							"type": "list",
 							"items": [
-								"3 项{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2项{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"3 项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -3170,6 +3170,24 @@
 			]
 		},
 		{
+			"ENG_name": "Arcane Chatelaine",
+			"name": "秘法腰链",
+			"source": "AU",
+			"page": 116,
+			"rarity": "rare",
+			"wondrous": true,
+			"entries": [
+				"这串华丽的腰链上附有六把幽灵般的钥匙。作为{@action 魔法|XPHB}动作，你可以用其中一把钥匙触碰一扇关闭的门、窗、大门、容器或舱门，以此对其施展法术{@spell 秘法锁|XPHB}。钥匙一经使用便会消失。当六把钥匙全部消失时，该腰链也会随之消失。"
+			],
+			"attachedSpells": {
+				"limited": {
+					"6": [
+						"秘法锁|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Arcane Propulsion Arm",
 			"name": "喷流式奥能臂",
 			"source": "ERLW",
@@ -3198,6 +3216,50 @@
 			"optionalfeatures": [
 				"仿制魔法物品|tce"
 			]
+		},
+		{
+			"ENG_name": "Arcanist's Bestiary",
+			"name": "奥术师的怪物志",
+			"source": "AU",
+			"page": 116,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"grantsProficiency": true,
+			"entries": [
+				"这本魔法书里画满了数百页关于各种怪物的插图、图表与解析。",
+				{
+					"ENG_name": "Charm Monster",
+					"name": "魅惑怪物",
+					"type": "entries",
+					"entries": [
+						"持握该书期间，你可以从中施展法术{@spell 魅惑怪物|XPHB}（法术豁免{@dc 15}）。如果目标不是类人生物，则其对抗该法术的豁免检定具有{@variantrule 劣势|XPHB}。直至下一黎明前，你都不能再以此方式施展该法术。"
+					]
+				},
+				{
+					"ENG_name": "Extensive Knowledge",
+					"name": "渊博学识",
+					"type": "entries",
+					"entries": [
+						"当你与该书同调时，你从以下技能中选择一项并获得其熟练：{@skill 奥秘|XPHB}、{@skill 历史|XPHB}、{@skill 自然|XPHB}或{@skill 宗教|XPHB}。每当你完成一次{@variantrule 长休|XPHB}，你可以更改此选择。如果结束与该书的{@variantrule 同调|XPHB}，你将失去此熟练。"
+					]
+				},
+				{
+					"ENG_name": "Monster Primer",
+					"name": "怪物启蒙",
+					"type": "entries",
+					"entries": [
+						"携带该书时，每当你执行{@action 研究|XPHB}动作，并进行一次智力（{@skill 奥秘|XPHB}）检定来回忆关于一个你可见的异怪、构装、元素、妖精或怪兽的信息时，若检定成功，你将得知该生物是否具有任何免疫、抗性或易伤。如果该生物具有上述特性，你会确切知晓其内容。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"魅惑怪物|xphb"
+					]
+				}
+			}
 		},
 		{
 			"ENG_name": "Argonnessen Trinket",
@@ -4070,9 +4132,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"2项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"2项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条"
 							]
 						}
 					]
@@ -4290,9 +4352,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -6154,6 +6216,56 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Bejeweled Conclave Trinket",
+			"name": "瑰宝秘社饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "瑰宝秘社饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一个空香水瓶，隐约散发着渴望的气息"
+						],
+						[
+							"2",
+							"三封笔迹相同的情书，署名却各不相同"
+						],
+						[
+							"3",
+							"一条缝有数个暗袋的丝巾"
+						],
+						[
+							"4",
+							"一份合同的签名页"
+						],
+						[
+							"5",
+							"一只雕刻着彗星图案的酒杯"
+						],
+						[
+							"6",
+							"一枚镶着假宝石的俗气订婚戒指"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
+		},
+		{
 			"ENG_name": "Bejeweled gold bracelet",
 			"name": "镶满宝石的金手镯",
 			"type": "$A|XDMG",
@@ -6328,6 +6440,59 @@
 				"charges": {
 					"1": [
 						"防护善恶"
+					]
+				}
+			}
+		},
+		{
+			"ENG_name": "Bellows of Strangulation",
+			"name": "扼杀风箱",
+			"source": "AU",
+			"page": 116,
+			"rarity": "rare",
+			"wondrous": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d6 + 1}",
+			"charges": 6,
+			"entries": [
+				"该风箱具有6充能。当你拿着它时，你可以执行{@action 魔法|XPHB}动作并说出三个命令语之一，以产生以下效应之一：",
+				{
+					"type": "list",
+					"items": [
+						{
+							"ENG_name": "First Command Word",
+							"name": "第一命令语",
+							"type": "item",
+							"entry": "你消耗1充能，使风箱吸取60尺范围内一个你可见的生物的能量。该生物必须成功通过一次{@dc 15}的体质豁免，否则陷入{@condition 失能|XPHB}状态，持续1分钟。该生物在其每个回合结束时会重复此豁免，豁免成功则结束自身该效应。"
+						},
+						{
+							"ENG_name": "Second Command Word",
+							"name": "第二命令语",
+							"type": "item",
+							"entry": "你消耗3充能，使风箱吸取一处30尺{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内生物的能量。该区域内的每个生物都必须成功通过一次{@dc 15}的体质豁免，否则陷入{@condition 失能|XPHB}状态，持续1分钟。受影响的生物在其每个回合结束时会重复此豁免，豁免成功则结束自身该效应。"
+						},
+						{
+							"ENG_name": "Third Command Word",
+							"name": "第三命令语",
+							"type": "item",
+							"entry": "你消耗5充能，从风箱施展法术{@spell 死云术|XPHB}（法术{@dc 17}）。"
+						}
+					],
+					"style": "list-hang-notitle"
+				},
+				{
+					"ENG_name": "Regaining Charges",
+					"name": "重获充能",
+					"type": "entries",
+					"entries": [
+						"该风箱在每日黎明时恢复{@dice 1d6 + 1}充能。如果你消耗了最后一充能，掷一次{@dice 1d20}。若掷出1，风箱会在一阵无害的狂风中爆炸并永远消失。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"5": [
+						"死云术|xphb"
 					]
 				}
 			}
@@ -6788,9 +6953,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -7700,7 +7865,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			]
@@ -7846,6 +8011,36 @@
 			]
 		},
 		{
+			"ENG_name": "Blemished Idol of Good Fortunes",
+			"name": "有瑕吉运神像",
+			"source": "AU",
+			"page": 127,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				{
+					"ENG_name": "Blemished",
+					"name": "有瑕",
+					"type": "entries",
+					"entries": [
+						"神像由失去光泽的青铜制成，表面散布着些许磕碰和凹痕。",
+						"你可以从神像中施展{@spell 卜筮术|XPHB}。神像将出声回应宣告预兆。一旦此神像被用于施展该法术，直至下一黎明其都无法再次被用于施展该法术。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"卜筮术|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Blight Ichor",
 			"name": "枯萎汁液",
 			"type": "G",
@@ -7908,6 +8103,23 @@
 				"这件物品由一颗价值5000金币的大{@item 钻石}制成。当一个生物的血液在制作该物品的过程中被倒在钻石上时，血液会流进宝石的中心。如果宝石被摧毁，血液便会蒸发并永久地消失。一个复仇者可能会用血石来追猎一整个血亲家族。这种石头有时也会被作为礼物送给兄弟姐妹，或者由父母传给孩子。"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Blood Amulet",
+			"name": "鲜血护符",
+			"source": "AU",
+			"page": 116,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d3}",
+			"charges": 3,
+			"entries": [
+				"这枚精致的护符看起来像一颗被尖刺贯穿的、微小的、跳动着的心脏。其具有3充能，并在每日黎明时恢复{@dice 1d3}充能。",
+				"每当你对一个生物造成伤害时，你可以消耗1充能，对目标造成额外{@damage 2d10}暗蚀伤害，并迫使其进行一次{@dc 15}的体质豁免。豁免失败时，目标获得1级{@condition 力竭|XPHB}。"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Blood Fury Tattoo",
@@ -8641,8 +8853,8 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"2项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性"
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"2项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条"
 							]
 						}
 					]
@@ -8841,10 +9053,10 @@
 						{
 							"type": "list",
 							"items": [
-								"3项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"3项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"2项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"3项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"3项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"2项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						}
 					]
@@ -9023,6 +9235,18 @@
 				"你可以用这把魔法盾牌发动远程武器攻击。它具有20尺的通常射程与60尺的最大射程，且它的攻击检定使用你的力量属性或敏捷属性（由你选择）。如果你具有盾牌的熟练项，那么你也将熟练于用这把盾牌发起的攻击检定。命中时，它将造成{@damage 1d6}点挥砍伤害。如果你投掷了盾牌，不论是攻击是否命中，它都会在攻击后立刻重新飞回你的手上。"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Boon Companions' Bands",
+			"name": "莫逆指环",
+			"type": "RG|XDMG",
+			"source": "AU",
+			"page": 117,
+			"rarity": "uncommon",
+			"entries": [
+				"莫逆指环成对出现，并刻有相配的雕纹。当你佩戴其中一枚指环期间，如果你施展法术或使用特性，迫使其影响区域内的其他生物进行豁免检定，且佩戴另一枚匹配指环的生物正处于该效应区域内，则你可以保护该生物。该生物对抗该效应的豁免检定自动成功；如果该效应通常在豁免成功时造成一半伤害，则该生物不受任何伤害。",
+				"一旦其中任意一枚指环使用了该词条，则直至下一黎明前，这两枚指环都无法再次使用。如果一对指环中的一枚被摧毁，另一枚也会随之化为齑粉。"
+			]
 		},
 		{
 			"ENG_name": "Boots of Elvenkind",
@@ -10065,6 +10289,56 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Bringers of Cosmic Dawn Trinket",
+			"name": "寰宇黎明使徒会饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "寰宇黎明使徒会饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一只锋利无比的淡紫色利爪"
+						],
+						[
+							"2",
+							"一块不平整的单筒望远镜镜片，会闪烁着发出苍绿的光"
+						],
+						[
+							"3",
+							"一块刻着陌生星座群星的石头"
+						],
+						[
+							"4",
+							"一些关于呋噜的预言残篇"
+						],
+						[
+							"5",
+							"一片如触手般抽动的蕨叶"
+						],
+						[
+							"6",
+							"一个小盒子，里面装着一条不死的蠕虫"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
+		},
+		{
 			"ENG_name": "Bronze crown",
 			"name": "青铜王冠",
 			"type": "$A|DMG",
@@ -10326,6 +10600,46 @@
 				]
 			},
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Budding Blossom Rod",
+			"name": "繁花待放权杖",
+			"type": "RD|XDMG",
+			"source": "AU",
+			"page": 127,
+			"rarity": "uncommon",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				{
+					"ENG_name": "Budding",
+					"name": "待放",
+					"type": "entries",
+					"entries": [
+						"五彩斑斓的叶片点缀着权杖的茎秆，两端的位置簇生着花苞。",
+						"持握此权杖期间，你可以从中施展{@spell 德鲁伊伎俩|XPHB}或{@spell 植物滋长|XPHB}（仅繁茂）。一旦此权杖被用于施展{@spell 植物滋长|XPHB}，直至下一黎明其都无法再次被用于施展该法术。",
+						"持握此权杖期间，你能以{@action 魔法|XPHB}动作使位于你15尺内你可见的5尺{@variantrule 立方 [效应区域]|XPHB|立方}区域内的非魔法植物恢复生机。恢复生机的植物保持繁茂持续{@dice 1d4}天，之后就会像普通植物一般生长或枯萎。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"will": [
+					"德鲁伊伎俩|xphb"
+				],
+				"daily": {
+					"1e": [
+						"植物滋长|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Bullseye Lantern",
@@ -10666,10 +10980,10 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						}
 					]
@@ -12209,6 +12523,37 @@
 			}
 		},
 		{
+			"ENG_name": "Chattering Staff of Skulls",
+			"name": "絮叨骸骨法杖",
+			"source": "AU",
+			"page": 128,
+			"_copy": {
+				"ENG_name": "Ominous Staff of Skulls",
+				"name": "噩兆骸骨法杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Chattering",
+							"name": "絮叨",
+							"type": "entries",
+							"entries": [
+								"法杖顶端装饰着融合在一起的几个头骨。",
+								"当位于你30尺内你可见的生物进行攻击检定时，你能以{@variantrule 反应|XPHB}令此次检定具有{@variantrule 劣势|XPHB}，此时头骨的眼睛将发出绿光，牙齿也会咯咯作响，令人毛骨悚然。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "rare",
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Cheese (wedge)",
 			"name": "奶酪（一角）",
 			"type": "FD|XPHB",
@@ -13556,7 +13901,7 @@
 				},
 				{
 					"ENG_name": "Grasping Tendrils",
-					"name": "缠握触须",
+					"name": "擒抱触须",
 					"type": "entries",
 					"entries": [
 						"当刺青在你的皮肤上时，你可以用一个动作让刺青伸缩出一团能够触及一个15尺内你可见生物的墨黑色触须。目标生物必须进行一次{@dc 14}的力量豁免，豁免失败则受到{@damage 3d6}力场伤害并被你{@condition 受擒}。作为一个动作，被擒抱的生物可以通过{@dc 14}的力量（{@skill 运动}）或敏捷（{@skill 特技}）检定以摆脱擒抱。在你使触手停止（无需动作），或生物与你相距15尺以上或你对另一个生物使用此刺青时，擒抱也会结束。"
@@ -13848,6 +14193,20 @@
 			"entries": [
 				"凝序粉是一种可从守序生物身上萃取的银色粉末。前往阿弗纳斯战场的魔鬼们会携带装有这种物质的小瓶或鼻烟盒，以抵御恶魔纯粹混沌的侵蚀。服用此物质需要一个动作，并使你免疫恶魔脓汁的肉体扭曲特性。同时，你在对抗恶魔来源的任何效果的豁免检定上获得优势。这些效果持续8小时。"
 			]
+		},
+		{
+			"ENG_name": "Conjurer's Canopy",
+			"name": "咒法师华盖",
+			"source": "AU",
+			"page": 117,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"你可以执行{@action 魔法|XPHB}动作并说出命令语，将这根魔法手杖猛地插入地面。其会笔直竖立，并以手杖为源点投射出一个20尺{@variantrule 立方 [效应区域]|XPHB|立方}的透明力场华盖。该华盖持续1小时，或者直至你以{@action 魔法|XPHB}动作提前结束该效应。",
+				"华盖会保护区域内的生物和物件免受寻常天气现象（如雨雪）的影响。无论外界天气如何，华盖区域内的空气始终舒适且干燥。生物、物件和魔法效应仍可照常穿过该华盖。",
+				"华盖消失后，手杖在接下来的{@dice 1d12}小时内无法再次使用。"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Constantori's Portrait",
@@ -14144,6 +14503,56 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Covenant of the Grave Trinket",
+			"name": "亡陵誓盟饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "亡陵誓盟饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一小罐墓地泥土"
+						],
+						[
+							"2",
+							"一件可自我消毒的环钻"
+						],
+						[
+							"3",
+							"一本配有墓地插图的小册子"
+						],
+						[
+							"4",
+							"一只仍在抽搐的僵尸脚趾"
+						],
+						[
+							"5",
+							"一个旧盒子里的小干花花环"
+						],
+						[
+							"6",
+							"一瓶琥珀色液体中浸泡着的神秘器官"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
+		},
+		{
 			"ENG_name": "Covered Wagon",
 			"name": "货篷车",
 			"type": "VEH|XPHB",
@@ -14239,9 +14648,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -14553,9 +14962,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						}
 					]
@@ -14618,9 +15027,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -14747,6 +15156,56 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Crucible Keepers Trinket",
+			"name": "熔炉司守饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "熔炉司守饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一块被龙卷风卷起的树枝刺穿的金属"
+						],
+						[
+							"2",
+							"一个破烂的、沾满盐渍的玩偶"
+						],
+						[
+							"3",
+							"一块火山玻璃"
+						],
+						[
+							"4",
+							"一副破碎的风铃"
+						],
+						[
+							"5",
+							"一枚被大火熏黑的海贝"
+						],
+						[
+							"6",
+							"一块烙有闪电状纹路的树皮"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
+		},
+		{
 			"ENG_name": "Crusader's Shortsword",
 			"name": "十字军短剑",
 			"type": "M",
@@ -14794,6 +15253,35 @@
 				}
 			},
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Crusading Wand of Celestial Prowess",
+			"name": "圣战天威魔杖",
+			"source": "AU",
+			"page": 133,
+			"_copy": {
+				"ENG_name": "+1 Wand of the War Mage",
+				"name": "+1 战法师魔杖",
+				"source": "XDMG",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Crusading",
+							"name": "圣战",
+							"type": "entries",
+							"entries": [
+								"牧师的施法能力帮助角色们击败了邪魔邪教徒组织。DM决定让魔杖进化为珍稀物品，并获得圣战词条。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "rare"
 		},
 		{
 			"ENG_name": "Crystal Ball",
@@ -14902,6 +15390,25 @@
 				"奥秘 - 传说|XDMG"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Crystal Ball of Ominous Portent",
+			"name": "不祥预兆水晶球",
+			"source": "AUD",
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"不祥的魔法如黑红交织的云雾在这颗水晶球中盘旋。触碰该法球期间，你可以用它施展{@spell 脆弱诅咒|XPHB}或{@spell 探知术|XPHB}（豁免{@dc 17}）。",
+				"此外，当一个位于你60尺内你可见的生物在一次{@variantrule D20 检定|XPHB|D20 检定}中成功时，你可以执行{@variantrule 反应|XPHB}将该次掷骰变为1。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+			],
+			"attachedSpells": {
+				"will": [
+					"脆弱诅咒|xphb",
+					"探知术|xphb"
+				]
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Crystal Ball of Telepathy",
@@ -15832,9 +16339,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -19740,17 +20247,17 @@
 									"ENG_name": "Piety 25+",
 									"name": "虔信值 25+",
 									"type": "item",
-									"entry": "双叉戟获得1个随机{@table 神器词条; 次要增益词条|dmg|次要增益}属性。"
+									"entry": "双叉戟获得1个随机{@table 神器词条; 次要增益词条|dmg|次要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 50+",
 									"name": "虔信值 50+",
 									"type": "item",
-									"entry": "这把双叉戟拥有1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "这把双叉戟拥有1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								}
 							]
 						},
-						"如果你不是塔萨的崇拜者，该双叉戟获得1个{@table 神器词条; 次要减益词条|dmg|次要减益}属性和1个{@table 神器词条; 主要减益词条|dmg|主要减益}属性，均为随机决定。",
+						"如果你不是塔萨的崇拜者，该双叉戟获得1个{@table 神器词条; 次要减益词条|dmg|次要减益}词条和1个{@table 神器词条; 主要减益词条|dmg|主要减益}词条，均为随机决定。",
 						"关于随机属性详见城主指南第七章\"神器\"。"
 					]
 				},
@@ -19888,9 +20395,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性",
-								"一个{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -20023,9 +20530,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						}
 					]
@@ -20328,6 +20835,160 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Diamond Staff",
+			"name": "钻石法杖",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 118,
+			"rarity": "legendary",
+			"reqAttune": "由术士、魔契师或法师",
+			"reqAttuneTags": [
+				{
+					"class": "术士"
+				},
+				{
+					"class": "魔契师"
+				},
+				{
+					"class": "法师"
+				}
+			],
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"bonusWeapon": "+3",
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d6 + 4}",
+			"charges": 20,
+			"staff": true,
+			"entries": [
+				"这根6尺长的节杖由一整块巨大的水晶雕刻而成，顶端是一个完美的透明圆球。该{@item 法杖|XPHB}具有20充能。其可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+3加值。",
+				{
+					"ENG_name": "Adept",
+					"name": "专家",
+					"type": "entries",
+					"entries": [
+						"持握该{@item 法杖|XPHB}期间，你的智力（{@skill 奥秘|XPHB}）检定具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Dazzling Light",
+					"name": "炫目强光",
+					"type": "entries",
+					"entries": [
+						"持握该{@item 法杖|XPHB}期间，你可以消耗1充能并说出命令语，使该{@item 法杖|XPHB}绽放光芒。该{@item 法杖|XPHB}会发出半径40尺的{@variantrule 明亮光照|XPHB}以及额外40尺的{@variantrule 微光光照|XPHB}。1分钟后，或当你使用命令语将其关闭时，该{@item 法杖|XPHB}会停止发光。"
+					]
+				},
+				{
+					"ENG_name": "Spells",
+					"name": "法术",
+					"type": "entries",
+					"entries": [
+						"持握此{@item 法杖|XPHB}期间，你可以从法杖中施展以下表格中的一道法术，使用你自己的法术豁免DC。施展相应法术所需消耗的充能数如下表所示。"
+					]
+				},
+				{
+					"type": "table",
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"colLabels": [
+						"法术",
+						"消耗充能"
+					],
+					"rows": [
+						[
+							"{@spell 侦测魔法|XPHB}",
+							"0"
+						],
+						[
+							"{@spell 光亮术|XPHB}",
+							"0"
+						],
+						[
+							"{@spell 鉴定术|XPHB}",
+							"1"
+						],
+						[
+							"{@spell 迷宫术|XPHB}",
+							"8"
+						],
+						[
+							"{@spell 敲击术|XPHB}",
+							"2"
+						],
+						[
+							"{@spell 巧言术|XPHB}（仅自身）",
+							"0"
+						],
+						[
+							"{@spell 通晓传奇|XPHB}",
+							"5"
+						],
+						[
+							"{@spell 真知术|XPHB}",
+							"3"
+						]
+					]
+				},
+				{
+					"ENG_name": "Stunning Hit",
+					"name": "震慑打击",
+					"type": "entries",
+					"entries": [
+						"当你使用该{@item 法杖|XPHB}进行近战攻击并命中时，你可以消耗2充能，目标必须成功通过一次{@dc 17}的体质豁免，否则陷入{@condition 震慑|XPHB}状态，直至你的下一回合结束。"
+					]
+				},
+				{
+					"ENG_name": "Regaining Charges",
+					"name": "重获充能",
+					"type": "entries",
+					"entries": [
+						"该{@item 法杖|XPHB}在每日黎明时恢复{@dice 1d6 + 4}已消耗的充能。如果你消耗了最后一充能，掷一次{@dice 1d20}。若掷出1，该{@item 法杖|XPHB}将被摧毁。"
+					]
+				}
+			],
+			"light": [
+				{
+					"bright": 40,
+					"dim": 80
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"0": [
+						"侦测魔法|xphb",
+						"光亮术|xphb",
+						"巧言术|xphb"
+					],
+					"1": [
+						"鉴定术|xphb"
+					],
+					"2": [
+						"敲击术|xphb"
+					],
+					"3": [
+						"真知术|xphb"
+					],
+					"5": [
+						"通晓传奇|xphb"
+					],
+					"8": [
+						"迷宫术|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Dice Set",
 			"name": "骰子组",
 			"type": "GS",
@@ -20377,6 +21038,17 @@
 				}
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Dictation Quill",
+			"name": "听写羽毛笔",
+			"source": "AU",
+			"page": 118,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"当你执行{@action 魔法|XPHB}动作将这支魔法羽毛笔放在纸张或羊皮纸以及一瓶墨水旁边，并说出命令语后，该羽毛笔会以每分钟25个单词的速度，用你所使用的语言写下你接下来所说或用手语表达的话语。该羽毛笔会持续书写1小时；直至纸张、羊皮纸或墨水耗尽；或者直至你使用另一个命令语使其停止（无需动作）。"
+			]
 		},
 		{
 			"ENG_name": "Dimensional Loop",
@@ -20780,6 +21452,62 @@
 			"entries": [
 				"这个光滑的彩虹色卵形石头可以被扔到至多30尺远的地方，在冲击下爆炸，创造一个10尺半径的魔法能量球体范围，石头随即被摧毁。范围内所有五环及更低环阶的魔法被终止。"
 			]
+		},
+		{
+			"ENG_name": "Dissuader",
+			"name": "劝止者",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 118,
+			"rarity": "rare",
+			"reqAttune": true,
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"bonusWeapon": "+1",
+			"staff": true,
+			"entries": [
+				"该{@item 法杖|XPHB}可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+1加值。其还具有以下额外词条。一旦其中一项词条被使用，则直至下一黎明前，该词条都无法再次使用。",
+				{
+					"ENG_name": "Calm Emotions",
+					"name": "安定心神",
+					"type": "entries",
+					"entries": [
+						"你可以从该{@item 法杖|XPHB}施展法术{@spell 安定心神|XPHB}（豁免{@dc 15}）。"
+					]
+				},
+				{
+					"ENG_name": "Dissuading Aura",
+					"name": "劝阻灵光",
+					"type": "entries",
+					"entries": [
+						"持握该{@item 法杖|XPHB}期间，你可以执行{@action 魔法|XPHB}动作创造出一道源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}心神动荡区域，持续1分钟。每当该{@variantrule 光环 [效应区域]|XPHB|光环}进入一个你可见的生物的空间时，以及每当一个你可见的生物进入该{@variantrule 光环 [效应区域]|XPHB|光环}或在其中结束其回合时，你可以迫使该生物进行一次{@dc 15}的感知豁免。若豁免失败，则该生物陷入{@condition 恐慌|XPHB}状态，直至其下一回合开始。"
+					]
+				},
+				{
+					"ENG_name": "Repel",
+					"name": "击退",
+					"type": "entries",
+					"entries": [
+						"当一个生物进入你周边5尺范围内的空间时，你可以执行{@variantrule 反应|XPHB}以创造出一道力场冲击波。源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内每个你选择的生物都必须成功通过一次{@dc 15}的力量豁免，否则将被向远离你的方向直线推离至多30尺。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"安定心神|xphb"
+					]
+				}
+			}
 		},
 		{
 			"ENG_name": "Docent",
@@ -21443,6 +22171,43 @@
 			],
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Dream Weaver",
+			"name": "幻梦织锦",
+			"source": "AU",
+			"page": 119,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"这张魔法挂毯可以悬挂在墙上或其他合适的垂直表面上。挂毯会神奇地自行解开并重新编织，以此描绘出你最近一次梦境的内容和情感。",
+				"当挂毯被悬挂，并且你位于其30尺范围内时，你获得以下增益。",
+				{
+					"ENG_name": "Dream Wisdom",
+					"name": "梦之启悟",
+					"type": "entries",
+					"entries": [
+						"在一次{@variantrule 长休|XPHB}期间，你可以花费1小时来研习这张挂毯。该{@variantrule 长休|XPHB}结束时，掷{@dice 1d20}并记录掷出的数字。在你完成下一次{@variantrule 长休|XPHB}前，你有一次机会将你进行的任意{@variantrule D20 检定|XPHB|D20 检定}结果替换为该记录值。你必须在掷{@variantrule D20 检定|XPHB|D20 检定}之前做出此选择。"
+					]
+				},
+				{
+					"ENG_name": "Message Recorder",
+					"name": "梦讯留痕",
+					"type": "entries",
+					"entries": [
+						"如果你成为法术{@spell 托梦术|XPHB}的目标，该挂毯会在其图案中记录下施法者的外貌和名字。"
+					]
+				},
+				{
+					"ENG_name": "Mind Wall",
+					"name": "心智壁垒",
+					"type": "entries",
+					"entries": [
+						"当你处于{@condition 昏迷|XPHB}状态期间，你的智力、感知和魅力豁免具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Dreamlily",
@@ -22322,6 +23087,7 @@
 			"name": "乌黯祸主",
 			"type": "M|XPHB",
 			"source": "RHW",
+			"page": 152,
 			"baseItem": "长剑|xphb",
 			"rarity": "artifact",
 			"reqAttune": true,
@@ -22734,7 +23500,7 @@
 				"当你在持有或佩戴碎片时对法术使用变形魔法选项，你可以使用以下特性：",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"你可以立即飞行最多60尺，且不会引起借机攻击。"
@@ -22765,7 +23531,7 @@
 				"当你在持有或佩戴碎片时对法术使用变形魔法选项，你可以使用以下特性：",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"直到你的下一回合开始，你获得对任一伤害类型的抗性。"
@@ -22796,7 +23562,7 @@
 				"当你在持有或佩戴碎片时对法术使用变形魔法选项，你可以使用以下特性：",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"你所见的一个法术目标会着火。燃烧的目标在其下一回合开始时受到 {@damage 2d10} 点火焰伤害，然后火焰熄灭。"
@@ -22827,7 +23593,7 @@
 				"当你在持有或佩戴碎片时对法术使用变形魔法选项，你可以使用以下特性：",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"你创造出一道从你身上爆发出的10尺半径的水波。你能看到的该区域内的每个你选择的生物将受到{@damage 2d6}点寒冷伤害，并必须通过对抗你法术豁免DC的力量豁免检定，否则会被推离你10尺并陷入{@condition 倒地}状态。"
@@ -23096,6 +23862,17 @@
 				"CNS"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Elocutionist's Lexicon",
+			"name": "演说家词典",
+			"source": "AU",
+			"page": 119,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"持握这本魔法词典期间，你可以执行{@action 魔法|XPHB}动作，并尝试回想一个特定的单词。词典会自动翻开至包含你正搜寻的确切单词的那一页。"
+			]
 		},
 		{
 			"ENG_name": "Elven Chain",
@@ -23471,6 +24248,18 @@
 				"这本法术书及其上所写的任何内容都不会因火焰或浸水而受损。另外，这本法术书不会随时间老化。"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Ensorcelled Missive",
+			"name": "附魔信笺",
+			"source": "AU",
+			"page": 119,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"该物品可作为一张羊皮纸使用。在其上书写之后，你可以执行{@action 魔法|XPHB}动作来将纸张折叠或卷起并封口，同时说出或以手势表达一个单词或短语。若某个生物未使用相同的单词或短语便解开封口，则纸上的字迹会变得仿佛是以一种未知且无法理解的文字书写而成。"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Enspelled Staff (Cantrip)",
@@ -23916,17 +24705,17 @@
 									"ENG_name": "Piety 10+",
 									"name": "虔信值 10+",
 									"type": "item",
-									"entry": "该弓获得1个随机的{@table 神器词条; 次要增益词条|dmg|次要增益}属性。"
+									"entry": "该弓获得1个随机的{@table 神器词条; 次要增益词条|dmg|次要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 25+",
 									"name": "虔信值 25+",
 									"type": "item",
-									"entry": "该弓获得1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "该弓获得1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								}
 							]
 						},
-						"如果你不是倪勒娅的崇拜者，这把弓获得1个随机的{@table 神器词条; 主要减益词条|dmg|主要减益}属性。",
+						"如果你不是倪勒娅的崇拜者，这把弓获得1个随机的{@table 神器词条; 主要减益词条|dmg|主要减益}词条。",
 						"关于随机属性详见城主指南第七章\"神器\"。"
 					]
 				},
@@ -24181,6 +24970,17 @@
 					"dim": 120,
 					"shape": "锥状"
 				}
+			]
+		},
+		{
+			"ENG_name": "Evergreen Fertilizer",
+			"name": "常青肥料",
+			"source": "AU",
+			"page": 119,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"一旦将这种刺鼻的粉末洒在一株非魔法植物周围的土壤上，其就能使该植物在接下来的365天内保持健康。"
 			]
 		},
 		{
@@ -24537,9 +25337,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条"
 							]
 						}
 					]
@@ -24758,6 +25558,16 @@
 			],
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Eyes of Deceit",
+			"name": "欺瞒镜片",
+			"source": "AUD",
+			"rarity": "uncommon",
+			"wondrous": true,
+			"entries": [
+				"这对染色水晶镜片遮蔽着你的双眼。佩戴期间，你的魅力（{@skill 欺瞒|XPHB}）检定获得+5加值。"
+			]
 		},
 		{
 			"ENG_name": "Eyes of Minute Seeing",
@@ -26757,6 +27567,48 @@
 			"weight": 2,
 			"value": 2,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Flowering Blossom Rod",
+			"name": "繁花盛放权杖",
+			"source": "AU",
+			"page": 127,
+			"_copy": {
+				"ENG_name": "Budding Blossom Rod",
+				"name": "繁花待放权杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Flowering",
+							"name": "开花",
+							"type": "entries",
+							"entries": [
+								"权杖的两端长着色彩鲜艳芬芳四溢的花朵。",
+								"持握此权杖期间，你可以从中施展{@spell 疫病虫群|XPHB}，使用你的法术豁免DC。当你如此做时，显现的虫群会是大黄蜂。一旦此权杖被用于施展该法术，直至下一黎明其都无法再次被用于施展该法术。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "rare",
+			"attachedSpells": {
+				"will": [
+					"德鲁伊伎俩|xphb"
+				],
+				"daily": {
+					"1e": [
+						"疫病虫群|xphb",
+						"植物滋长|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Flying Chariot",
@@ -28885,6 +29737,44 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Golden Idol of Good Fortunes",
+			"name": "灿金吉运神像",
+			"source": "AU",
+			"page": 127,
+			"_copy": {
+				"ENG_name": "Tarnished Idol of Good Fortunes",
+				"name": "蒙尘吉运神像",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Golden",
+							"name": "金",
+							"type": "entries",
+							"entries": [
+								"神像的黄金熠熠生辉，象眼镶嵌着闪烁的红宝石。",
+								"持握此神像期间，你可以从神像中施展{@spell 法术无效结界|XPHB}。一旦此神像被用于施展该法术，直至下一黎明其都无法再次被用于施展该法术。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "very rare",
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"卜筮术|xphb",
+						"法术无效结界|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Golgari Guild Signet",
 			"name": "葛加理公会印记",
 			"type": "RG|DMG",
@@ -29045,6 +29935,46 @@
 			"entries": [
 				"你使用这把魔法鞭子发动的攻击检定与其伤害掷骰具有+1加值。当你用这把鞭子命中大型或更小体型的生物或物件时，你可以将那个生物或物件向你拉近5尺，以代替造成伤害。"
 			]
+		},
+		{
+			"ENG_name": "Grave Reaper",
+			"name": "墓冢死神",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 119,
+			"baseItem": "镰刀|xphb",
+			"rarity": "legendary",
+			"reqAttune": true,
+			"weight": 2,
+			"weaponCategory": "simple",
+			"property": [
+				"L|XPHB"
+			],
+			"mastery": [
+				"迅击|XPHB"
+			],
+			"dmg1": "1d4",
+			"dmgType": "S",
+			"bonusWeapon": "+2",
+			"entries": [
+				"你使用这把魔法武器进行的攻击检定和伤害掷骰获得+2加值。当你以其命中一个生物时，目标受到额外{@damage 2d8}暗蚀伤害。",
+				{
+					"ENG_name": "Soul Lantern",
+					"name": "灵魂提灯",
+					"type": "entries",
+					"entries": [
+						"持握该武器期间，你可以施展法术{@spell 魂灵提灯|AU}。当你使用该武器施展此法术时，召唤出的提灯至多可容纳五个灵魂碎片，并且该法术的豁免DC为17。",
+						"一旦使用该武器施展了此法术，则直至下一黎明前，都无法再次使用其来施展。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"魂灵提灯|au"
+					]
+				}
+			}
 		},
 		{
 			"ENG_name": "Gravenhollow Compass Ring",
@@ -29490,7 +30420,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			],
@@ -30117,9 +31047,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条"
 							]
 						}
 					]
@@ -30254,6 +31184,7 @@
 			"ENG_name": "Harkon's Bite",
 			"name": "哈肯之咬",
 			"source": "RHW",
+			"page": 126,
 			"rarity": "uncommon",
 			"reqAttune": "由类人生物",
 			"reqAttuneTags": [
@@ -31020,6 +31951,35 @@
 			]
 		},
 		{
+			"ENG_name": "Heliacal Wand of Celestial Prowess",
+			"name": "日耀天威魔杖",
+			"source": "AU",
+			"page": 133,
+			"_copy": {
+				"ENG_name": "Lunar Wand of Celestial Prowess",
+				"name": "月辉天威魔杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Heliacal",
+							"name": "日耀",
+							"type": "entries",
+							"entries": [
+								"牧师成为了其侍奉神祇的化身。因此，DM决定让魔杖进化为传说并获得日耀词条，令其能引导超新星的神威。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "legendary"
+		},
+		{
 			"ENG_name": "Hell Hound Cloak",
 			"name": "地狱猎犬斗篷",
 			"source": "TftYP",
@@ -31368,9 +32328,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -32491,6 +33451,17 @@
 			]
 		},
 		{
+			"ENG_name": "Homeward Compass",
+			"name": "归乡罗盘",
+			"source": "AU",
+			"page": 119,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"持握这枚小巧的黄铜罗盘期间，你可以执行{@action 魔法|XPHB}动作，将罗盘定位到你当前的位置。此后，罗盘的指针将始终指向该位置。该罗盘同一时间只能定位一个位置。作为{@action 魔法|XPHB}动作，你可以结束罗盘当前的定位。当其没有定位到特定位置，或者如果罗盘与其所定位的位置不处于同一个存在位面时，罗盘的指针会漫无目的地乱转。"
+			]
+		},
+		{
 			"ENG_name": "Hooded Lantern",
 			"name": "附盖提灯",
 			"type": "G",
@@ -32614,6 +33585,56 @@
 			"wondrous": true,
 			"entries": [
 				"际天谜方是一种8英寸的魔法立方体，由金、铁、水晶和铜制成，对贤者或收藏家来说价值5000gp。一个可用的谜方可以通过30分钟的工作和一次成功的{@dc 25}智力（{@skill 调查}）检定来解开。当谜方解开以后，解开谜方的生物面前会出现一个直径30尺的传送门，通往有穷际天的东北平台。传送门是双向的，保持打开10分钟，或直到一个生物用一个动作改变谜方的配置。谜方在有穷际天内不起作用，但半位面上的某个设备允许谜方在安装进去时反向运作。"
+			]
+		},
+		{
+			"ENG_name": "Horizon Weavers Trinket",
+			"name": "织界者饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "织界者饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一个慢悠悠打转的罗盘"
+						],
+						[
+							"2",
+							"一张失落山谷的地图"
+						],
+						[
+							"3",
+							"一块永不融化的碎冰"
+						],
+						[
+							"4",
+							"一枚刻有\"带我再度归家\"字样的戒指"
+						],
+						[
+							"5",
+							"一块热气球吊篮上的藤条"
+						],
+						[
+							"6",
+							"四片形状陌生的橙色树叶"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
 			]
 		},
 		{
@@ -32802,7 +33823,7 @@
 			"wondrous": true,
 			"entries": [
 				"你可以用一个{@action 魔法|XPHB}动作吹响号角。作为回应，伊斯加德的武者英灵们将在你周围60尺内未占据的空间出现。这些英灵使用{@creature 狂战士|XMM}的数据，它们将会在1小时之后或{@variantrule 生命值|XPHB}降低到0时返回伊斯加德。英灵们看起来就像是活着的，能够呼吸的战士，且它们{@variantrule 免疫|XPHB}{@condition 魅惑|XPHB}与{@condition 恐慌|XPHB}状态。号角一经使用，需要经过7天才能再次使用。",
-				"黄铜号角可以召唤3个{@creature 狂战士|XMM|狂战士们}。要使用黄铜号角，你必须具有所有简易武器的{@variantrule 熟练|XPHB}。",
+				"黄铜号角可以召唤3个{@creature 狂战士|XMM|狂战士们}。要满足黄铜号角的要求，你必须具有所有简易武器的{@variantrule 熟练|XPHB}。",
 				"如果你在不满足先决条件的情况下吹响了号角，则召唤出的{@creature 狂战士|XMM|狂战士们}将对你发动攻击。如果你满足先决条件，他们将对你和你的同伴态度{@variantrule 友好【态度】|XPHB|友好}，并听从你的命令。"
 			],
 			"lootTables": [
@@ -32849,7 +33870,7 @@
 			"wondrous": true,
 			"entries": [
 				"你可以用一个{@action 魔法|XPHB}动作吹响号角。作为回应，伊斯加德的武者英灵们将在你周围60尺内未占据的空间出现。这些英灵使用{@creature 狂战士|XMM}的数据，它们将会在1小时之后或{@variantrule 生命值|XPHB}降低到0时返回伊斯加德。英灵们看起来就像是活着的，能够呼吸的战士，且它们{@variantrule 免疫|XPHB}{@condition 魅惑|XPHB}与{@condition 恐慌|XPHB}状态。号角一经使用，需要经过7天才能再次使用。",
-				"青铜号角可以召唤3个{@creature 狂战士|XMM|狂战士们}。要使用青铜号角，你必须受训于所有中甲。",
+				"青铜号角可以召唤4个{@creature 狂战士|XMM|狂战士们}。要满足青铜号角的要求，你必须受训于所有中甲。",
 				"如果你在不满足先决条件的情况下吹响了号角，则召唤出的{@creature 狂战士|XMM|狂战士们}将对你发动攻击。如果你满足先决条件，他们将对你和你的同伴态度{@variantrule 友好【态度】|XPHB|友好}，并听从你的命令。"
 			],
 			"lootTables": [
@@ -32899,7 +33920,7 @@
 			"wondrous": true,
 			"entries": [
 				"你可以用一个{@action 魔法|XPHB}动作吹响号角。作为回应，伊斯加德的武者英灵们将在你周围60尺内未占据的空间出现。这些英灵使用{@creature 狂战士|XMM}的数据，它们将会在1小时之后或{@variantrule 生命值|XPHB}降低到0时返回伊斯加德。英灵们看起来就像是活着的，能够呼吸的战士，且它们{@variantrule 免疫|XPHB}{@condition 魅惑|XPHB}与{@condition 恐慌|XPHB}状态。号角一经使用，需要经过7天才能再次使用。",
-				"一个黑铁号角召唤5个{@creature 狂战士|XMM|狂战士们}。要使用黑铁号角，你必须具有所有军用武器的{@variantrule 熟练|XPHB}。",
+				"一个黑铁号角召唤5个{@creature 狂战士|XMM|狂战士们}。要满足黑铁号角的要求，你必须具有所有军用武器的{@variantrule 熟练|XPHB}。",
 				"如果你在不满足先决条件的情况下吹响了号角，则召唤出的{@creature 狂战士|XMM|狂战士们}将对你发动攻击。如果你满足先决条件，他们将对你和你的同伴态度{@variantrule 友好【态度】|XPHB|友好}，并听从你的命令。"
 			],
 			"lootTables": [
@@ -33811,8 +34832,8 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}属性（通过在《地下城主指南》中的{@table 神器词条; 次要增益词条|dmg|次要增益}表上掷骰确定）",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性（通过在《地下城主指南》中的{@table 神器词条; 次要减益词条|dmg|次要减益}表上掷骰确定）"
+								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}词条（通过在《地下城主指南》中的{@table 神器词条; 次要增益词条|dmg|次要增益}表上掷骰确定）",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条（通过在《地下城主指南》中的{@table 神器词条; 次要减益词条|dmg|次要减益}表上掷骰确定）"
 							]
 						}
 					]
@@ -37495,7 +38516,7 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
+								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
 								"1项{@table 增益表现|AitFR-AVT|增益}显化",
 								"1 {@table 减益表现|AitFR-AVT|减益} 显现"
 							]
@@ -37637,23 +38658,23 @@
 									"ENG_name": "Piety 10+",
 									"name": "虔信值 10+",
 									"type": "item",
-									"entry": "长矛获得1个随机{@table 神器词条; 次要增益词条|dmg|次要增益}属性。"
+									"entry": "长矛获得1个随机{@table 神器词条; 次要增益词条|dmg|次要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 25+",
 									"name": "虔信值 25+",
 									"type": "item",
-									"entry": "长矛再获得1个额外的随机{@table 神器词条; 次要增益词条|dmg|次要增益}属性。"
+									"entry": "长矛再获得1个额外的随机{@table 神器词条; 次要增益词条|dmg|次要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 50+",
 									"name": "虔信值 50+",
 									"type": "item",
-									"entry": "长矛获得1个随机{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "长矛获得1个随机{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								}
 							]
 						},
-						"如果你不是赫利欧德的崇拜者，长矛获得2个随机的{@table 神器词条; 主要减益词条|dmg|主要减益}属性。",
+						"如果你不是赫利欧德的崇拜者，长矛获得2个随机的{@table 神器词条; 主要减益词条|dmg|主要减益}词条。",
 						"关于随机属性详见城主指南第七章\"神器\"。"
 					]
 				},
@@ -38537,7 +39558,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			],
@@ -39479,8 +40500,8 @@
 						{
 							"type": "list",
 							"items": [
-								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}属性",
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性"
+								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}词条",
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条"
 							]
 						}
 					]
@@ -39714,6 +40735,17 @@
 			}
 		},
 		{
+			"ENG_name": "Lucky Foot",
+			"name": "幸运兔脚",
+			"source": "AU",
+			"page": 119,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"当你在豁免检定或属性检定中掷出1时，你可以使用这只经过防腐处理的兔脚的魔法来重掷该骰。你必须使用新的掷骰结果，随后该兔脚会分解消散。"
+			]
+		},
+		{
 			"ENG_name": "Luminous War Pick",
 			"name": "荧光战镐",
 			"type": "M",
@@ -39739,6 +40771,35 @@
 				}
 			},
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Lunar Wand of Celestial Prowess",
+			"name": "月辉天威魔杖",
+			"source": "AU",
+			"page": 133,
+			"_copy": {
+				"ENG_name": "Crusading Wand of Celestial Prowess",
+				"name": "圣战天威魔杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Lunar",
+							"name": "月",
+							"type": "entries",
+							"entries": [
+								"角色们追到了一名魔鬼，他侍奉着邪教徒们崇拜的邪魔。多亏了牧师，角色们击败了这名魔鬼，于是DM决定让魔杖进化为极珍稀并获得月辉词条。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "very rare"
 		},
 		{
 			"ENG_name": "Lute crafted of exotic wood with mother-of-pearl inlay and zircon gems (Brazen Coalition)",
@@ -40161,7 +41222,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			],
@@ -40250,6 +41311,46 @@
 			]
 		},
 		{
+			"ENG_name": "Mage Breaker",
+			"name": "破法者",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 120,
+			"baseItem": "匕首|xphb",
+			"rarity": "rare",
+			"weight": 1,
+			"weaponCategory": "simple",
+			"property": [
+				"F|XPHB",
+				"L|XPHB",
+				"T|XPHB"
+			],
+			"mastery": [
+				"迅击|XPHB"
+			],
+			"range": "20/60",
+			"dmg1": "1d4",
+			"dmgType": "P",
+			"bonusWeapon": "+1",
+			"entries": [
+				"你以此魔法武器进行的攻击检定和伤害掷骰获得+1加值。",
+				"当你使用该武器进行攻击检定命中一个{@status 专注|XPHB|专注于}的生物并造成伤害时，该生物为维持{@status 专注|XPHB}而进行的豁免检定具有{@variantrule 劣势|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Mage's Manacle",
+			"name": "巫师镣铐",
+			"source": "AU",
+			"page": 120,
+			"rarity": "rare",
+			"wondrous": true,
+			"entries": [
+				"佩戴该手镯期间，你可以执行{@action 魔法|XPHB}动作指定自身5尺范围内一个陷入{@condition 受擒|XPHB}或{@condition 失能|XPHB}状态的、大型或更小的生物为目标。目标必须成功通过一次{@dc 15}的敏捷豁免，否则会被手镯中弹出的幽灵锁链和镣铐魔法性地捆缚于你。",
+				"以此方式被捆缚期间，该生物陷入{@condition 束缚|XPHB}状态。当你移动时，该生物随你一起移动。",
+				"生物将被捆缚8小时，或者直至你将其释放（无需动作）。如果镣铐受到法术{@spell 解离术|XPHB}的伤害，其将被摧毁；其他任何事物都无法破坏或伤害其。一旦镣铐捆缚过一个生物，则直至下一黎明前，其都无法再次以此方式使用。"
+			]
+		},
+		{
 			"ENG_name": "Magen Handbell",
 			"name": "魔卫手铃 Magen Handbell",
 			"source": "NF",
@@ -40266,6 +41367,18 @@
 						"魔卫狂暴后将不再听从你的指令，且你无法以{@variantrule 附赠动作|XPHB}将其解消。在每个回合中，狂暴的魔卫会攻击它所能看到的最近目标。若周围没有足够近的目标可供魔卫移动并攻击，它则会攻击某个物件。魔卫会一直保持狂暴状态直至其消失，或直至手持手铃的生物使用{@action 影响|XPHB}动作，并进行一个dc15的魅力（{@skill 游说|XPHB}）检定，重新获得对魔卫的控制权。"
 					]
 				}
+			]
+		},
+		{
+			"ENG_name": "Magewright's Gloves",
+			"name": "魔匠手套",
+			"source": "AU",
+			"page": 120,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"佩戴这副手套期间，若你使用以下任一工具制作非魔法物品，则在决定制作所需时间时，你的工作效率相当于两个角色：{@item 炼金工具|XPHB}、{@item 酿酒工具|XPHB}、{@item 书法工具|XPHB}、{@item 制图工具|XPHB}、{@item 玻璃匠工具|XPHB}或{@item 珠宝匠工具|XPHB}。"
 			]
 		},
 		{
@@ -40806,6 +41919,37 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Many Keyholes Dagger",
+			"name": "万孔锁眼匕首",
+			"source": "AU",
+			"page": 128,
+			"_copy": {
+				"ENG_name": "Ten Keyholes Dagger",
+				"name": "十孔锁眼匕首",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Many",
+							"name": "众首",
+							"type": "entries",
+							"entries": [
+								"锁孔重叠交错装点在武器柄部，构成令人眼花缭乱的图样。你用此魔法武器进行攻击检定和伤害掷骰的加值提升至+3。当你令此武器变形时，你还可以令其变形为{@item 战斧|XPHB}、{@item 长剑|XPHB}、{@item 刺剑|XPHB}、{@item 弯刀|XPHB}或{@item 战锤|XPHB}。",
+								"此外，当你使用此武器进行的攻击检定失手时，你可以重新投掷此次攻击，这可能使失手改为成功。你必须使用第二次掷骰的结果。此词条一经使用，直至下一黎明都无法再次使用。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "very rare",
+			"bonusWeapon": "+3"
+		},
+		{
 			"ENG_name": "Map",
 			"name": "地图",
 			"type": "G|XPHB",
@@ -40881,6 +42025,65 @@
 			"rarity": "none",
 			"value": 750000,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Martialist's Quarterstaff",
+			"name": "武道长棍",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 120,
+			"baseItem": "长棍|xphb",
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d4}",
+			"charges": 4,
+			"staff": true,
+			"entries": [
+				"这根魔法{@item 长棍|XPHB}具有4充能，并在每日黎明时恢复{@dice 1d4}已消耗的充能。其具有以下额外词条。",
+				{
+					"ENG_name": "Searing Smite",
+					"name": "炽焰斩",
+					"type": "entries",
+					"entries": [
+						"你可以消耗2充能施展法术{@spell 炽焰斩|XPHB}（{@dc 13}）。"
+					]
+				},
+				{
+					"ENG_name": "Throw",
+					"name": "投掷",
+					"type": "entries",
+					"entries": [
+						"当你执行{@action 攻击|XPHB}动作时，你可以消耗1充能为该{@item 法杖|XPHB}注入魔法动能。直至你的下一回合结束，该{@item 法杖|XPHB}获得{@itemProperty T|XPHB|投掷}词条，射程20/60尺，并且在你使用该武器进行远程攻击后，其会立刻飞回你的手中。"
+					]
+				},
+				{
+					"ENG_name": "Trip",
+					"name": "摔绊",
+					"type": "entries",
+					"entries": [
+						"当你使用该武器进行近战攻击时，你可以消耗1充能，使你该次攻击检定具有{@variantrule 优势|XPHB}。如果攻击命中，则目标需进行一次{@dc 13}的力量豁免。若豁免失败，则目标陷入{@condition 倒地|XPHB}状态。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"2": [
+						"炽焰斩|xphb"
+					]
+				}
+			}
 		},
 		{
 			"ENG_name": "Mask of Changed Appearance",
@@ -41017,6 +42220,41 @@
 			}
 		},
 		{
+			"ENG_name": "Masquerader's Brooch",
+			"name": "化装者胸针",
+			"source": "AUD",
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"化装者胸针有各种形状和尺寸，但看起来总是略显黯淡。",
+				"佩戴该胸针期间，你获得以下增益。",
+				{
+					"ENG_name": "Illusory Fashion",
+					"name": "时尚幻象",
+					"type": "entries",
+					"entries": [
+						"佩戴或持握该胸针期间，你可以使用{@variantrule 附赠动作|XPHB}在你的服装、护甲、武器、装备以及身上其他所有物上投射一层魔法幻象。该幻象持续1小时，且若胸针被摘下则提前结束。每次使用此增益时，由你决定幻象的程度与性质。它既可以小到只是改变衣物的颜色，也可以大到让一整套护甲看起来像一件晚礼服、让一柄鞘中武器看起来像一条缎饰腰链。",
+						"该幻象造就的变化经不起物理查验。一个执行{@action 研究|XPHB}动作来检视你外表的生物，可通过一次成功的{@dc 13}智力（{@skill 调查|XPHB}）检定识破该幻象。"
+					]
+				},
+				{
+					"ENG_name": "Shifting Guise",
+					"name": "变换形貌",
+					"type": "entries",
+					"entries": [
+						"佩戴或持握该胸针期间，你可以执行{@action 魔法|XPHB}动作从中施展{@spell 变身术|XPHB}（仅\"改变外貌\"选项；无需{@status 专注|XPHB}）。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"will": [
+					"变身术|xphb"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Master's Amulet",
 			"name": "主控护符",
 			"type": "OTH",
@@ -41124,23 +42362,23 @@
 									"ENG_name": "Piety 1+",
 									"name": "虔信值1+",
 									"type": "item",
-									"entry": "鞭子具有1个随机的{@table 神器词条; 次要减益词条|dmg|次要减益}属性\u2014\u2014这是厄睿柏斯为考验其信徒而施加的负担。"
+									"entry": "鞭子具有1个随机的{@table 神器词条; 次要减益词条|dmg|次要减益}词条\u2014\u2014这是厄睿柏斯为考验其信徒而施加的负担。"
 								},
 								{
 									"ENG_name": "Piety 25+",
 									"name": "虔信值 25+",
 									"type": "item",
-									"entry": "鞭子获得1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "鞭子获得1个随机的{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								},
 								{
 									"ENG_name": "Piety 50+",
 									"name": "虔信值 50+",
 									"type": "item",
-									"entry": "鞭子获得1个额外的随机{@table 神器词条; 主要增益词条|dmg|主要增益}属性。"
+									"entry": "鞭子获得1个额外的随机{@table 神器词条; 主要增益词条|dmg|主要增益}词条。"
 								}
 							]
 						},
-						"如果你并非厄睿柏斯的信徒，鞭子获得2个随机的{@table 神器词条; 主要减益词条|dmg|主要减益}属性。",
+						"如果你并非厄睿柏斯的信徒，鞭子获得2个随机的{@table 神器词条; 主要减益词条|dmg|主要减益}词条。",
 						"关于随机属性详见城主指南第七章\"神器\"。"
 					]
 				},
@@ -42464,7 +43702,7 @@
 					"caption": "月刃词条",
 					"colLabels": [
 						"{@dice d100}",
-						"属性"
+						"词条"
 					],
 					"colStyles": [
 						"col-1 text-center",
@@ -42915,6 +44153,48 @@
 				"这件电光蓝色的披风布满了缝制的水晶碎片，这些碎片全是弃用迷锁能核的碎片。这件披风具有10充能，在每日黎明时重获{@dice 1d10}已消耗的充能。",
 				"着装此斗篷期间，你可以用一个{@variantrule 附赠动作|XPHB}并消耗1充能来激活斗篷的魔法。魔法持续1分钟，或直到你提前将其结束（无需动作）",
 				"斗篷魔法激活期间，你获得30尺{@variantrule 飞行速度|XPHB}，并且可以悬浮 。此外，每个你的回合一次，当你用一次攻击检定命中一个生物并且造成伤害时，你可以使目标受到额外{@damage 1d4}光耀伤害。若斗篷的魔法结束时你在空中，你会坠落。"
+			]
+		},
+		{
+			"ENG_name": "Namer's Needle",
+			"name": "唤名刺针",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 120,
+			"baseItem": "匕首|xphb",
+			"rarity": "rare",
+			"weight": 1,
+			"weaponCategory": "simple",
+			"property": [
+				"F|XPHB",
+				"L|XPHB",
+				"T|XPHB"
+			],
+			"mastery": [
+				"迅击|XPHB"
+			],
+			"range": "20/60",
+			"dmg1": "1d4",
+			"dmgType": "P",
+			"bonusWeapon": "+1",
+			"entries": [
+				"你以此魔法武器进行的攻击检定和伤害掷骰获得+1加值。",
+				{
+					"ENG_name": "Identify Target",
+					"name": "真名看破",
+					"type": "entries",
+					"entries": [
+						"当你使用该武器进行攻击检定并命中一个生物时，你可以强迫目标揭露其身份。目标需进行一次{@dc 15}的感知豁免。若豁免失败，则目标会清晰且郑重地说出或用手语表达自己的名字。若豁免成功，则目标在接下来的24小时内免疫此效应。如果该生物无法说话也无法使用任何手语，则豁免自动成功。"
+					]
+				},
+				{
+					"ENG_name": "Named Target",
+					"name": "唤名打击",
+					"type": "entries",
+					"entries": [
+						"当你使用该武器进行攻击检定并命中一个生物时，你可以清晰且郑重地说出或用手语表达目标的名字，使此次命中成为一次{@variantrule 重击|XPHB}。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				}
 			]
 		},
 		{
@@ -43480,6 +44760,221 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Necklace of the Beastly Familiar (Giant Octopus)",
+			"name": "野兽魔宠项链（巨章鱼）",
+			"source": "AU",
+			"page": 120,
+			"rarity": "uncommon",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这条镶有珠宝的项链上镶嵌着蓝铜矿，并配有一个相匹配的护身符，可供你的魔宠佩戴。",
+				{
+					"ENG_name": "Familiar",
+					"name": "魔宠",
+					"type": "entries",
+					"entries": [
+						"佩戴这条项链期间，你可以从中施展法术{@spell 寻获魔宠|XPHB}。一旦使用该项链施展此法术，则直至下一黎明前，都无法再次施展。"
+					]
+				},
+				{
+					"ENG_name": "Beast Transformation",
+					"name": "野兽变形",
+					"type": "entries",
+					"entries": [
+						"当你的魔宠处于你60尺范围内时，你可以执行{@action 魔法|XPHB}动作以激活项链。你的魔宠会变形为一只{@creature 巨章鱼|XMM}，持续10分钟。",
+						"当你的魔宠被变形期间，其数据卡将被野兽形态的数据卡所取代，但保留其原有的阵营、性格、生物类型、{@variantrule 生命值|XPHB}以及{@variantrule 生命值骰|XPHB|生命值骰}。魔宠穿着或携带的装备不会为了贴合野兽形态而改变大小或形状；任何野兽形态无法穿着或携带的装备都会掉落到地上。",
+						"你的魔宠获得等同于该野兽形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形结束时，若这些{@variantrule 临时生命值|XPHB}有剩余，则会尽数消失。如果你的魔宠失去了所有的{@variantrule 临时生命值|XPHB}，变形将提前结束。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"寻获魔宠|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Necklace of the Beastly Familiar (Giant Scorpion)",
+			"name": "野兽魔宠项链（巨蝎）",
+			"source": "AU",
+			"page": 120,
+			"rarity": "rare",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这条镶有珠宝的项链上镶嵌着绿铜矿，并配有一个相匹配的护身符，可供你的魔宠佩戴。",
+				{
+					"ENG_name": "Familiar",
+					"name": "魔宠",
+					"type": "entries",
+					"entries": [
+						"佩戴这条项链期间，你可以从中施展法术{@spell 寻获魔宠|XPHB}。一旦使用该项链施展此法术，则直至下一黎明前，都无法再次施展。"
+					]
+				},
+				{
+					"ENG_name": "Beast Transformation",
+					"name": "野兽变形",
+					"type": "entries",
+					"entries": [
+						"当你的魔宠处于你60尺范围内时，你可以执行{@action 魔法|XPHB}动作以激活项链。你的魔宠会变形为一只{@creature 巨蝎|XMM}，持续10分钟。",
+						"当你的魔宠被变形期间，其数据卡将被野兽形态的数据卡所取代，但保留其原有的阵营、性格、生物类型、{@variantrule 生命值|XPHB}以及{@variantrule 生命值骰|XPHB|生命值骰}。魔宠穿着或携带的装备不会为了贴合野兽形态而改变大小或形状；任何野兽形态无法穿着或携带的装备都会掉落到地上。",
+						"你的魔宠获得等同于该野兽形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形结束时，若这些{@variantrule 临时生命值|XPHB}有剩余，则会尽数消失。如果你的魔宠失去了所有的{@variantrule 临时生命值|XPHB}，变形将提前结束。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"寻获魔宠|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Necklace of the Beastly Familiar (Hippopotamus)",
+			"name": "野兽魔宠项链（河马）",
+			"source": "AU",
+			"page": 120,
+			"rarity": "rare",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这条镶有珠宝的项链上镶嵌着锆石，并配有一个相匹配的护身符，可供你的魔宠佩戴。",
+				{
+					"ENG_name": "Familiar",
+					"name": "魔宠",
+					"type": "entries",
+					"entries": [
+						"佩戴这条项链期间，你可以从中施展法术{@spell 寻获魔宠|XPHB}。一旦使用该项链施展此法术，则直至下一黎明前，都无法再次施展。"
+					]
+				},
+				{
+					"ENG_name": "Beast Transformation",
+					"name": "野兽变形",
+					"type": "entries",
+					"entries": [
+						"当你的魔宠处于你60尺范围内时，你可以执行{@action 魔法|XPHB}动作以激活项链。你的魔宠会变形为一只{@creature 河马|XMM}，持续10分钟。",
+						"当你的魔宠被变形期间，其数据卡将被野兽形态的数据卡所取代，但保留其原有的阵营、性格、生物类型、{@variantrule 生命值|XPHB}以及{@variantrule 生命值骰|XPHB|生命值骰}。魔宠穿着或携带的装备不会为了贴合野兽形态而改变大小或形状；任何野兽形态无法穿着或携带的装备都会掉落到地上。",
+						"你的魔宠获得等同于该野兽形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形结束时，若这些{@variantrule 临时生命值|XPHB}有剩余，则会尽数消失。如果你的魔宠失去了所有的{@variantrule 临时生命值|XPHB}，变形将提前结束。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"寻获魔宠|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Necklace of the Beastly Familiar (Mammoth)",
+			"name": "野兽魔宠项链（猛犸）",
+			"source": "AU",
+			"page": 120,
+			"rarity": "very rare",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这条镶有珠宝的项链上镶嵌着黄玉，并配有一个相匹配的护身符，可供你的魔宠佩戴。",
+				{
+					"ENG_name": "Familiar",
+					"name": "魔宠",
+					"type": "entries",
+					"entries": [
+						"佩戴这条项链期间，你可以从中施展法术{@spell 寻获魔宠|XPHB}。一旦使用该项链施展此法术，则直至下一黎明前，都无法再次施展。"
+					]
+				},
+				{
+					"ENG_name": "Beast Transformation",
+					"name": "野兽变形",
+					"type": "entries",
+					"entries": [
+						"当你的魔宠处于你60尺范围内时，你可以执行{@action 魔法|XPHB}动作以激活项链。你的魔宠会变形为一只{@creature 猛犸|XMM}，持续10分钟。",
+						"当你的魔宠被变形期间，其数据卡将被野兽形态的数据卡所取代，但保留其原有的阵营、性格、生物类型、{@variantrule 生命值|XPHB}以及{@variantrule 生命值骰|XPHB|生命值骰}。魔宠穿着或携带的装备不会为了贴合野兽形态而改变大小或形状；任何野兽形态无法穿着或携带的装备都会掉落到地上。",
+						"你的魔宠获得等同于该野兽形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形结束时，若这些{@variantrule 临时生命值|XPHB}有剩余，则会尽数消失。如果你的魔宠失去了所有的{@variantrule 临时生命值|XPHB}，变形将提前结束。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"寻获魔宠|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Necklace of the Beastly Familiar (Tyrannosaurus Rex)",
+			"name": "野兽魔宠项链（霸王龙）",
+			"source": "AU",
+			"page": 120,
+			"rarity": "legendary",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这条镶有珠宝的项链上镶嵌着火蛋白石，并配有一个相匹配的护身符，可供你的魔宠佩戴。",
+				{
+					"ENG_name": "Familiar",
+					"name": "魔宠",
+					"type": "entries",
+					"entries": [
+						"佩戴这条项链期间，你可以从中施展法术{@spell 寻获魔宠|XPHB}。一旦使用该项链施展此法术，则直至下一黎明前，都无法再次施展。"
+					]
+				},
+				{
+					"ENG_name": "Beast Transformation",
+					"name": "野兽变形",
+					"type": "entries",
+					"entries": [
+						"当你的魔宠处于你60尺范围内时，你可以执行{@action 魔法|XPHB}动作以激活项链。你的魔宠会变形为一只{@creature 霸王龙|XMM}，持续10分钟。",
+						"当你的魔宠被变形期间，其数据卡将被野兽形态的数据卡所取代，但保留其原有的阵营、性格、生物类型、{@variantrule 生命值|XPHB}以及{@variantrule 生命值骰|XPHB|生命值骰}。魔宠穿着或携带的装备不会为了贴合野兽形态而改变大小或形状；任何野兽形态无法穿着或携带的装备都会掉落到地上。",
+						"你的魔宠获得等同于该野兽形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。变形结束时，若这些{@variantrule 临时生命值|XPHB}有剩余，则会尽数消失。如果你的魔宠失去了所有的{@variantrule 临时生命值|XPHB}，变形将提前结束。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"寻获魔宠|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Necklace string of small pink pearls",
 			"name": "粉红色的小珍珠项链",
 			"type": "$A|DMG",
@@ -43887,6 +45382,56 @@
 				}
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Ninth Quill Trinket",
+			"name": "第九翎羽饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "第九翎羽饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一副长长的假胡子"
+						],
+						[
+							"2",
+							"一支永远写不完墨水的精美钢笔"
+						],
+						[
+							"3",
+							"一袋碎牙齿"
+						],
+						[
+							"4",
+							"一张纸片，上面写着数个被划掉的密码，以及被圈出的单词\"凯门鳄\""
+						],
+						[
+							"5",
+							"两张一模一样的纸牌，花色闻所未闻"
+						],
+						[
+							"6",
+							"一副没有面部特征的面具，只开着两个小眼孔"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Nolzur's Marvelous Pigments",
@@ -44536,6 +46081,56 @@
 			]
 		},
 		{
+			"ENG_name": "Ominous Staff of Skulls",
+			"name": "噩兆骸骨法杖",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 128,
+			"baseItem": "长棍|xphb",
+			"rarity": "uncommon",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB",
+				"Evo|AU"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"staff": true,
+			"entries": [
+				{
+					"ENG_name": "Ominous",
+					"name": "噩兆",
+					"type": "entries",
+					"entries": [
+						"法杖顶端装饰着一个头骨。",
+						"持握此法杖期间，你可以从中施展{@spell 颤栗之触|XPHB}，使用你的法术攻击加值。此外，持握此法杖期间，你的魅力（{@skill 威吓|XPHB}）检定具有{@variantrule 优势|XPHB}，法杖上的骷髅头眼窝会散发出令人不安的绿光，提供半径5尺的{@variantrule 微光光照|XPHB}。"
+					]
+				}
+			],
+			"light": [
+				{
+					"dim": 5
+				}
+			],
+			"attachedSpells": {
+				"will": [
+					"颤栗之触|xphb"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Onyx",
 			"name": "缟玛瑙",
 			"type": "$G|DMG",
@@ -44718,8 +46313,8 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"2项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"2项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条"
 							]
 						}
 					]
@@ -44733,8 +46328,8 @@
 						{
 							"type": "table",
 							"colStyles": [
-								"col-6",
-								"col-6 text-center"
+								"col-10",
+								"col-2 text-center"
 							],
 							"colLabels": [
 								"法术",
@@ -44842,6 +46437,39 @@
 			],
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Orb of Divination Detection",
+			"name": "预言侦测法球",
+			"source": "AU",
+			"page": 121,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"focus": [
+				"术士",
+				"魔契师",
+				"法师"
+			],
+			"entries": [
+				"这颗玻璃法球是对付爱管闲事的魔法师以及擅长魔法的间谍的有效防御手段。",
+				{
+					"ENG_name": "Detect Divination",
+					"name": "侦测预言",
+					"type": "entries",
+					"entries": [
+						"当你成为预言学派法术的目标时，该法球会在法术持续期间发出明亮的绿光。"
+					]
+				},
+				{
+					"ENG_name": "Spellcasting Focus",
+					"name": "法器",
+					"type": "entries",
+					"entries": [
+						"这颗法球可用作一个奥术法器。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Orb of Dragonkind",
@@ -44961,9 +46589,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						}
 					]
@@ -45107,6 +46735,42 @@
 				}
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Orb of Sorcery",
+			"name": "术法法球",
+			"source": "AU",
+			"page": 121,
+			"rarity": "uncommon",
+			"reqAttune": "由术士",
+			"reqAttuneTags": [
+				{
+					"class": "术士"
+				}
+			],
+			"wondrous": true,
+			"focus": [
+				"术士"
+			],
+			"entries": [
+				"这颗魔法玻璃法球内流转着五彩斑斓的光带。",
+				{
+					"ENG_name": "Sorcerous Reservoir",
+					"name": "术法源泉",
+					"type": "entries",
+					"entries": [
+						"持握该法球期间，你可以执行{@action 魔法|XPHB}动作以恢复至多2点已消耗的术法点。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Spellcasting Focus",
+					"name": "法器",
+					"type": "entries",
+					"entries": [
+						"你可以将该法球作为施展你术士法术的{@variantrule 法器|XPHB}。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Orb of the Stein Rune",
@@ -45591,7 +47255,7 @@
 					"caption": "外界精粹碎晶",
 					"colLabels": [
 						"d4",
-						"属性",
+						"词条",
 						"碎子"
 					],
 					"colStyles": [
@@ -45647,7 +47311,7 @@
 				"当你在持有或佩戴碎片时使用法术的变形魔法选项，你可以使用该属性。",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"选择一个因法术受到伤害的生物。在你下一个回合开始之前，该目标在进行攻击检定和属性检定时具有劣势。"
@@ -45678,7 +47342,7 @@
 				"当你在持有或佩戴碎片时使用法术的变形魔法选项，你可以使用该属性。",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"选择一个因法术受到伤害的生物。那个目标额外承受{@damage 3d6}点暗蚀伤害。"
@@ -45709,7 +47373,7 @@
 				"当你在持有或佩戴碎片时使用法术的变形魔法选项，你可以使用该属性。",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"你或你能看到的30尺范围内的一个生物获得{@dice 3d6}临时生命值。"
@@ -45740,7 +47404,7 @@
 				"当你在持有或佩戴碎片时使用法术的变形魔法选项，你可以使用该属性。",
 				{
 					"ENG_name": "Property",
-					"name": "属性",
+					"name": "词条",
 					"type": "entries",
 					"entries": [
 						"你可以结束影响你自己或你能看到的30尺范围内的某个生物的以下条件之一：{@condition 魅惑}（魅惑）、{@condition 目盲}（失明）、{@condition 耳聋}（失聪）、{@condition 恐慌}（恐惧）、{@condition 中毒}（中毒）、或{@condition 震慑}（昏迷）。"
@@ -46631,6 +48295,56 @@
 			"rarity": "none",
 			"value": 25000,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Phantasmic Circus Trinket",
+			"name": "幻影马戏团饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "幻影马戏团饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一张过去马戏团演出的海报，上面画着你的肖像"
+						],
+						[
+							"2",
+							"一小罐白色油彩"
+						],
+						[
+							"3",
+							"一根绿色铁丝花茎，当你戏剧性地挥舞它时，会绽放出一朵幻影之花，持续1分钟"
+						],
+						[
+							"4",
+							"一条精美丝带，两寸宽、九尺长"
+						],
+						[
+							"5",
+							"一对青铜指钹"
+						],
+						[
+							"6",
+							"一顶破旧的大礼帽"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
 		},
 		{
 			"ENG_name": "Philter of Love",
@@ -48425,6 +50139,57 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Potion of Dragon's Breath",
+			"name": "龙息药水",
+			"type": "P|XPHB",
+			"source": "AU",
+			"page": 121,
+			"rarity": "uncommon",
+			"entries": [
+				"饮用此药水后，你获得法术{@spell 龙息术|XPHB}的效应，持续1分钟（豁免{@dc 13}，无需{@status 专注|XPHB}）。该法术相关的伤害类型由药水制作时的颜色决定，如下表所示。",
+				"这瓶药水由色彩龙的龙鳞研磨而成，里面的闪耀液体在光线下折射出斑驳光彩。",
+				{
+					"type": "table",
+					"colStyles": [
+						"col-6 text-center",
+						"col-6 text-center"
+					],
+					"colLabels": [
+						"颜色",
+						"伤害类型"
+					],
+					"rows": [
+						[
+							"黑",
+							"强酸"
+						],
+						[
+							"蓝",
+							"闪电"
+						],
+						[
+							"绿",
+							"毒素"
+						],
+						[
+							"红",
+							"火焰"
+						],
+						[
+							"白",
+							"寒冷"
+						]
+					]
+				}
+			],
+			"attachedSpells": [
+				"龙息术|xphb"
+			],
+			"miscTags": [
+				"CNS"
+			]
+		},
+		{
 			"ENG_name": "Potion of Dragon's Majesty",
 			"name": "龙威药水",
 			"type": "P",
@@ -48962,7 +50727,7 @@
 		},
 		{
 			"ENG_name": "Potion of Greater Invisibility",
-			"name": "高等隐身药水",
+			"name": "高等隐形药水",
 			"type": "P|XPHB",
 			"source": "XDMG",
 			"page": 288,
@@ -50388,6 +52153,21 @@
 			]
 		},
 		{
+			"ENG_name": "Potion of Tirelessness",
+			"name": "不倦药水",
+			"type": "P|XPHB",
+			"source": "AU",
+			"page": 121,
+			"rarity": "uncommon",
+			"entries": [
+				"饮用此药水后，你无需睡眠，并且魔法也无法使你入睡。该效应持续24小时。持续时间内，若你花费4小时处于安静专注的状态，则你可以完成一次{@variantrule 长休|XPHB}，并且你在此期间保持意识清醒。",
+				"这种浅红色的药水如糖蜜般黏稠，但倒出瓶子时却像油一样顺滑。"
+			],
+			"miscTags": [
+				"CNS"
+			]
+		},
+		{
 			"ENG_name": "Potion of Vitality",
 			"name": "活力药水",
 			"type": "P",
@@ -51072,6 +52852,34 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Prismatic Rune",
+			"name": "虹彩符文",
+			"source": "AU",
+			"page": 122,
+			"rarity": "rare",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"这块由多彩石英制成的小石头上刻着一枚魔法符文。当你完成一次{@variantrule 长休|XPHB}时，从以下伤害类型中选择一种：强酸、寒冷、火焰、闪电或雷鸣。该符文将被灌注所选的伤害类型，直至你完成下一次{@variantrule 长休|XPHB}。",
+				{
+					"ENG_name": "Charges",
+					"name": "充能",
+					"type": "entries",
+					"entries": [
+						"该符文具有6充能，并在每日黎明时恢复{@dice 1d6}已消耗的充能。当你施展一道造成伤害的法术时，你可以消耗1充能，将该法术造成的伤害类型改为该符文所选择的伤害类型。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Prismatic Well",
 			"name": "虹光之井",
 			"source": "NRH-AT",
@@ -51345,6 +53153,35 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Psionic Rod of the Honed Mind",
+			"name": "灵能砺心权杖",
+			"source": "AU",
+			"page": 133,
+			"_copy": {
+				"ENG_name": "Vigilant Rod of the Honed Mind",
+				"name": "警醒砺心权杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Psionic",
+							"name": "灵能",
+							"type": "entries",
+							"entries": [
+								"在探索魔契师从那本奇异典籍中解读出的线索时，角色们从幽暗地域获得了一些充满灵能的水晶。这些水晶上也带有与权杖相同的符号。DM决定让权杖进化为极珍稀物品，并获得灵能词条。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "very rare"
+		},
+		{
 			"ENG_name": "Psychic Absorbing Tattoo",
 			"name": "心灵吸收刺青",
 			"source": "TCE",
@@ -51384,6 +53221,37 @@
 			"dmg1": "1d6",
 			"dmgType": "Y",
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Pulverizing Staff of Skulls",
+			"name": "碾灭骸骨法杖",
+			"source": "AU",
+			"page": 128,
+			"_copy": {
+				"ENG_name": "Chattering Staff of Skulls",
+				"name": "絮叨骸骨法杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Pulverizing",
+							"name": "碾灭",
+							"type": "entries",
+							"entries": [
+								"整根法杖都由融合的头骨构成。",
+								"持握此法杖期间，你能以{@action 魔法|XPHB}动作将法杖指向一名你可见的类人生物。该生物进行一次{@dc 17}的体质豁免。豁免失败则该生物受到{@damage 10d8}暗蚀伤害，并如同被从内部碾碎一般，陷入{@condition 倒地|XPHB}状态。豁免成功则其仅受半伤。此词条一经使用，直至下一黎明都无法再次使用。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "very rare",
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Purple Dragon Knight Trinket",
@@ -52044,6 +53912,147 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Queen Ehlissa's Marvelous Nightingale",
+			"name": "伊莉莎女王的奇妙夜莺",
+			"source": "AU",
+			"page": 122,
+			"rarity": "artifact",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d6 + 1}",
+			"charges": 6,
+			"entries": [
+				"伊莉莎女王的奇妙夜莺得名于其第一任主人\u2014\u2014灰鹰世界东法兰尼斯的一位女王。其起源已不可考，但有传说称，它是为了安慰女王失去心爱宠物鸣禽的悲痛而制作的。",
+				"这只机械鸣禽拥有水晶双眼、金色羽毛，以及背部一枚小巧的发条钥匙。作为{@action 魔法|XPHB}动作，你可以让这只鸟鲜活地动起来，持续10分钟，在此期间其会唱出在300尺范围内都能听见的优美旋律；你也可以令其恢复机械形态。当夜莺变回机械形态后，其在接下来的1小时内无法再次活化。",
+				{
+					"ENG_name": "Aura of Truth",
+					"name": "诚实灵光",
+					"type": "entries",
+					"entries": [
+						"夜莺歌唱期间，源自该夜莺的15尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内会充满法术{@spell 诚实之域|XPHB}的效应（豁免{@dc 18}）。与夜莺同调期间，你会知晓哪些生物在对抗该效应的豁免检定中成功或失败。"
+					]
+				},
+				{
+					"ENG_name": "Counterspell",
+					"name": "法术反制",
+					"type": "entries",
+					"entries": [
+						"夜莺歌唱期间，你可以执行{@variantrule 反应|XPHB}施展{@spell 法术反制|XPHB}（豁免{@dc 18}），以响应该法术的触发条件。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Random Properties",
+					"name": "随机词条",
+					"type": "entries",
+					"entries": [
+						"该神器具有以下随机词条（见《城主指南》的\"神器\"小节）：",
+						{
+							"type": "list",
+							"items": [
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条"
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Destroying the Nightingale",
+					"name": "摧毁夜莺",
+					"type": "entries",
+					"entries": [
+						"如果将夜莺释放至混沌海的旋风中，其将被摧毁。"
+					]
+				},
+				{
+					"ENG_name": "Ensemble Casting",
+					"name": "协奏施法",
+					"type": "entries",
+					"entries": [
+						"夜莺具有6充能，并在每日黎明时恢复{@dice 1d6 + 1}已消耗的充能。当夜莺正在歌唱且位于你60尺范围内时，你可以使用{@variantrule 附赠动作|XPHB}消耗充能，从夜莺中施展以下表格中的一道法术（豁免{@dc 18}）。施展相应法术所需消耗的充能数如下表所示。"
+					]
+				},
+				{
+					"type": "table",
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"colLabels": [
+						"法术",
+						"消耗充能"
+					],
+					"rows": [
+						[
+							"{@spell 安定心神|XPHB}",
+							"1"
+						],
+						[
+							"{@spell 强迫术|XPHB}",
+							"3"
+						],
+						[
+							"{@spell 延迟爆裂火球|XPHB}",
+							"6"
+						],
+						[
+							"{@spell 侦测善恶|XPHB}",
+							"0"
+						],
+						[
+							"{@spell 高等复原术|XPHB}",
+							"4"
+						],
+						[
+							"{@spell 虹光喷射|XPHB}",
+							"6"
+						],
+						[
+							"{@spell 缓慢术|XPHB}",
+							"2"
+						],
+						[
+							"{@spell 动物交谈|XPHB}",
+							"0"
+						]
+					]
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"0": [
+						"侦测善恶|xphb",
+						"动物交谈|xphb"
+					],
+					"1": [
+						"安定心神|xphb"
+					],
+					"2": [
+						"缓慢术|xphb"
+					],
+					"3": [
+						"强迫术|xphb"
+					],
+					"4": [
+						"高等复原术|xphb"
+					],
+					"6": [
+						"延迟爆裂火球|xphb",
+						"虹光喷射|xphb"
+					]
+				},
+				"daily": {
+					"1e": [
+						"法术反制|xphb"
+					]
+				},
+				"other": [
+					"诚实之域|xphb"
+				]
+			}
+		},
+		{
 			"ENG_name": "Quiver",
 			"name": "箭袋",
 			"type": "G",
@@ -52372,9 +54381,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|dmg|次要减益}词条"
 							]
 						}
 					]
@@ -53194,6 +55203,23 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Ring of Candor",
+			"name": "坦诚戒指",
+			"type": "RG|XDMG",
+			"source": "AUD",
+			"rarity": "uncommon",
+			"entries": [
+				"佩戴这枚朴素的金属指环期间，你的感知（{@skill 洞悉|XPHB}）检定获得+5加值。此外，你可以从戒指施展{@spell 诚实之域|XPHB}（豁免{@dc 13}）。直至下一黎明前，你都不能再以此方式施展{@spell 诚实之域|XPHB}。"
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"诚实之域|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Ring of Cold Resistance",
 			"name": "寒冷抗性戒指",
 			"type": "RG|DMG",
@@ -53258,6 +55284,18 @@
 					]
 				}
 			}
+		},
+		{
+			"ENG_name": "Ring of Dedicated Focus",
+			"name": "凝神戒指",
+			"type": "RG|XDMG",
+			"source": "AU",
+			"page": 122,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"entries": [
+				"戒指侧面的魔法尖刺能令你的思绪在顷刻间变得无比集中。当你为维持{@status 专注|XPHB}而进行的体质豁免失败时，你可以掷出至多两枚尚未消耗的生命骰，并将掷骰总和加到该次豁免中，这可能使该次豁免转为成功。随后，这些生命骰被消耗。"
+			]
 		},
 		{
 			"ENG_name": "Ring of Djinni Summoning",
@@ -55888,6 +57926,60 @@
 			]
 		},
 		{
+			"ENG_name": "Robe of Thayan Arcana",
+			"name": "赛尔奥术法袍",
+			"source": "AUD",
+			"rarity": "very rare",
+			"reqAttune": "由术士、魔契师或法师",
+			"reqAttuneTags": [
+				{
+					"class": "术士"
+				},
+				{
+					"class": "魔契师"
+				},
+				{
+					"class": "法师"
+				}
+			],
+			"wondrous": true,
+			"bonusSpellAttack": "+1",
+			"bonusSpellSaveDc": "+1",
+			"focus": [
+				"术士",
+				"魔契师",
+				"法师"
+			],
+			"entries": [
+				"神秘的符号装饰着这件深红色法袍。穿着该法袍期间，你获得以下增益。",
+				{
+					"ENG_name": "Combat Mage",
+					"name": "战斗法师",
+					"type": "entries",
+					"entries": [
+						"你的法术豁免DC和法术攻击加值各增加1。"
+					]
+				},
+				{
+					"ENG_name": "Empowered Magic",
+					"name": "强化魔法",
+					"type": "entries",
+					"entries": [
+						"当你为法术掷伤害时，你可以将伤害骰上的每个1视为2。"
+					]
+				},
+				{
+					"ENG_name": "Spellcasting Focus",
+					"name": "法器",
+					"type": "entries",
+					"entries": [
+						"你可以将该法袍作为施展你法术的{@variantrule 法器|XPHB}。"
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Robe of the Archmagi",
 			"name": "大法师法袍",
 			"source": "DMG",
@@ -56523,7 +58615,7 @@
 				},
 				{
 					"ENG_name": "Drain Life",
-					"name": "吸取生命",
+					"name": "汲取生命",
 					"type": "entries",
 					"entries": [
 						"当你用权杖发动近战攻击命中一生物时，你可以迫使目标进行一次{@dc 17}的体质豁免。如果豁免失败，则目标将受额外{@damage 4d6}点暗蚀伤害，而你获得等于该暗蚀伤害值一半的生命值。此后直到次日黎明前，该属性都无法再次启动。"
@@ -56629,7 +58721,7 @@
 				},
 				{
 					"ENG_name": "Drain Life",
-					"name": "吸取生命",
+					"name": "汲取生命",
 					"type": "entries",
 					"entries": [
 						"当你以权杖发动的近战攻击命中一名生物时，你可以迫使目标进行一次{@dc 17}的体质豁免。豁免失败则目标额外受到{@damage 4d6}暗蚀伤害，而你恢复等于此暗蚀伤害值一半的{@variantrule 生命值|XPHB}。该词条一经使用，直至次日黎明你都无法再次使用。"
@@ -56722,6 +58814,7 @@
 			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "legendary",
+			"reqAttune": true,
 			"weight": 2,
 			"recharge": "拂晓",
 			"rechargeAmount": 1,
@@ -57430,9 +59523,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2项{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						},
 						"阿斯蒙蒂斯对这件武器的有害属性免疫。"
@@ -57704,7 +59797,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			],
@@ -58570,6 +60663,67 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Scarlet Spellbook",
+			"name": "猩红法术书",
+			"source": "AUD",
+			"rarity": "rare",
+			"reqAttune": "由法师",
+			"reqAttuneTags": [
+				{
+					"class": "法师"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"不规则的红色碎布覆盖着这本饱经风霜的书册。与此物品同调期间，你可以将其用作一本法术书和一件{@item 奥术法器|XPHB}。",
+				{
+					"ENG_name": "Arcane Stamina",
+					"name": "奥法气力",
+					"type": "entries",
+					"entries": [
+						"当你使用你的奥术回想特性时，你还恢复等同于{@dice 2d6}加你法师等级一半（向下取整）数值的{@variantrule 生命值|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Improved Spell Recall",
+					"name": "改良法术回忆",
+					"type": "entries",
+					"entries": [
+						"当你使用你的记忆法术特性时，你可以额外将一道你为施法特性所准备的一环或更高环阶的法师法术，替换为另一道抄录于此书中的一环或更高环阶法术。"
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Scholar's Anchoring Bangle",
+			"name": "学者定心镯",
+			"source": "AU",
+			"page": 122,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"这只沉重的魔法手镯能使你的心智免受潜在干扰的影响。佩戴此手镯期间，你获得以下增益。",
+				{
+					"ENG_name": "Deep Knowledge",
+					"name": "渊博学识",
+					"type": "entries",
+					"entries": [
+						"当你执行{@action 研究|XPHB}动作，并使用一项你拥有熟练的技能进行智力检定时，你可以将{@dice d20}掷骰中9或更低的结果视为10。"
+					]
+				},
+				{
+					"ENG_name": "Single-Minded Focus",
+					"name": "心无旁骛",
+					"type": "entries",
+					"entries": [
+						"当你为维持{@status 专注|XPHB}而进行的体质豁免失败时，你可以执行{@variantrule 反应|XPHB}将其改为成功。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Scholar's Pack",
 			"name": "学者套组",
 			"type": "G",
@@ -58831,10 +60985,10 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}属性",
-								"一个{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -59521,6 +61675,20 @@
 			]
 		},
 		{
+			"ENG_name": "Secret Keeper's Circlet",
+			"name": "守秘人头饰",
+			"source": "AU",
+			"page": 122,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"这顶头饰能让佩戴者抹去其记忆中关于生平某段经历或特定事件的任何信息。对于那些担忧魔法师以魔法窥探其心智的人来说，其非常有用。",
+				"佩戴这顶头饰期间，你可以执行{@action 魔法|XPHB}动作指定一个触发条件，例如\"在我离开这座神庙后\"或\"当我施展法术{@spell 活化死尸|XPHB}时\"。在接下来的24小时内，如果该触发条件发生，则头饰会抹除你从选择该触发条件的时刻起，直至触发条件发生期间的所有记忆。除了法术{@spell 祈愿术|XPHB}外，没有任何魔法能够恢复你这段时间的记忆。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+			],
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Seeker Dart",
 			"name": "索敌飞镖",
 			"type": "R",
@@ -59541,6 +61709,56 @@
 				"这枚小飞镖的柄上装饰着像风一样的螺旋图案。",
 				"当你低声说出\"seek\"这个词并投掷这枚飞镖时，它会在你120尺范围内寻找你选择的目标。你之前必须见过这个目标，但现在不需要看到它。如果目标不在范围内或者没有清晰的路径到达它，飞镖就会落到地上，它的魔力就会被消耗并浪费掉。否则，元素之风会引导飞镖瞬间穿过空气到达目标。飞镖可以通过宽1英寸的开口，并且可以改变方向绕过角落。",
 				"当飞镖到达目标时，目标必须成功通过一个{@dc 16}敏捷豁免掷骰，否则将受到{@damage 1d4}穿刺伤害和{@damage 3d4}闪电伤害。随后，飞镖的魔法效果被消耗，它变成了一支普通的飞镖。"
+			]
+		},
+		{
+			"ENG_name": "Seers of Sea and Sky Trinket",
+			"name": "沧穹先知会饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "沧穹先知会饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一块浮木，天然的纹路盘结拼出了你的名字"
+						],
+						[
+							"2",
+							"一个风向袋"
+						],
+						[
+							"3",
+							"一张陌生海岸的潮汐表"
+						],
+						[
+							"4",
+							"一卷海藻，上面用章鱼墨汁写着神秘的符号"
+						],
+						[
+							"5",
+							"一枚来自灯塔旋转机构的小齿轮"
+						],
+						[
+							"6",
+							"四片形状奇特的白羽毛，拼在一起能组成一个完美的三角形"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
 			]
 		},
 		{
@@ -60484,6 +62702,56 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Sheltering Hands Trinket",
+			"name": "庇护之手饰品",
+			"type": "G|XPHB",
+			"source": "AU",
+			"rarity": "none",
+			"entries": [
+				{
+					"type": "table",
+					"caption": "庇护之手饰品",
+					"colLabels": [
+						"{@dice 1d6}",
+						"饰品"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"一小罐缓解皮疹的润肤露"
+						],
+						[
+							"2",
+							"一份陌生治疗神祇的传教册子"
+						],
+						[
+							"3",
+							"一张孩子画的画，画着一对微笑的父母"
+						],
+						[
+							"4",
+							"一件一头是叉、一头是勺的餐具"
+						],
+						[
+							"5",
+							"一小袋甜香料"
+						],
+						[
+							"6",
+							"一个上发条的玩具士兵，手持一面大盾"
+						]
+					]
+				}
+			],
+			"miscTags": [
+				"TT"
+			]
+		},
+		{
 			"ENG_name": "Shield Guardian Amulet",
 			"name": "盾卫护符",
 			"source": "IDRotF",
@@ -61233,7 +63501,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			]
@@ -62314,6 +64582,37 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Somniferous Blossom Rod",
+			"name": "繁花催眠权杖",
+			"source": "AU",
+			"page": 127,
+			"_copy": {
+				"ENG_name": "Flowering Blossom Rod",
+				"name": "繁花盛放权杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Somniferous",
+							"name": "催眠",
+							"type": "entries",
+							"entries": [
+								"权杖的整体都簇生繁花。",
+								"持握此权杖期间，你能以{@action 魔法|XPHB}动作在源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域内释放一团诱发睡眠的花粉。该{@variantrule 光环 [效应区域]|XPHB|光环}区域内你选择的生物必须成功通过一次{@dc 17}的体质豁免，否则陷入{@condition 昏迷|XPHB}状态，持续1小时。无法睡眠的生物（例如精灵）或是{@variantrule 免疫|XPHB}{@condition 力竭|XPHB}状态的生物自动成功于此豁免。若目标受到伤害或位于目标5尺内的生物以其动作摇醒目标，目标身上的该效应结束。一旦此权杖产生此效应，直至下一黎明其都无法再如此做。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "very rare",
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Soothsalts",
 			"name": "软体盐",
 			"type": "G",
@@ -62394,7 +64693,7 @@
 							"items": [
 								{
 									"ENG_name": "Drain Life",
-									"name": "吸取生命",
+									"name": "汲取生命",
 									"type": "item",
 									"entry": "你吸取了灵魂的精华，并获得{@dice 1d10}临时生命值。"
 								},
@@ -62826,6 +65125,69 @@
 				"如果你拿着空瓶子，当你看到一个生物在你周围60尺范围内施法时，你可以以一个反应打开瓶子，并试图打断这个咒语。如果该生物正在施放一个3级或更低等级的法术，该法术没有效果，并且它被储存在了瓶子里。如果它施展的是4级或更高的法术，进行一次智力检定。DC = 10+法术等级。一旦成功，这个咒语就没有效果了，它被储存在瓶子里。"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Spell Component Ring",
+			"name": "法术成分戒指",
+			"type": "RG|XDMG",
+			"source": "AU",
+			"page": 123,
+			"rarity": "common",
+			"entries": [
+				"这枚钢制戒指设有一个隐秘的空腔，内衬着神秘的铭文。作为{@action 魔法|XPHB}动作，选择一道你已准备的、需要材料成分的法术；其所需的材料成分必须未标明价格，且不会被该法术消耗。你将该法术的材料成分储存在戒指的空腔内。",
+				"每当你施展该所选法术时，只要你佩戴着这枚戒指，你就无需空出一只手来拿取其材料成分。该戒指同一时间只能容纳一道法术的材料成分。"
+			]
+		},
+		{
+			"ENG_name": "Spell Duelist's Trophy",
+			"name": "法术决斗者的战利品",
+			"source": "AU",
+			"page": 123,
+			"rarity": "rare",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这只干枯的手或爪子系在一根皮绳上，可以作为项链或手链佩戴。佩戴该战利品期间，你获得以下增益。",
+				{
+					"ENG_name": "Dispelling Touch",
+					"name": "祛法触",
+					"type": "entries",
+					"entries": [
+						"当你使用近战法术攻击命中一个生物时，你可以激活战利品，作为该次攻击的一部分施展法术{@spell 解除魔法|XPHB}，以被命中的生物为目标。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Helping Hand",
+					"name": "援手",
+					"type": "entries",
+					"entries": [
+						"当你使用法术位施展法术时，你可以无需任何姿势成分地来施展该法术。"
+					]
+				},
+				{
+					"ENG_name": "Mage Hand",
+					"name": "法师之手",
+					"type": "entries",
+					"entries": [
+						"你可以从该战利品施展戏法{@spell 法师之手|XPHB}。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"will": [
+					"法师之手|xphb"
+				],
+				"daily": {
+					"1e": [
+						"解除魔法|xphb"
+					]
+				}
+			}
 		},
 		{
 			"ENG_name": "Spell Gem (Amber)",
@@ -63723,6 +66085,19 @@
 			]
 		},
 		{
+			"ENG_name": "Spell-Slinger's Puppet",
+			"name": "掷法者的木偶",
+			"source": "AU",
+			"page": 123,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"持握这具腹语木偶期间，你可以使用{@variantrule 附赠动作|XPHB}拉动其背后的绳子，使其悬浮至你30尺范围内一处你可见的未占据空间，并停留在那里。木偶悬浮期间，你可以执行{@variantrule 附赠动作|XPHB}来使木偶移动至多30尺，到达你30尺范围内另一处你可见的未占据空间。木偶会持续悬浮1分钟，或者直至你以{@variantrule 附赠动作|XPHB}提前结束该效应。",
+				"当木偶位于你30尺范围内时，你可以通过木偶的嘴巴说话，而非自己的嘴巴。例如，即使你无法说话，你仍可以借此施展具有言语成分的法术。"
+			]
+		},
+		{
 			"ENG_name": "Spellbook",
 			"name": "法术书",
 			"type": "G",
@@ -64339,6 +66714,125 @@
 			],
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Spirit-Binding Censer",
+			"name": "缚灵香炉",
+			"source": "AUD",
+			"rarity": "artifact",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 10,
+			"entries": [
+				"这只黄铜香炉摸起来温暖得令人安心。",
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "entries",
+					"entries": [
+						"该香炉具有10充能，并在每日黎明时恢复{@dice 1d6}充能。持握该香炉期间，你可以从中施展\"香炉法术\"表格中的一道法术（豁免{@dc 18}）。表格标明了施展该法术所需的充能消耗。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "香炉法术",
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"colLabels": [
+						"法术",
+						"消耗充能"
+					],
+					"rows": [
+						[
+							"{@spell 放逐术|XPHB}",
+							"4"
+						],
+						[
+							"{@spell 祝福术|XPHB}",
+							"1"
+						],
+						[
+							"{@spell 原力法阵|XPHB}",
+							"5"
+						],
+						[
+							"{@spell 解除魔法|XPHB}",
+							"3"
+						],
+						[
+							"{@spell 移除诅咒|XPHB}",
+							"3"
+						]
+					]
+				},
+				{
+					"ENG_name": "Protective Incense",
+					"name": "防护熏香",
+					"type": "entries",
+					"entries": [
+						"持握该香炉期间，你可以执行{@action 魔法|XPHB}动作，使魔法烟雾从香炉中滚滚涌出，充满源自该香炉的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域，持续1小时，或直至你结束它（无需动作）。该{@variantrule 光环 [效应区域]|XPHB|光环}区域处于{@variantrule 轻度遮蔽|XPHB}，且你选择的生物（包括你自己）处于该{@variantrule 光环 [效应区域]|XPHB|光环}内时，获得{@spell 防护善恶|XPHB}法术的增益。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Spirit Imprisonment",
+					"name": "灵魂囚禁",
+					"type": "entries",
+					"entries": [
+						"当你持握该香炉期间，一个生物在你30尺范围内死亡时，你可以将该生物的灵魂虹吸入香炉，将其囚禁于其中。",
+						"当一个生物的灵魂被囚禁于香炉中时，该生物无法被复活。如果该生物拥有允许其复活的重生特性\u2014\u2014例如{@creature 猬魔|XMM}的魔鬼复苏特性或{@creature 巫妖|XMM}的命匣特性\u2014\u2014在该生物的灵魂被囚禁期间，该特性不会生效。该香炉同一时间只能容纳一个灵魂。生物的灵魂将在香炉中被囚禁100年，直至你执行{@action 魔法|XPHB}动作释放该灵魂，或直至香炉被摧毁（见下文\"摧毁香炉\"）。"
+					]
+				},
+				{
+					"ENG_name": "Random Properties",
+					"name": "随机词条",
+					"type": "entries",
+					"entries": [
+						"该香炉具有以下随机词条（见《城主指南》）：",
+						{
+							"type": "list",
+							"items": [
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条"
+							]
+						}
+					]
+				},
+				{
+					"ENG_name": "Destroying the Censer",
+					"name": "摧毁香炉",
+					"type": "entries",
+					"entries": [
+						"如果香炉中没有囚禁灵魂，则当其在冥河中浸没1年后，便会被摧毁。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"1": [
+						"祝福术|xphb"
+					],
+					"3": [
+						"解除魔法|xphb",
+						"移除诅咒|xphb"
+					],
+					"4": [
+						"放逐术|xphb"
+					],
+					"5": [
+						"原力法阵|xphb"
+					]
+				},
+				"daily": {
+					"1e": [
+						"防护善恶|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Sprig of Mistletoe",
@@ -66311,6 +68805,51 @@
 			]
 		},
 		{
+			"ENG_name": "Staff of the Lost",
+			"name": "迷途法杖",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 123,
+			"rarity": "very rare",
+			"reqAttune": true,
+			"curse": true,
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"bonusWeapon": "+1",
+			"charges": 3,
+			"staff": true,
+			"entries": [
+				"该{@item 法杖|XPHB}可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+1加值。",
+				"该{@item 法杖|XPHB}具有3充能。持握该{@item 法杖|XPHB}期间，你可以消耗1充能，从中施展{@spell 迷宫术|XPHB}（豁免{@dc 18}）或{@spell 传送术|XPHB}。当该{@item 法杖|XPHB}耗尽所有充能时，其会失去魔法并变成一根非魔法{@item 长棍|XPHB}。",
+				{
+					"ENG_name": "Curse",
+					"name": "诅咒",
+					"type": "entries",
+					"entries": [
+						"该{@item 法杖|XPHB}受到了诅咒。与之同调会将诅咒延伸至你身上。只要你仍受诅咒影响，你就不愿与该{@item 法杖|XPHB}分离，会时刻将其带在身边。",
+						"与该{@item 法杖|XPHB}同调期间，你将永远无法知晓北方所在，并且你用于导航的感知（{@skill 求生|XPHB}）检定具有{@variantrule 劣势|XPHB}。此外，每当你消耗该{@item 法杖|XPHB}的充能时，掷一次{@dice 1d20}。若结果为1，则有{@dice 1d4}只{@creature 巴弗灭的牛头人|XMM|巴弗灭的牛头人们}凭空显现，每只牛头人均出现在你30尺范围内一处未占据空间。这些牛头人会立即与你展开战斗。"
+					]
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"1": [
+						"迷宫术|xphb",
+						"传送术|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Staff of the Magi",
 			"name": "贤者法杖",
 			"source": "DMG",
@@ -66773,6 +69312,75 @@
 				}
 			},
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Staff of the Spirit Aegis",
+			"name": "灵魂庇护法杖",
+			"type": "M|XPHB",
+			"source": "AUD",
+			"resist": [
+				"暗蚀"
+			],
+			"rarity": "legendary",
+			"reqAttune": true,
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"bonusWeapon": "+3",
+			"staff": true,
+			"entries": [
+				"这根饱经风霜的骨制{@item 法杖|XPHB}顶端装饰着一个头骨，并以脊椎骨装饰。其可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+3加值。持握该{@item 法杖|XPHB}期间，你具有暗蚀伤害的{@variantrule 抗性|XPHB}。",
+				{
+					"ENG_name": "Aura of Haunted Power",
+					"name": "闹邪之力灵光",
+					"type": "entries",
+					"entries": [
+						"持握该{@item 法杖|XPHB}期间，你可以执行{@action 魔法|XPHB}动作，使其散发出超自然之力，充满一处源自你的30尺{@variantrule 光环 [效应区域]|XPHB|光环}区域。该{@variantrule 光环 [效应区域]|XPHB|光环}内你选择的生物（包括你自己）获得以下增益：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"ENG_name": "Undead Deterrent",
+									"name": "不死威慑",
+									"type": "item",
+									"entry": "不死生物对它们的攻击检定具有{@variantrule 劣势|XPHB}。"
+								},
+								{
+									"ENG_name": "Unholy Protection",
+									"name": "邪防护佑",
+									"type": "item",
+									"entry": "它们具有寒冷、暗蚀和心灵伤害的{@variantrule 抗性|XPHB}，并且它们为避免或结束{@condition 恐慌|XPHB}状态而进行的豁免检定具有{@variantrule 优势|XPHB}。"
+								}
+							],
+							"style": "list-hang-notitle"
+						},
+						"该{@variantrule 光环 [效应区域]|XPHB|光环}持续1小时，或直至你结束它（无需动作）。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+					]
+				},
+				{
+					"ENG_name": "Illuminating Sight",
+					"name": "照明视界",
+					"type": "entries",
+					"entries": [
+						"持握该{@item 法杖|XPHB}期间，你可以使用{@variantrule 附赠动作|XPHB}使该{@item 法杖|XPHB}顶端头骨的眼窝发出超自然的光芒；该光芒持续至你将其停止（无需动作）。该{@item 法杖|XPHB}发光期间，其发出半径15尺的{@variantrule 明亮光照|XPHB}以及额外15尺的{@variantrule 微光光照|XPHB}。只要{@condition 隐形|XPHB}的生物和物件处于该{@item 法杖|XPHB}的{@variantrule 明亮光照|XPHB}或{@variantrule 微光光照|XPHB}内，它们就是可见的。"
+					]
+				}
+			],
+			"light": [
+				{
+					"bright": 15,
+					"dim": 30
+				}
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Staff of the Woodlands",
@@ -67634,8 +70242,8 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性",
-								"一个{@table 神器词条; 主要增益词条|dmg|主要增益}属性"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|dmg|主要增益}词条"
 							]
 						}
 					]
@@ -68463,6 +71071,17 @@
 			]
 		},
 		{
+			"ENG_name": "Sweeping Broom",
+			"name": "洁净扫帚",
+			"source": "AU",
+			"page": 124,
+			"rarity": "common",
+			"wondrous": true,
+			"entries": [
+				"你可以使用{@action 魔法|XPHB}动作说出这把不起眼扫帚的命令语，并在你60尺范围内的地面上选择一处你可见的点。扫帚会活化，清扫以该点为中心的20尺方形区域内地面上的灰尘和垃圾。其会持续清扫该区域，直至你执行另一个{@action 魔法|XPHB}动作将其停用。"
+			]
+		},
+		{
 			"ENG_name": "Sword of Answering",
 			"name": "应答之剑",
 			"type": "M|XPHB",
@@ -68966,10 +71585,10 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						}
 					]
@@ -69022,7 +71641,7 @@
 									"name": "暗蚀抗性",
 									"type": "item",
 									"entries": [
-										"你具有对暗蚀伤害的{@variantrule 抗性|XPHB}。"
+										"你获得对暗蚀伤害的{@variantrule 抗性|XPHB}。"
 									]
 								}
 							]
@@ -69799,6 +72418,37 @@
 			]
 		},
 		{
+			"ENG_name": "Tarnished Idol of Good Fortunes",
+			"name": "蒙尘吉运神像",
+			"source": "AU",
+			"page": 127,
+			"_copy": {
+				"ENG_name": "Blemished Idol of Good Fortunes",
+				"name": "有瑕吉运神像",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Tarnished",
+							"name": "蒙尘",
+							"type": "entries",
+							"entries": [
+								"神像由黄金制成，缝隙间积着薄薄的尘垢。",
+								"与此神像维持同调期间，你的{@variantrule 护甲等级|XPHB}获得+1加值。此外，持握此神像期间，你能以{@action 魔法|XPHB}动作触碰一件非魔法的贸易金属条或宝石。此物品随后将被转变为与其价值相当的钱币。例如，若你持握此神像期间以{@action 魔法|XPHB}动作触碰一块5磅银条，该银条会被转变为价值25 GP的钱币。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "rare",
+			"bonusAc": "+1"
+		},
+		{
 			"ENG_name": "Tasha's Creeping Keelboat",
 			"name": "塔莎的潜行龙骨船",
 			"source": "DitLCoT",
@@ -70197,6 +72847,36 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Ten Keyholes Dagger",
+			"name": "十孔锁眼匕首",
+			"source": "AU",
+			"page": 128,
+			"_copy": {
+				"ENG_name": "Three Keyholes Dagger",
+				"name": "三孔锁眼匕首",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Ten",
+							"name": "十",
+							"type": "entries",
+							"entries": [
+								"武器柄部点缀着十个装饰性锁孔。你用此魔法武器进行攻击检定和伤害掷骰的加值提升至+2。此外，当你令此武器变形时，可以变形为任意简易近战武器。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "rare",
+			"bonusWeapon": "+2"
+		},
+		{
 			"ENG_name": "Tent",
 			"name": "帐篷",
 			"type": "G|XPHB",
@@ -70379,7 +73059,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			],
@@ -70552,8 +73232,8 @@
 					"caption": "地狱机器词条",
 					"colLabels": [
 						"d100",
-						"增益属性",
-						"减益属性"
+						"增益词条",
+						"减益词条"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -71134,6 +73814,18 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Thespian's Playbill",
+			"name": "伶人演出册",
+			"source": "AU",
+			"page": 124,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"持握这份魔法剧院演出册期间，每当你执行{@action 研究|XPHB}动作并进行智力检定时，你的检定获得等同于你魅力调整值的加值（至少为+1）。"
+			]
+		},
+		{
 			"ENG_name": "Thessaltoxin",
 			"name": "塞萨尔毒素",
 			"source": "IMR",
@@ -71166,6 +73858,19 @@
 			],
 			"miscTags": [
 				"CNS"
+			]
+		},
+		{
+			"ENG_name": "Thief's Thimble",
+			"name": "盗贼顶针",
+			"source": "AU",
+			"page": 124,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"这枚魔法顶针能帮助盗贼化解陷阱。佩戴此顶针期间，如果你触发陷阱并受到伤害，则顶针将代替你承受该伤害。",
+				"该顶针具有30{@variantrule 生命值|XPHB}。如果顶针的{@variantrule 生命值|XPHB}降至0，其会破碎，而你会承受任何剩余的伤害。"
 			]
 		},
 		{
@@ -71321,6 +74026,42 @@
 				}
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Three Keyholes Dagger",
+			"name": "三孔锁眼匕首",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 128,
+			"baseItem": "匕首|xphb",
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"weight": 1,
+			"weaponCategory": "simple",
+			"property": [
+				"F|XPHB",
+				"L|XPHB",
+				"T|XPHB",
+				"Evo|AU"
+			],
+			"mastery": [
+				"迅击|XPHB"
+			],
+			"range": "20/60",
+			"dmg1": "1d4",
+			"dmgType": "P",
+			"bonusWeapon": "+1",
+			"entries": [
+				{
+					"ENG_name": "Three",
+					"name": "三",
+					"type": "entries",
+					"entries": [
+						"武器柄部点缀着三个装饰性锁孔。",
+						"你用此魔法武器进行的攻击检定和伤害掷骰获得+1加值。当你执行{@action 攻击|XPHB}动作时，你可以令此武器变形为{@item 手斧|XPHB}或{@item 硬头锤|XPHB}。其维持以此法变形的形态，直至你的下个回合开始，届时此武器将变回{@item 匕首|XPHB}形态。无论此武器形态如何，你都可以选择使用你的力量或敏捷调整值发动攻击并进行伤害掷骰，但二者必须使用相同的调整值。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Three-Dragon Ante Set",
@@ -72256,6 +74997,35 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Tranquil Rod of the Honed Mind",
+			"name": "静心砺心权杖",
+			"source": "AU",
+			"page": 133,
+			"_copy": {
+				"ENG_name": "Psionic Rod of the Honed Mind",
+				"name": "灵能砺心权杖",
+				"source": "AU",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Tranquil",
+							"name": "静心",
+							"type": "entries",
+							"entries": [
+								"多亏魔契师足智多谋，角色们击败了一群邪教徒，他们企图摧毁一切与灵能魔法有关之物。为了奖励魔契师，DM让权杖进化为最终形态，使其成为传说并赋予其静心词条。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "legendary"
+		},
+		{
 			"ENG_name": "Travel Alchemical Kit",
 			"name": "旅行炼金工具包",
 			"source": "AI",
@@ -72306,6 +75076,25 @@
 				"旅行服装是为应对在多种环境中的旅途而设计的结实服装。"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Traveler's Pearl",
+			"name": "旅人珍珠",
+			"source": "AU",
+			"page": 124,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"持握这颗珍珠期间说出命令语，你就能从中施展法术{@spell 传送术|XPHB}。该词条一经使用，则直至下一黎明前，都无法再次使用。"
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"传送术|xphb"
+					]
+				}
+			}
 		},
 		{
 			"ENG_name": "Treasure chest crafted of exotic wood with gold fittings and opals (Brazen Coalition)",
@@ -74400,9 +77189,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}属性",
-								"一个{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"2项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -74487,9 +77276,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}属性",
-								"一个{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"2项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -74769,6 +77558,39 @@
 				"幻织是一种附有无害幻术系魔法的布料。当你穿着这些服饰时，你可以使用一个附赠动作在布料上绘制出活动的幻象图纹。或者，你可以让幻象图纹飘出布料。举个例子，一件幻织礼服可能会环绕着无害的虚幻火焰，而一顶幻织帽子则可能有虚幻的蝴蝶在它四周飞舞。",
 				"身着稀有度为非普通的幻织期间，你进行魅力（{@skill 表演}）或魅力（{@skill 游说}）检定时，可以额外投掷一粒{@dice d4}，并将结果加入检定中。此能力被使用后，直到次日黎明前将无法再使用。"
 			]
+		},
+		{
+			"ENG_name": "Universal Pantograph",
+			"name": "万能仿制匣",
+			"source": "AU",
+			"page": 124,
+			"rarity": "artifact",
+			"wondrous": true,
+			"entries": [
+				"这个立方体盒子每边长2尺。其看起来由橡木制成，并以银饰加固，表面雕刻着提线木偶与欢笑孩童的图案。",
+				"当一件非魔法物品被放入盒中并合上盖子时，该物品的一个完美复制品便会出现在盒子旁边。",
+				{
+					"ENG_name": "Clone",
+					"name": "克隆术",
+					"type": "entries",
+					"entries": [
+						"你可以使用{@action 魔法|XPHB}动作令该仿制匣变大，直至足以让一个中型生物蜷缩在其中。你可以使用{@action 魔法|XPHB}动作令该仿制匣恢复至正常大小，并将任何无法容纳于其中的事物无害地转移至最近的未占据空间。",
+						"当一个生物位于仿制匣内部时，你可以关闭仿制匣的盖子，并向匣子洒下价值至少100 GP的钻石粉末。若你如此做，则钻石粉末将被消耗，同时你以仿制匣内的生物为目标施展法术{@spell 克隆术|XPHB}。在该法术的施法时间结束后，该生物会被无害地转移出仿制匣。随后，仿制匣的盖子在120天内无法被打开，在此期间，由该法术创造的克隆体会在其内部成长。一旦克隆体成型，其会被无害地转移出仿制匣，随后仿制匣恢复至其原始大小。由仿制匣创造的克隆体无需被容纳在容器中，并且在未激活的状态下可以无限期留存。"
+					]
+				},
+				{
+					"ENG_name": "Destroying the Pantograph",
+					"name": "摧毁仿制匣",
+					"type": "entries",
+					"entries": [
+						"如果仿制匣内没有容纳克隆体，则当其在妖精荒野的泥沼中浸没999年后，便会被摧毁。"
+					]
+				}
+			],
+			"attachedSpells": [
+				"克隆术|xphb"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Universal Solvent",
@@ -75136,6 +77958,35 @@
 				"这个小瓶还可以储存由{@spell 思想编码|GGR}戏法创造的思维丝线。它不会延长这些丝线的持续时间超过8小时，但是储存的丝线在你再次施放{@spell 思想编码|GGR}戏法时不会消失。",
 				"这个小瓶有3次充能，并且可以存储最多3条思维丝。它在黄昏时每天恢复所有充能。"
 			]
+		},
+		{
+			"ENG_name": "Vigilant Rod of the Honed Mind",
+			"name": "警醒砺心权杖",
+			"source": "AU",
+			"page": 133,
+			"_copy": {
+				"ENG_name": "+1 Rod of the Pact Keeper",
+				"name": "+1 契约掌控者权杖",
+				"source": "XDMG",
+				"_mod": {
+					"property": {
+						"mode": "appendIfNotExistsArr",
+						"items": "Evo|AU"
+					},
+					"entries": {
+						"mode": "appendArr",
+						"items": {
+							"ENG_name": "Vigilant",
+							"name": "警觉",
+							"type": "entries",
+							"entries": [
+								"在发现一本满是符号的奇异典籍后，那些与权杖相近的符号令魔契师感受到赋予其魔力的存在的认可。DM决定让权杖进化为珍稀物品，并获得警醒词条。"
+							]
+						}
+					}
+				}
+			},
+			"rarity": "rare"
 		},
 		{
 			"ENG_name": "Void Card",
@@ -75711,6 +78562,32 @@
 			}
 		},
 		{
+			"ENG_name": "Wand of Enthralling",
+			"name": "注目魔杖",
+			"type": "WD|XDMG",
+			"source": "AUD",
+			"rarity": "uncommon",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d4}",
+			"charges": 4,
+			"entries": [
+				"这根魔杖具有4充能，并在每日黎明时恢复{@dice 1d4}已消耗的充能。持握该魔杖期间，你可以消耗1充能从中施展{@spell 注目术|XPHB}（豁免{@dc 15}）。"
+			],
+			"attachedSpells": {
+				"charges": {
+					"1": [
+						"注目术|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Wand of Fear",
 			"name": "恐惧魔杖",
 			"type": "WD|DMG",
@@ -75919,6 +78796,28 @@
 			],
 			"hasFluffImages": true,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Wand of Freshness",
+			"name": "新鲜魔杖",
+			"type": "WD|XDMG",
+			"source": "AU",
+			"page": 125,
+			"rarity": "uncommon",
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d4 + 1}",
+			"charges": 4,
+			"entries": [
+				"这根魔杖具有4充能，并在每日黎明时恢复{@dice 1d4 + 1}已消耗的充能。持握该魔杖期间，你可以消耗1充能从中施展法术{@spell 净化饮食|XPHB}。"
+			],
+			"attachedSpells": {
+				"charges": {
+					"1": [
+						"净化饮食|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Wand of Lightning Bolts",
@@ -76346,10 +79245,10 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"2项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性",
-								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}属性"
+								"2项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"2项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|XDMG|主要减益}词条"
 							]
 						},
 						"与奥喀斯维持同调期间，魔杖的减益词条将被抑制。"
@@ -76772,6 +79671,60 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Wand of Slumber",
+			"name": "沉睡魔杖",
+			"type": "WD|XDMG",
+			"source": "AU",
+			"page": 125,
+			"rarity": "rare",
+			"reqAttune": true,
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d6 + 1}",
+			"charges": 7,
+			"entries": [
+				"该魔杖具有7充能。持握该魔杖期间，你可以从中施展以下表格中的一道法术。表格标明了施展该法术所需的充能消耗。",
+				{
+					"ENG_name": "Regaining Charges",
+					"name": "重获充能",
+					"type": "entries",
+					"entries": [
+						"该魔杖在每日黎明时恢复{@dice 1d6 + 1}已消耗的充能。如果你消耗了魔杖的最后1充能，掷一次{@dice 1d20}。若掷出1，则该魔杖会化为沙土并被摧毁。"
+					]
+				},
+				{
+					"type": "table",
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"colLabels": [
+						"法术",
+						"消耗充能"
+					],
+					"rows": [
+						[
+							"{@spell 假寐术|AU}",
+							"3"
+						],
+						[
+							"{@spell 睡眠术|XPHB}（豁免{@dc 15}）",
+							"1"
+						]
+					]
+				}
+			],
+			"attachedSpells": {
+				"charges": {
+					"1": [
+						"睡眠术|xphb"
+					],
+					"3": [
+						"假寐术|au"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Wand of Smiles",
 			"name": "欢笑魔杖",
 			"type": "WD|DMG",
@@ -76791,6 +79744,28 @@
 				"这根魔杖在每日黎明时会恢复全部已消耗的充能数。当充能数耗尽时，骰一次{@dice d20}。如果骰值为1，这根魔杖会变成一根{@item 愁苦魔杖|xge}。"
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Wand of Teeth",
+			"name": "利齿魔杖",
+			"type": "WD|XDMG",
+			"source": "AU",
+			"page": 125,
+			"rarity": "rare",
+			"recharge": "拂晓",
+			"rechargeAmount": "{@dice 1d10}",
+			"charges": 10,
+			"entries": [
+				"这根魔杖具有10充能。持握该魔杖期间，你可以执行{@action 魔法|XPHB}动作消耗至多3充能，朝着你所指的方向喷射出一波锋利的幽灵牙齿。30尺{@variantrule 锥状 [效应区域]|XPHB|锥状}区域内的每个生物都必须进行一次{@dc 15}的敏捷豁免。掷数量等同于所消耗充能数的d8。若豁免失败，则生物受到等同于掷出总和的穿刺伤害，并陷入{@condition 中毒|XPHB}状态，直至你的下一回合开始；若豁免成功，则生物仅受到一半伤害。",
+				{
+					"ENG_name": "Regaining Charges",
+					"name": "重获充能",
+					"type": "entries",
+					"entries": [
+						"该魔杖在每日黎明时恢复{@dice 1d10}已消耗的充能。如果你消耗了魔杖的最后1充能，掷一次{@dice 1d20}。若掷出1，则该魔杖会爆炸成无害的碎屑并被摧毁。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Wand of Viscid Globs",
@@ -78584,7 +81559,7 @@
 					"name": "背叛神器词条",
 					"type": "inset",
 					"entries": [
-						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
+						"叛神武具如同分裂遗物一样获得进阶。在休眠状态下，每件这些神器拥有一项{@table 神器词条; 次要增益词条|dmg|次要增益}词条和一项{@table 神器词条; 次要减益词条|dmg|次要减益}词条。当神器进入激活状态，它获得一项额外的{@table 神器词条; 次要增益词条|dmg|次要增益}属性和一项额外的{@table 神器词条; 次要减益词条|dmg|次要减益}属性。当物品到达超频状态时，它获得一项{@table 神器词条; 主要增益词条|dmg|主要增益}属性。见《城主指南》第7章的\"神器属性\"获得更多信息。"
 					]
 				}
 			]
@@ -79171,6 +82146,54 @@
 			]
 		},
 		{
+			"ENG_name": "Workshop Wrecker",
+			"name": "工坊破坏球",
+			"source": "AU",
+			"page": 125,
+			"rarity": "very rare",
+			"wondrous": true,
+			"entries": [
+				"当你以{@action 魔法|XPHB}动作启动这颗直径3寸的金属球时，其会以极快的速度移动，在墙壁之间来回反弹，任何试图抓住它的尝试都会落空。该圆球会保持激活，持续1分钟，或者直至你在其30尺范围内说出命令语将其解除（无需动作）。该圆球一经使用，则直至下一黎明前，其都无法被再次使用。",
+				"当你启动该圆球时，以及圆球激活期间内每个你的回合开始时，该区域内的每个生物都必须进行一次敏捷豁免，豁免失败者会受到钝击伤害。豁免DC与所造成的伤害数值取决于圆球活动区域的近似大小，详见下表。",
+				"区域内未被穿着或携带的非魔法物件同样会受到该伤害。如果圆球所在的封闭区域大于100尺{@variantrule 立方 [效应区域]|XPHB|立方}，则其造成的伤害可以忽略不计。如果在一个开阔区域内启动该圆球，其会以每轮300尺的速度向随机方向飞离。",
+				{
+					"type": "table",
+					"colStyles": [
+						"col-4",
+						"col-4 text-center",
+						"col-4 text-center"
+					],
+					"colLabels": [
+						"区域",
+						"豁免DC",
+						"钝击伤害"
+					],
+					"rows": [
+						[
+							"15尺{@variantrule 立方 [效应区域]|XPHB|立方}",
+							"18",
+							"{@dice 6d6 + 5}"
+						],
+						[
+							"30尺{@variantrule 立方 [效应区域]|XPHB|立方}",
+							"17",
+							"{@dice 4d6 + 4}"
+						],
+						[
+							"50尺{@variantrule 立方 [效应区域]|XPHB|立方}",
+							"15",
+							"{@dice 2d6 + 2}"
+						],
+						[
+							"100尺{@variantrule 立方 [效应区域]|XPHB|立方}",
+							"14",
+							"{@dice 1d6 + 1}"
+						]
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Wreath of the Prism (Awakened)",
 			"name": "棱镜之冠（觉醒）",
 			"source": "EGW",
@@ -79308,7 +82331,7 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}属性。"
+								"2项{@table 神器词条; 次要增益词条|dmg|次要增益}词条。"
 							]
 						}
 					]
@@ -80465,6 +83488,94 @@
 			]
 		},
 		{
+			"ENG_name": "Blade of the Guardian",
+			"name": "卫护之刃",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 132,
+			"baseItem": "巨剑|xphb",
+			"rarity": "varies",
+			"reqAttune": true,
+			"weight": 6,
+			"weaponCategory": "martial",
+			"property": [
+				"H|XPHB",
+				"2H|XPHB",
+				"Evo|AU"
+			],
+			"mastery": [
+				"擦掠|XPHB"
+			],
+			"dmg1": "2d6",
+			"dmgType": "S",
+			"entries": [
+				"在这个范例中，一名圣武士在她冒险生涯的早期获得了一件珍贵的{@item 警戒武器|XDMG}（{@item 巨剑|XPHB}），这是一件非普通魔法物品。每当武器进化时，剑刃上蚀刻的盾牌纹样都会变得更加精细。"
+			],
+			"items": [
+				"博识卫护之刃|AU",
+				"抗性卫护之刃|AU",
+				"全视卫护之刃|AU"
+			]
+		},
+		{
+			"ENG_name": "Blossom Rod",
+			"name": "繁花权杖",
+			"type": "RD|XDMG",
+			"source": "AU",
+			"page": 127,
+			"rarity": "varies",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				"这柄权杖由交织的活体植物茎秆构成。"
+			],
+			"items": [
+				"繁花待放权杖|AU",
+				"繁花盛放权杖|AU",
+				"繁花催眠权杖|AU"
+			],
+			"attachedSpells": {
+				"will": [
+					"德鲁伊伎俩|xphb"
+				],
+				"daily": {
+					"1e": [
+						"植物滋长|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Breastplate of the Tyrant",
+			"name": "暴君胸甲",
+			"type": "MA|XPHB",
+			"source": "AU",
+			"page": 132,
+			"baseItem": "胸甲|xphb",
+			"rarity": "varies",
+			"reqAttune": true,
+			"weight": 20,
+			"property": [
+				"Evo|AU"
+			],
+			"ac": 14,
+			"entries": [
+				"在这个范例中，一名战士在探索一座古老地城时找到了一件{@item 心灵抗性胸甲|XDMG}。这件珍稀魔法物品能够赋予{@variantrule 抗性|XPHB}以对抗心灵伤害，并饰有荆棘王冠的徽记。每当护甲进化时，王冠周围的尖刺纹样都会变得更加复杂。"
+			],
+			"items": [
+				"君威暴君胸甲|AU",
+				"支配暴君胸甲|AU"
+			]
+		},
+		{
 			"ENG_name": "Carpet of Flying",
 			"name": "飞毯",
 			"source": "DMG",
@@ -81234,9 +84345,9 @@
 						{
 							"type": "list",
 							"items": [
-								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}属性",
-								"1 项{@table 神器词条; 主要增益词条|XDMG|主要增益}属性",
-								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}属性"
+								"1项{@table 神器词条; 次要增益词条|XDMG|次要增益}词条",
+								"1项{@table 神器词条; 主要增益词条|XDMG|主要增益}词条",
+								"1项{@table 神器词条; 次要减益词条|XDMG|次要减益}词条"
 							]
 						}
 					]
@@ -81883,6 +84994,33 @@
 			"hasFluffImages": true
 		},
 		{
+			"ENG_name": "Idol of Good Fortunes",
+			"name": "吉运神像",
+			"source": "AU",
+			"page": 127,
+			"rarity": "varies",
+			"reqAttune": true,
+			"wondrous": true,
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				"这座神像的造型为一只盘坐在后腿上的大象，其象鼻高高扬起，露出威严而亲切的笑容。"
+			],
+			"items": [
+				"有瑕吉运神像|AU",
+				"蒙尘吉运神像|AU",
+				"灿金吉运神像|AU"
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"卜筮术|xphb"
+					]
+				}
+			}
+		},
+		{
 			"ENG_name": "Imbued Wood Focus",
 			"name": "蕴能木法器",
 			"type": "SCF",
@@ -82176,6 +85314,38 @@
 				}
 			},
 			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Keyholes Dagger",
+			"name": "锁眼匕首",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 128,
+			"baseItem": "匕首|xphb",
+			"rarity": "varies",
+			"reqAttune": true,
+			"weight": 1,
+			"weaponCategory": "simple",
+			"property": [
+				"F|XPHB",
+				"L|XPHB",
+				"T|XPHB",
+				"Evo|AU"
+			],
+			"mastery": [
+				"迅击|XPHB"
+			],
+			"range": "20/60",
+			"dmg1": "1d4",
+			"dmgType": "P",
+			"entries": [
+				"这柄魔法武器的柄部装饰着华丽的锁孔图案，并以金丝勾勒轮廓。"
+			],
+			"items": [
+				"三孔锁眼匕首|AU",
+				"十孔锁眼匕首|AU",
+				"万孔锁眼匕首|AU"
+			]
 		},
 		{
 			"ENG_name": "Lantern of Tracking",
@@ -82546,6 +85716,37 @@
 				"芦笛|XPHB",
 				"提琴|XPHB"
 			]
+		},
+		{
+			"ENG_name": "Necklace of the Beastly Familiar",
+			"name": "野兽魔宠项链",
+			"source": "AU",
+			"rarity": "varies",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"这条镶有珠宝的项链配有一个相匹配的护身符，可供你的魔宠佩戴。这类项链种类繁多，每一条都镶嵌着不同种类的宝石。"
+			],
+			"items": [
+				"野兽魔宠项链（巨章鱼）|AU",
+				"野兽魔宠项链（巨蝎）|AU",
+				"野兽魔宠项链（河马）|AU",
+				"野兽魔宠项链（猛犸）|AU",
+				"野兽魔宠项链（霸王龙）|AU"
+			],
+			"attachedSpells": {
+				"daily": {
+					"1e": [
+						"寻获魔宠|xphb"
+					]
+				}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"ENG_name": "Orb of Shielding",
@@ -83274,6 +86475,31 @@
 			]
 		},
 		{
+			"ENG_name": "Rod of the Honed Mind",
+			"name": "砺心权杖",
+			"type": "RD|XDMG",
+			"source": "AU",
+			"page": 133,
+			"rarity": "varies",
+			"reqAttune": "由魔契师",
+			"reqAttuneTags": [
+				{
+					"class": "魔契师"
+				}
+			],
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				"在这个范例中，一名魔契师获得了一根{@item +1 契约掌控者权杖|XDMG}，这是一件非普通魔法物品。这根权杖是某个贤者结社赠予魔契师的礼物，这些贤者正在研究魔契师的神秘宗主，一位来自群星之外的存在。权杖上刻有来源不明的晦涩符号，每当权杖进化时，这些符号都会变得更加精细。"
+			],
+			"items": [
+				"警醒砺心权杖|AU",
+				"灵能砺心权杖|AU",
+				"静心砺心权杖|AU"
+			]
+		},
+		{
 			"ENG_name": "Rod of the Pact Keeper",
 			"name": "契约掌控者权杖",
 			"type": "RD|DMG",
@@ -83973,6 +87199,47 @@
 			]
 		},
 		{
+			"ENG_name": "Staff of Skulls",
+			"name": "骸骨法杖",
+			"type": "M|XPHB",
+			"source": "AU",
+			"page": 128,
+			"rarity": "varies",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V|XPHB",
+				"Evo|AU"
+			],
+			"mastery": [
+				"失衡|XPHB"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"staff": true,
+			"entries": [
+				"这根{@item 法杖|XPHB}由打磨光滑互相啮合的骨骼制成。杖身刻有符文。"
+			],
+			"items": [
+				"噩兆骸骨法杖|AU",
+				"絮叨骸骨法杖|AU",
+				"碾灭骸骨法杖|AU"
+			],
+			"attachedSpells": {
+				"will": [
+					"颤栗之触|xphb"
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Stormgirdle",
 			"name": "风暴腰带",
 			"source": "EGW",
@@ -84099,9 +87366,9 @@
 						{
 							"type": "list",
 							"items": [
-								"2项{@table 神器词条; 主要增益词条|dmg|主要增益}属性",
-								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}属性",
-								"一个{@table 神器词条; 主要减益词条|dmg|主要减益}属性"
+								"2项{@table 神器词条; 主要增益词条|dmg|主要增益}词条",
+								"2 项{@table 神器词条; 次要减益词条|dmg|次要减益}词条",
+								"1项{@table 神器词条; 主要减益词条|dmg|主要减益}词条"
 							]
 						}
 					]
@@ -84198,6 +87465,31 @@
 			}
 		},
 		{
+			"ENG_name": "Wand of Celestial Prowess",
+			"name": "天威魔杖",
+			"type": "WD|XDMG",
+			"source": "AU",
+			"page": 133,
+			"rarity": "varies",
+			"reqAttune": "由施法者",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				"在这个范例中，一名侍奉天空之神的牧师从他的导师手里收到了一根{@item +1 战法师魔杖|XDMG}，这是一件非普通魔法物品。这根乌木魔杖造型简朴，但牧师触碰时却能感受到其中异常强大的力量。每当魔杖进化时，杖身会逐渐浮现出天体的雕刻。"
+			],
+			"items": [
+				"圣战天威魔杖|AU",
+				"月辉天威魔杖|AU",
+				"日耀天威魔杖|AU"
+			]
+		},
+		{
 			"ENG_name": "Wand of the War Mage",
 			"name": "战法师魔杖",
 			"type": "WD|DMG",
@@ -84241,6 +87533,26 @@
 				"+1 战法师魔杖|XDMG",
 				"+2 战法师魔杖|XDMG",
 				"+3 战法师魔杖|XDMG"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Wave-Swept Weapon",
+			"name": "逐浪武器",
+			"type": "GV|XDMG",
+			"source": "AU",
+			"rarity": "varies",
+			"reqAttune": true,
+			"property": [
+				"Evo|AU"
+			],
+			"entries": [
+				"这件武器上布满海洋主题的图案，剑身上的波浪蚀刻和皮革护手上绣着的海怪风图案均在体现这一主题。"
+			],
+			"items": [
+				"藤壶逐浪武器|AU",
+				"水栖逐浪武器|AU",
+				"腾跃逐浪武器|AU"
 			],
 			"hasFluffImages": true
 		},

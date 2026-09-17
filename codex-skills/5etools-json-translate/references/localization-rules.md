@@ -12,6 +12,8 @@
 - Follow the selected target's conventions. This repository normally keeps the original English name in `ENG_name` when a localized object name is stored in `name`; do not add parallel English fields that surrounding objects do not use.
 - Reuse established names exactly, including punctuation, source suffixes, capitalization of source codes, and chosen transliterations.
 - Translate prose naturally into Simplified Chinese while preserving rules meaning, defined-term distinctions, measurements, conditions, action economy, dice notation, and explicit exceptions.
+- In every newly translated or revised Chinese natural-language string, use Chinese double quotation marks `“……”`. For a quotation nested inside double quotation marks, use Chinese single quotation marks `‘……’`. Do not use ASCII straight double or single quotes as Chinese prose quotation marks, even when the English source or surrounding legacy translation does so.
+- The Chinese-quotation rule applies to human-readable prose, dialogue, localized names, headings, captions, and display text. It does not change JSON's ASCII syntax delimiters or literal content inside 5etools tag grammar, code, commands, formulas, dice expressions, IDs, source codes, URLs, filenames, or other machine-readable tokens. Do not perform a blind whole-file quote replacement.
 - Do not silently omit repeated sentences, examples, table cells, captions, footnotes, or nested entries that are in scope.
 - Keep proper nouns untranslated only when references and repository usage support that choice.
 

@@ -1852,6 +1852,7 @@
 			"source": "RHW",
 			"className": "魔契师",
 			"classSource": "XPHB",
+			"page": 24,
 			"edition": "one",
 			"additionalSpells": [
 				{
@@ -1883,6 +1884,121 @@
 				"死疽躯壳|魔契师|XPHB|亡灵|RHW|10|RHW",
 				"超凡战栗|魔契师|XPHB|亡灵|RHW|14|RHW"
 			],
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Vestige Patron",
+			"name": "契灵宗主",
+			"shortName": "契灵",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"edition": "one",
+			"additionalSpells": [
+				{
+					"ENG_name": "Life Domain",
+					"name": "生命领域",
+					"prepared": {
+						"3": [
+							"援助术|xphb",
+							"祝福术|xphb",
+							"疗伤术|xphb",
+							"次等复原术|xphb"
+						],
+						"5": [
+							"群体治愈真言|xphb",
+							"回生术|xphb"
+						],
+						"7": [
+							"生命灵光|xphb",
+							"防死结界|xphb"
+						],
+						"9": [
+							"高等复原术|xphb",
+							"群体疗伤术|xphb"
+						]
+					}
+				},
+				{
+					"ENG_name": "Light Domain",
+					"name": "光明领域",
+					"prepared": {
+						"3": [
+							"燃烧之手|xphb",
+							"妖火|xphb",
+							"灼热射线|xphb",
+							"识破隐形|xphb"
+						],
+						"5": [
+							"昼明术|xphb",
+							"火球术|xphb"
+						],
+						"7": [
+							"秘法眼|xphb",
+							"火墙术|xphb"
+						],
+						"9": [
+							"焰击术|xphb",
+							"探知术|xphb"
+						]
+					}
+				},
+				{
+					"ENG_name": "Trickery Domain",
+					"name": "诡术领域",
+					"prepared": {
+						"3": [
+							"魅惑类人|xphb",
+							"易容术|xphb",
+							"隐形术|xphb",
+							"行动无踪|xphb"
+						],
+						"5": [
+							"催眠图纹|xphb",
+							"回避侦测|xphb"
+						],
+						"7": [
+							"困惑术|xphb",
+							"任意门|xphb"
+						],
+						"9": [
+							"支配类人|xphb",
+							"篡改记忆|xphb"
+						]
+					}
+				},
+				{
+					"ENG_name": "War Domain",
+					"name": "战争领域",
+					"prepared": {
+						"3": [
+							"光导箭|xphb",
+							"魔化武器|xphb",
+							"虔诚护盾|xphb",
+							"灵体武器|xphb"
+						],
+						"5": [
+							"十字军披风|xphb",
+							"灵体卫士|xphb"
+						],
+						"7": [
+							"火焰护盾|xphb",
+							"行动自如|xphb"
+						],
+						"9": [
+							"定身怪物|xphb",
+							"钢风斩|xphb"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"契灵宗主|魔契师|XPHB|契灵|AU|3|AU",
+				"契灵神威|魔契师|XPHB|契灵|AU|6|AU",
+				"契灵复苏|魔契师|XPHB|契灵|AU|10|AU",
+				"拟态生命|魔契师|XPHB|契灵|AU|14|AU"
+			],
+			"hasFluff": true,
 			"hasFluffImages": true
 		}
 	],
@@ -4182,6 +4298,126 @@
 			]
 		},
 		{
+			"ENG_name": "Vestige Patron",
+			"name": "契灵宗主",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "契灵",
+			"subclassSource": "AU",
+			"level": 3,
+			"entries": [
+				"{@i 掌控垂死神祇的残余之力}",
+				"你的契约汲取自一位垂死神祇的力量，这一存在曾受无数信徒膜拜，如今却被抛弃、被遗忘。这位被称之为契灵的垂死神祇，昔日或许仁慈，或许邪恶，亦或是诡异而不可名状，但如今的它只被重获往昔之权柄的渴望所驱使。契灵需要你的协助。为此，祂愿与你共享仅存的力量。",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "契灵伙伴|魔契师|XPHB|契灵|AU|3|AU"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "契灵法术|魔契师|XPHB|契灵|AU|3|AU"
+				}
+			]
+		},
+		{
+			"ENG_name": "Vestige Companion",
+			"name": "契灵伙伴",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "契灵",
+			"subclassSource": "AU",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"契灵自你的契约中汲取力量，得以显化成型。其使用{@creature 契灵伙伴|AU}数据卡，其生物类型为天族、邪魔或亡灵（在你获得此特性时选择）。由你决定契灵的外观，但无论其形态如何，契灵都会带有彰显其超自然起源的特征。例如，你可以设定你的契灵是一颗铭刻着符印的特大型浮游颅骨、一圈发光的符文，或是一个不断变幻的抽象几何体。契灵对你和你的盟友持{@variantrule 友好【态度】|XPHB|友好}态度，并服从你的命令。如果你死亡，其也会随之消失。",
+				{
+					"ENG_name": "The Vestige in Combat",
+					"name": "战斗中的契灵",
+					"type": "entries",
+					"entries": [
+						"在战斗中，契灵在你的回合内行动。其可以自主移动或使用其{@variantrule 反应|XPHB}，但除非你以一个{@variantrule 附赠动作|XPHB}指挥它执行其数据卡中的动作或其他动作，否则其只会执行{@action 回避|XPHB}动作。当你执行{@action 攻击|XPHB}动作时，你也可以放弃其中一次攻击，转而指挥契灵执行契灵打击动作。如果你陷入{@condition 失能|XPHB}状态，契灵将自行行动，且不再受限于仅能执行{@action 回避|XPHB}动作。"
+					]
+				},
+				{
+					"ENG_name": "Disappearance of the Vestige",
+					"name": "契灵的消逝",
+					"type": "entries",
+					"entries": [
+						"当契灵的{@variantrule 生命值|XPHB}降至0时，它会消失。你可以花费1分钟进行某种魔法仪式来再次显化契灵；它会以{@variantrule 生命值|XPHB}全满的状态重新出现在你5尺范围内的一处未占据空间。你可以以一个{@action 魔法|XPHB}动作将契灵暂时遣散至一处口袋维度。在契灵被暂时遣散期间，你可以以一个{@action 魔法|XPHB}动作使其重新出现在你30尺范围内的一处未占据空间。无论契灵是因{@variantrule 生命值|XPHB}降至0，还是因进入口袋维度而消失，它都会将其穿戴或携带的任何物品留在其原本占据的空间内。",
+						{
+							"ENG_name": "Vestige Companion",
+							"name": "契灵伙伴",
+							"type": "statblock",
+							"tag": "creature",
+							"source": "AU",
+							"style": "narrow"
+						},
+						"每当你完成一次{@variantrule 长休|XPHB}后，你能够以新的形态召唤契灵，它出现在你5尺范围内的一处未占据空间。由你选择它的外观，并决定它是天族、邪魔还是亡灵。如果契灵已通过此特性显化，则其形态将转变为新的样子。"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Vestige Spells",
+			"name": "契灵法术",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "契灵",
+			"subclassSource": "AU",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"你{@creature 契灵伙伴|AU}的魔法确保你始终准备着特定的法术。从下列牧师领域中选择其一：{@class 牧师|XPHB|生命|生命}、{@class 牧师|XPHB|光明|光明}、{@class 牧师|XPHB|诡术|诡术}或{@class 牧师|XPHB|战争|战争}。你所选领域的领域法术对你而言视为魔契师法术。当你到达的魔契师等级等于你所选领域的领域法术表中所列的牧师等级时，你此后就始终准备了这些列出的法术。",
+				"例如，若你为此特性选择了{@class 牧师|XPHB|战争领域|战争|XPHB}，当你到达魔契师3级时，你便准备了法术{@spell 光导箭|XPHB}、{@spell 魔化武器|XPHB}、{@spell 虔诚护盾|XPHB}和{@spell 灵体武器|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Vestige Power",
+			"name": "契灵神威",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "契灵",
+			"subclassSource": "AU",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"现在，每当你完成一次{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}，或当你使用你的秘法回流特性时，你的{@creature 契灵伙伴|AU}都会恢复其神力的使用次数。此外，当你位于你的{@creature 契灵伙伴|AU}30尺范围内时，你对与该契灵相同的伤害类型具有{@variantrule 抗性|XPHB}。"
+			]
+		},
+		{
+			"ENG_name": "Vestige Recovery",
+			"name": "契灵复苏",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "契灵",
+			"subclassSource": "AU",
+			"level": 10,
+			"header": 2,
+			"entries": [
+				"当你的{@creature 契灵伙伴|AU}将要降至0{@variantrule 生命值|XPHB}时，你可以执行一个{@variantrule 反应|XPHB}并消耗一个契约魔法法术位，改为将其{@variantrule 生命值|XPHB}变为其{@variantrule 生命值|XPHB|生命值}上限。随后，该契灵传送至其自身30尺范围内一处你可见的未占据空间。该特性一经使用，则直至你完成一次{@variantrule 长休|XPHB}之前，都无法再次使用。"
+			]
+		},
+		{
+			"ENG_name": "Semblance of Life",
+			"name": "拟态生命",
+			"source": "AU",
+			"className": "魔契师",
+			"classSource": "XPHB",
+			"subclassShortName": "契灵",
+			"subclassSource": "AU",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"你{@creature 契灵伙伴|AU}的力量不断成长，愈发强大。借助你的力量，其能够短暂化作更加强大的形态。根据契灵的类型，当契灵位于你90尺范围内时，你就可以执行一个{@action 魔法|XPHB}动作使其变形，持续1小时，变为以下形态之一：{@b 天界灵魄}（天族契灵；见{@book 玩家手册|XPHB|9}中的法术{@spell 天界召唤术|XPHB}）、{@b 邪魔灵魄}（邪魔契灵；见{@book 玩家手册|XPHB|9}中的法术{@spell 邪魔召唤术|XPHB}），或{@b 亡灵灵魄}（亡灵契灵；见{@book 玩家手册|XPHB|9}中的法术{@spell 亡灵召唤术|XPHB}）。该契灵的游戏数据会被灵魄的数据卡所替换，并且该法术的环阶等于你魔契师等级的一半（向下取整；最高九环），但该契灵保留其自身的人格、神力{@variantrule 附赠动作|XPHB}、{@variantrule 生命值|XPHB}以及{@variantrule 生命值骰|XPHB}。",
+				"该契灵获得数量等于该灵魄形态{@variantrule 生命值|XPHB}的{@variantrule 临时生命值|XPHB}。如果这些{@variantrule 临时生命值|XPHB}在1小时后仍有剩余，其便会消失；并且如果该契灵的{@variantrule 临时生命值|XPHB}耗尽，此变形将提前结束。",
+				"该特性一经使用，则直至你完成一次{@variantrule 长休|XPHB}之前，都无法再次使用。"
+			]
+		},
+		{
 			"ENG_name": "The Archfey",
 			"name": "至高妖精",
 			"source": "PHB",
@@ -4255,6 +4491,7 @@
 			"ENG_name": "Undead Patron",
 			"name": "死灵宗主",
 			"source": "RHW",
+			"page": 24,
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"subclassShortName": "亡灵",
@@ -4277,6 +4514,7 @@
 			"ENG_name": "Form of Dread",
 			"name": "战栗形态",
 			"source": "RHW",
+			"page": 24,
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"subclassShortName": "亡灵",
@@ -4315,6 +4553,7 @@
 			"ENG_name": "Undead Spells",
 			"name": "死灵法术",
 			"source": "RHW",
+			"page": 24,
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"subclassShortName": "亡灵",
@@ -4359,6 +4598,7 @@
 			"ENG_name": "Grave Touched",
 			"name": "坟冢之触",
 			"source": "RHW",
+			"page": 24,
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"subclassShortName": "亡灵",
@@ -4397,6 +4637,7 @@
 			"ENG_name": "Necrotic Husk",
 			"name": "死疽躯壳",
 			"source": "RHW",
+			"page": 25,
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"subclassShortName": "亡灵",
@@ -4428,6 +4669,7 @@
 			"ENG_name": "Superior Dread",
 			"name": "超凡战栗",
 			"source": "RHW",
+			"page": 25,
 			"className": "魔契师",
 			"classSource": "XPHB",
 			"subclassShortName": "亡灵",

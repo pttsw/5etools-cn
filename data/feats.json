@@ -4,6 +4,7 @@
 			"ENG_name": "Aberrant Anatomy",
 			"name": "异变内构",
 			"source": "RHW",
+			"page": 32,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -301,6 +302,106 @@
 					]
 				}
 			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Abjuration Adept",
+			"name": "防护专家",
+			"source": "AU",
+			"page": 28,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"护盾术|xphb"
+						],
+						"s2": [
+							"次等复原术|xphb"
+						],
+						"s3": [
+							"防护能量|xphb"
+						],
+						"s4": [
+							"放逐术|xphb"
+						],
+						"s5": [
+							"群体疗伤术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有防护专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Protective Ward",
+					"name": "守护结界",
+					"type": "entries",
+					"entries": [
+						"当你使用法术位施展一道来自防护学派的法术时，你或一名位于你30尺内你可见的生物获得等于所消耗法术位环阶两倍的{@variantrule 临时生命值|XPHB}。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "防护专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 护盾术|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 次等复原术|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 防护能量|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 放逐术|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 群体疗伤术|XPHB}"
+						]
+					]
+				}
+			],
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{
@@ -653,6 +754,356 @@
 						"当你掷完{@variantrule 先攻|XPHB}，你可以立即与处于同一场战斗中的一名自愿的盟友交换{@variantrule 先攻|XPHB}。如果你或那个盟友正处于{@condition 失能|XPHB}状态，则不能进行{@variantrule 先攻|XPHB}交换。"
 					]
 				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Artist",
+			"name": "奥法艺术家",
+			"source": "AU",
+			"page": 26,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"次级幻象|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 次级幻象|XPHB}戏法。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Inspiring Magic",
+					"name": "激励魔法",
+					"type": "entries",
+					"entries": [
+						"当你施展一道幻术学派的法术时，你能选择一名位于你30尺内能看见你的盟友。那名盟友获得{@variantrule 英雄激励|XPHB}。此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Eloquence",
+			"name": "奥法雄辩家",
+			"source": "AU",
+			"page": 26,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"恶言相加|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 恶言相加|XPHB}戏法。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Smooth Talker",
+					"name": "巧舌如簧",
+					"type": "entries",
+					"entries": [
+						"当你进行魅力（{@skill 欺瞒|XPHB}、{@skill 威吓|XPHB}或{@skill 游说|XPHB}）检定时，你可以投掷{@dice 1d4}并将骰值加入该属性检定。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Infiltrator",
+			"name": "奥法渗透者",
+			"source": "AU",
+			"page": 26,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"交友术|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 交友术|XPHB}戏法。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Cunning Diversion",
+					"name": "诡影迷踪",
+					"type": "entries",
+					"entries": [
+						"你能以{@variantrule 附赠动作|XPHB}执行{@action 回避|XPHB}动作。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Omens",
+			"name": "奥法预言家",
+			"source": "AU",
+			"page": 27,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"神导术|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 神导术|XPHB}戏法。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Helpful Premonition",
+					"name": "助人预兆",
+					"type": "entries",
+					"entries": [
+						"当你或一名位于你30尺内你可见的生物豁免失败时，你能以{@variantrule 反应|XPHB}投掷{@dice 1d4}并将骰值加入该豁免总值，这可能使失败改为成功。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Overload",
+			"name": "奥法超负荷",
+			"source": "AU",
+			"page": 27,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"火焰箭|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 火焰箭|XPHB}戏法。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Power Surge",
+					"name": "能量如潮",
+					"type": "entries",
+					"entries": [
+						"当你施展一道塑能法术并以之造成伤害时，你能将你的{@variantrule 熟练|XPHB|熟练加值}加入该法术的其中一枚伤害骰。此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Safeguard",
+			"name": "奥法护佑者",
+			"source": "AU",
+			"page": 27,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"抵抗术|xphb#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得{@spell 抵抗术|XPHB}戏法。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。你能以{@variantrule 附赠动作|XPHB}施展{@spell 抵抗术|XPHB}戏法。你能如此做的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Sheltering Aid",
+					"name": "庇护之援",
+					"type": "entries",
+					"entries": [
+						"当你执行{@action 协助|XPHB}动作辅助一次盟友的属性检定时，那名盟友获得等于你{@variantrule 熟练|XPHB|熟练加值}的{@variantrule 临时生命值|XPHB}。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Undertaker",
+			"name": "奥法殡葬师",
+			"source": "AU",
+			"page": 27,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=牧师;法师|school=N",
+								"count": 1
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Cantrip",
+					"name": "戏法",
+					"type": "entries",
+					"entries": [
+						"你习得一道你选择的牧师或法师戏法。这道戏法必须来自死灵学派。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Knowledge from the Dead",
+					"name": "源死之识",
+					"type": "entries",
+					"entries": [
+						"当你进行智力（{@skill 历史|XPHB}）或感知（{@skill 医药|XPHB}）检定时，你可以投掷{@dice 1d4}并将骰值加入该属性检定。"
+					]
+				},
+				{
+					"ENG_name": "Understanding of Death",
+					"name": "晓亡之理",
+					"type": "entries",
+					"entries": [
+						"当你执行{@action 协助|XPHB}动作稳定一名0{@variantrule 生命值|XPHB}生物的伤势时，你获得{@variantrule 英雄激励|XPHB}。此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Arcane Warrior",
+			"name": "奥法武斗家",
+			"source": "AU",
+			"page": 33,
+			"category": "FS",
+			"prerequisite": [
+				{
+					"feature": [
+						"战斗风格"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=法师",
+								"count": 2
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				"你习得两道你选择的法师戏法。推荐选择{@spell 法师之手|XPHB}和{@spell 冷冻射线|XPHB}。智力、感知或魅力是你施展这些法术的施法属性（在你选取此专长时选择）。",
+				"每当你获得新等级时，你可以将其中一道戏法替换为另一道法师戏法。"
 			],
 			"translator": "不全书"
 		},
@@ -1390,6 +1841,44 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Boon of Erupting Spellpower",
+			"name": "咒能爆发之恩惠",
+			"source": "AU",
+			"page": 33,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						],
+						"amount": 2
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Spell Overload",
+					"name": "法术过载",
+					"type": "entries",
+					"entries": [
+						"当你使用法术位施展一道造成伤害的法术时，你可以令其魔法能量爆发涌动。你能将该法术伤害骰投出的1和2都视为3，且受到该法术伤害的生物陷入{@condition 倒地|XPHB}状态。此增益一经使用，直至你投掷{@variantrule 先攻|XPHB}、完成{@variantrule 长休|XPHB}或{@variantrule 短休|XPHB}你都无法再次使用。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Boon of Exquisite Radiance",
 			"name": "熠熠生辉之恩惠",
 			"source": "FRHoF",
@@ -1689,6 +2178,237 @@
 					"type": "entries",
 					"entries": [
 						"你能以{@variantrule 附赠动作|XPHB}执行{@action 回避|XPHB}动作。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Boon of Magic School Mastery",
+			"name": "学派宗师之恩惠",
+			"source": "AU",
+			"page": 33,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19,
+					"spellcasting2020": true
+				}
+			],
+			"repeatable": true,
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"additionalSpells": [
+				{
+					"ENG_name": "Abjuration",
+					"name": "防护",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=A"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=A"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Conjuration",
+					"name": "咒法",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=C"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=C"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Divination",
+					"name": "预言",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=D"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=D"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Enchantment",
+					"name": "惑控",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=E"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=E"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Evocation",
+					"name": "塑能",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=V"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=V"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Illusion",
+					"name": "幻术",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=I"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=I"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Necromancy",
+					"name": "死灵",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=N"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=N"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Transmutation",
+					"name": "变化",
+					"prepared": {
+						"_": {
+							"will": [
+								{
+									"choose": "level=1|school=T"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1;2;3;4;5;6;7|school=T"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Mastered School",
+					"name": "学派精通",
+					"type": "entries",
+					"entries": [
+						"从八大魔法学派中选择一个：防护、咒法、预言、惑控、塑能、幻术、死灵或变化。你的选择赋予你以下特性：",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"ENG_name": "Rote Casting",
+									"name": "强记施法",
+									"entries": [
+										"选择一道来自所选学派且记录在你职业法术列表的一环法术。你始终准备着那道法术，且可以无需法术位且无需法术成分地施展该法术。"
+									]
+								},
+								{
+									"type": "item",
+									"ENG_name": "Signature Arcanum",
+									"name": "招牌奥术",
+									"entries": [
+										"选择一道来自所选学派的不高于七环的法术。你始终准备着那道法术。你可以无需法术位地施展该法术一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展该法术的能力。"
+									]
+								}
+							]
+						}
+					]
+				},
+				"你也能够以你拥有的合适环阶的法术位施展这些准备法术。",
+				{
+					"ENG_name": "Repeatable",
+					"name": "复选",
+					"type": "entries",
+					"entries": [
+						"你可多次选取本专长，但每次选取时都必须选择一个不同的魔法学派。"
 					]
 				}
 			],
@@ -2584,6 +3304,45 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Boon of the Iron Mind",
+			"name": "钢铁意志之恩惠",
+			"source": "AU",
+			"page": 33,
+			"category": "EB",
+			"prerequisite": [
+				{
+					"level": 19
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"max": 30
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Unshakable Focus",
+					"name": "矢志不移",
+					"type": "entries",
+					"entries": [
+						"当你正为某效应维持{@status 专注|XPHB}时，你仅会因以下情况失去{@status 专注|XPHB}：你施展一道需要{@status 专注|XPHB}的法术、你激活另一个需要{@status 专注|XPHB}的效应、你陷入{@condition 石化|XPHB}或{@condition 昏迷|XPHB}状态，或你死亡。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Boon of the Night Spirit",
 			"name": "暗夜精魂之恩惠",
 			"source": "XPHB",
@@ -3211,6 +3970,105 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Conjuration Adept",
+			"name": "咒法专家",
+			"source": "AU",
+			"page": 28,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"纠缠术|xphb"
+						],
+						"s2": [
+							"迷踪步|xphb"
+						],
+						"s3": [
+							"咒唤兽群|xphb"
+						],
+						"s4": [
+							"任意门|xphb"
+						],
+						"s5": [
+							"咒唤元素|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有咒法专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Persistent Conjuration",
+					"name": "恒久咒法",
+					"type": "entries",
+					"entries": [
+						"当你为一道来自咒法学派的法术维持{@status 专注|XPHB}时，你为维持该{@status 专注|XPHB}所进行的体质豁免具有加值。该加值等于你以此专长提升属性的调整值。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "咒法专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 纠缠术|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 迷踪步|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 咒唤兽群|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 任意门|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 咒唤元素|XPHB}"
+						]
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Crafter",
 			"name": "工匠",
 			"source": "XPHB",
@@ -3604,6 +4462,106 @@
 					"type": "entries",
 					"entries": [
 						"在受到钝击、穿刺或挥砍伤害后，你能立即以{@variantrule 反应|XPHB}来获得对钝击、穿刺与挥砍伤害的{@variantrule 抗性|XPHB}，持续至你的下个回合开始。此增益一经使用，直至完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}前，你都无法再次使用。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Divination Adept",
+			"name": "预言专家",
+			"source": "AU",
+			"page": 29,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"侦测善恶|xphb"
+						],
+						"s2": [
+							"心灵尖刺|xphb"
+						],
+						"s3": [
+							"鹰眼术|xphb"
+						],
+						"s4": [
+							"预言术|xphb"
+						],
+						"s5": [
+							"探知术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有预言专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Prescient Intervention",
+					"name": "先见干预",
+					"type": "entries",
+					"entries": [
+						"当一名位于你60尺内你可见的生物进行{@variantrule D20 检定|XPHB}时，你能以{@variantrule 反应|XPHB}令那名生物的那次掷骰获得{@variantrule 优势|XPHB}或{@variantrule 劣势|XPHB}（由你选择）。",
+						"此增益一经使用，直至完成{@variantrule 长休|XPHB}你都无法再次使用。当你使用法术位施展一道预言学派的法术时，你也能重获此特性的使用次数。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "预言专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 侦测善恶|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 心灵尖刺|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 鹰眼术|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 预言术|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 探知术|XPHB}"
+						]
 					]
 				}
 			],
@@ -4167,6 +5125,7 @@
 			"ENG_name": "Echoing Soul",
 			"name": "灵魂回荡",
 			"source": "RHW",
+			"page": 33,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -4316,6 +5275,64 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Elemental Familiar",
+			"name": "元素魔宠",
+			"source": "AU",
+			"page": 29,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"魔宠密友|au"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Elemental Energy",
+					"name": "元素赋能",
+					"type": "entries",
+					"entries": [
+						"你学会了如何赋予你的魔宠元素之力。当你施展{@spell 寻获魔宠|XPHB}法术时，选择强酸、寒冷、火焰、闪电或雷鸣伤害。你的魔宠被赋予这种能量，持续至你再次施展{@spell 寻获魔宠|XPHB}，令其获得以下增益："
+					]
+				},
+				{
+					"ENG_name": "Elemental Resistance",
+					"name": "元素抗性",
+					"type": "entries",
+					"entries": [
+						"你的魔宠具有对所选伤害类型的{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Energy Pulse",
+					"name": "能量脉冲",
+					"type": "entries",
+					"entries": [
+						"你能以{@variantrule 附赠动作|XPHB}命令你的魔宠释放一次元素能量爆发。你的魔宠必须位于你120尺内，并以{@variantrule 反应|XPHB}释放此爆发。位于源自你魔宠的5尺{@variantrule 光环 [效应区域]|XPHB|光环}内的每名生物必须进行一次敏捷豁免（DC为8，加你{@spell 寻获魔宠|XPHB}法术的施法属性调整值，再加你的{@variantrule 熟练|XPHB|熟练加值}）。豁免失败则该生物受到{@damage 2d4}所选类型的伤害，且若该生物体型为中型或更小，其陷入{@condition 倒地|XPHB}状态。"
+					]
+				}
+			],
+			"hasFluffImages": true,
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Elven Accuracy",
 			"name": "精灵之准",
 			"source": "XGE",
@@ -4457,6 +5474,105 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Enchantment Adept",
+			"name": "惑控专家",
+			"source": "AU",
+			"page": 30,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"不谐低语|xphb"
+						],
+						"s2": [
+							"注目术|xphb"
+						],
+						"s3": [
+							"定身类人|xphb"
+						],
+						"s4": [
+							"支配野兽|xphb"
+						],
+						"s5": [
+							"篡改记忆|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有惑控专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Subtle Enchantments",
+					"name": "精妙惑控",
+					"type": "entries",
+					"entries": [
+						"当你使用法术位施展一道来自惑控学派的法术时，你施展该法术时可以无需任意言语、姿势或材料成分，除非该材料成分会被该法术消耗或在法术中具有指定的价值。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "惑控专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 不谐低语|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 注目术|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 定身类人|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 支配野兽|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 篡改记忆|XPHB}"
+						]
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Enclave Magic",
 			"name": "翠色魔法",
 			"source": "FRHoF",
@@ -4517,6 +5633,105 @@
 					"type": "entries",
 					"entries": [
 						"你始终准备着法术{@spell 野兽感官|XPHB}。你可以无需法术位地施展该法术一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展该法术的能力。当你以此特性*（译注：原文如此，为特性Feature，理论上应当是增益Benfits）施展该法术时，该法术无需{@status 专注|XPHB}。你也能够以你拥有的合适环阶的法术位施展该法术。该法术的施法属性是你以此专长提升的属性。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Evocation Adept",
+			"name": "塑能专家",
+			"source": "AU",
+			"page": 30,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"繁彩球|xphb"
+						],
+						"s2": [
+							"粉碎音波|xphb"
+						],
+						"s3": [
+							"火球术|xphb"
+						],
+						"s4": [
+							"浓酸球|xphb"
+						],
+						"s5": [
+							"力场墙|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有塑能专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Fueled Evocation",
+					"name": "塑能助燃",
+					"type": "entries",
+					"entries": [
+						"每回合一次，当你施展一道塑能法术并以之造成伤害时，你可以投掷至多两枚你未消耗的{@variantrule 生命值骰|XPHB}并将骰值总值加入该法术的其中一枚伤害骰。那些{@variantrule 生命值骰|XPHB}其后被消耗。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "塑能专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 繁彩球|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 粉碎音波|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 火球术|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 浓酸球|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 力场墙|XPHB}"
+						]
 					]
 				}
 			],
@@ -4597,6 +5812,61 @@
 					"entries": [
 						"当你以攻击检定命中一名生物时，你能够尝试令目标惊惶失措。目标必须成功通过一次感知豁免（DC为8加你以此专长提升的属性的调整值加你的{@variantrule 熟练|XPHB|熟练加值}）否则其豁免具有{@variantrule 劣势|XPHB}持续至你的下个回合结束。",
 						"你能够使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Familiar Friend",
+			"name": "魔宠密友",
+			"source": "AU",
+			"page": 27,
+			"category": "O",
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"寻获魔宠|xphb"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Faithful Companion",
+					"name": "忠实伙伴",
+					"type": "entries",
+					"entries": [
+						"你始终准备着{@spell 寻获魔宠|XPHB}法术。智力、感知或魅力是你施展该法术的施法属性（在你选取此专长时选择）。你可以无需法术位且无需材料成分地施展该法术一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展该法术的能力。你也能够以你拥有的任意法术位施展该法术。"
+					]
+				},
+				{
+					"ENG_name": "Fortified Familiar",
+					"name": "强韧魔宠",
+					"type": "entries",
+					"entries": [
+						"当你施展{@spell 寻获魔宠|XPHB}法术时，你魔宠的{@variantrule 生命值|XPHB|生命值}上限和当前{@variantrule 生命值|XPHB}提升等于你角色等级两倍的数值。"
+					]
+				},
+				{
+					"ENG_name": "Helpful Friend",
+					"name": "得力助手",
+					"type": "entries",
+					"entries": [
+						"当你使用你具有熟练的技能进行属性检定时，若你的魔宠位于你5尺内，你在该检定上获得{@variantrule 优势|XPHB}。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				}
 			],
@@ -4891,6 +6161,7 @@
 			"ENG_name": "Gathered Whispers",
 			"name": "汇灵低语",
 			"source": "RHW",
+			"page": 33,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -6296,6 +7567,105 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Illusion Adept",
+			"name": "幻术专家",
+			"source": "AU",
+			"page": 30,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"无声幻影|xphb"
+						],
+						"s2": [
+							"魅影之力|xphb"
+						],
+						"s3": [
+							"高等幻影|xphb"
+						],
+						"s4": [
+							"幻景|xphb"
+						],
+						"s5": [
+							"伪装术|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有幻术专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Masterful Illusions",
+					"name": "幻象宗师",
+					"type": "entries",
+					"entries": [
+						"当你使用法术位施展一道来自幻术学派的法术时，你施展该法术时可以无需任意言语、姿势或材料成分，除非该材料成分会被该法术消耗或在法术中具有指定的价值。此外，生物为识破你的法术所创造幻象的真实本质而进行的智力（{@skill 调查|XPHB}）检定具有{@variantrule 劣势|XPHB}。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "幻术专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 无声幻影|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 魅影之力|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 高等幻影|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 幻景|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 伪装术|XPHB}"
+						]
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Infernal Constitution",
 			"name": "炼狱体质",
 			"source": "XGE",
@@ -7085,6 +8455,7 @@
 			"ENG_name": "Living Shadow",
 			"name": "活体幽影",
 			"source": "RHW",
+			"page": 33,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -7377,6 +8748,111 @@
 					"type": "entries",
 					"entries": [
 						"当你的智力、感知或魅力豁免失败时，你可以将其改为成功。此增益一经使用，直到完成{@variantrule 短休|XPHB|短}或{@variantrule 长休|XPHB}前你都无法再次使用。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Magic Connoisseur",
+			"name": "魔法行家",
+			"source": "AU",
+			"page": 31,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"魔法学徒|XPHB"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ENG_name": "Cleric Spells",
+					"name": "牧师法术",
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									{
+										"choose": "level=1|class=牧师"
+									},
+									{
+										"choose": "level=2|class=牧师"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Druid Spells",
+					"name": "德鲁伊法术",
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									{
+										"choose": "level=1|class=德鲁伊"
+									},
+									{
+										"choose": "level=2|class=德鲁伊"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ENG_name": "Wizard Spells",
+					"name": "法师法术",
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1e": [
+									{
+										"choose": "level=1|class=法师"
+									},
+									{
+										"choose": "level=2|class=法师"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你从魔法学徒专长的戏法所选的法术列表中选择一道一环法术和一道二环法术。你始终准备着那些法术。你可以无需法术位地施展每道法术各一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展这些法术的能力。你也能够以你拥有的合适环阶的法术位施展这些法术。这些法术的施法属性与你为魔法学徒专长的法术所选的施法属性相同。"
+					]
+				},
+				{
+					"ENG_name": "Spell Change",
+					"name": "改变法术",
+					"type": "entries",
+					"entries": [
+						"每当你获得一级新等级，你都能将你在此专长选择的其中一道法术替换为另一道来自所选法术列表的环阶相同的法术。"
 					]
 				}
 			],
@@ -9603,6 +11079,7 @@
 			"ENG_name": "Mist Walker",
 			"name": "迷雾行者",
 			"source": "RHW",
+			"page": 34,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -9936,6 +11413,105 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Necromancy Adept",
+			"name": "死灵专家",
+			"source": "AU",
+			"page": 31,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"致伤术|xphb"
+						],
+						"s2": [
+							"衰弱射线|xphb"
+						],
+						"s3": [
+							"吸血鬼之触|xphb"
+						],
+						"s4": [
+							"枯萎术|xphb"
+						],
+						"s5": [
+							"死者复活|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有死灵专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Life Manipulation",
+					"name": "操纵生命",
+					"type": "entries",
+					"entries": [
+						"当你使用法术位施展一道来自死灵学派的法术时，你可以立即投掷至多两枚你未消耗的{@variantrule 生命值骰|XPHB}。你恢复等于骰值总值加所消耗法术位环阶的{@variantrule 生命值|XPHB}。那些{@variantrule 生命值骰|XPHB}其后被消耗。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "死灵专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 致伤术|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 衰弱射线|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 吸血鬼之触|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 枯萎术|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 死者复活|XPHB}"
+						]
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Observant",
 			"name": "观察力",
 			"source": "PHB",
@@ -10111,6 +11687,63 @@
 					"type": "entries",
 					"entries": [
 						"若你位于未陷入{@condition 失能|XPHB}状态的盟友的5尺内，你和该盟友的力量豁免检定具有{@variantrule 优势|XPHB}。你陷入{@condition 失能|XPHB}状态期间无法使用此增益。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Otherworldly Familiar",
+			"name": "异界魔宠",
+			"source": "AU",
+			"page": 31,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"魔宠密友|au"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Otherworldly Power",
+					"name": "异界赋能",
+					"type": "entries",
+					"entries": [
+						"当你施展{@spell 寻获魔宠|XPHB}法术时，你可以赋予你的魔宠异界威能，其持续至你再次施展{@spell 寻获魔宠|XPHB}。赋能期间，你的魔宠获得以下增益："
+					]
+				},
+				{
+					"ENG_name": "Energy Resistance",
+					"name": "能量抗性",
+					"type": "entries",
+					"entries": [
+						"选择暗蚀、毒素、心灵、光耀或雷鸣伤害。你的魔宠具有对所选伤害类型的{@variantrule 抗性|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Phase Walk",
+					"name": "相位行走",
+					"type": "entries",
+					"entries": [
+						"你的魔宠可以移动穿过其他生物和物件，如同穿过{@variantrule 困难地形|XPHB}一般。若你的魔宠在其回合结束时还处于一个物件内，其将被转移至其最后身处的未占据空间。"
 					]
 				}
 			],
@@ -10446,6 +12079,44 @@
 					"type": "entries",
 					"entries": [
 						"在你持握{@item 长棍|XPHB}、{@item 矛|XPHB}或{@filter 同时具有重型词条与触及词条的武器|items|type=近战武器;远程武器|property=重型;触及=sand}期间，生物进入你触及范围时，你能够以{@variantrule 反应|XPHB}，使用该武器对该生物发动一次近战攻击。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Portal Jumper",
+			"name": "穿界者",
+			"source": "AU",
+			"page": 27,
+			"category": "O",
+			"resist": [
+				{
+					"choose": {
+						"from": [
+							"necrotic",
+							"psychic",
+							"radiant"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Otherworldly Resilience",
+					"name": "异界抗性",
+					"type": "entries",
+					"entries": [
+						"你具有对以下伤害类型之一的{@variantrule 抗性|XPHB}：暗蚀、心灵或光耀（在你选取此专长时选择）。"
+					]
+				},
+				{
+					"ENG_name": "Portal Step",
+					"name": "穿界步",
+					"type": "entries",
+					"entries": [
+						"你能消耗15尺移动力传送至一处位于你15尺内你可见的未占据空间。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，但每回合限一次，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
 					]
 				}
 			],
@@ -11612,6 +13283,7 @@
 			"ENG_name": "Second Skin",
 			"name": "第二形态",
 			"source": "RHW",
+			"page": 34,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -11960,6 +13632,7 @@
 			"ENG_name": "Sharp Eye",
 			"name": "锐眼",
 			"source": "RHW",
+			"page": 32,
 			"category": "O",
 			"entries": [
 				"当你执行{@action 搜索|XPHB}或{@action 研究|XPHB}动作时，你能令你作为该动作一部分的任意属性检定具有{@variantrule 优势|XPHB}。你能使用此特性的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。若该次属性检定失败，你不会消耗本特性的使用次数。"
@@ -12443,6 +14116,47 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Soothing Familiar",
+			"name": "慰疗魔宠",
+			"source": "AU",
+			"page": 31,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"魔宠密友|au"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Healing Beacon",
+					"name": "治愈信标",
+					"type": "entries",
+					"entries": [
+						"只要你的魔宠位于你120尺内，正能量便会充斥源自你魔宠的5尺{@variantrule 光环 [效应区域]|XPHB|光环}。每当一名盟友在该{@variantrule 光环 [效应区域]|XPHB|光环}中掷骰以决定一名生物恢复的{@variantrule 生命值|XPHB}数量时，那名盟友可以将骰出的1和2都视为3。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Soul of the Storm Giant",
 			"name": "风暴巨人之灵魂",
 			"source": "BGG",
@@ -12550,6 +14264,61 @@
 					]
 				}
 			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Spell Resistant",
+			"name": "法术抗性",
+			"source": "AU",
+			"page": 31,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"dex",
+							"con"
+						]
+					}
+				}
+			],
+			"resist": [
+				{
+					"choose": {
+						"from": [
+							"necrotic",
+							"psychic",
+							"radiant",
+							"thunder"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Magical Resilience",
+					"name": "魔法抗性",
+					"type": "entries",
+					"entries": [
+						"你具有对以下伤害类型之一的{@variantrule 抗性|XPHB}（在你获得此专长时选择）：暗蚀、心灵、光耀或雷鸣。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistant",
+					"name": "魔法抵抗",
+					"type": "entries",
+					"entries": [
+						"当你对抗法术或魔法效应的豁免将要失败时，你可以投掷{@dice 1d6}并将骰值加入该豁免总值，这可能使失败改为成功。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				}
+			],
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{
@@ -12705,6 +14474,50 @@
 					"type": "entries",
 					"entries": [
 						"当你施展一道具有至少 10 尺施法距离，且需要你进行一次攻击检定的法术时，这道法术的施法距离增加 60 尺。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Spell Subterfuge",
+			"name": "法术诡计",
+			"source": "AU",
+			"page": 32,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Shrouding Spells",
+					"name": "覆身法术",
+					"type": "entries",
+					"entries": [
+						"在你使用法术位施展一道施法时间为一个动作的法术后，你能以{@variantrule 附赠动作|XPHB}同时执行{@action 疾走|XPHB}和{@action 躲藏|XPHB}动作。你能使用此增益的次数等于你以此专长提升属性的调整值，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				},
+				{
+					"ENG_name": "Sneaky Casting",
+					"name": "隐秘施法",
+					"type": "entries",
+					"entries": [
+						"若你具有{@action 躲藏|XPHB}动作赋予的{@condition 隐形|XPHB}状态，只要你结束该回合时处于{@variantrule 掩护|XPHB|四分之三掩护}或{@variantrule 掩护|XPHB|全身掩护}后，施展带有言语成分的法术或发动法术攻击都不会终止你身上的该状态。"
 					]
 				}
 			],
@@ -13757,6 +15570,7 @@
 			"ENG_name": "Survivor",
 			"name": "生还者",
 			"source": "RHW",
+			"page": 32,
 			"category": "O",
 			"entries": [
 				"你获得以下增益。",
@@ -13835,6 +15649,7 @@
 			"ENG_name": "Symbiotic Being",
 			"name": "共生存在",
 			"source": "RHW",
+			"page": 34,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -14217,6 +16032,7 @@
 			"ENG_name": "Touch of Death",
 			"name": "往生咒",
 			"source": "RHW",
+			"page": 35,
 			"category": "DG",
 			"prerequisite": [
 				{
@@ -14283,6 +16099,135 @@
 			"category": "O",
 			"entries": [
 				"获得该专长时，你的{@variantrule 生命值|XPHB|生命值}上限提升你当前角色等级两倍的数值。并且在你随后每次升级时，你的{@variantrule 生命值|XPHB|生命值}上限都会额外提升 2 {@variantrule 生命值|XPHB}。"
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Transmutation Adept",
+			"name": "变化专家",
+			"source": "AU",
+			"page": 32,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"spellcasting2020": true
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"s1": [
+							"跳跃术|xphb"
+						],
+						"s2": [
+							"蛛行术|xphb"
+						],
+						"s3": [
+							"缓慢术|xphb"
+						],
+						"s4": [
+							"变形术|xphb"
+						],
+						"s5": [
+							"活化物件|xphb"
+						]
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Additional Spells",
+					"name": "额外法术",
+					"type": "entries",
+					"entries": [
+						"你的造诣令你始终将特定法术准备就绪。当你具有变化专家法术表指定环阶的法术位时，你此后始终准备着该环阶及更低环阶对应的法术。"
+					]
+				},
+				{
+					"ENG_name": "Magical Augmentation",
+					"name": "魔法增幅",
+					"type": "entries",
+					"entries": [
+						"在你的回合内，当你使用法术位施展一道来自变化学派的法术时，你的{@variantrule 速度|XPHB}提升等于所消耗法术位环阶五倍的尺数。该提升持续至该回合结束。"
+					]
+				},
+				{
+					"type": "table",
+					"caption": "变化专家法术",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"法术位环阶",
+						"法术"
+					],
+					"rows": [
+						[
+							"1",
+							"{@spell 跳跃术|XPHB}"
+						],
+						[
+							"2",
+							"{@spell 蛛行术|XPHB}"
+						],
+						[
+							"3",
+							"{@spell 缓慢术|XPHB}"
+						],
+						[
+							"4",
+							"{@spell 变形术|XPHB}"
+						],
+						[
+							"5",
+							"{@spell 活化物件|XPHB}"
+						]
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Transmuted Anatomy",
+			"name": "万化本质",
+			"source": "AU",
+			"page": 28,
+			"category": "O",
+			"traitTags": [
+				"Speed"
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Lengthened Stride",
+					"name": "大步流星",
+					"type": "entries",
+					"entries": [
+						"你的{@variantrule 速度|XPHB}提升5尺。"
+					]
+				},
+				{
+					"ENG_name": "Resilient Anatomy",
+					"name": "强韧内构",
+					"type": "entries",
+					"entries": [
+						"你对抗将迫使你违背意愿变形的效应所进行的豁免具有{@variantrule 优势|XPHB}。此外，当你的体质豁免失败时，你能以{@variantrule 反应|XPHB}投掷{@dice 1d4}并将骰值加入该豁免总值，这可能使失败改为成功。你能使用此增益的次数等于你的{@variantrule 熟练|XPHB|熟练加值}，当你完成{@variantrule 长休|XPHB}时重获所有已消耗的使用次数。"
+					]
+				}
 			],
 			"translator": "不全书"
 		},
@@ -14665,9 +16610,73 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Warlike Familiar",
+			"name": "尚武魔宠",
+			"source": "AU",
+			"page": 33,
+			"category": "G",
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"魔宠密友|au"
+					]
+				}
+			],
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"str",
+							"dex",
+							"con",
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"prepared": {
+						"_": {
+							"daily": {
+								"1": [
+									"战斗魔宠|au"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"你获得以下增益。",
+				{
+					"ENG_name": "Battle Familiar",
+					"name": "战斗魔宠",
+					"type": "entries",
+					"entries": [
+						"你始终准备着{@spell 战斗魔宠|AU}法术（见第二章）。你可以无需法术位地施展该法术一次，当你完成{@variantrule 长休|XPHB}时，你重获以此法施展该法术的能力。你也能够以你拥有的合适环阶的法术位施展该法术。你施展该法术的施法属性，是你为魔宠密友专长的忠实伙伴增益所选的属性。"
+					]
+				},
+				{
+					"ENG_name": "Intercept Attack",
+					"name": "拦截攻击",
+					"type": "entries",
+					"entries": [
+						"当一名位于你魔宠5尺内的生物被一次攻击检定命中时，你的魔宠能执行{@variantrule 反应|XPHB}，令该生物对抗那次攻击的{@variantrule 护甲等级|XPHB}获得加值，这可能使那次攻击改为失手。该加值等于你的{@variantrule 熟练|XPHB|熟练加值}。"
+					]
+				}
+			],
+			"translator": "不全书"
+		},
+		{
 			"ENG_name": "Watchers",
 			"name": "守望",
 			"source": "RHW",
+			"page": 35,
 			"category": "DG",
 			"prerequisite": [
 				{

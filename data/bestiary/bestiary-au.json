@@ -1,0 +1,3980 @@
+{
+	"_meta": {
+		"referenceSources": {
+			"monster": {
+				"XMM": "AU"
+			}
+		}
+	},
+	"monster": [
+		{
+			"ENG_name": "Abjurer Archmage",
+			"name": "防护大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 135,
+			"referenceSources": [
+				"AUD"
+			],
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 198,
+				"formula": "36d8 + 36"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"immune": [
+				"心灵"
+			],
+			"conditionImmune": [
+				"魅惑"
+			],
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"法杖|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 秘法锁|XPHB}",
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 火球术|XPHB}（7环版本）",
+							"{@spell 回避侦测|XPHB}",
+							"{@spell 欧提路克弹力法球|XPHB}"
+						],
+						"1e": [
+							"{@spell 心灵屏障|XPHB}（于战斗前施展）",
+							"{@spell 传送术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Magic Disruption (2/Day)",
+					"name": "魔法扰乱（2/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 解除魔法|XPHB}或{@spell 法术无效结界|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"2": [
+							"{@spell 解除魔法|XPHB}",
+							"{@spell 法术无效结界|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "bonus",
+					"hidden": [
+						"daily"
+					]
+				},
+				{
+					"ENG_name": "Counterspell (3/Day)",
+					"name": "法术反制（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}以回应法术的触发条件，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动三次奥能爆发攻击。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}27（{@damage 4d10 + 5}）力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Banishing Blast {@recharge}",
+					"name": "放逐冲击{@recharge}",
+					"entries": [
+						"{@actSave cha} {@dc 18}，60尺{@variantrule 锥状 [效应区域]|XPHB|锥状}内的每名生物。{@actSaveFail} 45（{@damage 10d8}）力场伤害，且目标陷入{@condition 失能|XPHB}状态并被传送至一个无害的半位面，直至大法师下个回合开始，届时其重新出现在其离开的空间，若该空间被占据则出现在最近的未占据空间。{@actSaveSuccess} 仅半伤。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Fortify {@recharge 4}",
+					"name": "强化守御{@recharge 4}",
+					"entries": [
+						"大法师以魔法强化自身，获得40{@variantrule 临时生命值|XPHB}。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"F",
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"失能"
+			],
+			"savingThrowForced": [
+				"魅力"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Baelnorn",
+			"name": "Baelnorn",
+			"type": {
+				"type": "undead",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 141,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				18
+			],
+			"hp": {
+				"average": 255,
+				"formula": "34d8 + 102"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 2
+			},
+			"str": 11,
+			"dex": 16,
+			"con": 16,
+			"int": 21,
+			"wis": 14,
+			"cha": 16,
+			"skill": {
+				"arcana": "+17",
+				"history": "+11",
+				"insight": "+8",
+				"perception": "+8"
+			},
+			"passive": 18,
+			"resist": [
+				"闪电",
+				"光耀"
+			],
+			"immune": [
+				"暗蚀",
+				"毒素"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"麻痹",
+				"中毒"
+			],
+			"languages": [
+				"所有"
+			],
+			"cr": {
+				"cr": "18",
+				"xpLair": 22000
+			},
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Baelnorn施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 19}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 侦测思想|XPHB}",
+						"{@spell 解除魔法|XPHB}",
+						"{@spell 隐形术|XPHB}",
+						"{@spell 闪电束|XPHB}（四环版本）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Counterspell",
+					"name": "法术反制",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Baelnorn施展{@spell 法术反制|XPHB}以回应法术的触发条件，使用与施法动作相同的施法属性。"
+					],
+					"will": [
+						"{@spell 法术反制|XPHB}"
+					],
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"will"
+					]
+				},
+				{
+					"ENG_name": "Frightening Glance",
+					"name": "惊惧一瞥",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Baelnorn施展{@spell 恐惧术|XPHB}，使用与施法动作相同的施法属性。直至其下个回合开始，Baelnorn都无法再执行此动作。"
+					],
+					"legendary": {
+						"1": [
+							"{@spell 恐惧术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "legendary",
+					"hidden": [
+						"legendary"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Legendary Resistance (3/Day, or 4/Day in Lair)",
+					"name": "传奇抗性（3/日，或巢穴内4/日）",
+					"entries": [
+						"Baelnorn豁免失败时，可以将其改为豁免成功。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"Baelnorn对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"Baelnorn发动三次攻击，使用奥能爆发或麻痹之触的任意组合。其可以将其中两次攻击替换为一次施法，以施展{@spell 闪电束|XPHB}（四环版本）。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 11}，触及5尺或射程120尺。{@h}31（{@damage 4d12 + 5}）力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Paralyzing Touch",
+					"name": "麻痹之触",
+					"entries": [
+						"{@atkr m} {@hit 11}，触及5尺。{@h}10（{@damage 2d4 + 5}）寒冷伤害，且目标陷入{@condition 麻痹|XPHB}状态，直至Baelnorn下个回合开始。"
+					]
+				}
+			],
+			"legendaryActionsLair": 4,
+			"legendary": [
+				{
+					"ENG_name": "Overwhelming Radiance",
+					"name": "压倒性光辉",
+					"entries": [
+						"{@actSave con} {@dc 19}，Baelnorn发出的20尺{@variantrule 光环 [效应区域]|XPHB|光环}内的每名生物；亡灵进行此豁免具有{@variantrule 劣势|XPHB}。{@actSaveFail} 11（{@damage 2d10}）光耀伤害。{@actSaveSuccess} 半伤。"
+					]
+				},
+				{
+					"ENG_name": "Recuperative Teleport",
+					"name": "回复传送",
+					"entries": [
+						"Baelnorn传送至多60尺至一处其可见的未占据空间，并恢复11（{@dice 2d10}）{@variantrule 生命值|XPHB}。直至其下个回合开始，Baelnorn都无法再执行此动作。"
+					]
+				}
+			],
+			"environment": [
+				"森林",
+				"城市"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"traitTags": [
+				"传奇抗性",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"C",
+				"O",
+				"R"
+			],
+			"damageTagsSpell": [
+				"L"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"麻痹"
+			],
+			"conditionInflictSpell": [
+				"恐慌",
+				"隐形"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Battle Familiar",
+			"name": "战斗魔宠",
+			"type": {
+				"type": {
+					"choose": [
+						"天族",
+						"妖精",
+						"邪魔"
+					]
+				}
+			},
+			"source": "AU",
+			"page": 36,
+			"summonedBySpell": "战斗魔宠|AU",
+			"summonedBySpellLevel": 2,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "11 + 法术环阶 + 2（仅蛮勇）"
+				}
+			],
+			"hp": {
+				"special": "30（仅蛮勇）或20（仅掠空与潜猎）+ 每比二环高一法术环阶 5"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 30,
+					"condition": "（悬浮；仅掠空）"
+				},
+				"swim": 30,
+				"canHover": true
+			},
+			"str": 16,
+			"dex": 16,
+			"con": 12,
+			"int": 8,
+			"wis": 13,
+			"cha": 10,
+			"passive": 11,
+			"conditionImmune": [
+				"魅惑",
+				"恐慌"
+			],
+			"languages": [
+				"理解你说的语言"
+			],
+			"pbNote": "等于你的熟练加值",
+			"trait": [
+				{
+					"ENG_name": "Flyby (Flyer Only)",
+					"name": "Flyby (Flyer Only)",
+					"entries": [
+						"魔宠飞出敌人的触及范围时不会引发{@action 借机攻击|XPHB|借机攻击}。"
+					]
+				},
+				{
+					"ENG_name": "Talented",
+					"name": "内在禀赋",
+					"entries": [
+						"将该法术环阶的一半（向下取整）加到魔宠进行的任意属性检定和豁免检定中。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"魔宠发动次数等于该法术环阶一半（向下取整）的撕裂攻击。若潜步可用，魔宠可以将其中一次攻击替换为潜步。"
+					]
+				},
+				{
+					"ENG_name": "Rend",
+					"name": "撕裂",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺。{@h}{@damage 1d8 + 3 + summonSpellLevel}力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Prowl (Stalker Only)",
+					"name": "Prowl (Stalker Only)",
+					"entries": [
+						"魔宠移动至多等于其{@variantrule 速度|XPHB}一半的距离，且不会引发{@action 借机攻击|XPHB|借机攻击}。魔宠可以在此次移动结束时执行{@action 躲藏|XPHB}动作。"
+					]
+				}
+			],
+			"traitTags": [
+				"飞掠"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"_versions": [
+				{
+					"ENG_name": "Battle Familiar (Brute)",
+					"name": "Battle Familiar (Brute)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Flyby (Flyer Only)"
+								]
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Prowl (Stalker Only)"
+								]
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "13 + 法术环阶"
+						}
+					],
+					"hp": {
+						"special": "30 + 每比二环高一法术环阶 5"
+					},
+					"speed": {
+						"walk": 40,
+						"swim": 30
+					},
+					"traitTags": null
+				},
+				{
+					"ENG_name": "Battle Familiar (Flyer)",
+					"name": "Battle Familiar (Flyer)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Flyby (Flyer Only)",
+									"with": "飞掠"
+								}
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Prowl (Stalker Only)"
+								]
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + 法术环阶"
+						}
+					],
+					"hp": {
+						"special": "20 + 每比二环高一法术环阶 5"
+					},
+					"speed": {
+						"walk": 40,
+						"fly": {
+							"number": 30,
+							"condition": "(悬浮)"
+						},
+						"swim": 30,
+						"canHover": true
+					},
+					"traitTags": [
+						"飞掠"
+					]
+				},
+				{
+					"ENG_name": "Battle Familiar (Stalker)",
+					"name": "Battle Familiar (Stalker)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Flyby (Flyer Only)"
+								]
+							}
+						],
+						"action": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Prowl (Stalker Only)",
+									"with": "潜步"
+								}
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + 法术环阶"
+						}
+					],
+					"hp": {
+						"special": "20 + 每比二环高一法术环阶 5"
+					},
+					"speed": {
+						"walk": 40,
+						"swim": 30
+					},
+					"traitTags": null
+				}
+			]
+		},
+		{
+			"ENG_name": "Conjurer Archmage",
+			"name": "咒法大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 136,
+			"referenceSources": [
+				"AUD"
+			],
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 225,
+				"formula": "41d8 + 41"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"水晶|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 寻获魔宠|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}",
+						"{@spell 隐形仆役|XPHB}"
+					],
+					"daily": {
+						"2": [
+							"{@spell 任意门|XPHB}"
+						],
+						"1e": [
+							"{@spell 焚云术|XPHB}",
+							"{@spell 闪电束|XPHB}（八环版本）",
+							"{@spell 位面转移|XPHB}",
+							"{@spell 传送术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}27（{@damage 4d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Benign Transposition (3/Day)",
+					"name": "善意换位（3/日）",
+					"entries": [
+						"大法师传送至多30尺至一处其可见的未占据空间。若其改为选择射程内一处由自愿生物占据的空间，则二者均传送并互换位置。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Darkenbeast",
+			"name": "暗影兽",
+			"type": "monstrosity",
+			"source": "AU",
+			"page": 142,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 60,
+				"formula": "8d8 + 24"
+			},
+			"speed": {
+				"walk": 20,
+				"fly": 40
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 17,
+			"dex": 14,
+			"con": 16,
+			"int": 5,
+			"wis": 10,
+			"cha": 13,
+			"skill": {
+				"perception": "+2",
+				"stealth": "+4"
+			},
+			"passive": 12,
+			"conditionImmune": [
+				"恐慌"
+			],
+			"cr": "4",
+			"trait": [
+				{
+					"ENG_name": "Spell Imprint",
+					"name": "法术烙印",
+					"entries": [
+						"作为制造暗影兽的一部分，其创造者可以施展一个环阶不高于5环且施法时间为动作的法术。该法术不产生效应，但会被储存于暗影兽体内。处于暗影兽30尺内时，暗影兽的创造者可以施展该储存的法术，无需法术成分并使用该施法者的施法属性。以此方式施展法术时，其效应源自暗影兽（如同暗影兽为施法者一般），且法术施展完毕后，暗影兽随即在一团紫色烈焰中死去。"
+					]
+				},
+				{
+					"ENG_name": "Sunlight Sensitivity",
+					"name": "日照敏感",
+					"entries": [
+						"处于阳光下时，暗影兽的属性检定和攻击检定具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"暗影兽发动三次撕裂攻击。"
+					]
+				},
+				{
+					"ENG_name": "Rend",
+					"name": "撕裂",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}12（{@damage 2d8 + 3}）挥砍伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Shadow Stalker",
+					"name": "暗影潜行者",
+					"entries": [
+						"处于{@variantrule 微光光照|XPHB}或{@variantrule 黑暗|XPHB}中时，暗影兽执行{@action 撤离|XPHB}或{@action 躲藏|XPHB}动作。"
+					]
+				}
+			],
+			"environment": [
+				"草地",
+				"丘陵",
+				"城市"
+			],
+			"traitTags": [
+				"日照敏感"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Dinosaur Spirit",
+			"name": "恐龙灵魄",
+			"type": {
+				"type": "beast",
+				"tags": [
+					"恐龙"
+				]
+			},
+			"source": "AU",
+			"page": 43,
+			"summonedBySpell": "恐龙召唤术|AU",
+			"summonedBySpellLevel": 6,
+			"size": [
+				"H"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "11 + 法术环阶 + 2（仅甲龙）"
+				}
+			],
+			"hp": {
+				"special": "60 + 每比六环高一法术环阶 10"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 21,
+			"dex": 11,
+			"con": 15,
+			"int": 4,
+			"wis": 12,
+			"cha": 9,
+			"passive": 11,
+			"languages": [
+				"理解你说的语言"
+			],
+			"pbNote": "等于你的熟练加值",
+			"trait": [
+				{
+					"ENG_name": "Siege Monster (Ankylosaur Only)",
+					"name": "Siege Monster (Ankylosaur Only)",
+					"entries": [
+						"灵魄对物件和建筑造成双倍伤害。"
+					]
+				},
+				{
+					"ENG_name": "Tough",
+					"name": "打手",
+					"entries": [
+						"将该法术环阶的一半（向下取整）加到灵魄进行的任意力量或体质豁免检定中。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"灵魄发动等于法术环阶一半次数的攻击（向下取整）。"
+					]
+				},
+				{
+					"ENG_name": "Bite (Tyrannosaur Only)",
+					"name": "Bite (Tyrannosaur Only)",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及10尺。{@h}{@damage 2d10 + 5 + summonSpellLevel}穿刺伤害。若目标为体型不超过大型的生物，其陷入{@condition 受擒|XPHB}状态（逃脱DC等于你的法术豁免DC），且其陷入{@condition 束缚|XPHB}状态直至擒抱结束。"
+					]
+				},
+				{
+					"ENG_name": "Gore (Triceratops Only)",
+					"name": "Gore (Triceratops Only)",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺。{@h}{@damage 1d10 + 5 + summonSpellLevel}穿刺伤害。若目标为体型不超过巨型的生物，且灵魄在命中前曾向其直线移动至少20尺，则目标额外受到{@damage 1d10}穿刺伤害并陷入{@condition 倒地|XPHB}状态。"
+					]
+				},
+				{
+					"ENG_name": "Slam",
+					"name": "猛击",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及10尺。{@h}{@damage 1d10 + 5 + summonSpellLevel}钝击伤害。"
+					]
+				}
+			],
+			"traitTags": [
+				"攻城怪物"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"RCH"
+			],
+			"conditionInflict": [
+				"受擒",
+				"倒地",
+				"束缚"
+			],
+			"_versions": [
+				{
+					"ENG_name": "Dinosaur Spirit (Ankylosaur)",
+					"name": "Dinosaur Spirit (Ankylosaur)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Siege Monster (Ankylosaur Only)",
+									"with": "攻城怪物"
+								}
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Bite (Tyrannosaur Only)",
+									"Gore (Triceratops Only)"
+								]
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "13 + 法术环阶"
+						}
+					],
+					"damageTags": [
+						"B"
+					],
+					"conditionInflict": null
+				},
+				{
+					"ENG_name": "Dinosaur Spirit (Triceratops)",
+					"name": "Dinosaur Spirit (Triceratops)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Siege Monster (Ankylosaur Only)"
+								]
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Bite (Tyrannosaur Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Gore (Triceratops Only)",
+									"with": "顶撞"
+								}
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + 法术环阶"
+						}
+					],
+					"traitTags": null,
+					"conditionInflict": [
+						"倒地"
+					]
+				},
+				{
+					"ENG_name": "Dinosaur Spirit (Tyrannosaur)",
+					"name": "Dinosaur Spirit (Tyrannosaur)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Siege Monster (Ankylosaur Only)"
+								]
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Gore (Triceratops Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Bite (Tyrannosaur Only)",
+									"with": "啃咬"
+								}
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + 法术环阶"
+						}
+					],
+					"traitTags": null,
+					"conditionInflict": [
+						"受擒",
+						"束缚"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Diviner Archmage",
+			"name": "预言大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 137,
+			"referenceSources": [
+				"AUD"
+			],
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 176,
+				"formula": "32d8 + 32"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"insight": "+7",
+				"investigation": "+10",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"languages": [
+				"所有"
+			],
+			"cr": "15",
+			"gear": [
+				"法杖|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 侦测思想|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 心灵尖刺|XPHB}（四环版本）",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 探知术|XPHB}",
+							"{@spell 短讯术|XPHB}"
+						],
+						"1e": [
+							"{@spell 预见术|XPHB}（于战斗前施展）",
+							"{@spell 心灵感应|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和类似效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。其可以将其中一次攻击替换为一次施法，以施展{@spell 心灵尖刺|XPHB}（四环版本）。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}24（{@damage 3d12 + 5}）力场伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Enchanter Archmage",
+			"name": "惑控大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 137,
+			"referenceSources": [
+				"AUD"
+			],
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 214,
+				"formula": "39d8 + 39"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"perception": "+7",
+				"persuasion": "+13"
+			},
+			"passive": 17,
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"法杖|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 火球术|XPHB}（7环版本）",
+							"{@spell 指使术|XPHB}",
+							"{@spell 篡改记忆|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Dominate Person (1/Day)",
+					"name": "支配类人（1/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 支配类人|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"1": [
+							"{@spell 支配类人|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "bonus",
+					"hidden": [
+						"daily"
+					]
+				},
+				{
+					"ENG_name": "Duplicitous Magic (2/Day)",
+					"name": "欺瞒魔法（2/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 魅惑类人|XPHB}、{@spell 定身类人|XPHB}或{@spell 睡眠术|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"2": [
+							"{@spell 魅惑类人|XPHB}",
+							"{@spell 定身类人|XPHB}",
+							"{@spell 睡眠术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "bonus",
+					"hidden": [
+						"daily"
+					]
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}21（{@damage 3d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"F",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflictSpell": [
+				"魅惑",
+				"失能",
+				"麻痹",
+				"昏迷"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Evoker Archmage",
+			"name": "塑能大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 138,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 214,
+				"formula": "39d8 + 39"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"intimidation": "+8",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"法球|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}",
+						"{@spell 粉碎音波|XPHB}（三环版本）"
+					],
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Evocation Barrage {@recharge 5}",
+					"name": "塑能连射{@recharge 5}",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师以任意组合施展{@spell 火球术|XPHB}、{@spell 冰风暴|XPHB}或{@spell 闪电束|XPHB}两次，使用与施法动作相同的施法属性。"
+					],
+					"recharge": {
+						"5": [
+							"{@spell 火球术|XPHB}",
+							"{@spell 冰风暴|XPHB}",
+							"{@spell 闪电束|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action",
+					"hidden": [
+						"recharge"
+					]
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Evocation Sculptor",
+					"name": "塑能塑形",
+					"entries": [
+						"当大法师施展一个创造效应区域的法术时，其可以选定自身及其可见的至多五名其他生物，将法术的能量绕开它们塑形。被选定的生物对抗该法术的豁免检定自动成功，且若其原本会在豁免成功时受到一半伤害，则其不受任何伤害。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。其可以将其中一次攻击替换为一次施法，以施展{@spell 粉碎音波|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}27（{@damage 4d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"F",
+				"L",
+				"T"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Groundling Grunt",
+			"name": "掘地兽步卒",
+			"type": "monstrosity",
+			"source": "AU",
+			"page": 143,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 45,
+				"formula": "7d8 + 14"
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 10
+			},
+			"str": 16,
+			"dex": 15,
+			"con": 14,
+			"int": 7,
+			"wis": 10,
+			"cha": 8,
+			"skill": {
+				"perception": "+2",
+				"stealth": "+4",
+				"survival": "+2"
+			},
+			"passive": 12,
+			"resist": [
+				"毒素"
+			],
+			"languages": [
+				"通用语"
+			],
+			"cr": "1",
+			"gear": [
+				"投石索|xphb"
+			],
+			"action": [
+				{
+					"ENG_name": "Claw",
+					"name": "爪击",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}7（{@damage 1d8 + 3}）挥砍伤害。若目标为体型不超过中型的生物，其陷入{@condition 受擒|XPHB}状态（逃脱{@dc 13}），擒抱来自其两只前爪之一。"
+					]
+				},
+				{
+					"ENG_name": "Sling",
+					"name": "投石索",
+					"entries": [
+						"{@atkr r} {@hit 4}，射程30/120尺。{@h}7（{@damage 2d4 + 2}）钝击伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Go to Ground",
+					"name": "遁地",
+					"entries": [
+						"{@actTrigger} 掘地兽位于地面时被一次攻击检定命中。{@actResponse} 掘地兽受到的该次攻击伤害减半（向下取整）。"
+					]
+				}
+			],
+			"environment": [
+				"丘陵",
+				"城市"
+			],
+			"treasure": [
+				"武备"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RNG"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Groundling Slayer",
+			"name": "掘地兽杀戮者",
+			"type": "monstrosity",
+			"source": "AU",
+			"page": 144,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 58,
+				"formula": "9d8 + 18"
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 20
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 17,
+			"dex": 16,
+			"con": 15,
+			"int": 10,
+			"wis": 13,
+			"cha": 8,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+7",
+				"survival": "+3"
+			},
+			"passive": 13,
+			"resist": [
+				"毒素"
+			],
+			"languages": [
+				"通用语"
+			],
+			"cr": "3",
+			"gear": [
+				{
+					"item": "匕首|xphb",
+					"quantity": 6
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"掘地兽发动两次攻击，使用爪击或匕首的任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Claw",
+					"name": "爪击",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}12（{@damage 2d8 + 3}）挥砍伤害。若目标为体型不超过中型的生物，其陷入{@condition 受擒|XPHB}状态（逃脱{@dc 13}），擒抱来自其两只前爪之一。"
+					]
+				},
+				{
+					"ENG_name": "Dagger",
+					"name": "匕首",
+					"entries": [
+						"{@atkr m,r} {@hit 5}，触及5尺或射程20/60尺。{@h}5（{@damage 1d4 + 3}）穿刺伤害外加7（{@damage 2d6}）毒素伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Go to Ground",
+					"name": "遁地",
+					"entries": [
+						"{@actTrigger} 掘地兽位于地面时被一次攻击检定命中。{@actResponse} 掘地兽受到的该次攻击伤害减半（向下取整）。"
+					]
+				}
+			],
+			"environment": [
+				"丘陵",
+				"城市"
+			],
+			"treasure": [
+				"武备"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"THW"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Groundling Stalker",
+			"name": "掘地兽追猎者",
+			"type": "monstrosity",
+			"source": "AU",
+			"page": 144,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8 + 16"
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 10
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 16,
+			"dex": 16,
+			"con": 14,
+			"int": 8,
+			"wis": 12,
+			"cha": 8,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+5",
+				"survival": "+3"
+			},
+			"passive": 13,
+			"resist": [
+				"毒素"
+			],
+			"languages": [
+				"通用语"
+			],
+			"cr": "2",
+			"gear": [
+				"重弩|xphb"
+			],
+			"action": [
+				{
+					"ENG_name": "Claw",
+					"name": "爪击",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}12（{@damage 2d8 + 3}）挥砍伤害。若目标为体型不超过中型的生物，其陷入{@condition 受擒|XPHB}状态（逃脱{@dc 13}），擒抱来自其两只前爪之一。"
+					]
+				},
+				{
+					"ENG_name": "Heavy Crossbow",
+					"name": "重弩",
+					"entries": [
+						"{@atkr r} {@hit 5}，射程100/400尺。{@h}14（{@damage 2d10 + 3}）穿刺伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Go to Ground",
+					"name": "遁地",
+					"entries": [
+						"{@actTrigger} 掘地兽位于地面时被一次攻击检定命中。{@actResponse} 掘地兽受到的该次攻击伤害减半（向下取整）。"
+					]
+				}
+			],
+			"environment": [
+				"丘陵",
+				"城市"
+			],
+			"treasure": [
+				"武备"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MA",
+				"RA",
+				"RNG"
+			],
+			"conditionInflict": [
+				"受擒"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Illusionist Archmage",
+			"name": "幻术大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 138,
+			"referenceSources": [
+				"AUD"
+			],
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 220,
+				"formula": "40d8 + 40"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"deception": "+8",
+				"perception": "+7",
+				"stealth": "+8"
+			},
+			"passive": 17,
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"权杖|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 易容术|XPHB}",
+						"{@spell 隐形术|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 次级幻象|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 造物术|XPHB}",
+							"{@spell 高等幻影|XPHB}",
+							"{@spell 涅斯图魔法灵光|XPHB}",
+							"{@spell 伪装术|XPHB}"
+						],
+						"1e": [
+							"{@spell 海市蜃楼|XPHB}",
+							"{@spell 怪影杀手|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Beguiling Spells (2/Day)",
+					"name": "迷惑法术（2/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 催眠图纹|XPHB}或{@spell 镜影术|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"2": [
+							"{@spell 催眠图纹|XPHB}",
+							"{@spell 镜影术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "bonus",
+					"hidden": [
+						"daily"
+					]
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}21（{@damage 3d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflictSpell": [
+				"魅惑",
+				"恐慌",
+				"失能",
+				"隐形"
+			],
+			"savingThrowForcedSpell": [
+				"魅力",
+				"体质",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Living Cone of Cold",
+			"name": "活体寒冰锥",
+			"type": "construct",
+			"source": "AU",
+			"page": 146,
+			"size": [
+				"L"
+			],
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 105,
+				"formula": "10d10 + 50"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 25
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 20,
+			"int": 3,
+			"wis": 11,
+			"cha": 6,
+			"passive": 10,
+			"immune": [
+				"寒冷"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"恐慌",
+				"受擒",
+				"中毒",
+				"倒地",
+				"束缚"
+			],
+			"cr": "7",
+			"trait": [
+				{
+					"ENG_name": "Amorphous",
+					"name": "无定形",
+					"entries": [
+						"活化法术可以穿过窄至1寸的空间，且无需为此消耗额外移动力。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"活化法术对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"活化法术发动两次魔法打击攻击。"
+					]
+				},
+				{
+					"ENG_name": "Magical Strike",
+					"name": "魔法打击",
+					"entries": [
+						"{@atkr m} {@hit 8}，触及10尺。{@h}27（{@damage 5d8 + 5}）寒冷伤害。"
+					]
+				},
+				{
+					"ENG_name": "Spell Mimicry {@recharge 5}",
+					"name": "法术模拟{@recharge 5}",
+					"entries": [
+						"{@actSave con} {@dc 16}，60尺{@variantrule 锥状 [效应区域]|XPHB|锥状}内的每名生物。{@actSaveFail} 36（{@damage 8d8}）寒冷伤害。{@actSaveSuccess} 半伤。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"traitTags": [
+				"无定形",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"C"
+			],
+			"miscTags": [
+				"MA",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Living Thunderwave",
+			"name": "活体雷鸣波",
+			"type": "construct",
+			"source": "AU",
+			"page": 146,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 30,
+				"formula": "4d8 + 12"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 25
+			},
+			"str": 10,
+			"dex": 13,
+			"con": 16,
+			"int": 3,
+			"wis": 6,
+			"cha": 6,
+			"passive": 8,
+			"immune": [
+				"雷鸣"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"恐慌",
+				"受擒",
+				"中毒",
+				"倒地",
+				"束缚"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"ENG_name": "Amorphous",
+					"name": "无定形",
+					"entries": [
+						"活化法术可以穿过窄至1寸的空间，且无需为此消耗额外移动力。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"活化法术对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Magical Strike",
+					"name": "魔法打击",
+					"entries": [
+						"{@atkr m} {@hit 5}，触及5尺。{@h}6（{@damage 1d6 + 3}）雷鸣伤害。"
+					]
+				},
+				{
+					"ENG_name": "Spell Mimicry {@recharge 5}",
+					"name": "法术模拟{@recharge 5}",
+					"entries": [
+						"{@actSave con} {@dc 13}，活化法术发出的15尺{@variantrule 立方 [效应区域]|XPHB|立方}内的每名生物。{@actSaveFail} 9（{@damage 2d8}）雷鸣伤害，且目标被推离活化法术10尺。{@actSaveSuccess} 仅半伤。{@actSaveSuccessOrFail} 300尺内可闻一声轰雷巨响。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"traitTags": [
+				"无定形",
+				"魔法抗性"
+			],
+			"damageTags": [
+				"T"
+			],
+			"miscTags": [
+				"MA"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Living Vitriolic Sphere",
+			"name": "活体浓酸球",
+			"type": "construct",
+			"source": "AU",
+			"page": 146,
+			"size": [
+				"L"
+			],
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 76,
+				"formula": "8d10 + 32"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 25
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 18,
+			"int": 3,
+			"wis": 10,
+			"cha": 6,
+			"passive": 10,
+			"immune": [
+				"强酸"
+			],
+			"conditionImmune": [
+				"目盲",
+				"魅惑",
+				"耳聋",
+				"恐慌",
+				"受擒",
+				"中毒",
+				"倒地",
+				"束缚"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"ENG_name": "Amorphous",
+					"name": "无定形",
+					"entries": [
+						"活化法术可以穿过窄至1寸的空间，且无需为此消耗额外移动力。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"活化法术对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"活化法术发动两次魔法打击攻击。"
+					]
+				},
+				{
+					"ENG_name": "Magical Strike",
+					"name": "魔法打击",
+					"entries": [
+						"{@atkr m} {@hit 7}，触及10尺。{@h}21（{@damage 5d6 + 4}）强酸伤害。"
+					]
+				},
+				{
+					"ENG_name": "Spell Mimicry {@recharge 5}",
+					"name": "法术模拟{@recharge 5}",
+					"entries": [
+						"{@actSave dex} {@dc 15}，150尺内一点为中心、半径20尺的{@variantrule 球状 [效应区域]|XPHB|球状}内的每名生物。{@actSaveFail} 25（{@damage 10d4}）强酸伤害，并在目标下个回合结束时受到12（{@damage 5d4}）强酸伤害。{@actSaveSuccess} 仅初始伤害的一半。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"traitTags": [
+				"无定形",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"A"
+			],
+			"miscTags": [
+				"AOE",
+				"MA",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"敏捷"
+			],
+			"hasFluff": true
+		},
+		{
+			"ENG_name": "Necromancer Archmage",
+			"name": "死灵大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 139,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 225,
+				"formula": "41d8 + 41"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"intimidation": "+8",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"resist": [
+				"暗蚀"
+			],
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"水晶|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 枯萎术|XPHB}",
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 魔法伎俩|XPHB}",
+						"{@spell 死者交谈|XPHB}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell 死亡法阵|XPHB}（七环版本）",
+							"{@spell 唤起死灵|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Marshal Undead",
+					"name": "不死统帅",
+					"entries": [
+						"大法师60尺{@variantrule 光环 [效应区域]|XPHB|光环}内由大法师选定的亡灵生物，其攻击检定和豁免检定具有{@variantrule 优势|XPHB}，除非大法师陷入{@condition 失能|XPHB}状态。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。其可以将其中一次攻击替换为一次施法，以施展{@spell 枯萎术|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}21（{@damage 3d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"N"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForcedSpell": [
+				"体质"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Plant Spirit",
+			"name": "植物精魄",
+			"type": "plant",
+			"source": "AU",
+			"page": 44,
+			"summonedBySpell": "植物召唤术|AU",
+			"summonedBySpellLevel": 5,
+			"size": [
+				"L"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "11 + 法术环阶 + 2（仅巨树）"
+				}
+			],
+			"hp": {
+				"special": "50 + 每比五环高一法术环阶 10"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": {
+					"number": 40,
+					"condition": "（仅藤蔓）"
+				}
+			},
+			"str": 17,
+			"dex": 13,
+			"con": 14,
+			"int": 10,
+			"wis": 13,
+			"cha": 10,
+			"passive": 11,
+			"vulnerable": [
+				{
+					"vulnerable": [
+						"火焰"
+					],
+					"note": "（仅巨树）",
+					"cond": true
+				},
+				{
+					"vulnerable": [
+						"挥砍"
+					],
+					"note": "（仅真菌或藤蔓）",
+					"cond": true
+				}
+			],
+			"languages": [
+				"理解你说的语言"
+			],
+			"pbNote": "等于你的熟练加值",
+			"trait": [
+				{
+					"ENG_name": "Siege Monster (Tree Only)",
+					"name": "Siege Monster (Tree Only)",
+					"entries": [
+						"灵魄对物件和建筑造成双倍伤害。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"灵魄发动等于法术环阶一半次数的攻击（向下取整）。"
+					]
+				},
+				{
+					"ENG_name": "Slam (Tree or Vine Only)",
+					"name": "Slam (Tree or Vine Only)",
+					"entries": [
+						"{@atkr m} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺。{@h}{@damage 1d10 + 3 + summonSpellLevel}钝击伤害。"
+					]
+				},
+				{
+					"ENG_name": "Spore Spray (Fungus Only)",
+					"name": "Spore Spray (Fungus Only)",
+					"entries": [
+						"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺或射程30尺。{@h}{@damage 1d4 + summonSpellLevel}毒素伤害，且目标陷入{@condition 中毒|XPHB}状态，直至其下个回合结束。若目标已陷入{@condition 中毒|XPHB}状态，则其改为额外受到{@damage 3d4}毒素伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Twist Away (Vine Only)",
+					"name": "Twist Away (Vine Only)",
+					"entries": [
+						"灵魄执行{@action 疾走|XPHB}或{@action 撤离|XPHB}动作。"
+					]
+				}
+			],
+			"traitTags": [
+				"攻城怪物"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"damageTags": [
+				"B",
+				"I"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"中毒"
+			],
+			"_versions": [
+				{
+					"ENG_name": "Plant Spirit (Fungus)",
+					"name": "Plant Spirit (Fungus)",
+					"source": "AU",
+					"_mod": {
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Slam (Tree or Vine Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Spore Spray (Fungus Only)",
+									"with": "孢子喷发"
+								}
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + 法术环阶"
+						}
+					],
+					"speed": {
+						"walk": 40
+					},
+					"vulnerable": [
+						"挥砍"
+					],
+					"trait": null,
+					"bonus": null,
+					"traitTags": null,
+					"damageTags": [
+						"I"
+					]
+				},
+				{
+					"ENG_name": "Plant Spirit (Tree)",
+					"name": "Plant Spirit (Tree)",
+					"source": "AU",
+					"_mod": {
+						"trait": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Siege Monster (Tree Only)",
+									"with": "攻城怪物"
+								}
+							}
+						],
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Spore Spray (Fungus Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Slam (Tree or Vine Only)",
+									"with": "猛击"
+								}
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "13 + 法术环阶"
+						}
+					],
+					"speed": {
+						"walk": 40
+					},
+					"vulnerable": [
+						"火焰"
+					],
+					"bonus": null,
+					"damageTags": [
+						"B"
+					],
+					"miscTags": [
+						"MA"
+					],
+					"conditionInflict": null
+				},
+				{
+					"ENG_name": "Plant Spirit (Vine)",
+					"name": "Plant Spirit (Vine)",
+					"source": "AU",
+					"_mod": {
+						"action": [
+							{
+								"mode": "removeArr",
+								"names": [
+									"Spore Spray (Fungus Only)"
+								]
+							},
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Slam (Tree or Vine Only)",
+									"with": "猛击"
+								}
+							}
+						],
+						"bonus": [
+							{
+								"mode": "renameArr",
+								"renames": {
+									"rename": "Twist Away (Vine Only)",
+									"with": "迅捷脱身"
+								}
+							}
+						]
+					},
+					"ac": [
+						{
+							"special": "11 + 法术环阶"
+						}
+					],
+					"speed": {
+						"walk": 40,
+						"climb": 40
+					},
+					"vulnerable": [
+						"挥砍"
+					],
+					"trait": null,
+					"traitTags": null,
+					"damageTags": [
+						"B"
+					],
+					"miscTags": [
+						"MA"
+					],
+					"conditionInflict": null
+				}
+			]
+		},
+		{
+			"ENG_name": "Spellguard",
+			"name": "法术卫队",
+			"type": "humanoid",
+			"source": "AU",
+			"page": 147,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				20
+			],
+			"hp": {
+				"average": 105,
+				"formula": "14d8 + 42"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 18,
+			"dex": 11,
+			"con": 16,
+			"int": 12,
+			"wis": 13,
+			"cha": 10,
+			"skill": {
+				"arcana": "+4",
+				"athletics": "+7",
+				"perception": "+4"
+			},
+			"passive": 14,
+			"languages": [
+				"通用语"
+			],
+			"cr": "5",
+			"gear": [
+				"链枷|xphb",
+				{
+					"item": "标枪|xphb",
+					"quantity": 6
+				},
+				"板甲|xphb",
+				"盾牌|xphb"
+			],
+			"trait": [
+				{
+					"ENG_name": "Superior Magic Resistance",
+					"name": "高等魔法抗性",
+					"entries": [
+						"法术卫队对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。法术攻击检定针对法术卫队具有{@variantrule 劣势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"法术卫队发动两次攻击，使用力场链枷或标枪的任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Force Flail",
+					"name": "力场链枷",
+					"entries": [
+						"{@atkr m} {@hit 7}，触及5尺。{@h}8（{@damage 1d8 + 4}）钝击伤害外加7（{@damage 2d6}）力场伤害。"
+					]
+				},
+				{
+					"ENG_name": "Javelin",
+					"name": "标枪",
+					"entries": [
+						"{@atkr m,r} {@hit 7}，触及5尺或射程30/120尺。{@h}14（{@damage 3d6 + 4}）穿刺伤害。"
+					]
+				}
+			],
+			"reaction": [
+				{
+					"ENG_name": "Defensive Divination",
+					"name": "防御预言",
+					"entries": [
+						"{@actTrigger} 法术卫队可见的一名生物以攻击检定命中法术卫队5尺内的一名盟友，或法术卫队5尺内的一名盟友对抗法术或其他魔法效应的豁免检定失败。{@actResponse} 法术卫队投掷{@dice 1d20}，并可以选择用该结果替换为该攻击检定或豁免检定所投掷的{@dice d20}。"
+					]
+				}
+			],
+			"environment": [
+				"城市"
+			],
+			"treasure": [
+				"武备"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B",
+				"O",
+				"P"
+			],
+			"miscTags": [
+				"MA",
+				"MLW",
+				"RA",
+				"THW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Taisus",
+			"name": "Taisus",
+			"type": "aberration",
+			"source": "AU",
+			"page": 148,
+			"size": [
+				"H"
+			],
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				18
+			],
+			"hp": {
+				"average": 310,
+				"formula": "27d12 + 135"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 60
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 17,
+			"dex": 18,
+			"con": 20,
+			"int": 25,
+			"wis": 22,
+			"cha": 19,
+			"skill": {
+				"arcana": "+19",
+				"insight": "+12",
+				"perception": "+12"
+			},
+			"passive": 22,
+			"immune": [
+				"毒素"
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"受擒",
+				"麻痹",
+				"石化",
+				"中毒",
+				"束缚"
+			],
+			"languages": [
+				"全部; 心灵感应 120 尺"
+			],
+			"cr": "19",
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Taisus施展以下一道法术，无需材料成分并使用智力作为施法属性（法术豁免{@dc 21}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 火球术|XPHB}（五环版本）",
+						"{@spell 隐形术|XPHB}",
+						"{@spell 法师之手|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 贾拉兹光辉风暴|XPHB}",
+							"{@spell 位面转移|XPHB}",
+							"{@spell 探知术|XPHB}"
+						],
+						"1e": [
+							"{@spell 摧心术|XPHB}",
+							"{@spell 解离术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Protective Magic",
+					"name": "护身魔法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Taisus施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}以回应法术的触发条件，使用与施法动作相同的施法属性。"
+					],
+					"will": [
+						"{@spell 法术反制|XPHB}",
+						"{@spell 护盾术|XPHB}"
+					],
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"will"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Arcane Immortality",
+					"name": "奥术不朽",
+					"entries": [
+						"若Taisus死亡，其躯体崩解为闪光的尘埃。除非有人对其遗骸施展{@spell 祈愿术|XPHB}以阻止此特性的效应，否则其会在{@dice 1d10}天后获得新的躯体，并以全部{@variantrule 生命值|XPHB}复活。新躯体出现于Taisus被创造时所指定位置5尺内的一处未占据空间。"
+					]
+				},
+				{
+					"ENG_name": "Legendary Resistance (4/Day)",
+					"name": "传奇抗性（4/日）",
+					"entries": [
+						"Taisus豁免失败时，可以将其改为豁免成功。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"Taisus对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"Taisus发动两次脑力汲取攻击。"
+					]
+				},
+				{
+					"ENG_name": "Brain Drain",
+					"name": "脑力汲取",
+					"entries": [
+						"{@atkr m} {@hit 13}，触及20尺。{@h}20（{@damage 3d8 + 7}）力场伤害外加16（{@damage 3d10}）心灵伤害，且若目标为拥有法术位的生物，其受以下效应影响。{@actSave con} {@dc 21}。{@actSaveFail} 目标最高环阶的未消耗法术位被消耗。"
+					]
+				}
+			],
+			"legendary": [
+				{
+					"ENG_name": "Deadly Drain",
+					"name": "致命汲取",
+					"entries": [
+						"Taisus发动一次脑力汲取攻击。直至其下个回合开始，Taisus都无法再执行此动作。"
+					]
+				},
+				{
+					"ENG_name": "Teleport",
+					"name": "传送",
+					"entries": [
+						"Taisus传送自身或其10尺内可见的一名自愿生物，至多120尺至一处Taisus可见的未占据空间。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘"
+			],
+			"traitTags": [
+				"传奇抗性",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"TP",
+				"XX"
+			],
+			"damageTags": [
+				"O",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"F",
+				"O",
+				"R",
+				"T",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RCH"
+			],
+			"conditionInflictSpell": [
+				"目盲",
+				"耳聋",
+				"隐形"
+			],
+			"savingThrowForced": [
+				"体质"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷",
+				"智力",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Transmuter Archmage",
+			"name": "变化大法师",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"法师"
+				]
+			},
+			"source": "AU",
+			"page": 139,
+			"referenceSources": [
+				"AUD"
+			],
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				16
+			],
+			"hp": {
+				"average": 220,
+				"formula": "40d8 + 40"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 30
+			},
+			"initiative": {
+				"proficiency": 1
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 12,
+			"int": 20,
+			"wis": 15,
+			"cha": 16,
+			"skill": {
+				"arcana": "+15",
+				"history": "+10",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"languages": [
+				"通用语以及五门其他语言"
+			],
+			"cr": "15",
+			"gear": [
+				"法杖|xphb"
+			],
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展以下一道法术，使用智力作为施法属性（法术豁免{@dc 18}）："
+					],
+					"will": [
+						"{@spell 变身术|XPHB}",
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 敲击术|XPHB}",
+						"{@spell 法师护甲|XPHB}（已计入AC）",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 变形术|XPHB}",
+						"{@spell 魔法伎俩|XPHB}"
+					],
+					"daily": {
+						"1": [
+							"{@spell 反转重力|XPHB}"
+						],
+						"2": [
+							"{@spell 气化形体|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Slow (2/Day)",
+					"name": "缓慢术（2/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 缓慢术|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"2": [
+							"{@spell 缓慢术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "bonus",
+					"hidden": [
+						"daily"
+					]
+				},
+				{
+					"ENG_name": "Protective Magic (3/Day)",
+					"name": "护身魔法（3/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"大法师施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}（触发条件见这些法术），使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"3": [
+							"{@spell 法术反制|XPHB}",
+							"{@spell 护盾术|XPHB}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "reaction",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"大法师对抗法术和其他魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"大法师发动四次奥能爆发攻击。"
+					]
+				},
+				{
+					"ENG_name": "Arcane Burst",
+					"name": "奥能爆发",
+					"entries": [
+						"{@atkr m,r} {@hit 10}，触及5尺或射程150尺。{@h}27（{@damage 4d10 + 5}）力场伤害。"
+					]
+				}
+			],
+			"environment": [
+				"任何"
+			],
+			"treasure": [
+				"奥秘",
+				"个体"
+			],
+			"traitTags": [
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"B",
+				"P",
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"敏捷",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Venger",
+			"name": "温戈尔",
+			"type": "fiend",
+			"isNamedCreature": true,
+			"source": "AU",
+			"page": 150,
+			"size": [
+				"M"
+			],
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				19
+			],
+			"hp": {
+				"average": 202,
+				"formula": "27d8 + 81"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 30
+			},
+			"initiative": {
+				"proficiency": 2
+			},
+			"str": 18,
+			"dex": 20,
+			"con": 16,
+			"int": 17,
+			"wis": 14,
+			"cha": 21,
+			"skill": {
+				"arcana": "+9",
+				"deception": "+11",
+				"intimidation": "+11",
+				"perception": "+8"
+			},
+			"passive": 18,
+			"resist": [
+				"寒冷",
+				"火焰",
+				"闪电",
+				"毒素"
+			],
+			"conditionImmune": [
+				"中毒"
+			],
+			"languages": [
+				"深渊语",
+				"通用语",
+				"炼狱"
+			],
+			"cr": {
+				"cr": "17",
+				"xpLair": 20000
+			},
+			"spellcasting": [
+				{
+					"ENG_name": "Spellcasting",
+					"name": "施法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"温戈尔施展以下一道法术，使用魅力作为施法属性（法术豁免{@dc 19}）："
+					],
+					"will": [
+						"{@spell 侦测魔法|XPHB}",
+						"{@spell 隐形术|XPHB}",
+						"{@spell 法师之手|XPHB}",
+						"{@spell 无声幻影|XPHB}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell 变身术|XPHB}",
+							"{@spell 异界探知|XPHB}",
+							"{@spell 唤起死灵|XPHB}",
+							"{@spell 任意门|XPHB}"
+						],
+						"1e": [
+							"{@spell 操控天气|XPHB}",
+							"{@spell 禁锢术|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				},
+				{
+					"ENG_name": "Telekinesis (2/Day)",
+					"name": "心灵遥控（2/日）",
+					"type": "spellcasting",
+					"headerEntries": [
+						"温戈尔施展{@spell 心灵遥控|XPHB}，使用与施法动作相同的施法属性。"
+					],
+					"daily": {
+						"2": [
+							"{@spell 心灵遥控|XPHB}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "bonus",
+					"hidden": [
+						"daily"
+					]
+				},
+				{
+					"ENG_name": "Protective Magic",
+					"name": "护身魔法",
+					"type": "spellcasting",
+					"headerEntries": [
+						"温戈尔施展{@spell 法术反制|XPHB}或{@spell 护盾术|XPHB}以回应法术的触发条件，使用与施法动作相同的施法属性。"
+					],
+					"will": [
+						"{@spell 法术反制|XPHB}",
+						"{@spell 护盾术|XPHB}"
+					],
+					"ability": "cha",
+					"displayAs": "reaction",
+					"hidden": [
+						"will"
+					]
+				}
+			],
+			"trait": [
+				{
+					"ENG_name": "Fiendish Restoration",
+					"name": "邪魔复苏",
+					"entries": [
+						"若温戈尔死亡，其躯体消散为猩红尘埃，并在{@dice 1d10}天后于其某个巢穴中的某处获得新的躯体，以全部{@variantrule 生命值|XPHB}复活。"
+					]
+				},
+				{
+					"ENG_name": "Legendary Resistance (3/Day, or 4/Day in Lair)",
+					"name": "传奇抗性（3/日，或巢穴内4/日）",
+					"entries": [
+						"温戈尔豁免失败时，可以将其改为豁免成功。"
+					]
+				},
+				{
+					"ENG_name": "Magic Resistance",
+					"name": "魔法抗性",
+					"entries": [
+						"温戈尔对抗法术和魔法效应时进行的豁免检定具有{@variantrule 优势|XPHB}。"
+					]
+				},
+				{
+					"ENG_name": "Mounted Adept",
+					"name": "骑战大师",
+					"entries": [
+						"温戈尔骑乘时，他和其坐骑的敏捷豁免检定具有{@variantrule 优势|XPHB}，且温戈尔可以强制将一次以其坐骑为目标的攻击改为以他自己为目标。若温戈尔陷入{@condition 失能|XPHB}状态，则其无法使用此特性。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Multiattack",
+					"name": "多重攻击",
+					"entries": [
+						"温戈尔发动三次攻击，使用猩红之爪或猩红爆射的任意组合。"
+					]
+				},
+				{
+					"ENG_name": "Crimson Claw",
+					"name": "猩红之爪",
+					"entries": [
+						"{@atkr m} {@hit 11}，触及5尺。{@h}14（{@damage 2d8 + 5}）挥砍伤害外加10（{@damage 3d6}）火焰伤害。"
+					]
+				},
+				{
+					"ENG_name": "Crimson Blast",
+					"name": "猩红爆射",
+					"entries": [
+						"{@atkr r} {@hit 11}，射程120尺。{@h}24（{@damage 3d12 + 5}）力场伤害。"
+					]
+				}
+			],
+			"legendaryActionsLair": 4,
+			"legendary": [
+				{
+					"ENG_name": "Booming Censure",
+					"name": "轰雷训诫",
+					"entries": [
+						"{@actSave wis} {@dc 19}，温戈尔60尺内可见的一名生物。{@actSaveFail} 14（{@damage 4d6}）心灵伤害，且目标陷入{@condition 恐慌|XPHB}状态，直至其下个回合结束。{@actSaveSuccess} 仅半伤。"
+					]
+				},
+				{
+					"ENG_name": "Crimson Strike",
+					"name": "猩红打击",
+					"entries": [
+						"温戈尔发动一次猩红之爪或猩红爆射攻击。"
+					]
+				},
+				{
+					"ENG_name": "Magic-Binding Chains",
+					"name": "缚魔锁链",
+					"entries": [
+						"{@actSave dex} {@dc 19}，温戈尔30尺内可见的一名生物。{@actSaveFail} 目标陷入{@condition 束缚|XPHB}状态，直至其下个回合结束。处于{@condition 束缚|XPHB}状态时，目标无法执行{@action 魔法|XPHB}动作。{@actSaveSuccessOrFail} 直至温戈尔下个回合开始，其都无法再执行此动作。"
+					]
+				}
+			],
+			"traitTags": [
+				"传奇抗性",
+				"魔法抗性"
+			],
+			"actionTags": [
+				"多重攻击"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"I"
+			],
+			"damageTags": [
+				"F",
+				"O",
+				"S",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"B",
+				"O",
+				"P",
+				"S",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"conditionInflict": [
+				"恐慌",
+				"束缚"
+			],
+			"conditionInflictSpell": [
+				"隐形",
+				"束缚",
+				"昏迷"
+			],
+			"savingThrowForced": [
+				"敏捷",
+				"感知"
+			],
+			"savingThrowForcedSpell": [
+				"体质",
+				"智力",
+				"力量",
+				"感知"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"ENG_name": "Vestige Companion",
+			"name": "契灵伙伴",
+			"type": {
+				"type": {
+					"choose": [
+						"天族",
+						"邪魔",
+						"亡灵"
+					]
+				}
+			},
+			"source": "AU",
+			"summonedByClass": "魔契师|XPHB",
+			"size": [
+				"S"
+			],
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "13 + 你的魅力调整值"
+				}
+			],
+			"hp": {
+				"special": "4 + 你的魔契师等级×4（契灵的生命骰[d6]数量等于你的魔契师等级）"
+			},
+			"speed": {
+				"walk": 5,
+				"fly": {
+					"number": 30,
+					"condition": "(悬浮)"
+				},
+				"canHover": true
+			},
+			"str": 1,
+			"dex": 14,
+			"con": 10,
+			"int": 15,
+			"wis": 15,
+			"cha": 16,
+			"passive": 12,
+			"resist": [
+				{
+					"resist": [
+						"火焰"
+					],
+					"note": "（仅邪魔）",
+					"cond": true
+				},
+				{
+					"resist": [
+						"暗蚀"
+					],
+					"note": "（仅亡灵）",
+					"cond": true
+				},
+				{
+					"resist": [
+						"光耀"
+					],
+					"note": "（仅天族）",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"魅惑",
+				"恐慌",
+				"倒地"
+			],
+			"languages": [
+				"说你会的语言"
+			],
+			"pbNote": "等于你的熟练加值",
+			"trait": [
+				{
+					"ENG_name": "Pact Bond",
+					"name": "契约纽带",
+					"entries": [
+						"将你的{@variantrule 熟练|XPHB|熟练加值}加到契灵进行的任意属性检定和豁免检定中。"
+					]
+				}
+			],
+			"action": [
+				{
+					"ENG_name": "Vestige's Strike",
+					"name": "契灵打击",
+					"entries": [
+						"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺或射程60尺。{@h}{@damage 1d6 + 3}外加等于你魅力调整值的火焰（邪魔）、暗蚀（亡灵）或光耀（天族）伤害。"
+					]
+				}
+			],
+			"bonus": [
+				{
+					"ENG_name": "Divine Power (1/Day)",
+					"name": "神力（1/日）",
+					"entries": [
+						"你的契灵依其形态以下列方式之一展现其神力的残余：",
+						{
+							"ENG_name": "Cursed Invocation (Undead Only)",
+							"name": "诅咒祈唤（仅亡灵）",
+							"type": "entries",
+							"entries": [
+								"契灵对其30尺内你可见的一名生物施加诅咒，持续1分钟。被诅咒期间，目标针对你和契灵的攻击检定具有{@variantrule 劣势|XPHB}。"
+							]
+						},
+						{
+							"ENG_name": "Fiendish Swap (Fiend Only)",
+							"name": "邪魔换位（仅邪魔）",
+							"type": "entries",
+							"entries": [
+								"若你和契灵相距不超过60尺，则你二人传送并互换位置。"
+							]
+						},
+						{
+							"ENG_name": "Healing Touch (Celestial Only)",
+							"name": "治愈之触（仅天族）",
+							"type": "entries",
+							"entries": [
+								"契灵触碰另一名生物。目标恢复等于{@dice 2d8}外加你的魅力调整值的{@variantrule 生命值|XPHB}，并终止其身上的一种状态：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}或{@condition 中毒|XPHB}。"
+							]
+						}
+					]
+				}
+			],
+			"damageTags": [
+				"F",
+				"N",
+				"R"
+			],
+			"miscTags": [
+				"MA",
+				"RA"
+			],
+			"_versions": [
+				{
+					"ENG_name": "Vestige Companion (Celestial)",
+					"name": "Vestige Companion (Celestial)",
+					"type": "celestial",
+					"source": "AU",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Vestige's Strike",
+							"items": {
+								"ENG_name": "Vestige's Strike",
+								"name": "契灵打击",
+								"entries": [
+									"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺或射程60尺。{@h}{@damage 1d6 + 3}外加等于你魅力调整值的光耀伤害。"
+								]
+							}
+						},
+						"bonus": {
+							"mode": "replaceArr",
+							"replace": "Divine Power (1/Day)",
+							"items": {
+								"ENG_name": "Divine Power (1/Day)",
+								"name": "神力（1/日）",
+								"entries": [
+									{
+										"ENG_name": "Healing Touch",
+										"name": "治愈之触",
+										"type": "entries",
+										"entries": [
+											"契灵触碰另一名生物。目标恢复等于{@dice 2d8}外加你的魅力调整值的{@variantrule 生命值|XPHB}，并终止其身上的一种状态：{@condition 目盲|XPHB}、{@condition 耳聋|XPHB}或{@condition 中毒|XPHB}。"
+										]
+									}
+								]
+							}
+						}
+					},
+					"resist": [
+						"光耀"
+					],
+					"damageTags": [
+						"R"
+					]
+				},
+				{
+					"ENG_name": "Vestige Companion (Fiend)",
+					"name": "Vestige Companion (Fiend)",
+					"type": "fiend",
+					"source": "AU",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Vestige's Strike",
+							"items": {
+								"ENG_name": "Vestige's Strike",
+								"name": "契灵打击",
+								"entries": [
+									"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺或射程60尺。{@h}{@damage 1d6 + 3}外加等于你魅力调整值的火焰伤害。"
+								]
+							}
+						},
+						"bonus": {
+							"mode": "replaceArr",
+							"replace": "Divine Power (1/Day)",
+							"items": {
+								"ENG_name": "Divine Power (1/Day)",
+								"name": "神力（1/日）",
+								"entries": [
+									{
+										"ENG_name": "Fiendish Swap",
+										"name": "邪魔换位",
+										"type": "entries",
+										"entries": [
+											"若你和契灵相距不超过60尺，则你二人传送并互换位置。"
+										]
+									}
+								]
+							}
+						}
+					},
+					"resist": [
+						"火焰"
+					],
+					"damageTags": [
+						"F"
+					]
+				},
+				{
+					"ENG_name": "Vestige Companion (Undead)",
+					"name": "Vestige Companion (Undead)",
+					"type": "undead",
+					"source": "AU",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Vestige's Strike",
+							"items": {
+								"ENG_name": "Vestige's Strike",
+								"name": "契灵打击",
+								"entries": [
+									"{@atkr m,r} {@hitYourSpellAttack 加值等于你的法术攻击加值}，触及5尺或射程60尺。{@h}{@damage 1d6 + 3}外加等于你魅力调整值的暗蚀伤害。"
+								]
+							}
+						},
+						"bonus": {
+							"mode": "replaceArr",
+							"replace": "Divine Power (1/Day)",
+							"items": {
+								"ENG_name": "Divine Power (1/Day)",
+								"name": "神力（1/日）",
+								"entries": [
+									{
+										"ENG_name": "Cursed Invocation",
+										"name": "诅咒祈唤",
+										"type": "entries",
+										"entries": [
+											"契灵对其30尺内你可见的一名生物施加诅咒，持续1分钟。被诅咒期间，目标针对你和契灵的攻击检定具有{@variantrule 劣势|XPHB}。"
+										]
+									}
+								]
+							}
+						}
+					},
+					"resist": [
+						"暗蚀"
+					],
+					"damageTags": [
+						"N"
+					]
+				}
+			]
+		}
+	]
+}

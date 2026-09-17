@@ -43,6 +43,7 @@
 			"ENG_name": "Ancient Altar",
 			"name": "远古祭坛",
 			"source": "RHW",
+			"page": 208,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
@@ -377,6 +378,7 @@
 			"ENG_name": "Cabinet of Curiosities",
 			"name": "奇物陈列柜",
 			"source": "RHW",
+			"page": 208,
 			"facilityType": "special",
 			"level": 9,
 			"space": [
@@ -466,6 +468,42 @@
 						},
 						"要确定你的雇员带回了多少魔法物品，请先统计你据点中的闹鬼特色设施数量，然后在已收集的奇物表格的魔法物品获取列掷出对应的骰子。DM在诅咒物品几率（{@dice 1d100}）列掷骰，以确定其中一件魔法物品是否带有诅咒。DM选择哪件物品被诅咒，并确定诅咒的性质。",
 						"对于每件获取的魔法物品，在{@book 城主指南|XDMG}中\"{@book 随机魔法物品|XDMG|9}\"章节的对应稀有度表格上掷骰，以确定该物品是什么。（随机选择宝藏主题。）"
+					]
+				}
+			]
+		},
+		{
+			"ENG_name": "Circus Tent",
+			"name": "马戏帐篷",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 9,
+			"prerequisite": [
+				{
+					"membership": [
+						"幻影马戏团"
+					]
+				}
+			],
+			"space": [
+				"vast"
+			],
+			"hirelings": [
+				{
+					"exact": 4
+				}
+			],
+			"orders": [
+				"贸易"
+			],
+			"entries": [
+				"马戏帐篷是一个用于音乐、杂技、喜剧或其他旨在愉悦观众的表演的场所。帐篷内设有观众席。你的雇员是阵营与你相同的{@creature 演艺者|XMM|演艺者们}。你可以按自己的喜好为他们分配姓名、个性与马戏节目。",
+				{
+					"ENG_name": "Trade: Circus Performance",
+					"name": "贸易：马戏演出",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 贸易|XDMG|7|贸易}指令时，该设施的雇员会将马戏帐篷变为演出场所，为期7天。在第七天结束时，你分得的收入等于{@dice 2d6 × 10} GP。"
 					]
 				}
 			]
@@ -852,6 +890,50 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Entertainment Salon",
+			"name": "娱乐沙龙",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 5,
+			"prerequisite": [
+				{
+					"membership": [
+						"瑰宝秘社"
+					]
+				}
+			],
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 2
+				}
+			],
+			"orders": [
+				"研究"
+			],
+			"entries": [
+				"这间华丽的沙龙以雅致的壁挂、舒适的躺椅和藏品丰富的吧台而自豪。",
+				{
+					"ENG_name": "Open Pockets",
+					"name": "敞开钱袋",
+					"type": "entries",
+					"entries": [
+						"你那能言善辩的雇员会说服他人多付一些或少收一些。当你掷骰来决定一次{@book 据点|XDMG|7|建立一个据点}指令或事件所支付或获得的金币数量时，你可以掷骰两次并选择其中任一结果。"
+					]
+				},
+				{
+					"ENG_name": "Research: Learn Secrets",
+					"name": "研究：探悉秘密",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 研究|XDMG|7|研究}指令时，你指派该设施的雇员款待消息灵通的人脉，并打听一只由你指定、位于你据点50英里内的特定生物。经过7天的工作后，雇员会获得{@dice 1d4}条关于该生物且并不广为人知的事实，这些事实可能有趣、令人难堪或颇有用处。雇员还会探明该生物相对于你的强弱（例如该生物的CR是高于、低于还是等于你的等级）。由DM决定，对于极为私密或受到超自然伪装的生物，你可能只得到有限或错误的信息。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Gaming Hall",
 			"name": "游戏厅",
 			"source": "XDMG",
@@ -992,6 +1074,62 @@
 				}
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Geothermal Vent",
+			"name": "地热喷口",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 5,
+			"prerequisite": [
+				{
+					"membership": [
+						"熔炉司守"
+					]
+				}
+			],
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"增强"
+			],
+			"entries": [
+				"地热喷口从地表深处汲取热量，以提供能源并驱动简单的机械。",
+				{
+					"ENG_name": "Empower: Withstand Heat",
+					"name": "增强：耐受高温",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 增强|XDMG|7|增强}指令时，在接下来的7天里，该设施的雇员会传授一系列冥想技巧，让角色得以减轻其受到的火焰伤害。在此期间的每一天都在此处训练至少8小时的任何角色，会在训练期结束时获得以下好处：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"ENG_name": "Heat Tolerant",
+									"name": "耐热",
+									"type": "item",
+									"entry": "当你受到火焰伤害时，你可以进行一次{@variantrule 反应|XPHB}，使该伤害减少{@dice 1d4}加你的等级。此好处持续7天。"
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				},
+				{
+					"ENG_name": "Hot Water",
+					"name": "热水",
+					"type": "entries",
+					"entries": [
+						"你的基本设施享有一处恒定的可调热源。例如，餐厅有一张让食物保温的暖案，厨房有多个热度各异的烤炉，卧室有一只为盥洗温水的脸盆。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Greenhouse",
@@ -1187,9 +1325,106 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Heist Planning Chamber",
+			"name": "劫案规划室",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 9,
+			"prerequisite": [
+				{
+					"membership": [
+						"第九翎羽"
+					]
+				}
+			],
+			"space": [
+				"roomy",
+				"vast"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"研究"
+			],
+			"entries": [
+				"这个房间有一张规划桌、若干代表墙壁或家具的缩微地形件，以及在规划劫案时大有用处的魔法防护、建筑与谍报方面的书册。",
+				{
+					"ENG_name": "Research: Reconnaissance",
+					"name": "探索：侦察",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 研究|XDMG|7|研究}指令时，你的雇员会派出密探去评估一座位于你据点50英里内的建筑。这项工作耗时7天。在第七天结束时，雇员会在规划桌上提供建筑的模型。建筑的公共区域会被准确呈现，而私密区域只会被大致呈现。由DM决定，任何被魔法隐藏或由强大守卫保护的区域可能不会被准确呈现，甚至完全不呈现。密探会避开所有生物，因此关于建筑内居民的信息十分稀少。",
+						"该模型会保留至你再次对此设施使用{@book 研究|XDMG|7|研究}指令为止，但如果建筑发生变化，模型可能随时间推移而变得不准确。"
+					]
+				},
+				{
+					"ENG_name": "Heist Preparations",
+					"name": "劫案准备",
+					"type": "entries",
+					"entries": [
+						"一名使用该模型为盗窃或潜入进行至少8小时准备的角色从以下角色中选择一项。只要该角色处于模型所描绘建筑1英里范围内，该角色的好处便持续生效，为期7天或直到你再次进行准备为止：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"ENG_name": "Enforcer:",
+									"name": "打手：",
+									"type": "item",
+									"entry": "魅力（{@skill 威吓|XPHB}）检定具有{@variantrule 优势|XPHB}"
+								},
+								{
+									"ENG_name": "Face:",
+									"name": "门面：",
+									"type": "item",
+									"entry": "魅力（{@skill 欺瞒|XPHB}）检定具有{@variantrule 优势|XPHB}"
+								},
+								{
+									"ENG_name": "Lookout:",
+									"name": "望风：",
+									"type": "item",
+									"entry": "感知（{@skill 察觉|XPHB}）检定具有{@variantrule 优势|XPHB}"
+								},
+								{
+									"ENG_name": "Medic:",
+									"name": "医师：",
+									"type": "item",
+									"entry": "感知（{@skill 医药|XPHB}）检定具有{@variantrule 优势|XPHB}"
+								},
+								{
+									"ENG_name": "Sneak:",
+									"name": "潜行者：",
+									"type": "item",
+									"entry": "敏捷（{@skill 隐匿|XPHB}）检定具有{@variantrule 优势|XPHB}"
+								},
+								{
+									"ENG_name": "Thief:",
+									"name": "窃贼：",
+									"type": "item",
+									"entry": "敏捷（{@skill 巧手|XPHB}）检定具有{@variantrule 优势|XPHB}"
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				},
+				{
+					"ENG_name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"type": "entries",
+					"entries": [
+						"你可以花费 2000 GP ，将劫案规划室扩大为庞大设施。这样做之后，侦察的范围增加到500英里，且准备劫案的角色可以选择两项角色，同时获得两者的好处。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Infirmary",
 			"name": "医务室",
 			"source": "RHW",
+			"page": 209,
 			"facilityType": "special",
 			"level": 9,
 			"prerequisite": [
@@ -1446,9 +1681,54 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Lighthouse",
+			"name": "灯塔",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 9,
+			"prerequisite": [
+				{
+					"membership": [
+						"沧穹先知会"
+					]
+				}
+			],
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"收获"
+			],
+			"entries": [
+				"这座高耸的灯塔装有旋转透镜，即使在恶劣天气下，其光芒也能从很远的距离被看见。你的雇员负责操作与维护机械，并按你的指示点亮或熄灭灯光。",
+				{
+					"ENG_name": "Vision Charm",
+					"name": "视觉护咒",
+					"type": "entries",
+					"entries": [
+						"在灯塔中度过的时光激励你穿透黑暗。在你的灯塔中度过一次{@variantrule 长休|XPHB}后，你获得{@reward 黑暗视觉护咒|XDMG}（见{@book 城主指南|XDMG}）。"
+					]
+				},
+				{
+					"ENG_name": "Harvest: Illuminate Treasure",
+					"name": "收获：照亮财宝",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 收获|XDMG|7|收获}指令时，你指示该设施的雇员守望周边区域，寻找遗失或被丢弃的贵重物品。雇员会守望7天。届时，你可以雇用打捞者去取回你的雇员发现的财宝。你必须花费 100 GP 雇用打捞者，他们会带回价值{@dice 1d4 × 100} GP 的财宝。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Lightning Generator",
 			"name": "闪电发生器",
 			"source": "RHW",
+			"page": 210,
 			"facilityType": "special",
 			"level": 13,
 			"space": [
@@ -1494,6 +1774,7 @@
 			"ENG_name": "Liminal Space",
 			"name": "阈限空间",
 			"source": "RHW",
+			"page": 210,
 			"facilityType": "special",
 			"level": 17,
 			"space": [
@@ -1890,6 +2171,60 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Morgue",
+			"name": "太平间",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 5,
+			"prerequisite": [
+				{
+					"membership": [
+						"亡陵誓盟"
+					]
+				}
+			],
+			"space": [
+				"cramped",
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"研究"
+			],
+			"entries": [
+				"太平间是存放和研究尸体的场所。你可以在太平间存放最多四具小型或中型尸体。",
+				{
+					"ENG_name": "Corpse Storage",
+					"name": "尸体储藏室",
+					"type": "entries",
+					"entries": [
+						"只要该设施的雇员在场，存放在太平间的每具尸体都会受到{@spell 遗体防腐|XPHB}法术的影响。如果该设施没有雇员，或有尸体被移走，该设施的尸体或被移走的尸体将失去此保护，直到被送回一间有雇员的太平间。"
+					]
+				},
+				{
+					"ENG_name": "Research: Cadaver Insights",
+					"name": "研究：尸体洞察",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 研究|XDMG|7|研究}指令时，你指示该设施的雇员仔细检查这些尸体。这项工作耗时7天。在你下次与该雇员交谈时，雇员可以告知在场每具尸体的死因，并回答你对每具尸体各一个的问题，如同该雇员对其施展了{@spell 死者交谈|XPHB}法术。"
+					]
+				},
+				{
+					"ENG_name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"type": "entries",
+					"entries": [
+						"你可以花费 2000 GP ，将太平间扩大为宽敞设施。这样做之后，太平间可以存放最多十二具小型或中型尸体，以及最多一具大型尸体。"
+					]
+				}
+			],
+			"hasFluff": true
+		},
+		{
 			"ENG_name": "Museum",
 			"name": "博物馆",
 			"source": "EFA",
@@ -2125,6 +2460,162 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Planar Gateway",
+			"name": "位面门户",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 17,
+			"prerequisite": [
+				{
+					"membership": [
+						"织界者"
+					],
+					"spellcastingFocus": [
+						"arcane",
+						"holy",
+						"tool"
+					]
+				}
+			],
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"增强"
+			],
+			"entries": [
+				"这个房间的核心是一座刻有铭文的石拱门，其中弥漫着迷雾与奇光。这座拱门可以连接到其他存在位面。",
+				{
+					"ENG_name": "Empower: Open Gate",
+					"name": "增强：开启门户",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 增强|XDMG|7|增强}指令时，你指示该设施的雇员将拱门调谐到另一个存在位面上的某处。调谐拱门需要7天，届时传送门开启。如果你在调谐期间提供一颗价值 5000 GP 或更高的钻石，传送门将如同{@spell 异界之门|XPHB}法术一般连接到你在另一位面指定的地点（仅用于传送，不能用来牵引特定生物），并摧毁该钻石。如果你没有提供钻石，或一位神祇或其他位面统治者阻止了预定传送门的开启，则在随机位面目的地表上随机决定传送门的目的地。无论哪种情况，传送门都会开启1分钟。",
+						{
+							"type": "table",
+							"caption": "随机位面目的地",
+							"colLabels": [
+								"1d100",
+								"目的地"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"01\u201304",
+									"{@book 无底深渊|XDMG|5|无底深渊}"
+								],
+								[
+									"05\u201308",
+									"{@book 修罗场|XDMG|5|修罗场}"
+								],
+								[
+									"09\u201312",
+									"{@book 奔放之野|XDMG|5|奔放之野}"
+								],
+								[
+									"13\u201316",
+									"{@book 世外桃源|XDMG|5|世外桃源}"
+								],
+								[
+									"17\u201320",
+									"{@book 星光位面|XDMG|5|星光位面}"
+								],
+								[
+									"21\u201324",
+									"{@book 万兽乡|XDMG|5|万兽乡}"
+								],
+								[
+									"25\u201328",
+									"{@book 双生天堂|XDMG|5|双生天堂}"
+								],
+								[
+									"29\u201332",
+									"{@book 卡瑟利|XDMG|5|卡瑟利}"
+								],
+								[
+									"33\u201336",
+									"{@book 气元素位面|XDMG|5|气元素位面}"
+								],
+								[
+									"37\u201340",
+									"{@book 土元素位面|XDMG|5|土元素位面}"
+								],
+								[
+									"41\u201344",
+									"{@book 火元素位面|XDMG|5|火元素位面}"
+								],
+								[
+									"45\u201348",
+									"{@book 水元素位面|XDMG|5|水元素位面}"
+								],
+								[
+									"49\u201352",
+									"{@book 极乐境|XDMG|5|极乐境}"
+								],
+								[
+									"53\u201356",
+									"{@book 以太位面|XDMG|5|以太位面}"
+								],
+								[
+									"57\u201360",
+									"{@book 妖精荒野|XDMG|5|妖精荒野}"
+								],
+								[
+									"61\u201364",
+									"{@book 焦炎火狱|XDMG|5|焦炎火狱}"
+								],
+								[
+									"65\u201368",
+									"{@book 哈迪斯|XDMG|5|哈迪斯}"
+								],
+								[
+									"69\u201372",
+									"{@book 混沌海|XDMG|5|混沌海}"
+								],
+								[
+									"73\u201376",
+									"{@book 机械境|XDMG|5|机械境}"
+								],
+								[
+									"77\u201380",
+									"{@book 天界山|XDMG|5|天界山}"
+								],
+								[
+									"81\u201384",
+									"{@book 九层地狱|XDMG|5|九层地狱}"
+								],
+								[
+									"85\u201388",
+									"{@book 外域|XDMG|5|外域}"
+								],
+								[
+									"89\u201392",
+									"{@book 喧癫空隧|XDMG|5|喧癫空隧}"
+								],
+								[
+									"93\u201396",
+									"{@book 堕影冥界|XDMG|5|堕影冥界}"
+								],
+								[
+									"97\u201300",
+									"{@book 伊斯加德|XDMG|5|伊斯加德}"
+								]
+							]
+						}
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
 			"ENG_name": "Pub",
 			"name": "酒馆",
 			"source": "XDMG",
@@ -2306,6 +2797,7 @@
 			"ENG_name": "Rookery",
 			"name": "诱陷者",
 			"source": "RHW",
+			"page": 210,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
@@ -2614,9 +3106,54 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Soup Kitchen",
+			"name": "施粥厨房",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 5,
+			"prerequisite": [
+				{
+					"membership": [
+						"庇护之手"
+					]
+				}
+			],
+			"space": [
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"招募"
+			],
+			"entries": [
+				"这间厨房制作大量食物并供给饥饿的人们。",
+				{
+					"ENG_name": "Recruit: Kitchen Operation",
+					"name": "招募：厨房运营",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 招募|XDMG|7|招募}指令时，你指示你的雇员运营施粥厨房7天。食材花费你 50 GP 。如果你会在{@book 据点事件|XDMG|7|据点事件}表的下一次掷骰中失去一名据点卫兵或一名雇员，一位信奉你事业的人会立即接替其位置。你不视为失去了那名据点卫兵或雇员。"
+					]
+				},
+				{
+					"ENG_name": "Traveling Snacks",
+					"name": "旅行零食",
+					"type": "entries",
+					"entries": [
+						"在你的据点中度过一次{@variantrule 长休|XPHB}后，你获得一个魔法{@reward 旅行零食|AU|魅惑}，持续7天或直到你使用它为止。此魅惑允许你施展一次{@spell 神莓术|XPHB}，无需消耗法术位。"
+					]
+				}
+			]
+		},
+		{
 			"ENG_name": "Spirit Vault",
 			"name": "精魄宝库",
 			"source": "RHW",
+			"page": 211,
 			"facilityType": "special",
 			"level": 13,
 			"space": [
@@ -2753,6 +3290,7 @@
 			"ENG_name": "Séance Parlor",
 			"name": "降神会客厅",
 			"source": "RHW",
+			"page": 210,
 			"facilityType": "special",
 			"level": 5,
 			"space": [
@@ -2942,6 +3480,51 @@
 				}
 			],
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Transmutation Vat",
+			"name": "变化缸",
+			"source": "AU",
+			"facilityType": "special",
+			"level": 5,
+			"prerequisite": [
+				{
+					"membership": [
+						"寰宇黎明使徒会"
+					]
+				}
+			],
+			"space": [
+				"cramped",
+				"roomy"
+			],
+			"hirelings": [
+				{
+					"exact": 1
+				}
+			],
+			"orders": [
+				"收获"
+			],
+			"entries": [
+				"这间实验室的核心是一口微微冒着热气、蕴含变化潜力的缸或大锅。",
+				{
+					"ENG_name": "Harvest: Fluid Transmutation",
+					"name": "收获：流体嬗变",
+					"type": "entries",
+					"entries": [
+						"当你对此设施下达{@book 收获|XDMG|7|收获}指令时，你指示你的雇员将某种物质倒入缸中并将其转化为其他东西。你必须消耗一瓶普通或非普通药水，它会在缸中被摧毁。7天结束时，雇员会产出由你选择的下列之一：一瓶{@item 炽火胶|XPHB}、一剂{@item 抗毒剂|XPHB}、一剂{@item 基础毒药|XPHB}，或一瓶由你选择的普通或非普通药水。"
+					]
+				},
+				{
+					"ENG_name": "Enlarging the Facility",
+					"name": "扩建设施",
+					"type": "entries",
+					"entries": [
+						"你可以花费 2000 GP ，将变化缸扩建为宽敞设施。当你对宽敞的变化缸下达{@book 收获|XDMG|7|收获}指令时，你可以消耗两瓶普通或非普通药水。如果这样做，你的雇员会产出两种由你选择的物质而非一种；两种选择可以不同。"
+					]
+				}
+			]
 		},
 		{
 			"ENG_name": "Trophy Room",
