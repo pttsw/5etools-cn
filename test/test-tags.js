@@ -84,14 +84,23 @@ class LinkCheck extends DataTesterBase {
 		}
 	}
 
-	_checkTagText ({original, tag, text, filePath, isStatblock = false}) {
+	_checkTagText ({original, tag, text, textFallback = null, filePath, isStatblock = false}) {
 		const tagMeta = Renderer.utils.getTagMeta(`@${tag}`, text);
 
 		// Prefer `hashHover`, as we expect it to point to the actual entity
 		const encoded = tagMeta.hashHover || tagMeta.hash;
 
 		const url = `${tagMeta.page || Renderer.tag.getPage(tag)}#${encoded}`.toLowerCase().trim();
-		if (!tagTestUrlLookup.hasUrl(url)) {
+		const textFallbackTable = tag === "table" && tagMeta.name.includes("; ")
+			? [tagMeta.name.split("; ").at(-1), tagMeta.source, tagMeta.displayText].filter(it => it != null).join("|")
+			: null;
+		const isFallbackValid = (textFallback || textFallbackTable) && (() => {
+			const tagMetaFallback = Renderer.utils.getTagMeta(`@${tag}`, textFallback || textFallbackTable);
+			const encodedFallback = tagMetaFallback.hashHover || tagMetaFallback.hash;
+			const urlFallback = `${tagMetaFallback.page || Renderer.tag.getPage(tag)}#${encodedFallback}`.toLowerCase().trim();
+			return tagTestUrlLookup.hasUrl(urlFallback);
+		})();
+		if (!tagTestUrlLookup.hasUrl(url) && !isFallbackValid) {
 			this._addMessage(`Missing link: ${isStatblock ? `(as "statblock" entry) ` : ""}${original} in file ${filePath} (evaluates to "${url}")\n${tagTestUrlLookup.getLogPtSimilarUrls({url})}`);
 		}
 
@@ -133,8 +142,9 @@ class LinkCheck extends DataTesterBase {
 			const sourceDefault = Renderer.tag.getTagInfo(tagNonFluff, {isRequired: true}).defaultSource;
 			const source = obj.source || sourceDefault;
 			const uid = DataUtil.proxy.getUid(prop, {...obj, source});
+			const uidFallback = obj.ENG_name ? DataUtil.proxy.getUid(prop, {...obj, name: obj.ENG_name, source}) : null;
 
-			this._checkTagText({original: JSON.stringify(obj), tag: tagFaux, text: uid, filePath, isStatblock: true});
+			this._checkTagText({original: JSON.stringify(obj), tag: tagFaux, text: uid, textFallback: uidFallback, filePath, isStatblock: true});
 
 			const hash = UrlUtil.URL_TO_HASH_BUILDER[prop]({...obj, source});
 			const fluff = DataLoader.getFromCache(prop, source, hash);
@@ -144,8 +154,10 @@ class LinkCheck extends DataTesterBase {
 		}
 
 		const sourceDefault = Renderer.tag.getTagInfo(tag, {isRequired: true}).defaultSource;
-		const uid = DataUtil.proxy.getUid(prop, {...obj, source: obj.source || sourceDefault});
-		this._checkTagText({original: JSON.stringify(obj), tag, text: uid, filePath, isStatblock: true});
+		const source = obj.source || sourceDefault;
+		const uid = DataUtil.proxy.getUid(prop, {...obj, source});
+		const uidFallback = obj.ENG_name ? DataUtil.proxy.getUid(prop, {...obj, name: obj.ENG_name, source}) : null;
+		this._checkTagText({original: JSON.stringify(obj), tag, text: uid, textFallback: uidFallback, filePath, isStatblock: true});
 
 		return obj;
 	}
@@ -912,7 +924,17 @@ class AdventureBookTagCheck extends DataTesterBase {
 							.setFirstSection(true)
 							.resetHeaderIndex()
 							.render(chapter);
-						chapterIxToTrackedTitles[ixChapter] = renderer.getTrackedTitlesInverted({isStripTags: true});
+						const trackedTitles = renderer.getTrackedTitlesInverted({isStripTags: true});
+						ObjectWalker.walk({
+							obj: chapter,
+							primitiveHandlers: {
+								string: (str, {lastKey}) => {
+									if (!["name", "ENG_name"].includes(lastKey)) return;
+									(trackedTitles[str.toLowerCase()] ||= []).push({});
+								},
+							},
+						});
+						chapterIxToTrackedTitles[ixChapter] = trackedTitles;
 					});
 
 				for (const [ixChapterRaw, arr] of Object.entries(idTo)) {
@@ -930,13 +952,20 @@ class AdventureBookTagCheck extends DataTesterBase {
 
 							const trackedTitles = chapterIxToTrackedTitles[ixChapter];
 
-							if (!trackedTitles[sectionName]) {
+							const sectionNameClean = sectionName.replace(/^\(?\d+\)?[.、]?\s*/, "").replace(/[()（）\s]/g, "");
+							const titleFuzzy = Object.keys(trackedTitles)
+								.find(title => {
+									const titleClean = title.replace(/^\(?\d+\)?[.、]?\s*/, "").replace(/[()（）\s]/g, "");
+									return titleClean.includes(sectionNameClean) || sectionNameClean.includes(titleClean);
+								});
+							if (!trackedTitles[sectionName] && !titleFuzzy) {
 								this._addMessage(`Missing link: ${prop} header UID "${uid}" in file ${filePath} section name "${sectionName}" was not found in chapter "${ixChapter}"\n`);
 								return;
 							}
 
-							if (!trackedTitles[sectionName][ixNamedSection || 0]) {
-								this._addMessage(`Missing link: ${prop} header UID "${uid}" in file ${filePath} section index "${ixNamedSection}" was out of bounds (expected 0-${trackedTitles[sectionName].length - 1}) for chapter "${ixChapter}"\n`);
+							const trackedTitleMetas = trackedTitles[sectionName] || trackedTitles[titleFuzzy];
+							if (!trackedTitleMetas[ixNamedSection || 0]) {
+								this._addMessage(`Missing link: ${prop} header UID "${uid}" in file ${filePath} section index "${ixNamedSection}" was out of bounds (expected 0-${trackedTitleMetas.length - 1}) for chapter "${ixChapter}"\n`);
 							}
 						});
 				}

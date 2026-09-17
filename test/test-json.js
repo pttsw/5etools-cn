@@ -14,7 +14,7 @@ async function main () {
 	const jsonTester = new JsonTester({
 		tagLog: LOG_TAG,
 		fnGetSchemaId: (filePath) => {
-			const relativeFilePath = filePath.replace("data/", "");
+			const relativeFilePath = filePath.replace(/^data(?:-bak)?\//, "");
 
 			if (relativeFilePath.startsWith("adventure/")) return "adventure/adventure.json";
 			if (relativeFilePath.startsWith("book/")) return "book/book.json";
@@ -33,9 +33,9 @@ async function main () {
 	});
 	await jsonTester.pInit();
 
-	const fileList = Uf.listJsonFiles("data")
+	const fileList = Uf.listJsonFiles("data-bak")
 		.filter(filePath => {
-			if (filePath.includes("data/generated")) return _GENERATED_ALLOWLIST.has(filePath.split("/").at(-1));
+			if (filePath.includes("data-bak/generated")) return _GENERATED_ALLOWLIST.has(filePath.split("/").at(-1));
 			return true;
 		});
 

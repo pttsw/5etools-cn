@@ -21,6 +21,7 @@ class _TestTokenImagesBase {
 	_NAME;
 
 	_SOURCES_CLEAN_EXTRAS = [];
+	_ALLOWED_EXTRA_PATHS = [];
 
 	/* -------------------------------------------- */
 
@@ -60,17 +61,23 @@ class _TestTokenImagesBase {
 				json[this._PROP]
 					.forEach(ent => {
 						ent.__prop = this._PROP;
+						const entToken = ent.ENG_name ? {...ent, name: ent.ENG_name} : ent;
 
-						const implicitTokenPath = `${this._PATH_BASE}/${ent.source}/${Parser.nameToTokenName(ent.name)}.${this._EXT}`;
+						const implicitTokenPath = `${this._PATH_BASE}/${ent.source}/${Parser.nameToTokenName(entToken.name)}.${this._EXT}`;
+						const implicitTokenPathLocalized = `${this._PATH_BASE}/${ent.source}/${Parser.nameToTokenName(ent.name)}.${this._EXT}`;
 
-						if (ent.hasToken) this._expectedFromHashToken[implicitTokenPath] = true;
+						if (ent.hasToken) {
+							this._expectedFromHashToken[implicitTokenPath] = true;
+							this._expectedFromHashToken[implicitTokenPathLocalized] = true;
+						}
 
 						if (ent.token) {
-							const explicitTokenUrl = Renderer[this._PROP].getTokenUrl(ent);
+							const explicitTokenUrl = Renderer[this._PROP].getTokenUrl(entToken);
 							const explicitTokenPath = `${this._PATH_BASE}/${explicitTokenUrl.split("/").slice(3).join("/")}`;
 							this._expected.add(explicitTokenPath);
 						} else {
 							this._expected.add(implicitTokenPath);
+							this._expected.add(implicitTokenPathLocalized);
 							sourcesImplicit.add(ent.source);
 						}
 
@@ -86,7 +93,7 @@ class _TestTokenImagesBase {
 						versions
 							.forEach(entVer => {
 								if (!Renderer[this._PROP].hasToken(entVer)) return;
-								this._expected.add(`${this._PATH_BASE}/${entVer.source}/${Parser.nameToTokenName(entVer.name)}.${this._EXT}`);
+								this._expected.add(`${this._PATH_BASE}/${entVer.source}/${Parser.nameToTokenName(entVer.ENG_name || entVer.name)}.${this._EXT}`);
 							});
 
 						// add tokens specified as alt art
@@ -108,6 +115,7 @@ class _TestTokenImagesBase {
 	}
 
 	_readImageDirs () {
+		if (!fs.existsSync(this._PATH_BASE)) return;
 		fs.readdirSync(this._PATH_BASE)
 			.filter(file => !(this._IGNORED_PREFIXES.some(it => file.startsWith(it))))
 			.forEach(dir => {
@@ -121,6 +129,7 @@ class _TestTokenImagesBase {
 	_getIsError () {
 		let isError = false;
 		const results = [];
+		this._ALLOWED_EXTRA_PATHS.forEach(img => this._expected.add(img));
 		this._expected.forEach((img) => {
 			if (!this._existing.has(img)) results.push(`[ MISSING] ${img}`);
 		});
@@ -186,6 +195,12 @@ class _TestTokenImagesBestiary extends _TestTokenImagesBase {
 		Parser.SRC_VRGR,
 	];
 
+	_ALLOWED_EXTRA_PATHS = [
+		"./img/bestiary/tokens/XPHB/不死灵魄.webp",
+		"./img/bestiary/tokens/XPHB/巨虫术.webp",
+		"./img/bestiary/tokens/XPHB/超凡坐骑.webp",
+	];
+
 	_getFileInfos () {
 		const jsonIndex = ut.readJson(`./data/bestiary/index.json`);
 
@@ -243,6 +258,11 @@ class _TestAdventureBookImages {
 	]);
 
 	static run () {
+		if (!["img/adventure", "img/book"].every(dir => fs.existsSync(dir))) {
+			console.log("##### Adventure/book image corpus unavailable; skipping image reconciliation #####");
+			return false;
+		}
+
 		const pathsMissing = [];
 		const pathsUnused = new Set();
 

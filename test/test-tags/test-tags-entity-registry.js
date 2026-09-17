@@ -32,6 +32,15 @@ export class TagTestUrlLookup {
 
 		this._ALL_URLS_SET.add(url);
 		this._ALL_URLS_LIST.push(url);
+
+		if (indexItem.n && indexItem.cn && indexItem.n !== indexItem.cn) {
+			const hashNameLocalized = UrlUtil.encodeForHash(indexItem.cn);
+			if (indexItem.u.toLowerCase().startsWith(hashNameLocalized.toLowerCase())) {
+				const urlEnglish = `${UrlUtil.categoryToPage(indexItem.c).toLowerCase()}#${UrlUtil.encodeForHash(indexItem.n)}${indexItem.u.slice(hashNameLocalized.length)}`.toLowerCase().trim();
+				this._ALL_URLS_SET.add(urlEnglish);
+				this._ALL_URLS_LIST.push(urlEnglish);
+			}
+		}
 	}
 
 	_addEntityItem (ent, propOrPage) {
@@ -46,6 +55,14 @@ export class TagTestUrlLookup {
 			if (!this._ALL_URLS_SET.has(url)) {
 				this._ALL_URLS_SET.add(url);
 				this._ALL_URLS_LIST.push(url);
+			}
+		}
+
+		if (ent.ENG_name && ent.ENG_name !== ent.name) {
+			const urlEnglish = `${propOrPage.toLowerCase()}#${UrlUtil.getHashBuilder(propOrPage)({...ent, name: ent.ENG_name}).toLowerCase().trim()}`;
+			if (!this._ALL_URLS_SET.has(urlEnglish)) {
+				this._ALL_URLS_SET.add(urlEnglish);
+				this._ALL_URLS_LIST.push(urlEnglish);
 			}
 		}
 
