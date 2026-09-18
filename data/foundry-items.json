@@ -16270,6 +16270,56 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Radiance",
+			"name": "光辉",
+			"source": "CM",
+			"identifier": "radiance",
+			"activities": [
+				{
+					"type": "cast",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "拂晓",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"range": {
+						"units": "触碰"
+					},
+					"spell": {
+						"level": 2,
+						"uuid": "@spell[强化属性]",
+						"properties": [
+							"声音",
+							"姿势",
+							"材质"
+						],
+						"spellbook": true
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Ring of Animal Influence",
 			"name": "影响动物戒指",
 			"source": "XDMG",
@@ -19392,6 +19442,39 @@
 			],
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Serpent's Fang",
+			"name": "蛇牙剑",
+			"source": "CM",
+			"activities": [
+				{
+					"type": "attack",
+					"activation": {
+						"type": "action",
+						"value": 1
+					},
+					"attack": {
+						"type": {
+							"value": "近战",
+							"classification": "武器"
+						}
+					},
+					"damage": {
+						"includeBase": true,
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 10,
+								"types": [
+									"毒素"
+								]
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Shield of the Cavalier",
