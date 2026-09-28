@@ -1446,6 +1446,7 @@
 			"type": "AIR|XPHB",
 			"source": "XPHB",
 			"page": 230,
+			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "none",
 			"value": 4000000,
@@ -6640,11 +6641,11 @@
 							"name": "刚毅",
 							"type": "item",
 							"entries": [
-								"你的体质提升2，至多提升至20。",
-								"此外，与此腰带同调期间，如果你能够长出胡须，则在每天的黎明时分你有{@chance 50}的概率长出一大把胡子；如果你已经长有胡须，则你的胡须会明显变得更厚。",
-								"如果你不是一名矮人或灰矮人，你在着装此腰带期间获得以下额外的增益："
+								"你的体质提升2，至多提升至20。"
 							]
 						},
+						"此外，与此腰带同调期间，如果你能够长出胡须，则在每天的黎明时分你有{@chance 50}的概率长出一大把胡子；如果你已经长有胡须，则你的胡须会明显变得更厚。",
+						"如果你不是一名矮人或灰矮人，你在着装此腰带期间获得以下额外的增益：",
 						{
 							"ENG_name": "Darkvision",
 							"name": "黑暗视觉",
@@ -11507,7 +11508,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 10,
 			"translator": "不全书"
@@ -11695,7 +11695,7 @@
 			"attachedSpells": {
 				"daily": {
 					"1e": [
-						"卡牌喷射|bmt"
+						"卡牌喷射|BMT"
 					]
 				}
 			},
@@ -11931,7 +11931,7 @@
 			"type": "G|XPHB",
 			"source": "XDMG",
 			"page": 90,
-			"srd52": "食腐虫粘液（接触）",
+			"srd52": "食腐虫粘液",
 			"rarity": "none",
 			"value": 20000,
 			"poison": true,
@@ -12652,7 +12652,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 2,
 			"translator": "不全书"
@@ -12912,7 +12911,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 200,
@@ -13873,7 +13871,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 300,
@@ -14010,7 +14007,7 @@
 		{
 			"ENG_name": "Command Amulet",
 			"name": "指挥护符",
-			"type": "OTH",
+			"type": "OTH|XPHB",
 			"source": "XMM",
 			"page": 277,
 			"rarity": "unknown (magic)",
@@ -14287,7 +14284,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 50,
@@ -14497,7 +14493,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 50,
 			"translator": "不全书"
@@ -14589,7 +14584,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 1000,
 			"translator": "不全书"
@@ -15275,7 +15269,7 @@
 							"name": "圣战",
 							"type": "entries",
 							"entries": [
-								"牧师的施法能力帮助角色们击败了邪魔邪教徒组织。DM决定让魔杖进化为珍稀物品，并获得圣战词条。"
+								"牧师的施法能力帮助角色们击败了邪魔邪教徒组织。DM决定让魔杖进化为珍稀物品，并获得{@table 魔法物品词条表;珍稀魔法物品词条|AU|圣战}词条。"
 							]
 						}
 					}
@@ -20870,13 +20864,13 @@
 			"charges": 20,
 			"staff": true,
 			"entries": [
-				"这根6尺长的节杖由一整块巨大的水晶雕刻而成，顶端是一个完美的透明圆球。该{@item 法杖|XPHB}具有20充能。其可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+3加值。",
+				"这根6英尺长的权杖由一整块巨大的水晶雕刻而成，其顶端有一个完美的透明球体。这根法杖拥有20点充能，可作为一把魔法{@item 长棍|XPHB}使用，用它进行的攻击检定和伤害检定获得+3加值。",
 				{
 					"ENG_name": "Adept",
 					"name": "行家里手",
 					"type": "entries",
 					"entries": [
-						"持握该{@item 法杖|XPHB}期间，你的智力（{@skill 奥秘|XPHB}）检定具有{@variantrule 优势|XPHB}。"
+						"当你持握此法杖时，你在智力（{@skill 奥秘|XPHB}）检定上具有{@variantrule 优势|XPHB}。"
 					]
 				},
 				{
@@ -20884,7 +20878,7 @@
 					"name": "炫目强光",
 					"type": "entries",
 					"entries": [
-						"持握该{@item 法杖|XPHB}期间，你可以消耗1充能并说出命令语，使该{@item 法杖|XPHB}绽放光芒。该{@item 法杖|XPHB}会发出半径40尺的{@variantrule 明亮光照|XPHB}以及额外40尺的{@variantrule 微光光照|XPHB}。1分钟后，或当你使用命令语将其关闭时，该{@item 法杖|XPHB}会停止发光。"
+						"当你持握此法杖时，可以消耗1发充能并使用命令字使其发光。法杖会发出半径40尺的{@variantrule 明亮光照|XPHB}以及额外40尺的{@variantrule 微光光照|XPHB}。法杖会在1分钟后或当你使用命令字使其失效时停止发光。"
 					]
 				},
 				{
@@ -20892,7 +20886,7 @@
 					"name": "法术",
 					"type": "entries",
 					"entries": [
-						"持握此{@item 法杖|XPHB}期间，你可以从法杖中施展以下表格中的一道法术，使用你自己的法术豁免DC。施展相应法术所需消耗的充能数如下表所示。"
+						"持握此法杖期间，你可以从法杖中施展以下表格中的一道法术，使用你自己的法术豁免DC。施展相应法术所需消耗的充能数如下表所示。"
 					]
 				},
 				{
@@ -20945,7 +20939,7 @@
 					"name": "震慑打击",
 					"type": "entries",
 					"entries": [
-						"当你使用该{@item 法杖|XPHB}进行近战攻击并命中时，你可以消耗2充能，目标必须成功通过一次{@dc 17}的体质豁免，否则陷入{@condition 震慑|XPHB}状态，直至你的下一回合结束。"
+						"当你使用该法杖进行近战攻击命中时，你可以消耗2点充能，目标必须成功通过一次{@dc 17}的体质豁免检定，否则陷入{@condition 震慑|XPHB}状态，直到你的下个回合结束。"
 					]
 				},
 				{
@@ -20953,7 +20947,7 @@
 					"name": "重获充能",
 					"type": "entries",
 					"entries": [
-						"该{@item 法杖|XPHB}在每日黎明时恢复{@dice 1d6 + 4}已消耗的充能。如果你消耗了最后一充能，掷一次{@dice 1d20}。若掷出1，该{@item 法杖|XPHB}将被摧毁。"
+						"法杖每日拂晓时恢复{@dice 1d6 + 4}点已消耗的充能。如果你消耗了最后一点充能，则投掷{@dice 1d20}。若结果为1，法杖将被摧毁。"
 					]
 				}
 			],
@@ -21475,13 +21469,13 @@
 			"bonusWeapon": "+1",
 			"staff": true,
 			"entries": [
-				"该{@item 法杖|XPHB}可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+1加值。其还具有以下额外词条。一旦其中一项词条被使用，则直至下一黎明前，该词条都无法再次使用。",
+				"这根法杖可作为魔法{@item 长棍|XPHB}使用，使用它进行攻击检定和伤害检定时获得+1加值。它还具有以下额外词条。一旦使用了其中一项词条，该词条在下一个拂晓前无法再次使用。",
 				{
 					"ENG_name": "Calm Emotions",
 					"name": "安定心神",
 					"type": "entries",
 					"entries": [
-						"你可以从该{@item 法杖|XPHB}施展法术{@spell 安定心神|XPHB}（豁免{@dc 15}）。"
+						"你可以用法杖施展{@spell 安定心神|XPHB}法术（豁免DC{@dc 15}）。"
 					]
 				},
 				{
@@ -21489,7 +21483,7 @@
 					"name": "劝阻灵光",
 					"type": "entries",
 					"entries": [
-						"持握该{@item 法杖|XPHB}期间，你可以执行{@action 魔法|XPHB}动作创造出一道源自你的30尺心神动荡{@variantrule 光环 [效应区域]|XPHB|光环}，持续1分钟。每当该{@variantrule 光环 [效应区域]|XPHB|光环}进入一个你可见的生物的空间时，以及每当一个你可见的生物进入该{@variantrule 光环 [效应区域]|XPHB|光环}或在其中结束其回合时，你可以迫使该生物进行一次{@dc 15}的感知豁免。若豁免失败，则该生物陷入{@condition 恐慌|XPHB}状态，直至其下一回合开始。"
+						"当你持握此法杖时，可以执行一个{@action 魔法|XPHB}动作，以你为中心创造一个持续1分钟的30尺精神扰动{@variantrule 光环 [效应区域]|XPHB|光环}。每当此{@variantrule 光环 [效应区域]|XPHB|光环}进入一个你能看见的生物所在空间，或者当一个你能看见的生物进入此{@variantrule 光环 [效应区域]|XPHB|光环}或在其内结束其回合时，你可以强迫该生物进行一次{@dc 15}感知豁免检定。豁免失败则生物获得{@condition 恐慌|XPHB}状态，直到其下一回合开始。"
 					]
 				},
 				{
@@ -21755,6 +21749,7 @@
 		{
 			"ENG_name": "Dowsing Dagger",
 			"name": "探水匕首",
+			"type": "OTH",
 			"source": "XMtS",
 			"page": 19,
 			"rarity": "unknown (magic)",
@@ -21932,6 +21927,7 @@
 			"type": "GS|XPHB",
 			"source": "XPHB",
 			"page": 221,
+			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "none",
 			"value": 100,
@@ -27563,7 +27559,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 2,
 			"value": 2,
@@ -28825,7 +28820,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 100,
@@ -29173,7 +29167,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 100,
 			"translator": "不全书"
@@ -29282,7 +29275,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 5000,
@@ -31973,7 +31965,7 @@
 							"name": "日耀",
 							"type": "entries",
 							"entries": [
-								"牧师成为了其侍奉神祇的化身。因此，DM决定让魔杖进化为传说并获得日耀词条，令其能引导超新星的神威。"
+								"牧师成为了其侍奉神祇的化身。因此，DM决定让魔杖进化为传说并获得{@table 魔法物品词条表;传说魔法物品词条|AU|日耀}词条，令其能引导超新星的神威。"
 							]
 						}
 					}
@@ -36961,7 +36953,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 10,
@@ -37021,7 +37012,7 @@
 			"name": "比拉罗的铁索",
 			"source": "XDMG",
 			"page": 274,
-			"srd52": "绑定铁索",
+			"srd52": "比拉罗的铁索",
 			"basicRules2024": true,
 			"rarity": "rare",
 			"wondrous": true,
@@ -39849,7 +39840,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 500,
 			"translator": "不全书"
@@ -40161,7 +40151,7 @@
 			"type": "G|XPHB",
 			"source": "XDMG",
 			"page": 91,
-			"srd52": true,
+			"srd52": "蜘蛛毒刺",
 			"rarity": "none",
 			"value": 20000,
 			"poison": true,
@@ -40795,7 +40785,7 @@
 							"name": "月辉",
 							"type": "entries",
 							"entries": [
-								"角色们追到了一名魔鬼，他侍奉着邪教徒们崇拜的邪魔。多亏了牧师，角色们击败了这名魔鬼，于是DM决定让魔杖进化为极珍稀并获得月辉词条。"
+								"角色们追到了一名魔鬼，他侍奉着邪教徒们崇拜的邪魔。多亏了牧师，角色们击败了这名魔鬼，于是DM决定让魔杖进化为极珍稀并获得{@table 魔法物品词条表;极珍稀魔法物品词条|AU|月}辉词条。"
 							]
 						}
 					}
@@ -41957,6 +41947,7 @@
 			"type": "G|XPHB",
 			"source": "XPHB",
 			"page": 227,
+			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "none",
 			"value": 100,
@@ -42067,7 +42058,7 @@
 					"name": "投掷",
 					"type": "entries",
 					"entries": [
-						"当你执行{@action 攻击|XPHB}动作时，你可以消耗1充能为该{@item 法杖|XPHB}注入魔法动能。直至你的下一回合结束，该{@item 法杖|XPHB}获得{@itemProperty T|XPHB|投掷}词条，射程20/60尺，并且在你使用该武器进行远程攻击后，其会立刻飞回你的手中。"
+						"当你进行{@action 攻击|XPHB}动作时，你可以消耗1点充能使长棍获得魔法速度。直到你的下一个回合结束，该长棍获得{@itemProperty T|XPHB|投掷}词条，其正常射程为20尺，最大射程为60尺，并且在你使用该武器进行一次远程攻击后，它会立即飞回你的手中。"
 					]
 				},
 				{
@@ -47458,7 +47449,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 1500,
 			"translator": "不全书"
@@ -47959,7 +47949,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 200,
@@ -48445,7 +48434,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 300,
 			"translator": "不全书"
@@ -48637,6 +48625,7 @@
 		{
 			"ENG_name": "Pirate's Cutlass",
 			"name": "海盗的弯刀",
+			"type": "OTH",
 			"source": "XMtS",
 			"page": 19,
 			"rarity": "unknown (magic)",
@@ -48912,7 +48901,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 50000,
@@ -50726,6 +50714,7 @@
 			"miscTags": [
 				"CNS"
 			],
+			"hasFluffImages": true,
 			"translator": "不全书"
 		},
 		{
@@ -52773,6 +52762,7 @@
 		{
 			"ENG_name": "Primal Amulet",
 			"name": "原初护符",
+			"type": "OTH",
 			"source": "XMtS",
 			"page": 19,
 			"rarity": "unknown (magic)",
@@ -53076,6 +53066,7 @@
 		{
 			"ENG_name": "Prying Blade",
 			"name": "探针之刃",
+			"type": "OTH",
 			"source": "XMtS",
 			"page": 19,
 			"rarity": "unknown (magic)",
@@ -53178,7 +53169,7 @@
 							"name": "灵能",
 							"type": "entries",
 							"entries": [
-								"在探索魔契师从那本奇异典籍中解读出的线索时，角色们从幽暗地域获得了一些充满灵能的水晶。这些水晶上也带有与权杖相同的符号。DM决定让权杖进化为极珍稀物品，并获得灵能词条。"
+								"在探索魔契师从那本奇异典籍中解读出的线索时，角色们从幽暗地域获得了一些充满{@table 魔法物品词条表;极珍稀魔法物品词条|AU|灵能}的水晶。这些水晶上也带有与权杖相同的符号。DM决定让权杖进化为极珍稀物品，并获得灵能词条。"
 							]
 						}
 					}
@@ -57629,7 +57620,7 @@
 			"rechargeAmount": 1,
 			"charges": 1,
 			"entries": [
-				"这枚金币的两面均饰有一个生物的浮雕。这两个被描绘的生物必须为彼此知名的对手或敌人。例如，一枚劲敌硬币的一面可能是{@book 伊格薇尔伏|XDMG|8|伊格薇尔伏}，而另一面是{@book 魔邓肯|XDMG|8|魔邓肯}；或者一面是{@book 文格尔|XDMG|8|文格尔}，另一面是{@book 提亚马特|XDMG|8|提亚马特}。其中一个人物在硬币的正面，另一个在反面。",
+				"这枚金币的两面均饰有一个生物的浮雕。这两个被描绘的生物必须为彼此知名的对手或敌人。例如，一枚劲敌硬币的一面可能是{@book 伊格薇尔伏|XDMG|8|伊格薇尔伏}，而另一面是{@book 魔邓肯|XDMG|8|魔邓肯}；或者一面是{@book 温戈尔|XDMG|8|温戈尔}，另一面是{@book 提亚马特|XDMG|8|提亚马特}。其中一个人物在硬币的正面，另一个在反面。",
 				"这枚硬币具有1充能，并在每日黎明时重获已消耗的充能。你可以使用一个{@action 魔法|XPHB}动作抛掷这枚硬币，并消耗其充能。掷一枚任意骰子来确定硬币是正面朝上（若结果为偶数）还是反面朝上（若结果为奇数）。此结果决定了硬币产生的效应：",
 				{
 					"type": "list",
@@ -60115,7 +60106,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 1500,
@@ -60443,7 +60433,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 5,
@@ -62702,7 +62691,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"value": 200,
 			"translator": "不全书"
@@ -63331,7 +63319,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 1000,
@@ -63573,7 +63560,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 500,
@@ -64638,6 +64624,7 @@
 		{
 			"ENG_name": "Sorcerous Spyglass",
 			"name": "术法望远镜",
+			"type": "OTH",
 			"source": "XMtS",
 			"page": 19,
 			"rarity": "unknown (magic)",
@@ -68208,7 +68195,7 @@
 					"name": "法术",
 					"type": "entries",
 					"entries": [
-						"持握这根法杖期间，你可以从法杖中施展以下表格中的一道法术，使用你自己的法术豁免DC。施展相应法术所需消耗的充能数如下表所示。",
+						"持握此法杖期间，你可以从法杖中施展以下表格中的一道法术，使用你自己的法术豁免DC。施展相应法术所需消耗的充能数如下表所示。",
 						{
 							"type": "table",
 							"colStyles": [
@@ -68566,7 +68553,7 @@
 					"name": "虫云",
 					"type": "entries",
 					"entries": [
-						"持握这根法杖期间，你可以执行{@action 魔法|XPHB}动作并消耗1充能，使一群无害的飞虫布满以你为源点的30尺{@variantrule 光环 [效应区域]|XPHB|光环}内的空间。这些昆虫持续存在10分钟，并让这片区域被除你以外的生物视为{@variantrule 重度遮蔽|XPHB}。一阵强风（例如{@spell 造风术|XPHB}所创造的）可以驱散虫群并结束其效应。"
+						"当你持握此法杖时，你可以执行一个{@action 魔法|XPHB}动作并消耗1发充能，以召唤一团无害飞虫群，充满一个以你为源点的30尺{@variantrule 光环 [效应区域]|XPHB|光环}。虫群持续10分钟，使该区域对你以外的生物处于{@variantrule 重度遮蔽|XPHB}状态。一阵强风（例如由{@spell 造风术|XPHB}创造的）可以驱散虫群并结束该效应。"
 					]
 				},
 				{
@@ -68673,7 +68660,7 @@
 			"name": "蝰蛇法杖",
 			"type": "M|XPHB",
 			"source": "XDMG",
-			"page": 310,
+			"page": 309,
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"weight": 4,
@@ -68835,15 +68822,15 @@
 			"charges": 3,
 			"staff": true,
 			"entries": [
-				"该{@item 法杖|XPHB}可以作为一把魔法{@item 长棍|XPHB}被持用，并且以其进行的攻击检定和伤害掷骰具有+1加值。",
-				"该{@item 法杖|XPHB}具有3充能。持握该{@item 法杖|XPHB}期间，你可以消耗1充能，从中施展{@spell 迷宫术|XPHB}（豁免{@dc 18}）或{@spell 传送术|XPHB}。当该{@item 法杖|XPHB}耗尽所有充能时，其会失去魔法并变成一根非魔法{@item 长棍|XPHB}。",
+				"这根法杖可作为一把魔法{@item 长棍|XPHB}使用，用它进行的攻击检定和伤害检定获得+1加值。",
+				"该法杖拥有3点充能。持握此法杖时，你可以消耗1点充能来施展{@spell 迷宫术|XPHB}（豁免DC{@dc 18}）或{@spell 传送术|XPHB}。当法杖不再拥有任何充能时，它将失去魔法并变为一把非魔法{@item 长棍|XPHB}。",
 				{
 					"ENG_name": "Curse",
 					"name": "诅咒",
 					"type": "entries",
 					"entries": [
-						"该{@item 法杖|XPHB}受到了诅咒。与之同调会将诅咒延伸至你身上。只要你仍受诅咒影响，你就不愿与该{@item 法杖|XPHB}分离，会时刻将其带在身边。",
-						"与该{@item 法杖|XPHB}同调期间，你将永远无法知晓北方所在，并且你用于导航的感知（{@skill 求生|XPHB}）检定具有{@variantrule 劣势|XPHB}。此外，每当你消耗该{@item 法杖|XPHB}的充能时，掷一次{@dice 1d20}。若结果为1，则有{@dice 1d4}只{@creature 巴弗灭的牛头人|XMM|巴弗灭的牛头人}凭空显现，每只牛头人均出现在你30尺范围内一处未占据空间。这些牛头人会立即与你展开战斗。"
+						"此法杖被诅咒。与之同调会将诅咒延伸至你。只要你仍被诅咒，你将不愿与法杖分离，始终将其带在身上。",
+						"当你与此法杖同调时，你永远无法分辨哪边是北方，并且在用于导航的感知（{@skill 求生|XPHB}）检定上具有{@variantrule 劣势|XPHB}。此外，每当你消耗此法杖的一个充能时，掷{@dice 1d20}。若结果为1，则{@dice 1d4}个{@creature 巴弗灭的牛头人|XMM|巴弗灭的牛头人}会具现化，每个出现在你30尺内一个未被占据的空间中。这些牛头人立即与你开始战斗。"
 					]
 				}
 			],
@@ -69038,7 +69025,7 @@
 					"name": "法术吸收",
 					"type": "entries",
 					"entries": [
-						"持握此法杖期间，你对抗法术进行的豁免检定具有{@variantrule 优势|XPHB}。此外，当其他生物施展一道仅以你为目标的法术时，你能够以{@variantrule 反应|XPHB}令法杖吸收该法术。法杖消除该法术的效应，并获得等于该法术环阶的充能。但如果吸收法术后法杖的充能超过50，法杖爆炸，如同你激活了其复仇打击 词条（见下文）。"
+						"当你持握此法杖时，你在对抗法术的豁免检定上具有{@variantrule 优势|XPHB}。此外，当另一个生物施放一个仅以你为目标的法术时，你可以使用一个{@variantrule 反应|XPHB}。如果你这样做，法杖会吸收该法术的魔法，取消其效应，并获得等同于被吸收法术环数的充能。然而，如果这样做导致法杖的总充能数超过50，法杖会爆炸，如同你激活了它的复仇打击（见下文）。"
 					]
 				},
 				{
@@ -69838,7 +69825,7 @@
 			"staff": true,
 			"entries": [
 				"该法杖有3发充能，且每天黎明时恢复{@dice 1d3}发已消耗的充能。",
-				"这根法杖可以作为魔法四分之一杖使用。命中时，它像普通四分之一杖一样造成伤害，并且你可以消耗1点充能来对目标造成额外的{@damage 2d10}点暗蚀伤害，并强制其进行一次{@dc 15}体质豁免。若豁免失败，目标在1小时内所有使用力量或体质的属性检定或豁免检定上具有{@variantrule 劣势|XPHB}。"
+				"这把法杖可作为一把魔法长棍使用。命中时，它造成与普通长棍相同的伤害，并且你可以消耗1发充能以对目标额外造成{@damage 2d10}点暗蚀伤害，并迫使其进行一次{@dc 15}的体质豁免检定。豁免失败时，目标在1小时内，任何使用力量或体质的属性检定或豁免检定具有{@variantrule 劣势|XPHB}。"
 			],
 			"lootTables": [
 				"奥秘 - 珍稀|XDMG",
@@ -70752,6 +70739,7 @@
 			"type": "G|XPHB",
 			"source": "XPHB",
 			"page": 229,
+			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "none",
 			"value": 10,
@@ -74093,6 +74081,7 @@
 			"type": "GS|XPHB",
 			"source": "XPHB",
 			"page": 221,
+			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "none",
 			"value": 100,
@@ -75025,7 +75014,7 @@
 							"name": "静心",
 							"type": "entries",
 							"entries": [
-								"多亏魔契师足智多谋，角色们击败了一群邪教徒，他们企图摧毁一切与灵能魔法有关之物。为了奖励魔契师，DM让权杖进化为最终形态，使其成为传说并赋予其静心词条。"
+								"多亏魔契师足智多谋，角色们击败了一群邪教徒，他们企图摧毁一切与灵能魔法有关之物。为了奖励魔契师，DM让权杖进化为最终形态，使其成为传说并赋予其{@table 魔法物品词条表;传说魔法物品词条|AU|静心}词条。"
 							]
 						}
 					}
@@ -76739,6 +76728,7 @@
 			"type": "G|XPHB",
 			"source": "XPHB",
 			"page": 47,
+			"srd52": true,
 			"basicRules2024": true,
 			"rarity": "none",
 			"entries": [
@@ -77647,6 +77637,7 @@
 		{
 			"ENG_name": "Vanquisher's Banner",
 			"name": "征服者之旗",
+			"type": "OTH",
 			"source": "XMtS",
 			"page": 19,
 			"rarity": "unknown (magic)",
@@ -77958,6 +77949,7 @@
 		{
 			"ENG_name": "Vial of Thought Capture",
 			"name": "思维捕获瓶",
+			"type": "OTH",
 			"source": "AZfyT",
 			"page": 4,
 			"rarity": "unknown (magic)",
@@ -77988,7 +77980,7 @@
 							"name": "警觉",
 							"type": "entries",
 							"entries": [
-								"在发现一本满是符号的奇异典籍后，那些与权杖相近的符号令魔契师感受到赋予其魔力的存在的认可。DM决定让权杖进化为珍稀物品，并获得警醒词条。"
+								"在发现一本布满与权杖上符号相符的奇怪典籍后，魔契师感受到了为其魔法提供燃料的实体的认可。DM决定该权杖进化并变为珍稀品质，获得{@table 魔法物品词条表;珍稀魔法物品词条|AU|警觉}词条。"
 							]
 						}
 					}
@@ -80119,6 +80111,7 @@
 				{
 					"type": "table",
 					"caption": "惊异魔杖效应",
+					"srd52": true,
 					"colStyles": [
 						"col-2 text-center",
 						"col-10"
@@ -80847,7 +80840,6 @@
 			"type": "TG|XDMG",
 			"source": "XDMG",
 			"page": 213,
-			"srd52": true,
 			"rarity": "none",
 			"weight": 1,
 			"value": 1,
@@ -83022,6 +83014,7 @@
 			"type": "SCF|XPHB",
 			"source": "XPHB",
 			"page": 224,
+			"srd52": true,
 			"scfType": "arcane",
 			"rarity": "none",
 			"focus": [
@@ -84009,6 +84002,7 @@
 			"type": "SCF|XPHB",
 			"source": "XPHB",
 			"page": 225,
+			"srd52": true,
 			"scfType": "druid",
 			"rarity": "none",
 			"focus": [
@@ -84900,6 +84894,7 @@
 			"type": "SCF|XPHB",
 			"source": "XPHB",
 			"page": 226,
+			"srd52": true,
 			"referenceSources": [
 				"DrDe-ACfaS"
 			],
@@ -86184,7 +86179,7 @@
 			"name": "夸尔羽符",
 			"source": "XDMG",
 			"page": 290,
-			"srd52": true,
+			"srd52": "羽落硬币",
 			"basicRules2024": true,
 			"rarity": "varies",
 			"wondrous": true,

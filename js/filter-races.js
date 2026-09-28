@@ -308,11 +308,11 @@ class ModalFilterRaces extends ModalFilterBase {
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
 
-		const listItem = new ListItem(
-			rI,
-			eleRow,
-			race.name,
-			{
+		const listItem = new ListItem({
+			id: rI,
+			ele: eleRow,
+			name: race.name,
+			values: {
 				source,
 				sourceJson: race.source,
 				...ListItem.getCommonValues(race),
@@ -323,14 +323,14 @@ class ModalFilterRaces extends ModalFilterBase {
 				ENG_name: race.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(race),
 			},
-			{
+			data: {
 				hash,
 				page: race.page,
 				ability: race._srtAbility,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},
-		);
+		});
 
 		this._previewButtonHandler.bindPreviewButton({entity: race, listItem, btnShowHidePreview});
 

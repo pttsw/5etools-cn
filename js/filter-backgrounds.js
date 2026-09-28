@@ -219,11 +219,11 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
 
-		const listItem = new ListItem(
-			bgI,
-			eleRow,
-			bg.name,
-			{
+		const listItem = new ListItem({
+			id: bgI,
+			ele: eleRow,
+			name: bg.name,
+			values: {
 				source,
 				sourceJson: bg.source,
 				...ListItem.getCommonValues(bg),
@@ -232,13 +232,13 @@ class ModalFilterBackgrounds extends ModalFilterBase {
 				ENG_name: bg.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(bg),
 			},
-			{
+			data: {
 				hash,
 				page: bg.page,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},
-		);
+		});
 
 		this._previewButtonHandler.bindPreviewButton({entity: bg, listItem, btnShowHidePreview});
 

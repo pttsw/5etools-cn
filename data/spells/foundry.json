@@ -301,6 +301,8 @@
 					"description": "目标的生命值上限在持续时间内得到提高。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -337,6 +339,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -528,6 +532,8 @@
 					"description": "当你使用徒手打击造成伤害时，新生长的部分会依照括号内类型造成1d6点伤害，而非正常的徒手打击伤害，且你使用施法关键属性调整值代替力量值进行攻击检定和伤害掷骰。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -577,6 +583,8 @@
 					"description": "目标在法术持续时间内处于&Reference[charmed apply=false]状态。若你或你的盟友对目标造成伤害，则法术终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -622,6 +630,8 @@
 					"description": "野兽在法术持续时间内朝指定地点行进，每24小时约移动25英里，若能飞行则移动50英里。野兽抵达后会向你所描述的生物传递信息，模仿你的沟通方式。若野兽在法术结束前未到达目的地，信息将丢失，野兽会返回施法位置。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -716,6 +726,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -746,6 +758,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -767,19 +781,19 @@
 							"ENG_name": "Huge Object (costs 3)",
 							"name": "巨型物体（消耗 3）",
 							"count": "floor(@attributes.spell.mod / 3)",
-							"uuid": "@creature[活化物件(巨型)|xphb]"
+							"uuid": "@creature[活化物件(巨型)|XPHB]"
 						},
 						{
 							"ENG_name": "Large Object (costs 2)",
 							"name": "大型物体（消耗 2）",
 							"count": "floor(@attributes.spell.mod / 2)",
-							"uuid": "@creature[活化物体(大型)|xphb]"
+							"uuid": "@creature[活化物体(大型)|XPHB]"
 						},
 						{
 							"ENG_name": "Medium Object",
 							"name": "中型物体",
 							"count": "@attributes.spell.mod",
-							"uuid": "@creature[活化物件（中型或更小）|xphb]"
+							"uuid": "@creature[活化物件（中型或更小）|XPHB]"
 						}
 					],
 					"match": {
@@ -788,6 +802,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -816,6 +832,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -981,6 +999,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3
 		},
 		{
@@ -1384,8 +1404,41 @@
 					"description": "每个目标的身体会进入假死状态；它拥有&Reference[昏迷（不应用状态）]的状态，不需要食物或空气，也不会衰老。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Aura of Evasion",
+			"name": "闪避灵光",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "auraOfEvasion"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Aura",
+					"name": "灵光",
+					"foundryId": "auraOfEvasion",
+					"duration": {
+						"units": "秒"
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Aura of Life",
@@ -1431,6 +1484,8 @@
 					"description": "当处于此光环内时，你和你的盟友获得对暗蚀伤害的抗性，并且生命值上限不会降低。如果一个生命值为0的盟友在此光环内开始其回合，该盟友将恢复[[/healing 1 type=healing]]{1点生命值}。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -1594,6 +1649,8 @@
 					"description": "当法术结束前，每当目标进行攻击检定或豁免检定时，该目标必须从攻击检定或豁免检定中减去1d4。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -1701,6 +1758,8 @@
 					"description": "目标在该处时获得&Reference[失能 apply=false]状态。法术结束时，目标会重新出现在它离开的空间，若该空间被占据则出现在最近的未被占据空间。若目标是异怪、天界生物、元素生物、精类或邪魔，且法术持续1分钟，则目标不会返回，而是被传送到与其生物类型相关的随机位面（由DM选择）。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -1738,8 +1797,57 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Battle Familiar",
+			"name": "战斗魔宠",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "summon",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"ENG_name": "Brute",
+							"name": "残暴",
+							"uuid": "@creature[Battle Familiar (Brute)|au]"
+						},
+						{
+							"ENG_name": "Flyer",
+							"name": "飞行者",
+							"uuid": "@creature[Battle Familiar (Flyer)|au]"
+						},
+						{
+							"ENG_name": "Stalker",
+							"name": "潜行者",
+							"uuid": "@creature[Battle Familiar (Stalker)|au]"
+						}
+					],
+					"creatureTypes": [
+						"天族",
+						"妖精",
+						"邪魔"
+					],
+					"bonuses": {
+						"ac": "@item.level",
+						"hp": "5 * (@item.level - 2)"
+					},
+					"match": {
+						"attacks": true,
+						"disposition": true,
+						"proficiency": true
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Beacon of Hope",
@@ -1781,6 +1889,8 @@
 					"description": "目标在进行感知豁免与死亡豁免时具有优势，并且从任何治疗中获得最大可能的生命值恢复。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -1834,6 +1944,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2115,6 +2227,8 @@
 					"description": "如果通过攻击检定或法术对目标造成伤害，则该目标额外受到[[/damage 1d8 type=necrotic]]点伤害。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2210,6 +2324,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2327,6 +2443,8 @@
 					"description": "当目标在法术结束前进行攻击检定或豁免检定时，可将1d4加入检定结果中。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2463,6 +2581,8 @@
 					"description": "在每个回合结束时，目标需重复进行[[/save ability=con]]豁免检定，若成功则法术终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3
 		},
 		{
@@ -2500,6 +2620,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2575,6 +2697,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2641,8 +2765,49 @@
 					"description": "该生物对它所敌视的、你选择的生物变得漠不关心。如果目标受到伤害或目睹其盟友受到伤害，这种漠不关心的状态就会结束。当法术结束时，生物的态度恢复正常。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Catnap",
+			"name": "假寐术",
+			"source": "AU",
+			"system": {
+				"target.affects.count": "@item.level"
+			},
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "catnap"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Unconscious",
+					"name": "昏迷",
+					"foundryId": "catnap",
+					"duration": {
+						"value": 10,
+						"units": "分钟"
+					},
+					"statuses": [
+						"unconscious"
+					],
+					"description": "你在法术持续时间内处于&Reference[Unconscious]状态。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Charm Monster",
@@ -2689,6 +2854,8 @@
 					"description": "目标获得&Reference[魅惑apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友好。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2738,6 +2905,8 @@
 					"description": "目标获得&Reference[魅惑apply=false]状态，直到法术结束或你或你的盟友对其造成伤害。被魅惑的生物对你保持友好。当法术结束时，目标会意识到它曾被你所魅惑。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2790,6 +2959,8 @@
 					"description": "目标在你的下个回合结束前无法恢复生命值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2832,6 +3003,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2933,6 +3106,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -2962,6 +3137,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3049,6 +3226,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3094,6 +3273,8 @@
 					"description": "你可以使用一个附赠动作指定一个与你水平的方向。每个&Reference[魅惑 apply=false]目标必须在其下一回合尽可能多地朝该方向移动，并选择最安全的路线。以此方式移动后，目标需重复进行[[/save ability=wis]]豁免检定，成功则法术对其终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3171,6 +3352,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3222,6 +3405,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3309,6 +3494,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3350,6 +3537,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3405,6 +3594,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3538,6 +3729,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3574,6 +3767,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3757,6 +3952,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3804,6 +4001,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3865,6 +4064,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -3905,6 +4106,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4017,6 +4220,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4038,6 +4243,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4129,6 +4336,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4252,6 +4461,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4288,6 +4499,8 @@
 					"description": "在法术持续期间，你所触碰的一个自愿生物将获得范围为150尺的&Reference[黑暗视觉]。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4319,6 +4532,8 @@
 					"description": "当目标在法术结束前第一次生命值将降至0点时，改为降至1点，法术随即终止。若法术仍生效时目标遭受不造成伤害即死的效应，该效应对目标无效，法术随即终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4454,6 +4669,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4546,6 +4763,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4574,6 +4793,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4602,6 +4823,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4649,8 +4872,94 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Detonate",
+			"name": "爆破术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Detonate Target",
+					"name": "爆破术目标",
+					"type": "save",
+					"description": "目标进行一次体质豁免，豁免失败则受到[[/damage average]]伤害，豁免成功则只受到一半伤害。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 10,
+								"denomination": 10,
+								"types": [
+									"火焰"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Explosion",
+					"name": "爆炸",
+					"type": "save",
+					"description": "弥漫区域内除原始目标外的每个生物进行一次敏捷豁免，豁免失败则受到[[/damage average]]伤害，豁免成功则伤害减半。如果初始伤害将原始目标的生命值降至0，则这些豁免检定具有劣势。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "radius",
+							"size": "60"
+						},
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 10,
+								"denomination": 10,
+								"types": [
+									"火焰"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Dimension Door",
@@ -4678,6 +4987,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4729,6 +5040,8 @@
 					"description": "要识破你的伪装，一个生物必须采取研究动作来检查你的外貌，并在对抗你法术豁免DC的[[/check ability=int skill=inv]]检定中成功。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4813,8 +5126,165 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Disruptive Tune",
+			"name": "扰神曲",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Disruptive Tune",
+					"name": "扰神曲",
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "disruptiveTune"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Disadv. CON Saves",
+					"name": "体质豁免劣势",
+					"foundryId": "disruptiveTune",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.concentration.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Distorted Distance",
+			"name": "距离失真",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Dizzying Elongation",
+					"name": "天旋地转",
+					"type": "save",
+					"description": "为领域内符合条件的生物选择此效果。该生物进行一次智力豁免。豁免失败时，掷心灵伤害骰，并且该领域对该生物视为&Reference[困难地形]直到其回合结束。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 10,
+								"types": [
+									"心灵"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"int"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Shortened Space",
+					"name": "缩地成寸",
+					"type": "utility",
+					"description": "为领域内符合条件的生物选择此效果。应用缩地成寸效果，使该生物的速度增加20尺，直到其下一回合结束。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "distortedDistanc"
+						}
+					]
+				},
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "创造一个半径60尺的球体。为球体内每个符合条件的生物选择天旋地转或缩地成寸。",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "sphere",
+							"size": "60"
+						},
+						"affects": {
+							"type": "space",
+							"count": "1"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "+20 Speed",
+					"name": "+20 速度",
+					"foundryId": "distortedDistanc",
+					"duration": {
+						"units": "秒",
+						"expiry": "目标结束"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.bonus",
+							"value": 20,
+							"mode": "ADD"
+						}
+					],
+					"description": "你的速度增加20尺，持续到你的下一个回合结束。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Divine Favor",
@@ -4855,6 +5325,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4916,6 +5388,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -4995,6 +5469,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5040,6 +5516,8 @@
 					"description": "每当被&Reference[魅惑 apply=false]的目标受到伤害时，它需重新进行[[/save ability=wis]]豁免检定，成功则解除自身法术。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5088,6 +5566,8 @@
 					"description": "每当目标受到伤害时，它将重复进行[[/save ability=wis]]豁免检定，若成功则终止其身上的该法术效果。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5133,6 +5613,8 @@
 					"description": "每当被&Reference[魅惑 apply=false]的目标受到伤害时，它需重新进行[[/save ability=wis]]豁免检定，成功则解除自身法术。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5195,6 +5677,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5236,6 +5720,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5317,6 +5803,8 @@
 					"description": "在出神状态下，信使处于 incapacitated（ incapacitated ）状态且速度为0。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -5343,8 +5831,52 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Dueling Ground",
+			"name": "决斗场地",
+			"source": "AU",
+			"system": {
+				"target.affects.count": "@item.level"
+			},
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "放置这个15尺半径的球体并指定自愿参与决斗的生物。将{@b 决斗场地目标}主动效果应用于每个被指定的生物。",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "duelingGround"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Mark Dueling Ground Target",
+					"name": "标记决斗场地目标",
+					"foundryId": "duelingGround",
+					"duration": {
+						"value": 1,
+						"units": "小时"
+					},
+					"statuses": [
+						"marked"
+					],
+					"descriptionEntries": [
+						"你是{@i 决斗场地}的指定目标。"
+					]
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Earthquake",
@@ -5376,9 +5908,10 @@
 					"name": "回合结束时裂开",
 					"type": "save",
 					"img": "icons/magic/earth/lava-stone-fire-eye.webp",
-					"description": {
-						"chatFlavor": "[[1d6]] 条裂缝<br>深达[[10 * 1d10]]英尺"
-					},
+					"descriptionEntriesChat": [
+						"[[1d6]] 道裂口",
+						"[[10 * 1d10]] 英尺深"
+					],
 					"activation": {
 						"type": "",
 						"condition": "初始施法回合结束时"
@@ -5469,6 +6002,8 @@
 					"description": "豁免失败时，该生物受到12d6点钝击伤害，获得&Reference[倒地 apply=false]状态，并被埋在碎石中，需要通过一个[[/check ability=力量 skill=运动 dc=20]]检定（需消耗一个动作）才能逃脱。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6159,9 +6694,7 @@
 					"name": "元素感召",
 					"type": "utility",
 					"img": "systems/dnd5e/icons/svg/statuses/grappled.svg",
-					"description": {
-						"chatFlavor": "水火相召持续1分钟"
-					},
+					"descriptionChat": "水火相召持续1分钟",
 					"activation": {
 						"type": "action"
 					}
@@ -6191,8 +6724,75 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Enervation",
+			"name": "汲能术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Initial Life Drain",
+					"name": "初始生命汲取",
+					"type": "save",
+					"description": "目标进行一次[[/save format=long]]。豁免失败时，投掷暗蚀伤害并维持该法术于该目标。豁免成功时，造成一半伤害并结束该法术。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 6,
+								"denomination": 8,
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Drain Life",
+					"name": "汲取生命",
+					"type": "damage",
+					"description": "对受此次施放的{@i 汲能术}影响的生物造成[[/damage]]伤害。",
+					"activation": {
+						"type": "bonus"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 8,
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Enhance Ability",
@@ -6305,6 +6905,8 @@
 					"description": "目标在使用所选属性进行属性检定时具有优势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6393,6 +6995,8 @@
 					"description": "目标体型缩小一级\u2014\u2014例如从中型变为小型。同时，目标在力量检定和力量豁免上具有劣势。目标使用缩小后的武器或徒手攻击时，命中后造成的伤害减少1d4（伤害不能低于1）。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3
 		},
 		{
@@ -6485,6 +7089,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6531,6 +7137,8 @@
 					"description": "一只被束缚的生物可以执行一个动作来进行一次[[/check ability=str skill=ath]]检定，对抗你的法术豁免DC。若成功，该生物便从这些缠绕的植物中挣脱，不再被它们束缚。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6580,8 +7188,78 @@
 					"description": "目标在法术结束前，在进行[[/check ability=wis skill=prc]]检定时有\u221210减值，同时被动感知也受到\u221210减值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Entrancing Mirrors",
+			"name": "迷魂魔镜",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Save",
+					"name": "豁免",
+					"type": "save",
+					"description": "每个目标进行一次智力豁免。豁免失败时，目标受到心灵伤害并获得&Reference[Stunned apply=false]状态。豁免成功时，目标仅受到一半伤害。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 7,
+								"denomination": 6,
+								"types": [
+									"心灵"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"int"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "entrancingMirror"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Stunned",
+					"name": "震慑",
+					"foundryId": "entrancingMirror",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"statuses": [
+						"stunned"
+					],
+					"changes": [
+						{
+							"key": "system.attributes.movement.multiplier",
+							"value": 0.5,
+							"mode": "MULTIPLY"
+						}
+					],
+					"description": "你处于&Reference[Stunned apply=false]状态。当你被此法術震慑时，你的速度减半。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Etherealness",
@@ -6616,6 +7294,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6670,6 +7350,8 @@
 					"description": "一个处于&Reference[束缚 apply=false]状态的生物可以执行一个动作进行[[/check ability=str skill=ath dc=@attributes.spell.dc]]检定对抗你的法术豁免DC，成功则结束自身该状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6778,6 +7460,8 @@
 					"description": "目标获得&Reference[中毒 apply=false]状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6820,6 +7504,8 @@
 					"description": "在法术持续期间，受影响的物体和生物会散发出半径为10尺的&Reference[昏暗光]，并且不能受益于隐形状态。如果攻击者能看到受影响的生物或物体，则对其进行的攻击检定具有优势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6849,6 +7535,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6893,6 +7581,8 @@
 					"description": "一个&Reference[frightened apply=false]状态的生物会采取&Reference[dash]动作并在其每个回合通过最安全的路线远离你，除非无处可去。如果该生物在其回合结束时处于无法看到你的位置，它将进行一次[[/save ability=wis]]豁免检定。若检定成功，则法术对该生物的效应结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -6995,6 +7685,131 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Festering Blast",
+			"name": "溃烂爆发",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "一道溃烂瘴气从你身上爆发。位于该线状区域内的生物需进行一次体质豁免，豁免失败则受到暗蚀伤害并陷入中毒状态。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"number": 4,
+								"denomination": 10,
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "festeringBlast"
+						}
+					]
+				},
+				{
+					"ENG_name": "Ongoing Poison Damage",
+					"name": "持续毒素伤害",
+					"type": "damage",
+					"description": "被{@i 溃烂爆发}中毒的生物在其回合开始时受到毒素伤害。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1",
+							"special": "因该法术而中毒"
+						}
+					},
+					"range": {
+						"units": "任意"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 2,
+								"denomination": 10,
+								"types": [
+									"毒素"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Repeat Save",
+					"name": "重复豁免",
+					"type": "save",
+					"description": "在其回合结束时，因{@i 溃烂爆发}而中毒的生物重复进行体质豁免，豁免成功则法术对其自身结束。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "任意"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Poisoned",
+					"name": "中毒",
+					"foundryId": "festeringBlast",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"statuses": [
+						"poisoned"
+					],
+					"description": "目标中毒一分钟。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Find Familiar",
 			"name": "寻获魔宠",
 			"source": "XPHB",
@@ -7025,6 +7840,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7042,19 +7859,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异界坐骑（天界生物）|xphb]",
+							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（妖精）|xphb]",
+							"uuid": "@creature[异界坐骑（妖精）|XPHB]",
 							"level": {
 								"max": 3
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（邪魔）|xphb]",
+							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
 							"level": {
 								"max": 3
 							}
@@ -7082,19 +7899,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异界坐骑（天界生物）|xphb]",
+							"uuid": "@creature[异界坐骑（天界生物）|XPHB]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（妖精）|xphb]",
+							"uuid": "@creature[异界坐骑（妖精）|XPHB]",
 							"level": {
 								"min": 4
 							}
 						},
 						{
-							"uuid": "@creature[异界坐骑（邪魔）|xphb]",
+							"uuid": "@creature[异界坐骑（邪魔）|XPHB]",
 							"level": {
 								"min": 4
 							}
@@ -7134,6 +7951,8 @@
 					"description": "当被4环或更高法术召唤时，这匹坐骑拥有60尺的飞行速度。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7191,6 +8010,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7252,6 +8073,8 @@
 					"description": "每当5尺内的生物以近战攻击检定命中你时，攻击者将受到[[/damage 2d8 type=cold]]点寒冷伤害。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7292,6 +8115,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7371,6 +8196,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7427,6 +8254,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7479,6 +8308,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7563,6 +8394,8 @@
 					"description": "豁免成功时，其速度降为0，直到你的下一回合开始。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7608,6 +8441,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7660,6 +8495,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7707,6 +8544,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7800,6 +8639,8 @@
 					"description": "在持续时间内，目标在进行D20检定时具有优势，而其他生物对其进行的攻击检定具有劣势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -7902,6 +8743,81 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Fractured Awareness",
+			"name": "破碎神识",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "目标被涌入的、相互矛盾的未来幻象所淹没。它需要进行一次智力豁免检定，豁免失败则受到心灵伤害并陷入破碎神识状态。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 12,
+								"denomination": 10,
+								"types": [
+									"心灵"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"int"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "fracturedAwarene"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Disadv. D20 Tests",
+					"name": "D20检定劣势",
+					"foundryId": "fracturedAwarene",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "system.rolls.attack.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.rolls.ability.check.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.rolls.ability.save.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					],
+					"description": "冲突幻象扰乱了目标果断行动的能力，使其在D20检定中承受劣势。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Freedom of Movement",
 			"name": "行动自如",
 			"source": "XPHB",
@@ -7953,6 +8869,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8085,6 +9003,8 @@
 					"description": "目标的唯一移动方式是10尺的飞行速度，且可以悬停。目标可以进入并占据其他生物的空间。目标对钝击、穿刺和挥砍伤害具有抗性；它对&Reference[倒地 apply=false]状态免疫；并且在力量、敏捷和体质豁免上具有优势。目标可以穿过狭窄的开口，但会将液体视作固体表面。目标无法说话或操作物体，其所携带或持握的任何物品都无法掉落、使用或以其他方式互动。最后，目标无法攻击或施放法术。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8182,6 +9102,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8239,6 +9161,8 @@
 					"description": "当目标处于&Reference[魅惑 apply=false]状态时，若其行为直接违背你的命令，则会受到[[/damage 5d10 type=psychic]]点心灵伤害。该伤害每天最多生效一次。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8254,13 +9178,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[巨虫（蜈蚣）|xphb]"
+							"uuid": "@creature[巨虫（蜈蚣）|XPHB]"
 						},
 						{
-							"uuid": "@creature[巨虫（蜘蛛）|xphb]"
+							"uuid": "@creature[巨虫（蜘蛛）|XPHB]"
 						},
 						{
-							"uuid": "@creature[巨虫（黄蜂）|xphb]"
+							"uuid": "@creature[巨虫（黄蜂）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -8275,6 +9199,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8305,6 +9231,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8358,6 +9286,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8375,8 +9305,130 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Grave Ground",
+			"name": "埋骨墓地",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "骷髅之手从地面爆发。区域内的敌人需进行一次力量豁免，豁免失败则受到暗蚀伤害并削弱其伤害掷骰。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"number": 6,
+								"denomination": 6,
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"str"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"behaviors": [
+						{
+							"type": "difficultTerrain"
+						}
+					],
+					"effects": [
+						{
+							"foundryId": "graveGround"
+						}
+					]
+				},
+				{
+					"ENG_name": "Grave Ground Save",
+					"name": "埋骨墓地豁免",
+					"type": "save",
+					"description": "进入埋骨墓地或在其中结束其回合的敌人需进行一次力量豁免。豁免失败时，骷髅之手将造成暗蚀伤害并削弱该生物的攻击骰。",
+					"activation": {
+						"type": "special",
+						"condition": "当敌人进入该区域或在其回合结束时身处其中"
+					},
+					"target": {
+						"affects": {
+							"type": "enemy",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "任意"
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"number": 6,
+								"denomination": 6,
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"str"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "graveGround"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "-1d6 Damage Penalty",
+					"name": "-1d6伤害减值",
+					"foundryId": "graveGround",
+					"duration": {
+						"units": "秒",
+						"expiry": "目标结束"
+					},
+					"changes": [
+						{
+							"key": "damage",
+							"value": "-1d6",
+							"mode": "DND5E.BONUS"
+						}
+					],
+					"description": "骷髅之手会汲取该生物的力量。直到其下一回合结束前，其伤害掷骰将减去1d6。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Grease",
@@ -8401,6 +9453,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8434,6 +9488,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8524,6 +9580,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8546,6 +9604,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8889,6 +9949,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8943,6 +10005,8 @@
 					"description": "在下一个你的回合结束前，针对目标的下一次攻击检定具有优势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -8969,6 +10033,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9056,6 +10122,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9185,6 +10253,8 @@
 					"description": "当法术结束时，目标被&Reference[ incapacitated apply=false ]且速度降为0，直至其下一回合结束，犹如一阵倦怠感席卷全身。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9210,6 +10280,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9310,6 +10382,8 @@
 					"description": "如果一个生物正持有或穿戴该物品并因此受到伤害，该生物必须进行一次[[/save ability=con format=long]]豁免检定，若可能则必须丢弃该物品。如果该生物没有丢弃物品，直到你的下一回合开始前，其攻击检定和属性检定都将具有劣势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9344,9 +10418,7 @@
 					"ENG_name": "Consume Feast",
 					"name": "享用盛宴",
 					"type": "heal",
-					"description": {
-						"chatFlavor": "生命值上限增加治疗量"
-					},
+					"descriptionChat": "生命值上限增加治疗量",
 					"activation": {
 						"type": "hour",
 						"value": 1
@@ -9414,6 +10486,8 @@
 					"description": "该生物对毒素伤害具有&Reference[damageResistance]{抗性}，并对&Reference[恐惧]和&Reference[中毒]状态具有免疫力。其生命值上限增加2d10，并恢复相同数值的生命值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9464,6 +10538,8 @@
 					"description": "该生物免疫恐慌状态，且在其每回合开始时获得临时生命值，数值等同于你的法术施法关键属性调整值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9684,8 +10760,27 @@
 					"description": "目标在进行所选属性的能力检定时具有劣势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Hindsight",
+			"name": "回望术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "你透过时间之纱回望过去，目睹过去10年内发生在施法范围内的事件景象。",
+					"activation": {
+						"type": "action"
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Hold Monster",
@@ -9732,6 +10827,8 @@
 					"description": "在目标每个回合结束时，它将重复进行[[/save ability=wis]]豁免，成功后便在该目标身上结束该法术。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9780,6 +10877,8 @@
 					"description": "在目标每个回合结束时，它将重复进行[[/save ability=wis]]豁免，成功后便在该目标身上结束该法术。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -9894,6 +10993,8 @@
 					"description": "攻击者获得&Reference[目盲 apply=false]状态直到其下一回合结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10061,6 +11162,8 @@
 					"description": "法术终止前，每当施法者以攻击检定命中目标时，对其额外造成[[/damage 1d6 力场]]伤害。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10134,6 +11237,8 @@
 					"description": "当目标处于&Reference[魅惑 apply=false]状态时，该生物同时获得&Reference[失能 apply=false]状态且速度降为0。若受影响生物受到任何伤害，或其他生物用一个动作将其摇醒，则法术对该生物的效应终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10209,6 +11314,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10261,8 +11368,46 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Illusory Dragon",
+			"name": "幻影巨龙",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Study Illusion",
+					"name": "研究幻象",
+					"type": "check",
+					"description": "一个生物研究这个暗影巨龙，进行一次智力（调查）检定，对抗施法者的法术豁免DC，以识破其幻影本质。",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "任意"
+					},
+					"check": {
+						"associated": [
+							"背包"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true,
+						"ability": "int"
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Imprisonment",
@@ -10342,6 +11487,8 @@
 					"description": "目标处于&Reference[昏迷 apply=false]状态且无法被唤醒。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10382,8 +11529,73 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Inflict Doubt",
+			"name": "赋予怀疑",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "目标进行一次感知豁免。豁免失败，则其在法术持续时间内进行的D20检定具有劣势。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "inflictDoubt"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Disadv. D20 Tests",
+					"name": "D20检定劣势",
+					"foundryId": "inflictDoubt",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "system.rolls.attack.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.rolls.ability.check.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.rolls.ability.save.mode",
+							"value": -1,
+							"mode": "ADD"
+						}
+					],
+					"description": "该生物在进行D20检定时具有劣势。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Invisibility",
@@ -10419,8 +11631,125 @@
 					"description": "该法术在目标进行攻击检定、造成伤害或施放法术之后立即提前结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Invulnerability",
+			"name": "无敌术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "在法术结束前，你免疫所有伤害。",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "invulnerability"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "invulnerability",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 10,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "system.traits.di.value",
+							"value": "ALL",
+							"mode": "ADD"
+						}
+					],
+					"description": "在该法术结束前，你对所有伤害具有免疫。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
+			"ENG_name": "Iron Body",
+			"name": "钢铁之躯",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "你接触一个自愿的生物，将其转变为活体金属，在法术持续时间内获得该法术的抵抗和免疫。",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "ironBody"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "ironBody",
+					"duration": {
+						"value": 1,
+						"units": "小时"
+					},
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"value": "bludgeoning",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "fire",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "piercing",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"value": "slashing",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.di.value",
+							"value": "poison",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"value": "paralyzed",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"value": "petrified",
+							"mode": "ADD"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"value": "poisoned",
+							"mode": "ADD"
+						}
+					],
+					"description": "该生物对钝击、火焰、穿刺和挥砍伤害具有抗性；对毒素伤害免疫；并且对麻痹、石化和中毒状态免疫。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Jallarzi's Storm of Radiance",
@@ -10516,6 +11845,8 @@
 					"description": "法术持续期间，该生物每回合可消耗10尺移动力进行一次至多30尺的跳跃。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10550,6 +11881,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10592,6 +11925,8 @@
 					"description": "目标只能通过推或拉触及范围内的固定物体或表面（如墙壁或天花板）来移动，使其能够像攀爬一样移动。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10665,6 +12000,122 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Lightning Ring",
+			"name": "闪电之环",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Emanation Save",
+					"name": "光环豁免",
+					"type": "save",
+					"description": "该生物进行一次体质豁免，豁免失败则受到[[/damage]]伤害，豁免成功则受到一半伤害。豁免失败时，它还会耳聋1分钟。",
+					"activation": {
+						"type": "special",
+						"condition": "当光环进入一个生物的空间，或一个生物进入光环范围或在其内结束其回合时"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 3,
+								"denomination": 6,
+								"types": [
+									"闪电"
+								],
+								"scaling": {
+									"number": 1
+								}
+							},
+							{
+								"number": 3,
+								"denomination": 6,
+								"types": [
+									"雷鸣"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "lightningRing"
+						}
+					]
+				},
+				{
+					"ENG_name": "Lightning Line",
+					"name": "闪电之线",
+					"type": "save",
+					"description": "你释放出一道60尺长、5尺宽的闪电线。位于线内的生物需进行一次敏捷豁免，豁免失败则受到[[/damage]]伤害，豁免成功则受到一半伤害。",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"template": {
+							"units": "ft",
+							"type": "line",
+							"size": "60",
+							"width": "5"
+						},
+						"affects": {
+							"type": "creature"
+						}
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 6,
+								"denomination": 6,
+								"types": [
+									"闪电"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Deafened",
+					"name": "耳聋",
+					"foundryId": "lightningRing",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"statuses": [
+						"deafened"
+					],
+					"description": "目标陷入&Reference[deafened apply=false]状态一分钟。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Longstrider",
 			"name": "大步奔行",
 			"source": "XPHB",
@@ -10700,6 +12151,8 @@
 					"description": "目标的移动速度增加10尺，直到法术结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10736,6 +12189,8 @@
 					"description": "目标的基础AC变为13加上其敏捷调整值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10765,6 +12220,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10886,6 +12343,8 @@
 					"description": "被附体生物的灵魂可以通过自己的感官从容器中感知周围，但它无法移动且处于&Reference[ incapacitated apply=false]状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -10944,6 +12403,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11127,6 +12588,8 @@
 					"description": "在法术持续时间内，该武器成为魔法武器，攻击检定和伤害掷骰获得+3加值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11162,6 +12625,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11186,6 +12651,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11231,6 +12698,8 @@
 					"description": "目标在法术持续时间内获得&Reference[魅惑 apply=false]状态，直到你或你的盟友对该目标造成伤害。每个被魅惑的目标都会尽其所能地执行该建议。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11272,6 +12741,8 @@
 					"description": "目标可以采取一个研究动作尝试逃脱。当它这样做时，它需要进行一次[[/check ability=int skill=inv dc=20]]检定。若成功，则逃脱且法术终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11314,6 +12785,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11425,6 +12898,8 @@
 					"description": "命中后，目标受到4d4点强酸伤害，并在其下一回合结束时受到[[/damage 2d4 type=acid]]点强酸伤害（2环以上每法术位等级再加1d4）。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11467,6 +12942,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11584,6 +13061,8 @@
 					"description": "在法术结束前，只要目标与你处于同一存在位面，你总能知晓其位置。只要你掌握此信息，目标无法对你保持隐匿；若目标处于&Reference[invisible apply=false]状态，该状态对你无效。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11619,6 +13098,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11636,6 +13117,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11718,6 +13201,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11764,8 +13249,27 @@
 					"description": "当目标以这种方式处于&Reference[魅惑 apply=false]状态时，它还会同时陷入&Reference[失能 apply=false]状态且无法感知周围环境（但能听到你的声音）。如果目标受到任何伤害或成为另一个法术的目标，该法术即告终止，且不会修改目标的记忆。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Moment of Prescience",
+			"name": "刹时预知",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "将你失败的D20检定结果改为20，或将触发攻击检定的结果变为1。",
+					"activation": {
+						"type": "action"
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Mordenkainen's Faithful Hound",
@@ -11790,8 +13294,103 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Mordenkainen's Lucubration",
+			"name": "魔邓肯冥思术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "你可以恢复至多两个已消耗的法术位，其环阶由施放此法术所使用的法术位决定。",
+					"activation": {
+						"type": "action"
+					}
+				},
+				{
+					"ENG_name": "Recover 1st-Level Slot",
+					"name": "恢复1环法术位",
+					"type": "utility",
+					"description": "恢复一个1环法术位。",
+					"activation": {
+						"type": "special",
+						"condition": "施放该法术后。"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "-1",
+								"target": "spells.spell1.value"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Recover 2nd-Level Slot",
+					"name": "恢复2环法术位",
+					"type": "utility",
+					"description": "恢复一个2环法术位。",
+					"activation": {
+						"type": "special",
+						"condition": "施放该法术后。"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "-1",
+								"target": "spells.spell2.value"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Recover 3rd-Level Slot",
+					"name": "恢复一个3环法术位",
+					"type": "utility",
+					"description": "恢复一个3环法术位。",
+					"activation": {
+						"type": "special",
+						"condition": "施放该法术后。"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "-1",
+								"target": "spells.spell3.value"
+							}
+						]
+					}
+				},
+				{
+					"ENG_name": "Recover 4th-Level Slot",
+					"name": "恢复一个4环法术位",
+					"type": "utility",
+					"description": "恢复一个4环法术位。",
+					"activation": {
+						"type": "special",
+						"condition": "施放该法术后。"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "attribute",
+								"value": "-1",
+								"target": "spells.spell4.value"
+							}
+						]
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Mordenkainen's Magnificent Mansion",
@@ -11807,6 +13406,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11832,8 +13433,91 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Negative Energy Flood",
+			"name": "负能量洪流",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Save: Living Target",
+					"name": "豁免：活体目标",
+					"type": "save",
+					"description": "一个非不死生物进行体质豁免，豁免失败则受到[[/damage]]伤害，豁免成功则受到一半伤害。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 3,
+								"denomination": 10,
+								"bonus": "25",
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Heal: Undead Target",
+					"name": "医疗术：不死生物目标",
+					"type": "heal",
+					"description": "一个不死生物目标获得[[/healing]]临时生命值。",
+					"activation": {
+						"type": "action"
+					},
+					"healing": {
+						"types": [
+							"temphp"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"number": 3,
+						"denomination": 10
+					}
+				},
+				{
+					"ENG_name": "Raise Zombie",
+					"name": "复活僵尸",
+					"type": "summon",
+					"description": "被此法术杀死的类人生物会在你的下个回合开始时以丧尸形态复活。",
+					"activation": {
+						"type": "special",
+						"condition": "当一个类人生物被此法术杀死后，在你的下一个回合开始时"
+					},
+					"duration": {
+						"units": "小时",
+						"value": "24"
+					},
+					"profiles": [
+						{
+							"uuid": "@creature[丧尸|xmm]"
+						}
+					]
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Nondetection",
@@ -11862,6 +13546,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -11893,6 +13579,8 @@
 					"description": "选择一种目标实际生物类型以外的生物类别。法术和其他魔法效应会将目标生物视为属于该生物类型来处理效果。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12042,6 +13730,8 @@
 					"description": "在结冰水面游泳的生物将被困于冰中，并获得&Reference[Restrained apply=false]状态。被困生物可以用一个动作进行[[/check ability=str skill=ath]]检定对抗你的法术豁免DC来挣脱。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12084,6 +13774,8 @@
 					"description": "被困其中的生物可以用一个动作推动球体墙壁，从而以不超过该生物速度一半的速率滚动球体。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12141,6 +13833,8 @@
 					"description": "目标会滑稽地跳舞直到其下个回合结束，期间它必须消耗所有移动力在原地跳舞。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12179,6 +13873,8 @@
 					"description": "在该光环范围内，你和每个你指定的生物在进行[[/check ability=dex skill=ste]]检定时获得+10加值，且不会留下踪迹。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12206,6 +13902,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12307,6 +14005,8 @@
 					"description": "目标可以使用一个 &Reference[研究]{研究} 动作来检视幻象，进行一次[[/check ability=int skill=inv]]检定对抗你的法术豁免DC。若检定成功，目标会意识到该幻象是虚假的，法术随即终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12394,6 +14094,8 @@
 					"description": "目标在法术持续时间内进行的属性检定和攻击检定具有劣势。在此期间，目标在其每回合结束时需进行一次[[/save ability=wis]]豁免检定。若豁免失败，将再次受到心灵伤害。若豁免成功，则法术终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12422,6 +14124,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12464,6 +14168,8 @@
 					"description": "被束缚的生物必须竭尽全力服从你的命令。如果该生物怀有敌意，它会试图曲解你的命令来实现自身的目的。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12481,6 +14187,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12519,6 +14227,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12564,6 +14274,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12613,6 +14325,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12644,8 +14358,163 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Power Word Pain",
+			"name": "律令痛苦",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "damage",
+					"description": "目标受到[[/damage]]点力场伤害。如果其生命值为100或更低，则施加{@b 律令痛苦}的激活效果。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 6,
+								"denomination": 8,
+								"types": [
+									"力场"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"effects": [
+						{
+							"foundryId": "powerWordPain"
+						}
+					]
+				},
+				{
+					"ENG_name": "Spellcasting Save",
+					"name": "施法豁免",
+					"type": "save",
+					"description": "受影响的生物在施放其法术前需进行一次体质豁免。豁免失败时，将触发{@i 律令痛苦}中描述的施法失败后果。",
+					"activation": {
+						"type": "special"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Repeat Save",
+					"name": "重复豁免",
+					"type": "save",
+					"description": "在其回合结束时，受影响的生物进行一次体质豁免，豁免成功则自身身上的{@i 律令痛苦}效果结束。",
+					"activation": {
+						"type": "special"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "powerWordPain",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"statuses": [
+						"charmed"
+					],
+					"changes": [
+						{
+							"key": "system.rolls.attack.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.rolls.ability.check.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.str.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.dex.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.int.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.wis.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.abilities.cha.save.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.attributes.death.roll.mode",
+							"value": -1,
+							"mode": "ADD"
+						},
+						{
+							"key": "system.attributes.movement.speeds.walk",
+							"value": 10,
+							"mode": "DOWNGRADE"
+						},
+						{
+							"key": "system.attributes.movement.speeds.burrow",
+							"value": 10,
+							"mode": "DOWNGRADE"
+						},
+						{
+							"key": "system.attributes.movement.speeds.climb",
+							"value": 10,
+							"mode": "DOWNGRADE"
+						},
+						{
+							"key": "system.attributes.movement.speeds.fly",
+							"value": 10,
+							"mode": "DOWNGRADE"
+						}
+					],
+					"description": "目标被&Reference[Charmed apply=false]。它的速度不能超过10尺，并且除了体质豁免外，它在D20检定上具有劣势。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Power Word Stun",
@@ -12714,6 +14583,8 @@
 					"description": "目标的移动速度降为0，直到你的下一回合开始。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12755,6 +14626,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -12890,6 +14763,8 @@
 					"description": "目标获得&Reference[目盲 apply=false]状态，并在你的下一个回合开始时进行一次[[/save ability=感知 format=long]]豁免检定。若检定成功，该状态结束。若检定失败，该状态结束，且该生物会被传送至另一个存在位面（由DM选择）。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13065,6 +14940,8 @@
 					"description": "目标获得&Reference[目盲 apply=false]状态，并在你的下回合开始时进行一次[[/save ability=感知 dc=@attributes.spell.dc format=long]]检定。若检定成功，该状态结束；若检定失败，该状态结束且该生物将被传送到另一个存在位面（由DM选择）。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13121,6 +14998,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13156,6 +15035,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13191,6 +15072,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13300,6 +15183,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13331,6 +15216,8 @@
 					"description": "该类生物对目标发动攻击检定时具有劣势。且目标不会被该类生物附身或获得来自它们的&Reference[魅惑 apply=false]或&Reference[恐惧 apply=false]状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13369,6 +15256,8 @@
 					"description": "在持续时间内，目标在避免或结束中毒状态的豁免骰上具有优势，并且对毒素伤害具有抗性。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13583,6 +15472,8 @@
 					"description": "从死亡中归来是一种折磨。目标在进行D20检定时承受\u22124减值。每当目标完成一次长休后，该减值会减少1，直至归零。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13622,6 +15513,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13708,6 +15601,8 @@
 					"description": "目标在该法术持续时间内进行基于力量的D20检定时具有劣势。在此期间，其所有伤害掷骰还需减去1d8。目标在每个自己回合结束时需重复进行[[/save ability=con]]豁免检定，成功则法术终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13787,6 +15682,8 @@
 					"description": "目标的速度减少10尺，直到你下个回合开始。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13824,6 +15721,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13866,6 +15765,8 @@
 					"description": "在法术持续时间内，目标在其每个回合开始时恢复[[/healing 1 type=healing]]{1点生命值}，且任何被切断的肢体将在2分钟后重新生长。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -13881,6 +15782,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14038,6 +15941,8 @@
 					"description": "当该生物在法术结束前受到所选类型的伤害时，该生物所受的伤害总值减少[[/r 1d4]]。每回合该生物只能受益于此法术一次。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14277,6 +16182,8 @@
 					"description": "直到你完成一次长休前，你将无法再次施法，并且在进行d20检定时具有劣势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14305,8 +16212,46 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Reweave Fate",
+			"name": "改写命运",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "触发失败的生物可以以优势重掷该D20检定，且必须使用新的结果。",
+					"activation": {
+						"type": "action"
+					}
+				},
+				{
+					"ENG_name": "Strengthened Fate",
+					"name": "强化命运",
+					"type": "heal",
+					"description": "如果重掷的D20检定成功，该生物获得[[/healing]]临时生命值。",
+					"activation": {
+						"type": "special"
+					},
+					"healing": {
+						"types": [
+							"temphp"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"number": 6,
+						"denomination": 10
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Sanctuary",
@@ -14360,6 +16305,8 @@
 					"description": "直到法术结束，任何以攻击检定或伤害性法术瞄准受术者的生物必须进行一次[[/save ability=wis format=long]]豁免，失败则必须选择新目标或失去此次攻击/法术效果。若受术者进行攻击检定、施展法术或造成伤害，则此法術提前终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14393,6 +16340,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14597,6 +16546,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14680,6 +16631,8 @@
 					"description": "在法术结束前目标的每个回合开始时，目标将受到[[/damage 1d6 type=fire]]点伤害，然后进行[[/save ability=con]]豁免检定。若豁免失败，法术持续。若豁免成功，法术结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14721,6 +16674,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14796,6 +16751,8 @@
 					"description": "一个生物若通过研究动作来检视目标，可以进行一次[[/check ability=int skill=inv]]检定对抗你的法术豁免DC。若成功，则该生物会意识到目标处于伪装状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14814,6 +16771,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14846,6 +16805,8 @@
 					"description": "若目标为生物，则其进入假死状态；它获得&Reference[Unconscious apply=false]状态，不会衰老，也不需要食物、水或空气。若目标受到任何伤害，该法术也会终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14956,6 +16917,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -14997,6 +16960,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15035,6 +17000,8 @@
 					"description": "目标在持续时间内获得AC+2的加值。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15339,6 +17306,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15395,6 +17364,8 @@
 					"description": "直到法术结束，目标会散发出 &Reference[BrightLight] 的5尺半径光辉，对其进行的攻击检定具有优势，且目标无法从中受益 &Reference[Invisible] 状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15447,6 +17418,8 @@
 					"description": "目标在其下一个回合开始前不能进行借机攻击。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15489,6 +17462,8 @@
 					"description": "任何完全处于球体内的生物或物体对雷鸣伤害具有免疫，且生物完全处于其中时会陷入耳聋状态。在此区域内无法施展包含言语成分的法术。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15524,6 +17499,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15541,6 +17518,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15589,6 +17568,8 @@
 					"description": "目标获得&Reference[incapacitated apply=false]状态，直到其下个回合结束，此时它必须再次进行豁免检定。若目标第二次检定失败，则其在法术持续时间内获得&Reference[unconscious]状态。若目标受到伤害，或其周围5英尺内有生物花费一个动作将其摇醒，则法术对该目标提前终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15615,6 +17596,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15694,6 +17677,8 @@
 					"description": "受影响的生物移动速度减半，在AC和敏捷豁免上承受-2减值，且无法执行反应动作。在其回合内，它只能选择执行一个动作或一个附加动作（不能同时执行），若执行攻击动作则只能发动一次攻击。如果施放需要姿势成分的法术，有[[/r 1d100cs>25#缓慢法术施放成功率]]{25%}几率因手势缓慢而导致法术失败。受影响的生物在其每回合结束时需重复进行[[/save ability=wis]]感知豁免，成功则法术效果终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15740,6 +17725,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15773,6 +17760,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15813,6 +17802,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15843,6 +17834,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15881,6 +17874,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -15910,6 +17905,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16005,8 +18002,207 @@
 					"description": "该生物在辐射范围内的速度减半。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Spirit Lantern",
+			"name": "魂灵提灯",
+			"source": "AU",
+			"system": {
+				"uses.max": "@attributes.spell.mod"
+			},
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"description": "你召唤出魂灵提灯，在法术持续时间内，它会在60尺半径内散发出微光。",
+					"activation": {
+						"type": "action"
+					},
+					"effects": [
+						{
+							"foundryId": "spiritLantern"
+						}
+					]
+				},
+				{
+					"ENG_name": "Drain Life",
+					"name": "汲取生命",
+					"type": "save",
+					"description": "灵魂碎片会射向你60尺内一个你能看见的自选生物。目标需进行一次[[/save format=long]]，豁免失败则受到等于4d8加上你施法关键属性调整值的暗蚀伤害，豁免成功则伤害减半。",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 4,
+								"denomination": 8,
+								"bonus": "@mod",
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Repair Undead",
+					"name": "修复亡灵",
+					"type": "heal",
+					"description": "灵魂碎片飞向你60尺内一个你能看见的亡灵生物。该生物恢复等同于4d8加上你的施法关键属性调整值的生命值。",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"scaling": {
+							"number": 1
+						},
+						"number": 4,
+						"denomination": 8,
+						"bonus": "@mod"
+					}
+				},
+				{
+					"ENG_name": "Ward Ally",
+					"name": "护佑盟友",
+					"type": "utility",
+					"description": "灵魂碎片会飞向你60尺内一个你能看见的指定生物。直到你的下个回合开始前，其他生物对该指定生物进行的攻击检定具有劣势。",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"units": "轮",
+						"value": "1"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"effects": [
+						{
+							"foundryId": "spiritLantern1"
+						}
+					]
+				},
+				{
+					"ENG_name": "Capture Soul",
+					"name": "捕获灵魂",
+					"type": "utility",
+					"description": "当一个符合条件的敌人在提灯的微光范围内死亡时，使用此动作可储存1个灵魂碎片，直至达到提灯的最大容量。",
+					"activation": {
+						"type": "special"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-1"
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "spiritLantern",
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 10,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "token.light.dim",
+							"value": 60,
+							"mode": "UPGRADE"
+						}
+					],
+					"description": "一盏幽体黑提灯在你上方盘旋，并散发出半径60尺的微光。"
+				},
+				{
+					"ENG_name": "Ward Ally",
+					"name": "护佑盟友",
+					"foundryId": "spiritLantern1",
+					"duration": {
+						"units": "秒",
+						"expiry": "sourceStart"
+					},
+					"description": "其他生物对该生物的攻击检定具有劣势，直到施法者的下一回合开始。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Spirit of Death",
@@ -16019,7 +18215,7 @@
 						{
 							"ENG_name": "Reaper Spirit",
 							"name": "收割者灵魄",
-							"uuid": "@creature[收割者灵魄|bmt]"
+							"uuid": "@creature[收割者灵魄|BMT]"
 						}
 					]
 				}
@@ -16158,6 +18354,8 @@
 					"description": "直到你的下一个回合结束，它会在10英尺半径范围内发出微光，并且无法受益于&Reference[隐形]状态。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16214,6 +18412,8 @@
 					"description": "以这种方式&Reference[中毒 apply=false]时，该生物无法执行动作或附加动作。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16259,6 +18459,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16459,6 +18661,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16504,6 +18708,8 @@
 					"description": "受魅惑的目标会尽其所能执行建议的行动。建议的活动可以持续整个法术持续时间，但如果建议的活动可以在更短时间内完成，则目标在完成后法术即告结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16558,13 +18764,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[异怪灵魄（类眼魔）|xphb]"
+							"uuid": "@creature[异怪灵魄（类眼魔）|XPHB]"
 						},
 						{
-							"uuid": "@creature[异怪灵魄（史拉蟾）|xphb]"
+							"uuid": "@creature[异怪灵魄（史拉蟾）|XPHB]"
 						},
 						{
-							"uuid": "@creature[异怪灵魄（星之子）|xphb]"
+							"uuid": "@creature[异怪灵魄（夺心魔）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16632,13 +18838,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[野兽灵魄（天空）|xphb]"
+							"uuid": "@creature[野兽灵魄（天空）|XPHB]"
 						},
 						{
-							"uuid": "@creature[野兽灵魄（大地）|xphb]"
+							"uuid": "@creature[野兽灵魄（大地）|XPHB]"
 						},
 						{
-							"uuid": "@creature[野兽灵魄（海洋）|xphb]"
+							"uuid": "@creature[野兽灵魄（海洋）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16703,12 +18909,12 @@
 						{
 							"ENG_name": "Avenger",
 							"name": "复仇者",
-							"uuid": "@creature[天界灵魄（复仇圣灵）|xphb]"
+							"uuid": "@creature[天界灵魄（复仇圣灵）|XPHB]"
 						},
 						{
 							"ENG_name": "Defender",
 							"name": "防御者",
-							"uuid": "@creature[天界灵魄（守护圣灵）|xphb]"
+							"uuid": "@creature[天界灵魄（守护圣灵）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16778,17 +18984,17 @@
 						{
 							"ENG_name": "Clay",
 							"name": "粘土",
-							"uuid": "@creature[构装灵魄（粘土）|xphb]"
+							"uuid": "@creature[构装灵魄（粘土）|XPHB]"
 						},
 						{
 							"ENG_name": "Metal",
 							"name": "金属",
-							"uuid": "@creature[构装灵魄（金属）|xphb]"
+							"uuid": "@creature[构装灵魄（金属）|XPHB]"
 						},
 						{
 							"ENG_name": "Stone",
 							"name": "岩石",
-							"uuid": "@creature[构装灵魄（岩石）|xphb]"
+							"uuid": "@creature[构装灵魄（岩石）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16805,6 +19011,56 @@
 			],
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Summon Dinosaur",
+			"name": "恐龙召唤术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Summon Dinosaur",
+					"name": "恐龙召唤术",
+					"type": "summon",
+					"description": "召唤一个恐龙精魂，可从甲龙、三角龙或暴龙中选择。",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"uuid": "@creature[Dinosaur Spirit (Ankylosaur)|au]",
+							"level": {
+								"min": 6,
+								"max": 9
+							}
+						},
+						{
+							"uuid": "@creature[Dinosaur Spirit (Triceratops)|au]",
+							"level": {
+								"min": 6,
+								"max": 9
+							}
+						},
+						{
+							"uuid": "@creature[Dinosaur Spirit (Tyrannosaur)|au]",
+							"level": {
+								"min": 6,
+								"max": 9
+							}
+						}
+					],
+					"bonuses": {
+						"ac": "@item.level",
+						"hp": "10 * (@item.level - 6)",
+						"attackDamage": "@item.level"
+					},
+					"match": {
+						"attacks": true,
+						"disposition": true,
+						"proficiency": true
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Summon Draconic Spirit",
@@ -16847,19 +19103,19 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[龙类灵魄（强酸）|xphb]"
+							"uuid": "@creature[龙类灵魄（强酸）|XPHB]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（寒冷）|xphb]"
+							"uuid": "@creature[龙类灵魄（寒冷）|XPHB]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（火焰）|xphb]"
+							"uuid": "@creature[龙类灵魄（火焰）|XPHB]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（闪电）|xphb]"
+							"uuid": "@creature[龙类灵魄（闪电）|XPHB]"
 						},
 						{
-							"uuid": "@creature[龙类灵魄（毒素）|xphb]"
+							"uuid": "@creature[龙类灵魄（毒素）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -16874,6 +19130,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -16934,22 +19192,22 @@
 						{
 							"ENG_name": "Air",
 							"name": "空气",
-							"uuid": "@creature[元素灵魄（气）|xphb]"
+							"uuid": "@creature[元素灵魄（气）|XPHB]"
 						},
 						{
 							"ENG_name": "Earth",
 							"name": "土",
-							"uuid": "@creature[元素灵魄（土）|xphb]"
+							"uuid": "@creature[元素灵魄（土）|XPHB]"
 						},
 						{
 							"ENG_name": "Fire",
 							"name": "火焰",
-							"uuid": "@creature[元素灵魄（火）|xphb]"
+							"uuid": "@creature[元素灵魄（火）|XPHB]"
 						},
 						{
 							"ENG_name": "Water",
 							"name": "饮水",
-							"uuid": "@creature[元素灵魄（水）|xphb]"
+							"uuid": "@creature[元素灵魄（水）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -17017,13 +19275,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[妖精灵魄（愤怒）|xphb]"
+							"uuid": "@creature[妖精灵魄（愤怒）|XPHB]"
 						},
 						{
-							"uuid": "@creature[妖精灵魄（欢欣）|xphb]"
+							"uuid": "@creature[妖精灵魄（欢欣）|XPHB]"
 						},
 						{
-							"uuid": "@creature[妖精灵魄（诡诈）|xphb]"
+							"uuid": "@creature[妖精灵魄（诡诈）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -17095,17 +19353,17 @@
 						{
 							"ENG_name": "Demon",
 							"name": "恶魔",
-							"uuid": "@creature[邪魔灵魄（恶魔）|xphb]"
+							"uuid": "@creature[邪魔灵魄（恶魔）|XPHB]"
 						},
 						{
 							"ENG_name": "Devil",
 							"name": "魔鬼",
-							"uuid": "@creature[邪魔灵魄（魔鬼）|xphb]"
+							"uuid": "@creature[邪魔灵魄（魔鬼）|XPHB]"
 						},
 						{
 							"ENG_name": "Yugoloth",
 							"name": "尤格罗斯魔",
-							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|xphb]"
+							"uuid": "@creature[邪魔灵魄（尤格罗斯魔）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -17123,6 +19381,49 @@
 			],
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Summon Plant",
+			"name": "植物召唤术",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Summon Plant",
+					"name": "植物召唤术",
+					"type": "summon",
+					"activation": {
+						"type": "action"
+					},
+					"profiles": [
+						{
+							"ENG_name": "Fungus",
+							"name": "真菌",
+							"uuid": "@creature[Plant Spirit (Fungus)|au]"
+						},
+						{
+							"ENG_name": "Tree",
+							"name": "树",
+							"uuid": "@creature[Plant Spirit (Tree)|au]"
+						},
+						{
+							"ENG_name": "Vine",
+							"name": "藤蔓",
+							"uuid": "@creature[Plant Spirit (Vine)|au]"
+						}
+					],
+					"bonuses": {
+						"ac": "@item.level",
+						"hp": "10 * (@item.level - 5)",
+						"attackDamage": "@item.level"
+					},
+					"match": {
+						"attacks": true,
+						"disposition": true,
+						"proficiency": true
+					}
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Summon Shadowspawn",
@@ -17213,13 +19514,13 @@
 					},
 					"profiles": [
 						{
-							"uuid": "@creature[亡灵灵魄（幽体）|xphb]"
+							"uuid": "@creature[亡灵灵魄（幽体）|XPHB]"
 						},
 						{
-							"uuid": "@creature[亡灵灵魄（腐尸）|xphb]"
+							"uuid": "@creature[亡灵灵魄（腐尸）|XPHB]"
 						},
 						{
-							"uuid": "@creature[亡灵灵魄（骷髅）|xphb]"
+							"uuid": "@creature[亡灵灵魄（骷髅）|XPHB]"
 						}
 					],
 					"bonuses": {
@@ -17330,6 +19631,8 @@
 					"description": "目标获得&Reference[目盲 apply=false]状态，持续至你的下一回合开始。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -17387,6 +19690,8 @@
 					"description": "受此法术&Reference[Blinded apply=false]影响的生物在其每回合结束时需再进行一次[[/save ability=con format=long]]（体质豁免），成功则终止该效果。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -17764,6 +20069,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -17974,6 +20281,8 @@
 					"description": "在法术持续时间内，目标处于&Reference[倒地 apply=false]和&Reference[失能 apply=false]状态。在此期间，如果目标能够发笑，则会不受控制地大笑，并且无法自行解除倒地状态。在它的每个回合结束时以及每次受到伤害时，它需要进行一次[[/save ability=wis dc=@attributes.spell.dc]]豁免检定。若豁免检定由受到伤害触发，则目标在检定中具有优势。豁免成功时，法术终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18021,6 +20330,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18059,6 +20370,8 @@
 					"description": "你的声音在1分钟内会变得比正常响亮三倍。在此期间，你在[[/check ability=cha skill=itm]]检定上具有优势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18182,6 +20495,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18308,8 +20623,104 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Transfix",
+			"name": "沉鱼落雁",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "你指定一个60尺内能看见的生物进行一次魅力豁免。豁免失败则被该法术魅惑并陷入失能状态。在此次施法期间，针对后续目标和伤害地形的豁免，使用此卡牌的魅力豁免而无需再次激活法术。",
+					"activation": {
+						"type": "action"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "60"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"cha"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "transfix"
+						}
+					]
+				},
+				{
+					"ENG_name": "Psychic Damage",
+					"name": "心灵伤害",
+					"type": "damage",
+					"description": "当一个被此次施放所魅惑的生物在其回合结束时位于你5尺内时，投掷心灵伤害。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"range": {
+						"units": "ft",
+						"value": "5"
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 4,
+								"denomination": 8,
+								"types": [
+									"心灵"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Charmed & Incapacitated",
+					"name": "魅惑且失能",
+					"foundryId": "transfix",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"statuses": [
+						"charmed",
+						"incapacitated"
+					],
+					"description": "该生物在持续时间内处于&Reference[Charmed apply=false]和&Reference[Incapacitated apply=false]状态。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "True Polymorph",
@@ -18366,6 +20777,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18381,6 +20794,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18420,6 +20835,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18565,6 +20982,8 @@
 					]
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18666,8 +21085,63 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Uncertain Footing",
+			"name": "步履维艰",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "至多三个生物进行一次智力豁免。豁免失败时，施加步履维艰效果。在一个步履维艰的生物的回合结束时，使用此卡的智力豁免而无需再次激活法术。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"int"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "uncertainFooting"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Hampered",
+					"name": "受阻",
+					"foundryId": "uncertainFooting",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "system.attributes.movement.multiplier",
+							"value": 0.5,
+							"mode": "ADD"
+						}
+					],
+					"description": "该生物的速度减半，并且不能执行&Reference[疾走]动作。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Vampiric Touch",
@@ -18703,6 +21177,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18758,8 +21234,71 @@
 					"description": "目标在其下一回合结束前进行的下一次攻击检定具有劣势。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Vision of Elapsing Eons",
+			"name": "瞥见亘古一瞬",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"description": "一个生物进行一次智力豁免。豁免失败时，它受到[[/damage]]心灵伤害并在法术持续时间内陷入&Reference[Paralyzed apply=false]状态。",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"number": 10,
+								"denomination": 12,
+								"types": [
+									"心灵"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"int"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "visionOfElapsing"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Paralyzed",
+					"name": "麻痹",
+					"foundryId": "visionOfElapsing",
+					"duration": {
+						"value": 1,
+						"units": "分钟"
+					},
+					"statuses": [
+						"paralyzed"
+					],
+					"description": "目标在持续时间内处于&Reference[Paralyzed apply=false]状态。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Vitriolic Sphere",
@@ -18847,8 +21386,70 @@
 					"description": "该生物在其下一个回合结束时受到[[/damage 5d4 type=acid]]点酸性伤害"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Wail of the Banshee",
+			"name": "女妖之嚎",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 12,
+								"denomination": 10,
+								"types": [
+									"心灵"
+								],
+								"scaling": {
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "wailOfTheBanshee"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Deafened",
+					"name": "耳聋",
+					"foundryId": "wailOfTheBanshee",
+					"duration": {
+						"value": 1,
+						"units": "小时"
+					},
+					"statuses": [
+						"deafened"
+					],
+					"description": "目标获得&Reference[Deafened apply=false]状态，持续1小时。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Wall of Fire",
@@ -18946,6 +21547,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -18989,6 +21592,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19125,6 +21730,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19172,6 +21779,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19314,6 +21923,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19422,6 +22033,8 @@
 					"description": "当目标处于你60尺范围内时，其AC和豁免检定获得+1加值，并且对所有伤害具有抗性。此外，每当目标受到伤害时，你也会受到等量伤害。若你的生命值降至0点，或你与目标相距超过60尺，法术即会终止。若对任一连接生物再次施放此法术，效果同样会终止。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19450,6 +22063,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19482,8 +22097,57 @@
 					"description": "受影响的生物必须用一个附赠动作才能从液体表面进入液体内部或反之亦然，但如果该生物掉入液体，则会直接穿过表面进入下方的液体。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
+		},
+		{
+			"ENG_name": "Waves of Exhaustion",
+			"name": "力竭波",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Emit Wave",
+					"name": "释放波动",
+					"type": "save",
+					"activation": {
+						"type": "bonus"
+					},
+					"damage": {
+						"onSave": "none"
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "wavesOfExhaustio"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"ENG_name": "Exhaustion",
+					"name": "力竭",
+					"foundryId": "wavesOfExhaustio",
+					"duration": {
+						"units": "秒"
+					},
+					"statuses": [
+						"exhaustion"
+					],
+					"description": "目标获得一级&Reference[Exhaustion apply=false]。"
+				}
+			],
+			"migrationVersion": 3
 		},
 		{
 			"ENG_name": "Web",
@@ -19520,6 +22184,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19618,6 +22284,8 @@
 					"description": "一个 &Reference[Frightened apply=false] 目标在其每个回合结束时进行一次[[/save ability=wis format=long]] (感知豁免)。如果豁免失败，它将受到[[/damage 5d10 type=psychic]] (5d10点心灵伤害)。如果豁免成功，法术对该目标结束。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19689,6 +22357,8 @@
 					"description": "目标在此形态下唯一能采取的行动是执行&Reference[疾走]动作或使用魔法动作开始恢复其正常形态。恢复过程需要1分钟，在此期间目标处于&Reference[震慑 apply=false]状态。直到法术结束前，目标可以恢复为云雾形态，同样需要进行魔法动作，随后经历1分钟的转变过程。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19786,6 +22456,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19796,9 +22468,7 @@
 			"activities": [
 				{
 					"type": "utility",
-					"description": {
-						"chatFlavor": "<em>祈愿术</em>在1上失效：[[/r 1d3cs1]]"
-					},
+					"descriptionChat": "{@i 祈愿术}在掷出1时失效：[[/r 1d3cs1]]",
 					"activation": {
 						"type": "action"
 					},
@@ -19829,6 +22499,8 @@
 					"description": "每当你施放一个法术直到完成一次长休时，你将受到该法术每等级[[/damage 1d10 type=necrotic]]点伤害。此伤害无法以任何方式减免或防止。此外，你的力量属性将降至3点，持续[[/r 2d4]]天。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -19995,6 +22667,74 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Wither and Bloom",
+			"name": "靡叶生华",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell: Wither",
+					"name": "施法：枯萎",
+					"type": "save",
+					"activation": {
+						"type": "action"
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 3,
+								"denomination": 6,
+								"types": [
+									"暗蚀"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						},
+						"visible": true
+					}
+				},
+				{
+					"ENG_name": "Bloom",
+					"name": "盛放",
+					"type": "heal",
+					"description": "选择法术区域内的一个生物。该生物可以投掷并消耗本次施放所允许数量的未消耗生命值骰，然后恢复等同于掷骰总和加上你施法关键属性调整值的生命值。",
+					"activation": {
+						"type": "special"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"healing": {
+						"types": [
+							"治疗"
+						],
+						"custom": {
+							"enabled": true,
+							"formula": "@attributes.spell.mod"
+						},
+						"scaling": {
+							"number": 1
+						}
+					}
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Word of Recall",
 			"name": "回返真言",
 			"source": "XPHB",
@@ -20024,6 +22764,8 @@
 					}
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		},
@@ -20102,9 +22844,7 @@
 					"ENG_name": "Emanation Save",
 					"name": "光环豁免",
 					"type": "save",
-					"description": {
-						"chatFlavor": "推动10尺，失败时&Reference[倒地]"
-					},
+					"descriptionChat": "推动10尺，失败时&Reference[倒地]",
 					"activation": {
 						"type": "",
 						"condition": "一个生物处于光环内"
@@ -20148,6 +22888,40 @@
 			"translator": "不全书"
 		},
 		{
+			"ENG_name": "Zone of Amicability",
+			"name": "友善之域",
+			"source": "AU",
+			"activities": [
+				{
+					"ENG_name": "Cast Spell",
+					"name": "施法",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					}
+				}
+			],
+			"effects": [
+				{
+					"disabled": true,
+					"transfer": true,
+					"duration": {
+						"value": 10,
+						"units": "分钟"
+					},
+					"changes": [
+						{
+							"key": "check",
+							"value": 10,
+							"mode": "DND5E.MINIMUM"
+						}
+					],
+					"description": "当对法术辐射区域内的生物进行属性检定以影响它时，启用此效果，检定后禁用。"
+				}
+			],
+			"migrationVersion": 3
+		},
+		{
 			"ENG_name": "Zone of Truth",
 			"name": "诚实之域",
 			"source": "XPHB",
@@ -20186,6 +22960,8 @@
 					"description": "豁免失败时，生物在范围内无法故意说谎。你知道生物在此豁免中是成功还是失败。受影响的生物会意识到该法术，并能避免回答那些通常会以谎言回应的问题。这样的生物可以回避问题，但必须说真话。"
 				}
 			],
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
 			"migrationVersion": 3,
 			"translator": "不全书"
 		}

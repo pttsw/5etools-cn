@@ -22,14 +22,14 @@ class PageFilterOptionalFeatures extends PageFilterBase {
 			return new FilterItem({
 				item: `${lvlMeta} 级`,
 				nest: `(任意职业)`,
-			});
+			}).getSerialized();
 		}
 
 		const className = lvlMeta.class ? lvlMeta.class.name : `(任意职业)`;
 		return new FilterItem({
 			item: `${lvlMeta.class ? className : ""}${lvlMeta.subclass ? ` (${lvlMeta.subclass.name})` : ""} ${lvlMeta.level} 级`,
 			nest: className,
-		});
+		}).getSerialized();
 	}
 	// endregion
 
@@ -270,11 +270,11 @@ class ModalFilterOptionalFeatures extends ModalFilterBase {
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
 
-		const listItem = new ListItem(
-			ftI,
-			eleRow,
-			optfeat.name,
-			{
+		const listItem = new ListItem({
+			id: ftI,
+			ele: eleRow,
+			name: optfeat.name,
+			values: {
 				source,
 				sourceJson: optfeat.source,
 				...ListItem.getCommonValues(optfeat),
@@ -284,13 +284,13 @@ class ModalFilterOptionalFeatures extends ModalFilterBase {
 				ENG_name: optfeat.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(optfeat),
 			},
-			{
+			data: {
 				hash,
 				page: optfeat.page,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},
-		);
+		});
 
 		this._previewButtonHandler.bindPreviewButton({entity: optfeat, listItem, btnShowHidePreview});
 

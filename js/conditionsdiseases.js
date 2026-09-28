@@ -27,22 +27,22 @@ class ConditionsDiseasesSublistManager extends SublistManager {
 			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
 			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
-		const listItem = new ListItem(
-			hash,
+		const listItem = new ListItem({
+			id: hash,
 			ele,
-			it.name,
-			{
+			name: it.name,
+			values: {
 				...ListItem.getCommonValues(it),
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 				type: it.type || it.__prop,
 			},
-			{
+			data: {
 				hash,
 				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
-		);
+		});
 		return listItem;
 	}
 }
@@ -90,22 +90,22 @@ class ConditionsDiseasesPage extends ListPage {
 			<div class="ve-flex-col ve-py-3 ve-ml-4 ve-accordion__wrp-preview-inner"></div>
 		</div>`;
 
-		const listItem = new ListItem(
-			cdI,
-			eleLi,
-			it.name,
-			{
+		const listItem = new ListItem({
+			id: cdI,
+			ele: eleLi,
+			name: it.name,
+			values: {
 				source,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 				...ListItem.getCommonValues(it),
 				type: it.type || it.__prop,
 			},
-			{
+			data: {
 				hash,
 				page: it.page,
 				isExcluded,
 			},
-		);
+		});
 
 		eleLi.addEventListener("click", (evt) => this._list.doSelect(listItem, evt));
 		eleLi.addEventListener("contextmenu", (evt) => this._openContextMenu(evt, this._list, listItem));

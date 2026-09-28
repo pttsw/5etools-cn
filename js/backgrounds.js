@@ -38,24 +38,24 @@ class BackgroundSublistManager extends SublistManager {
 			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
 			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
-		const listItem = new ListItem(
-			hash,
+		const listItem = new ListItem({
+			id: hash,
 			ele,
 			name,
-			{
+			values: {
 				source: Parser.sourceJsonToAbv(it.source),
 				...ListItem.getCommonValues(it),
 				skills,
 				ENG_name: it.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
-			{
+			data: {
 				hash,
 				page: it.page,
 				entity: it,
 				mdRow: [...cellsText],
 			},
-		);
+		});
 		return listItem;
 	}
 }
@@ -97,11 +97,11 @@ class BackgroundPage extends ListPage {
 			<span class="ve-col-2 ve-text-center ${Parser.sourceJsonToSourceClassname(bg.source)}  ve-pl-1 ve-pr-0" title="${Parser.sourceJsonToFull(bg.source)}">${source}</span>
 		</a>`;
 
-		const listItem = new ListItem(
-			bgI,
-			eleLi,
+		const listItem = new ListItem({
+			id: bgI,
+			ele: eleLi,
 			name,
-			{
+			values: {
 				source,
 				...ListItem.getCommonValues(bg),
 				ability: bg._slAbility,
@@ -109,12 +109,12 @@ class BackgroundPage extends ListPage {
 				ENG_name: bg.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(bg),
 			},
-			{
+			data: {
 				hash,
 				page: bg.page,
 				isExcluded,
 			},
-		);
+		});
 
 		eleLi.addEventListener("click", (evt) => this._list.doSelect(listItem, evt));
 		eleLi.addEventListener("contextmenu", (evt) => this._openContextMenu(evt, this._list, listItem));

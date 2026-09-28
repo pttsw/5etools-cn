@@ -118,7 +118,7 @@ class PageFilterEquipment extends PageFilterBase {
 	static mutateForFilters (item) {
 		this._mutateForFilters_commonSources(item, {isIncludeBaseSource: true});
 
-		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p?.uid || p)?.name).filter(Boolean) : [];
+		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p?.uid || p)?.name).filter(Boolean) : null;
 
 		this._mutateForFilters_commonMisc(item);
 		if (item._isItemGroup) item._fMisc.push("物品组别");
@@ -156,9 +156,9 @@ class PageFilterEquipment extends PageFilterBase {
 
 		FilterCommon.mutateForFilters_cost(item, {prop: "value"});
 
-		item._fDamageDice = [];
-		if (item.dmg1) item._fDamageDice.push(item.dmg1);
-		if (item.dmg2) item._fDamageDice.push(item.dmg2);
+		item._fDamageDice = item.dmg1 && item.dmg2
+			? [item.dmg1, item.dmg2]
+			: (item.dmg1 || item.dmg2 || null);
 
 		item._fMastery = item.mastery
 			? item.mastery.map(info => {
@@ -392,7 +392,7 @@ class PageFilterItems extends PageFilterEquipment {
 	static mutateForFilters (item) {
 		super.mutateForFilters(item);
 
-		item._fTier = [item.tier ? item.tier : "none"];
+		item._fTier = item.tier || "none";
 
 		if (item.curse) item._fMisc.push("诅咒");
 		const isMundane = Renderer.item.isMundane(item);
@@ -407,22 +407,19 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.critThreshold) item._fMisc.push("额外范围");
 
 		const fBaseItemSelf = item._isBaseItem ? `${item.name}__${item.source}`.toLowerCase() : null;
-		item._fBaseItem = [
-			item.baseItem ? (item.baseItem.includes("|") ? item.baseItem.replace("|", "__") : `${item.baseItem}__${Parser.SRC_DMG}`).toLowerCase() : null,
-			item._baseName ? `${item._baseName}__${item._baseSource || item.source}`.toLowerCase() : null,
-		].filter(Boolean);
-		item._fBaseItemAll = fBaseItemSelf ? [fBaseItemSelf, ...item._fBaseItem] : item._fBaseItem;
+		item._fBaseItem = this._mutateForFilters_getFilterBaseItems(item);
+		item._fBaseItemAll = fBaseItemSelf ? [fBaseItemSelf, ...(item._fBaseItem || [])] : item._fBaseItem;
 
-		item._fBonus = [];
-		if (item.bonusAc) item._fBonus.push("护甲类");
+		item._fBonus = null;
+		if (item.bonusAc) (item._fBonus ||= []).push("护甲类");
 		this._mutateForFilters_bonusWeapon({prop: "bonusWeapon", item, text: "武器命中和伤害骰"});
 		this._mutateForFilters_bonusWeapon({prop: "bonusWeaponAttack", item, text: "武器命中骰"});
 		this._mutateForFilters_bonusWeapon({prop: "bonusWeaponDamage", item, text: "武器伤害骰"});
-		if (item.bonusWeaponCritDamage) item._fBonus.push("Weapon Critical Damage");
-		if (item.bonusSpellAttack) item._fBonus.push("法术命中");
-		if (item.bonusSpellSaveDc) item._fBonus.push("法术豁免DC");
-		if (item.bonusSavingThrow) item._fBonus.push("豁免检定");
-		if (item.bonusProficiencyBonus) item._fBonus.push("Proficiency Bonus");
+		if (item.bonusWeaponCritDamage) (item._fBonus ||= []).push("武器重击伤害");
+		if (item.bonusSpellAttack) (item._fBonus ||= []).push("法术命中");
+		if (item.bonusSpellSaveDc) (item._fBonus ||= []).push("法术豁免DC");
+		if (item.bonusSavingThrow) (item._fBonus ||= []).push("豁免检定");
+		if (item.bonusProficiencyBonus) (item._fBonus ||= []).push("熟练加值");
 
 		item._fAttunement = this._getAttunementFilterItems(item);
 
@@ -432,9 +429,18 @@ class PageFilterItems extends PageFilterEquipment {
 		FilterCommon.mutateForFilters_conditionImmuneNonPlayer(item);
 	}
 
+	static _mutateForFilters_getFilterBaseItems (item) {
+		if (!item.baseItem && !item._baseName) return null;
+
+		const out = [];
+		if (item.baseItem) out.push((item.baseItem.includes("|") ? item.baseItem.replace("|", "__") : `${item.baseItem}__${Parser.SRC_DMG}`).toLowerCase());
+		if (item._baseName) out.push(`${item._baseName}__${item._baseSource || item.source}`.toLowerCase());
+		return out;
+	}
+
 	static _mutateForFilters_bonusWeapon ({prop, item, text}) {
 		if (!item[prop]) return;
-		item._fBonus.push(text);
+		(item._fBonus ||= []).push(text);
 		switch (item[prop]) {
 			case "+1":
 			case "+2":
@@ -445,9 +451,9 @@ class PageFilterItems extends PageFilterEquipment {
 	static _CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM = "replicate magic item|artificer|efa|2|efa";
 
 	static _mutateForFilters_classFeatures (item) {
-		item._fClassFeatures = [...item.classFeatures || []];
+		item._fClassFeatures = item.classFeatures ? [...item.classFeatures] : null;
 
-		if (item._fClassFeatures.includes(this._CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM)) return;
+		if (item._fClassFeatures?.includes(this._CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM)) return;
 		if (item.curse) return;
 		switch (item.rarity) {
 			case "common": {
@@ -459,13 +465,13 @@ class PageFilterItems extends PageFilterEquipment {
 					]
 						.includes(DataUtil.itemType.unpackUid(item.type).abbreviation)
 				) return;
-				item._fClassFeatures.push(this._CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM);
+				(item._fClassFeatures ||= []).push(this._CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM);
 				break;
 			}
 			case "uncommon":
 			case "rare": {
 				if (!item.wondrous) return;
-				item._fClassFeatures.push(this._CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM);
+				(item._fClassFeatures ||= []).push(this._CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM);
 				break;
 			}
 		}
@@ -476,7 +482,6 @@ class PageFilterItems extends PageFilterEquipment {
 
 		super.addToFilters(item, isExcluded);
 
-		this._sourceFilter.addItem(item.source);
 		this._tierFilter.addItem(item._fTier);
 		this._attachedSpellsFilter.addItem(item._fAttachedSpells);
 		this._lootTableFilter.addItem(item.lootTables);
@@ -635,11 +640,11 @@ class ModalFilterItems extends ModalFilterBase {
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
 
-		const listItem = new ListItem(
-			itI,
-			eleRow,
-			item.name,
-			{
+		const listItem = new ListItem({
+			id: itI,
+			ele: eleRow,
+			name: item.name,
+			values: {
 				source,
 				sourceJson: item.source,
 				...ListItem.getCommonValues(item),
@@ -647,13 +652,13 @@ class ModalFilterItems extends ModalFilterBase {
 				ENG_name: item.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
-			{
+			data: {
 				hash,
 				page: item.page,
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 				btnShowHidePreview,
 			},
-		);
+		});
 
 		this._previewButtonHandler.bindPreviewButton({entity: item, listItem, btnShowHidePreview});
 

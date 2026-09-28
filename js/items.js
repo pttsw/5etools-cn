@@ -1,4 +1,5 @@
 import {RenderItems} from "./render-items.js";
+import {ListRowRendererItems} from "./items/items-listrow.js";
 
 class ItemsSublistManager extends SublistManager {
 	constructor () {
@@ -107,11 +108,11 @@ class ItemsSublistManager extends SublistManager {
 			.vee.onn("contextmenu", evt => this._handleSublistItemContextMenu(evt, listItem))
 			.vee.onn("click", evt => this._listSub.doSelect(listItem, evt));
 
-		const listItem = new ListItem(
-			hash,
+		const listItem = new ListItem({
+			id: hash,
 			ele,
-			item.name,
-			{
+			name: item.name,
+			values: {
 				source: Parser.sourceJsonToAbv(item.source),
 				...ListItem.getCommonValues(item),
 				weight: Parser.weightValueToNumber(item.weight),
@@ -119,7 +120,7 @@ class ItemsSublistManager extends SublistManager {
 				ENG_name: item.ENG_name,
 				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
-			{
+			data: {
 				hash,
 				page: item.page,
 				count,
@@ -128,7 +129,7 @@ class ItemsSublistManager extends SublistManager {
 				entity: item,
 				mdRow: [...cellsText, ({listItem}) => listItem.data.count],
 			},
-		);
+		});
 		return listItem;
 	}
 
@@ -237,6 +238,7 @@ class ItemsPage extends ListPage {
 			pageFilter: new PageFilterItems(),
 
 			dataProps: ["item"],
+			isLazyLoadingItems: true,
 
 			bookViewOptions: {
 				nameSingular: "item",
@@ -292,51 +294,33 @@ class ItemsPage extends ListPage {
 
 	get primaryLists () { return [this._mundaneList, this._magicList]; }
 
-	getListItem (item, itI, isExcluded) {
-		const hash = UrlUtil.autoEncodeHash(item);
-		const ENG_hash = UrlUtil.autoEncodeEngHash(item);
+	getListItem (item, itI, isExcluded, hash, ENG_hash) {		
+		// const ENG_hash = UrlUtil.autoEncodeEngHash(item);
 
 		if (Renderer.item.isExcluded(item, {hash})) return null;
 		if (item.noDisplay) return null;
-		Renderer.item.enhanceItem(item);
 
 		this._pageFilter.mutateAndAddToFilters(item, isExcluded);
 
 		const source = Parser.sourceJsonToAbv(item.source);
-		const type = item._textTypes.join(", ").toTitleCase();
+		const type = item._textTypes.join(", ");
 
 		if (item._fIsMundane) {
-			const eleLi = veE({
-				tag: "div",
-				clazz: `ve-lst__row ve-flex-col ${isExcluded ? "ve-lst__row--blocklisted" : ""}`,
-				click: (evt) => this._mundaneList.doSelect(listItem, evt),
-				contextmenu: (evt) => this._openContextMenu(evt, this._mundaneList, listItem),
-				children: [
-					veE({
-						tag: "a",
-						href: `#${hash}`,
-						clazz: "ve-lst__row-border ve-lst__row-inner",
-						children: [
-							veE({tag: "span", clazz: `ve-col-3-5 ve-pl-0 ve-pr-1 ve-bold`, txt: item.name}),
-							veE({tag: "span", clazz: `ve-col-4-5 ve-px-1`, txt: type}),
-							veE({tag: "span", clazz: `ve-col-1-5 ve-px-1 ve-text-center`, txt: item._l_value}),
-							veE({tag: "span", clazz: `ve-col-1-5 ve-px-1 ve-text-center`, txt: item._l_weight}),
-							veE({
-								tag: "span",
-								clazz: `ve-col-1 ve-text-center ${Parser.sourceJsonToSourceClassname(item.source)} ve-pl-1 ve-pr-0`,
-								title: `${Parser.sourceJsonToFull(item.source)}${Renderer.utils.getSourceSubText(item)}`,
-								txt: source,
-							}),
-						],
-					}),
-				],
+			const fnGetEle = () => ListRowRendererItems.getEleMundane({
+				item,
+				type,
+				source,
+				hash,
+				isExcluded,
+				fnClick: evt => this._mundaneList.doSelect(listItem, evt),
+				fnContextmenu: evt => this._openContextMenu(evt, this._mundaneList, listItem),
 			});
 
-			const listItem = new ListItem(
-				itI,
-				eleLi,
-				item.name,
-				{
+			const listItem = new ListItem({
+				id: itI,
+				fnGetEle,
+				name: item.name,
+				values: {
 					source,
 					...ListItem.getCommonValues(item),
 					type,
@@ -345,52 +329,30 @@ class ItemsPage extends ListPage {
 					ENG_name: item.ENG_name,
 					ENG_hash: UrlUtil.autoEncodeEngHash(item),
 				},
-				{
+				data: {
 					hash,
 					page: item.page,
 					isExcluded,
 				},
-			);
+			});
 
 			return {mundane: listItem};
 		} else {
-			const eleLi = veE({
-				tag: "div",
-				clazz: `ve-lst__row ve-flex-col ${isExcluded ? "ve-lst__row--blocklisted" : ""}`,
-				click: (evt) => this._magicList.doSelect(listItem, evt),
-				contextmenu: (evt) => this._openContextMenu(evt, this._magicList, listItem),
-				children: [
-					veE({
-						tag: "a",
-						href: `#${hash}`,
-						clazz: "ve-lst__row-border ve-lst__row-inner",
-						children: [
-							veE({tag: "span", clazz: `ve-col-3-5 ve-pl-0 ve-bold`, txt: item.name}),
-							veE({tag: "span", clazz: `ve-col-4`, txt: type}),
-							veE({tag: "span", clazz: `ve-col-1-5 ve-text-center`, txt: item._l_weight}),
-							veE({tag: "span", clazz: `ve-col-0-6 ve-text-center`, txt: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT ? "×" : ""}),
-							veE({
-								tag: "span",
-								clazz: `ve-col-1-4 ve-text-center ${item.rarity ? `ve-itm__rarity-${item.rarity}` : ""}`,
-								title: Parser.rarityToCN(item.rarity) || (item.rarity || "").toTitleCase(),
-								txt: Parser.itemRarityToShort(item.rarity) || "",
-							}),
-							veE({
-								tag: "span",
-								clazz: `ve-col-1 ve-text-center ${Parser.sourceJsonToSourceClassname(item.source)} ve-pr-0`,
-								title: `${Parser.sourceJsonToFull(item.source)}${Renderer.utils.getSourceSubText(item)}`,
-								txt: source,
-							}),
-						],
-					}),
-				],
+			const fnGetEle = () => ListRowRendererItems.getEleMagic({
+				item,
+				type,
+				source,
+				hash,
+				isExcluded,
+				fnClick: evt => this._magicList.doSelect(listItem, evt),
+				fnContextmenu: evt => this._openContextMenu(evt, this._magicList, listItem),
 			});
 
-			const listItem = new ListItem(
-				itI,
-				eleLi,
-				item.name,
-				{
+			const listItem = new ListItem({
+				id: itI,
+				fnGetEle,
+				name: item.name,
+				values: {
 					source,
 					...ListItem.getCommonValues(item),
 					type,
@@ -400,23 +362,15 @@ class ItemsPage extends ListPage {
 					weight: Parser.weightValueToNumber(item.weight),
 					ENG_name: item.ENG_name,
 				},
-				{
+				data: {
 					hash,
 					ENG_hash,
 					page: item.page,
 				},
-			);
+			});
 
 			return {magic: listItem};
 		}
-	}
-
-	handleFilterChange () {
-		const f = this._pageFilter.filterBox.getValues();
-		const listFilter = li => this._pageFilter.toDisplay(f, this._dataList[li.ix]);
-		this._mundaneList.filter(listFilter);
-		this._magicList.filter(listFilter);
-		FilterBox.selectFirstVisible(this._dataList);
 	}
 
 	_tabTitleStats = "物品";
@@ -467,7 +421,7 @@ class ItemsPage extends ListPage {
 
 	_pOnLoad_initVisibleItemsDisplay () {
 		const elesMundaneAndMagic = veEm(`.ele-mundane-and-magic`);
-		veEs(`.side-label--mundane`).vee.onn("click", () => {
+		veEs(`.ve-itm__side-label--mundane`).vee.onn("click", () => {
 			const filterValues = this._pageFilter.filterBox.getValues();
 			const curValue = MiscUtil.get(filterValues, "Miscellaneous", "寻常");
 			this._pageFilter.filterBox.setFromValues({
@@ -477,7 +431,7 @@ class ItemsPage extends ListPage {
 				},
 			});
 		});
-		veEs(`.side-label--magic`).vee.onn("click", () => {
+		veEs(`.ve-itm__side-label--magic`).vee.onn("click", () => {
 			const filterValues = this._pageFilter.filterBox.getValues();
 			const curValue = MiscUtil.get(filterValues, "Miscellaneous", "魔法");
 			this._pageFilter.filterBox.setFromValues({
@@ -492,10 +446,20 @@ class ItemsPage extends ListPage {
 		const wrpListMagic = veEs(`.ve-itm__wrp-list--magic`);
 		const elesMundane = veEm(`.ele-mundane`);
 		const elesMagic = veEm(`.ele-magic`);
-		this._mundaneList.on("updated", () => {
+		const wrpListContainer = veEs(`#listcontainer`);
+
+		let isMundaneListUpdated = false;
+		let isMagicListUpdated = false;
+		const doUpdate = () => {
+			// Avoid showing elements until both lists are ready
+			if (!isMundaneListUpdated || !isMagicListUpdated) return;
+
 			// Force-show the mundane list if there are no items on display
 			if (this._magicList.visibleItems.length) elesMundane.forEach(ele => ele.vee.toggle(!!this._mundaneList.visibleItems.length));
 			else elesMundane.forEach(ele => ele.vee.show());
+
+			elesMagic.forEach(ele => ele.vee.toggle(!!this._magicList.visibleItems.length));
+
 			elesMundaneAndMagic.forEach(ele => ele.vee.toggle(!!(this._mundaneList.visibleItems.length && this._magicList.visibleItems.length)));
 
 			const current = this._mundaneList.visibleItems.length + this._magicList.visibleItems.length;
@@ -504,20 +468,19 @@ class ItemsPage extends ListPage {
 
 			// Collapse the mundane section if there are no magic items displayed
 			wrpListMundane.vee.toggleClass(`ve-itm__wrp-list--empty`, this._mundaneList.visibleItems.length === 0);
-		});
-		this._magicList.on("updated", () => {
-			elesMagic.forEach(ele => ele.vee.toggle(!!this._magicList.visibleItems.length));
-			// Force-show the mundane list if there are no items on display
-			if (!this._magicList.visibleItems.length) elesMundane.forEach(ele => ele.vee.show());
-			else elesMundane.forEach(ele => ele.vee.toggle(!!this._mundaneList.visibleItems.length));
-			elesMundaneAndMagic.forEach(ele => ele.vee.toggle(!!(this._mundaneList.visibleItems.length && this._magicList.visibleItems.length)));
-
-			const current = this._mundaneList.visibleItems.length + this._magicList.visibleItems.length;
-			const total = this._mundaneList.items.length + this._magicList.items.length;
-			outVisibleResults.vee.html(`${current}/${total}`);
 
 			// Collapse the magic section if there are no magic items displayed
 			wrpListMagic.vee.toggleClass(`ve-itm__wrp-list--empty`, this._magicList.visibleItems.length === 0);
+
+			wrpListContainer.vee.removeClass(`ve-itm__listcontainer--initializing`);
+		};
+		this._mundaneList.on("updated", () => {
+			isMundaneListUpdated = true;
+			doUpdate();
+		});
+		this._magicList.on("updated", () => {
+			isMagicListUpdated = true;
+			doUpdate();
 		});
 	}
 
@@ -525,8 +488,8 @@ class ItemsPage extends ListPage {
 		super._addData(data);
 
 		// Populate table labels
-		veEs(`h3.ele-mundane span.side-label`).vee.txt("寻常物品");
-		veEs(`h3.ele-magic span.side-label`).vee.txt("魔法物品");
+		veEs(`.ve-itm__side-label--mundane`).vee.txt("寻常物品");
+		veEs(`.ve-itm__side-label--magic`).vee.txt("魔法物品");
 	}
 
 	_addListItem (listItem) {
