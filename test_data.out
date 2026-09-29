@@ -1,5 +1,5 @@
 
-> 5etools@2.35.1 test:data
+> 5etools@2.36.0 test:data
 > node test/test-all.js
 
 ##### FilterCheck passed! #####
@@ -14,6 +14,7 @@
 ##### RefTagCheck passed! #####
 ##### TestCopyCheck passed! #####
 ##### HasFluffCheck passed! #####
+##### FoundryUuidCheck passed! #####
 ##### EntityFileHandlerAction passed! #####
 ##### EntityFileHandlerBackground passed! #####
 ##### EntityFileHandlerClass passed! #####
@@ -39,6 +40,7 @@ Error messages for LinkCheck:
 Missing link: {@table 贮藏|ToA} in file ./data/adventure/adventure-toa.json (evaluates to "tables.html#%e8%b4%ae%e8%97%8f_toa")
 Missing link: {@table 贮藏|ToA} in file ./data/adventure/adventure-toa.json (evaluates to "tables.html#%e8%b4%ae%e8%97%8f_toa")
 Missing link: {@table 贮藏|ToA} in file ./data/adventure/adventure-toa.json (evaluates to "tables.html#%e8%b4%ae%e8%97%8f_toa")
+Missing link: {@table 魔法物品词条表;传说魔法物品词条|AU|虹彩射线} in file ./data/book/book-au.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e4%bc%a0%e8%af%b4%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
 Missing link: {@creature 星之子蠕虫法师|MPMM} in file ./data/book/book-bmt.json (evaluates to "bestiary.html#%e6%98%9f%e4%b9%8b%e5%ad%90%e8%a0%95%e8%99%ab%e6%b3%95%e5%b8%88_mpmm")
 Missing link: {@item 护盾|PHB|盾牌} in file ./data/book/book-bmt.json (evaluates to "items.html#%e6%8a%a4%e7%9b%be_phb")
 Missing link: {@background 骑士团成员|SCAG} in file ./data/book/book-scag.json (evaluates to "backgrounds.html#%e9%aa%91%e5%a3%ab%e5%9b%a2%e6%88%90%e5%91%98_scag")
@@ -48,9 +50,20 @@ Missing link: {@creature 白熊} in file ./data/class/fluff-class-druid.json (ev
 Missing link: {@card 利爪|千象无常牌|LLK} in file ./data/decks.json (evaluates to "card#%e5%88%a9%e7%88%aa_%e5%8d%83%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_llk")
 Missing link: {@card 头骨|千象无常牌|LLK} in file ./data/decks.json (evaluates to "card#%e5%a4%b4%e9%aa%a8_%e5%8d%83%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_llk")
 Missing link: {@reward 护城天尊|MOT} in file ./data/deities.json (evaluates to "rewards.html#%e6%8a%a4%e5%9f%8e%e5%a4%a9%e5%b0%8a_mot")
+Missing link: {@creature 蔬菜人剪灭人|BAM|蔬菜人剪灭人} in file ./data/encounters.json (evaluates to "bestiary.html#%e8%94%ac%e8%8f%9c%e4%ba%ba%e5%89%aa%e7%81%ad%e4%ba%ba_bam")
+Missing link: {@table 魔法物品词条表;珍稀魔法物品词条|AU|圣战} in file ./data/items.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
 Missing link: {@card 利爪|千象无常牌|LLK} in file ./data/items.json (evaluates to "card#%e5%88%a9%e7%88%aa_%e5%8d%83%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_llk")
 Missing link: {@card 头骨|千象无常牌|LLK} in file ./data/items.json (evaluates to "card#%e5%a4%b4%e9%aa%a8_%e5%8d%83%e8%b1%a1%e6%97%a0%e5%b8%b8%e7%89%8c_llk")
-Missing link: {@creature 植物精魄|AU} in file ./data/spells/spells-au.json (evaluates to "bestiary.html#%e6%a4%8d%e7%89%a9%e7%b2%be%e9%ad%84_au")
+Missing link: {@table 魔法物品词条表;传说魔法物品词条|AU|日耀} in file ./data/items.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e4%bc%a0%e8%af%b4%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;极珍稀魔法物品词条|AU|月} in file ./data/items.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e6%9e%81%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;极珍稀魔法物品词条|AU|灵能} in file ./data/items.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e6%9e%81%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;传说魔法物品词条|AU|静心} in file ./data/items.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e4%bc%a0%e8%af%b4%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;珍稀魔法物品词条|AU|警觉} in file ./data/items.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;传说魔法物品词条|AU|全知者} in file ./data/magicvariants.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e4%bc%a0%e8%af%b4%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;极珍稀魔法物品词条|AU|尊贵} in file ./data/magicvariants.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e6%9e%81%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;极珍稀魔法物品词条|AU|抗性} in file ./data/magicvariants.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e6%9e%81%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;珍稀魔法物品词条|AU|博识} in file ./data/magicvariants.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e7%8f%8d%e7%a8%80%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
+Missing link: {@table 魔法物品词条表;传说魔法物品词条|AU|支配} in file ./data/magicvariants.json (evaluates to "tables.html#%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1%e8%a1%a8%3b%e4%bc%a0%e8%af%b4%e9%ad%94%e6%b3%95%e7%89%a9%e5%93%81%e8%af%8d%e6%9d%a1_au")
 
 Error messages for BraceCheck:
 
@@ -59,6 +72,7 @@ Mismatched braces in ./data/adventure/adventure-oow.json: "传送门的当前目
 Error messages for AdventureBookTagCheck:
 
 Missing link: book header UID "不可见的攻击者与目标|PHB|9|不可见的敌人与目标" in file ./data/actions.json section name "不可见的敌人与目标" was not found in chapter "9"
+Missing link: book header UID "温戈尔|XDMG|8|温戈尔" in file ./data/items.json section name "温戈尔" was not found in chapter "8"
 
 Error messages for EntityFileHandlerAdventureBook:
 
@@ -81,5 +95,5 @@ Spread "魔域天机|CoS" in file ./data/decks.json wanted 2 cards of suits ["no
 ---
 
 
-	Run duration: 1:29.730 (m:ss.mmm)
+	Run duration: 30.828s
 Tests failed!

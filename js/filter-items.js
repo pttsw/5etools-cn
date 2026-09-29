@@ -448,7 +448,7 @@ class PageFilterItems extends PageFilterEquipment {
 		}
 	}
 
-	static _CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM = "replicate magic item|artificer|efa|2|efa";
+	static _CLASS_FEATURE_EFA_ARTIFICER_REPLICATE_MAGIC_ITEM = "仿制魔法物品|奇械师|efa|2|efa";
 
 	static _mutateForFilters_classFeatures (item) {
 		item._fClassFeatures = item.classFeatures ? [...item.classFeatures] : null;
