@@ -266,7 +266,13 @@ class StructureComparator:
         )
 
 
-def _mapped_target(source: Path) -> Path:
+def _mapped_target(source: Path, mode: str) -> Path:
+    if mode == "homebrew":
+        source_root = Path("/data/homebrew-en")
+        try:
+            return Path("/data/homebrew") / source.relative_to(source_root)
+        except ValueError as exc:
+            raise ValueError(f"source path must be under {source_root}") from exc
     parts = list(source.parts)
     try:
         index = parts.index("data-bak")
@@ -310,8 +316,9 @@ def main() -> int:
             "Strings may differ; keys, arrays, value types, and non-text scalars may not."
         )
     )
-    parser.add_argument("source", type=Path, help="English JSON under data-bak")
+    parser.add_argument("source", type=Path, help="English JSON under the selected mode's source root")
     parser.add_argument("target", type=Path, nargs="?", help="localized JSON; inferred if omitted")
+    parser.add_argument("--mode", choices=("5et", "homebrew"), default="5et")
     parser.add_argument(
         "--allow-extra-key",
         action="append",
@@ -345,11 +352,13 @@ def main() -> int:
         parser.error(f"source JSON does not exist: {source}")
     if source.suffix.lower() != ".json":
         parser.error(f"source must be a JSON file: {source}")
-    try:
-        inferred_target = _mapped_target(source)
-    except ValueError as exc:
-        parser.error(str(exc))
-    target = args.target.resolve() if args.target else inferred_target
+    if args.target:
+        target = args.target.resolve()
+    else:
+        try:
+            target = _mapped_target(source, args.mode)
+        except ValueError as exc:
+            parser.error(str(exc))
 
     comparator = StructureComparator(
         DEFAULT_ALLOWED_EXTRA_KEYS | set(args.allow_extra_key),

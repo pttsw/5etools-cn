@@ -8,8 +8,8 @@ Spawn one fresh subagent for each review round. Give it only the raw review inpu
 
 Provide:
 
-- the selected `data-bak/**/*.json` source path;
-- the mapped `data/**/*.json` target path;
+- the selected English source path and active mode;
+- the mapped target path, including the final localized filename in homebrew mode;
 - the exact English Git diff that defines scope;
 - the exact target diff/status captured before the task's first edit, as the user-owned baseline;
 - the current target diff, with the cumulative task translation changes distinguished from that baseline;
@@ -28,6 +28,19 @@ The reviewer may read repository files and run read-only searches or lookup comm
 
 Ask the reviewer to check every cumulative translatable change in the current task scope, including additions, replacements, and deletions, for:
 
+Review in this order so structural/mechanical errors are found in the first pass:
+
+1. numbers, dice, distances, counts, timing, action economy, and tag count/grammar;
+2. `name`, `ENG_name`, cross-references, and stable identity;
+3. fixed terms, context-sensitive analyser candidates, and aligned official or historical entities;
+4. analyser-job coverage and preservation of non-job machine/index fields;
+5. meaning and completeness of prose;
+6. untranslated analyser jobs and Chinese typography.
+
+For homebrew files, treat analyser jobs as the translation boundary. Aligned core entities may establish terminology for those jobs, but must not be used to translate a machine/index field for which the analyser emitted no job. Check that such non-job fields retain source values and remain schema-valid.
+
+Report findings against the following criteria:
+
 1. meaning omitted, added, weakened, strengthened, or incorrectly removed relative to the current English source;
 2. inconsistent names or fixed terms compared with user references, the corresponding historical target, or applicable terminology candidates, using the skill's evidence priority;
 3. inconsistent repeated translations inside the same target;
@@ -37,6 +50,8 @@ Ask the reviewer to check every cumulative translatable change in the current ta
 7. ASCII straight quotes used as quotation punctuation in newly translated or revised Chinese natural-language text; require `“……”`, with nested quotations written as `‘……’`, while leaving JSON syntax and literal machine content unchanged.
 
 Require full-phrase terminology queries for material names and rules terms. A lookup hit is evidence, not proof: the reviewer must account for category, source, conflict flags, user references, and local context.
+
+For every analyser `cn_str`/known translation used in the target, verify that the containing sentence or object, field semantics, entity category, tags, and mechanics support that sense. Explicitly check common homographs and overloaded terms; identical English strings do not require identical Chinese when their meanings differ. Report a contextually wrong known translation even if the analyser marks the job `need_translate: false`.
 
 Do not report subjective stylistic preferences without reference or terminology evidence. Do not ask for changes outside the English semantic delta.
 

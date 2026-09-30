@@ -1,11 +1,18 @@
 ---
 name: 5etools-json-translate
-description: Translate the Git diff of one user-specified English JSON file under data-bak into its corresponding Chinese JSON under data, with preflight target bootstrapping, existing translations, optional references, terminology lookup, independent subagent consistency review, JSON structure comparison, and repository build/data-test validation. Use for incremental 5etools data localization; do not use for arbitrary documents or non-JSON source files.
+description: Translate one user-specified 5etools or homebrew English JSON into its Chinese counterpart, using its Git diff when present and the full file otherwise, with structural bootstrapping, terminology lookup, independent review, and project-local validation. Supports data-bak to data and /data/homebrew-en to /data/homebrew; do not use for arbitrary documents or non-JSON source files.
 ---
 
 # 5etools JSON Incremental Translation
 
-Work on exactly one `data-bak/**/*.json` file named by the user. Treat its Git diff as the translation scope and write the result to the same relative path under `data/`.
+Work on exactly one English JSON file named by the user. Use its Git diff as the translation scope when the diff is non-empty; when a tracked source has no Git diff, translate the full file. Select one mode:
+
+- `5et` (default): source under `data-bak/`, target at the same relative path under `data/`.
+- `homebrew`: source under `${HOMEBREW_EN_ROOT:-/data/homebrew-en/}`, target under `${HOMEBREW_ZH_ROOT:-/data/homebrew/}`. Preserve the source filename's `<作者>; ` prefix, but translate its resource-name portion: `<作者>; <中文资源名>.json`.
+
+For homebrew mode, read and follow [references/homebrew-workflow.md](references/homebrew-workflow.md) before preflight.
+
+When invoked with a homebrew queue lease, also read and follow [references/automated-worker.md](references/automated-worker.md). The lease narrows this skill to its one claimed source and isolated target worktree.
 
 ## Establish the scope
 
@@ -14,29 +21,36 @@ If the user has not named the English JSON file, ask for that path before editin
 Run:
 
 ```bash
-python3 <skill-dir>/scripts/inspect_translation_scope.py <data-bak/path.json> \
+python3 <skill-dir>/scripts/inspect_translation_scope.py <source.json> \
+  [--mode homebrew] \
+  [--source-root "$HOMEBREW_EN_ROOT" --target-root "$HOMEBREW_ZH_ROOT"] \
   [--reference <path>]...
 ```
 
-The helper rejects paths outside `data-bak`, maps the target path, validates optional references, and reports the `HEAD`-to-working-tree diff. For an untracked source, the whole file is new scope. If a tracked source has no diff, report that there is nothing to translate and stop.
+The helper rejects paths outside the selected source root, maps the target, validates optional references, and reports the source repository's `HEAD`-to-working-tree diff and effective translation scope. In homebrew mode it locates an existing renamed target by stable `_meta.sources[].json` identity; if none exists, it reports a provisional same-name target. For an untracked source or a tracked source with no diff, the whole file is the translation scope.
 
 Before editing, read all of:
 
-- the reported source diff;
+- the reported source diff, or the full source when `translation_scope` is `full`;
 - the complete current English source, so changed fragments are interpreted in context;
-- the corresponding `data/` target when it exists, as the primary style and continuity reference;
+- the reported target when it exists, as the primary style and continuity reference;
 - every optional reference path supplied by the user.
 
-Also record `git status --short` and any pre-existing diff of the mapped target before editing. Those changes belong to the user; preserve them and apply the translation on top.
+Also record `git status --short` and any pre-existing target diff in the target repository before editing (`HOMEBREW_ZH_ROOT`, defaulting to `/data/homebrew`, in homebrew mode). Those changes belong to the user; preserve them and apply the translation on top.
+
+In homebrew mode, capture the full-repository test baseline before editing as specified in the homebrew workflow reference.
+
+Also complete the homebrew workflow's third-party IP terminology gate before translating. When the resource involves another IP, internet research and source recording are mandatory; apply the resulting official or otherwise well-supported Chinese names during terminology lookup and translation.
 
 ## Preflight the Chinese target
 
 Do this before translating any text.
 
-If the mapped `data/` target exists, run a strict source/target structure comparison without a baseline:
+If the mapped target exists, run a strict source/target structure comparison without a baseline:
 
 ```bash
-python3 <skill-dir>/scripts/compare_json_structure.py <data-bak/path.json>
+python3 <skill-dir>/scripts/compare_json_structure.py <source.json> [<reported-target.json>] \
+  [--mode homebrew]
 ```
 
 Exit code `0` means the target is structurally ready. Exit code `1` means the target is missing or structurally inconsistent; read and follow [references/no-ai-bootstrap.md](references/no-ai-bootstrap.md) to generate a no-AI structural candidate and initialize or repair the target. Exit code `2` is a parse, path, or tool failure: diagnose it instead of treating it as a structural mismatch.
@@ -49,7 +63,8 @@ Once the preflight passes, capture the clean task-start structural baseline in a
 
 ```bash
 STRUCTURE_BASELINE=$(mktemp)
-python3 <skill-dir>/scripts/compare_json_structure.py <data-bak/path.json> \
+python3 <skill-dir>/scripts/compare_json_structure.py <source.json> [<reported-target.json>] \
+  [--mode homebrew] \
   --capture-baseline "$STRUCTURE_BASELINE"
 ```
 
@@ -59,7 +74,7 @@ Read [references/localization-rules.md](references/localization-rules.md) before
 
 Mandatory typography constraint: Chinese natural-language translations must use Chinese quotation marks `“……”`; use `‘……’` for a quotation nested inside them. Do not use ASCII straight quotes as Chinese prose punctuation. This applies only to human-readable translated text—never mechanically replace JSON syntax delimiters, 5etools tag grammar, code, formulas, IDs, URLs, or other literal machine content.
 
-If the selected source is under `data-bak/bestiary/`, also read [references/bestiary-xmm-style.md](references/bestiary-xmm-style.md). Treat the aligned pair `data-bak/bestiary/bestiary-xmm.json` and `data/bestiary/bestiary-xmm.json` as the primary corpus for monster rules wording, especially traits, attacks, saves, conditions, movement, spellcasting, reactions, and legendary actions. For a phrase not covered by the summary, search aligned examples with:
+If a 5et-mode source is under `data-bak/bestiary/`, also read [references/bestiary-xmm-style.md](references/bestiary-xmm-style.md). Treat the aligned pair `data-bak/bestiary/bestiary-xmm.json` and `data/bestiary/bestiary-xmm.json` as the primary corpus for monster rules wording, especially traits, attacks, saves, conditions, movement, spellcasting, reactions, and legendary actions. For a phrase not covered by the summary, search aligned examples with:
 
 ```bash
 python3 <skill-dir>/scripts/lookup_bestiary_xmm.py "saving throws against spells" \
@@ -68,12 +83,14 @@ python3 <skill-dir>/scripts/lookup_bestiary_xmm.py "saving throws against spells
 
 ## Apply the semantic delta
 
-Use the pre-change English version from `git show HEAD:<source-path>`, the current English file, and the current Chinese target to distinguish additions, edits, moves, and deletions. Match entities by stable identity such as `source`, original English `name`/`ENG_name`, IDs, and structural location; do not assume array indexes remained stable.
+Use the pre-change English version from the selected source repository's `git show HEAD:<source-path>`, the current English file, and the current Chinese target to distinguish additions, edits, moves, and deletions. Match entities by stable identity such as `source`, original English `name`/`ENG_name`, IDs, and structural location; do not assume array indexes remained stable.
 
 - Existing target: preserve established Chinese content outside the English semantic delta. Mirror structural/non-text changes and translate only added or changed translatable content. Remove target content only when the source diff removed its semantic counterpart.
 - New source or initially missing target: start from the validated no-AI candidate installed during preflight, preserve its structure, and translate the full file. English fallback text in that candidate is untranslated work, not an acceptable final translation.
+- Full-file scope with an existing target: audit all analyser jobs and translate only untranslated or incorrect actionable content; preserve established Chinese and non-actionable machine values. Do not reinterpret full scope as permission to overwrite the target wholesale.
 - Never replace an existing Chinese target wholesale with the English source.
 - Do not edit any second translation file merely because it is related. Cross-file expansion requires the user's choice described under validation.
+- In homebrew mode, follow the filename evidence order in the homebrew workflow. Keep the author substring before the first `; ` byte-for-byte and ensure the final path is `<作者>; <中文资源名>.json`; remove an old target path only as the corresponding Git rename.
 
 Use `apply_patch` for edits. Preserve the file's indentation and key-order conventions. Reparse JSON after every substantial patch.
 
@@ -93,9 +110,9 @@ Query ambiguous names, D&D terms, and cross-referenced entities as complete phra
 
 This wrapper reuses `/data/5e-translator/app/core/agent/tools.py`: translation candidates rank the term table, session references, the 5E 不全书, then run-local terms; entity lookup ranks session references before complete 不全书 pages. Reference ingestion supports UTF-8 text/Markdown. Read JSON and other user references directly even when the wrapper cannot ingest them.
 
-Treat lookup output as evidence, not an automatic replacement. Prefer, in order: the corresponding target's established usage for the same entity, explicit user references, high-ranked terminology evidence, and consistent surrounding repository usage. Resolve conflicts by context and note material uncertainty in the handoff.
+Treat lookup and analyser output as evidence, not an automatic replacement. In particular, an analyser job's `cn_str` is only a candidate recovered by English-string matching; it may be wrong when one English form has several context-dependent meanings (for example, `light` can denote illumination, the *light* spell, or a light-weight/category property). For every actionable job and every known translation actually used, read the complete containing sentence or object, identify the field's game meaning and entity type, and choose or correct the Chinese accordingly. Never bulk-accept `cn_str` solely because it is non-empty or marked known. Prefer, in order: the corresponding target's established usage for the same entity and meaning, explicit user references, high-ranked terminology evidence for the matching category, and consistent surrounding repository usage. Resolve conflicts by context and note material uncertainty in the handoff.
 
-For files under `data-bak/bestiary/`, repeated, mechanically matching `bestiary-xmm.json` usage outranks generic terminology evidence. Do not copy an XMM sentence when its numbers, creature identity, target count, timing, or tags differ from the current English text.
+For 5et-mode files under `data-bak/bestiary/`, repeated, mechanically matching `bestiary-xmm.json` usage outranks generic terminology evidence. Do not copy an XMM sentence when its numbers, creature identity, target count, timing, or tags differ from the current English text.
 
 ## Independent consistency review
 
@@ -111,19 +128,21 @@ Record `git status --short` before validation so pre-existing user changes are n
 
 1. Parse the edited target as JSON.
 2. Inspect the target diff and confirm changes correspond only to the source semantic delta.
+   In homebrew mode, run the analyser-job residual check from the homebrew workflow and resolve every actionable residual.
 3. Complete the independent consistency-review gate.
-4. From the repository root, run `npm run build`.
+4. Run `npm run build` from the target project root: the current 5et repository in `5et` mode, or `HOMEBREW_ZH_ROOT` (default `/data/homebrew/`) in `homebrew` mode.
 5. Fix target-caused build failures. If a repair creates a translation round, immediately parse the target and complete a fresh consistency-review cycle; after it passes, restart required validation from `npm run build`.
 6. Before the final data test, run the JSON structure gate:
 
    ```bash
-   python3 <skill-dir>/scripts/compare_json_structure.py <data-bak/path.json> \
+   python3 <skill-dir>/scripts/compare_json_structure.py <source.json> [<final-target.json>] \
+     [--mode homebrew] \
      --baseline-report "$STRUCTURE_BASELINE"
    ```
 
    It recursively checks object keys, array lengths, JSON value types, non-text scalar values, and `ENG_name` identity anchors. It permits localized-only `ENG_name`/`translator` fields and the translated display keys used under `containerCapacity.item`; use repeatable `--allow-extra-key` or `--translated-key-path` only after verifying another repository convention requires it. Inspect warnings as well as failures. Fix every new error caused by the selected target, then rerun the gate until it passes. Do not silently exempt an accidental mismatch. If a structure repair changes translatable content, treat it as a new translation round, run a fresh subagent review, and restart at `npm run build`.
-7. Run `npm run test:data` only after the build and structure gate both pass.
-8. Fix target-caused test failures. If a repair creates a translation round, immediately parse and review it; after the gate passes, rerun `npm run build`, the JSON structure gate, and `npm run test:data` as the final confirmation. For a purely structural repair, rerun the structure gate before both required npm commands when practical.
+7. After the build and structure gate pass, run `npm run test:data` in `5et` mode. In homebrew mode, run the per-file schema validator and full-suite baseline comparison specified in the homebrew workflow.
+8. Fix target-caused test failures. If a repair creates a translation round, immediately parse and review it; after the gate passes, rerun `npm run build`, the JSON structure gate, and the mode-specific test command as the final confirmation. For a purely structural repair, rerun the structure gate before both required npm commands when practical.
 
 Any build/structure/test result obtained before a later translation round is stale and cannot be reported as final. Purely structural or generated-file changes do not create a translation round, but they do invalidate the earlier structure result.
 
@@ -134,7 +153,7 @@ Build and tests may expose or generate unrelated changes. Do not revert, format,
 When a failure is a missing hyperlink/entity reference caused by another English file having new content with no corresponding Chinese translation:
 
 1. Prove the selected target's tag syntax and translated reference are correct.
-2. Map each missing entity to the specific `data-bak/**/*.json` source file and expected `data/**/*.json` target. Group duplicate errors.
+2. Map each missing entity to the specific source file and expected target in the selected mode. Group duplicate errors.
 3. Present the concrete file list and ask whether the user wants those files translated next.
 4. Do not translate them, weaken the link, copy English into `data`, or suppress the test before the user answers.
 
@@ -142,4 +161,4 @@ For unrelated baseline failures, report the command and concise evidence; do not
 
 ## Handoff
 
-Report the selected source and target, whether no-AI bootstrap was used and how its candidate affected the target, what portion of the source diff was localized, how many subagent review rounds ran and their final result, terminology/reference decisions worth reviewing, the JSON structure gate outcome, and the exact outcome of `npm run build` and `npm run test:data`. If missing-link dependencies remain, list their mapped files and the pending user decision.
+Report the selected mode, source and final target (including any homebrew rename), whether no-AI bootstrap was used and how its candidate affected the target, what portion of the source diff was localized, how many subagent review rounds ran and their final result, terminology/reference decisions worth reviewing, the homebrew third-party IP determination and any web sources used for its Chinese names, the JSON structure gate outcome, and the exact build/test outcomes for that mode. If missing-link dependencies remain, list their mapped files and the pending user decision.
