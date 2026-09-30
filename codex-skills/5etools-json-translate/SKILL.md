@@ -14,6 +14,8 @@ For homebrew mode, read and follow [references/homebrew-workflow.md](references/
 
 When invoked with a homebrew queue lease, also read and follow [references/automated-worker.md](references/automated-worker.md). The lease narrows this skill to its one claimed source and isolated target worktree.
 
+When invoked with a chunk lease for a large homebrew file, read and follow [references/chunked-worker.md](references/chunked-worker.md). Its JSON pointers, checkpoint, glossary version, and parent worktree are hard scope boundaries.
+
 ## Establish the scope
 
 If the user has not named the English JSON file, ask for that path before editing. Resolve helper paths relative to this `SKILL.md`.

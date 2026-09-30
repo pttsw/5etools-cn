@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -22,7 +23,11 @@ EMBEDDED_TAG_SUFFIX = re.compile(r"/(?P<tag>[A-Za-z][A-Za-z0-9_-]*)\[\d+\]$")
 
 def stable_token(value) -> str:
     text = re.sub(r"\s+", "-", str(value or "").strip())
-    return re.sub(r"[^0-9A-Za-z_.@|:-]+", "-", text).strip("-")
+    text = re.sub(r"[^0-9A-Za-z_.@|:-]+", "-", text).strip("-")
+    if len(text) > 80:
+        digest = hashlib.sha1(text.encode("utf-8")).hexdigest()[:8]
+        text = f"{text[:70]}-{digest}"
+    return text
 
 
 MACHINE_LEAF = re.compile(r"/(alId|colStyles(?:\[\d+\])?)$")

@@ -104,12 +104,42 @@ class QueueIntegrationTests(unittest.TestCase):
         for claim in (first, second):
             subprocess.run(["git", "-C", str(self.repo), "worktree", "remove", "--force", claim["worktree"]], check=True)
 
+    def test_sync_routes_large_sources_to_chunk_planning(self):
+        source = self.source / "collection" / "A; Large.json"
+        source.write_text('{"_meta":{"sources":[{"json":"Large"}]},"entries":["long"]}\n', encoding="utf-8")
+        self._queue("sync", "--chunk-threshold-bytes", "1")
+        with sqlite3.connect(self.database) as connection:
+            status = connection.execute("SELECT status FROM tasks WHERE source_path = 'collection/A; Large.json'").fetchone()[0]
+        self.assertEqual(status, "needs_chunking")
+        empty = self._queue("claim", "--worker-id", "worker-a", expected=3)
+        self.assertEqual(empty["message"], "EMPTY_QUEUE")
+
     def test_expired_lease_cannot_heartbeat_or_complete(self):
         claim = self._claim_one(lease_minutes=0)
         self._queue("heartbeat", "--lease-id", claim["lease_id"], expected=2)
         self._queue("complete", "--lease-id", claim["lease_id"], "--result", str(self.root / "missing.json"), expected=2)
         self._queue("reclaim-expired")
         self.assertFalse(Path(claim["worktree"]).exists())
+
+    def test_expired_lease_can_be_resumed_by_original_worker_before_reclaim(self):
+        claim = self._claim_one(lease_minutes=0)
+        resumed = self._queue(
+            "resume-lease", "--lease-id", claim["lease_id"],
+            "--worker-id", "worker-a", "--lease-minutes", "30",
+        )
+        self.assertEqual(resumed["status"], "leased")
+        report = self._commit_and_report(claim)
+        completed = self._queue("complete", "--lease-id", claim["lease_id"], "--result", str(report))
+        self.assertEqual(completed["status"], "ready")
+
+    def test_expired_lease_cannot_be_resumed_by_another_worker(self):
+        claim = self._claim_one(lease_minutes=0)
+        result = self._queue(
+            "resume-lease", "--lease-id", claim["lease_id"],
+            "--worker-id", "worker-b", expected=2,
+        )
+        self.assertTrue(any("worker_id" in error for error in result["errors"]))
+        self._queue("reclaim-expired")
 
     def test_completion_rejects_dirty_bytes_after_commit(self):
         claim = self._claim_one()

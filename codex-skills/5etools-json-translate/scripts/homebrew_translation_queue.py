@@ -12,6 +12,7 @@ import sqlite3
 import subprocess
 import sys
 import tempfile
+import time
 import uuid
 from pathlib import Path
 
@@ -93,6 +94,8 @@ def connect(database: Path) -> sqlite3.Connection:
             integration_token TEXT,
             integration_base TEXT,
             claim_base_commit TEXT,
+            lease_started_at TEXT,
+            lease_hard_expires_at TEXT,
             updated_at TEXT NOT NULL
         );
         CREATE TABLE IF NOT EXISTS events (
@@ -105,7 +108,10 @@ def connect(database: Path) -> sqlite3.Connection:
         """
     )
     columns = {row[1] for row in connection.execute("PRAGMA table_info(tasks)")}
-    for name in ("initial_target_path", "integration_commit", "integration_token", "integration_base", "claim_base_commit"):
+    for name in (
+        "initial_target_path", "integration_commit", "integration_token", "integration_base", "claim_base_commit",
+        "lease_started_at", "lease_hard_expires_at",
+    ):
         if name not in columns:
             connection.execute(f"ALTER TABLE tasks ADD COLUMN {name} TEXT")
     return connection
@@ -176,16 +182,18 @@ def command_sync(args) -> int:
             relative = path.relative_to(root).as_posix()
             seen.add(relative)
             digest = hash_file(path)
+            oversized = args.chunk_threshold_bytes > 0 and path.stat().st_size > args.chunk_threshold_bytes
+            queued_status = "needs_chunking" if oversized else "pending"
             row = connection.execute("SELECT source_hash, status FROM tasks WHERE source_path = ?", (relative,)).fetchone()
             if row is None:
                 connection.execute(
-                    "INSERT INTO tasks(source_path, source_hash, status, updated_at) VALUES (?, ?, 'pending', ?)",
-                    (relative, digest, stamp()),
+                    "INSERT INTO tasks(source_path, source_hash, status, updated_at) VALUES (?, ?, ?, ?)",
+                    (relative, digest, queued_status, stamp()),
                 )
-                event(connection, relative, "discovered", {"source_hash": digest})
+                event(connection, relative, "discovered", {"source_hash": digest, "status": queued_status})
                 inserted += 1
             elif row["source_hash"] != digest:
-                if row["status"] in {"leased", "failing", "reclaiming", "ready", "integrating"}:
+                if row["status"] in {"leased", "failing", "reclaiming", "ready", "integrating", "chunked"}:
                     connection.execute(
                         "UPDATE tasks SET last_error = 'source changed while task active', updated_at = ? WHERE source_path = ?",
                         (stamp(), relative),
@@ -193,23 +201,33 @@ def command_sync(args) -> int:
                     event(connection, relative, "source_change_deferred", {"old_hash": row["source_hash"], "new_hash": digest, "status": row["status"]})
                 else:
                     connection.execute(
-                        """UPDATE tasks SET source_hash = ?, status = 'pending', attempts = 0,
+                        """UPDATE tasks SET source_hash = ?, status = ?, attempts = 0,
                            worker_id = NULL, lease_id = NULL, lease_expires_at = NULL,
                            retry_after = NULL, commit_sha = NULL, report_json = NULL,
                            worktree_path = NULL, branch = NULL, initial_target_path = NULL, claim_base_commit = NULL,
                            integration_commit = NULL, last_error = 'source changed', updated_at = ?
                            WHERE source_path = ?""",
-                        (digest, stamp(), relative),
+                        (digest, queued_status, stamp(), relative),
                     )
-                    event(connection, relative, "source_changed", {"old_hash": row["source_hash"], "new_hash": digest})
+                    event(connection, relative, "source_changed", {
+                        "old_hash": row["source_hash"], "new_hash": digest, "status": queued_status,
+                    })
                 changed += 1
             else:
+                if oversized and row["status"] == "pending":
+                    connection.execute(
+                        "UPDATE tasks SET status = 'needs_chunking', updated_at = ? WHERE source_path = ?",
+                        (stamp(), relative),
+                    )
+                    event(connection, relative, "large_source_detected", {
+                        "bytes": path.stat().st_size, "threshold": args.chunk_threshold_bytes,
+                    })
                 unchanged += 1
         active_rows = connection.execute("SELECT source_path, status FROM tasks WHERE status != 'obsolete'").fetchall()
         for active_row in active_rows:
             relative = active_row["source_path"]
             if relative not in seen:
-                if active_row["status"] in {"leased", "failing", "reclaiming", "ready", "integrating"}:
+                if active_row["status"] in {"leased", "failing", "reclaiming", "ready", "integrating", "chunked"}:
                     connection.execute("UPDATE tasks SET last_error = 'source removed while task active', updated_at = ? WHERE source_path = ?", (stamp(), relative))
                     event(connection, relative, "source_removal_deferred", {"status": active_row["status"]})
                 else:
@@ -265,11 +283,14 @@ def command_claim(args) -> int:
     branch = f"auto-translate/{lease_id[:12]}"
     worktree = worktree_root / lease_id[:12]
     expires = now() + dt.timedelta(minutes=args.lease_minutes)
+    hard_expires = now() + dt.timedelta(hours=args.max_lease_hours)
     connection.execute(
         """UPDATE tasks SET status = 'leased', attempts = attempts + 1, worker_id = ?, lease_id = ?,
-           lease_expires_at = ?, worktree_path = ?, branch = ?, last_error = NULL, updated_at = ?
+           lease_expires_at = ?, lease_started_at = ?, lease_hard_expires_at = ?,
+           worktree_path = ?, branch = ?, last_error = NULL, updated_at = ?
            WHERE source_path = ?""",
-        (args.worker_id, lease_id, stamp(expires), str(worktree), branch, current, row["source_path"]),
+        (args.worker_id, lease_id, stamp(expires), current, stamp(hard_expires),
+         str(worktree), branch, current, row["source_path"]),
     )
     event(connection, row["source_path"], "claimed", {"lease_id": lease_id, "worker_id": args.worker_id, "expires_at": stamp(expires)})
     connection.execute("COMMIT")
@@ -316,6 +337,7 @@ def command_claim(args) -> int:
         "status": "leased",
         "lease_id": lease_id,
         "lease_expires_at": stamp(expires),
+        "lease_hard_expires_at": stamp(hard_expires),
         "worker_id": args.worker_id,
         "source": str(source),
         "source_root": str(source_root),
@@ -346,11 +368,90 @@ def command_heartbeat(args) -> int:
     if row is None:
         connection.execute("ROLLBACK")
         return emit({"ok": False, "error": "active lease not found"}, 2)
-    expires = now() + dt.timedelta(minutes=args.lease_minutes)
+    requested = now() + dt.timedelta(minutes=args.lease_minutes)
+    hard_expires = dt.datetime.fromisoformat(row["lease_hard_expires_at"]) if row["lease_hard_expires_at"] else requested
+    expires = min(requested, hard_expires)
+    if expires <= now():
+        connection.execute("ROLLBACK")
+        return emit({"ok": False, "error": "hard lease limit reached"}, 2)
     connection.execute("UPDATE tasks SET lease_expires_at = ?, updated_at = ? WHERE lease_id = ?", (stamp(expires), stamp(), args.lease_id))
     event(connection, row["source_path"], "heartbeat", {"lease_id": args.lease_id, "expires_at": stamp(expires)})
     connection.execute("COMMIT")
     return emit({"ok": True, "lease_id": args.lease_id, "lease_expires_at": stamp(expires)})
+
+
+def validate_resumable_lease(args, row: sqlite3.Row) -> list[str]:
+    errors = []
+    if row["worker_id"] != args.worker_id:
+        errors.append("worker_id does not own this lease")
+    source = args.source_root.resolve() / row["source_path"]
+    if not source.is_file() or hash_file(source) != row["source_hash"]:
+        errors.append("source is missing or changed")
+    if not row["worktree_path"] or not Path(row["worktree_path"]).is_dir():
+        errors.append("leased worktree is missing")
+    elif row["branch"]:
+        worktree = Path(row["worktree_path"])
+        branch = run_git(worktree, "symbolic-ref", "--quiet", "--short", "HEAD")
+        if branch.returncode or branch.stdout.strip() != row["branch"]:
+            errors.append("leased worktree is not on the recorded branch")
+        elif row["claim_base_commit"] and run_git(worktree, "merge-base", "--is-ancestor", row["claim_base_commit"], "HEAD").returncode:
+            errors.append("leased worktree HEAD no longer descends from the claimed base")
+    return errors
+
+
+def command_resume_lease(args) -> int:
+    """Safely revive an expired lease which has not been reclaimed or replaced."""
+    connection = connect(args.database)
+    connection.execute("BEGIN IMMEDIATE")
+    row = connection.execute(
+        "SELECT * FROM tasks WHERE lease_id = ? AND status = 'leased'", (args.lease_id,),
+    ).fetchone()
+    if row is None:
+        connection.execute("ROLLBACK")
+        return emit({"ok": False, "error": "leased task not found or already reclaimed"}, 2)
+    errors = validate_resumable_lease(args, row)
+    if errors:
+        connection.execute("ROLLBACK")
+        return emit({"ok": False, "errors": errors}, 2)
+    current = now()
+    hard_expires = current + dt.timedelta(hours=args.max_lease_hours)
+    expires = min(current + dt.timedelta(minutes=args.lease_minutes), hard_expires)
+    connection.execute(
+        """UPDATE tasks SET lease_expires_at = ?, lease_started_at = ?, lease_hard_expires_at = ?,
+           updated_at = ?, last_error = NULL WHERE lease_id = ? AND status = 'leased'""",
+        (stamp(expires), stamp(current), stamp(hard_expires), stamp(current), args.lease_id),
+    )
+    event(connection, row["source_path"], "lease_resumed", {
+        "lease_id": args.lease_id, "worker_id": args.worker_id, "expires_at": stamp(expires),
+        "hard_expires_at": stamp(hard_expires),
+    })
+    connection.execute("COMMIT")
+    return emit({
+        "ok": True, "status": "leased", "source_path": row["source_path"],
+        "lease_id": args.lease_id, "lease_expires_at": stamp(expires),
+        "lease_hard_expires_at": stamp(hard_expires),
+    })
+
+
+def command_keepalive(args) -> int:
+    """Continuously renew one lease; intended to run as a worker sidecar."""
+    while True:
+        connection = connect(args.database)
+        row = connection.execute(
+            "SELECT status, lease_expires_at, lease_hard_expires_at FROM tasks WHERE lease_id = ?",
+            (args.lease_id,),
+        ).fetchone()
+        connection.close()
+        if row is None or row["status"] != "leased":
+            return emit({"ok": True, "status": "stopped", "reason": "lease no longer active"})
+        sleep_seconds = max(1, args.interval_seconds)
+        time.sleep(sleep_seconds)
+        heartbeat_args = argparse.Namespace(
+            database=args.database, lease_id=args.lease_id, lease_minutes=args.lease_minutes,
+        )
+        result = command_heartbeat(heartbeat_args)
+        if result:
+            return result
 
 
 def command_fail(args) -> int:
@@ -754,11 +855,13 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
 
     sync = sub.add_parser("sync")
+    sync.add_argument("--chunk-threshold-bytes", type=int, default=250000)
     sync.set_defaults(func=command_sync)
 
     claim = sub.add_parser("claim")
     claim.add_argument("--worker-id", required=True)
     claim.add_argument("--lease-minutes", type=int, default=30)
+    claim.add_argument("--max-lease-hours", type=int, default=12)
     claim.add_argument("--max-attempts", type=int, default=3)
     claim.add_argument("--base-ref", default="HEAD")
     claim.add_argument("--no-worktree", action="store_true")
@@ -769,6 +872,19 @@ def build_parser() -> argparse.ArgumentParser:
     heartbeat.add_argument("--lease-id", required=True)
     heartbeat.add_argument("--lease-minutes", type=int, default=30)
     heartbeat.set_defaults(func=command_heartbeat)
+
+    resume = sub.add_parser("resume-lease")
+    resume.add_argument("--lease-id", required=True)
+    resume.add_argument("--worker-id", required=True)
+    resume.add_argument("--lease-minutes", type=int, default=30)
+    resume.add_argument("--max-lease-hours", type=int, default=12)
+    resume.set_defaults(func=command_resume_lease)
+
+    keepalive = sub.add_parser("keepalive")
+    keepalive.add_argument("--lease-id", required=True)
+    keepalive.add_argument("--interval-seconds", type=int, default=300)
+    keepalive.add_argument("--lease-minutes", type=int, default=30)
+    keepalive.set_defaults(func=command_keepalive)
 
     fail = sub.add_parser("fail")
     fail.add_argument("--lease-id", required=True)

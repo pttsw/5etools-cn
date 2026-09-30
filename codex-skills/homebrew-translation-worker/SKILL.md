@@ -9,12 +9,15 @@ Act as one queue worker. Do not choose a file manually and do not process more t
 
 Locate the installed `5etools-json-translate` skill and read its `SKILL.md` plus `references/automated-worker.md`. Run its `scripts/homebrew_translation_queue.py claim --worker-id <stable-run-id>`. If it returns `EMPTY_QUEUE`, report that outcome and stop successfully.
 
+If the scheduler supplies a chunk lease, or the source has been placed in `chunked` state, read and follow `5etools-json-translate/references/chunked-worker.md` instead of claiming a normal task. Never turn a normal lease into ad-hoc chunks inside a worker.
+
 For a successful lease:
 
 1. Export `HOMEBREW_EN_ROOT` from the claim's source root and `HOMEBREW_ZH_ROOT` as the returned isolated target root.
-2. Use `$5etools-json-translate` in homebrew mode on the exact returned source path. The analyser establishes translation scope, but every candidate translation still requires contextual verification.
-3. Renew the lease around long translator, independent-review, build, and test stages.
-4. Stage and commit only the selected translated JSON or its intentional rename. Never commit `_generated` output.
-5. Write the required structured result and call `complete`. A successful worker ends in queue state `ready`, not `merged`.
+2. Start the queue coordinator's `keepalive` sidecar immediately after a successful claim. Keep its PID and log outside the worktree, and stop it after `complete` or `fail`. Stage-boundary heartbeats remain useful checks but are not a substitute for the sidecar.
+3. Use `$5etools-json-translate` in homebrew mode on the exact returned source path. The analyser establishes translation scope, but every candidate translation still requires contextual verification.
+4. Renew the lease around long translator, independent-review, build, and test stages.
+5. Stage and commit only the selected translated JSON or its intentional rename. Never commit `_generated` output.
+6. Write the required structured result and call `complete`. A successful worker ends in queue state `ready`, not `merged`.
 
-On any incomplete run, call `fail` before exiting. Mark the task blocked only when retrying cannot resolve the condition without human judgment. Never run `integrate-next`; integration is a separate serial responsibility.
+On any incomplete run, call `fail` before exiting. Mark the task blocked only when retrying cannot resolve the condition without human judgment. File size alone is not a blocked condition: return it for coordinator-managed chunk planning. Never run `integrate-next`; integration is a separate serial responsibility.

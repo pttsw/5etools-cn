@@ -20,6 +20,15 @@ export HOMEBREW_EN_ROOT=/data/homebrew-en
 export HOMEBREW_ZH_ROOT=<target_root-from-claim>
 ```
 
+Immediately start a detached keepalive sidecar for the lease. Use a 5-minute interval with the default 30-minute renewal window. Record its PID and log, and stop it after `complete` or `fail`; the sidecar also exits when the task leaves `leased` state. The claim carries a default 12-hour hard lifetime so an orphaned sidecar cannot retain a task indefinitely.
+
+```bash
+python3 <skill-dir>/scripts/homebrew_translation_queue.py keepalive \
+  --lease-id "$LEASE_ID" --interval-seconds 300 --lease-minutes 30
+```
+
+Run that command under the scheduler's process supervisor or as a detached child. Do not rely only on heartbeats before and after model calls.
+
 Translate only the claimed source. Never claim a second task in the same run. Renew the lease before and after translator, review, build, or test operations that may take several minutes:
 
 By default, claiming is refused while the shared Chinese repository has non-generated uncommitted changes. Commit or otherwise resolve that work first. Do not use `--allow-dirty-base` in scheduled production runs; it exists only for deliberately isolated testing.
@@ -30,6 +39,10 @@ python3 <skill-dir>/scripts/homebrew_translation_queue.py heartbeat \
 ```
 
 If work cannot finish, call `fail` with a concise actionable reason. Use `--blocked` for identity collisions, ambiguous filenames, or other conditions that require human judgment; ordinary transient failures remain retryable.
+
+If a completed worktree survives an expired lease and `reclaim-expired` has not taken ownership, the same worker identity may recover it with `resume-lease`. The command atomically checks the worker identity, source hash, worktree branch, and claimed-base ancestry. Never edit the database or revive a lease after it has been reclaimed.
+
+Files too large for one bounded worker invocation should be put into coordinator-managed chunk mode as described in [chunked-worker.md](chunked-worker.md). Do not physically split the source JSON and do not mark size alone as a permanent block.
 
 ## Commit and completion
 
@@ -64,3 +77,5 @@ Completion rejects expired/replaced leases, changed sources, missing targets, co
 ## Scheduler cycle
 
 A scheduler should run `sync`, then `reclaim-expired`, then start the configured number of workers. It may start workers concurrently because claims are atomic and each claim receives a separate Git worktree. Run one serial integration process for `ready` tasks. `integrate-next` refuses to operate when the shared Chinese repository has any uncommitted changes.
+
+By default `sync` routes source files larger than 250,000 bytes to `needs_chunking`, so ordinary workers cannot accidentally lease them. The scheduler should create their parent plans with `homebrew_translation_chunks.py plan`. Override `--chunk-threshold-bytes` only as an explicit deployment choice; use `0` to disable automatic routing.
