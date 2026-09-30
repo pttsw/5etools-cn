@@ -256,17 +256,17 @@ class BestiaryPageBookView extends ListPageBookView {
 			});
 		};
 
-		const btnDownloadMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm">Download as Markdown</button>`
-			.onn("click", async () => DataUtil.userDownloadText("bestiary.md", await pGetAsMarkdown()));
+		const btnDownloadMarkdown = veT`<button class="ve-btn ve-btn-default ve-btn-sm">Download as Markdown</button>`
+			.vee.onn("click", async () => DataUtil.userDownloadText("bestiary.md", await pGetAsMarkdown()));
 
-		const btnCopyMarkdown = ee`<button class="ve-btn ve-btn-default ve-btn-sm ve-px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"></span></button>`
-			.onn("click", async () => {
+		const btnCopyMarkdown = veT`<button class="ve-btn ve-btn-default ve-btn-sm ve-px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"></span></button>`
+			.vee.onn("click", async () => {
 				await MiscUtil.pCopyTextToClipboard(await pGetAsMarkdown());
 				JqueryUtil.showCopiedEffect(btnCopyMarkdown);
 			});
 
-		const btnDownloadMarkdownSettings = ee`<button class="ve-btn ve-btn-default ve-btn-sm ve-px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"></span></button>`
-			.onn("click", async () => RendererMarkdown.pShowSettingsModal());
+		const btnDownloadMarkdownSettings = veT`<button class="ve-btn ve-btn-default ve-btn-sm ve-px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"></span></button>`
+			.vee.onn("click", async () => RendererMarkdown.pShowSettingsModal());
 
 		veT`<div class="ve-flex-v-center ve-btn-group ve-ml-2">
 			${btnDownloadMarkdown}
